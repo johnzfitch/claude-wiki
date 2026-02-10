@@ -1,0 +1,26 @@
+---
+category: "04-API-Reference"
+source_url: "https://support.claude.com/en/articles/7996921-i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries"
+---
+
+
+Contact AWS Support for Claude in Amazon Bedrock support inquiries or reach out to your AWS account manager. For community-based support, visit AWS re:Post. 
+
+ 
+
+How can I get a refund for my usage through Amazon Bedrock?
+
+If you're using Claude through AWS Bedrock, your usage is non-refundable. If you are a customer with a private offer and direct contract with Anthropic for your Bedrock usage, you can reach out to your Anthropic relationship manager for additional assistance.
+
+Note: For Japanese Customers using Bedrock, Anthropic will register for Japanese Consumption Tax once it becomes a Japanese Consumption Taxpayer by exceeding the legal thresholds (at the earliest as of FY2026).
+
+ 
+
+ 
+
+Related Articles
+What is Amazon Bedrock?
+How do I get access to Claude in Amazon Bedrock?
+What AWS Regions are Claude models available in Amazon Bedrock?
+Who owns and manages the data of my Claude for Education account?
+Claude Code FAQ

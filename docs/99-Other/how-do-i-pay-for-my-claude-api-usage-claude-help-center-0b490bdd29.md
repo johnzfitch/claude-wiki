@@ -1,0 +1,113 @@
+---
+category: "99-Other"
+fetched_at: "2026-02-10T10:49:38Z"
+source_url: "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage"
+title: "How do I pay for my Claude API usage? | Claude Help Center"
+---
+
+[](/en/)
+
+[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
+
+EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
+
+English
+
+[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
+
+EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
+
+English
+
+Search for articles...
+
+Table of contents
+
+[](#h_0a3969176f)
+
+[All Collections](/en/)
+
+[Claude API and Console](https://support.claude.com/en/collections/5370014-claude-api-and-console)
+
+[Pricing and Billing](https://support.claude.com/en/collections/9811459-pricing-and-billing)
+
+How do I pay for my Claude API usage?
+
+# How do I pay for my Claude API usage?
+
+Updated this week
+
+Table of contents
+
+[](#h_0a3969176f)
+
+Claude API and Workbench usage is billed via prepaid "usage credits." Credits must be purchased prior to using the API, and your credits will be applied to your usage according to our current [pricing](https://claude.com/pricing#api). These credits can be used for API access, Workbench usage, and Claude Code. Failed requests are not charged, and you will only be billed for successful API calls and completed tasks.
+
+You can track credit usage in your [Claude Console settings on the Billing page](https://platform.claude.com/settings/billing). If you run out of credits, you will no longer be able to call the API or use Workbench. You can choose to set up an auto-reload that purchases additional credits when your balance falls below a set limit.
+
+To add usage credits and adjust your auto-reload settings, navigate to your Billing page. Click on the “Buy credits” button, and enter in the amount of credits you would like to purchase. After you’ve purchased your credits, they will be immediately available to you.
+
+You can also view your organization's available credit balance in your [Claude Console settings on the Billing page](https://platform.claude.com/settings/billing).
+
+To adjust your auto-reload options, click on “Edit” in the auto-reload section. You can toggle auto-reload on or off here. If choosing to use auto-reload, you can set the minimum account balance, and the amount to reload to if your account reaches that minimum balance.
+
+Please note that purchased credits are subject to our [Credit Terms](https://www.anthropic.com/legal/credit-terms). Credits expire one year from the purchase date, and this expiration date cannot be extended. All credit purchases are non-refundable.
+
+Learn more about credit usage and how it relates to usage limits in our [Claude Docs](https://docs.claude.com/en/api/rate-limits).
+
+## How to update your Console payment method
+
+1.  Log in to your Console account with an Admin or Billing role.
+
+2.  Navigate to [Settings \> Billing](https://platform.claude.com/settings/billing).
+
+3.  Click the pencil icon next to your current payment method to update your card information.
+
+4.  Enter your new card details in the **Update payment method** modal, then click "Update."
+
+------------------------------------------------------------------------
+
+Related Articles
+
+[](https://support.claude.com/en/articles/8114531-i-created-a-claude-console-organization-how-do-i-start-using-the-claude-api)
+
+I created a Claude Console organization - how do I start using the Claude API?
+
+[](https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions)
+
+Claude Console Roles and Permissions
+
+[](https://support.claude.com/en/articles/10366389-how-can-i-advance-my-claude-api-usage-to-tier-2)
+
+How can I advance my Claude API usage to Tier 2?
+
+[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
+
+Using Claude Code with your Pro or Max plan
+
+[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
+
+Extra usage for paid Claude plans
+
+Did this answer your question?
+
+😞
+
+😐
+
+😃
+
+[](/en/)
+
+- [Product](https://www.anthropic.com/product)
+- [Research](https://www.anthropic.com/research)
+- [Company](https://www.anthropic.com/company)
+- [News](https://www.anthropic.com/news)
+- [Careers](https://www.anthropic.com/careers)
+
+- [Terms of Service - Consumer](https://www.anthropic.com/terms)
+- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Privacy Policy](https://www.anthropic.com/privacy)
+- [Usage Policy](https://www.anthropic.com/aup)
+- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Compliance](https://trust.anthropic.com/)

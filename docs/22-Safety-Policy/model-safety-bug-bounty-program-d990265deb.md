@@ -1,0 +1,88 @@
+---
+category: "22-Safety-Policy"
+source_url: "https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program"
+---
+
+
+Purpose
+
+We believe external testing is crucial for building a safe AI ecosystem. As model capabilities advance, the consequences of jailbreaks could become increasingly significant. This ongoing Program builds on our successful previous bug bounty initiatives with several key objectives:
+
+Identify universal jailbreaks in our deployed systems with ASL-3 protections
+
+Provide continuous assessment of our safeguards' effectiveness
+
+Test our monitoring systems' ability to detect vulnerabilities
+
+Incentivize the user of one central legitimate channel for reporting publicly available jailbreaks
+
+Program Overview
+
+Our Model Safety Bug Bounty Program is run through HackerOne. Through this Program, we are interested in finding universal jailbreaks that surpass our Constitutional Classifiers system. We also occasionally run targeted programs within our overall Program to test the robustness of classifiers we hope to launch in the future.
+
+ 
+
+A universal jailbreak is a generalized technique that reliably elicits policy-violating responses from a language model, regardless of the input prompt. Unlike narrow jailbreaks, which depend on the specifics of a particular question or context, universal jailbreaks work across a wide range of prompts and scenarios.
+
+ 
+
+This is an ongoing Program. Once accepted to the Program on HackerOne, participants can submit jailbreak reports at any time through this Program. To help with your red-teaming efforts, we provide access to a free model alias that reflects the model and classifiers live on our latest, most advanced model. Your use of this free model alias must be limited to performing authorized red-teaming activities.
+
+ 
+
+Program Scope
+
+This Program is primarily interested in discovering jailbreaks that are universal, in that they can reveal harmful information across a wide range of queries, and detailed, in that they reveal highly specific harmful information related to biological threats.
+
+ 
+
+To emphasize, we are interested in jailbreaks that extract information that answers a set of harmful biological questions that we share with accepted participants in the Program.
+
+ 
+
+We will pay up to $35,000 per novel, universal jailbreak identified. We are only interested in jailbreaks that reveal substantial amounts of harmful information based on our sole criteria and discretion. We award bounties using a sliding scale based on an internal grading rubric which determines how detailed and accurate responses are.
+
+ 
+
+This program is scoped to jailbreaks on our Constitutional Classifiers. For technical vulnerabilities that potentially exist on our Information Systems such as misconfigurations, CSRFs or cross site request forgeries, privilege escalation attacks, SQL Injection, XSS, and directory traversal attacks, please refer to our Responsible Disclosure Policy and submit your report here.
+
+ 
+
+How to Apply 
+
+You can apply to join our Program here. We review applications on a rolling basis. If accepted, you will receive an invite via HackerOne. IIf you do not already have a HackerOne account, please create one before applying to the Program so we can invite you directly on the platform. You must use your @wearehackerone.com email alias to create a Claude Console account.
+
+ 
+
+Disclosure Guidelines & Confidentiality Obligations
+
+All Program participants are required to sign a non-disclosure agreement to protect Program confidentiality as a condition for joining. You may publicly disclose:
+
+The existence of Anthropic's Model Safety Bug Bounty Program.
+
+Your participation as a selected participant in the Program.
+
+You may not disclose without express permission:
+
+Any jailbreaks/vulnerabilities (even resolved ones) outside of the Program without express consent from Anthropic.
+
+The testing question set.
+
+Details about the classifiers and safety mitigations.
+
+Information about the models being tested.
+
+Identity of other participants.
+
+Any other information related to the Program, except as expressly permitted above.
+
+Anthropic’s Use of Data from the Program 
+
+Participant agrees that all data submitted to Anthropic, including its products and services, in connection with this Program may be used, stored, shared, and/or published by Anthropic indefinitely in furtherance of its safety research, model development, and related purposes without further obligation to Participant.
+
+Related Articles
+Reporting, Blocking, and Removing Content from Claude
+What is the External Researcher Access Program?
+Reporting, Blocking, and Removing Content from Claude
+Anthropic's AI for Science Program
+Public Vulnerability Reporting
