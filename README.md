@@ -40,40 +40,10 @@ git clone https://github.com/johnzfitch/claude-wiki.git
 cd claude-wiki
 
 # Search across all docs
-grep -r "prompt engineering" docs/
+grep -r "prompt engineering" .
 ```
 
-All documents are Markdown with YAML front matter containing source URL and metadata.
-
-## Structure
-
-```
-docs/
-├── 01-Getting-Started/
-├── 02-Claude-Code-CLI/
-├── 03-IDE-Integrations/
-├── 04-API-Reference/
-├── 05-Agent-SDK/
-├── 06-MCP-Tools/
-├── 07-Hooks/
-├── 08-Plugins-Skills/
-├── 09-Agents-Patterns/
-├── 10-Prompting-Guides/
-├── 11-RAG-Search/
-├── 12-Eval-Testing/
-├── 13-Enterprise-Admin/
-├── 14-Connectors/
-├── 15-Claude-AI-Features/
-├── 16-Mobile-Desktop/
-├── 17-Billing-Plans/
-├── 19-Reference/
-├── 20-Models/
-├── 21-Account-Support/
-├── 22-Safety-Policy/
-├── 23-General-FAQ/
-├── 24-Model-Context-Protocol/
-└── 99-Other/
-```
+All documents are Markdown with YAML front matter containing source URL and metadata. Category folders sit at the repository root for easy browsing.
 
 ## Updates
 
