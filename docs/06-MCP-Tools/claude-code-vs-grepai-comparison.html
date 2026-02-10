@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code vs grepai Comparison</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-orange: #d29922;
+            --accent-red: #f85149;
+            --accent-purple: #a371f7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tool-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .tool-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .tool-card.claude h3 { color: var(--accent-orange); }
+        .tool-card.grepai h3 { color: var(--accent-green); }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .badge.built-in {
+            background: var(--accent-orange);
+            color: var(--bg-primary);
+        }
+
+        .badge.semantic {
+            background: var(--accent-green);
+            color: var(--bg-primary);
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .icon.check { color: var(--accent-green); }
+        .icon.x { color: var(--accent-red); }
+        .icon.partial { color: var(--accent-orange); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--bg-tertiary);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--bg-tertiary);
+        }
+
+        .feature-name {
+            font-weight: 500;
+        }
+
+        .yes {
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        .no {
+            color: var(--text-secondary);
+        }
+
+        .partial {
+            color: var(--accent-orange);
+        }
+
+        .verdict-box {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border: 2px solid var(--accent-green);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .verdict-box h3 {
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .verdict-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .verdict-section h4 {
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .verdict-section ul {
+            list-style: disc;
+            margin-left: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .verdict-section li {
+            margin-bottom: 0.3rem;
+        }
+
+        .workflow-diagram {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .workflow-diagram pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .arrow { color: var(--accent-blue); }
+        .component { color: var(--accent-green); }
+        .data { color: var(--accent-orange); }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-card {
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Claude Code Built-in Tools vs grepai</h1>
+        <p class="subtitle">Comprehensive comparison of search and code intelligence capabilities</p>
+
+        <!-- Tool Overview Cards -->
+        <section class="section">
+            <h2>Tool Overview</h2>
+            <div class="comparison-grid">
+                <div class="tool-card claude">
+                    <h3>Claude Code Built-in <span class="badge built-in">15 Tools</span></h3>
+                    <ul class="feature-list">
+                        <li><span class="icon check">&#10003;</span> Native integration, zero setup</li>
+                        <li><span class="icon check">&#10003;</span> File operations (Read/Edit/Write)</li>
+                        <li><span class="icon check">&#10003;</span> Text/regex search (Grep)</li>
+                        <li><span class="icon check">&#10003;</span> File pattern matching (Glob)</li>
+                        <li><span class="icon check">&#10003;</span> Shell command execution</li>
+                        <li><span class="icon check">&#10003;</span> Task agent for complex work</li>
+                        <li><span class="icon check">&#10003;</span> Web fetch and search</li>
+                        <li><span class="icon x">&#10007;</span> No semantic search</li>
+                        <li><span class="icon x">&#10007;</span> No call graph analysis</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card grepai">
+                    <h3>grepai <span class="badge semantic">Semantic</span></h3>
+                    <ul class="feature-list">
+                        <li><span class="icon check">&#10003;</span> Natural language code search</li>
+                        <li><span class="icon check">&#10003;</span> Vector embeddings (meaning-based)</li>
+                        <li><span class="icon check">&#10003;</span> Call graph tracing (12+ languages)</li>
+                        <li><span class="icon check">&#10003;</span> Hybrid search (vector + text RRF)</li>
+                        <li><span class="icon check">&#10003;</span> Real-time incremental indexing</li>
+                        <li><span class="icon check">&#10003;</span> MCP server for AI integration</li>
+                        <li><span class="icon check">&#10003;</span> Privacy-first (local Ollama)</li>
+                        <li><span class="icon x">&#10007;</span> Requires initial indexing</li>
+                        <li><span class="icon x">&#10007;</span> No file modification</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Comparison Table -->
+        <section class="section">
+            <h2>Feature Comparison Matrix</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Claude Code</th>
+                        <th>grepai</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Search Type</td>
+                        <td class="partial">Text/Regex</td>
+                        <td class="yes">Semantic + Hybrid</td>
+                        <td>grepai understands meaning, not just patterns</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Query Language</td>
+                        <td class="no">Regex patterns</td>
+                        <td class="yes">Natural language</td>
+                        <td>"user auth flow" vs "authenticate|login"</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Index Required</td>
+                        <td class="yes">No</td>
+                        <td class="no">Yes</td>
+                        <td>Claude Code works instantly; grepai needs setup</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Real-time Updates</td>
+                        <td class="no">N/A</td>
+                        <td class="yes">Filesystem watcher</td>
+                        <td>grepai daemon auto-indexes changes</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Call Graph Analysis</td>
+                        <td class="no">No</td>
+                        <td class="yes">12+ languages</td>
+                        <td>Find callers/callees of any function</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">File Operations</td>
+                        <td class="yes">Full (R/E/W)</td>
+                        <td class="no">None</td>
+                        <td>Use Claude Code for all file modifications</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Shell Commands</td>
+                        <td class="yes">Bash tool</td>
+                        <td class="no">None</td>
+                        <td>Claude Code handles all system operations</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">AI Agent Output</td>
+                        <td class="partial">Standard</td>
+                        <td class="yes">JSON/Compact</td>
+                        <td>grepai saves ~80% tokens with --compact</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">MCP Server</td>
+                        <td class="no">N/A</td>
+                        <td class="yes">Native</td>
+                        <td>grepai integrates natively with AI tools</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Privacy (Local)</td>
+                        <td class="yes">Yes</td>
+                        <td class="yes">Ollama/LMStudio</td>
+                        <td>Both support fully local operation</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Multi-Project Search</td>
+                        <td class="no">No</td>
+                        <td class="yes">Workspaces</td>
+                        <td>grepai supports cross-project queries</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Storage Backends</td>
+                        <td class="no">N/A</td>
+                        <td class="yes">GOB/Postgres/Qdrant</td>
+                        <td>Scales from local to enterprise</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Architecture Diagrams -->
+        <section class="section">
+            <h2>Architecture Comparison</h2>
+            <div class="comparison-grid">
+                <div class="workflow-diagram">
+                    <h4 style="color: var(--accent-orange); margin-bottom: 1rem;">Claude Code Grep Flow</h4>
+<pre>
+<span class="data">[Query: "function.*auth"]</span>
+         <span class="arrow">|</span>
+         <span class="arrow">v</span>
+<span class="component">[ripgrep engine]</span>
+         <span class="arrow">|</span>
+    <span class="arrow">regex match</span>
+         <span class="arrow">|</span>
+         <span class="arrow">v</span>
+<span class="data">[Matching lines]</span>
+</pre>
+                </div>
+
+                <div class="workflow-diagram">
+                    <h4 style="color: var(--accent-green); margin-bottom: 1rem;">grepai Semantic Flow</h4>
+<pre>
+<span class="data">[Query: "authentication flow"]</span>
+         <span class="arrow">|</span>
+         <span class="arrow">v</span>
+<span class="component">[Embedder]</span> <span class="arrow">-></span> <span class="data">[768-1536 dim vector]</span>
+         <span class="arrow">|</span>
+         <span class="arrow">v</span>
+<span class="component">[VectorStore.Search]</span>
+         <span class="arrow">|</span>
+    <span class="arrow">cosine similarity</span>
+         <span class="arrow">|</span>
+         <span class="arrow">v</span>
+<span class="component">[Hybrid RRF + Boost]</span>
+         <span class="arrow">|</span>
+         <span class="arrow">v</span>
+<span class="data">[Ranked semantic results]</span>
+</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="section">
+            <h2>By the Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">15</div>
+                    <div class="stat-label">Claude Code Tools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12+</div>
+                    <div class="stat-label">grepai Trace Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Embedding Providers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Storage Backends</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">80%</div>
+                    <div class="stat-label">Token Savings (Compact)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">60+</div>
+                    <div class="stat-label">File Extensions</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verdict -->
+        <section class="section">
+            <div class="verdict-box">
+                <h3>Verdict: Complementary Tools</h3>
+                <div class="verdict-content">
+                    <div class="verdict-section">
+                        <h4>grepai is More Future-Forward for:</h4>
+                        <ul>
+                            <li>Semantic code understanding</li>
+                            <li>Natural language queries</li>
+                            <li>Call graph analysis</li>
+                            <li>AI-native workflows (MCP, JSON)</li>
+                            <li>Enterprise scalability</li>
+                            <li>Cross-project search</li>
+                        </ul>
+                    </div>
+                    <div class="verdict-section">
+                        <h4>Claude Code Remains Essential for:</h4>
+                        <ul>
+                            <li>All file modifications</li>
+                            <li>Exact text/regex matching</li>
+                            <li>Zero-setup simplicity</li>
+                            <li>Shell command execution</li>
+                            <li>Web fetch/search</li>
+                            <li>Task orchestration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Workflow -->
+        <section class="section">
+            <h2>Recommended Integration</h2>
+            <div class="workflow-diagram">
+<pre>
+<span class="component">1. Explore</span>     <span class="arrow">-></span> grepai search "natural language query"
+<span class="component">2. Trace</span>       <span class="arrow">-></span> grepai trace callers "FunctionName"
+<span class="component">3. Exact match</span> <span class="arrow">-></span> Claude Code Grep (regex patterns)
+<span class="component">4. Read</span>        <span class="arrow">-></span> Claude Code Read tool
+<span class="component">5. Modify</span>      <span class="arrow">-></span> Claude Code Edit/Write tools
+<span class="component">6. Execute</span>     <span class="arrow">-></span> Claude Code Bash tool
+</pre>
+            </div>
+        </section>
+
+        <footer>
+            <p>Generated: 2026-02-05 | Source: cc-reference.txt (vtrivedy.com) + grepai codebase analysis</p>
+        </footer>
+    </div>
+</body>
+</html>

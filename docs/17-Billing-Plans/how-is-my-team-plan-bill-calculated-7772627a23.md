@@ -1,0 +1,87 @@
+---
+category: "17-Billing-Plans"
+source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
+---
+
+
+Prices shown are for US customers and exclude applicable taxes. Pricing, currency, and tax handling vary by region. Visit claude.ai/upgrade to see current pricing for your location.
+
+ 
+
+For current pricing by seat type and billing interval, see What is the Team plan?
+
+ 
+
+For information on seat types and what's included, see Purchasing and managing seats on Team plans.
+
+ 
+
+ 
+
+How does adding or removing members affect my bill?
+
+Adding members or upgrading seats: You will be charged the prorated amount immediately.
+
+ 
+
+Removing members: You will not receive an immediate credit or refund. The seat becomes available to assign to another member.
+
+ 
+
+For instructions to add and remove members, see Managing members on Team and Enterprise plans.
+
+ 
+
+ 
+
+Extra usage
+
+If extra usage is enabled, your bill may include charges for usage beyond seat limits. See this article for more information: Extra usage for Team and seat-based Enterprise plans.
+
+ 
+
+ 
+
+Billing examples
+Annual plan example
+
+On January 1 (the start date of your annual subscription), your annual plan has 10 standard seats. The amount charged would be $2,400 ($20 × 10 seats × 12 months) due on January 1st.
+
+ 
+
+On April 1st, you decide to upgrade five of the existing standard seats to premium seats. Since there are 275 days remaining in your subscription year, the prorated cost for the seat upgrades would be: ($80 × 5 seats × 12 months) × (275 days ÷ 365 days in the year) = $3,616.44. Your payment method will be charged $3,616.44 on April 1st for the seat upgrades for the remainder of the subscription year.
+
+ 
+
+If you remove members during your subscription year, their seats will become available to assign to other team members.
+
+ 
+
+Taxes are not included in this example.
+
+ 
+
+Monthly plan example
+
+On January 1 (the first day of your billing cycle), your Team plan has 10 standard seats. The amount charged would be $250 ($25 × 10 seats) due on January 1st.
+
+ 
+
+On January 15th, you decide to upgrade five standard seats to premium seats. Since there are 16 days remaining in January, the prorated cost for the seat upgrades would be: ($100 × 5 seats × 16 days) ÷ 31 days in January = $258.06. Your payment method will be charged $258.06 on January 15th for the seat upgrades in January.
+
+ 
+
+You will be charged for the number of members on your team at the beginning of each billing cycle. If you remove members in the middle of a billing cycle, their seats will become available to assign to other team members.
+
+ 
+
+Taxes are not included in this example.
+
+Note: The "Projected total" displayed on your organization’s Billing page is not inclusive of taxes.
+
+Related Articles
+What is the Team plan?
+How do I cancel my organization’s Team plan subscription?
+How am I billed for my Enterprise plan?
+Purchasing and managing seats on Team plans
+Team Plan Billing FAQs
