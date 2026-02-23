@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:15Z"
+fetched_at: "2026-02-22T13:19:12Z"
 source_url: "https://platform.claude.com/docs/en/api/rate-limits"
 title: "Rate limits - Claude API Docs"
 ---
@@ -11,29 +11,29 @@ Support & configuration
 
 Copy page
 
-To mitigate misuse and manage capacity on our API, we have implemented limits on how much an organization can use the Claude API.
+To mitigate misuse and manage capacity on the API, limits are in place on how much an organization can use the Claude API.
 
 Copy page
 
-We have two types of limits:
+There are two types of limits:
 
 1.  **Spend limits** set a maximum monthly cost an organization can incur for API usage.
 2.  **Rate limits** set the maximum number of API requests an organization can make over a defined period of time.
 
-We enforce service-configured limits at the organization level, but you may also set user-configurable limits for your organization's workspaces.
+The API enforces service-configured limits at the organization level, but you may also set user-configurable limits for your organization's workspaces.
 
 These limits apply to both Standard and Priority Tier usage. For more information about Priority Tier, which offers enhanced service levels in exchange for committed spend, see [Service Tiers](/docs/en/api/service-tiers).
 
 ## 
 
-About our limits
+About rate limits
 
 - Limits are designed to prevent API abuse, while minimizing impact on common customer usage patterns.
 - Limits are defined by **usage tier**, where each tier is associated with a different set of spend and rate limits.
 - Your organization will increase tiers automatically as you reach certain thresholds while using the API. Limits are set at the organization level. You can see your organization's limits in the [Limits page](/settings/limits) in the [Claude Console](/).
 - You may hit rate limits over shorter time intervals. For instance, a rate of 60 requests per minute (RPM) may be enforced as 1 request per second. Short bursts of requests at a high volume can surpass the rate limit and result in rate limit errors.
-- The limits outlined below are our standard tier limits. If you're seeking higher, custom limits or Priority Tier for enhanced service levels, contact sales through the [Claude Console](/settings/limits).
-- We use the [token bucket algorithm](https://en.wikipedia.org/wiki/Token_bucket) to do rate limiting. This means that your capacity is continuously replenished up to your maximum limit, rather than being reset at fixed intervals.
+- The limits outlined below are the standard tier limits. If you're seeking higher, custom limits or Priority Tier for enhanced service levels, contact sales through the [Claude Console](/settings/limits).
+- The API uses the [token bucket algorithm](https://en.wikipedia.org/wiki/Token_bucket) to do rate limiting. This means that your capacity is continuously replenished up to your maximum limit, rather than being reset at fixed intervals.
 - All limits described here represent maximum allowed usage, not guaranteed minimums. These limits are intended to reduce unintentional overspend and ensure fair distribution of resources among users.
 
 ## 
@@ -64,7 +64,7 @@ Requirements to advance tier
 
 Rate limits
 
-Our rate limits for the Messages API are measured in requests per minute (RPM), input tokens per minute (ITPM), and output tokens per minute (OTPM) for each model class. If you exceed any of the rate limits you will get a [429 error](/docs/en/api/errors) describing which rate limit was exceeded, along with a `retry-after` header indicating how long to wait.
+The rate limits for the Messages API are measured in requests per minute (RPM), input tokens per minute (ITPM), and output tokens per minute (OTPM) for each model class. If you exceed any of the rate limits you will get a [429 error](/docs/en/api/errors) describing which rate limit was exceeded, along with a `retry-after` header indicating how long to wait.
 
 You might also encounter 429 errors due to acceleration limits on the API if your organization has a sharp increase in usage. To avoid hitting acceleration limits, ramp up your traffic gradually and maintain consistent usage patterns.
 
@@ -72,7 +72,7 @@ You might also encounter 429 errors due to acceleration limits on the API if you
 
 Cache-aware ITPM
 
-Many API providers use a combined "tokens per minute" (TPM) limit that may include all tokens, both cached and uncached, input and output. **For most Claude models, only uncached input tokens count towards your ITPM rate limits.** This is a key advantage that makes our rate limits effectively higher than they might initially appear.
+Many API providers use a combined "tokens per minute" (TPM) limit that may include all tokens, both cached and uncached, input and output. **For most Claude models, only uncached input tokens count towards your ITPM rate limits.** This is a key advantage that makes the rate limits effectively higher than they might initially appear.
 
 ITPM rate limits are estimated at the beginning of each request, and the estimate is adjusted during the request to reflect the actual number of input tokens used.
 
@@ -107,9 +107,9 @@ To get the most out of your rate limits, use [prompt caching](/docs/en/build-wit
 - Tool definitions
 - Conversation history
 
-With effective caching, you can dramatically increase your actual throughput without increasing your rate limits. Monitor your cache hit rate on the [Usage page](/settings/usage) to optimize your caching strategy.
+With effective caching, you can dramatically increase your actual throughput without increasing your rate limits. Monitor your cache hit rate on the [Usage page](/usage) to optimize your caching strategy.
 
-OTPM rate limits are estimated based on `max_tokens` at the beginning of each request, and the estimate is adjusted at the end of the request to reflect the actual number of output tokens used. If you're hitting OTPM limits earlier than expected, try reducing `max_tokens` to better approximate the size of your completions.
+OTPM rate limits are evaluated in real time as output tokens are produced, counting only the actual tokens generated. The `max_tokens` parameter does not factor into OTPM rate limit calculations, so there is no rate limit downside to setting a higher `max_tokens` value.
 
 Rate limits are applied separately for each model; therefore you can use different models up to their respective limits simultaneously. You can check your current rate limits and behavior in the [Claude Console](/settings/limits).
 
@@ -148,7 +148,7 @@ Custom
 
 *^(\* - Opus rate limit is a total limit that applies to combined traffic across Opus 4.6, Opus 4.5, Opus 4.1, and Opus 4.)*
 
-*^(\*\* - Sonnet 4.x rate limit is a total limit that applies to combined traffic across Sonnet 4.5 and Sonnet 4.)*
+*^(\*\* - Sonnet 4.x rate limit is a total limit that applies to combined traffic across Sonnet 4.6, Sonnet 4.5, and Sonnet 4.)*
 
 *^(† - Limit counts `cache_read_input_tokens` towards ITPM usage.)*
 
@@ -184,11 +184,19 @@ Custom
 
 ### 
 
+Fast mode rate limits
+
+When using [fast mode](/docs/en/build-with-claude/fast-mode) (`speed: "fast"`) on Opus 4.6 (research preview), dedicated rate limits apply that are separate from standard Opus rate limits. When fast mode rate limits are exceeded, the API returns a `429` error with a `retry-after` header.
+
+The response includes `anthropic-fast-*` headers that indicate your fast mode rate limit status. See the [fast mode documentation](/docs/en/build-with-claude/fast-mode#rate-limits) for details on these headers.
+
+### 
+
 Long context rate limits
 
-When using Claude Opus 4.6, Sonnet 4.5, or Sonnet 4 with the [1M token context window enabled](/docs/en/build-with-claude/context-windows#1m-token-context-window), the following dedicated rate limits apply to requests exceeding 200K tokens.
+When using Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, or Sonnet 4 with the [1M token context window enabled](/docs/en/build-with-claude/context-windows#1m-token-context-window), the following dedicated rate limits apply to requests exceeding 200K tokens.
 
-The 1M token context window is currently in beta for organizations in usage tier 4 and organizations with custom rate limits. The 1M token context window is only available for Claude Opus 4.6, Sonnet 4.5, and Sonnet 4.
+The 1M token context window is currently in beta for organizations in usage tier 4 and organizations with custom rate limits. The 1M token context window is only available for Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, and Sonnet 4.
 
 Tier 4
 
@@ -208,7 +216,7 @@ To get the most out of the 1M token context window with rate limits, use [prompt
 
 Monitoring your rate limits in the Console
 
-You can monitor your rate limit usage on the [Usage](/settings/usage) page of the [Claude Console](/).
+You can monitor your rate limit usage on the [Usage](/usage) page of the [Claude Console](/).
 
 In addition to providing token and request charts, the Usage page provides two separate rate limit charts. Use these charts to see what headroom you have to grow, when you may be hitting peak use, better undersand what rate limits to request, or how you can improve your caching rates. The charts visualize a number of metrics for a given rate limit (e.g. per model):
 
@@ -273,7 +281,7 @@ Was this page helpful?
 
 - 
 
-- [About our limits](#about-our-limits)
+- [About rate limits](#about-rate-limits)
 
 - [Spend limits](#spend-limits)
 
@@ -284,6 +292,8 @@ Was this page helpful?
 - [Cache-aware ITPM](#cache-aware-itpm)
 
 - [Message Batches API](#message-batches-api)
+
+- [Fast mode rate limits](#fast-mode-rate-limits)
 
 - [Long context rate limits](#long-context-rate-limits)
 

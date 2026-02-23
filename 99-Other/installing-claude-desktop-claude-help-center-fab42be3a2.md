@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:16Z"
+fetched_at: "2026-02-16T21:12:32Z"
 source_url: "https://support.claude.com/en/articles/10065433-installing-claude-desktop"
 title: "Installing Claude Desktop | Claude Help Center"
 ---
@@ -63,7 +63,7 @@ The Claude desktop apps bring Claude's capabilities directly to your computer, a
 
 ## Installation Steps
 
-1.  Visit the [Claude downloads page](http://claude.ai/download).
+1.  Visit the **[Claude downloads page](http://claude.ai/download)**.
 
 2.  Select the appropriate version for your operating system:
 
@@ -81,7 +81,7 @@ Once the download is completed:
 
 ------------------------------------------------------------------------
 
-## Desktop Extensions
+## Desktop extensions
 
 Desktop extensions transform how you connect Claude to your desktop applications and data. Similar to browser extensions, these secure, installable packages let you:
 
@@ -93,15 +93,15 @@ Desktop extensions transform how you connect Claude to your desktop applications
 
 To explore desktop extensions, navigate to Settings \> Extensions within the Claude Desktop app after installation.
 
-**Note:** We’re building a directory of desktop extensions – if you’re a developer hoping to add an extension you built to the directory, complete our [desktop extensions interest form](https://docs.google.com/forms/d/14_Dmcig4z8NeRMB_e7TOyrKzuZ88-BLYdLvS6LPhiZU/viewform?edit_requested=true) to share more information with us.
+**Note:** We’re building a directory of desktop extensions – if you’re a developer hoping to add an extension you built to the directory, complete our **[desktop extensions interest form](https://docs.google.com/forms/d/14_Dmcig4z8NeRMB_e7TOyrKzuZ88-BLYdLvS6LPhiZU/viewform?edit_requested=true)** to share more information with us.
 
-Read more about desktop extensions in our [Getting Started with Local MCP Servers on Claude Desktop](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop) article.
+Read more about desktop extensions in our **[Getting Started with Local MCP Servers on Claude Desktop](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)** article.
 
 ------------------------------------------------------------------------
 
 ## Cowork
 
-Cowork is available as a research preview for all paid plans (Pro, Max, Team, Enterprise) using the Claude Desktop app on macOS.
+Cowork is available as a research preview for all paid plans (Pro, Max, Team, Enterprise) using the Claude Desktop app.
 
 Users on paid Claude plans can access Cowork in Claude Desktop. This research preview brings Claude Code's agentic capabilities to a visual interface, allowing you to hand off complex, multi-step tasks without using a terminal.
 
@@ -117,7 +117,7 @@ With Cowork, Claude can:
 
 Cowork runs in an isolated virtual machine on your computer for security, with controlled file and network access.
 
-To learn more, see [Getting Started with Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-local-agent-mode).
+To learn more, see **[Getting started with Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)**.
 
 ------------------------------------------------------------------------
 
@@ -131,9 +131,9 @@ Getting Started with Local MCP Servers on Claude Desktop
 
 Deploy Claude Desktop for macOS
 
-[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
+[](https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows)
 
-Building Desktop Extensions with MCPB
+Deploy Claude Desktop for Windows
 
 [](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
 

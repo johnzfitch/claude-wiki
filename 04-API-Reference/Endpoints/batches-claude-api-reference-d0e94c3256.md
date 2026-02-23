@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:47Z"
+fetched_at: "2026-02-22T14:03:27Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches"
 title: "Batches - Claude API Reference"
 ---
@@ -15,37 +15,37 @@ Ruby
 
 beta.messages.batches.create(\*\*kwargs) -\> [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/beta/messages/batches/retrieve)
 
 beta.messages.batches.retrieve(message_batch_id, \*\*kwargs) -\> [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/beta/messages/batches/list)
 
 beta.messages.batches.list(\*\*kwargs) -\> Page\<[BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more } \>
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/beta/messages/batches/cancel)
 
 beta.messages.batches.cancel(message_batch_id, \*\*kwargs) -\> [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/beta/messages/batches/delete)
 
 beta.messages.batches.delete(message_batch_id, \*\*kwargs) -\> [BetaDeletedMessageBatch](/docs/en/api/beta#beta_deleted_message_batch) { id, type }
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/beta/messages/batches/results)
 
 beta.messages.batches.results(message_batch_id, \*\*kwargs) -\> [BetaMessageBatchIndividualResponse](/docs/en/api/beta#beta_message_batch_individual_response) { custom_id, result }
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -61,10 +61,6 @@ Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
 
-Accepts one of the following:
-
-:message_batch_deleted
-
 class BetaMessageBatch { id, archived_at, cancel_initiated_at, 7 more }
 
 id: String
@@ -77,19 +73,13 @@ archived_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: Time
 
@@ -102,8 +92,6 @@ formatdate-time
 expires_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: :in_progress \| :canceling \| :ended
 
@@ -163,17 +151,9 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-:message_batch
-
 class BetaMessageBatchCanceledResult { type }
 
 type: :canceled
-
-Accepts one of the following:
-
-:canceled
 
 class BetaMessageBatchErroredResult { error, type }
 
@@ -189,19 +169,11 @@ message: String
 
 type: :invalid_request_error
 
-Accepts one of the following:
-
-:invalid_request_error
-
 class BetaAuthenticationError { message, type }
 
 message: String
 
 type: :authentication_error
-
-Accepts one of the following:
-
-:authentication_error
 
 class BetaBillingError { message, type }
 
@@ -209,19 +181,11 @@ message: String
 
 type: :billing_error
 
-Accepts one of the following:
-
-:billing_error
-
 class BetaPermissionError { message, type }
 
 message: String
 
 type: :permission_error
-
-Accepts one of the following:
-
-:permission_error
 
 class BetaNotFoundError { message, type }
 
@@ -229,19 +193,11 @@ message: String
 
 type: :not_found_error
 
-Accepts one of the following:
-
-:not_found_error
-
 class BetaRateLimitError { message, type }
 
 message: String
 
 type: :rate_limit_error
-
-Accepts one of the following:
-
-:rate_limit_error
 
 class BetaGatewayTimeoutError { message, type }
 
@@ -249,19 +205,11 @@ message: String
 
 type: :timeout_error
 
-Accepts one of the following:
-
-:timeout_error
-
 class BetaAPIError { message, type }
 
 message: String
 
 type: :api_error
-
-Accepts one of the following:
-
-:api_error
 
 class BetaOverloadedError { message, type }
 
@@ -269,31 +217,15 @@ message: String
 
 type: :overloaded_error
 
-Accepts one of the following:
-
-:overloaded_error
-
 request_id: String
 
 type: :error
 
-Accepts one of the following:
-
-:error
-
 type: :errored
-
-Accepts one of the following:
-
-:errored
 
 class BetaMessageBatchExpiredResult { type }
 
 type: :expired
-
-Accepts one of the following:
-
-:expired
 
 class BetaMessageBatchIndividualResponse { custom_id, result }
 
@@ -335,8 +267,6 @@ expires_at: Time
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\[[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \]
 
 Skills loaded in the container
@@ -344,10 +274,6 @@ Skills loaded in the container
 skill_id: String
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: :anthropic \| :custom
 
@@ -362,10 +288,6 @@ Accepts one of the following:
 version: String
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\[[BetaContentBlock](/docs/en/api/beta#beta_content_block)\]
 
@@ -424,10 +346,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -443,10 +361,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -464,10 +378,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -477,10 +387,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -500,17 +406,9 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 class BetaThinkingBlock { signature, thinking, type }
 
@@ -520,19 +418,11 @@ thinking: String
 
 type: :thinking
 
-Accepts one of the following:
-
-:thinking
-
 class BetaRedactedThinkingBlock { data, type }
 
 data: String
 
 type: :redacted_thinking
-
-Accepts one of the following:
-
-:redacted_thinking
 
 class BetaToolUseBlock { id, input, name, 2 more }
 
@@ -544,11 +434,7 @@ name: String
 
 type: :tool_use
 
-Accepts one of the following:
-
-:tool_use
-
-caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -560,10 +446,6 @@ Tool invocation directly from the model.
 
 type: :direct
 
-Accepts one of the following:
-
-:direct
-
 class BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -572,9 +454,11 @@ tool_id: String
 
 type: :code_execution_20250825
 
-Accepts one of the following:
+class BetaServerToolCaller20260120 { tool_id, type }
 
-:code_execution_20250825
+tool_id: String
+
+type: :code_execution_20260120
 
 class BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -602,11 +486,7 @@ Accepts one of the following:
 
 type: :server_tool_use
 
-Accepts one of the following:
-
-:server_tool_use
-
-caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -618,10 +498,6 @@ Tool invocation directly from the model.
 
 type: :direct
 
-Accepts one of the following:
-
-:direct
-
 class BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -630,11 +506,13 @@ tool_id: String
 
 type: :code_execution_20250825
 
-Accepts one of the following:
+class BetaServerToolCaller20260120 { tool_id, type }
 
-:code_execution_20250825
+tool_id: String
 
-class BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: :code_execution_20260120
+
+class BetaWebSearchToolResultBlock { content, tool_use_id, type, caller\_ }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -660,10 +538,6 @@ Accepts one of the following:
 
 type: :web_search_tool_result_error
 
-Accepts one of the following:
-
-:web_search_tool_result_error
-
 Array\[[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \]
 
 encrypted_content: String
@@ -674,21 +548,39 @@ title: String
 
 type: :web_search_result
 
-Accepts one of the following:
-
-:web_search_result
-
 url: String
 
 tool_use_id: String
 
 type: :web_search_tool_result
 
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_search_tool_result
+class BetaDirectCaller { type }
 
-class BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: :direct
+
+class BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
+class BetaWebFetchToolResultBlock { content, tool_use_id, type, caller\_ }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -718,10 +610,6 @@ Accepts one of the following:
 
 type: :web_fetch_tool_result_error
 
-Accepts one of the following:
-
-:web_fetch_tool_result_error
-
 class BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -742,15 +630,7 @@ data: String
 
 media_type: :"application/pdf"
 
-Accepts one of the following:
-
-:"application/pdf"
-
 type: :base64
-
-Accepts one of the following:
-
-:base64
 
 class BetaPlainTextSource { data, media_type, type }
 
@@ -758,15 +638,7 @@ data: String
 
 media_type: :"text/plain"
 
-Accepts one of the following:
-
-:"text/plain"
-
 type: :text
-
-Accepts one of the following:
-
-:text
 
 title: String
 
@@ -774,19 +646,11 @@ The title of the document
 
 type: :document
 
-Accepts one of the following:
-
-:document
-
 retrieved_at: String
 
 ISO 8601 timestamp when the content was retrieved
 
 type: :web_fetch_result
-
-Accepts one of the following:
-
-:web_fetch_result
 
 url: String
 
@@ -796,13 +660,37 @@ tool_use_id: String
 
 type: :web_fetch_tool_result
 
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_fetch_tool_result
+class BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 class BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -822,10 +710,6 @@ Accepts one of the following:
 
 type: :code_execution_tool_result_error
 
-Accepts one of the following:
-
-:code_execution_tool_result_error
-
 class BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \]
@@ -833,10 +717,6 @@ content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: String
 
 type: :code_execution_output
-
-Accepts one of the following:
-
-:code_execution_output
 
 return_code: Integer
 
@@ -846,17 +726,27 @@ stdout: String
 
 type: :code_execution_result
 
-Accepts one of the following:
+class BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-:code_execution_result
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+encrypted_stdout: String
+
+return_code: Integer
+
+stderr: String
+
+type: :encrypted_code_execution_result
 
 tool_use_id: String
 
 type: :code_execution_tool_result
-
-Accepts one of the following:
-
-:code_execution_tool_result
 
 class BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -882,10 +772,6 @@ Accepts one of the following:
 
 type: :bash_code_execution_tool_result_error
 
-Accepts one of the following:
-
-:bash_code_execution_tool_result_error
-
 class BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\[[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \]
@@ -893,10 +779,6 @@ content: Array\[[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: String
 
 type: :bash_code_execution_output
-
-Accepts one of the following:
-
-:bash_code_execution_output
 
 return_code: Integer
 
@@ -906,17 +788,9 @@ stdout: String
 
 type: :bash_code_execution_result
 
-Accepts one of the following:
-
-:bash_code_execution_result
-
 tool_use_id: String
 
 type: :bash_code_execution_tool_result
-
-Accepts one of the following:
-
-:bash_code_execution_tool_result
 
 class BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -944,10 +818,6 @@ error_message: String
 
 type: :text_editor_code_execution_tool_result_error
 
-Accepts one of the following:
-
-:text_editor_code_execution_tool_result_error
-
 class BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: String
@@ -970,19 +840,11 @@ total_lines: Integer
 
 type: :text_editor_code_execution_view_result
 
-Accepts one of the following:
-
-:text_editor_code_execution_view_result
-
 class BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: bool
 
 type: :text_editor_code_execution_create_result
-
-Accepts one of the following:
-
-:text_editor_code_execution_create_result
 
 class BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -998,17 +860,9 @@ old_start: Integer
 
 type: :text_editor_code_execution_str_replace_result
 
-Accepts one of the following:
-
-:text_editor_code_execution_str_replace_result
-
 tool_use_id: String
 
 type: :text_editor_code_execution_tool_result
-
-Accepts one of the following:
-
-:text_editor_code_execution_tool_result
 
 class BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -1034,10 +888,6 @@ error_message: String
 
 type: :tool_search_tool_result_error
 
-Accepts one of the following:
-
-:tool_search_tool_result_error
-
 class BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\[[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \]
@@ -1046,23 +896,11 @@ tool_name: String
 
 type: :tool_reference
 
-Accepts one of the following:
-
-:tool_reference
-
 type: :tool_search_tool_search_result
-
-Accepts one of the following:
-
-:tool_search_tool_search_result
 
 tool_use_id: String
 
 type: :tool_search_tool_result
-
-Accepts one of the following:
-
-:tool_search_tool_result
 
 class BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -1079,10 +917,6 @@ server_name: String
 The name of the MCP server
 
 type: :mcp_tool_use
-
-Accepts one of the following:
-
-:mcp_tool_use
 
 class BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -1118,10 +952,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -1137,10 +967,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -1158,10 +984,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -1171,10 +993,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -1194,27 +1012,15 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 is_error: bool
 
 tool_use_id: String
 
 type: :mcp_tool_result
-
-Accepts one of the following:
-
-:mcp_tool_result
 
 class BetaContainerUploadBlock { file_id, type }
 
@@ -1223,10 +1029,6 @@ Response model for a file uploaded to the container.
 file_id: String
 
 type: :container_upload
-
-Accepts one of the following:
-
-:container_upload
 
 class BetaCompactionBlock { content, type }
 
@@ -1239,10 +1041,6 @@ content: String
 Summary of compacted content, or null if compaction failed
 
 type: :compaction
-
-Accepts one of the following:
-
-:compaction
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits }
 
@@ -1262,21 +1060,13 @@ cleared_input_tokens: Integer
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: Integer
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: :clear_tool_uses_20250919
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-:clear_tool_uses_20250919
 
 class BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -1284,21 +1074,13 @@ cleared_input_tokens: Integer
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: Integer
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: :clear_thinking_20251015
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-:clear_thinking_20251015
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -1308,7 +1090,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-:"claude-opus-4-6" \| :"claude-opus-4-5-20251101" \| :"claude-opus-4-5" \| 18 more
+:"claude-opus-4-6" \| :"claude-sonnet-4-6" \| :"claude-opus-4-5-20251101" \| 19 more
 
 The model that will complete your prompt.
 
@@ -1319,6 +1101,10 @@ Accepts one of the following:
 :"claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+:"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 :"claude-opus-4-5-20251101"
 
@@ -1408,10 +1194,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-:assistant
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason)
 
 The reason that we stopped.
@@ -1457,11 +1239,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-:message
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -1481,25 +1259,17 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: String
 
@@ -1509,9 +1279,7 @@ input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\[[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \]
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) { , }
 
 Per-iteration token usage breakdown.
 
@@ -1535,45 +1303,29 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
 
-minimum0
-
 type: :message
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-:message
 
 class BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -1587,51 +1339,33 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
-
-minimum0
 
 type: :compaction
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-:compaction
-
 output_tokens: Integer
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests }
 
@@ -1641,13 +1375,9 @@ web_fetch_requests: Integer
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: Integer
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: :standard \| :priority \| :batch
 
@@ -1661,11 +1391,17 @@ Accepts one of the following:
 
 :batch
 
-type: :succeeded
+speed: :standard \| :fast
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-:succeeded
+:standard
+
+:fast
+
+type: :succeeded
 
 class BetaMessageBatchErroredResult { error, type }
 
@@ -1681,19 +1417,11 @@ message: String
 
 type: :invalid_request_error
 
-Accepts one of the following:
-
-:invalid_request_error
-
 class BetaAuthenticationError { message, type }
 
 message: String
 
 type: :authentication_error
-
-Accepts one of the following:
-
-:authentication_error
 
 class BetaBillingError { message, type }
 
@@ -1701,19 +1429,11 @@ message: String
 
 type: :billing_error
 
-Accepts one of the following:
-
-:billing_error
-
 class BetaPermissionError { message, type }
 
 message: String
 
 type: :permission_error
-
-Accepts one of the following:
-
-:permission_error
 
 class BetaNotFoundError { message, type }
 
@@ -1721,19 +1441,11 @@ message: String
 
 type: :not_found_error
 
-Accepts one of the following:
-
-:not_found_error
-
 class BetaRateLimitError { message, type }
 
 message: String
 
 type: :rate_limit_error
-
-Accepts one of the following:
-
-:rate_limit_error
 
 class BetaGatewayTimeoutError { message, type }
 
@@ -1741,19 +1453,11 @@ message: String
 
 type: :timeout_error
 
-Accepts one of the following:
-
-:timeout_error
-
 class BetaAPIError { message, type }
 
 message: String
 
 type: :api_error
-
-Accepts one of the following:
-
-:api_error
 
 class BetaOverloadedError { message, type }
 
@@ -1761,39 +1465,19 @@ message: String
 
 type: :overloaded_error
 
-Accepts one of the following:
-
-:overloaded_error
-
 request_id: String
 
 type: :error
 
-Accepts one of the following:
-
-:error
-
 type: :errored
-
-Accepts one of the following:
-
-:errored
 
 class BetaMessageBatchCanceledResult { type }
 
 type: :canceled
 
-Accepts one of the following:
-
-:canceled
-
 class BetaMessageBatchExpiredResult { type }
 
 type: :expired
-
-Accepts one of the following:
-
-:expired
 
 class BetaMessageBatchRequestCounts { canceled, errored, expired, 2 more }
 
@@ -1855,8 +1539,6 @@ expires_at: Time
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\[[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \]
 
 Skills loaded in the container
@@ -1864,10 +1546,6 @@ Skills loaded in the container
 skill_id: String
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: :anthropic \| :custom
 
@@ -1882,10 +1560,6 @@ Accepts one of the following:
 version: String
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\[[BetaContentBlock](/docs/en/api/beta#beta_content_block)\]
 
@@ -1944,10 +1618,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -1963,10 +1633,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -1984,10 +1650,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -1997,10 +1659,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -2020,17 +1678,9 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 class BetaThinkingBlock { signature, thinking, type }
 
@@ -2040,19 +1690,11 @@ thinking: String
 
 type: :thinking
 
-Accepts one of the following:
-
-:thinking
-
 class BetaRedactedThinkingBlock { data, type }
 
 data: String
 
 type: :redacted_thinking
-
-Accepts one of the following:
-
-:redacted_thinking
 
 class BetaToolUseBlock { id, input, name, 2 more }
 
@@ -2064,11 +1706,7 @@ name: String
 
 type: :tool_use
 
-Accepts one of the following:
-
-:tool_use
-
-caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -2080,10 +1718,6 @@ Tool invocation directly from the model.
 
 type: :direct
 
-Accepts one of the following:
-
-:direct
-
 class BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -2092,9 +1726,11 @@ tool_id: String
 
 type: :code_execution_20250825
 
-Accepts one of the following:
+class BetaServerToolCaller20260120 { tool_id, type }
 
-:code_execution_20250825
+tool_id: String
+
+type: :code_execution_20260120
 
 class BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -2122,11 +1758,7 @@ Accepts one of the following:
 
 type: :server_tool_use
 
-Accepts one of the following:
-
-:server_tool_use
-
-caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -2138,10 +1770,6 @@ Tool invocation directly from the model.
 
 type: :direct
 
-Accepts one of the following:
-
-:direct
-
 class BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -2150,11 +1778,13 @@ tool_id: String
 
 type: :code_execution_20250825
 
-Accepts one of the following:
+class BetaServerToolCaller20260120 { tool_id, type }
 
-:code_execution_20250825
+tool_id: String
 
-class BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: :code_execution_20260120
+
+class BetaWebSearchToolResultBlock { content, tool_use_id, type, caller\_ }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -2180,10 +1810,6 @@ Accepts one of the following:
 
 type: :web_search_tool_result_error
 
-Accepts one of the following:
-
-:web_search_tool_result_error
-
 Array\[[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \]
 
 encrypted_content: String
@@ -2194,21 +1820,39 @@ title: String
 
 type: :web_search_result
 
-Accepts one of the following:
-
-:web_search_result
-
 url: String
 
 tool_use_id: String
 
 type: :web_search_tool_result
 
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_search_tool_result
+class BetaDirectCaller { type }
 
-class BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: :direct
+
+class BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
+class BetaWebFetchToolResultBlock { content, tool_use_id, type, caller\_ }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -2238,10 +1882,6 @@ Accepts one of the following:
 
 type: :web_fetch_tool_result_error
 
-Accepts one of the following:
-
-:web_fetch_tool_result_error
-
 class BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -2262,15 +1902,7 @@ data: String
 
 media_type: :"application/pdf"
 
-Accepts one of the following:
-
-:"application/pdf"
-
 type: :base64
-
-Accepts one of the following:
-
-:base64
 
 class BetaPlainTextSource { data, media_type, type }
 
@@ -2278,15 +1910,7 @@ data: String
 
 media_type: :"text/plain"
 
-Accepts one of the following:
-
-:"text/plain"
-
 type: :text
-
-Accepts one of the following:
-
-:text
 
 title: String
 
@@ -2294,19 +1918,11 @@ The title of the document
 
 type: :document
 
-Accepts one of the following:
-
-:document
-
 retrieved_at: String
 
 ISO 8601 timestamp when the content was retrieved
 
 type: :web_fetch_result
-
-Accepts one of the following:
-
-:web_fetch_result
 
 url: String
 
@@ -2316,13 +1932,37 @@ tool_use_id: String
 
 type: :web_fetch_tool_result
 
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_fetch_tool_result
+class BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 class BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -2342,10 +1982,6 @@ Accepts one of the following:
 
 type: :code_execution_tool_result_error
 
-Accepts one of the following:
-
-:code_execution_tool_result_error
-
 class BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \]
@@ -2353,10 +1989,6 @@ content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: String
 
 type: :code_execution_output
-
-Accepts one of the following:
-
-:code_execution_output
 
 return_code: Integer
 
@@ -2366,17 +1998,27 @@ stdout: String
 
 type: :code_execution_result
 
-Accepts one of the following:
+class BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-:code_execution_result
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+encrypted_stdout: String
+
+return_code: Integer
+
+stderr: String
+
+type: :encrypted_code_execution_result
 
 tool_use_id: String
 
 type: :code_execution_tool_result
-
-Accepts one of the following:
-
-:code_execution_tool_result
 
 class BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -2402,10 +2044,6 @@ Accepts one of the following:
 
 type: :bash_code_execution_tool_result_error
 
-Accepts one of the following:
-
-:bash_code_execution_tool_result_error
-
 class BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\[[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \]
@@ -2413,10 +2051,6 @@ content: Array\[[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: String
 
 type: :bash_code_execution_output
-
-Accepts one of the following:
-
-:bash_code_execution_output
 
 return_code: Integer
 
@@ -2426,17 +2060,9 @@ stdout: String
 
 type: :bash_code_execution_result
 
-Accepts one of the following:
-
-:bash_code_execution_result
-
 tool_use_id: String
 
 type: :bash_code_execution_tool_result
-
-Accepts one of the following:
-
-:bash_code_execution_tool_result
 
 class BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -2464,10 +2090,6 @@ error_message: String
 
 type: :text_editor_code_execution_tool_result_error
 
-Accepts one of the following:
-
-:text_editor_code_execution_tool_result_error
-
 class BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: String
@@ -2490,19 +2112,11 @@ total_lines: Integer
 
 type: :text_editor_code_execution_view_result
 
-Accepts one of the following:
-
-:text_editor_code_execution_view_result
-
 class BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: bool
 
 type: :text_editor_code_execution_create_result
-
-Accepts one of the following:
-
-:text_editor_code_execution_create_result
 
 class BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -2518,17 +2132,9 @@ old_start: Integer
 
 type: :text_editor_code_execution_str_replace_result
 
-Accepts one of the following:
-
-:text_editor_code_execution_str_replace_result
-
 tool_use_id: String
 
 type: :text_editor_code_execution_tool_result
-
-Accepts one of the following:
-
-:text_editor_code_execution_tool_result
 
 class BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -2554,10 +2160,6 @@ error_message: String
 
 type: :tool_search_tool_result_error
 
-Accepts one of the following:
-
-:tool_search_tool_result_error
-
 class BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\[[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \]
@@ -2566,23 +2168,11 @@ tool_name: String
 
 type: :tool_reference
 
-Accepts one of the following:
-
-:tool_reference
-
 type: :tool_search_tool_search_result
-
-Accepts one of the following:
-
-:tool_search_tool_search_result
 
 tool_use_id: String
 
 type: :tool_search_tool_result
-
-Accepts one of the following:
-
-:tool_search_tool_result
 
 class BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -2599,10 +2189,6 @@ server_name: String
 The name of the MCP server
 
 type: :mcp_tool_use
-
-Accepts one of the following:
-
-:mcp_tool_use
 
 class BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -2638,10 +2224,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -2657,10 +2239,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -2678,10 +2256,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -2691,10 +2265,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -2714,27 +2284,15 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 is_error: bool
 
 tool_use_id: String
 
 type: :mcp_tool_result
-
-Accepts one of the following:
-
-:mcp_tool_result
 
 class BetaContainerUploadBlock { file_id, type }
 
@@ -2743,10 +2301,6 @@ Response model for a file uploaded to the container.
 file_id: String
 
 type: :container_upload
-
-Accepts one of the following:
-
-:container_upload
 
 class BetaCompactionBlock { content, type }
 
@@ -2759,10 +2313,6 @@ content: String
 Summary of compacted content, or null if compaction failed
 
 type: :compaction
-
-Accepts one of the following:
-
-:compaction
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits }
 
@@ -2782,21 +2332,13 @@ cleared_input_tokens: Integer
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: Integer
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: :clear_tool_uses_20250919
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-:clear_tool_uses_20250919
 
 class BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -2804,21 +2346,13 @@ cleared_input_tokens: Integer
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: Integer
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: :clear_thinking_20251015
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-:clear_thinking_20251015
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -2828,7 +2362,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-:"claude-opus-4-6" \| :"claude-opus-4-5-20251101" \| :"claude-opus-4-5" \| 18 more
+:"claude-opus-4-6" \| :"claude-sonnet-4-6" \| :"claude-opus-4-5-20251101" \| 19 more
 
 The model that will complete your prompt.
 
@@ -2839,6 +2373,10 @@ Accepts one of the following:
 :"claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+:"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 :"claude-opus-4-5-20251101"
 
@@ -2928,10 +2466,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-:assistant
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason)
 
 The reason that we stopped.
@@ -2977,11 +2511,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-:message
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -3001,25 +2531,17 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: String
 
@@ -3029,9 +2551,7 @@ input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\[[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \]
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) { , }
 
 Per-iteration token usage breakdown.
 
@@ -3055,45 +2575,29 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
 
-minimum0
-
 type: :message
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-:message
 
 class BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -3107,51 +2611,33 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
-
-minimum0
 
 type: :compaction
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-:compaction
-
 output_tokens: Integer
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests }
 
@@ -3161,13 +2647,9 @@ web_fetch_requests: Integer
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: Integer
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: :standard \| :priority \| :batch
 
@@ -3181,11 +2663,17 @@ Accepts one of the following:
 
 :batch
 
-type: :succeeded
+speed: :standard \| :fast
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-:succeeded
+:standard
+
+:fast
+
+type: :succeeded
 
 class BetaMessageBatchErroredResult { error, type }
 
@@ -3201,19 +2689,11 @@ message: String
 
 type: :invalid_request_error
 
-Accepts one of the following:
-
-:invalid_request_error
-
 class BetaAuthenticationError { message, type }
 
 message: String
 
 type: :authentication_error
-
-Accepts one of the following:
-
-:authentication_error
 
 class BetaBillingError { message, type }
 
@@ -3221,19 +2701,11 @@ message: String
 
 type: :billing_error
 
-Accepts one of the following:
-
-:billing_error
-
 class BetaPermissionError { message, type }
 
 message: String
 
 type: :permission_error
-
-Accepts one of the following:
-
-:permission_error
 
 class BetaNotFoundError { message, type }
 
@@ -3241,19 +2713,11 @@ message: String
 
 type: :not_found_error
 
-Accepts one of the following:
-
-:not_found_error
-
 class BetaRateLimitError { message, type }
 
 message: String
 
 type: :rate_limit_error
-
-Accepts one of the following:
-
-:rate_limit_error
 
 class BetaGatewayTimeoutError { message, type }
 
@@ -3261,19 +2725,11 @@ message: String
 
 type: :timeout_error
 
-Accepts one of the following:
-
-:timeout_error
-
 class BetaAPIError { message, type }
 
 message: String
 
 type: :api_error
-
-Accepts one of the following:
-
-:api_error
 
 class BetaOverloadedError { message, type }
 
@@ -3281,39 +2737,19 @@ message: String
 
 type: :overloaded_error
 
-Accepts one of the following:
-
-:overloaded_error
-
 request_id: String
 
 type: :error
 
-Accepts one of the following:
-
-:error
-
 type: :errored
-
-Accepts one of the following:
-
-:errored
 
 class BetaMessageBatchCanceledResult { type }
 
 type: :canceled
 
-Accepts one of the following:
-
-:canceled
-
 class BetaMessageBatchExpiredResult { type }
 
 type: :expired
-
-Accepts one of the following:
-
-:expired
 
 class BetaMessageBatchSucceededResult { message, type }
 
@@ -3337,8 +2773,6 @@ expires_at: Time
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\[[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \]
 
 Skills loaded in the container
@@ -3346,10 +2780,6 @@ Skills loaded in the container
 skill_id: String
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: :anthropic \| :custom
 
@@ -3364,10 +2794,6 @@ Accepts one of the following:
 version: String
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\[[BetaContentBlock](/docs/en/api/beta#beta_content_block)\]
 
@@ -3426,10 +2852,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -3445,10 +2867,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -3466,10 +2884,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -3479,10 +2893,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -3502,17 +2912,9 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 class BetaThinkingBlock { signature, thinking, type }
 
@@ -3522,19 +2924,11 @@ thinking: String
 
 type: :thinking
 
-Accepts one of the following:
-
-:thinking
-
 class BetaRedactedThinkingBlock { data, type }
 
 data: String
 
 type: :redacted_thinking
-
-Accepts one of the following:
-
-:redacted_thinking
 
 class BetaToolUseBlock { id, input, name, 2 more }
 
@@ -3546,11 +2940,7 @@ name: String
 
 type: :tool_use
 
-Accepts one of the following:
-
-:tool_use
-
-caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -3562,10 +2952,6 @@ Tool invocation directly from the model.
 
 type: :direct
 
-Accepts one of the following:
-
-:direct
-
 class BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -3574,9 +2960,11 @@ tool_id: String
 
 type: :code_execution_20250825
 
-Accepts one of the following:
+class BetaServerToolCaller20260120 { tool_id, type }
 
-:code_execution_20250825
+tool_id: String
+
+type: :code_execution_20260120
 
 class BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -3604,11 +2992,7 @@ Accepts one of the following:
 
 type: :server_tool_use
 
-Accepts one of the following:
-
-:server_tool_use
-
-caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -3620,10 +3004,6 @@ Tool invocation directly from the model.
 
 type: :direct
 
-Accepts one of the following:
-
-:direct
-
 class BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -3632,11 +3012,13 @@ tool_id: String
 
 type: :code_execution_20250825
 
-Accepts one of the following:
+class BetaServerToolCaller20260120 { tool_id, type }
 
-:code_execution_20250825
+tool_id: String
 
-class BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: :code_execution_20260120
+
+class BetaWebSearchToolResultBlock { content, tool_use_id, type, caller\_ }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -3662,10 +3044,6 @@ Accepts one of the following:
 
 type: :web_search_tool_result_error
 
-Accepts one of the following:
-
-:web_search_tool_result_error
-
 Array\[[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \]
 
 encrypted_content: String
@@ -3676,21 +3054,39 @@ title: String
 
 type: :web_search_result
 
-Accepts one of the following:
-
-:web_search_result
-
 url: String
 
 tool_use_id: String
 
 type: :web_search_tool_result
 
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_search_tool_result
+class BetaDirectCaller { type }
 
-class BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: :direct
+
+class BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
+class BetaWebFetchToolResultBlock { content, tool_use_id, type, caller\_ }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -3720,10 +3116,6 @@ Accepts one of the following:
 
 type: :web_fetch_tool_result_error
 
-Accepts one of the following:
-
-:web_fetch_tool_result_error
-
 class BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -3744,15 +3136,7 @@ data: String
 
 media_type: :"application/pdf"
 
-Accepts one of the following:
-
-:"application/pdf"
-
 type: :base64
-
-Accepts one of the following:
-
-:base64
 
 class BetaPlainTextSource { data, media_type, type }
 
@@ -3760,15 +3144,7 @@ data: String
 
 media_type: :"text/plain"
 
-Accepts one of the following:
-
-:"text/plain"
-
 type: :text
-
-Accepts one of the following:
-
-:text
 
 title: String
 
@@ -3776,19 +3152,11 @@ The title of the document
 
 type: :document
 
-Accepts one of the following:
-
-:document
-
 retrieved_at: String
 
 ISO 8601 timestamp when the content was retrieved
 
 type: :web_fetch_result
-
-Accepts one of the following:
-
-:web_fetch_result
 
 url: String
 
@@ -3798,13 +3166,37 @@ tool_use_id: String
 
 type: :web_fetch_tool_result
 
+caller\_: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_fetch_tool_result
+class BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 class BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -3824,10 +3216,6 @@ Accepts one of the following:
 
 type: :code_execution_tool_result_error
 
-Accepts one of the following:
-
-:code_execution_tool_result_error
-
 class BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \]
@@ -3835,10 +3223,6 @@ content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: String
 
 type: :code_execution_output
-
-Accepts one of the following:
-
-:code_execution_output
 
 return_code: Integer
 
@@ -3848,17 +3232,27 @@ stdout: String
 
 type: :code_execution_result
 
-Accepts one of the following:
+class BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-:code_execution_result
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\[[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+encrypted_stdout: String
+
+return_code: Integer
+
+stderr: String
+
+type: :encrypted_code_execution_result
 
 tool_use_id: String
 
 type: :code_execution_tool_result
-
-Accepts one of the following:
-
-:code_execution_tool_result
 
 class BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -3884,10 +3278,6 @@ Accepts one of the following:
 
 type: :bash_code_execution_tool_result_error
 
-Accepts one of the following:
-
-:bash_code_execution_tool_result_error
-
 class BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\[[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \]
@@ -3895,10 +3285,6 @@ content: Array\[[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: String
 
 type: :bash_code_execution_output
-
-Accepts one of the following:
-
-:bash_code_execution_output
 
 return_code: Integer
 
@@ -3908,17 +3294,9 @@ stdout: String
 
 type: :bash_code_execution_result
 
-Accepts one of the following:
-
-:bash_code_execution_result
-
 tool_use_id: String
 
 type: :bash_code_execution_tool_result
-
-Accepts one of the following:
-
-:bash_code_execution_tool_result
 
 class BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -3946,10 +3324,6 @@ error_message: String
 
 type: :text_editor_code_execution_tool_result_error
 
-Accepts one of the following:
-
-:text_editor_code_execution_tool_result_error
-
 class BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: String
@@ -3972,19 +3346,11 @@ total_lines: Integer
 
 type: :text_editor_code_execution_view_result
 
-Accepts one of the following:
-
-:text_editor_code_execution_view_result
-
 class BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: bool
 
 type: :text_editor_code_execution_create_result
-
-Accepts one of the following:
-
-:text_editor_code_execution_create_result
 
 class BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -4000,17 +3366,9 @@ old_start: Integer
 
 type: :text_editor_code_execution_str_replace_result
 
-Accepts one of the following:
-
-:text_editor_code_execution_str_replace_result
-
 tool_use_id: String
 
 type: :text_editor_code_execution_tool_result
-
-Accepts one of the following:
-
-:text_editor_code_execution_tool_result
 
 class BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -4036,10 +3394,6 @@ error_message: String
 
 type: :tool_search_tool_result_error
 
-Accepts one of the following:
-
-:tool_search_tool_result_error
-
 class BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\[[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \]
@@ -4048,23 +3402,11 @@ tool_name: String
 
 type: :tool_reference
 
-Accepts one of the following:
-
-:tool_reference
-
 type: :tool_search_tool_search_result
-
-Accepts one of the following:
-
-:tool_search_tool_search_result
 
 tool_use_id: String
 
 type: :tool_search_tool_result
-
-Accepts one of the following:
-
-:tool_search_tool_result
 
 class BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -4081,10 +3423,6 @@ server_name: String
 The name of the MCP server
 
 type: :mcp_tool_use
-
-Accepts one of the following:
-
-:mcp_tool_use
 
 class BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -4120,10 +3458,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -4139,10 +3473,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -4160,10 +3490,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -4173,10 +3499,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -4196,27 +3518,15 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 is_error: bool
 
 tool_use_id: String
 
 type: :mcp_tool_result
-
-Accepts one of the following:
-
-:mcp_tool_result
 
 class BetaContainerUploadBlock { file_id, type }
 
@@ -4225,10 +3535,6 @@ Response model for a file uploaded to the container.
 file_id: String
 
 type: :container_upload
-
-Accepts one of the following:
-
-:container_upload
 
 class BetaCompactionBlock { content, type }
 
@@ -4241,10 +3547,6 @@ content: String
 Summary of compacted content, or null if compaction failed
 
 type: :compaction
-
-Accepts one of the following:
-
-:compaction
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits }
 
@@ -4264,21 +3566,13 @@ cleared_input_tokens: Integer
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: Integer
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: :clear_tool_uses_20250919
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-:clear_tool_uses_20250919
 
 class BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -4286,21 +3580,13 @@ cleared_input_tokens: Integer
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: Integer
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: :clear_thinking_20251015
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-:clear_thinking_20251015
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -4310,7 +3596,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-:"claude-opus-4-6" \| :"claude-opus-4-5-20251101" \| :"claude-opus-4-5" \| 18 more
+:"claude-opus-4-6" \| :"claude-sonnet-4-6" \| :"claude-opus-4-5-20251101" \| 19 more
 
 The model that will complete your prompt.
 
@@ -4321,6 +3607,10 @@ Accepts one of the following:
 :"claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+:"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 :"claude-opus-4-5-20251101"
 
@@ -4410,10 +3700,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-:assistant
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason)
 
 The reason that we stopped.
@@ -4459,11 +3745,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-:message
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -4483,25 +3765,17 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: String
 
@@ -4511,9 +3785,7 @@ input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\[[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \]
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) { , }
 
 Per-iteration token usage breakdown.
 
@@ -4537,45 +3809,29 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
 
-minimum0
-
 type: :message
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-:message
 
 class BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -4589,51 +3845,33 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
-
-minimum0
 
 type: :compaction
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-:compaction
-
 output_tokens: Integer
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests }
 
@@ -4643,13 +3881,9 @@ web_fetch_requests: Integer
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: Integer
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: :standard \| :priority \| :batch
 
@@ -4663,11 +3897,17 @@ Accepts one of the following:
 
 :batch
 
-type: :succeeded
+speed: :standard \| :fast
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-:succeeded
+:standard
+
+:fast
+
+type: :succeeded
 
 [](/docs)
 

@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:09:16Z"
+fetched_at: "2026-02-22T13:51:38Z"
 source_url: "https://platform.claude.com/docs/en/api/kotlin/beta/models"
 title: "API Reference - Claude API Docs"
 ---

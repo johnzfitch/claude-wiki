@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:23Z"
+fetched_at: "2026-02-22T13:10:49Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling"
 title: "Programmatic tool calling - Claude API Docs"
 ---
 
-Tools
+Tool infrastructure
 
 # Programmatic tool calling
 
@@ -15,13 +15,9 @@ Copy page
 
 Programmatic tool calling allows Claude to write code that calls your tools programmatically within a [code execution](/docs/en/agents-and-tools/tool-use/code-execution-tool) container, rather than requiring round trips through the model for each tool invocation. This reduces latency for multi-tool workflows and decreases token consumption by allowing Claude to filter or process data before it reaches the model's context window.
 
-Programmatic tool calling is currently in public beta.
-
-To use this feature, add the `"advanced-tool-use-2025-11-20"` [beta header](/docs/en/api/beta-headers) to your API requests.
-
 This feature requires the code execution tool to be enabled.
 
-Please reach out through our [feedback form](https://forms.gle/MVGTnrHe73HpMiho8) to share your feedback on this feature.
+This feature is **not** covered by [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) arrangements. Data is retained according to the feature's standard retention policy.
 
 ## 
 
@@ -31,9 +27,10 @@ Programmatic tool calling is available on the following models:
 
 | Model | Tool Version |
 |----|----|
-| Claude Opus 4.6 (`claude-opus-4-6`) | `code_execution_20250825` |
-| Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`) | `code_execution_20250825` |
-| Claude Opus 4.5 (`claude-opus-4-5-20251101`) | `code_execution_20250825` |
+| Claude Opus 4.6 (`claude-opus-4-6`) | `code_execution_20260120` |
+| Claude Sonnet 4.6 (`claude-sonnet-4-6`) | `code_execution_20260120` |
+| Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`) | `code_execution_20260120` |
+| Claude Opus 4.5 (`claude-opus-4-5-20251101`) | `code_execution_20260120` |
 
 Programmatic tool calling is available via the Claude API and Microsoft Foundry.
 
@@ -49,7 +46,6 @@ Shell
 curl https://api.anthropic.com/v1/messages \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
     --header "anthropic-version: 2023-06-01" \
-    --header "anthropic-beta: advanced-tool-use-2025-11-20" \
     --header "content-type: application/json" \
     --data '{
         "model": "claude-opus-4-6",
@@ -62,7 +58,7 @@ curl https://api.anthropic.com/v1/messages \
         ],
         "tools": [
             {
-                "type": "code_execution_20250825",
+                "type": "code_execution_20260120",
                 "name": "code_execution"
             },
             {
@@ -78,7 +74,7 @@ curl https://api.anthropic.com/v1/messages \
                     },
                     "required": ["sql"]
                 },
-                "allowed_callers": ["code_execution_20250825"]
+                "allowed_callers": ["code_execution_20260120"]
             }
         ]
     }'
@@ -121,17 +117,17 @@ The `allowed_callers` field specifies which contexts can invoke a tool:
   "name": "query_database",
   "description": "Execute a SQL query against the database",
   "input_schema": {...},
-  "allowed_callers": ["code_execution_20250825"]
+  "allowed_callers": ["code_execution_20260120"]
 }
 ```
 
 **Possible values:**
 
 - `["direct"]` - Only Claude can call this tool directly (default if omitted)
-- `["code_execution_20250825"]` - Only callable from within code execution
-- `["direct", "code_execution_20250825"]` - Callable both directly and from code execution
+- `["code_execution_20260120"]` - Only callable from within code execution
+- `["direct", "code_execution_20260120"]` - Callable both directly and from code execution
 
-We recommend choosing either `["direct"]` or `["code_execution_20250825"]` for each tool rather than enabling both, as this provides clearer guidance to Claude for how best to use the tool.
+Choose either `["direct"]` or `["code_execution_20260120"]` for each tool rather than enabling both, as this provides clearer guidance to Claude for how best to use the tool.
 
 ### 
 
@@ -160,7 +156,7 @@ Every tool use block includes a `caller` field indicating how it was invoked:
   "name": "query_database",
   "input": {"sql": "<sql>"},
   "caller": {
-    "type": "code_execution_20250825",
+    "type": "code_execution_20260120",
     "tool_id": "srvtoolu_abc123"
   }
 }
@@ -198,26 +194,24 @@ Provide detailed descriptions of your tool's output format in the tool descripti
 Python
 
 ``` shiki
-response = client.beta.messages.create(
+response = client.messages.create(
     model="claude-opus-4-6",
-    betas=["advanced-tool-use-2025-11-20"],
     max_tokens=4096,
-    messages=[{
-        "role": "user",
-        "content": "Query customer purchase history from the last quarter and identify our top 5 customers by revenue"
-    }],
-    tools=[
+    messages=[
         {
-            "type": "code_execution_20250825",
-            "name": "code_execution"
-        },
+            "role": "user",
+            "content": "Query customer purchase history from the last quarter and identify our top 5 customers by revenue",
+        }
+    ],
+    tools=[
+        {"type": "code_execution_20260120", "name": "code_execution"},
         {
             "name": "query_database",
             "description": "Execute a SQL query against the sales database. Returns a list of rows as JSON objects.",
             "input_schema": {...},
-            "allowed_callers": ["code_execution_20250825"]
-        }
-    ]
+            "allowed_callers": ["code_execution_20260120"],
+        },
+    ],
 )
 ```
 
@@ -249,7 +243,7 @@ Claude writes code that calls your tool. The API pauses and returns:
       "name": "query_database",
       "input": {"sql": "<sql>"},
       "caller": {
-        "type": "code_execution_20250825",
+        "type": "code_execution_20260120",
         "tool_id": "srvtoolu_abc123"
       }
     }
@@ -271,22 +265,27 @@ Include the full conversation history plus your tool result:
 Python
 
 ``` shiki
-response = client.beta.messages.create(
+response = client.messages.create(
     model="claude-opus-4-6",
-    betas=["advanced-tool-use-2025-11-20"],
     max_tokens=4096,
     container="container_xyz789",  # Reuse the container
     messages=[
-        {"role": "user", "content": "Query customer purchase history from the last quarter and identify our top 5 customers by revenue"},
+        {
+            "role": "user",
+            "content": "Query customer purchase history from the last quarter and identify our top 5 customers by revenue",
+        },
         {
             "role": "assistant",
             "content": [
-                {"type": "text", "text": "I'll query the purchase history and analyze the results."},
+                {
+                    "type": "text",
+                    "text": "I'll query the purchase history and analyze the results.",
+                },
                 {
                     "type": "server_tool_use",
                     "id": "srvtoolu_abc123",
                     "name": "code_execution",
-                    "input": {"code": "..."}
+                    "input": {"code": "..."},
                 },
                 {
                     "type": "tool_use",
@@ -294,11 +293,11 @@ response = client.beta.messages.create(
                     "name": "query_database",
                     "input": {"sql": "<sql>"},
                     "caller": {
-                        "type": "code_execution_20250825",
-                        "tool_id": "srvtoolu_abc123"
-                    }
-                }
-            ]
+                        "type": "code_execution_20260120",
+                        "tool_id": "srvtoolu_abc123",
+                    },
+                },
+            ],
         },
         {
             "role": "user",
@@ -306,12 +305,12 @@ response = client.beta.messages.create(
                 {
                     "type": "tool_result",
                     "tool_use_id": "toolu_def456",
-                    "content": "[{\"customer_id\": \"C1\", \"revenue\": 45000}, {\"customer_id\": \"C2\", \"revenue\": 38000}, ...]"
+                    "content": '[{"customer_id": "C1", "revenue": 45000}, {"customer_id": "C2", "revenue": 38000}, ...]',
                 }
-            ]
-        }
+            ],
+        },
     ],
-    tools=[...]
+    tools=[...],
 )
 ```
 
@@ -439,7 +438,7 @@ When code execution calls a tool:
   "name": "query_database",
   "input": {"sql": "<sql>"},
   "caller": {
-    "type": "code_execution_20250825",
+    "type": "code_execution_20260120",
     "tool_id": "srvtoolu_xyz789"
   }
 }
@@ -496,7 +495,7 @@ Common errors
 |----|----|----|
 | `invalid_tool_input` | Tool input doesn't match schema | Validate your tool's input_schema |
 | `tool_not_allowed` | Tool doesn't allow the requested caller type | Check `allowed_callers` includes the right contexts |
-| `missing_beta_header` | PTC beta header not provided | Add both beta headers to your request |
+| `missing_beta_header` | Required beta header not provided | Add the required beta headers to your request |
 
 ### 
 
@@ -535,7 +534,7 @@ If your tool returns an error:
 {
     "type": "tool_result",
     "tool_use_id": "toolu_abc123",
-    "content": "Error: Query timeout - table lock exceeded 30 seconds"
+    "content": "Error: Query timeout - table lock exceeded 30 seconds",
 }
 ```
 
@@ -559,8 +558,6 @@ Tool restrictions
 
 The following tools cannot currently be called programmatically, but support may be added in future releases:
 
-- Web search
-- Web fetch
 - Tools provided by an [MCP connector](/docs/en/agents-and-tools/mcp-connector)
 
 ### 
@@ -674,18 +671,13 @@ Common issues
 
 **"Tool not allowed" error**
 
-- Verify your tool definition includes `"allowed_callers": ["code_execution_20250825"]`
-- Check that you're using the correct beta headers
+- Verify your tool definition includes `"allowed_callers": ["code_execution_20260120"]`
 
 **Container expiration**
 
 - Ensure you respond to tool calls within the container's lifetime (~4.5 minutes)
 - Monitor the `expires_at` field in responses
 - Consider implementing faster tool execution
-
-**Beta header issues**
-
-- You need the header: `"advanced-tool-use-2025-11-20"`
 
 **Tool result not parsed correctly**
 
@@ -711,7 +703,7 @@ Claude's training includes extensive exposure to code, making it effective at re
 - **Process large results efficiently**: Filter down large tool outputs, extract only relevant data, or write intermediate results to files before returning summaries to the context window
 - **Reduce latency significantly**: Eliminate the overhead of re-sampling Claude between each tool call in multi-step workflows
 
-This approach enables workflows that would be impractical with traditional tool use—such as processing files over 1M tokens—by allowing Claude to work with data programmatically rather than loading everything into the conversation context.
+This approach enables workflows that would be impractical with traditional tool use (such as processing files over 1M tokens) by allowing Claude to work with data programmatically rather than loading everything into the conversation context.
 
 ## 
 
@@ -767,7 +759,7 @@ Anthropic's programmatic tool calling is a managed version of sandboxed executio
 - Easy to enable with minimal configuration
 - Environment and instructions optimized for Claude
 
-We recommend using Anthropic's managed solution if you're using the Claude API.
+Consider using Anthropic's managed solution if you're using the Claude API.
 
 ## 
 

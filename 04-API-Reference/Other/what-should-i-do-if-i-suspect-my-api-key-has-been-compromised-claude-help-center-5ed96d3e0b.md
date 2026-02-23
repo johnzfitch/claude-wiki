@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:52:08Z"
+fetched_at: "2026-02-13T09:23:40Z"
 source_url: "https://support.claude.com/en/articles/8384961-what-should-i-do-if-i-suspect-my-api-key-has-been-compromised"
 title: "What should I do if I suspect my API key has been compromised? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ What should I do if I suspect my API key has been compromised?
 
 # What should I do if I suspect my API key has been compromised?
 
-Updated yesterday
+Updated this week
 
 If you suspect that your API key may be compromised, we recommend revoking the key immediately. You can do so by logging into your Claude Console account, going to the [API keys page](https://platform.claude.com/settings/keys) from your profile, clicking the meatball menu (i.e. the three horizontal dots) next to the key in question, and selecting ‘Delete API Key.’
 

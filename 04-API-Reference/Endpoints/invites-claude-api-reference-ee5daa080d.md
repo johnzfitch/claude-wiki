@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:03Z"
+fetched_at: "2026-02-22T14:24:53Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/invites"
 title: "Invites - Claude API Reference"
 ---
@@ -11,19 +11,19 @@ Copy page
 
 ##### [Create Invite](/docs/en/api/admin/invites/create)
 
-post/v1/organizations/invites
+POST/v1/organizations/invites
 
 ##### [Get Invite](/docs/en/api/admin/invites/retrieve)
 
-get/v1/organizations/invites/{invite_id}
+GET/v1/organizations/invites/{invite_id}
 
 ##### [List Invites](/docs/en/api/admin/invites/list)
 
-get/v1/organizations/invites
+GET/v1/organizations/invites
 
 ##### [Delete Invite](/docs/en/api/admin/invites/delete)
 
-delete/v1/organizations/invites/{invite_id}
+DELETE/v1/organizations/invites/{invite_id}
 
 ##### ModelsExpand Collapse 
 
@@ -41,15 +41,11 @@ expires_at: string
 
 RFC 3339 datetime string indicating when the Invite expires.
 
-formatdate-time
-
 invited_at: string
 
 RFC 3339 datetime string indicating when the Invite was created.
 
-formatdate-time
-
-role: "user" or "developer" or "billing" or 2 more
+role: "user" or "developer" or "billing" or 3 more
 
 Organization role of the User.
 
@@ -64,6 +60,8 @@ Accepts one of the following:
 "admin"
 
 "claude_code_user"
+
+"managed"
 
 status: "accepted" or "expired" or "deleted" or "pending"
 
@@ -84,10 +82,6 @@ type: "invite"
 Object type.
 
 For Invites, this is always `"invite"`.
-
-Accepts one of the following:
-
-"invite"
 
 [](/docs)
 

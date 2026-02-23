@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-23T00:45:14Z"
 source_url: "https://support.claude.com/en/articles/8606378-how-do-i-use-the-workbench"
 title: "How do I use the Workbench? | Claude Help Center"
 ---
@@ -43,15 +43,15 @@ Table of contents
 
 The Workbench allows you to create and test prompts within your Claude Console account. You can enter your prompt into the "Human" dialogue box and click "Run" to test Claude's output. Click on the + icon in the upper left to create a new prompt, or click on the bulleted list icon to see prompts you've tested in the past:
 
-[](https://downloads.intercomcdn.com/i/o/888021849/31a22a0dc4d1fc4b605cc8ee/Screenshot+2023-11-19+at+4.21.51+PM.png?expires=1770722100&signature=e2d9e935a2cb1783a2eff7918cca26455140e91dd7592fc323cbc986d27b9477&req=fCgvFst%2FlYVWFb4f3HP0gKWudDwO0EdbOkmmaOsi7IBNzzs1h%2F%2BJIGU4AXls%0AnSI3z5lBauBj1vRYwQ%3D%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/888021849/31a22a0dc4d1fc4b605cc8ee/Screenshot+2023-11-19+at+4.21.51+PM.png?expires=1771809300&signature=fa64c5c638306881cc0e2d28034d6900fcd3d231079b0e3ed18eb32bd7d4f0af&req=fCgvFst%2FlYVWFb4f3HP0gKWudTMM20VbOkmmaOsi7IBARu5U4%2FHfNT6l%2FYR5%0ACzILS1pCmriUnMHKog%3D%3D%0A)
 
 The Workbench also allows you to configure several settings when prompting Claude. You can click on the slider icon to review your model settings. This allows you to select the model, temperature, and max tokens to sample:
 
-[](https://downloads.intercomcdn.com/i/o/888023061/61e26396355f6f6cd506d7e4/Screenshot+2023-11-19+at+4.09.28+PM.png?expires=1770722100&signature=54ef90ba7f198f1cbf2870fb61b6643cd5f294e805ac7ec7e5e03667babeb6bd&req=fCgvFst9nYdeFb4f3HP0gN52WdXSO4W3DUq7%2BRvcmSNPKKgs%2FKfOkDJEG%2BQF%0Aip98IMx5kVWxQTmwKA%3D%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/888023061/61e26396355f6f6cd506d7e4/Screenshot+2023-11-19+at+4.09.28+PM.png?expires=1771809300&signature=ba41761aefbd7f9414bebf1aea5da93038adbb2259a3fe5d0029f12080d104a8&req=fCgvFst9nYdeFb4f3HP0gN52WNrQMIe3DUq7%2BRvcmSNgyXFANurXkw%2B8OpHB%0AhUVniZVXrkYsT53h5A%3D%3D%0A)
 
 After crafting your prompt, click on the "Get code" button to generate a sample using our Python and Typescript SDKs:
 
-[](https://downloads.intercomcdn.com/i/o/888023545/b12afe07f16f079daff7587d/Screenshot+2023-11-19+at+4.28.27+PM.png?expires=1770722100&signature=e424243968bc6f26ba6f920bb293a1eb59a9a89dfb26c281ba6c976c8afa7fc7&req=fCgvFst9mIVaFb4f3HP0gEZctD%2Bc4OXrRWixPJbjiQfNPE3mrCnR%2FjwhsG39%0A2e046z%2B9998h9RuAaw%3D%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/888023545/b12afe07f16f079daff7587d/Screenshot+2023-11-19+at+4.28.27+PM.png?expires=1771809300&signature=89c34c922014e2520ea859eff43515c2463d3a8efe15212e126cb94ea9a3fd6d&req=fCgvFst9mIVaFb4f3HP0gEZctTCe6%2BfrRWixPJbjiQfhXYUFh99puHyyln4%2F%0AXN3ufOE6Ykz4%2BNv6QA%3D%3D%0A)
 
 ## How can I access my previous work and prompt history in Workbench?
 
@@ -63,7 +63,7 @@ You can access your previous Workbench prompts on your Console account by follow
 
 3\. Click the "List prompts" button on the upper left corner of the page, next to the "+" button to create a new prompt:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1945992985/45a8969fb6cec956bd44fb5c4ba7/CleanShot+2026-01-15+at+12_07_22%402x.png?expires=1770722100&signature=ebb898b0ef357a29487399868dd663fe8e66d8e3fa49d0ebfa5134e7a4280b4a&req=dSkjE8B3n4hXXPMW1HO4zQQ9v1EONXG5TyGSpkcb8MUoAYTYs7yQUcAN1B0k%0Ad%2FjjSBwa2xbBNS%2FPyFQ%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1945992985/45a8969fb6cec956bd44fb5c4ba7/CleanShot+2026-01-15+at+12_07_22%402x.png?expires=1771809300&signature=f712f0f060c20985487df24bdd109f8a6ef8d176d62a98c1da57802d7ab490a3&req=dSkjE8B3n4hXXPMW1HO4zQQ9v1ABN3q7TyGSpkcb8MXYzMaREcgnQ1jxdmnh%0AWyNpdK5szXHYKkZ7oK0%3D%0A)
 
 4\. A list of your previously-saved prompts will appear.
 
@@ -89,9 +89,9 @@ How do I pay for my Claude API usage?
 
 How to get support
 
-[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
+[](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
 
-Setting up single sign-on (SSO)
+Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 [](https://support.claude.com/en/articles/13162029-google-sheets-add-on)
 

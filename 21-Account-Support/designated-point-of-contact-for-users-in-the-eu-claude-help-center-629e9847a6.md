@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:21Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu"
 title: "Designated Point of Contact for Users in the EU | Claude Help Center"
 ---
@@ -63,9 +63,13 @@ Using S&P Global Data for Financial Analysis
 
 Financial Analysis Workflows with Claude
 
-[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
+[](https://support.claude.com/en/articles/12650343-use-claude-in-excel)
 
-Using Claude in Excel
+Use Claude in Excel
+
+[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
+
+Getting started with Claude for Nonprofits
 
 Did this answer your question?
 

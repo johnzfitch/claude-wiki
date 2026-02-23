@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:27Z"
+fetched_at: "2026-02-16T21:12:41Z"
 source_url: "https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance"
 title: "Report a Concern: Australian DIS Standard compliance | Claude Help Center"
 ---
@@ -37,7 +37,7 @@ Report a Concern: Australian DIS Standard compliance
 
 # Report a Concern: Australian DIS Standard compliance
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -77,6 +77,10 @@ If you wish to refer a matter to the eSafety Commissioner, please follow the ins
 
 Related Articles
 
+[](https://support.claude.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude)
+
+Reporting, Blocking, and Removing Content from Claude
+
 [](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
 
 Does Anthropic crawl data from the web, and how can site owners block the crawler?
@@ -84,10 +88,6 @@ Does Anthropic crawl data from the web, and how can site owners block the crawle
 [](https://support.claude.com/en/articles/9199617-api-safeguards-tools)
 
 API Safeguards Tools
-
-[](https://support.claude.com/en/articles/9301722-updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service-and-privacy-policy)
-
-Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
 
 [](https://support.claude.com/en/articles/10684638-reporting-blocking-and-removing-content-from-claude)
 

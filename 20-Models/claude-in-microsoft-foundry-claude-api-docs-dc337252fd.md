@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:04:50Z"
+fetched_at: "2026-02-22T13:15:19Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry"
 title: "Claude in Microsoft Foundry - Claude API Docs"
 ---
@@ -18,6 +18,8 @@ Copy page
 This guide will walk you through the process of setting up and making API calls to Claude in Foundry in Python, TypeScript, or using direct HTTP requests. When you can access Claude in Foundry, you will be billed for Claude usage in the Microsoft Marketplace with your Azure subscription, allowing you to access Claude's latest capabilities while managing costs through your Azure subscription.
 
 Regional availability: At launch, Claude is available as a Global Standard deployment type in Foundry resources (US DataZone coming soon). Pricing for Claude in the Microsoft Marketplace uses Anthropic's standard API pricing. Visit the [pricing page](https://claude.com/pricing#api) for details.
+
+Foundry is supported by the C#, Java, Python, and TypeScript SDKs. The Go, PHP, and Ruby SDKs do not currently support Microsoft Foundry. For available SDK platform integrations, see [Client SDKs](/docs/en/api/client-sdks).
 
 ## 
 
@@ -49,6 +51,10 @@ TypeScript
 
 TypeScript
 
+Java
+
+Java
+
 C#
 
 C#
@@ -75,7 +81,7 @@ To provision your resource:
 2.  Create a new Foundry resource or select an existing one
 3.  Configure access management using Azure-issued API keys or Entra ID for role-based access control
 4.  Optionally configure the resource to be part of a private network (Azure Virtual Network) for enhanced security
-5.  Note your resource name—you'll use this as `{resource}` in API endpoints (e.g., `https://{resource}.services.ai.azure.com/anthropic/v1/*`)
+5.  Note your resource name. You'll use this as `{resource}` in API endpoints (e.g., `https://{resource}.services.ai.azure.com/anthropic/v1/*`)
 
 ### 
 
@@ -85,7 +91,7 @@ After creating your resource, deploy a Claude model to make it available for API
 
 1.  In the Foundry portal, navigate to your resource
 2.  Go to **Models + endpoints** and select **+ Deploy model** \> **Deploy base model**
-3.  Search for and select a Claude model (e.g., `claude-sonnet-4-5`)
+3.  Search for and select a Claude model (e.g., `claude-sonnet-4-6`)
 4.  Configure deployment settings:
     - **Deployment name**: Defaults to the model ID, but you can customize it (e.g., `my-claude-deployment`). The deployment name cannot be changed after it has been created.
     - **Deployment type**: Select Global Standard (recommended for Claude)
@@ -129,13 +135,13 @@ from anthropic import AnthropicFoundry
 
 client = AnthropicFoundry(
     api_key=os.environ.get("ANTHROPIC_FOUNDRY_API_KEY"),
-    resource='example-resource', # your resource name
+    resource="example-resource",  # your resource name
 )
 
 message = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
-    messages=[{"role": "user", "content": "Hello!"}]
+    messages=[{"role": "user", "content": "Hello!"}],
 )
 print(message.content)
 ```
@@ -163,21 +169,20 @@ from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
 # Get Azure Entra ID token using token provider pattern
 token_provider = get_bearer_token_provider(
-    DefaultAzureCredential(),
-    "https://cognitiveservices.azure.com/.default"
+    DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default"
 )
 
 # Create client with Entra ID authentication
 client = AnthropicFoundry(
-    resource='example-resource', # your resource name
-    azure_ad_token_provider=token_provider  # Use token provider for Entra ID auth
+    resource="example-resource",  # your resource name
+    azure_ad_token_provider=token_provider,  # Use token provider for Entra ID auth
 )
 
 # Make request
 message = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
-    messages=[{"role": "user", "content": "Hello!"}]
+    messages=[{"role": "user", "content": "Hello!"}],
 )
 print(message.content)
 ```
@@ -216,12 +221,13 @@ For details on response headers specific to Foundry, see the [correlation reques
 
 API model IDs and deployments
 
-The following Claude models are available through Foundry. The latest generation models (Opus 4.6, Sonnet 4.5, and Haiku 4.5) offer the most advanced capabilities:
+The following Claude models are available through Foundry. The latest generation models (Opus 4.6, Sonnet 4.6, and Haiku 4.5) offer the most advanced capabilities:
 
 | Model             | Default Deployment Name |
 |-------------------|-------------------------|
 | Claude Opus 4.6   | `claude-opus-4-6`       |
 | Claude Opus 4.5   | `claude-opus-4-5`       |
+| Claude Sonnet 4.6 | `claude-sonnet-4-6`     |
 | Claude Sonnet 4.5 | `claude-sonnet-4-5`     |
 | Claude Opus 4.1   | `claude-opus-4-1`       |
 | Claude Haiku 4.5  | `claude-haiku-4-5`      |
@@ -280,7 +286,7 @@ Model and deployment errors
 
 **Error**: `Model not found` or `Deployment not found`
 
-- **Solution**: Verify you're using the correct deployment name. If you haven't created a custom deployment, use the default model ID (e.g., `claude-sonnet-4-5`).
+- **Solution**: Verify you're using the correct deployment name. If you haven't created a custom deployment, use the default model ID (e.g., `claude-sonnet-4-6`).
 - **Solution**: Ensure the model/deployment is available in your Azure region.
 
 **Error**: `Invalid model parameter`

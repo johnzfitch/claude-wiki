@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:17Z"
+fetched_at: "2026-02-23T00:45:09Z"
 source_url: "https://support.claude.com/en/articles/10504844-managing-user-feedback-settings-on-team-and-enterprise-plans"
 title: "Managing user feedback settings on Team and Enterprise plans | Claude Help Center"
 ---
@@ -33,15 +33,15 @@ Managing user feedback settings on Team and Enterprise plans
 
 Updated this week
 
-As a Primary Owner or Owner of a Claude for Work (Team or Enterprise) plan, you can manage the ability for members of your organization to submit feedback to Anthropic via thumbs up / thumbs down.
+As a Primary Owner or Owner of a Team or Enterprise plan, you can manage the ability for members of your organization to submit feedback to Anthropic via thumbs up / thumbs down.
 
-1.  Navigate to [Admin settings \> Data and Privacy](https://claude.ai/admin-settings/data-privacy-controls)
+1.  Navigate to **[Organization settings \> Data and Privacy](https://claude.ai/admin-settings/data-privacy-controls).**
 
-2.  Click “Enable” or “Disable” to change the **Thumbs feedback** setting for your organization:
+2.  Use the toggle to change the **Rate chats** setting for your organization:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1770661689/f0eb99ef8ec52e5fbc14909aab3f/Screenshot+2025-10-09+at+4_08_17%E2%80%AFPM.png?expires=1770722100&signature=9378a17f237c6df8759a47506c1dc3b0a4d060e9638713e03e2e8f19266b2288&req=dScgFs94nIdXUPMW1HO4zbL7C7ibBPatcjfHYvmyGent20UY4XZkWEOtCY2W%0ASrWmNrjyq3MDWnkxryM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2058292603/75752add0bed6a9f3ab217f01708/CleanShot%2B2026-02-12%2Bat%2B08_55_14-402x.png?expires=1771809300&signature=2efb6167d0b5823c672c015b3cb234c72263bc64ae887e9ffc5a0ddc6d9b1a68&req=diAiHst3n4dfWvMW1HO4zYGm%2FSYUEKHP085gFtEpvcRK3p8GLBM4A4vZjed0%0AwsQQ4A15URLdQlxkgK0%3D%0A)
 
-More information on how Anthropic collects, uses, and stores feedback data can be found in our Privacy Center: [How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)
+More information on how Anthropic collects, uses, and stores feedback data can be found in our Privacy Center: **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**
 
 ------------------------------------------------------------------------
 
@@ -59,9 +59,9 @@ Managing User Feedback Settings on Claude Console
 
 Who owns and manages the data of my Claude for Education account?
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
+Manage members on Team and Enterprise plans
 
 [](https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans)
 

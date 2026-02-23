@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:26Z"
+fetched_at: "2026-02-16T21:12:40Z"
 source_url: "https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work"
 title: "Create and edit files with Claude to eliminate hours of busy work | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Create and edit files with Claude to eliminate hours of busy work
 
 # Create and edit files with Claude to eliminate hours of busy work
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -79,7 +79,7 @@ Claude can now create and work directly with the documents that drive your busin
 
 After you’re done iterating with Claude, just open the file in Drive or hit Download to finalize and share.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1711352345/475a9830c25debbd8cd192bc1361/Download+wiggle+%281%29.png?expires=1770722100&signature=0098cdbd18a3d579f71fbb6e4d43a52a470f1ff9214134218776d62991379766&req=dScmF8p7n4JbXPMW1HO4zSenGg4KAOsbrq5nWNytq4E27T2H4jgCKW4eZ23b%0Akw2cpriCMG6LTwiwLEw%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1711352345/475a9830c25debbd8cd192bc1361/Download+wiggle+%281%29.png?expires=1771278300&signature=52191bdc116c76f169eb2c04d3b8de8790544bb16383b56e929dfa65cae6caa6&req=dScmF8p7n4JbXPMW1HO4zSenGg8PBeEZrq5nWNytq4H9grO0XRwhoa8IqvMC%0AKw11pTzafUJ%2BZCfpDOs%3D%0A)
 
 ## How this saves you time
 

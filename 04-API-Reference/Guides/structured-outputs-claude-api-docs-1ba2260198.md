@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:19Z"
+fetched_at: "2026-02-22T10:58:22Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
 title: "Structured outputs - Claude API Docs"
 ---
 
-Capabilities
+Model capabilities
 
 # Structured outputs
 
@@ -20,11 +20,11 @@ Structured outputs constrain Claude's responses to follow a specific schema, ens
 - **JSON outputs** (`output_config.format`): Get Claude's response in a specific JSON format
 - **Strict tool use** (`strict: true`): Guarantee schema validation on tool names and inputs
 
-The `output_format` parameter has been moved to `output_config.format`. The old `output_format` parameter still works temporarily but is deprecated and will be removed in a future API version. Update your code to use `output_config: {format: {...}}` instead.
-
 These features can be used independently or together in the same request.
 
-Structured outputs are generally available on the Claude API and Amazon Bedrock for Claude Opus 4.6, Claude Sonnet 4.5, Claude Opus 4.5, and Claude Haiku 4.5. Structured outputs remain in public beta on Microsoft Foundry.
+Structured outputs are generally available on the Claude API and Amazon Bedrock for Claude Opus 4.6, Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Opus 4.5, and Claude Haiku 4.5. Structured outputs remain in public beta on Microsoft Foundry.
+
+Prompts and responses using structured outputs are processed with [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention). However, the JSON schema itself is temporarily cached for up to 24 hours for optimization purposes. No prompt or response data is retained.
 
 **Migrating from beta?** The `output_format` parameter has moved to `output_config.format`, and beta headers are no longer required. The old beta header (`structured-outputs-2025-11-13`) and `output_format` parameter will continue working for a transition period. See code examples below for the updated API shape.
 
@@ -140,18 +140,20 @@ SDK helper methods (like `.parse()` and Pydantic/Zod integration) still accept `
 
 Using native schema definitions
 
-Instead of writing raw JSON schemas, you can use familiar schema definition tools in your language. Each SDK provides class-based or library-based schema support:
+Instead of writing raw JSON schemas, you can use familiar schema definition tools in your language:
 
-- **Python**: [Pydantic](https://docs.pydantic.dev/) models
-- **TypeScript**: [Zod](https://zod.dev/) schemas
-- **Java**: Plain Java classes with annotation support (see [Java SDK structured outputs](/docs/en/api/sdks/java#using-structured-outputs))
-- **Ruby**: `Anthropic::BaseModel` classes (see [Ruby SDK](/docs/en/api/sdks/ruby#input-schema-and-tool-calling))
+- **Python**: [Pydantic](https://docs.pydantic.dev/) models with `client.messages.parse()`
+- **TypeScript**: [Zod](https://zod.dev/) schemas with `zodOutputFormat()`
+- **Java**: Plain Java classes with automatic schema derivation via `outputFormat(Class<T>)`
+- **Ruby**: `Anthropic::BaseModel` classes with `output_config: {format: Model}`
+- **C#**, **Go**, **PHP**: Raw JSON schemas passed via `output_config`
 
 Python
 
 ``` shiki
 from pydantic import BaseModel
-from anthropic import Anthropic, transform_schema
+from anthropic import Anthropic
+
 
 class ContactInfo(BaseModel):
     name: str
@@ -159,36 +161,16 @@ class ContactInfo(BaseModel):
     plan_interest: str
     demo_requested: bool
 
+
 client = Anthropic()
 
-# With .create() - requires transform_schema()
-response = client.messages.create(
-    model="claude-opus-4-6",
-    max_tokens=1024,
-    messages=[
-        {
-            "role": "user",
-            "content": "Extract the key information from this email: John Smith (john@example.com) is interested in our Enterprise plan and wants to schedule a demo for next Tuesday at 2pm."
-        }
-    ],
-    output_config={
-        "format": {
-            "type": "json_schema",
-            "schema": transform_schema(ContactInfo),
-        }
-    }
-)
-
-print(response.content[0].text)
-
-# With .parse() - can pass Pydantic model directly
 response = client.messages.parse(
     model="claude-opus-4-6",
     max_tokens=1024,
     messages=[
         {
             "role": "user",
-            "content": "Extract the key information from this email: John Smith (john@example.com) is interested in our Enterprise plan and wants to schedule a demo for next Tuesday at 2pm."
+            "content": "Extract the key information from this email: John Smith (john@example.com) is interested in our Enterprise plan and wants to schedule a demo for next Tuesday at 2pm.",
         }
     ],
     output_format=ContactInfo,
@@ -207,9 +189,29 @@ Python
 
 Python
 
+TypeScript
+
+TypeScript
+
 Java
 
 Java
+
+Go
+
+Go
+
+Ruby
+
+Ruby
+
+C#
+
+C#
+
+PHP
+
+PHP
 
 **`client.messages.parse()` (Recommended)**
 
@@ -378,7 +380,9 @@ Python
 response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
-    messages=[{"role": "user", "content": "Help me plan a trip to Paris for next month"}],
+    messages=[
+        {"role": "user", "content": "Help me plan a trip to Paris for next month"}
+    ],
     # JSON outputs: structured response format
     output_config={
         "format": {
@@ -387,27 +391,29 @@ response = client.messages.create(
                 "type": "object",
                 "properties": {
                     "summary": {"type": "string"},
-                    "next_steps": {"type": "array", "items": {"type": "string"}}
+                    "next_steps": {"type": "array", "items": {"type": "string"}},
                 },
                 "required": ["summary", "next_steps"],
-                "additionalProperties": False
-            }
+                "additionalProperties": False,
+            },
         }
     },
     # Strict tool use: guaranteed tool parameters
-    tools=[{
-        "name": "search_flights",
-        "strict": True,
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "destination": {"type": "string"},
-                "date": {"type": "string", "format": "date"}
+    tools=[
+        {
+            "name": "search_flights",
+            "strict": True,
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "destination": {"type": "string"},
+                    "date": {"type": "string", "format": "date"},
+                },
+                "required": ["destination", "date"],
+                "additionalProperties": False,
             },
-            "required": ["destination", "date"],
-            "additionalProperties": False
         }
-    }]
+    ],
 )
 ```
 
@@ -477,19 +483,45 @@ If the response is cut off due to reaching the `max_tokens` limit:
 
 ### 
 
-Schema validation errors
+Schema complexity limits
 
-If your schema uses unsupported features or is too complex, you'll receive a 400 error:
+Structured outputs work by compiling your JSON schemas into a grammar that constrains Claude's output. More complex schemas produce larger grammars that take longer to compile. To protect against excessive compilation times, the API enforces several complexity limits.
 
-**"Too many recursive definitions in schema"**
+#### 
 
-- Cause: Schema has excessive or cyclic recursive definitions
-- Solution: Simplify schema structure, reduce nesting depth
+Explicit limits
 
-**"Schema is too complex"**
+The following limits apply to all requests with `output_config.format` or `strict: true`:
 
-- Cause: Schema exceeds complexity limits
-- Solution: Break into smaller schemas, simplify structure, or reduce the number of tools marked as `strict: true`
+| Limit | Value | Description |
+|----|----|----|
+| Strict tools per request | 20 | Maximum number of tools with `strict: true`. Non-strict tools don't count toward this limit. |
+| Optional parameters | 24 | Total optional parameters across all strict tool schemas and JSON output schemas. Each parameter not listed in `required` counts toward this limit. |
+| Parameters with union types | 16 | Total parameters that use `anyOf` or type arrays (e.g., `"type": ["string", "null"]`) across all strict schemas. These are especially expensive because they create exponential compilation cost. |
+
+These limits apply to the combined total across all strict schemas in a single request. For example, if you have 4 strict tools with 6 optional parameters each, you'll reach the 24-parameter limit even though no single tool seems complex.
+
+#### 
+
+Additional internal limits
+
+Beyond the explicit limits above, there are additional internal limits on the compiled grammar size. These limits exist because schema complexity doesn't reduce to a single dimension: features like optional parameters, union types, nested objects, and number of tools interact with each other in ways that can make the compiled grammar disproportionately large.
+
+When these limits are exceeded, you'll receive a 400 error with the message "Schema is too complex for compilation." These errors mean the combined complexity of your schemas exceeds what can be efficiently compiled, even if each individual limit above is satisfied. As a final stop-gap, the API also enforces a **compilation timeout of 180 seconds**. Schemas that pass all explicit checks but produce very large compiled grammars may hit this timeout.
+
+#### 
+
+Tips for reducing schema complexity
+
+If you're hitting complexity limits, try these strategies in order:
+
+1.  **Mark only critical tools as strict.** If you have many tools, reserve it for tools where schema violations cause real problems, and rely on Claude's natural adherence for simpler tools.
+
+2.  **Reduce optional parameters.** Make parameters `required` where possible. Each optional parameter roughly doubles a portion of the grammar's state space. If a parameter always has a reasonable default, consider making it required and having Claude provide that default explicitly.
+
+3.  **Simplify nested structures.** Deeply nested objects with optional fields compound the complexity. Flatten structures where possible.
+
+4.  **Split into multiple requests.** If you have many strict tools, consider splitting them across separate requests or sub-agents.
 
 For persistent issues with valid schemas, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support) with your schema definition.
 
@@ -549,7 +581,7 @@ Was this page helpful?
 
 - [Invalid outputs](#invalid-outputs)
 
-- [Schema validation errors](#schema-validation-errors)
+- [Schema complexity limits](#schema-complexity-limits)
 
 - [Feature compatibility](#feature-compatibility)
 

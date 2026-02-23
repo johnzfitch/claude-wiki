@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:04:53Z"
+fetched_at: "2026-02-22T13:15:54Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct"
 title: "Be clear, direct, and detailed - Claude API Docs"
 ---
@@ -17,7 +17,7 @@ While these tips apply broadly to all Claude models, you can find prompting tips
 
 When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions. Like any new employee, Claude does not have context on your norms, styles, guidelines, or preferred ways of working. The more precisely you explain what you want, the better Claude's response will be.
 
-**The golden rule of clear prompting**  
+**The golden rule of clear prompting**\
 Show your prompt to a colleague, ideally someone who has minimal context on the task, and ask them to follow the instructions. If they're confused, Claude will likely be too.
 
 ## 

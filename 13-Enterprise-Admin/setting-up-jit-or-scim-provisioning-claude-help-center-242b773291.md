@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-17T01:30:57Z"
 source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning"
 title: "Setting up JIT or SCIM provisioning | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Setting up JIT or SCIM provisioning
 
 # Setting up JIT or SCIM provisioning
 
-Updated today
+Updated this week
 
 Table of contents
 
@@ -69,7 +69,7 @@ This guide covers how to configure user provisioning and role assignment for you
 
 ## Step 1: Choose your provisioning mode
 
-Once SSO is configured, you need to decide how users will be provisioned to your organization. This is controlled by the **Provisioning mode** setting in **[Admin settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+Once SSO is configured, you need to decide how users will be provisioned to your organization. This is controlled by the **Provisioning mode** setting in **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
 
 ### Provisioning options
 
@@ -85,7 +85,7 @@ Use this table to help decide which provisioning mode is right for your organiza
 
 [TABLE]
 
-Both JIT and SCIM can be combined with **Advanced Group Mappings** to control role or seat tier assignment based on IdP group membership.
+Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership.
 
 ### Available roles and seat tiers
 
@@ -143,7 +143,7 @@ Once your IdP is connected, continue to Step 3.
 
 ## Step 4: Configure groups and assign users in your Identity Provider for group mappings
 
-1.  Create groups in your IdP for each role and seat tier you want to assign.
+1.  Create groups in your IdP for each role you want to assign. Unless you're on the single-seat Enterprise plan, create groups for each seat type as well.
 
     1.  While there are no longer naming requirements for these groups, we recommend including something in the group name (e.g., `anthropic-claude-` or `anthropic-console-`) to make them easier to identify.
 
@@ -153,15 +153,17 @@ Once your IdP is connected, continue to Step 3.
 
 ------------------------------------------------------------------------
 
-## Step 5: Map groups to roles and seat tiers
+## Step 5: Map groups to roles and seat types
 
 1.  Return to your Identity and access settings in Claude or Console, and toggle **Enable group mappings** on (if it’s not already).
 
-2.  In the **Role mappings** section, click “Add” next to each role and select the corresponding group from your IdP in the dropdown.
+2.  In the **Enable group mappings** section, click “Add” next to each role and select the corresponding group from your IdP in the dropdown.
 
-3.  For Claude organizations: In the **Seat tier mappings** section, click “Add” next to each tier (Premium, Standard) and select the corresponding group. If a user isn't assigned to a seat tier group, they will be assigned to the highest available tier by default.
+3.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section, click "Add" next to each seat type and select the corresponding group from your IdP. If a user isn't assigned to a seat type group, they will be assigned to the highest available type by default.
 
-4.  Verify all necessary groups are mapped to the appropriate roles and seat tiers.
+    1.  **For single-seat Enterprise:** Seat type mapping does not apply. All provisioned users are automatically assigned an Enterprise seat, provided one is available in your organization.
+
+4.  Verify all necessary groups are mapped to the appropriate roles and seat types.
 
 5.  Click “Save changes.”
 
@@ -175,7 +177,7 @@ Once your IdP is connected, continue to Step 3.
 
 Verify you have enough seats purchased and available to add members to your org.
 
-1.  Check the number of available seats shown in **[Admin settings \> Billing](https://claude.ai/admin-settings/billing)** and purchase additional seats if needed (see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**).
+1.  Check the number of available seats shown in **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Billing](https://claude.ai/admin-settings/billing)** and purchase additional seats if needed (see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**).
 
 2.  Once you have available seats, go back to the Identity and access page and click “Sync now,” next to **Directory sync (SCIM)**. This will trigger a sync to provision accounts for those users not yet added as members.
 
@@ -199,7 +201,7 @@ To fix this:
 
 1.  Contact another Admin or Owner of your organization.
 
-2.  Ask them to navigate to [**Admin settings \> Organization**](https://claude.ai/admin-settings/organization) (for Claude) or [**Settings \> Members**](https://platform.claude.com/settings/members) (for Console).
+2.  Ask them to navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** (for Claude) or **[Settings \> Members](https://platform.claude.com/settings/members)** (for Console).
 
 3.  Have them change your role back to Admin or Owner.
 

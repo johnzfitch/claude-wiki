@@ -1,8 +1,8 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:20Z"
+fetched_at: "2026-02-23T00:45:50Z"
 source_url: "https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp"
-title: "Pre-built Web Connectors Using Remote MCP | Claude Help Center"
+title: "Pre-built web connectors using remote MCP | Claude Help Center"
 ---
 
 [](/en/)
@@ -31,9 +31,9 @@ Table of contents
 
 [Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
 
-Pre-built Web Connectors Using Remote MCP
+Pre-built web connectors using remote MCP
 
-# Pre-built Web Connectors Using Remote MCP
+# Pre-built web connectors using remote MCP
 
 Updated this week
 
@@ -53,7 +53,7 @@ Connect your favorite tools and data sources to Claude. The list below includes 
 
 Before members of Team and Enterprise plans can use connectors, an Owner needs to enable it for the organization:
 
-1.  Navigate to **[Admin settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
+1.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
 2.  Click the "Browse connectors" button at the bottom of the page.
 
@@ -71,19 +71,19 @@ Free, Pro, and Max users, and individual Team and Enterprise users can add these
 
 **Note:** Once you've added a connector to your Claude account, you can authenticate with the tool and use it on Claude for iOS or Android.
 
-For more details on how to add and use connectors, see **[Getting Started with Custom Connectors Using Remote MCP](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)**.
+For more details on how to add and use connectors, see **[Getting started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)**.
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 
-Building Custom Connectors via Remote MCP Servers
+Building custom connectors via remote MCP servers
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
@@ -91,7 +91,7 @@ Anthropic Connectors Directory FAQ
 
 [](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)
 
-Enabling and Using the Microsoft 365 Connector
+Enabling and using the Microsoft 365 connector
 
 [](https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide)
 

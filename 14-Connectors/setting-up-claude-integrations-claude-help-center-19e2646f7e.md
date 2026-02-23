@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:16Z"
+fetched_at: "2026-02-23T00:45:50Z"
 source_url: "https://support.claude.com/en/articles/10168395-setting-up-claude-integrations"
 title: "Setting up Claude integrations | Claude Help Center"
 ---
@@ -65,11 +65,11 @@ To use integrations on Claude, you must authenticate through the third party fir
 
 Some integrations can be enabled within your chat interface. Click the "+" button on the lower left corner of the chat interface, select the integration you'd like to enable, and follow the instructions to authenticate.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1622305037/8e90d1b9ef652ce52009b7347de3/Screenshot+2025-07-15+at+3_21_54%E2%80%AFPM.png?expires=1770722100&signature=98f0bfb4fb818fedc7bc39190a858c822657a75ad01e6594c398d251e7f25058&req=dSYlFMp%2BmIFcXvMW1HO4zXUb%2FV4PUvhp6KMB2kPHQusOhMDrOXkowabyXPZD%0A%2FfR0QwQ0KZFnEcGgqC0%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1622305037/8e90d1b9ef652ce52009b7347de3/Screenshot+2025-07-15+at+3_21_54%E2%80%AFPM.png?expires=1771809300&signature=9207fc427293784425286726b6f4e1505d01b2232a248b2631a9c94fbceaf1f2&req=dSYlFMp%2BmIFcXvMW1HO4zXUb%2FV8AUPNr6KMB2kPHQusWD95OPTs15boqKuyd%0ArG1ZdneRHCDDS3%2BRlNs%3D%0A)
 
 Some integrations need to be enabled from Settings first. To do this:
 
-1.  Navigate to [Settings \> Connectors](https://claude.ai/settings/connectors).
+1.  Navigate to **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 2.  Locate the integration you want to enable in the list.
 
@@ -79,9 +79,9 @@ Some integrations need to be enabled from Settings first. To do this:
 
 ## Enabling integrations on Team and Enterprise Plans
 
-To enable integrations on a Team or Enterprise plan, you must be an organization Owner.
+To enable integrations on a Team or Enterprise plan, you must be an organization Owner or Primary Owner.
 
-1.  Navigate to [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors).
+1.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
 2.  Under “Connectors,” click the "Enable" button next to the integration you’d like to make available to your members.
 
@@ -107,15 +107,15 @@ Related Articles
 
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
-Pre-built Web Connectors Using Remote MCP
+Pre-built web connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11506255-getting-started-with-claude-in-slack)
 
 Getting started with Claude in Slack
 
-[](https://support.claude.com/en/articles/11725453-set-up-the-claude-lti-in-canvas-by-instructure)
+[](https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude)
 
-Set up the Claude LTI in Canvas by Instructure
+Using the Scholar Gateway Connector in Claude
 
 [](https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude)
 
@@ -123,7 +123,7 @@ Using the Benevity Connector in Claude
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:27Z"
+fetched_at: "2026-02-16T21:12:40Z"
 source_url: "https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude"
 title: "Financial Analysis Workflows with Claude | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Financial Analysis Workflows with Claude
 
 # Financial Analysis Workflows with Claude
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

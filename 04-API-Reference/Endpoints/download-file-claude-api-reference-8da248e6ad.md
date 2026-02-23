@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:09Z"
+fetched_at: "2026-02-22T13:58:46Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/files/download"
 title: "Download File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Files.Download(ctx, fileID, query) (\*Response, error)
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 Download File
 
@@ -25,7 +25,9 @@ ID of the File.
 
 query BetaFileDownloadParams
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Optional header to specify the beta version(s) you want to use.
 
@@ -72,6 +74,8 @@ const AnthropicBetaContextManagement2025_06_27 AnthropicBeta = "context-manageme
 const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-context-window-exceeded-2025-08-26"
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
+
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

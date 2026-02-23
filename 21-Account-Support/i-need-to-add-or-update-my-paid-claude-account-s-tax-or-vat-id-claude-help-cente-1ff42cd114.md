@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:41Z"
+fetched_at: "2026-02-23T00:45:20Z"
 source_url: "https://support.claude.com/en/articles/9889408-i-need-to-add-or-update-my-paid-claude-account-s-tax-or-vat-id"
 title: "I need to add or update my paid Claude account’s Tax or VAT ID | Claude Help Center"
 ---
@@ -103,7 +103,7 @@ Understanding your billing address and tax calculation
 
 [](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs)
 
-Team Plan Billing FAQs
+Team plan billing FAQs
 
 Did this answer your question?
 

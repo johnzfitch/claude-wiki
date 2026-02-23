@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-10T10:49:31Z"
+fetched_at: "2026-02-23T00:45:12Z"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 title: "Adapting to new model personas after deprecations | Claude Help Center"
 ---
@@ -77,15 +77,15 @@ I would like to input sensitive data into my chats with Claude. Who can view my 
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 [](https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model)
 
 Can I use my Outputs to train an AI model?
 
-[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
+[](https://support.claude.com/en/articles/12650343-use-claude-in-excel)
 
-Using Claude in Excel
+Use Claude in Excel
 
 Did this answer your question?
 

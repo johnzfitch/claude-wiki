@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:05Z"
+fetched_at: "2026-02-22T13:27:48Z"
 source_url: "https://platform.claude.com/docs/en/api/messages/count_tokens"
 title: "Count tokens in a Message - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # Count tokens in a Message
 
-post/v1/messages/count_tokens
+POST/v1/messages/count_tokens
 
 Count the number of tokens in a Message.
 
@@ -19,7 +19,7 @@ The Token Count API can be used to count the number of tokens in a Message, incl
 
 Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
 
-##### Body ParametersExpand Collapse 
+##### Body ParametersJSONExpand Collapse 
 
 messages: array of [MessageParam](/docs/en/api/messages#message_param) { content, role }
 
@@ -88,19 +88,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -137,10 +129,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocationParam = object { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -154,10 +142,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocationParam = object { cited_text, document_index, document_title, 3 more }
 
@@ -173,10 +157,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationWebSearchResultLocationParam = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -186,10 +166,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -208,10 +184,6 @@ start_block_index: number
 title: string
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 ImageBlockParam = object { source, type, cache_control }
 
@@ -237,35 +209,19 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 URLImageSource = object { type, url }
 
 type: "url"
 
-Accepts one of the following:
-
-"url"
-
 url: string
 
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -296,15 +252,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 PlainTextSource = object { data, media_type, type }
 
@@ -312,15 +260,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 ContentBlockSource = object { content, type }
 
@@ -340,19 +280,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -389,10 +321,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocationParam = object { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -406,10 +334,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocationParam = object { cited_text, document_index, document_title, 3 more }
 
@@ -425,10 +349,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationWebSearchResultLocationParam = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -438,10 +358,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -460,10 +376,6 @@ start_block_index: number
 title: string
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 ImageBlockParam = object { source, type, cache_control }
 
@@ -489,35 +401,19 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 URLImageSource = object { type, url }
 
 type: "url"
 
-Accepts one of the following:
-
-"url"
-
 url: string
 
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -538,35 +434,19 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 URLPDFSource = object { type, url }
 
 type: "url"
 
-Accepts one of the following:
-
-"url"
-
 url: string
 
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -601,19 +481,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -650,10 +522,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocationParam = object { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -667,10 +535,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocationParam = object { cited_text, document_index, document_title, 3 more }
 
@@ -686,10 +550,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationWebSearchResultLocationParam = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -699,10 +559,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -722,29 +578,17 @@ title: string
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 source: string
 
 title: string
 
 type: "search_result"
 
-Accepts one of the following:
-
-"search_result"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -775,21 +619,13 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 RedactedThinkingBlockParam = object { data, type }
 
 data: string
 
 type: "redacted_thinking"
 
-Accepts one of the following:
-
-"redacted_thinking"
-
-ToolUseBlockParam = object { id, input, name, 2 more }
+ToolUseBlockParam = object { id, input, name, 3 more }
 
 id: string
 
@@ -799,19 +635,11 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -829,6 +657,32 @@ Accepts one of the following:
 "5m"
 
 "1h"
+
+caller: optional [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 ToolResultBlockParam = object { tool_use_id, type, cache_control, 2 more }
 
@@ -836,19 +690,11 @@ tool_use_id: string
 
 type: "tool_result"
 
-Accepts one of the following:
-
-"tool_result"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -867,13 +713,13 @@ Accepts one of the following:
 
 "1h"
 
-content: optional string or array of [TextBlockParam](/docs/en/api/messages#text_block_param) { text, type, cache_control, citations } or [ImageBlockParam](/docs/en/api/messages#image_block_param) { source, type, cache_control } or [SearchResultBlockParam](/docs/en/api/messages#search_result_block_param) { content, source, title, 3 more } or [DocumentBlockParam](/docs/en/api/messages#document_block_param) { source, type, cache_control, 3 more }
+content: optional string or array of [TextBlockParam](/docs/en/api/messages#text_block_param) { text, type, cache_control, citations } or [ImageBlockParam](/docs/en/api/messages#image_block_param) { source, type, cache_control } or [SearchResultBlockParam](/docs/en/api/messages#search_result_block_param) { content, source, title, 3 more } or 2 more
 
 Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = array of [TextBlockParam](/docs/en/api/messages#text_block_param) { text, type, cache_control, citations } or [ImageBlockParam](/docs/en/api/messages#image_block_param) { source, type, cache_control } or [SearchResultBlockParam](/docs/en/api/messages#search_result_block_param) { content, source, title, 3 more } or [DocumentBlockParam](/docs/en/api/messages#document_block_param) { source, type, cache_control, 3 more }
+UnionMember1 = array of [TextBlockParam](/docs/en/api/messages#text_block_param) { text, type, cache_control, citations } or [ImageBlockParam](/docs/en/api/messages#image_block_param) { source, type, cache_control } or [SearchResultBlockParam](/docs/en/api/messages#search_result_block_param) { content, source, title, 3 more } or 2 more
 
 Accepts one of the following:
 
@@ -883,19 +729,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -932,10 +770,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocationParam = object { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -949,10 +783,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocationParam = object { cited_text, document_index, document_title, 3 more }
 
@@ -968,10 +798,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationWebSearchResultLocationParam = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -981,10 +807,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -1003,10 +825,6 @@ start_block_index: number
 title: string
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 ImageBlockParam = object { source, type, cache_control }
 
@@ -1032,35 +850,19 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 URLImageSource = object { type, url }
 
 type: "url"
 
-Accepts one of the following:
-
-"url"
-
 url: string
 
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1087,19 +889,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1136,10 +930,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocationParam = object { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -1153,10 +943,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocationParam = object { cited_text, document_index, document_title, 3 more }
 
@@ -1172,10 +958,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationWebSearchResultLocationParam = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -1185,10 +967,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -1208,29 +986,17 @@ title: string
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 source: string
 
 title: string
 
 type: "search_result"
 
-Accepts one of the following:
-
-"search_result"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1265,15 +1031,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 PlainTextSource = object { data, media_type, type }
 
@@ -1281,15 +1039,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 ContentBlockSource = object { content, type }
 
@@ -1309,19 +1059,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1358,10 +1100,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocationParam = object { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -1375,10 +1113,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocationParam = object { cited_text, document_index, document_title, 3 more }
 
@@ -1394,10 +1128,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationWebSearchResultLocationParam = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -1407,10 +1137,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -1429,10 +1155,6 @@ start_block_index: number
 title: string
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 ImageBlockParam = object { source, type, cache_control }
 
@@ -1458,35 +1180,19 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 URLImageSource = object { type, url }
 
 type: "url"
 
-Accepts one of the following:
-
-"url"
-
 url: string
 
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1507,35 +1213,19 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 URLPDFSource = object { type, url }
 
 type: "url"
 
-Accepts one of the following:
-
-"url"
-
 url: string
 
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1562,35 +1252,19 @@ context: optional string
 
 title: optional string
 
-is_error: optional boolean
+ToolReferenceBlockParam = object { tool_name, type, cache_control }
 
-ServerToolUseBlockParam = object { id, input, name, 2 more }
+Tool reference block that can be included in tool_result content.
 
-id: string
+tool_name: string
 
-input: map\[unknown\]
-
-name: "web_search"
-
-Accepts one of the following:
-
-"web_search"
-
-type: "server_tool_use"
-
-Accepts one of the following:
-
-"server_tool_use"
+type: "tool_reference"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1609,7 +1283,84 @@ Accepts one of the following:
 
 "1h"
 
-WebSearchToolResultBlockParam = object { content, tool_use_id, type, cache_control }
+is_error: optional boolean
+
+ServerToolUseBlockParam = object { id, input, name, 3 more }
+
+id: string
+
+input: map\[unknown\]
+
+name: "web_search" or "web_fetch" or "code_execution" or 4 more
+
+Accepts one of the following:
+
+"web_search"
+
+"web_fetch"
+
+"code_execution"
+
+"bash_code_execution"
+
+"text_editor_code_execution"
+
+"tool_search_tool_regex"
+
+"tool_search_tool_bm25"
+
+type: "server_tool_use"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+caller: optional [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+WebSearchToolResultBlockParam = object { content, tool_use_id, type, 2 more }
 
 content: [WebSearchToolResultBlockParamContent](/docs/en/api/messages#web_search_tool_result_block_param_content)
 
@@ -1623,17 +1374,13 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 page_age: optional string
 
 WebSearchToolRequestError = object { error_code, type }
 
-error_code: "invalid_tool_input" or "unavailable" or "max_uses_exceeded" or 3 more
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -1651,17 +1398,9 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 tool_use_id: string
 
 type: "web_search_tool_result"
-
-Accepts one of the following:
-
-"web_search_tool_result"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
@@ -1669,9 +1408,719 @@ Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
 
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
 Accepts one of the following:
 
-"ephemeral"
+"5m"
+
+"1h"
+
+caller: optional [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+WebFetchToolResultBlockParam = object { content, tool_use_id, type, 2 more }
+
+content: [WebFetchToolResultErrorBlockParam](/docs/en/api/messages#web_fetch_tool_result_error_block_param) { error_code, type } or [WebFetchBlockParam](/docs/en/api/messages#web_fetch_block_param) { content, type, url, retrieved_at }
+
+Accepts one of the following:
+
+WebFetchToolResultErrorBlockParam = object { error_code, type }
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"url_too_long"
+
+"url_not_allowed"
+
+"url_not_accessible"
+
+"unsupported_content_type"
+
+"too_many_requests"
+
+"max_uses_exceeded"
+
+"unavailable"
+
+type: "web_fetch_tool_result_error"
+
+WebFetchBlockParam = object { content, type, url, retrieved_at }
+
+content: [DocumentBlockParam](/docs/en/api/messages#document_block_param) { source, type, cache_control, 3 more }
+
+source: [Base64PDFSource](/docs/en/api/messages#base64_pdf_source) { data, media_type, type } or [PlainTextSource](/docs/en/api/messages#plain_text_source) { data, media_type, type } or [ContentBlockSource](/docs/en/api/messages#content_block_source) { content, type } or [URLPDFSource](/docs/en/api/messages#url_pdf_source) { type, url }
+
+Accepts one of the following:
+
+Base64PDFSource = object { data, media_type, type }
+
+data: string
+
+media_type: "application/pdf"
+
+type: "base64"
+
+PlainTextSource = object { data, media_type, type }
+
+data: string
+
+media_type: "text/plain"
+
+type: "text"
+
+ContentBlockSource = object { content, type }
+
+content: string or array of [ContentBlockSourceContent](/docs/en/api/messages#content_block_source_content)
+
+Accepts one of the following:
+
+UnionMember0 = string
+
+ContentBlockSourceContent = array of [ContentBlockSourceContent](/docs/en/api/messages#content_block_source_content)
+
+Accepts one of the following:
+
+TextBlockParam = object { text, type, cache_control, citations }
+
+text: string
+
+type: "text"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+citations: optional array of [TextCitationParam](/docs/en/api/messages#text_citation_param)
+
+Accepts one of the following:
+
+CitationCharLocationParam = object { cited_text, document_index, document_title, 3 more }
+
+cited_text: string
+
+document_index: number
+
+document_title: string
+
+end_char_index: number
+
+start_char_index: number
+
+type: "char_location"
+
+CitationPageLocationParam = object { cited_text, document_index, document_title, 3 more }
+
+cited_text: string
+
+document_index: number
+
+document_title: string
+
+end_page_number: number
+
+start_page_number: number
+
+type: "page_location"
+
+CitationContentBlockLocationParam = object { cited_text, document_index, document_title, 3 more }
+
+cited_text: string
+
+document_index: number
+
+document_title: string
+
+end_block_index: number
+
+start_block_index: number
+
+type: "content_block_location"
+
+CitationWebSearchResultLocationParam = object { cited_text, encrypted_index, title, 2 more }
+
+cited_text: string
+
+encrypted_index: string
+
+title: string
+
+type: "web_search_result_location"
+
+url: string
+
+CitationSearchResultLocationParam = object { cited_text, end_block_index, search_result_index, 4 more }
+
+cited_text: string
+
+end_block_index: number
+
+search_result_index: number
+
+source: string
+
+start_block_index: number
+
+title: string
+
+type: "search_result_location"
+
+ImageBlockParam = object { source, type, cache_control }
+
+source: [Base64ImageSource](/docs/en/api/messages#base64_image_source) { data, media_type, type } or [URLImageSource](/docs/en/api/messages#url_image_source) { type, url }
+
+Accepts one of the following:
+
+Base64ImageSource = object { data, media_type, type }
+
+data: string
+
+media_type: "image/jpeg" or "image/png" or "image/gif" or "image/webp"
+
+Accepts one of the following:
+
+"image/jpeg"
+
+"image/png"
+
+"image/gif"
+
+"image/webp"
+
+type: "base64"
+
+URLImageSource = object { type, url }
+
+type: "url"
+
+url: string
+
+type: "image"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+type: "content"
+
+URLPDFSource = object { type, url }
+
+type: "url"
+
+url: string
+
+type: "document"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+citations: optional [CitationsConfigParam](/docs/en/api/messages#citations_config_param) { enabled }
+
+enabled: optional boolean
+
+context: optional string
+
+title: optional string
+
+type: "web_fetch_result"
+
+url: string
+
+Fetched content URL
+
+retrieved_at: optional string
+
+ISO 8601 timestamp when the content was retrieved
+
+tool_use_id: string
+
+type: "web_fetch_tool_result"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+caller: optional [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+CodeExecutionToolResultBlockParam = object { content, tool_use_id, type, cache_control }
+
+content: [CodeExecutionToolResultBlockParamContent](/docs/en/api/messages#code_execution_tool_result_block_param_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+CodeExecutionToolResultErrorParam = object { error_code, type }
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+type: "code_execution_tool_result_error"
+
+CodeExecutionResultBlockParam = object { content, return_code, stderr, 2 more }
+
+content: array of [CodeExecutionOutputBlockParam](/docs/en/api/messages#code_execution_output_block_param) { file_id, type }
+
+file_id: string
+
+type: "code_execution_output"
+
+return_code: number
+
+stderr: string
+
+stdout: string
+
+type: "code_execution_result"
+
+EncryptedCodeExecutionResultBlockParam = object { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: array of [CodeExecutionOutputBlockParam](/docs/en/api/messages#code_execution_output_block_param) { file_id, type }
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
+
+tool_use_id: string
+
+type: "code_execution_tool_result"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+BashCodeExecutionToolResultBlockParam = object { content, tool_use_id, type, cache_control }
+
+content: [BashCodeExecutionToolResultErrorParam](/docs/en/api/messages#bash_code_execution_tool_result_error_param) { error_code, type } or [BashCodeExecutionResultBlockParam](/docs/en/api/messages#bash_code_execution_result_block_param) { content, return_code, stderr, 2 more }
+
+Accepts one of the following:
+
+BashCodeExecutionToolResultErrorParam = object { error_code, type }
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"output_file_too_large"
+
+type: "bash_code_execution_tool_result_error"
+
+BashCodeExecutionResultBlockParam = object { content, return_code, stderr, 2 more }
+
+content: array of [BashCodeExecutionOutputBlockParam](/docs/en/api/messages#bash_code_execution_output_block_param) { file_id, type }
+
+file_id: string
+
+type: "bash_code_execution_output"
+
+return_code: number
+
+stderr: string
+
+stdout: string
+
+type: "bash_code_execution_result"
+
+tool_use_id: string
+
+type: "bash_code_execution_tool_result"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+TextEditorCodeExecutionToolResultBlockParam = object { content, tool_use_id, type, cache_control }
+
+content: [TextEditorCodeExecutionToolResultErrorParam](/docs/en/api/messages#text_editor_code_execution_tool_result_error_param) { error_code, type, error_message } or [TextEditorCodeExecutionViewResultBlockParam](/docs/en/api/messages#text_editor_code_execution_view_result_block_param) { content, file_type, type, 3 more } or [TextEditorCodeExecutionCreateResultBlockParam](/docs/en/api/messages#text_editor_code_execution_create_result_block_param) { is_file_update, type } or [TextEditorCodeExecutionStrReplaceResultBlockParam](/docs/en/api/messages#text_editor_code_execution_str_replace_result_block_param) { type, lines, new_lines, 3 more }
+
+Accepts one of the following:
+
+TextEditorCodeExecutionToolResultErrorParam = object { error_code, type, error_message }
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"file_not_found"
+
+type: "text_editor_code_execution_tool_result_error"
+
+error_message: optional string
+
+TextEditorCodeExecutionViewResultBlockParam = object { content, file_type, type, 3 more }
+
+content: string
+
+file_type: "text" or "image" or "pdf"
+
+Accepts one of the following:
+
+"text"
+
+"image"
+
+"pdf"
+
+type: "text_editor_code_execution_view_result"
+
+num_lines: optional number
+
+start_line: optional number
+
+total_lines: optional number
+
+TextEditorCodeExecutionCreateResultBlockParam = object { is_file_update, type }
+
+is_file_update: boolean
+
+type: "text_editor_code_execution_create_result"
+
+TextEditorCodeExecutionStrReplaceResultBlockParam = object { type, lines, new_lines, 3 more }
+
+type: "text_editor_code_execution_str_replace_result"
+
+lines: optional array of string
+
+new_lines: optional number
+
+new_start: optional number
+
+old_lines: optional number
+
+old_start: optional number
+
+tool_use_id: string
+
+type: "text_editor_code_execution_tool_result"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+ToolSearchToolResultBlockParam = object { content, tool_use_id, type, cache_control }
+
+content: [ToolSearchToolResultErrorParam](/docs/en/api/messages#tool_search_tool_result_error_param) { error_code, type } or [ToolSearchToolSearchResultBlockParam](/docs/en/api/messages#tool_search_tool_search_result_block_param) { tool_references, type }
+
+Accepts one of the following:
+
+ToolSearchToolResultErrorParam = object { error_code, type }
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+type: "tool_search_tool_result_error"
+
+ToolSearchToolSearchResultBlockParam = object { tool_references, type }
+
+tool_references: array of [ToolReferenceBlockParam](/docs/en/api/messages#tool_reference_block_param) { tool_name, type, cache_control }
+
+tool_name: string
+
+type: "tool_reference"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+type: "tool_search_tool_search_result"
+
+tool_use_id: string
+
+type: "tool_search_tool_result"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+ContainerUploadBlockParam = object { file_id, type, cache_control }
+
+A content block that represents a file to be uploaded to the container Files uploaded via this block will be available in the container's input directory.
+
+file_id: string
+
+type: "container_upload"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1706,7 +2155,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = "claude-opus-4-6" or "claude-opus-4-5-20251101" or "claude-opus-4-5" or 18 more
+UnionMember0 = "claude-opus-4-6" or "claude-sonnet-4-6" or "claude-opus-4-5-20251101" or 19 more
 
 The model that will complete your prompt.
 
@@ -1717,6 +2166,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -1800,6 +2253,29 @@ Our previous most fast and cost-effective
 
 UnionMember1 = string
 
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
 output_config: optional [OutputConfig](/docs/en/api/messages#output_config) { effort, format }
 
 Configuration options for the model's output, such as the output format.
@@ -1828,10 +2304,6 @@ The JSON schema of the format
 
 type: "json_schema"
 
-Accepts one of the following:
-
-"json_schema"
-
 system: optional string or array of [TextBlockParam](/docs/en/api/messages#text_block_param) { text, type, cache_control, citations }
 
 System prompt.
@@ -1848,19 +2320,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -1897,10 +2361,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocationParam = object { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -1914,10 +2374,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocationParam = object { cited_text, document_index, document_title, 3 more }
 
@@ -1933,10 +2389,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationWebSearchResultLocationParam = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -1946,10 +2398,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -1968,10 +2416,6 @@ start_block_index: number
 title: string
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 thinking: optional [ThinkingConfigParam](/docs/en/api/messages#thinking_config_param)
 
@@ -1997,25 +2441,13 @@ minimum1024
 
 type: "enabled"
 
-Accepts one of the following:
-
-"enabled"
-
 ThinkingConfigDisabled = object { type }
 
 type: "disabled"
 
-Accepts one of the following:
-
-"disabled"
-
 ThinkingConfigAdaptive = object { type }
 
 type: "adaptive"
-
-Accepts one of the following:
-
-"adaptive"
 
 tool_choice: optional [ToolChoice](/docs/en/api/messages#tool_choice)
 
@@ -2029,10 +2461,6 @@ The model will automatically decide whether to use tools.
 
 type: "auto"
 
-Accepts one of the following:
-
-"auto"
-
 disable_parallel_tool_use: optional boolean
 
 Whether to disable parallel tool use.
@@ -2044,10 +2472,6 @@ ToolChoiceAny = object { type, disable_parallel_tool_use }
 The model will use any available tools.
 
 type: "any"
-
-Accepts one of the following:
-
-"any"
 
 disable_parallel_tool_use: optional boolean
 
@@ -2065,10 +2489,6 @@ The name of the tool to use.
 
 type: "tool"
 
-Accepts one of the following:
-
-"tool"
-
 disable_parallel_tool_use: optional boolean
 
 Whether to disable parallel tool use.
@@ -2080,10 +2500,6 @@ ToolChoiceNone = object { type }
 The model will not be allowed to use tools.
 
 type: "none"
-
-Accepts one of the following:
-
-"none"
 
 tools: optional array of [MessageCountTokensTool](/docs/en/api/messages#message_count_tokens_tool)
 
@@ -2151,7 +2567,7 @@ See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
 
 Accepts one of the following:
 
-Tool = object { input_schema, name, cache_control, 4 more }
+Tool = object { input_schema, name, allowed_callers, 7 more }
 
 input_schema: object { type, properties, required }
 
@@ -2160,10 +2576,6 @@ input_schema: object { type, properties, required }
 This defines the shape of the `input` that your tool accepts and that the model will produce.
 
 type: "object"
-
-Accepts one of the following:
-
-"object"
 
 properties: optional map\[unknown\]
 
@@ -2179,15 +2591,21 @@ maxLength128
 
 minLength1
 
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -2205,6 +2623,10 @@ Accepts one of the following:
 "5m"
 
 "1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
 description: optional string
 
@@ -2216,17 +2638,15 @@ eager_input_streaming: optional boolean
 
 Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
 
+input_examples: optional array of map\[unknown\]
+
 strict: optional boolean
 
 When true, guarantees schema validation on tool names and inputs
 
 type: optional "custom"
 
-Accepts one of the following:
-
-"custom"
-
-ToolBash20250124 = object { name, type, cache_control, strict }
+ToolBash20250124 = object { name, type, allowed_callers, 4 more }
 
 name: "bash"
 
@@ -2234,25 +2654,23 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"bash"
-
 type: "bash_20250124"
 
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
 Accepts one of the following:
 
-"bash_20250124"
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -2271,11 +2689,225 @@ Accepts one of the following:
 
 "1h"
 
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+input_examples: optional array of map\[unknown\]
+
 strict: optional boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-ToolTextEditor20250124 = object { name, type, cache_control, strict }
+CodeExecutionTool20250522 = object { name, type, allowed_callers, 3 more }
+
+name: "code_execution"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "code_execution_20250522"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+CodeExecutionTool20250825 = object { name, type, allowed_callers, 3 more }
+
+name: "code_execution"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "code_execution_20250825"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+CodeExecutionTool20260120 = object { name, type, allowed_callers, 3 more }
+
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+name: "code_execution"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "code_execution_20260120"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+MemoryTool20250818 = object { name, type, allowed_callers, 4 more }
+
+name: "memory"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "memory_20250818"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+input_examples: optional array of map\[unknown\]
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+ToolTextEditor20250124 = object { name, type, allowed_callers, 4 more }
 
 name: "str_replace_editor"
 
@@ -2283,25 +2915,23 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_editor"
-
 type: "text_editor_20250124"
 
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
 Accepts one of the following:
 
-"text_editor_20250124"
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -2320,37 +2950,41 @@ Accepts one of the following:
 
 "1h"
 
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+input_examples: optional array of map\[unknown\]
+
 strict: optional boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-ToolTextEditor20250429 = object { name, type, cache_control, strict }
+ToolTextEditor20250429 = object { name, type, allowed_callers, 4 more }
 
 name: "str_replace_based_edit_tool"
 
 Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
-
-Accepts one of the following:
-
-"str_replace_based_edit_tool"
 
 type: "text_editor_20250429"
 
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
 Accepts one of the following:
 
-"text_editor_20250429"
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -2369,11 +3003,17 @@ Accepts one of the following:
 
 "1h"
 
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+input_examples: optional array of map\[unknown\]
+
 strict: optional boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-ToolTextEditor20250728 = object { name, type, cache_control, 2 more }
+ToolTextEditor20250728 = object { name, type, allowed_callers, 5 more }
 
 name: "str_replace_based_edit_tool"
 
@@ -2381,25 +3021,23 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_based_edit_tool"
-
 type: "text_editor_20250728"
 
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
 Accepts one of the following:
 
-"text_editor_20250728"
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
 
 cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -2417,18 +3055,22 @@ Accepts one of the following:
 "5m"
 
 "1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+input_examples: optional array of map\[unknown\]
 
 max_characters: optional number
 
 Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
 
-minimum1
-
 strict: optional boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-WebSearchTool20250305 = object { name, type, allowed_domains, 5 more }
+WebSearchTool20250305 = object { name, type, allowed_callers, 7 more }
 
 name: "web_search"
 
@@ -2436,15 +3078,17 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"web_search"
-
 type: "web_search_20250305"
 
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
 Accepts one of the following:
 
-"web_search_20250305"
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
 
 allowed_domains: optional array of string
 
@@ -2460,9 +3104,90 @@ Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
 
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
 Accepts one of the following:
 
-"ephemeral"
+"5m"
+
+"1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+max_uses: optional number
+
+Maximum number of times the tool can be used in the API request.
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+user_location: optional [UserLocation](/docs/en/api/messages#user_location) { type, city, country, 2 more }
+
+Parameters for the user's location. Used to provide more relevant search results.
+
+type: "approximate"
+
+city: optional string
+
+The city of the user.
+
+country: optional string
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+region: optional string
+
+The region of the user.
+
+timezone: optional string
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+WebFetchTool20250910 = object { name, type, allowed_callers, 8 more }
+
+name: "web_fetch"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "web_fetch_20250910"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+allowed_domains: optional array of string
+
+List of domains to allow fetching from
+
+blocked_domains: optional array of string
+
+List of domains to block fetching from
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
 
 ttl: optional "5m" or "1h"
 
@@ -2481,57 +3206,299 @@ Accepts one of the following:
 
 "1h"
 
+citations: optional [CitationsConfigParam](/docs/en/api/messages#citations_config_param) { enabled }
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+enabled: optional boolean
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+max_content_tokens: optional number
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
 max_uses: optional number
 
 Maximum number of times the tool can be used in the API request.
-
-exclusiveMinimum0
 
 strict: optional boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-user_location: optional object { type, city, country, 2 more }
+WebSearchTool20260209 = object { name, type, allowed_callers, 7 more }
+
+name: "web_search"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "web_search_20260209"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+allowed_domains: optional array of string
+
+If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+blocked_domains: optional array of string
+
+If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+max_uses: optional number
+
+Maximum number of times the tool can be used in the API request.
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+user_location: optional [UserLocation](/docs/en/api/messages#user_location) { type, city, country, 2 more }
 
 Parameters for the user's location. Used to provide more relevant search results.
 
 type: "approximate"
 
-Accepts one of the following:
-
-"approximate"
-
 city: optional string
 
 The city of the user.
-
-maxLength255
-
-minLength1
 
 country: optional string
 
 The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
 
-maxLength2
-
-minLength2
-
 region: optional string
 
 The region of the user.
-
-maxLength255
-
-minLength1
 
 timezone: optional string
 
 The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 
-maxLength255
+WebFetchTool20260209 = object { name, type, allowed_callers, 8 more }
 
-minLength1
+name: "web_fetch"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "web_fetch_20260209"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+allowed_domains: optional array of string
+
+List of domains to allow fetching from
+
+blocked_domains: optional array of string
+
+List of domains to block fetching from
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+citations: optional [CitationsConfigParam](/docs/en/api/messages#citations_config_param) { enabled }
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+enabled: optional boolean
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+max_content_tokens: optional number
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+max_uses: optional number
+
+Maximum number of times the tool can be used in the API request.
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+ToolSearchToolBm25_20251119 = object { name, type, allowed_callers, 3 more }
+
+name: "tool_search_tool_bm25"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "tool_search_tool_bm25_20251119" or "tool_search_tool_bm25"
+
+Accepts one of the following:
+
+"tool_search_tool_bm25_20251119"
+
+"tool_search_tool_bm25"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+ToolSearchToolRegex20251119 = object { name, type, allowed_callers, 3 more }
+
+name: "tool_search_tool_regex"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "tool_search_tool_regex_20251119" or "tool_search_tool_regex"
+
+Accepts one of the following:
+
+"tool_search_tool_regex_20251119"
+
+"tool_search_tool_regex"
+
+allowed_callers: optional array of "direct" or "code_execution_20250825" or "code_execution_20260120"
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+cache_control: optional [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral) { type, ttl }
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl: optional "5m" or "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading: optional boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+strict: optional boolean
+
+When true, guarantees schema validation on tool names and inputs
 
 ##### ReturnsExpand Collapse 
 

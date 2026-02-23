@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:36Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13364135-using-cowork-safely"
 title: "Using Cowork safely | Claude Help Center"
 ---
@@ -22,6 +22,8 @@ English
 Search for articles...
 
 Table of contents
+
+[](#h_54fa53449f)
 
 [](#h_992c8bab98)
 
@@ -45,6 +47,8 @@ Updated this week
 
 Table of contents
 
+[](#h_54fa53449f)
+
 [](#h_992c8bab98)
 
 [](#h_771a89e342)
@@ -53,9 +57,21 @@ Table of contents
 
 [](#h_41efb7066d)
 
-Cowork is available as a research preview for all paid plans (Pro, Max, Team, Enterprise) using the Claude Desktop app on macOS.
+## Availability
 
-## **[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)**
+Cowork is available as a research preview for paid plans (Pro, Max, Team, Enterprise) on:
+
+- **Claude Desktop for macOS**
+
+  - **[Click here](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)** to download
+
+- **Claude Desktop for Windows** (x64 only)
+
+**Windows users:** Cowork requires the latest version of Claude for Windows. Download or update at **[claude.com/download](https://claude.com/download)**.
+
+Windows arm64 is not supported.
+
+------------------------------------------------------------------------
 
 ## Understanding the risks
 
@@ -107,7 +123,7 @@ Desktop extensions (MCPs) expand what Claude can do, but each one introduces new
 
 **5. Report suspicious behavior immediately**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#9de8eef8efeefcfbf8e9e4ddfcf3e9f5eff2edf4feb3fef2f0) or use the in-app feedback button. Your reports help us improve our defenses.
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#0d787e687f7e6c6b6879744d6c6379657f627d646e236e6260) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 

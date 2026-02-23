@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:18Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10574485-using-extended-thinking"
 title: "Using extended thinking | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Using extended thinking
 
 # Using extended thinking
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

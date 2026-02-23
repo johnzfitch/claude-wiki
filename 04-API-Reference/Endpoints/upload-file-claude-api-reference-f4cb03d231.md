@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:07:24Z"
+fetched_at: "2026-02-22T13:36:54Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/upload"
 title: "Upload File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ TypeScript
 
 client.beta.files.upload(FileUploadParams { file, betas } params, RequestOptionsoptions?): [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }
 
-post/v1/files
+POST/v1/files
 
 Upload File
 
@@ -25,8 +25,6 @@ file: [Uploadable](/docs/en/api/beta/files/upload)
 
 Body param: The file to upload
 
-formatbinary
-
 betas?: Array\<[AnthropicBeta](/docs/en/api/beta#anthropic_beta)\>
 
 Header param: Optional header to specify the beta version(s) you want to use.
@@ -35,7 +33,7 @@ Accepts one of the following:
 
 (string & {})
 
-"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 16 more
+"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 17 more
 
 "message-batches-2024-09-24"
 
@@ -75,6 +73,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 FileMetadata { id, created_at, filename, 4 more }
@@ -89,39 +89,23 @@ created_at: string
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 filename: string
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 mime_type: string
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 size_bytes: number
 
 Size of the file in bytes.
-
-minimum0
 
 type: "file"
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-"file"
 
 downloadable?: boolean
 

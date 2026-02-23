@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-10T10:49:15Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/10035659-where-can-i-learn-more-about-anthropic-s-privacy-practices"
 title: "Where can I learn more about Anthropic&#x27;s Privacy practices? | Claude Help Center"
 ---
@@ -45,10 +45,6 @@ Does Anthropic crawl data from the web, and how can site owners block the crawle
 
 Does Anthropic Act as a Data Processor or Controller?
 
-[](https://support.claude.com/en/articles/9301722-updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service-and-privacy-policy)
-
-Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
-
 [](https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained)
 
 What Certifications has Anthropic obtained?
@@ -56,6 +52,10 @@ What Certifications has Anthropic obtained?
 [](https://support.claude.com/en/articles/13145338-anthropic-software-directory-terms)
 
 Anthropic Software Directory Terms
+
+[](https://support.claude.com/en/articles/13704655-unauthorized-anthropic-stock-sales-and-investment-scams)
+
+Unauthorized Anthropic stock sales and investment scams
 
 Did this answer your question?
 

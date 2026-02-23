@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:21Z"
+fetched_at: "2026-02-23T00:45:08Z"
 source_url: "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 ---
@@ -23,17 +23,21 @@ Search for articles...
 
 Table of contents
 
-[](#h_94525700d9)
+[](#h_0bb6268b50)
 
-[](#h_45bb56e438)
+[](#h_540cbc3861)
 
-[](#h_f7838fc97d)
+[](#h_6fced8040e)
 
-[](#h_23bc9785e7)
+[](#h_deb29b5a4f)
 
-[](#h_bac449f3e9)
+[](#h_ae17ec8236)
 
-[](#h_1e14bcc6b1)
+[](#h_ec4670d2be)
+
+[](#h_f6aa4f4dd2)
+
+[](#h_3b87de90bd)
 
 [All Collections](/en/)
 
@@ -49,141 +53,171 @@ Updated this week
 
 Table of contents
 
-[](#h_94525700d9)
+[](#h_0bb6268b50)
 
-[](#h_45bb56e438)
+[](#h_540cbc3861)
 
-[](#h_f7838fc97d)
+[](#h_6fced8040e)
 
-[](#h_23bc9785e7)
+[](#h_deb29b5a4f)
 
-[](#h_bac449f3e9)
+[](#h_ae17ec8236)
 
-[](#h_1e14bcc6b1)
+[](#h_ec4670d2be)
 
-How your Enterprise plan is billed depends on when and how you purchased it. This article covers pricing and billing mechanics.
+[](#h_f6aa4f4dd2)
 
-## Usage-based Enterprise plans
+[](#h_3b87de90bd)
 
-Usage-based Enterprise plans charge a base seat fee plus actual usage costs drawn from a shared organizational pool.
+Enterprise plan billing has two components: a fixed seat fee and variable usage charges. How usage is billed depends on whether your organization purchased self-serve or sales-assisted. This article covers both.
 
-There are two seat types: **Chat** and **Chat + Claude Code**. For details on what each seat type includes, see [Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans).
-
-### How usage-based billing works
-
-All usage across your organization draws from a shared token pool:
-
-- **Pooled usage**: All users share one organizational token pool rather than individual allocations.
-
-- **No waste**: Tokens can be used by any team member, eliminating unused individual allocations.
-
-- **Consumption-based billing**: Costs scale with actual consumption at API pricing rates.
-
-- **Spend controls**: Admins can set spending caps at the organization, seat tier, and individual user levels.
-
-Usage is billed monthly in arrears based on actual consumption during the billing period.
-
-### Usage Token Pricing
-
-Usage is billed at standard API rates; see our [pricing page](https://claude.com/pricing#api) for details.
-
-## Adding seats mid-term
-
-When you add seats during your billing term, new seats are prorated for the remainder of your annual term. You'll receive an invoice immediately.
-
-**Example:** If you start with 100 Chat seats on January 1 and on March 1 you add 10 more Chat seats and purchase 5 Chat + Claude Code seats, you'll be billed immediately for:
-
-- The 10 additional Chat seats (prorated for the 10 months remaining)
-
-- The 5 Chat + Claude Code seats (prorated for the 10 months remaining)
-
-For step-by-step instructions on purchasing seats, see [Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans).
+**Important:** If your organization is on a seat-based plan with Standard and Premium seats, skip to the **[seat-based plans section](#h_3b87de90bd)** at the bottom. If your organization currently has Chat and Chat + Claude Code seats, skip to the **[Chat and Chat + Claude Code seats section](#h_f6aa4f4dd2)**.
 
 ------------------------------------------------------------------------
 
-## Configuring spend limits
+## Seat fees
 
-Set spending controls to manage your organization's consumption:
+All usage-based Enterprise plans (self-serve and sales-assisted) use the same seat pricing: **priced per user per month and billed annually**.
 
-1.  Sign in as an Owner or Primary Owner.
+You'll be charged for the number of seats on your plan at the start of your annual billing cycle. If you add seats during your term, you'll be charged the prorated amount immediately for the remainder of the year.
 
-2.  Navigate to [Admin settings \> Usage](https://claude.ai/admin-settings/usage).
+**Example:** Your annual plan starts January 1 with 50 seats. You are charged upfront for the seats. On April 1, you add 10 seats. You'll be charged immediately for the remaining months.
 
-3.  Configure spending limits at one or more levels:
-
-    - **Organization level**: Maximum monthly spend for all usage across your organization.
-
-    - **Seat tier level**: Controls spending for all users of a particular seat type.
-
-    - **Individual level**: Specific spending limits for individual users.
-
-These limits work hierarchically—users cannot exceed their individual limits, seat tier limits, or the organization limit.
+**Note:** Seats cannot be removed mid-term on self-serve Enterprise plans. For step-by-step instructions on purchasing, adding, and managing seats, see **[Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
-## Monitoring Usage
+## Usage billing
 
-Track your organization's consumption through:
+On usage-based Enterprise plans, usage is charged separately from your seat fee and is based on actual token consumption at standard API rates. For current per-model pricing, see our **[API pricing page](https://www.anthropic.com/pricing)**.
 
-- The **Spending caps by user** section in [Admin settings \> Usage](https://claude.ai/admin-settings/usage) to view month-to-date spending for each member.
+How and when you're billed for usage depends on your plan type:
 
-- Monthly invoices showing detailed usage per user.
+### Self-serve Enterprise
 
-- Spend limit notifications when users approach their thresholds.
+Usage is purchased **upfront in credits**. Your credits draw down as your team uses Claude and Claude Code. When your credits run out, usage stops until an Owner or Primary Owner purchases more.
+
+- After setup, Owners and Primary Owners can purchase additional credits at any time from **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Usage](https://claude.ai/admin-settings/usage)**.
+
+- All credits are shared across your organization — any team member can draw from the same pool.
+
+### Sales-assisted Enterprise
+
+Usage is **billed monthly in arrears** based on your organization's actual consumption during each billing period. You'll receive a monthly invoice reflecting usage for that period. Speak with your account manager for questions about your usage invoices.
 
 ------------------------------------------------------------------------
 
-## Seat-based Enterprise plans
+## How pooled usage works
 
-Some Enterprise organizations are on seat-based plans with per-seat usage limits rather than consumption billing. If you see "Standard" and "Premium" seats when you navigate to [Admin settings \> Organization](https://claude.ai/admin-settings/organization), you're on this plan.
+Both self-serve and sales-assisted usage-based Enterprise plans use pooled usage. This means all team members share one organizational token pool rather than having individual allocations tied to their seat.
 
-Seat-based plans charge a flat monthly fee per seat and include usage limits. For details on this seat type and pricing structure, see [Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans).
+- Any team member can draw from the shared pool.
+
+- There are no per-seat usage limits. A team member who uses more doesn't reduce another member's access (beyond drawing down the shared pool or credits).
+
+- Usage spans Claude on web, desktop, and mobile, as well as Claude Code.
 
 ------------------------------------------------------------------------
 
-## Frequently Asked Questions
+## Spend controls
 
-### What happens if I reach my usage limit?
+Owners and Primary Owners can set spending caps to manage your organization's consumption. This applies to both self-serve and sales-assisted plans.
 
-**For usage-based plans:** If you exceed your organization or individual spend limit, you won't be able to use Claude or Claude Code again until the next billing period begins or an admin increases your limits.
+To configure spend controls, sign in as an Owner or Primary Owner and navigate to **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Usage](https://claude.ai/admin-settings/usage)**.
 
-**For seat-based plans:** If extra usage is enabled, you can continue working and extra usage will be billed. If extra usage is not enabled, you won't be able to use Claude or Claude Code until your limits reset or an admin enables extra usage.
+You can set caps at two levels:
 
-### Can I use my usage budget across both Claude and Claude Code?
+- **Organization level:** Maximum spend for all usage across your organization.
 
-Chat + Claude Code seat holders can use their allocation across Claude on web, desktop, and mobile, as well as Claude Code in the terminal.
+- **Individual level:** Maximum spend for a specific user.
 
-### Can I disable usage tracking entirely?
+These limits work hierarchically — a user cannot exceed their individual limit or the organization limit, whichever is lower.
 
-Owners can set limits to "unlimited," but consumption will still be billed. You cannot disable billing for usage—usage-based pricing is core to the Chat and Chat + Claude Code seat models.
+On **self-serve plans**, spend caps work alongside your credit balance. If a user hits their individual cap or the organization cap, their usage will stop even if credits remain. Owners can adjust caps at any time.
 
-### How do I view my invoices?
+On **sales-assisted plans**, spend caps prevent usage from continuing past the cap threshold. If a cap is reached, usage stops until the next billing period begins or an owner raises the limit.
 
-Primary Owners and Owners can view and pay invoices from [Admin settings \> Billing](https://claude.ai/admin-settings/billing).
+**Owners can set limits to "unlimited,"** but consumption will still be billed. You cannot disable billing for usage — usage-based pricing is a core part of the Enterprise plan.
+
+------------------------------------------------------------------------
+
+## Monitoring usage and spend
+
+You can track your organization's usage and spending in a few places:
+
+- **Organization** **settings \> Usage:** View month-to-date spending for each member, current spend cap status, and credit balance (self-serve plans).
+
+- **Monthly invoices:** Detailed usage per user for the billing period (sales-assisted plans).
+
+- **Spend limit notifications:** Alerts when users or your organization approach configured spending thresholds.
+
+------------------------------------------------------------------------
+
+## What happens when usage stops
+
+If usage stops on your Enterprise plan, here's how to resume:
+
+- **Self-serve plans:** If credits run out or a spend cap is reached, an Owner or Primary Owner can purchase additional credits or raise the spend cap from **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Usage](https://claude.ai/admin-settings/usage)**.
+
+- **Sales-assisted plans:** If a spend cap is reached, an Owner or Primary Owner can raise the cap, or usage will resume at the start of the next billing period. Contact your account manager with questions.
+
+## 
+
+------------------------------------------------------------------------
+
+## Chat and Chat + Claude Code seats
+
+**Note:** Organizations currently using usage-based Enterprise plans with Chat and Chat + Claude Code seats will not be able to continue with this billing model past your next contract renewal.
+
+Some existing usage-based Enterprise organizations currently have two seat types with different pricing. If you see **Chat** and **Chat + Claude Code** seats in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**, this section applies to you.
+
+Seat fees are billed annually. Usage billing works the same way as described in the **[Usage billing section](#h_540cbc3861)** above — pooled across your organization, billed in arrears on sales-assisted plans.
+
+### Transitioning to the single Enterprise seat
+
+At your next contract renewal, your plan will automatically transition to the single Enterprise seat model. When that happens, all users — regardless of their current seat type — will move to the **Enterprise seat**. This seat includes Claude Code, Cowork, Chat and more.
+
+If you have questions about your upcoming renewal, reach out to your Anthropic Contact or **[our Sales team](https://claude.com/contact-sales)**.
+
+------------------------------------------------------------------------
+
+## Seat-based plans
+
+**Note:** Organizations currently using seat-based Enterprise plans with Standard and Premium seats will not be able to continue with this billing model past your next contract renewal.
+
+Some Enterprise organizations are on older seat-based plans with **Standard** and **Premium** seats. These plans charge a flat monthly fee per seat that includes usage limits, rather than the pooled usage-based billing described above.
+
+If you see "Standard" and "Premium" seats in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**, this section applies to you.
+
+On seat-based plans, extra usage is available to allow team members to continue working after reaching their assigned seat’s included limits. See **[Extra usage for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)** for details on how extra usage works and how it's billed on your plan.
+
+### Transitioning to usage-based Enterprise
+
+At your next contract renewal, your plan will transition to the usage-based single Enterprise seat model described in this article. If you'd like to migrate before your renewal, reach out to your Anthropic Contact or **[our Sales team](https://claude.com/contact-sales)**.
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)
-
-What is the Team plan?
-
 [](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
 
 What is the Enterprise plan?
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
+[](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan)
 
-Using Claude Code with your Team or Enterprise plan
+Use Claude Code with your Team or Enterprise plan
 
 [](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
-Purchasing and managing seats on Enterprise plans
+Usage analytics for Team and Enterprise plans
+
+[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
+
+Purchase and manage seats on Enterprise plans
 
 Did this answer your question?
 

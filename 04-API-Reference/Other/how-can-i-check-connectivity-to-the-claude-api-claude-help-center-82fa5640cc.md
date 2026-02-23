@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:52:07Z"
+fetched_at: "2026-02-13T09:23:37Z"
 source_url: "https://support.claude.com/en/articles/13403291-how-can-i-check-connectivity-to-the-claude-api"
 title: "How can I check connectivity to the Claude API? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ How can I check connectivity to the Claude API?
 
 # How can I check connectivity to the Claude API?
 
-Updated yesterday
+Updated this week
 
 You can programmatically verify your connection to the Claude API by following these steps:
 
@@ -61,9 +61,9 @@ How do I pay for my Claude API usage?
 
 Managing API key environment variables in Claude Code
 
-[](https://support.claude.com/en/articles/12618689-claude-code-on-the-web)
+[](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
-Claude Code on the web
+Claude Code FAQ
 
 Did this answer your question?
 

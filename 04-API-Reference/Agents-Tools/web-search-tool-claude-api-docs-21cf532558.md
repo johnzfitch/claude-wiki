@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:26Z"
+fetched_at: "2026-02-22T13:09:57Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool"
 title: "Web search tool - Claude API Docs"
 ---
@@ -15,7 +15,9 @@ Copy page
 
 The web search tool gives Claude direct access to real-time web content, allowing it to answer questions with up-to-date information beyond its knowledge cutoff. Claude automatically cites sources from search results as part of its answer.
 
-Please reach out through our [feedback form](https://forms.gle/sWjBtsrNEY2oKGuE8) to share your experience with the web search tool.
+The latest web search tool version (`web_search_20260209`) supports **dynamic filtering** with Claude Opus 4.6 and Sonnet 4.6. Claude can write and execute code to filter search results before they reach the context window, keeping only relevant information and discarding the rest. This leads to more accurate responses while reducing token consumption. The previous tool version (`web_search_20250305`) remains available without dynamic filtering.
+
+This feature is [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) eligible. When your organization has a ZDR arrangement, data sent through this feature is not stored after the API response is returned.
 
 ## 
 
@@ -27,6 +29,7 @@ Web search is available on:
 - Claude Opus 4.5 (`claude-opus-4-5-20251101`)
 - Claude Opus 4.1 (`claude-opus-4-1-20250805`)
 - Claude Opus 4 (`claude-opus-4-20250514`)
+- Claude Sonnet 4.6 (`claude-sonnet-4-6`)
 - Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`)
 - Claude Sonnet 4 (`claude-sonnet-4-20250514`)
 - Claude Sonnet 3.7 ([deprecated](/docs/en/about-claude/model-deprecations)) (`claude-3-7-sonnet-20250219`)
@@ -42,6 +45,48 @@ When you add the web search tool to your API request:
 1.  Claude decides when to search based on the prompt.
 2.  The API executes the searches and provides Claude with the results. This process may repeat multiple times throughout a single request.
 3.  At the end of its turn, Claude provides a final response with cited sources.
+
+### 
+
+Dynamic filtering with Opus 4.6 and Sonnet 4.6
+
+Web search is a token-intensive task. With basic web search, Claude needs to pull search results into context, fetch full HTML from multiple websites, and reason over all of it before arriving at an answer. Often, much of this content is irrelevant, which can degrade response quality.
+
+With the `web_search_20260209` tool version, Claude can write and execute code to post-process query results. Instead of reasoning over full HTML files, Claude dynamically filters search results before loading them into context, keeping only what's relevant and discarding the rest.
+
+Dynamic filtering is particularly effective for:
+
+- Searching through technical documentation
+- Literature review and citation verification
+- Technical research
+- Response grounding and verification
+
+Dynamic filtering requires the [code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool) to be enabled. The improved web search tool is available on the Claude API and Microsoft Azure. On Google Vertex AI, the basic web search tool (without dynamic filtering) is available.
+
+To enable dynamic filtering, use the `web_search_20260209` tool version:
+
+Shell
+
+``` shiki
+curl https://api.anthropic.com/v1/messages \
+    --header "x-api-key: $ANTHROPIC_API_KEY" \
+    --header "anthropic-version: 2023-06-01" \
+    --header "content-type: application/json" \
+    --data '{
+        "model": "claude-opus-4-6",
+        "max_tokens": 4096,
+        "messages": [
+            {
+                "role": "user",
+                "content": "Search for the current prices of AAPL and GOOGL, then calculate which has a better P/E ratio."
+            }
+        ],
+        "tools": [{
+            "type": "web_search_20260209",
+            "name": "web_search"
+        }]
+    }'
+```
 
 ## 
 
@@ -291,57 +336,57 @@ client = anthropic.Anthropic()
 
 # First request with web search and cache breakpoint
 messages = [
-    {
-        "role": "user",
-        "content": "What's the current weather in San Francisco today?"
-    }
+    {"role": "user", "content": "What's the current weather in San Francisco today?"}
 ]
 
 response1 = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     messages=messages,
-    tools=[{
-        "type": "web_search_20250305",
-        "name": "web_search",
-        "user_location": {
-            "type": "approximate",
-            "city": "San Francisco",
-            "region": "California",
-            "country": "US",
-            "timezone": "America/Los_Angeles"
+    tools=[
+        {
+            "type": "web_search_20250305",
+            "name": "web_search",
+            "user_location": {
+                "type": "approximate",
+                "city": "San Francisco",
+                "region": "California",
+                "country": "US",
+                "timezone": "America/Los_Angeles",
+            },
         }
-    }]
+    ],
 )
 
 # Add Claude's response to the conversation
-messages.append({
-    "role": "assistant",
-    "content": response1.content
-})
+messages.append({"role": "assistant", "content": response1.content})
 
 # Second request with cache breakpoint after the search results
-messages.append({
-    "role": "user",
-    "content": "Should I expect rain later this week?",
-    "cache_control": {"type": "ephemeral"}  # Cache up to this point
-})
+messages.append(
+    {
+        "role": "user",
+        "content": "Should I expect rain later this week?",
+        "cache_control": {"type": "ephemeral"},  # Cache up to this point
+    }
+)
 
 response2 = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     messages=messages,
-    tools=[{
-        "type": "web_search_20250305",
-        "name": "web_search",
-        "user_location": {
-            "type": "approximate",
-            "city": "San Francisco",
-            "region": "California",
-            "country": "US",
-            "timezone": "America/Los_Angeles"
+    tools=[
+        {
+            "type": "web_search_20250305",
+            "name": "web_search",
+            "user_location": {
+                "type": "approximate",
+                "city": "San Francisco",
+                "region": "California",
+                "country": "US",
+                "timezone": "America/Los_Angeles",
+            },
         }
-    }]
+    ],
 )
 # The second response will benefit from cached search results
 # while still being able to perform new searches if needed
@@ -414,6 +459,8 @@ Was this page helpful?
 - [Supported models](#supported-models)
 
 - [How web search works](#how-web-search-works)
+
+- [Dynamic filtering with Opus 4.6 and Sonnet 4.6](#dynamic-filtering-with-opus-4-6-and-sonnet-4-6)
 
 - [How to use web search](#how-to-use-web-search)
 

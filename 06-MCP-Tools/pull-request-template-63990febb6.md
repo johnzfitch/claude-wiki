@@ -1,0 +1,8 @@
+---
+category: "06-MCP-Tools"
+fetched_at: "2026-02-23T00:45:47Z"
+source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/.github/pull_request_template.md"
+title: "Pull_Request_Template"
+---
+
+\## Description \## Publishing Your Server \*\*Note: We are no longer accepting PRs to add servers to the README.\*\* Instead, please publish your server to the \[MCP Server Registry\](https://github.com/modelcontextprotocol/registry) to make it discoverable to the MCP ecosystem. To publish your server, follow the \[quickstart guide\](https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/quickstart.mdx). You can browse published servers at \[https://registry.modelcontextprotocol.io/\](https://registry.modelcontextprotocol.io/). \## Server Details - Server: - Changes to: \## Motivation and Context \## How Has This Been Tested? \## Breaking Changes \## Types of changes - \[ \] Bug fix (non-breaking change which fixes an issue) - \[ \] New feature (non-breaking change which adds functionality) - \[ \] Breaking change (fix or feature that would cause existing functionality to change) - \[ \] Documentation update \## Checklist - \[ \] I have read the \[MCP Protocol Documentation\](https://modelcontextprotocol.io) - \[ \] My changes follows MCP security best practices - \[ \] I have updated the server's README accordingly - \[ \] I have tested this with an LLM client - \[ \] My code follows the repository's style guidelines - \[ \] New and existing tests pass locally - \[ \] I have added appropriate error handling - \[ \] I have documented all environment variables and configuration options \## Additional context

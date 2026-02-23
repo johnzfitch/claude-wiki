@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:47Z"
+fetched_at: "2026-02-22T13:24:54Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/data-organizer"
 title: "Data organizer - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Turn unstructured text into bespoke JSON tables.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -81,11 +81,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "Silvermist Hollow, a charming village, was home to an extraordinary group of individuals. Among them was Dr. Liam Patel, a 45-year-old Yale-taught neurosurgeon who revolutionized surgical techniques at the regional medical center. Olivia Chen, at 28, was an innovative architect from UC Berkeley who transformed the village's landscape with her sustainable and breathtaking designs. The local theater was graced by the enchanting symphonies of Ethan Kovacs, a 72-year-old Juilliard-trained musician and composer. Isabella Torres, a self-taught chef with a passion for locally sourced ingredients, created a culinary sensation with her farm-to-table restaurant, which became a must-visit destination for food lovers. These remarkable individuals, each with their distinct talents, contributed to the vibrant tapestry of life in Silvermist Hollow."
+                    "text": "Silvermist Hollow, a charming village, was home to an extraordinary group of individuals. Among them was Dr. Liam Patel, a 45-year-old Yale-taught neurosurgeon who revolutionized surgical techniques at the regional medical center. Olivia Chen, at 28, was an innovative architect from UC Berkeley who transformed the village's landscape with her sustainable and breathtaking designs. The local theater was graced by the enchanting symphonies of Ethan Kovacs, a 72-year-old Juilliard-trained musician and composer. Isabella Torres, a self-taught chef with a passion for locally sourced ingredients, created a culinary sensation with her farm-to-table restaurant, which became a must-visit destination for food lovers. These remarkable individuals, each with their distinct talents, contributed to the vibrant tapestry of life in Silvermist Hollow.",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

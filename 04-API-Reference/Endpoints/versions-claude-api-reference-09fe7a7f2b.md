@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:13Z"
+fetched_at: "2026-02-22T13:59:35Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions"
 title: "Versions - Claude API Reference"
 ---
@@ -15,25 +15,25 @@ Go
 
 client.Beta.Skills.Versions.New(ctx, skillID, params) (\*[BetaSkillVersionNewResponse](/docs/en/api/beta#BetaSkillVersionNewResponse), error)
 
-post/v1/skills/{skill_id}/versions
+POST/v1/skills/{skill_id}/versions
 
 ##### [List Skill Versions](/docs/en/api/beta/skills/versions/list)
 
 client.Beta.Skills.Versions.List(ctx, skillID, params) (\*PageCursor\[[BetaSkillVersionListResponse](/docs/en/api/beta#BetaSkillVersionListResponse)\], error)
 
-get/v1/skills/{skill_id}/versions
+GET/v1/skills/{skill_id}/versions
 
 ##### [Get Skill Version](/docs/en/api/beta/skills/versions/retrieve)
 
 client.Beta.Skills.Versions.Get(ctx, version, params) (\*[BetaSkillVersionGetResponse](/docs/en/api/beta#BetaSkillVersionGetResponse), error)
 
-get/v1/skills/{skill_id}/versions/{version}
+GET/v1/skills/{skill_id}/versions/{version}
 
 ##### [Delete Skill Version](/docs/en/api/beta/skills/versions/delete)
 
 client.Beta.Skills.Versions.Delete(ctx, version, params) (\*[BetaSkillVersionDeleteResponse](/docs/en/api/beta#BetaSkillVersionDeleteResponse), error)
 
-delete/v1/skills/{skill_id}/versions/{version}
+DELETE/v1/skills/{skill_id}/versions/{version}
 
 [](/docs)
 

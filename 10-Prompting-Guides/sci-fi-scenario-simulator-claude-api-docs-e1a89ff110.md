@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:56Z"
+fetched_at: "2026-02-22T13:26:28Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/sci-fi-scenario-simulator"
 title: "Sci-fi scenario simulator - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Discuss with the user various science fiction scenarios and associated challenge
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -64,11 +64,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "A future where humans can upload their consciousness into a digital realm."
+                    "text": "A future where humans can upload their consciousness into a digital realm.",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

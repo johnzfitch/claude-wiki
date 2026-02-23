@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:26Z"
+fetched_at: "2026-02-22T13:21:05Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/google-apps-scripter"
 title: "Google apps scripter - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Generate Google Apps scripts to complete tasks based on user requirements.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -43,7 +43,7 @@ function translateSlidesToKorean() {
         var shape = pageElement.asShape();
         if (shape.getText() !== null) {
           var text = shape.getText().asString();
-          var translatedText = LanguageApp.translate(text, '', 'ko');
+          var translatedText = LanguageApp.translate(text, "", "ko");
           shape.getText().setText(translatedText);
         }
       } else if (pageElement.getPageElementType() === SlidesApp.PageElementType.TABLE) {
@@ -55,7 +55,7 @@ function translateSlidesToKorean() {
           for (var col = 0; col < numColumns; col++) {
             var tableCell = table.getCell(row, col);
             var text = tableCell.getText().asString();
-            var translatedText = LanguageApp.translate(text, '', 'ko');
+            var translatedText = LanguageApp.translate(text, "", "ko");
             tableCell.getText().setText(translatedText);
           }
         }
@@ -122,24 +122,24 @@ Vertex AI TypeScript
 import anthropic
 
 client = anthropic.Anthropic(
-  # defaults to os.environ.get("ANTHROPIC_API_KEY")
-  api_key="my_api_key",
+    # defaults to os.environ.get("ANTHROPIC_API_KEY")
+    api_key="my_api_key",
 )
 message = client.messages.create(
-  model="claude-opus-4-6",
-  max_tokens=2000,
-  temperature=0,
-  messages=[
-    {
-      "role": "user",
-      "content": [
+    model="claude-opus-4-6",
+    max_tokens=2000,
+    temperature=0,
+    messages=[
         {
-          "type": "text",
-          "text": "Write me a Google apps script that will translate all text in a Google Slides presentation to Korean."
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Write me a Google apps script that will translate all text in a Google Slides presentation to Korean.",
+                }
+            ],
         }
-      ]
-    }
-  ]
+    ],
 )
 print(message.content)
 ```

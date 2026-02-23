@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:15Z"
+fetched_at: "2026-02-22T14:27:03Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/delete"
 title: "Delete Workspace Member - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Delete Workspace Member
 
-delete/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 Delete Workspace Member
 
@@ -31,10 +31,6 @@ Deleted object type.
 
 For Workspace Members, this is always `"workspace_member_deleted"`.
 
-Accepts one of the following:
-
-"workspace_member_deleted"
-
 user_id: string
 
 ID of the User.
@@ -52,27 +48,7 @@ curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/members
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "type": "workspace_member_deleted",
-  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "type": "workspace_member_deleted",
-  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
-}
-```
 
 [](/docs)
 

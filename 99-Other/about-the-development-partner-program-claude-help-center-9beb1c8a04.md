@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:20Z"
+fetched_at: "2026-02-23T00:45:14Z"
 source_url: "https://support.claude.com/en/articles/11174108-about-the-development-partner-program"
 title: "About the Development Partner Program | Claude Help Center"
 ---

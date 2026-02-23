@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:36Z"
+fetched_at: "2026-02-23T00:45:18Z"
 source_url: "https://support.claude.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for"
 title: "What are some things I can use Claude for? | Claude Help Center"
 ---

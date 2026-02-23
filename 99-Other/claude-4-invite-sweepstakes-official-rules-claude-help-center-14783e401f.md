@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:20Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/11140763-claude-4-invite-sweepstakes-official-rules"
 title: "Claude 4 Invite Sweepstakes Official Rules | Claude Help Center"
 ---
@@ -57,10 +57,6 @@ Related Articles
 
 Getting started with Claude
 
-[](https://support.claude.com/en/articles/9889428-i-need-to-add-or-update-my-claude-console-organization-s-tax-or-vat-id)
-
-I need to add or update my Claude Console organization's tax or VAT ID
-
 [](https://support.claude.com/en/articles/11408405-claude-4-invite-contest)
 
 Claude 4 Invite Contest
@@ -72,6 +68,10 @@ Create and edit files with Claude
 [](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account)
 
 Logging in to your Claude account
+
+[](https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account)
+
+Logging in to your Console account
 
 Did this answer your question?
 

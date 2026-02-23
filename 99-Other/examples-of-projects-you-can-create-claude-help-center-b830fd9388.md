@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:40Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9529781-examples-of-projects-you-can-create"
 title: "Examples of projects you can create | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Examples of projects you can create
 
 # Examples of projects you can create
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -177,6 +177,10 @@ These examples demonstrate the flexibility of projects. Whether you're working o
 
 Related Articles
 
+[](https://support.claude.com/en/articles/9517075-what-are-projects)
+
+What are projects?
+
 [](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)
 
 How can I create and manage projects?
@@ -187,11 +191,7 @@ Usage limit best practices
 
 [](https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects)
 
-Retrieval Augmented Generation (RAG) for projects
-
-[](https://support.claude.com/en/articles/12489464-using-enterprise-search)
-
-Using Enterprise Search
+Retrieval augmented generation (RAG) for projects
 
 [](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)
 

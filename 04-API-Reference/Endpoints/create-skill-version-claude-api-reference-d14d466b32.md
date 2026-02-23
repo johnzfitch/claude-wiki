@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:14Z"
+fetched_at: "2026-02-22T13:59:41Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/create"
 title: "Create Skill Version - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Skills.Versions.New(ctx, skillID, params) (\*[BetaSkillVersionNewResponse](/docs/en/api/beta#BetaSkillVersionNewResponse), error)
 
-post/v1/skills/{skill_id}/versions
+POST/v1/skills/{skill_id}/versions
 
 Create Skill Version
 
@@ -27,13 +27,17 @@ The format and length of IDs may change over time.
 
 params BetaSkillVersionNewParams
 
-Files param.Field\[\[\]Reader\]optional
+Files param.Field\[\[\]Reader\]
+
+optional
 
 Body param: Files to upload for the skill.
 
 All files must be in the same top-level directory and must include a SKILL.md file at the root of that directory.
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Header param: Optional header to specify the beta version(s) you want to use.
 
@@ -80,6 +84,8 @@ const AnthropicBetaContextManagement2025_06_27 AnthropicBeta = "context-manageme
 const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-context-window-exceeded-2025-08-26"
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
+
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

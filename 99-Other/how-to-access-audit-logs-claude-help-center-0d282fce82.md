@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:44Z"
+fetched_at: "2026-02-16T21:12:54Z"
 source_url: "https://support.claude.com/en/articles/9970975-how-to-access-audit-logs"
 title: "How to access audit logs | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ How to access audit logs
 
 # How to access audit logs
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -79,23 +79,23 @@ Related Articles
 
 [](https://support.claude.com/en/articles/9267276-roles-and-permissions)
 
-Roles and Permissions
-
-[](https://support.claude.com/en/articles/9267400-can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan-organizations)
-
-Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations?
+Roles and permissions
 
 [](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
 
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
+[](https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization)
+
+What happens to a user's data when they are removed from a Team or Enterprise organization?
+
 [](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
-Usage Analytics for Team and Enterprise Plans
+Usage analytics for Team and Enterprise plans
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13346720-how-can-i-export-my-organization-s-data)
 
-Managing members on Team and Enterprise plans
+How can I export my organization's data?
 
 Did this answer your question?
 

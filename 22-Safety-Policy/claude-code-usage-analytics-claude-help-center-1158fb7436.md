@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-23T00:45:22Z"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 title: "Claude Code usage analytics | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Claude Code usage analytics
 
 # Claude Code usage analytics
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -109,7 +109,7 @@ The Claude Code Usage page displays the following metrics for your organization:
 
 - **Lines accepted over time**: Daily breakdown of accepted code lines.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1717579277/46c512f4b3ed05c359cecd78ed5c/e0ce2c19-39e2-411f-9a1f-cb1d46439a42?expires=1770585300&signature=81eba2a7d1d89df4831e40cabd989b2e18d3077124137da35d6f179d3408d973&req=dScmEcx5lINYXvMW1HO4zfiEMKZVh3zNCX9h5MbdDjPL9J9Xm0sS4lTLHa%2FV%0AlXXgOQ3LmNodXd92quo%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1717579277/46c512f4b3ed05c359cecd78ed5c/e0ce2c19-39e2-411f-9a1f-cb1d46439a42?expires=1771809300&signature=82ce030f107bdb082d8ac208f9652f814e88e72dbe005198b73616f094eb9227&req=dScmEcx5lINYXvMW1HO4zfiEMKdYj3DNCX9h5MbdDjO9%2BU86AhMjwOsmb5tl%0AG9N8NPS%2FiA8DgTrddFI%3D%0A)
 
 ### User-level metrics
 
@@ -199,14 +199,6 @@ See **[Analytics](https://code.claude.com/docs/en/analytics)** in our Claude Cod
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
-
-Using Claude Code with your Team or Enterprise plan
-
-[](https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code)
-
-Automated Security Reviews in Claude Code
-
 [](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
@@ -217,7 +209,15 @@ Claude Code on the web
 
 [](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
-Usage Analytics for Team and Enterprise Plans
+Usage analytics for Team and Enterprise plans
+
+[](https://support.claude.com/en/articles/13694757-access-engagement-and-adoption-data-with-the-analytics-api)
+
+Access engagement and adoption data with the Analytics API
+
+[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
+
+Claude Enterprise Analytics API reference guide
 
 Did this answer your question?
 

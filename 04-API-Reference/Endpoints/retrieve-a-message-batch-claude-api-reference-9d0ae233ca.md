@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:40Z"
+fetched_at: "2026-02-22T13:55:31Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/retrieve"
 title: "Retrieve a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Messages.Batches.Get(ctx, messageBatchID) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
@@ -39,19 +39,13 @@ ArchivedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 CancelInitiatedAt Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 EndedAt Time
 
@@ -64,8 +58,6 @@ formatdate-time
 ExpiresAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus MessageBatchProcessingStatus
 
@@ -124,10 +116,6 @@ Type MessageBatch
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-const MessageBatchMessageBatch MessageBatch = "message_batch"
 
 Retrieve a Message Batch
 

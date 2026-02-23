@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:21Z"
+fetched_at: "2026-02-22T13:20:19Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat"
 title: "Customer support agent - Claude API Docs"
 ---
@@ -107,7 +107,7 @@ Here are the key tasks associated with the example insurance interaction above:
 
 Establish success criteria
 
-Work with your support team to [define clear success criteria](/docs/en/test-and-evaluate/define-success) and write [detailed evaluations](/docs/en/test-and-evaluate/develop-tests) with measurable benchmarks and goals.
+Work with your support team to [define success criteria and write detailed evaluations](/docs/en/test-and-evaluate/develop-tests) with measurable benchmarks and goals.
 
 Here are criteria and benchmarks that can be used to evaluate how successfully Claude performs the defined tasks:
 
@@ -153,20 +153,20 @@ Build a strong prompt
 
 Using Claude for customer support requires Claude having enough direction and context to respond appropriately, while having enough flexibility to handle a wide range of customer inquiries.
 
-Let's start by writing the elements of a strong prompt, starting with a system prompt:
+Start by writing the elements of a strong prompt, starting with a system prompt:
 
 ``` shiki
-IDENTITY = """You are Eva, a friendly and knowledgeable AI assistant for Acme Insurance 
-Company. Your role is to warmly welcome customers and provide information on 
-Acme's insurance offerings, which include car insurance and electric car 
+IDENTITY = """You are Eva, a friendly and knowledgeable AI assistant for Acme Insurance
+Company. Your role is to warmly welcome customers and provide information on
+Acme's insurance offerings, which include car insurance and electric car
 insurance. You can also help customers get quotes for their insurance needs."""
 ```
 
 While you may be tempted to put all your information inside a system prompt as a way to separate instructions from the user conversation, Claude actually works best with the bulk of its prompt content written inside the first `User` turn (with the only exception being role prompting). Read more at [Giving Claude a role with a system prompt](/docs/en/build-with-claude/prompt-engineering/system-prompts).
 
-It's best to break down complex prompts into subsections and write one part at a time. For each task, you might find greater success by following a step by step process to define the parts of the prompt Claude would need to do the task well. For this car insurance customer support example, we'll be writing piecemeal all the parts for a prompt starting with the "Greeting and general guidance" task. This also makes debugging your prompt easier as you can more quickly adjust individual parts of the overall prompt.
+It's best to break down complex prompts into subsections and write one part at a time. For each task, you might find greater success by following a step by step process to define the parts of the prompt Claude would need to do the task well. For this car insurance customer support example, you'll be writing piecemeal all the parts for a prompt starting with the "Greeting and general guidance" task. This also makes debugging your prompt easier as you can more quickly adjust individual parts of the overall prompt.
 
-We'll put all of these pieces in a file called `config.py`.
+Put all of these pieces in a file called `config.py`.
 
 ``` shiki
 STATIC_GREETINGS_AND_GENERAL = """
@@ -174,13 +174,13 @@ STATIC_GREETINGS_AND_GENERAL = """
 Acme Auto Insurance: Your Trusted Companion on the Road
 
 About:
-At Acme Insurance, we understand that your vehicle is more than just a mode of transportation—it's your ticket to life's adventures. 
+At Acme Insurance, we understand that your vehicle is more than just a mode of transportation—it's your ticket to life's adventures.
 Since 1985, we've been crafting auto insurance policies that give drivers the confidence to explore, commute, and travel with peace of mind.
-Whether you're navigating city streets or embarking on cross-country road trips, Acme is there to protect you and your vehicle. 
+Whether you're navigating city streets or embarking on cross-country road trips, Acme is there to protect you and your vehicle.
 Our innovative auto insurance policies are designed to adapt to your unique needs, covering everything from fender benders to major collisions.
-With Acme's award-winning customer service and swift claim resolution, you can focus on the joy of driving while we handle the rest. 
+With Acme's award-winning customer service and swift claim resolution, you can focus on the joy of driving while we handle the rest.
 We're not just an insurance provider—we're your co-pilot in life's journeys.
-Choose Acme Auto Insurance and experience the assurance that comes with superior coverage and genuine care. Because at Acme, we don't just 
+Choose Acme Auto Insurance and experience the assurance that comes with superior coverage and genuine care. Because at Acme, we don't just
 insure your car—we fuel your adventures on the open road.
 
 Note: We also offer specialized coverage for electric vehicles, ensuring that drivers of all car types can benefit from our protection.
@@ -196,10 +196,10 @@ Customer service number: 1-800-123-4567
 """
 ```
 
-We'll then do the same for our car insurance and electric car insurance information.
+Then do the same for your car insurance and electric car insurance information.
 
 ``` shiki
-STATIC_CAR_INSURANCE="""
+STATIC_CAR_INSURANCE = """
 <static_context>
 Car Insurance Coverage:
 Acme's car insurance policies typically cover:
@@ -216,41 +216,41 @@ Optional coverages include:
 </static_context>
 """
 
-STATIC_ELECTRIC_CAR_INSURANCE="""
+STATIC_ELECTRIC_CAR_INSURANCE = """
 <static_context>
 Electric Car Insurance:
-Our specialized electric car insurance goes beyond traditional auto coverage, 
+Our specialized electric car insurance goes beyond traditional auto coverage,
 offering tailored protection for your high-tech investment. In addition to standard coverages, we offer:
 - Safeguarding expensive battery systems
 - Covering home charging equipment
 - Adapting to the rapidly evolving world of electric vehicles
 
-Whether you're driving a Rivian, Nissan Leaf, Chevrolet Bolt, 
-or any other electric vehicle, our knowledgeable agents are ready to craft a policy 
+Whether you're driving a Rivian, Nissan Leaf, Chevrolet Bolt,
+or any other electric vehicle, our knowledgeable agents are ready to craft a policy
 that gives you the confidence to enjoy every electron-powered mile.
 </static_context>
 """
 ```
 
-Now that we have our static content, let's add at least 4-5 sample "good" interactions to guide Claude's responses. These examples should be representative of your ideal customer interaction and can include guardrails, tool calls, etc.
+Now that you have your static content, add at least 4-5 sample "good" interactions to guide Claude's responses. These examples should be representative of your ideal customer interaction and can include guardrails, tool calls, etc.
 
 ``` shiki
-EXAMPLES="""
+EXAMPLES = """
 Here are a few examples of how you can interact with customers:
 
 <example 1>
 H: Hi, do you offer commercial insurance for small businesses?
 
-A: Ah! Unfortunately, we don't offer commercial insurance at this time. 
-However, we do provide a range of personal insurance products including car insurance and electric car insurance. 
+A: Ah! Unfortunately, we don't offer commercial insurance at this time.
+However, we do provide a range of personal insurance products including car insurance and electric car insurance.
 Would you like to know more about these offerings?
 </example 1>
 
 <example 2>
 H: Hi, what are your business hours?
 
-A: Our business hours are Monday to Friday, 9 AM to 5 PM EST. 
-If you have any questions or need assistance, feel free to reach out during those times. 
+A: Our business hours are Monday to Friday, 9 AM to 5 PM EST.
+If you have any questions or need assistance, feel free to reach out during those times.
 How else can I assist you today?
 </example 2>
 
@@ -264,14 +264,14 @@ A: Great choice! Acme's car insurance policies typically include:
 - Medical payments coverage: Pays for medical expenses after an accident
 - Uninsured/underinsured motorist coverage: Protects you from drivers with insufficient insurance
 
-We also offer optional coverages like rental car reimbursement, roadside assistance, and new car replacement. 
+We also offer optional coverages like rental car reimbursement, roadside assistance, and new car replacement.
 Would you like more details on any of these coverages, or do you have specific questions about insuring your vehicle?
 </example 3>
 
 <example 4>
 H: I'd like to hear about your electric car insurance.
 
-A: Certainly! Our electric car insurance is specially designed to meet the unique needs of electric vehicle owners. 
+A: Certainly! Our electric car insurance is specially designed to meet the unique needs of electric vehicle owners.
 In addition to all the standard coverages we offer for regular cars, our electric car policies include:
 
 - Battery coverage: Protection against damage or degradation of your vehicle's expensive battery system
@@ -280,15 +280,15 @@ In addition to all the standard coverages we offer for regular cars, our electri
 - Cybersecurity protection: Coverage against hacking or digital threats
 - Specialized roadside assistance: Includes flatbed towing to protect the vehicle's undercarriage
 
-We cover a wide range of electric vehicles, including popular models from Tesla, Rivian, Nissan, Chevrolet, and more. 
+We cover a wide range of electric vehicles, including popular models from Tesla, Rivian, Nissan, Chevrolet, and more.
 Is there a specific electric vehicle you're looking to insure, or would you like more details on any of these coverages?
 </example 4>
 
 <example 5>
 H: I'd like to get a quote for my car insurance.
 
-A: Certainly! I'd be happy to help you get a quote for your car insurance. 
-To provide you with an accurate quote, I'll need to collect some information about your vehicle and the primary driver. 
+A: Certainly! I'd be happy to help you get a quote for your car insurance.
+To provide you with an accurate quote, I'll need to collect some information about your vehicle and the primary driver.
 Let's start with the basics:
 
 1. What is the make and model of your vehicle?
@@ -306,7 +306,7 @@ You will also want to include any important instructions outlining Do's and Don'
 ``` shiki
 ADDITIONAL_GUARDRAILS = """Please adhere to the following guardrails:
 1. Only provide information about insurance types listed in our offerings.
-2. If asked about an insurance type we don't offer, politely state 
+2. If asked about an insurance type we don't offer, politely state
 that we don't provide that service.
 3. Do not speculate about future product offerings or company plans.
 4. Don't make promises or enter into agreements it's not authorized to make.
@@ -315,16 +315,18 @@ You only provide information and guidance.
 """
 ```
 
-Now let’s combine all these sections into a single string to use as our prompt.
+Now combine all these sections into a single string to use as your prompt.
 
 ``` shiki
-TASK_SPECIFIC_INSTRUCTIONS = ' '.join([
-   STATIC_GREETINGS_AND_GENERAL,
-   STATIC_CAR_INSURANCE,
-   STATIC_ELECTRIC_CAR_INSURANCE,
-   EXAMPLES,
-   ADDITIONAL_GUARDRAILS,
-])
+TASK_SPECIFIC_INSTRUCTIONS = " ".join(
+    [
+        STATIC_GREETINGS_AND_GENERAL,
+        STATIC_CAR_INSURANCE,
+        STATIC_ELECTRIC_CAR_INSURANCE,
+        EXAMPLES,
+        ADDITIONAL_GUARDRAILS,
+    ]
+)
 ```
 
 ### 
@@ -340,21 +342,33 @@ As a reminder, this tool will not perform the actual calculation, it will just s
 Example insurance quote calculator:
 
 ``` shiki
-TOOLS = [{
-  "name": "get_quote",
-  "description": "Calculate the insurance quote based on user input. Returned value is per month premium.",
-  "input_schema": {
-    "type": "object",
-    "properties": {
-      "make": {"type": "string", "description": "The make of the vehicle."},
-      "model": {"type": "string", "description": "The model of the vehicle."},
-      "year": {"type": "integer", "description": "The year the vehicle was manufactured."},
-      "mileage": {"type": "integer", "description": "The mileage on the vehicle."},
-      "driver_age": {"type": "integer", "description": "The age of the primary driver."}
-    },
-    "required": ["make", "model", "year", "mileage", "driver_age"]
-  }
-}]
+TOOLS = [
+    {
+        "name": "get_quote",
+        "description": "Calculate the insurance quote based on user input. Returned value is per month premium.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "make": {"type": "string", "description": "The make of the vehicle."},
+                "model": {"type": "string", "description": "The model of the vehicle."},
+                "year": {
+                    "type": "integer",
+                    "description": "The year the vehicle was manufactured.",
+                },
+                "mileage": {
+                    "type": "integer",
+                    "description": "The mileage on the vehicle.",
+                },
+                "driver_age": {
+                    "type": "integer",
+                    "description": "The age of the primary driver.",
+                },
+            },
+            "required": ["make", "model", "year", "mileage", "driver_age"],
+        },
+    }
+]
+
 
 def get_quote(make, model, year, mileage, driver_age):
     """Returns the premium per month in USD"""
@@ -381,88 +395,93 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class ChatBot:
-   def __init__(self, session_state):
-       self.anthropic = Anthropic()
-       self.session_state = session_state
+    def __init__(self, session_state):
+        self.anthropic = Anthropic()
+        self.session_state = session_state
 
-   def generate_message(
-       self,
-       messages,
-       max_tokens,
-   ):
-       try:
-           response = self.anthropic.messages.create(
-               model=MODEL,
-               system=IDENTITY,
-               max_tokens=max_tokens,
-               messages=messages,
-               tools=TOOLS,
-           )
-           return response
-       except Exception as e:
-           return {"error": str(e)}
+    def generate_message(
+        self,
+        messages,
+        max_tokens,
+    ):
+        try:
+            response = self.anthropic.messages.create(
+                model=MODEL,
+                system=IDENTITY,
+                max_tokens=max_tokens,
+                messages=messages,
+                tools=TOOLS,
+            )
+            return response
+        except Exception as e:
+            return {"error": str(e)}
 
-   def process_user_input(self, user_input):
-       self.session_state.messages.append({"role": "user", "content": user_input})
+    def process_user_input(self, user_input):
+        self.session_state.messages.append({"role": "user", "content": user_input})
 
-       response_message = self.generate_message(
-           messages=self.session_state.messages,
-           max_tokens=2048,
-       )
+        response_message = self.generate_message(
+            messages=self.session_state.messages,
+            max_tokens=2048,
+        )
 
-       if "error" in response_message:
-           return f"An error occurred: {response_message['error']}"
+        if "error" in response_message:
+            return f"An error occurred: {response_message['error']}"
 
-       if response_message.content[-1].type == "tool_use":
-           tool_use = response_message.content[-1]
-           func_name = tool_use.name
-           func_params = tool_use.input
-           tool_use_id = tool_use.id
+        if response_message.content[-1].type == "tool_use":
+            tool_use = response_message.content[-1]
+            func_name = tool_use.name
+            func_params = tool_use.input
+            tool_use_id = tool_use.id
 
-           result = self.handle_tool_use(func_name, func_params)
-           self.session_state.messages.append(
-               {"role": "assistant", "content": response_message.content}
-           )
-           self.session_state.messages.append({
-               "role": "user",
-               "content": [{
-                   "type": "tool_result",
-                   "tool_use_id": tool_use_id,
-                   "content": f"{result}",
-               }],
-           })
+            result = self.handle_tool_use(func_name, func_params)
+            self.session_state.messages.append(
+                {"role": "assistant", "content": response_message.content}
+            )
+            self.session_state.messages.append(
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": tool_use_id,
+                            "content": f"{result}",
+                        }
+                    ],
+                }
+            )
 
-           follow_up_response = self.generate_message(
-               messages=self.session_state.messages,
-               max_tokens=2048,
-           )
+            follow_up_response = self.generate_message(
+                messages=self.session_state.messages,
+                max_tokens=2048,
+            )
 
-           if "error" in follow_up_response:
-               return f"An error occurred: {follow_up_response['error']}"
+            if "error" in follow_up_response:
+                return f"An error occurred: {follow_up_response['error']}"
 
-           response_text = follow_up_response.content[0].text
-           self.session_state.messages.append(
-               {"role": "assistant", "content": response_text}
-           )
-           return response_text
-      
-       elif response_message.content[0].type == "text":
-           response_text = response_message.content[0].text
-           self.session_state.messages.append(
-               {"role": "assistant", "content": response_text}
-           )
-           return response_text
-      
-       else:
-           raise Exception("An error occurred: Unexpected response type")
+            response_text = follow_up_response.content[0].text
+            self.session_state.messages.append(
+                {"role": "assistant", "content": response_text}
+            )
+            return response_text
 
-   def handle_tool_use(self, func_name, func_params):
-       if func_name == "get_quote":
-           premium = get_quote(**func_params)
-           return f"Quote generated: ${premium:.2f} per month"
-      
-       raise Exception("An unexpected tool was used")
+        elif response_message.content[0].type == "text":
+            response_text = response_message.content[0].text
+            self.session_state.messages.append(
+                {"role": "assistant", "content": response_text}
+            )
+            return response_text
+
+        else:
+            raise Exception("An error occurred: Unexpected response type")
+
+    def handle_tool_use(self, func_name, func_params):
+        if func_name == "get_quote":
+            premium = get_quote(**func_params)
+            return f"Quote generated: ${premium:.2f} per month"
+
+        raise Exception("An unexpected tool was used")
 ```
 
 ### 
@@ -471,47 +490,49 @@ Build your user interface
 
 Test deploying this code with Streamlit using a main method. This `main()` function sets up a Streamlit-based chat interface.
 
-We'll do this in a file called `app.py`
+Do this in a file called `app.py`
 
 ``` shiki
 import streamlit as st
 from chatbot import ChatBot
 from config import TASK_SPECIFIC_INSTRUCTIONS
 
+
 def main():
-   st.title("Chat with Eva, Acme Insurance Company's Assistant🤖")
+    st.title("Chat with Eva, Acme Insurance Company's Assistant🤖")
 
-   if "messages" not in st.session_state:
-       st.session_state.messages = [
-           {'role': "user", "content": TASK_SPECIFIC_INSTRUCTIONS},
-           {'role': "assistant", "content": "Understood"},
-       ]
+    if "messages" not in st.session_state:
+        st.session_state.messages = [
+            {"role": "user", "content": TASK_SPECIFIC_INSTRUCTIONS},
+            {"role": "assistant", "content": "Understood"},
+        ]
 
-   chatbot = ChatBot(st.session_state)
+    chatbot = ChatBot(st.session_state)
 
-   # Display user and assistant messages skipping the first two
-   for message in st.session_state.messages[2:]:
-       # ignore tool use blocks
-       if isinstance(message["content"], str):
-           with st.chat_message(message["role"]):
-               st.markdown(message["content"])
+    # Display user and assistant messages skipping the first two
+    for message in st.session_state.messages[2:]:
+        # ignore tool use blocks
+        if isinstance(message["content"], str):
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
 
-   if user_msg := st.chat_input("Type your message here..."):
-       st.chat_message("user").markdown(user_msg)
+    if user_msg := st.chat_input("Type your message here..."):
+        st.chat_message("user").markdown(user_msg)
 
-       with st.chat_message("assistant"):
-           with st.spinner("Eva is thinking..."):
-               response_placeholder = st.empty()
-               full_response = chatbot.process_user_input(user_msg)
-               response_placeholder.markdown(full_response)
+        with st.chat_message("assistant"):
+            with st.spinner("Eva is thinking..."):
+                response_placeholder = st.empty()
+                full_response = chatbot.process_user_input(user_msg)
+                response_placeholder.markdown(full_response)
+
 
 if __name__ == "__main__":
-   main()
+    main()
 ```
 
 Run the program with:
 
-``` inline-block
+``` shiki
 streamlit run app.py
 ```
 
@@ -558,7 +579,7 @@ When deploying a chatbot, especially in customer service scenarios, it's crucial
 - Avoid contractual commitments: Ensure the agent doesn't make promises or enter into agreements it's not authorized to make.
 - [Mitigate jailbreaks](/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks): Use methods like harmlessness screens and input validation to prevent users from exploiting model vulnerabilities, aiming to generate inappropriate content.
 - Avoid mentioning competitors: Implement a competitor mention filter to maintain brand focus and not mention any competitor's products or services.
-- [Keep Claude in character](/docs/en/test-and-evaluate/strengthen-guardrails/keep-claude-in-character): Prevent Claude from changing their style of context, even during long, complex interactions.
+- [Increase output consistency](/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency): Prevent Claude from changing style or going out of character, even during long, complex interactions.
 - Remove Personally Identifiable Information (PII): Unless explicitly required and authorized, strip out any PII from responses.
 
 #### 

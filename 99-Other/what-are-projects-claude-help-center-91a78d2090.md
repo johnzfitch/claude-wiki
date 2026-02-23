@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:40Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9517075-what-are-projects"
 title: "What are projects? | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ What are projects?
 
 # What are projects?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -123,13 +123,13 @@ How can I create and manage projects?
 
 Project visibility and sharing
 
+[](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)
+
+Usage limit best practices
+
 [](https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects)
 
-Retrieval Augmented Generation (RAG) for projects
-
-[](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)
-
-Understanding usage and length limits
+Retrieval augmented generation (RAG) for projects
 
 Did this answer your question?
 

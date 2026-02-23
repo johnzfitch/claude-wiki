@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:18Z"
+fetched_at: "2026-02-23T00:45:50Z"
 source_url: "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 ---
@@ -117,7 +117,7 @@ for specific instructions.
 
 Custom desktop extensions uploads allow Team and Enterprise plans to leverage organization-specific workflows that aren’t available in the public directory. After creating a custom desktop extension, Owners and Primary Owners can navigate to Settings \> Extensions within Claude Desktop and click “Advanced settings” to access the **Extension Developer** section:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1681607607/ba6e379d2769d190f0970a0adaed/AD_4nXd4aZkqjJFpiXMPF28Pih7HmSJ9pPsnoWAfVgiLdFRFiTkO92YtXteIjvDHaPl7T0tjfpRTBOlyrMbQ_aciCNDgfIuEvV3szmKvt72x5O51DMSClXOYWk1JIRIzylwkj3joXqZcLw?expires=1770722100&signature=fa0f46fcc633ab163aca705684fb875067bfc7740f9e1dc8230e79ec15e4a98c&req=dSYvF89%2BmodfXvMW1HO4zWbPy0B4NT8zHn9K2IaIG2KDUub9xCWSw4W8nRWD%0AZIg24dFsm5V5ArNV1hE%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1681607607/ba6e379d2769d190f0970a0adaed/AD_4nXd4aZkqjJFpiXMPF28Pih7HmSJ9pPsnoWAfVgiLdFRFiTkO92YtXteIjvDHaPl7T0tjfpRTBOlyrMbQ_aciCNDgfIuEvV3szmKvt72x5O51DMSClXOYWk1JIRIzylwkj3joXqZcLw?expires=1771809300&signature=f481c61b8d52a26ad5509c16aeccc33aa6ac2cf818ff86d747886d88affc86ed&req=dSYvF89%2BmodfXvMW1HO4zWbPy0F3NzQxHn9K2IaIG2LGt6BhdNcnqHseFxX6%0ASpWJteis4onPz7%2Fh5nM%3D%0A)
 
 Click “Install Extension…” and select the .mcpb file. Follow the prompts to install and configure your custom desktop extension. For more in-depth information, please refer to our [desktop extension developer documentation](https://github.com/anthropics/mcpb).
 
@@ -215,9 +215,9 @@ Related Articles
 
 Installing Claude Desktop
 
-[](https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist)
+[](https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos)
 
-Enabling and using the desktop extension allowlist
+Deploy Claude Desktop for macOS
 
 [](https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude)
 

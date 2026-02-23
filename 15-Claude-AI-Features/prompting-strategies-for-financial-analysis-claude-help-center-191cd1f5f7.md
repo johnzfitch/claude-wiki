@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-23T00:45:35Z"
 source_url: "https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis"
 title: "Prompting Strategies for Financial Analysis | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Prompting Strategies for Financial Analysis
 
 # Prompting Strategies for Financial Analysis
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -228,10 +228,6 @@ These strategies help you get the most value from Claude's financial analysis ca
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
-
-Claude for Financial Services Overview
-
 [](https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis)
 
 Using Daloopa for Financial Analysis
@@ -247,6 +243,10 @@ Financial Analysis Workflows with Claude
 [](https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis)
 
 Using Moody’s for Financial Analysis
+
+[](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
+
+Claude for Financial Services Skills
 
 Did this answer your question?
 

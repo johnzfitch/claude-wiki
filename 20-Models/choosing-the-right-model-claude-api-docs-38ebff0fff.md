@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:04:03Z"
+fetched_at: "2026-02-22T10:56:57Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model"
 title: "Choosing the right model - Claude API Docs"
 ---
@@ -19,10 +19,10 @@ Copy page
 
 Establish key criteria
 
-When choosing a Claude model, we recommend first evaluating these factors:
+When choosing a Claude model, consider first evaluating these factors:
 
 - **Capabilities:** What specific features or capabilities will you need the model to have in order to meet your needs?
-- **Speed:** How quickly does the model need to respond in your application?
+- **Speed:** How quickly does the model need to respond in your application? For Claude Opus 4.6, [fast mode](/docs/en/build-with-claude/fast-mode) (research preview) can provide up to 2.5x higher output speed at premium pricing.
 - **Cost:** What's your budget for both development and production usage?
 
 Knowing these answers in advance will make narrowing down and deciding which model to use much easier.
@@ -76,10 +76,10 @@ This approach is best for:
 
 Model selection matrix
 
-| When you need... | We recommend starting with... | Example use cases |
+| When you need... | Consider starting with... | Example use cases |
 |----|----|----|
-| Claude Opus 4.6 is the latest version of our most intelligent model, and the world’s best model for coding, enterprise agents, and professional work. | Claude Opus 4.6 | Professional software engineering, advanced agents for office tasks, computer and browser use at scale, multi-hour research tasks, step-change vision applications |
-| The best combination of speed and intelligence for everyday tasks | Claude Sonnet 4.5 | Code generation, data analysis, content creation, visual understanding, agentic tool use |
+| The most intelligent model, and the world’s best model for coding, enterprise agents, and professional work. | Claude Opus 4.6 | Professional software engineering, advanced agents for office tasks, computer and browser use at scale, multi-hour research tasks, step-change vision applications |
+| Frontier intelligence at scale, built for coding, agents, and enterprise workflows | Claude Sonnet 4.6 | Code generation, data analysis, content creation, visual understanding, agentic tool use |
 | Near-frontier performance with lightning-fast speed and extended thinking at the most economical price point | Claude Haiku 4.5 | Real-time applications, high-volume intelligent processing, cost-sensitive deployments needing strong reasoning, sub-agent tasks |
 
 ------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:02Z"
+fetched_at: "2026-02-13T09:23:10Z"
 source_url: "https://www.anthropic.com/news/healthcare-life-sciences"
 title: "Advancing Claude in healthcare and the life sciences \\ Anthropic"
 ---
@@ -33,7 +33,7 @@ With these model improvements and our new tools, Claude is now dramatically more
 
 #### **What’s new**
 
-[Connectors](https://claude.ai/redirect/website.v1.4fe984ab-642c-4352-8f16-c71249567737/settings/connectors) are tools that allow users to give Claude access to other platforms directly. For payers and providers, we’ve added several connectors that make healthcare information easier to find, access, and understand. These allow Claude to pull information from industry-standard systems and databases, meaning that clinicians and administrators can save significant time finding the data and generating the reports they need.
+[Connectors](https://claude.ai/redirect/website.v1.9c36c1d5-811b-4eb8-a91f-414f892fa05a/settings/connectors) are tools that allow users to give Claude access to other platforms directly. For payers and providers, we’ve added several connectors that make healthcare information easier to find, access, and understand. These allow Claude to pull information from industry-standard systems and databases, meaning that clinicians and administrators can save significant time finding the data and generating the reports they need.
 
 Claude can now connect to:
 
@@ -107,82 +107,82 @@ We’re working with a number of organizations in healthcare and the life scienc
 
 > We were drawn to [Anthropic's focus on AI safety](https://claude.com/customers/banner-health) and Claude's Constitutional AI approach to creating more helpful, harmless, and honest AI systems.
 >
-> Mike Reagin  
+> Mike Reagin\
 > Chief Technology Officer, Banner Health
 
 > We've consistently been one of the first movers when it comes to document and content automation in pharma development. [Our work with Anthropic and Claude](https://claude.com/customers/novo-nordisk) has set a new standard — we're not just automating tasks, we're transforming how medicines get from discovery to the patients who need them.
 >
-> Louise Lind Skov  
+> Louise Lind Skov\
 > Director Content Digitalisation, Novo Nordisk
 
 > Safety is non-negotiable in healthcare. [Anthropic has been a clear leader](https://claude.com/customers/qualified-health) in building models with strong safety foundations.
 >
-> Justin Norden  
+> Justin Norden\
 > MD and co-founder, Qualified Health
 
 > By reducing manual burden, our partnership with Anthropic will empower our teams to focus more time on high-value scientific and strategic work, accelerating our path to patient impact.
 >
-> Hisham Hamadeh  
+> Hisham Hamadeh\
 > Senior Vice President, Global Head of Data, Digital & AI, Genmab
 
 > Claude is integral to Sanofi's AI transformation and is used by most Sanofians daily. We're seeing efficiency gains across the value-chain. This collaboration with Anthropic augments human expertise to deliver life-changing medicines faster and more efficiently to patients worldwide.
 >
-> Emmanuel Frenehard  
+> Emmanuel Frenehard\
 > Chief Digital Officer, Sanofi
 
 > We chose Claude, powered by Anthropic, for the strength of its model and [its reputation for responsible AI](https://claude.com/customers/elation-health). That balance of performance plus trust was a decisive factor.
 >
-> Kyna Fong  
+> Kyna Fong\
 > CEO & Co-Founder, Elation Health
 
 > Opus 4.5 is an incredible model and a great choice for computational biology. The model is excellent at coding, reasoning about biology, and understanding scientific figures.
 >
-> Andrew White  
+> Andrew White\
 > CTO, Edison Scientific
 
 > Anthropic's models are unmatched in their reasoning capabilities and safety design.
 >
-> Chris Mansi  
+> Chris Mansi\
 > MD, CEO & Co-founder, Viz.ai
 
 > Claude has fundamentally changed what's possible in evidence generation. For the first time, our researchers can truly converse with our datasets.
 >
-> Allison Candido  
-> Vice President & Head of Engineering, Flatiron Health
+> Allison Candido\
+> Chief Technology Officer, Flatiron Health
 
 > Veeva AI is industry-specific agentic AI that leverages Veeva's deep applications, data, domain expertise, and Anthropic’s Claude. This unique combination allows us to bring the transformative promise of AI to life sciences at scale.
 >
-> Andy Han  
+> Andy Han\
 > Senior Vice President, Veeva AI
 
 > Claude's Agent SDK has unlocked a step-change in how we operate—converting rigid research processes into adaptive, compliant agents.
 >
-> Dr. Thomas Kelly  
+> Dr. Thomas Kelly\
 > Co-Founder and CEO, Heidi Health
 
 > Claude Code has become a powerful accelerator for us at Schrödinger. For the projects where it fits best, Claude Code allows us to turn ideas into working code in minutes instead of hours, enabling us to move up to 10x faster in some cases. As we continue to work with Claude, we are excited to see how we can further transform the way we build and customize our software.
 >
-> Pat Lorton  
+> Pat Lorton\
 > EVP, Chief Technology Officer, and Chief Operating Officer, Schrödinger
 
 > Claude handles the complex healthcare workflows our teams deal with daily—accurately and securely. Our engineers are shipping faster, our consultants are delivering insights with unprecedented speed. When you're serving 4,400+ healthcare organizations, that combination of capability and velocity is critical.
 >
-> David Zito  
+> David Zito\
 > President Performance Services, Premier
 
 > For Commure’s Ambient AI, precision is the prerequisite for trust. Scaling to tens of millions of appointments requires exceptional performance and contextual understanding. With Claude’s suite of LLMs, we deliver the quality to automate clinical documentation at scale, saving clinicians millions of hours annually and returning their focus to patient care.
 >
-> Dhruv Parthasarathy  
+> Dhruv Parthasarathy\
 > Chief Technology Officer, Commure
 
 > Carta Healthcare's implementation of [Anthropic models via Amazon Bedrock](https://claude.com/customers/carta-healthcare) has allowed for rapid and secure deployment of the newest models. Unlocking our hybrid intelligence AI system that is turning into a complete re-invention of understanding a patient’s medical record for clinical data abstraction.
 >
-> Andrew Crowder  
+> Andrew Crowder\
 > VP of Engineering, Carta Healthcare
 
 > Claude lets us punch way above our weight in healthcare AI. It powers our clinical extraction engine, cuts implementation timelines, and gives our GTM team dev-level capabilities. The faster we build, the faster clinics get out of manual chart review and back to patients.
 >
-> Zach Rosen  
+> Zach Rosen\
 > CEO & Co-Founder, Brellium
 
 01 / 16
@@ -211,18 +211,16 @@ February 7, 2026: *Edited the introductory paragraph to clarify that HIPAA-ready
 
 ## Related content
 
-### Introducing Claude Opus 4.6
+### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
 
-### Claude is a space to think
+### Anthropic is donating \$20 million to Public First Action
 
-We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+[Read more](/news/donate-public-first-action)
 
-[Read more](/news/claude-is-a-space-to-think)
+### Covering electricity price increases from our data centers
 
-### Apple’s Xcode now supports the Claude Agent SDK
-
-[Read more](/news/apple-xcode-claude-agent-sdk)
+[Read more](/news/covering-electricity-price-increases)

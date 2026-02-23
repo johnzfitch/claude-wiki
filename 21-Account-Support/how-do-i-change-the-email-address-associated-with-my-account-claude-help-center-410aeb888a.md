@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-23T00:45:18Z"
 source_url: "https://support.claude.com/en/articles/8452276-how-do-i-change-the-email-address-associated-with-my-account"
 title: "How do I change the email address associated with my account? | Claude Help Center"
 ---
@@ -80,13 +80,13 @@ How do I cancel my paid Claude subscription?
 
 How can I delete my Claude account?
 
-[](https://support.claude.com/en/articles/9264804-how-can-i-cancel-my-claude-pro-subscription-on-the-claude-app-for-ios)
-
-How can I cancel my Claude Pro subscription on the Claude app for iOS?
-
 [](https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan)
 
 How do I get started with the Team plan?
+
+[](https://support.claude.com/en/articles/9612898-how-can-i-cancel-my-claude-pro-subscription-on-claude-for-android)
+
+How can I cancel my Claude Pro subscription on Claude for Android?
 
 Did this answer your question?
 

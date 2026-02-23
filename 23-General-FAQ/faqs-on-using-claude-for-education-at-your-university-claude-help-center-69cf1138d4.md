@@ -1,6 +1,6 @@
 ---
 category: "23-General-FAQ"
-fetched_at: "2026-02-10T10:49:19Z"
+fetched_at: "2026-02-16T21:12:35Z"
 source_url: "https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university"
 title: "FAQs on Using Claude for Education at Your University | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ FAQs on Using Claude for Education at Your University
 
 # FAQs on Using Claude for Education at Your University
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -261,9 +261,9 @@ Getting Started with Claude for Education at Your University (for Owners/Admins)
 
 Who owns and manages the data of my Claude for Education account?
 
-[](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account)
+[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
 
-Logging in to your Claude account
+Claude Enterprise Analytics API reference guide
 
 Did this answer your question?
 

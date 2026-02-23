@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:52Z"
+fetched_at: "2026-02-22T13:25:53Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/alliteration-alchemist"
 title: "Alliteration alchemist - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Generate alliterative phrases and sentences for any given subject.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -67,17 +67,7 @@ message = client.messages.create(
     max_tokens=1000,
     temperature=1,
     system="Your task is to create alliterative phrases and sentences for the given subject. Ensure that the alliterations not only sound pleasing but also convey relevant information or evoke appropriate emotions related to the subject.",
-    messages=[
-        {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "Ocean"
-                }
-            ]
-        }
-    ]
+    messages=[{"role": "user", "content": [{"type": "text", "text": "Ocean"}]}],
 )
 print(message.content)
 ```

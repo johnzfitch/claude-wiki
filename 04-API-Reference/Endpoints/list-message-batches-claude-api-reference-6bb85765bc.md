@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:50Z"
+fetched_at: "2026-02-22T14:03:48Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/list"
 title: "List Message Batches - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Ruby
 
 beta.messages.batches.list(\*\*kwargs) -\> Page\<[BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more } \>
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 List all Message Batches within a Workspace. Most recently created batches are returned first.
 
@@ -47,7 +47,7 @@ Accepts one of the following:
 
 String
 
-:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 16 more
+:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 17 more
 
 Accepts one of the following:
 
@@ -89,6 +89,8 @@ Accepts one of the following:
 
 :"skills-2025-10-02"
 
+:"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 class BetaMessageBatch { id, archived_at, cancel_initiated_at, 7 more }
@@ -103,19 +105,13 @@ archived_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: Time
 
@@ -128,8 +124,6 @@ formatdate-time
 expires_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: :in_progress \| :canceling \| :ended
 
@@ -188,10 +182,6 @@ type: :message_batch
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-:message_batch
 
 List Message Batches
 

@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:21Z"
+fetched_at: "2026-02-13T09:23:20Z"
 source_url: "https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities"
 title: "Using the Connectors Directory to extend Claude’s capabilities | Claude Help Center"
 ---
@@ -205,10 +205,6 @@ In addition to directory connectors, you can also add custom connectors:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
-
-Pre-built Web Connectors Using Remote MCP
-
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
@@ -221,9 +217,13 @@ When to use desktop and web connectors
 
 Connect your tools to unlock a smarter, more capable AI companion
 
+[](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)
+
+Getting Started with Claude for Life Sciences
+
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
 Did this answer your question?
 

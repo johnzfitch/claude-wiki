@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:12Z"
+fetched_at: "2026-02-22T14:26:25Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/archive"
 title: "Archive Workspace - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Archive Workspace
 
-post/v1/organizations/workspaces/{workspace_id}/archive
+POST/v1/organizations/workspaces/{workspace_id}/archive
 
 Archive Workspace
 
@@ -31,13 +31,9 @@ archived_at: string
 
 RFC 3339 datetime string indicating when the Workspace was archived, or `null` if the Workspace is not archived.
 
-formatdate-time
-
 created_at: string
 
 RFC 3339 datetime string indicating when the Workspace was created.
-
-formatdate-time
 
 data_residency: object { allowed_inference_geos, default_inference_geo, workspace_geo }
 
@@ -52,10 +48,6 @@ Accepts one of the following:
 UnionMember0 = array of string
 
 UnionMember1 = "unrestricted"
-
-Accepts one of the following:
-
-"unrestricted"
 
 default_inference_geo: string
 
@@ -79,10 +71,6 @@ Object type.
 
 For Workspaces, this is always `"workspace"`.
 
-Accepts one of the following:
-
-"workspace"
-
 Archive Workspace
 
 ``` shiki
@@ -92,47 +80,7 @@ curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/archive
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
-  "archived_at": "2024-11-01T23:59:27.427722Z",
-  "created_at": "2024-10-30T23:58:27.427722Z",
-  "data_residency": {
-    "allowed_inference_geos": [
-      "string"
-    ],
-    "default_inference_geo": "default_inference_geo",
-    "workspace_geo": "workspace_geo"
-  },
-  "display_color": "#6C5BB9",
-  "name": "Workspace Name",
-  "type": "workspace"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
-  "archived_at": "2024-11-01T23:59:27.427722Z",
-  "created_at": "2024-10-30T23:58:27.427722Z",
-  "data_residency": {
-    "allowed_inference_geos": [
-      "string"
-    ],
-    "default_inference_geo": "default_inference_geo",
-    "workspace_geo": "workspace_geo"
-  },
-  "display_color": "#6C5BB9",
-  "name": "Workspace Name",
-  "type": "workspace"
-}
-```
 
 [](/docs)
 

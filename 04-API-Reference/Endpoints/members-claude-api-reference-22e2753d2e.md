@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:12Z"
+fetched_at: "2026-02-22T14:26:31Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members"
 title: "Members - Claude API Reference"
 ---
@@ -11,23 +11,23 @@ Copy page
 
 ##### [Create Workspace Member](/docs/en/api/admin/workspaces/members/create)
 
-post/v1/organizations/workspaces/{workspace_id}/members
+POST/v1/organizations/workspaces/{workspace_id}/members
 
 ##### [Get Workspace Member](/docs/en/api/admin/workspaces/members/retrieve)
 
-get/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### [List Workspace Members](/docs/en/api/admin/workspaces/members/list)
 
-get/v1/organizations/workspaces/{workspace_id}/members
+GET/v1/organizations/workspaces/{workspace_id}/members
 
 ##### [Update Workspace Member](/docs/en/api/admin/workspaces/members/update)
 
-post/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### [Delete Workspace Member](/docs/en/api/admin/workspaces/members/delete)
 
-delete/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### ModelsExpand Collapse 
 
@@ -38,10 +38,6 @@ type: "workspace_member"
 Object type.
 
 For Workspace Members, this is always `"workspace_member"`.
-
-Accepts one of the following:
-
-"workspace_member"
 
 user_id: string
 

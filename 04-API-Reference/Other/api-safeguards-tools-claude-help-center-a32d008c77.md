@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:52:09Z"
+fetched_at: "2026-02-13T09:23:41Z"
 source_url: "https://support.claude.com/en/articles/9199617-api-safeguards-tools"
 title: "API Safeguards Tools | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ API Safeguards Tools
 
 # API Safeguards Tools
 
-Updated yesterday
+Updated this week
 
 Whether you are just starting the process of setting up safeguards for your API deployment of Claude, or your deployment is already running, here are some strategies to consider when building your own AI safety program. These suggestions are designed to help you comply with our [Terms of Service](https://www.anthropic.com/legal/commercial-terms) and [Usage Policy](https://www.anthropic.com/legal/aup), which prohibit certain uses of Claude. Failure to comply with the [Terms](https://www.anthropic.com/legal/commercial-terms) and [Usage Policy](https://www.anthropic.com/legal/aup) may result in suspension or termination of your access to the services.
 
@@ -53,7 +53,7 @@ Whether you are just starting the process of setting up safeguards for your API 
 
 - Enable additional safety filters - free real-time moderation tooling built by Anthropic for helping detect potentially harmful prompts and managing real-time actions to reduce harm
 
-  - For more information about how to enable our additional safety filters, please reach out to [\[email protected\]](/cdn-cgi/l/email-protection#e39690869190828586979aa3828d978b918c938a80cd808c8e).
+  - For more information about how to enable our additional safety filters, please reach out to [\[email protected\]](/cdn-cgi/l/email-protection#c6b3b5a3b4b5a7a0a3b2bf86a7a8b2aeb4a9b6afa5e8a5a9ab).
 
 - *For Bedrock Customers:*
 

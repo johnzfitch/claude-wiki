@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:16Z"
+fetched_at: "2026-02-22T13:19:30Z"
 source_url: "https://platform.claude.com/docs/en/api/ip-addresses"
 title: "IP addresses - Claude API Docs"
 ---
@@ -21,13 +21,13 @@ Inbound IP addresses
 
 These are the IP addresses where Anthropic services receive incoming connections.
 
-#### 
+### 
 
 IPv4
 
 `160.79.104.0/23`
 
-#### 
+### 
 
 IPv6
 
@@ -39,7 +39,7 @@ Outbound IP addresses
 
 These are the stable IP addresses that Anthropic uses for outbound requests (for example, when making MCP tool calls to external servers).
 
-#### 
+### 
 
 IPv4
 
@@ -52,6 +52,15 @@ IPv4
 34.162.102.82/32
 34.162.136.91/32
 34.162.142.92/32
+```
+
+### 
+
+Phased out IP addresses
+
+The following IP addresses are no longer in use by Anthropic. If you have previously allowlisted these addresses, you should remove them from your firewall rules.
+
+``` inline-block
 34.162.183.95/32
 ```
 
@@ -61,7 +70,15 @@ Was this page helpful?
 
 - [Inbound IP addresses](#inbound-ip-addresses)
 
+- [IPv4](#i-pv4)
+
+- [IPv6](#i-pv6)
+
 - [Outbound IP addresses](#outbound-ip-addresses)
+
+- [IPv4](#i-pv4-2)
+
+- [Phased out IP addresses](#phased-out-ip-addresses)
 
 [](/docs)
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:00Z"
+fetched_at: "2026-02-22T13:16:59Z"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations"
 title: "Reduce hallucinations - Claude API Docs"
 ---

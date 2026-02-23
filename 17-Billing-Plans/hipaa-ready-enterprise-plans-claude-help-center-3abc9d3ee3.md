@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-23T00:45:08Z"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 ---
@@ -27,8 +27,6 @@ Table of contents
 
 [](#h_69335658db)
 
-[](#h_b6d4757b8d)
-
 [](#h_7f7e76ead1)
 
 [](#h_a7851fa165)
@@ -54,8 +52,6 @@ Table of contents
 [](#h_63df0e5254)
 
 [](#h_69335658db)
-
-[](#h_b6d4757b8d)
 
 [](#h_7f7e76ead1)
 
@@ -89,27 +85,25 @@ This offering is designed for HIPAA-covered entities and their business associat
 
 If you're unsure whether your organization benefits from a HIPAA-ready product, ask yourself: will you be processing protected health information through Claude? If yes, you need the HIPAA-ready offering with a BAA.
 
-## Plan availability
-
-The HIPAA-ready offering is available exclusively for Enterprise plan customers.
-
 ## Feature availability
 
-The HIPAA-ready Enterprise offering includes access to most of the features available on [standard Enterprise plans.](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan) For example, users can chat with Claude, create projects and artifacts, and use voice mode. Depending on what functions are enabled by the organization’s plan administrator, users can also leverage connectors, enterprise search, file creation and code execution, web search, research, and skills. More information about the specific features, functionality, and administrator controls are included in the [Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide).
+The HIPAA-ready Enterprise offering includes access to most of the features available on **[standard Enterprise plans](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)**. For example, users can chat with Claude, create projects and artifacts, and use voice mode. Depending on what functions are enabled by the organization’s plan administrator, users can also leverage connectors, enterprise search, file creation and code execution, web search, research, and skills. More information about the specific features, functionality, and administrator controls are included in the **[Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)**.
 
 **Important:** Claude Code bundled seats are not currently covered as part of the HIPAA-ready offering. If you purchase Enterprise seats that include Claude Code access, only the chat functionality is covered. Claude Code usage is not covered, even when purchased as part of a bundled seat. If your organization wants to have Claude Code usage covered as part of HIPAA-related services, contact your account team to discuss available options.
 
+Additionally, Cowork is not yet available for any HIPAA-ready Enterprise plans.
+
 ## Additional resources
 
-For detailed implementation requirements and technical specifications, review the [Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide) on the Anthropic Trust Center.
+For detailed implementation requirements and technical specifications, review the **[Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)** on the Anthropic Trust Center.
 
 **Note:** You'll need to request access to view the Implementation Guide. Requests from domains matching existing customer accounts are approved automatically.
 
 ## Getting started
 
-The HIPAA-ready offering for Enterprise plans requires an organization to execute a BAA and is not available through self-service. To get started:
+The HIPAA-ready offering requires a sales-assisted Enterprise plan and is not available on self-serve Enterprise plans. To get started, your organization must execute a BAA with our Sales team.
 
-1.  [Contact our sales team](http://claude.com/contact-sales) to discuss your organization's needs.
+1.  **[Contact our Sales team](http://claude.com/contact-sales)** to discuss your organization's needs.
 
 2.  Review the Business Associate Agreement and the Implementation Guide.
 
@@ -135,17 +129,17 @@ Business Associate Agreements (BAA) for Commercial Customers
 
 What is the Enterprise plan?
 
-[](https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained)
+[](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan)
 
-What Certifications has Anthropic obtained?
+Use Claude Code with your Team or Enterprise plan
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
+[](https://support.claude.com/en/articles/12138966-release-notes)
 
-Using Claude Code with your Team or Enterprise plan
+Release notes
 
-[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
 
-Purchasing and managing seats on Enterprise plans
+Purchase and manage seats on Enterprise plans
 
 Did this answer your question?
 

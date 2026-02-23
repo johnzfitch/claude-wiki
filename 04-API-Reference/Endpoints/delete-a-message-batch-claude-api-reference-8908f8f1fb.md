@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:07:43Z"
+fetched_at: "2026-02-22T13:39:51Z"
 source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Python
 
 messages.batches.delete(strmessage_batch_id) -\> [DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch)
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 Delete a Message Batch.
 
@@ -40,10 +40,6 @@ type: Literal\["message_batch_deleted"\]
 Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
-
-Accepts one of the following:
-
-"message_batch_deleted"
 
 Delete a Message Batch
 

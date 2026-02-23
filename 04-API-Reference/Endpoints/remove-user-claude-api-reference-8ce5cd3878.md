@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:08Z"
+fetched_at: "2026-02-22T14:25:49Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/users/delete"
 title: "Remove User - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Remove User
 
-delete/v1/organizations/users/{user_id}
+DELETE/v1/organizations/users/{user_id}
 
 Remove User
 
@@ -31,10 +31,6 @@ Deleted object type.
 
 For Users, this is always `"user_deleted"`.
 
-Accepts one of the following:
-
-"user_deleted"
-
 Remove User
 
 ``` shiki
@@ -44,25 +40,7 @@ curl https://api.anthropic.com/v1/organizations/users/$USER_ID \
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "type": "user_deleted"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "type": "user_deleted"
-}
-```
 
 [](/docs)
 

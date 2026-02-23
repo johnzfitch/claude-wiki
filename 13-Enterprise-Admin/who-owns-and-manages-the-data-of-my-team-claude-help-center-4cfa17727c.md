@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-10T10:49:39Z"
+fetched_at: "2026-02-23T00:45:08Z"
 source_url: "https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team"
 title: "Who owns and manages the data of my team? | Claude Help Center"
 ---
@@ -91,7 +91,7 @@ Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of
 
 [](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)
 
-Custom Data Retention Controls for Enterprise Plans
+Custom data retention controls for Enterprise plans
 
 [](https://support.claude.com/en/articles/10504844-managing-user-feedback-settings-on-team-and-enterprise-plans)
 

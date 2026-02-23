@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:23Z"
+fetched_at: "2026-02-17T01:30:58Z"
 source_url: "https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan"
 title: "Using Claude Code with your Team or Enterprise plan | Claude Help Center"
 ---
@@ -51,7 +51,7 @@ Table of contents
 
 Claude Code is a command line tool that gives you access to Claude models directly in your terminal, allowing you to delegate complex coding tasks while maintaining transparency and control.
 
-Claude Code is included with every Team plan seat. Premium seats offer more usage for team members with heavier workloads. For Enterprise plans, Claude Code is available on Chat + Claude Code seats (usage-based billing) and Premium seats (seat-based billing).
+Claude Code is included with every Team plan seat. Premium seats offer more usage for team members with heavier workloads. For Enterprise plans, Claude Code is included with the single Enterprise seat on new and self-serve plans. On older Enterprise plans, Claude Code is available on Chat + Claude Code seats (usage-based billing) and Premium seats (seat-based billing).
 
 With a Team or Enterprise plan, you can access Claude on the web, desktop, and mobile apps, plus Claude Code in your terminal—all with one unified subscription.
 
@@ -67,9 +67,13 @@ Combine two powerful AI products in one unified subscription:
 
 ## How to connect Claude Code to your Team or Enterprise plan
 
-### Step 1: Purchase Chat + Claude Code / Premium seats (Enterprise plans only)
+### Step 1: Confirm Claude Code access (Enterprise plans only)
 
-Enterprise plan owners can purchase **[Chat + Claude Code / Premium seats](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)** that include Claude Code access, and manage seat allocation in **[Admin settings \> Organization](https://claude.ai/admin-settings/organization)**.
+If your organization is on a new or self-serve Enterprise plan, Claude Code is already included with every Enterprise seat — no additional purchase is needed. Proceed to Step 2.
+
+**Note:** If your organization has a HIPAA-ready Enterprise plan, Claude Code is included in your seat but is not covered under the HIPAA-ready offering. See **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)** for details.
+
+If your organization is on an older Enterprise plan with Chat and Chat + Claude Code seats, or Standard and Premium seats, you'll need to ensure you have a seat type that includes Claude Code. Owners can purchase or reassign **Chat + Claude Code / Premium seats** in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**. See **[Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)** for details.
 
 ### Step 2: Download and install Claude Code
 
@@ -111,7 +115,9 @@ If you're not seeing the option to authenticate with your preferred account, fol
 
 ## What happens when you hit usage limits
 
-Your Team or **[seat-based Enterprise](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans#h_0918f7f456)** organization can enable extra usage to allow team members on all seat types to continue working with Claude and Claude Code after reaching their included usage limits. See this article for more information: **[Extra usage for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)**.
+If your organization is on a **usage-based Enterprise plan** (including self-serve Enterprise), there are no per-seat usage limits — usage is based on consumption. See **[How am I billed for my Enterprise plan?](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)** for details on how usage billing works.
+
+If your organization is on a **Team plan** or a **seat-based Enterprise plan**, you can enable extra usage to allow team members to continue working with Claude and Claude Code after reaching their included usage limits. See **[Extra usage for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)** for more information.
 
 ------------------------------------------------------------------------
 
@@ -125,13 +131,13 @@ What is the Team plan?
 
 What is the Enterprise plan?
 
-[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
+[](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
-Using Claude Code with your Pro or Max plan
+Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
+[](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)
 
-Claude Code usage analytics
+HIPAA-ready Enterprise plans
 
 [](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 

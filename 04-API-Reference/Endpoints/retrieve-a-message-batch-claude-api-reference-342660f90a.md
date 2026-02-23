@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:07:41Z"
+fetched_at: "2026-02-22T13:39:39Z"
 source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/retrieve"
 title: "Retrieve a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Python
 
 messages.batches.retrieve(strmessage_batch_id) -\> [MessageBatch](/docs/en/api/messages#message_batch)
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
@@ -39,19 +39,13 @@ archived_at: Optional\[datetime\]
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: Optional\[datetime\]
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: datetime
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: Optional\[datetime\]
 
@@ -64,8 +58,6 @@ formatdate-time
 expires_at: datetime
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: Literal\["in_progress", "canceling", "ended"\]
 
@@ -124,10 +116,6 @@ type: Literal\["message_batch"\]
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-"message_batch"
 
 Retrieve a Message Batch
 

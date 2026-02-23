@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-23T00:45:18Z"
 source_url: "https://support.claude.com/en/articles/8461763-where-can-i-access-claude"
 title: "Where can I access Claude? | Claude Help Center"
 ---

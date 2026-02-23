@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:36Z"
+fetched_at: "2026-02-23T00:45:06Z"
 source_url: "https://support.claude.com/en/articles/13346720-how-can-i-export-my-organization-s-data"
 title: "How can I export my organization&#x27;s data? | Claude Help Center"
 ---
@@ -35,13 +35,13 @@ Updated this week
 
 Organization data exports are only available to Team and Enterprise plan Primary Owners. Data exports include conversation data and the user data for your account.
 
-Primary Owners of Team and Enterprise plans can export organization data from [Admin settings \> Data and Privacy](https://claude.ai/admin-settings/data-privacy-controls) on the web app or Claude Desktop.
+Primary Owners of Team and Enterprise plans can export organization data from **[Organization settings \> Data and Privacy](https://claude.ai/admin-settings/data-privacy-controls)** on the web app or Claude Desktop.
 
 Follow these steps to export your organization's data:
 
 1.  Click on your initials in the lower left corner of your account.
 
-2.  Select "Admin settings" from the menu.
+2.  Select "Organization settings" from the menu.
 
 3.  Click "Data and privacy" to open that section.
 
@@ -63,7 +63,7 @@ Please note:
 
 - If your link expires, you can always request a new one by repeating the export process.
 
-If you're an Enterprise Primary Owner looking to export audit logs, see [How to Access Audit Logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs).
+If you're an Enterprise Primary Owner looking to export audit logs, see **[How to access audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**.
 
 ------------------------------------------------------------------------
 
@@ -77,10 +77,6 @@ Who owns and manages the data of my team?
 
 How can I export my Claude data?
 
-[](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)
-
-How to access audit logs
-
 [](https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account)
 
 Who owns and manages the data of my Claude for Education account?
@@ -88,6 +84,10 @@ Who owns and manages the data of my Claude for Education account?
 [](https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization)
 
 What happens to a user's data when they are removed from a Team or Enterprise organization?
+
+[](https://support.claude.com/en/articles/13015708-how-can-i-access-the-compliance-api)
+
+How can I access the Compliance API?
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:28Z"
+fetched_at: "2026-02-16T21:12:41Z"
 source_url: "https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome"
 title: "Simplify your browsing experience with Claude in Chrome | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Simplify your browsing experience with Claude in Chrome
 
 # Simplify your browsing experience with Claude in Chrome
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -186,11 +186,11 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 
@@ -200,9 +200,9 @@ Claude in Chrome Troubleshooting
 
 Using Claude in Chrome Safely
 
-[](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide)
+[](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Permissions Guide
+Claude in Chrome admin controls
 
 Did this answer your question?
 

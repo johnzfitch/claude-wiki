@@ -1,23 +1,25 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:12Z"
+fetched_at: "2026-02-22T10:58:01Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking"
 title: "Adaptive thinking - Claude API Docs"
 ---
 
-Capabilities
+Model capabilities
 
 # Adaptive thinking
 
 Copy page
 
-Let Claude dynamically decide when and how much to think with adaptive thinking mode.
+Let Claude dynamically determine when and how much to use extended thinking with adaptive thinking mode.
 
 Copy page
 
-Adaptive thinking is the recommended way to use [extended thinking](/docs/en/build-with-claude/extended-thinking) with Claude Opus 4.6. Instead of manually setting a thinking token budget, adaptive thinking lets Claude dynamically decide when and how much to think based on the complexity of each request.
+Adaptive thinking is the recommended way to use [extended thinking](/docs/en/build-with-claude/extended-thinking) with Claude Opus 4.6 and Sonnet 4.6. Instead of manually setting a thinking token budget, adaptive thinking lets Claude dynamically determine when and how much to use extended thinking based on the complexity of each request.
 
-Adaptive thinking reliably drives better performance than extended thinking with a fixed `budget_tokens`, and we recommend moving to adaptive thinking to get the most intelligent responses from Opus 4.6. No beta header is required.
+Adaptive thinking can drive better performance than extended thinking with a fixed `budget_tokens` for many workloads, especially bimodal tasks and long-horizon agentic workflows. No beta header is required.
+
+For workloads where predictable latency and token usage matter, or where you need precise control over thinking costs, extended thinking with `budget_tokens` continues to be fully supported. Consider testing both modes on your specific workloads to determine which works best.
 
 ## 
 
@@ -26,8 +28,9 @@ Supported models
 Adaptive thinking is supported on the following models:
 
 - Claude Opus 4.6 (`claude-opus-4-6`)
+- Claude Sonnet 4.6 (`claude-sonnet-4-6`)
 
-`thinking.type: "enabled"` and `budget_tokens` are **deprecated** on Opus 4.6 and will be removed in a future model release. Use `thinking.type: "adaptive"` with the [effort parameter](/docs/en/build-with-claude/effort) instead.
+`thinking.type: "enabled"` and `budget_tokens` are **deprecated** on Opus 4.6 and Sonnet 4.6 and will be removed in a future model release. Use `thinking.type: "adaptive"` with the `effort` parameter instead. If you are already using extended thinking with `budget_tokens`, it continues to work and no immediate changes are required.
 
 Older models (Sonnet 4.5, Opus 4.5, etc.) do not support adaptive thinking and require `thinking.type: "enabled"` with `budget_tokens`.
 
@@ -35,7 +38,7 @@ Older models (Sonnet 4.5, Opus 4.5, etc.) do not support adaptive thinking and r
 
 How adaptive thinking works
 
-In adaptive mode, thinking is optional for the model. Claude evaluates the complexity of each request and decides whether and how much to think. At the default effort level (`high`), Claude will almost always think. At lower effort levels, Claude may skip thinking for simpler problems.
+In adaptive mode, thinking is optional for the model. Claude evaluates the complexity of each request and determines whether and how much to use extended thinking. At the default effort level (`high`), Claude will almost always think. At lower effort levels, Claude may skip thinking for simpler problems.
 
 Adaptive thinking also automatically enables [interleaved thinking](/docs/en/build-with-claude/extended-thinking#interleaved-thinking). This means Claude can think between tool calls, making it especially effective for agentic workflows.
 
@@ -76,7 +79,7 @@ You can combine adaptive thinking with the [effort parameter](/docs/en/build-wit
 
 | Effort level | Thinking behavior |
 |----|----|
-| `max` | Claude always thinks with no constraints on thinking depth. Opus 4.6 only — requests using `max` on other models will return an error. |
+| `max` | Claude always thinks with no constraints on thinking depth. Opus 4.6 only. Requests using `max` on other models will return an error. |
 | `high` (default) | Claude always thinks. Provides deep reasoning on complex tasks. |
 | `medium` | Claude uses moderate thinking. May skip thinking for very simple queries. |
 | `low` | Claude minimizes thinking. Skips thinking for simple tasks where speed matters most. |
@@ -91,16 +94,9 @@ client = anthropic.Anthropic()
 response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=16000,
-    thinking={
-        "type": "adaptive"
-    },
-    output_config={
-        "effort": "medium"
-    },
-    messages=[{
-        "role": "user",
-        "content": "What is the capital of France?"
-    }]
+    thinking={"type": "adaptive"},
+    output_config={"effort": "medium"},
+    messages=[{"role": "user", "content": "What is the capital of France?"}],
 )
 
 print(response.content[0].text)
@@ -123,7 +119,12 @@ with client.messages.stream(
     model="claude-opus-4-6",
     max_tokens=16000,
     thinking={"type": "adaptive"},
-    messages=[{"role": "user", "content": "What is the greatest common divisor of 1071 and 462?"}],
+    messages=[
+        {
+            "role": "user",
+            "content": "What is the greatest common divisor of 1071 and 462?",
+        }
+    ],
 ) as stream:
     for event in stream:
         if event.type == "content_block_start":
@@ -141,11 +142,17 @@ Adaptive vs manual vs disabled thinking
 
 | Mode | Config | Availability | When to use |
 |----|----|----|----|
-| **Adaptive** | `thinking: {type: "adaptive"}` | Opus 4.6 | Claude decides when and how much to think. Use `effort` to guide. |
-| **Manual** | `thinking: {type: "enabled", budget_tokens: N}` | All models. Deprecated on Opus 4.6 — use adaptive mode instead. | When you need precise control over thinking token spend. |
+| **Adaptive** | `thinking: {type: "adaptive"}` | Opus 4.6, Sonnet 4.6 | Claude determines when and how much to use extended thinking. Use `effort` to guide. |
+| **Manual** | `thinking: {type: "enabled", budget_tokens: N}` | All models. Deprecated on Opus 4.6 and Sonnet 4.6 (consider adaptive mode instead). | When you need precise control over thinking token spend. |
 | **Disabled** | Omit `thinking` parameter | All models | When you don't need extended thinking and want the lowest latency. |
 
-Adaptive thinking is currently available on Opus 4.6. Older models only support `type: "enabled"` with `budget_tokens`. On Opus 4.6, `type: "enabled"` with `budget_tokens` is still accepted but deprecated — we recommend using adaptive thinking with the [effort parameter](/docs/en/build-with-claude/effort) instead.
+Adaptive thinking is available on Opus 4.6 and Sonnet 4.6. Older models only support `type: "enabled"` with `budget_tokens`. On both Opus 4.6 and Sonnet 4.6, `type: "enabled"` with `budget_tokens` is still accepted but deprecated.
+
+**Interleaved thinking availability by mode:**
+
+- **Adaptive mode:** Interleaved thinking is automatically enabled on both Opus 4.6 and Sonnet 4.6.
+- **Manual mode on Sonnet 4.6:** Interleaved thinking is supported via the `interleaved-thinking-2025-05-14` beta header.
+- **Manual mode on Opus 4.6:** Interleaved thinking is not available. If your agentic workflow requires thinking between tool calls on Opus 4.6, use adaptive mode.
 
 ## 
 
@@ -208,7 +215,7 @@ Here are some important considerations for summarized thinking:
 
 Claude Sonnet 3.7 continues to return full thinking output.
 
-In rare cases where you need access to full thinking output for Claude 4 models, [contact our sales team](mailto:sales@anthropic.com).
+In rare cases where you need access to full thinking output for Claude 4 models, [contact our sales team](/cdn-cgi/l/email-protection#b9cad8d5dccaf9d8d7cdd1cbd6c9d0da97dad6d4).
 
 ### 
 
@@ -298,7 +305,7 @@ Additional topics
 
 The extended thinking page covers several topics in more detail with mode-specific code examples:
 
-- **[Tool use with thinking](/docs/en/build-with-claude/extended-thinking#extended-thinking-with-tool-use)**: The same rules apply for adaptive thinking — preserve thinking blocks between tool calls and be aware of `tool_choice` limitations when thinking is active.
+- **[Tool use with thinking](/docs/en/build-with-claude/extended-thinking#extended-thinking-with-tool-use)**: The same rules apply for adaptive thinking: preserve thinking blocks between tool calls and be aware of `tool_choice` limitations when thinking is active.
 - **[Prompt caching](/docs/en/build-with-claude/extended-thinking#extended-thinking-with-prompt-caching)**: With adaptive thinking, consecutive requests using the same thinking mode preserve cache breakpoints. Switching between `adaptive` and `enabled`/`disabled` modes breaks cache breakpoints for messages (system prompts and tool definitions remain cached).
 - **[Context windows](/docs/en/build-with-claude/extended-thinking#max-tokens-and-context-window-size-with-extended-thinking)**: How thinking tokens interact with `max_tokens` and context window limits.
 

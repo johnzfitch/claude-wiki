@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:47Z"
+fetched_at: "2026-02-22T13:14:54Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/plugins"
 title: "Plugins in the SDK - Claude API Docs"
 ---
@@ -61,8 +61,8 @@ Path specifications
 
 Plugin paths can be:
 
-- **Relative paths**: Resolved relative to your current working directory (e.g., `"./plugins/my-plugin"`)
-- **Absolute paths**: Full file system paths (e.g., `"/home/user/plugins/my-plugin"`)
+- **Relative paths**: Resolved relative to your current working directory (for example, `"./plugins/my-plugin"`)
+- **Absolute paths**: Full file system paths (for example, `"/home/user/plugins/my-plugin"`)
 
 The path should point to the plugin's root directory (the directory containing `.claude-plugin/plugin.json`).
 
@@ -108,7 +108,7 @@ import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Load a plugin with a custom /greet command
 for await (const message of query({
-  prompt: "/my-plugin:greet",  // Use plugin command with namespace
+  prompt: "/my-plugin:greet", // Use plugin command with namespace
   options: {
     plugins: [{ type: "local", path: "./my-plugin" }]
   }
@@ -120,7 +120,7 @@ for await (const message of query({
 }
 ```
 
-If you installed a plugin via the CLI (e.g., `/plugin install my-plugin@marketplace`), you can still use it in the SDK by providing its installation path. Check `~/.claude/plugins/` for CLI-installed plugins.
+If you installed a plugin via the CLI (for example, `/plugin install my-plugin@marketplace`), you can still use it in the SDK by providing its installation path. Check `~/.claude/plugins/` for CLI-installed plugins.
 
 ## 
 
@@ -202,7 +202,7 @@ Load plugins during development without installing them globally:
 ``` shiki
 plugins: [
   { type: "local", path: "./dev-plugins/my-plugin" }
-]
+];
 ```
 
 ### 
@@ -214,7 +214,7 @@ Include plugins in your project repository for team-wide consistency:
 ``` shiki
 plugins: [
   { type: "local", path: "./project-plugins/team-workflows" }
-]
+];
 ```
 
 ### 
@@ -227,7 +227,7 @@ Combine plugins from different locations:
 plugins: [
   { type: "local", path: "./local-plugin" },
   { type: "local", path: "~/.claude/custom-plugins/shared-plugin" }
-]
+];
 ```
 
 ## 

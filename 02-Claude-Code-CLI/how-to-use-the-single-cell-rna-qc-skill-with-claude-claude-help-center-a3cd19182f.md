@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-08T20:52:00Z"
+fetched_at: "2026-02-23T00:45:15Z"
 source_url: "https://support.claude.com/en/articles/12621831-how-to-use-the-single-cell-rna-qc-skill-with-claude"
 title: "How to use the single-cell-rna-qc skill with Claude | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ How to use the single-cell-rna-qc skill with Claude
 
 # How to use the single-cell-rna-qc skill with Claude
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -99,7 +99,7 @@ Using the BioRender Connector in Claude
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
+Using the Synapse.org connector in Claude
 
 [](https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude)
 

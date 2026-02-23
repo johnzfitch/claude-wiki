@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:27Z"
+fetched_at: "2026-02-16T21:12:40Z"
 source_url: "https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis"
 title: "Using S&amp;P Global Data for Financial Analysis | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Using S&P Global Data for Financial Analysis
 
 # Using S&P Global Data for Financial Analysis
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

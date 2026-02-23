@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12651659-using-egnyte-for-data-room-management-with-claude"
 title: "Using Egnyte for data room management with Claude | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using Egnyte for data room management with Claude
 
 # Using Egnyte for data room management with Claude
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -239,6 +239,10 @@ Claude would provide a comprehensive summary of all project deliverables with ke
 
 Related Articles
 
+[](https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services)
+
+Getting Started with Claude for Financial Services
+
 [](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
@@ -253,11 +257,7 @@ Using Claude in Slack
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
-
-[](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
-
-Claude for Financial Services Skills
+Using the Synapse.org connector in Claude
 
 Did this answer your question?
 

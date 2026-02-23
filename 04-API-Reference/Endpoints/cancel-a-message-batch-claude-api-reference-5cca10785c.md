@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:05Z"
+fetched_at: "2026-02-22T13:58:08Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/batches/cancel"
 title: "Cancel a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Messages.Batches.Cancel(ctx, messageBatchID, body) (\*[BetaMessageBatch](/docs/en/api/beta#beta_message_batch), error)
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
 
@@ -29,7 +29,9 @@ ID of the Message Batch.
 
 body BetaMessageBatchCancelParams
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Optional header to specify the beta version(s) you want to use.
 
@@ -77,6 +79,8 @@ const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-c
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
 
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 type BetaMessageBatch struct{…}
@@ -91,19 +95,13 @@ ArchivedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 CancelInitiatedAt Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 EndedAt Time
 
@@ -116,8 +114,6 @@ formatdate-time
 ExpiresAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus BetaMessageBatchProcessingStatus
 
@@ -176,10 +172,6 @@ Type MessageBatch
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-const MessageBatchMessageBatch MessageBatch = "message_batch"
 
 Cancel a Message Batch
 

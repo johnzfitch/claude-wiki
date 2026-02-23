@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:21Z"
+fetched_at: "2026-02-22T13:09:51Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use"
 title: "How to implement tool use - Claude API Docs"
 ---
@@ -17,11 +17,11 @@ Copy page
 
 Choosing a model
 
-We recommend using the latest Claude Opus (4.6) model for complex tools and ambiguous queries; it handles multiple tools better and seeks clarification when needed.
+Use the latest Claude Opus (4.6) model for complex tools and ambiguous queries; it handles multiple tools better and seeks clarification when needed.
 
 Use Claude Haiku models for straightforward tools, but note they may infer missing parameters.
 
-If using Claude with tool use and extended thinking, refer to our guide [here](/docs/en/build-with-claude/extended-thinking) for more information.
+If using Claude with tool use and extended thinking, refer to the [extended thinking guide](/docs/en/build-with-claude/extended-thinking) for more information.
 
 ## 
 
@@ -34,7 +34,7 @@ Client tools (both Anthropic-defined and user-defined) are specified in the `too
 | `name` | The name of the tool. Must match the regex `^[a-zA-Z0-9_-]{1,64}$`. |
 | `description` | A detailed plaintext description of what the tool does, when it should be used, and how it behaves. |
 | `input_schema` | A [JSON Schema](https://json-schema.org/) object defining the expected parameters for the tool. |
-| `input_examples` | (Optional, beta) An array of example input objects to help Claude understand how to use the tool. See [Providing tool use examples](#providing-tool-use-examples). |
+| `input_examples` | (Optional) An array of example input objects to help Claude understand how to use the tool. See [Providing tool use examples](#providing-tool-use-examples). |
 
 ### Example simple tool definition
 
@@ -42,7 +42,7 @@ Client tools (both Anthropic-defined and user-defined) are specified in the `too
 
 Tool use system prompt
 
-When you call the Claude API with the `tools` parameter, we construct a special system prompt from the tool definitions, tool configuration, and any user-specified system prompt. The constructed prompt is designed to instruct the model to use the specified tool(s) and provide the necessary context for the tool to operate properly:
+When you call the Claude API with the `tools` parameter, the API constructs a special system prompt from the tool definitions, tool configuration, and any user-specified system prompt. The constructed prompt is designed to instruct the model to use the specified tool(s) and provide the necessary context for the tool to operate properly:
 
 ``` inline-block
 In this environment you have access to a set of tools you can use to answer the user's question.
@@ -65,7 +65,7 @@ To get the best performance out of Claude when using tools, follow these guideli
   - When it should be used (and when it shouldn't)
   - What each parameter means and how it affects the tool's behavior
   - Any important caveats or limitations, such as what information the tool does not return if the tool name is unclear. The more context you can give Claude about your tools, the better it will be at deciding when and how to use them. Aim for at least 3-4 sentences per tool description, more if the tool is complex.
-- **Prioritize descriptions, but consider using `input_examples` for complex tools.** Clear descriptions are most important, but for tools with complex inputs, nested objects, or format-sensitive parameters, you can use the `input_examples` field (beta) to provide schema-validated examples. See [Providing tool use examples](#providing-tool-use-examples) for details.
+- **Prioritize descriptions, but consider using `input_examples` for complex tools.** Clear descriptions are most important, but for tools with complex inputs, nested objects, or format-sensitive parameters, you can use the `input_examples` field to provide schema-validated examples. See [Providing tool use examples](#providing-tool-use-examples) for details.
 
 ### Example of a good tool description
 
@@ -78,10 +78,6 @@ The good description clearly explains what the tool does, when to use it, what d
 Providing tool use examples
 
 You can provide concrete examples of valid tool inputs to help Claude understand how to use your tools more effectively. This is particularly useful for complex tools with nested objects, optional parameters, or format-sensitive inputs.
-
-Tool use examples is a beta feature. Include the appropriate [beta header](/docs/en/api/beta-headers) for your provider:
-
-[TABLE]
 
 ### 
 
@@ -99,7 +95,6 @@ client = anthropic.Anthropic()
 response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
-    betas=["advanced-tool-use-2025-11-20"],
     tools=[
         {
             "name": "get_weather",
@@ -109,34 +104,26 @@ response = client.messages.create(
                 "properties": {
                     "location": {
                         "type": "string",
-                        "description": "The city and state, e.g. San Francisco, CA"
+                        "description": "The city and state, e.g. San Francisco, CA",
                     },
                     "unit": {
                         "type": "string",
                         "enum": ["celsius", "fahrenheit"],
-                        "description": "The unit of temperature"
-                    }
+                        "description": "The unit of temperature",
+                    },
                 },
-                "required": ["location"]
+                "required": ["location"],
             },
             "input_examples": [
-                {
-                    "location": "San Francisco, CA",
-                    "unit": "fahrenheit"
-                },
-                {
-                    "location": "Tokyo, Japan",
-                    "unit": "celsius"
-                },
+                {"location": "San Francisco, CA", "unit": "fahrenheit"},
+                {"location": "Tokyo, Japan", "unit": "celsius"},
                 {
                     "location": "New York, NY"  # 'unit' is optional
-                }
-            ]
+                },
+            ],
         }
     ],
-    messages=[
-        {"role": "user", "content": "What's the weather like in San Francisco?"}
-    ]
+    messages=[{"role": "user", "content": "What's the weather like in San Francisco?"}],
 )
 ```
 
@@ -161,7 +148,7 @@ The tool runner provides an out-of-the-box solution for executing tools with Cla
 - Manages conversation state
 - Provides type safety and validation
 
-We recommend that you use the tool runner for most tool use implementations.
+Use the tool runner for most tool use implementations.
 
 The tool runner is currently in beta and available in the [Python](https://github.com/anthropics/anthropic-sdk-python/blob/main/tools.md), [TypeScript](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/helpers.md#tool-helpers), and [Ruby](https://github.com/anthropics/anthropic-sdk-ruby/blob/main/helpers.md#3-auto-looping-tool-runner-beta) SDKs.
 
@@ -199,6 +186,7 @@ from anthropic import beta_tool
 # Initialize client
 client = anthropic.Anthropic()
 
+
 # Define tools using the decorator
 @beta_tool
 def get_weather(location: str, unit: str = "fahrenheit") -> str:
@@ -211,6 +199,7 @@ def get_weather(location: str, unit: str = "fahrenheit") -> str:
     # In a full implementation, you'd call a weather API here
     return json.dumps({"temperature": "20°C", "condition": "Sunny"})
 
+
 @beta_tool
 def calculate_sum(a: int, b: int) -> str:
     """Add two numbers together.
@@ -221,14 +210,18 @@ def calculate_sum(a: int, b: int) -> str:
     """
     return str(a + b)
 
+
 # Use the tool runner
 runner = client.beta.messages.tool_runner(
     model="claude-opus-4-6",
     max_tokens=1024,
     tools=[get_weather, calculate_sum],
     messages=[
-        {"role": "user", "content": "What's the weather like in Paris? Also, what's 15 + 27?"}
-    ]
+        {
+            "role": "user",
+            "content": "What's the weather like in Paris? Also, what's 15 + 27?",
+        }
+    ],
 )
 for message in runner:
     print(message.content[0].text)
@@ -292,8 +285,11 @@ runner = client.beta.messages.tool_runner(
     max_tokens=1024,
     tools=[get_weather, calculate_sum],
     messages=[
-        {"role": "user", "content": "What's the weather like in Paris? Also, what's 15 + 27?"}
-    ]
+        {
+            "role": "user",
+            "content": "What's the weather like in Paris? Also, what's 15 + 27?",
+        }
+    ],
 )
 final_message = runner.until_done()
 print(final_message.content[0].text)
@@ -324,7 +320,7 @@ runner = client.beta.messages.tool_runner(
     model="claude-opus-4-6",
     max_tokens=1024,
     tools=[get_weather],
-    messages=[{"role": "user", "content": "What's the weather in San Francisco?"}]
+    messages=[{"role": "user", "content": "What's the weather in San Francisco?"}],
 )
 for message in runner:
     # Optional: inspect the tool response (automatically appended by the runner)
@@ -333,10 +329,12 @@ for message in runner:
         print(f"Tool result: {tool_response}")
 
     # Customize the next request
-    runner.set_messages_params(lambda params: {
-        **params,
-        "max_tokens": 2048  # Increase tokens for next request
-    })
+    runner.set_messages_params(
+        lambda params: {
+            **params,
+            "max_tokens": 2048,  # Increase tokens for next request
+        }
+    )
 
     # Or add additional messages
     runner.append_messages(
@@ -366,7 +364,7 @@ When enabled, the SDK logs full exception details (using Python's `logging` modu
 
 Intercepting tool errors
 
-By default, tool errors are passed back to Claude, which can then respond appropriately. However, you may want to detect errors and handle them differently—for example, to stop execution early or implement custom error handling.
+By default, tool errors are passed back to Claude, which can then respond appropriately. However, you may want to detect errors and handle them differently, for example, to stop execution early or implement custom error handling.
 
 Use the tool response method to intercept tool results and check for errors before they're sent to Claude:
 
@@ -389,7 +387,7 @@ runner = client.beta.messages.tool_runner(
     model="claude-opus-4-6",
     max_tokens=1024,
     tools=[my_tool],
-    messages=[{"role": "user", "content": "Run the tool"}]
+    messages=[{"role": "user", "content": "Run the tool"}],
 )
 
 for message in runner:
@@ -434,7 +432,12 @@ runner = client.beta.messages.tool_runner(
     model="claude-opus-4-6",
     max_tokens=1024,
     tools=[search_documents],
-    messages=[{"role": "user", "content": "Search for information about the climate of San Francisco"}]
+    messages=[
+        {
+            "role": "user",
+            "content": "Search for information about the climate of San Francisco",
+        }
+    ],
 )
 
 for message in runner:
@@ -481,14 +484,14 @@ runner = client.beta.messages.tool_runner(
     max_tokens=1024,
     tools=[calculate_sum],
     messages=[{"role": "user", "content": "What is 15 + 27?"}],
-    stream=True
+    stream=True,
 )
 
 # When streaming, the runner returns BetaMessageStream
 for message_stream in runner:
     for event in message_stream:
-        print('event:', event)
-    print('message:', message_stream.get_final_message())
+        print("event:", event)
+    print("message:", message_stream.get_final_message())
 
 print(runner.until_done())
 ```
@@ -509,22 +512,22 @@ In some cases, you may want Claude to use a specific tool to answer the user's q
 tool_choice = {"type": "tool", "name": "get_weather"}
 ```
 
-When working with the tool_choice parameter, we have four possible options:
+When working with the tool_choice parameter, there are four possible options:
 
 - `auto` allows Claude to decide whether to call any provided tools or not. This is the default value when `tools` are provided.
 - `any` tells Claude that it must use one of the provided tools, but doesn't force a particular tool.
-- `tool` allows us to force Claude to always use a particular tool.
+- `tool` forces Claude to always use a particular tool.
 - `none` prevents Claude from using any tools. This is the default value when no `tools` are provided.
 
 When using [prompt caching](/docs/en/build-with-claude/prompt-caching#what-invalidates-the-cache), changes to the `tool_choice` parameter will invalidate cached message blocks. Tool definitions and system prompts remain cached, but message content must be reprocessed.
 
 This diagram illustrates how each option works:
 
-Note that when you have `tool_choice` as `any` or `tool`, we will prefill the assistant message to force a tool to be used. This means that the models will not emit a natural language response or explanation before `tool_use` content blocks, even if explicitly asked to do so.
+Note that when you have `tool_choice` as `any` or `tool`, the API prefills the assistant message to force a tool to be used. This means that the models will not emit a natural language response or explanation before `tool_use` content blocks, even if explicitly asked to do so.
 
 When using [extended thinking](/docs/en/build-with-claude/extended-thinking) with tool use, `tool_choice: {"type": "any"}` and `tool_choice: {"type": "tool", "name": "..."}` are not supported and will result in an error. Only `tool_choice: {"type": "auto"}` (the default) and `tool_choice: {"type": "none"}` are compatible with extended thinking.
 
-Our testing has shown that this should not reduce performance. If you would like the model to provide natural language context or explanations while still requesting that the model use a specific tool, you can use `{"type": "auto"}` for `tool_choice` (the default) and add explicit instructions in a `user` message. For example: `What's the weather like in London? Use the get_weather tool in your response.`
+Testing has shown that this should not reduce performance. If you would like the model to provide natural language context or explanations while still requesting that the model use a specific tool, you can use `{"type": "auto"}` for `tool_choice` (the default) and add explicit instructions in a `user` message. For example: `What's the weather like in London? Use the get_weather tool in your response.`
 
 **Guaranteed tool calls with strict tools**
 
@@ -534,7 +537,7 @@ Combine `tool_choice: {"type": "any"}` with [strict tool use](/docs/en/build-wit
 
 JSON output
 
-Tools do not necessarily need to be client functions — you can use tools anytime you want the model to return JSON output that follows a provided schema. For example, you might use a `record_summary` tool with a particular schema. See [Tool use with Claude](/docs/en/agents-and-tools/tool-use/overview) for a full working example.
+Tools do not necessarily need to be client functions. You can use tools anytime you want the model to return JSON output that follows a provided schema. For example, you might use a `record_summary` tool with a particular schema. See [Tool use with Claude](/docs/en/agents-and-tools/tool-use/overview) for a full working example.
 
 ### 
 
@@ -593,11 +596,11 @@ While Claude 4 models have excellent parallel tool use capabilities by default, 
 
 **Parallel tool use with Claude Sonnet 3.7**
 
-Claude Sonnet 3.7 may be less likely to make make parallel tool calls in a response, even when you have not set `disable_parallel_tool_use`. We recommend [upgrading to Claude 4 models](/docs/en/about-claude/models/migration-guide), which have built-in token-efficient tool use and improved parallel tool calling.
+Claude Sonnet 3.7 may be less likely to make parallel tool calls in a response, even when you have not set `disable_parallel_tool_use`. [Upgrade to Claude 4 models](/docs/en/about-claude/models/migration-guide), which have built-in token-efficient tool use and improved parallel tool calling.
 
 If you're still using Claude Sonnet 3.7, you can enable the `token-efficient-tools-2025-02-19` [beta header](/docs/en/api/beta-headers), which helps encourage Claude to use parallel tools. You can also introduce a "batch tool" that can act as a meta-tool to wrap invocations to other tools simultaneously.
 
-See [this example](https://platform.claude.com/cookbook/tool-use-parallel-tools) in our cookbook for how to use this workaround.
+See [this example](https://platform.claude.com/cookbook/tool-use-parallel-tools) in the cookbook for how to use this workaround.
 
 ## 
 
@@ -625,7 +628,7 @@ When you receive a tool use response for a client tool, you should:
 2.  Run the actual tool in your codebase corresponding to that tool name, passing in the tool `input`.
 3.  Continue the conversation by sending a new message with the `role` of `user`, and a `content` block containing the `tool_result` type and the following information:
     - `tool_use_id`: The `id` of the tool use request this is a result for.
-    - `content`: The result of the tool, as a string (e.g. `"content": "15 degrees"`), a list of nested content blocks (e.g. `"content": [{"type": "text", "text": "15 degrees"}]`), or a list of document blocks (e.g. `"content": ["type": "document", "source": {"type": "text", "media_type": "text/plain", "data": "15 degrees"}]`). These content blocks can use the `text`, `image`, or `document` types.
+    - `content`: The result of the tool, as a string (for example, `"content": "15 degrees"`), a list of nested content blocks (for example, `"content": [{"type": "text", "text": "15 degrees"}]`), or a list of document blocks (for example, `"content": ["type": "document", "source": {"type": "text", "media_type": "text/plain", "data": "15 degrees"}]`). These content blocks can use the `text`, `image`, or `document` types.
     - `is_error` (optional): Set to `true` if the tool execution resulted in an error.
 
 **Important formatting requirements**:
@@ -694,7 +697,7 @@ if response.stop_reason == "max_tokens":
             model="claude-opus-4-6",
             max_tokens=4096,  # Increased limit
             messages=messages,
-            tools=tools
+            tools=tools,
         )
 ```
 
@@ -720,22 +723,21 @@ response = client.messages.create(
     messages=[
         {
             "role": "user",
-            "content": "Search for comprehensive information about quantum computing breakthroughs in 2025"
+            "content": "Search for comprehensive information about quantum computing breakthroughs in 2025",
         }
     ],
-    tools=[{
-        "type": "web_search_20250305",
-        "name": "web_search",
-        "max_uses": 10
-    }]
+    tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 10}],
 )
 
 # Check if the response has pause_turn stop reason
 if response.stop_reason == "pause_turn":
     # Continue the conversation with the paused content
     messages = [
-        {"role": "user", "content": "Search for comprehensive information about quantum computing breakthroughs in 2025"},
-        {"role": "assistant", "content": response.content}
+        {
+            "role": "user",
+            "content": "Search for comprehensive information about quantum computing breakthroughs in 2025",
+        },
+        {"role": "assistant", "content": response.content},
     ]
 
     # Send the continuation request
@@ -743,11 +745,7 @@ if response.stop_reason == "pause_turn":
         model="claude-3-7-sonnet-latest",
         max_tokens=1024,
         messages=messages,
-        tools=[{
-            "type": "web_search_20250305",
-            "name": "web_search",
-            "max_uses": 10
-        }]
+        tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 10}],
     )
 
     print(continuation)

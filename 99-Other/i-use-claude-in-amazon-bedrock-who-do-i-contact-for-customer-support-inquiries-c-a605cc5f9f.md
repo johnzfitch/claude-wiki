@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-23T00:45:52Z"
 source_url: "https://support.claude.com/en/articles/7996921-i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries"
 title: "I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries? | Claude Help Center"
 ---

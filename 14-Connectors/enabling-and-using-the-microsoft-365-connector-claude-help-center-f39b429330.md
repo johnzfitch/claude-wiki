@@ -1,8 +1,8 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:29Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector"
-title: "Enabling and Using the Microsoft 365 Connector | Claude Help Center"
+title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 ---
 
 [](/en/)
@@ -55,11 +55,11 @@ Table of contents
 
 [Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
 
-Enabling and Using the Microsoft 365 Connector
+Enabling and using the Microsoft 365 connector
 
-# Enabling and Using the Microsoft 365 Connector
+# Enabling and using the Microsoft 365 connector
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -125,25 +125,25 @@ This process triggers an auth consent flow when connecting to the Microsoft 365 
 
 **Steps:**
 
-**1) Enable in Claude Admin Settings**
+**1) Enable in Claude organization settings**
 
 As an organization Owner and Microsoft Entra Global Administrator:
 
 1.  Sign in to Claude.
 
-2.  Navigate to [Admin Settings \> Connectors](https://claude.ai/admin-settings/connectors).
+2.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
 3.  Click the “Browse connectors” button at the bottom of the page.
 
 4.  Find "Microsoft 365" and click "Add to your team."
 
-“Microsoft 365” will now appear in the list of Connectors at [Settings \> Connectors](https://claude.ai/settings/connectors).
+“Microsoft 365” will now appear in the list of Connectors at **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 **2) Enable in individual Claude Settings**
 
 After completing the previous step on behalf of the Claude organization, the Microsoft Entra Global Administrator needs to connect to Microsoft 365 in their individual Claude user settings:
 
-1.  Navigate to [Settings \> Connectors](https://claude.ai/settings/connectors).
+1.  Navigate to **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 2.  Find "Microsoft 365" in the list and click "Connect."
 
@@ -153,7 +153,7 @@ After completing the previous step on behalf of the Claude organization, the Mic
 
     - You must complete this step before any team members can connect to Microsoft 365 individually.
 
-5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center ([https://entra.microsoft.com](https://entra.microsoft.com)), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.​​​​​​​​​​​​​​​​
+5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.​​​​​​​​​​​​​​​​
 
 6.  (Optional) **To selectively restrict which permissions scopes users in your tenant can use** see the below “Permission categories” and “Selectively revoking permissions” sections.
 
@@ -185,35 +185,35 @@ POST [https://graph.microsoft.com/v1.0/servicePrincipals](https://graph.microsof
 
 Construct and visit the following URLs in your browser, replacing {your-tenant-id} with your organization's tenant ID:
 
-M365 MCP Client for Claude
+**M365 MCP Client for Claude**
 
 [https://login.microsoftonline.com/{your-tenant-id}/adminconsent?client_id=08ad6f98-a4f8-4635-bb8d-f1a3044760f0](https://login.microsoftonline.com/%7Byour-tenant-id%7D/adminconsent?client_id=08ad6f98-a4f8-4635-bb8d-f1a3044760f0)
 
-M365 MCP Server for Claude
+**M365 MCP Server for Claude**
 
 [https://login.microsoftonline.com/{your-tenant-id}/adminconsent?client_id=07c030f6-5743-41b7-ba00-0a6e85f37c17](https://login.microsoftonline.com/%7Byour-tenant-id%7D/adminconsent?client_id=07c030f6-5743-41b7-ba00-0a6e85f37c17)
 
 When you visit each URL, you'll be prompted to consent to the delegated user permissions required by the integration on behalf of your organization.
 
-**3) Enable in Claude Admin Settings**
+**3) Enable in Claude organization settings**
 
 After the Microsoft Entra Admin completes the admin consent process, an organization Owner needs to:
 
 1.  Sign in to Claude.
 
-2.  Navigate to [Admin Settings \> Connectors](https://claude.ai/admin-settings/connectors).
+2.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
 3.  Click the “Browse connectors” button at the bottom of the page.
 
 4.  Find "Microsoft 365" and click "Add to your team."
 
-“Microsoft 365” will now appear in the list of Connectors at [Settings \> Connectors](https://claude.ai/settings/connectors).
+“Microsoft 365” will now appear in the list of Connectors at **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 **4) Enable in individual Claude Settings**
 
 After completing the previous step on behalf of the organization, the Microsoft Entra Admin needs to connect to Microsoft 365 in their individual Claude user settings:
 
-1.  Navigate to [Settings \> Connectors](https://claude.ai/settings/connectors).
+1.  Navigate to **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 2.  Find "Microsoft 365" in the list and click "Connect."
 
@@ -223,7 +223,7 @@ After completing the previous step on behalf of the organization, the Microsoft 
 
     - You must complete this step before any team members can connect to Microsoft 365 individually.
 
-5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center ([https://entra.microsoft.com](https://entra.microsoft.com)), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.​​​​​​​​​​​​​​​​
+5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.​​​​​​​​​​​​​​​​
 
 6.  (Optional) **To selectively restrict which permissions scopes users in your tenant can use** see the below “Permission categories” and “Selectively revoking permissions” sections.
 
@@ -237,7 +237,7 @@ Once enabled by an Owner, members can choose to connect Claude to Microsoft 365 
 
 **Steps:**
 
-1.  Navigate to [Settings \> Connectors](https://claude.ai/settings/connectors).
+1.  Navigate to **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 2.  Find "Microsoft 365" in the list and click "Connect."
 
@@ -396,7 +396,7 @@ These permissions allow Claude to do the following when prompted:
 
 Additionally, the Microsoft 365 Connector searches SharePoint across the entire tenant using the permissions of the user. Site-specific search restriction is unsupported.
 
-You can revoke these permissions as a user at any time by disconnecting the connector in your Claude settings, or as an organization by removing the connector in your Claude Admin settings.
+You can revoke these permissions as a user at any time by disconnecting the connector in your Claude settings, or as an organization by removing the connector in your Claude organization settings.
 
 ## Selectively revoking permissions
 
@@ -420,7 +420,7 @@ To limit which types of resources the connector is able to access, you can selec
 
 9.  As a convenience, users can also individually toggle off which tools the connector will use in the Microsoft 365 connector settings to prevent Claude from trying to access a tool for which the permission is revoked.
 
-To restore a revoked permission, follow the steps to grant admin pre-consent described in [Phase 1: Initial Microsoft Admin Setup](#h_f93cbae211). This will revert the permissions to the default state.
+To restore a revoked permission, follow the steps to grant admin pre-consent described in **[Phase 1: Initial Microsoft Admin Setup](#h_f93cbae211)**. This will revert the permissions to the default state.
 
 ## Privacy and security
 
@@ -428,9 +428,9 @@ To restore a revoked permission, follow the steps to grant admin pre-consent des
 
 - **On-demand access:** Claude only accesses your data when you explicitly ask questions requiring it.
 
-- **Revocable access:** You can disconnect the integration at any time through [Settings \> Connectors](https://claude.ai/settings/integrations).
+- **Revocable access:** You can disconnect the integration at any time through **[Settings \> Connectors](https://claude.ai/settings/integrations)**.
 
-Read more here: [Microsoft 365 Connector: Security Guide](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide).\
+Read more here: **[Microsoft 365 Connector: Security Guide](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide)**.\
 ​
 
 ------------------------------------------------------------------------
@@ -482,7 +482,7 @@ Tips to improve your search queries:
 
 ------------------------------------------------------------------------
 
-## FAQ
+## Frequently asked questions
 
 ### Can Claude modify my Microsoft 365 data?
 
@@ -498,7 +498,7 @@ No. The current Microsoft 365 integration provides **read-only access**. Claude 
 
 ### Can I use the Microsoft 365 Connector with Enterprise Search?
 
-Yes, the Microsoft 365 Connector works well with [Enterprise Search](https://support.claude.com/en/articles/%5Bnew-id%5D-using-enterprise-search). When enabled:
+Yes, the Microsoft 365 Connector works well with **[Enterprise Search](https://support.claude.com/en/articles/12489464-using-enterprise-search)**. When enabled:
 
 1.  Enterprise Search can query Microsoft 365 alongside other connected tools.
 
@@ -550,13 +550,13 @@ If a user without Microsoft Entra Global Administrator permissions attempts to c
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities)
+[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
-Using the Connectors Directory to extend Claude’s capabilities
+Anthropic Connectors Directory FAQ
 
 [](https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors)
 

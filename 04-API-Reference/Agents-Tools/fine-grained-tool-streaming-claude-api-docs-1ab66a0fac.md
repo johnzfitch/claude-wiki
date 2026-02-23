@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:21Z"
+fetched_at: "2026-02-22T13:10:55Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming"
 title: "Fine-grained tool streaming - Claude API Docs"
 ---
 
-Tools
+Tool infrastructure
 
 # Fine-grained tool streaming
 

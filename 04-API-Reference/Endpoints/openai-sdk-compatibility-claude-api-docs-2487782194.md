@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:17Z"
+fetched_at: "2026-02-22T13:19:42Z"
 source_url: "https://platform.claude.com/docs/en/api/openai-sdk"
 title: "OpenAI SDK compatibility - Claude API Docs"
 ---
@@ -15,13 +15,13 @@ Anthropic provides a compatibility layer that enables you to use the OpenAI SDK 
 
 Copy page
 
-This compatibility layer is primarily intended to test and compare model capabilities, and is not considered a long-term or production-ready solution for most use cases. While we do intend to keep it fully functional and not make breaking changes, our priority is the reliability and effectiveness of the [Claude API](/docs/en/api/overview).
+This compatibility layer is primarily intended to test and compare model capabilities, and is not considered a long-term or production-ready solution for most use cases. While it is intended to remain fully functional and not have breaking changes, the priority is the reliability and effectiveness of the [Claude API](/docs/en/api/overview).
 
 For more information on known compatibility limitations, see [Important OpenAI compatibility limitations](#important-openai-compatibility-limitations).
 
-If you encounter any issues with the OpenAI SDK compatibility feature, please let us know [here](https://forms.gle/oQV4McQNiuuNbz9n8).
+If you encounter any issues with the OpenAI SDK compatibility feature, please share your feedback via this [compatibility feedback form](https://forms.gle/oQV4McQNiuuNbz9n8).
 
-For the best experience and access to Claude API full feature set ([PDF processing](/docs/en/build-with-claude/pdf-support), [citations](/docs/en/build-with-claude/citations), [extended thinking](/docs/en/build-with-claude/extended-thinking), and [prompt caching](/docs/en/build-with-claude/prompt-caching)), we recommend using the native [Claude API](/docs/en/api/overview).
+For the best experience and access to Claude API full feature set ([PDF processing](/docs/en/build-with-claude/pdf-support), [citations](/docs/en/build-with-claude/citations), [extended thinking](/docs/en/build-with-claude/extended-thinking), and [prompt caching](/docs/en/build-with-claude/prompt-caching)), use the native [Claude API](/docs/en/api/overview).
 
 ## 
 
@@ -47,14 +47,14 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="ANTHROPIC_API_KEY",  # Your Claude API key
-    base_url="https://api.anthropic.com/v1/"  # the Claude API endpoint
+    base_url="https://api.anthropic.com/v1/",  # the Claude API endpoint
 )
 
 response = client.chat.completions.create(
-    model="claude-opus-4-6", # Anthropic model name
+    model="claude-opus-4-6",  # Anthropic model name
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Who are you?"}
+        {"role": "user", "content": "Who are you?"},
     ],
 )
 
@@ -65,7 +65,7 @@ print(response.choices[0].message.content)
 
 Important OpenAI compatibility limitations
 
-#### 
+### 
 
 API behavior
 
@@ -78,19 +78,19 @@ Here are the most substantial differences from using OpenAI:
 
 Most unsupported fields are silently ignored rather than producing errors. These are all documented below.
 
-#### 
+### 
 
 Output quality considerations
 
-If you’ve done lots of tweaking to your prompt, it’s likely to be well-tuned to OpenAI specifically. Consider using our [prompt improver in the Claude Console](/dashboard) as a good starting point.
+If you’ve done lots of tweaking to your prompt, it’s likely to be well-tuned to OpenAI specifically. Consider using the [prompt improver in the Claude Console](/dashboard) as a good starting point.
 
-#### 
+### 
 
 System / Developer message hoisting
 
-Most of the inputs to the OpenAI SDK clearly map directly to Anthropic’s API parameters, but one distinct difference is the handling of system / developer prompts. These two prompts can be put throughout a chat conversation via OpenAI. Since Anthropic only supports an initial system message, we take all system/developer messages and concatenate them together with a single newline (`\n`) in between them. This full string is then supplied as a single system message at the start of the messages.
+Most of the inputs to the OpenAI SDK clearly map directly to Anthropic’s API parameters, but one distinct difference is the handling of system / developer prompts. These two prompts can be put throughout a chat conversation via OpenAI. Since Anthropic only supports an initial system message, the API takes all system/developer messages and concatenates them together with a single newline (`\n`) in between them. This full string is then supplied as a single system message at the start of the messages.
 
-#### 
+### 
 
 Extended thinking support
 
@@ -100,11 +100,9 @@ Python
 
 ``` shiki
 response = client.chat.completions.create(
-    model="claude-sonnet-4-5",
+    model="claude-sonnet-4-6",
     messages=...,
-    extra_body={
-        "thinking": { "type": "enabled", "budget_tokens": 2000 }
-    }
+    extra_body={"thinking": {"type": "enabled", "budget_tokens": 2000}},
 )
 ```
 
@@ -199,7 +197,7 @@ Response fields
 
 Error message compatibility
 
-The compatibility layer maintains consistent error formats with the OpenAI API. However, the detailed error messages will not be equivalent. We recommend only using the error messages for logging and debugging.
+The compatibility layer maintains consistent error formats with the OpenAI API. However, the detailed error messages will not be equivalent. Only use the error messages for logging and debugging.
 
 ### 
 
@@ -230,6 +228,14 @@ Was this page helpful?
 - [Quick start example](#quick-start-example)
 
 - [Important OpenAI compatibility limitations](#important-open-ai-compatibility-limitations)
+
+- [API behavior](#api-behavior)
+
+- [Output quality considerations](#output-quality-considerations)
+
+- [System / Developer message hoisting](#system-developer-message-hoisting)
+
+- [Extended thinking support](#extended-thinking-support)
 
 - [Rate limits](#rate-limits)
 

@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:33Z"
+fetched_at: "2026-02-23T00:45:22Z"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 title: "Using the Candid Connector in Claude | Claude Help Center"
 ---
@@ -51,7 +51,7 @@ Using the Candid Connector in Claude
 
 # Using the Candid Connector in Claude
 
-Updated this week
+Updated over 2 weeks ago
 
 Table of contents
 
@@ -101,7 +101,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#c4abaaa8adaaa1a8ada6b6a5b6ada5aa84a7a5aaa0ada0eaabb6a3).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#cba4a5a7a2a5aea7a2a9b9aab9a2aaa58ba8aaa5afa2afe5a4b9ac).
 
 ## Setting up the Candid integration
 
@@ -508,7 +508,7 @@ Candid Seals of Transparency indicate how much information an organization has s
 
 ## Need more help?
 
-If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#4d22232124232821242f3f2c3f242c230d2e2c2329242963223f2a).
+If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#315e5f5d585f545d585343504358505f7152505f5558551f5e4356).
 
 ------------------------------------------------------------------------
 
@@ -516,11 +516,11 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
+Using the Synapse.org connector in Claude
 
-[](https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude)
+[](https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude)
 
-Using the PubMed Connector in Claude
+Using the Scholar Gateway Connector in Claude
 
 [](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 

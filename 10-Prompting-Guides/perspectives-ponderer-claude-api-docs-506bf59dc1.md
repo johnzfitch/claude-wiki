@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:39Z"
+fetched_at: "2026-02-22T13:23:27Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/perspectives-ponderer"
 title: "Perspectives ponderer - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Weigh the pros and cons of a user-provided topic.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 | Role | Content |
 |----|----|
@@ -79,24 +79,24 @@ Vertex AI TypeScript
 import anthropic
 
 client = anthropic.Anthropic(
-  # defaults to os.environ.get("ANTHROPIC_API_KEY")
-  api_key="my_api_key",
+    # defaults to os.environ.get("ANTHROPIC_API_KEY")
+    api_key="my_api_key",
 )
 message = client.messages.create(
-  model="claude-opus-4-6",
-  max_tokens=1000,
-  temperature=1,
-  messages=[
-    {
-    "role": "user",
-    "content": [
+    model="claude-opus-4-6",
+    max_tokens=1000,
+    temperature=1,
+    messages=[
         {
-          "type": "text",
-          "text": "Analyze the pros and cons of implementing a four-day workweek as a standard practice in the corporate world."
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Analyze the pros and cons of implementing a four-day workweek as a standard practice in the corporate world.",
+                }
+            ],
         }
-      ]
-    }
-  ]
+    ],
 )
 print(message.content)
 ```

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:02Z"
+fetched_at: "2026-02-22T13:17:22Z"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak"
 title: "Reduce prompt leak - Claude API Docs"
 ---
@@ -19,7 +19,7 @@ Prompt leaks can expose sensitive information that you expect to be "hidden" in 
 
 Before you try to reduce prompt leak
 
-We recommend using leak-resistant prompt engineering strategies only when **absolutely necessary**. Attempts to leak-proof your prompt can add complexity that may degrade performance in other parts of the task due to increasing the complexity of the LLM’s overall task.
+Consider using leak-resistant prompt engineering strategies only when **absolutely necessary**. Attempts to leak-proof your prompt can add complexity that may degrade performance in other parts of the task due to increasing the complexity of the LLM’s overall task.
 
 If you decide to implement leak-resistant techniques, be sure to test your prompts thoroughly to ensure that the added complexity does not negatively impact the model’s performance or the quality of its outputs.
 
@@ -31,7 +31,7 @@ Try monitoring techniques first, like output screening and post-processing, to t
 
 Strategies to reduce prompt leak
 
-- **Separate context from queries:** You can try using system prompts to isolate key information and context from user queries. You can emphasize key instructions in the `User` turn, then reemphasize those instructions by prefilling the `Assistant` turn. (Note: prefilling is deprecated and not supported on Claude Opus 4.6 and Sonnet 4.5.)
+- **Separate context from queries:** You can try using system prompts to isolate key information and context from user queries. You can emphasize key instructions in the `User` turn, then reemphasize those instructions by prefilling the `Assistant` turn. (Note: prefilling is deprecated and not supported on Claude Opus 4.6, Sonnet 4.6, and Sonnet 4.5.)
 
 ### Example: Safeguarding proprietary analytics
 

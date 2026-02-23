@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:31Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12663693-using-mt-newswires-for-real-time-financial-news"
 title: "Using MT Newswires for Real-Time Financial News | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using MT Newswires for Real-Time Financial News
 
 # Using MT Newswires for Real-Time Financial News
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

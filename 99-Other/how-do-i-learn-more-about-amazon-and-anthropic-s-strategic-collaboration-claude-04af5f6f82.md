@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:16Z"
+fetched_at: "2026-02-23T00:45:50Z"
 source_url: "https://support.claude.com/en/articles/10280779-how-do-i-learn-more-about-amazon-and-anthropic-s-strategic-collaboration"
 title: "How do I learn more about Amazon and Anthropic’s strategic collaboration? | Claude Help Center"
 ---

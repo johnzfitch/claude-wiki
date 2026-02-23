@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:27Z"
+fetched_at: "2026-02-22T13:10:15Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool"
 title: "Memory tool - Claude API Docs"
 ---
@@ -15,11 +15,11 @@ Copy page
 
 The memory tool enables Claude to store and retrieve information across conversations through a memory file directory. Claude can create, read, update, and delete files that persist between sessions, allowing it to build knowledge over time without keeping everything in the context window.
 
-The memory tool operates client-side—you control where and how the data is stored through your own infrastructure.
+The memory tool operates client-side: you control where and how the data is stored through your own infrastructure.
 
-The memory tool is currently in beta. To enable it, use the beta header `context-management-2025-06-27` in your API requests.
+Please reach out through the [feedback form](https://forms.gle/YXC2EKGMhjN1c4L88) to share your feedback on this feature.
 
-Please reach out through our [feedback form](https://forms.gle/YXC2EKGMhjN1c4L88) to share your feedback on this feature.
+This feature is [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) eligible. When your organization has a ZDR arrangement, data sent through this feature is not stored after the API response is returned.
 
 ## 
 
@@ -120,6 +120,7 @@ The memory tool is available on:
 - Claude Opus 4.5 (`claude-opus-4-5-20251101`)
 - Claude Opus 4.1 (`claude-opus-4-1-20250805`)
 - Claude Opus 4 (`claude-opus-4-20250514`)
+- Claude Sonnet 4.6 (`claude-sonnet-4-6`)
 - Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`)
 - Claude Sonnet 4 (`claude-sonnet-4-20250514`)
 - Claude Haiku 4.5 (`claude-haiku-4-5-20251001`)
@@ -130,11 +131,10 @@ Getting started
 
 To use the memory tool:
 
-1.  Include the beta header `context-management-2025-06-27` in your API requests
-2.  Add the memory tool to your request
-3.  Implement client-side handlers for memory operations
+1.  Add the memory tool to your request
+2.  Implement client-side handlers for memory operations
 
-To handle memory tool operations in your application, you need to implement handlers for each memory command. Our SDKs provide memory tool helpers that handle the tool interface—you can subclass `BetaAbstractMemoryTool` (Python) or use `betaMemoryTool` (TypeScript) to implement your own memory backend (file-based, database, cloud storage, encrypted files, etc.).
+To handle memory tool operations in your application, you need to implement handlers for each memory command. The SDKs provide memory tool helpers that handle the tool interface. You can subclass `BetaAbstractMemoryTool` (Python) or use `betaMemoryTool` (TypeScript) to implement your own memory backend (file-based, database, cloud storage, encrypted files, etc.).
 
 For working examples, see:
 
@@ -152,7 +152,6 @@ curl https://api.anthropic.com/v1/messages \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
     --header "anthropic-version: 2023-06-01" \
     --header "content-type: application/json" \
-    --header "anthropic-beta: context-management-2025-06-27" \
     --data '{
         "model": "claude-opus-4-6",
         "max_tokens": 2048,
@@ -203,7 +202,7 @@ Here're the files and directories up to 2 levels deep in {path}, excluding hidde
 ```
 
 - Lists files up to 2 levels deep
-- Shows human-readable sizes (e.g., `5.5K`, `1.2M`)
+- Shows human-readable sizes (for example, `5.5K`, `1.2M`)
 - Excludes hidden items (files starting with `.`) and `node_modules`
 - Uses tab character between size and path
 
@@ -400,7 +399,7 @@ Renames the directory.
 
 Prompting guidance
 
-We automatically include this instruction to the system prompt when the memory tool is included:
+This instruction is automatically included in the system prompt when the memory tool is enabled:
 
 ``` inline-block
 IMPORTANT: ALWAYS VIEW YOUR MEMORY DIRECTORY BEFORE DOING ANYTHING ELSE.
@@ -415,7 +414,7 @@ If you observe Claude creating cluttered memory files, you can include this inst
 
 > Note: when editing your memory folder, always try to keep its content up-to-date, coherent and organized. You can rename or delete files that are no longer relevant. Do not create new files unless necessary.
 
-You can also guide what Claude writes to memory, e.g., "Only write down information relevant to \<topic\> in your memory system."
+You can also guide what Claude writes to memory. For example: "Only write down information relevant to \<topic\> in your memory system."
 
 ## 
 
@@ -453,7 +452,7 @@ Consider these safeguards:
 - Resolve paths to their canonical form and verify they remain within the memory directory
 - Reject paths containing sequences like `../`, `..\\`, or other traversal patterns
 - Watch for URL-encoded traversal sequences (`%2e%2e%2f`)
-- Use your language's built-in path security utilities (e.g., Python's `pathlib.Path.resolve()` and `relative_to()`)
+- Use your language's built-in path security utilities (for example, Python's `pathlib.Path.resolve()` and `relative_to()`)
 
 ## 
 
@@ -488,7 +487,7 @@ Consider a code refactoring project with many file operations:
 
 1.  Claude makes numerous edits to files, generating many tool results
 2.  As the context grows and approaches your threshold, Claude receives a warning
-3.  Claude summarizes the changes made so far to a memory file (e.g., `/memories/refactoring_progress.xml`)
+3.  Claude summarizes the changes made so far to a memory file (for example, `/memories/refactoring_progress.xml`)
 4.  Context editing clears the older tool results automatically
 5.  Claude continues working, referencing the memory file when it needs to recall what changes were already completed
 6.  The workflow can continue indefinitely, with Claude managing both active context and persistent memory
@@ -502,33 +501,23 @@ To use both features together:
 Python
 
 ``` shiki
-response = client.beta.messages.create(
+response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=4096,
     messages=[...],
     tools=[
-        {
-            "type": "memory_20250818",
-            "name": "memory"
-        },
+        {"type": "memory_20250818", "name": "memory"},
         # Your other tools
     ],
-    betas=["context-management-2025-06-27"],
     context_management={
         "edits": [
             {
                 "type": "clear_tool_uses_20250919",
-                "trigger": {
-                    "type": "input_tokens",
-                    "value": 100000
-                },
-                "keep": {
-                    "type": "tool_uses",
-                    "value": 3
-                }
+                "trigger": {"type": "input_tokens", "value": 100000},
+                "keep": {"type": "tool_uses", "value": 3},
             }
         ]
-    }
+    },
 )
 ```
 
@@ -537,13 +526,8 @@ You can also exclude memory tool calls from being cleared to ensure Claude alway
 Python
 
 ``` shiki
-context_management={
-    "edits": [
-        {
-            "type": "clear_tool_uses_20250919",
-            "exclude_tools": ["memory"]
-        }
-    ]
+context_management = {
+    "edits": [{"type": "clear_tool_uses_20250919", "exclude_tools": ["memory"]}]
 }
 ```
 

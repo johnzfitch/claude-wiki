@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:12Z"
+fetched_at: "2026-02-22T13:42:56Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/files/download"
 title: "Download File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Python
 
 beta.files.download(strfile_id, FileDownloadParams\*\*kwargs) -\> BinaryResponseContent
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 Download File
 
@@ -29,9 +29,9 @@ Optional header to specify the beta version(s) you want to use.
 
 Accepts one of the following:
 
-UnionMember0 = str
+str
 
-UnionMember1 = Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 16 more\]
+Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 17 more\]
 
 Accepts one of the following:
 
@@ -72,6 +72,8 @@ Accepts one of the following:
 "model-context-window-exceeded-2025-08-26"
 
 "skills-2025-10-02"
+
+"fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

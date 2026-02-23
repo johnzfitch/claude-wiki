@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:10:29Z"
+fetched_at: "2026-02-22T14:01:59Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Ruby
 
 models.retrieve(model_id, \*\*kwargs) -\> [ModelInfo](/docs/en/api/models#model_info) { id, created_at, display_name, type }
 
-get/v1/models/{model_id}
+GET/v1/models/{model_id}
 
 Get a specific model.
 
@@ -33,7 +33,7 @@ Accepts one of the following:
 
 String
 
-:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 16 more
+:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 17 more
 
 Accepts one of the following:
 
@@ -75,6 +75,8 @@ Accepts one of the following:
 
 :"skills-2025-10-02"
 
+:"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 class ModelInfo { id, created_at, display_name, type }
@@ -87,8 +89,6 @@ created_at: Time
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
-formatdate-time
-
 display_name: String
 
 A human-readable name for the model.
@@ -98,10 +98,6 @@ type: :model
 Object type.
 
 For Models, this is always `"model"`.
-
-Accepts one of the following:
-
-:model
 
 Get a Model
 

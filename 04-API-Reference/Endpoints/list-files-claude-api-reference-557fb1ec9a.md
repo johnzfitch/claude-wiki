@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:12Z"
+fetched_at: "2026-02-22T13:42:49Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/files/list"
 title: "List Files - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Python
 
 beta.files.list(FileListParams\*\*kwargs) -\> SyncPage\[[FileMetadata](/docs/en/api/beta#file_metadata)\]
 
-get/v1/files
+GET/v1/files
 
 List Files
 
@@ -43,9 +43,9 @@ Optional header to specify the beta version(s) you want to use.
 
 Accepts one of the following:
 
-UnionMember0 = str
+str
 
-UnionMember1 = Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 16 more\]
+Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 17 more\]
 
 Accepts one of the following:
 
@@ -87,6 +87,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 class FileMetadata: …
@@ -101,39 +103,23 @@ created_at: datetime
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 filename: str
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 mime_type: str
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 size_bytes: int
 
 Size of the file in bytes.
-
-minimum0
 
 type: Literal\["file"\]
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-"file"
 
 downloadable: Optional\[bool\]
 

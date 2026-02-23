@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-16T21:12:50Z"
 source_url: "https://support.claude.com/en/articles/9002504-can-claude-produce-images"
 title: "Can Claude produce images? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Can Claude produce images?
 
 # Can Claude produce images?
 
-Updated this week
+Updated over a week ago
 
 No, currently Claude is limited to text-based output via the chat. However, you can upload images for Claude to work with.
 
@@ -41,15 +41,15 @@ Related Articles
 
 [](https://support.claude.com/en/articles/8241126-uploading-files-to-claude)
 
-Uploading Files to Claude
+Uploading files to Claude
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
-[](https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5)
+[](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)
 
-Create professional results across tools with Claude Sonnet 4.5
+Create and edit files with Claude
 
 [](https://support.claude.com/en/articles/12461605-using-claude-in-slack)
 

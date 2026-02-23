@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-08T20:52:01Z"
+fetched_at: "2026-02-22T14:29:41Z"
 source_url: "https://support.claude.com/en/articles/12922832-local-mcp-server-submission-guide"
 title: "Local MCP Server Submission Guide | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Local MCP Server Submission Guide
 
 # Local MCP Server Submission Guide
 
-Updated yesterday
+Updated over 2 weeks ago
 
 Table of contents
 

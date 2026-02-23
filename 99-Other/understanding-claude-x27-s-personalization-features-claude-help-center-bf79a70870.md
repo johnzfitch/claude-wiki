@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:16Z"
+fetched_at: "2026-02-23T00:45:17Z"
 source_url: "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features"
 title: "Understanding Claude&#x27;s Personalization Features | Claude Help Center"
 ---
@@ -135,9 +135,9 @@ Related Articles
 
 Getting started with Claude
 
-[](https://support.claude.com/en/articles/10181068-configure-and-use-styles)
+[](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)
 
-Configure and use styles
+How large is the context window on paid Claude plans?
 
 [](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)
 

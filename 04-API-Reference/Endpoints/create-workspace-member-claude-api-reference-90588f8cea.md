@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:13Z"
+fetched_at: "2026-02-22T14:26:38Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/create"
 title: "Create Workspace Member - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Create Workspace Member
 
-post/v1/organizations/workspaces/{workspace_id}/members
+POST/v1/organizations/workspaces/{workspace_id}/members
 
 Create Workspace Member
 
@@ -19,7 +19,7 @@ workspace_id: string
 
 ID of the Workspace.
 
-##### Body ParametersExpand Collapse 
+##### Body ParametersJSONExpand Collapse 
 
 user_id: string
 
@@ -46,10 +46,6 @@ type: "workspace_member"
 Object type.
 
 For Workspace Members, this is always `"workspace_member"`.
-
-Accepts one of the following:
-
-"workspace_member"
 
 user_id: string
 
@@ -86,29 +82,7 @@ curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/members
         }'
 ```
 
-Response 200
-
-``` shiki
-{
-  "type": "workspace_member",
-  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
-  "workspace_role": "workspace_user"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "type": "workspace_member",
-  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
-  "workspace_role": "workspace_user"
-}
-```
 
 [](/docs)
 

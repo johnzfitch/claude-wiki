@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:57Z"
+fetched_at: "2026-02-22T13:26:46Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/tweet-tone-detector"
 title: "Tweet tone detector - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Detect the tone and sentiment behind tweets.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -52,11 +52,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "Wow, I'm so impressed by the company's handling of this crisis. 🙄 They really have their priorities straight. #sarcasm #fail"
+                    "text": "Wow, I'm so impressed by the company's handling of this crisis. 🙄 They really have their priorities straight. #sarcasm #fail",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-23T00:45:19Z"
 source_url: "https://support.claude.com/en/articles/13124001-managing-your-active-sessions"
 title: "Managing your active sessions | Claude Help Center"
 ---
@@ -131,9 +131,9 @@ How do I log out of all active sessions?
 
 Using Claude Code with your Pro or Max plan
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
+[](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan)
 
-Using Claude Code with your Team or Enterprise plan
+Use Claude Code with your Team or Enterprise plan
 
 [](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account)
 

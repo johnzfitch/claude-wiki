@@ -1,8 +1,8 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/12622667-enterprise-configuration"
-title: "Enterprise Configuration | Claude Help Center"
+title: "Enterprise configuration | Claude Help Center"
 ---
 
 [](/en/)
@@ -35,9 +35,9 @@ Table of contents
 
 [General](https://support.claude.com/en/collections/17879568-general)
 
-Enterprise Configuration
+Enterprise configuration
 
-# Enterprise Configuration
+# Enterprise configuration
 
 Updated this week
 
@@ -98,10 +98,6 @@ Related Articles
 
 Getting Started with Local MCP Servers on Claude Desktop
 
-[](https://support.claude.com/en/articles/12489464-using-enterprise-search)
-
-Using Enterprise Search
-
 [](https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos)
 
 Deploy Claude Desktop for macOS
@@ -113,6 +109,10 @@ Deploy Claude Desktop for Windows
 [](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
 
 Building Desktop Extensions with MCPB
+
+[](https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans)
+
+Cowork for Team and Enterprise plans
 
 Did this answer your question?
 

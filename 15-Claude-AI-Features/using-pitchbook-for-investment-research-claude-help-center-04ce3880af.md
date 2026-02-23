@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-23T00:45:34Z"
 source_url: "https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research"
 title: "Using PitchBook for Investment Research | Claude Help Center"
 ---
@@ -171,7 +171,7 @@ Discover unexpected connections between companies, investors, and professionals 
 
 ## Contact
 
-If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#1d6e686d6d726f695d6d74697e757f727276337e7270) for help.
+If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#97e4e2e7e7f8e5e3d7e7fee3f4fff5f8f8fcb9f4f8fa) for help.
 
 ------------------------------------------------------------------------
 
@@ -189,13 +189,13 @@ Using Morningstar for Investment Research
 
 Using FactSet for Comprehensive Financial Research
 
-[](https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis)
-
-Using Moody’s for Financial Analysis
-
 [](https://support.claude.com/en/articles/12662597-using-chronograph-for-portfolio-monitoring)
 
 Using Chronograph for Portfolio Monitoring
+
+[](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
+
+Claude for Financial Services Skills
 
 Did this answer your question?
 

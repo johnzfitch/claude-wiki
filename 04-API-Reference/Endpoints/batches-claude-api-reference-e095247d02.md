@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:06Z"
+fetched_at: "2026-02-22T13:27:56Z"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches"
 title: "Batches - Claude API Reference"
 ---
@@ -13,27 +13,27 @@ cURL
 
 ##### [Create a Message Batch](/docs/en/api/messages/batches/create)
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/messages/batches/retrieve)
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/messages/batches/list)
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/messages/batches/cancel)
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/messages/batches/delete)
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/messages/batches/results)
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -49,10 +49,6 @@ Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
 
-Accepts one of the following:
-
-"message_batch_deleted"
-
 MessageBatch = object { id, archived_at, cancel_initiated_at, 7 more }
 
 id: string
@@ -65,19 +61,13 @@ archived_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: string
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: string
 
@@ -90,8 +80,6 @@ formatdate-time
 expires_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: "in_progress" or "canceling" or "ended"
 
@@ -151,17 +139,9 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-"message_batch"
-
 MessageBatchCanceledResult = object { type }
 
 type: "canceled"
-
-Accepts one of the following:
-
-"canceled"
 
 MessageBatchErroredResult = object { error, type }
 
@@ -177,19 +157,11 @@ message: string
 
 type: "invalid_request_error"
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 AuthenticationError = object { message, type }
 
 message: string
 
 type: "authentication_error"
-
-Accepts one of the following:
-
-"authentication_error"
 
 BillingError = object { message, type }
 
@@ -197,19 +169,11 @@ message: string
 
 type: "billing_error"
 
-Accepts one of the following:
-
-"billing_error"
-
 PermissionError = object { message, type }
 
 message: string
 
 type: "permission_error"
-
-Accepts one of the following:
-
-"permission_error"
 
 NotFoundError = object { message, type }
 
@@ -217,19 +181,11 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 RateLimitError = object { message, type }
 
 message: string
 
 type: "rate_limit_error"
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 GatewayTimeoutError = object { message, type }
 
@@ -237,19 +193,11 @@ message: string
 
 type: "timeout_error"
 
-Accepts one of the following:
-
-"timeout_error"
-
 APIErrorObject = object { message, type }
 
 message: string
 
 type: "api_error"
-
-Accepts one of the following:
-
-"api_error"
 
 OverloadedError = object { message, type }
 
@@ -257,31 +205,15 @@ message: string
 
 type: "overloaded_error"
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: string
 
 type: "error"
 
-Accepts one of the following:
-
-"error"
-
 type: "errored"
-
-Accepts one of the following:
-
-"errored"
 
 MessageBatchExpiredResult = object { type }
 
 type: "expired"
-
-Accepts one of the following:
-
-"expired"
 
 MessageBatchIndividualResponse = object { custom_id, result }
 
@@ -303,13 +235,25 @@ Accepts one of the following:
 
 MessageBatchSucceededResult = object { message, type }
 
-message: [Message](/docs/en/api/messages#message) { id, content, model, 5 more }
+message: [Message](/docs/en/api/messages#message) { id, container, content, 6 more }
 
 id: string
 
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+container: [Container](/docs/en/api/messages#container) { id, expires_at }
+
+Information about the container used in the request (for the code execution tool)
+
+id: string
+
+Identifier for the container used in this request
+
+expires_at: string
+
+The time at which the container will expire.
 
 content: array of [ContentBlock](/docs/en/api/messages#content_block)
 
@@ -368,10 +312,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocation = object { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -387,10 +327,6 @@ file_id: string
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocation = object { cited_text, document_index, document_title, 4 more }
 
@@ -408,10 +344,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationsWebSearchResultLocation = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -421,10 +353,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -444,17 +372,9 @@ title: string
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 ThinkingBlock = object { signature, thinking, type }
 
@@ -464,23 +384,41 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 RedactedThinkingBlock = object { data, type }
 
 data: string
 
 type: "redacted_thinking"
 
-Accepts one of the following:
-
-"redacted_thinking"
-
-ToolUseBlock = object { id, input, name, type }
+ToolUseBlock = object { id, caller, input, 2 more }
 
 id: string
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 input: map\[unknown\]
 
@@ -488,29 +426,85 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-ServerToolUseBlock = object { id, input, name, type }
+ServerToolUseBlock = object { id, caller, input, 2 more }
 
 id: string
 
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
 input: map\[unknown\]
 
-name: "web_search"
+name: "web_search" or "web_fetch" or "code_execution" or 4 more
 
 Accepts one of the following:
 
 "web_search"
 
+"web_fetch"
+
+"code_execution"
+
+"bash_code_execution"
+
+"text_editor_code_execution"
+
+"tool_search_tool_regex"
+
+"tool_search_tool_bm25"
+
 type: "server_tool_use"
+
+WebSearchToolResultBlock = object { caller, content, tool_use_id, type }
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-"server_tool_use"
+DirectCaller = object { type }
 
-WebSearchToolResultBlock = object { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -518,7 +512,7 @@ Accepts one of the following:
 
 WebSearchToolResultError = object { error_code, type }
 
-error_code: "invalid_tool_input" or "unavailable" or "max_uses_exceeded" or 3 more
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -536,10 +530,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 UnionMember1 = array of [WebSearchResultBlock](/docs/en/api/messages#web_search_result_block) { encrypted_content, page_age, title, 2 more }
 
 encrypted_content: string
@@ -550,19 +540,341 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+WebFetchToolResultBlock = object { caller, content, tool_use_id, type }
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+content: [WebFetchToolResultErrorBlock](/docs/en/api/messages#web_fetch_tool_result_error_block) { error_code, type } or [WebFetchBlock](/docs/en/api/messages#web_fetch_block) { content, retrieved_at, type, url }
+
+Accepts one of the following:
+
+WebFetchToolResultErrorBlock = object { error_code, type }
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"url_too_long"
+
+"url_not_allowed"
+
+"url_not_accessible"
+
+"unsupported_content_type"
+
+"too_many_requests"
+
+"max_uses_exceeded"
+
+"unavailable"
+
+type: "web_fetch_tool_result_error"
+
+WebFetchBlock = object { content, retrieved_at, type, url }
+
+content: [DocumentBlock](/docs/en/api/messages#document_block) { citations, source, title, type }
+
+citations: [CitationsConfig](/docs/en/api/messages#citations_config) { enabled }
+
+Citation configuration for the document
+
+enabled: boolean
+
+source: [Base64PDFSource](/docs/en/api/messages#base64_pdf_source) { data, media_type, type } or [PlainTextSource](/docs/en/api/messages#plain_text_source) { data, media_type, type }
+
+Accepts one of the following:
+
+Base64PDFSource = object { data, media_type, type }
+
+data: string
+
+media_type: "application/pdf"
+
+type: "base64"
+
+PlainTextSource = object { data, media_type, type }
+
+data: string
+
+media_type: "text/plain"
+
+type: "text"
+
+title: string
+
+The title of the document
+
+type: "document"
+
+retrieved_at: string
+
+ISO 8601 timestamp when the content was retrieved
+
+type: "web_fetch_result"
+
+url: string
+
+Fetched content URL
+
+tool_use_id: string
+
+type: "web_fetch_tool_result"
+
+CodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+CodeExecutionToolResultError = object { error_code, type }
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+type: "code_execution_tool_result_error"
+
+CodeExecutionResultBlock = object { content, return_code, stderr, 2 more }
+
+content: array of [CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "code_execution_output"
+
+return_code: number
+
+stderr: string
+
+stdout: string
+
+type: "code_execution_result"
+
+EncryptedCodeExecutionResultBlock = object { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: array of [CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
+
+tool_use_id: string
+
+type: "code_execution_tool_result"
+
+BashCodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [BashCodeExecutionToolResultError](/docs/en/api/messages#bash_code_execution_tool_result_error) { error_code, type } or [BashCodeExecutionResultBlock](/docs/en/api/messages#bash_code_execution_result_block) { content, return_code, stderr, 2 more }
+
+Accepts one of the following:
+
+BashCodeExecutionToolResultError = object { error_code, type }
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"output_file_too_large"
+
+type: "bash_code_execution_tool_result_error"
+
+BashCodeExecutionResultBlock = object { content, return_code, stderr, 2 more }
+
+content: array of [BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "bash_code_execution_output"
+
+return_code: number
+
+stderr: string
+
+stdout: string
+
+type: "bash_code_execution_result"
+
+tool_use_id: string
+
+type: "bash_code_execution_tool_result"
+
+TextEditorCodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [TextEditorCodeExecutionToolResultError](/docs/en/api/messages#text_editor_code_execution_tool_result_error) { error_code, error_message, type } or [TextEditorCodeExecutionViewResultBlock](/docs/en/api/messages#text_editor_code_execution_view_result_block) { content, file_type, num_lines, 3 more } or [TextEditorCodeExecutionCreateResultBlock](/docs/en/api/messages#text_editor_code_execution_create_result_block) { is_file_update, type } or [TextEditorCodeExecutionStrReplaceResultBlock](/docs/en/api/messages#text_editor_code_execution_str_replace_result_block) { lines, new_lines, new_start, 3 more }
+
+Accepts one of the following:
+
+TextEditorCodeExecutionToolResultError = object { error_code, error_message, type }
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"file_not_found"
+
+error_message: string
+
+type: "text_editor_code_execution_tool_result_error"
+
+TextEditorCodeExecutionViewResultBlock = object { content, file_type, num_lines, 3 more }
+
+content: string
+
+file_type: "text" or "image" or "pdf"
+
+Accepts one of the following:
+
+"text"
+
+"image"
+
+"pdf"
+
+num_lines: number
+
+start_line: number
+
+total_lines: number
+
+type: "text_editor_code_execution_view_result"
+
+TextEditorCodeExecutionCreateResultBlock = object { is_file_update, type }
+
+is_file_update: boolean
+
+type: "text_editor_code_execution_create_result"
+
+TextEditorCodeExecutionStrReplaceResultBlock = object { lines, new_lines, new_start, 3 more }
+
+lines: array of string
+
+new_lines: number
+
+new_start: number
+
+old_lines: number
+
+old_start: number
+
+type: "text_editor_code_execution_str_replace_result"
+
+tool_use_id: string
+
+type: "text_editor_code_execution_tool_result"
+
+ToolSearchToolResultBlock = object { content, tool_use_id, type }
+
+content: [ToolSearchToolResultError](/docs/en/api/messages#tool_search_tool_result_error) { error_code, error_message, type } or [ToolSearchToolSearchResultBlock](/docs/en/api/messages#tool_search_tool_search_result_block) { tool_references, type }
+
+Accepts one of the following:
+
+ToolSearchToolResultError = object { error_code, error_message, type }
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+error_message: string
+
+type: "tool_search_tool_result_error"
+
+ToolSearchToolSearchResultBlock = object { tool_references, type }
+
+tool_references: array of [ToolReferenceBlock](/docs/en/api/messages#tool_reference_block) { tool_name, type }
+
+tool_name: string
+
+type: "tool_reference"
+
+type: "tool_search_tool_search_result"
+
+tool_use_id: string
+
+type: "tool_search_tool_result"
+
+ContainerUploadBlock = object { file_id, type }
+
+Response model for a file uploaded to the container.
+
+file_id: string
+
+type: "container_upload"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -572,7 +884,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = "claude-opus-4-6" or "claude-opus-4-5-20251101" or "claude-opus-4-5" or 18 more
+UnionMember0 = "claude-opus-4-6" or "claude-sonnet-4-6" or "claude-opus-4-5-20251101" or 19 more
 
 The model that will complete your prompt.
 
@@ -583,6 +895,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -672,10 +988,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -717,10 +1029,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
 usage: [Usage](/docs/en/api/messages#usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 5 more }
 
 Billing and rate-limit usage.
@@ -741,25 +1049,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string
 
@@ -769,23 +1069,21 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
-server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_search_requests }
+server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_fetch_requests, web_search_requests }
 
 The number of server tool requests.
+
+web_fetch_requests: number
+
+The number of web fetch tool requests.
 
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" or "priority" or "batch"
 
@@ -801,10 +1099,6 @@ Accepts one of the following:
 
 type: "succeeded"
 
-Accepts one of the following:
-
-"succeeded"
-
 MessageBatchErroredResult = object { error, type }
 
 error: [ErrorResponse](/docs/en/api/$shared#error_response) { error, request_id, type }
@@ -819,19 +1113,11 @@ message: string
 
 type: "invalid_request_error"
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 AuthenticationError = object { message, type }
 
 message: string
 
 type: "authentication_error"
-
-Accepts one of the following:
-
-"authentication_error"
 
 BillingError = object { message, type }
 
@@ -839,19 +1125,11 @@ message: string
 
 type: "billing_error"
 
-Accepts one of the following:
-
-"billing_error"
-
 PermissionError = object { message, type }
 
 message: string
 
 type: "permission_error"
-
-Accepts one of the following:
-
-"permission_error"
 
 NotFoundError = object { message, type }
 
@@ -859,19 +1137,11 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 RateLimitError = object { message, type }
 
 message: string
 
 type: "rate_limit_error"
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 GatewayTimeoutError = object { message, type }
 
@@ -879,19 +1149,11 @@ message: string
 
 type: "timeout_error"
 
-Accepts one of the following:
-
-"timeout_error"
-
 APIErrorObject = object { message, type }
 
 message: string
 
 type: "api_error"
-
-Accepts one of the following:
-
-"api_error"
 
 OverloadedError = object { message, type }
 
@@ -899,39 +1161,19 @@ message: string
 
 type: "overloaded_error"
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: string
 
 type: "error"
 
-Accepts one of the following:
-
-"error"
-
 type: "errored"
-
-Accepts one of the following:
-
-"errored"
 
 MessageBatchCanceledResult = object { type }
 
 type: "canceled"
 
-Accepts one of the following:
-
-"canceled"
-
 MessageBatchExpiredResult = object { type }
 
 type: "expired"
-
-Accepts one of the following:
-
-"expired"
 
 MessageBatchRequestCounts = object { canceled, errored, expired, 2 more }
 
@@ -973,13 +1215,25 @@ Accepts one of the following:
 
 MessageBatchSucceededResult = object { message, type }
 
-message: [Message](/docs/en/api/messages#message) { id, content, model, 5 more }
+message: [Message](/docs/en/api/messages#message) { id, container, content, 6 more }
 
 id: string
 
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+container: [Container](/docs/en/api/messages#container) { id, expires_at }
+
+Information about the container used in the request (for the code execution tool)
+
+id: string
+
+Identifier for the container used in this request
+
+expires_at: string
+
+The time at which the container will expire.
 
 content: array of [ContentBlock](/docs/en/api/messages#content_block)
 
@@ -1038,10 +1292,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocation = object { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -1057,10 +1307,6 @@ file_id: string
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocation = object { cited_text, document_index, document_title, 4 more }
 
@@ -1078,10 +1324,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationsWebSearchResultLocation = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -1091,10 +1333,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -1114,17 +1352,9 @@ title: string
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 ThinkingBlock = object { signature, thinking, type }
 
@@ -1134,23 +1364,41 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 RedactedThinkingBlock = object { data, type }
 
 data: string
 
 type: "redacted_thinking"
 
-Accepts one of the following:
-
-"redacted_thinking"
-
-ToolUseBlock = object { id, input, name, type }
+ToolUseBlock = object { id, caller, input, 2 more }
 
 id: string
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 input: map\[unknown\]
 
@@ -1158,29 +1406,85 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-ServerToolUseBlock = object { id, input, name, type }
+ServerToolUseBlock = object { id, caller, input, 2 more }
 
 id: string
 
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
 input: map\[unknown\]
 
-name: "web_search"
+name: "web_search" or "web_fetch" or "code_execution" or 4 more
 
 Accepts one of the following:
 
 "web_search"
 
+"web_fetch"
+
+"code_execution"
+
+"bash_code_execution"
+
+"text_editor_code_execution"
+
+"tool_search_tool_regex"
+
+"tool_search_tool_bm25"
+
 type: "server_tool_use"
+
+WebSearchToolResultBlock = object { caller, content, tool_use_id, type }
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-"server_tool_use"
+DirectCaller = object { type }
 
-WebSearchToolResultBlock = object { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -1188,7 +1492,7 @@ Accepts one of the following:
 
 WebSearchToolResultError = object { error_code, type }
 
-error_code: "invalid_tool_input" or "unavailable" or "max_uses_exceeded" or 3 more
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -1206,10 +1510,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 UnionMember1 = array of [WebSearchResultBlock](/docs/en/api/messages#web_search_result_block) { encrypted_content, page_age, title, 2 more }
 
 encrypted_content: string
@@ -1220,19 +1520,341 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+WebFetchToolResultBlock = object { caller, content, tool_use_id, type }
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+content: [WebFetchToolResultErrorBlock](/docs/en/api/messages#web_fetch_tool_result_error_block) { error_code, type } or [WebFetchBlock](/docs/en/api/messages#web_fetch_block) { content, retrieved_at, type, url }
+
+Accepts one of the following:
+
+WebFetchToolResultErrorBlock = object { error_code, type }
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"url_too_long"
+
+"url_not_allowed"
+
+"url_not_accessible"
+
+"unsupported_content_type"
+
+"too_many_requests"
+
+"max_uses_exceeded"
+
+"unavailable"
+
+type: "web_fetch_tool_result_error"
+
+WebFetchBlock = object { content, retrieved_at, type, url }
+
+content: [DocumentBlock](/docs/en/api/messages#document_block) { citations, source, title, type }
+
+citations: [CitationsConfig](/docs/en/api/messages#citations_config) { enabled }
+
+Citation configuration for the document
+
+enabled: boolean
+
+source: [Base64PDFSource](/docs/en/api/messages#base64_pdf_source) { data, media_type, type } or [PlainTextSource](/docs/en/api/messages#plain_text_source) { data, media_type, type }
+
+Accepts one of the following:
+
+Base64PDFSource = object { data, media_type, type }
+
+data: string
+
+media_type: "application/pdf"
+
+type: "base64"
+
+PlainTextSource = object { data, media_type, type }
+
+data: string
+
+media_type: "text/plain"
+
+type: "text"
+
+title: string
+
+The title of the document
+
+type: "document"
+
+retrieved_at: string
+
+ISO 8601 timestamp when the content was retrieved
+
+type: "web_fetch_result"
+
+url: string
+
+Fetched content URL
+
+tool_use_id: string
+
+type: "web_fetch_tool_result"
+
+CodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+CodeExecutionToolResultError = object { error_code, type }
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+type: "code_execution_tool_result_error"
+
+CodeExecutionResultBlock = object { content, return_code, stderr, 2 more }
+
+content: array of [CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "code_execution_output"
+
+return_code: number
+
+stderr: string
+
+stdout: string
+
+type: "code_execution_result"
+
+EncryptedCodeExecutionResultBlock = object { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: array of [CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
+
+tool_use_id: string
+
+type: "code_execution_tool_result"
+
+BashCodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [BashCodeExecutionToolResultError](/docs/en/api/messages#bash_code_execution_tool_result_error) { error_code, type } or [BashCodeExecutionResultBlock](/docs/en/api/messages#bash_code_execution_result_block) { content, return_code, stderr, 2 more }
+
+Accepts one of the following:
+
+BashCodeExecutionToolResultError = object { error_code, type }
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"output_file_too_large"
+
+type: "bash_code_execution_tool_result_error"
+
+BashCodeExecutionResultBlock = object { content, return_code, stderr, 2 more }
+
+content: array of [BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "bash_code_execution_output"
+
+return_code: number
+
+stderr: string
+
+stdout: string
+
+type: "bash_code_execution_result"
+
+tool_use_id: string
+
+type: "bash_code_execution_tool_result"
+
+TextEditorCodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [TextEditorCodeExecutionToolResultError](/docs/en/api/messages#text_editor_code_execution_tool_result_error) { error_code, error_message, type } or [TextEditorCodeExecutionViewResultBlock](/docs/en/api/messages#text_editor_code_execution_view_result_block) { content, file_type, num_lines, 3 more } or [TextEditorCodeExecutionCreateResultBlock](/docs/en/api/messages#text_editor_code_execution_create_result_block) { is_file_update, type } or [TextEditorCodeExecutionStrReplaceResultBlock](/docs/en/api/messages#text_editor_code_execution_str_replace_result_block) { lines, new_lines, new_start, 3 more }
+
+Accepts one of the following:
+
+TextEditorCodeExecutionToolResultError = object { error_code, error_message, type }
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"file_not_found"
+
+error_message: string
+
+type: "text_editor_code_execution_tool_result_error"
+
+TextEditorCodeExecutionViewResultBlock = object { content, file_type, num_lines, 3 more }
+
+content: string
+
+file_type: "text" or "image" or "pdf"
+
+Accepts one of the following:
+
+"text"
+
+"image"
+
+"pdf"
+
+num_lines: number
+
+start_line: number
+
+total_lines: number
+
+type: "text_editor_code_execution_view_result"
+
+TextEditorCodeExecutionCreateResultBlock = object { is_file_update, type }
+
+is_file_update: boolean
+
+type: "text_editor_code_execution_create_result"
+
+TextEditorCodeExecutionStrReplaceResultBlock = object { lines, new_lines, new_start, 3 more }
+
+lines: array of string
+
+new_lines: number
+
+new_start: number
+
+old_lines: number
+
+old_start: number
+
+type: "text_editor_code_execution_str_replace_result"
+
+tool_use_id: string
+
+type: "text_editor_code_execution_tool_result"
+
+ToolSearchToolResultBlock = object { content, tool_use_id, type }
+
+content: [ToolSearchToolResultError](/docs/en/api/messages#tool_search_tool_result_error) { error_code, error_message, type } or [ToolSearchToolSearchResultBlock](/docs/en/api/messages#tool_search_tool_search_result_block) { tool_references, type }
+
+Accepts one of the following:
+
+ToolSearchToolResultError = object { error_code, error_message, type }
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+error_message: string
+
+type: "tool_search_tool_result_error"
+
+ToolSearchToolSearchResultBlock = object { tool_references, type }
+
+tool_references: array of [ToolReferenceBlock](/docs/en/api/messages#tool_reference_block) { tool_name, type }
+
+tool_name: string
+
+type: "tool_reference"
+
+type: "tool_search_tool_search_result"
+
+tool_use_id: string
+
+type: "tool_search_tool_result"
+
+ContainerUploadBlock = object { file_id, type }
+
+Response model for a file uploaded to the container.
+
+file_id: string
+
+type: "container_upload"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -1242,7 +1864,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = "claude-opus-4-6" or "claude-opus-4-5-20251101" or "claude-opus-4-5" or 18 more
+UnionMember0 = "claude-opus-4-6" or "claude-sonnet-4-6" or "claude-opus-4-5-20251101" or 19 more
 
 The model that will complete your prompt.
 
@@ -1253,6 +1875,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -1342,10 +1968,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -1387,10 +2009,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
 usage: [Usage](/docs/en/api/messages#usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 5 more }
 
 Billing and rate-limit usage.
@@ -1411,25 +2029,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string
 
@@ -1439,23 +2049,21 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
-server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_search_requests }
+server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_fetch_requests, web_search_requests }
 
 The number of server tool requests.
+
+web_fetch_requests: number
+
+The number of web fetch tool requests.
 
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" or "priority" or "batch"
 
@@ -1470,10 +2078,6 @@ Accepts one of the following:
 "batch"
 
 type: "succeeded"
-
-Accepts one of the following:
-
-"succeeded"
 
 MessageBatchErroredResult = object { error, type }
 
@@ -1489,19 +2093,11 @@ message: string
 
 type: "invalid_request_error"
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 AuthenticationError = object { message, type }
 
 message: string
 
 type: "authentication_error"
-
-Accepts one of the following:
-
-"authentication_error"
 
 BillingError = object { message, type }
 
@@ -1509,19 +2105,11 @@ message: string
 
 type: "billing_error"
 
-Accepts one of the following:
-
-"billing_error"
-
 PermissionError = object { message, type }
 
 message: string
 
 type: "permission_error"
-
-Accepts one of the following:
-
-"permission_error"
 
 NotFoundError = object { message, type }
 
@@ -1529,19 +2117,11 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 RateLimitError = object { message, type }
 
 message: string
 
 type: "rate_limit_error"
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 GatewayTimeoutError = object { message, type }
 
@@ -1549,19 +2129,11 @@ message: string
 
 type: "timeout_error"
 
-Accepts one of the following:
-
-"timeout_error"
-
 APIErrorObject = object { message, type }
 
 message: string
 
 type: "api_error"
-
-Accepts one of the following:
-
-"api_error"
 
 OverloadedError = object { message, type }
 
@@ -1569,49 +2141,41 @@ message: string
 
 type: "overloaded_error"
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: string
 
 type: "error"
 
-Accepts one of the following:
-
-"error"
-
 type: "errored"
-
-Accepts one of the following:
-
-"errored"
 
 MessageBatchCanceledResult = object { type }
 
 type: "canceled"
 
-Accepts one of the following:
-
-"canceled"
-
 MessageBatchExpiredResult = object { type }
 
 type: "expired"
 
-Accepts one of the following:
-
-"expired"
-
 MessageBatchSucceededResult = object { message, type }
 
-message: [Message](/docs/en/api/messages#message) { id, content, model, 5 more }
+message: [Message](/docs/en/api/messages#message) { id, container, content, 6 more }
 
 id: string
 
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+container: [Container](/docs/en/api/messages#container) { id, expires_at }
+
+Information about the container used in the request (for the code execution tool)
+
+id: string
+
+Identifier for the container used in this request
+
+expires_at: string
+
+The time at which the container will expire.
 
 content: array of [ContentBlock](/docs/en/api/messages#content_block)
 
@@ -1670,10 +2234,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 CitationPageLocation = object { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -1689,10 +2249,6 @@ file_id: string
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 CitationContentBlockLocation = object { cited_text, document_index, document_title, 4 more }
 
@@ -1710,10 +2266,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 CitationsWebSearchResultLocation = object { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -1723,10 +2275,6 @@ encrypted_index: string
 title: string
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -1746,17 +2294,9 @@ title: string
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 ThinkingBlock = object { signature, thinking, type }
 
@@ -1766,23 +2306,41 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 RedactedThinkingBlock = object { data, type }
 
 data: string
 
 type: "redacted_thinking"
 
-Accepts one of the following:
-
-"redacted_thinking"
-
-ToolUseBlock = object { id, input, name, type }
+ToolUseBlock = object { id, caller, input, 2 more }
 
 id: string
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 input: map\[unknown\]
 
@@ -1790,29 +2348,85 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-ServerToolUseBlock = object { id, input, name, type }
+ServerToolUseBlock = object { id, caller, input, 2 more }
 
 id: string
 
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
 input: map\[unknown\]
 
-name: "web_search"
+name: "web_search" or "web_fetch" or "code_execution" or 4 more
 
 Accepts one of the following:
 
 "web_search"
 
+"web_fetch"
+
+"code_execution"
+
+"bash_code_execution"
+
+"text_editor_code_execution"
+
+"tool_search_tool_regex"
+
+"tool_search_tool_bm25"
+
 type: "server_tool_use"
+
+WebSearchToolResultBlock = object { caller, content, tool_use_id, type }
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-"server_tool_use"
+DirectCaller = object { type }
 
-WebSearchToolResultBlock = object { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -1820,7 +2434,7 @@ Accepts one of the following:
 
 WebSearchToolResultError = object { error_code, type }
 
-error_code: "invalid_tool_input" or "unavailable" or "max_uses_exceeded" or 3 more
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -1838,10 +2452,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 UnionMember1 = array of [WebSearchResultBlock](/docs/en/api/messages#web_search_result_block) { encrypted_content, page_age, title, 2 more }
 
 encrypted_content: string
@@ -1852,19 +2462,341 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+WebFetchToolResultBlock = object { caller, content, tool_use_id, type }
+
+caller: [DirectCaller](/docs/en/api/messages#direct_caller) { type } or [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } or [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+DirectCaller = object { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+ServerToolCaller = object { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+ServerToolCaller20260120 = object { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+content: [WebFetchToolResultErrorBlock](/docs/en/api/messages#web_fetch_tool_result_error_block) { error_code, type } or [WebFetchBlock](/docs/en/api/messages#web_fetch_block) { content, retrieved_at, type, url }
+
+Accepts one of the following:
+
+WebFetchToolResultErrorBlock = object { error_code, type }
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"url_too_long"
+
+"url_not_allowed"
+
+"url_not_accessible"
+
+"unsupported_content_type"
+
+"too_many_requests"
+
+"max_uses_exceeded"
+
+"unavailable"
+
+type: "web_fetch_tool_result_error"
+
+WebFetchBlock = object { content, retrieved_at, type, url }
+
+content: [DocumentBlock](/docs/en/api/messages#document_block) { citations, source, title, type }
+
+citations: [CitationsConfig](/docs/en/api/messages#citations_config) { enabled }
+
+Citation configuration for the document
+
+enabled: boolean
+
+source: [Base64PDFSource](/docs/en/api/messages#base64_pdf_source) { data, media_type, type } or [PlainTextSource](/docs/en/api/messages#plain_text_source) { data, media_type, type }
+
+Accepts one of the following:
+
+Base64PDFSource = object { data, media_type, type }
+
+data: string
+
+media_type: "application/pdf"
+
+type: "base64"
+
+PlainTextSource = object { data, media_type, type }
+
+data: string
+
+media_type: "text/plain"
+
+type: "text"
+
+title: string
+
+The title of the document
+
+type: "document"
+
+retrieved_at: string
+
+ISO 8601 timestamp when the content was retrieved
+
+type: "web_fetch_result"
+
+url: string
+
+Fetched content URL
+
+tool_use_id: string
+
+type: "web_fetch_tool_result"
+
+CodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+CodeExecutionToolResultError = object { error_code, type }
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+type: "code_execution_tool_result_error"
+
+CodeExecutionResultBlock = object { content, return_code, stderr, 2 more }
+
+content: array of [CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "code_execution_output"
+
+return_code: number
+
+stderr: string
+
+stdout: string
+
+type: "code_execution_result"
+
+EncryptedCodeExecutionResultBlock = object { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: array of [CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
+
+tool_use_id: string
+
+type: "code_execution_tool_result"
+
+BashCodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [BashCodeExecutionToolResultError](/docs/en/api/messages#bash_code_execution_tool_result_error) { error_code, type } or [BashCodeExecutionResultBlock](/docs/en/api/messages#bash_code_execution_result_block) { content, return_code, stderr, 2 more }
+
+Accepts one of the following:
+
+BashCodeExecutionToolResultError = object { error_code, type }
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"output_file_too_large"
+
+type: "bash_code_execution_tool_result_error"
+
+BashCodeExecutionResultBlock = object { content, return_code, stderr, 2 more }
+
+content: array of [BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block) { file_id, type }
+
+file_id: string
+
+type: "bash_code_execution_output"
+
+return_code: number
+
+stderr: string
+
+stdout: string
+
+type: "bash_code_execution_result"
+
+tool_use_id: string
+
+type: "bash_code_execution_tool_result"
+
+TextEditorCodeExecutionToolResultBlock = object { content, tool_use_id, type }
+
+content: [TextEditorCodeExecutionToolResultError](/docs/en/api/messages#text_editor_code_execution_tool_result_error) { error_code, error_message, type } or [TextEditorCodeExecutionViewResultBlock](/docs/en/api/messages#text_editor_code_execution_view_result_block) { content, file_type, num_lines, 3 more } or [TextEditorCodeExecutionCreateResultBlock](/docs/en/api/messages#text_editor_code_execution_create_result_block) { is_file_update, type } or [TextEditorCodeExecutionStrReplaceResultBlock](/docs/en/api/messages#text_editor_code_execution_str_replace_result_block) { lines, new_lines, new_start, 3 more }
+
+Accepts one of the following:
+
+TextEditorCodeExecutionToolResultError = object { error_code, error_message, type }
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"file_not_found"
+
+error_message: string
+
+type: "text_editor_code_execution_tool_result_error"
+
+TextEditorCodeExecutionViewResultBlock = object { content, file_type, num_lines, 3 more }
+
+content: string
+
+file_type: "text" or "image" or "pdf"
+
+Accepts one of the following:
+
+"text"
+
+"image"
+
+"pdf"
+
+num_lines: number
+
+start_line: number
+
+total_lines: number
+
+type: "text_editor_code_execution_view_result"
+
+TextEditorCodeExecutionCreateResultBlock = object { is_file_update, type }
+
+is_file_update: boolean
+
+type: "text_editor_code_execution_create_result"
+
+TextEditorCodeExecutionStrReplaceResultBlock = object { lines, new_lines, new_start, 3 more }
+
+lines: array of string
+
+new_lines: number
+
+new_start: number
+
+old_lines: number
+
+old_start: number
+
+type: "text_editor_code_execution_str_replace_result"
+
+tool_use_id: string
+
+type: "text_editor_code_execution_tool_result"
+
+ToolSearchToolResultBlock = object { content, tool_use_id, type }
+
+content: [ToolSearchToolResultError](/docs/en/api/messages#tool_search_tool_result_error) { error_code, error_message, type } or [ToolSearchToolSearchResultBlock](/docs/en/api/messages#tool_search_tool_search_result_block) { tool_references, type }
+
+Accepts one of the following:
+
+ToolSearchToolResultError = object { error_code, error_message, type }
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+error_message: string
+
+type: "tool_search_tool_result_error"
+
+ToolSearchToolSearchResultBlock = object { tool_references, type }
+
+tool_references: array of [ToolReferenceBlock](/docs/en/api/messages#tool_reference_block) { tool_name, type }
+
+tool_name: string
+
+type: "tool_reference"
+
+type: "tool_search_tool_search_result"
+
+tool_use_id: string
+
+type: "tool_search_tool_result"
+
+ContainerUploadBlock = object { file_id, type }
+
+Response model for a file uploaded to the container.
+
+file_id: string
+
+type: "container_upload"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -1874,7 +2806,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = "claude-opus-4-6" or "claude-opus-4-5-20251101" or "claude-opus-4-5" or 18 more
+UnionMember0 = "claude-opus-4-6" or "claude-sonnet-4-6" or "claude-opus-4-5-20251101" or 19 more
 
 The model that will complete your prompt.
 
@@ -1885,6 +2817,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -1974,10 +2910,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -2019,10 +2951,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
 usage: [Usage](/docs/en/api/messages#usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 5 more }
 
 Billing and rate-limit usage.
@@ -2043,25 +2971,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string
 
@@ -2071,23 +2991,21 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
-server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_search_requests }
+server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_fetch_requests, web_search_requests }
 
 The number of server tool requests.
+
+web_fetch_requests: number
+
+The number of web fetch tool requests.
 
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" or "priority" or "batch"
 
@@ -2102,10 +3020,6 @@ Accepts one of the following:
 "batch"
 
 type: "succeeded"
-
-Accepts one of the following:
-
-"succeeded"
 
 [](/docs)
 

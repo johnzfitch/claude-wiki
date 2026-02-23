@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:32Z"
+fetched_at: "2026-02-22T13:12:22Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/quickstart"
 title: "Quickstart - Claude API Docs"
 ---
@@ -101,6 +101,7 @@ def calculate_average(numbers):
         total += num
     return total / len(numbers)
 
+
 def get_user_name(user):
     return user["name"].upper()
 ```
@@ -122,24 +123,26 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AssistantMessage, ResultMessage
 
+
 async def main():
     # Agentic loop: streams messages as Claude works
     async for message in query(
         prompt="Review utils.py for bugs that would cause crashes. Fix any issues you find.",
         options=ClaudeAgentOptions(
             allowed_tools=["Read", "Edit", "Glob"],  # Tools Claude can use
-            permission_mode="acceptEdits"            # Auto-approve file edits
-        )
+            permission_mode="acceptEdits",  # Auto-approve file edits
+        ),
     ):
         # Print human-readable output
         if isinstance(message, AssistantMessage):
             for block in message.content:
                 if hasattr(block, "text"):
-                    print(block.text)              # Claude's reasoning
+                    print(block.text)  # Claude's reasoning
                 elif hasattr(block, "name"):
-                    print(f"Tool: {block.name}")   # Tool being called
+                    print(f"Tool: {block.name}")  # Tool being called
         elif isinstance(message, ResultMessage):
-            print(f"Done: {message.subtype}")      # Final result
+            print(f"Done: {message.subtype}")  # Final result
+
 
 asyncio.run(main())
 ```
@@ -207,9 +210,8 @@ You can modify your agent's behavior by changing the options. Here are a few exa
 Python
 
 ``` shiki
-options=ClaudeAgentOptions(
-    allowed_tools=["Read", "Edit", "Glob", "WebSearch"],
-    permission_mode="acceptEdits"
+options = ClaudeAgentOptions(
+    allowed_tools=["Read", "Edit", "Glob", "WebSearch"], permission_mode="acceptEdits"
 )
 ```
 
@@ -218,10 +220,10 @@ options=ClaudeAgentOptions(
 Python
 
 ``` shiki
-options=ClaudeAgentOptions(
+options = ClaudeAgentOptions(
     allowed_tools=["Read", "Edit", "Glob"],
     permission_mode="acceptEdits",
-    system_prompt="You are a senior Python developer. Always follow PEP 8 style guidelines."
+    system_prompt="You are a senior Python developer. Always follow PEP 8 style guidelines.",
 )
 ```
 
@@ -230,9 +232,8 @@ options=ClaudeAgentOptions(
 Python
 
 ``` shiki
-options=ClaudeAgentOptions(
-    allowed_tools=["Read", "Edit", "Glob", "Bash"],
-    permission_mode="acceptEdits"
+options = ClaudeAgentOptions(
+    allowed_tools=["Read", "Edit", "Glob", "Bash"], permission_mode="acceptEdits"
 )
 ```
 

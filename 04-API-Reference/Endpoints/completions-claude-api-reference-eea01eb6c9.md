@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:59Z"
+fetched_at: "2026-02-22T13:27:04Z"
 source_url: "https://platform.claude.com/docs/en/api/completions"
 title: "Completions - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ cURL
 
 ##### [Create a Text Completion](/docs/en/api/completions/create)
 
-post/v1/complete
+POST/v1/complete
 
 ##### ModelsExpand Collapse 
 
@@ -37,7 +37,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = "claude-opus-4-6" or "claude-opus-4-5-20251101" or "claude-opus-4-5" or 18 more
+UnionMember0 = "claude-opus-4-6" or "claude-sonnet-4-6" or "claude-opus-4-5-20251101" or 19 more
 
 The model that will complete your prompt.
 
@@ -48,6 +48,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -145,10 +149,6 @@ type: "completion"
 Object type.
 
 For Text Completions, this is always `"completion"`.
-
-Accepts one of the following:
-
-"completion"
 
 [](/docs)
 

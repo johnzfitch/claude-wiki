@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:03Z"
+fetched_at: "2026-02-22T14:24:47Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/organizations/me"
 title: "Get Current Organization - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Get Current Organization
 
-get/v1/organizations/me
+GET/v1/organizations/me
 
 Retrieve information about the organization associated with the authenticated API key.
 
@@ -21,8 +21,6 @@ id: string
 
 ID of the Organization.
 
-formatuuid
-
 name: string
 
 Name of the Organization.
@@ -33,10 +31,6 @@ Object type.
 
 For Organizations, this is always `"organization"`.
 
-Accepts one of the following:
-
-"organization"
-
 Get Current Organization
 
 ``` shiki
@@ -45,27 +39,7 @@ curl https://api.anthropic.com/v1/organizations/me \
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "id": "12345678-1234-5678-1234-567812345678",
-  "name": "Organization Name",
-  "type": "organization"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "id": "12345678-1234-5678-1234-567812345678",
-  "name": "Organization Name",
-  "type": "organization"
-}
-```
 
 [](/docs)
 

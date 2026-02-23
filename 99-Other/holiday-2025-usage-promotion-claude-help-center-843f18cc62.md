@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-16T21:12:47Z"
 source_url: "https://support.claude.com/en/articles/13163666-holiday-2025-usage-promotion"
 title: "Holiday 2025 Usage Promotion | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Holiday 2025 Usage Promotion
 
 # Holiday 2025 Usage Promotion
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -105,9 +105,9 @@ What is the Max plan?
 
 How do I sign up for the Max plan?
 
-[](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)
+[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
-Choosing a Claude plan
+Using Claude Code with your Pro or Max plan
 
 [](https://support.claude.com/en/articles/11408405-claude-4-invite-contest)
 

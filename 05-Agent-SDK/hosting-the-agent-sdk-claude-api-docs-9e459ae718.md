@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:41Z"
+fetched_at: "2026-02-22T13:13:53Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/hosting"
 title: "Hosting the Agent SDK - Claude API Docs"
 ---
@@ -17,7 +17,7 @@ Copy page
 
 The Claude Agent SDK differs from traditional stateless LLM APIs in that it maintains conversational state and executes commands in a persistent environment. This guide covers the architecture, hosting considerations, and best practices for deploying SDK-based agents in production.
 
-For security hardening beyond basic sandboxing—including network controls, credential management, and isolation options—see [Secure Deployment](/docs/en/agent-sdk/secure-deployment).
+For security hardening beyond basic sandboxing (including network controls, credential management, and isolation options), see [Secure Deployment](/docs/en/agent-sdk/secure-deployment).
 
 ## 
 
@@ -136,7 +136,7 @@ Best for agents that must collaborate closely together. This is likely the least
 
 - **Simulations**: Agents that interact with each other in simulations such as video games.
 
-# 
+## 
 
 FAQ
 
@@ -150,7 +150,7 @@ When hosting in containers, expose ports to communicate with your SDK instances.
 
 What is the cost of hosting a container?
 
-We have found that the dominant cost of serving agents is the tokens, containers vary based on what you provision but a minimum cost is roughly 5 cents per hour running.
+The dominant cost of serving agents is the tokens; containers vary based on what you provision, but a minimum cost is roughly 5 cents per hour running.
 
 ### 
 
@@ -174,7 +174,7 @@ Since containers are just servers the same logging infrastructure you use for th
 
 How long can an agent session run before timing out?
 
-An agent session will not timeout, but we recommend setting a 'maxTurns' property to prevent Claude from getting stuck in a loop.
+An agent session will not timeout, but consider setting a 'maxTurns' property to prevent Claude from getting stuck in a loop.
 
 ## 
 
@@ -210,6 +210,8 @@ Was this page helpful?
 - [Pattern 3: Hybrid Sessions](#pattern-3-hybrid-sessions)
 
 - [Pattern 4: Single Containers](#pattern-4-single-containers)
+
+- [FAQ](#faq)
 
 - [How do I communicate with my sandboxes?](#how-do-i-communicate-with-my-sandboxes)
 

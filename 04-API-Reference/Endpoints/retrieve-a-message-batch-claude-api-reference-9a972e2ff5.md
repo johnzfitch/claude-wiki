@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:07Z"
+fetched_at: "2026-02-22T13:42:03Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/messages/batches/retrieve"
 title: "Retrieve a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Python
 
 beta.messages.batches.retrieve(strmessage_batch_id, BatchRetrieveParams\*\*kwargs) -\> [BetaMessageBatch](/docs/en/api/beta#beta_message_batch)
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
@@ -31,9 +31,9 @@ Optional header to specify the beta version(s) you want to use.
 
 Accepts one of the following:
 
-UnionMember0 = str
+str
 
-UnionMember1 = Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 16 more\]
+Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 17 more\]
 
 Accepts one of the following:
 
@@ -75,6 +75,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 class BetaMessageBatch: …
@@ -89,19 +91,13 @@ archived_at: Optional\[datetime\]
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: Optional\[datetime\]
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: datetime
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: Optional\[datetime\]
 
@@ -114,8 +110,6 @@ formatdate-time
 expires_at: datetime
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: Literal\["in_progress", "canceling", "ended"\]
 
@@ -174,10 +168,6 @@ type: Literal\["message_batch"\]
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-"message_batch"
 
 Retrieve a Message Batch
 

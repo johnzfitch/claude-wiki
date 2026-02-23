@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-10T10:49:39Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/9264813-consumer-terms-of-service-updates"
 title: "Consumer Terms of Service Updates | Claude Help Center"
 ---

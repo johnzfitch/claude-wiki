@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-23T00:45:19Z"
 source_url: "https://support.claude.com/en/articles/8287232-verifying-your-phone-number"
 title: "Verifying your phone number | Claude Help Center"
 ---
@@ -55,7 +55,7 @@ Table of contents
 
 When you first create a Claude account, you’ll be asked to enter your phone number from a [supported location](https://support.claude.com/en/articles/8461763-where-can-i-access-claude) to receive a verification code via text message:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893173143/de034a2e7d9a6ae1f703cf867afd/image.png?expires=1770722100&signature=cc53c97855532e8f4fe13655139e4a21d17bd627e6b2990b070e55163eb0d01f&req=dSguFch5noBbWvMW1HO4zVIf%2F5Bk3ih7oTnI%2BoMZk7fH%2F6BdAzI%2BUIKOdwt8%0AARKxGIKXrULScgVM71E%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893173143/de034a2e7d9a6ae1f703cf867afd/image.png?expires=1771809300&signature=df8d58c36bb587f242591037652c8401f71cfc1a8173d07547af47175805570e&req=dSguFch5noBbWvMW1HO4zVIf%2F5Fr3CN5oTnI%2BoMZk7eo8Xa%2BtIPdClWMuInK%0AygwHwQN7bXebzqhCQQM%3D%0A)
 
 Once you receive the text message with the code, type it into the box and click “Verify code.” This will complete the verification and account creation process and allow you to start chatting with Claude.
 
@@ -111,13 +111,13 @@ Related Articles
 
 How do I change the email address associated with my account?
 
-[](https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude)
+[](https://support.claude.com/en/articles/11818288-why-am-i-being-asked-to-verify-my-payment-method)
 
-Using the PubMed Connector in Claude
+Why am I being asked to verify my payment method?
 
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
+[](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 
-Getting started with Claude for Nonprofits
+Claude in Chrome Troubleshooting
 
 [](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account)
 

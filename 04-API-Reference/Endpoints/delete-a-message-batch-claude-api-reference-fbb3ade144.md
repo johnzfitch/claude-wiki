@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:27Z"
+fetched_at: "2026-02-22T14:01:33Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Ruby
 
 messages.batches.delete(message_batch_id) -\> [DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch) { id, type }
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 Delete a Message Batch.
 
@@ -40,10 +40,6 @@ type: :message_batch_deleted
 Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
-
-Accepts one of the following:
-
-:message_batch_deleted
 
 Delete a Message Batch
 

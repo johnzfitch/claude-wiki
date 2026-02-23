@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:09Z"
+fetched_at: "2026-02-22T13:28:16Z"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches/list"
 title: "List Message Batches - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # List Message Batches
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 List all Message Batches within a Workspace. Most recently created batches are returned first.
 
@@ -51,19 +51,13 @@ archived_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: string
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: string
 
@@ -76,8 +70,6 @@ formatdate-time
 expires_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: "in_progress" or "canceling" or "ended"
 
@@ -136,10 +128,6 @@ type: "message_batch"
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-"message_batch"
 
 first_id: string
 

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8116515-where-is-the-claude-api-supported"
 title: "Where is the Claude API supported? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Where is the Claude API supported?
 
 # Where is the Claude API supported?
 
-Updated this week
+Updated over a week ago
 
 We support using the Claude API in a [number of locations](https://www.anthropic.com/supported-countries). Please check our website in the future for updates.
 
@@ -43,21 +43,21 @@ Related Articles
 
 How can I access the Claude API?
 
-[](https://support.claude.com/en/articles/8114526-how-will-i-be-billed-for-claude-api-use)
-
-How will I be billed for Claude API use?
-
 [](https://support.claude.com/en/articles/8114535-where-can-i-go-for-claude-api-support-and-assistance)
 
 Where can I go for Claude API support and assistance?
 
-[](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage)
+[](https://support.claude.com/en/articles/12304248-managing-api-key-environment-variables-in-claude-code)
 
-How do I pay for my Claude API usage?
+Managing API key environment variables in Claude Code
 
 [](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
+
+[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
+
+Claude Enterprise Analytics API reference guide
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:31Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis"
 title: "Using LSEG for Financial Market Data Analysis | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using LSEG for Financial Market Data Analysis
 
 # Using LSEG for Financial Market Data Analysis
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

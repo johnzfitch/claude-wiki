@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8114526-how-will-i-be-billed-for-claude-api-use"
 title: "How will I be billed for Claude API use? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ How will I be billed for Claude API use?
 
 # How will I be billed for Claude API use?
 
-Updated this week
+Updated over a week ago
 
 **Note:** If you have received access to the Claude Console on or after 2/13/24, you will pay via our prepaid billing process. Refer to this article for more information on prepaid billing: [How do I pay for my Claude API usage?](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage)
 
@@ -44,6 +44,10 @@ You can view your charges for the current billing period by checking the [Billin
 ------------------------------------------------------------------------
 
 Related Articles
+
+[](https://support.claude.com/en/articles/8114521-how-can-i-access-the-claude-api)
+
+How can I access the Claude API?
 
 [](https://support.claude.com/en/articles/8114531-i-created-a-claude-console-organization-how-do-i-start-using-the-claude-api)
 
@@ -60,10 +64,6 @@ I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do 
 [](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
-
-[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
-
-How am I billed for my Enterprise plan?
 
 Did this answer your question?
 

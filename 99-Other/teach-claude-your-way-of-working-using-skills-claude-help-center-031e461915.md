@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:29Z"
+fetched_at: "2026-02-16T21:12:43Z"
 source_url: "https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills"
 title: "Teach Claude your way of working using skills | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Teach Claude your way of working using skills
 
 # Teach Claude your way of working using skills
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

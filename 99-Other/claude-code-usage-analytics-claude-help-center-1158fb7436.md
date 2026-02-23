@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:26Z"
+fetched_at: "2026-02-16T21:12:40Z"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 title: "Claude Code usage analytics | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Claude Code usage analytics
 
 # Claude Code usage analytics
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -109,7 +109,7 @@ The Claude Code Usage page displays the following metrics for your organization:
 
 - **Lines accepted over time**: Daily breakdown of accepted code lines.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1717579277/46c512f4b3ed05c359cecd78ed5c/e0ce2c19-39e2-411f-9a1f-cb1d46439a42?expires=1770722100&signature=4b87f666a69e525b1efdd8641fc157d7db3bb5babcfbc5e5fee785fc3d41bdeb&req=dScmEcx5lINYXvMW1HO4zfiEMKZXjXvPCX9h5MbdDjOja%2FubOFmIj84wRMbi%0AnjOWOUPaixFEE%2B%2Byi2w%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1717579277/46c512f4b3ed05c359cecd78ed5c/e0ce2c19-39e2-411f-9a1f-cb1d46439a42?expires=1771277400&signature=5d1684e0ba34ff760bf454c9322c91e490d02c3a7065f73f67373ccc8c2f9c7a&req=dScmEcx5lINYXvMW1HO4zfiEMKdSiH7KCX9h5MbdDjP%2Fy4Ok6TD20ez0Xhm4%0AQ0LjNkB4ljGq%2FGJA4RQ%3D%0A)
 
 ### User-level metrics
 
@@ -203,21 +203,21 @@ Related Articles
 
 Using Claude Code with your Team or Enterprise plan
 
-[](https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code)
-
-Automated Security Reviews in Claude Code
-
 [](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
 
-[](https://support.claude.com/en/articles/12618689-claude-code-on-the-web)
-
-Claude Code on the web
-
 [](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
-Usage Analytics for Team and Enterprise Plans
+Usage analytics for Team and Enterprise plans
+
+[](https://support.claude.com/en/articles/13694757-access-engagement-and-adoption-data-with-the-analytics-api)
+
+Access engagement and adoption data with the Analytics API
+
+[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
+
+Claude Enterprise Analytics API reference guide
 
 Did this answer your question?
 

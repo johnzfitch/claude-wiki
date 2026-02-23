@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:49Z"
+fetched_at: "2026-02-22T13:25:18Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/direction-decoder"
 title: "Direction decoder - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Transform natural language into step-by-step directions.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/login?selectAccount=true&returnTo=%2Fdashboard%3F) to try it for yourself!
+> Copy this prompt into the developer [Console](/login?selectAccount=true&returnTo=%2Fdashboard%3F) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -61,11 +61,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "To make a cup of tea, start by boiling some water in a kettle. While the water is heating up, get a mug and put a tea bag in it. Once the water is boiling, carefully pour it into the mug, over the tea bag. Let the tea steep for a few minutes, depending on how strong you like it. After steeping, remove the tea bag and add milk and sugar to taste. Stir everything together and enjoy your hot cup of tea."
+                    "text": "To make a cup of tea, start by boiling some water in a kettle. While the water is heating up, get a mug and put a tea bag in it. Once the water is boiling, carefully pour it into the mug, over the tea bag. Let the tea steep for a few minutes, depending on how strong you like it. After steeping, remove the tea bag and add milk and sugar to taste. Stir everything together and enjoy your hot cup of tea.",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

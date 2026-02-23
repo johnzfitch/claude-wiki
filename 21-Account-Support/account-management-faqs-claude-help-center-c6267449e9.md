@@ -1,8 +1,8 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:36Z"
+fetched_at: "2026-02-23T00:45:08Z"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
-title: "Account Management FAQs | Claude Help Center"
+title: "Account management FAQs | Claude Help Center"
 ---
 
 [](/en/)
@@ -39,9 +39,9 @@ Table of contents
 
 [Account and Member Management](https://support.claude.com/en/collections/9811449-account-and-member-management)
 
-Account Management FAQs
+Account management FAQs
 
-# Account Management FAQs
+# Account management FAQs
 
 Updated this week
 
@@ -59,7 +59,7 @@ Table of contents
 
 ## How do I change my team name?
 
-Owners can update the team name on their plan by navigating to [Admin settings \> Organization](https://claude.ai/admin-settings/organization) and clicking "Update" under the current team name. Type in a new name and click "Save."
+Owners can update the team name on their plan by navigating to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** and clicking "Update" under the current team name. Type in a new name and click "Save."
 
 ## How can I change a Team or Enterprise plan member’s name?
 
@@ -67,7 +67,7 @@ It's not possible to change another user's name on their behalf, but a user can 
 
 1.  Log in to your Claude account.
 
-2.  Navigate to [Settings \> General](http://claude.ai/settings/general).
+2.  Navigate to **[Settings \> General](http://claude.ai/settings/general)**.
 
 3.  Make edits to the "Full name" field and click "Save changes."
 
@@ -79,19 +79,19 @@ Yes, you can create multiple teams by purchasing multiple Team plans. To create 
 
 **For Enterprise plans:**
 
-If you're interested in purchasing multiple Enterprise plans, you can [reach out to our Sales team](https://claude.com/contact-sales).
+If you're interested in purchasing multiple Enterprise plans, you can **[reach out to our Sales team](https://claude.com/contact-sales)**.
 
 ## How do I view a list of all members on a team?
 
-Admins and Owners can view a list of all members on a team by navigating to [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+Admins and Owners can view a list of all members on a team by navigating to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
 ## How can I view or add allowed email domains?
 
 The email domain that was used to create your Team or Enterprise plan organization is the allowed email domain for your team members. After the account is created, Owners of organizations that are not using domain capture can add additional domains by following these steps:
 
-1.  Navigate to [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+1.  Navigate to **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Identity and access](https://claude.ai/admin-settings/identity).**
 
-2.  Click the pencil icon under **Allowed email domains**.
+2.  Click "Add or edit domains" under **Domains**.
 
 3.  In the **Update organization email domains** modal that appears, enter the new domain.
 
@@ -101,9 +101,9 @@ The email domain that was used to create your Team or Enterprise plan organizati
 
 Owners can remove domains by opening up the same modal and clicking the trash can icon to the right of the domain:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1918007284/83ab6abd36141de480d9ce6bd0ec/bdbaeedb-c9f0-49df-87f9-e0206383e50e?expires=1770722100&signature=6f8c71cf2cb9994742977fc5c68cd213c5b6d8dfdba8ff0a873a17683393f071&req=dSkmHsl%2BmoNXXfMW1HO4zbLFyCXWGGMlkNCdoqVPoxMNulLopS2HocfazTBu%0APqdOA3dv8jThl%2BbL1tQ%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2053873852/1cbccea3b7067e03205f2ff8546b/CleanShot+2026-02-11+at+11_16_07%402x.png?expires=1771809300&signature=65e42fa46cfefeb13014ff476fe91f5e60cec7ef9412b13d7ce46d0f6a44ca34&req=diAiFcF5nolaW%2FMW1HO4zUrhGeqQaQEZkeFUnrkrQZgS2O47meGN26Y7xiCY%0A3Ffn7IQbebwk2M7HCsQ%3D%0A)
 
-We currently require a business email address associated with your company or organization in order to purchase a Team or Enterprise plan, and public domain emails are not supported (gmail.com, yahoo.com, etc.).
+While the account creator must use a business email address, you can add public domains like @gmail.com, @yahoo.com, and @hotmail.com as allowed domains for other members of your organization.
 
 ------------------------------------------------------------------------
 
@@ -117,17 +117,17 @@ Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise
 
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
+[](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
+
+Extra usage for Team and seat-based Enterprise plans
+
 [](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs)
 
-Team Plan Billing FAQs
+Team plan billing FAQs
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
-
-[](https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization)
-
-Find and join a Team or Enterprise organization
+Manage members on Team and Enterprise plans
 
 Did this answer your question?
 

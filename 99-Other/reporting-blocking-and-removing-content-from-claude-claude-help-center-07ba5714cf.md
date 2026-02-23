@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:18Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/10684638-reporting-blocking-and-removing-content-from-claude"
 title: "Reporting, Blocking, and Removing Content from Claude | Claude Help Center"
 ---
@@ -49,7 +49,7 @@ Please note, we reserve the right to suspend users who frequently provide manife
 
 ## How to report safety issues
 
-We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](/cdn-cgi/l/email-protection#d8adabbdaaabb9bebdaca198b9b6acb0aab7a8b1bbf6bbb7b5) with enough detail for us to replicate the issue.
+We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](/cdn-cgi/l/email-protection#becbcddbcccddfd8dbcac7fedfd0cad6ccd1ced7dd90ddd1d3) with enough detail for us to replicate the issue.
 
 ### Help us improve AI safety by reporting universal jailbreaks
 
@@ -77,17 +77,17 @@ Related Articles
 
 Reporting, Blocking, and Removing Content from Claude
 
-[](https://support.claude.com/en/articles/8241216-i-m-planning-to-launch-a-product-using-the-claude-api-what-steps-should-i-take-to-ensure-i-m-not-violating-anthropic-s-usage-policy)
-
-I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy?
-
-[](https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
-
-Claude is providing incorrect or misleading responses. What’s going on?
-
 [](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
 
 Does Anthropic crawl data from the web, and how can site owners block the crawler?
+
+[](https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program)
+
+What is the External Researcher Access Program?
+
+[](https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program)
+
+Model Safety Bug Bounty Program
 
 [](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 

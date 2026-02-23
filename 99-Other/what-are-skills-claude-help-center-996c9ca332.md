@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:29Z"
+fetched_at: "2026-02-16T21:12:42Z"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 title: "What are Skills? | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ What are Skills?
 
 # What are Skills?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

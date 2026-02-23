@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:00Z"
+fetched_at: "2026-02-22T13:16:53Z"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency"
 title: "Reducing latency - Claude API Docs"
 ---
@@ -53,10 +53,12 @@ client = anthropic.Anthropic()
 message = client.messages.create(
     model="claude-haiku-4-5",
     max_tokens=100,
-    messages=[{
-        "role": "user",
-        "content": "Summarize this customer feedback in 2 sentences: [feedback text]"
-    }]
+    messages=[
+        {
+            "role": "user",
+            "content": "Summarize this customer feedback in 2 sentences: [feedback text]",
+        }
+    ],
 )
 ```
 

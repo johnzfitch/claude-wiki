@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:06:20Z"
+fetched_at: "2026-02-22T13:29:26Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # List Models
 
-get/v1/models
+GET/v1/models
 
 List available models.
 
@@ -47,7 +47,7 @@ Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 17 more
 
 Accepts one of the following:
 
@@ -89,6 +89,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 data: array of [BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, created_at, display_name, type }
@@ -101,8 +103,6 @@ created_at: string
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
-formatdate-time
-
 display_name: string
 
 A human-readable name for the model.
@@ -112,10 +112,6 @@ type: "model"
 Object type.
 
 For Models, this is always `"model"`.
-
-Accepts one of the following:
-
-"model"
 
 first_id: string
 
@@ -134,7 +130,7 @@ List Models
 cURL
 
 ``` shiki
-curl https://api.anthropic.com/v1/models \
+curl https://api.anthropic.com/v1/models?beta=true \
     -H 'anthropic-version: 2023-06-01' \
     -H "X-Api-Key: $ANTHROPIC_API_KEY"
 ```

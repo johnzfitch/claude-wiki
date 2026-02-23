@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-10T10:49:22Z"
+fetched_at: "2026-02-23T00:45:13Z"
 source_url: "https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context"
 title: "Using Claude’s chat search and memory to build on previous context | Claude Help Center"
 ---
@@ -121,7 +121,7 @@ When Claude searches your previous chats, you will see this reflected in your cu
 
 Yes, navigate to [Settings \> Capabilities](http://claude.ai/settings/capabilities) and find the **Preferences** section. Switch the toggle next to “Search and reference chats” off:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730889/3fafbf5ecaa0ae31d7d84a66229b/c25536c1-7433-4b94-a5e9-cd5acf97a4fd?expires=1770722100&signature=3150c2b62417d67fca60a0331c56c0f242350faa62e6ccfb88c84f2a39842b41&req=dScmH859nYlXUPMW1HO4zRzXEF83ITPDJG68qZhl782Opg%2BJUuAf6LSGzACK%0A7eevQ1cxi0VSLsMs5Oc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730889/3fafbf5ecaa0ae31d7d84a66229b/c25536c1-7433-4b94-a5e9-cd5acf97a4fd?expires=1771809300&signature=78555af36db60edc09172173956f97ea76e2ddad37314fc05533d1de86353896&req=dScmH859nYlXUPMW1HO4zRzXEF44IzjBJG68qZhl781CEkRFHodIN1PrmU9X%0AKfgcav3U5g9cYqX0%2FdY%3D%0A)
 
 ## Can I exclude a specific past chat from searches?
 
@@ -129,7 +129,7 @@ Incognito chats are available to all Claude users (free, Pro, Max, Team, and Ent
 
 When starting a new chat with Claude outside of a project, you'll see a ghost icon in the upper right corner of your screen:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730893/9549b21954e0070ceb6b85231fd5/88e59234-6fc2-4229-84fe-733b33efff26?expires=1770722100&signature=b2c30e591840615a3687de57b9ee6a25c566d6004b4a27ffede2160918566293&req=dScmH859nYlWWvMW1HO4za54v6NrPoS6XDpzhlKsgjNrdyvKhT6O0NOF3fNR%0AVMOUU4FZM8dvpT9JiBI%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730893/9549b21954e0070ceb6b85231fd5/88e59234-6fc2-4229-84fe-733b33efff26?expires=1771809300&signature=6a1801587e85bc8532fc9b0880648f07c8c5c9b46f91be1457cab223b4bef8ce&req=dScmH859nYlWWvMW1HO4za54v6JkPI%2B4XDpzhlKsgjN6iOyv5XJxz9OJAMjL%0ApZQ9Gy2Bfi%2BEnUUixCU%3D%0A)
 
 Clicking the ghost icon will open an incognito chat, creating a temporary conversation that isn’t saved to your chat history. Claude won’t pull information from incognito chats when searching previous conversations.
 
@@ -161,7 +161,7 @@ Each project has its own separate memory space and dedicated project summary, so
 
 You can toggle Claude’s memory on by navigating to [Settings \> Capabilities](http://claude.ai/settings/capabilities):
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730892/62f9f2b68d675a8e33393f06024f/89198978-192f-4c52-915d-5294b16f3fe1?expires=1770722100&signature=181bd6d3e25799e607a4f32bac4cc379eb73fbb92ce24bd695b05aaab1d16fc3&req=dScmH859nYlWW%2FMW1HO4zTD5P8HhdeZEBq9N9dRTKYfMFmWc0tuyrC8ow65B%0AHEVBoMqB6NGSXli4zjE%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730892/62f9f2b68d675a8e33393f06024f/89198978-192f-4c52-915d-5294b16f3fe1?expires=1771809300&signature=4839c5417f496d796a9ac4cee1903d9e159630dd9d241649fd0786add4db2730&req=dScmH859nYlWW%2FMW1HO4zTD5P8Dud%2B1GBq9N9dRTKYe75kAYJGvmtFJ7LTEG%0AlweJZscGFLmFiQJM8zs%3D%0A)
 
 If you want to disable Claude’s memory, click the toggle to see two options:
 
@@ -265,7 +265,7 @@ Importing and exporting your memory from Claude
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 [](https://support.claude.com/en/articles/12260368-using-incognito-chats)
 
@@ -273,11 +273,11 @@ Using incognito chats
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
-[](https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint)
+[](https://support.claude.com/en/articles/13521390-use-claude-in-powerpoint)
 
-Using Claude in PowerPoint
+Use Claude in PowerPoint
 
 Did this answer your question?
 

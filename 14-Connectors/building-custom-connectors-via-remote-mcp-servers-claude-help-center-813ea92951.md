@@ -1,8 +1,8 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:20Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers"
-title: "Building Custom Connectors via Remote MCP Servers | Claude Help Center"
+title: "Building custom connectors via remote MCP servers | Claude Help Center"
 ---
 
 [](/en/)
@@ -33,9 +33,9 @@ Table of contents
 
 [Connectors](https://support.claude.com/en/collections/15399129-connectors)
 
-Building Custom Connectors via Remote MCP Servers
+Building custom connectors via remote MCP servers
 
-# Building Custom Connectors via Remote MCP Servers
+# Building custom connectors via remote MCP servers
 
 Updated this week
 
@@ -49,7 +49,7 @@ Table of contents
 
 Custom connectors using remote MCP are available on Claude and Claude Desktop for users on Pro, Max, Team, and Enterprise plans.
 
-## Building Remote MCP Servers
+## Building remote MCP servers
 
 To get started with remote servers, start with the following resources:
 
@@ -65,7 +65,7 @@ Other resources (like [this](https://simplescraper.io/blog/how-to-mcp)) may also
 
 In addition, some [solutions like Cloudflare](https://developers.cloudflare.com/agents/guides/remote-mcp-server/) provide remote MCP server hosting with built-in autoscaling, OAuth token management, and deployment.
 
-## MCP Support
+## MCP support
 
 ### Platforms
 
@@ -77,13 +77,13 @@ In addition, some [solutions like Cloudflare](https://developers.cloudflare.com/
 
   - Users can use tools, prompts, and resources from remote servers that they’ve already added via [claude.ai](http://claude.ai). Users cannot add new servers directly from Claude Mobile.
 
-### Transport and Auth
+### Transport and auth
 
 - Claude supports both SSE- and Streamable HTTP-based remote servers, although support for SSE may be deprecated in the coming months.
 
 - Claude supports both authless and OAuth-based remote servers.
 
-**Auth Support**
+**Auth support**
 
 - Claude supports the [3/26 auth spec](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#1-introduction) and (as of July) the [6/18 auth spec](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization).
 
@@ -111,7 +111,7 @@ See [here](https://docs.anthropic.com/en/api/ip-addresses#ipv4-2) for the IP add
 
 - Claude does not yet support resource subscriptions, sampling, and other more advanced or draft capabilities.
 
-## Testing Remote MCP Servers
+## Testing remote MCP servers
 
 The best way to test and validate a server is to try [adding it to Claude](https://support.anthropic.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp#h_3d1a65aded).
 
@@ -123,7 +123,7 @@ Alternatively, use the [inspector tool](https://github.com/modelcontextprotocol/
 
 - which tools, prompts, resources, and other MCP features your server exposes.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1553912673/2d4c61c44a57ca3ad98c05fbb7d1/AD_4nXc-tmHASMQNJRwv3W64SVaojlwe5NqtOr_s9ZYXdmHP1LgBVmb_9fbjBBCUweeerCVsT52ZM5t6lEIzZXPZDY1mYy50H9Pbrlt0ygVVpInpainwVW6-pStYpIwvDJd6wqILHfFFEg?expires=1770722100&signature=82046232f17d260aa4245a0d54fc31fb444b40f532d8730700c8665a5ea4bc72&req=dSUiFcB%2Fn4dYWvMW1HO4za06rLJvReGhYCouPsdkSdZOdhoSBuSmK2gAJMDr%0AMlUjpz1gKu12EcigffQ%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1553912673/2d4c61c44a57ca3ad98c05fbb7d1/AD_4nXc-tmHASMQNJRwv3W64SVaojlwe5NqtOr_s9ZYXdmHP1LgBVmb_9fbjBBCUweeerCVsT52ZM5t6lEIzZXPZDY1mYy50H9Pbrlt0ygVVpInpainwVW6-pStYpIwvDJd6wqILHfFFEg?expires=1771809300&signature=cd6c7c47f0e6929a3d305001150b93c84e92675bf565ca0cf28f7e68540d0d64&req=dSUiFcB%2Fn4dYWvMW1HO4za06rLNgR%2BqjYCouPsdkSdbWquNi3dU72wecH5PR%0AjZVRKGGPXDH3%2FQmxUTw%3D%0A)
 
 See the [MCP documentation](https://modelcontextprotocol.io/docs/tools/inspector) for more details on using inspector and for other tips on how to debug and troubleshoot your server.
 
@@ -133,13 +133,13 @@ In addition, other solutions like [Cloudflare’s AI Playground](https://playgro
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
-Pre-built Web Connectors Using Remote MCP
+Pre-built web connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 

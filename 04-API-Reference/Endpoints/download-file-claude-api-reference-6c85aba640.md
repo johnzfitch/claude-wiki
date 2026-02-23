@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:39Z"
+fetched_at: "2026-02-22T13:31:27Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/files/download"
 title: "Download File - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # Download File
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 Download File
 
@@ -31,7 +31,7 @@ Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 17 more
 
 Accepts one of the following:
 
@@ -73,12 +73,14 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 Download File
 
 cURL
 
 ``` shiki
-curl https://api.anthropic.com/v1/files/$FILE_ID/content \
+curl https://api.anthropic.com/v1/files/$FILE_ID/content?beta=true \
     -H 'anthropic-version: 2023-06-01' \
     -H 'anthropic-beta: files-api-2025-04-14' \
     -H "X-Api-Key: $ANTHROPIC_API_KEY"

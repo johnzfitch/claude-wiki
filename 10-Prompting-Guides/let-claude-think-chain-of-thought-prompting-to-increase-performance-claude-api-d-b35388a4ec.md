@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:04:55Z"
+fetched_at: "2026-02-22T13:16:06Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/chain-of-thought"
 title: "Let Claude think (chain of thought prompting) to increase performance - Claude API Docs"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:20Z"
+fetched_at: "2026-02-22T13:09:44Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview"
 title: "Tool use with Claude - Claude API Docs"
 ---
@@ -15,11 +15,11 @@ Copy page
 
 Claude is capable of interacting with tools and functions, allowing you to extend Claude's capabilities to perform a wider variety of tasks.
 
-Learn everything you need to master tool use with Claude as part of our new [courses](https://anthropic.skilljar.com/)! Please continue to share your ideas and suggestions using this [form](https://forms.gle/BFnYc6iCkWoRzFgk7).
+Learn everything you need to master tool use with Claude as part of the new [courses](https://anthropic.skilljar.com/)! Please continue to share your ideas and suggestions using this [form](https://forms.gle/BFnYc6iCkWoRzFgk7).
 
 **Guarantee schema conformance with strict tool use**
 
-[Structured Outputs](/docs/en/build-with-claude/structured-outputs) provides guaranteed schema validation for tool inputs. Add `strict: true` to your tool definitions to ensure Claude's tool calls always match your schema exactly—no more type mismatches or missing fields.
+[Structured Outputs](/docs/en/build-with-claude/structured-outputs) provides guaranteed schema validation for tool inputs. Add `strict: true` to your tool definitions to ensure Claude's tool calls always match your schema exactly, eliminating type mismatches or missing fields.
 
 Perfect for production agents where invalid tool parameters would cause failures. [Learn when to use strict tool use →](/docs/en/build-with-claude/structured-outputs#when-to-use-json-outputs-vs-strict-tool-use)
 
@@ -118,7 +118,7 @@ Note: Steps 3 and 4 are optional. For some workflows, Claude's tool use request 
 
 Server tools
 
-Server tools follow a different workflow:
+Server tools follow a different workflow where Anthropic's servers handle tool execution in a loop:
 
 1.  1
 
@@ -133,13 +133,20 @@ Server tools follow a different workflow:
 
     - Claude assesses if a server tool can help with the user's query.
     - If yes, Claude executes the tool, and the results are automatically incorporated into Claude's response.
+    - The server runs a sampling loop that may execute multiple tool calls before returning a response.
 
 3.  3
 
     Claude uses the server tool result to formulate a response
 
     - Claude analyzes the server tool results to craft its final response to the original user prompt.
-    - No additional user interaction is needed for server tool execution.
+    - In most cases, no additional user interaction is needed for server tool execution.
+
+**Handling `pause_turn` with server tools**
+
+The server-side sampling loop has a default limit of 10 iterations. If Claude reaches this limit while executing server tools, the API returns a response with `stop_reason="pause_turn"`. This may include a `server_tool_use` block without a corresponding `server_tool_result`.
+
+When you receive `pause_turn`, continue the conversation by sending the response back to let Claude finish processing. See [handling stop reasons](/docs/en/build-with-claude/handling-stop-reasons#3-implement-retry-logic-for-pause-turn) for implementation details.
 
 ------------------------------------------------------------------------
 
@@ -162,17 +169,20 @@ Python
 ``` shiki
 from mcp import ClientSession
 
+
 async def get_claude_tools(mcp_session: ClientSession):
     """Convert MCP tools to Claude's tool format."""
     mcp_tools = await mcp_session.list_tools()
 
     claude_tools = []
     for tool in mcp_tools.tools:
-        claude_tools.append({
-            "name": tool.name,
-            "description": tool.description or "",
-            "input_schema": tool.inputSchema  # Rename inputSchema to input_schema
-        })
+        claude_tools.append(
+            {
+                "name": tool.name,
+                "description": tool.description or "",
+                "input_schema": tool.inputSchema,  # Rename inputSchema to input_schema
+            }
+        )
 
     return claude_tools
 ```
@@ -191,7 +201,7 @@ response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     tools=claude_tools,
-    messages=[{"role": "user", "content": "What tools do you have available?"}]
+    messages=[{"role": "user", "content": "What tools do you have available?"}],
 )
 ```
 
@@ -245,7 +255,7 @@ When you use `tools`, we also automatically include a special system prompt for 
 
 These token counts are added to your normal input and output tokens to calculate the total cost of a request.
 
-Refer to our [models overview table](/docs/en/about-claude/models/overview#latest-models-comparison) for current per-model prices.
+Refer to the [models overview table](/docs/en/about-claude/models/overview#latest-models-comparison) for current per-model prices.
 
 When you send a tool use prompt, just like any other API request, the response will output both input and output token counts as part of the reported `usage` metrics.
 
@@ -255,7 +265,7 @@ When you send a tool use prompt, just like any other API request, the response w
 
 Next Steps
 
-Explore our repository of ready-to-implement tool use code examples in our cookbooks:
+Explore the repository of ready-to-implement tool use code examples in the cookbooks:
 
 [](https://platform.claude.com/cookbook/tool-use-calculator-tool)
 

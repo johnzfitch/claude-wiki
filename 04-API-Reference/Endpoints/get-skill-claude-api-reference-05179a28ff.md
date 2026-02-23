@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:43Z"
+fetched_at: "2026-02-22T13:32:03Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills/retrieve"
 title: "Get Skill - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # Get Skill
 
-get/v1/skills/{skill_id}
+GET/v1/skills/{skill_id}
 
 Get Skill
 
@@ -33,7 +33,7 @@ Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 17 more
 
 Accepts one of the following:
 
@@ -74,6 +74,8 @@ Accepts one of the following:
 "model-context-window-exceeded-2025-08-26"
 
 "skills-2025-10-02"
+
+"fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 
@@ -123,7 +125,7 @@ Get Skill
 cURL
 
 ``` shiki
-curl https://api.anthropic.com/v1/skills/$SKILL_ID \
+curl https://api.anthropic.com/v1/skills/$SKILL_ID?beta=true \
     -H 'anthropic-version: 2023-06-01' \
     -H 'anthropic-beta: skills-2025-10-02' \
     -H "X-Api-Key: $ANTHROPIC_API_KEY"

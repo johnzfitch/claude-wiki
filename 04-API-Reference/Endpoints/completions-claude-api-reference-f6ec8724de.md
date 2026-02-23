@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:19Z"
+fetched_at: "2026-02-22T13:44:16Z"
 source_url: "https://platform.claude.com/docs/en/api/java/completions"
 title: "Completions - Claude API Reference"
 ---
@@ -15,7 +15,7 @@ Java
 
 [Completion](/docs/en/api/completions#completion) completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
 
-post/v1/complete
+POST/v1/complete
 
 ##### ModelsExpand Collapse 
 
@@ -42,6 +42,10 @@ Accepts one of the following:
 CLAUDE_OPUS_4_6("claude-opus-4-6")
 
 Most intelligent model for building agents and coding
+
+CLAUDE_SONNET_4_6("claude-sonnet-4-6")
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 CLAUDE_OPUS_4_5_20251101("claude-opus-4-5-20251101")
 
@@ -132,15 +136,13 @@ This may be one the following values:
 - `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model
 - `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
 
-JsonValue; type "completion"constant"completion"constant
+JsonValue; type "completion"constant
+
+"completion"constant
 
 Object type.
 
 For Text Completions, this is always `"completion"`.
-
-Accepts one of the following:
-
-COMPLETION("completion")
 
 [](/docs)
 

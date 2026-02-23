@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:07Z"
+fetched_at: "2026-02-22T13:58:27Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/files"
 title: "Files - Claude API Reference"
 ---
@@ -15,31 +15,31 @@ Go
 
 client.Beta.Files.Upload(ctx, params) (\*[FileMetadata](/docs/en/api/beta#file_metadata), error)
 
-post/v1/files
+POST/v1/files
 
 ##### [List Files](/docs/en/api/beta/files/list)
 
 client.Beta.Files.List(ctx, params) (\*Page\[[FileMetadata](/docs/en/api/beta#file_metadata)\], error)
 
-get/v1/files
+GET/v1/files
 
 ##### [Download File](/docs/en/api/beta/files/download)
 
 client.Beta.Files.Download(ctx, fileID, query) (\*Response, error)
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 ##### [Get File Metadata](/docs/en/api/beta/files/retrieve_metadata)
 
 client.Beta.Files.GetMetadata(ctx, fileID, query) (\*[FileMetadata](/docs/en/api/beta#file_metadata), error)
 
-get/v1/files/{file_id}
+GET/v1/files/{file_id}
 
 ##### [Delete File](/docs/en/api/beta/files/delete)
 
 client.Beta.Files.Delete(ctx, fileID, body) (\*[DeletedFile](/docs/en/api/beta#deleted_file), error)
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 ##### ModelsExpand Collapse 
 
@@ -49,15 +49,13 @@ ID string
 
 ID of the deleted file.
 
-Type DeletedFileTypeoptional
+Type DeletedFileType
+
+optional
 
 Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
-
-Accepts one of the following:
-
-const DeletedFileTypeFileDeleted DeletedFileType = "file_deleted"
 
 type FileMetadata struct{…}
 
@@ -71,29 +69,17 @@ CreatedAt Time
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 Filename string
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 MimeType string
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 SizeBytes int64
 
 Size of the file in bytes.
-
-minimum0
 
 Type File
 
@@ -101,11 +87,9 @@ Object type.
 
 For files, this is always `"file"`.
 
-Accepts one of the following:
+Downloadable bool
 
-const FileFile File = "file"
-
-Downloadable booloptional
+optional
 
 Whether the file can be downloaded.
 

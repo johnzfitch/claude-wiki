@@ -1,0 +1,8 @@
+---
+category: "04-API-Reference"
+fetched_at: "2026-02-23T00:45:49Z"
+source_url: "https://raw.githubusercontent.com/anthropics/anthropic-cookbook/main/capabilities/classification/README.md"
+title: "Readme"
+---
+
+\# Classification with Claude Learn how to use Claude for classification tasks, especially in scenarios with complex business rules and limited training data. \## Contents - \`guide.ipynb\`: Main tutorial notebook - \`data/\`: Data files for examples and testing - \`evaluation/\`: Evaluation scripts using Promptfoo For evaluation instructions, see \`evaluation/README.md\`.

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:01Z"
+fetched_at: "2026-02-22T13:57:33Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/count_tokens"
 title: "Count tokens in a Message - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Messages.CountTokens(ctx, params) (\*[BetaMessageTokensCount](/docs/en/api/beta#beta_message_tokens_count), error)
 
-post/v1/messages/count_tokens
+POST/v1/messages/count_tokens
 
 Count the number of tokens in a Message.
 
@@ -90,21 +90,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -121,7 +117,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -139,10 +137,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -156,10 +150,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -175,10 +165,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -188,10 +174,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -210,10 +192,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type BetaImageBlockParamResp struct{…}
 
@@ -239,17 +217,9 @@ const BetaBase64ImageSourceMediaTypeImageWebP BetaBase64ImageSourceMediaType = "
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type BetaURLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -259,27 +229,19 @@ FileID string
 
 Type File
 
-Accepts one of the following:
-
-const FileFile File = "file"
-
 Type Image
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -308,15 +270,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type BetaPlainTextSource struct{…}
 
@@ -324,15 +278,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type BetaContentBlockSource struct{…}
 
@@ -352,21 +298,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -383,7 +325,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -401,10 +345,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -418,10 +358,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -437,10 +373,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -450,10 +382,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -472,10 +400,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type BetaImageBlockParamResp struct{…}
 
@@ -501,17 +425,9 @@ const BetaBase64ImageSourceMediaTypeImageWebP BetaBase64ImageSourceMediaType = "
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type BetaURLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -521,27 +437,19 @@ FileID string
 
 Type File
 
-Accepts one of the following:
-
-const FileFile File = "file"
-
 Type Image
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -560,17 +468,9 @@ const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type BetaURLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -580,27 +480,19 @@ FileID string
 
 Type File
 
-Accepts one of the following:
-
-const FileFile File = "file"
-
 Type Document
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -617,13 +509,21 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)optional
+Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
 
 type BetaSearchResultBlockParamResp struct{…}
 
@@ -633,21 +533,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -664,7 +560,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -682,10 +580,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -699,10 +593,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -718,10 +608,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -731,10 +617,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -754,31 +636,23 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Source string
 
 Title string
 
 Type SearchResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const SearchResultSearchResult SearchResult = "search_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -795,9 +669,13 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)optional
+Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)
 
-Enabled booloptional
+optional
+
+Enabled bool
+
+optional
 
 type BetaThinkingBlockParamResp struct{…}
 
@@ -807,19 +685,11 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type BetaRedactedThinkingBlockParamResp struct{…}
 
 Data string
 
 Type RedactedThinking
-
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
 
 type BetaToolUseBlockParamResp struct{…}
 
@@ -831,21 +701,17 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ToolUseToolUse ToolUse = "tool_use"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -862,7 +728,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Caller BetaToolUseBlockParamCallerUnionRespoptional
+Caller BetaToolUseBlockParamCallerUnionResp
+
+optional
 
 Tool invocation directly from the model.
 
@@ -874,10 +742,6 @@ Tool invocation directly from the model.
 
 Type Direct
 
-Accepts one of the following:
-
-const DirectDirect Direct = "direct"
-
 type BetaServerToolCaller struct{…}
 
 Tool invocation generated by a server-side tool.
@@ -886,9 +750,11 @@ ToolID string
 
 Type CodeExecution20250825
 
-Accepts one of the following:
+type BetaServerToolCaller20260120 struct{…}
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaToolResultBlockParamResp struct{…}
 
@@ -896,21 +762,17 @@ ToolUseID string
 
 Type ToolResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ToolResultToolResult ToolResult = "tool_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -927,7 +789,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Content \[\]BetaToolResultBlockParamContentUnionRespoptional
+Content \[\]BetaToolResultBlockParamContentUnionResp
+
+optional
 
 Accepts one of the following:
 
@@ -941,21 +805,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -972,7 +832,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -990,10 +852,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -1007,10 +865,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -1026,10 +880,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -1039,10 +889,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1061,10 +907,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type BetaImageBlockParamResp struct{…}
 
@@ -1090,17 +932,9 @@ const BetaBase64ImageSourceMediaTypeImageWebP BetaBase64ImageSourceMediaType = "
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type BetaURLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -1110,27 +944,19 @@ FileID string
 
 Type File
 
-Accepts one of the following:
-
-const FileFile File = "file"
-
 Type Image
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1155,21 +981,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1186,7 +1008,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -1204,10 +1028,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -1221,10 +1041,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -1240,10 +1056,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -1253,10 +1065,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1276,31 +1084,23 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Source string
 
 Title string
 
 Type SearchResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const SearchResultSearchResult SearchResult = "search_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1317,9 +1117,13 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)optional
+Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)
 
-Enabled booloptional
+optional
+
+Enabled bool
+
+optional
 
 type BetaRequestDocumentBlock struct{…}
 
@@ -1333,15 +1137,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type BetaPlainTextSource struct{…}
 
@@ -1349,15 +1145,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type BetaContentBlockSource struct{…}
 
@@ -1377,21 +1165,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1408,7 +1192,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -1426,10 +1212,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -1443,10 +1225,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -1462,10 +1240,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -1475,10 +1249,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1497,10 +1267,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type BetaImageBlockParamResp struct{…}
 
@@ -1526,17 +1292,9 @@ const BetaBase64ImageSourceMediaTypeImageWebP BetaBase64ImageSourceMediaType = "
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type BetaURLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -1546,27 +1304,19 @@ FileID string
 
 Type File
 
-Accepts one of the following:
-
-const FileFile File = "file"
-
 Type Image
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1585,17 +1335,9 @@ const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type BetaURLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -1605,27 +1347,19 @@ FileID string
 
 Type File
 
-Accepts one of the following:
-
-const FileFile File = "file"
-
 Type Document
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1642,13 +1376,21 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)optional
+Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
 
 type BetaToolReferenceBlockParamResp struct{…}
 
@@ -1658,21 +1400,17 @@ ToolName string
 
 Type ToolReference
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ToolReferenceToolReference ToolReference = "tool_reference"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1689,7 +1427,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-IsError booloptional
+IsError bool
+
+optional
 
 type BetaServerToolUseBlockParamResp struct{…}
 
@@ -1717,21 +1457,17 @@ const BetaServerToolUseBlockParamNameToolSearchToolBm25 BetaServerToolUseBlockPa
 
 Type ServerToolUse
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1748,7 +1484,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Caller BetaServerToolUseBlockParamCallerUnionRespoptional
+Caller BetaServerToolUseBlockParamCallerUnionResp
+
+optional
 
 Tool invocation directly from the model.
 
@@ -1760,10 +1498,6 @@ Tool invocation directly from the model.
 
 Type Direct
 
-Accepts one of the following:
-
-const DirectDirect Direct = "direct"
-
 type BetaServerToolCaller struct{…}
 
 Tool invocation generated by a server-side tool.
@@ -1772,9 +1506,11 @@ ToolID string
 
 Type CodeExecution20250825
 
-Accepts one of the following:
+type BetaServerToolCaller20260120 struct{…}
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaWebSearchToolResultBlockParamResp struct{…}
 
@@ -1790,13 +1526,11 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
-PageAge stringoptional
+PageAge string
+
+optional
 
 type BetaWebSearchToolRequestError struct{…}
 
@@ -1818,29 +1552,21 @@ const BetaWebSearchToolResultErrorCodeRequestTooLarge [BetaWebSearchToolResultEr
 
 Type WebSearchToolResultError
 
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
-
 ToolUseID string
 
 Type WebSearchToolResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1856,6 +1582,34 @@ Accepts one of the following:
 const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
+
+Caller BetaWebSearchToolResultBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type BetaDirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type BetaServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type BetaServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaWebFetchToolResultBlockParamResp struct{…}
 
@@ -1887,10 +1641,6 @@ const BetaWebFetchToolResultErrorCodeUnavailable [BetaWebFetchToolResultErrorCod
 
 Type WebFetchToolResultError
 
-Accepts one of the following:
-
-const WebFetchToolResultErrorWebFetchToolResultError WebFetchToolResultError = "web_fetch_tool_result_error"
-
 type BetaWebFetchBlockParamResp struct{…}
 
 Content [BetaRequestDocumentBlock](/docs/en/api/beta#beta_request_document_block)
@@ -1905,15 +1655,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type BetaPlainTextSource struct{…}
 
@@ -1921,15 +1663,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type BetaContentBlockSource struct{…}
 
@@ -1949,21 +1683,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1980,7 +1710,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -1998,10 +1730,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -2015,10 +1743,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -2034,10 +1758,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -2047,10 +1767,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -2069,10 +1785,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type BetaImageBlockParamResp struct{…}
 
@@ -2098,17 +1810,9 @@ const BetaBase64ImageSourceMediaTypeImageWebP BetaBase64ImageSourceMediaType = "
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type BetaURLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -2118,27 +1822,19 @@ FileID string
 
 Type File
 
-Accepts one of the following:
-
-const FileFile File = "file"
-
 Type Image
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2157,17 +1853,9 @@ const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type BetaURLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -2177,27 +1865,19 @@ FileID string
 
 Type File
 
-Accepts one of the following:
-
-const FileFile File = "file"
-
 Type Document
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2214,25 +1894,31 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)optional
+Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
 
 Type WebFetchResult
-
-Accepts one of the following:
-
-const WebFetchResultWebFetchResult WebFetchResult = "web_fetch_result"
 
 URL string
 
 Fetched content URL
 
-RetrievedAt stringoptional
+RetrievedAt string
+
+optional
 
 ISO 8601 timestamp when the content was retrieved
 
@@ -2240,21 +1926,17 @@ ToolUseID string
 
 Type WebFetchToolResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const WebFetchToolResultWebFetchToolResult WebFetchToolResult = "web_fetch_tool_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2271,9 +1953,39 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
+Caller BetaWebFetchToolResultBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type BetaDirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type BetaServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type BetaServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
 type BetaCodeExecutionToolResultBlockParamResp struct{…}
 
 Content [BetaCodeExecutionToolResultBlockParamContentUnionResp](/docs/en/api/beta#beta_code_execution_tool_result_block_param_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -2293,10 +2005,6 @@ const BetaCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BetaCodeExecuti
 
 Type CodeExecutionToolResultError
 
-Accepts one of the following:
-
-const CodeExecutionToolResultErrorCodeExecutionToolResultError CodeExecutionToolResultError = "code_execution_tool_result_error"
-
 type BetaCodeExecutionResultBlockParamResp struct{…}
 
 Content \[\][BetaCodeExecutionOutputBlockParamResp](/docs/en/api/beta#beta_code_execution_output_block_param)
@@ -2304,10 +2012,6 @@ Content \[\][BetaCodeExecutionOutputBlockParamResp](/docs/en/api/beta#beta_code_
 FileID string
 
 Type CodeExecutionOutput
-
-Accepts one of the following:
-
-const CodeExecutionOutputCodeExecutionOutput CodeExecutionOutput = "code_execution_output"
 
 ReturnCode int64
 
@@ -2317,29 +2021,39 @@ Stdout string
 
 Type CodeExecutionResult
 
-Accepts one of the following:
+type BetaEncryptedCodeExecutionResultBlockParamResp struct{…}
 
-const CodeExecutionResultCodeExecutionResult CodeExecutionResult = "code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][BetaCodeExecutionOutputBlockParamResp](/docs/en/api/beta#beta_code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
 
 ToolUseID string
 
 Type CodeExecutionToolResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const CodeExecutionToolResultCodeExecutionToolResult CodeExecutionToolResult = "code_execution_tool_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2380,10 +2094,6 @@ const BetaBashCodeExecutionToolResultErrorParamErrorCodeOutputFileTooLarge BetaB
 
 Type BashCodeExecutionToolResultError
 
-Accepts one of the following:
-
-const BashCodeExecutionToolResultErrorBashCodeExecutionToolResultError BashCodeExecutionToolResultError = "bash_code_execution_tool_result_error"
-
 type BetaBashCodeExecutionResultBlockParamResp struct{…}
 
 Content \[\][BetaBashCodeExecutionOutputBlockParamResp](/docs/en/api/beta#beta_bash_code_execution_output_block_param)
@@ -2391,10 +2101,6 @@ Content \[\][BetaBashCodeExecutionOutputBlockParamResp](/docs/en/api/beta#beta_b
 FileID string
 
 Type BashCodeExecutionOutput
-
-Accepts one of the following:
-
-const BashCodeExecutionOutputBashCodeExecutionOutput BashCodeExecutionOutput = "bash_code_execution_output"
 
 ReturnCode int64
 
@@ -2404,29 +2110,21 @@ Stdout string
 
 Type BashCodeExecutionResult
 
-Accepts one of the following:
-
-const BashCodeExecutionResultBashCodeExecutionResult BashCodeExecutionResult = "bash_code_execution_result"
-
 ToolUseID string
 
 Type BashCodeExecutionToolResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const BashCodeExecutionToolResultBashCodeExecutionToolResult BashCodeExecutionToolResult = "bash_code_execution_tool_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2467,11 +2165,9 @@ const BetaTextEditorCodeExecutionToolResultErrorParamErrorCodeFileNotFound BetaT
 
 Type TextEditorCodeExecutionToolResultError
 
-Accepts one of the following:
+ErrorMessage string
 
-const TextEditorCodeExecutionToolResultErrorTextEditorCodeExecutionToolResultError TextEditorCodeExecutionToolResultError = "text_editor_code_execution_tool_result_error"
-
-ErrorMessage stringoptional
+optional
 
 type BetaTextEditorCodeExecutionViewResultBlockParamResp struct{…}
 
@@ -2489,15 +2185,17 @@ const BetaTextEditorCodeExecutionViewResultBlockParamFileTypePDF BetaTextEditorC
 
 Type TextEditorCodeExecutionViewResult
 
-Accepts one of the following:
+NumLines int64
 
-const TextEditorCodeExecutionViewResultTextEditorCodeExecutionViewResult TextEditorCodeExecutionViewResult = "text_editor_code_execution_view_result"
+optional
 
-NumLines int64optional
+StartLine int64
 
-StartLine int64optional
+optional
 
-TotalLines int64optional
+TotalLines int64
+
+optional
 
 type BetaTextEditorCodeExecutionCreateResultBlockParamResp struct{…}
 
@@ -2505,47 +2203,45 @@ IsFileUpdate bool
 
 Type TextEditorCodeExecutionCreateResult
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionCreateResultTextEditorCodeExecutionCreateResult TextEditorCodeExecutionCreateResult = "text_editor_code_execution_create_result"
-
 type BetaTextEditorCodeExecutionStrReplaceResultBlockParamResp struct{…}
 
 Type TextEditorCodeExecutionStrReplaceResult
 
-Accepts one of the following:
+Lines \[\]string
 
-const TextEditorCodeExecutionStrReplaceResultTextEditorCodeExecutionStrReplaceResult TextEditorCodeExecutionStrReplaceResult = "text_editor_code_execution_str_replace_result"
+optional
 
-Lines \[\]stringoptional
+NewLines int64
 
-NewLines int64optional
+optional
 
-NewStart int64optional
+NewStart int64
 
-OldLines int64optional
+optional
 
-OldStart int64optional
+OldLines int64
+
+optional
+
+OldStart int64
+
+optional
 
 ToolUseID string
 
 Type TextEditorCodeExecutionToolResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextEditorCodeExecutionToolResultTextEditorCodeExecutionToolResult TextEditorCodeExecutionToolResult = "text_editor_code_execution_tool_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2584,10 +2280,6 @@ const BetaToolSearchToolResultErrorParamErrorCodeExecutionTimeExceeded BetaToolS
 
 Type ToolSearchToolResultError
 
-Accepts one of the following:
-
-const ToolSearchToolResultErrorToolSearchToolResultError ToolSearchToolResultError = "tool_search_tool_result_error"
-
 type BetaToolSearchToolSearchResultBlockParamResp struct{…}
 
 ToolReferences \[\][BetaToolReferenceBlockParamResp](/docs/en/api/beta#beta_tool_reference_block_param)
@@ -2596,21 +2288,17 @@ ToolName string
 
 Type ToolReference
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ToolReferenceToolReference ToolReference = "tool_reference"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2629,29 +2317,21 @@ const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
 Type ToolSearchToolSearchResult
 
-Accepts one of the following:
-
-const ToolSearchToolSearchResultToolSearchToolSearchResult ToolSearchToolSearchResult = "tool_search_tool_search_result"
-
 ToolUseID string
 
 Type ToolSearchToolResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ToolSearchToolResultToolSearchToolResult ToolSearchToolResult = "tool_search_tool_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2682,21 +2362,17 @@ The name of the MCP server
 
 Type MCPToolUse
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const MCPToolUseMCPToolUse MCPToolUse = "mcp_tool_use"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2719,21 +2395,17 @@ ToolUseID string
 
 Type MCPToolResult
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const MCPToolResultMCPToolResult MCPToolResult = "mcp_tool_result"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2750,7 +2422,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Content BetaRequestMCPToolResultBlockParamContentUnionRespoptional
+Content BetaRequestMCPToolResultBlockParamContentUnionResp
+
+optional
 
 Accepts one of the following:
 
@@ -2762,21 +2436,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2793,7 +2463,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -2811,10 +2483,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -2828,10 +2496,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -2847,10 +2511,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -2860,10 +2520,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -2883,11 +2539,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
+IsError bool
 
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
-IsError booloptional
+optional
 
 type BetaContainerUploadBlockParamResp struct{…}
 
@@ -2897,21 +2551,17 @@ FileID string
 
 Type ContainerUpload
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const ContainerUploadContainerUpload ContainerUpload = "container_upload"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2942,21 +2592,17 @@ Summary of previously compacted content, or null if compaction failed
 
 Type Compaction
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const CompactionCompaction Compaction = "compaction"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2987,13 +2633,23 @@ Body param: The model that will complete your prompt.
 
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
-ContextManagement param.Field\[[BetaContextManagementConfig](/docs/en/api/beta#beta_context_management_config)\]optional
+CacheControl param.Field\[[BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)\]
+
+optional
+
+Body param: Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+
+ContextManagement param.Field\[[BetaContextManagementConfig](/docs/en/api/beta#beta_context_management_config)\]
+
+optional
 
 Body param: Context management configuration.
 
 This allows you to control how Claude manages context across multiple requests, such as whether to clear function results or not.
 
-MCPServers param.Field\[\[\][BetaRequestMCPServerURLDefinition](/docs/en/api/beta#beta_request_mcp_server_url_definition)\]optional
+MCPServers param.Field\[\[\][BetaRequestMCPServerURLDefinition](/docs/en/api/beta#beta_request_mcp_server_url_definition)\]
+
+optional
 
 Body param: MCP servers to be utilized in this request
 
@@ -3001,31 +2657,51 @@ Name string
 
 Type URL
 
-Accepts one of the following:
-
-const URLURL URL = "url"
-
 URL string
 
-AuthorizationToken stringoptional
+AuthorizationToken string
 
-ToolConfiguration [BetaRequestMCPServerToolConfiguration](/docs/en/api/beta#beta_request_mcp_server_tool_configuration)optional
+optional
 
-AllowedTools \[\]stringoptional
+ToolConfiguration [BetaRequestMCPServerToolConfiguration](/docs/en/api/beta#beta_request_mcp_server_tool_configuration)
 
-Enabled booloptional
+optional
 
-OutputConfig param.Field\[[BetaOutputConfig](/docs/en/api/beta#beta_output_config)\]optional
+AllowedTools \[\]string
+
+optional
+
+Enabled bool
+
+optional
+
+OutputConfig param.Field\[[BetaOutputConfig](/docs/en/api/beta#beta_output_config)\]
+
+optional
 
 Body param: Configuration options for the model's output, such as the output format.
 
-DeprecatedOutputFormat param.Field\[[BetaJSONOutputFormat](/docs/en/api/beta#beta_json_output_format)\]optional
+DeprecatedOutputFormat param.Field\[[BetaJSONOutputFormat](/docs/en/api/beta#beta_json_output_format)\]
+
+optional
 
 Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
 
 A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 
-System param.Field\[[BetaMessageCountTokensParamsSystemUnion](/docs/en/api/beta/messages/count_tokens)\]optional
+Speed param.Field\[[BetaMessageCountTokensParamsSpeed](/docs/en/api/beta/messages/count_tokens)\]
+
+optional
+
+Body param: The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
+
+const BetaMessageCountTokensParamsSpeedStandard [BetaMessageCountTokensParamsSpeed](/docs/en/api/beta/messages/count_tokens) = "standard"
+
+const BetaMessageCountTokensParamsSpeedFast [BetaMessageCountTokensParamsSpeed](/docs/en/api/beta/messages/count_tokens) = "fast"
+
+System param.Field\[[BetaMessageCountTokensParamsSystemUnion](/docs/en/api/beta/messages/count_tokens)\]
+
+optional
 
 Body param: System prompt.
 
@@ -3039,21 +2715,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3070,7 +2742,9 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)optional
+Citations \[\][BetaTextCitationParamUnionResp](/docs/en/api/beta#beta_text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -3088,10 +2762,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -3105,10 +2775,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocationParamResp struct{…}
 
@@ -3124,10 +2790,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -3137,10 +2799,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -3160,11 +2818,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
+Thinking param.Field\[[BetaThinkingConfigParamUnionResp](/docs/en/api/beta#beta_thinking_config_param)\]
 
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
-Thinking param.Field\[[BetaThinkingConfigParamUnionResp](/docs/en/api/beta#beta_thinking_config_param)\]optional
+optional
 
 Body param: Configuration for enabling Claude's extended thinking.
 
@@ -3172,11 +2828,15 @@ When enabled, responses include `thinking` content blocks showing Claude's think
 
 See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
 
-ToolChoice param.Field\[[BetaToolChoiceUnion](/docs/en/api/beta#beta_tool_choice)\]optional
+ToolChoice param.Field\[[BetaToolChoiceUnion](/docs/en/api/beta#beta_tool_choice)\]
+
+optional
 
 Body param: How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
 
-Tools param.Field\[\[\]BetaMessageCountTokensParamsToolUnion\]optional
+Tools param.Field\[\[\]BetaMessageCountTokensParamsToolUnion\]
+
+optional
 
 Body param: Definitions of tools that the model may use.
 
@@ -3250,13 +2910,13 @@ This defines the shape of the `input` that your tool accepts and that the model 
 
 Type Object
 
-Accepts one of the following:
+Properties map\[string, any\]
 
-const ObjectObject Object = "object"
+optional
 
-Properties map\[string, any\]optional
+Required \[\]string
 
-Required \[\]stringoptional
+optional
 
 Name string
 
@@ -3268,7 +2928,9 @@ maxLength128
 
 minLength1
 
-AllowedCallers \[\]stringoptional
+AllowedCallers \[\]string
+
+optional
 
 Accepts one of the following:
 
@@ -3276,17 +2938,19 @@ const BetaToolAllowedCallerDirect BetaToolAllowedCaller = "direct"
 
 const BetaToolAllowedCallerCodeExecution20250825 BetaToolAllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolAllowedCallerCodeExecution20260120 BetaToolAllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3303,31 +2967,39 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-Description stringoptional
+Description string
+
+optional
 
 Description of what this tool does.
 
 Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
 
-EagerInputStreaming booloptional
+EagerInputStreaming bool
+
+optional
 
 Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-Strict booloptional
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
-Type BetaToolTypeoptional
+Type BetaToolType
 
-Accepts one of the following:
-
-const BetaToolTypeCustom BetaToolType = "custom"
+optional
 
 type BetaToolBash20241022 struct{…}
 
@@ -3337,17 +3009,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const BashBash Bash = "bash"
-
 Type Bash20241022
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const Bash20241022Bash20241022 Bash20241022 = "bash_20241022"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3355,17 +3021,19 @@ const BetaToolBash20241022AllowedCallerDirect BetaToolBash20241022AllowedCaller 
 
 const BetaToolBash20241022AllowedCallerCodeExecution20250825 BetaToolBash20241022AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolBash20241022AllowedCallerCodeExecution20260120 BetaToolBash20241022AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3382,13 +3050,19 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-Strict booloptional
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3400,17 +3074,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const BashBash Bash = "bash"
-
 Type Bash20250124
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const Bash20250124Bash20250124 Bash20250124 = "bash_20250124"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3418,17 +3086,19 @@ const BetaToolBash20250124AllowedCallerDirect BetaToolBash20250124AllowedCaller 
 
 const BetaToolBash20250124AllowedCallerCodeExecution20250825 BetaToolBash20250124AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolBash20250124AllowedCallerCodeExecution20260120 BetaToolBash20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3445,13 +3115,19 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-Strict booloptional
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3463,17 +3139,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const CodeExecutionCodeExecution CodeExecution = "code_execution"
-
 Type CodeExecution20250522
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const CodeExecution20250522CodeExecution20250522 CodeExecution20250522 = "code_execution_20250522"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3481,17 +3151,19 @@ const BetaCodeExecutionTool20250522AllowedCallerDirect BetaCodeExecutionTool2025
 
 const BetaCodeExecutionTool20250522AllowedCallerCodeExecution20250825 BetaCodeExecutionTool20250522AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaCodeExecutionTool20250522AllowedCallerCodeExecution20260120 BetaCodeExecutionTool20250522AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3508,11 +3180,15 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-Strict booloptional
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3524,17 +3200,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const CodeExecutionCodeExecution CodeExecution = "code_execution"
-
 Type CodeExecution20250825
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3542,17 +3212,19 @@ const BetaCodeExecutionTool20250825AllowedCallerDirect BetaCodeExecutionTool2025
 
 const BetaCodeExecutionTool20250825AllowedCallerCodeExecution20250825 BetaCodeExecutionTool20250825AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaCodeExecutionTool20250825AllowedCallerCodeExecution20260120 BetaCodeExecutionTool20250825AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3569,11 +3241,78 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-Strict booloptional
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type BetaCodeExecutionTool20260120 struct{…}
+
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20260120
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const BetaCodeExecutionTool20260120AllowedCallerDirect BetaCodeExecutionTool20260120AllowedCaller = "direct"
+
+const BetaCodeExecutionTool20260120AllowedCallerCodeExecution20250825 BetaCodeExecutionTool20260120AllowedCaller = "code_execution_20250825"
+
+const BetaCodeExecutionTool20260120AllowedCallerCodeExecution20260120 BetaCodeExecutionTool20260120AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL BetaCacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
+
+const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3583,13 +3322,9 @@ DisplayHeightPx int64
 
 The height of the display in pixels.
 
-minimum1
-
 DisplayWidthPx int64
 
 The width of the display in pixels.
-
-minimum1
 
 Name Computer
 
@@ -3597,17 +3332,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const ComputerComputer Computer = "computer"
-
 Type Computer20241022
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const Computer20241022Computer20241022 Computer20241022 = "computer_20241022"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3615,17 +3344,19 @@ const BetaToolComputerUse20241022AllowedCallerDirect BetaToolComputerUse20241022
 
 const BetaToolComputerUse20241022AllowedCallerCodeExecution20250825 BetaToolComputerUse20241022AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolComputerUse20241022AllowedCallerCodeExecution20260120 BetaToolComputerUse20241022AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3642,19 +3373,25 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-DisplayNumber int64optional
+DisplayNumber int64
+
+optional
 
 The X11 display number (e.g. 0, 1) for the display.
 
-minimum0
+InputExamples \[\]map\[string, any\]
 
-InputExamples \[\]map\[string, any\]optional
+optional
 
-Strict booloptional
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3666,17 +3403,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const MemoryMemory Memory = "memory"
-
 Type Memory20250818
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const Memory20250818Memory20250818 Memory20250818 = "memory_20250818"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3684,17 +3415,19 @@ const BetaMemoryTool20250818AllowedCallerDirect BetaMemoryTool20250818AllowedCal
 
 const BetaMemoryTool20250818AllowedCallerCodeExecution20250825 BetaMemoryTool20250818AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaMemoryTool20250818AllowedCallerCodeExecution20260120 BetaMemoryTool20250818AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3711,13 +3444,19 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-Strict booloptional
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3727,13 +3466,9 @@ DisplayHeightPx int64
 
 The height of the display in pixels.
 
-minimum1
-
 DisplayWidthPx int64
 
 The width of the display in pixels.
-
-minimum1
 
 Name Computer
 
@@ -3741,17 +3476,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const ComputerComputer Computer = "computer"
-
 Type Computer20250124
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const Computer20250124Computer20250124 Computer20250124 = "computer_20250124"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3759,17 +3488,19 @@ const BetaToolComputerUse20250124AllowedCallerDirect BetaToolComputerUse20250124
 
 const BetaToolComputerUse20250124AllowedCallerCodeExecution20250825 BetaToolComputerUse20250124AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolComputerUse20250124AllowedCallerCodeExecution20260120 BetaToolComputerUse20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3786,19 +3517,25 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-DisplayNumber int64optional
+DisplayNumber int64
+
+optional
 
 The X11 display number (e.g. 0, 1) for the display.
 
-minimum0
+InputExamples \[\]map\[string, any\]
 
-InputExamples \[\]map\[string, any\]optional
+optional
 
-Strict booloptional
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3810,17 +3547,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceEditorStrReplaceEditor StrReplaceEditor = "str_replace_editor"
-
 Type TextEditor20241022
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const TextEditor20241022TextEditor20241022 TextEditor20241022 = "text_editor_20241022"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3828,17 +3559,19 @@ const BetaToolTextEditor20241022AllowedCallerDirect BetaToolTextEditor20241022Al
 
 const BetaToolTextEditor20241022AllowedCallerCodeExecution20250825 BetaToolTextEditor20241022AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolTextEditor20241022AllowedCallerCodeExecution20260120 BetaToolTextEditor20241022AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3855,13 +3588,19 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-Strict booloptional
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3871,13 +3610,9 @@ DisplayHeightPx int64
 
 The height of the display in pixels.
 
-minimum1
-
 DisplayWidthPx int64
 
 The width of the display in pixels.
-
-minimum1
 
 Name Computer
 
@@ -3885,17 +3620,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const ComputerComputer Computer = "computer"
-
 Type Computer20251124
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const Computer20251124Computer20251124 Computer20251124 = "computer_20251124"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3903,17 +3632,19 @@ const BetaToolComputerUse20251124AllowedCallerDirect BetaToolComputerUse20251124
 
 const BetaToolComputerUse20251124AllowedCallerCodeExecution20250825 BetaToolComputerUse20251124AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolComputerUse20251124AllowedCallerCodeExecution20260120 BetaToolComputerUse20251124AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3930,23 +3661,31 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-DisplayNumber int64optional
+DisplayNumber int64
+
+optional
 
 The X11 display number (e.g. 0, 1) for the display.
 
-minimum0
+EnableZoom bool
 
-EnableZoom booloptional
+optional
 
 Whether to enable an action to take a zoomed-in screenshot of the screen.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-Strict booloptional
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3958,17 +3697,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceEditorStrReplaceEditor StrReplaceEditor = "str_replace_editor"
-
 Type TextEditor20250124
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const TextEditor20250124TextEditor20250124 TextEditor20250124 = "text_editor_20250124"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -3976,17 +3709,19 @@ const BetaToolTextEditor20250124AllowedCallerDirect BetaToolTextEditor20250124Al
 
 const BetaToolTextEditor20250124AllowedCallerCodeExecution20250825 BetaToolTextEditor20250124AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolTextEditor20250124AllowedCallerCodeExecution20260120 BetaToolTextEditor20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4003,13 +3738,19 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-Strict booloptional
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -4021,17 +3762,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceBasedEditToolStrReplaceBasedEditTool StrReplaceBasedEditTool = "str_replace_based_edit_tool"
-
 Type TextEditor20250429
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const TextEditor20250429TextEditor20250429 TextEditor20250429 = "text_editor_20250429"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -4039,17 +3774,19 @@ const BetaToolTextEditor20250429AllowedCallerDirect BetaToolTextEditor20250429Al
 
 const BetaToolTextEditor20250429AllowedCallerCodeExecution20250825 BetaToolTextEditor20250429AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolTextEditor20250429AllowedCallerCodeExecution20260120 BetaToolTextEditor20250429AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4066,13 +3803,19 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-Strict booloptional
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -4084,17 +3827,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceBasedEditToolStrReplaceBasedEditTool StrReplaceBasedEditTool = "str_replace_based_edit_tool"
-
 Type TextEditor20250728
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const TextEditor20250728TextEditor20250728 TextEditor20250728 = "text_editor_20250728"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -4102,17 +3839,19 @@ const BetaToolTextEditor20250728AllowedCallerDirect BetaToolTextEditor20250728Al
 
 const BetaToolTextEditor20250728AllowedCallerCodeExecution20250825 BetaToolTextEditor20250728AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolTextEditor20250728AllowedCallerCodeExecution20260120 BetaToolTextEditor20250728AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4129,19 +3868,25 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-InputExamples \[\]map\[string, any\]optional
+InputExamples \[\]map\[string, any\]
 
-MaxCharacters int64optional
+optional
+
+MaxCharacters int64
+
+optional
 
 Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
 
-minimum1
+Strict bool
 
-Strict booloptional
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -4153,17 +3898,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const WebSearchWebSearch WebSearch = "web_search"
-
 Type WebSearch20250305
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const WebSearch20250305WebSearch20250305 WebSearch20250305 = "web_search_20250305"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -4171,25 +3910,31 @@ const BetaWebSearchTool20250305AllowedCallerDirect BetaWebSearchTool20250305Allo
 
 const BetaWebSearchTool20250305AllowedCallerCodeExecution20250825 BetaWebSearchTool20250305AllowedCaller = "code_execution_20250825"
 
-AllowedDomains \[\]stringoptional
+const BetaWebSearchTool20250305AllowedCallerCodeExecution20260120 BetaWebSearchTool20250305AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
 
 If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
 
-BlockedDomains \[\]stringoptional
+BlockedDomains \[\]string
+
+optional
 
 If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4206,61 +3951,55 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-MaxUses int64optional
+MaxUses int64
+
+optional
 
 Maximum number of times the tool can be used in the API request.
 
-exclusiveMinimum0
+Strict bool
 
-Strict booloptional
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
-UserLocation BetaWebSearchTool20250305UserLocationoptional
+UserLocation [BetaUserLocation](/docs/en/api/beta#beta_user_location)
+
+optional
 
 Parameters for the user's location. Used to provide more relevant search results.
 
 Type Approximate
 
-Accepts one of the following:
+City string
 
-const ApproximateApproximate Approximate = "approximate"
-
-City stringoptional
+optional
 
 The city of the user.
 
-maxLength255
+Country string
 
-minLength1
-
-Country stringoptional
+optional
 
 The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
 
-maxLength2
+Region string
 
-minLength2
-
-Region stringoptional
+optional
 
 The region of the user.
 
-maxLength255
+Timezone string
 
-minLength1
-
-Timezone stringoptional
+optional
 
 The [IANA timezone](https://nodatime.org/TimeZones) of the user.
-
-maxLength255
-
-minLength1
 
 type BetaWebFetchTool20250910 struct{…}
 
@@ -4270,17 +4009,11 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const WebFetchWebFetch WebFetch = "web_fetch"
-
 Type WebFetch20250910
 
-Accepts one of the following:
+AllowedCallers \[\]string
 
-const WebFetch20250910WebFetch20250910 WebFetch20250910 = "web_fetch_20250910"
-
-AllowedCallers \[\]stringoptional
+optional
 
 Accepts one of the following:
 
@@ -4288,25 +4021,31 @@ const BetaWebFetchTool20250910AllowedCallerDirect BetaWebFetchTool20250910Allowe
 
 const BetaWebFetchTool20250910AllowedCallerCodeExecution20250825 BetaWebFetchTool20250910AllowedCaller = "code_execution_20250825"
 
-AllowedDomains \[\]stringoptional
+const BetaWebFetchTool20250910AllowedCallerCodeExecution20260120 BetaWebFetchTool20250910AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
 
 List of domains to allow fetching from
 
-BlockedDomains \[\]stringoptional
+BlockedDomains \[\]string
+
+optional
 
 List of domains to block fetching from
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4323,29 +4062,243 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)optional
+Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)
+
+optional
 
 Citations configuration for fetched documents. Citations are disabled by default.
 
-Enabled booloptional
+Enabled bool
 
-DeferLoading booloptional
+optional
+
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-MaxContentTokens int64optional
+MaxContentTokens int64
+
+optional
 
 Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
 
-exclusiveMinimum0
+MaxUses int64
 
-MaxUses int64optional
+optional
 
 Maximum number of times the tool can be used in the API request.
 
-exclusiveMinimum0
+Strict bool
 
-Strict booloptional
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type BetaWebSearchTool20260209 struct{…}
+
+Name WebSearch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebSearch20260209
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const BetaWebSearchTool20260209AllowedCallerDirect BetaWebSearchTool20260209AllowedCaller = "direct"
+
+const BetaWebSearchTool20260209AllowedCallerCodeExecution20250825 BetaWebSearchTool20260209AllowedCaller = "code_execution_20250825"
+
+const BetaWebSearchTool20260209AllowedCallerCodeExecution20260120 BetaWebSearchTool20260209AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+BlockedDomains \[\]string
+
+optional
+
+If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL BetaCacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
+
+const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+UserLocation [BetaUserLocation](/docs/en/api/beta#beta_user_location)
+
+optional
+
+Parameters for the user's location. Used to provide more relevant search results.
+
+Type Approximate
+
+City string
+
+optional
+
+The city of the user.
+
+Country string
+
+optional
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+Region string
+
+optional
+
+The region of the user.
+
+Timezone string
+
+optional
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+type BetaWebFetchTool20260209 struct{…}
+
+Name WebFetch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebFetch20260209
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const BetaWebFetchTool20260209AllowedCallerDirect BetaWebFetchTool20260209AllowedCaller = "direct"
+
+const BetaWebFetchTool20260209AllowedCallerCodeExecution20250825 BetaWebFetchTool20260209AllowedCaller = "code_execution_20250825"
+
+const BetaWebFetchTool20260209AllowedCallerCodeExecution20260120 BetaWebFetchTool20260209AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+List of domains to allow fetching from
+
+BlockedDomains \[\]string
+
+optional
+
+List of domains to block fetching from
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL BetaCacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
+
+const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
+
+Citations [BetaCitationsConfigParamResp](/docs/en/api/beta#beta_citations_config_param)
+
+optional
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+Enabled bool
+
+optional
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxContentTokens int64
+
+optional
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -4357,10 +4310,6 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const ToolSearchToolBm25ToolSearchToolBm25 ToolSearchToolBm25 = "tool_search_tool_bm25"
-
 Type BetaToolSearchToolBm25_20251119Type
 
 Accepts one of the following:
@@ -4369,7 +4318,9 @@ const BetaToolSearchToolBm25_20251119TypeToolSearchToolBm25_20251119 BetaToolSea
 
 const BetaToolSearchToolBm25_20251119TypeToolSearchToolBm25 BetaToolSearchToolBm25_20251119Type = "tool_search_tool_bm25"
 
-AllowedCallers \[\]stringoptional
+AllowedCallers \[\]string
+
+optional
 
 Accepts one of the following:
 
@@ -4377,17 +4328,19 @@ const BetaToolSearchToolBm25_20251119AllowedCallerDirect BetaToolSearchToolBm25_
 
 const BetaToolSearchToolBm25_20251119AllowedCallerCodeExecution20250825 BetaToolSearchToolBm25_20251119AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolSearchToolBm25_20251119AllowedCallerCodeExecution20260120 BetaToolSearchToolBm25_20251119AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4404,11 +4357,15 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-Strict booloptional
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -4420,10 +4377,6 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const ToolSearchToolRegexToolSearchToolRegex ToolSearchToolRegex = "tool_search_tool_regex"
-
 Type BetaToolSearchToolRegex20251119Type
 
 Accepts one of the following:
@@ -4432,7 +4385,9 @@ const BetaToolSearchToolRegex20251119TypeToolSearchToolRegex20251119 BetaToolSea
 
 const BetaToolSearchToolRegex20251119TypeToolSearchToolRegex BetaToolSearchToolRegex20251119Type = "tool_search_tool_regex"
 
-AllowedCallers \[\]stringoptional
+AllowedCallers \[\]string
+
+optional
 
 Accepts one of the following:
 
@@ -4440,17 +4395,19 @@ const BetaToolSearchToolRegex20251119AllowedCallerDirect BetaToolSearchToolRegex
 
 const BetaToolSearchToolRegex20251119AllowedCallerCodeExecution20250825 BetaToolSearchToolRegex20251119AllowedCaller = "code_execution_20250825"
 
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+const BetaToolSearchToolRegex20251119AllowedCallerCodeExecution20260120 BetaToolSearchToolRegex20251119AllowedCaller = "code_execution_20260120"
+
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4467,11 +4424,15 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-DeferLoading booloptional
+DeferLoading bool
+
+optional
 
 If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
-Strict booloptional
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -4485,27 +4446,19 @@ MCPServerName string
 
 Name of the MCP server to configure tools for
 
-maxLength255
-
-minLength1
-
 Type MCPToolset
 
-Accepts one of the following:
+CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)
 
-const MCPToolsetMCPToolset MCPToolset = "mcp_toolset"
-
-CacheControl [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL BetaCacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL BetaCacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4522,23 +4475,37 @@ const BetaCacheControlEphemeralTTLTTL5m BetaCacheControlEphemeralTTL = "5m"
 
 const BetaCacheControlEphemeralTTLTTL1h BetaCacheControlEphemeralTTL = "1h"
 
-Configs map\[string, [BetaMCPToolConfig](/docs/en/api/beta#beta_mcp_tool_config)\]optional
+Configs map\[string, [BetaMCPToolConfig](/docs/en/api/beta#beta_mcp_tool_config)\]
+
+optional
 
 Configuration overrides for specific tools, keyed by tool name
 
-DeferLoading booloptional
+DeferLoading bool
 
-Enabled booloptional
+optional
 
-DefaultConfig [BetaMCPToolDefaultConfig](/docs/en/api/beta#beta_mcp_tool_default_config)optional
+Enabled bool
+
+optional
+
+DefaultConfig [BetaMCPToolDefaultConfig](/docs/en/api/beta#beta_mcp_tool_default_config)
+
+optional
 
 Default configuration applied to all tools from this server
 
-DeferLoading booloptional
+DeferLoading bool
 
-Enabled booloptional
+optional
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Enabled bool
+
+optional
+
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Header param: Optional header to specify the beta version(s) you want to use.
 
@@ -4585,6 +4552,8 @@ const AnthropicBetaContextManagement2025_06_27 AnthropicBeta = "context-manageme
 const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-context-window-exceeded-2025-08-26"
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
+
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:35Z"
+fetched_at: "2026-02-22T13:22:45Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/idiom-illuminator"
 title: "Idiom illuminator - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Explain the meaning and origin of common idioms and proverbs.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|

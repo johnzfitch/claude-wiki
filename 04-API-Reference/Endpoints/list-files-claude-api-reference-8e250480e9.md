@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:54Z"
+fetched_at: "2026-02-22T14:04:25Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/files/list"
 title: "List Files - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Ruby
 
 beta.files.list(\*\*kwargs) -\> Page\<[FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more } \>
 
-get/v1/files
+GET/v1/files
 
 List Files
 
@@ -45,7 +45,7 @@ Accepts one of the following:
 
 String
 
-:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 16 more
+:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 17 more
 
 Accepts one of the following:
 
@@ -87,6 +87,8 @@ Accepts one of the following:
 
 :"skills-2025-10-02"
 
+:"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 class FileMetadata { id, created_at, filename, 4 more }
@@ -101,39 +103,23 @@ created_at: Time
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 filename: String
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 mime_type: String
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 size_bytes: Integer
 
 Size of the file in bytes.
-
-minimum0
 
 type: :file
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-:file
 
 downloadable: bool
 

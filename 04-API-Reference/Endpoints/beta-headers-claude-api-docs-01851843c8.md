@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:08Z"
+fetched_at: "2026-02-22T13:18:10Z"
 source_url: "https://platform.claude.com/docs/en/api/beta-headers"
 title: "Beta headers - Claude API Docs"
 ---
@@ -46,10 +46,8 @@ client = Anthropic()
 response = client.beta.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude"}
-    ],
-    betas=["code-execution-2025-08-25"]
+    messages=[{"role": "user", "content": "Hello, Claude"}],
+    betas=["files-api-2025-04-14"],
 )
 ```
 

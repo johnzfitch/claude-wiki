@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-16T21:12:43Z"
 source_url: "https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude"
 title: "Using the 10x Genomics Extension in Claude | Claude Help Center"
 ---
@@ -89,7 +89,7 @@ The 10x Genomics integration is available as a desktop extension in the Claude D
 
 **For Organization Owners (Team and Enterprise)**
 
-1.  Navigate to Admin settings \> Extensions
+1.  Navigate to Organization settings \> Extensions
 
 2.  In the search field, type “10x Genomics”
 
@@ -157,6 +157,14 @@ Sample prompts and prompting best practices can be found in the [10x Genomics MC
 
 Related Articles
 
+[](https://support.claude.com/en/articles/10065433-installing-claude-desktop)
+
+Installing Claude Desktop
+
+[](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
+
+Getting Started with Local MCP Servers on Claude Desktop
+
 [](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)
 
 Getting Started with Claude for Life Sciences
@@ -167,15 +175,7 @@ Using the BioRender Connector in Claude
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
-
-[](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
-
-Using the Benchling Connector in Claude
-
-[](https://support.claude.com/en/articles/12621831-how-to-use-the-single-cell-rna-qc-skill-with-claude)
-
-How to use the single-cell-rna-qc skill with Claude
+Using the Synapse.org connector in Claude
 
 Did this answer your question?
 

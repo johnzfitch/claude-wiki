@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:15Z"
+fetched_at: "2026-02-22T13:43:32Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/retrieve"
 title: "Get Skill - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Python
 
 beta.skills.retrieve(strskill_id, SkillRetrieveParams\*\*kwargs) -\> [SkillRetrieveResponse](/docs/en/api/beta#skill_retrieve_response)
 
-get/v1/skills/{skill_id}
+GET/v1/skills/{skill_id}
 
 Get Skill
 
@@ -31,9 +31,9 @@ Optional header to specify the beta version(s) you want to use.
 
 Accepts one of the following:
 
-UnionMember0 = str
+str
 
-UnionMember1 = Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 16 more\]
+Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 17 more\]
 
 Accepts one of the following:
 
@@ -74,6 +74,8 @@ Accepts one of the following:
 "model-context-window-exceeded-2025-08-26"
 
 "skills-2025-10-02"
+
+"fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

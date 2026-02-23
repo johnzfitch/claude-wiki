@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:05Z"
+fetched_at: "2026-02-22T13:49:40Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/versions/create"
 title: "Create Skill Version - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 [VersionCreateResponse](/docs/en/api/beta#VersionCreateResponse) beta().skills().versions().create(VersionCreateParamsparams = VersionCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-post/v1/skills/{skill_id}/versions
+POST/v1/skills/{skill_id}/versions
 
 Create Skill Version
 
@@ -68,6 +68,8 @@ CONTEXT_MANAGEMENT_2025_06_27("context-management-2025-06-27")
 MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-26")
 
 SKILLS_2025_10_02("skills-2025-10-02")
+
+FAST_MODE_2026_02_01("fast-mode-2026-02-01")
 
 Optional\<List\<String\>\> files
 

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-07T10:04:05Z"
+fetched_at: "2026-02-22T10:57:23Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/pricing"
 title: "Pricing - Claude API Docs"
 ---
@@ -31,6 +31,7 @@ The following table shows pricing for all Claude models across different usage t
 | Claude Opus 4.5 | \$5 / MTok | \$6.25 / MTok | \$10 / MTok | \$0.50 / MTok | \$25 / MTok |
 | Claude Opus 4.1 | \$15 / MTok | \$18.75 / MTok | \$30 / MTok | \$1.50 / MTok | \$75 / MTok |
 | Claude Opus 4 | \$15 / MTok | \$18.75 / MTok | \$30 / MTok | \$1.50 / MTok | \$75 / MTok |
+| Claude Sonnet 4.6 | \$3 / MTok | \$3.75 / MTok | \$6 / MTok | \$0.30 / MTok | \$15 / MTok |
 | Claude Sonnet 4.5 | \$3 / MTok | \$3.75 / MTok | \$6 / MTok | \$0.30 / MTok | \$15 / MTok |
 | Claude Sonnet 4 | \$3 / MTok | \$3.75 / MTok | \$6 / MTok | \$0.30 / MTok | \$15 / MTok |
 | Claude Sonnet 3.7 ([deprecated](/docs/en/about-claude/model-deprecations)) | \$3 / MTok | \$3.75 / MTok | \$6 / MTok | \$0.30 / MTok | \$15 / MTok |
@@ -83,9 +84,28 @@ Data residency pricing
 
 For Claude Opus 4.6 and newer models, specifying US-only inference via the `inference_geo` parameter incurs a 1.1x multiplier on all token pricing categories, including input tokens, output tokens, cache writes, and cache reads. Global routing (the default) uses standard pricing.
 
-This applies to the Claude API (1P) only. Third-party platforms have their own regional pricing — see [AWS Bedrock](https://aws.amazon.com/bedrock/pricing/), [Google Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/pricing), and [Microsoft Foundry](https://azure.microsoft.com/en-us/pricing/details/ai-foundry/#pricing) for details. Earlier models retain their existing pricing regardless of `inference_geo` settings.
+This applies to the Claude API (1P) only. Third-party platforms have their own regional pricing. See [AWS Bedrock](https://aws.amazon.com/bedrock/pricing/), [Google Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/pricing), and [Microsoft Foundry](https://azure.microsoft.com/en-us/pricing/details/ai-foundry/#pricing) for details. Earlier models retain their existing pricing regardless of `inference_geo` settings.
 
-For more information, see our [data residency documentation](/docs/en/build-with-claude/data-residency).
+For more information, see the [data residency documentation](/docs/en/build-with-claude/data-residency).
+
+### 
+
+Fast mode pricing
+
+[Fast mode](/docs/en/build-with-claude/fast-mode) for Claude Opus 4.6 (research preview) provides significantly faster output at premium pricing (6x standard rates). Fast mode pricing applies across the full context window, including requests over 200K input tokens. Currently supported on Opus 4.6:
+
+| Input       | Output       |
+|-------------|--------------|
+| \$30 / MTok | \$150 / MTok |
+
+Fast mode pricing stacks with other pricing modifiers:
+
+- [Prompt caching multipliers](#model-pricing) apply on top of fast mode pricing
+- [Data residency](/docs/en/build-with-claude/data-residency) multipliers apply on top of fast mode pricing
+
+Fast mode is not available with the [Batch API](#batch-processing).
+
+For more information, see the [fast mode documentation](/docs/en/build-with-claude/fast-mode).
 
 ### 
 
@@ -99,6 +119,7 @@ The Batch API allows asynchronous processing of large volumes of requests with a
 | Claude Opus 4.5 | \$2.50 / MTok | \$12.50 / MTok |
 | Claude Opus 4.1 | \$7.50 / MTok | \$37.50 / MTok |
 | Claude Opus 4 | \$7.50 / MTok | \$37.50 / MTok |
+| Claude Sonnet 4.6 | \$1.50 / MTok | \$7.50 / MTok |
 | Claude Sonnet 4.5 | \$1.50 / MTok | \$7.50 / MTok |
 | Claude Sonnet 4 | \$1.50 / MTok | \$7.50 / MTok |
 | Claude Sonnet 3.7 ([deprecated](/docs/en/about-claude/model-deprecations)) | \$1.50 / MTok | \$7.50 / MTok |
@@ -107,22 +128,22 @@ The Batch API allows asynchronous processing of large volumes of requests with a
 | Claude Opus 3 ([deprecated](/docs/en/about-claude/model-deprecations)) | \$7.50 / MTok | \$37.50 / MTok |
 | Claude Haiku 3 | \$0.125 / MTok | \$0.625 / MTok |
 
-For more information about batch processing, see our [batch processing documentation](/docs/en/build-with-claude/batch-processing).
+For more information about batch processing, see the [batch processing documentation](/docs/en/build-with-claude/batch-processing).
 
 ### 
 
 Long context pricing
 
-When using Claude Opus 4.6, Sonnet 4.5, or Sonnet 4 with the [1M token context window enabled](/docs/en/build-with-claude/context-windows#1m-token-context-window), requests that exceed 200K input tokens are automatically charged at premium long context rates:
+When using Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, or Sonnet 4 at standard speed with the [1M token context window enabled](/docs/en/build-with-claude/context-windows#1m-token-context-window), requests that exceed 200K input tokens are automatically charged at premium long context rates. [Fast mode](#fast-mode-pricing) includes the full 1M context window at no additional long context charge.
 
-The 1M token context window is currently in beta for organizations in [usage tier](/docs/en/api/rate-limits) 4 and organizations with custom rate limits. The 1M token context window is only available for Claude Opus 4.6, Sonnet 4.5, and Sonnet 4.
+The 1M token context window is currently in beta for organizations in [usage tier](/docs/en/api/rate-limits) 4 and organizations with custom rate limits. The 1M token context window is only available for Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, and Sonnet 4.
 
-| Model                 | ≤ 200K input tokens | \> 200K input tokens   |
-|-----------------------|---------------------|------------------------|
-| Claude Opus 4.6       | Input: \$5 / MTok   | Input: \$10 / MTok     |
-|                       | Output: \$25 / MTok | Output: \$37.50 / MTok |
-| Claude Sonnet 4.5 / 4 | Input: \$3 / MTok   | Input: \$6 / MTok      |
-|                       | Output: \$15 / MTok | Output: \$22.50 / MTok |
+| Model                       | ≤ 200K input tokens | \> 200K input tokens   |
+|-----------------------------|---------------------|------------------------|
+| Claude Opus 4.6             | Input: \$5 / MTok   | Input: \$10 / MTok     |
+|                             | Output: \$25 / MTok | Output: \$37.50 / MTok |
+| Claude Sonnet 4.6 / 4.5 / 4 | Input: \$3 / MTok   | Input: \$6 / MTok      |
+|                             | Output: \$15 / MTok | Output: \$22.50 / MTok |
 
 Long context pricing stacks with other pricing modifiers:
 
@@ -181,9 +202,9 @@ When you use `tools`, we also automatically include a special system prompt for 
 
 These token counts are added to your normal input and output tokens to calculate the total cost of a request.
 
-For current per-model prices, refer to our [model pricing](#model-pricing) section above.
+For current per-model prices, refer to the [model pricing](#model-pricing) section.
 
-For more information about tool use implementation and best practices, see our [tool use documentation](/docs/en/agents-and-tools/tool-use/overview).
+For more information about tool use implementation and best practices, see the [tool use documentation](/docs/en/agents-and-tools/tool-use/overview).
 
 ### 
 
@@ -207,9 +228,26 @@ See [tool use pricing](#tool-use-pricing) for complete pricing details.
 
 Code execution tool
 
-Code execution tool usage is tracked separately from token usage. Execution time has a minimum of 5 minutes. If files are included in the request, execution time is billed even if the tool is not used due to files being preloaded onto the container.
+**Code execution is free when used with web search or web fetch.** When `web_search_20260209` or `web_fetch_20260209` is included in your API request, there are no additional charges for code execution tool calls beyond the standard input and output token costs.
 
-Each organization receives 1,550 free hours of usage with the code execution tool per month. Additional usage beyond the first 1,550 hours is billed at \$0.05 per hour, per container.
+When used without these tools, code execution is billed by execution time, tracked separately from token usage:
+
+- Execution time has a minimum of 5 minutes
+- Each organization receives **1,550 free hours** of usage per month
+- Additional usage beyond 1,550 hours is billed at **\$0.05 per hour, per container**
+- If files are included in the request, execution time is billed even if the tool is not invoked, due to files being preloaded onto the container
+
+Code execution usage is tracked in the response:
+
+``` shiki
+"usage": {
+  "input_tokens": 105,
+  "output_tokens": 239,
+  "server_tool_use": {
+    "code_execution_requests": 1
+  }
+}
+```
 
 #### 
 
@@ -316,7 +354,7 @@ Example calculation for processing 10,000 support tickets:
 - Using Claude Opus 4.6 at \$5/MTok input, \$25/MTok output
 - Total cost: ~\$37.00 per 10,000 tickets
 
-For a detailed walkthrough of this calculation, see our [customer support agent guide](/docs/en/about-claude/use-case-guides/customer-support-chat).
+For a detailed walkthrough of this calculation, see the [customer support agent guide](/docs/en/about-claude/use-case-guides/customer-support-chat).
 
 ### 
 
@@ -340,7 +378,7 @@ For more complex agent architectures with multiple steps:
     - Execution feedback: 500-1,000
     - Combined cost: ~\$0.045 per action
 
-For a comprehensive guide on agent pricing patterns, see our [agent use cases guide](/docs/en/about-claude/use-case-guides).
+For a comprehensive guide on agent pricing patterns, see the [agent use cases guide](/docs/en/about-claude/use-case-guides).
 
 ### 
 
@@ -371,7 +409,7 @@ Rate limits vary by usage tier and affect how many requests you can make:
 - **Tier 4**: Maximum standard limits
 - **Enterprise**: Custom limits available
 
-For detailed rate limit information, see our [rate limits documentation](/docs/en/api/rate-limits).
+For detailed rate limit information, see the [rate limits documentation](/docs/en/api/rate-limits).
 
 For higher rate limits or custom pricing arrangements, [contact our sales team](https://claude.com/contact-sales).
 
@@ -440,6 +478,8 @@ Was this page helpful?
 - [Feature-specific pricing](#feature-specific-pricing)
 
 - [Data residency pricing](#data-residency-pricing)
+
+- [Fast mode pricing](#fast-mode-pricing)
 
 - [Batch processing](#batch-processing)
 

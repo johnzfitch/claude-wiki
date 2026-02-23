@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:29Z"
+fetched_at: "2026-02-22T13:11:50Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart"
 title: "Get started with Agent Skills in the API - Claude API Docs"
 ---
@@ -21,7 +21,7 @@ This tutorial shows you how to use Agent Skills to create a PowerPoint presentat
 
 Prerequisites
 
-- [Anthropic API key](/settings/keys)
+- [Claude API key](/settings/keys)
 - Python 3.7+ or curl installed
 - Basic familiarity with making API requests
 
@@ -42,7 +42,7 @@ Pre-built Agent Skills extend Claude's capabilities with specialized expertise f
 
 Step 1: List available Skills
 
-First, let's see what Skills are available. We'll use the Skills API to list all Anthropic-managed Skills:
+First, check what Skills are available. Use the Skills API to list all Anthropic-managed Skills:
 
 Python
 
@@ -52,10 +52,7 @@ import anthropic
 client = anthropic.Anthropic()
 
 # List Anthropic-managed Skills
-skills = client.beta.skills.list(
-    source="anthropic",
-    betas=["skills-2025-10-02"]
-)
+skills = client.beta.skills.list(source="anthropic", betas=["skills-2025-10-02"])
 
 for skill in skills.data:
     print(f"{skill.id}: {skill.display_title}")
@@ -69,7 +66,7 @@ This API returns each Skill's metadata: its name and description. Claude loads t
 
 Step 2: Create a presentation
 
-Now we'll use the PowerPoint Skill to create a presentation about renewable energy. We specify Skills using the `container` parameter in the Messages API:
+Now use the PowerPoint Skill to create a presentation about renewable energy. Specify Skills using the `container` parameter in the Messages API:
 
 Python
 
@@ -84,22 +81,15 @@ response = client.beta.messages.create(
     max_tokens=4096,
     betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
-        "skills": [
-            {
-                "type": "anthropic",
-                "skill_id": "pptx",
-                "version": "latest"
-            }
-        ]
+        "skills": [{"type": "anthropic", "skill_id": "pptx", "version": "latest"}]
     },
-    messages=[{
-        "role": "user",
-        "content": "Create a presentation about renewable energy with 5 slides"
-    }],
-    tools=[{
-        "type": "code_execution_20250825",
-        "name": "code_execution"
-    }]
+    messages=[
+        {
+            "role": "user",
+            "content": "Create a presentation about renewable energy with 5 slides",
+        }
+    ],
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
 )
 
 print(response.content)
@@ -128,18 +118,17 @@ Python
 # Extract file ID from response
 file_id = None
 for block in response.content:
-    if block.type == 'tool_use' and block.name == 'code_execution':
+    if block.type == "tool_use" and block.name == "code_execution":
         # File ID is in the tool result
         for result_block in block.content:
-            if hasattr(result_block, 'file_id'):
+            if hasattr(result_block, "file_id"):
                 file_id = result_block.file_id
                 break
 
 if file_id:
     # Download the file
     file_content = client.beta.files.download(
-        file_id=file_id,
-        betas=["files-api-2025-04-14"]
+        file_id=file_id, betas=["files-api-2025-04-14"]
     )
 
     # Save to disk
@@ -169,22 +158,15 @@ response = client.beta.messages.create(
     max_tokens=4096,
     betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
-        "skills": [
-            {
-                "type": "anthropic",
-                "skill_id": "xlsx",
-                "version": "latest"
-            }
-        ]
+        "skills": [{"type": "anthropic", "skill_id": "xlsx", "version": "latest"}]
     },
-    messages=[{
-        "role": "user",
-        "content": "Create a quarterly sales tracking spreadsheet with sample data"
-    }],
-    tools=[{
-        "type": "code_execution_20250825",
-        "name": "code_execution"
-    }]
+    messages=[
+        {
+            "role": "user",
+            "content": "Create a quarterly sales tracking spreadsheet with sample data",
+        }
+    ],
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
 )
 ```
 
@@ -200,22 +182,15 @@ response = client.beta.messages.create(
     max_tokens=4096,
     betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
-        "skills": [
-            {
-                "type": "anthropic",
-                "skill_id": "docx",
-                "version": "latest"
-            }
-        ]
+        "skills": [{"type": "anthropic", "skill_id": "docx", "version": "latest"}]
     },
-    messages=[{
-        "role": "user",
-        "content": "Write a 2-page report on the benefits of renewable energy"
-    }],
-    tools=[{
-        "type": "code_execution_20250825",
-        "name": "code_execution"
-    }]
+    messages=[
+        {
+            "role": "user",
+            "content": "Write a 2-page report on the benefits of renewable energy",
+        }
+    ],
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
 )
 ```
 
@@ -231,22 +206,10 @@ response = client.beta.messages.create(
     max_tokens=4096,
     betas=["code-execution-2025-08-25", "skills-2025-10-02"],
     container={
-        "skills": [
-            {
-                "type": "anthropic",
-                "skill_id": "pdf",
-                "version": "latest"
-            }
-        ]
+        "skills": [{"type": "anthropic", "skill_id": "pdf", "version": "latest"}]
     },
-    messages=[{
-        "role": "user",
-        "content": "Generate a PDF invoice template"
-    }],
-    tools=[{
-        "type": "code_execution_20250825",
-        "name": "code_execution"
-    }]
+    messages=[{"role": "user", "content": "Generate a PDF invoice template"}],
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
 )
 ```
 

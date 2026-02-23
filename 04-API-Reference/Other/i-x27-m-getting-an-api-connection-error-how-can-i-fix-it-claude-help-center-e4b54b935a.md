@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:51:38Z"
+fetched_at: "2026-02-13T09:23:12Z"
 source_url: "https://support.claude.com/en/articles/10366432-i-m-getting-an-api-connection-error-how-can-i-fix-it"
 title: "I&#x27;m getting an API connection error. How can I fix it? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ I'm getting an API connection error. How can I fix it?
 
 # I'm getting an API connection error. How can I fix it?
 
-Updated yesterday
+Updated this week
 
 This error usually indicates an issue on your end, potentially related to your firewall, network, or VPN. Try these steps:
 
@@ -51,10 +51,6 @@ Related Articles
 
 How can I access the Claude API?
 
-[](https://support.claude.com/en/articles/8114535-where-can-i-go-for-claude-api-support-and-assistance)
-
-Where can I go for Claude API support and assistance?
-
 [](https://support.claude.com/en/articles/9015913-how-to-get-support)
 
 How to get support
@@ -62,6 +58,10 @@ How to get support
 [](https://support.claude.com/en/articles/12702546-deploying-enterprise-grade-mcp-servers-with-desktop-extensions)
 
 Deploying enterprise-grade MCP servers with desktop extensions
+
+[](https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions)
+
+Enforce network-level access control with Tenant Restrictions
 
 [](https://support.claude.com/en/articles/13403291-how-can-i-check-connectivity-to-the-claude-api)
 

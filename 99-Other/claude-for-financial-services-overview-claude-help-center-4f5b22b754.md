@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:26Z"
+fetched_at: "2026-02-16T21:12:40Z"
 source_url: "https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview"
 title: "Claude for Financial Services Overview | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Claude for Financial Services Overview
 
 # Claude for Financial Services Overview
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

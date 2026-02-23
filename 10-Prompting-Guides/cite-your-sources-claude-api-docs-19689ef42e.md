@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:28Z"
+fetched_at: "2026-02-22T13:21:28Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/cite-your-sources"
 title: "Cite your sources - Claude API Docs"
 ---
@@ -15,9 +15,9 @@ Get answers to questions about a document's content with relevant citations supp
 
 Copy page
 
-We recommend using the [citation feature](/docs/en/build-with-claude/citations) built into the API instead of a prompt based approach. Using the API citation feature will improve citation quality, ensure that all returned citations are valid, and potentially reduce the number of needed output tokens.
+Consider using the [citation feature](/docs/en/build-with-claude/citations) built into the API instead of a prompt based approach. Using the API citation feature will improve citation quality, ensure that all returned citations are valid, and potentially reduce the number of needed output tokens.
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 [TABLE]
 
@@ -25,13 +25,9 @@ We recommend using the [citation feature](/docs/en/build-with-claude/citations) 
 
 Example output
 
-Quotes:  
-\[1\] "We have recently experienced rapid growth. Our subscribers have grown approximately 49-fold from December 31, 2018 to December 31, 2022. Our revenue increased by approximately 22% to \$136.1 million for the year ended December 31, 2022, from approximately \$111.2 million for the year ended December 31, 2021."  
-\[2\] "Our gross profit decreased by \$8.1 million or 14%, to \$51.8 million for the year ended December 31, 2022, from \$60.0 million for the year ended December 31, 2021, primarily attributable to certain disruptive and incremental costs due to the global supply chain constraints in fiscal year 2022."  
-\[3\] "Our net dollar expansion rate of 103% for the three months ended December 31, 2022 demonstrates the stickiness and growth potential of our platform."
+Quotes: \[1\] "We have recently experienced rapid growth. Our subscribers have grown approximately 49-fold from December 31, 2018 to December 31, 2022. Our revenue increased by approximately 22% to \$136.1 million for the year ended December 31, 2022, from approximately \$111.2 million for the year ended December 31, 2021." \[2\] "Our gross profit decreased by \$8.1 million or 14%, to \$51.8 million for the year ended December 31, 2022, from \$60.0 million for the year ended December 31, 2021, primarily attributable to certain disruptive and incremental costs due to the global supply chain constraints in fiscal year 2022." \[3\] "Our net dollar expansion rate of 103% for the three months ended December 31, 2022 demonstrates the stickiness and growth potential of our platform."
 
-Answer:  
-Matterport has experienced rapid subscriber and revenue growth in recent years. \[1\] However, their gross profit declined in 2022 due to supply chain issues. \[2\] Their net dollar expansion rate indicates strong subscriber retention and potential for continued growth. \[3\] Overall, despite the dip in gross profit, Matterport's subscriber and revenue growth, along with their platform's stickiness, suggest the company is doing relatively well.
+Answer: Matterport has experienced rapid subscriber and revenue growth in recent years. \[1\] However, their gross profit declined in 2022 due to supply chain issues. \[2\] Their net dollar expansion rate indicates strong subscriber retention and potential for continued growth. \[3\] Overall, despite the dip in gross profit, Matterport's subscriber and revenue growth, along with their platform's stickiness, suggest the company is doing relatively well.
 
 ------------------------------------------------------------------------
 

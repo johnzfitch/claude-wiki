@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:19Z"
+fetched_at: "2026-02-23T00:45:33Z"
 source_url: "https://support.claude.com/en/articles/11101545-using-research-and-google-workspace"
 title: "Using Research and Google Workspace | Claude Help Center"
 ---
@@ -55,6 +55,10 @@ Using the Google Docs integration
 
 Using the Gmail and Google Calendar Integrations
 
+[](https://support.claude.com/en/articles/11088779-using-google-drive-cataloging-on-the-enterprise-plan)
+
+Using Google Drive Cataloging on the Enterprise Plan
+
 [](https://support.claude.com/en/articles/11088861-using-research-on-claude)
 
 Using Research on Claude
@@ -62,10 +66,6 @@ Using Research on Claude
 [](https://support.claude.com/en/articles/11106443-using-research)
 
 Using Research
-
-[](https://support.claude.com/en/articles/12461605-using-claude-in-slack)
-
-Using Claude in Slack
 
 Did this answer your question?
 

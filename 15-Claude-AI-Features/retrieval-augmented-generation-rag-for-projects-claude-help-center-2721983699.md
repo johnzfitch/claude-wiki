@@ -1,8 +1,8 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:42Z"
+fetched_at: "2026-02-23T00:45:18Z"
 source_url: "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects"
-title: "Retrieval Augmented Generation (RAG) for projects | Claude Help Center"
+title: "Retrieval augmented generation (RAG) for projects | Claude Help Center"
 ---
 
 [](/en/)
@@ -41,11 +41,11 @@ Table of contents
 
 [Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
 
-Retrieval Augmented Generation (RAG) for projects
+Retrieval augmented generation (RAG) for projects
 
-# Retrieval Augmented Generation (RAG) for projects
+# Retrieval augmented generation (RAG) for projects
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -61,13 +61,13 @@ Table of contents
 
 [](#h_6be0f29105)
 
-RAG for projects is available for all paid Claude plans (Pro, Max, Team, and Enterprise). Free users do not have access to this feature.
+RAG for projects is available for all Claude plans (free, Pro, Max, Team, and Enterprise).
 
 Projects can now handle much more content without running into limits, giving Claude better context to help you. As you add more files and information to your projects, Claude automatically switches to a faster mode (powered by RAG) that keeps response times quick while maintaining quality responses.
 
 ## What is RAG for projects?
 
-RAG or Retrieval Augmented Generation is a technology that allows your projects to store and access significantly more knowledge than before. When your project knowledge approaches the context window limit, Claude will automatically enable RAG mode to expand your project's capacity by up to 10x while maintaining quality responses.
+RAG or retrieval augmented generation is a technology that allows your projects to store and access significantly more knowledge than before. When your project knowledge approaches the context window limit, Claude will automatically enable RAG mode to expand your project's capacity by up to 10x while maintaining quality responses.
 
 Previously, projects had a knowledge capacity limit based on the **[context window](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)**. Once you reached this threshold, it wasn't possible to add more content. With RAG, you can continue adding knowledge beyond these limits while maintaining full functionality.
 

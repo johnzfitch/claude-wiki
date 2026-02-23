@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-10T10:49:18Z"
+fetched_at: "2026-02-23T00:45:16Z"
 source_url: "https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android"
 title: "Using the Claude Widget on Android | Claude Help Center"
 ---

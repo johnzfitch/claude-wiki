@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:07:32Z"
+fetched_at: "2026-02-22T13:38:23Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/versions/delete"
 title: "Delete Skill Version - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ TypeScript
 
 client.beta.skills.versions.delete(stringversion, VersionDeleteParams { skill_id, betas } params, RequestOptionsoptions?): [VersionDeleteResponse](/docs/en/api/beta#version_delete_response) { id, type }
 
-delete/v1/skills/{skill_id}/versions/{version}
+DELETE/v1/skills/{skill_id}/versions/{version}
 
 Delete Skill Version
 
@@ -41,7 +41,7 @@ Accepts one of the following:
 
 (string & {})
 
-"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 16 more
+"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 17 more
 
 "message-batches-2024-09-24"
 
@@ -80,6 +80,8 @@ Accepts one of the following:
 "model-context-window-exceeded-2025-08-26"
 
 "skills-2025-10-02"
+
+"fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

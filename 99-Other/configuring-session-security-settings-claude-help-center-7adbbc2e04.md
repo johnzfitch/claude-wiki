@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-16T21:12:47Z"
 source_url: "https://support.claude.com/en/articles/13163631-configuring-session-security-settings"
 title: "Configuring session security settings | Claude Help Center"
 ---
@@ -63,7 +63,7 @@ Session duration controls allow Enterprise and Console Admins to set a maximum s
 
 1.  Log in to your Enterprise organization as an Admin or above.
 
-2.  Navigate to [Admin settings \> Identity and access](https://claude.ai/admin-settings/identity).
+2.  Navigate to **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
 
 3.  Locate the **Session security** section.
 
@@ -71,13 +71,13 @@ Session duration controls allow Enterprise and Console Admins to set a maximum s
 
 5.  Confirm your selection by clicking “Enable.”
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1888469436/1725e63ea1a2615948faecf4ec73/9bd276a1-7329-414d-87a1-d04dac93fff7?expires=1770722100&signature=1a951d3e4cd4ddacf53e0f641245e5dc77b8d9b76ec7b9b1dec33c7c69de4d62&req=dSgvHs14lIVcX%2FMW1HO4zQNx5OIgQVhRg%2F6XaftFnjxXpYvXZsMhAv%2FWPZOZ%0ARmUsOMSicgwgwK0Zn2c%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1888469436/1725e63ea1a2615948faecf4ec73/9bd276a1-7329-414d-87a1-d04dac93fff7?expires=1771278300&signature=cc6004fd223a5937bbd8fd87da937a2eac2f558119cb669d4d35ee34e0c47c1e&req=dSgvHs14lIVcX%2FMW1HO4zQNx5OMlRFJTg%2F6XaftFnjxZOzLlmf7eDWmHMZ3%2F%0AjGJLsYLmS52pCFW0VeU%3D%0A)
 
 ### For Console Admins
 
 1.  Log in to your Console account as an Admin.
 
-2.  Navigate to [Settings \> Identity and access](http://platform.claude.com/settings/identity).
+2.  Navigate to **[Settings \> Identity and access](http://platform.claude.com/settings/identity)**.
 
 3.  Locate the **Session security** section.
 
@@ -85,7 +85,7 @@ Session duration controls allow Enterprise and Console Admins to set a maximum s
 
 5.  Confirm your selection by clicking “Enable.”
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1888469435/7a766bbe02e61c7d8f05deb5b8f0/b0bda400-47c6-43dd-9907-131ebe180b36?expires=1770722100&signature=d3b4be788feaf3866b94d32e365a2dcbb4ffdc6765ae57b77ed4a8283ab4f501&req=dSgvHs14lIVcXPMW1HO4zWzx17kxJX0gXZ5D7eVpMtdKRJ6QqH7dpSyCMBkS%0ApWYIRKy3faEcdqPqajg%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1888469435/7a766bbe02e61c7d8f05deb5b8f0/b0bda400-47c6-43dd-9907-131ebe180b36?expires=1771278300&signature=28c6a12dbc07a91aa39ab34f01684b5d185be0c735e7da96680eb4f0422a1ed6&req=dSgvHs14lIVcXPMW1HO4zWzx17g0IHciXZ5D7eVpMtc8%2B0AbVIZLxqat0edp%0AcHIGaQwZRu0FoRYNB64%3D%0A)
 
 ### What happens after enabling shortened session length?
 
@@ -103,7 +103,7 @@ You can change the session duration at any time by selecting a new value from th
 
 - Sessions scheduled to expire beyond the new duration will have their expiration shortened accordingly.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1888469437/46ac5bc55484ca01556d87a5ade7/b01a7651-ad65-4b32-93ff-16dbc9ca97c0?expires=1770722100&signature=3a631de975c0332b1fac74f6be4b34475420744ad9744344df1ee943070d0516&req=dSgvHs14lIVcXvMW1HO4zZ7mVcic5TuiA00cbyPOLDVsKNRooHqF7EuEE3ns%0AXSXpxU7muWkRhES7t88%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1888469437/46ac5bc55484ca01556d87a5ade7/b01a7651-ad65-4b32-93ff-16dbc9ca97c0?expires=1771278300&signature=7ad716de637f7b8c24661b602fa4df2b036fe808221ff9206b93d1942b5a4029&req=dSgvHs14lIVcXvMW1HO4zZ7mVcmZ4DGgA00cbyPOLDXG%2B7%2FPX5mVz3eMlQwP%0ANpMztZGbt4FHzDlL6ow%3D%0A)
 
 ## Disabling session length settings
 
@@ -117,13 +117,13 @@ If a user belongs to multiple organizations with different session duration sett
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan)
-
-What is the Pro plan?
-
 [](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
 
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
+
+[](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide)
+
+Microsoft 365 Connector: Security Guide
 
 [](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
 

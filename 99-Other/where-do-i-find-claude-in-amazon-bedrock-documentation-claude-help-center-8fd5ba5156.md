@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:16Z"
+fetched_at: "2026-02-23T00:45:50Z"
 source_url: "https://support.claude.com/en/articles/10280783-where-do-i-find-claude-in-amazon-bedrock-documentation"
 title: "Where do I find Claude in Amazon Bedrock documentation? | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-23T00:45:52Z"
 source_url: "https://support.claude.com/en/articles/7996920-how-do-i-get-access-to-claude-in-amazon-bedrock"
 title: "How do I get access to Claude in Amazon Bedrock? | Claude Help Center"
 ---

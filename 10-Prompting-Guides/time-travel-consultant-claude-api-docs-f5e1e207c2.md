@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:27Z"
+fetched_at: "2026-02-22T13:21:17Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/time-travel-consultant"
 title: "Time travel consultant - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Help the user navigate hypothetical time travel scenarios and their implications
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -72,25 +72,25 @@ Vertex AI TypeScript
 import anthropic
 
 client = anthropic.Anthropic(
-  # defaults to os.environ.get("ANTHROPIC_API_KEY")
-  api_key="my_api_key",
+    # defaults to os.environ.get("ANTHROPIC_API_KEY")
+    api_key="my_api_key",
 )
 message = client.messages.create(
-  model="claude-opus-4-6",
-  max_tokens=2000,
-  temperature=1,
-  system="You are an AI assistant with expertise in physics, philosophy, and science fiction. Your task is to help users explore and understand the implications of hypothetical time travel scenarios. Provide detailed insights on the potential consequences, paradoxes, and ethical considerations involved in each specific scenario, while maintaining a friendly and engaging conversation.",
-  messages=[
-    {
-      "role": "user",
-      "content": [
+    model="claude-opus-4-6",
+    max_tokens=2000,
+    temperature=1,
+    system="You are an AI assistant with expertise in physics, philosophy, and science fiction. Your task is to help users explore and understand the implications of hypothetical time travel scenarios. Provide detailed insights on the potential consequences, paradoxes, and ethical considerations involved in each specific scenario, while maintaining a friendly and engaging conversation.",
+    messages=[
         {
-          "type": "text",
-          "text": "Let's say I have a time machine and I travel back to the year 1900. While there, I accidentally prevent the invention of the airplane by the Wright brothers. What would be the potential implications of this action?"
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Let's say I have a time machine and I travel back to the year 1900. While there, I accidentally prevent the invention of the airplane by the Wright brothers. What would be the potential implications of this action?",
+                }
+            ],
         }
-      ]
-    }
-  ]
+    ],
 )
 print(message.content)
 ```

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:34Z"
+fetched_at: "2026-02-16T21:12:46Z"
 source_url: "https://support.claude.com/en/articles/12997377-getting-started-with-claude-ai"
 title: "Getting started with Claude.ai | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Getting started with Claude.ai
 
 # Getting started with Claude.ai
 
-Updated this week
+Updated over a week ago
 
 # An error occurred.
 
@@ -41,13 +41,13 @@ Learn how to get the most out of chatting with Claude. This tutorial covers the 
 
 Related Articles
 
+[](https://support.claude.com/en/articles/10574485-using-extended-thinking)
+
+Using extended thinking
+
 [](https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research)
 
 When should I use web search, extended thinking, and Research?
-
-[](https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai)
-
-Getting the most out of Sonnet 4.5 in Claude.ai
 
 [](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)
 

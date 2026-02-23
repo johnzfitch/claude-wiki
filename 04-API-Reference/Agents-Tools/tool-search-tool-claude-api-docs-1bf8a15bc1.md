@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:28Z"
+fetched_at: "2026-02-22T13:10:42Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool"
 title: "Tool search tool - Claude API Docs"
 ---
 
-Tools
+Tool infrastructure
 
 # Tool search tool
 
@@ -22,11 +22,9 @@ This approach solves two critical challenges as tool libraries scale:
 
 Although this is provided as a server-side tool, you can also implement your own client-side tool search functionality. See [Custom tool search implementation](#custom-tool-search-implementation) for details.
 
-The tool search tool is currently in public beta. Include the appropriate [beta header](/docs/en/api/beta-headers) for your provider:
-
-[TABLE]
-
 Please reach out through our [feedback form](https://forms.gle/MhcGFFwLxuwnWTkYA) to share your feedback on this feature.
+
+Server-side tool search is **not** covered by [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) arrangements. Data is retained according to the feature's standard retention policy. [Custom client-side tool search implementations](#custom-tool-search-implementation) use the standard Messages API and are ZDR-eligible.
 
 On Amazon Bedrock, server-side tool search is available only via the [invoke API](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-runtime_example_bedrock-runtime_InvokeModel_AnthropicClaude_section.html), not the converse API.
 
@@ -65,7 +63,6 @@ Shell
 curl https://api.anthropic.com/v1/messages \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
     --header "anthropic-version: 2023-06-01" \
-    --header "anthropic-beta: advanced-tool-use-2025-11-20" \
     --header "content-type: application/json" \
     --data '{
         "model": "claude-opus-4-6",
@@ -259,7 +256,7 @@ Shell
 curl https://api.anthropic.com/v1/messages \
   --header "x-api-key: $ANTHROPIC_API_KEY" \
   --header "anthropic-version: 2023-06-01" \
-  --header "anthropic-beta: advanced-tool-use-2025-11-20,mcp-client-2025-11-20" \
+  --header "anthropic-beta: mcp-client-2025-11-20" \
   --header "content-type: application/json" \
   --data '{
     "model": "claude-opus-4-6",
@@ -414,74 +411,56 @@ import anthropic
 client = anthropic.Anthropic()
 
 # First request with tool search
-messages = [
-    {
-        "role": "user",
-        "content": "What's the weather in Seattle?"
-    }
-]
+messages = [{"role": "user", "content": "What's the weather in Seattle?"}]
 
-response1 = client.beta.messages.create(
+response1 = client.messages.create(
     model="claude-opus-4-6",
-    betas=["advanced-tool-use-2025-11-20"],
     max_tokens=2048,
     messages=messages,
     tools=[
-        {
-            "type": "tool_search_tool_regex_20251119",
-            "name": "tool_search_tool_regex"
-        },
+        {"type": "tool_search_tool_regex_20251119", "name": "tool_search_tool_regex"},
         {
             "name": "get_weather",
             "description": "Get weather for a location",
             "input_schema": {
                 "type": "object",
-                "properties": {
-                    "location": {"type": "string"}
-                },
-                "required": ["location"]
+                "properties": {"location": {"type": "string"}},
+                "required": ["location"],
             },
-            "defer_loading": True
-        }
-    ]
+            "defer_loading": True,
+        },
+    ],
 )
 
 # Add Claude's response to conversation
-messages.append({
-    "role": "assistant",
-    "content": response1.content
-})
+messages.append({"role": "assistant", "content": response1.content})
 
 # Second request with cache breakpoint
-messages.append({
-    "role": "user",
-    "content": "What about New York?",
-    "cache_control": {"type": "ephemeral"}
-})
+messages.append(
+    {
+        "role": "user",
+        "content": "What about New York?",
+        "cache_control": {"type": "ephemeral"},
+    }
+)
 
-response2 = client.beta.messages.create(
+response2 = client.messages.create(
     model="claude-opus-4-6",
-    betas=["advanced-tool-use-2025-11-20"],
     max_tokens=2048,
     messages=messages,
     tools=[
-        {
-            "type": "tool_search_tool_regex_20251119",
-            "name": "tool_search_tool_regex"
-        },
+        {"type": "tool_search_tool_regex_20251119", "name": "tool_search_tool_regex"},
         {
             "name": "get_weather",
             "description": "Get weather for a location",
             "input_schema": {
                 "type": "object",
-                "properties": {
-                    "location": {"type": "string"}
-                },
-                "required": ["location"]
+                "properties": {"location": {"type": "string"}},
+                "required": ["location"],
             },
-            "defer_loading": True
-        }
-    ]
+            "defer_loading": True,
+        },
+    ],
 )
 
 print(f"Cache read tokens: {response2.usage.get('cache_read_input_tokens', 0)}")

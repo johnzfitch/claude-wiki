@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:28Z"
+fetched_at: "2026-02-22T13:53:45Z"
 source_url: "https://platform.claude.com/docs/en/api/kotlin/beta/skills/retrieve"
 title: "API Reference - Claude API Docs"
 ---

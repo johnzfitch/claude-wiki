@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:25Z"
+fetched_at: "2026-02-23T00:45:16Z"
 source_url: "https://support.claude.com/en/articles/12109679-creating-a-new-account-after-deletion"
 title: "Creating a new account after deletion | Claude Help Center"
 ---
@@ -47,13 +47,13 @@ Safeguards Warnings and Appeals
 
 How can I delete my Claude account?
 
+[](https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription)
+
+How to redeem a Claude gift subscription
+
 [](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account)
 
 Logging in to your Claude account
-
-[](https://support.claude.com/en/articles/13325567-account-management-faqs)
-
-Account Management FAQs
 
 [](https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account)
 

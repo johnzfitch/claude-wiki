@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:12Z"
+fetched_at: "2026-02-22T13:59:17Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/list"
 title: "List Skills - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Skills.List(ctx, params) (\*PageCursor\[[BetaSkillListResponse](/docs/en/api/beta#BetaSkillListResponse)\], error)
 
-get/v1/skills
+GET/v1/skills
 
 List Skills
 
@@ -21,19 +21,25 @@ List Skills
 
 params BetaSkillListParams
 
-Limit param.Field\[int64\]optional
+Limit param.Field\[int64\]
+
+optional
 
 Query param: Number of results to return per page.
 
 Maximum value is 100. Defaults to 20.
 
-Page param.Field\[string\]optional
+Page param.Field\[string\]
+
+optional
 
 Query param: Pagination token for fetching a specific page of results.
 
 Pass the value from a previous response's `next_page` field to get the next page of results.
 
-Source param.Field\[string\]optional
+Source param.Field\[string\]
+
+optional
 
 Query param: Filter skills by source.
 
@@ -42,7 +48,9 @@ If provided, only skills from the specified source will be returned:
 - `"custom"`: only return user-created skills
 - `"anthropic"`: only return Anthropic-created skills
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Header param: Optional header to specify the beta version(s) you want to use.
 
@@ -89,6 +97,8 @@ const AnthropicBetaContextManagement2025_06_27 AnthropicBeta = "context-manageme
 const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-context-window-exceeded-2025-08-26"
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
+
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

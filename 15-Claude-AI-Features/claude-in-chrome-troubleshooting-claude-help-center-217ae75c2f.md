@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:01Z"
+fetched_at: "2026-02-23T00:45:20Z"
 source_url: "https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting"
 title: "Claude in Chrome Troubleshooting | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Claude in Chrome Troubleshooting
 
 # Claude in Chrome Troubleshooting
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -139,7 +139,7 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 - **Report suspected prompt injection** if Claude behaves unexpectedly.
 
-  - **Email [\[email protected\]](/cdn-cgi/l/email-protection#bcc9cfd9cecfdddad9c8c5fcddd2c8d4ced3ccd5df92dfd3d1)** to report any safety issues or unexpected behaviors.
+  - **Email [\[email protected\]](/cdn-cgi/l/email-protection#e194928493928087849598a1808f9589938e918882cf828e8c)** to report any safety issues or unexpected behaviors.
 
 - **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for technical issues or account problems.
 
@@ -163,11 +163,11 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely)
 
@@ -179,7 +179,7 @@ Claude in Chrome Permissions Guide
 
 [](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Admin Controls
+Claude in Chrome admin controls
 
 Did this answer your question?
 

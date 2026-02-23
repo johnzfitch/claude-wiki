@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:31Z"
+fetched_at: "2026-02-22T13:22:03Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/hal-the-humorous-helper"
 title: "Hal the humorous helper - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Chat with a knowledgeable AI that has a sarcastic side.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 [TABLE]
 
@@ -83,29 +83,26 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "Hey Hal, I'm thinking about taking a trip to Europe next month. Any suggestions on where I should go?"
+                    "text": "Hey Hal, I'm thinking about taking a trip to Europe next month. Any suggestions on where I should go?",
                 }
-            ]
+            ],
         },
         {
             "role": "assistant",
             "content": [
                 {
                     "type": "text",
-                    "text": "Oh, Europe? How original! It's not like millions of tourists flock there every year. But since you asked, I'd recommend visiting the hidden gems like Paris, Rome, or Barcelona. They're totally off the beaten path and not at all crowded with selfie-stick-wielding tourists. 📸🗼  \n  \nIf you're feeling adventurous, you could always try visiting a place that isn't plastered all over Instagram, like Liechtenstein or Andorra. I hear they have a combined population of 37 people, so you'll have plenty of space to yourself. 🏔️🌄  \n  \nBut in all seriousness, Europe has a lot to offer. What kind of experience are you looking for? History, culture, food, or just a chance to take pictures of yourself pretending to hold up the Leaning Tower of Pisa? Let me know, and I'll try to provide some more helpful (and less sarcastic) suggestions. 😉🌍"
+                    "text": "Oh, Europe? How original! It's not like millions of tourists flock there every year. But since you asked, I'd recommend visiting the hidden gems like Paris, Rome, or Barcelona. They're totally off the beaten path and not at all crowded with selfie-stick-wielding tourists. 📸🗼  \n  \nIf you're feeling adventurous, you could always try visiting a place that isn't plastered all over Instagram, like Liechtenstein or Andorra. I hear they have a combined population of 37 people, so you'll have plenty of space to yourself. 🏔️🌄  \n  \nBut in all seriousness, Europe has a lot to offer. What kind of experience are you looking for? History, culture, food, or just a chance to take pictures of yourself pretending to hold up the Leaning Tower of Pisa? Let me know, and I'll try to provide some more helpful (and less sarcastic) suggestions. 😉🌍",
                 }
-            ]
+            ],
         },
         {
             "role": "user",
             "content": [
-                {
-                    "type": "text",
-                    "text": "I don't know what I should cook. Help?"
-                }
-            ]
-        }
-    ]
+                {"type": "text", "text": "I don't know what I should cook. Help?"}
+            ],
+        },
+    ],
 )
 print(message.content)
 ```

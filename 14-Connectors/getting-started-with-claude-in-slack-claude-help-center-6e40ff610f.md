@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:20Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/11506255-getting-started-with-claude-in-slack"
 title: "Getting started with Claude in Slack | Claude Help Center"
 ---
@@ -75,17 +75,17 @@ It’s how we’ve brought Claude’s capabilities directly to Slack, bringing A
 
 **Direct message with Claude**: Start a private conversation with @Claude.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755143775/0ac74968f16b0c304ad05c1501c3/8f870a90-c622-449d-9eba-0a2edf5d63f1?expires=1770722100&signature=20ccf465824591eb01b6b2c2f63f9ddca709b07846f7b980d58f6bf89d657717&req=dSciE8h6noZYXPMW1HO4zb2WBQUEFIZ25mlLMjhGEMFbZNmNlNIl%2Bd2kvqka%0AgqgQT%2FChzoVjmTmxgSc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755143775/0ac74968f16b0c304ad05c1501c3/8f870a90-c622-449d-9eba-0a2edf5d63f1?expires=1771809300&signature=c65723b4e7ccd3d2b25383b332f4967d397f9e07b48e13119dc0b71776552482&req=dSciE8h6noZYXPMW1HO4zb2WBQQLFo105mlLMjhGEMFF%2BuSov%2BQzARA7aMT9%0AllWC4V8%2FaKcuO%2FPVEZU%3D%0A)
 
 **AI assistant panel**: Click the Claude icon in Slack's AI assistant header to open a panel on the right side of your Slack window, allowing you to access Claude from anywhere in the Slack app.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755144720/47781e38d6f97597aa494e0aeb2d/38f88d2c-aa96-4d35-8a02-7ad6b23f8699?expires=1770722100&signature=031587f11b5e1b094cb1fcc914ed66d44514c297ffbba747ed6dc24c138bbb7f&req=dSciE8h6mYZdWfMW1HO4zUifwjHeFaGlPUSeDntyEuXIhb4vI9cZJ4goRfjl%0AKk%2BVYBoSCqlMW7PFTlg%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755144720/47781e38d6f97597aa494e0aeb2d/38f88d2c-aa96-4d35-8a02-7ad6b23f8699?expires=1771809300&signature=81586ac42c0803a64bbd45f39a5a872c663ae4e0b966696f249b328e374c9c72&req=dSciE8h6mYZdWfMW1HO4zUifwjDRF6qnPUSeDntyEuXGTXCQwNKNMe25ZhFE%0A%2B3F76d1G0ipsYB%2B9olA%3D%0A)
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755145556/3155c34bba5a64e0ab7b760e78c2/5c54e519-3c0d-4ffa-a555-0b9d9660ea53?expires=1770722100&signature=2a01614e41244487bf28c5d7c724cb6d177a7bed05bcaa4509c8da3e5dde5a3d&req=dSciE8h6mIRaX%2FMW1HO4zXrVXdh78o3CBGejWRiWDiLAt7Ckc7AoIsmpZzCl%0A06F4zLiq7kzJhpHW5LU%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755145556/3155c34bba5a64e0ab7b760e78c2/5c54e519-3c0d-4ffa-a555-0b9d9660ea53?expires=1771809300&signature=e5a09f0ab59493b888f66c996767810e11a0806d7605daea88441f64bf856d87&req=dSciE8h6mIRaX%2FMW1HO4zXrVXdl08IbABGejWRiWDiK7DJ7BHjF2EkrH3bc0%0A5QBNgX6tQuGpNPieEZk%3D%0A)
 
 **Thread participation**: Mention @Claude in any thread to get Claude's help with the conversation.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755146282/dd7e489f38bd786346478a9b286e/c3e07137-64e6-470c-9f3f-1db2632a784e?expires=1770722100&signature=cfa5ffd38590b42dcb089b61fea873a4891e569a23596460a2f1b4889616d2d6&req=dSciE8h6m4NXW%2FMW1HO4za6vkdDjAAcmdk%2ByK9LXwIJ9%2FrgiV1g6Q0nUGGc3%0Ay5miw5%2Fz0QY32ghkOtQ%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755146282/dd7e489f38bd786346478a9b286e/c3e07137-64e6-470c-9f3f-1db2632a784e?expires=1771809300&signature=b91411665b0ec158f122aaa10b9d06b898b85d3e235329cd983d912e28b34acb&req=dSciE8h6m4NXW%2FMW1HO4za6vkdHsAgwkdk%2ByK9LXwIKFtibHG0upIXxAT5U0%0AseSHhw4DTAPpeNgynrU%3D%0A)
 
 All surfaces provide the same capabilities that you have enabled in Claude, including web search and connections to your integrated tools, allowing you to seamlessly integrate AI assistance into your existing workflow.
 
@@ -123,17 +123,17 @@ Once your Slack admin has approved Claude (or if you're on a personal Slack plan
 
 2.  Click "Connect Account” to be prompted to connect your Claude account:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755147280/abac53f0415690817c630a420091/98c15ecd-761c-4e0d-aeae-1c52d38e52c8?expires=1770722100&signature=396ae14ba534b76b723ba7d3ee4195ec1f155b80597532110612c7d57c376328&req=dSciE8h6moNXWfMW1HO4zRIwiky7RyJn%2Fy7g3WAjXh5TvtTZcAu%2Fx7OfsCuz%0AHziU%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755147280/abac53f0415690817c630a420091/98c15ecd-761c-4e0d-aeae-1c52d38e52c8?expires=1771809300&signature=e0b71ae75a076ef24bdfae6ec432c23c90aedb561361e11f73c9ff4a215b8397&req=dSciE8h6moNXWfMW1HO4zRIwik20RSll%2Fy7g3WAjXh5Nm6Su6tLMmvdJfHUZ%0AnE5v%0A)
 
 3.  In the window that opens, select which organization you would like to connect with Claude for Slack.
 
 4.  Click “Authorize” to allow Claude in Slack to access your Claude chat account:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755147985/57be4bd15a4720466d9114ef9e0d/5944ab3f-20b9-43f7-b475-127b98a3eef4?expires=1770722100&signature=33f1b9720f31925bd2dacbfb59815caa07fdbd8b461a7accb4df1e4a24a580b3&req=dSciE8h6mohXXPMW1HO4zcpXRZU8EA%2BVFQ%2BRWX0w%2Fe5OFh75B5jySuHaTbwQ%0AZSgN%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755147985/57be4bd15a4720466d9114ef9e0d/5944ab3f-20b9-43f7-b475-127b98a3eef4?expires=1771809300&signature=b58cd75fd010c990f2311b0b524f55ea43d7da42eadbc5393b271e2372ed2efe&req=dSciE8h6mohXXPMW1HO4zcpXRZQzEgSXFQ%2BRWX0w%2Fe6SCN%2Fdtmetu53NC2Ka%0A%2F7DI%0A)
 
 5.  You should see a confirmation message upon successful connection:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755148657/71571a264d97c7a145c399b3e653/f0d32375-bf8f-47d5-89e3-c165eb3a1d41?expires=1770722100&signature=df0837886ee78821224c8572cc6a65c5a20cb1d7703273891f22328f5e993e1c&req=dSciE8h6lYdaXvMW1HO4zZ9S5TEedpNqXLLzhWuBjzOulBWbEHw5fl%2Bvti7q%0ALrwh%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755148657/71571a264d97c7a145c399b3e653/f0d32375-bf8f-47d5-89e3-c165eb3a1d41?expires=1771809300&signature=9c2df40b02f67d52d405502d7f7bd1b697cc6403b217e3cf3c9ab13857513ee9&req=dSciE8h6lYdaXvMW1HO4zZ9S5TARdJhoXLLzhWuBjzPb8APdyVcGn3Iv11YP%0A3%2Bkr%0A)
 
 6.  After successful authentication, return to Slack.
 
@@ -145,11 +145,11 @@ Once your Slack admin has approved Claude (or if you're on a personal Slack plan
 
 Team and Enterprise plan users can route coding tasks from Slack to Claude Code on the web. To enable this capability:
 
-1.  A Claude Owner or Primary Owner must enable Claude Code on the web by navigating to [Admin settings \> Claude Code](http://claude.ai/admin-settings/claude-code).
+1.  A Claude Owner or Primary Owner must enable Claude Code on the web by navigating to **[Organization settings \> Claude Code](http://claude.ai/admin-settings/claude-code)**.
 
 2.  Individual users must have access to Claude Code on the web.
 
-Once enabled, mentioning @Claude for coding tasks will automatically create a Claude Code session. Learn more about [using Claude Code in Slack](https://support.claude.com/en/articles/12461605-using-claude-in-slack#h_adda66b697).
+Once enabled, mentioning @Claude for coding tasks will automatically create a Claude Code session. Learn more about **[using Claude Code in Slack](https://support.claude.com/en/articles/12461605-using-claude-in-slack#h_adda66b697)**.
 
 ------------------------------------------------------------------------
 
@@ -167,7 +167,7 @@ Enabling the Slack connector allows Claude to search within your Slack workspace
 
 1.  Log in to your Owner or Primary Owner account and click your initials in the lower left corner.
 
-2.  Navigate to [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors).
+2.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
 3.  Under “Connectors,” click the "Enable" button next to the Slack connector.
 
@@ -177,7 +177,7 @@ Enabling the Slack connector allows Claude to search within your Slack workspace
 
 1.  Log in to your Claude account and click your initials in the lower left corner.
 
-2.  Navigate to [Settings \> Connectors](http://claude.ai/settings/connectors).
+2.  Navigate to **[Settings \> Connectors](http://claude.ai/settings/connectors)**.
 
 3.  Find the Slack connector and click “Connect.”
 
@@ -205,7 +205,7 @@ To disconnect your Claude account from Slack:
 
 3.  Confirm the disconnection.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755149744/97a579fedf87deb5e5b6abf48963/4cab9f61-9f98-40c4-969a-f590716dfb38?expires=1770722100&signature=948afa9343aa3171eba87ca1a492983a8e57af607e72e69a53a4582a2471fe5b&req=dSciE8h6lIZbXfMW1HO4zdIAspVMbLORQgg7UiXQlE3WM7DzTw6bVqcnfv34%0AIpKPMYPoAsBjopoAn8o%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755149744/97a579fedf87deb5e5b6abf48963/4cab9f61-9f98-40c4-969a-f590716dfb38?expires=1771809300&signature=22f6523463f0087b51390268940b16e4ed8ca4ce2f20f705088757e23a0c8d4c&req=dSciE8h6lIZbXfMW1HO4zdIAspRDbriTQgg7UiXQlE2ucmrCCiY%2FFC1cP4vQ%0AM32u%2BW4W27bSp0MX394%3D%0A)
 
 Disconnecting will:
 
@@ -259,13 +259,13 @@ If you are using a company Slack instance and are not assigned to an Admin role,
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities)
+[](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 
-Using the Connectors Directory to extend Claude’s capabilities
+Use the Connectors Directory to extend Claude’s capabilities
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12461605-using-claude-in-slack)
 
@@ -277,7 +277,7 @@ Getting Started with Claude for Life Sciences
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
 Did this answer your question?
 

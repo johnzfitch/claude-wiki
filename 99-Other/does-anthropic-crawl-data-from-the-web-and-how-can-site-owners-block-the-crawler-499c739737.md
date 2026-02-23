@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-16T21:12:50Z"
 source_url: "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
 title: "Does Anthropic crawl data from the web, and how can site owners block the crawler? | Claude Help Center"
 ---
@@ -59,9 +59,9 @@ Disallow: /
 
 Opting out of being crawled by Anthropic Bots requires modifying the robots.txt file in the manner above. Alternate methods like blocking IP address(es) from which Anthropic Bots operates may not work correctly or persistently guarantee an opt-out, as doing so impedes our ability to read your robots.txt file. Additionally, we do not currently publish IP ranges, as we use service provider public IPs. This may change in the future.
 
-You can learn more about our data handling practices and commitments at our [Help Center](https://support.anthropic.com/en/collections/4078534-privacy-legal). If you have further questions, or believe that our Bots may be malfunctioning, please reach out to [\[email protected\]](/cdn-cgi/l/email-protection#43202f22362726212c3703222d372b312c332a206d202c2e). Please reach out from an email that includes the domain you are contacting us about, as it is otherwise difficult to verify reports.
+You can learn more about our data handling practices and commitments at our [Help Center](https://support.anthropic.com/en/collections/4078534-privacy-legal). If you have further questions, or believe that our Bots may be malfunctioning, please reach out to [\[email protected\]](/cdn-cgi/l/email-protection#beddd2dfcbdadbdcd1cafedfd0cad6ccd1ced7dd90ddd1d3). Please reach out from an email that includes the domain you are contacting us about, as it is otherwise difficult to verify reports.
 
-You can be notified when this article is updated by clicking here and completing the form:
+You can be notified of substantial changes to this article by clicking here and completing the form:
 
 [Subscribe to updates](https://docs.google.com/forms/d/e/1FAIpQLScQk_jt1NrI0AZU3RfBCDkCe4RBS2lAzMVILBICWdi4xwBaRw/viewform)
 

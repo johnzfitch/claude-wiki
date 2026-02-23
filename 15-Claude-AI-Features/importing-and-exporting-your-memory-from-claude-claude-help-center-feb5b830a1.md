@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-10T10:49:25Z"
+fetched_at: "2026-02-23T00:45:07Z"
 source_url: "https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude"
 title: "Importing and exporting your memory from Claude | Claude Help Center"
 ---
@@ -81,15 +81,15 @@ Using Claude’s chat search and memory to build on previous context
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 [](https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome)
 
 Simplify your browsing experience with Claude in Chrome
 
-[](https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint)
+[](https://support.claude.com/en/articles/13521390-use-claude-in-powerpoint)
 
-Using Claude in PowerPoint
+Use Claude in PowerPoint
 
 Did this answer your question?
 

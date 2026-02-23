@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-10T10:49:40Z"
+fetched_at: "2026-02-23T00:45:16Z"
 source_url: "https://support.claude.com/en/articles/9612904-what-versions-of-android-are-supported"
 title: "What versions of Android are supported? | Claude Help Center"
 ---
@@ -39,9 +39,9 @@ We currently support Android 8.0 Oreo and above.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan)
+[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
 
-What is the Pro plan?
+What is the Enterprise plan?
 
 [](https://support.claude.com/en/articles/10065434-using-dictation-on-claude-mobile)
 

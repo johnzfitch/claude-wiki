@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-10T10:49:40Z"
+fetched_at: "2026-02-23T00:45:15Z"
 source_url: "https://support.claude.com/en/articles/9612887-how-do-i-install-claude-for-android"
 title: "How do I install Claude for Android? | Claude Help Center"
 ---

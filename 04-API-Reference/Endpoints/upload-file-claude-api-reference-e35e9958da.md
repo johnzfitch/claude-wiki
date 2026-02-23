@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:59Z"
+fetched_at: "2026-02-22T13:48:36Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/files/upload"
 title: "Upload File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 [FileMetadata](/docs/en/api/beta#file_metadata) beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
 
-post/v1/files
+POST/v1/files
 
 Upload File
 
@@ -63,11 +63,11 @@ MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-
 
 SKILLS_2025_10_02("skills-2025-10-02")
 
-String file
+FAST_MODE_2026_02_01("fast-mode-2026-02-01")
+
+InputStream file
 
 The file to upload
-
-formatbinary
 
 ##### ReturnsExpand Collapse 
 
@@ -83,39 +83,25 @@ LocalDateTime createdAt
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 String filename
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 String mimeType
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 long sizeBytes
 
 Size of the file in bytes.
 
-minimum0
+JsonValue; type "file"constant
 
-JsonValue; type "file"constant"file"constant
+"file"constant
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-FILE("file")
 
 Optional\<Boolean\> downloadable
 

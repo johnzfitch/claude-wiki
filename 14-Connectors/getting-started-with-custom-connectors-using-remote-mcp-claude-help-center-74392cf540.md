@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:20Z"
+fetched_at: "2026-02-17T01:31:00Z"
 source_url: "https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp"
 title: "Getting started with custom connectors using remote MCP | Claude Help Center"
 ---
@@ -75,13 +75,13 @@ You can:
 
 **⚠️ Security and Privacy with Custom Connectors (beta)**
 
-Be aware that custom connectors allow you to connect Claude to services that have not been verified by Anthropic, and allow Claude to access and take action in these services. For more guidance, review the [Security and Privacy Considerations](#h_9088ccdf4d) section below.
+Be aware that custom connectors allow you to connect Claude to services that have not been verified by Anthropic, and allow Claude to access and take action in these services. For more guidance, review the **[Security and privacy considerations](#h_9088ccdf4d)** section below.
 
 ## What are remote MCP servers?
 
 The Model Context Protocol (MCP) is an open standard, created by Anthropic, for AI applications to connect to tools and data.
 
-Previously, [MCP servers only ran locally](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop) (i.e. on a user's laptop). Now, developers can build and host remote MCP servers that communicate with AI apps over the internet.
+Previously, **[MCP servers only ran locally](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)** (i.e. on a user's laptop). Now, developers can build and host remote MCP servers that communicate with AI apps over the internet.
 
 Remote MCP servers give models access to internet-hosted tools and data, transforming Claude into an informed teammate that can independently handle complex, multi-step projects tailored to your needs.
 
@@ -91,11 +91,11 @@ Remote MCP servers give models access to internet-hosted tools and data, transfo
 
 ### For Team and Enterprise plans
 
-**Preliminary steps for Owners:**
+**Preliminary steps for owners:**
 
-Before members of Team and Enterprise plans can configure custom connectors, an Owner needs to follow these initial steps to add a custom connector to your organization:
+Before members of Team and Enterprise plans can configure custom connectors, an Owner or Primary Owner needs to follow these initial steps to add a custom connector to your organization:
 
-1.  Navigate to [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors).
+1.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
 2.  Click "Add custom connector" at the bottom of the section.
 
@@ -107,7 +107,7 @@ Before members of Team and Enterprise plans can configure custom connectors, an 
 
 **Steps for members after connector is configured:**
 
-1.  Navigate to [Settings \> Connectors](https://claude.ai/settings/connectors).
+1.  Navigate to **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 2.  Locate the "Connectors" section.
 
@@ -119,7 +119,7 @@ Before members of Team and Enterprise plans can configure custom connectors, an 
 
 If you are using an individual Pro or Max plan, follow these steps to add a custom connector:
 
-1.  Navigate to [Settings \> Connectors](https://claude.ai/settings/connectors).
+1.  Navigate to **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
 
 2.  Locate the "Connectors" section.
 
@@ -131,7 +131,7 @@ If you are using an individual Pro or Max plan, follow these steps to add a cust
 
 6.  Finish configuring your connector by clicking "Add."
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1916091157/febc1f1e569df97a2f800c7ea493/8d09370d-1c7a-489c-b62b-b3484aaaef31?expires=1770722100&signature=5732cb670b256e52872c2202b2f26ebeb864b838b5fb45e6b937f0206d59b705&req=dSkmEMl3nIBaXvMW1HO4zWxgPNh2raCLxxBcrakePoN2tdAlrHHC3CRDF3bT%0A6Wn06m7142bvJj0jrhc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1916091157/febc1f1e569df97a2f800c7ea493/8d09370d-1c7a-489c-b62b-b3484aaaef31?expires=1771293600&signature=8eb6fb767cb83be96a086dd38985d02116c6e813348d8509986dc9cc4507f1f2&req=dSkmEMl3nIBaXvMW1HO4zWxgPNlzpqGMxxBcrakePoO0PqiYGKsV0FoKAple%0AuaLMUP5xcW3tClzJtuY%3D%0A)
 
 ### Enabling connectors after configuration
 
@@ -141,9 +141,9 @@ You can enable connectors for individual conversations via the “+” button on
 
 You can remove a custom connector by following these steps:
 
-1.  Navigate to [Settings \> Connectors](https://claude.ai/settings/connectors)
+1.  Navigate to **[Settings \> Connectors](https://claude.ai/settings/connectors)**
 
-    1.  Team and Enterprise Owners can do this on their organization's behalf in [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors).
+    1.  Team and Enterprise Owners can do this on their organization's behalf in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**
 
 2.  Locate the "Connectors" section.
 
@@ -155,13 +155,13 @@ If you're hoping to edit a custom connector, you'll need to remove it first, the
 
 ## How to build custom connectors
 
-To learn about building connectors to use with Claude, see [Building Custom Connectors via Remote MCP Servers](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers).
+To learn about building connectors to use with Claude, see Building custom connectors via remote MCP servers.
 
-## Security and Privacy Considerations
+## Security and privacy considerations
 
 Custom connectors allow you to connect Claude to arbitrary services that have not been verified by Anthropic. When you connect Claude to external services, you're granting it the ability to access and potentially modify data within those services based on your permissions. It’s important to make sure you’re only connecting to remote MCP servers that you trust and that you’re aware of Claude’s interactions with web connectors.
 
-### Security and Permissions
+### Security and permissions
 
 When you add a custom connector to Claude, you'll typically go through an OAuth authentication process to securely sign in to the application and grant specific permissions. This allows Claude to interact with the application on your behalf, without Claude ever seeing your actual password. You can revoke these permissions at any time by disconnecting the connector in Claude's settings or the third-party service's security settings.
 
@@ -175,11 +175,11 @@ Remote MCP servers act as intermediaries between Claude and external application
 
 - **Monitor changes in tool behavior:** Server developers may update tool behavior unexpectedly, leading to unintended or malicious behavior.
 
-### Reporting Malicious MCP Servers
+### Reporting malicious MCP servers
 
-If you become aware of a malicious MCP server, please it to our [vulnerability disclosure program](https://hackerone.com/anthropic-vdp/), and choose [`https://github.com/modelcontextprotocol`](https://github.com/modelcontextprotocol) as the Asset.
+If you become aware of a malicious MCP server, please report it to our **[vulnerability disclosure program](https://hackerone.com/anthropic-vdp/)**, and choose [`https://github.com/modelcontextprotocol`](https://github.com/modelcontextprotocol) as the Asset.
 
-### Taking Actions with Tools
+### Taking actions with tools
 
 Remote MCP servers give Claude tools it can invoke during your conversation. The developer of an MCP server can define what these tools do, including:
 
@@ -209,11 +209,11 @@ Interactive connectors appear in two ways:
 
 You can interact with these connectors directly — filtering data, checking off tasks, adjusting settings — without leaving the conversation. Any actions you take within the interface use the same permissions you granted when connecting the tool.
 
-**Admin controls:** Team and Enterprise plan owners can disable specific tool calls that render interactive connectors within [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors).
+**Admin controls:** Team and Enterprise plan owners can disable specific tool calls that render interactive connectors within **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
 ### Using Claude with Research
 
-**Note:** [Advanced Research](https://claude.com/blog/integrations) is not currently able to invoke tools from local MCP servers.
+**Note:** **[Advanced Research](https://claude.com/blog/integrations)** is not currently able to invoke tools from local MCP servers.
 
 Research allows Claude to deeply investigate queries by searching through hundreds of internal and external sources. During the research process, Claude can invoke tools from your connectors automatically without further approval.
 
@@ -225,7 +225,7 @@ When using Research with custom connectors:
 
 - Be mindful of the impact of Claude sending a large number of requests to your connectors.
 
-See [Using Research on Claude](https://support.claude.com/en/articles/11088861-using-research-on-claude) for more information about this feature.
+See **[Using Research on Claude](https://support.claude.com/en/articles/11088861-using-research-on-claude)** for more information about this feature.
 
 ------------------------------------------------------------------------
 
@@ -233,11 +233,11 @@ Related Articles
 
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
-Pre-built Web Connectors Using Remote MCP
+Pre-built web connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 
-Building Custom Connectors via Remote MCP Servers
+Building custom connectors via remote MCP servers
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
@@ -249,7 +249,7 @@ Remote MCP Server Submission Guide
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
 Did this answer your question?
 

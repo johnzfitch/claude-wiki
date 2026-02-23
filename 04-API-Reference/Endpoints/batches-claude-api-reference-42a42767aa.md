@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:02Z"
+fetched_at: "2026-02-22T13:57:42Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/batches"
 title: "Batches - Claude API Reference"
 ---
@@ -15,37 +15,37 @@ Go
 
 client.Beta.Messages.Batches.New(ctx, params) (\*[BetaMessageBatch](/docs/en/api/beta#beta_message_batch), error)
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/beta/messages/batches/retrieve)
 
 client.Beta.Messages.Batches.Get(ctx, messageBatchID, query) (\*[BetaMessageBatch](/docs/en/api/beta#beta_message_batch), error)
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/beta/messages/batches/list)
 
 client.Beta.Messages.Batches.List(ctx, params) (\*Page\[[BetaMessageBatch](/docs/en/api/beta#beta_message_batch)\], error)
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/beta/messages/batches/cancel)
 
 client.Beta.Messages.Batches.Cancel(ctx, messageBatchID, body) (\*[BetaMessageBatch](/docs/en/api/beta#beta_message_batch), error)
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/beta/messages/batches/delete)
 
 client.Beta.Messages.Batches.Delete(ctx, messageBatchID, body) (\*[BetaDeletedMessageBatch](/docs/en/api/beta#beta_deleted_message_batch), error)
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/beta/messages/batches/results)
 
 client.Beta.Messages.Batches.Results(ctx, messageBatchID, query) (\*[BetaMessageBatchIndividualResponse](/docs/en/api/beta#beta_message_batch_individual_response), error)
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -61,10 +61,6 @@ Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
 
-Accepts one of the following:
-
-const MessageBatchDeletedMessageBatchDeleted MessageBatchDeleted = "message_batch_deleted"
-
 type BetaMessageBatch struct{…}
 
 ID string
@@ -77,19 +73,13 @@ ArchivedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 CancelInitiatedAt Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 EndedAt Time
 
@@ -102,8 +92,6 @@ formatdate-time
 ExpiresAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus BetaMessageBatchProcessingStatus
 
@@ -163,17 +151,9 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-const MessageBatchMessageBatch MessageBatch = "message_batch"
-
 type BetaMessageBatchCanceledResult struct{…}
 
 Type Canceled
-
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
 
 type BetaMessageBatchErroredResult struct{…}
 
@@ -189,19 +169,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type BetaAuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BetaBillingError struct{…}
 
@@ -209,19 +181,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type BetaPermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type BetaNotFoundError struct{…}
 
@@ -229,19 +193,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type BetaRateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type BetaGatewayTimeoutError struct{…}
 
@@ -249,19 +205,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type BetaAPIError struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type BetaOverloadedError struct{…}
 
@@ -269,31 +217,15 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type BetaMessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type BetaMessageBatchIndividualResponse struct{…}
 
@@ -335,8 +267,6 @@ ExpiresAt Time
 
 The time at which the container will expire.
 
-formatdate-time
-
 Skills \[\][BetaSkill](/docs/en/api/beta#beta_skill)
 
 Skills loaded in the container
@@ -344,10 +274,6 @@ Skills loaded in the container
 SkillID string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 Type BetaSkillType
 
@@ -362,10 +288,6 @@ const BetaSkillTypeCustom BetaSkillType = "custom"
 Version string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 Content \[\][BetaContentBlockUnion](/docs/en/api/beta#beta_content_block)
 
@@ -424,10 +346,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocation struct{…}
 
 CitedText string
@@ -443,10 +361,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocation struct{…}
 
@@ -464,10 +378,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -477,10 +387,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -500,17 +406,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type BetaThinkingBlock struct{…}
 
@@ -520,19 +418,11 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type BetaRedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
-
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
 
 type BetaToolUseBlock struct{…}
 
@@ -544,11 +434,9 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
+Caller BetaToolUseBlockCallerUnion
 
-const ToolUseToolUse ToolUse = "tool_use"
-
-Caller BetaToolUseBlockCallerUnionoptional
+optional
 
 Tool invocation directly from the model.
 
@@ -560,10 +448,6 @@ Tool invocation directly from the model.
 
 Type Direct
 
-Accepts one of the following:
-
-const DirectDirect Direct = "direct"
-
 type BetaServerToolCaller struct{…}
 
 Tool invocation generated by a server-side tool.
@@ -572,9 +456,11 @@ ToolID string
 
 Type CodeExecution20250825
 
-Accepts one of the following:
+type BetaServerToolCaller20260120 struct{…}
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaServerToolUseBlock struct{…}
 
@@ -602,11 +488,9 @@ const BetaServerToolUseBlockNameToolSearchToolBm25 BetaServerToolUseBlockName = 
 
 Type ServerToolUse
 
-Accepts one of the following:
+Caller BetaServerToolUseBlockCallerUnion
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
-
-Caller BetaServerToolUseBlockCallerUnionoptional
+optional
 
 Tool invocation directly from the model.
 
@@ -618,10 +502,6 @@ Tool invocation directly from the model.
 
 Type Direct
 
-Accepts one of the following:
-
-const DirectDirect Direct = "direct"
-
 type BetaServerToolCaller struct{…}
 
 Tool invocation generated by a server-side tool.
@@ -630,9 +510,11 @@ ToolID string
 
 Type CodeExecution20250825
 
-Accepts one of the following:
+type BetaServerToolCaller20260120 struct{…}
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaWebSearchToolResultBlock struct{…}
 
@@ -660,10 +542,6 @@ const BetaWebSearchToolResultErrorCodeRequestTooLarge [BetaWebSearchToolResultEr
 
 Type WebSearchToolResultError
 
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
-
 type BetaWebSearchToolResultBlockContentArray \[\][BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block)
 
 EncryptedContent string
@@ -674,19 +552,39 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+Caller BetaWebSearchToolResultBlockCallerUnion
+
+optional
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type BetaDirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type BetaServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type BetaServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaWebFetchToolResultBlock struct{…}
 
@@ -718,10 +616,6 @@ const BetaWebFetchToolResultErrorCodeUnavailable [BetaWebFetchToolResultErrorCod
 
 Type WebFetchToolResultError
 
-Accepts one of the following:
-
-const WebFetchToolResultErrorWebFetchToolResultError WebFetchToolResultError = "web_fetch_tool_result_error"
-
 type BetaWebFetchBlock struct{…}
 
 Content [BetaDocumentBlock](/docs/en/api/beta#beta_document_block)
@@ -742,15 +636,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type BetaPlainTextSource struct{…}
 
@@ -758,15 +644,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 Title string
 
@@ -774,19 +652,11 @@ The title of the document
 
 Type Document
 
-Accepts one of the following:
-
-const DocumentDocument Document = "document"
-
 RetrievedAt string
 
 ISO 8601 timestamp when the content was retrieved
 
 Type WebFetchResult
-
-Accepts one of the following:
-
-const WebFetchResultWebFetchResult WebFetchResult = "web_fetch_result"
 
 URL string
 
@@ -796,13 +666,39 @@ ToolUseID string
 
 Type WebFetchToolResult
 
+Caller BetaWebFetchToolResultBlockCallerUnion
+
+optional
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebFetchToolResultWebFetchToolResult WebFetchToolResult = "web_fetch_tool_result"
+type BetaDirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type BetaServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type BetaServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaCodeExecutionToolResultBlock struct{…}
 
 Content [BetaCodeExecutionToolResultBlockContentUnion](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -822,10 +718,6 @@ const BetaCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BetaCodeExecuti
 
 Type CodeExecutionToolResultError
 
-Accepts one of the following:
-
-const CodeExecutionToolResultErrorCodeExecutionToolResultError CodeExecutionToolResultError = "code_execution_tool_result_error"
-
 type BetaCodeExecutionResultBlock struct{…}
 
 Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block)
@@ -833,10 +725,6 @@ Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution
 FileID string
 
 Type CodeExecutionOutput
-
-Accepts one of the following:
-
-const CodeExecutionOutputCodeExecutionOutput CodeExecutionOutput = "code_execution_output"
 
 ReturnCode int64
 
@@ -846,17 +734,27 @@ Stdout string
 
 Type CodeExecutionResult
 
-Accepts one of the following:
+type BetaEncryptedCodeExecutionResultBlock struct{…}
 
-const CodeExecutionResultCodeExecutionResult CodeExecutionResult = "code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
 
 ToolUseID string
 
 Type CodeExecutionToolResult
-
-Accepts one of the following:
-
-const CodeExecutionToolResultCodeExecutionToolResult CodeExecutionToolResult = "code_execution_tool_result"
 
 type BetaBashCodeExecutionToolResultBlock struct{…}
 
@@ -882,10 +780,6 @@ const BetaBashCodeExecutionToolResultErrorErrorCodeOutputFileTooLarge BetaBashCo
 
 Type BashCodeExecutionToolResultError
 
-Accepts one of the following:
-
-const BashCodeExecutionToolResultErrorBashCodeExecutionToolResultError BashCodeExecutionToolResultError = "bash_code_execution_tool_result_error"
-
 type BetaBashCodeExecutionResultBlock struct{…}
 
 Content \[\][BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block)
@@ -893,10 +787,6 @@ Content \[\][BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_
 FileID string
 
 Type BashCodeExecutionOutput
-
-Accepts one of the following:
-
-const BashCodeExecutionOutputBashCodeExecutionOutput BashCodeExecutionOutput = "bash_code_execution_output"
 
 ReturnCode int64
 
@@ -906,17 +796,9 @@ Stdout string
 
 Type BashCodeExecutionResult
 
-Accepts one of the following:
-
-const BashCodeExecutionResultBashCodeExecutionResult BashCodeExecutionResult = "bash_code_execution_result"
-
 ToolUseID string
 
 Type BashCodeExecutionToolResult
-
-Accepts one of the following:
-
-const BashCodeExecutionToolResultBashCodeExecutionToolResult BashCodeExecutionToolResult = "bash_code_execution_tool_result"
 
 type BetaTextEditorCodeExecutionToolResultBlock struct{…}
 
@@ -944,10 +826,6 @@ ErrorMessage string
 
 Type TextEditorCodeExecutionToolResultError
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionToolResultErrorTextEditorCodeExecutionToolResultError TextEditorCodeExecutionToolResultError = "text_editor_code_execution_tool_result_error"
-
 type BetaTextEditorCodeExecutionViewResultBlock struct{…}
 
 Content string
@@ -970,19 +848,11 @@ TotalLines int64
 
 Type TextEditorCodeExecutionViewResult
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionViewResultTextEditorCodeExecutionViewResult TextEditorCodeExecutionViewResult = "text_editor_code_execution_view_result"
-
 type BetaTextEditorCodeExecutionCreateResultBlock struct{…}
 
 IsFileUpdate bool
 
 Type TextEditorCodeExecutionCreateResult
-
-Accepts one of the following:
-
-const TextEditorCodeExecutionCreateResultTextEditorCodeExecutionCreateResult TextEditorCodeExecutionCreateResult = "text_editor_code_execution_create_result"
 
 type BetaTextEditorCodeExecutionStrReplaceResultBlock struct{…}
 
@@ -998,17 +868,9 @@ OldStart int64
 
 Type TextEditorCodeExecutionStrReplaceResult
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionStrReplaceResultTextEditorCodeExecutionStrReplaceResult TextEditorCodeExecutionStrReplaceResult = "text_editor_code_execution_str_replace_result"
-
 ToolUseID string
 
 Type TextEditorCodeExecutionToolResult
-
-Accepts one of the following:
-
-const TextEditorCodeExecutionToolResultTextEditorCodeExecutionToolResult TextEditorCodeExecutionToolResult = "text_editor_code_execution_tool_result"
 
 type BetaToolSearchToolResultBlock struct{…}
 
@@ -1034,10 +896,6 @@ ErrorMessage string
 
 Type ToolSearchToolResultError
 
-Accepts one of the following:
-
-const ToolSearchToolResultErrorToolSearchToolResultError ToolSearchToolResultError = "tool_search_tool_result_error"
-
 type BetaToolSearchToolSearchResultBlock struct{…}
 
 ToolReferences \[\][BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block)
@@ -1046,23 +904,11 @@ ToolName string
 
 Type ToolReference
 
-Accepts one of the following:
-
-const ToolReferenceToolReference ToolReference = "tool_reference"
-
 Type ToolSearchToolSearchResult
-
-Accepts one of the following:
-
-const ToolSearchToolSearchResultToolSearchToolSearchResult ToolSearchToolSearchResult = "tool_search_tool_search_result"
 
 ToolUseID string
 
 Type ToolSearchToolResult
-
-Accepts one of the following:
-
-const ToolSearchToolResultToolSearchToolResult ToolSearchToolResult = "tool_search_tool_result"
 
 type BetaMCPToolUseBlock struct{…}
 
@@ -1079,10 +925,6 @@ ServerName string
 The name of the MCP server
 
 Type MCPToolUse
-
-Accepts one of the following:
-
-const MCPToolUseMCPToolUse MCPToolUse = "mcp_tool_use"
 
 type BetaMCPToolResultBlock struct{…}
 
@@ -1118,10 +960,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocation struct{…}
 
 CitedText string
@@ -1137,10 +975,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocation struct{…}
 
@@ -1158,10 +992,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -1171,10 +1001,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1194,27 +1020,15 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 IsError bool
 
 ToolUseID string
 
 Type MCPToolResult
-
-Accepts one of the following:
-
-const MCPToolResultMCPToolResult MCPToolResult = "mcp_tool_result"
 
 type BetaContainerUploadBlock struct{…}
 
@@ -1223,10 +1037,6 @@ Response model for a file uploaded to the container.
 FileID string
 
 Type ContainerUpload
-
-Accepts one of the following:
-
-const ContainerUploadContainerUpload ContainerUpload = "container_upload"
 
 type BetaCompactionBlock struct{…}
 
@@ -1239,10 +1049,6 @@ Content string
 Summary of compacted content, or null if compaction failed
 
 Type Compaction
-
-Accepts one of the following:
-
-const CompactionCompaction Compaction = "compaction"
 
 ContextManagement [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response)
 
@@ -1262,21 +1068,13 @@ ClearedInputTokens int64
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 ClearedToolUses int64
 
 Number of tool uses that were cleared.
 
-minimum0
-
 Type ClearToolUses20250919
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-const ClearToolUses20250919ClearToolUses20250919 ClearToolUses20250919 = "clear_tool_uses_20250919"
 
 type BetaClearThinking20251015EditResponse struct{…}
 
@@ -1284,21 +1082,13 @@ ClearedInputTokens int64
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 ClearedThinkingTurns int64
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 Type ClearThinking20251015
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-const ClearThinking20251015ClearThinking20251015 ClearThinking20251015 = "clear_thinking_20251015"
 
 Model Model
 
@@ -1319,6 +1109,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -1408,10 +1202,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [BetaStopReason](/docs/en/api/beta#beta_stop_reason)
 
 The reason that we stopped.
@@ -1457,10 +1247,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [BetaUsage](/docs/en/api/beta#beta_usage)
 
 Billing and rate-limit usage.
@@ -1481,25 +1267,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -1509,9 +1287,7 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
-Iterations \[\]BetaUsageIterationUnion
+Iterations [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage)
 
 Per-iteration token usage breakdown.
 
@@ -1535,45 +1311,29 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
 
-minimum0
-
 Type Message
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-const MessageMessage Message = "message"
 
 type BetaCompactionIterationUsage struct{…}
 
@@ -1587,51 +1347,33 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 Type Compaction
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-const CompactionCompaction Compaction = "compaction"
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage)
 
@@ -1641,13 +1383,9 @@ WebFetchRequests int64
 
 The number of web fetch tool requests.
 
-minimum0
-
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier BetaUsageServiceTier
 
@@ -1661,11 +1399,17 @@ const BetaUsageServiceTierPriority BetaUsageServiceTier = "priority"
 
 const BetaUsageServiceTierBatch BetaUsageServiceTier = "batch"
 
-Type Succeeded
+Speed BetaUsageSpeed
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-const SucceededSucceeded Succeeded = "succeeded"
+const BetaUsageSpeedStandard BetaUsageSpeed = "standard"
+
+const BetaUsageSpeedFast BetaUsageSpeed = "fast"
+
+Type Succeeded
 
 type BetaMessageBatchErroredResult struct{…}
 
@@ -1681,19 +1425,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type BetaAuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BetaBillingError struct{…}
 
@@ -1701,19 +1437,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type BetaPermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type BetaNotFoundError struct{…}
 
@@ -1721,19 +1449,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type BetaRateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type BetaGatewayTimeoutError struct{…}
 
@@ -1741,19 +1461,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type BetaAPIError struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type BetaOverloadedError struct{…}
 
@@ -1761,39 +1473,19 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type BetaMessageBatchCanceledResult struct{…}
 
 Type Canceled
 
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
-
 type BetaMessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type BetaMessageBatchRequestCounts struct{…}
 
@@ -1855,8 +1547,6 @@ ExpiresAt Time
 
 The time at which the container will expire.
 
-formatdate-time
-
 Skills \[\][BetaSkill](/docs/en/api/beta#beta_skill)
 
 Skills loaded in the container
@@ -1864,10 +1554,6 @@ Skills loaded in the container
 SkillID string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 Type BetaSkillType
 
@@ -1882,10 +1568,6 @@ const BetaSkillTypeCustom BetaSkillType = "custom"
 Version string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 Content \[\][BetaContentBlockUnion](/docs/en/api/beta#beta_content_block)
 
@@ -1944,10 +1626,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocation struct{…}
 
 CitedText string
@@ -1963,10 +1641,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocation struct{…}
 
@@ -1984,10 +1658,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -1997,10 +1667,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -2020,17 +1686,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type BetaThinkingBlock struct{…}
 
@@ -2040,19 +1698,11 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type BetaRedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
-
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
 
 type BetaToolUseBlock struct{…}
 
@@ -2064,11 +1714,9 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
+Caller BetaToolUseBlockCallerUnion
 
-const ToolUseToolUse ToolUse = "tool_use"
-
-Caller BetaToolUseBlockCallerUnionoptional
+optional
 
 Tool invocation directly from the model.
 
@@ -2080,10 +1728,6 @@ Tool invocation directly from the model.
 
 Type Direct
 
-Accepts one of the following:
-
-const DirectDirect Direct = "direct"
-
 type BetaServerToolCaller struct{…}
 
 Tool invocation generated by a server-side tool.
@@ -2092,9 +1736,11 @@ ToolID string
 
 Type CodeExecution20250825
 
-Accepts one of the following:
+type BetaServerToolCaller20260120 struct{…}
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaServerToolUseBlock struct{…}
 
@@ -2122,11 +1768,9 @@ const BetaServerToolUseBlockNameToolSearchToolBm25 BetaServerToolUseBlockName = 
 
 Type ServerToolUse
 
-Accepts one of the following:
+Caller BetaServerToolUseBlockCallerUnion
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
-
-Caller BetaServerToolUseBlockCallerUnionoptional
+optional
 
 Tool invocation directly from the model.
 
@@ -2138,10 +1782,6 @@ Tool invocation directly from the model.
 
 Type Direct
 
-Accepts one of the following:
-
-const DirectDirect Direct = "direct"
-
 type BetaServerToolCaller struct{…}
 
 Tool invocation generated by a server-side tool.
@@ -2150,9 +1790,11 @@ ToolID string
 
 Type CodeExecution20250825
 
-Accepts one of the following:
+type BetaServerToolCaller20260120 struct{…}
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaWebSearchToolResultBlock struct{…}
 
@@ -2180,10 +1822,6 @@ const BetaWebSearchToolResultErrorCodeRequestTooLarge [BetaWebSearchToolResultEr
 
 Type WebSearchToolResultError
 
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
-
 type BetaWebSearchToolResultBlockContentArray \[\][BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block)
 
 EncryptedContent string
@@ -2194,19 +1832,39 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+Caller BetaWebSearchToolResultBlockCallerUnion
+
+optional
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type BetaDirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type BetaServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type BetaServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaWebFetchToolResultBlock struct{…}
 
@@ -2238,10 +1896,6 @@ const BetaWebFetchToolResultErrorCodeUnavailable [BetaWebFetchToolResultErrorCod
 
 Type WebFetchToolResultError
 
-Accepts one of the following:
-
-const WebFetchToolResultErrorWebFetchToolResultError WebFetchToolResultError = "web_fetch_tool_result_error"
-
 type BetaWebFetchBlock struct{…}
 
 Content [BetaDocumentBlock](/docs/en/api/beta#beta_document_block)
@@ -2262,15 +1916,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type BetaPlainTextSource struct{…}
 
@@ -2278,15 +1924,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 Title string
 
@@ -2294,19 +1932,11 @@ The title of the document
 
 Type Document
 
-Accepts one of the following:
-
-const DocumentDocument Document = "document"
-
 RetrievedAt string
 
 ISO 8601 timestamp when the content was retrieved
 
 Type WebFetchResult
-
-Accepts one of the following:
-
-const WebFetchResultWebFetchResult WebFetchResult = "web_fetch_result"
 
 URL string
 
@@ -2316,13 +1946,39 @@ ToolUseID string
 
 Type WebFetchToolResult
 
+Caller BetaWebFetchToolResultBlockCallerUnion
+
+optional
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebFetchToolResultWebFetchToolResult WebFetchToolResult = "web_fetch_tool_result"
+type BetaDirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type BetaServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type BetaServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaCodeExecutionToolResultBlock struct{…}
 
 Content [BetaCodeExecutionToolResultBlockContentUnion](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -2342,10 +1998,6 @@ const BetaCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BetaCodeExecuti
 
 Type CodeExecutionToolResultError
 
-Accepts one of the following:
-
-const CodeExecutionToolResultErrorCodeExecutionToolResultError CodeExecutionToolResultError = "code_execution_tool_result_error"
-
 type BetaCodeExecutionResultBlock struct{…}
 
 Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block)
@@ -2353,10 +2005,6 @@ Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution
 FileID string
 
 Type CodeExecutionOutput
-
-Accepts one of the following:
-
-const CodeExecutionOutputCodeExecutionOutput CodeExecutionOutput = "code_execution_output"
 
 ReturnCode int64
 
@@ -2366,17 +2014,27 @@ Stdout string
 
 Type CodeExecutionResult
 
-Accepts one of the following:
+type BetaEncryptedCodeExecutionResultBlock struct{…}
 
-const CodeExecutionResultCodeExecutionResult CodeExecutionResult = "code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
 
 ToolUseID string
 
 Type CodeExecutionToolResult
-
-Accepts one of the following:
-
-const CodeExecutionToolResultCodeExecutionToolResult CodeExecutionToolResult = "code_execution_tool_result"
 
 type BetaBashCodeExecutionToolResultBlock struct{…}
 
@@ -2402,10 +2060,6 @@ const BetaBashCodeExecutionToolResultErrorErrorCodeOutputFileTooLarge BetaBashCo
 
 Type BashCodeExecutionToolResultError
 
-Accepts one of the following:
-
-const BashCodeExecutionToolResultErrorBashCodeExecutionToolResultError BashCodeExecutionToolResultError = "bash_code_execution_tool_result_error"
-
 type BetaBashCodeExecutionResultBlock struct{…}
 
 Content \[\][BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block)
@@ -2413,10 +2067,6 @@ Content \[\][BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_
 FileID string
 
 Type BashCodeExecutionOutput
-
-Accepts one of the following:
-
-const BashCodeExecutionOutputBashCodeExecutionOutput BashCodeExecutionOutput = "bash_code_execution_output"
 
 ReturnCode int64
 
@@ -2426,17 +2076,9 @@ Stdout string
 
 Type BashCodeExecutionResult
 
-Accepts one of the following:
-
-const BashCodeExecutionResultBashCodeExecutionResult BashCodeExecutionResult = "bash_code_execution_result"
-
 ToolUseID string
 
 Type BashCodeExecutionToolResult
-
-Accepts one of the following:
-
-const BashCodeExecutionToolResultBashCodeExecutionToolResult BashCodeExecutionToolResult = "bash_code_execution_tool_result"
 
 type BetaTextEditorCodeExecutionToolResultBlock struct{…}
 
@@ -2464,10 +2106,6 @@ ErrorMessage string
 
 Type TextEditorCodeExecutionToolResultError
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionToolResultErrorTextEditorCodeExecutionToolResultError TextEditorCodeExecutionToolResultError = "text_editor_code_execution_tool_result_error"
-
 type BetaTextEditorCodeExecutionViewResultBlock struct{…}
 
 Content string
@@ -2490,19 +2128,11 @@ TotalLines int64
 
 Type TextEditorCodeExecutionViewResult
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionViewResultTextEditorCodeExecutionViewResult TextEditorCodeExecutionViewResult = "text_editor_code_execution_view_result"
-
 type BetaTextEditorCodeExecutionCreateResultBlock struct{…}
 
 IsFileUpdate bool
 
 Type TextEditorCodeExecutionCreateResult
-
-Accepts one of the following:
-
-const TextEditorCodeExecutionCreateResultTextEditorCodeExecutionCreateResult TextEditorCodeExecutionCreateResult = "text_editor_code_execution_create_result"
 
 type BetaTextEditorCodeExecutionStrReplaceResultBlock struct{…}
 
@@ -2518,17 +2148,9 @@ OldStart int64
 
 Type TextEditorCodeExecutionStrReplaceResult
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionStrReplaceResultTextEditorCodeExecutionStrReplaceResult TextEditorCodeExecutionStrReplaceResult = "text_editor_code_execution_str_replace_result"
-
 ToolUseID string
 
 Type TextEditorCodeExecutionToolResult
-
-Accepts one of the following:
-
-const TextEditorCodeExecutionToolResultTextEditorCodeExecutionToolResult TextEditorCodeExecutionToolResult = "text_editor_code_execution_tool_result"
 
 type BetaToolSearchToolResultBlock struct{…}
 
@@ -2554,10 +2176,6 @@ ErrorMessage string
 
 Type ToolSearchToolResultError
 
-Accepts one of the following:
-
-const ToolSearchToolResultErrorToolSearchToolResultError ToolSearchToolResultError = "tool_search_tool_result_error"
-
 type BetaToolSearchToolSearchResultBlock struct{…}
 
 ToolReferences \[\][BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block)
@@ -2566,23 +2184,11 @@ ToolName string
 
 Type ToolReference
 
-Accepts one of the following:
-
-const ToolReferenceToolReference ToolReference = "tool_reference"
-
 Type ToolSearchToolSearchResult
-
-Accepts one of the following:
-
-const ToolSearchToolSearchResultToolSearchToolSearchResult ToolSearchToolSearchResult = "tool_search_tool_search_result"
 
 ToolUseID string
 
 Type ToolSearchToolResult
-
-Accepts one of the following:
-
-const ToolSearchToolResultToolSearchToolResult ToolSearchToolResult = "tool_search_tool_result"
 
 type BetaMCPToolUseBlock struct{…}
 
@@ -2599,10 +2205,6 @@ ServerName string
 The name of the MCP server
 
 Type MCPToolUse
-
-Accepts one of the following:
-
-const MCPToolUseMCPToolUse MCPToolUse = "mcp_tool_use"
 
 type BetaMCPToolResultBlock struct{…}
 
@@ -2638,10 +2240,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocation struct{…}
 
 CitedText string
@@ -2657,10 +2255,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocation struct{…}
 
@@ -2678,10 +2272,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -2691,10 +2281,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -2714,27 +2300,15 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 IsError bool
 
 ToolUseID string
 
 Type MCPToolResult
-
-Accepts one of the following:
-
-const MCPToolResultMCPToolResult MCPToolResult = "mcp_tool_result"
 
 type BetaContainerUploadBlock struct{…}
 
@@ -2743,10 +2317,6 @@ Response model for a file uploaded to the container.
 FileID string
 
 Type ContainerUpload
-
-Accepts one of the following:
-
-const ContainerUploadContainerUpload ContainerUpload = "container_upload"
 
 type BetaCompactionBlock struct{…}
 
@@ -2759,10 +2329,6 @@ Content string
 Summary of compacted content, or null if compaction failed
 
 Type Compaction
-
-Accepts one of the following:
-
-const CompactionCompaction Compaction = "compaction"
 
 ContextManagement [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response)
 
@@ -2782,21 +2348,13 @@ ClearedInputTokens int64
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 ClearedToolUses int64
 
 Number of tool uses that were cleared.
 
-minimum0
-
 Type ClearToolUses20250919
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-const ClearToolUses20250919ClearToolUses20250919 ClearToolUses20250919 = "clear_tool_uses_20250919"
 
 type BetaClearThinking20251015EditResponse struct{…}
 
@@ -2804,21 +2362,13 @@ ClearedInputTokens int64
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 ClearedThinkingTurns int64
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 Type ClearThinking20251015
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-const ClearThinking20251015ClearThinking20251015 ClearThinking20251015 = "clear_thinking_20251015"
 
 Model Model
 
@@ -2839,6 +2389,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -2928,10 +2482,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [BetaStopReason](/docs/en/api/beta#beta_stop_reason)
 
 The reason that we stopped.
@@ -2977,10 +2527,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [BetaUsage](/docs/en/api/beta#beta_usage)
 
 Billing and rate-limit usage.
@@ -3001,25 +2547,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -3029,9 +2567,7 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
-Iterations \[\]BetaUsageIterationUnion
+Iterations [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage)
 
 Per-iteration token usage breakdown.
 
@@ -3055,45 +2591,29 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
 
-minimum0
-
 Type Message
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-const MessageMessage Message = "message"
 
 type BetaCompactionIterationUsage struct{…}
 
@@ -3107,51 +2627,33 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 Type Compaction
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-const CompactionCompaction Compaction = "compaction"
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage)
 
@@ -3161,13 +2663,9 @@ WebFetchRequests int64
 
 The number of web fetch tool requests.
 
-minimum0
-
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier BetaUsageServiceTier
 
@@ -3181,11 +2679,17 @@ const BetaUsageServiceTierPriority BetaUsageServiceTier = "priority"
 
 const BetaUsageServiceTierBatch BetaUsageServiceTier = "batch"
 
-Type Succeeded
+Speed BetaUsageSpeed
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-const SucceededSucceeded Succeeded = "succeeded"
+const BetaUsageSpeedStandard BetaUsageSpeed = "standard"
+
+const BetaUsageSpeedFast BetaUsageSpeed = "fast"
+
+Type Succeeded
 
 type BetaMessageBatchErroredResult struct{…}
 
@@ -3201,19 +2705,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type BetaAuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BetaBillingError struct{…}
 
@@ -3221,19 +2717,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type BetaPermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type BetaNotFoundError struct{…}
 
@@ -3241,19 +2729,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type BetaRateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type BetaGatewayTimeoutError struct{…}
 
@@ -3261,19 +2741,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type BetaAPIError struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type BetaOverloadedError struct{…}
 
@@ -3281,39 +2753,19 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type BetaMessageBatchCanceledResult struct{…}
 
 Type Canceled
 
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
-
 type BetaMessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type BetaMessageBatchSucceededResult struct{…}
 
@@ -3337,8 +2789,6 @@ ExpiresAt Time
 
 The time at which the container will expire.
 
-formatdate-time
-
 Skills \[\][BetaSkill](/docs/en/api/beta#beta_skill)
 
 Skills loaded in the container
@@ -3346,10 +2796,6 @@ Skills loaded in the container
 SkillID string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 Type BetaSkillType
 
@@ -3364,10 +2810,6 @@ const BetaSkillTypeCustom BetaSkillType = "custom"
 Version string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 Content \[\][BetaContentBlockUnion](/docs/en/api/beta#beta_content_block)
 
@@ -3426,10 +2868,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocation struct{…}
 
 CitedText string
@@ -3445,10 +2883,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocation struct{…}
 
@@ -3466,10 +2900,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -3479,10 +2909,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -3502,17 +2928,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type BetaThinkingBlock struct{…}
 
@@ -3522,19 +2940,11 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type BetaRedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
-
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
 
 type BetaToolUseBlock struct{…}
 
@@ -3546,11 +2956,9 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
+Caller BetaToolUseBlockCallerUnion
 
-const ToolUseToolUse ToolUse = "tool_use"
-
-Caller BetaToolUseBlockCallerUnionoptional
+optional
 
 Tool invocation directly from the model.
 
@@ -3562,10 +2970,6 @@ Tool invocation directly from the model.
 
 Type Direct
 
-Accepts one of the following:
-
-const DirectDirect Direct = "direct"
-
 type BetaServerToolCaller struct{…}
 
 Tool invocation generated by a server-side tool.
@@ -3574,9 +2978,11 @@ ToolID string
 
 Type CodeExecution20250825
 
-Accepts one of the following:
+type BetaServerToolCaller20260120 struct{…}
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaServerToolUseBlock struct{…}
 
@@ -3604,11 +3010,9 @@ const BetaServerToolUseBlockNameToolSearchToolBm25 BetaServerToolUseBlockName = 
 
 Type ServerToolUse
 
-Accepts one of the following:
+Caller BetaServerToolUseBlockCallerUnion
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
-
-Caller BetaServerToolUseBlockCallerUnionoptional
+optional
 
 Tool invocation directly from the model.
 
@@ -3620,10 +3024,6 @@ Tool invocation directly from the model.
 
 Type Direct
 
-Accepts one of the following:
-
-const DirectDirect Direct = "direct"
-
 type BetaServerToolCaller struct{…}
 
 Tool invocation generated by a server-side tool.
@@ -3632,9 +3032,11 @@ ToolID string
 
 Type CodeExecution20250825
 
-Accepts one of the following:
+type BetaServerToolCaller20260120 struct{…}
 
-const CodeExecution20250825CodeExecution20250825 CodeExecution20250825 = "code_execution_20250825"
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaWebSearchToolResultBlock struct{…}
 
@@ -3662,10 +3064,6 @@ const BetaWebSearchToolResultErrorCodeRequestTooLarge [BetaWebSearchToolResultEr
 
 Type WebSearchToolResultError
 
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
-
 type BetaWebSearchToolResultBlockContentArray \[\][BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block)
 
 EncryptedContent string
@@ -3676,19 +3074,39 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+Caller BetaWebSearchToolResultBlockCallerUnion
+
+optional
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type BetaDirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type BetaServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type BetaServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaWebFetchToolResultBlock struct{…}
 
@@ -3720,10 +3138,6 @@ const BetaWebFetchToolResultErrorCodeUnavailable [BetaWebFetchToolResultErrorCod
 
 Type WebFetchToolResultError
 
-Accepts one of the following:
-
-const WebFetchToolResultErrorWebFetchToolResultError WebFetchToolResultError = "web_fetch_tool_result_error"
-
 type BetaWebFetchBlock struct{…}
 
 Content [BetaDocumentBlock](/docs/en/api/beta#beta_document_block)
@@ -3744,15 +3158,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type BetaPlainTextSource struct{…}
 
@@ -3760,15 +3166,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 Title string
 
@@ -3776,19 +3174,11 @@ The title of the document
 
 Type Document
 
-Accepts one of the following:
-
-const DocumentDocument Document = "document"
-
 RetrievedAt string
 
 ISO 8601 timestamp when the content was retrieved
 
 Type WebFetchResult
-
-Accepts one of the following:
-
-const WebFetchResultWebFetchResult WebFetchResult = "web_fetch_result"
 
 URL string
 
@@ -3798,13 +3188,39 @@ ToolUseID string
 
 Type WebFetchToolResult
 
+Caller BetaWebFetchToolResultBlockCallerUnion
+
+optional
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebFetchToolResultWebFetchToolResult WebFetchToolResult = "web_fetch_tool_result"
+type BetaDirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type BetaServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type BetaServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type BetaCodeExecutionToolResultBlock struct{…}
 
 Content [BetaCodeExecutionToolResultBlockContentUnion](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -3824,10 +3240,6 @@ const BetaCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BetaCodeExecuti
 
 Type CodeExecutionToolResultError
 
-Accepts one of the following:
-
-const CodeExecutionToolResultErrorCodeExecutionToolResultError CodeExecutionToolResultError = "code_execution_tool_result_error"
-
 type BetaCodeExecutionResultBlock struct{…}
 
 Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block)
@@ -3835,10 +3247,6 @@ Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution
 FileID string
 
 Type CodeExecutionOutput
-
-Accepts one of the following:
-
-const CodeExecutionOutputCodeExecutionOutput CodeExecutionOutput = "code_execution_output"
 
 ReturnCode int64
 
@@ -3848,17 +3256,27 @@ Stdout string
 
 Type CodeExecutionResult
 
-Accepts one of the following:
+type BetaEncryptedCodeExecutionResultBlock struct{…}
 
-const CodeExecutionResultCodeExecutionResult CodeExecutionResult = "code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
 
 ToolUseID string
 
 Type CodeExecutionToolResult
-
-Accepts one of the following:
-
-const CodeExecutionToolResultCodeExecutionToolResult CodeExecutionToolResult = "code_execution_tool_result"
 
 type BetaBashCodeExecutionToolResultBlock struct{…}
 
@@ -3884,10 +3302,6 @@ const BetaBashCodeExecutionToolResultErrorErrorCodeOutputFileTooLarge BetaBashCo
 
 Type BashCodeExecutionToolResultError
 
-Accepts one of the following:
-
-const BashCodeExecutionToolResultErrorBashCodeExecutionToolResultError BashCodeExecutionToolResultError = "bash_code_execution_tool_result_error"
-
 type BetaBashCodeExecutionResultBlock struct{…}
 
 Content \[\][BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block)
@@ -3895,10 +3309,6 @@ Content \[\][BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_
 FileID string
 
 Type BashCodeExecutionOutput
-
-Accepts one of the following:
-
-const BashCodeExecutionOutputBashCodeExecutionOutput BashCodeExecutionOutput = "bash_code_execution_output"
 
 ReturnCode int64
 
@@ -3908,17 +3318,9 @@ Stdout string
 
 Type BashCodeExecutionResult
 
-Accepts one of the following:
-
-const BashCodeExecutionResultBashCodeExecutionResult BashCodeExecutionResult = "bash_code_execution_result"
-
 ToolUseID string
 
 Type BashCodeExecutionToolResult
-
-Accepts one of the following:
-
-const BashCodeExecutionToolResultBashCodeExecutionToolResult BashCodeExecutionToolResult = "bash_code_execution_tool_result"
 
 type BetaTextEditorCodeExecutionToolResultBlock struct{…}
 
@@ -3946,10 +3348,6 @@ ErrorMessage string
 
 Type TextEditorCodeExecutionToolResultError
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionToolResultErrorTextEditorCodeExecutionToolResultError TextEditorCodeExecutionToolResultError = "text_editor_code_execution_tool_result_error"
-
 type BetaTextEditorCodeExecutionViewResultBlock struct{…}
 
 Content string
@@ -3972,19 +3370,11 @@ TotalLines int64
 
 Type TextEditorCodeExecutionViewResult
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionViewResultTextEditorCodeExecutionViewResult TextEditorCodeExecutionViewResult = "text_editor_code_execution_view_result"
-
 type BetaTextEditorCodeExecutionCreateResultBlock struct{…}
 
 IsFileUpdate bool
 
 Type TextEditorCodeExecutionCreateResult
-
-Accepts one of the following:
-
-const TextEditorCodeExecutionCreateResultTextEditorCodeExecutionCreateResult TextEditorCodeExecutionCreateResult = "text_editor_code_execution_create_result"
 
 type BetaTextEditorCodeExecutionStrReplaceResultBlock struct{…}
 
@@ -4000,17 +3390,9 @@ OldStart int64
 
 Type TextEditorCodeExecutionStrReplaceResult
 
-Accepts one of the following:
-
-const TextEditorCodeExecutionStrReplaceResultTextEditorCodeExecutionStrReplaceResult TextEditorCodeExecutionStrReplaceResult = "text_editor_code_execution_str_replace_result"
-
 ToolUseID string
 
 Type TextEditorCodeExecutionToolResult
-
-Accepts one of the following:
-
-const TextEditorCodeExecutionToolResultTextEditorCodeExecutionToolResult TextEditorCodeExecutionToolResult = "text_editor_code_execution_tool_result"
 
 type BetaToolSearchToolResultBlock struct{…}
 
@@ -4036,10 +3418,6 @@ ErrorMessage string
 
 Type ToolSearchToolResultError
 
-Accepts one of the following:
-
-const ToolSearchToolResultErrorToolSearchToolResultError ToolSearchToolResultError = "tool_search_tool_result_error"
-
 type BetaToolSearchToolSearchResultBlock struct{…}
 
 ToolReferences \[\][BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block)
@@ -4048,23 +3426,11 @@ ToolName string
 
 Type ToolReference
 
-Accepts one of the following:
-
-const ToolReferenceToolReference ToolReference = "tool_reference"
-
 Type ToolSearchToolSearchResult
-
-Accepts one of the following:
-
-const ToolSearchToolSearchResultToolSearchToolSearchResult ToolSearchToolSearchResult = "tool_search_tool_search_result"
 
 ToolUseID string
 
 Type ToolSearchToolResult
-
-Accepts one of the following:
-
-const ToolSearchToolResultToolSearchToolResult ToolSearchToolResult = "tool_search_tool_result"
 
 type BetaMCPToolUseBlock struct{…}
 
@@ -4081,10 +3447,6 @@ ServerName string
 The name of the MCP server
 
 Type MCPToolUse
-
-Accepts one of the following:
-
-const MCPToolUseMCPToolUse MCPToolUse = "mcp_tool_use"
 
 type BetaMCPToolResultBlock struct{…}
 
@@ -4120,10 +3482,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type BetaCitationPageLocation struct{…}
 
 CitedText string
@@ -4139,10 +3497,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type BetaCitationContentBlockLocation struct{…}
 
@@ -4160,10 +3514,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type BetaCitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -4173,10 +3523,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -4196,27 +3542,15 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 IsError bool
 
 ToolUseID string
 
 Type MCPToolResult
-
-Accepts one of the following:
-
-const MCPToolResultMCPToolResult MCPToolResult = "mcp_tool_result"
 
 type BetaContainerUploadBlock struct{…}
 
@@ -4225,10 +3559,6 @@ Response model for a file uploaded to the container.
 FileID string
 
 Type ContainerUpload
-
-Accepts one of the following:
-
-const ContainerUploadContainerUpload ContainerUpload = "container_upload"
 
 type BetaCompactionBlock struct{…}
 
@@ -4241,10 +3571,6 @@ Content string
 Summary of compacted content, or null if compaction failed
 
 Type Compaction
-
-Accepts one of the following:
-
-const CompactionCompaction Compaction = "compaction"
 
 ContextManagement [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response)
 
@@ -4264,21 +3590,13 @@ ClearedInputTokens int64
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 ClearedToolUses int64
 
 Number of tool uses that were cleared.
 
-minimum0
-
 Type ClearToolUses20250919
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-const ClearToolUses20250919ClearToolUses20250919 ClearToolUses20250919 = "clear_tool_uses_20250919"
 
 type BetaClearThinking20251015EditResponse struct{…}
 
@@ -4286,21 +3604,13 @@ ClearedInputTokens int64
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 ClearedThinkingTurns int64
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 Type ClearThinking20251015
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-const ClearThinking20251015ClearThinking20251015 ClearThinking20251015 = "clear_thinking_20251015"
 
 Model Model
 
@@ -4321,6 +3631,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -4410,10 +3724,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [BetaStopReason](/docs/en/api/beta#beta_stop_reason)
 
 The reason that we stopped.
@@ -4459,10 +3769,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [BetaUsage](/docs/en/api/beta#beta_usage)
 
 Billing and rate-limit usage.
@@ -4483,25 +3789,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -4511,9 +3809,7 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
-Iterations \[\]BetaUsageIterationUnion
+Iterations [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage)
 
 Per-iteration token usage breakdown.
 
@@ -4537,45 +3833,29 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
 
-minimum0
-
 Type Message
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-const MessageMessage Message = "message"
 
 type BetaCompactionIterationUsage struct{…}
 
@@ -4589,51 +3869,33 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 Type Compaction
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-const CompactionCompaction Compaction = "compaction"
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage)
 
@@ -4643,13 +3905,9 @@ WebFetchRequests int64
 
 The number of web fetch tool requests.
 
-minimum0
-
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier BetaUsageServiceTier
 
@@ -4663,11 +3921,17 @@ const BetaUsageServiceTierPriority BetaUsageServiceTier = "priority"
 
 const BetaUsageServiceTierBatch BetaUsageServiceTier = "batch"
 
-Type Succeeded
+Speed BetaUsageSpeed
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-const SucceededSucceeded Succeeded = "succeeded"
+const BetaUsageSpeedStandard BetaUsageSpeed = "standard"
+
+const BetaUsageSpeedFast BetaUsageSpeed = "fast"
+
+Type Succeeded
 
 [](/docs)
 

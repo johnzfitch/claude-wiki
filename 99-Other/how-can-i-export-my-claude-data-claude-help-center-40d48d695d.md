@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:40Z"
+fetched_at: "2026-02-23T00:45:17Z"
 source_url: "https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data"
 title: "How can I export my Claude data? | Claude Help Center"
 ---

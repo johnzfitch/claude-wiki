@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-23T00:45:20Z"
 source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
 title: "Paid Plan Billing FAQs | Claude Help Center"
 ---
@@ -97,7 +97,7 @@ Additionally, all invoices are automatically emailed to your billing email addre
 
 If you want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in [Settings \> Billing](http://claude.ai/settings/billing).
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922141785/666191101c11030b05f03a668a74/image.png?expires=1770722100&signature=cbb2701fdda129438af15debbc70ad7af3a532ebe06d21b78fe5c8d0f6f9928b&req=dSklFMh6nIZXXPMW1HO4zVXW%2F22saTHNQoNvNFTb5ccZ3IlBph4VftIGwyvl%0AS8Q%2BAjHg6N5eRssvtGU%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922141785/666191101c11030b05f03a668a74/image.png?expires=1771809300&signature=b61a2069682bedc7fb6736de19987917ca5c2e060fcadffc4f6fce0fb3a5eb30&req=dSklFMh6nIZXXPMW1HO4zVXW%2F2yjazrPQoNvNFTb5cd0hWA22VJ7MJU%2BfCdT%0AzIM%2FXZY3B6uJ5GMGcDc%3D%0A)
 
 ## How can I edit a paid invoice?
 
@@ -141,7 +141,7 @@ Understanding your billing address and tax calculation
 
 [](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs)
 
-Team Plan Billing FAQs
+Team plan billing FAQs
 
 Did this answer your question?
 

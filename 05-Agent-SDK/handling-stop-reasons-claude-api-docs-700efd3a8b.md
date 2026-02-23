@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:38Z"
+fetched_at: "2026-02-22T13:13:09Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/stop-reasons"
 title: "Handling stop reasons - Claude API Docs"
 ---
@@ -31,12 +31,14 @@ Python
 from claude_agent_sdk import query, ResultMessage
 import asyncio
 
+
 async def check_stop_reason():
     async for message in query(prompt="Write a poem about the ocean"):
         if isinstance(message, ResultMessage):
             print(f"Stop reason: {message.stop_reason}")
             if message.stop_reason == "refusal":
                 print("The model declined this request.")
+
 
 asyncio.run(check_stop_reason())
 ```
@@ -74,6 +76,7 @@ Python
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage
 import asyncio
 
+
 async def handle_max_turns():
     options = ClaudeAgentOptions(max_turns=3)
 
@@ -83,6 +86,7 @@ async def handle_max_turns():
                 print(f"Hit turn limit. Last stop reason: {message.stop_reason}")
                 # stop_reason might be "end_turn" or "tool_use"
                 # depending on what the model was doing when the limit hit
+
 
 asyncio.run(handle_max_turns())
 ```
@@ -99,6 +103,7 @@ Python
 from claude_agent_sdk import query, ResultMessage
 import asyncio
 
+
 async def safe_query(prompt: str):
     async for message in query(prompt=prompt):
         if isinstance(message, ResultMessage):
@@ -107,6 +112,7 @@ async def safe_query(prompt: str):
                 return None
             return message.result
     return None
+
 
 asyncio.run(safe_query("Summarize this article"))
 ```

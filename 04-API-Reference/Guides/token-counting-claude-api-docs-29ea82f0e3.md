@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:15Z"
+fetched_at: "2026-02-22T13:11:29Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/token-counting"
 title: "Token counting - Claude API Docs"
 ---
 
-Capabilities
+Context management
 
 # Token counting
 
@@ -18,6 +18,8 @@ Token counting enables you to determine the number of tokens in a message before
 - Proactively manage rate limits and costs
 - Make smart model routing decisions
 - Optimize prompts to be a specific length
+
+This feature is [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) eligible. When your organization has a ZDR arrangement, data sent through this feature is not stored after the API response is returned.
 
 ------------------------------------------------------------------------
 
@@ -51,10 +53,7 @@ client = anthropic.Anthropic()
 response = client.messages.count_tokens(
     model="claude-opus-4-6",
     system="You are a scientist",
-    messages=[{
-        "role": "user",
-        "content": "Hello, Claude"
-    }],
+    messages=[{"role": "user", "content": "Hello, Claude"}],
 )
 
 print(response.json())
@@ -97,7 +96,7 @@ response = client.messages.count_tokens(
             },
         }
     ],
-    messages=[{"role": "user", "content": "What's the weather like in San Francisco?"}]
+    messages=[{"role": "user", "content": "What's the weather like in San Francisco?"}],
 )
 
 print(response.json())
@@ -152,7 +151,7 @@ JSON
 
 Count tokens in messages with extended thinking
 
-See [here](/docs/en/build-with-claude/extended-thinking#how-context-window-is-calculated-with-extended-thinking) for more details about how the context window is calculated with extended thinking
+See [how the context window is calculated with extended thinking](/docs/en/build-with-claude/extended-thinking#how-context-window-is-calculated-with-extended-thinking) for more details
 
 - Thinking blocks from **previous** assistant turns are ignored and **do not** count toward your input tokens
 - **Current** assistant turn thinking **does** count toward your input tokens
@@ -165,7 +164,7 @@ curl https://api.anthropic.com/v1/messages/count_tokens \
     --header "content-type: application/json" \
     --header "anthropic-version: 2023-06-01" \
     --data '{
-      "model": "claude-sonnet-4-5",
+      "model": "claude-sonnet-4-6",
       "thinking": {
         "type": "enabled",
         "budget_tokens": 16000

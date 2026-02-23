@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:07:06Z"
+fetched_at: "2026-02-22T13:34:58Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta"
 title: "Beta - Claude API Reference"
 ---
@@ -13,13 +13,13 @@ TypeScript
 
 ##### ModelsExpand Collapse 
 
-AnthropicBeta = (string & {}) \| "message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 16 more
+AnthropicBeta = (string & {}) \| "message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 17 more
 
 Accepts one of the following:
 
 (string & {})
 
-"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 16 more
+"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 17 more
 
 "message-batches-2024-09-24"
 
@@ -59,15 +59,13 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 BetaAPIError { message, type }
 
 message: string
 
 type: "api_error"
-
-Accepts one of the following:
-
-"api_error"
 
 BetaAuthenticationError { message, type }
 
@@ -75,19 +73,11 @@ message: string
 
 type: "authentication_error"
 
-Accepts one of the following:
-
-"authentication_error"
-
 BetaBillingError { message, type }
 
 message: string
 
 type: "billing_error"
-
-Accepts one of the following:
-
-"billing_error"
 
 BetaError = [BetaInvalidRequestError](/docs/en/api/beta#beta_invalid_request_error) { message, type } \| [BetaAuthenticationError](/docs/en/api/beta#beta_authentication_error) { message, type } \| [BetaBillingError](/docs/en/api/beta#beta_billing_error) { message, type } \| 6 more
 
@@ -99,19 +89,11 @@ message: string
 
 type: "invalid_request_error"
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 BetaAuthenticationError { message, type }
 
 message: string
 
 type: "authentication_error"
-
-Accepts one of the following:
-
-"authentication_error"
 
 BetaBillingError { message, type }
 
@@ -119,19 +101,11 @@ message: string
 
 type: "billing_error"
 
-Accepts one of the following:
-
-"billing_error"
-
 BetaPermissionError { message, type }
 
 message: string
 
 type: "permission_error"
-
-Accepts one of the following:
-
-"permission_error"
 
 BetaNotFoundError { message, type }
 
@@ -139,19 +113,11 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 BetaRateLimitError { message, type }
 
 message: string
 
 type: "rate_limit_error"
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 BetaGatewayTimeoutError { message, type }
 
@@ -159,29 +125,17 @@ message: string
 
 type: "timeout_error"
 
-Accepts one of the following:
-
-"timeout_error"
-
 BetaAPIError { message, type }
 
 message: string
 
 type: "api_error"
 
-Accepts one of the following:
-
-"api_error"
-
 BetaOverloadedError { message, type }
 
 message: string
 
 type: "overloaded_error"
-
-Accepts one of the following:
-
-"overloaded_error"
 
 BetaErrorResponse { error, request_id, type }
 
@@ -195,19 +149,11 @@ message: string
 
 type: "invalid_request_error"
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 BetaAuthenticationError { message, type }
 
 message: string
 
 type: "authentication_error"
-
-Accepts one of the following:
-
-"authentication_error"
 
 BetaBillingError { message, type }
 
@@ -215,19 +161,11 @@ message: string
 
 type: "billing_error"
 
-Accepts one of the following:
-
-"billing_error"
-
 BetaPermissionError { message, type }
 
 message: string
 
 type: "permission_error"
-
-Accepts one of the following:
-
-"permission_error"
 
 BetaNotFoundError { message, type }
 
@@ -235,29 +173,17 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 BetaRateLimitError { message, type }
 
 message: string
 
 type: "rate_limit_error"
 
-Accepts one of the following:
-
-"rate_limit_error"
-
 BetaGatewayTimeoutError { message, type }
 
 message: string
 
 type: "timeout_error"
-
-Accepts one of the following:
-
-"timeout_error"
 
 BetaAPIError { message, type }
 
@@ -265,27 +191,15 @@ message: string
 
 type: "api_error"
 
-Accepts one of the following:
-
-"api_error"
-
 BetaOverloadedError { message, type }
 
 message: string
 
 type: "overloaded_error"
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: string \| null
 
 type: "error"
-
-Accepts one of the following:
-
-"error"
 
 BetaGatewayTimeoutError { message, type }
 
@@ -293,19 +207,11 @@ message: string
 
 type: "timeout_error"
 
-Accepts one of the following:
-
-"timeout_error"
-
 BetaInvalidRequestError { message, type }
 
 message: string
 
 type: "invalid_request_error"
-
-Accepts one of the following:
-
-"invalid_request_error"
 
 BetaNotFoundError { message, type }
 
@@ -313,19 +219,11 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 BetaOverloadedError { message, type }
 
 message: string
 
 type: "overloaded_error"
-
-Accepts one of the following:
-
-"overloaded_error"
 
 BetaPermissionError { message, type }
 
@@ -333,19 +231,11 @@ message: string
 
 type: "permission_error"
 
-Accepts one of the following:
-
-"permission_error"
-
 BetaRateLimitError { message, type }
 
 message: string
 
 type: "rate_limit_error"
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 #### BetaModels
 
@@ -353,13 +243,13 @@ Accepts one of the following:
 
 client.beta.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, created_at, display_name, type } \>
 
-get/v1/models
+GET/v1/models
 
 ##### [Get a Model](/docs/en/api/beta/models/retrieve)
 
 client.beta.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, created_at, display_name, type }
 
-get/v1/models/{model_id}
+GET/v1/models/{model_id}
 
 ##### ModelsExpand Collapse 
 
@@ -373,8 +263,6 @@ created_at: string
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
-formatdate-time
-
 display_name: string
 
 A human-readable name for the model.
@@ -385,33 +273,25 @@ Object type.
 
 For Models, this is always `"model"`.
 
-Accepts one of the following:
-
-"model"
-
 #### BetaMessages
 
 ##### [Create a Message](/docs/en/api/beta/messages/create)
 
 client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): [BetaMessage](/docs/en/api/beta#beta_message) { id, container, content, 7 more } \| Stream\<[BetaRawMessageStreamEvent](/docs/en/api/beta#beta_raw_message_stream_event)\>
 
-post/v1/messages
+POST/v1/messages
 
 ##### [Count tokens in a Message](/docs/en/api/beta/messages/count_tokens)
 
-client.beta.messages.countTokens(MessageCountTokensParams { messages, model, context_management, 8 more } params, RequestOptionsoptions?): [BetaMessageTokensCount](/docs/en/api/beta#beta_message_tokens_count) { context_management, input_tokens }
+client.beta.messages.countTokens(MessageCountTokensParams { messages, model, cache_control, 10 more } params, RequestOptionsoptions?): [BetaMessageTokensCount](/docs/en/api/beta#beta_message_tokens_count) { context_management, input_tokens }
 
-post/v1/messages/count_tokens
+POST/v1/messages/count_tokens
 
 ##### ModelsExpand Collapse 
 
 BetaAllThinkingTurns { type }
 
 type: "all"
-
-Accepts one of the following:
-
-"all"
 
 BetaBase64ImageSource { data, media_type, type }
 
@@ -431,25 +311,13 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaBase64PDFSource { data, media_type, type }
 
 data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaBashCodeExecutionOutputBlock { file_id, type }
 
@@ -457,19 +325,11 @@ file_id: string
 
 type: "bash_code_execution_output"
 
-Accepts one of the following:
-
-"bash_code_execution_output"
-
 BetaBashCodeExecutionOutputBlockParam { file_id, type }
 
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
@@ -479,10 +339,6 @@ file_id: string
 
 type: "bash_code_execution_output"
 
-Accepts one of the following:
-
-"bash_code_execution_output"
-
 return_code: number
 
 stderr: string
@@ -490,10 +346,6 @@ stderr: string
 stdout: string
 
 type: "bash_code_execution_result"
-
-Accepts one of the following:
-
-"bash_code_execution_result"
 
 BetaBashCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
@@ -503,10 +355,6 @@ file_id: string
 
 type: "bash_code_execution_output"
 
-Accepts one of the following:
-
-"bash_code_execution_output"
-
 return_code: number
 
 stderr: string
@@ -514,10 +362,6 @@ stderr: string
 stdout: string
 
 type: "bash_code_execution_result"
-
-Accepts one of the following:
-
-"bash_code_execution_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -543,10 +387,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -554,10 +394,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -567,17 +403,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlockParam { content, tool_use_id, type, cache_control }
 
@@ -603,10 +431,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_bash_code_execution_output_block_param) { file_id, type } \>
@@ -614,10 +438,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_b
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -627,27 +447,15 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -684,10 +492,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionToolResultErrorParam { error_code, type }
 
 error_code: "invalid_tool_input" \| "unavailable" \| "too_many_requests" \| 2 more
@@ -706,17 +510,9 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaCacheControlEphemeral { type, ttl }
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -741,13 +537,9 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 BetaCitationCharLocation { cited_text, document_index, document_title, 4 more }
 
@@ -765,10 +557,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationCharLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -782,10 +570,6 @@ end_char_index: number
 start_char_index: number
 
 type: "char_location"
-
-Accepts one of the following:
-
-"char_location"
 
 BetaCitationConfig { enabled }
 
@@ -807,10 +591,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -824,10 +604,6 @@ end_block_index: number
 start_block_index: number
 
 type: "content_block_location"
-
-Accepts one of the following:
-
-"content_block_location"
 
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
@@ -845,10 +621,6 @@ start_page_number: number
 
 type: "page_location"
 
-Accepts one of the following:
-
-"page_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -862,10 +634,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationSearchResultLocation { cited_text, end_block_index, search_result_index, 4 more }
 
@@ -883,10 +651,6 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 BetaCitationSearchResultLocationParam { cited_text, end_block_index, search_result_index, 4 more }
 
 cited_text: string
@@ -903,10 +667,6 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -916,10 +676,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -949,10 +705,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -968,10 +720,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -989,10 +737,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -1002,10 +746,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -1025,15 +765,7 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 type: "citations_delta"
-
-Accepts one of the following:
-
-"citations_delta"
 
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
@@ -1045,19 +777,11 @@ title: string \| null
 
 type: "web_search_result_location"
 
-Accepts one of the following:
-
-"web_search_result_location"
-
 url: string
 
 BetaClearThinking20251015Edit { type, keep }
 
 type: "clear_thinking_20251015"
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 keep?: [BetaThinkingTurns](/docs/en/api/beta#beta_thinking_turns) { type, value } \| [BetaAllThinkingTurns](/docs/en/api/beta#beta_all_thinking_turns) { type } \| "all"
 
@@ -1069,19 +793,11 @@ BetaThinkingTurns { type, value }
 
 type: "thinking_turns"
 
-Accepts one of the following:
-
-"thinking_turns"
-
 value: number
 
 BetaAllThinkingTurns { type }
 
 type: "all"
-
-Accepts one of the following:
-
-"all"
 
 "all"
 
@@ -1093,39 +809,23 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
-
-minimum0
 
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
 
-Accepts one of the following:
-
-"clear_thinking_20251015"
-
 BetaClearToolUses20250919Edit { type, clear_at_least, clear_tool_inputs, 3 more }
 
 type: "clear_tool_uses_20250919"
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 clear_at_least?: [BetaInputTokensClearAtLeast](/docs/en/api/beta#beta_input_tokens_clear_at_least) { type, value } \| null
 
 Minimum number of tokens that must be cleared when triggered. Context will only be modified if at least this many tokens can be removed.
 
 type: "input_tokens"
-
-Accepts one of the following:
-
-"input_tokens"
 
 value: number
 
@@ -1149,10 +849,6 @@ Number of tool uses to retain in the conversation
 
 type: "tool_uses"
 
-Accepts one of the following:
-
-"tool_uses"
-
 value: number
 
 trigger?: [BetaInputTokensTrigger](/docs/en/api/beta#beta_input_tokens_trigger) { type, value } \| [BetaToolUsesTrigger](/docs/en/api/beta#beta_tool_uses_trigger) { type, value }
@@ -1165,19 +861,11 @@ BetaInputTokensTrigger { type, value }
 
 type: "input_tokens"
 
-Accepts one of the following:
-
-"input_tokens"
-
 value: number
 
 BetaToolUsesTrigger { type, value }
 
 type: "tool_uses"
-
-Accepts one of the following:
-
-"tool_uses"
 
 value: number
 
@@ -1187,21 +875,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaCodeExecutionOutputBlock { file_id, type }
 
@@ -1209,19 +889,11 @@ file_id: string
 
 type: "code_execution_output"
 
-Accepts one of the following:
-
-"code_execution_output"
-
 BetaCodeExecutionOutputBlockParam { file_id, type }
 
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
@@ -1231,10 +903,6 @@ file_id: string
 
 type: "code_execution_output"
 
-Accepts one of the following:
-
-"code_execution_output"
-
 return_code: number
 
 stderr: string
@@ -1242,10 +910,6 @@ stderr: string
 stdout: string
 
 type: "code_execution_result"
-
-Accepts one of the following:
-
-"code_execution_result"
 
 BetaCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
@@ -1255,10 +919,6 @@ file_id: string
 
 type: "code_execution_output"
 
-Accepts one of the following:
-
-"code_execution_output"
-
 return_code: number
 
 stderr: string
@@ -1266,10 +926,6 @@ stderr: string
 stdout: string
 
 type: "code_execution_result"
-
-Accepts one of the following:
-
-"code_execution_result"
 
 BetaCodeExecutionTool20250522 { name, type, allowed_callers, 3 more }
 
@@ -1279,17 +935,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"code_execution"
-
 type: "code_execution_20250522"
 
-Accepts one of the following:
-
-"code_execution_20250522"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -1297,15 +945,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -1340,17 +986,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"code_execution"
-
 type: "code_execution_20250825"
 
-Accepts one of the following:
-
-"code_execution_20250825"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -1358,15 +996,66 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
 
+ttl?: "5m" \| "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
 Accepts one of the following:
 
-"ephemeral"
+"5m"
+
+"1h"
+
+defer_loading?: boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+strict?: boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+BetaCodeExecutionTool20260120 { name, type, allowed_callers, 3 more }
+
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+name: "code_execution"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "code_execution_20260120"
+
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -1397,6 +1086,8 @@ BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
 
+Code execution result with encrypted stdout for PFC + web_search results.
+
 Accepts one of the following:
 
 BetaCodeExecutionToolResultError { error_code, type }
@@ -1415,10 +1106,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -1426,10 +1113,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -1439,19 +1122,31 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
 
-Accepts one of the following:
+BetaCodeExecutionToolResultBlockContent = [BetaCodeExecutionToolResultError](/docs/en/api/beta#beta_code_execution_tool_result_error) { error_code, type } \| [BetaCodeExecutionResultBlock](/docs/en/api/beta#beta_code_execution_result_block) { content, return_code, stderr, 2 more } \| [BetaEncryptedCodeExecutionResultBlock](/docs/en/api/beta#beta_encrypted_code_execution_result_block) { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_tool_result"
-
-BetaCodeExecutionToolResultBlockContent = [BetaCodeExecutionToolResultError](/docs/en/api/beta#beta_code_execution_tool_result_error) { error_code, type } \| [BetaCodeExecutionResultBlock](/docs/en/api/beta#beta_code_execution_result_block) { content, return_code, stderr, 2 more }
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -1471,10 +1166,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -1482,10 +1173,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -1495,13 +1182,29 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 BetaCodeExecutionToolResultBlockParam { content, tool_use_id, type, cache_control }
 
 content: [BetaCodeExecutionToolResultBlockParamContent](/docs/en/api/beta#beta_code_execution_tool_result_block_param_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -1521,10 +1224,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
@@ -1532,10 +1231,6 @@ content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -1545,27 +1240,33 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlockParam { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -1584,7 +1285,9 @@ Accepts one of the following:
 
 "1h"
 
-BetaCodeExecutionToolResultBlockParamContent = [BetaCodeExecutionToolResultErrorParam](/docs/en/api/beta#beta_code_execution_tool_result_error_param) { error_code, type } \| [BetaCodeExecutionResultBlockParam](/docs/en/api/beta#beta_code_execution_result_block_param) { content, return_code, stderr, 2 more }
+BetaCodeExecutionToolResultBlockParamContent = [BetaCodeExecutionToolResultErrorParam](/docs/en/api/beta#beta_code_execution_tool_result_error_param) { error_code, type } \| [BetaCodeExecutionResultBlockParam](/docs/en/api/beta#beta_code_execution_result_block_param) { content, return_code, stderr, 2 more } \| [BetaEncryptedCodeExecutionResultBlockParam](/docs/en/api/beta#beta_encrypted_code_execution_result_block_param) { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -1604,10 +1307,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
@@ -1615,10 +1314,6 @@ content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -1628,9 +1323,23 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlockParam { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 BetaCodeExecutionToolResultError { error_code, type }
 
@@ -1647,10 +1356,6 @@ Accepts one of the following:
 "execution_time_exceeded"
 
 type: "code_execution_tool_result_error"
-
-Accepts one of the following:
-
-"code_execution_tool_result_error"
 
 BetaCodeExecutionToolResultErrorCode = "invalid_tool_input" \| "unavailable" \| "too_many_requests" \| "execution_time_exceeded"
 
@@ -1680,19 +1385,11 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCompact20260112Edit { type, instructions, pause_after_compaction, trigger }
 
 Automatically compact older context when reaching the configured trigger threshold.
 
 type: "compact_20260112"
-
-Accepts one of the following:
-
-"compact_20260112"
 
 instructions?: string \| null
 
@@ -1708,10 +1405,6 @@ When to trigger compaction. Defaults to 150000 input tokens.
 
 type: "input_tokens"
 
-Accepts one of the following:
-
-"input_tokens"
-
 value: number
 
 BetaCompactionBlock { content, type }
@@ -1725,10 +1418,6 @@ content: string \| null
 Summary of compacted content, or null if compaction failed
 
 type: "compaction"
-
-Accepts one of the following:
-
-"compaction"
 
 BetaCompactionBlockParam { content, type, cache_control }
 
@@ -1744,19 +1433,11 @@ Summary of previously compacted content, or null if compaction failed
 
 type: "compaction"
 
-Accepts one of the following:
-
-"compaction"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -1781,10 +1462,6 @@ content: string \| null
 
 type: "compaction_delta"
 
-Accepts one of the following:
-
-"compaction_delta"
-
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
 Token usage for a compaction iteration.
@@ -1797,45 +1474,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "compaction"
 
 Usage for a compaction iteration
-
-Accepts one of the following:
-
-"compaction"
 
 BetaContainer { id, expires_at, skills }
 
@@ -1849,8 +1510,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -1858,10 +1517,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -1876,10 +1531,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 BetaContainerParams { id, skills }
 
@@ -1897,10 +1548,6 @@ skill_id: string
 
 Skill ID
 
-maxLength64
-
-minLength1
-
 type: "anthropic" \| "custom"
 
 Type of skill - either 'anthropic' (built-in) or 'custom' (user-defined)
@@ -1915,10 +1562,6 @@ version?: string
 
 Skill version or 'latest' for most recent version
 
-maxLength64
-
-minLength1
-
 BetaContainerUploadBlock { file_id, type }
 
 Response model for a file uploaded to the container.
@@ -1926,10 +1569,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaContainerUploadBlockParam { file_id, type, cache_control }
 
@@ -1939,19 +1578,11 @@ file_id: string
 
 type: "container_upload"
 
-Accepts one of the following:
-
-"container_upload"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -2002,10 +1633,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -2021,10 +1648,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -2042,10 +1665,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -2055,10 +1674,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -2078,17 +1693,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -2098,19 +1705,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -2122,11 +1721,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -2138,10 +1733,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -2150,9 +1741,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -2180,11 +1773,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -2196,10 +1785,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -2208,11 +1793,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -2238,10 +1825,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -2252,21 +1835,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -2296,10 +1897,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -2320,15 +1917,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -2336,15 +1925,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -2352,19 +1933,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -2374,13 +1947,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -2400,10 +1997,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -2411,10 +2004,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -2424,17 +2013,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -2460,10 +2059,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -2471,10 +2066,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -2484,17 +2075,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -2522,10 +2105,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -2548,19 +2127,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -2576,17 +2147,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -2612,10 +2175,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -2624,23 +2183,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -2657,10 +2204,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -2696,10 +2239,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -2715,10 +2254,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -2736,10 +2271,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -2749,10 +2280,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -2772,27 +2299,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -2801,10 +2316,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -2818,10 +2329,6 @@ Summary of compacted content, or null if compaction failed
 
 type: "compaction"
 
-Accepts one of the following:
-
-"compaction"
-
 BetaContentBlockParam = [BetaTextBlockParam](/docs/en/api/beta#beta_text_block_param) { text, type, cache_control, citations } \| [BetaImageBlockParam](/docs/en/api/beta#beta_image_block_param) { source, type, cache_control } \| [BetaRequestDocumentBlock](/docs/en/api/beta#beta_request_document_block) { source, type, cache_control, 3 more } \| 16 more
 
 Regular text content.
@@ -2834,19 +2341,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -2883,10 +2382,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -2900,10 +2395,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -2919,10 +2410,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -2932,10 +2419,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -2954,10 +2437,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -2983,17 +2462,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -3003,25 +2474,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3052,15 +2511,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -3068,15 +2519,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -3094,19 +2537,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3143,10 +2578,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -3160,10 +2591,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -3179,10 +2606,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -3192,10 +2615,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -3214,10 +2633,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -3243,17 +2658,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -3263,25 +2670,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3302,17 +2697,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -3322,25 +2709,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3375,19 +2750,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3424,10 +2791,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -3441,10 +2804,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -3460,10 +2819,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -3473,10 +2828,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -3496,29 +2847,17 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 source: string
 
 title: string
 
 type: "search_result"
 
-Accepts one of the following:
-
-"search_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3549,19 +2888,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlockParam { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlockParam { id, input, name, 3 more }
 
@@ -3573,19 +2904,11 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3604,7 +2927,7 @@ Accepts one of the following:
 
 "1h"
 
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -3616,10 +2939,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -3628,9 +2947,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaToolResultBlockParam { tool_use_id, type, cache_control, 2 more }
 
@@ -3638,19 +2959,11 @@ tool_use_id: string
 
 type: "tool_result"
 
-Accepts one of the following:
-
-"tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3683,19 +2996,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3732,10 +3037,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -3749,10 +3050,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -3768,10 +3065,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -3781,10 +3074,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -3803,10 +3092,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -3832,17 +3117,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -3852,25 +3129,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3897,19 +3162,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -3946,10 +3203,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -3963,10 +3216,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -3982,10 +3231,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -3995,10 +3240,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -4018,29 +3259,17 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 source: string
 
 title: string
 
 type: "search_result"
 
-Accepts one of the following:
-
-"search_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4075,15 +3304,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -4091,15 +3312,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -4117,19 +3330,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4166,10 +3371,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -4183,10 +3384,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -4202,10 +3399,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -4215,10 +3408,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -4237,10 +3426,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -4266,17 +3451,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -4286,25 +3463,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4325,17 +3490,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -4345,25 +3502,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4398,19 +3543,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4457,19 +3594,11 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4488,7 +3617,7 @@ Accepts one of the following:
 
 "1h"
 
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -4500,10 +3629,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -4512,11 +3637,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlockParam { content, tool_use_id, type, cache_control }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlockParam { content, tool_use_id, type, 2 more }
 
 content: [BetaWebSearchToolResultBlockParamContent](/docs/en/api/beta#beta_web_search_tool_result_block_param_content)
 
@@ -4529,10 +3656,6 @@ encrypted_content: string
 title: string
 
 type: "web_search_result"
-
-Accepts one of the following:
-
-"web_search_result"
 
 url: string
 
@@ -4558,27 +3681,15 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 tool_use_id: string
 
 type: "web_search_tool_result"
-
-Accepts one of the following:
-
-"web_search_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4597,7 +3708,33 @@ Accepts one of the following:
 
 "1h"
 
-BetaWebFetchToolResultBlockParam { content, tool_use_id, type, cache_control }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlockParam { content, tool_use_id, type, 2 more }
 
 content: [BetaWebFetchToolResultErrorBlockParam](/docs/en/api/beta#beta_web_fetch_tool_result_error_block_param) { error_code, type } \| [BetaWebFetchBlockParam](/docs/en/api/beta#beta_web_fetch_block_param) { content, type, url, retrieved_at }
 
@@ -4627,10 +3764,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlockParam { content, type, url, retrieved_at }
 
 content: [BetaRequestDocumentBlock](/docs/en/api/beta#beta_request_document_block) { source, type, cache_control, 3 more }
@@ -4645,15 +3778,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -4661,15 +3786,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -4687,19 +3804,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4736,10 +3845,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -4753,10 +3858,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -4772,10 +3873,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -4785,10 +3882,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -4807,10 +3900,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -4836,17 +3925,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -4856,25 +3937,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4895,17 +3964,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -4915,25 +3976,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -4962,10 +4011,6 @@ title?: string \| null
 
 type: "web_fetch_result"
 
-Accepts one of the following:
-
-"web_fetch_result"
-
 url: string
 
 Fetched content URL
@@ -4978,19 +4023,11 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
-Accepts one of the following:
-
-"web_fetch_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5009,9 +4046,37 @@ Accepts one of the following:
 
 "1h"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
 BetaCodeExecutionToolResultBlockParam { content, tool_use_id, type, cache_control }
 
 content: [BetaCodeExecutionToolResultBlockParamContent](/docs/en/api/beta#beta_code_execution_tool_result_block_param_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -5031,10 +4096,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
@@ -5042,10 +4103,6 @@ content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -5055,27 +4112,33 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlockParam { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5118,10 +4181,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_bash_code_execution_output_block_param) { file_id, type } \>
@@ -5129,10 +4188,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_b
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -5142,27 +4197,15 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5205,10 +4248,6 @@ Accepts one of the following:
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 error_message?: string \| null
 
 BetaTextEditorCodeExecutionViewResultBlockParam { content, file_type, type, 3 more }
@@ -5227,10 +4266,6 @@ Accepts one of the following:
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 num_lines?: number \| null
 
 start_line?: number \| null
@@ -5243,17 +4278,9 @@ is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
-
 BetaTextEditorCodeExecutionStrReplaceResultBlockParam { type, lines, new_lines, 3 more }
 
 type: "text_editor_code_execution_str_replace_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
 
 lines?: Array\<string\> \| null
 
@@ -5269,19 +4296,11 @@ tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5322,10 +4341,6 @@ Accepts one of the following:
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlockParam { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlockParam](/docs/en/api/beta#beta_tool_reference_block_param) { tool_name, type, cache_control } \>
@@ -5334,19 +4349,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5367,27 +4374,15 @@ Accepts one of the following:
 
 type: "tool_search_tool_search_result"
 
-Accepts one of the following:
-
-"tool_search_tool_search_result"
-
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5420,19 +4415,11 @@ The name of the MCP server
 
 type: "mcp_tool_use"
 
-Accepts one of the following:
-
-"mcp_tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5457,19 +4444,11 @@ tool_use_id: string
 
 type: "mcp_tool_result"
 
-Accepts one of the following:
-
-"mcp_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5500,19 +4479,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5549,10 +4520,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -5566,10 +4533,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -5585,10 +4548,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -5598,10 +4557,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -5621,10 +4576,6 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 is_error?: boolean
 
 BetaContainerUploadBlockParam { file_id, type, cache_control }
@@ -5635,19 +4586,11 @@ file_id: string
 
 type: "container_upload"
 
-Accepts one of the following:
-
-"container_upload"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5680,19 +4623,11 @@ Summary of previously compacted content, or null if compaction failed
 
 type: "compaction"
 
-Accepts one of the following:
-
-"compaction"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5727,19 +4662,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5776,10 +4703,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -5793,10 +4716,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -5812,10 +4731,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -5825,10 +4740,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -5847,10 +4758,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -5876,17 +4783,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -5896,25 +4795,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5935,10 +4822,6 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaContentBlockSourceContent = [BetaTextBlockParam](/docs/en/api/beta#beta_text_block_param) { text, type, cache_control, citations } \| [BetaImageBlockParam](/docs/en/api/beta#beta_image_block_param) { source, type, cache_control }
 
 Accepts one of the following:
@@ -5949,19 +4832,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -5998,10 +4873,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -6015,10 +4886,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -6034,10 +4901,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -6047,10 +4910,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -6069,10 +4928,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -6098,17 +4953,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -6118,25 +4965,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -6167,19 +5002,11 @@ BetaClearToolUses20250919Edit { type, clear_at_least, clear_tool_inputs, 3 more 
 
 type: "clear_tool_uses_20250919"
 
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
-
 clear_at_least?: [BetaInputTokensClearAtLeast](/docs/en/api/beta#beta_input_tokens_clear_at_least) { type, value } \| null
 
 Minimum number of tokens that must be cleared when triggered. Context will only be modified if at least this many tokens can be removed.
 
 type: "input_tokens"
-
-Accepts one of the following:
-
-"input_tokens"
 
 value: number
 
@@ -6203,10 +5030,6 @@ Number of tool uses to retain in the conversation
 
 type: "tool_uses"
 
-Accepts one of the following:
-
-"tool_uses"
-
 value: number
 
 trigger?: [BetaInputTokensTrigger](/docs/en/api/beta#beta_input_tokens_trigger) { type, value } \| [BetaToolUsesTrigger](/docs/en/api/beta#beta_tool_uses_trigger) { type, value }
@@ -6219,29 +5042,17 @@ BetaInputTokensTrigger { type, value }
 
 type: "input_tokens"
 
-Accepts one of the following:
-
-"input_tokens"
-
 value: number
 
 BetaToolUsesTrigger { type, value }
 
 type: "tool_uses"
 
-Accepts one of the following:
-
-"tool_uses"
-
 value: number
 
 BetaClearThinking20251015Edit { type, keep }
 
 type: "clear_thinking_20251015"
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 keep?: [BetaThinkingTurns](/docs/en/api/beta#beta_thinking_turns) { type, value } \| [BetaAllThinkingTurns](/docs/en/api/beta#beta_all_thinking_turns) { type } \| "all"
 
@@ -6253,19 +5064,11 @@ BetaThinkingTurns { type, value }
 
 type: "thinking_turns"
 
-Accepts one of the following:
-
-"thinking_turns"
-
 value: number
 
 BetaAllThinkingTurns { type }
 
 type: "all"
-
-Accepts one of the following:
-
-"all"
 
 "all"
 
@@ -6276,10 +5079,6 @@ BetaCompact20260112Edit { type, instructions, pause_after_compaction, trigger }
 Automatically compact older context when reaching the configured trigger threshold.
 
 type: "compact_20260112"
-
-Accepts one of the following:
-
-"compact_20260112"
 
 instructions?: string \| null
 
@@ -6294,10 +5093,6 @@ trigger?: [BetaInputTokensTrigger](/docs/en/api/beta#beta_input_tokens_trigger) 
 When to trigger compaction. Defaults to 150000 input tokens.
 
 type: "input_tokens"
-
-Accepts one of the following:
-
-"input_tokens"
 
 value: number
 
@@ -6315,21 +5110,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -6337,21 +5124,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 BetaCountTokensContextManagementResponse { original_input_tokens }
 
@@ -6364,10 +5143,6 @@ BetaDirectCaller { type }
 Tool invocation directly from the model.
 
 type: "direct"
-
-Accepts one of the following:
-
-"direct"
 
 BetaDocumentBlock { citations, source, title, type }
 
@@ -6387,15 +5162,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -6403,15 +5170,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -6419,9 +5178,41 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"document"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
+
+BetaEncryptedCodeExecutionResultBlockParam { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 BetaFileDocumentSource { file_id, type }
 
@@ -6429,19 +5220,11 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 BetaFileImageSource { file_id, type }
 
 file_id: string
 
 type: "file"
-
-Accepts one of the following:
-
-"file"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -6467,17 +5250,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -6487,25 +5262,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -6530,17 +5293,9 @@ partial_json: string
 
 type: "input_json_delta"
 
-Accepts one of the following:
-
-"input_json_delta"
-
 BetaInputTokensClearAtLeast { type, value }
 
 type: "input_tokens"
-
-Accepts one of the following:
-
-"input_tokens"
 
 value: number
 
@@ -6548,11 +5303,91 @@ BetaInputTokensTrigger { type, value }
 
 type: "input_tokens"
 
+value: number
+
+BetaIterationsUsage = Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+
+Per-iteration token usage breakdown.
+
+Each entry represents one sampling iteration, with its own input/output token counts and cache statistics. This allows you to:
+
+- Determine which iterations exceeded long context thresholds (\>=200k tokens)
+- Calculate the true context window size from the last iteration
+- Understand token accumulation across server-side tool use loops
+
 Accepts one of the following:
 
-"input_tokens"
+BetaMessageIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
-value: number
+Token usage for a sampling iteration.
+
+cache_creation: [BetaCacheCreation](/docs/en/api/beta#beta_cache_creation) { ephemeral_1h_input_tokens, ephemeral_5m_input_tokens } \| null
+
+Breakdown of cached tokens by TTL
+
+ephemeral_1h_input_tokens: number
+
+The number of input tokens used to create the 1 hour cache entry.
+
+ephemeral_5m_input_tokens: number
+
+The number of input tokens used to create the 5 minute cache entry.
+
+cache_creation_input_tokens: number
+
+The number of input tokens used to create the cache entry.
+
+cache_read_input_tokens: number
+
+The number of input tokens read from the cache.
+
+input_tokens: number
+
+The number of input tokens which were used.
+
+output_tokens: number
+
+The number of output tokens which were used.
+
+type: "message"
+
+Usage for a sampling iteration
+
+BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
+
+Token usage for a compaction iteration.
+
+cache_creation: [BetaCacheCreation](/docs/en/api/beta#beta_cache_creation) { ephemeral_1h_input_tokens, ephemeral_5m_input_tokens } \| null
+
+Breakdown of cached tokens by TTL
+
+ephemeral_1h_input_tokens: number
+
+The number of input tokens used to create the 1 hour cache entry.
+
+ephemeral_5m_input_tokens: number
+
+The number of input tokens used to create the 5 minute cache entry.
+
+cache_creation_input_tokens: number
+
+The number of input tokens used to create the cache entry.
+
+cache_read_input_tokens: number
+
+The number of input tokens read from the cache.
+
+input_tokens: number
+
+The number of input tokens which were used.
+
+output_tokens: number
+
+The number of output tokens which were used.
+
+type: "compaction"
+
+Usage for a compaction iteration
 
 BetaJSONOutputFormat { schema, type }
 
@@ -6561,10 +5396,6 @@ schema: Record\<string, unknown\>
 The JSON schema of the format
 
 type: "json_schema"
-
-Accepts one of the following:
-
-"json_schema"
 
 BetaMCPToolConfig { defer_loading, enabled }
 
@@ -6616,10 +5447,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -6635,10 +5462,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -6656,10 +5479,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -6669,10 +5488,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -6692,27 +5507,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -6730,10 +5533,6 @@ The name of the MCP server
 
 type: "mcp_tool_use"
 
-Accepts one of the following:
-
-"mcp_tool_use"
-
 BetaMCPToolUseBlockParam { id, input, name, 3 more }
 
 id: string
@@ -6748,19 +5547,11 @@ The name of the MCP server
 
 type: "mcp_tool_use"
 
-Accepts one of the following:
-
-"mcp_tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -6789,25 +5580,13 @@ mcp_server_name: string
 
 Name of the MCP server to configure tools for
 
-maxLength255
-
-minLength1
-
 type: "mcp_toolset"
-
-Accepts one of the following:
-
-"mcp_toolset"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -6850,17 +5629,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"memory"
-
 type: "memory_20250818"
 
-Accepts one of the following:
-
-"memory_20250818"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -6868,15 +5639,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -6915,10 +5684,6 @@ command: "view"
 
 Command type identifier
 
-Accepts one of the following:
-
-"view"
-
 path: string
 
 Path to directory or file to view
@@ -6933,10 +5698,6 @@ command: "create"
 
 Command type identifier
 
-Accepts one of the following:
-
-"create"
-
 file_text: string
 
 Content to write to the file
@@ -6950,10 +5711,6 @@ BetaMemoryTool20250818StrReplaceCommand { command, new_str, old_str, path }
 command: "str_replace"
 
 Command type identifier
-
-Accepts one of the following:
-
-"str_replace"
 
 new_str: string
 
@@ -6973,15 +5730,9 @@ command: "insert"
 
 Command type identifier
 
-Accepts one of the following:
-
-"insert"
-
 insert_line: number
 
 Line number where text should be inserted
-
-minimum1
 
 insert_text: string
 
@@ -6997,10 +5748,6 @@ command: "delete"
 
 Command type identifier
 
-Accepts one of the following:
-
-"delete"
-
 path: string
 
 Path to the file or directory to delete
@@ -7010,10 +5757,6 @@ BetaMemoryTool20250818RenameCommand { command, new_path, old_path }
 command: "rename"
 
 Command type identifier
-
-Accepts one of the following:
-
-"rename"
 
 new_path: string
 
@@ -7029,10 +5772,6 @@ command: "create"
 
 Command type identifier
 
-Accepts one of the following:
-
-"create"
-
 file_text: string
 
 Content to write to the file
@@ -7047,10 +5786,6 @@ command: "delete"
 
 Command type identifier
 
-Accepts one of the following:
-
-"delete"
-
 path: string
 
 Path to the file or directory to delete
@@ -7061,15 +5796,9 @@ command: "insert"
 
 Command type identifier
 
-Accepts one of the following:
-
-"insert"
-
 insert_line: number
 
 Line number where text should be inserted
-
-minimum1
 
 insert_text: string
 
@@ -7085,10 +5814,6 @@ command: "rename"
 
 Command type identifier
 
-Accepts one of the following:
-
-"rename"
-
 new_path: string
 
 New path for the file or directory
@@ -7102,10 +5827,6 @@ BetaMemoryTool20250818StrReplaceCommand { command, new_str, old_str, path }
 command: "str_replace"
 
 Command type identifier
-
-Accepts one of the following:
-
-"str_replace"
 
 new_str: string
 
@@ -7124,10 +5845,6 @@ BetaMemoryTool20250818ViewCommand { command, path, view_range }
 command: "view"
 
 Command type identifier
-
-Accepts one of the following:
-
-"view"
 
 path: string
 
@@ -7157,8 +5874,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -7166,10 +5881,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -7184,10 +5895,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\<[BetaContentBlock](/docs/en/api/beta#beta_content_block)\>
 
@@ -7246,10 +5953,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -7265,10 +5968,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -7286,10 +5985,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -7299,10 +5994,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -7322,17 +6013,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -7342,19 +6025,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -7366,11 +6041,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -7382,10 +6053,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -7394,9 +6061,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -7424,11 +6093,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -7440,10 +6105,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -7452,11 +6113,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -7482,10 +6145,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -7496,21 +6155,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -7540,10 +6217,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -7564,15 +6237,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -7580,15 +6245,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -7596,19 +6253,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -7618,13 +6267,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -7644,10 +6317,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -7655,10 +6324,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -7668,17 +6333,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -7704,10 +6379,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -7715,10 +6386,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -7728,17 +6395,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -7766,10 +6425,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -7792,19 +6447,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -7820,17 +6467,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -7856,10 +6495,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -7868,23 +6503,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -7901,10 +6524,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -7940,10 +6559,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -7959,10 +6574,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -7980,10 +6591,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -7993,10 +6600,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -8016,27 +6619,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -8045,10 +6636,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -8061,10 +6648,6 @@ content: string \| null
 Summary of compacted content, or null if compaction failed
 
 type: "compaction"
-
-Accepts one of the following:
-
-"compaction"
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits } \| null
 
@@ -8084,21 +6667,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -8106,21 +6681,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -8130,11 +6697,15 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-"claude-opus-4-6" \| "claude-opus-4-5-20251101" \| "claude-opus-4-5" \| 18 more
+"claude-opus-4-6" \| "claude-sonnet-4-6" \| "claude-opus-4-5-20251101" \| 19 more
 
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -8224,10 +6795,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason) \| null
 
 The reason that we stopped.
@@ -8273,11 +6840,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -8297,25 +6860,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number \| null
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string \| null
 
@@ -8325,9 +6880,7 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -8351,45 +6904,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -8403,51 +6940,33 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 type: "compaction"
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-"compaction"
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests } \| null
 
@@ -8457,13 +6976,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" \| "priority" \| "batch" \| null
 
@@ -8477,27 +6992,31 @@ Accepts one of the following:
 
 "batch"
 
+speed: "standard" \| "fast" \| null
+
+The inference speed mode used for this request.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
 BetaMessageDeltaUsage { cache_creation_input_tokens, cache_read_input_tokens, input_tokens, 3 more }
 
 cache_creation_input_tokens: number \| null
 
 The cumulative number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The cumulative number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number \| null
 
 The cumulative number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -8521,45 +7040,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -8573,45 +7076,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "compaction"
 
 Usage for a compaction iteration
-
-Accepts one of the following:
-
-"compaction"
 
 output_tokens: number
 
@@ -8625,13 +7112,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 BetaMessageIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -8645,45 +7128,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaMessageParam { content, role }
 
@@ -8701,19 +7168,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -8750,10 +7209,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -8767,10 +7222,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -8786,10 +7237,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -8799,10 +7246,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -8821,10 +7264,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -8850,17 +7289,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -8870,25 +7301,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -8919,15 +7338,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -8935,15 +7346,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -8961,19 +7364,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9010,10 +7405,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -9027,10 +7418,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -9046,10 +7433,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -9059,10 +7442,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -9081,10 +7460,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -9110,17 +7485,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -9130,25 +7497,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9169,17 +7524,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -9189,25 +7536,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9242,19 +7577,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9291,10 +7618,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -9308,10 +7631,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -9327,10 +7646,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -9340,10 +7655,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -9363,29 +7674,17 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 source: string
 
 title: string
 
 type: "search_result"
 
-Accepts one of the following:
-
-"search_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9416,19 +7715,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlockParam { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlockParam { id, input, name, 3 more }
 
@@ -9440,19 +7731,11 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9471,7 +7754,7 @@ Accepts one of the following:
 
 "1h"
 
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -9483,10 +7766,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -9495,9 +7774,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaToolResultBlockParam { tool_use_id, type, cache_control, 2 more }
 
@@ -9505,19 +7786,11 @@ tool_use_id: string
 
 type: "tool_result"
 
-Accepts one of the following:
-
-"tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9550,19 +7823,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9599,10 +7864,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -9616,10 +7877,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -9635,10 +7892,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -9648,10 +7901,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -9670,10 +7919,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -9699,17 +7944,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -9719,25 +7956,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9764,19 +7989,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9813,10 +8030,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -9830,10 +8043,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -9849,10 +8058,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -9862,10 +8067,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -9885,29 +8086,17 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 source: string
 
 title: string
 
 type: "search_result"
 
-Accepts one of the following:
-
-"search_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -9942,15 +8131,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -9958,15 +8139,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -9984,19 +8157,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10033,10 +8198,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -10050,10 +8211,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -10069,10 +8226,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -10082,10 +8235,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -10104,10 +8253,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -10133,17 +8278,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -10153,25 +8290,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10192,17 +8317,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -10212,25 +8329,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10265,19 +8370,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10324,19 +8421,11 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10355,7 +8444,7 @@ Accepts one of the following:
 
 "1h"
 
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -10367,10 +8456,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -10379,11 +8464,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlockParam { content, tool_use_id, type, cache_control }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlockParam { content, tool_use_id, type, 2 more }
 
 content: [BetaWebSearchToolResultBlockParamContent](/docs/en/api/beta#beta_web_search_tool_result_block_param_content)
 
@@ -10396,10 +8483,6 @@ encrypted_content: string
 title: string
 
 type: "web_search_result"
-
-Accepts one of the following:
-
-"web_search_result"
 
 url: string
 
@@ -10425,27 +8508,15 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 tool_use_id: string
 
 type: "web_search_tool_result"
-
-Accepts one of the following:
-
-"web_search_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10464,7 +8535,33 @@ Accepts one of the following:
 
 "1h"
 
-BetaWebFetchToolResultBlockParam { content, tool_use_id, type, cache_control }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlockParam { content, tool_use_id, type, 2 more }
 
 content: [BetaWebFetchToolResultErrorBlockParam](/docs/en/api/beta#beta_web_fetch_tool_result_error_block_param) { error_code, type } \| [BetaWebFetchBlockParam](/docs/en/api/beta#beta_web_fetch_block_param) { content, type, url, retrieved_at }
 
@@ -10494,10 +8591,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlockParam { content, type, url, retrieved_at }
 
 content: [BetaRequestDocumentBlock](/docs/en/api/beta#beta_request_document_block) { source, type, cache_control, 3 more }
@@ -10512,15 +8605,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -10528,15 +8613,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -10554,19 +8631,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10603,10 +8672,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -10620,10 +8685,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -10639,10 +8700,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -10652,10 +8709,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -10674,10 +8727,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -10703,17 +8752,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -10723,25 +8764,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10762,17 +8791,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -10782,25 +8803,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10829,10 +8838,6 @@ title?: string \| null
 
 type: "web_fetch_result"
 
-Accepts one of the following:
-
-"web_fetch_result"
-
 url: string
 
 Fetched content URL
@@ -10845,19 +8850,11 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
-Accepts one of the following:
-
-"web_fetch_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10876,9 +8873,37 @@ Accepts one of the following:
 
 "1h"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
 BetaCodeExecutionToolResultBlockParam { content, tool_use_id, type, cache_control }
 
 content: [BetaCodeExecutionToolResultBlockParamContent](/docs/en/api/beta#beta_code_execution_tool_result_block_param_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -10898,10 +8923,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
@@ -10909,10 +8930,6 @@ content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -10922,27 +8939,33 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlockParam { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_code_execution_output_block_param) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -10985,10 +9008,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlockParam { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_bash_code_execution_output_block_param) { file_id, type } \>
@@ -10996,10 +9015,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlockParam](/docs/en/api/beta#beta_b
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -11009,27 +9024,15 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11072,10 +9075,6 @@ Accepts one of the following:
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 error_message?: string \| null
 
 BetaTextEditorCodeExecutionViewResultBlockParam { content, file_type, type, 3 more }
@@ -11094,10 +9093,6 @@ Accepts one of the following:
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 num_lines?: number \| null
 
 start_line?: number \| null
@@ -11110,17 +9105,9 @@ is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
-
 BetaTextEditorCodeExecutionStrReplaceResultBlockParam { type, lines, new_lines, 3 more }
 
 type: "text_editor_code_execution_str_replace_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
 
 lines?: Array\<string\> \| null
 
@@ -11136,19 +9123,11 @@ tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11189,10 +9168,6 @@ Accepts one of the following:
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlockParam { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlockParam](/docs/en/api/beta#beta_tool_reference_block_param) { tool_name, type, cache_control } \>
@@ -11201,19 +9176,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11234,27 +9201,15 @@ Accepts one of the following:
 
 type: "tool_search_tool_search_result"
 
-Accepts one of the following:
-
-"tool_search_tool_search_result"
-
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11287,19 +9242,11 @@ The name of the MCP server
 
 type: "mcp_tool_use"
 
-Accepts one of the following:
-
-"mcp_tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11324,19 +9271,11 @@ tool_use_id: string
 
 type: "mcp_tool_result"
 
-Accepts one of the following:
-
-"mcp_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11367,19 +9306,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11416,10 +9347,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -11433,10 +9360,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -11452,10 +9375,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -11465,10 +9384,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -11488,10 +9403,6 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 is_error?: boolean
 
 BetaContainerUploadBlockParam { file_id, type, cache_control }
@@ -11502,19 +9413,11 @@ file_id: string
 
 type: "container_upload"
 
-Accepts one of the following:
-
-"container_upload"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11547,19 +9450,11 @@ Summary of previously compacted content, or null if compaction failed
 
 type: "compaction"
 
-Accepts one of the following:
-
-"compaction"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -11636,25 +9531,13 @@ The JSON schema of the format
 
 type: "json_schema"
 
-Accepts one of the following:
-
-"json_schema"
-
 BetaPlainTextSource { data, media_type, type }
 
 data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaRawContentBlockDelta = [BetaTextDelta](/docs/en/api/beta#beta_text_delta) { text, type } \| [BetaInputJSONDelta](/docs/en/api/beta#beta_input_json_delta) { partial_json, type } \| [BetaCitationsDelta](/docs/en/api/beta#beta_citations_delta) { citation, type } \| 3 more
 
@@ -11666,19 +9549,11 @@ text: string
 
 type: "text_delta"
 
-Accepts one of the following:
-
-"text_delta"
-
 BetaInputJSONDelta { partial_json, type }
 
 partial_json: string
 
 type: "input_json_delta"
-
-Accepts one of the following:
-
-"input_json_delta"
 
 BetaCitationsDelta { citation, type }
 
@@ -11702,10 +9577,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -11721,10 +9592,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -11742,10 +9609,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -11755,10 +9618,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -11778,15 +9637,7 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 type: "citations_delta"
-
-Accepts one of the following:
-
-"citations_delta"
 
 BetaThinkingDelta { thinking, type }
 
@@ -11794,29 +9645,17 @@ thinking: string
 
 type: "thinking_delta"
 
-Accepts one of the following:
-
-"thinking_delta"
-
 BetaSignatureDelta { signature, type }
 
 signature: string
 
 type: "signature_delta"
 
-Accepts one of the following:
-
-"signature_delta"
-
 BetaCompactionContentBlockDelta { content, type }
 
 content: string \| null
 
 type: "compaction_delta"
-
-Accepts one of the following:
-
-"compaction_delta"
 
 BetaRawContentBlockDeltaEvent { delta, index, type }
 
@@ -11830,19 +9669,11 @@ text: string
 
 type: "text_delta"
 
-Accepts one of the following:
-
-"text_delta"
-
 BetaInputJSONDelta { partial_json, type }
 
 partial_json: string
 
 type: "input_json_delta"
-
-Accepts one of the following:
-
-"input_json_delta"
 
 BetaCitationsDelta { citation, type }
 
@@ -11866,10 +9697,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -11885,10 +9712,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -11906,10 +9729,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -11919,10 +9738,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -11942,15 +9757,7 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 type: "citations_delta"
-
-Accepts one of the following:
-
-"citations_delta"
 
 BetaThinkingDelta { thinking, type }
 
@@ -11958,19 +9765,11 @@ thinking: string
 
 type: "thinking_delta"
 
-Accepts one of the following:
-
-"thinking_delta"
-
 BetaSignatureDelta { signature, type }
 
 signature: string
 
 type: "signature_delta"
-
-Accepts one of the following:
-
-"signature_delta"
 
 BetaCompactionContentBlockDelta { content, type }
 
@@ -11978,17 +9777,9 @@ content: string \| null
 
 type: "compaction_delta"
 
-Accepts one of the following:
-
-"compaction_delta"
-
 index: number
 
 type: "content_block_delta"
-
-Accepts one of the following:
-
-"content_block_delta"
 
 BetaRawContentBlockStartEvent { content_block, index, type }
 
@@ -12024,10 +9815,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -12043,10 +9830,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -12064,10 +9847,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -12077,10 +9856,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -12100,17 +9875,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -12120,19 +9887,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -12144,11 +9903,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -12160,10 +9915,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -12172,9 +9923,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -12202,11 +9955,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -12218,10 +9967,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -12230,11 +9975,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -12260,10 +10007,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -12274,21 +10017,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -12318,10 +10079,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -12342,15 +10099,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -12358,15 +10107,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -12374,19 +10115,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -12396,13 +10129,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -12422,10 +10179,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -12433,10 +10186,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -12446,17 +10195,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -12482,10 +10241,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -12493,10 +10248,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -12506,17 +10257,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -12544,10 +10287,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -12570,19 +10309,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -12598,17 +10329,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -12634,10 +10357,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -12646,23 +10365,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -12679,10 +10386,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -12718,10 +10421,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -12737,10 +10436,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -12758,10 +10453,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -12771,10 +10462,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -12794,27 +10481,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -12823,10 +10498,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -12840,27 +10511,15 @@ Summary of compacted content, or null if compaction failed
 
 type: "compaction"
 
-Accepts one of the following:
-
-"compaction"
-
 index: number
 
 type: "content_block_start"
-
-Accepts one of the following:
-
-"content_block_start"
 
 BetaRawContentBlockStopEvent { index, type }
 
 index: number
 
 type: "content_block_stop"
-
-Accepts one of the following:
-
-"content_block_stop"
 
 BetaRawMessageDeltaEvent { context_management, delta, type, usage }
 
@@ -12880,21 +10539,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -12902,21 +10553,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 delta: Delta { container, stop_reason, stop_sequence }
 
@@ -12932,8 +10575,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -12941,10 +10582,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -12959,10 +10596,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason) \| null
 
@@ -12988,10 +10621,6 @@ stop_sequence: string \| null
 
 type: "message_delta"
 
-Accepts one of the following:
-
-"message_delta"
-
 usage: [BetaMessageDeltaUsage](/docs/en/api/beta#beta_message_delta_usage) { cache_creation_input_tokens, cache_read_input_tokens, input_tokens, 3 more }
 
 Billing and rate-limit usage.
@@ -13008,21 +10637,15 @@ cache_creation_input_tokens: number \| null
 
 The cumulative number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The cumulative number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number \| null
 
 The cumulative number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -13046,45 +10669,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -13098,45 +10705,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "compaction"
 
 Usage for a compaction iteration
-
-Accepts one of the following:
-
-"compaction"
 
 output_tokens: number
 
@@ -13150,13 +10741,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 BetaRawMessageStartEvent { message, type }
 
@@ -13180,8 +10767,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -13189,10 +10774,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -13207,10 +10788,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\<[BetaContentBlock](/docs/en/api/beta#beta_content_block)\>
 
@@ -13269,10 +10846,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -13288,10 +10861,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -13309,10 +10878,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -13322,10 +10887,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -13345,17 +10906,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -13365,19 +10918,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -13389,11 +10934,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -13405,10 +10946,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -13417,9 +10954,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -13447,11 +10986,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -13463,10 +10998,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -13475,11 +11006,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -13505,10 +11038,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -13519,21 +11048,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -13563,10 +11110,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -13587,15 +11130,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -13603,15 +11138,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -13619,19 +11146,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -13641,13 +11160,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -13667,10 +11210,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -13678,10 +11217,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -13691,17 +11226,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -13727,10 +11272,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -13738,10 +11279,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -13751,17 +11288,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -13789,10 +11318,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -13815,19 +11340,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -13843,17 +11360,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -13879,10 +11388,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -13891,23 +11396,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -13924,10 +11417,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -13963,10 +11452,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -13982,10 +11467,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -14003,10 +11484,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -14016,10 +11493,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -14039,27 +11512,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -14068,10 +11529,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -14084,10 +11541,6 @@ content: string \| null
 Summary of compacted content, or null if compaction failed
 
 type: "compaction"
-
-Accepts one of the following:
-
-"compaction"
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits } \| null
 
@@ -14107,21 +11560,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -14129,21 +11574,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -14153,11 +11590,15 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-"claude-opus-4-6" \| "claude-opus-4-5-20251101" \| "claude-opus-4-5" \| 18 more
+"claude-opus-4-6" \| "claude-sonnet-4-6" \| "claude-opus-4-5-20251101" \| 19 more
 
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -14247,10 +11688,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason) \| null
 
 The reason that we stopped.
@@ -14296,11 +11733,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -14320,25 +11753,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number \| null
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string \| null
 
@@ -14348,9 +11773,7 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -14374,45 +11797,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -14426,51 +11833,33 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 type: "compaction"
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-"compaction"
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests } \| null
 
@@ -14480,13 +11869,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" \| "priority" \| "batch" \| null
 
@@ -14500,19 +11885,21 @@ Accepts one of the following:
 
 "batch"
 
-type: "message_start"
+speed: "standard" \| "fast" \| null
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-"message_start"
+"standard"
+
+"fast"
+
+type: "message_start"
 
 BetaRawMessageStopEvent { type }
 
 type: "message_stop"
-
-Accepts one of the following:
-
-"message_stop"
 
 BetaRawMessageStreamEvent = [BetaRawMessageStartEvent](/docs/en/api/beta#beta_raw_message_start_event) { message, type } \| [BetaRawMessageDeltaEvent](/docs/en/api/beta#beta_raw_message_delta_event) { context_management, delta, type, usage } \| [BetaRawMessageStopEvent](/docs/en/api/beta#beta_raw_message_stop_event) { type } \| 3 more
 
@@ -14540,8 +11927,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -14549,10 +11934,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -14567,10 +11948,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\<[BetaContentBlock](/docs/en/api/beta#beta_content_block)\>
 
@@ -14629,10 +12006,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -14648,10 +12021,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -14669,10 +12038,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -14682,10 +12047,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -14705,17 +12066,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -14725,19 +12078,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -14749,11 +12094,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -14765,10 +12106,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -14777,9 +12114,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -14807,11 +12146,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -14823,10 +12158,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -14835,11 +12166,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -14865,10 +12198,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -14879,21 +12208,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -14923,10 +12270,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -14947,15 +12290,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -14963,15 +12298,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -14979,19 +12306,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -15001,13 +12320,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -15027,10 +12370,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -15038,10 +12377,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -15051,17 +12386,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -15087,10 +12432,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -15098,10 +12439,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -15111,17 +12448,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -15149,10 +12478,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -15175,19 +12500,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -15203,17 +12520,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -15239,10 +12548,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -15251,23 +12556,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -15284,10 +12577,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -15323,10 +12612,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -15342,10 +12627,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -15363,10 +12644,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -15376,10 +12653,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -15399,27 +12672,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -15428,10 +12689,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -15444,10 +12701,6 @@ content: string \| null
 Summary of compacted content, or null if compaction failed
 
 type: "compaction"
-
-Accepts one of the following:
-
-"compaction"
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits } \| null
 
@@ -15467,21 +12720,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -15489,21 +12734,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -15513,11 +12750,15 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-"claude-opus-4-6" \| "claude-opus-4-5-20251101" \| "claude-opus-4-5" \| 18 more
+"claude-opus-4-6" \| "claude-sonnet-4-6" \| "claude-opus-4-5-20251101" \| 19 more
 
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -15607,10 +12848,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason) \| null
 
 The reason that we stopped.
@@ -15656,11 +12893,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -15680,25 +12913,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number \| null
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string \| null
 
@@ -15708,9 +12933,7 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -15734,45 +12957,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -15786,51 +12993,33 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 type: "compaction"
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-"compaction"
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests } \| null
 
@@ -15840,13 +13029,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" \| "priority" \| "batch" \| null
 
@@ -15860,11 +13045,17 @@ Accepts one of the following:
 
 "batch"
 
-type: "message_start"
+speed: "standard" \| "fast" \| null
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-"message_start"
+"standard"
+
+"fast"
+
+type: "message_start"
 
 BetaRawMessageDeltaEvent { context_management, delta, type, usage }
 
@@ -15884,21 +13075,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -15906,21 +13089,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 delta: Delta { container, stop_reason, stop_sequence }
 
@@ -15936,8 +13111,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -15945,10 +13118,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -15963,10 +13132,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason) \| null
 
@@ -15992,10 +13157,6 @@ stop_sequence: string \| null
 
 type: "message_delta"
 
-Accepts one of the following:
-
-"message_delta"
-
 usage: [BetaMessageDeltaUsage](/docs/en/api/beta#beta_message_delta_usage) { cache_creation_input_tokens, cache_read_input_tokens, input_tokens, 3 more }
 
 Billing and rate-limit usage.
@@ -16012,21 +13173,15 @@ cache_creation_input_tokens: number \| null
 
 The cumulative number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The cumulative number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number \| null
 
 The cumulative number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -16050,45 +13205,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -16102,45 +13241,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "compaction"
 
 Usage for a compaction iteration
-
-Accepts one of the following:
-
-"compaction"
 
 output_tokens: number
 
@@ -16154,21 +13277,13 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
 
-minimum0
-
 BetaRawMessageStopEvent { type }
 
 type: "message_stop"
-
-Accepts one of the following:
-
-"message_stop"
 
 BetaRawContentBlockStartEvent { content_block, index, type }
 
@@ -16204,10 +13319,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -16223,10 +13334,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -16244,10 +13351,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -16257,10 +13360,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -16280,17 +13379,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -16300,19 +13391,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -16324,11 +13407,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -16340,10 +13419,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -16352,9 +13427,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -16382,11 +13459,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -16398,10 +13471,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -16410,11 +13479,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -16440,10 +13511,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -16454,21 +13521,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -16498,10 +13583,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -16522,15 +13603,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -16538,15 +13611,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -16554,19 +13619,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -16576,13 +13633,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -16602,10 +13683,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -16613,10 +13690,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -16626,17 +13699,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -16662,10 +13745,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -16673,10 +13752,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -16686,17 +13761,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -16724,10 +13791,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -16750,19 +13813,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -16778,17 +13833,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -16814,10 +13861,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -16826,23 +13869,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -16859,10 +13890,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -16898,10 +13925,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -16917,10 +13940,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -16938,10 +13957,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -16951,10 +13966,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -16974,27 +13985,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -17003,10 +14002,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -17020,17 +14015,9 @@ Summary of compacted content, or null if compaction failed
 
 type: "compaction"
 
-Accepts one of the following:
-
-"compaction"
-
 index: number
 
 type: "content_block_start"
-
-Accepts one of the following:
-
-"content_block_start"
 
 BetaRawContentBlockDeltaEvent { delta, index, type }
 
@@ -17044,19 +14031,11 @@ text: string
 
 type: "text_delta"
 
-Accepts one of the following:
-
-"text_delta"
-
 BetaInputJSONDelta { partial_json, type }
 
 partial_json: string
 
 type: "input_json_delta"
-
-Accepts one of the following:
-
-"input_json_delta"
 
 BetaCitationsDelta { citation, type }
 
@@ -17080,10 +14059,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -17099,10 +14074,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -17120,10 +14091,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -17133,10 +14100,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -17156,15 +14119,7 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 type: "citations_delta"
-
-Accepts one of the following:
-
-"citations_delta"
 
 BetaThinkingDelta { thinking, type }
 
@@ -17172,19 +14127,11 @@ thinking: string
 
 type: "thinking_delta"
 
-Accepts one of the following:
-
-"thinking_delta"
-
 BetaSignatureDelta { signature, type }
 
 signature: string
 
 type: "signature_delta"
-
-Accepts one of the following:
-
-"signature_delta"
 
 BetaCompactionContentBlockDelta { content, type }
 
@@ -17192,17 +14139,9 @@ content: string \| null
 
 type: "compaction_delta"
 
-Accepts one of the following:
-
-"compaction_delta"
-
 index: number
 
 type: "content_block_delta"
-
-Accepts one of the following:
-
-"content_block_delta"
 
 BetaRawContentBlockStopEvent { index, type }
 
@@ -17210,29 +14149,17 @@ index: number
 
 type: "content_block_stop"
 
-Accepts one of the following:
-
-"content_block_stop"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
 
-Accepts one of the following:
-
-"redacted_thinking"
-
 BetaRedactedThinkingBlockParam { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaRequestDocumentBlock { source, type, cache_control, 3 more }
 
@@ -17246,15 +14173,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -17262,15 +14181,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -17288,19 +14199,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -17337,10 +14240,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -17354,10 +14253,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -17373,10 +14268,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -17386,10 +14277,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -17408,10 +14295,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -17437,17 +14320,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -17457,25 +14332,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -17496,17 +14359,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -17516,25 +14371,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -17573,10 +14416,6 @@ name: string
 
 type: "url"
 
-Accepts one of the following:
-
-"url"
-
 url: string
 
 authorization_token?: string \| null
@@ -17593,19 +14432,11 @@ tool_use_id: string
 
 type: "mcp_tool_result"
 
-Accepts one of the following:
-
-"mcp_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -17636,19 +14467,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -17685,10 +14508,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -17702,10 +14521,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -17721,10 +14536,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -17734,10 +14545,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -17756,10 +14563,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 is_error?: boolean
 
@@ -17771,19 +14574,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -17820,10 +14615,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -17837,10 +14628,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -17856,10 +14643,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -17869,10 +14652,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -17892,29 +14671,17 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 source: string
 
 title: string
 
 type: "search_result"
 
-Accepts one of the following:
-
-"search_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -17945,9 +14712,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUsage { web_fetch_requests, web_search_requests }
 
@@ -17955,13 +14724,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -17989,11 +14754,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -18005,10 +14766,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -18017,9 +14774,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlockParam { id, input, name, 3 more }
 
@@ -18047,19 +14806,11 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -18078,7 +14829,7 @@ Accepts one of the following:
 
 "1h"
 
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -18090,10 +14841,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -18102,19 +14849,17 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaSignatureDelta { signature, type }
 
 signature: string
 
 type: "signature_delta"
-
-Accepts one of the following:
-
-"signature_delta"
 
 BetaSkill { skill_id, type, version }
 
@@ -18123,10 +14868,6 @@ A skill that was loaded in a container (response model).
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -18142,10 +14883,6 @@ version: string
 
 Skill version or 'latest' for most recent version
 
-maxLength64
-
-minLength1
-
 BetaSkillParams { skill_id, type, version }
 
 Specification for a skill to be loaded in a container (request model).
@@ -18153,10 +14890,6 @@ Specification for a skill to be loaded in a container (request model).
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -18171,10 +14904,6 @@ Accepts one of the following:
 version?: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 BetaStopReason = "end_turn" \| "max_tokens" \| "stop_sequence" \| 5 more
 
@@ -18222,10 +14951,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -18241,10 +14966,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -18262,10 +14983,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -18275,10 +14992,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -18298,17 +15011,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaTextBlockParam { text, type, cache_control, citations }
 
@@ -18316,19 +15021,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -18365,10 +15062,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -18382,10 +15075,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -18401,10 +15090,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -18414,10 +15099,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -18436,10 +15117,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaTextCitation = [BetaCitationCharLocation](/docs/en/api/beta#beta_citation_char_location) { cited_text, document_index, document_title, 4 more } \| [BetaCitationPageLocation](/docs/en/api/beta#beta_citation_page_location) { cited_text, document_index, document_title, 4 more } \| [BetaCitationContentBlockLocation](/docs/en/api/beta#beta_citation_content_block_location) { cited_text, document_index, document_title, 4 more } \| 2 more
 
@@ -18461,10 +15138,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -18480,10 +15153,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -18501,10 +15170,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -18514,10 +15179,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -18537,10 +15198,6 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 BetaTextCitationParam = [BetaCitationCharLocationParam](/docs/en/api/beta#beta_citation_char_location_param) { cited_text, document_index, document_title, 3 more } \| [BetaCitationPageLocationParam](/docs/en/api/beta#beta_citation_page_location_param) { cited_text, document_index, document_title, 3 more } \| [BetaCitationContentBlockLocationParam](/docs/en/api/beta#beta_citation_content_block_location_param) { cited_text, document_index, document_title, 3 more } \| 2 more
 
 Accepts one of the following:
@@ -18559,10 +15216,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -18576,10 +15229,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -18595,10 +15244,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -18608,10 +15253,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -18631,19 +15272,11 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 BetaTextDelta { text, type }
 
 text: string
 
 type: "text_delta"
-
-Accepts one of the following:
-
-"text_delta"
 
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
@@ -18651,19 +15284,11 @@ is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
-
 BetaTextEditorCodeExecutionCreateResultBlockParam { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -18679,17 +15304,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 BetaTextEditorCodeExecutionStrReplaceResultBlockParam { type, lines, new_lines, 3 more }
 
 type: "text_editor_code_execution_str_replace_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
 
 lines?: Array\<string\> \| null
 
@@ -18727,10 +15344,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -18753,19 +15366,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -18781,17 +15386,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlockParam { content, tool_use_id, type, cache_control }
 
@@ -18817,10 +15414,6 @@ Accepts one of the following:
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 error_message?: string \| null
 
 BetaTextEditorCodeExecutionViewResultBlockParam { content, file_type, type, 3 more }
@@ -18839,10 +15432,6 @@ Accepts one of the following:
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 num_lines?: number \| null
 
 start_line?: number \| null
@@ -18855,17 +15444,9 @@ is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
-
 BetaTextEditorCodeExecutionStrReplaceResultBlockParam { type, lines, new_lines, 3 more }
 
 type: "text_editor_code_execution_str_replace_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
 
 lines?: Array\<string\> \| null
 
@@ -18881,19 +15462,11 @@ tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -18932,10 +15505,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionToolResultErrorParam { error_code, type, error_message }
 
 error_code: "invalid_tool_input" \| "unavailable" \| "too_many_requests" \| 2 more
@@ -18953,10 +15522,6 @@ Accepts one of the following:
 "file_not_found"
 
 type: "text_editor_code_execution_tool_result_error"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
 
 error_message?: string \| null
 
@@ -18982,10 +15547,6 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionViewResultBlockParam { content, file_type, type, 3 more }
 
 content: string
@@ -19002,10 +15563,6 @@ Accepts one of the following:
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 num_lines?: number \| null
 
 start_line?: number \| null
@@ -19020,10 +15577,6 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaThinkingBlockParam { signature, thinking, type }
 
 signature: string
@@ -19032,25 +15585,13 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaThinkingConfigAdaptive { type }
 
 type: "adaptive"
 
-Accepts one of the following:
-
-"adaptive"
-
 BetaThinkingConfigDisabled { type }
 
 type: "disabled"
-
-Accepts one of the following:
-
-"disabled"
 
 BetaThinkingConfigEnabled { budget_tokens, type }
 
@@ -19065,10 +15606,6 @@ See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extend
 minimum1024
 
 type: "enabled"
-
-Accepts one of the following:
-
-"enabled"
 
 BetaThinkingConfigParam = [BetaThinkingConfigEnabled](/docs/en/api/beta#beta_thinking_config_enabled) { budget_tokens, type } \| [BetaThinkingConfigDisabled](/docs/en/api/beta#beta_thinking_config_disabled) { type } \| [BetaThinkingConfigAdaptive](/docs/en/api/beta#beta_thinking_config_adaptive) { type }
 
@@ -19094,25 +15631,13 @@ minimum1024
 
 type: "enabled"
 
-Accepts one of the following:
-
-"enabled"
-
 BetaThinkingConfigDisabled { type }
 
 type: "disabled"
 
-Accepts one of the following:
-
-"disabled"
-
 BetaThinkingConfigAdaptive { type }
 
 type: "adaptive"
-
-Accepts one of the following:
-
-"adaptive"
 
 BetaThinkingDelta { thinking, type }
 
@@ -19120,17 +15645,9 @@ thinking: string
 
 type: "thinking_delta"
 
-Accepts one of the following:
-
-"thinking_delta"
-
 BetaThinkingTurns { type, value }
 
 type: "thinking_turns"
-
-Accepts one of the following:
-
-"thinking_turns"
 
 value: number
 
@@ -19143,10 +15660,6 @@ input_schema: InputSchema { type, properties, required }
 This defines the shape of the `input` that your tool accepts and that the model will produce.
 
 type: "object"
-
-Accepts one of the following:
-
-"object"
 
 properties?: Record\<string, unknown\> \| null
 
@@ -19162,7 +15675,7 @@ maxLength128
 
 minLength1
 
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -19170,15 +15683,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19219,10 +15730,6 @@ When true, guarantees schema validation on tool names and inputs
 
 type?: "custom" \| null
 
-Accepts one of the following:
-
-"custom"
-
 BetaToolBash20241022 { name, type, allowed_callers, 4 more }
 
 name: "bash"
@@ -19231,17 +15738,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"bash"
-
 type: "bash_20241022"
 
-Accepts one of the following:
-
-"bash_20241022"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -19249,15 +15748,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19294,17 +15791,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"bash"
-
 type: "bash_20250124"
 
-Accepts one of the following:
-
-"bash_20250124"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -19312,15 +15801,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19361,10 +15848,6 @@ The model will automatically decide whether to use tools.
 
 type: "auto"
 
-Accepts one of the following:
-
-"auto"
-
 disable_parallel_tool_use?: boolean
 
 Whether to disable parallel tool use.
@@ -19376,10 +15859,6 @@ BetaToolChoiceAny { type, disable_parallel_tool_use }
 The model will use any available tools.
 
 type: "any"
-
-Accepts one of the following:
-
-"any"
 
 disable_parallel_tool_use?: boolean
 
@@ -19397,10 +15876,6 @@ The name of the tool to use.
 
 type: "tool"
 
-Accepts one of the following:
-
-"tool"
-
 disable_parallel_tool_use?: boolean
 
 Whether to disable parallel tool use.
@@ -19413,19 +15888,11 @@ The model will not be allowed to use tools.
 
 type: "none"
 
-Accepts one of the following:
-
-"none"
-
 BetaToolChoiceAny { type, disable_parallel_tool_use }
 
 The model will use any available tools.
 
 type: "any"
-
-Accepts one of the following:
-
-"any"
 
 disable_parallel_tool_use?: boolean
 
@@ -19439,10 +15906,6 @@ The model will automatically decide whether to use tools.
 
 type: "auto"
 
-Accepts one of the following:
-
-"auto"
-
 disable_parallel_tool_use?: boolean
 
 Whether to disable parallel tool use.
@@ -19455,10 +15918,6 @@ The model will not be allowed to use tools.
 
 type: "none"
 
-Accepts one of the following:
-
-"none"
-
 BetaToolChoiceTool { name, type, disable_parallel_tool_use }
 
 The model will use the specified tool with `tool_choice.name`.
@@ -19468,10 +15927,6 @@ name: string
 The name of the tool to use.
 
 type: "tool"
-
-Accepts one of the following:
-
-"tool"
 
 disable_parallel_tool_use?: boolean
 
@@ -19485,13 +15940,9 @@ display_height_px: number
 
 The height of the display in pixels.
 
-minimum1
-
 display_width_px: number
 
 The width of the display in pixels.
-
-minimum1
 
 name: "computer"
 
@@ -19499,17 +15950,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"computer"
-
 type: "computer_20241022"
 
-Accepts one of the following:
-
-"computer_20241022"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -19517,15 +15960,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19551,8 +15992,6 @@ If true, tool will not be included in initial system prompt. Only loaded when re
 display_number?: number \| null
 
 The X11 display number (e.g. 0, 1) for the display.
-
-minimum0
 
 input_examples?: Array\<Record\<string, unknown\>\>
 
@@ -19566,13 +16005,9 @@ display_height_px: number
 
 The height of the display in pixels.
 
-minimum1
-
 display_width_px: number
 
 The width of the display in pixels.
-
-minimum1
 
 name: "computer"
 
@@ -19580,17 +16015,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"computer"
-
 type: "computer_20250124"
 
-Accepts one of the following:
-
-"computer_20250124"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -19598,15 +16025,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19632,8 +16057,6 @@ If true, tool will not be included in initial system prompt. Only loaded when re
 display_number?: number \| null
 
 The X11 display number (e.g. 0, 1) for the display.
-
-minimum0
 
 input_examples?: Array\<Record\<string, unknown\>\>
 
@@ -19647,13 +16070,9 @@ display_height_px: number
 
 The height of the display in pixels.
 
-minimum1
-
 display_width_px: number
 
 The width of the display in pixels.
-
-minimum1
 
 name: "computer"
 
@@ -19661,17 +16080,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"computer"
-
 type: "computer_20251124"
 
-Accepts one of the following:
-
-"computer_20251124"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -19679,15 +16090,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19713,8 +16122,6 @@ If true, tool will not be included in initial system prompt. Only loaded when re
 display_number?: number \| null
 
 The X11 display number (e.g. 0, 1) for the display.
-
-minimum0
 
 enable_zoom?: boolean
 
@@ -19732,10 +16139,6 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 BetaToolReferenceBlockParam { tool_name, type, cache_control }
 
 Tool reference block that can be included in tool_result content.
@@ -19744,19 +16147,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19781,19 +16176,11 @@ tool_use_id: string
 
 type: "tool_result"
 
-Accepts one of the following:
-
-"tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19826,19 +16213,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -19875,10 +16254,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -19892,10 +16267,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -19911,10 +16282,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -19924,10 +16291,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -19946,10 +16309,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -19975,17 +16334,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -19995,25 +16346,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20040,19 +16379,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20089,10 +16420,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -20106,10 +16433,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -20125,10 +16448,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -20138,10 +16457,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -20161,29 +16476,17 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 source: string
 
 title: string
 
 type: "search_result"
 
-Accepts one of the following:
-
-"search_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20218,15 +16521,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -20234,15 +16529,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -20260,19 +16547,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20309,10 +16588,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -20326,10 +16601,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -20345,10 +16616,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -20358,10 +16625,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -20380,10 +16643,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -20409,17 +16668,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -20429,25 +16680,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20468,17 +16707,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -20488,25 +16719,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20541,19 +16760,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20582,10 +16793,6 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"tool_search_tool_bm25"
-
 type: "tool_search_tool_bm25_20251119" \| "tool_search_tool_bm25"
 
 Accepts one of the following:
@@ -20594,7 +16801,7 @@ Accepts one of the following:
 
 "tool_search_tool_bm25"
 
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -20602,15 +16809,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20645,10 +16850,6 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"tool_search_tool_regex"
-
 type: "tool_search_tool_regex_20251119" \| "tool_search_tool_regex"
 
 Accepts one of the following:
@@ -20657,7 +16858,7 @@ Accepts one of the following:
 
 "tool_search_tool_regex"
 
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -20665,15 +16866,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20724,10 +16923,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -20736,23 +16931,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaToolSearchToolResultBlockParam { content, tool_use_id, type, cache_control }
 
@@ -20776,10 +16959,6 @@ Accepts one of the following:
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlockParam { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlockParam](/docs/en/api/beta#beta_tool_reference_block_param) { tool_name, type, cache_control } \>
@@ -20788,19 +16967,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20821,27 +16992,15 @@ Accepts one of the following:
 
 type: "tool_search_tool_search_result"
 
-Accepts one of the following:
-
-"tool_search_tool_search_result"
-
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20878,10 +17037,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolResultErrorParam { error_code, type }
 
 error_code: "invalid_tool_input" \| "unavailable" \| "too_many_requests" \| "execution_time_exceeded"
@@ -20898,10 +17053,6 @@ Accepts one of the following:
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -20910,15 +17061,7 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 BetaToolSearchToolSearchResultBlockParam { tool_references, type }
 
@@ -20928,19 +17071,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -20961,10 +17096,6 @@ Accepts one of the following:
 
 type: "tool_search_tool_search_result"
 
-Accepts one of the following:
-
-"tool_search_tool_search_result"
-
 BetaToolTextEditor20241022 { name, type, allowed_callers, 4 more }
 
 name: "str_replace_editor"
@@ -20973,17 +17104,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_editor"
-
 type: "text_editor_20241022"
 
-Accepts one of the following:
-
-"text_editor_20241022"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -20991,15 +17114,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21036,17 +17157,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_editor"
-
 type: "text_editor_20250124"
 
-Accepts one of the following:
-
-"text_editor_20250124"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21054,15 +17167,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21099,17 +17210,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_based_edit_tool"
-
 type: "text_editor_20250429"
 
-Accepts one of the following:
-
-"text_editor_20250429"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21117,15 +17220,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21162,17 +17263,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_based_edit_tool"
-
 type: "text_editor_20250728"
 
-Accepts one of the following:
-
-"text_editor_20250728"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21180,15 +17273,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21217,17 +17308,13 @@ max_characters?: number \| null
 
 Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
 
-minimum1
-
 strict?: boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-BetaToolUnion = [BetaTool](/docs/en/api/beta#beta_tool) { input_schema, name, allowed_callers, 7 more } \| [BetaToolBash20241022](/docs/en/api/beta#beta_tool_bash_20241022) { name, type, allowed_callers, 4 more } \| [BetaToolBash20250124](/docs/en/api/beta#beta_tool_bash_20250124) { name, type, allowed_callers, 4 more } \| 15 more
+BetaToolUnion = [BetaTool](/docs/en/api/beta#beta_tool) { input_schema, name, allowed_callers, 7 more } \| [BetaToolBash20241022](/docs/en/api/beta#beta_tool_bash_20241022) { name, type, allowed_callers, 4 more } \| [BetaToolBash20250124](/docs/en/api/beta#beta_tool_bash_20250124) { name, type, allowed_callers, 4 more } \| 18 more
 
-Configuration for a group of tools from an MCP server.
-
-Allows configuring enabled status and defer_loading for all tools from an MCP server, with optional per-tool overrides.
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
 
 Accepts one of the following:
 
@@ -21240,10 +17327,6 @@ input_schema: InputSchema { type, properties, required }
 This defines the shape of the `input` that your tool accepts and that the model will produce.
 
 type: "object"
-
-Accepts one of the following:
-
-"object"
 
 properties?: Record\<string, unknown\> \| null
 
@@ -21259,7 +17342,7 @@ maxLength128
 
 minLength1
 
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21267,15 +17350,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21316,10 +17397,6 @@ When true, guarantees schema validation on tool names and inputs
 
 type?: "custom" \| null
 
-Accepts one of the following:
-
-"custom"
-
 BetaToolBash20241022 { name, type, allowed_callers, 4 more }
 
 name: "bash"
@@ -21328,17 +17405,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"bash"
-
 type: "bash_20241022"
 
-Accepts one of the following:
-
-"bash_20241022"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21346,15 +17415,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21391,17 +17458,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"bash"
-
 type: "bash_20250124"
 
-Accepts one of the following:
-
-"bash_20250124"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21409,15 +17468,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21454,17 +17511,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"code_execution"
-
 type: "code_execution_20250522"
 
-Accepts one of the following:
-
-"code_execution_20250522"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21472,15 +17521,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21515,17 +17562,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"code_execution"
-
 type: "code_execution_20250825"
 
-Accepts one of the following:
-
-"code_execution_20250825"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21533,15 +17572,66 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
 
+ttl?: "5m" \| "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
 Accepts one of the following:
 
-"ephemeral"
+"5m"
+
+"1h"
+
+defer_loading?: boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+strict?: boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+BetaCodeExecutionTool20260120 { name, type, allowed_callers, 3 more }
+
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+name: "code_execution"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "code_execution_20260120"
+
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21574,13 +17664,9 @@ display_height_px: number
 
 The height of the display in pixels.
 
-minimum1
-
 display_width_px: number
 
 The width of the display in pixels.
-
-minimum1
 
 name: "computer"
 
@@ -21588,17 +17674,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"computer"
-
 type: "computer_20241022"
 
-Accepts one of the following:
-
-"computer_20241022"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21606,15 +17684,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21641,8 +17717,6 @@ display_number?: number \| null
 
 The X11 display number (e.g. 0, 1) for the display.
 
-minimum0
-
 input_examples?: Array\<Record\<string, unknown\>\>
 
 strict?: boolean
@@ -21657,17 +17731,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"memory"
-
 type: "memory_20250818"
 
-Accepts one of the following:
-
-"memory_20250818"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21675,15 +17741,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21718,13 +17782,9 @@ display_height_px: number
 
 The height of the display in pixels.
 
-minimum1
-
 display_width_px: number
 
 The width of the display in pixels.
-
-minimum1
 
 name: "computer"
 
@@ -21732,17 +17792,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"computer"
-
 type: "computer_20250124"
 
-Accepts one of the following:
-
-"computer_20250124"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21750,15 +17802,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21785,8 +17835,6 @@ display_number?: number \| null
 
 The X11 display number (e.g. 0, 1) for the display.
 
-minimum0
-
 input_examples?: Array\<Record\<string, unknown\>\>
 
 strict?: boolean
@@ -21801,17 +17849,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_editor"
-
 type: "text_editor_20241022"
 
-Accepts one of the following:
-
-"text_editor_20241022"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21819,15 +17859,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21862,13 +17900,9 @@ display_height_px: number
 
 The height of the display in pixels.
 
-minimum1
-
 display_width_px: number
 
 The width of the display in pixels.
-
-minimum1
 
 name: "computer"
 
@@ -21876,17 +17910,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"computer"
-
 type: "computer_20251124"
 
-Accepts one of the following:
-
-"computer_20251124"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21894,15 +17920,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -21929,8 +17953,6 @@ display_number?: number \| null
 
 The X11 display number (e.g. 0, 1) for the display.
 
-minimum0
-
 enable_zoom?: boolean
 
 Whether to enable an action to take a zoomed-in screenshot of the screen.
@@ -21949,17 +17971,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_editor"
-
 type: "text_editor_20250124"
 
-Accepts one of the following:
-
-"text_editor_20250124"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -21967,15 +17981,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22012,17 +18024,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_based_edit_tool"
-
 type: "text_editor_20250429"
 
-Accepts one of the following:
-
-"text_editor_20250429"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -22030,15 +18034,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22075,17 +18077,9 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"str_replace_based_edit_tool"
-
 type: "text_editor_20250728"
 
-Accepts one of the following:
-
-"text_editor_20250728"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -22093,15 +18087,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22130,8 +18122,6 @@ max_characters?: number \| null
 
 Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
 
-minimum1
-
 strict?: boolean
 
 When true, guarantees schema validation on tool names and inputs
@@ -22144,23 +18134,17 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"web_search"
-
 type: "web_search_20250305"
 
-Accepts one of the following:
-
-"web_search_20250305"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
 "direct"
 
 "code_execution_20250825"
+
+"code_execution_20260120"
 
 allowed_domains?: Array\<string\> \| null
 
@@ -22175,10 +18159,6 @@ cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22205,53 +18185,31 @@ max_uses?: number \| null
 
 Maximum number of times the tool can be used in the API request.
 
-exclusiveMinimum0
-
 strict?: boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-user_location?: UserLocation \| null
+user_location?: [BetaUserLocation](/docs/en/api/beta#beta_user_location) { type, city, country, 2 more } \| null
 
 Parameters for the user's location. Used to provide more relevant search results.
 
 type: "approximate"
 
-Accepts one of the following:
-
-"approximate"
-
 city?: string \| null
 
 The city of the user.
-
-maxLength255
-
-minLength1
 
 country?: string \| null
 
 The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
 
-maxLength2
-
-minLength2
-
 region?: string \| null
 
 The region of the user.
 
-maxLength255
-
-minLength1
-
 timezone?: string \| null
 
 The [IANA timezone](https://nodatime.org/TimeZones) of the user.
-
-maxLength255
-
-minLength1
 
 BetaWebFetchTool20250910 { name, type, allowed_callers, 8 more }
 
@@ -22261,23 +18219,17 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"web_fetch"
-
 type: "web_fetch_20250910"
 
-Accepts one of the following:
-
-"web_fetch_20250910"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
 "direct"
 
 "code_execution_20250825"
+
+"code_execution_20260120"
 
 allowed_domains?: Array\<string\> \| null
 
@@ -22292,10 +18244,6 @@ cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22328,13 +18276,167 @@ max_content_tokens?: number \| null
 
 Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
 
-exclusiveMinimum0
+max_uses?: number \| null
+
+Maximum number of times the tool can be used in the API request.
+
+strict?: boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+BetaWebSearchTool20260209 { name, type, allowed_callers, 7 more }
+
+name: "web_search"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "web_search_20260209"
+
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+allowed_domains?: Array\<string\> \| null
+
+If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+blocked_domains?: Array\<string\> \| null
+
+If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl?: "5m" \| "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading?: boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
 
 max_uses?: number \| null
 
 Maximum number of times the tool can be used in the API request.
 
-exclusiveMinimum0
+strict?: boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+user_location?: [BetaUserLocation](/docs/en/api/beta#beta_user_location) { type, city, country, 2 more } \| null
+
+Parameters for the user's location. Used to provide more relevant search results.
+
+type: "approximate"
+
+city?: string \| null
+
+The city of the user.
+
+country?: string \| null
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+region?: string \| null
+
+The region of the user.
+
+timezone?: string \| null
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+BetaWebFetchTool20260209 { name, type, allowed_callers, 8 more }
+
+name: "web_fetch"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "web_fetch_20260209"
+
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+allowed_domains?: Array\<string\> \| null
+
+List of domains to allow fetching from
+
+blocked_domains?: Array\<string\> \| null
+
+List of domains to block fetching from
+
+cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl?: "5m" \| "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+citations?: [BetaCitationsConfigParam](/docs/en/api/beta#beta_citations_config_param) { enabled } \| null
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+enabled?: boolean
+
+defer_loading?: boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+max_content_tokens?: number \| null
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+max_uses?: number \| null
+
+Maximum number of times the tool can be used in the API request.
 
 strict?: boolean
 
@@ -22348,10 +18450,6 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"tool_search_tool_bm25"
-
 type: "tool_search_tool_bm25_20251119" \| "tool_search_tool_bm25"
 
 Accepts one of the following:
@@ -22360,7 +18458,7 @@ Accepts one of the following:
 
 "tool_search_tool_bm25"
 
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -22368,15 +18466,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22411,10 +18507,6 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"tool_search_tool_regex"
-
 type: "tool_search_tool_regex_20251119" \| "tool_search_tool_regex"
 
 Accepts one of the following:
@@ -22423,7 +18515,7 @@ Accepts one of the following:
 
 "tool_search_tool_regex"
 
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
@@ -22431,15 +18523,13 @@ Accepts one of the following:
 
 "code_execution_20250825"
 
+"code_execution_20260120"
+
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22476,25 +18566,13 @@ mcp_server_name: string
 
 Name of the MCP server to configure tools for
 
-maxLength255
-
-minLength1
-
 type: "mcp_toolset"
-
-Accepts one of the following:
-
-"mcp_toolset"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22539,11 +18617,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -22555,10 +18629,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -22567,9 +18637,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaToolUseBlockParam { id, input, name, 3 more }
 
@@ -22581,19 +18653,11 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -22612,7 +18676,7 @@ Accepts one of the following:
 
 "1h"
 
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -22624,10 +18688,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -22636,17 +18696,15 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaToolUsesKeep { type, value }
 
 type: "tool_uses"
-
-Accepts one of the following:
-
-"tool_uses"
 
 value: number
 
@@ -22654,19 +18712,11 @@ BetaToolUsesTrigger { type, value }
 
 type: "tool_uses"
 
-Accepts one of the following:
-
-"tool_uses"
-
 value: number
 
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -22674,13 +18724,9 @@ BetaURLPDFSource { type, url }
 
 type: "url"
 
-Accepts one of the following:
-
-"url"
-
 url: string
 
-BetaUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+BetaUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 cache_creation: [BetaCacheCreation](/docs/en/api/beta#beta_cache_creation) { ephemeral_1h_input_tokens, ephemeral_5m_input_tokens } \| null
 
@@ -22690,25 +18736,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number \| null
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string \| null
 
@@ -22718,9 +18756,7 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -22744,45 +18780,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -22796,51 +18816,33 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 type: "compaction"
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-"compaction"
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests } \| null
 
@@ -22850,13 +18852,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" \| "priority" \| "batch" \| null
 
@@ -22869,6 +18867,36 @@ Accepts one of the following:
 "priority"
 
 "batch"
+
+speed: "standard" \| "fast" \| null
+
+The inference speed mode used for this request.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
+BetaUserLocation { type, city, country, 2 more }
+
+type: "approximate"
+
+city?: string \| null
+
+The city of the user.
+
+country?: string \| null
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+region?: string \| null
+
+The region of the user.
+
+timezone?: string \| null
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
@@ -22890,15 +18918,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -22906,15 +18926,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -22922,19 +18934,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -22954,15 +18958,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -22970,15 +18966,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -22996,19 +18984,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -23045,10 +19025,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -23062,10 +19038,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -23081,10 +19053,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -23094,10 +19062,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -23116,10 +19080,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -23145,17 +19105,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -23165,25 +19117,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -23204,17 +19144,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -23224,25 +19156,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -23271,10 +19191,6 @@ title?: string \| null
 
 type: "web_fetch_result"
 
-Accepts one of the following:
-
-"web_fetch_result"
-
 url: string
 
 Fetched content URL
@@ -23291,23 +19207,17 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"web_fetch"
-
 type: "web_fetch_20250910"
 
-Accepts one of the following:
-
-"web_fetch_20250910"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
 "direct"
 
 "code_execution_20250825"
+
+"code_execution_20260120"
 
 allowed_domains?: Array\<string\> \| null
 
@@ -23322,10 +19232,6 @@ cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -23358,19 +19264,88 @@ max_content_tokens?: number \| null
 
 Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
 
-exclusiveMinimum0
-
 max_uses?: number \| null
 
 Maximum number of times the tool can be used in the API request.
-
-exclusiveMinimum0
 
 strict?: boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+BetaWebFetchTool20260209 { name, type, allowed_callers, 8 more }
+
+name: "web_fetch"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "web_fetch_20260209"
+
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+allowed_domains?: Array\<string\> \| null
+
+List of domains to allow fetching from
+
+blocked_domains?: Array\<string\> \| null
+
+List of domains to block fetching from
+
+cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl?: "5m" \| "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+citations?: [BetaCitationsConfigParam](/docs/en/api/beta#beta_citations_config_param) { enabled } \| null
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+enabled?: boolean
+
+defer_loading?: boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+max_content_tokens?: number \| null
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+max_uses?: number \| null
+
+Maximum number of times the tool can be used in the API request.
+
+strict?: boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -23400,10 +19375,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -23424,15 +19395,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -23440,15 +19403,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -23456,19 +19411,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -23478,11 +19425,33 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlockParam { content, tool_use_id, type, cache_control }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlockParam { content, tool_use_id, type, 2 more }
 
 content: [BetaWebFetchToolResultErrorBlockParam](/docs/en/api/beta#beta_web_fetch_tool_result_error_block_param) { error_code, type } \| [BetaWebFetchBlockParam](/docs/en/api/beta#beta_web_fetch_block_param) { content, type, url, retrieved_at }
 
@@ -23512,10 +19481,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlockParam { content, type, url, retrieved_at }
 
 content: [BetaRequestDocumentBlock](/docs/en/api/beta#beta_request_document_block) { source, type, cache_control, 3 more }
@@ -23530,15 +19495,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -23546,15 +19503,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaContentBlockSource { content, type }
 
@@ -23572,19 +19521,11 @@ text: string
 
 type: "text"
 
-Accepts one of the following:
-
-"text"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -23621,10 +19562,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocationParam { cited_text, document_index, document_title, 3 more }
 
 cited_text: string
@@ -23638,10 +19575,6 @@ end_page_number: number
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocationParam { cited_text, document_index, document_title, 3 more }
 
@@ -23657,10 +19590,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationWebSearchResultLocationParam { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -23670,10 +19599,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -23692,10 +19617,6 @@ start_block_index: number
 title: string \| null
 
 type: "search_result_location"
-
-Accepts one of the following:
-
-"search_result_location"
 
 BetaImageBlockParam { source, type, cache_control }
 
@@ -23721,17 +19642,9 @@ Accepts one of the following:
 
 type: "base64"
 
-Accepts one of the following:
-
-"base64"
-
 BetaURLImageSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -23741,25 +19654,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "image"
-
-Accepts one of the following:
-
-"image"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -23780,17 +19681,9 @@ Accepts one of the following:
 
 type: "content"
 
-Accepts one of the following:
-
-"content"
-
 BetaURLPDFSource { type, url }
 
 type: "url"
-
-Accepts one of the following:
-
-"url"
 
 url: string
 
@@ -23800,25 +19693,13 @@ file_id: string
 
 type: "file"
 
-Accepts one of the following:
-
-"file"
-
 type: "document"
-
-Accepts one of the following:
-
-"document"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -23847,10 +19728,6 @@ title?: string \| null
 
 type: "web_fetch_result"
 
-Accepts one of the following:
-
-"web_fetch_result"
-
 url: string
 
 Fetched content URL
@@ -23863,19 +19740,11 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
-Accepts one of the following:
-
-"web_fetch_tool_result"
-
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -23893,6 +19762,32 @@ Accepts one of the following:
 "5m"
 
 "1h"
+
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaWebFetchToolResultErrorBlock { error_code, type }
 
@@ -23918,10 +19813,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchToolResultErrorBlockParam { error_code, type }
 
 error_code: [BetaWebFetchToolResultErrorCode](/docs/en/api/beta#beta_web_fetch_tool_result_error_code)
@@ -23945,10 +19836,6 @@ Accepts one of the following:
 "unavailable"
 
 type: "web_fetch_tool_result_error"
-
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
 
 BetaWebFetchToolResultErrorCode = "invalid_tool_input" \| "url_too_long" \| "url_not_allowed" \| 5 more
 
@@ -23980,10 +19867,6 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 BetaWebSearchResultBlockParam { encrypted_content, title, type, 2 more }
@@ -23993,10 +19876,6 @@ encrypted_content: string
 title: string
 
 type: "web_search_result"
-
-Accepts one of the following:
-
-"web_search_result"
 
 url: string
 
@@ -24010,23 +19889,17 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-"web_search"
-
 type: "web_search_20250305"
 
-Accepts one of the following:
-
-"web_search_20250305"
-
-allowed_callers?: Array\<"direct" \| "code_execution_20250825"\>
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
 
 Accepts one of the following:
 
 "direct"
 
 "code_execution_20250825"
+
+"code_execution_20260120"
 
 allowed_domains?: Array\<string\> \| null
 
@@ -24041,10 +19914,6 @@ cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -24071,53 +19940,116 @@ max_uses?: number \| null
 
 Maximum number of times the tool can be used in the API request.
 
-exclusiveMinimum0
-
 strict?: boolean
 
 When true, guarantees schema validation on tool names and inputs
 
-user_location?: UserLocation \| null
+user_location?: [BetaUserLocation](/docs/en/api/beta#beta_user_location) { type, city, country, 2 more } \| null
 
 Parameters for the user's location. Used to provide more relevant search results.
 
 type: "approximate"
 
-Accepts one of the following:
-
-"approximate"
-
 city?: string \| null
 
 The city of the user.
-
-maxLength255
-
-minLength1
 
 country?: string \| null
 
 The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
 
-maxLength2
-
-minLength2
-
 region?: string \| null
 
 The region of the user.
-
-maxLength255
-
-minLength1
 
 timezone?: string \| null
 
 The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 
-maxLength255
+BetaWebSearchTool20260209 { name, type, allowed_callers, 7 more }
 
-minLength1
+name: "web_search"
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+type: "web_search_20260209"
+
+allowed_callers?: Array\<"direct" \| "code_execution_20250825" \| "code_execution_20260120"\>
+
+Accepts one of the following:
+
+"direct"
+
+"code_execution_20250825"
+
+"code_execution_20260120"
+
+allowed_domains?: Array\<string\> \| null
+
+If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+blocked_domains?: Array\<string\> \| null
+
+If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
+
+Create a cache control breakpoint at this content block.
+
+type: "ephemeral"
+
+ttl?: "5m" \| "1h"
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+"5m"
+
+"1h"
+
+defer_loading?: boolean
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+max_uses?: number \| null
+
+Maximum number of times the tool can be used in the API request.
+
+strict?: boolean
+
+When true, guarantees schema validation on tool names and inputs
+
+user_location?: [BetaUserLocation](/docs/en/api/beta#beta_user_location) { type, city, country, 2 more } \| null
+
+Parameters for the user's location. Used to provide more relevant search results.
+
+type: "approximate"
+
+city?: string \| null
+
+The city of the user.
+
+country?: string \| null
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+region?: string \| null
+
+The region of the user.
+
+timezone?: string \| null
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 
 BetaWebSearchToolRequestError { error_code, type }
 
@@ -24139,11 +20071,7 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -24169,10 +20097,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -24183,19 +20107,37 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaWebSearchToolResultBlockContent = [BetaWebSearchToolResultError](/docs/en/api/beta#beta_web_search_tool_result_error) { error_code, type } \| Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
@@ -24221,10 +20163,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -24235,13 +20173,9 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
-BetaWebSearchToolResultBlockParam { content, tool_use_id, type, cache_control }
+BetaWebSearchToolResultBlockParam { content, tool_use_id, type, 2 more }
 
 content: [BetaWebSearchToolResultBlockParamContent](/docs/en/api/beta#beta_web_search_tool_result_block_param_content)
 
@@ -24254,10 +20188,6 @@ encrypted_content: string
 title: string
 
 type: "web_search_result"
-
-Accepts one of the following:
-
-"web_search_result"
 
 url: string
 
@@ -24283,27 +20213,15 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 tool_use_id: string
 
 type: "web_search_tool_result"
-
-Accepts one of the following:
-
-"web_search_tool_result"
 
 cache_control?: [BetaCacheControlEphemeral](/docs/en/api/beta#beta_cache_control_ephemeral) { type, ttl } \| null
 
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
-
-Accepts one of the following:
-
-"ephemeral"
 
 ttl?: "5m" \| "1h"
 
@@ -24322,6 +20240,32 @@ Accepts one of the following:
 
 "1h"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
 BetaWebSearchToolResultBlockParamContent = Array\<[BetaWebSearchResultBlockParam](/docs/en/api/beta#beta_web_search_result_block_param) { encrypted_content, title, type, 2 more } \> \| [BetaWebSearchToolRequestError](/docs/en/api/beta#beta_web_search_tool_request_error) { error_code, type }
 
 Accepts one of the following:
@@ -24333,10 +20277,6 @@ encrypted_content: string
 title: string
 
 type: "web_search_result"
-
-Accepts one of the following:
-
-"web_search_result"
 
 url: string
 
@@ -24361,10 +20301,6 @@ Accepts one of the following:
 "request_too_large"
 
 type: "web_search_tool_result_error"
-
-Accepts one of the following:
-
-"web_search_tool_result_error"
 
 BetaWebSearchToolResultError { error_code, type }
 
@@ -24385,10 +20321,6 @@ Accepts one of the following:
 "request_too_large"
 
 type: "web_search_tool_result_error"
-
-Accepts one of the following:
-
-"web_search_tool_result_error"
 
 BetaWebSearchToolResultErrorCode = "invalid_tool_input" \| "unavailable" \| "max_uses_exceeded" \| 3 more
 
@@ -24412,37 +20344,37 @@ Accepts one of the following:
 
 client.beta.messages.batches.create(BatchCreateParams { requests, betas } params, RequestOptionsoptions?): [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/beta/messages/batches/retrieve)
 
 client.beta.messages.batches.retrieve(stringmessageBatchID, BatchRetrieveParams { betas } params?, RequestOptionsoptions?): [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/beta/messages/batches/list)
 
 client.beta.messages.batches.list(BatchListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more } \>
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/beta/messages/batches/cancel)
 
 client.beta.messages.batches.cancel(stringmessageBatchID, BatchCancelParams { betas } params?, RequestOptionsoptions?): [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/beta/messages/batches/delete)
 
 client.beta.messages.batches.delete(stringmessageBatchID, BatchDeleteParams { betas } params?, RequestOptionsoptions?): [BetaDeletedMessageBatch](/docs/en/api/beta#beta_deleted_message_batch) { id, type }
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/beta/messages/batches/results)
 
 client.beta.messages.batches.results(stringmessageBatchID, BatchResultsParams { betas } params?, RequestOptionsoptions?): [BetaMessageBatchIndividualResponse](/docs/en/api/beta#beta_message_batch_individual_response) { custom_id, result } \| Stream\<[BetaMessageBatchIndividualResponse](/docs/en/api/beta#beta_message_batch_individual_response) { custom_id, result } \>
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -24458,10 +20390,6 @@ Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
 
-Accepts one of the following:
-
-"message_batch_deleted"
-
 BetaMessageBatch { id, archived_at, cancel_initiated_at, 7 more }
 
 id: string
@@ -24474,19 +20402,13 @@ archived_at: string \| null
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: string \| null
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: string \| null
 
@@ -24499,8 +20421,6 @@ formatdate-time
 expires_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: "in_progress" \| "canceling" \| "ended"
 
@@ -24560,17 +20480,9 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-"message_batch"
-
 BetaMessageBatchCanceledResult { type }
 
 type: "canceled"
-
-Accepts one of the following:
-
-"canceled"
 
 BetaMessageBatchErroredResult { error, type }
 
@@ -24586,19 +20498,11 @@ message: string
 
 type: "invalid_request_error"
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 BetaAuthenticationError { message, type }
 
 message: string
 
 type: "authentication_error"
-
-Accepts one of the following:
-
-"authentication_error"
 
 BetaBillingError { message, type }
 
@@ -24606,19 +20510,11 @@ message: string
 
 type: "billing_error"
 
-Accepts one of the following:
-
-"billing_error"
-
 BetaPermissionError { message, type }
 
 message: string
 
 type: "permission_error"
-
-Accepts one of the following:
-
-"permission_error"
 
 BetaNotFoundError { message, type }
 
@@ -24626,19 +20522,11 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 BetaRateLimitError { message, type }
 
 message: string
 
 type: "rate_limit_error"
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 BetaGatewayTimeoutError { message, type }
 
@@ -24646,19 +20534,11 @@ message: string
 
 type: "timeout_error"
 
-Accepts one of the following:
-
-"timeout_error"
-
 BetaAPIError { message, type }
 
 message: string
 
 type: "api_error"
-
-Accepts one of the following:
-
-"api_error"
 
 BetaOverloadedError { message, type }
 
@@ -24666,31 +20546,15 @@ message: string
 
 type: "overloaded_error"
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: string \| null
 
 type: "error"
 
-Accepts one of the following:
-
-"error"
-
 type: "errored"
-
-Accepts one of the following:
-
-"errored"
 
 BetaMessageBatchExpiredResult { type }
 
 type: "expired"
-
-Accepts one of the following:
-
-"expired"
 
 BetaMessageBatchIndividualResponse { custom_id, result }
 
@@ -24732,8 +20596,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -24741,10 +20603,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -24759,10 +20617,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\<[BetaContentBlock](/docs/en/api/beta#beta_content_block)\>
 
@@ -24821,10 +20675,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -24840,10 +20690,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -24861,10 +20707,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -24874,10 +20716,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -24897,17 +20735,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -24917,19 +20747,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -24941,11 +20763,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -24957,10 +20775,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -24969,9 +20783,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -24999,11 +20815,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -25015,10 +20827,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -25027,11 +20835,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -25057,10 +20867,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -25071,21 +20877,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -25115,10 +20939,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -25139,15 +20959,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -25155,15 +20967,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -25171,19 +20975,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -25193,13 +20989,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -25219,10 +21039,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -25230,10 +21046,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -25243,17 +21055,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -25279,10 +21101,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -25290,10 +21108,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -25303,17 +21117,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -25341,10 +21147,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -25367,19 +21169,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -25395,17 +21189,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -25431,10 +21217,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -25443,23 +21225,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -25476,10 +21246,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -25515,10 +21281,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -25534,10 +21296,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -25555,10 +21313,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -25568,10 +21322,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -25591,27 +21341,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -25620,10 +21358,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -25636,10 +21370,6 @@ content: string \| null
 Summary of compacted content, or null if compaction failed
 
 type: "compaction"
-
-Accepts one of the following:
-
-"compaction"
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits } \| null
 
@@ -25659,21 +21389,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -25681,21 +21403,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -25705,11 +21419,15 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-"claude-opus-4-6" \| "claude-opus-4-5-20251101" \| "claude-opus-4-5" \| 18 more
+"claude-opus-4-6" \| "claude-sonnet-4-6" \| "claude-opus-4-5-20251101" \| 19 more
 
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -25799,10 +21517,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason) \| null
 
 The reason that we stopped.
@@ -25848,11 +21562,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -25872,25 +21582,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number \| null
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string \| null
 
@@ -25900,9 +21602,7 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -25926,45 +21626,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -25978,51 +21662,33 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 type: "compaction"
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-"compaction"
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests } \| null
 
@@ -26032,13 +21698,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" \| "priority" \| "batch" \| null
 
@@ -26052,11 +21714,17 @@ Accepts one of the following:
 
 "batch"
 
-type: "succeeded"
+speed: "standard" \| "fast" \| null
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-"succeeded"
+"standard"
+
+"fast"
+
+type: "succeeded"
 
 BetaMessageBatchErroredResult { error, type }
 
@@ -26072,19 +21740,11 @@ message: string
 
 type: "invalid_request_error"
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 BetaAuthenticationError { message, type }
 
 message: string
 
 type: "authentication_error"
-
-Accepts one of the following:
-
-"authentication_error"
 
 BetaBillingError { message, type }
 
@@ -26092,19 +21752,11 @@ message: string
 
 type: "billing_error"
 
-Accepts one of the following:
-
-"billing_error"
-
 BetaPermissionError { message, type }
 
 message: string
 
 type: "permission_error"
-
-Accepts one of the following:
-
-"permission_error"
 
 BetaNotFoundError { message, type }
 
@@ -26112,19 +21764,11 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 BetaRateLimitError { message, type }
 
 message: string
 
 type: "rate_limit_error"
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 BetaGatewayTimeoutError { message, type }
 
@@ -26132,19 +21776,11 @@ message: string
 
 type: "timeout_error"
 
-Accepts one of the following:
-
-"timeout_error"
-
 BetaAPIError { message, type }
 
 message: string
 
 type: "api_error"
-
-Accepts one of the following:
-
-"api_error"
 
 BetaOverloadedError { message, type }
 
@@ -26152,39 +21788,19 @@ message: string
 
 type: "overloaded_error"
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: string \| null
 
 type: "error"
 
-Accepts one of the following:
-
-"error"
-
 type: "errored"
-
-Accepts one of the following:
-
-"errored"
 
 BetaMessageBatchCanceledResult { type }
 
 type: "canceled"
 
-Accepts one of the following:
-
-"canceled"
-
 BetaMessageBatchExpiredResult { type }
 
 type: "expired"
-
-Accepts one of the following:
-
-"expired"
 
 BetaMessageBatchRequestCounts { canceled, errored, expired, 2 more }
 
@@ -26246,8 +21862,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -26255,10 +21869,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -26273,10 +21883,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\<[BetaContentBlock](/docs/en/api/beta#beta_content_block)\>
 
@@ -26335,10 +21941,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -26354,10 +21956,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -26375,10 +21973,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -26388,10 +21982,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -26411,17 +22001,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -26431,19 +22013,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -26455,11 +22029,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -26471,10 +22041,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -26483,9 +22049,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -26513,11 +22081,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -26529,10 +22093,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -26541,11 +22101,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -26571,10 +22133,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -26585,21 +22143,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -26629,10 +22205,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -26653,15 +22225,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -26669,15 +22233,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -26685,19 +22241,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -26707,13 +22255,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -26733,10 +22305,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -26744,10 +22312,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -26757,17 +22321,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -26793,10 +22367,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -26804,10 +22374,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -26817,17 +22383,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -26855,10 +22413,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -26881,19 +22435,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -26909,17 +22455,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -26945,10 +22483,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -26957,23 +22491,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -26990,10 +22512,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -27029,10 +22547,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -27048,10 +22562,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -27069,10 +22579,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -27082,10 +22588,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -27105,27 +22607,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -27134,10 +22624,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -27150,10 +22636,6 @@ content: string \| null
 Summary of compacted content, or null if compaction failed
 
 type: "compaction"
-
-Accepts one of the following:
-
-"compaction"
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits } \| null
 
@@ -27173,21 +22655,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -27195,21 +22669,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -27219,11 +22685,15 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-"claude-opus-4-6" \| "claude-opus-4-5-20251101" \| "claude-opus-4-5" \| 18 more
+"claude-opus-4-6" \| "claude-sonnet-4-6" \| "claude-opus-4-5-20251101" \| 19 more
 
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -27313,10 +22783,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason) \| null
 
 The reason that we stopped.
@@ -27362,11 +22828,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -27386,25 +22848,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number \| null
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string \| null
 
@@ -27414,9 +22868,7 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -27440,45 +22892,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -27492,51 +22928,33 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 type: "compaction"
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-"compaction"
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests } \| null
 
@@ -27546,13 +22964,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" \| "priority" \| "batch" \| null
 
@@ -27566,11 +22980,17 @@ Accepts one of the following:
 
 "batch"
 
-type: "succeeded"
+speed: "standard" \| "fast" \| null
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-"succeeded"
+"standard"
+
+"fast"
+
+type: "succeeded"
 
 BetaMessageBatchErroredResult { error, type }
 
@@ -27586,19 +23006,11 @@ message: string
 
 type: "invalid_request_error"
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 BetaAuthenticationError { message, type }
 
 message: string
 
 type: "authentication_error"
-
-Accepts one of the following:
-
-"authentication_error"
 
 BetaBillingError { message, type }
 
@@ -27606,19 +23018,11 @@ message: string
 
 type: "billing_error"
 
-Accepts one of the following:
-
-"billing_error"
-
 BetaPermissionError { message, type }
 
 message: string
 
 type: "permission_error"
-
-Accepts one of the following:
-
-"permission_error"
 
 BetaNotFoundError { message, type }
 
@@ -27626,19 +23030,11 @@ message: string
 
 type: "not_found_error"
 
-Accepts one of the following:
-
-"not_found_error"
-
 BetaRateLimitError { message, type }
 
 message: string
 
 type: "rate_limit_error"
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 BetaGatewayTimeoutError { message, type }
 
@@ -27646,19 +23042,11 @@ message: string
 
 type: "timeout_error"
 
-Accepts one of the following:
-
-"timeout_error"
-
 BetaAPIError { message, type }
 
 message: string
 
 type: "api_error"
-
-Accepts one of the following:
-
-"api_error"
 
 BetaOverloadedError { message, type }
 
@@ -27666,39 +23054,19 @@ message: string
 
 type: "overloaded_error"
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: string \| null
 
 type: "error"
 
-Accepts one of the following:
-
-"error"
-
 type: "errored"
-
-Accepts one of the following:
-
-"errored"
 
 BetaMessageBatchCanceledResult { type }
 
 type: "canceled"
 
-Accepts one of the following:
-
-"canceled"
-
 BetaMessageBatchExpiredResult { type }
 
 type: "expired"
-
-Accepts one of the following:
-
-"expired"
 
 BetaMessageBatchSucceededResult { message, type }
 
@@ -27722,8 +23090,6 @@ expires_at: string
 
 The time at which the container will expire.
 
-formatdate-time
-
 skills: Array\<[BetaSkill](/docs/en/api/beta#beta_skill) { skill_id, type, version } \> \| null
 
 Skills loaded in the container
@@ -27731,10 +23097,6 @@ Skills loaded in the container
 skill_id: string
 
 Skill ID
-
-maxLength64
-
-minLength1
 
 type: "anthropic" \| "custom"
 
@@ -27749,10 +23111,6 @@ Accepts one of the following:
 version: string
 
 Skill version or 'latest' for most recent version
-
-maxLength64
-
-minLength1
 
 content: Array\<[BetaContentBlock](/docs/en/api/beta#beta_content_block)\>
 
@@ -27811,10 +23169,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -27830,10 +23184,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -27851,10 +23201,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -27864,10 +23210,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -27887,17 +23229,9 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 BetaThinkingBlock { signature, thinking, type }
 
@@ -27907,19 +23241,11 @@ thinking: string
 
 type: "thinking"
 
-Accepts one of the following:
-
-"thinking"
-
 BetaRedactedThinkingBlock { data, type }
 
 data: string
 
 type: "redacted_thinking"
-
-Accepts one of the following:
-
-"redacted_thinking"
 
 BetaToolUseBlock { id, input, name, 2 more }
 
@@ -27931,11 +23257,7 @@ name: string
 
 type: "tool_use"
 
-Accepts one of the following:
-
-"tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -27947,10 +23269,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -27959,9 +23277,11 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaServerToolUseBlock { id, input, name, 2 more }
 
@@ -27989,11 +23309,7 @@ Accepts one of the following:
 
 type: "server_tool_use"
 
-Accepts one of the following:
-
-"server_tool_use"
-
-caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type }
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
 
 Tool invocation directly from the model.
 
@@ -28005,10 +23321,6 @@ Tool invocation directly from the model.
 
 type: "direct"
 
-Accepts one of the following:
-
-"direct"
-
 BetaServerToolCaller { tool_id, type }
 
 Tool invocation generated by a server-side tool.
@@ -28017,11 +23329,13 @@ tool_id: string
 
 type: "code_execution_20250825"
 
-Accepts one of the following:
+BetaServerToolCaller20260120 { tool_id, type }
 
-"code_execution_20250825"
+tool_id: string
 
-BetaWebSearchToolResultBlock { content, tool_use_id, type }
+type: "code_execution_20260120"
+
+BetaWebSearchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebSearchToolResultBlockContent](/docs/en/api/beta#beta_web_search_tool_result_block_content)
 
@@ -28047,10 +23361,6 @@ Accepts one of the following:
 
 type: "web_search_tool_result_error"
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
 Array\<[BetaWebSearchResultBlock](/docs/en/api/beta#beta_web_search_result_block) { encrypted_content, page_age, title, 2 more } \>
 
 encrypted_content: string
@@ -28061,21 +23371,39 @@ title: string
 
 type: "web_search_result"
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: string
 
 tool_use_id: string
 
 type: "web_search_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+BetaDirectCaller { type }
 
-BetaWebFetchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
+
+BetaWebFetchToolResultBlock { content, tool_use_id, type, caller }
 
 content: [BetaWebFetchToolResultErrorBlock](/docs/en/api/beta#beta_web_fetch_tool_result_error_block) { error_code, type } \| [BetaWebFetchBlock](/docs/en/api/beta#beta_web_fetch_block) { content, retrieved_at, type, url }
 
@@ -28105,10 +23433,6 @@ Accepts one of the following:
 
 type: "web_fetch_tool_result_error"
 
-Accepts one of the following:
-
-"web_fetch_tool_result_error"
-
 BetaWebFetchBlock { content, retrieved_at, type, url }
 
 content: [BetaDocumentBlock](/docs/en/api/beta#beta_document_block) { citations, source, title, type }
@@ -28129,15 +23453,7 @@ data: string
 
 media_type: "application/pdf"
 
-Accepts one of the following:
-
-"application/pdf"
-
 type: "base64"
-
-Accepts one of the following:
-
-"base64"
 
 BetaPlainTextSource { data, media_type, type }
 
@@ -28145,15 +23461,7 @@ data: string
 
 media_type: "text/plain"
 
-Accepts one of the following:
-
-"text/plain"
-
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 title: string \| null
 
@@ -28161,19 +23469,11 @@ The title of the document
 
 type: "document"
 
-Accepts one of the following:
-
-"document"
-
 retrieved_at: string \| null
 
 ISO 8601 timestamp when the content was retrieved
 
 type: "web_fetch_result"
-
-Accepts one of the following:
-
-"web_fetch_result"
 
 url: string
 
@@ -28183,13 +23483,37 @@ tool_use_id: string
 
 type: "web_fetch_tool_result"
 
+caller?: [BetaDirectCaller](/docs/en/api/beta#beta_direct_caller) { type } \| [BetaServerToolCaller](/docs/en/api/beta#beta_server_tool_caller) { tool_id, type } \| [BetaServerToolCaller20260120](/docs/en/api/beta#beta_server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_fetch_tool_result"
+BetaDirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+BetaServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: string
+
+type: "code_execution_20250825"
+
+BetaServerToolCaller20260120 { tool_id, type }
+
+tool_id: string
+
+type: "code_execution_20260120"
 
 BetaCodeExecutionToolResultBlock { content, tool_use_id, type }
 
 content: [BetaCodeExecutionToolResultBlockContent](/docs/en/api/beta#beta_code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
 
 Accepts one of the following:
 
@@ -28209,10 +23533,6 @@ Accepts one of the following:
 
 type: "code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"code_execution_tool_result_error"
-
 BetaCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
@@ -28220,10 +23540,6 @@ content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execu
 file_id: string
 
 type: "code_execution_output"
-
-Accepts one of the following:
-
-"code_execution_output"
 
 return_code: number
 
@@ -28233,17 +23549,27 @@ stdout: string
 
 type: "code_execution_result"
 
-Accepts one of the following:
+BetaEncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
 
-"code_execution_result"
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\<[BetaCodeExecutionOutputBlock](/docs/en/api/beta#beta_code_execution_output_block) { file_id, type } \>
+
+file_id: string
+
+type: "code_execution_output"
+
+encrypted_stdout: string
+
+return_code: number
+
+stderr: string
+
+type: "encrypted_code_execution_result"
 
 tool_use_id: string
 
 type: "code_execution_tool_result"
-
-Accepts one of the following:
-
-"code_execution_tool_result"
 
 BetaBashCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -28269,10 +23595,6 @@ Accepts one of the following:
 
 type: "bash_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"bash_code_execution_tool_result_error"
-
 BetaBashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
 
 content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_code_execution_output_block) { file_id, type } \>
@@ -28280,10 +23602,6 @@ content: Array\<[BetaBashCodeExecutionOutputBlock](/docs/en/api/beta#beta_bash_c
 file_id: string
 
 type: "bash_code_execution_output"
-
-Accepts one of the following:
-
-"bash_code_execution_output"
 
 return_code: number
 
@@ -28293,17 +23611,9 @@ stdout: string
 
 type: "bash_code_execution_result"
 
-Accepts one of the following:
-
-"bash_code_execution_result"
-
 tool_use_id: string
 
 type: "bash_code_execution_tool_result"
-
-Accepts one of the following:
-
-"bash_code_execution_tool_result"
 
 BetaTextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
 
@@ -28331,10 +23641,6 @@ error_message: string \| null
 
 type: "text_editor_code_execution_tool_result_error"
 
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result_error"
-
 BetaTextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
 
 content: string
@@ -28357,19 +23663,11 @@ total_lines: number \| null
 
 type: "text_editor_code_execution_view_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_view_result"
-
 BetaTextEditorCodeExecutionCreateResultBlock { is_file_update, type }
 
 is_file_update: boolean
 
 type: "text_editor_code_execution_create_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_create_result"
 
 BetaTextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
 
@@ -28385,17 +23683,9 @@ old_start: number \| null
 
 type: "text_editor_code_execution_str_replace_result"
 
-Accepts one of the following:
-
-"text_editor_code_execution_str_replace_result"
-
 tool_use_id: string
 
 type: "text_editor_code_execution_tool_result"
-
-Accepts one of the following:
-
-"text_editor_code_execution_tool_result"
 
 BetaToolSearchToolResultBlock { content, tool_use_id, type }
 
@@ -28421,10 +23711,6 @@ error_message: string \| null
 
 type: "tool_search_tool_result_error"
 
-Accepts one of the following:
-
-"tool_search_tool_result_error"
-
 BetaToolSearchToolSearchResultBlock { tool_references, type }
 
 tool_references: Array\<[BetaToolReferenceBlock](/docs/en/api/beta#beta_tool_reference_block) { tool_name, type } \>
@@ -28433,23 +23719,11 @@ tool_name: string
 
 type: "tool_reference"
 
-Accepts one of the following:
-
-"tool_reference"
-
 type: "tool_search_tool_search_result"
-
-Accepts one of the following:
-
-"tool_search_tool_search_result"
 
 tool_use_id: string
 
 type: "tool_search_tool_result"
-
-Accepts one of the following:
-
-"tool_search_tool_result"
 
 BetaMCPToolUseBlock { id, input, name, 2 more }
 
@@ -28466,10 +23740,6 @@ server_name: string
 The name of the MCP server
 
 type: "mcp_tool_use"
-
-Accepts one of the following:
-
-"mcp_tool_use"
 
 BetaMCPToolResultBlock { content, is_error, tool_use_id, type }
 
@@ -28505,10 +23775,6 @@ start_char_index: number
 
 type: "char_location"
 
-Accepts one of the following:
-
-"char_location"
-
 BetaCitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: string
@@ -28524,10 +23790,6 @@ file_id: string \| null
 start_page_number: number
 
 type: "page_location"
-
-Accepts one of the following:
-
-"page_location"
 
 BetaCitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -28545,10 +23807,6 @@ start_block_index: number
 
 type: "content_block_location"
 
-Accepts one of the following:
-
-"content_block_location"
-
 BetaCitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: string
@@ -28558,10 +23816,6 @@ encrypted_index: string
 title: string \| null
 
 type: "web_search_result_location"
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: string
 
@@ -28581,27 +23835,15 @@ title: string \| null
 
 type: "search_result_location"
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: string
 
 type: "text"
-
-Accepts one of the following:
-
-"text"
 
 is_error: boolean
 
 tool_use_id: string
 
 type: "mcp_tool_result"
-
-Accepts one of the following:
-
-"mcp_tool_result"
 
 BetaContainerUploadBlock { file_id, type }
 
@@ -28610,10 +23852,6 @@ Response model for a file uploaded to the container.
 file_id: string
 
 type: "container_upload"
-
-Accepts one of the following:
-
-"container_upload"
 
 BetaCompactionBlock { content, type }
 
@@ -28626,10 +23864,6 @@ content: string \| null
 Summary of compacted content, or null if compaction failed
 
 type: "compaction"
-
-Accepts one of the following:
-
-"compaction"
 
 context_management: [BetaContextManagementResponse](/docs/en/api/beta#beta_context_management_response) { applied_edits } \| null
 
@@ -28649,21 +23883,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_tool_uses: number
 
 Number of tool uses that were cleared.
 
-minimum0
-
 type: "clear_tool_uses_20250919"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_tool_uses_20250919"
 
 BetaClearThinking20251015EditResponse { cleared_input_tokens, cleared_thinking_turns, type }
 
@@ -28671,21 +23897,13 @@ cleared_input_tokens: number
 
 Number of input tokens cleared by this edit.
 
-minimum0
-
 cleared_thinking_turns: number
 
 Number of thinking turns that were cleared.
 
-minimum0
-
 type: "clear_thinking_20251015"
 
 The type of context management edit applied.
-
-Accepts one of the following:
-
-"clear_thinking_20251015"
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -28695,11 +23913,15 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-"claude-opus-4-6" \| "claude-opus-4-5-20251101" \| "claude-opus-4-5" \| 18 more
+"claude-opus-4-6" \| "claude-sonnet-4-6" \| "claude-opus-4-5-20251101" \| 19 more
 
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -28789,10 +24011,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-"assistant"
-
 stop_reason: [BetaStopReason](/docs/en/api/beta#beta_stop_reason) \| null
 
 The reason that we stopped.
@@ -28838,11 +24056,7 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
-usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+usage: [BetaUsage](/docs/en/api/beta#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 Billing and rate-limit usage.
 
@@ -28862,25 +24076,17 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number \| null
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number \| null
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: string \| null
 
@@ -28890,9 +24096,7 @@ input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
-iterations: Array\<[BetaMessageIterationUsage](/docs/en/api/beta#beta_message_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \| [BetaCompactionIterationUsage](/docs/en/api/beta#beta_compaction_iteration_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more } \> \| null
+iterations: [BetaIterationsUsage](/docs/en/api/beta#beta_iterations_usage) \| null
 
 Per-iteration token usage breakdown.
 
@@ -28916,45 +24120,29 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
 
-minimum0
-
 type: "message"
 
 Usage for a sampling iteration
-
-Accepts one of the following:
-
-"message"
 
 BetaCompactionIterationUsage { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 3 more }
 
@@ -28968,51 +24156,33 @@ ephemeral_1h_input_tokens: number
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: number
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: number
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: number
 
 The number of input tokens read from the cache.
-
-minimum0
 
 input_tokens: number
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 type: "compaction"
 
 Usage for a compaction iteration
 
-Accepts one of the following:
-
-"compaction"
-
 output_tokens: number
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: [BetaServerToolUsage](/docs/en/api/beta#beta_server_tool_usage) { web_fetch_requests, web_search_requests } \| null
 
@@ -29022,13 +24192,9 @@ web_fetch_requests: number
 
 The number of web fetch tool requests.
 
-minimum0
-
 web_search_requests: number
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: "standard" \| "priority" \| "batch" \| null
 
@@ -29042,11 +24208,17 @@ Accepts one of the following:
 
 "batch"
 
-type: "succeeded"
+speed: "standard" \| "fast" \| null
+
+The inference speed mode used for this request.
 
 Accepts one of the following:
 
-"succeeded"
+"standard"
+
+"fast"
+
+type: "succeeded"
 
 #### BetaFiles
 
@@ -29054,31 +24226,31 @@ Accepts one of the following:
 
 client.beta.files.upload(FileUploadParams { file, betas } params, RequestOptionsoptions?): [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }
 
-post/v1/files
+POST/v1/files
 
 ##### [List Files](/docs/en/api/beta/files/list)
 
 client.beta.files.list(FileListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more } \>
 
-get/v1/files
+GET/v1/files
 
 ##### [Download File](/docs/en/api/beta/files/download)
 
 client.beta.files.download(stringfileID, FileDownloadParams { betas } params?, RequestOptionsoptions?): Response
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 ##### [Get File Metadata](/docs/en/api/beta/files/retrieve_metadata)
 
 client.beta.files.retrieveMetadata(stringfileID, FileRetrieveMetadataParams { betas } params?, RequestOptionsoptions?): [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }
 
-get/v1/files/{file_id}
+GET/v1/files/{file_id}
 
 ##### [Delete File](/docs/en/api/beta/files/delete)
 
 client.beta.files.delete(stringfileID, FileDeleteParams { betas } params?, RequestOptionsoptions?): [DeletedFile](/docs/en/api/beta#deleted_file) { id, type }
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 ##### ModelsExpand Collapse 
 
@@ -29094,10 +24266,6 @@ Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
 
-Accepts one of the following:
-
-"file_deleted"
-
 FileMetadata { id, created_at, filename, 4 more }
 
 id: string
@@ -29110,39 +24278,23 @@ created_at: string
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 filename: string
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 mime_type: string
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 size_bytes: number
 
 Size of the file in bytes.
-
-minimum0
 
 type: "file"
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-"file"
 
 downloadable?: boolean
 
@@ -29154,25 +24306,25 @@ Whether the file can be downloaded.
 
 client.beta.skills.create(SkillCreateParams { display_title, files, betas } params?, RequestOptionsoptions?): [SkillCreateResponse](/docs/en/api/beta#skill_create_response) { id, created_at, display_title, 4 more }
 
-post/v1/skills
+POST/v1/skills
 
 ##### [List Skills](/docs/en/api/beta/skills/list)
 
 client.beta.skills.list(SkillListParams { limit, page, source, betas } params?, RequestOptionsoptions?): PageCursor\<[SkillListResponse](/docs/en/api/beta#skill_list_response) { id, created_at, display_title, 4 more } \>
 
-get/v1/skills
+GET/v1/skills
 
 ##### [Get Skill](/docs/en/api/beta/skills/retrieve)
 
 client.beta.skills.retrieve(stringskillID, SkillRetrieveParams { betas } params?, RequestOptionsoptions?): [SkillRetrieveResponse](/docs/en/api/beta#skill_retrieve_response) { id, created_at, display_title, 4 more }
 
-get/v1/skills/{skill_id}
+GET/v1/skills/{skill_id}
 
 ##### [Delete Skill](/docs/en/api/beta/skills/delete)
 
 client.beta.skills.delete(stringskillID, SkillDeleteParams { betas } params?, RequestOptionsoptions?): [SkillDeleteResponse](/docs/en/api/beta#skill_delete_response) { id, type }
 
-delete/v1/skills/{skill_id}
+DELETE/v1/skills/{skill_id}
 
 #### BetaSkillsVersions
 
@@ -29180,25 +24332,25 @@ delete/v1/skills/{skill_id}
 
 client.beta.skills.versions.create(stringskillID, VersionCreateParams { files, betas } params?, RequestOptionsoptions?): [VersionCreateResponse](/docs/en/api/beta#version_create_response) { id, created_at, description, 5 more }
 
-post/v1/skills/{skill_id}/versions
+POST/v1/skills/{skill_id}/versions
 
 ##### [List Skill Versions](/docs/en/api/beta/skills/versions/list)
 
 client.beta.skills.versions.list(stringskillID, VersionListParams { limit, page, betas } params?, RequestOptionsoptions?): PageCursor\<[VersionListResponse](/docs/en/api/beta#version_list_response) { id, created_at, description, 5 more } \>
 
-get/v1/skills/{skill_id}/versions
+GET/v1/skills/{skill_id}/versions
 
 ##### [Get Skill Version](/docs/en/api/beta/skills/versions/retrieve)
 
 client.beta.skills.versions.retrieve(stringversion, VersionRetrieveParams { skill_id, betas } params, RequestOptionsoptions?): [VersionRetrieveResponse](/docs/en/api/beta#version_retrieve_response) { id, created_at, description, 5 more }
 
-get/v1/skills/{skill_id}/versions/{version}
+GET/v1/skills/{skill_id}/versions/{version}
 
 ##### [Delete Skill Version](/docs/en/api/beta/skills/versions/delete)
 
 client.beta.skills.versions.delete(stringversion, VersionDeleteParams { skill_id, betas } params, RequestOptionsoptions?): [VersionDeleteResponse](/docs/en/api/beta#version_delete_response) { id, type }
 
-delete/v1/skills/{skill_id}/versions/{version}
+DELETE/v1/skills/{skill_id}/versions/{version}
 
 [](/docs)
 

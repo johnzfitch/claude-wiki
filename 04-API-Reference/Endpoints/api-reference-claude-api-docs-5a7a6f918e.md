@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:21Z"
+fetched_at: "2026-02-22T13:52:34Z"
 source_url: "https://platform.claude.com/docs/en/api/kotlin/beta/messages/batches/cancel"
 title: "API Reference - Claude API Docs"
 ---

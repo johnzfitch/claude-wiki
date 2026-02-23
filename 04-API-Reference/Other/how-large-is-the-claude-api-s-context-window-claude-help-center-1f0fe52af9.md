@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:52:08Z"
+fetched_at: "2026-02-13T09:23:40Z"
 source_url: "https://support.claude.com/en/articles/8606395-how-large-is-the-claude-api-s-context-window"
 title: "How large is the Claude API’s context window? | Claude Help Center"
 ---
@@ -31,9 +31,11 @@ How large is the Claude API’s context window?
 
 # How large is the Claude API’s context window?
 
-Updated yesterday
+Updated this week
 
-The Claude API can ingest can ingest 1M tokens when using Sonnet 4, and 200K+ tokens (about 500 pages of text or more) when using all other models.
+The Claude API can ingest 1M tokens when using Claude Opus 4.6, Sonnet 4.5, and Sonnet 4, and 200K+ tokens (about 500 pages of text or more) when using all other models.
+
+For more detailed information, see our **[Claude API Docs](https://platform.claude.com/docs/en/build-with-claude/context-windows#1-m-token-context-window)**.
 
 ------------------------------------------------------------------------
 
@@ -47,17 +49,17 @@ How up-to-date is Claude's training data?
 
 How large is the context window on paid Claude plans?
 
-[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
-
-What is the Enterprise plan?
-
 [](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
 
 Claude Code model configuration
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
+
+[](https://support.claude.com/en/articles/12864745-using-claude-in-microsoft-foundry)
+
+Using Claude in Microsoft Foundry
 
 Did this answer your question?
 

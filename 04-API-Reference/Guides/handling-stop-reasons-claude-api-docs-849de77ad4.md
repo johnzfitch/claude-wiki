@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:07Z"
+fetched_at: "2026-02-22T10:57:41Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons"
 title: "Handling stop reasons - Claude API Docs"
 ---
@@ -78,59 +78,60 @@ Sometimes Claude returns an empty response (exactly 2-3 tokens with no content) 
 # INCORRECT: Adding text immediately after tool_result
 messages = [
     {"role": "user", "content": "Calculate the sum of 1234 and 5678"},
-    {"role": "assistant", "content": [
-        {
-            "type": "tool_use",
-            "id": "toolu_123",
-            "name": "calculator",
-            "input": {"operation": "add", "a": 1234, "b": 5678}
-        }
-    ]},
-    {"role": "user", "content": [
-        {
-            "type": "tool_result",
-            "tool_use_id": "toolu_123",
-            "content": "6912"
-        },
-        {
-            "type": "text",
-            "text": "Here's the result"  # Don't add text after tool_result
-        }
-    ]}
+    {
+        "role": "assistant",
+        "content": [
+            {
+                "type": "tool_use",
+                "id": "toolu_123",
+                "name": "calculator",
+                "input": {"operation": "add", "a": 1234, "b": 5678},
+            }
+        ],
+    },
+    {
+        "role": "user",
+        "content": [
+            {"type": "tool_result", "tool_use_id": "toolu_123", "content": "6912"},
+            {
+                "type": "text",
+                "text": "Here's the result",  # Don't add text after tool_result
+            },
+        ],
+    },
 ]
 
 # CORRECT: Send tool results directly without additional text
 messages = [
     {"role": "user", "content": "Calculate the sum of 1234 and 5678"},
-    {"role": "assistant", "content": [
-        {
-            "type": "tool_use",
-            "id": "toolu_123",
-            "name": "calculator",
-            "input": {"operation": "add", "a": 1234, "b": 5678}
-        }
-    ]},
-    {"role": "user", "content": [
-        {
-            "type": "tool_result",
-            "tool_use_id": "toolu_123",
-            "content": "6912"
-        }
-    ]}  # Just the tool_result, no additional text
+    {
+        "role": "assistant",
+        "content": [
+            {
+                "type": "tool_use",
+                "id": "toolu_123",
+                "name": "calculator",
+                "input": {"operation": "add", "a": 1234, "b": 5678},
+            }
+        ],
+    },
+    {
+        "role": "user",
+        "content": [
+            {"type": "tool_result", "tool_use_id": "toolu_123", "content": "6912"}
+        ],
+    },  # Just the tool_result, no additional text
 ]
+
 
 # If you still get empty responses after fixing the above:
 def handle_empty_response(client, messages):
     response = client.messages.create(
-        model="claude-opus-4-6",
-        max_tokens=1024,
-        messages=messages
+        model="claude-opus-4-6", max_tokens=1024, messages=messages
     )
 
     # Check if response is empty
-    if (response.stop_reason == "end_turn" and
-        not response.content:
-
+    if response.stop_reason == "end_turn" and not response.content:
         # INCORRECT: Don't just retry with the empty response
         # This won't work because Claude already decided it's done
 
@@ -138,9 +139,7 @@ def handle_empty_response(client, messages):
         messages.append({"role": "user", "content": "Please continue"})
 
         response = client.messages.create(
-            model="claude-opus-4-6",
-            max_tokens=1024,
-            messages=messages
+            model="claude-opus-4-6", max_tokens=1024, messages=messages
         )
 
     return response
@@ -163,7 +162,7 @@ Claude stopped because it reached the `max_tokens` limit specified in your reque
 response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=10,
-    messages=[{"role": "user", "content": "Explain quantum physics"}]
+    messages=[{"role": "user", "content": "Explain quantum physics"}],
 )
 
 if response.stop_reason == "max_tokens":
@@ -183,7 +182,7 @@ response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     stop_sequences=["END", "STOP"],
-    messages=[{"role": "user", "content": "Generate text until you say END"}]
+    messages=[{"role": "user", "content": "Generate text until you say END"}],
 )
 
 if response.stop_reason == "stop_sequence":
@@ -203,7 +202,7 @@ response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     tools=[weather_tool],
-    messages=[{"role": "user", "content": "What's the weather?"}]
+    messages=[{"role": "user", "content": "What's the weather?"}],
 )
 
 if response.stop_reason == "tool_use":
@@ -218,28 +217,32 @@ if response.stop_reason == "tool_use":
 
 pause_turn
 
-Used with server tools like web search when Claude needs to pause a long-running operation.
+Returned when the server-side sampling loop reaches its iteration limit while executing [server tools](/docs/en/agents-and-tools/tool-use/overview#server-tools) like web search or web fetch. The default limit is 10 iterations per request.
+
+When this happens, the response may contain a `server_tool_use` block without a corresponding `server_tool_result`. To let Claude finish processing, continue the conversation by sending the response back as-is.
 
 ``` shiki
 response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     tools=[{"type": "web_search_20250305", "name": "web_search"}],
-    messages=[{"role": "user", "content": "Search for latest AI news"}]
+    messages=[{"role": "user", "content": "Search for latest AI news"}],
 )
 
 if response.stop_reason == "pause_turn":
-    # Continue the conversation
+    # Continue the conversation by sending the response back
     messages = [
         {"role": "user", "content": original_query},
-        {"role": "assistant", "content": response.content}
+        {"role": "assistant", "content": response.content},
     ]
     continuation = client.messages.create(
         model="claude-opus-4-6",
         messages=messages,
-        tools=[{"type": "web_search_20250305", "name": "web_search"}]
+        tools=[{"type": "web_search_20250305", "name": "web_search"}],
     )
 ```
+
+Your application should handle `pause_turn` in any agent loop that uses server tools. Simply add the assistant's response to your messages array and make another API request to let Claude continue.
 
 ### 
 
@@ -251,7 +254,7 @@ Claude refused to generate a response due to safety concerns.
 response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
-    messages=[{"role": "user", "content": "[Unsafe request]"}]
+    messages=[{"role": "user", "content": "[Unsafe request]"}],
 )
 
 if response.stop_reason == "refusal":
@@ -275,7 +278,9 @@ Claude stopped because it reached the model's context window limit. This allows 
 response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=64000,  # Model's maximum output tokens
-    messages=[{"role": "user", "content": "Large input that uses most of context window..."}]
+    messages=[
+        {"role": "user", "content": "Large input that uses most of context window..."}
+    ],
 )
 
 if response.stop_reason == "model_context_window_exceeded":
@@ -332,12 +337,12 @@ def handle_truncated_response(response):
         # Option 2: Continue generation
         messages = [
             {"role": "user", "content": original_prompt},
-            {"role": "assistant", "content": response.content[0].text}
+            {"role": "assistant", "content": response.content[0].text},
         ]
         continuation = client.messages.create(
             model="claude-opus-4-6",
             max_tokens=1024,
-            messages=messages + [{"role": "user", "content": "Please continue"}]
+            messages=messages + [{"role": "user", "content": "Please continue"}],
         )
         return response.content[0].text + continuation.content[0].text
 ```
@@ -346,24 +351,35 @@ def handle_truncated_response(response):
 
 3\. Implement retry logic for pause_turn
 
-For server tools that may pause:
+When using [server tools](/docs/en/agents-and-tools/tool-use/overview#server-tools), the API may return `pause_turn` if the server-side sampling loop reaches its iteration limit (default 10). Handle this by continuing the conversation:
 
 ``` shiki
-def handle_paused_conversation(initial_response, max_retries=3):
-    response = initial_response
-    messages = [{"role": "user", "content": original_query}]
-    
-    for attempt in range(max_retries):
-        if response.stop_reason != "pause_turn":
-            break
-            
-        messages.append({"role": "assistant", "content": response.content})
+def handle_server_tool_conversation(client, user_query, tools, max_continuations=5):
+    """
+    Handle server tool conversations that may require multiple continuations.
+
+    The server runs a sampling loop when executing server tools. If the loop
+    reaches its iteration limit, the API returns pause_turn. Continue the
+    conversation by sending the response back to let Claude finish.
+    """
+    messages = [{"role": "user", "content": user_query}]
+
+    for _ in range(max_continuations):
         response = client.messages.create(
-            model="claude-opus-4-6",
-            messages=messages,
-            tools=original_tools
+            model="claude-opus-4-6", messages=messages, tools=tools
         )
-    
+
+        if response.stop_reason != "pause_turn":
+            # Claude finished processing - return the final response
+            return response
+
+        # pause_turn: replace the full message list to maintain alternating roles
+        messages = [
+            {"role": "user", "content": user_query},
+            {"role": "assistant", "content": response.content},
+        ]
+
+    # Reached max continuations - return the last response
     return response
 ```
 
@@ -392,11 +408,11 @@ Errors (failed requests)
 ``` shiki
 try:
     response = client.messages.create(...)
-    
+
     # Handle successful response with stop_reason
     if response.stop_reason == "max_tokens":
         print("Response was truncated")
-    
+
 except anthropic.APIError as e:
     # Handle actual errors
     if e.status_code == 429:
@@ -440,9 +456,7 @@ def complete_tool_workflow(client, user_query, tools):
 
     while True:
         response = client.messages.create(
-            model="claude-opus-4-6",
-            messages=messages,
-            tools=tools
+            model="claude-opus-4-6", messages=messages, tools=tools
         )
 
         if response.stop_reason == "tool_use":
@@ -466,9 +480,7 @@ def get_complete_response(client, prompt, max_attempts=3):
 
     for _ in range(max_attempts):
         response = client.messages.create(
-            model="claude-opus-4-6",
-            messages=messages,
-            max_tokens=4096
+            model="claude-opus-4-6", messages=messages, max_tokens=4096
         )
 
         full_response += response.content[0].text
@@ -480,7 +492,7 @@ def get_complete_response(client, prompt, max_attempts=3):
         messages = [
             {"role": "user", "content": prompt},
             {"role": "assistant", "content": full_response},
-            {"role": "user", "content": "Please continue from where you left off."}
+            {"role": "user", "content": "Please continue from where you left off."},
         ]
 
     return full_response
@@ -501,12 +513,14 @@ def get_max_possible_tokens(client, prompt):
     response = client.messages.create(
         model="claude-opus-4-6",
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=64000  # Set to model's maximum output tokens
+        max_tokens=64000,  # Set to model's maximum output tokens
     )
 
     if response.stop_reason == "model_context_window_exceeded":
         # Got the maximum possible tokens given input size
-        print(f"Generated {response.usage.output_tokens} tokens (context limit reached)")
+        print(
+            f"Generated {response.usage.output_tokens} tokens (context limit reached)"
+        )
     elif response.stop_reason == "max_tokens":
         # Got exactly the requested tokens
         print(f"Generated {response.usage.output_tokens} tokens (max_tokens reached)")

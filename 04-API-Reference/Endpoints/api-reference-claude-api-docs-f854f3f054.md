@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:26Z"
+fetched_at: "2026-02-22T13:53:22Z"
 source_url: "https://platform.claude.com/docs/en/api/kotlin/beta/files/delete"
 title: "API Reference - Claude API Docs"
 ---

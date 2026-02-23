@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-10T10:49:26Z"
+fetched_at: "2026-02-23T00:45:34Z"
 source_url: "https://support.claude.com/en/articles/12220057-using-morningstar-for-investment-research"
 title: "Using Morningstar for Investment Research | Claude Help Center"
 ---

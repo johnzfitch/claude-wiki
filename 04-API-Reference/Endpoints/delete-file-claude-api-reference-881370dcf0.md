@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:07:26Z"
+fetched_at: "2026-02-22T13:37:20Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/delete"
 title: "Delete File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ TypeScript
 
 client.beta.files.delete(stringfileID, FileDeleteParams { betas } params?, RequestOptionsoptions?): [DeletedFile](/docs/en/api/beta#deleted_file) { id, type }
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 Delete File
 
@@ -33,7 +33,7 @@ Accepts one of the following:
 
 (string & {})
 
-"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 16 more
+"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 17 more
 
 "message-batches-2024-09-24"
 
@@ -73,6 +73,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 DeletedFile { id, type }
@@ -86,10 +88,6 @@ type?: "file_deleted"
 Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
-
-Accepts one of the following:
-
-"file_deleted"
 
 Delete File
 

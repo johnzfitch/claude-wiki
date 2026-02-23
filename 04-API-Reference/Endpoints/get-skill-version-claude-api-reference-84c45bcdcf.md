@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:15Z"
+fetched_at: "2026-02-22T13:59:53Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/retrieve"
 title: "Get Skill Version - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Skills.Versions.Get(ctx, version, params) (\*[BetaSkillVersionGetResponse](/docs/en/api/beta#BetaSkillVersionGetResponse), error)
 
-get/v1/skills/{skill_id}/versions/{version}
+GET/v1/skills/{skill_id}/versions/{version}
 
 Get Skill Version
 
@@ -33,7 +33,9 @@ Path param: Unique identifier for the skill.
 
 The format and length of IDs may change over time.
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Header param: Optional header to specify the beta version(s) you want to use.
 
@@ -80,6 +82,8 @@ const AnthropicBetaContextManagement2025_06_27 AnthropicBeta = "context-manageme
 const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-context-window-exceeded-2025-08-26"
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
+
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

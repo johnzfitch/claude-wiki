@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:08Z"
+fetched_at: "2026-02-22T13:58:34Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/files/upload"
 title: "Upload File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Files.Upload(ctx, params) (\*[FileMetadata](/docs/en/api/beta#file_metadata), error)
 
-post/v1/files
+POST/v1/files
 
 Upload File
 
@@ -25,9 +25,9 @@ File param.Field\[[Reader](/docs/en/api/beta/files/upload)\]
 
 Body param: The file to upload
 
-formatbinary
+Betas param.Field\[\[\]AnthropicBeta\]
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+optional
 
 Header param: Optional header to specify the beta version(s) you want to use.
 
@@ -75,6 +75,8 @@ const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-c
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
 
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 type FileMetadata struct{…}
@@ -89,29 +91,17 @@ CreatedAt Time
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 Filename string
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 MimeType string
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 SizeBytes int64
 
 Size of the file in bytes.
-
-minimum0
 
 Type File
 
@@ -119,11 +109,9 @@ Object type.
 
 For files, this is always `"file"`.
 
-Accepts one of the following:
+Downloadable bool
 
-const FileFile File = "file"
-
-Downloadable booloptional
+optional
 
 Whether the file can be downloaded.
 

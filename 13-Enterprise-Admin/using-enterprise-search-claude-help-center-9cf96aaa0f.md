@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-10T10:49:29Z"
+fetched_at: "2026-02-23T00:45:07Z"
 source_url: "https://support.claude.com/en/articles/12489464-using-enterprise-search"
 title: "Using Enterprise Search | Claude Help Center"
 ---
@@ -395,25 +395,25 @@ Search results are retained with their associated chats. You can delete search d
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/10168395-setting-up-claude-integrations)
 
-Getting started with custom connectors using remote MCP
+Setting up Claude integrations
+
+[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+
+Get started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
-Pre-built Web Connectors Using Remote MCP
+Pre-built web connectors using remote MCP
 
 [](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)
 
-Enabling and Using the Microsoft 365 Connector
-
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
-
-Using the Synapse.org Connector in Claude
+Enabling and using the Microsoft 365 connector
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
 Did this answer your question?
 

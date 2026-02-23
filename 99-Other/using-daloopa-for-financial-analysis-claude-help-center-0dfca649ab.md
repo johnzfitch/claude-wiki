@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:26Z"
+fetched_at: "2026-02-16T21:12:40Z"
 source_url: "https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis"
 title: "Using Daloopa for Financial Analysis | Claude Help Center"
 ---
@@ -51,7 +51,7 @@ Using Daloopa for Financial Analysis
 
 # Using Daloopa for Financial Analysis
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -216,17 +216,9 @@ Learn about [finding and connecting tools](https://support.claude.com/en/article
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services)
-
-Getting Started with Claude for Financial Services
-
 [](https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis)
 
 Using S&P Global Data for Financial Analysis
-
-[](https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research)
-
-Using FactSet for Comprehensive Financial Research
 
 [](https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis)
 
@@ -235,6 +227,14 @@ Prompting Strategies for Financial Analysis
 [](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 
 Financial Analysis Workflows with Claude
+
+[](https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis)
+
+Using Moody’s for Financial Analysis
+
+[](https://support.claude.com/en/articles/12651818-using-aiera-for-earnings-intelligence-and-market-analysis)
+
+Using Aiera for Earnings Intelligence and Market Analysis
 
 Did this answer your question?
 

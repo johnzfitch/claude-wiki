@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:53Z"
+fetched_at: "2026-02-22T13:25:59Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/futuristic-fashion-advisor"
 title: "Futuristic fashion advisor - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Suggest avant-garde fashion trends and styles for the user's specific preference
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -65,11 +65,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "Personal style: Edgy, minimal, with a touch of androgyny  \nFavorite colors: Black, white, and deep red  \nPreferred materials: Leather, denim, and high-quality cotton  \nBody type: Tall and lean  \nFashion goals: To create a striking, fearless look for an art gallery opening"
+                    "text": "Personal style: Edgy, minimal, with a touch of androgyny  \nFavorite colors: Black, white, and deep red  \nPreferred materials: Leather, denim, and high-quality cotton  \nBody type: Tall and lean  \nFashion goals: To create a striking, fearless look for an art gallery opening",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

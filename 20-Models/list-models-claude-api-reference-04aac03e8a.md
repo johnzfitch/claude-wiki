@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:09:43Z"
+fetched_at: "2026-02-22T13:56:08Z"
 source_url: "https://platform.claude.com/docs/en/api/go/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)
 
-get/v1/models
+GET/v1/models
 
 List available models.
 
@@ -23,15 +23,21 @@ The Models API response can be used to determine which models are available for 
 
 params ModelListParams
 
-AfterID param.Field\[string\]optional
+AfterID param.Field\[string\]
+
+optional
 
 Query param: ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
 
-BeforeID param.Field\[string\]optional
+BeforeID param.Field\[string\]
+
+optional
 
 Query param: ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
 
-Limit param.Field\[int64\]optional
+Limit param.Field\[int64\]
+
+optional
 
 Query param: Number of items to return per page.
 
@@ -41,7 +47,9 @@ maximum1000
 
 minimum1
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Header param: Optional header to specify the beta version(s) you want to use.
 
@@ -89,6 +97,8 @@ const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-c
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
 
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 type ModelInfo struct{…}
@@ -101,8 +111,6 @@ CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
-formatdate-time
-
 DisplayName string
 
 A human-readable name for the model.
@@ -112,10 +120,6 @@ Type Model
 Object type.
 
 For Models, this is always `"model"`.
-
-Accepts one of the following:
-
-const ModelModel Model = "model"
 
 List Models
 

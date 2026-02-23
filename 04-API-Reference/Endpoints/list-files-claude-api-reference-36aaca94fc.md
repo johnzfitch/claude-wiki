@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:39Z"
+fetched_at: "2026-02-22T13:31:21Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/files/list"
 title: "List Files - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # List Files
 
-get/v1/files
+GET/v1/files
 
 List Files
 
@@ -45,7 +45,7 @@ Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 17 more
 
 Accepts one of the following:
 
@@ -87,6 +87,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 data: array of [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }
@@ -103,39 +105,23 @@ created_at: string
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 filename: string
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 mime_type: string
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 size_bytes: number
 
 Size of the file in bytes.
-
-minimum0
 
 type: "file"
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-"file"
 
 downloadable: optional boolean
 
@@ -158,7 +144,7 @@ List Files
 cURL
 
 ``` shiki
-curl https://api.anthropic.com/v1/files \
+curl https://api.anthropic.com/v1/files?beta=true \
     -H 'anthropic-version: 2023-06-01' \
     -H 'anthropic-beta: files-api-2025-04-14' \
     -H "X-Api-Key: $ANTHROPIC_API_KEY"

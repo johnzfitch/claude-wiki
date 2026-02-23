@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-08T20:51:57Z"
+fetched_at: "2026-02-23T00:45:19Z"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 title: "What are Skills? | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ What are Skills?
 
 # What are Skills?
 
-Updated yesterday
+Updated this week
 
 Table of contents
 

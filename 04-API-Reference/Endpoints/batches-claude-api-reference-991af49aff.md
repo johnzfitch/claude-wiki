@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:26Z"
+fetched_at: "2026-02-22T13:45:11Z"
 source_url: "https://platform.claude.com/docs/en/api/java/messages/batches"
 title: "Batches - Claude API Reference"
 ---
@@ -15,37 +15,37 @@ Java
 
 [MessageBatch](/docs/en/api/messages#message_batch) messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/messages/batches/retrieve)
 
 [MessageBatch](/docs/en/api/messages#message_batch) messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/messages/batches/list)
 
 BatchListPage messages().batches().list(BatchListParamsparams = BatchListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/messages/batches/cancel)
 
 [MessageBatch](/docs/en/api/messages#message_batch) messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/messages/batches/delete)
 
 [DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch) messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/messages/batches/results)
 
 [MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response) messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -55,15 +55,13 @@ String id
 
 ID of the Message Batch.
 
-JsonValue; type "message_batch_deleted"constant"message_batch_deleted"constant
+JsonValue; type "message_batch_deleted"constant
+
+"message_batch_deleted"constant
 
 Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
-
-Accepts one of the following:
-
-MESSAGE_BATCH_DELETED("message_batch_deleted")
 
 class MessageBatch:
 
@@ -77,19 +75,13 @@ Optional\<LocalDateTime\> archivedAt
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 Optional\<LocalDateTime\> cancelInitiatedAt
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 LocalDateTime createdAt
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 Optional\<LocalDateTime\> endedAt
 
@@ -102,8 +94,6 @@ formatdate-time
 LocalDateTime expiresAt
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus processingStatus
 
@@ -157,23 +147,19 @@ URL to a `.jsonl` file containing the results of the Message Batch requests. Spe
 
 Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
 
-JsonValue; type "message_batch"constant"message_batch"constant
+JsonValue; type "message_batch"constant
+
+"message_batch"constant
 
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-MESSAGE_BATCH("message_batch")
-
 class MessageBatchCanceledResult:
 
-JsonValue; type "canceled"constant"canceled"constant
+JsonValue; type "canceled"constant
 
-Accepts one of the following:
-
-CANCELED("canceled")
+"canceled"constant
 
 class MessageBatchErroredResult:
 
@@ -187,113 +173,89 @@ class InvalidRequestError:
 
 String message
 
-JsonValue; type "invalid_request_error"constant"invalid_request_error"constant
+JsonValue; type "invalid_request_error"constant
 
-Accepts one of the following:
-
-INVALID_REQUEST_ERROR("invalid_request_error")
+"invalid_request_error"constant
 
 class AuthenticationError:
 
 String message
 
-JsonValue; type "authentication_error"constant"authentication_error"constant
+JsonValue; type "authentication_error"constant
 
-Accepts one of the following:
-
-AUTHENTICATION_ERROR("authentication_error")
+"authentication_error"constant
 
 class BillingError:
 
 String message
 
-JsonValue; type "billing_error"constant"billing_error"constant
+JsonValue; type "billing_error"constant
 
-Accepts one of the following:
-
-BILLING_ERROR("billing_error")
+"billing_error"constant
 
 class PermissionError:
 
 String message
 
-JsonValue; type "permission_error"constant"permission_error"constant
+JsonValue; type "permission_error"constant
 
-Accepts one of the following:
-
-PERMISSION_ERROR("permission_error")
+"permission_error"constant
 
 class NotFoundError:
 
 String message
 
-JsonValue; type "not_found_error"constant"not_found_error"constant
+JsonValue; type "not_found_error"constant
 
-Accepts one of the following:
-
-NOT_FOUND_ERROR("not_found_error")
+"not_found_error"constant
 
 class RateLimitError:
 
 String message
 
-JsonValue; type "rate_limit_error"constant"rate_limit_error"constant
+JsonValue; type "rate_limit_error"constant
 
-Accepts one of the following:
-
-RATE_LIMIT_ERROR("rate_limit_error")
+"rate_limit_error"constant
 
 class GatewayTimeoutError:
 
 String message
 
-JsonValue; type "timeout_error"constant"timeout_error"constant
+JsonValue; type "timeout_error"constant
 
-Accepts one of the following:
-
-TIMEOUT_ERROR("timeout_error")
+"timeout_error"constant
 
 class ApiErrorObject:
 
 String message
 
-JsonValue; type "api_error"constant"api_error"constant
+JsonValue; type "api_error"constant
 
-Accepts one of the following:
-
-API_ERROR("api_error")
+"api_error"constant
 
 class OverloadedError:
 
 String message
 
-JsonValue; type "overloaded_error"constant"overloaded_error"constant
+JsonValue; type "overloaded_error"constant
 
-Accepts one of the following:
-
-OVERLOADED_ERROR("overloaded_error")
+"overloaded_error"constant
 
 Optional\<String\> requestId
 
-JsonValue; type "error"constant"error"constant
+JsonValue; type "error"constant
 
-Accepts one of the following:
+"error"constant
 
-ERROR("error")
+JsonValue; type "errored"constant
 
-JsonValue; type "errored"constant"errored"constant
-
-Accepts one of the following:
-
-ERRORED("errored")
+"errored"constant
 
 class MessageBatchExpiredResult:
 
-JsonValue; type "expired"constant"expired"constant
+JsonValue; type "expired"constant
 
-Accepts one of the following:
-
-EXPIRED("expired")
+"expired"constant
 
 class MessageBatchIndividualResponse:
 
@@ -322,6 +284,18 @@ String id
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+Optional\<[Container](/docs/en/api/messages#container)\> container
+
+Information about the container used in the request (for the code execution tool)
+
+String id
+
+Identifier for the container used in this request
+
+LocalDateTime expiresAt
+
+The time at which the container will expire.
 
 List\<[ContentBlock](/docs/en/api/messages#content_block)\> content
 
@@ -378,11 +352,9 @@ Optional\<String\> fileId
 
 long startCharIndex
 
-JsonValue; type "char_location"constant"char_location"constant
+JsonValue; type "char_location"constant
 
-Accepts one of the following:
-
-CHAR_LOCATION("char_location")
+"char_location"constant
 
 class CitationPageLocation:
 
@@ -398,11 +370,9 @@ Optional\<String\> fileId
 
 long startPageNumber
 
-JsonValue; type "page_location"constant"page_location"constant
+JsonValue; type "page_location"constant
 
-Accepts one of the following:
-
-PAGE_LOCATION("page_location")
+"page_location"constant
 
 class CitationContentBlockLocation:
 
@@ -418,11 +388,9 @@ Optional\<String\> fileId
 
 long startBlockIndex
 
-JsonValue; type "content_block_location"constant"content_block_location"constant
+JsonValue; type "content_block_location"constant
 
-Accepts one of the following:
-
-CONTENT_BLOCK_LOCATION("content_block_location")
+"content_block_location"constant
 
 class CitationsWebSearchResultLocation:
 
@@ -432,11 +400,9 @@ String encryptedIndex
 
 Optional\<String\> title
 
-JsonValue; type "web_search_result_location"constant"web_search_result_location"constant
+JsonValue; type "web_search_result_location"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_RESULT_LOCATION("web_search_result_location")
+"web_search_result_location"constant
 
 String url
 
@@ -454,19 +420,15 @@ long startBlockIndex
 
 Optional\<String\> title
 
-JsonValue; type "search_result_location"constant"search_result_location"constant
+JsonValue; type "search_result_location"constant
 
-Accepts one of the following:
-
-SEARCH_RESULT_LOCATION("search_result_location")
+"search_result_location"constant
 
 String text
 
-JsonValue; type "text"constant"text"constant
+JsonValue; type "text"constant
 
-Accepts one of the following:
-
-TEXT("text")
+"text"constant
 
 class ThinkingBlock:
 
@@ -474,55 +436,155 @@ String signature
 
 String thinking
 
-JsonValue; type "thinking"constant"thinking"constant
+JsonValue; type "thinking"constant
 
-Accepts one of the following:
-
-THINKING("thinking")
+"thinking"constant
 
 class RedactedThinkingBlock:
 
 String data
 
-JsonValue; type "redacted_thinking"constant"redacted_thinking"constant
+JsonValue; type "redacted_thinking"constant
 
-Accepts one of the following:
-
-REDACTED_THINKING("redacted_thinking")
+"redacted_thinking"constant
 
 class ToolUseBlock:
 
 String id
 
+Caller caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
 Input input
 
 String name
 
-JsonValue; type "tool_use"constant"tool_use"constant
+JsonValue; type "tool_use"constant
 
-Accepts one of the following:
-
-TOOL_USE("tool_use")
+"tool_use"constant
 
 class ServerToolUseBlock:
 
 String id
 
+Caller caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
 Input input
 
-JsonValue; name "web_search"constant"web_search"constant
+Name name
 
 Accepts one of the following:
 
 WEB_SEARCH("web_search")
 
-JsonValue; type "server_tool_use"constant"server_tool_use"constant
+WEB_FETCH("web_fetch")
+
+CODE_EXECUTION("code_execution")
+
+BASH_CODE_EXECUTION("bash_code_execution")
+
+TEXT_EDITOR_CODE_EXECUTION("text_editor_code_execution")
+
+TOOL_SEARCH_TOOL_REGEX("tool_search_tool_regex")
+
+TOOL_SEARCH_TOOL_BM25("tool_search_tool_bm25")
+
+JsonValue; type "server_tool_use"constant
+
+"server_tool_use"constant
+
+class WebSearchToolResultBlock:
+
+Caller caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-SERVER_TOOL_USE("server_tool_use")
+class DirectCaller:
 
-class WebSearchToolResultBlock:
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
 
 [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content) content
 
@@ -530,7 +592,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError:
 
-ErrorCode errorCode
+[WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) errorCode
 
 Accepts one of the following:
 
@@ -546,11 +608,9 @@ QUERY_TOO_LONG("query_too_long")
 
 REQUEST_TOO_LARGE("request_too_large")
 
-JsonValue; type "web_search_tool_result_error"constant"web_search_tool_result_error"constant
+JsonValue; type "web_search_tool_result_error"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_TOOL_RESULT_ERROR("web_search_tool_result_error")
+"web_search_tool_result_error"constant
 
 List\<[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\>
 
@@ -560,21 +620,409 @@ Optional\<String\> pageAge
 
 String title
 
-JsonValue; type "web_search_result"constant"web_search_result"constant
+JsonValue; type "web_search_result"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_RESULT("web_search_result")
+"web_search_result"constant
 
 String url
 
 String toolUseId
 
-JsonValue; type "web_search_tool_result"constant"web_search_tool_result"constant
+JsonValue; type "web_search_tool_result"constant
+
+"web_search_tool_result"constant
+
+class WebFetchToolResultBlock:
+
+Caller caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-WEB_SEARCH_TOOL_RESULT("web_search_tool_result")
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
+Content content
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock:
+
+[WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+URL_TOO_LONG("url_too_long")
+
+URL_NOT_ALLOWED("url_not_allowed")
+
+URL_NOT_ACCESSIBLE("url_not_accessible")
+
+UNSUPPORTED_CONTENT_TYPE("unsupported_content_type")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+MAX_USES_EXCEEDED("max_uses_exceeded")
+
+UNAVAILABLE("unavailable")
+
+JsonValue; type "web_fetch_tool_result_error"constant
+
+"web_fetch_tool_result_error"constant
+
+class WebFetchBlock:
+
+[DocumentBlock](/docs/en/api/messages#document_block) content
+
+Optional\<[CitationsConfig](/docs/en/api/messages#citations_config)\> citations
+
+Citation configuration for the document
+
+boolean enabled
+
+Source source
+
+Accepts one of the following:
+
+class Base64PdfSource:
+
+String data
+
+JsonValue; mediaType "application/pdf"constant
+
+"application/pdf"constant
+
+JsonValue; type "base64"constant
+
+"base64"constant
+
+class PlainTextSource:
+
+String data
+
+JsonValue; mediaType "text/plain"constant
+
+"text/plain"constant
+
+JsonValue; type "text"constant
+
+"text"constant
+
+Optional\<String\> title
+
+The title of the document
+
+JsonValue; type "document"constant
+
+"document"constant
+
+Optional\<String\> retrievedAt
+
+ISO 8601 timestamp when the content was retrieved
+
+JsonValue; type "web_fetch_result"constant
+
+"web_fetch_result"constant
+
+String url
+
+Fetched content URL
+
+String toolUseId
+
+JsonValue; type "web_fetch_tool_result"constant
+
+"web_fetch_tool_result"constant
+
+class CodeExecutionToolResultBlock:
+
+[CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content) content
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError:
+
+[CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+JsonValue; type "code_execution_tool_result_error"constant
+
+"code_execution_tool_result_error"constant
+
+class CodeExecutionResultBlock:
+
+List\<[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "code_execution_output"constant
+
+"code_execution_output"constant
+
+long returnCode
+
+String stderr
+
+String stdout
+
+JsonValue; type "code_execution_result"constant
+
+"code_execution_result"constant
+
+class EncryptedCodeExecutionResultBlock:
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+List\<[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "code_execution_output"constant
+
+"code_execution_output"constant
+
+String encryptedStdout
+
+long returnCode
+
+String stderr
+
+JsonValue; type "encrypted_code_execution_result"constant
+
+"encrypted_code_execution_result"constant
+
+String toolUseId
+
+JsonValue; type "code_execution_tool_result"constant
+
+"code_execution_tool_result"constant
+
+class BashCodeExecutionToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError:
+
+[BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+OUTPUT_FILE_TOO_LARGE("output_file_too_large")
+
+JsonValue; type "bash_code_execution_tool_result_error"constant
+
+"bash_code_execution_tool_result_error"constant
+
+class BashCodeExecutionResultBlock:
+
+List\<[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "bash_code_execution_output"constant
+
+"bash_code_execution_output"constant
+
+long returnCode
+
+String stderr
+
+String stdout
+
+JsonValue; type "bash_code_execution_result"constant
+
+"bash_code_execution_result"constant
+
+String toolUseId
+
+JsonValue; type "bash_code_execution_tool_result"constant
+
+"bash_code_execution_tool_result"constant
+
+class TextEditorCodeExecutionToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError:
+
+[TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+FILE_NOT_FOUND("file_not_found")
+
+Optional\<String\> errorMessage
+
+JsonValue; type "text_editor_code_execution_tool_result_error"constant
+
+"text_editor_code_execution_tool_result_error"constant
+
+class TextEditorCodeExecutionViewResultBlock:
+
+String content
+
+FileType fileType
+
+Accepts one of the following:
+
+TEXT("text")
+
+IMAGE("image")
+
+PDF("pdf")
+
+Optional\<Long\> numLines
+
+Optional\<Long\> startLine
+
+Optional\<Long\> totalLines
+
+JsonValue; type "text_editor_code_execution_view_result"constant
+
+"text_editor_code_execution_view_result"constant
+
+class TextEditorCodeExecutionCreateResultBlock:
+
+boolean isFileUpdate
+
+JsonValue; type "text_editor_code_execution_create_result"constant
+
+"text_editor_code_execution_create_result"constant
+
+class TextEditorCodeExecutionStrReplaceResultBlock:
+
+Optional\<List\<String\>\> lines
+
+Optional\<Long\> newLines
+
+Optional\<Long\> newStart
+
+Optional\<Long\> oldLines
+
+Optional\<Long\> oldStart
+
+JsonValue; type "text_editor_code_execution_str_replace_result"constant
+
+"text_editor_code_execution_str_replace_result"constant
+
+String toolUseId
+
+JsonValue; type "text_editor_code_execution_tool_result"constant
+
+"text_editor_code_execution_tool_result"constant
+
+class ToolSearchToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class ToolSearchToolResultError:
+
+[ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+Optional\<String\> errorMessage
+
+JsonValue; type "tool_search_tool_result_error"constant
+
+"tool_search_tool_result_error"constant
+
+class ToolSearchToolSearchResultBlock:
+
+List\<[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)\> toolReferences
+
+String toolName
+
+JsonValue; type "tool_reference"constant
+
+"tool_reference"constant
+
+JsonValue; type "tool_search_tool_search_result"constant
+
+"tool_search_tool_search_result"constant
+
+String toolUseId
+
+JsonValue; type "tool_search_tool_result"constant
+
+"tool_search_tool_result"constant
+
+class ContainerUploadBlock:
+
+Response model for a file uploaded to the container.
+
+String fileId
+
+JsonValue; type "container_upload"constant
+
+"container_upload"constant
 
 Model model
 
@@ -587,6 +1035,10 @@ Accepts one of the following:
 CLAUDE_OPUS_4_6("claude-opus-4-6")
 
 Most intelligent model for building agents and coding
+
+CLAUDE_SONNET_4_6("claude-sonnet-4-6")
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 CLAUDE_OPUS_4_5_20251101("claude-opus-4-5-20251101")
 
@@ -668,15 +1120,13 @@ CLAUDE_3_HAIKU_20240307("claude-3-haiku-20240307")
 
 Our previous most fast and cost-effective
 
-JsonValue; role "assistant"constant"assistant"constant
+JsonValue; role "assistant"constant
+
+"assistant"constant
 
 Conversational role of the generated message.
 
 This will always be `"assistant"`.
-
-Accepts one of the following:
-
-ASSISTANT("assistant")
 
 Optional\<[StopReason](/docs/en/api/messages#stop_reason)\> stopReason
 
@@ -713,15 +1163,13 @@ Which custom stop sequence was generated, if any.
 
 This value will be a non-null string if one of your custom stop sequences was generated.
 
-JsonValue; type "message"constant"message"constant
+JsonValue; type "message"constant
+
+"message"constant
 
 Object type.
 
 For Messages, this is always `"message"`.
-
-Accepts one of the following:
-
-MESSAGE("message")
 
 [Usage](/docs/en/api/messages#usage) usage
 
@@ -743,25 +1191,17 @@ long ephemeral1hInputTokens
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 long ephemeral5mInputTokens
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 Optional\<Long\> cacheCreationInputTokens
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 Optional\<Long\> cacheReadInputTokens
 
 The number of input tokens read from the cache.
-
-minimum0
 
 Optional\<String\> inferenceGeo
 
@@ -771,23 +1211,21 @@ long inputTokens
 
 The number of input tokens which were used.
 
-minimum0
-
 long outputTokens
 
 The number of output tokens which were used.
-
-minimum0
 
 Optional\<[ServerToolUsage](/docs/en/api/messages#server_tool_usage)\> serverToolUse
 
 The number of server tool requests.
 
+long webFetchRequests
+
+The number of web fetch tool requests.
+
 long webSearchRequests
 
 The number of web search tool requests.
-
-minimum0
 
 Optional\<ServiceTier\> serviceTier
 
@@ -801,11 +1239,9 @@ PRIORITY("priority")
 
 BATCH("batch")
 
-JsonValue; type "succeeded"constant"succeeded"constant
+JsonValue; type "succeeded"constant
 
-Accepts one of the following:
-
-SUCCEEDED("succeeded")
+"succeeded"constant
 
 class MessageBatchErroredResult:
 
@@ -819,121 +1255,95 @@ class InvalidRequestError:
 
 String message
 
-JsonValue; type "invalid_request_error"constant"invalid_request_error"constant
+JsonValue; type "invalid_request_error"constant
 
-Accepts one of the following:
-
-INVALID_REQUEST_ERROR("invalid_request_error")
+"invalid_request_error"constant
 
 class AuthenticationError:
 
 String message
 
-JsonValue; type "authentication_error"constant"authentication_error"constant
+JsonValue; type "authentication_error"constant
 
-Accepts one of the following:
-
-AUTHENTICATION_ERROR("authentication_error")
+"authentication_error"constant
 
 class BillingError:
 
 String message
 
-JsonValue; type "billing_error"constant"billing_error"constant
+JsonValue; type "billing_error"constant
 
-Accepts one of the following:
-
-BILLING_ERROR("billing_error")
+"billing_error"constant
 
 class PermissionError:
 
 String message
 
-JsonValue; type "permission_error"constant"permission_error"constant
+JsonValue; type "permission_error"constant
 
-Accepts one of the following:
-
-PERMISSION_ERROR("permission_error")
+"permission_error"constant
 
 class NotFoundError:
 
 String message
 
-JsonValue; type "not_found_error"constant"not_found_error"constant
+JsonValue; type "not_found_error"constant
 
-Accepts one of the following:
-
-NOT_FOUND_ERROR("not_found_error")
+"not_found_error"constant
 
 class RateLimitError:
 
 String message
 
-JsonValue; type "rate_limit_error"constant"rate_limit_error"constant
+JsonValue; type "rate_limit_error"constant
 
-Accepts one of the following:
-
-RATE_LIMIT_ERROR("rate_limit_error")
+"rate_limit_error"constant
 
 class GatewayTimeoutError:
 
 String message
 
-JsonValue; type "timeout_error"constant"timeout_error"constant
+JsonValue; type "timeout_error"constant
 
-Accepts one of the following:
-
-TIMEOUT_ERROR("timeout_error")
+"timeout_error"constant
 
 class ApiErrorObject:
 
 String message
 
-JsonValue; type "api_error"constant"api_error"constant
+JsonValue; type "api_error"constant
 
-Accepts one of the following:
-
-API_ERROR("api_error")
+"api_error"constant
 
 class OverloadedError:
 
 String message
 
-JsonValue; type "overloaded_error"constant"overloaded_error"constant
+JsonValue; type "overloaded_error"constant
 
-Accepts one of the following:
-
-OVERLOADED_ERROR("overloaded_error")
+"overloaded_error"constant
 
 Optional\<String\> requestId
 
-JsonValue; type "error"constant"error"constant
+JsonValue; type "error"constant
 
-Accepts one of the following:
+"error"constant
 
-ERROR("error")
+JsonValue; type "errored"constant
 
-JsonValue; type "errored"constant"errored"constant
-
-Accepts one of the following:
-
-ERRORED("errored")
+"errored"constant
 
 class MessageBatchCanceledResult:
 
-JsonValue; type "canceled"constant"canceled"constant
+JsonValue; type "canceled"constant
 
-Accepts one of the following:
-
-CANCELED("canceled")
+"canceled"constant
 
 class MessageBatchExpiredResult:
 
-JsonValue; type "expired"constant"expired"constant
+JsonValue; type "expired"constant
 
-Accepts one of the following:
-
-EXPIRED("expired")
+"expired"constant
 
 class MessageBatchRequestCounts:
 
@@ -981,6 +1391,18 @@ Unique object identifier.
 
 The format and length of IDs may change over time.
 
+Optional\<[Container](/docs/en/api/messages#container)\> container
+
+Information about the container used in the request (for the code execution tool)
+
+String id
+
+Identifier for the container used in this request
+
+LocalDateTime expiresAt
+
+The time at which the container will expire.
+
 List\<[ContentBlock](/docs/en/api/messages#content_block)\> content
 
 Content generated by the model.
@@ -1036,11 +1458,9 @@ Optional\<String\> fileId
 
 long startCharIndex
 
-JsonValue; type "char_location"constant"char_location"constant
+JsonValue; type "char_location"constant
 
-Accepts one of the following:
-
-CHAR_LOCATION("char_location")
+"char_location"constant
 
 class CitationPageLocation:
 
@@ -1056,11 +1476,9 @@ Optional\<String\> fileId
 
 long startPageNumber
 
-JsonValue; type "page_location"constant"page_location"constant
+JsonValue; type "page_location"constant
 
-Accepts one of the following:
-
-PAGE_LOCATION("page_location")
+"page_location"constant
 
 class CitationContentBlockLocation:
 
@@ -1076,11 +1494,9 @@ Optional\<String\> fileId
 
 long startBlockIndex
 
-JsonValue; type "content_block_location"constant"content_block_location"constant
+JsonValue; type "content_block_location"constant
 
-Accepts one of the following:
-
-CONTENT_BLOCK_LOCATION("content_block_location")
+"content_block_location"constant
 
 class CitationsWebSearchResultLocation:
 
@@ -1090,11 +1506,9 @@ String encryptedIndex
 
 Optional\<String\> title
 
-JsonValue; type "web_search_result_location"constant"web_search_result_location"constant
+JsonValue; type "web_search_result_location"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_RESULT_LOCATION("web_search_result_location")
+"web_search_result_location"constant
 
 String url
 
@@ -1112,19 +1526,15 @@ long startBlockIndex
 
 Optional\<String\> title
 
-JsonValue; type "search_result_location"constant"search_result_location"constant
+JsonValue; type "search_result_location"constant
 
-Accepts one of the following:
-
-SEARCH_RESULT_LOCATION("search_result_location")
+"search_result_location"constant
 
 String text
 
-JsonValue; type "text"constant"text"constant
+JsonValue; type "text"constant
 
-Accepts one of the following:
-
-TEXT("text")
+"text"constant
 
 class ThinkingBlock:
 
@@ -1132,55 +1542,155 @@ String signature
 
 String thinking
 
-JsonValue; type "thinking"constant"thinking"constant
+JsonValue; type "thinking"constant
 
-Accepts one of the following:
-
-THINKING("thinking")
+"thinking"constant
 
 class RedactedThinkingBlock:
 
 String data
 
-JsonValue; type "redacted_thinking"constant"redacted_thinking"constant
+JsonValue; type "redacted_thinking"constant
 
-Accepts one of the following:
-
-REDACTED_THINKING("redacted_thinking")
+"redacted_thinking"constant
 
 class ToolUseBlock:
 
 String id
 
+Caller caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
 Input input
 
 String name
 
-JsonValue; type "tool_use"constant"tool_use"constant
+JsonValue; type "tool_use"constant
 
-Accepts one of the following:
-
-TOOL_USE("tool_use")
+"tool_use"constant
 
 class ServerToolUseBlock:
 
 String id
 
+Caller caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
 Input input
 
-JsonValue; name "web_search"constant"web_search"constant
+Name name
 
 Accepts one of the following:
 
 WEB_SEARCH("web_search")
 
-JsonValue; type "server_tool_use"constant"server_tool_use"constant
+WEB_FETCH("web_fetch")
+
+CODE_EXECUTION("code_execution")
+
+BASH_CODE_EXECUTION("bash_code_execution")
+
+TEXT_EDITOR_CODE_EXECUTION("text_editor_code_execution")
+
+TOOL_SEARCH_TOOL_REGEX("tool_search_tool_regex")
+
+TOOL_SEARCH_TOOL_BM25("tool_search_tool_bm25")
+
+JsonValue; type "server_tool_use"constant
+
+"server_tool_use"constant
+
+class WebSearchToolResultBlock:
+
+Caller caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-SERVER_TOOL_USE("server_tool_use")
+class DirectCaller:
 
-class WebSearchToolResultBlock:
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
 
 [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content) content
 
@@ -1188,7 +1698,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError:
 
-ErrorCode errorCode
+[WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) errorCode
 
 Accepts one of the following:
 
@@ -1204,11 +1714,9 @@ QUERY_TOO_LONG("query_too_long")
 
 REQUEST_TOO_LARGE("request_too_large")
 
-JsonValue; type "web_search_tool_result_error"constant"web_search_tool_result_error"constant
+JsonValue; type "web_search_tool_result_error"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_TOOL_RESULT_ERROR("web_search_tool_result_error")
+"web_search_tool_result_error"constant
 
 List\<[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\>
 
@@ -1218,21 +1726,409 @@ Optional\<String\> pageAge
 
 String title
 
-JsonValue; type "web_search_result"constant"web_search_result"constant
+JsonValue; type "web_search_result"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_RESULT("web_search_result")
+"web_search_result"constant
 
 String url
 
 String toolUseId
 
-JsonValue; type "web_search_tool_result"constant"web_search_tool_result"constant
+JsonValue; type "web_search_tool_result"constant
+
+"web_search_tool_result"constant
+
+class WebFetchToolResultBlock:
+
+Caller caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-WEB_SEARCH_TOOL_RESULT("web_search_tool_result")
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
+Content content
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock:
+
+[WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+URL_TOO_LONG("url_too_long")
+
+URL_NOT_ALLOWED("url_not_allowed")
+
+URL_NOT_ACCESSIBLE("url_not_accessible")
+
+UNSUPPORTED_CONTENT_TYPE("unsupported_content_type")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+MAX_USES_EXCEEDED("max_uses_exceeded")
+
+UNAVAILABLE("unavailable")
+
+JsonValue; type "web_fetch_tool_result_error"constant
+
+"web_fetch_tool_result_error"constant
+
+class WebFetchBlock:
+
+[DocumentBlock](/docs/en/api/messages#document_block) content
+
+Optional\<[CitationsConfig](/docs/en/api/messages#citations_config)\> citations
+
+Citation configuration for the document
+
+boolean enabled
+
+Source source
+
+Accepts one of the following:
+
+class Base64PdfSource:
+
+String data
+
+JsonValue; mediaType "application/pdf"constant
+
+"application/pdf"constant
+
+JsonValue; type "base64"constant
+
+"base64"constant
+
+class PlainTextSource:
+
+String data
+
+JsonValue; mediaType "text/plain"constant
+
+"text/plain"constant
+
+JsonValue; type "text"constant
+
+"text"constant
+
+Optional\<String\> title
+
+The title of the document
+
+JsonValue; type "document"constant
+
+"document"constant
+
+Optional\<String\> retrievedAt
+
+ISO 8601 timestamp when the content was retrieved
+
+JsonValue; type "web_fetch_result"constant
+
+"web_fetch_result"constant
+
+String url
+
+Fetched content URL
+
+String toolUseId
+
+JsonValue; type "web_fetch_tool_result"constant
+
+"web_fetch_tool_result"constant
+
+class CodeExecutionToolResultBlock:
+
+[CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content) content
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError:
+
+[CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+JsonValue; type "code_execution_tool_result_error"constant
+
+"code_execution_tool_result_error"constant
+
+class CodeExecutionResultBlock:
+
+List\<[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "code_execution_output"constant
+
+"code_execution_output"constant
+
+long returnCode
+
+String stderr
+
+String stdout
+
+JsonValue; type "code_execution_result"constant
+
+"code_execution_result"constant
+
+class EncryptedCodeExecutionResultBlock:
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+List\<[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "code_execution_output"constant
+
+"code_execution_output"constant
+
+String encryptedStdout
+
+long returnCode
+
+String stderr
+
+JsonValue; type "encrypted_code_execution_result"constant
+
+"encrypted_code_execution_result"constant
+
+String toolUseId
+
+JsonValue; type "code_execution_tool_result"constant
+
+"code_execution_tool_result"constant
+
+class BashCodeExecutionToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError:
+
+[BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+OUTPUT_FILE_TOO_LARGE("output_file_too_large")
+
+JsonValue; type "bash_code_execution_tool_result_error"constant
+
+"bash_code_execution_tool_result_error"constant
+
+class BashCodeExecutionResultBlock:
+
+List\<[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "bash_code_execution_output"constant
+
+"bash_code_execution_output"constant
+
+long returnCode
+
+String stderr
+
+String stdout
+
+JsonValue; type "bash_code_execution_result"constant
+
+"bash_code_execution_result"constant
+
+String toolUseId
+
+JsonValue; type "bash_code_execution_tool_result"constant
+
+"bash_code_execution_tool_result"constant
+
+class TextEditorCodeExecutionToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError:
+
+[TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+FILE_NOT_FOUND("file_not_found")
+
+Optional\<String\> errorMessage
+
+JsonValue; type "text_editor_code_execution_tool_result_error"constant
+
+"text_editor_code_execution_tool_result_error"constant
+
+class TextEditorCodeExecutionViewResultBlock:
+
+String content
+
+FileType fileType
+
+Accepts one of the following:
+
+TEXT("text")
+
+IMAGE("image")
+
+PDF("pdf")
+
+Optional\<Long\> numLines
+
+Optional\<Long\> startLine
+
+Optional\<Long\> totalLines
+
+JsonValue; type "text_editor_code_execution_view_result"constant
+
+"text_editor_code_execution_view_result"constant
+
+class TextEditorCodeExecutionCreateResultBlock:
+
+boolean isFileUpdate
+
+JsonValue; type "text_editor_code_execution_create_result"constant
+
+"text_editor_code_execution_create_result"constant
+
+class TextEditorCodeExecutionStrReplaceResultBlock:
+
+Optional\<List\<String\>\> lines
+
+Optional\<Long\> newLines
+
+Optional\<Long\> newStart
+
+Optional\<Long\> oldLines
+
+Optional\<Long\> oldStart
+
+JsonValue; type "text_editor_code_execution_str_replace_result"constant
+
+"text_editor_code_execution_str_replace_result"constant
+
+String toolUseId
+
+JsonValue; type "text_editor_code_execution_tool_result"constant
+
+"text_editor_code_execution_tool_result"constant
+
+class ToolSearchToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class ToolSearchToolResultError:
+
+[ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+Optional\<String\> errorMessage
+
+JsonValue; type "tool_search_tool_result_error"constant
+
+"tool_search_tool_result_error"constant
+
+class ToolSearchToolSearchResultBlock:
+
+List\<[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)\> toolReferences
+
+String toolName
+
+JsonValue; type "tool_reference"constant
+
+"tool_reference"constant
+
+JsonValue; type "tool_search_tool_search_result"constant
+
+"tool_search_tool_search_result"constant
+
+String toolUseId
+
+JsonValue; type "tool_search_tool_result"constant
+
+"tool_search_tool_result"constant
+
+class ContainerUploadBlock:
+
+Response model for a file uploaded to the container.
+
+String fileId
+
+JsonValue; type "container_upload"constant
+
+"container_upload"constant
 
 Model model
 
@@ -1245,6 +2141,10 @@ Accepts one of the following:
 CLAUDE_OPUS_4_6("claude-opus-4-6")
 
 Most intelligent model for building agents and coding
+
+CLAUDE_SONNET_4_6("claude-sonnet-4-6")
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 CLAUDE_OPUS_4_5_20251101("claude-opus-4-5-20251101")
 
@@ -1326,15 +2226,13 @@ CLAUDE_3_HAIKU_20240307("claude-3-haiku-20240307")
 
 Our previous most fast and cost-effective
 
-JsonValue; role "assistant"constant"assistant"constant
+JsonValue; role "assistant"constant
+
+"assistant"constant
 
 Conversational role of the generated message.
 
 This will always be `"assistant"`.
-
-Accepts one of the following:
-
-ASSISTANT("assistant")
 
 Optional\<[StopReason](/docs/en/api/messages#stop_reason)\> stopReason
 
@@ -1371,15 +2269,13 @@ Which custom stop sequence was generated, if any.
 
 This value will be a non-null string if one of your custom stop sequences was generated.
 
-JsonValue; type "message"constant"message"constant
+JsonValue; type "message"constant
+
+"message"constant
 
 Object type.
 
 For Messages, this is always `"message"`.
-
-Accepts one of the following:
-
-MESSAGE("message")
 
 [Usage](/docs/en/api/messages#usage) usage
 
@@ -1401,25 +2297,17 @@ long ephemeral1hInputTokens
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 long ephemeral5mInputTokens
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 Optional\<Long\> cacheCreationInputTokens
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 Optional\<Long\> cacheReadInputTokens
 
 The number of input tokens read from the cache.
-
-minimum0
 
 Optional\<String\> inferenceGeo
 
@@ -1429,23 +2317,21 @@ long inputTokens
 
 The number of input tokens which were used.
 
-minimum0
-
 long outputTokens
 
 The number of output tokens which were used.
-
-minimum0
 
 Optional\<[ServerToolUsage](/docs/en/api/messages#server_tool_usage)\> serverToolUse
 
 The number of server tool requests.
 
+long webFetchRequests
+
+The number of web fetch tool requests.
+
 long webSearchRequests
 
 The number of web search tool requests.
-
-minimum0
 
 Optional\<ServiceTier\> serviceTier
 
@@ -1459,11 +2345,9 @@ PRIORITY("priority")
 
 BATCH("batch")
 
-JsonValue; type "succeeded"constant"succeeded"constant
+JsonValue; type "succeeded"constant
 
-Accepts one of the following:
-
-SUCCEEDED("succeeded")
+"succeeded"constant
 
 class MessageBatchErroredResult:
 
@@ -1477,121 +2361,95 @@ class InvalidRequestError:
 
 String message
 
-JsonValue; type "invalid_request_error"constant"invalid_request_error"constant
+JsonValue; type "invalid_request_error"constant
 
-Accepts one of the following:
-
-INVALID_REQUEST_ERROR("invalid_request_error")
+"invalid_request_error"constant
 
 class AuthenticationError:
 
 String message
 
-JsonValue; type "authentication_error"constant"authentication_error"constant
+JsonValue; type "authentication_error"constant
 
-Accepts one of the following:
-
-AUTHENTICATION_ERROR("authentication_error")
+"authentication_error"constant
 
 class BillingError:
 
 String message
 
-JsonValue; type "billing_error"constant"billing_error"constant
+JsonValue; type "billing_error"constant
 
-Accepts one of the following:
-
-BILLING_ERROR("billing_error")
+"billing_error"constant
 
 class PermissionError:
 
 String message
 
-JsonValue; type "permission_error"constant"permission_error"constant
+JsonValue; type "permission_error"constant
 
-Accepts one of the following:
-
-PERMISSION_ERROR("permission_error")
+"permission_error"constant
 
 class NotFoundError:
 
 String message
 
-JsonValue; type "not_found_error"constant"not_found_error"constant
+JsonValue; type "not_found_error"constant
 
-Accepts one of the following:
-
-NOT_FOUND_ERROR("not_found_error")
+"not_found_error"constant
 
 class RateLimitError:
 
 String message
 
-JsonValue; type "rate_limit_error"constant"rate_limit_error"constant
+JsonValue; type "rate_limit_error"constant
 
-Accepts one of the following:
-
-RATE_LIMIT_ERROR("rate_limit_error")
+"rate_limit_error"constant
 
 class GatewayTimeoutError:
 
 String message
 
-JsonValue; type "timeout_error"constant"timeout_error"constant
+JsonValue; type "timeout_error"constant
 
-Accepts one of the following:
-
-TIMEOUT_ERROR("timeout_error")
+"timeout_error"constant
 
 class ApiErrorObject:
 
 String message
 
-JsonValue; type "api_error"constant"api_error"constant
+JsonValue; type "api_error"constant
 
-Accepts one of the following:
-
-API_ERROR("api_error")
+"api_error"constant
 
 class OverloadedError:
 
 String message
 
-JsonValue; type "overloaded_error"constant"overloaded_error"constant
+JsonValue; type "overloaded_error"constant
 
-Accepts one of the following:
-
-OVERLOADED_ERROR("overloaded_error")
+"overloaded_error"constant
 
 Optional\<String\> requestId
 
-JsonValue; type "error"constant"error"constant
+JsonValue; type "error"constant
 
-Accepts one of the following:
+"error"constant
 
-ERROR("error")
+JsonValue; type "errored"constant
 
-JsonValue; type "errored"constant"errored"constant
-
-Accepts one of the following:
-
-ERRORED("errored")
+"errored"constant
 
 class MessageBatchCanceledResult:
 
-JsonValue; type "canceled"constant"canceled"constant
+JsonValue; type "canceled"constant
 
-Accepts one of the following:
-
-CANCELED("canceled")
+"canceled"constant
 
 class MessageBatchExpiredResult:
 
-JsonValue; type "expired"constant"expired"constant
+JsonValue; type "expired"constant
 
-Accepts one of the following:
-
-EXPIRED("expired")
+"expired"constant
 
 class MessageBatchSucceededResult:
 
@@ -1602,6 +2460,18 @@ String id
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+Optional\<[Container](/docs/en/api/messages#container)\> container
+
+Information about the container used in the request (for the code execution tool)
+
+String id
+
+Identifier for the container used in this request
+
+LocalDateTime expiresAt
+
+The time at which the container will expire.
 
 List\<[ContentBlock](/docs/en/api/messages#content_block)\> content
 
@@ -1658,11 +2528,9 @@ Optional\<String\> fileId
 
 long startCharIndex
 
-JsonValue; type "char_location"constant"char_location"constant
+JsonValue; type "char_location"constant
 
-Accepts one of the following:
-
-CHAR_LOCATION("char_location")
+"char_location"constant
 
 class CitationPageLocation:
 
@@ -1678,11 +2546,9 @@ Optional\<String\> fileId
 
 long startPageNumber
 
-JsonValue; type "page_location"constant"page_location"constant
+JsonValue; type "page_location"constant
 
-Accepts one of the following:
-
-PAGE_LOCATION("page_location")
+"page_location"constant
 
 class CitationContentBlockLocation:
 
@@ -1698,11 +2564,9 @@ Optional\<String\> fileId
 
 long startBlockIndex
 
-JsonValue; type "content_block_location"constant"content_block_location"constant
+JsonValue; type "content_block_location"constant
 
-Accepts one of the following:
-
-CONTENT_BLOCK_LOCATION("content_block_location")
+"content_block_location"constant
 
 class CitationsWebSearchResultLocation:
 
@@ -1712,11 +2576,9 @@ String encryptedIndex
 
 Optional\<String\> title
 
-JsonValue; type "web_search_result_location"constant"web_search_result_location"constant
+JsonValue; type "web_search_result_location"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_RESULT_LOCATION("web_search_result_location")
+"web_search_result_location"constant
 
 String url
 
@@ -1734,19 +2596,15 @@ long startBlockIndex
 
 Optional\<String\> title
 
-JsonValue; type "search_result_location"constant"search_result_location"constant
+JsonValue; type "search_result_location"constant
 
-Accepts one of the following:
-
-SEARCH_RESULT_LOCATION("search_result_location")
+"search_result_location"constant
 
 String text
 
-JsonValue; type "text"constant"text"constant
+JsonValue; type "text"constant
 
-Accepts one of the following:
-
-TEXT("text")
+"text"constant
 
 class ThinkingBlock:
 
@@ -1754,55 +2612,155 @@ String signature
 
 String thinking
 
-JsonValue; type "thinking"constant"thinking"constant
+JsonValue; type "thinking"constant
 
-Accepts one of the following:
-
-THINKING("thinking")
+"thinking"constant
 
 class RedactedThinkingBlock:
 
 String data
 
-JsonValue; type "redacted_thinking"constant"redacted_thinking"constant
+JsonValue; type "redacted_thinking"constant
 
-Accepts one of the following:
-
-REDACTED_THINKING("redacted_thinking")
+"redacted_thinking"constant
 
 class ToolUseBlock:
 
 String id
 
+Caller caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
 Input input
 
 String name
 
-JsonValue; type "tool_use"constant"tool_use"constant
+JsonValue; type "tool_use"constant
 
-Accepts one of the following:
-
-TOOL_USE("tool_use")
+"tool_use"constant
 
 class ServerToolUseBlock:
 
 String id
 
+Caller caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
 Input input
 
-JsonValue; name "web_search"constant"web_search"constant
+Name name
 
 Accepts one of the following:
 
 WEB_SEARCH("web_search")
 
-JsonValue; type "server_tool_use"constant"server_tool_use"constant
+WEB_FETCH("web_fetch")
+
+CODE_EXECUTION("code_execution")
+
+BASH_CODE_EXECUTION("bash_code_execution")
+
+TEXT_EDITOR_CODE_EXECUTION("text_editor_code_execution")
+
+TOOL_SEARCH_TOOL_REGEX("tool_search_tool_regex")
+
+TOOL_SEARCH_TOOL_BM25("tool_search_tool_bm25")
+
+JsonValue; type "server_tool_use"constant
+
+"server_tool_use"constant
+
+class WebSearchToolResultBlock:
+
+Caller caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-SERVER_TOOL_USE("server_tool_use")
+class DirectCaller:
 
-class WebSearchToolResultBlock:
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
 
 [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content) content
 
@@ -1810,7 +2768,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError:
 
-ErrorCode errorCode
+[WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) errorCode
 
 Accepts one of the following:
 
@@ -1826,11 +2784,9 @@ QUERY_TOO_LONG("query_too_long")
 
 REQUEST_TOO_LARGE("request_too_large")
 
-JsonValue; type "web_search_tool_result_error"constant"web_search_tool_result_error"constant
+JsonValue; type "web_search_tool_result_error"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_TOOL_RESULT_ERROR("web_search_tool_result_error")
+"web_search_tool_result_error"constant
 
 List\<[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\>
 
@@ -1840,21 +2796,409 @@ Optional\<String\> pageAge
 
 String title
 
-JsonValue; type "web_search_result"constant"web_search_result"constant
+JsonValue; type "web_search_result"constant
 
-Accepts one of the following:
-
-WEB_SEARCH_RESULT("web_search_result")
+"web_search_result"constant
 
 String url
 
 String toolUseId
 
-JsonValue; type "web_search_tool_result"constant"web_search_tool_result"constant
+JsonValue; type "web_search_tool_result"constant
+
+"web_search_tool_result"constant
+
+class WebFetchToolResultBlock:
+
+Caller caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-WEB_SEARCH_TOOL_RESULT("web_search_tool_result")
+class DirectCaller:
+
+Tool invocation directly from the model.
+
+JsonValue; type "direct"constant
+
+"direct"constant
+
+class ServerToolCaller:
+
+Tool invocation generated by a server-side tool.
+
+String toolId
+
+JsonValue; type "code_execution_20250825"constant
+
+"code_execution_20250825"constant
+
+class ServerToolCaller20260120:
+
+String toolId
+
+JsonValue; type "code_execution_20260120"constant
+
+"code_execution_20260120"constant
+
+Content content
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock:
+
+[WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+URL_TOO_LONG("url_too_long")
+
+URL_NOT_ALLOWED("url_not_allowed")
+
+URL_NOT_ACCESSIBLE("url_not_accessible")
+
+UNSUPPORTED_CONTENT_TYPE("unsupported_content_type")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+MAX_USES_EXCEEDED("max_uses_exceeded")
+
+UNAVAILABLE("unavailable")
+
+JsonValue; type "web_fetch_tool_result_error"constant
+
+"web_fetch_tool_result_error"constant
+
+class WebFetchBlock:
+
+[DocumentBlock](/docs/en/api/messages#document_block) content
+
+Optional\<[CitationsConfig](/docs/en/api/messages#citations_config)\> citations
+
+Citation configuration for the document
+
+boolean enabled
+
+Source source
+
+Accepts one of the following:
+
+class Base64PdfSource:
+
+String data
+
+JsonValue; mediaType "application/pdf"constant
+
+"application/pdf"constant
+
+JsonValue; type "base64"constant
+
+"base64"constant
+
+class PlainTextSource:
+
+String data
+
+JsonValue; mediaType "text/plain"constant
+
+"text/plain"constant
+
+JsonValue; type "text"constant
+
+"text"constant
+
+Optional\<String\> title
+
+The title of the document
+
+JsonValue; type "document"constant
+
+"document"constant
+
+Optional\<String\> retrievedAt
+
+ISO 8601 timestamp when the content was retrieved
+
+JsonValue; type "web_fetch_result"constant
+
+"web_fetch_result"constant
+
+String url
+
+Fetched content URL
+
+String toolUseId
+
+JsonValue; type "web_fetch_tool_result"constant
+
+"web_fetch_tool_result"constant
+
+class CodeExecutionToolResultBlock:
+
+[CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content) content
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError:
+
+[CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+JsonValue; type "code_execution_tool_result_error"constant
+
+"code_execution_tool_result_error"constant
+
+class CodeExecutionResultBlock:
+
+List\<[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "code_execution_output"constant
+
+"code_execution_output"constant
+
+long returnCode
+
+String stderr
+
+String stdout
+
+JsonValue; type "code_execution_result"constant
+
+"code_execution_result"constant
+
+class EncryptedCodeExecutionResultBlock:
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+List\<[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "code_execution_output"constant
+
+"code_execution_output"constant
+
+String encryptedStdout
+
+long returnCode
+
+String stderr
+
+JsonValue; type "encrypted_code_execution_result"constant
+
+"encrypted_code_execution_result"constant
+
+String toolUseId
+
+JsonValue; type "code_execution_tool_result"constant
+
+"code_execution_tool_result"constant
+
+class BashCodeExecutionToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError:
+
+[BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+OUTPUT_FILE_TOO_LARGE("output_file_too_large")
+
+JsonValue; type "bash_code_execution_tool_result_error"constant
+
+"bash_code_execution_tool_result_error"constant
+
+class BashCodeExecutionResultBlock:
+
+List\<[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)\> content
+
+String fileId
+
+JsonValue; type "bash_code_execution_output"constant
+
+"bash_code_execution_output"constant
+
+long returnCode
+
+String stderr
+
+String stdout
+
+JsonValue; type "bash_code_execution_result"constant
+
+"bash_code_execution_result"constant
+
+String toolUseId
+
+JsonValue; type "bash_code_execution_tool_result"constant
+
+"bash_code_execution_tool_result"constant
+
+class TextEditorCodeExecutionToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError:
+
+[TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+FILE_NOT_FOUND("file_not_found")
+
+Optional\<String\> errorMessage
+
+JsonValue; type "text_editor_code_execution_tool_result_error"constant
+
+"text_editor_code_execution_tool_result_error"constant
+
+class TextEditorCodeExecutionViewResultBlock:
+
+String content
+
+FileType fileType
+
+Accepts one of the following:
+
+TEXT("text")
+
+IMAGE("image")
+
+PDF("pdf")
+
+Optional\<Long\> numLines
+
+Optional\<Long\> startLine
+
+Optional\<Long\> totalLines
+
+JsonValue; type "text_editor_code_execution_view_result"constant
+
+"text_editor_code_execution_view_result"constant
+
+class TextEditorCodeExecutionCreateResultBlock:
+
+boolean isFileUpdate
+
+JsonValue; type "text_editor_code_execution_create_result"constant
+
+"text_editor_code_execution_create_result"constant
+
+class TextEditorCodeExecutionStrReplaceResultBlock:
+
+Optional\<List\<String\>\> lines
+
+Optional\<Long\> newLines
+
+Optional\<Long\> newStart
+
+Optional\<Long\> oldLines
+
+Optional\<Long\> oldStart
+
+JsonValue; type "text_editor_code_execution_str_replace_result"constant
+
+"text_editor_code_execution_str_replace_result"constant
+
+String toolUseId
+
+JsonValue; type "text_editor_code_execution_tool_result"constant
+
+"text_editor_code_execution_tool_result"constant
+
+class ToolSearchToolResultBlock:
+
+Content content
+
+Accepts one of the following:
+
+class ToolSearchToolResultError:
+
+[ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) errorCode
+
+Accepts one of the following:
+
+INVALID_TOOL_INPUT("invalid_tool_input")
+
+UNAVAILABLE("unavailable")
+
+TOO_MANY_REQUESTS("too_many_requests")
+
+EXECUTION_TIME_EXCEEDED("execution_time_exceeded")
+
+Optional\<String\> errorMessage
+
+JsonValue; type "tool_search_tool_result_error"constant
+
+"tool_search_tool_result_error"constant
+
+class ToolSearchToolSearchResultBlock:
+
+List\<[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)\> toolReferences
+
+String toolName
+
+JsonValue; type "tool_reference"constant
+
+"tool_reference"constant
+
+JsonValue; type "tool_search_tool_search_result"constant
+
+"tool_search_tool_search_result"constant
+
+String toolUseId
+
+JsonValue; type "tool_search_tool_result"constant
+
+"tool_search_tool_result"constant
+
+class ContainerUploadBlock:
+
+Response model for a file uploaded to the container.
+
+String fileId
+
+JsonValue; type "container_upload"constant
+
+"container_upload"constant
 
 Model model
 
@@ -1867,6 +3211,10 @@ Accepts one of the following:
 CLAUDE_OPUS_4_6("claude-opus-4-6")
 
 Most intelligent model for building agents and coding
+
+CLAUDE_SONNET_4_6("claude-sonnet-4-6")
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 CLAUDE_OPUS_4_5_20251101("claude-opus-4-5-20251101")
 
@@ -1948,15 +3296,13 @@ CLAUDE_3_HAIKU_20240307("claude-3-haiku-20240307")
 
 Our previous most fast and cost-effective
 
-JsonValue; role "assistant"constant"assistant"constant
+JsonValue; role "assistant"constant
+
+"assistant"constant
 
 Conversational role of the generated message.
 
 This will always be `"assistant"`.
-
-Accepts one of the following:
-
-ASSISTANT("assistant")
 
 Optional\<[StopReason](/docs/en/api/messages#stop_reason)\> stopReason
 
@@ -1993,15 +3339,13 @@ Which custom stop sequence was generated, if any.
 
 This value will be a non-null string if one of your custom stop sequences was generated.
 
-JsonValue; type "message"constant"message"constant
+JsonValue; type "message"constant
+
+"message"constant
 
 Object type.
 
 For Messages, this is always `"message"`.
-
-Accepts one of the following:
-
-MESSAGE("message")
 
 [Usage](/docs/en/api/messages#usage) usage
 
@@ -2023,25 +3367,17 @@ long ephemeral1hInputTokens
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 long ephemeral5mInputTokens
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 Optional\<Long\> cacheCreationInputTokens
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 Optional\<Long\> cacheReadInputTokens
 
 The number of input tokens read from the cache.
-
-minimum0
 
 Optional\<String\> inferenceGeo
 
@@ -2051,23 +3387,21 @@ long inputTokens
 
 The number of input tokens which were used.
 
-minimum0
-
 long outputTokens
 
 The number of output tokens which were used.
-
-minimum0
 
 Optional\<[ServerToolUsage](/docs/en/api/messages#server_tool_usage)\> serverToolUse
 
 The number of server tool requests.
 
+long webFetchRequests
+
+The number of web fetch tool requests.
+
 long webSearchRequests
 
 The number of web search tool requests.
-
-minimum0
 
 Optional\<ServiceTier\> serviceTier
 
@@ -2081,11 +3415,9 @@ PRIORITY("priority")
 
 BATCH("batch")
 
-JsonValue; type "succeeded"constant"succeeded"constant
+JsonValue; type "succeeded"constant
 
-Accepts one of the following:
-
-SUCCEEDED("succeeded")
+"succeeded"constant
 
 [](/docs)
 

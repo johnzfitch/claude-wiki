@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:23Z"
+fetched_at: "2026-02-22T13:20:37Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/library"
 title: "Prompt Library - Claude API Docs"
 ---

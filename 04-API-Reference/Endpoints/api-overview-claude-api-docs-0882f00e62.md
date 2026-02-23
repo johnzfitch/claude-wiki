@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:07Z"
+fetched_at: "2026-02-22T13:18:04Z"
 source_url: "https://platform.claude.com/docs/en/api/overview"
 title: "API Overview - Claude API Docs"
 ---
@@ -93,7 +93,7 @@ client = Anthropic()  # Reads ANTHROPIC_API_KEY from environment
 message = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
-    messages=[{"role": "user", "content": "Hello, Claude"}]
+    messages=[{"role": "user", "content": "Hello, Claude"}],
 )
 ```
 

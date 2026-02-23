@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:20Z"
+fetched_at: "2026-02-22T13:20:13Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing"
 title: "Ticket routing - Claude API Docs"
 ---
@@ -95,7 +95,7 @@ In addition to intent, ticket routing and prioritization may also be influenced 
 
 Establish success criteria
 
-Work with your support team to [define clear success criteria](/docs/en/test-and-evaluate/define-success) with measurable benchmarks, thresholds, and goals.
+Work with your support team to [define clear success criteria](/docs/en/test-and-evaluate/develop-tests) with measurable benchmarks, thresholds, and goals.
 
 Here are some standard criteria and benchmarks when using LLMs for support ticket routing:
 
@@ -158,7 +158,7 @@ Here's an example ticket routing classification prompt:
 ``` shiki
 def classify_support_request(ticket_contents):
     # Define the prompt for the classification task
-    classification_prompt = f"""You will be acting as a customer support ticket classification system. Your task is to analyze customer support requests and output the appropriate classification intent for each request, along with your reasoning. 
+    classification_prompt = f"""You will be acting as a customer support ticket classification system. Your task is to analyze customer support requests and output the appropriate classification intent for each request, along with your reasoning.
 
         Here is the customer support request you need to classify:
 
@@ -238,11 +238,12 @@ import re
 client = anthropic.Anthropic()
 
 # Set the default model
-DEFAULT_MODEL="claude-haiku-4-5-20251001"
+DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+
 
 def classify_support_request(ticket_contents):
     # Define the prompt for the classification task
-    classification_prompt = f"""You will be acting as a customer support ticket classification system. 
+    classification_prompt = f"""You will be acting as a customer support ticket classification system.
         ...
         ... The reasoning should be enclosed in <reasoning> tags and the intent in <intent> tags. Return only the reasoning and the intent.
         """
@@ -309,11 +310,12 @@ import re
 client = anthropic.Anthropic()
 
 # Set the default model
-DEFAULT_MODEL="claude-haiku-4-5-20251001"
+DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+
 
 def classify_support_request(request, actual_intent):
     # Define the prompt for the classification task
-    classification_prompt = f"""You will be acting as a customer support ticket classification system. 
+    classification_prompt = f"""You will be acting as a customer support ticket classification system.
         ...
         ...The reasoning should be enclosed in <reasoning> tags and the intent in <intent> tags. Return only the reasoning and the intent.
         """
@@ -337,7 +339,7 @@ def classify_support_request(request, actual_intent):
     intent_match = re.search(r"<intent>(.*?)</intent>", reasoning_and_intent, re.DOTALL)
     intent = intent_match.group(1).strip() if intent_match else ""
 
-      # Check if the model's prediction is correct.
+    # Check if the model's prediction is correct.
     correct = actual_intent.strip() == intent.strip()
 
     # Return the reasoning, intent, correct, and usage.

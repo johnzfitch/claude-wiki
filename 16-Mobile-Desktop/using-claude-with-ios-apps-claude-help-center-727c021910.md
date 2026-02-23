@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-10T10:49:23Z"
+fetched_at: "2026-02-23T00:45:13Z"
 source_url: "https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps"
 title: "Using Claude with iOS Apps | Claude Help Center"
 ---
@@ -357,9 +357,9 @@ Installing Claude for iOS
 
 Using Claude App Intents, Shortcuts, and Widgets on iOS
 
-[](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities)
+[](https://support.claude.com/en/articles/11825384-how-to-update-claude-for-ios)
 
-Using the Connectors Directory to extend Claude’s capabilities
+How to update Claude for iOS
 
 [](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)
 

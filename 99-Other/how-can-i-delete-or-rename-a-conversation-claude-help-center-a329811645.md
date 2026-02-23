@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-23T00:45:17Z"
 source_url: "https://support.claude.com/en/articles/8230524-how-can-i-delete-or-rename-a-conversation"
 title: "How can I delete or rename a conversation? | Claude Help Center"
 ---
@@ -57,7 +57,7 @@ To delete or rename an individual conversation:
 
 3.  Select either "Delete" or "Rename" from the options that appear:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1621955348/4844057e0f0847b580b95bc01625/Screenshot+2025-07-15+at+11_43_18%E2%80%AFAM.png?expires=1770722100&signature=946b3af31df6771e2d4e0c1ebab86ba827ddf0659773a58af956880b97073700&req=dSYlF8B7mIJbUfMW1HO4zVBo6%2BPwb4Jbt5RK2C3E1TdI7vNfsv%2Fiaj1qO%2Fum%0A0kCOrwEdNCarmljIjvE%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1621955348/4844057e0f0847b580b95bc01625/Screenshot+2025-07-15+at+11_43_18%E2%80%AFAM.png?expires=1771809300&signature=b50e1742499a533693277007ce741bf48c87b1845f6896d48a8ddb8a73c4cc40&req=dSYlF8B7mIJbUfMW1HO4zVBo6%2BL%2FbYlZt5RK2C3E1Td5EaD8e4nyNuQX84rI%0AUgrK6ydSL5xhccifvPc%3D%0A)
 
 ## Deleting conversations in bulk
 
@@ -91,7 +91,7 @@ Can you delete data that I sent via Team and Enterprise plans?
 
 [](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)
 
-Custom Data Retention Controls for Enterprise Plans
+Custom data retention controls for Enterprise plans
 
 Did this answer your question?
 

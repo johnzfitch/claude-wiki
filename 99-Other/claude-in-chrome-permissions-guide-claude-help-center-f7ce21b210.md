@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:32Z"
+fetched_at: "2026-02-16T21:12:45Z"
 source_url: "https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide"
 title: "Claude in Chrome Permissions Guide | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Claude in Chrome Permissions Guide
 
 # Claude in Chrome Permissions Guide
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -77,7 +77,7 @@ Claude in Chrome uses a multi-layered permission system to give you control over
 
 - **Act without asking:** Claude takes actions without asking for permission.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1843322018/f8c0ae21b449f32e71696c76a17a/7656f295-e802-4a72-9e60-94611501f920?expires=1770722100&signature=a0206d7483d86992ec97d6fbdb681cef3c836b36da8efe49ce18a682eac3ee10&req=dSgjFcp8n4FeUfMW1HO4zQ5txicL93q2hD0gAzkS2hyNkrCswp9cJgM3s3nB%0A1cUXjZZUDwBr%2BANqYKA%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1843322018/f8c0ae21b449f32e71696c76a17a/7656f295-e802-4a72-9e60-94611501f920?expires=1771278300&signature=c1fb708aca3019af5142a6f4af52a6de832543f82cb0b0332c48007f9c782d6f&req=dSgjFcp8n4FeUfMW1HO4zQ5txiYO8nC0hD0gAzkS2hztOt770MSKULXd7N14%0AsCxVu6FFYE9s07mrq%2BQ%3D%0A)
 
 ------------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ Claude in Chrome uses a multi-layered permission system to give you control over
 
 Choose “Ask before acting” to have Claude create a plan from your prompt, which you can approve and allow Claude to execute. The plan will specify which websites you’re allowing Claude to access, as well as the approach it will follow:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1843320727/8d1c859ae9b8e0cdb536d024bf40/9bc3d239-8eb6-4bae-a032-a236f88ee606?expires=1770722100&signature=cf2fb10117841ff8096c7e35c70d3496542359ecf57583b53e8de135aabce471&req=dSgjFcp8nYZdXvMW1HO4zYqyasJK%2FoC2gN0ADj5oqFCI9jRpL87h1ned8cvH%0ACRITQGPzhIZFffY%2BXug%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1843320727/8d1c859ae9b8e0cdb536d024bf40/9bc3d239-8eb6-4bae-a032-a236f88ee606?expires=1771278300&signature=66084dc2a90d36e4529b3c2d03344f313bcc924e0ed57a8f18bf7056f701e8d1&req=dSgjFcp8nYZdXvMW1HO4zYqyasNP%2B4q0gN0ADj5oqFB5fX3Ou9Np%2FPSRUAzA%0Agy%2BjI9aClH%2B3sHqOgpw%3D%0A)
 
 Note that Claude will only use the websites listed in the plan, so you’ll need to manually approve any additional access requests.
 
@@ -123,7 +123,7 @@ You remain fully responsible for all actions Claude takes when using this mode.
 
 There are some websites on which Claude requires approval for every action. If you navigate to one of these sites, a **Permission required** prompt will appear in the extension side panel where Claude will ask for permission before accessing the page or taking any action.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1847222875/162eb012ebe473ed2b852b97e223/0209db51-6057-4ec4-a9b7-8358287d46a3?expires=1770722100&signature=a2f720282f70f333f9d7341ddfc34ae6f9e700216947826ea7ed1ebf9545b677&req=dSgjEct8n4lYXPMW1HO4zeoCbMYsoXZ%2BJCxYSFHKWIglCbHQbVoejvbaWpm4%0AKYeRijzFVlpcIUXG7uc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1847222875/162eb012ebe473ed2b852b97e223/0209db51-6057-4ec4-a9b7-8358287d46a3?expires=1771278300&signature=2573503779b85490f24835825dd82c82a67178587af2aac3dc4954be104aa4a2&req=dSgjEct8n4lYXPMW1HO4zeoCbMcppHx8JCxYSFHKWIgn839vZPycnRufTcyA%0Arcno47gHGVt%2B%2FGwhe2Y%3D%0A)
 
 ### Permission options
 
@@ -213,11 +213,11 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome)
 

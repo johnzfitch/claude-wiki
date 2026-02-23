@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-10T10:49:40Z"
+fetched_at: "2026-02-23T00:45:16Z"
 source_url: "https://support.claude.com/en/articles/9612889-how-can-i-uninstall-claude-for-android"
 title: "How can I uninstall Claude for Android? | Claude Help Center"
 ---
@@ -53,13 +53,13 @@ How can I cancel my Claude Pro subscription on the Claude app for iOS?
 
 Installing Claude for iOS
 
-[](https://support.claude.com/en/articles/9612892-how-do-i-sign-up-for-claude-pro-on-claude-for-android)
-
-How do I sign up for Claude Pro on Claude for Android?
-
 [](https://support.claude.com/en/articles/9612898-how-can-i-cancel-my-claude-pro-subscription-on-claude-for-android)
 
 How can I cancel my Claude Pro subscription on Claude for Android?
+
+[](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)
+
+Using Claude with Android Apps
 
 Did this answer your question?
 

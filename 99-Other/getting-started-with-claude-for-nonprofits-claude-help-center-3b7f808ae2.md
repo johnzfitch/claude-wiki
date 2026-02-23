@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:31Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits"
 title: "Getting started with Claude for Nonprofits | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Getting started with Claude for Nonprofits
 
 # Getting started with Claude for Nonprofits
 
-Updated today
+Updated this week
 
 Table of contents
 
@@ -71,7 +71,9 @@ Learn more about Claude for Nonprofits on our [solution page](http://claude.com/
 
 ## How do I access nonprofit tools and features?
 
-Organizations can access Claude for Nonprofits features and pricing through the **Team plan** (\$8/user/month) or the **Enterprise plan** (\$10/user/month).
+Organizations can access Claude for Nonprofits features and pricing through the **Team plan** (\$8 per user per month for Standard seats, billed monthly) or the **Enterprise plan** (\$10 per user per month, billed annually).
+
+**Important:** The prices shown above are for Standard seats. Premium seats are not available for the discounted price on Claude for Nonprofits.
 
 At the discounted price, Claude for Nonprofits includes access to Claude Opus 4.6, Sonnet 4.5, and Haiku 4.5. Opus 4.6 delivers the highest intelligence for the most complex tasks. Sonnet 4.5 is best suited to sophisticated tasks like grant writing and program analysis, while Haiku 4.5 offers near-frontier performance at much faster speed.
 
@@ -145,17 +147,17 @@ At this time, the following organizations are not eligible:
 
 1.  Validate your nonprofit organization status through the [Goodstack form](https://validate.poweredbypercent.com/anthropic):
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859550134/3415c95777759fcd2fa1f2c452a9/7a6e1fc2-94e9-4dc5-90aa-b72ef769a934?expires=1770789600&signature=8ccbadd586bb4a796b40a02d123c3c703ec609cfb60b08f9a031b7a53ee42f6c&req=dSgiH8x7nYBcXfMW3nq%2BgepAoJY5plLf4GfcrtuvbL5TVVdbxTjxM%2Fzq1x%2FA%0AWKheMttzFowc6QM4U46Cl528Rjs%3D%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859550134/3415c95777759fcd2fa1f2c452a9/7a6e1fc2-94e9-4dc5-90aa-b72ef769a934?expires=1771278300&signature=ffe81fef379bbb43dd81fc630920b9a8b8c56e7f4aa9d67a6508382df0c48678&req=dSgiH8x7nYBcXfMW1HO4zdZi8VZbwTbiauxJI2ssEtenNMksg2XqxwWE1NWt%0AwmFA%0A)
 
 2.  If you match our nonprofit eligibility criteria, you should receive an email from Anthropic confirming your eligibility.
 
 3.  Follow the link in the email to sign up on this page using your Goodstack verified email address. You must sign up using the email you verified with Goodstack.
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859550858/a8e7833485a9306ef355ede135d9/0a6664d1-a09c-4790-86ec-d1d6d71cd5b5?expires=1770789600&signature=b25c7569ba19b815cb77e5fe22a3713f77fa455c476e553698364b0b7ecb54f4&req=dSgiH8x7nYlaUfMW3nq%2Bgca8wvzrJQp6ILmxAP0QdajjXLnSxRl70YMQb0X7%0ACimLo5qPR9K8cuFywTkqO9j3djg%3D%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859550858/a8e7833485a9306ef355ede135d9/0a6664d1-a09c-4790-86ec-d1d6d71cd5b5?expires=1771278300&signature=ae24d9d368887050c9e986321cc8328914a8e5a2d020972bb527744bae619c38&req=dSgiH8x7nYlaUfMW1HO4zUHP%2FK5ylXwmKfBwVdbHuxmlZZ9fco4NXbYEvPzT%0AV%2Fqr%0A)
 
 4.  Click ‘With my team’ and fill in your details to set up your Team plan account:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859551642/ca5be89a4c185449daf6152097ad/cc2254e9-fe79-449c-92c0-f5acc91e1f03?expires=1770789600&signature=c683b89e3b230612201c78535a470dcda0a08c413ae832f20a84ae762f310662&req=dSgiH8x7nIdbW%2FMW3nq%2Bge7ElaYM05RTe2efebGkq42BkBADjArvuEodkcHZ%0AmV7OrOj0YiTR63BHUMHaZP1t6to%3D%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859551642/ca5be89a4c185449daf6152097ad/cc2254e9-fe79-449c-92c0-f5acc91e1f03?expires=1771278300&signature=858915fae1b2f8108f7186af107dcd417806a9f94ee4ed63adb7536c9558df74&req=dSgiH8x7nIdbW%2FMW1HO4zbZSFB0QRlOgrg0IMwuRgivvt6rwZ%2F%2BkmQZF4HM%2F%0AdjpB%0A)
 
 ### How long will the nonprofit discount apply to my organization?
 
@@ -231,15 +233,15 @@ Because we do not have a way to proactively apply Sales tax exemption, when sett
 
 1.  Once logged into your account, click on your profile and select “Get help”:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859539953/597e1f19c60656e83c1837bb8f58/378309b4-8aac-4ca0-8e5a-8dbaad5421fa?expires=1770789600&signature=fd0a12ec09b7f26434f38ad04ece8b9e48777f5736900e9efccdabaeea3199e0&req=dSgiH8x9lIhaWvMW3nq%2BgVUIV18k8xMwCx%2BAnM9V5DUR29ebH%2BCxUVhkYj%2FD%0AIZBQ3JI2FiGzd5yyftVvjBHgWjU%3D%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859539953/597e1f19c60656e83c1837bb8f58/378309b4-8aac-4ca0-8e5a-8dbaad5421fa?expires=1771278300&signature=776cf864fca23ed7f3bd21fae2ca106543deb5631ddd9d9d62331031b58825b3&req=dSgiH8x9lIhaWvMW1HO4zXOOyvfAxXK3euk4zq7weKCck3IeqvbIip3uQxT5%0AIyyj%0A)
 
 2.  Next under “Messages”, click “Send us a message":
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859540669/dea0231fbbeb497049cd83fbbb0c/f18b8af9-1621-45cf-8961-55aad08561eb?expires=1770789600&signature=c69c9102c884e16325c83b993f69374b00d2437d959018267275827688f0b291&req=dSgiH8x6nYdZUPMW3nq%2BgSrNsE%2BW87BulN773SiStnfRCBEDpJtZg%2BdoGaKe%0APaBvJiN7B6O3zzZn5pbb1m9O9ZA%3D%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859540669/dea0231fbbeb497049cd83fbbb0c/f18b8af9-1621-45cf-8961-55aad08561eb?expires=1771278300&signature=ba98363133e0717747ff482f3d025ed239c0659878bb7eef654a279d7e31e62e&req=dSgiH8x6nYdZUPMW1HO4zQgqkWJjulkr8Dcdz%2Fuy4laCaVDltXNsqRcXIvkG%0ASxI2%0A)
 
 3.  Accept the conditions:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859541804/ce534de604e9de751f9a0133e40d/ccd6ddf2-4912-4e13-9820-b8e39e31e6aa?expires=1770789600&signature=63c869118952050ea7937356f14fea2306d46d6b7984ded1d995ed2fe1feb4ad&req=dSgiH8x6nIlfXfMW3nq%2BgfB9%2B6bL5J0i9PiJCCARJPq7LKyVeKTWgAuyyy7f%0AHD32sOoMn4i1l8GRf977HDMRc2Q%3D%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1859541804/ce534de604e9de751f9a0133e40d/ccd6ddf2-4912-4e13-9820-b8e39e31e6aa?expires=1771278300&signature=b42d0310e627244318f752a7604a1a3919f98ffa22c6a93f43d609e268d80108&req=dSgiH8x6nIlfXfMW1HO4zS9v2pUx1QejRUfBF6HehmQwkJtG3l8TVWXPOtDk%0AvoTC%0A)
 
 4.  Send a message saying something along the lines of “I was charged tax, but am tax exempt. I would like to submit my Sales tax exemption certificate for upload.”
 

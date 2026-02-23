@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:18Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language"
 title: "How to use Claude in your preferred language | Claude Help Center"
 ---
@@ -37,7 +37,7 @@ How to use Claude in your preferred language
 
 # How to use Claude in your preferred language
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -101,9 +101,9 @@ Getting started with Claude
 
 Using dictation on Claude Mobile
 
-[](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
+[](https://support.claude.com/en/articles/11088861-using-research-on-claude)
 
-FAQs on Using Claude for Education at Your University
+Using Research on Claude
 
 [](https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude)
 

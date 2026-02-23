@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:23Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code"
 title: "Automated Security Reviews in Claude Code | Claude Help Center"
 ---

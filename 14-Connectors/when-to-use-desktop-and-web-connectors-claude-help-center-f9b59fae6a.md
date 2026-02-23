@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:21Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors"
 title: "When to use desktop and web connectors | Claude Help Center"
 ---
@@ -243,25 +243,25 @@ Choose the approach that best fits your workflow, security requirements, and col
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities)
+[](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 
-Using the Connectors Directory to extend Claude’s capabilities
+Use the Connectors Directory to extend Claude’s capabilities
+
+[](https://support.claude.com/en/articles/12702546-deploying-enterprise-grade-mcp-servers-with-desktop-extensions)
+
+Deploying enterprise-grade MCP servers with desktop extensions
 
 [](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
 
 Building Desktop Extensions with MCPB
-
-[](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
-
-Using Interactive Connectors in Claude
 
 Did this answer your question?
 

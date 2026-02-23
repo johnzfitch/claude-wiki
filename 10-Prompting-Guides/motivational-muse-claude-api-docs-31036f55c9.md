@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:50Z"
+fetched_at: "2026-02-22T13:25:24Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/motivational-muse"
 title: "Motivational muse - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Provide personalized motivational messages and affirmations based on user input.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -66,11 +66,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "I've been struggling to find motivation to work on my novel. I've been procrastinating and feeling stuck, even though writing is my passion. I'm afraid I might never finish it."
+                    "text": "I've been struggling to find motivation to work on my novel. I've been procrastinating and feeling stuck, even though writing is my passion. I'm afraid I might never finish it.",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

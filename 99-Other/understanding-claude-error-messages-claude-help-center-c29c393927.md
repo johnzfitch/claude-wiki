@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:28Z"
+fetched_at: "2026-02-16T21:12:42Z"
 source_url: "https://support.claude.com/en/articles/12466728-understanding-claude-error-messages"
 title: "Understanding Claude Error Messages | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Understanding Claude Error Messages
 
 # Understanding Claude Error Messages
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -115,7 +115,7 @@ Capacity issues will not appear on [our status page](http://status.claude.com) b
 
 Service incidents are disruptions where Claude is unavailable or significantly degraded for all or most users. These represent actual technical problems with our systems. To check for confirmed incidents, visit status.claude.com, where you'll find real-time updates on scope, impact, and resolution progress for any active incidents.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1753796247/e6a8c6ef8653b229c5758e881242/c2fc6fc0-d163-4119-93e0-394104d86bc9?expires=1770722100&signature=ff162c27da42813487554a8abb0dddf742260a4039364edb53a4f0921ceec5b9&req=dSciFc53m4NbXvMW1HO4za4BUa8k0LDF7y68oYp%2BYg8ZYEa2qqItFU5jgtFz%0AQyEPqb%2Ff1Avpg0tVNdw%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1753796247/e6a8c6ef8653b229c5758e881242/c2fc6fc0-d163-4119-93e0-394104d86bc9?expires=1771277400&signature=5f8b2242b743163744f47bd4ea7cfb0fca60b409998b369a043a3f46babc7d20&req=dSciFc53m4NbXvMW1HO4za4BUa4h1bXA7y68oYp%2BYg9zxVqGxkzHZ6u65Np8%0A7X4tjVriHnm6D%2B9S6r8%3D%0A)
 
 ------------------------------------------------------------------------
 

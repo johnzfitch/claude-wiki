@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:10Z"
+fetched_at: "2026-02-22T13:58:59Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/files/delete"
 title: "Delete File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Files.Delete(ctx, fileID, body) (\*[DeletedFile](/docs/en/api/beta#deleted_file), error)
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 Delete File
 
@@ -25,7 +25,9 @@ ID of the File.
 
 body BetaFileDeleteParams
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Optional header to specify the beta version(s) you want to use.
 
@@ -73,6 +75,8 @@ const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-c
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
 
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 type DeletedFile struct{…}
@@ -81,15 +85,13 @@ ID string
 
 ID of the deleted file.
 
-Type DeletedFileTypeoptional
+Type DeletedFileType
+
+optional
 
 Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
-
-Accepts one of the following:
-
-const DeletedFileTypeFileDeleted DeletedFileType = "file_deleted"
 
 Delete File
 

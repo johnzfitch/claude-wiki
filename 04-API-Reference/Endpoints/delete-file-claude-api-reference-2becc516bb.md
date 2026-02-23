@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:41Z"
+fetched_at: "2026-02-22T13:31:39Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/files/delete"
 title: "Delete File - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # Delete File
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 Delete File
 
@@ -31,7 +31,7 @@ Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 17 more
 
 Accepts one of the following:
 
@@ -73,6 +73,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 DeletedFile = object { id, type }
@@ -87,16 +89,12 @@ Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
 
-Accepts one of the following:
-
-"file_deleted"
-
 Delete File
 
 cURL
 
 ``` shiki
-curl https://api.anthropic.com/v1/files/$FILE_ID \
+curl https://api.anthropic.com/v1/files/$FILE_ID?beta=true \
     -X DELETE \
     -H 'anthropic-version: 2023-06-01' \
     -H 'anthropic-beta: files-api-2025-04-14' \

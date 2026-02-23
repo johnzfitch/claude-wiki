@@ -1,8 +1,8 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:34Z"
+fetched_at: "2026-02-23T00:45:07Z"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
-title: "Team Plan Billing FAQs | Claude Help Center"
+title: "Team plan billing FAQs | Claude Help Center"
 ---
 
 [](/en/)
@@ -45,9 +45,9 @@ Table of contents
 
 [Team Plan](https://support.claude.com/en/collections/9811436-team-plan)
 
-Team Plan Billing FAQs
+Team plan billing FAQs
 
-# Team Plan Billing FAQs
+# Team plan billing FAQs
 
 Updated this week
 
@@ -75,29 +75,29 @@ Accepted payment methods are credit, debit, or prepaid cards. Other forms of pay
 
 ## How do I update my billing information and payment method?
 
-An organization Owner can update your Team plan’s payment method by navigating to [Admin settings \> Billing](https://claude.ai/admin-settings/billing).
+An organization Owner can update your Team plan’s payment method by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**.
 
-**Note:** Your billing address determines your tax jurisdiction. See [Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation) for details on how to view or update your billing address.
+**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)** for details on how to view or update your billing address.
 
 ## How can I change my billing email address?
 
-Your organization's billing address determines where your invoices are sent. You can request to change this email address, or add additional billing email addresses, by [contacting our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support). Note that an organization Owner must authorize any changes to your billing address. For additional invoice recipients, the account Owner must be copied on the request. Once approved, all future invoices will be sent to the new email address(es).
+Your organization's billing address determines where your invoices are sent. You can request to change this email address, or add additional billing email addresses, by **[contacting our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Note that an organization Owner must authorize any changes to your billing address. For additional invoice recipients, the account Owner must be copied on the request. Once approved, all future invoices will be sent to the new email address(es).
 
 ## How can I use a different name on my invoices?
 
-If you want to use a name other than the one tied to your payment method, an organization Owner should check the "Use a different name on invoices" box when adding or updating your payment method in [Admin settings \> Billing](https://claude.ai/admin-settings/billing):
+If you want to use a name other than the one tied to your payment method, an organization Owner should check the "Use a different name on invoices" box when adding or updating your payment method in **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922145253/f2e3d4e0fe43a2ea07e89244764c/image.png?expires=1770722100&signature=62b753f841a8c760a346c2d4a635a67d094a21241c635a9680922b11c0f8df10&req=dSklFMh6mINaWvMW1HO4zRZTy1rGucnSKAqLF4ERnlUoE5CT%2FJrIiG1eyAco%0A%2BOzgTXU36203VSGrN6g%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922145253/f2e3d4e0fe43a2ea07e89244764c/image.png?expires=1771809300&signature=929674e2a4e3ad8dd7a5b84d9c7aafbd090e4c63cf9a3f78d1bac761c9a93630&req=dSklFMh6mINaWvMW1HO4zRZTy1vJu8LQKAqLF4ERnlXKsfCn0d7HK8WxmCdI%0AgHzCAN%2F%2BRbUFdnigEtE%3D%0A)
 
 ## When will I be billed?
 
-Your payment method on file will be charged at the beginning of your billing cycle. The amount will be based on the number of members on your team at the beginning of the billing cycle. If you add or remove members from your team during the billing cycle, you will be credited or charged the prorated amount immediately. See [How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated) for more information about Team plan pricing.
+Your payment method on file will be charged at the beginning of your billing cycle. The amount will be based on the number of members on your team at the beginning of the billing cycle. If you add or remove members from your team during the billing cycle, you will be credited or charged the prorated amount immediately. See **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)** for more information about Team plan pricing.
 
 ## Where can I find the invoice or receipt for my Team plan payment?
 
-An organization Owner can follow these steps to access invoices:
+An organization owner can follow these steps to access invoices:
 
-1.  Navigate to [Admin settings \> Billing](https://claude.ai/admin-settings/billing).
+1.  Navigate to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**.
 
 2.  Find the **Invoices** section.
 
@@ -117,7 +117,7 @@ Please click on the message icon in the bottom right of our Help Center to conta
 
 ## My Team plan access is no longer active and I want to resubscribe.
 
-An organization Owner can resubscribe for Team plan access by navigating to [Admin settings \> Billing](https://claude.ai/admin-settings/billing).
+An organization owner can resubscribe for Team plan access by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**.
 
 ------------------------------------------------------------------------
 
@@ -135,13 +135,13 @@ How is my Team plan bill calculated?
 
 I need to add or update my Team plan's Tax or VAT ID
 
+[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
+
+How am I billed for my Enterprise plan?
+
 [](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)
 
 Understanding your billing address and tax calculation
-
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
-
-Managing members on Team and Enterprise plans
 
 Did this answer your question?
 

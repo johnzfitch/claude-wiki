@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-10T10:49:32Z"
+fetched_at: "2026-02-23T00:45:12Z"
 source_url: "https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work"
 title: "Applying Claude Opus 4.5’s strengths to your everyday work | Claude Help Center"
 ---
@@ -176,7 +176,7 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 [](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work)
 
@@ -184,7 +184,7 @@ Create and edit files with Claude to eliminate hours of busy work
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai)
 

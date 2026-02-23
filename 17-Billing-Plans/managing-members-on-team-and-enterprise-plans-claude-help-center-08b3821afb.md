@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-17T01:30:48Z"
 source_url: "https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans"
 title: "Managing members on Team and Enterprise plans | Claude Help Center"
 ---
@@ -55,7 +55,7 @@ Table of contents
 
 This guide covers how to add, remove, and manage the people on your Team or Enterprise plan.
 
-**Permissions note:** Organization Admins can manage members in **[Admin settings \> Organization](https://claude.ai/admin-settings/organization)**, but only Owners and Primary Owners can access **[Admin settings \> Billing](https://claude.ai/admin-settings/billing)**. For more information, see our article about **[roles and permissions](https://support.claude.com/en/articles/9267276-roles-and-permissions)**.
+**Permissions note:** Organization Admins can manage members in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**, but only Owners and Primary Owners can access **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Billing](https://claude.ai/admin-settings/billing)**. For more information, see our article about **[roles and permissions](https://support.claude.com/en/articles/9267276-roles-and-permissions)**.
 
 For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**.
 
@@ -69,7 +69,7 @@ For information on purchasing seats or adjusting your plan's seat allocation, se
 
 Admins and above can add members by following these steps:
 
-1.  Navigate to [**Admin settings \> Organization**](https://claude.ai/admin-settings/organization) and click “Add member.”
+1.  Navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** and click “Add member.”
 
 2.  Enter the person's email address (it must use one of your organization's **[allowed email domains](https://support.claude.com/en/articles/13325567-account-management-faqs#h_b54c41c86c)**).
 
@@ -93,17 +93,17 @@ Members can also join your organization on their own through organization discov
 
 Organizations with single sign-on (SSO) configured can automate member provisioning. Learn more about **[setting up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso-for-claude-and-claude-console)**.
 
-- **Just-in-time (JIT) provisioning:** Members assigned to the Anthropic app in your Identity Provider will have accounts created automatically the first time they log in. Users are assigned to the highest-available seat tier upon first login. Admins and above can manually reassign seat types afterward in **[Admin settings \> Organization](https://claude.ai/admin-settings/organization)**.
+- **Just-in-time (JIT) provisioning:** Members assigned to the Anthropic app in your Identity Provider will have accounts created automatically the first time they log in. On plans with multiple seat types, users are assigned to the highest-available seat type upon first login. On single-seat Enterprise plans, users are automatically assigned the Enterprise seat. Admins and above can manually reassign seat types afterward in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
-- **SCIM provisioning (Enterprise plan only):** With SCIM directory sync enabled, members assigned to the Anthropic app in your Identity Provider are provisioned automatically, up to the number of total seats on your plan. Seat tiers are distributed from highest to lowest available. Primary Owners and Owners can reassign seat types afterward in **[Admin settings \> Organization](https://claude.ai/admin-settings/organization)**.
+- **SCIM provisioning (Enterprise plan only):** With SCIM directory sync enabled, members assigned to the Anthropic app in your Identity Provider are provisioned automatically, up to the number of total seats on your plan. On plans with multiple seat types, seat types are distributed from highest to lowest available. On single-seat Enterprise plans, all users are automatically assigned the Enterprise seat. Primary Owners and Owners can reassign seat types afterward in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
-**Important:** An Owner or Primary Owner must ensure seats are available before new users can be provisioned. We recommend monitoring your seat usage and adding seats proactively to ensure uninterrupted access for your team. You can **use [Advanced Group Mappings with JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans) to provision users directly to a specific role and seat tier**.
+**Important:** An Owner or Primary Owner must ensure seats are available before new users can be provisioned. We recommend monitoring your seat usage and adding seats proactively to ensure uninterrupted access for your team. You can **[enable group mappings with JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning#h_adee31eeba) to provision users directly to a specific role and seat tier**.
 
 ------------------------------------------------------------------------
 
 ## Removing members
 
-You can remove a member by navigating to **[Admin settings \> Organization](https://claude.ai/admin-settings/organization)**, clicking the menu button to the right of the member, then selecting "Remove from team."
+You can remove a member by navigating to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**, clicking the menu button to the right of the member, then selecting "Remove from team."
 
 For Enterprise organizations using SCIM provisioning, members are automatically removed from Claude when they are removed from your Identity Provider.
 
@@ -125,15 +125,15 @@ Removing a member frees up their seat for reassignment, but does not automatical
 
 ### Resending an expired invitation
 
-You can resend an invite from **[Admin settings \> Organization](https://claude.ai/admin-settings/organization)**. Find the member and select to resend the invite.
+You can resend an invite from **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**. Find the member and select to resend the invite.
 
 ### Revoking a pending invitation
 
-You can revoke a pending invite from **[Admin settings \> Organization](https://claude.ai/admin-settings/organization)**. Find the member and select "Remove from team."
+You can revoke a pending invite from **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**. Find the member and select "Remove from team."
 
 ------------------------------------------------------------------------
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 ### Can I invite someone who already uses Claude personally with their work email?
 
@@ -147,7 +147,7 @@ To add a member that you previously removed, follow the same steps as adding a n
 
 The current Primary Owner can transfer ownership by:
 
-1.  Navigate to **[Admin settings \> Organization](https://claude.ai/admin-settings/organization)**.
+1.  Navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
 2.  Click the Role dropdown next to the new user and select "Primary Owner."
 
@@ -165,7 +165,7 @@ Related Articles
 
 [](https://support.claude.com/en/articles/9267276-roles-and-permissions)
 
-Roles and Permissions
+Roles and permissions
 
 [](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans)
 

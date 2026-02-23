@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-22T14:29:53Z"
 source_url: "https://support.claude.com/en/articles/12304248-managing-api-key-environment-variables-in-claude-code"
 title: "Managing API key environment variables in Claude Code | Claude Help Center"
 ---
