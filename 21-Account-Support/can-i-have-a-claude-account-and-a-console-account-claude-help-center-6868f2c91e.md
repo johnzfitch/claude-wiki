@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-23T00:45:14Z"
 source_url: "https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account"
 title: "Can I have a Claude account and a Console account? | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-08T20:51:57Z"
+fetched_at: "2026-02-23T00:45:18Z"
 source_url: "https://support.claude.com/en/articles/12512180-using-skills-in-claude"
 title: "Using Skills in Claude | Claude Help Center"
 ---
@@ -59,7 +59,7 @@ Using Skills in Claude
 
 # Using Skills in Claude
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -89,21 +89,21 @@ Table of contents
 
 [](#h_7654fe542e)
 
-Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires [code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190). Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
+Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
 
 Skills extend Claude's capabilities by giving it access to specialized knowledge and workflows. This guide shows you how to enable, discover, and use Skills in Claude.
 
 ## Prerequisites
 
-**For Enterprise plans:** Owners must first enable both **Code execution and file creation** and **Skills** in [Admin settings \> Capabilities](https://claude.ai/admin-settings/capabilities). Owners can also upload skills to provision them organization-wide — these skills automatically appear for all users. Once Skills are enabled at the organization level, individual members can toggle on example skills, access provisioned skills, and upload their own personal skills in [Settings \> Capabilities](https://preview.claude.ai/settings/capabilities).
+**For Enterprise plans:** Owners must first enable both **Code execution and file creation** and **Skills** in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**. Owners can also upload skills to provision them organization-wide — these skills automatically appear for all users. Once Skills are enabled at the organization level, individual members can toggle on example skills, access provisioned skills, and upload their own personal skills in **[Settings \> Capabilities](https://preview.claude.ai/settings/capabilities)**.
 
-**For Team plans:** This feature is enabled by default at the organization level. Once enabled, individual members can toggle on example skills and upload their own in [Settings \> Capabilities](https://preview.claude.ai/settings/capabilities).
+**For Team plans:** This feature is enabled by default at the organization level. Once enabled, individual members can toggle on example skills and upload their own in **[Settings \> Capabilities](https://preview.claude.ai/settings/capabilities)**.
 
-**For Max, Pro, and free plans:** You can enable example skills and upload your own in [Settings \> Capabilities](https://claude.ai/settings/capabilities).
+**For Max, Pro, and free plans:** You can enable example skills and upload your own in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)**.
 
 ## How to enable Skills
 
-1.  Navigate to [Settings \> Capabilities](https://claude.ai/settings/capabilities).
+1.  Navigate to **[Settings \> Capabilities](https://claude.ai/settings/capabilities)**.
 
 2.  Ensure that **Code execution and file creation** is enabled.
 
@@ -113,11 +113,11 @@ Skills extend Claude's capabilities by giving it access to specialized knowledge
 
 5.  To add custom skills, click "Upload skill" and upload a ZIP file containing your skill folder.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1781692976/3986c09def54467a7419e9cfd68e/8e4fa130-9c44-4067-bf12-520986644135?expires=1770585300&signature=43769b5690c8ba87dbe9ce580f86274a066e23711c9bfcf99c6a601d220b677f&req=dScvF893n4hYX%2FMW1HO4zXi3CTLT%2F017mT2qapKX2kHFEa6z8FWRrfAGfapz%0A9Gn9mf307nU1FnNsr6M%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1781692976/3986c09def54467a7419e9cfd68e/8e4fa130-9c44-4067-bf12-520986644135?expires=1771809300&signature=f4c807c73df53d9fe135a33356ecc311f87156bf4cc1f48166bee909c925817b&req=dScvF893n4hYX%2FMW1HO4zXi3CTPe90F7mT2qapKX2kFBO7npF3bSTxWb6r17%0AKpBrdD28OjEoU4LoPIk%3D%0A)
 
 ## Organization provisioned skills (Team and Enterprise plans)
 
-Organization Owners can provision skills for all users. These skills appear in your individual Skills list with a team indicator — you can toggle them on or off based on your preferences. For information on provisioning skills for your organization, see [Provisioning and managing Skills for your organization](https://support.claude.com/en/articles/13119606-provisioning-and-managing-skills-for-your-organization#h_4dea113421).
+Organization Owners can provision skills for all users. These skills appear in your individual Skills list with a team indicator — you can toggle them on or off based on your preferences. For information on provisioning skills for your organization, see **[Provisioning and managing Skills for your organization](https://support.claude.com/en/articles/13119606-provisioning-and-managing-skills-for-your-organization#h_4dea113421)**.
 
 ## Using Anthropic Skills
 
@@ -139,11 +139,11 @@ For example, if you ask Claude to "Create a PowerPoint presentation about Q3 res
 
 You can also create and upload your own skills to teach Claude your specific workflows:
 
-1.  Create a skill following the skill structure (see [Creating Custom Skills](https://support.claude.com/en/articles/12512198-creating-custom-skills) for detailed instructions).
+1.  Create a skill following the skill structure (see **[Creating custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)** for detailed instructions).
 
 2.  Package your skill folder as a ZIP file.
 
-3.  Navigate to [Settings \> Capabilities](https://claude.ai/settings/capabilities).
+3.  Navigate to **[Settings \> Capabilities](https://claude.ai/settings/capabilities)**.
 
 4.  In the Skills section, click "Upload skill."
 
@@ -151,13 +151,13 @@ You can also create and upload your own skills to teach Claude your specific wor
 
 6.  Your skill will appear in your Skills list and can be toggled on or off.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1782364123/a16cc51c623f6dc7ecef8974d629/98c13ee7-c134-4109-905c-384ab75a9ac6?expires=1770585300&signature=24d675178a0379a136a542f298c181469347956ae0bf9ec7837f2d140452945a&req=dScvFMp4mYBdWvMW1HO4zRUkiuH9igOW%2BfMHhPHscm77cZh66vf8VwaVPNk4%0A6UAyX%2FSo3uhQawvOmMc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1782364123/a16cc51c623f6dc7ecef8974d629/98c13ee7-c134-4109-905c-384ab75a9ac6?expires=1771809300&signature=00c83bb9463a9ae438e2ad72dab300b0346be7bb2a2f4b3808ae1bfccff64b48&req=dScvFMp4mYBdWvMW1HO4zRUkiuDwgg%2BW%2BfMHhPHscm4z85px7wpgb69Gffqq%0AU656muIAG7QJFxyiXyg%3D%0A)
 
-**Note:** Custom skills you upload are private to your individual account. If you’re on a Team or Enterprise plan and want to share skills with your organization, see [Provisioning skills for your organization](https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin#h_4dea113421).
+**Note:** Custom skills you upload are private to your individual account. If you’re on a Team or Enterprise plan and want to share skills with your organization, see **[Provisioning skills for your organization](https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin#h_4dea113421)**.
 
 ## How Claude uses Skills
 
-Claude automatically identifies and loads relevant skills based on your task. Refer to [What are Skills?](https://support.claude.com/en/articles/12512176-what-are-skills) to learn how this works.
+Claude automatically identifies and loads relevant skills based on your task. Refer to **[What are Skills?](https://support.claude.com/en/articles/12512176-what-are-skills)** to learn how this works.
 
 ## Discovering skills from the Skills Directory
 
@@ -165,7 +165,7 @@ The Skills Directory features professionally-built skills from leading platforms
 
 **To install a skill from the Skills Directory:**
 
-1.  Visit the Skills Directory at [claude.com/connectors](http://claude.com/connectors).
+1.  Visit the Skills Directory at **[claude.com/connectors](http://claude.com/connectors)**.
 
 2.  Browse available skills or filter by category.
 
@@ -173,13 +173,13 @@ The Skills Directory features professionally-built skills from leading platforms
 
 4.  Download the skill package from the linked repository (typically GitHub).
 
-5.  Upload the downloaded ZIP file in [Settings \> Capabilities](https://claude.ai/settings/capabilities) under **Skills**.
+5.  Upload the downloaded ZIP file in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** under **Skills**.
 
 ## Managing your Skills
 
 ### Viewing your Skills
 
-All your skills are listed in [Settings \> Capabilities](https://claude.ai/settings/capabilities) under the **Skills** section. You can see:
+All your skills are listed in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** under the **Skills** section. You can see:
 
 - Anthropic skills (created, tested, and maintained by Anthropic)
 
@@ -197,7 +197,7 @@ Toggle any skill on or off using the switch next to it. Disabled skills won't be
 
 To remove a custom skill you've uploaded:
 
-1.  Navigate to [Settings \> Capabilities](https://claude.ai/settings/capabilities).
+1.  Navigate to **[Settings \> Capabilities](https://claude.ai/settings/capabilities)**.
 
 2.  Find the skill in your Skills list.
 
@@ -207,13 +207,13 @@ To remove a custom skill you've uploaded:
 
 ## Privacy and security details
 
-For Team and Enterprise plans, organization Owners can provision skills for all users through Admin settings. Individual peer-to-peer skill sharing is not currently available — users cannot directly share skills with specific colleagues. For personal skills, each individual must upload them to their own account. Skills in Claude and the API operate in Claude's secure sandboxed environment with no data persistence between sessions.
+For Team and Enterprise plans, organization Owners can provision skills for all users through organization settings. Individual peer-to-peer skill sharing is not currently available — users cannot directly share skills with specific colleagues. For personal skills, each individual must upload them to their own account. Skills in Claude and the API operate in Claude's secure sandboxed environment with no data persistence between sessions.
 
-Note that skills may include, or instruct Claude to install, third-party packages and software for Claude to use when completing a task. See [here](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_0ee9d698a1) for details onClaude’s container environment and [here](https://docs.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool#containers) for API’s container environment.
+Note that skills may include, or instruct Claude to install, third-party packages and software for Claude to use when completing a task. See **[here](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_0ee9d698a1)** for details onClaude’s container environment and **[here](https://docs.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool#containers)** for API’s container environment.
 
 ### What are the primary risks of using Skills?
 
-The most significant risks are prompt injection, which allows Claude to be manipulated to execute unintended actions, and data exfiltration, caused by malicious package code or prompt-injected data leaks. We’ve implemented several mitigations to these risks. Refer to [our security considerations for code execution](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_0ee9d698a1) for more information.
+The most significant risks are prompt injection, which allows Claude to be manipulated to execute unintended actions, and data exfiltration, caused by malicious package code or prompt-injected data leaks. We’ve implemented several mitigations to these risks. Refer to **[our security considerations for code execution](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_0ee9d698a1)** for more information.
 
 **Important:** Only install skills only from trusted sources.
 
@@ -223,11 +223,11 @@ When installing a skill from a less-trusted source, thoroughly audit it before u
 
 ### Skills section not visible
 
-Ensure code execution is enabled in [Settings \> Capabilities](https://claude.ai/settings/capabilities). Skills require the code execution environment to function.
+Ensure code execution is enabled in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)**. Skills require the code execution environment to function.
 
 ### Claude isn’t using a Skill
 
-- Verify the Skill is toggled on in [Settings \> Capabilities](https://claude.ai/settings/capabilities).
+- Verify the Skill is toggled on in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)**.
 
 - Check that the Skill's description field clearly explains when it should be used.
 
@@ -251,27 +251,27 @@ Common reasons for upload failures:
 
 If Skills appear greyed out, code execution or Skills may be disabled at the organization level (for Team and Enterprise plans) or individually. Check with your organization's Owner or make sure to enable code execution in your settings.
 
-## Best Practices
+## Best practices
 
-### Start Simple
+### Start simple
 
 Begin with Anthropic's pre-built Skills to understand how they work before creating custom skills.
 
-### Be Specific
+### Be specific
 
 Write clear descriptions when writing custom skills. A specific description tells Claude when to invoke your skill.
 
-### Test Your Skills
+### Test your skills
 
 After uploading a custom skill, test it with a few different prompts to ensure it works as expected.
 
-### Organize by Purpose
+### Organize by purpose
 
 Create separate skills for different purposes rather than a single skill that’s meant to do everything.
 
 ## Learn more about using Skills
 
-Refer to [Teach Claude your way of working using Skills](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills) for more information and video demonstrations.
+Refer to **[Teach Claude your way of working using Skills](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)** for more information and video demonstrations.
 
 ------------------------------------------------------------------------
 

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:32Z"
+fetched_at: "2026-02-23T00:45:52Z"
 source_url: "https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide"
 title: "Remote MCP Server Submission Guide | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Remote MCP Server Submission Guide
 
 # Remote MCP Server Submission Guide
 
-Updated this week
+Updated over 2 weeks ago
 
 Table of contents
 
@@ -666,7 +666,7 @@ Related Articles
 
 [](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 
-Building Custom Connectors via Remote MCP Servers
+Building custom connectors via remote MCP servers
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 

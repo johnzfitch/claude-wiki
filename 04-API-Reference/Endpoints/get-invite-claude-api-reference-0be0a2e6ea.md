@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:04Z"
+fetched_at: "2026-02-22T14:25:06Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/invites/retrieve"
 title: "Get Invite - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Get Invite
 
-get/v1/organizations/invites/{invite_id}
+GET/v1/organizations/invites/{invite_id}
 
 Get Invite
 
@@ -35,15 +35,11 @@ expires_at: string
 
 RFC 3339 datetime string indicating when the Invite expires.
 
-formatdate-time
-
 invited_at: string
 
 RFC 3339 datetime string indicating when the Invite was created.
 
-formatdate-time
-
-role: "user" or "developer" or "billing" or 2 more
+role: "user" or "developer" or "billing" or 3 more
 
 Organization role of the User.
 
@@ -58,6 +54,8 @@ Accepts one of the following:
 "admin"
 
 "claude_code_user"
+
+"managed"
 
 status: "accepted" or "expired" or "deleted" or "pending"
 
@@ -79,10 +77,6 @@ Object type.
 
 For Invites, this is always `"invite"`.
 
-Accepts one of the following:
-
-"invite"
-
 Get Invite
 
 ``` shiki
@@ -91,35 +85,7 @@ curl https://api.anthropic.com/v1/organizations/invites/$INVITE_ID \
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "id": "invite_015gWxCN9Hfg2QhZwTK7Mdeu",
-  "email": "user@emaildomain.com",
-  "expires_at": "2024-11-20T23:58:27.427722Z",
-  "invited_at": "2024-10-30T23:58:27.427722Z",
-  "role": "user",
-  "status": "pending",
-  "type": "invite"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "id": "invite_015gWxCN9Hfg2QhZwTK7Mdeu",
-  "email": "user@emaildomain.com",
-  "expires_at": "2024-11-20T23:58:27.427722Z",
-  "invited_at": "2024-10-30T23:58:27.427722Z",
-  "role": "user",
-  "status": "pending",
-  "type": "invite"
-}
-```
 
 [](/docs)
 

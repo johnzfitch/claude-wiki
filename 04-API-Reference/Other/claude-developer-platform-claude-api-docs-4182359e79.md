@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:59Z"
+fetched_at: "2026-02-22T13:26:58Z"
 source_url: "https://platform.claude.com/docs/en/release-notes/overview"
 title: "Claude Developer Platform - Claude API Docs"
 ---
@@ -18,6 +18,29 @@ Copy page
 For release notes on Claude Apps, see the [Release notes for Claude Apps in the Claude Help Center](https://support.claude.com/en/articles/12138966-release-notes).
 
 For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) in the `claude-code` repository.
+
+### 
+
+February 19, 2026
+
+- We've launched **automatic caching** for the Messages API. Add a single `cache_control` field to your request body and the system automatically caches the last cacheable block, moving the cache point forward as conversations grow. No manual breakpoint management required. Works alongside existing block-level cache control for fine-grained optimization. Available on the Claude API and Azure AI Foundry (preview). Learn more in our [prompt caching documentation](/docs/en/build-with-claude/prompt-caching#automatic-caching).
+- We've retired the Claude Sonnet 3.7 model (`claude-3-7-sonnet-20250219`) and the Claude Haiku 3.5 model (`claude-3-5-haiku-20241022`). All requests to these models will now return an error. We recommend upgrading to [Claude Sonnet 4.6](/docs/en/about-claude/models/overview#latest-models-comparison) and [Claude Haiku 4.5](/docs/en/about-claude/models/overview#latest-models-comparison) respectively. Researchers can request ongoing access through the [External Researcher Access Program](https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program).
+- We announced the deprecation of the Claude Haiku 3 model (`claude-3-haiku-20240307`), with retirement scheduled for April 19, 2026. We recommend migrating to [Claude Haiku 4.5](/docs/en/about-claude/models/overview#latest-models-comparison). Read more in [model deprecations](/docs/en/about-claude/model-deprecations).
+
+### 
+
+February 17, 2026
+
+- We've launched [Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6), our latest balanced model combining speed and intelligence for everyday tasks. Sonnet 4.6 delivers improved agentic search performance while consuming fewer tokens. Sonnet 4.6 supports [extended thinking](/docs/en/build-with-claude/extended-thinking) and a [1M token context window](/docs/en/build-with-claude/context-windows#1m-token-context-window) (beta). See [Models & Pricing](/docs/en/about-claude/models) for details.
+- API [code execution](/docs/en/agents-and-tools/tool-use/code-execution-tool) is now **free when used with web search or web fetch**. Sandboxed code execution improves model capability and token efficiency. See the [pricing details](/docs/en/agents-and-tools/tool-use/code-execution-tool#usage-and-pricing) for standalone usage.
+- The [web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool) and [programmatic tool calling](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling) are now generally available (no beta header required). Web search and web fetch now support [dynamic filtering](/docs/en/agents-and-tools/tool-use/web-search-tool#dynamic-filtering-with-opus-46-and-sonnet-46), which uses code execution to filter results before they reach the context window for better performance and reduced token cost.
+- The [code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool), [web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool), [tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool), [tool use examples](/docs/en/agents-and-tools/tool-use/implement-tool-use#providing-tool-use-examples), and [memory tool](/docs/en/agents-and-tools/tool-use/memory-tool) are now generally available (no beta header required).
+
+### 
+
+February 7, 2026
+
+- We've launched [fast mode](/docs/en/build-with-claude/fast-mode) in research preview for Opus 4.6, providing significantly faster output token generation via the `speed` parameter. Fast mode is up to 2.5x as fast at premium pricing. Interested customers should join the [waitlist](https://claude.com/fast-mode).
 
 ### 
 
@@ -546,6 +569,12 @@ May 10th, 2024
 Was this page helpful?
 
 - 
+
+- [February 19, 2026](#february-19-2026)
+
+- [February 17, 2026](#february-17-2026)
+
+- [February 7, 2026](#february-7-2026)
 
 - [February 5, 2026](#february-5-2026)
 

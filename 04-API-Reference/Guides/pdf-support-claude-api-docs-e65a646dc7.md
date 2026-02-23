@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:17Z"
+fetched_at: "2026-02-22T10:58:51Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/pdf-support"
 title: "PDF support - Claude API Docs"
 ---
 
-Capabilities
+Model capabilities
 
 # PDF support
 
@@ -210,7 +210,7 @@ curl https://api.anthropic.com/v1/messages \
   -H "anthropic-version: 2023-06-01" \
   -H "anthropic-beta: files-api-2025-04-14" \
   -d '{
-    "model": "claude-opus-4-6", 
+    "model": "claude-opus-4-6",
     "max_tokens": 1024,
     "messages": [{
       "role": "user",

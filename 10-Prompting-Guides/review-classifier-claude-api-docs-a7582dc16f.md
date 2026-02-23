@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:49Z"
+fetched_at: "2026-02-22T13:25:12Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/review-classifier"
 title: "Review classifier - Claude API Docs"
 ---
@@ -60,11 +60,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "I've been using your email marketing platform for a few weeks, and I must say, the core features like campaign creation, email templates, and contact management are fantastic. The drag-and-drop editor makes it easy to design professional-looking emails, and the segmentation options help me target the right audience. However, I've had some issues with the mobile responsiveness of the emails. Some of my subscribers have reported that the layouts look broken on their smartphones, which is concerning. I'd love to see improvements in this area. Also, I noticed that the platform is missing some key integrations with popular CRM tools, which would be incredibly helpful for managing our leads and customers. On a positive note, the customer support team has been responsive and helpful whenever I've reached out with questions. Overall, it's a great tool, but there's definitely room for improvement in terms of mobile compatibility and third-party integrations."
+                    "text": "I've been using your email marketing platform for a few weeks, and I must say, the core features like campaign creation, email templates, and contact management are fantastic. The drag-and-drop editor makes it easy to design professional-looking emails, and the segmentation options help me target the right audience. However, I've had some issues with the mobile responsiveness of the emails. Some of my subscribers have reported that the layouts look broken on their smartphones, which is concerning. I'd love to see improvements in this area. Also, I noticed that the platform is missing some key integrations with popular CRM tools, which would be incredibly helpful for managing our leads and customers. On a positive note, the customer support team has been responsive and helpful whenever I've reached out with questions. Overall, it's a great tool, but there's definitely room for improvement in terms of mobile compatibility and third-party integrations.",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

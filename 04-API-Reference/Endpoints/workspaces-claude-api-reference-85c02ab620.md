@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:09Z"
+fetched_at: "2026-02-22T14:25:55Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces"
 title: "Workspaces - Claude API Reference"
 ---
@@ -11,45 +11,45 @@ Copy page
 
 ##### [Create Workspace](/docs/en/api/admin/workspaces/create)
 
-post/v1/organizations/workspaces
+POST/v1/organizations/workspaces
 
 ##### [Get Workspace](/docs/en/api/admin/workspaces/retrieve)
 
-get/v1/organizations/workspaces/{workspace_id}
+GET/v1/organizations/workspaces/{workspace_id}
 
 ##### [List Workspaces](/docs/en/api/admin/workspaces/list)
 
-get/v1/organizations/workspaces
+GET/v1/organizations/workspaces
 
 ##### [Update Workspace](/docs/en/api/admin/workspaces/update)
 
-post/v1/organizations/workspaces/{workspace_id}
+POST/v1/organizations/workspaces/{workspace_id}
 
 ##### [Archive Workspace](/docs/en/api/admin/workspaces/archive)
 
-post/v1/organizations/workspaces/{workspace_id}/archive
+POST/v1/organizations/workspaces/{workspace_id}/archive
 
 #### WorkspacesMembers
 
 ##### [Create Workspace Member](/docs/en/api/admin/workspaces/members/create)
 
-post/v1/organizations/workspaces/{workspace_id}/members
+POST/v1/organizations/workspaces/{workspace_id}/members
 
 ##### [Get Workspace Member](/docs/en/api/admin/workspaces/members/retrieve)
 
-get/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### [List Workspace Members](/docs/en/api/admin/workspaces/members/list)
 
-get/v1/organizations/workspaces/{workspace_id}/members
+GET/v1/organizations/workspaces/{workspace_id}/members
 
 ##### [Update Workspace Member](/docs/en/api/admin/workspaces/members/update)
 
-post/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### [Delete Workspace Member](/docs/en/api/admin/workspaces/members/delete)
 
-delete/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### ModelsExpand Collapse 
 
@@ -60,10 +60,6 @@ type: "workspace_member"
 Object type.
 
 For Workspace Members, this is always `"workspace_member"`.
-
-Accepts one of the following:
-
-"workspace_member"
 
 user_id: string
 

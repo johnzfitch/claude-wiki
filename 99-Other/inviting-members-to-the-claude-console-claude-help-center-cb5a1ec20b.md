@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:36Z"
+fetched_at: "2026-02-23T00:45:14Z"
 source_url: "https://support.claude.com/en/articles/13443764-inviting-members-to-the-claude-console"
 title: "Inviting members to the Claude Console | Claude Help Center"
 ---
@@ -97,9 +97,9 @@ Claude Console Roles and Permissions
 
 Sharing Prompts in the Claude Console
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
+Manage members on Team and Enterprise plans
 
 [](https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account)
 

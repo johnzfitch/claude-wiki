@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:52:07Z"
+fetched_at: "2026-02-13T09:23:38Z"
 source_url: "https://support.claude.com/en/articles/7996918-what-is-amazon-bedrock"
 title: "What is Amazon Bedrock? | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ What is Amazon Bedrock?
 
 # What is Amazon Bedrock?
 
-Updated yesterday
+Updated this week
 
 Amazon Bedrock is a fully managed service that offers a choice of high-performing
 

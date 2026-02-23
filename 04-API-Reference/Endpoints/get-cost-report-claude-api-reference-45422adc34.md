@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:20Z"
+fetched_at: "2026-02-22T14:28:02Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/cost_report/retrieve"
 title: "Get Cost Report - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Get Cost Report
 
-get/v1/organizations/cost_report
+GET/v1/organizations/cost_report
 
 Get Cost Report
 
@@ -19,21 +19,13 @@ starting_at: string
 
 Time buckets that start on or after this RFC 3339 timestamp will be returned. Each time bucket will be snapped to the start of the minute/hour/day in UTC.
 
-formatdate-time
-
 bucket_width: optional "1d"
 
 Time granularity of the response data.
 
-Accepts one of the following:
-
-"1d"
-
 ending_at: optional string
 
 Time buckets that end before this RFC 3339 timestamp will be returned.
-
-formatdate-time
 
 group_by: optional array of "workspace_id" or "description"
 
@@ -49,15 +41,9 @@ limit: optional number
 
 Maximum number of time buckets to return in the response.
 
-maximum31
-
-minimum1
-
 page: optional string
 
 Optionally set to the `next_page` token from the previous response.
-
-formatdate-time
 
 ##### Header ParametersExpand Collapse 
 
@@ -77,7 +63,7 @@ ending_at: string
 
 End of the time bucket (exclusive) in RFC 3339 format.
 
-results: array of object { amount, context_window, cost_type, 7 more }
+results: array of object { amount, context_window, cost_type, 8 more }
 
 List of cost items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
 
@@ -133,6 +119,16 @@ Accepts one of the following:
 
 "batch"
 
+speed: "standard" or "fast"
+
+Speed used (research preview). `null` if not grouping by speed, or for non-token costs. Only returned when the `fast-mode-2026-02-01` beta header is provided.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
 token_type: "uncached_input_tokens" or "output_tokens" or "cache_read_input_tokens" or 2 more
 
 Type of token. `null` if not grouping by description or for non-token costs.
@@ -165,8 +161,6 @@ next_page: string
 
 Token to provide in as `page` in the subsequent request to retrieve the next page of data.
 
-formatdate-time
-
 Get Cost Report
 
 ``` shiki
@@ -175,65 +169,7 @@ curl https://api.anthropic.com/v1/organizations/cost_report \
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "data": [
-    {
-      "ending_at": "2025-08-02T00:00:00Z",
-      "results": [
-        {
-          "amount": "123.78912",
-          "context_window": "0-200k",
-          "cost_type": "tokens",
-          "currency": "USD",
-          "description": "Claude Sonnet 4 Usage - Input Tokens",
-          "inference_geo": "global",
-          "model": "claude-opus-4-6",
-          "service_tier": "standard",
-          "token_type": "uncached_input_tokens",
-          "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
-        }
-      ],
-      "starting_at": "2025-08-01T00:00:00Z"
-    }
-  ],
-  "has_more": true,
-  "next_page": "2019-12-27T18:11:19.117Z"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "data": [
-    {
-      "ending_at": "2025-08-02T00:00:00Z",
-      "results": [
-        {
-          "amount": "123.78912",
-          "context_window": "0-200k",
-          "cost_type": "tokens",
-          "currency": "USD",
-          "description": "Claude Sonnet 4 Usage - Input Tokens",
-          "inference_geo": "global",
-          "model": "claude-opus-4-6",
-          "service_tier": "standard",
-          "token_type": "uncached_input_tokens",
-          "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
-        }
-      ],
-      "starting_at": "2025-08-01T00:00:00Z"
-    }
-  ],
-  "has_more": true,
-  "next_page": "2019-12-27T18:11:19.117Z"
-}
-```
 
 [](/docs)
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:20Z"
+fetched_at: "2026-02-22T13:20:07Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/overview"
 title: "Guides to common use cases - Claude API Docs"
 ---

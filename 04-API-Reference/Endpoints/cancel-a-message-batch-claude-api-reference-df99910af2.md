@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:29Z"
+fetched_at: "2026-02-22T13:45:38Z"
 source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/cancel"
 title: "Cancel a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 [MessageBatch](/docs/en/api/messages#message_batch) messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
 
@@ -43,19 +43,13 @@ Optional\<LocalDateTime\> archivedAt
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 Optional\<LocalDateTime\> cancelInitiatedAt
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 LocalDateTime createdAt
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 Optional\<LocalDateTime\> endedAt
 
@@ -68,8 +62,6 @@ formatdate-time
 LocalDateTime expiresAt
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus processingStatus
 
@@ -123,15 +115,13 @@ URL to a `.jsonl` file containing the results of the Message Batch requests. Spe
 
 Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
 
-JsonValue; type "message_batch"constant"message_batch"constant
+JsonValue; type "message_batch"constant
+
+"message_batch"constant
 
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-MESSAGE_BATCH("message_batch")
 
 Cancel a Message Batch
 

@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:18Z"
+fetched_at: "2026-02-22T13:11:36Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/files"
 title: "Files API - Claude API Docs"
 ---
 
-Capabilities
+Files & assets
 
 # Files API
 
@@ -16,6 +16,8 @@ Copy page
 The Files API lets you upload and manage files to use with the Claude API without re-uploading content with each request. This is particularly useful when using the [code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool) to provide inputs (e.g. datasets and documents) and then download outputs (e.g. charts). You can also use the Files API to prevent having to continually re-upload frequently used documents and images across multiple API calls. You can [explore the API reference directly](/docs/en/api/files-create), in addition to this guide.
 
 The Files API is currently in beta. Please reach out through our [feedback form](https://forms.gle/tisHyierGwgN4DUE9) to share your experience with the Files API.
+
+This feature is in beta and is **not** covered by [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) arrangements. Beta features are excluded from ZDR.
 
 ## 
 
@@ -95,7 +97,7 @@ curl -X POST https://api.anthropic.com/v1/messages \
         "content": [
           {
             "type": "text",
-            "text": "Please summarize this document for me."          
+            "text": "Please summarize this document for me."
           },
           {
             "type": "document",
@@ -175,7 +177,7 @@ For PDFs and text files, use the `document` content block:
     "file_id": "file_011CNha8iCJcU1wXNR6q4V8w"
   },
   "title": "Document Title", // Optional
-  "context": "Context about the document", // Optional  
+  "context": "Context about the document", // Optional
   "citations": {"enabled": true} // Optional, enables citations
 }
 ```
@@ -332,7 +334,7 @@ Rate limits
 During the beta period:
 
 - File-related API calls are limited to approximately 100 requests per minute
-- [Contact us](/cdn-cgi/l/email-protection#6310020f061023020d170b110c130a004d000c0e) if you need higher limits for your use case
+- [Contact us](/cdn-cgi/l/email-protection#6714060b0214270609130f1508170e044904080a) if you need higher limits for your use case
 
 Was this page helpful?
 

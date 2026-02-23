@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:07:33Z"
+fetched_at: "2026-02-22T13:38:29Z"
 source_url: "https://platform.claude.com/docs/en/api/python/completions"
 title: "Completions - Claude API Reference"
 ---
@@ -15,7 +15,7 @@ Python
 
 completions.create(CompletionCreateParams\*\*kwargs) -\> [Completion](/docs/en/api/completions#completion)
 
-post/v1/complete
+POST/v1/complete
 
 ##### ModelsExpand Collapse 
 
@@ -39,13 +39,14 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = Literal\["claude-opus-4-6", "claude-opus-4-5-20251101", "claude-opus-4-5", 18 more\]
+Literal\["claude-opus-4-6", "claude-sonnet-4-6", "claude-opus-4-5-20251101", 19 more\]
 
 The model that will complete your prompt.
 
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 - `claude-opus-4-6` - Most intelligent model for building agents and coding
+- `claude-sonnet-4-6` - Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
 - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
 - `claude-3-7-sonnet-latest` - Deprecated: Will reach end-of-life on February 19th, 2026. Please migrate to a newer model. Visit [https://docs.anthropic.com/en/docs/resources/model-deprecations](https://docs.anthropic.com/en/docs/resources/model-deprecations) for more information.
@@ -72,6 +73,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -153,7 +158,7 @@ Excels at writing and complex tasks
 
 Our previous most fast and cost-effective
 
-UnionMember1 = str
+str
 
 stop_reason: Optional\[str\]
 
@@ -169,10 +174,6 @@ type: Literal\["completion"\]
 Object type.
 
 For Text Completions, this is always `"completion"`.
-
-Accepts one of the following:
-
-"completion"
 
 [](/docs)
 

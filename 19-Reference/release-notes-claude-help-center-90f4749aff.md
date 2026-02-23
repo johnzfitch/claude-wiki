@@ -1,8 +1,8 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T20:51:50Z"
+fetched_at: "2026-02-23T00:45:06Z"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
-title: "Release Notes | Claude Help Center"
+title: "Release notes | Claude Help Center"
 ---
 
 [](/en/)
@@ -41,11 +41,11 @@ Table of contents
 
 [Claude](https://support.claude.com/en/collections/4078531-claude)
 
-Release Notes
+Release notes
 
-# Release Notes
+# Release notes
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -64,6 +64,24 @@ Table of contents
 [](#h_4572a19dab)
 
 ## February 2026
+
+### February 17, 2026
+
+**Claude Sonnet 4.6 launch**
+
+We launched our most capable Sonnet model yet, with a full upgrade of the model’s skills across coding, computer use, long-context reasoning, agent planning, knowledge work, and design. Sonnet 4.6 also features a 1M token context window in beta. Read our blog post for more information: **[Introducing Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6)**.
+
+### February 13, 2026
+
+**Analytics API for Enterprise plans**
+
+The Enterprise Analytics API provides programmatic access to usage and engagement data for Claude and Claude Code Remote usage within your organization. Data is aggregated per organization, per day, and each endpoint returns a snapshot for a single date that you specify. For more information, see **[Access usage data with the Analytics API](https://support.claude.com/en/articles/13694757-access-usage-data-with-the-analytics-api)**.
+
+### February 12, 2026
+
+**Self-serve Enterprise plans**
+
+Previously, Enterprise plans were only available to customers working with our Sales team. Now, any organization can purchase an Enterprise plan directly on our website with no Sales conversation required. Self-serve Enterprise plans have a single seat type that includes access to Claude, Claude Code, and Cowork. For more information, refer to **[our blog post](https://claude.com/blog/self-serve-enterprise)** or **[What is the Enterprise plan?](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)**
 
 ### February 5, 2026
 
@@ -91,11 +109,11 @@ Cowork is now available to Pro plan users on Claude Desktop (macOS only).
 
 **Claude Code access added to Team plan Standard seats**
 
-We’re now including Claude Code access with every Team plan standard seat. Refer to this article for more information: [Purchasing and managing seats on Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans).
+We’re now including Claude Code access with every Team plan standard seat. Refer to this article for more information: **[Purchasing and managing seats on Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans)**.
 
 **Opus 4 and 4.1 deprecated from Claude and Claude Code**
 
-We’ve removed Claude Opus 4 and 4.1 from the Claude model selector and Claude Code. Refer to this article for further details and recommendations: [Adapting to new model personas after deprecations](https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations).
+We’ve removed Claude Opus 4 and 4.1 from the Claude model selector and Claude Code. Refer to this article for further details and recommendations: **[Adapting to new model personas after deprecations](https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations)**.
 
 ### January 12, 2026
 
@@ -103,7 +121,7 @@ We’ve removed Claude Opus 4 and 4.1 from the Claude model selector and Claude 
 
 Cowork brings Claude Code's agentic capabilities to the Claude desktop app for knowledge work beyond coding. It runs locally on your computer in an isolated VM, enabling direct access to local files and MCP integrations.
 
-Refer to this article to learn more: [Getting Started with Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-cowork).
+Refer to this article to learn more: **[Getting started with Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)**.
 
 **Health and fitness data on Claude Mobile**
 
@@ -113,15 +131,15 @@ Health features are available on Pro and Max plans and currently limited to user
 
 See the following articles for more information:
 
-- [Using Claude with iOS Apps](https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps)
+- **[Using Claude with iOS Apps](https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps)**
 
-- [Using Claude with Android Apps](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)
+- **[Using Claude with Android Apps](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)**
 
 **HIPAA-ready Enterprise plans**
 
 We now offer a HIPAA-ready version of Claude that is available for organizations with Enterprise plans that choose to process protected health information (PHI) through Claude.
 
-See [HIPAA-Ready Enterprise Plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans) for more information.
+See **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)** for more information.
 
 ------------------------------------------------------------------------
 
@@ -321,9 +339,9 @@ Related Articles
 
 How up-to-date is Claude's training data?
 
-[](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)
+[](https://support.claude.com/en/articles/8606395-how-large-is-the-claude-api-s-context-window)
 
-How large is the context window on paid Claude plans?
+How large is the Claude API’s context window?
 
 [](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
 
@@ -331,7 +349,7 @@ Claude Code model configuration
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work)
 

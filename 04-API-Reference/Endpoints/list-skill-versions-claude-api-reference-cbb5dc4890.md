@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:15Z"
+fetched_at: "2026-02-22T13:59:47Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/list"
 title: "List Skill Versions - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Skills.Versions.List(ctx, skillID, params) (\*PageCursor\[[BetaSkillVersionListResponse](/docs/en/api/beta#BetaSkillVersionListResponse)\], error)
 
-get/v1/skills/{skill_id}/versions
+GET/v1/skills/{skill_id}/versions
 
 List Skill Versions
 
@@ -27,17 +27,23 @@ The format and length of IDs may change over time.
 
 params BetaSkillVersionListParams
 
-Limit param.Field\[int64\]optional
+Limit param.Field\[int64\]
+
+optional
 
 Query param: Number of items to return per page.
 
 Defaults to `20`. Ranges from `1` to `1000`.
 
-Page param.Field\[string\]optional
+Page param.Field\[string\]
+
+optional
 
 Query param: Optionally set to the `next_page` token from the previous response.
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Header param: Optional header to specify the beta version(s) you want to use.
 
@@ -84,6 +90,8 @@ const AnthropicBetaContextManagement2025_06_27 AnthropicBeta = "context-manageme
 const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-context-window-exceeded-2025-08-26"
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
+
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

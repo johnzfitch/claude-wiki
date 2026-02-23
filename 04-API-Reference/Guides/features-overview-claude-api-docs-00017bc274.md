@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:06Z"
+fetched_at: "2026-02-22T10:57:29Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/overview"
 title: "Features overview - Claude API Docs"
 ---
@@ -15,11 +15,21 @@ Explore Claude's advanced features and capabilities.
 
 Copy page
 
+Claude's API surface is organized into five areas:
+
+- **Model capabilities:** Control how Claude reasons and formats responses.
+- **Tools:** Let Claude take actions on the web or in your environment.
+- **Tool infrastructure:** Handles discovery and orchestration at scale.
+- **Context management:** Keeps long-running sessions efficient.
+- **Files and assets:** Manage the documents and data you provide to Claude.
+
+If you're new, start with [model capabilities](#model-capabilities) and [tools](#tools). Return to the other sections when you're ready to optimize cost, latency, or scale.
+
 ## 
 
-Core capabilities
+Model capabilities
 
-These features enhance Claude's fundamental abilities for processing, analyzing, and generating content across various formats and use cases.
+Ways to steer Claude and Claude's direct outputs, including response format, reasoning depth, and input modalities.
 
 [TABLE]
 
@@ -27,7 +37,41 @@ These features enhance Claude's fundamental abilities for processing, analyzing,
 
 Tools
 
-These features enable Claude to interact with external systems, execute code, and perform automated tasks through various tool interfaces.
+Built-in tools that Claude invokes via `tool_use`. Server-side tools are run by the platform; client-side tools are implemented and executed by you.
+
+### 
+
+Server-side tools
+
+[TABLE]
+
+### 
+
+Client-side tools
+
+[TABLE]
+
+## 
+
+Tool infrastructure
+
+Infrastructure that supports discovering, orchestrating, and scaling tool use.
+
+[TABLE]
+
+## 
+
+Context management
+
+Infrastructure for controlling and optimizing Claude's context window.
+
+[TABLE]
+
+## 
+
+Files and assets
+
+Manage files and assets for use with Claude.
 
 [TABLE]
 
@@ -35,9 +79,19 @@ Was this page helpful?
 
 - 
 
-- [Core capabilities](#core-capabilities)
+- [Model capabilities](#model-capabilities)
 
 - [Tools](#tools)
+
+- [Server-side tools](#server-side-tools)
+
+- [Client-side tools](#client-side-tools)
+
+- [Tool infrastructure](#tool-infrastructure)
+
+- [Context management](#context-management)
+
+- [Files and assets](#files-and-assets)
 
 [](/docs)
 

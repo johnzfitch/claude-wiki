@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance"
 title: "Report a Concern: Australian DIS Standard compliance | Claude Help Center"
 ---
@@ -37,7 +37,7 @@ Report a Concern: Australian DIS Standard compliance
 
 # Report a Concern: Australian DIS Standard compliance
 
-Updated yesterday
+Updated this week
 
 Table of contents
 

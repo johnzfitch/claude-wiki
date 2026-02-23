@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:34Z"
+fetched_at: "2026-02-16T21:12:47Z"
 source_url: "https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government"
 title: "How to get support for Claude for Government | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ How to get support for Claude for Government
 
 # How to get support for Claude for Government
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

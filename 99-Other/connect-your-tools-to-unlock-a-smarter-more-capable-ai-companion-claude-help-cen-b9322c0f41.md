@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:22Z"
+fetched_at: "2026-02-23T00:45:28Z"
 source_url: "https://support.claude.com/en/articles/11817150-connect-your-tools-to-unlock-a-smarter-more-capable-ai-companion"
 title: "Connect your tools to unlock a smarter, more capable AI companion | Claude Help Center"
 ---
@@ -81,7 +81,7 @@ Not only do connectors make Claude more knowledgeable, they make it more useful,
 
 The Connectors directory allows you to connect tools to Claude in just a few clicks. To find it, navigate to the “Search and tools” menu in Claude chat, then hit “Add connectors.”
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631323174/28c5a942f3cfb4ba63220e67cae1/Tools+menu+%284%29.png?expires=1770722100&signature=12fa783834c9488c953f50235e495a46f01733c25f9097a0678f473ac64c6b12&req=dSYkF8p8noBYXfMW1HO4zSMFW8mmQHZrckg3IHxiRSVdNfAydF4U1XhSFgzf%0ADfRnhHIxfjYOePU6u8c%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631323174/28c5a942f3cfb4ba63220e67cae1/Tools+menu+%284%29.png?expires=1771809300&signature=52c88b6fed70ce95ddd265fc1d9f3cbf358a2ee26455f5bb58349d82a937f202&req=dSYkF8p8noBYXfMW1HO4zSMFW8ipQn1pckg3IHxiRSXfSNxZQDef9igT3QDh%0AkuvbuOI%2B5Q5ni%2Fvt%2FHY%3D%0A)
 
 From here, you can connect Claude to your preferred tools, with more being added all the time. In the directory, you’ll find pre-built connectors in two categories:
 
@@ -89,7 +89,7 @@ From here, you can connect Claude to your preferred tools, with more being added
 
 - **Desktop extensions (app only)** — these allow Claude to work with desktop apps and files on your computer like your notes, messages, and code files.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631324273/e83d00f662f3286515b607a886e2/MCP+directory+%282%29.png?expires=1770722100&signature=b9c5340ee08d0f6069dcd41c664730bd3f3a2c6d098b2bcd78b60310f90b0430&req=dSYkF8p8mYNYWvMW1HO4zUdxfdONKeCuHRPK3cQqYTSxSYQPnrbhU2Yygz1t%0A41CMkEhv%2BYkMHwi6asY%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631324273/e83d00f662f3286515b607a886e2/MCP+directory+%282%29.png?expires=1771809300&signature=cece4b5595f57699298c0ca02b4f23e546b3dc7216e2fe86904b44a15fc80966&req=dSYkF8p8mYNYWvMW1HO4zUdxfdKCK%2BusHRPK3cQqYTScrszjAyCwLcgktz4r%0AqCnuO4nQ1FvS1%2BGBhm8%3D%0A)
 
 ## Setting up your first connection
 
@@ -139,15 +139,15 @@ Related Articles
 
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
-Pre-built Web Connectors Using Remote MCP
+Pre-built web connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities)
+[](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 
-Using the Connectors Directory to extend Claude’s capabilities
+Use the Connectors Directory to extend Claude’s capabilities
 
 [](https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors)
 
@@ -155,7 +155,7 @@ When to use desktop and web connectors
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
 Did this answer your question?
 

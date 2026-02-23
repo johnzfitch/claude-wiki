@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac"
 title: "Use quick entry with Claude Desktop on Mac | Claude Help Center"
 ---
@@ -49,7 +49,7 @@ Use quick entry with Claude Desktop on Mac
 
 # Use quick entry with Claude Desktop on Mac
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -109,7 +109,7 @@ When you first open the updated version of Claude Desktop, you'll see a prompt t
 
 Once enabled, double-tapping Option will open a text box where you can type your message and start a new chat. You can also click "New chat" to see your five most recent conversations.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893088365/2ca4b782dda90abea1fe5f4150af/CleanShot+2025-12-18+at+13_14_30%402x.png?expires=1770722100&signature=33c2a57f74d17af2cbf512a9218df42a0bab307757bdcc945a1388e894e23f8d&req=dSguFcl2lYJZXPMW1HO4zWggAN5WpJ6bRC8c%2FcM5c2Iv%2FFIYfxFAvySuvizD%0AKYx0ihkCF9ahC0sxvY8%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893088365/2ca4b782dda90abea1fe5f4150af/CleanShot+2025-12-18+at+13_14_30%402x.png?expires=1771278300&signature=b7b7412cab6867146404365b23e353b59b2ab6cb8d94ea5b2edd4be70e40bb78&req=dSguFcl2lYJZXPMW1HO4zWggAN9ToZSZRC8c%2FcM5c2JRNrM5SqVTbKC5n9ui%0AvZZ76WBleXPWSWCweQM%3D%0A)
 
 ### Enable the voice shortcut (optional)
 

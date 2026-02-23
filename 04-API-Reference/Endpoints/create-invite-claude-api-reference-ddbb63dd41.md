@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:04Z"
+fetched_at: "2026-02-22T14:24:59Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/invites/create"
 title: "Create Invite - Claude API Reference"
 ---
@@ -9,19 +9,17 @@ Copy page
 
 # Create Invite
 
-post/v1/organizations/invites
+POST/v1/organizations/invites
 
 Create Invite
 
-##### Body ParametersExpand Collapse 
+##### Body ParametersJSONExpand Collapse 
 
 email: string
 
 Email of the User.
 
-formatemail
-
-role: "user" or "developer" or "billing" or "claude_code_user"
+role: "user" or "developer" or "billing" or 2 more
 
 Role for the invited User. Cannot be "admin".
 
@@ -34,6 +32,8 @@ Accepts one of the following:
 "billing"
 
 "claude_code_user"
+
+"managed"
 
 ##### ReturnsExpand Collapse 
 
@@ -51,15 +51,11 @@ expires_at: string
 
 RFC 3339 datetime string indicating when the Invite expires.
 
-formatdate-time
-
 invited_at: string
 
 RFC 3339 datetime string indicating when the Invite was created.
 
-formatdate-time
-
-role: "user" or "developer" or "billing" or 2 more
+role: "user" or "developer" or "billing" or 3 more
 
 Organization role of the User.
 
@@ -74,6 +70,8 @@ Accepts one of the following:
 "admin"
 
 "claude_code_user"
+
+"managed"
 
 status: "accepted" or "expired" or "deleted" or "pending"
 
@@ -95,10 +93,6 @@ Object type.
 
 For Invites, this is always `"invite"`.
 
-Accepts one of the following:
-
-"invite"
-
 Create Invite
 
 ``` shiki
@@ -112,35 +106,7 @@ curl https://api.anthropic.com/v1/organizations/invites \
         }'
 ```
 
-Response 200
-
-``` shiki
-{
-  "id": "invite_015gWxCN9Hfg2QhZwTK7Mdeu",
-  "email": "user@emaildomain.com",
-  "expires_at": "2024-11-20T23:58:27.427722Z",
-  "invited_at": "2024-10-30T23:58:27.427722Z",
-  "role": "user",
-  "status": "pending",
-  "type": "invite"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "id": "invite_015gWxCN9Hfg2QhZwTK7Mdeu",
-  "email": "user@emaildomain.com",
-  "expires_at": "2024-11-20T23:58:27.427722Z",
-  "invited_at": "2024-10-30T23:58:27.427722Z",
-  "role": "user",
-  "status": "pending",
-  "type": "invite"
-}
-```
 
 [](/docs)
 

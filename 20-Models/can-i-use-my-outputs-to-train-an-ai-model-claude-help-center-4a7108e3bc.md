@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-10T10:49:27Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model"
 title: "Can I use my Outputs to train an AI model? | Claude Help Center"
 ---
@@ -113,9 +113,9 @@ Why am I receiving an 'Output blocked by content filtering policy' error?
 
 Why am I receiving an 'Output blocked by content filtering policy' error?
 
-[](https://support.claude.com/en/articles/11174108-about-the-development-partner-program)
+[](https://support.claude.com/en/articles/10684638-reporting-blocking-and-removing-content-from-claude)
 
-About the Development Partner Program
+Reporting, Blocking, and Removing Content from Claude
 
 Did this answer your question?
 

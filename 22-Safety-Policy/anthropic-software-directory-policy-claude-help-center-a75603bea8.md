@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-23T00:45:52Z"
 source_url: "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
 title: "Anthropic Software Directory Policy | Claude Help Center"
 ---
@@ -116,6 +116,8 @@ Unless otherwise expressly permitted by us in writing, we do not allow Software 
 A. Software that transfers money, cryptocurrency, or other financial assets, or executes financial transactions on behalf of users.
 
 B. Software that uses AI models to generate images, video, or audio content. Design-focused software that uses AI models to create visual aids (such as slides, diagrams, charts, UI mockups, logos, or other design assets) are permitted. These servers may generate images as part of a design workflow, provided the developer does not offer standalone image generation as a primary service.
+
+C. Software that serves [advertisements](https://www.anthropic.com/news/claude-is-a-space-to-think), sponsored content, paid product placements, or exists primarily as an advertising or promotional vehicle.
 
 ## 5. Additional Requirements for Model Context Protocol Servers
 

@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:48Z"
+fetched_at: "2026-02-22T13:25:06Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/efficiency-estimator"
 title: "Efficiency estimator - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Calculate the time complexity of functions and algorithms.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -30,16 +30,16 @@ Example output
 >
 > Step 1: Analyzing the first loop
 >
-> ``` inline-block
+> ``` shiki
 > for i in range(n):
->    print(i)
+>     print(i)
 > ```
 
 > This loop iterates `n` times and performs a constant-time operation (`print(i)`) in each iteration. Therefore, the time complexity of this step is O(n).
 >
 > Step 2: Analyzing the nested loops
 >
-> ``` inline-block
+> ``` shiki
 > for j in range(n):
 >     for k in range(n):
 >         print(j, k)
@@ -47,11 +47,9 @@ Example output
 >
 > The outer loop iterates `n` times, and for each iteration, the inner loop also iterates `n` times. In each iteration of the inner loop, a constant-time operation (`print(j, k)`) is performed. Therefore, the time complexity of the nested loops is O(n \* n) = O(n^2).
 >
-> Step 3: Combining the time complexities  
-> The function `example_function(n)` consists of two steps: the first loop and the nested loops. The overall time complexity is the sum of the time complexities of each step.
+> Step 3: Combining the time complexities The function `example_function(n)` consists of two steps: the first loop and the nested loops. The overall time complexity is the sum of the time complexities of each step.
 >
-> Time complexity of the first loop: O(n)  
-> Time complexity of the nested loops: O(n^2)
+> Time complexity of the first loop: O(n) Time complexity of the nested loops: O(n^2)
 >
 > To determine the overall time complexity, we consider the dominant term, which is the term with the highest order of growth. In this case, O(n^2) dominates O(n).
 >
@@ -85,11 +83,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "def example_function(n):\n    for i in range(n):\n        print(i)\n\n    for j in range(n):\n        for k in range(n):\n            print(j, k)"
+                    "text": "def example_function(n):\n    for i in range(n):\n        print(i)\n\n    for j in range(n):\n        for k in range(n):\n            print(j, k)",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

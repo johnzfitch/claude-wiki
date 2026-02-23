@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:41Z"
+fetched_at: "2026-02-22T13:55:44Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/cancel"
 title: "Cancel a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Messages.Batches.Cancel(ctx, messageBatchID) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
 
@@ -41,19 +41,13 @@ ArchivedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 CancelInitiatedAt Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 EndedAt Time
 
@@ -66,8 +60,6 @@ formatdate-time
 ExpiresAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus MessageBatchProcessingStatus
 
@@ -126,10 +118,6 @@ Type MessageBatch
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-const MessageBatchMessageBatch MessageBatch = "message_batch"
 
 Cancel a Message Batch
 

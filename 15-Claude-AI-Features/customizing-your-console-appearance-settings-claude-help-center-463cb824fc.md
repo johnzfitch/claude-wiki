@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:07Z"
+fetched_at: "2026-02-23T00:45:15Z"
 source_url: "https://support.claude.com/en/articles/13346458-customizing-your-console-appearance-settings"
 title: "Customizing your Console appearance settings | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ Customizing your Console appearance settings
 
 # Customizing your Console appearance settings
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -49,7 +49,7 @@ Table of contents
 
 3.  Select from Light, System, or Dark under **Color mode**.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922579101/ede30d38dca693c59f9c15d79e69/CleanShot+2026-01-08+at+15_45_20%402x.png?expires=1770585300&signature=2466ed73d943eb54720f3621a3479caed315a9b7e584a945d72484f065a0b04d&req=dSklFMx5lIBfWPMW1HO4zRpFBMgBRRd1O9Kw38RlAYKzxXA%2FyH8jVVBP7CHO%0AIq%2FgTUbnx8RgSjz8ArM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922579101/ede30d38dca693c59f9c15d79e69/CleanShot+2026-01-08+at+15_45_20%402x.png?expires=1771809300&signature=466bd8c205d86cadb4d0d23b9acbdffa12b0b23a8f54b54542013f53d3d9362a&req=dSklFMx5lIBfWPMW1HO4zRpFBMkMTRt1O9Kw38RlAYLvQHshXYFWqcAL8PHf%0AlMyyadQn0OrLeYENa4E%3D%0A)
 
 ------------------------------------------------------------------------
 
@@ -63,9 +63,9 @@ Customizing your appearance settings
 
 Creating and managing Workspaces in the Claude Console
 
-[](https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account)
+[](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)
 
-How can I delete my Claude Console account?
+Set up single sign-on (SSO)
 
 [](https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account)
 

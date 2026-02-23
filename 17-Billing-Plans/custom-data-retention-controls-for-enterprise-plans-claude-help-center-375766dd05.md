@@ -1,8 +1,8 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:17Z"
+fetched_at: "2026-02-23T00:45:08Z"
 source_url: "https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans"
-title: "Custom Data Retention Controls for Enterprise Plans | Claude Help Center"
+title: "Custom data retention controls for Enterprise plans | Claude Help Center"
 ---
 
 [](/en/)
@@ -43,9 +43,9 @@ Table of contents
 
 [Enterprise Plan](https://support.claude.com/en/collections/10351014-enterprise-plan)
 
-Custom Data Retention Controls for Enterprise Plans
+Custom data retention controls for Enterprise plans
 
-# Custom Data Retention Controls for Enterprise Plans
+# Custom data retention controls for Enterprise plans
 
 Updated this week
 
@@ -67,7 +67,7 @@ Table of contents
 
 This feature is available to Enterprise plan customers. To set custom retention periods for your organization, you must have either a Primary Owner or Owner role.
 
-*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see [here](https://privacy.claude.com/en/collections/10663362-consumers).*
+*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see **[here](https://privacy.claude.com/en/collections/10663362-consumers)**.*
 
 Custom data retention controls allow organizations to manage how long Claude stores conversation and project data. This article explains how to set up and manage data retention periods for your organization.
 
@@ -107,7 +107,7 @@ When data reaches the end of its retention period:
 
 1.  Log in to your Owner Enterprise plan account.
 
-2.  Navigate to [Admin settings \> Data and Privacy](https://claude.ai/admin-settings/data-privacy-controls).
+2.  Navigate to **[Organization settings \> Data and Privacy](https://claude.ai/admin-settings/data-privacy-controls)**.
 
 3.  Set your desired retention period (minimum 30 days).
 
@@ -119,7 +119,7 @@ If a conversation’s last message is at 3PM UTC on March 1 with a 30-day retent
 
 ## Monitoring retention-related activities
 
-All retention-related actions and changes are automatically tracked in [audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs). You can access these logs to monitor changes to retention settings and data deletion events.
+All retention-related actions and changes are automatically tracked in **[audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**. You can access these logs to monitor changes to retention settings and data deletion events.
 
 ------------------------------------------------------------------------
 
@@ -128,10 +128,6 @@ Related Articles
 [](https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans)
 
 Can you delete data that I sent via Team and Enterprise plans?
-
-[](https://support.claude.com/en/articles/11088779-using-google-drive-cataloging-on-the-enterprise-plan)
-
-Using Google Drive Cataloging on the Enterprise Plan
 
 [](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)
 
@@ -143,7 +139,11 @@ Using incognito chats
 
 [](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
-Usage Analytics for Team and Enterprise Plans
+Usage analytics for Team and Enterprise plans
+
+[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
+
+Claude Enterprise Analytics API reference guide
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:23Z"
+fetched_at: "2026-02-22T14:00:55Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches"
 title: "Batches - Claude API Reference"
 ---
@@ -15,37 +15,37 @@ Ruby
 
 messages.batches.create(\*\*kwargs) -\> [MessageBatch](/docs/en/api/messages#message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/messages/batches/retrieve)
 
 messages.batches.retrieve(message_batch_id) -\> [MessageBatch](/docs/en/api/messages#message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/messages/batches/list)
 
 messages.batches.list(\*\*kwargs) -\> Page\<[MessageBatch](/docs/en/api/messages#message_batch) { id, archived_at, cancel_initiated_at, 7 more } \>
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/messages/batches/cancel)
 
 messages.batches.cancel(message_batch_id) -\> [MessageBatch](/docs/en/api/messages#message_batch) { id, archived_at, cancel_initiated_at, 7 more }
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/messages/batches/delete)
 
 messages.batches.delete(message_batch_id) -\> [DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch) { id, type }
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/messages/batches/results)
 
 messages.batches.results(message_batch_id) -\> [MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response) { custom_id, result }
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -61,10 +61,6 @@ Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
 
-Accepts one of the following:
-
-:message_batch_deleted
-
 class MessageBatch { id, archived_at, cancel_initiated_at, 7 more }
 
 id: String
@@ -77,19 +73,13 @@ archived_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: Time
 
@@ -102,8 +92,6 @@ formatdate-time
 expires_at: Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: :in_progress \| :canceling \| :ended
 
@@ -163,17 +151,9 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-:message_batch
-
 class MessageBatchCanceledResult { type }
 
 type: :canceled
-
-Accepts one of the following:
-
-:canceled
 
 class MessageBatchErroredResult { error, type }
 
@@ -189,19 +169,11 @@ message: String
 
 type: :invalid_request_error
 
-Accepts one of the following:
-
-:invalid_request_error
-
 class AuthenticationError { message, type }
 
 message: String
 
 type: :authentication_error
-
-Accepts one of the following:
-
-:authentication_error
 
 class BillingError { message, type }
 
@@ -209,19 +181,11 @@ message: String
 
 type: :billing_error
 
-Accepts one of the following:
-
-:billing_error
-
 class PermissionError { message, type }
 
 message: String
 
 type: :permission_error
-
-Accepts one of the following:
-
-:permission_error
 
 class NotFoundError { message, type }
 
@@ -229,19 +193,11 @@ message: String
 
 type: :not_found_error
 
-Accepts one of the following:
-
-:not_found_error
-
 class RateLimitError { message, type }
 
 message: String
 
 type: :rate_limit_error
-
-Accepts one of the following:
-
-:rate_limit_error
 
 class GatewayTimeoutError { message, type }
 
@@ -249,19 +205,11 @@ message: String
 
 type: :timeout_error
 
-Accepts one of the following:
-
-:timeout_error
-
 class APIErrorObject { message, type }
 
 message: String
 
 type: :api_error
-
-Accepts one of the following:
-
-:api_error
 
 class OverloadedError { message, type }
 
@@ -269,31 +217,15 @@ message: String
 
 type: :overloaded_error
 
-Accepts one of the following:
-
-:overloaded_error
-
 request_id: String
 
 type: :error
 
-Accepts one of the following:
-
-:error
-
 type: :errored
-
-Accepts one of the following:
-
-:errored
 
 class MessageBatchExpiredResult { type }
 
 type: :expired
-
-Accepts one of the following:
-
-:expired
 
 class MessageBatchIndividualResponse { custom_id, result }
 
@@ -315,13 +247,25 @@ Accepts one of the following:
 
 class MessageBatchSucceededResult { message, type }
 
-message: [Message](/docs/en/api/messages#message) { id, content, model, 5 more }
+message: [Message](/docs/en/api/messages#message) { id, container, content, 6 more }
 
 id: String
 
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+container: [Container](/docs/en/api/messages#container) { id, expires_at }
+
+Information about the container used in the request (for the code execution tool)
+
+id: String
+
+Identifier for the container used in this request
+
+expires_at: Time
+
+The time at which the container will expire.
 
 content: Array\[[ContentBlock](/docs/en/api/messages#content_block)\]
 
@@ -380,10 +324,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class CitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -399,10 +339,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class CitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -420,10 +356,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class CitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -433,10 +365,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -456,17 +384,9 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 class ThinkingBlock { signature, thinking, type }
 
@@ -476,23 +396,41 @@ thinking: String
 
 type: :thinking
 
-Accepts one of the following:
-
-:thinking
-
 class RedactedThinkingBlock { data, type }
 
 data: String
 
 type: :redacted_thinking
 
-Accepts one of the following:
-
-:redacted_thinking
-
-class ToolUseBlock { id, input, name, type }
+class ToolUseBlock { id, caller\_, input, 2 more }
 
 id: String
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 input: Hash\[Symbol, untyped\]
 
@@ -500,29 +438,85 @@ name: String
 
 type: :tool_use
 
-Accepts one of the following:
-
-:tool_use
-
-class ServerToolUseBlock { id, input, name, type }
+class ServerToolUseBlock { id, caller\_, input, 2 more }
 
 id: String
 
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
 input: Hash\[Symbol, untyped\]
 
-name: :web_search
+name: :web_search \| :web_fetch \| :code_execution \| 4 more
 
 Accepts one of the following:
 
 :web_search
 
+:web_fetch
+
+:code_execution
+
+:bash_code_execution
+
+:text_editor_code_execution
+
+:tool_search_tool_regex
+
+:tool_search_tool_bm25
+
 type: :server_tool_use
+
+class WebSearchToolResultBlock { caller\_, content, tool_use_id, type }
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-:server_tool_use
+class DirectCaller { type }
 
-class WebSearchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -530,7 +524,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError { error_code, type }
 
-error_code: :invalid_tool_input \| :unavailable \| :max_uses_exceeded \| 3 more
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -548,10 +542,6 @@ Accepts one of the following:
 
 type: :web_search_tool_result_error
 
-Accepts one of the following:
-
-:web_search_tool_result_error
-
 Array\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block) { encrypted_content, page_age, title, 2 more } \]
 
 encrypted_content: String
@@ -562,19 +552,341 @@ title: String
 
 type: :web_search_result
 
-Accepts one of the following:
-
-:web_search_result
-
 url: String
 
 tool_use_id: String
 
 type: :web_search_tool_result
 
+class WebFetchToolResultBlock { caller\_, content, tool_use_id, type }
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_search_tool_result
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
+content: [WebFetchToolResultErrorBlock](/docs/en/api/messages#web_fetch_tool_result_error_block) { error_code, type } \| [WebFetchBlock](/docs/en/api/messages#web_fetch_block) { content, retrieved_at, type, url }
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock { error_code, type }
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:url_too_long
+
+:url_not_allowed
+
+:url_not_accessible
+
+:unsupported_content_type
+
+:too_many_requests
+
+:max_uses_exceeded
+
+:unavailable
+
+type: :web_fetch_tool_result_error
+
+class WebFetchBlock { content, retrieved_at, type, url }
+
+content: [DocumentBlock](/docs/en/api/messages#document_block) { citations, source, title, type }
+
+citations: [CitationsConfig](/docs/en/api/messages#citations_config) { enabled }
+
+Citation configuration for the document
+
+enabled: bool
+
+source: [Base64PDFSource](/docs/en/api/messages#base64_pdf_source) { data, media_type, type } \| [PlainTextSource](/docs/en/api/messages#plain_text_source) { data, media_type, type }
+
+Accepts one of the following:
+
+class Base64PDFSource { data, media_type, type }
+
+data: String
+
+media_type: :"application/pdf"
+
+type: :base64
+
+class PlainTextSource { data, media_type, type }
+
+data: String
+
+media_type: :"text/plain"
+
+type: :text
+
+title: String
+
+The title of the document
+
+type: :document
+
+retrieved_at: String
+
+ISO 8601 timestamp when the content was retrieved
+
+type: :web_fetch_result
+
+url: String
+
+Fetched content URL
+
+tool_use_id: String
+
+type: :web_fetch_tool_result
+
+class CodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError { error_code, type }
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+type: :code_execution_tool_result_error
+
+class CodeExecutionResultBlock { content, return_code, stderr, 2 more }
+
+content: Array\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+return_code: Integer
+
+stderr: String
+
+stdout: String
+
+type: :code_execution_result
+
+class EncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+encrypted_stdout: String
+
+return_code: Integer
+
+stderr: String
+
+type: :encrypted_code_execution_result
+
+tool_use_id: String
+
+type: :code_execution_tool_result
+
+class BashCodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [BashCodeExecutionToolResultError](/docs/en/api/messages#bash_code_execution_tool_result_error) { error_code, type } \| [BashCodeExecutionResultBlock](/docs/en/api/messages#bash_code_execution_result_block) { content, return_code, stderr, 2 more }
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError { error_code, type }
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+:output_file_too_large
+
+type: :bash_code_execution_tool_result_error
+
+class BashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
+
+content: Array\[[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :bash_code_execution_output
+
+return_code: Integer
+
+stderr: String
+
+stdout: String
+
+type: :bash_code_execution_result
+
+tool_use_id: String
+
+type: :bash_code_execution_tool_result
+
+class TextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [TextEditorCodeExecutionToolResultError](/docs/en/api/messages#text_editor_code_execution_tool_result_error) { error_code, error_message, type } \| [TextEditorCodeExecutionViewResultBlock](/docs/en/api/messages#text_editor_code_execution_view_result_block) { content, file_type, num_lines, 3 more } \| [TextEditorCodeExecutionCreateResultBlock](/docs/en/api/messages#text_editor_code_execution_create_result_block) { is_file_update, type } \| [TextEditorCodeExecutionStrReplaceResultBlock](/docs/en/api/messages#text_editor_code_execution_str_replace_result_block) { lines, new_lines, new_start, 3 more }
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError { error_code, error_message, type }
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+:file_not_found
+
+error_message: String
+
+type: :text_editor_code_execution_tool_result_error
+
+class TextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
+
+content: String
+
+file_type: :text \| :image \| :pdf
+
+Accepts one of the following:
+
+:text
+
+:image
+
+:pdf
+
+num_lines: Integer
+
+start_line: Integer
+
+total_lines: Integer
+
+type: :text_editor_code_execution_view_result
+
+class TextEditorCodeExecutionCreateResultBlock { is_file_update, type }
+
+is_file_update: bool
+
+type: :text_editor_code_execution_create_result
+
+class TextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
+
+lines: Array\[String\]
+
+new_lines: Integer
+
+new_start: Integer
+
+old_lines: Integer
+
+old_start: Integer
+
+type: :text_editor_code_execution_str_replace_result
+
+tool_use_id: String
+
+type: :text_editor_code_execution_tool_result
+
+class ToolSearchToolResultBlock { content, tool_use_id, type }
+
+content: [ToolSearchToolResultError](/docs/en/api/messages#tool_search_tool_result_error) { error_code, error_message, type } \| [ToolSearchToolSearchResultBlock](/docs/en/api/messages#tool_search_tool_search_result_block) { tool_references, type }
+
+Accepts one of the following:
+
+class ToolSearchToolResultError { error_code, error_message, type }
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+error_message: String
+
+type: :tool_search_tool_result_error
+
+class ToolSearchToolSearchResultBlock { tool_references, type }
+
+tool_references: Array\[[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block) { tool_name, type } \]
+
+tool_name: String
+
+type: :tool_reference
+
+type: :tool_search_tool_search_result
+
+tool_use_id: String
+
+type: :tool_search_tool_result
+
+class ContainerUploadBlock { file_id, type }
+
+Response model for a file uploaded to the container.
+
+file_id: String
+
+type: :container_upload
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -584,7 +896,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-:"claude-opus-4-6" \| :"claude-opus-4-5-20251101" \| :"claude-opus-4-5" \| 18 more
+:"claude-opus-4-6" \| :"claude-sonnet-4-6" \| :"claude-opus-4-5-20251101" \| 19 more
 
 The model that will complete your prompt.
 
@@ -595,6 +907,10 @@ Accepts one of the following:
 :"claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+:"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 :"claude-opus-4-5-20251101"
 
@@ -684,10 +1000,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-:assistant
-
 stop_reason: [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -729,10 +1041,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-:message
-
 usage: [Usage](/docs/en/api/messages#usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 5 more }
 
 Billing and rate-limit usage.
@@ -753,25 +1061,17 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: String
 
@@ -781,23 +1081,21 @@ input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
 
-minimum0
-
-server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_search_requests }
+server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_fetch_requests, web_search_requests }
 
 The number of server tool requests.
+
+web_fetch_requests: Integer
+
+The number of web fetch tool requests.
 
 web_search_requests: Integer
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: :standard \| :priority \| :batch
 
@@ -813,10 +1111,6 @@ Accepts one of the following:
 
 type: :succeeded
 
-Accepts one of the following:
-
-:succeeded
-
 class MessageBatchErroredResult { error, type }
 
 error: [ErrorResponse](/docs/en/api/$shared#error_response) { error, request_id, type }
@@ -831,19 +1125,11 @@ message: String
 
 type: :invalid_request_error
 
-Accepts one of the following:
-
-:invalid_request_error
-
 class AuthenticationError { message, type }
 
 message: String
 
 type: :authentication_error
-
-Accepts one of the following:
-
-:authentication_error
 
 class BillingError { message, type }
 
@@ -851,19 +1137,11 @@ message: String
 
 type: :billing_error
 
-Accepts one of the following:
-
-:billing_error
-
 class PermissionError { message, type }
 
 message: String
 
 type: :permission_error
-
-Accepts one of the following:
-
-:permission_error
 
 class NotFoundError { message, type }
 
@@ -871,19 +1149,11 @@ message: String
 
 type: :not_found_error
 
-Accepts one of the following:
-
-:not_found_error
-
 class RateLimitError { message, type }
 
 message: String
 
 type: :rate_limit_error
-
-Accepts one of the following:
-
-:rate_limit_error
 
 class GatewayTimeoutError { message, type }
 
@@ -891,19 +1161,11 @@ message: String
 
 type: :timeout_error
 
-Accepts one of the following:
-
-:timeout_error
-
 class APIErrorObject { message, type }
 
 message: String
 
 type: :api_error
-
-Accepts one of the following:
-
-:api_error
 
 class OverloadedError { message, type }
 
@@ -911,39 +1173,19 @@ message: String
 
 type: :overloaded_error
 
-Accepts one of the following:
-
-:overloaded_error
-
 request_id: String
 
 type: :error
 
-Accepts one of the following:
-
-:error
-
 type: :errored
-
-Accepts one of the following:
-
-:errored
 
 class MessageBatchCanceledResult { type }
 
 type: :canceled
 
-Accepts one of the following:
-
-:canceled
-
 class MessageBatchExpiredResult { type }
 
 type: :expired
-
-Accepts one of the following:
-
-:expired
 
 class MessageBatchRequestCounts { canceled, errored, expired, 2 more }
 
@@ -985,13 +1227,25 @@ Accepts one of the following:
 
 class MessageBatchSucceededResult { message, type }
 
-message: [Message](/docs/en/api/messages#message) { id, content, model, 5 more }
+message: [Message](/docs/en/api/messages#message) { id, container, content, 6 more }
 
 id: String
 
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+container: [Container](/docs/en/api/messages#container) { id, expires_at }
+
+Information about the container used in the request (for the code execution tool)
+
+id: String
+
+Identifier for the container used in this request
+
+expires_at: Time
+
+The time at which the container will expire.
 
 content: Array\[[ContentBlock](/docs/en/api/messages#content_block)\]
 
@@ -1050,10 +1304,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class CitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -1069,10 +1319,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class CitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -1090,10 +1336,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class CitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -1103,10 +1345,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -1126,17 +1364,9 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 class ThinkingBlock { signature, thinking, type }
 
@@ -1146,23 +1376,41 @@ thinking: String
 
 type: :thinking
 
-Accepts one of the following:
-
-:thinking
-
 class RedactedThinkingBlock { data, type }
 
 data: String
 
 type: :redacted_thinking
 
-Accepts one of the following:
-
-:redacted_thinking
-
-class ToolUseBlock { id, input, name, type }
+class ToolUseBlock { id, caller\_, input, 2 more }
 
 id: String
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 input: Hash\[Symbol, untyped\]
 
@@ -1170,29 +1418,85 @@ name: String
 
 type: :tool_use
 
-Accepts one of the following:
-
-:tool_use
-
-class ServerToolUseBlock { id, input, name, type }
+class ServerToolUseBlock { id, caller\_, input, 2 more }
 
 id: String
 
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
 input: Hash\[Symbol, untyped\]
 
-name: :web_search
+name: :web_search \| :web_fetch \| :code_execution \| 4 more
 
 Accepts one of the following:
 
 :web_search
 
+:web_fetch
+
+:code_execution
+
+:bash_code_execution
+
+:text_editor_code_execution
+
+:tool_search_tool_regex
+
+:tool_search_tool_bm25
+
 type: :server_tool_use
+
+class WebSearchToolResultBlock { caller\_, content, tool_use_id, type }
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-:server_tool_use
+class DirectCaller { type }
 
-class WebSearchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -1200,7 +1504,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError { error_code, type }
 
-error_code: :invalid_tool_input \| :unavailable \| :max_uses_exceeded \| 3 more
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -1218,10 +1522,6 @@ Accepts one of the following:
 
 type: :web_search_tool_result_error
 
-Accepts one of the following:
-
-:web_search_tool_result_error
-
 Array\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block) { encrypted_content, page_age, title, 2 more } \]
 
 encrypted_content: String
@@ -1232,19 +1532,341 @@ title: String
 
 type: :web_search_result
 
-Accepts one of the following:
-
-:web_search_result
-
 url: String
 
 tool_use_id: String
 
 type: :web_search_tool_result
 
+class WebFetchToolResultBlock { caller\_, content, tool_use_id, type }
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_search_tool_result
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
+content: [WebFetchToolResultErrorBlock](/docs/en/api/messages#web_fetch_tool_result_error_block) { error_code, type } \| [WebFetchBlock](/docs/en/api/messages#web_fetch_block) { content, retrieved_at, type, url }
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock { error_code, type }
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:url_too_long
+
+:url_not_allowed
+
+:url_not_accessible
+
+:unsupported_content_type
+
+:too_many_requests
+
+:max_uses_exceeded
+
+:unavailable
+
+type: :web_fetch_tool_result_error
+
+class WebFetchBlock { content, retrieved_at, type, url }
+
+content: [DocumentBlock](/docs/en/api/messages#document_block) { citations, source, title, type }
+
+citations: [CitationsConfig](/docs/en/api/messages#citations_config) { enabled }
+
+Citation configuration for the document
+
+enabled: bool
+
+source: [Base64PDFSource](/docs/en/api/messages#base64_pdf_source) { data, media_type, type } \| [PlainTextSource](/docs/en/api/messages#plain_text_source) { data, media_type, type }
+
+Accepts one of the following:
+
+class Base64PDFSource { data, media_type, type }
+
+data: String
+
+media_type: :"application/pdf"
+
+type: :base64
+
+class PlainTextSource { data, media_type, type }
+
+data: String
+
+media_type: :"text/plain"
+
+type: :text
+
+title: String
+
+The title of the document
+
+type: :document
+
+retrieved_at: String
+
+ISO 8601 timestamp when the content was retrieved
+
+type: :web_fetch_result
+
+url: String
+
+Fetched content URL
+
+tool_use_id: String
+
+type: :web_fetch_tool_result
+
+class CodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError { error_code, type }
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+type: :code_execution_tool_result_error
+
+class CodeExecutionResultBlock { content, return_code, stderr, 2 more }
+
+content: Array\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+return_code: Integer
+
+stderr: String
+
+stdout: String
+
+type: :code_execution_result
+
+class EncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+encrypted_stdout: String
+
+return_code: Integer
+
+stderr: String
+
+type: :encrypted_code_execution_result
+
+tool_use_id: String
+
+type: :code_execution_tool_result
+
+class BashCodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [BashCodeExecutionToolResultError](/docs/en/api/messages#bash_code_execution_tool_result_error) { error_code, type } \| [BashCodeExecutionResultBlock](/docs/en/api/messages#bash_code_execution_result_block) { content, return_code, stderr, 2 more }
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError { error_code, type }
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+:output_file_too_large
+
+type: :bash_code_execution_tool_result_error
+
+class BashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
+
+content: Array\[[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :bash_code_execution_output
+
+return_code: Integer
+
+stderr: String
+
+stdout: String
+
+type: :bash_code_execution_result
+
+tool_use_id: String
+
+type: :bash_code_execution_tool_result
+
+class TextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [TextEditorCodeExecutionToolResultError](/docs/en/api/messages#text_editor_code_execution_tool_result_error) { error_code, error_message, type } \| [TextEditorCodeExecutionViewResultBlock](/docs/en/api/messages#text_editor_code_execution_view_result_block) { content, file_type, num_lines, 3 more } \| [TextEditorCodeExecutionCreateResultBlock](/docs/en/api/messages#text_editor_code_execution_create_result_block) { is_file_update, type } \| [TextEditorCodeExecutionStrReplaceResultBlock](/docs/en/api/messages#text_editor_code_execution_str_replace_result_block) { lines, new_lines, new_start, 3 more }
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError { error_code, error_message, type }
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+:file_not_found
+
+error_message: String
+
+type: :text_editor_code_execution_tool_result_error
+
+class TextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
+
+content: String
+
+file_type: :text \| :image \| :pdf
+
+Accepts one of the following:
+
+:text
+
+:image
+
+:pdf
+
+num_lines: Integer
+
+start_line: Integer
+
+total_lines: Integer
+
+type: :text_editor_code_execution_view_result
+
+class TextEditorCodeExecutionCreateResultBlock { is_file_update, type }
+
+is_file_update: bool
+
+type: :text_editor_code_execution_create_result
+
+class TextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
+
+lines: Array\[String\]
+
+new_lines: Integer
+
+new_start: Integer
+
+old_lines: Integer
+
+old_start: Integer
+
+type: :text_editor_code_execution_str_replace_result
+
+tool_use_id: String
+
+type: :text_editor_code_execution_tool_result
+
+class ToolSearchToolResultBlock { content, tool_use_id, type }
+
+content: [ToolSearchToolResultError](/docs/en/api/messages#tool_search_tool_result_error) { error_code, error_message, type } \| [ToolSearchToolSearchResultBlock](/docs/en/api/messages#tool_search_tool_search_result_block) { tool_references, type }
+
+Accepts one of the following:
+
+class ToolSearchToolResultError { error_code, error_message, type }
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+error_message: String
+
+type: :tool_search_tool_result_error
+
+class ToolSearchToolSearchResultBlock { tool_references, type }
+
+tool_references: Array\[[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block) { tool_name, type } \]
+
+tool_name: String
+
+type: :tool_reference
+
+type: :tool_search_tool_search_result
+
+tool_use_id: String
+
+type: :tool_search_tool_result
+
+class ContainerUploadBlock { file_id, type }
+
+Response model for a file uploaded to the container.
+
+file_id: String
+
+type: :container_upload
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -1254,7 +1876,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-:"claude-opus-4-6" \| :"claude-opus-4-5-20251101" \| :"claude-opus-4-5" \| 18 more
+:"claude-opus-4-6" \| :"claude-sonnet-4-6" \| :"claude-opus-4-5-20251101" \| 19 more
 
 The model that will complete your prompt.
 
@@ -1265,6 +1887,10 @@ Accepts one of the following:
 :"claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+:"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 :"claude-opus-4-5-20251101"
 
@@ -1354,10 +1980,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-:assistant
-
 stop_reason: [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -1399,10 +2021,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-:message
-
 usage: [Usage](/docs/en/api/messages#usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 5 more }
 
 Billing and rate-limit usage.
@@ -1423,25 +2041,17 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: String
 
@@ -1451,23 +2061,21 @@ input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
 
-minimum0
-
-server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_search_requests }
+server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_fetch_requests, web_search_requests }
 
 The number of server tool requests.
+
+web_fetch_requests: Integer
+
+The number of web fetch tool requests.
 
 web_search_requests: Integer
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: :standard \| :priority \| :batch
 
@@ -1482,10 +2090,6 @@ Accepts one of the following:
 :batch
 
 type: :succeeded
-
-Accepts one of the following:
-
-:succeeded
 
 class MessageBatchErroredResult { error, type }
 
@@ -1501,19 +2105,11 @@ message: String
 
 type: :invalid_request_error
 
-Accepts one of the following:
-
-:invalid_request_error
-
 class AuthenticationError { message, type }
 
 message: String
 
 type: :authentication_error
-
-Accepts one of the following:
-
-:authentication_error
 
 class BillingError { message, type }
 
@@ -1521,19 +2117,11 @@ message: String
 
 type: :billing_error
 
-Accepts one of the following:
-
-:billing_error
-
 class PermissionError { message, type }
 
 message: String
 
 type: :permission_error
-
-Accepts one of the following:
-
-:permission_error
 
 class NotFoundError { message, type }
 
@@ -1541,19 +2129,11 @@ message: String
 
 type: :not_found_error
 
-Accepts one of the following:
-
-:not_found_error
-
 class RateLimitError { message, type }
 
 message: String
 
 type: :rate_limit_error
-
-Accepts one of the following:
-
-:rate_limit_error
 
 class GatewayTimeoutError { message, type }
 
@@ -1561,19 +2141,11 @@ message: String
 
 type: :timeout_error
 
-Accepts one of the following:
-
-:timeout_error
-
 class APIErrorObject { message, type }
 
 message: String
 
 type: :api_error
-
-Accepts one of the following:
-
-:api_error
 
 class OverloadedError { message, type }
 
@@ -1581,49 +2153,41 @@ message: String
 
 type: :overloaded_error
 
-Accepts one of the following:
-
-:overloaded_error
-
 request_id: String
 
 type: :error
 
-Accepts one of the following:
-
-:error
-
 type: :errored
-
-Accepts one of the following:
-
-:errored
 
 class MessageBatchCanceledResult { type }
 
 type: :canceled
 
-Accepts one of the following:
-
-:canceled
-
 class MessageBatchExpiredResult { type }
 
 type: :expired
 
-Accepts one of the following:
-
-:expired
-
 class MessageBatchSucceededResult { message, type }
 
-message: [Message](/docs/en/api/messages#message) { id, content, model, 5 more }
+message: [Message](/docs/en/api/messages#message) { id, container, content, 6 more }
 
 id: String
 
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+container: [Container](/docs/en/api/messages#container) { id, expires_at }
+
+Information about the container used in the request (for the code execution tool)
+
+id: String
+
+Identifier for the container used in this request
+
+expires_at: Time
+
+The time at which the container will expire.
 
 content: Array\[[ContentBlock](/docs/en/api/messages#content_block)\]
 
@@ -1682,10 +2246,6 @@ start_char_index: Integer
 
 type: :char_location
 
-Accepts one of the following:
-
-:char_location
-
 class CitationPageLocation { cited_text, document_index, document_title, 4 more }
 
 cited_text: String
@@ -1701,10 +2261,6 @@ file_id: String
 start_page_number: Integer
 
 type: :page_location
-
-Accepts one of the following:
-
-:page_location
 
 class CitationContentBlockLocation { cited_text, document_index, document_title, 4 more }
 
@@ -1722,10 +2278,6 @@ start_block_index: Integer
 
 type: :content_block_location
 
-Accepts one of the following:
-
-:content_block_location
-
 class CitationsWebSearchResultLocation { cited_text, encrypted_index, title, 2 more }
 
 cited_text: String
@@ -1735,10 +2287,6 @@ encrypted_index: String
 title: String
 
 type: :web_search_result_location
-
-Accepts one of the following:
-
-:web_search_result_location
 
 url: String
 
@@ -1758,17 +2306,9 @@ title: String
 
 type: :search_result_location
 
-Accepts one of the following:
-
-:search_result_location
-
 text: String
 
 type: :text
-
-Accepts one of the following:
-
-:text
 
 class ThinkingBlock { signature, thinking, type }
 
@@ -1778,23 +2318,41 @@ thinking: String
 
 type: :thinking
 
-Accepts one of the following:
-
-:thinking
-
 class RedactedThinkingBlock { data, type }
 
 data: String
 
 type: :redacted_thinking
 
-Accepts one of the following:
-
-:redacted_thinking
-
-class ToolUseBlock { id, input, name, type }
+class ToolUseBlock { id, caller\_, input, 2 more }
 
 id: String
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 input: Hash\[Symbol, untyped\]
 
@@ -1802,29 +2360,85 @@ name: String
 
 type: :tool_use
 
-Accepts one of the following:
-
-:tool_use
-
-class ServerToolUseBlock { id, input, name, type }
+class ServerToolUseBlock { id, caller\_, input, 2 more }
 
 id: String
 
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
 input: Hash\[Symbol, untyped\]
 
-name: :web_search
+name: :web_search \| :web_fetch \| :code_execution \| 4 more
 
 Accepts one of the following:
 
 :web_search
 
+:web_fetch
+
+:code_execution
+
+:bash_code_execution
+
+:text_editor_code_execution
+
+:tool_search_tool_regex
+
+:tool_search_tool_bm25
+
 type: :server_tool_use
+
+class WebSearchToolResultBlock { caller\_, content, tool_use_id, type }
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-:server_tool_use
+class DirectCaller { type }
 
-class WebSearchToolResultBlock { content, tool_use_id, type }
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -1832,7 +2446,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError { error_code, type }
 
-error_code: :invalid_tool_input \| :unavailable \| :max_uses_exceeded \| 3 more
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -1850,10 +2464,6 @@ Accepts one of the following:
 
 type: :web_search_tool_result_error
 
-Accepts one of the following:
-
-:web_search_tool_result_error
-
 Array\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block) { encrypted_content, page_age, title, 2 more } \]
 
 encrypted_content: String
@@ -1864,19 +2474,341 @@ title: String
 
 type: :web_search_result
 
-Accepts one of the following:
-
-:web_search_result
-
 url: String
 
 tool_use_id: String
 
 type: :web_search_tool_result
 
+class WebFetchToolResultBlock { caller\_, content, tool_use_id, type }
+
+caller\_: [DirectCaller](/docs/en/api/messages#direct_caller) { type } \| [ServerToolCaller](/docs/en/api/messages#server_tool_caller) { tool_id, type } \| [ServerToolCaller20260120](/docs/en/api/messages#server_tool_caller_20260120) { tool_id, type }
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-:web_search_tool_result
+class DirectCaller { type }
+
+Tool invocation directly from the model.
+
+type: :direct
+
+class ServerToolCaller { tool_id, type }
+
+Tool invocation generated by a server-side tool.
+
+tool_id: String
+
+type: :code_execution_20250825
+
+class ServerToolCaller20260120 { tool_id, type }
+
+tool_id: String
+
+type: :code_execution_20260120
+
+content: [WebFetchToolResultErrorBlock](/docs/en/api/messages#web_fetch_tool_result_error_block) { error_code, type } \| [WebFetchBlock](/docs/en/api/messages#web_fetch_block) { content, retrieved_at, type, url }
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock { error_code, type }
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:url_too_long
+
+:url_not_allowed
+
+:url_not_accessible
+
+:unsupported_content_type
+
+:too_many_requests
+
+:max_uses_exceeded
+
+:unavailable
+
+type: :web_fetch_tool_result_error
+
+class WebFetchBlock { content, retrieved_at, type, url }
+
+content: [DocumentBlock](/docs/en/api/messages#document_block) { citations, source, title, type }
+
+citations: [CitationsConfig](/docs/en/api/messages#citations_config) { enabled }
+
+Citation configuration for the document
+
+enabled: bool
+
+source: [Base64PDFSource](/docs/en/api/messages#base64_pdf_source) { data, media_type, type } \| [PlainTextSource](/docs/en/api/messages#plain_text_source) { data, media_type, type }
+
+Accepts one of the following:
+
+class Base64PDFSource { data, media_type, type }
+
+data: String
+
+media_type: :"application/pdf"
+
+type: :base64
+
+class PlainTextSource { data, media_type, type }
+
+data: String
+
+media_type: :"text/plain"
+
+type: :text
+
+title: String
+
+The title of the document
+
+type: :document
+
+retrieved_at: String
+
+ISO 8601 timestamp when the content was retrieved
+
+type: :web_fetch_result
+
+url: String
+
+Fetched content URL
+
+tool_use_id: String
+
+type: :web_fetch_tool_result
+
+class CodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError { error_code, type }
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+type: :code_execution_tool_result_error
+
+class CodeExecutionResultBlock { content, return_code, stderr, 2 more }
+
+content: Array\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+return_code: Integer
+
+stderr: String
+
+stdout: String
+
+type: :code_execution_result
+
+class EncryptedCodeExecutionResultBlock { content, encrypted_stdout, return_code, 2 more }
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: Array\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :code_execution_output
+
+encrypted_stdout: String
+
+return_code: Integer
+
+stderr: String
+
+type: :encrypted_code_execution_result
+
+tool_use_id: String
+
+type: :code_execution_tool_result
+
+class BashCodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [BashCodeExecutionToolResultError](/docs/en/api/messages#bash_code_execution_tool_result_error) { error_code, type } \| [BashCodeExecutionResultBlock](/docs/en/api/messages#bash_code_execution_result_block) { content, return_code, stderr, 2 more }
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError { error_code, type }
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+:output_file_too_large
+
+type: :bash_code_execution_tool_result_error
+
+class BashCodeExecutionResultBlock { content, return_code, stderr, 2 more }
+
+content: Array\[[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block) { file_id, type } \]
+
+file_id: String
+
+type: :bash_code_execution_output
+
+return_code: Integer
+
+stderr: String
+
+stdout: String
+
+type: :bash_code_execution_result
+
+tool_use_id: String
+
+type: :bash_code_execution_tool_result
+
+class TextEditorCodeExecutionToolResultBlock { content, tool_use_id, type }
+
+content: [TextEditorCodeExecutionToolResultError](/docs/en/api/messages#text_editor_code_execution_tool_result_error) { error_code, error_message, type } \| [TextEditorCodeExecutionViewResultBlock](/docs/en/api/messages#text_editor_code_execution_view_result_block) { content, file_type, num_lines, 3 more } \| [TextEditorCodeExecutionCreateResultBlock](/docs/en/api/messages#text_editor_code_execution_create_result_block) { is_file_update, type } \| [TextEditorCodeExecutionStrReplaceResultBlock](/docs/en/api/messages#text_editor_code_execution_str_replace_result_block) { lines, new_lines, new_start, 3 more }
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError { error_code, error_message, type }
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+:file_not_found
+
+error_message: String
+
+type: :text_editor_code_execution_tool_result_error
+
+class TextEditorCodeExecutionViewResultBlock { content, file_type, num_lines, 3 more }
+
+content: String
+
+file_type: :text \| :image \| :pdf
+
+Accepts one of the following:
+
+:text
+
+:image
+
+:pdf
+
+num_lines: Integer
+
+start_line: Integer
+
+total_lines: Integer
+
+type: :text_editor_code_execution_view_result
+
+class TextEditorCodeExecutionCreateResultBlock { is_file_update, type }
+
+is_file_update: bool
+
+type: :text_editor_code_execution_create_result
+
+class TextEditorCodeExecutionStrReplaceResultBlock { lines, new_lines, new_start, 3 more }
+
+lines: Array\[String\]
+
+new_lines: Integer
+
+new_start: Integer
+
+old_lines: Integer
+
+old_start: Integer
+
+type: :text_editor_code_execution_str_replace_result
+
+tool_use_id: String
+
+type: :text_editor_code_execution_tool_result
+
+class ToolSearchToolResultBlock { content, tool_use_id, type }
+
+content: [ToolSearchToolResultError](/docs/en/api/messages#tool_search_tool_result_error) { error_code, error_message, type } \| [ToolSearchToolSearchResultBlock](/docs/en/api/messages#tool_search_tool_search_result_block) { tool_references, type }
+
+Accepts one of the following:
+
+class ToolSearchToolResultError { error_code, error_message, type }
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+:invalid_tool_input
+
+:unavailable
+
+:too_many_requests
+
+:execution_time_exceeded
+
+error_message: String
+
+type: :tool_search_tool_result_error
+
+class ToolSearchToolSearchResultBlock { tool_references, type }
+
+tool_references: Array\[[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block) { tool_name, type } \]
+
+tool_name: String
+
+type: :tool_reference
+
+type: :tool_search_tool_search_result
+
+tool_use_id: String
+
+type: :tool_search_tool_result
+
+class ContainerUploadBlock { file_id, type }
+
+Response model for a file uploaded to the container.
+
+file_id: String
+
+type: :container_upload
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -1886,7 +2818,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-:"claude-opus-4-6" \| :"claude-opus-4-5-20251101" \| :"claude-opus-4-5" \| 18 more
+:"claude-opus-4-6" \| :"claude-sonnet-4-6" \| :"claude-opus-4-5-20251101" \| 19 more
 
 The model that will complete your prompt.
 
@@ -1897,6 +2829,10 @@ Accepts one of the following:
 :"claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+:"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 :"claude-opus-4-5-20251101"
 
@@ -1986,10 +2922,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-:assistant
-
 stop_reason: [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -2031,10 +2963,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-:message
-
 usage: [Usage](/docs/en/api/messages#usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 5 more }
 
 Billing and rate-limit usage.
@@ -2055,25 +2983,17 @@ ephemeral_1h_input_tokens: Integer
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: Integer
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Integer
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Integer
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: String
 
@@ -2083,23 +3003,21 @@ input_tokens: Integer
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: Integer
 
 The number of output tokens which were used.
 
-minimum0
-
-server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_search_requests }
+server_tool_use: [ServerToolUsage](/docs/en/api/messages#server_tool_usage) { web_fetch_requests, web_search_requests }
 
 The number of server tool requests.
+
+web_fetch_requests: Integer
+
+The number of web fetch tool requests.
 
 web_search_requests: Integer
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: :standard \| :priority \| :batch
 
@@ -2114,10 +3032,6 @@ Accepts one of the following:
 :batch
 
 type: :succeeded
-
-Accepts one of the following:
-
-:succeeded
 
 [](/docs)
 

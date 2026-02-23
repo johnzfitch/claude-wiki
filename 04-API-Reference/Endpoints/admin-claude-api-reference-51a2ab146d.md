@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:02Z"
+fetched_at: "2026-02-22T14:24:35Z"
 source_url: "https://platform.claude.com/docs/en/api/admin"
 title: "Admin - Claude API Reference"
 ---
@@ -15,7 +15,7 @@ cURL
 
 ##### [Get Current Organization](/docs/en/api/admin/organizations/me)
 
-get/v1/organizations/me
+GET/v1/organizations/me
 
 ##### ModelsExpand Collapse 
 
@@ -24,8 +24,6 @@ Organization = object { id, name, type }
 id: string
 
 ID of the Organization.
-
-formatuuid
 
 name: string
 
@@ -37,27 +35,23 @@ Object type.
 
 For Organizations, this is always `"organization"`.
 
-Accepts one of the following:
-
-"organization"
-
 #### AdminInvites
 
 ##### [Create Invite](/docs/en/api/admin/invites/create)
 
-post/v1/organizations/invites
+POST/v1/organizations/invites
 
 ##### [Get Invite](/docs/en/api/admin/invites/retrieve)
 
-get/v1/organizations/invites/{invite_id}
+GET/v1/organizations/invites/{invite_id}
 
 ##### [List Invites](/docs/en/api/admin/invites/list)
 
-get/v1/organizations/invites
+GET/v1/organizations/invites
 
 ##### [Delete Invite](/docs/en/api/admin/invites/delete)
 
-delete/v1/organizations/invites/{invite_id}
+DELETE/v1/organizations/invites/{invite_id}
 
 ##### ModelsExpand Collapse 
 
@@ -75,15 +69,11 @@ expires_at: string
 
 RFC 3339 datetime string indicating when the Invite expires.
 
-formatdate-time
-
 invited_at: string
 
 RFC 3339 datetime string indicating when the Invite was created.
 
-formatdate-time
-
-role: "user" or "developer" or "billing" or 2 more
+role: "user" or "developer" or "billing" or 3 more
 
 Organization role of the User.
 
@@ -98,6 +88,8 @@ Accepts one of the following:
 "admin"
 
 "claude_code_user"
+
+"managed"
 
 status: "accepted" or "expired" or "deleted" or "pending"
 
@@ -119,27 +111,23 @@ Object type.
 
 For Invites, this is always `"invite"`.
 
-Accepts one of the following:
-
-"invite"
-
 #### AdminUsers
 
 ##### [Get User](/docs/en/api/admin/users/retrieve)
 
-get/v1/organizations/users/{user_id}
+GET/v1/organizations/users/{user_id}
 
 ##### [List Users](/docs/en/api/admin/users/list)
 
-get/v1/organizations/users
+GET/v1/organizations/users
 
 ##### [Update User](/docs/en/api/admin/users/update)
 
-post/v1/organizations/users/{user_id}
+POST/v1/organizations/users/{user_id}
 
 ##### [Remove User](/docs/en/api/admin/users/delete)
 
-delete/v1/organizations/users/{user_id}
+DELETE/v1/organizations/users/{user_id}
 
 ##### ModelsExpand Collapse 
 
@@ -153,8 +141,6 @@ added_at: string
 
 RFC 3339 datetime string indicating when the User joined the Organization.
 
-formatdate-time
-
 email: string
 
 Email of the User.
@@ -163,7 +149,7 @@ name: string
 
 Name of the User.
 
-role: "user" or "developer" or "billing" or 2 more
+role: "user" or "developer" or "billing" or 3 more
 
 Organization role of the User.
 
@@ -179,59 +165,57 @@ Accepts one of the following:
 
 "claude_code_user"
 
+"managed"
+
 type: "user"
 
 Object type.
 
 For Users, this is always `"user"`.
 
-Accepts one of the following:
-
-"user"
-
 #### AdminWorkspaces
 
 ##### [Create Workspace](/docs/en/api/admin/workspaces/create)
 
-post/v1/organizations/workspaces
+POST/v1/organizations/workspaces
 
 ##### [Get Workspace](/docs/en/api/admin/workspaces/retrieve)
 
-get/v1/organizations/workspaces/{workspace_id}
+GET/v1/organizations/workspaces/{workspace_id}
 
 ##### [List Workspaces](/docs/en/api/admin/workspaces/list)
 
-get/v1/organizations/workspaces
+GET/v1/organizations/workspaces
 
 ##### [Update Workspace](/docs/en/api/admin/workspaces/update)
 
-post/v1/organizations/workspaces/{workspace_id}
+POST/v1/organizations/workspaces/{workspace_id}
 
 ##### [Archive Workspace](/docs/en/api/admin/workspaces/archive)
 
-post/v1/organizations/workspaces/{workspace_id}/archive
+POST/v1/organizations/workspaces/{workspace_id}/archive
 
 #### AdminWorkspacesMembers
 
 ##### [Create Workspace Member](/docs/en/api/admin/workspaces/members/create)
 
-post/v1/organizations/workspaces/{workspace_id}/members
+POST/v1/organizations/workspaces/{workspace_id}/members
 
 ##### [Get Workspace Member](/docs/en/api/admin/workspaces/members/retrieve)
 
-get/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### [List Workspace Members](/docs/en/api/admin/workspaces/members/list)
 
-get/v1/organizations/workspaces/{workspace_id}/members
+GET/v1/organizations/workspaces/{workspace_id}/members
 
 ##### [Update Workspace Member](/docs/en/api/admin/workspaces/members/update)
 
-post/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### [Delete Workspace Member](/docs/en/api/admin/workspaces/members/delete)
 
-delete/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 ##### ModelsExpand Collapse 
 
@@ -242,10 +226,6 @@ type: "workspace_member"
 Object type.
 
 For Workspace Members, this is always `"workspace_member"`.
-
-Accepts one of the following:
-
-"workspace_member"
 
 user_id: string
 
@@ -273,25 +253,25 @@ Accepts one of the following:
 
 ##### [Get API Key](/docs/en/api/admin/api_keys/retrieve)
 
-get/v1/organizations/api_keys/{api_key_id}
+GET/v1/organizations/api_keys/{api_key_id}
 
 ##### [List API Keys](/docs/en/api/admin/api_keys/list)
 
-get/v1/organizations/api_keys
+GET/v1/organizations/api_keys
 
 ##### [Update API Key](/docs/en/api/admin/api_keys/update)
 
-post/v1/organizations/api_keys/{api_key_id}
+POST/v1/organizations/api_keys/{api_key_id}
 
 #### AdminUsage Report
 
 ##### [Get Messages Usage Report](/docs/en/api/admin/usage_report/retrieve_messages)
 
-get/v1/organizations/usage_report/messages
+GET/v1/organizations/usage_report/messages
 
 ##### [Get Claude Code Usage Report](/docs/en/api/admin/usage_report/retrieve_claude_code)
 
-get/v1/organizations/usage_report/claude_code
+GET/v1/organizations/usage_report/claude_code
 
 ##### ModelsExpand Collapse 
 
@@ -315,10 +295,6 @@ Email address of the user who performed Claude Code actions.
 
 type: "user_actor"
 
-Accepts one of the following:
-
-"user_actor"
-
 APIActor = object { api_key_name, type }
 
 api_key_name: string
@@ -326,10 +302,6 @@ api_key_name: string
 Name of the API key used to perform Claude Code actions.
 
 type: "api_actor"
-
-Accepts one of the following:
-
-"api_actor"
 
 core_metrics: object { commits_by_claude_code, lines_of_code, num_sessions, pull_requests_by_claude_code }
 
@@ -372,8 +344,6 @@ Accepts one of the following:
 date: string
 
 UTC date for the usage metrics in YYYY-MM-DD format.
-
-formatdate-time
 
 model_breakdown: array of object { estimated_cost, model, tokens }
 
@@ -461,9 +431,7 @@ ending_at: string
 
 End of the time bucket (exclusive) in RFC 3339 format.
 
-formatdate-time
-
-results: array of object { api_key_id, cache_creation, cache_read_input_tokens, 8 more }
+results: array of object { api_key_id, cache_creation, cache_read_input_tokens, 9 more }
 
 List of usage items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
 
@@ -535,6 +503,16 @@ Accepts one of the following:
 
 "flex_discount"
 
+speed: "standard" or "fast"
+
+Speed of the usage (research preview). `null` if not grouping by speed. Only returned when the `fast-mode-2026-02-01` beta header is provided.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
 uncached_input_tokens: number
 
 The number of uncached input tokens processed.
@@ -547,8 +525,6 @@ starting_at: string
 
 Start of the time bucket (inclusive) in RFC 3339 format.
 
-formatdate-time
-
 has_more: boolean
 
 Indicates if there are more results.
@@ -557,13 +533,11 @@ next_page: string
 
 Token to provide in as `page` in the subsequent request to retrieve the next page of data.
 
-formatdate-time
-
 #### AdminCost Report
 
 ##### [Get Cost Report](/docs/en/api/admin/cost_report/retrieve)
 
-get/v1/organizations/cost_report
+GET/v1/organizations/cost_report
 
 ##### ModelsExpand Collapse 
 
@@ -575,7 +549,7 @@ ending_at: string
 
 End of the time bucket (exclusive) in RFC 3339 format.
 
-results: array of object { amount, context_window, cost_type, 7 more }
+results: array of object { amount, context_window, cost_type, 8 more }
 
 List of cost items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
 
@@ -631,6 +605,16 @@ Accepts one of the following:
 
 "batch"
 
+speed: "standard" or "fast"
+
+Speed used (research preview). `null` if not grouping by speed, or for non-token costs. Only returned when the `fast-mode-2026-02-01` beta header is provided.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
 token_type: "uncached_input_tokens" or "output_tokens" or "cache_read_input_tokens" or 2 more
 
 Type of token. `null` if not grouping by description or for non-token costs.
@@ -662,8 +646,6 @@ Indicates if there are more results.
 next_page: string
 
 Token to provide in as `page` in the subsequent request to retrieve the next page of data.
-
-formatdate-time
 
 [](/docs)
 

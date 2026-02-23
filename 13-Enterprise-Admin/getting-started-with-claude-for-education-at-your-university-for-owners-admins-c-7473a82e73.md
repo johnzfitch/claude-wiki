@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-08T20:51:41Z"
+fetched_at: "2026-02-23T00:45:15Z"
 source_url: "https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins"
 title: "Getting Started with Claude for Education at Your University (for Owners/Admins) | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Getting Started with Claude for Education at Your University (for Owners/Admins)
 
 # Getting Started with Claude for Education at Your University (for Owners/Admins)
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -73,7 +73,7 @@ When enforcing SSO on your Education account, there are two distinct categories 
 
     - These users will maintain access to their existing Free/Pro/Team accounts
 
-    - They will have the ability to toggle between the Education account and their previous accounts by clicking the profile icon with their initials in the bottom left corner  
+    - They will have the ability to toggle between the Education account and their previous accounts by clicking the profile icon with their initials in the bottom left corner\
       ​
 
 2.  Users with existing Free/Pro/Team accounts who are NOT added to your SSO application
@@ -136,21 +136,21 @@ Visit our [Privacy Center](https://privacy.claude.com/en/collections/10663361-co
 
 Related Articles
 
+[](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
+
+Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
+
 [](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
 
 FAQs on Using Claude for Education at Your University
 
-[](https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account)
+[](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)
 
-Who owns and manages the data of my Claude for Education account?
+Set up single sign-on (SSO)
 
-[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
+[](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)
 
-Setting up single sign-on (SSO)
-
-[](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
-
-Setting up JIT or SCIM provisioning
+Set up JIT or SCIM provisioning
 
 [](https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp)
 

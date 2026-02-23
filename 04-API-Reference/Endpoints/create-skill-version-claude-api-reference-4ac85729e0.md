@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:44Z"
+fetched_at: "2026-02-22T13:32:19Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions/create"
 title: "Create Skill Version - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # Create Skill Version
 
-post/v1/skills/{skill_id}/versions
+POST/v1/skills/{skill_id}/versions
 
 Create Skill Version
 
@@ -33,7 +33,7 @@ Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 17 more
 
 Accepts one of the following:
 
@@ -74,6 +74,16 @@ Accepts one of the following:
 "model-context-window-exceeded-2025-08-26"
 
 "skills-2025-10-02"
+
+"fast-mode-2026-02-01"
+
+##### Body ParametersForm DataExpand Collapse 
+
+files: optional array of string
+
+Files to upload for the skill.
+
+All files must be in the same top-level directory and must include a SKILL.md file at the root of that directory.
 
 ##### ReturnsExpand Collapse 
 
@@ -126,7 +136,7 @@ Create Skill Version
 cURL
 
 ``` shiki
-curl https://api.anthropic.com/v1/skills/$SKILL_ID/versions \
+curl https://api.anthropic.com/v1/skills/$SKILL_ID/versions?beta=true \
     -X POST \
     -H 'anthropic-version: 2023-06-01' \
     -H 'anthropic-beta: skills-2025-10-02' \

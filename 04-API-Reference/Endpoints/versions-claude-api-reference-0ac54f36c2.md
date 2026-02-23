@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:44Z"
+fetched_at: "2026-02-22T13:32:13Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions"
 title: "Versions - Claude API Reference"
 ---
@@ -13,19 +13,19 @@ cURL
 
 ##### [Create Skill Version](/docs/en/api/beta/skills/versions/create)
 
-post/v1/skills/{skill_id}/versions
+POST/v1/skills/{skill_id}/versions
 
 ##### [List Skill Versions](/docs/en/api/beta/skills/versions/list)
 
-get/v1/skills/{skill_id}/versions
+GET/v1/skills/{skill_id}/versions
 
 ##### [Get Skill Version](/docs/en/api/beta/skills/versions/retrieve)
 
-get/v1/skills/{skill_id}/versions/{version}
+GET/v1/skills/{skill_id}/versions/{version}
 
 ##### [Delete Skill Version](/docs/en/api/beta/skills/versions/delete)
 
-delete/v1/skills/{skill_id}/versions/{version}
+DELETE/v1/skills/{skill_id}/versions/{version}
 
 [](/docs)
 

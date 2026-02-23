@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T20:51:37Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
 title: "What Certifications has Anthropic obtained? | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ What Certifications has Anthropic obtained?
 
 # What Certifications has Anthropic obtained?
 
-Updated yesterday
+Updated this week
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
@@ -53,13 +53,13 @@ Related Articles
 
 Business Associate Agreements (BAA) for Commercial Customers
 
+[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
+
+What is the Enterprise plan?
+
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
-
-[](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide)
-
-Microsoft 365 Connector: Security Guide
 
 [](https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy)
 

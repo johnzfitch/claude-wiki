@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:36Z"
+fetched_at: "2026-02-22T13:12:55Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/streaming-vs-single-mode"
 title: "Streaming Input - Claude API Docs"
 ---
@@ -74,7 +74,7 @@ TypeScript
 
 ``` shiki
 import { query } from "@anthropic-ai/claude-agent-sdk";
-import { readFileSync } from "fs";
+import { readFile } from "fs/promises";
 
 async function* generateMessages() {
   // First message
@@ -85,10 +85,10 @@ async function* generateMessages() {
       content: "Analyze this codebase for security issues"
     }
   };
-  
+
   // Wait for conditions or user input
   await new Promise(resolve => setTimeout(resolve, 2000));
-  
+
   // Follow-up with image
   yield {
     type: "user" as const,
@@ -104,7 +104,7 @@ async function* generateMessages() {
           source: {
             type: "base64",
             media_type: "image/png",
-            data: readFileSync("diagram.png", "base64")
+            data: await readFile("diagram.png", "base64")
           }
         }
       ]

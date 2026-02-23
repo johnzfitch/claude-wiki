@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:32Z"
+fetched_at: "2026-02-23T00:45:22Z"
 source_url: "https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude"
 title: "Using the Blackbaud Connector in Claude | Claude Help Center"
 ---
@@ -203,7 +203,7 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
+Using the Synapse.org connector in Claude
 
 [](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
 
@@ -219,7 +219,7 @@ Using the Candid Connector in Claude
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:04Z"
+fetched_at: "2026-02-22T13:17:34Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/data-residency"
 title: "Data residency - Claude API Docs"
 ---

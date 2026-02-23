@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-23T00:45:19Z"
 source_url: "https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account"
 title: "How can I delete my Claude account? | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Table of contents
 
 Once you are logged in, click your initials or name in the lower left corner and select "Settings." Navigate to [Settings \> Account](https://claude.ai/settings/account).
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1584789382/b373749efe4074ea9ca4421605e1/deleteaccount.png?expires=1770722100&signature=881af750ce461692809f79a4a39a89bf907f78c57114de37817cee1d83ec653f&req=dSUvEs52lIJXW%2FMW1HO4zaPUaNCUEeMyDiESKU2h1%2FToPYE6RX1it8hRabxl%0AjGOeuJWBFMRXBPQkuzw%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1584789382/b373749efe4074ea9ca4421605e1/deleteaccount.png?expires=1771809300&signature=abe050186e8c473ebdba9eca22c2f81c25e162d431d395da981b4a53aab455c9&req=dSUvEs52lIJXW%2FMW1HO4zaPUaNGbE%2BgwDiESKU2h1%2FQe2QuvjCf1RYvfwT9y%0Ar7igh524KzgwRAAl52o%3D%0A)
 
 ## Considerations for paid Claude accounts
 
@@ -61,7 +61,7 @@ If you have multiple accounts associated with the same email address, you'll nee
 
 There are some scenarios where you will need to [contact our team](https://support.claude.com/en/articles/9015913-how-to-get-support) to delete your account. If this is the case, it will be noted in your account:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1584796811/331afc5dc61eec6f72786155b782/Screenshot+2025-06-23+at+1_54_23%E2%80%AFPM.png?expires=1770722100&signature=b9e4591bae028f27e5683847f326babc5c519310f8c82ed6cf027eea7832f9d1&req=dSUvEs53m4leWPMW1HO4zXW0pBUMGYhaVOsMorzl%2B%2FTRQ4X6boM7vyVHGyJr%0A0It6hOL41H5HZW707YU%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1584796811/331afc5dc61eec6f72786155b782/Screenshot+2025-06-23+at+1_54_23%E2%80%AFPM.png?expires=1771809300&signature=656571bcd6c5ea218791a25097de190edeb74756c52fd4a56eee90700c8b3e87&req=dSUvEs53m4leWPMW1HO4zXW0pBQDG4NYVOsMorzl%2B%2FT0COXSs%2F0S3f%2FjjN3O%0AsW%2FlYiiG94vxYA1e1RE%3D%0A)
 
 ------------------------------------------------------------------------
 
@@ -83,9 +83,9 @@ How can I delete my Claude Console account?
 
 Who owns and manages the data of my Claude for Education account?
 
-[](https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription)
+[](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)
 
-How to gift a Claude subscription
+Using Claude’s chat search and memory to build on previous context
 
 Did this answer your question?
 

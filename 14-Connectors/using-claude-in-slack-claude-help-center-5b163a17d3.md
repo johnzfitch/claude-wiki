@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:28Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 title: "Using Claude in Slack | Claude Help Center"
 ---
@@ -34,6 +34,8 @@ Table of contents
 [](#h_adda66b697)
 
 [](#h_201435bbe2)
+
+[](#h_0110325ad0)
 
 [](#h_39132eeadb)
 
@@ -71,6 +73,8 @@ Table of contents
 
 [](#h_201435bbe2)
 
+[](#h_0110325ad0)
+
 [](#h_39132eeadb)
 
 [](#h_a477f66c87)
@@ -107,7 +111,7 @@ Claude in Slack gives you AI assistance right where your team collaborates. This
 
 6.  Access previous conversations by clicking the clock icon.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755150661/a1a13c73bda421f6ee906650cfc9/22907223-e523-4a93-a6d2-3199a8368991?expires=1770722100&signature=f90c4881619553a675c752a611cf8e9f3e6b3494fd607944a63486ef8ece8f2a&req=dSciE8h7nYdZWPMW1HO4zXK25RFJ6jMfVfOC%2FRy97LU0AM2u9NPdYr4nT8gZ%0AwEWJE%2FnFEMR8y6BOsFE%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755150661/a1a13c73bda421f6ee906650cfc9/22907223-e523-4a93-a6d2-3199a8368991?expires=1771809300&signature=90aeb2fa256bfb7bfd5a65bbbc8804fc9577a0c36a83c92fe59ec2d9c4cb04ca&req=dSciE8h7nYdZWPMW1HO4zXK25RBG6DgdVfOC%2FRy97LXCcwdKfCkf4%2F9%2Fztee%0AyhSKqErkQgQXo2%2FTY9w%3D%0A)
 
 ## Mention @Claude in a thread or channel
 
@@ -171,6 +175,8 @@ To use Claude Code in Slack:
 
 Claude automatically chooses which repository to run the task on based on the repositories you've authenticated to Claude Code on the web.
 
+------------------------------------------------------------------------
+
 ## Features and capabilities
 
 ### Available features
@@ -207,11 +213,25 @@ The following features are not available when using Claude in Slack:
 
 - Creating new integration connections (you can only use integrations you’ve already connected in your Claude settings)
 
+------------------------------------------------------------------------
+
+## Using integrations across multiple Slack workspaces
+
+If you use Claude across more than one Slack workspace, it's important to understand that your integrations (like the Slack connector) are tied to your **Claude account**, not to a specific Slack workspace.\
+​\
+​**To avoid unexpected results:**
+
+- Disconnect the Slack connector from your Claude account before using Claude in a different workspace (**Settings \> Connectors \> Slack \> Disconnect**), then reconnect it when needed.
+
+- If you regularly use Claude in simultaneous workspaces, consider using separate Claude accounts, each configured for its respective workspace.
+
+------------------------------------------------------------------------
+
 ## Common use cases
 
 ### Code assistance
 
-Share code snippets with Claude to get implementation suggestions, or help debugging errors, optimizing functions, and understanding legacy code. For more complex coding tasks, Claude can automatically route your request to Claude Code on the web (see [Route coding tasks to Claude Code](#h_adda66b697)).
+Share code snippets with Claude to get implementation suggestions, or help debugging errors, optimizing functions, and understanding legacy code. For more complex coding tasks, Claude can automatically route your request to Claude Code on the web (see **[Route coding tasks to Claude Code](#h_adda66b697)**).
 
 ### Content creation
 
@@ -219,7 +239,7 @@ Transform team discussions into formalized documentation, draft emails and propo
 
 ### Document analysis
 
-Upload files directly to Claude for data analysis, key point extraction/summarization, and translation. Supported file types include: PDF, TXT, DOC, DOCX, images (PNG, JPG), CSV, and [more](https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude).
+Upload files directly to Claude for data analysis, key point extraction/summarization, and translation. Supported file types include: PDF, TXT, DOC, DOCX, images (PNG, JPG), CSV, and more. For more information, see **[Uploading files to Claude](https://support.claude.com/en/articles/8241126-uploading-files-to-claude)**.
 
 ### Meeting preparation
 
@@ -232,6 +252,8 @@ Granting new team members access to channel history and shared documents in Slac
 ### Quick research
 
 Get instant answers during team discussions. Ask Claude about industry trends, technical concepts, or company information while staying in your conversation.
+
+------------------------------------------------------------------------
 
 ## Best practices
 
@@ -273,11 +295,13 @@ Get instant answers during team discussions. Ask Claude about industry trends, t
 
 Claude works in direct messages and threads where you explicitly mention @Claude. You control when Claude participates in conversations and can review all responses before sharing them with your team.
 
+------------------------------------------------------------------------
+
 ## Troubleshooting
 
 ### "Usage limit reached"
 
-This message appears when you've hit your Claude account usage limits. Try again later or consider [upgrading your Claude plan](https://claude.ai/upgrade).
+This message appears when you've hit your Claude account usage limits. Try again later or consider **[upgrading your Claude plan](https://claude.ai/upgrade)**.
 
 ### "I'm unable to generate a response at this time"
 
@@ -289,7 +313,7 @@ This generic error message can appear for various reasons:
 
 - Network connectivity problems
 
-Try sending your message again. If the problem persists, you can [contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Try sending your message again. If the problem persists, you can **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ### "I don't have access to our previous conversation history"
 
@@ -307,6 +331,10 @@ Start a new conversation to continue.
 
 Related Articles
 
+[](https://support.claude.com/en/articles/11088861-using-research-on-claude)
+
+Using Research on Claude
+
 [](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
 
 FAQs on Using Claude for Education at Your University
@@ -315,17 +343,13 @@ FAQs on Using Claude for Education at Your University
 
 Getting started with Claude in Slack
 
-[](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)
-
-Create and edit files with Claude
-
 [](https://support.claude.com/en/articles/12293051-using-claude-in-xcode)
 
 Using Claude in Xcode
 
-[](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
+[](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
-Using Interactive Connectors in Claude
+Claude Code FAQ
 
 Did this answer your question?
 

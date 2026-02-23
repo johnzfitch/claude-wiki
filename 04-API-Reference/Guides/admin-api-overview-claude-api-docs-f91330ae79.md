@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:03Z"
+fetched_at: "2026-02-22T13:17:28Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/administration-api"
 title: "Admin API overview - Claude API Docs"
 ---
@@ -44,7 +44,7 @@ This is useful for:
 
 Organization roles and permissions
 
-There are five organization-level roles. See more details [here](https://support.claude.com/en/articles/10186004-api-console-roles-and-permissions).
+There are five organization-level roles. See more details in the [API Console roles and permissions](https://support.claude.com/en/articles/10186004-api-console-roles-and-permissions) article.
 
 | Role | Permissions |
 |----|----|
@@ -117,29 +117,7 @@ curl --request DELETE "https://api.anthropic.com/v1/organizations/invites/{invit
 
 Workspaces
 
-For a comprehensive guide to workspaces, see [Workspaces](/docs/en/build-with-claude/workspaces).
-
-Create and manage [workspaces](/docs/en/api/admin-api/workspaces/get-workspace) ([console](/settings/workspaces)) to organize your resources:
-
-Shell
-
-``` shiki
-# Create workspace
-curl --request POST "https://api.anthropic.com/v1/organizations/workspaces" \
-  --header "anthropic-version: 2023-06-01" \
-  --header "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  --data '{"name": "Production"}'
-
-# List workspaces
-curl "https://api.anthropic.com/v1/organizations/workspaces?limit=10&include_archived=false" \
-  --header "anthropic-version: 2023-06-01" \
-  --header "x-api-key: $ANTHROPIC_ADMIN_KEY"
-
-# Archive workspace
-curl --request POST "https://api.anthropic.com/v1/organizations/workspaces/{workspace_id}/archive" \
-  --header "anthropic-version: 2023-06-01" \
-  --header "x-api-key: $ANTHROPIC_ADMIN_KEY"
-```
+For a comprehensive guide to workspaces, including Console and API examples, see [Workspaces](/docs/en/build-with-claude/workspaces).
 
 ### 
 
@@ -230,24 +208,15 @@ For complete parameter details and response schemas, see the [Organization Info 
 
 ## 
 
-Accessing usage and cost reports
+Usage and cost reports
 
-To access usage and cost reports for your organization, use the Usage and Cost API endpoints:
-
-- The [**Usage endpoint**](/docs/en/build-with-claude/usage-cost-api#usage-api) (`/v1/organizations/usage_report/messages`) provides detailed usage data, including token counts and request metrics, grouped by various dimensions such as workspace, user, and model.
-- The [**Cost endpoint**](/docs/en/build-with-claude/usage-cost-api#cost-api) (`/v1/organizations/cost_report`) provides cost data associated with your organization's usage, allowing you to track expenses and allocate costs by workspace or description.
-
-These endpoints provide detailed insights into your organization's usage and associated costs.
+Track your organization's usage and costs with the [Usage and Cost API](/docs/en/build-with-claude/usage-cost-api).
 
 ## 
 
-Accessing Claude Code analytics
+Claude Code analytics
 
-For organizations using Claude Code, the [**Claude Code Analytics API**](/docs/en/build-with-claude/claude-code-analytics-api) provides detailed productivity metrics and usage insights:
-
-- The [**Claude Code Analytics endpoint**](/docs/en/build-with-claude/claude-code-analytics-api) (`/v1/organizations/usage_report/claude_code`) provides daily aggregated metrics for Claude Code usage, including sessions, lines of code, commits, pull requests, tool usage statistics, and cost data broken down by user and model.
-
-This API enables you to track developer productivity, analyze Claude Code adoption, and build custom dashboards for your organization.
+Monitor developer productivity and Claude Code adoption with the [Claude Code Analytics API](/docs/en/build-with-claude/claude-code-analytics-api).
 
 ## 
 
@@ -275,17 +244,7 @@ FAQ
 
 ### How long do organization invites last?
 
-### Are there limits on workspaces?
-
-### What's the Default Workspace?
-
-### How do organization roles affect Workspace access?
-
-### Which roles can be assigned in workspaces?
-
-### Can organization admin or billing members' workspace roles be changed?
-
-### What happens to workspace access when organization roles change?
+For workspace-specific questions, see the [Workspaces FAQ](/docs/en/build-with-claude/workspaces#faq).
 
 Was this page helpful?
 
@@ -309,9 +268,9 @@ Was this page helpful?
 
 - [Accessing organization info](#accessing-organization-info)
 
-- [Accessing usage and cost reports](#accessing-usage-and-cost-reports)
+- [Usage and cost reports](#usage-and-cost-reports)
 
-- [Accessing Claude Code analytics](#accessing-claude-code-analytics)
+- [Claude Code analytics](#claude-code-analytics)
 
 - [Best practices](#best-practices)
 

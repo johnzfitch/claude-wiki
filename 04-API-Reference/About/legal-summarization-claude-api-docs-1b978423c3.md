@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:22Z"
+fetched_at: "2026-02-22T13:20:31Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization"
 title: "Legal summarization - Claude API Docs"
 ---
@@ -47,12 +47,12 @@ For instance, when summarizing a sublease agreement, you might wish to extract t
 
 ``` shiki
 details_to_extract = [
-    'Parties involved (sublessor, sublessee, and original lessor)',
-    'Property details (address, description, and permitted use)', 
-    'Term and rent (start date, end date, monthly rent, and security deposit)',
-    'Responsibilities (utilities, maintenance, and repairs)',
-    'Consent and notices (landlord\'s consent, and notice requirements)',
-    'Special provisions (furniture, parking, and subletting restrictions)'
+    "Parties involved (sublessor, sublessee, and original lessor)",
+    "Property details (address, description, and permitted use)",
+    "Term and rent (start date, end date, monthly rent, and security deposit)",
+    "Responsibilities (utilities, maintenance, and repairs)",
+    "Consent and notices (landlord's consent, and notice requirements)",
+    "Special provisions (furniture, parking, and subletting restrictions)",
 ]
 ```
 
@@ -74,7 +74,7 @@ Evaluating the quality of summaries is a notoriously challenging task. Unlike ma
 
 ### Bias and fairness
 
-See our guide on [establishing success criteria](/docs/en/test-and-evaluate/define-success) for more information.
+See our guide on [establishing success criteria](/docs/en/test-and-evaluate/develop-tests) for more information.
 
 ------------------------------------------------------------------------
 
@@ -131,15 +131,16 @@ import re
 import pypdf
 import requests
 
+
 def get_llm_text(pdf_file):
     reader = pypdf.PdfReader(pdf_file)
     text = "\n".join([page.extract_text() for page in reader.pages])
 
     # Remove extra whitespace
-    text = re.sub(r'\s+', ' ', text) 
+    text = re.sub(r"\s+", " ", text)
 
     # Remove page numbers
-    text = re.sub(r'\n\s*\d+\s*\n', '\n', text) 
+    text = re.sub(r"\n\s*\d+\s*\n", "\n", text)
 
     return text
 
@@ -154,8 +155,8 @@ response = requests.get(url)
 # Load the PDF from memory
 pdf_file = BytesIO(response.content)
 
-document_text = get_llm_text(pdf_file) 
-print(document_text[:50000]) 
+document_text = get_llm_text(pdf_file)
+print(document_text[:50000])
 ```
 
 In this example, we first download a pdf of a sample sublease agreement used in the [summarization cookbook](https://platform.claude.com/cookbook/capabilities-summarization-guide). This agreement was sourced from a publicly available sublease agreement from the [sec.gov website](https://www.sec.gov/Archives/edgar/data/1045425/000119312507044370/dex1032.htm).
@@ -176,11 +177,13 @@ import anthropic
 # Initialize the Anthropic client
 client = anthropic.Anthropic()
 
-def summarize_document(text, details_to_extract, model="claude-opus-4-6", max_tokens=1000):
 
+def summarize_document(
+    text, details_to_extract, model="claude-opus-4-6", max_tokens=1000
+):
     # Format the details to extract to be placed within the prompt's context
-    details_to_extract_str = '\n'.join(details_to_extract)
-    
+    details_to_extract_str = "\n".join(details_to_extract)
+
     # Prompt the model to summarize the sublease agreement
     prompt = f"""Summarize the following sublease agreement. Focus on these key aspects:
 
@@ -192,7 +195,7 @@ def summarize_document(text, details_to_extract, model="claude-opus-4-6", max_to
     - Sublessor: [Name]
     // Add more details as needed
     </parties involved>
-    
+
     If any information is not explicitly stated in the document, note it as "Not specified". Do not preamble.
 
     Sublease agreement text:
@@ -205,12 +208,16 @@ def summarize_document(text, details_to_extract, model="claude-opus-4-6", max_to
         system="You are a legal analyst specializing in real estate law, known for highly accurate and detailed summaries of sublease agreements.",
         messages=[
             {"role": "user", "content": prompt},
-            {"role": "assistant", "content": "Here is the summary of the sublease agreement: <summary>"}
+            {
+                "role": "assistant",
+                "content": "Here is the summary of the sublease agreement: <summary>",
+            },
         ],
-        stop_sequences=["</summary>"]
+        stop_sequences=["</summary>"],
     )
 
     return response.content[0].text
+
 
 sublease_summary = summarize_document(document_text, details_to_extract)
 print(sublease_summary)
@@ -272,20 +279,28 @@ import anthropic
 # Initialize the Anthropic client
 client = anthropic.Anthropic()
 
+
 def chunk_text(text, chunk_size=20000):
-    return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
+    return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
 
-def summarize_long_document(text, details_to_extract, model="claude-opus-4-6", max_tokens=1000):
 
+def summarize_long_document(
+    text, details_to_extract, model="claude-opus-4-6", max_tokens=1000
+):
     # Format the details to extract to be placed within the prompt's context
-    details_to_extract_str = '\n'.join(details_to_extract)
+    details_to_extract_str = "\n".join(details_to_extract)
 
     # Iterate over chunks and summarize each one
-    chunk_summaries = [summarize_document(chunk, details_to_extract, model=model, max_tokens=max_tokens) for chunk in chunk_text(text)]
-    
+    chunk_summaries = [
+        summarize_document(
+            chunk, details_to_extract, model=model, max_tokens=max_tokens
+        )
+        for chunk in chunk_text(text)
+    ]
+
     final_summary_prompt = f"""
-    
-    You are looking at the chunked summaries of multiple documents that are all related. 
+
+    You are looking at the chunked summaries of multiple documents that are all related.
     Combine the following summaries of the document from different truthful sources into a coherent overall summary:
 
     <chunked_summaries>
@@ -301,7 +316,7 @@ def summarize_long_document(text, details_to_extract, model="claude-opus-4-6", m
     - Sublessor: [Name]
     // Add more details as needed
     </parties involved>
-    
+
     If any information is not explicitly stated in the document, note it as "Not specified". Do not preamble.
     """
 
@@ -310,14 +325,17 @@ def summarize_long_document(text, details_to_extract, model="claude-opus-4-6", m
         max_tokens=max_tokens,
         system="You are a legal expert that summarizes notes on one document.",
         messages=[
-            {"role": "user",  "content": final_summary_prompt},
-            {"role": "assistant", "content": "Here is the summary of the sublease agreement: <summary>"}
-
+            {"role": "user", "content": final_summary_prompt},
+            {
+                "role": "assistant",
+                "content": "Here is the summary of the sublease agreement: <summary>",
+            },
         ],
-        stop_sequences=["</summary>"]
+        stop_sequences=["</summary>"],
     )
-    
+
     return response.content[0].text
+
 
 long_summary = summarize_long_document(document_text, details_to_extract)
 print(long_summary)

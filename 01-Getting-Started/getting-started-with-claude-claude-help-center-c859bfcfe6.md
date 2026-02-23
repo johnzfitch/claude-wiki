@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-08T20:52:07Z"
+fetched_at: "2026-02-23T00:45:19Z"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 title: "Getting started with Claude | Claude Help Center"
 ---
@@ -51,7 +51,7 @@ Getting started with Claude
 
 # Getting started with Claude
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -109,7 +109,7 @@ You use **prompts** to communicate with Claude. The best approach is to speak to
 
 Type your prompt into the chat interface and click the submit button to start a conversation with Claude. You can click the "+" button in the lower left or type "/" to view additional options and commands:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1916208578/2cf2ea52f1f884084b57983a8805/image.png?expires=1770585300&signature=59316f344a883d72d7854425a594e041e7aa2606cc218a1837df17bcaa28e6aa&req=dSkmEMt%2BlYRYUfMW1HO4zV2J4i%2FPvIKC9crMELaMZPzM7uW5dB4lCQX7FO2w%0AjzLoVP%2F53VxJN5XkURY%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1916208578/2cf2ea52f1f884084b57983a8805/image.png?expires=1771809300&signature=86319eedfef0f61b1499507a270840659291737b8d02f7897f9e131cd030b4e6&req=dSkmEMt%2BlYRYUfMW1HO4zV2J4i7CtI6C9crMELaMZPzTgKon7GKC5ygvsQhT%0AZGGKJm1QIRv7JYdp2RQ%3D%0A)
 
 ------------------------------------------------------------------------
 
@@ -169,13 +169,13 @@ Related Articles
 
 What is the Pro plan?
 
+[](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)
+
+Usage limit best practices
+
 [](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)
 
 Understanding usage and length limits
-
-[](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
-
-Getting Started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 

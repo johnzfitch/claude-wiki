@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-08T20:52:00Z"
+fetched_at: "2026-02-23T00:45:29Z"
 source_url: "https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation"
 title: "How to create a skill with Claude through conversation | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ How to create a skill with Claude through conversation
 
 # How to create a skill with Claude through conversation
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -53,14 +53,14 @@ Table of contents
 
 With Skills, you are able to teach Claude specific workflows, tools, and processes. By creating a skill, you're giving Claude a playbook it can reference whenever you need a particular type of help—whether that's generating reports in your company's format, cleaning and using data the way you normally do, or pulling and analyzing CRM data your way.
 
-  
+\
 There are two paths for creating skills. You can create skills by writing the files yourself for full control over structure and implementation. See *[How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills) and [Skills authoring best practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices)* for that approach.
 
-  
+\
 This guide focuses on the other path: creating skills through conversation with Claude. You describe your process naturally, and Claude handles the formatting and structure. This approach makes Skills accessible to anyone, regardless of technical background.
 
-  
-​*New to skills? See [What are Skills](https://support.claude.com/en/articles/12512176-what-are-skills) and [Skills user guide](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)* to get started learning about Skills.  
+\
+​*New to skills? See [What are Skills](https://support.claude.com/en/articles/12512176-what-are-skills) and [Skills user guide](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)* to get started learning about Skills.\
 ​
 
 # An error occurred.
@@ -73,31 +73,31 @@ Creating a skill with Claude means having a conversation where you explain your 
 
 ### 1. Start a conversation
 
-Open a new chat and say something like "I want to create a skill for quarterly business reviews" or "I need a skill that knows how to analyze customer feedback."  
+Open a new chat and say something like "I want to create a skill for quarterly business reviews" or "I need a skill that knows how to analyze customer feedback."\
 ​
 
-If you have materials that show your approach—templates you use, examples of work you're proud of, brand guidelines you follow, data files you reference—upload them. You can also mention any connected tools Claude should use. If you are unsure of what else to include, ask Claude for guidance.  
+If you have materials that show your approach—templates you use, examples of work you're proud of, brand guidelines you follow, data files you reference—upload them. You can also mention any connected tools Claude should use. If you are unsure of what else to include, ask Claude for guidance.\
 ​
 
 ### 2. Answer Claude's questions
 
-Claude will ask about your process. Provide enough detail that someone capable but unfamiliar could follow your approach.  
+Claude will ask about your process. Provide enough detail that someone capable but unfamiliar could follow your approach.\
 ​
 
-You'll get questions about concrete usage ("Can you give examples of when you'd use this skill?") or about your process ("What makes output good for this type of work?").  
+You'll get questions about concrete usage ("Can you give examples of when you'd use this skill?") or about your process ("What makes output good for this type of work?").\
 ​
 
 ### 3. Claude builds the Skill
 
-In Claude's thinking, you will see it read a *skill-creator* skill to follow best practices in creating a properly structured skill*.* Claude will create a SKILL.md file (the instruction file every skill needs), organize any materials you've provided, and generate code for operations you've described that need to happen consistently. Claude then packages everything into a skill file.  
+In Claude's thinking, you will see it read a *skill-creator* skill to follow best practices in creating a properly structured skill*.* Claude will create a SKILL.md file (the instruction file every skill needs), organize any materials you've provided, and generate code for operations you've described that need to happen consistently. Claude then packages everything into a skill file.\
 ​
 
 ### 4. Activate and test the skill
 
-Save the the skill file that Claude creates. In [Settings \> Capabilities \> Skills](https://claude.ai/settings/capabilities), you can view your library of skills and turn them on or off as needed.  
+Save the the skill file that Claude creates. In [Settings \> Capabilities \> Skills](https://claude.ai/settings/capabilities), you can view your library of skills and turn them on or off as needed.\
 ​
 
-Try using your skill by describing a task the skill should address. See if Claude recognizes the situation (you'll see "Using \[skill name\]" in Claude's thinking) and whether it produces the expected outcome. If something's off, ask Claude to update the skill with your desired changes. Repeat this process until your skill works effectively.  
+Try using your skill by describing a task the skill should address. See if Claude recognizes the situation (you'll see "Using \[skill name\]" in Claude's thinking) and whether it produces the expected outcome. If something's off, ask Claude to update the skill with your desired changes. Repeat this process until your skill works effectively.\
 ​
 
 ## **Skills you can build**
@@ -120,12 +120,12 @@ You can build skills for a range of tasks. Skills can capture how your organizat
 
 ## **What you can include within a skill**
 
-Skills bundle three types of content together—instructions, reference materials, and scripts. Knowing these components helps you articulate what you need when creating a skill with Claude.  
+Skills bundle three types of content together—instructions, reference materials, and scripts. Knowing these components helps you articulate what you need when creating a skill with Claude.\
 ​
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1781727755/40d01224cb2a1653189d5211e731/380d5eae-c159-4643-80e3-ce1be19b6d57?expires=1770585300&signature=c33115688db09748932d3749684da3cc36e4771d2f0d6c2a1e1d8698df5fd971&req=dScvF858moZaXPMW1HO4zRjaA46bhQief1HwTII0D0HemHy51j5xd6s9qYoh%0ArshnrrDN5Qlm0t%2FLL4U%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1781727755/40d01224cb2a1653189d5211e731/380d5eae-c159-4643-80e3-ce1be19b6d57?expires=1771809300&signature=8de4e4773d66ed3cdc64f83e266600502155461de0e223c6304d5e766ad3189d&req=dScvF858moZaXPMW1HO4zRjaA4%2BWjQSef1HwTII0D0EGU24RR7FdUkpMQW9x%0AHSw2jyatt8ZcPX1vSMo%3D%0A)
 
-  
+\
 ​**Instructions —** Every skill needs a SKILL.md file that explains your process. When asking Claude to create a skill, describe your process for Claude to structure it into proper instructions. At the top of your [SKILL.md](http://skill.md) file, will be the skill's name and what it does. Claude scans this information first to decide whether or not to load and use the full skill during your conversations. Below that are clear instructions on how to do the task.
 
 **Reference materials and assets —** Sometimes instructions alone aren't enough and Claude needs actual files to reference or use in the output. To include these, upload any relevant files or information when creating your Skill. Claude determines whether to embed guidance in the SKILL.md instructions or bundle it as a reference file.

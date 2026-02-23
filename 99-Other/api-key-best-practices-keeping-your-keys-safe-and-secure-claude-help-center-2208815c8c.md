@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:40Z"
+fetched_at: "2026-02-16T21:12:52Z"
 source_url: "https://support.claude.com/en/articles/9767949-api-key-best-practices-keeping-your-keys-safe-and-secure"
 title: "API Key Best Practices: Keeping Your Keys Safe and Secure | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ API Key Best Practices: Keeping Your Keys Safe and Secure
 
 # API Key Best Practices: Keeping Your Keys Safe and Secure
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -194,9 +194,9 @@ Claude Code FAQ
 
 Claude Code on the web
 
-[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
+[](https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions)
 
-Building Desktop Extensions with MCPB
+Enforce network-level access control with Tenant Restrictions
 
 Did this answer your question?
 

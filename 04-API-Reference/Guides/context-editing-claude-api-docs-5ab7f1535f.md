@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:09Z"
+fetched_at: "2026-02-22T13:11:15Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/context-editing"
 title: "Context editing - Claude API Docs"
 ---
@@ -36,6 +36,8 @@ Server-side strategies
 Context editing is currently in beta with support for tool result clearing and thinking block clearing. To enable it, use the beta header `context-management-2025-06-27` in your API requests.
 
 Share feedback on this feature through the [feedback form](https://forms.gle/YXC2EKGMhjN1c4L88).
+
+This feature is in beta and is **not** covered by [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) arrangements. Beta features are excluded from ZDR.
 
 ### 
 
@@ -83,6 +85,7 @@ Context editing is available on:
 - Claude Opus 4.5 (`claude-opus-4-5-20251101`)
 - Claude Opus 4.1 (`claude-opus-4-1-20250805`)
 - Claude Opus 4 (`claude-opus-4-20250514`)
+- Claude Sonnet 4.6 (`claude-sonnet-4-6`)
 - Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`)
 - Claude Sonnet 4 (`claude-sonnet-4-20250514`)
 - Claude Haiku 4.5 (`claude-haiku-4-5-20251001`)
@@ -262,34 +265,22 @@ response = client.beta.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     messages=[...],
-    thinking={
-        "type": "enabled",
-        "budget_tokens": 10000
-    },
+    thinking={"type": "enabled", "budget_tokens": 10000},
     tools=[...],
     betas=["context-management-2025-06-27"],
     context_management={
         "edits": [
             {
                 "type": "clear_thinking_20251015",
-                "keep": {
-                    "type": "thinking_turns",
-                    "value": 2
-                }
+                "keep": {"type": "thinking_turns", "value": 2},
             },
             {
                 "type": "clear_tool_uses_20250919",
-                "trigger": {
-                    "type": "input_tokens",
-                    "value": 50000
-                },
-                "keep": {
-                    "type": "tool_uses",
-                    "value": 5
-                }
-            }
+                "trigger": {"type": "input_tokens", "value": 50000},
+                "keep": {"type": "tool_uses", "value": 5},
+            },
         ]
-    }
+    },
 )
 ```
 
@@ -437,18 +428,11 @@ response = client.beta.messages.create(
     max_tokens=4096,
     messages=[...],
     tools=[
-        {
-            "type": "memory_20250818",
-            "name": "memory"
-        },
+        {"type": "memory_20250818", "name": "memory"},
         # Your other tools
     ],
     betas=["context-management-2025-06-27"],
-    context_management={
-        "edits": [
-            {"type": "clear_tool_uses_20250919"}
-        ]
-    }
+    context_management={"edits": [{"type": "clear_tool_uses_20250919"}]},
 )
 ```
 
@@ -493,13 +477,10 @@ runner = client.beta.messages.tool_runner(
     messages=[
         {
             "role": "user",
-            "content": "Analyze all the files in this directory and write a summary report."
+            "content": "Analyze all the files in this directory and write a summary report.",
         }
     ],
-    compaction_control={
-        "enabled": True,
-        "context_token_threshold": 100000
-    }
+    compaction_control={"enabled": True, "context_token_threshold": 100000},
 )
 
 for message in runner:
@@ -564,16 +545,10 @@ Python
 
 ``` shiki
 # More frequent compaction for memory-constrained scenarios
-compaction_control={
-    "enabled": True,
-    "context_token_threshold": 50000
-}
+compaction_control = {"enabled": True, "context_token_threshold": 50000}
 
 # Less frequent compaction when you need more context
-compaction_control={
-    "enabled": True,
-    "context_token_threshold": 150000
-}
+compaction_control = {"enabled": True, "context_token_threshold": 150000}
 ```
 
 #### 
@@ -585,10 +560,10 @@ You can use a faster or cheaper model for generating summaries:
 Python
 
 ``` shiki
-compaction_control={
+compaction_control = {
     "enabled": True,
     "context_token_threshold": 100000,
-    "model": "claude-haiku-4-5"
+    "model": "claude-haiku-4-5",
 }
 ```
 
@@ -601,7 +576,7 @@ You can provide a custom prompt for domain-specific needs. Your prompt should in
 Python
 
 ``` shiki
-compaction_control={
+compaction_control = {
     "enabled": True,
     "context_token_threshold": 100000,
     "summary_prompt": """Summarize the research conducted so far, including:
@@ -609,7 +584,7 @@ compaction_control={
 - Questions answered and remaining unknowns
 - Recommended next steps
 
-Wrap your summary in <summary></summary> tags."""
+Wrap your summary in <summary></summary> tags.""",
 }
 ```
 

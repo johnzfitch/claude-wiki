@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:31Z"
+fetched_at: "2026-02-16T21:12:45Z"
 source_url: "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
 title: "Using Claude in Chrome Safely | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Using Claude in Chrome Safely
 
 # Using Claude in Chrome Safely
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -143,7 +143,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 - Known pirated content sites
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#fe8b8d9b8c8d9f989b8a87be9f908a968c918e979dd09d9193).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#90e5e3f5e2e3f1f6f5e4e9d0f1fee4f8e2ffe0f9f3bef3fffd).
 
 ------------------------------------------------------------------------
 
@@ -233,7 +233,7 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 
@@ -245,7 +245,7 @@ Claude in Chrome Permissions Guide
 
 [](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Admin Controls
+Claude in Chrome admin controls
 
 [](https://support.claude.com/en/articles/13364135-using-cowork-safely)
 

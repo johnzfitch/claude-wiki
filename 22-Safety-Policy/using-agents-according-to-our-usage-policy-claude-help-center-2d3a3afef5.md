@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-10T10:49:23Z"
+fetched_at: "2026-02-23T00:45:17Z"
 source_url: "https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy"
 title: "Using Agents According to Our Usage Policy | Claude Help Center"
 ---
@@ -125,13 +125,13 @@ Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of
 
 Exceptions to our Usage Policy
 
-[](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
-
-Extra usage for Team and seat-based Enterprise plans
-
 [](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
 
 Claude Code usage analytics
+
+[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
+
+Extra usage for paid Claude plans
 
 Did this answer your question?
 

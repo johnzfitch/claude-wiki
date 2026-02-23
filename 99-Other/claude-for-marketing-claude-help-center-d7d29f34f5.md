@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:43Z"
+fetched_at: "2026-02-16T21:12:54Z"
 source_url: "https://support.claude.com/en/articles/9945697-claude-for-marketing"
 title: "Claude for Marketing | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Claude for Marketing
 
 # Claude for Marketing
 
-Updated this week
+Updated over a week ago
 
 In this video guide, we'll explore several examples of how Claude can be used by marketing teams. Before you get started, review the availability of the features demonstrated in this video:
 

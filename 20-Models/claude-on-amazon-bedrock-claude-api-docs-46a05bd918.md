@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:04:49Z"
+fetched_at: "2026-02-22T13:15:13Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock"
 title: "Claude on Amazon Bedrock - Claude API Docs"
 ---
@@ -18,6 +18,8 @@ Copy page
 Calling Claude through Bedrock slightly differs from how you would call Claude when using Anthropic's client SDK's. This guide will walk you through the process of completing an API call to Claude on Bedrock in either Python or TypeScript.
 
 Note that this guide assumes you have already signed up for an [AWS account](https://portal.aws.amazon.com/billing/signup) and configured programmatic access.
+
+The PHP SDK does not currently support Amazon Bedrock. For available SDK platform integrations, see [Client SDKs](/docs/en/api/client-sdks).
 
 ## 
 
@@ -55,6 +57,14 @@ Go
 
 Go
 
+C#
+
+C#
+
+Ruby
+
+Ruby
+
 Boto3 (Python)
 
 Boto3 (Python)
@@ -80,6 +90,7 @@ API model IDs
 | Model | Base Bedrock model ID | `global` | `us` | `eu` | `jp` | `apac` |
 |----|----|----|----|----|----|----|
 | Claude Opus 4.6 | anthropic.claude-opus-4-6-v1 | Yes | Yes | Yes | Yes | Yes |
+| Claude Sonnet 4.6 | anthropic.claude-sonnet-4-6 | Yes | Yes | Yes | Yes | No |
 | Claude Sonnet 4.5 | anthropic.claude-sonnet-4-5-20250929-v1:0 | Yes | Yes | Yes | Yes | No |
 | Claude Sonnet 4 | anthropic.claude-sonnet-4-20250514-v1:0 | Yes | Yes | Yes | No | Yes |
 | Claude Sonnet 3.7 ⚠️ | anthropic.claude-3-7-sonnet-20250219-v1:0 | No | Yes | Yes | No | Yes |
@@ -88,7 +99,7 @@ API model IDs
 | Claude Opus 4 | anthropic.claude-opus-4-20250514-v1:0 | No | Yes | No | No | No |
 | Claude Haiku 4.5 | anthropic.claude-haiku-4-5-20251001-v1:0 | Yes | Yes | Yes | No | No |
 | Claude Haiku 3.5 ⚠️ | anthropic.claude-3-5-haiku-20241022-v1:0 | No | Yes | No | No | No |
-| Claude Haiku 3 | anthropic.claude-3-haiku-20240307-v1:0 | No | Yes | Yes | No | Yes |
+| Claude Haiku 3 ⚠️ | anthropic.claude-3-haiku-20240307-v1:0 | No | Yes | Yes | No | Yes |
 
 For more information about regional vs global model IDs, see the [Global vs regional endpoints](#global-vs-regional-endpoints) section below.
 
@@ -131,12 +142,46 @@ client = AnthropicBedrock(
 message = client.messages.create(
     model="global.anthropic.claude-opus-4-6-v1",
     max_tokens=256,
-    messages=[{"role": "user", "content": "Hello, world"}]
+    messages=[{"role": "user", "content": "Hello, world"}],
 )
 print(message.content)
 ```
 
-See our [client SDKs](/docs/en/api/client-sdks) for more details, and the official Bedrock docs [here](https://docs.aws.amazon.com/bedrock/).
+See the [client SDKs](/docs/en/api/client-sdks) for more details, and the [official Bedrock documentation](https://docs.aws.amazon.com/bedrock/).
+
+### 
+
+Bearer token authentication
+
+You can authenticate with Bedrock using bearer tokens instead of AWS credentials. This is useful in corporate environments where teams need access to Bedrock without managing AWS credentials, IAM roles, or account-level permissions.
+
+Bearer token authentication is supported in the C#, Go, and Java SDKs. The Python, TypeScript, and Ruby SDKs use AWS SigV4 signing only.
+
+The simplest approach is to set the `AWS_BEARER_TOKEN_BEDROCK` environment variable, which is automatically detected by `fromEnv()` credential resolution.
+
+To provide a token programmatically:
+
+C#
+
+``` shiki
+using Anthropic.Bedrock;
+using Anthropic.Models.Messages;
+
+var client = new AnthropicBedrockClient(
+    new AnthropicBedrockApiTokenCredentials
+    {
+        BearerToken = "your-bearer-token",
+        Region = "us-east-1",
+    }
+);
+
+var response = await client.Messages.Create(new MessageCreateParams
+{
+    Model = "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    MaxTokens = 1024,
+    Messages = [new() { Role = Role.User, Content = "Hello!" }],
+});
+```
 
 ## 
 
@@ -152,7 +197,7 @@ Turning on this service does not give AWS or Anthropic any access to your conten
 
 Feature support
 
-You can find all the features currently supported on Bedrock [here](/docs/en/api/overview).
+For all currently supported features on Bedrock, see [API features overview](/docs/en/api/overview).
 
 ### 
 
@@ -225,7 +270,7 @@ client = AnthropicBedrock(aws_region="us-west-2")
 message = client.messages.create(
     model="global.anthropic.claude-opus-4-6-v1",
     max_tokens=256,
-    messages=[{"role": "user", "content": "Hello, world"}]
+    messages=[{"role": "user", "content": "Hello, world"}],
 )
 ```
 
@@ -244,7 +289,7 @@ client = AnthropicBedrock(aws_region="us-west-2")
 message = client.messages.create(
     model="anthropic.claude-opus-4-6-v1",  # No global. prefix
     max_tokens=256,
-    messages=[{"role": "user", "content": "Hello, world"}]
+    messages=[{"role": "user", "content": "Hello, world"}],
 )
 ```
 
@@ -272,6 +317,8 @@ Was this page helpful?
 - [List available models](#list-available-models)
 
 - [Making requests](#making-requests)
+
+- [Bearer token authentication](#bearer-token-authentication)
 
 - [Activity logging](#activity-logging)
 

@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:16Z"
+fetched_at: "2026-02-23T00:45:50Z"
 source_url: "https://support.claude.com/en/articles/10167454-using-the-github-integration"
 title: "Using the GitHub Integration | Claude Help Center"
 ---
@@ -67,11 +67,11 @@ Connect your GitHub repositories directly to Claude to provide comprehensive con
 
 - Select "Add from GitHub" from the drop-down:
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1622315030/73dbeac07b5ecec89ab55788d17c/image.png?expires=1770722100&signature=181a6f9e2e462534c19203ced1f138b204089e0af1078abd1a602061dfdc65e7&req=dSYlFMp%2FmIFcWfMW1HO4zfo77GDOxqCqIxtXtV4xgqmMu2ZaOGnpFVK8TVJY%0AQCAQ%0A)
+  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1622315030/73dbeac07b5ecec89ab55788d17c/image.png?expires=1771809300&signature=73bc3b924754856f9400f7442597facfe5c7e4564931082748121cdc13727a74&req=dSYlFMp%2FmIFcWfMW1HO4zfo77GHBxKuoIxtXtV4xgqn30coP9VptFkj1O48F%0A%2BGjC%0A)
 
 - Use the file browser to select specific files and folders:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895630/19767b7242e8b8e644448f0fad95/AD_4nXfKDtdsmc4Ovt4F-p_ia0XOZrq8R-ldprDupj4spQJdill43ttAgiEARfnL3Jrh3znT2xQhvdyTT4gKs5dGbAyH0bS4q_zMiGORbATashMzjKpnhBteVr1TNbUs2MnJtxlpkOXy?expires=1770722100&signature=17b587e69002a5488392a36414c35c88fa65d555870726b5a854680a8c1a4a2d&req=dSIiH8F3mIdcWfMW1HO4zTUNzTcs2csP48p8RSYX430M%2FpqkhHP0SCr7IomH%0A8ze6jvRrkj1TYp%2FouPw%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895630/19767b7242e8b8e644448f0fad95/AD_4nXfKDtdsmc4Ovt4F-p_ia0XOZrq8R-ldprDupj4spQJdill43ttAgiEARfnL3Jrh3znT2xQhvdyTT4gKs5dGbAyH0bS4q_zMiGORbATashMzjKpnhBteVr1TNbUs2MnJtxlpkOXy?expires=1771809300&signature=30df31657e1896ed7464ef20e63fad857fbc99902bbbf80a15268e07504c8c3d&req=dSIiH8F3mIdcWfMW1HO4zTUNzTYj28AN48p8RSYX432LO%2FaXn3%2BcDIJcomeG%0A9VseR3BZXeoIN1nh5AI%3D%0A)
 
 - When you send your message, Claude will access and process the content to inform its response.
 
@@ -81,39 +81,39 @@ Connect your GitHub repositories directly to Claude to provide comprehensive con
 
 - Select "GitHub" from the drop-down:
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1622318662/4d0d02bf6929dacd014173fa996f/Screenshot+2025-07-15+at+3_34_22%E2%80%AFPM.png?expires=1770722100&signature=3c521ded38208cb7f449e7792cc43dab470140a3f65c0459c05909350f70b037&req=dSYlFMp%2FlYdZW%2FMW1HO4za0K%2FlJAsQbhwumClcFWWbaF0yXGRwKBhfL3gChh%0AIzf4%0A)
+  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1622318662/4d0d02bf6929dacd014173fa996f/Screenshot+2025-07-15+at+3_34_22%E2%80%AFPM.png?expires=1771809300&signature=1474c115ced56bc7daffde70589c58a7eab49d58736fab857c4bc93683907ad3&req=dSYlFMp%2FlYdZW%2FMW1HO4za0K%2FlNPsw3jwumClcFWWbb3pqdZz8aAMzb2Uf7w%0Ajand%0A)
 
 - Search through your accessible repositories, or paste a repository URL.
 
 - Use the file browser to select specific files and folders:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895632/860310a4bf7e15b82ab35aa4527d/AD_4nXdVxjY-yH1x1g0GoD_TgBsu4gP8qekVVKvIv7-pbcCyzdGHWs25hdwrcQz0uZ6pNpdNYyHT3O1XTuApdX_JM1TMDW4B0ku6Oa6AliI70yKjDOvj4zziwWzpuvtHFkZoYHYmbu8RSA?expires=1770722100&signature=358def2241c3df081bd6ea224d200d7b963040b5155225bb839e3f8d48b34179&req=dSIiH8F3mIdcW%2FMW1HO4zbtFEfWs%2Bjkch9sEuKnmL5cedU80mgdLmdfysAEZ%0AJLQLUDz0jep94t%2FQfm0%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895632/860310a4bf7e15b82ab35aa4527d/AD_4nXdVxjY-yH1x1g0GoD_TgBsu4gP8qekVVKvIv7-pbcCyzdGHWs25hdwrcQz0uZ6pNpdNYyHT3O1XTuApdX_JM1TMDW4B0ku6Oa6AliI70yKjDOvj4zziwWzpuvtHFkZoYHYmbu8RSA?expires=1771809300&signature=aada9d4635ce5a8caa3f525bd1dc9487ab6440ab37a5acd211029439be001317&req=dSIiH8F3mIdcW%2FMW1HO4zbtFEfSj%2BDIeh9sEuKnmL5fNX5e38LTNsc6Dxt0a%0AY4PbMatfPRm8QuAfrqU%3D%0A)
 
 - Your selected content will be added to the project knowledge for Claude to access and process.
 
 - You can use the “Sync” icon to ensure you’re working with the most up-to-date version of your codebase:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895629/4795051eafb2b1e42500eb160a2d/AD_4nXeR3FR3QLSdh2fQbmWhhzCmUHciuqbeXjfhdhMBZQ4rjVsP0bDUutMu3nCq1cddSjPQOnwr2tUImotFfv3QVBxAtCgMzNJr3eno5XnpyJqswOmramXk7BUq-PQNQyU6_DDuSXdIFA?expires=1770722100&signature=4a7c5631bcdcd8a3d6f8c97142e2be501f4830c0f224bb88503737b272edf396&req=dSIiH8F3mIddUPMW1HO4zbzbC0Hr6jCUuSRWZcvI%2FXRbQ6ICkXaEfaYkeqXW%0A4V0xS1xJ45jYNhxV1H8%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895629/4795051eafb2b1e42500eb160a2d/AD_4nXeR3FR3QLSdh2fQbmWhhzCmUHciuqbeXjfhdhMBZQ4rjVsP0bDUutMu3nCq1cddSjPQOnwr2tUImotFfv3QVBxAtCgMzNJr3eno5XnpyJqswOmramXk7BUq-PQNQyU6_DDuSXdIFA?expires=1771809300&signature=2d434fa0c060218333f2938a533bfd738eb2322e80993cdf340db0b17cb27c0b&req=dSIiH8F3mIddUPMW1HO4zbzbC0Dk6DuWuSRWZcvI%2FXQqom9tQN%2BpdWk8udJA%0AUP25YES4PZrMPuxzViA%3D%0A)
 
 - You can use the “Configure files” icon to modify which files and folders Claude analyzes:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895628/53aac67c94fac8c58ac6d772abda/AD_4nXejaypVR9Bbp_6GUrntckYWiUPKCs2xjDUt2ohGslAh7Y4OnM6Z-cRpEhQ8wD6HnCRPhTsZPd0j7ToToqkZEFSlvQ76QswD4AdF4qMQv89VBiy0i4B4-XJIo8m_-g_88NEiCSe1-g?expires=1770722100&signature=1e41a14ddd8ba9283bffbb2a6b7fbe1ff9c9a1ce34c8597db073340c5aca3fd2&req=dSIiH8F3mIddUfMW1HO4zUiuMZsAQkC5pQVCZAaYJyuVlfDIJ2zrkQ4vgFWE%0A%2BWYufWs%2Fe7GKqEouYxI%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895628/53aac67c94fac8c58ac6d772abda/AD_4nXejaypVR9Bbp_6GUrntckYWiUPKCs2xjDUt2ohGslAh7Y4OnM6Z-cRpEhQ8wD6HnCRPhTsZPd0j7ToToqkZEFSlvQ76QswD4AdF4qMQv89VBiy0i4B4-XJIo8m_-g_88NEiCSe1-g?expires=1771809300&signature=b257321488b9cb0bbb17dba7960c171fa00ca5e2a31ce176641a816a99f3f1ef&req=dSIiH8F3mIddUfMW1HO4zUiuMZoPQEu7pQVCZAaYJyv01CXKc5w7Ciu5fG%2BP%0Ag0zMTwEQo%2F46HoOlwKc%3D%0A)
 
 ## Connecting to private repositories
 
 If you see the warning below and have input a valid URL, it most likely means you’re attempting to connect Claude to a private repository:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895633/79cf2ea0d78806a22283b49bc8bd/AD_4nXcdZCawPElR0mYqn8kSVxPybRe7R-SQc1cCPXIBsro0K-Z3wY5DJ3xc7dvSxyjXx9xEdmnkgeitcdzTuVNCkhP_1fKJHV144Gvpjsm_CrqbcjilTTM3QJXkw2YZhYWFKAZpH2QeBw?expires=1770722100&signature=dabf5ad6c61c0f642c94f4cdf04ae1a4430d1f871d4ca2d7fb229416bfec57a5&req=dSIiH8F3mIdcWvMW1HO4zb1YZgZ2REsBTyWTHMFVF9DO%2BsXJUC%2BkMcyUBEOg%0A5GFEks5%2FnRLmwkoV4AM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259895633/79cf2ea0d78806a22283b49bc8bd/AD_4nXcdZCawPElR0mYqn8kSVxPybRe7R-SQc1cCPXIBsro0K-Z3wY5DJ3xc7dvSxyjXx9xEdmnkgeitcdzTuVNCkhP_1fKJHV144Gvpjsm_CrqbcjilTTM3QJXkw2YZhYWFKAZpH2QeBw?expires=1771809300&signature=b0a976e15a961c7225abdeca98d2e2fc56ce532daf34a9e5fc5aacf9bd2f97a2&req=dSIiH8F3mIdcWvMW1HO4zb1YZgd5RkADTyWTHMFVF9C9jkbl7oRhdTTHSyoB%0A%2BmIuXDayU7yjdLXgKiQ%3D%0A)
 
 Follow the link to our GitHub App, where you can grant access to repos if you’re a GitHub administrator, or send a request to your GitHub organization’s administrators.
 
 - **Grant access yourself if you can**: You can choose between letting Claude access all repos or specific ones:
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259902313/738640db462ae27d2cc2f55c40ae/AD_4nXeolRmTWaL5yLtr3thedDp49ywhplktCIRoolNpTaJQ6XYJ_Cg_p8iPtuWvAnd4RNcAhr-59GNGFEPNPOBtxN8EbkSurCQdKbgshYZojIm9NolG0rPhyOXC_IyyNHo-_pq_KHMmug?expires=1770722100&signature=66682e8a32ddc0676b8fbf04d812390f9624702f0ef25115657e21b1ecf3e325&req=dSIiH8B%2Bn4JeWvMW1HO4zTrjAYlCgkdvo76uZWIcmLwfPM13dMwqkCvwGBS5%0AzSiu%0A)
+  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259902313/738640db462ae27d2cc2f55c40ae/AD_4nXeolRmTWaL5yLtr3thedDp49ywhplktCIRoolNpTaJQ6XYJ_Cg_p8iPtuWvAnd4RNcAhr-59GNGFEPNPOBtxN8EbkSurCQdKbgshYZojIm9NolG0rPhyOXC_IyyNHo-_pq_KHMmug?expires=1771809300&signature=53f31f5a1b471dfd8810cdefb72ae7d6e42f29e4ac71e5873259ee638447e151&req=dSIiH8B%2Bn4JeWvMW1HO4zTrjAYhNgExto76uZWIcmLykk5fHAHQzjQ2npReI%0ALyKK%0A)
 
 - **Request access if you don’t have the necessary permissions**: The administrators of your GitHub organization will receive an email notification about your request. Once they approve the request, you’ll be able to sync and access the repository in Claude:
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259902668/ada64088fe5878a52b866f3db10d/AD_4nXfz-EKOKC4iwTLQPQrA682MxT21jNkn19nWgrbzVz4Owuh7Qmp71VyZ3C_ClaDJVJOzy7h9hJOugpQlDy9r5kQq3eGgiNIiiEHygDhk-_mypnPNXKClyBFjjPcYsCmyDYsJvsO-1w?expires=1770722100&signature=9e6bd66507bb2f2035ee2ac5756fb28dd38543aea65eb30df8cda20bc470306b&req=dSIiH8B%2Bn4dZUfMW1HO4zVSzR7Bqi967fcaOpjKOORHpAFOAbqaYrcrwRy9I%0AAnqu%0A)
+  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1259902668/ada64088fe5878a52b866f3db10d/AD_4nXfz-EKOKC4iwTLQPQrA682MxT21jNkn19nWgrbzVz4Owuh7Qmp71VyZ3C_ClaDJVJOzy7h9hJOugpQlDy9r5kQq3eGgiNIiiEHygDhk-_mypnPNXKClyBFjjPcYsCmyDYsJvsO-1w?expires=1771809300&signature=43cad2f06d83ce7c41ae9df17b53e4525f7ec7b8ca1666d8141ecd5a9a7df470&req=dSIiH8B%2Bn4dZUfMW1HO4zVSzR7FlidW5fcaOpjKOORFuCqCmQVWcZBOrRUYX%0AAK9C%0A)
 
 ## Best Practices
 

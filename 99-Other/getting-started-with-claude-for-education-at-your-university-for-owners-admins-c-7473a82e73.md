@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:19Z"
+fetched_at: "2026-02-16T21:12:35Z"
 source_url: "https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins"
 title: "Getting Started with Claude for Education at Your University (for Owners/Admins) | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Getting Started with Claude for Education at Your University (for Owners/Admins)
 
 # Getting Started with Claude for Education at Your University (for Owners/Admins)
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -136,6 +136,10 @@ Visit our [Privacy Center](https://privacy.claude.com/en/collections/10663361-co
 
 Related Articles
 
+[](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
+
+Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
+
 [](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
 
 FAQs on Using Claude for Education at Your University
@@ -151,10 +155,6 @@ Setting up single sign-on (SSO)
 [](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
 
 Setting up JIT or SCIM provisioning
-
-[](https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp)
-
-Switching to a different Identity Provider (IdP)
 
 Did this answer your question?
 

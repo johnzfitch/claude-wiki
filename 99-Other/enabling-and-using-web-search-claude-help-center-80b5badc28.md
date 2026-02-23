@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:18Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10684626-enabling-and-using-web-search"
 title: "Enabling and using web search | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Enabling and using web search
 
 # Enabling and using web search
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -83,7 +83,7 @@ Web search expands Claude's knowledge with real-time data, helping you make bett
 
 An Owner or Primary Owner must first enable web search for the entire workspace. This can be found in **[Admin settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2032032614/ad907328c4d9a26ee4bd9ca27a52/CleanShot+2026-02-05+at+09_01_42%402x.png?expires=1770722100&signature=667e7b7e5cdd8a20b45830d994f34e39925d18913ed31f6a9f493b86ebd4f706&req=diAkFMl9n4deXfMW1HO4zetvxbK9GsxRUJIbgsqS2%2BMeLhT43u1hUS79YpvZ%0AKwcyvbq51nfJSv70k5c%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2032032614/ad907328c4d9a26ee4bd9ca27a52/CleanShot+2026-02-05+at+09_01_42%402x.png?expires=1771278300&signature=168c7720285b765e4586b6f640a217087966ae403e015f699d53b91222f1e73d&req=diAkFMl9n4deXfMW1HO4zetvxbO4H8ZTUJIbgsqS2%2BOCU8u5%2BOVX%2FSreTuRU%0Avn4OcQouJlgefmCp2aY%3D%0A)
 
 Once this is enabled at the workspace level, any member of the organization can switch it on while starting a chat by clicking the “+” button in the lower left corner of the chat window and selecting “Web search." Users can toggle this off for chats that don’t require web search capabilities.
 
@@ -213,7 +213,7 @@ Claude Code model configuration
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai)
 

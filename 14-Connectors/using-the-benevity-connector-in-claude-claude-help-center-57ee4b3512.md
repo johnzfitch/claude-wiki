@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:32Z"
+fetched_at: "2026-02-23T00:45:22Z"
 source_url: "https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude"
 title: "Using the Benevity Connector in Claude | Claude Help Center"
 ---
@@ -177,17 +177,17 @@ Yes, the Benevity database includes nonprofit organizations from around the worl
 
 Related Articles
 
+[](https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude)
+
+Using the BioRender Connector in Claude
+
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
+Using the Synapse.org connector in Claude
 
 [](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
 
 Using the Benchling Connector in Claude
-
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
-
-Getting started with Claude for Nonprofits
 
 [](https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude)
 

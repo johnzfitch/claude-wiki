@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:09Z"
+fetched_at: "2026-02-22T13:50:17Z"
 source_url: "https://platform.claude.com/docs/en/api/kotlin/messages"
 title: "API Reference - Claude API Docs"
 ---

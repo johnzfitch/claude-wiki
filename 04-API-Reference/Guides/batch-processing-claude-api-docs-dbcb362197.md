@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:14Z"
+fetched_at: "2026-02-22T10:58:44Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/batch-processing"
 title: "Batch processing - Claude API Docs"
 ---
 
-Capabilities
+Model capabilities
 
 # Batch processing
 
@@ -20,7 +20,9 @@ Batch processing is a powerful approach for handling large volumes of requests e
 - You want to optimize for cost efficiency
 - You're running large-scale evaluations or analyses
 
-The Message Batches API is our first implementation of this pattern.
+The Message Batches API is Anthropic's first implementation of this pattern.
+
+This feature is **not** covered by [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) arrangements. Data is retained according to the feature's standard retention policy.
 
 ------------------------------------------------------------------------
 
@@ -54,10 +56,10 @@ This is especially useful for bulk operations that don't require immediate resul
 Batch limitations
 
 - A Message Batch is limited to either 100,000 Message requests or 256 MB in size, whichever is reached first.
-- We process each batch as fast as possible, with most batches completing within 1 hour. You will be able to access batch results when all messages have completed or after 24 hours, whichever comes first. Batches will expire if processing does not complete within 24 hours.
+- The system processes each batch as fast as possible, with most batches completing within 1 hour. You will be able to access batch results when all messages have completed or after 24 hours, whichever comes first. Batches will expire if processing does not complete within 24 hours.
 - Batch results are available for 29 days after creation. After that, you may still view the Batch, but its results will no longer be available for download.
-- Batches are scoped to a [Workspace](/settings/workspaces). You may view all batches—and their results—that were created within the Workspace that your API key belongs to.
-- Rate limits apply to both Batches API HTTP requests and the number of requests within a batch waiting to be processed. See [Message Batches API rate limits](/docs/en/api/rate-limits#message-batches-api). Additionally, we may slow down processing based on current demand and your request volume. In that case, you may see more requests expiring after 24 hours.
+- Batches are scoped to a [Workspace](/settings/workspaces). You may view all batches (and their results) that were created within the Workspace that your API key belongs to.
+- Rate limits apply to both Batches API HTTP requests and the number of requests within a batch waiting to be processed. See [Message Batches API rate limits](/docs/en/api/rate-limits#message-batches-api). Additionally, processing may be slowed down based on current demand and your request volume. In that case, you may see more requests expiring after 24 hours.
 - Due to high throughput and concurrent processing, batches may go slightly over your Workspace's configured [spend limit](/settings/limits).
 
 ### 
@@ -96,6 +98,7 @@ The Batches API offers significant cost savings. All usage is charged at 50% of 
 | Claude Opus 4.5 | \$2.50 / MTok | \$12.50 / MTok |
 | Claude Opus 4.1 | \$7.50 / MTok | \$37.50 / MTok |
 | Claude Opus 4 | \$7.50 / MTok | \$37.50 / MTok |
+| Claude Sonnet 4.6 | \$1.50 / MTok | \$7.50 / MTok |
 | Claude Sonnet 4.5 | \$1.50 / MTok | \$7.50 / MTok |
 | Claude Sonnet 4 | \$1.50 / MTok | \$7.50 / MTok |
 | Claude Sonnet 3.7 ([deprecated](/docs/en/about-claude/model-deprecations)) | \$1.50 / MTok | \$7.50 / MTok |
@@ -207,9 +210,7 @@ client = anthropic.Anthropic()
 
 message_batch = None
 while True:
-    message_batch = client.messages.batches.retrieve(
-        MESSAGE_BATCH_ID
-    )
+    message_batch = client.messages.batches.retrieve(MESSAGE_BATCH_ID)
     if message_batch.processing_status == "ended":
         break
 
@@ -232,9 +233,7 @@ import anthropic
 client = anthropic.Anthropic()
 
 # Automatically fetches more pages as needed.
-for message_batch in client.messages.batches.list(
-    limit=20
-):
+for message_batch in client.messages.batches.list(limit=20):
     print(message_batch)
 ```
 
@@ -305,7 +304,7 @@ The results will be in `.jsonl` format, where each line is a valid JSON object r
 {"custom_id":"my-first-request","result":{"type":"succeeded","message":{"id":"msg_01FqfsLoHwgeFbguDgpz48m7","type":"message","role":"assistant","model":"claude-opus-4-6","content":[{"type":"text","text":"Hello! How can I assist you today? Feel free to ask me any questions or let me know if there's anything you'd like to chat about."}],"stop_reason":"end_turn","stop_sequence":null,"usage":{"input_tokens":10,"output_tokens":34}}}}
 ```
 
-If your result has an error, its `result.error` will be set to our standard [error shape](/docs/en/api/errors#error-shapes).
+If your result has an error, its `result.error` will be set to the standard [error shape](/docs/en/api/errors#error-shapes).
 
 **Batch results may not match input order**
 

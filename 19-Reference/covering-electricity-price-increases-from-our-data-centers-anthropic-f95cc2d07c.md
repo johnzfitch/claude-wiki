@@ -1,0 +1,51 @@
+---
+category: "19-Reference"
+fetched_at: "2026-02-13T09:23:10Z"
+source_url: "https://www.anthropic.com/news/covering-electricity-price-increases"
+title: "Covering electricity price increases from our data centers \\ Anthropic"
+---
+
+Policy
+
+# Covering electricity price increases from our data centers
+
+Feb 11, 2026
+
+As we continue to [invest in American AI infrastructure](https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure), Anthropic will cover electricity price increases that consumers face from our data centers.
+
+Training a single frontier AI model will soon require gigawatts of power, and the US AI sector will need at least 50 gigawatts of capacity over the next several years. The country [needs to build new data centers](https://www.anthropic.com/news/build-ai-in-america) quickly to maintain its competitiveness on AI and national security—but AI companies shouldn’t leave American ratepayers to pick up the tab.
+
+Data centers can raise consumer electricity prices in two main ways. First, connecting data centers to the grid often requires costly new or upgraded infrastructure like transmission lines or substations. Second, new demand tightens the market, pushing up prices. We’re committing to address both. Specifically, we will:
+
+- **Cover grid infrastructure costs**. We will pay for 100% of the grid upgrades needed to interconnect our data centers, paid through increases to our monthly electricity charges. This includes the shares of these costs that would otherwise be passed onto consumers.
+- **Procure new power and protect consumers from price increases**. We will work to bring net-new power generation online to match our data centers’ electricity needs. Where new generation isn’t online, we’ll work with utilities and external experts to estimate and cover demand-driven price effects from our data centers.
+- **Reduce strain on the grid**. We’re investing in curtailment systems that cut our data centers’ power usage during periods of peak demand, as well as grid optimization tools, both of which help keep prices lower for ratepayers.
+- **Invest in local communities.** Our current data center projects will create hundreds of permanent jobs and thousands of construction jobs. We’re also committed to being a responsible neighbor—that means addressing environmental impacts, including deploying water-efficient cooling technologies, and partnering with local leaders on initiatives that share AI’s benefits broadly.
+
+Where we work with partners to develop data centers for handling our own workloads, we make these commitments directly. Where we lease capacity from existing data centers, we’re exploring further ways to address our own workloads' effects on prices.
+
+Of course, company-level action isn't enough. Keeping electricity affordable also requires systemic change. We support [federal policies](https://www.anthropic.com/news/build-ai-in-america)—including permitting reform and efforts to speed up transmission development and grid interconnection—that make it faster and cheaper to bring new energy online for everyone.
+
+Done right, AI infrastructure can be a catalyst for the broader energy investment the country needs. These commitments are the beginning of our efforts to address data centers’ impact on energy costs. We have more to do, and we’ll continue to share updates as this work develops.
+
+\
+
+[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/covering-electricity-price-increases)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/covering-electricity-price-increases)
+
+## Related content
+
+### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
+
+We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
+
+[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
+
+### Anthropic is donating \$20 million to Public First Action
+
+[Read more](/news/donate-public-first-action)
+
+### Introducing Claude Opus 4.6
+
+We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+
+[Read more](/news/claude-opus-4-6)

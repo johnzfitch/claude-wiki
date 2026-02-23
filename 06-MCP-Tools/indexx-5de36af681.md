@@ -1,0 +1,8 @@
+---
+category: "06-MCP-Tools"
+fetched_at: "2026-02-23T00:45:45Z"
+source_url: "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/docs/specification/2024-11-05/server/index.mdx"
+title: "Indexx"
+---
+
+--- title: Overview --- \*\*Protocol Revision\*\*: 2024-11-05 Servers provide the fundamental building blocks for adding context to language models via MCP. These primitives enable rich interactions between clients, servers, and language models: - \*\*Prompts\*\*: Pre-defined templates or instructions that guide language model interactions - \*\*Resources\*\*: Structured data or content that provides additional context to the model - \*\*Tools\*\*: Executable functions that allow models to perform actions or retrieve information Each primitive can be summarized in the following control hierarchy: \| Primitive \| Control \| Description \| Example \| \| --------- \| ---------------------- \| -------------------------------------------------- \| ------------------------------- \| \| Prompts \| User-controlled \| Interactive templates invoked by user choice \| Slash commands, menu options \| \| Resources \| Application-controlled \| Contextual data attached and managed by the client \| File contents, git history \| \| Tools \| Model-controlled \| Functions exposed to the LLM to take actions \| API POST requests, file writing \| Explore these key primitives in more detail below:

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:31Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills"
 title: "Claude for Financial Services Skills | Claude Help Center"
 ---
@@ -61,7 +61,7 @@ Claude for Financial Services Skills
 
 # Claude for Financial Services Skills
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -403,13 +403,13 @@ Getting Started with Claude for Financial Services
 
 Claude for Financial Services Overview
 
+[](https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis)
+
+Using Daloopa for Financial Analysis
+
 [](https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research)
 
 Using FactSet for Comprehensive Financial Research
-
-[](https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis)
-
-Prompting Strategies for Financial Analysis
 
 [](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 

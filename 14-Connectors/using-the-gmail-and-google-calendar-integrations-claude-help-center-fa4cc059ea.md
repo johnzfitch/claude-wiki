@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:18Z"
+fetched_at: "2026-02-23T00:45:50Z"
 source_url: "https://support.claude.com/en/articles/11088742-using-the-gmail-and-google-calendar-integrations"
 title: "Using the Gmail and Google Calendar Integrations | Claude Help Center"
 ---

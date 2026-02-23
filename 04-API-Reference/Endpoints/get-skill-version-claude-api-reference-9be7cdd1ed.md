@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:06Z"
+fetched_at: "2026-02-22T13:49:53Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/versions/retrieve"
 title: "Get Skill Version - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 [VersionRetrieveResponse](/docs/en/api/beta#VersionRetrieveResponse) beta().skills().versions().retrieve(VersionRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/skills/{skill_id}/versions/{version}
+GET/v1/skills/{skill_id}/versions/{version}
 
 Get Skill Version
 
@@ -74,6 +74,8 @@ CONTEXT_MANAGEMENT_2025_06_27("context-management-2025-06-27")
 MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-26")
 
 SKILLS_2025_10_02("skills-2025-10-02")
+
+FAST_MODE_2026_02_01("fast-mode-2026-02-01")
 
 ##### ReturnsExpand Collapse 
 

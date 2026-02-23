@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis"
 title: "Using Moody’s for Financial Analysis | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using Moody’s for Financial Analysis
 
 # Using Moody’s for Financial Analysis
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -246,9 +246,9 @@ Using Daloopa for Financial Analysis
 
 Using Morningstar for Investment Research
 
-[](https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis)
+[](https://support.claude.com/en/articles/12651818-using-aiera-for-earnings-intelligence-and-market-analysis)
 
-Using S&P Global Data for Financial Analysis
+Using Aiera for Earnings Intelligence and Market Analysis
 
 [](https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis)
 

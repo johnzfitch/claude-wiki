@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:32Z"
+fetched_at: "2026-02-22T13:54:26Z"
 source_url: "https://platform.claude.com/docs/en/api/go/completions"
 title: "Completions - Claude API Reference"
 ---
@@ -15,7 +15,7 @@ Go
 
 client.Completions.New(ctx, params) (\*[Completion](/docs/en/api/completions#completion), error)
 
-post/v1/complete
+POST/v1/complete
 
 ##### ModelsExpand Collapse 
 
@@ -50,6 +50,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -147,10 +151,6 @@ Type Completion
 Object type.
 
 For Text Completions, this is always `"completion"`.
-
-Accepts one of the following:
-
-const CompletionCompletion Completion = "completion"
 
 [](/docs)
 

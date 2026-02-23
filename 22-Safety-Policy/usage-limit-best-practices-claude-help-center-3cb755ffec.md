@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-08T20:52:10Z"
+fetched_at: "2026-02-23T00:45:17Z"
 source_url: "https://support.claude.com/en/articles/9797557-usage-limit-best-practices"
 title: "Usage limit best practices | Claude Help Center"
 ---
@@ -51,7 +51,7 @@ Usage limit best practices
 
 # Usage limit best practices
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -233,7 +233,7 @@ Understanding usage and length limits
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 [](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 

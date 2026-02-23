@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:00Z"
+fetched_at: "2026-02-22T13:48:48Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/files/download"
 title: "Download File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 HttpResponse beta().files().download(FileDownloadParamsparams = FileDownloadParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 Download File
 
@@ -66,6 +66,8 @@ CONTEXT_MANAGEMENT_2025_06_27("context-management-2025-06-27")
 MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-26")
 
 SKILLS_2025_10_02("skills-2025-10-02")
+
+FAST_MODE_2026_02_01("fast-mode-2026-02-01")
 
 Download File
 

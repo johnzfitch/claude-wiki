@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:08Z"
+fetched_at: "2026-02-22T13:11:02Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/context-windows"
 title: "Context windows - Claude API Docs"
 ---
@@ -102,9 +102,9 @@ For more information about using tools with extended thinking, see the [extended
 
 1M token context window
 
-Claude Opus 4.6, Sonnet 4.5, and Sonnet 4 support a 1-million token context window. This extended context window allows you to process much larger documents, maintain longer conversations, and work with more extensive codebases.
+Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, and Sonnet 4 support a 1-million token context window. This extended context window allows you to process much larger documents, maintain longer conversations, and work with more extensive codebases.
 
-The 1M token context window is currently in beta for organizations in [usage tier](/docs/en/api/rate-limits) 4 and organizations with custom rate limits. The 1M token context window is only available for Claude Opus 4.6, Sonnet 4.5, and Sonnet 4.
+The 1M token context window is currently in beta for organizations in [usage tier](/docs/en/api/rate-limits) 4 and organizations with custom rate limits. The 1M token context window is only available for Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, and Sonnet 4.
 
 To use the 1M token context window, include the `context-1m-2025-08-07` [beta header](/docs/en/api/beta-headers) in your API requests:
 
@@ -136,15 +136,15 @@ curl https://api.anthropic.com/v1/messages \
 
 ## 
 
-Context awareness in Claude Sonnet 4.5 and Haiku 4.5
+Context awareness in Claude Sonnet 4.6, Sonnet 4.5, and Haiku 4.5
 
-Claude Sonnet 4.5 and Claude Haiku 4.5 feature **context awareness**. This capability lets these models track their remaining context window (i.e. "token budget") throughout a conversation. This enables Claude to execute tasks and manage context more effectively by understanding how much space it has to work. Claude is trained to use this context precisely, persisting in the task until the very end rather than guessing how many tokens remain. For a model, lacking context awareness is like competing in a cooking show without a clock. Claude 4.5 models change this by explicitly informing the model about its remaining context, so it can take maximum advantage of the available tokens.
+Claude Sonnet 4.6, Claude Sonnet 4.5, and Claude Haiku 4.5 feature **context awareness**. This capability lets these models track their remaining context window (i.e. "token budget") throughout a conversation. This enables Claude to execute tasks and manage context more effectively by understanding how much space it has to work. Claude is trained to use this context precisely, persisting in the task until the very end rather than guessing how many tokens remain. For a model, lacking context awareness is like competing in a cooking show without a clock. Claude 4.5+ models change this by explicitly informing the model about its remaining context, so it can take maximum advantage of the available tokens.
 
 **How it works:**
 
 At the start of a conversation, Claude receives information about its total context window:
 
-``` inline-block
+``` shiki
 <budget:token_budget>200000</budget:token_budget>
 ```
 
@@ -152,7 +152,7 @@ The budget is set to 200K tokens (standard), 500K tokens (claude.ai Enterprise),
 
 After each tool call, Claude receives an update on remaining capacity:
 
-``` inline-block
+``` shiki
 <system_warning>Token usage: 35000/200000; 165000 remaining</system_warning>
 ```
 
@@ -229,7 +229,7 @@ Was this page helpful?
 
 - [1M token context window](#1-m-token-context-window)
 
-- [Context awareness in Claude Sonnet 4.5 and Haiku 4.5](#context-awareness-in-claude-sonnet-4-5-and-haiku-4-5)
+- [Context awareness in Claude Sonnet 4.6, Sonnet 4.5, and Haiku 4.5](#context-awareness-in-claude-sonnet-4-6-sonnet-4-5-and-haiku-4-5)
 
 - [Managing context with compaction](#managing-context-with-compaction)
 

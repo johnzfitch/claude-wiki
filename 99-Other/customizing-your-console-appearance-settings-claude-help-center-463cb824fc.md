@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:36Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13346458-customizing-your-console-appearance-settings"
 title: "Customizing your Console appearance settings | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ Customizing your Console appearance settings
 
 # Customizing your Console appearance settings
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -49,7 +49,7 @@ Table of contents
 
 3.  Select from Light, System, or Dark under **Color mode**.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922579101/ede30d38dca693c59f9c15d79e69/CleanShot+2026-01-08+at+15_45_20%402x.png?expires=1770722100&signature=0b718b083efaf1995bd5a1afdf2cc1ed2c25ef7cc1ebcfc2f6cfc352efa8dfb6&req=dSklFMx5lIBfWPMW1HO4zRpFBMgDTxB3O9Kw38RlAYKWnaLAFUPFtpLaWQ9I%0ALShkOlfh7g4RFe48vKA%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922579101/ede30d38dca693c59f9c15d79e69/CleanShot+2026-01-08+at+15_45_20%402x.png?expires=1771278300&signature=7676e19be0a5996a2332a13024c8475c8987d1ecc82f0cfb8e15e9cc787625f1&req=dSklFMx5lIBfWPMW1HO4zRpFBMkGShp1O9Kw38RlAYJ6TTagMrblozf0TwIh%0AbuzoBazOcySILvO3DXY%3D%0A)
 
 ------------------------------------------------------------------------
 

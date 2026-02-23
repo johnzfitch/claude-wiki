@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/12618689-claude-code-on-the-web"
 title: "Claude Code on the web | Claude Help Center"
 ---
@@ -65,7 +65,7 @@ This feature works with repositories you may not have on your local machine. You
 
 Claude Code for web enables asynchronous development workflows. With Claude Code in your terminal or editor, you typically work synchronously: you make a request, wait for Claude to respond, review the changes, then make another request. Synchronous work like this gives you fine-grained control but requires your attention throughout the process. Claude Code on the web handles this differently: you can assign a larger task, let Claude work independently, and return later to review the completed work.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1786446157/07ec74cd46317f8278083a317841/6448f3ee-c6df-4417-8a13-90d8c2ca3d55?expires=1770722100&signature=bd8ffc611c40f84cedc17cb4c23e01d34dc85088af0dce0bc7817847dbfbb2a8&req=dScvEM16m4BaXvMW1HO4zR8%2BD1OHQJ937XrRA1YwWGt%2BTtNB5Pt4H1XnaSSp%0ANSUC9Pzlj2iVapTi984%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1786446157/07ec74cd46317f8278083a317841/6448f3ee-c6df-4417-8a13-90d8c2ca3d55?expires=1771809300&signature=24c4f820a6db182c90ec2540cb427d4c9bfbde9edf9dfcf1de16ba64fc13dba8&req=dScvEM16m4BaXvMW1HO4zR8%2BD1KIQpR17XrRA1YwWGuKKeZsmgZ7QkHQbAva%0Ah%2Bwa4%2FlTe6jif4T0Ezw%3D%0A)
 
 You can also run multiple tasks in parallel. Since each task runs in its own isolated environment, you can have Claude working on several different issues or repositories simultaneously. Each task proceeds independently and creates its own pull request when complete. More than one task can work on the same repository at the same time.
 
@@ -73,13 +73,13 @@ You can also run multiple tasks in parallel. Since each task runs in its own iso
 
 When you start a task, Claude Code on the web creates an isolated virtual machine for your work. Your GitHub repository is cloned into this environment, which comes pre-configured with common development tools and language ecosystems.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1786446158/c092f1383826cb871493f74169d4/97b7cb98-5da2-438e-a920-e170b8b9790e?expires=1770722100&signature=37388da43ebd1fc847cc08d6786238c68d3ddafd864e8229c596a51c7eacf1ba&req=dScvEM16m4BaUfMW1HO4zcR0opYzjevB7DtpMiX%2FBYkawR660YP4uForvyUD%0Ai%2Bv6rlXFXYyfCebJBr0%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1786446158/c092f1383826cb871493f74169d4/97b7cb98-5da2-438e-a920-e170b8b9790e?expires=1771809300&signature=07950f19bf3e5c34844ae9a94a73420dcf1e187d7677c6afde4a84144c6a197e&req=dScvEM16m4BaUfMW1HO4zcR0opc8j%2BDD7DtpMiX%2FBYlNe4vsXVrfh5EUvy1Y%0A5fKFTJOlaVDFaB8y4zo%3D%0A)
 
 Claude prepares the environment by running any setup commands you've defined in your repository's configuration. This includes installing dependencies, setting up databases, or running other initialization steps your project needs. If your task requires network access, maybe to install packages or fetch data, you can configure the level of internet access the environment has.
 
 Once the environment is ready, Claude begins working on your task. Claude reads your code, makes changes, writes tests, and runs commands to verify the work. You can monitor progress and provide guidance through the web interface if needed.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1786446156/83ecf0a5b98eddc9ffc9694c50f7/353589ce-b678-441d-8909-71b45fa2d065?expires=1770722100&signature=835b80b605ecf785a00fa514df74d8874fe3c34772ede3a85ede06805433d570&req=dScvEM16m4BaX%2FMW1HO4zVbcQ2OE4cbPUQl3YqgIJdaU25%2Bla9vrMhnj1y32%0AaWArramorW8m7L5fEaE%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1786446156/83ecf0a5b98eddc9ffc9694c50f7/353589ce-b678-441d-8909-71b45fa2d065?expires=1771809300&signature=9331dda44d94b9c4e491be8d2e6468d702b32c0adb2ce57e4a924693f19baf77&req=dScvEM16m4BaX%2FMW1HO4zVbcQ2KL483NUQl3YqgIJdYXzJBOv7o6VUekvX2l%0A7ZejW9U%2FMzwvUb05cfs%3D%0A)
 
 When Claude completes the task, it pushes the changes to a new branch in your GitHub repository. You receive a notification and can review the changes, then create a pull request directly from the interface. The pull request includes all of Claude's work, ready for your review and any additional changes you want to make.
 
@@ -186,9 +186,9 @@ Related Articles
 
 Using Claude Code with your Pro or Max plan
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
+[](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan)
 
-Using Claude Code with your Team or Enterprise plan
+Use Claude Code with your Team or Enterprise plan
 
 [](https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code)
 

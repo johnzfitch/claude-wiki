@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:00Z"
+fetched_at: "2026-02-23T00:45:15Z"
 source_url: "https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude"
 title: "Using the 10x Genomics Extension in Claude | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using the 10x Genomics Extension in Claude
 
 # Using the 10x Genomics Extension in Claude
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -89,7 +89,7 @@ The 10x Genomics integration is available as a desktop extension in the Claude D
 
 **For Organization Owners (Team and Enterprise)**
 
-1.  Navigate to Admin settings \> Extensions
+1.  Navigate to Organization settings \> Extensions
 
 2.  In the search field, type “10x Genomics”
 
@@ -175,7 +175,7 @@ Using the BioRender Connector in Claude
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
+Using the Synapse.org connector in Claude
 
 Did this answer your question?
 

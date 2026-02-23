@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:18Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10722177-sharing-prompts-in-the-claude-console"
 title: "Sharing Prompts in the Claude Console | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Sharing Prompts in the Claude Console
 
 # Sharing Prompts in the Claude Console
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -63,13 +63,13 @@ The prompt sharing feature enables teams to collaborate on prompt development wi
 
 3.  Select "Share" from the dropdown menu:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409899224/f39d557d4925710cb16384886baa/AD_4nXf-Ev9bV40PoDjQX2fMF_zYpHSMQp7u3X92DNp-KRcykraFg8DnLdHCamIzXEPhtAEYhsBT9grnobQwQm1tgtnjR0EfyEuOFV61_InUuDwa121cj-1_KDtm9_NOYRD4LjcZQUIK?expires=1770722100&signature=b1f0eee54cccb479f5fd979c1bc990d49c46f82f9f1ecfd1712bfac7109fe0e7&req=dSQnH8F3lINdXfMW1HO4zajBNFkpOw265HPc4FxcZurzz67gMuE5acWlioHX%0ANJ6a%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409899224/f39d557d4925710cb16384886baa/AD_4nXf-Ev9bV40PoDjQX2fMF_zYpHSMQp7u3X92DNp-KRcykraFg8DnLdHCamIzXEPhtAEYhsBT9grnobQwQm1tgtnjR0EfyEuOFV61_InUuDwa121cj-1_KDtm9_NOYRD4LjcZQUIK?expires=1771278300&signature=a0ff6064fd2704e624760ccba05b3da63c56222956a609ff9db044a810416767&req=dSQnH8F3lINdXfMW1HO4zajBNFgsPge45HPc4FxcZuo6FwSEEAIKJDLHthKf%0AxieE%0A)
 
 4.  Change the access settings from "Private" to "Shared."
 
 5.  Click the "Copy link" button that appears:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409899713/0fd923a839b2c0ff8a0b5e11cf0c/AD_4nXdGUlO0CiCdnhllDnlz2Dd75uiNClFmR8_Qi1Wx6MM9rF-EUSIzRzvs_P6kGSqWBuF-l4iBMRtoEN8ip1-c8bqNzSqKA7SX1STIjtRqNisW-NCmcl9DEhWjv4edORWaT4LNZuPVww?expires=1770722100&signature=339343d917e5479468a7c9b14cbadf7826ad206c52d63735819741a246fa9992&req=dSQnH8F3lIZeWvMW1HO4zaU8kVezPM6oiqPPSiDAl9JEcEcCrKAst73r5c0b%0Ab1By%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409899713/0fd923a839b2c0ff8a0b5e11cf0c/AD_4nXdGUlO0CiCdnhllDnlz2Dd75uiNClFmR8_Qi1Wx6MM9rF-EUSIzRzvs_P6kGSqWBuF-l4iBMRtoEN8ip1-c8bqNzSqKA7SX1STIjtRqNisW-NCmcl9DEhWjv4edORWaT4LNZuPVww?expires=1771278300&signature=817e1bf7e0fe0c453125a8cd3e022ae5c55f1872afef55df21006fd01230d4e5&req=dSQnH8F3lIZeWvMW1HO4zaU8kVa2OcSqiqPPSiDAl9L1z5JRDBN5FrW3LtmW%0AdH4t%0A)
 
 6.  Share the link with members of your workspace.
 
@@ -91,7 +91,7 @@ When working on a shared prompt:
 
 **Note:** If a collaborator saves changes to the prompt while you are viewing it, you will be prompted with a message to “Go to the Latest Version,” where all their changes will be reflected.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409901036/6b69f2878fcb1b4e9ba0747464ac/AD_4nXcp1htcsSLR8H98i7KazEFqIkOhVUHnw__-17jbMZ-n70qnSttxx_m7wNNaHsK7FZHoG8v6zRyqkElQrtdVkxnydo2hzsznCwt6ehzqlGAR7Js7TggP6WmVfwnUTgbouDIxyGS0?expires=1770722100&signature=0a8086f9bdb39fac489badf9e8925509d304474b533d0c21222f470b790068ef&req=dSQnH8B%2BnIFcX%2FMW1HO4zUnGtdcIB0En83rdFAdB3KzGAh2%2BUuZ9tGqqrYGn%0A7uH5t1Y5E2VBFey1s08%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409901036/6b69f2878fcb1b4e9ba0747464ac/AD_4nXcp1htcsSLR8H98i7KazEFqIkOhVUHnw__-17jbMZ-n70qnSttxx_m7wNNaHsK7FZHoG8v6zRyqkElQrtdVkxnydo2hzsznCwt6ehzqlGAR7Js7TggP6WmVfwnUTgbouDIxyGS0?expires=1771278300&signature=7d29956a4b1244291c46980abfc9ed34a6a816df0e7802e40cca46e4604b425a&req=dSQnH8B%2BnIFcX%2FMW1HO4zUnGtdYNAksl83rdFAdB3KywCgi%2Fy4IbrnuSiqMD%0A%2BcHWUx2gAGF1oYUNNNo%3D%0A)
 
 ## Viewing Version History
 
@@ -101,13 +101,13 @@ To see previous versions of a prompt:
 
 2.  Select "Version history" from the dropdown:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409901693/2924593d08c79c5ef1c4ca795f9d/AD_4nXf-Ev9bV40PoDjQX2fMF_zYpHSMQp7u3X92DNp-KRcykraFg8DnLdHCamIzXEPhtAEYhsBT9grnobQwQm1tgtnjR0EfyEuOFV61_InUuDwa121cj-1_KDtm9_NOYRD4LjcZQUIK?expires=1770722100&signature=9f8cf1e787c43eb8d270bdb951a668176bde57cad515e8731b1d8541ba2513ad&req=dSQnH8B%2BnIdWWvMW1HO4zdOs60QnN3DfplKKWUPxWw1eydSSyFpc36H8ap86%0A22Ph%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409901693/2924593d08c79c5ef1c4ca795f9d/AD_4nXf-Ev9bV40PoDjQX2fMF_zYpHSMQp7u3X92DNp-KRcykraFg8DnLdHCamIzXEPhtAEYhsBT9grnobQwQm1tgtnjR0EfyEuOFV61_InUuDwa121cj-1_KDtm9_NOYRD4LjcZQUIK?expires=1771278300&signature=31b744563a5bb52c82f2b2c57393e9a63f23e4cc558ac593af35176817eb7c01&req=dSQnH8B%2BnIdWWvMW1HO4zdOs60UiMnrdplKKWUPxWw1ZO4QkWd1qWVaBXoiM%0Aq%2Fo3%0A)
 
 3.  Choose the specific version you want to view from the list.
 
 **Note:** Past versions cannot be edited. To restore the prompt to a previous version, select the version from the version history list, and click the “Restore” button in the pop up.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409902092/39258424bd71205743134bb5a2d8/AD_4nXe7EGQNq4UAioXobBxbEdluYda1qU277VuDxoqXgmL9z1ch8ro5k3RjDmBWlpPzcfI8eeAbbmiouCc2AEfGPO_LiwFekOgCDj5MV8klaRgH1BHko5OZ1WtWq8Ow0HlYif77j2AxRQ?expires=1770722100&signature=41326c806113837d0429bcaca3403f4ef703ccfcde4fcfe07daa5a080a28423f&req=dSQnH8B%2Bn4FWW%2FMW1HO4zeZkfTdUidUhRPhLT%2BKEBGMFmwdVw8zQhCGNn3a4%0Ap%2FlNw3Yq6aUks4%2FYKFo%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409902092/39258424bd71205743134bb5a2d8/AD_4nXe7EGQNq4UAioXobBxbEdluYda1qU277VuDxoqXgmL9z1ch8ro5k3RjDmBWlpPzcfI8eeAbbmiouCc2AEfGPO_LiwFekOgCDj5MV8klaRgH1BHko5OZ1WtWq8Ow0HlYif77j2AxRQ?expires=1771278300&signature=20e6118dc7ea1fb7d1a490ed3c9addc2f866bcce24083ee6957ecc8c5b8701c8&req=dSQnH8B%2Bn4FWW%2FMW1HO4zeZkfTZRjN8jRPhLT%2BKEBGPYFKvp%2BXJOA8e3IDGI%0AigYLaIHTxcfQX4s%2BJjs%3D%0A)
 
 ## Unsharing a Prompt
 
@@ -117,7 +117,7 @@ To see previous versions of a prompt:
 
 3.  Change the access settings from "Shared" to "Private":
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409898166/d7f3c0233ef3a3fa66701b558db7/AD_4nXcuZY7tln-InGzsyEmOZdRER_FWN9rQmcKalQqRTu6lSEyFSGBhGuvVPkLv7QHvsJCZsHz6-lTOX_tw77ribji4VlTsdG2dp-orGm6ST7IQ9aRnZvQMNvetkik0voTDZ1rHuFP5zA?expires=1770722100&signature=0182901d77a9508fb2fdd541f5f3e5d48c1d28c9d66c61aedbc59c93a9fd97f5&req=dSQnH8F3lYBZX%2FMW1HO4zZMvu1fZRvRgH68akkuAPm1vOQgrVdrbzqdmrczC%0Azaw7r6wvIc5iCR9BUDU%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1409898166/d7f3c0233ef3a3fa66701b558db7/AD_4nXcuZY7tln-InGzsyEmOZdRER_FWN9rQmcKalQqRTu6lSEyFSGBhGuvVPkLv7QHvsJCZsHz6-lTOX_tw77ribji4VlTsdG2dp-orGm6ST7IQ9aRnZvQMNvetkik0voTDZ1rHuFP5zA?expires=1771278300&signature=37c257ca3dd1a97b9230145f039652fcf36be0ef194f8ddf112fbe3e17f81549&req=dSQnH8F3lYBZX%2FMW1HO4zZMvu1bcQ%2F5iH68akkuAPm2OqO2gIkBJK%2BjyrMc7%0AC55dik6MQXnI1iErf1U%3D%0A)
 
 **Note:** Unsharing immediately disables access via the direct link. Anyone that the link was previously shared with will no longer be able to view the prompt.
 

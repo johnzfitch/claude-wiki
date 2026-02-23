@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:25Z"
+fetched_at: "2026-02-22T13:53:10Z"
 source_url: "https://platform.claude.com/docs/en/api/kotlin/beta/files/download"
 title: "API Reference - Claude API Docs"
 ---

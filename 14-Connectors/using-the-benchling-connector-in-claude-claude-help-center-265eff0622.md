@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-23T00:45:15Z"
 source_url: "https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude"
 title: "Using the Benchling Connector in Claude | Claude Help Center"
 ---
@@ -139,7 +139,7 @@ Getting Started with Claude for Life Sciences
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
+Using the Synapse.org connector in Claude
 
 [](https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude)
 
@@ -151,7 +151,7 @@ Using the Scholar Gateway Connector in Claude
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
-Using Interactive Connectors in Claude
+Using interactive connectors in Claude
 
 Did this answer your question?
 

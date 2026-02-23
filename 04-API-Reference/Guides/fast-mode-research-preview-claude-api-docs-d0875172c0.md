@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T11:49:22Z"
+fetched_at: "2026-02-22T10:58:15Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
 title: "Fast mode (research preview) - Claude API Docs"
 ---
 
-Capabilities
+Model capabilities
 
 # Fast mode (research preview)
 
@@ -18,6 +18,8 @@ Copy page
 Fast mode provides significantly faster output token generation for Claude Opus 4.6. By setting `speed: "fast"` in your API request, you get up to 2.5x higher output tokens per second from the same model at premium pricing.
 
 Fast mode is currently in research preview. [Join the waitlist](https://claude.com/fast-mode) to request access. Availability is limited while we gather feedback.
+
+This feature is [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) eligible. When your organization has a ZDR arrangement, data sent through this feature is not stored after the API response is returned.
 
 ## 
 
@@ -64,12 +66,11 @@ curl https://api.anthropic.com/v1/messages \
 
 Pricing
 
-Fast mode is priced at 6x standard Opus rates for prompts \<= 200K tokens, and 12x standard Opus rates for prompts \> 200K tokens. The following table shows pricing for Claude Opus 4.6 with fast mode:
+Fast mode is priced at 6x standard Opus rates across the full context window. The following table shows pricing for Claude Opus 4.6 with fast mode:
 
-| Context window       | Input       | Output       |
-|----------------------|-------------|--------------|
-| ≤ 200K input tokens  | \$30 / MTok | \$150 / MTok |
-| \> 200K input tokens | \$60 / MTok | \$225 / MTok |
+| Input       | Output       |
+|-------------|--------------|
+| \$30 / MTok | \$150 / MTok |
 
 Fast mode pricing stacks with other pricing modifiers:
 
@@ -160,6 +161,7 @@ import anthropic
 
 client = anthropic.Anthropic()
 
+
 def create_message_with_fast_fallback(max_retries=None, max_attempts=3, **params):
     try:
         return client.beta.messages.create(**params, max_retries=max_retries)
@@ -168,10 +170,17 @@ def create_message_with_fast_fallback(max_retries=None, max_attempts=3, **params
             del params["speed"]
             return create_message_with_fast_fallback(**params)
         raise
-    except (anthropic.InternalServerError, anthropic.OverloadedError, anthropic.APIConnectionError):
+    except (
+        anthropic.InternalServerError,
+        anthropic.OverloadedError,
+        anthropic.APIConnectionError,
+    ):
         if max_attempts > 1:
-            return create_message_with_fast_fallback(max_attempts=max_attempts - 1, **params)
+            return create_message_with_fast_fallback(
+                max_attempts=max_attempts - 1, **params
+            )
         raise
+
 
 message = create_message_with_fast_fallback(
     model="claude-opus-4-6",

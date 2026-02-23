@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:18Z"
+fetched_at: "2026-02-22T13:19:48Z"
 source_url: "https://platform.claude.com/docs/en/resources/overview"
 title: "Documentation - Claude API Docs"
 ---
@@ -14,6 +14,12 @@ Model cards
 Claude Opus 4.6 System Card
 
 Detailed documentation of Claude Opus 4.6.
+
+[](https://www.anthropic.com/claude-sonnet-4-6-system-card)
+
+Claude Sonnet 4.6 System Card
+
+Detailed documentation of Claude Sonnet 4.6.
 
 [](https://www.anthropic.com/claude-opus-4-5-system-card)
 
@@ -65,7 +71,7 @@ Learning resources
 
 Quickstarts
 
-Deployable applications built with our API.
+Deployable applications built with the API.
 
 [](https://anthropic.skilljar.com/)
 
@@ -101,7 +107,7 @@ Key terms and concepts for working with Claude and language models.
 
 Resources for AI ingestion
 
-[](/docs/en/claude_api_primer.md)
+[](/docs/en/claude_api_primer)
 
 API primer for Claude ingestion
 

@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-08T20:52:06Z"
+fetched_at: "2026-02-23T00:45:07Z"
 source_url: "https://support.claude.com/en/articles/13200993-restrict-access-to-claude-with-ip-allowlisting"
 title: "Restrict access to Claude with IP allowlisting | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ Restrict access to Claude with IP allowlisting
 
 # Restrict access to Claude with IP allowlisting
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -59,6 +59,10 @@ When a request originates from an IP address that’s not in your allowlist, acc
 
 Related Articles
 
+[](https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team)
+
+Who owns and manages the data of my team?
+
 [](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
 
 Getting Started with Local MCP Servers on Claude Desktop
@@ -67,17 +71,13 @@ Getting Started with Local MCP Servers on Claude Desktop
 
 Claude Code usage analytics
 
-[](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
-
-Using Skills in Claude
-
 [](https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist)
 
 Enabling and using the desktop extension allowlist
 
 [](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Admin Controls
+Claude in Chrome admin controls
 
 Did this answer your question?
 

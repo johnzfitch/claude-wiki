@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:52:08Z"
+fetched_at: "2026-02-13T09:23:39Z"
 source_url: "https://support.claude.com/en/articles/8116515-where-is-the-claude-api-supported"
 title: "Where is the Claude API supported? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Where is the Claude API supported?
 
 # Where is the Claude API supported?
 
-Updated yesterday
+Updated this week
 
 We support using the Claude API in a [number of locations](https://www.anthropic.com/supported-countries). Please check our website in the future for updates.
 
@@ -51,9 +51,9 @@ How will I be billed for Claude API use?
 
 Where can I go for Claude API support and assistance?
 
-[](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage)
+[](https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions)
 
-How do I pay for my Claude API usage?
+Claude Console Roles and Permissions
 
 [](https://support.claude.com/en/articles/12386420-claude-code-faq)
 

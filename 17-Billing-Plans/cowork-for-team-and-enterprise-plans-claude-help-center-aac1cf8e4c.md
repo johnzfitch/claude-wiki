@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:36Z"
+fetched_at: "2026-02-23T00:45:09Z"
 source_url: "https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans"
 title: "Cowork for Team and Enterprise plans | Claude Help Center"
 ---
@@ -23,6 +23,8 @@ Search for articles...
 
 Table of contents
 
+[](#h_dc4e6faa8d)
+
 [](#h_c3231aa0b4)
 
 [](#h_d199ebca95)
@@ -43,17 +45,29 @@ Updated this week
 
 Table of contents
 
+[](#h_dc4e6faa8d)
+
 [](#h_c3231aa0b4)
 
 [](#h_d199ebca95)
 
 [](#h_0ab0817a27)
 
-This article explains important limitations and considerations for Team and Enterprise organizations using **[Cowork](https://claude.com/product/cowork)** during the research preview period.
+This article explains important limitations and considerations for Team and Enterprise organizations using Cowork during the research preview period.
 
-Cowork is available as a research preview for all paid plans (Pro, Max, Team, Enterprise) using the Claude Desktop app on macOS.
+## Availability
 
-## **[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)**
+Cowork is available as a research preview for paid plans (Pro, Max, Team, Enterprise) on:
+
+- **Claude Desktop for macOS**
+
+  - **[Click here](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)** to download
+
+- **Claude Desktop for Windows** (x64 only)
+
+**Windows users:** Cowork requires the latest version of Claude for Windows. Download or update at **[claude.com/download](https://claude.com/download)**.
+
+Windows arm64 is not supported.
 
 ------------------------------------------------------------------------
 
@@ -65,7 +79,7 @@ Cowork will be on by default when the research preview launches, but organizatio
 
 1.  Log in to your Team or Enterprise organization as an Owner or Primary Owner.
 
-2.  Navigate to [Admin settings \> Capabilities](https://claude.ai/admin-settings/capabilities).
+2.  Navigate to **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
 
 3.  Locate the **Cowork** toggle.
 
@@ -107,7 +121,7 @@ Security teams will have no visibility into Cowork usage through standard enterp
 
 ### Local conversation storage
 
-Cowork stores conversation history locally on users' computers. This data is not subject to Anthropic's standard [data retention policies](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data) and cannot be centrally managed or exported by admins.
+Cowork stores conversation history locally on users' computers. This data is not subject to Anthropic's standard **[data retention policies](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)** and cannot be centrally managed or exported by admins.
 
 ### No role-based access controls
 
@@ -133,27 +147,23 @@ Users should:
 
 - Report suspicious behavior immediately
 
-See [Using Cowork Safely](https://support.claude.com/en/articles/13364135-using-cowork-safely) for detailed guidance.
+For detailed guidance, see **[Using Cowork safely](https://support.claude.com/en/articles/13364135-using-cowork-safely)**.
 
 ### Network access
 
-Cowork respects your organization's current network egress permissions. Review your network access settings in Admin settings \> Capabilities before enabling Cowork.
+Cowork respects your organization's current network egress permissions. Review your network access settings in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** before enabling Cowork.
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/10065433-installing-claude-desktop)
 
-Can you delete data that I sent via Team and Enterprise plans?
+Installing Claude Desktop
 
-[](https://support.claude.com/en/articles/12489464-using-enterprise-search)
+[](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)
 
-Using Enterprise Search
-
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
-
-Managing members on Team and Enterprise plans
+HIPAA-ready Enterprise plans
 
 [](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
 
@@ -162,6 +172,10 @@ Getting started with Cowork
 [](https://support.claude.com/en/articles/13364135-using-cowork-safely)
 
 Using Cowork safely
+
+[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
+
+Purchase and manage seats on Enterprise plans
 
 Did this answer your question?
 

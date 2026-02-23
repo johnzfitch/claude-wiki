@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:17Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10366389-how-can-i-advance-my-claude-api-usage-to-tier-2"
 title: "How can I advance my Claude API usage to Tier 2? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ How can I advance my Claude API usage to Tier 2?
 
 # How can I advance my Claude API usage to Tier 2?
 
-Updated this week
+Updated over a week ago
 
 To qualify for usage Tier 2, you'll need to purchase a cumulative total of \$40 of API usage credits on your Claude Console account. Here's what you need to do:
 

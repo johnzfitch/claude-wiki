@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:09Z"
+fetched_at: "2026-02-22T13:11:09Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction"
 title: "Compaction - Claude API Docs"
 ---
@@ -24,6 +24,8 @@ Compaction extends the effective context length for long-running conversations a
 
 Compaction is currently in beta. Include the [beta header](/docs/en/api/beta-headers) `compact-2026-01-12` in your API requests to use this feature.
 
+Compaction is eligible for [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) arrangements.
+
 ## 
 
 Supported models
@@ -31,6 +33,7 @@ Supported models
 Compaction is supported on the following models:
 
 - Claude Opus 4.6 (`claude-opus-4-6`)
+- Claude Sonnet 4.6 (`claude-sonnet-4-6`)
 
 ## 
 
@@ -108,13 +111,10 @@ response = client.beta.messages.create(
         "edits": [
             {
                 "type": "compact_20260112",
-                "trigger": {
-                    "type": "input_tokens",
-                    "value": 150000
-                }
+                "trigger": {"type": "input_tokens", "value": 150000},
             }
         ]
-    }
+    },
 )
 ```
 
@@ -142,10 +142,10 @@ response = client.beta.messages.create(
         "edits": [
             {
                 "type": "compact_20260112",
-                "instructions": "Focus on preserving code snippets, variable names, and technical decisions."
+                "instructions": "Focus on preserving code snippets, variable names, and technical decisions.",
             }
         ]
-    }
+    },
 )
 ```
 
@@ -166,13 +166,8 @@ response = client.beta.messages.create(
     max_tokens=4096,
     messages=messages,
     context_management={
-        "edits": [
-            {
-                "type": "compact_20260112",
-                "pause_after_compaction": True
-            }
-        ]
-    }
+        "edits": [{"type": "compact_20260112", "pause_after_compaction": True}]
+    },
 )
 
 # Check if compaction triggered a pause
@@ -186,9 +181,7 @@ if response.stop_reason == "compaction":
         model="claude-opus-4-6",
         max_tokens=4096,
         messages=messages,
-        context_management={
-            "edits": [{"type": "compact_20260112"}]
-        }
+        context_management={"edits": [{"type": "compact_20260112"}]},
     )
 ```
 
@@ -227,10 +220,12 @@ if response.stop_reason == "compaction":
 
     # Estimate total tokens consumed; prompt wrap-up if over budget
     if n_compactions * TRIGGER_THRESHOLD >= TOTAL_TOKEN_BUDGET:
-        messages.append({
-            "role": "user",
-            "content": "Please wrap up your current work and summarize the final state.",
-        })
+        messages.append(
+            {
+                "role": "user",
+                "content": "Please wrap up your current work and summarize the final state.",
+            }
+        )
 ```
 
 ## 
@@ -276,9 +271,7 @@ response = client.beta.messages.create(
     model="claude-opus-4-6",
     max_tokens=4096,
     messages=messages,
-    context_management={
-        "edits": [{"type": "compact_20260112"}]
-    }
+    context_management={"edits": [{"type": "compact_20260112"}]},
 )
 ```
 
@@ -305,9 +298,7 @@ with client.beta.messages.stream(
     model="claude-opus-4-6",
     max_tokens=4096,
     messages=messages,
-    context_management={
-        "edits": [{"type": "compact_20260112"}]
-    }
+    context_management={"edits": [{"type": "compact_20260112"}]},
 ) as stream:
     for event in stream:
         if event.type == "content_block_start":
@@ -331,7 +322,7 @@ with client.beta.messages.stream(
 
 Prompt caching
 
-You may add a `cache_control` breakpoint on compaction blocks, which caches the full system prompt along with the summarized content. The original compacted content is ignored.
+Compaction works well with [prompt caching](/docs/en/build-with-claude/prompt-caching). You can add a `cache_control` breakpoint on compaction blocks to cache the summarized content. The original compacted content is ignored.
 
 ``` shiki
 {
@@ -349,6 +340,40 @@ You may add a `cache_control` breakpoint on compaction blocks, which caches the 
     ]
 }
 ```
+
+#### 
+
+Maximizing cache hits with system prompts
+
+When compaction occurs, the summary becomes new content that needs to be written to the cache. Without additional cache breakpoints, this would also invalidate any cached system prompt, requiring it to be re-cached along with the compaction summary.
+
+To maximize cache hit rates, add a `cache_control` breakpoint at the end of your system prompt. This keeps the system prompt cached separately from the conversation, so when compaction occurs:
+
+- The system prompt cache remains valid and is read from cache
+- Only the compaction summary needs to be written as a new cache entry
+
+Python
+
+``` shiki
+response = client.beta.messages.create(
+    betas=["compact-2026-01-12"],
+    model="claude-opus-4-6",
+    max_tokens=4096,
+    system=[
+        {
+            "type": "text",
+            "text": "You are a helpful coding assistant...",
+            "cache_control": {
+                "type": "ephemeral"
+            },  # Cache the system prompt separately
+        }
+    ],
+    messages=messages,
+    context_management={"edits": [{"type": "compact_20260112"}]},
+)
+```
+
+This approach is particularly beneficial for long system prompts, as they remain cached even across multiple compaction events throughout a conversation.
 
 ## 
 
@@ -406,9 +431,7 @@ count_response = client.beta.messages.count_tokens(
     betas=["compact-2026-01-12"],
     model="claude-opus-4-6",
     messages=messages,
-    context_management={
-        "edits": [{"type": "compact_20260112"}]
-    }
+    context_management={"edits": [{"type": "compact_20260112"}]},
 )
 
 print(f"Current tokens: {count_response.input_tokens}")
@@ -430,6 +453,7 @@ client = anthropic.Anthropic()
 
 messages: list[dict] = []
 
+
 def chat(user_message: str) -> str:
     messages.append({"role": "user", "content": user_message})
 
@@ -442,19 +466,18 @@ def chat(user_message: str) -> str:
             "edits": [
                 {
                     "type": "compact_20260112",
-                    "trigger": {"type": "input_tokens", "value": 100000}
+                    "trigger": {"type": "input_tokens", "value": 100000},
                 }
             ]
-        }
+        },
     )
 
     # Append response (compaction blocks are automatically included)
     messages.append({"role": "assistant", "content": response.content})
 
     # Return the text content
-    return next(
-        block.text for block in response.content if block.type == "text"
-    )
+    return next(block.text for block in response.content if block.type == "text")
+
 
 # Run a long conversation
 print(chat("Help me build a Python web scraper"))
@@ -475,6 +498,7 @@ client = anthropic.Anthropic()
 
 messages: list[dict[str, Any]] = []
 
+
 def chat(user_message: str) -> str:
     messages.append({"role": "user", "content": user_message})
 
@@ -488,10 +512,10 @@ def chat(user_message: str) -> str:
                 {
                     "type": "compact_20260112",
                     "trigger": {"type": "input_tokens", "value": 100000},
-                    "pause_after_compaction": True
+                    "pause_after_compaction": True,
                 }
             ]
-        }
+        },
     )
 
     # Check if compaction occurred and paused
@@ -515,9 +539,7 @@ def chat(user_message: str) -> str:
             model="claude-opus-4-6",
             max_tokens=4096,
             messages=messages_after_compaction,
-            context_management={
-                "edits": [{"type": "compact_20260112"}]
-            }
+            context_management={"edits": [{"type": "compact_20260112"}]},
         )
 
         # Update our message list to reflect the compaction
@@ -528,9 +550,8 @@ def chat(user_message: str) -> str:
     messages.append({"role": "assistant", "content": response.content})
 
     # Return the text content
-    return next(
-        block.text for block in response.content if block.type == "text"
-    )
+    return next(block.text for block in response.content if block.type == "text")
+
 
 # Run a long conversation
 print(chat("Help me build a Python web scraper"))
@@ -543,7 +564,7 @@ print(chat("Now add rate limiting and error handling"))
 
 Current limitations
 
-- **Same model for summarization:** The model specified in your request is used for summarization. There is no option to use a different (e.g., cheaper) model for the summary.
+- **Same model for summarization:** The model specified in your request is used for summarization. There is no option to use a different (for example, cheaper) model for the summary.
 
 ## 
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:38Z"
+fetched_at: "2026-02-22T13:31:10Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/files"
 title: "Files - Claude API Reference"
 ---
@@ -13,23 +13,23 @@ cURL
 
 ##### [Upload File](/docs/en/api/beta/files/upload)
 
-post/v1/files
+POST/v1/files
 
 ##### [List Files](/docs/en/api/beta/files/list)
 
-get/v1/files
+GET/v1/files
 
 ##### [Download File](/docs/en/api/beta/files/download)
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 ##### [Get File Metadata](/docs/en/api/beta/files/retrieve_metadata)
 
-get/v1/files/{file_id}
+GET/v1/files/{file_id}
 
 ##### [Delete File](/docs/en/api/beta/files/delete)
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 ##### ModelsExpand Collapse 
 
@@ -45,10 +45,6 @@ Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
 
-Accepts one of the following:
-
-"file_deleted"
-
 FileMetadata = object { id, created_at, filename, 4 more }
 
 id: string
@@ -61,39 +57,23 @@ created_at: string
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 filename: string
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 mime_type: string
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 size_bytes: number
 
 Size of the file in bytes.
-
-minimum0
 
 type: "file"
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-"file"
 
 downloadable: optional boolean
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:11Z"
+fetched_at: "2026-02-22T13:59:05Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills"
 title: "Skills - Claude API Reference"
 ---
@@ -15,25 +15,25 @@ Go
 
 client.Beta.Skills.New(ctx, params) (\*[BetaSkillNewResponse](/docs/en/api/beta#BetaSkillNewResponse), error)
 
-post/v1/skills
+POST/v1/skills
 
 ##### [List Skills](/docs/en/api/beta/skills/list)
 
 client.Beta.Skills.List(ctx, params) (\*PageCursor\[[BetaSkillListResponse](/docs/en/api/beta#BetaSkillListResponse)\], error)
 
-get/v1/skills
+GET/v1/skills
 
 ##### [Get Skill](/docs/en/api/beta/skills/retrieve)
 
 client.Beta.Skills.Get(ctx, skillID, query) (\*[BetaSkillGetResponse](/docs/en/api/beta#BetaSkillGetResponse), error)
 
-get/v1/skills/{skill_id}
+GET/v1/skills/{skill_id}
 
 ##### [Delete Skill](/docs/en/api/beta/skills/delete)
 
 client.Beta.Skills.Delete(ctx, skillID, body) (\*[BetaSkillDeleteResponse](/docs/en/api/beta#BetaSkillDeleteResponse), error)
 
-delete/v1/skills/{skill_id}
+DELETE/v1/skills/{skill_id}
 
 #### SkillsVersions
 
@@ -41,25 +41,25 @@ delete/v1/skills/{skill_id}
 
 client.Beta.Skills.Versions.New(ctx, skillID, params) (\*[BetaSkillVersionNewResponse](/docs/en/api/beta#BetaSkillVersionNewResponse), error)
 
-post/v1/skills/{skill_id}/versions
+POST/v1/skills/{skill_id}/versions
 
 ##### [List Skill Versions](/docs/en/api/beta/skills/versions/list)
 
 client.Beta.Skills.Versions.List(ctx, skillID, params) (\*PageCursor\[[BetaSkillVersionListResponse](/docs/en/api/beta#BetaSkillVersionListResponse)\], error)
 
-get/v1/skills/{skill_id}/versions
+GET/v1/skills/{skill_id}/versions
 
 ##### [Get Skill Version](/docs/en/api/beta/skills/versions/retrieve)
 
 client.Beta.Skills.Versions.Get(ctx, version, params) (\*[BetaSkillVersionGetResponse](/docs/en/api/beta#BetaSkillVersionGetResponse), error)
 
-get/v1/skills/{skill_id}/versions/{version}
+GET/v1/skills/{skill_id}/versions/{version}
 
 ##### [Delete Skill Version](/docs/en/api/beta/skills/versions/delete)
 
 client.Beta.Skills.Versions.Delete(ctx, version, params) (\*[BetaSkillVersionDeleteResponse](/docs/en/api/beta#BetaSkillVersionDeleteResponse), error)
 
-delete/v1/skills/{skill_id}/versions/{version}
+DELETE/v1/skills/{skill_id}/versions/{version}
 
 [](/docs)
 

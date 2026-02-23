@@ -1,0 +1,61 @@
+---
+category: "19-Reference"
+fetched_at: "2026-02-13T09:23:10Z"
+source_url: "https://www.anthropic.com/news/donate-public-first-action"
+title: "Anthropic is donating $20 million to Public First Action \\ Anthropic"
+---
+
+Policy
+
+# Anthropic is donating \$20 million to Public First Action
+
+Feb 12, 2026
+
+AI will bring enormous [benefits](https://darioamodei.com/essay/machines-of-loving-grace)—for science, technology, medicine, economic growth, and much more. But a technology this powerful also comes with considerable [risks](https://darioamodei.com/essay/the-adolescence-of-technology).
+
+Those risks might come from the misuse of the models: AI is already being exploited to [automate cyberattacks](https://www.anthropic.com/news/disrupting-AI-espionage); in the future it might assist in the production of [dangerous weapons](https://red.anthropic.com/2025/biorisk/). Risks might also come from the models themselves: powerful AI systems can [take harmful actions](https://www-cdn.anthropic.com/f21d93f21602ead5cdbecb8c8e1c765759d9e232.pdf) contrary to the intentions—and out of the control—of their users.
+
+AI models are improving in their capabilities at a [dizzying, increasing pace](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/), from simple chatbots in 2023 to today’s “agents” that complete complex tasks. At Anthropic, we’ve had to redesign a notoriously difficult technical test for hiring software engineers [multiple times](https://www.anthropic.com/engineering/AI-resistant-technical-evaluations) as successive AI models defeated each version. This rate of progress will not be confined to software engineering; indeed, many other professions are [already seeing an impact](https://www.anthropic.com/economic-index).
+
+Consequently, the AI policy decisions we make in the next few years will touch nearly every part of public life, from the labor market to online child protection to national security and the balance of power between nations.
+
+In circumstances like these, we need good policy: flexible regulation that allows us to reap the benefits of AI, keep the risks in check, and keep America ahead in the AI race. That means keeping critical AI technology out of the hands of America’s adversaries, maintaining meaningful safeguards, promoting job growth, protecting children, and demanding real transparency from the companies building the most powerful AI models.
+
+We don’t want to sit on the sidelines while these policies are developed. For that reason, Anthropic is contributing \$20 million to [Public First Action](https://publicfirstaction.us/), a new bipartisan 501(c)(4) that will support public education about AI, promote safeguards, and ensure America leads the AI race.
+
+Recent polling finds that [69% of Americans](https://poll.qu.edu/poll-release?releaseid=3923) think the government is “not doing enough to regulate the use of AI.” We agree. AI is being adopted faster than any technology in history, and the window to get policy right is closing. Yet there are no official guardrails in place and there is no federal framework on the horizon.
+
+At present, there are few organized efforts to help mobilize people and politicians who understand what’s at stake in AI development. Instead, vast resources have flowed to political organizations that *oppose* these efforts.
+
+Public First Action is working to fill that gap. Founded and led both by Republican and Democratic strategists, it works across party lines to support policies on AI governance.
+
+The organization will work with Republicans, Democrats, and Independents who share the same policy priorities:
+
+- Insisting on AI model transparency [safeguards](https://www.anthropic.com/news/the-need-for-transparency-in-frontier-ai) that give the public more visibility into—and thus, greater confidence that—frontier AI companies are responsibly managing risks;
+- Supporting a robust federal AI governance framework — and opposing preemption of state laws unless Congress enacts stronger safeguards;
+- Supporting smart export controls on AI chips that will keep America ahead of its authoritarian adversaries;
+- Pursuing targeted regulation focused on the nearest-term high risks: AI-enabled biological weapons and cyberattacks
+
+These policies aren’t partisan. Nor are they for the benefit of Anthropic as an AI developer—effective AI governance means *more* scrutiny of companies like ours, not less. They’re also not an attempt to hold back smaller or less well-resourced developers: our view is that transparency regulation, for example, should apply only to companies developing the most powerful (and most dangerous) AI models.
+
+The companies building AI have a responsibility to help ensure the technology serves the public good, not just their own interests. Our contribution to Public First Action is part of our commitment to governance that enables AI’s transformative potential and helps proportionately manage its risks.
+
+[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/donate-public-first-action)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/donate-public-first-action)
+
+## Related content
+
+### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
+
+We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
+
+[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
+
+### Covering electricity price increases from our data centers
+
+[Read more](/news/covering-electricity-price-increases)
+
+### Introducing Claude Opus 4.6
+
+We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+
+[Read more](/news/claude-opus-4-6)

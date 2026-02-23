@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:23Z"
+fetched_at: "2026-02-23T00:45:08Z"
 source_url: "https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans"
 title: "Purchasing and managing seats on Team plans | Claude Help Center"
 ---
@@ -69,11 +69,11 @@ Table of contents
 
 [](#h_b806e2e3f3)
 
-Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For pricing and billing details, see [How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)
+Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For pricing and billing details, see **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)**
 
-**Permissions note:** Only Owners and Primary Owners can purchase seats and access [Admin settings \> Billing](https://claude.ai/admin-settings/billing). Admins and above can reassign seat types for members in [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+**Permissions note:** Only Owners and Primary Owners can purchase seats and access **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**. Admins and above can reassign seat types for members in **[Organization](https://claude.ai/admin-settings/billing) [settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
-For information on adding and removing members from your organization, see [Managing members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans).
+For information on adding and removing members from your organization, see **[Managing members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
@@ -91,13 +91,13 @@ Your plan has a total seat allocation (e.g., 30 Standard seats and 10 Premium se
 
 ## Purchasing new seats
 
-**Important:** If you want to upgrade an existing member from Standard to Premium, you don't need to purchase a new seat. Use the seat tier reassignment in [Admin settings \> Organization](https://claude.ai/admin-settings/organization) instead — see [Upgrading a Standard seat to Premium](#h_e7a7f4f396) below.
+**Important:** If you want to upgrade an existing member from Standard to Premium, you don't need to purchase a new seat. Use the seat tier reassignment in **[Organization](https://claude.ai/admin-settings/billing) [settings \> Organization](https://claude.ai/admin-settings/organization)** instead — see **[Upgrading a Standard seat to Premium](#h_e7a7f4f396)** below.
 
 Follow these steps to add seats to your plan's total allocation:
 
 1.  Log in with your Owner or Primary Owner account.
 
-2.  Navigate to [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+2.  Navigate to **[Organization](https://claude.ai/admin-settings/billing) [settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
 3.  Click "Manage" under "Total seats."
 
@@ -121,7 +121,7 @@ You can reduce the total number of seats on your Team plan:
 
 1.  Log in with your Owner or Primary Owner account.
 
-2.  Navigate to [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+2.  Navigate to **[Organization](https://claude.ai/admin-settings/billing) [settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
 3.  If needed, remove members or reassign them to free up the seats you want to eliminate.
 
@@ -143,7 +143,7 @@ You can move users between Standard and Premium seats within your existing alloc
 
 To reassign a user's seat type:
 
-1.  Go to [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+1.  Go to **[Organization](https://claude.ai/admin-settings/billing) [settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
 2.  Find the member you want to reassign.
 
@@ -157,7 +157,7 @@ Members moved from Premium to Standard will have lower usage limits, and vice ve
 
 Upgrading a member from Standard to Premium is a reassignment, not a new purchase. You don't need to buy an additional seat unless your Premium allocation is already full.
 
-1\. Go to [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+1\. Go to **[Organization](https://claude.ai/admin-settings/billing) [settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
 2\. Find the member assigned to a Standard seat you want to upgrade.
 
@@ -179,7 +179,7 @@ The unassigned option allows you to temporarily remove a user from a seat withou
 
 **Example:** You have five Premium seats, all assigned. You want to move User A (currently on Premium) to Standard, and move User B (currently on Standard) to Premium—without purchasing an additional seat.
 
-1.  Go to [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+1.  Go to **[Organization](https://claude.ai/admin-settings/billing) [settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
 2.  Find User A and change their seat tier to "Unassigned." This frees up one Premium seat.
 
@@ -191,9 +191,9 @@ The unassigned option allows you to temporarily remove a user from a seat withou
 
 ## Seat assignment with JIT or SCIM provisioning
 
-[Users provisioned via JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans) are automatically assigned to the highest-available seat type when they're added. Admins and above can manually reassign seat types afterward in [Admin settings \> Organization](https://claude.ai/admin-settings/organization).
+**[Users provisioned via JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans)** are automatically assigned to the highest-available seat type when they're added. Admins and above can manually reassign seat types afterward in **[Organization](https://claude.ai/admin-settings/billing) [settings \> Organization](https://claude.ai/admin-settings/organization)**.
 
-You can also use Advanced Group Mappings with JIT or SCIM to provision users directly to a specific seat type.
+You can also enable group mappings with JIT or SCIM to provision users directly to a specific seat type.
 
 ------------------------------------------------------------------------
 
@@ -205,7 +205,7 @@ You can also use Advanced Group Mappings with JIT or SCIM to provision users dir
 
 - **Removing members** does not trigger an immediate credit or refund. The seat becomes available to assign to another member. To reduce your bill, you'll need to reduce your plan's total seat allocation.
 
-For detailed billing calculations and examples, see [How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)
+For detailed billing calculations and examples, see **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)**
 
 ------------------------------------------------------------------------
 
@@ -215,21 +215,21 @@ Related Articles
 
 What is the Team plan?
 
-[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
+[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
 
-How am I billed for my Enterprise plan?
+What is the Enterprise plan?
 
 [](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
+Manage members on Team and Enterprise plans
 
-[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
 
-Purchasing and managing seats on Enterprise plans
+Purchase and manage seats on Enterprise plans
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:55Z"
+fetched_at: "2026-02-23T00:45:24Z"
 source_url: "https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome"
 title: "Simplify your browsing experience with Claude in Chrome | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Simplify your browsing experience with Claude in Chrome
 
 # Simplify your browsing experience with Claude in Chrome
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -81,7 +81,7 @@ The Chrome extension brings Claude directly into your web workflow. Claude opera
 
 Not every browser activity suits delegation to the Claude browser extension. Here are a few examples to help you understand which tool to use to work more effectively:
 
-  
+\
 ​**Ideal for Claude in Chrome:**
 
 - Taking action on specific websites like filling forms, clicking buttons, navigating interfaces, making changes to live pages
@@ -186,11 +186,11 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 
@@ -200,9 +200,9 @@ Claude in Chrome Troubleshooting
 
 Using Claude in Chrome Safely
 
-[](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide)
+[](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Permissions Guide
+Claude in Chrome admin controls
 
 Did this answer your question?
 

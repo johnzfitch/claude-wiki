@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:09Z"
+fetched_at: "2026-02-22T13:18:22Z"
 source_url: "https://platform.claude.com/docs/en/api/client-sdks"
 title: "Client SDKs - Claude API Docs"
 ---
@@ -109,9 +109,7 @@ client = anthropic.Anthropic()
 message = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude"}
-    ]
+    messages=[{"role": "user", "content": "Hello, Claude"}],
 )
 print(message.content)
 ```
@@ -144,7 +142,7 @@ message = client.beta.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello"}],
-    betas=["feature-name"]
+    betas=["feature-name"],
 )
 ```
 

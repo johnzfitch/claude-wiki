@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-10T10:49:20Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/11174660-online-safety-contacts"
 title: "Online Safety Contacts | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Table of contents
 
 # **Designated Point of Contact for Authorities**
 
-Government authorities can contact Anthropic directly by emailing [\[email protected\]](/cdn-cgi/l/email-protection#41332426342d20352e336c282f3034283328243201202f3529332e3128226f222e2c). This is reserved for government officials seeking a point of contact and for governmental submissions to remove content. 
+Government authorities can contact Anthropic directly by emailing [\[email protected\]](/cdn-cgi/l/email-protection#75071012001914011a07581c1b04001c071c100635141b011d071a051c165b161a18). This is reserved for government officials seeking a point of contact and for governmental submissions to remove content. 
 
  For other types of inquiries, please use the mechanisms described below. ￼
 
@@ -57,9 +57,9 @@ Government authorities can contact Anthropic directly by emailing [\[email prot
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8106465-our-approach-to-user-safety)
+[](https://support.claude.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude)
 
-Our Approach to User Safety
+Reporting, Blocking, and Removing Content from Claude
 
 [](https://support.claude.com/en/articles/9035075-law-enforcement-requests)
 
@@ -69,13 +69,13 @@ Law Enforcement Requests
 
 Reporting, Blocking, and Removing Content from Claude
 
-[](https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account)
-
-Who owns and manages the data of my Claude for Education account?
-
 [](https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government)
 
 How to get support for Claude for Government
+
+[](https://support.claude.com/en/articles/13704655-unauthorized-anthropic-stock-sales-and-investment-scams)
+
+Unauthorized Anthropic stock sales and investment scams
 
 Did this answer your question?
 

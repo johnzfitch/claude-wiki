@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-10T10:49:19Z"
+fetched_at: "2026-02-23T00:45:32Z"
 source_url: "https://support.claude.com/en/articles/11106443-using-research"
 title: "Using Research | Claude Help Center"
 ---
@@ -63,7 +63,7 @@ Using Claude Code with your Pro or Max plan
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:39Z"
+fetched_at: "2026-02-23T00:45:18Z"
 source_url: "https://support.claude.com/en/articles/10684626-enabling-and-using-web-search"
 title: "Enabling and using web search | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Enabling and using web search
 
 # Enabling and using web search
 
-Updated today
+Updated this week
 
 Table of contents
 
@@ -67,6 +67,8 @@ Table of contents
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
 
+- Sonnet 4.6
+
 - Opus 4.6
 
 - Opus 4.5
@@ -75,15 +77,13 @@ You can have Claude search the internet to provide you with up-to-date informati
 
 - Sonnet 4.5
 
-- Sonnet 4
-
 Web search expands Claude's knowledge with real-time data, helping you make better-informed decisions with current information.
 
 **To access this feature on a Team or Enterprise plan account:**
 
 An Owner or Primary Owner must first enable web search for the entire workspace. This can be found in **[Admin settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2032032614/ad907328c4d9a26ee4bd9ca27a52/CleanShot+2026-02-05+at+09_01_42%402x.png?expires=1770660000&signature=c6d2d0b1c6d7bbd777bc22cb0f3e24531b47b2966383f77a5942c42347465d86&req=diAkFMl9n4deXfMW3nq%2BgTh6y0obvN17%2BiPTuOwGpPmvKRhWp%2FUZ35fWcCkA%0AvesCFKal%2F9390fMVGBgeFIMP7%2FA%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2032032614/ad907328c4d9a26ee4bd9ca27a52/CleanShot+2026-02-05+at+09_01_42%402x.png?expires=1771809300&signature=3537750a75ec2bb63b37a694b1b1481245843c35dcabc0fcaf6b0a14aa35ead6&req=diAkFMl9n4deXfMW1HO4zetvxbOyGMdTUJIbgsqS2%2BPVHTkde0QMtDzL3kb6%0AD87%2FwY0LFYZCNoj0NcA%3D%0A)
 
 Once this is enabled at the workspace level, any member of the organization can switch it on while starting a chat by clicking the “+” button in the lower left corner of the chat window and selecting “Web search." Users can toggle this off for chats that don’t require web search capabilities.
 
@@ -213,7 +213,7 @@ Claude Code model configuration
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai)
 

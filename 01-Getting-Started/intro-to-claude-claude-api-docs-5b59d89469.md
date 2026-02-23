@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-07T10:04:01Z"
+fetched_at: "2026-02-22T10:56:40Z"
 source_url: "https://platform.claude.com/docs/en/intro"
 title: "Intro to Claude - Claude API Docs"
 ---
@@ -17,37 +17,51 @@ Copy page
 
 The latest generation of Claude models:
 
-**Claude Opus 4.6** - Claude Opus 4.6 is the latest version of our most intelligent model, and the world’s best model for coding, enterprise agents, and professional work. [Learn more](https://www.anthropic.com/news/claude-opus-4-6).
+**Claude Opus 4.6** - Our most intelligent model, and the world’s best model for coding, enterprise agents, and professional work. [Learn more](https://www.anthropic.com/news/claude-opus-4-6).
 
-**Claude Sonnet 4.5** - Balanced performance and practicality for most uses, including coding and agents. [Learn more](https://www.anthropic.com/news/claude-sonnet-4-5).
+**Claude Sonnet 4.6** - Frontier intelligence at scale—built for coding, agents, and enterprise workflows. [Learn more](https://www.anthropic.com/news/claude-sonnet-4-6).
 
 **Claude Haiku 4.5** - Fastest model with near-frontier intelligence. [Learn more](https://www.anthropic.com/news/claude-haiku-4-5).
 
-Looking to chat with Claude? Visit [claude.ai](http://www.claude.ai)!
+Looking to chat with Claude? Visit [claude.ai](https://www.claude.ai).
 
 ## 
 
-Get started
+Recommended path for new developers
 
-If you’re new to Claude, start here to learn the essentials and make your first API call.
+Follow these steps to go from zero to a working Claude integration.
 
-[](/docs/en/get-started)
+1.  1
 
-Get started
+    Make your first API call
 
-Set up your development environment for building with Claude.
+    Set up your environment, install an SDK, and send your first message to Claude.
 
-[](/docs/en/about-claude/models/overview)
+    [Go to the quickstart](/docs/en/get-started)
 
-Learn about Claude
+2.  2
 
-Learn about the family of Claude models.
+    Understand the Messages API
 
-[](/docs/en/resources/prompt-library/library)
+    Learn the core request and response structure, including multi-turn conversations, system prompts, and stop reasons.
 
-Prompt Library
+    [Read the Messages API guide](/docs/en/build-with-claude/working-with-messages)
 
-Explore example prompts for inspiration.
+3.  3
+
+    Choose the right model
+
+    Compare Claude models by capability and cost to pick the best fit for your use case.
+
+    [See the models overview](/docs/en/about-claude/models/overview)
+
+4.  4
+
+    Explore features and tools
+
+    Discover what Claude can do: extended thinking, web search, file handling, structured outputs, and more.
+
+    [Browse the features overview](/docs/en/build-with-claude/overview)
 
 ------------------------------------------------------------------------
 
@@ -55,25 +69,25 @@ Explore example prompts for inspiration.
 
 Develop with Claude
 
-Anthropic has best-in-class developer tools to build scalable applications with Claude.
+Anthropic provides developer tools to help you build and scale applications with Claude.
 
 [](/)
 
 Developer Console
 
-Enjoy easier, more powerful prompting in your browser with the Workbench and the prompt generator tool.
+Prototype and test prompts in your browser with the Workbench and prompt generator.
 
 [](/docs/en/api/overview)
 
 API Reference
 
-Explore, implement, and scale with the Claude API and SDKs.
+Explore the full Claude API and client SDK documentation.
 
 [](https://platform.claude.com/cookbooks)
 
 Claude Cookbook
 
-Learn with interactive Jupyter notebooks that demonstrate uploading PDFs, embeddings, and more.
+Learn with interactive Jupyter notebooks covering PDFs, embeddings, and more.
 
 ------------------------------------------------------------------------
 
@@ -117,7 +131,7 @@ Was this page helpful?
 
 - 
 
-- [Get started](#get-started)
+- [Recommended path for new developers](#recommended-path-for-new-developers)
 
 - [Develop with Claude](#develop-with-claude)
 

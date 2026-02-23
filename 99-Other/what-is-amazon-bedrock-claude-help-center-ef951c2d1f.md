@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:36Z"
+fetched_at: "2026-02-23T00:45:52Z"
 source_url: "https://support.claude.com/en/articles/7996918-what-is-amazon-bedrock"
 title: "What is Amazon Bedrock? | Claude Help Center"
 ---
@@ -69,9 +69,9 @@ Where do I find Claude in Amazon Bedrock documentation?
 
 What AWS Regions are Claude models available in Amazon Bedrock?
 
-[](https://support.claude.com/en/articles/12386420-claude-code-faq)
+[](https://support.claude.com/en/articles/13756069-public-sector-faqs)
 
-Claude Code FAQ
+Public Sector FAQs
 
 Did this answer your question?
 

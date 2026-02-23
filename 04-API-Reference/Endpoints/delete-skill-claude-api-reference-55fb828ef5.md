@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:13Z"
+fetched_at: "2026-02-22T13:59:30Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/delete"
 title: "Delete Skill - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Skills.Delete(ctx, skillID, body) (\*[BetaSkillDeleteResponse](/docs/en/api/beta#BetaSkillDeleteResponse), error)
 
-delete/v1/skills/{skill_id}
+DELETE/v1/skills/{skill_id}
 
 Delete Skill
 
@@ -27,7 +27,9 @@ The format and length of IDs may change over time.
 
 body BetaSkillDeleteParams
 
-Betas param.Field\[\[\]AnthropicBeta\]optional
+Betas param.Field\[\[\]AnthropicBeta\]
+
+optional
 
 Optional header to specify the beta version(s) you want to use.
 
@@ -74,6 +76,8 @@ const AnthropicBetaContextManagement2025_06_27 AnthropicBeta = "context-manageme
 const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-context-window-exceeded-2025-08-26"
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
+
+const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

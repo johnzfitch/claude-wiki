@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:58Z"
+fetched_at: "2026-02-22T13:26:52Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/airport-code-analyst"
 title: "Airport code analyst - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Find and extract airport codes from text.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -57,11 +57,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "My next trip involves flying from Seattle to Amsterdam. I'll be spending a few days in Amsterdam before heading to Paris for a connecting flight to Rome."
+                    "text": "My next trip involves flying from Seattle to Amsterdam. I'll be spending a few days in Amsterdam before heading to Paris for a connecting flight to Rome.",
                 }
-            ]
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

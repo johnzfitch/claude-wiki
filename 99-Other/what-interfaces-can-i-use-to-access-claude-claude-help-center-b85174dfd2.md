@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-23T00:45:17Z"
 source_url: "https://support.claude.com/en/articles/8114487-what-interfaces-can-i-use-to-access-claude"
 title: "What interfaces can I use to access Claude? | Claude Help Center"
 ---
@@ -65,9 +65,9 @@ I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do 
 
 FAQs on Using Claude for Education at Your University
 
-[](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities)
+[](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 
-Using the Connectors Directory to extend Claude’s capabilities
+Use the Connectors Directory to extend Claude’s capabilities
 
 Did this answer your question?
 

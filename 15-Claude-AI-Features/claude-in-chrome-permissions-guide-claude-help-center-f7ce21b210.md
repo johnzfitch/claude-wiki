@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:01Z"
+fetched_at: "2026-02-23T00:45:20Z"
 source_url: "https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide"
 title: "Claude in Chrome Permissions Guide | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Claude in Chrome Permissions Guide
 
 # Claude in Chrome Permissions Guide
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -77,7 +77,7 @@ Claude in Chrome uses a multi-layered permission system to give you control over
 
 - **Act without asking:** Claude takes actions without asking for permission.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1843322018/f8c0ae21b449f32e71696c76a17a/7656f295-e802-4a72-9e60-94611501f920?expires=1770585300&signature=3d744a1b09c76d83f43aab1318d48424244faaabb24a61649f5c73c25765e512&req=dSgjFcp8n4FeUfMW1HO4zQ5txicJ%2FX20hD0gAzkS2hz8aQ5j1bs%2F8E9ROrKs%0Aph0Kxxvj72WR2MowCyk%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1843322018/f8c0ae21b449f32e71696c76a17a/7656f295-e802-4a72-9e60-94611501f920?expires=1771809300&signature=390ea7bb5836f69f84ac981194fe0a815555ec629bc081b9d644eb7008b929b5&req=dSgjFcp8n4FeUfMW1HO4zQ5txiYE9XG0hD0gAzkS2hxdHD1CD1%2BJ7K%2FR3HlT%0AOAp1eF9167fYDkL31rE%3D%0A)
 
 ------------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ Claude in Chrome uses a multi-layered permission system to give you control over
 
 Choose “Ask before acting” to have Claude create a plan from your prompt, which you can approve and allow Claude to execute. The plan will specify which websites you’re allowing Claude to access, as well as the approach it will follow:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1843320727/8d1c859ae9b8e0cdb536d024bf40/9bc3d239-8eb6-4bae-a032-a236f88ee606?expires=1770585300&signature=264fd89e29b40eb0d752c947d31d914f2486357c34d3e9c460a74966d9e19c65&req=dSgjFcp8nYZdXvMW1HO4zYqyasJI9Ie0gN0ADj5oqFDtaJRW%2BNLPjVJR4%2B5q%0Ae17%2FzG%2Bvddxqn53HTgU%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1843320727/8d1c859ae9b8e0cdb536d024bf40/9bc3d239-8eb6-4bae-a032-a236f88ee606?expires=1771809300&signature=a3ac7b9abbb191438ba263e0e2ce0bbcb35f15728acd526a17a67ee32f8ac77c&req=dSgjFcp8nYZdXvMW1HO4zYqyasNF%2FIu0gN0ADj5oqFDTNPvqA6sNbO%2FlPXUA%0A3ORw11r1nZXKKQRbdL4%3D%0A)
 
 Note that Claude will only use the websites listed in the plan, so you’ll need to manually approve any additional access requests.
 
@@ -123,7 +123,7 @@ You remain fully responsible for all actions Claude takes when using this mode.
 
 There are some websites on which Claude requires approval for every action. If you navigate to one of these sites, a **Permission required** prompt will appear in the extension side panel where Claude will ask for permission before accessing the page or taking any action.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1847222875/162eb012ebe473ed2b852b97e223/0209db51-6057-4ec4-a9b7-8358287d46a3?expires=1770585300&signature=19dab78776ec93f0450f6931a5f14bdb5c2561bef0b64aed22f718806c32dddb&req=dSgjEct8n4lYXPMW1HO4zeoCbMYuq3F8JCxYSFHKWIggLBUPDmB%2F9AfvoOCr%0A7IWzunVKnRscWtZTYek%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1847222875/162eb012ebe473ed2b852b97e223/0209db51-6057-4ec4-a9b7-8358287d46a3?expires=1771809300&signature=a06a669492bebcfb3c1b8f34b244e05e102a352bf680ca239aa151434ee43727&req=dSgjEct8n4lYXPMW1HO4zeoCbMcjo318JCxYSFHKWIi63IY1VE5S%2B9XTlEYw%0ADXTPbCe%2BU0T6fv3Zy2Q%3D%0A)
 
 ### Permission options
 
@@ -213,15 +213,11 @@ Related Articles
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
-
-[](https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome)
-
-Simplify your browsing experience with Claude in Chrome
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 
@@ -230,6 +226,10 @@ Claude in Chrome Troubleshooting
 [](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely)
 
 Using Claude in Chrome Safely
+
+[](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
+
+Claude in Chrome admin controls
 
 Did this answer your question?
 

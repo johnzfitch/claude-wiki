@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:05:10Z"
+fetched_at: "2026-02-22T13:18:29Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/python"
 title: "Python SDK - Claude API Docs"
 ---
@@ -72,6 +72,8 @@ message = client.messages.create(
 print(message.content)
 ```
 
+Consider using [python-dotenv](https://pypi.org/project/python-dotenv/) to add `ANTHROPIC_API_KEY="my-anthropic-api-key"` to your `.env` file so that your API key isn't stored in source control.
+
 ## 
 
 Async usage
@@ -84,6 +86,7 @@ from anthropic import AsyncAnthropic
 client = AsyncAnthropic(
     api_key=os.environ.get("ANTHROPIC_API_KEY"),
 )
+
 
 async def main() -> None:
     message = await client.messages.create(
@@ -98,6 +101,7 @@ async def main() -> None:
     )
     print(message.content)
 
+
 asyncio.run(main())
 ```
 
@@ -111,6 +115,7 @@ For improved async performance, you can use the `aiohttp` HTTP backend instead o
 import os
 import asyncio
 from anthropic import AsyncAnthropic, DefaultAioHttpClient
+
 
 async def main() -> None:
     async with AsyncAnthropic(
@@ -129,6 +134,7 @@ async def main() -> None:
         )
         print(message.content)
 
+
 asyncio.run(main())
 ```
 
@@ -136,7 +142,7 @@ asyncio.run(main())
 
 Streaming responses
 
-We provide support for streaming responses using Server-Sent Events (SSE).
+The SDK provides support for streaming responses using Server-Sent Events (SSE).
 
 ``` shiki
 from anthropic import Anthropic
@@ -158,6 +164,28 @@ for event in stream:
     print(event.type)
 ```
 
+The async client uses the exact same interface:
+
+``` shiki
+from anthropic import AsyncAnthropic
+
+client = AsyncAnthropic()
+
+stream = await client.messages.create(
+    max_tokens=1024,
+    messages=[
+        {
+            "role": "user",
+            "content": "Hello, Claude",
+        }
+    ],
+    model="claude-opus-4-6",
+    stream=True,
+)
+async for event in stream:
+    print(event.type)
+```
+
 ### 
 
 Streaming helpers
@@ -169,6 +197,7 @@ import asyncio
 from anthropic import AsyncAnthropic
 
 client = AsyncAnthropic()
+
 
 async def main() -> None:
     async with client.messages.stream(
@@ -188,12 +217,13 @@ async def main() -> None:
         message = await stream.get_final_message()
         print(message.to_json())
 
+
 asyncio.run(main())
 ```
 
-Streaming with `client.messages.stream(...)` exposes various helpers including event handlers and accumulation.
+Streaming with `client.messages.stream(...)` exposes various helpers including accumulation and SDK-specific events.
 
-Alternatively, you can use `client.messages.create({ ..., stream=True })` which only returns an iterator of the events in the stream and uses less memory (it does not build up a final message object for you).
+Alternatively, you can use `client.messages.create(..., stream=True)` which only returns an async iterable of the events in the stream and uses less memory (it doesn't build up a final message object for you).
 
 ## 
 
@@ -211,10 +241,7 @@ You can also count tokens before making a request:
 
 ``` shiki
 count = client.messages.count_tokens(
-    model="claude-opus-4-6",
-    messages=[
-        {"role": "user", "content": "Hello, world"}
-    ]
+    model="claude-opus-4-6", messages=[{"role": "user", "content": "Hello, world"}]
 )
 print(count.input_tokens)  # 10
 ```
@@ -229,25 +256,32 @@ This SDK provides support for tool use, also known as function calling. More det
 
 Tool helpers
 
-The SDK also provides helpers for easily defining and running tools as Python functions:
+The SDK provides helpers for defining and running tools as pure Python functions. You can use the `@beta_tool` decorator for more control:
 
 ``` shiki
 import json
-from anthropic import Anthropic
+from anthropic import Anthropic, beta_tool
 
 client = Anthropic()
 
+
+@beta_tool
 def get_weather(location: str) -> str:
     """Get the weather for a given location.
 
     Args:
         location: The city and state, e.g. San Francisco, CA
+    Returns:
+        A dictionary containing the location, temperature, and weather condition.
     """
-    return json.dumps({
-        "location": location,
-        "temperature": "68°F",
-        "condition": "Sunny",
-    })
+    return json.dumps(
+        {
+            "location": location,
+            "temperature": "68°F",
+            "condition": "Sunny",
+        }
+    )
+
 
 # Use the tool_runner to automatically handle tool calls
 runner = client.beta.messages.tool_runner(
@@ -262,9 +296,11 @@ for message in runner:
     print(message)
 ```
 
+On every iteration, an API request is made. If Claude wants to call one of the given tools, it's automatically called, and the result is returned directly to the model in the next iteration.
+
 ## 
 
-Message Batches
+Message batches
 
 This SDK provides support for the [Message Batches API](/docs/en/build-with-claude/batch-processing) under `client.messages.batches`.
 
@@ -340,6 +376,8 @@ client.beta.files.upload(
 )
 ```
 
+The async client uses the exact same interface. If you pass a `PathLike` instance, the file contents will be read asynchronously automatically.
+
 ## 
 
 Handling errors
@@ -398,13 +436,13 @@ All object responses in the SDK provide a `_request_id` property which is added 
 ``` shiki
 message = client.messages.create(
     max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude"}
-    ],
+    messages=[{"role": "user", "content": "Hello, Claude"}],
     model="claude-opus-4-6",
 )
 print(message._request_id)  # e.g., req_018EeWyXxfu5pfWkrYcMdjWG
 ```
+
+Unlike other properties that use an `_` prefix, the `_request_id` property is public. Unless documented otherwise, all other `_` prefix properties, methods, and modules are private.
 
 ## 
 
@@ -425,9 +463,7 @@ client = Anthropic(
 # Or, configure per-request:
 client.with_options(max_retries=5).messages.create(
     max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude"}
-    ],
+    messages=[{"role": "user", "content": "Hello, Claude"}],
     model="claude-opus-4-6",
 )
 ```
@@ -455,9 +491,7 @@ client = Anthropic(
 # Override per-request:
 client.with_options(timeout=5.0).messages.create(
     max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude"}
-    ],
+    messages=[{"role": "user", "content": "Hello, Claude"}],
     model="claude-opus-4-6",
 )
 ```
@@ -470,13 +504,15 @@ Note that requests which time out will be [retried twice by default](#retries).
 
 Long requests
 
-We highly encourage you to use the streaming [Messages API](#streaming-responses) for longer running requests.
+Consider using the streaming [Messages API](#streaming-responses) for longer running requests.
 
-We do not recommend setting a large `max_tokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [timeout](#timeouts) without receiving a response from Anthropic.
+Avoid setting a large `max_tokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [timeout](#timeouts) without receiving a response from Anthropic.
 
-The SDK will throw an error if a non-streaming request is expected to take longer than approximately 10 minutes. Passing `stream=True` or overriding the `timeout` option at the client or request level disables this error.
+The SDK will throw a `ValueError` if a non-streaming request is expected to take longer than approximately 10 minutes. Passing `stream=True` or overriding the `timeout` option at the client or request level disables this error.
 
 An expected request latency longer than the [timeout](#timeouts) for a non-streaming request will result in the client terminating the connection and retrying without receiving a response.
+
+The SDK sets a [TCP socket keep-alive](https://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html) option to reduce the impact of idle connection timeouts on some networks. This can be overridden by passing a custom `http_client` option to the client.
 
 ## 
 
@@ -504,16 +540,18 @@ from anthropic import AsyncAnthropic
 
 client = AsyncAnthropic()
 
+
 async def main() -> None:
     all_batches = []
     async for batch in client.messages.batches.list(limit=20):
         all_batches.append(batch)
     print(all_batches)
 
+
 asyncio.run(main())
 ```
 
-Alternatively, you can request a single page at a time:
+Alternatively, you can use the `.has_next_page()`, `.next_page_info()`, or `.get_next_page()` methods for more granular control working with pages:
 
 ``` shiki
 first_page = await client.messages.batches.list(limit=20)
@@ -522,28 +560,44 @@ if first_page.has_next_page():
     print(f"will fetch next page using these details: {first_page.next_page_info()}")
     next_page = await first_page.get_next_page()
     print(f"number of items we just fetched: {len(next_page.data)}")
+
+# Remove `await` for non-async usage.
+```
+
+Or work directly with the returned data:
+
+``` shiki
+first_page = await client.messages.batches.list(limit=20)
+
+print(f"next page cursor: {first_page.last_id}")
+for batch in first_page.data:
+    print(batch.id)
+
+# Remove `await` for non-async usage.
 ```
 
 ## 
 
-Default Headers
+Default headers
 
-We automatically send the `anthropic-version` header set to `2023-06-01`.
+The SDK automatically sends the `anthropic-version` header set to `2023-06-01`.
 
-If you need to, you can override it by setting default headers on a per-request basis.
+If you need to, you can override it by setting default headers on the client object or per-request.
 
-Be aware that doing so may result in incorrect types and other unexpected or undefined behavior in the SDK.
+Overriding default headers may result in incorrect types and other unexpected or undefined behavior in the SDK.
 
 ``` shiki
 from anthropic import Anthropic
 
-client = Anthropic()
+# Set default headers for all requests on the client
+client = Anthropic(
+    default_headers={"anthropic-version": "My-Custom-Value"},
+)
 
+# Or override per-request
 client.messages.with_raw_response.create(
     max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude"}
-    ],
+    messages=[{"role": "user", "content": "Hello, Claude"}],
     model="claude-opus-4-6",
     extra_headers={"anthropic-version": "My-Custom-Value"},
 )
@@ -558,6 +612,8 @@ Type system
 Request parameters
 
 Nested request parameters are [TypedDicts](https://docs.python.org/3/library/typing.html#typing.TypedDict). Responses are [Pydantic models](https://docs.pydantic.dev) which also have helper methods for things like serializing back into JSON ([`v1`](https://docs.pydantic.dev/1.10/usage/models/), [`v2`](https://docs.pydantic.dev/latest/concepts/serialization/)).
+
+Typed requests and responses provide autocomplete and documentation within your editor. If you'd like to see type errors in VS Code to help catch bugs earlier, set `python.analysis.typeCheckingMode` to `basic`.
 
 ### 
 
@@ -606,18 +662,38 @@ client = Anthropic()
 
 response = client.messages.with_raw_response.create(
     max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude"}
-    ],
+    messages=[{"role": "user", "content": "Hello, Claude"}],
     model="claude-opus-4-6",
 )
 
 print(response.headers.get("x-request-id"))
-message = response.parse()  # get the object that `messages.create()` would have returned
+message = (
+    response.parse()
+)  # get the object that `messages.create()` would have returned
 print(message.content)
 ```
 
 These methods return an `APIResponse` object.
+
+### 
+
+Streaming response body
+
+The `.with_raw_response` approach above eagerly reads the full response body when you make the request. To stream the response body instead, use `.with_streaming_response`, which requires a context manager and only reads the response body once you call `.read()`, `.text()`, `.json()`, `.iter_bytes()`, `.iter_text()`, `.iter_lines()`, or `.parse()`. In the async client, these are async methods.
+
+``` shiki
+with client.messages.with_streaming_response.create(
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello, Claude"}],
+    model="claude-opus-4-6",
+) as response:
+    print(response.headers.get("x-request-id"))
+
+    for line in response.iter_lines():
+        print(line)
+```
+
+The context manager is required so that the response will reliably be closed.
 
 ### 
 
@@ -661,6 +737,8 @@ Undocumented request params
 
 If you want to explicitly send an extra param, you can do so with the `extra_query`, `extra_body`, and `extra_headers` request options.
 
+The `extra_` parameters override documented parameters of the same name. For security reasons, ensure these methods are only used with trusted input data.
+
 #### 
 
 Undocumented response properties
@@ -678,11 +756,19 @@ import httpx
 from anthropic import Anthropic, DefaultHttpxClient
 
 client = Anthropic(
+    # Or use the `ANTHROPIC_BASE_URL` env var
+    base_url="http://my.test.server.example.com:8083",
     http_client=DefaultHttpxClient(
         proxy="http://my.test.proxy.example.com",
         transport=httpx.HTTPTransport(local_address="0.0.0.0"),
     ),
 )
+```
+
+You can also customize the client on a per-request basis by using `with_options()`:
+
+``` shiki
+client.with_options(http_client=DefaultHttpxClient(...))
 ```
 
 Use `DefaultHttpxClient` and `DefaultAsyncHttpxClient` instead of raw `httpx.Client` and `httpx.AsyncClient` to ensure the SDK's default configuration (timeouts, connection limits, etc.) is preserved.
@@ -706,11 +792,11 @@ with Anthropic() as client:
 
 Beta features
 
-We introduce beta features before they are generally available to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [build with Claude overview](/docs/en/build-with-claude/overview).
+Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [build with Claude overview](/docs/en/build-with-claude/overview).
 
 You can access most beta API features through the `beta` property of the client. To enable a particular beta feature, you need to add the appropriate [beta header](/docs/en/api/beta-headers) to the `betas` field when creating a message.
 
-For example, to use code execution:
+For example, to use the [Files API](/docs/en/build-with-claude/files):
 
 ``` shiki
 from anthropic import Anthropic
@@ -718,26 +804,24 @@ from anthropic import Anthropic
 client = Anthropic()
 
 response = client.beta.messages.create(
-    max_tokens=1024,
     model="claude-opus-4-6",
+    max_tokens=1024,
     messages=[
         {
             "role": "user",
             "content": [
+                {"type": "text", "text": "Please summarize this document for me."},
                 {
-                    "type": "text",
-                    "text": "What's 4242424242 * 4242424242?",
+                    "type": "document",
+                    "source": {
+                        "type": "file",
+                        "file_id": "file_abc123",
+                    },
                 },
             ],
         },
     ],
-    tools=[
-        {
-            "name": "code_execution",
-            "type": "code_execution_20250522",
-        },
-    ],
-    betas=["code-execution-2025-05-22"],
+    betas=["files-api-2025-04-14"],
 )
 ```
 
@@ -745,71 +829,41 @@ response = client.beta.messages.create(
 
 Platform integrations
 
-For detailed platform setup guides, see:
+For detailed platform setup guides with code examples, see:
 
 - [Amazon Bedrock](/docs/en/build-with-claude/claude-on-amazon-bedrock)
 - [Google Vertex AI](/docs/en/build-with-claude/claude-on-vertex-ai)
+- [Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
+
+All three client classes are included in the base `anthropic` package:
+
+| Provider | Client | Extra dependencies |
+|----|----|----|
+| Bedrock | `from anthropic import AnthropicBedrock` | `pip install anthropic[bedrock]` |
+| Vertex AI | `from anthropic import AnthropicVertex` | `pip install anthropic[vertex]` |
+| Foundry | `from anthropic import AnthropicFoundry` | None |
+
+## 
+
+Semantic versioning
+
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+
+1.  Changes that only affect static types, without breaking runtime behavior.
+2.  Changes to library internals which are technically public but not intended or documented for external use.
+3.  Changes that aren't expected to impact the vast majority of users in practice.
 
 ### 
 
-Amazon Bedrock
+Determining the installed version
+
+If you've upgraded to the latest version but aren't seeing new features you were expecting, your Python environment is likely still using an older version. You can determine the version being used at runtime with:
 
 ``` shiki
-from anthropic import AnthropicBedrock
+import anthropic
 
-client = AnthropicBedrock()
-
-message = client.messages.create(
-    max_tokens=1024,
-    messages=[
-        {
-            "role": "user",
-            "content": "Hello!",
-        }
-    ],
-    model="anthropic.claude-opus-4-6-v1",
-)
-print(message)
+print(anthropic.__version__)
 ```
-
-For a full list of available Bedrock models, see the [Amazon Bedrock documentation](/docs/en/build-with-claude/claude-on-amazon-bedrock).
-
-You can also configure AWS credentials explicitly:
-
-``` shiki
-client = AnthropicBedrock(
-    aws_region="us-east-1",
-    aws_access_key="...",
-    aws_secret_key="...",
-    # Optional
-    aws_session_token="...",
-    aws_profile="my-profile",
-)
-```
-
-### 
-
-Google Vertex AI
-
-``` shiki
-from anthropic import AnthropicVertex
-
-client = AnthropicVertex()
-
-message = client.messages.create(
-    model="claude-opus-4-6",
-    max_tokens=1024,
-    messages=[
-        {
-            "role": "user",
-            "content": "Hello!",
-        }
-    ],
-)
-print(message)
-```
-
-For a full list of available Vertex models, see the [Google Vertex AI documentation](/docs/en/build-with-claude/claude-on-vertex-ai).
 
 ## 
 
@@ -844,7 +898,7 @@ Was this page helpful?
 
 - [Tool helpers](#tool-helpers)
 
-- [Message Batches](#message-batches)
+- [Message batches](#message-batches)
 
 - [Creating a batch](#creating-a-batch)
 
@@ -864,7 +918,7 @@ Was this page helpful?
 
 - [Auto-pagination](#auto-pagination)
 
-- [Default Headers](#default-headers)
+- [Default headers](#default-headers)
 
 - [Type system](#type-system)
 
@@ -878,6 +932,8 @@ Was this page helpful?
 
 - [Accessing raw response data (e.g., headers)](#accessing-raw-response-data-e-g-headers)
 
+- [Streaming response body](#streaming-response-body)
+
 - [Logging](#logging)
 
 - [Making custom/undocumented requests](#making-custom-undocumented-requests)
@@ -890,9 +946,9 @@ Was this page helpful?
 
 - [Platform integrations](#platform-integrations)
 
-- [Amazon Bedrock](#amazon-bedrock)
+- [Semantic versioning](#semantic-versioning)
 
-- [Google Vertex AI](#google-vertex-ai)
+- [Determining the installed version](#determining-the-installed-version)
 
 - [Additional resources](#additional-resources)
 

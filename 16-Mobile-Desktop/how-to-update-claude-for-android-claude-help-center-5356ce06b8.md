@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-10T10:49:23Z"
+fetched_at: "2026-02-23T00:45:16Z"
 source_url: "https://support.claude.com/en/articles/11825394-how-to-update-claude-for-android"
 title: "How to update Claude for Android | Claude Help Center"
 ---

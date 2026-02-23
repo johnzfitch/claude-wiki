@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:18Z"
+fetched_at: "2026-02-22T14:27:43Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/usage_report/retrieve_messages"
 title: "Get Messages Usage Report - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Get Messages Usage Report
 
-get/v1/organizations/usage_report/messages
+GET/v1/organizations/usage_report/messages
 
 Get Messages Usage Report
 
@@ -18,8 +18,6 @@ Get Messages Usage Report
 starting_at: string
 
 Time buckets that start on or after this RFC 3339 timestamp will be returned. Each time bucket will be snapped to the start of the minute/hour/day in UTC.
-
-formatdate-time
 
 api_key_ids: optional array of string
 
@@ -51,11 +49,9 @@ ending_at: optional string
 
 Time buckets that end before this RFC 3339 timestamp will be returned.
 
-formatdate-time
+group_by: optional array of "api_key_id" or "workspace_id" or "model" or 4 more
 
-group_by: optional array of "api_key_id" or "workspace_id" or "model" or 3 more
-
-Group by any subset of the available options.
+Group by any subset of the available options. Grouping by `speed` requires the `fast-mode-2026-02-01` beta header.
 
 Accepts one of the following:
 
@@ -70,6 +66,8 @@ Accepts one of the following:
 "context_window"
 
 "inference_geo"
+
+"speed"
 
 inference_geos: optional array of "global" or "us" or "not_available"
 
@@ -97,8 +95,6 @@ page: optional string
 
 Optionally set to the `next_page` token from the previous response.
 
-formatdate-time
-
 service_tiers: optional array of "standard" or "batch" or "priority" or 3 more
 
 Restrict usage returned to the specified service tier(s).
@@ -116,6 +112,16 @@ Accepts one of the following:
 "flex"
 
 "flex_discount"
+
+speeds: optional array of "standard" or "fast"
+
+Restrict usage returned to the specified speed(s) (research preview). Requires the `fast-mode-2026-02-01` beta header.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
 
 workspace_ids: optional array of string
 
@@ -139,9 +145,7 @@ ending_at: string
 
 End of the time bucket (exclusive) in RFC 3339 format.
 
-formatdate-time
-
-results: array of object { api_key_id, cache_creation, cache_read_input_tokens, 8 more }
+results: array of object { api_key_id, cache_creation, cache_read_input_tokens, 9 more }
 
 List of usage items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
 
@@ -213,6 +217,16 @@ Accepts one of the following:
 
 "flex_discount"
 
+speed: "standard" or "fast"
+
+Speed of the usage (research preview). `null` if not grouping by speed. Only returned when the `fast-mode-2026-02-01` beta header is provided.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
 uncached_input_tokens: number
 
 The number of uncached input tokens processed.
@@ -225,8 +239,6 @@ starting_at: string
 
 Start of the time bucket (inclusive) in RFC 3339 format.
 
-formatdate-time
-
 has_more: boolean
 
 Indicates if there are more results.
@@ -234,8 +246,6 @@ Indicates if there are more results.
 next_page: string
 
 Token to provide in as `page` in the subsequent request to retrieve the next page of data.
-
-formatdate-time
 
 Get Messages Usage Report
 
@@ -245,77 +255,7 @@ curl https://api.anthropic.com/v1/organizations/usage_report/messages \
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "data": [
-    {
-      "ending_at": "2025-08-02T00:00:00Z",
-      "results": [
-        {
-          "api_key_id": "apikey_01Rj2N8SVvo6BePZj99NhmiT",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 1000,
-            "ephemeral_5m_input_tokens": 500
-          },
-          "cache_read_input_tokens": 200,
-          "context_window": "0-200k",
-          "inference_geo": "global",
-          "model": "claude-opus-4-6",
-          "output_tokens": 500,
-          "server_tool_use": {
-            "web_search_requests": 10
-          },
-          "service_tier": "standard",
-          "uncached_input_tokens": 1500,
-          "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
-        }
-      ],
-      "starting_at": "2025-08-01T00:00:00Z"
-    }
-  ],
-  "has_more": true,
-  "next_page": "2019-12-27T18:11:19.117Z"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "data": [
-    {
-      "ending_at": "2025-08-02T00:00:00Z",
-      "results": [
-        {
-          "api_key_id": "apikey_01Rj2N8SVvo6BePZj99NhmiT",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 1000,
-            "ephemeral_5m_input_tokens": 500
-          },
-          "cache_read_input_tokens": 200,
-          "context_window": "0-200k",
-          "inference_geo": "global",
-          "model": "claude-opus-4-6",
-          "output_tokens": 500,
-          "server_tool_use": {
-            "web_search_requests": 10
-          },
-          "service_tier": "standard",
-          "uncached_input_tokens": 1500,
-          "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
-        }
-      ],
-      "starting_at": "2025-08-01T00:00:00Z"
-    }
-  ],
-  "has_more": true,
-  "next_page": "2019-12-27T18:11:19.117Z"
-}
-```
 
 [](/docs)
 

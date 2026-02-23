@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:38Z"
+fetched_at: "2026-02-22T13:55:17Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages/batches"
 title: "Batches - Claude API Reference"
 ---
@@ -15,37 +15,37 @@ Go
 
 client.Messages.Batches.New(ctx, body) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/messages/batches/retrieve)
 
 client.Messages.Batches.Get(ctx, messageBatchID) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/messages/batches/list)
 
 client.Messages.Batches.List(ctx, query) (\*Page\[[MessageBatch](/docs/en/api/messages#message_batch)\], error)
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/messages/batches/cancel)
 
 client.Messages.Batches.Cancel(ctx, messageBatchID) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/messages/batches/delete)
 
 client.Messages.Batches.Delete(ctx, messageBatchID) (\*[DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch), error)
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/messages/batches/results)
 
 client.Messages.Batches.Results(ctx, messageBatchID) (\*[MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response), error)
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -61,10 +61,6 @@ Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
 
-Accepts one of the following:
-
-const MessageBatchDeletedMessageBatchDeleted MessageBatchDeleted = "message_batch_deleted"
-
 type MessageBatch struct{…}
 
 ID string
@@ -77,19 +73,13 @@ ArchivedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 CancelInitiatedAt Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 EndedAt Time
 
@@ -102,8 +92,6 @@ formatdate-time
 ExpiresAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus MessageBatchProcessingStatus
 
@@ -163,17 +151,9 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-const MessageBatchMessageBatch MessageBatch = "message_batch"
-
 type MessageBatchCanceledResult struct{…}
 
 Type Canceled
-
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
 
 type MessageBatchErroredResult struct{…}
 
@@ -189,19 +169,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type AuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BillingError struct{…}
 
@@ -209,19 +181,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type PermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type NotFoundError struct{…}
 
@@ -229,19 +193,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type RateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type GatewayTimeoutError struct{…}
 
@@ -249,19 +205,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type APIErrorObject struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type OverloadedError struct{…}
 
@@ -269,31 +217,15 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type MessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type MessageBatchIndividualResponse struct{…}
 
@@ -322,6 +254,18 @@ ID string
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
 
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
@@ -380,10 +324,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -399,10 +339,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -420,10 +356,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -433,10 +365,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -456,17 +384,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -476,23 +396,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -500,29 +438,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -530,27 +524,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -562,19 +552,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -595,6 +907,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -684,10 +1000,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -729,10 +1041,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -753,25 +1061,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -781,23 +1081,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -813,10 +1111,6 @@ const UsageServiceTierBatch UsageServiceTier = "batch"
 
 Type Succeeded
 
-Accepts one of the following:
-
-const SucceededSucceeded Succeeded = "succeeded"
-
 type MessageBatchErroredResult struct{…}
 
 Error [ErrorResponse](/docs/en/api/$shared#error_response)
@@ -831,19 +1125,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type AuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BillingError struct{…}
 
@@ -851,19 +1137,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type PermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type NotFoundError struct{…}
 
@@ -871,19 +1149,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type RateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type GatewayTimeoutError struct{…}
 
@@ -891,19 +1161,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type APIErrorObject struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type OverloadedError struct{…}
 
@@ -911,39 +1173,19 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type MessageBatchCanceledResult struct{…}
 
 Type Canceled
 
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
-
 type MessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type MessageBatchRequestCounts struct{…}
 
@@ -993,6 +1235,18 @@ Unique object identifier.
 
 The format and length of IDs may change over time.
 
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
+
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
 Content generated by the model.
@@ -1050,10 +1304,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -1069,10 +1319,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -1090,10 +1336,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -1103,10 +1345,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1126,17 +1364,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -1146,23 +1376,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -1170,29 +1418,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -1200,27 +1504,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -1232,19 +1532,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -1265,6 +1887,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -1354,10 +1980,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -1399,10 +2021,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -1423,25 +2041,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -1451,23 +2061,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -1482,10 +2090,6 @@ const UsageServiceTierPriority UsageServiceTier = "priority"
 const UsageServiceTierBatch UsageServiceTier = "batch"
 
 Type Succeeded
-
-Accepts one of the following:
-
-const SucceededSucceeded Succeeded = "succeeded"
 
 type MessageBatchErroredResult struct{…}
 
@@ -1501,19 +2105,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type AuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BillingError struct{…}
 
@@ -1521,19 +2117,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type PermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type NotFoundError struct{…}
 
@@ -1541,19 +2129,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type RateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type GatewayTimeoutError struct{…}
 
@@ -1561,19 +2141,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type APIErrorObject struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type OverloadedError struct{…}
 
@@ -1581,39 +2153,19 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type MessageBatchCanceledResult struct{…}
 
 Type Canceled
 
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
-
 type MessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type MessageBatchSucceededResult struct{…}
 
@@ -1624,6 +2176,18 @@ ID string
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
 
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
@@ -1682,10 +2246,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -1701,10 +2261,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -1722,10 +2278,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -1735,10 +2287,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1758,17 +2306,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -1778,23 +2318,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -1802,29 +2360,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -1832,27 +2446,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -1864,19 +2474,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -1897,6 +2829,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -1986,10 +2922,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -2031,10 +2963,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -2055,25 +2983,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -2083,23 +3003,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -2114,10 +3032,6 @@ const UsageServiceTierPriority UsageServiceTier = "priority"
 const UsageServiceTierBatch UsageServiceTier = "batch"
 
 Type Succeeded
-
-Accepts one of the following:
-
-const SucceededSucceeded Succeeded = "succeeded"
 
 [](/docs)
 

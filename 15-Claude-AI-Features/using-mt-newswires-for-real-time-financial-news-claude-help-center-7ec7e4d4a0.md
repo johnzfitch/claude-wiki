@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:01Z"
+fetched_at: "2026-02-23T00:45:35Z"
 source_url: "https://support.claude.com/en/articles/12663693-using-mt-newswires-for-real-time-financial-news"
 title: "Using MT Newswires for Real-Time Financial News | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using MT Newswires for Real-Time Financial News
 
 # Using MT Newswires for Real-Time Financial News
 
-Updated yesterday
+Updated this week
 
 Table of contents
 

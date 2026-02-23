@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:06:58Z"
+fetched_at: "2026-02-22T13:34:25Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/models"
 title: "Models - Claude API Reference"
 ---
@@ -15,13 +15,13 @@ TypeScript
 
 client.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[ModelInfo](/docs/en/api/models#model_info) { id, created_at, display_name, type } \>
 
-get/v1/models
+GET/v1/models
 
 ##### [Get a Model](/docs/en/api/models/retrieve)
 
 client.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [ModelInfo](/docs/en/api/models#model_info) { id, created_at, display_name, type }
 
-get/v1/models/{model_id}
+GET/v1/models/{model_id}
 
 ##### ModelsExpand Collapse 
 
@@ -35,8 +35,6 @@ created_at: string
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
-formatdate-time
-
 display_name: string
 
 A human-readable name for the model.
@@ -46,10 +44,6 @@ type: "model"
 Object type.
 
 For Models, this is always `"model"`.
-
-Accepts one of the following:
-
-"model"
 
 [](/docs)
 

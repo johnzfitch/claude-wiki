@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:29Z"
+fetched_at: "2026-02-22T13:11:57Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices"
 title: "Skill authoring best practices - Claude API Docs"
 ---
@@ -66,8 +66,8 @@ with pdfplumber.open("file.pdf") as pdf:
 
 PDF (Portable Document Format) files are a common file format that contains
 text, images, and other content. To extract text from a PDF, you'll need to
-use a library. There are many libraries available for PDF processing, but we
-recommend pdfplumber because it's easy to use and handles most cases well.
+use a library. There are many libraries available for PDF processing, but
+pdfplumber is recommended because it's easy to use and handles most cases well.
 First, you'll need to install it using pip. Then you can use the code below...
 ```
 
@@ -188,7 +188,7 @@ For complete Skill structure details, see the [Skills overview](/docs/en/agents-
 
 Naming conventions
 
-Use consistent naming patterns to make Skills easier to reference and discuss. We recommend using **gerund form** (verb + -ing) for Skill names, as this clearly describes the activity or capability the Skill provides.
+Use consistent naming patterns to make Skills easier to reference and discuss. Consider using **gerund form** (verb + -ing) for Skill names, as this clearly describes the activity or capability the Skill provides.
 
 Remember that the `name` field must use lowercase letters, numbers, and hyphens only.
 
@@ -820,7 +820,7 @@ This approach ensures you're solving actual problems rather than anticipating re
 }
 ```
 
-This example demonstrates a data-driven evaluation with a simple testing rubric. We do not currently provide a built-in way to run these evaluations. Users can create their own evaluation system. Evaluations are your source of truth for measuring Skill effectiveness.
+This example demonstrates a data-driven evaluation with a simple testing rubric. There is not currently a built-in way to run these evaluations. Users can create their own evaluation system. Evaluations are your source of truth for measuring Skill effectiveness.
 
 ### 
 
@@ -948,13 +948,13 @@ def process_file(path):
     except FileNotFoundError:
         # Create file with default content instead of failing
         print(f"File {path} not found, creating default")
-        with open(path, 'w') as f:
-            f.write('')
-        return ''
+        with open(path, "w") as f:
+            f.write("")
+        return ""
     except PermissionError:
         # Provide alternative instead of failing
         print(f"Cannot access {path}, using default")
-        return ''
+        return ""
 ```
 
 **Bad example: Punt to Claude**:
@@ -983,7 +983,7 @@ MAX_RETRIES = 3
 
 ``` shiki
 TIMEOUT = 47  # Why 47?
-RETRIES = 5   # Why 5?
+RETRIES = 5  # Why 5?
 ```
 
 ### 
@@ -1091,7 +1091,7 @@ Package dependencies
 Skills run in the code execution environment with platform-specific limitations:
 
 - **claude.ai**: Can install packages from npm and PyPI and pull from GitHub repositories
-- **Anthropic API**: Has no network access and no runtime package installation
+- **Claude API**: Has no network access and no runtime package installation
 
 List required packages in your SKILL.md and verify they're available in the [code execution tool documentation](/docs/en/agents-and-tools/tool-use/code-execution-tool).
 

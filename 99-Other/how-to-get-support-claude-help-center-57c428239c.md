@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-16T21:12:50Z"
 source_url: "https://support.claude.com/en/articles/9015913-how-to-get-support"
 title: "How to get support | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ How to get support
 
 # How to get support
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -201,9 +201,9 @@ Users in the EU can find instructions on how to find the single point of contact
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8606378-how-do-i-use-the-workbench)
+[](https://support.claude.com/en/articles/8114535-where-can-i-go-for-claude-api-support-and-assistance)
 
-How do I use the Workbench?
+Where can I go for Claude API support and assistance?
 
 [](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
 
@@ -213,13 +213,13 @@ Important considerations before enabling single sign-on (SSO) and JIT/SCIM provi
 
 I'm getting an API connection error. How can I fix it?
 
+[](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
+
+Claude Code usage analytics
+
 [](https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government)
 
 How to get support for Claude for Government
-
-[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
-
-Setting up single sign-on (SSO)
 
 Did this answer your question?
 

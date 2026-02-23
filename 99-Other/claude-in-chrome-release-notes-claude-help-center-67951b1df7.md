@@ -1,8 +1,8 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:27Z"
+fetched_at: "2026-02-16T21:12:41Z"
 source_url: "https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes"
-title: "Claude in Chrome Release Notes | Claude Help Center"
+title: "Claude in Chrome release notes | Claude Help Center"
 ---
 
 [](/en/)
@@ -37,9 +37,9 @@ Table of contents
 
 [Claude in Chrome](https://support.claude.com/en/collections/18031491-claude-in-chrome)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
-# Claude in Chrome Release Notes
+# Claude in Chrome release notes
 
 Updated this week
 
@@ -55,7 +55,7 @@ Table of contents
 
 [](#h_a9f2c8e7b7)
 
-The updates listed below only apply to Claude in Chrome. To view release notes for other products, refer to this article: [Release Notes](https://support.claude.com/en/articles/12138966-release-notes).
+The updates listed below only apply to Claude in Chrome. To view release notes for other products, refer to this article: **[Release notes](https://support.claude.com/en/articles/12138966-release-notes)**.
 
 ## December 2025
 
@@ -77,7 +77,7 @@ Claude in Chrome is now available in beta to all paid plan subscribers, includin
 
 - Configure allowlists and blocklists to control which sites Claude can access
 
-- Manage Claude in Chrome in Admin settings \> Browser extension
+- Manage Claude in Chrome in **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**
 
 ## November 2025
 
@@ -131,7 +131,7 @@ Claude in Chrome expanded to 10,000 Max plan users with the release of new capab
 
 ### August 26, 2025
 
-**Claude in Chrome:** We launched Claude in Chrome to an initial cohort of 1,000 Max plan users. This experimental browser extension allows Claude to read, click, and navigate websites alongside you. See [Getting Started with Claude in Chrome](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome).
+**Claude in Chrome:** We launched Claude in Chrome to an initial cohort of 1,000 Max plan users. This experimental browser extension allows Claude to read, click, and navigate websites alongside you. See **[Getting started with Claude in Chrome](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)**.
 
 ------------------------------------------------------------------------
 
@@ -147,11 +147,11 @@ Claude Code model configuration
 
 [](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 [](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 

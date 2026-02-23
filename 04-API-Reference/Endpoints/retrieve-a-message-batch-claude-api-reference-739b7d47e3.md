@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:55Z"
+fetched_at: "2026-02-22T13:47:58Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/batches/retrieve"
 title: "Retrieve a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) beta().messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
@@ -69,6 +69,8 @@ MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-
 
 SKILLS_2025_10_02("skills-2025-10-02")
 
+FAST_MODE_2026_02_01("fast-mode-2026-02-01")
+
 ##### ReturnsExpand Collapse 
 
 class BetaMessageBatch:
@@ -83,19 +85,13 @@ Optional\<LocalDateTime\> archivedAt
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 Optional\<LocalDateTime\> cancelInitiatedAt
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 LocalDateTime createdAt
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 Optional\<LocalDateTime\> endedAt
 
@@ -108,8 +104,6 @@ formatdate-time
 LocalDateTime expiresAt
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus processingStatus
 
@@ -163,15 +157,13 @@ URL to a `.jsonl` file containing the results of the Message Batch requests. Spe
 
 Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
 
-JsonValue; type "message_batch"constant"message_batch"constant
+JsonValue; type "message_batch"constant
+
+"message_batch"constant
 
 Object type.
 
 For Message Batches, this is always `"message_batch"`.
-
-Accepts one of the following:
-
-MESSAGE_BATCH("message_batch")
 
 Retrieve a Message Batch
 

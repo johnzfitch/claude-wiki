@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:03Z"
+fetched_at: "2026-02-23T00:45:22Z"
 source_url: "https://support.claude.com/en/articles/12923901-claude-for-nonprofits-partnership-guide-for-all-users"
 title: "Claude for Nonprofits Partnership Guide for All Users | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Claude for Nonprofits Partnership Guide for All Users
 
 # Claude for Nonprofits Partnership Guide for All Users
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -133,6 +133,10 @@ There's no single "right" way to integrate Claude into your work. Some team memb
 
 Related Articles
 
+[](https://support.claude.com/en/articles/8114491-getting-started-with-claude)
+
+Getting started with Claude
+
 [](https://support.claude.com/en/articles/9945697-claude-for-marketing)
 
 Claude for Marketing
@@ -141,13 +145,9 @@ Claude for Marketing
 
 Claude for Sales
 
-[](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)
+[](https://support.claude.com/en/articles/11649438-prototype-ai-powered-apps-with-claude-artifacts)
 
-Create and edit files with Claude
-
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
-
-Getting Started with Claude for Nonprofits
+Prototype AI-Powered Apps with Claude artifacts
 
 [](https://support.claude.com/en/articles/12923668-claude-for-nonprofits-partnership-success-guide-for-admins)
 

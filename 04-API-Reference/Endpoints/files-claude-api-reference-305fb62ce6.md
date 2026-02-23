@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:11Z"
+fetched_at: "2026-02-22T13:42:37Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/files"
 title: "Files - Claude API Reference"
 ---
@@ -15,31 +15,31 @@ Python
 
 beta.files.upload(FileUploadParams\*\*kwargs) -\> [FileMetadata](/docs/en/api/beta#file_metadata)
 
-post/v1/files
+POST/v1/files
 
 ##### [List Files](/docs/en/api/beta/files/list)
 
 beta.files.list(FileListParams\*\*kwargs) -\> SyncPage\[[FileMetadata](/docs/en/api/beta#file_metadata)\]
 
-get/v1/files
+GET/v1/files
 
 ##### [Download File](/docs/en/api/beta/files/download)
 
 beta.files.download(strfile_id, FileDownloadParams\*\*kwargs) -\> BinaryResponseContent
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 ##### [Get File Metadata](/docs/en/api/beta/files/retrieve_metadata)
 
 beta.files.retrieve_metadata(strfile_id, FileRetrieveMetadataParams\*\*kwargs) -\> [FileMetadata](/docs/en/api/beta#file_metadata)
 
-get/v1/files/{file_id}
+GET/v1/files/{file_id}
 
 ##### [Delete File](/docs/en/api/beta/files/delete)
 
 beta.files.delete(strfile_id, FileDeleteParams\*\*kwargs) -\> [DeletedFile](/docs/en/api/beta#deleted_file)
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 ##### ModelsExpand Collapse 
 
@@ -55,10 +55,6 @@ Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
 
-Accepts one of the following:
-
-"file_deleted"
-
 class FileMetadata: …
 
 id: str
@@ -71,39 +67,23 @@ created_at: datetime
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 filename: str
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 mime_type: str
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 size_bytes: int
 
 Size of the file in bytes.
-
-minimum0
 
 type: Literal\["file"\]
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-"file"
 
 downloadable: Optional\[bool\]
 

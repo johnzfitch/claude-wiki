@@ -1,7 +1,7 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:12Z"
-last_modified: "Mon, 09 Feb 2026 17:04:41 GMT"
+fetched_at: "2026-02-22T10:50:48Z"
+last_modified: "Fri, 20 Feb 2026 18:00:19 GMT"
 source_url: "https://www.anthropic.com/company"
 title: "Company \\ Anthropic"
 ---
@@ -331,10 +331,10 @@ Every day, we make critical decisions that inform our ability to achieve our mis
 Anthropic is a Public Benefit Corporation, whose purpose is the responsible development and maintenance of advanced AI for the long-term benefit of humanity. Our Board of Directors is elected by stockholders and our Long-Term Benefit Trust, as explained [here](https://www.anthropic.com/news/the-long-term-benefit-trust). Current members of the Board and the Long-Term Benefit Trust (LTBT) are listed below.
 
 **Anthropic Board of Directors**\
-Dario Amodei, Daniela Amodei, Yasmin Razavi, Jay Kreps, and Reed Hastings.
+Dario Amodei, Daniela Amodei, Yasmin Razavi, Jay Kreps, Reed Hastings, and Chris Liddell.
 
 **LTBT Trustees**\
-Neil Buddy Shah, Kanika Bahl, Zach Robinson, and Richard Fontaine.
+Neil Buddy Shah, Richard Fontaine, and Mariano-Florentino Cuéllar.
 
 Want to help us build the future of safe AI?
 
@@ -396,6 +396,8 @@ Join us
 
 - [](https://claude.com/solutions/agents)
   AI agents
+- [](https://claude.com/solutions/claude-code-security)
+  Claude Code Security
 - [](https://claude.com/solutions/code-modernization)
   Code modernization
 - [](https://claude.com/solutions/coding)
@@ -424,7 +426,7 @@ Join us
 - [](https://claude.com/pricing#api)
   Pricing
 - [](https://claude.com/regional-compliance)
-  Regional Compliance
+  Regional compliance
 - [](https://claude.com/partners/amazon-bedrock)
   Amazon Bedrock
 - [](https://claude.com/partners/google-cloud-vertex-ai)

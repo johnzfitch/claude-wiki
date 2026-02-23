@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:07:40Z"
+fetched_at: "2026-02-22T13:39:25Z"
 source_url: "https://platform.claude.com/docs/en/api/python/messages/batches"
 title: "Batches - Claude API Reference"
 ---
@@ -15,37 +15,37 @@ Python
 
 messages.batches.create(BatchCreateParams\*\*kwargs) -\> [MessageBatch](/docs/en/api/messages#message_batch)
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/messages/batches/retrieve)
 
 messages.batches.retrieve(strmessage_batch_id) -\> [MessageBatch](/docs/en/api/messages#message_batch)
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/messages/batches/list)
 
 messages.batches.list(BatchListParams\*\*kwargs) -\> SyncPage\[[MessageBatch](/docs/en/api/messages#message_batch)\]
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/messages/batches/cancel)
 
 messages.batches.cancel(strmessage_batch_id) -\> [MessageBatch](/docs/en/api/messages#message_batch)
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/messages/batches/delete)
 
 messages.batches.delete(strmessage_batch_id) -\> [DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch)
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/messages/batches/results)
 
 messages.batches.results(strmessage_batch_id) -\> [MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response)
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -61,10 +61,6 @@ Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
 
-Accepts one of the following:
-
-"message_batch_deleted"
-
 class MessageBatch: …
 
 id: str
@@ -77,19 +73,13 @@ archived_at: Optional\[datetime\]
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: Optional\[datetime\]
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: datetime
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: Optional\[datetime\]
 
@@ -102,8 +92,6 @@ formatdate-time
 expires_at: datetime
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: Literal\["in_progress", "canceling", "ended"\]
 
@@ -163,17 +151,9 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-"message_batch"
-
 class MessageBatchCanceledResult: …
 
 type: Literal\["canceled"\]
-
-Accepts one of the following:
-
-"canceled"
 
 class MessageBatchErroredResult: …
 
@@ -189,19 +169,11 @@ message: str
 
 type: Literal\["invalid_request_error"\]
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 class AuthenticationError: …
 
 message: str
 
 type: Literal\["authentication_error"\]
-
-Accepts one of the following:
-
-"authentication_error"
 
 class BillingError: …
 
@@ -209,19 +181,11 @@ message: str
 
 type: Literal\["billing_error"\]
 
-Accepts one of the following:
-
-"billing_error"
-
 class PermissionError: …
 
 message: str
 
 type: Literal\["permission_error"\]
-
-Accepts one of the following:
-
-"permission_error"
 
 class NotFoundError: …
 
@@ -229,19 +193,11 @@ message: str
 
 type: Literal\["not_found_error"\]
 
-Accepts one of the following:
-
-"not_found_error"
-
 class RateLimitError: …
 
 message: str
 
 type: Literal\["rate_limit_error"\]
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 class GatewayTimeoutError: …
 
@@ -249,19 +205,11 @@ message: str
 
 type: Literal\["timeout_error"\]
 
-Accepts one of the following:
-
-"timeout_error"
-
 class APIErrorObject: …
 
 message: str
 
 type: Literal\["api_error"\]
-
-Accepts one of the following:
-
-"api_error"
 
 class OverloadedError: …
 
@@ -269,31 +217,15 @@ message: str
 
 type: Literal\["overloaded_error"\]
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: Optional\[str\]
 
 type: Literal\["error"\]
 
-Accepts one of the following:
-
-"error"
-
 type: Literal\["errored"\]
-
-Accepts one of the following:
-
-"errored"
 
 class MessageBatchExpiredResult: …
 
 type: Literal\["expired"\]
-
-Accepts one of the following:
-
-"expired"
 
 class MessageBatchIndividualResponse: …
 
@@ -322,6 +254,18 @@ id: str
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+container: Optional\[Container\]
+
+Information about the container used in the request (for the code execution tool)
+
+id: str
+
+Identifier for the container used in this request
+
+expires_at: datetime
+
+The time at which the container will expire.
 
 content: List\[[ContentBlock](/docs/en/api/messages#content_block)\]
 
@@ -380,10 +324,6 @@ start_char_index: int
 
 type: Literal\["char_location"\]
 
-Accepts one of the following:
-
-"char_location"
-
 class CitationPageLocation: …
 
 cited_text: str
@@ -399,10 +339,6 @@ file_id: Optional\[str\]
 start_page_number: int
 
 type: Literal\["page_location"\]
-
-Accepts one of the following:
-
-"page_location"
 
 class CitationContentBlockLocation: …
 
@@ -420,10 +356,6 @@ start_block_index: int
 
 type: Literal\["content_block_location"\]
 
-Accepts one of the following:
-
-"content_block_location"
-
 class CitationsWebSearchResultLocation: …
 
 cited_text: str
@@ -433,10 +365,6 @@ encrypted_index: str
 title: Optional\[str\]
 
 type: Literal\["web_search_result_location"\]
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: str
 
@@ -456,17 +384,9 @@ title: Optional\[str\]
 
 type: Literal\["search_result_location"\]
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: str
 
 type: Literal\["text"\]
-
-Accepts one of the following:
-
-"text"
 
 class ThinkingBlock: …
 
@@ -476,23 +396,41 @@ thinking: str
 
 type: Literal\["thinking"\]
 
-Accepts one of the following:
-
-"thinking"
-
 class RedactedThinkingBlock: …
 
 data: str
 
 type: Literal\["redacted_thinking"\]
 
-Accepts one of the following:
-
-"redacted_thinking"
-
 class ToolUseBlock: …
 
 id: str
+
+caller: Caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
 
 input: Dict\[str, object\]
 
@@ -500,29 +438,85 @@ name: str
 
 type: Literal\["tool_use"\]
 
-Accepts one of the following:
-
-"tool_use"
-
 class ServerToolUseBlock: …
 
 id: str
 
+caller: Caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
+
 input: Dict\[str, object\]
 
-name: Literal\["web_search"\]
+name: Literal\["web_search", "web_fetch", "code_execution", 4 more\]
 
 Accepts one of the following:
 
 "web_search"
 
+"web_fetch"
+
+"code_execution"
+
+"bash_code_execution"
+
+"text_editor_code_execution"
+
+"tool_search_tool_regex"
+
+"tool_search_tool_bm25"
+
 type: Literal\["server_tool_use"\]
+
+class WebSearchToolResultBlock: …
+
+caller: Caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-"server_tool_use"
+class DirectCaller: …
 
-class WebSearchToolResultBlock: …
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -530,7 +524,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError: …
 
-error_code: Literal\["invalid_tool_input", "unavailable", "max_uses_exceeded", 3 more\]
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -548,11 +542,7 @@ Accepts one of the following:
 
 type: Literal\["web_search_tool_result_error"\]
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
-UnionMember1 = List\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\]
+List\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\]
 
 encrypted_content: str
 
@@ -562,19 +552,341 @@ title: str
 
 type: Literal\["web_search_result"\]
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: str
 
 tool_use_id: str
 
 type: Literal\["web_search_tool_result"\]
 
+class WebFetchToolResultBlock: …
+
+caller: Caller
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
+
+content: Content
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock: …
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"url_too_long"
+
+"url_not_allowed"
+
+"url_not_accessible"
+
+"unsupported_content_type"
+
+"too_many_requests"
+
+"max_uses_exceeded"
+
+"unavailable"
+
+type: Literal\["web_fetch_tool_result_error"\]
+
+class WebFetchBlock: …
+
+content: [DocumentBlock](/docs/en/api/messages#document_block)
+
+citations: Optional\[CitationsConfig\]
+
+Citation configuration for the document
+
+enabled: bool
+
+source: Source
+
+Accepts one of the following:
+
+class Base64PDFSource: …
+
+data: str
+
+media_type: Literal\["application/pdf"\]
+
+type: Literal\["base64"\]
+
+class PlainTextSource: …
+
+data: str
+
+media_type: Literal\["text/plain"\]
+
+type: Literal\["text"\]
+
+title: Optional\[str\]
+
+The title of the document
+
+type: Literal\["document"\]
+
+retrieved_at: Optional\[str\]
+
+ISO 8601 timestamp when the content was retrieved
+
+type: Literal\["web_fetch_result"\]
+
+url: str
+
+Fetched content URL
+
+tool_use_id: str
+
+type: Literal\["web_fetch_tool_result"\]
+
+class CodeExecutionToolResultBlock: …
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError: …
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+type: Literal\["code_execution_tool_result_error"\]
+
+class CodeExecutionResultBlock: …
+
+content: List\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["code_execution_output"\]
+
+return_code: int
+
+stderr: str
+
+stdout: str
+
+type: Literal\["code_execution_result"\]
+
+class EncryptedCodeExecutionResultBlock: …
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: List\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["code_execution_output"\]
+
+encrypted_stdout: str
+
+return_code: int
+
+stderr: str
+
+type: Literal\["encrypted_code_execution_result"\]
+
+tool_use_id: str
+
+type: Literal\["code_execution_tool_result"\]
+
+class BashCodeExecutionToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError: …
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"output_file_too_large"
+
+type: Literal\["bash_code_execution_tool_result_error"\]
+
+class BashCodeExecutionResultBlock: …
+
+content: List\[[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["bash_code_execution_output"\]
+
+return_code: int
+
+stderr: str
+
+stdout: str
+
+type: Literal\["bash_code_execution_result"\]
+
+tool_use_id: str
+
+type: Literal\["bash_code_execution_tool_result"\]
+
+class TextEditorCodeExecutionToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError: …
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"file_not_found"
+
+error_message: Optional\[str\]
+
+type: Literal\["text_editor_code_execution_tool_result_error"\]
+
+class TextEditorCodeExecutionViewResultBlock: …
+
+content: str
+
+file_type: Literal\["text", "image", "pdf"\]
+
+Accepts one of the following:
+
+"text"
+
+"image"
+
+"pdf"
+
+num_lines: Optional\[int\]
+
+start_line: Optional\[int\]
+
+total_lines: Optional\[int\]
+
+type: Literal\["text_editor_code_execution_view_result"\]
+
+class TextEditorCodeExecutionCreateResultBlock: …
+
+is_file_update: bool
+
+type: Literal\["text_editor_code_execution_create_result"\]
+
+class TextEditorCodeExecutionStrReplaceResultBlock: …
+
+lines: Optional\[List\[str\]\]
+
+new_lines: Optional\[int\]
+
+new_start: Optional\[int\]
+
+old_lines: Optional\[int\]
+
+old_start: Optional\[int\]
+
+type: Literal\["text_editor_code_execution_str_replace_result"\]
+
+tool_use_id: str
+
+type: Literal\["text_editor_code_execution_tool_result"\]
+
+class ToolSearchToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class ToolSearchToolResultError: …
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+error_message: Optional\[str\]
+
+type: Literal\["tool_search_tool_result_error"\]
+
+class ToolSearchToolSearchResultBlock: …
+
+tool_references: List\[[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)\]
+
+tool_name: str
+
+type: Literal\["tool_reference"\]
+
+type: Literal\["tool_search_tool_search_result"\]
+
+tool_use_id: str
+
+type: Literal\["tool_search_tool_result"\]
+
+class ContainerUploadBlock: …
+
+Response model for a file uploaded to the container.
+
+file_id: str
+
+type: Literal\["container_upload"\]
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -584,13 +896,14 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = Literal\["claude-opus-4-6", "claude-opus-4-5-20251101", "claude-opus-4-5", 18 more\]
+Literal\["claude-opus-4-6", "claude-sonnet-4-6", "claude-opus-4-5-20251101", 19 more\]
 
 The model that will complete your prompt.
 
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 - `claude-opus-4-6` - Most intelligent model for building agents and coding
+- `claude-sonnet-4-6` - Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
 - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
 - `claude-3-7-sonnet-latest` - Deprecated: Will reach end-of-life on February 19th, 2026. Please migrate to a newer model. Visit [https://docs.anthropic.com/en/docs/resources/model-deprecations](https://docs.anthropic.com/en/docs/resources/model-deprecations) for more information.
@@ -617,6 +930,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -698,17 +1015,13 @@ Excels at writing and complex tasks
 
 Our previous most fast and cost-effective
 
-UnionMember1 = str
+str
 
 role: Literal\["assistant"\]
 
 Conversational role of the generated message.
 
 This will always be `"assistant"`.
-
-Accepts one of the following:
-
-"assistant"
 
 stop_reason: Optional\[StopReason\]
 
@@ -751,10 +1064,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
 usage: [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -775,25 +1084,17 @@ ephemeral_1h_input_tokens: int
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: int
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Optional\[int\]
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Optional\[int\]
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: Optional\[str\]
 
@@ -803,23 +1104,21 @@ input_tokens: int
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: int
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: Optional\[ServerToolUsage\]
 
 The number of server tool requests.
 
+web_fetch_requests: int
+
+The number of web fetch tool requests.
+
 web_search_requests: int
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: Optional\[Literal\["standard", "priority", "batch"\]\]
 
@@ -835,10 +1134,6 @@ Accepts one of the following:
 
 type: Literal\["succeeded"\]
 
-Accepts one of the following:
-
-"succeeded"
-
 class MessageBatchErroredResult: …
 
 error: [ErrorResponse](/docs/en/api/$shared#error_response)
@@ -853,19 +1148,11 @@ message: str
 
 type: Literal\["invalid_request_error"\]
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 class AuthenticationError: …
 
 message: str
 
 type: Literal\["authentication_error"\]
-
-Accepts one of the following:
-
-"authentication_error"
 
 class BillingError: …
 
@@ -873,19 +1160,11 @@ message: str
 
 type: Literal\["billing_error"\]
 
-Accepts one of the following:
-
-"billing_error"
-
 class PermissionError: …
 
 message: str
 
 type: Literal\["permission_error"\]
-
-Accepts one of the following:
-
-"permission_error"
 
 class NotFoundError: …
 
@@ -893,19 +1172,11 @@ message: str
 
 type: Literal\["not_found_error"\]
 
-Accepts one of the following:
-
-"not_found_error"
-
 class RateLimitError: …
 
 message: str
 
 type: Literal\["rate_limit_error"\]
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 class GatewayTimeoutError: …
 
@@ -913,19 +1184,11 @@ message: str
 
 type: Literal\["timeout_error"\]
 
-Accepts one of the following:
-
-"timeout_error"
-
 class APIErrorObject: …
 
 message: str
 
 type: Literal\["api_error"\]
-
-Accepts one of the following:
-
-"api_error"
 
 class OverloadedError: …
 
@@ -933,39 +1196,19 @@ message: str
 
 type: Literal\["overloaded_error"\]
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: Optional\[str\]
 
 type: Literal\["error"\]
 
-Accepts one of the following:
-
-"error"
-
 type: Literal\["errored"\]
-
-Accepts one of the following:
-
-"errored"
 
 class MessageBatchCanceledResult: …
 
 type: Literal\["canceled"\]
 
-Accepts one of the following:
-
-"canceled"
-
 class MessageBatchExpiredResult: …
 
 type: Literal\["expired"\]
-
-Accepts one of the following:
-
-"expired"
 
 class MessageBatchRequestCounts: …
 
@@ -997,7 +1240,7 @@ Number of requests in the Message Batch that have completed successfully.
 
 This is zero until processing of the entire Message Batch has ended.
 
-MessageBatchResult = [MessageBatchResult](/docs/en/api/messages#message_batch_result)
+[MessageBatchResult](/docs/en/api/messages#message_batch_result)
 
 Processing result for this request.
 
@@ -1015,6 +1258,18 @@ Unique object identifier.
 
 The format and length of IDs may change over time.
 
+container: Optional\[Container\]
+
+Information about the container used in the request (for the code execution tool)
+
+id: str
+
+Identifier for the container used in this request
+
+expires_at: datetime
+
+The time at which the container will expire.
+
 content: List\[[ContentBlock](/docs/en/api/messages#content_block)\]
 
 Content generated by the model.
@@ -1072,10 +1327,6 @@ start_char_index: int
 
 type: Literal\["char_location"\]
 
-Accepts one of the following:
-
-"char_location"
-
 class CitationPageLocation: …
 
 cited_text: str
@@ -1091,10 +1342,6 @@ file_id: Optional\[str\]
 start_page_number: int
 
 type: Literal\["page_location"\]
-
-Accepts one of the following:
-
-"page_location"
 
 class CitationContentBlockLocation: …
 
@@ -1112,10 +1359,6 @@ start_block_index: int
 
 type: Literal\["content_block_location"\]
 
-Accepts one of the following:
-
-"content_block_location"
-
 class CitationsWebSearchResultLocation: …
 
 cited_text: str
@@ -1125,10 +1368,6 @@ encrypted_index: str
 title: Optional\[str\]
 
 type: Literal\["web_search_result_location"\]
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: str
 
@@ -1148,17 +1387,9 @@ title: Optional\[str\]
 
 type: Literal\["search_result_location"\]
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: str
 
 type: Literal\["text"\]
-
-Accepts one of the following:
-
-"text"
 
 class ThinkingBlock: …
 
@@ -1168,23 +1399,41 @@ thinking: str
 
 type: Literal\["thinking"\]
 
-Accepts one of the following:
-
-"thinking"
-
 class RedactedThinkingBlock: …
 
 data: str
 
 type: Literal\["redacted_thinking"\]
 
-Accepts one of the following:
-
-"redacted_thinking"
-
 class ToolUseBlock: …
 
 id: str
+
+caller: Caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
 
 input: Dict\[str, object\]
 
@@ -1192,29 +1441,85 @@ name: str
 
 type: Literal\["tool_use"\]
 
-Accepts one of the following:
-
-"tool_use"
-
 class ServerToolUseBlock: …
 
 id: str
 
+caller: Caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
+
 input: Dict\[str, object\]
 
-name: Literal\["web_search"\]
+name: Literal\["web_search", "web_fetch", "code_execution", 4 more\]
 
 Accepts one of the following:
 
 "web_search"
 
+"web_fetch"
+
+"code_execution"
+
+"bash_code_execution"
+
+"text_editor_code_execution"
+
+"tool_search_tool_regex"
+
+"tool_search_tool_bm25"
+
 type: Literal\["server_tool_use"\]
+
+class WebSearchToolResultBlock: …
+
+caller: Caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-"server_tool_use"
+class DirectCaller: …
 
-class WebSearchToolResultBlock: …
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -1222,7 +1527,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError: …
 
-error_code: Literal\["invalid_tool_input", "unavailable", "max_uses_exceeded", 3 more\]
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -1240,11 +1545,7 @@ Accepts one of the following:
 
 type: Literal\["web_search_tool_result_error"\]
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
-UnionMember1 = List\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\]
+List\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\]
 
 encrypted_content: str
 
@@ -1254,19 +1555,341 @@ title: str
 
 type: Literal\["web_search_result"\]
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: str
 
 tool_use_id: str
 
 type: Literal\["web_search_tool_result"\]
 
+class WebFetchToolResultBlock: …
+
+caller: Caller
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
+
+content: Content
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock: …
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"url_too_long"
+
+"url_not_allowed"
+
+"url_not_accessible"
+
+"unsupported_content_type"
+
+"too_many_requests"
+
+"max_uses_exceeded"
+
+"unavailable"
+
+type: Literal\["web_fetch_tool_result_error"\]
+
+class WebFetchBlock: …
+
+content: [DocumentBlock](/docs/en/api/messages#document_block)
+
+citations: Optional\[CitationsConfig\]
+
+Citation configuration for the document
+
+enabled: bool
+
+source: Source
+
+Accepts one of the following:
+
+class Base64PDFSource: …
+
+data: str
+
+media_type: Literal\["application/pdf"\]
+
+type: Literal\["base64"\]
+
+class PlainTextSource: …
+
+data: str
+
+media_type: Literal\["text/plain"\]
+
+type: Literal\["text"\]
+
+title: Optional\[str\]
+
+The title of the document
+
+type: Literal\["document"\]
+
+retrieved_at: Optional\[str\]
+
+ISO 8601 timestamp when the content was retrieved
+
+type: Literal\["web_fetch_result"\]
+
+url: str
+
+Fetched content URL
+
+tool_use_id: str
+
+type: Literal\["web_fetch_tool_result"\]
+
+class CodeExecutionToolResultBlock: …
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError: …
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+type: Literal\["code_execution_tool_result_error"\]
+
+class CodeExecutionResultBlock: …
+
+content: List\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["code_execution_output"\]
+
+return_code: int
+
+stderr: str
+
+stdout: str
+
+type: Literal\["code_execution_result"\]
+
+class EncryptedCodeExecutionResultBlock: …
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: List\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["code_execution_output"\]
+
+encrypted_stdout: str
+
+return_code: int
+
+stderr: str
+
+type: Literal\["encrypted_code_execution_result"\]
+
+tool_use_id: str
+
+type: Literal\["code_execution_tool_result"\]
+
+class BashCodeExecutionToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError: …
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"output_file_too_large"
+
+type: Literal\["bash_code_execution_tool_result_error"\]
+
+class BashCodeExecutionResultBlock: …
+
+content: List\[[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["bash_code_execution_output"\]
+
+return_code: int
+
+stderr: str
+
+stdout: str
+
+type: Literal\["bash_code_execution_result"\]
+
+tool_use_id: str
+
+type: Literal\["bash_code_execution_tool_result"\]
+
+class TextEditorCodeExecutionToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError: …
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"file_not_found"
+
+error_message: Optional\[str\]
+
+type: Literal\["text_editor_code_execution_tool_result_error"\]
+
+class TextEditorCodeExecutionViewResultBlock: …
+
+content: str
+
+file_type: Literal\["text", "image", "pdf"\]
+
+Accepts one of the following:
+
+"text"
+
+"image"
+
+"pdf"
+
+num_lines: Optional\[int\]
+
+start_line: Optional\[int\]
+
+total_lines: Optional\[int\]
+
+type: Literal\["text_editor_code_execution_view_result"\]
+
+class TextEditorCodeExecutionCreateResultBlock: …
+
+is_file_update: bool
+
+type: Literal\["text_editor_code_execution_create_result"\]
+
+class TextEditorCodeExecutionStrReplaceResultBlock: …
+
+lines: Optional\[List\[str\]\]
+
+new_lines: Optional\[int\]
+
+new_start: Optional\[int\]
+
+old_lines: Optional\[int\]
+
+old_start: Optional\[int\]
+
+type: Literal\["text_editor_code_execution_str_replace_result"\]
+
+tool_use_id: str
+
+type: Literal\["text_editor_code_execution_tool_result"\]
+
+class ToolSearchToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class ToolSearchToolResultError: …
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+error_message: Optional\[str\]
+
+type: Literal\["tool_search_tool_result_error"\]
+
+class ToolSearchToolSearchResultBlock: …
+
+tool_references: List\[[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)\]
+
+tool_name: str
+
+type: Literal\["tool_reference"\]
+
+type: Literal\["tool_search_tool_search_result"\]
+
+tool_use_id: str
+
+type: Literal\["tool_search_tool_result"\]
+
+class ContainerUploadBlock: …
+
+Response model for a file uploaded to the container.
+
+file_id: str
+
+type: Literal\["container_upload"\]
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -1276,13 +1899,14 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = Literal\["claude-opus-4-6", "claude-opus-4-5-20251101", "claude-opus-4-5", 18 more\]
+Literal\["claude-opus-4-6", "claude-sonnet-4-6", "claude-opus-4-5-20251101", 19 more\]
 
 The model that will complete your prompt.
 
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 - `claude-opus-4-6` - Most intelligent model for building agents and coding
+- `claude-sonnet-4-6` - Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
 - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
 - `claude-3-7-sonnet-latest` - Deprecated: Will reach end-of-life on February 19th, 2026. Please migrate to a newer model. Visit [https://docs.anthropic.com/en/docs/resources/model-deprecations](https://docs.anthropic.com/en/docs/resources/model-deprecations) for more information.
@@ -1309,6 +1933,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -1390,17 +2018,13 @@ Excels at writing and complex tasks
 
 Our previous most fast and cost-effective
 
-UnionMember1 = str
+str
 
 role: Literal\["assistant"\]
 
 Conversational role of the generated message.
 
 This will always be `"assistant"`.
-
-Accepts one of the following:
-
-"assistant"
 
 stop_reason: Optional\[StopReason\]
 
@@ -1443,10 +2067,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
 usage: [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -1467,25 +2087,17 @@ ephemeral_1h_input_tokens: int
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: int
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Optional\[int\]
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Optional\[int\]
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: Optional\[str\]
 
@@ -1495,23 +2107,21 @@ input_tokens: int
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: int
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: Optional\[ServerToolUsage\]
 
 The number of server tool requests.
 
+web_fetch_requests: int
+
+The number of web fetch tool requests.
+
 web_search_requests: int
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: Optional\[Literal\["standard", "priority", "batch"\]\]
 
@@ -1526,10 +2136,6 @@ Accepts one of the following:
 "batch"
 
 type: Literal\["succeeded"\]
-
-Accepts one of the following:
-
-"succeeded"
 
 class MessageBatchErroredResult: …
 
@@ -1545,19 +2151,11 @@ message: str
 
 type: Literal\["invalid_request_error"\]
 
-Accepts one of the following:
-
-"invalid_request_error"
-
 class AuthenticationError: …
 
 message: str
 
 type: Literal\["authentication_error"\]
-
-Accepts one of the following:
-
-"authentication_error"
 
 class BillingError: …
 
@@ -1565,19 +2163,11 @@ message: str
 
 type: Literal\["billing_error"\]
 
-Accepts one of the following:
-
-"billing_error"
-
 class PermissionError: …
 
 message: str
 
 type: Literal\["permission_error"\]
-
-Accepts one of the following:
-
-"permission_error"
 
 class NotFoundError: …
 
@@ -1585,19 +2175,11 @@ message: str
 
 type: Literal\["not_found_error"\]
 
-Accepts one of the following:
-
-"not_found_error"
-
 class RateLimitError: …
 
 message: str
 
 type: Literal\["rate_limit_error"\]
-
-Accepts one of the following:
-
-"rate_limit_error"
 
 class GatewayTimeoutError: …
 
@@ -1605,19 +2187,11 @@ message: str
 
 type: Literal\["timeout_error"\]
 
-Accepts one of the following:
-
-"timeout_error"
-
 class APIErrorObject: …
 
 message: str
 
 type: Literal\["api_error"\]
-
-Accepts one of the following:
-
-"api_error"
 
 class OverloadedError: …
 
@@ -1625,39 +2199,19 @@ message: str
 
 type: Literal\["overloaded_error"\]
 
-Accepts one of the following:
-
-"overloaded_error"
-
 request_id: Optional\[str\]
 
 type: Literal\["error"\]
 
-Accepts one of the following:
-
-"error"
-
 type: Literal\["errored"\]
-
-Accepts one of the following:
-
-"errored"
 
 class MessageBatchCanceledResult: …
 
 type: Literal\["canceled"\]
 
-Accepts one of the following:
-
-"canceled"
-
 class MessageBatchExpiredResult: …
 
 type: Literal\["expired"\]
-
-Accepts one of the following:
-
-"expired"
 
 class MessageBatchSucceededResult: …
 
@@ -1668,6 +2222,18 @@ id: str
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+container: Optional\[Container\]
+
+Information about the container used in the request (for the code execution tool)
+
+id: str
+
+Identifier for the container used in this request
+
+expires_at: datetime
+
+The time at which the container will expire.
 
 content: List\[[ContentBlock](/docs/en/api/messages#content_block)\]
 
@@ -1726,10 +2292,6 @@ start_char_index: int
 
 type: Literal\["char_location"\]
 
-Accepts one of the following:
-
-"char_location"
-
 class CitationPageLocation: …
 
 cited_text: str
@@ -1745,10 +2307,6 @@ file_id: Optional\[str\]
 start_page_number: int
 
 type: Literal\["page_location"\]
-
-Accepts one of the following:
-
-"page_location"
 
 class CitationContentBlockLocation: …
 
@@ -1766,10 +2324,6 @@ start_block_index: int
 
 type: Literal\["content_block_location"\]
 
-Accepts one of the following:
-
-"content_block_location"
-
 class CitationsWebSearchResultLocation: …
 
 cited_text: str
@@ -1779,10 +2333,6 @@ encrypted_index: str
 title: Optional\[str\]
 
 type: Literal\["web_search_result_location"\]
-
-Accepts one of the following:
-
-"web_search_result_location"
 
 url: str
 
@@ -1802,17 +2352,9 @@ title: Optional\[str\]
 
 type: Literal\["search_result_location"\]
 
-Accepts one of the following:
-
-"search_result_location"
-
 text: str
 
 type: Literal\["text"\]
-
-Accepts one of the following:
-
-"text"
 
 class ThinkingBlock: …
 
@@ -1822,23 +2364,41 @@ thinking: str
 
 type: Literal\["thinking"\]
 
-Accepts one of the following:
-
-"thinking"
-
 class RedactedThinkingBlock: …
 
 data: str
 
 type: Literal\["redacted_thinking"\]
 
-Accepts one of the following:
-
-"redacted_thinking"
-
 class ToolUseBlock: …
 
 id: str
+
+caller: Caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
 
 input: Dict\[str, object\]
 
@@ -1846,29 +2406,85 @@ name: str
 
 type: Literal\["tool_use"\]
 
-Accepts one of the following:
-
-"tool_use"
-
 class ServerToolUseBlock: …
 
 id: str
 
+caller: Caller
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
+
 input: Dict\[str, object\]
 
-name: Literal\["web_search"\]
+name: Literal\["web_search", "web_fetch", "code_execution", 4 more\]
 
 Accepts one of the following:
 
 "web_search"
 
+"web_fetch"
+
+"code_execution"
+
+"bash_code_execution"
+
+"text_editor_code_execution"
+
+"tool_search_tool_regex"
+
+"tool_search_tool_bm25"
+
 type: Literal\["server_tool_use"\]
+
+class WebSearchToolResultBlock: …
+
+caller: Caller
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-"server_tool_use"
+class DirectCaller: …
 
-class WebSearchToolResultBlock: …
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
 
 content: [WebSearchToolResultBlockContent](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -1876,7 +2492,7 @@ Accepts one of the following:
 
 class WebSearchToolResultError: …
 
-error_code: Literal\["invalid_tool_input", "unavailable", "max_uses_exceeded", 3 more\]
+error_code: [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
@@ -1894,11 +2510,7 @@ Accepts one of the following:
 
 type: Literal\["web_search_tool_result_error"\]
 
-Accepts one of the following:
-
-"web_search_tool_result_error"
-
-UnionMember1 = List\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\]
+List\[[WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)\]
 
 encrypted_content: str
 
@@ -1908,19 +2520,341 @@ title: str
 
 type: Literal\["web_search_result"\]
 
-Accepts one of the following:
-
-"web_search_result"
-
 url: str
 
 tool_use_id: str
 
 type: Literal\["web_search_tool_result"\]
 
+class WebFetchToolResultBlock: …
+
+caller: Caller
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-"web_search_tool_result"
+class DirectCaller: …
+
+Tool invocation directly from the model.
+
+type: Literal\["direct"\]
+
+class ServerToolCaller: …
+
+Tool invocation generated by a server-side tool.
+
+tool_id: str
+
+type: Literal\["code_execution_20250825"\]
+
+class ServerToolCaller20260120: …
+
+tool_id: str
+
+type: Literal\["code_execution_20260120"\]
+
+content: Content
+
+Accepts one of the following:
+
+class WebFetchToolResultErrorBlock: …
+
+error_code: [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"url_too_long"
+
+"url_not_allowed"
+
+"url_not_accessible"
+
+"unsupported_content_type"
+
+"too_many_requests"
+
+"max_uses_exceeded"
+
+"unavailable"
+
+type: Literal\["web_fetch_tool_result_error"\]
+
+class WebFetchBlock: …
+
+content: [DocumentBlock](/docs/en/api/messages#document_block)
+
+citations: Optional\[CitationsConfig\]
+
+Citation configuration for the document
+
+enabled: bool
+
+source: Source
+
+Accepts one of the following:
+
+class Base64PDFSource: …
+
+data: str
+
+media_type: Literal\["application/pdf"\]
+
+type: Literal\["base64"\]
+
+class PlainTextSource: …
+
+data: str
+
+media_type: Literal\["text/plain"\]
+
+type: Literal\["text"\]
+
+title: Optional\[str\]
+
+The title of the document
+
+type: Literal\["document"\]
+
+retrieved_at: Optional\[str\]
+
+ISO 8601 timestamp when the content was retrieved
+
+type: Literal\["web_fetch_result"\]
+
+url: str
+
+Fetched content URL
+
+tool_use_id: str
+
+type: Literal\["web_fetch_tool_result"\]
+
+class CodeExecutionToolResultBlock: …
+
+content: [CodeExecutionToolResultBlockContent](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+class CodeExecutionToolResultError: …
+
+error_code: [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+type: Literal\["code_execution_tool_result_error"\]
+
+class CodeExecutionResultBlock: …
+
+content: List\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["code_execution_output"\]
+
+return_code: int
+
+stderr: str
+
+stdout: str
+
+type: Literal\["code_execution_result"\]
+
+class EncryptedCodeExecutionResultBlock: …
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+content: List\[[CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["code_execution_output"\]
+
+encrypted_stdout: str
+
+return_code: int
+
+stderr: str
+
+type: Literal\["encrypted_code_execution_result"\]
+
+tool_use_id: str
+
+type: Literal\["code_execution_tool_result"\]
+
+class BashCodeExecutionToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class BashCodeExecutionToolResultError: …
+
+error_code: [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"output_file_too_large"
+
+type: Literal\["bash_code_execution_tool_result_error"\]
+
+class BashCodeExecutionResultBlock: …
+
+content: List\[[BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)\]
+
+file_id: str
+
+type: Literal\["bash_code_execution_output"\]
+
+return_code: int
+
+stderr: str
+
+stdout: str
+
+type: Literal\["bash_code_execution_result"\]
+
+tool_use_id: str
+
+type: Literal\["bash_code_execution_tool_result"\]
+
+class TextEditorCodeExecutionToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class TextEditorCodeExecutionToolResultError: …
+
+error_code: [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+"file_not_found"
+
+error_message: Optional\[str\]
+
+type: Literal\["text_editor_code_execution_tool_result_error"\]
+
+class TextEditorCodeExecutionViewResultBlock: …
+
+content: str
+
+file_type: Literal\["text", "image", "pdf"\]
+
+Accepts one of the following:
+
+"text"
+
+"image"
+
+"pdf"
+
+num_lines: Optional\[int\]
+
+start_line: Optional\[int\]
+
+total_lines: Optional\[int\]
+
+type: Literal\["text_editor_code_execution_view_result"\]
+
+class TextEditorCodeExecutionCreateResultBlock: …
+
+is_file_update: bool
+
+type: Literal\["text_editor_code_execution_create_result"\]
+
+class TextEditorCodeExecutionStrReplaceResultBlock: …
+
+lines: Optional\[List\[str\]\]
+
+new_lines: Optional\[int\]
+
+new_start: Optional\[int\]
+
+old_lines: Optional\[int\]
+
+old_start: Optional\[int\]
+
+type: Literal\["text_editor_code_execution_str_replace_result"\]
+
+tool_use_id: str
+
+type: Literal\["text_editor_code_execution_tool_result"\]
+
+class ToolSearchToolResultBlock: …
+
+content: Content
+
+Accepts one of the following:
+
+class ToolSearchToolResultError: …
+
+error_code: [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+"invalid_tool_input"
+
+"unavailable"
+
+"too_many_requests"
+
+"execution_time_exceeded"
+
+error_message: Optional\[str\]
+
+type: Literal\["tool_search_tool_result_error"\]
+
+class ToolSearchToolSearchResultBlock: …
+
+tool_references: List\[[ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)\]
+
+tool_name: str
+
+type: Literal\["tool_reference"\]
+
+type: Literal\["tool_search_tool_search_result"\]
+
+tool_use_id: str
+
+type: Literal\["tool_search_tool_result"\]
+
+class ContainerUploadBlock: …
+
+Response model for a file uploaded to the container.
+
+file_id: str
+
+type: Literal\["container_upload"\]
 
 model: [Model](/docs/en/api/messages#model)
 
@@ -1930,13 +2864,14 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-UnionMember0 = Literal\["claude-opus-4-6", "claude-opus-4-5-20251101", "claude-opus-4-5", 18 more\]
+Literal\["claude-opus-4-6", "claude-sonnet-4-6", "claude-opus-4-5-20251101", 19 more\]
 
 The model that will complete your prompt.
 
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 - `claude-opus-4-6` - Most intelligent model for building agents and coding
+- `claude-sonnet-4-6` - Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
 - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
 - `claude-3-7-sonnet-latest` - Deprecated: Will reach end-of-life on February 19th, 2026. Please migrate to a newer model. Visit [https://docs.anthropic.com/en/docs/resources/model-deprecations](https://docs.anthropic.com/en/docs/resources/model-deprecations) for more information.
@@ -1963,6 +2898,10 @@ Accepts one of the following:
 "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 "claude-opus-4-5-20251101"
 
@@ -2044,17 +2983,13 @@ Excels at writing and complex tasks
 
 Our previous most fast and cost-effective
 
-UnionMember1 = str
+str
 
 role: Literal\["assistant"\]
 
 Conversational role of the generated message.
 
 This will always be `"assistant"`.
-
-Accepts one of the following:
-
-"assistant"
 
 stop_reason: Optional\[StopReason\]
 
@@ -2097,10 +3032,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-"message"
-
 usage: [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -2121,25 +3052,17 @@ ephemeral_1h_input_tokens: int
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 ephemeral_5m_input_tokens: int
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 cache_creation_input_tokens: Optional\[int\]
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 cache_read_input_tokens: Optional\[int\]
 
 The number of input tokens read from the cache.
-
-minimum0
 
 inference_geo: Optional\[str\]
 
@@ -2149,23 +3072,21 @@ input_tokens: int
 
 The number of input tokens which were used.
 
-minimum0
-
 output_tokens: int
 
 The number of output tokens which were used.
-
-minimum0
 
 server_tool_use: Optional\[ServerToolUsage\]
 
 The number of server tool requests.
 
+web_fetch_requests: int
+
+The number of web fetch tool requests.
+
 web_search_requests: int
 
 The number of web search tool requests.
-
-minimum0
 
 service_tier: Optional\[Literal\["standard", "priority", "batch"\]\]
 
@@ -2180,10 +3101,6 @@ Accepts one of the following:
 "batch"
 
 type: Literal\["succeeded"\]
-
-Accepts one of the following:
-
-"succeeded"
 
 [](/docs)
 

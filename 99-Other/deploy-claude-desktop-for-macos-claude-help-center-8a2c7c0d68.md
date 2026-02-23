@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos"
 title: "Deploy Claude Desktop for macOS | Claude Help Center"
 ---
@@ -105,7 +105,7 @@ Getting Started with Local MCP Servers on Claude Desktop
 
 [](https://support.claude.com/en/articles/12622667-enterprise-configuration)
 
-Enterprise Configuration
+Enterprise configuration
 
 [](https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows)
 

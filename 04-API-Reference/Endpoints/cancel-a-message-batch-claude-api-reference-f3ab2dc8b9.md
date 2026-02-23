@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:36Z"
+fetched_at: "2026-02-22T13:30:52Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/batches/cancel"
 title: "Cancel a Message Batch - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # Cancel a Message Batch
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
 
@@ -35,7 +35,7 @@ Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 17 more
 
 Accepts one of the following:
 
@@ -77,6 +77,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 BetaMessageBatch = object { id, archived_at, cancel_initiated_at, 7 more }
@@ -91,19 +93,13 @@ archived_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 cancel_initiated_at: string
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 created_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 ended_at: string
 
@@ -116,8 +112,6 @@ formatdate-time
 expires_at: string
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 processing_status: "in_progress" or "canceling" or "ended"
 
@@ -177,16 +171,12 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-"message_batch"
-
 Cancel a Message Batch
 
 cURL
 
 ``` shiki
-curl https://api.anthropic.com/v1/messages/batches/$MESSAGE_BATCH_ID/cancel \
+curl https://api.anthropic.com/v1/messages/batches/$MESSAGE_BATCH_ID/cancel?beta=true \
     -X POST \
     -H 'anthropic-version: 2023-06-01' \
     -H 'anthropic-beta: message-batches-2024-09-24' \

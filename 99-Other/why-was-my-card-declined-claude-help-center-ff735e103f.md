@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:39Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9402418-why-was-my-card-declined"
 title: "Why was my card declined? | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Why was my card declined?
 
 # Why was my card declined?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -121,7 +121,7 @@ Understanding your billing address and tax calculation
 
 [](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs)
 
-Team Plan Billing FAQs
+Team plan billing FAQs
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:10Z"
+fetched_at: "2026-02-22T13:28:27Z"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # Delete a Message Batch
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 Delete a Message Batch.
 
@@ -38,10 +38,6 @@ type: "message_batch_deleted"
 Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
-
-Accepts one of the following:
-
-"message_batch_deleted"
 
 Delete a Message Batch
 

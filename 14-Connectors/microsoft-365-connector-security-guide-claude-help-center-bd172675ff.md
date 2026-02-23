@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:31Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
 title: "Microsoft 365 Connector: Security Guide | Claude Help Center"
 ---
@@ -69,37 +69,37 @@ Table of contents
 
 [](#h_d078c29e77)
 
-## What It Is
+## What it is
 
 The Microsoft 365 Connector is an **Anthropic-hosted integration** that enables Claude to securely access Microsoft 365 services (Outlook, SharePoint, OneDrive, Teams) through user-delegated permissions. Anthropic has completed Microsoft's publisher verification process, associating our verified Microsoft Partner Network account with this application to confirm our organizational identity.
 
 The connector operates as a **secure proxy**, and your Microsoft 365 documents, emails, and files remain in your tenant. The connector only retrieves data on-demand during active queries and does not cache file content. Credentials are encrypted and managed by Anthropic's backend infrastructure. The MCP server itself does not store or manage these credentials. Microsoft's Azure SDK handles the On-Behalf-Of token exchange and caching on a per-user basis for accessing the Graph API.
 
-## Access Restriction
+## Access restriction
 
-### Access Can Be Fully Restricted
+### Access can be fully restricted
 
-The connector provides **multiple layers of access control** to address your security requirements. For detailed information on administration of the Microsoft 365 Connector see [Enabling and Using the Microsoft 365 Connector](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector).
+The connector provides **multiple layers of access control** to address your security requirements. For detailed information on administration of the Microsoft 365 Connector see **[Enabling and using the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)**.
 
-**1. Organization-Level Gating**
+**1. Organization-level gating**
 
-Access to the connector for Team and Enterprise plan users requires a two-step approval process. First, Owners must explicitly enable the Microsoft 365 connector in Claude Admin Settings by navigating to Admin Settings → Connectors → Browse connectors → Add "Microsoft 365". Until this approval is granted, users have no access.
+Access to the connector for Team and Enterprise plan users requires a two-step approval process. First, owners must explicitly enable the Microsoft 365 connector in Claude organization settings by navigating to Organization settings → Connectors → Browse connectors → Add "Microsoft 365". Until this approval is granted, users have no access.
 
 Second, after the Owner enables the connector, a Microsoft Entra Global Administrator must complete individual authentication and grant consent on behalf of the whole organization before any team members can connect.
 
-**2. Microsoft Entra Admin Pre-Consent Requirement**
+**2. Microsoft Entra Admin pre-consent requirement**
 
 Before users can access the connector, a Microsoft Entra Admin must complete a one-time setup, which will:
 
-- Add two service principals and Enterprise apps in Microsoft Entra ID (M365 MCP Client and M365 MCP Server). This establishes a service-level identity for the Microsoft 365 Connector apps in your tenant
+- Add two service principals and Enterprise apps in Microsoft Entra ID (M365 MCP Client and M365 MCP Server). This establishes a service-level identity for the Microsoft 365 Connector apps in your tenant.
 
-- Grant admin pre-consent for your Microsoft 365 tenant
+- Grant admin pre-consent for your Microsoft 365 tenant.
 
-- Optionally restrict which Microsoft Entra ID users and groups are allowed to use the connector
+- Optionally restrict which Microsoft Entra ID users and groups are allowed to use the connector.
 
-- Optionally restrict permissions the connector is allowed to use to selectively control which Microsoft 365 services are accessible
+- Optionally restrict permissions the connector is allowed to use to selectively control which Microsoft 365 services are accessible.
 
-**3. Granular Permission Revocation**
+**3. Granular permission revocation**
 
 You can selectively disable specific capabilities via Microsoft Entra Admin Center. For example:
 
@@ -107,7 +107,7 @@ You can selectively disable specific capabilities via Microsoft Entra Admin Cent
 
 Changes take effect immediately for all users in your organization. Note that users can also choose to disable capabilities that they have permission to use during a chat or session by selectively toggling off the connector’s tools.
 
-**4. Microsoft Conditional Access Integration**
+**4. Microsoft conditional access integration**
 
 The connector fully supports your existing Entra (Azure AD) policies:
 
@@ -119,9 +119,9 @@ The connector fully supports your existing Entra (Azure AD) policies:
 
 - **Group-based access**: Restrict to specific security groups
 
-**5. User-Level Permissions**
+**5. User-level permissions**
 
-- The Microsoft 365 Connector uses [delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions).
+- The Microsoft 365 Connector uses **[delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions)**.
 
 - Users can only access Microsoft 365 data **they already have permission** for
 
@@ -133,7 +133,7 @@ The connector fully supports your existing Entra (Azure AD) policies:
 
 - Delegated permissions inherently respect Microsoft 365 data loss prevention (DLP) policies
 
-**6. Token Management**
+**6. Token management**
 
 - Refresh tokens expire after 90 days of inactivity by default, requiring re-authentication. This can be customized in Microsoft Entra ID using a token lifetime policy.
 
@@ -143,9 +143,9 @@ The connector fully supports your existing Entra (Azure AD) policies:
 
 - The Microsoft 365 Connector never sees or stores passwords
 
-## Security Architecture Summary
+## Security architecture summary
 
-### Authentication Flow
+### Authentication flow
 
 - **OAuth 2.0 On-Behalf-Of (OBO):** Industry-standard delegated authentication
 
@@ -157,7 +157,7 @@ The connector fully supports your existing Entra (Azure AD) policies:
 
 - **Encrypted token storage**: Access and refresh tokens are encrypted while cached by the Claude backend
 
-### Data Flow
+### Data flow
 
 - Documents and other content are retrieved **only during active queries**
 
@@ -169,27 +169,27 @@ The connector fully supports your existing Entra (Azure AD) policies:
 
 - Each request creates a fresh data flow which is cleaned up after the response is returned
 
-### Multi-Tenant Isolation
+### Multi-tenant isolation
 
 - Microsoft Entra tenants are **cryptographically separated** from each other using a common-scoped multi-tenant configuration
 
 - Multi-tenant isolation is cryptographically enforced through digitally signed access tokens that bind each user to their organization’s tenant
 
-## Available Capabilities
+## Available capabilities
 
-### Current Features (Read-Only Access)
+### Current features (read-only access)
 
 The connector provides **read-only** access to:
 
 [TABLE]
 
-## Permissions List
+## Permissions list
 
-**Basic Permissions**
+**Basic permissions**
 
 - [User.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#userread) - Sign in and read user profile (basic requirement)
 
-**Mail Permissions**
+**Mail permissions**
 
 - [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread) - Read user mail (required for email tools/resources)
 
@@ -201,17 +201,17 @@ The connector provides **read-only** access to:
 
 - [MailboxItem.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mail-permissions) - Read a user's mailbox items
 
-**Calendar Permissions**
+**Calendar permissions**
 
 - [Calendars.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#calendarsread) - Read user calendars and events
 
 - [Calendars.Read.Shared](https://learn.microsoft.com/en-us/graph/permissions-reference#calendarsreadshared) - Read calendars user can access, including shared
 
-**User Directory**
+**User directory**
 
 - [User.ReadBasic.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadbasicall) - Read basic profiles of all users (for meeting availability)
 
-**Chat Permissions**
+**Chat permissions**
 
 - [Chat.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#chatread) - Read user chat messages
 
@@ -221,13 +221,13 @@ The connector provides **read-only** access to:
 
 - [ChatMessage.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#chatmessageread) - Read user chat messages (more specific than Chat.Read)
 
-**Channel Permissions**
+**Channel permissions**
 
 - [Channel.ReadBasic.All](https://learn.microsoft.com/en-us/graph/permissions-reference#channelreadbasicall) - Read the names and descriptions of channels
 
 - [ChannelMessage.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#channelmessagereadall) - Read channel messages
 
-**Meeting Permissions**
+**Meeting permissions**
 
 - [OnlineMeetings.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#onlinemeetingsread) - Read online meetings
 
@@ -239,31 +239,31 @@ The connector provides **read-only** access to:
 
 - [OnlineMeetingRecording.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#onlinemeetingrecordingreadall) - Read all recordings of online meetings
 
-**Files Permissions**
+**Files permissions**
 
 - [Files.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#filesread) - Read user files
 
 - [Files.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#filesreadall) - Read all files user can access
 
-**Sites Permissions**
+**Sites permissions**
 
 - [Sites.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#sitesreadall) - Read items in all site collections
 
 - [Sites.Selected](https://learn.microsoft.com/en-us/graph/permissions-reference#sitesselected) – Manages application access at the site collection level, providing access to a specific site collection
 
-## Current Limitations
+## Current limitations
 
-- **No write capabilities**: Cannot send emails, schedule meetings, create/modify documents, or post Teams messages
+- **No write capabilities**: Cannot send emails, schedule meetings, create/modify documents, or post Teams messages.
 
-- **User-level access only**: Access with service principal authentication is not supported
+- **User-level access only**: Access with service principal authentication is not supported.
 
-## FAQs
+## Frequently asked questions
 
 ### Q: Can we test with a small pilot group before enterprise-wide rollout?
 
 A: Yes. The recommended approach is to use app assignment to restrict who can use the connector:
 
-- Owner enables connector in Claude Admin Settings
+- Owner enables connector in Claude organization settings
 
 - Microsoft Entra Admin completes pre-consent setup
 
@@ -307,7 +307,7 @@ A: Yes. The recommended approach is to use app assignment to restrict who can us
 
 - **User-level**: Users disconnect via Claude Settings → Connectors
 
-- **Admin-level**: Disable connector in Claude Admin Settings (all users affected)
+- **Admin-level**: Disable connector in Claude organization settings (all users affected)
 
 - **Permission-level**: Revoke specific permissions in Microsoft Entra Admin Center
 
@@ -327,29 +327,29 @@ A: Yes. The recommended approach is to use app assignment to restrict who can us
 
 ## Additional resources
 
-- Claude Help Center: [Enabling and Using the Microsoft 365 Connector](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)
+- Claude Help Center: **[Enabling and using the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)**
 
-- [Overview of Microsoft Graph permissions: Delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions)
+- **[Overview of Microsoft Graph permissions: Delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions)**
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/11724452-using-the-connectors-directory-to-extend-claude-s-capabilities)
+[](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 
-Using the Connectors Directory to extend Claude’s capabilities
+Use the Connectors Directory to extend Claude’s capabilities
 
 [](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)
 
-Enabling and Using the Microsoft 365 Connector
+Enabling and using the Microsoft 365 connector
 
 [](https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions)
 

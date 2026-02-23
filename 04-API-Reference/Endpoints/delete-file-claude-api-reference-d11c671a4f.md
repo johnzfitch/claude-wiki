@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:55Z"
+fetched_at: "2026-02-22T14:04:45Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/files/delete"
 title: "Delete File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Ruby
 
 beta.files.delete(file_id, \*\*kwargs) -\> [DeletedFile](/docs/en/api/beta#deleted_file) { id, type }
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 Delete File
 
@@ -31,7 +31,7 @@ Accepts one of the following:
 
 String
 
-:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 16 more
+:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 17 more
 
 Accepts one of the following:
 
@@ -73,6 +73,8 @@ Accepts one of the following:
 
 :"skills-2025-10-02"
 
+:"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 class DeletedFile { id, type }
@@ -86,10 +88,6 @@ type: :file_deleted
 Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
-
-Accepts one of the following:
-
-:file_deleted
 
 Delete File
 

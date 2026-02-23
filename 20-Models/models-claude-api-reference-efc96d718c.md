@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:09:51Z"
+fetched_at: "2026-02-22T13:56:41Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/models"
 title: "Models - Claude API Reference"
 ---
@@ -15,13 +15,13 @@ Go
 
 client.Beta.Models.List(ctx, params) (\*Page\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\], error)
 
-get/v1/models
+GET/v1/models
 
 ##### [Get a Model](/docs/en/api/beta/models/retrieve)
 
 client.Beta.Models.Get(ctx, modelID, query) (\*[BetaModelInfo](/docs/en/api/beta#beta_model_info), error)
 
-get/v1/models/{model_id}
+GET/v1/models/{model_id}
 
 ##### ModelsExpand Collapse 
 
@@ -35,8 +35,6 @@ CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
-formatdate-time
-
 DisplayName string
 
 A human-readable name for the model.
@@ -46,10 +44,6 @@ Type Model
 Object type.
 
 For Models, this is always `"model"`.
-
-Accepts one of the following:
-
-const ModelModel Model = "model"
 
 [](/docs)
 

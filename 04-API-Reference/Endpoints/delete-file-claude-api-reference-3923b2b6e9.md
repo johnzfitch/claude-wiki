@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:01Z"
+fetched_at: "2026-02-22T13:49:00Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/files/delete"
 title: "Delete File - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 [DeletedFile](/docs/en/api/beta#deleted_file) beta().files().delete(FileDeleteParamsparams = FileDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 Delete File
 
@@ -67,6 +67,8 @@ MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-
 
 SKILLS_2025_10_02("skills-2025-10-02")
 
+FAST_MODE_2026_02_01("fast-mode-2026-02-01")
+
 ##### ReturnsExpand Collapse 
 
 class DeletedFile:
@@ -80,10 +82,6 @@ Optional\<Type\> type
 Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
-
-Accepts one of the following:
-
-FILE_DELETED("file_deleted")
 
 Delete File
 

@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:17Z"
+fetched_at: "2026-02-22T13:09:37Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/vision"
 title: "Vision - Claude API Docs"
 ---
 
-Capabilities
+Model capabilities
 
 # Vision
 
@@ -119,11 +119,11 @@ Shell
 
 ``` shiki
     # For URL-based images, you can use the URL directly in your JSON request
-    
+
     # For base64-encoded images, you need to first encode the image
     # Example of how to encode an image to base64 in bash:
     BASE64_IMAGE_DATA=$(curl -s "https://upload.wikimedia.org/wikipedia/commons/a/a7/Camponotus_flavomarginatus_ant.jpg" | base64)
-    
+
     # The encoded data can now be used in your API calls
 ```
 

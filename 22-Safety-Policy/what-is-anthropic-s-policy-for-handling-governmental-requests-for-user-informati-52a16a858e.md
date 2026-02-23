@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-10T10:49:40Z"
+fetched_at: "2026-02-23T00:45:21Z"
 source_url: "https://support.claude.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information"
 title: "What is Anthropic’s policy for handling governmental requests for user information? | Claude Help Center"
 ---
@@ -43,13 +43,9 @@ Trust and transparency are paramount values. Accordingly:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9035075-law-enforcement-requests)
+[](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
 
-Law Enforcement Requests
-
-[](https://support.claude.com/en/articles/9307344-responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors)
-
-Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors
+Does Anthropic crawl data from the web, and how can site owners block the crawler?
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
@@ -62,6 +58,10 @@ Model Safety Bug Bounty Program
 [](https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude)
 
 Crisis Helpline Support in Claude
+
+[](https://support.claude.com/en/articles/13704655-unauthorized-anthropic-stock-sales-and-investment-scams)
+
+Unauthorized Anthropic stock sales and investment scams
 
 Did this answer your question?
 

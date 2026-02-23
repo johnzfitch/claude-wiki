@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:48Z"
+fetched_at: "2026-02-22T13:15:00Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-connector"
 title: "MCP connector - Claude API Docs"
 ---
@@ -18,6 +18,8 @@ Claude's Model Context Protocol (MCP) connector feature enables you to connect t
 **Current version**: This feature requires the beta header: `"anthropic-beta": "mcp-client-2025-11-20"`
 
 The previous version (`mcp-client-2025-04-04`) is deprecated. See the [deprecated version documentation](#deprecated-version-mcp-client-2025-04-04) below.
+
+This feature is in beta and is **not** covered by [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) arrangements. Beta features are excluded from ZDR.
 
 ## 
 
@@ -463,8 +465,8 @@ import {
   mcpTools,
   mcpMessages,
   mcpResourceToContent,
-  mcpResourceToFile,
-} from '@anthropic-ai/sdk/helpers/beta/mcp';
+  mcpResourceToFile
+} from "@anthropic-ai/sdk/helpers/beta/mcp";
 ```
 
 | Helper | Description |
@@ -481,25 +483,25 @@ Use MCP tools
 Convert MCP tools for use with the SDK's [tool runner](/docs/en/agents-and-tools/tool-use/implement-tool-use#tool-runner-beta), which handles tool execution automatically:
 
 ``` shiki
-import Anthropic from '@anthropic-ai/sdk';
-import { mcpTools } from '@anthropic-ai/sdk/helpers/beta/mcp';
-import { Client } from '@modelcontextprotocol/sdk/client/index.js';
-import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
+import Anthropic from "@anthropic-ai/sdk";
+import { mcpTools } from "@anthropic-ai/sdk/helpers/beta/mcp";
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 
 const anthropic = new Anthropic();
 
 // Connect to an MCP server
-const transport = new StdioClientTransport({ command: 'mcp-server', args: [] });
-const mcpClient = new Client({ name: 'my-client', version: '1.0.0' });
+const transport = new StdioClientTransport({ command: "mcp-server", args: [] });
+const mcpClient = new Client({ name: "my-client", version: "1.0.0" });
 await mcpClient.connect(transport);
 
 // List tools and convert them for the Claude API
 const { tools } = await mcpClient.listTools();
 const runner = await anthropic.beta.messages.toolRunner({
-  model: 'claude-sonnet-4-5',
+  model: "claude-sonnet-4-6",
   max_tokens: 1024,
-  messages: [{ role: 'user', content: 'What tools do you have available?' }],
-  tools: mcpTools(tools, mcpClient),
+  messages: [{ role: "user", content: "What tools do you have available?" }],
+  tools: mcpTools(tools, mcpClient)
 });
 ```
 
@@ -510,13 +512,13 @@ Use MCP prompts
 Convert MCP prompt messages into Claude API message format:
 
 ``` shiki
-import { mcpMessages } from '@anthropic-ai/sdk/helpers/beta/mcp';
+import { mcpMessages } from "@anthropic-ai/sdk/helpers/beta/mcp";
 
-const { messages } = await mcpClient.getPrompt({ name: 'my-prompt' });
+const { messages } = await mcpClient.getPrompt({ name: "my-prompt" });
 const response = await anthropic.beta.messages.create({
-  model: 'claude-sonnet-4-5',
+  model: "claude-sonnet-4-6",
   max_tokens: 1024,
-  messages: mcpMessages(messages),
+  messages: mcpMessages(messages)
 });
 ```
 
@@ -527,26 +529,26 @@ Use MCP resources
 Convert MCP resources into content blocks to include in messages, or into file objects for upload:
 
 ``` shiki
-import { mcpResourceToContent, mcpResourceToFile } from '@anthropic-ai/sdk/helpers/beta/mcp';
+import { mcpResourceToContent, mcpResourceToFile } from "@anthropic-ai/sdk/helpers/beta/mcp";
 
 // As a content block in a message
-const resource = await mcpClient.readResource({ uri: 'file:///path/to/doc.txt' });
+const resource = await mcpClient.readResource({ uri: "file:///path/to/doc.txt" });
 await anthropic.beta.messages.create({
-  model: 'claude-sonnet-4-5',
+  model: "claude-sonnet-4-6",
   max_tokens: 1024,
   messages: [
     {
-      role: 'user',
+      role: "user",
       content: [
         mcpResourceToContent(resource),
-        { type: 'text', text: 'Summarize this document' },
-      ],
-    },
-  ],
+        { type: "text", text: "Summarize this document" }
+      ]
+    }
+  ]
 });
 
 // As a file upload
-const fileResource = await mcpClient.readResource({ uri: 'file:///path/to/data.json' });
+const fileResource = await mcpClient.readResource({ uri: "file:///path/to/data.json" });
 await anthropic.beta.files.upload({ file: mcpResourceToFile(fileResource) });
 ```
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:16Z"
+fetched_at: "2026-02-22T14:00:05Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/completions"
 title: "Completions - Claude API Reference"
 ---
@@ -15,7 +15,7 @@ Ruby
 
 completions.create(\*\*kwargs) -\> [Completion](/docs/en/api/completions#completion) { id, completion, model, 2 more }
 
-post/v1/complete
+POST/v1/complete
 
 ##### ModelsExpand Collapse 
 
@@ -39,7 +39,7 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 Accepts one of the following:
 
-:"claude-opus-4-6" \| :"claude-opus-4-5-20251101" \| :"claude-opus-4-5" \| 18 more
+:"claude-opus-4-6" \| :"claude-sonnet-4-6" \| :"claude-opus-4-5-20251101" \| 19 more
 
 The model that will complete your prompt.
 
@@ -50,6 +50,10 @@ Accepts one of the following:
 :"claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+:"claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 :"claude-opus-4-5-20251101"
 
@@ -147,10 +151,6 @@ type: :completion
 Object type.
 
 For Text Completions, this is always `"completion"`.
-
-Accepts one of the following:
-
-:completion
 
 [](/docs)
 

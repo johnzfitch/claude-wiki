@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:27Z"
+fetched_at: "2026-02-23T00:45:17Z"
 source_url: "https://support.claude.com/en/articles/12293051-using-claude-in-xcode"
 title: "Using Claude in Xcode | Claude Help Center"
 ---
@@ -83,7 +83,7 @@ To start using Claude in Xcode:
 
 3.  Log in with your Claude account.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1727371585/b18ca03a6357c52d12d10386f28e/dab2dcb2-f670-4173-b77d-38767a34cec1?expires=1770722100&signature=03235491c96fc6c8b46b164d6eabee0f478c2d050b47ce76030d45221ea4473a&req=dSclEcp5nIRXXPMW1HO4zUAXLMwFUKrVFalhp3bugHJ3J03Shw5nqxuTwIy0%0Asd6xDXEh5kmezCni3dc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1727371585/b18ca03a6357c52d12d10386f28e/dab2dcb2-f670-4173-b77d-38767a34cec1?expires=1771809300&signature=dfe9c56068f931a31de410d44e2e3ec08cc537cea1cc5b88bbdc407e64dba31e&req=dSclEcp5nIRXXPMW1HO4zUAXLM0KUqHXFalhp3bugHJxPpy4VZxdpeyP9Ou1%0A74Tm%2FE9fexiVUzR7Oqc%3D%0A)
 
 ## Usage limits
 
@@ -93,17 +93,17 @@ Your Claude usage limits are shared across all platforms, so your chats with Cla
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)
-
-How large is the context window on paid Claude plans?
-
 [](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
 
 Claude Code model configuration
 
+[](https://support.claude.com/en/articles/12138966-release-notes)
+
+Release notes
+
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12386420-claude-code-faq)
 

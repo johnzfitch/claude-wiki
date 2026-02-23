@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-23T00:45:18Z"
 source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
 title: "Logging in to your Claude account | Claude Help Center"
 ---
@@ -55,7 +55,7 @@ Table of contents
 
 When you open Claude on a web browser ([claude.ai](http://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893216804/f2209c3ec6cf4fc2e803d13bbc9d/40520c9e-ff82-4a7c-adca-5a064fe18d8c?expires=1770722100&signature=baa6b08a32fba4d24a559ee8d7235f4ade6df083b2eb9411d941f7adc4a35986&req=dSguFct%2Fm4lfXfMW1HO4zXg5CYKL4RC1zWhrqpWiTMkJdyqL4yuo%2Fxe9Zzpz%0AF8sezlsAiCHVaKzYSww%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893216804/f2209c3ec6cf4fc2e803d13bbc9d/40520c9e-ff82-4a7c-adca-5a064fe18d8c?expires=1771809300&signature=3b72d4895bc8c7300b040652e8675c7d6dc3b265fff2be09bd36cceda099afb0&req=dSguFct%2Fm4lfXfMW1HO4zXg5CYOE4xu3zWhrqpWiTMn6TlxtU%2BbsiCanKS6e%0A4JwYMZ6CNGQGmCV74J8%3D%0A)
 
 ## Continue with Google
 
@@ -165,9 +165,9 @@ Getting Started with Claude for Education at Your University (for Owners/Admins)
 
 FAQs on Using Claude for Education at Your University
 
-[](https://support.claude.com/en/articles/11725453-set-up-the-claude-lti-in-canvas-by-instructure)
+[](https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription)
 
-Set up the Claude LTI in Canvas by Instructure
+How to redeem a Claude gift subscription
 
 [](https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account)
 

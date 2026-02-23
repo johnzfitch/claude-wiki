@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:30Z"
+fetched_at: "2026-02-22T13:12:04Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise"
 title: "Skills for enterprise - Claude API Docs"
 ---

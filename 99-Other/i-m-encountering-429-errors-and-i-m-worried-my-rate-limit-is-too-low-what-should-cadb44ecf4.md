@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-23T00:45:14Z"
 source_url: "https://support.claude.com/en/articles/8114527-i-m-encountering-429-errors-and-i-m-worried-my-rate-limit-is-too-low-what-should-i-do"
 title: "I’m encountering 429 errors, and I’m worried my rate limit is too low. What should I do? | Claude Help Center"
 ---
@@ -51,13 +51,13 @@ Our approach to rate limits for the Claude API
 
 How can I advance my Claude API usage to Tier 2?
 
-[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
-
-How am I billed for my Enterprise plan?
-
 [](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
+
+[](https://support.claude.com/en/articles/12386420-claude-code-faq)
+
+Claude Code FAQ
 
 [](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 

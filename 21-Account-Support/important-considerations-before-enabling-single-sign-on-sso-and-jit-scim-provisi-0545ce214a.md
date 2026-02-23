@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:16Z"
+fetched_at: "2026-02-23T00:45:22Z"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 ---
@@ -49,7 +49,7 @@ Important considerations before enabling single sign-on (SSO) and JIT/SCIM provi
 
 # Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
-Updated today
+Updated this week
 
 Table of contents
 
@@ -117,7 +117,7 @@ Team or Enterprise organizations can invite other orgs to join an existing paren
 
 ### To initiate a merge proposal
 
-1.  Navigate to **[Admin settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+1.  Navigate to **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
 
 2.  Click "Invite" under **Merge Organizations**.
 
@@ -129,7 +129,7 @@ Team or Enterprise organizations can invite other orgs to join an existing paren
 
 **Note:** If the person initiating the merge is also an Admin/Owner in the invited organization, only one approval is required.
 
-Once a Console organization is merged, it will gain access to the **[Identity and access page](http://platform.claude.com/settings/identity)**, in the Admin settings, to configure SSO and provisioning settings.
+Once a Console organization is merged, it will gain access to the **[Identity and access page](http://platform.claude.com/settings/identity)**, in the Organization settings, to configure SSO and provisioning settings.
 
 ------------------------------------------------------------------------
 
@@ -145,7 +145,7 @@ When you access the Identity and access page, you may see two configuration sect
 
 ## Restricting new organization creation
 
-Once your organization's domains are verified, owners will see a **Restrict organization creation** toggle under **Security** on the Identity and access admin settings page. Toggle this on to prevent users from creating new Claude or Console organizations—including personal accounts—using any of your verified domains.
+Once your organization's domains are verified, owners will see a **Restrict organization creation** toggle under **Security** on the Identity and access organization settings page. Toggle this on to prevent users from creating new Claude or Console organizations—including personal accounts—using any of your verified domains.
 
 ------------------------------------------------------------------------
 
@@ -221,17 +221,17 @@ Once you've reviewed these considerations and completed any necessary prerequisi
 
 Related Articles
 
-[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
+[](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)
 
-Setting up single sign-on (SSO)
+Set up single sign-on (SSO)
 
-[](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
+[](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)
 
-Setting up JIT or SCIM provisioning
+Set up JIT or SCIM provisioning
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
+Manage members on Team and Enterprise plans
 
 [](https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp)
 

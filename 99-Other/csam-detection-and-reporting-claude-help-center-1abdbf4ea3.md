@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:38Z"
+fetched_at: "2026-02-23T00:45:16Z"
 source_url: "https://support.claude.com/en/articles/9020328-csam-detection-and-reporting"
 title: "CSAM Detection and Reporting | Claude Help Center"
 ---
@@ -35,15 +35,15 @@ Anthropic strictly prohibits Child Sexual Abuse Material (CSAM) on our services.
 
 As just one example of how we are combatting CSAM distribution: on our first-party services, we use a hash-matching tool to detect and report known CSAM that is included in a user or organization’s inputs. This tool provides access to NCMEC’s database of known CSAM hash values. When an image is sent in an input to our services, we will calculate a perceptual hash of the image. This hash will be automatically compared against the database. In the case of a match, we will notify and provide NCMEC information about the input and the related Account.
 
-As part of Anthropic’s safety process, we will also send a notice to the user or organization any time we report CSAM to NCMEC. If you receive a notification from us about CSAM detection and believe we’ve made an error, please email [\[email protected\]](/cdn-cgi/l/email-protection#5f2a2c3a2d2c3e393a2b261f3e312b372d302f363c713c3032).
+As part of Anthropic’s safety process, we will also send a notice to the user or organization any time we report CSAM to NCMEC. If you receive a notification from us about CSAM detection and believe we’ve made an error, please email [\[email protected\]](/cdn-cgi/l/email-protection#ed989e889f9e8c8b889994ad8c8399859f829d848ec38e8280).
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8106465-our-approach-to-user-safety)
+[](https://support.claude.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude)
 
-Our Approach to User Safety
+Reporting, Blocking, and Removing Content from Claude
 
 [](https://support.claude.com/en/articles/8241216-i-m-planning-to-launch-a-product-using-the-claude-api-what-steps-should-i-take-to-ensure-i-m-not-violating-anthropic-s-usage-policy)
 

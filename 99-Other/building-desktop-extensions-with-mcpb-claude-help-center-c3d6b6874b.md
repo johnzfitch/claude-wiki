@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:32Z"
+fetched_at: "2026-02-23T00:45:52Z"
 source_url: "https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb"
 title: "Building Desktop Extensions with MCPB | Claude Help Center"
 ---

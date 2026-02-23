@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:21Z"
+fetched_at: "2026-02-23T00:45:51Z"
 source_url: "https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq"
 title: "Anthropic Connectors Directory FAQ | Claude Help Center"
 ---
@@ -57,7 +57,7 @@ Anthropic Connectors Directory FAQ
 
 # Anthropic Connectors Directory FAQ
 
-Updated this week
+Updated over 2 weeks ago
 
 Table of contents
 
@@ -398,21 +398,21 @@ Important links:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
+[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 
-Getting Started with Local MCP Servers on Claude Desktop
-
-[](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
-
-Pre-built Web Connectors Using Remote MCP
+Get started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 
-Building Custom Connectors via Remote MCP Servers
+Building custom connectors via remote MCP servers
 
 [](https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide)
 
 Remote MCP Server Submission Guide
+
+[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
+
+Building Desktop Extensions with MCPB
 
 [](https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy)
 

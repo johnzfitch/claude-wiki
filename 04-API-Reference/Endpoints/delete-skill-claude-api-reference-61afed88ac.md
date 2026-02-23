@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:06:43Z"
+fetched_at: "2026-02-22T13:32:07Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills/delete"
 title: "Delete Skill - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ cURL
 
 # Delete Skill
 
-delete/v1/skills/{skill_id}
+DELETE/v1/skills/{skill_id}
 
 Delete Skill
 
@@ -33,7 +33,7 @@ Accepts one of the following:
 
 UnionMember0 = string
 
-UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 16 more
+UnionMember1 = "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 17 more
 
 Accepts one of the following:
 
@@ -75,6 +75,8 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
+"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 id: string
@@ -94,7 +96,7 @@ Delete Skill
 cURL
 
 ``` shiki
-curl https://api.anthropic.com/v1/skills/$SKILL_ID \
+curl https://api.anthropic.com/v1/skills/$SKILL_ID?beta=true \
     -X DELETE \
     -H 'anthropic-version: 2023-06-01' \
     -H 'anthropic-beta: skills-2025-10-02' \

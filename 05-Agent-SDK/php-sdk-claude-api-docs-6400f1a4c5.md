@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:05:14Z"
+fetched_at: "2026-02-22T13:19:06Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/php"
 title: "PHP SDK - Claude API Docs"
 ---
@@ -184,7 +184,7 @@ $client = new Client(
   apiKey: getenv("ANTHROPIC_API_KEY") ?: "my-anthropic-api-key"
 );
 
-$page = $client->beta->messages->batches->list();
+$page = $client->beta->messages->batches->list(limit: 20);
 
 var_dump($page);
 
@@ -253,6 +253,14 @@ $response = $client->request(
 
 ## 
 
+Semantic versioning
+
+This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. As the library is in initial development and has a major version of `0`, APIs may change at any time.
+
+This package considers improvements to the (non-runtime) PHPDoc type definitions to be non-breaking changes.
+
+## 
+
 Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-php)
@@ -287,6 +295,8 @@ Was this page helpful?
 - [Undocumented request params](#undocumented-request-params)
 
 - [Undocumented endpoints](#undocumented-endpoints)
+
+- [Semantic versioning](#semantic-versioning)
 
 - [Additional resources](#additional-resources)
 

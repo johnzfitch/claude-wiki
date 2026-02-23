@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:26Z"
+fetched_at: "2026-02-22T13:10:03Z"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool"
 title: "Web fetch tool - Claude API Docs"
 ---
@@ -15,11 +15,13 @@ Copy page
 
 The web fetch tool allows Claude to retrieve full content from specified web pages and PDF documents.
 
-The web fetch tool is currently in beta. To enable it, use the beta header `web-fetch-2025-09-10` in your API requests.
+The latest web fetch tool version (`web_fetch_20260209`) supports **dynamic filtering** with Claude Opus 4.6 and Sonnet 4.6. Claude can write and execute code to filter fetched content before it reaches the context window, keeping only relevant information and discarding the rest. This reduces token consumption while maintaining response quality. The previous tool version (`web_fetch_20250910`) remains available without dynamic filtering.
 
 Please use [this form](https://forms.gle/NhWcgmkcvPCMmPE86) to provide feedback on the quality of the model responses, the API itself, or the quality of the documentation.
 
-Enabling the web fetch tool in environments where Claude processes untrusted input alongside sensitive data poses data exfiltration risks. We recommend only using this tool in trusted environments or when handling non-sensitive data.
+This feature is [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention) eligible. When your organization has a ZDR arrangement, data sent through this feature is not stored after the API response is returned.
+
+Enabling the web fetch tool in environments where Claude processes untrusted input alongside sensitive data poses data exfiltration risks. Only use this tool in trusted environments or when handling non-sensitive data.
 
 To minimize exfiltration risks, Claude is not allowed to dynamically construct URLs. Claude can only fetch URLs that have been explicitly provided by the user or that come from previous web search or web fetch results. However, there is still residual risk that should be carefully considered when using this tool.
 
@@ -39,6 +41,7 @@ Web fetch is available on:
 - Claude Opus 4.5 (`claude-opus-4-5-20251101`)
 - Claude Opus 4.1 (`claude-opus-4-1-20250805`)
 - Claude Opus 4 (`claude-opus-4-20250514`)
+- Claude Sonnet 4.6 (`claude-sonnet-4-6`)
 - Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`)
 - Claude Sonnet 4 (`claude-sonnet-4-20250514`)
 - Claude Sonnet 3.7 ([deprecated](/docs/en/about-claude/model-deprecations)) (`claude-3-7-sonnet-20250219`)
@@ -58,6 +61,46 @@ When you add the web fetch tool to your API request:
 
 The web fetch tool currently does not support web sites dynamically rendered via Javascript.
 
+### 
+
+Dynamic filtering with Opus 4.6 and Sonnet 4.6
+
+Fetching full web pages and PDFs can quickly consume tokens, especially when only specific information is needed from large documents. With the `web_fetch_20260209` tool version, Claude can write and execute code to filter the fetched content before loading it into context.
+
+This dynamic filtering is particularly useful for:
+
+- Extracting specific sections from long documents
+- Processing structured data from web pages
+- Filtering relevant information from PDFs
+- Reducing token costs when working with large documents
+
+Dynamic filtering requires the [code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool) to be enabled. The web fetch tool (with and without dynamic filtering) is available on the Claude API and Microsoft Azure.
+
+To enable dynamic filtering, use the `web_fetch_20260209` tool version:
+
+Shell
+
+``` shiki
+curl https://api.anthropic.com/v1/messages \
+    --header "x-api-key: $ANTHROPIC_API_KEY" \
+    --header "anthropic-version: 2023-06-01" \
+    --header "content-type: application/json" \
+    --data '{
+        "model": "claude-opus-4-6",
+        "max_tokens": 4096,
+        "messages": [
+            {
+                "role": "user",
+                "content": "Fetch the content at https://example.com/research-paper and extract the key findings."
+            }
+        ],
+        "tools": [{
+            "type": "web_fetch_20260209",
+            "name": "web_fetch"
+        }]
+    }'
+```
+
 ## 
 
 How to use web fetch
@@ -70,7 +113,6 @@ Shell
 curl https://api.anthropic.com/v1/messages \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
     --header "anthropic-version: 2023-06-01" \
-    --header "anthropic-beta: web-fetch-2025-09-10" \
     --header "content-type: application/json" \
     --data '{
         "model": "claude-opus-4-6",
@@ -331,25 +373,18 @@ response = client.messages.create(
     messages=[
         {
             "role": "user",
-            "content": "Find recent articles about quantum computing and analyze the most relevant one in detail"
+            "content": "Find recent articles about quantum computing and analyze the most relevant one in detail",
         }
     ],
     tools=[
-        {
-            "type": "web_search_20250305",
-            "name": "web_search",
-            "max_uses": 3
-        },
+        {"type": "web_search_20250305", "name": "web_search", "max_uses": 3},
         {
             "type": "web_fetch_20250910",
             "name": "web_fetch",
             "max_uses": 5,
-            "citations": {"enabled": True}
-        }
+            "citations": {"enabled": True},
+        },
     ],
-    extra_headers={
-        "anthropic-beta": "web-fetch-2025-09-10"
-    }
 )
 ```
 
@@ -375,7 +410,7 @@ client = anthropic.Anthropic()
 messages = [
     {
         "role": "user",
-        "content": "Analyze this research paper: https://arxiv.org/abs/2024.12345"
+        "content": "Analyze this research paper: https://arxiv.org/abs/2024.12345",
     }
 ]
 
@@ -383,39 +418,26 @@ response1 = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     messages=messages,
-    tools=[{
-        "type": "web_fetch_20250910",
-        "name": "web_fetch"
-    }],
-    extra_headers={
-        "anthropic-beta": "web-fetch-2025-09-10"
-    }
+    tools=[{"type": "web_fetch_20250910", "name": "web_fetch"}],
 )
 
 # Add Claude's response to conversation
-messages.append({
-    "role": "assistant",
-    "content": response1.content
-})
+messages.append({"role": "assistant", "content": response1.content})
 
 # Second request with cache breakpoint
-messages.append({
-    "role": "user",
-    "content": "What methodology does the paper use?",
-    "cache_control": {"type": "ephemeral"}
-})
+messages.append(
+    {
+        "role": "user",
+        "content": "What methodology does the paper use?",
+        "cache_control": {"type": "ephemeral"},
+    }
+)
 
 response2 = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     messages=messages,
-    tools=[{
-        "type": "web_fetch_20250910",
-        "name": "web_fetch"
-    }],
-    extra_headers={
-        "anthropic-beta": "web-fetch-2025-09-10"
-    }
+    tools=[{"type": "web_fetch_20250910", "name": "web_fetch"}],
 )
 
 # The second response benefits from cached fetch results
@@ -494,6 +516,8 @@ Was this page helpful?
 - [Supported models](#supported-models)
 
 - [How web fetch works](#how-web-fetch-works)
+
+- [Dynamic filtering with Opus 4.6 and Sonnet 4.6](#dynamic-filtering-with-opus-4-6-and-sonnet-4-6)
 
 - [How to use web fetch](#how-to-use-web-fetch)
 

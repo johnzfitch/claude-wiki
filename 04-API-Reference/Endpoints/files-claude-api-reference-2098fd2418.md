@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:59Z"
+fetched_at: "2026-02-22T13:48:30Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/files"
 title: "Files - Claude API Reference"
 ---
@@ -15,31 +15,31 @@ Java
 
 [FileMetadata](/docs/en/api/beta#file_metadata) beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
 
-post/v1/files
+POST/v1/files
 
 ##### [List Files](/docs/en/api/beta/files/list)
 
 FileListPage beta().files().list(FileListParamsparams = FileListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/files
+GET/v1/files
 
 ##### [Download File](/docs/en/api/beta/files/download)
 
 HttpResponse beta().files().download(FileDownloadParamsparams = FileDownloadParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 ##### [Get File Metadata](/docs/en/api/beta/files/retrieve_metadata)
 
 [FileMetadata](/docs/en/api/beta#file_metadata) beta().files().retrieveMetadata(FileRetrieveMetadataParamsparams = FileRetrieveMetadataParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-get/v1/files/{file_id}
+GET/v1/files/{file_id}
 
 ##### [Delete File](/docs/en/api/beta/files/delete)
 
 [DeletedFile](/docs/en/api/beta#deleted_file) beta().files().delete(FileDeleteParamsparams = FileDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 ##### ModelsExpand Collapse 
 
@@ -55,10 +55,6 @@ Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
 
-Accepts one of the following:
-
-FILE_DELETED("file_deleted")
-
 class FileMetadata:
 
 String id
@@ -71,39 +67,25 @@ LocalDateTime createdAt
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 String filename
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 String mimeType
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 long sizeBytes
 
 Size of the file in bytes.
 
-minimum0
+JsonValue; type "file"constant
 
-JsonValue; type "file"constant"file"constant
+"file"constant
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-FILE("file")
 
 Optional\<Boolean\> downloadable
 

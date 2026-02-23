@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:30Z"
+fetched_at: "2026-02-23T00:45:15Z"
 source_url: "https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude"
 title: "Using the Scholar Gateway Connector in Claude | Claude Help Center"
 ---
@@ -53,7 +53,7 @@ Table of contents
 
 The Scholar Gateway by Wiley integration provides authenticated access to the most relevant snippets of scientific research papers to utilize within Claude. This article explains how to set up and use the Scholar Gateway integration with Claude to accelerate your research workflows.
 
-The Scholar Gateway integration relies upon Claude's ability to [use remote connectors](https://support.claude.com/en/articles/11724452-browsing-and-connecting-to-tools-from-the-directory).
+The Scholar Gateway integration relies upon Claude's ability to **[use remote connectors](https://support.claude.com/en/articles/11724452-browsing-and-connecting-to-tools-from-the-directory)**.
 
 ## What this integration provides
 
@@ -69,13 +69,13 @@ Scholar Gateway (Beta) enables AI responses grounded in peer-reviewed sources wi
 
 - New subscribers will need to subscribe subject to a trial period.
 
-More details on accessing the integration can be found in [Wiley’s MCP Server Documentation](https://docs.scholargateway.ai).
+More details on accessing the integration can be found in **[Wiley’s MCP Server Documentation](https://docs.scholargateway.ai)**.
 
 ## Setting up the Scholar Gateway integration
 
 **For Organization Owners (Team and Enterprise)**
 
-1.  Navigate to Admin settings \> Connectors
+1.  Navigate to Organization settings \> Connectors
 
 2.  Click "Browse connectors"
 
@@ -91,7 +91,7 @@ More details on accessing the integration can be found in [Wiley’s MCP Server 
 
 3.  Follow the instructions to authenticate with your Wiley account
 
-Learn about [finding and connecting tools](https://support.claude.com/en/articles/11724452-browsing-and-connecting-to-tools-from-the-directory).
+Learn about **[finding and connecting tools](https://support.claude.com/en/articles/11724452-browsing-and-connecting-to-tools-from-the-directory)**.
 
 **For Claude Code Users**
 
@@ -103,7 +103,7 @@ Learn about [finding and connecting tools](https://support.claude.com/en/article
 
 4.  Verify that the server is connected with `/mcp`
 
-Technical details of the Scholar Gateway integration can be found in [Wiley’s MCP Server Documentation](https://docs.scholargateway.ai).
+Technical details of the Scholar Gateway integration can be found in **[Wiley’s MCP Server Documentation](https://docs.scholargateway.ai)**.
 
 ## Common use cases
 
@@ -125,7 +125,7 @@ Using the BioRender Connector in Claude
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
+Using the Synapse.org connector in Claude
 
 [](https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude)
 

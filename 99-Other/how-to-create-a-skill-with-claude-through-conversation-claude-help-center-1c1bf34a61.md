@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:29Z"
+fetched_at: "2026-02-16T21:12:43Z"
 source_url: "https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation"
 title: "How to create a skill with Claude through conversation | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ How to create a skill with Claude through conversation
 
 # How to create a skill with Claude through conversation
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -123,7 +123,7 @@ You can build skills for a range of tasks. Skills can capture how your organizat
 Skills bundle three types of content together—instructions, reference materials, and scripts. Knowing these components helps you articulate what you need when creating a skill with Claude.\
 ​
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1781727755/40d01224cb2a1653189d5211e731/380d5eae-c159-4643-80e3-ce1be19b6d57?expires=1770722100&signature=2b192c1fef2cce4a448a26038781936f03ba70516ca4851797800ba8985b9729&req=dScvF858moZaXPMW1HO4zRjaA46Zjw%2Bcf1HwTII0D0HSqYhz4fVV934W2Tje%0AYv3%2BnYpwpHbDjpD5VdI%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1781727755/40d01224cb2a1653189d5211e731/380d5eae-c159-4643-80e3-ce1be19b6d57?expires=1771278300&signature=3f9af1757707bdaabde1ff554fd2410f1a2f06a3d29c4328aa611aa7597e5f03&req=dScvF858moZaXPMW1HO4zRjaA4%2BcigWef1HwTII0D0EvEz90VmG0ebTnSIbT%0A3I%2F6rd6QIIJp9zgPjiU%3D%0A)
 
 \
 ​**Instructions —** Every skill needs a SKILL.md file that explains your process. When asking Claude to create a skill, describe your process for Claude to structure it into proper instructions. At the top of your [SKILL.md](http://skill.md) file, will be the skill's name and what it does. Claude scans this information first to decide whether or not to load and use the full skill during your conversations. Below that are clear instructions on how to do the task.

@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:16Z"
+fetched_at: "2026-02-23T00:45:50Z"
 source_url: "https://support.claude.com/en/articles/10166901-using-the-google-drive-integration"
 title: "Using the Google Drive integration | Claude Help Center"
 ---
@@ -71,7 +71,7 @@ Connect your Google Docs directly to Claude using the Google Drive integration. 
 
 4.  When you send your message, Claude will access and process the document to inform its response:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1608125708/5bf70727b4bae6f021630a1ade3a/image+%286%29.png?expires=1770722100&signature=36f79d38d0bb9f0d953e3a3a9c437d9bb15d97be7e206740719f72df8590ab62&req=dSYnHsh8mIZfUfMW1HO4zexw%2B%2B3QyVXtHtWhqjkZhksQu2nKaCugTfCU%2Bhrd%0A0wPc4PY8szJxPggfQ%2Fc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1608125708/5bf70727b4bae6f021630a1ade3a/image+%286%29.png?expires=1771809300&signature=2cff9f1431651799dcff3d82dea5f626dbab902a819c94f815590f74cc462a73&req=dSYnHsh8mIZfUfMW1HO4zexw%2B%2Bzfy17vHtWhqjkZhkt2QyjkRBVZ0cgxIh36%0AjnhHAzW%2B5Q6cwE9iz%2B0%3D%0A)
 
 ### Projects
 

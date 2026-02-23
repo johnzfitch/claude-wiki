@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:25Z"
+fetched_at: "2026-02-23T00:45:06Z"
 source_url: "https://support.claude.com/en/articles/12083917-how-to-change-your-team-plan-from-monthly-to-annual-billing"
 title: "How to change your Team plan from monthly to annual billing | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ Updated this week
 
 Owners and Primary Owners of Team plans with monthly subscriptions can switch from the monthly plan to an annual plan by following these steps:
 
-1.  Navigate to [Admin settings \> Billing](https://claude.ai/admin-settings/billing) or [claude.ai/upgrade](http://claude.ai/upgrade).
+1.  Navigate to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)** or **[claude.ai/upgrade](http://claude.ai/upgrade)**.
 
 2.  You’ll see a banner confirming your current monthly plan in your Billing settings; click the “Switch to Annual” button.
 

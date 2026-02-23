@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:32Z"
+fetched_at: "2026-02-22T13:22:09Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/latex-legend"
 title: "LaTeX legend - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Write LaTeX documents, generating code for mathematical equations, tables, and m
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -24,7 +24,7 @@ Copy page
 
 ## 
 
-Example Output
+Example output
 
 Here's the LaTeX code to create a simple table with three columns and two rows, including a header row with the titles "Name," "Age," and "City," and a data row with the values "John," "25," and "New York":
 
@@ -69,7 +69,7 @@ When you compile your LaTeX document, this code will generate a table that looks
 
 ## 
 
-API Request
+API request
 
 Python
 
@@ -125,9 +125,9 @@ Was this page helpful?
 
 - 
 
-- [Example Output](#example-output)
+- [Example output](#example-output)
 
-- [API Request](#api-request)
+- [API request](#api-request)
 
 [](/docs)
 

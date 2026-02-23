@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:52:07Z"
+fetched_at: "2026-02-13T09:23:38Z"
 source_url: "https://support.claude.com/en/articles/7996921-i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries"
 title: "I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries? | Claude Help Center"
 ---
@@ -33,7 +33,7 @@ I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries?
 
 # I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries?
 
-Updated yesterday
+Updated this week
 
 Table of contents
 

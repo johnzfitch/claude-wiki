@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:00Z"
+fetched_at: "2026-02-22T10:56:34Z"
 source_url: "https://platform.claude.com/docs"
 title: "Documentation - Claude API Docs"
 ---
@@ -39,7 +39,7 @@ Discover the latest advancements in Claude 4.6 models.
 
 API reference
 
-Integrate and scale using our API and SDKs.
+Integrate and scale using the API and SDKs.
 
 [](/)
 
@@ -95,7 +95,7 @@ See replicable code samples and implementations.
 
 Claude Quickstarts
 
-Deployable applications built with our API.
+Deployable applications built with the API.
 
 [](/docs)
 

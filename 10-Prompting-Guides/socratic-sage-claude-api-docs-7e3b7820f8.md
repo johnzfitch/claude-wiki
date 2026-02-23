@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-07T10:05:52Z"
+fetched_at: "2026-02-22T13:25:48Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/socratic-sage"
 title: "Socratic sage - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Engage in Socratic style conversation over a user-given topic.
 
 Copy page
 
-> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -52,13 +52,10 @@ message = client.messages.create(
         {
             "role": "user",
             "content": [
-                {
-                    "type": "text",
-                    "text": "Let's discuss the ethics of animal testing."
-                }
-            ]
+                {"type": "text", "text": "Let's discuss the ethics of animal testing."}
+            ],
         }
-    ]
+    ],
 )
 print(message.content)
 ```

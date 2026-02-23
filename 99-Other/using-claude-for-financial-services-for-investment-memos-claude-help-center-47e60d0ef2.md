@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:25Z"
+fetched_at: "2026-02-16T21:12:39Z"
 source_url: "https://support.claude.com/en/articles/12068945-using-claude-for-financial-services-for-investment-memos"
 title: "Using Claude for Financial Services for investment memos | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Using Claude for Financial Services for investment memos
 
 # Using Claude for Financial Services for investment memos
 
-Updated this week
+Updated over a week ago
 
 # An error occurred.
 

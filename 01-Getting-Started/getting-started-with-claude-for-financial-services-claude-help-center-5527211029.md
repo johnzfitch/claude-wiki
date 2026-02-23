@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-08T20:51:44Z"
+fetched_at: "2026-02-23T00:45:34Z"
 source_url: "https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services"
 title: "Getting Started with Claude for Financial Services | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Getting Started with Claude for Financial Services
 
 # Getting Started with Claude for Financial Services
 
-Updated yesterday
+Updated this week
 
 Table of contents
 

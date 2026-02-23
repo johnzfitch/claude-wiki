@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:18Z"
+fetched_at: "2026-02-22T14:27:36Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/usage_report"
 title: "Usage Report - Claude API Reference"
 ---
@@ -11,11 +11,11 @@ Copy page
 
 ##### [Get Messages Usage Report](/docs/en/api/admin/usage_report/retrieve_messages)
 
-get/v1/organizations/usage_report/messages
+GET/v1/organizations/usage_report/messages
 
 ##### [Get Claude Code Usage Report](/docs/en/api/admin/usage_report/retrieve_claude_code)
 
-get/v1/organizations/usage_report/claude_code
+GET/v1/organizations/usage_report/claude_code
 
 ##### ModelsExpand Collapse 
 
@@ -39,10 +39,6 @@ Email address of the user who performed Claude Code actions.
 
 type: "user_actor"
 
-Accepts one of the following:
-
-"user_actor"
-
 APIActor = object { api_key_name, type }
 
 api_key_name: string
@@ -50,10 +46,6 @@ api_key_name: string
 Name of the API key used to perform Claude Code actions.
 
 type: "api_actor"
-
-Accepts one of the following:
-
-"api_actor"
 
 core_metrics: object { commits_by_claude_code, lines_of_code, num_sessions, pull_requests_by_claude_code }
 
@@ -96,8 +88,6 @@ Accepts one of the following:
 date: string
 
 UTC date for the usage metrics in YYYY-MM-DD format.
-
-formatdate-time
 
 model_breakdown: array of object { estimated_cost, model, tokens }
 
@@ -185,9 +175,7 @@ ending_at: string
 
 End of the time bucket (exclusive) in RFC 3339 format.
 
-formatdate-time
-
-results: array of object { api_key_id, cache_creation, cache_read_input_tokens, 8 more }
+results: array of object { api_key_id, cache_creation, cache_read_input_tokens, 9 more }
 
 List of usage items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
 
@@ -259,6 +247,16 @@ Accepts one of the following:
 
 "flex_discount"
 
+speed: "standard" or "fast"
+
+Speed of the usage (research preview). `null` if not grouping by speed. Only returned when the `fast-mode-2026-02-01` beta header is provided.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
 uncached_input_tokens: number
 
 The number of uncached input tokens processed.
@@ -271,8 +269,6 @@ starting_at: string
 
 Start of the time bucket (inclusive) in RFC 3339 format.
 
-formatdate-time
-
 has_more: boolean
 
 Indicates if there are more results.
@@ -280,8 +276,6 @@ Indicates if there are more results.
 next_page: string
 
 Token to provide in as `page` in the subsequent request to retrieve the next page of data.
-
-formatdate-time
 
 [](/docs)
 

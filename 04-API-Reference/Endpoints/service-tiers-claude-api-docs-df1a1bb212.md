@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:15Z"
+fetched_at: "2026-02-22T13:19:18Z"
 source_url: "https://platform.claude.com/docs/en/api/service-tiers"
 title: "Service tiers - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Different tiers of service allow you to balance availability, performance, and p
 
 Copy page
 
-We offer three service tiers:
+Anthropic offers three service tiers:
 
 - **Priority Tier:** Best for workflows deployed in production where time, availability, and predictable pricing are important
 - **Standard:** Default tier for both piloting and scaling everyday use cases
@@ -25,13 +25,13 @@ We offer three service tiers:
 
 Standard Tier
 
-The standard tier is the default service tier for all API requests. Requests in this tier are prioritized alongside all other requests and observe best-effort availability.
+The standard tier is the default service tier for all API requests. The API prioritizes these requests alongside all other requests with best-effort availability.
 
 ## 
 
 Priority Tier
 
-Requests in this tier are prioritized over all other requests to Anthropic. This prioritization helps minimize ["server overloaded" errors](/docs/en/api/errors#http-errors), even during peak times.
+The API prioritizes requests in this tier over all other requests. This prioritization helps minimize ["server overloaded" errors](/docs/en/api/errors#http-errors), even during peak times.
 
 For more information, see [Get started with Priority Tier](#get-started-with-priority-tier)
 
@@ -63,7 +63,7 @@ Anthropic counts usage against Priority Tier capacity as follows:
 
 Otherwise, requests proceed at standard tier.
 
-These burndown rates reflect the relative pricing of each token type. For example, US-only inference is priced at 1.1x, so each token consumed with `inference_geo: "us"` draws down 1.1 tokens from your Priority Tier capacity. Multipliers stack — a long-context request with US-only inference draws down input tokens at 2.2 tokens per token (2 × 1.1).
+These burndown rates reflect the relative pricing of each token type. For example, US-only inference is priced at 1.1x, so each token consumed with `inference_geo: "us"` draws down 1.1 tokens from your Priority Tier capacity. Multipliers stack: a long-context request with US-only inference draws down input tokens at 2.2 tokens per token (2 × 1.1).
 
 Requests assigned Priority Tier pull from both the Priority Tier capacity and the regular rate limits. If servicing the request would exceed the rate limits, the request is declined.
 
@@ -78,7 +78,7 @@ message = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude!"}],
-    service_tier="auto"  # Automatically use Priority Tier when available, fallback to standard
+    service_tier="auto",  # Automatically use Priority Tier when available, fallback to standard
 )
 ```
 
@@ -145,13 +145,14 @@ Priority Tier is supported by:
 - Claude Opus 4.5
 - Claude Opus 4.1
 - Claude Opus 4
+- Claude Sonnet 4.6
 - Claude Sonnet 4.5
 - Claude Sonnet 4
 - Claude Sonnet 3.7 ([deprecated](/docs/en/about-claude/model-deprecations))
 - Claude Haiku 4.5
 - Claude Haiku 3.5 ([deprecated](/docs/en/about-claude/model-deprecations))
 
-Check the [model overview page](/docs/en/about-claude/models/overview) for more details on our models.
+Check the [model overview page](/docs/en/about-claude/models/overview) for more details on available models.
 
 ### 
 

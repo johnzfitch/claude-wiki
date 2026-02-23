@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:05Z"
+fetched_at: "2026-02-22T14:25:18Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/invites/delete"
 title: "Delete Invite - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Delete Invite
 
-delete/v1/organizations/invites/{invite_id}
+DELETE/v1/organizations/invites/{invite_id}
 
 Delete Invite
 
@@ -31,10 +31,6 @@ Deleted object type.
 
 For Invites, this is always `"invite_deleted"`.
 
-Accepts one of the following:
-
-"invite_deleted"
-
 Delete Invite
 
 ``` shiki
@@ -44,25 +40,7 @@ curl https://api.anthropic.com/v1/organizations/invites/$INVITE_ID \
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "id": "invite_015gWxCN9Hfg2QhZwTK7Mdeu",
-  "type": "invite_deleted"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "id": "invite_015gWxCN9Hfg2QhZwTK7Mdeu",
-  "type": "invite_deleted"
-}
-```
 
 [](/docs)
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:13Z"
+fetched_at: "2026-02-22T14:26:44Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/retrieve"
 title: "Get Workspace Member - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Get Workspace Member
 
-get/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 Get Workspace Member
 
@@ -32,10 +32,6 @@ type: "workspace_member"
 Object type.
 
 For Workspace Members, this is always `"workspace_member"`.
-
-Accepts one of the following:
-
-"workspace_member"
 
 user_id: string
 
@@ -67,29 +63,7 @@ curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/members
     -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
 ```
 
-Response 200
-
-``` shiki
-{
-  "type": "workspace_member",
-  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
-  "workspace_role": "workspace_user"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "type": "workspace_member",
-  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
-  "workspace_role": "workspace_user"
-}
-```
 
 [](/docs)
 

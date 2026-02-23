@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:39Z"
+fetched_at: "2026-02-23T00:45:16Z"
 source_url: "https://support.claude.com/en/articles/9266495-how-do-i-sign-up-for-claude-pro-on-the-claude-app-for-ios"
 title: "How do I sign up for Claude Pro on the Claude app for iOS? | Claude Help Center"
 ---
@@ -55,9 +55,9 @@ Installing Claude for iOS
 
 How do I sign up for Claude Pro on Claude for Android?
 
-[](https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps)
+[](https://support.claude.com/en/articles/9612898-how-can-i-cancel-my-claude-pro-subscription-on-claude-for-android)
 
-Using Claude with iOS Apps
+How can I cancel my Claude Pro subscription on Claude for Android?
 
 Did this answer your question?
 

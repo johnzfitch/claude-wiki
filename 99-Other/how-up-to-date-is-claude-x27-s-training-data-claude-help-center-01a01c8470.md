@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:37Z"
+fetched_at: "2026-02-23T00:45:12Z"
 source_url: "https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data"
 title: "How up-to-date is Claude&#x27;s training data? | Claude Help Center"
 ---
@@ -35,6 +35,8 @@ Updated this week
 
 While we're constantly updating Claude's data, each model has a knowledge cutoff:
 
+- Claude Sonnet 4.6 was trained on data up until August 2025.
+
 - Claude Opus 4.6 was trained on data up until August 2025.
 
 - Claude Opus 4.5 was trained on data up until August 2025.
@@ -42,10 +44,6 @@ While we're constantly updating Claude's data, each model has a knowledge cutoff
 - Claude Haiku 4.5 was trained on data up until July 2025.
 
 - Claude Sonnet 4.5 was trained on data up until July 2025.
-
-- Claude Sonnet 4 was trained on data up until March 2025.
-
-- Claude Haiku 3.5 was trained on data up until July 2024.
 
 - Claude Opus 3 was trained on data up until August 2023.
 
@@ -67,11 +65,11 @@ Claude Code model configuration
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Claude in Chrome release notes
 
 [](https://support.claude.com/en/articles/12864745-using-claude-in-microsoft-foundry)
 

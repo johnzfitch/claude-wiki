@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:51Z"
+fetched_at: "2026-02-22T14:03:59Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Ruby
 
 beta.messages.batches.delete(message_batch_id, \*\*kwargs) -\> [BetaDeletedMessageBatch](/docs/en/api/beta#beta_deleted_message_batch) { id, type }
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 Delete a Message Batch.
 
@@ -35,7 +35,7 @@ Accepts one of the following:
 
 String
 
-:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 16 more
+:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 17 more
 
 Accepts one of the following:
 
@@ -77,6 +77,8 @@ Accepts one of the following:
 
 :"skills-2025-10-02"
 
+:"fast-mode-2026-02-01"
+
 ##### ReturnsExpand Collapse 
 
 class BetaDeletedMessageBatch { id, type }
@@ -90,10 +92,6 @@ type: :message_batch_deleted
 Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
-
-Accepts one of the following:
-
-:message_batch_deleted
 
 Delete a Message Batch
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:09:35Z"
+fetched_at: "2026-02-22T13:54:53Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages"
 title: "Messages - Claude API Reference"
 ---
@@ -15,13 +15,13 @@ Go
 
 client.Messages.New(ctx, body) (\*[Message](/docs/en/api/messages#message), error)
 
-post/v1/messages
+POST/v1/messages
 
 ##### [Count tokens in a Message](/docs/en/api/messages/count_tokens)
 
 client.Messages.CountTokens(ctx, body) (\*[MessageTokensCount](/docs/en/api/messages#message_tokens_count), error)
 
-post/v1/messages/count_tokens
+POST/v1/messages/count_tokens
 
 ##### ModelsExpand Collapse 
 
@@ -43,35 +43,230 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type Base64PDFSource struct{…}
 
 Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
 
+type BashCodeExecutionOutputBlock struct{…}
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+type BashCodeExecutionOutputBlockParamResp struct{…}
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+type BashCodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][BashCodeExecutionOutputBlockParamResp](/docs/en/api/messages#bash_code_execution_output_block_param)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
 Accepts one of the following:
 
-const Base64Base64 Base64 = "base64"
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlockParamResp struct{…}
+
+Content BashCodeExecutionToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][BashCodeExecutionOutputBlockParamResp](/docs/en/api/messages#bash_code_execution_output_block_param)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionToolResultErrorCode string
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+type BashCodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
 
 type CacheControlEphemeral struct{…}
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -94,13 +289,9 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 type CitationCharLocation struct{…}
 
@@ -118,10 +309,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationCharLocationParamResp struct{…}
 
 CitedText string
@@ -135,10 +322,6 @@ EndCharIndex int64
 StartCharIndex int64
 
 Type CharLocation
-
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -156,10 +339,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationContentBlockLocationParamResp struct{…}
 
 CitedText string
@@ -173,10 +352,6 @@ EndBlockIndex int64
 StartBlockIndex int64
 
 Type ContentBlockLocation
-
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
 
 type CitationPageLocation struct{…}
 
@@ -194,10 +369,6 @@ StartPageNumber int64
 
 Type PageLocation
 
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -211,10 +382,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationSearchResultLocationParamResp struct{…}
 
@@ -232,10 +399,6 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -246,15 +409,17 @@ Title string
 
 Type WebSearchResultLocation
 
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
-
 URL string
+
+type CitationsConfig struct{…}
+
+Enabled bool
 
 type CitationsConfigParamResp struct{…}
 
-Enabled booloptional
+Enabled bool
+
+optional
 
 type CitationsDelta struct{…}
 
@@ -278,10 +443,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -297,10 +458,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -318,10 +475,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -331,10 +484,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -353,17 +502,9 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 Type CitationsDelta
 
-Accepts one of the following:
-
-const CitationsDeltaCitationsDelta CitationsDelta = "citations_delta"
-
 type CitationsSearchResultLocation struct{…}
 
 CitedText string
@@ -380,10 +521,6 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -394,13 +531,602 @@ Title string
 
 Type WebSearchResultLocation
 
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
-
 URL string
 
+type CodeExecutionOutputBlock struct{…}
+
+FileID string
+
+Type CodeExecutionOutput
+
+type CodeExecutionOutputBlockParamResp struct{…}
+
+FileID string
+
+Type CodeExecutionOutput
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type CodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type CodeExecutionTool20250522 struct{…}
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20250522
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20250522AllowedCallerDirect CodeExecutionTool20250522AllowedCaller = "direct"
+
+const CodeExecutionTool20250522AllowedCallerCodeExecution20250825 CodeExecutionTool20250522AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20250522AllowedCallerCodeExecution20260120 CodeExecutionTool20250522AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionTool20250825 struct{…}
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20250825
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20250825AllowedCallerDirect CodeExecutionTool20250825AllowedCaller = "direct"
+
+const CodeExecutionTool20250825AllowedCallerCodeExecution20250825 CodeExecutionTool20250825AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20250825AllowedCallerCodeExecution20260120 CodeExecutionTool20250825AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionTool20260120 struct{…}
+
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20260120
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20260120AllowedCallerDirect CodeExecutionTool20260120AllowedCaller = "direct"
+
+const CodeExecutionTool20260120AllowedCallerCodeExecution20250825 CodeExecutionTool20260120AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20260120AllowedCallerCodeExecution20260120 CodeExecutionTool20260120AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type CodeExecutionToolResultBlockContentUnion interface{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+type CodeExecutionToolResultBlockParamResp struct{…}
+
+Content [CodeExecutionToolResultBlockParamContentUnionResp](/docs/en/api/messages#code_execution_tool_result_block_param_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlockParamResp struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type CodeExecutionToolResultBlockParamContentUnionResp interface{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlockParamResp struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionToolResultErrorCode string
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+type CodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type Container struct{…}
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
+
+type ContainerUploadBlockParamResp struct{…}
+
+A content block that represents a file to be uploaded to the container Files uploaded via this block will be available in the container's input directory.
+
+FileID string
+
+Type ContainerUpload
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
 type ContentBlockUnion interface{…}
+
+Response model for a file uploaded to the container.
 
 Accepts one of the following:
 
@@ -430,10 +1156,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -449,10 +1171,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -470,10 +1188,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -483,10 +1197,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -506,17 +1216,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -526,23 +1228,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -550,29 +1270,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -580,27 +1356,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -612,19 +1384,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 type ContentBlockParamUnionResp interface{…}
 
@@ -638,21 +1732,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -669,7 +1759,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -687,10 +1779,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -704,10 +1792,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -723,10 +1807,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -736,10 +1816,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -758,10 +1834,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -787,37 +1859,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -846,15 +1906,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type PlainTextSource struct{…}
 
@@ -862,15 +1914,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ContentBlockSource struct{…}
 
@@ -890,21 +1934,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -921,7 +1961,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -939,10 +1981,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -956,10 +1994,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -975,10 +2009,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -988,10 +2018,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1010,10 +2036,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -1039,37 +2061,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1088,37 +2098,25 @@ const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type URLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Document
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1135,13 +2133,21 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
 
 type SearchResultBlockParamResp struct{…}
 
@@ -1151,21 +2157,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1182,7 +2184,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -1200,10 +2204,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -1217,10 +2217,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -1236,10 +2232,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -1249,10 +2241,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1272,31 +2260,23 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Source string
 
 Title string
 
 Type SearchResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const SearchResultSearchResult SearchResult = "search_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1313,9 +2293,13 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
+
+Enabled bool
+
+optional
 
 type ThinkingBlockParamResp struct{…}
 
@@ -1325,19 +2309,11 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlockParamResp struct{…}
 
 Data string
 
 Type RedactedThinking
-
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
 
 type ToolUseBlockParamResp struct{…}
 
@@ -1349,21 +2325,17 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ToolUseToolUse ToolUse = "tool_use"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1379,6 +2351,34 @@ Accepts one of the following:
 const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller ToolUseBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type ToolResultBlockParamResp struct{…}
 
@@ -1386,21 +2386,17 @@ ToolUseID string
 
 Type ToolResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ToolResultToolResult ToolResult = "tool_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1417,7 +2413,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Content \[\]ToolResultBlockParamContentUnionRespoptional
+Content \[\]ToolResultBlockParamContentUnionResp
+
+optional
 
 Accepts one of the following:
 
@@ -1431,21 +2429,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1462,7 +2456,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -1480,10 +2476,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -1497,10 +2489,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -1516,10 +2504,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -1529,10 +2513,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1551,10 +2531,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -1580,37 +2556,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1635,21 +2599,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1666,7 +2626,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -1684,10 +2646,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -1701,10 +2659,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -1720,10 +2674,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -1733,10 +2683,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1756,31 +2702,23 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Source string
 
 Title string
 
 Type SearchResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const SearchResultSearchResult SearchResult = "search_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1797,9 +2735,13 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
+
+Enabled bool
+
+optional
 
 type DocumentBlockParamResp struct{…}
 
@@ -1813,15 +2755,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type PlainTextSource struct{…}
 
@@ -1829,15 +2763,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ContentBlockSource struct{…}
 
@@ -1857,21 +2783,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -1888,7 +2810,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -1906,10 +2830,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -1923,10 +2843,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -1942,10 +2858,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -1955,10 +2867,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -1977,10 +2885,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -2006,37 +2910,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2055,37 +2947,25 @@ const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type URLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Document
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2102,15 +2982,60 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
 
-IsError booloptional
+Context string
+
+optional
+
+Title string
+
+optional
+
+type ToolReferenceBlockParamResp struct{…}
+
+Tool reference block that can be included in tool_result content.
+
+ToolName string
+
+Type ToolReference
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+IsError bool
+
+optional
 
 type ServerToolUseBlockParamResp struct{…}
 
@@ -2118,29 +3043,37 @@ ID string
 
 Input map\[string, any\]
 
-Name WebSearch
+Name ServerToolUseBlockParamName
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+const ServerToolUseBlockParamNameWebSearch ServerToolUseBlockParamName = "web_search"
+
+const ServerToolUseBlockParamNameWebFetch ServerToolUseBlockParamName = "web_fetch"
+
+const ServerToolUseBlockParamNameCodeExecution ServerToolUseBlockParamName = "code_execution"
+
+const ServerToolUseBlockParamNameBashCodeExecution ServerToolUseBlockParamName = "bash_code_execution"
+
+const ServerToolUseBlockParamNameTextEditorCodeExecution ServerToolUseBlockParamName = "text_editor_code_execution"
+
+const ServerToolUseBlockParamNameToolSearchToolRegex ServerToolUseBlockParamName = "tool_search_tool_regex"
+
+const ServerToolUseBlockParamNameToolSearchToolBm25 ServerToolUseBlockParamName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2156,6 +3089,34 @@ Accepts one of the following:
 const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller ServerToolUseBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type WebSearchToolResultBlockParamResp struct{…}
 
@@ -2171,57 +3132,835 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
-PageAge stringoptional
+PageAge string
+
+optional
 
 type WebSearchToolRequestError struct{…}
 
-ErrorCode WebSearchToolRequestErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolRequestErrorErrorCodeInvalidToolInput WebSearchToolRequestErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolRequestErrorErrorCodeUnavailable WebSearchToolRequestErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolRequestErrorErrorCodeMaxUsesExceeded WebSearchToolRequestErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolRequestErrorErrorCodeTooManyRequests WebSearchToolRequestErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolRequestErrorErrorCodeQueryTooLong WebSearchToolRequestErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolRequestErrorErrorCodeRequestTooLarge WebSearchToolRequestErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 ToolUseID string
 
 Type WebSearchToolResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
 Accepts one of the following:
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
-TTL CacheControlEphemeralTTLoptional
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller WebSearchToolResultBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+type WebFetchToolResultBlockParamResp struct{…}
+
+Content WebFetchToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlockParamResp struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlockParamResp struct{…}
+
+Content [DocumentBlockParamResp](/docs/en/api/messages#document_block_param)
+
+Source DocumentBlockParamSourceUnionResp
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+type ContentBlockSource struct{…}
+
+Content ContentBlockSourceContentUnion
+
+Accepts one of the following:
+
+string
+
+\[\][ContentBlockSourceContentItemUnion](/docs/en/api/messages#content_block_source_content)
+
+Accepts one of the following:
+
+type TextBlockParamResp struct{…}
+
+Text string
+
+Type Text
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
+
+Accepts one of the following:
+
+type CitationCharLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndCharIndex int64
+
+StartCharIndex int64
+
+Type CharLocation
+
+type CitationPageLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndPageNumber int64
+
+StartPageNumber int64
+
+Type PageLocation
+
+type CitationContentBlockLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndBlockIndex int64
+
+StartBlockIndex int64
+
+Type ContentBlockLocation
+
+type CitationWebSearchResultLocationParamResp struct{…}
+
+CitedText string
+
+EncryptedIndex string
+
+Title string
+
+Type WebSearchResultLocation
+
+URL string
+
+type CitationSearchResultLocationParamResp struct{…}
+
+CitedText string
+
+EndBlockIndex int64
+
+SearchResultIndex int64
+
+Source string
+
+StartBlockIndex int64
+
+Title string
+
+Type SearchResultLocation
+
+type ImageBlockParamResp struct{…}
+
+Source ImageBlockParamSourceUnionResp
+
+Accepts one of the following:
+
+type Base64ImageSource struct{…}
+
+Data string
+
+MediaType Base64ImageSourceMediaType
+
+Accepts one of the following:
+
+const Base64ImageSourceMediaTypeImageJPEG Base64ImageSourceMediaType = "image/jpeg"
+
+const Base64ImageSourceMediaTypeImagePNG Base64ImageSourceMediaType = "image/png"
+
+const Base64ImageSourceMediaTypeImageGIF Base64ImageSourceMediaType = "image/gif"
+
+const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/webp"
+
+Type Base64
+
+type URLImageSource struct{…}
+
+Type URL
+
+URL string
+
+Type Image
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Type Content
+
+type URLPDFSource struct{…}
+
+Type URL
+
+URL string
+
+Type Document
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Enabled bool
+
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+RetrievedAt string
+
+optional
+
+ISO 8601 timestamp when the content was retrieved
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller WebFetchToolResultBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+type CodeExecutionToolResultBlockParamResp struct{…}
+
+Content [CodeExecutionToolResultBlockParamContentUnionResp](/docs/en/api/messages#code_execution_tool_result_block_param_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlockParamResp struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type BashCodeExecutionToolResultBlockParamResp struct{…}
+
+Content BashCodeExecutionToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][BashCodeExecutionOutputBlockParamResp](/docs/en/api/messages#bash_code_execution_output_block_param)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type TextEditorCodeExecutionToolResultBlockParamResp struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+Type TextEditorCodeExecutionToolResultError
+
+ErrorMessage string
+
+optional
+
+type TextEditorCodeExecutionViewResultBlockParamResp struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockParamFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypeText TextEditorCodeExecutionViewResultBlockParamFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypeImage TextEditorCodeExecutionViewResultBlockParamFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypePDF TextEditorCodeExecutionViewResultBlockParamFileType = "pdf"
+
+Type TextEditorCodeExecutionViewResult
+
+NumLines int64
+
+optional
+
+StartLine int64
+
+optional
+
+TotalLines int64
+
+optional
+
+type TextEditorCodeExecutionCreateResultBlockParamResp struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlockParamResp struct{…}
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+Lines \[\]string
+
+optional
+
+NewLines int64
+
+optional
+
+NewStart int64
+
+optional
+
+OldLines int64
+
+optional
+
+OldStart int64
+
+optional
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type ToolSearchToolResultBlockParamResp struct{…}
+
+Content ToolSearchToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type ToolSearchToolResultErrorParamResp struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlockParamResp struct{…}
+
+ToolReferences \[\][ToolReferenceBlockParamResp](/docs/en/api/messages#tool_reference_block_param)
+
+ToolName string
+
+Type ToolReference
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type ContainerUploadBlockParamResp struct{…}
+
+A content block that represents a file to be uploaded to the container Files uploaded via this block will be available in the container's input directory.
+
+FileID string
+
+Type ContainerUpload
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2256,21 +3995,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2287,7 +4022,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -2305,10 +4042,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -2322,10 +4055,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -2341,10 +4070,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -2354,10 +4079,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -2376,10 +4097,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -2405,37 +4122,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2454,10 +4159,6 @@ const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type ContentBlockSourceContentItemUnion interface{…}
 
 Accepts one of the following:
@@ -2468,21 +4169,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2499,7 +4196,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -2517,10 +4216,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -2534,10 +4229,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -2553,10 +4244,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -2566,10 +4253,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -2588,10 +4271,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -2617,37 +4296,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2663,6 +4330,46 @@ Accepts one of the following:
 const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type DocumentBlock struct{…}
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
 
 type DocumentBlockParamResp struct{…}
 
@@ -2676,15 +4383,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type PlainTextSource struct{…}
 
@@ -2692,15 +4391,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ContentBlockSource struct{…}
 
@@ -2720,21 +4411,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2751,7 +4438,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -2769,10 +4458,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -2786,10 +4471,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -2805,10 +4486,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -2818,10 +4495,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -2841,10 +4514,6 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 type ImageBlockParamResp struct{…}
 
 Source ImageBlockParamSourceUnionResp
@@ -2869,37 +4538,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2918,37 +4575,25 @@ const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type URLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Document
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -2965,13 +4610,57 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+type EncryptedCodeExecutionResultBlockParamResp struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
 
 type ImageBlockParamResp struct{…}
 
@@ -2997,37 +4686,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3050,10 +4727,6 @@ PartialJSON string
 
 Type InputJSONDelta
 
-Accepts one of the following:
-
-const InputJSONDeltaInputJSONDelta InputJSONDelta = "input_json_delta"
-
 type JSONOutputFormat struct{…}
 
 Schema map\[string, any\]
@@ -3062,9 +4735,70 @@ The JSON schema of the format
 
 Type JSONSchema
 
+type MemoryTool20250818 struct{…}
+
+Name Memory
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type Memory20250818
+
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const JSONSchemaJSONSchema JSONSchema = "json_schema"
+const MemoryTool20250818AllowedCallerDirect MemoryTool20250818AllowedCaller = "direct"
+
+const MemoryTool20250818AllowedCallerCodeExecution20250825 MemoryTool20250818AllowedCaller = "code_execution_20250825"
+
+const MemoryTool20250818AllowedCallerCodeExecution20260120 MemoryTool20250818AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
 
 type Message struct{…}
 
@@ -3073,6 +4807,18 @@ ID string
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
 
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
@@ -3131,10 +4877,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -3150,10 +4892,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -3171,10 +4909,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -3184,10 +4918,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -3207,17 +4937,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -3227,23 +4949,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -3251,29 +4991,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -3281,27 +5077,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -3313,19 +5105,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -3346,6 +5460,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -3435,10 +5553,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -3480,10 +5594,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -3504,25 +5614,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -3532,23 +5634,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -3564,6 +5664,8 @@ const UsageServiceTierBatch UsageServiceTier = "batch"
 
 type MessageCountTokensToolUnion interface{…}
 
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
 Accepts one of the following:
 
 type Tool struct{…}
@@ -3576,13 +5678,13 @@ This defines the shape of the `input` that your tool accepts and that the model 
 
 Type Object
 
-Accepts one of the following:
+Properties map\[string, any\]
 
-const ObjectObject Object = "object"
+optional
 
-Properties map\[string, any\]optional
+Required \[\]string
 
-Required \[\]stringoptional
+optional
 
 Name string
 
@@ -3594,17 +5696,29 @@ maxLength128
 
 minLength1
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolAllowedCallerDirect ToolAllowedCaller = "direct"
+
+const ToolAllowedCallerCodeExecution20250825 ToolAllowedCaller = "code_execution_20250825"
+
+const ToolAllowedCallerCodeExecution20260120 ToolAllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3621,25 +5735,39 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Description stringoptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Description string
+
+optional
 
 Description of what this tool does.
 
 Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
 
-EagerInputStreaming booloptional
+EagerInputStreaming bool
+
+optional
 
 Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
 
-Strict booloptional
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
-Type ToolTypeoptional
+Type ToolType
 
-Accepts one of the following:
-
-const ToolTypeCustom ToolType = "custom"
+optional
 
 type ToolBash20250124 struct{…}
 
@@ -3649,27 +5777,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const BashBash Bash = "bash"
-
 Type Bash20250124
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const Bash20250124Bash20250124 Bash20250124 = "bash_20250124"
+const ToolBash20250124AllowedCallerDirect ToolBash20250124AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolBash20250124AllowedCallerCodeExecution20250825 ToolBash20250124AllowedCaller = "code_execution_20250825"
+
+const ToolBash20250124AllowedCallerCodeExecution20260120 ToolBash20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3686,7 +5818,269 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionTool20250522 struct{…}
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20250522
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20250522AllowedCallerDirect CodeExecutionTool20250522AllowedCaller = "direct"
+
+const CodeExecutionTool20250522AllowedCallerCodeExecution20250825 CodeExecutionTool20250522AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20250522AllowedCallerCodeExecution20260120 CodeExecutionTool20250522AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionTool20250825 struct{…}
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20250825
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20250825AllowedCallerDirect CodeExecutionTool20250825AllowedCaller = "direct"
+
+const CodeExecutionTool20250825AllowedCallerCodeExecution20250825 CodeExecutionTool20250825AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20250825AllowedCallerCodeExecution20260120 CodeExecutionTool20250825AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionTool20260120 struct{…}
+
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20260120
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20260120AllowedCallerDirect CodeExecutionTool20260120AllowedCaller = "direct"
+
+const CodeExecutionTool20260120AllowedCallerCodeExecution20250825 CodeExecutionTool20260120AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20260120AllowedCallerCodeExecution20260120 CodeExecutionTool20260120AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type MemoryTool20250818 struct{…}
+
+Name Memory
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type Memory20250818
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const MemoryTool20250818AllowedCallerDirect MemoryTool20250818AllowedCaller = "direct"
+
+const MemoryTool20250818AllowedCallerCodeExecution20250825 MemoryTool20250818AllowedCaller = "code_execution_20250825"
+
+const MemoryTool20250818AllowedCallerCodeExecution20260120 MemoryTool20250818AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3698,27 +6092,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceEditorStrReplaceEditor StrReplaceEditor = "str_replace_editor"
-
 Type TextEditor20250124
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250124TextEditor20250124 TextEditor20250124 = "text_editor_20250124"
+const ToolTextEditor20250124AllowedCallerDirect ToolTextEditor20250124AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250124AllowedCallerCodeExecution20250825 ToolTextEditor20250124AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250124AllowedCallerCodeExecution20260120 ToolTextEditor20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3735,7 +6133,19 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3747,27 +6157,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceBasedEditToolStrReplaceBasedEditTool StrReplaceBasedEditTool = "str_replace_based_edit_tool"
-
 Type TextEditor20250429
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250429TextEditor20250429 TextEditor20250429 = "text_editor_20250429"
+const ToolTextEditor20250429AllowedCallerDirect ToolTextEditor20250429AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250429AllowedCallerCodeExecution20250825 ToolTextEditor20250429AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250429AllowedCallerCodeExecution20260120 ToolTextEditor20250429AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3784,7 +6198,19 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3796,27 +6222,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceBasedEditToolStrReplaceBasedEditTool StrReplaceBasedEditTool = "str_replace_based_edit_tool"
-
 Type TextEditor20250728
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250728TextEditor20250728 TextEditor20250728 = "text_editor_20250728"
+const ToolTextEditor20250728AllowedCallerDirect ToolTextEditor20250728AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250728AllowedCallerCodeExecution20250825 ToolTextEditor20250728AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250728AllowedCallerCodeExecution20260120 ToolTextEditor20250728AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3833,13 +6263,25 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-MaxCharacters int64optional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+MaxCharacters int64
+
+optional
 
 Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
 
-minimum1
+Strict bool
 
-Strict booloptional
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -3851,35 +6293,43 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const WebSearchWebSearch WebSearch = "web_search"
-
 Type WebSearch20250305
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const WebSearch20250305WebSearch20250305 WebSearch20250305 = "web_search_20250305"
+const WebSearchTool20250305AllowedCallerDirect WebSearchTool20250305AllowedCaller = "direct"
 
-AllowedDomains \[\]stringoptional
+const WebSearchTool20250305AllowedCallerCodeExecution20250825 WebSearchTool20250305AllowedCaller = "code_execution_20250825"
+
+const WebSearchTool20250305AllowedCallerCodeExecution20260120 WebSearchTool20250305AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
 
 If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
 
-BlockedDomains \[\]stringoptional
+BlockedDomains \[\]string
+
+optional
 
 If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -3896,57 +6346,490 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-MaxUses int64optional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxUses int64
+
+optional
 
 Maximum number of times the tool can be used in the API request.
 
-exclusiveMinimum0
+Strict bool
 
-Strict booloptional
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
-UserLocation WebSearchTool20250305UserLocationoptional
+UserLocation [UserLocation](/docs/en/api/messages#user_location)
+
+optional
 
 Parameters for the user's location. Used to provide more relevant search results.
 
 Type Approximate
 
-Accepts one of the following:
+City string
 
-const ApproximateApproximate Approximate = "approximate"
-
-City stringoptional
+optional
 
 The city of the user.
 
-maxLength255
+Country string
 
-minLength1
-
-Country stringoptional
+optional
 
 The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
 
-maxLength2
+Region string
 
-minLength2
-
-Region stringoptional
+optional
 
 The region of the user.
 
-maxLength255
+Timezone string
 
-minLength1
-
-Timezone stringoptional
+optional
 
 The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 
-maxLength255
+type WebFetchTool20250910 struct{…}
 
-minLength1
+Name WebFetch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebFetch20250910
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebFetchTool20250910AllowedCallerDirect WebFetchTool20250910AllowedCaller = "direct"
+
+const WebFetchTool20250910AllowedCallerCodeExecution20250825 WebFetchTool20250910AllowedCaller = "code_execution_20250825"
+
+const WebFetchTool20250910AllowedCallerCodeExecution20260120 WebFetchTool20250910AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+List of domains to allow fetching from
+
+BlockedDomains \[\]string
+
+optional
+
+List of domains to block fetching from
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+Enabled bool
+
+optional
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxContentTokens int64
+
+optional
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type WebSearchTool20260209 struct{…}
+
+Name WebSearch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebSearch20260209
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebSearchTool20260209AllowedCallerDirect WebSearchTool20260209AllowedCaller = "direct"
+
+const WebSearchTool20260209AllowedCallerCodeExecution20250825 WebSearchTool20260209AllowedCaller = "code_execution_20250825"
+
+const WebSearchTool20260209AllowedCallerCodeExecution20260120 WebSearchTool20260209AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+BlockedDomains \[\]string
+
+optional
+
+If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+UserLocation [UserLocation](/docs/en/api/messages#user_location)
+
+optional
+
+Parameters for the user's location. Used to provide more relevant search results.
+
+Type Approximate
+
+City string
+
+optional
+
+The city of the user.
+
+Country string
+
+optional
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+Region string
+
+optional
+
+The region of the user.
+
+Timezone string
+
+optional
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+type WebFetchTool20260209 struct{…}
+
+Name WebFetch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebFetch20260209
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebFetchTool20260209AllowedCallerDirect WebFetchTool20260209AllowedCaller = "direct"
+
+const WebFetchTool20260209AllowedCallerCodeExecution20250825 WebFetchTool20260209AllowedCaller = "code_execution_20250825"
+
+const WebFetchTool20260209AllowedCallerCodeExecution20260120 WebFetchTool20260209AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+List of domains to allow fetching from
+
+BlockedDomains \[\]string
+
+optional
+
+List of domains to block fetching from
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+Enabled bool
+
+optional
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxContentTokens int64
+
+optional
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type ToolSearchToolBm25_20251119 struct{…}
+
+Name ToolSearchToolBm25
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type ToolSearchToolBm25_20251119Type
+
+Accepts one of the following:
+
+const ToolSearchToolBm25_20251119TypeToolSearchToolBm25_20251119 ToolSearchToolBm25_20251119Type = "tool_search_tool_bm25_20251119"
+
+const ToolSearchToolBm25_20251119TypeToolSearchToolBm25 ToolSearchToolBm25_20251119Type = "tool_search_tool_bm25"
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolSearchToolBm25_20251119AllowedCallerDirect ToolSearchToolBm25_20251119AllowedCaller = "direct"
+
+const ToolSearchToolBm25_20251119AllowedCallerCodeExecution20250825 ToolSearchToolBm25_20251119AllowedCaller = "code_execution_20250825"
+
+const ToolSearchToolBm25_20251119AllowedCallerCodeExecution20260120 ToolSearchToolBm25_20251119AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type ToolSearchToolRegex20251119 struct{…}
+
+Name ToolSearchToolRegex
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type ToolSearchToolRegex20251119Type
+
+Accepts one of the following:
+
+const ToolSearchToolRegex20251119TypeToolSearchToolRegex20251119 ToolSearchToolRegex20251119Type = "tool_search_tool_regex_20251119"
+
+const ToolSearchToolRegex20251119TypeToolSearchToolRegex ToolSearchToolRegex20251119Type = "tool_search_tool_regex"
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolSearchToolRegex20251119AllowedCallerDirect ToolSearchToolRegex20251119AllowedCaller = "direct"
+
+const ToolSearchToolRegex20251119AllowedCallerCodeExecution20250825 ToolSearchToolRegex20251119AllowedCaller = "code_execution_20250825"
+
+const ToolSearchToolRegex20251119AllowedCallerCodeExecution20260120 ToolSearchToolRegex20251119AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
 
 type MessageDeltaUsage struct{…}
 
@@ -3954,19 +6837,13 @@ CacheCreationInputTokens int64
 
 The cumulative number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The cumulative number of input tokens read from the cache.
 
-minimum0
-
 InputTokens int64
 
 The cumulative number of input tokens which were used.
-
-minimum0
 
 OutputTokens int64
 
@@ -3976,11 +6853,13 @@ ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 type MessageParamResp struct{…}
 
@@ -3998,21 +6877,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4029,7 +6904,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -4047,10 +6924,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -4064,10 +6937,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -4083,10 +6952,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -4096,10 +6961,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -4118,10 +6979,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -4147,37 +7004,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4206,15 +7051,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type PlainTextSource struct{…}
 
@@ -4222,15 +7059,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ContentBlockSource struct{…}
 
@@ -4250,21 +7079,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4281,7 +7106,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -4299,10 +7126,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -4316,10 +7139,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -4335,10 +7154,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -4348,10 +7163,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -4370,10 +7181,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -4399,37 +7206,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4448,37 +7243,25 @@ const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type URLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Document
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4495,13 +7278,21 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
 
 type SearchResultBlockParamResp struct{…}
 
@@ -4511,21 +7302,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4542,7 +7329,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -4560,10 +7349,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -4577,10 +7362,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -4596,10 +7377,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -4609,10 +7386,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -4632,31 +7405,23 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Source string
 
 Title string
 
 Type SearchResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const SearchResultSearchResult SearchResult = "search_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4673,9 +7438,13 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
+
+Enabled bool
+
+optional
 
 type ThinkingBlockParamResp struct{…}
 
@@ -4685,19 +7454,11 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlockParamResp struct{…}
 
 Data string
 
 Type RedactedThinking
-
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
 
 type ToolUseBlockParamResp struct{…}
 
@@ -4709,21 +7470,17 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ToolUseToolUse ToolUse = "tool_use"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4739,6 +7496,34 @@ Accepts one of the following:
 const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller ToolUseBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type ToolResultBlockParamResp struct{…}
 
@@ -4746,21 +7531,17 @@ ToolUseID string
 
 Type ToolResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ToolResultToolResult ToolResult = "tool_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4777,7 +7558,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Content \[\]ToolResultBlockParamContentUnionRespoptional
+Content \[\]ToolResultBlockParamContentUnionResp
+
+optional
 
 Accepts one of the following:
 
@@ -4791,21 +7574,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4822,7 +7601,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -4840,10 +7621,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -4857,10 +7634,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -4876,10 +7649,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -4889,10 +7658,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -4911,10 +7676,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -4940,37 +7701,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -4995,21 +7744,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -5026,7 +7771,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -5044,10 +7791,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -5061,10 +7804,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -5080,10 +7819,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -5093,10 +7828,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -5116,31 +7847,23 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Source string
 
 Title string
 
 Type SearchResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const SearchResultSearchResult SearchResult = "search_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -5157,9 +7880,13 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
+
+Enabled bool
+
+optional
 
 type DocumentBlockParamResp struct{…}
 
@@ -5173,15 +7900,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type PlainTextSource struct{…}
 
@@ -5189,15 +7908,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ContentBlockSource struct{…}
 
@@ -5217,21 +7928,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -5248,7 +7955,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -5266,10 +7975,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -5283,10 +7988,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -5302,10 +8003,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -5315,10 +8012,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -5337,10 +8030,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -5366,37 +8055,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -5415,37 +8092,25 @@ const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type URLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Document
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -5462,15 +8127,60 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
 
-IsError booloptional
+Context string
+
+optional
+
+Title string
+
+optional
+
+type ToolReferenceBlockParamResp struct{…}
+
+Tool reference block that can be included in tool_result content.
+
+ToolName string
+
+Type ToolReference
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+IsError bool
+
+optional
 
 type ServerToolUseBlockParamResp struct{…}
 
@@ -5478,29 +8188,37 @@ ID string
 
 Input map\[string, any\]
 
-Name WebSearch
+Name ServerToolUseBlockParamName
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+const ServerToolUseBlockParamNameWebSearch ServerToolUseBlockParamName = "web_search"
+
+const ServerToolUseBlockParamNameWebFetch ServerToolUseBlockParamName = "web_fetch"
+
+const ServerToolUseBlockParamNameCodeExecution ServerToolUseBlockParamName = "code_execution"
+
+const ServerToolUseBlockParamNameBashCodeExecution ServerToolUseBlockParamName = "bash_code_execution"
+
+const ServerToolUseBlockParamNameTextEditorCodeExecution ServerToolUseBlockParamName = "text_editor_code_execution"
+
+const ServerToolUseBlockParamNameToolSearchToolRegex ServerToolUseBlockParamName = "tool_search_tool_regex"
+
+const ServerToolUseBlockParamNameToolSearchToolBm25 ServerToolUseBlockParamName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -5516,6 +8234,34 @@ Accepts one of the following:
 const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller ServerToolUseBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type WebSearchToolResultBlockParamResp struct{…}
 
@@ -5531,57 +8277,835 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
-PageAge stringoptional
+PageAge string
+
+optional
 
 type WebSearchToolRequestError struct{…}
 
-ErrorCode WebSearchToolRequestErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolRequestErrorErrorCodeInvalidToolInput WebSearchToolRequestErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolRequestErrorErrorCodeUnavailable WebSearchToolRequestErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolRequestErrorErrorCodeMaxUsesExceeded WebSearchToolRequestErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolRequestErrorErrorCodeTooManyRequests WebSearchToolRequestErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolRequestErrorErrorCodeQueryTooLong WebSearchToolRequestErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolRequestErrorErrorCodeRequestTooLarge WebSearchToolRequestErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 ToolUseID string
 
 Type WebSearchToolResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
 Accepts one of the following:
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
-TTL CacheControlEphemeralTTLoptional
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller WebSearchToolResultBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+type WebFetchToolResultBlockParamResp struct{…}
+
+Content WebFetchToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlockParamResp struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlockParamResp struct{…}
+
+Content [DocumentBlockParamResp](/docs/en/api/messages#document_block_param)
+
+Source DocumentBlockParamSourceUnionResp
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+type ContentBlockSource struct{…}
+
+Content ContentBlockSourceContentUnion
+
+Accepts one of the following:
+
+string
+
+\[\][ContentBlockSourceContentItemUnion](/docs/en/api/messages#content_block_source_content)
+
+Accepts one of the following:
+
+type TextBlockParamResp struct{…}
+
+Text string
+
+Type Text
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
+
+Accepts one of the following:
+
+type CitationCharLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndCharIndex int64
+
+StartCharIndex int64
+
+Type CharLocation
+
+type CitationPageLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndPageNumber int64
+
+StartPageNumber int64
+
+Type PageLocation
+
+type CitationContentBlockLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndBlockIndex int64
+
+StartBlockIndex int64
+
+Type ContentBlockLocation
+
+type CitationWebSearchResultLocationParamResp struct{…}
+
+CitedText string
+
+EncryptedIndex string
+
+Title string
+
+Type WebSearchResultLocation
+
+URL string
+
+type CitationSearchResultLocationParamResp struct{…}
+
+CitedText string
+
+EndBlockIndex int64
+
+SearchResultIndex int64
+
+Source string
+
+StartBlockIndex int64
+
+Title string
+
+Type SearchResultLocation
+
+type ImageBlockParamResp struct{…}
+
+Source ImageBlockParamSourceUnionResp
+
+Accepts one of the following:
+
+type Base64ImageSource struct{…}
+
+Data string
+
+MediaType Base64ImageSourceMediaType
+
+Accepts one of the following:
+
+const Base64ImageSourceMediaTypeImageJPEG Base64ImageSourceMediaType = "image/jpeg"
+
+const Base64ImageSourceMediaTypeImagePNG Base64ImageSourceMediaType = "image/png"
+
+const Base64ImageSourceMediaTypeImageGIF Base64ImageSourceMediaType = "image/gif"
+
+const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/webp"
+
+Type Base64
+
+type URLImageSource struct{…}
+
+Type URL
+
+URL string
+
+Type Image
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Type Content
+
+type URLPDFSource struct{…}
+
+Type URL
+
+URL string
+
+Type Document
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Enabled bool
+
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+RetrievedAt string
+
+optional
+
+ISO 8601 timestamp when the content was retrieved
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller WebFetchToolResultBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+type CodeExecutionToolResultBlockParamResp struct{…}
+
+Content [CodeExecutionToolResultBlockParamContentUnionResp](/docs/en/api/messages#code_execution_tool_result_block_param_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlockParamResp struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlockParamResp](/docs/en/api/messages#code_execution_output_block_param)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type BashCodeExecutionToolResultBlockParamResp struct{…}
+
+Content BashCodeExecutionToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlockParamResp struct{…}
+
+Content \[\][BashCodeExecutionOutputBlockParamResp](/docs/en/api/messages#bash_code_execution_output_block_param)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type TextEditorCodeExecutionToolResultBlockParamResp struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+Type TextEditorCodeExecutionToolResultError
+
+ErrorMessage string
+
+optional
+
+type TextEditorCodeExecutionViewResultBlockParamResp struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockParamFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypeText TextEditorCodeExecutionViewResultBlockParamFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypeImage TextEditorCodeExecutionViewResultBlockParamFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypePDF TextEditorCodeExecutionViewResultBlockParamFileType = "pdf"
+
+Type TextEditorCodeExecutionViewResult
+
+NumLines int64
+
+optional
+
+StartLine int64
+
+optional
+
+TotalLines int64
+
+optional
+
+type TextEditorCodeExecutionCreateResultBlockParamResp struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlockParamResp struct{…}
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+Lines \[\]string
+
+optional
+
+NewLines int64
+
+optional
+
+NewStart int64
+
+optional
+
+OldLines int64
+
+optional
+
+OldStart int64
+
+optional
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type ToolSearchToolResultBlockParamResp struct{…}
+
+Content ToolSearchToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type ToolSearchToolResultErrorParamResp struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlockParamResp struct{…}
+
+ToolReferences \[\][ToolReferenceBlockParamResp](/docs/en/api/messages#tool_reference_block_param)
+
+ToolName string
+
+Type ToolReference
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type ContainerUploadBlockParamResp struct{…}
+
+A content block that represents a file to be uploaded to the container Files uploaded via this block will be available in the container's input directory.
+
+FileID string
+
+Type ContainerUpload
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -5614,7 +9138,9 @@ The total number of tokens across the provided list of messages, system prompt, 
 
 type Metadata struct{…}
 
-UserID stringoptional
+UserID string
+
+optional
 
 An external identifier for the user who is associated with the request.
 
@@ -5641,6 +9167,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -5726,7 +9256,9 @@ string
 
 type OutputConfig struct{…}
 
-Effort OutputConfigEffortoptional
+Effort OutputConfigEffort
+
+optional
 
 All possible effort levels.
 
@@ -5740,7 +9272,9 @@ const OutputConfigEffortHigh OutputConfigEffort = "high"
 
 const OutputConfigEffortMax OutputConfigEffort = "max"
 
-Format [JSONOutputFormat](/docs/en/api/messages#json_output_format)optional
+Format [JSONOutputFormat](/docs/en/api/messages#json_output_format)
+
+optional
 
 A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
 
@@ -5750,25 +9284,13 @@ The JSON schema of the format
 
 Type JSONSchema
 
-Accepts one of the following:
-
-const JSONSchemaJSONSchema JSONSchema = "json_schema"
-
 type PlainTextSource struct{…}
 
 Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type RawContentBlockDeltaUnion interface{…}
 
@@ -5780,19 +9302,11 @@ Text string
 
 Type TextDelta
 
-Accepts one of the following:
-
-const TextDeltaTextDelta TextDelta = "text_delta"
-
 type InputJSONDelta struct{…}
 
 PartialJSON string
 
 Type InputJSONDelta
-
-Accepts one of the following:
-
-const InputJSONDeltaInputJSONDelta InputJSONDelta = "input_json_delta"
 
 type CitationsDelta struct{…}
 
@@ -5816,10 +9330,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -5835,10 +9345,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -5856,10 +9362,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -5869,10 +9371,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -5892,15 +9390,7 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Type CitationsDelta
-
-Accepts one of the following:
-
-const CitationsDeltaCitationsDelta CitationsDelta = "citations_delta"
 
 type ThinkingDelta struct{…}
 
@@ -5908,19 +9398,11 @@ Thinking string
 
 Type ThinkingDelta
 
-Accepts one of the following:
-
-const ThinkingDeltaThinkingDelta ThinkingDelta = "thinking_delta"
-
 type SignatureDelta struct{…}
 
 Signature string
 
 Type SignatureDelta
-
-Accepts one of the following:
-
-const SignatureDeltaSignatureDelta SignatureDelta = "signature_delta"
 
 type ContentBlockDeltaEvent struct{…}
 
@@ -5934,19 +9416,11 @@ Text string
 
 Type TextDelta
 
-Accepts one of the following:
-
-const TextDeltaTextDelta TextDelta = "text_delta"
-
 type InputJSONDelta struct{…}
 
 PartialJSON string
 
 Type InputJSONDelta
-
-Accepts one of the following:
-
-const InputJSONDeltaInputJSONDelta InputJSONDelta = "input_json_delta"
 
 type CitationsDelta struct{…}
 
@@ -5970,10 +9444,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -5989,10 +9459,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -6010,10 +9476,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -6023,10 +9485,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -6046,15 +9504,7 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Type CitationsDelta
-
-Accepts one of the following:
-
-const CitationsDeltaCitationsDelta CitationsDelta = "citations_delta"
 
 type ThinkingDelta struct{…}
 
@@ -6062,31 +9512,21 @@ Thinking string
 
 Type ThinkingDelta
 
-Accepts one of the following:
-
-const ThinkingDeltaThinkingDelta ThinkingDelta = "thinking_delta"
-
 type SignatureDelta struct{…}
 
 Signature string
 
 Type SignatureDelta
 
-Accepts one of the following:
-
-const SignatureDeltaSignatureDelta SignatureDelta = "signature_delta"
-
 Index int64
 
 Type ContentBlockDelta
 
-Accepts one of the following:
-
-const ContentBlockDeltaContentBlockDelta ContentBlockDelta = "content_block_delta"
-
 type ContentBlockStartEvent struct{…}
 
 ContentBlock ContentBlockStartEventContentBlockUnion
+
+Response model for a file uploaded to the container.
 
 Accepts one of the following:
 
@@ -6116,10 +9556,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -6135,10 +9571,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -6156,10 +9588,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -6169,10 +9597,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -6192,17 +9616,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -6212,23 +9628,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -6236,29 +9670,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -6266,27 +9756,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -6298,27 +9784,345 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Index int64
 
 Type ContentBlockStart
-
-Accepts one of the following:
-
-const ContentBlockStartContentBlockStart ContentBlockStart = "content_block_start"
 
 type ContentBlockStopEvent struct{…}
 
@@ -6326,13 +10130,21 @@ Index int64
 
 Type ContentBlockStop
 
-Accepts one of the following:
-
-const ContentBlockStopContentBlockStop ContentBlockStop = "content_block_stop"
-
 type MessageDeltaEvent struct{…}
 
 Delta MessageDeltaEventDelta
+
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
 
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
@@ -6354,10 +10166,6 @@ StopSequence string
 
 Type MessageDelta
 
-Accepts one of the following:
-
-const MessageDeltaMessageDelta MessageDelta = "message_delta"
-
 Usage [MessageDeltaUsage](/docs/en/api/messages#message_delta_usage)
 
 Billing and rate-limit usage.
@@ -6374,19 +10182,13 @@ CacheCreationInputTokens int64
 
 The cumulative number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The cumulative number of input tokens read from the cache.
 
-minimum0
-
 InputTokens int64
 
 The cumulative number of input tokens which were used.
-
-minimum0
 
 OutputTokens int64
 
@@ -6396,11 +10198,13 @@ ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 type MessageStartEvent struct{…}
 
@@ -6411,6 +10215,18 @@ ID string
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
 
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
@@ -6469,10 +10285,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -6488,10 +10300,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -6509,10 +10317,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -6522,10 +10326,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -6545,17 +10345,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -6565,23 +10357,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -6589,29 +10399,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -6619,27 +10485,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -6651,19 +10513,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -6684,6 +10868,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -6773,10 +10961,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -6818,10 +11002,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -6842,25 +11022,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -6870,23 +11042,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -6902,17 +11072,9 @@ const UsageServiceTierBatch UsageServiceTier = "batch"
 
 Type MessageStart
 
-Accepts one of the following:
-
-const MessageStartMessageStart MessageStart = "message_start"
-
 type MessageStopEvent struct{…}
 
 Type MessageStop
-
-Accepts one of the following:
-
-const MessageStopMessageStop MessageStop = "message_stop"
 
 type MessageStreamEventUnion interface{…}
 
@@ -6928,6 +11090,18 @@ Unique object identifier.
 
 The format and length of IDs may change over time.
 
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
+
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
 Content generated by the model.
@@ -6985,10 +11159,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -7004,10 +11174,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -7025,10 +11191,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -7038,10 +11200,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -7061,17 +11219,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -7081,23 +11231,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -7105,29 +11273,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -7135,27 +11359,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -7167,19 +11387,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -7200,6 +11742,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -7289,10 +11835,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -7334,10 +11876,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -7358,25 +11896,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -7386,23 +11916,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -7418,13 +11946,21 @@ const UsageServiceTierBatch UsageServiceTier = "batch"
 
 Type MessageStart
 
-Accepts one of the following:
-
-const MessageStartMessageStart MessageStart = "message_start"
-
 type MessageDeltaEvent struct{…}
 
 Delta MessageDeltaEventDelta
+
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
 
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
@@ -7446,10 +11982,6 @@ StopSequence string
 
 Type MessageDelta
 
-Accepts one of the following:
-
-const MessageDeltaMessageDelta MessageDelta = "message_delta"
-
 Usage [MessageDeltaUsage](/docs/en/api/messages#message_delta_usage)
 
 Billing and rate-limit usage.
@@ -7466,19 +11998,13 @@ CacheCreationInputTokens int64
 
 The cumulative number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The cumulative number of input tokens read from the cache.
 
-minimum0
-
 InputTokens int64
 
 The cumulative number of input tokens which were used.
-
-minimum0
 
 OutputTokens int64
 
@@ -7488,23 +12014,23 @@ ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 type MessageStopEvent struct{…}
 
 Type MessageStop
 
-Accepts one of the following:
-
-const MessageStopMessageStop MessageStop = "message_stop"
-
 type ContentBlockStartEvent struct{…}
 
 ContentBlock ContentBlockStartEventContentBlockUnion
+
+Response model for a file uploaded to the container.
 
 Accepts one of the following:
 
@@ -7534,10 +12060,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -7553,10 +12075,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -7574,10 +12092,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -7587,10 +12101,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -7610,17 +12120,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -7630,23 +12132,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -7654,29 +12174,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -7684,27 +12260,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -7716,27 +12288,345 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Index int64
 
 Type ContentBlockStart
-
-Accepts one of the following:
-
-const ContentBlockStartContentBlockStart ContentBlockStart = "content_block_start"
 
 type ContentBlockDeltaEvent struct{…}
 
@@ -7750,19 +12640,11 @@ Text string
 
 Type TextDelta
 
-Accepts one of the following:
-
-const TextDeltaTextDelta TextDelta = "text_delta"
-
 type InputJSONDelta struct{…}
 
 PartialJSON string
 
 Type InputJSONDelta
-
-Accepts one of the following:
-
-const InputJSONDeltaInputJSONDelta InputJSONDelta = "input_json_delta"
 
 type CitationsDelta struct{…}
 
@@ -7786,10 +12668,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -7805,10 +12683,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -7826,10 +12700,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -7839,10 +12709,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -7862,15 +12728,7 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Type CitationsDelta
-
-Accepts one of the following:
-
-const CitationsDeltaCitationsDelta CitationsDelta = "citations_delta"
 
 type ThinkingDelta struct{…}
 
@@ -7878,27 +12736,15 @@ Thinking string
 
 Type ThinkingDelta
 
-Accepts one of the following:
-
-const ThinkingDeltaThinkingDelta ThinkingDelta = "thinking_delta"
-
 type SignatureDelta struct{…}
 
 Signature string
 
 Type SignatureDelta
 
-Accepts one of the following:
-
-const SignatureDeltaSignatureDelta SignatureDelta = "signature_delta"
-
 Index int64
 
 Type ContentBlockDelta
-
-Accepts one of the following:
-
-const ContentBlockDeltaContentBlockDelta ContentBlockDelta = "content_block_delta"
 
 type ContentBlockStopEvent struct{…}
 
@@ -7906,29 +12752,17 @@ Index int64
 
 Type ContentBlockStop
 
-Accepts one of the following:
-
-const ContentBlockStopContentBlockStop ContentBlockStop = "content_block_stop"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type RedactedThinkingBlockParamResp struct{…}
 
 Data string
 
 Type RedactedThinking
-
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
 
 type SearchResultBlockParamResp struct{…}
 
@@ -7938,21 +12772,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -7969,7 +12799,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -7987,10 +12819,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -8004,10 +12832,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -8023,10 +12847,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -8036,10 +12856,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -8059,31 +12875,23 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Source string
 
 Title string
 
 Type SearchResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const SearchResultSearchResult SearchResult = "search_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -8100,35 +12908,89 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
+
+Enabled bool
+
+optional
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 type ServerToolUsage struct{…}
+
+WebFetchRequests int64
+
+The number of web fetch tool requests.
 
 WebSearchRequests int64
 
 The number of web search tool requests.
 
-minimum0
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
+Caller ServerToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
 Input map\[string, any\]
 
-Name WebSearch
+Name ServerToolUseBlockName
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
-
-Accepts one of the following:
-
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
 
 type ServerToolUseBlockParamResp struct{…}
 
@@ -8136,29 +12998,37 @@ ID string
 
 Input map\[string, any\]
 
-Name WebSearch
+Name ServerToolUseBlockParamName
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+const ServerToolUseBlockParamNameWebSearch ServerToolUseBlockParamName = "web_search"
+
+const ServerToolUseBlockParamNameWebFetch ServerToolUseBlockParamName = "web_fetch"
+
+const ServerToolUseBlockParamNameCodeExecution ServerToolUseBlockParamName = "code_execution"
+
+const ServerToolUseBlockParamNameBashCodeExecution ServerToolUseBlockParamName = "bash_code_execution"
+
+const ServerToolUseBlockParamNameTextEditorCodeExecution ServerToolUseBlockParamName = "text_editor_code_execution"
+
+const ServerToolUseBlockParamNameToolSearchToolRegex ServerToolUseBlockParamName = "tool_search_tool_regex"
+
+const ServerToolUseBlockParamNameToolSearchToolBm25 ServerToolUseBlockParamName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -8175,15 +13045,39 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
+Caller ServerToolUseBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
 type SignatureDelta struct{…}
 
 Signature string
 
 Type SignatureDelta
-
-Accepts one of the following:
-
-const SignatureDeltaSignatureDelta SignatureDelta = "signature_delta"
 
 type StopReason string
 
@@ -8227,10 +13121,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -8246,10 +13136,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -8267,10 +13153,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -8280,10 +13162,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -8303,17 +13181,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type TextBlockParamResp struct{…}
 
@@ -8321,21 +13191,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -8352,7 +13218,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -8370,10 +13238,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -8387,10 +13251,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -8406,10 +13266,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -8419,10 +13275,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -8441,10 +13293,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type TextCitationUnion interface{…}
 
@@ -8466,10 +13314,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -8485,10 +13329,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -8506,10 +13346,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -8519,10 +13355,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -8542,10 +13374,6 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 type TextCitationParamUnionResp interface{…}
 
 Accepts one of the following:
@@ -8564,10 +13392,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -8581,10 +13405,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -8600,10 +13420,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -8613,10 +13429,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -8636,19 +13448,356 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 type TextDelta struct{…}
 
 Text string
 
 Type TextDelta
 
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionCreateResultBlockParamResp struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+type TextEditorCodeExecutionStrReplaceResultBlockParamResp struct{…}
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+Lines \[\]string
+
+optional
+
+NewLines int64
+
+optional
+
+NewStart int64
+
+optional
+
+OldLines int64
+
+optional
+
+OldStart int64
+
+optional
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
 Accepts one of the following:
 
-const TextDeltaTextDelta TextDelta = "text_delta"
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlockParamResp struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+Type TextEditorCodeExecutionToolResultError
+
+ErrorMessage string
+
+optional
+
+type TextEditorCodeExecutionViewResultBlockParamResp struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockParamFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypeText TextEditorCodeExecutionViewResultBlockParamFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypeImage TextEditorCodeExecutionViewResultBlockParamFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypePDF TextEditorCodeExecutionViewResultBlockParamFileType = "pdf"
+
+Type TextEditorCodeExecutionViewResult
+
+NumLines int64
+
+optional
+
+StartLine int64
+
+optional
+
+TotalLines int64
+
+optional
+
+type TextEditorCodeExecutionCreateResultBlockParamResp struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlockParamResp struct{…}
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+Lines \[\]string
+
+optional
+
+NewLines int64
+
+optional
+
+NewStart int64
+
+optional
+
+OldLines int64
+
+optional
+
+OldStart int64
+
+optional
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionToolResultErrorCode string
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+type TextEditorCodeExecutionToolResultErrorParamResp struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+Type TextEditorCodeExecutionToolResultError
+
+ErrorMessage string
+
+optional
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionViewResultBlockParamResp struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockParamFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypeText TextEditorCodeExecutionViewResultBlockParamFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypeImage TextEditorCodeExecutionViewResultBlockParamFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockParamFileTypePDF TextEditorCodeExecutionViewResultBlockParamFileType = "pdf"
+
+Type TextEditorCodeExecutionViewResult
+
+NumLines int64
+
+optional
+
+StartLine int64
+
+optional
+
+TotalLines int64
+
+optional
 
 type ThinkingBlock struct{…}
 
@@ -8658,10 +13807,6 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type ThinkingBlockParamResp struct{…}
 
 Signature string
@@ -8670,25 +13815,13 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type ThinkingConfigAdaptive struct{…}
 
 Type Adaptive
 
-Accepts one of the following:
-
-const AdaptiveAdaptive Adaptive = "adaptive"
-
 type ThinkingConfigDisabled struct{…}
 
 Type Disabled
-
-Accepts one of the following:
-
-const DisabledDisabled Disabled = "disabled"
 
 type ThinkingConfigEnabled struct{…}
 
@@ -8703,10 +13836,6 @@ See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extend
 minimum1024
 
 Type Enabled
-
-Accepts one of the following:
-
-const EnabledEnabled Enabled = "enabled"
 
 type ThinkingConfigParamUnionResp interface{…}
 
@@ -8732,35 +13861,19 @@ minimum1024
 
 Type Enabled
 
-Accepts one of the following:
-
-const EnabledEnabled Enabled = "enabled"
-
 type ThinkingConfigDisabled struct{…}
 
 Type Disabled
 
-Accepts one of the following:
-
-const DisabledDisabled Disabled = "disabled"
-
 type ThinkingConfigAdaptive struct{…}
 
 Type Adaptive
-
-Accepts one of the following:
-
-const AdaptiveAdaptive Adaptive = "adaptive"
 
 type ThinkingDelta struct{…}
 
 Thinking string
 
 Type ThinkingDelta
-
-Accepts one of the following:
-
-const ThinkingDeltaThinkingDelta ThinkingDelta = "thinking_delta"
 
 type Tool struct{…}
 
@@ -8772,13 +13885,13 @@ This defines the shape of the `input` that your tool accepts and that the model 
 
 Type Object
 
-Accepts one of the following:
+Properties map\[string, any\]
 
-const ObjectObject Object = "object"
+optional
 
-Properties map\[string, any\]optional
+Required \[\]string
 
-Required \[\]stringoptional
+optional
 
 Name string
 
@@ -8790,17 +13903,29 @@ maxLength128
 
 minLength1
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolAllowedCallerDirect ToolAllowedCaller = "direct"
+
+const ToolAllowedCallerCodeExecution20250825 ToolAllowedCaller = "code_execution_20250825"
+
+const ToolAllowedCallerCodeExecution20260120 ToolAllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -8817,25 +13942,39 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Description stringoptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Description string
+
+optional
 
 Description of what this tool does.
 
 Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
 
-EagerInputStreaming booloptional
+EagerInputStreaming bool
+
+optional
 
 Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
 
-Strict booloptional
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
-Type ToolTypeoptional
+Type ToolType
 
-Accepts one of the following:
-
-const ToolTypeCustom ToolType = "custom"
+optional
 
 type ToolBash20250124 struct{…}
 
@@ -8845,27 +13984,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const BashBash Bash = "bash"
-
 Type Bash20250124
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const Bash20250124Bash20250124 Bash20250124 = "bash_20250124"
+const ToolBash20250124AllowedCallerDirect ToolBash20250124AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolBash20250124AllowedCallerCodeExecution20250825 ToolBash20250124AllowedCaller = "code_execution_20250825"
+
+const ToolBash20250124AllowedCallerCodeExecution20260120 ToolBash20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -8882,7 +14025,19 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -8898,11 +14053,9 @@ The model will automatically decide whether to use tools.
 
 Type Auto
 
-Accepts one of the following:
+DisableParallelToolUse bool
 
-const AutoAuto Auto = "auto"
-
-DisableParallelToolUse booloptional
+optional
 
 Whether to disable parallel tool use.
 
@@ -8914,11 +14067,9 @@ The model will use any available tools.
 
 Type Any
 
-Accepts one of the following:
+DisableParallelToolUse bool
 
-const AnyAny Any = "any"
-
-DisableParallelToolUse booloptional
+optional
 
 Whether to disable parallel tool use.
 
@@ -8934,11 +14085,9 @@ The name of the tool to use.
 
 Type Tool
 
-Accepts one of the following:
+DisableParallelToolUse bool
 
-const ToolTool Tool = "tool"
-
-DisableParallelToolUse booloptional
+optional
 
 Whether to disable parallel tool use.
 
@@ -8950,21 +14099,15 @@ The model will not be allowed to use tools.
 
 Type None
 
-Accepts one of the following:
-
-const NoneNone None = "none"
-
 type ToolChoiceAny struct{…}
 
 The model will use any available tools.
 
 Type Any
 
-Accepts one of the following:
+DisableParallelToolUse bool
 
-const AnyAny Any = "any"
-
-DisableParallelToolUse booloptional
+optional
 
 Whether to disable parallel tool use.
 
@@ -8976,11 +14119,9 @@ The model will automatically decide whether to use tools.
 
 Type Auto
 
-Accepts one of the following:
+DisableParallelToolUse bool
 
-const AutoAuto Auto = "auto"
-
-DisableParallelToolUse booloptional
+optional
 
 Whether to disable parallel tool use.
 
@@ -8992,10 +14133,6 @@ The model will not be allowed to use tools.
 
 Type None
 
-Accepts one of the following:
-
-const NoneNone None = "none"
-
 type ToolChoiceTool struct{…}
 
 The model will use the specified tool with `tool_choice.name`.
@@ -9006,37 +14143,39 @@ The name of the tool to use.
 
 Type Tool
 
-Accepts one of the following:
+DisableParallelToolUse bool
 
-const ToolTool Tool = "tool"
-
-DisableParallelToolUse booloptional
+optional
 
 Whether to disable parallel tool use.
 
 Defaults to `false`. If set to `true`, the model will output exactly one tool use.
 
-type ToolResultBlockParamResp struct{…}
+type ToolReferenceBlock struct{…}
 
-ToolUseID string
+ToolName string
 
-Type ToolResult
+Type ToolReference
 
-Accepts one of the following:
+type ToolReferenceBlockParamResp struct{…}
 
-const ToolResultToolResult ToolResult = "tool_result"
+Tool reference block that can be included in tool_result content.
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+ToolName string
+
+Type ToolReference
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9053,7 +14192,42 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Content \[\]ToolResultBlockParamContentUnionRespoptional
+type ToolResultBlockParamResp struct{…}
+
+ToolUseID string
+
+Type ToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Content \[\]ToolResultBlockParamContentUnionResp
+
+optional
 
 Accepts one of the following:
 
@@ -9067,21 +14241,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9098,7 +14268,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -9116,10 +14288,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -9133,10 +14301,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -9152,10 +14316,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -9165,10 +14325,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -9187,10 +14343,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -9216,37 +14368,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9271,21 +14411,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9302,7 +14438,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -9320,10 +14458,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -9337,10 +14471,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -9356,10 +14486,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -9369,10 +14495,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -9392,31 +14514,23 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Source string
 
 Title string
 
 Type SearchResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const SearchResultSearchResult SearchResult = "search_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9433,9 +14547,13 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
+
+Enabled bool
+
+optional
 
 type DocumentBlockParamResp struct{…}
 
@@ -9449,15 +14567,7 @@ Data string
 
 MediaType ApplicationPDF
 
-Accepts one of the following:
-
-const ApplicationPDFApplicationPDF ApplicationPDF = "application/pdf"
-
 Type Base64
-
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
 
 type PlainTextSource struct{…}
 
@@ -9465,15 +14575,7 @@ Data string
 
 MediaType TextPlain
 
-Accepts one of the following:
-
-const TextPlainTextPlain TextPlain = "text/plain"
-
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ContentBlockSource struct{…}
 
@@ -9493,21 +14595,17 @@ Text string
 
 Type Text
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const TextText Text = "text"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9524,7 +14622,9 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
 
 Accepts one of the following:
 
@@ -9542,10 +14642,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocationParamResp struct{…}
 
 CitedText string
@@ -9559,10 +14655,6 @@ EndPageNumber int64
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocationParamResp struct{…}
 
@@ -9578,10 +14670,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationWebSearchResultLocationParamResp struct{…}
 
 CitedText string
@@ -9591,10 +14679,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -9613,10 +14697,6 @@ StartBlockIndex int64
 Title string
 
 Type SearchResultLocation
-
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
 
 type ImageBlockParamResp struct{…}
 
@@ -9642,37 +14722,25 @@ const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/we
 
 Type Base64
 
-Accepts one of the following:
-
-const Base64Base64 Base64 = "base64"
-
 type URLImageSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Image
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ImageImage Image = "image"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9691,37 +14759,25 @@ const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
 Type Content
 
-Accepts one of the following:
-
-const ContentContent Content = "content"
-
 type URLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
 Type Document
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const DocumentDocument Document = "document"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9738,15 +14794,415 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)optional
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
 
-Enabled booloptional
+optional
 
-Context stringoptional
+Enabled bool
 
-Title stringoptional
+optional
 
-IsError booloptional
+Context string
+
+optional
+
+Title string
+
+optional
+
+type ToolReferenceBlockParamResp struct{…}
+
+Tool reference block that can be included in tool_result content.
+
+ToolName string
+
+Type ToolReference
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+IsError bool
+
+optional
+
+type ToolSearchToolBm25_20251119 struct{…}
+
+Name ToolSearchToolBm25
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type ToolSearchToolBm25_20251119Type
+
+Accepts one of the following:
+
+const ToolSearchToolBm25_20251119TypeToolSearchToolBm25_20251119 ToolSearchToolBm25_20251119Type = "tool_search_tool_bm25_20251119"
+
+const ToolSearchToolBm25_20251119TypeToolSearchToolBm25 ToolSearchToolBm25_20251119Type = "tool_search_tool_bm25"
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolSearchToolBm25_20251119AllowedCallerDirect ToolSearchToolBm25_20251119AllowedCaller = "direct"
+
+const ToolSearchToolBm25_20251119AllowedCallerCodeExecution20250825 ToolSearchToolBm25_20251119AllowedCaller = "code_execution_20250825"
+
+const ToolSearchToolBm25_20251119AllowedCallerCodeExecution20260120 ToolSearchToolBm25_20251119AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type ToolSearchToolRegex20251119 struct{…}
+
+Name ToolSearchToolRegex
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type ToolSearchToolRegex20251119Type
+
+Accepts one of the following:
+
+const ToolSearchToolRegex20251119TypeToolSearchToolRegex20251119 ToolSearchToolRegex20251119Type = "tool_search_tool_regex_20251119"
+
+const ToolSearchToolRegex20251119TypeToolSearchToolRegex ToolSearchToolRegex20251119Type = "tool_search_tool_regex"
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolSearchToolRegex20251119AllowedCallerDirect ToolSearchToolRegex20251119AllowedCaller = "direct"
+
+const ToolSearchToolRegex20251119AllowedCallerCodeExecution20250825 ToolSearchToolRegex20251119AllowedCaller = "code_execution_20250825"
+
+const ToolSearchToolRegex20251119AllowedCallerCodeExecution20260120 ToolSearchToolRegex20251119AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ToolSearchToolResultBlockParamResp struct{…}
+
+Content ToolSearchToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type ToolSearchToolResultErrorParamResp struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlockParamResp struct{…}
+
+ToolReferences \[\][ToolReferenceBlockParamResp](/docs/en/api/messages#tool_reference_block_param)
+
+ToolName string
+
+Type ToolReference
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolResultErrorCode string
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+type ToolSearchToolResultErrorParamResp struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+type ToolSearchToolSearchResultBlockParamResp struct{…}
+
+ToolReferences \[\][ToolReferenceBlockParamResp](/docs/en/api/messages#tool_reference_block_param)
+
+ToolName string
+
+Type ToolReference
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Type ToolSearchToolSearchResult
 
 type ToolTextEditor20250124 struct{…}
 
@@ -9756,27 +15212,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceEditorStrReplaceEditor StrReplaceEditor = "str_replace_editor"
-
 Type TextEditor20250124
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250124TextEditor20250124 TextEditor20250124 = "text_editor_20250124"
+const ToolTextEditor20250124AllowedCallerDirect ToolTextEditor20250124AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250124AllowedCallerCodeExecution20250825 ToolTextEditor20250124AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250124AllowedCallerCodeExecution20260120 ToolTextEditor20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9793,7 +15253,19 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -9805,27 +15277,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceBasedEditToolStrReplaceBasedEditTool StrReplaceBasedEditTool = "str_replace_based_edit_tool"
-
 Type TextEditor20250429
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250429TextEditor20250429 TextEditor20250429 = "text_editor_20250429"
+const ToolTextEditor20250429AllowedCallerDirect ToolTextEditor20250429AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250429AllowedCallerCodeExecution20250825 ToolTextEditor20250429AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250429AllowedCallerCodeExecution20260120 ToolTextEditor20250429AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9842,7 +15318,19 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -9854,27 +15342,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceBasedEditToolStrReplaceBasedEditTool StrReplaceBasedEditTool = "str_replace_based_edit_tool"
-
 Type TextEditor20250728
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250728TextEditor20250728 TextEditor20250728 = "text_editor_20250728"
+const ToolTextEditor20250728AllowedCallerDirect ToolTextEditor20250728AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250728AllowedCallerCodeExecution20250825 ToolTextEditor20250728AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250728AllowedCallerCodeExecution20260120 ToolTextEditor20250728AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9891,17 +15383,31 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-MaxCharacters int64optional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+MaxCharacters int64
+
+optional
 
 Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
 
-minimum1
+Strict bool
 
-Strict booloptional
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
 type ToolUnion interface{…}
+
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
 
 Accepts one of the following:
 
@@ -9915,13 +15421,13 @@ This defines the shape of the `input` that your tool accepts and that the model 
 
 Type Object
 
-Accepts one of the following:
+Properties map\[string, any\]
 
-const ObjectObject Object = "object"
+optional
 
-Properties map\[string, any\]optional
+Required \[\]string
 
-Required \[\]stringoptional
+optional
 
 Name string
 
@@ -9933,17 +15439,29 @@ maxLength128
 
 minLength1
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolAllowedCallerDirect ToolAllowedCaller = "direct"
+
+const ToolAllowedCallerCodeExecution20250825 ToolAllowedCaller = "code_execution_20250825"
+
+const ToolAllowedCallerCodeExecution20260120 ToolAllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -9960,25 +15478,39 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Description stringoptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Description string
+
+optional
 
 Description of what this tool does.
 
 Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
 
-EagerInputStreaming booloptional
+EagerInputStreaming bool
+
+optional
 
 Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
 
-Strict booloptional
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
-Type ToolTypeoptional
+Type ToolType
 
-Accepts one of the following:
-
-const ToolTypeCustom ToolType = "custom"
+optional
 
 type ToolBash20250124 struct{…}
 
@@ -9988,27 +15520,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const BashBash Bash = "bash"
-
 Type Bash20250124
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const Bash20250124Bash20250124 Bash20250124 = "bash_20250124"
+const ToolBash20250124AllowedCallerDirect ToolBash20250124AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolBash20250124AllowedCallerCodeExecution20250825 ToolBash20250124AllowedCaller = "code_execution_20250825"
+
+const ToolBash20250124AllowedCallerCodeExecution20260120 ToolBash20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -10025,7 +15561,269 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionTool20250522 struct{…}
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20250522
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20250522AllowedCallerDirect CodeExecutionTool20250522AllowedCaller = "direct"
+
+const CodeExecutionTool20250522AllowedCallerCodeExecution20250825 CodeExecutionTool20250522AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20250522AllowedCallerCodeExecution20260120 CodeExecutionTool20250522AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionTool20250825 struct{…}
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20250825
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20250825AllowedCallerDirect CodeExecutionTool20250825AllowedCaller = "direct"
+
+const CodeExecutionTool20250825AllowedCallerCodeExecution20250825 CodeExecutionTool20250825AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20250825AllowedCallerCodeExecution20260120 CodeExecutionTool20250825AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type CodeExecutionTool20260120 struct{…}
+
+Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+Name CodeExecution
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type CodeExecution20260120
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const CodeExecutionTool20260120AllowedCallerDirect CodeExecutionTool20260120AllowedCaller = "direct"
+
+const CodeExecutionTool20260120AllowedCallerCodeExecution20250825 CodeExecutionTool20260120AllowedCaller = "code_execution_20250825"
+
+const CodeExecutionTool20260120AllowedCallerCodeExecution20260120 CodeExecutionTool20260120AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type MemoryTool20250818 struct{…}
+
+Name Memory
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type Memory20250818
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const MemoryTool20250818AllowedCallerDirect MemoryTool20250818AllowedCaller = "direct"
+
+const MemoryTool20250818AllowedCallerCodeExecution20250825 MemoryTool20250818AllowedCaller = "code_execution_20250825"
+
+const MemoryTool20250818AllowedCallerCodeExecution20260120 MemoryTool20250818AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -10037,27 +15835,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceEditorStrReplaceEditor StrReplaceEditor = "str_replace_editor"
-
 Type TextEditor20250124
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250124TextEditor20250124 TextEditor20250124 = "text_editor_20250124"
+const ToolTextEditor20250124AllowedCallerDirect ToolTextEditor20250124AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250124AllowedCallerCodeExecution20250825 ToolTextEditor20250124AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250124AllowedCallerCodeExecution20260120 ToolTextEditor20250124AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -10074,7 +15876,19 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -10086,27 +15900,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceBasedEditToolStrReplaceBasedEditTool StrReplaceBasedEditTool = "str_replace_based_edit_tool"
-
 Type TextEditor20250429
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250429TextEditor20250429 TextEditor20250429 = "text_editor_20250429"
+const ToolTextEditor20250429AllowedCallerDirect ToolTextEditor20250429AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250429AllowedCallerCodeExecution20250825 ToolTextEditor20250429AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250429AllowedCallerCodeExecution20260120 ToolTextEditor20250429AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -10123,7 +15941,19 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-Strict booloptional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+Strict bool
+
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -10135,27 +15965,31 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const StrReplaceBasedEditToolStrReplaceBasedEditTool StrReplaceBasedEditTool = "str_replace_based_edit_tool"
-
 Type TextEditor20250728
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const TextEditor20250728TextEditor20250728 TextEditor20250728 = "text_editor_20250728"
+const ToolTextEditor20250728AllowedCallerDirect ToolTextEditor20250728AllowedCaller = "direct"
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+const ToolTextEditor20250728AllowedCallerCodeExecution20250825 ToolTextEditor20250728AllowedCaller = "code_execution_20250825"
+
+const ToolTextEditor20250728AllowedCallerCodeExecution20260120 ToolTextEditor20250728AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -10172,13 +16006,25 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-MaxCharacters int64optional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+InputExamples \[\]map\[string, any\]
+
+optional
+
+MaxCharacters int64
+
+optional
 
 Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
 
-minimum1
+Strict bool
 
-Strict booloptional
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
@@ -10190,35 +16036,43 @@ Name of the tool.
 
 This is how the tool will be called by the model and in `tool_use` blocks.
 
-Accepts one of the following:
-
-const WebSearchWebSearch WebSearch = "web_search"
-
 Type WebSearch20250305
 
+AllowedCallers \[\]string
+
+optional
+
 Accepts one of the following:
 
-const WebSearch20250305WebSearch20250305 WebSearch20250305 = "web_search_20250305"
+const WebSearchTool20250305AllowedCallerDirect WebSearchTool20250305AllowedCaller = "direct"
 
-AllowedDomains \[\]stringoptional
+const WebSearchTool20250305AllowedCallerCodeExecution20250825 WebSearchTool20250305AllowedCaller = "code_execution_20250825"
+
+const WebSearchTool20250305AllowedCallerCodeExecution20260120 WebSearchTool20250305AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
 
 If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
 
-BlockedDomains \[\]stringoptional
+BlockedDomains \[\]string
+
+optional
 
 If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -10235,71 +16089,526 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-MaxUses int64optional
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxUses int64
+
+optional
 
 Maximum number of times the tool can be used in the API request.
 
-exclusiveMinimum0
+Strict bool
 
-Strict booloptional
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
-UserLocation WebSearchTool20250305UserLocationoptional
+UserLocation [UserLocation](/docs/en/api/messages#user_location)
+
+optional
 
 Parameters for the user's location. Used to provide more relevant search results.
 
 Type Approximate
 
-Accepts one of the following:
+City string
 
-const ApproximateApproximate Approximate = "approximate"
-
-City stringoptional
+optional
 
 The city of the user.
 
-maxLength255
+Country string
 
-minLength1
-
-Country stringoptional
+optional
 
 The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
 
-maxLength2
+Region string
 
-minLength2
-
-Region stringoptional
+optional
 
 The region of the user.
 
-maxLength255
+Timezone string
 
-minLength1
-
-Timezone stringoptional
+optional
 
 The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 
-maxLength255
+type WebFetchTool20250910 struct{…}
 
-minLength1
+Name WebFetch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebFetch20250910
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebFetchTool20250910AllowedCallerDirect WebFetchTool20250910AllowedCaller = "direct"
+
+const WebFetchTool20250910AllowedCallerCodeExecution20250825 WebFetchTool20250910AllowedCaller = "code_execution_20250825"
+
+const WebFetchTool20250910AllowedCallerCodeExecution20260120 WebFetchTool20250910AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+List of domains to allow fetching from
+
+BlockedDomains \[\]string
+
+optional
+
+List of domains to block fetching from
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+Enabled bool
+
+optional
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxContentTokens int64
+
+optional
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type WebSearchTool20260209 struct{…}
+
+Name WebSearch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebSearch20260209
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebSearchTool20260209AllowedCallerDirect WebSearchTool20260209AllowedCaller = "direct"
+
+const WebSearchTool20260209AllowedCallerCodeExecution20250825 WebSearchTool20260209AllowedCaller = "code_execution_20250825"
+
+const WebSearchTool20260209AllowedCallerCodeExecution20260120 WebSearchTool20260209AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+BlockedDomains \[\]string
+
+optional
+
+If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+UserLocation [UserLocation](/docs/en/api/messages#user_location)
+
+optional
+
+Parameters for the user's location. Used to provide more relevant search results.
+
+Type Approximate
+
+City string
+
+optional
+
+The city of the user.
+
+Country string
+
+optional
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+Region string
+
+optional
+
+The region of the user.
+
+Timezone string
+
+optional
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+type WebFetchTool20260209 struct{…}
+
+Name WebFetch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebFetch20260209
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebFetchTool20260209AllowedCallerDirect WebFetchTool20260209AllowedCaller = "direct"
+
+const WebFetchTool20260209AllowedCallerCodeExecution20250825 WebFetchTool20260209AllowedCaller = "code_execution_20250825"
+
+const WebFetchTool20260209AllowedCallerCodeExecution20260120 WebFetchTool20260209AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+List of domains to allow fetching from
+
+BlockedDomains \[\]string
+
+optional
+
+List of domains to block fetching from
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+Enabled bool
+
+optional
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxContentTokens int64
+
+optional
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type ToolSearchToolBm25_20251119 struct{…}
+
+Name ToolSearchToolBm25
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type ToolSearchToolBm25_20251119Type
+
+Accepts one of the following:
+
+const ToolSearchToolBm25_20251119TypeToolSearchToolBm25_20251119 ToolSearchToolBm25_20251119Type = "tool_search_tool_bm25_20251119"
+
+const ToolSearchToolBm25_20251119TypeToolSearchToolBm25 ToolSearchToolBm25_20251119Type = "tool_search_tool_bm25"
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolSearchToolBm25_20251119AllowedCallerDirect ToolSearchToolBm25_20251119AllowedCaller = "direct"
+
+const ToolSearchToolBm25_20251119AllowedCallerCodeExecution20250825 ToolSearchToolBm25_20251119AllowedCaller = "code_execution_20250825"
+
+const ToolSearchToolBm25_20251119AllowedCallerCodeExecution20260120 ToolSearchToolBm25_20251119AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type ToolSearchToolRegex20251119 struct{…}
+
+Name ToolSearchToolRegex
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type ToolSearchToolRegex20251119Type
+
+Accepts one of the following:
+
+const ToolSearchToolRegex20251119TypeToolSearchToolRegex20251119 ToolSearchToolRegex20251119Type = "tool_search_tool_regex_20251119"
+
+const ToolSearchToolRegex20251119TypeToolSearchToolRegex ToolSearchToolRegex20251119Type = "tool_search_tool_regex"
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const ToolSearchToolRegex20251119AllowedCallerDirect ToolSearchToolRegex20251119AllowedCaller = "direct"
+
+const ToolSearchToolRegex20251119AllowedCallerCodeExecution20250825 ToolSearchToolRegex20251119AllowedCaller = "code_execution_20250825"
+
+const ToolSearchToolRegex20251119AllowedCallerCodeExecution20260120 ToolSearchToolRegex20251119AllowedCaller = "code_execution_20260120"
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
 
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
 Name string
 
 Type ToolUse
-
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
 
 type ToolUseBlockParamResp struct{…}
 
@@ -10311,21 +16620,17 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const ToolUseToolUse ToolUse = "tool_use"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -10342,23 +16647,43 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-type URLImageSource struct{…}
+Caller ToolUseBlockParamCallerUnionResp
 
-Type URL
+optional
+
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const URLURL URL = "url"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+type URLImageSource struct{…}
+
+Type URL
 
 URL string
 
 type URLPDFSource struct{…}
 
 Type URL
-
-Accepts one of the following:
-
-const URLURL URL = "url"
 
 URL string
 
@@ -10372,25 +16697,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -10400,23 +16717,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -10430,75 +16745,133 @@ const UsageServiceTierPriority UsageServiceTier = "priority"
 
 const UsageServiceTierBatch UsageServiceTier = "batch"
 
-type WebSearchResultBlock struct{…}
+type UserLocation struct{…}
 
-EncryptedContent string
+Type Approximate
 
-PageAge string
+City string
+
+optional
+
+The city of the user.
+
+Country string
+
+optional
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+Region string
+
+optional
+
+The region of the user.
+
+Timezone string
+
+optional
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
 
 Title string
 
-Type WebSearchResult
+The title of the document
 
-Accepts one of the following:
+Type Document
 
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
+RetrievedAt string
 
-URL string
+ISO 8601 timestamp when the content was retrieved
 
-type WebSearchResultBlockParamResp struct{…}
-
-EncryptedContent string
-
-Title string
-
-Type WebSearchResult
-
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
+Type WebFetchResult
 
 URL string
 
-PageAge stringoptional
+Fetched content URL
 
-type WebSearchTool20250305 struct{…}
+type WebFetchBlockParamResp struct{…}
 
-Name WebSearch
+Content [DocumentBlockParamResp](/docs/en/api/messages#document_block_param)
 
-Name of the tool.
-
-This is how the tool will be called by the model and in `tool_use` blocks.
+Source DocumentBlockParamSourceUnionResp
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type Base64PDFSource struct{…}
 
-Type WebSearch20250305
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+type ContentBlockSource struct{…}
+
+Content ContentBlockSourceContentUnion
 
 Accepts one of the following:
 
-const WebSearch20250305WebSearch20250305 WebSearch20250305 = "web_search_20250305"
+string
 
-AllowedDomains \[\]stringoptional
+\[\][ContentBlockSourceContentItemUnion](/docs/en/api/messages#content_block_source_content)
 
-If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+Accepts one of the following:
 
-BlockedDomains \[\]stringoptional
+type TextBlockParamResp struct{…}
 
-If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+Text string
 
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+Type Text
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -10515,83 +16888,1223 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
-MaxUses int64optional
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
+
+Accepts one of the following:
+
+type CitationCharLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndCharIndex int64
+
+StartCharIndex int64
+
+Type CharLocation
+
+type CitationPageLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndPageNumber int64
+
+StartPageNumber int64
+
+Type PageLocation
+
+type CitationContentBlockLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndBlockIndex int64
+
+StartBlockIndex int64
+
+Type ContentBlockLocation
+
+type CitationWebSearchResultLocationParamResp struct{…}
+
+CitedText string
+
+EncryptedIndex string
+
+Title string
+
+Type WebSearchResultLocation
+
+URL string
+
+type CitationSearchResultLocationParamResp struct{…}
+
+CitedText string
+
+EndBlockIndex int64
+
+SearchResultIndex int64
+
+Source string
+
+StartBlockIndex int64
+
+Title string
+
+Type SearchResultLocation
+
+type ImageBlockParamResp struct{…}
+
+Source ImageBlockParamSourceUnionResp
+
+Accepts one of the following:
+
+type Base64ImageSource struct{…}
+
+Data string
+
+MediaType Base64ImageSourceMediaType
+
+Accepts one of the following:
+
+const Base64ImageSourceMediaTypeImageJPEG Base64ImageSourceMediaType = "image/jpeg"
+
+const Base64ImageSourceMediaTypeImagePNG Base64ImageSourceMediaType = "image/png"
+
+const Base64ImageSourceMediaTypeImageGIF Base64ImageSourceMediaType = "image/gif"
+
+const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/webp"
+
+Type Base64
+
+type URLImageSource struct{…}
+
+Type URL
+
+URL string
+
+Type Image
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Type Content
+
+type URLPDFSource struct{…}
+
+Type URL
+
+URL string
+
+Type Document
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Enabled bool
+
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+RetrievedAt string
+
+optional
+
+ISO 8601 timestamp when the content was retrieved
+
+type WebFetchTool20250910 struct{…}
+
+Name WebFetch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebFetch20250910
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebFetchTool20250910AllowedCallerDirect WebFetchTool20250910AllowedCaller = "direct"
+
+const WebFetchTool20250910AllowedCallerCodeExecution20250825 WebFetchTool20250910AllowedCaller = "code_execution_20250825"
+
+const WebFetchTool20250910AllowedCallerCodeExecution20260120 WebFetchTool20250910AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+List of domains to allow fetching from
+
+BlockedDomains \[\]string
+
+optional
+
+List of domains to block fetching from
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+Enabled bool
+
+optional
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxContentTokens int64
+
+optional
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+MaxUses int64
+
+optional
 
 Maximum number of times the tool can be used in the API request.
 
-exclusiveMinimum0
+Strict bool
 
-Strict booloptional
+optional
 
 When true, guarantees schema validation on tool names and inputs
 
-UserLocation WebSearchTool20250305UserLocationoptional
+type WebFetchTool20260209 struct{…}
+
+Name WebFetch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebFetch20260209
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebFetchTool20260209AllowedCallerDirect WebFetchTool20260209AllowedCaller = "direct"
+
+const WebFetchTool20260209AllowedCallerCodeExecution20250825 WebFetchTool20260209AllowedCaller = "code_execution_20250825"
+
+const WebFetchTool20260209AllowedCallerCodeExecution20260120 WebFetchTool20260209AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+List of domains to allow fetching from
+
+BlockedDomains \[\]string
+
+optional
+
+List of domains to block fetching from
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Citations configuration for fetched documents. Citations are disabled by default.
+
+Enabled bool
+
+optional
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxContentTokens int64
+
+optional
+
+Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type WebFetchToolResultBlockParamResp struct{…}
+
+Content WebFetchToolResultBlockParamContentUnionResp
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlockParamResp struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlockParamResp struct{…}
+
+Content [DocumentBlockParamResp](/docs/en/api/messages#document_block_param)
+
+Source DocumentBlockParamSourceUnionResp
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+type ContentBlockSource struct{…}
+
+Content ContentBlockSourceContentUnion
+
+Accepts one of the following:
+
+string
+
+\[\][ContentBlockSourceContentItemUnion](/docs/en/api/messages#content_block_source_content)
+
+Accepts one of the following:
+
+type TextBlockParamResp struct{…}
+
+Text string
+
+Type Text
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations \[\][TextCitationParamUnionResp](/docs/en/api/messages#text_citation_param)
+
+optional
+
+Accepts one of the following:
+
+type CitationCharLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndCharIndex int64
+
+StartCharIndex int64
+
+Type CharLocation
+
+type CitationPageLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndPageNumber int64
+
+StartPageNumber int64
+
+Type PageLocation
+
+type CitationContentBlockLocationParamResp struct{…}
+
+CitedText string
+
+DocumentIndex int64
+
+DocumentTitle string
+
+EndBlockIndex int64
+
+StartBlockIndex int64
+
+Type ContentBlockLocation
+
+type CitationWebSearchResultLocationParamResp struct{…}
+
+CitedText string
+
+EncryptedIndex string
+
+Title string
+
+Type WebSearchResultLocation
+
+URL string
+
+type CitationSearchResultLocationParamResp struct{…}
+
+CitedText string
+
+EndBlockIndex int64
+
+SearchResultIndex int64
+
+Source string
+
+StartBlockIndex int64
+
+Title string
+
+Type SearchResultLocation
+
+type ImageBlockParamResp struct{…}
+
+Source ImageBlockParamSourceUnionResp
+
+Accepts one of the following:
+
+type Base64ImageSource struct{…}
+
+Data string
+
+MediaType Base64ImageSourceMediaType
+
+Accepts one of the following:
+
+const Base64ImageSourceMediaTypeImageJPEG Base64ImageSourceMediaType = "image/jpeg"
+
+const Base64ImageSourceMediaTypeImagePNG Base64ImageSourceMediaType = "image/png"
+
+const Base64ImageSourceMediaTypeImageGIF Base64ImageSourceMediaType = "image/gif"
+
+const Base64ImageSourceMediaTypeImageWebP Base64ImageSourceMediaType = "image/webp"
+
+Type Base64
+
+type URLImageSource struct{…}
+
+Type URL
+
+URL string
+
+Type Image
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Type Content
+
+type URLPDFSource struct{…}
+
+Type URL
+
+URL string
+
+Type Document
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Citations [CitationsConfigParamResp](/docs/en/api/messages#citations_config_param)
+
+optional
+
+Enabled bool
+
+optional
+
+Context string
+
+optional
+
+Title string
+
+optional
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+RetrievedAt string
+
+optional
+
+ISO 8601 timestamp when the content was retrieved
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+Caller WebFetchToolResultBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchToolResultErrorBlockParamResp struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchToolResultErrorCode string
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+type WebSearchResultBlock struct{…}
+
+EncryptedContent string
+
+PageAge string
+
+Title string
+
+Type WebSearchResult
+
+URL string
+
+type WebSearchResultBlockParamResp struct{…}
+
+EncryptedContent string
+
+Title string
+
+Type WebSearchResult
+
+URL string
+
+PageAge string
+
+optional
+
+type WebSearchTool20250305 struct{…}
+
+Name WebSearch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebSearch20250305
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebSearchTool20250305AllowedCallerDirect WebSearchTool20250305AllowedCaller = "direct"
+
+const WebSearchTool20250305AllowedCallerCodeExecution20250825 WebSearchTool20250305AllowedCaller = "code_execution_20250825"
+
+const WebSearchTool20250305AllowedCallerCodeExecution20260120 WebSearchTool20250305AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+BlockedDomains \[\]string
+
+optional
+
+If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+UserLocation [UserLocation](/docs/en/api/messages#user_location)
+
+optional
 
 Parameters for the user's location. Used to provide more relevant search results.
 
 Type Approximate
 
-Accepts one of the following:
+City string
 
-const ApproximateApproximate Approximate = "approximate"
-
-City stringoptional
+optional
 
 The city of the user.
 
-maxLength255
+Country string
 
-minLength1
-
-Country stringoptional
+optional
 
 The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
 
-maxLength2
+Region string
 
-minLength2
-
-Region stringoptional
+optional
 
 The region of the user.
 
-maxLength255
+Timezone string
 
-minLength1
-
-Timezone stringoptional
+optional
 
 The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 
-maxLength255
+type WebSearchTool20260209 struct{…}
 
-minLength1
+Name WebSearch
+
+Name of the tool.
+
+This is how the tool will be called by the model and in `tool_use` blocks.
+
+Type WebSearch20260209
+
+AllowedCallers \[\]string
+
+optional
+
+Accepts one of the following:
+
+const WebSearchTool20260209AllowedCallerDirect WebSearchTool20260209AllowedCaller = "direct"
+
+const WebSearchTool20260209AllowedCallerCodeExecution20250825 WebSearchTool20260209AllowedCaller = "code_execution_20250825"
+
+const WebSearchTool20260209AllowedCallerCodeExecution20260120 WebSearchTool20260209AllowedCaller = "code_execution_20260120"
+
+AllowedDomains \[\]string
+
+optional
+
+If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+BlockedDomains \[\]string
+
+optional
+
+If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
+
+optional
+
+Create a cache control breakpoint at this content block.
+
+Type Ephemeral
+
+TTL CacheControlEphemeralTTL
+
+optional
+
+The time-to-live for the cache control breakpoint.
+
+This may be one the following values:
+
+- `5m`: 5 minutes
+- `1h`: 1 hour
+
+Defaults to `5m`.
+
+Accepts one of the following:
+
+const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
+
+const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
+
+DeferLoading bool
+
+optional
+
+If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+MaxUses int64
+
+optional
+
+Maximum number of times the tool can be used in the API request.
+
+Strict bool
+
+optional
+
+When true, guarantees schema validation on tool names and inputs
+
+UserLocation [UserLocation](/docs/en/api/messages#user_location)
+
+optional
+
+Parameters for the user's location. Used to provide more relevant search results.
+
+Type Approximate
+
+City string
+
+optional
+
+The city of the user.
+
+Country string
+
+optional
+
+The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+Region string
+
+optional
+
+The region of the user.
+
+Timezone string
+
+optional
+
+The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 
 type WebSearchToolRequestError struct{…}
 
-ErrorCode WebSearchToolRequestErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolRequestErrorErrorCodeInvalidToolInput WebSearchToolRequestErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolRequestErrorErrorCodeUnavailable WebSearchToolRequestErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolRequestErrorErrorCodeMaxUsesExceeded WebSearchToolRequestErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolRequestErrorErrorCodeTooManyRequests WebSearchToolRequestErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolRequestErrorErrorCodeQueryTooLong WebSearchToolRequestErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolRequestErrorErrorCodeRequestTooLarge WebSearchToolRequestErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -10599,27 +18112,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -10630,10 +18139,6 @@ PageAge string
 Title string
 
 Type WebSearchResult
-
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
 
 URL string
 
@@ -10641,37 +18146,29 @@ ToolUseID string
 
 Type WebSearchToolResult
 
-Accepts one of the following:
-
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
-
 type WebSearchToolResultBlockContentUnion interface{…}
 
 Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -10682,10 +18179,6 @@ PageAge string
 Title string
 
 Type WebSearchResult
-
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
 
 URL string
 
@@ -10703,57 +18196,47 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
-PageAge stringoptional
+PageAge string
+
+optional
 
 type WebSearchToolRequestError struct{…}
 
-ErrorCode WebSearchToolRequestErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolRequestErrorErrorCodeInvalidToolInput WebSearchToolRequestErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolRequestErrorErrorCodeUnavailable WebSearchToolRequestErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolRequestErrorErrorCodeMaxUsesExceeded WebSearchToolRequestErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolRequestErrorErrorCodeTooManyRequests WebSearchToolRequestErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolRequestErrorErrorCodeQueryTooLong WebSearchToolRequestErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolRequestErrorErrorCodeRequestTooLarge WebSearchToolRequestErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 ToolUseID string
 
 Type WebSearchToolResult
 
-Accepts one of the following:
+CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
-
-CacheControl [CacheControlEphemeral](/docs/en/api/messages#cache_control_ephemeral)optional
+optional
 
 Create a cache control breakpoint at this content block.
 
 Type Ephemeral
 
-Accepts one of the following:
+TTL CacheControlEphemeralTTL
 
-const EphemeralEphemeral Ephemeral = "ephemeral"
-
-TTL CacheControlEphemeralTTLoptional
+optional
 
 The time-to-live for the cache control breakpoint.
 
@@ -10770,6 +18253,34 @@ const CacheControlEphemeralTTLTTL5m CacheControlEphemeralTTL = "5m"
 
 const CacheControlEphemeralTTLTTL1h CacheControlEphemeralTTL = "1h"
 
+Caller WebSearchToolResultBlockParamCallerUnionResp
+
+optional
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
 type WebSearchToolResultBlockParamContentUnionResp interface{…}
 
 Accepts one of the following:
@@ -10782,61 +18293,67 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
-PageAge stringoptional
+PageAge string
+
+optional
 
 type WebSearchToolRequestError struct{…}
 
-ErrorCode WebSearchToolRequestErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolRequestErrorErrorCodeInvalidToolInput WebSearchToolRequestErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolRequestErrorErrorCodeUnavailable WebSearchToolRequestErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolRequestErrorErrorCodeMaxUsesExceeded WebSearchToolRequestErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolRequestErrorErrorCodeTooManyRequests WebSearchToolRequestErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolRequestErrorErrorCodeQueryTooLong WebSearchToolRequestErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolRequestErrorErrorCodeRequestTooLarge WebSearchToolRequestErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
 
+type WebSearchToolResultErrorCode string
+
 Accepts one of the following:
 
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
+
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
+
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
+
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
+
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
+
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 #### MessagesBatches
 
@@ -10844,37 +18361,37 @@ const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError 
 
 client.Messages.Batches.New(ctx, body) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)
 
-post/v1/messages/batches
+POST/v1/messages/batches
 
 ##### [Retrieve a Message Batch](/docs/en/api/messages/batches/retrieve)
 
 client.Messages.Batches.Get(ctx, messageBatchID) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)
 
-get/v1/messages/batches/{message_batch_id}
+GET/v1/messages/batches/{message_batch_id}
 
 ##### [List Message Batches](/docs/en/api/messages/batches/list)
 
 client.Messages.Batches.List(ctx, query) (\*Page\[[MessageBatch](/docs/en/api/messages#message_batch)\], error)
 
-get/v1/messages/batches
+GET/v1/messages/batches
 
 ##### [Cancel a Message Batch](/docs/en/api/messages/batches/cancel)
 
 client.Messages.Batches.Cancel(ctx, messageBatchID) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)
 
-post/v1/messages/batches/{message_batch_id}/cancel
+POST/v1/messages/batches/{message_batch_id}/cancel
 
 ##### [Delete a Message Batch](/docs/en/api/messages/batches/delete)
 
 client.Messages.Batches.Delete(ctx, messageBatchID) (\*[DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch), error)
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 ##### [Retrieve Message Batch results](/docs/en/api/messages/batches/results)
 
 client.Messages.Batches.Results(ctx, messageBatchID) (\*[MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response), error)
 
-get/v1/messages/batches/{message_batch_id}/results
+GET/v1/messages/batches/{message_batch_id}/results
 
 ##### ModelsExpand Collapse 
 
@@ -10890,10 +18407,6 @@ Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
 
-Accepts one of the following:
-
-const MessageBatchDeletedMessageBatchDeleted MessageBatchDeleted = "message_batch_deleted"
-
 type MessageBatch struct{…}
 
 ID string
@@ -10906,19 +18419,13 @@ ArchivedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
 
-formatdate-time
-
 CancelInitiatedAt Time
 
 RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
 
-formatdate-time
-
 CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch was created.
-
-formatdate-time
 
 EndedAt Time
 
@@ -10931,8 +18438,6 @@ formatdate-time
 ExpiresAt Time
 
 RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
-
-formatdate-time
 
 ProcessingStatus MessageBatchProcessingStatus
 
@@ -10992,17 +18497,9 @@ Object type.
 
 For Message Batches, this is always `"message_batch"`.
 
-Accepts one of the following:
-
-const MessageBatchMessageBatch MessageBatch = "message_batch"
-
 type MessageBatchCanceledResult struct{…}
 
 Type Canceled
-
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
 
 type MessageBatchErroredResult struct{…}
 
@@ -11018,19 +18515,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type AuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BillingError struct{…}
 
@@ -11038,19 +18527,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type PermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type NotFoundError struct{…}
 
@@ -11058,19 +18539,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type RateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type GatewayTimeoutError struct{…}
 
@@ -11078,19 +18551,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type APIErrorObject struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type OverloadedError struct{…}
 
@@ -11098,31 +18563,15 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type MessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type MessageBatchIndividualResponse struct{…}
 
@@ -11151,6 +18600,18 @@ ID string
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
 
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
@@ -11209,10 +18670,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -11228,10 +18685,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -11249,10 +18702,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -11262,10 +18711,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -11285,17 +18730,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -11305,23 +18742,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -11329,29 +18784,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -11359,27 +18870,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -11391,19 +18898,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -11424,6 +19253,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -11513,10 +19346,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -11558,10 +19387,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -11582,25 +19407,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -11610,23 +19427,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -11642,10 +19457,6 @@ const UsageServiceTierBatch UsageServiceTier = "batch"
 
 Type Succeeded
 
-Accepts one of the following:
-
-const SucceededSucceeded Succeeded = "succeeded"
-
 type MessageBatchErroredResult struct{…}
 
 Error [ErrorResponse](/docs/en/api/$shared#error_response)
@@ -11660,19 +19471,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type AuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BillingError struct{…}
 
@@ -11680,19 +19483,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type PermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type NotFoundError struct{…}
 
@@ -11700,19 +19495,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type RateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type GatewayTimeoutError struct{…}
 
@@ -11720,19 +19507,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type APIErrorObject struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type OverloadedError struct{…}
 
@@ -11740,39 +19519,19 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type MessageBatchCanceledResult struct{…}
 
 Type Canceled
 
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
-
 type MessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type MessageBatchRequestCounts struct{…}
 
@@ -11822,6 +19581,18 @@ Unique object identifier.
 
 The format and length of IDs may change over time.
 
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
+
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
 Content generated by the model.
@@ -11879,10 +19650,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -11898,10 +19665,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -11919,10 +19682,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -11932,10 +19691,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -11955,17 +19710,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -11975,23 +19722,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -11999,29 +19764,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -12029,27 +19850,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -12061,19 +19878,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -12094,6 +20233,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -12183,10 +20326,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -12228,10 +20367,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -12252,25 +20387,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -12280,23 +20407,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -12311,10 +20436,6 @@ const UsageServiceTierPriority UsageServiceTier = "priority"
 const UsageServiceTierBatch UsageServiceTier = "batch"
 
 Type Succeeded
-
-Accepts one of the following:
-
-const SucceededSucceeded Succeeded = "succeeded"
 
 type MessageBatchErroredResult struct{…}
 
@@ -12330,19 +20451,11 @@ Message string
 
 Type InvalidRequestError
 
-Accepts one of the following:
-
-const InvalidRequestErrorInvalidRequestError InvalidRequestError = "invalid_request_error"
-
 type AuthenticationError struct{…}
 
 Message string
 
 Type AuthenticationError
-
-Accepts one of the following:
-
-const AuthenticationErrorAuthenticationError AuthenticationError = "authentication_error"
 
 type BillingError struct{…}
 
@@ -12350,19 +20463,11 @@ Message string
 
 Type BillingError
 
-Accepts one of the following:
-
-const BillingErrorBillingError BillingError = "billing_error"
-
 type PermissionError struct{…}
 
 Message string
 
 Type PermissionError
-
-Accepts one of the following:
-
-const PermissionErrorPermissionError PermissionError = "permission_error"
 
 type NotFoundError struct{…}
 
@@ -12370,19 +20475,11 @@ Message string
 
 Type NotFoundError
 
-Accepts one of the following:
-
-const NotFoundErrorNotFoundError NotFoundError = "not_found_error"
-
 type RateLimitError struct{…}
 
 Message string
 
 Type RateLimitError
-
-Accepts one of the following:
-
-const RateLimitErrorRateLimitError RateLimitError = "rate_limit_error"
 
 type GatewayTimeoutError struct{…}
 
@@ -12390,19 +20487,11 @@ Message string
 
 Type TimeoutError
 
-Accepts one of the following:
-
-const TimeoutErrorTimeoutError TimeoutError = "timeout_error"
-
 type APIErrorObject struct{…}
 
 Message string
 
 Type APIError
-
-Accepts one of the following:
-
-const APIErrorAPIError APIError = "api_error"
 
 type OverloadedError struct{…}
 
@@ -12410,39 +20499,19 @@ Message string
 
 Type OverloadedError
 
-Accepts one of the following:
-
-const OverloadedErrorOverloadedError OverloadedError = "overloaded_error"
-
 RequestID string
 
 Type Error
 
-Accepts one of the following:
-
-const ErrorError Error = "error"
-
 Type Errored
-
-Accepts one of the following:
-
-const ErroredErrored Errored = "errored"
 
 type MessageBatchCanceledResult struct{…}
 
 Type Canceled
 
-Accepts one of the following:
-
-const CanceledCanceled Canceled = "canceled"
-
 type MessageBatchExpiredResult struct{…}
 
 Type Expired
-
-Accepts one of the following:
-
-const ExpiredExpired Expired = "expired"
 
 type MessageBatchSucceededResult struct{…}
 
@@ -12453,6 +20522,18 @@ ID string
 Unique object identifier.
 
 The format and length of IDs may change over time.
+
+Container [Container](/docs/en/api/messages#container)
+
+Information about the container used in the request (for the code execution tool)
+
+ID string
+
+Identifier for the container used in this request
+
+ExpiresAt Time
+
+The time at which the container will expire.
 
 Content \[\][ContentBlockUnion](/docs/en/api/messages#content_block)
 
@@ -12511,10 +20592,6 @@ StartCharIndex int64
 
 Type CharLocation
 
-Accepts one of the following:
-
-const CharLocationCharLocation CharLocation = "char_location"
-
 type CitationPageLocation struct{…}
 
 CitedText string
@@ -12530,10 +20607,6 @@ FileID string
 StartPageNumber int64
 
 Type PageLocation
-
-Accepts one of the following:
-
-const PageLocationPageLocation PageLocation = "page_location"
 
 type CitationContentBlockLocation struct{…}
 
@@ -12551,10 +20624,6 @@ StartBlockIndex int64
 
 Type ContentBlockLocation
 
-Accepts one of the following:
-
-const ContentBlockLocationContentBlockLocation ContentBlockLocation = "content_block_location"
-
 type CitationsWebSearchResultLocation struct{…}
 
 CitedText string
@@ -12564,10 +20633,6 @@ EncryptedIndex string
 Title string
 
 Type WebSearchResultLocation
-
-Accepts one of the following:
-
-const WebSearchResultLocationWebSearchResultLocation WebSearchResultLocation = "web_search_result_location"
 
 URL string
 
@@ -12587,17 +20652,9 @@ Title string
 
 Type SearchResultLocation
 
-Accepts one of the following:
-
-const SearchResultLocationSearchResultLocation SearchResultLocation = "search_result_location"
-
 Text string
 
 Type Text
-
-Accepts one of the following:
-
-const TextText Text = "text"
 
 type ThinkingBlock struct{…}
 
@@ -12607,23 +20664,41 @@ Thinking string
 
 Type Thinking
 
-Accepts one of the following:
-
-const ThinkingThinking Thinking = "thinking"
-
 type RedactedThinkingBlock struct{…}
 
 Data string
 
 Type RedactedThinking
 
-Accepts one of the following:
-
-const RedactedThinkingRedactedThinking RedactedThinking = "redacted_thinking"
-
 type ToolUseBlock struct{…}
 
 ID string
+
+Caller ToolUseBlockCallerUnion
+
+Tool invocation directly from the model.
+
+Accepts one of the following:
+
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Input map\[string, any\]
 
@@ -12631,29 +20706,85 @@ Name string
 
 Type ToolUse
 
-Accepts one of the following:
-
-const ToolUseToolUse ToolUse = "tool_use"
-
 type ServerToolUseBlock struct{…}
 
 ID string
 
-Input map\[string, any\]
+Caller ServerToolUseBlockCallerUnion
 
-Name WebSearch
+Tool invocation directly from the model.
 
 Accepts one of the following:
 
-const WebSearchWebSearch WebSearch = "web_search"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Input map\[string, any\]
+
+Name ServerToolUseBlockName
+
+Accepts one of the following:
+
+const ServerToolUseBlockNameWebSearch ServerToolUseBlockName = "web_search"
+
+const ServerToolUseBlockNameWebFetch ServerToolUseBlockName = "web_fetch"
+
+const ServerToolUseBlockNameCodeExecution ServerToolUseBlockName = "code_execution"
+
+const ServerToolUseBlockNameBashCodeExecution ServerToolUseBlockName = "bash_code_execution"
+
+const ServerToolUseBlockNameTextEditorCodeExecution ServerToolUseBlockName = "text_editor_code_execution"
+
+const ServerToolUseBlockNameToolSearchToolRegex ServerToolUseBlockName = "tool_search_tool_regex"
+
+const ServerToolUseBlockNameToolSearchToolBm25 ServerToolUseBlockName = "tool_search_tool_bm25"
 
 Type ServerToolUse
 
+type WebSearchToolResultBlock struct{…}
+
+Caller WebSearchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const ServerToolUseServerToolUse ServerToolUse = "server_tool_use"
+type DirectCaller struct{…}
 
-type WebSearchToolResultBlock struct{…}
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
 
 Content [WebSearchToolResultBlockContentUnion](/docs/en/api/messages#web_search_tool_result_block_content)
 
@@ -12661,27 +20792,23 @@ Accepts one of the following:
 
 type WebSearchToolResultError struct{…}
 
-ErrorCode WebSearchToolResultErrorErrorCode
+ErrorCode [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code)
 
 Accepts one of the following:
 
-const WebSearchToolResultErrorErrorCodeInvalidToolInput WebSearchToolResultErrorErrorCode = "invalid_tool_input"
+const WebSearchToolResultErrorCodeInvalidToolInput [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "invalid_tool_input"
 
-const WebSearchToolResultErrorErrorCodeUnavailable WebSearchToolResultErrorErrorCode = "unavailable"
+const WebSearchToolResultErrorCodeUnavailable [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "unavailable"
 
-const WebSearchToolResultErrorErrorCodeMaxUsesExceeded WebSearchToolResultErrorErrorCode = "max_uses_exceeded"
+const WebSearchToolResultErrorCodeMaxUsesExceeded [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "max_uses_exceeded"
 
-const WebSearchToolResultErrorErrorCodeTooManyRequests WebSearchToolResultErrorErrorCode = "too_many_requests"
+const WebSearchToolResultErrorCodeTooManyRequests [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "too_many_requests"
 
-const WebSearchToolResultErrorErrorCodeQueryTooLong WebSearchToolResultErrorErrorCode = "query_too_long"
+const WebSearchToolResultErrorCodeQueryTooLong [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "query_too_long"
 
-const WebSearchToolResultErrorErrorCodeRequestTooLarge WebSearchToolResultErrorErrorCode = "request_too_large"
+const WebSearchToolResultErrorCodeRequestTooLarge [WebSearchToolResultErrorCode](/docs/en/api/messages#web_search_tool_result_error_code) = "request_too_large"
 
 Type WebSearchToolResultError
-
-Accepts one of the following:
-
-const WebSearchToolResultErrorWebSearchToolResultError WebSearchToolResultError = "web_search_tool_result_error"
 
 type WebSearchToolResultBlockContentArray \[\][WebSearchResultBlock](/docs/en/api/messages#web_search_result_block)
 
@@ -12693,19 +20820,341 @@ Title string
 
 Type WebSearchResult
 
-Accepts one of the following:
-
-const WebSearchResultWebSearchResult WebSearchResult = "web_search_result"
-
 URL string
 
 ToolUseID string
 
 Type WebSearchToolResult
 
+type WebFetchToolResultBlock struct{…}
+
+Caller WebFetchToolResultBlockCallerUnion
+
+Tool invocation directly from the model.
+
 Accepts one of the following:
 
-const WebSearchToolResultWebSearchToolResult WebSearchToolResult = "web_search_tool_result"
+type DirectCaller struct{…}
+
+Tool invocation directly from the model.
+
+Type Direct
+
+type ServerToolCaller struct{…}
+
+Tool invocation generated by a server-side tool.
+
+ToolID string
+
+Type CodeExecution20250825
+
+type ServerToolCaller20260120 struct{…}
+
+ToolID string
+
+Type CodeExecution20260120
+
+Content WebFetchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type WebFetchToolResultErrorBlock struct{…}
+
+ErrorCode [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code)
+
+Accepts one of the following:
+
+const WebFetchToolResultErrorCodeInvalidToolInput [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "invalid_tool_input"
+
+const WebFetchToolResultErrorCodeURLTooLong [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_too_long"
+
+const WebFetchToolResultErrorCodeURLNotAllowed [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_allowed"
+
+const WebFetchToolResultErrorCodeURLNotAccessible [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "url_not_accessible"
+
+const WebFetchToolResultErrorCodeUnsupportedContentType [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unsupported_content_type"
+
+const WebFetchToolResultErrorCodeTooManyRequests [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "too_many_requests"
+
+const WebFetchToolResultErrorCodeMaxUsesExceeded [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "max_uses_exceeded"
+
+const WebFetchToolResultErrorCodeUnavailable [WebFetchToolResultErrorCode](/docs/en/api/messages#web_fetch_tool_result_error_code) = "unavailable"
+
+Type WebFetchToolResultError
+
+type WebFetchBlock struct{…}
+
+Content [DocumentBlock](/docs/en/api/messages#document_block)
+
+Citations [CitationsConfig](/docs/en/api/messages#citations_config)
+
+Citation configuration for the document
+
+Enabled bool
+
+Source DocumentBlockSourceUnion
+
+Accepts one of the following:
+
+type Base64PDFSource struct{…}
+
+Data string
+
+MediaType ApplicationPDF
+
+Type Base64
+
+type PlainTextSource struct{…}
+
+Data string
+
+MediaType TextPlain
+
+Type Text
+
+Title string
+
+The title of the document
+
+Type Document
+
+RetrievedAt string
+
+ISO 8601 timestamp when the content was retrieved
+
+Type WebFetchResult
+
+URL string
+
+Fetched content URL
+
+ToolUseID string
+
+Type WebFetchToolResult
+
+type CodeExecutionToolResultBlock struct{…}
+
+Content [CodeExecutionToolResultBlockContentUnion](/docs/en/api/messages#code_execution_tool_result_block_content)
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Accepts one of the following:
+
+type CodeExecutionToolResultError struct{…}
+
+ErrorCode [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const CodeExecutionToolResultErrorCodeInvalidToolInput [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const CodeExecutionToolResultErrorCodeUnavailable [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "unavailable"
+
+const CodeExecutionToolResultErrorCodeTooManyRequests [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "too_many_requests"
+
+const CodeExecutionToolResultErrorCodeExecutionTimeExceeded [CodeExecutionToolResultErrorCode](/docs/en/api/messages#code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+Type CodeExecutionToolResultError
+
+type CodeExecutionResultBlock struct{…}
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type CodeExecutionResult
+
+type EncryptedCodeExecutionResultBlock struct{…}
+
+Code execution result with encrypted stdout for PFC + web_search results.
+
+Content \[\][CodeExecutionOutputBlock](/docs/en/api/messages#code_execution_output_block)
+
+FileID string
+
+Type CodeExecutionOutput
+
+EncryptedStdout string
+
+ReturnCode int64
+
+Stderr string
+
+Type EncryptedCodeExecutionResult
+
+ToolUseID string
+
+Type CodeExecutionToolResult
+
+type BashCodeExecutionToolResultBlock struct{…}
+
+Content BashCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type BashCodeExecutionToolResultError struct{…}
+
+ErrorCode [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const BashCodeExecutionToolResultErrorCodeInvalidToolInput [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const BashCodeExecutionToolResultErrorCodeUnavailable [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "unavailable"
+
+const BashCodeExecutionToolResultErrorCodeTooManyRequests [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "too_many_requests"
+
+const BashCodeExecutionToolResultErrorCodeExecutionTimeExceeded [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const BashCodeExecutionToolResultErrorCodeOutputFileTooLarge [BashCodeExecutionToolResultErrorCode](/docs/en/api/messages#bash_code_execution_tool_result_error_code) = "output_file_too_large"
+
+Type BashCodeExecutionToolResultError
+
+type BashCodeExecutionResultBlock struct{…}
+
+Content \[\][BashCodeExecutionOutputBlock](/docs/en/api/messages#bash_code_execution_output_block)
+
+FileID string
+
+Type BashCodeExecutionOutput
+
+ReturnCode int64
+
+Stderr string
+
+Stdout string
+
+Type BashCodeExecutionResult
+
+ToolUseID string
+
+Type BashCodeExecutionToolResult
+
+type TextEditorCodeExecutionToolResultBlock struct{…}
+
+Content TextEditorCodeExecutionToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type TextEditorCodeExecutionToolResultError struct{…}
+
+ErrorCode [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code)
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionToolResultErrorCodeInvalidToolInput [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "invalid_tool_input"
+
+const TextEditorCodeExecutionToolResultErrorCodeUnavailable [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "unavailable"
+
+const TextEditorCodeExecutionToolResultErrorCodeTooManyRequests [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "too_many_requests"
+
+const TextEditorCodeExecutionToolResultErrorCodeExecutionTimeExceeded [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "execution_time_exceeded"
+
+const TextEditorCodeExecutionToolResultErrorCodeFileNotFound [TextEditorCodeExecutionToolResultErrorCode](/docs/en/api/messages#text_editor_code_execution_tool_result_error_code) = "file_not_found"
+
+ErrorMessage string
+
+Type TextEditorCodeExecutionToolResultError
+
+type TextEditorCodeExecutionViewResultBlock struct{…}
+
+Content string
+
+FileType TextEditorCodeExecutionViewResultBlockFileType
+
+Accepts one of the following:
+
+const TextEditorCodeExecutionViewResultBlockFileTypeText TextEditorCodeExecutionViewResultBlockFileType = "text"
+
+const TextEditorCodeExecutionViewResultBlockFileTypeImage TextEditorCodeExecutionViewResultBlockFileType = "image"
+
+const TextEditorCodeExecutionViewResultBlockFileTypePDF TextEditorCodeExecutionViewResultBlockFileType = "pdf"
+
+NumLines int64
+
+StartLine int64
+
+TotalLines int64
+
+Type TextEditorCodeExecutionViewResult
+
+type TextEditorCodeExecutionCreateResultBlock struct{…}
+
+IsFileUpdate bool
+
+Type TextEditorCodeExecutionCreateResult
+
+type TextEditorCodeExecutionStrReplaceResultBlock struct{…}
+
+Lines \[\]string
+
+NewLines int64
+
+NewStart int64
+
+OldLines int64
+
+OldStart int64
+
+Type TextEditorCodeExecutionStrReplaceResult
+
+ToolUseID string
+
+Type TextEditorCodeExecutionToolResult
+
+type ToolSearchToolResultBlock struct{…}
+
+Content ToolSearchToolResultBlockContentUnion
+
+Accepts one of the following:
+
+type ToolSearchToolResultError struct{…}
+
+ErrorCode [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code)
+
+Accepts one of the following:
+
+const ToolSearchToolResultErrorCodeInvalidToolInput [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "invalid_tool_input"
+
+const ToolSearchToolResultErrorCodeUnavailable [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "unavailable"
+
+const ToolSearchToolResultErrorCodeTooManyRequests [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "too_many_requests"
+
+const ToolSearchToolResultErrorCodeExecutionTimeExceeded [ToolSearchToolResultErrorCode](/docs/en/api/messages#tool_search_tool_result_error_code) = "execution_time_exceeded"
+
+ErrorMessage string
+
+Type ToolSearchToolResultError
+
+type ToolSearchToolSearchResultBlock struct{…}
+
+ToolReferences \[\][ToolReferenceBlock](/docs/en/api/messages#tool_reference_block)
+
+ToolName string
+
+Type ToolReference
+
+Type ToolSearchToolSearchResult
+
+ToolUseID string
+
+Type ToolSearchToolResult
+
+type ContainerUploadBlock struct{…}
+
+Response model for a file uploaded to the container.
+
+FileID string
+
+Type ContainerUpload
 
 Model Model
 
@@ -12726,6 +21175,10 @@ Accepts one of the following:
 const ModelClaudeOpus4_6 Model = "claude-opus-4-6"
 
 Most intelligent model for building agents and coding
+
+const ModelClaudeSonnet4_6 Model = "claude-sonnet-4-6"
+
+Frontier intelligence at scale — built for coding, agents, and enterprise workflows
 
 const ModelClaudeOpus4_5_20251101 Model = "claude-opus-4-5-20251101"
 
@@ -12815,10 +21268,6 @@ Conversational role of the generated message.
 
 This will always be `"assistant"`.
 
-Accepts one of the following:
-
-const AssistantAssistant Assistant = "assistant"
-
 StopReason [StopReason](/docs/en/api/messages#stop_reason)
 
 The reason that we stopped.
@@ -12860,10 +21309,6 @@ Object type.
 
 For Messages, this is always `"message"`.
 
-Accepts one of the following:
-
-const MessageMessage Message = "message"
-
 Usage [Usage](/docs/en/api/messages#usage)
 
 Billing and rate-limit usage.
@@ -12884,25 +21329,17 @@ Ephemeral1hInputTokens int64
 
 The number of input tokens used to create the 1 hour cache entry.
 
-minimum0
-
 Ephemeral5mInputTokens int64
 
 The number of input tokens used to create the 5 minute cache entry.
-
-minimum0
 
 CacheCreationInputTokens int64
 
 The number of input tokens used to create the cache entry.
 
-minimum0
-
 CacheReadInputTokens int64
 
 The number of input tokens read from the cache.
-
-minimum0
 
 InferenceGeo string
 
@@ -12912,23 +21349,21 @@ InputTokens int64
 
 The number of input tokens which were used.
 
-minimum0
-
 OutputTokens int64
 
 The number of output tokens which were used.
-
-minimum0
 
 ServerToolUse [ServerToolUsage](/docs/en/api/messages#server_tool_usage)
 
 The number of server tool requests.
 
+WebFetchRequests int64
+
+The number of web fetch tool requests.
+
 WebSearchRequests int64
 
 The number of web search tool requests.
-
-minimum0
 
 ServiceTier UsageServiceTier
 
@@ -12943,10 +21378,6 @@ const UsageServiceTierPriority UsageServiceTier = "priority"
 const UsageServiceTierBatch UsageServiceTier = "batch"
 
 Type Succeeded
-
-Accepts one of the following:
-
-const SucceededSucceeded Succeeded = "succeeded"
 
 [](/docs)
 

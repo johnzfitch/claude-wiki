@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:14Z"
+fetched_at: "2026-02-22T14:26:57Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/update"
 title: "Update Workspace Member - Claude API Reference"
 ---
@@ -9,7 +9,7 @@ Copy page
 
 # Update Workspace Member
 
-post/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 Update Workspace Member
 
@@ -23,7 +23,7 @@ user_id: string
 
 ID of the User.
 
-##### Body ParametersExpand Collapse 
+##### Body ParametersJSONExpand Collapse 
 
 workspace_role: "workspace_user" or "workspace_developer" or "workspace_admin" or "workspace_billing"
 
@@ -48,10 +48,6 @@ type: "workspace_member"
 Object type.
 
 For Workspace Members, this is always `"workspace_member"`.
-
-Accepts one of the following:
-
-"workspace_member"
 
 user_id: string
 
@@ -87,29 +83,7 @@ curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/members
         }'
 ```
 
-Response 200
-
-``` shiki
-{
-  "type": "workspace_member",
-  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
-  "workspace_role": "workspace_user"
-}
-```
-
 ##### Returns Examples
-
-Response 200
-
-``` shiki
-{
-  "type": "workspace_member",
-  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
-  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
-  "workspace_role": "workspace_user"
-}
-```
 
 [](/docs)
 

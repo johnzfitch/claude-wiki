@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-08T20:52:08Z"
+fetched_at: "2026-02-13T09:23:39Z"
 source_url: "https://support.claude.com/en/articles/8114531-i-created-a-claude-console-organization-how-do-i-start-using-the-claude-api"
 title: "I created a Claude Console organization - how do I start using the Claude API? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ I created a Claude Console organization - how do I start using the Claude API?
 
 # I created a Claude Console organization - how do I start using the Claude API?
 
-Updated yesterday
+Updated this week
 
 To use the Claude API and Workbench, add usage credits to your organization's balance. You’ll need to fill out some additional information about your organization and use case. Then, you’ll enter your payment details and fund your account.
 

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-10T10:49:39Z"
+fetched_at: "2026-02-23T00:45:08Z"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 title: "What is the Team plan? | Claude Help Center"
 ---
@@ -133,7 +133,7 @@ Prices shown are for US customers and exclude applicable taxes. Pricing, currenc
 
 For more details on billing, see **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)**
 
-Team plans support up to 75 seats. If your organization needs more than 75 seats, consider the **[Enterprise plan](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)**.
+Team plans support up to 150 seats. If your organization needs more than 150 seats, you can upgrade to the **[Enterprise plan](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)**. The flow for Team plans to upgrade to self-serve Enterprise isn't supported at this time, so if you are interested in upgrading, reach out to **[our Sales team](https://claude.com/contact-sales)**.
 
 ## 
 
@@ -172,21 +172,21 @@ Related Articles
 
 What is the Enterprise plan?
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
+[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
 
-Using Claude Code with your Team or Enterprise plan
+How am I billed for my Enterprise plan?
 
-[](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans)
+[](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan)
 
-Purchasing and managing seats on Team plans
+Use Claude Code with your Team or Enterprise plan
 
 [](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
 
-Purchasing and managing seats on Enterprise plans
+Purchase and manage seats on Enterprise plans
 
 Did this answer your question?
 

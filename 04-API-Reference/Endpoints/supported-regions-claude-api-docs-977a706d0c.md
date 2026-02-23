@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:17Z"
+fetched_at: "2026-02-22T13:19:36Z"
 source_url: "https://platform.claude.com/docs/en/api/supported-regions"
 title: "Supported regions - Claude API Docs"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-10T10:49:17Z"
+fetched_at: "2026-02-23T00:45:25Z"
 source_url: "https://support.claude.com/en/articles/10389539-using-the-google-docs-integration"
 title: "Using the Google Docs integration | Claude Help Center"
 ---

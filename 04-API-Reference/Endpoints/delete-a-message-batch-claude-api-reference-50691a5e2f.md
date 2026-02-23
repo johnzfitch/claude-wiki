@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:08:57Z"
+fetched_at: "2026-02-22T13:48:18Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 [BetaDeletedMessageBatch](/docs/en/api/beta#beta_deleted_message_batch) beta().messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-delete/v1/messages/batches/{message_batch_id}
+DELETE/v1/messages/batches/{message_batch_id}
 
 Delete a Message Batch.
 
@@ -71,6 +71,8 @@ MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-
 
 SKILLS_2025_10_02("skills-2025-10-02")
 
+FAST_MODE_2026_02_01("fast-mode-2026-02-01")
+
 ##### ReturnsExpand Collapse 
 
 class BetaDeletedMessageBatch:
@@ -79,15 +81,13 @@ String id
 
 ID of the Message Batch.
 
-JsonValue; type "message_batch_deleted"constant"message_batch_deleted"constant
+JsonValue; type "message_batch_deleted"constant
+
+"message_batch_deleted"constant
 
 Deleted object type.
 
 For Message Batches, this is always `"message_batch_deleted"`.
-
-Accepts one of the following:
-
-MESSAGE_BATCH_DELETED("message_batch_deleted")
 
 Delete a Message Batch
 

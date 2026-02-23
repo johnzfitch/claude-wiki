@@ -1,11 +1,11 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:04:13Z"
+fetched_at: "2026-02-22T10:58:37Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/streaming"
 title: "Streaming Messages - Claude API Docs"
 ---
 
-Capabilities
+Model capabilities
 
 # Streaming Messages
 
@@ -19,7 +19,7 @@ When creating a Message, you can set `"stream": true` to incrementally stream th
 
 Streaming with SDKs
 
-Our [Python](https://github.com/anthropics/anthropic-sdk-python) and [TypeScript](https://github.com/anthropics/anthropic-sdk-typescript) SDKs offer multiple ways of streaming. The Python SDK allows both sync and async streams. See the documentation in each SDK for details.
+The [Python](https://github.com/anthropics/anthropic-sdk-python) and [TypeScript](https://github.com/anthropics/anthropic-sdk-typescript) SDKs offer multiple ways of streaming. The Python SDK allows both sync and async streams. See the documentation in each SDK for details.
 
 Python
 
@@ -33,15 +33,15 @@ with client.messages.stream(
     messages=[{"role": "user", "content": "Hello"}],
     model="claude-opus-4-6",
 ) as stream:
-  for text in stream.text_stream:
-      print(text, end="", flush=True)
+    for text in stream.text_stream:
+        print(text, end="", flush=True)
 ```
 
 ## 
 
 Get the final message without handling events
 
-If you don't need to process text as it arrives, the SDKs provide a way to use streaming under the hood while returning the complete `Message` object — identical to what `.create()` returns. This is especially useful for requests with large `max_tokens` values, where the SDKs require streaming to avoid HTTP timeouts.
+If you don't need to process text as it arrives, the SDKs provide a way to use streaming under the hood while returning the complete `Message` object, identical to what `.create()` returns. This is especially useful for requests with large `max_tokens` values, where the SDKs require streaming to avoid HTTP timeouts.
 
 Python
 
@@ -87,7 +87,7 @@ Event streams may also include any number of `ping` events.
 
 Error events
 
-We may occasionally send [errors](/docs/en/api/errors) in the event stream. For example, during periods of high usage, you may receive an `overloaded_error`, which would normally correspond to an HTTP 529 in a non-streaming context:
+The API may occasionally send [errors](/docs/en/api/errors) in the event stream. For example, during periods of high usage, you may receive an `overloaded_error`, which would normally correspond to an HTTP 529 in a non-streaming context:
 
 Example error
 
@@ -100,7 +100,7 @@ data: {"type": "error", "error": {"type": "overloaded_error", "message": "Overlo
 
 Other events
 
-In accordance with our [versioning policy](/docs/en/api/versioning), we may add new event types, and your code should handle unknown event types gracefully.
+In accordance with the [versioning policy](/docs/en/api/versioning), new event types may be added, and your code should handle unknown event types gracefully.
 
 ## 
 
@@ -127,7 +127,7 @@ Input JSON delta
 
 The deltas for `tool_use` content blocks correspond to updates for the `input` field of the block. To support maximum granularity, the deltas are *partial JSON strings*, whereas the final `tool_use.input` is always an *object*.
 
-You can accumulate the string deltas and parse the JSON once you receive a `content_block_stop` event, by using a library like [Pydantic](https://docs.pydantic.dev/latest/concepts/json/#partial-json-parsing) to do partial JSON parsing, or by using our [SDKs](/docs/en/api/client-sdks), which provide helpers to access parsed incremental values.
+You can accumulate the string deltas and parse the JSON once you receive a `content_block_stop` event, by using a library like [Pydantic](https://docs.pydantic.dev/latest/concepts/json/#partial-json-parsing) to do partial JSON parsing, or by using the [SDKs](/docs/en/api/client-sdks), which provide helpers to access parsed incremental values.
 
 A `tool_use` content block delta looks like:
 
@@ -138,7 +138,7 @@ event: content_block_delta
 data: {"type": "content_block_delta","index": 1,"delta": {"type": "input_json_delta","partial_json": "{\"location\": \"San Fra"}}}
 ```
 
-Note: Our current models only support emitting one complete key and value property from `input` at a time. As such, when using tools, there may be delays between streaming events while the model is working. Once an `input` key and value are accumulated, we emit them as multiple `content_block_delta` events with chunked partial json so that the format can automatically support finer granularity in future models.
+Note: Current models only support emitting one complete key and value property from `input` at a time. As such, when using tools, there may be delays between streaming events while the model is working. Once an `input` key and value are accumulated, they are emitted as multiple `content_block_delta` events with chunked partial json so that the format can automatically support finer granularity in future models.
 
 ### 
 
@@ -170,7 +170,7 @@ data: {"type": "content_block_delta", "index": 0, "delta": {"type": "signature_d
 
 Full HTTP Stream response
 
-We strongly recommend that you use our [client SDKs](/docs/en/api/client-sdks) when using streaming mode. However, if you are building a direct API integration, you will need to handle these events yourself.
+Use the [client SDKs](/docs/en/api/client-sdks) when using streaming mode. However, if you are building a direct API integration, you will need to handle these events yourself.
 
 A stream response is comprised of:
 
@@ -238,7 +238,7 @@ Streaming request with tool use
 
 Tool use supports [fine-grained streaming](/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming) for parameter values. Enable it per tool with `eager_input_streaming`.
 
-In this request, we ask Claude to use a tool to tell us the weather.
+This request asks Claude to use a tool to report the weather.
 
 Shell
 
@@ -375,7 +375,7 @@ data: {"type":"message_stop"}
 
 Streaming request with extended thinking
 
-In this request, we enable extended thinking with streaming to see Claude's step-by-step reasoning.
+This request enables extended thinking with streaming to see Claude's step-by-step reasoning.
 
 Shell
 
@@ -449,7 +449,7 @@ data: {"type": "message_stop"}
 
 Streaming request with web search tool use
 
-In this request, we ask Claude to search the web for current weather information.
+This request asks Claude to search the web for current weather information.
 
 Shell
 
@@ -567,13 +567,29 @@ data: {"type":"message_stop"}
 
 Error recovery
 
-When a streaming request is interrupted due to network issues, timeouts, or other errors, you can recover by resuming from where the stream was interrupted. This approach saves you from re-processing the entire response.
+### 
+
+Claude 4.5 and earlier
+
+For Claude 4.5 models and earlier, you can recover a streaming request that was interrupted due to network issues, timeouts, or other errors by resuming from where the stream was interrupted. This approach saves you from re-processing the entire response.
 
 The basic recovery strategy involves:
 
 1.  **Capture the partial response**: Save all content that was successfully received before the error occurred
 2.  **Construct a continuation request**: Create a new API request that includes the partial assistant response as the beginning of a new assistant message
 3.  **Resume streaming**: Continue receiving the rest of the response from where it was interrupted
+
+### 
+
+Claude 4.6
+
+For Claude 4.6 models, you should add a user message that instructs the model to continue from where it left off. For example:
+
+Sample prompt
+
+``` inline-block
+Your previous response was interrupted and ended with [previous_response]. Continue from where you left off.
+```
 
 ### 
 
@@ -617,6 +633,10 @@ Was this page helpful?
 - [Streaming request with web search tool use](#streaming-request-with-web-search-tool-use)
 
 - [Error recovery](#error-recovery)
+
+- [Claude 4.5 and earlier](#claude-4-5-and-earlier)
+
+- [Claude 4.6](#claude-4-6)
 
 - [Error recovery best practices](#error-recovery-best-practices)
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:52Z"
+fetched_at: "2026-02-22T14:04:13Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/files"
 title: "Files - Claude API Reference"
 ---
@@ -15,31 +15,31 @@ Ruby
 
 beta.files.upload(\*\*kwargs) -\> [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }
 
-post/v1/files
+POST/v1/files
 
 ##### [List Files](/docs/en/api/beta/files/list)
 
 beta.files.list(\*\*kwargs) -\> Page\<[FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more } \>
 
-get/v1/files
+GET/v1/files
 
 ##### [Download File](/docs/en/api/beta/files/download)
 
 beta.files.download(file_id, \*\*kwargs) -\> StringIO
 
-get/v1/files/{file_id}/content
+GET/v1/files/{file_id}/content
 
 ##### [Get File Metadata](/docs/en/api/beta/files/retrieve_metadata)
 
 beta.files.retrieve_metadata(file_id, \*\*kwargs) -\> [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }
 
-get/v1/files/{file_id}
+GET/v1/files/{file_id}
 
 ##### [Delete File](/docs/en/api/beta/files/delete)
 
 beta.files.delete(file_id, \*\*kwargs) -\> [DeletedFile](/docs/en/api/beta#deleted_file) { id, type }
 
-delete/v1/files/{file_id}
+DELETE/v1/files/{file_id}
 
 ##### ModelsExpand Collapse 
 
@@ -55,10 +55,6 @@ Deleted object type.
 
 For file deletion, this is always `"file_deleted"`.
 
-Accepts one of the following:
-
-:file_deleted
-
 class FileMetadata { id, created_at, filename, 4 more }
 
 id: String
@@ -71,39 +67,23 @@ created_at: Time
 
 RFC 3339 datetime string representing when the file was created.
 
-formatdate-time
-
 filename: String
 
 Original filename of the uploaded file.
-
-maxLength500
-
-minLength1
 
 mime_type: String
 
 MIME type of the file.
 
-maxLength255
-
-minLength1
-
 size_bytes: Integer
 
 Size of the file in bytes.
-
-minimum0
 
 type: :file
 
 Object type.
 
 For files, this is always `"file"`.
-
-Accepts one of the following:
-
-:file
 
 downloadable: bool
 

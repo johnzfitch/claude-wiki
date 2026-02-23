@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:42Z"
+fetched_at: "2026-02-16T21:12:53Z"
 source_url: "https://support.claude.com/en/articles/9945648-intro-to-projects"
 title: "Intro to Projects | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Intro to Projects
 
 # Intro to Projects
 
-Updated this week
+Updated over a week ago
 
 In this video guide, we'll explore how Projects can streamline your workflow with Claude, allowing for more organized and efficient conversations. Before you get started, review the availability of the features demonstrated in this video:
 
@@ -61,9 +61,9 @@ Claude for Engineering
 
 Claude for Sales
 
-[](https://support.claude.com/en/articles/9998942-claude-for-human-resources)
+[](https://support.claude.com/en/articles/9999062-claude-for-product-management)
 
-Claude for Human Resources
+Claude for Product Management
 
 Did this answer your question?
 

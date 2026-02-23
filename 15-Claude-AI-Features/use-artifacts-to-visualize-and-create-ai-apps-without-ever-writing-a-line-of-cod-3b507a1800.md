@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-10T10:49:21Z"
+fetched_at: "2026-02-23T00:45:25Z"
 source_url: "https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code"
 title: "Use artifacts to visualize and create AI apps, without ever writing a line of code | Claude Help Center"
 ---
@@ -71,19 +71,19 @@ These are great for when you want to quickly spin up any kind of digital product
 
 - **Product prototypes —**You don’t need to be a designer or engineer to mock up a new landing page or app. Just ask Claude for what you need. Like this [mood canvas](https://claude.ai/public/artifacts/27e36ad3-716b-4504-bfe8-5fb46ef5ca07) that creates colorful visualizations based on user input.
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588156437/660d4e0f1418854d07a06e288c82/AD_4nXf3p4mHp4-3TPQWi2XcKn7MuE0JUHAY-VXmkjc2bNIptJa_H_qnF1QTE9vyyCGdl-rD5fbJYjL6E_H6ghjQ9NSZ-kMVJqxqW3PzFRh4Px-YOQbYzf1U1hkitFoA3TlK-JM_5GDIIA?expires=1770722100&signature=408dd8c6ee989137551194ced072f0d7c71da2994b7e8150c797ba8fdd3bc068&req=dSUvHsh7m4VcXvMW1HO4zaMKJxe4DMX%2B2licsxNRhkijxmnhskDSlUkfdJh2%0AEBuB%0A)
+  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588156437/660d4e0f1418854d07a06e288c82/AD_4nXf3p4mHp4-3TPQWi2XcKn7MuE0JUHAY-VXmkjc2bNIptJa_H_qnF1QTE9vyyCGdl-rD5fbJYjL6E_H6ghjQ9NSZ-kMVJqxqW3PzFRh4Px-YOQbYzf1U1hkitFoA3TlK-JM_5GDIIA?expires=1771809300&signature=58008eee43af103ccbbc92b8d132827bd530e3c4bd00b30010b07b919341496a&req=dSUvHsh7m4VcXvMW1HO4zaMKJxa3Ds782licsxNRhkh6SWuFdT6sjGLr4FKz%0Am0pb%0A)
 
 - **Tailored AI assistants** — Tired of answering the same questions over and over again? Claude can build chatbots that have context to handle common queries, letting you focus on other work. Like a wedding planner bot that knows all of your vendor details, a recipe helper that only suggests meals your kids will eat, or this [email writing assistant](https://claude.ai/public/artifacts/2c91cdd9-168a-4d97-aa36-2e0eb13ab828) that turns raw thoughts into polished communications.
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588176563/e8b937cf07f4f5d42288c990acaf/AD_4nXdHqifSOVUTx5QtNCtQUUAEvWFGk9ykTidS6cMk5bZzKGAL7yN4FKHC7xUAlkD9Z1DAYMPQ27WjXdJbuaY4VTowfFHuijUca09XyPjm5C-6MGwi_FkeGgWQ316KSz322H12IolwDA?expires=1770722100&signature=4cdc9a7337cfd5eab43a46fa955230666c3e786f03e12a82d8ad02ead366b9fa&req=dSUvHsh5m4RZWvMW1HO4zQU9I5DN0ldyR0%2BWG4Wuh2wcQmLm8S5eHt3bZ26p%0AcpKQ%0A)
+  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588176563/e8b937cf07f4f5d42288c990acaf/AD_4nXdHqifSOVUTx5QtNCtQUUAEvWFGk9ykTidS6cMk5bZzKGAL7yN4FKHC7xUAlkD9Z1DAYMPQ27WjXdJbuaY4VTowfFHuijUca09XyPjm5C-6MGwi_FkeGgWQ316KSz322H12IolwDA?expires=1771809300&signature=576d15ebd9d68f3b626793bc77ececd01bc6339196e67b2e61ae0ec0f59c362c&req=dSUvHsh5m4RZWvMW1HO4zQU9I5HC0FxwR0%2BWG4Wuh2wgReHiPheN0QNcSYwt%0AtPeV%0A)
 
 - **Learning games** — A parent wanting to help their child learn multiplication tables could describe an interactive game where kids battle monsters by solving math problems. A few turns later, they’ll have a working prototype. Or to learn for yourself, try this [language tutor](https://claude.ai/artifacts/inspiration/2af221b6-367f-4b4f-9fe9-25710f5f8feb) that lets you chat and learn in a language of your choice.
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588159880/5f004f953dc7a5ce89d7c714eae8/AD_4nXfrUiI8PoKzmO_n4XQ_ERYtuWQmkUX1XZZDudiicPUZ8DDt5tVpmr5RROY2ahrgASr4zOyWnjye0a2wp8kB2CTHDuLNUtak4bKrvDPJwOJw8F-r1DuMUoMU-2j2sEZlM8V4ak-8?expires=1770722100&signature=60df0f849f38a8123b4e962cb62e18d71521d8ea7116c7dd3fe717bbf9f6cc54&req=dSUvHsh7lIlXWfMW1HO4zaM6SEHgyKo6kUCO%2BvZKkkii8R0NpKTw9s%2FeupDQ%0AirKr%0A)
+  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588159880/5f004f953dc7a5ce89d7c714eae8/AD_4nXfrUiI8PoKzmO_n4XQ_ERYtuWQmkUX1XZZDudiicPUZ8DDt5tVpmr5RROY2ahrgASr4zOyWnjye0a2wp8kB2CTHDuLNUtak4bKrvDPJwOJw8F-r1DuMUoMU-2j2sEZlM8V4ak-8?expires=1771809300&signature=7c575285ba2a3a70e6e138c1d6e09b70182a8ce80b8f8c1f60509d2113bc18ab&req=dSUvHsh7lIlXWfMW1HO4zaM6SEDvyqE4kUCO%2BvZKkkgkXIv81vjpNzeUkCwS%0A6NEn%0A)
 
 - **Small business solutions** — A small business owner needing inventory tracking can describe their workflow to Claude and create a custom tool that perfectly suits their needs. Just like this [project dashboard generator](https://claude.ai/public/artifacts/7d9ae635-3bdf-429d-a24d-708828434b0a) that takes user input and provides Gantt charts, progress bars, and milestone tracking.
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588160280/22886d365d6f2fadb91a4cf1f3d5/AD_4nXfZ6pR51IVT9fGuygrwMT-w9mHTIbdc7i_X9GQ3-qp_a9WPU3Rld95L9dxbqqgvn8oZAxiQgmxxRnXguDhggehkvxr9Zlnue2K-NFeTPN5H8PPtajEA934fjwcAv9Y2-YQvLgol?expires=1770722100&signature=548c04d8a33f290c46476af04035ceadda65048f7da21900b82d4e899abc9a6e&req=dSUvHsh4nYNXWfMW1HO4zZ4YUoI8ZTnWpL2NRaAf1ygOBSp%2FVIAbtHUrnTv2%0AWizy%0A)
+  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588160280/22886d365d6f2fadb91a4cf1f3d5/AD_4nXfZ6pR51IVT9fGuygrwMT-w9mHTIbdc7i_X9GQ3-qp_a9WPU3Rld95L9dxbqqgvn8oZAxiQgmxxRnXguDhggehkvxr9Zlnue2K-NFeTPN5H8PPtajEA934fjwcAv9Y2-YQvLgol?expires=1771809300&signature=73f8ed11d17fcf72e0578a24e6a4b70bcef6e20decefe7710e2da864d1375d7c&req=dSUvHsh4nYNXWfMW1HO4zZ4YUoMzZzLUpL2NRaAf1yi4FSlztypUjqirFL%2F%2F%0A1t0%2F%0A)
 
 The options are really endless. For more inspiration, visit the “Artifacts” tab in your Claude app, or try asking Claude what you should build. (Note that the artifacts tab is only available on free, pro, and max plans, and currently does not exist on mobile).
 
@@ -123,7 +123,7 @@ Viewers have two options when interacting with your artifact:
 
 - **Remix & customize** — Claude users can create their own copy to modify and iterate on your artifact, but don’t worry! Your copy stays unchanged.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1586885817/1ff33f3e90e1a2e890306139ced1/AD_4nXeBujTz8D97SMMf_8YK4AMN4TxQAeHuo4MqtlGRDZq13NAb6g3VCD2LHo8Fz2TRpAJsb-9HBJ9lqfZkHFBiuLjzRzkqefn1xqK5jGVeMzM2wNeW77IE9kP_ABjUw8D2zFoAMlTdkg?expires=1770722100&signature=1701fab497e1a248d26dc31e0dcd4b134b4785cabd6dd074d94fa619a6198aaf&req=dSUvEMF2mIleXvMW1HO4zbzh5SufsCLFatzvo%2B0fy2Bs7j6vBBsob6BmBYeY%0AKoZO7fJLHraJU0eAz3E%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1586885817/1ff33f3e90e1a2e890306139ced1/AD_4nXeBujTz8D97SMMf_8YK4AMN4TxQAeHuo4MqtlGRDZq13NAb6g3VCD2LHo8Fz2TRpAJsb-9HBJ9lqfZkHFBiuLjzRzkqefn1xqK5jGVeMzM2wNeW77IE9kP_ABjUw8D2zFoAMlTdkg?expires=1771809300&signature=50dbf15b09a484324dfef8fc4aa3f30bb7fd81b6de250458bb133cb799fdaaed&req=dSUvEMF2mIleXvMW1HO4zbzh5SqQsinHatzvo%2B0fy2DpzEtgJ4AOV9BaHmg7%0AtAQIGfLhY5AOAbU3Y1s%3D%0A)
 
 ## More resources to get started
 

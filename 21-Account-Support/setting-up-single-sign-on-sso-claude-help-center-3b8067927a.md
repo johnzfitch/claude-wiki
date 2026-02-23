@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-10T10:49:35Z"
+fetched_at: "2026-02-17T01:30:57Z"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso"
 title: "Setting up single sign-on (SSO) | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Setting up single sign-on (SSO)
 
 # Setting up single sign-on (SSO)
 
-Updated today
+Updated this week
 
 Table of contents
 
@@ -105,7 +105,7 @@ You can verify multiple domains for a single organization, but all domains must 
 
 3.  Enter the domain(s) you want to verify in the **Update organization email domains modal** and click the “+” button:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/2047041551/518afbae9c8011a6e3c98ffb651d/d2491145-362d-490b-bdcf-66a0a7656ddc?expires=1770722100&signature=e302f1f5855e371c6cae9a413f694728a32222670b6db1e6a1d6102afc6ba4e4&req=diAjEcl6nIRaWPMW1HO4zQCfAS2bjI%2Fms0%2B6T5c8FJ%2FxOngYfZTzgM2Zm9uM%0ApPKh%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/2047041551/518afbae9c8011a6e3c98ffb651d/d2491145-362d-490b-bdcf-66a0a7656ddc?expires=1771293600&signature=f9ff165f115a0ef61b7fb3bfc0b42bbc68b660b4f73d05d7f6b0940cfa8e0f55&req=diAjEcl6nIRaWPMW1HO4zQCfASyeh47hs0%2B6T5c8FJ%2Bb23yDSiNANNn1ZiF6%0Acn81%0A)
 
 4.  Click “Save” when you’re finished adding domains.
 
@@ -113,7 +113,7 @@ You can verify multiple domains for a single organization, but all domains must 
 
 6.  Enter your domain in the text box and click “Continue”:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/2047042630/0617a562cd28a7ff0e607d66a30b/6bd08e1d-2b65-40ab-bc79-a257153854c1?expires=1770722100&signature=4fa82785eb2cc404c41ebd04c872cf2da14a69832cd97754117a69f9b6be6b12&req=diAjEcl6n4dcWfMW1HO4zWHcuh2QldOryoyXAW0OlXoR4cZ%2BHMPuTXnVvcBo%0A3EVA%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/2047042630/0617a562cd28a7ff0e607d66a30b/6bd08e1d-2b65-40ab-bc79-a257153854c1?expires=1771293600&signature=555b7ed6e0fa2d7de20a94b69c02faf94298691f89f1fddd89848d2b5c86ded5&req=diAjEcl6n4dcWfMW1HO4zWHcuhyVntKsyoyXAW0OlXp2fymgqvSTDe0uopiw%0ApxR6%0A)
 
 7.  This will generate a TXT record. Follow the instructions to add this TXT record to your domain provider.
 
@@ -127,9 +127,9 @@ You can verify multiple domains for a single organization, but all domains must 
 
 10. If your domain shows as "Pending," use the "Refresh" button.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2047044496/b8df54a0331784cc9ae8f00112aa/bf9609c1-dc93-4665-a066-4cae2fe4b002?expires=1770722100&signature=43211c979be6df80d3ac588226ec54a603bfc6be212517b5d88fe610dcdc972a&req=diAjEcl6mYVWX%2FMW1HO4zVjmVikHbXa4PM2D8Zcdgrjm6%2BH1tQ3u3nszTQd1%0AW51GbZklYu8A%2F8Yox%2Fg%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2047044496/b8df54a0331784cc9ae8f00112aa/bf9609c1-dc93-4665-a066-4cae2fe4b002?expires=1771293600&signature=4c1077ed18fcf60adf39ab905d1ca2f3094a51c07ae50e570af0793c4ce1434a&req=diAjEcl6mYVWX%2FMW1HO4zVjmVigCZne%2FPM2D8ZcdgrhAFk2NfZa6xu6tsHhi%0AeFOcofdBdt064DWJkQA%3D%0A)
 
-**Note:** Once your domain is verified, you'll see a **Restrict organization creation** toggle under **Security** on the Identity and access admin settings page. Enable this if you want to prevent users from creating new Claude or Console organizations—including personal accounts—using your verified domains.
+**Note:** Once your domain is verified, you'll see a **Restrict organization creation** toggle under **Security** on the Identity and access organization settings page. Enable this if you want to prevent users from creating new Claude or Console organizations—including personal accounts—using your verified domains.
 
 ------------------------------------------------------------------------
 
@@ -167,7 +167,7 @@ For IdP-specific setup instructions, see:
 
 You can now choose to toggle on **Require SSO for Console** and/or **Require SSO for Claude,** on the Identity and access page, under **Global access settings / Organization access** section:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2047057631/e5832754120abfd5677be84e9fa7/c3fa3224-f8b5-4aa3-b42f-1974bbbd3193?expires=1770722100&signature=b607554190706d5f14d478001618252f8cad6ff96f8cf9205cf9156328960e42&req=diAjEcl7modcWPMW1HO4zS%2FkDzi4hWoE7ziFrGT%2F4DDomGXu38G%2BJ%2B8bo%2Bt2%0Agb5t%2FYdIpGOmpDoo0Xg%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2047057631/e5832754120abfd5677be84e9fa7/c3fa3224-f8b5-4aa3-b42f-1974bbbd3193?expires=1771293600&signature=28fd9907825b52b133d8cd92eb17e151e790aacafcb15aa35cd0a7d1abc897b3&req=diAjEcl7modcWPMW1HO4zS%2FkDzm9jmsD7ziFrGT%2F4DCII3udpyT3uFYgVZD2%0AkwD9%2FpHmxpw5CgSrz8g%3D%0A)
 
 When SSO is required, users must use the “Continue with SSO” option to access Claude/Console. When SSO is not required, they will have the option to choose “Continue with SSO” or “Continue with email.”
 
@@ -235,21 +235,21 @@ Related Articles
 
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
-[](https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins)
-
-Getting Started with Claude for Education at Your University (for Owners/Admins)
-
-[](https://support.claude.com/en/articles/11725453-set-up-the-claude-lti-in-canvas-by-instructure)
-
-Set up the Claude LTI in Canvas by Instructure
-
 [](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
 
 Setting up JIT or SCIM provisioning
 
+[](https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account)
+
+Logging in to your Console account
+
 [](https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp)
 
 Switching to a different Identity Provider (IdP)
+
+[](https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization)
+
+Find and join a Team or Enterprise organization
 
 Did this answer your question?
 

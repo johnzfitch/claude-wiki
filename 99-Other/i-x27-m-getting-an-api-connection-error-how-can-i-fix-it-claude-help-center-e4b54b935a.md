@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:17Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10366432-i-m-getting-an-api-connection-error-how-can-i-fix-it"
 title: "I&#x27;m getting an API connection error. How can I fix it? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ I'm getting an API connection error. How can I fix it?
 
 # I'm getting an API connection error. How can I fix it?
 
-Updated this week
+Updated over a week ago
 
 This error usually indicates an issue on your end, potentially related to your firewall, network, or VPN. Try these steps:
 

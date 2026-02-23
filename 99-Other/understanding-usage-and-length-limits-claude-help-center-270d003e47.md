@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:21Z"
+fetched_at: "2026-02-16T21:12:36Z"
 source_url: "https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits"
 title: "Understanding usage and length limits | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Understanding usage and length limits
 
 # Understanding usage and length limits
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -135,7 +135,7 @@ Usage limit best practices
 
 [](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
 [](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 

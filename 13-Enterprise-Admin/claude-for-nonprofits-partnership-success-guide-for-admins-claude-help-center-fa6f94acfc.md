@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-08T20:52:03Z"
+fetched_at: "2026-02-23T00:45:22Z"
 source_url: "https://support.claude.com/en/articles/12923668-claude-for-nonprofits-partnership-success-guide-for-admins"
 title: "Claude for Nonprofits Partnership Success Guide for Admins | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Claude for Nonprofits Partnership Success Guide for Admins
 
 # Claude for Nonprofits Partnership Success Guide for Admins
 
-Updated yesterday
+Updated this week
 
 Table of contents
 
@@ -129,7 +129,7 @@ Key Resources:
 
 - Track activity metrics using audit logs and success metrics through other collection methods such as surveys
 
-- Identify and enable appropriate connectors and capabilities (in admin settings)
+- Identify and enable appropriate connectors and capabilities (in organization settings)
 
 - Participate in monthly webinar series every third week of the month (email will be sent with invites to all registered admin)
 
@@ -173,7 +173,7 @@ Claude Code on the web
 
 [](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 
-Getting Started with Claude for Nonprofits
+Getting started with Claude for Nonprofits
 
 [](https://support.claude.com/en/articles/12923901-claude-for-nonprofits-partnership-guide-for-all-users)
 
@@ -181,7 +181,7 @@ Claude for Nonprofits Partnership Guide for All Users
 
 [](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Admin Controls
+Claude in Chrome admin controls
 
 Did this answer your question?
 

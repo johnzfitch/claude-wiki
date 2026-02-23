@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:10:57Z"
+fetched_at: "2026-02-22T14:05:04Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/list"
 title: "List Skills - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Ruby
 
 beta.skills.list(\*\*kwargs) -\> PageCursor\<[SkillListResponse](/docs/en/api/beta#skill_list_response) { id, created_at, display_title, 4 more } \>
 
-get/v1/skills
+GET/v1/skills
 
 List Skills
 
@@ -48,7 +48,7 @@ Accepts one of the following:
 
 String
 
-:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 16 more
+:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 17 more
 
 Accepts one of the following:
 
@@ -89,6 +89,8 @@ Accepts one of the following:
 :"model-context-window-exceeded-2025-08-26"
 
 :"skills-2025-10-02"
+
+:"fast-mode-2026-02-01"
 
 ##### ReturnsExpand Collapse 
 

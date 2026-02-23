@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:11:20Z"
+fetched_at: "2026-02-22T14:27:56Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/cost_report"
 title: "Cost Report - Claude API Reference"
 ---
@@ -11,7 +11,7 @@ Copy page
 
 ##### [Get Cost Report](/docs/en/api/admin/cost_report/retrieve)
 
-get/v1/organizations/cost_report
+GET/v1/organizations/cost_report
 
 ##### ModelsExpand Collapse 
 
@@ -23,7 +23,7 @@ ending_at: string
 
 End of the time bucket (exclusive) in RFC 3339 format.
 
-results: array of object { amount, context_window, cost_type, 7 more }
+results: array of object { amount, context_window, cost_type, 8 more }
 
 List of cost items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
 
@@ -79,6 +79,16 @@ Accepts one of the following:
 
 "batch"
 
+speed: "standard" or "fast"
+
+Speed used (research preview). `null` if not grouping by speed, or for non-token costs. Only returned when the `fast-mode-2026-02-01` beta header is provided.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
 token_type: "uncached_input_tokens" or "output_tokens" or "cache_read_input_tokens" or 2 more
 
 Type of token. `null` if not grouping by description or for non-token costs.
@@ -110,8 +120,6 @@ Indicates if there are more results.
 next_page: string
 
 Token to provide in as `page` in the subsequent request to retrieve the next page of data.
-
-formatdate-time
 
 [](/docs)
 

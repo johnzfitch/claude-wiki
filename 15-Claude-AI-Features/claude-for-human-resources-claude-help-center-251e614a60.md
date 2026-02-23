@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:14Z"
+fetched_at: "2026-02-23T00:45:34Z"
 source_url: "https://support.claude.com/en/articles/9998942-claude-for-human-resources"
 title: "Claude for Human Resources | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Claude for Human Resources
 
 # Claude for Human Resources
 
-Updated yesterday
+Updated this week
 
 In this video guide, we'll explore several examples of how Claude can be used by human resources teams. Before you get started, review the availability of the features demonstrated in this video:
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-07T10:05:07Z"
+fetched_at: "2026-02-22T13:17:58Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/zero-data-retention"
 title: "Zero Data Retention (ZDR) - Claude API Docs"
 ---
@@ -54,6 +54,12 @@ These API endpoints process data in real-time:
 |----|----|----|
 | Messages API | `/v1/messages` | Standard API calls for generating Claude responses. |
 | Token Counting | `/v1/messages/count_tokens` | Count tokens before sending requests. |
+| Web Search | `/v1/messages` (with `web_search` tool) | Real-time web search results returned in the API response. |
+| Web Fetch | `/v1/messages` (with `web_fetch` tool) | Fetched web content returned in the API response. |
+| Memory Tool | `/v1/messages` (with `memory` tool) | Client-side memory storage where you control data retention. |
+| Tool Search (client-side) | `/v1/messages` | [Custom client-side tool search](/docs/en/agents-and-tools/tool-use/tool-search-tool#custom-tool-search-implementation) uses the standard Messages API. |
+| Context Management (compaction) | `/v1/messages` (with `context_management`) | Server-side compaction summarizes conversation context in real-time. |
+| Fast Mode | `/v1/messages` (with `speed: "fast"`) | Same Messages API endpoint with faster inference. ZDR applies regardless of speed setting. |
 
 ### 
 
@@ -64,9 +70,10 @@ The following is a non-exhaustive list of endpoints and features that store data
 | Feature | Endpoint | Data Retention Policy | Why It's Not ZDR-Eligible |
 |----|----|----|----|
 | Batch API | `/v1/messages/batches` | Standard policy: 29-day retention. Use the `/v1/messages/batches` DELETE endpoint to delete message batches at any time after processing. | Batch processing requires asynchronous storage of responses. |
+| Code Execution | `/v1/messages` (with `code_execution` tool) | Container data retained up to 30 days. | Server-side code execution stores execution data and uploaded files beyond the immediate API response. |
+| Programmatic Tool Calling | `/v1/messages` (with `code_execution` tool) | Container data retained up to 30 days. | Built on code execution—uses sandbox containers that retain user data. |
+| Tool Search (server-side) | `/v1/messages` (with `tool_search` tool) | Data retained according to standard policy. | Server-side tool search indexes and stores tool catalog data beyond the immediate API response. |
 | Files API | `/v1/files` | Files retained until explicitly deleted. | Beta features are excluded from ZDR. Files uploaded via the Files API are retained for future API requests. |
-| Skills (Code Executor) | `/v1/skills` | Data retained for skill execution. | Beta features are excluded from ZDR. Skills use server-side code execution, which stores execution data and uploaded files beyond the immediate API response. |
-| Context Management | `/v1/messages` (with `context_management`) | Files stored on Anthropic servers. | Beta features are excluded from ZDR. |
 
 ### 
 

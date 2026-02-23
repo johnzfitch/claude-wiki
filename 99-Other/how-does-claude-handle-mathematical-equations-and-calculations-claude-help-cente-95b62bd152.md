@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-10T10:49:17Z"
+fetched_at: "2026-02-23T00:45:18Z"
 source_url: "https://support.claude.com/en/articles/10366421-how-does-claude-handle-mathematical-equations-and-calculations"
 title: "How does Claude handle mathematical equations and calculations? | Claude Help Center"
 ---
@@ -51,9 +51,9 @@ Create and edit files with Claude to eliminate hours of busy work
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
+[](https://support.claude.com/en/articles/12650343-use-claude-in-excel)
 
-Using Claude in Excel
+Use Claude in Excel
 
 [](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 
