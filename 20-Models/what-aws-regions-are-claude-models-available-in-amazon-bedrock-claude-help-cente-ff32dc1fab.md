@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-23T00:45:50Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10280791-what-aws-regions-are-claude-models-available-in-amazon-bedrock"
 title: "What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ What AWS Regions are Claude models available in Amazon Bedrock?
 
 # What AWS Regions are Claude models available in Amazon Bedrock?
 
-Updated this week
+Updated over a week ago
 
 Visit the Amazon Bedrock [user guide](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html) to see the Claude models that are available by AWS Region in Amazon Bedrock.\
 ​
@@ -54,9 +54,9 @@ I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries?
 
 Where do I find Claude in Amazon Bedrock documentation?
 
-[](https://support.claude.com/en/articles/13756069-public-sector-faqs)
+[](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
-Public Sector FAQs
+Claude Code FAQ
 
 Did this answer your question?
 

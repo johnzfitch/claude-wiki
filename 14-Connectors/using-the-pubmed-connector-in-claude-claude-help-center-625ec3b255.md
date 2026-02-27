@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-16T21:12:43Z"
 source_url: "https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude"
 title: "Using the PubMed Connector in Claude | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Using the PubMed Connector in Claude
 
 # Using the PubMed Connector in Claude
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

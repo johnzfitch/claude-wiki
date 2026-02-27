@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:18Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them"
 title: "What are artifacts and how do I use them? | Claude Help Center"
 ---
@@ -49,7 +49,7 @@ What are artifacts and how do I use them?
 
 # What are artifacts and how do I use them?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -257,9 +257,9 @@ Publishing and sharing artifacts
 
 Intro to Artifacts
 
-[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Get started with custom connectors using remote MCP
+Getting started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 

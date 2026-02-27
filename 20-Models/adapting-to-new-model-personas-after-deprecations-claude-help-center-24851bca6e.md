@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-23T00:45:12Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 title: "Adapting to new model personas after deprecations | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ Adapting to new model personas after deprecations
 
 # Adapting to new model personas after deprecations
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -83,9 +83,9 @@ Release notes
 
 Can I use my Outputs to train an AI model?
 
-[](https://support.claude.com/en/articles/12650343-use-claude-in-excel)
+[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
 
-Use Claude in Excel
+Using Claude in Excel
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:20Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
 title: "What is the Pro plan? | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ What is the Pro plan?
 
 # What is the Pro plan?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -123,6 +123,10 @@ Getting started with Claude
 
 What is the Team plan?
 
+[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
+
+What is the Enterprise plan?
+
 [](https://support.claude.com/en/articles/11049741-what-is-the-max-plan)
 
 What is the Max plan?
@@ -130,10 +134,6 @@ What is the Max plan?
 [](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
-
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
-
-Extra usage for paid Claude plans
 
 Did this answer your question?
 

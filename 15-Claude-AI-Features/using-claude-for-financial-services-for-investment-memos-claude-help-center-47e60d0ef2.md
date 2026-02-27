@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:31Z"
+fetched_at: "2026-02-08T20:51:50Z"
 source_url: "https://support.claude.com/en/articles/12068945-using-claude-for-financial-services-for-investment-memos"
 title: "Using Claude for Financial Services for investment memos | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Using Claude for Financial Services for investment memos
 
 # Using Claude for Financial Services for investment memos
 
-Updated this week
+Updated yesterday
 
 # An error occurred.
 

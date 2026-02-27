@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:52Z"
+fetched_at: "2026-02-16T21:12:45Z"
 source_url: "https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide"
 title: "Remote MCP Server Submission Guide | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Remote MCP Server Submission Guide
 
 # Remote MCP Server Submission Guide
 
-Updated over 2 weeks ago
+Updated over a week ago
 
 Table of contents
 

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:18Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research"
 title: "When should I use web search, extended thinking, and Research? | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ When should I use web search, extended thinking, and Research?
 
 # When should I use web search, extended thinking, and Research?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

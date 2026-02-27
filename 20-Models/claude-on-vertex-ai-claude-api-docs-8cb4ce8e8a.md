@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:15:25Z"
+fetched_at: "2026-02-07T10:04:51Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai"
 title: "Claude on Vertex AI - Claude API Docs"
 ---
@@ -46,15 +46,9 @@ Go
 
 Go
 
-Ruby
-
-Ruby
-
 ``` shiki
 pip install -U google-cloud-aiplatform "anthropic[vertex]"
 ```
-
-The PHP SDK does not currently support Google Vertex AI. For available SDK platform integrations, see [Client SDKs](/docs/en/api/client-sdks).
 
 ## 
 
@@ -73,7 +67,6 @@ API model IDs
 | Model                | Vertex AI API model ID     |
 |----------------------|----------------------------|
 | Claude Opus 4.6      | claude-opus-4-6            |
-| Claude Sonnet 4.6    | claude-sonnet-4-6          |
 | Claude Sonnet 4.5    | claude-sonnet-4-5@20250929 |
 | Claude Sonnet 4      | claude-sonnet-4@20250514   |
 | Claude Sonnet 3.7 ⚠️ | claude-3-7-sonnet@20250219 |
@@ -82,7 +75,7 @@ API model IDs
 | Claude Opus 4        | claude-opus-4@20250514     |
 | Claude Haiku 4.5     | claude-haiku-4-5@20251001  |
 | Claude Haiku 3.5 ⚠️  | claude-3-5-haiku@20241022  |
-| Claude Haiku 3 ⚠️    | claude-3-haiku@20240307    |
+| Claude Haiku 3       | claude-3-haiku@20240307    |
 
 ### 
 
@@ -115,7 +108,7 @@ message = client.messages.create(
 print(message)
 ```
 
-See the [client SDKs](/docs/en/api/client-sdks) and the official [Vertex AI docs](https://cloud.google.com/vertex-ai/docs) for more details.
+See our [client SDKs](/docs/en/api/client-sdks) and the official [Vertex AI docs](https://cloud.google.com/vertex-ai/docs) for more details.
 
 Claude is also available through [Amazon Bedrock](/docs/en/build-with-claude/claude-on-amazon-bedrock) and [Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry).
 
@@ -133,7 +126,7 @@ Turning on this service does not give Google or Anthropic any access to your con
 
 Feature support
 
-For all currently supported features on Vertex AI, see [API features overview](/docs/en/api/overview).
+You can find all the features currently supported on Vertex [here](/docs/en/api/overview).
 
 ## 
 

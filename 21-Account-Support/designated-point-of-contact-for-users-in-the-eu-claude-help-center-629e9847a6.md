@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:21Z"
+fetched_at: "2026-02-16T21:12:36Z"
 source_url: "https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu"
 title: "Designated Point of Contact for Users in the EU | Claude Help Center"
 ---
@@ -33,7 +33,7 @@ Designated Point of Contact for Users in the EU
 
 # Designated Point of Contact for Users in the EU
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -63,9 +63,9 @@ Using S&P Global Data for Financial Analysis
 
 Financial Analysis Workflows with Claude
 
-[](https://support.claude.com/en/articles/12650343-use-claude-in-excel)
+[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
 
-Use Claude in Excel
+Using Claude in Excel
 
 [](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 

@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-23T00:45:16Z"
+fetched_at: "2026-02-16T21:12:52Z"
 source_url: "https://support.claude.com/en/articles/9612904-what-versions-of-android-are-supported"
 title: "What versions of Android are supported? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ What versions of Android are supported?
 
 # What versions of Android are supported?
 
-Updated this week
+Updated over a week ago
 
 We currently support Android 8.0 Oreo and above.
 

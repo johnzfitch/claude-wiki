@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:14:49Z"
+fetched_at: "2026-02-07T10:04:47Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/todo-tracking"
 title: "Todo Lists - Claude API Docs"
 ---
@@ -65,7 +65,7 @@ for await (const message of query({
         console.log("Todo Status Update:");
         todos.forEach((todo, index) => {
           const status = todo.status === "completed" ? "✅" :
-            todo.status === "in_progress" ? "🔧" : "❌";
+                        todo.status === "in_progress" ? "🔧" : "❌";
           console.log(`${index + 1}. ${status} ${todo.content}`);
         });
       }
@@ -85,25 +85,25 @@ import { query } from "@anthropic-ai/claude-agent-sdk";
 
 class TodoTracker {
   private todos: any[] = [];
-
+  
   displayProgress() {
     if (this.todos.length === 0) return;
-
+    
     const completed = this.todos.filter(t => t.status === "completed").length;
     const inProgress = this.todos.filter(t => t.status === "in_progress").length;
     const total = this.todos.length;
-
+    
     console.log(`\nProgress: ${completed}/${total} completed`);
     console.log(`Currently working on: ${inProgress} task(s)\n`);
-
+    
     this.todos.forEach((todo, index) => {
-      const icon = todo.status === "completed" ? "✅" :
-        todo.status === "in_progress" ? "🔧" : "❌";
+      const icon = todo.status === "completed" ? "✅" : 
+                  todo.status === "in_progress" ? "🔧" : "❌";
       const text = todo.status === "in_progress" ? todo.activeForm : todo.content;
       console.log(`${index + 1}. ${icon} ${text}`);
     });
   }
-
+  
   async trackQuery(prompt: string) {
     for await (const message of query({
       prompt,

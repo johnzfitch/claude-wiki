@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:22Z"
+fetched_at: "2026-02-16T21:12:46Z"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 title: "Using the Candid Connector in Claude | Claude Help Center"
 ---
@@ -51,7 +51,7 @@ Using the Candid Connector in Claude
 
 # Using the Candid Connector in Claude
 
-Updated over 2 weeks ago
+Updated over a week ago
 
 Table of contents
 
@@ -101,7 +101,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#cba4a5a7a2a5aea7a2a9b9aab9a2aaa58ba8aaa5afa2afe5a4b9ac).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#8fe0e1e3e6e1eae3e6edfdeefde6eee1cfeceee1ebe6eba1e0fde8).
 
 ## Setting up the Candid integration
 
@@ -508,7 +508,7 @@ Candid Seals of Transparency indicate how much information an organization has s
 
 ## Need more help?
 
-If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#315e5f5d585f545d585343504358505f7152505f5558551f5e4356).
+If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#e28d8c8e8b8c878e8b809083908b838ca281838c868b86cc8d9085).
 
 ------------------------------------------------------------------------
 

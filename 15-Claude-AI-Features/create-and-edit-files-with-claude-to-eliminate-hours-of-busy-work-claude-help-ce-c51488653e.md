@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:30Z"
+fetched_at: "2026-02-08T20:51:53Z"
 source_url: "https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work"
 title: "Create and edit files with Claude to eliminate hours of busy work | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Create and edit files with Claude to eliminate hours of busy work
 
 # Create and edit files with Claude to eliminate hours of busy work
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -79,7 +79,7 @@ Claude can now create and work directly with the documents that drive your busin
 
 After you’re done iterating with Claude, just open the file in Drive or hit Download to finalize and share.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1711352345/475a9830c25debbd8cd192bc1361/Download+wiggle+%281%29.png?expires=1771809300&signature=a4e543f1156224e9c6d23791134c3b611ab72a28ad64281455958d4d0e21ff69&req=dScmF8p7n4JbXPMW1HO4zSenGg8FAuAZrq5nWNytq4GpUSLPyE7gUj6JFqJh%0Al9gAj55PlBx%2Fsrw0B0k%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1711352345/475a9830c25debbd8cd192bc1361/Download+wiggle+%281%29.png?expires=1770585300&signature=83c11110d0c3e61d69f9dde338e5a17cbe1100db4d5e4ea30af559c87bb8a2f3&req=dScmF8p7n4JbXPMW1HO4zSenGg4ICuwZrq5nWNytq4HMvXNr%2Fcf4t%2Fzl9%2F%2FN%0AMhUMn0YcKXq%2FXlta9BU%3D%0A)
 
 ## How this saves you time
 
@@ -163,9 +163,9 @@ Claude for Financial Services Overview
 
 Create professional results across tools with Claude Sonnet 4.5
 
-[](https://support.claude.com/en/articles/12650343-use-claude-in-excel)
+[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
 
-Use Claude in Excel
+Using Claude in Excel
 
 [](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
 

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:35Z"
+fetched_at: "2026-02-16T21:12:40Z"
 source_url: "https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research"
 title: "Using FactSet for Comprehensive Financial Research | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using FactSet for Comprehensive Financial Research
 
 # Using FactSet for Comprehensive Financial Research
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

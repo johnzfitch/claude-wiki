@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:12Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data"
 title: "How up-to-date is Claude&#x27;s training data? | Claude Help Center"
 ---
@@ -31,11 +31,9 @@ How up-to-date is Claude's training data?
 
 # How up-to-date is Claude's training data?
 
-Updated this week
+Updated over a week ago
 
 While we're constantly updating Claude's data, each model has a knowledge cutoff:
-
-- Claude Sonnet 4.6 was trained on data up until August 2025.
 
 - Claude Opus 4.6 was trained on data up until August 2025.
 
@@ -44,6 +42,10 @@ While we're constantly updating Claude's data, each model has a knowledge cutoff
 - Claude Haiku 4.5 was trained on data up until July 2025.
 
 - Claude Sonnet 4.5 was trained on data up until July 2025.
+
+- Claude Sonnet 4 was trained on data up until March 2025.
+
+- Claude Haiku 3.5 was trained on data up until July 2024.
 
 - Claude Opus 3 was trained on data up until August 2023.
 

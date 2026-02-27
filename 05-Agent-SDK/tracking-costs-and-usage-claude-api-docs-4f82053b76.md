@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:14:42Z"
+fetched_at: "2026-02-07T10:04:46Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/cost-tracking"
 title: "Tracking Costs and Usage - Claude API Docs"
 ---
@@ -57,9 +57,9 @@ const result = await query({
   prompt: "Analyze this codebase and run tests",
   options: {
     onMessage: (message) => {
-      if (message.type === "assistant" && message.usage) {
+      if (message.type === 'assistant' && message.usage) {
         console.log(`Message ID: ${message.id}`);
-        console.log("Usage:", message.usage);
+        console.log(`Usage:`, message.usage);
       }
     }
   }
@@ -94,14 +94,14 @@ Important Usage Rules
 
 1\. Same ID = Same Usage
 
-**All messages with the same `id` field report identical usage**. When Claude sends multiple messages in the same turn (for example, text + tool uses), they share the same message ID and usage data.
+**All messages with the same `id` field report identical usage**. When Claude sends multiple messages in the same turn (e.g., text + tool uses), they share the same message ID and usage data.
 
 ``` shiki
 // All these messages have the same ID and usage
 const messages = [
-  { type: "assistant", id: "msg_123", usage: { output_tokens: 100 } },
-  { type: "assistant", id: "msg_123", usage: { output_tokens: 100 } },
-  { type: "assistant", id: "msg_123", usage: { output_tokens: 100 } }
+  { type: 'assistant', id: 'msg_123', usage: { output_tokens: 100 } },
+  { type: 'assistant', id: 'msg_123', usage: { output_tokens: 100 } },
+  { type: 'assistant', id: 'msg_123', usage: { output_tokens: 100 } }
 ];
 
 // Charge only once per unique message ID
@@ -135,7 +135,7 @@ console.log("Total cost:", result.usage.total_cost_usd);
 
 4\. Per-Model Usage Breakdown
 
-The result message also includes `modelUsage`, which provides authoritative per-model usage data. Like `total_cost_usd`, this field is accurate and suitable for billing purposes. This is especially useful when using multiple models (for example, Haiku for subagents, Opus for the main agent).
+The result message also includes `modelUsage`, which provides authoritative per-model usage data. Like `total_cost_usd`, this field is accurate and suitable for billing purposes. This is especially useful when using multiple models (e.g., Haiku for subagents, Opus for the main agent).
 
 ``` shiki
 // modelUsage provides per-model breakdown
@@ -176,7 +176,7 @@ import { query } from "@anthropic-ai/claude-agent-sdk";
 class CostTracker {
   private processedMessageIds = new Set<string>();
   private stepUsages: Array<any> = [];
-
+  
   async trackConversation(prompt: string) {
     const result = await query({
       prompt,
@@ -186,25 +186,25 @@ class CostTracker {
         }
       }
     });
-
+    
     return {
       result,
       stepUsages: this.stepUsages,
       totalCost: result.usage?.total_cost_usd || 0
     };
   }
-
+  
   private processMessage(message: any) {
     // Only process assistant messages with usage
-    if (message.type !== "assistant" || !message.usage) {
+    if (message.type !== 'assistant' || !message.usage) {
       return;
     }
-
+    
     // Skip if we've already processed this message ID
     if (this.processedMessageIds.has(message.id)) {
       return;
     }
-
+    
     // Mark as processed and record usage
     this.processedMessageIds.add(message.id);
     this.stepUsages.push({
@@ -214,14 +214,14 @@ class CostTracker {
       costUSD: this.calculateCost(message.usage)
     });
   }
-
+  
   private calculateCost(usage: any): number {
     // Implement your pricing calculation here
     // This is a simplified example
     const inputCost = usage.input_tokens * 0.00003;
     const outputCost = usage.output_tokens * 0.00015;
     const cacheReadCost = (usage.cache_read_input_tokens || 0) * 0.0000075;
-
+    
     return inputCost + outputCost + cacheReadCost;
   }
 }
@@ -287,7 +287,7 @@ Each usage object contains:
 - `output_tokens`: Tokens generated in the response
 - `cache_creation_input_tokens`: Tokens used to create cache entries
 - `cache_read_input_tokens`: Tokens read from cache
-- `service_tier`: The service tier used (for example, "standard")
+- `service_tier`: The service tier used (e.g., "standard")
 - `total_cost_usd`: Total cost in USD (only in result message)
 
 ## 
@@ -303,31 +303,31 @@ class BillingAggregator {
     totalCost: number;
     conversations: number;
   }>();
-
+  
   async processUserRequest(userId: string, prompt: string) {
     const tracker = new CostTracker();
     const { result, stepUsages, totalCost } = await tracker.trackConversation(prompt);
-
+    
     // Update user totals
     const current = this.userUsage.get(userId) || {
       totalTokens: 0,
       totalCost: 0,
       conversations: 0
     };
-
-    const totalTokens = stepUsages.reduce((sum, step) =>
+    
+    const totalTokens = stepUsages.reduce((sum, step) => 
       sum + step.usage.input_tokens + step.usage.output_tokens, 0
     );
-
+    
     this.userUsage.set(userId, {
       totalTokens: current.totalTokens + totalTokens,
       totalCost: current.totalCost + totalCost,
       conversations: current.conversations + 1
     });
-
+    
     return result;
   }
-
+  
   getUserBilling(userId: string) {
     return this.userUsage.get(userId) || {
       totalTokens: 0,

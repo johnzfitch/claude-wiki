@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:22:51Z"
+fetched_at: "2026-02-07T10:05:36Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/code-consultant"
 title: "Code consultant - Claude API Docs"
 ---
@@ -15,13 +15,13 @@ Suggest improvements to optimize Python code performance.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 [TABLE]
 
 ## 
 
-Example output
+Example Output
 
 Python
 
@@ -39,7 +39,7 @@ Explanation: Using a generator function with yield is more memory-efficient for 
 
 ## 
 
-API request
+API Request
 
 Python
 
@@ -91,13 +91,17 @@ message = client.messages.create(
 print(message.content)
 ```
 
+``` inline-block
+ 
+```
+
 Was this page helpful?
 
 - 
 
-- [Example output](#example-output)
+- [Example Output](#example-output)
 
-- [API request](#api-request)
+- [API Request](#api-request)
 
 [](/docs)
 

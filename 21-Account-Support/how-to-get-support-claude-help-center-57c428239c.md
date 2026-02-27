@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:06Z"
+fetched_at: "2026-02-08T20:52:09Z"
 source_url: "https://support.claude.com/en/articles/9015913-how-to-get-support"
 title: "How to get support | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ How to get support
 
 # How to get support
 
-Updated this week
+Updated yesterday
 
 Table of contents
 

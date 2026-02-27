@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:14Z"
+fetched_at: "2026-02-16T21:12:35Z"
 source_url: "https://support.claude.com/en/articles/11174108-about-the-development-partner-program"
 title: "About the Development Partner Program | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ About the Development Partner Program
 
 # About the Development Partner Program
 
-Updated this week
+Updated over a week ago
 
 The Development Partner Program is an optional, transparent way for organizations to help shape the future of Claude while maintaining control over their data.
 
@@ -103,13 +103,13 @@ Does Anthropic Act as a Data Processor or Controller?
 
 Who owns and manages the data of my Claude for Education account?
 
-[](https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program)
-
-Model Safety Bug Bounty Program
-
 [](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 
 Getting started with Claude for Nonprofits
+
+[](https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy)
+
+Anthropic Software Directory Policy
 
 Did this answer your question?
 

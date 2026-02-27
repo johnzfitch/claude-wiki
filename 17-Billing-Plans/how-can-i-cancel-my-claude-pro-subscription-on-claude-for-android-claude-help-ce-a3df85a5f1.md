@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-16T21:12:52Z"
 source_url: "https://support.claude.com/en/articles/9612898-how-can-i-cancel-my-claude-pro-subscription-on-claude-for-android"
 title: "How can I cancel my Claude Pro subscription on Claude for Android? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ How can I cancel my Claude Pro subscription on Claude for Android?
 
 # How can I cancel my Claude Pro subscription on Claude for Android?
 
-Updated this week
+Updated over a week ago
 
 If you signed up for Claude Pro via the Android app, your subscription and payment will be handled directly on your Android device.
 

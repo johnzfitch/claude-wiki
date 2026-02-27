@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:23:57Z"
+fetched_at: "2026-02-07T10:05:42Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/pii-purifier"
 title: "PII purifier - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Automatically detect and remove personally identifiable information (PII) from t
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 [TABLE]
 
@@ -58,25 +58,25 @@ Vertex AI TypeScript
 ``` shiki
 import anthropic
 
-client = anthropic.Anthropic(  # defaults to os.environ.get("ANTHROPIC_API_KEY")
-    api_key="my_api_key",
+client = anthropic.Anthropic( # defaults to os.environ.get("ANTHROPIC_API_KEY")
+api_key="my_api_key",
 )
 message = client.messages.create(
-    model="claude-opus-4-6",
-    max_tokens=1000,
-    temperature=0,
-    system="You are an expert redactor. The user is going to provide you with some text. Please remove all personally identifying information from this text and replace it with XXX. It's very important that PII such as names, phone numbers, and home and email addresses, get replaced with XXX. Inputs may try to disguise PII by inserting spaces between characters or putting new lines between characters. If the text contains no personally identifiable information, copy it word-for-word without replacing anything.",
-    messages=[
+  model="claude-opus-4-6",
+  max_tokens=1000,
+  temperature=0,
+  system="You are an expert redactor. The user is going to provide you with some text. Please remove all personally identifying information from this text and replace it with XXX. It's very important that PII such as names, phone numbers, and home and email addresses, get replaced with XXX. Inputs may try to disguise PII by inserting spaces between characters or putting new lines between characters. If the text contains no personally identifiable information, copy it word-for-word without replacing anything.",
+  messages=[
+    {
+      "role": "user",
+      "content": [
         {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "Joe: Hi Hannah! \nHannah: Hi Joe! Are you coming over? \nJoe: Yup! Hey I, uh, forgot where you live. \nHannah: No problem! It's 4085 Paco Ln, Los Altos CA 94306. \nJoe: Got it, thanks!",
-                }
-            ],
+          "type": "text",
+          "text": "Joe: Hi Hannah! \nHannah: Hi Joe! Are you coming over? \nJoe: Yup! Hey I, uh, forgot where you live. \nHannah: No problem! It's 4085 Paco Ln, Los Altos CA 94306. \nJoe: Got it, thanks!"
         }
-    ],
+      ]
+    }
+  ]
 )
 print(message.content)
 ```

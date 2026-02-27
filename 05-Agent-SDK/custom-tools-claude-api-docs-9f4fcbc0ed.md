@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:14:18Z"
+fetched_at: "2026-02-07T10:04:44Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/custom-tools"
 title: "Custom Tools - Claude API Docs"
 ---
@@ -97,14 +97,14 @@ async function* generateMessages() {
 }
 
 for await (const message of query({
-  prompt: generateMessages(), // Use async generator for streaming input
+  prompt: generateMessages(),  // Use async generator for streaming input
   options: {
     mcpServers: {
-      "my-custom-tools": customServer // Pass as object/dictionary, not array
+      "my-custom-tools": customServer  // Pass as object/dictionary, not array
     },
     // Optionally specify which tools Claude can use
     allowedTools: [
-      "mcp__my-custom-tools__get_weather" // Allow the weather tool
+      "mcp__my-custom-tools__get_weather",  // Allow the weather tool
       // Add other tools as needed
     ],
     maxTurns: 3
@@ -147,14 +147,14 @@ async function* generateMessages() {
 }
 
 for await (const message of query({
-  prompt: generateMessages(), // Use async generator for streaming input
+  prompt: generateMessages(),  // Use async generator for streaming input
   options: {
     mcpServers: {
       utilities: multiToolServer
     },
     allowedTools: [
-      "mcp__utilities__calculate", // Allow calculator
-      "mcp__utilities__translate" // Allow translator
+      "mcp__utilities__calculate",   // Allow calculator
+      "mcp__utilities__translate",   // Allow translator
       // "mcp__utilities__search_web" is NOT allowed
     ]
   }
@@ -191,7 +191,7 @@ tool(
     // args is fully typed based on the schema
     // TypeScript knows: args.data.name is string, args.data.age is number, etc.
     console.log(`Processing ${args.data.name}'s data as ${args.format}`);
-
+    
     // Your processing logic here
     return {
       content: [{
@@ -200,7 +200,7 @@ tool(
       }]
     };
   }
-);
+)
 ```
 
 ## 
@@ -221,7 +221,7 @@ tool(
   async (args) => {
     try {
       const response = await fetch(args.endpoint);
-
+      
       if (!response.ok) {
         return {
           content: [{
@@ -230,7 +230,7 @@ tool(
           }]
         };
       }
-
+      
       const data = await response.json();
       return {
         content: [{
@@ -247,7 +247,7 @@ tool(
       };
     }
   }
-);
+)
 ```
 
 ## 
@@ -314,20 +314,20 @@ const apiGatewayServer = createSdkMcpServer({
           openai: { baseUrl: "https://api.openai.com/v1", key: process.env.OPENAI_KEY },
           slack: { baseUrl: "https://slack.com/api", key: process.env.SLACK_TOKEN }
         };
-
+        
         const { baseUrl, key } = config[args.service];
         const url = new URL(`${baseUrl}${args.endpoint}`);
-
+        
         if (args.query) {
           Object.entries(args.query).forEach(([k, v]) => url.searchParams.set(k, v));
         }
-
+        
         const response = await fetch(url, {
           method: args.method,
           headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
           body: args.body ? JSON.stringify(args.body) : undefined
         });
-
+        
         const data = await response.json();
         return {
           content: [{
@@ -364,7 +364,7 @@ const calculatorServer = createSdkMcpServer({
           // Use a safe math evaluation library in production
           const result = eval(args.expression); // Example only!
           const formatted = Number(result).toFixed(args.precision);
-
+          
           return {
             content: [{
               type: "text",
@@ -393,11 +393,11 @@ const calculatorServer = createSdkMcpServer({
       async (args) => {
         const amount = args.principal * Math.pow(1 + args.rate / args.n, args.n * args.time);
         const interest = amount - args.principal;
-
+        
         return {
           content: [{
             type: "text",
-            text: "Investment Analysis:\n" +
+            text: `Investment Analysis:\n` +
                   `Principal: $${args.principal.toFixed(2)}\n` +
                   `Rate: ${(args.rate * 100).toFixed(2)}%\n` +
                   `Time: ${args.time} years\n` +

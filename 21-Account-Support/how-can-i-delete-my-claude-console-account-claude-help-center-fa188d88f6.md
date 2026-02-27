@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:13Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account"
 title: "How can I delete my Claude Console account? | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ How can I delete my Claude Console account?
 
 # How can I delete my Claude Console account?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -85,7 +85,7 @@ If you followed the steps above to delete your Console organization but want to 
 
 If you have an outstanding balance, you will see a message during the deletion flow that prompts you to pay the balance first by routing you to [Settings \> Billing](https://platform.claude.com/settings/billing).
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1973957766/5c2dd87c0818a0400099a833c9b3/4cc3130a-f696-4967-9fe3-e5623c6f02bd?expires=1771809300&signature=b21a24b6d3f0514623b839c38e4f3bd41c80b6ba9a6c4aa23615e8dd2b384780&req=dSkgFcB7moZZX%2FMW1HO4zbYXXxZqXO0YFZRyvJPpBZ%2F43D9ATW8bTwacoGWF%0AwOd41jlzSGDnKKUY2XM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1973957766/5c2dd87c0818a0400099a833c9b3/4cc3130a-f696-4967-9fe3-e5623c6f02bd?expires=1771278300&signature=0f77cc891446042b7516622fe30035886b57357fab889b3e2be8b0a70f4da186&req=dSkgFcB7moZZX%2FMW1HO4zbYXXxZgW%2BwYFZRyvJPpBZ9zVz%2FatHvr%2BlaCI1%2F3%0AXNHbrnyrIl8Q3VRXHfU%3D%0A)
 
 You must pay this outstanding balance before you’re able to move forward with the deletion process.
 
@@ -93,7 +93,7 @@ You must pay this outstanding balance before you’re able to move forward with 
 
 There are some scenarios where you will need to contact our team to delete your account. If this is the case, it will be noted when you try to delete your organization:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1973957765/19dda72a40db95d78c00c27a1a1c/6ce89be6-93ce-409c-bbea-d34be09db348?expires=1771809300&signature=98195604049f76e3cec5d202ef1e7b3bc5c2ef7b6a5262dd54198c58ad347962&req=dSkgFcB7moZZXPMW1HO4zRW11OTFeK36ZxDZGlqR6Ggsv2DdfjzuXP9fO3WB%0Ar2pOjdUKISD%2BoRTTUSo%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1973957765/19dda72a40db95d78c00c27a1a1c/6ce89be6-93ce-409c-bbea-d34be09db348?expires=1771278300&signature=ec3d8b4a25168fb3ec23d1240c46e78787ac44aae8cc4a65e3ea97058fc79c7c&req=dSkgFcB7moZZXPMW1HO4zRW11OTPf6z6ZxDZGlqR6Gid1ukShRgevIMshkXq%0AFAO2qvV2WOH1%2FDfIWLc%3D%0A)
 
 If you are seeing this message, this indicates that your Console organization cannot be deleted via the self-service pathway.
 

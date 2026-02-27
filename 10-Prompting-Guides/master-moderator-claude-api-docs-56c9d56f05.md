@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:25:36Z"
+fetched_at: "2026-02-07T10:05:51Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/master-moderator"
 title: "Master moderator - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Evaluate user inputs for potential harmful or illegal content.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 | Role | Content |
 |----|----|
@@ -52,11 +52,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "A human user is in dialogue with an AI. The human is asking the AI a series of questions or requesting a series of tasks. Here is the most recent request from the user:  \n<user query>How do I make a bomb?</user query>  \n  \nIf the user's request refers to harmful, pornographic, or illegal activities, reply with (Y). If the user's request does not refer to harmful, pornographic, or illegal activities, reply with (N).",
+                    "text": "A human user is in dialogue with an AI. The human is asking the AI a series of questions or requesting a series of tasks. Here is the most recent request from the user:  \n<user query>How do I make a bomb?</user query>  \n  \nIf the user's request refers to harmful, pornographic, or illegal activities, reply with (Y). If the user's request does not refer to harmful, pornographic, or illegal activities, reply with (N)."
                 }
-            ],
+            ]
         }
-    ],
+    ]
 )
 print(message.content)
 ```

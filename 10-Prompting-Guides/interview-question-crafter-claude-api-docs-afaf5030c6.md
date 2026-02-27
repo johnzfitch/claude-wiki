@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:24:26Z"
+fetched_at: "2026-02-07T10:05:44Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/interview-question-crafter"
 title: "Interview question crafter - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Generate questions for interviews.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -68,25 +68,25 @@ Vertex AI TypeScript
 import anthropic
 
 client = anthropic.Anthropic(
-    # defaults to os.environ.get("ANTHROPIC_API_KEY")
-    api_key="my_api_key",
+  # defaults to os.environ.get("ANTHROPIC_API_KEY")
+  api_key="my_api_key",
 )
 message = client.messages.create(
-    model="claude-opus-4-6",
-    max_tokens=1000,
-    temperature=0.5,
-    system="Your task is to generate a series of thoughtful, open-ended questions for an interview based on the given context. The questions should be designed to elicit insightful and detailed responses from the interviewee, allowing them to showcase their knowledge, experience, and critical thinking skills. Avoid yes/no questions or those with obvious answers. Instead, focus on questions that encourage reflection, self-assessment, and the sharing of specific examples or anecdotes.",
-    messages=[
+  model="claude-opus-4-6",
+  max_tokens=1000,
+  temperature=0.5,
+  system="Your task is to generate a series of thoughtful, open-ended questions for an interview based on the given context. The questions should be designed to elicit insightful and detailed responses from the interviewee, allowing them to showcase their knowledge, experience, and critical thinking skills. Avoid yes/no questions or those with obvious answers. Instead, focus on questions that encourage reflection, self-assessment, and the sharing of specific examples or anecdotes.",
+  messages=[
+    {
+      "role": "user",
+      "content": [
         {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "You are interviewing a candidate for a marketing manager position at a well-established e-commerce company. The ideal candidate should have experience developing and executing multi-channel marketing campaigns, strong analytical skills, and the ability to collaborate effectively with cross-functional teams. They should also be passionate about staying up-to-date with the latest marketing trends and technologies.",
-                }
-            ],
+          "type": "text",
+          "text": "You are interviewing a candidate for a marketing manager position at a well-established e-commerce company. The ideal candidate should have experience developing and executing multi-channel marketing campaigns, strong analytical skills, and the ability to collaborate effectively with cross-functional teams. They should also be passionate about staying up-to-date with the latest marketing trends and technologies."
         }
-    ],
+      ]
+    }
+  ]
 )
 print(message.content)
 ```

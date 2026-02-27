@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:14Z"
+fetched_at: "2026-02-16T21:12:52Z"
 source_url: "https://support.claude.com/en/articles/9796807-creating-and-managing-workspaces-in-the-claude-console"
 title: "Creating and managing Workspaces in the Claude Console | Claude Help Center"
 ---
@@ -55,7 +55,7 @@ Creating and managing Workspaces in the Claude Console
 
 # Creating and managing Workspaces in the Claude Console
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

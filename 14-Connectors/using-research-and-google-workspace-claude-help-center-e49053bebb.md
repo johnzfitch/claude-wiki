@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:33Z"
+fetched_at: "2026-02-16T21:12:35Z"
 source_url: "https://support.claude.com/en/articles/11101545-using-research-and-google-workspace"
 title: "Using Research and Google Workspace | Claude Help Center"
 ---

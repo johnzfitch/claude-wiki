@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-22T10:50:57Z"
+fetched_at: "2026-02-16T21:12:30Z"
 source_url: "https://www.anthropic.com/news/bengaluru-office-partnerships-across-india"
 title: "Anthropic opens Bengaluru office and announces new partnerships across India \\ Anthropic"
 ---
@@ -11,7 +11,7 @@ Announcements
 
 Feb 16, 2026
 
-India is the second-largest market for [Claude.ai](http://claude.ai/redirect/website.v1.30b21a27-49fe-42d2-a076-cdc59651fa1c), home to a developer community doing some of the most technically intense AI work we see anywhere. [Nearly half of Claude usage](https://www.anthropic.com/research/india-brief-economic-index) in India comprises computer and mathematical tasks: building applications, modernizing systems, and shipping production software.
+India is the second-largest market for [Claude.ai](http://claude.ai/redirect/website.v1.4898addc-909c-4a61-b98b-b5bd0f7471f8), home to a developer community doing some of the most technically intense AI work we see anywhere. [Nearly half of Claude usage](https://www.anthropic.com/research/india-brief-economic-index) in India comprises computer and mathematical tasks: building applications, modernizing systems, and shipping production software.
 
 Today, as we officially open our Bengaluru office, we’re announcing partnerships across enterprise, education, and agriculture that deepen our commitment to India across a range of sectors.
 
@@ -31,11 +31,11 @@ To support this growing customer base, our India team will offer applied AI expe
 
 Air India is using Claude Code to help developers ship custom software faster and at lower cost, as part of a broader push to use agentic AI across its operations. [CRED](https://claude.com/customers/cred) achieved 2x faster feature delivery and 10% better test coverage with Claude Code. And Cognizant is deploying Claude to 350,000 employees globally to modernize legacy systems, accelerate software development, and support AI adoption among its enterprise clients.
 
-Among India’s startups, the story is similar. At [Razorpay](https://razorpay.com/), AI is integrated into risk systems, decision-making processes, and operations across the company. [Rocket ](https://claude.com/customers/rocket)uses Claude to let non-technical teams across enterprises build production-ready apps and websites in minutes and hours rather than weeks. At[ Enterpret](https://www.enterpret.com/), Claude powers its AI assistant, the engineering team builds with Claude Code daily, and the startup has shipped an MCP integration that brings customer insights directly into Claude. And [Emergent](https://app.emergent.sh/landing/), an AI-powered platform that lets anyone build software by describing what they want in plain language, reached \$25 million in annual recurring revenue and two million users in under five months, built entirely with Claude.
+Among India’s startups, the story is similar. At Razorpay, AI is integrated into risk systems, decision-making processes, and operations across the company. At [Enterpret](https://www.enterpret.com/), Claude powers its AI assistant, the engineering team builds with Claude Code daily, and the startup has shipped an MCP integration that brings customer insights directly into Claude. And [Emergent](https://app.emergent.sh/landing/), an AI-powered platform that lets anyone build software by describing what they want in plain language, reached \$25 million in annual recurring revenue and two million users in under five months, built entirely with Claude.
 
 ## Reaching students in low-income communities
 
-Educational and instructional tasks make up 12% of Claude.ai use in India. [Pratham](https://claude.com/customers/pratham-international), one of India’s largest education nonprofits, chose Anthropic as its first strategic AI lab partner because of our shared focus on safety and educational rigor. Their Anytime Testing Machine, powered by Claude, is currently being piloted with 1,500 students across 20 schools, with plans to expand to 100 schools by the end of 2026. Adapted earlier this year for over 5,000 learners in Pratham’s Second Chance program, which supports women who have dropped out of formal schooling, the Anytime Testing Machine aims to create flexible, credible pathways for learning and certification by helping students practice for exams.
+Educational and instructional tasks make up 12% of Claude.ai use in India. [Pratham](https://www.pratham.org/), one of India’s largest education nonprofits, chose Anthropic as its first strategic AI lab partner because of our shared focus on safety and educational rigor. Their Anytime Testing Machine, powered by Claude, is currently being piloted with 1,500 students across 20 schools, with plans to expand to 100 schools by the end of 2026. Adapted earlier this year for over 5,000 learners in Pratham’s Second Chance program, which supports women who have dropped out of formal schooling, the Anytime Testing Machine aims to create flexible, credible pathways for learning and certification by helping students practice for exams.
 
 Anthropic is collaborating with [Central Square Foundation](https://www.centralsquarefoundation.org/) to use EdTech and AI more effectively to educate children from underserved communities. As part of this collaboration, Anthropic will provide technical expertise, mentorship, and API credits to organizations developing AI-enabled tools—including personalized tutors, teacher coaching solutions, and assessment-driven instruction—with the goal of reaching more primary school students across India.
 
@@ -45,7 +45,7 @@ India has a track record of building interoperable digital public infrastructure
 
 We’re also demonstrating how Claude Code and Cowork can have an impact within nonprofits themselves—including [Noora Health](https://noorahealth.org/), which delivers accessible health coaching to millions of families, and [Intelehealth](https://intelehealth.org/), which connects patients in remote communities to quality medical care.
 
-India has 50 million pending court cases, and routine updates often take months to reach litigants. Accessing case information typically requires repeated court visits or intermediaries to navigate paper files and legal jargon. Anthropic is supporting [Adalat AI](https://claude.com/customers/adalat-ai) to improve access to judicial services with a [national WhatsApp helpline](https://www.adalat.ai/whatsapp-helpline), launching today. Using Claude, it provides instant case updates as well as translation, document summarization, and interactive querying of legal documents in native Indian languages.
+India has 50 million pending court cases, and routine updates often take months to reach litigants. Accessing case information typically requires repeated court visits or intermediaries to navigate paper files and legal jargon. Anthropic is supporting [Adalat AI](https://www.adalat.ai/) to improve access to judicial services with a [national WhatsApp helpline](https://www.adalat.ai/whatsapp-helpline), launching today. Using Claude, it provides instant case updates as well as translation, document summarization, and interactive querying of legal documents in native Indian languages.
 
 ## Driving adoption through open-source standards
 
@@ -63,18 +63,16 @@ For information about career opportunities at our Bengaluru office, visit our [c
 
 ## Related content
 
-### Making frontier cybersecurity capabilities available to defenders
+### Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+[Read more](/news/anthropic-codepath-partnership)
 
-[Read more](/news/claude-code-security)
+### Chris Liddell appointed to Anthropic’s board of directors
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/chris-liddell-appointed-anthropic-board)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
 
-### Introducing Claude Sonnet 4.6
+We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
 
-Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.
-
-[Read more](/news/claude-sonnet-4-6)
+[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)

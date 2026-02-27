@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:13Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8114518-claude-s-response-to-my-prompt-is-too-brief"
 title: "Claude’s response to my prompt is too brief. | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Claude’s response to my prompt is too brief.
 
 # Claude’s response to my prompt is too brief.
 
-Updated this week
+Updated over a week ago
 
 Claude’s context window applies to the prompts you provide but not the output it generates. If its responses are too brief or only partially complete, consider retooling your prompts. We recommend giving Claude the previous prompt and response when writing your next prompt to pick up where it left off.
 
@@ -39,13 +39,13 @@ Claude’s context window applies to the prompts you provide but not the output 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114491-getting-started-with-claude)
-
-Getting started with Claude
-
 [](https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on)
 
 Claude is providing incorrect or misleading responses. What’s going on?
+
+[](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features)
+
+Understanding Claude's Personalization Features
 
 [](https://support.claude.com/en/articles/11088861-using-research-on-claude)
 

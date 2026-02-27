@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:16:24Z"
+fetched_at: "2026-02-07T10:04:56Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/chain-prompts"
 title: "Chain complex prompts for stronger performance - Claude API Docs"
 ---
@@ -94,13 +94,13 @@ Get inspired by a curated selection of prompts for various tasks and use cases.
 
 GitHub prompting tutorial
 
-An example-filled tutorial that covers the prompt engineering concepts found in the docs.
+An example-filled tutorial that covers the prompt engineering concepts found in our docs.
 
 [](https://docs.google.com/spreadsheets/d/19jzLgRruG9kjUQNKtCg1ZjdD6l6weA6qRXG5zLIAhC8)
 
 Google Sheets prompting tutorial
 
-A lighter weight version of the prompt engineering tutorial via an interactive spreadsheet.
+A lighter weight version of our prompt engineering tutorial via an interactive spreadsheet.
 
 Was this page helpful?
 

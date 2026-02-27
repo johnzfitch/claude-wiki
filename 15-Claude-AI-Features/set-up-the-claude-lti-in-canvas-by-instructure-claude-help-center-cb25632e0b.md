@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-08T20:51:44Z"
 source_url: "https://support.claude.com/en/articles/11725453-set-up-the-claude-lti-in-canvas-by-instructure"
 title: "Set up the Claude LTI in Canvas by Instructure | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Set up the Claude LTI in Canvas by Instructure
 
 # Set up the Claude LTI in Canvas by Instructure
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -95,13 +95,13 @@ This article provides information on how to enable the Claude LTI integration in
 
 5.  Click "Install" and refresh the course page.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1611422430/c8e0875feac1f2c7cb033be74fc9/AD_4nXfLU_bui3EXcCjQ0qm70HD97neqjGayKeDer_t76utlci8gZSUjYRhw6ZSOlDdqSEcwXBzd_shAh7pQEJ-8OoE0O21DM5coOgxmO_WD5hlwiuwtS2iYXcTavhIRyQT5zKFWvfn3NA?expires=1771809300&signature=b4964f56e258b139567328d461b55be27a59273920982084aa015e8348d5416e&req=dSYmF818n4VcWfMW1HO4zTEDZeoWm%2FqCEv2ojHLMylaygzDE3BlBuhTKUuH%2F%0AFiXZd2QbTeTXLmIozZ4%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1611422430/c8e0875feac1f2c7cb033be74fc9/AD_4nXfLU_bui3EXcCjQ0qm70HD97neqjGayKeDer_t76utlci8gZSUjYRhw6ZSOlDdqSEcwXBzd_shAh7pQEJ-8OoE0O21DM5coOgxmO_WD5hlwiuwtS2iYXcTavhIRyQT5zKFWvfn3NA?expires=1770585300&signature=ca91e78530c3fa39aeabfc4b4001696eebfa3b9a1a4001df359ececef76f7eb5&req=dSYmF818n4VcWfMW1HO4zTEDZesbk%2FaCEv2ojHLMylaymsgTeZeQE76uWCuJ%0Aw3v7PQ1grgauH4TRC84%3D%0A)
 
-## Turn on the Claude LTI Integration in Claude for Education organization settings
+## Turn on the Claude LTI Integration in Claude for Education admin settings
 
 1.  In Claude for Education, sign in as an administrator.
 
-2.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
+2.  Navigate to [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors).
 
 3.  Find **Canvas** and click "Enable."
 
@@ -123,6 +123,10 @@ If you have any questions about your Claude for Education plan account or the Cl
 
 Related Articles
 
+[](https://support.claude.com/en/articles/10168395-setting-up-claude-integrations)
+
+Setting up Claude integrations
+
 [](https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins)
 
 Getting Started with Claude for Education at Your University (for Owners/Admins)
@@ -135,13 +139,9 @@ FAQs on Using Claude for Education at Your University
 
 Prototype AI-Powered Apps with Claude artifacts
 
-[](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
+[](https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions)
 
-Claude in Chrome Troubleshooting
-
-[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
-
-Claude Enterprise Analytics API reference guide
+Enforce network-level access control with Tenant Restrictions
 
 Did this answer your question?
 

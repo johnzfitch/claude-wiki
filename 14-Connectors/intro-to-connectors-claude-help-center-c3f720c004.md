@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:26Z"
+fetched_at: "2026-02-16T21:12:47Z"
 source_url: "https://support.claude.com/en/articles/13123742-intro-to-connectors"
 title: "Intro to connectors | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Intro to connectors
 
 # Intro to connectors
 
-Updated this week
+Updated over a week ago
 
 Learn how to supercharge Claude by connecting the tools you already use. This tutorial shows you how to set up connectors that give Claude access to your files, apps, and workflows. See how Claude can pull real data from your connected sources, bridge information across tools, and take actions on your behalf.
 
@@ -41,9 +41,9 @@ Unable to execute JavaScript.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Get started with custom connectors using remote MCP
+Getting started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 

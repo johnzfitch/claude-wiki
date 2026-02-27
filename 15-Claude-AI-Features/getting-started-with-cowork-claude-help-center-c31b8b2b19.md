@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:12Z"
+fetched_at: "2026-02-08T20:52:06Z"
 source_url: "https://support.claude.com/en/articles/13345190-getting-started-with-cowork"
 title: "Getting started with Cowork | Claude Help Center"
 ---
@@ -23,8 +23,6 @@ Search for articles...
 
 Table of contents
 
-[](#h_76b4dc548e)
-
 [](#h_9fe40dc9c6)
 
 [](#h_286474afcc)
@@ -34,8 +32,6 @@ Table of contents
 [](#h_e674ec5e40)
 
 [](#h_785de7234a)
-
-[](#h_0f9e0998dd)
 
 [](#h_ab45b74d27)
 
@@ -57,11 +53,9 @@ Getting started with Cowork
 
 # Getting started with Cowork
 
-Updated this week
+Updated yesterday
 
 Table of contents
-
-[](#h_76b4dc548e)
 
 [](#h_9fe40dc9c6)
 
@@ -72,8 +66,6 @@ Table of contents
 [](#h_e674ec5e40)
 
 [](#h_785de7234a)
-
-[](#h_0f9e0998dd)
 
 [](#h_ab45b74d27)
 
@@ -87,21 +79,9 @@ Table of contents
 
 This article explains how to use **[Cowork](https://claude.com/product/cowork)**, a research preview that brings Claude Code's agentic capabilities to Claude Desktop for knowledge work beyond coding.
 
-## Availability
+Cowork is available as a research preview for all paid plans (Pro, Max, Team, Enterprise) using the Claude Desktop app on macOS.
 
-Cowork is available as a research preview for paid plans (Pro, Max, Team, Enterprise) on:
-
-- **Claude Desktop for macOS**
-
-  - **[Click here](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)** to download
-
-- **Claude Desktop for Windows** (x64 only)
-
-**Windows users:** Cowork requires the latest version of Claude for Windows. Download or update at **[claude.com/download](https://claude.com/download)**.
-
-Windows arm64 is not supported.
-
-------------------------------------------------------------------------
+## **[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)**
 
 ## What is Cowork?
 
@@ -159,7 +139,7 @@ You maintain visibility into what Claude is planning and doing throughout the pr
 
 ### Requirements
 
-- **Claude Desktop app:** Cowork requires the **[desktop app](https://support.claude.com/en/articles/10065433-installing-claude-desktop)** for macOS or Windows and is not available on web or mobile.
+- **Claude Desktop app:** Cowork requires the **[desktop app](https://support.claude.com/en/articles/10065433-installing-claude-desktop)** for macOS and is not available on web or mobile.
 
 - **Paid Claude subscription:** This research preview is available to paid Claude plans (Pro, Max, Team, Enterprise) only.
 
@@ -167,11 +147,11 @@ You maintain visibility into what Claude is planning and doing throughout the pr
 
 ### Accessing Cowork
 
-1.  Open Claude Desktop.
+1.  Open Claude Desktop for macOS.
 
 2.  Look for the mode selector that includes "Chat" and the Cowork tab.
 
-3.  Click the "Cowork" tab to switch modes to “Tasks”.
+3.  Click the Cowork tab to switch modes to “Tasks”.
 
 4.  Describe the task you want Claude to complete.
 
@@ -194,28 +174,6 @@ When Claude is working on a task in Cowork:
 - **Deletion protection:** When using Cowork, Claude requires your explicit permission before permanently deleting any files. You will see a permission prompt and will need to select "Allow" before Claude is allowed to perform deletion tasks.
 
 Tasks can run for extended periods depending on complexity. You can monitor progress or step away and return when Claude finishes.
-
-------------------------------------------------------------------------
-
-## Add global and folder instructions
-
-### Global instructions
-
-You can give Claude standing instructions that apply to every Cowork session. Use this to specify your preferred tone, output format, or background on your role.
-
-To set global instructions:
-
-1.  Navigate to Settings \> Cowork within Claude Desktop.
-
-2.  Click “Edit” next to **Global instructions**.
-
-3.  Type your instructions in the text box and click “Save”:
-
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2050025867/7f73f533e79aa8e04bcfde9f8dbd/0101cd43-4d05-4100-ad86-c7907d189a98?expires=1771809300&signature=0cdf6d448221d717bdc6865397c6489ecb76a251bcd4b97b9ff59ef06a8c793f&req=diAiFsl8mIlZXvMW1HO4zbPDHwm%2B1VEp6VXD6BjIOEKEoTuGrxZWWGTw5B15%0AfJmfLf3cvNdmwWru1vE%3D%0A)
-
-### Folder instructions
-
-Folder instructions add project-specific context to Cowork when you select a local folder. Claude can also update these on its own during a session.
 
 ------------------------------------------------------------------------
 
@@ -277,7 +235,7 @@ After installing or uploading a plugin, you can customize it to better fit your 
 
 Each plugin you install adds commands you can invoke while using Cowork. Type / or click the “+” button to see available commands from your installed plugins.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2010180867/ea6555f889c8ae2b676b8e33214e/975b77da-9bb4-436e-bdf4-cd6318fd593c?expires=1771809300&signature=ec783d893da9b7fae0fdaebbc3a918bced9845fdb9f2a8ef93db36dd82042250&req=diAmFsh2nYlZXvMW1HO4zYdmTSvIYngtRKEe0R6ky%2Bw8zRCXfDQK92HBVxS6%0Ai1LKjOjcPchSR2BKcZQ%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2010180867/ea6555f889c8ae2b676b8e33214e/975b77da-9bb4-436e-bdf4-cd6318fd593c?expires=1770585300&signature=318bebfb54b2d292b22e28d4338a5a03409b7507e512849246f19a4c20860c77&req=diAmFsh2nYlZXvMW1HO4zYdmTSrFanQtRKEe0R6ky%2By8LEUJpKiMOiOIoTtx%0AikMz%2BuzoN2zYFdlgj0s%3D%0A)
 
 ------------------------------------------------------------------------
 
@@ -361,11 +319,13 @@ Please carefully assess how much you trust an MCP or website before extending ac
 
 Cowork is a feature preview, which means some capabilities are not yet available:
 
+- **No projects support:** You cannot use Cowork within projects at this time.
+
 - **No memory across sessions:** Claude does not retain memory from previous Cowork sessions.
 
 - **No chat or artifact sharing:** Sessions cannot be shared with others.
 
-- **Desktop only:** Cowork is only available in the Claude Desktop app and does not sync across devices.
+- **Desktop for macOS only:** Cowork is only available in the Claude Desktop app for macOS and does not sync across devices.
 
 - **Session persistence:** The desktop app must remain open for your session to continue. Closing the app ends the session.
 

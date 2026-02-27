@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T10:57:04Z"
+fetched_at: "2026-02-07T10:04:03Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6"
 title: "What's new in Claude 4.6 - Claude API Docs"
 ---
@@ -11,7 +11,7 @@ Models & pricing
 
 Copy page
 
-Overview of new features and capabilities in Claude Opus 4.6 and Sonnet 4.6.
+Overview of new features and capabilities in Claude Opus 4.6.
 
 Copy page
 
@@ -24,11 +24,8 @@ New models
 | Model | API model ID | Description |
 |----|----|----|
 | Claude Opus 4.6 | `claude-opus-4-6` | Our most intelligent model for building agents and coding |
-| Claude Sonnet 4.6 | `claude-sonnet-4-6` | Our best combination of speed and intelligence |
 
 Claude Opus 4.6 supports a 200K context window (with [1M token context window](/docs/en/build-with-claude/context-windows#1m-token-context-window) available in beta), 128K max output tokens, extended thinking, and all existing Claude API features.
-
-Claude Sonnet 4.6 supports a 200K context window (with [1M token context window](/docs/en/build-with-claude/context-windows#1m-token-context-window) available in beta), 64K max output tokens, extended thinking, and adaptive thinking.
 
 For complete pricing and specs, see the [models overview](/docs/en/about-claude/models/overview).
 
@@ -40,16 +37,16 @@ New features
 
 Adaptive thinking mode
 
-[Adaptive thinking](/docs/en/build-with-claude/adaptive-thinking) (`thinking: {type: "adaptive"}`) is the recommended thinking mode for Opus 4.6 and Sonnet 4.6. Claude dynamically decides when and how much to think. At the default effort level (`high`), Claude will almost always think. At lower effort levels, it may skip thinking for simpler problems.
+[Adaptive thinking](/docs/en/build-with-claude/adaptive-thinking) (`thinking: {type: "adaptive"}`) is the recommended thinking mode for Opus 4.6. Claude dynamically decides when and how much to think. At the default effort level (`high`), Claude will almost always think. At lower effort levels, it may skip thinking for simpler problems.
 
-`thinking: {type: "enabled"}` and `budget_tokens` are **deprecated** on Opus 4.6 and Sonnet 4.6. They remain functional but will be removed in a future model release. Use adaptive thinking and the [effort parameter](/docs/en/build-with-claude/effort) to control thinking depth instead. Adaptive thinking also automatically enables interleaved thinking.
+`thinking: {type: "enabled"}` and `budget_tokens` are **deprecated** on Opus 4.6. They remain functional but will be removed in a future model release. Use adaptive thinking and the [effort parameter](/docs/en/build-with-claude/effort) to control thinking depth instead. Adaptive thinking also automatically enables interleaved thinking.
 
 ``` shiki
 response = client.messages.create(
     model="claude-opus-4-6",
     max_tokens=16000,
     thinking={"type": "adaptive"},
-    messages=[{"role": "user", "content": "Solve this complex problem..."}],
+    messages=[{"role": "user", "content": "Solve this complex problem..."}]
 )
 ```
 
@@ -59,54 +56,11 @@ Effort parameter GA
 
 The [effort parameter](/docs/en/build-with-claude/effort) is now generally available (no beta header required). A new `max` effort level provides the absolute highest capability on Opus 4.6. Combine effort with adaptive thinking for optimal cost-quality tradeoffs.
 
-Sonnet 4.6 introduces the effort parameter to the Sonnet family. Consider setting effort to `medium` for most Sonnet 4.6 use cases to balance speed, cost, and performance.
-
-### 
-
-Code execution is now free with web tools
-
-[Code execution](/docs/en/agents-and-tools/tool-use/code-execution-tool) is now free when used with [web search](/docs/en/agents-and-tools/tool-use/web-search-tool) or [web fetch](/docs/en/agents-and-tools/tool-use/web-fetch-tool). When either tool is included in your API request, there are no additional charges for code execution beyond standard input and output token costs. Code execution enables dynamic filtering in web search and web fetch tools, improving accuracy while reducing token consumption. See the [code execution pricing](/docs/en/agents-and-tools/tool-use/code-execution-tool#usage-and-pricing) for details on standalone usage.
-
-### 
-
-Improved web search and web fetch with dynamic filtering
-
-[Web search](/docs/en/agents-and-tools/tool-use/web-search-tool) and [web fetch](/docs/en/agents-and-tools/tool-use/web-fetch-tool) tools now support dynamic filtering with Opus 4.6 and Sonnet 4.6. Claude can write and execute code to filter results before they reach the context window, keeping only relevant information and improving accuracy while reducing token consumption. To enable dynamic filtering, use the `web_search_20260209` or `web_fetch_20260209` tool versions.
-
-### 
-
-Tools graduating to general availability
-
-The following tools are now generally available:
-
-- [Code execution](/docs/en/agents-and-tools/tool-use/code-execution-tool) (free with web tools)
-- [Web fetch](/docs/en/agents-and-tools/tool-use/web-fetch-tool)
-- [Programmatic tool calling](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling)
-- [Tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool)
-- [Tool use examples](/docs/en/agents-and-tools/tool-use/implement-tool-use#providing-tool-use-examples)
-- [Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool)
-
 ### 
 
 Compaction API (beta)
 
 [Compaction](/docs/en/build-with-claude/compaction) provides automatic, server-side context summarization, enabling effectively infinite conversations. When context approaches the window limit, the API automatically summarizes earlier parts of the conversation.
-
-### 
-
-Fast mode (research preview)
-
-[Fast mode](/docs/en/build-with-claude/fast-mode) (`speed: "fast"`) delivers significantly faster output token generation for Opus models. Fast mode is up to 2.5x as fast at premium pricing (\$30/\$150 per MTok). This is the same model running with faster inference (no change to intelligence or capabilities).
-
-``` shiki
-response = client.beta.messages.create(
-    model="claude-opus-4-6",
-    max_tokens=4096,
-    speed="fast",
-    betas=["fast-mode-2026-02-01"],
-    messages=[{"role": "user", "content": "Refactor this module..."}],
-)
-```
 
 ### 
 
@@ -118,7 +72,7 @@ Fine-grained tool streaming (GA)
 
 128K output tokens
 
-Opus 4.6 supports up to 128K output tokens, doubling the previous 64K limit. This enables longer thinking budgets and more comprehensive responses. The SDKs require streaming for requests with large `max_tokens` values to avoid HTTP timeouts. If you don't need to process events incrementally, use `.stream()` with `.get_final_message()` to get the complete response. See [Streaming Messages](/docs/en/build-with-claude/streaming#get-the-final-message-without-handling-events) for details.
+Opus 4.6 supports up to 128K output tokens, doubling the previous 64K limit. This enables longer thinking budgets and more comprehensive responses. The SDKs require streaming for requests with large `max_tokens` values to avoid HTTP timeouts. If you don't need to process events incrementally, use `.stream()` with `.get_final_message()` to get the complete response — see [Streaming Messages](/docs/en/build-with-claude/streaming#get-the-final-message-without-handling-events) for details.
 
 ### 
 
@@ -142,8 +96,6 @@ Deprecations
 
 The `interleaved-thinking-2025-05-14` beta header is **deprecated** on Opus 4.6. It is safely ignored if included, but is no longer required. [Adaptive thinking](/docs/en/build-with-claude/adaptive-thinking) automatically enables [interleaved thinking](/docs/en/build-with-claude/extended-thinking#interleaved-thinking). Remove `betas=["interleaved-thinking-2025-05-14"]` from your requests when using Opus 4.6.
 
-**Sonnet 4.6** continues to support the `interleaved-thinking-2025-05-14` beta header for use with manual extended thinking (`thinking: {type: "enabled"}`). You can use either interleaved thinking with the beta header or adaptive thinking on Sonnet 4.6.
-
 ### 
 
 `output_format`
@@ -154,13 +106,13 @@ The `output_format` parameter for [structured outputs](/docs/en/build-with-claud
 # Before
 response = client.messages.create(
     output_format={"type": "json_schema", "schema": {...}},
-    # ...
+    ...
 )
 
 # After
 response = client.messages.create(
     output_config={"format": {"type": "json_schema", "schema": {...}}},
-    # ...
+    ...
 )
 ```
 
@@ -214,12 +166,6 @@ Compaction
 
 Explore server-side context compaction.
 
-[](/docs/en/build-with-claude/fast-mode)
-
-Fast mode
-
-Faster output token generation for Opus models.
-
 [](/docs/en/about-claude/models/migration-guide)
 
 Migration guide
@@ -238,15 +184,7 @@ Was this page helpful?
 
 - [Effort parameter GA](#effort-parameter-ga)
 
-- [Code execution is now free with web tools](#code-execution-is-now-free-with-web-tools)
-
-- [Improved web search and web fetch with dynamic filtering](#improved-web-search-and-web-fetch-with-dynamic-filtering)
-
-- [Tools graduating to general availability](#tools-graduating-to-general-availability)
-
 - [Compaction API (beta)](#compaction-api-beta)
-
-- [Fast mode (research preview)](#fast-mode-research-preview)
 
 - [Fine-grained tool streaming (GA)](#fine-grained-tool-streaming-ga)
 

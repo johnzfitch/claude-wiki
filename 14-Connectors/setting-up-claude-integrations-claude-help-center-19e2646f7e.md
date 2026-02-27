@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:50Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10168395-setting-up-claude-integrations"
 title: "Setting up Claude integrations | Claude Help Center"
 ---
@@ -65,7 +65,7 @@ To use integrations on Claude, you must authenticate through the third party fir
 
 Some integrations can be enabled within your chat interface. Click the "+" button on the lower left corner of the chat interface, select the integration you'd like to enable, and follow the instructions to authenticate.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1622305037/8e90d1b9ef652ce52009b7347de3/Screenshot+2025-07-15+at+3_21_54%E2%80%AFPM.png?expires=1771809300&signature=9207fc427293784425286726b6f4e1505d01b2232a248b2631a9c94fbceaf1f2&req=dSYlFMp%2BmIFcXvMW1HO4zXUb%2FV8AUPNr6KMB2kPHQusWD95OPTs15boqKuyd%0ArG1ZdneRHCDDS3%2BRlNs%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1622305037/8e90d1b9ef652ce52009b7347de3/Screenshot+2025-07-15+at+3_21_54%E2%80%AFPM.png?expires=1771277400&signature=3be0e00951faaad1e2cd28e934ccce16528fb9bd4c7a504a04a65b30bb0bcdbb&req=dSYlFMp%2BmIFcXvMW1HO4zXUb%2FV8KV%2F1s6KMB2kPHQusyHCQVJoVsi4LoFqyY%0Ag1DO%2FfRDg5bRFMW9bY0%3D%0A)
 
 Some integrations need to be enabled from Settings first. To do this:
 
@@ -105,6 +105,10 @@ To enable integrations on a Team or Enterprise plan, you must be an organization
 
 Related Articles
 
+[](https://support.claude.com/en/articles/9945703-claude-for-sales)
+
+Claude for Sales
+
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
 Pre-built web connectors using remote MCP
@@ -116,10 +120,6 @@ Getting started with Claude in Slack
 [](https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude)
 
 Using the Scholar Gateway Connector in Claude
-
-[](https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude)
-
-Using the Benevity Connector in Claude
 
 [](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:14Z"
+fetched_at: "2026-02-16T21:12:36Z"
 source_url: "https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program"
 title: "Anthropic&#x27;s AI for Science Program | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Anthropic's AI for Science Program
 
 # Anthropic's AI for Science Program
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

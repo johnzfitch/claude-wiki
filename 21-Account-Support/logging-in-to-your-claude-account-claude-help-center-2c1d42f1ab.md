@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:18Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
 title: "Logging in to your Claude account | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Logging in to your Claude account
 
 # Logging in to your Claude account
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -55,7 +55,7 @@ Table of contents
 
 When you open Claude on a web browser ([claude.ai](http://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893216804/f2209c3ec6cf4fc2e803d13bbc9d/40520c9e-ff82-4a7c-adca-5a064fe18d8c?expires=1771809300&signature=3b72d4895bc8c7300b040652e8675c7d6dc3b265fff2be09bd36cceda099afb0&req=dSguFct%2Fm4lfXfMW1HO4zXg5CYOE4xu3zWhrqpWiTMn6TlxtU%2BbsiCanKS6e%0A4JwYMZ6CNGQGmCV74J8%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893216804/f2209c3ec6cf4fc2e803d13bbc9d/40520c9e-ff82-4a7c-adca-5a064fe18d8c?expires=1771278300&signature=46818b1ccbf6a4d8f03e3eee4b3a78c9bbfbf95db2d2a773ded757fa8ed3ef44&req=dSguFct%2Fm4lfXfMW1HO4zXg5CYOO5Bq3zWhrqpWiTMnhb%2FTPAGs2EsbJDeQh%0ASYrssQHJeHhfRiOMMBY%3D%0A)
 
 ## Continue with Google
 
@@ -157,13 +157,13 @@ Related Articles
 
 How do I log out of all active sessions?
 
-[](https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins)
-
-Getting Started with Claude for Education at Your University (for Owners/Admins)
-
 [](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
 
 FAQs on Using Claude for Education at Your University
+
+[](https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription)
+
+How to gift a Claude subscription
 
 [](https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription)
 

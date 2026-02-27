@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:13Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/7996853-introduction-to-prompt-design"
 title: "Introduction to Prompt Design | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Introduction to Prompt Design
 
 # Introduction to Prompt Design
 
-Updated this week
+Updated over a week ago
 
 Claude is trained to be a helpful, honest, and harmless assistant. It is used to “speaking” conversationally and you can instruct it in English. Think of Claude as a newly-hired contractor. It doesn’t have any context about you, your task, or your organization. Give it very specific instructions about exactly what you’d like it to do.
 

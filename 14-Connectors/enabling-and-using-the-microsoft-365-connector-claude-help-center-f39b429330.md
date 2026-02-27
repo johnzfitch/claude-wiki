@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:51Z"
+fetched_at: "2026-02-16T21:12:42Z"
 source_url: "https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector"
 title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 ---
@@ -59,7 +59,7 @@ Enabling and using the Microsoft 365 connector
 
 # Enabling and using the Microsoft 365 connector
 
-Updated over a week ago
+Updated this week
 
 Table of contents
 
@@ -550,9 +550,9 @@ If a user without Microsoft Entra Global Administrator permissions attempts to c
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Get started with custom connectors using remote MCP
+Getting started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 

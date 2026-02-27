@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:50Z"
+fetched_at: "2026-02-16T21:12:35Z"
 source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
 title: "Using Claude Code with your Pro or Max plan | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Using Claude Code with your Pro or Max plan
 
 # Using Claude Code with your Pro or Max plan
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

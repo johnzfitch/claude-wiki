@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:18:42Z"
+fetched_at: "2026-02-07T10:05:11Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/java"
 title: "Java SDK - Claude API Docs"
 ---
@@ -32,7 +32,7 @@ Maven
 Maven
 
 ``` shiki
-implementation("com.anthropic:anthropic-java:2.14.0")
+implementation("com.anthropic:anthropic-java:2.11.1")
 ```
 
 ## 
@@ -52,16 +52,14 @@ import com.anthropic.models.messages.Message;
 import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Model;
 
-// Configures using the `anthropic.apiKey`, `anthropic.authToken` and `anthropic.baseUrl` system properties
-// Or configures using the `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_BASE_URL` environment variables
+// Configures using the `ANTHROPIC_API_KEY` environment variable
 AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 
 MessageCreateParams params = MessageCreateParams.builder()
-  .maxTokens(1024L)
-  .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_4_6)
-  .build();
-
+    .maxTokens(1024L)
+    .addUserMessage("Hello, Claude")
+    .model(Model.CLAUDE_OPUS_4_6)
+    .build();
 Message message = client.messages().create(params);
 ```
 
@@ -91,8 +89,8 @@ import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
 AnthropicClient client = AnthropicOkHttpClient.builder()
-  .apiKey("my-anthropic-api-key")
-  .build();
+    .apiKey("my-anthropic-api-key")
+    .build();
 ```
 
 Or use a combination of both approaches:
@@ -102,10 +100,10 @@ import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
 AnthropicClient client = AnthropicOkHttpClient.builder()
-  // Configures using system properties or environment variables
-  .fromEnv()
-  .apiKey("my-anthropic-api-key")
-  .build();
+    // Configures using system properties or environment variables
+    .fromEnv()
+    .apiKey("my-anthropic-api-key")
+    .build();
 ```
 
 ### 
@@ -132,8 +130,8 @@ To temporarily use a modified client configuration while reusing the same connec
 import com.anthropic.client.AnthropicClient;
 
 AnthropicClient clientWithOptions = client.withOptions(optionsBuilder -> {
-  optionsBuilder.baseUrl("https://example.com");
-  optionsBuilder.maxRetries(42);
+    optionsBuilder.baseUrl("https://example.com");
+    optionsBuilder.maxRetries(42);
 });
 ```
 
@@ -156,11 +154,10 @@ import java.util.concurrent.CompletableFuture;
 AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 
 MessageCreateParams params = MessageCreateParams.builder()
-  .maxTokens(1024L)
-  .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_4_6)
-  .build();
-
+    .maxTokens(1024L)
+    .addUserMessage("Hello, Claude")
+    .model(Model.CLAUDE_OPUS_4_6)
+    .build();
 CompletableFuture<Message> message = client.async().messages().create(params);
 ```
 
@@ -177,11 +174,10 @@ import java.util.concurrent.CompletableFuture;
 AnthropicClientAsync client = AnthropicOkHttpClientAsync.fromEnv();
 
 MessageCreateParams params = MessageCreateParams.builder()
-  .maxTokens(1024L)
-  .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_4_6)
-  .build();
-
+    .maxTokens(1024L)
+    .addUserMessage("Hello, Claude")
+    .model(Model.CLAUDE_OPUS_4_6)
+    .build();
 CompletableFuture<Message> message = client.messages().create(params);
 ```
 
@@ -280,9 +276,9 @@ import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import java.util.concurrent.Executors;
 
 AnthropicClient client = AnthropicOkHttpClient.builder()
-  .fromEnv()
-  .streamHandlerExecutor(Executors.newFixedThreadPool(4))
-  .build();
+    .fromEnv()
+    .streamHandlerExecutor(Executors.newFixedThreadPool(4))
+    .build();
 ```
 
 ### 
@@ -338,15 +334,194 @@ A `BetaMessageAccumulator` is also available for the accumulation of a `BetaMess
 
 Structured outputs
 
-For complete structured outputs documentation including Java examples, see [Structured Outputs](/docs/en/build-with-claude/structured-outputs).
+[Structured Outputs](/docs/en/build-with-claude/structured-outputs) (beta) ensures that the model generates responses that adhere to a supplied JSON schema.
+
+A JSON schema can be derived automatically from the structure of an arbitrary Java class. The JSON content from the response will then be converted automatically to an instance of that class.
+
+### 
+
+Defining classes
+
+Java classes can contain fields declared to be instances of other classes and can use collections:
+
+``` shiki
+class Person {
+    public String name;
+    public int birthYear;
+}
+
+class Book {
+    public String title;
+    public Person author;
+    public int publicationYear;
+}
+
+class BookList {
+    public List<Book> books;
+}
+```
+
+### 
+
+Using structured outputs
+
+Pass the top-level class to `outputConfig(Class<T>)` when building the parameters and then access an instance from the generated message content in the response:
+
+``` shiki
+import com.anthropic.models.beta.messages.MessageCreateParams;
+import com.anthropic.models.beta.messages.StructuredMessageCreateParams;
+import com.anthropic.models.messages.Model;
+
+StructuredMessageCreateParams<BookList> createParams = MessageCreateParams.builder()
+        .model(Model.CLAUDE_OPUS_4_6)
+        .maxTokens(2048)
+        .outputConfig(BookList.class)
+        .addUserMessage("List some famous late twentieth century novels.")
+        .build();
+
+client.beta().messages().create(createParams).content().stream()
+        .flatMap(contentBlock -> contentBlock.text().stream())
+        .flatMap(textBlock -> textBlock.text().books.stream())
+        .forEach(book -> System.out.println(book.title + " by " + book.author.name));
+```
+
+### 
+
+Optional fields
+
+If a field is optional and does not require a defined value, you can represent this using `java.util.Optional`. It is up to the AI model to decide whether to provide a value for that field or leave it empty.
+
+``` shiki
+import java.util.Optional;
+
+class Book {
+    public String title;
+    public Person author;
+    public int publicationYear;
+    public Optional<String> isbn;
+}
+```
+
+Generic type information for fields is retained in the class's metadata, but generic type erasure applies in other scopes. While a JSON schema can be derived from a `BookList.books` field with type `List<Book>`, a valid JSON schema cannot be derived from a local variable of that same type.
+
+If an error occurs while converting a JSON response to a Java class instance, the error message will include the JSON response to assist in diagnosis. If your JSON response may contain sensitive information, avoid logging it directly, or ensure that you redact any sensitive details from the error message.
+
+### 
+
+Local JSON schema validation
+
+Structured Outputs supports a [subset of the JSON Schema language](/docs/en/build-with-claude/structured-outputs#json-schema-limitations). Schemas are generated automatically from classes to align with this subset. The method `outputConfig(Class<T>)` performs a validation check on the schema derived from the specified class.
+
+Key points:
+
+- **Local validation**: The validation process occurs locally, meaning no requests are sent to the remote AI model.
+- **Remote validation**: The remote AI model will conduct its own validation upon receiving the JSON schema in the request.
+- **Version compatibility**: There may be instances where local validation fails while remote validation succeeds if the SDK version is outdated.
+- **Disabling local validation**: If you encounter compatibility issues, you can disable local validation by passing `JsonSchemaLocalValidation.NO`:
+
+``` shiki
+import com.anthropic.core.JsonSchemaLocalValidation;
+import com.anthropic.models.beta.messages.MessageCreateParams;
+import com.anthropic.models.beta.messages.StructuredMessageCreateParams;
+import com.anthropic.models.messages.Model;
+
+StructuredMessageCreateParams<BookList> createParams = MessageCreateParams.builder()
+        .model(Model.CLAUDE_OPUS_4_6)
+        .maxTokens(2048)
+        .outputConfig(BookList.class, JsonSchemaLocalValidation.NO)
+        .addUserMessage("List some famous late twentieth century novels.")
+        .build();
+```
+
+### 
+
+Structured outputs with streaming
+
+Structured outputs can also be used with streaming. As responses are returned in "stream events", the full response must first be accumulated to concatenate the JSON strings that can then be converted into instances of the arbitrary Java class.
+
+Use the `BetaMessageAccumulator` as described in [Streaming with message accumulator](#streaming-with-message-accumulator) to accumulate the JSON strings. Once accumulated, use `BetaMessageAccumulator.message(Class<T>)` to convert the accumulated `BetaMessage` into a `StructuredMessage`, which can then automatically deserialize the JSON strings into instances of your Java class.
+
+### 
+
+Defining JSON schema properties
+
+When a JSON schema is derived from your Java classes, all properties represented by `public` fields or `public` getter methods are included in the schema by default. Non-`public` fields and getter methods are not included by default.
+
+You can exclude `public`, or include non-`public` fields or getter methods, by using the `@JsonIgnore` or `@JsonProperty` annotations respectively.
+
+If you do not want to define `public` fields, you can define `private` fields and corresponding `public` getter methods. For example, a `private` field `myValue` with a `public` getter method `getMyValue()` will result in a `"myValue"` property being included in the JSON schema.
+
+Each of your classes must define at least one property to be included in the JSON schema. A validation error will occur if any class contains no fields or getter methods from which schema properties can be derived.
+
+### 
+
+Annotating classes and JSON schemas
+
+You can use annotations to add further information to the JSON schema derived from your Java classes. The SDK supports the use of Jackson Databind annotations:
+
+``` shiki
+import com.fasterxml.jackson.annotation.JsonClassDescription;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
+
+class Person {
+    @JsonPropertyDescription("The first name and surname of the person")
+    public String name;
+    public int birthYear;
+    @JsonPropertyDescription("The year the person died, or 'present' if the person is living.")
+    public String deathYear;
+}
+
+@JsonClassDescription("The details of one published book")
+class Book {
+    public String title;
+    public Person author;
+    @JsonPropertyDescription("The year in which the book was first published.")
+    public int publicationYear;
+    @JsonIgnore public String genre;
+}
+
+class BookList {
+    public List<Book> books;
+}
+```
+
+Annotation summary:
+
+- `@JsonClassDescription` - Add a detailed description to a class.
+- `@JsonPropertyDescription` - Add a detailed description to a field or getter method.
+- `@JsonIgnore` - Exclude a `public` field or getter method from the generated JSON schema.
+- `@JsonProperty` - Include a non-`public` field or getter method in the generated JSON schema.
+
+If you use `@JsonProperty(required = false)`, the `false` value will be ignored. Anthropic JSON schemas must mark all properties as required.
+
+You can also use OpenAPI Swagger 2 `@Schema` and `@ArraySchema` annotations for type-specific constraints:
+
+``` shiki
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+
+class Article {
+    @ArraySchema(minItems = 1)
+    public List<String> authors;
+
+    public String title;
+
+    @Schema(format = "date")
+    public String publicationDate;
+
+    @Schema(minimum = "1")
+    public int pageCount;
+}
+```
+
+If you use both Jackson and Swagger annotations to set the same schema field, the Jackson annotation will take precedence.
 
 ## 
 
 Tool use
 
-[Tool Use](/docs/en/agents-and-tools/tool-use/overview) lets you integrate external tools and functions directly into the AI model's responses. Instead of producing plain text, the model can output instructions (with parameters) for invoking a tool or calling a function when appropriate. You define JSON schemas for tools, and the model uses the schemas to decide when and how to use these tools.
-
-The tool use feature supports a "strict" mode (beta) that guarantees that the JSON output from the AI model will conform to the JSON schema you provide in the input parameters.
+[Tool Use](/docs/en/agents-and-tools/tool-use/overview) lets you integrate external tools and functions directly into the AI model's responses. You define JSON schemas for tools, and the model uses the schemas to decide when and how to use these tools.
 
 The SDK can derive a tool and its parameters automatically from the structure of an arbitrary Java class: the class's name (converted to snake case) provides the tool name, and the class's fields define the tool's parameters.
 
@@ -359,33 +534,25 @@ import com.fasterxml.jackson.annotation.JsonClassDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 enum Unit {
-  CELSIUS,
-  FAHRENHEIT;
+  CELSIUS, FAHRENHEIT;
 
   public String toString() {
     switch (this) {
-      case CELSIUS:
-        return "C";
-      case FAHRENHEIT:
-      default:
-        return "F";
+      case CELSIUS: return "C";
+      case FAHRENHEIT: default: return "F";
     }
   }
 
   public double fromKelvin(double temperatureK) {
     switch (this) {
-      case CELSIUS:
-        return temperatureK - 273.15;
-      case FAHRENHEIT:
-      default:
-        return (temperatureK - 273.15) * 1.8 + 32.0;
+      case CELSIUS: return temperatureK - 273.15;
+      case FAHRENHEIT: default: return (temperatureK - 273.15) * 1.8 + 32.0;
     }
   }
 }
 
 @JsonClassDescription("Get the weather in a given location")
 static class GetWeather {
-
   @JsonPropertyDescription("The city and state, e.g. San Francisco, CA")
   public String location;
 
@@ -395,25 +562,16 @@ static class GetWeather {
   public Weather execute() {
     double temperatureK;
     switch (location) {
-      case "San Francisco, CA":
-        temperatureK = 300.0;
-        break;
-      case "New York, NY":
-        temperatureK = 310.0;
-        break;
-      case "Dallas, TX":
-        temperatureK = 305.0;
-        break;
-      default:
-        temperatureK = 295;
-        break;
+      case "San Francisco, CA": temperatureK = 300.0; break;
+      case "New York, NY": temperatureK = 310.0; break;
+      case "Dallas, TX": temperatureK = 305.0; break;
+      default: temperatureK = 295; break;
     }
     return new Weather(String.format("%.0f%s", unit.fromKelvin(temperatureK), unit));
   }
 }
 
 static class Weather {
-
   public String temperature;
 
   public Weather(String temperature) {
@@ -490,10 +648,10 @@ Like for structured outputs, you can perform local validation to check that the 
 
 ``` shiki
 MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
-  .model(Model.CLAUDE_OPUS_4_6)
-  .maxTokens(2048)
-  .addTool(GetWeather.class, JsonSchemaLocalValidation.NO)
-  .addUserMessage("What's the temperature in New York?");
+        .model(Model.CLAUDE_OPUS_4_6)
+        .maxTokens(2048)
+        .addTool(GetWeather.class, JsonSchemaLocalValidation.NO)
+        .addUserMessage("What's the temperature in New York?");
 ```
 
 ### 
@@ -522,22 +680,19 @@ The SDK defines methods that accept files through the `MultipartField` interface
 
 ``` shiki
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.AnthropicBeta;
 import com.anthropic.models.beta.files.FileMetadata;
 import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.beta.AnthropicBeta;
 import java.io.InputStream;
 import java.nio.file.Paths;
 
 FileUploadParams params = FileUploadParams.builder()
-  .file(
-    MultipartField.<InputStream>builder()
-      .value(Files.newInputStream(Paths.get("/path/to/file.pdf")))
-      .contentType("application/pdf")
-      .build()
-  )
-  .addBeta(AnthropicBeta.FILES_API_2025_04_14)
-  .build();
-
+    .file(MultipartField.<InputStream>builder()
+        .value(Files.newInputStream(Paths.get("/path/to/file.pdf")))
+        .contentType("application/pdf")
+        .build())
+    .addBeta(AnthropicBeta.FILES_API_2025_04_14)
+    .build();
 FileMetadata fileMetadata = client.beta().files().upload(params);
 ```
 
@@ -545,23 +700,20 @@ Or from an `InputStream`:
 
 ``` shiki
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.AnthropicBeta;
 import com.anthropic.models.beta.files.FileMetadata;
 import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.beta.AnthropicBeta;
 import java.io.InputStream;
 import java.net.URL;
 
 FileUploadParams params = FileUploadParams.builder()
-  .file(
-    MultipartField.<InputStream>builder()
-      .value(new URL("https://example.com/path/to/file").openStream())
-      .filename("document.pdf")
-      .contentType("application/pdf")
-      .build()
-  )
-  .addBeta(AnthropicBeta.FILES_API_2025_04_14)
-  .build();
-
+    .file(MultipartField.<InputStream>builder()
+        .value(new URL("https://example.com/path/to/file").openStream())
+        .filename("document.pdf")
+        .contentType("application/pdf")
+        .build())
+    .addBeta(AnthropicBeta.FILES_API_2025_04_14)
+    .build();
 FileMetadata fileMetadata = client.beta().files().upload(params);
 ```
 
@@ -569,21 +721,18 @@ Or a `byte[]` array:
 
 ``` shiki
 import com.anthropic.core.MultipartField;
-import com.anthropic.models.beta.AnthropicBeta;
 import com.anthropic.models.beta.files.FileMetadata;
 import com.anthropic.models.beta.files.FileUploadParams;
+import com.anthropic.models.beta.AnthropicBeta;
 
 FileUploadParams params = FileUploadParams.builder()
-  .file(
-    MultipartField.<byte[]>builder()
-      .value("content".getBytes())
-      .filename("document.txt")
-      .contentType("text/plain")
-      .build()
-  )
-  .addBeta(AnthropicBeta.FILES_API_2025_04_14)
-  .build();
-
+    .file(MultipartField.<byte[]>builder()
+        .value("content".getBytes())
+        .filename("document.txt")
+        .contentType("text/plain")
+        .build())
+    .addBeta(AnthropicBeta.FILES_API_2025_04_14)
+    .build();
 FileMetadata fileMetadata = client.beta().files().upload(params);
 ```
 
@@ -692,7 +841,6 @@ import com.anthropic.models.messages.Message;
 import java.util.Optional;
 
 HttpResponseFor<Message> message = client.messages().withRawResponse().create(params);
-
 Optional<String> requestId = message.requestId();
 ```
 
@@ -720,7 +868,10 @@ To set a custom number of retries, configure the client using the `maxRetries` m
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
-AnthropicClient client = AnthropicOkHttpClient.builder().fromEnv().maxRetries(4).build();
+AnthropicClient client = AnthropicOkHttpClient.builder()
+    .fromEnv()
+    .maxRetries(4)
+    .build();
 ```
 
 ## 
@@ -750,9 +901,9 @@ To set a custom timeout per-request:
 ``` shiki
 import com.anthropic.models.messages.Message;
 
-Message message = client
-  .messages()
-  .create(params, RequestOptions.builder().timeout(Duration.ofSeconds(30)).build());
+Message message = client.messages().create(
+  params, RequestOptions.builder().timeout(Duration.ofSeconds(30)).build()
+);
 ```
 
 Or configure the default for all method calls at the client level:
@@ -763,18 +914,18 @@ import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import java.time.Duration;
 
 AnthropicClient client = AnthropicOkHttpClient.builder()
-  .fromEnv()
-  .timeout(Duration.ofSeconds(30))
-  .build();
+    .fromEnv()
+    .timeout(Duration.ofSeconds(30))
+    .build();
 ```
 
 ## 
 
 Long requests
 
-Consider using [streaming](#streaming) for longer running requests.
+We highly encourage you to use [streaming](#streaming) for longer running requests.
 
-Avoid setting a large `maxTokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [timeout](#timeouts) without receiving a response from Anthropic. The SDK periodically pings the API to keep the connection alive and reduce the impact of these networks.
+We do not recommend setting a large `maxTokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [timeout](#timeouts) without receiving a response from Anthropic. The SDK periodically pings the API to keep the connection alive and reduce the impact of these networks.
 
 The SDK throws an error if a non-streaming request is expected to take longer than 10 minutes. Using a [streaming method](#streaming) or [overriding the timeout](#timeouts) at the client or request level disables the error.
 
@@ -822,39 +973,6 @@ CompletableFuture<BatchListPageAsync> pageFuture = client.async().messages().bat
 pageFuture.thenAccept(page -> page.autoPager().subscribe(batch -> {
     System.out.println(batch);
 }));
-
-// If you need to handle errors or completion of the stream
-pageFuture.thenAccept(page -> page.autoPager().subscribe(new AsyncStreamResponse.Handler<>() {
-    @Override
-    public void onNext(MessageBatch batch) {
-        System.out.println(batch);
-    }
-
-    @Override
-    public void onComplete(Optional<Throwable> error) {
-        if (error.isPresent()) {
-            System.out.println("Something went wrong!");
-            throw new RuntimeException(error.get());
-        } else {
-            System.out.println("No more!");
-        }
-    }
-}));
-
-// Or use futures
-pageFuture.thenAccept(page -> page.autoPager()
-    .subscribe(batch -> {
-        System.out.println(batch);
-    })
-    .onCompleteFuture()
-    .whenComplete((unused, error) -> {
-        if (error != null) {
-            System.out.println("Something went wrong!");
-            throw new RuntimeException(error);
-        } else {
-            System.out.println("No more!");
-        }
-    }));
 ```
 
 ### 
@@ -893,13 +1011,15 @@ Each class in the SDK has an associated builder for constructing it. Each class 
 
 ``` shiki
 MessageCreateParams params = MessageCreateParams.builder()
-  .maxTokens(1024L)
-  .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_4_6)
-  .build();
+    .maxTokens(1024L)
+    .addUserMessage("Hello, Claude")
+    .model(Model.CLAUDE_OPUS_4_6)
+    .build();
 
 // Create a modified copy using toBuilder()
-MessageCreateParams modified = params.toBuilder().maxTokens(2048L).build();
+MessageCreateParams modified = params.toBuilder()
+    .maxTokens(2048L)
+    .build();
 ```
 
 Because each class is immutable, builder modification will never affect already built class instances.
@@ -923,13 +1043,11 @@ import com.anthropic.core.JsonValue;
 import com.anthropic.models.messages.MessageCreateParams;
 
 MessageCreateParams params = MessageCreateParams.builder()
-  .putAdditionalHeader("Secret-Header", "42")
-  .putAdditionalQueryParam("secret_query_param", "42")
-  .putAdditionalBodyProperty("secretProperty", JsonValue.from("42"))
-  .build();
+    .putAdditionalHeader("Secret-Header", "42")
+    .putAdditionalQueryParam("secret_query_param", "42")
+    .putAdditionalBodyProperty("secretProperty", JsonValue.from("42"))
+    .build();
 ```
-
-These can be accessed on the built object later using the `_additionalHeaders()`, `_additionalQueryParams()`, and `_additionalBodyProperties()` methods.
 
 The values passed to these methods overwrite values passed to earlier methods. For security reasons, ensure these methods are only used with trusted input data.
 
@@ -941,13 +1059,11 @@ import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Metadata;
 
 MessageCreateParams params = MessageCreateParams.builder()
-  .metadata(
-    Metadata.builder().putAdditionalProperty("secretProperty", JsonValue.from("42")).build()
-  )
-  .build();
+    .metadata(Metadata.builder()
+        .putAdditionalProperty("secretProperty", JsonValue.from("42"))
+        .build())
+    .build();
 ```
-
-These properties can be accessed on the nested built object later using the `_additionalProperties()` method.
 
 To set a documented parameter or property to an undocumented or not yet supported value, pass a `JsonValue` object to its setter:
 
@@ -957,10 +1073,10 @@ import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Model;
 
 MessageCreateParams params = MessageCreateParams.builder()
-  .maxTokens(JsonValue.from(3.14))
-  .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_4_6)
-  .build();
+    .maxTokens(JsonValue.from(3.14))
+    .addUserMessage("Hello, Claude")
+    .model(Model.CLAUDE_OPUS_4_6)
+    .build();
 ```
 
 ### 
@@ -976,22 +1092,27 @@ import java.util.Map;
 
 // Create primitive JSON values
 JsonValue nullValue = JsonValue.from(null);
-
 JsonValue booleanValue = JsonValue.from(true);
-
 JsonValue numberValue = JsonValue.from(42);
-
 JsonValue stringValue = JsonValue.from("Hello World!");
 
 // Create a JSON array value equivalent to `["Hello", "World"]`
-JsonValue arrayValue = JsonValue.from(List.of("Hello", "World"));
+JsonValue arrayValue = JsonValue.from(List.of(
+  "Hello", "World"
+));
 
 // Create a JSON object value equivalent to `{ "a": 1, "b": 2 }`
-JsonValue objectValue = JsonValue.from(Map.of("a", 1, "b", 2));
+JsonValue objectValue = JsonValue.from(Map.of(
+  "a", 1,
+  "b", 2
+));
 
 // Create an arbitrarily nested JSON equivalent to:
 // { "a": [1, 2], "b": [3, 4] }
-JsonValue complexValue = JsonValue.from(Map.of("a", List.of(1, 2), "b", List.of(3, 4)));
+JsonValue complexValue = JsonValue.from(Map.of(
+  "a", List.of(1, 2),
+  "b", List.of(3, 4)
+));
 ```
 
 ### 
@@ -1006,10 +1127,10 @@ import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Model;
 
 MessageCreateParams params = MessageCreateParams.builder()
-  .addUserMessage("Hello, world")
-  .model(Model.CLAUDE_OPUS_4_6)
-  .maxTokens(JsonMissing.of())
-  .build();
+    .addUserMessage("Hello, world")
+    .model(Model.CLAUDE_OPUS_4_6)
+    .maxTokens(JsonMissing.of())
+    .build();
 ```
 
 ### 
@@ -1022,33 +1143,8 @@ To access undocumented response properties, call the `_additionalProperties()` m
 import com.anthropic.core.JsonValue;
 import java.util.Map;
 
-Map<String, JsonValue> additionalProperties = client
-  .messages()
-  .create(params)
-  ._additionalProperties();
-
+Map<String, JsonValue> additionalProperties = client.messages().create(params)._additionalProperties();
 JsonValue secretPropertyValue = additionalProperties.get("secretProperty");
-
-String result = secretPropertyValue.accept(new JsonValue.Visitor<>() {
-    @Override
-    public String visitNull() {
-        return "It's null!";
-    }
-
-    @Override
-    public String visitBoolean(boolean value) {
-        return "It's a boolean!";
-    }
-
-    @Override
-    public String visitNumber(Number value) {
-        return "It's a number!";
-    }
-
-    // Other methods include `visitMissing`, `visitString`, `visitArray`, and `visitObject`
-    // The default implementation of each unimplemented method delegates to `visitDefault`,
-    // which throws by default, but can also be overridden
-});
 ```
 
 To access a property's raw JSON value, call its `_` prefixed method:
@@ -1065,7 +1161,6 @@ if (maxTokens.isMissing()) {
   // The property was set to literal null
 } else {
   // Check if value was provided as a string
-  // Other methods include `asNumber()`, `asBoolean()`, etc.
   Optional<String> jsonString = maxTokens.asString();
 
   // Try to deserialize into a custom type
@@ -1092,9 +1187,9 @@ Or configure per-request:
 ``` shiki
 import com.anthropic.models.messages.Message;
 
-Message message = client
-  .messages()
-  .create(params, RequestOptions.builder().responseValidation(true).build());
+Message message = client.messages().create(
+  params, RequestOptions.builder().responseValidation(true).build()
+);
 ```
 
 Or configure the default for all method calls at the client level:
@@ -1104,9 +1199,9 @@ import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
 AnthropicClient client = AnthropicOkHttpClient.builder()
-  .fromEnv()
-  .responseValidation(true)
-  .build();
+    .fromEnv()
+    .responseValidation(true)
+    .build();
 ```
 
 ## 
@@ -1124,9 +1219,13 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 
 AnthropicClient client = AnthropicOkHttpClient.builder()
-  .fromEnv()
-  .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("https://example.com", 8080)))
-  .build();
+    .fromEnv()
+    .proxy(new Proxy(
+      Proxy.Type.HTTP, new InetSocketAddress(
+        "https://example.com", 8080
+      )
+    ))
+    .build();
 ```
 
 ### 
@@ -1140,11 +1239,11 @@ import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
 AnthropicClient client = AnthropicOkHttpClient.builder()
-  .fromEnv()
-  .sslSocketFactory(yourSSLSocketFactory)
-  .trustManager(yourTrustManager)
-  .hostnameVerifier(yourHostnameVerifier)
-  .build();
+    .fromEnv()
+    .sslSocketFactory(yourSSLSocketFactory)
+    .trustManager(yourTrustManager)
+    .hostnameVerifier(yourHostnameVerifier)
+    .build();
 ```
 
 ### 
@@ -1185,19 +1284,173 @@ To use a completely custom HTTP client:
 
 Platform integrations
 
-For detailed platform setup guides with code examples, see:
+For detailed platform setup guides, see:
 
 - [Amazon Bedrock](/docs/en/build-with-claude/claude-on-amazon-bedrock)
 - [Google Vertex AI](/docs/en/build-with-claude/claude-on-vertex-ai)
-- [Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
 
-The Java SDK supports Bedrock, Vertex AI, and Foundry through separate dependencies that provide platform-specific `Backend` implementations:
+### 
 
-- **Bedrock**: `com.anthropic:anthropic-java-bedrock`: Uses `BedrockBackend.fromEnv()` or `BedrockBackend.builder()`
-- **Vertex AI**: `com.anthropic:anthropic-java-vertex`: Uses `VertexBackend.fromEnv()` or `VertexBackend.builder()`
-- **Foundry**: `com.anthropic:anthropic-java-foundry`: Uses `FoundryBackend.fromEnv()` or `FoundryBackend.builder()`
+Amazon Bedrock
 
-Each backend is passed to the client via `.backend()` on `AnthropicOkHttpClient.builder()`. AWS, Google Cloud, and Azure classes are included as transitive dependencies of the respective library.
+This SDK provides support for the Anthropic Bedrock API. This support requires the `anthropic-java-bedrock` library dependency.
+
+Gradle
+
+Gradle
+
+Maven
+
+Maven
+
+``` shiki
+implementation("com.anthropic:anthropic-java-bedrock:2.11.1")
+```
+
+Create the Anthropic client with the `BedrockBackend`. Usage of the API is otherwise the same.
+
+``` shiki
+import com.anthropic.bedrock.backends.BedrockBackend;
+import com.anthropic.client.AnthropicClient;
+import com.anthropic.client.okhttp.AnthropicOkHttpClient;
+
+AnthropicClient client = AnthropicOkHttpClient.builder()
+        .backend(BedrockBackend.fromEnv())
+        .build();
+```
+
+`BedrockBackend.fromEnv()` automatically resolves the AWS credentials using the AWS default credentials provider chain and resolves the AWS region using the AWS default region provider chain.
+
+With explicit credentials:
+
+``` shiki
+import com.anthropic.bedrock.backends.BedrockBackend;
+import com.anthropic.client.AnthropicClient;
+import com.anthropic.client.okhttp.AnthropicOkHttpClient;
+import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
+import software.amazon.awssdk.auth.credentials.AwsCredentials;
+import software.amazon.awssdk.regions.Region;
+
+AwsCredentials awsCredentials = AwsBasicCredentials.create(
+        System.getenv("AWS_ACCESS_KEY_ID"),
+        System.getenv("AWS_SECRET_ACCESS_KEY"));
+
+AnthropicClient client = AnthropicOkHttpClient.builder()
+        .backend(BedrockBackend.builder()
+                .awsCredentials(awsCredentials)
+                .region(Region.US_EAST_1)
+                .build())
+        .build();
+```
+
+You can also create and configure your own AWS credentials provider:
+
+``` shiki
+import com.anthropic.bedrock.backends.BedrockBackend;
+import com.anthropic.client.AnthropicClient;
+import com.anthropic.client.okhttp.AnthropicOkHttpClient;
+import software.amazon.awssdk.auth.credentials.AwsCredentialsProvider;
+import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
+
+AwsCredentialsProvider awsCredentialsProvider =
+        DefaultCredentialsProvider.builder()
+                .asyncCredentialUpdateEnabled(true)
+                .build();
+
+AnthropicClient client = AnthropicOkHttpClient.builder()
+        .backend(BedrockBackend.builder()
+                .fromEnv(awsCredentialsProvider)
+                .build())
+        .build();
+```
+
+The AWS classes used above are included automatically as transitive dependencies of the `anthropic-java-bedrock` library dependency.
+
+Currently, the Bedrock backend does not support the following:
+
+- Anthropic Batch API
+- Anthropic Token Counting API
+
+#### 
+
+Bedrock usage with an API key
+
+The `BedrockBackend` can also use an API key instead of AWS credentials for request authorization. You can set the `AWS_BEARER_TOKEN_BEDROCK` environment variable to the value of your API key and call `BedrockBackend.fromEnv()` to authorize requests using that API key. An API key will be used in preference to AWS credentials if both are set in the environment.
+
+The API key can also be passed directly to the backend:
+
+``` shiki
+AnthropicClient client = AnthropicOkHttpClient.builder()
+        .backend(BedrockBackend.builder()
+                .apiKey(myApiKey)
+                .region(Region.US_EAST_1)
+                .build())
+        .build();
+```
+
+An error will occur if you set both an API key and an AWS credentials provider.
+
+### 
+
+Google Vertex AI
+
+This SDK provides support for Anthropic models on the Google Cloud Vertex AI platform. This support requires the `anthropic-java-vertex` library dependency.
+
+Gradle
+
+Gradle
+
+Maven
+
+Maven
+
+``` shiki
+implementation("com.anthropic:anthropic-java-vertex:2.11.1")
+```
+
+Create the Anthropic client with the `VertexBackend`. Usage of the API is otherwise the same.
+
+``` shiki
+import com.anthropic.client.AnthropicClient;
+import com.anthropic.client.okhttp.AnthropicOkHttpClient;
+import com.anthropic.vertex.backends.VertexBackend;
+
+AnthropicClient client = AnthropicOkHttpClient.builder()
+        .backend(VertexBackend.fromEnv())
+        .build();
+```
+
+`VertexBackend.fromEnv()` automatically resolves the Google OAuth2 credentials from your configured Google Cloud Application Default Credentials (ADC), the Google Cloud region from the `CLOUD_ML_REGION` environment variable, and the Google Cloud project ID from `ANTHROPIC_VERTEX_PROJECT_ID` environment variable.
+
+With explicit credentials:
+
+``` shiki
+import com.anthropic.client.AnthropicClient;
+import com.anthropic.client.okhttp.AnthropicOkHttpClient;
+import com.anthropic.vertex.backends.VertexBackend;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.GoogleCredentials;
+
+String accessToken = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
+String project = System.getenv("ANTHROPIC_VERTEX_PROJECT_ID");
+
+GoogleCredentials googleCredentials = GoogleCredentials.create(
+        AccessToken.newBuilder().setTokenValue(accessToken).build());
+
+AnthropicClient client = AnthropicOkHttpClient.builder()
+        .backend(VertexBackend.builder()
+                .googleCredentials(googleCredentials)
+                .region("us-central1")
+                .project(project)
+                .build())
+        .build();
+```
+
+The Google Cloud classes used above are included automatically as transitive dependencies of the `anthropic-java-vertex` library dependency.
+
+Currently, the Vertex backend does not support the following:
+
+- Anthropic Batch API
 
 ## 
 
@@ -1217,15 +1470,13 @@ import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Model;
 
 MessageCreateParams params = MessageCreateParams.builder()
-  .maxTokens(1024L)
-  .addUserMessage("Hello, Claude")
-  .model(Model.CLAUDE_OPUS_4_6)
-  .build();
-
+    .maxTokens(1024L)
+    .addUserMessage("Hello, Claude")
+    .model(Model.CLAUDE_OPUS_4_6)
+    .build();
 HttpResponseFor<Message> message = client.messages().withRawResponse().create(params);
 
 int statusCode = message.statusCode();
-
 Headers headers = message.headers();
 ```
 
@@ -1293,7 +1544,7 @@ import com.anthropic.models.messages.Model;
 StructuredMessageCreateParams<BookList> createParams = MessageCreateParams.builder()
         .model(Model.CLAUDE_OPUS_4_6)
         .maxTokens(2048)
-        .outputFormat(BookList.class)
+        .outputConfig(BookList.class)
         .addUserMessage("List some famous late twentieth century novels.")
         .build();
 
@@ -1311,15 +1562,6 @@ Frequently asked questions
 ### Why doesn't the SDK use data classes?
 
 ### Why doesn't the SDK use checked exceptions?
-
-## 
-
-Semantic versioning
-
-This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
-
-1.  Changes to library internals which are technically public but not intended or documented for external use.
-2.  Changes that aren't expected to impact the vast majority of users in practice.
 
 ## 
 
@@ -1360,6 +1602,20 @@ Was this page helpful?
 - [Streaming with message accumulator](#streaming-with-message-accumulator)
 
 - [Structured outputs](#structured-outputs)
+
+- [Defining classes](#defining-classes)
+
+- [Using structured outputs](#using-structured-outputs)
+
+- [Optional fields](#optional-fields)
+
+- [Local JSON schema validation](#local-json-schema-validation)
+
+- [Structured outputs with streaming](#structured-outputs-with-streaming)
+
+- [Defining JSON schema properties](#defining-json-schema-properties)
+
+- [Annotating classes and JSON schemas](#annotating-classes-and-json-schemas)
 
 - [Tool use](#tool-use)
 
@@ -1423,6 +1679,10 @@ Was this page helpful?
 
 - [Platform integrations](#platform-integrations)
 
+- [Amazon Bedrock](#amazon-bedrock)
+
+- [Google Vertex AI](#google-vertex-ai)
+
 - [Advanced usage](#advanced-usage)
 
 - [Raw response access](#raw-response-access)
@@ -1434,8 +1694,6 @@ Was this page helpful?
 - [Beta features](#beta-features)
 
 - [Frequently asked questions](#frequently-asked-questions)
-
-- [Semantic versioning](#semantic-versioning)
 
 - [Additional resources](#additional-resources)
 

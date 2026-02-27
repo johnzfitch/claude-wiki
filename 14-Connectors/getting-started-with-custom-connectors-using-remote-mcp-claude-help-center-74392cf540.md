@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-17T01:31:00Z"
+fetched_at: "2026-02-16T21:12:35Z"
 source_url: "https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp"
 title: "Getting started with custom connectors using remote MCP | Claude Help Center"
 ---
@@ -131,7 +131,7 @@ If you are using an individual Pro or Max plan, follow these steps to add a cust
 
 6.  Finish configuring your connector by clicking "Add."
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1916091157/febc1f1e569df97a2f800c7ea493/8d09370d-1c7a-489c-b62b-b3484aaaef31?expires=1771293600&signature=8eb6fb767cb83be96a086dd38985d02116c6e813348d8509986dc9cc4507f1f2&req=dSkmEMl3nIBaXvMW1HO4zWxgPNlzpqGMxxBcrakePoO0PqiYGKsV0FoKAple%0AuaLMUP5xcW3tClzJtuY%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1916091157/febc1f1e569df97a2f800c7ea493/8d09370d-1c7a-489c-b62b-b3484aaaef31?expires=1771277400&signature=c54cabcb9aef5db9d9364fc177ad6888f282db31b368ffe03cf7a956800e4b80&req=dSkmEMl3nIBaXvMW1HO4zWxgPNlzqKWOxxBcrakePoP1ZqIP38oDcvboegeX%0As0MGx1nZT5l0h2z8Ggc%3D%0A)
 
 ### Enabling connectors after configuration
 

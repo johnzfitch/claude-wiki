@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:19Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan"
 title: "How do I sign up for the Max plan? | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ How do I sign up for the Max plan?
 
 # How do I sign up for the Max plan?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

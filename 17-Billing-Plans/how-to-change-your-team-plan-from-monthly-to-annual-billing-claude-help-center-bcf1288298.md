@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:06Z"
+fetched_at: "2026-02-16T21:12:39Z"
 source_url: "https://support.claude.com/en/articles/12083917-how-to-change-your-team-plan-from-monthly-to-annual-billing"
 title: "How to change your Team plan from monthly to annual billing | Claude Help Center"
 ---

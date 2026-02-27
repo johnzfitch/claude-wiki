@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:50Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 ---
@@ -49,7 +49,7 @@ Getting Started with Local MCP Servers on Claude Desktop
 
 # Getting Started with Local MCP Servers on Claude Desktop
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -117,7 +117,7 @@ for specific instructions.
 
 Custom desktop extensions uploads allow Team and Enterprise plans to leverage organization-specific workflows that aren’t available in the public directory. After creating a custom desktop extension, Owners and Primary Owners can navigate to Settings \> Extensions within Claude Desktop and click “Advanced settings” to access the **Extension Developer** section:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1681607607/ba6e379d2769d190f0970a0adaed/AD_4nXd4aZkqjJFpiXMPF28Pih7HmSJ9pPsnoWAfVgiLdFRFiTkO92YtXteIjvDHaPl7T0tjfpRTBOlyrMbQ_aciCNDgfIuEvV3szmKvt72x5O51DMSClXOYWk1JIRIzylwkj3joXqZcLw?expires=1771809300&signature=f481c61b8d52a26ad5509c16aeccc33aa6ac2cf818ff86d747886d88affc86ed&req=dSYvF89%2BmodfXvMW1HO4zWbPy0F3NzQxHn9K2IaIG2LGt6BhdNcnqHseFxX6%0ASpWJteis4onPz7%2Fh5nM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1681607607/ba6e379d2769d190f0970a0adaed/AD_4nXd4aZkqjJFpiXMPF28Pih7HmSJ9pPsnoWAfVgiLdFRFiTkO92YtXteIjvDHaPl7T0tjfpRTBOlyrMbQ_aciCNDgfIuEvV3szmKvt72x5O51DMSClXOYWk1JIRIzylwkj3joXqZcLw?expires=1771277400&signature=f8f5e723a91a68c0af3a220acfe79302f42657f126b77049d105b430b0149371&req=dSYvF89%2BmodfXvMW1HO4zWbPy0F9MDo2Hn9K2IaIG2JVQvx1d7YvMYWDG3An%0AvxVmW0ZWrNjiLsXh7Vg%3D%0A)
 
 Click “Install Extension…” and select the .mcpb file. Follow the prompts to install and configure your custom desktop extension. For more in-depth information, please refer to our [desktop extension developer documentation](https://github.com/anthropics/mcpb).
 

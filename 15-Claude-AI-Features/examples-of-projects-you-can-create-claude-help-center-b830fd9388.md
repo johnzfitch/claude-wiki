@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:20Z"
+fetched_at: "2026-02-08T20:52:10Z"
 source_url: "https://support.claude.com/en/articles/9529781-examples-of-projects-you-can-create"
 title: "Examples of projects you can create | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Examples of projects you can create
 
 # Examples of projects you can create
 
-Updated this week
+Updated yesterday
 
 Table of contents
 

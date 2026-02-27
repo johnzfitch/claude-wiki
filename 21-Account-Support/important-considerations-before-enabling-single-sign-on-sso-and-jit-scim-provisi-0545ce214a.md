@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:22Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 ---
@@ -221,17 +221,17 @@ Once you've reviewed these considerations and completed any necessary prerequisi
 
 Related Articles
 
-[](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)
+[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
 
-Set up single sign-on (SSO)
+Setting up single sign-on (SSO)
 
-[](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)
+[](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
 
-Set up JIT or SCIM provisioning
+Setting up JIT or SCIM provisioning
 
-[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Manage members on Team and Enterprise plans
+Managing members on Team and Enterprise plans
 
 [](https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp)
 

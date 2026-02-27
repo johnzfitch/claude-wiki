@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:26:23Z"
+fetched_at: "2026-02-07T10:05:55Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/spreadsheet-sorcerer"
 title: "Spreadsheet sorcerer - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Generate CSV spreadsheets with various types of data.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -28,7 +28,22 @@ Example output
 
 > Here is a CSV spreadsheet containing information about books in a library, based on your requirements:
 >
-> Book ID,Title,Author,Genre,Publication Year,Available Copies 1,To Kill a Mockingbird,Harper Lee,Classic,1960,5 2,1984,George Orwell,Dystopian,1949,3 3,Pride and Prejudice,Jane Austen,Romance,1813,7 4,The Catcher in the Rye,J.D. Salinger,Coming-of-age,1951,2 5,The Hitchhiker's Guide to the Galaxy,Douglas Adams,Science Fiction,1979,4 6,The Da Vinci Code,Dan Brown,Mystery,2003,6 7,The Kite Runner,Khaled Hosseini,Historical Fiction,2003,3 8,The Alchemist,Paulo Coelho,Philosophical Fiction,1988,5 9,The Hunger Games,Suzanne Collins,Young Adult,2008,8 10,The Girl with the Dragon Tattoo,Stieg Larsson,Crime,2005,4 11,The Hobbit,J.R.R. Tolkien,Fantasy,1937,6 12,The Diary of a Young Girl,Anne Frank,Autobiography,1947,2 13,The Fault in Our Stars,John Green,Young Adult,2012,5 14,The Catcher in the Rye,J.D. Salinger,Coming-of-age,1951,3 15,The Curious Incident of the Dog in the Night-Time,Mark Haddon,Mystery,2003,4
+> Book ID,Title,Author,Genre,Publication Year,Available Copies  
+> 1,To Kill a Mockingbird,Harper Lee,Classic,1960,5  
+> 2,1984,George Orwell,Dystopian,1949,3  
+> 3,Pride and Prejudice,Jane Austen,Romance,1813,7  
+> 4,The Catcher in the Rye,J.D. Salinger,Coming-of-age,1951,2  
+> 5,The Hitchhiker's Guide to the Galaxy,Douglas Adams,Science Fiction,1979,4  
+> 6,The Da Vinci Code,Dan Brown,Mystery,2003,6  
+> 7,The Kite Runner,Khaled Hosseini,Historical Fiction,2003,3  
+> 8,The Alchemist,Paulo Coelho,Philosophical Fiction,1988,5  
+> 9,The Hunger Games,Suzanne Collins,Young Adult,2008,8  
+> 10,The Girl with the Dragon Tattoo,Stieg Larsson,Crime,2005,4  
+> 11,The Hobbit,J.R.R. Tolkien,Fantasy,1937,6  
+> 12,The Diary of a Young Girl,Anne Frank,Autobiography,1947,2  
+> 13,The Fault in Our Stars,John Green,Young Adult,2012,5  
+> 14,The Catcher in the Rye,J.D. Salinger,Coming-of-age,1951,3  
+> 15,The Curious Incident of the Dog in the Night-Time,Mark Haddon,Mystery,2003,4
 
 ------------------------------------------------------------------------
 
@@ -56,11 +71,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "Create a spreadsheet containing information about books in a library. Include the following columns: Book ID, Title, Author, Genre, Publication Year, and Available Copies. Ensure that the data covers a variety of genres and publication years, and that the number of available copies varies between books.",
+                    "text": "Create a spreadsheet containing information about books in a library. Include the following columns: Book ID, Title, Author, Genre, Publication Year, and Available Copies. Ensure that the data covers a variety of genres and publication years, and that the number of available copies varies between books."
                 }
-            ],
+            ]
         }
-    ],
+    ]
 )
 print(message.content)
 ```

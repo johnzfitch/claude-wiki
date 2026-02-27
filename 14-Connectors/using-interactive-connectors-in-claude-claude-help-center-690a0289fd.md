@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:52Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 title: "Using interactive connectors in Claude | Claude Help Center"
 ---
@@ -73,7 +73,7 @@ Table of contents
 
 [](#h_f81345970d)
 
-Interactive connectors are available on for all users on Claude and Claude Desktop.
+Interactive connectors are available on Claude web and Claude Desktop for users on Pro, Max, Team, and Enterprise plans.
 
 ## What are interactive connectors?
 
@@ -89,7 +89,7 @@ Interactive connectors display in two ways:
 
 **Fullscreen view** provides an immersive interface for complex interactions like data visualizations, document editing, or detailed project views. The conversation input remains available so you can continue talking to Claude while interacting with the connector.
 
-## Interact with connectors
+## Interacting with connectors
 
 You can interact directly with elements inside the connector:
 
@@ -125,7 +125,7 @@ In the **[Connectors Directory](https://claude.ai/directory)**, connectors with 
 
 We’re adding support for more interactive connectors over time.
 
-## Get started with interactive connectors
+## Getting started with interactive connectors
 
 1.  Navigate to the **[Connectors Directory](https://claude.ai/directory)**.
 
@@ -141,9 +141,9 @@ We’re adding support for more interactive connectors over time.
 
 ### Can Team and Enterprise owners control interactive connectors separately from standard connectors?
 
-Yes. Team and Enterprise owners can disable the specific tool calls that render interactive connectors within **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. This does not disable the connector itself — text-based tool functionality continues to work normally.
+Yes. Team and Enterprise Owners can disable the specific tool calls that render interactive connectors within **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. This does not disable the connector itself — text-based tool functionality continues to work normally.
 
-## Permissions and security
+## Permissions and Security
 
 ### How are interactive connectors secured?
 
@@ -177,9 +177,9 @@ No. Purchases through third-party interactive connectors are not supported.
 
 ### I want to disable interactive connectors
 
-- **Team and Enterprise users:** Ask your organization owner to disable the relevant tool calls in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
+- Team and Enterprise users: Ask your organization Owner to disable the relevant tool calls in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
-- **Individual users:** You can disable specific connector tools via the "Search and tools" menu in your conversation.
+- Individual users: You can disable specific connector tools via the "Search and tools" menu in your conversation.
 
 ## I'm a developer. Where can I learn about building MCP Apps?
 
@@ -189,9 +189,9 @@ MCP Apps is the open-source extension to the Model Context Protocol that powers 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Get started with custom connectors using remote MCP
+Getting started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
@@ -201,9 +201,9 @@ Pre-built web connectors using remote MCP
 
 Use the Connectors Directory to extend Claude’s capabilities
 
-[](https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors)
+[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-When to use desktop and web connectors
+Using the Synapse.org connector in Claude
 
 [](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
 

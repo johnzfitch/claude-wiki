@@ -1,8 +1,8 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:18Z"
+fetched_at: "2026-02-08T20:52:08Z"
 source_url: "https://support.claude.com/en/articles/8241126-uploading-files-to-claude"
-title: "Uploading files to Claude | Claude Help Center"
+title: "Uploading Files to Claude | Claude Help Center"
 ---
 
 [](/en/)
@@ -39,11 +39,11 @@ Table of contents
 
 [Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
 
-Uploading files to Claude
+Uploading Files to Claude
 
-# Uploading files to Claude
+# Uploading Files to Claude
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -59,7 +59,7 @@ Table of contents
 
 This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
 
-## Supported file types
+## Supported File Types
 
 ### Documents
 
@@ -85,7 +85,7 @@ Claude can work with the following document types:
 
 - XLSX\*
 
-**Note:** You must enable **[code execution and file creation](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)** in your account to upload XLSX files.
+**Note:** You must enable [Upgraded file creation and analysis](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude) in your account to upload XLSX files.
 
 ### Images
 
@@ -119,7 +119,7 @@ Files can be uploaded to individual chats or uploaded to a project's **Files** s
 
 ------------------------------------------------------------------------
 
-## File limits
+## File Limits
 
 ### Chat uploads
 
@@ -141,13 +141,13 @@ Files can be uploaded to individual chats or uploaded to a project's **Files** s
 
 ------------------------------------------------------------------------
 
-## PDF processing
+## PDF Processing
 
 Claude models can analyze both text and visual elements (like images, charts, and graphics) in PDFs that are under 100 pages. Claude will only process text from PDFs over 1000 pages.
 
 ------------------------------------------------------------------------
 
-## Tips for best results
+## Tips for Best Results
 
 **For images:** Use images that are 1000x1000 pixels or larger. Avoid small or low-resolution images where possible.
 
@@ -173,13 +173,13 @@ Create and edit files with Claude to eliminate hours of busy work
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5)
-
-Create professional results across tools with Claude Sonnet 4.5
-
 [](https://support.claude.com/en/articles/12461605-using-claude-in-slack)
 
 Using Claude in Slack
+
+[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
+
+Using Claude in Excel
 
 Did this answer your question?
 

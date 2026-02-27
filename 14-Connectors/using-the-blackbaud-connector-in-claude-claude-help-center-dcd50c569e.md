@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:22Z"
+fetched_at: "2026-02-16T21:12:45Z"
 source_url: "https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude"
 title: "Using the Blackbaud Connector in Claude | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Using the Blackbaud Connector in Claude
 
 # Using the Blackbaud Connector in Claude
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

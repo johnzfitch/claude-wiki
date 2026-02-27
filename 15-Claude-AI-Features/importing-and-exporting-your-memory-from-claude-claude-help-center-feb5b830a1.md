@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:07Z"
+fetched_at: "2026-02-16T21:12:39Z"
 source_url: "https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude"
 title: "Importing and exporting your memory from Claude | Claude Help Center"
 ---
@@ -37,7 +37,7 @@ Importing and exporting your memory from Claude
 
 # Importing and exporting your memory from Claude
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -71,10 +71,6 @@ To view your memory exactly how Claude sees it, go to [Settings \> Capabilities]
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)
-
-How can I export my Claude data?
-
 [](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)
 
 Using Claude’s chat search and memory to build on previous context
@@ -83,13 +79,17 @@ Using Claude’s chat search and memory to build on previous context
 
 Release notes
 
+[](https://support.claude.com/en/articles/12260368-using-incognito-chats)
+
+Using incognito chats
+
 [](https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome)
 
 Simplify your browsing experience with Claude in Chrome
 
-[](https://support.claude.com/en/articles/13521390-use-claude-in-powerpoint)
+[](https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint)
 
-Use Claude in PowerPoint
+Using Claude in PowerPoint
 
 Did this answer your question?
 

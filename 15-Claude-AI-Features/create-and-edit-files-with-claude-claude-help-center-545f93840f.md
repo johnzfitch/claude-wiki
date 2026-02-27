@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:13Z"
+fetched_at: "2026-02-08T20:51:50Z"
 source_url: "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude"
 title: "Create and edit files with Claude | Claude Help Center"
 ---
@@ -55,7 +55,7 @@ Create and edit files with Claude
 
 # Create and edit files with Claude
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -81,19 +81,17 @@ Table of contents
 
 [](#h_3b711c653d)
 
-Claude can execute code to create and work with files directly in your conversations. Prompt Claude using natural language to generate Excel spreadsheets, PowerPoint presentations, Word documents, and PDF files that you can download and use immediately.
+Claude can now execute code to create and work with files directly in your conversations. Prompt Claude using natural language to generate Excel spreadsheets, PowerPoint presentations, Word documents, and PDF files that you can download and use immediately.
 
 Code execution and file creation is available to all Claude users (free, Pro, Max, Team, and Enterprise) on the web, Claude Desktop, and Claude Mobile.
 
 These capabilities make it easy to produce professional documents by simply chatting with Claude. You can create financial models in Excel with working formulas, perform advanced analyses on uploaded data, produce reports with charts and visualizations, and generate presentations from your documents—all without specialized software skills.
 
-Claude's file creation abilities are powered by Sonnet 4.6, which excels at working with documents, spreadsheets, and presentations. You can expect accurate Excel formulas, better document formatting, and more reliable file manipulation overall.
-
-------------------------------------------------------------------------
+Claude's file creation abilities are powered by Sonnet 4.5, which excels at working with documents, spreadsheets, and presentations. You can expect accurate Excel formulas, better document formatting, and more reliable file manipulation overall.
 
 ## Availability
 
-**Free, Pro, and Max plans:**
+**Pro and Max plans:**
 
 - Code execution and file creation is enabled by default
 
@@ -117,45 +115,43 @@ Claude's file creation abilities are powered by Sonnet 4.6, which excels at work
 
 - Owners can configure network access controls, including domain whitelisting
 
-------------------------------------------------------------------------
-
 ## How to get started
 
 ### Enabling on web and desktop
 
-**Enterprise plans:** This capability is disabled by default at the organization level. Owners can manually enable it in **[Organization settings \> Capabilities](http://claude.ai/admin-settings/capabilities)** by toggling **Code execution and file creation** on. Individual members still need to opt in to file creation in **[Settings \> Capabilities](http://claude.ai/settings/capabilities)** before using this feature.
+**Enterprise plans:** This capability is disabled by default at the organization level. Owners can manually enable it in [Admin settings \> Capabilities](http://claude.ai/admin-settings/capabilities) by toggling **Code execution and file creation** on. Individual members still need to opt in to file creation in [Settings \> Capabilities](http://claude.ai/settings/capabilities) before using this feature.
 
-**Team plans:** This capability is enabled by default at the organization level with **Allow network egress** toggled on with access to package managers only. An organization owner can manually disable this for the organization in **[Organization settings \> Capabilities](http://claude.ai/admin-settings/capabilities)** if needed, or individual members can disable it in **[Settings \> Capabilities](http://claude.ai/settings/capabilities)** for their accounts.
+**Team plans:** This capability is enabled by default at the organization level with **Allow network egress** toggled on with access to package managers only. An organization Owner can manually disable this for the organization in [Admin settings \> Capabilities](http://claude.ai/admin-settings/capabilities) if needed, or individual members can disable it in [Settings \> Capabilities](http://claude.ai/settings/capabilities) for their accounts.
 
-**Free, Pro, and Max plans:** Enable file creation from **[Settings \> Capabilities](http://claude.ai/settings/capabilities)** by toggling **Code execution and file creation** on.
+**Max, Pro, and free plans:** Enable file creation from [Settings \> Capabilities](http://claude.ai/settings/capabilities) by toggling **Code execution and file creation** on:
 
-To give Claude access to external data sources, toggle **Allow network egress** on:
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1789944704/f7218ce5e2e9bcff6f9354ddea43/6a2df26e-c3d8-4df4-b975-16719afa61aa?expires=1770585300&signature=5985fa3f97ec8123d0edf15db3359c52c8d9e654aaadae388fa2fa2590fe7f44&req=dScvH8B6mYZfXfMW1HO4zXcFZns7Zjh9GF3%2FYdESAcWm2EEV56v%2B8DtAaIHS%0AticcWUcYUwOW6x%2F57dk%3D%0A)
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2054774005/25bcfffba6c249cd128d6c3f6d52/CleanShot+2026-02-11+at+16_34_47%402x.png?expires=1771809300&signature=7e825b84c6f64506660a8f03f6a8ea552c35772f09c76e383af1227a9163ac83&req=diAiEs55mYFfXPMW1HO4zYFJxAxNDJDNPQVowIiib2kNrCBq8ihIy1FmdVZx%0Aj2M0Y6RhV4nGjO0EtOs%3D%0A)
+To give Claude access to external data sources, toggle **Allow limited network access** on when prompted:
+
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1789944703/e9af099affd9b52e18cf9decd373/8ecc03cc-e50b-43b0-8694-c500638cb781?expires=1770585300&signature=7c6cefce5c76d718b0a55c4695e23546dcc3beae22cddeeabc936c8308c737b9&req=dScvH8B6mYZfWvMW1HO4zYwjyX4sOo0TNv1GpC923dnqwxXV8tqCNIpJHrBi%0AroiiRXPPQGLP%2Bij22PY%3D%0A)
 
 ### Enabling on Claude Mobile
 
 To enable or disable this feature on Claude for iOS or Android, tap your initials or name in the left sidebar to open Settings. Select "Capabilities" and toggle **Code execution and file creation** on or off.
 
-------------------------------------------------------------------------
-
 ## Configuring network access (Team and Enterprise plans)
 
-Team and Enterprise organization owners can control network access settings in **[Organization settings \> Capabilities](http://claude.ai/admin-settings/capabilities)**. After enabling code execution and file creation, choose from the following options to configure network access for your team:
+Team and Enterprise organization Owners can control network access settings in [Admin settings \> Capabilities](http://claude.ai/admin-settings/capabilities). After enabling code execution and file creation, choose from the following options to configure network access for your team:
 
-- **Allow network egress toggled off:** Claude operates with pre-installed packages only, with no internet access. This provides maximum security for sensitive environments.
+**Allow network egress toggled off:** Claude operates with pre-installed packages only, with no internet access. This provides maximum security for sensitive environments.
 
-- **Allow network egress to package managers only (default):** Claude can access approved package managers (npm, PyPI, GitHub, etc.) to install necessary software packages. This balances functionality with security, but some advanced features may be limited.
+**Allow network egress to package managers only (default):** Claude can access approved package managers (npm, PyPI, GitHub, etc.) to install necessary software packages. This balances functionality with security, but some advanced features may be limited.
 
-- **Allow network egress to package managers and specific domains:** Claude can access package managers plus additional domains you specify. Add domains individually to whitelist specific resources your organization needs:
+**Allow network egress to package managers and specific domains:** Claude can access package managers plus additional domains you specify. Add domains individually to whitelist specific resources your organization needs:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1789945362/ad72504d5429960f369b8b91b43c/86f06c0e-6eaa-4574-a4cb-2c38b273613a?expires=1771809300&signature=fd3362edf29e57fa94212a59def832d2b85d07c726a1b8aeb4fafeacdb774203&req=dScvH8B6mIJZW%2FMW1HO4zXJcCWxLlSBIpMW6Iph6YZcXU49ixI1Nccr0pIbA%0AxtdTDiTaoPQrZ4m4d8w%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1789945362/ad72504d5429960f369b8b91b43c/86f06c0e-6eaa-4574-a4cb-2c38b273613a?expires=1770585300&signature=74e5d65be22ffc6061097d26c844d7d8b91b303264131fcd87cf5f02c0fcc8eb&req=dScvH8B6mIJZW%2FMW1HO4zXJcCW1GnSxIpMW6Iph6YZeDn5ieYV9AAyX6vOdY%0AyWWvr13NOsLsBcgJo5c%3D%0A)
 
-**All domains:** Claude has full internet access except for domains on Anthropic's legal blocklist. While this provides maximum flexibility for file creation and analysis tasks, it’s also the riskiest option. Please review the **[security considerations below](#h_0ee9d698a1)** before enabling “All domains”:
+**All domains:** Claude has full internet access except for domains on Anthropic's legal blocklist. While this provides maximum flexibility for file creation and analysis tasks, it’s also the riskiest option. Please review the [security considerations below](#h_0ee9d698a1) before enabling “All domains”:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1789945361/e3188cb8edb9ca7c303615da6378/f1c99a7d-5956-48d5-9ec7-b7ae6c8c3d28?expires=1771809300&signature=125417f937930f0de380859f25f5c86ed20fe827c8fb321deb300fadc65e9c17&req=dScvH8B6mIJZWPMW1HO4zdnsdxWa7jahqgKIA6CM1tqbigBkyIWWsFG8j8xS%0ACYCTxEoVQ8Ti5EDYmjI%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1789945361/e3188cb8edb9ca7c303615da6378/f1c99a7d-5956-48d5-9ec7-b7ae6c8c3d28?expires=1770585300&signature=4f18f4512c4cfbe6b79a2389219c245476800401943f27626abc70d536859cd5&req=dScvH8B6mIJZWPMW1HO4zdnsdxSX5jqhqgKIA6CM1toDlqo%2BdrFqnXBgb5k9%0AoXb%2FZZYHmFvykrlNHfY%3D%0A)
 
-------------------------------------------------------------------------
+**Note:** We just introduced Skills for Claude. These are packaged instructions Claude can reference to complete specific tasks. Refer to this article for more information: [What are Skills?](https://support.claude.com/en/articles/12512176-what-are-skills)
 
 ## How does disabling network access address security concerns with code execution and file creation?
 
@@ -199,8 +195,6 @@ With this feature, Claude can also do more advanced data analysis and data scien
 
 The maximum file size is 30MB per file for both uploads and downloads.
 
-------------------------------------------------------------------------
-
 ## Key capabilities
 
 ### Direct file creation and editing
@@ -233,8 +227,6 @@ The context window has been expanded to support more complex multi-step workflow
 
 Claude provides full support for multiple languages in both the user interface and generated files, with proper formatting and regional standards.
 
-------------------------------------------------------------------------
-
 ## Security and network access
 
 ### How it works
@@ -247,8 +239,6 @@ Code execution and file creation gives Claude a sandboxed computing environment.
 
 - Access resources needed for file creation and analysis
 
-------------------------------------------------------------------------
-
 ## Security considerations
 
 It is possible for a bad actor to inconspicuously add instructions via external files or websites that trick Claude into:
@@ -257,31 +247,31 @@ It is possible for a bad actor to inconspicuously add instructions via external 
 
 2.  Reading sensitive data from a connected knowledge source (for example, Remote MCP, projects) and using the sandbox environment to make an external network request to leak the data
 
-This means Claude can be tricked into sending information from its context (for example, prompts, projects, data via MCP, Google integrations) to malicious third parties. To mitigate these risks, we recommend you monitor Claude while using the feature and stop it if you see it using or accessing data unexpectedly. You can report issues to us using the thumbs down function directly in Claude.
+This means Claude can be tricked into sending information from its context (for example, prompts, projects, data via MCP, Google integrations) to malicious third parties. To mitigate these risks, we recommend you monitor Claude while using the feature and stop it if you see it using or accessing data unexpectedly. You can report issues to us using the thumbs down function directly in claude.ai.
 
-In line with our **[safe and trustworthy agents framework](https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents)**, we have applied the following mitigations:
+In line with our [safe and trustworthy agents framework](https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents), we have applied the following mitigations:
 
-- Given you full control of the feature. You can turn it on or off at any time.
+- Given you full control of the feature. You can turn it on or off at any time
 
-- Designed Claude to give you user-friendly summaries of its actions so you can see what it is doing. You can stop Claude's actions at any time and we recommend monitoring Claude's work while using the feature.
+- Designed Claude to give you user-friendly summaries of its actions so you can see what it is doing. You can stop Claude's actions at any time and we recommend monitoring Claude's work while using the feature
 
-- Given you the ability to review and audit actions taken by Claude within the sandbox environment.
+- Given you the ability to review and audit actions taken by Claude within the sandbox environment
 
-- Disabled public sharing of conversations that include any file artifacts from the code execution and file creation feature for free, Pro, and Max users.
+- Disabled public sharing of conversations that include any file artifacts from the code execution and file creation feature for Pro and Max users
 
-- Limited the duration of tasks that can be completed by Claude and the length of time you can use a single sandbox container to avoid loops of malicious activity.
+- Limited the duration of tasks that can be completed by Claude and the length of time you can use a single sandbox container to avoid loops of malicious activity
 
-- Implemented sandbox isolation such that no sandbox environments are ever shared between users.
+- Implemented sandbox isolation such that no sandbox environments are ever shared between users
 
-- Intentionally limited the network, container, and storage resources.
+- Intentionally limited the network, container, and storage resources
 
-- Implemented a prompt injection classifier to detect malicious prompt manipulation and stop execution if detected.
+- Implemented a prompt injection classifier to detect malicious prompt manipulation and stop execution if detected
 
 We have performed red-teaming and security testing on this feature. We have a continuous process for ongoing security testing and red-teaming. We encourage organizations to evaluate these protections against their specific security requirements when deciding whether to enable this feature.
 
-### For Team and Enterprise owners
+### For Team and Enterprise Owners
 
-Team and Enterprise owners have full control over this feature, including:
+Team and Enterprise Owners have full control over this feature, including:
 
 - Enabling or disabling the feature organization-wide
 
@@ -290,8 +280,6 @@ Team and Enterprise owners have full control over this feature, including:
 - Configuring domain whitelisting to allow access only to specific approved domains
 
 **Note:** Claude can only be tricked into leaking data it has access to in a conversation via an individual user's prompt, project, or activated connections.
-
-------------------------------------------------------------------------
 
 ## Approved network domains
 
@@ -315,7 +303,7 @@ When network access is enabled, Claude can access the following approved domains
 
 ## Common workflows
 
-**Note:** Refer to **[Create and edit files with Claude to eliminate hours of busy work](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work)** [](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work) for use cases and demo videos, and **[Financial Analysis Workflows with Claude](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)** for guidelines specific to Claude for Financial Services customers.
+**Note:** Refer to [Create and edit files with Claude to eliminate hours of busy work](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work) for use cases and demo videos, and [Financial Analysis Workflows with Claude](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude) for guidelines specific to Claude for Financial Services customers.
 
 ### Build a financial model in Excel
 
@@ -362,7 +350,7 @@ Upload a CSV with data and ask Claude to build a machine learning model to predi
 
 ------------------------------------------------------------------------
 
-## Frequently asked questions
+## FAQ
 
 ### How does file creation work?
 
@@ -378,11 +366,11 @@ Claude can handle multiple files in a single chat, allowing you to create compre
 
 ### Is file creation supported on Claude for iOS or Android?
 
-File creation is supported on Claude for iOS and Android. Note that when you tap "Download" on Claude Mobile, the file will open in either the system preview or a separate app (for example, the Word app for .docx files).
+File creation is now supported on Claude for iOS and Android. Note that when you tap "Download" on Claude Mobile, the file will open in either the system preview or a separate app (for example, the Word app for .docx files).
 
 ### Do artifacts work with file creation?
 
-Yes you are still able to create artifacts (e.g., HTML or react apps, markdown documents, mermaid diagrams, SVGs) with file creation on. Claude now uses the computing environment to create artifacts so the user experience may look slightly different than users are used to. Please report any issues or feedback using the thumbs up/down functionality when chatting with Claude.
+Yes you are still able to create artifacts (e.g., HTML or react apps, markdown documents, mermaid diagrams, SVGs) with file creation on. Claude now uses the computing environment to create artifacts so the user experience may look slightly different than users are used to. Please report any issues or feedback using the thumbs up/down functionality in [claude.ai](http://claude.ai).
 
 ------------------------------------------------------------------------
 

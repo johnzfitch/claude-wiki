@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:35Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12651818-using-aiera-for-earnings-intelligence-and-market-analysis"
 title: "Using Aiera for Earnings Intelligence and Market Analysis | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Using Aiera for Earnings Intelligence and Market Analysis
 
 # Using Aiera for Earnings Intelligence and Market Analysis
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

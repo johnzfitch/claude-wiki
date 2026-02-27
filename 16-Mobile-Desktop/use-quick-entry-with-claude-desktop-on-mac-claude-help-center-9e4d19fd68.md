@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-23T00:45:35Z"
+fetched_at: "2026-02-08T20:52:00Z"
 source_url: "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac"
 title: "Use quick entry with Claude Desktop on Mac | Claude Help Center"
 ---
@@ -49,7 +49,7 @@ Use quick entry with Claude Desktop on Mac
 
 # Use quick entry with Claude Desktop on Mac
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -109,7 +109,7 @@ When you first open the updated version of Claude Desktop, you'll see a prompt t
 
 Once enabled, double-tapping Option will open a text box where you can type your message and start a new chat. You can also click "New chat" to see your five most recent conversations.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893088365/2ca4b782dda90abea1fe5f4150af/CleanShot+2025-12-18+at+13_14_30%402x.png?expires=1771809300&signature=d5e0e274b8ae4e6e7ca0aceb218b5d7feca4e2fe113030e65924abd7eb4a8742&req=dSguFcl2lYJZXPMW1HO4zWggAN9ZppWZRC8c%2FcM5c2Js%2FdxC4UyhgjWlUu7x%0AacGWz7mepCJXVIgnlPc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893088365/2ca4b782dda90abea1fe5f4150af/CleanShot+2025-12-18+at+13_14_30%402x.png?expires=1770585300&signature=e6321ef2b107f5e87e63687c50b5921fe5708b5e29677598e2f40dd93affa88c&req=dSguFcl2lYJZXPMW1HO4zWggAN5UrpmZRC8c%2FcM5c2LjwM9YGtRJYPCVrwaY%0AETIQQegzHcHHsTWtvy8%3D%0A)
 
 ### Enable the voice shortcut (optional)
 
@@ -257,9 +257,9 @@ Using Claude App Intents, Shortcuts, and Widgets on iOS
 
 Using the Claude Widget on Android
 
-[](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
+[](https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps)
 
-FAQs on Using Claude for Education at Your University
+Using voice mode on Claude Mobile Apps
 
 [](https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos)
 

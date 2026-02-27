@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:50Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10280779-how-do-i-learn-more-about-amazon-and-anthropic-s-strategic-collaboration"
 title: "How do I learn more about Amazon and Anthropic’s strategic collaboration? | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ How do I learn more about Amazon and Anthropic’s strategic collaboration?
 
 # How do I learn more about Amazon and Anthropic’s strategic collaboration?
 
-Updated this week
+Updated over a week ago
 
 Learn more by viewing this [press release](https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai).
 

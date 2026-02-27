@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:14:36Z"
+fetched_at: "2026-02-07T10:04:46Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/skills"
 title: "Agent Skills in the SDK - Claude API Docs"
 ---
@@ -56,19 +56,18 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
-
 async def main():
     options = ClaudeAgentOptions(
         cwd="/path/to/project",  # Project with .claude/skills/
         setting_sources=["user", "project"],  # Load Skills from filesystem
-        allowed_tools=["Skill", "Read", "Write", "Bash"],  # Enable Skill tool
+        allowed_tools=["Skill", "Read", "Write", "Bash"]  # Enable Skill tool
     )
 
     async for message in query(
-        prompt="Help me process this PDF document", options=options
+        prompt="Help me process this PDF document",
+        options=options
     ):
         print(message)
-
 
 asyncio.run(main())
 ```
@@ -118,10 +117,13 @@ Python
 ``` shiki
 options = ClaudeAgentOptions(
     setting_sources=["user", "project"],  # Load Skills from filesystem
-    allowed_tools=["Skill", "Read", "Grep", "Glob"],  # Restricted toolset
+    allowed_tools=["Skill", "Read", "Grep", "Glob"]  # Restricted toolset
 )
 
-async for message in query(prompt="Analyze the codebase structure", options=options):
+async for message in query(
+    prompt="Analyze the codebase structure",
+    options=options
+):
     print(message)
 ```
 
@@ -136,10 +138,13 @@ Python
 ``` shiki
 options = ClaudeAgentOptions(
     setting_sources=["user", "project"],  # Load Skills from filesystem
-    allowed_tools=["Skill"],
+    allowed_tools=["Skill"]
 )
 
-async for message in query(prompt="What Skills are available?", options=options):
+async for message in query(
+    prompt="What Skills are available?",
+    options=options
+):
     print(message)
 ```
 
@@ -157,10 +162,13 @@ Python
 options = ClaudeAgentOptions(
     cwd="/path/to/project",
     setting_sources=["user", "project"],  # Load Skills from filesystem
-    allowed_tools=["Skill", "Read", "Bash"],
+    allowed_tools=["Skill", "Read", "Bash"]
 )
 
-async for message in query(prompt="Extract text from invoice.pdf", options=options):
+async for message in query(
+    prompt="Extract text from invoice.pdf",
+    options=options
+):
     print(message)
 ```
 
@@ -180,12 +188,14 @@ Python
 
 ``` shiki
 # Wrong - Skills won't be loaded
-options = ClaudeAgentOptions(allowed_tools=["Skill"])
+options = ClaudeAgentOptions(
+    allowed_tools=["Skill"]
+)
 
 # Correct - Skills will be loaded
 options = ClaudeAgentOptions(
     setting_sources=["user", "project"],  # Required to load Skills
-    allowed_tools=["Skill"],
+    allowed_tools=["Skill"]
 )
 ```
 
@@ -200,7 +210,7 @@ Python
 options = ClaudeAgentOptions(
     cwd="/path/to/project",  # Must contain .claude/skills/
     setting_sources=["user", "project"],  # Required to load Skills
-    allowed_tools=["Skill"],
+    allowed_tools=["Skill"]
 )
 ```
 

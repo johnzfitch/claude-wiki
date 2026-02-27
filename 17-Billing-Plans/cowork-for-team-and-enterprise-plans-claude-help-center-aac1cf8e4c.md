@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:09Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans"
 title: "Cowork for Team and Enterprise plans | Claude Help Center"
 ---
@@ -173,9 +173,9 @@ Getting started with Cowork
 
 Using Cowork safely
 
-[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 
-Purchase and manage seats on Enterprise plans
+Purchasing and managing seats on Enterprise plans
 
 Did this answer your question?
 

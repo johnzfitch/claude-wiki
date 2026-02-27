@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:07Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9267323-how-do-i-cancel-my-organization-s-team-plan-subscription"
 title: "How do I cancel my organization’s Team plan subscription? | Claude Help Center"
 ---
@@ -45,10 +45,6 @@ Related Articles
 
 How do I cancel my paid Claude subscription?
 
-[](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)
-
-What is the Team plan?
-
 [](https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan)
 
 How do I get started with the Team plan?
@@ -57,9 +53,13 @@ How do I get started with the Team plan?
 
 How am I billed for my Enterprise plan?
 
-[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs)
 
-Purchase and manage seats on Enterprise plans
+Team plan billing FAQs
+
+[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
+
+Purchasing and managing seats on Enterprise plans
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:13Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account"
 title: "Logging in to your Console account | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Logging in to your Console account
 
 # Logging in to your Console account
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -55,7 +55,7 @@ Table of contents
 
 When you navigate to the [Claude Console](https://platform.claude.com), you will see two different options for logging in to your Console account.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1935026646/d90d1613a3dbe763fef5abb96e3c/image.png?expires=1771809300&signature=ddbb4fd51f2c1fd0c0218addf97d38f390a9864cdeda591e31a3a15ade97a2b1&req=dSkkE8l8m4dbX%2FMW1HO4zcrI6IjkoIkO8vUNcPt4%2B71W93fPeoewvRNUthGw%0A%2BvJrTj8tTZtmzFlk%2BGM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1935026646/d90d1613a3dbe763fef5abb96e3c/image.png?expires=1771278300&signature=3fc9fa998dd3233ca102998bb0623e45c9bf91c74f5c9839f7a9cbc5f7d3e428&req=dSkkE8l8m4dbX%2FMW1HO4zcrI6Ijup4gO8vUNcPt4%2B73mKaRx6AkPMZ2JqisO%0ATkrnx0lOgZruCPKUPic%3D%0A)
 
 ## Continue with Google
 
@@ -145,9 +145,9 @@ How do I log out of all active sessions?
 
 How can I delete my Claude Console account?
 
-[](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)
+[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
 
-Set up single sign-on (SSO)
+Setting up single sign-on (SSO)
 
 [](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account)
 

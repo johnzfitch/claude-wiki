@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:22:15Z"
+fetched_at: "2026-02-07T10:05:32Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/mood-colorizer"
 title: "Mood colorizer - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Transform text descriptions of moods into corresponding HEX codes.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -64,25 +64,25 @@ Vertex AI TypeScript
 import anthropic
 
 client = anthropic.Anthropic(
-    # defaults to os.environ.get("ANTHROPIC_API_KEY")
-    api_key="my_api_key",
+  # defaults to os.environ.get("ANTHROPIC_API_KEY")
+  api_key="my_api_key",
 )
 message = client.messages.create(
-    model="claude-opus-4-6",
-    max_tokens=500,
-    temperature=0.5,
-    system='Your task is to take the provided text description of a mood or emotion and generate a HEX color code that visually represents that mood. Use color psychology principles and common associations to determine the most appropriate color for the given mood. If the text description is unclear, ambiguous, or does not provide enough information to determine a suitable color, respond with "Unable to determine a HEX color code for the given mood."',
-    messages=[
+  model="claude-opus-4-6",
+  max_tokens=500,
+  temperature=0.5,
+  system="Your task is to take the provided text description of a mood or emotion and generate a HEX color code that visually represents that mood. Use color psychology principles and common associations to determine the most appropriate color for the given mood. If the text description is unclear, ambiguous, or does not provide enough information to determine a suitable color, respond with \"Unable to determine a HEX color code for the given mood.\"",
+  messages=[
+    {
+    "role": "user",
+    "content": [
         {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "A passionate, intense, and fiery emotion, full of love and desire.",
-                }
-            ],
+          "type": "text",
+          "text": "A passionate, intense, and fiery emotion, full of love and desire."
         }
-    ],
+      ]
+    }
+  ]
 )
 print(message.content)
 ```

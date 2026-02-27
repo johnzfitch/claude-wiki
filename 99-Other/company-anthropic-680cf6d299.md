@@ -1,7 +1,7 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-22T10:50:48Z"
-last_modified: "Fri, 20 Feb 2026 18:00:19 GMT"
+fetched_at: "2026-02-16T21:12:28Z"
+last_modified: "Fri, 13 Feb 2026 15:17:06 GMT"
 source_url: "https://www.anthropic.com/company"
 title: "Company \\ Anthropic"
 ---
@@ -396,8 +396,6 @@ Join us
 
 - [](https://claude.com/solutions/agents)
   AI agents
-- [](https://claude.com/solutions/claude-code-security)
-  Claude Code Security
 - [](https://claude.com/solutions/code-modernization)
   Code modernization
 - [](https://claude.com/solutions/coding)

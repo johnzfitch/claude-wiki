@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-23T00:45:16Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios"
 title: "Using Claude App Intents, Shortcuts, and Widgets on iOS | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using Claude App Intents, Shortcuts, and Widgets on iOS
 
 # Using Claude App Intents, Shortcuts, and Widgets on iOS
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:24:43Z"
+fetched_at: "2026-02-07T10:05:46Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/code-clarifier"
 title: "Code clarifier - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Simplify and explain complex code in plain language.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -80,11 +80,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": 'import random\n\ndef bubble_sort(arr):\n    n = len(arr)\n    for i in range(n-1):\n        for j in range(n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr\n\nnumbers = [random.randint(1, 100) for _ in range(10)]\nprint("Unsorted array:", numbers)\nsorted_numbers = bubble_sort(numbers)\nprint("Sorted array:", sorted_numbers)',
+                    "text": "import random\n\ndef bubble_sort(arr):\n    n = len(arr)\n    for i in range(n-1):\n        for j in range(n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr\n\nnumbers = [random.randint(1, 100) for _ in range(10)]\nprint(\"Unsorted array:\", numbers)\nsorted_numbers = bubble_sort(numbers)\nprint(\"Sorted array:\", sorted_numbers)"
                 }
-            ],
+            ]
         }
-    ],
+    ]
 )
 print(message.content)
 ```

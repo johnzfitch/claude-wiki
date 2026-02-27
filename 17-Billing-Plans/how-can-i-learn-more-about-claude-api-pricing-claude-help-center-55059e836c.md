@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8114523-how-can-i-learn-more-about-claude-api-pricing"
 title: "How can I learn more about Claude API pricing? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ How can I learn more about Claude API pricing?
 
 # How can I learn more about Claude API pricing?
 
-Updated this week
+Updated over a week ago
 
 For our most up-to-date prices, please consult our [pricing page](https://claude.com/pricing#api).
 

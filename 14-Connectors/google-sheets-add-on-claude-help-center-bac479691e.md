@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:14Z"
+fetched_at: "2026-02-16T21:12:47Z"
 source_url: "https://support.claude.com/en/articles/13162029-google-sheets-add-on"
 title: "Google Sheets add-on | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Google Sheets add-on
 
 # Google Sheets add-on
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -97,7 +97,7 @@ Easily enable Claude for Sheets using the following steps:
 
 3.  **Connect your API key:** Enter your API key at `Extensions` \> `Claude for Sheets™` \> `Open sidebar` \> `☰` \> `Settings` \> `API provider`. You may need to wait or refresh for the Claude for Sheets menu to appear.
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1885955653/fa55fbc81410f0f9da473a5b6c01/044af20-Screenshot_2024-01-04_at_11_58_21_AM.png?expires=1771809300&signature=cbbbe6ec792036556bfe70ca342d54fac5305f9303e034316dd4df1ceb03deb5&req=dSgvE8B7mIdaWvMW1HO4zQWPGDcDSSwHY2KGYHWoVfmi7jAdXojaj0zvz9mg%0AHxzp%0A)
+    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1885955653/fa55fbc81410f0f9da473a5b6c01/044af20-Screenshot_2024-01-04_at_11_58_21_AM.png?expires=1771278300&signature=3d4be6b122ad3a87e22c415ed362c7103a690a40e8aa2ddab8cb4e0827f42e80&req=dSgvE8B7mIdaWvMW1HO4zQWPGDcJTi0HY2KGYHWoVfmqRYflu0VKv%2FUGVpZC%0Av8Oq%0A)
 
 **Important:** You will have to re-enter your API key every time you make a new Google Sheet.
 
@@ -201,7 +201,7 @@ Make a copy of our [Claude for Sheets workbook template](https://docs.google.com
 
     2.  Click on the triple dot menu at the top right corner of the Claude for Sheets extension and make sure "Use in this document" is checked
 
-        [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1885994017/0576e3f7d37c8223e5fb4743ad92/9cce371-Screenshot_2023-10-03_at_7_17_39_PM.png?expires=1771809300&signature=fb2210099d7536292d5816423c7b05ceb34f6090a0c50f0ff0f0f2a5a04de8d9&req=dSgvE8B3mYFeXvMW1HO4zftja8Q5%2BUwapoA36c5sCs%2B34ycp4B4hYsCtDJTh%0AlrrX%0A)
+        [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1885994017/0576e3f7d37c8223e5fb4743ad92/9cce371-Screenshot_2023-10-03_at_7_17_39_PM.png?expires=1771278300&signature=2b15de67cbae6d4558f262496dacef24010a4053b2e5ada22200592d5eae62d5&req=dSgvE8B3mYFeXvMW1HO4zftja8Qz%2Fk0apoA36c5sCs%2BNchkno2Gzo2YfZVqq%0ASkFD%0A)
 
 2.  Refresh the page
 
@@ -209,7 +209,7 @@ Make a copy of our [Claude for Sheets workbook template](https://docs.google.com
 
 You can manually recalculate `#ERROR!`, `⚠ DEFERRED ⚠`, or `⚠ THROTTLED ⚠` cells by selecting from the recalculate options within the Claude for Sheets extension menu.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1885996645/cc87f17bd5fa2e8facfdbfc09154/f729ba9-Screenshot_2024-02-01_at_8_30_31_PM.png?expires=1771809300&signature=ee40cbd94af3fd5e516a65370792f1f41042c7ebb87402dd123069179c28fdd4&req=dSgvE8B3m4dbXPMW1HO4zSC1mgX1d6aVhyBIJxp2kEzYFu2SF5EghwUjJ%2B2g%0AvfOX6SBnkiHTAF2GK7k%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1885996645/cc87f17bd5fa2e8facfdbfc09154/f729ba9-Screenshot_2024-02-01_at_8_30_31_PM.png?expires=1771278300&signature=487b1b8ccddc018502a755923887c8388bcfa6affaca6a83fe2d1e7cf8de3f27&req=dSgvE8B3m4dbXPMW1HO4zSC1mgX%2FcKeVhyBIJxp2kEw%2FAuJL0BmPJKfDUIO2%0AKPc4q7g26ZrOu6CTNRg%3D%0A)
 
 ### Can't enter API key
 
@@ -239,9 +239,9 @@ Release notes
 
 Claude in Chrome release notes
 
-[](https://support.claude.com/en/articles/12650343-use-claude-in-excel)
+[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
 
-Use Claude in Excel
+Using Claude in Excel
 
 [](https://support.claude.com/en/articles/12864745-using-claude-in-microsoft-foundry)
 

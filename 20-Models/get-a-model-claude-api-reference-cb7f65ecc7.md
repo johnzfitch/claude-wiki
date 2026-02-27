@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:35:11Z"
+fetched_at: "2026-02-07T10:07:07Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ TypeScript
 
 client.beta.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, created_at, display_name, type }
 
-GET/v1/models/{model_id}
+get/v1/models/{model_id}
 
 Get a specific model.
 
@@ -35,7 +35,7 @@ Accepts one of the following:
 
 (string & {})
 
-"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 17 more
+"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 16 more
 
 "message-batches-2024-09-24"
 
@@ -75,8 +75,6 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
-"fast-mode-2026-02-01"
-
 ##### ReturnsExpand Collapse 
 
 BetaModelInfo { id, created_at, display_name, type }
@@ -89,6 +87,8 @@ created_at: string
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
+formatdate-time
+
 display_name: string
 
 A human-readable name for the model.
@@ -98,6 +98,10 @@ type: "model"
 Object type.
 
 For Models, this is always `"model"`.
+
+Accepts one of the following:
+
+"model"
 
 Get a Model
 

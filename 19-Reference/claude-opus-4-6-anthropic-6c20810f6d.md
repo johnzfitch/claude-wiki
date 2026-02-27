@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-22T10:50:57Z"
+fetched_at: "2026-02-13T09:23:09Z"
 source_url: "https://www.anthropic.com/news/claude-opus-4-6"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---
@@ -33,7 +33,7 @@ In Claude Code, you can now assemble [*agent teams*](https://code.claude.com/doc
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
-Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.e9798a41-5edb-42a2-ba61-6e93e5692e9e), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
+Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.b62eeb98-36ac-4cc7-94a8-83d0a4ec644f), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
 
 We cover the model, our new product updates, our evaluations, and our extensive safety testing in depth below.
 
@@ -230,18 +230,16 @@ Claude now also works better with the office tools you already use. Claude in Ex
 
 ## Related content
 
-### Making frontier cybersecurity capabilities available to defenders
+### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
 
-[Read more](/news/claude-code-security)
+[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+### Anthropic is donating \$20 million to Public First Action
 
-[Read more](/news/anthropic-rwanda-mou)
+[Read more](/news/donate-public-first-action)
 
-### Introducing Claude Sonnet 4.6
+### Covering electricity price increases from our data centers
 
-Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.
-
-[Read more](/news/claude-sonnet-4-6)
+[Read more](/news/covering-electricity-price-increases)

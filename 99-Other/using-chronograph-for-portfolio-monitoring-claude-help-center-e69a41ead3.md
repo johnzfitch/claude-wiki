@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:35Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12662597-using-chronograph-for-portfolio-monitoring"
 title: "Using Chronograph for Portfolio Monitoring | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using Chronograph for Portfolio Monitoring
 
 # Using Chronograph for Portfolio Monitoring
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

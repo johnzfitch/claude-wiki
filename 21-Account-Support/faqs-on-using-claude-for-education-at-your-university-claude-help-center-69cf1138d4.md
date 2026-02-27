@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-08T20:51:41Z"
 source_url: "https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university"
 title: "FAQs on Using Claude for Education at Your University | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ FAQs on Using Claude for Education at Your University
 
 # FAQs on Using Claude for Education at Your University
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -67,7 +67,7 @@ This guide helps you use Claude for Education through your university-sponsored 
 
 Your university-sponsored Claude for Education account includes:
 
-- **Enhanced context window:** Upload hundreds of pages of text (up to 500k tokens when using specific models) for analyzing lengthy academic papers, research documents, and datasets.
+- **Enhanced context window:** Upload hundreds of pages of text (up to 500k tokens with Claude Sonnet 4) for analyzing lengthy academic papers, research documents, and datasets.
 
 - **Advanced models:** Access to the newest, most advanced Claude models.
 
@@ -261,9 +261,9 @@ Getting Started with Claude for Education at Your University (for Owners/Admins)
 
 Who owns and manages the data of my Claude for Education account?
 
-[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
+[](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account)
 
-Claude Enterprise Analytics API reference guide
+Logging in to your Claude account
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-22T14:29:53Z"
+fetched_at: "2026-02-08T20:51:46Z"
 source_url: "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code"
 title: "Automated Security Reviews in Claude Code | Claude Help Center"
 ---

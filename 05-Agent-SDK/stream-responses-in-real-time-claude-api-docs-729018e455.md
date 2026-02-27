@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:13:02Z"
+fetched_at: "2026-02-07T10:04:37Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/streaming-output"
 title: "Stream responses in real-time - Claude API Docs"
 ---
@@ -40,7 +40,6 @@ from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
 
-
 async def stream_response():
     options = ClaudeAgentOptions(
         include_partial_messages=True,
@@ -54,7 +53,6 @@ async def stream_response():
                 delta = event.get("delta", {})
                 if delta.get("type") == "text_delta":
                     print(delta.get("text", ""), end="", flush=True)
-
 
 asyncio.run(stream_response())
 ```
@@ -75,10 +73,10 @@ Python
 ``` shiki
 @dataclass
 class StreamEvent:
-    uuid: str  # Unique identifier for this event
-    session_id: str  # Session identifier
-    event: dict[str, Any]  # The raw Claude API stream event
-    parent_tool_use_id: str | None  # Parent tool ID if from a subagent
+    uuid: str                      # Unique identifier for this event
+    session_id: str                # Session identifier
+    event: dict[str, Any]          # The raw Claude API stream event
+    parent_tool_use_id: str | None # Parent tool ID if from a subagent
 ```
 
 The `event` field contains the raw streaming event from the [Claude API](/docs/en/build-with-claude/streaming#event-types). Common event types include:
@@ -129,7 +127,6 @@ from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
 
-
 async def stream_text():
     options = ClaudeAgentOptions(include_partial_messages=True)
 
@@ -143,7 +140,6 @@ async def stream_text():
                     print(delta.get("text", ""), end="", flush=True)
 
     print()  # Final newline
-
 
 asyncio.run(stream_text())
 ```
@@ -164,7 +160,6 @@ Python
 from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
-
 
 async def stream_tool_calls():
     options = ClaudeAgentOptions(
@@ -203,7 +198,6 @@ async def stream_tool_calls():
                     print(f"Tool {current_tool} called with: {tool_input}")
                     current_tool = None
 
-
 asyncio.run(stream_tool_calls())
 ```
 
@@ -221,7 +215,6 @@ from claude_agent_sdk.types import StreamEvent
 import asyncio
 import sys
 
-
 async def streaming_ui():
     options = ClaudeAgentOptions(
         include_partial_messages=True,
@@ -232,7 +225,8 @@ async def streaming_ui():
     in_tool = False
 
     async for message in query(
-        prompt="Find all TODO comments in the codebase", options=options
+        prompt="Find all TODO comments in the codebase",
+        options=options
     ):
         if isinstance(message, StreamEvent):
             event = message.event
@@ -262,7 +256,6 @@ async def streaming_ui():
         elif isinstance(message, ResultMessage):
             # Agent finished all work
             print(f"\n\n--- Complete ---")
-
 
 asyncio.run(streaming_ui())
 ```

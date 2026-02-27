@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-23T00:45:19Z"
+fetched_at: "2026-02-08T20:51:57Z"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 title: "How to create custom Skills | Claude Help Center"
 ---
@@ -49,7 +49,7 @@ How to create custom Skills
 
 # How to create custom Skills
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -69,7 +69,7 @@ Table of contents
 
 [](#h_175380ddad)
 
-Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
+Skills are available for users on Pro, Max, Team, and Enterprise plans. This feature requires [code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190). Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
 
 Custom Skills let you enhance Claude with specialized knowledge and workflows specific to your organization or personal work style. This article explains how to create, structure, and test your own Skills.
 
@@ -85,9 +85,7 @@ Skills can be as simple as a few lines of instructions or as complex as multi-fi
 
 - Are focused on one workflow rather than trying to do everything
 
-------------------------------------------------------------------------
-
-## Creating a Skill.md file
+## Creating a Skill.md File
 
 Every Skill consists of a directory containing at minimum a Skill.md file, which is the core of the Skill. This file must start with a YAML frontmatter to hold name and description fields, which are required metadata. It can also contain additional metadata, instructions for Claude or reference files, executable scripts, or tools.
 
@@ -103,7 +101,7 @@ Every Skill consists of a directory containing at minimum a Skill.md file, which
 
 - **Example:** Apply Acme Corp brand guidelines to presentations and documents, including official colors, fonts, and logo usage.
 
-### Optional metadata fields
+### Optional Metadata Fields
 
 **dependencies:** Software packages required by your Skill.
 
@@ -111,13 +109,13 @@ Every Skill consists of a directory containing at minimum a Skill.md file, which
 
 The metadata in the Skill.md file serves as the first level of a progressive disclosure system, providing just enough information for Claude to know when the Skill should be used without having to load all of the content.
 
-### Markdown body
+### Markdown Body
 
 The Markdown body is the second level of detail after the metadata, so Claude will access this if needed after reading the metadata. Depending on your task, Claude can access the Skill.md file and use the Skill.
 
 ### Example Skill.md
 
-**Brand guidelines skill**
+**Brand Guidelines Skill**
 
     ## Metadata
     name: Brand Guidelines
@@ -159,11 +157,11 @@ The Markdown body is the second level of detail after the metadata, so Claude wi
 
     See the resources folder for logo files and font downloads.
 
-## Adding resources
+## Adding Resources
 
 If you have too much information to add to a single [Skill.md](http://skill.md) file (e.g., sections that only apply to specific scenarios), you can add more content by adding files within your Skill directory. For example, add a REFERENCE.md file containing supplemental and reference information to your Skill directory. Referencing it in [Skill.md](http://skill.md) will help Claude decide if it needs to access that resource when executing the Skill.
 
-## Adding scripts
+## Adding Scripts
 
 For more advanced Skills, attach executable code files to [Skill.md](http://skill.md), allowing Claude to run code. For example, our document skills use the following programming languages and packages:
 
@@ -177,9 +175,7 @@ For more advanced Skills, attach executable code files to [Skill.md](http://skil
 
 **Note:** Claude and Claude Code can install packages from standard repositories (Python PyPI, JavaScript npm) when loading Skills. It’s not possible to install additional packages at runtime with API Skills—all dependencies must be pre-installed in the container.
 
-------------------------------------------------------------------------
-
-## Packaging your skill
+## Packaging Your Skill
 
 Once your Skill folder is complete:
 
@@ -205,11 +201,9 @@ my-Skill.zip
 
 └── (files directly in ZIP root)
 
-------------------------------------------------------------------------
+## Testing Your Skill
 
-## Testing your skill
-
-### Before uploading
+### Before Uploading
 
 1\. Review your Skill.md for clarity
 
@@ -219,9 +213,9 @@ my-Skill.zip
 
 4\. Test with example prompts to ensure Claude invokes it appropriately
 
-### After uploading to Claude
+### After Uploading to Claude
 
-1\. Enable the Skill in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)**.
+1\. Enable the Skill in [Settings \> Capabilities](https://claude.ai/settings/capabilities).
 
 2\. Try several different prompts that should trigger it
 
@@ -231,9 +225,7 @@ my-Skill.zip
 
 **Note for Team and Enterprise plans:** To make a skill available to all users in your organization, see Provisioning and managing Skills for your organization.
 
-------------------------------------------------------------------------
-
-## Best practices
+## Best Practices
 
 **Keep it focused:** Create separate Skills for different workflows. Multiple focused Skills compose better than one large Skill.
 
@@ -247,11 +239,11 @@ my-Skill.zip
 
 **Skills can build on each other:** While Skills can't explicitly reference other Skills, Claude can use multiple Skills together automatically. This composability is one of the most powerful parts of the Skills feature.
 
-**Review the open Agent Skills specification:** Follow the guidelines at **[agentskills.io](http://agentskills.io)**, so skills you create can work across platforms that adopt the standard.
+**Review the open Agent Skills specification:** Follow the guidelines at [agentskills.io](http://agentskills.io), so skills you create can work across platforms that adopt the standard.
 
-For a more in-depth guide to skill creation, refer to **[Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)** in our Claude Docs.
+For a more in-depth guide to skill creation, refer to [Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) in our Claude Docs.
 
-## Security considerations
+## Security Considerations
 
 - Exercise caution when adding scripts to your Skill.md file.
 
@@ -261,9 +253,9 @@ For a more in-depth guide to skill creation, refer to **[Skill authoring best pr
 
 - Use appropriate MCP connections for external service access.
 
-## Example skills to reference
+## Example Skills to Reference
 
-Visit our repository on GitHub for example Skills you can use as templates: **[https://github.com/anthropics/skills/tree/main/skills](https://github.com/anthropics/skills/tree/main/skills)**.
+Visit our repository on GitHub for example Skills you can use as templates: [https://github.com/anthropics/skills/tree/main/skills](https://github.com/anthropics/skills/tree/main/skills).
 
 ------------------------------------------------------------------------
 

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:35Z"
+fetched_at: "2026-02-08T20:51:53Z"
 source_url: "https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview"
 title: "Claude for Financial Services Overview | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Claude for Financial Services Overview
 
 # Claude for Financial Services Overview
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -177,10 +177,6 @@ Be aware of these limitations when using Claude for Financial Services:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9529781-examples-of-projects-you-can-create)
-
-Examples of projects you can create
-
 [](https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services)
 
 Getting Started with Claude for Financial Services
@@ -188,6 +184,10 @@ Getting Started with Claude for Financial Services
 [](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 
 Financial Analysis Workflows with Claude
+
+[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
+
+Using Claude in Excel
 
 [](https://support.claude.com/en/articles/12651659-using-egnyte-for-data-room-management-with-claude)
 

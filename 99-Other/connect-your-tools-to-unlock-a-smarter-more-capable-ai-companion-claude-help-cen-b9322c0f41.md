@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:28Z"
+fetched_at: "2026-02-16T21:12:37Z"
 source_url: "https://support.claude.com/en/articles/11817150-connect-your-tools-to-unlock-a-smarter-more-capable-ai-companion"
 title: "Connect your tools to unlock a smarter, more capable AI companion | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Connect your tools to unlock a smarter, more capable AI companion
 
 Connect apps to give Claude access to your knowledge and desktop files, plus the permission to perform actions in those sources.
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -81,7 +81,7 @@ Not only do connectors make Claude more knowledgeable, they make it more useful,
 
 The Connectors directory allows you to connect tools to Claude in just a few clicks. To find it, navigate to the “Search and tools” menu in Claude chat, then hit “Add connectors.”
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631323174/28c5a942f3cfb4ba63220e67cae1/Tools+menu+%284%29.png?expires=1771809300&signature=52c88b6fed70ce95ddd265fc1d9f3cbf358a2ee26455f5bb58349d82a937f202&req=dSYkF8p8noBYXfMW1HO4zSMFW8ipQn1pckg3IHxiRSXfSNxZQDef9igT3QDh%0AkuvbuOI%2B5Q5ni%2Fvt%2FHY%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631323174/28c5a942f3cfb4ba63220e67cae1/Tools+menu+%284%29.png?expires=1771278300&signature=f0ec7fb8e3e8c8317a7d7a63e99aad99edaf59adf833da3207dc3967cb17f337&req=dSYkF8p8noBYXfMW1HO4zSMFW8ijRXxpckg3IHxiRSUywasVxUXsQ0VSphMG%0ArD%2B92ZPJjAXWGhmxxoA%3D%0A)
 
 From here, you can connect Claude to your preferred tools, with more being added all the time. In the directory, you’ll find pre-built connectors in two categories:
 
@@ -89,7 +89,7 @@ From here, you can connect Claude to your preferred tools, with more being added
 
 - **Desktop extensions (app only)** — these allow Claude to work with desktop apps and files on your computer like your notes, messages, and code files.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631324273/e83d00f662f3286515b607a886e2/MCP+directory+%282%29.png?expires=1771809300&signature=cece4b5595f57699298c0ca02b4f23e546b3dc7216e2fe86904b44a15fc80966&req=dSYkF8p8mYNYWvMW1HO4zUdxfdKCK%2BusHRPK3cQqYTScrszjAyCwLcgktz4r%0AqCnuO4nQ1FvS1%2BGBhm8%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631324273/e83d00f662f3286515b607a886e2/MCP+directory+%282%29.png?expires=1771278300&signature=490731db72fd419ab1a396fd600fe8bfed355e1d09c8790df3bd6cd6ae40fc6e&req=dSYkF8p8mYNYWvMW1HO4zUdxfdKILOqsHRPK3cQqYTSENSuT7ffL%2BrS3BeLe%0A0edcGLfUiUC9xEOh%2Be4%3D%0A)
 
 ## Setting up your first connection
 

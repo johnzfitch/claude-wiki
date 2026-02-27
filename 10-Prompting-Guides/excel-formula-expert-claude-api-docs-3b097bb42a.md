@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:20:59Z"
+fetched_at: "2026-02-07T10:05:25Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/excel-formula-expert"
 title: "Excel formula expert - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Create Excel formulas based on user-described calculations or data manipulations
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|

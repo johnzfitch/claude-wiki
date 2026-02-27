@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:50Z"
+fetched_at: "2026-02-16T21:12:36Z"
 source_url: "https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp"
 title: "Pre-built web connectors using remote MCP | Claude Help Center"
 ---
@@ -77,9 +77,9 @@ For more details on how to add and use connectors, see **[Getting started with c
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Get started with custom connectors using remote MCP
+Getting started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 

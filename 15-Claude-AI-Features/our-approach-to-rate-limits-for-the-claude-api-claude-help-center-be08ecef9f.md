@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-08T20:52:08Z"
 source_url: "https://support.claude.com/en/articles/8243635-our-approach-to-rate-limits-for-the-claude-api"
 title: "Our approach to rate limits for the Claude API | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Our approach to rate limits for the Claude API
 
 # Our approach to rate limits for the Claude API
 
-Updated this week
+Updated yesterday
 
 Your rate limit depends on your usage tier, and is currently measured in three key metrics:
 
@@ -65,13 +65,13 @@ Cost and Usage Reporting in the Claude Console
 
 How can I advance my Claude API usage to Tier 2?
 
+[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
+
+How am I billed for my Enterprise plan?
+
 [](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
-
-[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
-
-Claude Enterprise Analytics API reference guide
 
 Did this answer your question?
 

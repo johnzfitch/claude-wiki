@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-23T00:45:16Z"
+fetched_at: "2026-02-08T20:52:06Z"
 source_url: "https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude"
 title: "Crisis Helpline Support in Claude | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Crisis Helpline Support in Claude
 
 # Crisis Helpline Support in Claude
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -191,10 +191,6 @@ Related Articles
 
 I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries?
 
-[](https://support.claude.com/en/articles/8114491-getting-started-with-claude)
-
-Getting started with Claude
-
 [](https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account)
 
 Who owns and manages the data of my Claude for Education account?
@@ -202,6 +198,10 @@ Who owns and manages the data of my Claude for Education account?
 [](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
+
+[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
+
+Getting Started with Claude for Nonprofits
 
 [](https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government)
 

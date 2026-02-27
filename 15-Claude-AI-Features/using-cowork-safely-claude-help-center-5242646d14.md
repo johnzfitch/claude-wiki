@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:18Z"
+fetched_at: "2026-02-08T20:52:07Z"
 source_url: "https://support.claude.com/en/articles/13364135-using-cowork-safely"
 title: "Using Cowork safely | Claude Help Center"
 ---
@@ -23,8 +23,6 @@ Search for articles...
 
 Table of contents
 
-[](#h_54fa53449f)
-
 [](#h_992c8bab98)
 
 [](#h_771a89e342)
@@ -43,11 +41,9 @@ Using Cowork safely
 
 # Using Cowork safely
 
-Updated this week
+Updated yesterday
 
 Table of contents
-
-[](#h_54fa53449f)
 
 [](#h_992c8bab98)
 
@@ -57,21 +53,9 @@ Table of contents
 
 [](#h_41efb7066d)
 
-## Availability
+Cowork is available as a research preview for all paid plans (Pro, Max, Team, Enterprise) using the Claude Desktop app on macOS.
 
-Cowork is available as a research preview for paid plans (Pro, Max, Team, Enterprise) on:
-
-- **Claude Desktop for macOS**
-
-  - **[Click here](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)** to download
-
-- **Claude Desktop for Windows** (x64 only)
-
-**Windows users:** Cowork requires the latest version of Claude for Windows. Download or update at **[claude.com/download](https://claude.com/download)**.
-
-Windows arm64 is not supported.
-
-------------------------------------------------------------------------
+## **[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)**
 
 ## Understanding the risks
 
@@ -123,7 +107,7 @@ Desktop extensions (MCPs) expand what Claude can do, but each one introduces new
 
 **5. Report suspicious behavior immediately**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#483d3b2d3a3b292e2d3c310829263c203a2738212b662b2725) or use the in-app feedback button. Your reports help us improve our defenses.
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#d1a4a2b4a3a2b0b7b4a5a891b0bfa5b9a3bea1b8b2ffb2bebc) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 

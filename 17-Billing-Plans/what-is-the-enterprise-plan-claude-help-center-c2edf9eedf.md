@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:09Z"
+fetched_at: "2026-02-16T21:12:52Z"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 title: "What is the Enterprise plan? | Claude Help Center"
 ---
@@ -95,7 +95,7 @@ Enterprise includes everything in the Team plan, plus the following:
 
 - **Enhanced context window** that enables users to upload hundreds of sales transcripts, dozens of 100+ page documents, and 100K lines of code.
 
-  - 500K tokens when chatting with Claude Sonnet 4.6, and 1M tokens when using Claude Code with Sonnet 4.6.
+  - 500K tokens when chatting with Claude Sonnet 4.5, and 1M tokens when using Claude Code with Sonnet 4.5.
 
   - The standard 200K context window is available for all other models.
 
@@ -189,17 +189,17 @@ What is the Team plan?
 
 How am I billed for my Enterprise plan?
 
-[](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan)
+[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
 
-Use Claude Code with your Team or Enterprise plan
+Using Claude Code with your Team or Enterprise plan
 
 [](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 
-Purchase and manage seats on Enterprise plans
+Purchasing and managing seats on Enterprise plans
 
 Did this answer your question?
 

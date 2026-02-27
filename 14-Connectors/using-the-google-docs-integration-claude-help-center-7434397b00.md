@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:25Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10389539-using-the-google-docs-integration"
 title: "Using the Google Docs integration | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Using the Google Docs integration
 
 # Using the Google Docs integration
 
-Updated this week
+Updated over a week ago
 
 In this video guide, we'll walk through connecting and using the Google Docs integration, allowing you to seamlessly incorporate your documents into conversations with Claude. Before you get started, review the availability of the features demonstrated in this video:
 

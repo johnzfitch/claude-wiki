@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:17Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features"
 title: "Understanding Claude&#x27;s Personalization Features | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Understanding Claude's Personalization Features
 
 # Understanding Claude's Personalization Features
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

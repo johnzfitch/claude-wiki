@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-23T00:45:12Z"
+fetched_at: "2026-02-16T21:12:38Z"
 source_url: "https://support.claude.com/en/articles/11940350-claude-code-model-configuration"
 title: "Claude Code model configuration | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Claude Code model configuration
 
 # Claude Code model configuration
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -67,15 +67,17 @@ The simplest way to change models is to use the /model command directly within C
 
 ## Supported models
 
-- Sonnet 4.6, `claude-sonnet-4-6`
-
 - Opus 4.6, `claude-opus-4-6`
 
 - Opus 4.5, `claude-opus-4-5-20251101`
 
 - Haiku 4.5, `claude-haiku-4-5-20251001`
 
-- Sonnet 4.5, `claude-sonnet-4-5-20250929`
+- Sonnet 4.5, `claude-sonnet-4-5-20250929` (default)
+
+- Sonnet 4, `claude-sonnet-4-20250514`
+
+- Haiku 3.5, `claude-3-5-haiku-20241022`
 
 **⚠️ Model access:** When using a Pro plan with Claude Code, you will only be able to use Opus models after **[enabling and purchasing extra usage](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans#h_8d1a703b92)**.
 
@@ -87,8 +89,6 @@ Use the `--model` flag when starting Claude Code.
 
 2.  Enter the following commands (depending on the model you’d like to use for that session):
 
-    - **For Sonnet 4.6:** `claude --model claude-sonnet-4-6`
-
     - **For Opus 4.6:** `claude --model claude-opus-4-6`
 
     - **For Opus 4.5:** `claude --model claude-opus-4-5-20251101`
@@ -96,6 +96,10 @@ Use the `--model` flag when starting Claude Code.
     - **For Haiku 4.5:** `claude --model `` claude-haiku-4-5-20251001`
 
     - **For Sonnet 4.5:** `claude --model claude-sonnet-4-5-20250929`
+
+    - **For Sonnet 4:** `claude --model claude-sonnet-4-20250514`
+
+    - **For** **3.5 Haiku**: `claude --model claude-3-5-haiku-20241022`
 
 ## Change default model for all future sessions
 
@@ -109,8 +113,6 @@ Use the `--model` flag when starting Claude Code.
 
 ### For ZSH users (macOS)
 
-- Spnnet 4.6: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-6"' >> ~/.zshrc`
-
 - Opus 4.6: `echo 'export ANTHROPIC_MODEL="claude-opus-4-6"' >> ~/.zshrc`
 
 - Opus 4.5: `echo 'export ANTHROPIC_MODEL="claude-opus-4-5-20251101"' >> ~/.zshrc`
@@ -119,9 +121,11 @@ Use the `--model` flag when starting Claude Code.
 
 - Sonnet 4.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5-20250929"' >> ~/.zshrc`
 
-### For BASH users (Linux)
+- Sonnet 4: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-20250514"' >> ~/.zshrc`
 
-- Sonnet 4.6: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-6"' >> ~/.bashrc`
+- 3.5 Haiku: `echo 'export ANTHROPIC_MODEL="claude-3-5-haiku-20241022"' >> ~/.zshrc`
+
+### For BASH users (Linux)
 
 - Opus 4.6: `echo 'export ANTHROPIC_MODEL="claude-opus-4-6"' >> ~/.bashrc`
 
@@ -130,6 +134,10 @@ Use the `--model` flag when starting Claude Code.
 - Haiku 4.5: `echo 'export ANTHROPIC_MODEL="claude-haiku-4-5-20251001"' >> ~/.bashrc`
 
 - Sonnet 4.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5-20250929"' >> ~/.bashrc`
+
+- Sonnet 4: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-20250514"' >> ~/.bashrc`
+
+- 3.5 Haiku: `echo 'export ANTHROPIC_MODEL="claude-3-5-haiku-20241022"' >> ~/.bashrc`
 
 **Step 3)** Apply the changes:
 

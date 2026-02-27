@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:32Z"
+fetched_at: "2026-02-16T21:12:35Z"
 source_url: "https://support.claude.com/en/articles/11106443-using-research"
 title: "Using Research | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Using Research
 
 # Using Research
 
-Updated this week
+Updated over a week ago
 
 In this video guide, we'll walk you through an example of using Claude's Research feature to plan a team offsite.
 

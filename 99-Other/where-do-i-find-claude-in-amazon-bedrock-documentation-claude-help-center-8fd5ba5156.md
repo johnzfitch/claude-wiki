@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:50Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10280783-where-do-i-find-claude-in-amazon-bedrock-documentation"
 title: "Where do I find Claude in Amazon Bedrock documentation? | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Where do I find Claude in Amazon Bedrock documentation?
 
 # Where do I find Claude in Amazon Bedrock documentation?
 
-Updated this week
+Updated over a week ago
 
 Visit the Claude in Amazon Bedrock [user guide](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-claude.html).
 

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:17Z"
+fetched_at: "2026-02-16T21:12:36Z"
 source_url: "https://support.claude.com/en/articles/11408405-claude-4-invite-contest"
 title: "Claude 4 Invite Contest | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Claude 4 Invite Contest
 
 # Claude 4 Invite Contest
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

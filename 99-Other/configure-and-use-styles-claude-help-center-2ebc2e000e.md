@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:50Z"
+fetched_at: "2026-02-08T20:51:38Z"
 source_url: "https://support.claude.com/en/articles/10181068-configuring-and-using-styles"
 title: "Configure and use styles | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Configure and use styles
 
 # Configure and use styles
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -179,9 +179,9 @@ Using Claude App Intents, Shortcuts, and Widgets on iOS
 
 Using Claude’s chat search and memory to build on previous context
 
-[](https://support.claude.com/en/articles/13521390-use-claude-in-powerpoint)
+[](https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint)
 
-Use Claude in PowerPoint
+Using Claude in PowerPoint
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:08Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 ---
@@ -129,17 +129,17 @@ Business Associate Agreements (BAA) for Commercial Customers
 
 What is the Enterprise plan?
 
-[](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan)
+[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
 
-Use Claude Code with your Team or Enterprise plan
+How am I billed for my Enterprise plan?
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
+[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
 
-Release notes
+Using Claude Code with your Team or Enterprise plan
 
-[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 
-Purchase and manage seats on Enterprise plans
+Purchasing and managing seats on Enterprise plans
 
 Did this answer your question?
 
