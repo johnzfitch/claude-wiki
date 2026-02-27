@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:15:31Z"
+fetched_at: "2026-02-07T10:04:51Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
 title: "Prompt engineering overview - Claude API Docs"
 ---
@@ -25,7 +25,7 @@ This guide assumes that you have:
 2.  Some ways to empirically test against those criteria
 3.  A first draft prompt you want to improve
 
-If not, we highly suggest you spend time establishing that first. Check out [Define success criteria and build evaluations](/docs/en/test-and-evaluate/develop-tests) for tips and guidance.
+If not, we highly suggest you spend time establishing that first. Check out [Define your success criteria](/docs/en/test-and-evaluate/define-success) and [Create strong empirical evaluations](/docs/en/test-and-evaluate/develop-tests) for tips and guidance.
 
 [](/dashboard)
 

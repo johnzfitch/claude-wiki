@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-23T00:45:35Z"
+fetched_at: "2026-02-08T20:52:01Z"
 source_url: "https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills"
 title: "Claude for Financial Services Skills | Claude Help Center"
 ---
@@ -61,7 +61,7 @@ Claude for Financial Services Skills
 
 # Claude for Financial Services Skills
 
-Updated this week
+Updated yesterday
 
 Table of contents
 

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:14Z"
+fetched_at: "2026-02-16T21:12:52Z"
 source_url: "https://support.claude.com/en/articles/9889428-i-need-to-add-or-update-my-claude-console-organization-s-tax-or-vat-id"
 title: "I need to add or update my Claude Console organization&#x27;s tax or VAT ID | Claude Help Center"
 ---
@@ -37,7 +37,7 @@ I need to add or update my Claude Console organization's tax or VAT ID
 
 # I need to add or update my Claude Console organization's tax or VAT ID
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

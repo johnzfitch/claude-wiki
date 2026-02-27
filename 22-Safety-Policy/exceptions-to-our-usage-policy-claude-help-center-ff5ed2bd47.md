@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-23T00:45:16Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9528712-exceptions-to-our-usage-policy"
 title: "Exceptions to our Usage Policy | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Exceptions to our Usage Policy
 
 # Exceptions to our Usage Policy
 
-Updated this week
+Updated over a week ago
 
 Anthropic maintains a comprehensive Usage Policy to ensure the responsible deployment of our AI systems. Anthropic may enter into contracts with government customers that tailor use restrictions to that customer’s public mission and legal authorities if, in Anthropic’s judgment, the contractual use restrictions and applicable safeguards are adequate to mitigate the potential harms addressed by this Usage Policy.
 

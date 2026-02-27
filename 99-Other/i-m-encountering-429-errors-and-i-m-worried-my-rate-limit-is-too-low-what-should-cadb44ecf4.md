@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:14Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8114527-i-m-encountering-429-errors-and-i-m-worried-my-rate-limit-is-too-low-what-should-i-do"
 title: "I’m encountering 429 errors, and I’m worried my rate limit is too low. What should I do? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ I’m encountering 429 errors, and I’m worried my rate limit is too low. What 
 
 # I’m encountering 429 errors, and I’m worried my rate limit is too low. What should I do?
 
-Updated this week
+Updated over a week ago
 
 Your Claude API organization's rate limit depends on your usage tier, which will increase automatically from Tier 1 to Tier 4 as you reach certain thresholds while using the API. Your usage tier also determines your monthly spend limit, which increases as you progress through the tiers. You can see your organization’s tier at [Settings \> Limits](https://platform.claude.com/settings/limits).
 
@@ -51,13 +51,13 @@ Our approach to rate limits for the Claude API
 
 How can I advance my Claude API usage to Tier 2?
 
+[](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)
+
+Understanding usage and length limits
+
 [](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
-
-[](https://support.claude.com/en/articles/12386420-claude-code-faq)
-
-Claude Code FAQ
 
 [](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 

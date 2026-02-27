@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:07Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9267276-roles-and-permissions"
 title: "Roles and permissions | Claude Help Center"
 ---
@@ -131,21 +131,21 @@ Related Articles
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)
+[](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
 
-Set up JIT or SCIM provisioning
+Setting up JIT or SCIM provisioning
 
-[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Manage members on Team and Enterprise plans
+Managing members on Team and Enterprise plans
+
+[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
+
+Purchasing and managing seats on Enterprise plans
 
 [](https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization)
 
 Find and join a Team or Enterprise organization
-
-[](https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise)
-
-Migrate your organization from Team to Enterprise
 
 Did this answer your question?
 

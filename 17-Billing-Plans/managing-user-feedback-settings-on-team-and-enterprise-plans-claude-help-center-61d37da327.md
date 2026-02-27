@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:09Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10504844-managing-user-feedback-settings-on-team-and-enterprise-plans"
 title: "Managing user feedback settings on Team and Enterprise plans | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ As a Primary Owner or Owner of a Team or Enterprise plan, you can manage the abi
 
 2.  Use the toggle to change the **Rate chats** setting for your organization:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2058292603/75752add0bed6a9f3ab217f01708/CleanShot%2B2026-02-12%2Bat%2B08_55_14-402x.png?expires=1771809300&signature=2efb6167d0b5823c672c015b3cb234c72263bc64ae887e9ffc5a0ddc6d9b1a68&req=diAiHst3n4dfWvMW1HO4zYGm%2FSYUEKHP085gFtEpvcRK3p8GLBM4A4vZjed0%0AwsQQ4A15URLdQlxkgK0%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2058292603/75752add0bed6a9f3ab217f01708/CleanShot%2B2026-02-12%2Bat%2B08_55_14-402x.png?expires=1771278300&signature=956d2e6f383595c426bd7d6e4cdbad7b1710aafbfffa6856e82329edc98e2e65&req=diAiHst3n4dfWvMW1HO4zYGm%2FSYeF6DP085gFtEpvcQrih64YFdAhjWzoFlP%0ApwSlIvepy1mP2bvxcbo%3D%0A)
 
 More information on how Anthropic collects, uses, and stores feedback data can be found in our Privacy Center: **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**
 
@@ -59,9 +59,9 @@ Managing User Feedback Settings on Claude Console
 
 Who owns and manages the data of my Claude for Education account?
 
-[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Manage members on Team and Enterprise plans
+Managing members on Team and Enterprise plans
 
 [](https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans)
 

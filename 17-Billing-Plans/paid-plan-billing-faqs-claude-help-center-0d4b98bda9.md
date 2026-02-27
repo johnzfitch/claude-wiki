@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:20Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
 title: "Paid Plan Billing FAQs | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Paid Plan Billing FAQs
 
 # Paid Plan Billing FAQs
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -97,7 +97,7 @@ Additionally, all invoices are automatically emailed to your billing email addre
 
 If you want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in [Settings \> Billing](http://claude.ai/settings/billing).
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922141785/666191101c11030b05f03a668a74/image.png?expires=1771809300&signature=b61a2069682bedc7fb6736de19987917ca5c2e060fcadffc4f6fce0fb3a5eb30&req=dSklFMh6nIZXXPMW1HO4zVXW%2F2yjazrPQoNvNFTb5cd0hWA22VJ7MJU%2BfCdT%0AzIM%2FXZY3B6uJ5GMGcDc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922141785/666191101c11030b05f03a668a74/image.png?expires=1771278300&signature=9f18b16911e2b2dc290cd43a8122714dc7816d796c1bdca21678b79cacf36faf&req=dSklFMh6nIZXXPMW1HO4zVXW%2F2ypbDvPQoNvNFTb5cfGZ%2B85qlT%2Bzt%2Bbx7h7%0AZBDRZa7Gf9uUa9%2BSVEs%3D%0A)
 
 ## How can I edit a paid invoice?
 

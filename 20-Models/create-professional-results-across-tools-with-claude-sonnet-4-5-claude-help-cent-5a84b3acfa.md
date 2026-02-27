@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-23T00:45:33Z"
+fetched_at: "2026-02-16T21:12:42Z"
 source_url: "https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5"
 title: "Create professional results across tools with Claude Sonnet 4.5 | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Create professional results across tools with Claude Sonnet 4.5
 
 # Create professional results across tools with Claude Sonnet 4.5
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -167,9 +167,9 @@ Create and edit files with Claude to eliminate hours of busy work
 
 Getting the most out of Sonnet 4.5 in Claude.ai
 
-[](https://support.claude.com/en/articles/12650343-use-claude-in-excel)
+[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
 
-Use Claude in Excel
+Using Claude in Excel
 
 [](https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work)
 

@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:25:42Z"
+fetched_at: "2026-02-07T10:05:51Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/lesson-planner"
 title: "Lesson planner - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Craft in depth lesson plans on any subject.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/login?selectAccount=true&returnTo=%2Fdashboard%3F) to try it for yourself!
+> Copy this prompt into our developer [Console](/login?selectAccount=true&returnTo=%2Fdashboard%3F) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -82,11 +82,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "Subject: Introduction to Photosynthesis  \nGrade Level: 7th Grade (Ages 12-13)",
+                    "text": "Subject: Introduction to Photosynthesis  \nGrade Level: 7th Grade (Ages 12-13)"
                 }
-            ],
+            ]
         }
-    ],
+    ]
 )
 print(message.content)
 ```

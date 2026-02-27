@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-23T00:45:07Z"
+fetched_at: "2026-02-16T21:12:42Z"
 source_url: "https://support.claude.com/en/articles/12489464-using-enterprise-search"
 title: "Using Enterprise Search | Claude Help Center"
 ---
@@ -53,7 +53,7 @@ Using Enterprise Search
 
 # Using Enterprise Search
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -399,9 +399,9 @@ Related Articles
 
 Setting up Claude integrations
 
-[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Get started with custom connectors using remote MCP
+Getting started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 

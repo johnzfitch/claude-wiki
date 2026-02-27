@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:17Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8114487-what-interfaces-can-i-use-to-access-claude"
 title: "What interfaces can I use to access Claude? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ What interfaces can I use to access Claude?
 
 # What interfaces can I use to access Claude?
 
-Updated this week
+Updated over a week ago
 
 You access Claude via:
 

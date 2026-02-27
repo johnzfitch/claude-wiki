@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:15:36Z"
+fetched_at: "2026-02-07T10:04:52Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompt-generator"
 title: "Automatically generate first draft prompt templates - Claude API Docs"
 ---
@@ -13,15 +13,15 @@ Copy page
 
 Copy page
 
-The prompt generator is compatible with all Claude models, including those with extended thinking capabilities. For prompting tips specific to extended thinking models, see the [extended thinking documentation](/docs/en/build-with-claude/extended-thinking).
+Our prompt generator is compatible with all Claude models, including those with extended thinking capabilities. For prompting tips specific to extended thinking models, see [here](/docs/en/build-with-claude/extended-thinking).
 
-Sometimes, the hardest part of using an AI model is figuring out how to prompt it effectively. To help with this, a prompt generation tool is available that guides Claude to generate high-quality prompt templates tailored to your specific tasks. These templates follow many prompt engineering best practices.
+Sometimes, the hardest part of using an AI model is figuring out how to prompt it effectively. To help with this, we've created a prompt generation tool that guides Claude to generate high-quality prompt templates tailored to your specific tasks. These templates follow many of our prompt engineering best practices.
 
 The prompt generator is particularly useful as a tool for solving the "blank page problem" to give you a jumping-off point for further testing and iteration.
 
 Try the prompt generator now directly on the [Console](/dashboard).
 
-If you're interested in analyzing the underlying prompt and architecture, check out the [prompt generator Google Colab notebook](https://anthropic.com/metaprompt-notebook/). There, you can easily run the code to have Claude construct prompts on your behalf.
+If you're interested in analyzing the underlying prompt and architecture, check out our [prompt generator Google Colab notebook](https://anthropic.com/metaprompt-notebook/). There, you can easily run the code to have Claude construct prompts on your behalf.
 
 Note that to run the Colab notebook, you will need an [API key](/settings/keys).
 
@@ -47,13 +47,13 @@ Get inspired by a curated selection of prompts for various tasks and use cases.
 
 GitHub prompting tutorial
 
-An example-filled tutorial that covers the prompt engineering concepts found in the docs.
+An example-filled tutorial that covers the prompt engineering concepts found in our docs.
 
 [](https://docs.google.com/spreadsheets/d/19jzLgRruG9kjUQNKtCg1ZjdD6l6weA6qRXG5zLIAhC8)
 
 Google Sheets prompting tutorial
 
-A lighter weight version of the prompt engineering tutorial via an interactive spreadsheet.
+A lighter weight version of our prompt engineering tutorial via an interactive spreadsheet.
 
 Was this page helpful?
 

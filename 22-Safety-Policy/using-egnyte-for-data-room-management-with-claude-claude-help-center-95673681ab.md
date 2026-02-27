@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-23T00:45:34Z"
+fetched_at: "2026-02-08T20:52:00Z"
 source_url: "https://support.claude.com/en/articles/12651659-using-egnyte-for-data-room-management-with-claude"
 title: "Using Egnyte for data room management with Claude | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Using Egnyte for data room management with Claude
 
 # Using Egnyte for data room management with Claude
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -253,7 +253,7 @@ Using Claude in Slack
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org connector in Claude
+Using the Synapse.org Connector in Claude
 
 [](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
 

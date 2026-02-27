@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:06Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13346720-how-can-i-export-my-organization-s-data"
 title: "How can I export my organization&#x27;s data? | Claude Help Center"
 ---

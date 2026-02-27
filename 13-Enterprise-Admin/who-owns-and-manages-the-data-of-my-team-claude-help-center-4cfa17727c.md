@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-23T00:45:08Z"
+fetched_at: "2026-02-16T21:12:50Z"
 source_url: "https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team"
 title: "Who owns and manages the data of my team? | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Who owns and manages the data of my team?
 
 # Who owns and manages the data of my team?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -93,9 +93,9 @@ Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of
 
 Custom data retention controls for Enterprise plans
 
-[](https://support.claude.com/en/articles/10504844-managing-user-feedback-settings-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins)
 
-Managing user feedback settings on Team and Enterprise plans
+Getting Started with Claude for Education at Your University (for Owners/Admins)
 
 [](https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account)
 

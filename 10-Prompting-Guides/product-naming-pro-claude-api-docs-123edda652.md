@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:26:11Z"
+fetched_at: "2026-02-07T10:05:54Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/product-naming-pro"
 title: "Product naming pro - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Create catchy product names from descriptions and keywords.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -52,11 +52,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "Description: A noise-canceling, wireless, over-ear headphone with a 20-hour battery life and touch controls. Designed for audiophiles and frequent travelers.  \n  \nKeywords: immersive, comfortable, high-fidelity, long-lasting, convenient",
+                    "text": "Description: A noise-canceling, wireless, over-ear headphone with a 20-hour battery life and touch controls. Designed for audiophiles and frequent travelers.  \n  \nKeywords: immersive, comfortable, high-fidelity, long-lasting, convenient"
                 }
-            ],
+            ]
         }
-    ],
+    ]
 )
 print(message.content)
 ```

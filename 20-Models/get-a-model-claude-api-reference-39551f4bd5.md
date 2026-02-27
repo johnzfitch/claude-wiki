@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:56:53Z"
+fetched_at: "2026-02-07T10:09:52Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Go
 
 client.Beta.Models.Get(ctx, modelID, query) (\*[BetaModelInfo](/docs/en/api/beta#beta_model_info), error)
 
-GET/v1/models/{model_id}
+get/v1/models/{model_id}
 
 Get a specific model.
 
@@ -27,9 +27,7 @@ Model identifier or alias.
 
 query BetaModelGetParams
 
-Betas param.Field\[\[\]AnthropicBeta\]
-
-optional
+Betas param.Field\[\[\]AnthropicBeta\]optional
 
 Optional header to specify the beta version(s) you want to use.
 
@@ -77,8 +75,6 @@ const AnthropicBetaModelContextWindowExceeded2025_08_26 AnthropicBeta = "model-c
 
 const AnthropicBetaSkills2025_10_02 AnthropicBeta = "skills-2025-10-02"
 
-const AnthropicBetaFastMode2026_02_01 AnthropicBeta = "fast-mode-2026-02-01"
-
 ##### ReturnsExpand Collapse 
 
 type BetaModelInfo struct{…}
@@ -91,6 +87,8 @@ CreatedAt Time
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
+formatdate-time
+
 DisplayName string
 
 A human-readable name for the model.
@@ -100,6 +98,10 @@ Type Model
 Object type.
 
 For Models, this is always `"model"`.
+
+Accepts one of the following:
+
+const ModelModel Model = "model"
 
 Get a Model
 

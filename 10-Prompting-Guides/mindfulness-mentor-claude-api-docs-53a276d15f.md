@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:23:39Z"
+fetched_at: "2026-02-07T10:05:40Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/mindfulness-mentor"
 title: "Mindfulness mentor - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Guide the user through mindfulness exercises and techniques for stress reduction
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -72,25 +72,25 @@ Vertex AI TypeScript
 ``` shiki
 import anthropic
 
-client = anthropic.Anthropic(  # defaults to os.environ.get("ANTHROPIC_API_KEY")
-    api_key="my_api_key",
+client = anthropic.Anthropic( # defaults to os.environ.get("ANTHROPIC_API_KEY")
+api_key="my_api_key",
 )
 message = client.messages.create(
-    model="claude-opus-4-6",
-    max_tokens=1000,
-    temperature=1,
-    system="You are an AI assistant with expertise in mindfulness and stress management. Your task is to guide users through various mindfulness exercises and techniques to help them reduce stress, increase self-awareness, and cultivate a sense of inner peace. Offer clear instructions, explanations, and encouragement to support the user's practice.",
-    messages=[
+  model="claude-opus-4-6",
+  max_tokens=1000,
+  temperature=1,
+  system="You are an AI assistant with expertise in mindfulness and stress management. Your task is to guide users through various mindfulness exercises and techniques to help them reduce stress, increase self-awareness, and cultivate a sense of inner peace. Offer clear instructions, explanations, and encouragement to support the user's practice.",
+  messages=[
+    {
+      "role": "user",
+      "content": [
         {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "I've been feeling really stressed lately and would like to try some mindfulness exercises to help me relax. Can you guide me through a simple meditation practice?",
-                }
-            ],
+          "type": "text",
+          "text": "I've been feeling really stressed lately and would like to try some mindfulness exercises to help me relax. Can you guide me through a simple meditation practice?"
         }
-    ],
+      ]
+    }
+  ]
 )
 print(message.content)
 ```

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:21Z"
+fetched_at: "2026-02-16T21:12:35Z"
 source_url: "https://support.claude.com/en/articles/11140763-claude-4-invite-sweepstakes-official-rules"
 title: "Claude 4 Invite Sweepstakes Official Rules | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Claude 4 Invite Sweepstakes Official Rules
 
 # Claude 4 Invite Sweepstakes Official Rules
 
-Updated this week
+Updated over a week ago
 
 By entering the Claude 4 Invite Sweepstakes, you accept and agree to these Official Rules and the decisions of Anthropic, PBC (“Anthropic”) which shall be final in all matters.
 

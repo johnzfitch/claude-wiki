@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:22:21Z"
+fetched_at: "2026-02-07T10:05:33Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/git-gud"
 title: "Git gud - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Generate appropriate Git commands based on user-described version control action
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 | Role | Content |
 |----|----|
@@ -23,7 +23,7 @@ Copy page
 
 ## 
 
-Example output
+Example Output
 
 To save the changes you've made to your local files in your local Git repository, you should use the following Git commands:
 
@@ -37,7 +37,7 @@ To save the changes you've made to your local files in your local Git repository
 
 For example, if you've made changes to a file named `example.txt`, you would run:
 
-``` shiki
+``` inline-block
 git add example.txt
 git commit -m "Update example.txt with new content"
 ```
@@ -50,7 +50,7 @@ Remember to run these commands from within your Git repository directory in your
 
 ## 
 
-API request
+API Request
 
 Python
 
@@ -105,9 +105,9 @@ Was this page helpful?
 
 - 
 
-- [Example output](#example-output)
+- [Example Output](#example-output)
 
-- [API request](#api-request)
+- [API Request](#api-request)
 
 [](/docs)
 

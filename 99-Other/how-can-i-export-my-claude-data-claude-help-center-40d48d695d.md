@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:17Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data"
 title: "How can I export my Claude data? | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ How can I export my Claude data?
 
 # How can I export my Claude data?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -81,10 +81,6 @@ Related Articles
 
 I would like to input sensitive data into my chats with Claude. Who can view my conversations?
 
-[](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
-
-FAQs on Using Claude for Education at Your University
-
 [](https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account)
 
 Who owns and manages the data of my Claude for Education account?
@@ -92,6 +88,10 @@ Who owns and manages the data of my Claude for Education account?
 [](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)
 
 Using Claude’s chat search and memory to build on previous context
+
+[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
+
+Getting started with Claude for Nonprofits
 
 [](https://support.claude.com/en/articles/13346720-how-can-i-export-my-organization-s-data)
 

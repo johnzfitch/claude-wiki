@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-08T20:52:00Z"
 source_url: "https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences"
 title: "Getting Started with Claude for Life Sciences | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Getting Started with Claude for Life Sciences
 
 # Getting Started with Claude for Life Sciences
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -105,7 +105,7 @@ Using the BioRender Connector in Claude
 
 [](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org connector in Claude
+Using the Synapse.org Connector in Claude
 
 [](https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude)
 

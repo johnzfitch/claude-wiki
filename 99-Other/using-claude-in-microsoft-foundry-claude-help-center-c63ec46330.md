@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:17Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12864745-using-claude-in-microsoft-foundry"
 title: "Using Claude in Microsoft Foundry | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Using Claude in Microsoft Foundry
 
 # Using Claude in Microsoft Foundry
 
-Updated this week
+Updated over a week ago
 
 Claude Haiku 4.5, Sonnet 4.5, and Opus 4.1 models are available in public preview in Microsoft Foundry, where Azure customers can build production applications and enterprise agents.
 

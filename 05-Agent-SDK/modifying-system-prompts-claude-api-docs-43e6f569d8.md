@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:14:06Z"
+fetched_at: "2026-02-07T10:04:43Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts"
 title: "Modifying system prompts - Claude API Docs"
 ---
@@ -111,10 +111,10 @@ for await (const message of query({
   options: {
     systemPrompt: {
       type: "preset",
-      preset: "claude_code" // Use Claude Code's system prompt
+      preset: "claude_code", // Use Claude Code's system prompt
     },
-    settingSources: ["project"] // Required to load CLAUDE.md from project
-  }
+    settingSources: ["project"], // Required to load CLAUDE.md from project
+  },
 })) {
   messages.push(message);
 }
@@ -229,9 +229,9 @@ for await (const message of query({
       type: "preset",
       preset: "claude_code",
       append:
-        "Always include detailed docstrings and type hints in Python code."
-    }
-  }
+        "Always include detailed docstrings and type hints in Python code.",
+    },
+  },
 })) {
   messages.push(message);
   if (message.type === "assistant") {
@@ -264,8 +264,8 @@ const messages = [];
 for await (const message of query({
   prompt: "Create a data processing pipeline",
   options: {
-    systemPrompt: customPrompt
-  }
+    systemPrompt: customPrompt,
+  },
 })) {
   messages.push(message);
   if (message.type === "assistant") {
@@ -387,9 +387,9 @@ for await (const message of query({
         - OAuth 2.0 compliance
         - Token storage security
         - Session management
-      `
-    }
-  }
+      `,
+    },
+  },
 })) {
   messages.push(message);
 }

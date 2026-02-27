@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:51Z"
+fetched_at: "2026-02-16T21:12:36Z"
 source_url: "https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq"
 title: "Anthropic Connectors Directory FAQ | Claude Help Center"
 ---
@@ -57,7 +57,7 @@ Anthropic Connectors Directory FAQ
 
 # Anthropic Connectors Directory FAQ
 
-Updated over 2 weeks ago
+Updated over a week ago
 
 Table of contents
 
@@ -398,9 +398,9 @@ Important links:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Get started with custom connectors using remote MCP
+Getting started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 

@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:13:15Z"
+fetched_at: "2026-02-06T07:09:28Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/permissions"
 title: "Configure permissions - Claude API Docs"
 ---
@@ -98,7 +98,6 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
-
 async def main():
     async for message in query(
         prompt="Help me refactor this code",
@@ -108,7 +107,6 @@ async def main():
     ):
         if hasattr(message, "result"):
             print(message.result)
-
 
 asyncio.run(main())
 ```

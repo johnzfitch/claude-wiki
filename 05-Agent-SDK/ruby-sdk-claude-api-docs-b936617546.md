@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:18:54Z"
+fetched_at: "2026-02-07T10:05:13Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/ruby"
 title: "Ruby SDK - Claude API Docs"
 ---
@@ -26,7 +26,7 @@ Installation
 To use this gem, install via Bundler by adding the following to your application's `Gemfile`:
 
 ``` shiki
-gem "anthropic", "~> 1.19.0"
+gem "anthropic", "~> 1.16.3"
 ```
 
 ## 
@@ -59,7 +59,7 @@ puts(message.content)
 
 Streaming
 
-The SDK provides support for streaming responses using Server-Sent Events (SSE).
+We provide support for streaming responses using Server-Sent Events (SSE).
 
 ``` shiki
 stream = anthropic.messages.stream(
@@ -95,7 +95,7 @@ Streaming with `anthropic.messages.stream(...)` exposes various helpers includin
 
 ## 
 
-Input schema and tool calling
+Input Schema and Tool Calling
 
 The SDK provides helper mechanisms to define structured data classes for tools and let Claude automatically execute them. For detailed documentation on tool use patterns including the tool runner, see [Implementing Tool Use](/docs/en/agents-and-tools/tool-use/implement-tool-use).
 
@@ -122,12 +122,6 @@ client.beta.messages.tool_runner(
   tools: [Calculator.new]
 ).each_message { puts _1.content }
 ```
-
-## 
-
-Structured outputs
-
-For complete structured outputs documentation including Ruby examples, see [Structured Outputs](/docs/en/build-with-claude/structured-outputs).
 
 ## 
 
@@ -312,7 +306,7 @@ anthropic.messages.create(**params)
 
 Enums
 
-Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, the SDK provides "tagged symbols", which is always a primitive at runtime:
+Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, we provide "tagged symbols" instead, which is always a primitive at runtime:
 
 ``` shiki
 # :auto
@@ -358,7 +352,7 @@ Concurrency and connection pooling
 
 The `Anthropic::Client` instances are threadsafe, but are only fork-safe when there are no in-flight HTTP requests.
 
-Each instance of `Anthropic::Client` has its own HTTP connection pool with a default size of 99. As such, the recommendation is to instantiate the client once per application in most settings.
+Each instance of `Anthropic::Client` has its own HTTP connection pool with a default size of 99. As such, we recommend instantiating the client once per application in most settings.
 
 When all available connections from the pool are checked out, requests wait for a new connection to become available, with queue time counting towards the request timeout.
 
@@ -374,7 +368,7 @@ Undocumented properties
 
 You can send undocumented parameters to any endpoint, and read undocumented response properties, like so:
 
-The `extra_` parameters of the same name override the documented parameters. For security reasons, ensure these methods are only used with trusted input data.
+The `extra_` parameters of the same name overrides the documented parameters. For security reasons, ensure these methods are only used with trusted input data.
 
 ``` shiki
 message =
@@ -418,23 +412,66 @@ response = client.request(
 
 Platform integrations
 
-For detailed platform setup guides with code examples, see:
+For detailed platform setup guides, see:
 
 - [Amazon Bedrock](/docs/en/build-with-claude/claude-on-amazon-bedrock)
 - [Google Vertex AI](/docs/en/build-with-claude/claude-on-vertex-ai)
 
-The Ruby SDK supports Bedrock and Vertex AI through dedicated client classes:
+### 
 
-- **Bedrock**: `Anthropic::BedrockClient`. Requires the `aws-sdk-bedrockruntime` gem.
-- **Vertex AI**: `Anthropic::VertexClient`. Requires the `googleauth` gem.
+Amazon Bedrock
 
-## 
+This library also provides support for the [Anthropic Bedrock API](https://aws.amazon.com/bedrock/claude/) if you install this library with the `aws-sdk-bedrockruntime` gem.
 
-Semantic versioning
+You can then instantiate a separate `Anthropic::BedrockClient` class, and use AWS's standard guide for configuring credentials. It has the same API as the base `Anthropic::Client` class.
 
-This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. As the library is in initial development and has a major version of `0`, APIs may change at any time.
+Note that the model ID required is different for Bedrock models, and, depending on the model you want to use, you will need to use either AWS's model ID for Anthropic models -- which can be found in [AWS's Bedrock model catalog](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html) -- or an inference profile id (e.g. `us.anthropic.claude-3-5-haiku-20241022-v1:0` for Claude 3.5 Haiku).
 
-This package considers improvements to the (non-runtime) `*.rbi` and `*.rbs` type definitions to be non-breaking changes.
+``` shiki
+require "anthropic"
+
+anthropic = Anthropic::BedrockClient.new
+
+message = anthropic.messages.create(
+  max_tokens: 1024,
+  messages: [
+    {
+      role: "user",
+      content: "Hello, Claude"
+    }
+  ],
+  model: "anthropic.claude-opus-4-6-v1"
+)
+
+puts(message)
+```
+
+### 
+
+Google Vertex AI
+
+This library also provides support for the [Anthropic Vertex API](https://cloud.google.com/vertex-ai?hl=en) if you install this library with the `googleauth` gem.
+
+You can then import and instantiate a separate `Anthropic::VertexClient` class, and use Google's guide for configuring [Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc). It has the same API as the base `Anthropic::Client` class.
+
+``` shiki
+require "anthropic"
+
+anthropic = Anthropic::VertexClient.new(region: "us-east5", project_id: "my-project-id")
+
+message = anthropic.messages.create(
+  max_tokens: 1024,
+  messages: [
+    {
+      role: "user",
+      content: "Hello, Claude"
+    }
+  ],
+  model: "claude-opus-4-6"
+)
+
+puts(message)
+```
 
 ## 
 
@@ -459,9 +496,7 @@ Was this page helpful?
 
 - [Streaming helpers](#streaming-helpers)
 
-- [Input schema and tool calling](#input-schema-and-tool-calling)
-
-- [Structured outputs](#structured-outputs)
+- [Input Schema and Tool Calling](#input-schema-and-tool-calling)
 
 - [Handling errors](#handling-errors)
 
@@ -491,7 +526,9 @@ Was this page helpful?
 
 - [Platform integrations](#platform-integrations)
 
-- [Semantic versioning](#semantic-versioning)
+- [Amazon Bedrock](#amazon-bedrock)
+
+- [Google Vertex AI](#google-vertex-ai)
 
 - [Additional resources](#additional-resources)
 

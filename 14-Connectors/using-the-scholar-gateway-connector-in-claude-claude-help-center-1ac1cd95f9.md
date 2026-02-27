@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-16T21:12:43Z"
 source_url: "https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude"
 title: "Using the Scholar Gateway Connector in Claude | Claude Help Center"
 ---

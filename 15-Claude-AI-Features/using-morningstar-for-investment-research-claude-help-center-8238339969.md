@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:34Z"
+fetched_at: "2026-02-16T21:12:40Z"
 source_url: "https://support.claude.com/en/articles/12220057-using-morningstar-for-investment-research"
 title: "Using Morningstar for Investment Research | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Using Morningstar for Investment Research
 
 # Using Morningstar for Investment Research
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -192,6 +192,10 @@ Sustainable investing research taps into Morningstar's thematic content on ESG s
 
 Related Articles
 
+[](https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services)
+
+Getting Started with Claude for Financial Services
+
 [](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
@@ -207,10 +211,6 @@ Using PitchBook for Investment Research
 [](https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis)
 
 Using Moody’s for Financial Analysis
-
-[](https://support.claude.com/en/articles/12662597-using-chronograph-for-portfolio-monitoring)
-
-Using Chronograph for Portfolio Monitoring
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:14:12Z"
+fetched_at: "2026-02-07T10:04:43Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/mcp"
 title: "Connect to external tools with MCP - Claude API Docs"
 ---
@@ -71,7 +71,7 @@ for await (const message of query({
   prompt: "List files in my project",
   options: {
     mcpServers: {
-      filesystem: {
+      "filesystem": {
         command: "npx",
         args: ["-y", "@modelcontextprotocol/server-filesystem", "/Users/me/projects"]
       }
@@ -284,7 +284,7 @@ TypeScript
 const options = {
   mcpServers: { /* your MCP servers */ },
   env: {
-    ENABLE_TOOL_SEARCH: "auto:5" // Enable at 5% threshold
+    ENABLE_TOOL_SEARCH: "auto:5"  // Enable at 5% threshold
   }
 };
 ```
@@ -410,7 +410,7 @@ for await (const message of query({
   prompt: "List the 3 most recent issues in anthropics/claude-code",
   options: {
     mcpServers: {
-      github: {
+      "github": {
         command: "npx",
         args: ["-y", "@modelcontextprotocol/server-github"],
         env: {
@@ -461,7 +461,7 @@ for await (const message of query({
   prompt: "How many users signed up last week? Break it down by day.",
   options: {
     mcpServers: {
-      postgres: {
+      "postgres": {
         command: "npx",
         // Pass connection string as argument to the server
         args: ["-y", "@modelcontextprotocol/server-postgres", connectionString]

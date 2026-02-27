@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:51Z"
+fetched_at: "2026-02-16T21:12:42Z"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 title: "Using Claude in Slack | Claude Help Center"
 ---
@@ -111,7 +111,7 @@ Claude in Slack gives you AI assistance right where your team collaborates. This
 
 6.  Access previous conversations by clicking the clock icon.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755150661/a1a13c73bda421f6ee906650cfc9/22907223-e523-4a93-a6d2-3199a8368991?expires=1771809300&signature=90aeb2fa256bfb7bfd5a65bbbc8804fc9577a0c36a83c92fe59ec2d9c4cb04ca&req=dSciE8h7nYdZWPMW1HO4zXK25RBG6DgdVfOC%2FRy97LXCcwdKfCkf4%2F9%2Fztee%0AyhSKqErkQgQXo2%2FTY9w%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755150661/a1a13c73bda421f6ee906650cfc9/22907223-e523-4a93-a6d2-3199a8368991?expires=1771278300&signature=f305ae0ee8188d42416ab5d8b505f988705e3f14d752098203ebc8ab9b9d5056&req=dSciE8h7nYdZWPMW1HO4zXK25RBM7zkdVfOC%2FRy97LVGETXUo2P2RreGD0FS%0AzFntSMYKCXvCntMG350%3D%0A)
 
 ## Mention @Claude in a thread or channel
 
@@ -335,10 +335,6 @@ Related Articles
 
 Using Research on Claude
 
-[](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
-
-FAQs on Using Claude for Education at Your University
-
 [](https://support.claude.com/en/articles/11506255-getting-started-with-claude-in-slack)
 
 Getting started with Claude in Slack
@@ -350,6 +346,10 @@ Using Claude in Xcode
 [](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
+
+[](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
+
+Using interactive connectors in Claude
 
 Did this answer your question?
 

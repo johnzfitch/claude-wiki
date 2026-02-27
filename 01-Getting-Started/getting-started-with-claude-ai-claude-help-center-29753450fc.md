@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-23T00:45:27Z"
+fetched_at: "2026-02-08T20:52:04Z"
 source_url: "https://support.claude.com/en/articles/12997377-getting-started-with-claude-ai"
 title: "Getting started with Claude.ai | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Getting started with Claude.ai
 
 # Getting started with Claude.ai
 
-Updated this week
+Updated yesterday
 
 # An error occurred.
 

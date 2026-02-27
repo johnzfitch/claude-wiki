@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:45:58Z"
+fetched_at: "2026-02-07T10:08:31Z"
 source_url: "https://platform.claude.com/docs/en/api/java/models"
 title: "Models - Claude API Reference"
 ---
@@ -15,13 +15,13 @@ Java
 
 ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-GET/v1/models
+get/v1/models
 
 ##### [Get a Model](/docs/en/api/models/retrieve)
 
 [ModelInfo](/docs/en/api/models#model_info) models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-GET/v1/models/{model_id}
+get/v1/models/{model_id}
 
 ##### ModelsExpand Collapse 
 
@@ -35,17 +35,21 @@ LocalDateTime createdAt
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
+formatdate-time
+
 String displayName
 
 A human-readable name for the model.
 
-JsonValue; type "model"constant
-
-"model"constant
+JsonValue; type "model"constant"model"constant
 
 Object type.
 
 For Models, this is always `"model"`.
+
+Accepts one of the following:
+
+MODEL("model")
 
 [](/docs)
 

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:32Z"
+fetched_at: "2026-02-08T20:52:14Z"
 source_url: "https://support.claude.com/en/articles/9945703-claude-for-sales"
 title: "Claude for Sales | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Claude for Sales
 
 # Claude for Sales
 
-Updated this week
+Updated yesterday
 
 In this video guide, we'll explore several examples of how Claude can be used by sales teams. Before you get started, review the availability of the features demonstrated in this video:
 

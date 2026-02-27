@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:18Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/7996845-what-are-some-things-i-can-use-claude-for"
 title: "What are some things I can use Claude for? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ What are some things I can use Claude for?
 
 # What are some things I can use Claude for?
 
-Updated this week
+Updated over a week ago
 
 You can use Claude to:
 

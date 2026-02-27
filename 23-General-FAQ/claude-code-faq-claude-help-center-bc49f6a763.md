@@ -1,6 +1,6 @@
 ---
 category: "23-General-FAQ"
-fetched_at: "2026-02-23T00:45:51Z"
+fetched_at: "2026-02-16T21:12:41Z"
 source_url: "https://support.claude.com/en/articles/12386420-claude-code-faq"
 title: "Claude Code FAQ | Claude Help Center"
 ---
@@ -71,7 +71,7 @@ Claude Code FAQ
 
 # Claude Code FAQ
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -205,6 +205,10 @@ This typically occurs with reusable workflows. Check that your workflow syntax i
 
 Related Articles
 
+[](https://support.claude.com/en/articles/7996920-how-do-i-get-access-to-claude-in-amazon-bedrock)
+
+How do I get access to Claude in Amazon Bedrock?
+
 [](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
@@ -220,10 +224,6 @@ Claude Code usage analytics
 [](https://support.claude.com/en/articles/12618689-claude-code-on-the-web)
 
 Claude Code on the web
-
-[](https://support.claude.com/en/articles/13756069-public-sector-faqs)
-
-Public Sector FAQs
 
 Did this answer your question?
 

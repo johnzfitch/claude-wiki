@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-16T21:12:43Z"
 source_url: "https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude"
 title: "Using the BioRender Connector in Claude | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Using the BioRender Connector in Claude
 
 # Using the BioRender Connector in Claude
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -149,9 +149,9 @@ Using the Synapse.org connector in Claude
 
 Using the PubMed Connector in Claude
 
-[](https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude)
+[](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
 
-Using the 10x Genomics Extension in Claude
+Using the Benchling Connector in Claude
 
 [](https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude)
 

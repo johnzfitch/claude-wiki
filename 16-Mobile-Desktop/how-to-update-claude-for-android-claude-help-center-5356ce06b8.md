@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-23T00:45:16Z"
+fetched_at: "2026-02-16T21:12:37Z"
 source_url: "https://support.claude.com/en/articles/11825394-how-to-update-claude-for-android"
 title: "How to update Claude for Android | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ How to update Claude for Android
 
 # How to update Claude for Android
 
-Updated this week
+Updated over a week ago
 
 If you aren’t seeing the latest features on Claude for Android, you may need to [update your mobile app manually by following these instructions from Google](https://support.google.com/googleplay/answer/113412?hl=en):
 

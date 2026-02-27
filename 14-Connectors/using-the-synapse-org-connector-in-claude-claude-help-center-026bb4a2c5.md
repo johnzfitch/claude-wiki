@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:15Z"
+fetched_at: "2026-02-16T21:12:43Z"
 source_url: "https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude"
 title: "Using the Synapse.org connector in Claude | Claude Help Center"
 ---
@@ -133,6 +133,10 @@ Technical details of the Synapse.org integration can be found in **[Synapse’s 
 
 Related Articles
 
+[](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)
+
+Getting Started with Claude for Life Sciences
+
 [](https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude)
 
 Using the BioRender Connector in Claude
@@ -148,10 +152,6 @@ Using the Benchling Connector in Claude
 [](https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude)
 
 Using the Scholar Gateway Connector in Claude
-
-[](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
-
-Using interactive connectors in Claude
 
 Did this answer your question?
 

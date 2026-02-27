@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:08Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 title: "Account management FAQs | Claude Help Center"
 ---
@@ -101,7 +101,7 @@ The email domain that was used to create your Team or Enterprise plan organizati
 
 Owners can remove domains by opening up the same modal and clicking the trash can icon to the right of the domain:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2053873852/1cbccea3b7067e03205f2ff8546b/CleanShot+2026-02-11+at+11_16_07%402x.png?expires=1771809300&signature=65e42fa46cfefeb13014ff476fe91f5e60cec7ef9412b13d7ce46d0f6a44ca34&req=diAiFcF5nolaW%2FMW1HO4zUrhGeqQaQEZkeFUnrkrQZgS2O47meGN26Y7xiCY%0A3Ffn7IQbebwk2M7HCsQ%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2053873852/1cbccea3b7067e03205f2ff8546b/CleanShot+2026-02-11+at+11_16_07%402x.png?expires=1771278300&signature=d5e2274236b90388f6854bbd378a3344c8787fe7564ed6715b4c84b6c946ecaa&req=diAiFcF5nolaW%2FMW1HO4zUrhGeqabgAZkeFUnrkrQZi04HCF97302RQ%2BV1T5%0AbJZuvwM8vM7gQ5GXO4c%3D%0A)
 
 While the account creator must use a business email address, you can add public domains like @gmail.com, @yahoo.com, and @hotmail.com as allowed domains for other members of your organization.
 
@@ -125,9 +125,9 @@ Extra usage for Team and seat-based Enterprise plans
 
 Team plan billing FAQs
 
-[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Manage members on Team and Enterprise plans
+Managing members on Team and Enterprise plans
 
 Did this answer your question?
 

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:34Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research"
 title: "Using PitchBook for Investment Research | Claude Help Center"
 ---
@@ -51,7 +51,7 @@ Using PitchBook for Investment Research
 
 # Using PitchBook for Investment Research
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -171,7 +171,7 @@ Discover unexpected connections between companies, investors, and professionals 
 
 ## Contact
 
-If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#97e4e2e7e7f8e5e3d7e7fee3f4fff5f8f8fcb9f4f8fa) for help.
+If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#d2a1a7a2a2bda0a692a2bba6b1bab0bdbdb9fcb1bdbf) for help.
 
 ------------------------------------------------------------------------
 

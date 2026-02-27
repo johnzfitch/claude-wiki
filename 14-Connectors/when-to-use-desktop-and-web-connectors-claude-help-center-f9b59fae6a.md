@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:51Z"
+fetched_at: "2026-02-16T21:12:37Z"
 source_url: "https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors"
 title: "When to use desktop and web connectors | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ When to use desktop and web connectors
 
 # When to use desktop and web connectors
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -243,9 +243,9 @@ Choose the approach that best fits your workflow, security requirements, and col
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Get started with custom connectors using remote MCP
+Getting started with custom connectors using remote MCP
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 

@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-23T00:45:51Z"
+fetched_at: "2026-02-16T21:12:44Z"
 source_url: "https://support.claude.com/en/articles/12702546-deploying-enterprise-grade-mcp-servers-with-desktop-extensions"
 title: "Deploying enterprise-grade MCP servers with desktop extensions | Claude Help Center"
 ---
@@ -37,7 +37,7 @@ Deploying enterprise-grade MCP servers with desktop extensions
 
 # Deploying enterprise-grade MCP servers with desktop extensions
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

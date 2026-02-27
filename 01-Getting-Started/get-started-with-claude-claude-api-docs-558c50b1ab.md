@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-22T10:56:45Z"
+fetched_at: "2026-02-07T10:04:01Z"
 source_url: "https://platform.claude.com/docs/en/get-started"
 title: "Get started with Claude - Claude API Docs"
 ---
@@ -11,7 +11,7 @@ First steps
 
 Copy page
 
-Make your first API call to Claude and build a simple web search assistant.
+Make your first API call to Claude and build a simple web search assistant
 
 Copy page
 
@@ -46,7 +46,7 @@ Java
 
     Set your API key
 
-    Get your API key from the [Claude Console](/settings/keys) and set it as an environment variable:
+    Get your API key at the [Claude Console](/settings/keys) and set it as an environment variable:
 
     ``` shiki
     export ANTHROPIC_API_KEY='your-api-key-here'
@@ -68,7 +68,7 @@ Java
         "max_tokens": 1000,
         "messages": [
           {
-            "role": "user",
+            "role": "user", 
             "content": "What should I search for to find the latest developments in renewable energy?"
           }
         ]
@@ -80,7 +80,7 @@ Java
     ``` shiki
     {
       "id": "msg_01HCDu5LRGeP2o7s2xGmxyx8",
-      "type": "message",
+      "type": "message", 
       "role": "assistant",
       "content": [
         {
@@ -101,33 +101,31 @@ Java
 
 Next steps
 
-You made your first API call. Next, learn the Messages API patterns you'll use in every Claude integration.
+Now that you have made your first Claude API request, it's time to explore what else is possible:
 
 [](/docs/en/build-with-claude/working-with-messages)
 
-Working with the Messages API
+Working with Messages
 
-Learn multi-turn conversations, system prompts, stop reasons, and other core patterns.
+Learn common patterns for the Messages API.
 
-Once you're comfortable with the basics, explore further:
+[](/docs/en/api/overview)
 
-[](/docs/en/about-claude/models/overview)
+Features Overview
 
-Models overview
-
-Compare Claude models by capability and cost.
-
-[](/docs/en/build-with-claude/overview)
-
-Features overview
-
-Browse all Claude capabilities: tools, context management, structured outputs, and more.
+Explore Claude's advanced features and capabilities.
 
 [](/docs/en/api/client-sdks)
 
 Client SDKs
 
-Reference documentation for Python, TypeScript, Java, and other client libraries.
+Discover Anthropic client libraries.
+
+[](https://platform.claude.com/cookbooks)
+
+Claude Cookbook
+
+Learn with interactive Jupyter notebooks.
 
 Was this page helpful?
 

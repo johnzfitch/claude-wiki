@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-23T00:45:13Z"
+fetched_at: "2026-02-16T21:12:38Z"
 source_url: "https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps"
 title: "Using Claude with iOS Apps | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Using Claude with iOS Apps
 
 # Using Claude with iOS Apps
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

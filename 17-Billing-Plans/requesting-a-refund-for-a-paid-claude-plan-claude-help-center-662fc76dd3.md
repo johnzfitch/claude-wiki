@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:20Z"
+fetched_at: "2026-02-16T21:12:41Z"
 source_url: "https://support.claude.com/en/articles/12386328-requesting-a-refund-for-a-paid-claude-plan"
 title: "Requesting a refund for a paid Claude plan | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Requesting a refund for a paid Claude plan
 
 # Requesting a refund for a paid Claude plan
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

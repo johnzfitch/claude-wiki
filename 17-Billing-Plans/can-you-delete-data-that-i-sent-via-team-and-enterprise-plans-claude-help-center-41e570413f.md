@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:07Z"
+fetched_at: "2026-02-16T21:12:52Z"
 source_url: "https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans"
 title: "Can you delete data that I sent via Team and Enterprise plans? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Can you delete data that I sent via Team and Enterprise plans?
 
 # Can you delete data that I sent via Team and Enterprise plans?
 
-Updated this week
+Updated over a week ago
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
 

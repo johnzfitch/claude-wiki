@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-23T00:45:16Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8106465-our-approach-to-user-safety"
 title: "Our Approach to User Safety | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Our Approach to User Safety
 
 # Our Approach to User Safety
 
-Updated this week
+Updated over a week ago
 
 User safety is core to Anthropic’s mission of creating reliable, interpretable, and steerable AI systems. As we launch new ways for people to interact with Claude, we also expect to see new types of potential harm materialize, whether through the generation of misinformation, objectionable content, hate speech or other misuses. We are actively investing in and experimenting with additional safety features to supplement our existing model safety efforts and are working to provide helpful tools to a wide audience while also doing our best to mitigate harm. Launching new products in open beta allows us to experiment, iterate and hear your feedback. Here are some of the safety features we’ve introduced:
 
@@ -39,7 +39,7 @@ User safety is core to Anthropic’s mission of creating reliable, interpretable
 
 - Enhanced safety filters, which allow us to increase the sensitivity of our detection models. We may temporarily apply enhanced safety filters to users who repeatedly violate our policies, and remove these controls after a period of no or few violations.
 
-These features are not failsafe, and we may make mistakes through false positives or false negatives. Your feedback on these measures and how we explain them to users will play a key role in helping us improve these safety systems, and we encourage you to reach out to us at [\[email protected\]](/cdn-cgi/l/email-protection#daafa9bfa8a9bbbcbfaea39abbb4aeb2a8b5aab3b9f4b9b5b7) with any feedback you may have. To learn more, [read about our core views on AI safety](https://www.anthropic.com/index/core-views-on-ai-safety).
+These features are not failsafe, and we may make mistakes through false positives or false negatives. Your feedback on these measures and how we explain them to users will play a key role in helping us improve these safety systems, and we encourage you to reach out to us at [\[email protected\]](/cdn-cgi/l/email-protection#d7a2a4b2a5a4b6b1b2a3ae97b6b9a3bfa5b8a7beb4f9b4b8ba) with any feedback you may have. To learn more, [read about our core views on AI safety](https://www.anthropic.com/index/core-views-on-ai-safety).
 
 ------------------------------------------------------------------------
 

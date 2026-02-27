@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:19Z"
+fetched_at: "2026-02-08T20:51:39Z"
 source_url: "https://support.claude.com/en/articles/10574485-using-extended-thinking"
 title: "Using extended thinking | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Using extended thinking
 
 # Using extended thinking
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -141,13 +141,13 @@ Related Articles
 
 When should I use web search, extended thinking, and Research?
 
-[](https://support.claude.com/en/articles/11101966-using-voice-mode)
+[](https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps)
 
-Using voice mode
+Using voice mode on Claude Mobile Apps
 
-[](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)
+[](https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work)
 
-Understanding usage and length limits
+Applying Claude Opus 4.5’s strengths to your everyday work
 
 [](https://support.claude.com/en/articles/12997377-getting-started-with-claude-ai)
 

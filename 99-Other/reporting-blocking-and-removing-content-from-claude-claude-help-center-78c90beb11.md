@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:16Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude"
 title: "Reporting, Blocking, and Removing Content from Claude | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ Reporting, Blocking, and Removing Content from Claude
 
 # Reporting, Blocking, and Removing Content from Claude
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -49,7 +49,7 @@ Please note, we reserve the right to suspend users who frequently provide manife
 
 ## How to report safety issues
 
-We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](/cdn-cgi/l/email-protection#5f2a2c3a2d2c3e393a2b261f3e312b372d302f363c713c3032) with enough detail for us to replicate the issue.
+We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](/cdn-cgi/l/email-protection#6c191f091e1f0d0a0918152c0d0218041e031c050f420f0301) with enough detail for us to replicate the issue.
 
 ### Help us improve AI safety by reporting universal jailbreaks
 
@@ -85,9 +85,9 @@ What is the External Researcher Access Program?
 
 Reporting, Blocking, and Removing Content from Claude
 
-[](https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program)
+[](https://support.claude.com/en/articles/11427875-public-vulnerability-reporting)
 
-Model Safety Bug Bounty Program
+Public Vulnerability Reporting
 
 [](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 

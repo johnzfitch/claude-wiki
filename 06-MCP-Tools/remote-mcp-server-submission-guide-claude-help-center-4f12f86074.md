@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:41Z"
+fetched_at: "2026-02-08T20:52:01Z"
 source_url: "https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide"
 title: "Remote MCP Server Submission Guide | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Remote MCP Server Submission Guide
 
 # Remote MCP Server Submission Guide
 
-Updated over 2 weeks ago
+Updated yesterday
 
 Table of contents
 
@@ -365,7 +365,7 @@ Server must be in General Availability (GA) status.
 
 - Complete documentation and support channels
 
-**Cannot be included:** Beta versions, development servers, or limited-access services.\
+**Cannot be included:** Beta versions, development servers, or limited-access services.  
 ​
 
 ### What technical requirements must be met?
@@ -666,7 +666,7 @@ Related Articles
 
 [](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 
-Building custom connectors via remote MCP servers
+Building Custom Connectors via Remote MCP Servers
 
 [](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 

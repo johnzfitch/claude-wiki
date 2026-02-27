@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:19Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8287232-verifying-your-phone-number"
 title: "Verifying your phone number | Claude Help Center"
 ---
@@ -41,7 +41,7 @@ Verifying your phone number
 
 # Verifying your phone number
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -55,7 +55,7 @@ Table of contents
 
 When you first create a Claude account, you’ll be asked to enter your phone number from a [supported location](https://support.claude.com/en/articles/8461763-where-can-i-access-claude) to receive a verification code via text message:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893173143/de034a2e7d9a6ae1f703cf867afd/image.png?expires=1771809300&signature=df8d58c36bb587f242591037652c8401f71cfc1a8173d07547af47175805570e&req=dSguFch5noBbWvMW1HO4zVIf%2F5Fr3CN5oTnI%2BoMZk7eo8Xa%2BtIPdClWMuInK%0AygwHwQN7bXebzqhCQQM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893173143/de034a2e7d9a6ae1f703cf867afd/image.png?expires=1771278300&signature=7626618465651dc518364550981e2d75e02226748cd24132228d5c39bc0b6b22&req=dSguFch5noBbWvMW1HO4zVIf%2F5Fh2yJ5oTnI%2BoMZk7cjW%2FJjObEKzQek7P5v%0AEqAEPWHTENBt4iyE5kY%3D%0A)
 
 Once you receive the text message with the code, type it into the box and click “Verify code.” This will complete the verification and account creation process and allow you to start chatting with Claude.
 
@@ -111,9 +111,9 @@ Related Articles
 
 How do I change the email address associated with my account?
 
-[](https://support.claude.com/en/articles/11818288-why-am-i-being-asked-to-verify-my-payment-method)
+[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 
-Why am I being asked to verify my payment method?
+Getting started with Claude for Nonprofits
 
 [](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 

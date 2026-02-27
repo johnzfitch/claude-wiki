@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:17Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/11088861-using-research-on-claude"
 title: "Using Research on Claude | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Using Research on Claude
 
 # Using Research on Claude
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

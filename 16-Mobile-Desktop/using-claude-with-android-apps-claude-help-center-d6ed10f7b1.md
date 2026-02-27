@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-23T00:45:12Z"
+fetched_at: "2026-02-16T21:12:38Z"
 source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
 title: "Using Claude with Android Apps | Claude Help Center"
 ---
@@ -47,7 +47,7 @@ Using Claude with Android Apps
 
 # Using Claude with Android Apps
 
-Updated over 2 weeks ago
+Updated over a week ago
 
 Table of contents
 
@@ -289,7 +289,7 @@ Permission requirements vary by feature:
 
 For features requiring permissions (like location or calendar access), Claude will request permission contextually with clear explanations of why the access is needed. You’ll be prompted to approve the action with three options: Allow once, Always allow, or Don't allow.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1707351614/ccb910e4b87b1e96ad9a11bbd835/b57b2130-d8d6-4499-89f6-6c12de236fd4?expires=1771809300&signature=28d13d816bd1556030616ea41d2fe3495960144a3e0e21f11d5f6cc63f56de6c&req=dScnEcp7nIdeXfMW1HO4zQe5FV6H2yz3S5x65TIld%2FAXR%2FYupIyQeBm75KKR%0AWwjb1tdeX9UqaHu3yHI%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1707351614/ccb910e4b87b1e96ad9a11bbd835/b57b2130-d8d6-4499-89f6-6c12de236fd4?expires=1771278300&signature=3ab9362410c7702d83b2ac0abbb7fa4be1627e212307b7a9213e73aef86dba24&req=dScnEcp7nIdeXfMW1HO4zQe5FV6N3C33S5x65TIld%2FCSTqBzuJlhrRUhSAai%0AcxZops2p6BkWrNoXaUg%3D%0A)
 
 These permissions can be managed at any time in your device settings by going to Settings \> Apps \> Claude \> Permissions. Click into each permission listed under **Allowed** and **Not allowed** to make changes. You can toggle between “Allow only while using the app” or “Ask every time” to change Claude’s access, or remove permissions by choosing “Don’t allow.” Claude will only request permissions if needed for specific features, and you can always choose to decline while still using other capabilities.
 

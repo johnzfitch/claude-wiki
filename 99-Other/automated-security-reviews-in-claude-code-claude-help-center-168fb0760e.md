@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:51Z"
+fetched_at: "2026-02-16T21:12:38Z"
 source_url: "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code"
 title: "Automated Security Reviews in Claude Code | Claude Help Center"
 ---
@@ -45,7 +45,7 @@ Automated Security Reviews in Claude Code
 
 # Automated Security Reviews in Claude Code
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -169,9 +169,13 @@ For optimal results, we recommend running /security-review before committing sig
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)
+[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
-Create and edit files with Claude
+Using Claude Code with your Pro or Max plan
+
+[](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
+
+Claude Code model configuration
 
 [](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
 
@@ -184,10 +188,6 @@ Claude Code FAQ
 [](https://support.claude.com/en/articles/12618689-claude-code-on-the-web)
 
 Claude Code on the web
-
-[](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely)
-
-Using Claude in Chrome Safely
 
 Did this answer your question?
 

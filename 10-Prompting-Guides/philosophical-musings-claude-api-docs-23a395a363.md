@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:26:17Z"
+fetched_at: "2026-02-07T10:05:55Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/philosophical-musings"
 title: "Philosophical musings - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Engage in deep philosophical discussions and thought experiments.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|
@@ -66,11 +66,11 @@ message = client.messages.create(
             "content": [
                 {
                     "type": "text",
-                    "text": "The trolley problem and the ethics of utilitarianism",
+                    "text": "The trolley problem and the ethics of utilitarianism"
                 }
-            ],
+            ]
         }
-    ],
+    ]
 )
 print(message.content)
 ```

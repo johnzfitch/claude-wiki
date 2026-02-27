@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:08Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 title: "How is my Team plan bill calculated? | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ How is my Team plan bill calculated?
 
 # How is my Team plan bill calculated?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

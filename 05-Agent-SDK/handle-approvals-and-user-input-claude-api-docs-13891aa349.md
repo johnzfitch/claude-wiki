@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:13:20Z"
+fetched_at: "2026-02-07T10:04:38Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/user-input"
 title: "Handle approvals and user input - Claude API Docs"
 ---
@@ -35,7 +35,6 @@ Python
 async def handle_tool_request(tool_name, input_data, context):
     # Prompt user and return allow or deny
     ...
-
 
 options = ClaudeAgentOptions(can_use_tool=handle_tool_request)
 ```
@@ -239,7 +238,7 @@ The following steps show how to handle clarifying questions:
             can_use_tool=can_use_tool,
         ),
     ):
-        print(message)
+        # ...
     ```
 
 2.  2
@@ -319,8 +318,8 @@ The following steps show how to handle clarifying questions:
             "questions": input_data.get("questions", []),
             "answers": {
                 "How should I format the output?": "Summary",
-                "Which sections should I include?": "Introduction, Conclusion",
-            },
+                "Which sections should I include?": "Introduction, Conclusion"
+            }
         }
     )
     ```
@@ -449,9 +448,7 @@ async def handle_ask_user_question(input_data: dict) -> PermissionResultAllow:
     )
 
 
-async def can_use_tool(
-    tool_name: str, input_data: dict, context
-) -> PermissionResultAllow:
+async def can_use_tool(tool_name: str, input_data: dict, context) -> PermissionResultAllow:
     # Route AskUserQuestion to our question handler
     if tool_name == "AskUserQuestion":
         return await handle_ask_user_question(input_data)
@@ -462,10 +459,7 @@ async def can_use_tool(
 async def prompt_stream():
     yield {
         "type": "user",
-        "message": {
-            "role": "user",
-            "content": "Help me decide on the tech stack for a new mobile app",
-        },
+        "message": {"role": "user", "content": "Help me decide on the tech stack for a new mobile app"},
     }
 
 

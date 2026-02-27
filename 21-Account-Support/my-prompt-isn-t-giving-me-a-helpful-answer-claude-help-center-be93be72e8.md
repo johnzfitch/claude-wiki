@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:14Z"
+fetched_at: "2026-02-08T20:52:07Z"
 source_url: "https://support.claude.com/en/articles/7996857-my-prompt-isn-t-giving-me-a-helpful-answer"
 title: "My prompt isn’t giving me a helpful answer. | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ My prompt isn’t giving me a helpful answer.
 
 # My prompt isn’t giving me a helpful answer.
 
-Updated this week
+Updated yesterday
 
 Claude works best when you give it clear and specific instructions. When crafting your prompt, keep the following principles in mind:
 

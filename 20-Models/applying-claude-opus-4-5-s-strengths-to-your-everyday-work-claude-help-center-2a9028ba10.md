@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-23T00:45:12Z"
+fetched_at: "2026-02-16T21:12:45Z"
 source_url: "https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work"
 title: "Applying Claude Opus 4.5’s strengths to your everyday work | Claude Help Center"
 ---
@@ -37,7 +37,7 @@ Applying Claude Opus 4.5’s strengths to your everyday work
 
 # Applying Claude Opus 4.5’s strengths to your everyday work
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

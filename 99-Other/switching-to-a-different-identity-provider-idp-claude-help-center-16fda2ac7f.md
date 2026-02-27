@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:52Z"
+fetched_at: "2026-02-16T21:12:48Z"
 source_url: "https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp"
 title: "Switching to a different Identity Provider (IdP) | Claude Help Center"
 ---
@@ -95,17 +95,17 @@ Important considerations before enabling single sign-on (SSO) and JIT/SCIM provi
 
 Getting Started with Claude for Education at Your University (for Owners/Admins)
 
-[](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)
+[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
 
-Set up single sign-on (SSO)
+Setting up single sign-on (SSO)
 
-[](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)
+[](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
 
-Set up JIT or SCIM provisioning
+Setting up JIT or SCIM provisioning
 
-[](https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise)
+[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Migrate your organization from Team to Enterprise
+Managing members on Team and Enterprise plans
 
 Did this answer your question?
 

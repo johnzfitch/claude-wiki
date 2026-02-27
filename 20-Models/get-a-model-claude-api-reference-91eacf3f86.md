@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:40:15Z"
+fetched_at: "2026-02-07T10:07:45Z"
 source_url: "https://platform.claude.com/docs/en/api/python/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Python
 
 models.retrieve(strmodel_id, ModelRetrieveParams\*\*kwargs) -\> [ModelInfo](/docs/en/api/models#model_info)
 
-GET/v1/models/{model_id}
+get/v1/models/{model_id}
 
 Get a specific model.
 
@@ -31,9 +31,9 @@ Optional header to specify the beta version(s) you want to use.
 
 Accepts one of the following:
 
-str
+UnionMember0 = str
 
-Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 17 more\]
+UnionMember1 = Literal\["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 16 more\]
 
 Accepts one of the following:
 
@@ -75,8 +75,6 @@ Accepts one of the following:
 
 "skills-2025-10-02"
 
-"fast-mode-2026-02-01"
-
 ##### ReturnsExpand Collapse 
 
 class ModelInfo: …
@@ -89,6 +87,8 @@ created_at: datetime
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
+formatdate-time
+
 display_name: str
 
 A human-readable name for the model.
@@ -98,6 +98,10 @@ type: Literal\["model"\]
 Object type.
 
 For Models, this is always `"model"`.
+
+Accepts one of the following:
+
+"model"
 
 Get a Model
 

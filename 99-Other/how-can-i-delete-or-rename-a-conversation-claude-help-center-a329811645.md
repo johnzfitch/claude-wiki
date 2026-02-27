@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:17Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/8230524-how-can-i-delete-or-rename-a-conversation"
 title: "How can I delete or rename a conversation? | Claude Help Center"
 ---
@@ -37,7 +37,7 @@ How can I delete or rename a conversation?
 
 # How can I delete or rename a conversation?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -57,7 +57,7 @@ To delete or rename an individual conversation:
 
 3.  Select either "Delete" or "Rename" from the options that appear:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1621955348/4844057e0f0847b580b95bc01625/Screenshot+2025-07-15+at+11_43_18%E2%80%AFAM.png?expires=1771809300&signature=b50e1742499a533693277007ce741bf48c87b1845f6896d48a8ddb8a73c4cc40&req=dSYlF8B7mIJbUfMW1HO4zVBo6%2BL%2FbYlZt5RK2C3E1Td5EaD8e4nyNuQX84rI%0AUgrK6ydSL5xhccifvPc%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1621955348/4844057e0f0847b580b95bc01625/Screenshot+2025-07-15+at+11_43_18%E2%80%AFAM.png?expires=1771278300&signature=c229ea7f2ccc4da6ccdcc45c7a80602f5e7e09c2f173cfaf39f7626f5e10f6df&req=dSYlF8B7mIJbUfMW1HO4zVBo6%2BL1aohZt5RK2C3E1TdK0%2Be4QhH0qSGAGqVz%0A1FMx%2FniKohuZJzI%2BeUI%3D%0A)
 
 ## Deleting conversations in bulk
 

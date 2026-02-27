@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:21:46Z"
+fetched_at: "2026-02-07T10:05:30Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/pun-dit"
 title: "Pun-dit - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Generate clever puns and wordplay based on any given topic.
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 |  | Content |
 |----|----|

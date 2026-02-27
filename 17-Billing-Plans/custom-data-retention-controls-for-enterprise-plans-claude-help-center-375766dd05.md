@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:08Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans"
 title: "Custom data retention controls for Enterprise plans | Claude Help Center"
 ---

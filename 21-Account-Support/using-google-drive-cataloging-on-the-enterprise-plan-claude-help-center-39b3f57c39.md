@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-23T00:45:07Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/11088779-using-google-drive-cataloging-on-the-enterprise-plan"
 title: "Using Google Drive Cataloging on the Enterprise Plan | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Using Google Drive Cataloging on the Enterprise Plan
 
 # Using Google Drive Cataloging on the Enterprise Plan
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

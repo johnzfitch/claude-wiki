@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:08Z"
+fetched_at: "2026-02-16T21:12:38Z"
 source_url: "https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans"
 title: "Purchasing and managing seats on Team plans | Claude Help Center"
 ---
@@ -223,13 +223,13 @@ What is the Enterprise plan?
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Manage members on Team and Enterprise plans
+Managing members on Team and Enterprise plans
 
-[](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)
+[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 
-Purchase and manage seats on Enterprise plans
+Purchasing and managing seats on Enterprise plans
 
 Did this answer your question?
 

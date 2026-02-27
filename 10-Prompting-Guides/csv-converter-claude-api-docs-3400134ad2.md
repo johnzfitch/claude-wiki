@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:23:09Z"
+fetched_at: "2026-02-07T10:05:37Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/csv-converter"
 title: "CSV converter - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Convert data from various formats (JSON, XML, etc.) into properly formatted CSV 
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 [TABLE]
 

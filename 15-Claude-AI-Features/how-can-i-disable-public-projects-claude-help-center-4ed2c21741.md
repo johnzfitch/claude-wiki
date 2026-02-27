@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-23T00:45:07Z"
+fetched_at: "2026-02-08T20:52:10Z"
 source_url: "https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects"
 title: "How can I disable public projects? | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ How can I disable public projects?
 
 # How can I disable public projects?
 
-Updated this week
+Updated yesterday
 
 Table of contents
 
@@ -51,29 +51,27 @@ Table of contents
 
 This feature is available to Primary Owners and Owners on Team and Enterprise plans.
 
-Disabling the public project feature allows Team and Enterprise owners to restrict the creation of public projects across their organization while maintaining internal sharing capabilities.
+Disabling the public project feature allows Team and Enterprise Owners to restrict the creation of public projects across their organization while maintaining internal sharing capabilities. Follow these steps:
 
-Follow these steps:
+1.  Navigate to [Admin settings \> Capabilities](https://claude.ai/admin-settings/capabilities).
 
-1.  Navigate to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**.
+2.  Click "Disable" next to **Public projects**.
 
-2.  Find **Public projects** and toggle it off
-
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2053902291/8c39d1a79dedc97411eed54dec5c/CleanShot+2026-02-11+at+11_25_34%402x.png?expires=1771809300&signature=f1658ad3b882622c7bad6c12a6e7caa7d4ec316c1c5e2e26302e0e9fe3b5ca5e&req=diAiFcB%2Bn4NWWPMW1HO4zfGiYGasawlcYabJlVJ9VPxXZi5n7Mwoend0VHZD%0AoKuICM44PH4SUFsGwtM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1768703433/c80cb50956d113b5271124a1e28f/Screenshot+2025-10-08+at+4_07_24%E2%80%AFPM.png?expires=1770585300&signature=3fe1c892f27321b0954e9e5e24b627fff14dccbea0989ee695f620af56f10763&req=dSchHs5%2BnoVcWvMW1HO4zcD3J297VZn26zHI7TJjvR7L66VYflggrYpDFS57%0AgOnfk75P3SmMnTiqr%2Fo%3D%0A)
 
 ## How does disabling public projects work?
 
-By default, **[public projects](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing#h_2c0e9eb7c4)** are enabled for all Team and Enterprise plans. When you disable public projects:
+By default, [public projects](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing#h_2c0e9eb7c4) are enabled for all Team and Enterprise plans. When you disable public projects:
 
 1.  All existing public projects will be converted to private projects.
 
 2.  Users will be prevented from creating new public projects.
 
-**Important:** Users can still share **[private projects](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing#h_a088ccfaa3)** with individual users within your organization after disabling public projects. Any private projects that were shared with individuals will retain their shared settings.
+**Important:** Users can still share [private projects](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing#h_a088ccfaa3) with individual users within your organization after disabling public projects. Any private projects that were shared with individuals will retain their shared settings.
 
 ## Impact on project sharing
 
-Disabling public projects does not affect the internal project sharing capabilities available to Team and Enterprise users:
+Disabling public projects does not affect the internal project sharing capabilities available to Claude for Work users:
 
 - **Individual project sharing:** Users can still share projects with specific team members using email-based invitations.
 

@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-23T00:45:07Z"
+fetched_at: "2026-02-08T20:52:14Z"
 source_url: "https://support.claude.com/en/articles/9970975-how-to-access-audit-logs"
 title: "How to access audit logs | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ How to access audit logs
 
 # How to access audit logs
 
-Updated over 2 weeks ago
+Updated yesterday
 
 Table of contents
 
@@ -79,7 +79,7 @@ Related Articles
 
 [](https://support.claude.com/en/articles/9267276-roles-and-permissions)
 
-Roles and permissions
+Roles and Permissions
 
 [](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
 
@@ -91,11 +91,11 @@ What happens to a user's data when they are removed from a Team or Enterprise or
 
 [](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
-Usage analytics for Team and Enterprise plans
+Usage Analytics for Team and Enterprise Plans
 
-[](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)
+[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Manage members on Team and Enterprise plans
+Managing members on Team and Enterprise plans
 
 Did this answer your question?
 

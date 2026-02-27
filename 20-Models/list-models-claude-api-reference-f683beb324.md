@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T14:02:33Z"
+fetched_at: "2026-02-07T10:10:37Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Ruby
 
 beta.models.list(\*\*kwargs) -\> Page\<[BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, created_at, display_name, type } \>
 
-GET/v1/models
+get/v1/models
 
 List available models.
 
@@ -47,7 +47,7 @@ Accepts one of the following:
 
 String
 
-:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 17 more
+:"message-batches-2024-09-24" \| :"prompt-caching-2024-07-31" \| :"computer-use-2024-10-22" \| 16 more
 
 Accepts one of the following:
 
@@ -89,8 +89,6 @@ Accepts one of the following:
 
 :"skills-2025-10-02"
 
-:"fast-mode-2026-02-01"
-
 ##### ReturnsExpand Collapse 
 
 class BetaModelInfo { id, created_at, display_name, type }
@@ -103,6 +101,8 @@ created_at: Time
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
+formatdate-time
+
 display_name: String
 
 A human-readable name for the model.
@@ -112,6 +112,10 @@ type: :model
 Object type.
 
 For Models, this is always `"model"`.
+
+Accepts one of the following:
+
+:model
 
 List Models
 

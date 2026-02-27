@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:18Z"
+fetched_at: "2026-02-16T21:12:50Z"
 source_url: "https://support.claude.com/en/articles/8461763-where-can-i-access-claude"
 title: "Where can I access Claude? | Claude Help Center"
 ---
@@ -31,7 +31,7 @@ Where can I access Claude?
 
 # Where can I access Claude?
 
-Updated this week
+Updated over a week ago
 
 You can access Claude in the following locations:
 

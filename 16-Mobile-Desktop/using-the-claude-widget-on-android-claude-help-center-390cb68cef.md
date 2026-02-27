@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-23T00:45:16Z"
+fetched_at: "2026-02-16T21:12:34Z"
 source_url: "https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android"
 title: "Using the Claude Widget on Android | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Using the Claude Widget on Android
 
 # Using the Claude Widget on Android
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

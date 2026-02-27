@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:20Z"
+fetched_at: "2026-02-16T21:12:37Z"
 source_url: "https://support.claude.com/en/articles/11818288-why-am-i-being-asked-to-verify-my-payment-method"
 title: "Why am I being asked to verify my payment method? | Claude Help Center"
 ---
@@ -35,7 +35,7 @@ Why am I being asked to verify my payment method?
 
 # Why am I being asked to verify my payment method?
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -43,7 +43,7 @@ Table of contents
 
 If you see the following pop-up when you log in to your Claude account, you’ll need to click the “Verify now” button to verify your payment method:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631413861/42c3b13d7fc44a11a88ec2b9cd03/AD_4nXeMx8QXpeZZCkfAnVSwx8KZ9n4Vr2rvPdQddyE6ZNxch__F6ZqFs1G4ZmU52Wvb7gRlwRqquTLdw8IQv-gICDyP-MXqiQK_Oe7gX3SKsCKKt2IEpMx4qDeMeeZufMaJfv16XgOH5g?expires=1771809300&signature=c64d9b82d951c2c8df38123c56c6cf34d445786460ab69cc2a1ae81f36417a05&req=dSYkF81%2FnolZWPMW1HO4zf7%2Bg0Xm6Inxn6MrEicvimDwqrp5m0%2BhtyHK9dSH%0AmkXLntV5Sx24eKM5dlM%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1631413861/42c3b13d7fc44a11a88ec2b9cd03/AD_4nXeMx8QXpeZZCkfAnVSwx8KZ9n4Vr2rvPdQddyE6ZNxch__F6ZqFs1G4ZmU52Wvb7gRlwRqquTLdw8IQv-gICDyP-MXqiQK_Oe7gX3SKsCKKt2IEpMx4qDeMeeZufMaJfv16XgOH5g?expires=1771278300&signature=4bbdf4a7f89fc6c7b97fcb63bef7adbe0ec0576e4a0165dc53e4148ca938ebcf&req=dSYkF81%2FnolZWPMW1HO4zf7%2Bg0Xs74jxn6MrEicvimDvXrzq%2FtM0Y0Zd4RCU%0AKugz99GgzwfUDe1rlmg%3D%0A)
 
 ## What happens if I click “Remind me later?”
 
@@ -69,9 +69,9 @@ Using Claude with Android Apps
 
 Using the PubMed Connector in Claude
 
-[](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)
+[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
 
-Set up single sign-on (SSO)
+Setting up single sign-on (SSO)
 
 Did this answer your question?
 

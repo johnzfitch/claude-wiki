@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:24:14Z"
+fetched_at: "2026-02-06T07:18:42Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/grading-guru"
 title: "Grading guru - Claude API Docs"
 ---
@@ -15,7 +15,7 @@ Compare and evaluate the quality of written texts based on user-defined criteria
 
 Copy page
 
-> Copy this prompt into the developer [Console](/dashboard) to try it for yourself!
+> Copy this prompt into our developer [Console](/dashboard) to try it for yourself!
 
 [TABLE]
 
@@ -39,7 +39,8 @@ Text 2:
 3.  Emotional impact and engagement: The text conveys a positive emotion by stating "It made me happy," but it does not provide a strong emotional connection or engagement due to the lack of descriptive language and imagery.
 4.  Grammar and punctuation: The text appears to be grammatically correct and well-punctuated, with no obvious errors or issues.
 
-Comparative Analysis: Based on the evaluation, Text 1 performs significantly better than Text 2 in terms of descriptive language, imagery, sentence structure, variety, and emotional impact. Text 1 creates a vivid and immersive experience for the reader and demonstrates a higher quality of writing based on the given criteria, with its strong descriptive language, varied sentence structures, and effective emotional engagement. Text 2, while grammatically correct, lacks the descriptive richness and emotional impact present in Text 1.
+Comparative Analysis:  
+Based on the evaluation, Text 1 performs significantly better than Text 2 in terms of descriptive language, imagery, sentence structure, variety, and emotional impact. Text 1 creates a vivid and immersive experience for the reader and demonstrates a higher quality of writing based on the given criteria, with its strong descriptive language, varied sentence structures, and effective emotional engagement. Text 2, while grammatically correct, lacks the descriptive richness and emotional impact present in Text 1.
 
 ------------------------------------------------------------------------
 

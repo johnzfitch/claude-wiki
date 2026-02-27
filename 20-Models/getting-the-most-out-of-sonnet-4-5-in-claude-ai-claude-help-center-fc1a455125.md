@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-23T00:45:31Z"
+fetched_at: "2026-02-16T21:12:42Z"
 source_url: "https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai"
 title: "Getting the most out of Sonnet 4.5 in Claude.ai | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ Getting the most out of Sonnet 4.5 in Claude.ai
 
 # Getting the most out of Sonnet 4.5 in Claude.ai
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 
@@ -84,15 +84,15 @@ The impact of a new model is broad, but here’s a few specific ways you can tak
 
 - **Build powerpoints from scratch —** Sonnet 4.5 can create polished presentations complete with layouts, and structured content—no template required. Just describe your topic and audience, or upload a doc with notes, and Claude will handle everything else.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1751873876/8ef0a6d74010a7697ba133d42fc9/Group+15.png?expires=1771809300&signature=7ceabb3f17e5bab334fc6eb0327edf73e46d89d3afda525a5c5b490335c816ff&req=dSciF8F5nolYX%2FMW1HO4zcRtsVPh8jYemXpYrfr1qx0T6hB%2BKsm3ZhG3vF2O%0AtYM6KKEQddaWcjs6KUA%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1751873876/8ef0a6d74010a7697ba133d42fc9/Group+15.png?expires=1771278300&signature=4318ed7a6046344f59b2c7b1c8c8fdddac82cfea3a9dbc8eeea0915d12b3735a&req=dSciF8F5nolYX%2FMW1HO4zcRtsVPr9TcemXpYrfr1qx2AZTdkc7DRHzaDIMiU%0ApyOGwCux1gtxRP1law0%3D%0A)
 
 - **Build interactive personal tools —** Need a custom web app tailored to your specific needs? Sonnet 4.5 can build interactive tools like this "Life Compass" for personal reflection — a functional application you can actually use.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1751872477/d9270ed871c6b3583a69936ce58e/Group+12.png?expires=1771809300&signature=eb083de07d69df8ddf3ca71e935c7001be4cfa32187fca9e460836cd3a24e42c&req=dSciF8F5n4VYXvMW1HO4zS1VdtRuVtUdYTXYfaQAkKFGZl4B41g8jLSyY2rL%0AWZcpiZ%2FqyYRgRuzgHIo%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1751872477/d9270ed871c6b3583a69936ce58e/Group+12.png?expires=1771278300&signature=6a1f16d7dbbfc95d1d5f559e848934b856efbe34bc71cdde8552cf37e0591200&req=dSciF8F5n4VYXvMW1HO4zS1VdtRkUdQdYTXYfaQAkKGQRBkRdkXIryoZFTYC%0AmjX9p9sGfG8aRnUOArs%3D%0A)
 
 - **Create competitive market analysis reports —** Sonnet 4.5 can research dozens of competitors simultaneously, compare feature sets and pricing models, analyze market positioning, and synthesize everything into a comprehensive report with verified sources. It maintains strategic focus throughout research sessions, tracking emerging patterns and delivering actionable insights with proper attribution.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1751874050/f95a55b7407a7ba6ee275944d209/Group+16.png?expires=1771809300&signature=28b1b60065665d0fa78aefe802b39d5f7ac611ec1c639b47558c238ed50f8e95&req=dSciF8F5mYFaWfMW1HO4zQsQ%2FfglxwcrMArF%2FzX1xNpEQcG1%2FP0Y6%2BRQSFkd%0AYX0zNQXNthmW%2FGlhgRQ%3D%0A)
+[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1751874050/f95a55b7407a7ba6ee275944d209/Group+16.png?expires=1771278300&signature=2b96da8c1d0686362e56abb05883726e3aa568514e89efdb692e36f4c5f0f2b6&req=dSciF8F5mYFaWfMW1HO4zQsQ%2FfgvwAYrMArF%2FzX1xNpqEIcrssSMOyKNA5lO%0AeGCdpQmCkeRXWxwNjec%3D%0A)
 
 ## Prompting tips
 
@@ -132,13 +132,13 @@ Sonnet 4.5 represents a significant leap forward in what's possible with AI assi
 
 Related Articles
 
+[](https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data)
+
+How up-to-date is Claude's training data?
+
 [](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
 
 Claude Code model configuration
-
-[](https://support.claude.com/en/articles/12138966-release-notes)
-
-Release notes
 
 [](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 

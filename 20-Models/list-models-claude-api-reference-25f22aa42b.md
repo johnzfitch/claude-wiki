@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:46:04Z"
+fetched_at: "2026-02-07T10:08:31Z"
 source_url: "https://platform.claude.com/docs/en/api/java/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -13,7 +13,7 @@ Java
 
 ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 
-GET/v1/models
+get/v1/models
 
 List available models.
 
@@ -83,8 +83,6 @@ MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-
 
 SKILLS_2025_10_02("skills-2025-10-02")
 
-FAST_MODE_2026_02_01("fast-mode-2026-02-01")
-
 ##### ReturnsExpand Collapse 
 
 class ModelInfo:
@@ -97,17 +95,21 @@ LocalDateTime createdAt
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
+formatdate-time
+
 String displayName
 
 A human-readable name for the model.
 
-JsonValue; type "model"constant
-
-"model"constant
+JsonValue; type "model"constant"model"constant
 
 Object type.
 
 For Models, this is always `"model"`.
+
+Accepts one of the following:
+
+MODEL("model")
 
 List Models
 

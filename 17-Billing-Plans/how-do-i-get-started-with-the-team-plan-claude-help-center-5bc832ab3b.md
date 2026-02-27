@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-23T00:45:08Z"
+fetched_at: "2026-02-16T21:12:51Z"
 source_url: "https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan"
 title: "How do I get started with the Team plan? | Claude Help Center"
 ---
@@ -99,9 +99,9 @@ What is the Team plan?
 
 How do I sign up for the Max plan?
 
-[](https://support.claude.com/en/articles/11506255-getting-started-with-claude-in-slack)
+[](https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins)
 
-Getting started with Claude in Slack
+Getting Started with Claude for Education at Your University (for Owners/Admins)
 
 Did this answer your question?
 

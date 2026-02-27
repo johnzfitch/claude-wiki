@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-22T14:29:40Z"
+fetched_at: "2026-02-08T20:52:01Z"
 source_url: "https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb"
 title: "Building Desktop Extensions with MCPB | Claude Help Center"
 ---
@@ -119,7 +119,7 @@ Choose a local server (MCPB) for:
 
 - Organization-level controls - Admins can upload custom extensions and manage access via allowlists
 
-- Complete control over authentication, authorization, and audit logs\
+- Complete control over authentication, authorization, and audit logs  
   ​
 
 Choose a remote connector for:

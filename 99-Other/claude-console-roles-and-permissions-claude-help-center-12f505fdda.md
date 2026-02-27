@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:14Z"
+fetched_at: "2026-02-16T21:12:33Z"
 source_url: "https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions"
 title: "Claude Console Roles and Permissions | Claude Help Center"
 ---
@@ -39,7 +39,7 @@ Claude Console Roles and Permissions
 
 # Claude Console Roles and Permissions
 
-Updated this week
+Updated over a week ago
 
 Table of contents
 

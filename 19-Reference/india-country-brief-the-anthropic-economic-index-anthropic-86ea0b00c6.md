@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-22T10:51:08Z"
+fetched_at: "2026-02-16T21:12:32Z"
 source_url: "https://www.anthropic.com/research/india-brief-economic-index"
 title: "India Country Brief: The Anthropic Economic Index \\ Anthropic"
 ---
@@ -17,7 +17,7 @@ India, already the world’s largest exporter of IT services, is home to one of 
 
 The findings point to a user base that applies AI more heavily in professional contexts, delegates more autonomy to it, and brings Claude tasks that are substantially more time-consuming to complete without assistance. Higher shares of complex tasks that humans could not complete alone suggest that Indian users are using the technology at the frontier.
 
-## India is among the leading countries in global AI adoption
+## India leads in global AI adoption
 
 India ranks second among all countries by share of total Claude.ai use, trailing only the United States. However, on a per-capita basis, adjusting for the working-age population, India ranks 101st out of 116 countries with sufficient observation volume, below other countries in Asia such as Singapore or Malaysia. This gap suggests that India’s high Claude use overall reflects the sheer size of its population, not that the average person is using Claude heavily. This points to significant opportunities to increase adoption.
 
@@ -46,7 +46,7 @@ India ranks 1st globally in the share of AI use devoted to software-related task
 
 **Stronger work orientation.** 51.3% of Indian Claude.ai use is work-related, compared to 46% globally. Coursework accounts for 20.9% (vs. 19.3% globally) and personal use for 27.8% (vs. 34.7% globally). The work-heavy, lower-personal-use profile is consistent with India’s large professional services sector and the finding from the main report that lower-GDP-per-capita countries tend towards work and coursework over personal use.
 
-**Higher AI autonomy.** Indian users delegate more decision-making autonomy to AI (3.60 vs. 3.38 globally on a 1–5 scale, where 1 means no delegation and 5 means extreme delegation). This suggests greater willingness to let AI operate independently rather than using it purely as an assistant.
+**Higher AI autonomy.** Indian users delegate more decision-making authority to AI (3.60 vs. 3.38 globally on a 1–5 scale, where 1 means no delegation and 5 means extreme delegation). This suggests greater willingness to let AI operate independently rather than using it purely as an assistant.
 
 **Lower human-only ability.** One of the data points we measure is whether AI is being used to do something a human couldn’t do on their own, like writing code in a language they don’t know. We find that 84.6% of tasks could be completed by a human alone (vs. 87.9% globally), suggesting Indian users more frequently bring tasks to AI that they could not easily accomplish independently.
 
@@ -64,38 +64,16 @@ India ranks 1st globally in the share of AI use devoted to software-related task
 
 **Investing in AI skills could have high returns.** The strong correlation between prompt sophistication and response quality in the global data suggests that training programs focused on effective AI use—particularly for workers outside India’s current IT-heavy user base—could meaningfully improve the returns from wider AI adoption.
 
-### Methodology
+## Methodology
 
 This analysis draws on privacy-preserving data from Claude.ai consumer use from November 13–20, 2025, as described in the [fourth Anthropic Economic Index report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report). Economic primitives are computed using the methodology detailed in that report. Geographic assignment uses IP-based geolocation. Occupation and task classification are based on mappings to the O\*NET task taxonomy and SOC occupation groups. For country-level rankings, we only include countries with at least 200 observations in our sample because of the uncertainty of the measure for low-usage countries in our random sample. The underlying data includes Claude.ai Free, Pro, and Max usage.
 
+\
 *For the full methodology, global findings, and time-series analysis, see the [Anthropic Economic Index January 2026 report](https://www.anthropic.com/research/anthropic-economic-index-january-2026-report).*
-
-### *\*
-Citation
-
-```
-@online{appel2026indiacountrybrief,
-author = {Ruth Appel},
-title = {India Country Brief: The Anthropic Economic Index},
-date = {2026-02-16},
-year = {2026},
-url = {https://www.anthropic.com/research/india-brief-economic-index},
-}
-```
-
-Copy
-
-### Acknowledgements
-
-Sally Aldous, Jake Eaton, Ria Strasser Galvis, Hanah Ho, Maxim Massenkoff, Peter McCrory, Jared Mueller, Emily Pastewka, Sarah Pollack, Nitarshan Rajkumar, David Saunders, Alexandra Sanderford, Kim Withee.
 
 [](https://twitter.com/intent/tweet?text=https://www.anthropic.com/research/india-brief-economic-index)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/research/india-brief-economic-index)
 
 ## Related content
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)
 
 ### How AI assistance impacts the formation of coding skills
 
@@ -104,3 +82,7 @@ Sally Aldous, Jake Eaton, Ria Strasser Galvis, Hanah Ho, Maxim Massenkoff, Peter
 ### Disempowerment patterns in real-world AI usage
 
 [Read more](/research/disempowerment-patterns)
+
+### The assistant axis: situating and stabilizing the character of large language models
+
+[Read more](/research/assistant-axis)

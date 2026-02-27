@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-23T00:45:34Z"
+fetched_at: "2026-02-16T21:12:53Z"
 source_url: "https://support.claude.com/en/articles/9945670-using-the-github-integration"
 title: "Using the GitHub integration | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ Using the GitHub integration
 
 # Using the GitHub integration
 
-Updated this week
+Updated over a week ago
 
 In this video guide, we'll explore how the GitHub integration can enhance your development process with Claude.
 
@@ -43,17 +43,17 @@ More information on enabling this integration can be found [here](https://suppor
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9945697-claude-for-marketing)
+[](https://support.claude.com/en/articles/9945615-intro-to-artifacts)
 
-Claude for Marketing
+Intro to Artifacts
 
 [](https://support.claude.com/en/articles/9945703-claude-for-sales)
 
 Claude for Sales
 
-[](https://support.claude.com/en/articles/9998942-claude-for-human-resources)
+[](https://support.claude.com/en/articles/9999062-claude-for-product-management)
 
-Claude for Human Resources
+Claude for Product Management
 
 [](https://support.claude.com/en/articles/10167454-using-the-github-integration)
 

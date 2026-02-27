@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-02-23T00:45:52Z"
+fetched_at: "2026-02-16T21:12:49Z"
 source_url: "https://support.claude.com/en/articles/7996918-what-is-amazon-bedrock"
 title: "What is Amazon Bedrock? | Claude Help Center"
 ---
@@ -29,7 +29,7 @@ What is Amazon Bedrock?
 
 # What is Amazon Bedrock?
 
-Updated this week
+Updated over a week ago
 
 Amazon Bedrock is a fully managed service that offers a choice of high-performing
 
@@ -69,9 +69,9 @@ Where do I find Claude in Amazon Bedrock documentation?
 
 What AWS Regions are Claude models available in Amazon Bedrock?
 
-[](https://support.claude.com/en/articles/13756069-public-sector-faqs)
+[](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
-Public Sector FAQs
+Claude Code FAQ
 
 Did this answer your question?
 
