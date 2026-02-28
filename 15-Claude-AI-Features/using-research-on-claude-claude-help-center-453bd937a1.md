@@ -1,53 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:34Z"
+fetched_at: "2026-02-28T11:22:23Z"
 source_url: "https://support.claude.com/en/articles/11088861-using-research-on-claude"
 title: "Using Research on Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_dfa4d9e90a)
-
-[](#h_558c586276)
-
-[](#h_4e7c0c4c82)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
-
-Using Research on Claude
-
 # Using Research on Claude
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_dfa4d9e90a)
-
-[](#h_558c586276)
-
-[](#h_4e7c0c4c82)
 
 Research is available for users with paid Claude plans (Pro, Max, Team, or Enterprise) using Claude on the web, Claude Desktop, or Claude Mobile.
 
@@ -87,45 +46,17 @@ Research is subject to the same limits as standard Claude conversations. However
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research)
 
 When should I use web search, extended thinking, and Research?
 
-[](https://support.claude.com/en/articles/11101545-using-research-and-google-workspace)
 
 Using Research and Google Workspace
 
-[](https://support.claude.com/en/articles/11106443-using-research)
 
 Using Research
 
-[](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
 
 FAQs on Using Claude for Education at Your University
 
-[](https://support.claude.com/en/articles/12461605-using-claude-in-slack)
 
 Using Claude in Slack
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

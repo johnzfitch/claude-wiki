@@ -1,75 +1,14 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-16T21:12:33Z"
+fetched_at: "2026-02-28T11:22:07Z"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_a192e0c123)
-
-[](#h_3bad8701c8)
-
-[](#h_deb791918e)
-
-[](#h_ea414d72b0)
-
-[](#h_167139e633)
-
-[](#h_3cfd4f318c)
-
-[](#h_0a4a90ab59)
-
-[](#h_44db9cb1d7)
-
-[](#h_afdb12b7aa)
-
-[All Collections](/en/)
-
-[Identity Management (SSO, JIT, SCIM)](https://support.claude.com/en/collections/17270717-identity-management-sso-jit-scim)
-
-Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
+3.  Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 # Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
-Updated this week
-
-Table of contents
-
-[](#h_a192e0c123)
-
-[](#h_3bad8701c8)
-
-[](#h_deb791918e)
-
-[](#h_ea414d72b0)
-
-[](#h_167139e633)
-
-[](#h_3cfd4f318c)
-
-[](#h_0a4a90ab59)
-
-[](#h_44db9cb1d7)
-
-[](#h_afdb12b7aa)
 
 Before setting up SSO for your Claude or Claude Console organization, review this guide to understand key concepts, plan your approach, and complete any prerequisite steps.
 
@@ -221,45 +160,17 @@ Once you've reviewed these considerations and completed any necessary prerequisi
 
 Related Articles
 
-[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
 
-Setting up single sign-on (SSO)
+Set up single sign-on (SSO)
 
-[](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)
 
-Setting up JIT or SCIM provisioning
+Set up JIT or SCIM provisioning
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
+Manage members on Team and Enterprise plans
 
-[](https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp)
 
 Switching to a different Identity Provider (IdP)
 
-[](https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization)
 
 Find and join a Team or Enterprise organization
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Enhancing RAG with Contextual Retrieval
 
 > Note: For more background information on Contextual Retrieval,

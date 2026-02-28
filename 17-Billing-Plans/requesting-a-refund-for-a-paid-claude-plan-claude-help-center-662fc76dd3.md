@@ -1,57 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:41Z"
+fetched_at: "2026-02-28T11:22:07Z"
 source_url: "https://support.claude.com/en/articles/12386328-requesting-a-refund-for-a-paid-claude-plan"
 title: "Requesting a refund for a paid Claude plan | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_f661741625)
-
-[](#h_0d726f5bbf)
-
-[](#h_105b687d4f)
-
-[](#h_2a87517ef9)
-
-[All Collections](/en/)
-
-[Paid Claude Plans](https://support.claude.com/en/collections/5953830-paid-claude-plans)
-
-[General](https://support.claude.com/en/collections/9811201-general)
-
-Requesting a refund for a paid Claude plan
+4.  Requesting a refund for a paid Claude plan
 
 # Requesting a refund for a paid Claude plan
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_f661741625)
-
-[](#h_0d726f5bbf)
-
-[](#h_105b687d4f)
-
-[](#h_2a87517ef9)
 
 **Important:** Except as expressly provided in our **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)** or where required by law, all payments are non-refundable.
 
@@ -94,45 +51,17 @@ Our Support team cannot process refunds during pending disputes, as the disputed
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9015913-how-to-get-support)
 
 How to get support
 
-[](https://support.claude.com/en/articles/11140763-claude-4-invite-sweepstakes-official-rules)
 
 Claude 4 Invite Sweepstakes Official Rules
 
-[](https://support.claude.com/en/articles/11408405-claude-4-invite-contest)
 
 Claude 4 Invite Contest
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
 
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 
 Getting started with Claude for Nonprofits
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

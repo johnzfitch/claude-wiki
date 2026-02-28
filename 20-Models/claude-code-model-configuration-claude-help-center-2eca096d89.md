@@ -1,55 +1,12 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-16T21:12:38Z"
+fetched_at: "2026-02-28T11:22:14Z"
 source_url: "https://support.claude.com/en/articles/11940350-claude-code-model-configuration"
 title: "Claude Code model configuration | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_368fe15da6)
-
-[](#h_17f87abc92)
-
-[](#h_7c26153cc9)
-
-[](#h_1ca76159fb)
-
-[All Collections](/en/)
-
-[Claude Code](https://support.claude.com/en/collections/14445694-claude-code)
-
-Claude Code model configuration
-
 # Claude Code model configuration
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_368fe15da6)
-
-[](#h_17f87abc92)
-
-[](#h_7c26153cc9)
-
-[](#h_1ca76159fb)
 
 This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--model` flag for one-time session changes, and environment variables to set your preferred model as the permanent default.
 
@@ -67,17 +24,15 @@ The simplest way to change models is to use the /model command directly within C
 
 ## Supported models
 
+- Sonnet 4.6, `claude-sonnet-4-6`
+
 - Opus 4.6, `claude-opus-4-6`
 
 - Opus 4.5, `claude-opus-4-5-20251101`
 
 - Haiku 4.5, `claude-haiku-4-5-20251001`
 
-- Sonnet 4.5, `claude-sonnet-4-5-20250929` (default)
-
-- Sonnet 4, `claude-sonnet-4-20250514`
-
-- Haiku 3.5, `claude-3-5-haiku-20241022`
+- Sonnet 4.5, `claude-sonnet-4-5-20250929`
 
 **⚠️ Model access:** When using a Pro plan with Claude Code, you will only be able to use Opus models after **[enabling and purchasing extra usage](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans#h_8d1a703b92)**.
 
@@ -89,6 +44,8 @@ Use the `--model` flag when starting Claude Code.
 
 2.  Enter the following commands (depending on the model you’d like to use for that session):
 
+    - **For Sonnet 4.6:** `claude --model claude-sonnet-4-6`
+
     - **For Opus 4.6:** `claude --model claude-opus-4-6`
 
     - **For Opus 4.5:** `claude --model claude-opus-4-5-20251101`
@@ -96,10 +53,6 @@ Use the `--model` flag when starting Claude Code.
     - **For Haiku 4.5:** `claude --model `` claude-haiku-4-5-20251001`
 
     - **For Sonnet 4.5:** `claude --model claude-sonnet-4-5-20250929`
-
-    - **For Sonnet 4:** `claude --model claude-sonnet-4-20250514`
-
-    - **For** **3.5 Haiku**: `claude --model claude-3-5-haiku-20241022`
 
 ## Change default model for all future sessions
 
@@ -113,6 +66,8 @@ Use the `--model` flag when starting Claude Code.
 
 ### For ZSH users (macOS)
 
+- Spnnet 4.6: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-6"' >> ~/.zshrc`
+
 - Opus 4.6: `echo 'export ANTHROPIC_MODEL="claude-opus-4-6"' >> ~/.zshrc`
 
 - Opus 4.5: `echo 'export ANTHROPIC_MODEL="claude-opus-4-5-20251101"' >> ~/.zshrc`
@@ -121,11 +76,9 @@ Use the `--model` flag when starting Claude Code.
 
 - Sonnet 4.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5-20250929"' >> ~/.zshrc`
 
-- Sonnet 4: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-20250514"' >> ~/.zshrc`
-
-- 3.5 Haiku: `echo 'export ANTHROPIC_MODEL="claude-3-5-haiku-20241022"' >> ~/.zshrc`
-
 ### For BASH users (Linux)
+
+- Sonnet 4.6: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-6"' >> ~/.bashrc`
 
 - Opus 4.6: `echo 'export ANTHROPIC_MODEL="claude-opus-4-6"' >> ~/.bashrc`
 
@@ -134,10 +87,6 @@ Use the `--model` flag when starting Claude Code.
 - Haiku 4.5: `echo 'export ANTHROPIC_MODEL="claude-haiku-4-5-20251001"' >> ~/.bashrc`
 
 - Sonnet 4.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5-20250929"' >> ~/.bashrc`
-
-- Sonnet 4: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-20250514"' >> ~/.bashrc`
-
-- 3.5 Haiku: `echo 'export ANTHROPIC_MODEL="claude-3-5-haiku-20241022"' >> ~/.bashrc`
 
 **Step 3)** Apply the changes:
 
@@ -155,45 +104,17 @@ Now your chosen model will be the default for all future Claude Code sessions.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data)
 
 How up-to-date is Claude's training data?
 
-[](https://support.claude.com/en/articles/8606395-how-large-is-the-claude-api-s-context-window)
 
 How large is the Claude API’s context window?
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
 
 Release notes
 
-[](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
-
-Claude in Chrome release notes
-
-[](https://support.claude.com/en/articles/12864745-using-claude-in-microsoft-foundry)
 
 Using Claude in Microsoft Foundry
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Applying Claude Opus 4.5’s strengths to your everyday work

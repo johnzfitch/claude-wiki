@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/claude-brazil"
 title: "Claude is now available in Brazil \\ Anthropic"
 ---
-
-Announcements
-
 # Claude is now available in Brazil
 
 Aug 1, 2024
@@ -27,7 +24,6 @@ Anthropic prioritizes safety, privacy, and ethical AI development in Claude's de
 
 *Read this post in [Portuguese](https://cdn.sanity.io/files/4zrzovbb/website/ea3d47f547131c9fbed59bfe68ed8b1cbe747179.pdf).*
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/claude-brazil)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/claude-brazil)
 
 ## Related content
 

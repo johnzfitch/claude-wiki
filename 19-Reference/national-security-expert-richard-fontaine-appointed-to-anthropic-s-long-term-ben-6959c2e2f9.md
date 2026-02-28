@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/national-security-expert-richard-fontaine-appointed-to-anthropic-s-long-term-benefit-trust"
 title: "National security expert Richard Fontaine appointed to Anthropic’s long-term benefit trust \\ Anthropic"
 ---
-
-Announcements
-
 # National security expert Richard Fontaine appointed to Anthropic’s long-term benefit trust
 
 Jun 7, 2025
@@ -25,7 +22,6 @@ Fontaine’s appointment adds deep foreign policy and national security experien
 
 “Richard’s expertise comes at a critical time as advanced AI capabilities increasingly intersect with national security considerations,” said Dario Amodei, CEO and Co-founder of Anthropic. “I've long believed that ensuring democratic nations maintain leadership in responsible AI development is essential for both global security and the common good. Richard’s appointment strengthens the Trust’s ability to guide Anthropic through the complex decisions that will shape not just our industry, but the global balance of power.”
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/national-security-expert-richard-fontaine-appointed-to-anthropic-s-long-term-benefit-trust)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/national-security-expert-richard-fontaine-appointed-to-anthropic-s-long-term-benefit-trust)
 
 ## Related content
 

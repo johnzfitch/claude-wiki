@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Retrieval-Augmented Generation using Pinecone
 
 This notebook demonstrates how to connect Claude with the data in your

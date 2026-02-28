@@ -1,4 +1,3 @@
-::: {.cell .markdown id="OzsRXoCSLC14"}
 # Multi-Document Agents
 
 In this notebook we will look into Building RAG when you have a large

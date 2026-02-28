@@ -1,79 +1,16 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:48Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 title: "Using interactive connectors in Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_08cd95d551)
-
-[](#h_d1afb08f92)
-
-[](#h_49991a9deb)
-
-[](#h_89a2182fc8)
-
-[](#h_d3f43e023a)
-
-[](#h_88cdd90390)
-
-[](#h_20abee644c)
-
-[](#h_b652f3ae07)
-
-[](#h_f81345970d)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
-
-Using interactive connectors in Claude
+4.  Using interactive connectors in Claude
 
 # Using interactive connectors in Claude
 
-Updated this week
 
-Table of contents
-
-[](#h_08cd95d551)
-
-[](#h_d1afb08f92)
-
-[](#h_49991a9deb)
-
-[](#h_89a2182fc8)
-
-[](#h_d3f43e023a)
-
-[](#h_88cdd90390)
-
-[](#h_20abee644c)
-
-[](#h_b652f3ae07)
-
-[](#h_f81345970d)
-
-Interactive connectors are available on Claude web and Claude Desktop for users on Pro, Max, Team, and Enterprise plans.
+Interactive connectors are available on for all users on Claude and Claude Desktop.
 
 ## What are interactive connectors?
 
@@ -89,7 +26,7 @@ Interactive connectors display in two ways:
 
 **Fullscreen view** provides an immersive interface for complex interactions like data visualizations, document editing, or detailed project views. The conversation input remains available so you can continue talking to Claude while interacting with the connector.
 
-## Interacting with connectors
+## Interact with connectors
 
 You can interact directly with elements inside the connector:
 
@@ -125,7 +62,7 @@ In the **[Connectors Directory](https://claude.ai/directory)**, connectors with 
 
 We’re adding support for more interactive connectors over time.
 
-## Getting started with interactive connectors
+## Get started with interactive connectors
 
 1.  Navigate to the **[Connectors Directory](https://claude.ai/directory)**.
 
@@ -141,9 +78,9 @@ We’re adding support for more interactive connectors over time.
 
 ### Can Team and Enterprise owners control interactive connectors separately from standard connectors?
 
-Yes. Team and Enterprise Owners can disable the specific tool calls that render interactive connectors within **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. This does not disable the connector itself — text-based tool functionality continues to work normally.
+Yes. Team and Enterprise owners can disable the specific tool calls that render interactive connectors within **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. This does not disable the connector itself — text-based tool functionality continues to work normally.
 
-## Permissions and Security
+## Permissions and security
 
 ### How are interactive connectors secured?
 
@@ -177,9 +114,9 @@ No. Purchases through third-party interactive connectors are not supported.
 
 ### I want to disable interactive connectors
 
-- Team and Enterprise users: Ask your organization Owner to disable the relevant tool calls in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
+- **Team and Enterprise users:** Ask your organization owner to disable the relevant tool calls in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
-- Individual users: You can disable specific connector tools via the "Search and tools" menu in your conversation.
+- **Individual users:** You can disable specific connector tools via the "Search and tools" menu in your conversation.
 
 ## I'm a developer. Where can I learn about building MCP Apps?
 
@@ -189,45 +126,17 @@ MCP Apps is the open-source extension to the Model Context Protocol that powers 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
-
-Pre-built web connectors using remote MCP
-
-[](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 
 Use the Connectors Directory to extend Claude’s capabilities
 
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org connector in Claude
+When to use desktop and web connectors
 
-[](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
 
-Using the Benchling Connector in Claude
+Connect your tools to unlock a smarter, more capable AI companion
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Using the 10x Genomics Extension in Claude

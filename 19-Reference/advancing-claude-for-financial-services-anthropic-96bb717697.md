@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/news/advancing-claude-for-financial-services"
 title: "Advancing Claude for Financial Services \\ Anthropic"
 ---
-
-Announcements
-
 # Advancing Claude for Financial Services
 
 Oct 27, 2025
@@ -125,9 +122,6 @@ Below, Alexander Bricken, Applied AI Lead for Financial Services, and Nicholas L
 To learn more about using Claude for Financial Services, [see here](https://claude.com/solutions/financial-services) or [contact](https://claude.com/contact-sales/financial-services) our sales team. And to see the new features in action and hear directly from financial services leaders, you can also [register here](http://website.anthropic.com/webinars/%20claude-for-financial-services) for our launch webinar.
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/advancing-claude-for-financial-services)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/advancing-claude-for-financial-services)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

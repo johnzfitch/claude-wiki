@@ -1,4 +1,3 @@
-::: {.cell .markdown id="OzsRXoCSLC14"}
 # RouterQuery Engine
 
 In this notebook we will look into `RouterQueryEngine` to route the user

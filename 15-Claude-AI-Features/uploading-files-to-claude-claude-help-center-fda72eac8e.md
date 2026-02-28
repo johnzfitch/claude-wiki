@@ -1,65 +1,16 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:08Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/8241126-uploading-files-to-claude"
-title: "Uploading Files to Claude | Claude Help Center"
+title: "Uploading files to Claude | Claude Help Center"
 ---
 
-[](/en/)
+# Uploading files to Claude
 
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_43136c9f28)
-
-[](#h_8822bc74cd)
-
-[](#h_72f34dbc88)
-
-[](#h_466b8a2970)
-
-[](#h_0486f88dea)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
-
-Uploading Files to Claude
-
-# Uploading Files to Claude
-
-Updated yesterday
-
-Table of contents
-
-[](#h_43136c9f28)
-
-[](#h_8822bc74cd)
-
-[](#h_72f34dbc88)
-
-[](#h_466b8a2970)
-
-[](#h_0486f88dea)
 
 This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
 
-## Supported File Types
+## Supported file types
 
 ### Documents
 
@@ -85,7 +36,7 @@ Claude can work with the following document types:
 
 - XLSX\*
 
-**Note:** You must enable [Upgraded file creation and analysis](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude) in your account to upload XLSX files.
+**Note:** You must enable **[code execution and file creation](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)** in your account to upload XLSX files.
 
 ### Images
 
@@ -119,7 +70,7 @@ Files can be uploaded to individual chats or uploaded to a project's **Files** s
 
 ------------------------------------------------------------------------
 
-## File Limits
+## File limits
 
 ### Chat uploads
 
@@ -141,13 +92,13 @@ Files can be uploaded to individual chats or uploaded to a project's **Files** s
 
 ------------------------------------------------------------------------
 
-## PDF Processing
+## PDF processing
 
 Claude models can analyze both text and visual elements (like images, charts, and graphics) in PDFs that are under 100 pages. Claude will only process text from PDFs over 1000 pages.
 
 ------------------------------------------------------------------------
 
-## Tips for Best Results
+## Tips for best results
 
 **For images:** Use images that are 1000x1000 pixels or larger. Avoid small or low-resolution images where possible.
 
@@ -161,45 +112,17 @@ Claude models can analyze both text and visual elements (like images, charts, an
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)
 
 Create and edit files with Claude
 
-[](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work)
-
-Create and edit files with Claude to eliminate hours of busy work
-
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12461605-using-claude-in-slack)
+
+Create professional results across tools with Claude Sonnet 4.5
+
 
 Using Claude in Slack
 
-[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
 
-Using Claude in Excel
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Use Claude in Excel

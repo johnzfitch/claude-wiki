@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-is-endorsing-sb-53"
 title: "Anthropic is endorsing SB 53 \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic is endorsing SB 53
 
 Sep 8, 2025
@@ -39,7 +36,6 @@ SB 53 provides a strong regulatory foundation, but we can and should build upon 
 
 We commend Senator Wiener and Governor Newsom for their leadership on responsible AI governance. The question isn't whether we need AI governance—it's whether we'll develop it thoughtfully today or reactively tomorrow. SB 53 offers a solid path toward the former. We encourage California to pass it, and we look forward to working with policymakers in Washington and around the world to develop comprehensive approaches that protect public interests while maintaining America's AI leadership.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-is-endorsing-sb-53)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-is-endorsing-sb-53)
 
 ## Related content
 

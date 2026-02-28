@@ -2,7 +2,6 @@
 description: List all configured hookify rules
 allowed-tools: ["Glob", "Read", "Skill"]
 ---
-
 # List Hookify Rules
 
 **Load hookify:writing-rules skill first** to understand rule format.

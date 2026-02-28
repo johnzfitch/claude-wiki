@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/ai-for-science-program"
 title: "Introducing Anthropic&#x27;s AI for Science Program \\ Anthropic"
 ---
-
-Announcements
-
 # Introducing Anthropic's AI for Science Program
 
 May 5, 2025
@@ -30,9 +27,6 @@ Researchers attached to a research institution interested in the AI for Science 
 We look forward to seeing how researchers use our API to push the boundaries of scientific discovery and create positive impact in the world.
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/ai-for-science-program)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/ai-for-science-program)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

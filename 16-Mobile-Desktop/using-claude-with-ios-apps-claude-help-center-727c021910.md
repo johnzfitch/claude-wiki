@@ -1,69 +1,12 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-16T21:12:38Z"
+fetched_at: "2026-02-28T11:22:05Z"
 source_url: "https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps"
 title: "Using Claude with iOS Apps | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_3148856c2e)
-
-[](#h_0b3b74f95b)
-
-[](#h_21f4b10d6d)
-
-[](#h_434b5bfc5d)
-
-[](#h_bca900eafe)
-
-[](#h_719ceb0000)
-
-[](#h_f113e61955)
-
-[All Collections](/en/)
-
-[Claude Mobile Apps](https://support.claude.com/en/collections/9387080-claude-mobile-apps)
-
-[Claude for iOS](https://support.claude.com/en/collections/9879000-claude-for-ios)
-
-Using Claude with iOS Apps
-
 # Using Claude with iOS Apps
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_3148856c2e)
-
-[](#h_0b3b74f95b)
-
-[](#h_21f4b10d6d)
-
-[](#h_434b5bfc5d)
-
-[](#h_bca900eafe)
-
-[](#h_719ceb0000)
-
-[](#h_f113e61955)
 
 Claude can now connect with your iOS device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, or calendar events, find locations, manage reminders, and analyze your health and fitness data — all seamlessly integrated with your mobile apps.
 
@@ -349,45 +292,17 @@ Claude will only request permissions if needed for specific features, and you ca
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9266462-installing-claude-for-ios)
 
 Installing Claude for iOS
 
-[](https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios)
 
 Using Claude App Intents, Shortcuts, and Widgets on iOS
 
-[](https://support.claude.com/en/articles/11825384-how-to-update-claude-for-ios)
+
+Use the Connectors Directory to extend Claude’s capabilities
+
 
 How to update Claude for iOS
 
-[](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)
 
 Using Claude with Android Apps
-
-[](https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude)
-
-Using the Blackbaud Connector in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

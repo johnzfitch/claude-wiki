@@ -1,55 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:03Z"
+fetched_at: "2026-02-28T11:22:20Z"
 source_url: "https://support.claude.com/en/articles/12923901-claude-for-nonprofits-partnership-guide-for-all-users"
 title: "Claude for Nonprofits Partnership Guide for All Users | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_cec499cd08)
-
-[](#h_dbdbed9082)
-
-[](#h_1c8f93d4f9)
-
-[](#h_c4741bddea)
-
-[All Collections](/en/)
-
-[Claude for Nonprofits](https://support.claude.com/en/collections/17047088-claude-for-nonprofits)
-
-Claude for Nonprofits Partnership Guide for All Users
+3.  Claude for Nonprofits Partnership Guide for All Users
 
 # Claude for Nonprofits Partnership Guide for All Users
 
-Updated yesterday
-
-Table of contents
-
-[](#h_cec499cd08)
-
-[](#h_dbdbed9082)
-
-[](#h_1c8f93d4f9)
-
-[](#h_c4741bddea)
 
 Welcome to the Claude for Nonprofits community! This guide will help you get started with Claude and find ways to enhance your daily work. Whether you’re new to AI tools or have some experience, we’ve designed a pathway to help you build confidence and discover practical applications for your role. We encourage you to move through these milestones at your own pace.
 
@@ -133,45 +92,17 @@ There's no single "right" way to integrate Claude into your work. Some team memb
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9945697-claude-for-marketing)
+
+Getting started with Claude
+
 
 Claude for Marketing
 
-[](https://support.claude.com/en/articles/9945703-claude-for-sales)
 
 Claude for Sales
 
-[](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)
 
-Create and edit files with Claude
+Prototype AI-Powered Apps with Claude artifacts
 
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
-
-Getting Started with Claude for Nonprofits
-
-[](https://support.claude.com/en/articles/12923668-claude-for-nonprofits-partnership-success-guide-for-admins)
 
 Claude for Nonprofits Partnership Success Guide for Admins
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

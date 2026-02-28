@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # How to Build A RAG System Using Claude 3 And MongoDB
 
 This tutorial implements a chatbot prompted to take on the role of a

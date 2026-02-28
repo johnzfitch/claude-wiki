@@ -1,4 +1,3 @@
-::: {.cell .markdown id="WJ53OAUk_Bmm"}
 # \"Uploading\" PDFs to Claude Via the API
 :::
 

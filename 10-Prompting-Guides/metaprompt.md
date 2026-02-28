@@ -1,4 +1,3 @@
-::: {.cell .markdown id="L1mtyzbvpM2L"}
 # Metaprompt
 
 Welcome to the Metaprompt! This is a prompt engineering tool designed to

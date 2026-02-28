@@ -1,35 +1,14 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-16T21:12:39Z"
+fetched_at: "2026-02-28T11:22:09Z"
 source_url: "https://support.claude.com/en/articles/12068923-using-claude-for-financial-services-for-analysis-and-modeling"
 title: "Using Claude for Financial Services for analysis and modeling | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-[All Collections](/en/)
-
-[Video Tutorials](https://support.claude.com/en/collections/10548294-video-tutorials)
-
-Using Claude for Financial Services for analysis and modeling
+3.  Using Claude for Financial Services for analysis and modeling
 
 # Using Claude for Financial Services for analysis and modeling
 
-Updated over a week ago
 
 # An error occurred.
 
@@ -39,45 +18,17 @@ Unable to execute JavaScript.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12068906-using-claude-for-financial-services-for-investment-research)
 
 Using Claude for Financial Services for investment research
 
-[](https://support.claude.com/en/articles/12068945-using-claude-for-financial-services-for-investment-memos)
 
 Using Claude for Financial Services for investment memos
 
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 
 Financial Analysis Workflows with Claude
 
-[](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
 
 Claude for Financial Services Skills
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

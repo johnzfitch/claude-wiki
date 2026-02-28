@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude"
 title: "Anthropic Education Report: How University Students Use Claude \\ Anthropic"
 ---
-
-AnnouncementsSocietal Impacts
-
 # Anthropic Education Report: How university students use Claude
 
 Apr 8, 2025
@@ -150,7 +147,6 @@ Additionally, we appreciate helpful discussion and comments from Rose E. Wang, L
 
 ⁶ In particular, we use [Anderson and Krathwohl's (2001) revision](https://books.google.com/books/about/A_Taxonomy_for_Learning_Teaching_and_Ass.html?id=JPkXAQAAMAAJ&source=kp_book_description) of Bloom's Taxonomy and their taxonomy of cognitive processes.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude)
 
 ## Related content
 

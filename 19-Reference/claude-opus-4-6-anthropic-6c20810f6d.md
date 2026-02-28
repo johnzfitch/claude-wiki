@@ -1,12 +1,9 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-13T09:23:09Z"
+fetched_at: "2026-02-24T05:03:43Z"
 source_url: "https://www.anthropic.com/news/claude-opus-4-6"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---
-
-Announcements
-
 # Introducing Claude Opus 4.6
 
 Feb 5, 2026
@@ -33,7 +30,7 @@ In Claude Code, you can now assemble [*agent teams*](https://code.claude.com/doc
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
-Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.b62eeb98-36ac-4cc7-94a8-83d0a4ec644f), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
+Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.b97a16d8-15f0-4f60-80b4-9db2b6109bc2), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
 
 We cover the model, our new product updates, our evaluations, and our extensive safety testing in depth below.
 
@@ -226,20 +223,21 @@ Claude now also works better with the office tools you already use. Claude in Ex
 - **CyberGym**: Claude models were run on no thinking, default effort, temperature, and `top_p`. The model was also given a “think” tool that allowed interleaved thinking for multi-turn evaluations.
 - **OpenRCA**: For each failure case in OpenRCA, Claude receives 1 point if all generated root-cause elements match the ground-truth ones, and 0 points if any mismatch is identified. The overall accuracy is the average score across all failure cases. The benchmark was run on the benchmark author’s harness, graded using their official methodology, and has been submitted for official verification.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/claude-opus-4-6)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/claude-opus-4-6)
+\[Feb 23, 2026\] Updated reported score for Opus 4.6 for HLE with tools (53.1% to 53.0%). The update was caused by running an improved cheating detection pipeline which flagged 3 additional instances of cheating that our original pipeline had missed.
+
 
 ## Related content
 
-### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
+### Detecting and preventing distillation attacks
 
-We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
+[Read more](/news/detecting-and-preventing-distillation-attacks)
 
-[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
+### Making frontier cybersecurity capabilities available to defenders
 
-### Anthropic is donating \$20 million to Public First Action
+Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
 
-[Read more](/news/donate-public-first-action)
+[Read more](/news/claude-code-security)
 
-### Covering electricity price increases from our data centers
+### Anthropic and the Government of Rwanda sign MOU for AI in health and education
 
-[Read more](/news/covering-electricity-price-increases)
+[Read more](/news/anthropic-rwanda-mou)

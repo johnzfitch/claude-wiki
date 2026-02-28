@@ -1,61 +1,15 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-16T21:12:48Z"
+fetched_at: "2026-02-28T11:22:21Z"
 source_url: "https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account"
 title: "Logging in to your Console account | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_ed0c8f0a3d)
-
-[](#h_f579218e8a)
-
-[](#h_30c96c5d21)
-
-[](#h_6d8b02d20a)
-
-[All Collections](/en/)
-
-[Claude API and Console](https://support.claude.com/en/collections/5370014-claude-api-and-console)
-
-[Using the Claude API and Console](https://support.claude.com/en/collections/9811457-using-the-claude-api-and-console)
-
-Logging in to your Console account
-
 # Logging in to your Console account
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_ed0c8f0a3d)
-
-[](#h_f579218e8a)
-
-[](#h_30c96c5d21)
-
-[](#h_6d8b02d20a)
 
 When you navigate to the [Claude Console](https://platform.claude.com), you will see two different options for logging in to your Console account.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1935026646/d90d1613a3dbe763fef5abb96e3c/image.png?expires=1771278300&signature=3fc9fa998dd3233ca102998bb0623e45c9bf91c74f5c9839f7a9cbc5f7d3e428&req=dSkkE8l8m4dbX%2FMW1HO4zcrI6Ijup4gO8vUNcPt4%2B73mKaRx6AkPMZ2JqisO%0ATkrnx0lOgZruCPKUPic%3D%0A)
 
 ## Continue with Google
 
@@ -133,45 +87,17 @@ Yes, you can have both a Claude account (for using Claude at claude.ai) and a Co
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account)
 
 Can I have a Claude account and a Console account?
 
-[](https://support.claude.com/en/articles/10310342-how-do-i-log-out-of-all-active-sessions)
 
 How do I log out of all active sessions?
 
-[](https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account)
 
-How can I delete my Claude Console account?
+Set up single sign-on (SSO)
 
-[](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
-
-Setting up single sign-on (SSO)
-
-[](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account)
 
 Logging in to your Claude account
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Inviting members to the Claude Console

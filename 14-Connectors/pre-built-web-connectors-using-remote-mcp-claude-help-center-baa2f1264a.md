@@ -1,45 +1,14 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:36Z"
+fetched_at: "2026-02-28T11:22:33Z"
 source_url: "https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp"
 title: "Pre-built web connectors using remote MCP | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_2ca37c0642)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
-
-Pre-built web connectors using remote MCP
+4.  Pre-built web connectors using remote MCP
 
 # Pre-built web connectors using remote MCP
 
-Updated this week
-
-Table of contents
-
-[](#h_2ca37c0642)
 
 Web connectors using remote MCP are available for all users on Claude, Claude Desktop, and Claude Mobile (iOS and Android).
 
@@ -77,45 +46,17 @@ For more details on how to add and use connectors, see **[Getting started with c
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 
 Building custom connectors via remote MCP servers
 
-[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)
 
 Enabling and using the Microsoft 365 connector
 
-[](https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide)
 
 Remote MCP Server Submission Guide
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

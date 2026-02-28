@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Note-Saving Tool with Pydantic and Anthropic Tool Use
 
 In this example, we\'ll create a tool that saves a note with the author

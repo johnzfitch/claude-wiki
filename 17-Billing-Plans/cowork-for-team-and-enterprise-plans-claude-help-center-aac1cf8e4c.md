@@ -1,57 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:48Z"
+fetched_at: "2026-02-28T11:22:16Z"
 source_url: "https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans"
 title: "Cowork for Team and Enterprise plans | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_dc4e6faa8d)
-
-[](#h_c3231aa0b4)
-
-[](#h_d199ebca95)
-
-[](#h_0ab0817a27)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[General](https://support.claude.com/en/collections/9811414-general)
-
-Cowork for Team and Enterprise plans
-
 # Cowork for Team and Enterprise plans
 
-Updated this week
-
-Table of contents
-
-[](#h_dc4e6faa8d)
-
-[](#h_c3231aa0b4)
-
-[](#h_d199ebca95)
-
-[](#h_0ab0817a27)
 
 This article explains important limitations and considerations for Team and Enterprise organizations using Cowork during the research preview period.
 
@@ -91,15 +46,31 @@ Cowork will be on by default when the research preview launches, but organizatio
 
 Plugins are included with Cowork and controlled by the same admin toggle—there's no separate setting to manage plugin access within Cowork.
 
-When Cowork is enabled, users can:
+For details on what members can do with plugins, see **[Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)**.
 
-- Access pre-installed knowledge work plugins (e.g., sales, legal, data analysis, finance, productivity)
+------------------------------------------------------------------------
 
-- Install additional plugins from Anthropic's public repository
+## Managing plugins for your organization
 
-- Customize existing plugins or create new ones locally on their machines
+Owners can create plugin marketplaces to distribute curated plugins across their organization. This gives you control over which plugins your team members see and use in Cowork.
 
-**Note:** During the research preview, plugins are saved locally to each user's machine and cannot be centrally provisioned or managed by admins. Admin-provided plugins and org-wide plugin management are planned for a future release.
+For each plugin, you can set one of three installation preferences:
+
+- **Auto-install** — Automatically added for everyone in your organization. Members can uninstall if they choose.
+
+- **Available** — Appears in the plugin catalog for members to install on their own.
+
+- **Not available** — Hidden from the catalog. Useful for staging or deprecating plugins.
+
+You can populate your marketplace by uploading plugin files directly. To get started, go to **Organization settings \> Plugins** in Claude Desktop.
+
+For a full walkthrough, see **[Manage plugins for your organization](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**.
+
+------------------------------------------------------------------------
+
+## Company branding
+
+Cowork now surfaces your organization's branding, including a redesigned home screen tailored to your team. Team and Enterprise owners can configure branding within **Organization settings**.
 
 ------------------------------------------------------------------------
 
@@ -117,17 +88,23 @@ Cowork activity is **not captured** in:
 
 - Data Exports
 
-Security teams will have no visibility into Cowork usage through standard enterprise monitoring tools. If your organization requires audit trails for compliance purposes, do not enable Cowork for regulated workloads.
+If your organization requires audit trails for compliance purposes, do not enable Cowork for regulated workloads.
+
+### OpenTelemetry support
+
+Team and Enterprise owners can track usage, costs, and tool activity across their teams using OpenTelemetry. This provides visibility into how Cowork and plugins are being used, though it doesn't replace audit logging for compliance purposes.
+
+For more information, see **[Monitoring in our Claude Code Docs](https://code.claude.com/docs/en/monitoring-usage)**.
 
 ### Local conversation storage
 
 Cowork stores conversation history locally on users' computers. This data is not subject to Anthropic's standard **[data retention policies](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)** and cannot be centrally managed or exported by admins.
 
-### No role-based access controls
+### Access controls
 
-Cowork access cannot be selectively limited by user, role, or team within your organization. The admin toggle is organization-wide only—either all users have access or none do.
+The Cowork toggle is organization-wide — either all members have access or none do. If you need to selectively enable Cowork for specific users or teams, reach out to your Anthropic Contact or our **[Sales team](https://claude.com/contact-sales)**.
 
-If you need to selectively enable Cowork for specific users or teams, contact your account representative.
+Within Cowork, admins have more granular control over plugins. You can set per-plugin installation preferences to control which plugins are auto-installed, available for self-service, or hidden from your organization's catalog. See **[Manage plugins for your organization](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)** for details.
 
 ------------------------------------------------------------------------
 
@@ -151,51 +128,25 @@ For detailed guidance, see **[Using Cowork safely](https://support.claude.com/en
 
 ### Network access
 
-Cowork respects your organization's current network egress permissions. Review your network access settings in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** before enabling Cowork.
+Cowork respects your organization's current network egress permissions. Review your network access settings in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** under **Code execution** before enabling Cowork.
+
+**Important:** Network egress permissions don't apply to the **[web search tool](https://support.claude.com/en/articles/10684626-enabling-and-using-web-search)**. Team or Enterprise plan owners can turn off web search for Cowork and Chat in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10065433-installing-claude-desktop)
 
-Installing Claude Desktop
+Get started with Cowork
 
-[](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)
 
-HIPAA-ready Enterprise plans
+Use Cowork safely
 
-[](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
 
-Getting started with Cowork
+Manage Cowork plugins for your organization
 
-[](https://support.claude.com/en/articles/13364135-using-cowork-safely)
 
-Using Cowork safely
+Use plugins in Cowork
 
-[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 
-Purchasing and managing seats on Enterprise plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Schedule recurring tasks in Cowork

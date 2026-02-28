@@ -3,7 +3,6 @@ description: "Comprehensive PR review using specialized agents"
 argument-hint: "[review-aspects]"
 allowed-tools: ["Bash", "Glob", "Grep", "Read", "Task"]
 ---
-
 # Comprehensive PR Review
 
 Run a comprehensive pull request review using multiple specialized agents, each focusing on a different aspect of code quality.

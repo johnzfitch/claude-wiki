@@ -1,69 +1,12 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-08T20:52:09Z"
+fetched_at: "2026-02-28T11:22:04Z"
 source_url: "https://support.claude.com/en/articles/9015913-how-to-get-support"
 title: "How to get support | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_beb6d0c9ce)
-
-[](#h_0723366ceb)
-
-[](#h_519da233a4)
-
-[](#h_d6fc679aa4)
-
-[](#h_49ec22aafa)
-
-[](#h_798440a7d7)
-
-[](#h_ec9e212ec0)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Account Management](https://support.claude.com/en/collections/9811145-account-management)
-
-How to get support
-
 # How to get support
 
-Updated yesterday
-
-Table of contents
-
-[](#h_beb6d0c9ce)
-
-[](#h_0723366ceb)
-
-[](#h_519da233a4)
-
-[](#h_d6fc679aa4)
-
-[](#h_49ec22aafa)
-
-[](#h_798440a7d7)
-
-[](#h_ec9e212ec0)
 
 This guide explains how to get support for your Claude or Console account. Different support options are available depending on your plan.
 
@@ -201,45 +144,17 @@ Users in the EU can find instructions on how to find the single point of contact
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8606378-how-do-i-use-the-workbench)
 
-How do I use the Workbench?
+Where can I go for Claude API support and assistance?
 
-[](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
 
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
-[](https://support.claude.com/en/articles/10366432-i-m-getting-an-api-connection-error-how-can-i-fix-it)
-
-I'm getting an API connection error. How can I fix it?
-
-[](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
 
 Claude Code usage analytics
 
-[](https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government)
+
+Requesting a refund for a paid Claude plan
+
 
 How to get support for Claude for Government
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

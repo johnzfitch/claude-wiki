@@ -1,4 +1,3 @@
-::: {.cell .markdown id="HCuST1ZZKuXv"}
 # Working with Charts, Graphs, and Slide Decks
 
 Claude is highly capable of working with charts, graphs, and broader

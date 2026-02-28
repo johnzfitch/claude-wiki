@@ -1,35 +1,14 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-16T21:12:51Z"
+fetched_at: "2026-02-28T11:22:19Z"
 source_url: "https://support.claude.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information"
 title: "What is Anthropic’s policy for handling governmental requests for user information? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-[All Collections](/en/)
-
-[Privacy and Legal](https://support.claude.com/en/collections/4078534-privacy-and-legal)
-
-What is Anthropic’s policy for handling governmental requests for user information?
+3.  What is Anthropic’s policy for handling governmental requests for user information?
 
 # What is Anthropic’s policy for handling governmental requests for user information?
 
-Updated over a week ago
 
 Trust and transparency are paramount values. Accordingly:
 
@@ -43,45 +22,17 @@ Trust and transparency are paramount values. Accordingly:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
 
 Does Anthropic crawl data from the web, and how can site owners block the crawler?
 
-[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program)
 
 Model Safety Bug Bounty Program
 
-[](https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude)
 
 Crisis Helpline Support in Claude
 
-[](https://support.claude.com/en/articles/13704655-unauthorized-anthropic-stock-sales-and-investment-scams)
 
 Unauthorized Anthropic stock sales and investment scams
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

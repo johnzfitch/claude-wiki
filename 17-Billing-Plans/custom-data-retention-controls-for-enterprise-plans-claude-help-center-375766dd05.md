@@ -1,69 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:34Z"
+fetched_at: "2026-02-28T11:22:16Z"
 source_url: "https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans"
 title: "Custom data retention controls for Enterprise plans | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_b6421965c8)
-
-[](#h_4ce44fc14b)
-
-[](#h_9a7f8351d3)
-
-[](#h_219c4bee62)
-
-[](#h_219c4bee62)
-
-[](#h_7f2562e784)
-
-[](#h_744ab242dc)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Enterprise Plan](https://support.claude.com/en/collections/10351014-enterprise-plan)
-
-Custom data retention controls for Enterprise plans
+4.  Custom data retention controls for Enterprise plans
 
 # Custom data retention controls for Enterprise plans
 
-Updated this week
-
-Table of contents
-
-[](#h_b6421965c8)
-
-[](#h_4ce44fc14b)
-
-[](#h_9a7f8351d3)
-
-[](#h_219c4bee62)
-
-[](#h_219c4bee62)
-
-[](#h_7f2562e784)
-
-[](#h_744ab242dc)
 
 This feature is available to Enterprise plan customers. To set custom retention periods for your organization, you must have either a Primary Owner or Owner role.
 
@@ -125,45 +70,17 @@ All retention-related actions and changes are automatically tracked in **[audit 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans)
 
 Can you delete data that I sent via Team and Enterprise plans?
 
-[](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)
 
 Using Claude’s chat search and memory to build on previous context
 
-[](https://support.claude.com/en/articles/12260368-using-incognito-chats)
 
 Using incognito chats
 
-[](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
 Usage analytics for Team and Enterprise plans
 
-[](https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide)
 
 Claude Enterprise Analytics API reference guide
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

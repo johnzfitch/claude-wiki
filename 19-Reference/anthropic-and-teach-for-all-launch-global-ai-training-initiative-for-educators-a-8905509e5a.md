@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-teach-for-all"
 title: "Anthropic and Teach For All launch global AI training initiative for educators \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic and Teach For All launch global AI training initiative for educators
 
 Jan 21, 2026
@@ -58,9 +55,6 @@ This is our commitment—ensuring that educators in every community, not just th
 For more on Anthropic's education initiatives, [see here](https://claude.com/solutions/education).
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-teach-for-all)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-teach-for-all)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

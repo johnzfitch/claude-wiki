@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute"
 title: "Anthropic partners with Allen Institute and Howard Hughes Medical Institute to accelerate scientific discovery \\ Anthropic"
 ---
-
-Societal Impacts
-
 # Anthropic partners with Allen Institute and Howard Hughes Medical Institute to accelerate scientific discovery
 
 Feb 2, 2026
@@ -35,7 +32,6 @@ For Anthropic, this collaboration provides in-depth feedback from real scientifi
 
 These partnerships will inform the broader development of [Claude’s life science capabilities](https://claude.com/solutions/life-sciences), generating insights about how AI systems can most effectively support scientific workflows across diverse research contexts. Anthropic is committed to responsible development that prioritizes scientific rigor, interpretability, and researcher autonomy.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute)
 
 ## Related content
 

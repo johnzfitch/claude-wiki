@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Using the Wolfram Alpha LLM API as a Tool with Claude
 
 In this recipe, we\'ll show you how to integrate the Wolfram Alpha LLM

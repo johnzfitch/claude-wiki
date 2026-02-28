@@ -1,71 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:01Z"
+fetched_at: "2026-02-28T11:22:07Z"
 source_url: "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
 title: "Using Claude in Chrome Safely | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_044f6a88a7)
-
-[](#h_0a7e39d706)
-
-[](#h_34f8d5ca87)
-
-[](#h_a15e07145e)
-
-[](#h_546c2e534b)
-
-[](#h_22d184f510)
-
-[](#h_f5bc897043)
-
-[](#h_918ff93f08)
-
-[All Collections](/en/)
-
-[Claude in Chrome](https://support.claude.com/en/collections/18031491-claude-in-chrome)
-
-Using Claude in Chrome Safely
-
 # Using Claude in Chrome Safely
 
-Updated yesterday
-
-Table of contents
-
-[](#h_044f6a88a7)
-
-[](#h_0a7e39d706)
-
-[](#h_34f8d5ca87)
-
-[](#h_a15e07145e)
-
-[](#h_546c2e534b)
-
-[](#h_22d184f510)
-
-[](#h_f5bc897043)
-
-[](#h_918ff93f08)
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
 
@@ -143,7 +84,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 - Known pirated content sites
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#097c7a6c7b7a686f6c7d704968677d617b6679606a276a6664).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#b6c3c5d3c4c5d7d0d3c2cff6d7d8c2dec4d9c6dfd598d5d9db).
 
 ------------------------------------------------------------------------
 
@@ -231,45 +172,17 @@ For admin documentation, see [Claude in Chrome Admin Controls](https://support.c
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
-[](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)
 
 Claude in Chrome Troubleshooting
 
-[](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide)
 
 Claude in Chrome Permissions Guide
 
-[](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Admin Controls
+Claude in Chrome admin controls
 
-[](https://support.claude.com/en/articles/13364135-using-cowork-safely)
 
-Using Cowork safely
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Use Cowork safely

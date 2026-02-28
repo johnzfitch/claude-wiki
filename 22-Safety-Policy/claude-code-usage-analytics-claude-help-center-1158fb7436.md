@@ -1,67 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-28T11:22:07Z"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 title: "Claude Code usage analytics | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_edd23f4042)
-
-[](#h_7191a3200d)
-
-[](#h_82671dfd89)
-
-[](#h_f3682a321a)
-
-[](#h_6e630f787e)
-
-[](#h_3f8a51f94d)
-
-[](#h_3a1c5ce949)
-
-[All Collections](/en/)
-
-[Claude Code](https://support.claude.com/en/collections/14445694-claude-code)
-
-Claude Code usage analytics
-
 # Claude Code usage analytics
 
-Updated yesterday
-
-Table of contents
-
-[](#h_edd23f4042)
-
-[](#h_7191a3200d)
-
-[](#h_82671dfd89)
-
-[](#h_f3682a321a)
-
-[](#h_6e630f787e)
-
-[](#h_3f8a51f94d)
-
-[](#h_3a1c5ce949)
 
 This feature allows Console users and owners of Team and Enterprise plans to monitor how their organization uses Claude Code, tracking productivity metrics and adoption patterns across teams.
 
@@ -109,7 +54,6 @@ The Claude Code Usage page displays the following metrics for your organization:
 
 - **Lines accepted over time**: Daily breakdown of accepted code lines.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1717579277/46c512f4b3ed05c359cecd78ed5c/e0ce2c19-39e2-411f-9a1f-cb1d46439a42?expires=1770585300&signature=81eba2a7d1d89df4831e40cabd989b2e18d3077124137da35d6f179d3408d973&req=dScmEcx5lINYXvMW1HO4zfiEMKZVh3zNCX9h5MbdDjPL9J9Xm0sS4lTLHa%2FV%0AlXXgOQ3LmNodXd92quo%3D%0A)
 
 ### User-level metrics
 
@@ -199,45 +143,17 @@ See **[Analytics](https://code.claude.com/docs/en/analytics)** in our Claude Cod
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
-
-Using Claude Code with your Team or Enterprise plan
-
-[](https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code)
-
-Automated Security Reviews in Claude Code
-
-[](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
 
-[](https://support.claude.com/en/articles/12618689-claude-code-on-the-web)
 
 Claude Code on the web
 
-[](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
-Usage Analytics for Team and Enterprise Plans
+Usage analytics for Team and Enterprise plans
 
-Did this answer your question?
 
-😞
+Access engagement and adoption data with the Analytics API
 
-😐
 
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Claude Enterprise Analytics API reference guide

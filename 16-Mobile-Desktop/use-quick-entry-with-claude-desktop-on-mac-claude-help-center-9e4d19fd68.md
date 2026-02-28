@@ -1,73 +1,14 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-08T20:52:00Z"
+fetched_at: "2026-02-28T11:22:18Z"
 source_url: "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac"
 title: "Use quick entry with Claude Desktop on Mac | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_e042a18d9b)
-
-[](#h_0f5073bb3e)
-
-[](#h_fb5dc5ae07)
-
-[](#h_b220480ee0)
-
-[](#h_979a26fd56)
-
-[](#h_f36d1cf7b6)
-
-[](#h_292d7a9df2)
-
-[](#h_e38c50ac80)
-
-[All Collections](/en/)
-
-[Claude Desktop](https://support.claude.com/en/collections/16163169-claude-desktop)
-
-[General](https://support.claude.com/en/collections/17879568-general)
-
-Use quick entry with Claude Desktop on Mac
+4.  Use quick entry with Claude Desktop on Mac
 
 # Use quick entry with Claude Desktop on Mac
 
-Updated yesterday
-
-Table of contents
-
-[](#h_e042a18d9b)
-
-[](#h_0f5073bb3e)
-
-[](#h_fb5dc5ae07)
-
-[](#h_b220480ee0)
-
-[](#h_979a26fd56)
-
-[](#h_f36d1cf7b6)
-
-[](#h_292d7a9df2)
-
-[](#h_e38c50ac80)
 
 Quick entry is a redesigned experience for Claude Desktop on Mac that lets you access Claude instantly from anywhere on your computer. With quick entry, you can start chats, capture screenshots, share application windows, and use voice dictation to interact with Claude without navigating away from your current task.
 
@@ -109,7 +50,6 @@ When you first open the updated version of Claude Desktop, you'll see a prompt t
 
 Once enabled, double-tapping Option will open a text box where you can type your message and start a new chat. You can also click "New chat" to see your five most recent conversations.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1893088365/2ca4b782dda90abea1fe5f4150af/CleanShot+2025-12-18+at+13_14_30%402x.png?expires=1770585300&signature=e6321ef2b107f5e87e63687c50b5921fe5708b5e29677598e2f40dd93affa88c&req=dSguFcl2lYJZXPMW1HO4zWggAN5UrpmZRC8c%2FcM5c2LjwM9YGtRJYPCVrwaY%0AETIQQegzHcHHsTWtvy8%3D%0A)
 
 ### Enable the voice shortcut (optional)
 
@@ -245,45 +185,17 @@ You can customize the quick access shortcut to use Option + Space or create a cu
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10065433-installing-claude-desktop)
 
 Installing Claude Desktop
 
-[](https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios)
 
 Using Claude App Intents, Shortcuts, and Widgets on iOS
 
-[](https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android)
 
 Using the Claude Widget on Android
 
-[](https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps)
 
-Using voice mode on Claude Mobile Apps
+FAQs on Using Claude for Education at Your University
 
-[](https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos)
 
 Deploy Claude Desktop for macOS
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

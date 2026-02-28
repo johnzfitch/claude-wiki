@@ -3,7 +3,6 @@ description: Create hooks to prevent unwanted behaviors from conversation analys
 argument-hint: Optional specific behavior to address
 allowed-tools: ["Read", "Write", "AskUserQuestion", "Task", "Grep", "TodoWrite", "Skill"]
 ---
-
 # Hookify - Create Hooks from Unwanted Behaviors
 
 **FIRST: Load the hookify:writing-rules skill** using the Skill tool to understand rule file format and syntax.

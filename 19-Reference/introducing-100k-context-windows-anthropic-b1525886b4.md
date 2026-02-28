@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/news/100k-context-windows"
 title: "Introducing 100K Context Windows \\ Anthropic"
 ---
-
-Announcements
-
 # Introducing 100K Context Windows
 
 May 11, 2023
@@ -31,7 +28,6 @@ Our partners are excited about what larger context windows means for their busin
 
 \[1\] [https://www.sciencedirect.com/...](https://www.sciencedirect.com/science/article/abs/pii/S0749596X19300786)
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/100k-context-windows)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/100k-context-windows)
 
 ## Related content
 

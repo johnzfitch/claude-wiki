@@ -1,4 +1,3 @@
-::: {.cell .markdown id="XvksyJE6Onz_"}
 # SubQuestionQueryEngine
 
 Often, we encounter scenarios where our queries span across multiple

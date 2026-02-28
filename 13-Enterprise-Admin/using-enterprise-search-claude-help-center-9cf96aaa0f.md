@@ -1,81 +1,12 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-16T21:12:42Z"
+fetched_at: "2026-02-28T11:22:17Z"
 source_url: "https://support.claude.com/en/articles/12489464-using-enterprise-search"
 title: "Using Enterprise Search | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_c7a5619439)
-
-[](#h_c4f87aaaef)
-
-[](#h_3ee9eca784)
-
-[](#h_f5b68b9555)
-
-[](#h_d7fea5a243)
-
-[](#h_3474848706)
-
-[](#h_956e14c7d4)
-
-[](#h_442d4c1b2c)
-
-[](#h_14d807930d)
-
-[](#h_e1ab81299d)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[General](https://support.claude.com/en/collections/9811414-general)
-
-Using Enterprise Search
-
 # Using Enterprise Search
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_c7a5619439)
-
-[](#h_c4f87aaaef)
-
-[](#h_3ee9eca784)
-
-[](#h_f5b68b9555)
-
-[](#h_d7fea5a243)
-
-[](#h_3474848706)
-
-[](#h_956e14c7d4)
-
-[](#h_442d4c1b2c)
-
-[](#h_14d807930d)
-
-[](#h_e1ab81299d)
 
 Enterprise search capabilities are available for users on Claude for Work (Team and Enterprise) plans.
 
@@ -395,45 +326,17 @@ Search results are retained with their associated chats. You can delete search d
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10168395-setting-up-claude-integrations)
 
-Setting up Claude integrations
+Set up Claude integrations
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
-
-Getting started with custom connectors using remote MCP
-
-[](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
 Pre-built web connectors using remote MCP
 
-[](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)
 
 Enabling and using the Microsoft 365 connector
 
-[](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
+
+Using the Synapse.org connector in Claude
+
 
 Using interactive connectors in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

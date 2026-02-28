@@ -4,9 +4,6 @@ fetched_at: "2026-02-13T09:23:10Z"
 source_url: "https://www.anthropic.com/news/healthcare-life-sciences"
 title: "Advancing Claude in healthcare and the life sciences \\ Anthropic"
 ---
-
-Announcements
-
 # Advancing Claude in healthcare and the life sciences
 
 Jan 11, 2026
@@ -207,7 +204,6 @@ You can also [contact our sales team](https://www.claude.com/contact-sales%20) t
 
 February 7, 2026: *Edited the introductory paragraph to clarify that HIPAA-ready products are specific to healthcare providers and payers. The personal health integrations for individual users are covered in the "Connecting personal health data" section.*
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/healthcare-life-sciences)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/healthcare-life-sciences)
 
 ## Related content
 

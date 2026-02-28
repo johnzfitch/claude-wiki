@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-education-report-how-educators-use-claude"
 title: "Anthropic education report: How educators use Claude \\ Anthropic"
 ---
-
-Societal Impacts
-
 # Anthropic Education Report: How educators use Claude
 
 Aug 27, 2025
@@ -170,7 +167,6 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 
 \*In cases where the augmentation/automation category could not be identified, we excluded those from the chart. For more information on these categories, please see our Anthropic Economic Index [research](https://arxiv.org/pdf/2503.04761).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-education-report-how-educators-use-claude)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-education-report-how-educators-use-claude)
 
 ## Related content
 

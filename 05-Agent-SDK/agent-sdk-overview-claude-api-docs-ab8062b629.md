@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:31Z"
+fetched_at: "2026-02-24T04:05:36Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/overview"
 title: "Agent SDK overview - Claude API Docs"
 ---
-
-Agent SDK
-
 # Agent SDK overview
 
-Copy page
 
 Build production AI agents with Claude Code as a library
 
-Copy page
 
 The Claude Code SDK has been renamed to the Claude Agent SDK. If you're migrating from the old SDK, see the [Migration Guide](/docs/en/agent-sdk/migration-guide).
 
@@ -25,12 +20,14 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
+
 async def main():
     async for message in query(
         prompt="Find and fix the bug in auth.py",
-        options=ClaudeAgentOptions(allowed_tools=["Read", "Edit", "Bash"])
+        options=ClaudeAgentOptions(allowed_tools=["Read", "Edit", "Bash"]),
     ):
         print(message)  # Claude reads the file, finds the bug, edits it
+
 
 asyncio.run(main())
 ```
@@ -43,7 +40,6 @@ Quickstart
 
 Build a bug-fixing agent in minutes
 
-[](https://github.com/anthropics/claude-agent-sdk-demos)
 
 Example agents
 
@@ -101,13 +97,15 @@ Get started
     import asyncio
     from claude_agent_sdk import query, ClaudeAgentOptions
 
+
     async def main():
         async for message in query(
             prompt="What files are in this directory?",
-            options=ClaudeAgentOptions(allowed_tools=["Bash", "Glob"])
+            options=ClaudeAgentOptions(allowed_tools=["Bash", "Glob"]),
         ):
             if hasattr(message, "result"):
                 print(message.result)
+
 
     asyncio.run(main())
     ```
@@ -166,13 +164,15 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
+
 async def main():
     async for message in query(
         prompt="Find all TODO comments and create a summary",
-        options=ClaudeAgentOptions(allowed_tools=["Read", "Glob", "Grep"])
+        options=ClaudeAgentOptions(allowed_tools=["Read", "Glob", "Grep"]),
     ):
         if hasattr(message, "result"):
             print(message.result)
+
 
 asyncio.run(main())
 ```
@@ -215,7 +215,7 @@ Python
 response = client.messages.create(...)
 while response.stop_reason == "tool_use":
     result = your_tool_executor(response.tool_use)
-    response = client.messages.create(tool_result=result, ...)
+    response = client.messages.create(tool_result=result, **params)
 
 # Agent SDK: Claude handles tools autonomously
 async for message in query(prompt="Fix the bug in auth.py"):
@@ -275,7 +275,6 @@ Quickstart
 
 Build an agent that finds and fixes bugs in minutes
 
-[](https://github.com/anthropics/claude-agent-sdk-demos)
 
 Example agents
 
@@ -292,99 +291,3 @@ Full TypeScript API reference and examples
 Python SDK
 
 Full Python API reference and examples
-
-Was this page helpful?
-
-- 
-
-- [Get started](#get-started)
-
-- [Capabilities](#capabilities)
-
-- [Claude Code features](#claude-code-features)
-
-- [Compare the Agent SDK to other Claude tools](#compare-the-agent-sdk-to-other-claude-tools)
-
-- [Changelog](#changelog)
-
-- [Reporting bugs](#reporting-bugs)
-
-- [Branding guidelines](#branding-guidelines)
-
-- [License and terms](#license-and-terms)
-
-- [Next steps](#next-steps)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

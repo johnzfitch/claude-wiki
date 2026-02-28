@@ -1,77 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:44Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research"
 title: "Using PitchBook for Investment Research | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_7ec07773e9)
-
-[](#h_f7160a00f6)
-
-[](#h_09b4d1106a)
-
-[](#h_ab2e9f9cf0)
-
-[](#h_cbdf6806de)
-
-[](#h_ebd2397857)
-
-[](#h_de9b0527a4)
-
-[](#h_33b29af8a1)
-
-[](#h_063cc695a1)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-[Market Data](https://support.claude.com/en/collections/16288976-market-data)
-
-Using PitchBook for Investment Research
+4.  Using PitchBook for Investment Research
 
 # Using PitchBook for Investment Research
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_7ec07773e9)
-
-[](#h_f7160a00f6)
-
-[](#h_09b4d1106a)
-
-[](#h_ab2e9f9cf0)
-
-[](#h_cbdf6806de)
-
-[](#h_ebd2397857)
-
-[](#h_de9b0527a4)
-
-[](#h_33b29af8a1)
-
-[](#h_063cc695a1)
 
 The PitchBook Premium integration gives Claude access to proprietary private capital market data and analytical metrics. This article outlines the steps to set up and use PitchBook data for financial research, including financial analysis, competitive benchmarking, network relationship mapping, and investor portfolio analysis.
 
@@ -171,51 +108,23 @@ Discover unexpected connections between companies, investors, and professionals 
 
 ## Contact
 
-If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#d2a1a7a2a2bda0a692a2bba6b1bab0bdbdb9fcb1bdbf) for help.
+If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#c0b3b5b0b0afb2b480b0a9b4a3a8a2afafabeea3afad) for help.
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12220057-using-morningstar-for-investment-research)
 
 Using Morningstar for Investment Research
 
-[](https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research)
 
 Using FactSet for Comprehensive Financial Research
 
-[](https://support.claude.com/en/articles/12662597-using-chronograph-for-portfolio-monitoring)
 
 Using Chronograph for Portfolio Monitoring
 
-[](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
 
-Claude for Financial Services Skills
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Install financial services plugins for Cowork

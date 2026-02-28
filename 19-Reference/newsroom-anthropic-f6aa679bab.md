@@ -4,7 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/news"
 title: "Newsroom \\ Anthropic"
 ---
-
 # Newsroom
 
 - Press inquires[press@anthropic.com](mailto:press@anthropic.com)

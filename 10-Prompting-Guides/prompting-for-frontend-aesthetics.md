@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Frontend Aesthetics: A Prompting Guide
 
 Claude can generate high-quality frontends, but without guidance it

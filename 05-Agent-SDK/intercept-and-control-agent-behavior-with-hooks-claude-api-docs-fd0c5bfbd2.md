@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:39Z"
+fetched_at: "2026-02-24T04:06:43Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/hooks"
 title: "Intercept and control agent behavior with hooks - Claude API Docs"
 ---
-
-Guides
-
 # Intercept and control agent behavior with hooks
 
-Copy page
 
 Intercept and customize agent behavior at key execution points with hooks
 
-Copy page
 
 Hooks let you intercept agent execution at key points to add validation, logging, security controls, or custom logic. With hooks, you can:
 
@@ -36,24 +31,26 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, HookMatcher
 
+
 # Define a hook callback that receives tool call details
 async def protect_env_files(input_data, tool_use_id, context):
     # Extract the file path from the tool's input arguments
-    file_path = input_data['tool_input'].get('file_path', '')
-    file_name = file_path.split('/')[-1]
+    file_path = input_data["tool_input"].get("file_path", "")
+    file_name = file_path.split("/")[-1]
 
     # Block the operation if targeting a .env file
-    if file_name == '.env':
+    if file_name == ".env":
         return {
-            'hookSpecificOutput': {
-                'hookEventName': input_data['hook_event_name'],
-                'permissionDecision': 'deny',
-                'permissionDecisionReason': 'Cannot modify .env files'
+            "hookSpecificOutput": {
+                "hookEventName": input_data["hook_event_name"],
+                "permissionDecision": "deny",
+                "permissionDecisionReason": "Cannot modify .env files",
             }
         }
 
     # Return empty object to allow the operation
     return {}
+
 
 async def main():
     async for message in query(
@@ -62,11 +59,14 @@ async def main():
             hooks={
                 # Register the hook for PreToolUse events
                 # The matcher filters to only Write and Edit tool calls
-                'PreToolUse': [HookMatcher(matcher='Write|Edit', hooks=[protect_env_files])]
+                "PreToolUse": [
+                    HookMatcher(matcher="Write|Edit", hooks=[protect_env_files])
+                ]
             }
-        )
+        ),
     ):
         print(message)
+
 
 asyncio.run(main())
 ```
@@ -132,10 +132,8 @@ Python
 async for message in query(
     prompt="Your prompt",
     options=ClaudeAgentOptions(
-        hooks={
-            'PreToolUse': [HookMatcher(matcher='Bash', hooks=[my_callback])]
-        }
-    )
+        hooks={"PreToolUse": [HookMatcher(matcher="Bash", hooks=[my_callback])]}
+    ),
 ):
     print(message)
 ```
@@ -174,9 +172,7 @@ Python
 ``` shiki
 options = ClaudeAgentOptions(
     hooks={
-        'PreToolUse': [
-            HookMatcher(matcher='Write|Edit', hooks=[validate_file_path])
-        ]
+        "PreToolUse": [HookMatcher(matcher="Write|Edit", hooks=[validate_file_path])]
     }
 )
 ```
@@ -235,7 +231,7 @@ Python
 
 ``` shiki
 async def log_tool_calls(input_data, tool_use_id, context):
-    if input_data['hook_event_name'] == 'PreToolUse':
+    if input_data["hook_event_name"] == "PreToolUse":
         print(f"Tool: {input_data['tool_name']}")
         print(f"Input: {input_data['tool_input']}")
     return {}
@@ -272,18 +268,18 @@ Python
 
 ``` shiki
 async def block_etc_writes(input_data, tool_use_id, context):
-    file_path = input_data['tool_input'].get('file_path', '')
+    file_path = input_data["tool_input"].get("file_path", "")
 
-    if file_path.startswith('/etc'):
+    if file_path.startswith("/etc"):
         return {
             # Top-level field: inject guidance into the conversation
-            'systemMessage': 'Remember: system directories like /etc are protected.',
+            "systemMessage": "Remember: system directories like /etc are protected.",
             # hookSpecificOutput: block the operation
-            'hookSpecificOutput': {
-                'hookEventName': input_data['hook_event_name'],
-                'permissionDecision': 'deny',
-                'permissionDecisionReason': 'Writing to /etc is not allowed'
-            }
+            "hookSpecificOutput": {
+                "hookEventName": input_data["hook_event_name"],
+                "permissionDecision": "deny",
+                "permissionDecisionReason": "Writing to /etc is not allowed",
+            },
         }
     return {}
 ```
@@ -311,17 +307,17 @@ Python
 
 ``` shiki
 async def block_dangerous_commands(input_data, tool_use_id, context):
-    if input_data['hook_event_name'] != 'PreToolUse':
+    if input_data["hook_event_name"] != "PreToolUse":
         return {}
 
-    command = input_data['tool_input'].get('command', '')
+    command = input_data["tool_input"].get("command", "")
 
-    if 'rm -rf /' in command:
+    if "rm -rf /" in command:
         return {
-            'hookSpecificOutput': {
-                'hookEventName': input_data['hook_event_name'],
-                'permissionDecision': 'deny',
-                'permissionDecisionReason': 'Dangerous command blocked: rm -rf /'
+            "hookSpecificOutput": {
+                "hookEventName": input_data["hook_event_name"],
+                "permissionDecision": "deny",
+                "permissionDecisionReason": "Dangerous command blocked: rm -rf /",
             }
         }
     return {}
@@ -337,19 +333,19 @@ Python
 
 ``` shiki
 async def redirect_to_sandbox(input_data, tool_use_id, context):
-    if input_data['hook_event_name'] != 'PreToolUse':
+    if input_data["hook_event_name"] != "PreToolUse":
         return {}
 
-    if input_data['tool_name'] == 'Write':
-        original_path = input_data['tool_input'].get('file_path', '')
+    if input_data["tool_name"] == "Write":
+        original_path = input_data["tool_input"].get("file_path", "")
         return {
-            'hookSpecificOutput': {
-                'hookEventName': input_data['hook_event_name'],
-                'permissionDecision': 'allow',
-                'updatedInput': {
-                    **input_data['tool_input'],
-                    'file_path': f'/sandbox{original_path}'
-                }
+            "hookSpecificOutput": {
+                "hookEventName": input_data["hook_event_name"],
+                "permissionDecision": "allow",
+                "updatedInput": {
+                    **input_data["tool_input"],
+                    "file_path": f"/sandbox{original_path}",
+                },
             }
         }
     return {}
@@ -367,9 +363,7 @@ Python
 
 ``` shiki
 async def add_security_reminder(input_data, tool_use_id, context):
-    return {
-        'systemMessage': 'Remember to follow security best practices.'
-    }
+    return {"systemMessage": "Remember to follow security best practices."}
 ```
 
 #### 
@@ -382,16 +376,16 @@ Python
 
 ``` shiki
 async def auto_approve_read_only(input_data, tool_use_id, context):
-    if input_data['hook_event_name'] != 'PreToolUse':
+    if input_data["hook_event_name"] != "PreToolUse":
         return {}
 
-    read_only_tools = ['Read', 'Glob', 'Grep', 'LS']
-    if input_data['tool_name'] in read_only_tools:
+    read_only_tools = ["Read", "Glob", "Grep", "LS"]
+    if input_data["tool_name"] in read_only_tools:
         return {
-            'hookSpecificOutput': {
-                'hookEventName': input_data['hook_event_name'],
-                'permissionDecision': 'allow',
-                'permissionDecisionReason': 'Read-only tool auto-approved'
+            "hookSpecificOutput": {
+                "hookEventName": input_data["hook_event_name"],
+                "permissionDecision": "allow",
+                "permissionDecisionReason": "Read-only tool auto-approved",
             }
         }
     return {}
@@ -416,11 +410,11 @@ Python
 ``` shiki
 options = ClaudeAgentOptions(
     hooks={
-        'PreToolUse': [
-            HookMatcher(hooks=[rate_limiter]),        # First: check rate limits
-            HookMatcher(hooks=[authorization_check]), # Second: verify permissions
-            HookMatcher(hooks=[input_sanitizer]),     # Third: sanitize inputs
-            HookMatcher(hooks=[audit_logger])         # Last: log the action
+        "PreToolUse": [
+            HookMatcher(hooks=[rate_limiter]),  # First: check rate limits
+            HookMatcher(hooks=[authorization_check]),  # Second: verify permissions
+            HookMatcher(hooks=[input_sanitizer]),  # Third: sanitize inputs
+            HookMatcher(hooks=[audit_logger]),  # Last: log the action
         ]
     }
 )
@@ -437,15 +431,13 @@ Python
 ``` shiki
 options = ClaudeAgentOptions(
     hooks={
-        'PreToolUse': [
+        "PreToolUse": [
             # Match file modification tools
-            HookMatcher(matcher='Write|Edit|Delete', hooks=[file_security_hook]),
-
+            HookMatcher(matcher="Write|Edit|Delete", hooks=[file_security_hook]),
             # Match all MCP tools
-            HookMatcher(matcher='^mcp__', hooks=[mcp_audit_hook]),
-
+            HookMatcher(matcher="^mcp__", hooks=[mcp_audit_hook]),
             # Match everything (no matcher)
-            HookMatcher(hooks=[global_logger])
+            HookMatcher(hooks=[global_logger]),
         ]
     }
 )
@@ -463,16 +455,15 @@ Python
 
 ``` shiki
 async def subagent_tracker(input_data, tool_use_id, context):
-    if input_data['hook_event_name'] == 'SubagentStop':
+    if input_data["hook_event_name"] == "SubagentStop":
         print(f"[SUBAGENT] Completed")
         print(f"  Tool use ID: {tool_use_id}")
         print(f"  Stop hook active: {input_data.get('stop_hook_active')}")
     return {}
 
+
 options = ClaudeAgentOptions(
-    hooks={
-        'SubagentStop': [HookMatcher(hooks=[subagent_tracker])]
-    }
+    hooks={"SubagentStop": [HookMatcher(hooks=[subagent_tracker])]}
 )
 ```
 
@@ -488,21 +479,22 @@ Python
 import aiohttp
 from datetime import datetime
 
+
 async def webhook_notifier(input_data, tool_use_id, context):
-    if input_data['hook_event_name'] != 'PostToolUse':
+    if input_data["hook_event_name"] != "PostToolUse":
         return {}
 
     try:
         async with aiohttp.ClientSession() as session:
             await session.post(
-                'https://api.example.com/webhook',
+                "https://api.example.com/webhook",
                 json={
-                    'tool': input_data['tool_name'],
-                    'timestamp': datetime.now().isoformat()
-                }
+                    "tool": input_data["tool_name"],
+                    "timestamp": datetime.now().isoformat(),
+                },
             )
     except Exception as e:
-        print(f'Webhook request failed: {e}')
+        print(f"Webhook request failed: {e}")
 
     return {}
 ```
@@ -521,8 +513,8 @@ import { query, HookCallback, NotificationHookInput } from "@anthropic-ai/claude
 const notificationHandler: HookCallback = async (input, toolUseID, { signal }) => {
   const notification = input as NotificationHookInput;
 
-  await fetch('https://hooks.slack.com/services/YOUR/WEBHOOK/URL', {
-    method: 'POST',
+  await fetch("https://hooks.slack.com/services/YOUR/WEBHOOK/URL", {
+    method: "POST",
     body: JSON.stringify({
       text: `Agent status: ${notification.message}`
     }),
@@ -570,7 +562,7 @@ Matchers only match **tool names**, not file paths or other arguments. To filter
 const myHook: HookCallback = async (input, toolUseID, { signal }) => {
   const preInput = input as PreToolUseHookInput;
   const filePath = preInput.tool_input?.file_path as string;
-  if (!filePath?.endsWith('.md')) return {};  // Skip non-markdown files
+  if (!filePath?.endsWith(".md")) return {}; // Skip non-markdown files
   // Process markdown files...
 };
 ```
@@ -600,8 +592,8 @@ Modified input not applied
   return {
     hookSpecificOutput: {
       hookEventName: input.hook_event_name,
-      permissionDecision: 'allow',
-      updatedInput: { command: 'new command' }
+      permissionDecision: "allow",
+      updatedInput: { command: "new command" }
     }
   };
   ```
@@ -646,129 +638,3 @@ Learn more
 - [Custom Tools](/docs/en/agent-sdk/custom-tools): build tools to extend agent capabilities
 - [TypeScript SDK Reference](/docs/en/agent-sdk/typescript)
 - [Python SDK Reference](/docs/en/agent-sdk/python)
-
-Was this page helpful?
-
-- 
-
-- [Available hooks](#available-hooks)
-
-- [Common use cases](#common-use-cases)
-
-- [Configure hooks](#configure-hooks)
-
-- [Matchers](#matchers)
-
-- [Callback function inputs](#callback-function-inputs)
-
-- [Input data](#input-data)
-
-- [Callback outputs](#callback-outputs)
-
-- [Handle advanced scenarios](#handle-advanced-scenarios)
-
-- [Chaining multiple hooks](#chaining-multiple-hooks)
-
-- [Tool-specific matchers with regex](#tool-specific-matchers-with-regex)
-
-- [Tracking subagent activity](#tracking-subagent-activity)
-
-- [Async operations in hooks](#async-operations-in-hooks)
-
-- [Sending notifications (TypeScript only)](#sending-notifications-type-script-only)
-
-- [Fix common issues](#fix-common-issues)
-
-- [Hook not firing](#hook-not-firing)
-
-- [Matcher not filtering as expected](#matcher-not-filtering-as-expected)
-
-- [Hook timeout](#hook-timeout)
-
-- [Tool blocked unexpectedly](#tool-blocked-unexpectedly)
-
-- [Modified input not applied](#modified-input-not-applied)
-
-- [Session hooks not available](#session-hooks-not-available)
-
-- [Subagent permission prompts multiplying](#subagent-permission-prompts-multiplying)
-
-- [Recursive hook loops with subagents](#recursive-hook-loops-with-subagents)
-
-- [systemMessage not appearing in output](#system-message-not-appearing-in-output)
-
-- [Learn more](#learn-more)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

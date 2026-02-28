@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:41Z"
+fetched_at: "2026-02-24T04:07:01Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/structured-outputs"
 title: "Get structured output from agents - Claude API Docs"
 ---
-
-Guides
-
 # Get structured output from agents
 
-Copy page
 
 Return validated JSON from agent workflows using JSON Schema, Zod, or Pydantic. Get type-safe, structured data after multi-turn tool use.
 
-Copy page
 
 Structured outputs let you define the exact shape of data you want back from an agent. The agent can use any tools it needs to complete the task, and you still get validated JSON matching your schema at the end. Define a [JSON Schema](https://json-schema.org/understanding-json-schema/about) for the structure you need, and the SDK guarantees the output matches it.
 
@@ -42,31 +37,31 @@ The example below asks the agent to research Anthropic and return the company na
 TypeScript
 
 ``` shiki
-import { query } from '@anthropic-ai/claude-agent-sdk'
+import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Define the shape of data you want back
 const schema = {
-  type: 'object',
+  type: "object",
   properties: {
-    company_name: { type: 'string' },
-    founded_year: { type: 'number' },
-    headquarters: { type: 'string' }
+    company_name: { type: "string" },
+    founded_year: { type: "number" },
+    headquarters: { type: "string" }
   },
-  required: ['company_name']
-}
+  required: ["company_name"]
+};
 
 for await (const message of query({
-  prompt: 'Research Anthropic and provide key company information',
+  prompt: "Research Anthropic and provide key company information",
   options: {
     outputFormat: {
-      type: 'json_schema',
+      type: "json_schema",
       schema: schema
     }
   }
 })) {
   // The result message contains structured_output with validated data
-  if (message.type === 'result' && message.structured_output) {
-    console.log(message.structured_output)
+  if (message.type === "result" && message.structured_output) {
+    console.log(message.structured_output);
     // { company_name: "Anthropic", founded_year: 2021, headquarters: "San Francisco, CA" }
   }
 }
@@ -83,8 +78,8 @@ The example below defines a schema for a feature implementation plan with a summ
 TypeScript
 
 ``` shiki
-import { z } from 'zod'
-import { query } from '@anthropic-ai/claude-agent-sdk'
+import { z } from "zod";
+import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Define schema with Zod
 const FeaturePlan = z.object({
@@ -93,36 +88,36 @@ const FeaturePlan = z.object({
   steps: z.array(z.object({
     step_number: z.number(),
     description: z.string(),
-    estimated_complexity: z.enum(['low', 'medium', 'high'])
+    estimated_complexity: z.enum(["low", "medium", "high"])
   })),
   risks: z.array(z.string())
-})
+});
 
 type FeaturePlan = z.infer<typeof FeaturePlan>
 
 // Convert to JSON Schema
-const schema = z.toJSONSchema(FeaturePlan)
+const schema = z.toJSONSchema(FeaturePlan);
 
 // Use in query
 for await (const message of query({
-  prompt: 'Plan how to add dark mode support to a React app. Break it into implementation steps.',
+  prompt: "Plan how to add dark mode support to a React app. Break it into implementation steps.",
   options: {
     outputFormat: {
-      type: 'json_schema',
+      type: "json_schema",
       schema: schema
     }
   }
 })) {
-  if (message.type === 'result' && message.structured_output) {
+  if (message.type === "result" && message.structured_output) {
     // Validate and get fully typed result
-    const parsed = FeaturePlan.safeParse(message.structured_output)
+    const parsed = FeaturePlan.safeParse(message.structured_output);
     if (parsed.success) {
-      const plan: FeaturePlan = parsed.data
-      console.log(`Feature: ${plan.feature_name}`)
-      console.log(`Summary: ${plan.summary}`)
+      const plan: FeaturePlan = parsed.data;
+      console.log(`Feature: ${plan.feature_name}`);
+      console.log(`Summary: ${plan.summary}`);
       plan.steps.forEach(step => {
-        console.log(`${step.step_number}. [${step.estimated_complexity}] ${step.description}`)
-      })
+        console.log(`${step.step_number}. [${step.estimated_complexity}] ${step.description}`);
+      });
     }
   }
 }
@@ -157,50 +152,50 @@ The schema includes optional fields (`author` and `date`) since git blame inform
 TypeScript
 
 ``` shiki
-import { query } from '@anthropic-ai/claude-agent-sdk'
+import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Define structure for TODO extraction
 const todoSchema = {
-  type: 'object',
+  type: "object",
   properties: {
     todos: {
-      type: 'array',
+      type: "array",
       items: {
-        type: 'object',
+        type: "object",
         properties: {
-          text: { type: 'string' },
-          file: { type: 'string' },
-          line: { type: 'number' },
-          author: { type: 'string' },
-          date: { type: 'string' }
+          text: { type: "string" },
+          file: { type: "string" },
+          line: { type: "number" },
+          author: { type: "string" },
+          date: { type: "string" }
         },
-        required: ['text', 'file', 'line']
+        required: ["text", "file", "line"]
       }
     },
-    total_count: { type: 'number' }
+    total_count: { type: "number" }
   },
-  required: ['todos', 'total_count']
-}
+  required: ["todos", "total_count"]
+};
 
 // Agent uses Grep to find TODOs, Bash to get git blame info
 for await (const message of query({
-  prompt: 'Find all TODO comments in this codebase and identify who added them',
+  prompt: "Find all TODO comments in this codebase and identify who added them",
   options: {
     outputFormat: {
-      type: 'json_schema',
+      type: "json_schema",
       schema: todoSchema
     }
   }
 })) {
-  if (message.type === 'result' && message.structured_output) {
-    const data = message.structured_output
-    console.log(`Found ${data.total_count} TODOs`)
+  if (message.type === "result" && message.structured_output) {
+    const data = message.structured_output;
+    console.log(`Found ${data.total_count} TODOs`);
     data.todos.forEach(todo => {
-      console.log(`${todo.file}:${todo.line} - ${todo.text}`)
+      console.log(`${todo.file}:${todo.line} - ${todo.text}`);
       if (todo.author) {
-        console.log(`  Added by ${todo.author} on ${todo.date}`)
+        console.log(`  Added by ${todo.author} on ${todo.date}`);
       }
-    })
+    });
   }
 }
 ```
@@ -224,21 +219,21 @@ TypeScript
 
 ``` shiki
 for await (const msg of query({
-  prompt: 'Extract contact info from the document',
+  prompt: "Extract contact info from the document",
   options: {
     outputFormat: {
-      type: 'json_schema',
+      type: "json_schema",
       schema: contactSchema
     }
   }
 })) {
-  if (msg.type === 'result') {
-    if (msg.subtype === 'success' && msg.structured_output) {
+  if (msg.type === "result") {
+    if (msg.subtype === "success" && msg.structured_output) {
       // Use the validated output
-      console.log(msg.structured_output)
-    } else if (msg.subtype === 'error_max_structured_output_retries') {
+      console.log(msg.structured_output);
+    } else if (msg.subtype === "error_max_structured_output_retries") {
       // Handle the failure - retry with simpler prompt, fall back to unstructured, etc.
-      console.error('Could not produce valid output')
+      console.error("Could not produce valid output");
     }
   }
 }
@@ -257,95 +252,3 @@ Related resources
 - [JSON Schema documentation](https://json-schema.org/): learn JSON Schema syntax for defining complex schemas with nested objects, arrays, enums, and validation constraints
 - [API Structured Outputs](/docs/en/build-with-claude/structured-outputs): use structured outputs with the Claude API directly for single-turn requests without tool use
 - [Custom tools](/docs/en/agent-sdk/custom-tools): give your agent custom tools to call during execution before returning structured output
-
-Was this page helpful?
-
-- 
-
-- [Why structured outputs?](#why-structured-outputs)
-
-- [Quick start](#quick-start)
-
-- [Type-safe schemas with Zod and Pydantic](#type-safe-schemas-with-zod-and-pydantic)
-
-- [Output format configuration](#output-format-configuration)
-
-- [Example: TODO tracking agent](#example-todo-tracking-agent)
-
-- [Error handling](#error-handling)
-
-- [Related resources](#related-resources)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

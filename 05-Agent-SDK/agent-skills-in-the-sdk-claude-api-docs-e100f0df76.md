@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:46Z"
+fetched_at: "2026-02-24T04:07:50Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/skills"
 title: "Agent Skills in the SDK - Claude API Docs"
 ---
-
-Guides
-
 # Agent Skills in the SDK
 
-Copy page
 
 Extend Claude with specialized capabilities using Agent Skills in the Claude Agent SDK
 
-Copy page
 
 ## 
 
@@ -56,18 +51,19 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
+
 async def main():
     options = ClaudeAgentOptions(
         cwd="/path/to/project",  # Project with .claude/skills/
         setting_sources=["user", "project"],  # Load Skills from filesystem
-        allowed_tools=["Skill", "Read", "Write", "Bash"]  # Enable Skill tool
+        allowed_tools=["Skill", "Read", "Write", "Bash"],  # Enable Skill tool
     )
 
     async for message in query(
-        prompt="Help me process this PDF document",
-        options=options
+        prompt="Help me process this PDF document", options=options
     ):
         print(message)
+
 
 asyncio.run(main())
 ```
@@ -117,13 +113,10 @@ Python
 ``` shiki
 options = ClaudeAgentOptions(
     setting_sources=["user", "project"],  # Load Skills from filesystem
-    allowed_tools=["Skill", "Read", "Grep", "Glob"]  # Restricted toolset
+    allowed_tools=["Skill", "Read", "Grep", "Glob"],  # Restricted toolset
 )
 
-async for message in query(
-    prompt="Analyze the codebase structure",
-    options=options
-):
+async for message in query(prompt="Analyze the codebase structure", options=options):
     print(message)
 ```
 
@@ -138,13 +131,10 @@ Python
 ``` shiki
 options = ClaudeAgentOptions(
     setting_sources=["user", "project"],  # Load Skills from filesystem
-    allowed_tools=["Skill"]
+    allowed_tools=["Skill"],
 )
 
-async for message in query(
-    prompt="What Skills are available?",
-    options=options
-):
+async for message in query(prompt="What Skills are available?", options=options):
     print(message)
 ```
 
@@ -162,13 +152,10 @@ Python
 options = ClaudeAgentOptions(
     cwd="/path/to/project",
     setting_sources=["user", "project"],  # Load Skills from filesystem
-    allowed_tools=["Skill", "Read", "Bash"]
+    allowed_tools=["Skill", "Read", "Bash"],
 )
 
-async for message in query(
-    prompt="Extract text from invoice.pdf",
-    options=options
-):
+async for message in query(prompt="Extract text from invoice.pdf", options=options):
     print(message)
 ```
 
@@ -188,14 +175,12 @@ Python
 
 ``` shiki
 # Wrong - Skills won't be loaded
-options = ClaudeAgentOptions(
-    allowed_tools=["Skill"]
-)
+options = ClaudeAgentOptions(allowed_tools=["Skill"])
 
 # Correct - Skills will be loaded
 options = ClaudeAgentOptions(
     setting_sources=["user", "project"],  # Required to load Skills
-    allowed_tools=["Skill"]
+    allowed_tools=["Skill"],
 )
 ```
 
@@ -210,7 +195,7 @@ Python
 options = ClaudeAgentOptions(
     cwd="/path/to/project",  # Must contain .claude/skills/
     setting_sources=["user", "project"],  # Required to load Skills
-    allowed_tools=["Skill"]
+    allowed_tools=["Skill"],
 )
 ```
 
@@ -262,111 +247,3 @@ SDK Resources
 - [SDK Overview](/docs/en/agent-sdk/overview): General SDK concepts
 - [TypeScript SDK Reference](/docs/en/agent-sdk/typescript): Complete API documentation
 - [Python SDK Reference](/docs/en/agent-sdk/python): Complete API documentation
-
-Was this page helpful?
-
-- 
-
-- [Overview](#overview)
-
-- [How Skills Work with the SDK](#how-skills-work-with-the-sdk)
-
-- [Using Skills with the SDK](#using-skills-with-the-sdk)
-
-- [Skill Locations](#skill-locations)
-
-- [Creating Skills](#creating-skills)
-
-- [Tool Restrictions](#tool-restrictions)
-
-- [Discovering Available Skills](#discovering-available-skills)
-
-- [Testing Skills](#testing-skills)
-
-- [Troubleshooting](#troubleshooting)
-
-- [Skills Not Found](#skills-not-found)
-
-- [Skill Not Being Used](#skill-not-being-used)
-
-- [Additional Troubleshooting](#additional-troubleshooting)
-
-- [Related Documentation](#related-documentation)
-
-- [Skills Guides](#skills-guides)
-
-- [SDK Resources](#sdk-resources)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

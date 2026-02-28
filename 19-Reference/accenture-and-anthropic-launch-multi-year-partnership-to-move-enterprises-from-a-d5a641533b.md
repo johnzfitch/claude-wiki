@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-accenture-partnership"
 title: "Accenture and Anthropic launch multi-year partnership to move enterprises from AI pilots to production \\ Anthropic"
 ---
-
-AnnouncementsProduct
-
 # Accenture and Anthropic launch multi-year partnership to move enterprises from AI pilots to production
 
 Dec 9, 2025
@@ -63,7 +60,6 @@ Accenture clients can contact their account team to discuss deployment options. 
 
 *\*[Menlo Ventures’ 2025 State of Generative AI in the Enterprise report](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/)*
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-accenture-partnership)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-accenture-partnership)
 
 ## Related content
 

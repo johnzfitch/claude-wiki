@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Creating a Customer Service Agent with Client-Side Tools
 
 In this recipe, we\'ll demonstrate how to create a customer service

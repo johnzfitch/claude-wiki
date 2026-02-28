@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Extended Thinking
 
 ## Table of contents

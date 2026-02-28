@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Finetuning Claude 3 Haiku on Bedrock
 
 In this notebook, we\'ll walk you through the process of finetuning

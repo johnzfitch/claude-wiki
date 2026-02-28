@@ -1,59 +1,14 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-28T11:22:05Z"
 source_url: "https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude"
 title: "Financial Analysis Workflows with Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_7de70a0d13)
-
-[](#h_2c720ddfc6)
-
-[](#h_7c9cdf1b9b)
-
-[](#h_5e0bee10f6)
-
-[](#h_80bed97f12)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-Financial Analysis Workflows with Claude
+3.  Financial Analysis Workflows with Claude
 
 # Financial Analysis Workflows with Claude
 
-Updated yesterday
-
-Table of contents
-
-[](#h_7de70a0d13)
-
-[](#h_2c720ddfc6)
-
-[](#h_7c9cdf1b9b)
-
-[](#h_5e0bee10f6)
-
-[](#h_80bed97f12)
 
 This article demonstrates how to use Claude for complete financial analysis workflows, from data retrieval through final deliverables. Each workflow follows a three-phase approach: retrieving data from integrated sources, analyzing the information to generate insights, and creating professional outputs for decision-making.
 
@@ -233,45 +188,17 @@ Generate an interactive dashboard for the portfolio review:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services)
 
 Getting Started with Claude for Financial Services
 
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis)
 
 Using Daloopa for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis)
 
 Using S&P Global Data for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis)
 
 Prompting Strategies for Financial Analysis
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

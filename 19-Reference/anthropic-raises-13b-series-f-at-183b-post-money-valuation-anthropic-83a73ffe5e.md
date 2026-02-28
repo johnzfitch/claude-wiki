@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
 title: "Anthropic raises $13B Series F at $183B post-money valuation \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic raises \$13B Series F at \$183B post-money valuation
 
 Sep 2, 2025
@@ -27,7 +24,6 @@ This growth spans the entire Anthropic platform, with advancements for businesse
 
 The Series F investment will expand our capacity to meet growing enterprise demand, deepen our safety research, and support international expansion as we continue building reliable, interpretable, and steerable AI systems.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation)
 
 ## Related content
 

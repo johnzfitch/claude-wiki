@@ -1,7 +1,6 @@
 ---
 description: "Explain Ralph Wiggum technique and available commands"
 ---
-
 # Ralph Wiggum Plugin Help
 
 Please explain the following to the user:

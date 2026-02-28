@@ -3,7 +3,6 @@ description: Guided end-to-end plugin creation workflow with component design, i
 argument-hint: Optional plugin description
 allowed-tools: ["Read", "Write", "Grep", "Glob", "Bash", "TodoWrite", "AskUserQuestion", "Skill", "Task"]
 ---
-
 # Plugin Creation Workflow
 
 Guide the user through creating a complete, high-quality Claude Code plugin from initial concept to tested implementation. Follow a systematic approach: understand requirements, design components, clarify details, implement following best practices, validate, and test.

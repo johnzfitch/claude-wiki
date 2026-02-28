@@ -1,65 +1,14 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-08T20:51:42Z"
+fetched_at: "2026-02-28T11:22:16Z"
 source_url: "https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits"
 title: "Understanding usage and length limits | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_ffff841376)
-
-[](#h_d635f9f8df)
-
-[](#h_9339d1d45b)
-
-[](#h_21b66a43b4)
-
-[](#h_f8ac2cd632)
-
-[](#h_85579fd048)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Usage and Limits](https://support.claude.com/en/collections/18031876-usage-and-limits)
-
-Understanding usage and length limits
+4.  Understanding usage and length limits
 
 # Understanding usage and length limits
 
-Updated yesterday
-
-Table of contents
-
-[](#h_ffff841376)
-
-[](#h_d635f9f8df)
-
-[](#h_9339d1d45b)
-
-[](#h_21b66a43b4)
-
-[](#h_f8ac2cd632)
-
-[](#h_85579fd048)
 
 When chatting with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Understanding the difference between these can help you use Claude more effectively.
 
@@ -125,45 +74,17 @@ If you hit your usage limit, you'll need to wait for it to reset, upgrade your p
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)
 
 How large is the context window on paid Claude plans?
 
-[](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)
 
 Usage limit best practices
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
 
-[](https://support.claude.com/en/articles/12466728-understanding-claude-error-messages)
 
 Understanding Claude Error Messages
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

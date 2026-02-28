@@ -1,53 +1,12 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-16T21:12:44Z"
+fetched_at: "2026-02-28T11:22:18Z"
 source_url: "https://support.claude.com/en/articles/12622667-enterprise-configuration"
 title: "Enterprise configuration | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_33652e6230)
-
-[](#h_21d03dc3bb)
-
-[](#h_003283c7cb)
-
-[All Collections](/en/)
-
-[Claude Desktop](https://support.claude.com/en/collections/16163169-claude-desktop)
-
-[General](https://support.claude.com/en/collections/17879568-general)
-
-Enterprise configuration
-
 # Enterprise configuration
 
-Updated this week
-
-Table of contents
-
-[](#h_33652e6230)
-
-[](#h_21d03dc3bb)
-
-[](#h_003283c7cb)
 
 Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
 
@@ -94,45 +53,17 @@ Deploy configuration settings through your enterprise management solution using 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
 
 Getting Started with Local MCP Servers on Claude Desktop
 
-[](https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos)
+
+Using Enterprise Search
+
 
 Deploy Claude Desktop for macOS
 
-[](https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows)
 
 Deploy Claude Desktop for Windows
 
-[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
 
 Building Desktop Extensions with MCPB
-
-[](https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans)
-
-Cowork for Team and Enterprise plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

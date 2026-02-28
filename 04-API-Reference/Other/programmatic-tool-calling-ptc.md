@@ -1,4 +1,3 @@
-::: {#4126045b .cell .markdown}
 # Programatic Tool Calling (PTC) with the Claude API
 
 Programmatic Tool Calling (PTC) allows Claude to write code that calls

@@ -1,4 +1,3 @@
-::: {#20de56a8 .cell .markdown}
 # Prompting Claude for \"JSON Mode\"
 :::
 

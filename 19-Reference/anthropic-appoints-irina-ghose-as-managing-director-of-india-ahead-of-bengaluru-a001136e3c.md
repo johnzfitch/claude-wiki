@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-appoints-irina-ghose-as-managing-director-of-india"
 title: "Anthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening
 
 Jan 16, 2026
@@ -23,7 +20,6 @@ Our India team will work closely with policymakers and academic institutions, st
 
 India ranks as the second-largest market globally for Claude.ai. Anthropic's fourth [Economic Index](https://www.anthropic.com/economic-index) showed that Indian users have a striking focus on technical applications, with nearly half of all Claude.ai usage concentrated in computer and mathematical tasks.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-appoints-irina-ghose-as-managing-director-of-india)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-appoints-irina-ghose-as-managing-director-of-india)
 
 ## Related content
 

@@ -2,10 +2,6 @@
 category: "19-Reference"
 source_url: "https://www.anthropic.com/news/tool-use-ga"
 ---
-
-
-Claude can now use tools
-
 Claude now connects with external tools and APIs to perform tasks, manipulate data, and deliver more accurate responses.
 
 Category

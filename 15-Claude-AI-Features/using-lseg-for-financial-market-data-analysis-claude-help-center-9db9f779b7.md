@@ -1,61 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:00Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis"
 title: "Using LSEG for Financial Market Data Analysis | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_28ff18a870)
-
-[](#h_4f20b07914)
-
-[](#h_f5c63d00b9)
-
-[](#h_b1b6f9dcc6)
-
-[](#h_8d261a1593)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-[Market Data](https://support.claude.com/en/collections/16288976-market-data)
-
-Using LSEG for Financial Market Data Analysis
+4.  Using LSEG for Financial Market Data Analysis
 
 # Using LSEG for Financial Market Data Analysis
 
-Updated yesterday
-
-Table of contents
-
-[](#h_28ff18a870)
-
-[](#h_4f20b07914)
-
-[](#h_f5c63d00b9)
-
-[](#h_b1b6f9dcc6)
-
-[](#h_8d261a1593)
 
 The LSEG integration provides Claude with access to LSEG’s comprehensive financial market data ecosystem, spanning across asset classes and domains. This article explains how to set up and use LSEG to retrieve real-time market data, analytics, and perform complex financial calculations. The LSEG integration relies upon Claude’s ability to use remote connectors.
 
@@ -202,45 +155,17 @@ Example input prompt:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis)
 
 Using S&P Global Data for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research)
 
 Using FactSet for Comprehensive Financial Research
 
-[](https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis)
 
 Prompting Strategies for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 
 Financial Analysis Workflows with Claude
 
-[](https://support.claude.com/en/articles/12430928-using-databricks-for-data-analysis)
 
 Using Databricks for Data Analysis
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

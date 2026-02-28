@@ -1,53 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:51Z"
+fetched_at: "2026-02-28T11:22:17Z"
 source_url: "https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan"
 title: "How do I get started with the Team plan? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_7e6ca62207)
-
-[](#h_8b642c53de)
-
-[](#h_830eec632d)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Team Plan](https://support.claude.com/en/collections/9811436-team-plan)
-
-How do I get started with the Team plan?
+4.  How do I get started with the Team plan?
 
 # How do I get started with the Team plan?
 
-Updated this week
-
-Table of contents
-
-[](#h_7e6ca62207)
-
-[](#h_8b642c53de)
-
-[](#h_830eec632d)
 
 ## Creating a new Team organization
 
@@ -83,45 +44,17 @@ If you already have a free or paid Claude account associated with your work emai
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan)
 
 What is the Pro plan?
 
-[](https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan)
 
 How do I sign up for the Pro plan?
 
-[](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)
 
 What is the Team plan?
 
-[](https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan)
 
 How do I sign up for the Max plan?
 
-[](https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins)
 
-Getting Started with Claude for Education at Your University (for Owners/Admins)
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Getting started with Claude in Slack

@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:03Z"
 source_url: "https://www.anthropic.com/news/reflections-on-our-responsible-scaling-policy"
 title: "Reflections on our Responsible Scaling Policy \\ Anthropic"
 ---
-
-Policy
-
 # Reflections on our Responsible Scaling Policy
 
 May 20, 2024
@@ -71,7 +68,6 @@ Lastly, our Responsible Scaling, Alignment Stress Testing, and Compliance teams 
 
 Ensuring future generations of frontier models are trained and deployed responsibly will require serious investment from both Anthropic and others across industry and governments. Our Responsible Scaling Policy has been a powerful rallying point with many teams' objectives over the past months connecting directly back to the major workstreams above. The progress we have made on operationalizing safety during this period has necessitated significant engagement from teams across Anthropic, and there is much more work to be done. Our goal in sharing these reflections ahead of the upcoming AI Seoul Summit is to continue the discussion on creating thoughtful, empirically-grounded frameworks for managing risks from frontier models. We are eager to see more companies adopt their own frameworks and share their own experiences, leading to the development of shared best practices and informing future efforts by governments.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/reflections-on-our-responsible-scaling-policy)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/reflections-on-our-responsible-scaling-policy)
 
 ## Related content
 

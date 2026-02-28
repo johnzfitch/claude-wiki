@@ -1,71 +1,16 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:39Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/10684626-enabling-and-using-web-search"
 title: "Enabling and using web search | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_cf313cf6d7)
-
-[](#h_24335cf586)
-
-[](#h_1c190557d2)
-
-[](#h_72e7287264)
-
-[](#h_82182dd649)
-
-[](#h_fa92937b2c)
-
-[](#h_340f79ae09)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
-
-Enabling and using web search
-
 # Enabling and using web search
 
-Updated today
-
-Table of contents
-
-[](#h_cf313cf6d7)
-
-[](#h_24335cf586)
-
-[](#h_1c190557d2)
-
-[](#h_72e7287264)
-
-[](#h_82182dd649)
-
-[](#h_fa92937b2c)
-
-[](#h_340f79ae09)
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
+
+- Sonnet 4.6
 
 - Opus 4.6
 
@@ -75,15 +20,12 @@ You can have Claude search the internet to provide you with up-to-date informati
 
 - Sonnet 4.5
 
-- Sonnet 4
-
 Web search expands Claude's knowledge with real-time data, helping you make better-informed decisions with current information.
 
 **To access this feature on a Team or Enterprise plan account:**
 
 An Owner or Primary Owner must first enable web search for the entire workspace. This can be found in **[Admin settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2032032614/ad907328c4d9a26ee4bd9ca27a52/CleanShot+2026-02-05+at+09_01_42%402x.png?expires=1770660000&signature=c6d2d0b1c6d7bbd777bc22cb0f3e24531b47b2966383f77a5942c42347465d86&req=diAkFMl9n4deXfMW3nq%2BgTh6y0obvN17%2BiPTuOwGpPmvKRhWp%2FUZ35fWcCkA%0AvesCFKal%2F9390fMVGBgeFIMP7%2FA%3D%0A)
 
 Once this is enabled at the workspace level, any member of the organization can switch it on while starting a chat by clicking the “+” button in the lower left corner of the chat window and selecting “Web search." Users can toggle this off for chats that don’t require web search capabilities.
 
@@ -203,45 +145,17 @@ You can re-enable it anytime you need current information.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data)
 
 How up-to-date is Claude's training data?
 
-[](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
 
 Claude Code model configuration
 
-[](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Release notes
 
-[](https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai)
 
 Getting the most out of Sonnet 4.5 in Claude.ai
 
-[](https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5)
 
 Create professional results across tools with Claude Sonnet 4.5
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

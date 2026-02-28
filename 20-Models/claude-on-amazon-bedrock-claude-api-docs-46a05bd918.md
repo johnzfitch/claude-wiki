@@ -1,23 +1,20 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:04:49Z"
+fetched_at: "2026-02-24T04:08:27Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock"
 title: "Claude on Amazon Bedrock - Claude API Docs"
 ---
-
-Claude on 3rd-party platforms
-
 # Claude on Amazon Bedrock
 
-Copy page
 
 Anthropic's Claude models are now generally available through Amazon Bedrock.
 
-Copy page
 
 Calling Claude through Bedrock slightly differs from how you would call Claude when using Anthropic's client SDK's. This guide will walk you through the process of completing an API call to Claude on Bedrock in either Python or TypeScript.
 
 Note that this guide assumes you have already signed up for an [AWS account](https://portal.aws.amazon.com/billing/signup) and configured programmatic access.
+
+The PHP SDK does not currently support Amazon Bedrock. For available SDK platform integrations, see [Client SDKs](/docs/en/api/client-sdks).
 
 ## 
 
@@ -55,6 +52,14 @@ Go
 
 Go
 
+C#
+
+C#
+
+Ruby
+
+Ruby
+
 Boto3 (Python)
 
 Boto3 (Python)
@@ -80,6 +85,7 @@ API model IDs
 | Model | Base Bedrock model ID | `global` | `us` | `eu` | `jp` | `apac` |
 |----|----|----|----|----|----|----|
 | Claude Opus 4.6 | anthropic.claude-opus-4-6-v1 | Yes | Yes | Yes | Yes | Yes |
+| Claude Sonnet 4.6 | anthropic.claude-sonnet-4-6 | Yes | Yes | Yes | Yes | No |
 | Claude Sonnet 4.5 | anthropic.claude-sonnet-4-5-20250929-v1:0 | Yes | Yes | Yes | Yes | No |
 | Claude Sonnet 4 | anthropic.claude-sonnet-4-20250514-v1:0 | Yes | Yes | Yes | No | Yes |
 | Claude Sonnet 3.7 ⚠️ | anthropic.claude-3-7-sonnet-20250219-v1:0 | No | Yes | Yes | No | Yes |
@@ -88,7 +94,7 @@ API model IDs
 | Claude Opus 4 | anthropic.claude-opus-4-20250514-v1:0 | No | Yes | No | No | No |
 | Claude Haiku 4.5 | anthropic.claude-haiku-4-5-20251001-v1:0 | Yes | Yes | Yes | No | No |
 | Claude Haiku 3.5 ⚠️ | anthropic.claude-3-5-haiku-20241022-v1:0 | No | Yes | No | No | No |
-| Claude Haiku 3 | anthropic.claude-3-haiku-20240307-v1:0 | No | Yes | Yes | No | Yes |
+| Claude Haiku 3 ⚠️ | anthropic.claude-3-haiku-20240307-v1:0 | No | Yes | Yes | No | Yes |
 
 For more information about regional vs global model IDs, see the [Global vs regional endpoints](#global-vs-regional-endpoints) section below.
 
@@ -131,12 +137,46 @@ client = AnthropicBedrock(
 message = client.messages.create(
     model="global.anthropic.claude-opus-4-6-v1",
     max_tokens=256,
-    messages=[{"role": "user", "content": "Hello, world"}]
+    messages=[{"role": "user", "content": "Hello, world"}],
 )
 print(message.content)
 ```
 
-See our [client SDKs](/docs/en/api/client-sdks) for more details, and the official Bedrock docs [here](https://docs.aws.amazon.com/bedrock/).
+See the [client SDKs](/docs/en/api/client-sdks) for more details, and the [official Bedrock documentation](https://docs.aws.amazon.com/bedrock/).
+
+### 
+
+Bearer token authentication
+
+You can authenticate with Bedrock using bearer tokens instead of AWS credentials. This is useful in corporate environments where teams need access to Bedrock without managing AWS credentials, IAM roles, or account-level permissions.
+
+Bearer token authentication is supported in the C#, Go, and Java SDKs. The Python, TypeScript, and Ruby SDKs use AWS SigV4 signing only.
+
+The simplest approach is to set the `AWS_BEARER_TOKEN_BEDROCK` environment variable, which is automatically detected by `fromEnv()` credential resolution.
+
+To provide a token programmatically:
+
+C#
+
+``` shiki
+using Anthropic.Bedrock;
+using Anthropic.Models.Messages;
+
+var client = new AnthropicBedrockClient(
+    new AnthropicBedrockApiTokenCredentials
+    {
+        BearerToken = "your-bearer-token",
+        Region = "us-east-1",
+    }
+);
+
+var response = await client.Messages.Create(new MessageCreateParams
+{
+    Model = "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    MaxTokens = 1024,
+    Messages = [new() { Role = Role.User, Content = "Hello!" }],
+});
+```
 
 ## 
 
@@ -152,7 +192,7 @@ Turning on this service does not give AWS or Anthropic any access to your conten
 
 Feature support
 
-You can find all the features currently supported on Bedrock [here](/docs/en/api/overview).
+For all currently supported features on Bedrock, see [API features overview](/docs/en/api/overview).
 
 ### 
 
@@ -225,7 +265,7 @@ client = AnthropicBedrock(aws_region="us-west-2")
 message = client.messages.create(
     model="global.anthropic.claude-opus-4-6-v1",
     max_tokens=256,
-    messages=[{"role": "user", "content": "Hello, world"}]
+    messages=[{"role": "user", "content": "Hello, world"}],
 )
 ```
 
@@ -244,7 +284,7 @@ client = AnthropicBedrock(aws_region="us-west-2")
 message = client.messages.create(
     model="anthropic.claude-opus-4-6-v1",  # No global. prefix
     max_tokens=256,
-    messages=[{"role": "user", "content": "Hello, world"}]
+    messages=[{"role": "user", "content": "Hello, world"}],
 )
 ```
 
@@ -256,109 +296,3 @@ Additional resources
 - **AWS pricing documentation:** [Bedrock pricing guide](https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-pricing.html)
 - **AWS blog post:** [Introducing Claude Sonnet 4.5 in Amazon Bedrock](https://aws.amazon.com/blogs/aws/introducing-claude-sonnet-4-5-in-amazon-bedrock-anthropics-most-intelligent-model-best-for-coding-and-complex-agents/)
 - **Anthropic pricing details:** [Pricing documentation](/docs/en/about-claude/pricing#third-party-platform-pricing)
-
-Was this page helpful?
-
-- 
-
-- [Install and configure the AWS CLI](#install-and-configure-the-aws-cli)
-
-- [Install an SDK for accessing Bedrock](#install-an-sdk-for-accessing-bedrock)
-
-- [Accessing Bedrock](#accessing-bedrock)
-
-- [Subscribe to Anthropic models](#subscribe-to-anthropic-models)
-
-- [List available models](#list-available-models)
-
-- [Making requests](#making-requests)
-
-- [Activity logging](#activity-logging)
-
-- [Feature support](#feature-support)
-
-- [PDF Support on Bedrock](#pdf-support-on-bedrock)
-
-- [1M token context window](#1-m-token-context-window)
-
-- [Global vs regional endpoints](#global-vs-regional-endpoints)
-
-- [When to use each option](#when-to-use-each-option)
-
-- [Implementation](#implementation)
-
-- [Additional resources](#additional-resources)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

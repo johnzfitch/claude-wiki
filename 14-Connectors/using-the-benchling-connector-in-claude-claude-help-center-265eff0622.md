@@ -1,59 +1,14 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:43Z"
+fetched_at: "2026-02-28T11:22:21Z"
 source_url: "https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude"
 title: "Using the Benchling Connector in Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_e05fbaa8c3)
-
-[](#h_709420e915)
-
-[](#h_b01ac8c1ff)
-
-[](#h_af8b085c39)
-
-[](#h_663aa8d71f)
-
-[All Collections](/en/)
-
-[Claude for Life Sciences](https://support.claude.com/en/collections/16142619-claude-for-life-sciences)
-
-Using the Benchling Connector in Claude
+3.  Using the Benchling Connector in Claude
 
 # Using the Benchling Connector in Claude
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_e05fbaa8c3)
-
-[](#h_709420e915)
-
-[](#h_b01ac8c1ff)
-
-[](#h_af8b085c39)
-
-[](#h_663aa8d71f)
 
 The Benchling connector links Claude to Benchling R&D platform data, enabling scientists to ask questions and receive clear summaries with links back to source experiments, notebooks, and structured records—all while maintaining existing access permissions. This article explains how to set up and use the Benchling integration with Claude to advance your R&D workflows.
 
@@ -133,45 +88,17 @@ Technical details of the Benchling integration can be found in [Benchling’s MC
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)
 
 Getting Started with Claude for Life Sciences
 
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
 Using the Synapse.org connector in Claude
 
-[](https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude)
 
 Using the 10x Genomics Extension in Claude
 
-[](https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude)
 
 Using the Scholar Gateway Connector in Claude
 
-[](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
 Using interactive connectors in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

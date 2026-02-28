@@ -1,57 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-28T11:22:13Z"
 source_url: "https://support.claude.com/en/articles/12260368-using-incognito-chats"
 title: "Using incognito chats | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_d4cbb6051b)
-
-[](#h_32395c9823)
-
-[](#h_5e7ab601b5)
-
-[](#h_009d73909d)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Conversation Management](https://support.claude.com/en/collections/18031977-conversation-management)
-
-Using incognito chats
-
 # Using incognito chats
 
-Updated yesterday
-
-Table of contents
-
-[](#h_d4cbb6051b)
-
-[](#h_32395c9823)
-
-[](#h_5e7ab601b5)
-
-[](#h_009d73909d)
 
 Incognito chats are available to all Claude users (free, Pro, Max, Team, and Enterprise plans).
 
@@ -79,7 +34,6 @@ Incognito chats are temporary conversations that aren't saved to your chat histo
 
 When starting a new chat with Claude outside of a project, you'll see a ghost icon in the upper right corner of your screen:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719768744/c7a2fa56cf284e48472f3b9c4dbf/030563f8-9f97-4891-a749-9ae95968a063?expires=1770585300&signature=06e166d4e21ae47d4f7a8ae6036282ba955002d2781b03ff6ba7d020bd8982af&req=dScmH854lYZbXfMW1HO4zeUctAK4ZuCIDCAt3Cx%2FSO23MJ2GZXVj0f5eQJwZ%0An0sGJ65acee3cyURX%2BE%3D%0A)
 
 1.  Click the ghost icon to enable incognito mode.
 
@@ -119,45 +73,17 @@ Once closed, incognito chats cannot be reopened. Make sure to save any important
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8325621-i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-conversations)
 
 I would like to input sensitive data into my chats with Claude. Who can view my conversations?
 
-[](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)
 
 How can I create and manage projects?
 
-[](https://support.claude.com/en/articles/10167454-using-the-github-integration)
-
-Using the GitHub Integration
-
-[](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)
 
 Using Claude’s chat search and memory to build on previous context
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Importing and exporting your memory from Claude
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Release notes

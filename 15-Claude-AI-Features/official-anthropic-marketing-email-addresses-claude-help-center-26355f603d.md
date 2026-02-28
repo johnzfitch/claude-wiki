@@ -1,53 +1,32 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:39Z"
+fetched_at: "2026-02-28T11:22:19Z"
 source_url: "https://support.claude.com/en/articles/10416553-official-anthropic-marketing-email-addresses"
 title: "Official Anthropic marketing email addresses | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-[All Collections](/en/)
-
-[Privacy and Legal](https://support.claude.com/en/collections/4078534-privacy-and-legal)
-
-Official Anthropic marketing email addresses
+3.  Official Anthropic marketing email addresses
 
 # Official Anthropic marketing email addresses
 
-Updated yesterday
 
 To help you identify legitimate marketing communications from Anthropic, all our marketing emails are sent from addresses ending in anthropic.com or claude.com. Below are the official email addresses we use for marketing communications:
 
-- [\[email protected\]](/cdn-cgi/l/email-protection#d4a0b1b5b994b1b9b5bdb8fab5baa0bca6bba4bdb7fab7bbb9)
+- [\[email protected\]](/cdn-cgi/l/email-protection#e89c8d8985a88d85898184c689869c809a8798818bc68b8785)
 
-- [\[email protected\]](/cdn-cgi/l/email-protection#0362736a43666e626a6f2d626d776b716c736a602d606c6e)
+- [\[email protected\]](/cdn-cgi/l/email-protection#4627362f06232b272f2a682728322e3429362f256825292b)
 
-- [\[email protected\]](/cdn-cgi/l/email-protection#573938233e343217323a363e3b793639233f2538273e347934383a)
+- [\[email protected\]](/cdn-cgi/l/email-protection#4826273c212b2d082d252921246629263c203a2738212b662b2725)
 
-- [\[email protected\]](/cdn-cgi/l/email-protection#d3a0a6a3a3bca1a793beb2babffdb2bda7bba1bca3bab0fdb0bcbe)
+- [\[email protected\]](/cdn-cgi/l/email-protection#43303633332c3137032e222a2f6d222d372b312c332a206d202c2e)
 
-- [\[email protected\]](/cdn-cgi/l/email-protection#31505f4559435e4158521c4554505c715c50585d1f505f4559435e4158521f525e5c)
+- [\[email protected\]](/cdn-cgi/l/email-protection#5c3d3228342e332c353f7128393d311c313d3530723d3228342e332c353f723f3331)
 
-- [\[email protected\]](/cdn-cgi/l/email-protection#f88b99949d8bb895999194d699968c908a9788919bd69b9795)
+- [\[email protected\]](/cdn-cgi/l/email-protection#89fae8e5ecfac9e4e8e0e5a7e8e7fde1fbe6f9e0eaa7eae6e4)
 
-- [\[email protected\]](/cdn-cgi/l/email-protection#4628296b3423362a3f06232b272f2a68252a273322236825292b)
+- [\[email protected\]](/cdn-cgi/l/email-protection#c5abaae8b7a0b5a9bc85a0a8a4aca9eba6a9a4b0a1a0eba6aaa8)
 
-- [\[email protected\]](/cdn-cgi/l/email-protection#3e5051134c5b4e52477e4c5b4d5b5f4c5d56105f504a564c514e575d105d5153)
+- [\[email protected\]](/cdn-cgi/l/email-protection#cca2a3e1bea9bca0b58cbea9bfa9adbeafa4e2ada2b8a4bea3bca5afe2afa3a1)
 
 Please note that these addresses are outbound only with unmonitored inboxes.
 
@@ -57,45 +36,17 @@ Concerned about an email you received? Visit our [How to Get Support](https://su
 
 Related Articles
 
-[](https://support.claude.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude)
 
 Reporting, Blocking, and Removing Content from Claude
 
-[](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
 
 Does Anthropic crawl data from the web, and how can site owners block the crawler?
 
-[](https://support.claude.com/en/articles/9035075-law-enforcement-requests)
-
-Law Enforcement Requests
-
-[](https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program)
-
-What is the External Researcher Access Program?
-
-[](https://support.claude.com/en/articles/10023646-i-think-a-user-is-infringing-my-copyright-or-other-intellectual-property-how-do-i-report-it)
 
 I think a user is infringing my copyright or other intellectual property. How do I report it?
 
-Did this answer your question?
 
-😞
+Reporting, Blocking, and Removing Content from Claude
 
-😐
 
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Unauthorized Anthropic stock sales and investment scams

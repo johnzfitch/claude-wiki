@@ -1,69 +1,52 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T20:51:50Z"
+fetched_at: "2026-02-28T11:22:05Z"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
-title: "Release Notes | Claude Help Center"
+title: "Release notes | Claude Help Center"
 ---
 
-[](/en/)
+# Release notes
 
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_41305cb17a)
-
-[](#h_a883032d90)
-
-[](#h_5a98275282)
-
-[](#h_fab9a27c1c)
-
-[](#h_7c05e4328e)
-
-[](#h_526af31ce1)
-
-[](#h_4572a19dab)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-Release Notes
-
-# Release Notes
-
-Updated yesterday
-
-Table of contents
-
-[](#h_41305cb17a)
-
-[](#h_a883032d90)
-
-[](#h_5a98275282)
-
-[](#h_fab9a27c1c)
-
-[](#h_7c05e4328e)
-
-[](#h_526af31ce1)
-
-[](#h_4572a19dab)
 
 ## February 2026
+
+### February 25, 2026
+
+**Scheduled tasks in Cowork**
+
+We introduced the ability to create and schedule both recurring and on-demand tasks in Cowork, as well as a new Customize section in Claude Desktop that groups skills, plugins, and connectors in one place. For more information, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
+
+# An error occurred.
+
+Unable to execute JavaScript.
+
+### February 24, 2026
+
+**Cowork plugins and admin controls**
+
+We launched a new plugin marketplace and admin controls for Team and Enterprise plans. For more information, refer to these articles:
+
+- **[Manage Cowork plugins for your organization](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**
+
+- **[Use plugins in Cowork](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**
+
+### February 17, 2026
+
+**Claude Sonnet 4.6 launch**
+
+We launched our most capable Sonnet model yet, with a full upgrade of the model’s skills across coding, computer use, long-context reasoning, agent planning, knowledge work, and design. Sonnet 4.6 also features a 1M token context window in beta. Read our blog post for more information: **[Introducing Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6)**.
+
+### February 13, 2026
+
+**Analytics API for Enterprise plans**
+
+The Enterprise Analytics API provides programmatic access to usage and engagement data for Claude and Claude Code Remote usage within your organization. Data is aggregated per organization, per day, and each endpoint returns a snapshot for a single date that you specify. For more information, see **[Access usage data with the Analytics API](https://support.claude.com/en/articles/13694757-access-usage-data-with-the-analytics-api)**.
+
+### February 12, 2026
+
+**Self-serve Enterprise plans**
+
+Previously, Enterprise plans were only available to customers working with our Sales team. Now, any organization can purchase an Enterprise plan directly on our website with no Sales conversation required. Self-serve Enterprise plans have a single seat type that includes access to Claude, Claude Code, and Cowork. For more information, refer to **[our blog post](https://claude.com/blog/self-serve-enterprise)** or **[What is the Enterprise plan?](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)**
 
 ### February 5, 2026
 
@@ -91,11 +74,11 @@ Cowork is now available to Pro plan users on Claude Desktop (macOS only).
 
 **Claude Code access added to Team plan Standard seats**
 
-We’re now including Claude Code access with every Team plan standard seat. Refer to this article for more information: [Purchasing and managing seats on Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans).
+We’re now including Claude Code access with every Team plan standard seat. Refer to this article for more information: **[Purchasing and managing seats on Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans)**.
 
 **Opus 4 and 4.1 deprecated from Claude and Claude Code**
 
-We’ve removed Claude Opus 4 and 4.1 from the Claude model selector and Claude Code. Refer to this article for further details and recommendations: [Adapting to new model personas after deprecations](https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations).
+We’ve removed Claude Opus 4 and 4.1 from the Claude model selector and Claude Code. Refer to this article for further details and recommendations: **[Adapting to new model personas after deprecations](https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations)**.
 
 ### January 12, 2026
 
@@ -103,7 +86,7 @@ We’ve removed Claude Opus 4 and 4.1 from the Claude model selector and Claude 
 
 Cowork brings Claude Code's agentic capabilities to the Claude desktop app for knowledge work beyond coding. It runs locally on your computer in an isolated VM, enabling direct access to local files and MCP integrations.
 
-Refer to this article to learn more: [Getting Started with Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-cowork).
+Refer to this article to learn more: **[Getting started with Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)**.
 
 **Health and fitness data on Claude Mobile**
 
@@ -113,15 +96,15 @@ Health features are available on Pro and Max plans and currently limited to user
 
 See the following articles for more information:
 
-- [Using Claude with iOS Apps](https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps)
+- **[Using Claude with iOS Apps](https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps)**
 
-- [Using Claude with Android Apps](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)
+- **[Using Claude with Android Apps](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)**
 
 **HIPAA-ready Enterprise plans**
 
 We now offer a HIPAA-ready version of Claude that is available for organizations with Enterprise plans that choose to process protected health information (PHI) through Claude.
 
-See [HIPAA-Ready Enterprise Plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans) for more information.
+See **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)** for more information.
 
 ------------------------------------------------------------------------
 
@@ -132,6 +115,26 @@ See [HIPAA-Ready Enterprise Plans](https://support.claude.com/en/articles/132969
 **Skills for organizations, partners, and the ecosystem**
 
 In October, we introduced skills—a way to teach Claude repeatable workflows tailored to how you work. Skills are now easier to deploy, discover, and build with [organization-wide management for Team and Enterprise plans](https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin), a [directory](https://claude.com/connectors) of partner-built skills, and an open standard ([Agent Skills](https://agentskills.io/home)) so skills work across AI platforms.
+
+**Claude in Chrome updates**
+
+Claude in Chrome is now available in beta to all paid plan subscribers, including Pro, Team, and Enterprise plans.
+
+- **Claude Code integration:** Build in your terminal with Claude Code, then test and verify in the browser with the Chrome extension. Claude can read console errors, network requests, and DOM state to help debug issues directly.
+
+- **Control browser actions from Claude Desktop:** Start a task in Claude Desktop and let it handle work in the browser without switching windows.
+
+- **Record a workflow:** Teach Claude your workflow by recording the steps, and Claude learns to repeat them. Useful for repetitive browser tasks you want to delegate.
+
+- **Console logs:** Claude can now read browser console output, helping developers identify and fix errors without switching contexts.
+
+- **Admin controls for Team and Enterprise:** Admins can now manage Claude in Chrome at the organization level:
+
+  - Enable or disable the extension org-wide
+
+  - Configure allowlists and blocklists to control which sites Claude can access
+
+  - Manage Claude in Chrome in Admin settings \> Browser extension
 
 ------------------------------------------------------------------------
 
@@ -151,6 +154,16 @@ Claude in Excel is now available in beta to all Max, Team, and Enterprise users.
 
 We’ve changed our context window functionality to enable infinite-length conversations (with some exceptions) and significantly reduce length limit errors by summarizing earlier messages when a chat approaches its context limit. Read more here: [Understanding Usage and Length Limits](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits).
 
+**Claude in Chrome updates**
+
+Claude in Chrome is now available in beta to all Max plan subscribers. After months of testing, we're expanding access with the following updates:
+
+- **Scheduled tasks**: Set recurring browser tasks to run automatically on your schedule. Set it once and Claude handles it from there.
+
+- **Follow a plan**: Approve Claude's plan, then let it execute the entire workflow independently within those approved boundaries, without asking for permission until it's done.
+
+- **Model selection**: Choose between Haiku 4.5 for speed, Sonnet 4.5 for complex tasks, or Opus 4.5 for maximum reasoning power—switch anytime based on what you need.
+
 ------------------------------------------------------------------------
 
 ## October 2025
@@ -167,6 +180,14 @@ Max plan users can now access Claude’s memory capabilities. This feature will 
 
 We released our fastest, most cost-efficient model – Claude Haiku 4.5. Our latest small model matches Sonnet 4’s performance on coding, computer use, and agent tasks.
 
+**Claude in Chrome updates**
+
+- **Powered by Haiku 4.5:** Claude in Chrome now defaults to Haiku 4.5 so it’s a faster, more responsive experience. You can always switch back to Sonnet 4.5.
+
+- **Claude handles image uploads for you:** Give Claude an image and tell it where to upload, whether it’s an expense report, form attachment, or a picture upload.
+
+- **Show Claude exactly what you mean:** Take a screenshot or drag to highlight specific parts of your screen. Point Claude to the exact button, field, or detail—much faster than describing complex layouts in words.
+
 ------------------------------------------------------------------------
 
 ## September 2025
@@ -181,6 +202,20 @@ We released our newest model, Sonnet 4.5. This is the best model in the world fo
 
 Pro users can now leverage Claude’s file creation and editing capabilities, and users on all paid plans can access these features on Claude for iOS or Android. See this updated article for more information: [Create and edit files with Claude](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude).
 
+**Claude in Chrome updates**
+
+The remaining Max users on our waitlist were granted access to Claude in Chrome, along with the following updates:
+
+- **Powered by Sonnet 4.5:** Claude in Chrome now defaults to Sonnet 4.5, our smartest model yet. Improved for browser tasks, you'll notice better reasoning, fewer errors, and more reliable task completion—especially for multi-step workflows.
+
+- **Work across multiple tabs:** Claude can now juggle multiple browser tabs at once. Just drag tabs into Claude's tab group and it can see and work across all of them simultaneously—no more jumping back and forth to gather information before taking action.
+
+- **Smarter on the sites you use every day:** Claude now understands how to navigate Slack, Google Calendar, Gmail, Google Docs, and GitHub without you having to direct every click. Ask Claude to "schedule a meeting" or "update the doc" and it knows what to do—no need to walk it through every step. We’re continuing to improve Claude’s understanding of other popular sites.
+
+- **Get notified when Claude needs you:** Turn on notifications and Claude will ping you when it needs your permission or when a task is complete. Now you can switch to other work while Claude handles things in the background.
+
+- **Show Claude exactly what you mean:** Upload images or take screenshots of specific screen areas to give Claude precise visual context. Much faster than describing what you're looking at.
+
 ### September 18, 2025
 
 **Claude’s memory on Enterprise plans**
@@ -192,6 +227,18 @@ Users on Enterprise plans can leverage memory; Claude can now remember relevant 
 - [Importing and exporting your memory from Claude](https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude)
 
 - [Using incognito chats](https://support.claude.com/en/articles/12260368-using-incognito-chats)
+
+### September 16, 2025
+
+**Claude in Chrome expansion**
+
+Claude in Chrome expanded to 10,000 Max plan users with the release of new capabilities:
+
+- **Long-running workflows:** Claude in Chrome can handle more complex, multi-step workflows, and continue working even when you switch tabs (as long as Chrome is open).
+
+- **/slash commands:** Save your best-working prompts as shortcuts (/slash commands) and reuse these proven workflows instantly without retyping instructions to Claude.
+
+- **Contextual prompt suggestions:** Claude in Chrome gives contextual prompt suggestions or helpful tips based on what website you’re on.
 
 ### September 11, 2025
 
@@ -317,45 +364,17 @@ Enabled project permissions and sharing for Team and Enterprise plans. See [Orga
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data)
 
 How up-to-date is Claude's training data?
 
-[](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)
 
-How large is the context window on paid Claude plans?
+How large is the Claude API’s context window?
 
-[](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
 
 Claude Code model configuration
 
-[](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Getting started with Claude in Chrome
 
-[](https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work)
 
 Applying Claude Opus 4.5’s strengths to your everyday work
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

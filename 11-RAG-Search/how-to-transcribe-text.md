@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # How to transcribe documents with Claude
 
 Claude 3 is great at reading unstructured text and information within

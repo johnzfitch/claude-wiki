@@ -1,53 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:34Z"
+fetched_at: "2026-02-28T11:22:33Z"
 source_url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
 title: "What is the Max plan? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_a1d25b0165)
-
-[](#h_f8fcb31035)
-
-[](#h_cfd2904008)
-
-[All Collections](/en/)
-
-[Paid Claude Plans](https://support.claude.com/en/collections/5953830-paid-claude-plans)
-
-[Max Plan](https://support.claude.com/en/collections/12394590-max-plan)
-
-What is the Max plan?
-
 # What is the Max plan?
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_a1d25b0165)
-
-[](#h_f8fcb31035)
-
-[](#h_cfd2904008)
 
 This article is about paid Max plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.
 
@@ -65,7 +24,7 @@ The Max plan is designed for users who collaborate with Claude frequently and ne
 
 - **Access to Claude Code: [Use Claude Code](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)** for your terminal-based coding workflows with one unified subscription.
 
-- **Cowork (research preview):** Hand off complex, multi-step tasks to Claude in Claude Desktop (on macOS only). Claude can access your local files, coordinate parallel workstreams, and deliver professional outputs like spreadsheets and presentations. See this article for more information: **[Getting Started with Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-local-agent-mode)**.
+- **Access to Cowork:** Hand off complex, multi-step tasks to Claude in Claude Desktop. See this article for more information: **[Get started with Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-local-agent-mode)**.
 
 ------------------------------------------------------------------------
 
@@ -119,45 +78,17 @@ For more information about usage and length limits, refer to **[Understanding us
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan)
 
 How do I sign up for the Max plan?
 
-[](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)
 
 Choosing a Claude plan
 
-[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
 
-[](https://support.claude.com/en/articles/13163666-holiday-2025-usage-promotion)
 
 Holiday 2025 Usage Promotion
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

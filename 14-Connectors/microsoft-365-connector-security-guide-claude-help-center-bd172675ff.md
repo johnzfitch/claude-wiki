@@ -1,73 +1,14 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:44Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
 title: "Microsoft 365 Connector: Security Guide | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_e8f0c7a1bb)
-
-[](#h_75420ea190)
-
-[](#h_e94050da51)
-
-[](#h_40c4a02265)
-
-[](#h_50eeb68475)
-
-[](#h_f73f030810)
-
-[](#h_d9a13b986e)
-
-[](#h_d078c29e77)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
-
-Microsoft 365 Connector: Security Guide
+4.  Microsoft 365 Connector: Security Guide
 
 # Microsoft 365 Connector: Security Guide
 
-Updated this week
-
-Table of contents
-
-[](#h_e8f0c7a1bb)
-
-[](#h_75420ea190)
-
-[](#h_e94050da51)
-
-[](#h_40c4a02265)
-
-[](#h_50eeb68475)
-
-[](#h_f73f030810)
-
-[](#h_d9a13b986e)
-
-[](#h_d078c29e77)
 
 ## What it is
 
@@ -335,45 +276,17 @@ A: Yes. The recommended approach is to use app assignment to restrict who can us
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 
 Use the Connectors Directory to extend Claude’s capabilities
 
-[](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)
 
 Enabling and using the Microsoft 365 connector
 
-[](https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions)
 
 Enforce network-level access control with Tenant Restrictions
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:40Z"
+fetched_at: "2026-02-24T04:06:49Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/sessions"
 title: "Session Management - Claude API Docs"
 ---
-
-Guides
-
 # Session Management
 
-Copy page
 
 Understanding how the Claude Agent SDK handles sessions and session resumption
 
-Copy page
 
 # 
 
@@ -34,27 +29,27 @@ Getting the Session ID
 TypeScript
 
 ``` shiki
-import { query } from "@anthropic-ai/claude-agent-sdk"
+import { query } from "@anthropic-ai/claude-agent-sdk";
 
-let sessionId: string | undefined
+let sessionId: string | undefined;
 
 const response = query({
   prompt: "Help me build a web application",
   options: {
     model: "claude-opus-4-6"
   }
-})
+});
 
 for await (const message of response) {
   // The first message is a system init message with the session ID
-  if (message.type === 'system' && message.subtype === 'init') {
-    sessionId = message.session_id
-    console.log(`Session started with ID: ${sessionId}`)
+  if (message.type === "system" && message.subtype === "init") {
+    sessionId = message.session_id;
+    console.log(`Session started with ID: ${sessionId}`);
     // You can save this ID for later resumption
   }
 
   // Process other messages...
-  console.log(message)
+  console.log(message);
 }
 
 // Later, you can use the saved sessionId to resume
@@ -64,7 +59,7 @@ if (sessionId) {
     options: {
       resume: sessionId
     }
-  })
+  });
 }
 ```
 
@@ -77,7 +72,7 @@ The SDK supports resuming sessions from previous conversation states, enabling c
 TypeScript
 
 ``` shiki
-import { query } from "@anthropic-ai/claude-agent-sdk"
+import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Resume a previous session using its ID
 const response = query({
@@ -87,11 +82,11 @@ const response = query({
     model: "claude-opus-4-6",
     allowedTools: ["Read", "Edit", "Write", "Glob", "Grep", "Bash"]
   }
-})
+});
 
 // The conversation continues with full context from the previous session
 for await (const message of response) {
-  console.log(message)
+  console.log(message);
 }
 ```
 
@@ -134,20 +129,20 @@ Example: Forking a Session
 TypeScript
 
 ``` shiki
-import { query } from "@anthropic-ai/claude-agent-sdk"
+import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // First, capture the session ID
-let sessionId: string | undefined
+let sessionId: string | undefined;
 
 const response = query({
   prompt: "Help me design a REST API",
   options: { model: "claude-opus-4-6" }
-})
+});
 
 for await (const message of response) {
-  if (message.type === 'system' && message.subtype === 'init') {
-    sessionId = message.session_id
-    console.log(`Original session: ${sessionId}`)
+  if (message.type === "system" && message.subtype === "init") {
+    sessionId = message.session_id;
+    console.log(`Original session: ${sessionId}`);
   }
 }
 
@@ -156,14 +151,14 @@ const forkedResponse = query({
   prompt: "Now let's redesign this as a GraphQL API instead",
   options: {
     resume: sessionId,
-    forkSession: true,  // Creates a new session ID
+    forkSession: true, // Creates a new session ID
     model: "claude-opus-4-6"
   }
-})
+});
 
 for await (const message of forkedResponse) {
-  if (message.type === 'system' && message.subtype === 'init') {
-    console.log(`Forked session: ${message.session_id}`)
+  if (message.type === "system" && message.subtype === "init") {
+    console.log(`Forked session: ${message.session_id}`);
     // This will be a different session ID
   }
 }
@@ -173,100 +168,8 @@ const originalContinued = query({
   prompt: "Add authentication to the REST API",
   options: {
     resume: sessionId,
-    forkSession: false,  // Continue original session (default)
+    forkSession: false, // Continue original session (default)
     model: "claude-opus-4-6"
   }
-})
+});
 ```
-
-Was this page helpful?
-
-- 
-
-- [How Sessions Work](#how-sessions-work)
-
-- [Getting the Session ID](#getting-the-session-id)
-
-- [Resuming Sessions](#resuming-sessions)
-
-- [Forking Sessions](#forking-sessions)
-
-- [When to Fork a Session](#when-to-fork-a-session)
-
-- [Forking vs Continuing](#forking-vs-continuing)
-
-- [Example: Forking a Session](#example-forking-a-session)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

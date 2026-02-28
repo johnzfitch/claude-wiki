@@ -2,18 +2,6 @@
 category: "19-Reference"
 source_url: "https://www.anthropic.com/news/developing-computer-use"
 ---
-
-
-Announcements
-Product
-Developing a computer use model
-Oct 22, 2024
-UPDATE
-
-Consumer Terms and Privacy Policy
-
-Aug 28, 2025
-
 Claude can now use computers. The latest version of Claude 3.5 Sonnet can, when run through the appropriate software setup, follow a user’s commands to move a cursor around their computer’s screen, click on relevant locations, and input information via a virtual keyboard, emulating the way people interact with their own computer.
 
 We think this skill—which is currently in public beta—represents a significant breakthrough in AI progress. Below, we share some insights from the research that went into developing computer use models—and into making them safer.

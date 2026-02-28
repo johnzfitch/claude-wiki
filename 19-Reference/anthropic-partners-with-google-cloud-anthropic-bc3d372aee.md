@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-partners-with-google-cloud"
 title: "Anthropic Partners with Google Cloud \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic Partners with Google Cloud
 
 Feb 3, 2023
@@ -19,7 +16,6 @@ Anthropic is focused on developing and deploying Claude, an AI assistant based o
   
 “We are eager to use the Google Cloud infrastructure to build reliable, interpretable, and steerable AI systems. This partnership with Google Cloud will let us build a more robust AI platform,” said Dario Amodei.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-partners-with-google-cloud)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-partners-with-google-cloud)
 
 ## Related content
 

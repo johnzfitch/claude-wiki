@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/news/accenture-aws-anthropic"
 title: "Accenture, AWS, Anthropic Collaboration \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic, AWS, and Accenture team up to build trusted solutions for enterprises
 
 Mar 20, 2024
@@ -19,7 +16,6 @@ The initiative is already delivering impact in the public health sector. Powered
 
 By combining Anthropic's technical AI expertise, AWS's approach to security and reliability, and Accenture's deep industry knowledge, we hope to provide tailored solutions for trust-driven sectors and streamline the adoption of powerful AI systems that put humans at the center.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/accenture-aws-anthropic)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/accenture-aws-anthropic)
 
 ## Related content
 

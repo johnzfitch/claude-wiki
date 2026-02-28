@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Orchestrator-Workers Workflow
 
 ## Introduction
@@ -344,7 +343,6 @@ results = orchestrator.process(
     Each approach addresses the "eco-friendly" aspect differently—through data, values, or practical advantages—making them valuable for different marketing contexts.
 
 
-
     ================================================================================
     IDENTIFIED 3 APPROACHES
     ================================================================================
@@ -469,12 +467,9 @@ results = orchestrator.process(
     - **Local Sourcing**: 67% of materials sourced within 500km of manufacturing facility
 
 
-
-
     --------------------------------------------------------------------------------
     Approach 2: LIFESTYLE-EMOTIONAL
     --------------------------------------------------------------------------------
-
 
 
     **More Than Hydration. A Daily Ritual of Change.**
@@ -492,8 +487,6 @@ results = orchestrator.process(
     Because the future isn't something that happens to us—it's something we carry with us, one conscious choice at a time.
 
     **Welcome to the movement. Welcome home.**
-
-
 
 
     --------------------------------------------------------------------------------

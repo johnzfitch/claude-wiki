@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 ## Basic Multi-LLM Workflows
 
 This notebook demonstrates three simple multi-LLM workflows. They trade

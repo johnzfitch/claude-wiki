@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/news/activating-asl3-protections"
 title: "Activating AI Safety Level 3 protections \\ Anthropic"
 ---
-
-Policy
-
 # Activating AI Safety Level 3 protections
 
 May 22, 2025
@@ -77,9 +74,6 @@ Read the full [report](https://www.anthropic.com/activating-asl3-report).
 ⁶Nation-state threats (other than those using non-novel attack chains) and sophisticated insider risk are out of the scope of the ASL-3 Standard.  
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/activating-asl3-protections)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/activating-asl3-protections)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

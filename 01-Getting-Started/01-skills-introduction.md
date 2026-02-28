@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Introduction to Claude Skills
 
 Learn how to use Claude\'s Skills feature to create professional

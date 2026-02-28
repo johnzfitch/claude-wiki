@@ -1,57 +1,12 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-16T21:12:34Z"
+fetched_at: "2026-02-28T11:22:33Z"
 source_url: "https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan"
 title: "How do I sign up for the Max plan? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_6efc4f46ee)
-
-[](#h_96f1c57387)
-
-[](#h_1e8d9aa064)
-
-[](#h_73bf6cce1a)
-
-[All Collections](/en/)
-
-[Paid Claude Plans](https://support.claude.com/en/collections/5953830-paid-claude-plans)
-
-[Max Plan](https://support.claude.com/en/collections/12394590-max-plan)
-
-How do I sign up for the Max plan?
-
 # How do I sign up for the Max plan?
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_6efc4f46ee)
-
-[](#h_96f1c57387)
-
-[](#h_1e8d9aa064)
-
-[](#h_73bf6cce1a)
 
 This article applies to individual consumers signing up for paid Max plans. If you're part of an organization looking to use Claude with your team, refer to [Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans).
 
@@ -107,45 +62,17 @@ After subscribing for a Max plan, your subscription will be set to automatically
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11049741-what-is-the-max-plan)
 
 What is the Max plan?
 
-[](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)
 
 Choosing a Claude plan
 
-[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
 
-[](https://support.claude.com/en/articles/13163666-holiday-2025-usage-promotion)
 
 Holiday 2025 Usage Promotion
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

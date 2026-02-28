@@ -1,43 +1,14 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-16T21:12:36Z"
+fetched_at: "2026-02-28T11:22:07Z"
 source_url: "https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu"
 title: "Designated Point of Contact for Users in the EU | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_50b17bfae2)
-
-[All Collections](/en/)
-
-[Privacy and Legal](https://support.claude.com/en/collections/4078534-privacy-and-legal)
-
-Designated Point of Contact for Users in the EU
+3.  Designated Point of Contact for Users in the EU
 
 # Designated Point of Contact for Users in the EU
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_50b17bfae2)
 
 Users in the EU can open a support inquiry from this page via the chat tool, which serves as our single point of contact for EU users under the DSA.
 
@@ -55,41 +26,14 @@ Anthropic will continue to monitor the number of average monthly active recipien
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis)
 
 Using S&P Global Data for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 
 Financial Analysis Workflows with Claude
 
-[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
 
-Using Claude in Excel
+Use Claude in Excel
 
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 
 Getting started with Claude for Nonprofits
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

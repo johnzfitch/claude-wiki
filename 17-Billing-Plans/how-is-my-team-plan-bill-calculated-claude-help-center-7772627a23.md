@@ -1,53 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:51Z"
+fetched_at: "2026-02-28T11:22:16Z"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 title: "How is my Team plan bill calculated? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_bb346a52d9)
-
-[](#h_fd76ebfcba)
-
-[](#h_f78e0a0a24)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Team Plan](https://support.claude.com/en/collections/9811436-team-plan)
-
-How is my Team plan bill calculated?
-
 # How is my Team plan bill calculated?
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_bb346a52d9)
-
-[](#h_fd76ebfcba)
-
-[](#h_f78e0a0a24)
 
 Prices shown are for US customers and exclude applicable taxes. Pricing, currency, and tax handling vary by region. Visit **[claude.ai/upgrade](http://claude.ai/upgrade)** to see current pricing for your location.
 
@@ -101,45 +60,17 @@ Taxes are not included in this example.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)
 
 What is the Team plan?
 
-[](https://support.claude.com/en/articles/9267323-how-do-i-cancel-my-organization-s-team-plan-subscription)
 
 How do I cancel my organization’s Team plan subscription?
 
-[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
 
 How am I billed for my Enterprise plan?
 
-[](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans)
 
 Purchasing and managing seats on Team plans
 
-[](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs)
 
 Team plan billing FAQs
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

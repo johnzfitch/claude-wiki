@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-higher-education-initiatives"
 title: "Anthropic launches higher education advisory board and AI Fluency courses \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic launches higher education advisory board and AI Fluency courses
 
 Aug 21, 2025
@@ -46,9 +43,6 @@ These initiatives reflect our commitment to co-creating the future of AI in educ
 Access the courses and learn more at [anthropic.com/learn](https://www.anthropic.com/learn).
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-higher-education-initiatives)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-higher-education-initiatives)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

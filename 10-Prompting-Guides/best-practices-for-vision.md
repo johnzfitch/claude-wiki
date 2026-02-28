@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Best practices for using vision with Claude
 
 Vision allows for a new mode of interaction with Claude. We've compiled

@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Tool Evaluation
 
 Multiple agents independently run a single evaluation task from an

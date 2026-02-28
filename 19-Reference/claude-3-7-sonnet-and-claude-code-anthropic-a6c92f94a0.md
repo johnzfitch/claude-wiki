@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/claude-3-7-sonnet"
 title: "Claude 3.7 Sonnet and Claude Code \\ Anthropic"
 ---
-
-Announcements
-
 # Claude 3.7 Sonnet and Claude Code
 
 Feb 24, 2025
@@ -111,7 +108,6 @@ This results in a score of 70.3% on the subset of n=489 verified tasks which wor
 - sphinx-doc\_\_sphinx-8595
 - sphinx-doc\_\_sphinx-9711
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/claude-3-7-sonnet)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/claude-3-7-sonnet)
 
 ## Related content
 

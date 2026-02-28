@@ -1,51 +1,14 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-16T21:12:45Z"
+fetched_at: "2026-02-28T11:22:10Z"
 source_url: "https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work"
 title: "Applying Claude Opus 4.5’s strengths to your everyday work | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_3b455f335b)
-
-[](#h_b13bdac262)
-
-[](#h_6f863dedce)
-
-[All Collections](/en/)
-
-[Video Tutorials](https://support.claude.com/en/collections/10548294-video-tutorials)
-
-Applying Claude Opus 4.5’s strengths to your everyday work
+3.  Applying Claude Opus 4.5’s strengths to your everyday work
 
 # Applying Claude Opus 4.5’s strengths to your everyday work
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_3b455f335b)
-
-[](#h_b13bdac262)
-
-[](#h_6f863dedce)
 
 Claude Opus 4.5 is the most intelligent Claude model to date. The difference shows in complex, multi-step work. Start wherever you are. Opus 4.5 understands your requests and reads your files deeply, holds context across long work, reasons through hard problems, and delivers results that reflect it.
 
@@ -174,45 +137,17 @@ You can monitor your usage at [claude.ai/settings/usage](https://claude.ai/setti
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
+
+Claude Code model configuration
+
 
 Release notes
 
-[](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work)
 
 Create and edit files with Claude to eliminate hours of busy work
 
-[](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
-
-Claude in Chrome release notes
-
-[](https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai)
 
 Getting the most out of Sonnet 4.5 in Claude.ai
 
-[](https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5)
 
 Create professional results across tools with Claude Sonnet 4.5
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

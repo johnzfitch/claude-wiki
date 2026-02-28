@@ -3,12 +3,6 @@ category: "20-Models"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/migrating-to-claude-4"
 title: "Before (Claude Sonnet 3.7)"
 ---
-
-
-Models & pricing
-Migrating to Claude 4.5
-Copy page
-
 This guide covers two key migration paths to Claude 4.5 models:
 
 Claude Sonnet 3.7 → Claude Sonnet 4.5: Our most intelligent model with best-in-class reasoning, coding, and long-running agent capabilities
@@ -337,5 +331,3 @@ Check our API documentation for detailed specifications
 Review model capabilities for performance comparisons
 Review API release notes for API updates
 Contact support if you encounter any issues during migration
-
-Was this page helpful?

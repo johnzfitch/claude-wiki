@@ -1,57 +1,14 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:34Z"
+fetched_at: "2026-02-28T11:22:33Z"
 source_url: "https://support.claude.com/en/articles/11088742-using-the-gmail-and-google-calendar-integrations"
 title: "Using the Gmail and Google Calendar Integrations | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_81b0a7b35b)
-
-[](#h_f53a90fce0)
-
-[](#h_3d0fd1ec17)
-
-[](#h_99c967422f)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
-
-Using the Gmail and Google Calendar Integrations
+4.  Using the Gmail and Google Calendar Integrations
 
 # Using the Gmail and Google Calendar Integrations
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_81b0a7b35b)
-
-[](#h_f53a90fce0)
-
-[](#h_3d0fd1ec17)
-
-[](#h_99c967422f)
 
 The Gmail and Google Calendar integrations are available for all users on Claude and Claude Desktop.
 
@@ -127,45 +84,17 @@ For more information on leveraging your Google Workspace with Claude, see our gu
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10166901-using-the-google-drive-integration)
 
 Using the Google Drive integration
 
-[](https://support.claude.com/en/articles/10168395-setting-up-claude-integrations)
 
-Setting up Claude integrations
+Set up Claude integrations
 
-[](https://support.claude.com/en/articles/11088779-using-google-drive-cataloging-on-the-enterprise-plan)
 
 Using Google Drive Cataloging on the Enterprise Plan
 
-[](https://support.claude.com/en/articles/11088861-using-research-on-claude)
 
 Using Research on Claude
 
-[](https://support.claude.com/en/articles/11101545-using-research-and-google-workspace)
 
 Using Research and Google Workspace
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

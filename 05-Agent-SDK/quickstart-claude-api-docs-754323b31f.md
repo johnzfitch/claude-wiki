@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:32Z"
+fetched_at: "2026-02-24T04:05:43Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/quickstart"
 title: "Quickstart - Claude API Docs"
 ---
-
-Agent SDK
-
 # Quickstart
 
-Copy page
 
 Get started with the Python or TypeScript Agent SDK to build AI agents that work autonomously
 
-Copy page
 
 Use the Agent SDK to build an AI agent that reads your code, finds bugs, and fixes them, all without manual intervention.
 
@@ -101,6 +96,7 @@ def calculate_average(numbers):
         total += num
     return total / len(numbers)
 
+
 def get_user_name(user):
     return user["name"].upper()
 ```
@@ -122,24 +118,26 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AssistantMessage, ResultMessage
 
+
 async def main():
     # Agentic loop: streams messages as Claude works
     async for message in query(
         prompt="Review utils.py for bugs that would cause crashes. Fix any issues you find.",
         options=ClaudeAgentOptions(
             allowed_tools=["Read", "Edit", "Glob"],  # Tools Claude can use
-            permission_mode="acceptEdits"            # Auto-approve file edits
-        )
+            permission_mode="acceptEdits",  # Auto-approve file edits
+        ),
     ):
         # Print human-readable output
         if isinstance(message, AssistantMessage):
             for block in message.content:
                 if hasattr(block, "text"):
-                    print(block.text)              # Claude's reasoning
+                    print(block.text)  # Claude's reasoning
                 elif hasattr(block, "name"):
-                    print(f"Tool: {block.name}")   # Tool being called
+                    print(f"Tool: {block.name}")  # Tool being called
         elif isinstance(message, ResultMessage):
-            print(f"Done: {message.subtype}")      # Final result
+            print(f"Done: {message.subtype}")  # Final result
+
 
 asyncio.run(main())
 ```
@@ -207,9 +205,8 @@ You can modify your agent's behavior by changing the options. Here are a few exa
 Python
 
 ``` shiki
-options=ClaudeAgentOptions(
-    allowed_tools=["Read", "Edit", "Glob", "WebSearch"],
-    permission_mode="acceptEdits"
+options = ClaudeAgentOptions(
+    allowed_tools=["Read", "Edit", "Glob", "WebSearch"], permission_mode="acceptEdits"
 )
 ```
 
@@ -218,10 +215,10 @@ options=ClaudeAgentOptions(
 Python
 
 ``` shiki
-options=ClaudeAgentOptions(
+options = ClaudeAgentOptions(
     allowed_tools=["Read", "Edit", "Glob"],
     permission_mode="acceptEdits",
-    system_prompt="You are a senior Python developer. Always follow PEP 8 style guidelines."
+    system_prompt="You are a senior Python developer. Always follow PEP 8 style guidelines.",
 )
 ```
 
@@ -230,9 +227,8 @@ options=ClaudeAgentOptions(
 Python
 
 ``` shiki
-options=ClaudeAgentOptions(
-    allowed_tools=["Read", "Edit", "Glob", "Bash"],
-    permission_mode="acceptEdits"
+options = ClaudeAgentOptions(
+    allowed_tools=["Read", "Edit", "Glob", "Bash"], permission_mode="acceptEdits"
 )
 ```
 
@@ -272,99 +268,3 @@ Now that you've created your first agent, learn how to extend its capabilities a
 - **[MCP servers](/docs/en/agent-sdk/mcp)**: connect to databases, browsers, APIs, and other external systems
 - **[Hosting](/docs/en/agent-sdk/hosting)**: deploy agents to Docker, cloud, and CI/CD
 - **[Example agents](https://github.com/anthropics/claude-agent-sdk-demos)**: see complete examples: email assistant, research agent, and more
-
-Was this page helpful?
-
-- 
-
-- [Prerequisites](#prerequisites)
-
-- [Setup](#setup)
-
-- [Create a buggy file](#create-a-buggy-file)
-
-- [Build an agent that finds and fixes bugs](#build-an-agent-that-finds-and-fixes-bugs)
-
-- [Run your agent](#run-your-agent)
-
-- [Try other prompts](#try-other-prompts)
-
-- [Customize your agent](#customize-your-agent)
-
-- [Key concepts](#key-concepts)
-
-- [Next steps](#next-steps)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

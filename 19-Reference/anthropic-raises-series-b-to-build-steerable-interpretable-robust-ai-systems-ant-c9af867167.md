@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-series-b-to-build-safe-reliable-ai"
 title: "Anthropic Raises Series B to build steerable, interpretable, robust AI systems \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic Raises Series B to build steerable, interpretable, robust AI systems
 
 Apr 29, 2022
@@ -23,7 +20,6 @@ Anthropic is now a growing team of around 40 people based in a plant-filled offi
   
 The Series B follows the company raising \$124 million in a Series A round in 2021. The Series B round was led by Sam Bankman-Fried, CEO of FTX. The round also included participation from Caroline Ellison, Jim McClave, Nishad Singh, Jaan Tallinn, and the Center for Emerging Risk Research (CERR).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-raises-series-b-to-build-safe-reliable-ai)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-raises-series-b-to-build-safe-reliable-ai)
 
 ## Related content
 

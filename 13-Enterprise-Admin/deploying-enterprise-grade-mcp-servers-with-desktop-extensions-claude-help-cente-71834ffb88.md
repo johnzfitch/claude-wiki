@@ -1,49 +1,14 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-16T21:12:44Z"
+fetched_at: "2026-02-28T11:22:18Z"
 source_url: "https://support.claude.com/en/articles/12702546-deploying-enterprise-grade-mcp-servers-with-desktop-extensions"
 title: "Deploying enterprise-grade MCP servers with desktop extensions | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_c56ebfa46f)
-
-[](#h_9b1c720aef)
-
-[All Collections](/en/)
-
-[Claude Desktop](https://support.claude.com/en/collections/16163169-claude-desktop)
-
-[Desktop Extensions](https://support.claude.com/en/collections/17879657-desktop-extensions)
-
-Deploying enterprise-grade MCP servers with desktop extensions
+4.  Deploying enterprise-grade MCP servers with desktop extensions
 
 # Deploying enterprise-grade MCP servers with desktop extensions
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_c56ebfa46f)
-
-[](#h_9b1c720aef)
 
 Desktop extensions are installable packages that run Model Context Protocol (MCP) servers locally on your machine. They provide Claude Desktop with secure access to your local resources, internal systems, and personal tools without the complexity of remote infrastructure.
 
@@ -87,45 +52,17 @@ Desktop extensions eliminate the traditional tradeoff between security and usabi
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10065433-installing-claude-desktop)
 
 Installing Claude Desktop
 
-[](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
 
 Getting Started with Local MCP Servers on Claude Desktop
 
-[](https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist)
-
-Enabling and using the desktop extension allowlist
-
-[](https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows)
 
 Deploy Claude Desktop for Windows
 
-[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
+
+Remote MCP Server Submission Guide
+
 
 Building Desktop Extensions with MCPB
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai"
 title: "Anthropic achieves ISO 42001 certification for responsible AI \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic achieves ISO 42001 certification for responsible AI
 
 Jan 13, 2025
@@ -33,9 +30,6 @@ As AI systems become increasingly powerful, safety and security are at the foref
 Information about our ISO certification is now available on our [Trust Center](https://trust.anthropic.com/). This includes the issued certificate, an overview of the standard, what it entails, and how it reinforces our commitments to responsible AI development.
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-achieves-iso-42001-certification-for-responsible-ai)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

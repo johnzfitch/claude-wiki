@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-expands-global-leadership-in-enterprise-ai-naming-chris-ciauri-as-managing-director-of"
 title: "Anthropic expands global leadership in enterprise AI, naming Chris Ciauri as Managing Director of International \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic expands global leadership in enterprise AI, naming Chris Ciauri as Managing Director of International
 
 Sep 26, 2025
@@ -43,7 +40,6 @@ For more information about current career opportunities at Anthropic, visit anth
 
 \*Menlo Ventures: [*2025 Mid-Year LLM Market Update: Foundation Model Landscape + Economics*](https://menlovc.com/perspective/2025-mid-year-llm-market-update/)
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-expands-global-leadership-in-enterprise-ai-naming-chris-ciauri-as-managing-director-of)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-expands-global-leadership-in-enterprise-ai-naming-chris-ciauri-as-managing-director-of)
 
 ## Related content
 

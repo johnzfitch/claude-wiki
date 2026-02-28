@@ -1,73 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:51Z"
+fetched_at: "2026-02-28T11:22:23Z"
 source_url: "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them"
 title: "What are artifacts and how do I use them? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_f7d007e3b0)
-
-[](#h_446865fd78)
-
-[](#h_3d4e6623c6)
-
-[](#h_9cbf05e668)
-
-[](#h_814c8c8496)
-
-[](#h_8fd83d1dd6)
-
-[](#h_7f1cce77e4)
-
-[](#h_49d1cebabb)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
-
-What are artifacts and how do I use them?
+4.  What are artifacts and how do I use them?
 
 # What are artifacts and how do I use them?
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_f7d007e3b0)
-
-[](#h_446865fd78)
-
-[](#h_3d4e6623c6)
-
-[](#h_9cbf05e668)
-
-[](#h_814c8c8496)
-
-[](#h_8fd83d1dd6)
-
-[](#h_7f1cce77e4)
-
-[](#h_49d1cebabb)
 
 Accessing artifacts in the sidebar and Claude-powered artifacts are supported on free, Pro, Max, Team, and Enterprise plans.
 
@@ -249,45 +190,17 @@ To share your artifacts publicly, embed them on websites, or discover artifacts 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9547008-publishing-and-sharing-artifacts)
 
 Publishing and sharing artifacts
 
-[](https://support.claude.com/en/articles/9945615-intro-to-artifacts)
 
 Intro to Artifacts
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
 Pre-built web connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code)
 
 Use artifacts to visualize and create AI apps, without ever writing a line of code
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

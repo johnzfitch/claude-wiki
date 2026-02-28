@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-signs-pledge-to-americas-youth-investing-in-ai-education"
 title: "Anthropic joins White House pledge for AI education \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic Signs White House Pledge to America's Youth: Investing in AI Education
 
 Sep 4, 2025
@@ -49,7 +46,6 @@ These findings directly shape our products: we designed Learning Mode in Claude 
 
 Our participation in today's White House AI Education Taskforce meeting demonstrates our commitment to working alongside government and industry partners to ensure America's students and educators are prepared for an AI-powered future. Through initiatives like the White House Pledge to America's Youth: Investing in AI Education, we’ll continue to invest in America's next generation of leaders, innovators, and problem-solvers. Learn more about our education work at [anthropic.com/education](http://anthropic.com/education).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-signs-pledge-to-americas-youth-investing-in-ai-education)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-signs-pledge-to-americas-youth-investing-in-ai-education)
 
 ## Related content
 

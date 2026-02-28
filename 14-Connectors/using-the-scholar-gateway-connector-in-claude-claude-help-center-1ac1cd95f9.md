@@ -1,55 +1,14 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:43Z"
+fetched_at: "2026-02-28T11:22:21Z"
 source_url: "https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude"
 title: "Using the Scholar Gateway Connector in Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_cb895ca2e4)
-
-[](#h_174fd157bb)
-
-[](#h_87f3cbd784)
-
-[](#h_491024c0e0)
-
-[All Collections](/en/)
-
-[Claude for Life Sciences](https://support.claude.com/en/collections/16142619-claude-for-life-sciences)
-
-Using the Scholar Gateway Connector in Claude
+3.  Using the Scholar Gateway Connector in Claude
 
 # Using the Scholar Gateway Connector in Claude
 
-Updated this week
-
-Table of contents
-
-[](#h_cb895ca2e4)
-
-[](#h_174fd157bb)
-
-[](#h_87f3cbd784)
-
-[](#h_491024c0e0)
 
 The Scholar Gateway by Wiley integration provides authenticated access to the most relevant snippets of scientific research papers to utilize within Claude. This article explains how to set up and use the Scholar Gateway integration with Claude to accelerate your research workflows.
 
@@ -115,45 +74,17 @@ Technical details of the Scholar Gateway integration can be found in **[Wiley’
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)
 
 Getting Started with Claude for Life Sciences
 
-[](https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude)
 
 Using the BioRender Connector in Claude
 
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
 Using the Synapse.org connector in Claude
 
-[](https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude)
 
 Using the PubMed Connector in Claude
 
-[](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
 
 Using the Benchling Connector in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

@@ -1,59 +1,14 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-08T20:51:44Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services"
 title: "Getting Started with Claude for Financial Services | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_acec1bc738)
-
-[](#h_870f6ed34e)
-
-[](#h_95e911e380)
-
-[](#h_e8acb4ecbe)
-
-[](#h_d3c0cf61d4)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-Getting Started with Claude for Financial Services
+3.  Getting Started with Claude for Financial Services
 
 # Getting Started with Claude for Financial Services
 
-Updated yesterday
-
-Table of contents
-
-[](#h_acec1bc738)
-
-[](#h_870f6ed34e)
-
-[](#h_95e911e380)
-
-[](#h_e8acb4ecbe)
-
-[](#h_d3c0cf61d4)
 
 Claude for Financial Services transforms how financial professionals analyze markets, conduct research, and make investment decisions by providing direct access to essential data sources through a unified interface.
 
@@ -111,45 +66,17 @@ For questions about Claude for Financial Services, [contact our Sales team](http
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)
 
 Getting Started with Claude for Life Sciences
 
-[](https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research)
-
-Using PitchBook for Investment Research
-
-[](https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis)
 
 Using Moody’s for Financial Analysis
 
-[](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
 
 Claude for Financial Services Skills
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Install financial services plugins for Cowork

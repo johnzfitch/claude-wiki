@@ -1,49 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:39Z"
+fetched_at: "2026-02-28T11:22:14Z"
 source_url: "https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude"
 title: "Importing and exporting your memory from Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_f206e0ca1a)
-
-[](#h_7b3e51e062)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[General](https://support.claude.com/en/collections/9811414-general)
-
-Importing and exporting your memory from Claude
+4.  Importing and exporting your memory from Claude
 
 # Importing and exporting your memory from Claude
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_f206e0ca1a)
-
-[](#h_7b3e51e062)
 
 Memory from chat history is available for users on Pro, Max, Team, and Enterprise plans on the web, Claude Desktop, and Claude Mobile.
 
@@ -71,45 +36,17 @@ To view your memory exactly how Claude sees it, go to [Settings \> Capabilities]
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)
+
+How can I export my Claude data?
+
 
 Using Claude’s chat search and memory to build on previous context
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
 
 Release notes
 
-[](https://support.claude.com/en/articles/12260368-using-incognito-chats)
-
-Using incognito chats
-
-[](https://support.claude.com/en/articles/12431227-simplify-your-browsing-experience-with-claude-in-chrome)
 
 Simplify your browsing experience with Claude in Chrome
 
-[](https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint)
 
-Using Claude in PowerPoint
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Use Claude in PowerPoint

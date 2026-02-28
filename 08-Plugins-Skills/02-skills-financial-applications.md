@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Claude Skills for Financial Applications
 
 Build real-world financial dashboards, portfolio analytics, and

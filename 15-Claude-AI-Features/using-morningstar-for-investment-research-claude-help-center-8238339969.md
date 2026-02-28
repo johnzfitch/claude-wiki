@@ -1,57 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:40Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12220057-using-morningstar-for-investment-research"
 title: "Using Morningstar for Investment Research | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_449dfa5add)
-
-[](#h_0bc0ad941b)
-
-[](#h_485c233cd5)
-
-[](#h_bd6fd0265f)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-[Market Data](https://support.claude.com/en/collections/16288976-market-data)
-
-Using Morningstar for Investment Research
+4.  Using Morningstar for Investment Research
 
 # Using Morningstar for Investment Research
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_449dfa5add)
-
-[](#h_0bc0ad941b)
-
-[](#h_485c233cd5)
-
-[](#h_bd6fd0265f)
 
 The Morningstar integration provides Claude with access to investment research services and proprietary analytical metrics. This article explains how to set up and use Morningstar data for investment analysis, including fair value estimates, economic moat ratings, and star ratings.
 
@@ -192,45 +149,17 @@ Sustainable investing research taps into Morningstar's thematic content on ESG s
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services)
-
-Getting Started with Claude for Financial Services
-
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research)
 
 Using FactSet for Comprehensive Financial Research
 
-[](https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research)
 
 Using PitchBook for Investment Research
 
-[](https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis)
 
 Using Moody’s for Financial Analysis
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Using Chronograph for Portfolio Monitoring

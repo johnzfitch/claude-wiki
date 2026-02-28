@@ -59,7 +59,6 @@ Pick one distinctive font, use it decisively. Load from Google Fonts.
 ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6913679c9a202c88b680873b_image13.png)
 
 
-
 Interestingly, the mandate to use more interesting fonts seems to encourage the model to improve other aspects of the design as well. 
 
 Typography alone leads to significant improvement, but fonts are just one dimension. What about cohesive aesthetics across the entire interface? 
@@ -146,7 +145,6 @@ AI-generated blog layout using the same prompt as well as the frontend skill, fe
 AI-generated admin dashboard with standard UI components with minimal visual hierarchy. No skills were used.
 
 
-
 ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6913d5b728dcecc13bc1f781_3705adad.png)
 
 AI-generated admin dashboard with bold typography, cohesive dark theme, and purposeful motion, using the same prompt in addition to the frontend skill.
@@ -174,7 +172,6 @@ On the other hand, when using the new web-artifacts-builder skill, Claude genera
 ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6913d5b728dcecc13bc1f78a_57c49993.png)
 
 
-
 **Example 2: Task Manager App**
 
 Similarly, when asked to create a task management app, without the skill, Claude generated a functional but very minimal application:
@@ -186,7 +183,6 @@ With the skill, Claude generated an app that was more featureful out of the box.
 ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6913d5b728dcecc13bc1f7c9_7ae52606.png)
 
 ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6913d5b728dcecc13bc1f7a1_4c4951af.png)
-
 
 
 To try out this new skill in [Claude.ai](http://claude.ai/), simply enable the skill and then ask Claude to “use the web-artifacts-builder skill” when building artifacts.
@@ -204,7 +200,5 @@ For frontend development, this means Claude can generate distinctive interfaces 
 **Feeling inspired? To create your own frontend skills, check out our** [**skill-creator**](https://github.com/anthropics/skills/tree/main/skill-creator)**.**
 
 
-
 **Acknowledgements**  
 Written by Anthropic's Applied AI team: Prithvi Rajasekaran, Justin Wei, and Alexander Bricken, alongside our marketing partners Molly Vorwerck and Ryan Whitehead.
-

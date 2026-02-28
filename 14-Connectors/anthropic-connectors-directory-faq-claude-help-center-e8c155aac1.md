@@ -1,89 +1,12 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:36Z"
+fetched_at: "2026-02-28T11:22:33Z"
 source_url: "https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq"
 title: "Anthropic Connectors Directory FAQ | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_145a48bef0)
-
-[](#h_50d6d141b6)
-
-[](#h_8ce70a4890)
-
-[](#h_eed239a278)
-
-[](#h_063efc7839)
-
-[](#h_05e2c49fde)
-
-[](#h_8063f85fa1)
-
-[](#h_02019eda84)
-
-[](#h_f9fc7edf85)
-
-[](#h_e8c9923d36)
-
-[](#h_bfc45cefaf)
-
-[](#h_5539a36fd8)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[General](https://support.claude.com/en/collections/17879426-general)
-
-Anthropic Connectors Directory FAQ
-
 # Anthropic Connectors Directory FAQ
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_145a48bef0)
-
-[](#h_50d6d141b6)
-
-[](#h_8ce70a4890)
-
-[](#h_eed239a278)
-
-[](#h_063efc7839)
-
-[](#h_05e2c49fde)
-
-[](#h_8063f85fa1)
-
-[](#h_02019eda84)
-
-[](#h_f9fc7edf85)
-
-[](#h_e8c9923d36)
-
-[](#h_bfc45cefaf)
-
-[](#h_5539a36fd8)
 
 ## What is MCP?
 
@@ -398,45 +321,17 @@ Important links:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 
 Building custom connectors via remote MCP servers
 
-[](https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide)
 
 Remote MCP Server Submission Guide
 
-[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
 
 Building Desktop Extensions with MCPB
 
-[](https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy)
 
 Anthropic Software Directory Policy
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

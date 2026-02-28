@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Context Editing & Memory for Long-Running Agents {#context-editing--memory-for-long-running-agents}
 
 AI agents that run across multiple sessions or handle long-running tasks

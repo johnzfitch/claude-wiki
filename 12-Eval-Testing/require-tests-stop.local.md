@@ -8,9 +8,6 @@ conditions:
     operator: not_contains
     pattern: npm test|pytest|cargo test
 ---
-
-**Tests not detected in transcript!**
-
 Before stopping, please run tests to verify your changes work correctly.
 
 Look for test commands like:

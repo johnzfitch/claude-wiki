@@ -1,77 +1,12 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-08T20:52:07Z"
+fetched_at: "2026-02-28T11:22:23Z"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 title: "Getting started with Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_e6ae47e290)
-
-[](#h_45a3f5c36d)
-
-[](#h_08c375d855)
-
-[](#h_9056f75d17)
-
-[](#h_c64d0a57a7)
-
-[](#h_57262af5ae)
-
-[](#h_22e2bdd1ab)
-
-[](#h_3cff6537f4)
-
-[](#h_7720b3c26a)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Getting Started with Claude](https://support.claude.com/en/collections/9811058-getting-started-with-claude)
-
-Getting started with Claude
-
 # Getting started with Claude
 
-Updated yesterday
-
-Table of contents
-
-[](#h_e6ae47e290)
-
-[](#h_45a3f5c36d)
-
-[](#h_08c375d855)
-
-[](#h_9056f75d17)
-
-[](#h_c64d0a57a7)
-
-[](#h_57262af5ae)
-
-[](#h_22e2bdd1ab)
-
-[](#h_3cff6537f4)
-
-[](#h_7720b3c26a)
 
 ## What is Claude?
 
@@ -109,7 +44,6 @@ You use **prompts** to communicate with Claude. The best approach is to speak to
 
 Type your prompt into the chat interface and click the submit button to start a conversation with Claude. You can click the "+" button in the lower left or type "/" to view additional options and commands:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1916208578/2cf2ea52f1f884084b57983a8805/image.png?expires=1770585300&signature=59316f344a883d72d7854425a594e041e7aa2606cc218a1837df17bcaa28e6aa&req=dSkmEMt%2BlYRYUfMW1HO4zV2J4i%2FPvIKC9crMELaMZPzM7uW5dB4lCQX7FO2w%0AjzLoVP%2F53VxJN5XkURY%3D%0A)
 
 ------------------------------------------------------------------------
 
@@ -165,45 +99,17 @@ Once you've started using Claude, you can:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan)
 
 What is the Pro plan?
 
-[](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)
 
 Understanding usage and length limits
 
-[](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Getting started with Claude in Chrome
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
 
-[](https://support.claude.com/en/articles/12466728-understanding-claude-error-messages)
 
 Understanding Claude Error Messages
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

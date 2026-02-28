@@ -1,63 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:00Z"
+fetched_at: "2026-02-28T11:22:21Z"
 source_url: "https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude"
 title: "Using the 10x Genomics Extension in Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_2712e3c9ff)
-
-[](#h_d85d939c99)
-
-[](#h_0aa1911e0a)
-
-[](#h_92ca8d56ba)
-
-[](#h_686d678d36)
-
-[](#h_43d53e4c03)
-
-[All Collections](/en/)
-
-[Claude for Life Sciences](https://support.claude.com/en/collections/16142619-claude-for-life-sciences)
-
-Using the 10x Genomics Extension in Claude
+3.  Using the 10x Genomics Extension in Claude
 
 # Using the 10x Genomics Extension in Claude
 
-Updated yesterday
-
-Table of contents
-
-[](#h_2712e3c9ff)
-
-[](#h_d85d939c99)
-
-[](#h_0aa1911e0a)
-
-[](#h_92ca8d56ba)
-
-[](#h_686d678d36)
-
-[](#h_43d53e4c03)
 
 The 10x Genomics integration transforms single cell and spatial analysis into a simple, conversational workflow. Biologists can easily analyze their own sequencing data, while core labs can quickly perform batch processing. This article explains how to set up and use the 10x Genomics integration with Claude to advance your analysis workflows.
 
@@ -89,7 +40,7 @@ The 10x Genomics integration is available as a desktop extension in the Claude D
 
 **For Organization Owners (Team and Enterprise)**
 
-1.  Navigate to Admin settings \> Extensions
+1.  Navigate to Organization settings \> Extensions
 
 2.  In the search field, type “10x Genomics”
 
@@ -157,45 +108,17 @@ Sample prompts and prompting best practices can be found in the [10x Genomics MC
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10065433-installing-claude-desktop)
 
 Installing Claude Desktop
 
-[](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
 
 Getting Started with Local MCP Servers on Claude Desktop
 
-[](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)
 
 Getting Started with Claude for Life Sciences
 
-[](https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude)
 
 Using the BioRender Connector in Claude
 
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Using the Synapse.org connector in Claude

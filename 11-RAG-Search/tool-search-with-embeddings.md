@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Tool Search with Embeddings: Scaling Claude to Thousands of Tools
 
 Building Claude applications with dozens of specialized tools quickly

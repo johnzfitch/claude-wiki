@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Iteratively Searching Wikipedia with Claude
 :::
 

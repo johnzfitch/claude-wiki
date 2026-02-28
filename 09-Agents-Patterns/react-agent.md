@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # ReAct Agent
 
 In this notebook we will look into creating ReAct Agent over tools.

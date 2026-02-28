@@ -1,53 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:50Z"
+fetched_at: "2026-02-28T11:22:21Z"
 source_url: "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program"
 title: "What is the External Researcher Access Program? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_6b1d2f44a3)
-
-[](#h_097de4e94e)
-
-[](#h_4a0c584a0f)
-
-[All Collections](/en/)
-
-[Claude API and Console](https://support.claude.com/en/collections/5370014-claude-api-and-console)
-
-[API FAQ](https://support.claude.com/en/collections/9811463-api-faq)
-
-What is the External Researcher Access Program?
+4.  What is the External Researcher Access Program?
 
 # What is the External Researcher Access Program?
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_6b1d2f44a3)
-
-[](#h_097de4e94e)
-
-[](#h_4a0c584a0f)
 
 Our External Researcher Access Program is specifically designed to support and lower the barrier to entry for researchers working on AI safety and alignment topics that we consider high priority by providing free API credits.
 
@@ -79,7 +40,7 @@ Please complete the following application form with details about your team and 
 
 3.  **Please note that given the substantial number of applications we receive (sometimes thousands in a single week), we regret that we cannot provide individual responses to unapproved submissions.** In addition, we reserve the right to reject submissions for any reason and will not be able to provide explanations for each individual applicant. However, we appreciate the time and effort put into each submission and will carefully review all entries. Thank you for your understanding.
 
-If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#06746375636774656e6374676565637575466768726e7469766f652865696b). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
+If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#14667167717566777c716675777771676754757a607c667b647d773a777b79). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
 
 ------------------------------------------------------------------------
 
@@ -150,45 +111,17 @@ Thank you for your interest in our Researcher Access Program and for taking the 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10684638-reporting-blocking-and-removing-content-from-claude)
 
-Reporting, Blocking, and Removing Content from Claude
+API Safeguards Tools
 
-[](https://support.claude.com/en/articles/11174108-about-the-development-partner-program)
 
 About the Development Partner Program
 
-[](https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program)
 
 Anthropic's AI for Science Program
 
-[](https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program)
 
 Model Safety Bug Bounty Program
 
-[](https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model)
 
 Can I use my Outputs to train an AI model?
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

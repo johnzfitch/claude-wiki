@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation"
 title: "Anthropic raises Series E at $61.5B post-money valuation \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic raises Series E at \$61.5B post-money valuation
 
 Mar 3, 2025
@@ -21,7 +18,6 @@ Businesses across industries—from fast-growing startups like Cursor and Codeiu
 
 Continuing this trajectory, Anthropic remains focused on deepening our understanding of frontier AI systems and ensuring that artificial intelligence advances human progress.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation)
 
 ## Related content
 

@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure"
 title: "Anthropic invests $50 billion in American AI infrastructure \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic invests \$50 billion in American AI infrastructure
 
 Nov 12, 2025
@@ -23,7 +20,6 @@ We selected Fluidstack as our partner for its ability to move with exceptional a
 
 The scale of this investment is necessary to meet the growing demand for Claude from hundreds of thousands of businesses while keeping our research at the frontier. We’ll continue to prioritize cost-effective, capital-efficient approaches to achieving this scale as our growth continues.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure)
 
 ## Related content
 

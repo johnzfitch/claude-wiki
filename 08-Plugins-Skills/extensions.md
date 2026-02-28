@@ -2,7 +2,6 @@
 source: https://modelcontextprotocol.io/extensions.md
 downloaded: 2026-02-02
 ---
-
 # Extensions
 
 > Optional extensions to the Model Context Protocol

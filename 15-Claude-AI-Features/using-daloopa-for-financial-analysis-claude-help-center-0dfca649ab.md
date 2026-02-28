@@ -1,77 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis"
 title: "Using Daloopa for Financial Analysis | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_65b18d46b6)
-
-[](#h_f1c7fdf9c4)
-
-[](#h_cd1fb5067d)
-
-[](#h_a79efcbf23)
-
-[](#h_8189acf39b)
-
-[](#h_05af83b9d0)
-
-[](#h_3f05e850b7)
-
-[](#h_0869c4f8ce)
-
-[](#h_29233976dc)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-[Market Data](https://support.claude.com/en/collections/16288976-market-data)
-
-Using Daloopa for Financial Analysis
-
 # Using Daloopa for Financial Analysis
 
-Updated yesterday
-
-Table of contents
-
-[](#h_65b18d46b6)
-
-[](#h_f1c7fdf9c4)
-
-[](#h_cd1fb5067d)
-
-[](#h_a79efcbf23)
-
-[](#h_8189acf39b)
-
-[](#h_05af83b9d0)
-
-[](#h_3f05e850b7)
-
-[](#h_0869c4f8ce)
-
-[](#h_29233976dc)
 
 The Daloopa integration provides Claude with access to a financial data extraction service that covers public company filings and metrics. This article explains how to set up and use Daloopa to retrieve financial data for your analysis.
 
@@ -216,45 +151,17 @@ Learn about [finding and connecting tools](https://support.claude.com/en/article
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services)
-
-Getting Started with Claude for Financial Services
-
-[](https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis)
 
 Using S&P Global Data for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research)
-
-Using FactSet for Comprehensive Financial Research
-
-[](https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis)
 
 Prompting Strategies for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 
 Financial Analysis Workflows with Claude
 
-Did this answer your question?
 
-😞
+Using Aiera for Earnings Intelligence and Market Analysis
 
-😐
 
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Install financial services plugins for Cowork

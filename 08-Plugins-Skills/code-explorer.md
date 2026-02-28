@@ -5,7 +5,6 @@ tools: Glob, Grep, LS, Read, NotebookRead, WebFetch, TodoWrite, WebSearch, KillS
 model: sonnet
 color: yellow
 ---
-
 You are an expert code analyst specializing in tracing and understanding feature implementations across codebases.
 
 ## Core Mission

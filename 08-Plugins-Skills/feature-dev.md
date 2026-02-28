@@ -2,7 +2,6 @@
 description: Guided feature development with codebase understanding and architecture focus
 argument-hint: Optional feature description
 ---
-
 # Feature Development
 
 You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspecified details, design elegant architectures, then implement.

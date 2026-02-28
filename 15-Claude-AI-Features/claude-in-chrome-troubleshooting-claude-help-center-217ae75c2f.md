@@ -1,71 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:01Z"
+fetched_at: "2026-02-28T11:22:07Z"
 source_url: "https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting"
 title: "Claude in Chrome Troubleshooting | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_82c5884a84)
-
-[](#h_ac0d17beb6)
-
-[](#h_031e3ed0ad)
-
-[](#h_27c0dd6551)
-
-[](#h_8551c4fa9f)
-
-[](#h_e0dd95104f)
-
-[](#h_acd980a88f)
-
-[](#h_60af0b3306)
-
-[All Collections](/en/)
-
-[Claude in Chrome](https://support.claude.com/en/collections/18031491-claude-in-chrome)
-
-Claude in Chrome Troubleshooting
-
 # Claude in Chrome Troubleshooting
 
-Updated yesterday
-
-Table of contents
-
-[](#h_82c5884a84)
-
-[](#h_ac0d17beb6)
-
-[](#h_031e3ed0ad)
-
-[](#h_27c0dd6551)
-
-[](#h_8551c4fa9f)
-
-[](#h_e0dd95104f)
-
-[](#h_acd980a88f)
-
-[](#h_60af0b3306)
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
 
@@ -139,7 +80,7 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 - **Report suspected prompt injection** if Claude behaves unexpectedly.
 
-  - **Email [\[email protected\]](/cdn-cgi/l/email-protection#bcc9cfd9cecfdddad9c8c5fcddd2c8d4ced3ccd5df92dfd3d1)** to report any safety issues or unexpected behaviors.
+  - **Email [\[email protected\]](/cdn-cgi/l/email-protection#ee9b9d8b9c9d8f888b9a97ae8f809a869c819e878dc08d8183)** to report any safety issues or unexpected behaviors.
 
 - **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for technical issues or account problems.
 
@@ -161,45 +102,17 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome)
 
-Getting Started with Claude in Chrome
+Installing Claude Desktop
 
-[](https://support.claude.com/en/articles/12306336-claude-in-chrome-release-notes)
 
-Claude in Chrome Release Notes
+Getting started with Claude in Chrome
 
-[](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely)
 
 Using Claude in Chrome Safely
 
-[](https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide)
 
 Claude in Chrome Permissions Guide
 
-[](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Admin Controls
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Claude in Chrome admin controls

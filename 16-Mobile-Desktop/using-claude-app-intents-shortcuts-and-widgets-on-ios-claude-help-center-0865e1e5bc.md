@@ -1,61 +1,14 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-16T21:12:33Z"
+fetched_at: "2026-02-28T11:22:05Z"
 source_url: "https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios"
 title: "Using Claude App Intents, Shortcuts, and Widgets on iOS | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_5c6d90982d)
-
-[](#h_3250e85e73)
-
-[](#h_42562e9518)
-
-[](#h_93d154a192)
-
-[](#h_a34e57dc7a)
-
-[All Collections](/en/)
-
-[Claude Mobile Apps](https://support.claude.com/en/collections/9387080-claude-mobile-apps)
-
-[Claude for iOS](https://support.claude.com/en/collections/9879000-claude-for-ios)
-
-Using Claude App Intents, Shortcuts, and Widgets on iOS
+4.  Using Claude App Intents, Shortcuts, and Widgets on iOS
 
 # Using Claude App Intents, Shortcuts, and Widgets on iOS
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_5c6d90982d)
-
-[](#h_3250e85e73)
-
-[](#h_42562e9518)
-
-[](#h_93d154a192)
-
-[](#h_a34e57dc7a)
 
 The features described in this guide are available on iOS 18 and above.
 
@@ -201,45 +154,17 @@ You can now quickly access the "Analyze Photo with Claude" control without needi
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10302511-accessing-claude-app-on-ios-lock-screen-control-center-and-action-button)
 
 Accessing Claude app on iOS Lock Screen, Control Center, and Action Button
 
-[](https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android)
 
 Using the Claude Widget on Android
 
-[](https://support.claude.com/en/articles/11825384-how-to-update-claude-for-ios)
 
 How to update Claude for iOS
 
-[](https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps)
 
 Using Claude with iOS Apps
 
-[](https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac)
 
 Use quick entry with Claude Desktop on Mac
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

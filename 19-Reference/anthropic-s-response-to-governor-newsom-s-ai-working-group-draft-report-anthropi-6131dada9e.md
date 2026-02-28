@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-s-response-to-governor-newsom-s-ai-working-group-draft-report"
 title: "Anthropic’s response to Governor Newsom’s AI working group draft report \\ Anthropic"
 ---
-
-Societal Impacts
-
 # Anthropic’s response to Governor Newsom’s AI working group draft report
 
 Mar 19, 2025
@@ -21,7 +18,6 @@ In line with the report’s findings, we believe governments could play a constr
   
 The Working Group has also highlighted areas where academia, civil society, and industry will need to apply more focus in the coming years - particularly on the economic impacts of AI, where Anthropic is today trying to contribute via [our Economic Index](https://www.anthropic.com/news/the-anthropic-economic-index). We look forward to providing further feedback to the working group to aid and inform the work of finalizing the report. We commend the Governor for his foresight in kicking off this conversation, and we look forward to helping shape California’s approach to frontier model safety.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-s-response-to-governor-newsom-s-ai-working-group-draft-report)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-s-response-to-governor-newsom-s-ai-working-group-draft-report)
 
 ## Related content
 

@@ -1,45 +1,14 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-16T21:12:44Z"
+fetched_at: "2026-02-28T11:22:15Z"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 title: "Adapting to new model personas after deprecations | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_eb60ec5f64)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Troubleshooting](https://support.claude.com/en/collections/18032037-troubleshooting)
-
-Adapting to new model personas after deprecations
+4.  Adapting to new model personas after deprecations
 
 # Adapting to new model personas after deprecations
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_eb60ec5f64)
 
 [Model deprecations and retirements](https://docs.claude.com/en/docs/about-claude/model-deprecations#model-status) are routine parts of the model lifecycle. While we would like to keep past models publicly available as we continue to advance the frontier of safety and capabilities, maintenance overhead and capacity constraints do not currently allow this. We nonetheless recognize that losing access to models comes with costs to many users, particularly those who have come to value the unique character or capabilities of a specific model on a personal level. We aim to provide resources, tools, and guidance to such users to minimize these costs and make the transitions between models as smooth and seamless as possible.
 
@@ -67,45 +36,17 @@ These strategies aren’t perfect and can only go so far toward preserving or re
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114533-i-ve-been-using-other-large-language-models-llms-to-power-my-product-how-should-i-alter-my-prompts-when-switching-to-claude)
 
 I’ve been using other large language models (LLMs) to power my product. How should I alter my prompts when switching to Claude?
 
-[](https://support.claude.com/en/articles/8325621-i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-conversations)
 
 I would like to input sensitive data into my chats with Claude. Who can view my conversations?
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
 
 Release notes
 
-[](https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model)
 
 Can I use my Outputs to train an AI model?
 
-[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
 
-Using Claude in Excel
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Use Claude in Excel

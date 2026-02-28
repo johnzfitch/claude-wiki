@@ -4,9 +4,6 @@ fetched_at: "2026-02-16T21:12:31Z"
 source_url: "https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board"
 title: "Chris Liddell appointed to Anthropic’s board of directors \\ Anthropic"
 ---
-
-Announcements
-
 # Chris Liddell appointed to Anthropic’s board of directors
 
 Feb 13, 2026
@@ -25,7 +22,6 @@ Beyond his corporate and public service career, Liddell has been recognized for 
 
 \
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board)
 
 ## Related content
 

@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-amazon"
 title: "Expanding access to safer AI with Amazon \\ Anthropic"
 ---
-
-Announcements
-
 # Expanding access to safer AI with Amazon
 
 Sep 25, 2023
@@ -30,7 +27,6 @@ As part of the investment, Amazon will take a minority stake in Anthropic. Our c
   
 Training state-of-the-art models requires extensive resources including compute power and research programs. Amazon’s investment and supply of AWS Trainium and Inferentia technology will ensure we’re equipped to continue advancing the frontier of AI safety and research. We look forward to working closely with Amazon to responsibly scale adoption of Claude and deliver safe AI cloud technologies to organizations around the world.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-amazon)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-amazon)
 
 ## Related content
 
