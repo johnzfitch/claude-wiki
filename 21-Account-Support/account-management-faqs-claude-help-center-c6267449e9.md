@@ -1,61 +1,12 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-16T21:12:48Z"
+fetched_at: "2026-02-28T11:22:16Z"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 title: "Account management FAQs | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_c3b8c3b44d)
-
-[](#h_cc1f107131)
-
-[](#h_1ea7a79ea7)
-
-[](#h_60a69ca405)
-
-[](#h_b54c41c86c)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Account and Member Management](https://support.claude.com/en/collections/9811449-account-and-member-management)
-
-Account management FAQs
-
 # Account management FAQs
 
-Updated this week
-
-Table of contents
-
-[](#h_c3b8c3b44d)
-
-[](#h_cc1f107131)
-
-[](#h_1ea7a79ea7)
-
-[](#h_60a69ca405)
-
-[](#h_b54c41c86c)
 
 ## How do I change my team name?
 
@@ -101,7 +52,6 @@ The email domain that was used to create your Team or Enterprise plan organizati
 
 Owners can remove domains by opening up the same modal and clicking the trash can icon to the right of the domain:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/2053873852/1cbccea3b7067e03205f2ff8546b/CleanShot+2026-02-11+at+11_16_07%402x.png?expires=1771278300&signature=d5e2274236b90388f6854bbd378a3344c8787fe7564ed6715b4c84b6c946ecaa&req=diAiFcF5nolaW%2FMW1HO4zUrhGeqabgAZkeFUnrkrQZi04HCF97302RQ%2BV1T5%0AbJZuvwM8vM7gQ5GXO4c%3D%0A)
 
 While the account creator must use a business email address, you can add public domains like @gmail.com, @yahoo.com, and @hotmail.com as allowed domains for other members of your organization.
 
@@ -109,45 +59,17 @@ While the account creator must use a business email address, you can add public 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9267400-can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan-organizations)
 
 Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations?
 
-[](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
-
-Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
-
-[](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs)
 
 Team plan billing FAQs
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
+Manage members on Team and Enterprise plans
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Manage Cowork plugins for your organization

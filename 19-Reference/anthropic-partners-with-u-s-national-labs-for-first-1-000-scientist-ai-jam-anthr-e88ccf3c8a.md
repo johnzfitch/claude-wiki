@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-partners-with-u-s-national-labs-for-first-1-000-scientist-ai-jam"
 title: "Anthropic partners with U.S. National Labs for first 1,000 Scientist AI Jam \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic partners with U.S. National Labs for first 1,000 Scientist AI Jam
 
 Feb 28, 2025
@@ -29,7 +26,6 @@ The AI Jam session expands this work beyond security testing to explore how AI c
 
 Through initiatives like the AI Jam session, we are demonstrating how industry and government can work together to harness AI’s transformative potential while addressing potential risks through rigorous testing. Applying our most advanced technology to the nation’s critical scientific challenges will help contribute to a vision where AI becomes a powerful force for progress.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-partners-with-u-s-national-labs-for-first-1-000-scientist-ai-jam)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-partners-with-u-s-national-labs-for-first-1-000-scientist-ai-jam)
 
 ## Related content
 

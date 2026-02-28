@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Giving Claude a Crop Tool for Better Image Analysis
 
 When Claude analyzes images, it sees the entire image at once. For

@@ -1,69 +1,12 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-16T21:12:38Z"
+fetched_at: "2026-02-28T11:22:05Z"
 source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
 title: "Using Claude with Android Apps | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_14fef2c5b6)
-
-[](#h_0f6a72abe9)
-
-[](#h_62b72ef926)
-
-[](#h_09728eb915)
-
-[](#h_6d5b67befc)
-
-[](#h_93e5cc58ed)
-
-[](#h_4373137dba)
-
-[All Collections](/en/)
-
-[Claude Mobile Apps](https://support.claude.com/en/collections/9387080-claude-mobile-apps)
-
-[Claude for Android](https://support.claude.com/en/collections/9879004-claude-for-android)
-
-Using Claude with Android Apps
-
 # Using Claude with Android Apps
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_14fef2c5b6)
-
-[](#h_0f6a72abe9)
-
-[](#h_62b72ef926)
-
-[](#h_09728eb915)
-
-[](#h_6d5b67befc)
-
-[](#h_93e5cc58ed)
-
-[](#h_4373137dba)
 
 Claude can now connect with your Android device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, calendar events, set alarms and timers, find locations, and more — all through your everyday apps without copy-paste.
 
@@ -289,7 +232,6 @@ Permission requirements vary by feature:
 
 For features requiring permissions (like location or calendar access), Claude will request permission contextually with clear explanations of why the access is needed. You’ll be prompted to approve the action with three options: Allow once, Always allow, or Don't allow.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1707351614/ccb910e4b87b1e96ad9a11bbd835/b57b2130-d8d6-4499-89f6-6c12de236fd4?expires=1771278300&signature=3ab9362410c7702d83b2ac0abbb7fa4be1627e212307b7a9213e73aef86dba24&req=dScnEcp7nIdeXfMW1HO4zQe5FV6N3C33S5x65TIld%2FCSTqBzuJlhrRUhSAai%0AcxZops2p6BkWrNoXaUg%3D%0A)
 
 These permissions can be managed at any time in your device settings by going to Settings \> Apps \> Claude \> Permissions. Click into each permission listed under **Allowed** and **Not allowed** to make changes. You can toggle between “Allow only while using the app” or “Ask every time” to change Claude’s access, or remove permissions by choosing “Don’t allow.” Claude will only request permissions if needed for specific features, and you can always choose to decline while still using other capabilities.
 
@@ -371,45 +313,17 @@ Health Connect permissions are managed separately from other app permissions. Wh
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android)
 
 Using the Claude Widget on Android
 
-[](https://support.claude.com/en/articles/11724452-use-the-connectors-directory-to-extend-claude-s-capabilities)
 
 Use the Connectors Directory to extend Claude’s capabilities
 
-[](https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps)
 
 Using Claude with iOS Apps
 
-[](https://support.claude.com/en/articles/12461605-using-claude-in-slack)
 
 Using Claude in Slack
 
-[](https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude)
 
 Using the Blackbaud Connector in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

@@ -1,61 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-16T21:12:47Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
 title: "Anthropic Software Directory Policy | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_bc5419edab)
-
-[](#h_7dac153147)
-
-[](#h_6861c3b5f7)
-
-[](#h_f6c96a50f3)
-
-[](#h_9fdb5d0031)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[General](https://support.claude.com/en/collections/17879426-general)
-
-Anthropic Software Directory Policy
-
 # Anthropic Software Directory Policy
 
-Updated this week
-
-Table of contents
-
-[](#h_bc5419edab)
-
-[](#h_7dac153147)
-
-[](#h_6861c3b5f7)
-
-[](#h_f6c96a50f3)
-
-[](#h_9fdb5d0031)
 
 Anthropic allows users to discover high-quality Model Context Protocol servers, Skill folders, plugins, apps, and other software, containers, or data (“Software”) that work seamlessly within Claude through directories, repositories, surfaces, or similar offerings (collectively, “Directories”). We review submissions to our Directories to ensure they meet our standards for safety, security, and compatibility with Anthropic Services and other Software. We conduct both initial and ongoing reviews of Software, and may require developers to address compliance issues to continue being included in our Directories. All Software must maintain compliance with these requirements, including any future changes, to remain in our Directories.
 
@@ -141,45 +92,17 @@ See prior version of this policy here: [Anthropic MCP Directory Policy](https://
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide)
 
 Remote MCP Server Submission Guide
 
-[](https://support.claude.com/en/articles/12922832-local-mcp-server-submission-guide)
 
 Local MCP Server Submission Guide
 
-[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
 
 Building Desktop Extensions with MCPB
 
-[](https://support.claude.com/en/articles/13145338-anthropic-software-directory-terms)
 
 Anthropic Software Directory Terms
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

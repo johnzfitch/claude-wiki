@@ -1,59 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:37Z"
+fetched_at: "2026-02-28T11:22:12Z"
 source_url: "https://support.claude.com/en/articles/11649438-prototype-ai-powered-apps-with-claude-artifacts"
 title: "Prototype AI-Powered Apps with Claude artifacts | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_9cb0346e2e)
-
-[](#h_914f784e64)
-
-[](#h_2942fa0689)
-
-[](#h_7a4ce8c77b)
-
-[](#h_47d8f88ac8)
-
-[All Collections](/en/)
-
-[Video Tutorials](https://support.claude.com/en/collections/10548294-video-tutorials)
-
-Prototype AI-Powered Apps with Claude artifacts
+3.  Prototype AI-Powered Apps with Claude artifacts
 
 # Prototype AI-Powered Apps with Claude artifacts
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_9cb0346e2e)
-
-[](#h_914f784e64)
-
-[](#h_2942fa0689)
-
-[](#h_7a4ce8c77b)
-
-[](#h_47d8f88ac8)
 
 Traditionally, building AI applications has required a lot — managing API keys, stressing about costs, handling complex deployments, accidentally hitting rate limits, and more. With Claude’s artifacts, you can skip the hassle of configuration and build a fully functional, AI-powered application with Claude’s intelligence built right in. These artifacts use your existing usage limits—no API keys, no per-call charges, no deployment hassle — so you can focus on the fun stuff.
 
@@ -83,19 +38,15 @@ The possibilities for creating artifacts that interact with Claude through an AP
 
 - **Learning & education tools** — Interactive tutors and study companions with AI can better understand the context of a user’s learning needs. Like a code reviewer that gives detailed feedback on style and best practices based on pre-configured guidelines, or this [language tutor](https://claude.ai/public/artifacts/2af221b6-367f-4b4f-9fe9-25710f5f8feb) that lets you chat and learn in a language of your choice.
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588161536/9a9c843406ab7fd6ef8ce122ce7d/AD_4nXf4-SjYZcReEhL-eORyUzCRAACZQKA74Yfg-T8j68BpbUw055mitbtYJ0jOOkstUZCLGdXNwuVIOH6Qppp9YczJVHTni4BSIAOmbEoRzw8xS5sXYm5ikdjv4IqQUmflATa4EOQhhA?expires=1771278300&signature=e38b199c5dbc74bfcaa1f979cc938cb6b0db22b63247bcb9ba7edcb11a718cfd&req=dSUvHsh4nIRcX%2FMW1HO4zYU9BpTwOjRkdbNGOM8yKLpRU9HCPzL%2BxNYTx7To%0A0%2F1d%0A)
 
 - **Content generation tools** — Collaborative assistants that help brainstorm, develop, and refine creative work and content according to some pre-configured guidelines can help you get work done faster. Like a writing tool designed to intake your internal slack posts and get them ready to share on LinkedIn, or this [one-page PRD maker](https://claude.ai/public/artifacts/3d81ba29-d1ad-4e9b-b58e-3e0f46ba8afd).
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588161884/a6f81414dbb4e3bc1ce0640111b4/AD_4nXfr0S0AZEd32Gl0DLMhCCnwdiURCdDb7-lQ1nGtLMfsPWVmlGacL53-KrxbkvrtLVchVwTMP5lUWw6_oSLKi0Knn3CZtf48TmvQI-5GrVTkH1sYJWWMqZm1UT8D6RWUr_KWhsr9hA?expires=1771278300&signature=8e1b0a6c2d2da17d8352e8724fa90fd82e238c82634a5c22bd5b221455b0b8af&req=dSUvHsh4nIlXXfMW1HO4zf4kai%2Bff8VxqV4ozs7ENXYTEvh3l4aQ%2F7rDF8su%0A0Yz%2F%0A)
 
 - **Analysis & decision support** - Intelligent tools that process user data and help make informed decisions through conversation are great for organizational efficiency. Like [this tool](https://claude.ai/public/artifacts/fc64414e-76db-4876-8531-6e9794e4b1be) designed to help teams get to the root of problems through the “5 whys” framework.
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588175867/94f0d9813bd59c8df825e147a56c/AD_4nXeIs04UbGecByCFyw4x6ZEMzu2o7LK4T0yaawafMlrFlyR2dLaxByQLl9GHIsRMqw4FPRlxnzW7GTavfpIkCwUctTrGh1JbdM6vbE11TbKkTjOCFZSusHKRBFsxgzTUyPTHOgoV?expires=1771278300&signature=0c880c692a6421e7c494cf788330e13767edfc43d4483ceabbeda5872e3c2939&req=dSUvHsh5mIlZXvMW1HO4zTSQp9NYzZ9JFrRgvYuGj8oNXnoQuzPxURcmGCRP%0AEvsI%0A)
 
 - **Apps for fun —** at the end of the day, the best apps are derived from a unique perspective and good idea. This [dream interpreter](https://claude.ai/public/artifacts/be6430eb-3710-447c-a8b6-da40792ed790) is a perfect example. If you can dream it, you can probably build it.
 
-  [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1588162969/bd4e174647dcfb811bf762d2939b/AD_4nXce7MkbU9T_nSasx12oppfMR6tSFH-d9qEllJ4shkY8WJrrGjzH7Hzo5Hu3iJyJNvaWbyJMsK6QaBB1bfGaeNGevznf4wzsegGD2HuuaI6jcNa5XBC56i0VmQkwECVzbtwikpUY?expires=1771278300&signature=4093c324da3fcda359b0e9a18ff9bb01f05ac5fbe2a463b730de062a85d878ee&req=dSUvHsh4n4hZUPMW1HO4zaz1vTl2O49vQKQoU3AiH2eUzWvrV394%2BierYbTL%0AvwfV%0A)
 
 ## Tips for building artifacts with Claude
 
@@ -119,7 +70,6 @@ All you need to do is click the “Publish” button in the top right hand corne
 
 Note that this link is specific to the version of the artifact you shared, and that **anyone with this link can access** your creation until you unpublish it. (You can always come back to the “published” tab to see all artifacts you’ve previously shared.)
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1586888221/8097255c4696805fad48dea922a7/AD_4nXd0JlYz46JD4M0L1QIvfqzDigUx2ZifO39Gu3yF9BJcbIuSkHNAyoLjOYpkY4-BnCjkuCF9U_Q7ymC5KLYYc4vPXZA_XAMGOCogHMrmN2qcfkTOgvHdw0I3f6svC58iH2w88ffa?expires=1771278300&signature=20684054ae8ea7f4f8ac1ac5c0db31c19ee14a3b24e0d62d7809afd124b75c24&req=dSUvEMF2lYNdWPMW1HO4zbt0kUlcE4HJyfBb1J6bzit%2Fc2ul7SEjSay0dPv6%0ADobRvY583AgdJLYlJ1g%3D%0A)
 
 ### Moving from prototype to production
 
@@ -127,7 +77,6 @@ While artifacts are excellent for prototyping and sharing AI-powered apps, they'
 
 Whatever the reason, when you’re ready to take your artifact to the next level, you’ll be able to copy Claude’s code and paste it into your editor of choice. From there, [Claude Code](https://www.anthropic.com/claude-code) is ready to step in.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1586888974/b76f9d07597b10d16c3dc7f9ad22/AD_4nXduW3cMJwGRo85XL8TopOquqFxTg0TdkjCo-AkCVQ6DfWo0D32wyt1CxWmmqbh66y49eGCvBl3f6phKnDm16NyGCuUaU4o4XfZLrT1oou-zkZUDRcpjWFyzAP7uWiCcU-BX-2Ez?expires=1771278300&signature=67e9dd8512d31bdea8025564661eb19fbeecee8e836ff6e1b28ddd2ff8fc418d&req=dSUvEMF2lYhYXfMW1HO4zfs4B5m3ATeptO1uN7WFA2hb1V6JIxP66s%2FlEfxy%0AbeDRuhF3cxRIwYcuEC0%3D%0A)
 
 As you build, keep working with Claude as a brainstorming partner for next-steps and new ideas, using Claude Code for tactical execution. Before you know it, you’ll have a fully validated, production-ready app.
 
@@ -167,45 +116,17 @@ In simplest terms, when someone uses your Claude-powered app:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them)
 
 What are artifacts and how do I use them?
 
-[](https://support.claude.com/en/articles/9547008-publishing-and-sharing-artifacts)
 
 Publishing and sharing artifacts
 
-[](https://support.claude.com/en/articles/9945703-claude-for-sales)
-
-Claude for Sales
-
-[](https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios)
 
 Using Claude App Intents, Shortcuts, and Widgets on iOS
 
-[](https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code)
 
 Use artifacts to visualize and create AI apps, without ever writing a line of code
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Use Claude in PowerPoint

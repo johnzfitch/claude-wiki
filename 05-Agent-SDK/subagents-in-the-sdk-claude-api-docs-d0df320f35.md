@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:45Z"
+fetched_at: "2026-02-24T04:07:38Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/subagents"
 title: "Subagents in the SDK - Claude API Docs"
 ---
-
-Guides
-
 # Subagents in the SDK
 
-Copy page
 
 Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.
 
-Copy page
 
 Subagents are separate agent instances that your main agent can spawn to handle focused subtasks. Use subagents to isolate context for focused subtasks, run multiple analyses in parallel, and apply specialized instructions without bloating the main agent's prompt.
 
@@ -31,7 +26,7 @@ You can create subagents in three ways:
 
 This guide focuses on the programmatic approach, which is recommended for SDK applications.
 
-When you define subagents, Claude decides whether to invoke them based on each subagent's `description` field. Write clear descriptions that explain when the subagent should be used, and Claude will automatically delegate appropriate tasks. You can also explicitly request a subagent by name in your prompt (e.g., "Use the code-reviewer agent to...").
+When you define subagents, Claude determines whether to invoke them based on each subagent's `description` field. Write clear descriptions that explain when the subagent should be used, and Claude will automatically delegate appropriate tasks. You can also explicitly request a subagent by name in your prompt (for example, "Use the code-reviewer agent to...").
 
 ## 
 
@@ -85,6 +80,7 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AgentDefinition
 
+
 async def main():
     async for message in query(
         prompt="Review the authentication module for security issues",
@@ -108,7 +104,7 @@ Be thorough but concise in your feedback.""",
                     # tools restricts what the subagent can do (read-only here)
                     tools=["Read", "Grep", "Glob"],
                     # model overrides the default model for this subagent
-                    model="sonnet"
+                    model="sonnet",
                 ),
                 "test-runner": AgentDefinition(
                     description="Runs and analyzes test suites. Use for test execution and coverage analysis.",
@@ -120,13 +116,14 @@ Focus on:
 - Identifying failing tests
 - Suggesting fixes for failures""",
                     # Bash access lets this subagent run test commands
-                    tools=["Bash", "Read", "Grep"]
-                )
-            }
-        )
+                    tools=["Bash", "Read", "Grep"],
+                ),
+            },
+        ),
     ):
         if hasattr(message, "result"):
             print(message.result)
+
 
 asyncio.run(main())
 ```
@@ -188,6 +185,7 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AgentDefinition
 
+
 # Factory function that returns an AgentDefinition
 # This pattern lets you customize agents based on runtime conditions
 def create_security_agent(security_level: str) -> AgentDefinition:
@@ -198,8 +196,9 @@ def create_security_agent(security_level: str) -> AgentDefinition:
         prompt=f"You are a {'strict' if is_strict else 'balanced'} security reviewer...",
         tools=["Read", "Grep", "Glob"],
         # Key insight: use a more capable model for high-stakes reviews
-        model="opus" if is_strict else "sonnet"
+        model="opus" if is_strict else "sonnet",
     )
+
 
 async def main():
     # The agent is created at query time, so each request can use different settings
@@ -210,11 +209,12 @@ async def main():
             agents={
                 # Call the factory with your desired configuration
                 "security-reviewer": create_security_agent("strict")
-            }
-        )
+            },
+        ),
     ):
         if hasattr(message, "result"):
             print(message.result)
+
 
 asyncio.run(main())
 ```
@@ -235,6 +235,7 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AgentDefinition
 
+
 async def main():
     async for message in query(
         prompt="Use the code-reviewer agent to review this codebase",
@@ -244,23 +245,24 @@ async def main():
                 "code-reviewer": AgentDefinition(
                     description="Expert code reviewer.",
                     prompt="Analyze code quality and suggest improvements.",
-                    tools=["Read", "Glob", "Grep"]
+                    tools=["Read", "Glob", "Grep"],
                 )
-            }
-        )
+            },
+        ),
     ):
         # Check for subagent invocation in message content
-        if hasattr(message, 'content') and message.content:
+        if hasattr(message, "content") and message.content:
             for block in message.content:
-                if getattr(block, 'type', None) == 'tool_use' and block.name == 'Task':
+                if getattr(block, "type", None) == "tool_use" and block.name == "Task":
                     print(f"Subagent invoked: {block.input.get('subagent_type')}")
 
         # Check if this message is from within a subagent's context
-        if hasattr(message, 'parent_tool_use_id') and message.parent_tool_use_id:
+        if hasattr(message, "parent_tool_use_id") and message.parent_tool_use_id:
             print("  (running inside subagent)")
 
         if hasattr(message, "result"):
             print(message.result)
+
 
 asyncio.run(main())
 ```
@@ -286,12 +288,12 @@ The example below demonstrates this flow: the first query runs a subagent and ca
 TypeScript
 
 ``` shiki
-import { query, type SDKMessage } from '@anthropic-ai/claude-agent-sdk';
+import { query, type SDKMessage } from "@anthropic-ai/claude-agent-sdk";
 
 // Helper to extract agentId from message content
 // Stringify to avoid traversing different block types (TextBlock, ToolResultBlock, etc.)
 function extractAgentId(message: SDKMessage): string | undefined {
-  if (!('message' in message)) return undefined;
+  if (!("message" in message)) return undefined;
   // Stringify the content so we can search it without traversing nested blocks
   const content = JSON.stringify(message.message.content);
   const match = content.match(/agentId:\s*([a-f0-9-]+)/);
@@ -304,24 +306,24 @@ let sessionId: string | undefined;
 // First invocation - use the Explore agent to find API endpoints
 for await (const message of query({
   prompt: "Use the Explore agent to find all API endpoints in this codebase",
-  options: { allowedTools: ['Read', 'Grep', 'Glob', 'Task'] }
+  options: { allowedTools: ["Read", "Grep", "Glob", "Task"] }
 })) {
   // Capture session_id from ResultMessage (needed to resume this session)
-  if ('session_id' in message) sessionId = message.session_id;
+  if ("session_id" in message) sessionId = message.session_id;
   // Search message content for the agentId (appears in Task tool results)
   const extractedId = extractAgentId(message);
   if (extractedId) agentId = extractedId;
   // Print the final result
-  if ('result' in message) console.log(message.result);
+  if ("result" in message) console.log(message.result);
 }
 
 // Second invocation - resume and ask follow-up
 if (agentId && sessionId) {
   for await (const message of query({
     prompt: `Resume agent ${agentId} and list the top 3 most complex endpoints`,
-    options: { allowedTools: ['Read', 'Grep', 'Glob', 'Task'], resume: sessionId }
+    options: { allowedTools: ["Read", "Grep", "Glob", "Task"], resume: sessionId }
   })) {
-    if ('result' in message) console.log(message.result);
+    if ("result" in message) console.log(message.result);
   }
 }
 ```
@@ -349,6 +351,7 @@ Python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AgentDefinition
 
+
 async def main():
     async for message in query(
         prompt="Analyze the architecture of this codebase",
@@ -360,13 +363,14 @@ async def main():
                     prompt="""You are a code architecture analyst. Analyze code structure,
 identify patterns, and suggest improvements without making changes.""",
                     # Read-only tools: no Edit, Write, or Bash access
-                    tools=["Read", "Grep", "Glob"]
+                    tools=["Read", "Grep", "Glob"],
                 )
-            }
-        )
+            },
+        ),
     ):
         if hasattr(message, "result"):
             print(message.result)
+
 
 asyncio.run(main())
 ```
@@ -393,7 +397,7 @@ Claude not delegating to subagents
 If Claude completes tasks directly instead of delegating to your subagent:
 
 1.  **Include the Task tool**: subagents are invoked via the Task tool, so it must be in `allowedTools`
-2.  **Use explicit prompting**: mention the subagent by name in your prompt (e.g., "Use the code-reviewer agent to...")
+2.  **Use explicit prompting**: mention the subagent by name in your prompt (for example, "Use the code-reviewer agent to...")
 3.  **Write a clear description**: explain exactly when the subagent should be used so Claude can match tasks appropriately
 
 ### 
@@ -414,127 +418,3 @@ Related documentation
 
 - [Claude Code subagents](https://code.claude.com/docs/en/sub-agents): comprehensive subagent documentation including filesystem-based definitions
 - [SDK overview](/docs/en/agent-sdk/overview): getting started with the Claude Agent SDK
-
-Was this page helpful?
-
-- 
-
-- [Overview](#overview)
-
-- [Benefits of using subagents](#benefits-of-using-subagents)
-
-- [Context management](#context-management)
-
-- [Parallelization](#parallelization)
-
-- [Specialized instructions and knowledge](#specialized-instructions-and-knowledge)
-
-- [Tool restrictions](#tool-restrictions)
-
-- [Creating subagents](#creating-subagents)
-
-- [Programmatic definition (recommended)](#programmatic-definition-recommended)
-
-- [AgentDefinition configuration](#agent-definition-configuration)
-
-- [Filesystem-based definition (alternative)](#filesystem-based-definition-alternative)
-
-- [Invoking subagents](#invoking-subagents)
-
-- [Automatic invocation](#automatic-invocation)
-
-- [Explicit invocation](#explicit-invocation)
-
-- [Dynamic agent configuration](#dynamic-agent-configuration)
-
-- [Detecting subagent invocation](#detecting-subagent-invocation)
-
-- [Resuming subagents](#resuming-subagents)
-
-- [Tool restrictions](#tool-restrictions-2)
-
-- [Common tool combinations](#common-tool-combinations)
-
-- [Troubleshooting](#troubleshooting)
-
-- [Claude not delegating to subagents](#claude-not-delegating-to-subagents)
-
-- [Filesystem-based agents not loading](#filesystem-based-agents-not-loading)
-
-- [Windows: long prompt failures](#windows-long-prompt-failures)
-
-- [Related documentation](#related-documentation)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Using a Calculator Tool with Claude
 
 In this recipe, we\'ll demonstrate how to provide Claude with a simple

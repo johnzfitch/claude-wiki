@@ -1,59 +1,14 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-08T20:52:03Z"
+fetched_at: "2026-02-28T11:22:20Z"
 source_url: "https://support.claude.com/en/articles/12923668-claude-for-nonprofits-partnership-success-guide-for-admins"
 title: "Claude for Nonprofits Partnership Success Guide for Admins | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_0272fca3b6)
-
-[](#h_901104e8c7)
-
-[](#h_50539eb3f5)
-
-[](#h_b837947afe)
-
-[](#h_370395a86e)
-
-[All Collections](/en/)
-
-[Claude for Nonprofits](https://support.claude.com/en/collections/17047088-claude-for-nonprofits)
-
-Claude for Nonprofits Partnership Success Guide for Admins
+3.  Claude for Nonprofits Partnership Success Guide for Admins
 
 # Claude for Nonprofits Partnership Success Guide for Admins
 
-Updated yesterday
-
-Table of contents
-
-[](#h_0272fca3b6)
-
-[](#h_901104e8c7)
-
-[](#h_50539eb3f5)
-
-[](#h_b837947afe)
-
-[](#h_370395a86e)
 
 Welcome to the Claude for Nonprofits community! This guide provides everything you need to successfully launch and scale Claude at your organization.
 
@@ -129,7 +84,7 @@ Key Resources:
 
 - Track activity metrics using audit logs and success metrics through other collection methods such as surveys
 
-- Identify and enable appropriate connectors and capabilities (in admin settings)
+- Identify and enable appropriate connectors and capabilities (in organization settings)
 
 - Participate in monthly webinar series every third week of the month (email will be sent with invites to all registered admin)
 
@@ -163,45 +118,17 @@ Remember, there's no "right" timeline for implementation. Whether you're moving 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
 
 Claude Code usage analytics
 
-[](https://support.claude.com/en/articles/12618689-claude-code-on-the-web)
 
 Claude Code on the web
 
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 
-Getting Started with Claude for Nonprofits
+Getting started with Claude for Nonprofits
 
-[](https://support.claude.com/en/articles/12923901-claude-for-nonprofits-partnership-guide-for-all-users)
 
 Claude for Nonprofits Partnership Guide for All Users
 
-[](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Admin Controls
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Claude in Chrome admin controls

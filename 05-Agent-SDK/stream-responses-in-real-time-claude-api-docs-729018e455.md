@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:37Z"
+fetched_at: "2026-02-24T04:06:24Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/streaming-output"
 title: "Stream responses in real-time - Claude API Docs"
 ---
-
-Guides
-
 # Stream responses in real-time
 
-Copy page
 
 Get real-time responses from the Agent SDK as text and tool calls stream in
 
-Copy page
 
 By default, the Agent SDK yields complete `AssistantMessage` objects after Claude finishes generating each response. To receive incremental updates as text and tool calls are generated, enable partial message streaming by setting `include_partial_messages` (Python) or `includePartialMessages` (TypeScript) to `true` in your options.
 
@@ -40,6 +35,7 @@ from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
 
+
 async def stream_response():
     options = ClaudeAgentOptions(
         include_partial_messages=True,
@@ -53,6 +49,7 @@ async def stream_response():
                 delta = event.get("delta", {})
                 if delta.get("type") == "text_delta":
                     print(delta.get("text", ""), end="", flush=True)
+
 
 asyncio.run(stream_response())
 ```
@@ -73,10 +70,10 @@ Python
 ``` shiki
 @dataclass
 class StreamEvent:
-    uuid: str                      # Unique identifier for this event
-    session_id: str                # Session identifier
-    event: dict[str, Any]          # The raw Claude API stream event
-    parent_tool_use_id: str | None # Parent tool ID if from a subagent
+    uuid: str  # Unique identifier for this event
+    session_id: str  # Session identifier
+    event: dict[str, Any]  # The raw Claude API stream event
+    parent_tool_use_id: str | None  # Parent tool ID if from a subagent
 ```
 
 The `event` field contains the raw streaming event from the [Claude API](/docs/en/build-with-claude/streaming#event-types). Common event types include:
@@ -127,6 +124,7 @@ from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
 
+
 async def stream_text():
     options = ClaudeAgentOptions(include_partial_messages=True)
 
@@ -140,6 +138,7 @@ async def stream_text():
                     print(delta.get("text", ""), end="", flush=True)
 
     print()  # Final newline
+
 
 asyncio.run(stream_text())
 ```
@@ -160,6 +159,7 @@ Python
 from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
+
 
 async def stream_tool_calls():
     options = ClaudeAgentOptions(
@@ -198,6 +198,7 @@ async def stream_tool_calls():
                     print(f"Tool {current_tool} called with: {tool_input}")
                     current_tool = None
 
+
 asyncio.run(stream_tool_calls())
 ```
 
@@ -215,6 +216,7 @@ from claude_agent_sdk.types import StreamEvent
 import asyncio
 import sys
 
+
 async def streaming_ui():
     options = ClaudeAgentOptions(
         include_partial_messages=True,
@@ -225,8 +227,7 @@ async def streaming_ui():
     in_tool = False
 
     async for message in query(
-        prompt="Find all TODO comments in the codebase",
-        options=options
+        prompt="Find all TODO comments in the codebase", options=options
     ):
         if isinstance(message, StreamEvent):
             event = message.event
@@ -257,6 +258,7 @@ async def streaming_ui():
             # Agent finished all work
             print(f"\n\n--- Complete ---")
 
+
 asyncio.run(streaming_ui())
 ```
 
@@ -278,97 +280,3 @@ Now that you can stream text and tool calls in real-time, explore these related 
 - [Interactive vs one-shot queries](/docs/en/agent-sdk/streaming-vs-single-mode): choose between input modes for your use case
 - [Structured outputs](/docs/en/agent-sdk/structured-outputs): get typed JSON responses from the agent
 - [Permissions](/docs/en/agent-sdk/permissions): control which tools the agent can use
-
-Was this page helpful?
-
-- 
-
-- [Enable streaming output](#enable-streaming-output)
-
-- [StreamEvent reference](#stream-event-reference)
-
-- [Message flow](#message-flow)
-
-- [Stream text responses](#stream-text-responses)
-
-- [Stream tool calls](#stream-tool-calls)
-
-- [Build a streaming UI](#build-a-streaming-ui)
-
-- [Known limitations](#known-limitations)
-
-- [Next steps](#next-steps)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

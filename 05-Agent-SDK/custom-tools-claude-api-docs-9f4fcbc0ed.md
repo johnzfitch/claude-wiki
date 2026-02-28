@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:44Z"
+fetched_at: "2026-02-24T04:07:32Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/custom-tools"
 title: "Custom Tools - Claude API Docs"
 ---
-
-Guides
-
 # Custom Tools
 
-Copy page
 
 Build and integrate custom tools to extend Claude Agent SDK functionality
 
-Copy page
 
 Custom tools allow you to extend Claude Code's capabilities with your own functionality through in-process MCP servers, enabling Claude to interact with external services, APIs, or perform specialized operations.
 
@@ -97,14 +92,14 @@ async function* generateMessages() {
 }
 
 for await (const message of query({
-  prompt: generateMessages(),  // Use async generator for streaming input
+  prompt: generateMessages(), // Use async generator for streaming input
   options: {
     mcpServers: {
-      "my-custom-tools": customServer  // Pass as object/dictionary, not array
+      "my-custom-tools": customServer // Pass as object/dictionary, not array
     },
     // Optionally specify which tools Claude can use
     allowedTools: [
-      "mcp__my-custom-tools__get_weather",  // Allow the weather tool
+      "mcp__my-custom-tools__get_weather" // Allow the weather tool
       // Add other tools as needed
     ],
     maxTurns: 3
@@ -147,14 +142,14 @@ async function* generateMessages() {
 }
 
 for await (const message of query({
-  prompt: generateMessages(),  // Use async generator for streaming input
+  prompt: generateMessages(), // Use async generator for streaming input
   options: {
     mcpServers: {
       utilities: multiToolServer
     },
     allowedTools: [
-      "mcp__utilities__calculate",   // Allow calculator
-      "mcp__utilities__translate",   // Allow translator
+      "mcp__utilities__calculate", // Allow calculator
+      "mcp__utilities__translate" // Allow translator
       // "mcp__utilities__search_web" is NOT allowed
     ]
   }
@@ -191,7 +186,7 @@ tool(
     // args is fully typed based on the schema
     // TypeScript knows: args.data.name is string, args.data.age is number, etc.
     console.log(`Processing ${args.data.name}'s data as ${args.format}`);
-    
+
     // Your processing logic here
     return {
       content: [{
@@ -200,7 +195,7 @@ tool(
       }]
     };
   }
-)
+);
 ```
 
 ## 
@@ -221,7 +216,7 @@ tool(
   async (args) => {
     try {
       const response = await fetch(args.endpoint);
-      
+
       if (!response.ok) {
         return {
           content: [{
@@ -230,7 +225,7 @@ tool(
           }]
         };
       }
-      
+
       const data = await response.json();
       return {
         content: [{
@@ -247,7 +242,7 @@ tool(
       };
     }
   }
-)
+);
 ```
 
 ## 
@@ -314,20 +309,20 @@ const apiGatewayServer = createSdkMcpServer({
           openai: { baseUrl: "https://api.openai.com/v1", key: process.env.OPENAI_KEY },
           slack: { baseUrl: "https://slack.com/api", key: process.env.SLACK_TOKEN }
         };
-        
+
         const { baseUrl, key } = config[args.service];
         const url = new URL(`${baseUrl}${args.endpoint}`);
-        
+
         if (args.query) {
           Object.entries(args.query).forEach(([k, v]) => url.searchParams.set(k, v));
         }
-        
+
         const response = await fetch(url, {
           method: args.method,
           headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
           body: args.body ? JSON.stringify(args.body) : undefined
         });
-        
+
         const data = await response.json();
         return {
           content: [{
@@ -364,7 +359,7 @@ const calculatorServer = createSdkMcpServer({
           // Use a safe math evaluation library in production
           const result = eval(args.expression); // Example only!
           const formatted = Number(result).toFixed(args.precision);
-          
+
           return {
             content: [{
               type: "text",
@@ -393,11 +388,11 @@ const calculatorServer = createSdkMcpServer({
       async (args) => {
         const amount = args.principal * Math.pow(1 + args.rate / args.n, args.n * args.time);
         const interest = amount - args.principal;
-        
+
         return {
           content: [{
             type: "text",
-            text: `Investment Analysis:\n` +
+            text: "Investment Analysis:\n" +
                   `Principal: $${args.principal.toFixed(2)}\n` +
                   `Rate: ${(args.rate * 100).toFixed(2)}%\n` +
                   `Time: ${args.time} years\n` +
@@ -421,105 +416,3 @@ Related Documentation
 - [Python SDK Reference](/docs/en/agent-sdk/python)
 - [MCP Documentation](https://modelcontextprotocol.io)
 - [SDK Overview](/docs/en/agent-sdk/overview)
-
-Was this page helpful?
-
-- 
-
-- [Creating Custom Tools](#creating-custom-tools)
-
-- [Using Custom Tools](#using-custom-tools)
-
-- [Tool Name Format](#tool-name-format)
-
-- [Configuring Allowed Tools](#configuring-allowed-tools)
-
-- [Multiple Tools Example](#multiple-tools-example)
-
-- [Type Safety with Python](#type-safety-with-python)
-
-- [Error Handling](#error-handling)
-
-- [Example Tools](#example-tools)
-
-- [Database Query Tool](#database-query-tool)
-
-- [API Gateway Tool](#api-gateway-tool)
-
-- [Calculator Tool](#calculator-tool)
-
-- [Related Documentation](#related-documentation)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

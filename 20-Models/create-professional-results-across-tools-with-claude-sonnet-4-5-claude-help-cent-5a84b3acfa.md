@@ -1,55 +1,14 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-16T21:12:42Z"
+fetched_at: "2026-02-28T11:22:13Z"
 source_url: "https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5"
 title: "Create professional results across tools with Claude Sonnet 4.5 | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_82713e3950)
-
-[](#h_539290c04c)
-
-[](#h_3ae20c8db0)
-
-[](#h_c4580e1e6c)
-
-[All Collections](/en/)
-
-[Video Tutorials](https://support.claude.com/en/collections/10548294-video-tutorials)
-
-Create professional results across tools with Claude Sonnet 4.5
+3.  Create professional results across tools with Claude Sonnet 4.5
 
 # Create professional results across tools with Claude Sonnet 4.5
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_82713e3950)
-
-[](#h_539290c04c)
-
-[](#h_3ae20c8db0)
-
-[](#h_c4580e1e6c)
 
 Claude Sonnet 4.5 is our most intelligent model for creating work deliverables. With code execution and file creation, Claude can build presentations, spreadsheets, and documents faster and with higher quality than before (currently limited to Max and Pro accounts).
 
@@ -155,45 +114,17 @@ Chat previews don't always show the full picture. Download the file and open it 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)
+
+Claude Code model configuration
+
 
 Create and edit files with Claude
 
-[](https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work)
 
 Create and edit files with Claude to eliminate hours of busy work
 
-[](https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai)
 
 Getting the most out of Sonnet 4.5 in Claude.ai
 
-[](https://support.claude.com/en/articles/12650343-using-claude-in-excel)
-
-Using Claude in Excel
-
-[](https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work)
 
 Applying Claude Opus 4.5’s strengths to your everyday work
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

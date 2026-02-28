@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/build-ai-in-america"
 title: "Build AI in America: Anthropic Energy Report \\ Anthropic"
 ---
-
-Policy
-
 # Build AI in America
 
 Jul 21, 2025
@@ -56,9 +53,6 @@ By partnering across government, industry, and communities, we can build the fou
 Read the full [report](https://www-cdn.anthropic.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf).
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/build-ai-in-america)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/build-ai-in-america)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

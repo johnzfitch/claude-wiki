@@ -4,9 +4,6 @@ fetched_at: "2026-02-13T09:23:10Z"
 source_url: "https://www.anthropic.com/news/covering-electricity-price-increases"
 title: "Covering electricity price increases from our data centers \\ Anthropic"
 ---
-
-Policy
-
 # Covering electricity price increases from our data centers
 
 Feb 11, 2026
@@ -30,7 +27,6 @@ Done right, AI infrastructure can be a catalyst for the broader energy investmen
 
 \
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/covering-electricity-price-increases)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/covering-electricity-price-increases)
 
 ## Related content
 

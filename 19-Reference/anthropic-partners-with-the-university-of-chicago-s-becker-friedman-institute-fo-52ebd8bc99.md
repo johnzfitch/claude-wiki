@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-partners-with-the-university-of-chicago-s-becker-friedman-institute-on-ai-economic"
 title: "Anthropic partners with the University of Chicago’s Becker Friedman Institute for Economics on AI economic research \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic partners with the University of Chicago’s Becker Friedman Institute on AI economic research
 
 Jul 23, 2025
@@ -25,7 +22,6 @@ The rapid pace of technological advancement is increasing the challenges in anal
 
 The partnership will help expand the methodologies used to study AI's economic impact, with the goal of providing policymakers and researchers with more robust insights. As our [Economic Index](https://www.anthropic.com/economic-index) shows, AI use is distributed unevenly across the economy–with complex patterns that defy simple narratives about automation. Working hand-in-hand with BFI economists, we hope to develop a more precise understanding of these patterns and their implications for economic policy, workforce development, and technology governance.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-partners-with-the-university-of-chicago-s-becker-friedman-institute-on-ai-economic)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-partners-with-the-university-of-chicago-s-becker-friedman-institute-on-ai-economic)
 
 ## Related content
 

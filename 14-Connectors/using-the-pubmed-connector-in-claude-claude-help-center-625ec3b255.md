@@ -1,67 +1,12 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:43Z"
+fetched_at: "2026-02-28T11:22:21Z"
 source_url: "https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude"
 title: "Using the PubMed Connector in Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_821a7ababc)
-
-[](#h_e7ffc3fd8e)
-
-[](#h_337d060f54)
-
-[](#h_d03d164597)
-
-[](#h_55da2fa191)
-
-[](#h_3ca162e5c9)
-
-[](#h_d255a3bcee)
-
-[All Collections](/en/)
-
-[Claude for Life Sciences](https://support.claude.com/en/collections/16142619-claude-for-life-sciences)
-
-Using the PubMed Connector in Claude
-
 # Using the PubMed Connector in Claude
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_821a7ababc)
-
-[](#h_e7ffc3fd8e)
-
-[](#h_337d060f54)
-
-[](#h_d03d164597)
-
-[](#h_55da2fa191)
-
-[](#h_3ca162e5c9)
-
-[](#h_d255a3bcee)
 
 The PubMed integration provides access to millions of biomedical research articles and clinical studies, allowing Claude to access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper exploration. This article explains how to set up and use the PubMed integration with Claude to accelerate your research workflows.
 
@@ -231,45 +176,17 @@ If you're experiencing issues with the PubMed integration or have questions not 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)
 
 Getting Started with Claude for Life Sciences
 
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
+
+Using the BioRender Connector in Claude
+
 
 Using the Synapse.org connector in Claude
 
-[](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
 
 Using the Benchling Connector in Claude
 
-[](https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude)
 
 Using the Scholar Gateway Connector in Claude
-
-[](https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude)
-
-Using the Benevity Connector in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

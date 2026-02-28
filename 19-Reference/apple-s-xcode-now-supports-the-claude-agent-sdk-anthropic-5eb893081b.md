@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/apple-xcode-claude-agent-sdk"
 title: "Apple’s Xcode now supports the Claude Agent SDK \\ Anthropic"
 ---
-
-Product
-
 # Apple’s Xcode now supports the Claude Agent SDK
 
 Feb 3, 2026
@@ -30,7 +27,6 @@ With the Claude Agent SDK, Claude can now work autonomously on much more sophist
 
 Xcode 26.3 is available as a release candidate for all members of the Apple Developer Program starting today, with a release coming soon on Apple’s App Store. See Apple’s announcement [here for more](https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/apple-xcode-claude-agent-sdk)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/apple-xcode-claude-agent-sdk)
 
 ## Related content
 

@@ -1,57 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:46Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription"
 title: "How to redeem a Claude gift subscription | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_82c3006095)
-
-[](#h_7b6919fc8e)
-
-[](#h_c1b87fc020)
-
-[](#h_4cc68595eb)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Getting Started with Claude](https://support.claude.com/en/collections/9811058-getting-started-with-claude)
-
-How to redeem a Claude gift subscription
+4.  How to redeem a Claude gift subscription
 
 # How to redeem a Claude gift subscription
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_82c3006095)
-
-[](#h_7b6919fc8e)
-
-[](#h_c1b87fc020)
-
-[](#h_4cc68595eb)
 
 Someone sent you a Claude gift subscription—here's how to redeem it and start using Claude.
 
@@ -107,45 +64,17 @@ The gift can be redeemed by any Claude account, regardless of which email receiv
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
 
-[](https://support.claude.com/en/articles/11408405-claude-4-invite-contest)
 
 Claude 4 Invite Contest
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
 
-[](https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription)
 
 How to gift a Claude subscription
 
-[](https://support.claude.com/en/articles/13163666-holiday-2025-usage-promotion)
 
 Holiday 2025 Usage Promotion
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

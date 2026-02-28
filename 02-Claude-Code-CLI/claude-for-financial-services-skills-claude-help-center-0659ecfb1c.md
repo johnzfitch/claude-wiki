@@ -1,99 +1,12 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-08T20:52:01Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills"
 title: "Claude for Financial Services Skills | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_6938f40775)
-
-[](#h_5ed7acfeab)
-
-[](#h_21845022ee)
-
-[](#h_eadcc8e8b3)
-
-[](#h_087c585c1c)
-
-[](#h_df8a3a4112)
-
-[](#h_1cef2e3564)
-
-[](#h_1e7eec290b)
-
-[](#h_a7234614a9)
-
-[](#h_ca70fcef2c)
-
-[](#h_3589c374ec)
-
-[](#h_c94f709b68)
-
-[](#h_d8dbfb88a3)
-
-[](#h_7d0076753a)
-
-[](#h_621e6b559e)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-Claude for Financial Services Skills
-
 # Claude for Financial Services Skills
 
-Updated yesterday
-
-Table of contents
-
-[](#h_6938f40775)
-
-[](#h_5ed7acfeab)
-
-[](#h_21845022ee)
-
-[](#h_eadcc8e8b3)
-
-[](#h_087c585c1c)
-
-[](#h_df8a3a4112)
-
-[](#h_1cef2e3564)
-
-[](#h_1e7eec290b)
-
-[](#h_a7234614a9)
-
-[](#h_ca70fcef2c)
-
-[](#h_3589c374ec)
-
-[](#h_c94f709b68)
-
-[](#h_d8dbfb88a3)
-
-[](#h_7d0076753a)
-
-[](#h_621e6b559e)
 
 Claude for Financial Services Skills are specialized tools designed to help financial services professionals with key workflows. These Skills provide Claude with targeted capabilities for common financial analysis, research, and document creation tasks, helping you work more efficiently and consistently.
 
@@ -395,45 +308,17 @@ To guarantee Claude uses the skill, you are also welcome to explicitly instruct 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services)
 
 Getting Started with Claude for Financial Services
 
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research)
 
 Using FactSet for Comprehensive Financial Research
 
-[](https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis)
-
-Prompting Strategies for Financial Analysis
-
-[](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 
 Financial Analysis Workflows with Claude
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Install financial services plugins for Cowork

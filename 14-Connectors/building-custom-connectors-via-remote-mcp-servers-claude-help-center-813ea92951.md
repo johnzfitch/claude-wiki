@@ -1,51 +1,14 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:36Z"
+fetched_at: "2026-02-28T11:22:33Z"
 source_url: "https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers"
 title: "Building custom connectors via remote MCP servers | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_18842a1b95)
-
-[](#h_ed638d686b)
-
-[](#h_b0e7505b75)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-Building custom connectors via remote MCP servers
+3.  Building custom connectors via remote MCP servers
 
 # Building custom connectors via remote MCP servers
 
-Updated this week
-
-Table of contents
-
-[](#h_18842a1b95)
-
-[](#h_ed638d686b)
-
-[](#h_b0e7505b75)
 
 Custom connectors using remote MCP are available on Claude and Claude Desktop for users on Pro, Max, Team, and Enterprise plans.
 
@@ -123,7 +86,6 @@ Alternatively, use the [inspector tool](https://github.com/modelcontextprotocol/
 
 - which tools, prompts, resources, and other MCP features your server exposes.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1553912673/2d4c61c44a57ca3ad98c05fbb7d1/AD_4nXc-tmHASMQNJRwv3W64SVaojlwe5NqtOr_s9ZYXdmHP1LgBVmb_9fbjBBCUweeerCVsT52ZM5t6lEIzZXPZDY1mYy50H9Pbrlt0ygVVpInpainwVW6-pStYpIwvDJd6wqILHfFFEg?expires=1771277400&signature=83a59143d58c861c72231bf3a283f6cca3d7255d8791fd5fd80c5fa8ee7bf7ff&req=dSUiFcB%2Fn4dYWvMW1HO4za06rLNqQOSkYCouPsdkSdZeR29DFxJpoO0dus1K%0Aymo6uIbKp8lD0TgvSdI%3D%0A)
 
 See the [MCP documentation](https://modelcontextprotocol.io/docs/tools/inspector) for more details on using inspector and for other tips on how to debug and troubleshoot your server.
 
@@ -133,45 +95,17 @@ In addition, other solutions like [Cloudflare’s AI Playground](https://playgro
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp)
 
 Pre-built web connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide)
 
 Remote MCP Server Submission Guide
 
-[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
 
 Building Desktop Extensions with MCPB
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

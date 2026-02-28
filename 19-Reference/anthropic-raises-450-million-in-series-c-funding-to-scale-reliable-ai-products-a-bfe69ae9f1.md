@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-series-c"
 title: "Anthropic Raises $450 Million in Series C Funding to Scale Reliable AI Products \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic Raises \$450 Million in Series C Funding to Scale Reliable AI Products
 
 May 23, 2023
@@ -23,7 +20,6 @@ In addition to our technical work, during the past year we have been further ref
 
 We are excited to use the new funding to grow our world-class team across product and research, and aim to meet increasing demand for AI technologies that are reliable and trustworthy. Please get in touch if you’re interested in working with Claude.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-series-c)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-series-c)
 
 ## Related content
 

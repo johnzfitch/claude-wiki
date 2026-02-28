@@ -1,37 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-16T21:12:47Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/13145338-anthropic-software-directory-terms"
 title: "Anthropic Software Directory Terms | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[General](https://support.claude.com/en/collections/17879426-general)
-
-Anthropic Software Directory Terms
-
 # Anthropic Software Directory Terms
 
-Updated this week
 
 By submitting your MCP server, Skill folder, plugin, app, or other software, container, or data (“Software”) for inclusion in any Anthropic directory, repository, surface, or similar offering (collectively, “Directories”), you represent and warrant to Anthropic that (i) you have and will maintain all necessary rights to provide your Software to users and to grant the rights set forth in these terms; (ii) your Software and the ordinary, intended use of your Software complies with all applicable laws and regulations and does not violate Anthropic’s Software Directory Policy (currently available at <https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy>, as may be updated from time to time); (iii) any information you give us will be accurate and up-to-date; and (iv) if you or your Software collects or shares user information or other personal data, you will provide and adhere to a privacy policy for your Software, provide all applicable third-party privacy policies, and ensure all such policies clearly and accurately describe to users what user information you and third parties collect and how you and third parties use and share such information.
 
@@ -51,45 +26,17 @@ See prior version of these terms here: [Anthropic MCP Directory Terms and Condit
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
 
-[](https://support.claude.com/en/articles/12922490-remote-mcp-server-submission-guide)
 
 Remote MCP Server Submission Guide
 
-[](https://support.claude.com/en/articles/12922832-local-mcp-server-submission-guide)
 
 Local MCP Server Submission Guide
 
-[](https://support.claude.com/en/articles/12922929-building-desktop-extensions-with-mcpb)
 
 Building Desktop Extensions with MCPB
 
-[](https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy)
 
 Anthropic Software Directory Policy
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

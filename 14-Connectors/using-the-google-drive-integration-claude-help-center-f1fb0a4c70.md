@@ -1,57 +1,12 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:32Z"
+fetched_at: "2026-02-28T11:22:33Z"
 source_url: "https://support.claude.com/en/articles/10166901-using-the-google-drive-integration"
 title: "Using the Google Drive integration | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_d7059642de)
-
-[](#h_3728aa4d1f)
-
-[](#h_5eda653646)
-
-[](#h_0e4a394b74)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
-
-Using the Google Drive integration
-
 # Using the Google Drive integration
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_d7059642de)
-
-[](#h_3728aa4d1f)
-
-[](#h_5eda653646)
-
-[](#h_0e4a394b74)
 
 The Google Drive integration is available for all users on Claude, Claude Desktop, and Claude Mobile (iOS and Android). For more information on enabling Google Drive within your account, read [Setting Up Claude Integrations](https://support.claude.com/en/articles/10168395-setting-up-claude-integrations).
 
@@ -71,7 +26,6 @@ Connect your Google Docs directly to Claude using the Google Drive integration. 
 
 4.  When you send your message, Claude will access and process the document to inform its response:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1608125708/5bf70727b4bae6f021630a1ade3a/image+%286%29.png?expires=1771278300&signature=95f892d488912a27aca9e228382e06ddf13fc6f886f249c9d9b84fe8f7afb45d&req=dSYnHsh8mIZfUfMW1HO4zexw%2B%2BzVzF%2FvHtWhqjkZhkuDk1yLJ%2BoFE7pi9o7U%0ACyblCkjNgCDTlbfOxTg%3D%0A)
 
 ### Projects
 
@@ -139,45 +93,17 @@ Please note that all Claude.ai integrations are currently in beta.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10167454-using-the-github-integration)
 
 Using the GitHub Integration
 
-[](https://support.claude.com/en/articles/10168395-setting-up-claude-integrations)
 
-Setting up Claude integrations
+Set up Claude integrations
 
-[](https://support.claude.com/en/articles/10389539-using-the-google-docs-integration)
 
 Using the Google Docs integration
 
-[](https://support.claude.com/en/articles/11088742-using-the-gmail-and-google-calendar-integrations)
 
 Using the Gmail and Google Calendar Integrations
 
-[](https://support.claude.com/en/articles/11088779-using-google-drive-cataloging-on-the-enterprise-plan)
 
 Using Google Drive Cataloging on the Enterprise Plan
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

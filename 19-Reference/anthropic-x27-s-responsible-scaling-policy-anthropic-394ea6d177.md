@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropics-responsible-scaling-policy"
 title: "Anthropic&#x27;s Responsible Scaling Policy \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic's Responsible Scaling Policy
 
 Sep 19, 2023
@@ -43,7 +40,6 @@ The full document can be read [here](https://anthropic.com/responsible-scaling-p
 
 1.  As a general matter, Anthropic has consistently found that working with frontier AI models is an essential ingredient in developing new methods to mitigate the risk of AI.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropics-responsible-scaling-policy)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropics-responsible-scaling-policy)
 
 ## Related content
 

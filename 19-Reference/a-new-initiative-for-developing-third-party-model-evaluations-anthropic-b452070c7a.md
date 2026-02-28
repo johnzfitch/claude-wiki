@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations"
 title: "A new initiative for developing third-party model evaluations \\ Anthropic"
 ---
-
-Announcements
-
 # A new initiative for developing third-party model evaluations
 
 Jul 1, 2024
@@ -107,8 +104,6 @@ Our experience has shown that refining an evaluation typically requires several 
 
 We hope this initiative serves as a catalyst for progress towards a future where comprehensive AI evaluation is an industry standard. We invite you to join us in this important work and help shape the path forward.  
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations)
 
 ## Related content
 

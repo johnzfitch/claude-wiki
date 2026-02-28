@@ -1,45 +1,14 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-08T20:52:06Z"
+fetched_at: "2026-02-28T11:22:17Z"
 source_url: "https://support.claude.com/en/articles/13200993-restrict-access-to-claude-with-ip-allowlisting"
 title: "Restrict access to Claude with IP allowlisting | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_522036d853)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Enterprise Plan](https://support.claude.com/en/collections/10351014-enterprise-plan)
-
-Restrict access to Claude with IP allowlisting
+4.  Restrict access to Claude with IP allowlisting
 
 # Restrict access to Claude with IP allowlisting
 
-Updated yesterday
-
-Table of contents
-
-[](#h_522036d853)
 
 IP allowlisting is available for Enterprise plans only.
 
@@ -59,45 +28,17 @@ When a request originates from an IP address that’s not in your allowlist, acc
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
+
+Who owns and manages the data of my team?
+
 
 Getting Started with Local MCP Servers on Claude Desktop
 
-[](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
 
 Claude Code usage analytics
 
-[](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
-
-Using Skills in Claude
-
-[](https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist)
 
 Enabling and using the desktop extension allowlist
 
-[](https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls)
 
-Claude in Chrome Admin Controls
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Claude in Chrome admin controls

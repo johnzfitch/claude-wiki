@@ -1,4 +1,3 @@
-::: {.cell .markdown id="813NspGRKhc2"}
 # RAG Pipeline with LlamaIndex
 
 In this notebook we will look into building Basic RAG Pipeline with

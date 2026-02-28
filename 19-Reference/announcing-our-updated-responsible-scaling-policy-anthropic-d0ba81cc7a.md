@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy"
 title: "Announcing our updated Responsible Scaling Policy \\ Anthropic"
 ---
-
-Announcements
-
 # Announcing our updated Responsible Scaling Policy
 
 Oct 15, 2024
@@ -75,15 +72,11 @@ If you would like to contribute to AI risk management at Anthropic, [we are hiri
 *We extend our sincere gratitude to the many external groups that provided invaluable feedback on the development and refinement of our Responsible Scaling Policy.*
 
   
-
 #### Footnotes
 
 ¹ *We have also shared our assessment methodology with both AI Safety Institutes, as well as a selection of independent experts and organizations, for feedback. This does not represent an endorsement from either AI Safety Institute or the independent experts and organizations. *
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

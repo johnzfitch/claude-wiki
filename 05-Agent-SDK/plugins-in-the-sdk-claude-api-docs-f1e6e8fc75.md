@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:47Z"
+fetched_at: "2026-02-24T04:08:08Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/plugins"
 title: "Plugins in the SDK - Claude API Docs"
 ---
-
-Guides
-
 # Plugins in the SDK
 
-Copy page
 
 Load custom plugins to extend Claude Code with commands, agents, skills, and hooks through the Agent SDK
 
-Copy page
 
 Plugins allow you to extend Claude Code with custom functionality that can be shared across projects. Through the Agent SDK, you can programmatically load plugins from local directories to add custom slash commands, agents, skills, hooks, and MCP servers to your agent sessions.
 
@@ -61,8 +56,8 @@ Path specifications
 
 Plugin paths can be:
 
-- **Relative paths**: Resolved relative to your current working directory (e.g., `"./plugins/my-plugin"`)
-- **Absolute paths**: Full file system paths (e.g., `"/home/user/plugins/my-plugin"`)
+- **Relative paths**: Resolved relative to your current working directory (for example, `"./plugins/my-plugin"`)
+- **Absolute paths**: Full file system paths (for example, `"/home/user/plugins/my-plugin"`)
 
 The path should point to the plugin's root directory (the directory containing `.claude-plugin/plugin.json`).
 
@@ -108,7 +103,7 @@ import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Load a plugin with a custom /greet command
 for await (const message of query({
-  prompt: "/my-plugin:greet",  // Use plugin command with namespace
+  prompt: "/my-plugin:greet", // Use plugin command with namespace
   options: {
     plugins: [{ type: "local", path: "./my-plugin" }]
   }
@@ -120,7 +115,7 @@ for await (const message of query({
 }
 ```
 
-If you installed a plugin via the CLI (e.g., `/plugin install my-plugin@marketplace`), you can still use it in the SDK by providing its installation path. Check `~/.claude/plugins/` for CLI-installed plugins.
+If you installed a plugin via the CLI (for example, `/plugin install my-plugin@marketplace`), you can still use it in the SDK by providing its installation path. Check `~/.claude/plugins/` for CLI-installed plugins.
 
 ## 
 
@@ -202,7 +197,7 @@ Load plugins during development without installing them globally:
 ``` shiki
 plugins: [
   { type: "local", path: "./dev-plugins/my-plugin" }
-]
+];
 ```
 
 ### 
@@ -214,7 +209,7 @@ Include plugins in your project repository for team-wide consistency:
 ``` shiki
 plugins: [
   { type: "local", path: "./project-plugins/team-workflows" }
-]
+];
 ```
 
 ### 
@@ -227,7 +222,7 @@ Combine plugins from different locations:
 plugins: [
   { type: "local", path: "./local-plugin" },
   { type: "local", path: "~/.claude/custom-plugins/shared-plugin" }
-]
+];
 ```
 
 ## 
@@ -273,113 +268,3 @@ See also
 - [Slash Commands](/docs/en/agent-sdk/slash-commands) - Using slash commands in the SDK
 - [Subagents](/docs/en/agent-sdk/subagents) - Working with specialized agents
 - [Skills](/docs/en/agent-sdk/skills) - Using Agent Skills
-
-Was this page helpful?
-
-- 
-
-- [What are plugins?](#what-are-plugins)
-
-- [Loading plugins](#loading-plugins)
-
-- [Path specifications](#path-specifications)
-
-- [Verifying plugin installation](#verifying-plugin-installation)
-
-- [Using plugin commands](#using-plugin-commands)
-
-- [Complete example](#complete-example)
-
-- [Plugin structure reference](#plugin-structure-reference)
-
-- [Common use cases](#common-use-cases)
-
-- [Development and testing](#development-and-testing)
-
-- [Project-specific extensions](#project-specific-extensions)
-
-- [Multiple plugin sources](#multiple-plugin-sources)
-
-- [Troubleshooting](#troubleshooting)
-
-- [Plugin not loading](#plugin-not-loading)
-
-- [Commands not available](#commands-not-available)
-
-- [Path resolution issues](#path-resolution-issues)
-
-- [See also](#see-also)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

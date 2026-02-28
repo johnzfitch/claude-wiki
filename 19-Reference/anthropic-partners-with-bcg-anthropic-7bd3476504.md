@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-bcg"
 title: "Anthropic partners with BCG \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic partners with BCG
 
 Sep 14, 2023
@@ -21,7 +18,6 @@ Anthropic and BCG have already partnered to help organizations understand the fo
   
 We’re extending a warm welcome to BCG and its customers—and look forward to working with them to deploy innovative applications of generative AI safely and responsibly.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-bcg)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-bcg)
 
 ## Related content
 

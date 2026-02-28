@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Building Evals
 
 Optimizing Claude to give you the highest possible accuracy on a task is

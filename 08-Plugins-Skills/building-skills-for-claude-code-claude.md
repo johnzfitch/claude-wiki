@@ -140,8 +140,3 @@ This [Skills marketplace shares even more examples to inspire you.](https://web.
 ## **Getting started with Claude Code and Skills**
 
 Skills let you encode institutional knowledge that works across teams and platforms. By capturing your procedures, terminology, and business logic into a skill, you create organizational memory that scales. New analysts query data correctly on day one, data scientists stop explaining the same table relationships, and business users can self-serve accurate metrics. Start building your first Skill in [Claude Code](https://web.archive.org/web/20251219031003/https://www.claude.com/product/claude-code) today.
-
-
-
-
-

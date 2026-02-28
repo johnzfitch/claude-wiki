@@ -1,55 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:35Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
 title: "Using Claude Code with your Pro or Max plan | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_58481ca9d7)
-
-[](#h_091d4329f6)
-
-[](#h_a2542a08e2)
-
-[](#h_52cf4ff05e)
-
-[All Collections](/en/)
-
-[Claude Code](https://support.claude.com/en/collections/14445694-claude-code)
-
-Using Claude Code with your Pro or Max plan
+3.  Using Claude Code with your Pro or Max plan
 
 # Using Claude Code with your Pro or Max plan
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_58481ca9d7)
-
-[](#h_091d4329f6)
-
-[](#h_a2542a08e2)
-
-[](#h_52cf4ff05e)
 
 This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Using Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)**.
 
@@ -75,7 +34,7 @@ Use two powerful AI products in one simple subscription.
 
 2.  **Install Claude Code**
 
-    - Visit the **[Claude Code page in our Claude Docs](https://code.claude.com/docs/en/overview#install-and-authenticate)** to download and install Claude Code.
+    - Visit the **[Claude Code page in our Claude Docs](https://code.claude.com/docs/en/quickstart#step-1-install-claude-code)** to download and install Claude Code.
 
     - Follow the installation instructions for your operating system.
 
@@ -197,45 +156,17 @@ Auto-reload functionality is managed within your Claude Console account, not thr
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan)
 
 What is the Pro plan?
 
-[](https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage)
 
 How do I pay for my Claude API usage?
 
-[](https://support.claude.com/en/articles/11049741-what-is-the-max-plan)
 
 What is the Max plan?
 
-[](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

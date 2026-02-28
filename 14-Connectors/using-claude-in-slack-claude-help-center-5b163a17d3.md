@@ -1,89 +1,12 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:42Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 title: "Using Claude in Slack | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_d2966ae2ee)
-
-[](#h_1d97014fb8)
-
-[](#h_4e05a193cf)
-
-[](#h_930401b108)
-
-[](#h_adda66b697)
-
-[](#h_201435bbe2)
-
-[](#h_0110325ad0)
-
-[](#h_39132eeadb)
-
-[](#h_a477f66c87)
-
-[](#h_4f5a7335ee)
-
-[](#h_ddbdf025f4)
-
-[](#h_435d9f19c2)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
-
-Using Claude in Slack
-
 # Using Claude in Slack
 
-Updated this week
-
-Table of contents
-
-[](#h_d2966ae2ee)
-
-[](#h_1d97014fb8)
-
-[](#h_4e05a193cf)
-
-[](#h_930401b108)
-
-[](#h_adda66b697)
-
-[](#h_201435bbe2)
-
-[](#h_0110325ad0)
-
-[](#h_39132eeadb)
-
-[](#h_a477f66c87)
-
-[](#h_4f5a7335ee)
-
-[](#h_ddbdf025f4)
-
-[](#h_435d9f19c2)
 
 Claude in Slack gives you AI assistance right where your team collaborates. This article covers how to interact with Claude in Slack, which features are available, and tips for getting the most out of the integration.
 
@@ -111,7 +34,6 @@ Claude in Slack gives you AI assistance right where your team collaborates. This
 
 6.  Access previous conversations by clicking the clock icon.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1755150661/a1a13c73bda421f6ee906650cfc9/22907223-e523-4a93-a6d2-3199a8368991?expires=1771278300&signature=f305ae0ee8188d42416ab5d8b505f988705e3f14d752098203ebc8ab9b9d5056&req=dSciE8h7nYdZWPMW1HO4zXK25RBM7zkdVfOC%2FRy97LVGETXUo2P2RreGD0FS%0AzFntSMYKCXvCntMG350%3D%0A)
 
 ## Mention @Claude in a thread or channel
 
@@ -331,45 +253,17 @@ Start a new conversation to continue.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11088861-using-research-on-claude)
 
 Using Research on Claude
 
-[](https://support.claude.com/en/articles/11506255-getting-started-with-claude-in-slack)
+
+FAQs on Using Claude for Education at Your University
+
 
 Getting started with Claude in Slack
 
-[](https://support.claude.com/en/articles/12293051-using-claude-in-xcode)
 
 Using Claude in Xcode
 
-[](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
-
-[](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
-
-Using interactive connectors in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

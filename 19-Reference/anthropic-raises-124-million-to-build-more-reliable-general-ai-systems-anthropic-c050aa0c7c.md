@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems"
 title: "Anthropic raises $124 million to build more reliable, general AI systems \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic raises \$124 million to build more reliable, general AI systems
 
 May 28, 2021
@@ -23,7 +20,6 @@ The Series A round was led by Jaan Tallinn, technology investor and co-founder o
   
 To find out more about Anthropic’s research agenda and approach, you can read our website and its job postings. The company is hiring researchers, engineers, and operational experts to support it in executing against its research roadmap. Find out more here: Anthropic.com.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems)
 
 ## Related content
 

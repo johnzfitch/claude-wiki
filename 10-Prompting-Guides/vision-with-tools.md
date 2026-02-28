@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Using Vision with Tools
 :::
 

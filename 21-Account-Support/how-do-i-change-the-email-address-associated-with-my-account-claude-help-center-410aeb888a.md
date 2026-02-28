@@ -1,37 +1,14 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-16T21:12:50Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/8452276-how-do-i-change-the-email-address-associated-with-my-account"
 title: "How do I change the email address associated with my account? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Account Management](https://support.claude.com/en/collections/9811145-account-management)
-
-How do I change the email address associated with my account?
+4.  How do I change the email address associated with my account?
 
 # How do I change the email address associated with my account?
 
-Updated over a week ago
 
 It's not possible to change the email address associated with your Claude account at this time. When creating an account, please make sure you use an email you'll have long-term access to.
 
@@ -68,45 +45,17 @@ If you see "Contact support" instead of a "Delete account" button, you'll need t
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan)
 
 How do I sign up for the Pro plan?
 
-[](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription)
 
 How do I cancel my paid Claude subscription?
 
-[](https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account)
 
 How can I delete my Claude account?
 
-[](https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan)
 
 How do I get started with the Team plan?
 
-[](https://support.claude.com/en/articles/9612898-how-can-i-cancel-my-claude-pro-subscription-on-claude-for-android)
 
-How can I cancel my Claude Pro subscription on Claude for Android?
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Logging in to your Claude account

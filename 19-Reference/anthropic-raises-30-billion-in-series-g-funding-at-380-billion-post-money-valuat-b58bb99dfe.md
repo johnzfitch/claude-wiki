@@ -4,9 +4,6 @@ fetched_at: "2026-02-13T09:23:09Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
 title: "Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
 
 Feb 12, 2026
@@ -39,7 +36,6 @@ The demand we are seeing from enterprises and developers reflects the trust they
 
 \
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
 
 ## Related content
 

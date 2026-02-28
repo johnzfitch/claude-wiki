@@ -1,28 +1,23 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-07T10:04:03Z"
+fetched_at: "2026-02-24T04:01:24Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model"
 title: "Choosing the right model - Claude API Docs"
 ---
-
-Models & pricing
-
 # Choosing the right model
 
-Copy page
 
 Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps you make an informed decision based on your specific requirements.
 
-Copy page
 
 ## 
 
 Establish key criteria
 
-When choosing a Claude model, we recommend first evaluating these factors:
+When choosing a Claude model, consider first evaluating these factors:
 
 - **Capabilities:** What specific features or capabilities will you need the model to have in order to meet your needs?
-- **Speed:** How quickly does the model need to respond in your application?
+- **Speed:** How quickly does the model need to respond in your application? For Claude Opus 4.6, [fast mode](/docs/en/build-with-claude/fast-mode) (research preview) can provide up to 2.5x higher output speed at premium pricing.
 - **Cost:** What's your budget for both development and production usage?
 
 Knowing these answers in advance will make narrowing down and deciding which model to use much easier.
@@ -76,10 +71,10 @@ This approach is best for:
 
 Model selection matrix
 
-| When you need... | We recommend starting with... | Example use cases |
+| When you need... | Consider starting with... | Example use cases |
 |----|----|----|
-| Claude Opus 4.6 is the latest version of our most intelligent model, and the world’s best model for coding, enterprise agents, and professional work. | Claude Opus 4.6 | Professional software engineering, advanced agents for office tasks, computer and browser use at scale, multi-hour research tasks, step-change vision applications |
-| The best combination of speed and intelligence for everyday tasks | Claude Sonnet 4.5 | Code generation, data analysis, content creation, visual understanding, agentic tool use |
+| The most intelligent model, and the world’s best model for coding, enterprise agents, and professional work. | Claude Opus 4.6 | Professional software engineering, advanced agents for office tasks, computer and browser use at scale, multi-hour research tasks, step-change vision applications |
+| Frontier intelligence at scale, built for coding, agents, and enterprise workflows | Claude Sonnet 4.6 | Code generation, data analysis, content creation, visual understanding, agentic tool use |
 | Near-frontier performance with lightning-fast speed and extended thinking at the most economical price point | Claude Haiku 4.5 | Real-time applications, high-volume intelligent processing, cost-sensitive deployments needing strong reasoning, sub-agent tasks |
 
 ------------------------------------------------------------------------
@@ -119,95 +114,3 @@ Explore the latest improvements in Claude 4.6 models
 Start building
 
 Get started with your first API call
-
-Was this page helpful?
-
-- 
-
-- [Establish key criteria](#establish-key-criteria)
-
-- [Choose the best model to start with](#choose-the-best-model-to-start-with)
-
-- [Option 1: Start with a fast, cost-effective model](#option-1-start-with-a-fast-cost-effective-model)
-
-- [Option 2: Start with the most capable model](#option-2-start-with-the-most-capable-model)
-
-- [Model selection matrix](#model-selection-matrix)
-
-- [Decide whether to upgrade or change models](#decide-whether-to-upgrade-or-change-models)
-
-- [Next steps](#next-steps)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

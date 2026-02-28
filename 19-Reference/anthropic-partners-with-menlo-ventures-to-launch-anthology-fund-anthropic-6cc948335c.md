@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-partners-with-menlo-ventures-to-launch-anthology-fund"
 title: "Anthropic partners with Menlo Ventures to launch Anthology Fund \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic partners with Menlo Ventures to launch Anthology Fund
 
 Jul 17, 2024
@@ -26,9 +23,6 @@ We look forward to working with Menlo in supporting the startup ecosystem and dr
 Interested startups can learn more and apply [here](https://menlovc.com/anthology-fund-application/).
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-partners-with-menlo-ventures-to-launch-anthology-fund)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-partners-with-menlo-ventures-to-launch-anthology-fund)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

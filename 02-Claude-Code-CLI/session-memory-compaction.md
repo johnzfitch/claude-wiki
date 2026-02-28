@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Session Memory Compaction
 
 Long-running conversations with Claude can exceed context limits,

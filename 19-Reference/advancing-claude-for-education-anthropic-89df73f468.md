@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/news/advancing-claude-for-education"
 title: "Advancing Claude for Education \\ Anthropic"
 ---
-
-Product
-
 # Advancing Claude for Education
 
 Jul 9, 2025
@@ -47,7 +44,6 @@ Institutions leveraging AI hold immense promise to transform education and bridg
 
 The stakes couldn't be higher: while the opportunity to accelerate educational progress is unprecedented, missteps could deepen existing divides and cause lasting harm. That's why we're committed to navigating this transformation responsibly, working hand-in-hand with our partners to build an educational future that truly serves everyone. To learn more about Claude for Education, [contact our Education team](https://www.anthropic.com/education).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/advancing-claude-for-education)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/advancing-claude-for-education)
 
 ## Related content
 

@@ -2,7 +2,6 @@
 source: https://modelcontextprotocol.io/clients.md
 downloaded: 2026-02-02
 ---
-
 # Example Clients
 
 > A list of applications that support MCP integrations

@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Building Custom Skills for Claude
 
 Learn how to create, deploy, and manage custom skills to extend

@@ -1,73 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:46Z"
+fetched_at: "2026-02-28T11:22:16Z"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 title: "Team plan billing FAQs | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_7c1e505ea2)
-
-[](#h_889dc240cf)
-
-[](#h_eb96793c22)
-
-[](#h_3d7b0dffcc)
-
-[](#h_c492b9f04c)
-
-[](#h_9e340c4a04)
-
-[](#h_cf002df796)
-
-[](#h_50d1d17f41)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Team Plan](https://support.claude.com/en/collections/9811436-team-plan)
-
-Team plan billing FAQs
-
 # Team plan billing FAQs
 
-Updated this week
-
-Table of contents
-
-[](#h_7c1e505ea2)
-
-[](#h_889dc240cf)
-
-[](#h_eb96793c22)
-
-[](#h_3d7b0dffcc)
-
-[](#h_c492b9f04c)
-
-[](#h_9e340c4a04)
-
-[](#h_cf002df796)
-
-[](#h_50d1d17f41)
 
 ## What payment methods can I use to pay for the Team plan?
 
@@ -87,7 +26,6 @@ Your organization's billing address determines where your invoices are sent. You
 
 If you want to use a name other than the one tied to your payment method, an organization Owner should check the "Use a different name on invoices" box when adding or updating your payment method in **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922145253/f2e3d4e0fe43a2ea07e89244764c/image.png?expires=1771278300&signature=d145b952b019683edf2a646181915229ce92105a9a91bc2e5c3a7876d3c9a200&req=dSklFMh6mINaWvMW1HO4zRZTy1vDvMPQKAqLF4ERnlUq1775cQO1I5%2FIke5U%0ADmtCVcMypsOZqkaJeJ8%3D%0A)
 
 ## When will I be billed?
 
@@ -123,45 +61,17 @@ An organization owner can resubscribe for Team plan access by navigating to **[O
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs)
 
 Paid Plan Billing FAQs
 
-[](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)
 
 How is my Team plan bill calculated?
 
-[](https://support.claude.com/en/articles/9927624-i-need-to-add-or-update-my-team-plan-s-tax-or-vat-id)
 
 I need to add or update my Team plan's Tax or VAT ID
 
-[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
-
-How am I billed for my Enterprise plan?
-
-[](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)
 
 Understanding your billing address and tax calculation
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Manage members on Team and Enterprise plans

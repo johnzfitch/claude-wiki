@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/news/accelerating-scientific-research"
 title: "How scientists are using Claude to accelerate research and discovery \\ Anthropic"
 ---
-
-Case Study
-
 # How scientists are using Claude to accelerate research and discovery
 
 Jan 15, 2026
@@ -79,7 +76,6 @@ As tools advance and AI models continue to grow more intelligent, we’re contin
 
 *For more detail on the expanded Claude for Life Sciences capabilities, [see here](https://claude.com/solutions/life-sciences), and our [tutorials here](https://claude.com/resources/tutorials-category/life-sciences). We’re also continuing to accept [applications](https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform) to our AI for Science program. Applications will be reviewed by our team, including subject matter experts in relevant fields.*
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/accelerating-scientific-research)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/accelerating-scientific-research)
 
 ## Related content
 

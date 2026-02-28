@@ -4,9 +4,6 @@ fetched_at: "2026-02-13T09:23:10Z"
 source_url: "https://www.anthropic.com/news/donate-public-first-action"
 title: "Anthropic is donating $20 million to Public First Action \\ Anthropic"
 ---
-
-Policy
-
 # Anthropic is donating \$20 million to Public First Action
 
 Feb 12, 2026
@@ -40,7 +37,6 @@ These policies aren’t partisan. Nor are they for the benefit of Anthropic as a
 
 The companies building AI have a responsibility to help ensure the technology serves the public good, not just their own interests. Our contribution to Public First Action is part of our commitment to governance that enables AI’s transformative potential and helps proportionately manage its risks.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/donate-public-first-action)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/donate-public-first-action)
 
 ## Related content
 

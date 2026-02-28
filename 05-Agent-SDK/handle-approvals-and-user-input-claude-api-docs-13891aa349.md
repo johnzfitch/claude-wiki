@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:38Z"
+fetched_at: "2026-02-24T04:06:36Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/user-input"
 title: "Handle approvals and user input - Claude API Docs"
 ---
-
-Guides
-
 # Handle approvals and user input
 
-Copy page
 
 Surface Claude's approval requests and clarifying questions to users, then return their decisions to the SDK.
 
-Copy page
 
 While working on a task, Claude sometimes needs to check in with users. It might need permission before deleting files, or need to ask which database to use for a new project. Your application needs to surface these requests to users so Claude can continue with their input.
 
@@ -35,6 +30,7 @@ Python
 async def handle_tool_request(tool_name, input_data, context):
     # Prompt user and return allow or deny
     ...
+
 
 options = ClaudeAgentOptions(can_use_tool=handle_tool_request)
 ```
@@ -238,7 +234,7 @@ The following steps show how to handle clarifying questions:
             can_use_tool=can_use_tool,
         ),
     ):
-        # ...
+        print(message)
     ```
 
 2.  2
@@ -318,8 +314,8 @@ The following steps show how to handle clarifying questions:
             "questions": input_data.get("questions", []),
             "answers": {
                 "How should I format the output?": "Summary",
-                "Which sections should I include?": "Introduction, Conclusion"
-            }
+                "Which sections should I include?": "Introduction, Conclusion",
+            },
         }
     )
     ```
@@ -448,7 +444,9 @@ async def handle_ask_user_question(input_data: dict) -> PermissionResultAllow:
     )
 
 
-async def can_use_tool(tool_name: str, input_data: dict, context) -> PermissionResultAllow:
+async def can_use_tool(
+    tool_name: str, input_data: dict, context
+) -> PermissionResultAllow:
     # Route AskUserQuestion to our question handler
     if tool_name == "AskUserQuestion":
         return await handle_ask_user_question(input_data)
@@ -459,7 +457,10 @@ async def can_use_tool(tool_name: str, input_data: dict, context) -> PermissionR
 async def prompt_stream():
     yield {
         "type": "user",
-        "message": {"role": "user", "content": "Help me decide on the tech stack for a new mobile app"},
+        "message": {
+            "role": "user",
+            "content": "Help me decide on the tech stack for a new mobile app",
+        },
     }
 
 
@@ -527,105 +528,3 @@ Related resources
 - [Configure permissions](/docs/en/agent-sdk/permissions): set up permission modes and rules
 - [Control execution with hooks](/docs/en/agent-sdk/hooks): run custom code at key points in the agent lifecycle
 - [TypeScript SDK reference](/docs/en/agent-sdk/typescript#canusetool): full canUseTool API documentation
-
-Was this page helpful?
-
-- 
-
-- [Detect when Claude needs input](#detect-when-claude-needs-input)
-
-- [Handle tool approval requests](#handle-tool-approval-requests)
-
-- [Respond to tool requests](#respond-to-tool-requests)
-
-- [Handle clarifying questions](#handle-clarifying-questions)
-
-- [Question format](#question-format)
-
-- [Response format](#response-format)
-
-- [Complete example](#complete-example)
-
-- [Limitations](#limitations)
-
-- [Other ways to get user input](#other-ways-to-get-user-input)
-
-- [Streaming input](#streaming-input)
-
-- [Custom tools](#custom-tools)
-
-- [Related resources](#related-resources)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

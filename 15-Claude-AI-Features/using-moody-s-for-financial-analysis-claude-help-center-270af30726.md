@@ -1,61 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:52:00Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis"
 title: "Using Moody’s for Financial Analysis | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_e36f5c2997)
-
-[](#h_b2944d9994)
-
-[](#h_902ae1c406)
-
-[](#h_73ce1dcd89)
-
-[](#h_e592a424a3)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-[Market Data](https://support.claude.com/en/collections/16288976-market-data)
-
-Using Moody’s for Financial Analysis
-
 # Using Moody’s for Financial Analysis
 
-Updated yesterday
-
-Table of contents
-
-[](#h_e36f5c2997)
-
-[](#h_b2944d9994)
-
-[](#h_902ae1c406)
-
-[](#h_73ce1dcd89)
-
-[](#h_e592a424a3)
 
 The Moody’s connector provides Claude with access to proprietary credit ratings, comprehensive entity intelligence, and analytical frameworks for risk assessment through the Model Context Protocol (MCP). This integration enables financial professionals to access Moody’s authoritative data directly within their AI workflows.
 
@@ -238,45 +189,17 @@ Claude would then provide a counterparty risk assessment including current credi
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis)
 
 Using Daloopa for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220057-using-morningstar-for-investment-research)
 
 Using Morningstar for Investment Research
 
-[](https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis)
 
-Using S&P Global Data for Financial Analysis
+Using Aiera for Earnings Intelligence and Market Analysis
 
-[](https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis)
 
 Using LSEG for Financial Market Data Analysis
 
-[](https://support.claude.com/en/articles/12662597-using-chronograph-for-portfolio-monitoring)
 
 Using Chronograph for Portfolio Monitoring
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

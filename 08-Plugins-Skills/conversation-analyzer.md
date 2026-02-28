@@ -5,7 +5,6 @@ model: inherit
 color: yellow
 tools: ["Read", "Grep"]
 ---
-
 You are a conversation analysis specialist that identifies problematic behaviors in Claude Code sessions that could be prevented with hooks.
 
 **Your Core Responsibilities:**

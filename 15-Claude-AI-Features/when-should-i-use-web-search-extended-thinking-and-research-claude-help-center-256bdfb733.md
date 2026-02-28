@@ -1,57 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:34Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research"
 title: "When should I use web search, extended thinking, and Research? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_dc8752e2e9)
-
-[](#h_ce947954fa)
-
-[](#h_9711ff2b73)
-
-[](#h_c219feb23e)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
-
-When should I use web search, extended thinking, and Research?
+4.  When should I use web search, extended thinking, and Research?
 
 # When should I use web search, extended thinking, and Research?
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_dc8752e2e9)
-
-[](#h_ce947954fa)
-
-[](#h_9711ff2b73)
-
-[](#h_c219feb23e)
 
 Claude offers several powerful capabilities to help you find information and solve problems. Understanding when to use each option—web search, extended thinking, and Research—can help you get the best results for your specific needs. This guide explains the ideal use cases for each feature and how they can work together to enhance your experience.
 
@@ -89,45 +46,17 @@ Combining extended thinking with Research allows Claude to both plan its approac
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10574485-using-extended-thinking)
 
 Using extended thinking
 
-[](https://support.claude.com/en/articles/10684626-enabling-and-using-web-search)
 
 Enabling and using web search
 
-[](https://support.claude.com/en/articles/11088861-using-research-on-claude)
 
 Using Research on Claude
 
-[](https://support.claude.com/en/articles/12489464-using-enterprise-search)
 
 Using Enterprise Search
 
-[](https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research)
 
 Using PitchBook for Investment Research
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

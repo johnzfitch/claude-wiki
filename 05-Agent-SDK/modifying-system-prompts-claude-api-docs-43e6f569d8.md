@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:43Z"
+fetched_at: "2026-02-24T04:07:20Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts"
 title: "Modifying system prompts - Claude API Docs"
 ---
-
-Guides
-
 # Modifying system prompts
 
-Copy page
 
 Learn how to customize Claude's behavior by modifying system prompts using three approaches - output styles, systemPrompt with append, and custom system prompts.
 
-Copy page
 
 System prompts define Claude's behavior, capabilities, and response style. The Claude Agent SDK provides three ways to customize system prompts: using output styles (persistent, file-based configurations), appending to Claude Code's prompt, or using a fully custom prompt.
 
@@ -111,10 +106,10 @@ for await (const message of query({
   options: {
     systemPrompt: {
       type: "preset",
-      preset: "claude_code", // Use Claude Code's system prompt
+      preset: "claude_code" // Use Claude Code's system prompt
     },
-    settingSources: ["project"], // Required to load CLAUDE.md from project
-  },
+    settingSources: ["project"] // Required to load CLAUDE.md from project
+  }
 })) {
   messages.push(message);
 }
@@ -229,9 +224,9 @@ for await (const message of query({
       type: "preset",
       preset: "claude_code",
       append:
-        "Always include detailed docstrings and type hints in Python code.",
-    },
-  },
+        "Always include detailed docstrings and type hints in Python code."
+    }
+  }
 })) {
   messages.push(message);
   if (message.type === "assistant") {
@@ -264,8 +259,8 @@ const messages = [];
 for await (const message of query({
   prompt: "Create a data processing pipeline",
   options: {
-    systemPrompt: customPrompt,
-  },
+    systemPrompt: customPrompt
+  }
 })) {
   messages.push(message);
   if (message.type === "assistant") {
@@ -387,9 +382,9 @@ for await (const message of query({
         - OAuth 2.0 compliance
         - Token storage security
         - Session management
-      `,
-    },
-  },
+      `
+    }
+  }
 })) {
   messages.push(message);
 }
@@ -402,111 +397,3 @@ See also
 - [Output styles](https://code.claude.com/docs/en/output-styles) - Complete output styles documentation
 - [TypeScript SDK guide](/docs/en/agent-sdk/typescript) - Complete SDK usage guide
 - [Configuration guide](https://code.claude.com/docs/en/settings) - General configuration options
-
-Was this page helpful?
-
-- 
-
-- [Understanding system prompts](#understanding-system-prompts)
-
-- [Methods of modification](#methods-of-modification)
-
-- [Method 1: CLAUDE.md files (project-level instructions)](#method-1-claude-md-files-project-level-instructions)
-
-- [Method 2: Output styles (persistent configurations)](#method-2-output-styles-persistent-configurations)
-
-- [Method 3: Using systemPrompt with append](#method-3-using-system-prompt-with-append)
-
-- [Method 4: Custom system prompts](#method-4-custom-system-prompts)
-
-- [Comparison of all four approaches](#comparison-of-all-four-approaches)
-
-- [Use cases and best practices](#use-cases-and-best-practices)
-
-- [When to use CLAUDE.md](#when-to-use-claude-md)
-
-- [When to use output styles](#when-to-use-output-styles)
-
-- [When to use systemPrompt with append](#when-to-use-system-prompt-with-append)
-
-- [When to use custom systemPrompt](#when-to-use-custom-system-prompt)
-
-- [Combining approaches](#combining-approaches)
-
-- [Example: Output style with session-specific additions](#example-output-style-with-session-specific-additions)
-
-- [See also](#see-also)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

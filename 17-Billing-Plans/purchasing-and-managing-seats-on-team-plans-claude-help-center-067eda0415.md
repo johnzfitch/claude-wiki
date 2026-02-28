@@ -1,73 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:38Z"
+fetched_at: "2026-02-28T11:22:14Z"
 source_url: "https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans"
 title: "Purchasing and managing seats on Team plans | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_0c44d72ac9)
-
-[](#h_f05a756e78)
-
-[](#h_fb3ba7a230)
-
-[](#h_33a6424e9b)
-
-[](#h_e7a7f4f396)
-
-[](#h_0a21473316)
-
-[](#h_38e04e90d1)
-
-[](#h_b806e2e3f3)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Team Plan](https://support.claude.com/en/collections/9811436-team-plan)
-
-Purchasing and managing seats on Team plans
+4.  Purchasing and managing seats on Team plans
 
 # Purchasing and managing seats on Team plans
 
-Updated this week
-
-Table of contents
-
-[](#h_0c44d72ac9)
-
-[](#h_f05a756e78)
-
-[](#h_fb3ba7a230)
-
-[](#h_33a6424e9b)
-
-[](#h_e7a7f4f396)
-
-[](#h_0a21473316)
-
-[](#h_38e04e90d1)
-
-[](#h_b806e2e3f3)
 
 Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For pricing and billing details, see **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)**
 
@@ -211,45 +152,17 @@ For detailed billing calculations and examples, see **[How is my Team plan bill 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)
 
 What is the Team plan?
 
-[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
 
 What is the Enterprise plan?
 
-[](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
+Manage members on Team and Enterprise plans
 
-[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 
-Purchasing and managing seats on Enterprise plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Purchase and manage seats on Enterprise plans

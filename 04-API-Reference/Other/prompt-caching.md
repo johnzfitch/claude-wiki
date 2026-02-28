@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Prompt caching through the Claude API
 
 Prompt caching allows you to store and reuse context within your prompt.

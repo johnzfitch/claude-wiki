@@ -5,7 +5,6 @@ last_modified: "Sat, 07 Feb 2026 02:58:22 GMT"
 source_url: "https://www.anthropic.com/news/fine-tune-claude-3-haiku"
 title: "Fine-tune Claude 3 Haiku in Amazon Bedrock | Claude"
 ---
-
 # Fine-tune Claude 3 Haiku in Amazon Bedrock
 
 Claude 3 Haiku can now be fine-tuned in Amazon Bedrock with custom training data, enabling faster, more accurate performance at lower cost.

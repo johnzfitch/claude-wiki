@@ -1,61 +1,14 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-08T20:52:00Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12651659-using-egnyte-for-data-room-management-with-claude"
 title: "Using Egnyte for data room management with Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_0c33a5f144)
-
-[](#h_e4626ce566)
-
-[](#h_197b7ef65b)
-
-[](#h_9cd9e4ab4f)
-
-[](#h_c32e0a65be)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-[Private Equity Data Rooms and Portfolio Management](https://support.claude.com/en/collections/16289076-private-equity-data-rooms-and-portfolio-management)
-
-Using Egnyte for data room management with Claude
+4.  Using Egnyte for data room management with Claude
 
 # Using Egnyte for data room management with Claude
 
-Updated yesterday
-
-Table of contents
-
-[](#h_0c33a5f144)
-
-[](#h_e4626ce566)
-
-[](#h_197b7ef65b)
-
-[](#h_9cd9e4ab4f)
-
-[](#h_c32e0a65be)
 
 The Egnyte connector provides Claude with secure access to your organization’s content stored in Egnyte, enabling advanced document search, AI-powered analysis, and intelligent content management. Through the Egnyte Remote MCP Server, Claude can search for files, retrieve document content, ask questions about specific documents, generate summaries, and interact with Egnyte AI capabilities like Copilot and Knowledge Bases.
 
@@ -239,45 +192,17 @@ Claude would provide a comprehensive summary of all project deliverables with ke
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
 
 Claude for Financial Services Overview
 
-[](https://support.claude.com/en/articles/12430928-using-databricks-for-data-analysis)
 
 Using Databricks for Data Analysis
 
-[](https://support.claude.com/en/articles/12461605-using-claude-in-slack)
 
 Using Claude in Slack
 
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
-Using the Synapse.org Connector in Claude
+Using the Synapse.org connector in Claude
 
-[](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
 
-Claude for Financial Services Skills
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Using interactive connectors in Claude

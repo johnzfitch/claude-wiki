@@ -1,59 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis"
 title: "Prompting Strategies for Financial Analysis | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_ce6b80e0d5)
-
-[](#h_18bf4b157e)
-
-[](#h_dd5ce7ee38)
-
-[](#h_1fe3617b1b)
-
-[](#h_53238ab293)
-
-[All Collections](/en/)
-
-[Claude for Financial Services](https://support.claude.com/en/collections/13972013-claude-for-financial-services)
-
-Prompting Strategies for Financial Analysis
+3.  Prompting Strategies for Financial Analysis
 
 # Prompting Strategies for Financial Analysis
 
-Updated yesterday
-
-Table of contents
-
-[](#h_ce6b80e0d5)
-
-[](#h_18bf4b157e)
-
-[](#h_dd5ce7ee38)
-
-[](#h_1fe3617b1b)
-
-[](#h_53238ab293)
 
 Effective prompting helps you use Claude's financial analysis capabilities efficiently and accurately. This guide provides strategies for writing clear, specific prompts that produce the results you need while avoiding common issues that can lead to incomplete or overwhelming outputs.
 
@@ -228,45 +183,17 @@ These strategies help you get the most value from Claude's financial analysis ca
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview)
-
-Claude for Financial Services Overview
-
-[](https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis)
 
 Using Daloopa for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis)
 
 Using S&P Global Data for Financial Analysis
 
-[](https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude)
 
 Financial Analysis Workflows with Claude
 
-[](https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis)
 
 Using Moody’s for Financial Analysis
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Claude for Financial Services Skills

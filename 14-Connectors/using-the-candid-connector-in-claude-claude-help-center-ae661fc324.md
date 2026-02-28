@@ -1,83 +1,15 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:46Z"
+fetched_at: "2026-02-28T11:22:20Z"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 title: "Using the Candid Connector in Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_bb0c436c88)
-
-[](#h_7a3fc126b1)
-
-[](#h_4acb9ac59c)
-
-[](#h_9f9a8a08f2)
-
-[](#h_d31fc0b6ad)
-
-[](#h_f78b232603)
-
-[](#h_158ca54133)
-
-[](#h_0ccff322da)
-
-[](#h_9f0ee999b1)
-
-[](#h_bdeda4c3b5)
-
-[All Collections](/en/)
-
-[Claude for Nonprofits](https://support.claude.com/en/collections/17047088-claude-for-nonprofits)
-
-Using the Candid Connector in Claude
-
 # Using the Candid Connector in Claude
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_bb0c436c88)
-
-[](#h_7a3fc126b1)
-
-[](#h_4acb9ac59c)
-
-[](#h_9f9a8a08f2)
-
-[](#h_d31fc0b6ad)
-
-[](#h_f78b232603)
-
-[](#h_158ca54133)
-
-[](#h_0ccff322da)
-
-[](#h_9f0ee999b1)
-
-[](#h_bdeda4c3b5)
 
 The Candid integration brings the power of Candid’s comprehensive nonprofit and funder data directly into Claude. This article explains how to set up and use the Candid connector to search millions of organizations, discover funding opportunities, and access expert knowledge about the social sector—all through natural conversation.
 
-[](https://player.vimeo.com/video/1140407051)
 
 Play
 
@@ -101,7 +33,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#8fe0e1e3e6e1eae3e6edfdeefde6eee1cfeceee1ebe6eba1e0fde8).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#b8d7d6d4d1d6ddd4d1dacad9cad1d9d6f8dbd9d6dcd1dc96d7cadf).
 
 ## Setting up the Candid integration
 
@@ -508,51 +440,23 @@ Candid Seals of Transparency indicate how much information an organization has s
 
 ## Need more help?
 
-If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#e28d8c8e8b8c878e8b809083908b838ca281838c868b86cc8d9085).
+If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#9df2f3f1f4f3f8f1f4ffeffceff4fcf3ddfefcf3f9f4f9b3f2effa).
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
 Using the Synapse.org connector in Claude
 
-[](https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude)
 
 Using the Scholar Gateway Connector in Claude
 
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
 
 Getting started with Claude for Nonprofits
 
-[](https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude)
 
 Using the Blackbaud Connector in Claude
 
-[](https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude)
 
 Using the Benevity Connector in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

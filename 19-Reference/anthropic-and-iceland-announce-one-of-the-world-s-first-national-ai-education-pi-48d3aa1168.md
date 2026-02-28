@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-and-iceland-announce-one-of-the-world-s-first-national-ai-education-pilots"
 title: "Anthropic and Iceland announce one of the world’s first national AI education pilots \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic and Iceland announce one of the world’s first national AI education pilots
 
 Nov 4, 2025
@@ -37,7 +34,6 @@ Teachers worldwide are using Claude to save hours on lesson planning, create per
 
 We look forward to bringing similar partnerships to more nations as we continue to support educators, ensuring that AI serves those who serve others.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-and-iceland-announce-one-of-the-world-s-first-national-ai-education-pilots)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-and-iceland-announce-one-of-the-world-s-first-national-ai-education-pilots)
 
 ## Related content
 

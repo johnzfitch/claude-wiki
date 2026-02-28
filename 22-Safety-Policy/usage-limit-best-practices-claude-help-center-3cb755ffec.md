@@ -1,77 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-08T20:52:10Z"
+fetched_at: "2026-02-28T11:22:23Z"
 source_url: "https://support.claude.com/en/articles/9797557-usage-limit-best-practices"
 title: "Usage limit best practices | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_133c1787fc)
-
-[](#h_185322ae7e)
-
-[](#h_e5159cd036)
-
-[](#h_7059cd4ae6)
-
-[](#h_44fa4bdf1d)
-
-[](#h_c84dcdc9f9)
-
-[](#h_0142062891)
-
-[](#h_2afce0a7b4)
-
-[](#h_2791a20441)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Usage and Limits](https://support.claude.com/en/collections/18031876-usage-and-limits)
-
-Usage limit best practices
-
 # Usage limit best practices
 
-Updated yesterday
-
-Table of contents
-
-[](#h_133c1787fc)
-
-[](#h_185322ae7e)
-
-[](#h_e5159cd036)
-
-[](#h_7059cd4ae6)
-
-[](#h_44fa4bdf1d)
-
-[](#h_c84dcdc9f9)
-
-[](#h_0142062891)
-
-[](#h_2afce0a7b4)
-
-[](#h_2791a20441)
 
 The number of messages you can send will vary based on your Claude plan. For more information on your plan’s usage, refer to the following resources.
 
@@ -223,45 +158,17 @@ By following these best practices, you can make the most efficient use of your C
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)
 
 How large is the context window on paid Claude plans?
 
-[](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)
 
 Understanding usage and length limits
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
 
-Release Notes
+Release notes
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
 
-[](https://support.claude.com/en/articles/13163666-holiday-2025-usage-promotion)
 
 Holiday 2025 Usage Promotion
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

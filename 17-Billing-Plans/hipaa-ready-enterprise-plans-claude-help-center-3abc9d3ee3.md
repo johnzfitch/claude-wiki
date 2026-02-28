@@ -1,65 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:48Z"
+fetched_at: "2026-02-28T11:22:14Z"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_63df0e5254)
-
-[](#h_69335658db)
-
-[](#h_7f7e76ead1)
-
-[](#h_a7851fa165)
-
-[](#h_bbf4dc7005)
-
-[](#h_fcd45385e5)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Enterprise Plan](https://support.claude.com/en/collections/10351014-enterprise-plan)
-
-HIPAA-ready Enterprise plans
-
 # HIPAA-ready Enterprise plans
 
-Updated this week
-
-Table of contents
-
-[](#h_63df0e5254)
-
-[](#h_69335658db)
-
-[](#h_7f7e76ead1)
-
-[](#h_a7851fa165)
-
-[](#h_bbf4dc7005)
-
-[](#h_fcd45385e5)
 
 This feature is available for Enterprise plans only.
 
@@ -121,45 +68,17 @@ BAAs signed after December 2, 2025 can cover both API usage and the Enterprise p
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers)
 
 Business Associate Agreements (BAA) for Commercial Customers
 
-[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
 
 What is the Enterprise plan?
 
-[](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)
 
 How am I billed for my Enterprise plan?
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
 
-Using Claude Code with your Team or Enterprise plan
+Use Claude Code with your Team or Enterprise plan
 
-[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 
-Purchasing and managing seats on Enterprise plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Purchase and manage seats on Enterprise plans

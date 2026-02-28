@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Citations
 
 The Claude API features citation support that enables Claude to provide

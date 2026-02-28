@@ -1,63 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-16T21:12:39Z"
+fetched_at: "2026-02-28T11:22:24Z"
 source_url: "https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program"
 title: "Model Safety Bug Bounty Program | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_2898342ee9)
-
-[](#h_31a4a29aee)
-
-[](#h_3aa629d142)
-
-[](#h_8d79eaaeae)
-
-[](#h_568696785b)
-
-[](#h_5886efaa6a)
-
-[All Collections](/en/)
-
-[Safeguards](https://support.claude.com/en/collections/4078535-safeguards)
-
-Model Safety Bug Bounty Program
-
 # Model Safety Bug Bounty Program
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_2898342ee9)
-
-[](#h_31a4a29aee)
-
-[](#h_3aa629d142)
-
-[](#h_8d79eaaeae)
-
-[](#h_568696785b)
-
-[](#h_5886efaa6a)
 
 ## Purpose
 
@@ -123,45 +72,17 @@ Participant agrees that all data submitted to Anthropic, including its products 
 
 Related Articles
 
-[](https://support.claude.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude)
 
 Reporting, Blocking, and Removing Content from Claude
 
-[](https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program)
 
 What is the External Researcher Access Program?
 
-[](https://support.claude.com/en/articles/10684638-reporting-blocking-and-removing-content-from-claude)
 
 Reporting, Blocking, and Removing Content from Claude
 
-[](https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program)
 
 Anthropic's AI for Science Program
 
-[](https://support.claude.com/en/articles/11427875-public-vulnerability-reporting)
 
 Public Vulnerability Reporting
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

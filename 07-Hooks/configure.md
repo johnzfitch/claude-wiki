@@ -2,7 +2,6 @@
 description: Enable or disable hookify rules interactively
 allowed-tools: ["Glob", "Read", "Edit", "AskUserQuestion", "Skill"]
 ---
-
 # Configure Hookify Rules
 
 **Load hookify:writing-rules skill first** to understand rule format.

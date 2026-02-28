@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:05:12Z"
+fetched_at: "2026-02-22T13:18:48Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/go"
 title: "Go SDK - Claude API Docs"
 ---
-
-Client SDKs
-
 # Go SDK
 
-Copy page
 
 Install and configure the Anthropic Go SDK with context-based cancellation and functional options
 
-Copy page
 
 The Anthropic Go library provides convenient access to the Anthropic REST API from applications written in Go.
 
@@ -125,7 +120,7 @@ Request structs contain a `.SetExtraFields(map[string]any)` method which can sen
 
 For security reasons, only use `SetExtraFields` with trusted data.
 
-To send a custom value instead of a struct, use `param.Override[T](value)`.
+To send a custom value instead of a struct, use the generic function `param.Override` (e.g., `param.Override[anthropic.FooParams](12)`).
 
 ``` shiki
 // In cases where the API specifies a given type,
@@ -287,7 +282,7 @@ for stream.Next() {
     }
 
     switch eventVariant := event.AsAny().(type) {
-        case anthropic.ContentBlockDeltaEvent:
+    case anthropic.ContentBlockDeltaEvent:
         switch deltaVariant := eventVariant.Delta.AsAny().(type) {
         case anthropic.TextDelta:
             print(deltaVariant.Text)
@@ -305,18 +300,18 @@ if stream.Err() != nil {
 
 Error handling
 
-When the API returns a non-success status code, we return an error with type `*anthropic.Error`. This contains the `StatusCode`, `*http.Request`, and `*http.Response` values of the request, as well as the JSON of the error body (much like other response objects in the SDK). The error also includes the `RequestID` from the response headers, which is useful for troubleshooting with Anthropic support.
+When the API returns a non-success status code, the SDK returns an error with type `*anthropic.Error`. This contains the `StatusCode`, `*http.Request`, and `*http.Response` values of the request, as well as the JSON of the error body (much like other response objects in the SDK). The error also includes the `RequestID` from the response headers, which is useful for troubleshooting with Anthropic support.
 
-To handle errors, we recommend that you use the `errors.As` pattern:
+To handle errors, use the `errors.As` pattern:
 
 ``` shiki
 _, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
     MaxTokens: 1024,
     Messages: []anthropic.MessageParam{{
         Content: []anthropic.ContentBlockParamUnion{{
-            OfText: &anthropic.TextBlockParam{Text: "What is a quaternion?", CacheControl: anthropic.CacheControlEphemeralParam{TTL: anthropic.CacheControlEphemeralTTLTTL5m}, Citations: []anthropic.TextCitationParamUnion{{
-                OfCharLocation: &anthropic.CitationCharLocationParam{CitedText: "cited_text", DocumentIndex: 0, DocumentTitle: anthropic.String("x"), EndCharIndex: 0, StartCharIndex: 0},
-            }}},
+            OfText: &anthropic.TextBlockParam{
+                Text: "What is a quaternion?",
+            },
         }},
         Role: anthropic.MessageParamRoleUser,
     }},
@@ -339,7 +334,7 @@ When other errors occur, they are returned unwrapped; for example, if HTTP trans
 
 Retries
 
-Certain errors will be automatically retried 2 times by default, with a short exponential backoff. We retry by default all connection errors, 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors.
+Certain errors will be automatically retried 2 times by default, with a short exponential backoff. The SDK retries by default all connection errors, 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors.
 
 You can use the `WithMaxRetries` option to configure or disable this:
 
@@ -356,7 +351,9 @@ client.Messages.New(
         MaxTokens: 1024,
         Messages: []anthropic.MessageParam{{
             Content: []anthropic.ContentBlockParamUnion{{
-                OfRequestTextBlock: &anthropic.TextBlockParam{Text: "What is a quaternion?"},
+                OfText: &anthropic.TextBlockParam{
+                    Text: "What is a quaternion?",
+                },
             }},
             Role: anthropic.MessageParamRoleUser,
         }},
@@ -384,7 +381,9 @@ client.Messages.New(
         MaxTokens: 1024,
         Messages: []anthropic.MessageParam{{
             Content: []anthropic.ContentBlockParamUnion{{
-                OfRequestTextBlock: &anthropic.TextBlockParam{Text: "What is a quaternion?"},
+                OfText: &anthropic.TextBlockParam{
+                    Text: "What is a quaternion?",
+                },
             }},
             Role: anthropic.MessageParamRoleUser,
         }},
@@ -399,9 +398,9 @@ client.Messages.New(
 
 Long requests
 
-We highly encourage you use the streaming Messages API for longer running requests.
+Consider using the streaming Messages API for longer running requests.
 
-We do not recommend setting a large `MaxTokens` value without using streaming as some networks may drop idle connections after a certain period of time, which can cause the request to fail or [timeout](#timeouts) without receiving a response from Anthropic.
+Avoid setting a large `MaxTokens` value without using streaming as some networks may drop idle connections after a certain period of time, which can cause the request to fail or [timeout](#timeouts) without receiving a response from Anthropic.
 
 This SDK will also return an error if a non-streaming request is expected to be above roughly 10 minutes long. Calling `.Messages.NewStreaming()` or [setting a custom timeout](#timeouts) disables this error.
 
@@ -409,19 +408,19 @@ This SDK will also return an error if a non-streaming request is expected to be 
 
 File uploads
 
-Request parameters that correspond to file uploads in multipart requests are typed as `io.Reader`. The contents of the `io.Reader` will by default be sent as a multipart form part with the file name of "anonymous_file" and content-type of "application/octet-stream", so we recommend always specifying a custom content-type with the `anthropic.File(reader io.Reader, filename string, contentType string)` helper we provide to easily wrap any `io.Reader` with the appropriate file name and content type.
+Request parameters that correspond to file uploads in multipart requests are typed as `io.Reader`. The contents of the `io.Reader` will by default be sent as a multipart form part with the file name of "anonymous_file" and content-type of "application/octet-stream", so the recommended approach is to specify a custom content-type with the `anthropic.File(reader io.Reader, filename string, contentType string)` helper, which easily wraps any `io.Reader` with the appropriate file name and content type.
 
 ``` shiki
 // A file from the file system
 file, err := os.Open("/path/to/file.json")
 anthropic.BetaFileUploadParams{
-    File: anthropic.File(file, "custom-name.json", "application/json"),
+    File:  anthropic.File(file, "custom-name.json", "application/json"),
     Betas: []anthropic.AnthropicBeta{anthropic.AnthropicBetaFilesAPI2025_04_14},
 }
 
 // A file from a string
 anthropic.BetaFileUploadParams{
-    File: anthropic.File(strings.NewReader("my file contents"), "custom-name.json", "application/json"),
+    File:  anthropic.File(strings.NewReader("my file contents"), "custom-name.json", "application/json"),
     Betas: []anthropic.AnthropicBeta{anthropic.AnthropicBetaFilesAPI2025_04_14},
 }
 ```
@@ -479,7 +478,7 @@ client := anthropic.NewClient(
     option.WithHeader("X-Some-Header", "custom_header_info"),
 )
 
-client.Messages.New(context.TODO(), ...,
+client.Messages.New(context.TODO(), // ...,
     // Override the header
     option.WithHeader("X-Some-Header", "some_other_custom_header_info"),
     // Add an undocumented field to the request body, using sjson syntax
@@ -499,25 +498,23 @@ HTTP client customization
 
 Middleware
 
-We provide `option.WithMiddleware` which applies the given middleware to requests.
+The SDK provides `option.WithMiddleware`, which applies the given middleware to requests.
 
 ``` shiki
-func Logger(req *http.Request, next option.MiddlewareNext) (res *http.Response, err error) {
-    // Before the request
-    start := time.Now()
-    LogReq(req)
-
-    // Forward the request to the next handler
-    res, err = next(req)
-
-    // Handle stuff after the request
-    LogRes(res, err, time.Since(start))
-
-    return res, err
-}
-
 client := anthropic.NewClient(
-    option.WithMiddleware(Logger),
+    option.WithMiddleware(func(req *http.Request, next option.MiddlewareNext) (res *http.Response, err error) {
+        // Before the request
+        start := time.Now()
+        LogReq(req)
+
+        // Forward the request to the next handler
+        res, err = next(req)
+
+        // Handle stuff after the request
+        LogRes(res, err, time.Since(start))
+
+        return res, err
+    }),
 )
 ```
 
@@ -529,64 +526,15 @@ You may also replace the default `http.Client` with `option.WithHTTPClient(clien
 
 Platform integrations
 
-For detailed platform setup guides, see:
+For detailed platform setup guides with code examples, see:
 
 - [Amazon Bedrock](/docs/en/build-with-claude/claude-on-amazon-bedrock)
 - [Google Vertex AI](/docs/en/build-with-claude/claude-on-vertex-ai)
 
-### 
+The Go SDK supports Amazon Bedrock and Google Vertex AI through subpackages:
 
-Amazon Bedrock
-
-To use this library with [Amazon Bedrock](https://aws.amazon.com/bedrock/claude/), use the bedrock request option `bedrock.WithLoadDefaultConfig(...)` which reads the [default config](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
-
-Importing the `bedrock` library also globally registers a decoder for `application/vnd.amazon.eventstream` for streaming.
-
-``` shiki
-package main
-
-import (
-    "github.com/anthropics/anthropic-sdk-go"
-    "github.com/anthropics/anthropic-sdk-go/bedrock"
-)
-
-func main() {
-    client := anthropic.NewClient(
-        bedrock.WithLoadDefaultConfig(context.Background()),
-    )
-}
-```
-
-If you already have an `aws.Config`, you can also use it directly with `bedrock.WithConfig(cfg)`.
-
-Read more about Anthropic and Amazon Bedrock in [Claude on Amazon Bedrock](/docs/en/build-with-claude/claude-on-amazon-bedrock).
-
-### 
-
-Google Vertex AI
-
-To use this library with [Google Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude), use the request option `vertex.WithGoogleAuth(...)` which reads the [Application Default Credentials](https://cloud.google.com/docs/authentication/application-default-credentials).
-
-``` shiki
-package main
-
-import (
-    "context"
-
-    "github.com/anthropics/anthropic-sdk-go"
-    "github.com/anthropics/anthropic-sdk-go/vertex"
-)
-
-func main() {
-    client := anthropic.NewClient(
-        vertex.WithGoogleAuth(context.Background(), "us-central1", "id-xxx"),
-    )
-}
-```
-
-If you already have `*google.Credentials`, you can also use it directly with `vertex.WithCredentials(ctx, region, projectId, creds)`.
-
-Read more about Anthropic and Google Vertex AI in [Claude on Google Vertex AI](/docs/en/build-with-claude/claude-on-vertex-ai).
+- **Bedrock**: `import "github.com/anthropics/anthropic-sdk-go/bedrock"`. Use `bedrock.WithLoadDefaultConfig(ctx)` or `bedrock.WithConfig(cfg)`. Importing this package globally registers a decoder for `application/vnd.amazon.eventstream` for streaming.
+- **Vertex AI**: `import "github.com/anthropics/anthropic-sdk-go/vertex"`. Use `vertex.WithGoogleAuth(ctx, region, projectID)` or `vertex.WithCredentials(ctx, region, projectID, creds)`.
 
 ## 
 
@@ -607,9 +555,9 @@ message, err := client.Messages.New(
         MaxTokens: 1024,
         Messages: []anthropic.MessageParam{{
             Content: []anthropic.ContentBlockParamUnion{{
-                OfText: &anthropic.TextBlockParam{Text: "What is a quaternion?", CacheControl: anthropic.CacheControlEphemeralParam{TTL: anthropic.CacheControlEphemeralTTLTTL5m}, Citations: []anthropic.TextCitationParamUnion{{
-                    OfCharLocation: &anthropic.CitationCharLocationParam{CitedText: "cited_text", DocumentIndex: 0, DocumentTitle: anthropic.String("x"), EndCharIndex: 0, StartCharIndex: 0},
-                }}},
+                OfText: &anthropic.TextBlockParam{
+                    Text: "What is a quaternion?",
+                },
             }},
             Role: anthropic.MessageParamRoleUser,
         }},
@@ -650,7 +598,7 @@ var (
 )
 err := client.Post(context.Background(), "/unspecified", params, &result)
 if err != nil {
-    ...
+    // ...
 }
 ```
 
@@ -662,7 +610,7 @@ To make requests using undocumented parameters, you may use either the `option.W
 
 ``` shiki
 params := FooNewParams{
-    ID:   "id_xxxx",
+    ID: "id_xxxx",
     Data: FooNewParamsData{
         FirstName: anthropic.String("John"),
     },
@@ -680,135 +628,22 @@ Any fields that are not present on the response struct will be saved and can be 
 
 ## 
 
+Semantic versioning
+
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+
+1.  Changes to library internals which are technically public but not intended or documented for external use. *(Please open a GitHub issue to let the maintainers know if you're relying on such internals.)*
+2.  Changes that aren't expected to impact the vast majority of users in practice.
+
+Backwards-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
+
+Your feedback is welcome; please open an [issue](https://www.github.com/anthropics/anthropic-sdk-go/issues) with questions, bugs, or suggestions.
+
+## 
+
 Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-go)
 - [Go package documentation](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go)
 - [API reference](/docs/en/api/overview)
 - [Streaming guide](/docs/en/build-with-claude/streaming)
-
-Was this page helpful?
-
-- 
-
-- [Installation](#installation)
-
-- [Requirements](#requirements)
-
-- [Usage](#usage)
-
-- [Request fields](#request-fields)
-
-- [Request unions](#request-unions)
-
-- [Response objects](#response-objects)
-
-- [Response unions](#response-unions)
-
-- [Streaming](#streaming)
-
-- [Error handling](#error-handling)
-
-- [Retries](#retries)
-
-- [Timeouts](#timeouts)
-
-- [Long requests](#long-requests)
-
-- [File uploads](#file-uploads)
-
-- [Pagination](#pagination)
-
-- [RequestOptions](#request-options)
-
-- [HTTP client customization](#http-client-customization)
-
-- [Middleware](#middleware)
-
-- [Platform integrations](#platform-integrations)
-
-- [Amazon Bedrock](#amazon-bedrock)
-
-- [Google Vertex AI](#google-vertex-ai)
-
-- [Advanced usage](#advanced-usage)
-
-- [Accessing raw response data (e.g. response headers)](#accessing-raw-response-data-e-g-response-headers)
-
-- [Making custom/undocumented requests](#making-custom-undocumented-requests)
-
-- [Additional resources](#additional-resources)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

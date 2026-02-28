@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/disrupting-AI-espionage"
 title: "Disrupting the first reported AI-orchestrated cyber espionage campaign \\ Anthropic"
 ---
-
-Policy
-
 # Disrupting the first reported AI-orchestrated cyber espionage campaign
 
 Nov 13, 2025
@@ -70,7 +67,6 @@ Read [the full report](https://assets.anthropic.com/m/ec212e6566a0d47/original/D
 - *Added an additional hyperlink to the full report in the initial section*
 - *Corrected an error about the speed of the attack: not "thousands of requests per second" but "thousands of requests, often multiple per second"*
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/disrupting-AI-espionage)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/disrupting-AI-espionage)
 
 ## Related content
 

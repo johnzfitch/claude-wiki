@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Transcribe an audio file with Deepgram & use Anthropic to prepare interview questions! {#transcribe-an-audio-file-with-deepgram--use-anthropic-to-prepare-interview-questions}
 
 **Make a copy of this notebook into your own drive, and follow the

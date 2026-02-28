@@ -1,55 +1,14 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-16T21:12:38Z"
+fetched_at: "2026-02-28T11:22:24Z"
 source_url: "https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy"
 title: "Using Agents According to Our Usage Policy | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_39d4e23758)
-
-[](#h_5cac5c1ea3)
-
-[](#h_1c2a558284)
-
-[](#h_2d2a2b6b74)
-
-[All Collections](/en/)
-
-[Safeguards](https://support.claude.com/en/collections/4078535-safeguards)
-
-Using Agents According to Our Usage Policy
+3.  Using Agents According to Our Usage Policy
 
 # Using Agents According to Our Usage Policy
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_39d4e23758)
-
-[](#h_5cac5c1ea3)
-
-[](#h_1c2a558284)
-
-[](#h_2d2a2b6b74)
 
 All uses of agents and agentic features must continue to adhere to Anthropic’s Usage Policy. The following are intended to be non-exhaustive illustrations of how our Usage Policy applies to certain agentic uses. As agentic capabilities evolve, we will update this list with additional examples to help users understand what our Usage Policy covers in practice in agentic environments.
 
@@ -113,45 +72,17 @@ This includes using agents to:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9301722-updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service-and-privacy-policy)
+
+API Safeguards Tools
+
 
 Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
 
-[](https://support.claude.com/en/articles/9528712-exceptions-to-our-usage-policy)
 
 Exceptions to our Usage Policy
 
-[](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)
-
-Usage limit best practices
-
-[](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
-
-Extra usage for Team and seat-based Enterprise plans
-
-[](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics)
 
 Claude Code usage analytics
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Usage analytics for Team and Enterprise plans

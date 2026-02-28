@@ -1,93 +1,14 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-16T21:12:37Z"
+fetched_at: "2026-02-28T11:22:14Z"
 source_url: "https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context"
 title: "Using Claude’s chat search and memory to build on previous context | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_89b670b004)
-
-[](#h_722f39ca0d)
-
-[](#h_690bb97190)
-
-[](#h_582ff512da)
-
-[](#h_ebb6d6031d)
-
-[](#h_c1c0b33879)
-
-[](#h_9982a3ac98)
-
-[](#h_c56cf38698)
-
-[](#h_c3b695d868)
-
-[](#h_4e397dd299)
-
-[](#h_f3858b47e4)
-
-[](#h_8b88533c67)
-
-[](#h_f7d6b307e2)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Conversation Management](https://support.claude.com/en/collections/18031977-conversation-management)
-
-Using Claude’s chat search and memory to build on previous context
+4.  Using Claude’s chat search and memory to build on previous context
 
 # Using Claude’s chat search and memory to build on previous context
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_89b670b004)
-
-[](#h_722f39ca0d)
-
-[](#h_690bb97190)
-
-[](#h_582ff512da)
-
-[](#h_ebb6d6031d)
-
-[](#h_c1c0b33879)
-
-[](#h_9982a3ac98)
-
-[](#h_c56cf38698)
-
-[](#h_c3b695d868)
-
-[](#h_4e397dd299)
-
-[](#h_f3858b47e4)
-
-[](#h_8b88533c67)
-
-[](#h_f7d6b307e2)
 
 You can now prompt Claude to search through your previous conversations to find and reference relevant information in new chats. Additionally, Claude can remember context from previous chats, creating continuity across your conversations. This article introduces Claude’s chat search and memory capabilities and explains how they work, what Claude can and can’t remember, and how you can toggle the features on/off.
 
@@ -121,7 +42,6 @@ When Claude searches your previous chats, you will see this reflected in your cu
 
 Yes, navigate to [Settings \> Capabilities](http://claude.ai/settings/capabilities) and find the **Preferences** section. Switch the toggle next to “Search and reference chats” off:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730889/3fafbf5ecaa0ae31d7d84a66229b/c25536c1-7433-4b94-a5e9-cd5acf97a4fd?expires=1771277400&signature=006d7660e512ea76687f2de6f859083f9b30ac132769173e2c4ee750775279ae&req=dScmH859nYlXUPMW1HO4zRzXEF4yJDbGJG68qZhl780up5ZLM056sdIktMg1%0Ax%2FxmW6qisQl2TRNFVfQ%3D%0A)
 
 ## Can I exclude a specific past chat from searches?
 
@@ -129,7 +49,6 @@ Incognito chats are available to all Claude users (free, Pro, Max, Team, and Ent
 
 When starting a new chat with Claude outside of a project, you'll see a ghost icon in the upper right corner of your screen:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730893/9549b21954e0070ceb6b85231fd5/88e59234-6fc2-4229-84fe-733b33efff26?expires=1771277400&signature=b285e054f863f3adce9993683efccdd1cc949f66b8fe523a330169b7af383121&req=dScmH859nYlWWvMW1HO4za54v6JuO4G%2FXDpzhlKsgjMEe4I5SAx0i%2BP01PSm%0Ao7RQdCGoJWwh05fK4vE%3D%0A)
 
 Clicking the ghost icon will open an incognito chat, creating a temporary conversation that isn’t saved to your chat history. Claude won’t pull information from incognito chats when searching previous conversations.
 
@@ -161,7 +80,6 @@ Each project has its own separate memory space and dedicated project summary, so
 
 You can toggle Claude’s memory on by navigating to [Settings \> Capabilities](http://claude.ai/settings/capabilities):
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1719730892/62f9f2b68d675a8e33393f06024f/89198978-192f-4c52-915d-5294b16f3fe1?expires=1771277400&signature=d4a41101b8e1ce3112758caf608a69e5f008e228e5dbcb20eeace6d26dd2d4fe&req=dScmH859nYlWW%2FMW1HO4zTD5P8DkcONBBq9N9dRTKYeYwCMa4kQsMsVp6q0Q%0AaIEwC9k9jD7sajeo3Fs%3D%0A)
 
 If you want to disable Claude’s memory, click the toggle to see two options:
 
@@ -259,45 +177,17 @@ Team plans do not have organization-level controls for memory features. Individu
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude)
 
 Importing and exporting your memory from Claude
 
-[](https://support.claude.com/en/articles/12138966-release-notes)
 
 Release notes
 
-[](https://support.claude.com/en/articles/12260368-using-incognito-chats)
 
 Using incognito chats
 
-[](https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude)
 
 Using interactive connectors in Claude
 
-[](https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint)
 
-Using Claude in PowerPoint
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Use Claude in PowerPoint

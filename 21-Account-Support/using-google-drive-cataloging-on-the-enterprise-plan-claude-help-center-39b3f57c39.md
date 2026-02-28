@@ -1,53 +1,14 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-16T21:12:34Z"
+fetched_at: "2026-02-28T11:22:18Z"
 source_url: "https://support.claude.com/en/articles/11088779-using-google-drive-cataloging-on-the-enterprise-plan"
 title: "Using Google Drive Cataloging on the Enterprise Plan | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_e5ae69458d)
-
-[](#h_66e966a800)
-
-[](#h_11ee27e0f2)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Enterprise Plan](https://support.claude.com/en/collections/10351014-enterprise-plan)
-
-Using Google Drive Cataloging on the Enterprise Plan
+4.  Using Google Drive Cataloging on the Enterprise Plan
 
 # Using Google Drive Cataloging on the Enterprise Plan
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_e5ae69458d)
-
-[](#h_66e966a800)
-
-[](#h_11ee27e0f2)
 
 Google Drive Cataloging is available to users on the Claude Enterprise plan.
 
@@ -103,45 +64,17 @@ This infrastructure builds upon and augments the Claude for Work security infras
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
-
-What is the Enterprise plan?
-
-[](https://support.claude.com/en/articles/10166901-using-the-google-drive-integration)
 
 Using the Google Drive integration
 
-[](https://support.claude.com/en/articles/11088742-using-the-gmail-and-google-calendar-integrations)
 
 Using the Gmail and Google Calendar Integrations
 
-[](https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins)
 
 Getting Started with Claude for Education at Your University (for Owners/Admins)
 
-[](https://support.claude.com/en/articles/12489464-using-enterprise-search)
 
 Using Enterprise Search
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Cowork for Team and Enterprise plans

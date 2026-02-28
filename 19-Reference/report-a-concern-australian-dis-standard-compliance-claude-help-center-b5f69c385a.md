@@ -1,51 +1,14 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T20:51:53Z"
+fetched_at: "2026-02-28T11:22:06Z"
 source_url: "https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance"
 title: "Report a Concern: Australian DIS Standard compliance | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_89c4da0e34)
-
-[](#h_e9bd55cd83)
-
-[](#h_1875ebe4af)
-
-[All Collections](/en/)
-
-[Privacy and Legal](https://support.claude.com/en/collections/4078534-privacy-and-legal)
-
-Report a Concern: Australian DIS Standard compliance
+3.  Report a Concern: Australian DIS Standard compliance
 
 # Report a Concern: Australian DIS Standard compliance
 
-Updated yesterday
-
-Table of contents
-
-[](#h_89c4da0e34)
-
-[](#h_e9bd55cd83)
-
-[](#h_1875ebe4af)
 
 Users in Australia can report concerns about Anthropic's compliance with the Digital Industry Standard (DIS Standard) [here](https://docs.google.com/forms/d/e/1FAIpQLScZbBlN2JjMFE6IygxBOEhISAEtXbbe3P5e1wJY766UiEVj5Q/viewform).
 
@@ -77,45 +40,17 @@ If you wish to refer a matter to the eSafety Commissioner, please follow the ins
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
 
 Does Anthropic crawl data from the web, and how can site owners block the crawler?
 
-[](https://support.claude.com/en/articles/9199617-api-safeguards-tools)
 
 API Safeguards Tools
 
-[](https://support.claude.com/en/articles/9301722-updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service-and-privacy-policy)
 
 Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
 
-[](https://support.claude.com/en/articles/10684638-reporting-blocking-and-removing-content-from-claude)
 
 Reporting, Blocking, and Removing Content from Claude
 
-[](https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude)
 
 Crisis Helpline Support in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

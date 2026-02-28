@@ -3,12 +3,6 @@ category: "20-Models"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-5"
 title: "Claude Sonnet 3.7"
 ---
-
-
-Models & pricing
-What's new in Claude 4.5
-Copy page
-
 Claude 4.5 introduces three models designed for different use cases:
 
 Claude Opus 4.5: Our most intelligent model combining maximum capability with practical performance. Features a more accessible price point than previous Opus models. Available with a 200k token context window.
@@ -474,5 +468,3 @@ Compare Claude 4.5 models with other Claude models
 Migration guide
 
 Upgrade from previous models
-
-Was this page helpful?

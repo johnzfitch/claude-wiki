@@ -4,9 +4,6 @@ fetched_at: "2026-02-10T10:49:15Z"
 source_url: "https://www.anthropic.com/news/claude-for-nonprofits"
 title: "Introducing Claude for Nonprofits \\ Anthropic"
 ---
-
-Announcements
-
 # Claude for Nonprofits
 
 Dec 2, 2025
@@ -137,7 +134,6 @@ We've also been learning from dozens of our customers across the nonprofit secto
 
 To learn more about Claude for Nonprofits and to access the AI Fluency for Nonprofits course, get started [here](http://claude.com/solutions/nonprofits).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/claude-for-nonprofits)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/claude-for-nonprofits)
 
 ## Related content
 

@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-economic-index-insights-from-claude-sonnet-3-7"
 title: "Anthropic Economic Index: Insights from Claude 3.7 Sonnet \\ Anthropic"
 ---
-
-Societal ImpactsEconomic Research
-
 # Anthropic Economic Index: Insights from Claude 3.7 Sonnet
 
 Mar 27, 2025
@@ -99,7 +96,6 @@ While we mainly follow the methodology of our original report, we make a few cha
 - In contrast to our last report, we do not filter based on whether conversations are relevant to an occupational category. Instead, we simply filter out conversations that flagged our safety classifiers. We find these approaches lead to similar results as our original analysis, while preserving more data that we can release via our bottom-up taxonomy of usage.
 - We use Claude 3.7 Sonnet in place of all cases where we previously used Claude 3.5 Sonnet. We found that using our newer model increased the accuracy of classifications according to the internal benchmarks we use to assess Clio’s accuracy.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-economic-index-insights-from-claude-sonnet-3-7)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-economic-index-insights-from-claude-sonnet-3-7)
 
 ## Related content
 

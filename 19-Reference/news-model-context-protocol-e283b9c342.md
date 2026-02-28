@@ -2,12 +2,6 @@
 category: "19-Reference"
 source_url: "https://www.anthropic.com/news/model-context-protocol"
 ---
-
-
-Announcements
-Introducing the Model Context Protocol
-Nov 25, 2024
-
 Today, we're open-sourcing the Model Context Protocol (MCP), a new standard for connecting AI assistants to the systems where data lives, including content repositories, business tools, and development environments. Its aim is to help frontier models produce better, more relevant responses.
 
 As AI assistants gain mainstream adoption, the industry has invested heavily in model capabilities, achieving rapid advances in reasoning and quality. Yet even the most sophisticated models are constrained by their isolation from data—trapped behind information silos and legacy systems. Every new data source requires its own custom implementation, making truly connected systems difficult to scale.

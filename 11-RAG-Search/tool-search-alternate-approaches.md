@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Tool Search: Alternate Approaches
 
 **Recommend first reading see the cookbook: Tool Search with

@@ -4,9 +4,6 @@ fetched_at: "2026-02-06T03:29:41Z"
 source_url: "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
 title: "Anthropic acquires Bun as Claude Code reaches $1B milestone \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic acquires Bun as Claude Code reaches \$1B milestone
 
 Dec 3, 2025
@@ -29,7 +26,6 @@ Bun will be instrumental in helping us build the infrastructure for the next gen
 
 If you’re interested in joining Anthropic’s engineering team, visit our [careers page](https://www.anthropic.com/jobs?team=4050633008).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone)
 
 ## Related content
 

@@ -2,11 +2,7 @@
 category: "10-Prompting-Guides"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prefill-claudes-response"
 ---
-
-
-Prompt engineering
 Prefill Claude's response for greater output control
-Copy page
 
 While these tips apply broadly to all Claude models, you can find prompting tips specific to extended thinking models here.
 
@@ -58,5 +54,3 @@ An example-filled tutorial that covers the prompt engineering concepts found in 
 Google Sheets prompting tutorial
 
 A lighter weight version of our prompt engineering tutorial via an interactive spreadsheet.
-
-Was this page helpful?

@@ -2,10 +2,6 @@
 category: "19-Reference"
 source_url: "https://www.anthropic.com/news/prompt-caching"
 ---
-
-
-Prompt caching with Claude
-
 Claude caches frequently used context between API calls, reducing costs and latency for long prompts.
 
 Category

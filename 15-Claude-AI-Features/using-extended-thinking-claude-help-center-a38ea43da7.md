@@ -1,57 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:39Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/10574485-using-extended-thinking"
 title: "Using extended thinking | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_49fd2c6d5f)
-
-[](#h_dee4c531ff)
-
-[](#h_5b0b9484d9)
-
-[](#h_6820a121a7)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
-
-Using extended thinking
-
 # Using extended thinking
 
-Updated yesterday
-
-Table of contents
-
-[](#h_49fd2c6d5f)
-
-[](#h_dee4c531ff)
-
-[](#h_5b0b9484d9)
-
-[](#h_6820a121a7)
 
 Extended thinking mode allows Claude (Claude 4 models and Claude 3.7 Sonnet) to spend more time breaking down problems, planning solutions, and exploring different approaches before responding. This article explains how to use this feature and when it's most beneficial.
 
@@ -137,45 +92,17 @@ Extended thinking mode is particularly valuable for:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research)
 
 When should I use web search, extended thinking, and Research?
 
-[](https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps)
 
-Using voice mode on Claude Mobile Apps
+Using voice mode
 
-[](https://support.claude.com/en/articles/12920969-applying-claude-opus-4-5-s-strengths-to-your-everyday-work)
 
-Applying Claude Opus 4.5’s strengths to your everyday work
+Understanding usage and length limits
 
-[](https://support.claude.com/en/articles/12997377-getting-started-with-claude-ai)
 
 Getting started with Claude.ai
 
-[](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
 
-Getting started with Cowork
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Get started with Cowork

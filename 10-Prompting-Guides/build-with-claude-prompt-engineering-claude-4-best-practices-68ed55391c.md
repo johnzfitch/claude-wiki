@@ -2,12 +2,6 @@
 category: "10-Prompting-Guides"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices"
 ---
-
-
-Build with Claude
-Prompting best practices
-Copy page
-
 This guide provides specific prompt engineering techniques for Claude 4.x models, with specific guidance for Sonnet 4.5, Haiku 4.5, and Opus 4.5. These models have been trained for more precise instruction following than previous generations of Claude models.
 
 For an overview of Claude 4.5's new capabilities, see What's new in Claude 4.5. For migration guidance from previous models, see Migrating to Claude 4.5.
@@ -316,5 +310,3 @@ Be specific about desired behavior: Consider describing exactly what you'd like 
 Frame your instructions with modifiers: Adding modifiers that encourage Claude to increase the quality and detail of its output can help better shape Claude's performance. For example, instead of "Create an analytics dashboard", use "Create an analytics dashboard. Include as many relevant features and interactions as possible. Go beyond the basics to create a fully-featured implementation."
 
 Request specific features explicitly: Animations and interactive elements should be requested explicitly when desired.
-
-Was this page helpful?

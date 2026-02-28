@@ -1,73 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:41Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans"
 title: "Extra usage for paid Claude plans | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_704187a339)
-
-[](#h_dee0342c9a)
-
-[](#h_66ef71de00)
-
-[](#h_b618cb85bb)
-
-[](#h_f8fcefe4ef)
-
-[](#h_367e471884)
-
-[](#h_bc322cbc11)
-
-[](#h_1f0ecbf329)
-
-[All Collections](/en/)
-
-[Paid Claude Plans](https://support.claude.com/en/collections/5953830-paid-claude-plans)
-
-[General](https://support.claude.com/en/collections/9811201-general)
-
-Extra usage for paid Claude plans
-
 # Extra usage for paid Claude plans
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_704187a339)
-
-[](#h_dee0342c9a)
-
-[](#h_66ef71de00)
-
-[](#h_b618cb85bb)
-
-[](#h_f8fcefe4ef)
-
-[](#h_367e471884)
-
-[](#h_bc322cbc11)
-
-[](#h_1f0ecbf329)
 
 This article explains how to enable and use extra usage on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Claude after reaching your plan’s usage limits by switching to pay-as-you-go pricing.
 
@@ -111,13 +50,11 @@ To enable extra usage on your paid Claude plan:
 
 6.  Click “Adjust limit” to control costs with a monthly spending cap. You can also select “Set to unlimited” if you prefer no spending restrictions:
 
-    [](https://downloads.intercomcdn.com/i/o/lupk8zyo/1805820732/369dc2e95e2ea7131c75b92d52e2/ce39ab8c-ab3b-4936-986b-bc965919158e?expires=1771278300&signature=eb0497aaabc4ed4a6828f06738d7d97a91f5b633e880b7a08d214f8337e4d247&req=dSgnE8F8nYZcW%2FMW1HO4zV7kvnCv8rNHxdoHGhDYlidcQmeD4t7S%2BqExtecl%0Ajpo0%0A)
 
 7.  You’ll then need to prepay to cover usage beyond your plan limits. Click “Add funds,” enter the amount you want to purchase in the modal, then click “Purchase.”
 
 8.  You can also enable auto-reload to automatically make a purchase when your balance falls below a threshold you set:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1805819785/5e203c38e6ba3f76bfd1dab0d5ce/fe062e7c-18cb-48cc-a7e2-754ac6e6c4be?expires=1771278300&signature=00e40c0fdaa4dca4b1a7862b5c026e33288609475f2d8cdb81b3d92395a910fd&req=dSgnE8F%2FlIZXXPMW1HO4zYj2DhObovg7opE7m38Ydfcan7GfJO6HgD9ULhSM%0A14WW5eikZukSVdSh3Rs%3D%0A)
 
 **Note:** There is a daily redemption limit of \$2000.
 
@@ -223,45 +160,17 @@ No, extra usage is billed at the same [standard API rates](https://claude.com/pr
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11049741-what-is-the-max-plan)
 
 What is the Max plan?
 
-[](https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan)
 
 How do I sign up for the Max plan?
 
-[](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)
 
 Choosing a Claude plan
 
-[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
 
-[](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

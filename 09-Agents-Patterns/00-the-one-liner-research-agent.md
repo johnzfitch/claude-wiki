@@ -1,4 +1,3 @@
-::: {#0d4a77a4 .cell .markdown}
 # Building a One-Liner Research Agent
 
 Research tasks consume hours of expert time: market analysts manually

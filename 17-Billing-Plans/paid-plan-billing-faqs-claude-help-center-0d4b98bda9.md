@@ -1,69 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:49Z"
+fetched_at: "2026-02-28T11:22:35Z"
 source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
 title: "Paid Plan Billing FAQs | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_1712f2a1f1)
-
-[](#h_37ba164c45)
-
-[](#h_5daf699fd1)
-
-[](#h_76419b6630)
-
-[](#h_209b96d9ef)
-
-[](#h_902370cabd)
-
-[](#h_927ac0654a)
-
-[All Collections](/en/)
-
-[Paid Claude Plans](https://support.claude.com/en/collections/5953830-paid-claude-plans)
-
-[General](https://support.claude.com/en/collections/9811201-general)
-
-Paid Plan Billing FAQs
-
 # Paid Plan Billing FAQs
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_1712f2a1f1)
-
-[](#h_37ba164c45)
-
-[](#h_5daf699fd1)
-
-[](#h_76419b6630)
-
-[](#h_209b96d9ef)
-
-[](#h_902370cabd)
-
-[](#h_927ac0654a)
 
 ## Where can I find the invoice or receipt for my Pro or Max plan payment?
 
@@ -97,7 +40,6 @@ Additionally, all invoices are automatically emailed to your billing email addre
 
 If you want to use a name other than the one tied to your payment method, check the "Use a different name on invoices" box when adding or updating your payment method in [Settings \> Billing](http://claude.ai/settings/billing).
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1922141785/666191101c11030b05f03a668a74/image.png?expires=1771278300&signature=9f18b16911e2b2dc290cd43a8122714dc7816d796c1bdca21678b79cacf36faf&req=dSklFMh6nIZXXPMW1HO4zVXW%2F2ypbDvPQoNvNFTb5cfGZ%2B85qlT%2Bzt%2Bbx7h7%0AZBDRZa7Gf9uUa9%2BSVEs%3D%0A)
 
 ## How can I edit a paid invoice?
 
@@ -123,45 +65,17 @@ If you've paid for a Pro or Max plan but are not seeing this reflected in your a
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9889408-i-need-to-add-or-update-my-paid-claude-account-s-tax-or-vat-id)
 
 I need to add or update my paid Claude account’s Tax or VAT ID
 
-[](https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan)
 
 How do I sign up for the Max plan?
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
 
-[](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)
 
 Understanding your billing address and tax calculation
 
-[](https://support.claude.com/en/articles/12997503-team-plan-billing-faqs)
 
 Team plan billing FAQs
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

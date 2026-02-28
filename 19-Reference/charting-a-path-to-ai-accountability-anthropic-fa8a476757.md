@@ -4,15 +4,11 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/charting-a-path-to-ai-accountability"
 title: "Charting a Path to AI Accountability \\ Anthropic"
 ---
-
-Announcements
-
 # Charting a Path to AI Accountability
 
 Jun 13, 2023
 
   
-
 This week, Anthropic submitted [a response](https://www-cdn.anthropic.com/257e6352c677beeffcbce24233211887173a41dc/2023.06.06-Anthropic_NTIA_Comment_v2.pdf) to the National Telecommunications and Information Administration’s (NTIA) [Request for Comment on AI Accountability](https://ntia.gov/issues/artificial-intelligence/request-for-comments). Today, we want to share our recommendations as they capture some of Anthropic’s core AI policy proposals.
 
 There is currently no robust and comprehensive process for evaluating today’s advanced artificial intelligence (AI) systems, let alone the more capable systems of the future. Our submission presents our perspective on the processes and infrastructure needed to ensure AI accountability. Our recommendations consider the NTIA’s potential role as a coordinating body that sets standards in collaboration with other government agencies like the [National Institute of Standards and Technology (NIST)](/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist).
@@ -50,7 +46,6 @@ We believe that AI could have transformative effects in our lifetime and we want
 
 You can read our submission in full [here](https://www-cdn.anthropic.com/257e6352c677beeffcbce24233211887173a41dc/2023.06.06-Anthropic_NTIA_Comment_v2.pdf).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/charting-a-path-to-ai-accountability)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/charting-a-path-to-ai-accountability)
 
 ## Related content
 

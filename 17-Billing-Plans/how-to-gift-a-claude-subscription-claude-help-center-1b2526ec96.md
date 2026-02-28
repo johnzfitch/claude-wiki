@@ -1,61 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:46Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription"
 title: "How to gift a Claude subscription | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_61722538e1)
-
-[](#h_0ddd69fdca)
-
-[](#h_88000b2877)
-
-[](#h_6fd0f51430)
-
-[](#h_3b646efd59)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Getting Started with Claude](https://support.claude.com/en/collections/9811058-getting-started-with-claude)
-
-How to gift a Claude subscription
-
 # How to gift a Claude subscription
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_61722538e1)
-
-[](#h_0ddd69fdca)
-
-[](#h_88000b2877)
-
-[](#h_6fd0f51430)
-
-[](#h_3b646efd59)
 
 Give the gift of Claude to friends, family, or colleagues. Gift subscriptions are available for Pro, Max 5x, and Max 20x plans, and can be purchased for 1, 3, 6, or 12 months.
 
@@ -115,45 +66,17 @@ After purchase, you'll receive a confirmation email with your order details.
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11049741-what-is-the-max-plan)
 
 What is the Max plan?
 
-[](https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan)
 
 How do I sign up for the Max plan?
 
-[](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)
 
 Choosing a Claude plan
 
-[](https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription)
 
 How to redeem a Claude gift subscription
 
-[](https://support.claude.com/en/articles/13163666-holiday-2025-usage-promotion)
 
 Holiday 2025 Usage Promotion
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

@@ -1,4 +1,3 @@
-::: {#5c4d70b6 .cell .markdown}
 # Speculative Prompt Caching
 
 This cookbook demonstrates \"Speculative Prompt Caching\" - a pattern

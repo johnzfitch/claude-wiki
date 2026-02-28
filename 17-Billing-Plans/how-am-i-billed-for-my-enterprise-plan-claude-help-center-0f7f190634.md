@@ -1,73 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:36Z"
+fetched_at: "2026-02-28T11:22:18Z"
 source_url: "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_0bb6268b50)
-
-[](#h_540cbc3861)
-
-[](#h_6fced8040e)
-
-[](#h_deb29b5a4f)
-
-[](#h_ae17ec8236)
-
-[](#h_ec4670d2be)
-
-[](#h_f6aa4f4dd2)
-
-[](#h_3b87de90bd)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Enterprise Plan](https://support.claude.com/en/collections/10351014-enterprise-plan)
-
-How am I billed for my Enterprise plan?
+4.  How am I billed for my Enterprise plan?
 
 # How am I billed for my Enterprise plan?
 
-Updated this week
-
-Table of contents
-
-[](#h_0bb6268b50)
-
-[](#h_540cbc3861)
-
-[](#h_6fced8040e)
-
-[](#h_deb29b5a4f)
-
-[](#h_ae17ec8236)
-
-[](#h_ec4670d2be)
-
-[](#h_f6aa4f4dd2)
-
-[](#h_3b87de90bd)
 
 Enterprise plan billing has two components: a fixed seat fee and variable usage charges. How usage is billed depends on whether your organization purchased self-serve or sales-assisted. This article covers both.
 
@@ -199,45 +140,17 @@ At your next contract renewal, your plan will transition to the usage-based sing
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
 
 What is the Enterprise plan?
 
-[](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)
 
-Using Claude Code with your Team or Enterprise plan
+Use Claude Code with your Team or Enterprise plan
 
-[](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)
 
 Extra usage for Team and seat-based Enterprise plans
 
-[](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
 Usage analytics for Team and Enterprise plans
 
-[](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)
 
-Purchasing and managing seats on Enterprise plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Purchase and manage seats on Enterprise plans

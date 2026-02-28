@@ -2,12 +2,6 @@
 category: "19-Reference"
 source_url: "https://www.anthropic.com/news/claude-opus-4-5"
 ---
-
-
-Announcements
-Introducing Claude Opus 4.5
-Nov 24, 2025
-
 Our newest model, Claude Opus 4.5, is available today. It’s intelligent, efficient, and the best model in the world for coding, agents, and computer use. It’s also meaningfully better at everyday tasks like deep research and working with slides and spreadsheets. Opus 4.5 is a step forward in what AI systems can do, and a preview of larger changes to how work gets done.
 
 Claude Opus 4.5 is state-of-the-art on tests of real-world software engineering:

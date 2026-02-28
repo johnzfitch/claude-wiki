@@ -1,53 +1,12 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-16T21:12:34Z"
+fetched_at: "2026-02-28T11:22:05Z"
 source_url: "https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android"
 title: "Using the Claude Widget on Android | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_03365734b6)
-
-[](#h_9f1d0180be)
-
-[](#h_c90996fb0c)
-
-[All Collections](/en/)
-
-[Claude Mobile Apps](https://support.claude.com/en/collections/9387080-claude-mobile-apps)
-
-[Claude for Android](https://support.claude.com/en/collections/9879004-claude-for-android)
-
-Using the Claude Widget on Android
-
 # Using the Claude Widget on Android
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_03365734b6)
-
-[](#h_9f1d0180be)
-
-[](#h_c90996fb0c)
 
 The Claude Android widget is available on Android 8.0 Oreo and above.
 
@@ -99,45 +58,17 @@ Tap the microphone button to start a new chat and begin voice dictation. The fir
 
 Related Articles
 
-[](https://support.claude.com/en/articles/10065434-using-dictation-on-claude-mobile)
 
 Using dictation on Claude Mobile
 
-[](https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios)
 
 Using Claude App Intents, Shortcuts, and Widgets on iOS
 
-[](https://support.claude.com/en/articles/11101966-using-voice-mode)
 
 Using voice mode
 
-[](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)
 
 Using Claude with Android Apps
 
-[](https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac)
 
 Use quick entry with Claude Desktop on Mac
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

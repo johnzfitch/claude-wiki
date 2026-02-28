@@ -1,35 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-16T21:12:51Z"
+fetched_at: "2026-02-28T11:22:24Z"
 source_url: "https://support.claude.com/en/articles/9528712-exceptions-to-our-usage-policy"
 title: "Exceptions to our Usage Policy | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-[All Collections](/en/)
-
-[Safeguards](https://support.claude.com/en/collections/4078535-safeguards)
-
-Exceptions to our Usage Policy
-
 # Exceptions to our Usage Policy
 
-Updated over a week ago
 
 Anthropic maintains a comprehensive Usage Policy to ensure the responsible deployment of our AI systems. Anthropic may enter into contracts with government customers that tailor use restrictions to that customer’s public mission and legal authorities if, in Anthropic’s judgment, the contractual use restrictions and applicable safeguards are adequate to mitigate the potential harms addressed by this Usage Policy.
 
@@ -55,45 +32,17 @@ Our evaluation of whether to tailor use restrictions to the mission and legal au
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8106465-our-approach-to-user-safety)
 
 Our Approach to User Safety
 
-[](https://support.claude.com/en/articles/9199617-api-safeguards-tools)
 
 API Safeguards Tools
 
-[](https://support.claude.com/en/articles/9301722-updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service-and-privacy-policy)
 
 Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
 
-[](https://support.claude.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information)
 
 What is Anthropic’s policy for handling governmental requests for user information?
 
-[](https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy)
 
 Using Agents According to Our Usage Policy
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

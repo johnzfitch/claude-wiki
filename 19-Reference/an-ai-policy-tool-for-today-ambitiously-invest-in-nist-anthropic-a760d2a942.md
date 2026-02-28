@@ -4,15 +4,11 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist"
 title: "An AI Policy Tool for Today: Ambitiously Invest in NIST \\ Anthropic"
 ---
-
-Announcements
-
 # An AI Policy Tool for Today: Ambitiously Invest in NIST
 
 Apr 20, 2023
 
   
-
 We believe that sensible artificial intelligence (AI) policy requires, among other things, the ability to accurately describe and quantify the capabilities and risks of AI systems. This ability is both an enabler and a prerequisite to effective regulation, as measurement tools allow us to objectively assess systems and ensure they meet appropriate safety thresholds. In this post, we propose a policy intervention for how to do this: ambitiously fund the National Institute of Standards and Technology (NIST) to support its AI measurement and standards efforts.  
   
 We were heartened by the bipartisan support for maintaining American leadership in the development of critical technologies, as expressed during the April 18 [budget hearing](https://appropriations.house.gov/legislation/hearings/budget-hearing-fiscal-year-2024-request-department-commerce) on the 2024 Request for the Department of Commerce (and by extension, NIST). We think one of the best ways to channel that support is through an increase in federal funding for NIST so that it is well placed to carry out its work promoting safe technological innovation.  
@@ -36,7 +32,6 @@ Despite NIST’s foundational work in measurement, we’ve seen a general under-
 *Amount of funding (in millions) for AI-related programs at NIST from 2020-2024. Dashed black lines represent Anthropic recommendation of a \$15 million increase over FY 2023 (inclusive of NIST’s \$5 million requested increase).*
 
   
-
 The ability to effectively evaluate AI systems for both performance and risks is a precursor to smart AI regulation — after all, it’s hard to manage what you can’t measure. NIST has more than a century of experience building measurement infrastructure, and is thus the natural place to continue this work in the AI domain. Beyond informing smarter regulation, this work can help society chart a safer and more productive course for future AI progress by:
 
 - Enhancing the safety of AI systems through rigorous testing to identify and mitigate risks before they arise in public settings
@@ -54,8 +49,6 @@ This proposal builds on our past advocacy for a more well-resourced NIST, includ
 
 *View the [memo here](https://www-cdn.anthropic.com/c429f993f5a3a5ea1808414df6e67fcb8d36ca86/Anthropic_NIST_v3.pdf).*  
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist)
 
 ## Related content
 

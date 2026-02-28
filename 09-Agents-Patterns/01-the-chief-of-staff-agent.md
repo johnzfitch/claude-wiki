@@ -1,13 +1,3 @@
-:::: {.cell .code execution_count="1"}
-``` python
-from dotenv import load_dotenv
-from utils.agent_visualizer import (
-    display_agent_response,
-    print_activity,
-    reset_activity_context,
-    visualize_conversation,
-)
-
 from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKClient
 
 load_dotenv()

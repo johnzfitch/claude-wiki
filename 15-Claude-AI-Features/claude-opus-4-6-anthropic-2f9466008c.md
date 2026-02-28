@@ -4,7 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/claude/opus"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---
-
 # Claude Opus 4.6
 
 Hybrid reasoning model that pushes the frontier for coding and AI agents, featuring a 1M context window

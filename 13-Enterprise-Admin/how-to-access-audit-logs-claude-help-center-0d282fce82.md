@@ -1,53 +1,12 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-08T20:52:14Z"
+fetched_at: "2026-02-28T11:22:18Z"
 source_url: "https://support.claude.com/en/articles/9970975-how-to-access-audit-logs"
 title: "How to access audit logs | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_391ddefbae)
-
-[](#h_3f77590f50)
-
-[](#h_41cdad187a)
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[Enterprise Plan](https://support.claude.com/en/collections/10351014-enterprise-plan)
-
-How to access audit logs
-
 # How to access audit logs
 
-Updated yesterday
-
-Table of contents
-
-[](#h_391ddefbae)
-
-[](#h_3f77590f50)
-
-[](#h_41cdad187a)
 
 Audit logs are available only for Enterprise organizations.
 
@@ -77,45 +36,17 @@ The entities that can be affected by events. Entity info follows this structure:
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9267276-roles-and-permissions)
 
-Roles and Permissions
+Roles and permissions
 
-[](https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning)
 
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
-[](https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization)
 
 What happens to a user's data when they are removed from a Team or Enterprise organization?
 
-[](https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans)
 
-Usage Analytics for Team and Enterprise Plans
+Manage members on Team and Enterprise plans
 
-[](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)
 
-Managing members on Team and Enterprise plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Find and join a Team or Enterprise organization

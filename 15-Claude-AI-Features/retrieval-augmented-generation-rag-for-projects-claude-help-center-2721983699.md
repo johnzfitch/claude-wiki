@@ -1,73 +1,22 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:42Z"
+fetched_at: "2026-02-28T11:22:22Z"
 source_url: "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects"
-title: "Retrieval Augmented Generation (RAG) for projects | Claude Help Center"
+title: "Retrieval augmented generation (RAG) for projects | Claude Help Center"
 ---
 
-[](/en/)
+4.  Retrieval augmented generation (RAG) for projects
 
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
+# Retrieval augmented generation (RAG) for projects
 
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
 
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_f8bace9b13)
-
-[](#h_19c85d734b)
-
-[](#h_35f091f7c1)
-
-[](#h_5e7d805dea)
-
-[](#h_0bde7d1667)
-
-[](#h_6be0f29105)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Features and Capabilities](https://support.claude.com/en/collections/18031719-features-and-capabilities)
-
-Retrieval Augmented Generation (RAG) for projects
-
-# Retrieval Augmented Generation (RAG) for projects
-
-Updated yesterday
-
-Table of contents
-
-[](#h_f8bace9b13)
-
-[](#h_19c85d734b)
-
-[](#h_35f091f7c1)
-
-[](#h_5e7d805dea)
-
-[](#h_0bde7d1667)
-
-[](#h_6be0f29105)
-
-RAG for projects is available for all paid Claude plans (Pro, Max, Team, and Enterprise). Free users do not have access to this feature.
+RAG for projects is available for all Claude plans (free, Pro, Max, Team, and Enterprise).
 
 Projects can now handle much more content without running into limits, giving Claude better context to help you. As you add more files and information to your projects, Claude automatically switches to a faster mode (powered by RAG) that keeps response times quick while maintaining quality responses.
 
 ## What is RAG for projects?
 
-RAG or Retrieval Augmented Generation is a technology that allows your projects to store and access significantly more knowledge than before. When your project knowledge approaches the context window limit, Claude will automatically enable RAG mode to expand your project's capacity by up to 10x while maintaining quality responses.
+RAG or retrieval augmented generation is a technology that allows your projects to store and access significantly more knowledge than before. When your project knowledge approaches the context window limit, Claude will automatically enable RAG mode to expand your project's capacity by up to 10x while maintaining quality responses.
 
 Previously, projects had a knowledge capacity limit based on the **[context window](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)**. Once you reached this threshold, it wasn't possible to add more content. With RAG, you can continue adding knowledge beyond these limits while maintaining full functionality.
 
@@ -153,45 +102,17 @@ Yes. RAG works with all Claude features, including web search, extended thinking
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans)
 
 How large is the context window on paid Claude plans?
 
-[](https://support.claude.com/en/articles/9517075-what-are-projects)
 
 What are projects?
 
-[](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)
 
 How can I create and manage projects?
 
-[](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)
 
 Usage limit best practices
 
-[](https://support.claude.com/en/articles/11088779-using-google-drive-cataloging-on-the-enterprise-plan)
 
 Using Google Drive Cataloging on the Enterprise Plan
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

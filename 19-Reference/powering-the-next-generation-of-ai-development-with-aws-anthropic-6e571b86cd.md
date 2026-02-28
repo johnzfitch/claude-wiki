@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:01Z"
 source_url: "https://www.anthropic.com/news/anthropic-amazon-trainium"
 title: "Powering the next generation of AI development with AWS \\ Anthropic"
 ---
-
-Announcements
-
 # Powering the next generation of AI development with AWS
 
 Nov 22, 2024
@@ -35,7 +32,6 @@ Together with AWS, we’re laying the technological foundation—from silicon to
 
 If you're interested in using Claude in Amazon Bedrock, you can get started at [aws.amazon.com/bedrock/claude/](http://aws.amazon.com/bedrock/claude/).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-amazon-trainium)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-amazon-trainium)
 
 ## Related content
 

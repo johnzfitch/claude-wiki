@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:03Z"
 source_url: "https://www.anthropic.com/research/prompt-injection-defenses"
 title: "Mitigating the risk of prompt injections in browser use \\ Anthropic"
 ---
-
-Product
-
 # Mitigating the risk of prompt injections in browser use
 
 Nov 24, 2025
@@ -53,7 +50,6 @@ We will continue to publish our progress transparently, both to help customers m
 
 If you're interested in helping make our models and products more robust to prompt injection, consider [applying to join our team](https://job-boards.greenhouse.io/anthropic/jobs/4949336008).
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/research/prompt-injection-defenses)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/research/prompt-injection-defenses)
 
 ## Related content
 

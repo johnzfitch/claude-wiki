@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:43Z"
+fetched_at: "2026-02-24T04:07:27Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/mcp"
 title: "Connect to external tools with MCP - Claude API Docs"
 ---
-
-Guides
-
 # Connect to external tools with MCP
 
-Copy page
 
 Configure MCP servers to extend your agent with external tools. Covers transport types, tool search for large tool sets, authentication, and error handling.
 
-Copy page
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) is an open standard for connecting AI agents to external tools and data sources. With MCP, your agent can query databases, integrate with APIs like Slack and GitHub, and connect to other services without writing custom tool implementations.
 
@@ -71,7 +66,7 @@ for await (const message of query({
   prompt: "List files in my project",
   options: {
     mcpServers: {
-      "filesystem": {
+      filesystem: {
         command: "npx",
         args: ["-y", "@modelcontextprotocol/server-filesystem", "/Users/me/projects"]
       }
@@ -284,7 +279,7 @@ TypeScript
 const options = {
   mcpServers: { /* your MCP servers */ },
   env: {
-    ENABLE_TOOL_SEARCH: "auto:5"  // Enable at 5% threshold
+    ENABLE_TOOL_SEARCH: "auto:5" // Enable at 5% threshold
   }
 };
 ```
@@ -410,7 +405,7 @@ for await (const message of query({
   prompt: "List the 3 most recent issues in anthropics/claude-code",
   options: {
     mcpServers: {
-      "github": {
+      github: {
         command: "npx",
         args: ["-y", "@modelcontextprotocol/server-github"],
         env: {
@@ -461,7 +456,7 @@ for await (const message of query({
   prompt: "How many users signed up last week? Break it down by day.",
   options: {
     mcpServers: {
-      "postgres": {
+      postgres: {
         command: "npx",
         // Pass connection string as argument to the server
         args: ["-y", "@modelcontextprotocol/server-postgres", connectionString]
@@ -573,139 +568,3 @@ Related resources
 - **[TypeScript SDK reference](/docs/en/agent-sdk/typescript)**: Full API reference including MCP configuration options
 - **[Python SDK reference](/docs/en/agent-sdk/python)**: Full API reference including MCP configuration options
 - **[MCP server directory](https://github.com/modelcontextprotocol/servers)**: Browse available MCP servers for databases, APIs, and more
-
-Was this page helpful?
-
-- 
-
-- [Quickstart](#quickstart)
-
-- [Add an MCP server](#add-an-mcp-server)
-
-- [In code](#in-code)
-
-- [From a config file](#from-a-config-file)
-
-- [Allow MCP tools](#allow-mcp-tools)
-
-- [Tool naming convention](#tool-naming-convention)
-
-- [Grant access with allowedTools](#grant-access-with-allowed-tools)
-
-- [Alternative: Change the permission mode](#alternative-change-the-permission-mode)
-
-- [Discover available tools](#discover-available-tools)
-
-- [Transport types](#transport-types)
-
-- [stdio servers](#stdio-servers)
-
-- [HTTP/SSE servers](#http-sse-servers)
-
-- [SDK MCP servers](#sdk-mcp-servers)
-
-- [MCP tool search](#mcp-tool-search)
-
-- [How it works](#how-it-works)
-
-- [Configure tool search](#configure-tool-search)
-
-- [Authentication](#authentication)
-
-- [Pass credentials via environment variables](#pass-credentials-via-environment-variables)
-
-- [HTTP headers for remote servers](#http-headers-for-remote-servers)
-
-- [OAuth2 authentication](#o-auth2-authentication)
-
-- [Examples](#examples)
-
-- [List issues from a repository](#list-issues-from-a-repository)
-
-- [Query a database](#query-a-database)
-
-- [Error handling](#error-handling)
-
-- [Troubleshooting](#troubleshooting)
-
-- [Server shows "failed" status](#server-shows-failed-status)
-
-- [Tools not being called](#tools-not-being-called)
-
-- [Connection timeouts](#connection-timeouts)
-
-- [Related resources](#related-resources)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

@@ -1,93 +1,14 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:42Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector"
 title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_4910776452)
-
-[](#h_e7bfeb1c26)
-
-[](#h_13ee12e144)
-
-[](#h_5ce7ca9327)
-
-[](#h_abfadb1d54)
-
-[](#h_ce57889e77)
-
-[](#h_ba673d1dff)
-
-[](#h_a794575e3a)
-
-[](#h_eae00eba07)
-
-[](#h_2b65cd4fd6)
-
-[](#h_a9852878ce)
-
-[](#h_cbf8774a69)
-
-[](#h_0db4b319d6)
-
-[All Collections](/en/)
-
-[Connectors](https://support.claude.com/en/collections/15399129-connectors)
-
-[Pre-Built Connectors](https://support.claude.com/en/collections/17879307-pre-built-connectors)
-
-Enabling and using the Microsoft 365 connector
+4.  Enabling and using the Microsoft 365 connector
 
 # Enabling and using the Microsoft 365 connector
 
-Updated this week
-
-Table of contents
-
-[](#h_4910776452)
-
-[](#h_e7bfeb1c26)
-
-[](#h_13ee12e144)
-
-[](#h_5ce7ca9327)
-
-[](#h_abfadb1d54)
-
-[](#h_ce57889e77)
-
-[](#h_ba673d1dff)
-
-[](#h_a794575e3a)
-
-[](#h_eae00eba07)
-
-[](#h_2b65cd4fd6)
-
-[](#h_a9852878ce)
-
-[](#h_cbf8774a69)
-
-[](#h_0db4b319d6)
 
 The Microsoft 365 connector is available for users on Team and Enterprise plans.
 
@@ -550,45 +471,17 @@ If a user without Microsoft Entra Global Administrator permissions attempts to c
 
 Related Articles
 
-[](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 
-Getting started with custom connectors using remote MCP
+Get started with custom connectors using remote MCP
 
-[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
-
-Anthropic Connectors Directory FAQ
-
-[](https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors)
 
 When to use desktop and web connectors
 
-[](https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude)
 
 Using the Benchling Connector in Claude
 
-[](https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide)
 
 Microsoft 365 Connector: Security Guide
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Using interactive connectors in Claude

@@ -4,7 +4,6 @@ fetched_at: "2026-02-08T23:10:00Z"
 source_url: "https://www.anthropic.com/claude/haiku"
 title: "Claude Haiku 4.5 \\ Anthropic"
 ---
-
 # Claude 4.5 Haiku
 
 Our fastest model, a lightweight version of our most powerful AI, at a more affordable price

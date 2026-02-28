@@ -1,59 +1,14 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-16T21:12:45Z"
+fetched_at: "2026-02-28T11:22:19Z"
 source_url: "https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude"
 title: "Using the Benevity Connector in Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_b29ea1d691)
-
-[](#h_c4ebf44c11)
-
-[](#h_d316aad51e)
-
-[](#h_47c6082f89)
-
-[](#h_a5cc8e6bd9)
-
-[All Collections](/en/)
-
-[Claude for Nonprofits](https://support.claude.com/en/collections/17047088-claude-for-nonprofits)
-
-Using the Benevity Connector in Claude
+3.  Using the Benevity Connector in Claude
 
 # Using the Benevity Connector in Claude
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_b29ea1d691)
-
-[](#h_c4ebf44c11)
-
-[](#h_d316aad51e)
-
-[](#h_47c6082f89)
-
-[](#h_a5cc8e6bd9)
 
 The Benevity integration enables you to discover and research charitable causes and nonprofit organizations through natural conversation. This article explains how to set up and use the Benevity Nonprofit connector with Claude to find nonprofits that align with your values.
 
@@ -177,45 +132,17 @@ Yes, the Benevity database includes nonprofit organizations from around the worl
 
 Related Articles
 
-[](https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude)
 
 Using the BioRender Connector in Claude
 
-[](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)
 
 Using the Synapse.org connector in Claude
 
-[](https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude)
 
 Using the PubMed Connector in Claude
 
-[](https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude)
 
 Using the Blackbaud Connector in Claude
 
-[](https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude)
 
 Using the Candid Connector in Claude
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

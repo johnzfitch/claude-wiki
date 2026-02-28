@@ -1,55 +1,14 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-16T21:12:37Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account"
 title: "Who owns and manages the data of my Claude for Education account? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_30ce91f382)
-
-[](#h_bb8202a439)
-
-[](#h_6009eee86d)
-
-[](#h_7c57237548)
-
-[All Collections](/en/)
-
-[Claude for Education](https://support.claude.com/en/collections/12630177-claude-for-education)
-
-Who owns and manages the data of my Claude for Education account?
+3.  Who owns and manages the data of my Claude for Education account?
 
 # Who owns and manages the data of my Claude for Education account?
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_30ce91f382)
-
-[](#h_bb8202a439)
-
-[](#h_6009eee86d)
-
-[](#h_7c57237548)
 
 This article provides important information about your Claude for Education account associated with your university’s Claude for Education partnership. It includes details about data access and control that were shared with you when your Claude for Education account was set up.
 
@@ -92,45 +51,17 @@ If you have any questions about your Claude for Education plan account, we encou
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team)
 
 Who owns and manages the data of my team?
 
-[](https://support.claude.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller)
 
 Does Anthropic Act as a Data Processor or Controller?
 
-[](https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins)
 
 Getting Started with Claude for Education at Your University (for Owners/Admins)
 
-[](https://support.claude.com/en/articles/11139144-faqs-on-using-claude-for-education-at-your-university)
 
 FAQs on Using Claude for Education at Your University
 
-[](https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government)
 
 How to get support for Claude for Government
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

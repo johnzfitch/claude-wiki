@@ -1,0 +1,643 @@
+---
+category: "04-API-Reference"
+fetched_at: "2026-02-22T14:24:35Z"
+source_url: "https://platform.claude.com/docs/en/api/admin"
+title: "Admin - Claude API Reference"
+---
+# Admin
+
+#### AdminOrganizations
+
+##### [Get Current Organization](/docs/en/api/admin/organizations/me)
+
+GET/v1/organizations/me
+
+##### ModelsExpand Collapse 
+
+Organization = object { id, name, type }
+
+id: string
+
+ID of the Organization.
+
+name: string
+
+Name of the Organization.
+
+type: "organization"
+
+Object type.
+
+For Organizations, this is always `"organization"`.
+
+#### AdminInvites
+
+##### [Create Invite](/docs/en/api/admin/invites/create)
+
+POST/v1/organizations/invites
+
+##### [Get Invite](/docs/en/api/admin/invites/retrieve)
+
+GET/v1/organizations/invites/{invite_id}
+
+##### [List Invites](/docs/en/api/admin/invites/list)
+
+GET/v1/organizations/invites
+
+##### [Delete Invite](/docs/en/api/admin/invites/delete)
+
+DELETE/v1/organizations/invites/{invite_id}
+
+##### ModelsExpand Collapse 
+
+Invite = object { id, email, expires_at, 4 more }
+
+id: string
+
+ID of the Invite.
+
+email: string
+
+Email of the User being invited.
+
+expires_at: string
+
+RFC 3339 datetime string indicating when the Invite expires.
+
+invited_at: string
+
+RFC 3339 datetime string indicating when the Invite was created.
+
+role: "user" or "developer" or "billing" or 3 more
+
+Organization role of the User.
+
+Accepts one of the following:
+
+"user"
+
+"developer"
+
+"billing"
+
+"admin"
+
+"claude_code_user"
+
+"managed"
+
+status: "accepted" or "expired" or "deleted" or "pending"
+
+Status of the Invite.
+
+Accepts one of the following:
+
+"accepted"
+
+"expired"
+
+"deleted"
+
+"pending"
+
+type: "invite"
+
+Object type.
+
+For Invites, this is always `"invite"`.
+
+#### AdminUsers
+
+##### [Get User](/docs/en/api/admin/users/retrieve)
+
+GET/v1/organizations/users/{user_id}
+
+##### [List Users](/docs/en/api/admin/users/list)
+
+GET/v1/organizations/users
+
+##### [Update User](/docs/en/api/admin/users/update)
+
+POST/v1/organizations/users/{user_id}
+
+##### [Remove User](/docs/en/api/admin/users/delete)
+
+DELETE/v1/organizations/users/{user_id}
+
+##### ModelsExpand Collapse 
+
+User = object { id, added_at, email, 3 more }
+
+id: string
+
+ID of the User.
+
+added_at: string
+
+RFC 3339 datetime string indicating when the User joined the Organization.
+
+email: string
+
+Email of the User.
+
+name: string
+
+Name of the User.
+
+role: "user" or "developer" or "billing" or 3 more
+
+Organization role of the User.
+
+Accepts one of the following:
+
+"user"
+
+"developer"
+
+"billing"
+
+"admin"
+
+"claude_code_user"
+
+"managed"
+
+type: "user"
+
+Object type.
+
+For Users, this is always `"user"`.
+
+#### AdminWorkspaces
+
+##### [Create Workspace](/docs/en/api/admin/workspaces/create)
+
+POST/v1/organizations/workspaces
+
+##### [Get Workspace](/docs/en/api/admin/workspaces/retrieve)
+
+GET/v1/organizations/workspaces/{workspace_id}
+
+##### [List Workspaces](/docs/en/api/admin/workspaces/list)
+
+GET/v1/organizations/workspaces
+
+##### [Update Workspace](/docs/en/api/admin/workspaces/update)
+
+POST/v1/organizations/workspaces/{workspace_id}
+
+##### [Archive Workspace](/docs/en/api/admin/workspaces/archive)
+
+POST/v1/organizations/workspaces/{workspace_id}/archive
+
+#### AdminWorkspacesMembers
+
+##### [Create Workspace Member](/docs/en/api/admin/workspaces/members/create)
+
+POST/v1/organizations/workspaces/{workspace_id}/members
+
+##### [Get Workspace Member](/docs/en/api/admin/workspaces/members/retrieve)
+
+GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+
+##### [List Workspace Members](/docs/en/api/admin/workspaces/members/list)
+
+GET/v1/organizations/workspaces/{workspace_id}/members
+
+##### [Update Workspace Member](/docs/en/api/admin/workspaces/members/update)
+
+POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+
+##### [Delete Workspace Member](/docs/en/api/admin/workspaces/members/delete)
+
+DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+
+##### ModelsExpand Collapse 
+
+WorkspaceMember = object { type, user_id, workspace_id, workspace_role }
+
+type: "workspace_member"
+
+Object type.
+
+For Workspace Members, this is always `"workspace_member"`.
+
+user_id: string
+
+ID of the User.
+
+workspace_id: string
+
+ID of the Workspace.
+
+workspace_role: "workspace_user" or "workspace_developer" or "workspace_admin" or "workspace_billing"
+
+Role of the Workspace Member.
+
+Accepts one of the following:
+
+"workspace_user"
+
+"workspace_developer"
+
+"workspace_admin"
+
+"workspace_billing"
+
+#### AdminAPI Keys
+
+##### [Get API Key](/docs/en/api/admin/api_keys/retrieve)
+
+GET/v1/organizations/api_keys/{api_key_id}
+
+##### [List API Keys](/docs/en/api/admin/api_keys/list)
+
+GET/v1/organizations/api_keys
+
+##### [Update API Key](/docs/en/api/admin/api_keys/update)
+
+POST/v1/organizations/api_keys/{api_key_id}
+
+#### AdminUsage Report
+
+##### [Get Messages Usage Report](/docs/en/api/admin/usage_report/retrieve_messages)
+
+GET/v1/organizations/usage_report/messages
+
+##### [Get Claude Code Usage Report](/docs/en/api/admin/usage_report/retrieve_claude_code)
+
+GET/v1/organizations/usage_report/claude_code
+
+##### ModelsExpand Collapse 
+
+ClaudeCodeUsageReport = object { data, has_more, next_page }
+
+data: array of object { actor, core_metrics, customer_type, 6 more }
+
+List of Claude Code usage records for the requested date.
+
+actor: object { email_address, type } or object { api_key_name, type }
+
+The user or API key that performed the Claude Code actions.
+
+Accepts one of the following:
+
+UserActor = object { email_address, type }
+
+email_address: string
+
+Email address of the user who performed Claude Code actions.
+
+type: "user_actor"
+
+APIActor = object { api_key_name, type }
+
+api_key_name: string
+
+Name of the API key used to perform Claude Code actions.
+
+type: "api_actor"
+
+core_metrics: object { commits_by_claude_code, lines_of_code, num_sessions, pull_requests_by_claude_code }
+
+Core productivity metrics measuring Claude Code usage and impact.
+
+commits_by_claude_code: number
+
+Number of git commits created through Claude Code's commit functionality.
+
+lines_of_code: object { added, removed }
+
+Statistics on code changes made through Claude Code.
+
+added: number
+
+Total number of lines of code added across all files by Claude Code.
+
+removed: number
+
+Total number of lines of code removed across all files by Claude Code.
+
+num_sessions: number
+
+Number of distinct Claude Code sessions initiated by this actor.
+
+pull_requests_by_claude_code: number
+
+Number of pull requests created through Claude Code's PR functionality.
+
+customer_type: "api" or "subscription"
+
+Type of customer account (api for API customers, subscription for Pro/Team customers).
+
+Accepts one of the following:
+
+"api"
+
+"subscription"
+
+date: string
+
+UTC date for the usage metrics in YYYY-MM-DD format.
+
+model_breakdown: array of object { estimated_cost, model, tokens }
+
+Token usage and cost breakdown by AI model used.
+
+estimated_cost: object { amount, currency }
+
+Estimated cost for using this model
+
+amount: number
+
+Estimated cost amount in minor currency units (e.g., cents for USD).
+
+currency: string
+
+Currency code for the estimated cost (e.g., 'USD').
+
+model: string
+
+Name of the AI model used for Claude Code interactions.
+
+tokens: object { cache_creation, cache_read, input, output }
+
+Token usage breakdown for this model
+
+cache_creation: number
+
+Number of cache creation tokens consumed by this model.
+
+cache_read: number
+
+Number of cache read tokens consumed by this model.
+
+input: number
+
+Number of input tokens consumed by this model.
+
+output: number
+
+Number of output tokens generated by this model.
+
+organization_id: string
+
+ID of the organization that owns the Claude Code usage.
+
+terminal_type: string
+
+Type of terminal or environment where Claude Code was used.
+
+tool_actions: map\[object { accepted, rejected } \]
+
+Breakdown of tool action acceptance and rejection rates by tool type.
+
+accepted: number
+
+Number of tool action proposals that the user accepted.
+
+rejected: number
+
+Number of tool action proposals that the user rejected.
+
+subscription_type: optional "enterprise" or "team"
+
+Subscription tier for subscription customers. `null` for API customers.
+
+Accepts one of the following:
+
+"enterprise"
+
+"team"
+
+has_more: boolean
+
+True if there are more records available beyond the current page.
+
+next_page: string
+
+Opaque cursor token for fetching the next page of results, or null if no more pages are available.
+
+MessagesUsageReport = object { data, has_more, next_page }
+
+data: array of object { ending_at, results, starting_at }
+
+ending_at: string
+
+End of the time bucket (exclusive) in RFC 3339 format.
+
+results: array of object { api_key_id, cache_creation, cache_read_input_tokens, 9 more }
+
+List of usage items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
+
+api_key_id: string
+
+ID of the API key used. `null` if not grouping by API key or for usage in the Anthropic Console.
+
+cache_creation: object { ephemeral_1h_input_tokens, ephemeral_5m_input_tokens }
+
+The number of input tokens for cache creation.
+
+ephemeral_1h_input_tokens: number
+
+The number of input tokens used to create the 1 hour cache entry.
+
+ephemeral_5m_input_tokens: number
+
+The number of input tokens used to create the 5 minute cache entry.
+
+cache_read_input_tokens: number
+
+The number of input tokens read from the cache.
+
+context_window: "0-200k" or "200k-1M"
+
+Context window used. `null` if not grouping by context window.
+
+Accepts one of the following:
+
+"0-200k"
+
+"200k-1M"
+
+inference_geo: string
+
+Inference geo used matching requests' `inference_geo` parameter if set, otherwise the workspace's `default_inference_geo`. For models that do not support specifying `inference_geo` the value is `"not_available"`. Always `null` if not grouping by inference geo.
+
+model: string
+
+Model used. `null` if not grouping by model.
+
+output_tokens: number
+
+The number of output tokens generated.
+
+server_tool_use: object { web_search_requests }
+
+Server-side tool usage metrics.
+
+web_search_requests: number
+
+The number of web search requests made.
+
+service_tier: "standard" or "batch" or "priority" or 3 more
+
+Service tier used. `null` if not grouping by service tier.
+
+Accepts one of the following:
+
+"standard"
+
+"batch"
+
+"priority"
+
+"priority_on_demand"
+
+"flex"
+
+"flex_discount"
+
+speed: "standard" or "fast"
+
+Speed of the usage (research preview). `null` if not grouping by speed. Only returned when the `fast-mode-2026-02-01` beta header is provided.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
+uncached_input_tokens: number
+
+The number of uncached input tokens processed.
+
+workspace_id: string
+
+ID of the Workspace used. `null` if not grouping by workspace or for the default workspace.
+
+starting_at: string
+
+Start of the time bucket (inclusive) in RFC 3339 format.
+
+has_more: boolean
+
+Indicates if there are more results.
+
+next_page: string
+
+Token to provide in as `page` in the subsequent request to retrieve the next page of data.
+
+#### AdminCost Report
+
+##### [Get Cost Report](/docs/en/api/admin/cost_report/retrieve)
+
+GET/v1/organizations/cost_report
+
+##### ModelsExpand Collapse 
+
+CostReport = object { data, has_more, next_page }
+
+data: array of object { ending_at, results, starting_at }
+
+ending_at: string
+
+End of the time bucket (exclusive) in RFC 3339 format.
+
+results: array of object { amount, context_window, cost_type, 8 more }
+
+List of cost items for this time bucket. There may be multiple items if one or more `group_by[]` parameters are specified.
+
+amount: string
+
+Cost amount in lowest currency units (e.g. cents) as a decimal string. For example, `"123.45"` in `"USD"` represents `$1.23`.
+
+context_window: "0-200k" or "200k-1M"
+
+Input context window used. `null` if not grouping by description or for non-token costs.
+
+Accepts one of the following:
+
+"0-200k"
+
+"200k-1M"
+
+cost_type: "tokens" or "web_search" or "code_execution"
+
+Type of cost. `null` if not grouping by description.
+
+Accepts one of the following:
+
+"tokens"
+
+"web_search"
+
+"code_execution"
+
+currency: string
+
+Currency code for the cost amount. Currently always `"USD"`.
+
+description: string
+
+Description of the cost item. `null` if not grouping by description.
+
+inference_geo: string
+
+Inference geo used matching requests' `inference_geo` parameter if set, otherwise the workspace's `default_inference_geo`. For models that do not support specifying `inference_geo` the value is `"not_available"`. Always `null` if not grouping by inference geo.
+
+model: string
+
+Model name used. `null` if not grouping by description or for non-token costs.
+
+service_tier: "standard" or "batch"
+
+Service tier used. `null` if not grouping by description or for non-token costs.
+
+Accepts one of the following:
+
+"standard"
+
+"batch"
+
+speed: "standard" or "fast"
+
+Speed used (research preview). `null` if not grouping by speed, or for non-token costs. Only returned when the `fast-mode-2026-02-01` beta header is provided.
+
+Accepts one of the following:
+
+"standard"
+
+"fast"
+
+token_type: "uncached_input_tokens" or "output_tokens" or "cache_read_input_tokens" or 2 more
+
+Type of token. `null` if not grouping by description or for non-token costs.
+
+Accepts one of the following:
+
+"uncached_input_tokens"
+
+"output_tokens"
+
+"cache_read_input_tokens"
+
+"cache_creation.ephemeral_1h_input_tokens"
+
+"cache_creation.ephemeral_5m_input_tokens"
+
+workspace_id: string
+
+ID of the Workspace this cost is associated with. `null` if not grouping by workspace or for the default workspace.
+
+starting_at: string
+
+Start of the time bucket (inclusive) in RFC 3339 format.
+
+has_more: boolean
+
+Indicates if there are more results.
+
+next_page: string
+
+Token to provide in as `page` in the subsequent request to retrieve the next page of data.

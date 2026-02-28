@@ -1,19 +1,14 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:05:13Z"
+fetched_at: "2026-02-22T13:19:00Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/csharp"
 title: "C# SDK - Claude API Docs"
 ---
-
-Client SDKs
-
 # C# SDK
 
-Copy page
 
 Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
 
-Copy page
 
 The Anthropic C# SDK provides convenient access to the Anthropic REST API from applications written in C#.
 
@@ -130,7 +125,11 @@ The `WithOptions` method does not affect the original client or service.
 
 Streaming
 
-The SDK defines methods that return response "chunk" streams, where each chunk can be individually processed as soon as it arrives instead of waiting on the full response. Streaming methods return [`IAsyncEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iasyncenumerable-1):
+The SDK defines methods that return response "chunk" streams, where each chunk can be individually processed as soon as it arrives instead of waiting on the full response. Streaming methods generally correspond to [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) or [JSONL](https://jsonlines.org) responses.
+
+A streaming method always has a `Streaming` suffix in its name, even if it doesn't have a non-streaming variant.
+
+These streaming methods return [`IAsyncEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iasyncenumerable-1):
 
 ``` shiki
 using System;
@@ -256,6 +255,8 @@ Console.WriteLine(message);
 
 Pagination
 
+The SDK defines methods that return paginated lists of results. It provides convenient ways to access the results either one page at a time or item-by-item across all pages.
+
 ### 
 
 Auto-pagination
@@ -265,7 +266,7 @@ To iterate through all results across all pages, use the `Paginate` method, whic
 ``` shiki
 using System;
 
-var page = await client.Beta.Messages.Batches.List(parameters);
+var page = await client.Messages.Batches.List(parameters);
 await foreach (var item in page.Paginate())
 {
     Console.WriteLine(item);
@@ -281,7 +282,7 @@ To access individual page items and manually request the next page, use the `Ite
 ``` shiki
 using System;
 
-var page = await client.Beta.Messages.Batches.List();
+var page = await client.Messages.Batches.List();
 while (true)
 {
     foreach (var item in page.Items)
@@ -335,7 +336,7 @@ Console.WriteLine(message);
 
 IChatClient integration
 
-The SDK provides an implementation of the `IChatClient` interface from the `Microsoft.Extensions.AI.Abstractions` library. This enables `AnthropicClient` to be used with other libraries that integrate with these core abstractions. For example, tools in the MCP C# SDK (`ModelContextProtocol`) library can be used directly with an `AnthropicClient` exposed via `IChatClient`.
+The SDK provides an implementation of the `IChatClient` interface from the `Microsoft.Extensions.AI.Abstractions` library. This enables `AnthropicClient` (and `Anthropic.Services.IBetaService`) to be used with other libraries that integrate with these core abstractions. For example, tools in the MCP C# SDK (`ModelContextProtocol`) library can be used directly with an `AnthropicClient` exposed via `IChatClient`.
 
 ``` shiki
 using Anthropic;
@@ -359,9 +360,9 @@ Console.WriteLine(await chatClient.GetResponseAsync("Tell me about IChatClient",
 
 ## 
 
-HTTP client customization
+Requests and responses
 
-To send a request to the Claude API, build an instance of some `Params` class and pass it to the corresponding client method. When the response is received, it will be deserialized into an instance of a C# class.
+To send a request to the Claude API, build an instance of a `Params` class and pass it to the corresponding client method. When the response is received, it's deserialized into an instance of a C# class.
 
 For example, `client.Messages.Create` should be called with an instance of `MessageCreateParams`, and it will return an instance of `Task<Message>`.
 
@@ -388,7 +389,7 @@ var response = await client.Beta.Files.Download(parameters);
 Console.WriteLine(response);
 ```
 
-To save the response content to a file:
+To save the response content to a file, or any [`Stream`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream), use the [`CopyToAsync`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.copytoasync) method:
 
 ``` shiki
 using System.IO;
@@ -396,7 +397,7 @@ using System.IO;
 using var response = await client.Beta.Files.Download(parameters);
 using var contentStream = await response.ReadAsStream();
 using var fileStream = File.Open(path, FileMode.OpenOrCreate);
-await contentStream.CopyToAsync(fileStream);
+await contentStream.CopyToAsync(fileStream); // Or any other Stream
 ```
 
 ### 
@@ -440,6 +441,8 @@ await foreach (var item in response.Enumerate())
 
 Logging
 
+All log messages are intended for debugging only. The format and content of log messages may change between releases.
+
 Enable debug logging via environment variable:
 
 ``` shiki
@@ -454,9 +457,30 @@ The SDK is typed for convenient usage of the documented API. However, it also su
 
 ## 
 
-Beta features
+Platform integrations
 
-While this package is versioned as 10+, it is currently in beta. During the beta period, breaking changes may occur in minor or patch releases. Once the library reaches stable release, SemVer conventions will be followed more strictly. Share feedback by [filing an issue](https://www.github.com/anthropics/anthropic-sdk-csharp/issues/new).
+For detailed platform setup guides with code examples, see:
+
+- [Amazon Bedrock](/docs/en/build-with-claude/claude-on-amazon-bedrock)
+- [Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry)
+
+The C# SDK supports Bedrock and Foundry through separate NuGet packages:
+
+- **Bedrock**: `Anthropic.Bedrock`. Uses `AnthropicBedrockClient` with `AnthropicBedrockCredentialsHelper.FromEnv()` or explicit credentials.
+- **Foundry**: `Anthropic.Foundry`. Uses `AnthropicFoundryClient` with `DefaultAnthropicFoundryCredentials.FromEnv()` or explicit credentials.
+
+## 
+
+Semantic versioning
+
+While this package is versioned as 10+, it's currently in beta. During the beta period, breaking changes may occur in minor or patch releases. Once the library reaches stable release, SemVer conventions will be followed more strictly. Share feedback by [filing an issue](https://www.github.com/anthropics/anthropic-sdk-csharp/issues/new).
+
+This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:
+
+1.  Changes to library internals which are technically public but not intended or documented for external use. *(Please open a GitHub issue to let the maintainers know if you're relying on such internals.)*
+2.  Changes that aren't expected to impact the vast majority of users in practice.
+
+Backwards-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
 
 ## 
 
@@ -466,125 +490,3 @@ Additional resources
 - [NuGet package](https://www.nuget.org/packages/Anthropic)
 - [API reference](/docs/en/api/overview)
 - [Streaming guide](/docs/en/build-with-claude/streaming)
-
-Was this page helpful?
-
-- 
-
-- [Installation](#installation)
-
-- [Requirements](#requirements)
-
-- [Usage](#usage)
-
-- [Client configuration](#client-configuration)
-
-- [Modifying configuration](#modifying-configuration)
-
-- [Streaming](#streaming)
-
-- [Error handling](#error-handling)
-
-- [Retries](#retries)
-
-- [Timeouts](#timeouts)
-
-- [Pagination](#pagination)
-
-- [Auto-pagination](#auto-pagination)
-
-- [Manual pagination](#manual-pagination)
-
-- [Response validation](#response-validation)
-
-- [IChatClient integration](#i-chat-client-integration)
-
-- [HTTP client customization](#http-client-customization)
-
-- [Advanced usage](#advanced-usage)
-
-- [Binary responses](#binary-responses)
-
-- [Raw responses](#raw-responses)
-
-- [Logging](#logging)
-
-- [Undocumented API functionality](#undocumented-api-functionality)
-
-- [Beta features](#beta-features)
-
-- [Additional resources](#additional-resources)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

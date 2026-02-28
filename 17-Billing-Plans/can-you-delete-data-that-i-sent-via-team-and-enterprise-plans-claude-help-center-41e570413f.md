@@ -1,37 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:52Z"
+fetched_at: "2026-02-28T11:22:17Z"
 source_url: "https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans"
 title: "Can you delete data that I sent via Team and Enterprise plans? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-[All Collections](/en/)
-
-[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)
-
-[General](https://support.claude.com/en/collections/9811414-general)
-
-Can you delete data that I sent via Team and Enterprise plans?
+4.  Can you delete data that I sent via Team and Enterprise plans?
 
 # Can you delete data that I sent via Team and Enterprise plans?
 
-Updated over a week ago
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
@@ -47,45 +24,17 @@ Enterprise plan customers can also set [custom retention timelines](https://supp
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers)
 
 Business Associate Agreements (BAA) for Commercial Customers
 
-[](https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team)
 
 Who owns and manages the data of my team?
 
-[](https://support.claude.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller)
 
 Does Anthropic Act as a Data Processor or Controller?
 
-[](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)
 
 Custom data retention controls for Enterprise plans
 
-[](https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans)
 
 Cowork for Team and Enterprise plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

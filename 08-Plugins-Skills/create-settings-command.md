@@ -2,7 +2,6 @@
 description: "Create plugin settings file with user preferences"
 allowed-tools: ["Write", "AskUserQuestion"]
 ---
-
 # Create Plugin Settings
 
 This command helps users create a `.claude/my-plugin.local.md` settings file.

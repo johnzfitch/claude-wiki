@@ -1,23 +1,18 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-07T10:04:41Z"
+fetched_at: "2026-02-24T04:07:07Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/hosting"
 title: "Hosting the Agent SDK - Claude API Docs"
 ---
-
-Guides
-
 # Hosting the Agent SDK
 
-Copy page
 
 Deploy and host Claude Agent SDK in production environments
 
-Copy page
 
 The Claude Agent SDK differs from traditional stateless LLM APIs in that it maintains conversational state and executes commands in a persistent environment. This guide covers the architecture, hosting considerations, and best practices for deploying SDK-based agents in production.
 
-For security hardening beyond basic sandboxing—including network controls, credential management, and isolation options—see [Secure Deployment](/docs/en/agent-sdk/secure-deployment).
+For security hardening beyond basic sandboxing (including network controls, credential management, and isolation options), see [Secure Deployment](/docs/en/agent-sdk/secure-deployment).
 
 ## 
 
@@ -136,7 +131,7 @@ Best for agents that must collaborate closely together. This is likely the least
 
 - **Simulations**: Agents that interact with each other in simulations such as video games.
 
-# 
+## 
 
 FAQ
 
@@ -150,7 +145,7 @@ When hosting in containers, expose ports to communicate with your SDK instances.
 
 What is the cost of hosting a container?
 
-We have found that the dominant cost of serving agents is the tokens, containers vary based on what you provision but a minimum cost is roughly 5 cents per hour running.
+The dominant cost of serving agents is the tokens; containers vary based on what you provision, but a minimum cost is roughly 5 cents per hour running.
 
 ### 
 
@@ -174,7 +169,7 @@ Since containers are just servers the same logging infrastructure you use for th
 
 How long can an agent session run before timing out?
 
-An agent session will not timeout, but we recommend setting a 'maxTurns' property to prevent Claude from getting stuck in a loop.
+An agent session will not timeout, but consider setting a 'maxTurns' property to prevent Claude from getting stuck in a loop.
 
 ## 
 
@@ -186,115 +181,3 @@ Next Steps
 - [Permissions](/docs/en/agent-sdk/permissions) - Configure tool permissions
 - [Cost Tracking](/docs/en/agent-sdk/cost-tracking) - Monitor API usage
 - [MCP Integration](/docs/en/agent-sdk/mcp) - Extend with custom tools
-
-Was this page helpful?
-
-- 
-
-- [Hosting Requirements](#hosting-requirements)
-
-- [Container-Based Sandboxing](#container-based-sandboxing)
-
-- [System Requirements](#system-requirements)
-
-- [Understanding the SDK Architecture](#understanding-the-sdk-architecture)
-
-- [Sandbox Provider Options](#sandbox-provider-options)
-
-- [Production Deployment Patterns](#production-deployment-patterns)
-
-- [Pattern 1: Ephemeral Sessions](#pattern-1-ephemeral-sessions)
-
-- [Pattern 2: Long-Running Sessions](#pattern-2-long-running-sessions)
-
-- [Pattern 3: Hybrid Sessions](#pattern-3-hybrid-sessions)
-
-- [Pattern 4: Single Containers](#pattern-4-single-containers)
-
-- [How do I communicate with my sandboxes?](#how-do-i-communicate-with-my-sandboxes)
-
-- [What is the cost of hosting a container?](#what-is-the-cost-of-hosting-a-container)
-
-- [When should I shut down idle containers vs. keeping them warm?](#when-should-i-shut-down-idle-containers-vs-keeping-them-warm)
-
-- [How often should I update the Claude Code CLI?](#how-often-should-i-update-the-claude-code-cli)
-
-- [How do I monitor container health and agent performance?](#how-do-i-monitor-container-health-and-agent-performance)
-
-- [How long can an agent session run before timing out?](#how-long-can-an-agent-session-run-before-timing-out)
-
-- [Next Steps](#next-steps)
-
-[](/docs)
-
-[](https://x.com/claudeai)[](https://www.linkedin.com/showcase/claude)[](https://instagram.com/claudeai)
-
-### Solutions
-
-- [AI agents](https://claude.com/solutions/agents)
-- [Code modernization](https://claude.com/solutions/code-modernization)
-- [Coding](https://claude.com/solutions/coding)
-- [Customer support](https://claude.com/solutions/customer-support)
-- [Education](https://claude.com/solutions/education)
-- [Financial services](https://claude.com/solutions/financial-services)
-- [Government](https://claude.com/solutions/government)
-- [Life sciences](https://claude.com/solutions/life-sciences)
-
-### Partners
-
-- [Amazon Bedrock](https://claude.com/partners/amazon-bedrock)
-- [Google Cloud's Vertex AI](https://claude.com/partners/google-cloud-vertex-ai)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Company
-
-- [Anthropic](https://www.anthropic.com/company)
-- [Careers](https://www.anthropic.com/careers)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](https://www.anthropic.com/research)
-- [News](https://www.anthropic.com/news)
-- [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-- [Security and compliance](https://trust.anthropic.com)
-- [Transparency](https://www.anthropic.com/transparency)
-
-### Learn
-
-- [Blog](https://claude.com/blog)
-- [Catalog](https://claude.ai/catalog/artifacts)
-- [Courses](https://www.anthropic.com/learn)
-- [Use cases](https://claude.com/resources/use-cases)
-- [Connectors](https://claude.com/partners/mcp)
-- [Customer stories](https://claude.com/customers)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://claude.com/partners/powered-by-claude)
-- [Service partners](https://claude.com/partners/services)
-- [Startups program](https://claude.com/programs/startups)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.claude.com/)
-- [Support](https://support.claude.com/)
-- [Discord](https://www.anthropic.com/discord)
-
-### Terms and policies
-
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Usage policy](https://www.anthropic.com/legal/aup)

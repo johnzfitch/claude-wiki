@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-s-recommendations-ostp-u-s-ai-action-plan"
 title: "Anthropic’s Recommendations to OSTP for the U.S. AI Action Plan \\ Anthropic"
 ---
-
-Societal ImpactsPolicy
-
 # Anthropic’s recommendations to OSTP for the U.S. AI action plan
 
 Mar 6, 2025
@@ -35,7 +32,6 @@ These recommendations build on Anthropic's previous policy work, including our a
 
 Our full submission, found [here](https://assets.anthropic.com/m/4e20a4ab6512e217/original/Anthropic-Response-to-OSTP-RFI-March-2025-Final-Submission-v3.pdf), offers further detail into these recommendations and provides practical implementation strategies to help the U.S. government navigate this critical technological transition.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-s-recommendations-ostp-u-s-ai-action-plan)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-s-recommendations-ostp-u-s-ai-action-plan)
 
 ## Related content
 

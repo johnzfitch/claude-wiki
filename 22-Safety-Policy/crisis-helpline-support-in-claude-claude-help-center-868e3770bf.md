@@ -1,63 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-08T20:52:06Z"
+fetched_at: "2026-02-28T11:22:24Z"
 source_url: "https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude"
 title: "Crisis Helpline Support in Claude | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_f2a911122e)
-
-[](#h_b0c232ef18)
-
-[](#h_0aac48db71)
-
-[](#h_db4f46df8f)
-
-[](#h_6f62183e5d)
-
-[](#h_5f3f6761dc)
-
-[All Collections](/en/)
-
-[Safeguards](https://support.claude.com/en/collections/4078535-safeguards)
-
-Crisis Helpline Support in Claude
-
 # Crisis Helpline Support in Claude
 
-Updated yesterday
-
-Table of contents
-
-[](#h_f2a911122e)
-
-[](#h_b0c232ef18)
-
-[](#h_0aac48db71)
-
-[](#h_db4f46df8f)
-
-[](#h_6f62183e5d)
-
-[](#h_5f3f6761dc)
 
 *For medical emergencies, active injuries, or situations where you're in immediate physical danger, please contact emergency services (such as 911 in the US and Canada, or 112 in much of Europe) or go to your nearest emergency room.*
 
@@ -187,45 +136,17 @@ We work with ThroughLine, an organization that curates and maintains a global di
 
 Related Articles
 
-[](https://support.claude.com/en/articles/7996921-i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries)
 
 I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries?
 
-[](https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account)
+
+Getting started with Claude
+
 
 Who owns and manages the data of my Claude for Education account?
 
-[](https://support.claude.com/en/articles/12386420-claude-code-faq)
 
 Claude Code FAQ
 
-[](https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits)
-
-Getting Started with Claude for Nonprofits
-
-[](https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government)
 
 How to get support for Claude for Government
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

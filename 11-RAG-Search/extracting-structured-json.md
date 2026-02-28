@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Extracting Structured JSON using Claude and Tool Use
 
 In this cookbook, we\'ll explore various examples of using Claude and

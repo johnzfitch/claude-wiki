@@ -1,61 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-08T20:51:57Z"
+fetched_at: "2026-02-28T11:22:23Z"
 source_url: "https://support.claude.com/en/articles/12466728-understanding-claude-error-messages"
 title: "Understanding Claude Error Messages | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_cc39480cbb)
-
-[](#h_e722b96ea3)
-
-[](#h_210f14a28e)
-
-[](#h_a3eaee1549)
-
-[](#h_4af4d599a2)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Troubleshooting](https://support.claude.com/en/collections/18032037-troubleshooting)
-
-Understanding Claude Error Messages
-
 # Understanding Claude Error Messages
 
-Updated yesterday
-
-Table of contents
-
-[](#h_cc39480cbb)
-
-[](#h_e722b96ea3)
-
-[](#h_210f14a28e)
-
-[](#h_a3eaee1549)
-
-[](#h_4af4d599a2)
 
 This article explains common error messages and warnings you may encounter when using Claude and provides guidance on how to address them.
 
@@ -115,51 +66,22 @@ Capacity issues will not appear on [our status page](http://status.claude.com) b
 
 Service incidents are disruptions where Claude is unavailable or significantly degraded for all or most users. These represent actual technical problems with our systems. To check for confirmed incidents, visit status.claude.com, where you'll find real-time updates on scope, impact, and resolution progress for any active incidents.
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1753796247/e6a8c6ef8653b229c5758e881242/c2fc6fc0-d163-4119-93e0-394104d86bc9?expires=1770585300&signature=557a578072e0e8e947924ccff8236a2cae84e6590d1ac059d93f68743014d9d9&req=dSciFc53m4NbXvMW1HO4za4BUa8m2rfH7y68oYp%2BYg96PiabngoFRJmX8hn7%0AdCjaNXDMBNz%2FMQMRmEM%3D%0A)
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114491-getting-started-with-claude)
 
 Getting started with Claude
 
-[](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan)
 
 What is the Pro plan?
 
-[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
 
-[](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)
 
 Understanding usage and length limits
 
-[](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)
 
 Extra usage for paid Claude plans
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

@@ -1,0 +1,169 @@
+---
+category: "04-API-Reference"
+fetched_at: "2026-02-22T13:49:10Z"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/create"
+title: "Create Skill - Claude API Reference"
+---
+# Create Skill
+
+[SkillCreateResponse](/docs/en/api/beta#SkillCreateResponse) beta().skills().create(SkillCreateParamsparams = SkillCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+
+POST/v1/skills
+
+Create Skill
+
+##### ParametersExpand Collapse 
+
+SkillCreateParams params
+
+Optional\<List\<AnthropicBeta\>\> betas
+
+Optional header to specify the beta version(s) you want to use.
+
+MESSAGE_BATCHES_2024_09_24("message-batches-2024-09-24")
+
+PROMPT_CACHING_2024_07_31("prompt-caching-2024-07-31")
+
+COMPUTER_USE_2024_10_22("computer-use-2024-10-22")
+
+COMPUTER_USE_2025_01_24("computer-use-2025-01-24")
+
+PDFS_2024_09_25("pdfs-2024-09-25")
+
+TOKEN_COUNTING_2024_11_01("token-counting-2024-11-01")
+
+TOKEN_EFFICIENT_TOOLS_2025_02_19("token-efficient-tools-2025-02-19")
+
+OUTPUT_128K_2025_02_19("output-128k-2025-02-19")
+
+FILES_API_2025_04_14("files-api-2025-04-14")
+
+MCP_CLIENT_2025_04_04("mcp-client-2025-04-04")
+
+MCP_CLIENT_2025_11_20("mcp-client-2025-11-20")
+
+DEV_FULL_THINKING_2025_05_14("dev-full-thinking-2025-05-14")
+
+INTERLEAVED_THINKING_2025_05_14("interleaved-thinking-2025-05-14")
+
+CODE_EXECUTION_2025_05_22("code-execution-2025-05-22")
+
+EXTENDED_CACHE_TTL_2025_04_11("extended-cache-ttl-2025-04-11")
+
+CONTEXT_1M_2025_08_07("context-1m-2025-08-07")
+
+CONTEXT_MANAGEMENT_2025_06_27("context-management-2025-06-27")
+
+MODEL_CONTEXT_WINDOW_EXCEEDED_2025_08_26("model-context-window-exceeded-2025-08-26")
+
+SKILLS_2025_10_02("skills-2025-10-02")
+
+FAST_MODE_2026_02_01("fast-mode-2026-02-01")
+
+Optional\<String\> displayTitle
+
+Display title for the skill.
+
+This is a human-readable label that is not included in the prompt sent to the model.
+
+Optional\<List\<String\>\> files
+
+Files to upload for the skill.
+
+All files must be in the same top-level directory and must include a SKILL.md file at the root of that directory.
+
+##### ReturnsExpand Collapse 
+
+class SkillCreateResponse:
+
+String id
+
+Unique identifier for the skill.
+
+The format and length of IDs may change over time.
+
+String createdAt
+
+ISO 8601 timestamp of when the skill was created.
+
+Optional\<String\> displayTitle
+
+Display title for the skill.
+
+This is a human-readable label that is not included in the prompt sent to the model.
+
+Optional\<String\> latestVersion
+
+The latest version identifier for the skill.
+
+This represents the most recent version of the skill that has been created.
+
+String source
+
+Source of the skill.
+
+This may be one of the following values:
+
+- `"custom"`: the skill was created by a user
+- `"anthropic"`: the skill was created by Anthropic
+
+String type
+
+Object type.
+
+For Skills, this is always `"skill"`.
+
+String updatedAt
+
+ISO 8601 timestamp of when the skill was last updated.
+
+Create Skill
+
+Java
+
+``` shiki
+package com.anthropic.example;
+
+import com.anthropic.client.AnthropicClient;
+import com.anthropic.client.okhttp.AnthropicOkHttpClient;
+import com.anthropic.models.beta.skills.SkillCreateParams;
+import com.anthropic.models.beta.skills.SkillCreateResponse;
+
+public final class Main {
+    private Main() {}
+
+    public static void main(String[] args) {
+        AnthropicClient client = AnthropicOkHttpClient.fromEnv();
+
+        SkillCreateResponse skill = client.beta().skills().create();
+    }
+}
+```
+
+Response 200
+
+``` shiki
+{
+  "id": "skill_01JAbcdefghijklmnopqrstuvw",
+  "created_at": "2024-10-30T23:58:27.427722Z",
+  "display_title": "My Custom Skill",
+  "latest_version": "1759178010641129",
+  "source": "custom",
+  "type": "type",
+  "updated_at": "2024-10-30T23:58:27.427722Z"
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+``` shiki
+{
+  "id": "skill_01JAbcdefghijklmnopqrstuvw",
+  "created_at": "2024-10-30T23:58:27.427722Z",
+  "display_title": "My Custom Skill",
+  "latest_version": "1759178010641129",
+  "source": "custom",
+  "type": "type",
+  "updated_at": "2024-10-30T23:58:27.427722Z"

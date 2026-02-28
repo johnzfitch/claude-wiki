@@ -1,0 +1,31 @@
+---
+category: "04-API-Reference"
+fetched_at: "2026-02-22T14:05:22Z"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/versions"
+title: "Versions - Claude API Reference"
+---
+# Versions
+
+##### [Create Skill Version](/docs/en/api/beta/skills/versions/create)
+
+beta.skills.versions.create(skill_id, \*\*kwargs) -\> [VersionCreateResponse](/docs/en/api/beta#version_create_response) { id, created_at, description, 5 more }
+
+POST/v1/skills/{skill_id}/versions
+
+##### [List Skill Versions](/docs/en/api/beta/skills/versions/list)
+
+beta.skills.versions.list(skill_id, \*\*kwargs) -\> PageCursor\<[VersionListResponse](/docs/en/api/beta#version_list_response) { id, created_at, description, 5 more } \>
+
+GET/v1/skills/{skill_id}/versions
+
+##### [Get Skill Version](/docs/en/api/beta/skills/versions/retrieve)
+
+beta.skills.versions.retrieve(version, \*\*kwargs) -\> [VersionRetrieveResponse](/docs/en/api/beta#version_retrieve_response) { id, created_at, description, 5 more }
+
+GET/v1/skills/{skill_id}/versions/{version}
+
+##### [Delete Skill Version](/docs/en/api/beta/skills/versions/delete)
+
+beta.skills.versions.delete(version, \*\*kwargs) -\> [VersionDeleteResponse](/docs/en/api/beta#version_delete_response) { id, type }
+
+DELETE/v1/skills/{skill_id}/versions/{version}

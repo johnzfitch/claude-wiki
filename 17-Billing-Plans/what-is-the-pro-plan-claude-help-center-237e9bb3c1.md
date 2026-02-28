@@ -1,63 +1,18 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-16T21:12:49Z"
+fetched_at: "2026-02-28T11:22:34Z"
 source_url: "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
 title: "What is the Pro plan? | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_f8821c8ff5)
-
-[](#h_ffcfdc11d4)
-
-[](#h_4505a793b5)
-
-[](#h_62ccc00135)
-
-[All Collections](/en/)
-
-[Paid Claude Plans](https://support.claude.com/en/collections/5953830-paid-claude-plans)
-
-[Pro Plan](https://support.claude.com/en/collections/9811198-pro-plan)
-
-What is the Pro plan?
-
 # What is the Pro plan?
 
-Updated over a week ago
-
-Table of contents
-
-[](#h_f8821c8ff5)
-
-[](#h_ffcfdc11d4)
-
-[](#h_4505a793b5)
-
-[](#h_62ccc00135)
 
 This article is about paid Pro plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.
 
 The Pro plan is a paid plan for our Claude chat experience. It is currently available in certain **[supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)**.
 
-## Key Benefits
+## Key benefits
 
 The benefits of the Pro plan are:
 
@@ -73,6 +28,8 @@ The benefits of the Pro plan are:
 
 - **[Claude Code access](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)**
 
+- Access to the **[Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)** research preview
+
 Learn how to **[sign up for the Pro plan](https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan)**.
 
 **Note:** The Pro plan does not include API usage through the Claude Console. If you're interested in both enhanced Claude features and the Claude API, you'll need to **[set up Console access](https://support.claude.com/en/articles/8114521-how-can-i-access-the-claude-api)** to pay for API usage separately.
@@ -85,7 +42,7 @@ The Pro plan is available for \$20 per month (US), with pricing in your local cu
 
 You can choose to save with an annual subscription plan. Annual subscriptions are billed once yearly at a discounted rate.
 
-Visit [claude.ai/upgrade](https://claude.ai/upgrade) or check your mobile app store for current pricing in your region.
+Visit **[claude.ai/upgrade](https://claude.ai/upgrade)** or check your mobile app store for current pricing in your region.
 
 ## How can I get a free or discounted Pro plan?
 
@@ -115,45 +72,17 @@ Pro subscribers can also enable extra usage to continue working with Claude beyo
 
 Related Articles
 
-[](https://support.claude.com/en/articles/8114491-getting-started-with-claude)
 
 Getting started with Claude
 
-[](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)
 
 What is the Team plan?
 
-[](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)
-
-What is the Enterprise plan?
-
-[](https://support.claude.com/en/articles/11049741-what-is-the-max-plan)
 
 What is the Max plan?
 
-[](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)
 
 Using Claude Code with your Pro or Max plan
 
-Did this answer your question?
 
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)
+Extra usage for paid Claude plans

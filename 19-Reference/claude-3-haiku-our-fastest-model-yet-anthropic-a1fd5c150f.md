@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/claude-3-haiku"
 title: "Claude 3 Haiku: our fastest model yet \\ Anthropic"
 ---
-
-Announcements
-
 # Claude 3 Haiku: our fastest model yet
 
 Mar 13, 2024
@@ -30,9 +27,6 @@ Starting today, customers can use Claude 3 Haiku through our [API](https://www.a
 \[3\] Each image is estimated at 1.6K tokens.
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/claude-3-haiku)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/claude-3-haiku)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

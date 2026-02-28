@@ -4,9 +4,6 @@ fetched_at: "2026-02-16T21:12:29Z"
 source_url: "https://www.anthropic.com/news/anthropic-codepath-partnership"
 title: "Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program \\ Anthropic"
 ---
-
-Announcements
-
 # Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program
 
 Feb 13, 2026
@@ -33,7 +30,6 @@ This partnership builds on Anthropic’s work to put AI tools in the hands of ed
 
 The tools changing how software is built shouldn’t only be available to students at well-resourced universities. With CodePath, they won’t be.
 
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-codepath-partnership)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-codepath-partnership)
 
 ## Related content
 

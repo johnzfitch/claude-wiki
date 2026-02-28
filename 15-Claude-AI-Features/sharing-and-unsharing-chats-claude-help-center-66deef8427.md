@@ -1,53 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T20:51:39Z"
+fetched_at: "2026-02-28T11:22:23Z"
 source_url: "https://support.claude.com/en/articles/10593882-sharing-and-unsharing-chats"
 title: "Sharing and Unsharing Chats | Claude Help Center"
 ---
 
-[](/en/)
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-[API Docs](https://docs.claude.com/en/docs/intro)[Release Notes](https://support.claude.com/en/articles/12138966-release-notes)[How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support)
-
-EnglishFrançaisDeutschBahasa IndonesiaItaliano日本語한국어PortuguêsPусский简体中文Español繁體中文
-
-English
-
-Search for articles...
-
-Table of contents
-
-[](#h_788cea0dc7)
-
-[](#h_0f38f93ff1)
-
-[](#h_21e52f8182)
-
-[All Collections](/en/)
-
-[Claude](https://support.claude.com/en/collections/4078531-claude)
-
-[Conversation Management](https://support.claude.com/en/collections/18031977-conversation-management)
-
-Sharing and Unsharing Chats
-
 # Sharing and Unsharing Chats
 
-Updated yesterday
-
-Table of contents
-
-[](#h_788cea0dc7)
-
-[](#h_0f38f93ff1)
-
-[](#h_21e52f8182)
 
 Learn how to create shareable links to your chats with Claude. While chats are always private by default, you can easily create snapshots of your conversations to share via direct link. This guide walks you through the process of sharing and unsharing chats.
 
@@ -87,59 +46,28 @@ To unshare a chat:
 
 Users on free, Pro, or Max plans can review a log of shared chats by navigating to [Settings \> Privacy](https://claude.ai/settings/data-privacy-controls). Find the **Privacy settings** section and click “Manage” next to **Shared chats:**
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1921669913/7cc7be48cfc7a18f9f469d6cd83c/CleanShot+2026-01-08+at+10_20_43%402x.png?expires=1770585300&signature=2c611d43d4801953c7b908c8278133a0c4372f06a6a6de183ddc36e49629067e&req=dSklF894lIheWvMW1HO4zWn5EDMYakBoc9cNIYuX0GHXnWbHVWoK%2BIai5KjH%0ATPD%2FBcRxd3g7xHu9iis%3D%0A)
 
 This will open a **Shared chats** modal listing the title, date shared, and link to each chat, allowing you to easily review and access all your previously-shared content. From here, you also have the option to click “Unshare” next to each listed chat to revoke access to the last snapshot you shared:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1624243810/e6fe1d262597446c7fe21dff9f10/AD_4nXdW-GhByF8uKV7fCq9lTbkVB91FglSL6TSyXAOUk_MLcTV9YsEMBMkm9rgm1oXqv0k3sJh1JhlzZP6tHVkKbDJJ71pDRRtM3aVNG64MDuKDIzgmknh-XDZdNa7biTsTdwGoPr5GRg?expires=1770585300&signature=1b43cd3fcad2aa7cb8169316936223d6167b9f1f5987b0ae36845f0528d20582&req=dSYlEst6noleWfMW1HO4ze44dydknBc9guvTv9woD7aIShoSrFR6tk3xWsrk%0Aa25ced12Ofiyl%2BlUZ8Q%3D%0A)
 
 If you don’t have any shared chat snapshots, the **Shared chats** modal will show “No shared content found”:
 
-[](https://downloads.intercomcdn.com/i/o/lupk8zyo/1624243808/b025db8e598f0c88fb16d83d48d5/AD_4nXeUwCKnmFzzrjMHhfr5By4zk5pJlkEn3wbJ8-aNfu13Yl99IjBywpqPx9G07QRzpH1EwRY7uG7Q9m9fib98Gql1cIV7XwUCTzEgBNu79Ey8tCOS5CEVmwveIcEOxJ4fonBhe3g9MA?expires=1770585300&signature=f050d0c72a0d5e459104ea70536ec1657aabf1f7f8733f93b483502a411932e2&req=dSYlEst6nolfUfMW1HO4zdaFksVxiYyyDeZsm0Gz1HvemgNN4laapY3PQLGJ%0AOA89nE%2B68i9xlH60LMM%3D%0A)
 
 ------------------------------------------------------------------------
 
 Related Articles
 
-[](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them)
 
 What are artifacts and how do I use them?
 
-[](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing)
 
 Project visibility and sharing
 
-[](https://support.claude.com/en/articles/9547008-publishing-and-sharing-artifacts)
 
 Publishing and sharing artifacts
 
-[](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
 
 Getting Started with Local MCP Servers on Claude Desktop
 
-[](https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq)
 
 Anthropic Connectors Directory FAQ
-
-Did this answer your question?
-
-😞
-
-😐
-
-😃
-
-[](/en/)
-
-- [Product](https://www.anthropic.com/product)
-- [Research](https://www.anthropic.com/research)
-- [Company](https://www.anthropic.com/company)
-- [News](https://www.anthropic.com/news)
-- [Careers](https://www.anthropic.com/careers)
-
-- [Terms of Service - Consumer](https://www.anthropic.com/terms)
-- [Terms of Service - Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Privacy Policy](https://www.anthropic.com/privacy)
-- [Usage Policy](https://www.anthropic.com/aup)
-- [Responsible Disclosure Policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Compliance](https://trust.anthropic.com/)

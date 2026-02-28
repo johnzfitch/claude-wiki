@@ -1,4 +1,3 @@
-::: {.cell .markdown}
 # Batch Processing with Message Batches API
 
 Message Batches allow you to process large volumes of Messages requests

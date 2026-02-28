@@ -4,9 +4,6 @@ fetched_at: "2026-02-08T23:10:02Z"
 source_url: "https://www.anthropic.com/news/anthropic-signs-cms-health-tech-ecosystem-pledge-to-advance-healthcare-interoperability"
 title: "Anthropic signs CMS health tech pledge \\ Anthropic"
 ---
-
-Policy
-
 # Anthropic Signs CMS Health Tech Ecosystem Pledge to Advance Healthcare Interoperability
 
 Jul 30, 2025
@@ -26,9 +23,6 @@ At Anthropic, we are focused on creating a healthcare ecosystem of partners who 
 We look forward to continuing to work with policymakers across the U.S. government to ensure the opportunities AI unlocks support the American people. Sectors including healthcare, science, energy infrastructure, and citizen services can use this technology to keep the United States on the frontier of innovation—advancing our economy and communities in unprecedented ways.
 
   
-
-[](https://twitter.com/intent/tweet?text=https://www.anthropic.com/news/anthropic-signs-cms-health-tech-ecosystem-pledge-to-advance-healthcare-interoperability)[](https://www.linkedin.com/shareArticle?mini=true&url=https://www.anthropic.com/news/anthropic-signs-cms-health-tech-ecosystem-pledge-to-advance-healthcare-interoperability)
-
 ## Related content
 
 ### Introducing Claude Opus 4.6

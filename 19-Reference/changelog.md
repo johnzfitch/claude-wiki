@@ -1,19 +1,7 @@
-
-
-
-
-
-
-<!DOCTYPE html>
-<html
-  lang="en"
-  
-  data-color-mode="auto" data-light-theme="light" data-dark-theme="dark"
+data-color-mode="auto" data-light-theme="light" data-dark-theme="dark"
   data-a11y-animated-images="system" data-a11y-link-underlines="true"
   
   >
-
-
 
 
   <head>
@@ -26,8 +14,6 @@
   <link rel="preconnect" href="https://avatars.githubusercontent.com">
 
   
-
-
   <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light-dac525bbd821.css" /><link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/light_high_contrast-56ccf4057897.css" /><link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark-784387e86ac0.css" /><link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/dark_high_contrast-79bd5fd84a86.css" /><link data-color-theme="light" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light-dac525bbd821.css" /><link data-color-theme="light_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_high_contrast-56ccf4057897.css" /><link data-color-theme="light_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_colorblind-0e24752a7d2b.css" /><link data-color-theme="light_colorblind_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_colorblind_high_contrast-412af2517363.css" /><link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_tritanopia-6186e83663dc.css" /><link data-color-theme="light_tritanopia_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/light_tritanopia_high_contrast-9d33c7aea2e7.css" /><link data-color-theme="dark" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark-784387e86ac0.css" /><link data-color-theme="dark_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_high_contrast-79bd5fd84a86.css" /><link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind-75db11311555.css" /><link data-color-theme="dark_colorblind_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind_high_contrast-f2c1045899a2.css" /><link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_tritanopia-f46d293c6ff3.css" /><link data-color-theme="dark_tritanopia_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_tritanopia_high_contrast-e4b5684db29d.css" /><link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_dimmed-72c58078e707.css" /><link data-color-theme="dark_dimmed_high_contrast" crossorigin="anonymous" media="all" rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_dimmed_high_contrast-956cb5dfcb85.css" />
 
   <style type="text/css">
@@ -48,7 +34,6 @@
 <link crossorigin="anonymous" media="all" rel="stylesheet" href="https://github.githubassets.com/assets/code-f0247a8b45d0.css" />
 
   
-
   <script type="application/json" id="client-env">{"locale":"en","featureFlags":["a11y_status_checks_ruleset","action_yml_language_service","actions_custom_images_public_preview_visibility","actions_custom_images_storage_billing_ui_visibility","actions_enable_snapshot_keyword","actions_image_version_event","actions_workflow_language_service","alternate_user_config_repo","api_insights_show_missing_data_banner","arianotify_comprehensive_migration","codespaces_prebuild_region_target_update","coding_agent_model_selection","contentful_lp_footnotes","copilot_3p_agent_hovercards","copilot_agent_sessions_alive_updates","copilot_agent_task_list_v2","copilot_agent_task_submit_with_modifier","copilot_agent_tasks_btn_code_nav","copilot_agent_tasks_btn_code_view","copilot_agent_tasks_btn_code_view_lines","copilot_agent_tasks_btn_repo","copilot_api_agentic_issue_marshal_yaml","copilot_ask_mode_dropdown","copilot_chat_agents_empty_state","copilot_chat_attach_multiple_images","copilot_chat_clear_model_selection_for_default_change","copilot_chat_file_redirect","copilot_chat_input_commands","copilot_chat_opening_thread_switch","copilot_chat_reduce_quota_checks","copilot_chat_search_bar_redirect","copilot_chat_selection_attachments","copilot_chat_vision_in_claude","copilot_chat_vision_preview_gate","copilot_coding_agent_task_response","copilot_custom_copilots","copilot_custom_copilots_feature_preview","copilot_duplicate_thread","copilot_extensions_hide_in_dotcom_chat","copilot_extensions_removal_on_marketplace","copilot_features_raycast_logo","copilot_features_sql_server_logo","copilot_features_zed_logo","copilot_file_block_ref_matching","copilot_ftp_hyperspace_upgrade_prompt","copilot_icebreakers_experiment_dashboard","copilot_icebreakers_experiment_hyperspace","copilot_immersive_job_result_preview","copilot_immersive_structured_model_picker","copilot_immersive_task_hyperlinking","copilot_immersive_task_within_chat_thread","copilot_mc_cli_resume_any_users_task","copilot_org_policy_page_focus_mode","copilot_redirect_header_button_to_agents","copilot_security_alert_assignee_options","copilot_share_active_subthread","copilot_spaces_ga","copilot_spaces_individual_policies_ga","copilot_spaces_pagination","copilot_spark_empty_state","copilot_spark_handle_nil_friendly_name","copilot_stable_conversation_view","copilot_swe_agent_progress_commands","copilot_swe_agent_use_subagents","copilot_unconfigured_is_inherited","custom_properties_consolidate_default_value_input","dashboard_lists_max_age_filter","dashboard_universe_2025_feedback_dialog","dom_node_counts","enterprise_ai_controls","failbot_report_error_react_apps_on_page","fetch_graphql_filter_noise_errors","flex_cta_groups_mvp","global_nav_react","hyperspace_2025_logged_out_batch_1","initial_per_page_pagination_updates","issue_fields_compact_view","issue_fields_global_search","issue_fields_report_usage","issue_fields_timeline_events","issues_cache_operation_timeout","issues_cca_assign_actor_with_agent","issues_default_best_match_sort","issues_expanded_file_types","issues_index_semantic_search","issues_lazy_load_comment_box_suggestions","issues_react_auto_retry_on_error","issues_react_bots_timeline_pagination","issues_react_chrome_container_query_fix","issues_react_client_side_caching_analytics","issues_react_prohibit_title_fallback","issues_react_safari_scroll_preservation","issues_react_use_turbo_for_cross_repo_navigation","issues_report_sidebar_interactions","landing_pages_ninetailed","lifecycle_label_name_updates","marketing_pages_search_explore_provider","memex_default_issue_create_repository","memex_display_button_config_menu","memex_grouped_by_edit_route","memex_live_update_hovercard","memex_mwl_filter_field_delimiter","mission_control_retry_on_401","mission_control_use_body_html","open_agent_session_in_vscode_insiders","open_agent_session_in_vscode_stable","primer_react_css_has_selector_perf","projects_assignee_max_limit","react_quality_profiling","repos_insights_remove_new_url","ruleset_deletion_confirmation","sample_network_conn_type","session_logs_ungroup_reasoning_text","site_calculator_actions_2025","site_features_copilot_universe","site_homepage_collaborate_video","spark_prompt_secret_scanning","spark_server_connection_status","suppress_automated_browser_vitals","suppress_non_representative_vitals","swe_agent_member_requests","viewscreen_sandbox","webp_support","workbench_store_readonly"],"copilotApiOverrideUrl":"https://api.githubcopilot.com"}</script>
 <script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/high-contrast-cookie-a43e2fc159e9.js"></script>
 <script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/wp-runtime-bdd1263583c0.js" defer="defer"></script>
@@ -122,7 +107,6 @@
   <title>claude-code/CHANGELOG.md at main · anthropics/claude-code · GitHub</title>
 
 
-
   <meta name="route-pattern" content="/:user_id/:repository/blob/*name(/*path)" data-turbo-transient>
   <meta name="route-controller" content="blob" data-turbo-transient>
   <meta name="route-action" content="show" data-turbo-transient>
@@ -151,18 +135,12 @@
   <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-turbo-transient="true" />
 
   
-
-
-
-
     <meta name="user-login" content="">
 
   
-
     <meta name="viewport" content="width=device-width">
 
     
-
       <meta name="description" content="Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands. - claude-code/CHANGELOG.md at main · anthropics/claude-code">
 
       <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
@@ -175,11 +153,7 @@
   <meta property="og:image" content="https://opengraph.githubassets.com/7a919422af2f138ff8c7692427ed3694dee604343bd77ead69bc77efaad30b14/anthropics/claude-code" /><meta property="og:image:alt" content="Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflo..." /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="600" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="claude-code/CHANGELOG.md at main · anthropics/claude-code" /><meta property="og:url" content="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" /><meta property="og:description" content="Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflo..." />
   
 
-
-
-
       <meta name="hostname" content="github.com">
-
 
 
         <meta name="expected-hostname" content="github.com">
@@ -200,9 +174,6 @@
 
   <meta name="octolytics-dimension-user_id" content="76263028" /><meta name="octolytics-dimension-user_login" content="anthropics" /><meta name="octolytics-dimension-repository_id" content="937253475" /><meta name="octolytics-dimension-repository_nwo" content="anthropics/claude-code" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="937253475" /><meta name="octolytics-dimension-repository_network_root_nwo" content="anthropics/claude-code" />
 
-
-
-    
 
     <meta name="turbo-body-classes" content="logged-out env-production page-responsive">
   <meta name="disable-turbo" content="false">
@@ -254,14 +225,6 @@
 </react-partial>
 
 
-
-
-
-      
-
-          
-
-              
 <script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/43862-af2eb9294b37.js" defer="defer"></script>
 <script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/85110-610ad4f06821.js" defer="defer"></script>
 <script crossorigin="anonymous" type="application/javascript" src="https://github.githubassets.com/assets/sessions-5c3fd6bced71.js" defer="defer"></script>
@@ -358,10 +321,8 @@
 </react-partial>
 
 
-
         <div class="d-flex flex-column flex-lg-row width-full flex-justify-end flex-lg-items-center text-center mt-3 mt-lg-0 text-lg-left ml-lg-3">
                 
-
 
 <qbsearch-input class="search-input" data-scope="repo:anthropics/claude-code" data-custom-scopes-path="/search/custom_scopes" data-delete-custom-scopes-csrf="VQ7wM09TahmQndqtFaGnHhnk5kQ-Na8vvMGVCwhOqq2299GEy3cf-duXtgQinwDBm8dsXvw1mpyzcG6g3BWDaw" data-max-custom-scopes="10" data-header-redesign-enabled="false" data-initial-value="" data-blackbird-suggestions-path="/search/suggestions" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" data-current-repository="anthropics/claude-code" data-current-org="anthropics" data-current-owner="" data-logged-in="false" data-copilot-chat-enabled="false" data-nl-search-enabled="false" data-retain-scroll-position="true">
   <div
@@ -871,22 +832,13 @@
 </button><tool-tip id="tooltip-f54cb01c-c670-428a-99f0-52baddc8dff4" for="icon-button-c630c498-8d5b-4483-9c8c-59c31b1809a0" popover="manual" data-direction="s" data-type="label" data-view-component="true" class="sr-only position-absolute">Dismiss alert</tool-tip>
 
 
-  
 </div>
     </div>
 
   <div id="start-of-content" class="show-on-focus"></div>
 
 
-
-
-
-
-
-
     <div id="js-flash-container" class="flash-container" data-turbo-replace>
-
-
 
 
   <template class="js-flash-template">
@@ -909,13 +861,6 @@
 </div>
 
 
-    
-
-
-
-
-
-
   <div
     class="application-main "
     data-commit-hovercards-enabled
@@ -927,17 +872,6 @@
     <main id="js-repo-pjax-container" >
       
       
-    
-
-    
-
-
-
-
-
-
-  
-
   <div id="repository-container-header"  class="pt-3 hide-full-screen" style="background-color: var(--page-header-bgColor, var(--color-page-header-bg));" data-turbo-replace>
 
       <div class="d-flex flex-nowrap flex-justify-end mb-3  px-3 px-lg-5" style="gap: 1rem;">
@@ -968,7 +902,6 @@
             <ul class="pagehead-actions flex-shrink-0 d-none d-md-inline" style="padding: 2px 0;">
     
       
-
   <li>
             <a href="/login?return_to=%2Fanthropics%2Fclaude-code" rel="nofollow" id="repository-details-watch-button" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="b6e75335b1624378b9c06f7477aa878c2bb0d6657bfc01563813b3933b129d96" aria-label="You must be signed in to change notification settings" data-view-component="true" class="btn-sm btn">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-bell mr-2">
     <path d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006c0 .002.002.004.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"></path>
@@ -1017,7 +950,6 @@
           <span id="code-repo-tab-count" data-pjax-replace="" data-turbo-replace="" title="Not available" data-view-component="true" class="Counter"></span>
 
 
-    
 </a></li>
       <li data-view-component="true" class="d-inline-flex">
   <a id="issues-tab" href="/anthropics/claude-code/issues" data-tab-item="i1issues-tab" data-selected-links="repo_issues repo_labels repo_milestones /anthropics/claude-code/issues" data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" data-hotkey="g i" data-react-nav="issues-react" data-analytics-event="{&quot;category&quot;:&quot;Underline navbar&quot;,&quot;action&quot;:&quot;Click tab&quot;,&quot;label&quot;:&quot;Issues&quot;,&quot;target&quot;:&quot;UNDERLINE_NAV.TAB&quot;}" data-view-component="true" class="UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item">
@@ -1029,7 +961,6 @@
           <span id="issues-repo-tab-count" data-pjax-replace="" data-turbo-replace="" title="5,000+" data-view-component="true" class="Counter">5k+</span>
 
 
-    
 </a></li>
       <li data-view-component="true" class="d-inline-flex">
   <a id="pull-requests-tab" href="/anthropics/claude-code/pulls" data-tab-item="i2pull-requests-tab" data-selected-links="repo_pulls checks /anthropics/claude-code/pulls" data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" data-hotkey="g p" data-analytics-event="{&quot;category&quot;:&quot;Underline navbar&quot;,&quot;action&quot;:&quot;Click tab&quot;,&quot;label&quot;:&quot;Pull requests&quot;,&quot;target&quot;:&quot;UNDERLINE_NAV.TAB&quot;}" data-view-component="true" class="UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item">
@@ -1041,7 +972,6 @@
           <span id="pull-requests-repo-tab-count" data-pjax-replace="" data-turbo-replace="" title="161" data-view-component="true" class="Counter">161</span>
 
 
-    
 </a></li>
       <li data-view-component="true" class="d-inline-flex">
   <a id="actions-tab" href="/anthropics/claude-code/actions" data-tab-item="i3actions-tab" data-selected-links="repo_actions /anthropics/claude-code/actions" data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" data-hotkey="g a" data-analytics-event="{&quot;category&quot;:&quot;Underline navbar&quot;,&quot;action&quot;:&quot;Click tab&quot;,&quot;label&quot;:&quot;Actions&quot;,&quot;target&quot;:&quot;UNDERLINE_NAV.TAB&quot;}" data-view-component="true" class="UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item">
@@ -1053,7 +983,6 @@
           <span id="actions-repo-tab-count" data-pjax-replace="" data-turbo-replace="" title="Not available" data-view-component="true" class="Counter"></span>
 
 
-    
 </a></li>
       <li data-view-component="true" class="d-inline-flex">
   <a id="security-tab" href="/anthropics/claude-code/security" data-tab-item="i4security-tab" data-selected-links="security overview alerts policy token_scanning code_scanning /anthropics/claude-code/security" data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" data-hotkey="g s" data-analytics-event="{&quot;category&quot;:&quot;Underline navbar&quot;,&quot;action&quot;:&quot;Click tab&quot;,&quot;label&quot;:&quot;Security&quot;,&quot;target&quot;:&quot;UNDERLINE_NAV.TAB&quot;}" data-view-component="true" class="UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item">
@@ -1065,7 +994,6 @@
           <span id="security-repo-tab-count" data-pjax-replace="" data-turbo-replace="" title="14" data-view-component="true" class="Counter">14</span>
 
 
-    
 </a></li>
       <li data-view-component="true" class="d-inline-flex">
   <a id="insights-tab" href="/anthropics/claude-code/pulse" data-tab-item="i5insights-tab" data-selected-links="repo_graphs repo_contributors dependency_graph dependabot_updates pulse people community /anthropics/claude-code/pulse" data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" data-analytics-event="{&quot;category&quot;:&quot;Underline navbar&quot;,&quot;action&quot;:&quot;Click tab&quot;,&quot;label&quot;:&quot;Insights&quot;,&quot;target&quot;:&quot;UNDERLINE_NAV.TAB&quot;}" data-view-component="true" class="UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item">
@@ -1077,7 +1005,6 @@
           <span id="insights-repo-tab-count" data-pjax-replace="" data-turbo-replace="" title="Not available" data-view-component="true" class="Counter"></span>
 
 
-    
 </a></li>
 </ul>
     <div style="visibility:hidden;" data-view-component="true" class="UnderlineNav-actions js-responsive-underlinenav-overflow position-absolute pr-3 pr-md-4 pr-lg-5 right-0">      <action-menu data-select-variant="none" data-view-component="true">
@@ -1203,25 +1130,9 @@
   </div>
   
 
-
-
 <turbo-frame id="repo-content-turbo-frame" target="_top" data-turbo-action="advance" class="">
     <div id="repo-content-pjax-container" class="repository-content " >
     
-
-
-
-    
-      
-    
-
-
-
-
-
-
-
-
 
 <react-app
   app-name="react-code-view"
@@ -1241,7 +1152,6 @@
 </turbo-frame>
 
 
-
   </div>
 
 </turbo-frame>
@@ -1255,8 +1165,6 @@
   <h2 class='sr-only'>Footer</h2>
 
   
-
-
   <div class="d-flex flex-justify-center flex-items-center flex-column-reverse flex-lg-row flex-wrap flex-lg-nowrap">
     <div class="d-flex flex-items-center flex-shrink-0 mx-2">
       <a aria-label="GitHub Homepage" class="footer-octicon mr-2" href="https://github.com">
@@ -1334,14 +1242,11 @@
 </footer>
 
 
-
     <ghcc-consent id="ghcc" class="position-fixed bottom-0 left-0" style="z-index: 999999"
       data-locale="en"
       data-initial-cookie-consent-allowed=""
       data-cookie-consent-required="false"
     ></ghcc-consent>
-
-
 
 
   <div id="ajax-error-message" class="ajax-error-message flash flash-error" hidden>
@@ -1401,11 +1306,8 @@
 </template>
 
 
-
-
     </div>
     <div id="js-global-screen-reader-notice" class="sr-only mt-n1" aria-live="polite" aria-atomic="true" ></div>
     <div id="js-global-screen-reader-notice-assertive" class="sr-only mt-n1" aria-live="assertive" aria-atomic="true"></div>
   </body>
 </html>
-

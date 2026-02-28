@@ -1,4 +1,3 @@
-::: {#eb718d24 .cell .markdown}
 # Automatic Context Compaction
 
 Long-running agentic tasks can often exceed context limits. Tool heavy

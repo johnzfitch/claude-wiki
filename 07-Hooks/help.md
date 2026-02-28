@@ -2,7 +2,6 @@
 description: Get help with the hookify plugin
 allowed-tools: ["Read"]
 ---
-
 # Hookify Plugin Help
 
 Explain how the hookify plugin works and how to use it.
