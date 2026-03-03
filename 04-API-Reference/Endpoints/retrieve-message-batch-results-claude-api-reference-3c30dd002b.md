@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:45:52Z"
+fetched_at: "2026-03-03T15:00:58Z"
 source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/results"
 title: "Retrieve Message Batch results - Claude API Reference"
 ---
+
 # Retrieve Message Batch results
 
 [MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response) messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsrequestOptions = RequestOptions.none())

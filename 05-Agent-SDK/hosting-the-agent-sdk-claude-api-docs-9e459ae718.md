@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:07:07Z"
+fetched_at: "2026-03-03T14:55:50Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/hosting"
 title: "Hosting the Agent SDK - Claude API Docs"
 ---
+
 # Hosting the Agent SDK
 
 

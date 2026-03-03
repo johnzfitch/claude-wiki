@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:54:26Z"
+fetched_at: "2026-03-03T15:02:16Z"
 source_url: "https://platform.claude.com/docs/en/api/go/completions"
 title: "Completions - Claude API Reference"
 ---
+
 # Completions
 
 ##### [Create a Text Completion](/docs/en/api/completions/create)

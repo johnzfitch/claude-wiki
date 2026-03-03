@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:23:21Z"
+fetched_at: "2026-03-03T14:56:21Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/prose-polisher"
 title: "Prose polisher - Claude API Docs"
 ---
+
 # Prose polisher
 
 

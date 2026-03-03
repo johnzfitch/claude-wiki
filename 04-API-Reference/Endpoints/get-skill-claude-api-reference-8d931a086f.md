@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:23:57Z"
+fetched_at: "2026-03-03T15:06:55Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/retrieve"
 title: "Get Skill - Claude API Reference"
 ---
+
 # Get Skill
 
 [SkillRetrieveResponse](/docs/en/api/beta#SkillRetrieveResponse) Beta.Skills.Retrieve(SkillRetrieveParamsparameters, CancellationTokencancellationToken = default)

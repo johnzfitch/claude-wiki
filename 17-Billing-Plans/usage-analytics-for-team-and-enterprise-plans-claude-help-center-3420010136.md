@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:18Z"
+fetched_at: "2026-03-03T15:08:11Z"
 source_url: "https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans"
 title: "Usage analytics for Team and Enterprise plans | Claude Help Center"
 ---

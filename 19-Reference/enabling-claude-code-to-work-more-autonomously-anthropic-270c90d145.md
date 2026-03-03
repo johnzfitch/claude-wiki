@@ -1,14 +1,15 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:44Z"
+fetched_at: "2026-03-03T15:07:17Z"
 source_url: "https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously"
 title: "Enabling Claude Code to work more autonomously \\ Anthropic"
 ---
+
 # Enabling Claude Code to work more autonomously
 
 Sep 29, 2025
 
-We’re introducing several upgrades to Claude Code: a native VS Code extension, version 2.0 of our terminal interface, and checkpoints for autonomous operation. Powered by [Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5), Claude Code now handles longer, more complex development tasks in your terminal and IDE.
+We’re introducing several upgrades to [Claude Code](https://claude.com/product/claude-code): a native VS Code extension, version 2.0 of our terminal interface, and checkpoints for autonomous operation. Powered by [Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5), Claude Code now handles longer, more complex development tasks in your terminal and IDE.
 
 ## Claude Code on more surfaces
 
@@ -58,16 +59,18 @@ These updates are available now for Claude Code users.
 
 ## Related content
 
-### Detecting and preventing distillation attacks
+### Statement on the comments from Secretary of War Pete Hegseth
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+Anthropic's response to the Secretary of War and advice to customers.
 
-### Making frontier cybersecurity capabilities available to defenders
+[Read more](/news/statement-comments-secretary-war)
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+### Statement from Dario Amodei on our discussions with the Department of War
 
-[Read more](/news/claude-code-security)
+A statement from our CEO on national security uses of AI.
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/statement-department-of-war)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Anthropic acquires Vercept to advance Claude's computer use capabilities
+
+[Read more](/news/acquires-vercept)

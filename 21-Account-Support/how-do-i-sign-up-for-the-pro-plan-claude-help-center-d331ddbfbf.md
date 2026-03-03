@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:34Z"
+fetched_at: "2026-03-03T15:08:21Z"
 source_url: "https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan"
 title: "How do I sign up for the Pro plan? | Claude Help Center"
 ---

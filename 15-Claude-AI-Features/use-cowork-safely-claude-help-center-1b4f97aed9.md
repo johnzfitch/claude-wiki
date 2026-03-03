@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:23Z"
+fetched_at: "2026-03-03T15:08:29Z"
 source_url: "https://support.claude.com/en/articles/13364135-use-cowork-safely"
 title: "Use Cowork safely | Claude Help Center"
 ---
@@ -104,7 +104,7 @@ When using the Claude in Excel and Claude in PowerPoint add-ins with Cowork, Cla
 
 **7. Report suspicious behavior immediately**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#9ce9eff9eeeffdfaf9e8e5dcfdf2e8f4eef3ecf5ffb2fff3f1) or use the in-app feedback button. Your reports help us improve our defenses.
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#add8dec8dfdecccbc8d9d4edccc3d9c5dfc2ddc4ce83cec2c0) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 

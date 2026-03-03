@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:05:48Z"
+fetched_at: "2026-03-03T15:04:34Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/versions/delete"
 title: "Delete Skill Version - Claude API Reference"
 ---
+
 # Delete Skill Version
 
 beta.skills.versions.delete(version, \*\*kwargs) -\> [VersionDeleteResponse](/docs/en/api/beta#version_delete_response) { id, type }

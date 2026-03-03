@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T10:57:10Z"
+fetched_at: "2026-03-03T14:55:29Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/migration-guide"
 title: "Migration guide - Claude API Docs"
 ---
+
 # Migration guide
 
 
@@ -246,7 +247,7 @@ When migrating from Sonnet 4.5
 
     - **Eliminating preambles** (removing "Here is..." phrases): Add direct instructions in the system prompt: "Respond directly without preamble. Do not start with phrases like 'Here is...', 'Based on...', etc."
 
-    - **Avoiding bad refusals**: Claude is much better at appropriate refusals now. Clear prompting in the user message without prefill should be sufficient.
+    - **Avoiding bad refusals:** Claude is much better at appropriate refusals now. Clear prompting in the user message without prefill should be sufficient.
 
     - **Continuations** (resuming interrupted responses): Move the continuation to the user message: "Your previous response was interrupted and ended with `[previous_response]`. Continue from where you left off."
 
@@ -562,7 +563,7 @@ Test in development environment before production deployment
 
 ## 
 
-Need help?
+Get help
 
 - Check the [API documentation](/docs/en/api/overview) for detailed specifications
 - Review [model capabilities](/docs/en/about-claude/models/overview) for performance comparisons

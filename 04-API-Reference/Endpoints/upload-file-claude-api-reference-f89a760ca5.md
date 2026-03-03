@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:23:05Z"
+fetched_at: "2026-03-03T15:06:51Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/upload"
 title: "Upload File - Claude API Reference"
 ---
+
 # Upload File
 
 [FileMetadata](/docs/en/api/beta#file_metadata) Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)

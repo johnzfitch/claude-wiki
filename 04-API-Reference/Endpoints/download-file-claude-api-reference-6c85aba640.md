@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:31:27Z"
+fetched_at: "2026-03-03T14:57:49Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/files/download"
 title: "Download File - Claude API Reference"
 ---
+
 # Download File
 
 GET/v1/files/{file_id}/content

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:36:23Z"
+fetched_at: "2026-03-03T14:59:01Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/list"
 title: "List Message Batches - Claude API Reference"
 ---
+
 # List Message Batches
 
 client.beta.messages.batches.list(BatchListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaMessageBatch](/docs/en/api/beta#beta_message_batch) { id, archived_at, cancel_initiated_at, 7 more } \>

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:17Z"
+fetched_at: "2026-03-03T15:08:10Z"
 source_url: "https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans"
 title: "Can you delete data that I sent via Team and Enterprise plans? | Claude Help Center"
 ---

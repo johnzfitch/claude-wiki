@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:59:30Z"
+fetched_at: "2026-03-03T15:03:21Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/delete"
 title: "Delete Skill - Claude API Reference"
 ---
+
 # Delete Skill
 
 client.Beta.Skills.Delete(ctx, skillID, body) (\*[BetaSkillDeleteResponse](/docs/en/api/beta#BetaSkillDeleteResponse), error)

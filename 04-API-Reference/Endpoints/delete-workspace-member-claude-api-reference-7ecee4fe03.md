@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:27:03Z"
+fetched_at: "2026-03-03T15:07:12Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/delete"
 title: "Delete Workspace Member - Claude API Reference"
 ---
+
 # Delete Workspace Member
 
 DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}

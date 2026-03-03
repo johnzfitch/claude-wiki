@@ -1,10 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T00:42:48Z"
-last_modified: "Fri, 27 Feb 2026 20:34:38 GMT"
+fetched_at: "2026-03-03T15:07:46Z"
+last_modified: "Tue, 03 Mar 2026 03:18:20 GMT"
 source_url: "https://claude.com/blog/skills-explained"
 title: "Skills explained: How Skills compares to prompts, Projects, MCP, and subagents | Claude"
 ---
+
 # Skills explained: How Skills compares to prompts, Projects, MCP, and subagents
 
 Skills are an increasingly powerful tool for creating custom AI workflows and agents, but where do they fit in the Claude stack? We explain what tool to use when - and how they all work together.

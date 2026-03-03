@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:34Z"
+fetched_at: "2026-03-03T15:08:09Z"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 title: "Using interactive connectors in Claude | Claude Help Center"
 ---
@@ -130,7 +130,7 @@ Related Articles
 Get started with custom connectors using remote MCP
 
 
-Use the Connectors Directory to extend Claude’s capabilities
+Use connectors to extend Claude's capabilities
 
 
 When to use desktop and web connectors

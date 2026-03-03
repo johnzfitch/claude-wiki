@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:24:47Z"
+fetched_at: "2026-03-03T15:07:00Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/organizations/me"
 title: "Get Current Organization - Claude API Reference"
 ---
+
 # Get Current Organization
 
 GET/v1/organizations/me

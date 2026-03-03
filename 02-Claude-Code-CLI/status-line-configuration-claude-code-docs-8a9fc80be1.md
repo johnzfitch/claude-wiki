@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-28T11:22:32Z"
+fetched_at: "2026-03-03T15:08:38Z"
 source_url: "https://code.claude.com/docs/en/statusline"
 title: "Status line configuration - Claude Code Docs"
 ---

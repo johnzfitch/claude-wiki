@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:30:16Z"
+fetched_at: "2026-03-03T14:57:39Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/count_tokens"
 title: "Count tokens in a Message - Claude API Reference"
 ---
+
 # Count tokens in a Message
 
 POST/v1/messages/count_tokens

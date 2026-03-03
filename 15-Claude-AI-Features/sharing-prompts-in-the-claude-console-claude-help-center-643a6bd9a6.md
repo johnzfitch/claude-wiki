@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:21Z"
+fetched_at: "2026-03-03T15:08:31Z"
 source_url: "https://support.claude.com/en/articles/10722177-sharing-prompts-in-the-claude-console"
 title: "Sharing Prompts in the Claude Console | Claude Help Center"
 ---
@@ -83,10 +83,10 @@ Creating and managing Workspaces in the Claude Console
 Getting started with Claude in Slack
 
 
-Prototype AI-Powered Apps with Claude artifacts
-
-
 Using Claude in Slack
+
+
+Use Claude in Excel
 
 
 Inviting members to the Claude Console

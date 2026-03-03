@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:07:50Z"
+fetched_at: "2026-03-03T14:55:54Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/skills"
 title: "Agent Skills in the SDK - Claude API Docs"
 ---
+
 # Agent Skills in the SDK
 
 
@@ -184,7 +185,7 @@ options = ClaudeAgentOptions(
 )
 ```
 
-For more details on `settingSources`/`setting_sources`, see the [TypeScript SDK reference](/docs/en/agent-sdk/typescript#settingsource) or [Python SDK reference](/docs/en/agent-sdk/python#settingsource).
+For more details on `settingSources`/`setting_sources`, see the [TypeScript SDK reference](/docs/en/agent-sdk/typescript#setting-source) or [Python SDK reference](/docs/en/agent-sdk/python#setting-source).
 
 **Check working directory**: The SDK loads Skills relative to the `cwd` option. Ensure it points to a directory containing `.claude/skills/`:
 

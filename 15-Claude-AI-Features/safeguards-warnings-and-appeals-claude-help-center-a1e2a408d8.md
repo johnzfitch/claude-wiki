@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:24Z"
+fetched_at: "2026-03-03T15:08:30Z"
 source_url: "https://support.claude.com/en/articles/8241253-safeguards-warnings-and-appeals"
 title: "Safeguards Warnings and Appeals | Claude Help Center"
 ---
@@ -36,7 +36,7 @@ If you work in cybersecurity and believe your account has been incorrectly restr
 
 As part of our safety process, we warn users if we believe their prompts are violating our [Usage Policy](https://www.anthropic.com/legal/aup). For API customers, these warnings are linked to ongoing thresholds of violative behavior across their entire API account.
 
-If you believe we’ve made a mistake in issuing you a warning, please email [\[email protected\]](/cdn-cgi/l/email-protection#196c6a7c6b6a787f7c6d605978776d716b7669707a377a7674) with the details of your situation and your account information.
+If you believe we’ve made a mistake in issuing you a warning, please email [\[email protected\]](/cdn-cgi/l/email-protection#235650465150424546575a63424d574b514c534a400d404c4e) with the details of your situation and your account information.
 
 ------------------------------------------------------------------------
 

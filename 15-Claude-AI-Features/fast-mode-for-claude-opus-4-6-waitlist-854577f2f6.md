@@ -1,10 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T00:41:38Z"
-last_modified: "Fri, 27 Feb 2026 21:01:29 GMT"
+fetched_at: "2026-03-03T15:07:42Z"
+last_modified: "Mon, 02 Mar 2026 21:18:13 GMT"
 source_url: "https://claude.com/fast-mode"
 title: "Fast mode for Claude Opus 4.6 waitlist"
 ---
+
 # Fast mode for Claude Opus 4.6 waitlist
 
 Fast mode for Opus 4.6 is available as a limited research preview on the [Claude Developer Platform (API)](https://platform.claude.com/docs/en/build-with-claude/fast-mode). Interested customers can join the waitlist by completing this form.

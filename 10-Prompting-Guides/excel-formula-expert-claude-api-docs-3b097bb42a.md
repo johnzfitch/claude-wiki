@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:20:59Z"
+fetched_at: "2026-03-03T14:56:08Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/excel-formula-expert"
 title: "Excel formula expert - Claude API Docs"
 ---
+
 # Excel formula expert
 
 

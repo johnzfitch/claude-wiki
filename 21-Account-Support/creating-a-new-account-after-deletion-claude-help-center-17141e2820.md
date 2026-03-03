@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:24Z"
+fetched_at: "2026-03-03T15:08:30Z"
 source_url: "https://support.claude.com/en/articles/12109679-creating-a-new-account-after-deletion"
 title: "Creating a new account after deletion | Claude Help Center"
 ---

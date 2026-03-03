@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-28T11:22:23Z"
+fetched_at: "2026-03-03T15:08:29Z"
 source_url: "https://support.claude.com/en/articles/9002504-can-claude-produce-images"
 title: "Can Claude produce images? | Claude Help Center"
 ---

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:27:29Z"
+fetched_at: "2026-03-03T15:07:14Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/api_keys/update"
 title: "Update API Key - Claude API Reference"
 ---
+
 # Update API Key
 
 POST/v1/organizations/api_keys/{api_key_id}

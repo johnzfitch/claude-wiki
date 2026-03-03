@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:45:20Z"
+fetched_at: "2026-03-03T15:00:55Z"
 source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/create"
 title: "Create a Message Batch - Claude API Reference"
 ---
+
 # Create a Message Batch
 
 [MessageBatch](/docs/en/api/messages#message_batch) messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())

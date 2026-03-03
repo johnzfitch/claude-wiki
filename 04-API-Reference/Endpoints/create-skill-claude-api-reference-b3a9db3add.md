@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:59:11Z"
+fetched_at: "2026-03-03T15:03:19Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/create"
 title: "Create Skill - Claude API Reference"
 ---
+
 # Create Skill
 
 client.Beta.Skills.New(ctx, params) (\*[BetaSkillNewResponse](/docs/en/api/beta#BetaSkillNewResponse), error)

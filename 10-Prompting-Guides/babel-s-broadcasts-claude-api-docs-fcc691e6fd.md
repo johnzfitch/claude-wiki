@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:26:40Z"
+fetched_at: "2026-03-03T14:56:40Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/babels-broadcasts"
 title: "Babel's broadcasts - Claude API Docs"
 ---
+
 # Babel's broadcasts
 
 

@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:46:10Z"
+fetched_at: "2026-03-03T15:01:00Z"
 source_url: "https://platform.claude.com/docs/en/api/java/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
+
 # Get a Model
 
 [ModelInfo](/docs/en/api/models#model_info) models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())

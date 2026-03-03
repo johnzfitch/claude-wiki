@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:24:32Z"
+fetched_at: "2026-03-03T14:56:28Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/grammar-genie"
 title: "Grammar genie - Claude API Docs"
 ---
+
 # Grammar genie
 
 

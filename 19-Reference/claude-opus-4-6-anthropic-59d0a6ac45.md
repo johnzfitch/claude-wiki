@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-28T11:22:14Z"
+fetched_at: "2026-03-03T15:08:14Z"
 source_url: "https://anthropic.com/news/claude-opus-4-6"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---
@@ -27,11 +27,11 @@ Coding
 
 Reasoning
 
-In Claude Code, you can now assemble [*agent teams*](https://code.claude.com/docs/en/agent-teams) to work on tasks together. On the API, Claude can use [*compaction*](https://platform.claude.com/docs/en/build-with-claude/compaction) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](https://platform.claude.com/docs/en/build-with-claude/effort) controls to give developers more control over intelligence, speed, and cost.
+In [Claude Code](https://claude.com/product/claude-code), you can now assemble [*agent teams*](https://code.claude.com/docs/en/agent-teams) to work on tasks together. On the API, Claude can use [*compaction*](https://platform.claude.com/docs/en/build-with-claude/compaction) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](https://platform.claude.com/docs/en/build-with-claude/effort) controls to give developers more control over intelligence, speed, and cost.
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
-Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.10d72495-63e8-4323-9ecf-5c3a1f42d1f0), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
+Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.ad1e2a79-c5b8-42c0-955c-e4dcc00f242e), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
 
 We cover the model, our new product updates, our evaluations, and our extensive safety testing in depth below.
 

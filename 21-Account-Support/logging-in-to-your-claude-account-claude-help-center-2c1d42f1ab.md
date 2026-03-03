@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:23Z"
+fetched_at: "2026-03-03T15:08:28Z"
 source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
 title: "Logging in to your Claude account | Claude Help Center"
 ---
@@ -117,7 +117,7 @@ FAQs on Using Claude for Education at Your University
 Set up the Claude LTI in Canvas by Instructure
 
 
-How to gift a Claude subscription
+How to redeem a Claude gift subscription
 
 
 Logging in to your Console account

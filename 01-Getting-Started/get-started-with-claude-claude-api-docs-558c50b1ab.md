@@ -1,9 +1,10 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-02-24T04:01:12Z"
+fetched_at: "2026-03-03T14:55:25Z"
 source_url: "https://platform.claude.com/docs/en/get-started"
 title: "Get started with Claude - Claude API Docs"
 ---
+
 # Get started with Claude
 
 

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:34:19Z"
+fetched_at: "2026-03-03T14:58:21Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/messages/batches/results"
 title: "Retrieve Message Batch results - Claude API Reference"
 ---
+
 # Retrieve Message Batch results
 
 client.messages.batches.results(stringmessageBatchID, RequestOptionsoptions?): [MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response) { custom_id, result } \| Stream\<[MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response) { custom_id, result } \>

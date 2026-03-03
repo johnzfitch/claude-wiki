@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:31:39Z"
+fetched_at: "2026-03-03T14:57:50Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/files/delete"
 title: "Delete File - Claude API Reference"
 ---
+
 # Delete File
 
 DELETE/v1/files/{file_id}

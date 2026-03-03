@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:32:37Z"
+fetched_at: "2026-03-03T14:57:55Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions/delete"
 title: "Delete Skill Version - Claude API Reference"
 ---
+
 # Delete Skill Version
 
 DELETE/v1/skills/{skill_id}/versions/{version}

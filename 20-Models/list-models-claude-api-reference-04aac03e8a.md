@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:56:08Z"
+fetched_at: "2026-03-03T15:02:39Z"
 source_url: "https://platform.claude.com/docs/en/api/go/models/list"
 title: "List Models - Claude API Reference"
 ---
+
 # List Models
 
 client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)

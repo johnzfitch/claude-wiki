@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:43Z"
+fetched_at: "2026-03-03T15:07:17Z"
 source_url: "https://www.anthropic.com/news/claude-opus-4-6"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---
+
 # Introducing Claude Opus 4.6
 
 Feb 5, 2026
@@ -26,11 +27,11 @@ Coding
 
 Reasoning
 
-In Claude Code, you can now assemble [*agent teams*](https://code.claude.com/docs/en/agent-teams) to work on tasks together. On the API, Claude can use [*compaction*](https://platform.claude.com/docs/en/build-with-claude/compaction) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](https://platform.claude.com/docs/en/build-with-claude/effort) controls to give developers more control over intelligence, speed, and cost.
+In [Claude Code](https://claude.com/product/claude-code), you can now assemble [*agent teams*](https://code.claude.com/docs/en/agent-teams) to work on tasks together. On the API, Claude can use [*compaction*](https://platform.claude.com/docs/en/build-with-claude/compaction) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](https://platform.claude.com/docs/en/build-with-claude/effort) controls to give developers more control over intelligence, speed, and cost.
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
-Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.b97a16d8-15f0-4f60-80b4-9db2b6109bc2), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
+Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.39b61e2c-3b3f-4461-af29-57f3feda34a4), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
 
 We cover the model, our new product updates, our evaluations, and our extensive safety testing in depth below.
 
@@ -228,16 +229,18 @@ Claude now also works better with the office tools you already use. Claude in Ex
 
 ## Related content
 
-### Detecting and preventing distillation attacks
+### Statement on the comments from Secretary of War Pete Hegseth
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+Anthropic's response to the Secretary of War and advice to customers.
 
-### Making frontier cybersecurity capabilities available to defenders
+[Read more](/news/statement-comments-secretary-war)
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+### Statement from Dario Amodei on our discussions with the Department of War
 
-[Read more](/news/claude-code-security)
+A statement from our CEO on national security uses of AI.
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/statement-department-of-war)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Anthropic acquires Vercept to advance Claude's computer use capabilities
+
+[Read more](/news/acquires-vercept)

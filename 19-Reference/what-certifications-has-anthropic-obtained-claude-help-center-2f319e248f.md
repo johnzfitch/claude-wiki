@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-28T11:22:18Z"
+fetched_at: "2026-03-03T15:08:21Z"
 source_url: "https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
 title: "What Certifications has Anthropic obtained? | Claude Help Center"
 ---

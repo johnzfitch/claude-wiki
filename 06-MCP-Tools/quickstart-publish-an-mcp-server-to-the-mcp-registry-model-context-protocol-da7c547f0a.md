@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-27T09:26:47Z"
+fetched_at: "2026-03-03T15:07:49Z"
 source_url: "https://modelcontextprotocol.io/registry/quickstart"
 title: "Quickstart: Publish an MCP Server to the MCP Registry - Model Context Protocol"
 ---
+
 # Quickstart: Publish an MCP Server to the MCP Registry
 
 

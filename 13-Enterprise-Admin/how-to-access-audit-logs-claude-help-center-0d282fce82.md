@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-28T11:22:18Z"
+fetched_at: "2026-03-03T15:08:11Z"
 source_url: "https://support.claude.com/en/articles/9970975-how-to-access-audit-logs"
 title: "How to access audit logs | Claude Help Center"
 ---

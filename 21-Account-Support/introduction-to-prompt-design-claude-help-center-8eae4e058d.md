@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:20Z"
+fetched_at: "2026-03-03T15:08:44Z"
 source_url: "https://support.claude.com/en/articles/7996853-introduction-to-prompt-design"
 title: "Introduction to prompt design | Claude Help Center"
 ---
@@ -26,7 +26,7 @@ Getting started with Claude
 Claude Code FAQ
 
 
-Getting the most out of Sonnet 4.5 in Claude.ai
+What are Skills?
 
 
 How to create a skill with Claude through conversation

@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-28T11:22:21Z"
+fetched_at: "2026-03-03T15:08:31Z"
 source_url: "https://support.claude.com/en/articles/9534590-cost-and-usage-reporting-in-the-claude-console"
 title: "Cost and Usage Reporting in the Claude Console | Claude Help Center"
 ---

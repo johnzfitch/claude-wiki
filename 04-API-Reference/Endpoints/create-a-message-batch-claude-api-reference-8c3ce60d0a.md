@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:22:22Z"
+fetched_at: "2026-03-03T15:06:46Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/create"
 title: "Create a Message Batch - Claude API Reference"
 ---
+
 # Create a Message Batch
 
 [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)

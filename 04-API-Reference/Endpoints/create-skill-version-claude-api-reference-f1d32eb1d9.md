@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-23T00:44:49Z"
+fetched_at: "2026-03-03T15:06:57Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/versions/create"
 title: "Create Skill Version - Claude API Reference"
 ---
+
 # Create Skill Version
 
 [VersionCreateResponse](/docs/en/api/beta#VersionCreateResponse) Beta.Skills.Versions.Create(VersionCreateParamsparameters, CancellationTokencancellationToken = default)

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:49:00Z"
+fetched_at: "2026-03-03T15:01:48Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/files/delete"
 title: "Delete File - Claude API Reference"
 ---
+
 # Delete File
 
 [DeletedFile](/docs/en/api/beta#deleted_file) beta().files().delete(FileDeleteParamsparams = FileDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())

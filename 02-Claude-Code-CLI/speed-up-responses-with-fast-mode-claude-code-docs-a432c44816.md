@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-28T11:22:29Z"
+fetched_at: "2026-03-03T15:08:37Z"
 source_url: "https://code.claude.com/docs/en/fast-mode"
 title: "Speed up responses with fast mode - Claude Code Docs"
 ---

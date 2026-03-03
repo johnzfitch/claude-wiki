@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:59:23Z"
+fetched_at: "2026-03-03T15:03:20Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/retrieve"
 title: "Get Skill - Claude API Reference"
 ---
+
 # Get Skill
 
 client.Beta.Skills.Get(ctx, skillID, query) (\*[BetaSkillGetResponse](/docs/en/api/beta#BetaSkillGetResponse), error)

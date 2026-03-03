@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-24T04:01:24Z"
+fetched_at: "2026-03-03T14:55:27Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model"
 title: "Choosing the right model - Claude API Docs"
 ---
+
 # Choosing the right model
 
 

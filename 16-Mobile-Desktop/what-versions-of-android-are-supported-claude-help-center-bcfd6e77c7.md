@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-28T11:22:05Z"
+fetched_at: "2026-03-03T15:08:29Z"
 source_url: "https://support.claude.com/en/articles/9612904-what-versions-of-android-are-supported"
 title: "What versions of Android are supported? | Claude Help Center"
 ---

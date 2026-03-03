@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T14:21:13Z"
+fetched_at: "2026-03-03T15:06:22Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/models/list"
 title: "List Models - Claude API Reference"
 ---
+
 # List Models
 
 [ModelListPageResponse](/docs/en/api/beta#ModelListPageResponse) Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)

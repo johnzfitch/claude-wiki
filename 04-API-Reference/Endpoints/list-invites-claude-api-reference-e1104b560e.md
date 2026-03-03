@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:25:12Z"
+fetched_at: "2026-03-03T15:07:02Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/invites/list"
 title: "List Invites - Claude API Reference"
 ---
+
 # List Invites
 
 GET/v1/organizations/invites

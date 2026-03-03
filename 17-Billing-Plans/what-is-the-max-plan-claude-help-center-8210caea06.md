@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:33Z"
+fetched_at: "2026-03-03T15:08:21Z"
 source_url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
 title: "What is the Max plan? | Claude Help Center"
 ---

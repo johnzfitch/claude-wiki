@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:18:42Z"
+fetched_at: "2026-03-03T14:56:03Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/java"
 title: "Java SDK - Claude API Docs"
 ---
+
 # Java SDK
 
 
@@ -903,7 +904,7 @@ Because each class is immutable, builder modification will never affect already 
 
 Requests and responses
 
-To send a request to the Claude API, build an instance of some `Params` class and pass it to the corresponding client method. When the response is received, it will be deserialized into an instance of a Java class.
+To send a request to the Claude API, build an instance of some `Params` class and pass it to the corresponding client method. When the response is received, it is deserialized into an instance of a Java class.
 
 For example, `client.messages().create(...)` should be called with an instance of `MessageCreateParams`, and it will return an instance of `Message`.
 
@@ -1072,7 +1073,7 @@ if (maxTokens.isMissing()) {
 
 Response validation
 
-By default, the SDK will not throw an exception when the API returns a response that doesn't match the expected type. It will throw `AnthropicInvalidDataException` only if you directly access the property.
+By default, the SDK does not throw an exception when the API returns a response that doesn't match the expected type. It throws `AnthropicInvalidDataException` only if you directly access the property.
 
 To check that the response is completely well-typed upfront, call `validate()`:
 
@@ -1188,9 +1189,9 @@ For detailed platform setup guides with code examples, see:
 
 The Java SDK supports Bedrock, Vertex AI, and Foundry through separate dependencies that provide platform-specific `Backend` implementations:
 
-- **Bedrock**: `com.anthropic:anthropic-java-bedrock`: Uses `BedrockBackend.fromEnv()` or `BedrockBackend.builder()`
-- **Vertex AI**: `com.anthropic:anthropic-java-vertex`: Uses `VertexBackend.fromEnv()` or `VertexBackend.builder()`
-- **Foundry**: `com.anthropic:anthropic-java-foundry`: Uses `FoundryBackend.fromEnv()` or `FoundryBackend.builder()`
+- **Bedrock:** `com.anthropic:anthropic-java-bedrock`: Uses `BedrockBackend.fromEnv()` or `BedrockBackend.builder()`
+- **Vertex AI:** `com.anthropic:anthropic-java-vertex`: Uses `VertexBackend.fromEnv()` or `VertexBackend.builder()`
+- **Foundry:** `com.anthropic:anthropic-java-foundry`: Uses `FoundryBackend.fromEnv()` or `FoundryBackend.builder()`
 
 Each backend is passed to the client via `.backend()` on `AnthropicOkHttpClient.builder()`. AWS, Google Cloud, and Azure classes are included as transitive dependencies of the respective library.
 

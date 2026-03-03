@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:54:32Z"
+fetched_at: "2026-03-03T15:02:17Z"
 source_url: "https://platform.claude.com/docs/en/api/go/completions/create"
 title: "Create a Text Completion - Claude API Reference"
 ---
+
 # Create a Text Completion
 
 client.Completions.New(ctx, params) (\*[Completion](/docs/en/api/completions#completion), error)

@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-28T11:22:24Z"
+fetched_at: "2026-03-03T15:08:30Z"
 source_url: "https://support.claude.com/en/articles/9307344-responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors"
 title: "Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations Serving Minors | Claude Help Center"
 ---

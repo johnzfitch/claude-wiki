@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-28T11:22:05Z"
+fetched_at: "2026-03-03T15:08:30Z"
 source_url: "https://support.claude.com/en/articles/13117299-minimum-age-requirement-access-restriction"
 title: "Minimum age requirement access restriction | Claude Help Center"
 ---
@@ -36,7 +36,7 @@ Related Articles
 How do I cancel my paid Claude subscription?
 
 
-Using the Gmail and Google Calendar Integrations
+Use Google Workspace connectors
 
 
 Claude 4 Invite Contest

@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-27T09:27:00Z"
+fetched_at: "2026-03-03T15:08:02Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/utilities/ping"
 title: "Ping - Model Context Protocol"
 ---
+
 # Ping
 
 

@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:06:49Z"
+fetched_at: "2026-03-03T14:55:48Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/sessions"
 title: "Session Management - Claude API Docs"
 ---
+
 # Session Management
 
 

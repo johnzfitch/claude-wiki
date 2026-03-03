@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-27T09:26:55Z"
+fetched_at: "2026-03-03T15:07:57Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/pagination"
 title: "Pagination - Model Context Protocol"
 ---
+
 # Pagination
 
 

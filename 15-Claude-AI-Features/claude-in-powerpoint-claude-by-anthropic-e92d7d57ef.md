@@ -1,10 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T00:41:38Z"
-last_modified: "Fri, 27 Feb 2026 20:34:45 GMT"
+fetched_at: "2026-03-03T15:07:42Z"
+last_modified: "Mon, 02 Mar 2026 19:26:26 GMT"
 source_url: "https://claude.com/claude-in-powerpoint"
 title: "Claude in Powerpoint | Claude by Anthropic"
 ---
+
 # Reformat how you work
 
 Claude in PowerPoint works directly in your deck. Build slides, make edits, and iterate on your presentation in real time. Claude reads your layouts, fonts, and slide template so every change stays on-brand.

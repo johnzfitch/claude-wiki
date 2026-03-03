@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-28T11:22:18Z"
+fetched_at: "2026-03-03T15:08:20Z"
 source_url: "https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model"
 title: "Can I use my Outputs to train an AI model? | Claude Help Center"
 ---
@@ -57,9 +57,6 @@ Uses that are prohibited include:
 Related Articles
 
 
-Reporting, Blocking, and Removing Content from Claude
-
-
 I would like to input sensitive data into my chats with Claude. Who can view my conversations?
 
 
@@ -70,3 +67,6 @@ Why am I receiving an 'Output blocked by content filtering policy' error?
 
 
 Why am I receiving an 'Output blocked by content filtering policy' error?
+
+
+Reporting, Blocking, and Removing Content from Claude

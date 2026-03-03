@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:11Z"
+fetched_at: "2026-03-03T15:08:24Z"
 source_url: "https://support.claude.com/en/articles/10389539-using-the-google-docs-integration"
 title: "Using the Google Docs integration | Claude Help Center"
 ---
@@ -20,10 +20,10 @@ Play
 Related Articles
 
 
-Using the Google Drive integration
+Using the GitHub integration
 
 
-Using Google Drive Cataloging on the Enterprise Plan
+Use Google Workspace connectors
 
 
 Using Research on Claude

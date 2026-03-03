@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:24:03Z"
+fetched_at: "2026-03-03T15:06:56Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/delete"
 title: "Delete Skill - Claude API Reference"
 ---
+
 # Delete Skill
 
 [SkillDeleteResponse](/docs/en/api/beta#SkillDeleteResponse) Beta.Skills.Delete(SkillDeleteParamsparameters, CancellationTokencancellationToken = default)

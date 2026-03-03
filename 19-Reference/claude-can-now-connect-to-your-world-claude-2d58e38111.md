@@ -1,10 +1,11 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-28T00:44:15Z"
-last_modified: "Fri, 27 Feb 2026 20:34:36 GMT"
+fetched_at: "2026-03-03T15:08:13Z"
+last_modified: "Tue, 03 Mar 2026 03:18:56 GMT"
 source_url: "https://www.anthropic.com/news/integrations"
 title: "Claude can now connect to your world | Claude"
 ---
+
 # Claude can now connect to your world
 
 Claude can now connect to your apps and tools through Integrations, while advanced Research searches across the web, Google Workspace, and connected services to quickly deliver comprehensive reports.

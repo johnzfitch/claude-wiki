@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-28T11:22:18Z"
+fetched_at: "2026-03-03T15:08:10Z"
 source_url: "https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization"
 title: "Find and join a Team or Enterprise organization | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Find and join a Team or Enterprise organization | Claude Help Center"
 4.  Find and join a Team or Enterprise organization
 
 # Find and join a Team or Enterprise organization
-
-Updated today
 
 
 Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
@@ -97,10 +95,10 @@ If you'd like to enable organization discovery, SSO must be turned off first.
 Related Articles
 
 
-Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations?
-
-
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
+
+
+Extra usage for Team and seat-based Enterprise plans
 
 
 Manage members on Team and Enterprise plans

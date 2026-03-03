@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:22Z"
+fetched_at: "2026-03-03T15:08:28Z"
 source_url: "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects"
 title: "Retrieval augmented generation (RAG) for projects | Claude Help Center"
 ---
@@ -115,4 +115,4 @@ How can I create and manage projects?
 Usage limit best practices
 
 
-Using Google Drive Cataloging on the Enterprise Plan
+Use Google Workspace connectors

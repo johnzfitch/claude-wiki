@@ -1,10 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T00:41:38Z"
-last_modified: "Fri, 27 Feb 2026 20:34:23 GMT"
+fetched_at: "2026-03-03T15:07:42Z"
+last_modified: "Tue, 03 Mar 2026 04:43:37 GMT"
 source_url: "https://claude.com/plugins"
 title: "Plugins for Claude Code and Cowork | Anthropic"
 ---
+
 - [](https://www.anthropic.com/claude/opus)
     Opus
   - [](https://www.anthropic.com/claude/sonnet)
@@ -16,7 +17,7 @@ title: "Plugins for Claude Code and Cowork | Anthropic"
 
   - [](/platform/api)
     Overview
-  - [](https://docs.claude.com/)
+  - [](https://platform.claude.com/docs)
     Developer docs
   - [](http://claude.com/pricing#api)
     Pricing
@@ -199,7 +200,7 @@ title: "Plugins for Claude Code and Cowork | Anthropic"
 
   - [](/platform/api)
     Overview
-  - [](https://docs.claude.com/)
+  - [](https://platform.claude.com/docs)
     Developer docs
   - [](http://claude.com/pricing#api)
     Pricing
@@ -1901,7 +1902,7 @@ Claude Developer Platform
 
 - Developer docs
 
-  [Developer docs](https://docs.claude.com/)
+  [Developer docs](https://platform.claude.com/docs)
   Developer docs
 
 - Pricing

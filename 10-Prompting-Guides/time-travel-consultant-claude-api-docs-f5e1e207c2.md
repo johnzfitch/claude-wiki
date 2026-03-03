@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:21:17Z"
+fetched_at: "2026-03-03T14:56:10Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/time-travel-consultant"
 title: "Time travel consultant - Claude API Docs"
 ---
+
 # Time travel consultant
 
 

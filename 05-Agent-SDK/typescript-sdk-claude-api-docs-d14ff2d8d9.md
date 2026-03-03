@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:18:35Z"
+fetched_at: "2026-03-03T14:56:02Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/typescript"
 title: "TypeScript SDK - Claude API Docs"
 ---
+
 # TypeScript SDK
 
 
@@ -216,10 +217,16 @@ const screenshotTool = betaZodTool({
       // Include the error screenshot so the model can see what went wrong
       throw new ToolError([
         { type: "text", text: `Failed to load page: ${result.error}` },
-        { type: "image", source: { type: "base64", data: result.screenshot, media_type: "image/png" } }
+        {
+          type: "image",
+          source: { type: "base64", data: result.screenshot, media_type: "image/png" }
+        }
       ]);
     }
-    return { type: "image", source: { type: "base64", data: result.screenshot, media_type: "image/png" } };
+    return {
+      type: "image",
+      source: { type: "base64", data: result.screenshot, media_type: "image/png" }
+    };
   }
 });
 ```
@@ -285,7 +292,10 @@ await anthropic.beta.messages.create({
   messages: [
     {
       role: "user",
-      content: [mcpResourceToContent(resource), { type: "text", text: "Summarize this document" }]
+      content: [
+        mcpResourceToContent(resource),
+        { type: "text", text: "Summarize this document" }
+      ]
     }
   ]
 });
@@ -372,7 +382,9 @@ const client = new Anthropic();
 
 // If you have access to Node `fs` we recommend using `fs.createReadStream()`:
 await client.beta.files.upload({
-  file: await toFile(fs.createReadStream("/path/to/file"), undefined, { type: "application/json" }),
+  file: await toFile(fs.createReadStream("/path/to/file"), undefined, {
+    type: "application/json"
+  }),
   betas: ["files-api-2025-04-14"]
 });
 
@@ -471,9 +483,14 @@ const client = new Anthropic({
 });
 
 // Or, configure per-request:
-await client.messages.create({ max_tokens: 1024, messages: [{ role: "user", content: "Hello, Claude" }], model: "claude-opus-4-6" }, {
-  maxRetries: 5
-});
+await client.messages.create(
+  {
+    max_tokens: 1024,
+    messages: [{ role: "user", content: "Hello, Claude" }],
+    model: "claude-opus-4-6"
+  },
+  { maxRetries: 5 }
+);
 ```
 
 ## 
@@ -499,9 +516,14 @@ const client = new Anthropic({
 });
 
 // Override per-request:
-await client.messages.create({ max_tokens: 1024, messages: [{ role: "user", content: "Hello, Claude" }], model: "claude-opus-4-6" }, {
-  timeout: 5 * 1000
-});
+await client.messages.create(
+  {
+    max_tokens: 1024,
+    messages: [{ role: "user", content: "Hello, Claude" }],
+    model: "claude-opus-4-6"
+  },
+  { timeout: 5 * 1000 }
+);
 ```
 
 On timeout, an `APIConnectionTimeoutError` is thrown.
@@ -834,9 +856,9 @@ For detailed platform setup guides with code examples, see:
 
 The TypeScript SDK supports Bedrock, Vertex AI, and Foundry through separate npm packages:
 
-- **Bedrock**: `npm install @anthropic-ai/bedrock-sdk`: Provides `AnthropicBedrock` client
-- **Vertex AI**: `npm install @anthropic-ai/vertex-sdk`: Provides `AnthropicVertex` client
-- **Foundry**: `npm install @anthropic-ai/foundry-sdk`: Provides `AnthropicFoundry` client
+- **Bedrock:** `npm install @anthropic-ai/bedrock-sdk`: Provides `AnthropicBedrock` client
+- **Vertex AI:** `npm install @anthropic-ai/vertex-sdk`: Provides `AnthropicVertex` client
+- **Foundry:** `npm install @anthropic-ai/foundry-sdk`: Provides `AnthropicFoundry` client
 
 ## 
 

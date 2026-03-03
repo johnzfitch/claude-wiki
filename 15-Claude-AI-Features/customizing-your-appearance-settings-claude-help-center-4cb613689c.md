@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:22Z"
+fetched_at: "2026-03-03T15:08:28Z"
 source_url: "https://support.claude.com/en/articles/8887527-customizing-your-appearance-settings"
 title: "Customizing your appearance settings | Claude Help Center"
 ---
@@ -34,10 +34,10 @@ It's not currently possible to completely disable the sidebar. You can click the
 Related Articles
 
 
+Configure and use styles
+
+
 How to create custom Skills
-
-
-Set up JIT or SCIM provisioning
 
 
 Google Sheets add-on

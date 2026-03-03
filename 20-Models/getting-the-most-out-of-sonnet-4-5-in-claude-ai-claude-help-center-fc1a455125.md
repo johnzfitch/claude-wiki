@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-28T11:22:09Z"
+fetched_at: "2026-03-03T15:08:23Z"
 source_url: "https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai"
 title: "Getting the most out of Sonnet 4.5 in Claude.ai | Claude Help Center"
 ---

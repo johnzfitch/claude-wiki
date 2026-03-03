@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-28T11:22:27Z"
+fetched_at: "2026-03-03T15:08:32Z"
 source_url: "https://code.claude.com/docs/en/settings"
 title: "Claude Code settings - Claude Code Docs"
 ---
@@ -250,7 +250,7 @@ Permission rules follow the format `Tool` or `Tool(specifier)`. Rules are evalua
 | `Read(./.env)`                 | Matches reading the `.env` file          |
 | `WebFetch(domain:example.com)` | Matches fetch requests to example.com    |
 
-For the complete rule syntax reference, including wildcard behavior, tool-specific patterns for Read, Edit, WebFetch, MCP, and Task rules, and security limitations of Bash patterns, see [Permission rule syntax](/docs/en/permissions#permission-rule-syntax).
+For the complete rule syntax reference, including wildcard behavior, tool-specific patterns for Read, Edit, WebFetch, MCP, and Agent rules, and security limitations of Bash patterns, see [Permission rule syntax](/docs/en/permissions#permission-rule-syntax).
 
 ### 
 
@@ -1062,6 +1062,7 @@ All environment variables can also be configured in [`settings.json`](#available
 | `DISABLE_PROMPT_CACHING_OPUS` | Set to `1` to disable prompt caching for Opus models |  |
 | `DISABLE_PROMPT_CACHING_SONNET` | Set to `1` to disable prompt caching for Sonnet models |  |
 | `DISABLE_TELEMETRY` | Set to `1` to opt out of Statsig telemetry (note that Statsig events do not include user data like code, file paths, or bash commands) |  |
+| `ENABLE_CLAUDEAI_MCP_SERVERS` | Set to `false` to disable [claude.ai MCP servers](/docs/en/mcp#use-mcp-servers-from-claudeai) in Claude Code. Enabled by default for logged-in users |  |
 | `ENABLE_TOOL_SEARCH` | Controls [MCP tool search](/docs/en/mcp#scale-with-mcp-tool-search). Values: `auto` (default, enables at 10% context), `auto:N` (custom threshold, e.g., `auto:5` for 5%), `true` (always on), `false` (disabled) |  |
 | `FORCE_AUTOUPDATE_PLUGINS` | Set to `true` to force plugin auto-updates even when the main auto-updater is disabled via `DISABLE_AUTOUPDATER` |  |
 | `HTTP_PROXY` | Specify HTTP proxy server for network connections |  |
@@ -1104,7 +1105,7 @@ Claude Code has access to a set of powerful tools that help it understand and mo
 | **NotebookEdit** | Modifies Jupyter notebook cells | Yes |
 | **Read** | Reads the contents of files | No |
 | **Skill** | Executes a [skill](/docs/en/skills#control-who-invokes-a-skill) within the main conversation | Yes |
-| **Task** | Runs a sub-agent to handle complex, multi-step tasks | No |
+| **Agent** | Runs a sub-agent to handle complex, multi-step tasks | No |
 | **TaskCreate** | Creates a new task in the task list | No |
 | **TaskGet** | Retrieves full details for a specific task | No |
 | **TaskList** | Lists all tasks with their current status | No |

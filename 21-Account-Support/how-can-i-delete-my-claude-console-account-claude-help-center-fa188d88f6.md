@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:21Z"
+fetched_at: "2026-03-03T15:08:31Z"
 source_url: "https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account"
 title: "How can I delete my Claude Console account? | Claude Help Center"
 ---
@@ -61,10 +61,10 @@ If you are seeing this message, this indicates that your Console organization ca
 Related Articles
 
 
-Can I have a Claude account and a Console account?
-
-
 How can I delete my Claude account?
+
+
+Creating and managing Workspaces in the Claude Console
 
 
 Claude Console Roles and Permissions

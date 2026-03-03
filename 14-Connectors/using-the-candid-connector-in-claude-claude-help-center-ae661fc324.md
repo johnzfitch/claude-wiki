@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:20Z"
+fetched_at: "2026-03-03T15:08:43Z"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 title: "Using the Candid Connector in Claude | Claude Help Center"
 ---
@@ -33,7 +33,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#b8d7d6d4d1d6ddd4d1dacad9cad1d9d6f8dbd9d6dcd1dc96d7cadf).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#4629282a2f28232a2f243427342f272806252728222f2268293421).
 
 ## Setting up the Candid integration
 
@@ -440,7 +440,7 @@ Candid Seals of Transparency indicate how much information an organization has s
 
 ## Need more help?
 
-If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#9df2f3f1f4f3f8f1f4ffeffceff4fcf3ddfefcf3f9f4f9b3f2effa).
+If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#1778797b7e79727b7e756576657e767957747679737e7339786570).
 
 ------------------------------------------------------------------------
 
@@ -450,7 +450,7 @@ Related Articles
 Using the Synapse.org connector in Claude
 
 
-Using the Scholar Gateway Connector in Claude
+Using the PubMed Connector in Claude
 
 
 Getting started with Claude for Nonprofits

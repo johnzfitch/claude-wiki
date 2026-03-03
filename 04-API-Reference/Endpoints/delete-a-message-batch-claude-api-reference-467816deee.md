@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:55:50Z"
+fetched_at: "2026-03-03T15:02:37Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
+
 # Delete a Message Batch
 
 client.Messages.Batches.Delete(ctx, messageBatchID) (\*[DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch), error)

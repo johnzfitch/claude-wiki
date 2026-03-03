@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:07Z"
+fetched_at: "2026-03-03T15:08:21Z"
 source_url: "https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account"
 title: "How can I delete my Claude account? | Claude Help Center"
 ---

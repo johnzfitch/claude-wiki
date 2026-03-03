@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:12Z"
+fetched_at: "2026-03-03T15:08:25Z"
 source_url: "https://support.claude.com/en/articles/13123742-intro-to-connectors"
 title: "Intro to connectors | Claude Help Center"
 ---
@@ -22,7 +22,7 @@ Related Articles
 Get started with custom connectors using remote MCP
 
 
-Use the Connectors Directory to extend Claude’s capabilities
+Use connectors to extend Claude's capabilities
 
 
 When to use desktop and web connectors

@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:07:44Z"
+fetched_at: "2026-03-03T14:55:54Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/slash-commands"
 title: "Slash Commands in the SDK - Claude API Docs"
 ---
+
 # Slash Commands in the SDK
 
 

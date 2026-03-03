@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:14Z"
+fetched_at: "2026-03-03T15:08:10Z"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 ---

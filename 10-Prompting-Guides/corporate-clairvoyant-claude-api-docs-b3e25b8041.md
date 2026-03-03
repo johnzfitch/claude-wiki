@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:20:47Z"
+fetched_at: "2026-03-03T14:56:07Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/corporate-clairvoyant"
 title: "Corporate clairvoyant - Claude API Docs"
 ---
+
 # Corporate clairvoyant
 
 

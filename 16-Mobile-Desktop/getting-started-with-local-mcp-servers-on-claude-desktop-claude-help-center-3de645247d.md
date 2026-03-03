@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-28T11:22:13Z"
+fetched_at: "2026-03-03T15:08:18Z"
 source_url: "https://support.anthropic.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 ---
@@ -155,6 +155,9 @@ Related Articles
 Installing Claude Desktop
 
 
+Enabling and using the desktop extension allowlist
+
+
 Deploy Claude Desktop for macOS
 
 
@@ -162,6 +165,3 @@ Using the 10x Genomics Extension in Claude
 
 
 Deploying enterprise-grade MCP servers with desktop extensions
-
-
-Building Desktop Extensions with MCPB

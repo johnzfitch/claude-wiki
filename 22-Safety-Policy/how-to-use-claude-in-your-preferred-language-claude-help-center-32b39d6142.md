@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-28T11:22:23Z"
+fetched_at: "2026-03-03T15:08:28Z"
 source_url: "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language"
 title: "How to use Claude in your preferred language | Claude Help Center"
 ---
@@ -64,7 +64,7 @@ Getting started with Claude
 Using dictation on Claude Mobile
 
 
-FAQs on Using Claude for Education at Your University
+Using Research on Claude
 
 
 Using the 10x Genomics Extension in Claude

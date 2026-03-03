@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:34:37Z"
+fetched_at: "2026-03-03T14:58:22Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
+
 # Get a Model
 
 client.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [ModelInfo](/docs/en/api/models#model_info) { id, created_at, display_name, type }

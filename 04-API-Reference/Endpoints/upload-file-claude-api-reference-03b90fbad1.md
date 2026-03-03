@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:42:43Z"
+fetched_at: "2026-03-03T15:00:23Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/files/upload"
 title: "Upload File - Claude API Reference"
 ---
+
 # Upload File
 
 beta.files.upload(FileUploadParams\*\*kwargs) -\> [FileMetadata](/docs/en/api/beta#file_metadata)

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:55:01Z"
+fetched_at: "2026-03-03T15:02:29Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages/create"
 title: "Create a Message - Claude API Reference"
 ---
+
 # Create a Message
 
 client.Messages.New(ctx, body) (\*[Message](/docs/en/api/messages#message), error)

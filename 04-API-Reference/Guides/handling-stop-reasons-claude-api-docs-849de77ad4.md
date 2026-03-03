@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T10:57:41Z"
+fetched_at: "2026-03-03T14:55:31Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons"
 title: "Handling stop reasons - Claude API Docs"
 ---
+
 # Handling stop reasons
 
 
@@ -13,7 +14,7 @@ For details about `stop_reason` in the API response, see the [Messages API refer
 
 ## 
 
-What is stop_reason?
+The stop_reason field
 
 The `stop_reason` field is part of every successful Messages API response. Unlike errors, which indicate failures in processing your request, `stop_reason` tells you why Claude successfully completed its response generation.
 

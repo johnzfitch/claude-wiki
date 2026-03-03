@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-27T09:26:59Z"
+fetched_at: "2026-03-03T15:08:01Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/server/resources"
 title: "Resources - Model Context Protocol"
 ---
+
 # Resources
 
 

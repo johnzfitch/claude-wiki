@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-24T04:04:43Z"
+fetched_at: "2026-03-03T14:55:37Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
 title: "Prompt caching - Claude API Docs"
 ---
+
 # Prompt caching
 
 
@@ -166,7 +167,7 @@ TTL support
 By default, automatic caching uses a 5-minute TTL. You can specify a 1-hour TTL at 2x the base input token price:
 
 ``` shiki
-"cache_control": {"type": "ephemeral", "ttl": "1h"}
+{ "cache_control": { "type": "ephemeral", "ttl": "1h" } }
 ```
 
 ### 
@@ -181,15 +182,15 @@ This lets you combine both approaches. For example, use explicit breakpoints to 
 {
   "model": "claude-opus-4-6",
   "max_tokens": 1024,
-  "cache_control": {"type": "ephemeral"},
+  "cache_control": { "type": "ephemeral" },
   "system": [
     {
       "type": "text",
       "text": "You are a helpful assistant.",
-      "cache_control": {"type": "ephemeral"}
+      "cache_control": { "type": "ephemeral" }
     }
   ],
-  "messages": [...]
+  "messages": [{ "role": "user", "content": "What are the key terms?" }]
 }
 ```
 
@@ -290,7 +291,8 @@ Cache limitations
 The minimum cacheable prompt length is:
 
 - 4096 tokens for Claude Opus 4.6, Claude Opus 4.5
-- 1024 tokens for Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Opus 4.1, Claude Opus 4, Claude Sonnet 4, and Claude Sonnet 3.7 ([deprecated](/docs/en/about-claude/model-deprecations))
+- 2048 tokens for Claude Sonnet 4.6
+- 1024 tokens for Claude Sonnet 4.5, Claude Opus 4.1, Claude Opus 4, Claude Sonnet 4, and Claude Sonnet 3.7 ([deprecated](/docs/en/about-claude/model-deprecations))
 - 4096 tokens for Claude Haiku 4.5
 - 2048 tokens for Claude Haiku 3.5 ([deprecated](/docs/en/about-claude/model-deprecations)) and Claude Haiku 3
 
@@ -496,8 +498,8 @@ To use the extended cache, include `ttl` in the `cache_control` definition like 
 
 ``` shiki
 "cache_control": {
-    "type": "ephemeral",
-    "ttl": "5m" | "1h"
+  "type": "ephemeral",
+  "ttl": "1h"
 }
 ```
 
@@ -505,17 +507,17 @@ The response will include detailed cache information like the following:
 
 ``` shiki
 {
-    "usage": {
-        "input_tokens": ...,
-        "cache_read_input_tokens": ...,
-        "cache_creation_input_tokens": ...,
-        "output_tokens": ...,
+  "usage": {
+    "input_tokens": 2048,
+    "cache_read_input_tokens": 1800,
+    "cache_creation_input_tokens": 248,
+    "output_tokens": 503,
 
-        "cache_creation": {
-            "ephemeral_5m_input_tokens": 456,
-            "ephemeral_1h_input_tokens": 100,
-        }
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 456,
+      "ephemeral_1h_input_tokens": 100
     }
+  }
 }
 ```
 

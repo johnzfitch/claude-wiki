@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:24:59Z"
+fetched_at: "2026-03-03T15:07:01Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/invites/create"
 title: "Create Invite - Claude API Reference"
 ---
+
 # Create Invite
 
 POST/v1/organizations/invites

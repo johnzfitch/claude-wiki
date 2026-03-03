@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:34Z"
+fetched_at: "2026-03-03T15:08:41Z"
 source_url: "https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account"
 title: "Who owns and manages the data of my Claude for Education account? | Claude Help Center"
 ---

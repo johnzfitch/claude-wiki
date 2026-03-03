@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:13Z"
+fetched_at: "2026-03-03T15:08:19Z"
 source_url: "https://support.claude.com/en/articles/12260368-using-incognito-chats"
 title: "Using incognito chats | Claude Help Center"
 ---
@@ -80,10 +80,10 @@ I would like to input sensitive data into my chats with Claude. Who can view my 
 How can I create and manage projects?
 
 
-Using Claude’s chat search and memory to build on previous context
+Use Google Workspace connectors
 
 
-Importing and exporting your memory from Claude
+Use Claude’s chat search and memory to build on previous context
 
 
 Release notes

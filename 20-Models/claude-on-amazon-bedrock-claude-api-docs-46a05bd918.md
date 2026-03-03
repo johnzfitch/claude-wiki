@@ -1,16 +1,17 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-24T04:08:27Z"
+fetched_at: "2026-03-03T14:55:57Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock"
 title: "Claude on Amazon Bedrock - Claude API Docs"
 ---
+
 # Claude on Amazon Bedrock
 
 
 Anthropic's Claude models are now generally available through Amazon Bedrock.
 
 
-Calling Claude through Bedrock slightly differs from how you would call Claude when using Anthropic's client SDK's. This guide will walk you through the process of completing an API call to Claude on Bedrock in either Python or TypeScript.
+Calling Claude through Bedrock slightly differs from how you would call Claude when using Anthropic's client SDKs. This guide walks you through the process of completing an API call to Claude on Bedrock in either Python or TypeScript.
 
 Note that this guide assumes you have already signed up for an [AWS account](https://portal.aws.amazon.com/billing/signup) and configured programmatic access.
 
@@ -196,7 +197,7 @@ For all currently supported features on Bedrock, see [API features overview](/do
 
 ### 
 
-PDF Support on Bedrock
+PDF support on Bedrock
 
 PDF support is available on Amazon Bedrock through both the Converse API and InvokeModel API. For detailed information about PDF processing capabilities and limitations, see the [PDF support documentation](/docs/en/build-with-claude/pdf-support#amazon-bedrock-pdf-support).
 
@@ -214,7 +215,7 @@ For more details on the two document processing modes and their limitations, ref
 
 Claude Opus 4.6, Sonnet 4.5, and Sonnet 4 support the [1M token context window](/docs/en/build-with-claude/context-windows#1m-token-context-window) on Amazon Bedrock.
 
-The 1M token context window is currently in beta. To use the extended context window, include the `context-1m-2025-08-07` beta header in your [Bedrock API requests](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-anthropic-claude-messages-request-response.html).
+The 1M token context window is in beta. To use the extended context window, include the `context-1m-2025-08-07` beta header in your [Bedrock API requests](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-anthropic-claude-messages-request-response.html).
 
 ## 
 
@@ -222,8 +223,8 @@ Global vs regional endpoints
 
 Starting with **Claude Sonnet 4.5 and all future models**, Amazon Bedrock offers two endpoint types:
 
-- **Global endpoints**: Dynamic routing for maximum availability
-- **Regional endpoints**: Guaranteed data routing through specific geographic regions
+- **Global endpoints:** Dynamic routing for maximum availability
+- **Regional endpoints:** Guaranteed data routing through specific geographic regions
 
 Regional endpoints include a 10% pricing premium over global endpoints.
 

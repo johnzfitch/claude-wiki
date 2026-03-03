@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:24:22Z"
+fetched_at: "2026-03-03T15:06:58Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/versions/retrieve"
 title: "Get Skill Version - Claude API Reference"
 ---
+
 # Get Skill Version
 
 [VersionRetrieveResponse](/docs/en/api/beta#VersionRetrieveResponse) Beta.Skills.Versions.Retrieve(VersionRetrieveParamsparameters, CancellationTokencancellationToken = default)

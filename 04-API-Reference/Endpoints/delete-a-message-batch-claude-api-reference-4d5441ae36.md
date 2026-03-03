@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:03:59Z"
+fetched_at: "2026-03-03T15:04:25Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
+
 # Delete a Message Batch
 
 beta.messages.batches.delete(message_batch_id, \*\*kwargs) -\> [BetaDeletedMessageBatch](/docs/en/api/beta#beta_deleted_message_batch) { id, type }

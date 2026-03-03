@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:29:26Z"
+fetched_at: "2026-03-03T14:57:20Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/models/list"
 title: "List Models - Claude API Reference"
 ---
+
 # List Models
 
 GET/v1/models

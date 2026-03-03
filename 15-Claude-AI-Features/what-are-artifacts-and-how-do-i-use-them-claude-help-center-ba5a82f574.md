@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:23Z"
+fetched_at: "2026-03-03T15:08:27Z"
 source_url: "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them"
 title: "What are artifacts and how do I use them? | Claude Help Center"
 ---
@@ -200,7 +200,7 @@ Intro to Artifacts
 Get started with custom connectors using remote MCP
 
 
-Pre-built web connectors using remote MCP
-
-
 Use artifacts to visualize and create AI apps, without ever writing a line of code
+
+
+What are Skills?

@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-28T11:22:18Z"
+fetched_at: "2026-03-03T15:08:41Z"
 source_url: "https://support.claude.com/en/articles/12622667-enterprise-configuration"
 title: "Enterprise configuration | Claude Help Center"
 ---
@@ -57,7 +57,7 @@ Related Articles
 Getting Started with Local MCP Servers on Claude Desktop
 
 
-Using Enterprise Search
+Enabling and using the desktop extension allowlist
 
 
 Deploy Claude Desktop for macOS

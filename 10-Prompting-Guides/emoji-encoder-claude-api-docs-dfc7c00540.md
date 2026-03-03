@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:23:15Z"
+fetched_at: "2026-03-03T14:56:21Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/emoji-encoder"
 title: "Emoji encoder - Claude API Docs"
 ---
+
 # Emoji encoder
 
 

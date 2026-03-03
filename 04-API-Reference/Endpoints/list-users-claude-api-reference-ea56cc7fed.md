@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:25:37Z"
+fetched_at: "2026-03-03T15:07:04Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/users/list"
 title: "List Users - Claude API Reference"
 ---
+
 # List Users
 
 GET/v1/organizations/users

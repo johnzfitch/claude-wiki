@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:26:13Z"
+fetched_at: "2026-03-03T15:07:08Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/list"
 title: "List Workspaces - Claude API Reference"
 ---
+
 # List Workspaces
 
 GET/v1/organizations/workspaces

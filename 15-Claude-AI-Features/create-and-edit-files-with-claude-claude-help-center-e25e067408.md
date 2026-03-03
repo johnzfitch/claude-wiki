@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:13Z"
+fetched_at: "2026-03-03T15:08:14Z"
 source_url: "https://support.anthropic.com/en/articles/12111783-create-and-edit-files-with-claude"
 title: "Create and edit files with Claude | Claude Help Center"
 ---

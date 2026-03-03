@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:20:03Z"
+fetched_at: "2026-03-03T15:06:05Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/messages/batches/list"
 title: "List Message Batches - Claude API Reference"
 ---
+
 # List Message Batches
 
 [BatchListPageResponse](/docs/en/api/messages#BatchListPageResponse) Messages.Batches.List(BatchListParams?parameters, CancellationTokencancellationToken = default)

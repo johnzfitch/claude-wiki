@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:08Z"
+fetched_at: "2026-03-03T15:08:23Z"
 source_url: "https://support.claude.com/en/articles/11101545-using-research-and-google-workspace"
 title: "Using Research and Google Workspace | Claude Help Center"
 ---
@@ -24,10 +24,10 @@ Play
 Related Articles
 
 
+Use Google Workspace connectors
+
+
 Using the Google Docs integration
-
-
-Using the Gmail and Google Calendar Integrations
 
 
 Using Research on Claude

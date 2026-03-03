@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-28T11:22:19Z"
+fetched_at: "2026-03-03T15:08:20Z"
 source_url: "https://support.claude.com/en/articles/9190861-terms-of-service-updates"
 title: "Terms of Service Updates | Claude Help Center"
 ---

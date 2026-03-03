@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:48:11Z"
+fetched_at: "2026-03-03T15:01:43Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/batches/cancel"
 title: "Cancel a Message Batch - Claude API Reference"
 ---
+
 # Cancel a Message Batch
 
 [BetaMessageBatch](/docs/en/api/beta#beta_message_batch) beta().messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions.none())

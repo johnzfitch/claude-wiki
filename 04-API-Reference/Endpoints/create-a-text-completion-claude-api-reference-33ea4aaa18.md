@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:00:11Z"
+fetched_at: "2026-03-03T15:03:24Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/completions/create"
 title: "Create a Text Completion - Claude API Reference"
 ---
+
 # Create a Text Completion
 
 completions.create(\*\*kwargs) -\> [Completion](/docs/en/api/completions#completion) { id, completion, model, 2 more }

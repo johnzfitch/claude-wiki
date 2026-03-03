@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-28T11:22:25Z"
+fetched_at: "2026-03-03T15:08:32Z"
 source_url: "https://code.claude.com/docs/en/desktop"
 title: "Use Claude Code Desktop - Claude Code Docs"
 ---

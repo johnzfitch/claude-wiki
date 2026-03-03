@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-28T11:22:34Z"
+fetched_at: "2026-03-03T15:08:09Z"
 source_url: "https://support.claude.com/en/articles/13145338-anthropic-software-directory-terms"
 title: "Anthropic Software Directory Terms | Claude Help Center"
 ---

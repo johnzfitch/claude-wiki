@@ -1,12 +1,28 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-28T11:22:05Z"
+fetched_at: "2026-03-03T15:08:08Z"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
 title: "Release notes | Claude Help Center"
 ---
 
 # Release notes
 
+Updated today
+
+
+## March 2026
+
+### March 2, 2026
+
+**Memory for free users**
+
+Memory from chat history is now available for all Claude users, including free users. For more information, refer to the following articles:
+
+- **[Use Claude’s chat search and memory to build on previous context](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context#h_c1c0b33879)**
+
+- **[Import and export your memory from Claude](https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude)**
+
+------------------------------------------------------------------------
 
 ## February 2026
 

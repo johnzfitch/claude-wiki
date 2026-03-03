@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-24T04:01:18Z"
+fetched_at: "2026-03-03T14:55:26Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/overview"
 title: "Models overview - Claude API Docs"
 ---
+
 # Models overview
 
 

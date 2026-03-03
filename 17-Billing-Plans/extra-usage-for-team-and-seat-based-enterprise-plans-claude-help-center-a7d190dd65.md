@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:15Z"
+fetched_at: "2026-03-03T15:08:19Z"
 source_url: "https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-enterprise-plans"
 title: "Extra usage for Team and seat-based Enterprise plans | Claude Help Center"
 ---

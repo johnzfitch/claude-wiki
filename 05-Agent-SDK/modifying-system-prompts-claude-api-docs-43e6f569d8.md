@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:07:20Z"
+fetched_at: "2026-03-03T14:55:51Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/modifying-system-prompts"
 title: "Modifying system prompts - Claude API Docs"
 ---
+
 # Modifying system prompts
 
 
@@ -153,11 +154,7 @@ import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 import { homedir } from "os";
 
-async function createOutputStyle(
-  name: string,
-  description: string,
-  prompt: string
-) {
+async function createOutputStyle(name: string, description: string, prompt: string) {
   // User-level: ~/.claude/output-styles
   // Project-level: .claude/output-styles
   const outputStylesDir = join(homedir(), ".claude", "output-styles");
@@ -171,10 +168,7 @@ description: ${description}
 
 ${prompt}`;
 
-  const filePath = join(
-    outputStylesDir,
-    `${name.toLowerCase().replace(/\s+/g, "-")}.md`
-  );
+  const filePath = join(outputStylesDir, `${name.toLowerCase().replace(/\s+/g, "-")}.md`);
   await writeFile(filePath, content, "utf-8");
 }
 
@@ -223,8 +217,7 @@ for await (const message of query({
     systemPrompt: {
       type: "preset",
       preset: "claude_code",
-      append:
-        "Always include detailed docstrings and type hints in Python code."
+      append: "Always include detailed docstrings and type hints in Python code."
     }
   }
 })) {

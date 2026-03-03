@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-28T11:22:18Z"
+fetched_at: "2026-03-03T15:08:42Z"
 source_url: "https://support.claude.com/en/articles/12702546-deploying-enterprise-grade-mcp-servers-with-desktop-extensions"
 title: "Deploying enterprise-grade MCP servers with desktop extensions | Claude Help Center"
 ---
@@ -59,10 +59,10 @@ Installing Claude Desktop
 Getting Started with Local MCP Servers on Claude Desktop
 
 
+Enabling and using the desktop extension allowlist
+
+
 Deploy Claude Desktop for Windows
-
-
-Remote MCP Server Submission Guide
 
 
 Building Desktop Extensions with MCPB

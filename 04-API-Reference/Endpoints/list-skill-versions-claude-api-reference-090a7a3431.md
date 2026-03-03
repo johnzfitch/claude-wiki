@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:32:25Z"
+fetched_at: "2026-03-03T14:57:54Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions/list"
 title: "List Skill Versions - Claude API Reference"
 ---
+
 # List Skill Versions
 
 GET/v1/skills/{skill_id}/versions

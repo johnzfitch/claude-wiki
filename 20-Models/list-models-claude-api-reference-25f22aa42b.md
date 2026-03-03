@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:46:04Z"
+fetched_at: "2026-03-03T15:00:59Z"
 source_url: "https://platform.claude.com/docs/en/api/java/models/list"
 title: "List Models - Claude API Reference"
 ---
+
 # List Models
 
 ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())

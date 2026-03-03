@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:33Z"
+fetched_at: "2026-03-03T15:08:09Z"
 source_url: "https://support.claude.com/en/articles/11506255-getting-started-with-claude-in-slack"
 title: "Getting started with Claude in Slack | Claude Help Center"
 ---
@@ -194,7 +194,7 @@ If you are using a company Slack instance and are not assigned to an Admin role,
 Related Articles
 
 
-Use the Connectors Directory to extend Claude’s capabilities
+Use connectors to extend Claude's capabilities
 
 
 Getting started with Claude in Chrome

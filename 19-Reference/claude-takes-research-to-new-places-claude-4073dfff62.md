@@ -1,10 +1,11 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-28T00:44:16Z"
-last_modified: "Fri, 27 Feb 2026 20:34:36 GMT"
+fetched_at: "2026-03-03T15:08:12Z"
+last_modified: "Tue, 03 Mar 2026 03:18:44 GMT"
 source_url: "https://www.anthropic.com/news/research"
 title: "Claude takes research to new places | Claude"
 ---
+
 # Claude takes research to new places
 
 Claude can now conduct in-depth Research by searching across the web and your Google Workspace to deliver comprehensive answers in minutes.

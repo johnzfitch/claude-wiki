@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:35Z"
+fetched_at: "2026-03-03T15:08:21Z"
 source_url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans"
 title: "How large is the context window on paid Claude plans? | Claude Help Center"
 ---
@@ -43,7 +43,7 @@ How large is the Claude API’s context window?
 Understanding usage and length limits
 
 
-Using Claude’s chat search and memory to build on previous context
+Use Claude’s chat search and memory to build on previous context
 
 
 Extra usage for paid Claude plans

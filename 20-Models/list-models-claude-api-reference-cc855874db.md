@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T13:40:49Z"
+fetched_at: "2026-03-03T14:59:53Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/models/list"
 title: "List Models - Claude API Reference"
 ---
+
 # List Models
 
 beta.models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\]

@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:25:30Z"
+fetched_at: "2026-03-03T14:56:33Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/email-extractor"
 title: "Email extractor - Claude API Docs"
 ---
+
 # Email extractor
 
 

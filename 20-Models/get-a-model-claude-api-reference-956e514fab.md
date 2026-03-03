@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T14:21:18Z"
+fetched_at: "2026-03-03T15:06:23Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
+
 # Get a Model
 
 [BetaModelInfo](/docs/en/api/beta#beta_model_info) Beta.Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)

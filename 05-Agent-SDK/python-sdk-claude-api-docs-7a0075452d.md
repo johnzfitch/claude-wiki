@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:18:29Z"
+fetched_at: "2026-03-03T14:56:02Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/python"
 title: "Python SDK - Claude API Docs"
 ---
+
 # Python SDK
 
 
@@ -371,13 +372,13 @@ client.beta.files.upload(
 )
 ```
 
-The async client uses the exact same interface. If you pass a `PathLike` instance, the file contents will be read asynchronously automatically.
+The async client uses the exact same interface. If you pass a `PathLike` instance, the file contents are read asynchronously automatically.
 
 ## 
 
 Handling errors
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `APIError` will be raised:
+When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `APIError` is raised:
 
 ``` shiki
 import anthropic
@@ -443,7 +444,7 @@ Unlike other properties that use an `_` prefix, the `_request_id` property is pu
 
 Retries
 
-Certain errors will be automatically retried 2 times by default, with a short exponential backoff. Connection errors (for example, due to a network connectivity problem), 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors will all be retried by default.
+Certain errors are automatically retried 2 times by default, with a short exponential backoff. Connection errors (for example, due to a network connectivity problem), 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors are all retried by default.
 
 You can use the `max_retries` option to configure or disable this:
 

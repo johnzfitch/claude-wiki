@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:06Z"
+fetched_at: "2026-03-03T15:08:20Z"
 source_url: "https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis"
 title: "Using S&amp;P Global Data for Financial Analysis | Claude Help Center"
 ---
@@ -172,6 +172,9 @@ Business relationship mapping through Kensho provides insights into operational 
 Related Articles
 
 
+Claude for Financial Services Overview
+
+
 Using Daloopa for Financial Analysis
 
 
@@ -182,6 +185,3 @@ Prompting Strategies for Financial Analysis
 
 
 Financial Analysis Workflows with Claude
-
-
-Claude for Financial Services Skills

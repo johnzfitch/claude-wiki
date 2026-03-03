@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:20:37Z"
+fetched_at: "2026-03-03T14:56:06Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/library"
 title: "Prompt Library - Claude API Docs"
 ---
+
 # Prompt Library
 
 Explore optimized prompts for a breadth of business and personal tasks.
