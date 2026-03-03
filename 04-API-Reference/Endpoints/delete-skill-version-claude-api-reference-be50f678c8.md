@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:59:59Z"
+fetched_at: "2026-03-03T15:03:23Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/delete"
 title: "Delete Skill Version - Claude API Reference"
 ---
+
 # Delete Skill Version
 
 client.Beta.Skills.Versions.Delete(ctx, version, params) (\*[BetaSkillVersionDeleteResponse](/docs/en/api/beta#BetaSkillVersionDeleteResponse), error)

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:45:44Z"
+fetched_at: "2026-03-03T15:00:57Z"
 source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
+
 # Delete a Message Batch
 
 [DeletedMessageBatch](/docs/en/api/messages#deleted_message_batch) messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:22Z"
+fetched_at: "2026-03-03T15:08:28Z"
 source_url: "https://support.claude.com/en/articles/10684626-enabling-and-using-web-search"
 title: "Enabling and using web search | Claude Help Center"
 ---
@@ -149,6 +149,9 @@ Related Articles
 How up-to-date is Claude's training data?
 
 
+How large is the Claude API’s context window?
+
+
 Claude Code model configuration
 
 
@@ -156,6 +159,3 @@ Release notes
 
 
 Getting the most out of Sonnet 4.5 in Claude.ai
-
-
-Create professional results across tools with Claude Sonnet 4.5

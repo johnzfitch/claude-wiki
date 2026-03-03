@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:43:57Z"
+fetched_at: "2026-03-03T15:00:30Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/versions/list"
 title: "List Skill Versions - Claude API Reference"
 ---
+
 # List Skill Versions
 
 beta.skills.versions.list(strskill_id, VersionListParams\*\*kwargs) -\> SyncPageCursor\[[VersionListResponse](/docs/en/api/beta#version_list_response)\]

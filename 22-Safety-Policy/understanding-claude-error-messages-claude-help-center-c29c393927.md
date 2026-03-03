@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-28T11:22:23Z"
+fetched_at: "2026-03-03T15:08:29Z"
 source_url: "https://support.claude.com/en/articles/12466728-understanding-claude-error-messages"
 title: "Understanding Claude Error Messages | Claude Help Center"
 ---

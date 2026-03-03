@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:21:46Z"
+fetched_at: "2026-03-03T14:56:12Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/pun-dit"
 title: "Pun-dit - Claude API Docs"
 ---
+
 # Pun-dit
 
 

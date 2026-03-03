@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:01:23Z"
+fetched_at: "2026-03-03T15:03:45Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/cancel"
 title: "Cancel a Message Batch - Claude API Reference"
 ---
+
 # Cancel a Message Batch
 
 messages.batches.cancel(message_batch_id) -\> [MessageBatch](/docs/en/api/messages#message_batch) { id, archived_at, cancel_initiated_at, 7 more }

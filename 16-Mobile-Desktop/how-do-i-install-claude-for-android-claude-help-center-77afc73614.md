@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-28T11:22:05Z"
+fetched_at: "2026-03-03T15:08:30Z"
 source_url: "https://support.claude.com/en/articles/9612887-how-do-i-install-claude-for-android"
 title: "How do I install Claude for Android? | Claude Help Center"
 ---
@@ -24,7 +24,7 @@ Installing Claude for iOS
 How can I cancel my Claude Pro subscription on Claude for Android?
 
 
+How to update Claude for Android
+
+
 Using Claude with Android Apps
-
-
-Using the 10x Genomics Extension in Claude

@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:22:27Z"
+fetched_at: "2026-03-03T14:56:16Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/simile-savant"
 title: "Simile savant - Claude API Docs"
 ---
+
 # Simile savant
 
 

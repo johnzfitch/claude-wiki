@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-28T11:22:24Z"
+fetched_at: "2026-03-03T15:08:30Z"
 source_url: "https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy"
 title: "Using Agents According to Our Usage Policy | Claude Help Center"
 ---
@@ -73,10 +73,10 @@ This includes using agents to:
 Related Articles
 
 
-API Safeguards Tools
-
-
 Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
+
+
+What is Anthropic’s policy for handling governmental requests for user information?
 
 
 Exceptions to our Usage Policy
@@ -85,4 +85,4 @@ Exceptions to our Usage Policy
 Claude Code usage analytics
 
 
-Usage analytics for Team and Enterprise plans
+Extra usage for paid Claude plans

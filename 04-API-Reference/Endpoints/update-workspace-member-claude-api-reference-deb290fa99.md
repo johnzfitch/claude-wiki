@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:26:57Z"
+fetched_at: "2026-03-03T15:07:11Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/update"
 title: "Update Workspace Member - Claude API Reference"
 ---
+
 # Update Workspace Member
 
 POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}

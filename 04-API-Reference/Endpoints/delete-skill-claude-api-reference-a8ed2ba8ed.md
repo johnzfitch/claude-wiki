@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:49:28Z"
+fetched_at: "2026-03-03T15:01:50Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/delete"
 title: "Delete Skill - Claude API Reference"
 ---
+
 # Delete Skill
 
 [SkillDeleteResponse](/docs/en/api/beta#SkillDeleteResponse) beta().skills().delete(SkillDeleteParamsparams = SkillDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:23:37Z"
+fetched_at: "2026-03-03T15:06:54Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills"
 title: "Skills - Claude API Reference"
 ---
+
 # Skills
 
 ##### [Create Skill](/docs/en/api/beta/skills/create)

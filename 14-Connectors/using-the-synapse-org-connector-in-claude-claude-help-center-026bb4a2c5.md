@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:21Z"
+fetched_at: "2026-03-03T15:08:14Z"
 source_url: "https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude"
 title: "Using the Synapse.org connector in Claude | Claude Help Center"
 ---
@@ -93,9 +93,6 @@ Technical details of the Synapse.org integration can be found in **[Synapse’s 
 Related Articles
 
 
-Getting Started with Claude for Life Sciences
-
-
 Using the BioRender Connector in Claude
 
 
@@ -106,3 +103,6 @@ Using the Benchling Connector in Claude
 
 
 Using the Scholar Gateway Connector in Claude
+
+
+Using interactive connectors in Claude

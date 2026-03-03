@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-28T11:22:13Z"
+fetched_at: "2026-03-03T15:08:25Z"
 source_url: "https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5"
 title: "Create professional results across tools with Claude Sonnet 4.5 | Claude Help Center"
 ---

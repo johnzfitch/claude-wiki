@@ -1,10 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T00:42:49Z"
-last_modified: "Fri, 27 Feb 2026 20:37:15 GMT"
+fetched_at: "2026-03-03T15:07:46Z"
+last_modified: "Tue, 03 Mar 2026 03:21:57 GMT"
 source_url: "https://claude.com/blog/trainium2-and-distillation"
 title: "Claude 3.5 Haiku on AWS Trainium2 and model distillation in Amazon Bedrock | Claude"
 ---
+
 # Claude 3.5 Haiku on AWS Trainium2 and model distillation in Amazon Bedrock
 
 We're bringing faster inference to Claude 3.5 Haiku through AWS Trainium2 optimization and enabling model distillation in Amazon Bedrock to help you achieve frontier-level performance at lower costs.

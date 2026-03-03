@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-27T09:26:56Z"
+fetched_at: "2026-03-03T15:07:58Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle"
 title: "Lifecycle - Model Context Protocol"
 ---
+
 # Lifecycle
 
 

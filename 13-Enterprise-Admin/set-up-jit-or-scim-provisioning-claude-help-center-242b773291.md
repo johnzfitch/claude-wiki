@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-28T11:22:34Z"
+fetched_at: "2026-03-03T15:08:43Z"
 source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning"
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
 ---
@@ -170,10 +170,10 @@ Related Articles
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 
+Getting Started with Claude for Education at Your University (for Owners/Admins)
+
+
 Set up single sign-on (SSO)
-
-
-Manage members on Team and Enterprise plans
 
 
 Purchase and manage seats on Enterprise plans

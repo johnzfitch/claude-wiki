@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:24:26Z"
+fetched_at: "2026-03-03T14:56:27Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/interview-question-crafter"
 title: "Interview question crafter - Claude API Docs"
 ---
+
 # Interview question crafter
 
 

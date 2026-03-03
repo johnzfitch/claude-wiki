@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:37:14Z"
+fetched_at: "2026-03-03T14:59:06Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/retrieve_metadata"
 title: "Get File Metadata - Claude API Reference"
 ---
+
 # Get File Metadata
 
 client.beta.files.retrieveMetadata(stringfileID, FileRetrieveMetadataParams { betas } params?, RequestOptionsoptions?): [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }

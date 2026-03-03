@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:37:20Z"
+fetched_at: "2026-03-03T14:59:07Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/delete"
 title: "Delete File - Claude API Reference"
 ---
+
 # Delete File
 
 client.beta.files.delete(stringfileID, FileDeleteParams { betas } params?, RequestOptionsoptions?): [DeletedFile](/docs/en/api/beta#deleted_file) { id, type }

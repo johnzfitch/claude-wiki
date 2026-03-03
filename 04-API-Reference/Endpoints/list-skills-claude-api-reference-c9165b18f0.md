@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:37:39Z"
+fetched_at: "2026-03-03T14:59:08Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/list"
 title: "List Skills - Claude API Reference"
 ---
+
 # List Skills
 
 client.beta.skills.list(SkillListParams { limit, page, source, betas } params?, RequestOptionsoptions?): PageCursor\<[SkillListResponse](/docs/en/api/beta#skill_list_response) { id, created_at, display_title, 4 more } \>

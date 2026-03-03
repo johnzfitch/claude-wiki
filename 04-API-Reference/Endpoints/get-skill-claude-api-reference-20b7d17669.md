@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:05:10Z"
+fetched_at: "2026-03-03T15:04:32Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/retrieve"
 title: "Get Skill - Claude API Reference"
 ---
+
 # Get Skill
 
 beta.skills.retrieve(skill_id, \*\*kwargs) -\> [SkillRetrieveResponse](/docs/en/api/beta#skill_retrieve_response) { id, created_at, display_title, 4 more }

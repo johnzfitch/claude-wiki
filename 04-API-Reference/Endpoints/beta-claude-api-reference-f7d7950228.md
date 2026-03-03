@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:40:37Z"
+fetched_at: "2026-03-03T14:59:52Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta"
 title: "Beta - Claude API Reference"
 ---
+
 # Beta
 
 ##### ModelsExpand Collapse 

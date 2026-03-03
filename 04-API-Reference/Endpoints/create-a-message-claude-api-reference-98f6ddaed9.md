@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:35:43Z"
+fetched_at: "2026-03-03T14:58:52Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/create"
 title: "Create a Message - Claude API Reference"
 ---
+
 # Create a Message
 
 client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): [BetaMessage](/docs/en/api/beta#beta_message) { id, container, content, 7 more } \| Stream\<[BetaRawMessageStreamEvent](/docs/en/api/beta#beta_raw_message_stream_event)\>

@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:16Z"
+fetched_at: "2026-03-03T15:08:11Z"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 title: "Account management FAQs | Claude Help Center"
 ---
@@ -63,13 +63,13 @@ Related Articles
 Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations?
 
 
+Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
+
+
 Extra usage for Team and seat-based Enterprise plans
-
-
-Team plan billing FAQs
 
 
 Manage members on Team and Enterprise plans
 
 
-Manage Cowork plugins for your organization
+Find and join a Team or Enterprise organization

@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:07:14Z"
+fetched_at: "2026-03-03T14:55:50Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/secure-deployment"
 title: "Securely deploying AI agents - Claude API Docs"
 ---
+
 # Securely deploying AI agents
 
 

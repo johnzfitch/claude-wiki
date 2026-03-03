@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:04Z"
+fetched_at: "2026-03-03T15:08:08Z"
 source_url: "https://support.claude.com/en/articles/9015913-how-to-get-support"
 title: "How to get support | Claude Help Center"
 ---
@@ -151,10 +151,10 @@ Where can I go for Claude API support and assistance?
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 
-Claude Code usage analytics
-
-
-Requesting a refund for a paid Claude plan
+I'm getting an API connection error. How can I fix it?
 
 
 How to get support for Claude for Government
+
+
+Set up single sign-on (SSO)

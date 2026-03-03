@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-28T11:22:31Z"
+fetched_at: "2026-03-03T15:08:37Z"
 source_url: "https://code.claude.com/docs/"
 title: "Claude Code overview - Claude Code Docs"
 ---
@@ -179,7 +179,7 @@ The [Model Context Protocol (MCP)](/docs/en/mcp) is an open standard for connect
 
 Customize with instructions, skills, and hooks
 
-[`CLAUDE.md`](/docs/en/claude-md) is a markdown file you add to your project root that Claude Code reads at the start of every session. Use it to set coding standards, architecture decisions, preferred libraries, and review checklists.Create [custom slash commands](/docs/en/skills) to package repeatable workflows your team can share, like `/review-pr` or `/deploy-staging`.[Hooks](/docs/en/hooks) let you run shell commands before or after Claude Code actions, like auto-formatting after every file edit or running lint before a commit.
+[`CLAUDE.md`](/docs/en/memory) is a markdown file you add to your project root that Claude Code reads at the start of every session. Use it to set coding standards, architecture decisions, preferred libraries, and review checklists. Claude also builds [auto memory](/docs/en/memory#auto-memory) as it works, saving learnings like build commands and debugging insights across sessions without you writing anything.Create [custom commands](/docs/en/skills) to package repeatable workflows your team can share, like `/review-pr` or `/deploy-staging`.[Hooks](/docs/en/hooks) let you run shell commands before or after Claude Code actions, like auto-formatting after every file edit or running lint before a commit.
 
 Run agent teams and build custom agents
 
@@ -242,7 +242,8 @@ Next steps
 Once you’ve installed Claude Code, these guides help you go deeper.
 
 - [Quickstart](/docs/en/quickstart): walk through your first real task, from exploring a codebase to committing a fix
-- Level up with [best practices](/docs/en/best-practices) and [common workflows](/docs/en/common-workflows)
+- [Store instructions and memories](/docs/en/memory): give Claude persistent instructions with CLAUDE.md files and auto memory
+- [Common workflows](/docs/en/common-workflows) and [best practices](/docs/en/best-practices): patterns for getting the most out of Claude Code
 - [Settings](/docs/en/settings): customize Claude Code for your workflow
 - [Troubleshooting](/docs/en/troubleshooting): solutions for common issues
 - [code.claude.com](https://code.claude.com/): demos, pricing, and product details

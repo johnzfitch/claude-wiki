@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:07:38Z"
+fetched_at: "2026-03-03T14:55:53Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/subagents"
 title: "Subagents in the SDK - Claude API Docs"
 ---
+
 # Subagents in the SDK
 
 

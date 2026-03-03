@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:04:39Z"
+fetched_at: "2026-03-03T15:04:29Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/files/retrieve_metadata"
 title: "Get File Metadata - Claude API Reference"
 ---
+
 # Get File Metadata
 
 beta.files.retrieve_metadata(file_id, \*\*kwargs) -\> [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }

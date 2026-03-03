@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:58:46Z"
+fetched_at: "2026-03-03T15:03:17Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/files/download"
 title: "Download File - Claude API Reference"
 ---
+
 # Download File
 
 client.Beta.Files.Download(ctx, fileID, query) (\*Response, error)

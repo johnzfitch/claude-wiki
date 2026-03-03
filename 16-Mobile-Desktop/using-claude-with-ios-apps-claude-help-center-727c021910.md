@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-28T11:22:05Z"
+fetched_at: "2026-03-03T15:08:16Z"
 source_url: "https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps"
 title: "Using Claude with iOS Apps | Claude Help Center"
 ---
@@ -293,16 +293,16 @@ Claude will only request permissions if needed for specific features, and you ca
 Related Articles
 
 
+How can I cancel my Claude Pro subscription on the Claude app for iOS?
+
+
 Installing Claude for iOS
 
 
 Using Claude App Intents, Shortcuts, and Widgets on iOS
 
 
-Use the Connectors Directory to extend Claude’s capabilities
-
-
-How to update Claude for iOS
-
-
 Using Claude with Android Apps
+
+
+Using the Blackbaud Connector in Claude

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:36:54Z"
+fetched_at: "2026-03-03T14:59:05Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/upload"
 title: "Upload File - Claude API Reference"
 ---
+
 # Upload File
 
 client.beta.files.upload(FileUploadParams { file, betas } params, RequestOptionsoptions?): [FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more }

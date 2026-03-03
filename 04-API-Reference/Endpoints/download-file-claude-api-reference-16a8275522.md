@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:23:18Z"
+fetched_at: "2026-03-03T15:06:52Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/download"
 title: "Download File - Claude API Reference"
 ---
+
 # Download File
 
 HttpResponse Beta.Files.Download(FileDownloadParamsparameters, CancellationTokencancellationToken = default)

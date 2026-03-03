@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:43:44Z"
+fetched_at: "2026-03-03T15:00:29Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/versions"
 title: "Versions - Claude API Reference"
 ---
+
 # Versions
 
 ##### [Create Skill Version](/docs/en/api/beta/skills/versions/create)

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:32:03Z"
+fetched_at: "2026-03-03T14:57:52Z"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills/retrieve"
 title: "Get Skill - Claude API Reference"
 ---
+
 # Get Skill
 
 GET/v1/skills/{skill_id}

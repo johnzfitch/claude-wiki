@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:37:01Z"
+fetched_at: "2026-03-03T14:59:05Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/list"
 title: "List Files - Claude API Reference"
 ---
+
 # List Files
 
 client.beta.files.list(FileListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[FileMetadata](/docs/en/api/beta#file_metadata) { id, created_at, filename, 4 more } \>

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:01:17Z"
+fetched_at: "2026-03-03T15:03:44Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/list"
 title: "List Message Batches - Claude API Reference"
 ---
+
 # List Message Batches
 
 messages.batches.list(\*\*kwargs) -\> Page\<[MessageBatch](/docs/en/api/messages#message_batch) { id, archived_at, cancel_initiated_at, 7 more } \>

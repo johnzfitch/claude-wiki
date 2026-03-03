@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:57:25Z"
+fetched_at: "2026-03-03T15:03:05Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/create"
 title: "Create a Message - Claude API Reference"
 ---
+
 # Create a Message
 
 client.Beta.Messages.New(ctx, params) (\*[BetaMessage](/docs/en/api/beta#beta_message), error)

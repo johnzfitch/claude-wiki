@@ -1,9 +1,10 @@
 ---
 category: "20-Models"
-fetched_at: "2026-02-22T14:02:39Z"
+fetched_at: "2026-03-03T15:04:00Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
+
 # Get a Model
 
 beta.models.retrieve(model_id, \*\*kwargs) -\> [BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, created_at, display_name, type }

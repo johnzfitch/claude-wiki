@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:39:39Z"
+fetched_at: "2026-03-03T14:59:35Z"
 source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/retrieve"
 title: "Retrieve a Message Batch - Claude API Reference"
 ---
+
 # Retrieve a Message Batch
 
 messages.batches.retrieve(strmessage_batch_id) -\> [MessageBatch](/docs/en/api/messages#message_batch)

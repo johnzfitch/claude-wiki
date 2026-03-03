@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:43:38Z"
+fetched_at: "2026-03-03T15:00:28Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/delete"
 title: "Delete Skill - Claude API Reference"
 ---
+
 # Delete Skill
 
 beta.skills.delete(strskill_id, SkillDeleteParams\*\*kwargs) -\> [SkillDeleteResponse](/docs/en/api/beta#skill_delete_response)

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:57:33Z"
+fetched_at: "2026-03-03T15:03:07Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/count_tokens"
 title: "Count tokens in a Message - Claude API Reference"
 ---
+
 # Count tokens in a Message
 
 client.Beta.Messages.CountTokens(ctx, params) (\*[BetaMessageTokensCount](/docs/en/api/beta#beta_message_tokens_count), error)

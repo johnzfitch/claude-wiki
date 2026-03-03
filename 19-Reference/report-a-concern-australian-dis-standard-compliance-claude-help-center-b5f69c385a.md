@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-28T11:22:06Z"
+fetched_at: "2026-03-03T15:08:20Z"
 source_url: "https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance"
 title: "Report a Concern: Australian DIS Standard compliance | Claude Help Center"
 ---
@@ -41,6 +41,9 @@ If you wish to refer a matter to the eSafety Commissioner, please follow the ins
 Related Articles
 
 
+Reporting, Blocking, and Removing Content from Claude
+
+
 Does Anthropic crawl data from the web, and how can site owners block the crawler?
 
 
@@ -51,6 +54,3 @@ Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of
 
 
 Reporting, Blocking, and Removing Content from Claude
-
-
-Crisis Helpline Support in Claude

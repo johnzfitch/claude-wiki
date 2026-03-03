@@ -1,10 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T00:41:08Z"
-last_modified: "Fri, 27 Feb 2026 20:34:25 GMT"
+fetched_at: "2026-03-03T15:07:18Z"
+last_modified: "Tue, 03 Mar 2026 04:43:39 GMT"
 source_url: "https://claude.com/product/claude-code"
 title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
 ---
+
 # Claude Code: AI-powered coding assistant for developers
 
 Built for

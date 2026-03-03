@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:55:25Z"
+fetched_at: "2026-03-03T15:02:34Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/create"
 title: "Create a Message Batch - Claude API Reference"
 ---
+
 # Create a Message Batch
 
 client.Messages.Batches.New(ctx, body) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)

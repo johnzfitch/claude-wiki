@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:08:08Z"
+fetched_at: "2026-03-03T14:55:56Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/plugins"
 title: "Plugins in the SDK - Claude API Docs"
 ---
+
 # Plugins in the SDK
 
 
@@ -137,9 +138,7 @@ async function runWithPlugin() {
   for await (const message of query({
     prompt: "What custom commands do you have available?",
     options: {
-      plugins: [
-        { type: "local", path: pluginPath }
-      ],
+      plugins: [{ type: "local", path: pluginPath }],
       maxTurns: 3
     }
   })) {
@@ -195,9 +194,7 @@ Development and testing
 Load plugins during development without installing them globally:
 
 ``` shiki
-plugins: [
-  { type: "local", path: "./dev-plugins/my-plugin" }
-];
+plugins: [{ type: "local", path: "./dev-plugins/my-plugin" }];
 ```
 
 ### 
@@ -207,9 +204,7 @@ Project-specific extensions
 Include plugins in your project repository for team-wide consistency:
 
 ``` shiki
-plugins: [
-  { type: "local", path: "./project-plugins/team-workflows" }
-];
+plugins: [{ type: "local", path: "./project-plugins/team-workflows" }];
 ```
 
 ### 

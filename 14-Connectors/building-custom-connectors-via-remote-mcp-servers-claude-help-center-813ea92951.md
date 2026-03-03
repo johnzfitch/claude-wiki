@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:33Z"
+fetched_at: "2026-03-03T15:08:09Z"
 source_url: "https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers"
 title: "Building custom connectors via remote MCP servers | Claude Help Center"
 ---
@@ -99,10 +99,10 @@ Related Articles
 Get started with custom connectors using remote MCP
 
 
-Pre-built web connectors using remote MCP
-
-
 Anthropic Connectors Directory FAQ
+
+
+Deploying enterprise-grade MCP servers with desktop extensions
 
 
 Remote MCP Server Submission Guide

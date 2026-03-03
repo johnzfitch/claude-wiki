@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:06:36Z"
+fetched_at: "2026-03-03T14:55:46Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/user-input"
 title: "Handle approvals and user input - Claude API Docs"
 ---
+
 # Handle approvals and user input
 
 
@@ -366,7 +367,9 @@ For multi-select questions, join multiple labels with `", "`. For free-text inpu
 
 ``` shiki
 {
-  "questions": [...],
+  "questions": [
+    // ...
+  ],
   "answers": {
     "How should I format the output?": "Summary",
     "Which sections should I include?": "Introduction, Conclusion"

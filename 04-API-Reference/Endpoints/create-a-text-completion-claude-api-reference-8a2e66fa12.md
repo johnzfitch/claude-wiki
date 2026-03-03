@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:44:23Z"
+fetched_at: "2026-03-03T15:00:32Z"
 source_url: "https://platform.claude.com/docs/en/api/java/completions/create"
 title: "Create a Text Completion - Claude API Reference"
 ---
+
 # Create a Text Completion
 
 [Completion](/docs/en/api/completions#completion) completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())

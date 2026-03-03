@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:25:18Z"
+fetched_at: "2026-03-03T15:07:03Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/invites/delete"
 title: "Delete Invite - Claude API Reference"
 ---
+
 # Delete Invite
 
 DELETE/v1/organizations/invites/{invite_id}

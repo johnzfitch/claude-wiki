@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:06Z"
+fetched_at: "2026-03-03T15:08:19Z"
 source_url: "https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis"
 title: "Using LSEG for Financial Market Data Analysis | Claude Help Center"
 ---
@@ -159,9 +159,6 @@ Related Articles
 Using S&P Global Data for Financial Analysis
 
 
-Using FactSet for Comprehensive Financial Research
-
-
 Prompting Strategies for Financial Analysis
 
 
@@ -169,3 +166,6 @@ Financial Analysis Workflows with Claude
 
 
 Using Databricks for Data Analysis
+
+
+Using Moody’s for Financial Analysis

@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:06:12Z"
+fetched_at: "2026-03-03T14:55:43Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/migration-guide"
 title: "Migrate to Claude Agent SDK - Claude API Docs"
 ---
+
 # Migrate to Claude Agent SDK
 
 
@@ -57,29 +58,29 @@ Change all imports from `@anthropic-ai/claude-code` to `@anthropic-ai/claude-age
 import { query, tool, createSdkMcpServer } from "@anthropic-ai/claude-code";
 
 // After
-import {
-  query,
-  tool,
-  createSdkMcpServer
-} from "@anthropic-ai/claude-agent-sdk";
+import { query, tool, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
 ```
 
 **4. Update package.json dependencies:**
 
 If you have the package listed in your `package.json`, update it:
 
+Before:
+
 ``` shiki
-// Before
 {
   "dependencies": {
-    "@anthropic-ai/claude-code": "^1.0.0"
+    "@anthropic-ai/claude-code": "^0.0.42"
   }
 }
+```
 
-// After
+After:
+
+``` shiki
 {
   "dependencies": {
-    "@anthropic-ai/claude-agent-sdk": "^0.1.0"
+    "@anthropic-ai/claude-agent-sdk": "^0.2.0"
   }
 }
 ```
@@ -120,7 +121,7 @@ Change `ClaudeCodeOptions` to `ClaudeAgentOptions`:
 
 ``` shiki
 # Before
-from claude_agent_sdk import query, ClaudeCodeOptions
+from claude_code_sdk import query, ClaudeCodeOptions
 
 options = ClaudeCodeOptions(model="claude-opus-4-6")
 
@@ -149,12 +150,12 @@ Python: ClaudeCodeOptions renamed to ClaudeAgentOptions
 **Migration:**
 
 ``` shiki
-# BEFORE (v0.0.x)
-from claude_agent_sdk import query, ClaudeCodeOptions
+# BEFORE (claude-code-sdk)
+from claude_code_sdk import query, ClaudeCodeOptions
 
 options = ClaudeCodeOptions(model="claude-opus-4-6", permission_mode="acceptEdits")
 
-# AFTER (v0.1.0)
+# AFTER (claude-agent-sdk)
 from claude_agent_sdk import query, ClaudeAgentOptions
 
 options = ClaudeAgentOptions(model="claude-opus-4-6", permission_mode="acceptEdits")

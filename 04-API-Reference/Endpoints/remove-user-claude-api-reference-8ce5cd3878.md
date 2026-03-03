@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:25:49Z"
+fetched_at: "2026-03-03T15:07:05Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/users/delete"
 title: "Remove User - Claude API Reference"
 ---
+
 # Remove User
 
 DELETE/v1/organizations/users/{user_id}

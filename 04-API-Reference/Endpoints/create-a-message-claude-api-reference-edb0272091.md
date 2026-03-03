@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:41:30Z"
+fetched_at: "2026-03-03T15:00:11Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/messages/create"
 title: "Create a Message - Claude API Reference"
 ---
+
 # Create a Message
 
 beta.messages.create(MessageCreateParams\*\*kwargs) -\> [BetaMessage](/docs/en/api/beta#beta_message)

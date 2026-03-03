@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:12Z"
+fetched_at: "2026-03-03T15:08:27Z"
 source_url: "https://support.claude.com/en/articles/11649438-prototype-ai-powered-apps-with-claude-artifacts"
 title: "Prototype AI-Powered Apps with Claude artifacts | Claude Help Center"
 ---
@@ -123,7 +123,7 @@ What are artifacts and how do I use them?
 Publishing and sharing artifacts
 
 
-Using Claude App Intents, Shortcuts, and Widgets on iOS
+Claude for Marketing
 
 
 Use artifacts to visualize and create AI apps, without ever writing a line of code

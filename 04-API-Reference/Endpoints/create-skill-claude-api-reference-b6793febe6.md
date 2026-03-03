@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:49:10Z"
+fetched_at: "2026-03-03T15:01:49Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/create"
 title: "Create Skill - Claude API Reference"
 ---
+
 # Create Skill
 
 [SkillCreateResponse](/docs/en/api/beta#SkillCreateResponse) beta().skills().create(SkillCreateParamsparams = SkillCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())

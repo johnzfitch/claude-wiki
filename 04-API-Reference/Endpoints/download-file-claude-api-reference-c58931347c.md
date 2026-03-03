@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:42:56Z"
+fetched_at: "2026-03-03T15:00:24Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/files/download"
 title: "Download File - Claude API Reference"
 ---
+
 # Download File
 
 beta.files.download(strfile_id, FileDownloadParams\*\*kwargs) -\> BinaryResponseContent

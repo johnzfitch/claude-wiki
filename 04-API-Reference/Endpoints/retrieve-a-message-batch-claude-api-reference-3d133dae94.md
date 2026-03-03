@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:57:56Z"
+fetched_at: "2026-03-03T15:03:12Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/batches/retrieve"
 title: "Retrieve a Message Batch - Claude API Reference"
 ---
+
 # Retrieve a Message Batch
 
 client.Beta.Messages.Batches.Get(ctx, messageBatchID, query) (\*[BetaMessageBatch](/docs/en/api/beta#beta_message_batch), error)

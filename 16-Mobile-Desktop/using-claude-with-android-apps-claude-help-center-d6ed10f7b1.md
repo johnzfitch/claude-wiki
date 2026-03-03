@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-28T11:22:05Z"
+fetched_at: "2026-03-03T15:08:16Z"
 source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
 title: "Using Claude with Android Apps | Claude Help Center"
 ---
@@ -317,7 +317,7 @@ Related Articles
 Using the Claude Widget on Android
 
 
-Use the Connectors Directory to extend Claude’s capabilities
+Use connectors to extend Claude's capabilities
 
 
 Using Claude with iOS Apps

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:05:28Z"
+fetched_at: "2026-03-03T15:04:33Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/versions/create"
 title: "Create Skill Version - Claude API Reference"
 ---
+
 # Create Skill Version
 
 beta.skills.versions.create(skill_id, \*\*kwargs) -\> [VersionCreateResponse](/docs/en/api/beta#version_create_response) { id, created_at, description, 5 more }

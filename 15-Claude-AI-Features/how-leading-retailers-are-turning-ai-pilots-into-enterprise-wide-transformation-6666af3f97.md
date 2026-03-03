@@ -1,10 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T00:42:39Z"
-last_modified: "Fri, 27 Feb 2026 20:34:33 GMT"
+fetched_at: "2026-03-03T15:07:45Z"
+last_modified: "Tue, 03 Mar 2026 03:18:59 GMT"
 source_url: "https://claude.com/blog/how-leading-retailers-are-turning-ai-pilots-into-enterprise-wide-transformation"
 title: "How leading retailers are turning AI pilots into enterprise-wide transformation | Claude"
 ---
+
 # How leading retailers are turning AI pilots into enterprise-wide transformation
 
 Most enterprise AI initiatives start strong and stall fast. Our new guide documents what the organizations pulling ahead are doing differently.

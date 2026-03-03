@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:20Z"
+fetched_at: "2026-03-03T15:08:42Z"
 source_url: "https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude"
 title: "Using the Blackbaud Connector in Claude | Claude Help Center"
 ---
@@ -161,10 +161,10 @@ Example prompt:
 Related Articles
 
 
+Use connectors to extend Claude's capabilities
+
+
 Using the Synapse.org connector in Claude
-
-
-Using the Benchling Connector in Claude
 
 
 Using the Benevity Connector in Claude

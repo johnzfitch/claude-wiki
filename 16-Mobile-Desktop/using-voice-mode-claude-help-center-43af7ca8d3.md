@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-02-28T11:22:33Z"
+fetched_at: "2026-03-03T15:08:41Z"
 source_url: "https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps"
 title: "Using voice mode | Claude Help Center"
 ---
@@ -179,6 +179,9 @@ If you are an Enterprise owner and would like to disable voice mode for your org
 Related Articles
 
 
+Using dictation on Claude Mobile
+
+
 Using Claude App Intents, Shortcuts, and Widgets on iOS
 
 
@@ -186,9 +189,6 @@ Using the Claude Widget on Android
 
 
 Using extended thinking
-
-
-Using incognito chats
 
 
 Use quick entry with Claude Desktop on Mac

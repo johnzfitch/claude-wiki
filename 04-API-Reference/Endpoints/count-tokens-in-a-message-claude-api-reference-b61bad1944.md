@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:19:35Z"
+fetched_at: "2026-03-03T15:06:00Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/messages/count_tokens"
 title: "Count tokens in a Message - Claude API Reference"
 ---
+
 # Count tokens in a Message
 
 [MessageTokensCount](/docs/en/api/messages#message_tokens_count) Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)

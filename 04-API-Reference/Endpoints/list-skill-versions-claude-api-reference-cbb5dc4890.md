@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:59:47Z"
+fetched_at: "2026-03-03T15:03:22Z"
 source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/list"
 title: "List Skill Versions - Claude API Reference"
 ---
+
 # List Skill Versions
 
 client.Beta.Skills.Versions.List(ctx, skillID, params) (\*PageCursor\[[BetaSkillVersionListResponse](/docs/en/api/beta#BetaSkillVersionListResponse)\], error)

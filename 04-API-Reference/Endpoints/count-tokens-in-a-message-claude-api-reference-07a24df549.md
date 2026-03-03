@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:03:19Z"
+fetched_at: "2026-03-03T15:04:18Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/count_tokens"
 title: "Count tokens in a Message - Claude API Reference"
 ---
+
 # Count tokens in a Message
 
 beta.messages.count_tokens(\*\*kwargs) -\> [BetaMessageTokensCount](/docs/en/api/beta#beta_message_tokens_count) { context_management, input_tokens }

@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:33:22Z"
+fetched_at: "2026-03-03T14:58:11Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/messages/create"
 title: "Create a Message - Claude API Reference"
 ---
+
 # Create a Message
 
 client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): [Message](/docs/en/api/messages#message) { id, container, content, 6 more } \| Stream\<[RawMessageStreamEvent](/docs/en/api/messages#raw_message_stream_event)\>

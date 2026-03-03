@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:22:03Z"
+fetched_at: "2026-03-03T14:56:14Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/hal-the-humorous-helper"
 title: "Hal the humorous helper - Claude API Docs"
 ---
+
 # Hal the humorous helper
 
 

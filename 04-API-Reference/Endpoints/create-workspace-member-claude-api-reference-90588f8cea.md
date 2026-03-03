@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:26:38Z"
+fetched_at: "2026-03-03T15:07:10Z"
 source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/create"
 title: "Create Workspace Member - Claude API Reference"
 ---
+
 # Create Workspace Member
 
 POST/v1/organizations/workspaces/{workspace_id}/members

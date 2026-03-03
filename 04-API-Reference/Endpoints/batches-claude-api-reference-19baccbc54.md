@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:47:42Z"
+fetched_at: "2026-03-03T15:01:38Z"
 source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/batches"
 title: "Batches - Claude API Reference"
 ---
+
 # Batches
 
 ##### [Create a Message Batch](/docs/en/api/beta/messages/batches/create)

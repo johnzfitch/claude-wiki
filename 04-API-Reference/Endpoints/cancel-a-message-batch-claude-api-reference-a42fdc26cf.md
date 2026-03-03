@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:55:44Z"
+fetched_at: "2026-03-03T15:02:36Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/cancel"
 title: "Cancel a Message Batch - Claude API Reference"
 ---
+
 # Cancel a Message Batch
 
 client.Messages.Batches.Cancel(ctx, messageBatchID) (\*[MessageBatch](/docs/en/api/messages#message_batch), error)

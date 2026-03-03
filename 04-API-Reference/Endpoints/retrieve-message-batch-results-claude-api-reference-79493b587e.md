@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:55:56Z"
+fetched_at: "2026-03-03T15:02:38Z"
 source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/results"
 title: "Retrieve Message Batch results - Claude API Reference"
 ---
+
 # Retrieve Message Batch results
 
 client.Messages.Batches.Results(ctx, messageBatchID) (\*[MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response), error)

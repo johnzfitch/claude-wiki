@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:28:21Z"
+fetched_at: "2026-03-03T14:57:04Z"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches/cancel"
 title: "Cancel a Message Batch - Claude API Reference"
 ---
+
 # Cancel a Message Batch
 
 POST/v1/messages/batches/{message_batch_id}/cancel

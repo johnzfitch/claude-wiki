@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-02-28T11:22:21Z"
+fetched_at: "2026-03-03T15:08:44Z"
 source_url: "https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account"
 title: "Can I have a Claude account and a Console account? | Claude Help Center"
 ---
@@ -20,6 +20,9 @@ Related Articles
 Business Associate Agreements (BAA) for Commercial Customers
 
 
+Choosing a Claude plan
+
+
 Using Claude Code with your Pro or Max plan
 
 
@@ -27,6 +30,3 @@ Claude 4 Invite Contest
 
 
 Claude Code FAQ
-
-
-Claude in Chrome Troubleshooting

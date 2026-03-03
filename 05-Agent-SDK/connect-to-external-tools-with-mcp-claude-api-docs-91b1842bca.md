@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-24T04:07:27Z"
+fetched_at: "2026-03-03T14:55:52Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/mcp"
 title: "Connect to external tools with MCP - Claude API Docs"
 ---
+
 # Connect to external tools with MCP
 
 
@@ -117,11 +118,13 @@ Use `allowedTools` to specify which MCP tools Claude can use:
 
 ``` shiki
 options: {
-  mcpServers: { /* your servers */ },
+  mcpServers: {
+    // your servers
+  },
   allowedTools: [
-    "mcp__github__*",              // All tools from the github server
-    "mcp__db__query",              // Only the query tool from db server
-    "mcp__slack__send_message"     // Only send_message from slack server
+    "mcp__github__*", // All tools from the github server
+    "mcp__db__query", // Only the query tool from db server
+    "mcp__slack__send_message" // Only send_message from slack server
   ]
 }
 ```
@@ -139,8 +142,10 @@ Instead of listing allowed tools, you can change the permission mode to grant br
 
 ``` shiki
 options: {
-  mcpServers: { /* your servers */ },
-  permissionMode: "acceptEdits"  // No need for allowedTools
+  mcpServers: {
+    // your servers
+  },
+  permissionMode: "acceptEdits" // No need for allowedTools
 }
 ```
 
@@ -189,7 +194,7 @@ TypeScript
 ``` shiki
 options: {
   mcpServers: {
-    "github": {
+    github: {
       command: "npx",
       args: ["-y", "@modelcontextprotocol/server-github"],
       env: {
@@ -277,7 +282,9 @@ TypeScript
 
 ``` shiki
 const options = {
-  mcpServers: { /* your MCP servers */ },
+  mcpServers: {
+    // your MCP servers
+  },
   env: {
     ENABLE_TOOL_SEARCH: "auto:5" // Enable at 5% threshold
   }
@@ -309,7 +316,7 @@ TypeScript
 ``` shiki
 options: {
   mcpServers: {
-    "github": {
+    github: {
       command: "npx",
       args: ["-y", "@modelcontextprotocol/server-github"],
       env: {
@@ -494,9 +501,7 @@ for await (const message of query({
   }
 })) {
   if (message.type === "system" && message.subtype === "init") {
-    const failedServers = message.mcp_servers.filter(
-      s => s.status !== "connected"
-    );
+    const failedServers = message.mcp_servers.filter((s) => s.status !== "connected");
 
     if (failedServers.length > 0) {
       console.warn("Failed to connect:", failedServers);
@@ -544,8 +549,10 @@ If Claude sees tools but doesn't use them, check that you've granted permission 
 
 ``` shiki
 options: {
-  mcpServers: { /* your servers */ },
-  allowedTools: ["mcp__servername__*"]  // Required for Claude to use the tools
+  mcpServers: {
+    // your servers
+  },
+  allowedTools: ["mcp__servername__*"] // Required for Claude to use the tools
 }
 ```
 

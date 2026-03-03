@@ -1,10 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T00:41:12Z"
-last_modified: "Fri, 27 Feb 2026 20:34:45 GMT"
+fetched_at: "2026-03-03T15:07:28Z"
+last_modified: "Mon, 02 Mar 2026 19:26:31 GMT"
 source_url: "https://claude.com/pricing/max"
 title: "Max plan | Claude"
 ---
+
 The Max plan combines Claude desktop and mobile apps and Claude Code in one subscription, with up to 20x more usage per session than Pro. That’s a lot of deep work potential.
 
 Get started

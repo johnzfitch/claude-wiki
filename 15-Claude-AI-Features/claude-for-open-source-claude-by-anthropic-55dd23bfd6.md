@@ -1,10 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T00:42:18Z"
-last_modified: "Fri, 27 Feb 2026 20:34:21 GMT"
+fetched_at: "2026-03-03T15:07:43Z"
+last_modified: "Tue, 03 Mar 2026 04:43:37 GMT"
 source_url: "https://claude.com/contact-sales/claude-for-oss"
 title: "Claude for Open Source | Claude by Anthropic"
 ---
+
 Applications are reviewed on a rolling basis. We accept up to 10,000 contributors. If approved, you'll get a link to activate Claude Max on your account for the subscription period. Apply below.
 
 Terms and Conditions

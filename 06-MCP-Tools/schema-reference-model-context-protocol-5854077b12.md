@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-27T09:27:03Z"
+fetched_at: "2026-03-03T15:08:05Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/schema"
 title: "Schema Reference - Model Context Protocol"
 ---
+
 # Schema Reference
 
 
@@ -222,6 +223,34 @@ theme?: “light” \| “dark”[](#icon-theme)
 Optional specifier for the theme this icon is designed for. `“light”` indicates the icon is designed to be used with a light background, and `“dark”` indicates the icon is designed to be used with a dark background.
 
 If not provided, the client should assume the icon can be used with any theme.
+
+### 
+
+[​](#jsonarray)
+
+`JSONArray`
+
+JSONArray: [JSONValue](#jsonvalue)\[\]
+
+### 
+
+[​](#jsonobject)
+
+`JSONObject`
+
+JSONObject: { \[key: string\]: [JSONValue](#jsonvalue) }
+
+Type Declaration
+
+- \[key: string\]: [JSONValue](#jsonvalue)
+
+### 
+
+[​](#jsonvalue)
+
+`JSONValue`
+
+JSONValue: string \| number \| boolean \| null \| [JSONObject](#jsonobject) \| [JSONArray](#jsonarray)
 
 ### 
 
@@ -2445,16 +2474,16 @@ Example: Server with workflow instructions[](#initializeresult-example-server-wi
 `ClientCapabilities`
 
 interface ClientCapabilities {\
-  [experimental](#clientcapabilities-experimental)?: { \[key: string\]: object };\
+  [experimental](#clientcapabilities-experimental)?: { \[key: string\]: [JSONObject](#jsonobject) };\
   [roots](#clientcapabilities-roots)?: { listChanged?: boolean };\
-  [sampling](#clientcapabilities-sampling)?: { context?: object; tools?: object };\
-  [elicitation](#clientcapabilities-elicitation)?: { form?: object; url?: object };\
+  [sampling](#clientcapabilities-sampling)?: { context?: [JSONObject](#jsonobject); tools?: [JSONObject](#jsonobject) };\
+  [elicitation](#clientcapabilities-elicitation)?: { form?: [JSONObject](#jsonobject); url?: [JSONObject](#jsonobject) };\
   [tasks](#clientcapabilities-tasks)?: {\
-    list?: object;\
-    cancel?: object;\
+    list?: [JSONObject](#jsonobject);\
+    cancel?: [JSONObject](#jsonobject);\
     requests?: {\
-      sampling?: { createMessage?: object };\
-      elicitation?: { create?: object };\
+      sampling?: { createMessage?: [JSONObject](#jsonobject) };\
+      elicitation?: { create?: [JSONObject](#jsonobject) };\
     };\
   };\
   [extensions](#clientcapabilities-extensions)?: { \[key: string\]: object };\
@@ -2462,7 +2491,7 @@ interface ClientCapabilities {\
 
 Capabilities a client may support. Known capabilities are defined here, in this schema, but this is not a closed set: any client can define its own, additional capabilities.
 
-experimental?: { \[key: string\]: object }[](#clientcapabilities-experimental)
+experimental?: { \[key: string\]: JSONObject }[](#clientcapabilities-experimental)
 
 Experimental, non-standard capabilities that the client supports.
 
@@ -2494,17 +2523,17 @@ Example: Roots — list changed notifications[](#clientcapabilities-example-root
 } Copy
 ```
 
-sampling?: { context?: object; tools?: object }[](#clientcapabilities-sampling)
+sampling?: { context?: JSONObject; tools?: JSONObject }[](#clientcapabilities-sampling)
 
 Present if the client supports sampling from an LLM.
 
 Type Declaration
 
-- `Optional`context?: object
+- `Optional`context?: [JSONObject](#jsonobject)
 
   Whether the client supports context inclusion via `includeContext` parameter. If not declared, servers SHOULD only use `includeContext: “none”` (or omit it).
 
-- `Optional`tools?: object
+- `Optional`tools?: [JSONObject](#jsonobject)
 
   Whether the client supports tool use via `tools` and `toolChoice` parameters.
 
@@ -2536,7 +2565,7 @@ Example: Sampling — context inclusion support (soft-deprecated)[](#clientcapab
 } Copy
 ```
 
-elicitation?: { form?: object; url?: object }[](#clientcapabilities-elicitation)
+elicitation?: { form?: JSONObject; url?: JSONObject }[](#clientcapabilities-elicitation)
 
 Present if the client supports elicitation from the server.
 
@@ -2559,37 +2588,40 @@ Example: Elicitation — form mode only (implicit)[](#clientcapabilities-example
 } Copy
 ```
 
-tasks?: { list?: object; cancel?: object; requests?: { sampling?: { createMessage?: object }; elicitation?: { create?: object }; }; }[](#clientcapabilities-tasks)
+tasks?: { list?: JSONObject; cancel?: JSONObject; requests?: { sampling?: { createMessage?: JSONObject }; elicitation?: { create?: JSONObject }; }; }[](#clientcapabilities-tasks)
 
 Present if the client supports task-augmented requests.
 
 Type Declaration
 
-- `Optional`list?: object
+- `Optional`list?: [JSONObject](#jsonobject)
 
   Whether this client supports [tasks/list](#listtasksrequest).
 
-- `Optional`cancel?: object
+- `Optional`cancel?: [JSONObject](#jsonobject)
 
   Whether this client supports [tasks/cancel](#canceltaskrequest).
 
-- `Optional`requests?: { sampling?: { createMessage?: object }; elicitation?: { create?: object } }
+- `Optional`requests?: {\
+    sampling?: { createMessage?: [JSONObject](#jsonobject) };\
+    elicitation?: { create?: [JSONObject](#jsonobject) };\
+  }
 
   Specifies which request types can be augmented with tasks.
 
-  - `Optional`sampling?: { createMessage?: object }
+  - `Optional`sampling?: { createMessage?: [JSONObject](#jsonobject) }
 
     Task support for sampling-related requests.
 
-    - `Optional`createMessage?: object
+    - `Optional`createMessage?: [JSONObject](#jsonobject)
 
       Whether the client supports task-augmented `sampling/createMessage` requests.
 
-  - `Optional`elicitation?: { create?: object }
+  - `Optional`elicitation?: { create?: [JSONObject](#jsonobject) }
 
     Task support for elicitation-related requests.
 
-    - `Optional`create?: object
+    - `Optional`create?: [JSONObject](#jsonobject)
 
       Whether the client supports task-augmented [elicitation/create](#elicitrequest) requests.
 
@@ -2677,27 +2709,27 @@ An optional URL of the website for this implementation.
 `ServerCapabilities`
 
 interface ServerCapabilities {\
-  [experimental](#servercapabilities-experimental)?: { \[key: string\]: object };\
-  [logging](#servercapabilities-logging)?: object;\
-  [completions](#servercapabilities-completions)?: object;\
+  [experimental](#servercapabilities-experimental)?: { \[key: string\]: [JSONObject](#jsonobject) };\
+  [logging](#servercapabilities-logging)?: [JSONObject](#jsonobject);\
+  [completions](#servercapabilities-completions)?: [JSONObject](#jsonobject);\
   [prompts](#servercapabilities-prompts)?: { listChanged?: boolean };\
   [resources](#servercapabilities-resources)?: { subscribe?: boolean; listChanged?: boolean };\
   [tools](#servercapabilities-tools)?: { listChanged?: boolean };\
   [tasks](#servercapabilities-tasks)?: {\
-    list?: object;\
-    cancel?: object;\
-    requests?: { tools?: { call?: object } };\
+    list?: [JSONObject](#jsonobject);\
+    cancel?: [JSONObject](#jsonobject);\
+    requests?: { tools?: { call?: [JSONObject](#jsonobject) } };\
   };\
   [extensions](#servercapabilities-extensions)?: { \[key: string\]: object };\
 }
 
 Capabilities that a server may support. Known capabilities are defined here, in this schema, but this is not a closed set: any server can define its own, additional capabilities.
 
-experimental?: { \[key: string\]: object }[](#servercapabilities-experimental)
+experimental?: { \[key: string\]: JSONObject }[](#servercapabilities-experimental)
 
 Experimental, non-standard capabilities that the server supports.
 
-logging?: object[](#servercapabilities-logging)
+logging?: JSONObject[](#servercapabilities-logging)
 
 Present if the server supports sending log messages to the client.
 
@@ -2709,7 +2741,7 @@ Example: Logging — minimum baseline support[](#servercapabilities-example-logg
 } Copy
 ```
 
-completions?: object[](#servercapabilities-completions)
+completions?: JSONObject[](#servercapabilities-completions)
 
 Present if the server supports argument autocompletion suggestions.
 
@@ -2830,29 +2862,29 @@ Example: Tools — list changed notifications[](#servercapabilities-example-tool
 } Copy
 ```
 
-tasks?: { list?: object; cancel?: object; requests?: { tools?: { call?: object } }; }[](#servercapabilities-tasks)
+tasks?: { list?: JSONObject; cancel?: JSONObject; requests?: { tools?: { call?: JSONObject } }; }[](#servercapabilities-tasks)
 
 Present if the server supports task-augmented requests.
 
 Type Declaration
 
-- `Optional`list?: object
+- `Optional`list?: [JSONObject](#jsonobject)
 
   Whether this server supports [tasks/list](#listtasksrequest).
 
-- `Optional`cancel?: object
+- `Optional`cancel?: [JSONObject](#jsonobject)
 
   Whether this server supports [tasks/cancel](#canceltaskrequest).
 
-- `Optional`requests?: { tools?: { call?: object } }
+- `Optional`requests?: { tools?: { call?: [JSONObject](#jsonobject) } }
 
   Specifies which request types can be augmented with tasks.
 
-  - `Optional`tools?: { call?: object }
+  - `Optional`tools?: { call?: [JSONObject](#jsonobject) }
 
     Task support for tool-related requests.
 
-    - `Optional`call?: object
+    - `Optional`call?: [JSONObject](#jsonobject)
 
       Whether the server supports task-augmented [tools/call](#calltoolrequest) requests.
 
@@ -5753,7 +5785,7 @@ interface CreateMessageRequestParams {\
   [temperature](#createmessagerequestparams-temperature)?: number;\
   [maxTokens](#createmessagerequestparams-maxtokens): number;\
   [stopSequences](#createmessagerequestparams-stopsequences)?: string\[\];\
-  [metadata](#createmessagerequestparams-metadata)?: object;\
+  [metadata](#createmessagerequestparams-metadata)?: [JSONObject](#jsonobject);\
   [tools](#createmessagerequestparams-tools)?: [Tool](#tool)\[\];\
   [toolChoice](#createmessagerequestparams-toolchoice)?: [ToolChoice](#toolchoice);\
 }
@@ -5933,7 +5965,7 @@ The client MAY choose to sample fewer tokens than the requested maximum.
 
 stopSequences?: string\[\][](#createmessagerequestparams-stopsequences)
 
-metadata?: object[](#createmessagerequestparams-metadata)
+metadata?: JSONObject[](#createmessagerequestparams-metadata)
 
 Optional metadata to pass through to the LLM provider. The format of this metadata is provider-specific.
 
@@ -6791,14 +6823,14 @@ interface Tool {\
   [inputSchema](#tool-inputschema): {\
     \$schema?: string;\
     type: “object”;\
-    properties?: { \[key: string\]: object };\
+    properties?: { \[key: string\]: [JSONValue](#jsonvalue) };\
     required?: string\[\];\
   };\
   [execution](#tool-execution)?: [ToolExecution](#toolexecution);\
   [outputSchema](#tool-outputschema)?: {\
     \$schema?: string;\
     type: “object”;\
-    properties?: { \[key: string\]: object };\
+    properties?: { \[key: string\]: [JSONValue](#jsonvalue) };\
     required?: string\[\];\
   };\
   [annotations](#tool-annotations)?: [ToolAnnotations](#toolannotations);\
@@ -6929,7 +6961,7 @@ A human-readable description of the tool.
 
 This can be used by clients to improve the LLM’s understanding of available tools. It can be thought of like a “hint” to the model.
 
-inputSchema: { \$schema?: string; type: “object”; properties?: { \[key: string\]: object }; required?: string\[\]; }[](#tool-inputschema)
+inputSchema: { \$schema?: string; type: “object”; properties?: { \[key: string\]: JSONValue }; required?: string\[\]; }[](#tool-inputschema)
 
 A JSON Schema object defining the expected parameters for the tool.
 
@@ -6937,7 +6969,7 @@ execution?: ToolExecution[](#tool-execution)
 
 Execution-related properties for this tool.
 
-outputSchema?: { \$schema?: string; type: “object”; properties?: { \[key: string\]: object }; required?: string\[\]; }[](#tool-outputschema)
+outputSchema?: { \$schema?: string; type: “object”; properties?: { \[key: string\]: JSONValue }; required?: string\[\]; }[](#tool-outputschema)
 
 An optional JSON Schema object defining the structure of the tool’s output returned in the structuredContent field of a [CallToolResult](#calltoolresult).
 

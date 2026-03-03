@@ -1,9 +1,10 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-02-22T13:26:34Z"
+fetched_at: "2026-03-03T14:56:39Z"
 source_url: "https://platform.claude.com/docs/en/resources/prompt-library/adaptive-editor"
 title: "Adaptive editor - Claude API Docs"
 ---
+
 # Adaptive editor
 
 

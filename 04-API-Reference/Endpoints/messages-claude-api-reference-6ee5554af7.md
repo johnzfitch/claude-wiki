@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:35:32Z"
+fetched_at: "2026-03-03T14:58:48Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages"
 title: "Messages - Claude API Reference"
 ---
+
 # Messages
 
 ##### [Create a Message](/docs/en/api/beta/messages/create)

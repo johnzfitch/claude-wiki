@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:43:27Z"
+fetched_at: "2026-03-03T15:00:27Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/list"
 title: "List Skills - Claude API Reference"
 ---
+
 # List Skills
 
 beta.skills.list(SkillListParams\*\*kwargs) -\> SyncPageCursor\[[SkillListResponse](/docs/en/api/beta#skill_list_response)\]

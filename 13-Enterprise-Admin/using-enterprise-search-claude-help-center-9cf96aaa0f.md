@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-02-28T11:22:17Z"
+fetched_at: "2026-03-03T15:08:11Z"
 source_url: "https://support.claude.com/en/articles/12489464-using-enterprise-search"
 title: "Using Enterprise Search | Claude Help Center"
 ---
@@ -327,16 +327,16 @@ Search results are retained with their associated chats. You can delete search d
 Related Articles
 
 
-Set up Claude integrations
+Use Google Workspace connectors
 
 
-Pre-built web connectors using remote MCP
+Get started with custom connectors using remote MCP
+
+
+Use connectors to extend Claude's capabilities
 
 
 Enabling and using the Microsoft 365 connector
-
-
-Using the Synapse.org connector in Claude
 
 
 Using interactive connectors in Claude

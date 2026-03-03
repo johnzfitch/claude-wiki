@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-02-28T11:22:07Z"
+fetched_at: "2026-03-03T15:08:14Z"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 title: "Claude Code usage analytics | Claude Help Center"
 ---
@@ -144,10 +144,10 @@ See **[Analytics](https://code.claude.com/docs/en/analytics)** in our Claude Cod
 Related Articles
 
 
+Use Claude Code with your Team or Enterprise plan
+
+
 Claude Code FAQ
-
-
-Claude Code on the web
 
 
 Usage analytics for Team and Enterprise plans

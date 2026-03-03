@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:22Z"
+fetched_at: "2026-03-03T15:08:27Z"
 source_url: "https://support.claude.com/en/articles/13345190-get-started-with-cowork"
 title: "Get started with Cowork | Claude Help Center"
 ---

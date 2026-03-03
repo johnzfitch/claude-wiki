@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:14Z"
+fetched_at: "2026-03-03T15:08:12Z"
 source_url: "https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans"
 title: "Purchasing and managing seats on Team plans | Claude Help Center"
 ---

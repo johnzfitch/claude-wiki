@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:01:40Z"
+fetched_at: "2026-03-03T15:03:46Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/results"
 title: "Retrieve Message Batch results - Claude API Reference"
 ---
+
 # Retrieve Message Batch results
 
 messages.batches.results(message_batch_id) -\> [MessageBatchIndividualResponse](/docs/en/api/messages#message_batch_individual_response) { custom_id, result }

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-28T11:22:08Z"
+fetched_at: "2026-03-03T15:08:22Z"
 source_url: "https://support.claude.com/en/articles/9945615-intro-to-artifacts"
 title: "Intro to Artifacts | Claude Help Center"
 ---

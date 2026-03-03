@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:16Z"
+fetched_at: "2026-03-03T15:08:10Z"
 source_url: "https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans"
 title: "Custom data retention controls for Enterprise plans | Claude Help Center"
 ---
@@ -74,7 +74,7 @@ Related Articles
 Can you delete data that I sent via Team and Enterprise plans?
 
 
-Using Claude’s chat search and memory to build on previous context
+Use Claude’s chat search and memory to build on previous context
 
 
 Using incognito chats

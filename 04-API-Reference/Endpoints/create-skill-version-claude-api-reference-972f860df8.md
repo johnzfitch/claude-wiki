@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:38:04Z"
+fetched_at: "2026-03-03T14:59:11Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/versions/create"
 title: "Create Skill Version - Claude API Reference"
 ---
+
 # Create Skill Version
 
 client.beta.skills.versions.create(stringskillID, VersionCreateParams { files, betas } params?, RequestOptionsoptions?): [VersionCreateResponse](/docs/en/api/beta#version_create_response) { id, created_at, description, 5 more }

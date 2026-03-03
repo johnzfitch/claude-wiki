@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:19:17Z"
+fetched_at: "2026-03-03T15:05:54Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/messages"
 title: "Messages - Claude API Reference"
 ---
+
 # Messages
 
 ##### [Create a Message](/docs/en/api/messages/create)

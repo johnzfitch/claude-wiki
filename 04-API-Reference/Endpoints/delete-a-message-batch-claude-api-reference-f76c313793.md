@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:22:47Z"
+fetched_at: "2026-03-03T15:06:49Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/delete"
 title: "Delete a Message Batch - Claude API Reference"
 ---
+
 # Delete a Message Batch
 
 [BetaDeletedMessageBatch](/docs/en/api/beta#beta_deleted_message_batch) Beta.Messages.Batches.Delete(BatchDeleteParamsparameters, CancellationTokencancellationToken = default)

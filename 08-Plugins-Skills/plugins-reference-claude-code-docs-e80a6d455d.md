@@ -1,6 +1,6 @@
 ---
 category: "08-Plugins-Skills"
-fetched_at: "2026-02-28T11:22:28Z"
+fetched_at: "2026-03-03T15:08:33Z"
 source_url: "https://code.claude.com/docs/en/plugins-reference"
 title: "Plugins reference - Claude Code Docs"
 ---

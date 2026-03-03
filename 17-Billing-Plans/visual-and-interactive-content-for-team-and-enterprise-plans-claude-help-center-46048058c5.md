@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:17Z"
+fetched_at: "2026-03-03T15:08:11Z"
 source_url: "https://support.claude.com/en/articles/13663666-visual-and-interactive-content-for-team-and-enterprise-plans"
 title: "Visual and interactive content for Team and Enterprise plans | Claude Help Center"
 ---
@@ -29,10 +29,10 @@ Interactive inputs don't involve third-party services.
 Related Articles
 
 
+Use Google Workspace connectors
+
+
 Enabling and using web search
-
-
-Using Google Drive Cataloging on the Enterprise Plan
 
 
 Using Enterprise Search

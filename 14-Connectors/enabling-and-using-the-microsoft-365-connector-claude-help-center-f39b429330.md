@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-02-28T11:22:34Z"
+fetched_at: "2026-03-03T15:08:09Z"
 source_url: "https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector"
 title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 ---
@@ -475,6 +475,9 @@ Related Articles
 Get started with custom connectors using remote MCP
 
 
+Use connectors to extend Claude's capabilities
+
+
 When to use desktop and web connectors
 
 
@@ -482,6 +485,3 @@ Using the Benchling Connector in Claude
 
 
 Microsoft 365 Connector: Security Guide
-
-
-Using interactive connectors in Claude

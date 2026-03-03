@@ -1,9 +1,10 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-02-22T13:19:06Z"
+fetched_at: "2026-03-03T14:56:06Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/php"
 title: "PHP SDK - Claude API Docs"
 ---
+
 # PHP SDK
 
 
@@ -92,7 +93,7 @@ foreach ($stream as $message) {
 
 Error handling
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `Anthropic\Core\Exceptions\APIException` will be thrown:
+When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `Anthropic\Core\Exceptions\APIException` is thrown:
 
 ``` shiki
 <?php

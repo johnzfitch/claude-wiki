@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T14:19:57Z"
+fetched_at: "2026-03-03T15:06:05Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/messages/batches/retrieve"
 title: "Retrieve a Message Batch - Claude API Reference"
 ---
+
 # Retrieve a Message Batch
 
 [MessageBatch](/docs/en/api/messages#message_batch) Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-02-28T11:22:35Z"
+fetched_at: "2026-03-03T15:08:21Z"
 source_url: "https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription"
 title: "How do I cancel my paid Claude subscription? | Claude Help Center"
 ---

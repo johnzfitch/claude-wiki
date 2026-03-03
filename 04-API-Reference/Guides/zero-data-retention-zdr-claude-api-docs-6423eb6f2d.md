@@ -1,9 +1,10 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-02-22T13:17:58Z"
+fetched_at: "2026-03-03T14:56:01Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/zero-data-retention"
 title: "Zero Data Retention (ZDR) - Claude API Docs"
 ---
+
 # Zero Data Retention (ZDR)
 
 
@@ -23,14 +24,14 @@ Important limitations
 **What ZDR covers**
 
 - **Certain Claude APIs**: ZDR applies to the Claude Messages and Token Counting APIs
-- **Claude Code**: ZDR applies when used with your enterprise API credentials
+- **Claude Code**: ZDR applies when used with enterprise API credentials or through Claude for Enterprise (see [Claude Code ZDR docs](https://code.claude.com/docs/en/zero-data-retention))
 
 **What ZDR does NOT cover**
 
 - **Beta products and features**: Products and features in beta unless specified otherwise
 - **Console and Workbench**: Any usage on Console or Workbench
 - **Claude consumer products**: Claude Free, Pro, or Max plans, including when customers on those plans use Claude's web, desktop, or mobile apps or Claude Code
-- **Claude for Work and Claude for Enterprise**: Claude for Work and Claude for Enterprise product interfaces are not covered by ZDR; only Commercial organization API keys are eligible
+- **Claude for Work and Claude for Enterprise**: Claude for Work and Claude for Enterprise product interfaces are not covered by ZDR, except for Claude Code when used through Claude for Enterprise with ZDR enabled on the organization. For other product interfaces, only Commercial organization API keys are eligible.
 - **Third-party integrations**: Data processed by third-party websites, tools, or other integrations is not covered by ZDR, though some may offer similar offerings. When using external services in conjunction with the Claude API, make sure to review those services' data handling practices.
 
 For the most up-to-date information on what products and features are ZDR-eligible, please refer to your contract terms or contact your Anthropic account representative.
@@ -55,6 +56,7 @@ These API endpoints process data in real-time:
 | Tool Search (client-side) | `/v1/messages` | [Custom client-side tool search](/docs/en/agents-and-tools/tool-use/tool-search-tool#custom-tool-search-implementation) uses the standard Messages API. |
 | Context Management (compaction) | `/v1/messages` (with `context_management`) | Server-side compaction summarizes conversation context in real-time. |
 | Fast Mode | `/v1/messages` (with `speed: "fast"`) | Same Messages API endpoint with faster inference. ZDR applies regardless of speed setting. |
+| 1M Token Context Window | `/v1/messages` (with `anthropic-beta: context-1m-2025-08-07`) | Extended context processing uses the standard Messages API. ZDR applies even though this feature is in beta. |
 
 ### 
 
@@ -66,7 +68,7 @@ The following is a non-exhaustive list of endpoints and features that store data
 |----|----|----|----|
 | Batch API | `/v1/messages/batches` | Standard policy: 29-day retention. Use the `/v1/messages/batches` DELETE endpoint to delete message batches at any time after processing. | Batch processing requires asynchronous storage of responses. |
 | Code Execution | `/v1/messages` (with `code_execution` tool) | Container data retained up to 30 days. | Server-side code execution stores execution data and uploaded files beyond the immediate API response. |
-| Programmatic Tool Calling | `/v1/messages` (with `code_execution` tool) | Container data retained up to 30 days. | Built on code execution—uses sandbox containers that retain user data. |
+| Programmatic Tool Calling | `/v1/messages` (with `code_execution` tool) | Container data retained up to 30 days. | Built on code execution; uses sandbox containers that retain user data. |
 | Tool Search (server-side) | `/v1/messages` (with `tool_search` tool) | Data retained according to standard policy. | Server-side tool search indexes and stores tool catalog data beyond the immediate API response. |
 | Files API | `/v1/files` | Files retained until explicitly deleted. | Beta features are excluded from ZDR. Files uploaded via the Files API are retained for future API requests. |
 
@@ -136,12 +138,16 @@ No, only the Claude API is eligible for ZDR. For Claude deployments on AWS Bedro
 
 **Is Claude Code eligible for ZDR?**
 
-Claude Code ZDR eligibility depends on how you authenticate:
+Claude Code is eligible for ZDR through two paths:
 
-- **Eligible**: Claude Code used with pay-as-you-go API keys from a Commercial organization
-- **Not eligible**: Claude Code used via OAuth (premium seats through Claude for Enterprise)
+- **API keys**: Claude Code used with pay-as-you-go API keys from a Commercial organization
+- **Claude for Enterprise**: Claude Code used through Claude for Enterprise with ZDR enabled on the organization
+
+ZDR is enabled on a per-organization basis. Each new organization requires ZDR to be enabled separately by your account team. ZDR does not automatically apply to new organizations created under the same account.
 
 Additionally, if you have metrics logging enabled in Claude Code, productivity data (such as usage statistics) is exempted from ZDR and may be retained.
+
+For full details on ZDR for Claude Code on Claude for Enterprise, including disabled features and how to request enablement, see the [Claude Code ZDR documentation](https://code.claude.com/docs/en/zero-data-retention).
 
 **Does Claude for Excel support ZDR?**
 

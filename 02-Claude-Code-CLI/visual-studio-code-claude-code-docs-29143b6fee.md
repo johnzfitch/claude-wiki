@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-02-28T11:22:29Z"
+fetched_at: "2026-03-03T15:08:35Z"
 source_url: "https://code.claude.com/docs/en/vs-code"
 title: "Visual Studio Code - Claude Code Docs"
 ---
@@ -126,7 +126,7 @@ For large PDFs, you can ask Claude to read specific pages instead of the whole f
 
 Resume past conversations
 
-Click the dropdown at the top of the Claude Code panel to access your conversation history. You can search by keyword or browse by time (Today, Yesterday, Last 7 days, etc.). Click any conversation to resume it with the full message history. For more on resuming sessions, see [Common workflows](/docs/en/common-workflows#resume-previous-conversations).
+Click the dropdown at the top of the Claude Code panel to access your conversation history. You can search by keyword or browse by time (Today, Yesterday, Last 7 days, etc.). Click any conversation to resume it with the full message history. Hover over a session to reveal rename and remove actions: rename to give it a descriptive title, or remove to delete it from the list. For more on resuming sessions, see [Common workflows](/docs/en/common-workflows#resume-previous-conversations).
 
 ### 
 
