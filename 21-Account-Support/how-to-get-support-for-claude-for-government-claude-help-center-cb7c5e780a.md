@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-03T15:08:21Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government"
 title: "How to get support for Claude for Government | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "How to get support for Claude for Government | Claude Help Center"
 4.  How to get support for Claude for Government
 
 # How to get support for Claude for Government
+
+Updated today
 
 
 **Please note:** This page is hosted outside of Claude for Government's FedRAMP boundary.

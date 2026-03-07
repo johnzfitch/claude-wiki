@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-03-03T15:08:19Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services"
 title: "Getting Started with Claude for Financial Services | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Getting Started with Claude for Financial Services | Claude Help Center"
 3.  Getting Started with Claude for Financial Services
 
 # Getting Started with Claude for Financial Services
+
+Updated today
 
 
 Claude for Financial Services transforms how financial professionals analyze markets, conduct research, and make investment decisions by providing direct access to essential data sources through a unified interface.

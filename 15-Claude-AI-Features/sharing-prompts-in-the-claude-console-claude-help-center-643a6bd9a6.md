@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:31Z"
+fetched_at: "2026-03-07T01:05:46Z"
 source_url: "https://support.claude.com/en/articles/10722177-sharing-prompts-in-the-claude-console"
 title: "Sharing Prompts in the Claude Console | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Sharing Prompts in the Claude Console | Claude Help Center"
 4.  Sharing Prompts in the Claude Console
 
 # Sharing Prompts in the Claude Console
+
+Updated today
 
 
 The prompt sharing feature enables teams to collaborate on prompt development within the Claude Console. This feature allows workspace members to share, edit, and iterate on prompts together, maintaining a clear revision history attributed to the specific contributors.
@@ -80,9 +82,6 @@ Related Articles
 Creating and managing Workspaces in the Claude Console
 
 
-Getting started with Claude in Slack
-
-
 Using Claude in Slack
 
 
@@ -90,3 +89,6 @@ Use Claude in Excel
 
 
 Inviting members to the Claude Console
+
+
+Use Claude in PowerPoint

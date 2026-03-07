@@ -1,11 +1,13 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-03T15:08:16Z"
+fetched_at: "2026-03-07T01:05:36Z"
 source_url: "https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps"
 title: "Using Claude with iOS Apps | Claude Help Center"
 ---
 
 # Using Claude with iOS Apps
+
+Updated today
 
 
 Claude can now connect with your iOS device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, or calendar events, find locations, manage reminders, and analyze your health and fitness data — all seamlessly integrated with your mobile apps.

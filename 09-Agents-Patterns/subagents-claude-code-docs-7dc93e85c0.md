@@ -1,6 +1,6 @@
 ---
 category: "09-Agents-Patterns"
-fetched_at: "2026-03-03T15:08:32Z"
+fetched_at: "2026-03-07T01:05:53Z"
 source_url: "https://code.claude.com/docs/en/sub-agents"
 title: "Subagents - Claude Code Docs"
 ---

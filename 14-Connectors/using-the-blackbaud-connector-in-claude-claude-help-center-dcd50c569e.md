@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:42Z"
+fetched_at: "2026-03-07T01:06:01Z"
 source_url: "https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude"
 title: "Using the Blackbaud Connector in Claude | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using the Blackbaud Connector in Claude | Claude Help Center"
 3.  Using the Blackbaud Connector in Claude
 
 # Using the Blackbaud Connector in Claude
+
+Updated today
 
 
 The Blackbaud Connector provides Claude with secure access to Raiser’s Edge NXT fundraising data, enabling nonprofit professionals to retrieve donor records, gifts, events, and generate communications using natural language. This article explains how to set up and use the Blackbaud Connector for your fundraising workflows.
@@ -167,10 +169,10 @@ Use connectors to extend Claude's capabilities
 Using the Synapse.org connector in Claude
 
 
+Using the Benchling Connector in Claude
+
+
 Using the Benevity Connector in Claude
-
-
-Using the Candid Connector in Claude
 
 
 Using interactive connectors in Claude

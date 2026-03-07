@@ -1,12 +1,12 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:07:42Z"
-last_modified: "Mon, 02 Mar 2026 19:26:24 GMT"
+fetched_at: "2026-03-07T01:05:02Z"
+last_modified: "Fri, 06 Mar 2026 21:35:25 GMT"
 source_url: "https://claude.com/import-memory"
 title: "Switch to Claude without starting over | Claude"
 ---
 
-Bring your preferences and context from other AI providers to Claude. With one copy-paste, Claude updates its memory and picks up right where you left off. Memory is available on all paid plans.
+Bring your preferences and context from other AI providers to Claude. With one copy-paste, Claude updates its memory and picks up right where you left off.
 
 Get started
 
@@ -56,7 +56,7 @@ Claude learns your preferences across conversations, keeps project context separ
 
 ## Your AI should know you from day one
 
-Start your Pro plan, import your memory when you’re ready, and see for yourself. 
+You can try Claude on the free plan, import your memory when you’re ready, and see for yourself.
 
 Get started
 

@@ -1,11 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:10Z"
+fetched_at: "2026-03-07T01:05:37Z"
 source_url: "https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans"
 title: "Cowork for Team and Enterprise plans | Claude Help Center"
 ---
 
 # Cowork for Team and Enterprise plans
+
+Updated today
 
 
 This article explains important limitations and considerations for Team and Enterprise organizations using Cowork during the research preview period.
@@ -94,7 +96,7 @@ If your organization requires audit trails for compliance purposes, do not enabl
 
 Team and Enterprise owners can track usage, costs, and tool activity across their teams using OpenTelemetry. This provides visibility into how Cowork and plugins are being used, though it doesn't replace audit logging for compliance purposes.
 
-For more information, see **[Monitoring in our Claude Code Docs](https://code.claude.com/docs/en/monitoring-usage)**.
+For more information, see **[Monitoring](https://claude.com/docs/cowork/monitoring)** in our Claude Docs.
 
 ### Local conversation storage
 

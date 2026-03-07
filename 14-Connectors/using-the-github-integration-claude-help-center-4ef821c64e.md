@@ -1,11 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:09Z"
+fetched_at: "2026-03-07T01:05:41Z"
 source_url: "https://support.claude.com/en/articles/10167454-using-the-github-integration"
 title: "Using the GitHub Integration | Claude Help Center"
 ---
 
 # Using the GitHub Integration
+
+Updated today
 
 
 For more information on enabling GitHub within your account, see [Setting Up Claude Integrations](https://support.anthropic.com/en/articles/10168395-setting-up-claude-integrations).

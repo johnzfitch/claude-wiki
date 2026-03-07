@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-03T15:08:40Z"
+fetched_at: "2026-03-07T01:05:52Z"
 source_url: "https://code.claude.com/docs/en/common-workflows"
 title: "Common workflows - Claude Code Docs"
 ---
@@ -69,7 +69,7 @@ Copy
 
 
 ``` shiki
-> give me an overview of this codebase 
+give me an overview of this codebase
 ```
 
 4
@@ -84,7 +84,7 @@ Copy
 
 
 ``` shiki
-> explain the main architecture patterns used here 
+explain the main architecture patterns used here
 ```
 
 Report incorrect code
@@ -93,7 +93,7 @@ Copy
 
 
 ``` shiki
-> what are the key data models?
+what are the key data models?
 ```
 
 Report incorrect code
@@ -102,7 +102,7 @@ Copy
 
 
 ``` shiki
-> how is authentication handled?
+how is authentication handled?
 ```
 
 Tips:
@@ -131,7 +131,7 @@ Copy
 
 
 ``` shiki
-> find the files that handle user authentication 
+find the files that handle user authentication
 ```
 
 2
@@ -146,7 +146,7 @@ Copy
 
 
 ``` shiki
-> how do these authentication files work together? 
+how do these authentication files work together?
 ```
 
 3
@@ -161,7 +161,7 @@ Copy
 
 
 ``` shiki
-> trace the login process from front-end to database 
+trace the login process from front-end to database
 ```
 
 Tips:
@@ -192,7 +192,7 @@ Copy
 
 
 ``` shiki
-> I'm seeing an error when I run npm test 
+I'm seeing an error when I run npm test
 ```
 
 2
@@ -207,7 +207,7 @@ Copy
 
 
 ``` shiki
-> suggest a few ways to fix the @ts-ignore in user.ts 
+suggest a few ways to fix the @ts-ignore in user.ts
 ```
 
 3
@@ -222,7 +222,7 @@ Copy
 
 
 ``` shiki
-> update user.ts to add the null check you suggested 
+update user.ts to add the null check you suggested
 ```
 
 Tips:
@@ -253,7 +253,7 @@ Copy
 
 
 ``` shiki
-> find deprecated API usage in our codebase 
+find deprecated API usage in our codebase
 ```
 
 2
@@ -268,7 +268,7 @@ Copy
 
 
 ``` shiki
-> suggest how to refactor utils.js to use modern JavaScript features 
+suggest how to refactor utils.js to use modern JavaScript features
 ```
 
 3
@@ -283,7 +283,7 @@ Copy
 
 
 ``` shiki
-> refactor utils.js to use ES2024 features while maintaining the same behavior 
+refactor utils.js to use ES2024 features while maintaining the same behavior
 ```
 
 4
@@ -298,7 +298,7 @@ Copy
 
 
 ``` shiki
-> run tests for the refactored code 
+run tests for the refactored code
 ```
 
 Tips:
@@ -329,7 +329,7 @@ Copy
 
 
 ``` shiki
-> /agents
+/agents
 ```
 
 This shows all available subagents and lets you create new ones.
@@ -348,7 +348,7 @@ Copy
 
 
 ``` shiki
-> review my recent code changes for security issues
+review my recent code changes for security issues
 ```
 
 Report incorrect code
@@ -357,7 +357,7 @@ Copy
 
 
 ``` shiki
-> run all tests and fix any failures
+run all tests and fix any failures
 ```
 
 3
@@ -372,7 +372,7 @@ Copy
 
 
 ``` shiki
-> use the code-reviewer subagent to check the auth module
+use the code-reviewer subagent to check the auth module
 ```
 
 Report incorrect code
@@ -381,7 +381,7 @@ Copy
 
 
 ``` shiki
-> have the debugger subagent investigate why users can't log in
+have the debugger subagent investigate why users can't log in
 ```
 
 4
@@ -396,7 +396,7 @@ Copy
 
 
 ``` shiki
-> /agents
+/agents
 ```
 
 Then select “Create New subagent” and follow the prompts to define:
@@ -482,7 +482,7 @@ Copy
 
 
 ``` shiki
-> I need to refactor our authentication system to use OAuth2. Create a detailed migration plan.
+I need to refactor our authentication system to use OAuth2. Create a detailed migration plan.
 ```
 
 Claude analyzes the current implementation and create a comprehensive plan. Refine with follow-ups:
@@ -493,8 +493,16 @@ Copy
 
 
 ``` shiki
-> What about backward compatibility?
-> How should we handle database migration?
+What about backward compatibility?
+```
+
+Report incorrect code
+
+Copy
+
+
+``` shiki
+How should we handle database migration?
 ```
 
 Press `Ctrl+G` to open the plan in your default text editor, where you can edit it directly before Claude proceeds.
@@ -543,7 +551,7 @@ Copy
 
 
 ``` shiki
-> find functions in NotificationsService.swift that are not covered by tests 
+find functions in NotificationsService.swift that are not covered by tests
 ```
 
 2
@@ -558,7 +566,7 @@ Copy
 
 
 ``` shiki
-> add tests for the notification service 
+add tests for the notification service
 ```
 
 3
@@ -573,7 +581,7 @@ Copy
 
 
 ``` shiki
-> add test cases for edge conditions in the notification service 
+add test cases for edge conditions in the notification service
 ```
 
 4
@@ -588,7 +596,7 @@ Copy
 
 
 ``` shiki
-> run the new tests and fix any failures 
+run the new tests and fix any failures
 ```
 
 Claude can generate tests that follow your project’s existing patterns and conventions. When asking for tests, be specific about what behavior you want to verify. Claude examines your existing test files to match the style, frameworks, and assertion patterns already in use. For comprehensive coverage, ask Claude to identify edge cases you might have missed. Claude can analyze your code paths and suggest tests for error conditions, boundary values, and unexpected inputs that are easy to overlook.
@@ -601,18 +609,7 @@ Claude can generate tests that follow your project’s existing patterns and con
 
 Create pull requests
 
-You can create pull requests by asking Claude directly (“create a pr for my changes”) or by using the `/commit-push-pr` skill, which commits, pushes, and opens a PR in one step.
-
-Report incorrect code
-
-Copy
-
-
-``` shiki
-> /commit-push-pr
-```
-
-If you have a Slack MCP server configured and specify channels in your CLAUDE.md (for example, “post PR URLs to \#team-prs”), the skill automatically posts the PR URL to those channels. For more control over the process, guide Claude through it step-by-step or [create your own skill](/docs/en/skills):
+You can create pull requests by asking Claude directly (“create a pr for my changes”), or guide Claude through it step-by-step:
 
 1
 
@@ -626,7 +623,7 @@ Copy
 
 
 ``` shiki
-> summarize the changes I've made to the authentication module
+summarize the changes I've made to the authentication module
 ```
 
 2
@@ -641,7 +638,7 @@ Copy
 
 
 ``` shiki
-> create a pr
+create a pr
 ```
 
 3
@@ -656,7 +653,7 @@ Copy
 
 
 ``` shiki
-> enhance the PR description with more context about the security improvements
+enhance the PR description with more context about the security improvements
 ```
 
 When you create a PR using `gh pr create`, the session is automatically linked to that PR. You can resume it later with `claude --from-pr <number>`.
@@ -683,7 +680,7 @@ Copy
 
 
 ``` shiki
-> find functions without proper JSDoc comments in the auth module 
+find functions without proper JSDoc comments in the auth module
 ```
 
 2
@@ -698,7 +695,7 @@ Copy
 
 
 ``` shiki
-> add JSDoc comments to the undocumented functions in auth.js 
+add JSDoc comments to the undocumented functions in auth.js
 ```
 
 3
@@ -713,7 +710,7 @@ Copy
 
 
 ``` shiki
-> improve the generated documentation with more context and examples 
+improve the generated documentation with more context and examples
 ```
 
 4
@@ -728,7 +725,7 @@ Copy
 
 
 ``` shiki
-> check if the documentation follows our project standards 
+check if the documentation follows our project standards
 ```
 
 Tips:
@@ -771,7 +768,7 @@ Copy
 
 
 ``` shiki
-> What does this image show?
+What does this image show?
 ```
 
 Report incorrect code
@@ -780,7 +777,7 @@ Copy
 
 
 ``` shiki
-> Describe the UI elements in this screenshot
+Describe the UI elements in this screenshot
 ```
 
 Report incorrect code
@@ -789,7 +786,7 @@ Copy
 
 
 ``` shiki
-> Are there any problematic elements in this diagram?
+Are there any problematic elements in this diagram?
 ```
 
 3
@@ -804,7 +801,7 @@ Copy
 
 
 ``` shiki
-> Here's a screenshot of the error. What's causing it?
+Here's a screenshot of the error. What's causing it?
 ```
 
 Report incorrect code
@@ -813,7 +810,7 @@ Copy
 
 
 ``` shiki
-> This is our current database schema. How should we modify it for the new feature?
+This is our current database schema. How should we modify it for the new feature?
 ```
 
 4
@@ -828,7 +825,7 @@ Copy
 
 
 ``` shiki
-> Generate CSS to match this design mockup
+Generate CSS to match this design mockup
 ```
 
 Report incorrect code
@@ -837,7 +834,7 @@ Copy
 
 
 ``` shiki
-> What HTML structure would recreate this component?
+What HTML structure would recreate this component?
 ```
 
 Tips:
@@ -870,7 +867,7 @@ Copy
 
 
 ``` shiki
-> Explain the logic in @src/utils/auth.js
+Explain the logic in @src/utils/auth.js
 ```
 
 This includes the full content of the file in the conversation.
@@ -887,7 +884,7 @@ Copy
 
 
 ``` shiki
-> What's the structure of @src/components?
+What's the structure of @src/components?
 ```
 
 This provides a directory listing with file information.
@@ -904,7 +901,7 @@ Copy
 
 
 ``` shiki
-> Show me the data from @github:repos/owner/repo/issues
+Show me the data from @github:repos/owner/repo/issues
 ```
 
 This fetches data from connected MCP servers using the format @server:resource. See [MCP resources](/docs/en/mcp#use-mcp-resources) for details.
@@ -926,7 +923,7 @@ Use extended thinking (thinking mode)
 
 [Extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) is enabled by default, giving Claude space to reason through complex problems step-by-step before responding. This reasoning is visible in verbose mode, which you can toggle on with `Ctrl+O`. Additionally, Opus 4.6 introduces adaptive reasoning: instead of a fixed thinking token budget, the model dynamically allocates thinking based on your [effort level](/docs/en/model-config#adjust-effort-level) setting. Extended thinking and adaptive reasoning work together to give you control over how deeply Claude reasons before responding. Extended thinking is particularly valuable for complex architectural decisions, challenging bugs, multi-step implementation planning, and evaluating tradeoffs between different approaches.
 
-Phrases like “think”, “think hard”, “ultrathink”, and “think more” are interpreted as regular prompt instructions and don’t allocate thinking tokens.
+Phrases like “think”, “think hard”, and “think more” are interpreted as regular prompt instructions and don’t allocate thinking tokens.
 
 ### 
 
@@ -988,7 +985,7 @@ Copy
 
 
 ``` shiki
-> /rename auth-refactor
+/rename auth-refactor
 ```
 
 You can also rename any session from the picker: run `/resume`, navigate to a session, and press `R`.
@@ -1018,7 +1015,7 @@ Copy
 
 
 ``` shiki
-> /resume auth-refactor
+/resume auth-refactor
 ```
 
 ### 
@@ -1406,7 +1403,7 @@ Copy
 
 
 ``` shiki
-> can Claude Code create pull requests?
+can Claude Code create pull requests?
 ```
 
 Report incorrect code
@@ -1415,7 +1412,7 @@ Copy
 
 
 ``` shiki
-> how does Claude Code handle permissions?
+how does Claude Code handle permissions?
 ```
 
 Report incorrect code
@@ -1424,7 +1421,7 @@ Copy
 
 
 ``` shiki
-> what skills are available?
+what skills are available?
 ```
 
 Report incorrect code
@@ -1433,7 +1430,7 @@ Copy
 
 
 ``` shiki
-> how do I use MCP with Claude Code?
+how do I use MCP with Claude Code?
 ```
 
 Report incorrect code
@@ -1442,7 +1439,7 @@ Copy
 
 
 ``` shiki
-> how do I configure Claude Code for Amazon Bedrock?
+how do I configure Claude Code for Amazon Bedrock?
 ```
 
 Report incorrect code
@@ -1451,7 +1448,7 @@ Copy
 
 
 ``` shiki
-> what are the limitations of Claude Code?
+what are the limitations of Claude Code?
 ```
 
 Claude provides documentation-based answers to these questions. For executable examples and hands-on demonstrations, refer to the specific workflow sections above.

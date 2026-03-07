@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-03T15:08:20Z"
+fetched_at: "2026-03-07T01:05:46Z"
 source_url: "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers"
 title: "Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "Business Associate Agreements (BAA) for Commercial Customers | Claude He
 
 # Business Associate Agreements (BAA) for Commercial Customers
 
+Updated today
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
 

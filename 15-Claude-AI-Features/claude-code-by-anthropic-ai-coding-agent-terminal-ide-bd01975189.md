@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:07:18Z"
-last_modified: "Tue, 03 Mar 2026 04:43:39 GMT"
+fetched_at: "2026-03-07T01:04:51Z"
+last_modified: "Sat, 07 Mar 2026 00:32:19 GMT"
 source_url: "https://claude.com/product/claude-code"
 title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
 ---
@@ -18,6 +18,8 @@ Get Claude Code
 
 - [](https://claude.ai/code)
   On the web
+- [](/download)
+  Desktop
 - [](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
   VS Code
 - [](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
@@ -91,6 +93,8 @@ Get Claude Code
 
 - [](https://claude.ai/code)
   On the web
+- [](/download)
+  Desktop
 - [](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
   VS Code
 - [](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
@@ -284,6 +288,8 @@ Get Claude Code
 
 - [](https://claude.ai/code)
   On the web
+- [](/download)
+  Desktop
 - [](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
   VS Code
 - [](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
@@ -1203,6 +1209,8 @@ Get Claude Code
 
 - [](https://claude.ai/code)
   On the web
+- [](/download)
+  Desktop
 - [](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
   VS Code
 - [](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
@@ -1479,6 +1487,8 @@ Get Claude Code
 
 - [](https://claude.ai/code)
   On the web
+- [](/download)
+  Desktop
 - [](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
   VS Code
 - [](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)

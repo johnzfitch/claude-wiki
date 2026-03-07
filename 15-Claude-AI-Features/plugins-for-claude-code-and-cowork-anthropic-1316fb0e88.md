@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:07:42Z"
-last_modified: "Tue, 03 Mar 2026 04:43:37 GMT"
+fetched_at: "2026-03-07T01:05:00Z"
+last_modified: "Sat, 07 Mar 2026 00:32:25 GMT"
 source_url: "https://claude.com/plugins"
 title: "Plugins for Claude Code and Cowork | Anthropic"
 ---
@@ -77,8 +77,6 @@ title: "Plugins for Claude Code and Cowork | Anthropic"
     Blog
   - [](/customers)
     Customer stories
-  - [](https://www.anthropic.com/events)
-    Events
   - [](https://www.anthropic.com/news)
     Anthropic news
 
@@ -99,6 +97,13 @@ title: "Plugins for Claude Code and Cowork | Anthropic"
     Connectors
   - [](/plugins)
     Plugins
+
+  Connect
+
+  - [](https://www.anthropic.com/events)
+    Events
+  - [](/community)
+    Community
 
 - [](https://claude.ai/login)
   Login
@@ -176,7 +181,7 @@ title: "Plugins for Claude Code and Cowork | Anthropic"
 
   Features
 
-  - [](/chrome)
+  - [](/claude-in-chrome)
     Claude in Chrome
   - [](/claude-in-slack)
     Claude in Slack
@@ -260,8 +265,6 @@ title: "Plugins for Claude Code and Cowork | Anthropic"
     Blog
   - [](/customers)
     Customer stories
-  - [](https://www.anthropic.com/events)
-    Events
   - [](https://www.anthropic.com/news)
     Anthropic news
 
@@ -282,6 +285,13 @@ title: "Plugins for Claude Code and Cowork | Anthropic"
     Connectors
   - [](/plugins)
     Plugins
+
+  Connect
+
+  - [](https://www.anthropic.com/events)
+    Events
+  - [](/community)
+    Community
 
 - [](https://claude.ai/login)
   Login
@@ -1796,7 +1806,7 @@ Features
 
 - Claude in Chrome
 
-  [Claude in Chrome](/chrome)
+  [Claude in Chrome](/claude-in-chrome)
   Claude in Chrome
 
 - Claude in Slack
@@ -1910,6 +1920,11 @@ Claude Developer Platform
   [Pricing](https://claude.com/pricing#api)
   Pricing
 
+- Marketplace
+
+  [Marketplace](/platform/marketplace)
+  Marketplace
+
 - Amazon Bedrock
 
   [Amazon Bedrock](/partners/amazon-bedrock)
@@ -1942,20 +1957,30 @@ Resources
   [Blog](/blog)
   Blog
 
+- Claude Builder Program
+
+  [Claude Builder Program](/programs/builder)
+  Claude Builder Program
+
 - Claude partner network
 
   [Claude partner network](/partners)
   Claude partner network
 
-- Courses
+- Community
 
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Community](/community)
+  Community
 
 - Connectors
 
   [Connectors](/connectors)
   Connectors
+
+- Courses
+
+  [Courses](https://www.anthropic.com/learn)
+  Courses
 
 - Customer stories
 

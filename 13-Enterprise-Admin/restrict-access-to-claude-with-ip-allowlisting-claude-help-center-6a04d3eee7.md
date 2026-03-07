@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-03T15:08:11Z"
+fetched_at: "2026-03-07T01:05:38Z"
 source_url: "https://support.claude.com/en/articles/13200993-restrict-access-to-claude-with-ip-allowlisting"
 title: "Restrict access to Claude with IP allowlisting | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Restrict access to Claude with IP allowlisting | Claude Help Center"
 4.  Restrict access to Claude with IP allowlisting
 
 # Restrict access to Claude with IP allowlisting
+
+Updated today
 
 
 IP allowlisting is available for Enterprise plans only.
@@ -29,16 +31,16 @@ When a request originates from an IP address that’s not in your allowlist, acc
 Related Articles
 
 
-Use Skills in Claude
+Who owns and manages the data of my team?
+
+
+Getting Started with Local MCP Servers on Claude Desktop
+
+
+Claude Code usage analytics
 
 
 Enabling and using the desktop extension allowlist
 
 
-Remote MCP Server Submission Guide
-
-
 Claude in Chrome admin controls
-
-
-Logging in to your Claude account

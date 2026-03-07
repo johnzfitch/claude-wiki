@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:10Z"
+fetched_at: "2026-03-07T01:05:38Z"
 source_url: "https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects"
 title: "How can I disable public projects? | Claude Help Center"
 ---
 
 # How can I disable public projects?
+
+Updated today
 
 
 This feature is available to Primary Owners and Owners on Team and Enterprise plans.

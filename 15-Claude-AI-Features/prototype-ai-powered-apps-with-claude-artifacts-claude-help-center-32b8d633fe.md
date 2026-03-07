@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:27Z"
+fetched_at: "2026-03-07T01:05:44Z"
 source_url: "https://support.claude.com/en/articles/11649438-prototype-ai-powered-apps-with-claude-artifacts"
 title: "Prototype AI-Powered Apps with Claude artifacts | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Prototype AI-Powered Apps with Claude artifacts | Claude Help Center"
 3.  Prototype AI-Powered Apps with Claude artifacts
 
 # Prototype AI-Powered Apps with Claude artifacts
+
+Updated today
 
 
 Traditionally, building AI applications has required a lot — managing API keys, stressing about costs, handling complex deployments, accidentally hitting rate limits, and more. With Claude’s artifacts, you can skip the hassle of configuration and build a fully functional, AI-powered application with Claude’s intelligence built right in. These artifacts use your existing usage limits—no API keys, no per-call charges, no deployment hassle — so you can focus on the fun stuff.
@@ -123,10 +125,10 @@ What are artifacts and how do I use them?
 Publishing and sharing artifacts
 
 
-Claude for Marketing
+Using Claude App Intents, Shortcuts, and Widgets on iOS
 
 
 Use artifacts to visualize and create AI apps, without ever writing a line of code
 
 
-Use Claude in PowerPoint
+Claude for Nonprofits Partnership Guide for All Users

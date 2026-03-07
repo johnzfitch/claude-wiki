@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-03T15:08:35Z"
+fetched_at: "2026-03-07T01:05:57Z"
 source_url: "https://code.claude.com/docs/en/remote-control"
 title: "Continue local sessions from any device with Remote Control - Claude Code Docs"
 ---
@@ -11,7 +11,7 @@ title: "Continue local sessions from any device with Remote Control - Claude Cod
 Continue a local Claude Code session from your phone, tablet, or any browser using Remote Control. Works with claude.ai/code and the Claude mobile app.
 
 
-Remote Control is available as a research preview on Max and Pro plans. It is not available on Team or Enterprise plans.
+Remote Control is available on all plans. Team and Enterprise admins must first enable Claude Code in [admin settings](https://claude.ai/admin-settings/claude-code).
 
 Remote Control connects [claude.ai/code](https://claude.ai/code) or the Claude app for [iOS](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684) and [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude) to a Claude Code session running on your machine. Start a task at your desk, then pick it up from your phone on the couch or a browser on another computer. When you start a Remote Control session on your machine, Claude keeps running locally the entire time, so nothing moves to the cloud. With Remote Control you can:
 
@@ -29,7 +29,7 @@ Requirements
 
 Before using Remote Control, confirm that your environment meets these conditions:
 
-- **Subscription**: requires a Max plan. Pro plan support is coming soon. API keys are not supported.
+- **Subscription**: available on Pro, Max, Team, and Enterprise plans. Team and Enterprise admins must first enable Claude Code in [admin settings](https://claude.ai/admin-settings/claude-code). API keys are not supported.
 - **Authentication**: run `claude` and use `/login` to sign in through claude.ai if you haven’t already.
 - **Workspace trust**: run `claude` in your project directory at least once to accept the workspace trust dialog.
 
@@ -58,6 +58,7 @@ claude remote-control
 
 The process stays running in your terminal, waiting for remote connections. It displays a session URL you can use to [connect from another device](#connect-from-another-device), and you can press spacebar to show a QR code for quick access from your phone. While a remote session is active, the terminal shows connection status and tool activity.This command supports the following flags:
 
+- **`--name "My Project"`**: set a custom session title visible in the session list at claude.ai/code. You can also pass the name as a positional argument: `claude remote-control "My Project"`
 - **`--verbose`**: show detailed connection and session logs
 - **`--sandbox`** / **`--no-sandbox`**: enable or disable [sandboxing](/docs/en/sandboxing) for filesystem and network isolation during the session. Sandboxing is off by default.
 
@@ -72,9 +73,18 @@ Copy
 /remote-control
 ```
 
-This starts a Remote Control session that carries over your current conversation history and displays a session URL and QR code you can use to [connect from another device](#connect-from-another-device). The `--verbose`, `--sandbox`, and `--no-sandbox` flags are not available with this command.
+Pass a name as an argument to set a custom session title:
 
-Use `/rename` before running `/remote-control` to give the session a descriptive name. This makes it easier to find in the session list across devices.
+Report incorrect code
+
+Copy
+
+
+``` shiki
+/remote-control My Project
+```
+
+This starts a Remote Control session that carries over your current conversation history and displays a session URL and QR code you can use to [connect from another device](#connect-from-another-device). The `--verbose`, `--sandbox`, and `--no-sandbox` flags are not available with this command.
 
 ### 
 
@@ -88,7 +98,7 @@ Once a Remote Control session is active, you have a few ways to connect from ano
 - **Scan the QR code** shown alongside the session URL to open it directly in the Claude app. With `claude remote-control`, press spacebar to toggle the QR code display.
 - **Open [claude.ai/code](https://claude.ai/code) or the Claude app** and find the session by name in the session list. Remote Control sessions show a computer icon with a green status dot when online.
 
-The remote session takes its name from your last message, your `/rename` value, or “Remote Control session” if there’s no conversation history. If the environment already has an active session, you’ll be asked whether to continue it or start a new one. If you don’t have the Claude app yet, use the `/mobile` command inside Claude Code to display a download QR code for [iOS](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684) or [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude).
+The remote session takes its name from the `--name` argument (or the name passed to `/remote-control`), your last message, your `/rename` value, or “Remote Control session” if there’s no conversation history. If the environment already has an active session, you’ll be asked whether to continue it or start a new one. If you don’t have the Claude app yet, use the `/mobile` command inside Claude Code to display a download QR code for [iOS](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684) or [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude).
 
 ### 
 

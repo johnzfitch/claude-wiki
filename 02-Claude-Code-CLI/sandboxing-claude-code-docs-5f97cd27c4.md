@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-03T15:08:36Z"
+fetched_at: "2026-03-07T01:05:55Z"
 source_url: "https://code.claude.com/docs/en/sandboxing"
 title: "Sandboxing - Claude Code Docs"
 ---
@@ -70,7 +70,7 @@ Network isolation
 Network access is controlled through a proxy server running outside the sandbox:
 
 - **Domain restrictions**: Only approved domains can be accessed
-- **User confirmation**: New domain requests trigger permission prompts
+- **User confirmation**: New domain requests trigger permission prompts (unless [`allowManagedDomainsOnly`](/docs/en/settings#sandbox-settings) is enabled, which blocks non-allowed domains automatically)
 - **Custom proxy support**: Advanced users can implement custom rules on outgoing traffic
 - **Comprehensive coverage**: Restrictions apply to all scripts, programs, and subprocesses spawned by commands
 
@@ -138,7 +138,7 @@ Copy
 
 
 ``` shiki
-> /sandbox
+/sandbox
 ```
 
 This opens a menu where you can choose between sandbox modes. If required dependencies are missing (such as `bubblewrap` or `socat` on Linux), the menu displays installation instructions for your platform.

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:20Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis"
 title: "Using S&amp;P Global Data for Financial Analysis | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using S&amp;P Global Data for Financial Analysis | Claude Help Center"
 4.  Using S&P Global Data for Financial Analysis
 
 # Using S&P Global Data for Financial Analysis
+
+Updated today
 
 
 The Kensho LLM-ready API integration provides Claude with access to S&P Global’s financial data, delivering comprehensive market and fundamental data for public companies. This article explains how to set up the Kensho integration and use S&P data for financial analysis, including price history, financial statements, segment data, and business relationships.
@@ -172,9 +174,6 @@ Business relationship mapping through Kensho provides insights into operational 
 Related Articles
 
 
-Claude for Financial Services Overview
-
-
 Using Daloopa for Financial Analysis
 
 
@@ -185,3 +184,6 @@ Prompting Strategies for Financial Analysis
 
 
 Financial Analysis Workflows with Claude
+
+
+Using Databricks for Data Analysis

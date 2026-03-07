@@ -1,7 +1,7 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:07:28Z"
-last_modified: "Mon, 02 Mar 2026 19:26:31 GMT"
+fetched_at: "2026-03-07T01:04:54Z"
+last_modified: "Fri, 06 Mar 2026 21:35:29 GMT"
 source_url: "https://claude.com/pricing/max"
 title: "Max plan | Claude"
 ---
@@ -68,19 +68,54 @@ Claude shows its thinking, seeks clarification, and collaborates thoughtfully.
 
 One plan for all your work
 
+Analysts
+
 Marketers
 
 Developers
 
 Sales
 
-Analysts
-
 Founders
 
 Creators
 
 Active
+
+Note
+
+Interact with the data—hover and toggle views to uncover patterns
+
+Prompt
+
+Create a scatter plot matrix showing business performance vs opportunity analysis. Plot data points by Current Performance Score (x-axis, 0-100) vs Growth Opportunity Score (y-axis, 0-100). Include quadrant divisions with labels: "Optimize" (top-right), "Develop" (top-left), "Maintain" (bottom-right), "Divest" (bottom-left). Color code by business category and size points by revenue/impact potential.
+
+Attachments
+
+Quarterly Performance
+
+977 lines
+
+csv
+
+Strategic Metrics
+
+92 kb
+
+json
+
+
+Content is user-generated and unverified.
+
+Customize
+
+Loading...
+
+Content is user-generated and unverified.
+
+### Analysts
+
+Research in Claude apps, then build data pipelines and query data with Claude Code.
 
 Note
 
@@ -348,41 +383,6 @@ Analysis based on Q4 2024 CRM data, sales call transcripts, and win/loss intervi
 ### Sales
 
 Write personalized outreach and analyze customer feedback in Claude apps.
-
-Note
-
-Interact with the data—hover and toggle views to uncover patterns
-
-Prompt
-
-Create a scatter plot matrix showing business performance vs opportunity analysis. Plot data points by Current Performance Score (x-axis, 0-100) vs Growth Opportunity Score (y-axis, 0-100). Include quadrant divisions with labels: "Optimize" (top-right), "Develop" (top-left), "Maintain" (bottom-right), "Divest" (bottom-left). Color code by business category and size points by revenue/impact potential.
-
-Attachments
-
-Quarterly Performance
-
-977 lines
-
-csv
-
-Strategic Metrics
-
-92 kb
-
-json
-
-
-Content is user-generated and unverified.
-
-Customize
-
-Loading...
-
-Content is user-generated and unverified.
-
-### Analysts
-
-Research in Claude apps, then build data pipelines and query data with Claude Code.
 
 Note
 
@@ -685,6 +685,8 @@ Prev
 Next
 
 Choose your Max plan
+
+Do more with Max. [Explore features](/pricing#individual-features)
 
 ### Max 5x
 

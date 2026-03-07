@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:10Z"
+fetched_at: "2026-03-07T01:05:38Z"
 source_url: "https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans"
 title: "Custom data retention controls for Enterprise plans | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Custom data retention controls for Enterprise plans | Claude Help Center
 4.  Custom data retention controls for Enterprise plans
 
 # Custom data retention controls for Enterprise plans
+
+Updated today
 
 
 This feature is available to Enterprise plan customers. To set custom retention periods for your organization, you must have either a Primary Owner or Owner role.

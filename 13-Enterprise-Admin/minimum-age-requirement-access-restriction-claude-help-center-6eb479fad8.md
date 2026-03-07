@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-03T15:08:30Z"
+fetched_at: "2026-03-07T01:05:36Z"
 source_url: "https://support.claude.com/en/articles/13117299-minimum-age-requirement-access-restriction"
 title: "Minimum age requirement access restriction | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Minimum age requirement access restriction | Claude Help Center"
 4.  Minimum age requirement access restriction
 
 # Minimum age requirement access restriction
+
+Updated today
 
 
 This article explains why you may be unable to create a Claude account or sign in to an existing account when using the Claude mobile app.

@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-03-03T15:08:14Z"
+fetched_at: "2026-03-07T01:05:39Z"
 source_url: "https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences"
 title: "Getting Started with Claude for Life Sciences | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Getting Started with Claude for Life Sciences | Claude Help Center"
 3.  Getting Started with Claude for Life Sciences
 
 # Getting Started with Claude for Life Sciences
+
+Updated today
 
 
 ## What is Claude for Life Sciences

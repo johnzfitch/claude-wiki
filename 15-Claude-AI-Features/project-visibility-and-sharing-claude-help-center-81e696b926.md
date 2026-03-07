@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:11Z"
+fetched_at: "2026-03-07T01:05:38Z"
 source_url: "https://support.claude.com/en/articles/9519189-project-visibility-and-sharing"
 title: "Project visibility and sharing | Claude Help Center"
 ---
 
 # Project visibility and sharing
+
+Updated today
 
 
 Project visibility and sharing features are available to users on Claude for Work (Team or Enterprise) plans. This article assumes that public projects are enabled for your organization. For more information, see [How can I disable public projects?](https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects)

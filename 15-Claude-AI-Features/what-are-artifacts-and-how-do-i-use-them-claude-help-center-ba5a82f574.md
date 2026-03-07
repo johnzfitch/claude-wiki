@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:27Z"
+fetched_at: "2026-03-07T01:05:50Z"
 source_url: "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them"
 title: "What are artifacts and how do I use them? | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "What are artifacts and how do I use them? | Claude Help Center"
 4.  What are artifacts and how do I use them?
 
 # What are artifacts and how do I use them?
+
+Updated today
 
 
 Accessing artifacts in the sidebar and Claude-powered artifacts are supported on free, Pro, Max, Team, and Enterprise plans.

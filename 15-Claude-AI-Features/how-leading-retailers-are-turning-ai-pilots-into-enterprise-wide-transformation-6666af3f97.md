@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:07:45Z"
-last_modified: "Tue, 03 Mar 2026 03:18:59 GMT"
+fetched_at: "2026-03-07T01:05:10Z"
+last_modified: "Fri, 06 Mar 2026 23:34:55 GMT"
 source_url: "https://claude.com/blog/how-leading-retailers-are-turning-ai-pilots-into-enterprise-wide-transformation"
 title: "How leading retailers are turning AI pilots into enterprise-wide transformation | Claude"
 ---

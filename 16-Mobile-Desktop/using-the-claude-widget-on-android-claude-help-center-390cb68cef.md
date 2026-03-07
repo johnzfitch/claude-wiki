@@ -1,11 +1,13 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-03T15:08:30Z"
+fetched_at: "2026-03-07T01:05:36Z"
 source_url: "https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android"
 title: "Using the Claude Widget on Android | Claude Help Center"
 ---
 
 # Using the Claude Widget on Android
+
+Updated today
 
 
 The Claude Android widget is available on Android 8.0 Oreo and above.

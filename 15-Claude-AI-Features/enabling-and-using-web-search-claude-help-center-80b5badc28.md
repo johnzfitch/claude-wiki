@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:28Z"
+fetched_at: "2026-03-07T01:05:49Z"
 source_url: "https://support.claude.com/en/articles/10684626-enabling-and-using-web-search"
 title: "Enabling and using web search | Claude Help Center"
 ---
 
 # Enabling and using web search
+
+Updated today
 
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
@@ -149,9 +151,6 @@ Related Articles
 How up-to-date is Claude's training data?
 
 
-How large is the Claude API’s context window?
-
-
 Claude Code model configuration
 
 
@@ -159,3 +158,6 @@ Release notes
 
 
 Getting the most out of Sonnet 4.5 in Claude.ai
+
+
+Create professional results across tools with Claude Sonnet 4.5

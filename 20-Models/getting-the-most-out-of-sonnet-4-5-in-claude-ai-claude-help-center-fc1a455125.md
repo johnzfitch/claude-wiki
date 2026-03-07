@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-03T15:08:23Z"
+fetched_at: "2026-03-07T01:05:44Z"
 source_url: "https://support.claude.com/en/articles/12439373-getting-the-most-out-of-sonnet-4-5-in-claude-ai"
 title: "Getting the most out of Sonnet 4.5 in Claude.ai | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Getting the most out of Sonnet 4.5 in Claude.ai | Claude Help Center"
 3.  Getting the most out of Sonnet 4.5 in Claude.ai
 
 # Getting the most out of Sonnet 4.5 in Claude.ai
+
+Updated today
 
 
 Claude Sonnet 4.5 is our most intelligent model for real-world work—and now it's available to everyone on Claude.ai. Whether you're creating documents, analyzing data, or tackling complex research, Sonnet 4.5 delivers professional results faster and with higher quality than ever before.\

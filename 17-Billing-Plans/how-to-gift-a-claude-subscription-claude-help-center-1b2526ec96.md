@@ -1,11 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:29Z"
+fetched_at: "2026-03-07T01:05:50Z"
 source_url: "https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription"
 title: "How to gift a Claude subscription | Claude Help Center"
 ---
 
 # How to gift a Claude subscription
+
+Updated today
 
 
 Give the gift of Claude to friends, family, or colleagues. Gift subscriptions are available for Pro, Max 5x, and Max 20x plans, and can be purchased for 1, 3, 6, or 12 months.

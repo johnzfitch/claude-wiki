@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:19Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis"
 title: "Using LSEG for Financial Market Data Analysis | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using LSEG for Financial Market Data Analysis | Claude Help Center"
 4.  Using LSEG for Financial Market Data Analysis
 
 # Using LSEG for Financial Market Data Analysis
+
+Updated today
 
 
 The LSEG integration provides Claude with access to LSEG’s comprehensive financial market data ecosystem, spanning across asset classes and domains. This article explains how to set up and use LSEG to retrieve real-time market data, analytics, and perform complex financial calculations. The LSEG integration relies upon Claude’s ability to use remote connectors.

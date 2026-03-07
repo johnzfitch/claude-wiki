@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:20Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12663693-using-mt-newswires-for-real-time-financial-news"
 title: "Using MT Newswires for Real-Time Financial News | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using MT Newswires for Real-Time Financial News | Claude Help Center"
 4.  Using MT Newswires for Real-Time Financial News
 
 # Using MT Newswires for Real-Time Financial News
+
+Updated today
 
 
 The MT Newswires integration provides Claude with access to a premium real-time financial news service delivering original, unbiased multi-asset class market intelligence. This article explains how to set up and use MT Newswires to monitor breaking news and stay informed about market-moving events. The MT Newswires integration relies upon Claude’s ability to use remote connectors.

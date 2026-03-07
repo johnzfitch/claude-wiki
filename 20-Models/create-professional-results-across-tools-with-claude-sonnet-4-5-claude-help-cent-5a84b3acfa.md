@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-03T15:08:25Z"
+fetched_at: "2026-03-07T01:05:42Z"
 source_url: "https://support.claude.com/en/articles/12439380-create-professional-results-across-tools-with-claude-sonnet-4-5"
 title: "Create professional results across tools with Claude Sonnet 4.5 | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Create professional results across tools with Claude Sonnet 4.5 | Claude
 3.  Create professional results across tools with Claude Sonnet 4.5
 
 # Create professional results across tools with Claude Sonnet 4.5
+
+Updated today
 
 
 Claude Sonnet 4.5 is our most intelligent model for creating work deliverables. With code execution and file creation, Claude can build presentations, spreadsheets, and documents faster and with higher quality than before (currently limited to Max and Pro accounts).
@@ -115,9 +117,6 @@ Chat previews don't always show the full picture. Download the file and open it 
 Related Articles
 
 
-Claude Code model configuration
-
-
 Create and edit files with Claude
 
 
@@ -125,6 +124,9 @@ Create and edit files with Claude to eliminate hours of busy work
 
 
 Getting the most out of Sonnet 4.5 in Claude.ai
+
+
+Use Claude in Excel
 
 
 Applying Claude Opus 4.5’s strengths to your everyday work

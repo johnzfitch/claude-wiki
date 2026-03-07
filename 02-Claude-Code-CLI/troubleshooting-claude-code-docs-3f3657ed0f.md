@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-03T15:08:36Z"
+fetched_at: "2026-03-07T01:05:53Z"
 source_url: "https://code.claude.com/docs/en/troubleshooting"
 title: "Troubleshooting - Claude Code Docs"
 ---

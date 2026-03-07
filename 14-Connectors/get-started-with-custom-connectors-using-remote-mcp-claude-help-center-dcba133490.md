@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:09Z"
+fetched_at: "2026-03-07T01:05:41Z"
 source_url: "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp"
 title: "Get started with custom connectors using remote MCP | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Get started with custom connectors using remote MCP | Claude Help Center
 4.  Get started with custom connectors using remote MCP
 
 # Get started with custom connectors using remote MCP
+
+Updated today
 
 
 Custom connectors using remote MCP are available on Claude and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are limited to one custom connector. This feature is currently in beta.

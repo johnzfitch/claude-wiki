@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:20Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research"
 title: "Using PitchBook for Investment Research | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using PitchBook for Investment Research | Claude Help Center"
 4.  Using PitchBook for Investment Research
 
 # Using PitchBook for Investment Research
+
+Updated today
 
 
 The PitchBook Premium integration gives Claude access to proprietary private capital market data and analytical metrics. This article outlines the steps to set up and use PitchBook data for financial research, including financial analysis, competitive benchmarking, network relationship mapping, and investor portfolio analysis.
@@ -108,7 +110,7 @@ Discover unexpected connections between companies, investors, and professionals 
 
 ## Contact
 
-If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#a2d1d7d2d2cdd0d6e2d2cbd6c1cac0cdcdc98cc1cdcf) for help.
+If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#1f6c6a6f6f706d6b5f6f766b7c777d707074317c7072) for help.
 
 ------------------------------------------------------------------------
 

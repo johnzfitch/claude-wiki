@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:09Z"
+fetched_at: "2026-03-07T01:05:41Z"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 title: "Using interactive connectors in Claude | Claude Help Center"
 ---
@@ -9,8 +9,10 @@ title: "Using interactive connectors in Claude | Claude Help Center"
 
 # Using interactive connectors in Claude
 
+Updated today
 
-Interactive connectors are available on for all users on Claude and Claude Desktop.
+
+Interactive connectors are available for all users on Claude and Claude Desktop.
 
 ## What are interactive connectors?
 
@@ -133,10 +135,10 @@ Get started with custom connectors using remote MCP
 Use connectors to extend Claude's capabilities
 
 
-When to use desktop and web connectors
-
-
-Connect your tools to unlock a smarter, more capable AI companion
+Anthropic Connectors Directory FAQ
 
 
 Using the 10x Genomics Extension in Claude
+
+
+Using the Benchling Connector in Claude

@@ -1,11 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-03T15:08:09Z"
+fetched_at: "2026-03-07T01:05:41Z"
 source_url: "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
 title: "Anthropic Software Directory Policy | Claude Help Center"
 ---
 
 # Anthropic Software Directory Policy
+
+Updated in the last hour
 
 
 Anthropic allows users to discover high-quality Model Context Protocol servers, Skill folders, plugins, apps, and other software, containers, or data (“Software”) that work seamlessly within Claude through directories, repositories, surfaces, or similar offerings (collectively, “Directories”). We review submissions to our Directories to ensure they meet our standards for safety, security, and compatibility with Anthropic Services and other Software. We conduct both initial and ongoing reviews of Software, and may require developers to address compliance issues to continue being included in our Directories. All Software must maintain compliance with these requirements, including any future changes, to remain in our Directories.
@@ -54,7 +56,7 @@ D. Developers must provide a standard testing account with sample data for Anthr
 
 E. Developers must provide at least three working examples of prompts or use cases that demonstrate core functionality.
 
-F. Developers must verify that they own or control any API endpoint, domain, or user interface their Software connects to, as well as any external resources it retrieves or renders.
+F. Developers must verify that they own or control any API endpoint, domain, or user interface their Software connects to, as well as any external resources it retrieves or renders. Plugins are an exception, and may connect to any Connector approved in the Software Directory.
 
 G. Developers must maintain their Software and address issues within reasonable timeframes.
 
@@ -93,13 +95,13 @@ See prior version of this policy here: [Anthropic MCP Directory Policy](https://
 Related Articles
 
 
+Getting Started with Local MCP Servers on Claude Desktop
+
+
 Anthropic Connectors Directory FAQ
 
 
 Remote MCP Server Submission Guide
-
-
-Local MCP Server Submission Guide
 
 
 Building Desktop Extensions with MCPB

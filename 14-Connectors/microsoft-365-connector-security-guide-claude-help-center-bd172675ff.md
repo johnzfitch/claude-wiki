@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:09Z"
+fetched_at: "2026-03-07T01:05:41Z"
 source_url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
 title: "Microsoft 365 Connector: Security Guide | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Microsoft 365 Connector: Security Guide | Claude Help Center"
 4.  Microsoft 365 Connector: Security Guide
 
 # Microsoft 365 Connector: Security Guide
+
+Updated today
 
 
 ## What it is

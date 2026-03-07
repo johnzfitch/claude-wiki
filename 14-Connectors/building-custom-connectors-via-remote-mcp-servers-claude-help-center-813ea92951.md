@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:09Z"
+fetched_at: "2026-03-07T01:05:41Z"
 source_url: "https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers"
 title: "Building custom connectors via remote MCP servers | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Building custom connectors via remote MCP servers | Claude Help Center"
 3.  Building custom connectors via remote MCP servers
 
 # Building custom connectors via remote MCP servers
+
+Updated today
 
 
 Custom connectors using remote MCP are available on Claude and Claude Desktop for users on Pro, Max, Team, and Enterprise plans.

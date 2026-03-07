@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-03T15:08:33Z"
+fetched_at: "2026-03-07T01:05:55Z"
 source_url: "https://code.claude.com/docs/en/gitlab-ci-cd"
 title: "Claude Code GitLab CI/CD - Claude Code Docs"
 ---

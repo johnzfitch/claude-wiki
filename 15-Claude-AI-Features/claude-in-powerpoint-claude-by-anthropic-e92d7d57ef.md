@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:07:42Z"
-last_modified: "Mon, 02 Mar 2026 19:26:26 GMT"
+fetched_at: "2026-03-07T01:05:01Z"
+last_modified: "Fri, 06 Mar 2026 21:35:25 GMT"
 source_url: "https://claude.com/claude-in-powerpoint"
 title: "Claude in Powerpoint | Claude by Anthropic"
 ---
@@ -37,6 +37,12 @@ Open a blank deck and describe your goal. “10 slides walking through an assess
 Convert bullet points into professional visuals — diagrams, process flows, or editable native PowerPoint charts. Claude produces visuals you can edit directly, not static images.
 
 ## The Claude you trust, right in PowerPoint
+
+Install now
+
+[Install now](https://marketplace.microsoft.com/en-us/product/office/WA200010001?tab=Overview)
+
+Install now
 
 ### Precise, contextual editing
 

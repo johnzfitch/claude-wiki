@@ -1,12 +1,13 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-03T15:08:29Z"
+fetched_at: "2026-03-07T01:05:36Z"
 source_url: "https://support.claude.com/en/articles/11825394-how-to-update-claude-for-android"
 title: "How to update Claude for Android | Claude Help Center"
 ---
 
 # How to update Claude for Android
 
+Updated today
 
 If you aren’t seeing the latest features on Claude for Android, you may need to [update your mobile app manually by following these instructions from Google](https://support.google.com/googleplay/answer/113412?hl=en):
 
@@ -25,7 +26,7 @@ If you aren’t seeing the latest features on Claude for Android, you may need t
 Related Articles
 
 
-How can I uninstall Claude for Android?
+How do I cancel my paid Claude subscription?
 
 
 How can I cancel my Claude Pro subscription on Claude for Android?

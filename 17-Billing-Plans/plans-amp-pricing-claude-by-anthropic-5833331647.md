@@ -1,7 +1,7 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:07:19Z"
-last_modified: "Mon, 02 Mar 2026 19:26:26 GMT"
+fetched_at: "2026-03-07T01:04:51Z"
+last_modified: "Fri, 06 Mar 2026 21:35:25 GMT"
 source_url: "https://claude.com/pricing"
 title: "Plans &amp; Pricing | Claude by Anthropic"
 ---
@@ -25,6 +25,7 @@ Try Claude
 - Write, edit, and create content
 - Analyze text and images
 - Ability to search the web
+- Memory across conversations
 - Create files and execute code
 - Unlock more from Claude with desktop extensions
 - Connect Slack and Google Workspace services
@@ -51,7 +52,6 @@ Everything in Free, plus:
 - Includes Claude Code and Cowork
 - Access to unlimited projects to organize chats and documents
 - Access to Research
-- Memory across conversations
 - Ability to use more Claude models
 - Claude in Excel
 
@@ -303,7 +303,7 @@ Get Enterprise plan
 
 Get Enterprise plan
 
-Everything in Team, plus:
+All Team features, plus:
 
 - Enhanced context window
 - Google Docs cataloging
@@ -360,7 +360,7 @@ Create plan
 
 Create plan
 
-Self-serve Enterprise
+Enterprise (self-serve)
 
 Create plan
 
@@ -368,7 +368,7 @@ Create plan
 
 Create plan
 
-Enterprise
+Enterprise (sales-assisted)
 
 Contact sales
 

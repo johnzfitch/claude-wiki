@@ -1,11 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:13Z"
+fetched_at: "2026-03-07T01:05:40Z"
 source_url: "https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude"
 title: "Using the PubMed Connector in Claude | Claude Help Center"
 ---
 
 # Using the PubMed Connector in Claude
+
+Updated today
 
 
 The PubMed integration provides access to millions of biomedical research articles and clinical studies, allowing Claude to access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper exploration. This article explains how to set up and use the PubMed integration with Claude to accelerate your research workflows.
@@ -180,10 +182,10 @@ Related Articles
 Getting Started with Claude for Life Sciences
 
 
-Using the BioRender Connector in Claude
-
-
 Using the Synapse.org connector in Claude
+
+
+Using the Benchling Connector in Claude
 
 
 Using the Scholar Gateway Connector in Claude

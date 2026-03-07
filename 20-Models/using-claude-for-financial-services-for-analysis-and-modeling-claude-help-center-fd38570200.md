@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-03T15:08:22Z"
+fetched_at: "2026-03-07T01:05:42Z"
 source_url: "https://support.claude.com/en/articles/12068923-using-claude-for-financial-services-for-analysis-and-modeling"
 title: "Using Claude for Financial Services for analysis and modeling | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "Using Claude for Financial Services for analysis and modeling | Claude H
 
 # Using Claude for Financial Services for analysis and modeling
 
+Updated today
 
 # An error occurred.
 

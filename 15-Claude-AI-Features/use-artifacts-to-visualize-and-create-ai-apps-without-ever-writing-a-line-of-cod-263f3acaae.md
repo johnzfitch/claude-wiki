@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:07:47Z"
-last_modified: "Mon, 02 Mar 2026 19:26:25 GMT"
+fetched_at: "2026-03-07T01:05:12Z"
+last_modified: "Fri, 06 Mar 2026 21:35:40 GMT"
 source_url: "https://claude.com/resources/tutorials/use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code"
 title: "Use artifacts to visualize and create AI apps without ever writing a line of code | Claude"
 ---
@@ -77,8 +77,6 @@ title: "Use artifacts to visualize and create AI apps without ever writing a lin
     Blog
   - [](/customers)
     Customer stories
-  - [](https://www.anthropic.com/events)
-    Events
   - [](https://www.anthropic.com/news)
     Anthropic news
 
@@ -99,6 +97,13 @@ title: "Use artifacts to visualize and create AI apps without ever writing a lin
     Connectors
   - [](/plugins)
     Plugins
+
+  Connect
+
+  - [](https://www.anthropic.com/events)
+    Events
+  - [](/community)
+    Community
 
 - [](https://claude.ai/login)
   Login
@@ -176,7 +181,7 @@ title: "Use artifacts to visualize and create AI apps without ever writing a lin
 
   Features
 
-  - [](/chrome)
+  - [](/claude-in-chrome)
     Claude in Chrome
   - [](/claude-in-slack)
     Claude in Slack
@@ -260,8 +265,6 @@ title: "Use artifacts to visualize and create AI apps without ever writing a lin
     Blog
   - [](/customers)
     Customer stories
-  - [](https://www.anthropic.com/events)
-    Events
   - [](https://www.anthropic.com/news)
     Anthropic news
 
@@ -282,6 +285,13 @@ title: "Use artifacts to visualize and create AI apps without ever writing a lin
     Connectors
   - [](/plugins)
     Plugins
+
+  Connect
+
+  - [](https://www.anthropic.com/events)
+    Events
+  - [](/community)
+    Community
 
 - [](https://claude.ai/login)
   Login
@@ -451,6 +461,30 @@ Viewers have two options when interacting with your artifact:
 
 ## Related tutorials
 
+[Choosing the right Claude model: Haiku, Sonnet, and Opus](/resources/tutorials/choosing-the-right-claude-model)
+
+Choosing the right Claude model: Haiku, Sonnet, and Opus
+
+Choosing the right Claude model: Haiku, Sonnet, and Opus
+
+Tutorial
+
+[Tutorial](/resources/tutorials/choosing-the-right-claude-model)
+
+Tutorial
+
+[Claude Enterprise Administrator Guide](/resources/tutorials/claude-enterprise-administrator-guide)
+
+Claude Enterprise Administrator Guide
+
+Claude Enterprise Administrator Guide
+
+Tutorial
+
+[Tutorial](/resources/tutorials/claude-enterprise-administrator-guide)
+
+Tutorial
+
 [How to customize plugins in Cowork](/resources/tutorials/how-to-customize-plugins-in-cowork)
 
 How to customize plugins in Cowork
@@ -472,30 +506,6 @@ How to build a plugin from scratch in Cowork
 Tutorial
 
 [Tutorial](/resources/tutorials/how-to-build-a-plugin-from-scratch-in-cowork)
-
-Tutorial
-
-[Navigating the Claude desktop app: Chat, Cowork, Code](/resources/tutorials/navigating-the-claude-desktop-app)
-
-Navigating the Claude desktop app: Chat, Cowork, Code
-
-Navigating the Claude desktop app: Chat, Cowork, Code
-
-Tutorial
-
-[Tutorial](/resources/tutorials/navigating-the-claude-desktop-app)
-
-Tutorial
-
-[Get the most from Claude Opus 4.6](/resources/tutorials/get-the-most-from-claude-opus-4-6)
-
-Get the most from Claude Opus 4.6
-
-Get the most from Claude Opus 4.6
-
-Tutorial
-
-[Tutorial](/resources/tutorials/get-the-most-from-claude-opus-4-6)
 
 Tutorial
 
@@ -691,7 +701,7 @@ Features
 
 - Claude in Chrome
 
-  [Claude in Chrome](/chrome)
+  [Claude in Chrome](/claude-in-chrome)
   Claude in Chrome
 
 - Claude in Slack
@@ -805,6 +815,11 @@ Claude Developer Platform
   [Pricing](https://claude.com/pricing#api)
   Pricing
 
+- Marketplace
+
+  [Marketplace](/platform/marketplace)
+  Marketplace
+
 - Amazon Bedrock
 
   [Amazon Bedrock](/partners/amazon-bedrock)
@@ -837,20 +852,30 @@ Resources
   [Blog](/blog)
   Blog
 
+- Claude Builder Program
+
+  [Claude Builder Program](/programs/builder)
+  Claude Builder Program
+
 - Claude partner network
 
   [Claude partner network](/partners)
   Claude partner network
 
-- Courses
+- Community
 
-  [Courses](https://www.anthropic.com/learn)
-  Courses
+  [Community](/community)
+  Community
 
 - Connectors
 
   [Connectors](/connectors)
   Connectors
+
+- Courses
+
+  [Courses](https://www.anthropic.com/learn)
+  Courses
 
 - Customer stories
 

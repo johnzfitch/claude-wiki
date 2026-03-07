@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-03T15:08:10Z"
+fetched_at: "2026-03-07T01:05:37Z"
 source_url: "https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide"
 title: "Claude Enterprise Analytics API reference guide | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Claude Enterprise Analytics API reference guide | Claude Help Center"
 4.  Claude Enterprise Analytics API reference guide
 
 # Claude Enterprise Analytics API reference guide
+
+Updated today
 
 
 ## Overview
@@ -182,13 +184,13 @@ Related Articles
 Set up the Claude LTI in Canvas by Instructure
 
 
-Managing API key environment variables in Claude Code
-
-
 Usage analytics for Team and Enterprise plans
 
 
 Using the Blackbaud Connector in Claude
+
+
+Enforce network-level access control with Tenant Restrictions
 
 
 Access engagement and adoption data with the Analytics API

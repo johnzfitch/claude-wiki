@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-03T15:07:49Z"
+fetched_at: "2026-03-07T01:05:15Z"
 source_url: "https://modelcontextprotocol.io/registry/package-types"
 title: "MCP Registry Supported Package Types - Model Context Protocol"
 ---

@@ -1,11 +1,13 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-03T15:08:43Z"
+fetched_at: "2026-03-07T01:06:02Z"
 source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning"
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
 ---
 
 # Set up JIT or SCIM provisioning
+
+Updated in the last hour
 
 
 JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console organizations only.
@@ -22,11 +24,11 @@ Once SSO is configured, you need to decide how users will be provisioned to your
 
 ### Provisioning options
 
-**Manual** is the default. Users are added and removed directly in Claude or Console settings.
+**Invite only** is the default. Users are added and removed directly in Claude or Console settings.
 
-**JIT (Just-in-Time):** Users assigned to your Anthropic IdP app are automatically provisioned when they first log in. This option is available to all plans.
+**Approve automatically (JIT):** Users assigned to your Anthropic IdP app are automatically provisioned when they first log in. This option is available to all plans.
 
-**SCIM:** Users are automatically provisioned and deprovisioned based on assignments in your IdP, without requiring them to log in first. SCIM is available for Enterprise plans and Console organizations with their own parent organization or joined to an Enterprise parent organization. SCIM is not available for Team plans or Console organizations joined to a Team plan's parent organization.
+**Sync with SCIM:** Users are automatically provisioned and deprovisioned based on assignments in your IdP, without requiring them to log in first. SCIM is available for Enterprise plans and Console organizations with their own parent organization or joined to an Enterprise parent organization. SCIM is not available for Team plans or Console organizations joined to a Team plan's parent organization.
 
 ### Provisioning behavior overview
 
@@ -46,13 +48,13 @@ For information on purchasing seats or adjusting your plan's seat allocation, se
 
 ## Step 2: Set up SCIM directory sync (if using SCIM)
 
-**Note:** Skip this step if you're using Manual or JIT provisioning.
+**Note:** Skip this step if you're using Invite only or JIT provisioning.
 
 If you chose SCIM as your provisioning mode, you need to establish the connection between your Identity Provider and Anthropic before enabling it.
 
 1.  Navigate to your Identity and access settings in Claude (**[claude.ai/admin-settings/identity](http://claude.ai/admin-settings/identity)**) or Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identit)**)
 
-2.  In the **Global access settings / Organization access** section, click “Setup SCIM” (or “Manage SCIM”) next to **Directory sync (SCIM)**.
+2.  In the **Global access settings** section, click “Setup SCIM” (or “Manage SCIM”) next to **Directory sync (SCIM)**.
 
 3.  Follow the WorkOS setup guide to configure SCIM in your Identity Provider. You'll need to copy values from WorkOS into your IdP's Anthropic application.
 
@@ -78,9 +80,15 @@ Once your IdP is connected, continue to Step 3.
 
 ## Step 3: Configure provisioning mode and enable group mappings
 
-1.  In the **Global access settings / Organization access** section of your Identity and access settings, find **Provisioning mode**.
+1.  In the **Global access settings** section of your Identity and access settings, find **Provisioning mode**.
 
-2.  Select your chosen option from the dropdown (“Just in time (JIT)” or “Directory sync (SCIM)”).
+2.  Select your chosen option from the dropdown:
+
+    1.  **Invite only**: New members can only join if manually invited by an existing member. SSO access alone won't add them to your org.
+
+    2.  **Approve automatically (JIT)**: Allow people with SSO access to join when they first log in. Each new member uses one of your available seats.
+
+    3.  **Sync with SCIM**: Add or remove members automatically as your directory changes. Your org always stays current.
 
 3.  Toggle on **Enable group mappings** if using.
 
