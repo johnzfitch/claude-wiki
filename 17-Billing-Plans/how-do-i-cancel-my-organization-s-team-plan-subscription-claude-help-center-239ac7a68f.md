@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:11Z"
+fetched_at: "2026-03-07T01:05:38Z"
 source_url: "https://support.claude.com/en/articles/9267323-how-do-i-cancel-my-organization-s-team-plan-subscription"
 title: "How do I cancel my organization’s Team plan subscription? | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "How do I cancel my organization’s Team plan subscription? | Claude Hel
 
 # How do I cancel my organization’s Team plan subscription?
 
+Updated today
 
 An Owner or Primary Owner can cancel Team plan access by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**. Canceling your Team plan subscription means that your organization won't be charged for the next billing cycle. Your team will continue to have access to Claude until the end of the current billing cycle.
 
@@ -22,13 +23,13 @@ Related Articles
 How do I cancel my paid Claude subscription?
 
 
-What is the Team plan?
-
-
 How do I get started with the Team plan?
 
 
 How am I billed for my Enterprise plan?
+
+
+Team plan billing FAQs
 
 
 Purchase and manage seats on Enterprise plans

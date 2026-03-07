@@ -1,11 +1,13 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-03T15:08:29Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 title: "What are Skills? | Claude Help Center"
 ---
 
 # What are Skills?
+
+Updated today
 
 
 Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.

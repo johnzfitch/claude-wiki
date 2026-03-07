@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-03T15:08:20Z"
+fetched_at: "2026-03-07T01:05:39Z"
 source_url: "https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance"
 title: "Report a Concern: Australian DIS Standard compliance | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Report a Concern: Australian DIS Standard compliance | Claude Help Cente
 3.  Report a Concern: Australian DIS Standard compliance
 
 # Report a Concern: Australian DIS Standard compliance
+
+Updated today
 
 
 Users in Australia can report concerns about Anthropic's compliance with the Digital Industry Standard (DIS Standard) [here](https://docs.google.com/forms/d/e/1FAIpQLScZbBlN2JjMFE6IygxBOEhISAEtXbbe3P5e1wJY766UiEVj5Q/viewform).
@@ -41,16 +43,16 @@ If you wish to refer a matter to the eSafety Commissioner, please follow the ins
 Related Articles
 
 
-Reporting, Blocking, and Removing Content from Claude
-
-
-Does Anthropic crawl data from the web, and how can site owners block the crawler?
-
-
 API Safeguards Tools
 
 
 Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
 
 
+Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors
+
+
 Reporting, Blocking, and Removing Content from Claude
+
+
+Crisis Helpline Support in Claude

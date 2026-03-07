@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-03T15:08:20Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12651659-using-egnyte-for-data-room-management-with-claude"
 title: "Using Egnyte for data room management with Claude | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using Egnyte for data room management with Claude | Claude Help Center"
 4.  Using Egnyte for data room management with Claude
 
 # Using Egnyte for data room management with Claude
+
+Updated today
 
 
 The Egnyte connector provides Claude with secure access to your organization’s content stored in Egnyte, enabling advanced document search, AI-powered analysis, and intelligent content management. Through the Egnyte Remote MCP Server, Claude can search for files, retrieve document content, ask questions about specific documents, generate summaries, and interact with Egnyte AI capabilities like Copilot and Knowledge Bases.
@@ -193,16 +195,16 @@ Claude would provide a comprehensive summary of all project deliverables with ke
 Related Articles
 
 
-FAQs on Using Claude for Education at Your University
-
-
-Claude for Financial Services Overview
+Getting Started with Local MCP Servers on Claude Desktop
 
 
 Using Databricks for Data Analysis
 
 
-Using Claude in Slack
+Deploy Claude Desktop for macOS
 
 
-Using the Synapse.org connector in Claude
+Using the 10x Genomics Extension in Claude
+
+
+Using the Benchling Connector in Claude

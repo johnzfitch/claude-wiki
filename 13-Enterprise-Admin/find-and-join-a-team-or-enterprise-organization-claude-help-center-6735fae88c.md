@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-03T15:08:10Z"
+fetched_at: "2026-03-07T01:05:38Z"
 source_url: "https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization"
 title: "Find and join a Team or Enterprise organization | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Find and join a Team or Enterprise organization | Claude Help Center"
 4.  Find and join a Team or Enterprise organization
 
 # Find and join a Team or Enterprise organization
+
+Updated in the last hour
 
 
 Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
@@ -40,7 +42,7 @@ To enable discoverability:
 
 4.  Find the domain you want users to search for and click the toggle under **Discoverable**.
 
-5.  Find **New member approval** under **Organization access** and choose either “Approve automatically” or “Approve one-by-one.”
+5.  Find **New member approval** under **Global access settings** and choose either “Approve automatically” or “Require admin approval.”
 
 ### Configure allowed domains
 
@@ -98,7 +100,7 @@ Related Articles
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 
-Extra usage for Team and seat-based Enterprise plans
+Set up JIT or SCIM provisioning
 
 
 Manage members on Team and Enterprise plans

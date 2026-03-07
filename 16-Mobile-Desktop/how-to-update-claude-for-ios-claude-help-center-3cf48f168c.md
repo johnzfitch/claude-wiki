@@ -1,12 +1,13 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-03T15:08:29Z"
+fetched_at: "2026-03-07T01:05:36Z"
 source_url: "https://support.claude.com/en/articles/11825384-how-to-update-claude-for-ios"
 title: "How to update Claude for iOS | Claude Help Center"
 ---
 
 # How to update Claude for iOS
 
+Updated today
 
 If you aren’t seeing the latest features on Claude for iOS, you may need to [update your mobile app manually by following these instructions from Apple](https://support.apple.com/en-us/102629):
 

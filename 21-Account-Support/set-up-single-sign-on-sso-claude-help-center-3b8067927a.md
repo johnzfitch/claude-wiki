@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-03T15:08:43Z"
+fetched_at: "2026-03-07T01:06:02Z"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso"
 title: "Set up single sign-on (SSO) | Claude Help Center"
 ---
 
 # Set up single sign-on (SSO)
+
+Updated in the last hour
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
@@ -79,7 +81,7 @@ You can verify multiple domains for a single organization, but all domains must 
 
 1.  Navigate to your Identity and access settings in Claude (**[claude.ai/admin-settings/identity](http://claude.ai/admin-settings/identity)**) or Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identit)**)
 
-2.  In the **Global access settings / Organization access** section, click “Setup SSO” (or “Manage”).
+2.  In the **Global access settings** section, click “Setup SSO” (or “Manage”).
 
 3.  Follow the setup guide provided for your Identity Provider (see below for additional guides).
 
@@ -107,7 +109,7 @@ For IdP-specific setup instructions, see:
 
 ## Step 4: Choose to require SSO
 
-You can now choose to toggle on **Require SSO for Console** and/or **Require SSO for Claude,** on the Identity and access page, under **Global access settings / Organization access** section:
+You can now choose to toggle on **Require SSO for Console** and/or **Require SSO for Claude,** on the Identity and access page, under the **Global access settings** section:
 
 
 When SSO is required, users must use the “Continue with SSO” option to access Claude/Console. When SSO is not required, they will have the option to choose “Continue with SSO” or “Continue with email.”
@@ -118,11 +120,11 @@ Before you decide, review **[What happens to existing users when SSO is enabled]
 
 ## Step 5: Choose your provisioning approach
 
-Once SSO is enabled, you need to decide how users will be added to your organization. This is controlled by the **Provisioning mode** setting in the **Global access settings / Organization access** section of your Identity and access settings.
+Once SSO is enabled, you need to decide how users will be added to your organization. This is controlled by the **Provisioning mode** setting in the **Global access settings** section of your Identity and access settings.
 
-**Manual** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Managing members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
+**Invite only** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Managing members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
 
-**JIT (Just-in-Time) provisioning** can be enabled to automatically provision users when they first log in. By default, users assigned to your Anthropic IdP app first login, they will receive the User role. This is the simplest automated option and requires no additional configuration beyond selecting it.
+**JIT (Just-in-Time) provisioning** can be enabled to automatically provision users when they first log in. By default, users assigned to your Anthropic IdP app first login, they will receive the User role. This is the simplest automated option and requires no additional configuration beyond selecting "Approve automatically (JIT)" as your provisioning mode.
 
 ### Enable group mappings - when to configure additional provisioning features
 
@@ -148,7 +150,7 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
     - For Claude Console: **[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**
 
-2.  In the **Global access settings / Organization access** section, click “Manage SSO.”
+2.  In the **Global access settings** section, click “Manage SSO.”
 
 3.  Select “Metadata Config.”
 
@@ -176,13 +178,13 @@ Related Articles
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 
-Set up the Claude LTI in Canvas by Instructure
-
-
 Set up JIT or SCIM provisioning
 
 
-Logging in to your Console account
+Manage members on Team and Enterprise plans
 
 
 Switching to a different Identity Provider (IdP)
+
+
+Find and join a Team or Enterprise organization

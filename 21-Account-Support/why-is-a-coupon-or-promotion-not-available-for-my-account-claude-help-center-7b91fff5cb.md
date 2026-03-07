@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-03T15:08:28Z"
+fetched_at: "2026-03-07T01:05:50Z"
 source_url: "https://support.claude.com/en/articles/11107691-why-is-a-coupon-or-promotion-not-available-for-my-account"
 title: "Why is a coupon or promotion not available for my account? | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "Why is a coupon or promotion not available for my account? | Claude Help
 
 # Why is a coupon or promotion not available for my account?
 
+Updated today
 
 Coupons and promotions are generally only available to users trying out a paid plan for the first time.
 

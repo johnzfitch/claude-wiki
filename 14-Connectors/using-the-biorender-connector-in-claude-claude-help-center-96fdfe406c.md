@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:13Z"
+fetched_at: "2026-03-07T01:05:40Z"
 source_url: "https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude"
 title: "Using the BioRender Connector in Claude | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using the BioRender Connector in Claude | Claude Help Center"
 3.  Using the BioRender Connector in Claude
 
 # Using the BioRender Connector in Claude
+
+Updated today
 
 
 The BioRender integration searches BioRender’s extensive scientific figure template and icon collection for relevant content to create figures faster. This article explains how to set up and use the BioRender integration with Claude to accelerate scientific content creation.
@@ -109,4 +111,4 @@ Using the PubMed Connector in Claude
 Using the 10x Genomics Extension in Claude
 
 
-Using the Benchling Connector in Claude
+Using the Scholar Gateway Connector in Claude

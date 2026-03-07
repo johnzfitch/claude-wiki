@@ -1,14 +1,14 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:07:37Z"
-last_modified: "Tue, 03 Mar 2026 04:43:37 GMT"
+fetched_at: "2026-03-07T01:04:57Z"
+last_modified: "Sat, 07 Mar 2026 00:32:30 GMT"
 source_url: "https://claude.com/pricing/team"
 title: "Team plan | Claude"
 ---
 
 # Claude Team
 
-Shorten the path from idea to impact with AI that taps into your shared expertise. Built for growing teams tackling ambitious projects.
+Shorten the path from idea to impact with AI that taps into your shared expertise. Built for growing teams tackling ambitious projects. [Explore features](/pricing#team-enterprise-features)
 
 Try Claude
 
@@ -687,7 +687,7 @@ Send us your resume along with a brief cover letter addressing:
 - Your approach to improving trial-to-paid conversion rates
 - Why you're excited about FlowTech's growth opportunity
 
-**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#610200130404131221070d0e16150402094f020e0c)\
+**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#cdaeacbfa8a8bfbe8daba1a2bab9a8aea5e3aea2a0)\
 **Subject line:** Growth Marketing Manager - \[Your Name\]
 
 —
@@ -876,7 +876,7 @@ Next
 
 Help your team do their best work
 
-The Claude Team plan is built for teams of 5 to 150.
+The Claude Team plan is built for teams of 5 to 150. Mix and match standard and premium seats based on your needs. [Explore features](/pricing#team-enterprise-features)
 
 ### Standard seat
 
@@ -894,7 +894,7 @@ Get Team plan
 
 ### Premium seat
 
-Everything in standard, plus more usage.
+Everything in standard, plus more usage\*
 
 \$100
 
@@ -905,5 +905,11 @@ Get Team plan
 [Get Team plan](https://claude.ai/redirect/website.v1.7e047257-6763-4812-8a7b-5bcbe8589994/upgrade)
 
 Get Team plan
+
+Quiz
+
+Which plan is right for you?
+
+Let's find out
 
 \*[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax.

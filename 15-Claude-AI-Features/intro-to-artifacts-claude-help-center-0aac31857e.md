@@ -1,12 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:22Z"
+fetched_at: "2026-03-07T01:05:43Z"
 source_url: "https://support.claude.com/en/articles/9945615-intro-to-artifacts"
 title: "Intro to Artifacts | Claude Help Center"
 ---
 
 # Intro to Artifacts
 
+Updated today
 
 In this video guide, we'll explore how Artifacts can enrich your interactions with Claude, allowing for more dynamic and interactive conversations. Before you get started, review the availability of the features demonstrated in this video:
 

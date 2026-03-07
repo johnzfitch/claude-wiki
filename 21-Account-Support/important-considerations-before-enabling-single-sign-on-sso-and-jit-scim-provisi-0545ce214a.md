@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-03T15:08:21Z"
+fetched_at: "2026-03-07T01:05:39Z"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Important considerations before enabling single sign-on (SSO) and JIT/SC
 3.  Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 # Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
+
+Updated in the last hour
 
 
 Before setting up SSO for your Claude or Claude Console organization, review this guide to understand key concepts, plan your approach, and complete any prerequisite steps.
@@ -72,17 +74,14 @@ Once a Console organization is merged, it will gain access to the **[Identity an
 
 ------------------------------------------------------------------------
 
-## Understanding global versus organization SSO configuration
+## Global access settings
 
-When you access the Identity and access page, you may see two configuration sections:
+You'll find settings you can use to configure SSO in the **Global access settings** section. This is where you configure the primary SSO connection and policies that apply across multiple joined Claude or Console organizations. While some settings in this section apply to all Claude and Console organizations that have joined the parent organization, those with a "This org only" label apply only to the specific organization you're currently viewing. This allows you to enable organization-specific features like group mappings.
 
-- **Global access settings:** Settings in this section apply to all Claude and Console organizations that have joined the parent organization. This is where you configure domain verification, the primary SSO connection, and policies that apply across multiple joined Claude or Console organizations.
-
-- **Organization access:** Settings in this section apply only to the specific organization you're currently viewing. This allows you to enable organization-specific features like group mappings.
 
 ------------------------------------------------------------------------
 
-## Restricting new organization creation
+## Restrict new organization creation
 
 Once your organization's domains are verified, owners will see a **Restrict organization creation** toggle under **Security** on the Identity and access organization settings page. Toggle this on to prevent users from creating new Claude or Console organizations—including personal accounts—using any of your verified domains.
 

@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-03T15:07:47Z"
+fetched_at: "2026-03-07T01:05:14Z"
 source_url: "https://modelcontextprotocol.io/community/sep-guidelines"
 title: "SEP Guidelines - Model Context Protocol"
 ---
@@ -39,7 +39,7 @@ The SEP process is reserved for changes that are substantial enough to require b
 - Adding examples to existing features
 - Minor schema fixes that don’t change behavior
 
-Not sure? Ask in [Discord](https://discord.gg/6CSzBmMkjX) before starting significant work.
+Not sure? Ask in [Discord](/community/communication#discord) before starting significant work.
 
 ## 
 
@@ -64,6 +64,12 @@ SEP Workflow
 [​](#step-by-step-process)
 
 Step-by-Step Process
+
+To improve your chances of a SEP being accepted:
+
+- **Discuss your idea with the relevant [working or interest group](/community/working-interest-groups) in [Discord](/community/communication#discord) first.** This is the single best way to refine your proposal and build early support.
+- **If no relevant group exists, start a conversation in [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions) or the `#general` channel in [Discord](/community/communication#discord).** If there is enough interest, it may be worth [creating a new IG or WG](/community/working-interest-groups#creating-an-interest-group) — the effort involved in finding sponsors and facilitators is a good signal of whether the idea has sufficient traction, and is still preferable to a cold submission.
+- **Check alignment with [Core Maintainer](/community/governance#roles) priorities and [design principles](/community/design-principles).** Priorities are generally reflected in the [project roadmap](/development/roadmap). Proposals outside current priorities or that conflict with design principles are more likely to face delays or additional friction in the review process.
 
 1.  **Draft your SEP** as a markdown file named `0000-your-feature-title.md`, using `0000` as a placeholder. Follow the [SEP format](#sep-format) below.
 2.  **Create a pull request** adding your SEP file to the `seps/` directory in the [specification repository](https://github.com/modelcontextprotocol/modelcontextprotocol).

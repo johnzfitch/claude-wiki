@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-03T15:08:37Z"
+fetched_at: "2026-03-07T01:05:55Z"
 source_url: "https://code.claude.com/docs/en/memory"
 title: "Manage Claude's memory - Claude Code Docs"
 ---
@@ -425,6 +425,8 @@ CLAUDE.md is context, not enforcement. Claude reads it and tries to follow it, b
 - Check that the relevant CLAUDE.md is in a location that gets loaded for your session (see [Choose where to put CLAUDE.md files](#choose-where-to-put-claudemd-files)).
 - Make instructions more specific. “Use 2-space indentation” works better than “format code nicely.”
 - Look for conflicting instructions across CLAUDE.md files. If two files give different guidance for the same behavior, Claude may pick one arbitrarily.
+
+Use the [`InstructionsLoaded` hook](/docs/en/hooks#instructionsloaded) to log exactly which instruction files are loaded, when they load, and why. This is useful for debugging path-specific rules or lazy-loaded files in subdirectories.
 
 ### 
 

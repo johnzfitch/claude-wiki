@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:29Z"
+fetched_at: "2026-03-07T01:05:49Z"
 source_url: "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context"
 title: "Use Claude’s chat search and memory to build on previous context | Claude Help Center"
 ---

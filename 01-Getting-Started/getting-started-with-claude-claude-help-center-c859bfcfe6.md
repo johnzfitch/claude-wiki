@@ -1,11 +1,13 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-03-03T15:08:28Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 title: "Getting started with Claude | Claude Help Center"
 ---
 
 # Getting started with Claude
+
+Updated today
 
 
 ## What is Claude?
@@ -103,10 +105,10 @@ Related Articles
 What is the Pro plan?
 
 
+Usage limit best practices
+
+
 Understanding usage and length limits
-
-
-Getting started with Claude in Chrome
 
 
 Extra usage for paid Claude plans

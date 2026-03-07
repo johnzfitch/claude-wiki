@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:07:46Z"
-last_modified: "Tue, 03 Mar 2026 03:21:57 GMT"
+fetched_at: "2026-03-07T01:05:10Z"
+last_modified: "Fri, 06 Mar 2026 23:37:48 GMT"
 source_url: "https://claude.com/blog/trainium2-and-distillation"
 title: "Claude 3.5 Haiku on AWS Trainium2 and model distillation in Amazon Bedrock | Claude"
 ---
@@ -120,6 +120,20 @@ No items found.
 
 Explore more product news and best practices for teams building with Claude.
 
+Mar 3, 2026
+
+### Improving skill-creator: Test, measure, and refine Agent Skills
+
+Claude Code
+
+[Improving skill-creator: Test, measure, and refine Agent Skills](#)
+
+Improving skill-creator: Test, measure, and refine Agent Skills
+
+[Improving skill-creator: Test, measure, and refine Agent Skills](/blog/improving-skill-creator-test-measure-and-refine-agent-skills)
+
+Improving skill-creator: Test, measure, and refine Agent Skills
+
 Jan 26, 2026
 
 ### Your favorite work tools are now interactive connectors inside Claude
@@ -161,20 +175,6 @@ Increase web search accuracy and efficiency with dynamic filtering
 [Increase web search accuracy and efficiency with dynamic filtering](/blog/improved-web-search-with-dynamic-filtering)
 
 Increase web search accuracy and efficiency with dynamic filtering
-
-Jan 12, 2026
-
-### Cowork: Claude Code for the rest of your work
-
-Product announcements
-
-[Cowork: Claude Code for the rest of your work](#)
-
-Cowork: Claude Code for the rest of your work
-
-[Cowork: Claude Code for the rest of your work](/blog/cowork-research-preview)
-
-Cowork: Claude Code for the rest of your work
 
 ## Transform how your organization operates with Claude
 

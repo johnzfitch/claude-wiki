@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-03T15:08:31Z"
+fetched_at: "2026-03-07T01:05:46Z"
 source_url: "https://support.claude.com/en/articles/9534590-cost-and-usage-reporting-in-the-claude-console"
 title: "Cost and Usage Reporting in the Claude Console | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Cost and Usage Reporting in the Claude Console | Claude Help Center"
 4.  Cost and Usage Reporting in the Claude Console
 
 # Cost and Usage Reporting in the Claude Console
+
+Updated today
 
 
 **Note:** Usage and Cost reporting is visible to the following user roles: **Developer, Billing, and Admin**. See [Claude Console Roles and Permissions](https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions) for more information.

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:31Z"
+fetched_at: "2026-03-07T01:05:46Z"
 source_url: "https://support.claude.com/en/articles/13346458-customizing-your-console-appearance-settings"
 title: "Customizing your Console appearance settings | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Customizing your Console appearance settings | Claude Help Center"
 4.  Customizing your Console appearance settings
 
 # Customizing your Console appearance settings
+
+Updated today
 
 
 ## How to change your Console color mode

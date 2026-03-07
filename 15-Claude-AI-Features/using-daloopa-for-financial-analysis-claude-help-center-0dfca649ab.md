@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:19Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis"
 title: "Using Daloopa for Financial Analysis | Claude Help Center"
 ---
 
 # Using Daloopa for Financial Analysis
+
+Updated today
 
 
 The Daloopa integration provides Claude with access to a financial data extraction service that covers public company filings and metrics. This article explains how to set up and use Daloopa to retrieve financial data for your analysis.
@@ -152,10 +154,10 @@ Learn about [finding and connecting tools](https://support.claude.com/en/article
 Related Articles
 
 
+Getting Started with Claude for Financial Services
+
+
 Using S&P Global Data for Financial Analysis
-
-
-Using FactSet for Comprehensive Financial Research
 
 
 Prompting Strategies for Financial Analysis

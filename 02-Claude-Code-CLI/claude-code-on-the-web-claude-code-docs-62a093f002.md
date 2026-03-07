@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-03T15:08:34Z"
+fetched_at: "2026-03-07T01:05:54Z"
 source_url: "https://code.claude.com/docs/en/claude-code-on-the-web"
 title: "Claude Code on the web - Claude Code Docs"
 ---
@@ -64,7 +64,7 @@ How it works
 When you start a task on Claude Code on the web:
 
 1.  **Repository cloning**: Your repository is cloned to an Anthropic-managed virtual machine
-2.  **Environment setup**: Claude prepares a secure cloud environment with your code
+2.  **Environment setup**: Claude prepares a secure cloud environment with your code, then runs your [setup script](#setup-scripts) if configured
 3.  **Network configuration**: Internet access is configured based on your settings
 4.  **Task execution**: Claude analyzes code, makes changes, runs tests, and checks its work
 5.  **Completion**: You’re notified when finished and can create a PR with the changes
@@ -314,14 +314,14 @@ Environment configuration
 
 When you start a session in Claude Code on the web, here’s what happens under the hood:
 
-1.  **Environment preparation**: We clone your repository and run any configured Claude hooks for initialization. The repo will be cloned with the default branch on your GitHub repo. If you would like to check out a specific branch, you can specify that in the prompt.
+1.  **Environment preparation**: We clone your repository and run any configured [setup script](#setup-scripts). The repo will be cloned with the default branch on your GitHub repo. If you would like to check out a specific branch, you can specify that in the prompt.
 2.  **Network configuration**: We configure internet access for the agent. Internet access is limited by default, but you can configure the environment to have no internet or full internet access based on your needs.
 3.  **Claude Code execution**: Claude Code runs to complete your task, writing code, running tests, and checking its work. You can guide and steer Claude throughout the session via the web interface. Claude respects context you’ve defined in your `CLAUDE.md`.
 4.  **Outcome**: When Claude completes its work, it will push the branch to remote. You will be able to create a PR for the branch.
 
 Claude operates entirely through the terminal and CLI tools available in the environment. It uses the pre-installed tools in the universal image and any additional tools you install through hooks or dependency management.
 
-**To add a new environment:** Select the current environment to open the environment selector, and then select “Add environment”. This will open a dialog where you can specify the environment name, network access level, and any environment variables you want to set. **To update an existing environment:** Select the current environment, to the right of the environment name, and select the settings button. This will open a dialog where you can update the environment name, network access, and environment variables. **To select your default environment from the terminal:** If you have multiple environments configured, run `/remote-env` to choose which one to use when starting web sessions from your terminal with `--remote`. With a single environment, this command shows your current configuration.
+**To add a new environment:** Select the current environment to open the environment selector, and then select “Add environment”. This will open a dialog where you can specify the environment name, network access level, environment variables, and a [setup script](#setup-scripts). **To update an existing environment:** Select the current environment, to the right of the environment name, and select the settings button. This will open a dialog where you can update the environment name, network access, environment variables, and setup script. **To select your default environment from the terminal:** If you have multiple environments configured, run `/remote-env` to choose which one to use when starting web sessions from your terminal with `--remote`. With a single environment, this command shows your current configuration.
 
 Environment variables must be specified as key-value pairs, in [`.env` format](https://www.dotenv.org/). For example:
 
@@ -337,11 +337,67 @@ DEBUG=true
 
 ### 
 
+[​](#setup-scripts)
+
+Setup scripts
+
+A setup script is a Bash script that runs when a new cloud session starts, before Claude Code launches. Use setup scripts to install dependencies, configure tools, or prepare anything the cloud environment needs that isn’t in the [default image](#default-image). Scripts run as root on Ubuntu 24.04, so `apt install` and most language package managers work.
+
+To check what’s already installed before adding it to your script, ask Claude to run `check-tools` in a cloud session.
+
+To add a setup script, open the environment settings dialog and enter your script in the **Setup script** field. This example installs the `gh` CLI, which isn’t in the default image:
+
+Report incorrect code
+
+Copy
+
+
+``` shiki
+#!/bin/bash
+apt update && apt install -y gh
+```
+
+Setup scripts run only when creating a new session. They are skipped when resuming an existing session. If the script exits non-zero, the session fails to start. Append `|| true` to non-critical commands to avoid blocking the session on a flaky install.
+
+Setup scripts that install packages need network access to reach registries. The default network access allows connections to [common package registries](#default-allowed-domains) including npm, PyPI, RubyGems, and crates.io. Scripts will fail to install packages if your environment has network access disabled.
+
+#### 
+
+[​](#setup-scripts-vs-sessionstart-hooks)
+
+Setup scripts vs. SessionStart hooks
+
+Use a setup script to install things the cloud needs but your laptop already has, like a language runtime or CLI tool. Use a [SessionStart hook](/docs/en/hooks#sessionstart) for project setup that should run everywhere, cloud and local, like `npm install`. Both run at the start of a session, but they belong to different places:
+
+|  | Setup scripts | SessionStart hooks |
+|----|----|----|
+| Attached to | The cloud environment | Your repository |
+| Configured in | Cloud environment UI | `.claude/settings.json` in your repo |
+| Runs | Before Claude Code launches, on new sessions only | After Claude Code launches, on every session including resumed |
+| Scope | Cloud environments only | Both local and cloud |
+
+SessionStart hooks can also be defined in your user-level `~/.claude/settings.json` locally, but user-level settings don’t carry over to cloud sessions. In the cloud, only hooks committed to the repo run.
+
+### 
+
 [​](#dependency-management)
 
 Dependency management
 
-Custom environment images and snapshots are not yet supported. As a workaround, you can use [SessionStart hooks](/docs/en/hooks#sessionstart) to install packages when a session starts. This approach has [known limitations](#dependency-management-limitations). To configure automatic dependency installation, add a SessionStart hook to your repository’s `.claude/settings.json` file:
+Custom environment images and snapshots are not yet supported. Use [setup scripts](#setup-scripts) to install packages when a session starts, or [SessionStart hooks](/docs/en/hooks#sessionstart) for dependency installation that should also run in local environments. SessionStart hooks have [known limitations](#dependency-management-limitations). To configure automatic dependency installation with a setup script, open your environment settings and add a script:
+
+Report incorrect code
+
+Copy
+
+
+``` shiki
+#!/bin/bash
+npm install
+pip install -r requirements.txt
+```
+
+Alternatively, you can use SessionStart hooks in your repository’s `.claude/settings.json` file for dependency installation that should also run in local environments:
 
 Report incorrect code
 
@@ -818,7 +874,7 @@ Limitations
 
 Best practices
 
-1.  **Use Claude Code hooks**: Configure [SessionStart hooks](/docs/en/hooks#sessionstart) to automate environment setup and dependency installation.
+1.  **Automate environment setup**: Use [setup scripts](#setup-scripts) to install dependencies and configure tools before Claude Code launches. For more advanced scenarios, configure [SessionStart hooks](/docs/en/hooks#sessionstart).
 2.  **Document requirements**: Clearly specify dependencies and commands in your `CLAUDE.md` file. If you have an `AGENTS.md` file, you can source it in your `CLAUDE.md` using `@AGENTS.md` to maintain a single source of truth.
 
 ## 

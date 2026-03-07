@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:31Z"
+fetched_at: "2026-03-07T01:05:45Z"
 source_url: "https://support.claude.com/en/articles/9876003-i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-do-i-have-to-pay-separately-to-use-the-claude-api-and-console"
 title: "I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do I have to pay separately to use the Claude API and Console? | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans).
 
 # I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do I have to pay separately to use the Claude API and Console?
 
+Updated today
 
 Claude paid plans and the Claude Console are separate products designed for different purposes:
 

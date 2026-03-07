@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:11Z"
+fetched_at: "2026-03-07T01:05:38Z"
 source_url: "https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan"
 title: "How do I get started with the Team plan? | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "How do I get started with the Team plan? | Claude Help Center"
 4.  How do I get started with the Team plan?
 
 # How do I get started with the Team plan?
+
+Updated today
 
 
 ## Creating a new Team organization
@@ -57,4 +59,4 @@ What is the Team plan?
 How do I sign up for the Max plan?
 
 
-Getting started with Claude in Slack
+Getting Started with Claude for Education at Your University (for Owners/Admins)

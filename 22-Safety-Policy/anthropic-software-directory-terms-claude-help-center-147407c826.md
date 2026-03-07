@@ -1,12 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-03T15:08:09Z"
+fetched_at: "2026-03-07T01:05:41Z"
 source_url: "https://support.claude.com/en/articles/13145338-anthropic-software-directory-terms"
 title: "Anthropic Software Directory Terms | Claude Help Center"
 ---
 
 # Anthropic Software Directory Terms
 
+Updated today
 
 By submitting your MCP server, Skill folder, plugin, app, or other software, container, or data (“Software”) for inclusion in any Anthropic directory, repository, surface, or similar offering (collectively, “Directories”), you represent and warrant to Anthropic that (i) you have and will maintain all necessary rights to provide your Software to users and to grant the rights set forth in these terms; (ii) your Software and the ordinary, intended use of your Software complies with all applicable laws and regulations and does not violate Anthropic’s Software Directory Policy (currently available at <https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy>, as may be updated from time to time); (iii) any information you give us will be accurate and up-to-date; and (iv) if you or your Software collects or shares user information or other personal data, you will provide and adhere to a privacy policy for your Software, provide all applicable third-party privacy policies, and ensure all such policies clearly and accurately describe to users what user information you and third parties collect and how you and third parties use and share such information.
 
@@ -27,13 +28,13 @@ See prior version of these terms here: [Anthropic MCP Directory Terms and Condit
 Related Articles
 
 
+Does Anthropic Act as a Data Processor or Controller?
+
+
 Anthropic Connectors Directory FAQ
 
 
 Remote MCP Server Submission Guide
-
-
-Local MCP Server Submission Guide
 
 
 Building Desktop Extensions with MCPB

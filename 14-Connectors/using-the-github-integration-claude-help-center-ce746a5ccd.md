@@ -1,12 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-03T15:08:24Z"
+fetched_at: "2026-03-07T01:05:45Z"
 source_url: "https://support.claude.com/en/articles/9945670-using-the-github-integration"
 title: "Using the GitHub integration | Claude Help Center"
 ---
 
 # Using the GitHub integration
 
+Updated today
 
 In this video guide, we'll explore how the GitHub integration can enhance your development process with Claude.
 
@@ -20,13 +21,13 @@ More information on enabling this integration can be found [here](https://suppor
 Related Articles
 
 
-Claude for Marketing
+Intro to Artifacts
 
 
 Claude for Sales
 
 
-Claude for Human Resources
+Claude for Product Management
 
 
 Using the GitHub Integration

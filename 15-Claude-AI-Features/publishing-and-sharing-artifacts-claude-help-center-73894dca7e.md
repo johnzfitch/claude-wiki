@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:29Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/9547008-publishing-and-sharing-artifacts"
 title: "Publishing and sharing artifacts | Claude Help Center"
 ---
 
 # Publishing and sharing artifacts
+
+Updated in the last hour
 
 
 Artifacts are a powerful way to create content within Claude. You can take your creations further by sharing them so others can engage with and customize them. Similarly, if you see an artifact you like, you can customize it to make it your own.
@@ -14,7 +16,7 @@ This article covers how to publish artifacts publicly, share them within your or
 
 ------------------------------------------------------------------------
 
-## Publishing vs. Sharing
+## Publishing vs. sharing
 
 Claude uses different terms depending on your plan:
 
@@ -119,7 +121,7 @@ Artifacts created on Team or Enterprise accounts can only be shared within your 
 
 - Viewers must authenticate with their Team or Enterprise account.
 
-- If the artifact was created from a project, viewers must also have access to that project.
+- If you share an artifact created from a project, anyone in your organization will be able to view it; they don't need to have access to that project.
 
 ### Sharing artifacts with attachments
 
@@ -164,7 +166,7 @@ Customizing allows you to build upon and modify artifacts created by others:
 
 ## Learn More
 
-For information about creating artifacts, AI-powered capabilities, MCP integration, and persistent storage, see [What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them)
+For information about creating artifacts, AI-powered capabilities, MCP integration, and persistent storage, see **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them)**
 
 ------------------------------------------------------------------------
 

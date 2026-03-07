@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-03T15:08:29Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/13163631-configuring-session-security-settings"
 title: "Configuring session security settings | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Configuring session security settings | Claude Help Center"
 4.  Configuring session security settings
 
 # Configuring session security settings
+
+Updated today
 
 
 This feature is available to Admins and Owners of Enterprise plans and Console Admins.

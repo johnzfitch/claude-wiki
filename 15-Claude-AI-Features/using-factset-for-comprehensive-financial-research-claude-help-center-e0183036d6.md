@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:19Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research"
 title: "Using FactSet for Comprehensive Financial Research | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using FactSet for Comprehensive Financial Research | Claude Help Center"
 4.  Using FactSet for Comprehensive Financial Research
 
 # Using FactSet for Comprehensive Financial Research
+
+Updated today
 
 
 The FactSet integration is currently in early access; contact the FactSet team for additional details.

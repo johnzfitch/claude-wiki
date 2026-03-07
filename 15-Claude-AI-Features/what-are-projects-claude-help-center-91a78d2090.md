@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:28Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/9517075-what-are-projects"
 title: "What are projects? | Claude Help Center"
 ---
 
 # What are projects?
+
+Updated today
 
 
 Projects are available to all users, including those with free Claude accounts. Free users can create a maximum of five projects.

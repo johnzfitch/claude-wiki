@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:08Z"
-last_modified: "Tue, 03 Mar 2026 04:43:41 GMT"
+fetched_at: "2026-03-07T01:05:34Z"
+last_modified: "Sat, 07 Mar 2026 00:32:16 GMT"
 source_url: "https://www.anthropic.com/product"
 title: "The AI for Problem Solvers | Claude by Anthropic"
 ---
@@ -140,6 +140,8 @@ More
 
 ## The AI for problem solvers
 
+Use [Cowork](/product/cowork) in the desktop app to hand off tasks.
+
 Download the desktop app:
 
 macOS
@@ -186,7 +188,20 @@ Claude provides expert-level collaboration on the things you need to get done—
 
 Like an expert in your pocket, collaborating with Claude expands what you can build on your own or with teams.
 
+Switching to Claude from another AI provider?\
+Import your memory and pick up where you left off.
+
+You can configure Claude Code to work with third party API keys. 
+
+Start importing
+
+[Start importing](/import-memory)
+
+Start importing
+
 ## How you can use Claude
+
+Tasks
 
 Learn
 
@@ -199,6 +214,87 @@ Analyze
 Create
 
 Active
+
+Prompt
+
+Help me organize my Downloads folder.\
+Scan the contents and propose a plan:  \
+- Categories/folders to create\
+- How files should be sorted\
+- Any naming conventions to apply\
+- Files to flag for review or deletion\
+Show me the plan before making changes. Only proceed after I approve.
+
+Working folder
+
+/Downloads
+
+Downloads/
+
+── Documents/
+
+   ── 2024-03-15_invoice.pdf
+
+   ── 2024-03-22_invoice.pdf
+
+   ── 2024-03-20_meeting-notes.txt
+
+   ── resume_john-smith_2024.pdf
+
+   └── untitled_document.docx
+
+‍
+
+── Spreadsheets/
+
+  ── 2024_q3-budget_v3.xlsx\
+‍
+
+── Presentations/\
+   └── presentation-draft.pptx\
+\
+── Images/\
+  ── photo_2024-03-15_4392.jpg\
+   ── photo_2024-03-15_4393.jpg\
+   ── photo_2024-03-18_4401.heic\
+   ── screenshot_2024-03-15_finder-window.png\
+   └── screenshot_2024-03-22_slack-conversation.png
+
+‍
+
+── Audio &amp; Video/
+
+   ── 2024-03-20_zoom-recording.mp4
+
+   └── audio_recording.m4a
+
+‍
+
+── Archives/
+
+   └── random_download.zip
+
+‍
+
+── Duplicates/
+
+   ── Document(1).pdf
+
+   ── Document(2).pdf
+
+   ── meeting-notes(1).txt
+
+   └── 2024_q3-budget_v2.xlsx
+
+### Delegate tasks
+
+Go from answers to action. In Cowork, Claude works with your local files and cloud-based apps to organize folders, build spreadsheets, or prepare reports. Describe the outcome, step away, and come back to completed work. You stay in control: grant access only to the files you want and approve every step.
+
+Explore Cowork
+
+[Explore Cowork](/product/cowork)
+
+Explore Cowork
 
 Prompt
 

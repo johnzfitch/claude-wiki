@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:07:43Z"
-last_modified: "Tue, 03 Mar 2026 04:44:13 GMT"
+fetched_at: "2026-03-07T01:05:06Z"
+last_modified: "Sat, 07 Mar 2026 00:33:55 GMT"
 source_url: "https://claude.com/connectors/gusto"
 title: "Gusto | Claude"
 ---
@@ -66,7 +66,7 @@ Play video
 
   More
 
-  [Documentation](https://docs.gusto.com/app-integrations/docs/mcp)[Privacy Policy](https://gusto.com/legal/privacy)[Support](/cdn-cgi/l/email-protection#fb96988bbb9c8e888f94d5989496)
+  [Documentation](https://docs.gusto.com/app-integrations/docs/mcp)[Privacy Policy](https://gusto.com/legal/privacy)[Support](/cdn-cgi/l/email-protection#87eae4f7c7e0f2f4f3e8a9e4e8ea)
 
 Connect Claude to your Gusto account to query and analyze your payroll and people data. Ask questions in natural language, build custom reports, and create charts to uncover trends and insights—no exports or tool-switching required. Eligible customers can also run payroll in Claude.
 

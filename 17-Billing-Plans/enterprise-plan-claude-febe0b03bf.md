@@ -1,10 +1,28 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:07:34Z"
-last_modified: "Tue, 03 Mar 2026 04:44:09 GMT"
+fetched_at: "2026-03-07T01:04:55Z"
+last_modified: "Sat, 07 Mar 2026 00:32:48 GMT"
 source_url: "https://claude.com/pricing/enterprise"
 title: "Enterprise plan | Claude"
 ---
+
+# Claude Enterprise
+
+Securely connect Claude to your company knowledge and give every team access to trusted AI. Designed for large organizations and enterprise-scale challenges. [Explore features](/pricing#team-enterprise-features)
+
+Get Enterprise plan
+
+[Get Enterprise plan](http://claude.ai/create/enterprise)
+
+Get Enterprise plan
+
+Contact sales
+
+[Contact sales](/contact-sales)
+
+Contact sales
+
+89%
 
 employee adoption, 800+ AI agents deployed, 10x app usage growth 
 
@@ -723,7 +741,7 @@ Send us your resume along with a brief cover letter addressing:
 - Your approach to improving trial-to-paid conversion rates
 - Why you're excited about FlowTech's growth opportunity
 
-**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#0e6d6f7c6b6b7c7d4e686261797a6b6d66206d6163)\
+**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#e083819285859293a0868c8f9794858388ce838f8d)\
 **Subject line:** Growth Marketing Manager - \[Your Name\]
 
 —
@@ -949,6 +967,47 @@ Prev
 [Next](#)
 
 Next
+
+## Choose your Enterprise plan
+
+Get started now or discuss more options. [Explore features](/pricing#team-enterprise-features)
+
+### Enterprise\
+(self-serve)
+
+Get started today. Includes Enterprise security and compliance, chat, Claude Code, Cowork, connectors, SSO, SCIM, audit logs, and more. 
+
+\$20
+
+Per seat / month, billed annually.\
+Usage is billed as you go at API rates, based on what your team uses.
+
+Get Enterprise plan
+
+[Get Enterprise plan](https://claude.ai/create/enterprise)
+
+Get Enterprise plan
+
+### Enterprise\
+(sales-assisted)
+
+Work with Anthropic’s sales team on your Enterprise deployment. Tailored terms, usage commitments, invoicing, product bundling, and HIPAA-ready offering available. 
+
+‍
+
+Contact sales
+
+[Contact sales](/contact-sales)
+
+Contact sales
+
+Quiz
+
+Which plan is right for you?
+
+Let's find out
+
+\*Annual commitment required. Minimum 20 seats. [Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax.
 
 ## FAQ
 

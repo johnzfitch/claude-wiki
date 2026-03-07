@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:20Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis"
 title: "Prompting Strategies for Financial Analysis | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Prompting Strategies for Financial Analysis | Claude Help Center"
 3.  Prompting Strategies for Financial Analysis
 
 # Prompting Strategies for Financial Analysis
+
+Updated today
 
 
 Effective prompting helps you use Claude's financial analysis capabilities efficiently and accurately. This guide provides strategies for writing clear, specific prompts that produce the results you need while avoiding common issues that can lead to incomplete or overwhelming outputs.
@@ -184,6 +186,9 @@ These strategies help you get the most value from Claude's financial analysis ca
 Related Articles
 
 
+Claude for Financial Services Overview
+
+
 Using Daloopa for Financial Analysis
 
 
@@ -194,6 +199,3 @@ Financial Analysis Workflows with Claude
 
 
 Using Moody’s for Financial Analysis
-
-
-Claude for Financial Services Skills

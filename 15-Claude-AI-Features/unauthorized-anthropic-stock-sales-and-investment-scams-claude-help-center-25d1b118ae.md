@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:20Z"
+fetched_at: "2026-03-07T01:05:46Z"
 source_url: "https://support.claude.com/en/articles/13704655-unauthorized-anthropic-stock-sales-and-investment-scams"
 title: "Unauthorized Anthropic stock sales and investment scams | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Unauthorized Anthropic stock sales and investment scams | Claude Help Ce
 3.  Unauthorized Anthropic stock sales and investment scams
 
 # Unauthorized Anthropic stock sales and investment scams
+
+Updated today
 
 
 We are sharing important information about investments in Anthropic to help protect individuals from potentially invalid transfers or investment fraud.
@@ -46,7 +48,7 @@ Scammers regularly attempt to carry out fraudulent investment schemes falsely cl
 
 Before investing in any opportunity claiming to offer Anthropic stock, we strongly encourage individuals to verify the legitimacy of the offering through official regulatory databases and to seek independent legal and financial advice.
 
-If you have concerns about someone claiming to sell Anthropic stock or marketing access to Anthropic equity, please email **[\[email protected\]](/cdn-cgi/l/email-protection#e8ce849cd3848d8f8984c58b879a98879a899c8da889869c809a8798818bc68b8785ce8f9cd3)**.
+If you have concerns about someone claiming to sell Anthropic stock or marketing access to Anthropic equity, please email **[\[email protected\]](/cdn-cgi/l/email-protection#e3c58f97d88f8684828fce808c91938c91829786a3828d978b918c938a80cd808c8ec58497d8)**.
 
 If you believe you have been targeted by a stock scam:
 

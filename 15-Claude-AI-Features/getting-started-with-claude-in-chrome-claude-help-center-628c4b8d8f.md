@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:14Z"
+fetched_at: "2026-03-07T01:05:40Z"
 source_url: "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome"
 title: "Getting started with Claude in Chrome | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Getting started with Claude in Chrome | Claude Help Center"
 3.  Getting started with Claude in Chrome
 
 # Getting started with Claude in Chrome
+
+Updated today
 
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.

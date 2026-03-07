@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:14Z"
+fetched_at: "2026-03-07T01:05:50Z"
 source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
 title: "Using Claude Code with your Pro or Max plan | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using Claude Code with your Pro or Max plan | Claude Help Center"
 3.  Using Claude Code with your Pro or Max plan
 
 # Using Claude Code with your Pro or Max plan
+
+Updated today
 
 
 This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Using Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)**.

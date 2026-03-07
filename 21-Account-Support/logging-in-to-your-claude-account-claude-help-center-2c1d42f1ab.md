@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-03T15:08:28Z"
+fetched_at: "2026-03-07T01:05:49Z"
 source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
 title: "Logging in to your Claude account | Claude Help Center"
 ---
 
 # Logging in to your Claude account
+
+Updated today
 
 
 When you open Claude on a web browser ([claude.ai](http://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
@@ -114,7 +116,7 @@ How do I log out of all active sessions?
 FAQs on Using Claude for Education at Your University
 
 
-Set up the Claude LTI in Canvas by Instructure
+How to gift a Claude subscription
 
 
 How to redeem a Claude gift subscription

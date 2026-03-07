@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:30Z"
+fetched_at: "2026-03-07T01:05:36Z"
 source_url: "https://support.claude.com/en/articles/9264804-how-can-i-cancel-my-claude-pro-subscription-on-the-claude-app-for-ios"
 title: "How can I cancel my Claude Pro subscription on the Claude app for iOS? | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "How can I cancel my Claude Pro subscription on the Claude app for iOS? |
 
 # How can I cancel my Claude Pro subscription on the Claude app for iOS?
 
+Updated today
 
 If you signed up for Claude Pro via the iOS app, your subscription and payment will be handled directly on your iOS device.
 

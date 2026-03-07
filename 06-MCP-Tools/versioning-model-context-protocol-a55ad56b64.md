@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-03T15:08:06Z"
+fetched_at: "2026-03-07T01:05:33Z"
 source_url: "https://modelcontextprotocol.io/specification/versioning"
 title: "Versioning - Model Context Protocol"
 ---

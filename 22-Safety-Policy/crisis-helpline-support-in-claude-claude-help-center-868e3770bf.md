@@ -1,11 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-03T15:08:30Z"
+fetched_at: "2026-03-07T01:05:40Z"
 source_url: "https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude"
 title: "Crisis Helpline Support in Claude | Claude Help Center"
 ---
 
 # Crisis Helpline Support in Claude
+
+Updated today
 
 
 *For medical emergencies, active injuries, or situations where you're in immediate physical danger, please contact emergency services (such as 911 in the US and Canada, or 112 in much of Europe) or go to your nearest emergency room.*
@@ -140,13 +142,13 @@ Related Articles
 I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries?
 
 
+Installing Claude for iOS
+
+
 Who owns and manages the data of my Claude for Education account?
 
 
 Claude Code FAQ
-
-
-Getting started with Claude for Nonprofits
 
 
 How to get support for Claude for Government

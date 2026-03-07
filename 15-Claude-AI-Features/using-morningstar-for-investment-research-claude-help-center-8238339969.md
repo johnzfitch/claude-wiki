@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:19Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/12220057-using-morningstar-for-investment-research"
 title: "Using Morningstar for Investment Research | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using Morningstar for Investment Research | Claude Help Center"
 4.  Using Morningstar for Investment Research
 
 # Using Morningstar for Investment Research
+
+Updated today
 
 
 The Morningstar integration provides Claude with access to investment research services and proprietary analytical metrics. This article explains how to set up and use Morningstar data for investment analysis, including fair value estimates, economic moat ratings, and star ratings.

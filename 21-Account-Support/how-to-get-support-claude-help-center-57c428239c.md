@@ -1,18 +1,20 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-03T15:08:08Z"
+fetched_at: "2026-03-07T01:05:34Z"
 source_url: "https://support.claude.com/en/articles/9015913-how-to-get-support"
 title: "How to get support | Claude Help Center"
 ---
 
 # How to get support
 
+Updated today
+
 
 This guide explains how to get support for your Claude or Console account. Different support options are available depending on your plan.
 
-## Paid Plans (Pro, Max, Team, Enterprise, or Console)
+## Pro and Max plans, Team and Enterprise plan Owners, and Console Admins
 
-As a paid user of Claude or the Console, you have full access to:
+You have full access to:
 
 - All help documentation
 
@@ -70,7 +72,11 @@ Users who are logged in to their Claude or Console accounts will be able to clic
 
 **Important:** For Console users, this applies specifically to those logged in via [platform.claude.com](http://platform.claude.com). If you’re logged in via [console.anthropic.com](http://console.anthropic.com), you will be prompted to visit [platform.claude.com](http://platform.claude.com) to authenticate before sending a message in the Help Center support messenger.
 
-## Enterprise plan owners
+## Team and Enterprise plan non-Owners, and Console non-Admins
+
+You’ll chat with Fin, an AI support agent, to help answer your questions. Human specialist support is not directly available for your account seat type. If Fin can't find a resolution and you need to escalate to our human team of specialists, your account's Primary Owner, Owner, or Console Admin can reach out on your behalf.
+
+## Enterprise plan Owners
 
 If you are the Primary Owner or Owner of a Claude for Work Enterprise plan, you can also submit a request through the [Enterprise Support form](https://claude.ai/support/enterprise).
 
@@ -145,7 +151,7 @@ Users in the EU can find instructions on how to find the single point of contact
 Related Articles
 
 
-Where can I go for Claude API support and assistance?
+How do I use the Workbench?
 
 
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
@@ -154,7 +160,7 @@ Important considerations before enabling single sign-on (SSO) and JIT/SCIM provi
 I'm getting an API connection error. How can I fix it?
 
 
-How to get support for Claude for Government
+Claude Code usage analytics
 
 
 Set up single sign-on (SSO)

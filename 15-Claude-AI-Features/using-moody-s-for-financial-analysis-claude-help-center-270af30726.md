@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-03T15:08:19Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis"
 title: "Using Moody’s for Financial Analysis | Claude Help Center"
 ---
 
 # Using Moody’s for Financial Analysis
+
+Updated today
 
 
 The Moody’s connector provides Claude with access to proprietary credit ratings, comprehensive entity intelligence, and analytical frameworks for risk assessment through the Model Context Protocol (MCP). This integration enables financial professionals to access Moody’s authoritative data directly within their AI workflows.
@@ -196,7 +198,7 @@ Using Daloopa for Financial Analysis
 Using Morningstar for Investment Research
 
 
-Using Aiera for Earnings Intelligence and Market Analysis
+Using S&P Global Data for Financial Analysis
 
 
 Using LSEG for Financial Market Data Analysis

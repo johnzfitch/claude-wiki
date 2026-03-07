@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-03T15:08:11Z"
+fetched_at: "2026-03-07T01:05:37Z"
 source_url: "https://support.claude.com/en/articles/12883420-usage-analytics-for-team-and-enterprise-plans"
 title: "Usage analytics for Team and Enterprise plans | Claude Help Center"
 ---
@@ -9,10 +9,12 @@ title: "Usage analytics for Team and Enterprise plans | Claude Help Center"
 
 # Usage analytics for Team and Enterprise plans
 
+Updated today
+
 
 This article explains how to view and export usage analytics for your organization.
 
-Usage analytics are available to Team plan Owners and Primary Owners, and Enterprise plan Owners, Primary Owners, and Admins.
+Usage analytics are available to Team plan Owners and Primary Owners, and Enterprise plan Owners, Primary Owners, and Admins. Enterprise Admins can view all analytics except Spend.
 
 Usage analytics help you track team activity, feature adoption, and spend directly from your admin dashboard. You can monitor how your organization uses Claude and export detailed reports for your own analysis.
 
@@ -50,7 +52,7 @@ This page includes the following analytics:
 
 ### Spend
 
-**Note:** If you're on a **[seat-based Enterprise plan](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans#h_0918f7f456)**, spend reports will only appear if your organization has **[enabled extra usage](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans#h_2b9c54b46d)**.
+**Note:** If you're on a **[seat-based Enterprise plan](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans#h_6a78e30e26)**, spend reports will only appear if your organization has **[enabled extra usage](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans#h_2b9c54b46d)**.
 
 - Total spend (month-to-date, quarter-to-date, year-to-date)
 

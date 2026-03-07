@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-03T15:08:18Z"
+fetched_at: "2026-03-07T01:05:49Z"
 source_url: "https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits"
 title: "Understanding usage and length limits | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Understanding usage and length limits | Claude Help Center"
 4.  Understanding usage and length limits
 
 # Understanding usage and length limits
+
+Updated today
 
 
 When chatting with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Understanding the difference between these can help you use Claude more effectively.

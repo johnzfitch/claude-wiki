@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-03T15:08:03Z"
+fetched_at: "2026-03-07T01:05:30Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/client/sampling"
 title: "Sampling - Model Context Protocol"
 ---

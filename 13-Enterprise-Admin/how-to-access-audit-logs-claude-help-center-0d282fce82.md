@@ -1,11 +1,13 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-03T15:08:11Z"
+fetched_at: "2026-03-07T01:05:37Z"
 source_url: "https://support.claude.com/en/articles/9970975-how-to-access-audit-logs"
 title: "How to access audit logs | Claude Help Center"
 ---
 
 # How to access audit logs
+
+Updated today
 
 
 Audit logs are available only for Enterprise organizations.

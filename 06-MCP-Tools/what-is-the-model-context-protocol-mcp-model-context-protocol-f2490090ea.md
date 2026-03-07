@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-03T15:07:47Z"
+fetched_at: "2026-03-07T01:05:14Z"
 source_url: "https://modelcontextprotocol.io/docs/getting-started/intro"
 title: "What is the Model Context Protocol (MCP)? - Model Context Protocol"
 ---
@@ -35,6 +35,14 @@ Depending on where you sit in the ecosystem, MCP can have a range of benefits.
 
 ## 
 
+[​](#broad-ecosystem-support)
+
+Broad ecosystem support
+
+MCP is an open protocol supported across a wide range of clients and servers. AI assistants like [Claude](https://claude.com/docs/connectors/building) and [ChatGPT](https://developers.openai.com/api/docs/mcp/), development tools like [Visual Studio Code](https://code.visualstudio.com/docs/copilot/chat/mcp-servers), [Cursor](https://cursor.com/docs/context/mcp), [MCPJam](https://docs.mcpjam.com/getting-started), and [many others](/clients) all support MCP — making it easy to build once and integrate everywhere.
+
+## 
+
 [​](#start-building)
 
 Start Building
@@ -50,6 +58,12 @@ Create MCP servers to expose your data and tools
 ## Build clients
 
 Develop applications that connect to MCP servers
+
+[](/extensions/apps/overview)
+
+## Build MCP Apps
+
+Build interactive apps that run inside AI clients
 
 ## 
 

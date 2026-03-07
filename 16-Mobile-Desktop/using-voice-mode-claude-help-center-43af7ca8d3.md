@@ -1,11 +1,13 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-03T15:08:41Z"
+fetched_at: "2026-03-07T01:06:00Z"
 source_url: "https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps"
 title: "Using voice mode | Claude Help Center"
 ---
 
 # Using voice mode
+
+Updated today
 
 
 Voice mode allows you to have complete spoken conversations with Claude. Instead of typing a prompt and reading a written response, you can speak to Claude and listen to its responses, making it easier to use when your hands are busy but your mind isn't.

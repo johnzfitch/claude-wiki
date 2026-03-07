@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-03T15:08:15Z"
+fetched_at: "2026-03-07T01:05:48Z"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 title: "Adapting to new model personas after deprecations | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Adapting to new model personas after deprecations | Claude Help Center"
 4.  Adapting to new model personas after deprecations
 
 # Adapting to new model personas after deprecations
+
+Updated today
 
 
 [Model deprecations and retirements](https://docs.claude.com/en/docs/about-claude/model-deprecations#model-status) are routine parts of the model lifecycle. While we would like to keep past models publicly available as we continue to advance the frontier of safety and capabilities, maintenance overhead and capacity constraints do not currently allow this. We nonetheless recognize that losing access to models comes with costs to many users, particularly those who have come to value the unique character or capabilities of a specific model on a personal level. We aim to provide resources, tools, and guidance to such users to minimize these costs and make the transitions between models as smooth and seamless as possible.
@@ -43,10 +45,10 @@ I’ve been using other large language models (LLMs) to power my product. How sh
 I would like to input sensitive data into my chats with Claude. Who can view my conversations?
 
 
+Import and export your memory from Claude
+
+
 Release notes
 
 
 Can I use my Outputs to train an AI model?
-
-
-Use Claude in Excel

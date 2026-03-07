@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-03-03T15:08:19Z"
+fetched_at: "2026-03-07T01:05:47Z"
 source_url: "https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude"
 title: "Financial Analysis Workflows with Claude | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Financial Analysis Workflows with Claude | Claude Help Center"
 3.  Financial Analysis Workflows with Claude
 
 # Financial Analysis Workflows with Claude
+
+Updated today
 
 
 This article demonstrates how to use Claude for complete financial analysis workflows, from data retrieval through final deliverables. Each workflow follows a three-phase approach: retrieving data from integrated sources, analyzing the information to generate insights, and creating professional outputs for decision-making.
