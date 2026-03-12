@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-07T01:05:39Z"
+fetched_at: "2026-03-12T08:19:38Z"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 ---
@@ -9,14 +9,14 @@ title: "Important considerations before enabling single sign-on (SSO) and JIT/SC
 
 # Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
-Updated in the last hour
+Updated today
 
 
 Before setting up SSO for your Claude or Claude Console organization, review this guide to understand key concepts, plan your approach, and complete any prerequisite steps.
 
 ## Understanding parent organizations
 
-Our single sign-on feature uses the concept of a "parent organization"—an entity that stores SSO settings that can be shared across multiple Claude or Console organizations. Your plan type determines whether or not you have a parent organization by default:
+Our single sign-on feature uses the concept of a "parent organization." This is an entity that stores SSO settings that can be shared across multiple Claude or Console organizations. Your plan type determines whether or not you have a parent organization by default:
 
 [TABLE]
 
@@ -28,7 +28,9 @@ Our single sign-on feature uses the concept of a "parent organization"—an enti
 
 - **Each parent organization can only be linked to one Identity Provider.** This means that every organization linked to a single parent organization must be managed through the same IdP.
 
-- **Advanced Group Mappings** allow you to control which users are provisioned to which organizations under your parent, and with which roles. See **[Configure groups and assign users in your IdP](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning#h_0178209cfa)** for details.
+- **Enabling group mappings** allows you to control which users are provisioned to which organizations under your parent, and with which roles. See **[Configure groups and assign users in your IdP](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning#h_0178209cfa)** for details.
+
+- **Parent organizations manage identity and access only**—specifically, domain verification, SSO configuration, and user provisioning. Billing, invoicing, and usage tracking are handled at the individual organization level and aren't affected by parent organization relationships.
 
 ### What this means for you
 
@@ -36,13 +38,13 @@ You will need to check the parent organization dynamic depending on your plan:
 
 - **If you have a Team or Enterprise plan:** You can proceed directly to the **[Setting up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)** guide. Your parent organization is already in place (or will be created when you enable SSO for Team plans).
 
-- **If you have a Claude Console organization and an existing Team or Enterprise plan:** Your Console organization may already be linked to your Team or Enterprise parent organization. Check if you can access **[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)** – if so, this indicates that the org is linked to the parent organization and SSO is already configured. If not, an Owner on your Team or Enterprise plan can initiate a merge to link your Console organization (see **[Merging organizations](#h_3bad8701c8)** below) to their parent organization and the existing SSO configuration.
+- **If you have a Claude Console organization and an existing Team or Enterprise plan:** Your Console organization may already be linked to your Team or Enterprise parent organization. Check if you can access **[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**. If so, this indicates that the org is linked to the parent organization and SSO is already configured. If not, an Owner on your Team or Enterprise plan can initiate a merge to link your Console organization (see **[Merge organizations](#h_3bad8701c8)** below) to their parent organization and the existing SSO configuration.
 
 - **If you have a Claude Console organization without a Team or Enterprise plan:** **[Contact our Sales team](https://claude.com/contact-sales)** to request a parent organization for your Console account. Once we create your parent organization, you will see the Identity settings page in Claude Console and can proceed with SSO setup.
 
 ------------------------------------------------------------------------
 
-## Merging organizations
+## Merge organizations
 
 Team or Enterprise organizations can invite other orgs to join an existing parent organization and share SSO configuration.
 
@@ -70,6 +72,10 @@ Team or Enterprise organizations can invite other orgs to join an existing paren
 
 **Note:** If the person initiating the merge is also an Admin/Owner in the invited organization, only one approval is required.
 
+### To approve a merge proposal
+
+An organization Owner or Primary Owner needs to go to **[claude.ai/settings/join-proposal](https://claude.ai/settings/join-proposal)** to accept the merge.
+
 Once a Console organization is merged, it will gain access to the **[Identity and access page](http://platform.claude.com/settings/identity)**, in the Organization settings, to configure SSO and provisioning settings.
 
 ------------------------------------------------------------------------
@@ -95,7 +101,7 @@ Once SSO is configured, you can choose how users are provisioned to your organiz
 
 **\*Note:** Only Enterprise plan organizations can enable SCIM provisioning; if a Console organization is merged with a Team plan’s parent org, it will not have access to SCIM provisioning.
 
-For detailed information on how each provisioning method works, see **[Setting up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)**.
+For detailed information on how each provisioning method works, see **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 ------------------------------------------------------------------------
 
@@ -153,7 +159,7 @@ Taking time to test, communicate, and plan before enabling domain capture and SS
 
 ## Next steps
 
-Once you've reviewed these considerations and completed any necessary prerequisite steps (such as merging organizations), proceed to **[Setting up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)** for detailed implementation instructions.
+Once you've reviewed these considerations and completed any necessary prerequisite steps (such as merging organizations), proceed to **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)** for detailed implementation instructions.
 
 ------------------------------------------------------------------------
 

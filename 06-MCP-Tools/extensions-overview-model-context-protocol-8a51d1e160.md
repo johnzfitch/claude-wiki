@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-27T09:26:46Z"
+fetched_at: "2026-03-12T08:19:08Z"
 source_url: "https://modelcontextprotocol.io/extensions/overview"
 title: "Extensions Overview - Model Context Protocol"
 ---
+
 # Extensions Overview
 
 
@@ -93,7 +94,7 @@ To promote an experimental extension to official status, it goes through the sta
 
 Creating Extensions
 
-The lifecycle for official extensions follows a SEP-based process. For full details, see [SEP-2133: Extensions](/community/seps/2133-extensions).
+The lifecycle for official extensions follows a SEP-based process. For full details, see [SEP-2133: Extensions](/seps/2133-extensions).
 
 1.  **Propose**: Create a SEP in the main MCP repository using the [standard SEP guidelines](/community/sep-guidelines) with type **Extensions Track**.
 2.  **Implement**: Build at least one reference implementation in an official SDK — this is required before the SEP can be reviewed.

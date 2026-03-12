@@ -1,20 +1,26 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-07T01:04:57Z"
-last_modified: "Sat, 07 Mar 2026 00:32:30 GMT"
+fetched_at: "2026-03-12T08:18:44Z"
+last_modified: "Thu, 12 Mar 2026 04:33:59 GMT"
 source_url: "https://claude.com/pricing/team"
 title: "Team plan | Claude"
 ---
 
 # Claude Team
 
-Shorten the path from idea to impact with AI that taps into your shared expertise. Built for growing teams tackling ambitious projects. [Explore features](/pricing#team-enterprise-features)
+Shorten the path from idea to impact with AI that taps into your shared expertise. Built for growing teams tackling ambitious projects.
 
 Try Claude
 
 [Try Claude](https://claude.ai/)
 
 Try Claude
+
+Explore features
+
+[Explore features](/pricing#team-enterprise-features)
+
+Explore features
 
 ## Tackle your most complex challenges
 
@@ -687,7 +693,7 @@ Send us your resume along with a brief cover letter addressing:
 - Your approach to improving trial-to-paid conversion rates
 - Why you're excited about FlowTech's growth opportunity
 
-**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#cdaeacbfa8a8bfbe8daba1a2bab9a8aea5e3aea2a0)\
+**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#fc9f9d8e99998e8fbc9a90938b88999f94d29f9391)\
 **Subject line:** Growth Marketing Manager - \[Your Name\]
 
 —

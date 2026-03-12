@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-07T01:05:15Z"
+fetched_at: "2026-03-12T08:19:08Z"
 source_url: "https://modelcontextprotocol.io/registry/about"
 title: "The MCP Registry - Model Context Protocol"
 ---
@@ -38,7 +38,7 @@ The MCP Registry is part of an ecosystem that looks something like:
 
 Relationship with Package Registries
 
-Package registries — such as npm, PyPI, and Docker Hub — host packages with code and binaries. The MCP Registry hosts metadata that points to those packages. For example, a `weather-mcp` package could be hosted on npm, and metadata in the MCP Registry could map the “weather v1.2.0” server to `npm:weather-mcp`. The [Package Types guide](./package-types.mdx) lists the supported package types and registries. More package registries may be supported in the future based on community demand. If you are interested in building support for a package registry, please [open an issue](https://github.com/modelcontextprotocol/registry).
+Package registries — such as npm, PyPI, and Docker Hub — host packages with code and binaries. The MCP Registry hosts metadata that points to those packages. For example, a `weather-mcp` package could be hosted on npm, and metadata in the MCP Registry could map the “weather v1.2.0” server to `npm:weather-mcp`. The [Package Types guide](./package-types) lists the supported package types and registries. More package registries may be supported in the future based on community demand. If you are interested in building support for a package registry, please [open an issue](https://github.com/modelcontextprotocol/registry).
 
 ### 
 
@@ -54,7 +54,7 @@ The MCP Registry supports both open-source and closed-source servers. Server dev
 
 Relationship with Downstream Aggregators
 
-The MCP Registry is intended to be consumed primarily by downstream aggregators, such as MCP server marketplaces. The metadata hosted by the MCP Registry is deliberately unopinionated. Downstream aggregators can provide curation or additional metadata such as community ratings. We expect that downstream aggregators will use the MCP Registry API to pull new metadata on a regular but infrequent basis (for example, once per hour). See the [MCP Registry Aggregators guide](./registry-aggregators.mdx) for more information.
+The MCP Registry is intended to be consumed primarily by downstream aggregators, such as MCP server marketplaces. The metadata hosted by the MCP Registry is deliberately unopinionated. Downstream aggregators can provide curation or additional metadata such as community ratings. We expect that downstream aggregators will use the MCP Registry API to pull new metadata on a regular but infrequent basis (for example, once per hour). See the [MCP Registry Aggregators guide](./registry-aggregators) for more information.
 
 ### 
 
@@ -84,7 +84,7 @@ Trust and Security
 
 Verifying Server Authenticity
 
-The MCP Registry uses namespace authentication to ensure that servers come from their claimed sources. Server names follow a reverse DNS format (like `io.github.username/server` or `com.example/server`) that ties them to verified GitHub accounts or domains. This namespace system ensures that only the legitimate owner of a GitHub account or domain can publish servers under that namespace, providing trust and accountability in the ecosystem. For details on authentication methods, see the [Authentication guide](./authentication.mdx).
+The MCP Registry uses namespace authentication to ensure that servers come from their claimed sources. Server names follow a reverse DNS format (like `io.github.username/server` or `com.example/server`) that ties them to verified GitHub accounts or domains. This namespace system ensures that only the legitimate owner of a GitHub account or domain can publish servers under that namespace, providing trust and accountability in the ecosystem. For details on authentication methods, see the [Authentication guide](./authentication).
 
 ### 
 
@@ -109,6 +109,6 @@ The MCP Registry uses multiple mechanisms to prevent spam:
 
 - **Namespace authentication requirements** — Publishers must verify ownership of their namespace through GitHub, DNS, or HTTP challenges, preventing arbitrary spam submissions.
 - **Character limits and validation** — Free-form fields have strict character limits and regex validation to prevent abuse.
-- **Manual takedown** — The registry maintainers can manually remove spam or malicious servers. See the [Moderation Policy](./moderation-policy.mdx) for details on what content is removed.
+- **Manual takedown** — The registry maintainers can manually remove spam or malicious servers. See the [Moderation Policy](./moderation-policy) for details on what content is removed.
 
 Future spam prevention measures under consideration include stricter rate limiting, AI-based spam detection, and community reporting capabilities.

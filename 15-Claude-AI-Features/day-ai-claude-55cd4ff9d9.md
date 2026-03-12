@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:06Z"
-last_modified: "Sat, 07 Mar 2026 00:33:56 GMT"
+fetched_at: "2026-03-12T08:18:55Z"
+last_modified: "Thu, 12 Mar 2026 04:33:54 GMT"
 source_url: "https://claude.com/connectors/day-ai"
 title: "Day AI | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://day.ai/mcp)[Privacy Policy](https://day.ai/privacy)[Support](/cdn-cgi/l/email-protection#85f6f0f5f5eaf7f1c5e1e4fcabe4ec)
+  [Documentation](https://day.ai/mcp)[Privacy Policy](https://day.ai/privacy)[Support](/cdn-cgi/l/email-protection#e0939590908f9294a0848199ce8189)
 
 Day AI is an AI-Native CRM that transforms emails, chats and meetings into richly-structured CRM data, stored in an LLM-optimized format for seamless and deep, relevant context retrieval. Use this Connector to give Claude direct access to your richly-structured customer data, enabling intelligent automation and decision-making grounded in real customer context.
 

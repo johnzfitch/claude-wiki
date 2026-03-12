@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:04Z"
-last_modified: "Sat, 07 Mar 2026 00:33:11 GMT"
+fetched_at: "2026-03-12T08:18:52Z"
+last_modified: "Thu, 12 Mar 2026 05:31:56 GMT"
 source_url: "https://claude.com/customers/attention"
 title: "Customer story | Attention | Claude"
 ---
@@ -177,18 +177,18 @@ title: "Customer story | Attention | Claude"
   - [](/product/claude-code)
     Claude Code
   - [](/product/cowork)
-    Cowork
+    Claude Cowork
 
   Features
 
-  - [](/claude-in-chrome)
-    Claude in Chrome
-  - [](/claude-in-slack)
-    Claude in Slack
-  - [](/claude-in-excel)
-    Claude in Excel
-  - [](/claude-in-powerpoint)
-    Claude in PowerPoint
+  - [](/claude-for-chrome)
+    Claude for Chrome
+  - [](/claude-for-slack)
+    Claude for Slack
+  - [](/claude-for-excel)
+    Claude for Excel
+  - [](/claude-for-powerpoint)
+    Claude for PowerPoint
   - [](/skills)
     Skills
 
@@ -369,7 +369,7 @@ Small
 
 Product:
 
-AI Platform
+Claude Platform
 
 Partner:
 
@@ -384,84 +384,6 @@ freeing sales reps to focus on closing deals
 Up to 40% improvement in win rates
 
 reported by Attention customers whose sales teams trust Claude-generated outputs for coaching scores, CRM data, and follow-up emails
-
-## The challenge
-
-Introducing Claude Opus 4.6
-
-We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its predecessor’s coding skills. It plans more carefully, sustains agentic tasks for longer, and features a 1M token context window.
-
-Introducing Claude Opus 4.6
-
-[Next](#)
-
-Next
-
-We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its predecessor’s coding skills. It plans more carefully, sustains agentic tasks for longer, and features a 1M token context window.
-
-[Next](#)
-
-Next
-
-Introducing Claude Opus 4.6
-
-We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its predecessor’s coding skills. It plans more carefully, sustains agentic tasks for longer, and features a 1M token context window.
-
-Read more
-
-[Read more](#)
-
-Read more
-
-## The solution
-
-Cowork
-
-Give Claude access to your local files and let it complete tasks autonomously. Agentic capabilities for non-technical knowledge work.
-
-Cowork
-
-[Next](#)
-
-Next
-
-Give Claude access to your local files and let it complete tasks autonomously. Agentic capabilities for non-technical knowledge work.
-
-[Next](#)
-
-Next
-
-Cowork
-
-Give Claude access to your local files and let it complete tasks autonomously. Agentic capabilities for non-technical knowledge work.
-
-Read more
-
-[Read more](#)
-
-Read more
-
-"Claude's reasoning capabilities are what make the intelligence layer exceptional."
-
-Stewart White
-
-VP of Growth, Attention
-
-[Next](#)
-
-Next
-
-[Next](#)
-
-Next
-
-Read more
-
-[Read more](#)
-
-Read more
-
-## The outcome
 
 Introducing Claude Opus 4.6
 
@@ -608,6 +530,30 @@ Next
 
 ## Related stories
 
+[Descript brings creative taste to agentic video editing with Claude ](/customers/descript)
+
+Descript brings creative taste to agentic video editing with Claude
+
+Descript brings creative taste to agentic video editing with Claude
+
+Customer story
+
+[Customer story](/customers/descript)
+
+Customer story
+
+[How Slack, a Salesforce company, unlocks organizational knowledge with Claude](/customers/slack)
+
+How Slack, a Salesforce company, unlocks organizational knowledge with Claude
+
+How Slack, a Salesforce company, unlocks organizational knowledge with Claude
+
+Customer story
+
+[Customer story](/customers/slack)
+
+Customer story
+
 [Stripe deploys Claude Code to 1,370 engineers with zero-configuration enterprise rollout](/customers/stripe)
 
 Stripe deploys Claude Code to 1,370 engineers with zero-configuration enterprise rollout
@@ -629,30 +575,6 @@ How Shortcut uses Opus 4.6 to tackle complex spreadsheet work for enterprises
 Customer story
 
 [Customer story](/customers/shortcut)
-
-Customer story
-
-[Athena Intelligence compresses weeks of enterprise knowledge work into hours with Claude](/customers/athena)
-
-Athena Intelligence compresses weeks of enterprise knowledge work into hours with Claude
-
-Athena Intelligence compresses weeks of enterprise knowledge work into hours with Claude
-
-Customer story
-
-[Customer story](/customers/athena)
-
-Customer story
-
-[n8n turns natural language into workflow automations with Claude](/customers/n8n)
-
-n8n turns natural language into workflow automations with Claude
-
-n8n turns natural language into workflow automations with Claude
-
-Customer story
-
-[Customer story](/customers/n8n)
 
 Customer story
 
@@ -809,10 +731,10 @@ Products
   [Claude Code for Enterprise](/product/claude-code/enterprise)
   Claude Code for Enterprise
 
-- Cowork
+- Claude Cowork
 
-  [Cowork](/product/cowork)
-  Cowork
+  [Claude Cowork](/product/cowork)
+  Claude Cowork
 
 - Max plan
 
@@ -846,25 +768,25 @@ Products
 
 Features
 
-- Claude in Chrome
+- Claude for Chrome
 
-  [Claude in Chrome](/claude-in-chrome)
-  Claude in Chrome
+  [Claude for Chrome](/claude-for-chrome)
+  Claude for Chrome
 
-- Claude in Slack
+- Claude for Slack
 
-  [Claude in Slack](/claude-in-slack)
-  Claude in Slack
+  [Claude for Slack](/claude-for-slack)
+  Claude for Slack
 
-- Claude in Excel
+- Claude for Excel
 
-  [Claude in Excel](/claude-in-excel)
-  Claude in Excel
+  [Claude for Excel](/claude-for-excel)
+  Claude for Excel
 
-- Claude in PowerPoint
+- Claude for PowerPoint
 
-  [Claude in PowerPoint](/claude-in-powerpoint)
-  Claude in PowerPoint
+  [Claude for PowerPoint](/claude-for-powerpoint)
+  Claude for PowerPoint
 
 - Skills
 
@@ -945,7 +867,7 @@ Solutions
   [Nonprofits](/solutions/nonprofits)
   Nonprofits
 
-Claude Developer Platform
+Claude Platform
 
 - Overview
 
@@ -998,11 +920,6 @@ Resources
 
   [Blog](/blog)
   Blog
-
-- Claude Builder Program
-
-  [Claude Builder Program](/programs/builder)
-  Claude Builder Program
 
 - Claude partner network
 

@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:04:59Z"
-last_modified: "Sat, 07 Mar 2026 00:32:16 GMT"
+fetched_at: "2026-03-12T08:18:47Z"
+last_modified: "Thu, 12 Mar 2026 04:33:44 GMT"
 source_url: "https://claude.com/product/overview"
 title: "The AI for Problem Solvers | Claude by Anthropic"
 ---

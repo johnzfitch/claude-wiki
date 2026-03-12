@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:10Z"
-last_modified: "Fri, 06 Mar 2026 23:34:55 GMT"
+fetched_at: "2026-03-12T08:19:00Z"
+last_modified: "Thu, 12 Mar 2026 04:34:35 GMT"
 source_url: "https://claude.com/blog/how-leading-retailers-are-turning-ai-pilots-into-enterprise-wide-transformation"
 title: "How leading retailers are turning AI pilots into enterprise-wide transformation | Claude"
 ---
@@ -104,6 +104,20 @@ No items found.
 
 Explore more product news and best practices for teams building with Claude.
 
+Mar 11, 2026
+
+### Advancing Claude for Excel and PowerPoint
+
+Enterprise AI
+
+[Advancing Claude for Excel and PowerPoint](#)
+
+Advancing Claude for Excel and PowerPoint
+
+[Advancing Claude for Excel and PowerPoint](/blog/claude-excel-powerpoint-updates)
+
+Advancing Claude for Excel and PowerPoint
+
 Feb 24, 2026
 
 ### Cowork and plugins for finance
@@ -145,20 +159,6 @@ Claude Enterprise, now available self-serve
 [Claude Enterprise, now available self-serve](/blog/self-serve-enterprise)
 
 Claude Enterprise, now available self-serve
-
-Nov 17, 2025
-
-### How three YC startups built their companies with Claude Code
-
-Claude Code
-
-[How three YC startups built their companies with Claude Code](#)
-
-How three YC startups built their companies with Claude Code
-
-[How three YC startups built their companies with Claude Code](/blog/building-companies-with-claude-code)
-
-How three YC startups built their companies with Claude Code
 
 ## Transform how your organization operates with Claude
 

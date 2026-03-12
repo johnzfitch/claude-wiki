@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-27T09:26:45Z"
+fetched_at: "2026-03-12T08:19:07Z"
 source_url: "https://modelcontextprotocol.io/extensions/apps/build"
 title: "Build an MCP App - Model Context Protocol"
 ---
+
 # Build an MCP App
 
 
@@ -75,6 +76,7 @@ And then copying the skill to the appropriate location for your agent:
 | [Cline](https://cline.bot/blog/cline-3-48-0-skills-and-websearch-make-cline-smarter) | `~/.cline/skills/` | `%USERPROFILE%\.cline\skills\` |
 | [Goose](https://block.github.io/goose/docs/guides/context-engineering/using-skills/) | `~/.config/goose/skills/` | `%USERPROFILE%\.config\goose\skills\` |
 | [Codex](https://developers.openai.com/codex/skills/) | `~/.codex/skills/` | `%USERPROFILE%\.codex\skills\` |
+| [Cursor](https://cursor.com/docs/context/skills) | `~/.cursor/skills/` | `%USERPROFILE%\.cursor\skills\` |
 
 This list is not comprehensive. Other agents may support skills in different locations; check your agent’s documentation.
 

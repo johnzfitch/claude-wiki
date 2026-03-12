@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-07T01:05:16Z"
+fetched_at: "2026-03-12T08:19:09Z"
 source_url: "https://modelcontextprotocol.io/registry/quickstart"
 title: "Quickstart: Publish an MCP Server to the MCP Registry - Model Context Protocol"
 ---
@@ -20,7 +20,7 @@ Prerequisites
 
 - **Node.js** — This tutorial assumes the MCP server is written in TypeScript.
 - **npm account** — The MCP Registry only hosts metadata, not artifacts. Before publishing to the MCP Registry, we will publish the MCP server’s package to npm, so you will need an [npm](https://www.npmjs.com) account.
-- **GitHub account** — The MCP Registry supports [multiple authentication methods](./authentication.mdx). For simplicity, this tutorial will use GitHub-based authentication, so you will need a [GitHub](https://github.com/) account.
+- **GitHub account** — The MCP Registry supports [multiple authentication methods](./authentication). For simplicity, this tutorial will use GitHub-based authentication, so you will need a [GitHub](https://github.com/) account.
 
 If you do not have an MCP server written in TypeScript, you can copy the `weather-server-typescript` server from the [`modelcontextprotocol/quickstart-resources` repository](https://github.com/modelcontextprotocol/quickstart-resources) to follow along with this tutorial:
 
@@ -363,7 +363,7 @@ Troubleshooting
 
 Next Steps
 
-- Learn about [support for other package types](./package-types.mdx).
-- Learn about [support for remote servers](./remote-servers.mdx).
-- Learn how to [use other authentication methods](./authentication.mdx), such as [DNS authentication](./authentication.mdx#dns-authentication) which enables custom domains for server name prefixes.
-- Learn how to [automate publishing with GitHub Actions](./github-actions.mdx).
+- Learn about [support for other package types](./package-types).
+- Learn about [support for remote servers](./remote-servers).
+- Learn how to [use other authentication methods](./authentication), such as [DNS authentication](./authentication#dns-authentication) which enables custom domains for server name prefixes.
+- Learn how to [automate publishing with GitHub Actions](./github-actions).

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:45Z"
+fetched_at: "2026-03-12T08:19:50Z"
 source_url: "https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code"
 title: "Use artifacts to visualize and create AI apps, without ever writing a line of code | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Use artifacts to visualize and create AI apps, without ever writing a li
 3.  Use artifacts to visualize and create AI apps, without ever writing a line of code
 
 # Use artifacts to visualize and create AI apps, without ever writing a line of code
-
-Updated today
 
 
 When the creative juices are flowing, the last thing you want to do is interrupt your process to wrestle with technical details of bringing your vision to life. With artifacts, when you have a creative epiphany, there's no slowing down, and no waiting for tech teams to support. Just tell Claude what you want, and watch it appear right before your eyes. Artifacts keep you in the flow state and help you deliver a working app prototype in minutes.

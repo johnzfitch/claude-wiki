@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:08Z"
-last_modified: "Sat, 07 Mar 2026 00:33:59 GMT"
+fetched_at: "2026-03-12T08:18:57Z"
+last_modified: "Thu, 12 Mar 2026 04:33:52 GMT"
 source_url: "https://claude.com/connectors/sanity"
 title: "Sanity | Claude"
 ---
@@ -106,6 +106,18 @@ Code
 
 Claude
 
+March 9, 2026
+
+[](/connectors/base44)
+
+### Base44
+
+Build and manage Base44 apps
+
+Code
+
+Claude
+
 Claude Code
 
 March 2, 2026
@@ -131,19 +143,3 @@ February 11, 2026
 ### Cloudflare
 
 Build applications with compute, storage, and AI
-
-Data
-
-Code
-
-Claude
-
-Claude Code
-
-February 11, 2026
-
-[](/connectors/cloudinary)
-
-### Cloudinary
-
-Manage, transform and deliver your images & videos

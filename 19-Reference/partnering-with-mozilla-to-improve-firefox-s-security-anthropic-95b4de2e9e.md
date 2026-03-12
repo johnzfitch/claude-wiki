@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-07T01:04:50Z"
+fetched_at: "2026-03-12T08:18:31Z"
 source_url: "https://www.anthropic.com/news/mozilla-firefox-security"
 title: "Partnering with Mozilla to improve Firefox’s security \\ Anthropic"
 ---
@@ -61,7 +61,7 @@ Zooming out to the process of submitting bugs and patches: we know that maintain
 
 We strongly encourage researchers who use LLM-powered vulnerability research tools to include similar evidence of verification and reproducibility when submitting reports based on the output of such tooling.
 
-We’ve also published our [Coordinated Vulnerability Disclosure operating principles](https://cdn.sanity.io/files/4zrzovbb/website/0039d6b020038aae6eaf0b3a46c70912b3a298dc.pdf)**,** where we describe the procedures we will use when working with maintainers. Our processes here follow standard industry norms for the time being, but as models improve we may need to adjust our processes to keep pace with capabilities.
+We’ve also published our [Coordinated Vulnerability Disclosure operating principles](https://www.anthropic.com/coordinated-vulnerability-disclosure)**,** where we describe the procedures we will use when working with maintainers. Our processes here follow standard industry norms for the time being, but as models improve we may need to adjust our processes to keep pace with capabilities.
 
 ## The urgency of the moment
 
@@ -83,20 +83,18 @@ We urge developers to take advantage of this window to redouble their efforts to
 
 ## Related content
 
+### Introducing The Anthropic Institute
+
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
+
+[Read more](/news/the-anthropic-institute)
+
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)
+
 ### Where things stand with the Department of War
 
 A statement from Dario Amodei.
 
 [Read more](/news/where-stand-department-war)
-
-### Statement on the comments from Secretary of War Pete Hegseth
-
-Anthropic's response to the Secretary of War and advice to customers.
-
-[Read more](/news/statement-comments-secretary-war)
-
-### Statement from Dario Amodei on our discussions with the Department of War
-
-A statement from our CEO on national security uses of AI.
-
-[Read more](/news/statement-department-of-war)

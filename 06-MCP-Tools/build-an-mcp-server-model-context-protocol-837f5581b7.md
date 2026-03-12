@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:18Z"
+fetched_at: "2026-03-12T08:19:06Z"
 source_url: "https://modelcontextprotocol.io/docs/develop/build-server"
 title: "Build an MCP server - Model Context Protocol"
 ---
+
 # Build an MCP server
 
 
@@ -47,6 +48,8 @@ This tutorial will primarily focus on tools.
 - C#
 
 - Rust
+
+- Go
 
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-python)
 
@@ -2252,6 +2255,470 @@ Copy
   "mcpServers": {
     "weather": {
       "command": "/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/target/release/weather"
+    }
+  }
+}
+```
+
+Make sure you pass in the absolute path to your compiled binary. You can get this by running `pwd` on macOS/Linux or `cd` on Windows Command Prompt from your project directory. On Windows, remember to use double backslashes (`\\`) or forward slashes (`/`) in the JSON path, and add the `.exe` extension.
+
+This tells Claude for Desktop:
+
+1.  There’s an MCP server named “weather”
+2.  Launch it by running the compiled binary at the specified path
+
+Save the file, and restart **Claude for Desktop**.
+
+Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-go)
+
+### 
+
+[​](#prerequisite-knowledge-6)
+
+Prerequisite knowledge
+
+This quickstart assumes you have familiarity with:
+
+- Go
+- LLMs like Claude
+
+### 
+
+[​](#logging-in-mcp-servers-7)
+
+Logging in MCP Servers
+
+When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `fmt.Println()` or `fmt.Printf()`, as they write to standard output (stdout). Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
+
+### 
+
+[​](#best-practices-7)
+
+Best Practices
+
+- Use `log.Println()` (which defaults to stderr) or a logging library that writes to stderr or files.
+- Use `fmt.Fprintf(os.Stderr, ...)` to write to stderr explicitly.
+
+### 
+
+[​](#quick-examples-4)
+
+Quick Examples
+
+Copy
+
+``` shiki
+// ❌ Bad (STDIO)
+fmt.Println("Processing request")
+
+// ✅ Good (STDIO)
+log.Println("Processing request") // defaults to stderr
+
+// ✅ Good (STDIO)
+fmt.Fprintln(os.Stderr, "Processing request")
+```
+
+### 
+
+[​](#system-requirements-7)
+
+System requirements
+
+- Go 1.24 or higher installed.
+
+### 
+
+[​](#set-up-your-environment-7)
+
+Set up your environment
+
+First, let’s install Go if you haven’t already. You can download and install Go from [go.dev](https://go.dev/dl/).Verify your Go installation:
+
+Copy
+
+``` shiki
+go version
+```
+
+Now, let’s create and set up our project:
+
+macOS/Linux
+
+Windows
+
+Copy
+
+``` shiki
+# Create a new directory for our project
+mkdir weather
+cd weather
+
+# Initialize Go module
+go mod init weather
+
+# Install dependencies
+go get github.com/modelcontextprotocol/go-sdk/mcp
+
+# Create our server file
+touch main.go
+```
+
+Now let’s dive into building your server.
+
+## 
+
+[​](#building-your-server-7)
+
+Building your server
+
+### 
+
+[​](#importing-packages-and-constants-2)
+
+Importing packages and constants
+
+Add these to the top of your `main.go`:
+
+Copy
+
+``` shiki
+package main
+
+import (
+    "cmp"
+    "context"
+    "encoding/json"
+    "fmt"
+    "io"
+    "log"
+    "net/http"
+    "strings"
+
+    "github.com/modelcontextprotocol/go-sdk/mcp"
+)
+
+const (
+    NWSAPIBase = "https://api.weather.gov"
+    UserAgent  = "weather-app/1.0"
+)
+```
+
+### 
+
+[​](#data-structures-2)
+
+Data structures
+
+Next, let’s define the data structures used by our tools:
+
+Copy
+
+``` shiki
+type PointsResponse struct {
+    Properties struct {
+        Forecast string `json:"forecast"`
+    } `json:"properties"`
+}
+
+type ForecastResponse struct {
+    Properties struct {
+        Periods []ForecastPeriod `json:"periods"`
+    } `json:"properties"`
+}
+
+type ForecastPeriod struct {
+    Name             string `json:"name"`
+    Temperature      int    `json:"temperature"`
+    TemperatureUnit  string `json:"temperatureUnit"`
+    WindSpeed        string `json:"windSpeed"`
+    WindDirection    string `json:"windDirection"`
+    DetailedForecast string `json:"detailedForecast"`
+}
+
+type AlertsResponse struct {
+    Features []AlertFeature `json:"features"`
+}
+
+type AlertFeature struct {
+    Properties AlertProperties `json:"properties"`
+}
+
+type AlertProperties struct {
+    Event       string `json:"event"`
+    AreaDesc    string `json:"areaDesc"`
+    Severity    string `json:"severity"`
+    Description string `json:"description"`
+    Instruction string `json:"instruction"`
+}
+
+type ForecastInput struct {
+    Latitude  float64 `json:"latitude" jsonschema:"Latitude of the location"`
+    Longitude float64 `json:"longitude" jsonschema:"Longitude of the location"`
+}
+
+type AlertsInput struct {
+    State string `json:"state" jsonschema:"Two-letter US state code (e.g. CA, NY)"`
+}
+```
+
+### 
+
+[​](#helper-functions-4)
+
+Helper functions
+
+Next, let’s add our helper functions for querying and formatting the data from the National Weather Service API:
+
+Copy
+
+``` shiki
+func makeNWSRequest[T any](ctx context.Context, url string) (*T, error) {
+    req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+    if err != nil {
+        return nil, fmt.Errorf("failed to create request: %w", err)
+    }
+
+    req.Header.Set("User-Agent", UserAgent)
+    req.Header.Set("Accept", "application/geo+json")
+
+    client := http.DefaultClient
+    resp, err := client.Do(req)
+    if err != nil {
+        return nil, fmt.Errorf("failed to make request to %s: %w", url, err)
+    }
+    defer resp.Body.Close()
+
+    if resp.StatusCode != http.StatusOK {
+        body, _ := io.ReadAll(resp.Body)
+        return nil, fmt.Errorf("HTTP error %d: %s", resp.StatusCode, string(body))
+    }
+
+    var result T
+    if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+        return nil, fmt.Errorf("failed to decode response: %w", err)
+    }
+
+    return &result, nil
+}
+
+func formatAlert(alert AlertFeature) string {
+    props := alert.Properties
+    event := cmp.Or(props.Event, "Unknown")
+    areaDesc := cmp.Or(props.AreaDesc, "Unknown")
+    severity := cmp.Or(props.Severity, "Unknown")
+    description := cmp.Or(props.Description, "No description available")
+    instruction := cmp.Or(props.Instruction, "No specific instructions provided")
+
+    return fmt.Sprintf(`
+Event: %s
+Area: %s
+Severity: %s
+Description: %s
+Instructions: %s
+`, event, areaDesc, severity, description, instruction)
+}
+
+func formatPeriod(period ForecastPeriod) string {
+    return fmt.Sprintf(`
+%s:
+Temperature: %d°%s
+Wind: %s %s
+Forecast: %s
+`, period.Name, period.Temperature, period.TemperatureUnit,
+        period.WindSpeed, period.WindDirection, period.DetailedForecast)
+}
+```
+
+### 
+
+[​](#implementing-tool-execution-4)
+
+Implementing tool execution
+
+The tool execution handler is responsible for actually executing the logic of each tool. Let’s add it:
+
+Copy
+
+``` shiki
+func getForecast(ctx context.Context, req *mcp.CallToolRequest, input ForecastInput) (
+    *mcp.CallToolResult, any, error,
+) {
+    // Get points data
+    pointsURL := fmt.Sprintf("%s/points/%f,%f", NWSAPIBase, input.Latitude, input.Longitude)
+    pointsData, err := makeNWSRequest[PointsResponse](ctx, pointsURL)
+    if err != nil {
+        return &mcp.CallToolResult{
+            Content: []mcp.Content{
+                &mcp.TextContent{Text: "Unable to fetch forecast data for this location."},
+            },
+        }, nil, nil
+    }
+
+    // Get forecast data
+    forecastURL := pointsData.Properties.Forecast
+    if forecastURL == "" {
+        return &mcp.CallToolResult{
+            Content: []mcp.Content{
+                &mcp.TextContent{Text: "Unable to fetch forecast URL."},
+            },
+        }, nil, nil
+    }
+
+    forecastData, err := makeNWSRequest[ForecastResponse](ctx, forecastURL)
+    if err != nil {
+        return &mcp.CallToolResult{
+            Content: []mcp.Content{
+                &mcp.TextContent{Text: "Unable to fetch detailed forecast."},
+            },
+        }, nil, nil
+    }
+
+    // Format the periods
+    periods := forecastData.Properties.Periods
+    if len(periods) == 0 {
+        return &mcp.CallToolResult{
+            Content: []mcp.Content{
+                &mcp.TextContent{Text: "No forecast periods available."},
+            },
+        }, nil, nil
+    }
+
+    // Show next 5 periods
+    var forecasts []string
+    for i := range min(5, len(periods)) {
+        forecasts = append(forecasts, formatPeriod(periods[i]))
+    }
+
+    result := strings.Join(forecasts, "\n---\n")
+
+    return &mcp.CallToolResult{
+        Content: []mcp.Content{
+            &mcp.TextContent{Text: result},
+        },
+    }, nil, nil
+}
+
+func getAlerts(ctx context.Context, req *mcp.CallToolRequest, input AlertsInput) (
+    *mcp.CallToolResult, any, error,
+) {
+    // Build alerts URL
+    stateCode := strings.ToUpper(input.State)
+    alertsURL := fmt.Sprintf("%s/alerts/active/area/%s", NWSAPIBase, stateCode)
+
+    alertsData, err := makeNWSRequest[AlertsResponse](ctx, alertsURL)
+    if err != nil {
+        return &mcp.CallToolResult{
+            Content: []mcp.Content{
+                &mcp.TextContent{Text: "Unable to fetch alerts or no alerts found."},
+            },
+        }, nil, nil
+    }
+
+    // Check if there are any alerts
+    if len(alertsData.Features) == 0 {
+        return &mcp.CallToolResult{
+            Content: []mcp.Content{
+                &mcp.TextContent{Text: "No active alerts for this state."},
+            },
+        }, nil, nil
+    }
+
+    // Format alerts
+    var alerts []string
+    for _, feature := range alertsData.Features {
+        alerts = append(alerts, formatAlert(feature))
+    }
+
+    result := strings.Join(alerts, "\n---\n")
+
+    return &mcp.CallToolResult{
+        Content: []mcp.Content{
+            &mcp.TextContent{Text: result},
+        },
+    }, nil, nil
+}
+```
+
+### 
+
+[​](#running-the-server-7)
+
+Running the server
+
+Finally, implement the main function to run the server:
+
+Copy
+
+``` shiki
+func main() {
+    // Create MCP server
+    server := mcp.NewServer(&mcp.Implementation{
+        Name:    "weather",
+        Version: "1.0.0",
+    }, nil)
+
+    // Add get_forecast tool
+    mcp.AddTool(server, &mcp.Tool{
+        Name:        "get_forecast",
+        Description: "Get weather forecast for a location",
+    }, getForecast)
+
+    // Add get_alerts tool
+    mcp.AddTool(server, &mcp.Tool{
+        Name:        "get_alerts",
+        Description: "Get weather alerts for a US state",
+    }, getAlerts)
+
+    // Run server on stdio transport
+    if err := server.Run(context.Background(), &mcp.StdioTransport{}); err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+Build your server with:
+
+Copy
+
+``` shiki
+go build -o weather .
+```
+
+The compiled binary will be in `./weather`.Let’s now test your server from an existing MCP host, Claude for Desktop.
+
+## 
+
+[​](#testing-your-server-with-claude-for-desktop-7)
+
+Testing your server with Claude for Desktop
+
+Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
+
+First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
+
+macOS/Linux
+
+Windows
+
+Copy
+
+``` shiki
+code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+```
+
+You’ll then add your servers in the `mcpServers` key. The MCP UI elements will only show up in Claude for Desktop if at least one server is properly configured.In this case, we’ll add our single weather server like so:
+
+macOS/Linux
+
+Windows
+
+Copy
+
+``` shiki
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/weather"
     }
   }
 }

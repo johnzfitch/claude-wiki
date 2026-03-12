@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-07T01:04:50Z"
+fetched_at: "2026-03-12T08:18:31Z"
 source_url: "https://www.anthropic.com/research/labor-market-impacts"
 title: "Labor market impacts of AI: A new measure and early evidence \\ Anthropic"
 ---
@@ -9,7 +9,7 @@ title: "Labor market impacts of AI: A new measure and early evidence \\ Anthropi
 
 Mar 5, 2026
 
-[Read in PDF](https://cdn.sanity.io/files/4zrzovbb/website/a42bc3fc08283562f08fd8bdee8f6f9a3d506e87.pdf)
+[Read in PDF](https://cdn.sanity.io/files/4zrzovbb/website/2b5bbaf2c1eb81dbf6e6fb813c1a24e35a64d376.pdf)
 
 ## Key Findings
 
@@ -235,7 +235,9 @@ Footnotes
 
 10. See Fujita, et al. (2024).
 
-\
+### Corrections
+
+*Updated Mar 8, 2026: Corrected Figure 7, which incorrectly reversed the labels between top quartile and zero exposure group inflow rates.*\
 
 \
 

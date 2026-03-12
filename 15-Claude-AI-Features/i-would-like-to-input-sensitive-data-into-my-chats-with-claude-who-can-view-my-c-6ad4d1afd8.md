@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:49Z"
+fetched_at: "2026-03-12T08:19:46Z"
 source_url: "https://support.claude.com/en/articles/8325621-i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-conversations"
 title: "I would like to input sensitive data into my chats with Claude. Who can view my conversations? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "I would like to input sensitive data into my chats with Claude. Who can 
 
 # I would like to input sensitive data into my chats with Claude. Who can view my conversations?
 
-Updated today
 
 *This article is about our consumer products (e.g. Claude Free, Pro, Max (and when using Claude Code with those accounts)).*
 
@@ -63,7 +62,7 @@ Use Claude’s chat search and memory to build on previous context
 Using incognito chats
 
 
-Use Claude in Excel
+Use Claude for Excel
 
 
 Using Claude in Chrome Safely

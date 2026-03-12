@@ -1,6 +1,6 @@
 ---
 category: "09-Agents-Patterns"
-fetched_at: "2026-03-07T01:05:53Z"
+fetched_at: "2026-03-12T08:19:52Z"
 source_url: "https://code.claude.com/docs/en/sub-agents"
 title: "Subagents - Claude Code Docs"
 ---
@@ -773,7 +773,7 @@ Use **subagents** when:
 - You want to enforce specific tool restrictions or permissions
 - The work is self-contained and can return a summary
 
-Consider [Skills](/docs/en/skills) instead when you want reusable prompts or workflows that run in the main conversation context rather than isolated subagent context.
+Consider [Skills](/docs/en/skills) instead when you want reusable prompts or workflows that run in the main conversation context rather than isolated subagent context. For a quick question about something already in your conversation, use [`/btw`](/docs/en/interactive-mode#side-questions-with-btw) instead of a subagent. It sees your full context but has no tool access, and the answer is discarded rather than added to history.
 
 Subagents cannot spawn other subagents. If your workflow requires nested delegation, use [Skills](/docs/en/skills) or [chain subagents](#chain-subagents) from the main conversation.
 

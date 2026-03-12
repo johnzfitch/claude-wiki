@@ -1,6 +1,6 @@
 ---
 category: "09-Agents-Patterns"
-fetched_at: "2026-03-07T01:05:54Z"
+fetched_at: "2026-03-12T08:19:54Z"
 source_url: "https://code.claude.com/docs/en/agent-teams"
 title: "Orchestrate teams of Claude Code sessions - Claude Code Docs"
 ---

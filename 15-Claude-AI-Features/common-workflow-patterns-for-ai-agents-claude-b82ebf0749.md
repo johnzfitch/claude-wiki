@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:09Z"
-last_modified: "Fri, 06 Mar 2026 23:34:55 GMT"
+fetched_at: "2026-03-12T08:19:00Z"
+last_modified: "Thu, 12 Mar 2026 04:34:35 GMT"
 source_url: "https://claude.com/blog/common-workflow-patterns-for-ai-agents-and-when-to-use-them"
 title: "Common workflow patterns for AI agents | Claude"
 ---
@@ -24,7 +24,7 @@ title: "Common workflow patterns for AI agents | Claude"
 
   Product
 
-  Claude Developer Platform
+  Claude Platform
 
 - 
 
