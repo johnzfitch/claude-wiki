@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:18Z"
+fetched_at: "2026-03-12T08:19:06Z"
 source_url: "https://modelcontextprotocol.io/docs/develop/connect-local-servers"
 title: "Connect to local MCP servers - Model Context Protocol"
 ---
+
 # Connect to local MCP servers
 
 

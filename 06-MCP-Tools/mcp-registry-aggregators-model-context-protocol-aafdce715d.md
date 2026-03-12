@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-07T01:05:16Z"
+fetched_at: "2026-03-12T08:19:09Z"
 source_url: "https://modelcontextprotocol.io/registry/registry-aggregators"
 title: "MCP Registry Aggregators - Model Context Protocol"
 ---
@@ -86,7 +86,7 @@ curl "https://registry.modelcontextprotocol.io/v0.1/servers?updated_since=2025-1
 
 Server Status
 
-Server metadata is generally immutable, except for the `status` field which may be updated to, e.g., `"deprecated"` or `"deleted"`. We recommend that aggregators keep their copy of each server’s `status` up to date. The `"deleted"` status typically indicates that a server has violated our permissive [moderation policy](./moderation-policy.mdx), suggesting the server might be spam, malware, or illegal. Aggregators may prefer to remove these servers from their index.
+Server metadata is generally immutable, except for the `status` field which may be updated to, e.g., `"deprecated"` or `"deleted"`. We recommend that aggregators keep their copy of each server’s `status` up to date. The `"deleted"` status typically indicates that a server has violated our permissive [moderation policy](./moderation-policy), suggesting the server might be spam, malware, or illegal. Aggregators may prefer to remove these servers from their index.
 
 ## 
 

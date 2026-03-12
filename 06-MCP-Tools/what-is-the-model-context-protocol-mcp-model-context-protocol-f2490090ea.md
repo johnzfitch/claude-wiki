@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-07T01:05:14Z"
+fetched_at: "2026-03-12T08:19:06Z"
 source_url: "https://modelcontextprotocol.io/docs/getting-started/intro"
 title: "What is the Model Context Protocol (MCP)? - Model Context Protocol"
 ---

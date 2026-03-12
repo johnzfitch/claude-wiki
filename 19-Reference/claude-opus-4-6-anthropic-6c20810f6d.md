@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-03T15:07:17Z"
+fetched_at: "2026-03-12T08:18:31Z"
 source_url: "https://www.anthropic.com/news/claude-opus-4-6"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---
@@ -31,7 +31,7 @@ In [Claude Code](https://claude.com/product/claude-code), you can now assemble [
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
-Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.39b61e2c-3b3f-4461-af29-57f3feda34a4), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
+Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.b725c14b-347a-4173-89d1-6dc236ff7274), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
 
 We cover the model, our new product updates, our evaluations, and our extensive safety testing in depth below.
 
@@ -185,16 +185,16 @@ We’re also accelerating the cyber*defensive* uses of the model, using it to he
 
 ## Product and API updates
 
-We’ve made substantial updates across Claude, Claude Code, and the Claude Developer Platform to let Opus 4.6 perform at its best.
+We’ve made substantial updates across Claude, Claude Code, and the Claude Platform to let Opus 4.6 perform at its best.
 
-**Claude Developer Platform**
+**Claude Platform**
 
 On the API, we’re giving developers better control over model effort and more flexibility for long-running agents. To do so, we’re introducing the following features:
 
 - **Adaptive thinking.** Previously, developers only had a binary choice between enabling or disabling extended thinking. Now, with [adaptive thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking), Claude can decide when deeper reasoning would be helpful. At the default effort level (high), the model uses extended thinking when useful, but developers can adjust the effort level to make it more or less selective.
 - **Effort.** There are now four [effort](https://platform.claude.com/docs/en/build-with-claude/effort) levels to choose from: low, medium, high (default), and max. We encourage developers to experiment with different options to find what works best.
 - **Context compaction (beta).** Long-running conversations and agentic tasks often hit the context window. [Context compaction](https://platform.claude.com/docs/en/build-with-claude/compaction) automatically summarizes and replaces older context when the conversation approaches a configurable threshold, letting Claude perform longer tasks without hitting limits.
-- **1M token context (beta).** Opus 4.6 is our first Opus-class model with 1M token context. Premium pricing applies for prompts exceeding 200k tokens (\$10/\$37.50 per million input/output tokens), available only on the Claude Developer Platform.
+- **1M token context (beta).** Opus 4.6 is our first Opus-class model with 1M token context. Premium pricing applies for prompts exceeding 200k tokens (\$10/\$37.50 per million input/output tokens), available only on the Claude Platform.
 - **128k output tokens.** Opus 4.6 supports outputs of up to 128k tokens, which lets Claude complete larger-output tasks without breaking them into multiple requests.
 - **US-only inference.** For workloads that need to run in the United States, [US-only inference](https://platform.claude.com/docs/en/build-with-claude/data-residency) is available at 1.1× token pricing.
 
@@ -229,18 +229,16 @@ Claude now also works better with the office tools you already use. Claude in Ex
 
 ## Related content
 
-### Statement on the comments from Secretary of War Pete Hegseth
+### Introducing The Anthropic Institute
 
-Anthropic's response to the Secretary of War and advice to customers.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/statement-comments-secretary-war)
+[Read more](/news/the-anthropic-institute)
 
-### Statement from Dario Amodei on our discussions with the Department of War
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-A statement from our CEO on national security uses of AI.
+[Read more](/news/sydney-fourth-office-asia-pacific)
 
-[Read more](/news/statement-department-of-war)
+### Partnering with Mozilla to improve Firefox’s security
 
-### Anthropic acquires Vercept to advance Claude's computer use capabilities
-
-[Read more](/news/acquires-vercept)
+[Read more](/news/mozilla-firefox-security)

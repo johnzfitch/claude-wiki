@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:05Z"
-last_modified: "Sat, 07 Mar 2026 00:33:54 GMT"
+fetched_at: "2026-03-12T08:18:54Z"
+last_modified: "Thu, 12 Mar 2026 04:33:44 GMT"
 source_url: "https://claude.com/connectors/clerk"
 title: "Clerk | Claude"
 ---
@@ -100,6 +100,18 @@ Code
 
 Claude
 
+March 9, 2026
+
+[](/connectors/base44)
+
+### Base44
+
+Build and manage Base44 apps
+
+Code
+
+Claude
+
 Claude Code
 
 Skills
@@ -127,17 +139,3 @@ February 11, 2026
 ### Cloudinary
 
 Manage, transform and deliver your images & videos
-
-Code
-
-Claude
-
-Claude Code
-
-February 6, 2026
-
-[](/connectors/context7)
-
-### Context7
-
-Up-to-date docs for LLMs and AI code editors

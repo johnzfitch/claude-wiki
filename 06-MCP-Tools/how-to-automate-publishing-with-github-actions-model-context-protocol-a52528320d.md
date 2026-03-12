@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-07T01:05:15Z"
+fetched_at: "2026-03-12T08:19:08Z"
 source_url: "https://modelcontextprotocol.io/registry/github-actions"
 title: "How to Automate Publishing with GitHub Actions - Model Context Protocol"
 ---
@@ -124,4 +124,4 @@ Troubleshooting
 | Error Message | Action |
 |----|----|
 | ”Authentication failed” | Ensure `id-token: write` permission is set for OIDC, or check secrets. |
-| ”Package validation failed” | Verify your package successfully published to the package registry (e.g., npm, PyPI), and that your package has the [necessary verification information](./package-types.mdx). |
+| ”Package validation failed” | Verify your package successfully published to the package registry (e.g., npm, PyPI), and that your package has the [necessary verification information](./package-types). |

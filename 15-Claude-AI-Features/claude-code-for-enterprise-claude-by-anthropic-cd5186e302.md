@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:00Z"
-last_modified: "Sat, 07 Mar 2026 00:33:45 GMT"
+fetched_at: "2026-03-12T08:18:48Z"
+last_modified: "Thu, 12 Mar 2026 04:33:47 GMT"
 source_url: "https://claude.com/product/claude-code/enterprise"
 title: "Claude Code for Enterprise | Claude by Anthropic"
 ---
@@ -226,7 +226,7 @@ Export real-time Claude Code metrics to your observability stack with OpenTeleme
 
 Control access with fine-grained role-based permissions and manage seats with SSO. Enterprise plans add SCIM for automated provisioning, audit trails, and seat allocation visibility.
 
-Security taken seriously
+## Security taken seriously
 
 Enterprise governance is built in with SOC 2 Type II compliance, SSO, role-based permissions, and organization-wide policy enforcement.
 
@@ -244,7 +244,7 @@ Encrypted everywhere
 
 TLS 1.3 in transit, AES-256 at rest. All data encrypted end-to-end with your keys if needed.
 
-Solve problems that slow developers down
+## Solve problems that slow developers down
 
 Get Enterprise plan
 
@@ -256,15 +256,21 @@ Terminal and IDE
 
 Slack
 
+Code reviews
+
 Active
 
-Development without leaving your environment
+### Development without leaving your environment
 
 Debug, review, and ship code directly in your terminal or editor of choice. Claude Code is available in any IDE plus in VS Code via its native extension.
 
-Collaborate without leaving Slack
+### Collaborate without leaving Slack
 
 Debug, review, and ship code directly in Slack. Your team's conversations become development sessions, with Claude Code providing context-aware assistance right in your channels.
+
+### Review code faster
+
+Analyze PRs automatically before human review. Claude Code checks against your organization's standards, flags issues, and suggests improvements right in your workflow.
 
 ## Do more with Claude Code for Enterprise
 

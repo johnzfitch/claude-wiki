@@ -1,16 +1,17 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-27T09:23:54Z"
+fetched_at: "2026-03-12T08:18:31Z"
 source_url: "https://www.anthropic.com/news/claude-sonnet-4-6"
 title: "Introducing Sonnet 4.6 \\ Anthropic"
 ---
+
 # Introducing Claude Sonnet 4.6
 
 Feb 17, 2026
 
 *Claude Sonnet 4.6 is our most capable Sonnet model yet*. It’s a full upgrade of the model’s skills across coding, computer use, long-context reasoning, agent planning, knowledge work, and design. Sonnet 4.6 also features a 1M token context window in beta.
 
-For those on our [Free and Pro plans](https://claude.com/pricing), Claude Sonnet 4.6 is now the default model in [claude.ai](https://claude.ai/redirect/website.v1.04ec939f-ea3f-48cc-8316-d328a4a1b4e2) and [Claude Cowork](https://claude.com/product/cowork). [Pricing](https://claude.com/pricing#api) remains the same as Sonnet 4.5, starting at \$3/\$15 per million tokens.
+For those on our [Free and Pro plans](https://claude.com/pricing), Claude Sonnet 4.6 is now the default model in [claude.ai](https://claude.ai/redirect/website.v1.3ea35f6e-7bd3-4045-b26e-10e669876a23) and [Claude Cowork](https://claude.com/product/cowork). [Pricing](https://claude.com/pricing#api) remains the same as Sonnet 4.5, starting at \$3/\$15 per million tokens.
 
 Sonnet 4.6 brings much-improved coding skills to more of our users. Improvements in consistency, instruction following, and more have made developers with early access prefer Sonnet 4.6 to its predecessor by a wide margin. They often even prefer it to our smartest model from November 2025, Claude Opus 4.5.
 
@@ -123,7 +124,7 @@ Early customers also reported broad improvements, with frontend code and financi
 
 ## Product updates
 
-On the Claude Developer Platform, Sonnet 4.6 supports both [adaptive thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking) and extended thinking, as well as [context compaction](https://platform.claude.com/docs/en/build-with-claude/compaction) in beta, which automatically summarizes older context as conversations approach limits, increasing effective context length.
+On the Claude Platform, Sonnet 4.6 supports both [adaptive thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking) and extended thinking, as well as [context compaction](https://platform.claude.com/docs/en/build-with-claude/compaction) in beta, which automatically summarizes older context as conversations approach limits, increasing effective context length.
 
 On our API, Claude’s [web search](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool) and [fetch](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool) tools now automatically write and execute code to [filter and process search results](https://www.claude.com/blog/improved-web-search-with-dynamic-filtering), keeping only relevant content in context—improving both response quality and token efficiency. Additionally, [code execution](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool), [memory](https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool), [programmatic tool calling](https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling), [tool search](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool), and [tool use examples](https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use#providing-tool-use-examples) are now generally available.
 
@@ -153,16 +154,16 @@ If you’re a developer, you can get started quickly by using `claude-sonnet-4-6
 
 ## Related content
 
-### Statement from Dario Amodei on our discussions with the Department of War
+### Introducing The Anthropic Institute
 
-A statement from our CEO on national security uses of AI.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/statement-department-of-war)
+[Read more](/news/the-anthropic-institute)
 
-### Anthropic acquires Vercept to advance Claude's computer use capabilities
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/acquires-vercept)
+[Read more](/news/sydney-fourth-office-asia-pacific)
 
-### Anthropic’s Responsible Scaling Policy: Version 3.0
+### Partnering with Mozilla to improve Firefox’s security
 
-[Read more](/news/responsible-scaling-policy-v3)
+[Read more](/news/mozilla-firefox-security)

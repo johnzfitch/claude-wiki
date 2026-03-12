@@ -1,6 +1,6 @@
 ---
 category: "05-Skills"
-fetched_at: "2026-03-07T01:05:33Z"
+fetched_at: "2026-03-12T08:19:31Z"
 source_url: "https://agentskills.io/client-implementation/adding-skills-support"
 title: "How to add skills support to your agent - Agent Skills"
 ---
@@ -226,7 +226,7 @@ Copy
 <available_skills>
   <skill>
     <name>pdf-processing</name>
-    <description>Extract text and tables from PDF files, fill forms, merge documents.</description>
+    <description>Extract PDF text, fill forms, merge files. Use when handling PDFs.</description>
     <location>/home/user/.agents/skills/pdf-processing/SKILL.md</location>
   </skill>
   <skill>

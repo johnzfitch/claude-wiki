@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:05Z"
-last_modified: "Sat, 07 Mar 2026 00:33:55 GMT"
+fetched_at: "2026-03-12T08:18:54Z"
+last_modified: "Thu, 12 Mar 2026 04:33:44 GMT"
 source_url: "https://claude.com/connectors/cortellis-regulatory"
 title: "Cortellis Regulatory Intelligence | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://api.clarivate.com/lifesciences/mcp-regulatory/documentation)[Privacy Policy](https://clarivate.com/privacy-center/notices-policies)[Support](/cdn-cgi/l/email-protection#bcd0cfd492cfc9ccccd3cec8fcdfd0ddced5caddc8d992dfd3d1)
+  [Documentation](https://api.clarivate.com/lifesciences/mcp-regulatory/documentation)[Privacy Policy](https://clarivate.com/privacy-center/notices-policies)[Support](/cdn-cgi/l/email-protection#88e4fbe0a6fbfdf8f8e7fafcc8ebe4e9fae1fee9fceda6ebe7e5)
 
 The Cortellis Regulatory MCP connects Claude to Clarivate's Cortellis trusted, human-curated global regulatory content. It enables natural language questions, providing accurate, referenced answers supported by authoritative regulatory sources. Users can access subscribed and licensed content, navigate complex guidances, and track regulatory changes—directly within Claude. Designed for life sciences and regulatory teams, this connector delivers fast, transparent, and compliant insights—helping users accelerate research, reduce manual effort, and make better‑informed decisions.
 

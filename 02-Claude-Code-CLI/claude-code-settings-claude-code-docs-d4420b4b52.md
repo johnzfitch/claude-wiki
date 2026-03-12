@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-07T01:06:00Z"
+fetched_at: "2026-03-12T08:19:50Z"
 source_url: "https://code.claude.com/docs/en/settings"
 title: "Claude Code settings - Claude Code Docs"
 ---
@@ -32,7 +32,7 @@ Available scopes
 | **Managed** | Server-managed settings, plist / registry, or system-level `managed-settings.json` | All users on the machine | Yes (deployed by IT) |
 | **User** | `~/.claude/` directory | You, across all projects | No |
 | **Project** | `.claude/` in repository | All collaborators on this repository | Yes (committed to git) |
-| **Local** | `.claude/*.local.*` files | You, in this repository only | No (gitignored) |
+| **Local** | `.claude/settings.local.json` | You, in this repository only | No (gitignored) |
 
 ### 
 
@@ -94,7 +94,7 @@ Scopes apply to many Claude Code features:
 | **Subagents** | `~/.claude/agents/` | `.claude/agents/` | — |
 | **MCP servers** | `~/.claude.json` | `.mcp.json` | `~/.claude.json` (per-project) |
 | **Plugins** | `~/.claude/settings.json` | `.claude/settings.json` | `.claude/settings.local.json` |
-| **CLAUDE.md** | `~/.claude/CLAUDE.md` | `CLAUDE.md` or `.claude/CLAUDE.md` | `CLAUDE.local.md` |
+| **CLAUDE.md** | `~/.claude/CLAUDE.md` | `CLAUDE.md` or `.claude/CLAUDE.md` | — |
 
 ------------------------------------------------------------------------
 
@@ -192,6 +192,7 @@ Available settings
 | `allowManagedMcpServersOnly` | (Managed settings only) Only `allowedMcpServers` from managed settings are respected. `deniedMcpServers` still merges from all sources. Users can still add MCP servers, but only the admin-defined allowlist applies. See [Managed MCP configuration](/docs/en/mcp#managed-mcp-configuration) | `true` |
 | `model` | Override the default model to use for Claude Code | `"claude-sonnet-4-6"` |
 | `availableModels` | Restrict which models users can select via `/model`, `--model`, Config tool, or `ANTHROPIC_MODEL`. Does not affect the Default option. See [Restrict model selection](/docs/en/model-config#restrict-model-selection) | `["sonnet", "haiku"]` |
+| `modelOverrides` | Map Anthropic model IDs to provider-specific model IDs such as Bedrock inference profile ARNs. Each model picker entry uses its mapped value when calling the provider API. See [Override model IDs per version](/docs/en/model-config#override-model-ids-per-version) | `{"claude-opus-4-6": "arn:aws:bedrock:..."}` |
 | `otelHeadersHelper` | Script to generate dynamic OpenTelemetry headers. Runs at startup and periodically (see [Dynamic headers](/docs/en/monitoring-usage#dynamic-headers)) | `/bin/generate_otel_headers.sh` |
 | `statusLine` | Configure a custom status line to display context. See [`statusLine` documentation](/docs/en/statusline) | `{"type": "command", "command": "~/.claude/statusline.sh"}` |
 | `fileSuggestion` | Configure a custom script for `@` file autocomplete. See [File suggestion settings](#file-suggestion-settings) | `{"type": "command", "command": "~/.claude/file-suggestion.sh"}` |
@@ -1020,6 +1021,7 @@ All environment variables can also be configured in [`settings.json`](#available
 | `CLAUDE_CODE_DISABLE_AUTO_MEMORY` | Set to `1` to disable [auto memory](/docs/en/memory#auto-memory). Set to `0` to force auto memory on during the gradual rollout. When disabled, Claude does not create or load auto memory files |  |
 | `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` | Set to `1` to remove built-in commit and PR workflow instructions from Claude’s system prompt. Useful when using your own git workflow skills. Takes precedence over the [`includeGitInstructions`](#available-settings) setting when set |  |
 | `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` | Set to `1` to disable all background task functionality, including the `run_in_background` parameter on Bash and subagent tools, auto-backgrounding, and the Ctrl+B shortcut |  |
+| `CLAUDE_CODE_DISABLE_CRON` | Set to `1` to disable [scheduled tasks](/docs/en/scheduled-tasks). The `/loop` skill and cron tools become unavailable and any already-scheduled tasks stop firing, including tasks that are already running mid-session |  |
 | `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` | Set to `1` to disable Anthropic API-specific `anthropic-beta` headers. Use this if experiencing issues like “Unexpected value(s) for the `anthropic-beta` header” when using an LLM gateway with third-party providers |  |
 | `CLAUDE_CODE_DISABLE_FAST_MODE` | Set to `1` to disable [fast mode](/docs/en/fast-mode) |  |
 | `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY` | Set to `1` to disable the “How is Claude doing?” session quality surveys. Also disabled when using third-party providers or when telemetry is disabled. See [Session quality surveys](/docs/en/data-usage#session-quality-surveys) |  |
@@ -1097,27 +1099,36 @@ Claude Code has access to a set of powerful tools that help it understand and mo
 
 | Tool | Description | Permission Required |
 |:---|:---|:---|
+| **Agent** | Spawns a [subagent](/docs/en/sub-agents) with its own context window to handle a task | No |
 | **AskUserQuestion** | Asks multiple-choice questions to gather requirements or clarify ambiguity | No |
-| **Bash** | Executes shell commands in your environment (see [Bash tool behavior](#bash-tool-behavior) below) | Yes |
-| **TaskOutput** | Retrieves output from a background task (bash shell or subagent) | No |
+| **Bash** | Executes shell commands in your environment. See [Bash tool behavior](#bash-tool-behavior) | Yes |
+| **CronCreate** | Schedules a recurring or one-shot prompt within the current session (gone when Claude exits). See [scheduled tasks](/docs/en/scheduled-tasks) | No |
+| **CronDelete** | Cancels a scheduled task by ID | No |
+| **CronList** | Lists all scheduled tasks in the session | No |
 | **Edit** | Makes targeted edits to specific files | Yes |
-| **ExitPlanMode** | Prompts the user to exit plan mode and start coding | Yes |
+| **EnterPlanMode** | Switches to plan mode to design an approach before coding | No |
+| **EnterWorktree** | Creates an isolated [git worktree](/docs/en/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees) and switches into it | No |
+| **ExitPlanMode** | Presents a plan for approval and exits plan mode | Yes |
+| **ExitWorktree** | Exits a worktree session and returns to the original directory | No |
 | **Glob** | Finds files based on pattern matching | No |
 | **Grep** | Searches for patterns in file contents | No |
-| **KillShell** | Kills a running background bash shell by its ID | No |
-| **MCPSearch** | Searches for and loads MCP tools when [tool search](/docs/en/mcp#scale-with-mcp-tool-search) is enabled | No |
+| **ListMcpResourcesTool** | Lists resources exposed by connected [MCP servers](/docs/en/mcp) | No |
+| **LSP** | Code intelligence via language servers. Reports type errors and warnings automatically after file edits. Also supports navigation operations: jump to definitions, find references, get type info, list symbols, find implementations, trace call hierarchies. Requires a [code intelligence plugin](/docs/en/discover-plugins#code-intelligence) and its language server binary | No |
 | **NotebookEdit** | Modifies Jupyter notebook cells | Yes |
 | **Read** | Reads the contents of files | No |
+| **ReadMcpResourceTool** | Reads a specific MCP resource by URI | No |
 | **Skill** | Executes a [skill](/docs/en/skills#control-who-invokes-a-skill) within the main conversation | Yes |
-| **Agent** | Runs a sub-agent to handle complex, multi-step tasks | No |
 | **TaskCreate** | Creates a new task in the task list | No |
 | **TaskGet** | Retrieves full details for a specific task | No |
 | **TaskList** | Lists all tasks with their current status | No |
+| **TaskOutput** | Retrieves output from a background task | No |
+| **TaskStop** | Kills a running background task by ID | No |
 | **TaskUpdate** | Updates task status, dependencies, details, or deletes tasks | No |
+| **TodoWrite** | Manages the session task checklist. Available in non-interactive mode and the [Agent SDK](/docs/en/headless); interactive sessions use TaskCreate, TaskGet, TaskList, and TaskUpdate instead | No |
+| **ToolSearch** | Searches for and loads deferred tools when [tool search](/docs/en/mcp#scale-with-mcp-tool-search) is enabled | No |
 | **WebFetch** | Fetches content from a specified URL | Yes |
-| **WebSearch** | Performs web searches with domain filtering | Yes |
+| **WebSearch** | Performs web searches | Yes |
 | **Write** | Creates or overwrites files | Yes |
-| **LSP** | Code intelligence via language servers. Reports type errors and warnings automatically after file edits. Also supports navigation operations: jump to definitions, find references, get type info, list symbols, find implementations, trace call hierarchies. Requires a [code intelligence plugin](/docs/en/discover-plugins#code-intelligence) and its language server binary | No |
 
 Permission rules can be configured using `/allowed-tools` or in [permission settings](/docs/en/settings#available-settings). Also see [Tool-specific permission rules](/docs/en/permissions#tool-specific-permission-rules).
 

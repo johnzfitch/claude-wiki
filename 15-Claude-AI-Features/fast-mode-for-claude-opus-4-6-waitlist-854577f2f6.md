@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:01Z"
-last_modified: "Fri, 06 Mar 2026 21:36:57 GMT"
+fetched_at: "2026-03-12T08:18:49Z"
+last_modified: "Thu, 12 Mar 2026 02:49:30 GMT"
 source_url: "https://claude.com/fast-mode"
 title: "Fast mode for Claude Opus 4.6 waitlist"
 ---

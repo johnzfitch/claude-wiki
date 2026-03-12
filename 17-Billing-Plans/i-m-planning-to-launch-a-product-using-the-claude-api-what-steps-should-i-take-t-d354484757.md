@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-07T01:05:46Z"
+fetched_at: "2026-03-12T08:19:40Z"
 source_url: "https://support.claude.com/en/articles/8241216-i-m-planning-to-launch-a-product-using-the-claude-api-what-steps-should-i-take-to-ensure-i-m-not-violating-anthropic-s-usage-policy"
 title: "I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "I’m planning to launch a product using the Claude API. What steps shou
 
 # I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy?
 
-Updated today
 
 We founded Anthropic to put safety at the frontier of AI research and AI products. Our research informs our commercial products, and our models are some of the most reliably safe and resistant to abuse available today. We are working to improve our safety filters based on user feedback - and we expect our commercial customers will hold us accountable when our safety features are failing.
 
@@ -21,7 +20,7 @@ But we believe safety is a shared responsibility. Our features are not failsafe,
 
 - For sensitive information and decision making, have a qualified professional review content prior to dissemination to consumers.
 
-We encourage you to send us feedback or specific proposals to [\[email protected\]](/cdn-cgi/l/email-protection#1d686e786f6e7c7b7869645d7c7369756f726d747e337e7270). For existing commercial partners, we’d recommend [joining our Discord server](https://discord.com/invite/6PPFFzqPDZ) and exchanging ideas with fellow developers as well.
+We encourage you to send us feedback or specific proposals to [\[email protected\]](/cdn-cgi/l/email-protection#cabfb9afb8b9abacafbeb38aaba4bea2b8a5baa3a9e4a9a5a7). For existing commercial partners, we’d recommend [joining our Discord server](https://discord.com/invite/6PPFFzqPDZ) and exchanging ideas with fellow developers as well.
 
 ------------------------------------------------------------------------
 
@@ -34,10 +33,10 @@ Reporting, Blocking, and Removing Content from Claude
 Our Approach to User Safety
 
 
+Claude is providing incorrect or misleading responses. What’s going on?
+
+
 API Safeguards Tools
-
-
-Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors
 
 
 Reporting, Blocking, and Removing Content from Claude

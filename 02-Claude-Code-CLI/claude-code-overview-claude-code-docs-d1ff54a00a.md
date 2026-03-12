@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-07T01:05:56Z"
+fetched_at: "2026-03-12T08:19:56Z"
 source_url: "https://code.claude.com/docs"
 title: "Claude Code overview - Claude Code Docs"
 ---
@@ -229,6 +229,7 @@ Each surface connects to the same underlying Claude Code engine, so your CLAUDE.
 | Continue a local session from my phone or another device | [Remote Control](/docs/en/remote-control) |
 | Start a task locally, continue on mobile | [Web](/docs/en/claude-code-on-the-web) or [Claude iOS app](https://apps.apple.com/app/claude-by-anthropic/id6473753684) |
 | Automate PR reviews and issue triage | [GitHub Actions](/docs/en/github-actions) or [GitLab CI/CD](/docs/en/gitlab-ci-cd) |
+| Get automatic code review on every PR | [GitHub Code Review](/docs/en/code-review) |
 | Route bug reports from Slack to pull requests | [Slack](/docs/en/slack) |
 | Debug live web applications | [Chrome](/docs/en/chrome) |
 | Build custom agents for your own workflows | [Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview) |

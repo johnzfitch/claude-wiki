@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-07T01:05:15Z"
+fetched_at: "2026-03-12T08:19:07Z"
 source_url: "https://modelcontextprotocol.io/docs/sdk"
 title: "SDKs - Model Context Protocol"
 ---
@@ -19,20 +19,20 @@ Build MCP servers and clients using our official SDKs. SDKs are classified into 
 
 Available SDKs
 
-| SDK | Repository | Tier\* |
+| SDK | Repository | Tier |
 |:---|:---|---:|
-|    TypeScript | [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) | [Tier 1](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2271) |
-|    Python | [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | [Tier 1](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2304) |
-|    Java | [modelcontextprotocol/java-sdk](https://github.com/modelcontextprotocol/java-sdk) | [Tier 2](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2301) |
-|    C# | [modelcontextprotocol/csharp-sdk](https://github.com/modelcontextprotocol/csharp-sdk) | [Tier 1](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2261) |
-|    Go | [modelcontextprotocol/go-sdk](https://github.com/modelcontextprotocol/go-sdk) | [Tier 1](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2279) |
-|    Kotlin | [modelcontextprotocol/kotlin-sdk](https://github.com/modelcontextprotocol/kotlin-sdk) | TBD |
-|    Swift | [modelcontextprotocol/swift-sdk](https://github.com/modelcontextprotocol/swift-sdk) | [Tier 3](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2309) |
-|    Rust | [modelcontextprotocol/rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) | [Tier 2](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2346) |
-|    Ruby | [modelcontextprotocol/ruby-sdk](https://github.com/modelcontextprotocol/ruby-sdk) | [Tier 3](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2340) |
-|    PHP | [modelcontextprotocol/php-sdk](https://github.com/modelcontextprotocol/php-sdk) | [Tier 3](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/2305) |
+|    [TypeScript](https://ts.sdk.modelcontextprotocol.io) | [modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk) | Tier 1 |
+|    [Python](https://py.sdk.modelcontextprotocol.io) | [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | Tier 1 |
+|    [C#](https://csharp.sdk.modelcontextprotocol.io) | [modelcontextprotocol/csharp-sdk](https://github.com/modelcontextprotocol/csharp-sdk) | Tier 1 |
+|    [Go](https://go.sdk.modelcontextprotocol.io) | [modelcontextprotocol/go-sdk](https://github.com/modelcontextprotocol/go-sdk) | Tier 1 |
+|    [Java](https://java.sdk.modelcontextprotocol.io) | [modelcontextprotocol/java-sdk](https://github.com/modelcontextprotocol/java-sdk) | Tier 2 |
+|    [Rust](https://rust.sdk.modelcontextprotocol.io) | [modelcontextprotocol/rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) | Tier 2 |
+|    Swift | [modelcontextprotocol/swift-sdk](https://github.com/modelcontextprotocol/swift-sdk) | Tier 3 |
+|    Ruby | [modelcontextprotocol/ruby-sdk](https://github.com/modelcontextprotocol/ruby-sdk) | Tier 3 |
+|    [PHP](https://php.sdk.modelcontextprotocol.io) | [modelcontextprotocol/php-sdk](https://github.com/modelcontextprotocol/php-sdk) | Tier 3 |
+|    [Kotlin](https://kotlin.sdk.modelcontextprotocol.io) | [modelcontextprotocol/kotlin-sdk](https://github.com/modelcontextprotocol/kotlin-sdk) | TBD |
 
-*\*Official tier assignments will be published February 23, 2026. See [SDK Tiering System](/community/sdk-tiers) for details.*
+See [SDK Tiering System](/community/sdk-tiers) for details on what each tier means.
 
 ## 
 

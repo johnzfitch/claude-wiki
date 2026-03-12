@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:20Z"
+fetched_at: "2026-03-12T08:19:08Z"
 source_url: "https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization"
 title: "Enterprise-Managed Authorization - Model Context Protocol"
 ---
+
 # Enterprise-Managed Authorization
 
 

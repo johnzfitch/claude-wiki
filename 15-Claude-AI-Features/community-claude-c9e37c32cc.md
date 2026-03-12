@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:02Z"
-last_modified: "Sat, 07 Mar 2026 00:32:31 GMT"
+fetched_at: "2026-03-12T08:18:50Z"
+last_modified: "Thu, 12 Mar 2026 07:42:18 GMT"
 source_url: "https://claude.com/community"
 title: "Community | Claude"
 ---
@@ -40,86 +40,6 @@ Location
 
 Date
 
-MY
-
-Forest City \| Claude Code for Entrepreneurs
-
-Gelang Patah, MY
-
-March 7, 2026
-
-Forest City Marina Hotel, Jalan Forest City - Lebuhraya Tanjung Pelepas, 1, Pulau Satu, 81550 Gelang Patah, Johor Darul Ta'zim, Malaysia
-
-[Forest City \| Claude Code for Entrepreneurs](https://luma.com/kwhrhy18)
-
-Forest City \| Claude Code for Entrepreneurs
-
-[](/community-events-from-luma/forest-city-claude-code-for-entrepreneurs-QCa3kH)
-
-US
-
-San Diego \| Claude Impact Lab
-
-San Diego, US
-
-March 7, 2026
-
-Downtown Conference Center – iQ Smart Center, 655 W Broadway, San Diego, CA 92101, USA
-
-[San Diego \| Claude Impact Lab](https://luma.com/6ok9h92y)
-
-San Diego \| Claude Impact Lab
-
-[](/community-events-from-luma/san-diego-claude-impact-lab-iL096o)
-
-FR
-
-Paris \| Claude Code for Everyone
-
-Paris, FR
-
-March 9, 2026
-
-42 Paris, 96 Bd Bessières, 75017 Paris, France
-
-[Paris \| Claude Code for Everyone](https://luma.com/ra5bmhlk)
-
-Paris \| Claude Code for Everyone
-
-[](/community-events-from-luma/paris-claude-code-for-everyone-I8IfOz)
-
-GB
-
-London \| Claude Code Curious \#3
-
-London, GB
-
-March 11, 2026
-
-Granola, 346 Old St, London EC1V 9NQ, UK
-
-[London \| Claude Code Curious \#3](https://luma.com/claude-code-curious-3)
-
-London \| Claude Code Curious \#3
-
-[](/community-events-from-luma/london-claude-code-curious-3-C3Wz22)
-
-US
-
-Detroit \| Claude Code for Developers
-
-Detroit, US
-
-March 11, 2026
-
-RIVET Work, 1555 Broadway St, Detroit, MI 48226, USA
-
-[Detroit \| Claude Code for Developers](https://luma.com/ycv18ofl)
-
-Detroit \| Claude Code for Developers
-
-[](/community-events-from-luma/detroit-claude-code-for-developers-cZGLTQ)
-
 AU
 
 Adelaide \| Claude Code for Everyone
@@ -135,6 +55,22 @@ Stone & Chalk Adelaide Startup Hub, Marnirni-apinthi Building, Lot Fourteen, Nor
 Adelaide \| Claude Code for Everyone
 
 [](/community-events-from-luma/adelaide-claude-code-for-everyone-sSbaHX)
+
+CL
+
+Santiago \| Claude Code / Cowork / No developers
+
+Las Condes, CL
+
+March 12, 2026
+
+Callao 2911, 7550285 Las Condes, Región Metropolitana, Chile
+
+[Santiago \| Claude Code / Cowork / No developers](https://luma.com/claudecode.benditaia)
+
+Santiago \| Claude Code / Cowork / No developers
+
+[](/community-events-from-luma/santiago-claude-code-cowork-no-developers-xqBYMh)
 
 GB
 
@@ -167,6 +103,70 @@ Stone & Chalk Tech Central, Level 1/477 Pitt St, Haymarket NSW 2000, Australia
 Sydney \| Claude Code for Everyone
 
 [](/community-events-from-luma/sydney-claude-code-for-everyone-WOD9w0)
+
+AU
+
+Sydney \| Claude & Coffee
+
+Haymarket, AU
+
+March 18, 2026
+
+477 Pitt St, Haymarket NSW 2000, Australia
+
+[Sydney \| Claude & Coffee](https://luma.com/nu7anakm)
+
+Sydney \| Claude & Coffee
+
+[](/community-events-from-luma/sydney-claude-coffee-xKNL09)
+
+AU
+
+Perth \| Claude Code for Everyone
+
+Perth, AU
+
+March 19, 2026
+
+Spacecubed, 45 St Georges Terrace, Perth WA 6000, Australia
+
+[Perth \| Claude Code for Everyone](https://luma.com/mlgr7q9z)
+
+Perth \| Claude Code for Everyone
+
+[](/community-events-from-luma/perth-claude-code-for-everyone-AlOPBh)
+
+US
+
+Chicago \| Claude Code for HealthTech
+
+Chicago, US
+
+March 19, 2026
+
+500 W Madison St, Chicago, IL 60661, USA
+
+[Chicago \| Claude Code for HealthTech](https://luma.com/s0pc2wz3)
+
+Chicago \| Claude Code for HealthTech
+
+[](/community-events-from-luma/chicago-claude-code-for-healthtech-wIlX3N)
+
+MX
+
+Monterrey \| Claude Code for Everyone
+
+Monterrey, MX
+
+March 20, 2026
+
+EXPEDITION FEMSA, Av. Eugenio Garza Sada Sur, Tecnologico, Distrito Tec, 64700 Monterrey, N.L., Mexico
+
+[Monterrey \| Claude Code for Everyone](https://luma.com/claudemonterrey)
+
+Monterrey \| Claude Code for Everyone
+
+[](/community-events-from-luma/monterrey-claude-code-for-everyone-0wxlB0)
 
 [](?46f68bc1_page=2)
 

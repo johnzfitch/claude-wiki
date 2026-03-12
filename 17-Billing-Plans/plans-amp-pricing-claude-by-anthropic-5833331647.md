@@ -1,7 +1,7 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-07T01:04:51Z"
-last_modified: "Fri, 06 Mar 2026 21:35:25 GMT"
+fetched_at: "2026-03-12T08:18:33Z"
+last_modified: "Thu, 12 Mar 2026 01:51:07 GMT"
 source_url: "https://claude.com/pricing"
 title: "Plans &amp; Pricing | Claude by Anthropic"
 ---
@@ -53,7 +53,8 @@ Everything in Free, plus:
 - Access to unlimited projects to organize chats and documents
 - Access to Research
 - Ability to use more Claude models
-- Claude in Excel
+- Claude for Excel (beta)
+- Claude for PowerPoint (beta)
 
 ### Max
 
@@ -75,7 +76,6 @@ Everything in Pro, plus:
 - Higher output limits for all tasks
 - Early access to advanced Claude features
 - Priority access at high traffic times
-- Claude in PowerPoint (research preview)
 
 Country
 
@@ -123,7 +123,7 @@ Try Claude
 
 #### Claude Code
 
-#### Cowork
+#### Claude Cowork
 
 #### Analyze text and images
 
@@ -157,13 +157,13 @@ Try Claude
 
 #### Enterprise search 
 
-#### Claude in Excel 
+#### Claude for Excel 
 
-#### Claude in PowerPoint 
+#### Claude for PowerPoint 
 
-#### Claude in Chrome
+#### Claude for Chrome
 
-#### Claude in Slack
+#### Claude for Slack
 
 ### Security and administration
 
@@ -231,16 +231,6 @@ n/a
 
 #### Haiku
 
-#### Context window
-
-200k
-
-200k
-
-200k
-
-200k
-
 #### Extra usage
 
 #### Priority access at high traffic times
@@ -297,15 +287,17 @@ Per seat / month if billed annually. \$125 if billed monthly.
 
 For large businesses operating at scale
 
+\$20/seat. Usage is billed as you go at [API rates](#api)
+
 Get Enterprise plan
 
 [Get Enterprise plan](http://claude.ai/create/enterprise)
 
 Get Enterprise plan
 
-All Team features, plus:
+All Team plan features, plus:
 
-- Enhanced context window
+- Admins set user and org spend limits
 - Google Docs cataloging
 - Role-based access with fine grained permissioning
 - System for Cross-domain Identity Management (SCIM)
@@ -416,13 +408,13 @@ Contact sales
 
 #### Enterprise search 
 
-#### Claude in Excel 
+#### Claude for Excel 
 
-#### Claude in PowerPoint 
+#### Claude for PowerPoint 
 
-#### Claude in Chrome
+#### Claude for Chrome
 
-#### Claude in Slack
+#### Claude for Slack
 
 ### Security and administration
 
@@ -493,18 +485,6 @@ Annual
 #### Sonnet
 
 #### Haiku
-
-#### Context window
-
-200k
-
-500k
-
-on default model
-
-500k
-
-on default model
 
 #### Extra usage
 

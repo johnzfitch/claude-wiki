@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:11Z"
-last_modified: "Fri, 06 Mar 2026 21:35:43 GMT"
+fetched_at: "2026-03-12T08:19:02Z"
+last_modified: "Thu, 12 Mar 2026 01:51:45 GMT"
 source_url: "https://claude.com/resources/tutorials/claude-enterprise-administrator-guide"
 title: "Claude Enterprise Administrator Guide | Claude"
 ---
@@ -177,18 +177,18 @@ title: "Claude Enterprise Administrator Guide | Claude"
   - [](/product/claude-code)
     Claude Code
   - [](/product/cowork)
-    Cowork
+    Claude Cowork
 
   Features
 
-  - [](/claude-in-chrome)
-    Claude in Chrome
-  - [](/claude-in-slack)
-    Claude in Slack
-  - [](/claude-in-excel)
-    Claude in Excel
-  - [](/claude-in-powerpoint)
-    Claude in PowerPoint
+  - [](/claude-for-chrome)
+    Claude for Chrome
+  - [](/claude-for-slack)
+    Claude for Slack
+  - [](/claude-for-excel)
+    Claude for Excel
+  - [](/claude-for-powerpoint)
+    Claude for PowerPoint
   - [](/skills)
     Skills
 
@@ -1092,10 +1092,10 @@ Products
   [Claude Code for Enterprise](/product/claude-code/enterprise)
   Claude Code for Enterprise
 
-- Cowork
+- Claude Cowork
 
-  [Cowork](/product/cowork)
-  Cowork
+  [Claude Cowork](/product/cowork)
+  Claude Cowork
 
 - Max plan
 
@@ -1129,25 +1129,25 @@ Products
 
 Features
 
-- Claude in Chrome
+- Claude for Chrome
 
-  [Claude in Chrome](/claude-in-chrome)
-  Claude in Chrome
+  [Claude for Chrome](/claude-for-chrome)
+  Claude for Chrome
 
-- Claude in Slack
+- Claude for Slack
 
-  [Claude in Slack](/claude-in-slack)
-  Claude in Slack
+  [Claude for Slack](/claude-for-slack)
+  Claude for Slack
 
-- Claude in Excel
+- Claude for Excel
 
-  [Claude in Excel](/claude-in-excel)
-  Claude in Excel
+  [Claude for Excel](/claude-for-excel)
+  Claude for Excel
 
-- Claude in PowerPoint
+- Claude for PowerPoint
 
-  [Claude in PowerPoint](/claude-in-powerpoint)
-  Claude in PowerPoint
+  [Claude for PowerPoint](/claude-for-powerpoint)
+  Claude for PowerPoint
 
 - Skills
 
@@ -1228,7 +1228,7 @@ Solutions
   [Nonprofits](/solutions/nonprofits)
   Nonprofits
 
-Claude Developer Platform
+Claude Platform
 
 - Overview
 
@@ -1281,11 +1281,6 @@ Resources
 
   [Blog](/blog)
   Blog
-
-- Claude Builder Program
-
-  [Claude Builder Program](/programs/builder)
-  Claude Builder Program
 
 - Claude partner network
 

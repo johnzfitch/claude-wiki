@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:04:51Z"
-last_modified: "Sat, 07 Mar 2026 00:32:19 GMT"
+fetched_at: "2026-03-12T08:18:32Z"
+last_modified: "Thu, 12 Mar 2026 04:33:45 GMT"
 source_url: "https://claude.com/product/claude-code"
 title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
 ---
@@ -1160,7 +1160,7 @@ Claude Code’s understanding of your codebase and dependencies enables it to ma
 ### Works where you work
 
 - Lives right inside your terminal—no  context switching
-- Integrates with VS Code / JetBrains IDEs
+- Integrates with [VS Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) / [JetBrains](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) IDEs
 - Uses your test suites and build systems
 
 ### You’re in control
@@ -1278,7 +1278,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit suspendisse varius.
 
 Learn more
 
-[Learn more](/claude-in-slack)
+[Learn more](/claude-for-slack)
 
 Learn more
 

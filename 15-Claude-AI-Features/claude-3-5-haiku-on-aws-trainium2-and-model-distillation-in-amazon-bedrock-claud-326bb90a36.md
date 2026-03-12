@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-07T01:05:10Z"
-last_modified: "Fri, 06 Mar 2026 23:37:48 GMT"
+fetched_at: "2026-03-12T08:19:01Z"
+last_modified: "Thu, 12 Mar 2026 04:34:39 GMT"
 source_url: "https://claude.com/blog/trainium2-and-distillation"
 title: "Claude 3.5 Haiku on AWS Trainium2 and model distillation in Amazon Bedrock | Claude"
 ---
@@ -120,6 +120,34 @@ No items found.
 
 Explore more product news and best practices for teams building with Claude.
 
+Feb 17, 2026
+
+### Increase web search accuracy and efficiency with dynamic filtering
+
+Product announcements
+
+[Increase web search accuracy and efficiency with dynamic filtering](#)
+
+Increase web search accuracy and efficiency with dynamic filtering
+
+[Increase web search accuracy and efficiency with dynamic filtering](/blog/improved-web-search-with-dynamic-filtering)
+
+Increase web search accuracy and efficiency with dynamic filtering
+
+Mar 9, 2026
+
+### Bringing Code Review to Claude Code
+
+Claude Code
+
+[Bringing Code Review to Claude Code](#)
+
+Bringing Code Review to Claude Code
+
+[Bringing Code Review to Claude Code](/blog/code-review)
+
+Bringing Code Review to Claude Code
+
 Mar 3, 2026
 
 ### Improving skill-creator: Test, measure, and refine Agent Skills
@@ -147,34 +175,6 @@ Your favorite work tools are now interactive connectors inside Claude
 [Your favorite work tools are now interactive connectors inside Claude](/blog/interactive-tools-in-claude)
 
 Your favorite work tools are now interactive connectors inside Claude
-
-Feb 20, 2026
-
-### Bringing automated preview, review, and merge to Claude Code on desktop
-
-Claude Code
-
-[Bringing automated preview, review, and merge to Claude Code on desktop](#)
-
-Bringing automated preview, review, and merge to Claude Code on desktop
-
-[Bringing automated preview, review, and merge to Claude Code on desktop](/blog/preview-review-and-merge-with-claude-code)
-
-Bringing automated preview, review, and merge to Claude Code on desktop
-
-Feb 17, 2026
-
-### Increase web search accuracy and efficiency with dynamic filtering
-
-Product announcements
-
-[Increase web search accuracy and efficiency with dynamic filtering](#)
-
-Increase web search accuracy and efficiency with dynamic filtering
-
-[Increase web search accuracy and efficiency with dynamic filtering](/blog/improved-web-search-with-dynamic-filtering)
-
-Increase web search accuracy and efficiency with dynamic filtering
 
 ## Transform how your organization operates with Claude
 

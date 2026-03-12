@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-07T01:05:54Z"
+fetched_at: "2026-03-12T08:19:54Z"
 source_url: "https://code.claude.com/docs/en/desktop"
 title: "Use Claude Code Desktop - Claude Code Docs"
 ---
@@ -621,7 +621,7 @@ Shared configuration
 
 Desktop and CLI read the same configuration files, so your setup carries over:
 
-- **[CLAUDE.md](/docs/en/memory)** and **CLAUDE.local.md** files in your project are used by both
+- **[CLAUDE.md](/docs/en/memory)** files in your project are used by both
 - **[MCP servers](/docs/en/mcp)** configured in `~/.claude.json` or `.mcp.json` work in both
 - **[Hooks](/docs/en/hooks)** and **[skills](/docs/en/skills)** defined in settings apply to both
 - **[Settings](/docs/en/settings)** in `~/.claude.json` and `~/.claude/settings.json` are shared. Permission rules, allowed tools, and other settings in `settings.json` apply to Desktop sessions.

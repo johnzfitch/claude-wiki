@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-03-07T01:05:56Z"
+fetched_at: "2026-03-12T08:19:55Z"
 source_url: "https://code.claude.com/docs/en/quickstart"
 title: "Quickstart - Claude Code Docs"
 ---

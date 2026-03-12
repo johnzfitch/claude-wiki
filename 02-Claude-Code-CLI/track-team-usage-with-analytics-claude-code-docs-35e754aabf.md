@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-07T01:05:56Z"
+fetched_at: "2026-03-12T08:19:56Z"
 source_url: "https://code.claude.com/docs/en/analytics"
 title: "Track team usage with analytics - Claude Code Docs"
 ---
