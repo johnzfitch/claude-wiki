@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-12T08:19:56Z"
+fetched_at: "2026-03-14T10:17:05Z"
 source_url: "https://code.claude.com/docs/en/remote-control"
 title: "Continue local sessions from any device with Remote Control - Claude Code Docs"
 ---
@@ -19,7 +19,11 @@ Remote Control connects [claude.ai/code](https://claude.ai/code) or the Claude a
 - **Work from both surfaces at once**: the conversation stays in sync across all connected devices, so you can send messages from your terminal, browser, and phone interchangeably
 - **Survive interruptions**: if your laptop sleeps or your network drops, the session reconnects automatically when your machine comes back online
 
-Unlike [Claude Code on the web](/docs/en/claude-code-on-the-web), which runs on cloud infrastructure, Remote Control sessions run directly on your machine and interact with your local filesystem. The web and mobile interfaces are just a window into that local session. This page covers setup, how to start and connect to sessions, and how Remote Control compares to Claude Code on the web.
+Unlike [Claude Code on the web](/docs/en/claude-code-on-the-web), which runs on cloud infrastructure, Remote Control sessions run directly on your machine and interact with your local filesystem. The web and mobile interfaces are just a window into that local session.
+
+Remote Control requires Claude Code v2.1.51 or later. Check your version with `claude --version`.
+
+This page covers setup, how to start and connect to sessions, and how Remote Control compares to Claude Code on the web.
 
 ## 
 
@@ -39,9 +43,11 @@ Before using Remote Control, confirm that your environment meets these condition
 
 Start a Remote Control session
 
-You can start a new session directly in Remote Control, or connect a session that’s already running.
+You can start a dedicated Remote Control server, start an interactive session with Remote Control enabled, or connect a session that’s already running.
 
-- New session
+- Server mode
+
+- Interactive session
 
 - From an existing session
 
@@ -56,11 +62,33 @@ Copy
 claude remote-control
 ```
 
-The process stays running in your terminal, waiting for remote connections. It displays a session URL you can use to [connect from another device](#connect-from-another-device), and you can press spacebar to show a QR code for quick access from your phone. While a remote session is active, the terminal shows connection status and tool activity.This command supports the following flags:
+The process stays running in your terminal in server mode, waiting for remote connections. It displays a session URL you can use to [connect from another device](#connect-from-another-device), and you can press spacebar to show a QR code for quick access from your phone. While a remote session is active, the terminal shows connection status and tool activity.Available flags:
 
-- **`--name "My Project"`**: set a custom session title visible in the session list at claude.ai/code. You can also pass the name as a positional argument: `claude remote-control "My Project"`
-- **`--verbose`**: show detailed connection and session logs
-- **`--sandbox`** / **`--no-sandbox`**: enable or disable [sandboxing](/docs/en/sandboxing) for filesystem and network isolation during the session. Sandboxing is off by default.
+[TABLE]
+
+To start a normal interactive Claude Code session with Remote Control enabled, use the `--remote-control` flag (or `--rc`):
+
+Report incorrect code
+
+Copy
+
+
+``` shiki
+claude --remote-control
+```
+
+Optionally pass a name for the session:
+
+Report incorrect code
+
+Copy
+
+
+``` shiki
+claude --remote-control "My Project"
+```
+
+This gives you a full interactive session in your terminal that you can also control from claude.ai or the Claude app. Unlike `claude remote-control` (server mode), you can type messages locally while the session is also available remotely.
 
 If you’re already in a Claude Code session and want to continue it remotely, use the `/remote-control` (or `/rc`) command:
 
@@ -106,7 +134,7 @@ The remote session takes its name from the `--name` argument (or the name passed
 
 Enable Remote Control for all sessions
 
-By default, Remote Control only activates when you explicitly run `claude remote-control` or `/remote-control`. To enable it automatically for every session, run `/config` inside Claude Code and set **Enable Remote Control for all sessions** to `true`. Set it back to `false` to disable. Each Claude Code instance supports one remote session at a time. If you run multiple instances, each one gets its own environment and session.
+By default, Remote Control only activates when you explicitly run `claude remote-control`, `claude --remote-control`, or `/remote-control`. To enable it automatically for every interactive session, run `/config` inside Claude Code and set **Enable Remote Control for all sessions** to `true`. Set it back to `false` to disable. With this setting on, each interactive Claude Code process registers one remote session. If you run multiple instances, each one gets its own environment and session. To run multiple concurrent sessions from a single process, use server mode with `--spawn` instead.
 
 ## 
 
@@ -130,7 +158,7 @@ Remote Control and [Claude Code on the web](/docs/en/claude-code-on-the-web) bot
 
 Limitations
 
-- **One remote session at a time**: each Claude Code session supports one remote connection.
+- **One remote session per interactive process**: outside of server mode, each Claude Code instance supports one remote session at a time. Use server mode with `--spawn` to run multiple concurrent sessions from a single process.
 - **Terminal must stay open**: Remote Control runs as a local process. If you close the terminal or stop the `claude` process, the session ends. Run `claude remote-control` again to start a new one.
 - **Extended network outage**: if your machine is awake but unable to reach the network for more than roughly 10 minutes, the session times out and the process exits. Run `claude remote-control` again to start a new session.
 

@@ -1,11 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:19:46Z"
+fetched_at: "2026-03-14T10:16:47Z"
 source_url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
 title: "What is the Max plan? | Claude Help Center"
 ---
 
 # What is the Max plan?
+
+Updated today
 
 
 This article is about paid Max plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.

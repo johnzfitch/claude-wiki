@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:54Z"
-last_modified: "Thu, 12 Mar 2026 04:33:45 GMT"
+fetched_at: "2026-03-14T10:16:21Z"
+last_modified: "Sat, 14 Mar 2026 03:50:15 GMT"
 source_url: "https://claude.com/connectors/brex"
 title: "Brex | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://www.brex.com/support/using-brex-in-ai-apps)[Privacy Policy](https://www.brex.com/legal/privacy)[Support](/cdn-cgi/l/email-protection#60131510100f121420021205184e030f0d)
+  [Documentation](https://www.brex.com/support/using-brex-in-ai-apps)[Privacy Policy](https://www.brex.com/legal/privacy)[Support](/cdn-cgi/l/email-protection#dfacaaafafb0adab9fbdadbaa7f1bcb0b2)
 
 Connect Brex to Claude for automating your company's finances. Finance monitors compliance and runs powerful queries. Employees get personalized memo guidance, policy answers, and status updates. Permission-based access ensures admin oversight while streamlining management.
 

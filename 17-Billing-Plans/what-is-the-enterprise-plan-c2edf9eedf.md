@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:19:36Z"
+fetched_at: "2026-03-14T10:16:42Z"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 title: "What is the Enterprise plan? | Claude Help Center"
 ---
@@ -82,17 +82,41 @@ Both self-serve and sales-assisted Enterprise plans include the same features an
 
 [TABLE]
 
+\*ACH bank transfers are only available when creating new self-serve Enterprise organizations, not when upgrading a Team organization to Enterprise.
+
 **When to contact Sales:** If your organization needs invoicing, HIPAA-readiness and a Business Associate Agreement (BAA), tailored contract terms, trials, or dedicated customer success management, reach out to our **[Sales team](https://claude.com/contact-sales)** to set up a sales-assisted Enterprise plan.
 
 ------------------------------------------------------------------------
 
 ## How to get the Enterprise plan
 
-- **Self-serve:** Visit **[claude.ai/create/enterprise](http://claude.ai/create/enterprise)** to purchase Enterprise directly.
+### Self-serve Enterprise plans
 
-- **Sales-assisted: [Contact our Sales team](https://claude.com/contact-sales)** to discuss your organization's needs.
+Visit **[claude.ai/create/enterprise](http://claude.ai/create/enterprise)** to purchase Enterprise directly. You can pay with a credit card or ACH bank transfer.
 
-- **AWS Marketplace:** Enterprise is also available through the **[AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-nnvi6wff6ef6m)**.
+**About ACH bank transfers**
+
+New self-serve Enterprise organizations can choose to pay by ACH bank transfer instead of credit card. ACH is a push-based payment method, which means you initiate the transfer from your bank's interface to send funds to Anthropic's virtual bank account number (VBAN). You select your payment method when you create your organization.
+
+Here's what to know about ACH payments:
+
+- **Activation timing:** If you choose ACH as your payment method, your plan won't be activated until we receive the payment, which can take up to five business days.
+
+- **No auto-reload for credits:** Auto-reload isn't available with ACH payments. To set up auto-reload for credits, you can add a credit card to your account.
+
+- **Subscription and credits:** ACH organizations can pay both their subscription invoices and credit purchases via ACH. If you purchase credits with ACH, the credits won't be added to your account until the payment settles.
+
+- **Adding seats:** If you increase your seat count, we'll generate an invoice for the additional seats, but the new seats are available to use right away.
+
+- **Upgrading from Team:** ACH isn't currently supported for organizations upgrading from a Team plan to a self-serve Enterprise plan. ACH is only available for new self-serve Enterprise organizations.
+
+### Sales-assisted Enterprise plans
+
+**[Contact our Sales team](https://claude.com/contact-sales)** to discuss your organization's needs.
+
+### AWS Marketplace
+
+Enterprise is also available through the **[AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-nnvi6wff6ef6m)**.
 
 If your organization is currently on a Team plan and you're interested in upgrading to Enterprise, see this article for more information: **[Migrate your organization from Team to Enterprise](https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise)**.
 

@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-03T14:55:44Z"
+fetched_at: "2026-03-14T10:15:55Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/streaming-vs-single-mode"
 title: "Streaming Input - Claude API Docs"
 ---

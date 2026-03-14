@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-12T08:19:46Z"
+fetched_at: "2026-03-14T10:16:52Z"
 source_url: "https://support.claude.com/en/articles/9002504-can-claude-produce-images"
 title: "Can Claude produce images? | Claude Help Center"
 ---
@@ -9,7 +9,11 @@ title: "Can Claude produce images? | Claude Help Center"
 
 Updated today
 
-No, currently Claude is limited to text-based output via the chat. However, you can upload images for Claude to work with.
+Claude doesn’t generate photos or illustrations the way image-generation tools do.
+
+Claude can, however, build diagrams, charts, and interactive visuals directly in your conversation to assist with your understanding. These are generated using HTML and SVG—so you can interact with them, ask follow-up questions, and have Claude adjust them as you go. This feature is in beta on Claude web and desktop. For additional details, see **[Custom visuals in chat](https://support.claude.com/en/articles/13979539-custom-visuals-in-chat)**.
+
+Claude can also view and analyze images you upload. For more, see **[Uploading files to Claude](https://support.claude.com/en/articles/8241126-uploading-files-to-claude)**.
 
 ------------------------------------------------------------------------
 
@@ -19,13 +23,13 @@ Related Articles
 Uploading files to Claude
 
 
-Getting started with Claude in Chrome
+Using interactive connectors in Claude
 
 
-Create and edit files with Claude
+Use Claude for PowerPoint
 
 
-Using Claude in Slack
+Visual and interactive content
 
 
-Use Claude for Excel
+Custom visuals in chat

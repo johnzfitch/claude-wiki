@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:32Z"
+fetched_at: "2026-03-14T10:16:46Z"
 source_url: "https://support.claude.com/en/articles/13851150-install-financial-services-plugins-for-cowork"
 title: "Install financial services plugins for Cowork | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Install financial services plugins for Cowork | Claude Help Center"
 3.  Install financial services plugins for Cowork
 
 # Install financial services plugins for Cowork
+
+Updated today
 
 
 We offer a set of open-source plugins that extend Cowork with specialized capabilities for financial services workflows, including financial modeling, equity research, investment banking, private equity, and wealth management.
@@ -54,15 +56,15 @@ The repository also includes partner-built plugins from **LSEG** and **S&P Globa
 
 1.  From your plugin marketplace, browse the available financial services plugins.
 
-2.  Install the **financial analysis** plugin first — this is the core plugin that provides shared tools and data connectors used by all other plugins.
+2.  Install the **financial analysis** plugin first—this is the core plugin that provides shared tools and data connectors used by all other plugins.
 
 3.  Install any additional plugins based on your workflow needs.
 
-Once installed, plugins activate automatically. Skills are applied when relevant, and slash commands become available in your Cowork session.
+Once installed, plugins activate automatically. Skills are applied when relevant, or you can invoke them manually during your Cowork session by typing "/" or clicking the "+" button.
 
-## Available slash commands
+## Available Skills
 
-After installation, you can use commands like:
+After installation, you can use Skills like:
 
 - /comps \[company\] — Run a comparable company analysis
 
@@ -88,13 +90,13 @@ Access to these connectors may require a separate subscription or API key from t
 
 These plugins are designed as starting points. You can customize them to match your firm's workflows by editing the plugin files directly:
 
-- Add your firm's terminology, processes, and formatting standards to skill files
+- Add your firm's terminology, processes, and formatting standards to skill files.
 
-- Swap or add MCP connectors to point at your specific data providers
+- Swap or add MCP connectors to point at your specific data providers.
 
-- Adjust workflow instructions to reflect how your team does analysis
+- Adjust workflow instructions to reflect how your team does analysis.
 
-- Use /ppt-template to teach Claude your firm's branded PowerPoint layouts
+- Use /ppt-template to teach Claude your firm's branded PowerPoint layouts.
 
 ## Good to know
 

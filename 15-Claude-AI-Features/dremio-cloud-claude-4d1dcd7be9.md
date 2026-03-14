@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:55Z"
-last_modified: "Thu, 12 Mar 2026 04:33:53 GMT"
+fetched_at: "2026-03-14T10:16:22Z"
+last_modified: "Sat, 14 Mar 2026 03:50:19 GMT"
 source_url: "https://claude.com/connectors/dremio-cloud"
 title: "Dremio Cloud | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://docs.dremio.com/cloud/sonar/mcp-server/)[Privacy Policy](https://www.dremio.com/legal/privacy-policy/)[Support](/cdn-cgi/l/email-protection#becdcbceced1cccafedaccdbd3d7d190ddd1d3)
+  [Documentation](https://docs.dremio.com/cloud/sonar/mcp-server/)[Privacy Policy](https://www.dremio.com/legal/privacy-policy/)[Support](/cdn-cgi/l/email-protection#6615131616091412260214030b0f094805090b)
 
 Dremio provides a Model Context Protocol (MCP) server that allows AI agents to securely access, query, and reason over enterprise lakehouse data through Dremio's unified semantic layer. With Dremio's MCP offering, agents interact with data exactly as users do in Dremio—respecting fine-grained access controls, row- and column-level security, and shared business definitions. Queries are executed directly on data in your lakehouse (Iceberg, Parquet, Delta), with no data duplication or movement. Dremio's MCP server ensures that AI agents see only what they're authorized to see, while benefiting from the same semantic consistency and performance that teams rely on for analytics and BI.
 

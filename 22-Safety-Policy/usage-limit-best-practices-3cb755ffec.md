@@ -1,11 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-12T08:19:46Z"
+fetched_at: "2026-03-14T10:16:52Z"
 source_url: "https://support.claude.com/en/articles/9797557-usage-limit-best-practices"
 title: "Usage limit best practices | Claude Help Center"
 ---
 
 # Usage limit best practices
+
+Updated today
 
 
 The number of messages you can send will vary based on your Claude plan. For more information on your plan’s usage, refer to the following resources.

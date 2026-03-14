@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:19:58Z"
+fetched_at: "2026-03-14T10:17:07Z"
 source_url: "https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans"
 title: "Configure custom data retention controls for Enterprise plans | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Configure custom data retention controls for Enterprise plans | Claude H
 4.  Configure custom data retention controls for Enterprise plans
 
 # Configure custom data retention controls for Enterprise plans
+
+Updated today
 
 
 This feature is available to Enterprise plan customers. To set custom retention periods for your organization, you must have either a Primary Owner or Owner role.
@@ -71,13 +73,13 @@ All retention-related actions and changes are automatically tracked in **[audit 
 Related Articles
 
 
+Business Associate Agreements (BAA) for Commercial Customers
+
+
 Can you delete data that I sent via Team and Enterprise plans?
 
 
 Use Claude’s chat search and memory to build on previous context
-
-
-Using incognito chats
 
 
 View usage analytics for Team and Enterprise plans

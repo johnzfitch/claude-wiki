@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-12T08:19:37Z"
+fetched_at: "2026-03-14T10:16:42Z"
 source_url: "https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team"
 title: "Who owns and manages the data of my team? | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Who owns and manages the data of my team? | Claude Help Center"
 4.  Who owns and manages the data of my team?
 
 # Who owns and manages the data of my team?
+
+Updated today
 
 
 This article provides important information about your Claude for Work account associated with your organization's Claude for Work plan (Team or Enterprise plans). It includes details about data access and control that were shared with you when your Claude for Work plan account was set up.
@@ -42,7 +44,7 @@ Related Articles
 Does Anthropic Act as a Data Processor or Controller?
 
 
-Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
+Configure custom data retention controls for Enterprise plans
 
 
 Manage user feedback settings on Team and Enterprise plans

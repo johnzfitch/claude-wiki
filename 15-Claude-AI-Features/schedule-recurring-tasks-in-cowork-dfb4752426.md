@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:40Z"
+fetched_at: "2026-03-14T10:16:52Z"
 source_url: "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork"
 title: "Schedule recurring tasks in Cowork | Claude Help Center"
 ---
 
 # Schedule recurring tasks in Cowork
+
+Updated today
 
 
 Scheduled tasks allow you to delegate work to Cowork by creating tasks that run automatically on a recurring basis, or on demand. Instead of starting each task from scratch, you describe it once and Claude handles it on your schedule—delivering finished outputs like reports, briefings, and summaries every time.
@@ -36,21 +38,19 @@ Each scheduled task runs as its own Cowork session. You can review the results w
 
 For Team and Enterprise organizations, admins control Cowork access through the admin toggle. For more details, see **[Cowork for Team and Enterprise plans](https://support.claude.com/en/articles/13455879)**.
 
-## 
-
 ------------------------------------------------------------------------
 
 ## Create a scheduled task
 
 There are two ways to create a scheduled task:
 
-### From any task using the /schedule command
+### From any task using the /schedule Skill
 
 1.  Open Cowork and click “+ New task” in the upper left corner to start a new task, or use an existing one.
 
-2.  Type /schedule in the task.
+2.  Type "/schedule" in the task.
 
-3.  This launches a skill to “create a scheduled task that can be run on demand or automatically on an interval.”
+3.  This launches a Skill to “create a scheduled task that can be run on demand or automatically on an interval.”
 
 4.  Add more details about the task you’re trying to create in the chat input, then click “Let’s go.”
 
@@ -108,7 +108,7 @@ To view and manage all your scheduled tasks, click “Scheduled” in the left s
 Related Articles
 
 
-Installing Claude Desktop
+Release notes
 
 
 Get started with Cowork
@@ -117,7 +117,7 @@ Get started with Cowork
 Use Cowork safely
 
 
-Use Cowork on Team and Enterprise plans
-
-
 Use plugins in Cowork
+
+
+Install financial services plugins for Cowork

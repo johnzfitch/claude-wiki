@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:40Z"
+fetched_at: "2026-03-14T10:17:10Z"
 source_url: "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program"
 title: "What is the External Researcher Access Program? | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "What is the External Researcher Access Program? | Claude Help Center"
 4.  What is the External Researcher Access Program?
 
 # What is the External Researcher Access Program?
+
+Updated today
 
 
 Our External Researcher Access Program is specifically designed to support and lower the barrier to entry for researchers working on AI safety and alignment topics that we consider high priority by providing free API credits.
@@ -40,7 +42,7 @@ Please complete the following application form with details about your team and 
 
 3.  **Please note that given the substantial number of applications we receive (sometimes thousands in a single week), we regret that we cannot provide individual responses to unapproved submissions.** In addition, we reserve the right to reject submissions for any reason and will not be able to provide explanations for each individual applicant. However, we appreciate the time and effort put into each submission and will carefully review all entries. Thank you for your understanding.
 
-If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#8af8eff9efebf8e9e2eff8ebe9e9eff9f9caebe4fee2f8e5fae3e9a4e9e5e7). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
+If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#dcaeb9afb9bdaebfb4b9aebdbfbfb9afaf9cbdb2a8b4aeb3acb5bff2bfb3b1). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
 
 ------------------------------------------------------------------------
 

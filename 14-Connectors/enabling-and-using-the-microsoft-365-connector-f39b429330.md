@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-12T08:19:33Z"
+fetched_at: "2026-03-14T10:16:48Z"
 source_url: "https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector"
 title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 4.  Enabling and using the Microsoft 365 connector
 
 # Enabling and using the Microsoft 365 connector
+
+Updated today
 
 
 The Microsoft 365 connector is available for users on Team and Enterprise plans.

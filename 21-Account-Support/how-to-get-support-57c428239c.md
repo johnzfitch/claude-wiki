@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-12T08:19:31Z"
+fetched_at: "2026-03-14T10:16:39Z"
 source_url: "https://support.claude.com/en/articles/9015913-how-to-get-support"
 title: "How to get support | Claude Help Center"
 ---
 
 # How to get support
+
+Updated today
 
 
 This guide explains how to get support for your Claude or Console account. Different support options are available depending on your plan.
@@ -149,9 +151,6 @@ Users in the EU can find instructions on how to find the single point of contact
 Related Articles
 
 
-Where can I go for Claude API support and assistance?
-
-
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 
@@ -162,3 +161,6 @@ Claude Code usage analytics
 
 
 How to get support for Claude for Government
+
+
+Set up single sign-on (SSO)

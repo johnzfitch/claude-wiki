@@ -1,11 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-12T08:19:33Z"
+fetched_at: "2026-03-14T10:16:48Z"
 source_url: "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors"
 title: "Use Google Workspace connectors | Claude Help Center"
 ---
 
 # Use Google Workspace connectors
+
+Updated today
 
 
 Connect your Gmail, Google Calendar, and Google Drive to Claude so you can search emails, manage your calendar, work with documents, and save files—all without leaving the conversation.
@@ -42,7 +44,7 @@ For Team and Enterprise plans, an Owner or Primary Owner must enable these conne
 
 ### Google Drive
 
-- **Search and retrieve files** from your Drive, including Google Docs, Sheets, Slides, PDFs, and plain text files (.txt, .json, .csv, .html, .md)
+- **Search and retrieve Google Docs** from your Drive
 
 - **Add Google Docs directly to chats and projects** by pasting URLs or selecting from recent documents
 
@@ -50,9 +52,7 @@ For Team and Enterprise plans, an Owner or Primary Owner must enable these conne
 
 - **Save Claude-generated files** directly to your Drive (requires **[code execution and file creation](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)** to be enabled)
 
-**Note:** Claude extracts text content only from Google Drive files. Images embedded in documents, presentations, or spreadsheets are not processed.
-
-## 
+**Note:** Claude extracts text content only from Google Drive files. Images embedded in documents are not processed.
 
 ------------------------------------------------------------------------
 
@@ -100,8 +100,6 @@ You can enable or disable specific connectors from below the chat interface:
 
 3.  Toggle individual connectors on or off.
 
-## 
-
 ------------------------------------------------------------------------
 
 ## Google Drive Cataloging (Enterprise)
@@ -145,8 +143,6 @@ Once enabled, Claude indexes your Google Docs and uses that index during convers
 
 - When an admin turns off cataloging, all indexed data for the organization is deleted within six hours.
 
-## 
-
 ------------------------------------------------------------------------
 
 ## Privacy and data handling
@@ -175,8 +171,6 @@ Once enabled, Claude indexes your Google Docs and uses that index during convers
 
 During authentication, Google's OAuth screen mentions email sending permissions. Claude only reads emails and creates drafts with your explicit approval. The send function is not enabled — all emails must be sent manually through your Gmail account.
 
-## 
-
 ------------------------------------------------------------------------
 
 ## Current limitations
@@ -192,8 +186,6 @@ During authentication, Google's OAuth screen mentions email sending permissions.
 - Rate limits apply per Google's API quotas.
 
 - Performance may vary for large mailboxes.
-
-## 
 
 ------------------------------------------------------------------------
 
@@ -228,8 +220,6 @@ If your organization uses Google Workspace and the connectors aren’t working (
 4.  Search for “Claude” and set it as “Trusted.”
 
 5.  Wait approximately 15 minutes for Google's policy to propagate, then try connecting again.
-
-## 
 
 ------------------------------------------------------------------------
 

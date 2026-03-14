@@ -1,11 +1,13 @@
 ---
 category: "04-API-Reference"
-fetched_at: "2026-03-12T08:19:36Z"
+fetched_at: "2026-03-14T10:16:41Z"
 source_url: "https://support.claude.com/en/articles/13015708-access-the-compliance-api"
 title: "Access the Compliance API | Claude Help Center"
 ---
 
 # Access the Compliance API
+
+Updated today
 
 
 The Compliance API is generally available to Enterprise plans, excluding Public Sector organizations.
@@ -31,10 +33,10 @@ Related Articles
 What is the Enterprise plan?
 
 
-Microsoft 365 Connector: Security Guide
-
-
 Enforce network-level access control with Tenant Restrictions
+
+
+How can I check connectivity to the Claude API?
 
 
 Use Cowork on Team and Enterprise plans

@@ -1,11 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-12T08:19:33Z"
+fetched_at: "2026-03-14T10:16:48Z"
 source_url: "https://support.claude.com/en/articles/11506255-getting-started-with-claude-in-slack"
 title: "Getting started with Claude in Slack | Claude Help Center"
 ---
 
 # Getting started with Claude in Slack
+
+Updated today
 
 
 You can now integrate Claude and Slack, giving you two ways to use them together: add Claude directly to your Slack workspace, or enable the Slack connector for your Claude apps.
@@ -194,16 +196,16 @@ If you are using a company Slack instance and are not assigned to an Admin role,
 Related Articles
 
 
-Use Google Workspace connectors
-
-
 Use connectors to extend Claude's capabilities
 
 
-Getting started with Claude in Chrome
+Get started with Claude in Chrome
 
 
 Using Claude in Slack
+
+
+Getting Started with Claude for Life Sciences
 
 
 Using interactive connectors in Claude

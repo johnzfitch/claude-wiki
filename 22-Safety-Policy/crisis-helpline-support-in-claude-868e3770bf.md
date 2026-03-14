@@ -1,11 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-12T08:19:45Z"
+fetched_at: "2026-03-14T10:16:49Z"
 source_url: "https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude"
 title: "Crisis Helpline Support in Claude | Claude Help Center"
 ---
 
 # Crisis Helpline Support in Claude
+
+Updated today
 
 
 *For medical emergencies, active injuries, or situations where you're in immediate physical danger, please contact emergency services (such as 911 in the US and Canada, or 112 in much of Europe) or go to your nearest emergency room.*
@@ -146,7 +148,7 @@ Who owns and manages the data of my Claude for Education account?
 Claude Code FAQ
 
 
-How to get support for Claude for Government
+Getting started with Claude for Nonprofits
 
 
 Use Claude for Excel and PowerPoint with an LLM gateway

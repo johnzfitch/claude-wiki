@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:01Z"
-last_modified: "Thu, 12 Mar 2026 04:34:39 GMT"
+fetched_at: "2026-03-14T10:16:29Z"
+last_modified: "Sat, 14 Mar 2026 03:47:00 GMT"
 source_url: "https://claude.com/blog/trainium2-and-distillation"
 title: "Claude 3.5 Haiku on AWS Trainium2 and model distillation in Amazon Bedrock | Claude"
 ---
@@ -120,6 +120,34 @@ No items found.
 
 Explore more product news and best practices for teams building with Claude.
 
+Mar 13, 2026
+
+### 1M context is now generally available for Opus 4.6 and Sonnet 4.6
+
+Product announcements
+
+[1M context is now generally available for Opus 4.6 and Sonnet 4.6](#)
+
+1M context is now generally available for Opus 4.6 and Sonnet 4.6
+
+[1M context is now generally available for Opus 4.6 and Sonnet 4.6](/blog/1m-context-ga)
+
+1M context is now generally available for Opus 4.6 and Sonnet 4.6
+
+Mar 12, 2026
+
+### Claude now creates interactive charts, diagrams and visualizations
+
+Product announcements
+
+[Claude now creates interactive charts, diagrams and visualizations](#)
+
+Claude now creates interactive charts, diagrams and visualizations
+
+[Claude now creates interactive charts, diagrams and visualizations](/blog/claude-builds-visuals)
+
+Claude now creates interactive charts, diagrams and visualizations
+
 Feb 17, 2026
 
 ### Increase web search accuracy and efficiency with dynamic filtering
@@ -147,34 +175,6 @@ Bringing Code Review to Claude Code
 [Bringing Code Review to Claude Code](/blog/code-review)
 
 Bringing Code Review to Claude Code
-
-Mar 3, 2026
-
-### Improving skill-creator: Test, measure, and refine Agent Skills
-
-Claude Code
-
-[Improving skill-creator: Test, measure, and refine Agent Skills](#)
-
-Improving skill-creator: Test, measure, and refine Agent Skills
-
-[Improving skill-creator: Test, measure, and refine Agent Skills](/blog/improving-skill-creator-test-measure-and-refine-agent-skills)
-
-Improving skill-creator: Test, measure, and refine Agent Skills
-
-Jan 26, 2026
-
-### Your favorite work tools are now interactive connectors inside Claude
-
-Product announcements
-
-[Your favorite work tools are now interactive connectors inside Claude](#)
-
-Your favorite work tools are now interactive connectors inside Claude
-
-[Your favorite work tools are now interactive connectors inside Claude](/blog/interactive-tools-in-claude)
-
-Your favorite work tools are now interactive connectors inside Claude
 
 ## Transform how your organization operates with Claude
 

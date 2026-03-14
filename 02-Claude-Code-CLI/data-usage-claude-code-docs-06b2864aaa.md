@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-12T08:19:56Z"
+fetched_at: "2026-03-14T10:17:06Z"
 source_url: "https://code.claude.com/docs/en/data-usage"
 title: "Data usage - Claude Code Docs"
 ---

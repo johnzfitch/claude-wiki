@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:40Z"
+fetched_at: "2026-03-14T10:16:54Z"
 source_url: "https://support.anthropic.com/en/articles/9519189-project-visibility-and-sharing"
 title: "Manage project visibility and sharing | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Manage project visibility and sharing | Claude Help Center"
 4.  Manage project visibility and sharing
 
 # Manage project visibility and sharing
+
+Updated today
 
 
 Project visibility and sharing features are available to users on Team or Enterprise plans. This article assumes that public projects are enabled for your organization. For more information, see **[How can I disable public projects?](https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects)**

@@ -1,11 +1,13 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-12T08:19:34Z"
+fetched_at: "2026-03-14T10:16:47Z"
 source_url: "https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls"
 title: "Claude in Chrome admin controls | Claude Help Center"
 ---
 
 # Claude in Chrome admin controls
+
+Updated today
 
 
 Claude in Chrome admin controls are available in beta for Team and Enterprise plans.
@@ -104,7 +106,7 @@ Related Articles
 Getting Started with Local MCP Servers on Claude Desktop
 
 
-Getting started with Claude in Chrome
+Get started with Claude in Chrome
 
 
 Claude in Chrome Troubleshooting

@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-12T08:19:35Z"
+fetched_at: "2026-03-14T10:16:42Z"
 source_url: "https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise"
 title: "Migrate your organization from Team to Enterprise | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Migrate your organization from Team to Enterprise | Claude Help Center"
 4.  Migrate your organization from Team to Enterprise
 
 # Migrate your organization from Team to Enterprise
+
+Updated today
 
 
 When upgrading from a Team plan to an Enterprise plan, we recommend you keep the same Team organization and follow the upgrade path to change it to Enterprise. This way your data (memberships/roles, conversations and projects) and settings will be preserved. If a you create a brand new Enterprise organization, then you'll need to set up everything from scratch.

@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:46Z"
+fetched_at: "2026-03-14T10:16:51Z"
 source_url: "https://support.claude.com/en/articles/13345190-get-started-with-cowork"
 title: "Get started with Cowork | Claude Help Center"
 ---
 
 # Get started with Cowork
 
-Updated yesterday
+Updated today
 
 
 This article explains how to use **[Cowork](https://claude.com/product/cowork)**, a research preview that brings Claude Code's agentic capabilities to Claude Desktop for knowledge work beyond coding.
@@ -151,7 +151,7 @@ Folder instructions add project-specific context to Cowork when you select a loc
 
 ## Cowork plugins
 
-Plugins customize how Claude works for your role, team, and company in Cowork. Each one bundles skills, connectors, slash commands, and sub-agents into a single package. For details on finding, installing, and customizing plugins, see **[Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)**.
+Plugins customize how Claude works for your role, team, and company in Cowork. Each one bundles skills, connectors, and sub-agents into a single package. For details on finding, installing, and customizing plugins, see **[Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)**.
 
 ------------------------------------------------------------------------
 

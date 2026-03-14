@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:55Z"
-last_modified: "Thu, 12 Mar 2026 04:33:53 GMT"
+fetched_at: "2026-03-14T10:16:22Z"
+last_modified: "Sat, 14 Mar 2026 03:50:19 GMT"
 source_url: "https://claude.com/connectors/datagrail"
 title: "DataGrail | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://docs.datagrail.io/docs/vera/vera-mcp/introduction-and-use)[Privacy Policy](https://www.datagrail.io/privacy-policy/)[Support](/cdn-cgi/l/email-protection#50232520203f22241034312431372231393c7e393f)
+  [Documentation](https://docs.datagrail.io/docs/vera/vera-mcp/introduction-and-use)[Privacy Policy](https://www.datagrail.io/privacy-policy/)[Support](/cdn-cgi/l/email-protection#2a595f5a5a45585e6a4e4b5e4b4d584b4346044345)
 
 Automate privacy operations tasks—such as data subject reporting, syncing ticket status information into other project tools, etc—using agentic workflows within Claude, transforming privacy into a connected, high-impact operational system. Built on a "No-Compromise" architecture, it ensures single-tenant isolation, human-governed actions, and zero training on customer data.
 

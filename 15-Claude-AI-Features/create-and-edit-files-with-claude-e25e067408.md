@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:44Z"
+fetched_at: "2026-03-14T10:16:56Z"
 source_url: "https://support.anthropic.com/en/articles/12111783-create-and-edit-files-with-claude"
 title: "Create and edit files with Claude | Claude Help Center"
 ---
 
 # Create and edit files with Claude
+
+Updated today
 
 
 Claude can execute code to create and work with files directly in your conversations. Prompt Claude using natural language to generate Excel spreadsheets, PowerPoint presentations, Word documents, and PDF files that you can download and use immediately.

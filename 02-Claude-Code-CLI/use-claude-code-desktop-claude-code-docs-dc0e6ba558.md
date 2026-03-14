@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-12T08:19:54Z"
+fetched_at: "2026-03-14T10:17:04Z"
 source_url: "https://code.claude.com/docs/en/desktop"
 title: "Use Claude Code Desktop - Claude Code Docs"
 ---
@@ -201,7 +201,7 @@ For local and [SSH](#ssh-sessions) sessions, click the **+** button next to the 
 
 Use skills
 
-[Skills](/docs/en/skills) extend what Claude can do. Claude loads them automatically when relevant, or you can invoke one directly: type `/` in the prompt box or click the **+** button and select **Slash commands** to browse what’s available. This includes [built-in commands](/docs/en/interactive-mode#built-in-commands), your [custom skills](/docs/en/skills#create-custom-skills), project skills from your codebase, and skills from any [installed plugins](/docs/en/plugins). Select one and it appears highlighted in the input field. Type your task after it and send as usual.
+[Skills](/docs/en/skills) extend what Claude can do. Claude loads them automatically when relevant, or you can invoke one directly: type `/` in the prompt box or click the **+** button and select **Slash commands** to browse what’s available. This includes [built-in commands](/docs/en/commands), your [custom skills](/docs/en/skills#create-custom-skills), project skills from your codebase, and skills from any [installed plugins](/docs/en/plugins). Select one and it appears highlighted in the input field. Type your task after it and send as usual.
 
 ### 
 
@@ -463,7 +463,7 @@ Click a task in the **Schedule** list to open its detail page. From here you can
 - **Review allowed permissions**: see and revoke saved tool approvals for this task from the **Always allowed** panel
 - **Delete**: remove the task and archive all sessions it created
 
-You can also manage tasks by asking Claude in any Desktop session. For example, “pause my dependency-audit task”, “delete the standup-prep task”, or “show me my scheduled tasks.” To edit a task’s prompt on disk, open `~/.claude/scheduled-tasks/<task-name>/SKILL.md` (or under [`CLAUDE_CONFIG_DIR`](/docs/en/settings#environment-variables) if set). The file uses YAML frontmatter for `name` and `description`, with the prompt as the body. Changes take effect on the next run. Schedule, folder, model, and enabled state are not in this file: change them through the Edit form or ask Claude.
+You can also manage tasks by asking Claude in any Desktop session. For example, “pause my dependency-audit task”, “delete the standup-prep task”, or “show me my scheduled tasks.” To edit a task’s prompt on disk, open `~/.claude/scheduled-tasks/<task-name>/SKILL.md` (or under [`CLAUDE_CONFIG_DIR`](/docs/en/env-vars) if set). The file uses YAML frontmatter for `name` and `description`, with the prompt as the body. Changes take effect on the next run. Schedule, folder, model, and enabled state are not in this file: change them through the Edit form or ask Claude.
 
 ## 
 
@@ -483,7 +483,7 @@ The environment you pick when [starting a session](#start-a-session) determines 
 
 Local sessions
 
-Local sessions inherit environment variables from your shell. If you need additional variables, set them in your shell profile, such as `~/.zshrc` or `~/.bashrc`, and restart the desktop app. See [environment variables](/docs/en/settings#environment-variables) for the full list of supported variables. [Extended thinking](/docs/en/common-workflows#use-extended-thinking-thinking-mode) is enabled by default, which improves performance on complex reasoning tasks but uses additional tokens. To disable thinking entirely, set `MAX_THINKING_TOKENS=0` in your shell profile. On Opus, `MAX_THINKING_TOKENS` is ignored except for `0` because adaptive reasoning controls thinking depth instead.
+Local sessions inherit environment variables from your shell. If you need additional variables, set them in your shell profile, such as `~/.zshrc` or `~/.bashrc`, and restart the desktop app. See [environment variables](/docs/en/env-vars) for the full list of supported variables. [Extended thinking](/docs/en/common-workflows#use-extended-thinking-thinking-mode) is enabled by default, which improves performance on complex reasoning tasks but uses additional tokens. To disable thinking entirely, set `MAX_THINKING_TOKENS=0` in your shell profile. On Opus, `MAX_THINKING_TOKENS` is ignored except for `0` because adaptive reasoning controls thinking depth instead.
 
 ### 
 

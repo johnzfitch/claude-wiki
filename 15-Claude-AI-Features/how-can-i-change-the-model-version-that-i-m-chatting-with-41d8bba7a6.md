@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:47Z"
+fetched_at: "2026-03-14T10:16:52Z"
 source_url: "https://support.claude.com/en/articles/8664678-how-can-i-change-the-model-version-that-i-m-chatting-with"
 title: "How can I change the model version that I’m chatting with? | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "How can I change the model version that I’m chatting with? | Claude He
 
 # How can I change the model version that I’m chatting with?
 
+Updated today
 
 Use the model selector to switch between available models:
 
@@ -33,10 +34,10 @@ Getting started with Claude
 Using extended thinking
 
 
-Sharing and Unsharing Chats
-
-
 Using incognito chats
 
 
 Can I use my Outputs to train an AI model?
+
+
+Custom visuals in chat

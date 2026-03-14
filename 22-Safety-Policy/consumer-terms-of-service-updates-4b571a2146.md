@@ -1,12 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-12T08:19:34Z"
+fetched_at: "2026-03-14T10:16:47Z"
 source_url: "https://support.claude.com/en/articles/9264813-consumer-terms-of-service-updates"
 title: "Consumer Terms of Service Updates | Claude Help Center"
 ---
 
 # Consumer Terms of Service Updates
 
+Updated today
 
 This support article covers the changes to our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) that take effect **May 1, 2024.** At Anthropic, we review our policies and terms to ensure we’re providing the highest level of protection and clarity for our users.
 
@@ -22,10 +23,10 @@ Related Articles
 How do I view and sign your Data Processing Addendum (DPA)?
 
 
-Business Associate Agreements (BAA) for Commercial Customers
-
-
 Terms of Service Updates
+
+
+Who owns and manages the data of my team?
 
 
 Does Anthropic Act as a Data Processor or Controller?

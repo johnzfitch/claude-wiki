@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:48Z"
+fetched_at: "2026-03-14T10:16:52Z"
 source_url: "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them"
 title: "What are artifacts and how do I use them? | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "What are artifacts and how do I use them? | Claude Help Center"
 4.  What are artifacts and how do I use them?
 
 # What are artifacts and how do I use them?
+
+Updated today
 
 
 Accessing artifacts in the sidebar and Claude-powered artifacts are supported on free, Pro, Max, Team, and Enterprise plans.
@@ -191,6 +193,9 @@ To share your artifacts publicly, embed them on websites, or discover artifacts 
 Related Articles
 
 
+Business Associate Agreements (BAA) for Commercial Customers
+
+
 Publishing and sharing artifacts
 
 
@@ -201,6 +206,3 @@ Get started with custom connectors using remote MCP
 
 
 Use artifacts to visualize and create AI apps, without ever writing a line of code
-
-
-What are Skills?

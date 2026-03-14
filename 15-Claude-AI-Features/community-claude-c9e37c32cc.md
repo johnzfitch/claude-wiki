@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:50Z"
-last_modified: "Thu, 12 Mar 2026 07:42:18 GMT"
+fetched_at: "2026-03-14T10:16:18Z"
+last_modified: "Sat, 14 Mar 2026 03:50:51 GMT"
 source_url: "https://claude.com/community"
 title: "Community | Claude"
 ---
@@ -39,38 +39,6 @@ title
 Location
 
 Date
-
-AU
-
-Adelaide \| Claude Code for Everyone
-
-Adelaide, AU
-
-March 12, 2026
-
-Stone & Chalk Adelaide Startup Hub, Marnirni-apinthi Building, Lot Fourteen, North Terrace, Adelaide SA 5000, Australia
-
-[Adelaide \| Claude Code for Everyone](https://luma.com/f9a3m3p9)
-
-Adelaide \| Claude Code for Everyone
-
-[](/community-events-from-luma/adelaide-claude-code-for-everyone-sSbaHX)
-
-CL
-
-Santiago \| Claude Code / Cowork / No developers
-
-Las Condes, CL
-
-March 12, 2026
-
-Callao 2911, 7550285 Las Condes, Región Metropolitana, Chile
-
-[Santiago \| Claude Code / Cowork / No developers](https://luma.com/claudecode.benditaia)
-
-Santiago \| Claude Code / Cowork / No developers
-
-[](/community-events-from-luma/santiago-claude-code-cowork-no-developers-xqBYMh)
 
 GB
 
@@ -136,6 +104,22 @@ Perth \| Claude Code for Everyone
 
 [](/community-events-from-luma/perth-claude-code-for-everyone-AlOPBh)
 
+FR
+
+Paris \| Claude Code for Developers
+
+Paris, FR
+
+March 19, 2026
+
+Cité du Figuier, 104 Rue Oberkampf, 75011 Paris, France
+
+[Paris \| Claude Code for Developers](https://luma.com/jffqynvq)
+
+Paris \| Claude Code for Developers
+
+[](/community-events-from-luma/paris-claude-code-for-developers-qwcGlC)
+
 US
 
 Chicago \| Claude Code for HealthTech
@@ -167,6 +151,22 @@ EXPEDITION FEMSA, Av. Eugenio Garza Sada Sur, Tecnologico, Distrito Tec, 64700 M
 Monterrey \| Claude Code for Everyone
 
 [](/community-events-from-luma/monterrey-claude-code-for-everyone-0wxlB0)
+
+MX
+
+Mexico City \| Claude Code for Builders - Build Day
+
+Ciudad de México, MX
+
+March 21, 2026
+
+Haab Project Condesa, Ámsterdam 255, Hipódromo Condesa, Cuauhtémoc, 06100 Ciudad de México, CDMX, Mexico
+
+[Mexico City \| Claude Code for Builders - Build Day](https://luma.com/claudemexicocity)
+
+Mexico City \| Claude Code for Builders - Build Day
+
+[](/community-events-from-luma/mexico-city-claude-code-for-builders-build-day-BwMfyy)
 
 [](?46f68bc1_page=2)
 

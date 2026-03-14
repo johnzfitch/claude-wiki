@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:05Z"
-last_modified: "Thu, 12 Mar 2026 01:52:32 GMT"
+fetched_at: "2026-03-14T10:16:37Z"
+last_modified: "Sat, 14 Mar 2026 03:52:25 GMT"
 source_url: "https://claude.com/plugins/pagerduty"
 title: "PagerDuty Pre-Commit Risk Score – Claude Plugin | Anthropic"
 ---
@@ -364,7 +364,7 @@ Score pre-commit diffs against PagerDuty incident history and surface deployment
 
   Installs
 
-  0
+  1
 
 [Play video](#)
 
@@ -392,17 +392,7 @@ Craft production-grade frontends with distinctive design. Generates polished cod
 
 Anthropic verified
 
-277472
-
-installs\
-
-[](/plugins/context7)
-
-### Context7
-
-Upstash Context7 MCP server for live docs lookup. Pull version-specific docs and code examples from source repos into LLM context.
-
-150681
+324030
 
 installs\
 
@@ -412,7 +402,17 @@ installs\
 
 Claude learns brainstorming, subagent development with code review, debugging, TDD, and skill authoring through Superpowers.
 
-143054
+182423
+
+installs\
+
+[](/plugins/context7)
+
+### Context7
+
+Upstash Context7 MCP server for live docs lookup. Pull version-specific docs and code examples from source repos into LLM context.
+
+168830
 
 installs\
 
@@ -424,7 +424,7 @@ AI code review with specialized agents and confidence-based filtering for pull r
 
 Anthropic verified
 
-129039
+148806
 
 installs\
 

@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-12T08:19:33Z"
+fetched_at: "2026-03-14T10:16:48Z"
 source_url: "https://support.claude.com/en/articles/10167454-using-the-github-integration"
 title: "Using the GitHub Integration | Claude Help Center"
 ---

@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:04Z"
-last_modified: "Thu, 12 Mar 2026 01:51:49 GMT"
+fetched_at: "2026-03-14T10:16:36Z"
+last_modified: "Sat, 14 Mar 2026 03:45:44 GMT"
 source_url: "https://claude.com/resources/tutorials/using-the-tooluniverse-extension-in-claude"
 title: "Using the ToolUniverse Extension in Claude | Claude"
 ---
@@ -1206,10 +1206,10 @@ English (US)
 
 [English (US)](/resources/tutorials/using-the-tooluniverse-extension-in-claude)
 
-[日本語 (Japan)](/ja-jp)
+[日本語 (Japan)](/ja-jp/resources/tutorials/using-the-tooluniverse-extension-in-claude)
 
 [Deutsch (Germany)](/de-de/resources/tutorials/using-the-tooluniverse-extension-in-claude)
 
-[Français (France)](/fr-fr)
+[Français (France)](/fr-fr/resources/tutorials/using-the-tooluniverse-extension-in-claude)
 
-[한국어 (South Korea)](/ko-kr)
+[한국어 (South Korea)](/ko-kr/resources/tutorials/using-the-tooluniverse-extension-in-claude)

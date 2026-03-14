@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-12T08:19:57Z"
+fetched_at: "2026-03-14T10:17:06Z"
 source_url: "https://code.claude.com/docs/en/third-party-integrations"
 title: "Enterprise deployment overview - Claude Code Docs"
 ---
@@ -54,7 +54,7 @@ Amazon Bedrock
 
 - LLM Gateway
 
-Route Bedrock traffic through your corporate proxy by setting the following [environment variables](/docs/en/settings#environment-variables):
+Route Bedrock traffic through your corporate proxy by setting the following [environment variables](/docs/en/env-vars):
 
 Report incorrect code
 
@@ -70,7 +70,7 @@ export AWS_REGION=us-east-1
 export HTTPS_PROXY='https://proxy.example.com:8080'
 ```
 
-Route Bedrock traffic through your LLM gateway by setting the following [environment variables](/docs/en/settings#environment-variables):
+Route Bedrock traffic through your LLM gateway by setting the following [environment variables](/docs/en/env-vars):
 
 Report incorrect code
 
@@ -96,7 +96,7 @@ Microsoft Foundry
 
 - LLM Gateway
 
-Route Foundry traffic through your corporate proxy by setting the following [environment variables](/docs/en/settings#environment-variables):
+Route Foundry traffic through your corporate proxy by setting the following [environment variables](/docs/en/env-vars):
 
 Report incorrect code
 
@@ -113,7 +113,7 @@ export ANTHROPIC_FOUNDRY_API_KEY=your-api-key  # Or omit for Entra ID auth
 export HTTPS_PROXY='https://proxy.example.com:8080'
 ```
 
-Route Foundry traffic through your LLM gateway by setting the following [environment variables](/docs/en/settings#environment-variables):
+Route Foundry traffic through your LLM gateway by setting the following [environment variables](/docs/en/env-vars):
 
 Report incorrect code
 
@@ -139,7 +139,7 @@ Google Vertex AI
 
 - LLM Gateway
 
-Route Vertex AI traffic through your corporate proxy by setting the following [environment variables](/docs/en/settings#environment-variables):
+Route Vertex AI traffic through your corporate proxy by setting the following [environment variables](/docs/en/env-vars):
 
 Report incorrect code
 
@@ -156,7 +156,7 @@ export ANTHROPIC_VERTEX_PROJECT_ID=your-project-id
 export HTTPS_PROXY='https://proxy.example.com:8080'
 ```
 
-Route Vertex AI traffic through your LLM gateway by setting the following [environment variables](/docs/en/settings#environment-variables):
+Route Vertex AI traffic through your LLM gateway by setting the following [environment variables](/docs/en/env-vars):
 
 Report incorrect code
 

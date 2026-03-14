@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:55Z"
-last_modified: "Thu, 12 Mar 2026 04:33:52 GMT"
+fetched_at: "2026-03-14T10:16:22Z"
+last_modified: "Sat, 14 Mar 2026 03:50:21 GMT"
 source_url: "https://claude.com/connectors/customer-io"
 title: "Customer.io | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://docs.customer.io/ai/mcp-server/)[Privacy Policy](https://customer.io/legal/privacy-policy)[Support](/cdn-cgi/l/email-protection#4037292e00233533342f2d25326e292f)
+  [Documentation](https://docs.customer.io/ai/mcp-server/)[Privacy Policy](https://customer.io/legal/privacy-policy)[Support](/cdn-cgi/l/email-protection#691e0007290a1c1a1d06040c1b470006)
 
 Let Claude work directly with your Customer.io workspace to create segments, inspect user profiles, search for customers, and access workspace data. Analyze customer attributes, manage audience targeting, and explore your workspace without switching tabs.
 

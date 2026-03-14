@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:56Z"
-last_modified: "Thu, 12 Mar 2026 04:33:54 GMT"
+fetched_at: "2026-03-14T10:16:23Z"
+last_modified: "Sat, 14 Mar 2026 03:50:21 GMT"
 source_url: "https://claude.com/connectors/mem"
 title: "Mem | Claude"
 ---
@@ -131,16 +131,14 @@ February 11, 2026
 
 Shorten links, generate QR Codes, and track performance
 
-Communication
-
 Productivity
 
 Claude
 
-February 21, 2026
+March 13, 2026
 
-[](/connectors/circleback)
+[](/connectors/calendly)
 
-### Circleback
+### Calendly
 
-Search and access context from meetings
+Manage event types, availability, and bookings.

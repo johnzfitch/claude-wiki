@@ -1,6 +1,6 @@
 ---
 category: "09-Agents-Patterns"
-fetched_at: "2026-03-12T08:19:54Z"
+fetched_at: "2026-03-14T10:17:03Z"
 source_url: "https://code.claude.com/docs/en/agent-teams"
 title: "Orchestrate teams of Claude Code sessions - Claude Code Docs"
 ---
@@ -13,7 +13,11 @@ Coordinate multiple Claude Code instances working together as a team, with share
 
 Agent teams are experimental and disabled by default. Enable them by adding `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` to your [settings.json](/docs/en/settings) or environment. Agent teams have [known limitations](#limitations) around session resumption, task coordination, and shutdown behavior.
 
-Agent teams let you coordinate multiple Claude Code instances working together. One session acts as the team lead, coordinating work, assigning tasks, and synthesizing results. Teammates work independently, each in its own context window, and communicate directly with each other. Unlike [subagents](/docs/en/sub-agents), which run within a single session and can only report back to the main agent, you can also interact with individual teammates directly without going through the lead. This page covers:
+Agent teams let you coordinate multiple Claude Code instances working together. One session acts as the team lead, coordinating work, assigning tasks, and synthesizing results. Teammates work independently, each in its own context window, and communicate directly with each other. Unlike [subagents](/docs/en/sub-agents), which run within a single session and can only report back to the main agent, you can also interact with individual teammates directly without going through the lead.
+
+Agent teams require Claude Code v2.1.32 or later. Check your version with `claude --version`.
+
+This page covers:
 
 - [When to use agent teams](#when-to-use-agent-teams), including best use cases and how they compare with subagents
 - [Starting a team](#start-your-first-agent-team)

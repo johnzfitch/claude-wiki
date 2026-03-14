@@ -1,11 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:20:02Z"
+fetched_at: "2026-03-14T10:17:10Z"
 source_url: "https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan"
 title: "Get started with the Team plan | Claude Help Center"
 ---
 
 # Get started with the Team plan
+
+Updated today
 
 
 ## Requirements to sign up for a Team plan
@@ -52,7 +54,7 @@ How do I sign up for the Pro plan?
 What is the Team plan?
 
 
-What is the Max plan?
-
-
 How do I sign up for the Max plan?
+
+
+Getting Started with Claude for Education at Your University (for Owners/Admins)

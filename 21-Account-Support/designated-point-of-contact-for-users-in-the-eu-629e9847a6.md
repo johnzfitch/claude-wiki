@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-12T08:19:34Z"
+fetched_at: "2026-03-14T10:16:48Z"
 source_url: "https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu"
 title: "Designated Point of Contact for Users in the EU | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Designated Point of Contact for Users in the EU | Claude Help Center"
 3.  Designated Point of Contact for Users in the EU
 
 # Designated Point of Contact for Users in the EU
+
+Updated today
 
 
 Users in the EU can open a support inquiry from this page via the chat tool, which serves as our single point of contact for EU users under the DSA.
@@ -28,6 +30,9 @@ Related Articles
 
 
 Using S&P Global Data for Financial Analysis
+
+
+Financial Analysis Workflows with Claude
 
 
 Use Claude for Excel

@@ -1,16 +1,18 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:19:36Z"
+fetched_at: "2026-03-14T10:16:43Z"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 title: "Team plan billing FAQs | Claude Help Center"
 ---
 
 # Team plan billing FAQs
 
+Updated today
+
 
 ## What payment methods can I use to pay for the Team plan?
 
-Accepted payment methods are credit, debit, or prepaid cards. Other forms of payment are not accepted at this time.
+Accepted payment methods are credit, debit, or prepaid cards. Other forms of payment, including ACH bank transfers, are not accepted at this time.
 
 ## How do I update my billing information and payment method?
 

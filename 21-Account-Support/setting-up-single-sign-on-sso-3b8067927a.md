@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-12T08:20:01Z"
+fetched_at: "2026-03-14T10:17:09Z"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso"
 title: "Set up single sign-on (SSO) | Claude Help Center"
 ---
 
 # Set up single sign-on (SSO)
+
+Updated today
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
@@ -179,7 +181,7 @@ Important considerations before enabling single sign-on (SSO) and JIT/SCIM provi
 Set up JIT or SCIM provisioning
 
 
-Logging in to your Console account
+Manage members on Team and Enterprise plans
 
 
 Switching to a different Identity Provider (IdP)

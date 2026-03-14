@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:46Z"
+fetched_at: "2026-03-14T10:16:53Z"
 source_url: "https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude"
 title: "Import and export your memory from Claude | Claude Help Center"
 ---

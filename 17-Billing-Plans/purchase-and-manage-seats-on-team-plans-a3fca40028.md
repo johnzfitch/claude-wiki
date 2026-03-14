@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:19:36Z"
+fetched_at: "2026-03-14T10:16:41Z"
 source_url: "https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans"
 title: "Purchase and manage seats on Team plans | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Purchase and manage seats on Team plans | Claude Help Center"
 4.  Purchase and manage seats on Team plans
 
 # Purchase and manage seats on Team plans
+
+Updated today
 
 
 Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For pricing and billing details, see **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)**

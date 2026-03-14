@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:02Z"
-last_modified: "Thu, 12 Mar 2026 01:51:49 GMT"
+fetched_at: "2026-03-14T10:16:34Z"
+last_modified: "Sat, 14 Mar 2026 03:45:32 GMT"
 source_url: "https://claude.com/resources/tutorials/how-to-use-the-instrument-data-to-allotrope-skill-with-claude"
 title: "How to use the Instrument Data to Allotrope Skill with Claude | Claude"
 ---

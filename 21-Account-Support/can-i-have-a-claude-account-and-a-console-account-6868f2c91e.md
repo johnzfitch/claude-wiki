@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-12T08:19:40Z"
+fetched_at: "2026-03-14T10:17:10Z"
 source_url: "https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account"
 title: "Can I have a Claude account and a Console account? | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "Can I have a Claude account and a Console account? | Claude Help Center"
 
 # Can I have a Claude account and a Console account?
 
+Updated today
 
 Yes. You can have a Claude account (free, Pro, Max, Team, or Enterprise) and a Console account (to access the Claude API) with the same email address. These two accounts will operate independently.
 
@@ -17,7 +18,10 @@ Yes. You can have a Claude account (free, Pro, Max, Team, or Enterprise) and a C
 Related Articles
 
 
-Business Associate Agreements (BAA) for Commercial Customers
+Can you delete data that I sent via Team and Enterprise plans?
+
+
+Choosing a Claude plan
 
 
 Using Claude Code with your Pro or Max plan
@@ -27,6 +31,3 @@ Claude 4 Invite Contest
 
 
 Claude Code FAQ
-
-
-Claude in Chrome Troubleshooting

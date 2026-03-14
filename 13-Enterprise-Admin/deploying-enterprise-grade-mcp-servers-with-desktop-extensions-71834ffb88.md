@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-12T08:19:48Z"
+fetched_at: "2026-03-14T10:16:49Z"
 source_url: "https://support.claude.com/en/articles/12702546-deploying-enterprise-grade-mcp-servers-with-desktop-extensions"
 title: "Deploying enterprise-grade MCP servers with desktop extensions | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Deploying enterprise-grade MCP servers with desktop extensions | Claude 
 4.  Deploying enterprise-grade MCP servers with desktop extensions
 
 # Deploying enterprise-grade MCP servers with desktop extensions
+
+Updated today
 
 
 Desktop extensions are installable packages that run Model Context Protocol (MCP) servers locally on your machine. They provide Claude Desktop with secure access to your local resources, internal systems, and personal tools without the complexity of remote infrastructure.
