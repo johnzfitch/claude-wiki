@@ -1,7 +1,7 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:18:37Z"
-last_modified: "Thu, 12 Mar 2026 01:51:06 GMT"
+fetched_at: "2026-03-14T10:16:04Z"
+last_modified: "Sat, 14 Mar 2026 03:45:18 GMT"
 source_url: "https://claude.com/pricing/max"
 title: "Max plan | Claude"
 ---

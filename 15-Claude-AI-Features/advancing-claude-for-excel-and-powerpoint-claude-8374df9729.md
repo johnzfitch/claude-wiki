@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:00Z"
-last_modified: "Thu, 12 Mar 2026 04:33:48 GMT"
+fetched_at: "2026-03-14T10:16:28Z"
+last_modified: "Sat, 14 Mar 2026 03:46:26 GMT"
 source_url: "https://claude.com/blog/claude-excel-powerpoint-updates"
 title: "Advancing Claude for Excel and PowerPoint | Claude"
 ---
@@ -52,10 +52,6 @@ Starting today, [Claude for Excel](https://claude.com/claude-in-excel)  and [Cl
 Skills are also now available inside the Excel and PowerPoint add-ins, and Claude for Excel and PowerPoint are available via the three leading cloud platforms: Amazon Bedrock, Google Cloud’s Vertex AI, and Microsoft Foundry.
 
 These updates enable Claude to move between tasks, spreadsheets, and slides, so you can work with a higher degree of efficiency and quality, without having to re-explain at every step. 
-
-# An error occurred.
-
-Unable to execute JavaScript.
 
 ## One conversation across Excel and PowerPoint
 
@@ -126,6 +122,20 @@ No items found.
 
 Explore more product news and best practices for teams building with Claude.
 
+Mar 13, 2026
+
+### 1M context is now generally available for Opus 4.6 and Sonnet 4.6
+
+Product announcements
+
+[1M context is now generally available for Opus 4.6 and Sonnet 4.6](#)
+
+1M context is now generally available for Opus 4.6 and Sonnet 4.6
+
+[1M context is now generally available for Opus 4.6 and Sonnet 4.6](/blog/1m-context-ga)
+
+1M context is now generally available for Opus 4.6 and Sonnet 4.6
+
 Feb 24, 2026
 
 ### Cowork and plugins for finance
@@ -167,20 +177,6 @@ Claude Enterprise, now available self-serve
 [Claude Enterprise, now available self-serve](/blog/self-serve-enterprise)
 
 Claude Enterprise, now available self-serve
-
-Nov 17, 2025
-
-### How three YC startups built their companies with Claude Code
-
-Claude Code
-
-[How three YC startups built their companies with Claude Code](#)
-
-How three YC startups built their companies with Claude Code
-
-[How three YC startups built their companies with Claude Code](/blog/building-companies-with-claude-code)
-
-How three YC startups built their companies with Claude Code
 
 ## Transform how your organization operates with Claude
 

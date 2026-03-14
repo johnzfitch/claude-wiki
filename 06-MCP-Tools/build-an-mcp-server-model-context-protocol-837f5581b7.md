@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:06Z"
+fetched_at: "2026-03-14T10:16:39Z"
 source_url: "https://modelcontextprotocol.io/docs/develop/build-server"
 title: "Build an MCP server - Model Context Protocol"
 ---
@@ -46,6 +46,8 @@ This tutorial will primarily focus on tools.
 - Kotlin
 
 - C#
+
+- Ruby
 
 - Rust
 
@@ -1795,11 +1797,341 @@ This tells Claude for Desktop:
 1.  There’s an MCP server named “weather”
 2.  Launch it by running `dotnet run /ABSOLUTE/PATH/TO/PROJECT` Save the file, and restart **Claude for Desktop**.
 
-Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-rust)
+Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-ruby)
 
 ### 
 
 [​](#prerequisite-knowledge-5)
+
+Prerequisite knowledge
+
+This quickstart assumes you have familiarity with:
+
+- Ruby
+- LLMs like Claude
+
+### 
+
+[​](#logging-in-mcp-servers-6)
+
+Logging in MCP Servers
+
+When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `puts` or `print`, as they write to standard output (stdout) by default. Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
+
+### 
+
+[​](#best-practices-6)
+
+Best Practices
+
+- Use a logging library that writes to stderr or files.
+
+### 
+
+[​](#quick-examples-3)
+
+Quick Examples
+
+Copy
+
+``` shiki
+# ❌ Bad (STDIO)
+puts "Processing request"
+
+# ✅ Good (STDIO)
+require "logger"
+logger = Logger.new($stderr)
+logger.info("Processing request")
+```
+
+### 
+
+[​](#system-requirements-6)
+
+System requirements
+
+- Ruby 2.7 or higher installed.
+
+### 
+
+[​](#set-up-your-environment-6)
+
+Set up your environment
+
+First, let’s make sure you have Ruby installed. You can check by running:
+
+Copy
+
+``` shiki
+ruby --version
+```
+
+Now, let’s create and set up our project:
+
+macOS/Linux
+
+Windows
+
+Copy
+
+``` shiki
+# Create a new directory for our project
+mkdir weather
+cd weather
+
+# Create a Gemfile
+bundle init
+
+# Add the MCP SDK dependency
+bundle add mcp
+
+# Install dependencies
+bundle install
+
+# Create our server file
+touch weather.rb
+```
+
+Now let’s dive into building your server.
+
+## 
+
+[​](#building-your-server-6)
+
+Building your server
+
+### 
+
+[​](#importing-packages-and-setting-up-constants)
+
+Importing packages and setting up constants
+
+Open `weather.rb` and add these requires and constants at the top:
+
+Copy
+
+``` shiki
+require "json"
+require "mcp"
+require "net/http"
+require "uri"
+
+NWS_API_BASE = "https://api.weather.gov"
+USER_AGENT = "weather-app/1.0"
+```
+
+The `mcp` gem provides the Model Context Protocol SDK for Ruby, with classes for server implementation and stdio transport.
+
+### 
+
+[​](#helper-methods)
+
+Helper methods
+
+Next, let’s add helper methods for querying and formatting data from the National Weather Service API:
+
+Copy
+
+``` shiki
+module HelperMethods
+  def make_nws_request(url)
+    uri = URI(url)
+    request = Net::HTTP::Get.new(uri)
+    request["User-Agent"] = USER_AGENT
+    request["Accept"] = "application/geo+json"
+
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+      http.request(request)
+    end
+
+    raise "HTTP #{response.code}: #{response.message}" unless response.is_a?(Net::HTTPSuccess)
+
+    JSON.parse(response.body)
+  end
+
+  def format_alert(feature)
+    properties = feature["properties"]
+
+    <<~ALERT
+      Event: #{properties["event"] || "Unknown"}
+      Area: #{properties["areaDesc"] || "Unknown"}
+      Severity: #{properties["severity"] || "Unknown"}
+      Description: #{properties["description"] || "No description available"}
+      Instructions: #{properties["instruction"] || "No specific instructions provided"}
+    ALERT
+  end
+end
+```
+
+### 
+
+[​](#implementing-tool-execution-4)
+
+Implementing tool execution
+
+Now let’s define our tool classes. Each tool subclasses `MCP::Tool` and implements the tool logic:
+
+Copy
+
+``` shiki
+class GetAlerts < MCP::Tool
+  extend HelperMethods
+
+  tool_name "get_alerts"
+  description "Get weather alerts for a US state"
+  input_schema(
+    properties: {
+      state: {
+        type: "string",
+        description: "Two-letter US state code (e.g. CA, NY)"
+      }
+    },
+    required: ["state"]
+  )
+
+  def self.call(state:)
+    url = "#{NWS_API_BASE}/alerts/active/area/#{state.upcase}"
+    data = make_nws_request(url)
+
+    if data["features"].empty?
+      return MCP::Tool::Response.new([{
+        type: "text",
+        text: "No active alerts for this state."
+      }])
+    end
+
+    alerts = data["features"].map { |feature| format_alert(feature) }
+    MCP::Tool::Response.new([{
+      type: "text",
+      text: alerts.join("\n---\n")
+    }])
+  end
+end
+
+class GetForecast < MCP::Tool
+  extend HelperMethods
+
+  tool_name "get_forecast"
+  description "Get weather forecast for a location"
+  input_schema(
+    properties: {
+      latitude: {
+        type: "number",
+        description: "Latitude of the location"
+      },
+      longitude: {
+        type: "number",
+        description: "Longitude of the location"
+      }
+    },
+    required: ["latitude", "longitude"]
+  )
+
+  def self.call(latitude:, longitude:)
+    # First get the forecast grid endpoint.
+    points_url = "#{NWS_API_BASE}/points/#{latitude},#{longitude}"
+    points_data = make_nws_request(points_url)
+
+    # Get the forecast URL from the points response.
+    forecast_url = points_data["properties"]["forecast"]
+    forecast_data = make_nws_request(forecast_url)
+
+    # Format the periods into a readable forecast.
+    periods = forecast_data["properties"]["periods"]
+    forecasts = periods.first(5).map do |period|
+      <<~FORECAST
+        #{period["name"]}:
+        Temperature: #{period["temperature"]}°#{period["temperatureUnit"]}
+        Wind: #{period["windSpeed"]} #{period["windDirection"]}
+        Forecast: #{period["detailedForecast"]}
+      FORECAST
+    end
+
+    MCP::Tool::Response.new([{
+      type: "text",
+      text: forecasts.join("\n---\n")
+    }])
+  end
+end
+```
+
+### 
+
+[​](#running-the-server-6)
+
+Running the server
+
+Finally, initialize and run the server:
+
+Copy
+
+``` shiki
+server = MCP::Server.new(
+  name: "weather",
+  version: "1.0.0",
+  tools: [GetAlerts, GetForecast]
+)
+
+transport = MCP::Server::Transports::StdioTransport.new(server)
+transport.open
+```
+
+Your server is complete! Run `bundle exec ruby weather.rb` to start the MCP server, which will listen for messages from MCP hosts.Let’s now test your server from an existing MCP host, Claude for Desktop.
+
+## 
+
+[​](#testing-your-server-with-claude-for-desktop-6)
+
+Testing your server with Claude for Desktop
+
+Claude for Desktop is not yet available on Linux. Linux users can proceed to the [Building a client](/docs/develop/build-client) tutorial to build an MCP client that connects to the server we just built.
+
+First, make sure you have Claude for Desktop installed. [You can install the latest version here.](https://claude.ai/download) If you already have Claude for Desktop, **make sure it’s updated to the latest version.**We’ll need to configure Claude for Desktop for whichever MCP servers you want to use. To do this, open your Claude for Desktop App configuration at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. Make sure to create the file if it doesn’t exist.For example, if you have [VS Code](https://code.visualstudio.com/) installed:
+
+macOS/Linux
+
+Windows
+
+Copy
+
+``` shiki
+code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+```
+
+You’ll then add your servers in the `mcpServers` key. The MCP UI elements will only show up in Claude for Desktop if at least one server is properly configured.In this case, we’ll add our single weather server like so:
+
+macOS/Linux
+
+Windows
+
+Copy
+
+``` shiki
+{
+  "mcpServers": {
+    "weather": {
+      "command": "bundle",
+      "args": ["exec", "ruby", "weather.rb"],
+      "cwd": "/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather"
+    }
+  }
+}
+```
+
+Make sure you pass in the absolute path to your project directory in the `cwd` field. You can get this by running `pwd` on macOS/Linux or `cd` on Windows Command Prompt from your project directory. On Windows, remember to use double backslashes (`\\`) or forward slashes (`/`) in the JSON path.
+
+This tells Claude for Desktop:
+
+1.  There’s an MCP server named “weather”
+2.  Launch it by running `bundle exec ruby weather.rb` in the specified directory
+
+Save the file, and restart **Claude for Desktop**.
+
+Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-rust)
+
+### 
+
+[​](#prerequisite-knowledge-6)
 
 Prerequisite knowledge
 
@@ -1811,7 +2143,7 @@ This quickstart assumes you have familiarity with:
 
 ### 
 
-[​](#logging-in-mcp-servers-6)
+[​](#logging-in-mcp-servers-7)
 
 Logging in MCP Servers
 
@@ -1819,7 +2151,7 @@ When implementing MCP servers, be careful about how you handle logging:**For STD
 
 ### 
 
-[​](#best-practices-6)
+[​](#best-practices-7)
 
 Best Practices
 
@@ -1828,7 +2160,7 @@ Best Practices
 
 ### 
 
-[​](#quick-examples-3)
+[​](#quick-examples-4)
 
 Quick Examples
 
@@ -1844,7 +2176,7 @@ eprintln!("Processing request"); // writes to stderr
 
 ### 
 
-[​](#system-requirements-6)
+[​](#system-requirements-7)
 
 System requirements
 
@@ -1853,7 +2185,7 @@ System requirements
 
 ### 
 
-[​](#set-up-your-environment-6)
+[​](#set-up-your-environment-7)
 
 Set up your environment
 
@@ -1919,7 +2251,7 @@ Now let’s dive into building your server.
 
 ## 
 
-[​](#building-your-server-6)
+[​](#building-your-server-7)
 
 Building your server
 
@@ -2194,7 +2526,7 @@ impl ServerHandler for Weather {
 
 ### 
 
-[​](#running-the-server-6)
+[​](#running-the-server-7)
 
 Running the server
 
@@ -2224,7 +2556,7 @@ The compiled binary will be in `target/release/weather`.Let’s now test your se
 
 ## 
 
-[​](#testing-your-server-with-claude-for-desktop-6)
+[​](#testing-your-server-with-claude-for-desktop-7)
 
 Testing your server with Claude for Desktop
 
@@ -2273,7 +2605,7 @@ Let’s get started with building our weather server! [You can find the complete
 
 ### 
 
-[​](#prerequisite-knowledge-6)
+[​](#prerequisite-knowledge-7)
 
 Prerequisite knowledge
 
@@ -2284,7 +2616,7 @@ This quickstart assumes you have familiarity with:
 
 ### 
 
-[​](#logging-in-mcp-servers-7)
+[​](#logging-in-mcp-servers-8)
 
 Logging in MCP Servers
 
@@ -2292,7 +2624,7 @@ When implementing MCP servers, be careful about how you handle logging:**For STD
 
 ### 
 
-[​](#best-practices-7)
+[​](#best-practices-8)
 
 Best Practices
 
@@ -2301,7 +2633,7 @@ Best Practices
 
 ### 
 
-[​](#quick-examples-4)
+[​](#quick-examples-5)
 
 Quick Examples
 
@@ -2320,7 +2652,7 @@ fmt.Fprintln(os.Stderr, "Processing request")
 
 ### 
 
-[​](#system-requirements-7)
+[​](#system-requirements-8)
 
 System requirements
 
@@ -2328,7 +2660,7 @@ System requirements
 
 ### 
 
-[​](#set-up-your-environment-7)
+[​](#set-up-your-environment-8)
 
 Set up your environment
 
@@ -2367,7 +2699,7 @@ Now let’s dive into building your server.
 
 ## 
 
-[​](#building-your-server-7)
+[​](#building-your-server-8)
 
 Building your server
 
@@ -2531,7 +2863,7 @@ Forecast: %s
 
 ### 
 
-[​](#implementing-tool-execution-4)
+[​](#implementing-tool-execution-5)
 
 Implementing tool execution
 
@@ -2641,7 +2973,7 @@ func getAlerts(ctx context.Context, req *mcp.CallToolRequest, input AlertsInput)
 
 ### 
 
-[​](#running-the-server-7)
+[​](#running-the-server-8)
 
 Running the server
 
@@ -2688,7 +3020,7 @@ The compiled binary will be in `./weather`.Let’s now test your server from an 
 
 ## 
 
-[​](#testing-your-server-with-claude-for-desktop-7)
+[​](#testing-your-server-with-claude-for-desktop-8)
 
 Testing your server with Claude for Desktop
 

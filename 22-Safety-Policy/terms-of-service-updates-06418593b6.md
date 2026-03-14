@@ -1,12 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-12T08:19:34Z"
+fetched_at: "2026-03-14T10:16:47Z"
 source_url: "https://support.claude.com/en/articles/9190861-terms-of-service-updates"
 title: "Terms of Service Updates | Claude Help Center"
 ---
 
 # Terms of Service Updates
 
+Updated today
 
 At Anthropic, we review our policies and terms to ensure we’re providing the highest level of protection and clarity for our users. This support article covers the changes to our [Consumer Terms of Service](https://url8792.mail.anthropic.com/ls/click?upn=Lkx8Cped8oFc76RI0OmCv1x2RnLlvUgqfB7RzVLsApSvXyt2orRCkRvrp5vRvHrkM02x8yqyYKxTIS8oXAHw9g-3D-3DfJPg_p0ShPCpPTvtmEuEJGvYe3eZztZgqCzhfInQjZFOB8cYRmzkXlX-2F26zBeoLc5XmuQcIC7AByEcAH6aKBGtzcqbozCwRm-2BFPGZ8TunE3aWyP81EjtJMYEdpRjsVGDi8bK9mMPPBDadFxbbkgmw739a6fHxTbnAi8Y4aCFW42Nzyn3HMexOLV6MJQ2RonSn6heCcZqEyvBkh7G4p1ikXL1I6yft9HcHGhdu1-2BG-2FQyYgk9rdJLRDz2gl-2FdqJEOwYFJNAo74gNvaRKihUP3-2FUP-2BImT68RTvLpJZW84cDDNBnEyceCsra2ryL1x8ixmbViPSic-2FDY82VodR-2FVC-2FFE4sPfHzaekeNRxJ1QfWsFVbfdCLAxUejSPkAGef5ImpnY3vViNI8t7n-2FAbj9PolZu13aEYzJL-2F7LQzKU0WLq8J6xqgXE4vY5aJtasTuusml2A6XwFW-2F95oNGiNMk3EQ94rYU3ZzzDdq0TBqHhCV-2F0dcg3hJp2Z8CdIPbRPl7yGN4tOqRT8-2BR3PgxEC4njObPO7Qne-2Bv0dTtvznflhiMHNxWgYqJ5hNB-2B7T03wQo4RQDlV9ct1yYtoLXpXIdjbCIcN2knP2ekj-2FK63d58EDAOWn313Morx49RRMPpfuOqzFopOJ85GYnwYNfQeiSqTNH4Trw1bM7sgjHSrBFOz8WXL4xvxYZZagHoT2vejvIOh3WeyNBx7l05SzFFTM-2F1sKyVjecSmLTyvuc8hFD3YE8IiIAIpeVVdIMjEBtQYynO0Zn96llK6apib8fLvf2zHKIw9-2BOoAxTBKDnYOb4aalzMKjayA41b7ailwCpHlXSAQYlXuvZyGfyXULmF2hL3lkzKyTVOUafBDqUDUHjfg3vbRljY4ydRU9OU-2FI3pI58FjsOoj-2FcGm8uHJ0nRiTYzFbacJXiyZvA3BiRQihR8D2m563hLFZaTPWvgXyOaWo6p3ta9sqEI-2BeRT3c4V8RCDMqVyx27-2BsnWyFKD8hy6hxLpY1RSbOLxLHtZ-2FkvnvQY1wVQWLt5dmEZwR-2FeTVF7t23IA6rbHMeoTg-3D-3D) that take effect **April 15, 2024**.
 

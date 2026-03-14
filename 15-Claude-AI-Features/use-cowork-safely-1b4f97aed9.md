@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:47Z"
+fetched_at: "2026-03-14T10:16:51Z"
 source_url: "https://support.claude.com/en/articles/13364135-use-cowork-safely"
 title: "Use Cowork safely | Claude Help Center"
 ---
 
 # Use Cowork safely
 
-Updated yesterday
+Updated today
 
 
 ## Availability
@@ -94,7 +94,7 @@ Note that network egress permissions don't apply to the **[web search tool](http
 
 **5. Be especially cautious with unfamiliar MCPs and plugins**
 
-Desktop extensions (MCPs) and plugins expand what Claude can do, but each one introduces new ways for attacks to reach Claude. Plugins bundle together skills, connectors, slash commands, and sub-agents into a single package, which means installing one can significantly expand Claude's scope of action.
+Desktop extensions (MCPs) and plugins expand what Claude can do, but each one introduces new ways for attacks to reach Claude. Plugins bundle together skills, connectors, and sub-agents into a single package, which means installing one can significantly expand Claude's scope of action.
 
 Stick to verified extensions from the Claude Desktop directory, and carefully evaluate the permissions any extension or plugin requests before installing.
 
@@ -106,7 +106,7 @@ When using the Claude for Excel and Claude for PowerPoint add-ins with Cowork, C
 
 **7. Report suspicious behavior immediately**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#e59096809796848380919ca5848b918d978a958c86cb868a88) or use the in-app feedback button. Your reports help us improve our defenses.
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#681d1b0d1a1b090e0d1c112809061c001a0718010b460b0705) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 
@@ -140,7 +140,7 @@ Get started with Cowork
 Use Cowork on Team and Enterprise plans
 
 
-Use plugins in Cowork
+Install financial services plugins for Cowork
 
 
 Schedule recurring tasks in Cowork

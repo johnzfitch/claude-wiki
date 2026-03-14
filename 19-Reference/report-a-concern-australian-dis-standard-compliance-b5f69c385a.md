@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-12T08:19:34Z"
+fetched_at: "2026-03-14T10:16:47Z"
 source_url: "https://support.claude.com/en/articles/12335811-report-a-concern-australian-dis-standard-compliance"
 title: "Report a Concern: Australian DIS Standard compliance | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Report a Concern: Australian DIS Standard compliance | Claude Help Cente
 3.  Report a Concern: Australian DIS Standard compliance
 
 # Report a Concern: Australian DIS Standard compliance
+
+Updated today
 
 
 Users in Australia can report concerns about Anthropic's compliance with the Digital Industry Standard (DIS Standard) [here](https://docs.google.com/forms/d/e/1FAIpQLScZbBlN2JjMFE6IygxBOEhISAEtXbbe3P5e1wJY766UiEVj5Q/viewform).

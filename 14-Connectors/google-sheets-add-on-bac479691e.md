@@ -1,11 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-12T08:19:40Z"
+fetched_at: "2026-03-14T10:17:09Z"
 source_url: "https://support.claude.com/en/articles/13162029-google-sheets-add-on"
 title: "Google Sheets add-on | Claude Help Center"
 ---
 
 # Google Sheets add-on
+
+Updated today
 
 
 The [Claude for Sheets extension](https://workspace.google.com/marketplace/app/claude%5Ffor%5Fsheets/909417792257) integrates Claude into Google Sheets, allowing you to execute interactions with Claude directly in cells.
@@ -168,16 +170,16 @@ For more information regarding this extension, see the [Claude for Sheets Google
 Related Articles
 
 
-Getting started with Claude in Chrome
-
-
-Release notes
+Get started with Claude in Chrome
 
 
 Use Claude for Excel
 
 
 Using Claude in Microsoft Foundry
+
+
+Enforce network-level access control with Tenant Restrictions
 
 
 Use Claude for Excel and PowerPoint with an LLM gateway

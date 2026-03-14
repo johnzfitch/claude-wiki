@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-12T08:19:35Z"
+fetched_at: "2026-03-14T10:16:42Z"
 source_url: "https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions"
 title: "Enforce network-level access control with Tenant Restrictions | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Enforce network-level access control with Tenant Restrictions | Claude H
 4.  Enforce network-level access control with Tenant Restrictions
 
 # Enforce network-level access control with Tenant Restrictions
+
+Updated today
 
 
 Tenant Restrictions are available for members of Enterprise plans and Console organizations.
@@ -58,7 +60,7 @@ Members of Console organizations can find this in **[Settings \> Organization](h
 Configure your proxy to inject the header for Claude traffic:
 
     Rule: Claude Tenant Restriction
-    Application: claude.ai, api.anthropic.com
+    Application: claude.ai, api.anthropic.com, claude.com, anthropic.com
     Action: Inject Header
     Header Name: anthropic-allowed-org-ids
     Header Value: 
@@ -72,7 +74,7 @@ From restricted network, test with your org's API key:
       -H "x-api-key: $CLAUDE_API_KEY" \
       -H "anthropic-version: 2023-06-01" \
       -H "content-type: application/json" \
-      -d '{"model":"claude-sonnet-4-20250514","max_tokens":1024,"messages":
+      -d '{"model":"claude-sonnet-4-6","max_tokens":1024,"messages":
      [{"role":"user","content":"Hello"}]}'
 
 ## Error response
@@ -127,7 +129,7 @@ When access is blocked, users receive the following error:
 Related Articles
 
 
-Does Anthropic Act as a Data Processor or Controller?
+Business Associate Agreements (BAA) for Commercial Customers
 
 
 Claude Code FAQ

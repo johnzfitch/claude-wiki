@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-12T08:19:32Z"
+fetched_at: "2026-03-14T10:16:40Z"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
 title: "Release notes | Claude Help Center"
 ---
@@ -11,6 +11,16 @@ Updated today
 
 
 ## March 2026
+
+### March 12, 2026
+
+**Claude creates interactive charts, diagrams and visualizations**
+
+Claude can now create custom charts, diagrams and other visualizations in-line in its responses. For more information, see **[Custom visuals in chat](https://support.claude.com/en/articles/13979539-custom-visuals-in-chat)**.
+
+# An error occurred.
+
+Unable to execute JavaScript.
 
 ### March 11, 2026
 
@@ -400,7 +410,7 @@ How large is the Claude API’s context window?
 Claude Code model configuration
 
 
-Getting started with Claude in Chrome
+Using Claude in Microsoft Foundry
 
 
 Applying Claude Opus 4.5’s strengths to your everyday work

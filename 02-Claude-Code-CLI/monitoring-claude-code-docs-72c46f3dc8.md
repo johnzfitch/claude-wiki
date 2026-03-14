@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-12T08:19:55Z"
+fetched_at: "2026-03-14T10:17:04Z"
 source_url: "https://code.claude.com/docs/en/monitoring-usage"
 title: "Monitoring - Claude Code Docs"
 ---

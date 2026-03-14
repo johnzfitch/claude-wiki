@@ -1,16 +1,18 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:47Z"
+fetched_at: "2026-03-14T10:16:52Z"
 source_url: "https://support.claude.com/en/articles/13837440-use-plugins-in-cowork"
 title: "Use plugins in Cowork | Claude Help Center"
 ---
 
 # Use plugins in Cowork
 
+Updated today
+
 
 Plugins are available to all Cowork users on paid plans (Pro, Max, Team, Enterprise).
 
-Plugins customize how Claude works for your role, team, and company in Cowork. Each plugin bundles together skills, connectors, slash commands, and sub-agents into a single package — so instead of setting up each piece individually, you get a ready-to-go setup from the first conversation.
+Plugins customize how Claude works for your role, team, and company in Cowork. Each plugin bundles together skills, connectors, and sub-agents into a single package—so instead of setting up each piece individually, you get a ready-to-go setup from the first conversation.
 
 Claude also connects to services like Google Drive, Gmail, Slack, DocuSign, and many more. Plugins can bundle the right connectors for a given workflow so you don't have to set them up individually.
 
@@ -18,7 +20,7 @@ Claude also connects to services like Google Drive, Gmail, Slack, DocuSign, and 
 
 ## Browse available plugins
 
-Cowork includes a growing library of plugins for common knowledge work — including sales, finance, legal, marketing, HR, engineering, design, operations, data analysis, and more. Each one comes pre-configured with the skills, connectors, and commands relevant to that function.
+Cowork includes a growing library of plugins for common knowledge work—including sales, finance, legal, marketing, HR, engineering, design, operations, data analysis, and more. Each one comes pre-configured with the skills and connectors relevant to that function.
 
 We also provide **Plugin Create**, a plugin that helps you build custom plugins from scratch.
 
@@ -43,11 +45,10 @@ Plugins you add yourself are saved locally to your machine.
 
 ------------------------------------------------------------------------
 
-## Use slash commands
+## Use Skills
 
-Each plugin you install adds commands you can use while working in Cowork. Type / or click the **+** button to see available commands from your installed plugins.
+Each plugin you install adds Skills you can use while working in Cowork. Type "/" or click the "+" button to see available Skills from your installed plugins.
 
-Slash commands launch with structured forms, so running a workflow like "generate report" or "create dashboard" feels as simple as filling out a brief. Enter the details, and Claude takes it from there.
 
 ------------------------------------------------------------------------
 
@@ -59,7 +60,7 @@ After installing a plugin, you can tailor it to better fit your workflow:
 
 2.  This opens a new Cowork task with a prompt asking Claude to customize the plugin you chose.
 
-3.  Click “Let's go” to start working with Claude to adjust the plugin's skills, commands, and connectors to match how you work.
+3.  Click “Let's go” to start working with Claude to adjust the plugin's Skills and connectors to match how you work.
 
 ------------------------------------------------------------------------
 

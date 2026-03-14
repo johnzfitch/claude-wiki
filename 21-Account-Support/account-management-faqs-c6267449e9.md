@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-12T08:19:36Z"
+fetched_at: "2026-03-14T10:16:43Z"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 title: "Account management FAQs | Claude Help Center"
 ---
 
 # Account management FAQs
+
+Updated today
 
 
 ## How do I change my team name?
@@ -66,7 +68,7 @@ Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise
 Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 
-Team plan billing FAQs
+Manage extra usage for Team and seat-based Enterprise plans
 
 
 Manage members on Team and Enterprise plans

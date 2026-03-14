@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-12T08:19:33Z"
+fetched_at: "2026-03-14T10:16:49Z"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 title: "Using interactive connectors in Claude | Claude Help Center"
 ---
@@ -19,6 +19,12 @@ Interactive connectors are available for all users on Claude and Claude Desktop.
 Some connectors can now display live, interactive apps directly within your Claude conversations. Instead of returning text-only responses, these connectors render interfaces — like analytics dashboards, task boards, or design tools — that you can interact with without leaving the chat.
 
 For example, you might ask Claude about your project status, and instead of just describing it, Claude opens your Asana board right in the conversation. You can check off tasks, update statuses, and keep chatting with Claude — all in one place.
+
+Claude can also generate its own custom visuals—diagrams, charts, and simple interactive elements built from scratch for your question. When a connected service offers an interactive interface that handles your request, like an MCP app, Claude will use it. Custom visuals fill the gaps when no connector interface fits what you’re asking for.
+
+For more on Claude-generated visuals, see **[Custom visuals in chat](https://support.claude.com/en/articles/13979539-custom-visuals-in-chat)**.
+
+------------------------------------------------------------------------
 
 ## How interactive connectors appear
 
@@ -129,16 +135,16 @@ MCP Apps is the open-source extension to the Model Context Protocol that powers 
 Related Articles
 
 
-Getting Started with Local MCP Servers on Claude Desktop
-
-
 Get started with custom connectors using remote MCP
 
 
 Use connectors to extend Claude's capabilities
 
 
-Anthropic Connectors Directory FAQ
+Connect your tools to unlock a smarter, more capable AI companion
+
+
+Using the BioRender Connector in Claude
 
 
 Using the Benchling Connector in Claude

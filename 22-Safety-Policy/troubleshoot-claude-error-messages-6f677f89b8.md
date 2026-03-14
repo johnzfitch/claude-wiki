@@ -1,13 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-12T08:19:47Z"
+fetched_at: "2026-03-14T10:16:52Z"
 source_url: "https://support.claude.com/en/articles/12466728-troubleshoot-claude-error-messages"
 title: "Troubleshoot Claude error messages | Claude Help Center"
 ---
 
 # Troubleshoot Claude error messages
 
-Updated yesterday
+Updated today
 
 
 This article explains common error messages and warnings you may encounter when using Claude and provides guidance on how to address them.

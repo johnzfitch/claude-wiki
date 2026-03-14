@@ -1,176 +1,276 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-03T14:55:48Z"
+fetched_at: "2026-03-14T10:15:54Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/sessions"
-title: "Session Management - Claude API Docs"
+title: "Work with sessions - Claude API Docs"
 ---
 
-# Session Management
+# Work with sessions
 
 
-Understanding how the Claude Agent SDK handles sessions and session resumption
+How sessions persist agent conversation history, and when to use continue, resume, and fork to return to a prior run.
 
 
-# 
+A session is the conversation history the SDK accumulates while your agent works. It contains your prompt, every tool call the agent made, every tool result, and every response. The SDK writes it to disk automatically so you can return to it later.
 
-Session Management
+Returning to a session means the agent has full context from before: files it already read, analysis it already performed, decisions it already made. You can ask a follow-up question, recover from an interruption, or branch off to try a different approach.
 
-The Claude Agent SDK provides session management capabilities for handling conversation state and resumption. Sessions allow you to continue conversations across multiple interactions while maintaining full context.
+Sessions persist the **conversation**, not the filesystem. To snapshot and revert file changes the agent made, use [file checkpointing](/docs/en/agent-sdk/file-checkpointing).
+
+This guide covers how to pick the right approach for your app, the SDK interfaces that track sessions automatically, how to capture session IDs and use `resume` and `fork` manually, and what to know about resuming sessions across hosts.
 
 ## 
 
-How Sessions Work
+Choose an approach
 
-When you start a new query, the SDK automatically creates a session and returns a session ID in the initial system message. You can capture this ID to resume the session later.
+How much session handling you need depends on your application's shape. Session management comes into play when you send multiple prompts that should share context. Within a single `query()` call, the agent already takes as many turns as it needs, and permission prompts and `AskUserQuestion` are [handled in-loop](/docs/en/agent-sdk/user-input) (they don't end the call).
+
+| What you're building | What to use |
+|----|----|
+| One-shot task: single prompt, no follow-up | Nothing extra. One `query()` call handles it. |
+| Multi-turn chat in one process | [`ClaudeSDKClient` (Python) or `continue: true` (TypeScript)](#automatic-session-management). The SDK tracks the session for you with no ID handling. |
+| Pick up where you left off after a process restart | `continue_conversation=True` (Python) / `continue: true` (TypeScript). Resumes the most recent session in the directory, no ID needed. |
+| Resume a specific past session (not the most recent) | Capture the session ID and pass it to `resume`. |
+| Try an alternative approach without losing the original | Fork the session. |
+| Stateless task, don't want anything written to disk (TypeScript only) | Set [`persistSession: false`](/docs/en/agent-sdk/typescript#options). The session exists only in memory for the duration of the call. Python always persists to disk. |
 
 ### 
 
-Getting the Session ID
+Continue, resume, and fork
+
+Continue, resume, and fork are option fields you set on `query()` ([`ClaudeAgentOptions`](/docs/en/agent-sdk/python#claude-agent-options) in Python, [`Options`](/docs/en/agent-sdk/typescript#options) in TypeScript).
+
+**Continue** and **resume** both pick up an existing session and add to it. The difference is how they find that session:
+
+- **Continue** finds the most recent session in the current directory. You don't track anything. Works well when your app runs one conversation at a time.
+- **Resume** takes a specific session ID. You track the ID. Required when you have multiple sessions (for example, one per user in a multi-user app) or want to return to one that isn't the most recent.
+
+**Fork** is different: it creates a new session that starts with a copy of the original's history. The original stays unchanged. Use fork to try a different direction while keeping the option to go back.
+
+## 
+
+Automatic session management
+
+Both SDKs offer an interface that tracks session state for you across calls, so you don't pass IDs around manually. Use these for multi-turn conversations within a single process.
+
+### 
+
+Python: `ClaudeSDKClient`
+
+[`ClaudeSDKClient`](/docs/en/agent-sdk/python#claude-sdk-client) handles session IDs internally. Each call to `client.query()` automatically continues the same session. Call [`client.receive_response()`](/docs/en/agent-sdk/python#claude-sdk-client) to iterate over the messages for the current query. The client must be used as an async context manager.
+
+This example runs two queries against the same `client`. The first asks the agent to analyze a module; the second asks it to refactor that module. Because both calls go through the same client instance, the second query has full context from the first without any explicit `resume` or session ID:
+
+Python
+
+``` shiki
+import asyncio
+from claude_agent_sdk import (
+    ClaudeSDKClient,
+    ClaudeAgentOptions,
+    AssistantMessage,
+    ResultMessage,
+    TextBlock,
+)
+
+
+def print_response(message):
+    """Print only the human-readable parts of a message."""
+    if isinstance(message, AssistantMessage):
+        for block in message.content:
+            if isinstance(block, TextBlock):
+                print(block.text)
+    elif isinstance(message, ResultMessage):
+        cost = (
+            f"${message.total_cost_usd:.4f}"
+            if message.total_cost_usd is not None
+            else "N/A"
+        )
+        print(f"[done: {message.subtype}, cost: {cost}]")
+
+
+async def main():
+    options = ClaudeAgentOptions(
+        allowed_tools=["Read", "Edit", "Glob", "Grep"],
+    )
+
+    async with ClaudeSDKClient(options=options) as client:
+        # First query: client captures the session ID internally
+        await client.query("Analyze the auth module")
+        async for message in client.receive_response():
+            print_response(message)
+
+        # Second query: automatically continues the same session
+        await client.query("Now refactor it to use JWT")
+        async for message in client.receive_response():
+            print_response(message)
+
+
+asyncio.run(main())
+```
+
+See the [Python SDK reference](/docs/en/agent-sdk/python#choosing-between-query-and-claude-sdk-client) for details on when to use `ClaudeSDKClient` vs the standalone `query()` function.
+
+### 
+
+TypeScript: `continue: true`
+
+The stable TypeScript SDK (the `query()` function used throughout these docs, sometimes called V1) doesn't have a session-holding client object like Python's `ClaudeSDKClient`. Instead, pass `continue: true` on each subsequent `query()` call and the SDK picks up the most recent session in the current directory. No ID tracking required.
+
+This example makes two separate `query()` calls. The first creates a fresh session; the second sets `continue: true`, which tells the SDK to find and resume the most recent session on disk. The agent has full context from the first call:
 
 TypeScript
 
 ``` shiki
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
-let sessionId: string | undefined;
+// First query: creates a new session
+for await (const message of query({
+  prompt: "Analyze the auth module",
+  options: { allowedTools: ["Read", "Glob", "Grep"] }
+})) {
+  if (message.type === "result" && message.subtype === "success") {
+    console.log(message.result);
+  }
+}
 
-const response = query({
-  prompt: "Help me build a web application",
+// Second query: continue: true resumes the most recent session
+for await (const message of query({
+  prompt: "Now refactor it to use JWT",
   options: {
-    model: "claude-opus-4-6"
+    continue: true,
+    allowedTools: ["Read", "Edit", "Write", "Glob", "Grep"]
   }
-});
-
-for await (const message of response) {
-  // The first message is a system init message with the session ID
-  if (message.type === "system" && message.subtype === "init") {
-    sessionId = message.session_id;
-    console.log(`Session started with ID: ${sessionId}`);
-    // You can save this ID for later resumption
+})) {
+  if (message.type === "result" && message.subtype === "success") {
+    console.log(message.result);
   }
-
-  // Process other messages...
-  console.log(message);
 }
+```
 
-// Later, you can use the saved sessionId to resume
-if (sessionId) {
-  const resumedResponse = query({
-    prompt: "Continue where we left off",
-    options: {
-      resume: sessionId
-    }
-  });
-}
+There's also a [V2 preview](/docs/en/agent-sdk/typescript-v2-preview) of the TypeScript SDK that provides `createSession()` with a `send` / `stream` pattern, closer to Python's `ClaudeSDKClient` in feel. V2 is unstable and its APIs may change; the rest of this documentation uses the stable V1 `query()` function.
+
+## 
+
+Use session options with `query()`
+
+### 
+
+Capture the session ID
+
+Resume and fork require a session ID. Read it from the `session_id` field on the result message ([`ResultMessage`](/docs/en/agent-sdk/python#result-message) in Python, [`SDKResultMessage`](/docs/en/agent-sdk/typescript#sdk-result-message) in TypeScript), which is present on every result regardless of success or error. In TypeScript the ID is also available earlier as a direct field on the init `SystemMessage`; in Python it's nested inside `SystemMessage.data`.
+
+Python
+
+``` shiki
+import asyncio
+from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage
+
+
+async def main():
+    session_id = None
+
+    async for message in query(
+        prompt="Analyze the auth module and suggest improvements",
+        options=ClaudeAgentOptions(
+            allowed_tools=["Read", "Glob", "Grep"],
+        ),
+    ):
+        if isinstance(message, ResultMessage):
+            session_id = message.session_id
+            if message.subtype == "success":
+                print(message.result)
+
+    print(f"Session ID: {session_id}")
+    return session_id
+
+
+session_id = asyncio.run(main())
+```
+
+### 
+
+Resume by ID
+
+Pass a session ID to `resume` to return to that specific session. The agent picks up with full context from wherever the session left off. Common reasons to resume:
+
+- **Follow up on a completed task.** The agent already analyzed something; now you want it to act on that analysis without re-reading files.
+- **Recover from a limit.** The first run ended with `error_max_turns` or `error_max_budget_usd` (see [Handle the result](/docs/en/agent-sdk/agent-loop#handle-the-result)); resume with a higher limit.
+- **Restart your process.** You captured the ID before shutdown and want to restore the conversation.
+
+This example resumes the session from [Capture the session ID](#capture-the-session-id) with a follow-up prompt. Because you're resuming, the agent already has the prior analysis in context:
+
+Python
+
+``` shiki
+# Earlier session analyzed the code; now build on that analysis
+async for message in query(
+    prompt="Now implement the refactoring you suggested",
+    options=ClaudeAgentOptions(
+        resume=session_id,
+        allowed_tools=["Read", "Edit", "Write", "Glob", "Grep"],
+    ),
+):
+    if isinstance(message, ResultMessage) and message.subtype == "success":
+        print(message.result)
+```
+
+If a `resume` call returns a fresh session instead of the expected history, the most common cause is a mismatched `cwd`. Sessions are stored under `~/.claude/projects/<encoded-cwd>/*.jsonl`, where `<encoded-cwd>` is the absolute working directory with every non-alphanumeric character replaced by `-` (so `/Users/me/proj` becomes `-Users-me-proj`). If your resume call runs from a different directory, the SDK looks in the wrong place. The session file also needs to exist on the current machine.
+
+### 
+
+Fork to explore alternatives
+
+Forking creates a new session that starts with a copy of the original's history but diverges from that point. The fork gets its own session ID; the original's ID and history stay unchanged. You end up with two independent sessions you can resume separately.
+
+Forking branches the conversation history, not the filesystem. If a forked agent edits files, those changes are real and visible to any session working in the same directory. To branch and revert file changes, use [file checkpointing](/docs/en/agent-sdk/file-checkpointing).
+
+This example builds on [Capture the session ID](#capture-the-session-id): you've already analyzed an auth module in `session_id` and want to explore OAuth2 without losing the JWT-focused thread. The first block forks the session and captures the fork's ID (`forked_id`); the second block resumes the original `session_id` to continue down the JWT path. You now have two session IDs pointing at two separate histories:
+
+Python
+
+``` shiki
+# Fork: branch from session_id into a new session
+forked_id = None
+async for message in query(
+    prompt="Instead of JWT, implement OAuth2 for the auth module",
+    options=ClaudeAgentOptions(
+        resume=session_id,
+        fork_session=True,
+    ),
+):
+    if isinstance(message, ResultMessage):
+        forked_id = message.session_id  # The fork's ID, distinct from session_id
+        if message.subtype == "success":
+            print(message.result)
+
+print(f"Forked session: {forked_id}")
+
+# Original session is untouched; resuming it continues the JWT thread
+async for message in query(
+    prompt="Continue with the JWT approach",
+    options=ClaudeAgentOptions(resume=session_id),
+):
+    if isinstance(message, ResultMessage) and message.subtype == "success":
+        print(message.result)
 ```
 
 ## 
 
-Resuming Sessions
+Resume across hosts
 
-The SDK supports resuming sessions from previous conversation states, enabling continuous development workflows. Use the `resume` option with a session ID to continue a previous conversation.
+Session files are local to the machine that created them. To resume a session on a different host (CI workers, ephemeral containers, serverless), you have two options:
 
-TypeScript
+- **Move the session file.** Persist `~/.claude/projects/<encoded-cwd>/<session-id>.jsonl` from the first run and restore it to the same path on the new host before calling `resume`. The `cwd` must match.
+- **Don't rely on session resume.** Capture the results you need (analysis output, decisions, file diffs) as application state and pass them into a fresh session's prompt. This is often more robust than shipping transcript files around.
 
-``` shiki
-import { query } from "@anthropic-ai/claude-agent-sdk";
-
-// Resume a previous session using its ID
-const response = query({
-  prompt: "Continue implementing the authentication system from where we left off",
-  options: {
-    resume: "session-xyz", // Session ID from previous conversation
-    model: "claude-opus-4-6",
-    allowedTools: ["Read", "Edit", "Write", "Glob", "Grep", "Bash"]
-  }
-});
-
-// The conversation continues with full context from the previous session
-for await (const message of response) {
-  console.log(message);
-}
-```
-
-The SDK automatically handles loading the conversation history and context when you resume a session, allowing Claude to continue exactly where it left off.
-
-To track and revert file changes across sessions, see [File Checkpointing](/docs/en/agent-sdk/file-checkpointing).
+Both SDKs expose functions for enumerating sessions on disk and reading their messages: [`listSessions()`](/docs/en/agent-sdk/typescript#list-sessions) and [`getSessionMessages()`](/docs/en/agent-sdk/typescript#get-session-messages) in TypeScript, [`list_sessions()`](/docs/en/agent-sdk/python#list-sessions) and [`get_session_messages()`](/docs/en/agent-sdk/python#get-session-messages) in Python. Use them to build custom session pickers, cleanup logic, or transcript viewers.
 
 ## 
 
-Forking Sessions
+Related resources
 
-When resuming a session, you can choose to either continue the original session or fork it into a new branch. By default, resuming continues the original session. Use the `forkSession` option (TypeScript) or `fork_session` option (Python) to create a new session ID that starts from the resumed state.
-
-### 
-
-When to Fork a Session
-
-Forking is useful when you want to:
-
-- Explore different approaches from the same starting point
-- Create multiple conversation branches without modifying the original
-- Test changes without affecting the original session history
-- Maintain separate conversation paths for different experiments
-
-### 
-
-Forking vs Continuing
-
-| Behavior | `forkSession: false` (default) | `forkSession: true` |
-|----|----|----|
-| **Session ID** | Same as original | New session ID generated |
-| **History** | Appends to original session | Creates new branch from resume point |
-| **Original Session** | Modified | Preserved unchanged |
-| **Use Case** | Continue linear conversation | Branch to explore alternatives |
-
-### 
-
-Example: Forking a Session
-
-TypeScript
-
-``` shiki
-import { query } from "@anthropic-ai/claude-agent-sdk";
-
-// First, capture the session ID
-let sessionId: string | undefined;
-
-const response = query({
-  prompt: "Help me design a REST API",
-  options: { model: "claude-opus-4-6" }
-});
-
-for await (const message of response) {
-  if (message.type === "system" && message.subtype === "init") {
-    sessionId = message.session_id;
-    console.log(`Original session: ${sessionId}`);
-  }
-}
-
-// Fork the session to try a different approach
-const forkedResponse = query({
-  prompt: "Now let's redesign this as a GraphQL API instead",
-  options: {
-    resume: sessionId,
-    forkSession: true, // Creates a new session ID
-    model: "claude-opus-4-6"
-  }
-});
-
-for await (const message of forkedResponse) {
-  if (message.type === "system" && message.subtype === "init") {
-    console.log(`Forked session: ${message.session_id}`);
-    // This will be a different session ID
-  }
-}
-
-// The original session remains unchanged and can still be resumed
-const originalContinued = query({
-  prompt: "Add authentication to the REST API",
-  options: {
-    resume: sessionId,
-    forkSession: false, // Continue original session (default)
-    model: "claude-opus-4-6"
-  }
-});
-```
+- [How the agent loop works](/docs/en/agent-sdk/agent-loop): Understand turns, messages, and context accumulation within a session
+- [File checkpointing](/docs/en/agent-sdk/file-checkpointing): Track and revert file changes across sessions
+- [Python `ClaudeAgentOptions`](/docs/en/agent-sdk/python#claude-agent-options): Full session option reference for Python
+- [TypeScript `Options`](/docs/en/agent-sdk/typescript#options): Full session option reference for TypeScript

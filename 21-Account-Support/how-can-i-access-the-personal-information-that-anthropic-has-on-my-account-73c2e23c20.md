@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-12T08:19:35Z"
+fetched_at: "2026-03-14T10:16:43Z"
 source_url: "https://support.claude.com/en/articles/9267387-how-can-i-access-the-personal-information-that-anthropic-has-on-my-account"
 title: "How can I access the personal information that Anthropic has on my account? | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "How can I access the personal information that Anthropic has on my accou
 
 # How can I access the personal information that Anthropic has on my account?
 
+Updated today
 
 Please refer to our [Privacy Center](https://privacy.anthropic.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team) for more information about this.
 

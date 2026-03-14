@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:52Z"
-last_modified: "Thu, 12 Mar 2026 05:32:52 GMT"
+fetched_at: "2026-03-14T10:16:20Z"
+last_modified: "Sat, 14 Mar 2026 04:05:47 GMT"
 source_url: "https://claude.com/customers/descript"
 title: "Customer story | Descript | Claude"
 ---
@@ -513,6 +513,18 @@ Head of AI Engineering, Descript
 
 ## Related stories
 
+[How CircleCI built a code validation agent with Claude](/customers/circleci)
+
+How CircleCI built a code validation agent with Claude
+
+How CircleCI built a code validation agent with Claude
+
+Customer story
+
+[Customer story](/customers/circleci)
+
+Customer story
+
 [How Slack, a Salesforce company, unlocks organizational knowledge with Claude](/customers/slack)
 
 How Slack, a Salesforce company, unlocks organizational knowledge with Claude
@@ -546,18 +558,6 @@ Stripe deploys Claude Code to 1,370 engineers with zero-configuration enterprise
 Customer story
 
 [Customer story](/customers/stripe)
-
-Customer story
-
-[How Shortcut uses Opus 4.6 to tackle complex spreadsheet work for enterprises ](/customers/shortcut)
-
-How Shortcut uses Opus 4.6 to tackle complex spreadsheet work for enterprises
-
-How Shortcut uses Opus 4.6 to tackle complex spreadsheet work for enterprises
-
-Customer story
-
-[Customer story](/customers/shortcut)
 
 Customer story
 

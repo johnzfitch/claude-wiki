@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:56Z"
-last_modified: "Thu, 12 Mar 2026 04:33:53 GMT"
+fetched_at: "2026-03-14T10:16:24Z"
+last_modified: "Sat, 14 Mar 2026 03:50:20 GMT"
 source_url: "https://claude.com/connectors/omni-analytics"
 title: "Omni Analytics | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://docs.omni.co/ai/mcp)[Privacy Policy](https://www.omni.co/privacy)[Support](/cdn-cgi/l/email-protection#62111712120d1016220d0f0c0b4c010d)
+  [Documentation](https://docs.omni.co/ai/mcp)[Privacy Policy](https://www.omni.co/privacy)[Support](/cdn-cgi/l/email-protection#681b1d1818071a1c2807050601460b07)
 
 Query Omni using the same semantic model, permissions, and logic defined by your data team directly from Claude. Instantly answer questions about your business using natural language — no need to write SQL or navigate complex dashboards. Your Omni semantic model becomes Claude's knowledge of your data, enabling secure, governed, and consistent analytics workflows across your organization.
 

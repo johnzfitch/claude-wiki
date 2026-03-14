@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:53Z"
-last_modified: "Thu, 12 Mar 2026 04:33:44 GMT"
+fetched_at: "2026-03-14T10:16:20Z"
+last_modified: "Sat, 14 Mar 2026 03:50:14 GMT"
 source_url: "https://claude.com/connectors/base44"
 title: "Base44 | Claude"
 ---

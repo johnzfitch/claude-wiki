@@ -1,11 +1,13 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-12T08:19:40Z"
+fetched_at: "2026-03-14T10:16:40Z"
 source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
 title: "Using Claude with Android Apps | Claude Help Center"
 ---
 
 # Using Claude with Android Apps
+
+Updated today
 
 
 Claude can now connect with your Android device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, calendar events, set alarms and timers, find locations, and more — all through your everyday apps without copy-paste.

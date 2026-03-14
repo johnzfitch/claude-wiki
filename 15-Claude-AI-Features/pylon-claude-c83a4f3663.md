@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:57Z"
-last_modified: "Thu, 12 Mar 2026 04:33:57 GMT"
+fetched_at: "2026-03-14T10:16:24Z"
+last_modified: "Sat, 14 Mar 2026 03:50:22 GMT"
 source_url: "https://claude.com/connectors/pylon"
 title: "Pylon | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server?lang=en)[Privacy Policy](https://www.usepylon.com/privacy)[Support](/cdn-cgi/l/email-protection#295a5c5959465b5d695c5a4c5950454647074a4644)
+  [Documentation](https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server?lang=en)[Privacy Policy](https://www.usepylon.com/privacy)[Support](/cdn-cgi/l/email-protection#52212722223d202612272137222b3e3d3c7c313d3f)
 
 Access Pylon's customer support platform directly from Claude to search, manage, and resolve customer issues. Stay on top of your support queue while connecting Claude's insights to real customer conversations.
 

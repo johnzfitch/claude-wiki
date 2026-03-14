@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-12T08:19:46Z"
+fetched_at: "2026-03-14T10:16:53Z"
 source_url: "https://support.claude.com/en/articles/13756069-public-sector-faqs"
 title: "Public Sector FAQs | Claude Help Center"
 ---
 
 # Public Sector FAQs
+
+Updated today
 
 
 ## 1. Products and features
@@ -24,7 +26,7 @@ Learn more here: **[Offering expanded Claude access across all three branches of
 
 ### How do I access Claude for Government?
 
-Contact **[\[email protected\]](/cdn-cgi/l/email-protection#1060657263757350717e6478627f6079733e737f7d)** or purchase through **[Carahsoft](https://carahsoft.com/anthropic/solutions)**.
+Contact **[\[email protected\]](/cdn-cgi/l/email-protection#3343465140565073525d475b415c435a501d505c5e)** or purchase through **[Carahsoft](https://carahsoft.com/anthropic/solutions)**.
 
 ### What is the difference between Claude Enterprise and Claude for Government?
 

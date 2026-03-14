@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:19:35Z"
+fetched_at: "2026-03-14T10:16:41Z"
 source_url: "https://support.claude.com/en/articles/9927624-add-or-update-your-team-plan-s-tax-or-vat-id"
 title: "Add or update your Team plan&#x27;s tax or VAT ID | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Add or update your Team plan&#x27;s tax or VAT ID | Claude Help Center"
 4.  Add or update your Team plan's tax or VAT ID
 
 # Add or update your Team plan's tax or VAT ID
+
+Updated today
 
 
 ## Add your tax or VAT ID during signup

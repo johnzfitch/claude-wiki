@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:18:58Z"
-last_modified: "Thu, 12 Mar 2026 04:33:53 GMT"
+fetched_at: "2026-03-14T10:16:25Z"
+last_modified: "Sat, 14 Mar 2026 03:50:20 GMT"
 source_url: "https://claude.com/connectors/signnow"
 title: "SignNow | Claude"
 ---
@@ -62,7 +62,7 @@ Play video
 
   More
 
-  [Documentation](https://docs.signnow.com/docs/signnow/mcp-server)[Privacy Policy](https://legal.signnow.com/privacy-notice)[Support](/cdn-cgi/l/email-protection#e687968fa6958f8188888991c885898b)
+  [Documentation](https://docs.signnow.com/docs/signnow/mcp-server)[Privacy Policy](https://legal.signnow.com/privacy-notice)[Support](/cdn-cgi/l/email-protection#88e9f8e1c8fbe1efe6e6e7ffa6ebe7e5)
 
 Get documents signed faster without switching between tools. The SignNow MCP server connects Claude directly to your SignNow account, letting you manage the entire eSignature workflow through conversation. Send signature requests, create documents from templates and pre-fill them, track invite statuses, and retrieve signed files — all by describing what you need in plain language. Whether you're handling contracts, agreements, or approvals, Claude handles the SignNow actions so you can focus on your work instead of chasing signatures.
 
@@ -128,16 +128,14 @@ February 11, 2026
 
 Shorten links, generate QR Codes, and track performance
 
-Communication
-
 Productivity
 
 Claude
 
-February 21, 2026
+March 13, 2026
 
-[](/connectors/circleback)
+[](/connectors/calendly)
 
-### Circleback
+### Calendly
 
-Search and access context from meetings
+Manage event types, availability, and bookings.

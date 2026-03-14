@@ -1,11 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-12T08:19:33Z"
+fetched_at: "2026-03-14T10:16:48Z"
 source_url: "https://support.claude.com/en/articles/13730515-manage-claude-s-tool-access"
 title: "Manage Claude’s tool access | Claude Help Center"
 ---
 
 # Manage Claude’s tool access
+
+Updated today
 
 
 When you connect many services to Claude, you can control how those connectors are loaded into your conversations. This helps Claude work more accurately and efficiently, especially if you've added 10 or more connectors.
@@ -54,7 +56,7 @@ You can set your tool access mode per conversation by following these steps:
 
 1.  Open a chat with Claude.
 
-2.  Click the “+” button in the lower left corner of your chat, or use the slash (/) command to open the menu.
+2.  Click the “+” button in the lower left corner of your chat, or type "/" to open the menu.
 
 3.  Mouse over “Connectors,” then “Tool access.”
 
@@ -86,7 +88,7 @@ Use connectors to extend Claude's capabilities
 Getting started with Claude in Slack
 
 
-Use Claude for Excel
+Troubleshoot Claude error messages
 
 
 Using interactive connectors in Claude

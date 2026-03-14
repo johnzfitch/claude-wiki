@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-12T08:19:56Z"
+fetched_at: "2026-03-14T10:17:05Z"
 source_url: "https://code.claude.com/docs/en/fast-mode"
 title: "Speed up responses with fast mode - Claude Code Docs"
 ---
@@ -13,7 +13,11 @@ Get faster Opus 4.6 responses in Claude Code by toggling fast mode.
 
 Fast mode is in [research preview](#research-preview). The feature, pricing, and availability may change based on feedback.
 
-Fast mode is a high-speed configuration for Claude Opus 4.6, making the model 2.5x faster at a higher cost per token. Toggle it on with `/fast` when you need speed for interactive work like rapid iteration or live debugging, and toggle it off when cost matters more than latency. Fast mode is not a different model. It uses the same Opus 4.6 with a different API configuration that prioritizes speed over cost efficiency. You get identical quality and capabilities, just faster responses. What to know:
+Fast mode is a high-speed configuration for Claude Opus 4.6, making the model 2.5x faster at a higher cost per token. Toggle it on with `/fast` when you need speed for interactive work like rapid iteration or live debugging, and toggle it off when cost matters more than latency. Fast mode is not a different model. It uses the same Opus 4.6 with a different API configuration that prioritizes speed over cost efficiency. You get identical quality and capabilities, just faster responses.
+
+Fast mode requires Claude Code v2.1.36 or later. Check your version with `claude --version`.
+
+What to know:
 
 - Use `/fast` to toggle on fast mode in Claude Code CLI. Also available via `/fast` in Claude Code VS Code Extension.
 - Fast mode for Opus 4.6 pricing starts at \$30/150 MTok. Fast mode is available at a 50% discount for all plans until 11:59pm PT on February 16.
@@ -118,7 +122,7 @@ Admins can enable fast mode in:
 - **Console** (API customers): [Claude Code preferences](https://platform.claude.com/claude-code/preferences)
 - **Claude AI** (Teams and Enterprise): [Admin Settings \> Claude Code](https://claude.ai/admin-settings/claude-code)
 
-Another option to disable fast mode entirely is to set `CLAUDE_CODE_DISABLE_FAST_MODE=1`. See [Environment variables](/docs/en/settings#environment-variables).
+Another option to disable fast mode entirely is to set `CLAUDE_CODE_DISABLE_FAST_MODE=1`. See [Environment variables](/docs/en/env-vars).
 
 ### 
 
@@ -126,7 +130,7 @@ Another option to disable fast mode entirely is to set `CLAUDE_CODE_DISABLE_FAST
 
 Require per-session opt-in
 
-By default, fast mode persists across sessions: if a user enables fast mode, it stays on in future sessions. Administrators on [Teams](https://claude.com/pricing#team-&-enterprise) or [Enterprise](https://anthropic.com/contact-sales) plans can prevent this by setting `fastModePerSessionOptIn` to `true` in [managed settings](/docs/en/settings#settings-files) or [server-managed settings](/docs/en/server-managed-settings). This causes each session to start with fast mode off, requiring users to explicitly enable it with `/fast`.
+By default, fast mode persists across sessions: if a user enables fast mode, it stays on in future sessions. Administrators on [Teams](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=fast_mode_teams#team-&-enterprise) or [Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code&utm_medium=docs&utm_content=fast_mode_enterprise) plans can prevent this by setting `fastModePerSessionOptIn` to `true` in [managed settings](/docs/en/settings#settings-files) or [server-managed settings](/docs/en/server-managed-settings). This causes each session to start with fast mode off, requiring users to explicitly enable it with `/fast`.
 
 Report incorrect code
 

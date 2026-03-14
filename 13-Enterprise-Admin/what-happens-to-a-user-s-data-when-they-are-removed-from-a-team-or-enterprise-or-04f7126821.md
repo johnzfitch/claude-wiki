@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-12T08:19:35Z"
+fetched_at: "2026-03-14T10:16:42Z"
 source_url: "https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization"
 title: "What happens to a user&#x27;s data when they are removed from a Team or Enterprise organization? | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "What happens to a user&#x27;s data when they are removed from a Team or 
 4.  What happens to a user's data when they are removed from a Team or Enterprise organization?
 
 # What happens to a user's data when they are removed from a Team or Enterprise organization?
+
+Updated today
 
 
 This article explains what happens to projects and chats when a member is removed from your Team or Enterprise plan organization.

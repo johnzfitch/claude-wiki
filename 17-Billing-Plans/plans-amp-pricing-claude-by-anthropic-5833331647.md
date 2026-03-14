@@ -1,7 +1,7 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:18:33Z"
-last_modified: "Thu, 12 Mar 2026 01:51:07 GMT"
+fetched_at: "2026-03-14T10:15:58Z"
+last_modified: "Sat, 14 Mar 2026 03:45:16 GMT"
 source_url: "https://claude.com/pricing"
 title: "Plans &amp; Pricing | Claude by Anthropic"
 ---
@@ -526,31 +526,17 @@ Batch processing
 
 ### Opus 4.6
 
-Most intelligent model for building agents and coding
+Most intelligent model for agents and coding
 
 Input
 
-Prompts ≤ 200K tokens
-
 \$5 / MTok
-
-Prompts \> 200K tokens
-
-\$10 / MTok
 
 Output
 
-Prompts ≤ 200K tokens
-
 \$25 / MTok
 
-Prompts \> 200K tokens
-
-\$37.50 / MTok
-
 Prompt caching
-
-≤ 200K tokens
 
 Write
 
@@ -560,43 +546,19 @@ Read
 
 \$0.50 / MTok
 
-\> 200K tokens
-
-Write
-
-\$12.50 / MTok
-
-Read
-
-\$1.00 / MTok
-
 ### Sonnet 4.6
 
 Optimal balance of intelligence, cost, and speed
 
 Input
 
-Prompts ≤ 200K tokens
-
 \$3 / MTok
-
-Prompts \> 200K tokens
-
-\$6 / MTok
 
 Output
 
-Prompts ≤ 200K tokens
-
 \$15 / MTok
 
-Prompts \> 200K tokens
-
-\$22.50 / MTok
-
 Prompt caching
-
-≤ 200K tokens
 
 Write
 
@@ -605,16 +567,6 @@ Write
 Read
 
 \$0.30 / MTok
-
-\> 200K tokens
-
-Write
-
-\$7.50 / MTok
-
-Read
-
-\$0.60 / MTok
 
 ### Haiku 4.5
 

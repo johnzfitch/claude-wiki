@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-12T08:19:39Z"
+fetched_at: "2026-03-14T10:17:10Z"
 source_url: "https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account"
 title: "Logging in to your Console account | Claude Help Center"
 ---
 
 # Logging in to your Console account
+
+Updated today
 
 
 When you navigate to the [Claude Console](https://platform.claude.com), you will see two different options for logging in to your Console account.
@@ -94,10 +96,10 @@ Can I have a Claude account and a Console account?
 How do I log out of all active sessions?
 
 
-How can I delete my Claude Console account?
-
-
 Set up single sign-on (SSO)
 
 
 Logging in to your Claude account
+
+
+Inviting members to the Claude Console

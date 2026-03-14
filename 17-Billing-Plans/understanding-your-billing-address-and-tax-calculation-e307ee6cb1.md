@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:19:47Z"
+fetched_at: "2026-03-14T10:16:51Z"
 source_url: "https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation"
 title: "Understanding your billing address and tax calculation | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Understanding your billing address and tax calculation | Claude Help Cen
 4.  Understanding your billing address and tax calculation
 
 # Understanding your billing address and tax calculation
+
+Updated today
 
 
 Your billing address determines how taxes are calculated on your Claude purchases. This address should represent the primary place of business receiving the product.
@@ -57,4 +59,4 @@ Add or update your Claude Console organization's tax or VAT ID
 Add or update your Team plan's tax or VAT ID
 
 
-Claude Code usage analytics
+Claude Console Roles and Permissions

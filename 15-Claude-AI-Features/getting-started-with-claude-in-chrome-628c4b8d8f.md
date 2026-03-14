@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-12T08:19:34Z"
+fetched_at: "2026-03-14T10:16:56Z"
 source_url: "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome"
-title: "Getting started with Claude in Chrome | Claude Help Center"
+title: "Get started with Claude in Chrome | Claude Help Center"
 ---
 
-3.  Getting started with Claude in Chrome
+# Get started with Claude in Chrome
 
-# Getting started with Claude in Chrome
+Updated today
 
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
@@ -47,7 +47,7 @@ Start a task in Claude Desktop and let it handle work in the browser without swi
 4.  Toggle the connector on, then download and install the extension if you haven’t already.
 
 
-Completing these steps will add Claude in Chrome to the “Connectors” drop-down on your chats with Claude. This is disabled by default, so you’ll need to enable it manually for each conversation. Note that this connector only works with Haiku 4.5, Sonnet 4.5, or Opus 4.5; if you select another model in your chat window, the connector will be disabled.
+Completing these steps will add Claude in Chrome to the “Connectors” drop-down on your chats with Claude. This is disabled by default, so you’ll need to enable it manually for each conversation.
 
 ### Record a workflow
 
@@ -67,9 +67,7 @@ Claude can now read browser console output, including errors, network requests, 
 
 ### Scheduled tasks
 
-Set recurring browser tasks to run automatically on your schedule. Set it once and Claude handles it from there—daily, weekly, monthly, or annually.
-
-You can schedule your Claude in Chrome shortcuts to run automatically by clicking the clock icon in the upper right corner of the extension panel.
+Set recurring browser tasks to run automatically on your schedule. Set it once and Claude handles it from there—daily, weekly, monthly, or annually. You can schedule your Claude in Chrome shortcuts to run automatically by clicking the clock icon in the upper right corner of the extension panel.
 
 ### Follow Claude’s plan
 
@@ -83,7 +81,7 @@ Use “Ask before acting” to have Claude create a plan for your approval, then
 
 - **Opus 4.6**: Maximum reasoning power for the most demanding workflows
 
-- **Sonnet 4.5**: Best for complex, multi-step tasks
+- **Sonnet 4.6**: Best for complex, multi-step tasks
 
 - **Haiku 4.5**: Optimized for speed and responsiveness
 
@@ -143,7 +141,7 @@ Give Claude an image and tell it where to upload, whether it's an expense report
 
 ### Shortcuts
 
-Save your best-working prompts as shortcuts (also called /slash commands) and reuse these proven workflows instantly:
+Save your best-working prompts as shortcuts and reuse these proven workflows instantly:
 
 1.  After crafting a prompt that works well, save it as a shortcut.
 

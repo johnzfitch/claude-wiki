@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-12T08:19:58Z"
+fetched_at: "2026-03-14T10:16:41Z"
 source_url: "https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios"
 title: "Using Claude App Intents, Shortcuts, and Widgets on iOS | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using Claude App Intents, Shortcuts, and Widgets on iOS | Claude Help Ce
 4.  Using Claude App Intents, Shortcuts, and Widgets on iOS
 
 # Using Claude App Intents, Shortcuts, and Widgets on iOS
+
+Updated today
 
 
 The features described in this guide are available on iOS 18 and above.

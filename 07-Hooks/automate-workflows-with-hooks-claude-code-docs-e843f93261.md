@@ -1,6 +1,6 @@
 ---
 category: "07-Hooks"
-fetched_at: "2026-03-12T08:19:58Z"
+fetched_at: "2026-03-14T10:17:00Z"
 source_url: "https://code.claude.com/docs/en/hooks-guide"
 title: "Automate workflows with hooks - Claude Code Docs"
 ---
@@ -21,86 +21,58 @@ This guide covers common use cases and how to get started. For full event schema
 
 Set up your first hook
 
-The fastest way to create a hook is through the `/hooks` interactive menu in Claude Code. This walkthrough creates a desktop notification hook, so you get alerted whenever Claude is waiting for your input instead of watching the terminal.
+To create a hook, add a `hooks` block to a [settings file](#configure-hook-location). This walkthrough creates a desktop notification hook, so you get alerted whenever Claude is waiting for your input instead of watching the terminal.
 
 1
 
 [](#)
 
-Open the hooks menu
+Add the hook to your settings
 
-Type `/hooks` in the Claude Code CLI. You’ll see a list of all available hook events, plus an option to disable all hooks. Each event corresponds to a point in Claude’s lifecycle where you can run custom code. Select `Notification` to create a hook that fires when Claude needs your attention.
+Open `~/.claude/settings.json` and add a `Notification` hook. The example below uses `osascript` for macOS; see [Get notified when Claude needs input](#get-notified-when-claude-needs-input) for Linux and Windows commands.
+
+Report incorrect code
+
+Copy
+
+
+``` shiki
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code needs your attention\" with title \"Claude Code\"'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+If your settings file already has a `hooks` key, merge the `Notification` entry into it rather than replacing the whole object. You can also ask Claude to write the hook for you by describing what you want in the CLI.
 
 2
 
 [](#)
 
-Configure the matcher
+Verify the configuration
 
-The menu shows a list of matchers, which filter when the hook fires. Set the matcher to `*` to fire on all notification types. You can narrow it later by changing the matcher to a specific value like `permission_prompt` or `idle_prompt`.
+Type `/hooks` to open the hooks browser. You’ll see a list of all available hook events, with a count next to each event that has hooks configured. Select `Notification` to confirm your new hook appears in the list. Selecting the hook shows its details: the event, matcher, type, source file, and command.
 
 3
-
-[](#)
-
-Add your command
-
-Select `+ Add new hook…`. The menu prompts you for a shell command to run when the event fires. Hooks run any shell command you provide, so you can use your platform’s built-in notification tool. Copy the command for your OS:
-
-- macOS
-
-- Linux
-
-- Windows (PowerShell)
-
-Uses [`osascript`](https://ss64.com/mac/osascript.html) to trigger a native macOS notification through AppleScript:
-
-Report incorrect code
-
-Copy
-
-
-``` shiki
-osascript -e 'display notification "Claude Code needs your attention" with title "Claude Code"'
-```
-
-Uses `notify-send`, which is pre-installed on most Linux desktops with a notification daemon:
-
-Report incorrect code
-
-Copy
-
-
-``` shiki
-notify-send 'Claude Code' 'Claude Code needs your attention'
-```
-
-Uses PowerShell to show a native message box through .NET’s Windows Forms:
-
-Report incorrect code
-
-Copy
-
-
-``` shiki
-powershell.exe -Command "[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('Claude Code needs your attention', 'Claude Code')"
-```
-
-4
-
-[](#)
-
-Choose a storage location
-
-The menu asks where to save the hook configuration. Select `User settings` to store it in `~/.claude/settings.json`, which applies the hook to all your projects. You could also choose `Project settings` to scope it to the current project. See [Configure hook location](#configure-hook-location) for all available scopes.
-
-5
 
 [](#)
 
 Test the hook
 
 Press `Esc` to return to the CLI. Ask Claude to do something that requires permission, then switch away from the terminal. You should receive a desktop notification.
+
+The `/hooks` menu is read-only. To add, modify, or remove hooks, edit your settings JSON directly or ask Claude to make the change.
 
 ## 
 
@@ -122,7 +94,7 @@ Hooks let you run code at key points in Claude Code’s lifecycle: format files 
 
 Get notified when Claude needs input
 
-Get a desktop notification whenever Claude finishes working and needs your input, so you can switch to other tasks without checking the terminal. This hook uses the `Notification` event, which fires when Claude is waiting for input or permission. Each tab below uses the platform’s native notification command. Add this to `~/.claude/settings.json`, or use the [interactive walkthrough](#set-up-your-first-hook) above to configure it with `/hooks`:
+Get a desktop notification whenever Claude finishes working and needs your input, so you can switch to other tasks without checking the terminal. This hook uses the `Notification` event, which fires when Claude is waiting for input or permission. Each tab below uses the platform’s native notification command. Add this to `~/.claude/settings.json`:
 
 - macOS
 
@@ -413,6 +385,9 @@ Hook events fire at specific lifecycle points in Claude Code. When an event fire
 | `WorktreeCreate` | When a worktree is being created via `--worktree` or `isolation: "worktree"`. Replaces default git behavior |
 | `WorktreeRemove` | When a worktree is being removed, either at session exit or when a subagent finishes |
 | `PreCompact` | Before context compaction |
+| `PostCompact` | After context compaction completes |
+| `Elicitation` | When an MCP server requests user input during a tool call |
+| `ElicitationResult` | After a user responds to an MCP elicitation, before the response is sent back to the server |
 | `SessionEnd` | When a session terminates |
 
 Each hook has a `type` that determines how it runs. Most hooks use `"type": "command"`, which runs a shell command. Three other types are available:
@@ -667,7 +642,7 @@ Where you add a hook determines its scope:
 | [Plugin](/docs/en/plugins) `hooks/hooks.json` | When plugin is enabled | Yes, bundled with the plugin |
 | [Skill](/docs/en/skills) or [agent](/docs/en/sub-agents) frontmatter | While the skill or agent is active | Yes, defined in the component file |
 
-You can also use the [`/hooks` menu](/docs/en/hooks#the-hooks-menu) in Claude Code to add, delete, and view hooks interactively. To disable all hooks at once, use the toggle at the bottom of the `/hooks` menu or set `"disableAllHooks": true` in your settings file. Hooks added through the `/hooks` menu take effect immediately. If you edit settings files directly while Claude Code is running, the changes won’t take effect until you review them in the `/hooks` menu or restart your session.
+Run [`/hooks`](/docs/en/hooks#the-hooks-menu) in Claude Code to browse all configured hooks grouped by event. To disable all hooks at once, set `"disableAllHooks": true` in your settings file. If you edit settings files directly while Claude Code is running, hook changes won’t take effect until you review them in the `/hooks` menu or restart your session. This prevents unexpected hook modifications from taking effect mid-session.
 
 ## 
 
@@ -773,11 +748,7 @@ Copy
 }
 ```
 
-The endpoint should return a JSON response body using the same [output format](/docs/en/hooks#json-output) as command hooks. To block a tool call, return a 2xx response with the appropriate `hookSpecificOutput` fields. HTTP status codes alone cannot block actions. Header values support environment variable interpolation using `$VAR_NAME` or `${VAR_NAME}` syntax. Only variables listed in the `allowedEnvVars` array are resolved; all other `$VAR` references remain empty.
-
-HTTP hooks must be configured by editing your settings JSON directly. The `/hooks` interactive menu only supports adding command hooks.
-
-For full configuration options and response handling, see [HTTP hooks](/docs/en/hooks#http-hook-fields) in the reference.
+The endpoint should return a JSON response body using the same [output format](/docs/en/hooks#json-output) as command hooks. To block a tool call, return a 2xx response with the appropriate `hookSpecificOutput` fields. HTTP status codes alone cannot block actions. Header values support environment variable interpolation using `$VAR_NAME` or `${VAR_NAME}` syntax. Only variables listed in the `allowedEnvVars` array are resolved; all other `$VAR` references remain empty. For full configuration options and response handling, see [HTTP hooks](/docs/en/hooks#http-hook-fields) in the reference.
 
 ## 
 
@@ -840,7 +811,7 @@ You see a message like “PreToolUse hook error: …” in the transcript.
 
 You edited a settings file but the hooks don’t appear in the menu.
 
-- Restart your session or open `/hooks` to reload. Hooks added through the `/hooks` menu take effect immediately, but manual file edits require a reload.
+- Restart your session or open `/hooks` to reload. Manual file edits require a reload before they take effect.
 - Verify your JSON is valid (trailing commas and comments are not allowed)
 - Confirm the settings file is in the correct location: `.claude/settings.json` for project hooks, `~/.claude/settings.json` for global hooks
 

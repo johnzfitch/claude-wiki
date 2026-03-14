@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-12T08:19:48Z"
+fetched_at: "2026-03-14T10:16:50Z"
 source_url: "https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude"
 title: "Using the Benchling Connector in Claude | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using the Benchling Connector in Claude | Claude Help Center"
 3.  Using the Benchling Connector in Claude
 
 # Using the Benchling Connector in Claude
+
+Updated today
 
 
 The Benchling connector links Claude to Benchling R&D platform data, enabling scientists to ask questions and receive clear summaries with links back to source experiments, notebooks, and structured records—all while maintaining existing access permissions. This article explains how to set up and use the Benchling integration with Claude to advance your R&D workflows.

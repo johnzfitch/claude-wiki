@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-12T08:19:58Z"
+fetched_at: "2026-03-14T10:17:07Z"
 source_url: "https://support.claude.com/en/articles/10504844-managing-user-feedback-settings-on-team-and-enterprise-plans"
 title: "Manage user feedback settings on Team and Enterprise plans | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "Manage user feedback settings on Team and Enterprise plans | Claude Help
 
 # Manage user feedback settings on Team and Enterprise plans
 
+Updated today
 
 As a Primary Owner or Owner of a Team or Enterprise plan, you can manage the ability for members of your organization to submit feedback to Anthropic via thumbs up / thumbs down.
 

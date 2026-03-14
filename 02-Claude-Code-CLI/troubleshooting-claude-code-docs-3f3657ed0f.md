@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-12T08:19:53Z"
+fetched_at: "2026-03-14T10:17:02Z"
 source_url: "https://code.claude.com/docs/en/troubleshooting"
 title: "Troubleshooting - Claude Code Docs"
 ---
@@ -1097,7 +1097,7 @@ apk add ripgrep
 pacman -S ripgrep
 ```
 
-Then set `USE_BUILTIN_RIPGREP=0` in your [environment](/docs/en/settings#environment-variables).
+Then set `USE_BUILTIN_RIPGREP=0` in your [environment](/docs/en/env-vars).
 
 ### 
 
