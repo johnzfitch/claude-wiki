@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T04:10:44Z"
+fetched_at: "2026-03-15T12:17:04Z"
 source_url: "https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices"
 title: "Usage limit best practices | Claude Help Center"
 ---

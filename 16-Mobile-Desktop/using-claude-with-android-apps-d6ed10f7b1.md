@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T04:10:23Z"
+fetched_at: "2026-03-15T12:16:50Z"
 source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
 title: "Using Claude with Android Apps | Claude Help Center"
 ---

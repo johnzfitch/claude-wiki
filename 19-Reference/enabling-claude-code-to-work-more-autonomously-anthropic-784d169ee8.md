@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T04:10:40Z"
+fetched_at: "2026-03-15T12:17:07Z"
 source_url: "https://anthropic.com/news/enabling-claude-code-to-work-more-autonomously"
 title: "Enabling Claude Code to work more autonomously \\ Anthropic"
 ---

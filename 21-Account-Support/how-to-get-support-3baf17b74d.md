@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T04:10:44Z"
+fetched_at: "2026-03-15T12:17:03Z"
 source_url: "https://support.anthropic.com/en/articles/9015913-how-to-get-support"
 title: "How to get support | Claude Help Center"
 ---

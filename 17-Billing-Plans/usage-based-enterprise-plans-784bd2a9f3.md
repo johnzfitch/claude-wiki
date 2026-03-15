@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T04:10:53Z"
+fetched_at: "2026-03-15T12:17:09Z"
 source_url: "https://support.claude.com/en/articles/11526368-usage-based-enterprise-plans"
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T04:10:32Z"
+fetched_at: "2026-03-15T12:16:59Z"
 source_url: "https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing"
 title: "Manage project visibility and sharing | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T04:10:34Z"
+fetched_at: "2026-03-15T12:17:01Z"
 source_url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
 title: "Use connectors to extend Claude&#x27;s capabilities | Claude Help Center"
 ---

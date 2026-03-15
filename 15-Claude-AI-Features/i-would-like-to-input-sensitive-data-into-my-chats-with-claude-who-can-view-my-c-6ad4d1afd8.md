@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:29Z"
+fetched_at: "2026-03-15T12:16:55Z"
 source_url: "https://support.claude.com/en/articles/8325621-i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-conversations"
 title: "I would like to input sensitive data into my chats with Claude. Who can view my conversations? | Claude Help Center"
 ---

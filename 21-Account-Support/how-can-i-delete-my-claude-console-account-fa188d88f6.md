@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T04:10:35Z"
+fetched_at: "2026-03-15T12:16:56Z"
 source_url: "https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account"
 title: "How can I delete my Claude Console account? | Claude Help Center"
 ---

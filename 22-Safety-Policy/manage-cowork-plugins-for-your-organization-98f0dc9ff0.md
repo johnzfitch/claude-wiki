@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T04:10:23Z"
+fetched_at: "2026-03-15T12:16:48Z"
 source_url: "https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization"
 title: "Manage Cowork plugins for your organization | Claude Help Center"
 ---

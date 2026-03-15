@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T04:10:42Z"
+fetched_at: "2026-03-15T12:17:07Z"
 source_url: "https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps"
 title: "Using voice mode | Claude Help Center"
 ---

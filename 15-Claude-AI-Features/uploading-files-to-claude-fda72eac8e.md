@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:29Z"
+fetched_at: "2026-03-15T12:16:55Z"
 source_url: "https://support.claude.com/en/articles/8241126-uploading-files-to-claude"
 title: "Uploading files to Claude | Claude Help Center"
 ---

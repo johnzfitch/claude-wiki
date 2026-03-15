@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T04:10:33Z"
+fetched_at: "2026-03-15T12:17:01Z"
 source_url: "https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector"
 title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 ---

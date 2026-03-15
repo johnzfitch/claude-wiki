@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T04:10:23Z"
+fetched_at: "2026-03-15T12:16:48Z"
 source_url: "https://support.anthropic.com/en/articles/11869619-using-claude-with-ios-apps"
 title: "Using Claude with iOS Apps | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T04:10:53Z"
+fetched_at: "2026-03-15T12:17:05Z"
 source_url: "https://support.anthropic.com/en/articles/10684638-blocking-and-removing-content-from-claude"
 title: "Reporting, Blocking, and Removing Content from Claude | Claude Help Center"
 ---
@@ -18,7 +18,7 @@ Please note, we reserve the right to suspend users who frequently provide manife
 
 ## How to report safety issues
 
-We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](/cdn-cgi/l/email-protection#7e0b0d1b0c0d1f181b0a073e1f100a160c110e171d501d1113) with enough detail for us to replicate the issue.
+We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](/cdn-cgi/l/email-protection#304543554243515655444970515e4458425f4059531e535f5d) with enough detail for us to replicate the issue.
 
 ### Help us improve AI safety by reporting universal jailbreaks
 

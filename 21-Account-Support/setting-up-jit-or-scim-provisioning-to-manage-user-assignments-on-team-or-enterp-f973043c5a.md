@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T04:10:35Z"
+fetched_at: "2026-03-15T12:17:06Z"
 source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans"
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
 ---

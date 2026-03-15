@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:42Z"
+fetched_at: "2026-03-15T12:17:06Z"
 source_url: "https://support.claude.com/en/articles/12902446-claude-for-chrome-permissions-guide"
 title: "Claude in Chrome Permissions Guide | Claude Help Center"
 ---

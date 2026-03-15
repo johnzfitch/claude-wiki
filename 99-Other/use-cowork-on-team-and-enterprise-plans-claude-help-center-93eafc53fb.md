@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T04:10:42Z"
+fetched_at: "2026-03-15T12:17:07Z"
 source_url: "https://support.claude.com/en/articles/13455879"
 title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 ---

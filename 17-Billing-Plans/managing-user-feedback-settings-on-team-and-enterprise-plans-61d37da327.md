@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T04:10:44Z"
+fetched_at: "2026-03-15T12:17:03Z"
 source_url: "https://support.claude.com/en/articles/10504844-managing-user-feedback-settings-on-team-and-enterprise-plans"
 title: "Manage user feedback settings on Team and Enterprise plans | Claude Help Center"
 ---

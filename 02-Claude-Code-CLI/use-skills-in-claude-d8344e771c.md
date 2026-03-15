@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-15T04:10:27Z"
+fetched_at: "2026-03-15T12:16:54Z"
 source_url: "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
 title: "Use Skills in Claude | Claude Help Center"
 ---

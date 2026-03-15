@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T04:10:44Z"
+fetched_at: "2026-03-15T12:17:03Z"
 source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning"
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
 ---

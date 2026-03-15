@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T04:10:32Z"
+fetched_at: "2026-03-15T12:16:59Z"
 source_url: "https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise"
 title: "Migrate your organization from Team to Enterprise | Claude Help Center"
 ---

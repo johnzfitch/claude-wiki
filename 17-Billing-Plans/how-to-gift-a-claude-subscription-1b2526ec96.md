@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T04:10:28Z"
+fetched_at: "2026-03-15T12:16:52Z"
 source_url: "https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription"
 title: "How to gift a Claude subscription | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T04:10:34Z"
+fetched_at: "2026-03-15T12:16:57Z"
 source_url: "https://support.claude.com/en/articles/7996853-introduction-to-prompt-design"
 title: "Introduction to prompt design | Claude Help Center"
 ---

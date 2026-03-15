@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:52Z"
+fetched_at: "2026-03-15T12:17:08Z"
 source_url: "https://support.anthropic.com/en/articles/11088861-using-research-on-claude-ai"
 title: "Using Research on Claude | Claude Help Center"
 ---

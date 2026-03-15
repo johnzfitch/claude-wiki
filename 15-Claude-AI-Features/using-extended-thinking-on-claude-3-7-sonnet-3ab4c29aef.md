@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:52Z"
+fetched_at: "2026-03-15T12:17:08Z"
 source_url: "https://support.anthropic.com/en/articles/10574485-using-extended-thinking-on-claude-3-7-sonnet"
 title: "Using extended thinking | Claude Help Center"
 ---

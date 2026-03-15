@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T04:10:31Z"
+fetched_at: "2026-03-15T12:16:57Z"
 source_url: "https://support.claude.com/en/articles/12489464-use-enterprise-search"
 title: "Use enterprise search | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:22Z"
+fetched_at: "2026-03-15T12:16:48Z"
 source_url: "https://support.anthropic.com/en/articles/9519189-project-visibility-and-sharing"
 title: "Manage project visibility and sharing | Claude Help Center"
 ---

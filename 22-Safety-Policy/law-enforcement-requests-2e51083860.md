@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T04:10:29Z"
+fetched_at: "2026-03-15T12:16:51Z"
 source_url: "https://support.claude.com/en/articles/9035075-law-enforcement-requests"
 title: "Law Enforcement Requests | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Law Enforcement Requests | Claude Help Center"
 
 Updated yesterday
 
-Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s policies for handling governmental requests for user information, see [here](https://support.anthropic.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information). If you are a law enforcement agent who is authorized to gather evidence in connection with an official investigation, you may request records from Anthropic by emailing [\[email protected\]](/cdn-cgi/l/email-protection#1579746238707b737a67767078707b6138677064607066616655747b617d677a657c763b767a78).
+Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s policies for handling governmental requests for user information, see [here](https://support.anthropic.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information). If you are a law enforcement agent who is authorized to gather evidence in connection with an official investigation, you may request records from Anthropic by emailing [\[email protected\]](/cdn-cgi/l/email-protection#6509041248000b030a17060008000b1148170014100016111625040b110d170a150c064b060a08).
 
 Please include the following information with your request:
 

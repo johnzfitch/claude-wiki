@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T04:10:35Z"
+fetched_at: "2026-03-15T12:16:56Z"
 source_url: "https://support.claude.com/en/articles/8114533-i-ve-been-using-other-large-language-models-llms-to-power-my-product-how-should-i-alter-my-prompts-when-switching-to-claude"
 title: "I’ve been using other large language models (LLMs) to power my product. How should I alter my prompts when switching to Claude? | Claude Help Center"
 ---

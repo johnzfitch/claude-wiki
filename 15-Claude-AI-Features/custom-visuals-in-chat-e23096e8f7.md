@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:22Z"
+fetched_at: "2026-03-15T12:16:49Z"
 source_url: "https://support.claude.com/en/articles/13979539-custom-visuals-in-chat"
 title: "Custom visuals in chat | Claude Help Center"
 ---

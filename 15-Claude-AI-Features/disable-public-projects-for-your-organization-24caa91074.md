@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:32Z"
+fetched_at: "2026-03-15T12:16:59Z"
 source_url: "https://support.claude.com/en/articles/9927533-disable-public-projects-for-your-organization"
 title: "Disable public projects for your organization | Claude Help Center"
 ---

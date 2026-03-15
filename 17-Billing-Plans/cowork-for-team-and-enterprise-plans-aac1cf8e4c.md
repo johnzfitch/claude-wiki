@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T04:10:43Z"
+fetched_at: "2026-03-15T12:17:07Z"
 source_url: "https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans"
 title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T04:10:53Z"
+fetched_at: "2026-03-15T12:17:05Z"
 source_url: "https://support.anthropic.com/en/articles/10023646-i-think-a-user-is-infringing-my-copyright-or-other-intellectual-property-how-do-i-report-it"
 title: "I think a user is infringing my copyright or other intellectual property. How do I report it? | Claude Help Center"
 ---
@@ -37,4 +37,4 @@ Written claims concerning copyright infringement must contain the following info
 
 - A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner’s behalf.
 
-For questions, please email [\[email protected\]](/cdn-cgi/l/email-protection#6a0e07090b2a0b041e0218051a030944090507) or call (415) 326-6303.
+For questions, please email [\[email protected\]](/cdn-cgi/l/email-protection#8aeee7e9ebcaebe4fee2f8e5fae3e9a4e9e5e7) or call (415) 326-6303.
