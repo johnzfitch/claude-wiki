@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:44Z"
+fetched_at: "2026-03-15T12:17:04Z"
 source_url: "https://support.anthropic.com/en/articles/9517075-what-are-projects"
 title: "What are projects? | Claude Help Center"
 ---

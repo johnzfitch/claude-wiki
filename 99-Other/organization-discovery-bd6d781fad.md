@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T04:10:53Z"
+fetched_at: "2026-03-15T12:17:09Z"
 source_url: "https://support.claude.com/en/articles/13566435-organization-discovery"
 title: "Find and join a Team or Enterprise organization | Claude Help Center"
 ---

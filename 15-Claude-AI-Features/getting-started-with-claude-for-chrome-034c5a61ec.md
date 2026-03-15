@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:45Z"
+fetched_at: "2026-03-15T12:17:05Z"
 source_url: "https://support.claude.com/en/articles/12012173-getting-started-with-claude-for-chrome"
 title: "Get started with Claude in Chrome | Claude Help Center"
 ---

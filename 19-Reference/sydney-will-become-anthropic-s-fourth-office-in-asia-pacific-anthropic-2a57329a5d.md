@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T04:10:42Z"
+fetched_at: "2026-03-15T12:17:06Z"
 source_url: "https://anthropic.com/news/sydney-fourth-office-asia-pacific"
 title: "Sydney will become Anthropic’s fourth office in Asia-Pacific \\ Anthropic"
 ---

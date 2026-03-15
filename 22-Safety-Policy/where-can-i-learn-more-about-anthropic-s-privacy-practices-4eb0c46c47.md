@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T04:10:30Z"
+fetched_at: "2026-03-15T12:16:46Z"
 source_url: "https://support.claude.com/en/articles/10035659-where-can-i-learn-more-about-anthropic-s-privacy-practices"
 title: "Where can I learn more about Anthropic&#x27;s Privacy practices? | Claude Help Center"
 ---

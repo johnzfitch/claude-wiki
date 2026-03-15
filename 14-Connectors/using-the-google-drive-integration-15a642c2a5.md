@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T04:10:44Z"
+fetched_at: "2026-03-15T12:17:04Z"
 source_url: "https://support.anthropic.com/en/articles/10166901-using-the-google-drive-integration"
 title: "Use Google Workspace connectors | Claude Help Center"
 ---

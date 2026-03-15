@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T04:10:53Z"
+fetched_at: "2026-03-15T12:17:08Z"
 source_url: "https://support.anthropic.com/en/articles/11140763-claude-4-invite-sweepstakes-official-rules"
 title: "Claude 4 Invite Sweepstakes Official Rules | Claude Help Center"
 ---

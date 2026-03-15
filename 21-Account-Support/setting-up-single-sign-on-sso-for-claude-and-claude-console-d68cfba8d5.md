@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T04:10:53Z"
+fetched_at: "2026-03-15T12:17:09Z"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso-for-claude-and-claude-console"
 title: "Set up single sign-on (SSO) | Claude Help Center"
 ---

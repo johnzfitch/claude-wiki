@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T04:10:20Z"
+fetched_at: "2026-03-15T12:16:51Z"
 source_url: "https://support.claude.com/en/articles/12614810-using-the-benchling-connector-in-claude"
 title: "Using the Benchling Connector in Claude | Claude Help Center"
 ---

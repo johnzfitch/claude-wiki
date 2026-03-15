@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T04:10:53Z"
+fetched_at: "2026-03-15T12:17:08Z"
 source_url: "https://support.claude.com/en/articles/11095361"
 title: "When should I use web search, extended thinking, and Research? | Claude Help Center"
 ---

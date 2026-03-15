@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T04:10:29Z"
+fetched_at: "2026-03-15T12:16:53Z"
 source_url: "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work"
 title: "How do usage and length limits work? | Claude Help Center"
 ---

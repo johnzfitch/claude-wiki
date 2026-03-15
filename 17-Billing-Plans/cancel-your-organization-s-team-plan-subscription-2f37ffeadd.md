@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T04:10:31Z"
+fetched_at: "2026-03-15T12:16:58Z"
 source_url: "https://support.claude.com/en/articles/9267323-cancel-your-organization-s-team-plan-subscription"
 title: "Cancel your organization&#x27;s Team plan subscription | Claude Help Center"
 ---

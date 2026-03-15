@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T04:10:27Z"
+fetched_at: "2026-03-15T12:16:51Z"
 source_url: "https://support.claude.com/en/articles/10065434-using-dictation-on-claude-mobile"
 title: "Using dictation on Claude Mobile | Claude Help Center"
 ---

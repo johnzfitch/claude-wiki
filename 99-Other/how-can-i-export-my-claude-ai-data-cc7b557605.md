@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T04:10:44Z"
+fetched_at: "2026-03-15T12:17:04Z"
 source_url: "https://support.anthropic.com/en/articles/9450526-how-can-i-export-my-claude-ai-data"
 title: "How can I export my Claude data? | Claude Help Center"
 ---

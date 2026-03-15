@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T04:10:34Z"
+fetched_at: "2026-03-15T12:16:42Z"
 source_url: "https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans"
 title: "Extra usage for paid Claude plans | Claude Help Center"
 ---

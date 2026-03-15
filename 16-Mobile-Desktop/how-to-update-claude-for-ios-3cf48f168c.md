@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T04:10:27Z"
+fetched_at: "2026-03-15T12:16:52Z"
 source_url: "https://support.claude.com/en/articles/11825384-how-to-update-claude-for-ios"
 title: "How to update Claude for iOS | Claude Help Center"
 ---

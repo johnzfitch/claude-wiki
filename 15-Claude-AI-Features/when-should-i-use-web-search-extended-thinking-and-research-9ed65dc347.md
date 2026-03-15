@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:44Z"
+fetched_at: "2026-03-15T12:17:04Z"
 source_url: "https://support.anthropic.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research"
 title: "When should I use web search, extended thinking, and Research? | Claude Help Center"
 ---
