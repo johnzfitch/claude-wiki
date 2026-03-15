@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:42Z"
+fetched_at: "2026-03-15T04:10:32Z"
 source_url: "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "How am I billed for my Enterprise plan? | Claude Help Center"
 
 # How am I billed for my Enterprise plan?
 
-Updated today
+Updated yesterday
 
 
 Enterprise plan billing has two parts: a fixed seat fee and separate usage charges. The seat fee covers platform access. Usage is billed on top of that, based on what your team actually consumes. How and when usage is billed depends on whether your organization purchased self-serve or sales-assisted.

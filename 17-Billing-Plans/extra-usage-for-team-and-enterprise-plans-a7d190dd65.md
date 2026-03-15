@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:54Z"
+fetched_at: "2026-03-15T04:10:22Z"
 source_url: "https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-enterprise-plans"
 title: "Manage extra usage for Team and seat-based Enterprise plans | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Manage extra usage for Team and seat-based Enterprise plans | Claude Hel
 
 # Manage extra usage for Team and seat-based Enterprise plans
 
-Updated today
+Updated yesterday
 
 
 This article explains how Team and seat-based Enterprise plan Owners and Primary Owners can purchase extra usage, allowing members to continue using Claude, Cowork, and Claude Code after reaching usage limits for their assigned seat.

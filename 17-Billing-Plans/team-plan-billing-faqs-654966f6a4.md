@@ -1,13 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:43Z"
+fetched_at: "2026-03-15T04:10:31Z"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 title: "Team plan billing FAQs | Claude Help Center"
 ---
 
 # Team plan billing FAQs
 
-Updated today
+Updated yesterday
 
 
 ## What payment methods can I use to pay for the Team plan?
@@ -73,7 +73,7 @@ How is my Team plan bill calculated?
 Add or update your Team plan's tax or VAT ID
 
 
-How am I billed for my Enterprise plan?
-
-
 Understanding your billing address and tax calculation
+
+
+Manage members on Team and Enterprise plans

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:52Z"
+fetched_at: "2026-03-15T04:10:28Z"
 source_url: "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context"
 title: "Use Claude’s chat search and memory to build on previous context | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Use Claude’s chat search and memory to build on previous context | Cla
 
 # Use Claude’s chat search and memory to build on previous context
 
-Updated today
+Updated yesterday
 
 
 You can now prompt Claude to search through your previous conversations to find and reference relevant information in new chats. Additionally, Claude can remember context from previous chats, creating continuity across your conversations. This article introduces Claude’s chat search and memory capabilities and explains how they work, what Claude can and can’t remember, and how you can toggle the features on/off.

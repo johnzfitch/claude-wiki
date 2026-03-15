@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-14T10:16:54Z"
+fetched_at: "2026-03-15T04:10:23Z"
 source_url: "https://support.anthropic.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help C
 
 # Getting Started with Local MCP Servers on Claude Desktop
 
-Updated today
+Updated yesterday
 
 
 The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. With the introduction of desktop extensions, installing and managing local MCP servers has become significantly easier.
@@ -157,7 +157,7 @@ Related Articles
 Installing Claude Desktop
 
 
-Enabling and using the desktop extension allowlist
+Deploy Claude Desktop for macOS
 
 
 Using the 10x Genomics Extension in Claude

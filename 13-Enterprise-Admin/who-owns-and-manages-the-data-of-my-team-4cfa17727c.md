@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-14T10:16:42Z"
+fetched_at: "2026-03-15T04:10:31Z"
 source_url: "https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team"
 title: "Who owns and manages the data of my team? | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Who owns and manages the data of my team? | Claude Help Center"
 
 # Who owns and manages the data of my team?
 
-Updated today
+Updated yesterday
 
 
 This article provides important information about your Claude for Work account associated with your organization's Claude for Work plan (Team or Enterprise plans). It includes details about data access and control that were shared with you when your Claude for Work plan account was set up.

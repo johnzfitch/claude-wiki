@@ -1,13 +1,13 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-14T10:16:40Z"
+fetched_at: "2026-03-15T04:10:26Z"
 source_url: "https://support.claude.com/en/articles/9266462-installing-claude-for-ios"
 title: "Installing Claude for iOS | Claude Help Center"
 ---
 
 # Installing Claude for iOS
 
-Updated today
+Updated yesterday
 
 
 ## How do I install the Claude for iOS app?

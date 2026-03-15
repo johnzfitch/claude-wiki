@@ -1,13 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:43Z"
+fetched_at: "2026-03-15T04:10:31Z"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 title: "What is the Team plan? | Claude Help Center"
 ---
 
 # What is the Team plan?
 
-Updated today
+Updated yesterday
 
 
 The Team plan is a paid plan for our Claude chat experience built for ambitious teams. It is currently available in certain **[supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)**.

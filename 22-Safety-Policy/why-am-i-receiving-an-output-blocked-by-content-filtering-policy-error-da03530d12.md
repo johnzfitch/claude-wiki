@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-14T10:16:48Z"
+fetched_at: "2026-03-15T04:10:30Z"
 source_url: "https://support.claude.com/en/articles/9205721-why-am-i-receiving-an-output-blocked-by-content-filtering-policy-error"
 title: "Why am I receiving an &#x27;Output blocked by content filtering policy&#x27; error? | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Why am I receiving an &#x27;Output blocked by content filtering policy&#
 
 # Why am I receiving an 'Output blocked by content filtering policy' error?
 
-Updated today
+Updated yesterday
 
 Some Claude users may encounter refusals or errors with the message ‘Output blocked by content filtering policy’. These refusals do not reflect Anthropic’s judgments about the propriety of any content. Instead, they generally arise from Anthropic’s efforts to prevent Claude from being used to replicate or regurgitate pre-existing materials. Anthropic takes these steps because Claude’s purpose is to generate new content and ideas, not to reproduce content that already exists. We also prohibit in our terms and policies use of our services in ways that infringe, misappropriate, or violate intellectual property or other legal rights.
 

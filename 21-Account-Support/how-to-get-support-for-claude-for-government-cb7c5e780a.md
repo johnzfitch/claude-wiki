@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-14T10:16:51Z"
+fetched_at: "2026-03-15T04:10:29Z"
 source_url: "https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government"
 title: "How to get support for Claude for Government | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "How to get support for Claude for Government | Claude Help Center"
 
 # How to get support for Claude for Government
 
-Updated today
+Updated yesterday
 
 
 **Please note:** This page is hosted outside of Claude for Government's FedRAMP boundary.
@@ -34,10 +34,10 @@ Related Articles
 Who owns and manages the data of my team?
 
 
-Getting Started with Claude for Education at Your University (for Owners/Admins)
-
-
 Who owns and manages the data of my Claude for Education account?
+
+
+Use Skills in Claude
 
 
 Crisis Helpline Support in Claude

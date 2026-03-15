@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-14T10:16:41Z"
+fetched_at: "2026-03-15T04:10:27Z"
 source_url: "https://support.claude.com/en/articles/10302511-accessing-claude-app-on-ios-lock-screen-control-center-and-action-button"
 title: "Accessing Claude app on iOS Lock Screen, Control Center, and Action Button | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Accessing Claude app on iOS Lock Screen, Control Center, and Action Butt
 
 # Accessing Claude app on iOS Lock Screen, Control Center, and Action Button
 
-Updated today
+Updated yesterday
 
 
 The features described in this guide are available on iOS 18 and above.

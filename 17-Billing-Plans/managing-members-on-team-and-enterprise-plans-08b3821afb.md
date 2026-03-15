@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:17:09Z"
+fetched_at: "2026-03-15T04:10:35Z"
 source_url: "https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans"
 title: "Manage members on Team and Enterprise plans | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Manage members on Team and Enterprise plans | Claude Help Center"
 
 # Manage members on Team and Enterprise plans
 
-Updated today
+Updated yesterday
 
 
 This guide covers how to add, remove, and manage the people on your Team or Enterprise plan.

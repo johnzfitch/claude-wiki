@@ -1,13 +1,13 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-14T10:16:52Z"
+fetched_at: "2026-03-15T04:10:27Z"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 title: "How to create custom Skills | Claude Help Center"
 ---
 
 # How to create custom Skills
 
-Updated today
+Updated yesterday
 
 
 Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.

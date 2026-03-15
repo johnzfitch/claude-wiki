@@ -1,13 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-14T10:17:10Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/7996853-introduction-to-prompt-design"
 title: "Introduction to prompt design | Claude Help Center"
 ---
 
 # Introduction to prompt design
 
-Updated today
+Updated yesterday
 
 Claude is trained to be a helpful, honest, and harmless assistant. It is used to “speaking” conversationally and you can instruct it in English. Think of Claude as a newly-hired contractor. It doesn’t have any context about you, your task, or your organization. Give it very specific instructions about exactly what you’d like it to do.
 
@@ -27,7 +27,7 @@ Getting started with Claude
 Claude Code FAQ
 
 
-What are Skills?
+Getting the most out of Sonnet 4.5 in Claude.ai
 
 
 How to create a skill with Claude through conversation

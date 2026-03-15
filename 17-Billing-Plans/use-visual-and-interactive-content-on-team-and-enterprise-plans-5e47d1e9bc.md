@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:42Z"
+fetched_at: "2026-03-15T04:10:31Z"
 source_url: "https://support.claude.com/en/articles/13663666-use-visual-and-interactive-content-on-team-and-enterprise-plans"
 title: "Use visual and interactive content on Team and Enterprise plans | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Use visual and interactive content on Team and Enterprise plans | Claude
 
 # Use visual and interactive content on Team and Enterprise plans
 
-Updated today
+Updated yesterday
 
 
 Maps and image search results are enabled by default on Team plans. On Enterprise plans, these features are off by default — an Owner or Primary Owner can enable them in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
@@ -37,10 +37,10 @@ Use Google Workspace connectors
 Enabling and using web search
 
 
-Using Databricks for Data Analysis
-
-
 Use enterprise search
+
+
+Use Cowork on Team and Enterprise plans
 
 
 Visual and interactive content

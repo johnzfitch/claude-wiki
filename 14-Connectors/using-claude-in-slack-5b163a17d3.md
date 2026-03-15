@@ -1,13 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:16:49Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 title: "Using Claude in Slack | Claude Help Center"
 ---
 
 # Using Claude in Slack
 
-Updated today
+Updated yesterday
 
 
 Claude in Slack gives you AI assistance right where your team collaborates. This article covers how to interact with Claude in Slack, which features are available, and tips for getting the most out of the integration.

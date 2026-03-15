@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:51Z"
+fetched_at: "2026-03-15T04:10:29Z"
 source_url: "https://support.claude.com/en/articles/8241126-uploading-files-to-claude"
 title: "Uploading files to Claude | Claude Help Center"
 ---
 
 # Uploading files to Claude
 
-Updated today
+Updated yesterday
 
 
 This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
@@ -115,6 +115,9 @@ Claude models can analyze both text and visual elements (like images, charts, an
 Related Articles
 
 
+Can Claude produce images?
+
+
 Create and edit files with Claude
 
 
@@ -122,9 +125,6 @@ Create and edit files with Claude to eliminate hours of busy work
 
 
 Claude for Financial Services Overview
-
-
-Create professional results across tools with Claude Sonnet 4.5
 
 
 Using Claude in Slack

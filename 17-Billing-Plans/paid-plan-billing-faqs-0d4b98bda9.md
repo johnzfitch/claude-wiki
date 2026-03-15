@@ -1,13 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:46Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
 title: "Paid Plan Billing FAQs | Claude Help Center"
 ---
 
 # Paid Plan Billing FAQs
 
-Updated today
+Updated yesterday
 
 
 ## Where can I find the invoice or receipt for my Pro or Max plan payment?

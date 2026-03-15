@@ -1,13 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-14T10:16:48Z"
+fetched_at: "2026-03-15T04:10:24Z"
 source_url: "https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso"
 title: "Set up single sign-on (SSO) | Claude Help Center"
 ---
 
 # Set up single sign-on (SSO)
 
-Updated today
+Updated yesterday
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.

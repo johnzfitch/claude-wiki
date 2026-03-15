@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-14T10:16:42Z"
+fetched_at: "2026-03-15T04:10:32Z"
 source_url: "https://support.claude.com/en/articles/9267400-can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan-organizations"
 title: "Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations? | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Can individuals with Pro or Max plan accounts migrate them to Team or En
 
 # Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations?
 
-Updated today
+Updated yesterday
 
 
 Individual accounts (free, Pro, and Max) and organization accounts (Team and Enterprise) are separate account types with different features. You cannot migrate an individual account to a Team or Enterprise organization—if you're joining an organization, you'll need to be added as a new member.

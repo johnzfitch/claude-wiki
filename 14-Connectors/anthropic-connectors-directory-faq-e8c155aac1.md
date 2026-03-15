@@ -1,13 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:16:49Z"
+fetched_at: "2026-03-15T04:10:33Z"
 source_url: "https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq"
 title: "Anthropic Connectors Directory FAQ | Claude Help Center"
 ---
 
 # Anthropic Connectors Directory FAQ
 
-Updated today
+Updated yesterday
 
 
 ## What is MCP?
@@ -324,7 +324,7 @@ Important links:
 Related Articles
 
 
-Getting Started with Local MCP Servers on Claude Desktop
+Get started with custom connectors using remote MCP
 
 
 Building custom connectors via remote MCP servers

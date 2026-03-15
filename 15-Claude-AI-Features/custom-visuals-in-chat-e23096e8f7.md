@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:51Z"
+fetched_at: "2026-03-15T04:10:22Z"
 source_url: "https://support.claude.com/en/articles/13979539-custom-visuals-in-chat"
 title: "Custom visuals in chat | Claude Help Center"
 ---
 
 # Custom visuals in chat
 
-Updated today
+Updated yesterday
 
 
 Claude can generate custom diagrams, charts, and interactive visuals directly in your conversation. When a visual would explain something better than text, Claude builds one from scratch—shaped to your specific question, rendered inline as part of the response.

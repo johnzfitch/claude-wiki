@@ -1,13 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-14T10:16:46Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan"
 title: "How do I sign up for the Max plan? | Claude Help Center"
 ---
 
 # How do I sign up for the Max plan?
 
-Updated today
+Updated yesterday
 
 
 This article applies to individual consumers signing up for paid Max plans. If you're part of an organization looking to use Claude with your team, refer to [Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans).

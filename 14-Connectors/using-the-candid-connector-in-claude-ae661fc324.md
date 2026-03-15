@@ -1,13 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:17:09Z"
+fetched_at: "2026-03-15T04:10:20Z"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 title: "Using the Candid Connector in Claude | Claude Help Center"
 ---
 
 # Using the Candid Connector in Claude
 
-Updated today
+Updated yesterday
 
 
 The Candid integration brings the power of Candid’s comprehensive nonprofit and funder data directly into Claude. This article explains how to set up and use the Candid connector to search millions of organizations, discover funding opportunities, and access expert knowledge about the social sector—all through natural conversation.
@@ -35,7 +35,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#2b44454742454e474249594a59424a456b484a454f424f0544594c).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#533c3d3f3a3d363f3a312132213a323d1330323d373a377d3c2134).
 
 ## Setting up the Candid integration
 
@@ -442,7 +442,7 @@ Candid Seals of Transparency indicate how much information an organization has s
 
 ## Need more help?
 
-If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#b4dbdad8dddad1d8ddd6c6d5c6ddd5daf4d7d5dad0ddd09adbc6d3).
+If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#107f7e7c797e757c797262716279717e5073717e7479743e7f6277).
 
 ------------------------------------------------------------------------
 

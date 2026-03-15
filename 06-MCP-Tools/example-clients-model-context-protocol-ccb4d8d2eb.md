@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-07T01:05:14Z"
+fetched_at: "2026-03-15T04:10:18Z"
 source_url: "https://modelcontextprotocol.io/clients"
 title: "Example Clients - Model Context Protocol"
 ---
@@ -15,18 +15,18 @@ This page showcases applications that support the Model Context Protocol (MCP). 
 
 | Feature | Description |
 |----|----|
-| Resources | Server-exposed data and content |
-| Prompts | Pre-defined templates for LLM interactions |
-| Tools | Executable functions that LLMs can invoke |
-| Discovery | Support for tools/prompts/resources changed notifications |
-| Instructions | Server-provided guidance for LLMs |
-| Sampling | Server-initiated LLM completions |
-| Roots | Filesystem boundary definitions |
-| Elicitation | User information requests |
-| CIMD | [Client ID Metadata Document](specification/latest/basic/authorization#client-id-metadata-documents) support |
-| DCR | [Dynamic Client Registration](specification/latest/basic/authorization#dynamic-client-registration) support |
-| Tasks | Long-running operation tracking |
-| Apps | Interactive HTML interfaces |
+|  | Server-exposed data and content |
+|  | Pre-defined templates for LLM interactions |
+|  | Executable functions that LLMs can invoke |
+|  | Support for tools/prompts/resources changed notifications |
+|  | Server-provided guidance for LLMs |
+|  | Server-initiated LLM completions |
+|  | Filesystem boundary definitions |
+|  | User information requests |
+|  | [Client ID Metadata Document](specification/latest/basic/authorization#client-id-metadata-documents) support |
+|  | [Dynamic Client Registration](specification/latest/basic/authorization#dynamic-client-registration) support |
+|  | Long-running operation tracking |
+|  | Interactive HTML interfaces |
 
 This list is maintained by the community. If you notice any inaccuracies or would like to add or update information about MCP support in your application, please [submit a pull request](https://github.com/modelcontextprotocol/modelcontextprotocol/pulls).
 

@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:55Z"
+fetched_at: "2026-03-15T04:10:23Z"
 source_url: "https://support.anthropic.com/en/articles/12260368-using-incognito-chats"
 title: "Using incognito chats | Claude Help Center"
 ---
 
 # Using incognito chats
 
-Updated today
+Updated yesterday
 
 
 Incognito chats are available to all Claude users (free, Pro, Max, Team, and Enterprise plans).

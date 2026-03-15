@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-14T10:16:42Z"
+fetched_at: "2026-03-15T04:10:32Z"
 source_url: "https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide"
 title: "Claude Enterprise Analytics API reference guide | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Claude Enterprise Analytics API reference guide | Claude Help Center"
 
 # Claude Enterprise Analytics API reference guide
 
-Updated today
+Updated yesterday
 
 
 ## Overview

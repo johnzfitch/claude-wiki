@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:51Z"
+fetched_at: "2026-03-15T04:10:28Z"
 source_url: "https://support.claude.com/en/articles/13345190-get-started-with-cowork"
 title: "Get started with Cowork | Claude Help Center"
 ---
 
 # Get started with Cowork
 
-Updated today
+Updated yesterday
 
 
 This article explains how to use **[Cowork](https://claude.com/product/cowork)**, a research preview that brings Claude Code's agentic capabilities to Claude Desktop for knowledge work beyond coding.

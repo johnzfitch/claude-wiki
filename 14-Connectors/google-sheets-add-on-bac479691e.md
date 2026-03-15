@@ -1,13 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:17:09Z"
+fetched_at: "2026-03-15T04:10:35Z"
 source_url: "https://support.claude.com/en/articles/13162029-google-sheets-add-on"
 title: "Google Sheets add-on | Claude Help Center"
 ---
 
 # Google Sheets add-on
 
-Updated today
+Updated yesterday
 
 
 The [Claude for Sheets extension](https://workspace.google.com/marketplace/app/claude%5Ffor%5Fsheets/909417792257) integrates Claude into Google Sheets, allowing you to execute interactions with Claude directly in cells.
@@ -170,7 +170,7 @@ For more information regarding this extension, see the [Claude for Sheets Google
 Related Articles
 
 
-Get started with Claude in Chrome
+Release notes
 
 
 Use Claude for Excel

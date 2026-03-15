@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-14T10:16:43Z"
+fetched_at: "2026-03-15T04:10:32Z"
 source_url: "https://support.claude.com/en/articles/13200993-restrict-access-to-claude-with-ip-allowlisting"
 title: "Restrict access to Claude with IP allowlisting | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Restrict access to Claude with IP allowlisting | Claude Help Center"
 
 # Restrict access to Claude with IP allowlisting
 
-Updated today
+Updated yesterday
 
 
 IP allowlisting is available for Enterprise plans only.

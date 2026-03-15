@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:16:48Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
 title: "Use connectors to extend Claude&#x27;s capabilities | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Use connectors to extend Claude&#x27;s capabilities | Claude Help Center
 
 # Use connectors to extend Claude's capabilities
 
-Updated today
+Updated yesterday
 
 
 This guide explains how to enable and use connectors with Claude to enhance its capabilities.
