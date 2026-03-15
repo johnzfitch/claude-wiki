@@ -1,13 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:46Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans"
 title: "Extra usage for paid Claude plans | Claude Help Center"
 ---
 
 # Extra usage for paid Claude plans
 
-Updated today
+Updated yesterday
 
 
 This article explains how to enable and use extra usage on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Claude after reaching your plan’s usage limits by switching to pay-as-you-go pricing.

@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-14T10:16:47Z"
+fetched_at: "2026-03-15T04:10:30Z"
 source_url: "https://support.claude.com/en/articles/9301722-updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service-and-privacy-policy"
 title: "Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer 
 
 # Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
 
-Updated today
+Updated yesterday
 
 At Anthropic, we periodically review our policies and terms to ensure we’re providing the highest level of protection and clarity for our users. As our products evolve, we also want to keep you informed about our latest updates:
 

@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-14T10:16:49Z"
+fetched_at: "2026-03-15T04:10:29Z"
 source_url: "https://support.claude.com/en/articles/9307344-responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors"
 title: "Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations Serving Minors | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations
 
 # Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors
 
-Updated today
+Updated yesterday
 
 At Anthropic, we recognize the unique vulnerabilities and needs of children in digital spaces. In order to create a safer digital environment and mitigate risks, organizations providing minors with the ability to directly interact with products that incorporate our API(s) should implement the following safeguards:
 

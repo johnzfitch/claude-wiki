@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:52Z"
+fetched_at: "2026-03-15T04:10:29Z"
 source_url: "https://support.claude.com/en/articles/11088861-using-research-on-claude"
 title: "Using Research on Claude | Claude Help Center"
 ---
 
 # Using Research on Claude
 
-Updated today
+Updated yesterday
 
 
 Research is available for users with paid Claude plans (Pro, Max, Team, or Enterprise) using Claude on the web, Claude Desktop, or Claude Mobile.

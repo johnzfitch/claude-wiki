@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-14T10:16:52Z"
+fetched_at: "2026-03-15T04:10:27Z"
 source_url: "https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization"
 title: "Provision and manage Skills for your organization | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Provision and manage Skills for your organization | Claude Help Center"
 
 # Provision and manage Skills for your organization
 
-Updated today
+Updated yesterday
 
 
 Organization-wide skill management is available to Team and Enterprise plans.

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:46Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription"
 title: "How do I cancel my paid Claude subscription? | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "How do I cancel my paid Claude subscription? | Claude Help Center"
 
 # How do I cancel my paid Claude subscription?
 
-Updated today
+Updated yesterday
 
 
 You may cancel your paid (Pro or Max plan) subscription at any time by following the cancellation instructions for the platform you signed up on. Your cancellation will take effect at the end of your current billing period and you can continue using your paid plan until then.

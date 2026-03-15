@@ -1,0 +1,62 @@
+---
+category: "99-Other"
+fetched_at: "2026-03-15T04:10:44Z"
+source_url: "https://support.anthropic.com/en/articles/9450526-how-can-i-export-my-claude-ai-data"
+title: "How can I export my Claude data? | Claude Help Center"
+---
+
+# How can I export my Claude data?
+
+Updated yesterday
+
+
+Data exports are available to individual Claude users (free, Pro, and Max) with active accounts. Data exports include conversation data and the user data for your account.
+
+Individual Claude users can export user information and chat history from [Settings \> Privacy](https://claude.ai/settings/data-privacy-controls) on the web app or Claude Desktop (it's not possible to run an export from Claude for iOS or Android).
+
+Follow these steps to export your data:
+
+1.  Click on your initials in the lower left corner of your account.
+
+2.  Select "Settings" from the menu.
+
+3.  Navigate to the "Privacy" section.
+
+4.  Click the "Export data" button.
+
+Once the export has been processed, you will receive a download link via email.
+
+Please note:
+
+- There may be a small delay while the export is generated.
+
+- The email will be sent to the address associated with your account.
+
+- You must be signed in to your account to download your data using this link.
+
+- The download link will expire 24 hours after delivery.
+
+- If your link expires, you can always request a new one by repeating the export process.
+
+## Can I import or migrate this data to another Claude account?
+
+We do not support migrating data between separate accounts at this time.
+
+------------------------------------------------------------------------
+
+Related Articles
+
+
+I would like to input sensitive data into my chats with Claude. Who can view my conversations?
+
+
+Who owns and manages the data of my Claude for Education account?
+
+
+Use Claude’s chat search and memory to build on previous context
+
+
+Using the 10x Genomics Extension in Claude
+
+
+Export your organization's data

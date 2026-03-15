@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:52Z"
+fetched_at: "2026-03-15T04:10:28Z"
 source_url: "https://support.claude.com/en/articles/13837440-use-plugins-in-cowork"
 title: "Use plugins in Cowork | Claude Help Center"
 ---
 
 # Use plugins in Cowork
 
-Updated today
+Updated yesterday
 
 
 Plugins are available to all Cowork users on paid plans (Pro, Max, Team, Enterprise).

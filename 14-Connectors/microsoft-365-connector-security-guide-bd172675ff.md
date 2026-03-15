@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:16:49Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
 title: "Microsoft 365 Connector: Security Guide | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Microsoft 365 Connector: Security Guide | Claude Help Center"
 
 # Microsoft 365 Connector: Security Guide
 
-Updated today
+Updated yesterday
 
 
 ## What it is
@@ -279,7 +279,7 @@ A: Yes. The recommended approach is to use app assignment to restrict who can us
 Related Articles
 
 
-Use Google Workspace connectors
+Get started with custom connectors using remote MCP
 
 
 Use connectors to extend Claude's capabilities

@@ -1,13 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:42Z"
+fetched_at: "2026-03-15T04:10:31Z"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 title: "How is my Team plan bill calculated? | Claude Help Center"
 ---
 
 # How is my Team plan bill calculated?
 
-Updated today
+Updated yesterday
 
 
 Prices shown are for US customers and exclude applicable taxes. Pricing, currency, and tax handling vary by region. Visit **[claude.ai/upgrade](http://claude.ai/upgrade)** to see current pricing for your location.

@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-14T10:16:54Z"
+fetched_at: "2026-03-15T04:10:22Z"
 source_url: "https://support.anthropic.com/en/articles/11932705-automated-security-reviews-in-claude-code"
 title: "Automated Security Reviews in Claude Code | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Automated Security Reviews in Claude Code | Claude Help Center"
 
 # Automated Security Reviews in Claude Code
 
-Updated today
+Updated yesterday
 
 
 Claude Code now includes automated security review features to help you identify and fix vulnerabilities in your code. This guide explains how to use the /security-review command and GitHub Actions to improve your code security.
@@ -119,9 +119,6 @@ For optimal results, we recommend running /security-review before committing sig
 Related Articles
 
 
-Using Claude Code with your Pro or Max plan
-
-
 Claude Code model configuration
 
 
@@ -132,3 +129,6 @@ Claude Code FAQ
 
 
 Claude Code on the web
+
+
+Using Claude in Chrome Safely

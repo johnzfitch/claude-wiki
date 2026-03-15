@@ -1,7 +1,7 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:17Z"
-last_modified: "Sat, 14 Mar 2026 03:45:45 GMT"
+fetched_at: "2026-03-15T04:10:17Z"
+last_modified: "Sat, 14 Mar 2026 17:31:44 GMT"
 source_url: "https://claude.com/plugins"
 title: "Plugins for Claude Code and Cowork | Anthropic"
 ---
@@ -1443,6 +1443,166 @@ This is some text inside of a div block.
 Notion workspace integration. Search pages, create/update documents, manage databases, and access your team's knowledge base from Claude Code.
 
 New
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/zapier)
+
+### zapier
+
+Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/deploy-on-aws)
+
+### Deploy on AWS
+
+Deploy applications to AWS with architecture recommendations, cost estimates, and IaC deployment.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/migration-to-aws)
+
+### Migration to AWS
+
+Assess cloud usage/billing, compare AWS services/pricing, recommend migration or continued use of current provider.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/aws-serverless)
+
+### AWS Serverless
+
+Design, build, deploy, test, and debug serverless applications with AWS Serverless services.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/amazon-location-service)
+
+### Amazon Location Service
+
+Integrate Amazon Location Service for maps, geocoding, routing, and geospatial features with authentication and SDKs.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/wix)
+
+### Wix
+
+Build, manage, and deploy Wix sites and apps. CLI development skills for dashboard extensions, backend APIs, site wid...
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/sumup)
+
+### SumUp
+
+SumUp integrations: terminal and online checkout. Android/iOS POS apps with card readers, SDKs, widget, and Cloud API.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/mintlify)
+
+### mintlify
+
+Build beautiful documentation with Mintlify: convert to MDX, modify content, automate updates.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/legalzoom)
+
+### LegalZoom
+
+AI reviews legal documents for risks and advises when to hire an attorney. Connects to legal professionals when needed.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/sanity-plugin)
+
+### Sanity
+
+Sanity integration: MCP, agent skills, slash commands. Query, author, optimize GROQ, design schemas, Visual Editing.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/sourcegraph)
+
+### Sourcegraph
+
+Search code across codebases, trace references, analyze refactor impact, investigate incidents, run security sweeps.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/railway)
+
+### Railway
+
+Deploy and manage apps, databases, and infrastructure on Railway. Covers project setup, deploys, environment configur...
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/adspirer-ads-agent)
+
+### Adspirer Ads Agent
+
+Ad management for Google, Meta, TikTok & LinkedIn. 91 tools for keyword research, campaigns, analysis & optimization.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/rc)
+
+### RevenueCat
+
+Manage RevenueCat in-app purchase backend directly from Claude Code without leaving your development workflow.
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/planetscale)
+
+### PlanetScale
+
+An authenticated hosted MCP server that accesses your PlanetScale organizations, databases, branches, schema, and Ins...
+
+Claude Code
+
+This is some text inside of a div block.
+
+[](/plugins/chrome-devtools-mcp)
+
+### Chrome DevTools
+
+Control and inspect a live Chrome browser from your coding agent. Record performance traces, analyze network requests...
 
 Cowork
 

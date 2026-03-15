@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:47Z"
+fetched_at: "2026-03-15T04:10:32Z"
 source_url: "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
 title: "Using Claude in Chrome Safely | Claude Help Center"
 ---
 
 # Using Claude in Chrome Safely
 
-Updated today
+Updated yesterday
 
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
@@ -86,7 +86,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 - Known pirated content sites
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#bfcaccdacdccded9dacbc6ffded1cbd7cdd0cfd6dc91dcd0d2).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#5f2a2c3a2d2c3e393a2b261f3e312b372d302f363c713c3032).
 
 ------------------------------------------------------------------------
 

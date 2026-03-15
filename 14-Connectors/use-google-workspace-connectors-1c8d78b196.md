@@ -1,13 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:16:48Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors"
 title: "Use Google Workspace connectors | Claude Help Center"
 ---
 
 # Use Google Workspace connectors
 
-Updated today
+Updated yesterday
 
 
 Connect your Gmail, Google Calendar, and Google Drive to Claude so you can search emails, manage your calendar, work with documents, and save files—all without leaving the conversation.

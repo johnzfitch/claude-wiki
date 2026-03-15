@@ -1,13 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:53Z"
+fetched_at: "2026-03-15T04:10:28Z"
 source_url: "https://support.claude.com/en/articles/8887527-customizing-your-appearance-settings"
 title: "Customizing your appearance settings | Claude Help Center"
 ---
 
 # Customizing your appearance settings
 
-Updated today
+Updated yesterday
 
 
 ## How to switch between light and dark mode
@@ -36,10 +36,10 @@ It's not currently possible to completely disable the sidebar. You can click the
 Related Articles
 
 
-Use enterprise search
-
-
 How to create custom Skills
+
+
+Applying Claude Opus 4.5’s strengths to your everyday work
 
 
 Google Sheets add-on

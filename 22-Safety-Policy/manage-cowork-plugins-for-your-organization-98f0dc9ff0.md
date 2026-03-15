@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-14T10:16:41Z"
+fetched_at: "2026-03-15T04:10:23Z"
 source_url: "https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization"
 title: "Manage Cowork plugins for your organization | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Manage Cowork plugins for your organization | Claude Help Center"
 
 # Manage Cowork plugins for your organization
 
-Updated today
+Updated yesterday
 
 
 Plugin marketplaces allow Team and Enterprise plan owners to distribute curated plugins to everyone in their organization through Cowork. You create a marketplace, add plugins to it, and control exactly which plugins your team members can see and use.

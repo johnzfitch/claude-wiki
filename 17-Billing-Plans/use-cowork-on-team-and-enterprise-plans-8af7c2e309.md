@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:43Z"
+fetched_at: "2026-03-15T04:10:31Z"
 source_url: "https://support.claude.com/en/articles/13455879-use-cowork-on-team-and-enterprise-plans"
 title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 
 # Use Cowork on Team and Enterprise plans
 
-Updated today
+Updated yesterday
 
 
 This article explains important limitations and considerations for Team and Enterprise organizations using Cowork during the research preview period.

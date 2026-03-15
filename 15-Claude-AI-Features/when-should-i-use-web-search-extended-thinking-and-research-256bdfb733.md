@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-14T10:16:51Z"
+fetched_at: "2026-03-15T04:10:28Z"
 source_url: "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research"
 title: "When should I use web search, extended thinking, and Research? | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "When should I use web search, extended thinking, and Research? | Claude 
 
 # When should I use web search, extended thinking, and Research?
 
-Updated today
+Updated yesterday
 
 
 Claude offers several powerful capabilities to help you find information and solve problems. Understanding when to use each option—web search, extended thinking, and Research—can help you get the best results for your specific needs. This guide explains the ideal use cases for each feature and how they can work together to enhance your experience.

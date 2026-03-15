@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-14T10:16:49Z"
+fetched_at: "2026-03-15T04:10:33Z"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 title: "Using interactive connectors in Claude | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Using interactive connectors in Claude | Claude Help Center"
 
 # Using interactive connectors in Claude
 
-Updated today
+Updated yesterday
 
 
 Interactive connectors are available for all users on Claude and Claude Desktop.

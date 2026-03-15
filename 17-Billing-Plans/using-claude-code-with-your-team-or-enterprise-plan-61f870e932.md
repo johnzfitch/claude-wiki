@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:56Z"
+fetched_at: "2026-03-15T04:10:23Z"
 source_url: "https://support.anthropic.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan"
 title: "Use Claude Code with your Team or Enterprise plan | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Use Claude Code with your Team or Enterprise plan | Claude Help Center"
 
 # Use Claude Code with your Team or Enterprise plan
 
-Updated today
+Updated yesterday
 
 
 ## What is Claude Code?

@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-14T10:16:47Z"
+fetched_at: "2026-03-15T04:10:30Z"
 source_url: "https://support.claude.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information"
 title: "What is Anthropic’s policy for handling governmental requests for user information? | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "What is Anthropic’s policy for handling governmental requests for user
 
 # What is Anthropic’s policy for handling governmental requests for user information?
 
-Updated today
+Updated yesterday
 
 Trust and transparency are paramount values. Accordingly:
 

@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-14T10:16:41Z"
+fetched_at: "2026-03-15T04:10:26Z"
 source_url: "https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios"
 title: "Using Claude App Intents, Shortcuts, and Widgets on iOS | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Using Claude App Intents, Shortcuts, and Widgets on iOS | Claude Help Ce
 
 # Using Claude App Intents, Shortcuts, and Widgets on iOS
 
-Updated today
+Updated yesterday
 
 
 The features described in this guide are available on iOS 18 and above.
@@ -157,6 +157,9 @@ You can now quickly access the "Analyze Photo with Claude" control without needi
 Related Articles
 
 
+Installing Claude for iOS
+
+
 Accessing Claude app on iOS Lock Screen, Control Center, and Action Button
 
 
@@ -167,6 +170,3 @@ How to update Claude for iOS
 
 
 Using Claude with iOS Apps
-
-
-Use quick entry with Claude Desktop on Mac

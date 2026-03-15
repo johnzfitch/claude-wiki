@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-14T10:16:54Z"
+fetched_at: "2026-03-15T04:10:22Z"
 source_url: "https://anthropic.com/news/claude-opus-4-6"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---
@@ -31,7 +31,7 @@ In [Claude Code](https://claude.com/product/claude-code), you can now assemble [
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
-Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.98268848-3f09-4114-aa3b-fc4b87f65524), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
+Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.19d5acde-906d-4607-a61a-3fef909d14e3), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
 
 We cover the model, our new product updates, our evaluations, and our extensive safety testing in depth below.
 

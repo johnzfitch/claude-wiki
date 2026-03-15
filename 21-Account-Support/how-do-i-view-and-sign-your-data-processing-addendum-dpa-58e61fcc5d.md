@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-14T10:16:47Z"
+fetched_at: "2026-03-15T04:10:30Z"
 source_url: "https://support.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa"
 title: "How do I view and sign your Data Processing Addendum (DPA)? | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "How do I view and sign your Data Processing Addendum (DPA)? | Claude Hel
 
 # How do I view and sign your Data Processing Addendum (DPA)?
 
-Updated today
+Updated yesterday
 
 *This article is about our commercial products (e.g. Claude for Work, Claude API). For our consumer products (e.g. Claude Free, Claude Pro), see [here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
@@ -31,7 +31,7 @@ Who owns and manages the data of my team?
 Does Anthropic Act as a Data Processor or Controller?
 
 
+About the Development Partner Program
+
+
 Who owns and manages the data of my Claude for Education account?
-
-
-Can I use my Outputs to train an AI model?

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:17:10Z"
+fetched_at: "2026-03-15T04:10:43Z"
 source_url: "https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans"
 title: "Purchase and manage seats on Enterprise plans | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Purchase and manage seats on Enterprise plans | Claude Help Center"
 
 # Purchase and manage seats on Enterprise plans
 
-Updated today
+Updated yesterday
 
 
 This article covers how to add seats, manage your seat allocation, and handle member access on Enterprise plans. For pricing and billing details, see **[How am I billed for my Enterprise plan?](https://support.claude.com/en/articles/11526368-usage-based-enterprise-plans)**

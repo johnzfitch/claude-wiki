@@ -1,18 +1,18 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-14T10:16:48Z"
+fetched_at: "2026-03-15T04:10:30Z"
 source_url: "https://support.claude.com/en/articles/11174660-online-safety-contacts"
 title: "Online Safety Contacts | Claude Help Center"
 ---
 
 # Online Safety Contacts
 
-Updated today
+Updated yesterday
 
 
 # **Designated Point of Contact for Authorities**
 
-Government authorities can contact Anthropic directly by emailing [\[email protected\]](/cdn-cgi/l/email-protection#12607775677e73667d603f7b7c63677b607b776152737c667a607d627b713c717d7f). This is reserved for government officials seeking a point of contact and for governmental submissions to remove content. 
+Government authorities can contact Anthropic directly by emailing [\[email protected\]](/cdn-cgi/l/email-protection#e4968183918885908b96c98d8a95918d968d8197a4858a908c968b948d87ca878b89). This is reserved for government officials seeking a point of contact and for governmental submissions to remove content. 
 
  For other types of inquiries, please use the mechanisms described below. ￼
 

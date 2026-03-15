@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-14T10:16:46Z"
+fetched_at: "2026-03-15T04:10:34Z"
 source_url: "https://support.claude.com/en/articles/12386328-requesting-a-refund-for-a-paid-claude-plan"
 title: "Requesting a refund for a paid Claude plan | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Requesting a refund for a paid Claude plan | Claude Help Center"
 
 # Requesting a refund for a paid Claude plan
 
-Updated today
+Updated yesterday
 
 
 **Important:** Except as expressly provided in our **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)** or where required by law, all payments are non-refundable.

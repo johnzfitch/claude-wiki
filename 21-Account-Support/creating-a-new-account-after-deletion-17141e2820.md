@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-14T10:16:49Z"
+fetched_at: "2026-03-15T04:10:29Z"
 source_url: "https://support.claude.com/en/articles/12109679-creating-a-new-account-after-deletion"
 title: "Creating a new account after deletion | Claude Help Center"
 ---
@@ -9,7 +9,7 @@ title: "Creating a new account after deletion | Claude Help Center"
 
 # Creating a new account after deletion
 
-Updated today
+Updated yesterday
 
 If you receive the following message, "The email you used is either associated with an existing account or an account that was active within the last 30 days," this is due to having a deleted account with multiple attempts to create new accounts with the same email address.
 
