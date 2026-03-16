@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:58Z"
+fetched_at: "2026-03-16T05:34:01Z"
 source_url: "https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans"
 title: "Purchase and manage seats on Team plans | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Purchase and manage seats on Team plans | Claude Help Center"
 4.  Purchase and manage seats on Team plans
 
 # Purchase and manage seats on Team plans
-
-Updated yesterday
 
 
 Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For pricing and billing details, see **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)**
@@ -149,22 +147,3 @@ You can also enable group mappings with JIT or SCIM to provision users directly 
 - **Removing members** does not trigger an immediate credit or refund. The seat becomes available to assign to another member. To reduce your bill, you'll need to reduce your plan's total seat allocation.
 
 For detailed billing calculations and examples, see **[How is my Team plan bill calculated?](https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated)**
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Team plan?
-
-
-Use Claude Code with your Team or Enterprise plan
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-Manage members on Team and Enterprise plans
-
-
-Purchase and manage seats on Enterprise plans

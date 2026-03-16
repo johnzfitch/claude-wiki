@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:50Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/13892150-work-across-apps-with-cowork"
 title: "Work across Excel and PowerPoint | Claude Help Center"
 ---
 
 # Work across Excel and PowerPoint
-
-Updated yesterday
 
 
 Claude can now work across apps to coordinate between the Excel and PowerPoint add-ins. Instead of switching between apps and providing context each time, Claude can read from one app and make changes in another. For example, you can ask Claude to analyze data in an Excel workbook, then create a presentation in PowerPoint using those results, without copying and pasting between apps.
@@ -37,8 +35,6 @@ Go to **Settings** in each of Claude for Excel and Powerpoint and toggle **Let C
 
 You will see connected file indicators when Excel or PowerPoint files are linked to your session:
 
-
-## 
 
 ------------------------------------------------------------------------
 
@@ -107,22 +103,3 @@ Make sure the add-in is activated in the app (**Tools \> Add-ins** on Mac or **H
 ### Changes aren't appearing in the other app
 
 Claude works on open files in sequence. Wait for Claude to finish its current action, then check the target file. You may need to ask Claude to refresh or re-read the file.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Release notes
-
-
-Use Skills in Claude
-
-
-Use Claude for Excel
-
-
-Use Claude for PowerPoint
-
-
-Use Claude for Excel and PowerPoint with an LLM gateway

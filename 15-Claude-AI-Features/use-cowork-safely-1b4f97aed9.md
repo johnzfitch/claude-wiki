@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:54Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/13364135-use-cowork-safely"
 title: "Use Cowork safely | Claude Help Center"
 ---
 
 # Use Cowork safely
-
-Updated yesterday
 
 
 ## Availability
@@ -106,7 +104,7 @@ When using the Claude for Excel and Claude for PowerPoint add-ins with Cowork, C
 
 **7. Report suspicious behavior immediately**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#cabfb9afb8b9abacafbeb38aaba4bea2b8a5baa3a9e4a9a5a7) or use the in-app feedback button. Your reports help us improve our defenses.
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#b4c1c7d1c6c7d5d2d1c0cdf4d5dac0dcc6dbc4ddd79ad7dbd9) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 
@@ -125,22 +123,3 @@ You remain responsible for all actions taken by Claude performed on your behalf.
 - Respecting third-party website terms of service, including any restrictions on automated access
 
 For more information about using AI agents safely, please review our **[Acceptable Use Policy for Agents](https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Installing Claude Desktop
-
-
-Get started with Cowork
-
-
-Use Cowork on Team and Enterprise plans
-
-
-Use plugins in Cowork
-
-
-Schedule recurring tasks in Cowork

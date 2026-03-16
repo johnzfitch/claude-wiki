@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:52Z"
+fetched_at: "2026-03-16T05:33:58Z"
 source_url: "https://support.claude.com/en/articles/9517075-what-are-projects"
 title: "What are projects? | Claude Help Center"
 ---
 
 # What are projects?
-
-Updated yesterday
 
 
 Projects are available to all users, including those with free Claude accounts. Free users can create a maximum of five projects.
@@ -67,22 +65,3 @@ Multiple members can contribute documents, create chats, and work together withi
 For more information on getting started with projects, see [How can I create and manage projects?](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)
 
 For more information on private projects and visibility settings on Team and Enterprise plans, see [Project visibility and sharing](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How large is the context window on paid Claude plans?
-
-
-How can I create and manage projects?
-
-
-Usage limit best practices
-
-
-Retrieval augmented generation (RAG) for projects
-
-
-How do usage and length limits work?

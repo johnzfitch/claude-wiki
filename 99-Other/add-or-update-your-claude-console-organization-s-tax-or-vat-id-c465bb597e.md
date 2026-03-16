@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T12:16:56Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/9889428-add-or-update-your-claude-console-organization-s-tax-or-vat-id"
 title: "Add or update your Claude Console organization&#x27;s tax or VAT ID | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Add or update your Claude Console organization&#x27;s tax or VAT ID | Cl
 4.  Add or update your Claude Console organization's tax or VAT ID
 
 # Add or update your Claude Console organization's tax or VAT ID
-
-Updated yesterday
 
 
 ## Add your tax or VAT ID during sign-up
@@ -37,22 +35,3 @@ If you need to add or update your tax or VAT ID after you've already created a C
 4.  Click "Save changes" when you're finished.
 
 **Note:** Your billing address determines your tax jurisdiction. See [Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation) for details on how to view or update your billing address.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Add or update your paid Claude account’s tax or VAT ID
-
-
-Add or update your Team plan's tax or VAT ID
-
-
-Claude Console Roles and Permissions
-
-
-Understanding your billing address and tax calculation
-
-
-Inviting members to the Claude Console

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:59Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans"
 title: "Manage members on Team and Enterprise plans | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Manage members on Team and Enterprise plans | Claude Help Center"
 4.  Manage members on Team and Enterprise plans
 
 # Manage members on Team and Enterprise plans
-
-Updated yesterday
 
 
 This guide covers how to add, remove, and manage the people on your Team or Enterprise plan.
@@ -102,7 +100,6 @@ Invites sent by members follow the same domain restrictions as other join method
 
 Admins can enable or disable member-to-member invites from the admin settings. When disabled, only admins can send invitations. Invitees added through member invites are assigned the default member role and placed in the lowest available seat tier.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -181,22 +178,3 @@ The current Primary Owner can transfer ownership by:
 ### What happens to the initial invitation for a new Enterprise organization?
 
 When Anthropic provides a new Enterprise organization and invites the Primary Owner, the same 21-day expiration period applies to that initial invitation. If your invitation has expired, please reach out to your account manager.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Roles and permissions
-
-
-Purchase and manage seats on Team plans
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-Purchase and manage seats on Enterprise plans
-
-
-Find and join a Team or Enterprise organization

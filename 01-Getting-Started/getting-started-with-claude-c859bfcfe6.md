@@ -1,13 +1,11 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-03-15T12:16:53Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 title: "Getting started with Claude | Claude Help Center"
 ---
 
 # Getting started with Claude
-
-Updated yesterday
 
 
 ## What is Claude?
@@ -96,22 +94,3 @@ Once you've started using Claude, you can:
 - Learn more about designing effective prompts in our [**prompt engineering documentation**](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview).
 
 - For additional features and more usage, consider **[upgrading to a paid plan](https://support.claude.com/en/articles/11049762-choosing-a-claude-plan)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Pro plan?
-
-
-How do usage and length limits work?
-
-
-Use Claude Code with your Team or Enterprise plan
-
-
-Extra usage for paid Claude plans
-
-
-Troubleshoot Claude error messages

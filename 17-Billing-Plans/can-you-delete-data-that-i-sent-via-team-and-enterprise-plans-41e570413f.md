@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:58Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans"
 title: "Can you delete data that I sent via Team and Enterprise plans? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "Can you delete data that I sent via Team and Enterprise plans? | Claude 
 
 # Can you delete data that I sent via Team and Enterprise plans?
 
-Updated yesterday
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
@@ -20,22 +19,3 @@ We also retain data in our backend systems as described [here](https://privacy.c
 Read more [here](https://privacy.claude.com/en/articles/7996875-can-you-delete-data-that-i-sent-via-api) about deleting data sent via API.
 
 Enterprise plan customers can also set [custom retention timelines](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-claude-enterprise) for their organization’s data.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Business Associate Agreements (BAA) for Commercial Customers
-
-
-Who owns and manages the data of my team?
-
-
-Does Anthropic Act as a Data Processor or Controller?
-
-
-Configure custom data retention controls for Enterprise plans
-
-
-Use Cowork on Team and Enterprise plans

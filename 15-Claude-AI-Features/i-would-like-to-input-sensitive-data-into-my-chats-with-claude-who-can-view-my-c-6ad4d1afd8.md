@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:55Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/8325621-i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-conversations"
 title: "I would like to input sensitive data into my chats with Claude. Who can view my conversations? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "I would like to input sensitive data into my chats with Claude. Who can 
 
 # I would like to input sensitive data into my chats with Claude. Who can view my conversations?
 
-Updated yesterday
 
 *This article is about our consumer products (e.g. Claude Free, Pro, Max (and when using Claude Code with those accounts)).*
 
@@ -48,22 +47,3 @@ While we have these protections in place, we also recommend being thoughtful abo
 ### **Your Control Over Privacy Settings**
 
 You can adjust your privacy and model improvement settings at any time by following the steps [here](https://privacy.anthropic.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings). Learn more about your privacy settings and controls [here](https://privacy.anthropic.com/en/collections/10672568-privacy-settings-controls).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Who owns and manages the data of my Claude for Education account?
-
-
-Use Claude’s chat search and memory to build on previous context
-
-
-Using incognito chats
-
-
-Use Claude for Excel
-
-
-Using Claude in Chrome Safely

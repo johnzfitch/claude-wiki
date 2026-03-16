@@ -1,13 +1,11 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-15T12:16:53Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 title: "What are Skills? | Claude Help Center"
 ---
 
 # What are Skills?
-
-Updated yesterday
 
 
 Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
@@ -101,22 +99,3 @@ MCP connects Claude to external services and data sources. Skills provide proced
 ## Learn more about Skills
 
 For more detailed information about how Skills work, see **[Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** in our Claude Docs.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Use Skills in Claude
-
-
-How to create custom Skills
-
-
-How to create a skill with Claude through conversation
-
-
-Provision and manage Skills for your organization
-
-
-Anthropic Software Directory Policy

@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:17:01Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector"
 title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Enabling and using the Microsoft 365 connector | Claude Help Center"
 4.  Enabling and using the Microsoft 365 connector
 
 # Enabling and using the Microsoft 365 connector
-
-Updated yesterday
 
 
 The Microsoft 365 connector is available for users on Team and Enterprise plans.
@@ -468,22 +466,3 @@ Yes. One of Claude's strengths is analyzing and summarizing complex communicatio
 ### What happens if a Microsoft 365 user tries to connect before a MicrosoftEntra Global Admininstrator grants tenant-wide permission?
 
 If a user without Microsoft Entra Global Administrator permissions attempts to connect their Microsoft 365 account, they will receive an error message indicating that an Administrator must grant app permissions before they can use the connector. The connection attempt will fail until a Microsoft Entra Global Administrator approves the necessary permissions as detailed above in Phase 1.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with custom connectors using remote MCP
-
-
-Use connectors to extend Claude's capabilities
-
-
-When to use desktop and web connectors
-
-
-Using the Benchling Connector in Claude
-
-
-Microsoft 365 Connector: Security Guide

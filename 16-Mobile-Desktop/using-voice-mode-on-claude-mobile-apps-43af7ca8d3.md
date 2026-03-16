@@ -1,13 +1,11 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T12:17:07Z"
+fetched_at: "2026-03-16T05:34:06Z"
 source_url: "https://support.claude.com/en/articles/11101966-using-voice-mode-on-claude-mobile-apps"
 title: "Using voice mode | Claude Help Center"
 ---
 
 # Using voice mode
-
-Updated yesterday
 
 
 Voice mode allows you to have complete spoken conversations with Claude. Instead of typing a prompt and reading a written response, you can speak to Claude and listen to its responses, making it easier to use when your hands are busy but your mind isn't.
@@ -175,22 +173,3 @@ Voice mode is currently available in English only.
 ### Can Enterprise Admins disable voice mode for their organizations?
 
 If you are an Enterprise owner and would like to disable voice mode for your organization, please **[reach out to Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using Claude App Intents, Shortcuts, and Widgets on iOS
-
-
-Using the Claude Widget on Android
-
-
-Using extended thinking
-
-
-Use quick entry with Claude Desktop on Mac
-
-
-Switching to a different Identity Provider (IdP)

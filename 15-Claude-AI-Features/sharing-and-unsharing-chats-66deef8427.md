@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:56Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/10593882-sharing-and-unsharing-chats"
 title: "Sharing and Unsharing Chats | Claude Help Center"
 ---
 
 # Sharing and Unsharing Chats
-
-Updated yesterday
 
 
 Learn how to create shareable links to your chats with Claude. While chats are always private by default, you can easily create snapshots of your conversations to share via direct link. This guide walks you through the process of sharing and unsharing chats.
@@ -53,23 +51,3 @@ This will open a **Shared chats** modal listing the title, date shared, and link
 
 
 If you don’t have any shared chat snapshots, the **Shared chats** modal will show “No shared content found”:
-
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What are artifacts and how do I use them?
-
-
-Manage project visibility and sharing
-
-
-Publishing and sharing artifacts
-
-
-Getting Started with Local MCP Servers on Claude Desktop
-
-
-Custom visuals in chat

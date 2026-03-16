@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:17:01Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 title: "Using interactive connectors in Claude | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Using interactive connectors in Claude | Claude Help Center"
 4.  Using interactive connectors in Claude
 
 # Using interactive connectors in Claude
-
-Updated yesterday
 
 
 Interactive connectors are available for all users on Claude and Claude Desktop.
@@ -129,22 +127,3 @@ No. Purchases through third-party interactive connectors are not supported.
 ## I'm a developer. Where can I learn about building MCP Apps?
 
 MCP Apps is the open-source extension to the Model Context Protocol that powers interactive apps. If you are building your own interactive connector, note that it must meet additional design, security, and testing requirements. See the **[Remote MCP Server Submission Guide](https://support.claude.com/en/articles/12922490)** for details.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with custom connectors using remote MCP
-
-
-Use connectors to extend Claude's capabilities
-
-
-Connect your tools to unlock a smarter, more capable AI companion
-
-
-Using the BioRender Connector in Claude
-
-
-Using the Benchling Connector in Claude

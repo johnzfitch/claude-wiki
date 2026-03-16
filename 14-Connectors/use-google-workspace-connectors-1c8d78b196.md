@@ -1,13 +1,11 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:17:00Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors"
 title: "Use Google Workspace connectors | Claude Help Center"
 ---
 
 # Use Google Workspace connectors
-
-Updated yesterday
 
 
 Connect your Gmail, Google Calendar, and Google Drive to Claude so you can search emails, manage your calendar, work with documents, and save files—all without leaving the conversation.
@@ -252,22 +250,3 @@ On Team and Enterprise plans, Owners and Primary Owners can disable Google Works
 ### Who has access to my Google Drive Cataloging index?
 
 Only you. Your index includes only documents you have access to, and no one else can access it—even members of the same organization. If you disconnect your Google account from Claude, your index is deleted.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Use connectors to extend Claude's capabilities
-
-
-When to use desktop and web connectors
-
-
-Connect your tools to unlock a smarter, more capable AI companion
-
-
-Using Claude in Slack
-
-
-Enabling and using the Microsoft 365 connector

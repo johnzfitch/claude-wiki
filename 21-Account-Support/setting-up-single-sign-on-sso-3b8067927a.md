@@ -1,13 +1,11 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:17:03Z"
+fetched_at: "2026-03-16T05:34:04Z"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso"
 title: "Set up single sign-on (SSO) | Claude Help Center"
 ---
 
 # Set up single sign-on (SSO)
-
-Updated yesterday
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
@@ -160,7 +158,6 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
 6.  Click "Test sign-in" on the same page to confirm everything is working.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -169,22 +166,3 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 You can toggle **Require SSO for Claude** or **Require SSO for Console** off at any time. This will make SSO optional for all users.
 
 To fully disconnect SSO, click “Manage SSO” then “Reset.” This will end all users’ sessions and require them to sign back in via email login link.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
-
-
-Set up JIT or SCIM provisioning
-
-
-Manage members on Team and Enterprise plans
-
-
-Switching to a different Identity Provider (IdP)
-
-
-Find and join a Team or Enterprise organization

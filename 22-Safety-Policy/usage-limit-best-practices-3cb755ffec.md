@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:54Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/9797557-usage-limit-best-practices"
 title: "Usage limit best practices | Claude Help Center"
 ---
 
 # Usage limit best practices
-
-Updated yesterday
 
 
 The number of messages you can send will vary based on your Claude plan. For more information on your plan’s usage, refer to the following resources.
@@ -155,22 +153,3 @@ Projects offer significant caching benefits:
 - Provide all relevant data in a single, well-structured message.
 
 By following these best practices, you can make the most efficient use of your Claude plan's message allocation.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How large is the context window on paid Claude plans?
-
-
-How do usage and length limits work?
-
-
-Release notes
-
-
-Extra usage for paid Claude plans
-
-
-Holiday 2025 Usage Promotion

@@ -1,13 +1,11 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T12:16:46Z"
+fetched_at: "2026-03-16T05:33:55Z"
 source_url: "https://support.claude.com/en/articles/12622667-enterprise-configuration"
 title: "Enterprise configuration | Claude Help Center"
 ---
 
 # Enterprise configuration
-
-Updated yesterday
 
 
 Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
@@ -50,22 +48,3 @@ Deploy configuration settings through your enterprise management solution using 
 ## Enterprise Policy Options
 
 [TABLE]
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Getting Started with Local MCP Servers on Claude Desktop
-
-
-Use enterprise search
-
-
-Deploy Claude Desktop for macOS
-
-
-Deploy Claude Desktop for Windows
-
-
-Building Desktop Extensions with MCPB

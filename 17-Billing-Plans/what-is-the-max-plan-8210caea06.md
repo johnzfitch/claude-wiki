@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:42Z"
+fetched_at: "2026-03-16T05:33:52Z"
 source_url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
 title: "What is the Max plan? | Claude Help Center"
 ---
 
 # What is the Max plan?
-
-Updated yesterday
 
 
 This article is about paid Max plans for individual consumers. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.
@@ -75,22 +73,3 @@ Max plans also have two weekly usage limits: one that applies across all models 
 In addition, to manage capacity and ensure fair access to all users, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion.
 
 For more information about usage and length limits, refer to **[Understanding usage and length limits](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits)**. For guidance on using your Max capacity efficiently, we also have **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How do I sign up for the Max plan?
-
-
-Choosing a Claude plan
-
-
-Using Claude Code with your Pro or Max plan
-
-
-Extra usage for paid Claude plans
-
-
-Holiday 2025 Usage Promotion

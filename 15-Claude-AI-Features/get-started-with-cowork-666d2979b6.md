@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:56Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/13345190-get-started-with-cowork"
 title: "Get started with Cowork | Claude Help Center"
 ---
 
 # Get started with Cowork
-
-Updated yesterday
 
 
 This article explains how to use **[Cowork](https://claude.com/product/cowork)**, a research preview that brings Claude Code's agentic capabilities to Claude Desktop for knowledge work beyond coding.
@@ -274,22 +272,3 @@ Cowork consumes more usage than standard chat. Try using standard chat for simpl
 ### Files aren't appearing where expected
 
 Check that you've granted Claude the appropriate file access permissions. Review the output location Claude specified when completing the task.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Installing Claude Desktop
-
-
-Use Cowork safely
-
-
-Use Cowork on Team and Enterprise plans
-
-
-Install financial services plugins for Cowork
-
-
-Schedule recurring tasks in Cowork

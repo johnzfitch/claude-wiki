@@ -1,13 +1,11 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T12:16:50Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
 title: "Using Claude with Android Apps | Claude Help Center"
 ---
 
 # Using Claude with Android Apps
-
-Updated yesterday
 
 
 Claude can now connect with your Android device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, calendar events, set alarms and timers, find locations, and more — all through your everyday apps without copy-paste.
@@ -310,22 +308,3 @@ Health Connect permissions are managed separately from other app permissions. Wh
 - Health Connect isn’t supported when using work profiles on Android devices.
 
 **Need more help?** If you're experiencing issues with these features, try restarting Claude for Android or [updating the app to the latest version from the Google Play Store](https://support.claude.com/en/articles/11825394-how-to-update-claude-for-android).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using the Claude Widget on Android
-
-
-Use connectors to extend Claude's capabilities
-
-
-Using Claude with iOS Apps
-
-
-Using Claude in Slack
-
-
-Using the Blackbaud Connector in Claude

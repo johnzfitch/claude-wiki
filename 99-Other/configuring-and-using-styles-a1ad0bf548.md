@@ -1,13 +1,11 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T12:17:04Z"
+fetched_at: "2026-03-16T05:34:05Z"
 source_url: "https://support.anthropic.com/en/articles/10181068-configuring-and-using-styles"
 title: "Configure and use styles | Claude Help Center"
 ---
 
 # Configure and use styles
-
-Updated yesterday
 
 
 Styles allow you to customize how Claude communicates, helping you achieve more while working in a way that feels natural to you.
@@ -111,22 +109,3 @@ Your writing samples help Claude understand and match your preferred communicati
 - Switch between styles based on different conversation needs.
 
 - Consider your audience and purpose when selecting or creating styles.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How can I create and manage projects?
-
-
-Understanding Claude's Personalization Features
-
-
-Use Claude for Excel
-
-
-Use Claude for PowerPoint
-
-
-Use plugins in Cowork

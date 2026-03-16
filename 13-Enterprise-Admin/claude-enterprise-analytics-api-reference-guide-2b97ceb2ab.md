@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T12:16:58Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/13703965-claude-enterprise-analytics-api-reference-guide"
 title: "Claude Enterprise Analytics API reference guide | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Claude Enterprise Analytics API reference guide | Claude Help Center"
 4.  Claude Enterprise Analytics API reference guide
 
 # Claude Enterprise Analytics API reference guide
-
-Updated yesterday
 
 
 ## Overview
@@ -175,22 +173,3 @@ Returns MCP/connector usage data across both Claude (chat) and Claude Code withi
 
     curl -X GET "https://api.anthropic.com/v1/organizations/analytics/connectors?date=2025-01-01"
        --header "x-api-key: $YOUR_API_KEY"
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Set up the Claude LTI in Canvas by Instructure
-
-
-View usage analytics for Team and Enterprise plans
-
-
-Using the Blackbaud Connector in Claude
-
-
-Enforce network-level access control with Tenant Restrictions
-
-
-Access engagement and adoption data with the Analytics API

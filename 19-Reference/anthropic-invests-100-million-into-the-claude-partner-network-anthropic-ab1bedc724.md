@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T12:17:06Z"
+fetched_at: "2026-03-16T05:34:06Z"
 source_url: "https://anthropic.com/news/claude-partner-network"
 title: "Anthropic invests $100 million into the Claude Partner Network \\ Anthropic"
 ---

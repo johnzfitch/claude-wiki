@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:17:08Z"
+fetched_at: "2026-03-16T05:34:07Z"
 source_url: "https://support.claude.com/en/articles/12429409-extra-usage-for-max-20x-plans"
 title: "Extra usage for paid Claude plans | Claude Help Center"
 ---
 
 # Extra usage for paid Claude plans
-
-Updated yesterday
 
 
 This article explains how to enable and use extra usage on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Claude after reaching your plan’s usage limits by switching to pay-as-you-go pricing.
@@ -157,22 +155,3 @@ It's possible to slightly exceed your defined usage limit. Our system checks if 
 ### Does extra usage pricing differ from API pricing?
 
 No, extra usage is billed at the same [standard API rates](https://claude.com/pricing#api) shown in the pricing table above.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Max plan?
-
-
-How do I sign up for the Max plan?
-
-
-Choosing a Claude plan
-
-
-Using Claude Code with your Pro or Max plan
-
-
-Manage extra usage for Team and seat-based Enterprise plans

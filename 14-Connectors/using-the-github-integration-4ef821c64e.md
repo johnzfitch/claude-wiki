@@ -1,13 +1,11 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:17:02Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/10167454-using-the-github-integration"
 title: "Using the GitHub Integration | Claude Help Center"
 ---
 
 # Using the GitHub Integration
-
-Updated yesterday
 
 
 For more information on enabling GitHub within your account, see **[Connect a service to Claude](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities#h_c228562ecd)**.
@@ -94,22 +92,3 @@ A: Yes, you can add multiple repositories to provide Claude with comprehensive c
 A: If you lose access to a repository, you won't be able to view its contents in projects where it was previously added. The repository preview will be removed, though the conversation history will be maintained.
 
 **Note:** All Claude integrations are currently in beta.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using the GitHub integration
-
-
-Automated Security Reviews in Claude Code
-
-
-Claude Code FAQ
-
-
-Claude Code on the web
-
-
-Manage Cowork plugins for your organization

@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:52Z"
+fetched_at: "2026-03-16T05:33:58Z"
 source_url: "https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription"
 title: "How to gift a Claude subscription | Claude Help Center"
 ---
 
 # How to gift a Claude subscription
-
-Updated yesterday
 
 
 Give the gift of Claude to friends, family, or colleagues. Gift subscriptions are available for Pro, Max 5x, and Max 20x plans, and can be purchased for 1, 3, 6, or 12 months.
@@ -63,22 +61,3 @@ After purchase, you'll receive a confirmation email with your order details.
 - Recipients with active mobile (iOS or Android) subscriptions will need to wait until their mobile subscription ends before redeeming.
 
 - No credit card is required for the recipient to redeem.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Max plan?
-
-
-How do I sign up for the Max plan?
-
-
-Choosing a Claude plan
-
-
-How to redeem a Claude gift subscription
-
-
-Holiday 2025 Usage Promotion

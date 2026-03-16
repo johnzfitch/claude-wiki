@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:48Z"
+fetched_at: "2026-03-16T05:33:56Z"
 source_url: "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome"
 title: "Get started with Claude in Chrome | Claude Help Center"
 ---
 
 # Get started with Claude in Chrome
-
-Updated yesterday
 
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
@@ -180,22 +178,3 @@ If you're unable to install or use the extension, contact your organization's ad
 - **[Claude in Chrome troubleshooting](https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting)**: Get help with common issues.
 
 - **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128-claude-for-chrome-admin-controls)**: For Team and Enterprise admins managing the extension for their organization.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Simplify your browsing experience with Claude in Chrome
-
-
-Claude in Chrome Troubleshooting
-
-
-Using Claude in Chrome Safely
-
-
-Claude in Chrome Permissions Guide
-
-
-Claude in Chrome admin controls

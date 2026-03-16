@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-15T12:16:51Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/9307344-responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors"
 title: "Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations Serving Minors | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "Responsible Use of Anthropic&#x27;s Models: Guidelines for Organizations
 
 # Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors
 
-Updated yesterday
 
 At Anthropic, we recognize the unique vulnerabilities and needs of children in digital spaces. In order to create a safer digital environment and mitigate risks, organizations providing minors with the ability to directly interact with products that incorporate our API(s) should implement the following safeguards:
 
@@ -36,22 +35,3 @@ It is the responsibility of organizations to comply with all applicable child sa
 Organizations must disclose to their users that they are interacting with an AI system rather than a human.
 
 Anthropic will periodically audit organizations for compliance with these safeguards. If your organization has a high violation rate and has not implemented these safety recommendations, we may ask you to implement them. Failure to implement these recommendations when requested, or a continued high violation rate, may lead to the suspension or termination of your account.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Does Anthropic Act as a Data Processor or Controller?
-
-
-Anthropic Connectors Directory FAQ
-
-
-Can I use my Outputs to train an AI model?
-
-
-Anthropic Software Directory Policy
-
-
-Use Cowork on Team and Enterprise plans

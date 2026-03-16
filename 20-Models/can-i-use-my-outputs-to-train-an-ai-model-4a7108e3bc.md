@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-15T12:16:46Z"
+fetched_at: "2026-03-16T05:33:54Z"
 source_url: "https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model"
 title: "Can I use my Outputs to train an AI model? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Can I use my Outputs to train an AI model? | Claude Help Center"
 3.  Can I use my Outputs to train an AI model?
 
 # Can I use my Outputs to train an AI model?
-
-Updated yesterday
 
 
 ## Understanding our policies on using Claude's Outputs for model training and development
@@ -53,22 +51,3 @@ Uses that are prohibited include:
 - Using Outputs as training targets for models
 
 - Reverse engineering training methods
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-I would like to input sensitive data into my chats with Claude. Who can view my conversations?
-
-
-Does Anthropic crawl data from the web, and how can site owners block the crawler?
-
-
-Why am I receiving an 'Output blocked by content filtering policy' error?
-
-
-Why am I receiving an 'Output blocked by content filtering policy' error?
-
-
-Use Claude for Excel and PowerPoint with an LLM gateway

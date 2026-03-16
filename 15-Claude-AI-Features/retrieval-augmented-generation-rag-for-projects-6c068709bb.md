@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:17:05Z"
+fetched_at: "2026-03-16T05:34:05Z"
 source_url: "https://support.anthropic.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects"
 title: "Retrieval augmented generation (RAG) for projects | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Retrieval augmented generation (RAG) for projects | Claude Help Center"
 4.  Retrieval augmented generation (RAG) for projects
 
 # Retrieval augmented generation (RAG) for projects
-
-Updated yesterday
 
 
 RAG for projects is available for all Claude plans (free, Pro, Max, Team, and Enterprise).
@@ -99,22 +97,3 @@ Yes. All existing projects will automatically benefit from RAG when the project 
 ### Does RAG work with all Claude tools?
 
 Yes. RAG works with all Claude features, including web search, extended thinking, and Research.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How large is the context window on paid Claude plans?
-
-
-What are projects?
-
-
-How can I create and manage projects?
-
-
-Usage limit best practices
-
-
-Use Google Workspace connectors

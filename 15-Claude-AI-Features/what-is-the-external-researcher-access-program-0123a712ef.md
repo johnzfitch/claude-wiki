@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:56Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program"
 title: "What is the External Researcher Access Program? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "What is the External Researcher Access Program? | Claude Help Center"
 4.  What is the External Researcher Access Program?
 
 # What is the External Researcher Access Program?
-
-Updated yesterday
 
 
 Our External Researcher Access Program is specifically designed to support and lower the barrier to entry for researchers working on AI safety and alignment topics that we consider high priority by providing free API credits.
@@ -42,7 +40,7 @@ Please complete the following application form with details about your team and 
 
 3.  **Please note that given the substantial number of applications we receive (sometimes thousands in a single week), we regret that we cannot provide individual responses to unapproved submissions.** In addition, we reserve the right to reject submissions for any reason and will not be able to provide explanations for each individual applicant. However, we appreciate the time and effort put into each submission and will carefully review all entries. Thank you for your understanding.
 
-If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#017364726460736269647360626264727241606f7569736e7168622f626e6c). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
+If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](/cdn-cgi/l/email-protection#abd9ced8cecad9c8c3ced9cac8c8ced8d8ebcac5dfc3d9c4dbc2c885c8c4c6). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
 
 ------------------------------------------------------------------------
 
@@ -108,22 +106,3 @@ Thank you for your interest in our Researcher Access Program and for taking the 
 
 \
 ​Thank you for your understanding. We're committed to supporting the AI research community to the best of our ability while maintaining a sustainable process.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-API Safeguards Tools
-
-
-About the Development Partner Program
-
-
-Anthropic's AI for Science Program
-
-
-Model Safety Bug Bounty Program
-
-
-Can I use my Outputs to train an AI model?

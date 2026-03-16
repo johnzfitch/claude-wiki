@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:58Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/13663666-use-visual-and-interactive-content-on-team-and-enterprise-plans"
 title: "Use visual and interactive content on Team and Enterprise plans | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Use visual and interactive content on Team and Enterprise plans | Claude
 4.  Use visual and interactive content on Team and Enterprise plans
 
 # Use visual and interactive content on Team and Enterprise plans
-
-Updated yesterday
 
 
 Maps and image search results are enabled by default on Team plans. On Enterprise plans, these features are off by default — an Owner or Primary Owner can enable them in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
@@ -25,22 +23,3 @@ Maps and weather content is powered by Google Maps. Users’ prompts aren't sent
 Image results are powered by Bing Image Search. Users’ prompts aren’t sent to Bing — instead, Claude transforms queries into generic search requests. If users click a URL associated with an image, anonymized click data is also sent to Bing. Data sent to Bing is subject to **[Microsoft's privacy policy](https://privacy.microsoft.com/en-us/privacystatement)**.
 
 Interactive inputs don't involve third-party services.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Use Google Workspace connectors
-
-
-Enabling and using web search
-
-
-Use enterprise search
-
-
-Use Cowork on Team and Enterprise plans
-
-
-Visual and interactive content

@@ -1,13 +1,11 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T12:16:41Z"
+fetched_at: "2026-03-16T05:33:51Z"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
 title: "Release notes | Claude Help Center"
 ---
 
 # Release notes
-
-Updated yesterday
 
 
 ## March 2026
@@ -395,22 +393,3 @@ Claude Opus 4.1 (an incremental update to Opus 4) brings enhanced performance as
 Enabled project permissions and sharing for Team and Enterprise plans. See **[Organization-wide sharing](https://support.anthropic.com/en/articles/9519189-project-visibility-and-sharing#h_0b584425bc)** for more information.
 
 **Note:** Refer to **[our docs](https://docs.anthropic.com/en/release-notes/overview)** for historical release notes.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How up-to-date is Claude's training data?
-
-
-How large is the Claude API’s context window?
-
-
-Claude Code model configuration
-
-
-Using Claude in Microsoft Foundry
-
-
-Applying Claude Opus 4.5’s strengths to your everyday work

@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:57Z"
+fetched_at: "2026-03-16T05:34:01Z"
 source_url: "https://support.claude.com/en/articles/13694757-access-engagement-and-adoption-data-with-the-analytics-api"
 title: "Access engagement and adoption data with the Analytics API | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Access engagement and adoption data with the Analytics API | Claude Help
 4.  Access engagement and adoption data with the Analytics API
 
 # Access engagement and adoption data with the Analytics API
-
-Updated yesterday
 
 
 The Analytics API gives Enterprise plan Primary Owners programmatic access to engagement and adoption data for their organization. Use it to build internal dashboards, track adoption trends, and feed Claude engagement data into your existing reporting tools.
@@ -70,22 +68,3 @@ All endpoints return data for a single date or date range. Data is only availabl
 The API has a default rate limit of 60 requests per minute. If this doesn't meet your organization's needs, reach out to your Anthropic Contact or our **[Sales team](https://claude.com/contact-sales)**.
 
 **Important:** If you are using Claude Code via **[Amazon Bedrock](https://support.claude.com/en/collections/4078537-amazon-bedrock)**, the Analytics API will not return data related to Claude Code.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Enterprise plan?
-
-
-Claude Console Roles and Permissions
-
-
-Claude Code usage analytics
-
-
-View usage analytics for Team and Enterprise plans
-
-
-Claude Enterprise Analytics API reference guide

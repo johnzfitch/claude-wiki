@@ -1,13 +1,11 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:16:55Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
 title: "Logging in to your Claude account | Claude Help Center"
 ---
 
 # Logging in to your Claude account
-
-Updated yesterday
 
 
 When you open Claude on a web browser ([claude.ai](http://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
@@ -104,22 +102,3 @@ If you are already logged in to Claude for iOS, you can see the email address yo
 2.  Click your initials in the top right corner.
 
 3.  Look for your email address under Settings.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How do I log out of all active sessions?
-
-
-Getting Started with Claude for Education at Your University (for Owners/Admins)
-
-
-FAQs on Using Claude for Education at Your University
-
-
-How to gift a Claude subscription
-
-
-Logging in to your Console account

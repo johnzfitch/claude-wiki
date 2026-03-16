@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:55Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/13837440-use-plugins-in-cowork"
 title: "Use plugins in Cowork | Claude Help Center"
 ---
 
 # Use plugins in Cowork
-
-Updated yesterday
 
 
 Plugins are available to all Cowork users on paid plans (Pro, Max, Team, Enterprise).
@@ -83,22 +81,3 @@ If you're on a Team or Enterprise plan, an owner can distribute plugins across y
 - Available organization plugins show up when you browse the plugin catalog, and you can install them yourself.
 
 For guidance on setting up and managing plugins organization-wide, see **[Manage Cowork plugins for your organization](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with Cowork
-
-
-Use Cowork safely
-
-
-Use Cowork on Team and Enterprise plans
-
-
-Manage Cowork plugins for your organization
-
-
-Install financial services plugins for Cowork

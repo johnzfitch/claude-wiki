@@ -1,15 +1,14 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:51Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/9035075-law-enforcement-requests"
 title: "Law Enforcement Requests | Claude Help Center"
 ---
 
 # Law Enforcement Requests
 
-Updated yesterday
 
-Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s policies for handling governmental requests for user information, see [here](https://support.anthropic.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information). If you are a law enforcement agent who is authorized to gather evidence in connection with an official investigation, you may request records from Anthropic by emailing [\[email protected\]](/cdn-cgi/l/email-protection#6509041248000b030a17060008000b1148170014100016111625040b110d170a150c064b060a08).
+Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s policies for handling governmental requests for user information, see [here](https://support.anthropic.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information). If you are a law enforcement agent who is authorized to gather evidence in connection with an official investigation, you may request records from Anthropic by emailing [\[email protected\]](/cdn-cgi/l/email-protection#6a060b1d470f040c0518090f070f041e47180f1b1f0f191e192a0b041e0218051a030944090507).
 
 Please include the following information with your request:
 
@@ -38,22 +37,3 @@ Please include the following information with your request:
 - Attach Any Relevant Documentation (e.g., Subpoena, Warrant)
 
 - NCMEC Report Identifier (If Applicable)
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-I think a user is infringing my copyright or other intellectual property. How do I report it?
-
-
-Claude 4 Invite Sweepstakes Official Rules
-
-
-Online Safety Contacts
-
-
-Enforce network-level access control with Tenant Restrictions
-
-
-Unauthorized Anthropic stock sales and investment scams

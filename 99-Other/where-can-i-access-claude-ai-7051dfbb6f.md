@@ -1,13 +1,12 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T12:17:08Z"
+fetched_at: "2026-03-16T05:34:07Z"
 source_url: "https://support.anthropic.com/en/articles/8461763-where-can-i-access-claude-ai"
 title: "Where can I access Claude? | Claude Help Center"
 ---
 
 # Where can I access Claude?
 
-Updated yesterday
 
 You can access Claude in the following locations:
 

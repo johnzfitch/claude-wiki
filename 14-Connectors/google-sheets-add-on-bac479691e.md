@@ -1,13 +1,11 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:16:56Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/13162029-google-sheets-add-on"
 title: "Google Sheets add-on | Claude Help Center"
 ---
 
 # Google Sheets add-on
-
-Updated yesterday
 
 
 The [Claude for Sheets extension](https://workspace.google.com/marketplace/app/claude%5Ffor%5Fsheets/909417792257) integrates Claude into Google Sheets, allowing you to execute interactions with Claude directly in cells.
@@ -164,22 +162,3 @@ You can manually recalculate `#ERROR!`, `⚠ DEFERRED ⚠`, or `⚠ THROTTLED �
 ## Further information
 
 For more information regarding this extension, see the [Claude for Sheets Google Workspace Marketplace](https://workspace.google.com/marketplace/app/claude%5Ffor%5Fsheets/909417792257) overview page.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Release notes
-
-
-Use Claude for Excel
-
-
-Using Claude in Microsoft Foundry
-
-
-Enforce network-level access control with Tenant Restrictions
-
-
-Use Claude for Excel and PowerPoint with an LLM gateway

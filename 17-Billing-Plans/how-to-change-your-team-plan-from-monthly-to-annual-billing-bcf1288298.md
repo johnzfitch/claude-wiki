@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:48Z"
+fetched_at: "2026-03-16T05:33:56Z"
 source_url: "https://support.claude.com/en/articles/12083917-how-to-change-your-team-plan-from-monthly-to-annual-billing"
 title: "Change your Team plan from monthly to annual billing | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "Change your Team plan from monthly to annual billing | Claude Help Cente
 
 # Change your Team plan from monthly to annual billing
 
-Updated yesterday
 
 Owners and Primary Owners of Team plans with monthly subscriptions can switch from the monthly plan to an annual plan by following these steps:
 
@@ -24,22 +23,3 @@ Owners and Primary Owners of Team plans with monthly subscriptions can switch fr
 5.  Click “Confirm subscription.”
 
 6.  Your new annual Team plan will start immediately and you will be credited for any unused time on your previous monthly plan.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How do I sign up for the Pro plan?
-
-
-Get started with the Team plan
-
-
-How is my Team plan bill calculated?
-
-
-How to change your Pro plan from monthly to annual billing
-
-
-How do I sign up for the Max plan?

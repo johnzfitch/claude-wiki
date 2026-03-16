@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:50Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 ---
 
 # HIPAA-ready Enterprise plans
-
-Updated yesterday
 
 
 This feature is available for Enterprise plans only.
@@ -65,22 +63,3 @@ The HIPAA-ready offering requires a sales-assisted Enterprise plan and is not av
 If your organization signed a BAA for Claude API usage before December 2, 2025, that agreement only covers API usage—it does not extend to the HIPAA-ready Enterprise plan. To add this Enterprise plan access, you'll need to sign a new BAA with your account team.
 
 BAAs signed after December 2, 2025 can cover both API usage and the Enterprise plan under a single agreement.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Business Associate Agreements (BAA) for Commercial Customers
-
-
-What is the Enterprise plan?
-
-
-Use Claude Code with your Team or Enterprise plan
-
-
-View usage analytics for Team and Enterprise plans
-
-
-Purchase and manage seats on Enterprise plans

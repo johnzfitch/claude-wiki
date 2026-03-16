@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:47Z"
+fetched_at: "2026-03-16T05:33:55Z"
 source_url: "https://support.claude.com/en/articles/12068906-using-claude-for-financial-services-for-investment-research"
 title: "Using Claude for Financial Services for investment research | Claude Help Center"
 ---
@@ -9,27 +9,7 @@ title: "Using Claude for Financial Services for investment research | Claude Hel
 
 # Using Claude for Financial Services for investment research
 
-Updated yesterday
 
 # An error occurred.
 
 Unable to execute JavaScript.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using Research on Claude
-
-
-Using Research
-
-
-Using Claude for Financial Services for analysis and modeling
-
-
-Using Claude for Financial Services for investment memos
-
-
-Claude for Financial Services Skills

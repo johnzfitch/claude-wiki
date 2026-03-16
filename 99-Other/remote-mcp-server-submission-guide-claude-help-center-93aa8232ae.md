@@ -1,13 +1,11 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T12:17:09Z"
+fetched_at: "2026-03-16T05:34:08Z"
 source_url: "https://support.claude.com/en/articles/12922490"
 title: "Remote MCP Server Submission Guide | Claude Help Center"
 ---
 
 # Remote MCP Server Submission Guide
-
-Updated yesterday
 
 
 This is a complete guide for submitting your remote MCP server to Anthropic's MCP Directory for broader distribution and discoverability.
@@ -582,46 +580,3 @@ Anthropic may remove extensions from the directory at any time and for any reaso
 - \[ \] Claude IP addresses allowlisted (if server behind firewall)
 
 - \[ \] Comprehensive documentation published and accessible
-
-- \[ \] Privacy policy published at stable HTTPS URL
-
-- \[ \] Dedicated support channels (email or web)
-
-- \[ \] Test account prepared with sample data (if authentication required)
-
-- \[ \] Server is production-ready (GA status, not beta)
-
-- \[ \] Minimum 3 usage examples documented
-
-- \[ \] Error handling implemented with helpful messages
-
-- \[ \] Performance tested under realistic load
-
-- \[ \] OAuth flow tested end-to-end
-
-- \[ \] All tools tested and verified functional
-
-### Support and Questions
-
-For technical questions about MCP development, consult the [MCP Protocol Documentation](https://modelcontextprotocol.io/).
-
-For directory submission questions, use the submission form or contact support through official channels.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Building custom connectors via remote MCP servers
-
-
-Anthropic Connectors Directory FAQ
-
-
-Local MCP Server Submission Guide
-
-
-Building Desktop Extensions with MCPB
-
-
-Anthropic Software Directory Policy

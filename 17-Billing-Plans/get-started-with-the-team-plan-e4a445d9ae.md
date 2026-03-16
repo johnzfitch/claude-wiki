@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:17:00Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan"
 title: "Get started with the Team plan | Claude Help Center"
 ---
 
 # Get started with the Team plan
-
-Updated yesterday
 
 
 ## Requirements to sign up for a Team plan
@@ -39,22 +37,3 @@ If you already have a free or paid Claude account associated with your work emai
   - **[How do I cancel my paid Claude subscription?](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription)**
 
   - **[How can I delete my Claude account?](https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account)**
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Pro plan?
-
-
-How do I sign up for the Pro plan?
-
-
-What is the Team plan?
-
-
-What is the Max plan?
-
-
-How do I sign up for the Max plan?

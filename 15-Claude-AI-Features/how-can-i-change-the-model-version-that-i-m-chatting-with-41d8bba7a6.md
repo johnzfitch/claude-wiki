@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:54Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/8664678-how-can-i-change-the-model-version-that-i-m-chatting-with"
 title: "How can I change the model version that I’m chatting with? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "How can I change the model version that I’m chatting with? | Claude He
 
 # How can I change the model version that I’m chatting with?
 
-Updated yesterday
 
 Use the model selector to switch between available models:
 
@@ -22,22 +21,3 @@ Use the model selector to switch between available models:
 4.  Click "More models" to view additional options.
 
 5.  If you’ve previously messaged Claude in an existing chat, switching Claude’s model will open a new chat.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Getting started with Claude
-
-
-Using extended thinking
-
-
-Sharing and Unsharing Chats
-
-
-Using incognito chats
-
-
-Custom visuals in chat

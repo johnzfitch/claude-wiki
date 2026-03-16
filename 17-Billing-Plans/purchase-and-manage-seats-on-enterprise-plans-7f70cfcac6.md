@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:58Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans"
 title: "Purchase and manage seats on Enterprise plans | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Purchase and manage seats on Enterprise plans | Claude Help Center"
 4.  Purchase and manage seats on Enterprise plans
 
 # Purchase and manage seats on Enterprise plans
-
-Updated yesterday
 
 
 This article covers how to add seats, manage your seat allocation, and handle member access on Enterprise plans. For pricing and billing details, see **[How am I billed for my Enterprise plan?](https://support.claude.com/en/articles/11526368-usage-based-enterprise-plans)**
@@ -197,22 +195,3 @@ For specific information about seat-based Enterprise pricing, reach out to your 
 ### Transition to the single Enterprise seat
 
 At your next contract renewal, your plan will transition to the usage-based single Enterprise seat model described in the main sections of this article. If you'd like to migrate before your renewal, reach out to your Anthropic Contact or **[our Sales team](https://claude.com/contact-sales)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Enterprise plan?
-
-
-How am I billed for my Enterprise plan?
-
-
-Use Claude Code with your Team or Enterprise plan
-
-
-Purchase and manage seats on Team plans
-
-
-Manage extra usage for Team and seat-based Enterprise plans

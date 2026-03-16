@@ -1,13 +1,11 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-15T12:16:54Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
 title: "Use Skills in Claude | Claude Help Center"
 ---
 
 # Use Skills in Claude
-
-Updated yesterday
 
 
 Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
@@ -227,22 +225,3 @@ Create separate skills for different purposes rather than a single skill that’
 ## Learn more about using Skills
 
 Refer to **[Teach Claude your way of working using Skills](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)** for more information and video demonstrations.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Create and edit files with Claude
-
-
-What are Skills?
-
-
-Claude for Financial Services Skills
-
-
-Provision and manage Skills for your organization
-
-
-Use Claude for Excel and PowerPoint with an LLM gateway

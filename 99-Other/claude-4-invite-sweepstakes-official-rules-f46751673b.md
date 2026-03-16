@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T12:17:08Z"
+fetched_at: "2026-03-16T05:34:07Z"
 source_url: "https://support.anthropic.com/en/articles/11140763-claude-4-invite-sweepstakes-official-rules"
 title: "Claude 4 Invite Sweepstakes Official Rules | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "Claude 4 Invite Sweepstakes Official Rules | Claude Help Center"
 
 # Claude 4 Invite Sweepstakes Official Rules
 
-Updated yesterday
 
 By entering the Claude 4 Invite Sweepstakes, you accept and agree to these Official Rules and the decisions of Anthropic, PBC (“Anthropic”) which shall be final in all matters.
 
@@ -28,22 +27,3 @@ By entering the Claude 4 Invite Sweepstakes, you accept and agree to these Offic
 7.  **LIMITATION OF LIABILITY.** By entering this sweepstakes, you waive all right to, and hold Anthropic harmless from, any claim, liability, loss, damage (including punitive, incidental, and consequential damages), or expense (including attorneys’ fees) arising out of or in connection with participation in this sweepstakes or the acceptance, use, or misuse of any prize. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATIONS OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE MAY NOT APPLY TO YOU.
 
 8.  **CHOICE OF LAW.** These Official Rules will be governed by, and construed and interpreted in accordance with, the laws of the State of California without giving effect to conflict of law principles. You and Anthropic agree that any disputes arising out of or relating to these Official Rules will be resolved exclusively in the state or federal courts located in San Francisco, California, and you and Anthropic submit to the personal and exclusive jurisdiction of those courts. By accessing our Services, you waive any claims that may arise under the laws of other jurisdictions.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Getting started with Claude
-
-
-Claude 4 Invite Contest
-
-
-Create and edit files with Claude
-
-
-Logging in to your Claude account
-
-
-Use Claude for Excel and PowerPoint with an LLM gateway

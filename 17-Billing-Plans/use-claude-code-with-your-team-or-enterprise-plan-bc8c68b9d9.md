@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:50Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan"
 title: "Use Claude Code with your Team or Enterprise plan | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Use Claude Code with your Team or Enterprise plan | Claude Help Center"
 3.  Use Claude Code with your Team or Enterprise plan
 
 # Use Claude Code with your Team or Enterprise plan
-
-Updated yesterday
 
 
 ## What is Claude Code?
@@ -79,22 +77,3 @@ If you're not seeing the option to authenticate with your preferred account, fol
 If your organization is on a **usage-based Enterprise plan** (including self-serve Enterprise), there are no per-seat usage limits—usage is based on consumption and billed at API rates. See **[How am I billed for my Enterprise plan?](https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan)** for details on how usage billing works.
 
 If your organization is on a **Team plan** or a **seat-based Enterprise plan**, you can enable extra usage to allow team members to continue working with Claude and Claude Code after reaching their included usage limits. See **[Extra usage for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)** for more information.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Team plan?
-
-
-What is the Enterprise plan?
-
-
-How am I billed for my Enterprise plan?
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-Purchase and manage seats on Enterprise plans

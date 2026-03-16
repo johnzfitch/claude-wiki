@@ -1,13 +1,11 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T12:16:59Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/9970975-access-audit-logs"
 title: "Access audit logs | Claude Help Center"
 ---
 
 # Access audit logs
-
-Updated yesterday
 
 
 Audit logs are available for Enterprise organizations only.
@@ -35,22 +33,3 @@ The entities that can be affected by events. Entity info follows this structure:
 ## Recorded Events
 
 [TABLE]
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Roles and permissions
-
-
-Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
-
-
-What happens to a user's data when they are removed from a Team or Enterprise organization?
-
-
-Manage members on Team and Enterprise plans
-
-
-Find and join a Team or Enterprise organization

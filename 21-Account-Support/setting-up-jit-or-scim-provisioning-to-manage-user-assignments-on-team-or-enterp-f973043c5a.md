@@ -1,13 +1,11 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:17:06Z"
+fetched_at: "2026-03-16T05:34:06Z"
 source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans"
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
 ---
 
 # Set up JIT or SCIM provisioning
-
-Updated yesterday
 
 
 JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console organizations only.
@@ -169,22 +167,3 @@ To fix this:
 2.  **For JIT:** Log out and log back in to regain access.
 
 3.  **For SCIM:** Ask another Admin or Owner to click "Sync Now" in the Identity and access settings, or wait for the automatic sync cycle.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
-
-
-Set up single sign-on (SSO)
-
-
-Manage members on Team and Enterprise plans
-
-
-Purchase and manage seats on Enterprise plans
-
-
-Switching to a different Identity Provider (IdP)

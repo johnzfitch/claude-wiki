@@ -1,13 +1,11 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:17:00Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 title: "Using Claude in Slack | Claude Help Center"
 ---
 
 # Using Claude in Slack
-
-Updated yesterday
 
 
 Claude in Slack gives you AI assistance right where your team collaborates. This article covers how to interact with Claude in Slack, which features are available, and tips for getting the most out of the integration.
@@ -250,22 +248,3 @@ This message appears when you try to continue a conversation in Slack that has a
 - You manually deleted the conversation from the Claude web app.
 
 Start a new conversation to continue.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using Research on Claude
-
-
-FAQs on Using Claude for Education at Your University
-
-
-Getting started with Claude in Slack
-
-
-Using Claude in Xcode
-
-
-Claude Code FAQ

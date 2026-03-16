@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:17:01Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/13730515-manage-claude-s-tool-access"
 title: "Manage Claude’s tool access | Claude Help Center"
 ---
 
 # Manage Claude’s tool access
-
-Updated yesterday
 
 
 When you connect many services to Claude, you can control how those connectors are loaded into your conversations. This helps Claude work more accurately and efficiently, especially if you've added 10 or more connectors.
@@ -76,22 +74,3 @@ Claude searches for the most relevant connectors based on your request, so it wo
 ### Why does Claude sometimes add an extra message to use a connector?
 
 In “On demand” mode, Claude searches for the right tool before using it. This search step adds one interaction, but keeps your conversation from hitting length limits when you have many tools connected.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Use connectors to extend Claude's capabilities
-
-
-Getting started with Claude in Slack
-
-
-Troubleshoot Claude error messages
-
-
-Using interactive connectors in Claude
-
-
-Use Claude for PowerPoint

@@ -1,13 +1,11 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-15T12:16:49Z"
+fetched_at: "2026-03-16T05:33:56Z"
 source_url: "https://support.claude.com/en/articles/11940350-claude-code-model-configuration"
 title: "Claude Code model configuration | Claude Help Center"
 ---
 
 # Claude Code model configuration
-
-Updated yesterday
 
 
 This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--model` flag for one-time session changes, and environment variables to set your preferred model as the permanent default.
@@ -101,22 +99,3 @@ Use the `--model` flag when starting Claude Code.
 **Step 5)** Start Claude Code in a fresh Terminal session: `claude`.
 
 Now your chosen model will be the default for all future Claude Code sessions.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How up-to-date is Claude's training data?
-
-
-How large is the Claude API’s context window?
-
-
-Release notes
-
-
-Using Claude in Microsoft Foundry
-
-
-Applying Claude Opus 4.5’s strengths to your everyday work

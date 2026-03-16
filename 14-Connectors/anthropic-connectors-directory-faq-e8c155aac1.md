@@ -1,13 +1,11 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:17:02Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq"
 title: "Anthropic Connectors Directory FAQ | Claude Help Center"
 ---
 
 # Anthropic Connectors Directory FAQ
-
-Updated yesterday
 
 
 ## What is MCP?
@@ -318,22 +316,3 @@ Important links:
 - MCPB Manifest Specification: [https://github.com/anthropics/mcpb/blob/main/MANIFEST.md](https://github.com/anthropics/mcpb/blob/main/MANIFEST.md)
 
 - [Claude Desktop Release Notes](https://support.claude.com/en/articles/12138966-release-notes)
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with custom connectors using remote MCP
-
-
-Building custom connectors via remote MCP servers
-
-
-Remote MCP Server Submission Guide
-
-
-Building Desktop Extensions with MCPB
-
-
-Anthropic Software Directory Policy

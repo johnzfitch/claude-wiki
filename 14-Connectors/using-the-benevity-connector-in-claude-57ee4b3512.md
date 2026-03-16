@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:16:43Z"
+fetched_at: "2026-03-16T05:33:53Z"
 source_url: "https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude"
 title: "Using the Benevity Connector in Claude | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Using the Benevity Connector in Claude | Claude Help Center"
 3.  Using the Benevity Connector in Claude
 
 # Using the Benevity Connector in Claude
-
-Updated yesterday
 
 
 The Benevity integration enables you to discover and research charitable causes and nonprofit organizations through natural conversation. This article explains how to set up and use the Benevity Nonprofit connector with Claude to find nonprofits that align with your values.
@@ -129,22 +127,3 @@ The integration provides real-time access to Benevity’s database, which includ
 ### Does this work internationally?
 
 Yes, the Benevity database includes nonprofit organizations from around the world. You can search for local charities in your community or explore international organizations working on global issues.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using the BioRender Connector in Claude
-
-
-Using the Synapse.org connector in Claude
-
-
-Using the PubMed Connector in Claude
-
-
-Using the Blackbaud Connector in Claude
-
-
-Using the Candid Connector in Claude

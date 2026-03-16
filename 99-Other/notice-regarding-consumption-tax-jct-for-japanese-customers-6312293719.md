@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T12:16:53Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/14051822-notice-regarding-consumption-tax-jct-for-japanese-customers"
 title: "Notice regarding consumption tax (JCT) for Japanese customers | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Notice regarding consumption tax (JCT) for Japanese customers | Claude H
 4.  Notice regarding consumption tax (JCT) for Japanese customers
 
 # Notice regarding consumption tax (JCT) for Japanese customers
-
-Updated yesterday
 
 
 ## Consumption tax
@@ -51,10 +49,3 @@ Starting April 1, 2026. Consumption tax will be applied to all invoices from tha
 Please contact us using the details below depending on the nature of your inquiry.
 
 [TABLE]
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries?

@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:16:56Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account"
 title: "How can I delete my Claude Console account? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "How can I delete my Claude Console account? | Claude Help Center"
 4.  How can I delete my Claude Console account?
 
 # How can I delete my Claude Console account?
-
-Updated yesterday
 
 
 Only Console Admins can request deletion. See [Claude Console Roles and Permissions](https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions) for a full overview of your role's capabilities.
@@ -57,22 +55,3 @@ There are some scenarios where you will need to contact our team to delete your 
 
 
 If you are seeing this message, this indicates that your Console organization cannot be deleted via the self-service pathway.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How do I pay for my Claude API usage?
-
-
-Can I have a Claude account and a Console account?
-
-
-How can I delete my Claude account?
-
-
-Claude Console Roles and Permissions
-
-
-Logging in to your Console account

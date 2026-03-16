@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:17:10Z"
+fetched_at: "2026-03-16T05:34:08Z"
 source_url: "https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely"
 title: "Using Claude in Chrome Safely | Claude Help Center"
 ---
 
 # Using Claude in Chrome Safely
-
-Updated yesterday
 
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
@@ -86,7 +84,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 - Known pirated content sites
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#daafa9bfa8a9bbbcbfaea39abbb4aeb2a8b5aab3b9f4b9b5b7).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#80f5f3e5f2f3e1e6e5f4f9c0e1eef4e8f2eff0e9e3aee3efed).
 
 ------------------------------------------------------------------------
 
@@ -169,22 +167,3 @@ If you're on a Team or Enterprise plan, your organization's admin can configure 
 These controls add an extra layer of protection beyond Claude's default safeguards. If you have questions about which sites are permitted in your organization, contact your admin.
 
 For admin documentation, see [Claude in Chrome Admin Controls](https://support.claude.com/en/articles/13065128-claude-for-chrome-admin-controls).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with Claude in Chrome
-
-
-Claude in Chrome Troubleshooting
-
-
-Claude in Chrome Permissions Guide
-
-
-Claude in Chrome admin controls
-
-
-Use Cowork safely

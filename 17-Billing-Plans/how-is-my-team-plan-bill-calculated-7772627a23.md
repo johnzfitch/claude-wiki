@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:59Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 title: "How is my Team plan bill calculated? | Claude Help Center"
 ---
 
 # How is my Team plan bill calculated?
-
-Updated yesterday
 
 
 Prices shown are for US customers and exclude applicable taxes. Pricing, currency, and tax handling vary by region. Visit **[claude.ai/upgrade](http://claude.ai/upgrade)** to see current pricing for your location.
@@ -57,22 +55,3 @@ You will be charged for the number of members on your team at the beginning of e
 Taxes are not included in this example.
 
 **Note:** The "Projected total" displayed on **[your organization’s Billing page](https://claude.ai/admin-settings/billing)** is not inclusive of taxes.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Team plan?
-
-
-Cancel your organization's Team plan subscription
-
-
-How am I billed for my Enterprise plan?
-
-
-Purchase and manage seats on Team plans
-
-
-Team plan billing FAQs

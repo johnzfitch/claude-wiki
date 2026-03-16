@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:43Z"
+fetched_at: "2026-03-16T05:33:52Z"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 title: "Claude Code usage analytics | Claude Help Center"
 ---
 
 # Claude Code usage analytics
-
-Updated yesterday
 
 
 This feature allows Console users and owners of Team and Enterprise plans to monitor how their organization uses Claude Code, tracking productivity metrics and adoption patterns across teams.
@@ -140,22 +138,3 @@ If you notice that a specific user isn't showing up in your analytics, you shoul
 ### Where can I find more information?
 
 See **[Analytics](https://code.claude.com/docs/en/analytics)** in our Claude Code docs for more information.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Use Claude Code with your Team or Enterprise plan
-
-
-Claude Code FAQ
-
-
-View usage analytics for Team and Enterprise plans
-
-
-Access engagement and adoption data with the Analytics API
-
-
-Claude Enterprise Analytics API reference guide

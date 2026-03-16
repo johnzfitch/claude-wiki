@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:51Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program"
 title: "Model Safety Bug Bounty Program | Claude Help Center"
 ---
 
 # Model Safety Bug Bounty Program
-
-Updated yesterday
 
 
 ## Purpose
@@ -69,22 +67,3 @@ All Program participants are required to sign a non-disclosure agreement to prot
 ## Anthropic’s Use of Data from the Program
 
 Participant agrees that all data submitted to Anthropic, including its products and services, in connection with this Program may be used, stored, shared, and/or published by Anthropic indefinitely in furtherance of its safety research, model development, and related purposes without further obligation to Participant.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Reporting, Blocking, and Removing Content from Claude
-
-
-What is the External Researcher Access Program?
-
-
-Reporting, Blocking, and Removing Content from Claude
-
-
-Anthropic's AI for Science Program
-
-
-Public Vulnerability Reporting

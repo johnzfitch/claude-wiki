@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:17:09Z"
+fetched_at: "2026-03-16T05:34:08Z"
 source_url: "https://support.claude.com/en/articles/11697096-anthropic-mcp-directory-policy"
 title: "Anthropic MCP Directory Policy | Claude Help Center"
 ---
 
 # Anthropic MCP Directory Policy
-
-Updated yesterday
 
 
 This is a prior version of our policy. Please refer to [Anthropic Software Directory Policy](https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy) for the most updated version.
@@ -85,22 +83,3 @@ At this time, we also disallow inclusion of MCP servers to our directory for cer
 29\) MCP servers that can generate images, video, or audio content. Design-focused MCP servers that can only create non-human-like visual outputs (such as diagrams, charts, UI mockups, logos, or other design assets) are allowed in the directory.
 
 30\) MCP servers that enable cross-service automation. Servers must be limited to their designated service and cannot orchestrate actions across unrelated third-party applications. We may allow cross-service automation in limited cases, but we will explicitly notify users that external connections have not been reviewed.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with custom connectors using remote MCP
-
-
-Building custom connectors via remote MCP servers
-
-
-Anthropic Connectors Directory FAQ
-
-
-Remote MCP Server Submission Guide
-
-
-Anthropic Software Directory Policy

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:50Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
 title: "Using Claude Code with your Pro or Max plan | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Using Claude Code with your Pro or Max plan | Claude Help Center"
 3.  Using Claude Code with your Pro or Max plan
 
 # Using Claude Code with your Pro or Max plan
-
-Updated yesterday
 
 
 This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Using Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)**.
@@ -153,22 +151,3 @@ Auto-reload functionality is managed within your Claude Console account, not thr
 - Auto-reload is an independent Claude Console feature.
 
 - To maintain your Pro or Max plan budget, simply decline API credit options when offered.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Pro plan?
-
-
-How do I pay for my Claude API usage?
-
-
-What is the Max plan?
-
-
-Claude Code FAQ
-
-
-Extra usage for paid Claude plans

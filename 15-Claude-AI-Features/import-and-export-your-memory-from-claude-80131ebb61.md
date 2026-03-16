@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:55Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude"
 title: "Import and export your memory from Claude | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Import and export your memory from Claude | Claude Help Center"
 4.  Import and export your memory from Claude
 
 # Import and export your memory from Claude
-
-Updated yesterday
 
 
 Memory imports are available for free, Pro, and Max plans on the web and Claude Desktop.
@@ -51,22 +49,3 @@ Claude's memory is designed to focus on work-related topics to enhance its effec
 ## Export memory from Claude
 
 To view your memory exactly how Claude sees it, go to **[Settings \> Capabilities](http://claude.ai/settings/capabilities)** and click “View and edit your memory.” Alternatively, you can access memory directly in a chat with Claude by asking it, "Write out your memories of me verbatim, exactly as they appear in your memory." You can save this exported memory as a backup or bring it to another AI service by copying and pasting it into a local file on your computer.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Use Claude’s chat search and memory to build on previous context
-
-
-Using Claude with iOS Apps
-
-
-Simplify your browsing experience with Claude in Chrome
-
-
-Using the Blackbaud Connector in Claude
-
-
-Claude for Nonprofits Partnership Guide for All Users

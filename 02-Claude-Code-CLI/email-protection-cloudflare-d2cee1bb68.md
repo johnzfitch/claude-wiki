@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-15T12:17:14Z"
+fetched_at: "2026-03-16T05:34:08Z"
 source_url: "https://code.claude.com/cdn-cgi/l/email-protection"
 title: "Email Protection | Cloudflare"
 ---
@@ -16,4 +16,4 @@ If you have a website and are interested in protecting it in a similar way, you 
 - [How does Cloudflare protect email addresses on website from spammers?](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/)
 - [Can I sign up for Cloudflare?](https://developers.cloudflare.com/fundamentals/setup/account/create-account/)
 
-Cloudflare Ray ID: **9dcb72f9ca2a78eb** • Your IP: Click to reveal 2001:5a8:4492:aa00:12ff:e0ff:fe3e:478f • Performance & security by [Cloudflare](https://www.cloudflare.com/5xx-error-landing)
+Cloudflare Ray ID: **9dd16281afab2083** • Your IP: Click to reveal 184.23.213.0 • Performance & security by [Cloudflare](https://www.cloudflare.com/5xx-error-landing)

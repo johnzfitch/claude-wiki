@@ -1,13 +1,11 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T12:16:51Z"
+fetched_at: "2026-03-16T05:33:58Z"
 source_url: "https://support.claude.com/en/articles/9266462-installing-claude-for-ios"
 title: "Installing Claude for iOS | Claude Help Center"
 ---
 
 # Installing Claude for iOS
-
-Updated yesterday
 
 
 ## How do I install the Claude for iOS app?
@@ -27,22 +25,3 @@ We currently support iOS version 17.0 and above.
 To uninstall the Claude for iOS from your device, hold down on the app from your home screen until you see the menu options. Click on “Remove App.” From the next series of options, select “Delete App.”
 
 Note that if you have an active paid Claude subscription and would like to uninstall the app, your subscription will not be automatically canceled. To cancel your subscription, follow the instructions here: [How do I cancel my paid Claude subscription?](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription)
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How do I cancel my paid Claude subscription?
-
-
-How can I cancel my Claude Pro subscription on the Claude app for iOS?
-
-
-How do I install Claude for Android?
-
-
-How can I uninstall Claude for Android?
-
-
-How can I cancel my Claude Pro subscription on Claude for Android?

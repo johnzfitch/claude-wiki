@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:17:01Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy"
 title: "Anthropic Software Directory Policy | Claude Help Center"
 ---
 
 # Anthropic Software Directory Policy
-
-Updated yesterday
 
 
 Anthropic allows users to discover high-quality Model Context Protocol servers, Skill folders, plugins, apps, and other software, containers, or data (“Software”) that work seamlessly within Claude through directories, repositories, surfaces, or similar offerings (collectively, “Directories”). We review submissions to our Directories to ensure they meet our standards for safety, security, and compatibility with Anthropic Services and other Software. We conduct both initial and ongoing reviews of Software, and may require developers to address compliance issues to continue being included in our Directories. All Software must maintain compliance with these requirements, including any future changes, to remain in our Directories.
@@ -89,22 +87,3 @@ F. Remote MCP servers should support the [Streamable HTTP](https://modelcontextp
 G. Local MCP servers must be built with reasonably current versions of all dependencies, including packages in *node_modules*.
 
 See prior version of this policy here: [Anthropic MCP Directory Policy](https://support.claude.com/en/articles/11697096-anthropic-mcp-directory-policy).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Anthropic Connectors Directory FAQ
-
-
-Remote MCP Server Submission Guide
-
-
-Local MCP Server Submission Guide
-
-
-Building Desktop Extensions with MCPB
-
-
-Anthropic Software Directory Terms

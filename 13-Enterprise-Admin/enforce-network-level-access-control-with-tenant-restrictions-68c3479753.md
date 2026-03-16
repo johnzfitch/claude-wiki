@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T12:16:59Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions"
 title: "Enforce network-level access control with Tenant Restrictions | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Enforce network-level access control with Tenant Restrictions | Claude H
 4.  Enforce network-level access control with Tenant Restrictions
 
 # Enforce network-level access control with Tenant Restrictions
-
-Updated yesterday
 
 
 Tenant Restrictions are available for members of Enterprise plans and Console organizations.
@@ -123,22 +121,3 @@ When access is blocked, users receive the following error:
 - Standard authentication continues for unmanaged networks.
 
 - Existing API key authentication remains unchanged.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Business Associate Agreements (BAA) for Commercial Customers
-
-
-Claude Code FAQ
-
-
-Microsoft 365 Connector: Security Guide
-
-
-Restrict access to Claude with IP allowlisting
-
-
-Use Claude for Excel and PowerPoint with an LLM gateway

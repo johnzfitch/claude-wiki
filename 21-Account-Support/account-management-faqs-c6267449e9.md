@@ -1,13 +1,11 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:16:57Z"
+fetched_at: "2026-03-16T05:34:01Z"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 title: "Account management FAQs | Claude Help Center"
 ---
 
 # Account management FAQs
-
-Updated yesterday
 
 
 ## How do I change my team name?
@@ -56,22 +54,3 @@ Owners can remove domains by opening up the same modal and clicking the trash ca
 
 
 While the account creator must use a business email address, you can add public domains like @gmail.com, @yahoo.com, and @hotmail.com as allowed domains for other members of your organization.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations?
-
-
-Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-Manage members on Team and Enterprise plans
-
-
-Find and join a Team or Enterprise organization

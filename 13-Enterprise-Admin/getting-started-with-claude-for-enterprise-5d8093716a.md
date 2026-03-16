@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T12:17:05Z"
+fetched_at: "2026-03-16T05:34:05Z"
 source_url: "https://support.claude.com/en/articles/12166798-getting-started-with-claude-for-enterprise"
 title: "Getting started with Claude Enterprise | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Getting started with Claude Enterprise | Claude Help Center"
 # Getting started with Claude Enterprise
 
 Resources for new enterprise customers.
-
-Updated yesterday
 
 
 Welcome to Claude Enterprise! Our Customer Success team has put together the following guides to jumpstart your Claude for Enterprise journey with best practices, practical guidance, launch checklists, and more.
@@ -22,26 +20,7 @@ If you're responsible for rolling out Claude to your organization, you may also 
 
 ## Additional support
 
-Anthropic has services partners (advisory, training, change management, MCP development) available who can help provide additional support. If you'd like to discuss further, please submit [this interest form](https://forms.gle/ubnR5f7q5E71ECR79). For requests to connect with our Sales team, please contact [\[email protected\]](/cdn-cgi/l/email-protection#d3a0b2bfb6a093b2bda7bba1bca3bab0fdb0bcbe)
+Anthropic has services partners (advisory, training, change management, MCP development) available who can help provide additional support. If you'd like to discuss further, please submit [this interest form](https://forms.gle/ubnR5f7q5E71ECR79). For requests to connect with our Sales team, please contact [\[email protected\]](/cdn-cgi/l/email-protection#89fae8e5ecfac9e8e7fde1fbe6f9e0eaa7eae6e4)
 
 \
 ​
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Getting Started with Local MCP Servers on Claude Desktop
-
-
-Get started with custom connectors using remote MCP
-
-
-Using the 10x Genomics Extension in Claude
-
-
-Getting started with Claude for Nonprofits
-
-
-Building Desktop Extensions with MCPB

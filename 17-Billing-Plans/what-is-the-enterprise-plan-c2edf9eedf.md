@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:49Z"
+fetched_at: "2026-03-16T05:33:56Z"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 title: "What is the Enterprise plan? | Claude Help Center"
 ---
 
 # What is the Enterprise plan?
-
-Updated yesterday
 
 
 The Enterprise plan is designed for organizations that need advanced security, compliance controls, and scalable AI across their teams. It includes everything in the **[Team plan](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)**, plus additional security and compliance features. Enterprise plan pricing works differently than Team plans: the seat fee covers access only, and all usage is billed separately at API rates.
@@ -143,22 +141,3 @@ Some Enterprise organizations are on older seat-based plans that use **Standard*
 Seat-based Enterprise plans haven’t changed; your seat types, usage limits, and extra usage options will remain as they are until you migrate to the current usage-based billing model. For details on how usage and extra usage work on your plan, see **[Manage extra usage for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans)**.
 
 If you're interested in migrating to the current usage-based model, reach out to your Anthropic Contact or **[our Sales team](https://claude.com/contact-sales)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Team plan?
-
-
-How am I billed for my Enterprise plan?
-
-
-Use Claude Code with your Team or Enterprise plan
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-Purchase and manage seats on Enterprise plans
