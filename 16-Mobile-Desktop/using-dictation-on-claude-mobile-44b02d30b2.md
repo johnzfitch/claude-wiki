@@ -1,13 +1,11 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T12:16:51Z"
+fetched_at: "2026-03-16T05:33:58Z"
 source_url: "https://support.claude.com/en/articles/10065434-using-dictation-on-claude-mobile"
 title: "Using dictation on Claude Mobile | Claude Help Center"
 ---
 
 # Using dictation on Claude Mobile
-
-Updated yesterday
 
 
 Dictation is currently available for users on free, Pro, and Team plans
@@ -75,22 +73,3 @@ To change your speech input language:
 After converting your speech input to text, we will delete your audio recording. We will not retain a copy of your speech input or use it for training our generative models.
 
 Learn more about our privacy practices by visiting our [Privacy Policy](https://www.anthropic.com/legal/privacy) and [Privacy Center](https://privacy.anthropic.com/en/).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Getting started with Claude
-
-
-Using Claude App Intents, Shortcuts, and Widgets on iOS
-
-
-Using the Claude Widget on Android
-
-
-Using voice mode
-
-
-Use quick entry with Claude Desktop on Mac

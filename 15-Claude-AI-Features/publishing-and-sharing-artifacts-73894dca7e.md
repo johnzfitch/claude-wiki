@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:53Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/9547008-publishing-and-sharing-artifacts"
 title: "Publishing and sharing artifacts | Claude Help Center"
 ---
 
 # Publishing and sharing artifacts
-
-Updated yesterday
 
 
 Artifacts are a powerful way to create content within Claude. You can take your creations further by sharing them so others can engage with and customize them. Similarly, if you see an artifact you like, you can customize it to make it your own.
@@ -167,22 +165,3 @@ Customizing allows you to build upon and modify artifacts created by others:
 ## Learn More
 
 For information about creating artifacts, AI-powered capabilities, MCP integration, and persistent storage, see **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them)**
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What are artifacts and how do I use them?
-
-
-Intro to Artifacts
-
-
-Sharing and Unsharing Chats
-
-
-Use artifacts to visualize and create AI apps, without ever writing a line of code
-
-
-Prototype AI-Powered Apps with Claude artifacts

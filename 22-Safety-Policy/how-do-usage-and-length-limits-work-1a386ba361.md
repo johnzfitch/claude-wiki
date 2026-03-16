@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:53Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work"
 title: "How do usage and length limits work? | Claude Help Center"
 ---
 
 # How do usage and length limits work?
-
-Updated yesterday
 
 
 When chatting with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Understanding the difference between these can help you use Claude more effectively.
@@ -69,22 +67,3 @@ While you can't increase the fixed context window size for your plan, you can us
 The main distinction is that usage limits control *how much* you can use Claude across all your conversations, while length limits control *how long* any single conversation can become. Usage limits are about quantity over time, while length limits are about the depth and complexity of individual conversations.
 
 If you hit your usage limit, you'll need to wait for it to reset, upgrade your plan, or purchase extra usage. If you hit a length limit, you can start a new conversation or use **[features like projects](https://support.claude.com/en/articles/9517075-what-are-projects)** to work with larger amounts of information more efficiently.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Getting started with Claude
-
-
-How large is the context window on paid Claude plans?
-
-
-Usage limit best practices
-
-
-Release notes
-
-
-Extra usage for paid Claude plans

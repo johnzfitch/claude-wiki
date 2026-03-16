@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:55Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/8241126-uploading-files-to-claude"
 title: "Uploading files to Claude | Claude Help Center"
 ---
 
 # Uploading files to Claude
-
-Updated yesterday
 
 
 This article explains how to upload documents and images to Claude, including supported file types, size limits, and how to get started.
@@ -109,22 +107,3 @@ Claude models can analyze both text and visual elements (like images, charts, an
 **For large documents:** If you're working with larger files, consider dividing them into smaller sections to stay within limits.
 
 **For non-PDF documents:** Claude extracts text only from these files. If they contain embedded images, Claude won't be able to read or interpret them.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Can Claude produce images?
-
-
-Create and edit files with Claude
-
-
-Create and edit files with Claude to eliminate hours of busy work
-
-
-Claude for Financial Services Overview
-
-
-Using Claude in Slack

@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:58Z"
+fetched_at: "2026-03-16T05:34:01Z"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 title: "What is the Team plan? | Claude Help Center"
 ---
 
 # What is the Team plan?
-
-Updated yesterday
 
 
 The Team plan is a paid plan for our Claude chat experience built for ambitious teams. It is currently available in certain **[supported locations](https://support.claude.com/en/articles/8461763-where-can-i-access-claude)**.
@@ -92,7 +90,6 @@ For more details on billing, see **[How is my Team plan bill calculated?](https:
 
 Team plans support up to 150 seats. If your organization needs more than 150 seats, you can upgrade to the **[Enterprise plan](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan)**. The flow for Team plans to upgrade to self-serve Enterprise isn't supported at this time, so if you are interested in upgrading, reach out to **[our Sales team](https://claude.com/contact-sales)**.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -120,22 +117,3 @@ This means:
 ### How do I increase my Team plan usage limits?
 
 Your Team plan organization can enable extra usage to allow team members on all seat types to continue working with Claude and Claude Code after reaching their included usage limits. See this article for more information: **[Extra usage for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-seat-based-enterprise-plans).**
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Enterprise plan?
-
-
-How am I billed for my Enterprise plan?
-
-
-Use Claude Code with your Team or Enterprise plan
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-Purchase and manage seats on Enterprise plans

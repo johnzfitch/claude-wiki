@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:16:43Z"
+fetched_at: "2026-03-16T05:33:52Z"
 source_url: "https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu"
 title: "Designated Point of Contact for Users in the EU | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Designated Point of Contact for Users in the EU | Claude Help Center"
 3.  Designated Point of Contact for Users in the EU
 
 # Designated Point of Contact for Users in the EU
-
-Updated yesterday
 
 
 Users in the EU can open a support inquiry from this page via the chat tool, which serves as our single point of contact for EU users under the DSA.
@@ -23,16 +21,3 @@ In accordance with our obligations under Article 24(2) of the DSA, Anthropic pub
 Anthropic has calculated its average monthly active recipients in the EU for the six-month period ending 31 October 2025, and has concluded that it falls well below the 45 million threshold set out in Article 33(1) of the DSA.\
 ​\
 Anthropic will continue to monitor the number of average monthly active recipients of its services in the EU and will publish updated information at least every 6 months.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using S&P Global Data for Financial Analysis
-
-
-Use Claude for Excel
-
-
-Getting started with Claude for Nonprofits

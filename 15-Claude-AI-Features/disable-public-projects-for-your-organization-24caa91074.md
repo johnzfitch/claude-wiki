@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:59Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/9927533-disable-public-projects-for-your-organization"
 title: "Disable public projects for your organization | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Disable public projects for your organization | Claude Help Center"
 4.  Disable public projects for your organization
 
 # Disable public projects for your organization
-
-Updated yesterday
 
 
 This feature is available to Primary Owners and Owners on Team and Enterprise plans.
@@ -56,22 +54,3 @@ If you choose to re-enable public projects after disabling them:
 - Users will regain the ability to create new public projects.
 
 - Internal sharing settings and permissions will remain unchanged.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What are projects?
-
-
-Manage project visibility and sharing
-
-
-What happens to a user's data when they are removed from a Team or Enterprise organization?
-
-
-Use enterprise search
-
-
-Claude in Chrome admin controls

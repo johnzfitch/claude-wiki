@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T12:16:45Z"
+fetched_at: "2026-03-16T05:33:54Z"
 source_url: "https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
 title: "What Certifications has Anthropic obtained? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "What Certifications has Anthropic obtained? | Claude Help Center"
 
 # What Certifications has Anthropic obtained?
 
-Updated yesterday
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
@@ -24,22 +23,3 @@ Anthropic is committed to the safety and security of our users' information and 
 - SOC 2 Type I & Type II
 
 For more information and to request copies of our compliance documentation, please visit our [Trust Portal](https://trust.anthropic.com/).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Business Associate Agreements (BAA) for Commercial Customers
-
-
-What is the Enterprise plan?
-
-
-Anthropic Connectors Directory FAQ
-
-
-Anthropic Software Directory Policy
-
-
-HIPAA-ready Enterprise plans

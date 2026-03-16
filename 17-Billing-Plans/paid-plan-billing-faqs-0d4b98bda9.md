@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:42Z"
+fetched_at: "2026-03-16T05:33:51Z"
 source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
 title: "Paid Plan Billing FAQs | Claude Help Center"
 ---
 
 # Paid Plan Billing FAQs
-
-Updated yesterday
 
 
 ## Where can I find the invoice or receipt for my Pro or Max plan payment?
@@ -62,22 +60,3 @@ If you've paid for a Pro or Max plan but are not seeing this reflected in your a
 1.  You've logged in with a different email. We recommend trying to sign in with any alternative emails you may have used to create your paid account.
 
 2.  Your payment method failed and your account was downgraded. To check this, navigate to [Settings \> Billing](https://claude.ai/settings/billing) to confirm your recent payment status and update your payment method or billing details if needed.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Add or update your paid Claude account’s tax or VAT ID
-
-
-How do I sign up for the Max plan?
-
-
-Extra usage for paid Claude plans
-
-
-Understanding your billing address and tax calculation
-
-
-Team plan billing FAQs

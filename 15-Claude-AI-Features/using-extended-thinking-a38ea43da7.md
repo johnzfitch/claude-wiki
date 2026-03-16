@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:54Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/10574485-using-extended-thinking"
 title: "Using extended thinking | Claude Help Center"
 ---
 
 # Using extended thinking
-
-Updated yesterday
 
 
 Extended thinking mode allows Claude (Claude 4 models and Claude 3.7 Sonnet) to spend more time breaking down problems, planning solutions, and exploring different approaches before responding. This article explains how to use this feature and when it's most beneficial.
@@ -89,22 +87,3 @@ Extended thinking mode is particularly valuable for:
 2.  **Review the thought process**: Expand the thinking section to understand how Claude arrived at its conclusion, which can be valuable for learning and verification
 
 3.  **Consider time trade-offs**: While extended thinking can provide more thorough responses, it takes longer. Choose this mode when the additional analysis time will truly benefit your task
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-When should I use web search, extended thinking, and Research?
-
-
-Using voice mode
-
-
-How do usage and length limits work?
-
-
-Getting started with Claude.ai
-
-
-Get started with Cowork

@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:55Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/11088861-using-research-on-claude"
 title: "Using Research on Claude | Claude Help Center"
 ---
 
 # Using Research on Claude
-
-Updated yesterday
 
 
 Research is available for users with paid Claude plans (Pro, Max, Team, or Enterprise) using Claude on the web, Claude Desktop, or Claude Mobile.
@@ -43,22 +41,3 @@ To see an overview of Claude's Research capabilities with the Google Workspace i
 ### Does Research count against usage limits differently than normal conversations?
 
 Research is subject to the same limits as standard Claude conversations. However, Research sessions can use up your limits faster due to Claude retrieving multiple sources and providing comprehensive responses.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-When should I use web search, extended thinking, and Research?
-
-
-Using Research and Google Workspace
-
-
-Using Research
-
-
-FAQs on Using Claude for Education at Your University
-
-
-Using Claude in Slack

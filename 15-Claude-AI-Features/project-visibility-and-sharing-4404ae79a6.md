@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:48Z"
+fetched_at: "2026-03-16T05:33:56Z"
 source_url: "https://support.anthropic.com/en/articles/9519189-project-visibility-and-sharing"
 title: "Manage project visibility and sharing | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Manage project visibility and sharing | Claude Help Center"
 4.  Manage project visibility and sharing
 
 # Manage project visibility and sharing
-
-Updated yesterday
 
 
 Project visibility and sharing features are available to users on Team or Enterprise plans. This article assumes that public projects are enabled for your organization. For more information, see **[How can I disable public projects?](https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects)**
@@ -116,22 +114,3 @@ The chat snapshot includes all messages that were sent prior to sharing the chat
 2.  Click the visibility dropdown.
 
 3.  Change the chat from "Shared" to "Private" to disable the direct link.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What are projects?
-
-
-How can I create and manage projects?
-
-
-Disable public projects for your organization
-
-
-Sharing and Unsharing Chats
-
-
-What happens to a user's data when they are removed from a Team or Enterprise organization?

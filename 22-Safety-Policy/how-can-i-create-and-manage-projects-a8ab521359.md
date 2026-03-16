@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:17:03Z"
+fetched_at: "2026-03-16T05:34:04Z"
 source_url: "https://support.anthropic.com/en/articles/9519177-how-can-i-create-and-manage-projects"
 title: "How can I create and manage projects? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "How can I create and manage projects? | Claude Help Center"
 4.  How can I create and manage projects?
 
 # How can I create and manage projects?
-
-Updated yesterday
 
 
 Projects are available to all users, including those with free Claude accounts. Free users can create a maximum of five projects.
@@ -216,23 +214,3 @@ There are two ways to make archived project active again:
 3.  Select "Delete."
 
 4.  Confirm deletion in the pop-up by clicking "Yes, delete."
-
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What are projects?
-
-
-Manage project visibility and sharing
-
-
-Examples of projects you can create
-
-
-Use Claude’s chat search and memory to build on previous context
-
-
-Using incognito chats

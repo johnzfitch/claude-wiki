@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:17:01Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
 title: "Microsoft 365 Connector: Security Guide | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Microsoft 365 Connector: Security Guide | Claude Help Center"
 4.  Microsoft 365 Connector: Security Guide
 
 # Microsoft 365 Connector: Security Guide
-
-Updated yesterday
 
 
 ## What it is
@@ -273,22 +271,3 @@ A: Yes. The recommended approach is to use app assignment to restrict who can us
 - Claude Help Center: **[Enabling and using the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)**
 
 - **[Overview of Microsoft Graph permissions: Delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions)**
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with custom connectors using remote MCP
-
-
-Use connectors to extend Claude's capabilities
-
-
-Anthropic Connectors Directory FAQ
-
-
-Enabling and using the Microsoft 365 connector
-
-
-Use Claude for Excel and PowerPoint with an LLM gateway

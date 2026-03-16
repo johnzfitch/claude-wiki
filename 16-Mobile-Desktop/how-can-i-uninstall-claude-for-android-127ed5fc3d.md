@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T12:16:51Z"
+fetched_at: "2026-03-16T05:33:58Z"
 source_url: "https://support.claude.com/en/articles/9612889-how-can-i-uninstall-claude-for-android"
 title: "How can I uninstall Claude for Android? | Claude Help Center"
 ---
@@ -9,27 +9,7 @@ title: "How can I uninstall Claude for Android? | Claude Help Center"
 
 # How can I uninstall Claude for Android?
 
-Updated yesterday
 
 To uninstall the Claude app from your Android device, hold down on the app from your screen until you see the menu options. Click on “App Info.” From the next series of options, select “Uninstall.”
 
 Note that if you have an active Claude Pro subscription and would like to uninstall the app, your subscription will not be automatically canceled. To cancel your subscription, follow the cancellation instructions [here](https://support.anthropic.com/en/articles/9612898-how-can-i-cancel-my-claude-pro-subscription-on-claude-for-android).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How do I cancel my paid Claude subscription?
-
-
-How can I cancel my Claude Pro subscription on the Claude app for iOS?
-
-
-Installing Claude for iOS
-
-
-How can I cancel my Claude Pro subscription on Claude for Android?
-
-
-Using Claude with Android Apps

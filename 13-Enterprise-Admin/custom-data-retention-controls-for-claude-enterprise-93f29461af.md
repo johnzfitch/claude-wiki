@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T12:17:09Z"
+fetched_at: "2026-03-16T05:34:07Z"
 source_url: "https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-claude-enterprise"
 title: "Configure custom data retention controls for Enterprise plans | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Configure custom data retention controls for Enterprise plans | Claude H
 4.  Configure custom data retention controls for Enterprise plans
 
 # Configure custom data retention controls for Enterprise plans
-
-Updated yesterday
 
 
 This feature is available to Enterprise plan customers. To set custom retention periods for your organization, you must have either a Primary Owner or Owner role.
@@ -67,22 +65,3 @@ If a conversation’s last message is at 3PM UTC on March 1 with a 30-day retent
 ## Monitoring retention-related activities
 
 All retention-related actions and changes are automatically tracked in **[audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**. You can access these logs to monitor changes to retention settings and data deletion events.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Business Associate Agreements (BAA) for Commercial Customers
-
-
-Can you delete data that I sent via Team and Enterprise plans?
-
-
-Use Claude’s chat search and memory to build on previous context
-
-
-View usage analytics for Team and Enterprise plans
-
-
-Claude Enterprise Analytics API reference guide

@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T12:16:48Z"
+fetched_at: "2026-03-16T05:33:56Z"
 source_url: "https://anthropic.com/news/claude-opus-4-6"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---

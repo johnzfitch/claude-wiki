@@ -1,13 +1,11 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-15T12:16:52Z"
+fetched_at: "2026-03-16T05:33:58Z"
 source_url: "https://support.claude.com/en/articles/10534883-using-the-claude-widget-on-android"
 title: "Using the Claude Widget on Android | Claude Help Center"
 ---
 
 # Using the Claude Widget on Android
-
-Updated yesterday
 
 
 The Claude Android widget is available on Android 8.0 Oreo and above.
@@ -55,22 +53,3 @@ Tap the camera button to start a new chat and immediately open your camera. You 
 Tap the microphone button to start a new chat and begin voice dictation. The first time you use this feature, you'll see a brief explanation about how automatic recording works. You may also need to grant voice permissions if you haven't already done so.
 
 **Note:** All interactions started through the widget will count toward your usage limit.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using dictation on Claude Mobile
-
-
-Using Claude App Intents, Shortcuts, and Widgets on iOS
-
-
-Using voice mode
-
-
-Using Claude with Android Apps
-
-
-Use quick entry with Claude Desktop on Mac

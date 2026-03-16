@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T12:17:10Z"
+fetched_at: "2026-03-16T05:34:08Z"
 source_url: "https://www.anthropic.com/news/prompt-injection-defenses"
 title: "Mitigating the risk of prompt injections in browser use \\ Anthropic"
 ---

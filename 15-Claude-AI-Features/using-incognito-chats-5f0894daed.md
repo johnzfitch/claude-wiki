@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:50Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.anthropic.com/en/articles/12260368-using-incognito-chats"
 title: "Using incognito chats | Claude Help Center"
 ---
 
 # Using incognito chats
-
-Updated yesterday
 
 
 Incognito chats are available to all Claude users (free, Pro, Max, Team, and Enterprise plans).
@@ -70,22 +68,3 @@ Incognito mode is currently only available for chats outside of projects, so you
 ### What happens if I accidentally close an incognito chat?
 
 Once closed, incognito chats cannot be reopened. Make sure to save any important information before ending your session.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-I would like to input sensitive data into my chats with Claude. Who can view my conversations?
-
-
-How can I create and manage projects?
-
-
-Use Google Workspace connectors
-
-
-Use Claude’s chat search and memory to build on previous context
-
-
-Release notes

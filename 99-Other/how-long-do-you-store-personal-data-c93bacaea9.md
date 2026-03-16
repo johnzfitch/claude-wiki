@@ -1,13 +1,11 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T12:17:05Z"
+fetched_at: "2026-03-16T05:34:05Z"
 source_url: "https://support.anthropic.com/en/articles/7996866-how-long-do-you-store-personal-data"
 title: "How long do you store my data? | Anthropic Privacy Center"
 ---
 
 # How long do you store my data?
-
-Updated yesterday
 
 
 *This article is about our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code. For our commercial products such as Claude for Work and the Anthropic API, see* *[here](https://privacy.anthropic.com/en/articles/7996866-how-long-do-you-store-personal-data).*
@@ -51,22 +49,3 @@ We may anonymize or de-identify your personal data for research or statistical p
 In all cases, we may retain chats and coding sessions as required by law, to resolve disputes, or as necessary to combat violations of our Usage Policy.
 
 For more information about our privacy practices, please see our [Trust Center](https://trust.anthropic.com/) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How long do you store my organization’s data?
-
-
-How do you use personal data in model training?
-
-
-How Do You Use Personal Data in Model Training?
-
-
-Is my data used for model training?
-
-
-How do I change my model improvement privacy settings?

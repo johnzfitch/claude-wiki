@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:17:02Z"
+fetched_at: "2026-03-16T05:34:04Z"
 source_url: "https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting"
 title: "Claude in Chrome Troubleshooting | Claude Help Center"
 ---
 
 # Claude in Chrome Troubleshooting
-
-Updated yesterday
 
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
@@ -82,7 +80,7 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 - **Report suspected prompt injection** if Claude behaves unexpectedly.
 
-  - **Email [\[email protected\]](/cdn-cgi/l/email-protection#0e7b7d6b7c7d6f686b7a774e6f607a667c617e676d206d6163)** to report any safety issues or unexpected behaviors.
+  - **Email [\[email protected\]](/cdn-cgi/l/email-protection#82f7f1e7f0f1e3e4e7f6fbc2e3ecf6eaf0edf2ebe1ace1edef)** to report any safety issues or unexpected behaviors.
 
 - **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for technical issues or account problems.
 
@@ -99,22 +97,3 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 - Types of attempted malicious attacks
 
 **Note:** Features and functionality may change as we develop this beta feature based on user feedback and safety considerations.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Installing Claude Desktop
-
-
-Get started with Claude in Chrome
-
-
-Using Claude in Chrome Safely
-
-
-Claude in Chrome Permissions Guide
-
-
-Claude in Chrome admin controls

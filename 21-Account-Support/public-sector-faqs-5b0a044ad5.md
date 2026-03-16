@@ -1,13 +1,11 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:16:55Z"
+fetched_at: "2026-03-16T05:34:00Z"
 source_url: "https://support.claude.com/en/articles/13756069-public-sector-faqs"
 title: "Public Sector FAQs | Claude Help Center"
 ---
 
 # Public Sector FAQs
-
-Updated yesterday
 
 
 ## 1. Products and features
@@ -26,7 +24,7 @@ Learn more here: **[Offering expanded Claude access across all three branches of
 
 ### How do I access Claude for Government?
 
-Contact **[\[email protected\]](/cdn-cgi/l/email-protection#f5858097869096b5949b819d879a859c96db969a98)** or purchase through **[Carahsoft](https://carahsoft.com/anthropic/solutions)**.
+Contact **[\[email protected\]](/cdn-cgi/l/email-protection#6212170011070122030c160a100d120b014c010d0f)** or purchase through **[Carahsoft](https://carahsoft.com/anthropic/solutions)**.
 
 ### What is the difference between Claude Enterprise and Claude for Government?
 
@@ -117,22 +115,3 @@ Both options are available. Anthropic can sell C4G directly, and it is also reso
 Claude Code pricing is separate from C4G. Customers purchase Claude Code seats and separately purchase API credits through their chosen CSP (Bedrock or Vertex).
 
 Learn more here: **[Offering expanded Claude access across all three branches of the U.S. government](https://www.anthropic.com/news/offering-expanded-claude-access-across-all-three-branches-of-government)**
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is Amazon Bedrock?
-
-
-What is the External Researcher Access Program?
-
-
-Anthropic's AI for Science Program
-
-
-Claude Code FAQ
-
-
-Use Claude for Excel and PowerPoint with an LLM gateway

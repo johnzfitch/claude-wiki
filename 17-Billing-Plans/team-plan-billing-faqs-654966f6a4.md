@@ -1,13 +1,11 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:59Z"
+fetched_at: "2026-03-16T05:34:02Z"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 title: "Team plan billing FAQs | Claude Help Center"
 ---
 
 # Team plan billing FAQs
-
-Updated yesterday
 
 
 ## What payment methods can I use to pay for the Team plan?
@@ -58,22 +56,3 @@ Please click on the message icon in the bottom right of our Help Center to conta
 ## My Team plan access is no longer active and I want to resubscribe.
 
 An organization owner can resubscribe for Team plan access by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Paid Plan Billing FAQs
-
-
-How is my Team plan bill calculated?
-
-
-Add or update your Team plan's tax or VAT ID
-
-
-Understanding your billing address and tax calculation
-
-
-Manage members on Team and Enterprise plans

@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:17:08Z"
+fetched_at: "2026-03-16T05:34:07Z"
 source_url: "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-api-usage"
 title: "How do I pay for my Claude API usage? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "How do I pay for my Claude API usage? | Claude Help Center"
 4.  How do I pay for my Claude API usage?
 
 # How do I pay for my Claude API usage?
-
-Updated yesterday
 
 
 Claude API and Workbench usage is billed via prepaid "usage credits." Credits must be purchased prior to using the API, and your credits will be applied to your usage according to our current **[pricing](https://claude.com/pricing#api)**. These credits can be used for API access, Workbench usage, and Claude Code. Failed requests are not charged, and you will only be billed for successful API calls and completed tasks.
@@ -35,22 +33,3 @@ Learn more about credit usage and how it relates to usage limits in our **[Claud
 3.  Click the pencil icon next to your current payment method to update your card information.
 
 4.  Enter your new card details in the **Update payment method** modal, then click "Update."
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How can I access the Claude API?
-
-
-I created a Claude Console organization - how do I start using the Claude API?
-
-
-How can I advance my Claude API usage to Tier 2?
-
-
-Using Claude Code with your Pro or Max plan
-
-
-Extra usage for paid Claude plans

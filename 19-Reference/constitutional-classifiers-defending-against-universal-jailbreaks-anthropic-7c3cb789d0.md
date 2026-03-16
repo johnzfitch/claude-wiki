@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T12:17:07Z"
+fetched_at: "2026-03-16T05:34:06Z"
 source_url: "https://www.anthropic.com/news/constitutional-classifiers"
 title: "Constitutional Classifiers: Defending against universal jailbreaks \\ Anthropic"
 ---

@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:49Z"
+fetched_at: "2026-03-16T05:33:56Z"
 source_url: "https://support.claude.com/en/articles/13979539-custom-visuals-in-chat"
 title: "Custom visuals in chat | Claude Help Center"
 ---
 
 # Custom visuals in chat
-
-Updated yesterday
 
 
 Claude can generate custom diagrams, charts, and interactive visuals directly in your conversation. When a visual would explain something better than text, Claude builds one from scratch—shaped to your specific question, rendered inline as part of the response.
@@ -71,22 +69,3 @@ Custom visuals aren’t photos or illustrations. Claude builds them using HTML�
 - **Personalize your visuals.** If you tell Claude “make all my visualizations pink”, Claude will remember.
 
 - **Iterate in the conversation.** You can ask Claude to adjust a visual the same way you’d ask it to revise text—“make the chart show monthly instead of yearly” or “add a third option to the comparison.”
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Can Claude produce images?
-
-
-What are artifacts and how do I use them?
-
-
-Use artifacts to visualize and create AI apps, without ever writing a line of code
-
-
-Using interactive connectors in Claude
-
-
-Visual and interactive content

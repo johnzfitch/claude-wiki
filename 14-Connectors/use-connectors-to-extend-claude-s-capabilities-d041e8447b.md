@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:17:01Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
 title: "Use connectors to extend Claude&#x27;s capabilities | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Use connectors to extend Claude&#x27;s capabilities | Claude Help Center
 4.  Use connectors to extend Claude's capabilities
 
 # Use connectors to extend Claude's capabilities
-
-Updated yesterday
 
 
 This guide explains how to enable and use connectors with Claude to enhance its capabilities.
@@ -48,7 +46,6 @@ You can browse the directory from two areas:
 
 3.  Browse available connectors by category or scroll through the complete list.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -84,7 +81,6 @@ Before members of Team and Enterprise plans can use connectors, an Owner or Prim
 
 Once enabled at the org level, individual users follow the same steps described above to connect and authenticate.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -106,7 +102,6 @@ For example, after connecting Linear, you can ask Claude to "Create a new issue 
 
 Some connectors are interactive and can render live interfaces — like dashboards, task boards, and design tools — directly within your conversation. Look for the **Interactive** badge in the Connectors Directory to find connectors with this capability.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -116,7 +111,6 @@ When you add many connectors, Claude gives you control over how they load. You c
 
 Learn more about tool access modes: **[Manage Claude's tool access](https://support.claude.com/en/articles/13730515-manage-claude-s-tool-access)**.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -130,7 +124,6 @@ To manage your connected services:
 
 3.  For each service, you can disconnect it, modify connection settings, or review permissions and access levels.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -156,7 +149,6 @@ In addition to directory connectors, you can add custom connectors:
 
 For more information, see **[Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)**.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -179,22 +171,3 @@ When connecting to services from the directory, review what access the service i
 ## Troubleshoot connection issues
 
 If you're having trouble connecting to a service, try these steps: check that you have a stable internet connection, verify you have an active account with the connector, review any permissions or account type requirements, and if authentication fails, try disconnecting and reconnecting.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with custom connectors using remote MCP
-
-
-Anthropic Connectors Directory FAQ
-
-
-When to use desktop and web connectors
-
-
-Using the Synapse.org connector in Claude
-
-
-Using interactive connectors in Claude

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:16:45Z"
+fetched_at: "2026-03-16T05:33:54Z"
 source_url: "https://support.claude.com/en/articles/13704655-unauthorized-anthropic-stock-sales-and-investment-scams"
 title: "Unauthorized Anthropic stock sales and investment scams | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Unauthorized Anthropic stock sales and investment scams | Claude Help Ce
 3.  Unauthorized Anthropic stock sales and investment scams
 
 # Unauthorized Anthropic stock sales and investment scams
-
-Updated yesterday
 
 
 We are sharing important information about investments in Anthropic to help protect individuals from potentially invalid transfers or investment fraud.
@@ -48,7 +46,7 @@ Scammers regularly attempt to carry out fraudulent investment schemes falsely cl
 
 Before investing in any opportunity claiming to offer Anthropic stock, we strongly encourage individuals to verify the legitimacy of the offering through official regulatory databases and to seek independent legal and financial advice.
 
-If you have concerns about someone claiming to sell Anthropic stock or marketing access to Anthropic equity, please email **[\[email protected\]](/cdn-cgi/l/email-protection#2d0b41591641484a4c41004e425f5d425f4c59486d4c4359455f425d444e034e42400b4a5916)**.
+If you have concerns about someone claiming to sell Anthropic stock or marketing access to Anthropic equity, please email **[\[email protected\]](/cdn-cgi/l/email-protection#a482c8d09fc8c1c3c5c889c7cbd6d4cbd6c5d0c1e4c5cad0ccd6cbd4cdc78ac7cbc982c3d09f)**.
 
 If you believe you have been targeted by a stock scam:
 
@@ -61,10 +59,3 @@ If you believe you have been targeted by a stock scam:
 ------------------------------------------------------------------------
 
 *This article is intended to provide general information about Anthropic's stock transfer restrictions and to warn about potential investment scams. It does not constitute legal or financial advice.*
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Anthropic Software Directory Policy

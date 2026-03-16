@@ -1,13 +1,11 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:16:56Z"
+fetched_at: "2026-03-16T05:34:01Z"
 source_url: "https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account"
 title: "Logging in to your Console account | Claude Help Center"
 ---
 
 # Logging in to your Console account
-
-Updated yesterday
 
 
 When you navigate to the [Claude Console](https://platform.claude.com), you will see two different options for logging in to your Console account.
@@ -84,22 +82,3 @@ If you've previously authenticated using Google, you can follow these steps to u
 ### Can I have both a Claude account and a Console account?
 
 Yes, you can have both a Claude account (for using Claude at claude.ai) and a Console account (for accessing the Workbench and Claude API). These are separate accounts, though you can use the same email address for both. Learn more in [Can I have a Claude account and a Console account?](https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account)
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How do I log out of all active sessions?
-
-
-How can I delete my Claude Console account?
-
-
-Set up single sign-on (SSO)
-
-
-Logging in to your Claude account
-
-
-Inviting members to the Claude Console

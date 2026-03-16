@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:46Z"
+fetched_at: "2026-03-16T05:33:54Z"
 source_url: "https://support.claude.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information"
 title: "What is Anthropic’s policy for handling governmental requests for user information? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "What is Anthropic’s policy for handling governmental requests for user
 
 # What is Anthropic’s policy for handling governmental requests for user information?
 
-Updated yesterday
 
 Trust and transparency are paramount values. Accordingly:
 
@@ -18,22 +17,3 @@ Trust and transparency are paramount values. Accordingly:
 2.  We evaluate each request to ensure that it’s legally valid, and we may reject requests that are overly broad or vague.
 
 3.  We will also provide users notice if their data is requested, unless we believe we're legally prohibited from doing so, or other rare exceptions apply, including where a child is at risk of harm or in cases of emergency. In particular, if data is sought on an API or enterprise customer, we will generally ask the requester to contact our customer in the first instance.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Does Anthropic crawl data from the web, and how can site owners block the crawler?
-
-
-Model Safety Bug Bounty Program
-
-
-Anthropic Software Directory Policy
-
-
-Crisis Helpline Support in Claude
-
-
-Unauthorized Anthropic stock sales and investment scams

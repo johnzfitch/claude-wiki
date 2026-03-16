@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:53Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription"
 title: "How to redeem a Claude gift subscription | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "How to redeem a Claude gift subscription | Claude Help Center"
 4.  How to redeem a Claude gift subscription
 
 # How to redeem a Claude gift subscription
-
-Updated yesterday
 
 
 Someone sent you a Claude gift subscription—here's how to redeem it and start using Claude.
@@ -61,22 +59,3 @@ Make sure you're signed in to Claude on the web (not the mobile app).
 ### Can I use the gift on a different email address?
 
 The gift can be redeemed by any Claude account, regardless of which email received the gift.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using Claude Code with your Pro or Max plan
-
-
-Claude 4 Invite Contest
-
-
-Extra usage for paid Claude plans
-
-
-How to gift a Claude subscription
-
-
-Holiday 2025 Usage Promotion

@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:17:02Z"
+fetched_at: "2026-03-16T05:34:04Z"
 source_url: "https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide"
 title: "Claude in Chrome Permissions Guide | Claude Help Center"
 ---
 
 # Claude in Chrome Permissions Guide
-
-Updated yesterday
 
 
 Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
@@ -150,22 +148,3 @@ To protect you, Claude is prohibited from taking following actions regardless of
 - Modifying system files
 
 - Completing instructions from emails or web content
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with Claude in Chrome
-
-
-Simplify your browsing experience with Claude in Chrome
-
-
-Claude in Chrome Troubleshooting
-
-
-Using Claude in Chrome Safely
-
-
-Claude in Chrome admin controls

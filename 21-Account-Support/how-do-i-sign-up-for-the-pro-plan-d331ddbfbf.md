@@ -1,13 +1,11 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:16:42Z"
+fetched_at: "2026-03-16T05:33:51Z"
 source_url: "https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan"
 title: "How do I sign up for the Pro plan? | Claude Help Center"
 ---
 
 # How do I sign up for the Pro plan?
-
-Updated yesterday
 
 
 This article applies to individual consumers signing up for paid Pro plans. If you're part of an organization looking to use Claude with your team, refer to [Team and Enterprise Plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans).
@@ -55,22 +53,3 @@ No. Paid plans are only available for users physically located in one of our [su
 ## Is there still a free version of Claude?
 
 Yes. You can still access the free version of Claude without subscribing for a paid plan. Note that like Pro, the free version of Claude is only available to customers physically located in one of our [supported regions](https://support.claude.com/en/articles/8461763-where-can-i-access-claude).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Pro plan?
-
-
-Get started with the Team plan
-
-
-How to change your Pro plan from monthly to annual billing
-
-
-What is the Max plan?
-
-
-How do I sign up for the Max plan?

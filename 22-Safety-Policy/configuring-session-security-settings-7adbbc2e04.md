@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:53Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/13163631-configuring-session-security-settings"
 title: "Configuring session security settings | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Configuring session security settings | Claude Help Center"
 4.  Configuring session security settings
 
 # Configuring session security settings
-
-Updated yesterday
 
 
 This feature is available to Admins and Owners of Enterprise plans and Console Admins.
@@ -68,22 +66,3 @@ To disable session duration, select "Disable" next to **Shortened session length
 ## Users in multiple organizations
 
 If a user belongs to multiple organizations with different session duration settings, the shortest duration will be applied. For example, if a user is a member of Organization A (7-day limit) and Organization B (28-day limit), their sessions will expire after seven days. This is because a single session is used across all their organizations, so the most restrictive setting takes precedence.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
-
-
-Microsoft 365 Connector: Security Guide
-
-
-Set up single sign-on (SSO)
-
-
-Set up JIT or SCIM provisioning
-
-
-Manage members on Team and Enterprise plans

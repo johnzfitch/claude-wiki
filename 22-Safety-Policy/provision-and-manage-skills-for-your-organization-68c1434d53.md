@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:54Z"
+fetched_at: "2026-03-16T05:33:59Z"
 source_url: "https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization"
 title: "Provision and manage Skills for your organization | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Provision and manage Skills for your organization | Claude Help Center"
 4.  Provision and manage Skills for your organization
 
 # Provision and manage Skills for your organization
-
-Updated yesterday
 
 
 Organization-wide skill management is available to Team and Enterprise plans.
@@ -73,22 +71,3 @@ To remove a skill from your organization, locate it in the **Organization skills
 - **Write clear descriptions:** The skill's description helps Claude determine when to use it automatically. Ensure descriptions accurately reflect what the skill does.
 
 - **Consider default status carefully:** Enable skills by default when they're broadly useful to most users. Use disabled by default for specialized skills that only some team members need.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Disable public projects for your organization
-
-
-What are Skills?
-
-
-Use Skills in Claude
-
-
-Claude for Financial Services Skills
-
-
-Set up JIT or SCIM provisioning

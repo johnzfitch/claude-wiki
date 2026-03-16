@@ -1,13 +1,11 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-15T12:16:57Z"
+fetched_at: "2026-03-16T05:34:01Z"
 source_url: "https://support.claude.com/en/articles/12489464-use-enterprise-search"
 title: "Use enterprise search | Claude Help Center"
 ---
 
 # Use enterprise search
-
-Updated yesterday
 
 
 Enterprise search capabilities are available for users on Claude for Work (Team and Enterprise) plans.
@@ -258,7 +256,6 @@ If a connector fails:
 
 4.  Contact an organization Owner if the issue persists.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -323,22 +320,3 @@ No. Conversations within your search project are private to you unless you choos
 ### How long are search results retained?
 
 Search results are retained with their associated chats. You can delete search data by deleting the associated conversation. Enterprise organizations may have custom data retention policies that apply to all conversations, including those within the search project. Check with your organization Owner for details.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Use Google Workspace connectors
-
-
-Get started with custom connectors using remote MCP
-
-
-Use connectors to extend Claude's capabilities
-
-
-Enabling and using the Microsoft 365 connector
-
-
-Using interactive connectors in Claude

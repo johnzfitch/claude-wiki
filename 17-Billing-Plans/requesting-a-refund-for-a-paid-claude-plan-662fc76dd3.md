@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:42Z"
+fetched_at: "2026-03-16T05:33:52Z"
 source_url: "https://support.claude.com/en/articles/12386328-requesting-a-refund-for-a-paid-claude-plan"
 title: "Requesting a refund for a paid Claude plan | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Requesting a refund for a paid Claude plan | Claude Help Center"
 4.  Requesting a refund for a paid Claude plan
 
 # Requesting a refund for a paid Claude plan
-
-Updated yesterday
 
 
 **Important:** Except as expressly provided in our **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)** or where required by law, all payments are non-refundable.
@@ -48,22 +46,3 @@ If you have an active subscription purchased on **[Claude for Android](https://s
 ## How do I request a refund when I'm disputing the payment?
 
 Our Support team cannot process refunds during pending disputes, as the disputed funds are pulled back immediately. You can choose to either continue working with your bank until the dispute is resolved, or to withdraw the bank dispute, which will allow us to process a refund.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How to get support
-
-
-Claude 4 Invite Sweepstakes Official Rules
-
-
-Claude 4 Invite Contest
-
-
-Extra usage for paid Claude plans
-
-
-Getting started with Claude for Nonprofits

@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T12:17:04Z"
+fetched_at: "2026-03-16T05:34:04Z"
 source_url: "https://support.anthropic.com/en/articles/10684626-enabling-and-using-web-search"
 title: "Enabling and using web search | Claude Help Center"
 ---
 
 # Enabling and using web search
-
-Updated yesterday
 
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
@@ -142,22 +140,3 @@ You can re-enable it anytime you need current information.
 - For web search questions or support, please visit our **[Online Safety Contacts](https://support.claude.com/en/articles/11174660-online-safety-contacts)** page.
 
 - For content removal requests, please visit our **[Blocking and Removing Content from Claude](https://support.claude.com/en/articles/10684638-reporting-blocking-and-removing-content-from-claude)** page.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-How up-to-date is Claude's training data?
-
-
-How large is the Claude API’s context window?
-
-
-Claude Code model configuration
-
-
-Release notes
-
-
-Getting the most out of Sonnet 4.5 in Claude.ai

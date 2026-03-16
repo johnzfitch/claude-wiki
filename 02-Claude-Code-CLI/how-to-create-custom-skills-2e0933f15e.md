@@ -1,13 +1,11 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-15T12:16:53Z"
+fetched_at: "2026-03-16T05:33:58Z"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 title: "How to create custom Skills | Claude Help Center"
 ---
 
 # How to create custom Skills
-
-Updated yesterday
 
 
 Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
@@ -209,22 +207,3 @@ For a more in-depth guide to skill creation, refer to **[Skill authoring best pr
 ## Example skills to reference
 
 Visit our repository on GitHub for example Skills you can use as templates: **[https://github.com/anthropics/skills/tree/main/skills](https://github.com/anthropics/skills/tree/main/skills)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What are Skills?
-
-
-Use Skills in Claude
-
-
-Teach Claude your way of working using skills
-
-
-How to create a skill with Claude through conversation
-
-
-Claude for Financial Services Skills

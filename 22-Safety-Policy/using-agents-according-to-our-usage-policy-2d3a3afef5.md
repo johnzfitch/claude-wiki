@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-15T12:16:50Z"
+fetched_at: "2026-03-16T05:33:57Z"
 source_url: "https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy"
 title: "Using Agents According to Our Usage Policy | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Using Agents According to Our Usage Policy | Claude Help Center"
 3.  Using Agents According to Our Usage Policy
 
 # Using Agents According to Our Usage Policy
-
-Updated yesterday
 
 
 All uses of agents and agentic features must continue to adhere to Anthropic’s Usage Policy. The following are intended to be non-exhaustive illustrations of how our Usage Policy applies to certain agentic uses. As agentic capabilities evolve, we will update this list with additional examples to help users understand what our Usage Policy covers in practice in agentic environments.
@@ -69,22 +67,3 @@ This includes using agents to:
 - Engage in unauthorized, illegal, or fraudulent financial transactions (such as brokerage or investment advisory activities) or payment processing
 
 - Access or modify another person's account using their stored credentials without authorization
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-API Safeguards Tools
-
-
-Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
-
-
-Exceptions to our Usage Policy
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-Claude Code usage analytics

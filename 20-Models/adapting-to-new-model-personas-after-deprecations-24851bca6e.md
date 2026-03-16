@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-15T12:16:49Z"
+fetched_at: "2026-03-16T05:33:56Z"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 title: "Adapting to new model personas after deprecations | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Adapting to new model personas after deprecations | Claude Help Center"
 4.  Adapting to new model personas after deprecations
 
 # Adapting to new model personas after deprecations
-
-Updated yesterday
 
 
 [Model deprecations and retirements](https://docs.claude.com/en/docs/about-claude/model-deprecations#model-status) are routine parts of the model lifecycle. While we would like to keep past models publicly available as we continue to advance the frontier of safety and capabilities, maintenance overhead and capacity constraints do not currently allow this. We nonetheless recognize that losing access to models comes with costs to many users, particularly those who have come to value the unique character or capabilities of a specific model on a personal level. We aim to provide resources, tools, and guidance to such users to minimize these costs and make the transitions between models as smooth and seamless as possible.
@@ -33,22 +31,3 @@ Below are a set of strategies and recommendations for adapting to model transiti
 - Along with these practical strategies, we recommend maintaining a general awareness of the model lifecycle when relating to models; historically Anthropic has deprecated most models around a year after their initial release.
 
 These strategies aren’t perfect and can only go so far toward preserving or replicating the unique experience of interacting with a particular model, which we recognize is intrinsically important to many users. We’re taking [other early steps](https://www.anthropic.com/research/deprecation-commitments) toward ensuring model preservation post-retirement, and someday aim to make past models publicly available again in some form.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-I’ve been using other large language models (LLMs) to power my product. How should I alter my prompts when switching to Claude?
-
-
-I would like to input sensitive data into my chats with Claude. Who can view my conversations?
-
-
-Import and export your memory from Claude
-
-
-Release notes
-
-
-Can I use my Outputs to train an AI model?

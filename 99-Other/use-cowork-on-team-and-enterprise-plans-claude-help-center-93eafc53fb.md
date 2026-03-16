@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-15T12:17:07Z"
+fetched_at: "2026-03-16T05:34:06Z"
 source_url: "https://support.claude.com/en/articles/13455879"
 title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 4.  Use Cowork on Team and Enterprise plans
 
 # Use Cowork on Team and Enterprise plans
-
-Updated yesterday
 
 
 This article explains important limitations and considerations for Team and Enterprise organizations using Cowork during the research preview period.
@@ -135,22 +133,3 @@ For detailed guidance, see **[Using Cowork safely](https://support.claude.com/en
 Cowork respects your organization's current network egress permissions. Review your network access settings in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** under **Code execution** before enabling Cowork.
 
 **Important:** Network egress permissions don't apply to the **[web search tool](https://support.claude.com/en/articles/10684626-enabling-and-using-web-search)**. Team or Enterprise plan owners can turn off web search for Cowork and Chat in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Get started with Cowork
-
-
-Use Cowork safely
-
-
-Manage Cowork plugins for your organization
-
-
-Use plugins in Cowork
-
-
-Schedule recurring tasks in Cowork

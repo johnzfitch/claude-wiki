@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:17:00Z"
+fetched_at: "2026-03-16T05:34:03Z"
 source_url: "https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans"
 title: "View usage analytics for Team and Enterprise plans | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "View usage analytics for Team and Enterprise plans | Claude Help Center"
 4.  View usage analytics for Team and Enterprise plans
 
 # View usage analytics for Team and Enterprise plans
-
-Updated yesterday
 
 
 This article explains how to view and export usage analytics for your organization.
@@ -144,22 +142,3 @@ Navigate to **[Analytics \> Claude Code](https://claude.ai/analytics/claude-code
 ## Access your analytics data programmatically
 
 If you’re on an Enterprise plan and want to pull analytics data into your own dashboards or reporting tools, the Analytics API gives you programmatic access to the same usage and engagement metrics available in the analytics dashboard. To get started, refer to **[Access usage data with the Analytics API](https://support.claude.com/en/articles/13694757-access-usage-data-with-the-analytics-api)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Enterprise plan?
-
-
-How am I billed for my Enterprise plan?
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-Claude Code usage analytics
-
-
-Purchase and manage seats on Enterprise plans

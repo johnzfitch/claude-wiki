@@ -1,13 +1,11 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-15T12:16:44Z"
+fetched_at: "2026-03-16T05:33:53Z"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 title: "Using the Candid Connector in Claude | Claude Help Center"
 ---
 
 # Using the Candid Connector in Claude
-
-Updated yesterday
 
 
 The Candid integration brings the power of Candid’s comprehensive nonprofit and funder data directly into Claude. This article explains how to set up and use the Candid connector to search millions of organizations, discover funding opportunities, and access expert knowledge about the social sector—all through natural conversation.
@@ -35,7 +33,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#2847464441464d44414a5a495a414946684b49464c414c06475a4f).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#b6d9d8dadfd8d3dadfd4c4d7c4dfd7d8f6d5d7d8d2dfd298d9c4d1).
 
 ## Setting up the Candid integration
 
@@ -442,23 +440,4 @@ Candid Seals of Transparency indicate how much information an organization has s
 
 ## Need more help?
 
-If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#2c43424045424940454e5e4d5e454d426c4f4d4248454802435e4b).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Using the Synapse.org connector in Claude
-
-
-Using the PubMed Connector in Claude
-
-
-Getting started with Claude for Nonprofits
-
-
-Using the Blackbaud Connector in Claude
-
-
-Using the Benevity Connector in Claude
+If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#cda2a3a1a4a3a8a1a4afbfacbfa4aca38daeaca3a9a4a9e3a2bfaa).

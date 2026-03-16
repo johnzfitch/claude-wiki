@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-15T12:16:41Z"
+fetched_at: "2026-03-16T05:33:51Z"
 source_url: "https://support.claude.com/en/articles/11732894-who-owns-and-manages-the-data-of-my-claude-for-education-account"
 title: "Who owns and manages the data of my Claude for Education account? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Who owns and manages the data of my Claude for Education account? | Clau
 3.  Who owns and manages the data of my Claude for Education account?
 
 # Who owns and manages the data of my Claude for Education account?
-
-Updated yesterday
 
 
 This article provides important information about your Claude for Education account associated with your university’s Claude for Education partnership. It includes details about data access and control that were shared with you when your Claude for Education account was set up.
@@ -48,22 +46,3 @@ Your organization may have its own internal policies regarding usage of Claude f
 ## Questions
 
 If you have any questions about your Claude for Education plan account, we encourage you to contact your university’s administrator(s).
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-Who owns and manages the data of my team?
-
-
-Does Anthropic Act as a Data Processor or Controller?
-
-
-Getting Started with Claude for Education at Your University (for Owners/Admins)
-
-
-FAQs on Using Claude for Education at Your University
-
-
-How to get support for Claude for Government

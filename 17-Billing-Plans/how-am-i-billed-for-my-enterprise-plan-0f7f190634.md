@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-15T12:16:58Z"
+fetched_at: "2026-03-16T05:34:01Z"
 source_url: "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "How am I billed for my Enterprise plan? | Claude Help Center"
 4.  How am I billed for my Enterprise plan?
 
 # How am I billed for my Enterprise plan?
-
-Updated yesterday
 
 
 Enterprise plan billing has two parts: a fixed seat fee and separate usage charges. The seat fee covers platform access. Usage is billed on top of that, based on what your team actually consumes. How and when usage is billed depends on whether your organization purchased self-serve or sales-assisted.
@@ -110,7 +108,6 @@ If usage stops on your Enterprise plan, here's how to resume:
 
 - **Sales-assisted plans:** If a spend cap is reached, an Owner or Primary Owner can raise the cap, or usage will resume at the start of the next billing period. Contact your account manager with questions.
 
-## 
 
 ------------------------------------------------------------------------
 
@@ -143,22 +140,3 @@ On seat-based plans, extra usage is available to allow team members to continue 
 ### Transitioning to usage-based Enterprise
 
 At your next contract renewal, your plan will transition to the usage-based single Enterprise seat model described in this article. If you'd like to migrate before your renewal, reach out to your Anthropic Contact or **[our Sales team](https://claude.com/contact-sales)**.
-
-------------------------------------------------------------------------
-
-Related Articles
-
-
-What is the Enterprise plan?
-
-
-Use Claude Code with your Team or Enterprise plan
-
-
-Manage extra usage for Team and seat-based Enterprise plans
-
-
-View usage analytics for Team and Enterprise plans
-
-
-Purchase and manage seats on Enterprise plans
