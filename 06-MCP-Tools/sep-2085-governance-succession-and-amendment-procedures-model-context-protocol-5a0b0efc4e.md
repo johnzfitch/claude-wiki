@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:12Z"
+fetched_at: "2026-03-17T02:03:47Z"
 source_url: "https://modelcontextprotocol.io/seps/2085-governance-succession-and-amendment"
 title: "SEP-2085: Governance Succession and Amendment Procedures - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalProcess
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP establishes formal procedures for Lead Maintainer succession and governance amendment within the Model Context Protocol project. It defines clear processes for leadership transitions when a Lead Maintainer leaves their role and establishes requirements for proposing and approving changes to the governance structure itself.
 
-## 
 
 [​](#motivation)
 
@@ -47,7 +45,6 @@ The current MCP governance structure defines roles and responsibilities but lack
 
 Establishing these procedures now, while the project leadership is stable, ensures continuity and provides clear guidance for future scenarios.
 
-## 
 
 [​](#specification)
 
@@ -55,7 +52,6 @@ Specification
 
 The following sections shall be added to the MCP Governance document.
 
-### 
 
 [​](#succession)
 
@@ -63,7 +59,6 @@ Succession
 
 If a Lead Maintainer leaves their role for any reason, the succession process begins upon their written notice or, if unable to provide notice, upon a determination by the remaining Lead Maintainer(s) or Core Maintainers that the Lead Maintainer is unable to continue serving. If one or more Lead Maintainer(s) remain, they shall appoint a successor (by majority vote if multiple), and the remaining Lead Maintainer(s) will continue to govern until a successor is appointed. If no Lead Maintainers remain, the Core Maintainers shall appoint a successor by majority vote within 30 days, and the project operates by two-thirds vote of Core Maintainers until a new Lead Maintainer is appointed.
 
-### 
 
 [​](#amendment)
 
@@ -76,13 +71,11 @@ Amendments to this governance structure may only be proposed by Lead Maintainers
 3.  Allow for a minimum comment period of five (5) days before voting
 4.  Be decided by recorded vote of Core Maintainers
 
-## 
 
 [​](#rationale)
 
 Rationale
 
-### 
 
 [​](#succession-process-design)
 
@@ -95,7 +88,6 @@ The succession process is designed with several principles in mind:
 - **Time-Bound Process**: The 30-day requirement ensures succession happens promptly while allowing adequate time for deliberation.
 - **Supermajority Interim Governance**: Two-thirds voting during interregnum periods ensures major decisions have broad support during transitional periods.
 
-### 
 
 [​](#amendment-process-design)
 
@@ -108,7 +100,6 @@ The amendment process balances stability with adaptability:
 - **Comment Period**: The five-day minimum comment period allows affected parties to review and provide input before voting.
 - **Recorded Votes**: Transparency in voting ensures accountability and provides a historical record of governance decisions.
 
-### 
 
 [​](#alternatives-considered)
 
@@ -116,7 +107,6 @@ Alternatives Considered
 
 **Succession by Election**: An open election process was considered but rejected as potentially disruptive and slow during critical transition periods. The current proposal allows for quick succession while maintaining checks through the existing maintainer structure. **Amendment by Any Maintainer**: Allowing any maintainer to propose amendments was considered but could lead to governance instability. The current approach balances stability with the ability to evolve. **Longer Comment Periods**: Longer comment periods (e.g., 30 days) were considered but deemed excessive for a project that already has regular bi-weekly Core Maintainer meetings. Five days allows for at least one meeting cycle while enabling timely decisions.
 
-## 
 
 [​](#backward-compatibility)
 
@@ -124,7 +114,6 @@ Backward Compatibility
 
 This SEP adds new procedures without modifying existing governance structures. No backward compatibility concerns exist.
 
-## 
 
 [​](#security-implications)
 
@@ -132,7 +121,6 @@ Security Implications
 
 This SEP has no direct security implications. However, clear succession procedures indirectly support security by ensuring continuous responsible stewardship of the project, including security-related decisions.
 
-## 
 
 [​](#reference-implementation)
 

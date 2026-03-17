@@ -1,363 +1,19 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-15T04:10:46Z"
-last_modified: "Sat, 14 Mar 2026 04:07:22 GMT"
+fetched_at: "2026-03-16T23:06:20Z"
+last_modified: "Mon, 16 Mar 2026 21:43:55 GMT"
 source_url: "https://www.claude.com/customers/nbim"
 title: "20% time savings with Claude AI | NBIM | Claude"
 ---
 
-- [](https://www.anthropic.com/claude/opus)
-    Opus
-  - [](https://www.anthropic.com/claude/sonnet)
-    Sonnet
-  - [](https://www.anthropic.com/claude/haiku)
-    Haiku
-
-- Platform
-
-  - [](/platform/api)
-    Overview
-  - [](https://platform.claude.com/docs)
-    Developer docs
-  - [](http://claude.com/pricing#api)
-    Pricing
-
-  - [](https://platform.claude.com/)
-    Console login
-
-- Solutions
-
-  Use cases
-
-  - [](/solutions/agents)
-    AI agents
-  - [](/solutions/claude-code-security)
-    Claude Code Security
-  - [](/solutions/coding)
-    Coding
-
-  Industries
-
-  - [](/solutions/customer-support)
-    Customer support
-  - [](/solutions/education)
-    Education
-  - [](/solutions/financial-services)
-    Financial services
-  - [](/solutions/government)
-    Government
-  - [](/solutions/healthcare)
-    Healthcare
-  - [](/solutions/life-sciences)
-    Life sciences
-  - [](/solutions/nonprofits)
-    Nonprofits
-
-- Pricing
-
-  - [](/pricing)
-    Overview
-  - [](/pricing#api)
-    API
-
-  Pricing
-
-  - [](/pricing/max)
-    Max plan
-  - [](/pricing/team)
-    Team plan
-  - [](/pricing/enterprise)
-    Enterprise plan
-
-- Resources
-
-  Insights
-
-  - [](/blog)
-    Blog
-  - [](/customers)
-    Customer stories
-  - [](https://www.anthropic.com/news)
-    Anthropic news
-
-  Learn
-
-  - [](https://www.anthropic.com/learn)
-    Anthropic Academy
-  - [](/resources/courses)
-    Courses
-  - [](/resources/tutorials)
-    Tutorials
-  - [](/resources/use-cases)
-    Use cases
-
-  Tools
-
-  - [](/connectors)
-    Connectors
-  - [](/plugins)
-    Plugins
-
-  Connect
-
-  - [](https://www.anthropic.com/events)
-    Events
-  - [](/community)
-    Community
-
-- [](https://claude.ai/login)
-  Login
-
-&nbsp;
-
-- 
-
-  Contact sales
-
-  [Contact sales](/contact-sales)
-  Contact sales
-
-- 
-
-  Try Claude
-
-  [Try Claude](https://claude.ai/)
-  Try Claude
-
-- 
-
-  Contact sales
-
-  [Contact sales](/contact-sales)
-  Contact sales
-
-- 
-
-  Try Claude
-
-  [Try Claude](https://claude.ai/)
-  Try Claude
-
-[](#)
-
-- 
-
-  Contact sales
-
-  [Contact sales](/contact-sales)
-  Contact sales
-
-- 
-
-  Try Claude
-
-  [Try Claude](https://claude.ai/)
-  Try Claude
-
-- 
-
-  Contact sales
-
-  [Contact sales](/contact-sales)
-  Contact sales
-
-- 
-
-  Try Claude
-
-  [Try Claude](https://claude.ai/)
-  Try Claude
-
-- Meet Claude
-
-  Products
-
-  - [](/product/overview)
-    Claude
-  - [](/product/claude-code)
-    Claude Code
-  - [](/product/cowork)
-    Claude Cowork
-
-  Features
-
-  - [](/claude-for-chrome)
-    Claude for Chrome
-  - [](/claude-for-slack)
-    Claude for Slack
-  - [](/claude-for-excel)
-    Claude for Excel
-  - [](/claude-for-powerpoint)
-    Claude for PowerPoint
-  - [](/skills)
-    Skills
-
-  Models
-
-  - [](https://www.anthropic.com/claude/opus)
-    Opus
-  - [](https://www.anthropic.com/claude/sonnet)
-    Sonnet
-  - [](https://www.anthropic.com/claude/haiku)
-    Haiku
-
-- Platform
-
-  - [](/platform/api)
-    Overview
-  - [](https://platform.claude.com/docs)
-    Developer docs
-  - [](http://claude.com/pricing#api)
-    Pricing
-
-  - [](https://platform.claude.com/)
-    Console login
-
-- Solutions
-
-  Use cases
-
-  - [](/solutions/agents)
-    AI agents
-  - [](/solutions/claude-code-security)
-    Claude Code Security
-  - [](/solutions/coding)
-    Coding
-
-  Industries
-
-  - [](/solutions/customer-support)
-    Customer support
-  - [](/solutions/education)
-    Education
-  - [](/solutions/financial-services)
-    Financial services
-  - [](/solutions/government)
-    Government
-  - [](/solutions/healthcare)
-    Healthcare
-  - [](/solutions/life-sciences)
-    Life sciences
-  - [](/solutions/nonprofits)
-    Nonprofits
-
-- Pricing
-
-  - [](/pricing)
-    Overview
-  - [](/pricing#api)
-    API
-
-  Pricing
-
-  - [](/pricing/max)
-    Max plan
-  - [](/pricing/team)
-    Team plan
-  - [](/pricing/enterprise)
-    Enterprise plan
-
-- Resources
-
-  Insights
-
-  - [](/blog)
-    Blog
-  - [](/customers)
-    Customer stories
-  - [](https://www.anthropic.com/news)
-    Anthropic news
-
-  Learn
-
-  - [](https://www.anthropic.com/learn)
-    Anthropic Academy
-  - [](/resources/courses)
-    Courses
-  - [](/resources/tutorials)
-    Tutorials
-  - [](/resources/use-cases)
-    Use cases
-
-  Tools
-
-  - [](/connectors)
-    Connectors
-  - [](/plugins)
-    Plugins
-
-  Connect
-
-  - [](https://www.anthropic.com/events)
-    Events
-  - [](/community)
-    Community
-
-- [](https://claude.ai/login)
-  Login
-
-- 
-
-  Contact sales
-
-  [Contact sales](/contact-sales)
-  Contact sales
-
-- 
-
-  Try Claude
-
-  [Try Claude](https://claude.ai/)
-  Try Claude
-
-- 
-
-  Contact sales
-
-  [Contact sales](/contact-sales)
-  Contact sales
-
-- 
-
-  Try Claude
-
-  [Try Claude](https://claude.ai/)
-  Try Claude
-
-1.  Customers
-
-    [](/customers)
-    Customers
-
-    /
-
-2.  
-    NBIM
-
-Explore here
-
-- [](#)
-
-  Ask questions about this page
-- [](#)
-
-  Copy as markdown
-
 # NBIM accelerates sovereign wealth management with enterprise-wide AI transformation
 
-Try Claude
 
 [Try Claude](https://claude.ai)
 
-Try Claude
-
-Contact sales
 
 [Contact sales](/contact-sales)
 
-Contact sales
-
-[](#)
 
 Industry:
 
@@ -391,15 +47,9 @@ Read more
 
 Read more
 
-[Next](#)
-
-Next
 
 Video caption
 
-[Next](#)
-
-Next
 
 Read more
 
@@ -407,23 +57,14 @@ Read more
 
 Read more
 
-[Next](#)
-
-Next
 
 Video caption
 
-[Next](#)
-
-Next
 
 [Prev](#)
 
 Prev
 
-[Next](#)
-
-Next
 
 [Norges Bank Investment Management (NBIM)](https://www.nbim.no) manages Norway's Government Pension Fund Global, with the mandate to transform Norway's oil revenues into long-term financial wealth for future generations. With \$1.7 trillion in assets, NBIM is one of the world's largest sovereign funds.
 
@@ -479,23 +120,14 @@ Stian Kirkeberg
 
 Head Of Machine Learning And AI
 
-[Next](#)
-
-Next
 
 Video caption
 
-[Next](#)
-
-Next
 
 [Prev](#)
 
 Prev
 
-[Next](#)
-
-Next
 
 ## Related stories
 
@@ -551,9 +183,6 @@ Customer story
 
 Homepage
 
-[Next](#)
-
-Next
 
 Thank you! Your submission has been received!
 
@@ -581,7 +210,6 @@ Write
 
 - Help me develop a unique voice for an audience
 
-  [](#)
 
   Hi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -589,7 +217,6 @@ Write
 
 - Improve my writing style
 
-  [](#)
 
   Hi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -597,7 +224,6 @@ Write
 
 - Brainstorm creative ideas
 
-  [](#)
 
   Hi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -607,7 +233,6 @@ Learn
 
 - Explain a complex topic simply
 
-  [](#)
 
   Hi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -615,7 +240,6 @@ Learn
 
 - Help me make sense of these ideas
 
-  [](#)
 
   Hi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -623,7 +247,6 @@ Learn
 
 - Prepare for an exam or interview
 
-  [](#)
 
   Hi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -633,7 +256,6 @@ Code
 
 - Explain a programming concept
 
-  [](#)
 
   Hi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -641,7 +263,6 @@ Code
 
 - Look over my code and give me tips
 
-  [](#)
 
   Hi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -649,7 +270,6 @@ Code
 
 - Vibe code with me
 
-  [](#)
 
   Hi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -659,13 +279,11 @@ More
 
 - Write case studies
 
-  [](#)
 
   This is another test
 
 - Write grant proposals
 
-  [](#)
 
   Hi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational.\
   \
@@ -673,7 +291,6 @@ More
 
 - Write video scripts
 
-  [](#)
 
   this is a test
 
@@ -733,7 +350,6 @@ Products
 - Log in
 
   [Log in](https://claude.ai/login)
-  Log in
 
 Features
 
@@ -953,155 +569,3 @@ Resources
 - Use cases
 
   [Use cases](/resources/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](https://www.anthropic.com/research)
-  Research
-
-- News
-
-  [News](https://www.anthropic.com/news)
-  News
-
-- Responsible Scaling Policy
-
-  [Responsible Scaling Policy](https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy)
-  Responsible Scaling Policy
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Transparency
-
-  [Transparency](https://anthropic.com/transparency)
-  Transparency
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Terms and policies
-
-Privacy choices
-
-### Cookie settings
-
-We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy [here](https://www.anthropic.com/legal/cookies).
-
-Customize cookie settings
-
-Reject all cookies
-
-Accept all cookies
-
-###### Necessary
-
-Enables security and basic functionality.
-
-Required
-
-###### Analytics
-
-Enables tracking of site performance.
-
-Off
-
-###### Marketing
-
-Enables ads personalization and tracking.
-
-Off
-
-Save preferences
-
-Privacy policy
-
-[Privacy policy](https://www.anthropic.com/legal/privacy)
-
-Privacy policy
-
-Responsible disclosure policy
-
-[Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-
-Responsible disclosure policy
-
-Terms of service: Commercial
-
-[Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-
-Terms of service: Commercial
-
-Terms of service: Consumer
-
-[Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-
-Terms of service: Consumer
-
-Usage policy
-
-[Usage policy](https://www.anthropic.com/legal/aup)
-
-Usage policy
-
-[x.com](https://x.com/claudeai)
-
-x.com
-
-[LinkedIn](https://www.linkedin.com/showcase/claude/)
-
-LinkedIn
-
-[YouTube](https://www.youtube.com/@anthropic-ai)
-
-YouTube
-
-[Instagram](https://www.instagram.com/claudeai)
-
-Instagram
-
-English (US)
-
-[English (US)](/customers/nbim)
-
-[日本語 (Japan)](/ja-jp)
-
-[Deutsch (Germany)](/de-de)
-
-[Français (France)](/fr-fr)
-
-[한국어 (South Korea)](/ko-kr/customers/nbim)

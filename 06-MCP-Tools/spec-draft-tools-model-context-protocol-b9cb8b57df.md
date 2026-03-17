@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:30Z"
+fetched_at: "2026-03-17T02:04:06Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/server/tools"
 title: "Tools - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Tools - Model Context Protocol"
 
 The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems, such as querying databases, calling APIs, or performing computations. Each tool is uniquely identified by a name and includes metadata describing its schema.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -24,7 +23,6 @@ For trust & safety and security, there **SHOULD** always be a human in the loop 
 - Insert clear visual indicators when tools are invoked
 - Present confirmation prompts to the user for operations, to ensure a human is in the loop
 
-## 
 
 [​](#capabilities)
 
@@ -34,7 +32,7 @@ Servers that support tools **MUST** declare the `tools` capability:
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "tools": {
@@ -46,13 +44,11 @@ Copy
 
 `listChanged` indicates whether the server will emit notifications when the list of available tools changes.
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#listing-tools)
 
@@ -62,7 +58,7 @@ To discover available tools, clients send a `tools/list` request. This operation
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -77,7 +73,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -114,7 +110,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#calling-tools)
 
@@ -124,7 +119,7 @@ To invoke a tool, clients send a `tools/call` request: **Request:**
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -142,7 +137,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -158,7 +153,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#list-changed-notification)
 
@@ -168,26 +162,23 @@ When the list of available tools changes, servers that declared the `listChanged
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/tools/list_changed"
 }
 ```
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#tool)
 
@@ -215,7 +206,6 @@ A tool definition includes:
 
 For trust & safety and security, clients **MUST** consider tool annotations to be untrusted unless they come from trusted servers.
 
-#### 
 
 [​](#tool-names)
 
@@ -231,7 +221,6 @@ Tool Names
   - `DATA_EXPORT_v2`
   - `admin.tools.list`
 
-### 
 
 [​](#tool-result)
 
@@ -241,7 +230,6 @@ Tool results may contain [**structured**](#structured-content) or **unstructured
 
 All content types (text, image, audio, resource links, and embedded resources) support optional [annotations](/specification/draft/server/resources#annotations) that provide metadata about audience, priority, and modification times. This is the same annotation format used by resources and prompts.
 
-#### 
 
 [​](#text-content)
 
@@ -249,14 +237,13 @@ Text Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "text",
   "text": "Tool result text"
 }
 ```
 
-#### 
 
 [​](#image-content)
 
@@ -264,7 +251,7 @@ Image Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "image",
   "data": "base64-encoded-data",
@@ -276,7 +263,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#audio-content)
 
@@ -284,7 +270,7 @@ Audio Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "audio",
   "data": "base64-encoded-audio-data",
@@ -292,7 +278,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#resource-links)
 
@@ -302,7 +287,7 @@ A tool **MAY** return links to [Resources](/specification/draft/server/resources
 
 Copy
 
-``` shiki
+```python
 {
   "type": "resource_link",
   "uri": "file:///project/src/main.rs",
@@ -316,7 +301,6 @@ Resource links support the same [Resource annotations](/specification/draft/serv
 
 Resource links returned by tools are not guaranteed to appear in the results of a `resources/list` request.
 
-#### 
 
 [​](#embedded-resources)
 
@@ -326,7 +310,7 @@ Embedded Resources
 
 Copy
 
-``` shiki
+```python
 {
   "type": "resource",
   "resource": {
@@ -344,7 +328,6 @@ Copy
 
 Embedded resources support the same [Resource annotations](/specification/draft/server/resources#annotations) as regular resources to help clients understand how to use them.
 
-#### 
 
 [​](#structured-content)
 
@@ -352,7 +335,6 @@ Structured Content
 
 **Structured** content is returned as a JSON object in the `structuredContent` field of a result. For backwards compatibility, a tool that returns structured content SHOULD also return the serialized JSON in a TextContent block.
 
-#### 
 
 [​](#output-schema)
 
@@ -367,7 +349,7 @@ Example tool with output schema:
 
 Copy
 
-``` shiki
+```python
 {
   "name": "get_weather_data",
   "title": "Weather Data Retriever",
@@ -407,7 +389,7 @@ Example valid response for this tool:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 5,
@@ -434,13 +416,11 @@ Providing an output schema helps clients and LLMs understand and properly handle
 - Guiding clients and LLMs to properly parse and utilize the returned data
 - Supporting better documentation and developer experience
 
-### 
 
 [​](#schema-examples)
 
 Schema Examples
 
-#### 
 
 [​](#tool-with-default-2020-12-schema)
 
@@ -448,7 +428,7 @@ Tool with default 2020-12 schema:
 
 Copy
 
-``` shiki
+```python
 {
   "name": "calculate_sum",
   "description": "Add two numbers",
@@ -463,7 +443,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#tool-with-explicit-draft-07-schema)
 
@@ -471,7 +450,7 @@ Tool with explicit draft-07 schema:
 
 Copy
 
-``` shiki
+```python
 {
   "name": "calculate_sum",
   "description": "Add two numbers",
@@ -487,7 +466,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#tool-with-no-parameters)
 
@@ -495,7 +473,7 @@ Tool with no parameters:
 
 Copy
 
-``` shiki
+```python
 {
   "name": "get_current_time",
   "description": "Returns the current server time",
@@ -506,7 +484,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#error-handling)
 
@@ -527,7 +504,7 @@ Tools use two error reporting mechanisms:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -542,7 +519,7 @@ Example tool execution error (input validation):
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -558,7 +535,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#security-considerations)
 

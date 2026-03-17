@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:53Z"
+fetched_at: "2026-03-17T02:03:34Z"
 source_url: "https://www.anthropic.com/research/swe-bench-sonnet"
 title: "Claude SWE-Bench Performance \\ Anthropic"
 ---
+
 # Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet
 
 Published Jan 06, 2025
@@ -357,9 +358,3 @@ The upgraded Claude 3.5 Sonnet achieved 49% on SWE-bench Verified, beating the p
 ## Acknowledgements
 
 Erik Schluntz optimized the SWE-bench agent and wrote this blog post. Simon Biggs, Dawn Drain, and Eric Christiansen helped implement the benchmark. Shauna Kravec, Dawn Drain, Felipe Rosso, Nova DasSarma, Ven Chandrasekaran, and many others contributed to training Claude 3.5 Sonnet to be excellent at agentic coding.
-
-## Get the developer newsletter
-
-Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
-
-Please provide your email address if you’d like to receive our monthly developer newsletter. You can unsubscribe at any time.

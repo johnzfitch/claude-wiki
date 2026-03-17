@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:04Z"
+fetched_at: "2026-03-17T02:00:41Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model"
 title: "Choosing the right model - Claude API Docs"
 ---
@@ -10,8 +10,6 @@ title: "Choosing the right model - Claude API Docs"
 
 Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps you make an informed decision based on your specific requirements.
 
-
-## 
 
 Establish key criteria
 
@@ -25,13 +23,11 @@ Knowing these answers in advance will make narrowing down and deciding which mod
 
 ------------------------------------------------------------------------
 
-## 
 
 Choose the best model to start with
 
 There are two general approaches you can use to start testing which Claude model best works for your needs.
 
-### 
 
 Option 1: Start with a fast, cost-effective model
 
@@ -49,7 +45,6 @@ This approach allows for quick iteration, lower development costs, and is often 
 - Cost-sensitive implementations
 - High-volume, straightforward tasks
 
-### 
 
 Option 2: Start with the most capable model
 
@@ -68,7 +63,6 @@ This approach is best for:
 - Applications where accuracy outweighs cost considerations
 - Advanced coding
 
-## 
 
 Model selection matrix
 
@@ -80,7 +74,6 @@ Model selection matrix
 
 ------------------------------------------------------------------------
 
-## 
 
 Decide whether to upgrade or change models
 
@@ -94,23 +87,19 @@ To determine if you need to upgrade or change models, you should:
     - Handling of edge cases
 4.  Weigh performance and cost tradeoffs
 
-## 
 
 Next steps
 
-[](/docs/en/about-claude/models/overview)
 
 Model comparison chart
 
 See detailed specifications and pricing for the latest Claude models
 
-[](/docs/en/about-claude/models/whats-new-claude-4-6)
 
 What's new in Claude 4.6
 
 Explore the latest improvements in Claude 4.6 models
 
-[](/docs/en/get-started)
 
 Start building
 

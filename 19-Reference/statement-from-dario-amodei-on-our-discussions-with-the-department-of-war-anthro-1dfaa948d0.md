@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-27T09:23:54Z"
+fetched_at: "2026-03-17T02:03:25Z"
 source_url: "https://www.anthropic.com/news/statement-department-of-war"
 title: "Statement from Dario Amodei on our discussions with the Department of War \\ Anthropic"
 ---
+
 # Statement from Dario Amodei on our discussions with the Department of War
 
 Feb 26, 2026
@@ -34,14 +35,18 @@ We remain ready to continue our work to support the national security of the Uni
 
 ## Related content
 
-### Anthropic acquires Vercept to advance Claude's computer use capabilities
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/acquires-vercept)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Anthropic’s Responsible Scaling Policy: Version 3.0
+[Read more](/news/claude-partner-network)
 
-[Read more](/news/responsible-scaling-policy-v3)
+### Introducing The Anthropic Institute
 
-### Detecting and preventing distillation attacks
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+[Read more](/news/the-anthropic-institute)
+
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:11Z"
+fetched_at: "2026-03-17T02:03:46Z"
 source_url: "https://modelcontextprotocol.io/seps/1686-tasks"
 title: "SEP-1686: Tasks - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP improves support for task-based workflows in the Model Context Protocol (MCP). It introduces both the **task primitive** and the associated **task ID**, which can be used to query the state and results of a task, up to a server-defined duration after the task has completed. This primitive is designed to augment other requests (such as tool calls) to enable call-now, fetch-later execution patterns across all requests for servers that support this primitive.
 
-## 
 
 [​](#motivation)
 
@@ -54,7 +52,6 @@ Representing a tool in this way seems to solve for the use case, but it introduc
 
 This SEP simplifies integration with existing workflows and allows workflow services to continue to manage their own state while delivering a quality customer experience, rather than offloading to agent-polling or building MCP servers that do nothing but poll other services.
 
-## 
 
 [​](#specification)
 
@@ -62,7 +59,6 @@ Specification
 
 This SEP introduces a mechanism for requestors (which can be either clients or servers, depending on the direction of communication) to augment their requests with **tasks**. Tasks are durable state machines that carry information about the underlying execution state of the request they wrap, and are intended for requestor polling and deferred result retrieval. Each task is uniquely identifiable by a requestor-generated **task ID**.
 
-### 
 
 [​](#1-user-interaction-model)
 
@@ -70,7 +66,6 @@ This SEP introduces a mechanism for requestors (which can be either clients or s
 
 Tasks are designed to be **application-driven**—receivers tightly-control which requests (if any) support task-based execution and manage the lifecycles of those tasks; meanwhile, requestors own the responsibility for augmenting requests with tasks, and for polling on the results of those tasks. Implementations are free to expose tasks through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-### 
 
 [​](#2-capabilities)
 
@@ -78,13 +73,11 @@ Tasks are designed to be **application-driven**—receivers tightly-control whic
 
 Servers and clients that support task-augmented requests **MUST** declare a `tasks` capability during initialization. The `tasks` capability is structured by request category, with boolean properties indicating which specific request types support task augmentation. Refer to [https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1732](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1732) for details.
 
-### 
 
 [​](#3-protocol-messages)
 
 3. Protocol Messages
 
-#### 
 
 [​](#3-1-creating-tasks)
 
@@ -94,7 +87,7 @@ To create a task, requestors send a request with the `modelcontextprotocol.io/ta
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -110,7 +103,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#3-2-getting-tasks)
 
@@ -120,7 +112,7 @@ To retrieve the state of a task, requestors send a `tasks/get` request: **Reques
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -140,7 +132,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -158,7 +150,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#3-3-retrieving-task-results)
 
@@ -168,7 +159,7 @@ To retrieve the result of a completed task, requestors send a `tasks/result` req
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -188,7 +179,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -209,7 +200,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#3-4-task-creation-notification)
 
@@ -219,7 +209,7 @@ When a receiver creates a task, it **MUST** send a `notifications/tasks/created`
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/tasks/created",
@@ -235,7 +225,6 @@ Copy
 
 The task ID is conveyed through the `modelcontextprotocol.io/related-task` metadata key. The notification parameters are otherwise empty. This notification resolves the race condition where a requestor might attempt to poll for a task before the receiver has finished creating it. By sending this notification immediately after task creation, the receiver signals that the task is ready to be queried via `tasks/get`. Receivers that do not support tasks (and thus ignore task metadata in requests) will not send this notification, allowing requestors to fall back to waiting for the original request response.
 
-#### 
 
 [​](#3-5-listing-tasks)
 
@@ -245,7 +234,7 @@ To retrieve a list of tasks, requestors send a `tasks/list` request. This operat
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 5,
@@ -260,7 +249,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 5,
@@ -283,7 +272,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#3-6-deleting-tasks)
 
@@ -293,7 +281,7 @@ To explicitly delete a task and its associated results, requestors send a `tasks
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 6,
@@ -313,7 +301,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 6,
@@ -327,7 +315,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#4-behavior-requirements)
 
@@ -335,7 +322,6 @@ Copy
 
 These requirements apply to all parties that support receiving task-augmented requests.
 
-#### 
 
 [​](#4-1-task-support-and-handling)
 
@@ -344,7 +330,6 @@ These requirements apply to all parties that support receiving task-augmented re
 1.  Receivers that do not support task augmentation on a request **MUST** process the request normally, ignoring any task metadata in `_meta`.
 2.  Receivers that support task augmentation **MAY** choose which request types support tasks.
 
-#### 
 
 [​](#4-2-task-id-requirements)
 
@@ -354,7 +339,6 @@ These requirements apply to all parties that support receiving task-augmented re
 2.  Task IDs **SHOULD** be unique across all tasks controlled by the receiver.
 3.  The receiver of a request with a task ID in its `_meta` **MAY** validate that the provided task ID has not already been associated with a task controlled by that receiver.
 
-#### 
 
 [​](#4-3-task-status-lifecycle)
 
@@ -371,7 +355,6 @@ These requirements apply to all parties that support receiving task-augmented re
 
 **Task Status State Diagram:**
 
-#### 
 
 [​](#4-4-input-required-status)
 
@@ -382,7 +365,6 @@ These requirements apply to all parties that support receiving task-augmented re
 3.  When the receiver receives all required responses, the task **MAY** transition out of `input_required` status (typically back to `working`).
 4.  If multiple related requests are pending, the task **SHOULD** remain in `input_required` status until all are resolved.
 
-#### 
 
 [​](#4-5-keep-alive-and-resource-management)
 
@@ -393,7 +375,6 @@ These requirements apply to all parties that support receiving task-augmented re
 3.  After a task reaches a terminal status (`completed`, `failed`, or `cancelled`) and its `keepAlive` duration has elapsed, receivers **MAY** delete the task and its results.
 4.  Receivers **MAY** include a `pollFrequency` value (in milliseconds) in `tasks/get` responses to suggest polling intervals. Requestors **SHOULD** respect this value when provided.
 
-#### 
 
 [​](#4-6-result-retrieval)
 
@@ -403,7 +384,6 @@ These requirements apply to all parties that support receiving task-augmented re
 2.  Receivers **MUST** return an error if `tasks/result` is called for a task in any other status.
 3.  Requestors **MAY** call `tasks/result` multiple times for the same task while it remains available.
 
-#### 
 
 [​](#4-7-associating-task-related-messages)
 
@@ -412,7 +392,6 @@ These requirements apply to all parties that support receiving task-augmented re
 1.  All requests, notifications, and responses related to a task **MUST** include the `modelcontextprotocol.io/related-task` key in their `_meta`, with the value set to an object with a `taskId` matching the associated task ID.
 2.  For example, an elicitation that a task-augmented tool call depends on **MUST** share the same related task ID with that tool call’s task.
 
-#### 
 
 [​](#4-8-task-cancellation)
 
@@ -425,7 +404,6 @@ These requirements apply to all parties that support receiving task-augmented re
 5.  Requestors **MAY** send `notifications/cancelled` at any time during task execution, including when the task is in `input_required` status. If a task is cancelled while in `input_required` status, receivers **SHOULD** also disregard any pending responses to associated requests.
 6.  Because notifications do not provide confirmation of receipt, requestors **SHOULD** continue to poll with `tasks/get` after sending a cancellation notification to confirm the task has transitioned to `cancelled` status. If the task does not transition to `cancelled` within a reasonable timeframe, requestors **MAY** assume the cancellation was not processed.
 
-#### 
 
 [​](#4-9-task-listing)
 
@@ -436,7 +414,6 @@ These requirements apply to all parties that support receiving task-augmented re
 3.  Requestors **MUST** treat cursors as opaque tokens and not attempt to parse or modify them.
 4.  If a task is retrievable via `tasks/get` for a requestor, it **MUST** be retrievable via `tasks/list` for that requestor.
 
-#### 
 
 [​](#4-10-task-deletion)
 
@@ -447,7 +424,6 @@ These requirements apply to all parties that support receiving task-augmented re
 3.  Receivers **MAY** choose not to support deletion at all, or only support deletion for tasks in certain statuses (e.g., only terminal statuses).
 4.  Requestors **SHOULD** delete tasks containing sensitive data promptly rather than relying solely on `keepAlive` expiration for cleanup.
 
-### 
 
 [​](#5-message-flow)
 
@@ -455,13 +431,11 @@ These requirements apply to all parties that support receiving task-augmented re
 
 [https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1686#issuecomment-3452378176](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1686#issuecomment-3452378176)
 
-### 
 
 [​](#6-data-types)
 
 6. Data Types
 
-#### 
 
 [​](#task)
 
@@ -474,7 +448,6 @@ A task represents the execution state of a request. The task metadata includes:
 - `pollFrequency`: Suggested time in milliseconds between status checks
 - `status`: Current state of the task execution
 
-#### 
 
 [​](#task-status)
 
@@ -490,7 +463,6 @@ Tasks can be in one of the following states:
 - `cancelled`: The request was cancelled before completion
 - `unknown`: A terminal fallback state for unexpected error conditions when the receiver cannot determine the actual task state
 
-#### 
 
 [​](#task-metadata)
 
@@ -500,7 +472,7 @@ When augmenting a request with task execution, the `modelcontextprotocol.io/task
 
 Copy
 
-``` shiki
+```python
 {
   "modelcontextprotocol.io/task": {
     "taskId": "786512e2-9e0d-44bd-8f29-789f320fe840",
@@ -514,7 +486,6 @@ Fields:
 - `taskId` (string, required): Client-generated unique identifier for the task
 - `keepAlive` (number, optional): Requested duration in milliseconds to retain results after completion
 
-#### 
 
 [​](#task-creation-notification)
 
@@ -524,7 +495,7 @@ When a receiver creates a task, it sends a `notifications/tasks/created` notific
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/tasks/created",
@@ -540,7 +511,6 @@ Copy
 
 This notification enables requestors to begin polling without encountering race conditions where the task might not yet exist on the receiver.
 
-#### 
 
 [​](#task-get-request)
 
@@ -550,13 +520,12 @@ The `tasks/get` request retrieves the current state of a task:
 
 Copy
 
-``` shiki
+```python
 {
   taskId: string; // The task identifier to query
 }
 ```
 
-#### 
 
 [​](#task-get-response)
 
@@ -566,7 +535,7 @@ The `tasks/get` response includes:
 
 Copy
 
-``` shiki
+```python
 {
   taskId: string; // The task identifier
   status: TaskStatus; // Current task state
@@ -576,7 +545,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#task-result-request)
 
@@ -586,13 +554,12 @@ The `tasks/result` request retrieves the result of a completed task:
 
 Copy
 
-``` shiki
+```python
 {
   taskId: string; // The task identifier to retrieve results for
 }
 ```
 
-#### 
 
 [​](#task-result-response)
 
@@ -602,7 +569,7 @@ The `tasks/result` response returns the original result that would have been ret
 
 Copy
 
-``` shiki
+```python
 {
   // The structure matches the result type of the original request
   // For example, a tools/call task would return CallToolResult structure
@@ -612,7 +579,6 @@ Copy
 
 The result structure depends on the original request type. The receiver returns the same result structure that would have been returned if the request had been executed without task augmentation.
 
-#### 
 
 [​](#task-list-request)
 
@@ -622,13 +588,12 @@ The `tasks/list` request retrieves a list of tasks:
 
 Copy
 
-``` shiki
+```python
 {
   cursor?: string; // Optional cursor for pagination
 }
 ```
 
-#### 
 
 [​](#task-list-response)
 
@@ -638,7 +603,7 @@ The `tasks/list` response includes:
 
 Copy
 
-``` shiki
+```python
 {
   tasks: Array<{
     taskId: string;           // The task identifier
@@ -651,7 +616,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#related-task-metadata)
 
@@ -661,7 +625,7 @@ All requests, responses, and notifications associated with a task **MUST** inclu
 
 Copy
 
-``` shiki
+```python
 {
   "modelcontextprotocol.io/related-task": {
     "taskId": "786512e2-9e0d-44bd-8f29-789f320fe840"
@@ -671,7 +635,6 @@ Copy
 
 This associates messages with their originating task across the entire request lifecycle.
 
-### 
 
 [​](#7-error-handling)
 
@@ -682,7 +645,6 @@ Tasks use two error reporting mechanisms:
 1.  **Protocol Errors**: Standard JSON-RPC errors for protocol-level issues
 2.  **Task Execution Errors**: Errors in the underlying request execution, reported through task status
 
-#### 
 
 [​](#7-1-protocol-errors)
 
@@ -700,7 +662,7 @@ Receivers **SHOULD** provide informative error messages to describe the cause of
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 70,
@@ -715,7 +677,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 71,
@@ -732,7 +694,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 72,
@@ -747,7 +709,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 73,
@@ -758,7 +720,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#7-2-task-execution-errors)
 
@@ -768,7 +729,7 @@ When the underlying request fails during execution, the task moves to the `faile
 
 Copy
 
-``` shiki
+```python
 {
   taskId: string;
   status: "failed";
@@ -782,7 +743,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -797,13 +758,11 @@ Copy
 
 For tasks that wrap requests with their own error semantics (like `tools/call` with `isError: true`), the task should still reach `completed` status, and the error information is conveyed through the result structure of the original request type.
 
-### 
 
 [​](#8-security-considerations)
 
 8. Security Considerations
 
-#### 
 
 [​](#8-1-task-isolation-and-access-control)
 
@@ -820,7 +779,6 @@ For tasks that wrap requests with their own error semantics (like `tools/call` w
     3.  Task result retrieval attempts
     4.  Task listing requests to prevent denial of service
 
-#### 
 
 [​](#8-2-resource-management)
 
@@ -837,7 +795,6 @@ For tasks that wrap requests with their own error semantics (like `tools/call` w
     2.  Document maximum concurrent tasks per requestor
     3.  Implement monitoring and alerting for resource usage
 
-#### 
 
 [​](#8-3-audit-and-logging)
 
@@ -851,13 +808,11 @@ For tasks that wrap requests with their own error semantics (like `tools/call` w
     1.  Log task lifecycle events for debugging and audit purposes
     2.  Track task IDs and their associated operations
 
-## 
 
 [​](#rationale)
 
 Rationale
 
-### 
 
 [​](#design-decision-generic-task-primitive)
 
@@ -865,7 +820,6 @@ Design Decision: Generic Task Primitive
 
 The decision to implement tasks as a generic request augmentation mechanism (rather than tool-specific or method-specific) was made to maximize protocol simplicity and flexibility. Tasks are designed to work with any request type in the MCP protocol, not just tool calls. This means that `resources/read`, `prompts/get`, `sampling/createMessage`, and any future request types can all be augmented with task metadata. This approach provides significant benefits over a tool-specific design. From a protocol perspective, this design eliminates the need for separate task implementations per request type. Instead of defining different async patterns for tools versus resources versus prompts, a single set of task management methods (`tasks/get` and `tasks/result`) works uniformly across all request types. This uniformity reduces cognitive load for implementers and creates a consistent experience for applications using the protocol. The generic design also provides implementation flexibility. Servers can choose which requests support task augmentation without requiring protocol changes or version negotiation. If a server doesn’t support tasks for a particular request type, it simply ignores the task metadata and processes the request normally. This allows servers to add task support to requests incrementally, starting with high-value operations and expanding over time based on actual usage patterns. Architecturally, tasks are treated as metadata rather than a separate execution model. They augment existing requests rather than replacing them. The original request/response flow remains intact—the request still gets a response eventually. Tasks simply provide an additional polling-based mechanism for result retrieval. This design ensures that related messages (such as elicitations during task execution) can be associated consistently via the `modelcontextprotocol.io/related-task` metadata key, regardless of the underlying request type.
 
-### 
 
 [​](#design-decision-metadata-based-augmentation)
 
@@ -875,7 +829,7 @@ Using `_meta` for task information rather than dedicated request parameters was 
 
 Copy
 
-``` shiki
+```python
 // === MCP SDK (Pseudocode based loosely on modelcontextprotocol/typescript-sdk) ===
 
 /**
@@ -978,7 +932,7 @@ As the design does not alter the basic request semantics, the existing form woul
 
 Copy
 
-``` shiki
+```python
 const result = await client.callTool(
   {
     name: "analyze_dataset",
@@ -988,7 +942,6 @@ const result = await client.callTool(
 );
 ```
 
-### 
 
 [​](#design-decision-client-generated-task-ids)
 
@@ -1008,7 +961,6 @@ With server-generated task IDs, a timeout or connection failure creates uncertai
 
 However, this complexity is typically minor compared to the overall work of integrating an existing workflow system into MCP. Most workflow systems already require state management for tracking execution, and maintaining a task ID mapping is a straightforward addition. The mapping structure is simple (client task ID maps to an internal identifier), and can be implemented using existing databases or key-value stores such a server likely already uses for other state management.
 
-### 
 
 [​](#design-decision-task-creation-notification)
 
@@ -1029,7 +981,6 @@ While the notification is required by the specification for servers that create 
 
 The standard and recommended approach is to wait for the `notifications/tasks/created` notification before beginning polling. Proactive polling without waiting for the notification should be considered a fallback mechanism for constrained environments only.
 
-### 
 
 [​](#design-decision-no-capabilities-declaration)
 
@@ -1037,7 +988,6 @@ Design Decision: No Capabilities Declaration
 
 Unlike other protocol features such as tools, resources, and prompts, tasks do not require capability negotiation. This decision was made to enable graceful degradation and per-request flexibility. Task support can be determined implicitly through usage rather than explicitly through capability declarations. When a client sends a task-augmented request, the server will process it according to its capabilities. If the server doesn’t support tasks for that request type, it simply ignores the task metadata and returns the result normally through the original request/response flow. The client can then detect the lack of task support by attempting to call `tasks/get` and handling any errors that result. This approach eliminates the need for complex handshakes or feature detection protocols. Clients can optimistically try task augmentation and gracefully fall back to direct response handling if needed. This makes the protocol more resilient and easier to implement. Additionally, this design provides per-request flexibility that would be difficult to express through capabilities. A server might support tasks on some request types but not others, or support might vary based on runtime conditions such as resource availability or load. Requiring granular capability declarations per request type would significantly complicate the protocol without providing substantial benefits. The implicit detection model is simpler and more flexible.
 
-### 
 
 [​](#alternative-designs-considered)
 
@@ -1045,7 +995,6 @@ Alternative Designs Considered
 
 **Tool-Specific Async Execution:** An earlier version of this proposal (#1391) focused specifically on tool calls, introducing an `invocationMode` field on tool definitions to mark tools as supporting synchronous, asynchronous, or both execution modes. This approach would have added dedicated fields to the tool call request and response structures, with server-side capability declarations to indicate support for async tool execution. While this design would have addressed the immediate need for long-running tool calls, it was rejected in favor of the more general task primitive for several reasons. First, it artificially limited the async execution pattern to tools when other request types have similar needs. Resources can be expensive to read, prompts can require complex processing, and sampling requests may involve lengthy user interactions. Creating separate async patterns for each request type would lead to protocol fragmentation and inconsistent implementation patterns. Second, the tool-specific approach required more complex capability negotiation and version handling. Servers would need to filter tool lists based on client capabilities, and SDKs would need to manage different invocation patterns for sync versus async tools. This complexity would ripple through every layer of the implementation stack. Finally, the tool-specific design didn’t address the broader architectural need for deferred result retrieval across all MCP request types. By generalizing to a task primitive that augments any request, this proposal provides a consistent pattern that can be applied uniformly across the protocol. More importantly, this foundation is extensible to future protocol messages and features such as subtasks, making it a more appropriate building block for the protocol’s evolution. **Transport-Layer Solutions:** An alternative approach would be to solve for this purely at the transport layer, without introducing a new data-layer primitive. Several proposals (#1335, \#1442, \#1597) address transport-specific concerns such as connection resilience, request retry semantics, and stream management for sHTTP. These are valuable improvements that can mitigate many scaling and reliability challenges associated with requests that may take extended time to complete. However, transport-layer solutions alone are insufficient for the use cases this SEP addresses. Even with perfect transport-layer reliability, several data-layer concerns remain: First, servers and clients need a way to communicate expectations about execution patterns. Without this, host applications cannot make informed decisions about UX patterns—should they block, show a spinner, or allow the user to continue working? An annotation alone could signal that a request might take extended time, but provides no mechanism to actively check status or retrieve results later. Second, transport-layer solutions cannot provide visibility into the execution state of a request that is still in progress. If a request stops sending progress notifications, the client cannot distinguish between “the server is doing expensive work” and “the request was lost.” Transport-level retries can confirm the connection is alive, but cannot answer “is this specific request still executing?” This visibility is critical for operations where users need confidence their work is progressing. Third, different transports would require different mechanisms for these concerns. The sHTTP proposals adjust stream management and retry semantics to fulfill these requirements, but stdio has no equivalent extension points. This creates transport-specific fragmentation where implementers must solve the same problems differently depending on their choice of transport. Data-layer operations provides consistent semantics across all transports. Finally, deferred result retrieval and active status checks are data-layer concerns that cannot be addressed by transport improvements alone. The ability to retrieve a result multiple times, specify retention duration, and handle cleanup is orthogonal to how the underlying messages are delivered. **Resource-Based Approaches:** Another possible approach would be to leverage existing MCP resources for tracking long-running operations. For example, a tool could return a linked resource that communicates operation status, and clients could subscribe to that resource to receive updates when the operation completes. This would allow servers to represent task state using the resource primitive, potentially with annotations for suggested polling frequency. While this approach is technically feasible and servers remain free to adopt such conventions, it suffers from similar limitations as the tool-splitting pattern described in the Motivation section. Like the `start_tool` and `get_tool` convention, a resource-based tracking system would be convention-based rather than standardized, creating several challenges: The most fundamental issue is the lack of a consistent way for clients to distinguish between ordinary resources (meant to be exposed to models) and status-tracking resources (meant to be polled by the application). Should a status resource be presented to the model? How should the client correlate a returned resource with the original tool call? Without standardization, different servers would implement different conventions, forcing clients/hosts/models to handle each server’s particular approach. Extending resources with task-like semantics (such as polling frequency, keepalive durations, and explicit status states) would create a new and distinct purpose for resources that would be difficult to distinguish from their existing purpose as model-accessible content. The resource subscription model has one additional issue: as it is push-based, it requires clients to wait for notifications of resource changes rather than actively polling for status. While this works for some use cases, it doesn’t address scenarios where clients need to actively check status—for example, proactively and deterministically checking if work is still progressing, which is the original intent of this proposal. The task primitive addresses these concerns by providing a standardized, protocol-level mechanism specifically designed for this use case, with consistent semantics that any client can leverage without host applications needing to understand server-specific conventions. While resource-based tracking remains possible for servers that prefer it and/or are already using it, this SEP provides a first-class alternative that solves the broader set of requirements identified previously.
 
-### 
 
 [​](#backward-compatibility)
 
@@ -1073,7 +1022,6 @@ This SEP introduces **no backward incompatibilities**. All existing MCP function
 - Clients can opportunistically use tasks where supported
 - No coordination required between client and server updates
 
-## 
 
 [​](#future-work)
 
@@ -1081,7 +1029,6 @@ Future Work
 
 The task primitive introduced in this SEP provides a foundation for several important extensions that will enhance MCP’s workflow capabilities.
 
-### 
 
 [​](#push-notifications)
 
@@ -1095,7 +1042,6 @@ While this SEP focuses on client-driven polling, future work could introduce ser
 
 This could be implemented through webhook-style mechanisms or persistent notification channels, depending on the transport capabilities. The proposed task ID and status model provides the necessary infrastructure for servers to identify which tasks warrant notifications and for clients to correlate notifications with their outstanding tasks.
 
-### 
 
 [​](#intermediate-results)
 
@@ -1109,7 +1055,6 @@ The current task model returns results only upon completion. Future extensions c
 
 Intermediate results would build on the proposed task ID association mechanism, allowing servers to send multiple result notifications or response messages tied to the same task ID throughout its lifecycle.
 
-### 
 
 [​](#nested-task-execution)
 

@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-16T05:33:54Z"
+fetched_at: "2026-03-17T02:04:12Z"
 source_url: "https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
 title: "What Certifications has Anthropic obtained? | Claude Help Center"
 ---
@@ -9,6 +9,7 @@ title: "What Certifications has Anthropic obtained? | Claude Help Center"
 
 # What Certifications has Anthropic obtained?
 
+Updated today
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
 

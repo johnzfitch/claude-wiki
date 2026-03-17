@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:07Z"
+fetched_at: "2026-03-17T02:03:42Z"
 source_url: "https://modelcontextprotocol.io/extensions/apps/build"
 title: "Build an MCP App - Model Context Protocol"
 ---
@@ -11,15 +11,12 @@ title: "Build an MCP App - Model Context Protocol"
 Getting started guide for building interactive UI applications with MCP Apps
 
 
-## 
-
 [​](#prerequisites)
 
 Prerequisites
 
 You’ll need [Node.js](https://nodejs.org/en/download) 18 or higher. Familiarity with [MCP tools](/specification/latest/server/tools) and [resources](/specification/latest/server/resources) is recommended since MCP Apps combine both primitives. Experience with the [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) will help you better understand the server-side patterns.
 
-## 
 
 [​](#getting-started)
 
@@ -27,7 +24,6 @@ Getting started
 
 The fastest way to create an MCP App is using an AI coding agent with the MCP Apps skill. If you prefer to set up a project manually, skip to [Manual setup](#manual-setup).
 
-### 
 
 [​](#using-an-ai-coding-agent)
 
@@ -37,7 +33,6 @@ AI coding agents with Skills support can scaffold a complete MCP App project for
 
 1
 
-[](#)
 
 Install the skill
 
@@ -45,7 +40,7 @@ If you are using Claude Code, you can install the skill directly with:
 
 Copy
 
-``` shiki
+```python
 /plugin marketplace add modelcontextprotocol/ext-apps
 /plugin install mcp-apps@modelcontextprotocol-ext-apps
 ```
@@ -54,7 +49,7 @@ You can also use the [Vercel Skills CLI](https://skills.sh/) to install skills a
 
 Copy
 
-``` shiki
+```python
 npx skills add modelcontextprotocol/ext-apps
 ```
 
@@ -62,7 +57,7 @@ Alternatively, you can install the skill manually by cloning the ext-apps reposi
 
 Copy
 
-``` shiki
+```python
 git clone https://github.com/modelcontextprotocol/ext-apps.git
 ```
 
@@ -88,7 +83,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 cp -r ext-apps/plugins/mcp-apps/skills/create-mcp-app ~/.claude/skills/create-mcp-app
 ```
 
@@ -100,7 +95,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 mkdir -p .claude/skills && cp -r ext-apps/plugins/mcp-apps/skills/create-mcp-app .claude/skills/create-mcp-app
 ```
 
@@ -108,7 +103,6 @@ To verify the skill is installed, ask your agent “What skills do you have acce
 
 2
 
-[](#)
 
 Create your app
 
@@ -116,7 +110,7 @@ Ask your AI coding agent to build it:
 
 Copy
 
-``` shiki
+```python
 Create an MCP App that displays a color picker
 ```
 
@@ -124,7 +118,6 @@ The agent will recognize the `create-mcp-app` skill is relevant, load its instru
 
 3
 
-[](#)
 
 Run your app
 
@@ -134,7 +127,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 npm install && npm run build && npm run serve
 ```
 
@@ -142,13 +135,11 @@ You might need to make sure that you are first in the **app folder** before runn
 
 4
 
-[](#)
 
 Test your app
 
 Follow the instructions in [Testing your app](#testing-your-app) below. For the color picker example, start a new chat and ask Claude to provide you a color picker.
 
-### 
 
 [​](#manual-setup)
 
@@ -158,7 +149,6 @@ If you’re not using an AI coding agent, or prefer to understand the setup proc
 
 1
 
-[](#)
 
 Create the project structure
 
@@ -184,13 +174,12 @@ The server registers the tool and serves the UI resource. The UI resource will e
 
 2
 
-[](#)
 
 Install dependencies
 
 Copy
 
-``` shiki
+```python
 npm install @modelcontextprotocol/ext-apps @modelcontextprotocol/sdk
 npm install -D typescript vite vite-plugin-singlefile express cors @types/express @types/cors tsx
 ```
@@ -199,7 +188,6 @@ The `ext-apps` package provides helpers for both the server side (registering to
 
 3
 
-[](#)
 
 Configure the project
 
@@ -213,7 +201,7 @@ The `"type": "module"` setting enables ES module syntax. The `build` script uses
 
 Copy
 
-``` shiki
+```python
 {
   "type": "module",
   "scripts": {
@@ -227,7 +215,7 @@ The TypeScript configuration targets modern JavaScript (`ES2022`) and uses ESNex
 
 Copy
 
-``` shiki
+```python
 {
   "compilerOptions": {
     "target": "ES2022",
@@ -244,7 +232,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 import { defineConfig } from "vite";
 import { viteSingleFile } from "vite-plugin-singlefile";
 
@@ -261,13 +249,11 @@ export default defineConfig({
 
 4
 
-[](#)
 
 Build the project
 
 With the project structure and configuration in place, continue to [Building an MCP App](#building-an-mcp-app) below to implement the server and UI.
 
-## 
 
 [​](#building-an-mcp-app)
 
@@ -275,7 +261,6 @@ Building an MCP App
 
 Let’s build a simple app that displays the current server time. This example demonstrates the full pattern: registering a tool with UI metadata, serving the bundled HTML as a resource, and building a UI that communicates with the server.
 
-### 
 
 [​](#server-implementation)
 
@@ -285,7 +270,7 @@ The server needs to do two things: register a tool that includes the `_meta.ui.r
 
 Copy
 
-``` shiki
+```python
 // server.ts
 console.log("Starting MCP App server...");
 
@@ -378,7 +363,6 @@ Let’s break down the key parts:
 - **`registerAppResource`**: Serves the bundled HTML when the host requests the UI resource.
 - **Express server**: Exposes the MCP server over HTTP on port 3001.
 
-### 
 
 [​](#ui-implementation)
 
@@ -388,7 +372,7 @@ The UI consists of an HTML page and a TypeScript module that uses the `App` clas
 
 Copy
 
-``` shiki
+```python
 <!-- mcp-app.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -411,7 +395,7 @@ And the TypeScript module:
 
 Copy
 
-``` shiki
+```python
 // src/mcp-app.ts
 import { App } from "@modelcontextprotocol/ext-apps";
 
@@ -448,7 +432,6 @@ The key parts:
 
 The `App` class provides additional methods for logging, opening URLs, and updating the model’s context with structured data from your app. See the full [API documentation](https://apps.extensions.modelcontextprotocol.io/api/).
 
-## 
 
 [​](#testing-your-app)
 
@@ -462,13 +445,12 @@ Windows
 
 Copy
 
-``` shiki
+```python
 npm run build && npm run serve
 ```
 
 In the default configuration, your server will be available at `http://localhost:3001/mcp`. However, to see your app render, you need an MCP host that supports MCP Apps. You have several options.
 
-### 
 
 [​](#testing-with-claude)
 
@@ -478,7 +460,7 @@ Testing with Claude
 
 Copy
 
-``` shiki
+```python
 npx cloudflared tunnel --url http://localhost:3001
 ```
 
@@ -486,7 +468,6 @@ Copy the generated URL (e.g., `https://random-name.trycloudflare.com`) and add i
 
 Custom connectors are available on paid Claude plans (Pro, Max, or Team).
 
-### 
 
 [​](#testing-with-the-basic-host)
 
@@ -500,7 +481,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 git clone https://github.com/modelcontextprotocol/ext-apps.git
 cd ext-apps/examples/basic-host
 npm install
@@ -514,13 +495,12 @@ Windows
 
 Copy
 
-``` shiki
+```python
 SERVERS='["http://localhost:3001/mcp"]' npm start
 ```
 
 Navigate to `http://localhost:8080`. You’ll see a simple interface where you can select a tool and call it. When you call your tool, the host fetches the UI resource and renders it in a sandboxed iframe. You can then interact with your app and verify that tool calls work correctly.
 
-## 
 
 [​](#learn-more)
 
@@ -541,7 +521,6 @@ Source code, examples, and issue tracker
 
 Technical specification for implementers
 
-## 
 
 [​](#feedback)
 

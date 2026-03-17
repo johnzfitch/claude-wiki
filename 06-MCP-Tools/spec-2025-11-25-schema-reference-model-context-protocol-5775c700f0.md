@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:25Z"
+fetched_at: "2026-03-17T02:04:00Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/schema"
 title: "Schema Reference - Model Context Protocol"
 ---
@@ -8,13 +8,10 @@ title: "Schema Reference - Model Context Protocol"
 # Schema Reference
 
 
-## 
-
 [​](#json-rpc)
 
 JSON-RPC
 
-### 
 
 [​](#jsonrpcerrorresponse)
 
@@ -34,7 +31,6 @@ id?: RequestId[](#jsonrpcerrorresponse-id)
 
 error: Error[](#jsonrpcerrorresponse-error)
 
-### 
 
 [​](#jsonrpcmessage)
 
@@ -44,7 +40,6 @@ JSONRPCMessage: [JSONRPCRequest](#jsonrpcrequest) \| [JSONRPCNotification](#json
 
 Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
 
-### 
 
 [​](#jsonrpcnotification)
 
@@ -68,7 +63,6 @@ Inherited from Notification.params
 
 jsonrpc: “2.0”[](#jsonrpcnotification-jsonrpc)
 
-### 
 
 [​](#jsonrpcrequest)
 
@@ -95,7 +89,6 @@ jsonrpc: “2.0”[](#jsonrpcrequest-jsonrpc)
 
 id: RequestId[](#jsonrpcrequest-id)
 
-### 
 
 [​](#jsonrpcresponse)
 
@@ -105,7 +98,6 @@ JSONRPCResponse: [JSONRPCResultResponse](#jsonrpcresultresponse) \| [JSONRPCErro
 
 A response to a request, containing either the result or error.
 
-### 
 
 [​](#jsonrpcresultresponse)
 
@@ -125,13 +117,11 @@ id: RequestId[](#jsonrpcresultresponse-id)
 
 result: Result[](#jsonrpcresultresponse-result)
 
-## 
 
 [​](#common-types)
 
 Common Types
 
-### 
 
 [​](#annotations)
 
@@ -165,7 +155,6 @@ Should be an ISO 8601 formatted string (e.g., “2025-01-12T15:00:58Z”).
 
 Examples: last activity timestamp in an open file, timestamp when the resource was attached, etc.
 
-### 
 
 [​](#cursor)
 
@@ -175,7 +164,6 @@ Cursor: string
 
 An opaque token used to represent a cursor for pagination.
 
-### 
 
 [​](#emptyresult)
 
@@ -185,7 +173,6 @@ EmptyResult: [Result](#result)
 
 A response that indicates success but carries no data.
 
-### 
 
 [​](#error)
 
@@ -209,7 +196,6 @@ data?: unknown[](#error-data)
 
 Additional information about the error. The value of this member is defined by the sender (e.g. detailed error information, nested errors etc.).
 
-### 
 
 [​](#icon)
 
@@ -248,7 +234,6 @@ Optional specifier for the theme this icon is designed for. `light` indicates th
 
 If not provided, the client should assume the icon can be used with any theme.
 
-### 
 
 [​](#logginglevel)
 
@@ -268,7 +253,6 @@ The severity of a log message.
 
 These map to syslog message severities, as specified in RFC-5424: [](https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1)[https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1](https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1)
 
-### 
 
 [​](#progresstoken)
 
@@ -278,7 +262,6 @@ ProgressToken: string \| number
 
 A progress token, used to associate progress notifications with the original request.
 
-### 
 
 [​](#requestid)
 
@@ -288,7 +271,6 @@ RequestId: string \| number
 
 A uniquely identifying ID for a request in JSON-RPC.
 
-### 
 
 [​](#result)
 
@@ -303,7 +285,6 @@ interface Result {\
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#role)
 
@@ -313,13 +294,11 @@ Role: “user” \| “assistant”
 
 The sender or recipient of messages and data in a conversation.
 
-## 
 
 [​](#content)
 
 Content
 
-### 
 
 [​](#audiocontent)
 
@@ -353,7 +332,6 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#blobresourcecontents)
 
@@ -388,7 +366,6 @@ blob: string[](#blobresourcecontents-blob)
 
 A base64-encoded string representing the binary data of the item.
 
-### 
 
 [​](#contentblock)
 
@@ -401,7 +378,6 @@ ContentBlock:\
   \| [ResourceLink](#resourcelink)\
   \| [EmbeddedResource](#embeddedresource)
 
-### 
 
 [​](#embeddedresource)
 
@@ -430,7 +406,6 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#imagecontent)
 
@@ -464,7 +439,6 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#resourcelink)
 
@@ -559,7 +533,6 @@ Inherited from [Resource](#resource).[\_meta](#resource-_meta)
 
 type: “resource_link”[](#resourcelink-type)
 
-### 
 
 [​](#textcontent)
 
@@ -588,7 +561,6 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#textresourcecontents)
 
@@ -623,13 +595,11 @@ text: string[](#textresourcecontents-text)
 
 The text of the item. This must only be set if the item can actually be represented as text (not binary data).
 
-## 
 
 [​](#completion/complete)
 
 `completion/complete`
 
-### 
 
 [​](#completerequest)
 
@@ -660,7 +630,6 @@ params: CompleteRequestParams[](#completerequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#completerequestparams)
 
@@ -715,7 +684,6 @@ Type Declaration
 
   Previously-resolved variables in a URI template or prompt.
 
-### 
 
 [​](#completeresult)
 
@@ -751,7 +719,6 @@ Type Declaration
 
   Indicates whether there are additional completion options beyond those provided in the current response, even if the exact total is unknown.
 
-### 
 
 [​](#promptreference)
 
@@ -781,7 +748,6 @@ Inherited from BaseMetadata.title
 
 type: “ref/prompt”[](#promptreference-type)
 
-### 
 
 [​](#resourcetemplatereference)
 
@@ -800,13 +766,11 @@ uri: string[](#resourcetemplatereference-uri)
 
 The URI or URI template of the resource.
 
-## 
 
 [​](#elicitation/create)
 
 `elicitation/create`
 
-### 
 
 [​](#elicitrequest)
 
@@ -837,7 +801,6 @@ params: ElicitRequestParams[](#elicitrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#elicitrequestparams)
 
@@ -847,7 +810,6 @@ ElicitRequestParams: [ElicitRequestFormParams](#elicitrequestformparams) \| [Eli
 
 The parameters for a request to elicit additional information from the user via the client.
 
-### 
 
 [​](#elicitresult)
 
@@ -880,7 +842,6 @@ content?: { \[key: string\]: string \| number \| boolean \| string\[\] }[](#elic
 
 The submitted form data, only present when action is “accept” and mode was “form”. Contains values matching the requested schema. Omitted for out-of-band mode responses.
 
-### 
 
 [​](#booleanschema)
 
@@ -901,7 +862,6 @@ description?: string[](#booleanschema-description)
 
 default?: boolean[](#booleanschema-default)
 
-### 
 
 [​](#elicitrequestformparams)
 
@@ -956,7 +916,6 @@ requestedSchema: { \$schema?: string; type: “object”; properties: { \[key: s
 
 A restricted subset of JSON Schema. Only top-level properties are allowed, without nesting.
 
-### 
 
 [​](#elicitrequesturlparams)
 
@@ -1011,7 +970,6 @@ url: string[](#elicitrequesturlparams-url)
 
 The URL that the user should navigate to.
 
-### 
 
 [​](#enumschema)
 
@@ -1022,7 +980,6 @@ EnumSchema:\
   \| [MultiSelectEnumSchema](#multiselectenumschema)\
   \| [LegacyTitledEnumSchema](#legacytitledenumschema)
 
-### 
 
 [​](#legacytitledenumschema)
 
@@ -1053,7 +1010,6 @@ enumNames?: string\[\][](#legacytitledenumschema-enumnames)
 
 default?: string[](#legacytitledenumschema-default)
 
-### 
 
 [​](#multiselectenumschema)
 
@@ -1063,7 +1019,6 @@ MultiSelectEnumSchema:\
   \| [UntitledMultiSelectEnumSchema](#untitledmultiselectenumschema)\
   \| [TitledMultiSelectEnumSchema](#titledmultiselectenumschema)
 
-### 
 
 [​](#numberschema)
 
@@ -1090,7 +1045,6 @@ maximum?: number[](#numberschema-maximum)
 
 default?: number[](#numberschema-default)
 
-### 
 
 [​](#primitiveschemadefinition)
 
@@ -1104,7 +1058,6 @@ PrimitiveSchemaDefinition:\
 
 Restricted schema definitions that only allow primitive types without nested objects or arrays.
 
-### 
 
 [​](#singleselectenumschema)
 
@@ -1114,7 +1067,6 @@ SingleSelectEnumSchema:\
   \| [UntitledSingleSelectEnumSchema](#untitledsingleselectenumschema)\
   \| [TitledSingleSelectEnumSchema](#titledsingleselectenumschema)
 
-### 
 
 [​](#stringschema)
 
@@ -1144,7 +1096,6 @@ format?: “uri” \| “email” \| “date” \| “date-time”[](#stringsche
 
 default?: string[](#stringschema-default)
 
-### 
 
 [​](#titledmultiselectenumschema)
 
@@ -1194,7 +1145,6 @@ default?: string\[\][](#titledmultiselectenumschema-default)
 
 Optional default value.
 
-### 
 
 [​](#titledsingleselectenumschema)
 
@@ -1238,7 +1188,6 @@ default?: string[](#titledsingleselectenumschema-default)
 
 Optional default value.
 
-### 
 
 [​](#untitledmultiselectenumschema)
 
@@ -1290,7 +1239,6 @@ default?: string\[\][](#untitledmultiselectenumschema-default)
 
 Optional default value.
 
-### 
 
 [​](#untitledsingleselectenumschema)
 
@@ -1324,13 +1272,11 @@ default?: string[](#untitledsingleselectenumschema-default)
 
 Optional default value.
 
-## 
 
 [​](#initialize)
 
 `initialize`
 
-### 
 
 [​](#initializerequest)
 
@@ -1361,7 +1307,6 @@ params: InitializeRequestParams[](#initializerequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#initializerequestparams)
 
@@ -1398,7 +1343,6 @@ capabilities: ClientCapabilities[](#initializerequestparams-capabilities)
 
 clientInfo: Implementation[](#initializerequestparams-clientinfo)
 
-### 
 
 [​](#initializeresult)
 
@@ -1435,7 +1379,6 @@ Instructions describing how to use the server and its features.
 
 This can be used by clients to improve the LLM’s understanding of available tools, resources, etc. It can be thought of like a “hint” to the model. For example, this information MAY be added to the system prompt.
 
-### 
 
 [​](#clientcapabilities)
 
@@ -1524,7 +1467,6 @@ Type Declaration
 
       Whether the client supports task-augmented elicitation/create requests.
 
-### 
 
 [​](#implementation)
 
@@ -1583,7 +1525,6 @@ websiteUrl?: string[](#implementation-websiteurl)
 
 An optional URL of the website for this implementation.
 
-### 
 
 [​](#servercapabilities)
 
@@ -1677,13 +1618,11 @@ Type Declaration
 
       Whether the server supports task-augmented tools/call requests.
 
-## 
 
 [​](#logging/setlevel)
 
 `logging/setLevel`
 
-### 
 
 [​](#setlevelrequest)
 
@@ -1714,7 +1653,6 @@ params: SetLevelRequestParams[](#setlevelrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#setlevelrequestparams)
 
@@ -1745,13 +1683,11 @@ level: LoggingLevel[](#setlevelrequestparams-level)
 
 The level of logging that the client wants to receive from the server. The server should send all logs at this level and higher (i.e., more severe) to the client as notifications/message.
 
-## 
 
 [​](#notifications/cancelled)
 
 `notifications/cancelled`
 
-### 
 
 [​](#cancellednotification)
 
@@ -1785,7 +1721,6 @@ params: CancelledNotificationParams[](#cancellednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-### 
 
 [​](#cancellednotificationparams)
 
@@ -1815,13 +1750,11 @@ reason?: string[](#cancellednotificationparams-reason)
 
 An optional string describing the reason for the cancellation. This MAY be logged or presented to the user.
 
-## 
 
 [​](#notifications/initialized)
 
 `notifications/initialized`
 
-### 
 
 [​](#initializednotification)
 
@@ -1847,13 +1780,11 @@ params?: NotificationParams[](#initializednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-## 
 
 [​](#notifications/tasks/status)
 
 `notifications/tasks/status`
 
-### 
 
 [​](#taskstatusnotification)
 
@@ -1879,7 +1810,6 @@ params: TaskStatusNotificationParams[](#taskstatusnotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-### 
 
 [​](#taskstatusnotificationparams)
 
@@ -1889,13 +1819,11 @@ TaskStatusNotificationParams: NotificationParams & [Task](#task)
 
 Parameters for a `notifications/tasks/status` notification.
 
-## 
 
 [​](#notifications/message)
 
 `notifications/message`
 
-### 
 
 [​](#loggingmessagenotification)
 
@@ -1921,7 +1849,6 @@ params: LoggingMessageNotificationParams[](#loggingmessagenotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-### 
 
 [​](#loggingmessagenotificationparams)
 
@@ -1954,13 +1881,11 @@ data: unknown[](#loggingmessagenotificationparams-data)
 
 The data to be logged, such as a string message or an object. Any JSON serializable type is allowed here.
 
-## 
 
 [​](#notifications/progress)
 
 `notifications/progress`
 
-### 
 
 [​](#progressnotification)
 
@@ -1986,7 +1911,6 @@ params: ProgressNotificationParams[](#progressnotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-### 
 
 [​](#progressnotificationparams)
 
@@ -2024,13 +1948,11 @@ message?: string[](#progressnotificationparams-message)
 
 An optional message describing the current progress.
 
-## 
 
 [​](#notifications/prompts/list_changed)
 
 `notifications/prompts/list_changed`
 
-### 
 
 [​](#promptlistchangednotification)
 
@@ -2056,13 +1978,11 @@ params?: NotificationParams[](#promptlistchangednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-## 
 
 [​](#notifications/resources/list_changed)
 
 `notifications/resources/list_changed`
 
-### 
 
 [​](#resourcelistchangednotification)
 
@@ -2088,13 +2008,11 @@ params?: NotificationParams[](#resourcelistchangednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-## 
 
 [​](#notifications/resources/updated)
 
 `notifications/resources/updated`
 
-### 
 
 [​](#resourceupdatednotification)
 
@@ -2120,7 +2038,6 @@ params: ResourceUpdatedNotificationParams[](#resourceupdatednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-### 
 
 [​](#resourceupdatednotificationparams)
 
@@ -2143,13 +2060,11 @@ uri: string[](#resourceupdatednotificationparams-uri)
 
 The URI of the resource that has been updated. This might be a sub-resource of the one that the client actually subscribed to.
 
-## 
 
 [​](#notifications/roots/list_changed)
 
 `notifications/roots/list_changed`
 
-### 
 
 [​](#rootslistchangednotification)
 
@@ -2175,13 +2090,11 @@ params?: NotificationParams[](#rootslistchangednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-## 
 
 [​](#notifications/tools/list_changed)
 
 `notifications/tools/list_changed`
 
-### 
 
 [​](#toollistchangednotification)
 
@@ -2207,13 +2120,11 @@ params?: NotificationParams[](#toollistchangednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-## 
 
 [​](#notifications/elicitation/complete)
 
 `notifications/elicitation/complete`
 
-### 
 
 [​](#elicitationcompletenotification)
 
@@ -2245,13 +2156,11 @@ Type Declaration
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-## 
 
 [​](#ping)
 
 `ping`
 
-### 
 
 [​](#pingrequest)
 
@@ -2282,13 +2191,11 @@ params?: RequestParams[](#pingrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-## 
 
 [​](#tasks)
 
 `tasks`
 
-### 
 
 [​](#createtaskresult)
 
@@ -2310,7 +2217,6 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 
 task: Task[](#createtaskresult-task)
 
-### 
 
 [​](#relatedtaskmetadata)
 
@@ -2326,7 +2232,6 @@ taskId: string[](#relatedtaskmetadata-taskid)
 
 The task identifier this message is associated with.
 
-### 
 
 [​](#task)
 
@@ -2376,7 +2281,6 @@ pollInterval?: number[](#task-pollinterval)
 
 Suggested polling interval in milliseconds.
 
-### 
 
 [​](#taskmetadata)
 
@@ -2392,7 +2296,6 @@ ttl?: number[](#taskmetadata-ttl)
 
 Requested duration in milliseconds to retain task from creation.
 
-### 
 
 [​](#taskstatus)
 
@@ -2402,13 +2305,11 @@ TaskStatus: “working” \| “input_required” \| “completed” \| “faile
 
 The status of a task.
 
-## 
 
 [​](#tasks/get)
 
 `tasks/get`
 
-### 
 
 [​](#gettaskrequest)
 
@@ -2445,7 +2346,6 @@ Type Declaration
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#gettaskresult)
 
@@ -2455,13 +2355,11 @@ GetTaskResult: [Result](#result) & [Task](#task)
 
 The response to a tasks/get request.
 
-## 
 
 [​](#tasks/result)
 
 `tasks/result`
 
-### 
 
 [​](#gettaskpayloadrequest)
 
@@ -2498,7 +2396,6 @@ Type Declaration
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#gettaskpayloadresult)
 
@@ -2517,13 +2414,11 @@ See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for no
 
 Inherited from [Result](#result).[\_meta](#result-_meta)
 
-## 
 
 [​](#tasks/list)
 
 `tasks/list`
 
-### 
 
 [​](#listtasksrequest)
 
@@ -2554,7 +2449,6 @@ method: “tasks/list”[](#listtasksrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listtasksresult)
 
@@ -2583,13 +2477,11 @@ Inherited from PaginatedResult.nextCursor
 
 tasks: Task\[\][](#listtasksresult-tasks)
 
-## 
 
 [​](#tasks/cancel)
 
 `tasks/cancel`
 
-### 
 
 [​](#canceltaskrequest)
 
@@ -2626,7 +2518,6 @@ Type Declaration
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#canceltaskresult)
 
@@ -2636,13 +2527,11 @@ CancelTaskResult: [Result](#result) & [Task](#task)
 
 The response to a tasks/cancel request.
 
-## 
 
 [​](#prompts/get)
 
 `prompts/get`
 
-### 
 
 [​](#getpromptrequest)
 
@@ -2673,7 +2562,6 @@ params: GetPromptRequestParams[](#getpromptrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#getpromptrequestparams)
 
@@ -2709,7 +2597,6 @@ arguments?: { \[key: string\]: string }[](#getpromptrequestparams-arguments)
 
 Arguments to use for templating the prompt.
 
-### 
 
 [​](#getpromptresult)
 
@@ -2736,7 +2623,6 @@ An optional description for the prompt.
 
 messages: PromptMessage\[\][](#getpromptresult-messages)
 
-### 
 
 [​](#promptmessage)
 
@@ -2755,13 +2641,11 @@ role: Role[](#promptmessage-role)
 
 content: ContentBlock[](#promptmessage-content)
 
-## 
 
 [​](#prompts/list)
 
 `prompts/list`
 
-### 
 
 [​](#listpromptsrequest)
 
@@ -2792,7 +2676,6 @@ method: “prompts/list”[](#listpromptsrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listpromptsresult)
 
@@ -2821,7 +2704,6 @@ Inherited from PaginatedResult.nextCursor
 
 prompts: Prompt\[\][](#listpromptsresult-prompts)
 
-### 
 
 [​](#prompt)
 
@@ -2880,7 +2762,6 @@ A list of arguments to use for templating the prompt.
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#promptargument)
 
@@ -2917,13 +2798,11 @@ required?: boolean[](#promptargument-required)
 
 Whether this argument must be provided.
 
-## 
 
 [​](#resources/list)
 
 `resources/list`
 
-### 
 
 [​](#listresourcesrequest)
 
@@ -2954,7 +2833,6 @@ method: “resources/list”[](#listresourcesrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listresourcesresult)
 
@@ -2983,7 +2861,6 @@ Inherited from PaginatedResult.nextCursor
 
 resources: Resource\[\][](#listresourcesresult-resources)
 
-### 
 
 [​](#resource)
 
@@ -3061,13 +2938,11 @@ This can be used by Hosts to display file sizes and estimate context window usag
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-## 
 
 [​](#resources/read)
 
 `resources/read`
 
-### 
 
 [​](#readresourcerequest)
 
@@ -3098,7 +2973,6 @@ params: ReadResourceRequestParams[](#readresourcerequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#readresourcerequestparams)
 
@@ -3131,7 +3005,6 @@ The URI of the resource. The URI can use any protocol; it is up to the server ho
 
 Inherited from ResourceRequestParams.uri
 
-### 
 
 [​](#readresourceresult)
 
@@ -3153,13 +3026,11 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 
 contents: (TextResourceContents \| BlobResourceContents)\[\][](#readresourceresult-contents)
 
-## 
 
 [​](#resources/subscribe)
 
 `resources/subscribe`
 
-### 
 
 [​](#subscriberequest)
 
@@ -3190,7 +3061,6 @@ params: SubscribeRequestParams[](#subscriberequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#subscriberequestparams)
 
@@ -3223,13 +3093,11 @@ The URI of the resource. The URI can use any protocol; it is up to the server ho
 
 Inherited from ResourceRequestParams.uri
 
-## 
 
 [​](#resources/templates/list)
 
 `resources/templates/list`
 
-### 
 
 [​](#listresourcetemplatesrequest)
 
@@ -3260,7 +3128,6 @@ method: “resources/templates/list”[](#listresourcetemplatesrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listresourcetemplatesresult)
 
@@ -3289,7 +3156,6 @@ Inherited from PaginatedResult.nextCursor
 
 resourceTemplates: ResourceTemplate\[\][](#listresourcetemplatesresult-resourcetemplates)
 
-### 
 
 [​](#resourcetemplate)
 
@@ -3360,13 +3226,11 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-## 
 
 [​](#resources/unsubscribe)
 
 `resources/unsubscribe`
 
-### 
 
 [​](#unsubscriberequest)
 
@@ -3397,7 +3261,6 @@ params: UnsubscribeRequestParams[](#unsubscriberequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#unsubscriberequestparams)
 
@@ -3430,13 +3293,11 @@ The URI of the resource. The URI can use any protocol; it is up to the server ho
 
 Inherited from ResourceRequestParams.uri
 
-## 
 
 [​](#roots/list)
 
 `roots/list`
 
-### 
 
 [​](#listrootsrequest)
 
@@ -3469,7 +3330,6 @@ params?: RequestParams[](#listrootsrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#listrootsresult)
 
@@ -3491,7 +3351,6 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 
 roots: Root\[\][](#listrootsresult-roots)
 
-### 
 
 [​](#root)
 
@@ -3517,13 +3376,11 @@ An optional name for the root. This can be used to provide a human-readable iden
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-## 
 
 [​](#sampling/createmessage)
 
 `sampling/createMessage`
 
-### 
 
 [​](#createmessagerequest)
 
@@ -3554,7 +3411,6 @@ params: CreateMessageRequestParams[](#createmessagerequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#createmessagerequestparams)
 
@@ -3637,7 +3493,6 @@ toolChoice?: ToolChoice[](#createmessagerequestparams-toolchoice)
 
 Controls how the model uses tools. The client MUST return an error if this field is provided but ClientCapabilities.sampling.tools is not declared. Default is `{ mode: “auto” }`.
 
-### 
 
 [​](#createmessageresult)
 
@@ -3685,7 +3540,6 @@ content: SamplingMessageContentBlock \| SamplingMessageContentBlock\[\][](#creat
 
 Inherited from [SamplingMessage](#samplingmessage).[content](#samplingmessage-content)
 
-### 
 
 [​](#modelhint)
 
@@ -3713,7 +3567,6 @@ The client MAY also map the string to a different provider’s model name or a d
 
 - `gemini-1.5-flash` could match `claude-3-haiku-20240307`
 
-### 
 
 [​](#modelpreferences)
 
@@ -3752,7 +3605,6 @@ intelligencePriority?: number[](#modelpreferences-intelligencepriority)
 
 How much to prioritize intelligence and capabilities when selecting a model. A value of 0 means intelligence is not important, while a value of 1 means intelligence is the most important factor.
 
-### 
 
 [​](#samplingmessage)
 
@@ -3774,7 +3626,6 @@ content: SamplingMessageContentBlock \| SamplingMessageContentBlock\[\][](#sampl
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#samplingmessagecontentblock)
 
@@ -3787,7 +3638,6 @@ SamplingMessageContentBlock:\
   \| [ToolUseContent](#toolusecontent)\
   \| [ToolResultContent](#toolresultcontent)
 
-### 
 
 [​](#toolchoice)
 
@@ -3807,7 +3657,6 @@ Controls the tool use ability of the model:
 - “required”: Model MUST use at least one tool before completing
 - “none”: Model MUST NOT use any tools
 
-### 
 
 [​](#toolresultcontent)
 
@@ -3856,7 +3705,6 @@ Optional metadata about the tool result. Clients SHOULD preserve this field when
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#toolusecontent)
 
@@ -3894,13 +3742,11 @@ Optional metadata about the tool use. Clients SHOULD preserve this field when in
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-## 
 
 [​](#tools/call)
 
 `tools/call`
 
-### 
 
 [​](#calltoolrequest)
 
@@ -3931,7 +3777,6 @@ params: CallToolRequestParams[](#calltoolrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-### 
 
 [​](#calltoolrequestparams)
 
@@ -3976,7 +3821,6 @@ arguments?: { \[key: string\]: unknown }[](#calltoolrequestparams-arguments)
 
 Arguments to use for the tool call.
 
-### 
 
 [​](#calltoolresult)
 
@@ -4016,13 +3860,11 @@ Any errors that originate from the tool SHOULD be reported inside the result obj
 
 However, any errors in *finding* the tool, an error indicating that the server does not support tool calls, or any other exceptional conditions, should be reported as an MCP error response.
 
-## 
 
 [​](#tools/list)
 
 `tools/list`
 
-### 
 
 [​](#listtoolsrequest)
 
@@ -4053,7 +3895,6 @@ method: “tools/list”[](#listtoolsrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listtoolsresult)
 
@@ -4082,7 +3923,6 @@ Inherited from PaginatedResult.nextCursor
 
 tools: Tool\[\][](#listtoolsresult-tools)
 
-### 
 
 [​](#tool)
 
@@ -4172,7 +4012,6 @@ Display name precedence order is: title, annotations.title, then name.
 
 See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#toolannotations)
 
@@ -4224,7 +4063,6 @@ If true, this tool may interact with an “open world” of external entities. I
 
 Default: true
 
-### 
 
 [​](#toolexecution)
 

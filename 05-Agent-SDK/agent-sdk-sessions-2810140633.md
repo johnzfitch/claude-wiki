@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-14T10:15:54Z"
+fetched_at: "2026-03-17T02:00:56Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/sessions"
 title: "Work with sessions - Claude API Docs"
 ---
@@ -19,7 +19,6 @@ Sessions persist the **conversation**, not the filesystem. To snapshot and rever
 
 This guide covers how to pick the right approach for your app, the SDK interfaces that track sessions automatically, how to capture session IDs and use `resume` and `fork` manually, and what to know about resuming sessions across hosts.
 
-## 
 
 Choose an approach
 
@@ -34,7 +33,6 @@ How much session handling you need depends on your application's shape. Session 
 | Try an alternative approach without losing the original | Fork the session. |
 | Stateless task, don't want anything written to disk (TypeScript only) | Set [`persistSession: false`](/docs/en/agent-sdk/typescript#options). The session exists only in memory for the duration of the call. Python always persists to disk. |
 
-### 
 
 Continue, resume, and fork
 
@@ -47,13 +45,11 @@ Continue, resume, and fork are option fields you set on `query()` ([`ClaudeAgent
 
 **Fork** is different: it creates a new session that starts with a copy of the original's history. The original stays unchanged. Use fork to try a different direction while keeping the option to go back.
 
-## 
 
 Automatic session management
 
 Both SDKs offer an interface that tracks session state for you across calls, so you don't pass IDs around manually. Use these for multi-turn conversations within a single process.
 
-### 
 
 Python: `ClaudeSDKClient`
 
@@ -63,7 +59,7 @@ This example runs two queries against the same `client`. The first asks the agen
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import (
     ClaudeSDKClient,
@@ -111,7 +107,6 @@ asyncio.run(main())
 
 See the [Python SDK reference](/docs/en/agent-sdk/python#choosing-between-query-and-claude-sdk-client) for details on when to use `ClaudeSDKClient` vs the standalone `query()` function.
 
-### 
 
 TypeScript: `continue: true`
 
@@ -121,7 +116,7 @@ This example makes two separate `query()` calls. The first creates a fresh sessi
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // First query: creates a new session
@@ -150,11 +145,9 @@ for await (const message of query({
 
 There's also a [V2 preview](/docs/en/agent-sdk/typescript-v2-preview) of the TypeScript SDK that provides `createSession()` with a `send` / `stream` pattern, closer to Python's `ClaudeSDKClient` in feel. V2 is unstable and its APIs may change; the rest of this documentation uses the stable V1 `query()` function.
 
-## 
 
 Use session options with `query()`
 
-### 
 
 Capture the session ID
 
@@ -162,7 +155,7 @@ Resume and fork require a session ID. Read it from the `session_id` field on the
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage
 
@@ -188,7 +181,6 @@ async def main():
 session_id = asyncio.run(main())
 ```
 
-### 
 
 Resume by ID
 
@@ -202,7 +194,7 @@ This example resumes the session from [Capture the session ID](#capture-the-sess
 
 Python
 
-``` shiki
+```python
 # Earlier session analyzed the code; now build on that analysis
 async for message in query(
     prompt="Now implement the refactoring you suggested",
@@ -217,7 +209,6 @@ async for message in query(
 
 If a `resume` call returns a fresh session instead of the expected history, the most common cause is a mismatched `cwd`. Sessions are stored under `~/.claude/projects/<encoded-cwd>/*.jsonl`, where `<encoded-cwd>` is the absolute working directory with every non-alphanumeric character replaced by `-` (so `/Users/me/proj` becomes `-Users-me-proj`). If your resume call runs from a different directory, the SDK looks in the wrong place. The session file also needs to exist on the current machine.
 
-### 
 
 Fork to explore alternatives
 
@@ -229,7 +220,7 @@ This example builds on [Capture the session ID](#capture-the-session-id): you've
 
 Python
 
-``` shiki
+```python
 # Fork: branch from session_id into a new session
 forked_id = None
 async for message in query(
@@ -255,7 +246,6 @@ async for message in query(
         print(message.result)
 ```
 
-## 
 
 Resume across hosts
 
@@ -266,7 +256,6 @@ Session files are local to the machine that created them. To resume a session on
 
 Both SDKs expose functions for enumerating sessions on disk and reading their messages: [`listSessions()`](/docs/en/agent-sdk/typescript#list-sessions) and [`getSessionMessages()`](/docs/en/agent-sdk/typescript#get-session-messages) in TypeScript, [`list_sessions()`](/docs/en/agent-sdk/python#list-sessions) and [`get_session_messages()`](/docs/en/agent-sdk/python#get-session-messages) in Python. Use them to build custom session pickers, cleanup logic, or transcript viewers.
 
-## 
 
 Related resources
 

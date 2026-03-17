@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:18Z"
+fetched_at: "2026-03-17T02:03:53Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/server/utilities/logging"
 title: "Logging - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Logging - Model Context Protocol"
 
 The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients can control logging verbosity by setting minimum log levels, with servers sending notifications containing severity levels, optional logger names, and arbitrary JSON-serializable data.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -18,7 +17,6 @@ User Interaction Model
 
 Implementations are free to expose logging through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-## 
 
 [​](#capabilities)
 
@@ -28,7 +26,7 @@ Servers that emit log message notifications **MUST** declare the `logging` capab
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "logging": {}
@@ -36,7 +34,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#log-levels)
 
@@ -55,13 +52,11 @@ The protocol follows the standard syslog severity levels specified in [RFC 5424]
 | alert     | Action must be taken immediately | Data corruption detected   |
 | emergency | System is unusable               | Complete system failure    |
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#setting-log-level)
 
@@ -71,7 +66,7 @@ To configure the minimum log level, clients **MAY** send a `logging/setLevel` re
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -82,7 +77,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#log-message-notifications)
 
@@ -92,7 +86,7 @@ Servers send log messages using `notifications/message` notifications:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/message",
@@ -110,13 +104,11 @@ Copy
 }
 ```
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#error-handling)
 
@@ -127,7 +119,6 @@ Servers **SHOULD** return standard JSON-RPC errors for common failure cases:
 - Invalid log level: `-32602` (Invalid params)
 - Configuration errors: `-32603` (Internal error)
 
-## 
 
 [​](#implementation-considerations)
 
@@ -144,7 +135,6 @@ Implementation Considerations
     - Display severity visually
     - Persist log messages
 
-## 
 
 [​](#security)
 

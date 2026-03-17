@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-16T05:33:51Z"
+fetched_at: "2026-03-17T02:04:08Z"
 source_url: "https://support.claude.com/en/articles/9015913-how-to-get-support"
 title: "How to get support | Claude Help Center"
 ---
 
 # How to get support
+
+Updated today
 
 
 This guide explains how to get support for your Claude or Console account. Different support options are available depending on your plan.

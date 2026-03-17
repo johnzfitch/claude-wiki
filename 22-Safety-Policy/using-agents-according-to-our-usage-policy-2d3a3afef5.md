@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:33:57Z"
+fetched_at: "2026-03-17T02:04:19Z"
 source_url: "https://support.claude.com/en/articles/12005017-using-agents-according-to-our-usage-policy"
 title: "Using Agents According to Our Usage Policy | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Using Agents According to Our Usage Policy | Claude Help Center"
 3.  Using Agents According to Our Usage Policy
 
 # Using Agents According to Our Usage Policy
+
+Updated today
 
 
 All uses of agents and agentic features must continue to adhere to Anthropic’s Usage Policy. The following are intended to be non-exhaustive illustrations of how our Usage Policy applies to certain agentic uses. As agentic capabilities evolve, we will update this list with additional examples to help users understand what our Usage Policy covers in practice in agentic environments.

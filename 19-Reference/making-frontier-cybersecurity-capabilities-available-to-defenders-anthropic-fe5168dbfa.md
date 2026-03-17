@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-22T10:50:57Z"
+fetched_at: "2026-03-17T02:03:17Z"
 source_url: "https://www.anthropic.com/news/claude-code-security"
 title: "Making frontier cybersecurity capabilities available to defenders \\ Anthropic"
 ---
+
 # Making frontier cybersecurity capabilities available to defenders
 
 Feb 20, 2026
@@ -51,16 +52,18 @@ To learn more, visit [claude.com/solutions/claude-code-security](http://claude.c
 
 ## Related content
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/anthropic-rwanda-mou)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Introducing Claude Sonnet 4.6
+[Read more](/news/claude-partner-network)
 
-Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.
+### Introducing The Anthropic Institute
 
-[Read more](/news/claude-sonnet-4-6)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Anthropic and Infosys collaborate to build AI agents for telecommunications and other regulated industries
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/anthropic-infosys)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:33:59Z"
+fetched_at: "2026-03-17T02:04:21Z"
 source_url: "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
 title: "Claude March 2026 usage promotion | Claude Help Center"
 ---
@@ -10,13 +10,13 @@ title: "Claude March 2026 usage promotion | Claude Help Center"
 Updated today
 
 
-We're offering a limited-time promotion that doubles usage limits for Claude users outside 8 AM-2 PM ET/5-11 AM PT on weekdays.
+We're offering a limited-time promotion that doubles usage limits for Claude users outside 8 AM-2 PM ET / 5-11 AM PT / 12-6 PM GMT on weekdays.
 
 This promotion is available for Free, Pro, Max, and Team plans. Enterprise plans are not included in this promotion.
 
 ## What is the promotion?
 
-From March 13, 2026 through March 27, 2026, your five-hour usage is doubled during off-peak hours (outside 8 AM-2 PM ET/5-11 AM PT on weekdays). Usage remains unchanged from 8 AM-2 PM ET/5-11 AM PT on weekdays.
+From March 13, 2026 through March 28, 2026, your five-hour usage is doubled during off-peak hours (outside 8 AM-2 PM ET / 5-11 AM PT / 12-6 PM GMT) on weekdays). Usage remains unchanged from 8 AM-2 PM ET / 5-11 AM PT / 12-6 PM GMT on weekdays.
 
 ## Eligibility
 
@@ -40,7 +40,7 @@ The 2x usage increase applies across the following Claude surfaces:
 
 ### Do I need to do anything to get the extra usage?
 
-No. The promotion applies automatically. You’ll see higher limits reflected in your usage outside 8 AM-2 PM ET/5-11 AM PT on weekdays without any changes to your account settings.
+No. The promotion applies automatically. You’ll see higher limits reflected in your usage outside 8 AM-2 PM ET / 5-11 AM PT / 12-6 PM GMT on weekdays without any changes to your account settings.
 
 ### Does bonus usage count against my weekly usage limit?
 
@@ -48,8 +48,8 @@ No. The additional usage you get during off-peak hours doesn’t count toward an
 
 ### What happens when the promotion ends?
 
-After March 27, 2026, usage limits return to their standard levels at all hours. There’s no change to your plan or billing.
+After March 28, 2026, usage limits return to their standard levels at all hours. There’s no change to your plan or billing.
 
-### Terms and conditions
+## Terms and conditions
 
-This offer is valid from March 13, 2026 through March 27, 2026 at 11:59 PM PT. It applies to Free, Pro, Max, and Team plans only and excludes Enterprise plans. This offer has no cash value and is not transferable. It may not be combined with other offers.
+This offer is valid from March 13, 2026 through March 28, 2026 at 11:59 PM PT. It applies to Free, Pro, Max, and Team plans only and excludes Enterprise plans. This offer has no cash value and is not transferable. It may not be combined with other offers.

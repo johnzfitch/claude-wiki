@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-14T10:15:55Z"
+fetched_at: "2026-03-17T02:00:57Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/streaming-vs-single-mode"
 title: "Streaming Input - Claude API Docs"
 ---
@@ -11,8 +11,6 @@ title: "Streaming Input - Claude API Docs"
 Understanding the two input modes for Claude Agent SDK and when to use each
 
 
-## 
-
 Overview
 
 The Claude Agent SDK supports two distinct input modes for interacting with agents:
@@ -22,7 +20,6 @@ The Claude Agent SDK supports two distinct input modes for interacting with agen
 
 This guide explains the differences, benefits, and use cases for each mode to help you choose the right approach for your application.
 
-## 
 
 Streaming Input Mode (Recommended)
 
@@ -30,11 +27,9 @@ Streaming input mode is the **preferred** way to use the Claude Agent SDK. It pr
 
 It allows the agent to operate as a long lived process that takes in user input, handles interruptions, surfaces permission requests, and handles session management.
 
-### 
 
 How It Works
 
-### 
 
 Benefits
 
@@ -62,13 +57,12 @@ Context Persistence
 
 Maintain conversation context across multiple turns naturally
 
-### 
 
 Implementation Example
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 import { readFile } from "fs/promises";
 
@@ -122,13 +116,11 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Single Message Input
 
 Single message input is simpler but more limited.
 
-### 
 
 When to Use Single Message Input
 
@@ -138,7 +130,6 @@ Use single message input when:
 - You do not need image attachments, hooks, etc.
 - You need to operate in a stateless environment, such as a lambda function
 
-### 
 
 Limitations
 
@@ -150,13 +141,12 @@ Single message input mode does **not** support:
 - Hook integration
 - Natural multi-turn conversations
 
-### 
 
 Implementation Example
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Simple one-shot query

@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:13Z"
+fetched_at: "2026-03-17T02:03:48Z"
 source_url: "https://modelcontextprotocol.io/seps/985-align-oauth-20-protected-resource-metadata-with-rf"
 title: "SEP-985: Align OAuth 2.0 Protected Resource Metadata with RFC 9728 - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This proposal brings the MCP spec’s handling of OAuth 2.0 Protected Resource Metadata in line with [RFC 9728](https://datatracker.ietf.org/doc/html/rfc9728#name-obtaining-protected-resourc). Currently, the MCP spec requires the use of the HTTP WWW-Authenticate header when returning a 401 Unauthorized to indicate the location of the protected resource metadata. However, [RFC 9728, Section 5](https://datatracker.ietf.org/doc/html/rfc9728#section-5) states: “A protected resource MAY use the WWW-Authenticate HTTP response header field, as discussed in RFC 9110, to return a URL to its protected resource metadata to the client.” This suggests that the MCP spec could be made more flexible while still maintaining RFC compliance.
 
-## 
 
 [​](#rationale)
 
@@ -42,7 +40,6 @@ Rationale
 
 Many large-scale, dynamic, multi-tenant environments rely on a centralized authentication service separate from the backend resource servers. In such deployments, injecting WWW-Authenticate headers from backend services is non-trivial due to separation of concerns and infrastructure complexity. In these scenarios, having the option to discover metadata via a well-known URL provides a practical path forward for easier MCP adoption. Requiring only the header would impose significant communication overhead between components, especially when hundreds or thousands of MCP instances are created and destroyed dynamically. Also if there are specific managed MCP servers, adopting headers across centralized system would add significant overhead. While this increases complexity for clients—who must now implement logic to probe metadata endpoints—it reduces friction for server deployments and may encourage broader adoption. There are tradeoffs: Pros for Server Developers: Avoid complex header injection; simplifies integration in distributed environments. Cons for Client Developers: Clients must fall back to metadata discovery logic when the header is absent, increasing client complexity.
 
-## 
 
 [​](#proposed-state)
 
@@ -52,7 +49,7 @@ Update the MCP spec to:
 
 Copy
 
-``` shiki
+```python
 Clients MUST interpret the WWW-Authenticate header, and fallback to probing for metadata if not present.
 Servers SHOULD return the WWW-Authenticate header
 ```
@@ -65,7 +62,6 @@ Servers SHOULD return the WWW-Authenticate header
 
 This change allows more flexible deployment models without removing existing capabilities.
 
-## 
 
 [​](#backward-compatibility)
 

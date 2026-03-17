@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:09Z"
+fetched_at: "2026-03-17T02:03:43Z"
 source_url: "https://modelcontextprotocol.io/registry/quickstart"
 title: "Quickstart: Publish an MCP Server to the MCP Registry - Model Context Protocol"
 ---
@@ -12,7 +12,6 @@ The MCP Registry is currently in preview. Breaking changes or data resets may oc
 
 This tutorial will show you how to publish an MCP server written in TypeScript to the MCP Registry using the official `mcp-publisher` CLI tool.
 
-## 
 
 [​](#prerequisites)
 
@@ -26,7 +25,7 @@ If you do not have an MCP server written in TypeScript, you can copy the `weathe
 
 Copy
 
-``` shiki
+```python
 git clone --depth 1 git@github.com:modelcontextprotocol/quickstart-resources.git
 cp -r quickstart-resources/weather-server-typescript .
 rm -rf quickstart-resources
@@ -39,7 +38,7 @@ package.json
 
 Copy
 
-``` shiki
+```python
  {
 -  "name": "mcp-quickstart-ts",
 -  "version": "1.0.0",
@@ -52,7 +51,7 @@ package.json
 
 Copy
 
-``` shiki
+```python
    "license": "ISC",
 -  "description": "",
 +  "repository": {
@@ -63,7 +62,6 @@ Copy
    "devDependencies": {
 ```
 
-## 
 
 [​](#step-1-add-verification-information-to-the-package)
 
@@ -75,7 +73,7 @@ package.json
 
 Copy
 
-``` shiki
+```python
  {
    "name": "@my-username/mcp-weather-server",
    "version": "1.0.1",
@@ -85,7 +83,6 @@ Copy
 
 The value of `mcpName` will be your server’s name in the MCP Registry. Because we will be using GitHub-based authentication, `mcpName` **must** start with `io.github.my-username/`.
 
-## 
 
 [​](#step-2-publish-the-package)
 
@@ -95,7 +92,7 @@ The MCP Registry only hosts metadata, not artifacts, so we must publish the pack
 
 Copy
 
-``` shiki
+```python
 # Navigate to project directory
 cd weather-server-typescript
 
@@ -110,7 +107,7 @@ Then follow npm’s [publishing guide](https://docs.npmjs.com/creating-and-publi
 
 Copy
 
-``` shiki
+```python
 # If necessary, authenticate to npm
 npm adduser
 
@@ -120,7 +117,6 @@ npm publish --access public
 
 You can verify your package is published by visiting its npm URL, such as [https://www.npmjs.com/package/@my-username/mcp-weather-server](https://www.npmjs.com/package/@my-username/mcp-weather-server).
 
-## 
 
 [​](#step-3-install-mcp-publisher)
 
@@ -134,7 +130,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher && sudo mv mcp-publisher /usr/local/bin/
 ```
 
@@ -142,7 +138,7 @@ Verify that `mcp-publisher` is correctly installed by running:
 
 Copy
 
-``` shiki
+```python
 mcp-publisher --help
 ```
 
@@ -152,7 +148,7 @@ Output
 
 Copy
 
-``` shiki
+```python
 MCP Registry Publisher Tool
 
 Usage:
@@ -165,7 +161,6 @@ Commands:
   publish       Publish server.json to the registry
 ```
 
-## 
 
 [​](#step-4-create-server-json)
 
@@ -175,7 +170,7 @@ The `mcp-publisher init` command can generate a `server.json` template file with
 
 Copy
 
-``` shiki
+```python
 mcp-publisher init
 ```
 
@@ -185,7 +180,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.my-username/weather",
@@ -223,7 +218,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
  {
    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
    "name": "io.github.my-username/weather",
@@ -260,7 +255,6 @@ Copy
 
 The `name` property in `server.json` **must** match the `mcpName` property in `package.json`.
 
-## 
 
 [​](#step-5-authenticate-with-the-mcp-registry)
 
@@ -270,7 +264,7 @@ For this tutorial, we will authenticate with the MCP Registry using GitHub-based
 
 Copy
 
-``` shiki
+```python
 mcp-publisher login github
 ```
 
@@ -280,7 +274,7 @@ Output
 
 Copy
 
-``` shiki
+```python
 Logging in with github...
 
 To authenticate, please:
@@ -296,12 +290,11 @@ Output
 
 Copy
 
-``` shiki
+```python
 Successfully authenticated!
 ✓ Successfully logged in
 ```
 
-## 
 
 [​](#step-6-publish-to-the-mcp-registry)
 
@@ -311,7 +304,7 @@ Finally, publish your server to the MCP Registry using the `mcp-publisher publis
 
 Copy
 
-``` shiki
+```python
 mcp-publisher publish
 ```
 
@@ -321,7 +314,7 @@ Output
 
 Copy
 
-``` shiki
+```python
 Publishing to https://registry.modelcontextprotocol.io...
 ✓ Successfully published
 ✓ Server io.github.my-username/weather version 1.0.1
@@ -331,7 +324,7 @@ You can verify that your server is published by searching for it using the MCP R
 
 Copy
 
-``` shiki
+```python
 curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.my-username/weather"
 ```
 
@@ -341,11 +334,10 @@ Output
 
 Copy
 
-``` shiki
+```python
 {"servers":[{ ... "name":"io.github.my-username/weather" ... }]}
 ```
 
-## 
 
 [​](#troubleshooting)
 
@@ -357,7 +349,6 @@ Troubleshooting
 | ”Invalid or expired Registry JWT token” | Re-authenticate by running `mcp-publisher login github`. |
 | ”You do not have permission to publish this server” | Your authentication method doesn’t match your server’s namespace format. With GitHub auth, your server name must start with `io.github.your-username/`. |
 
-## 
 
 [​](#next-steps)
 

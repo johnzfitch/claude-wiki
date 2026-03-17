@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-13T09:23:10Z"
+fetched_at: "2026-03-17T02:03:19Z"
 source_url: "https://www.anthropic.com/news/covering-electricity-price-increases"
 title: "Covering electricity price increases from our data centers \\ Anthropic"
 ---
+
 # Covering electricity price increases from our data centers
 
 Feb 11, 2026
@@ -30,18 +31,18 @@ Done right, AI infrastructure can be a catalyst for the broader energy investmen
 
 ## Related content
 
-### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
+[Read more](/news/claude-partner-network)
 
-### Anthropic is donating \$20 million to Public First Action
+### Introducing The Anthropic Institute
 
-[Read more](/news/donate-public-first-action)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Introducing Claude Opus 4.6
+[Read more](/news/the-anthropic-institute)
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/sydney-fourth-office-asia-pacific)

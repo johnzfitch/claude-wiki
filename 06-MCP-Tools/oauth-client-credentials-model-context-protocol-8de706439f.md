@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:21Z"
+fetched_at: "2026-03-17T02:03:42Z"
 source_url: "https://modelcontextprotocol.io/extensions/auth/oauth-client-credentials"
 title: "OAuth Client Credentials - Model Context Protocol"
 ---
+
 # OAuth Client Credentials
 
 
@@ -16,7 +17,6 @@ The OAuth Client Credentials extension (`io.modelcontextprotocol/oauth-client-cr
 
 Full technical specification for the OAuth Client Credentials extension.
 
-## 
 
 [​](#what-it-is)
 
@@ -24,7 +24,6 @@ What it is
 
 The standard MCP authorization flow requires a user to interactively approve access — a browser opens, the user logs in, and grants permission. That works well for humans, but breaks down when there’s no user present. The OAuth Client Credentials extension solves this by letting a client authenticate using application-level credentials (a client ID and secret, or a signed JWT assertion) rather than delegated user credentials. The client proves its identity directly to the authorization server, which issues an access token without requiring a browser redirect or user interaction.
 
-## 
 
 [​](#when-to-use-it)
 
@@ -39,7 +38,6 @@ Use OAuth Client Credentials when:
 
 If your integration has a human user who should explicitly authorize access, use the standard MCP authorization flow instead.
 
-## 
 
 [​](#how-it-works)
 
@@ -47,7 +45,6 @@ How it works
 
 The extension supports two credential formats:
 
-### 
 
 [​](#jwt-bearer-assertions-recommended)
 
@@ -61,7 +58,6 @@ Defined in [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523), JWT Bearer
 - `exp`: Expiration time
 - `iat`: Issued-at time
 
-### 
 
 [​](#client-secrets)
 
@@ -76,13 +72,11 @@ Client secrets are **long-lived credentials** that grant access without user int
 - Scope credentials to the minimum permissions required.
 - Prefer JWT assertions when possible — they are short-lived and do not require transmitting the signing key.
 
-## 
 
 [​](#implementation-guide)
 
 Implementation guide
 
-### 
 
 [​](#for-mcp-clients)
 
@@ -92,7 +86,6 @@ To use the OAuth Client Credentials extension, your client must:
 
 1
 
-[](#)
 
 Declare support
 
@@ -100,7 +93,7 @@ Include the extension in the `initialize` request capabilities:
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "extensions": {
@@ -112,7 +105,6 @@ Copy
 
 2
 
-[](#)
 
 Obtain an access token
 
@@ -120,7 +112,6 @@ Request a token from the authorization server using the client credentials grant
 
 3
 
-[](#)
 
 Include the token
 
@@ -128,19 +119,17 @@ Pass the token in the `Authorization` header of HTTP requests to the MCP server:
 
 Copy
 
-``` shiki
+```python
 Authorization: Bearer <access_token>
 ```
 
 4
 
-[](#)
 
 Handle token refresh
 
 Client credentials tokens typically have shorter lifetimes than user-delegated tokens. Implement token refresh logic to obtain a new token before expiry.
 
-### 
 
 [​](#for-mcp-servers)
 
@@ -150,7 +139,6 @@ To accept client credentials tokens, your server must:
 
 1
 
-[](#)
 
 Validate the token
 
@@ -158,7 +146,6 @@ On each request, verify the JWT signature and claims against your authorization 
 
 2
 
-[](#)
 
 Check scopes
 
@@ -166,7 +153,6 @@ Ensure the token includes the required scopes for the requested operation.
 
 3
 
-[](#)
 
 Advertise support
 
@@ -174,7 +160,7 @@ Optionally (but recommended for discoverability), include the extension in the `
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "extensions": {
@@ -184,7 +170,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#sdk-examples)
 
@@ -194,7 +179,6 @@ The official MCP SDKs provide built-in support for client credentials authentica
 
 1
 
-[](#)
 
 Install the SDK
 
@@ -204,25 +188,23 @@ Install the SDK
 
 Copy
 
-``` shiki
+```python
 npm install @modelcontextprotocol/client
 ```
 
 Copy
 
-``` shiki
+```python
 pip install mcp
 ```
 
 2
 
-[](#)
 
 Create a provider and connect
 
 Choose the credential format that matches your setup:
 
-#### 
 
 [​](#using-a-client-secret)
 
@@ -234,7 +216,7 @@ Using a client secret
 
 Copy
 
-``` shiki
+```python
 import {
   Client,
   ClientCredentialsProvider,
@@ -270,7 +252,7 @@ await transport.close();
 
 Copy
 
-``` shiki
+```python
 from mcp.client.auth.extensions.client_credentials import (
     ClientCredentialsOAuthProvider,
 )
@@ -296,7 +278,6 @@ async with streamablehttp_client(
         print("Available tools:", [t.name for t in tools.tools])
 ```
 
-#### 
 
 [​](#using-a-jwt-private-key)
 
@@ -308,7 +289,7 @@ Using a JWT private key
 
 Copy
 
-``` shiki
+```python
 import {
   Client,
   PrivateKeyJwtProvider,
@@ -345,7 +326,7 @@ await transport.close();
 
 Copy
 
-``` shiki
+```python
 from mcp.client.auth.extensions.client_credentials import (
     PrivateKeyJWTOAuthProvider,
     SignedJWTParameters,
@@ -381,7 +362,6 @@ async with streamablehttp_client(
         print("Available tools:", [t.name for t in tools.tools])
 ```
 
-## 
 
 [​](#client-support)
 
@@ -391,7 +371,6 @@ Support for this extension varies by client. Extensions are opt-in and never act
 
 Check the [client matrix](/extensions/client-matrix) for current implementation status across MCP clients.
 
-## 
 
 [​](#related-resources)
 

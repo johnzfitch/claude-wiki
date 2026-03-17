@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:09Z"
+fetched_at: "2026-03-17T02:03:44Z"
 source_url: "https://modelcontextprotocol.io/registry/terms-of-service"
 title: "Official MCP Registry Terms of Service - Model Context Protocol"
 ---
@@ -12,7 +12,6 @@ The MCP Registry is currently in preview. Breaking changes or data resets may oc
 
 **Effective date: 2025-09-02**
 
-## 
 
 [​](#overview)
 
@@ -20,7 +19,6 @@ Overview
 
 These terms (“Terms”) govern your access to and use of the official MCP Registry (the service hosted at [https://registry.modelcontextprotocol.io/](https://registry.modelcontextprotocol.io/) or a successor location) (“Registry”), including submissions or publications of MCP servers, references to MCP servers or to data about such servers and/or their developers (“Registry Data”), and related conduct. The Registry is intended to be a centralized repository of MCP servers developed by community members to facilitate easy access by AI applications. These terms are governed by the laws of the State of California.
 
-## 
 
 [​](#for-all-users)
 
@@ -38,7 +36,6 @@ For All Users
 7.  Modification. We may modify the Terms or any portion to, for example, reflect changes to the law or changes to the Model Context Protocol. We’ll post notice of modifications to the Terms to this website or a successor location. If you do not agree to the modified Terms, you should discontinue your access to and/or use of the Registry. Your continued access to and/or use of the Registry constitutes your acceptance of any modified Terms.
 8.  Additional Terms. Depending on your intended use case(s), you must also abide by applicable terms below.
 
-## 
 
 [​](#for-mcp-developers)
 

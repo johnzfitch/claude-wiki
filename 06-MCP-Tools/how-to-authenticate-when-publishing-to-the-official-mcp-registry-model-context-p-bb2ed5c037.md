@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:08Z"
+fetched_at: "2026-03-17T02:03:43Z"
 source_url: "https://modelcontextprotocol.io/registry/authentication"
 title: "How to Authenticate When Publishing to the Official MCP Registry - Model Context Protocol"
 ---
@@ -17,17 +17,13 @@ You must authenticate before publishing to the official MCP Registry. The MCP Re
 | GitHub-based | `io.github.username/*` or `io.github.orgname/*` | `io.github.alice/weather-server` |
 | domain-based | `com.example.*/*` | `io.modelcontextprotocol/everything` |
 
-## 
 
 [​](#github-authentication)
 
-GitHub Authentication
-
-GitHub authentication uses an OAuth flow initiated by the `mcp-publisher` CLI tool. To perform GitHub authentication, navigate to your server project directory and run:
 
 Copy
 
-``` shiki
+```python
 mcp-publisher login github
 ```
 
@@ -37,7 +33,7 @@ Output
 
 Copy
 
-``` shiki
+```python
 Logging in with github...
 
 To authenticate, please:
@@ -53,12 +49,11 @@ Output
 
 Copy
 
-``` shiki
+```python
 Successfully authenticated!
 ✓ Successfully logged in
 ```
 
-## 
 
 [​](#dns-authentication)
 
@@ -76,7 +71,7 @@ Azure Key Vault
 
 Copy
 
-``` shiki
+```python
 MY_DOMAIN="example.com"
 
 # Generate public/private key pair using Ed25519
@@ -99,14 +94,13 @@ Azure Key Vault
 
 Copy
 
-``` shiki
+```python
 MY_DOMAIN="example.com"
 
 PRIVATE_KEY="$(openssl pkey -in key.pem -noout -text | grep -A3 "priv:" | tail -n +2 | tr -d ' :\n')"
 mcp-publisher login dns --domain "${MY_DOMAIN}" --private-key "${PRIVATE_KEY}"
 ```
 
-## 
 
 [​](#http-authentication)
 
@@ -124,7 +118,7 @@ Azure Key Vault
 
 Copy
 
-``` shiki
+```python
 # Generate public/private key pair using Ed25519
 openssl genpkey -algorithm Ed25519 -out key.pem
 
@@ -145,7 +139,7 @@ Azure Key Vault
 
 Copy
 
-``` shiki
+```python
 MY_DOMAIN="example.com"
 PRIVATE_KEY="$(openssl pkey -in key.pem -noout -text | grep -A3 "priv:" | tail -n +2 | tr -d ' :\n')"
 mcp-publisher login http --domain "${MY_DOMAIN}" --private-key "${PRIVATE_KEY}"

@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:17Z"
+fetched_at: "2026-03-17T02:03:37Z"
 source_url: "https://modelcontextprotocol.io/docs/develop/build-client"
 title: "Build an MCP client - Model Context Protocol"
 ---
+
 # Build an MCP client
 
 
@@ -24,7 +25,6 @@ In this tutorial, you’ll learn how to build an LLM-powered chatbot client that
 
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/mcp-client-python)
 
-## 
 
 [​](#system-requirements)
 
@@ -36,7 +36,6 @@ Before starting, ensure your system meets these requirements:
 - Latest Python version installed
 - Latest version of `uv` installed
 
-## 
 
 [​](#setting-up-your-environment)
 
@@ -50,7 +49,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 # Create project directory
 uv init mcp-client
 cd mcp-client
@@ -71,7 +70,6 @@ rm main.py
 touch client.py
 ```
 
-## 
 
 [​](#setting-up-your-api-key)
 
@@ -81,7 +79,7 @@ You’ll need an Anthropic API key from the [Anthropic Console](https://console.
 
 Copy
 
-``` shiki
+```python
 echo "ANTHROPIC_API_KEY=your-api-key-goes-here" > .env
 ```
 
@@ -89,19 +87,17 @@ Add `.env` to your `.gitignore`:
 
 Copy
 
-``` shiki
+```python
 echo ".env" >> .gitignore
 ```
 
 Make sure you keep your `ANTHROPIC_API_KEY` secure!
 
-## 
 
 [​](#creating-the-client)
 
 Creating the Client
 
-### 
 
 [​](#basic-client-structure)
 
@@ -111,7 +107,7 @@ First, let’s set up our imports and create the basic client class:
 
 Copy
 
-``` shiki
+```python
 import asyncio
 from typing import Optional
 from contextlib import AsyncExitStack
@@ -133,7 +129,6 @@ class MCPClient:
     # methods will go here
 ```
 
-### 
 
 [​](#server-connection-management)
 
@@ -143,7 +138,7 @@ Next, we’ll implement the method to connect to an MCP server:
 
 Copy
 
-``` shiki
+```python
 async def connect_to_server(self, server_script_path: str):
     """Connect to an MCP server
 
@@ -174,7 +169,6 @@ async def connect_to_server(self, server_script_path: str):
     print("\nConnected to server with tools:", [tool.name for tool in tools])
 ```
 
-### 
 
 [​](#query-processing-logic)
 
@@ -184,7 +178,7 @@ Now let’s add the core functionality for processing queries and handling tool 
 
 Copy
 
-``` shiki
+```python
 async def process_query(self, query: str) -> str:
     """Process a query using Claude and available tools"""
     messages = [
@@ -254,7 +248,6 @@ async def process_query(self, query: str) -> str:
     return "\n".join(final_text)
 ```
 
-### 
 
 [​](#interactive-chat-interface)
 
@@ -264,7 +257,7 @@ Now we’ll add the chat loop and cleanup functionality:
 
 Copy
 
-``` shiki
+```python
 async def chat_loop(self):
     """Run an interactive chat loop"""
     print("\nMCP Client Started!")
@@ -288,7 +281,6 @@ async def cleanup(self):
     await self.exit_stack.aclose()
 ```
 
-### 
 
 [​](#main-entry-point)
 
@@ -298,7 +290,7 @@ Finally, we’ll add the main execution logic:
 
 Copy
 
-``` shiki
+```python
 async def main():
     if len(sys.argv) < 2:
         print("Usage: python client.py <path_to_server_script>")
@@ -318,13 +310,11 @@ if __name__ == "__main__":
 
 You can find the complete `client.py` file [here](https://github.com/modelcontextprotocol/quickstart-resources/blob/main/mcp-client-python/client.py).
 
-## 
 
 [​](#key-components-explained)
 
 Key Components Explained
 
-### 
 
 [​](#1-client-initialization)
 
@@ -334,7 +324,6 @@ Key Components Explained
 - Uses `AsyncExitStack` for proper resource management
 - Configures the Anthropic client for Claude interactions
 
-### 
 
 [​](#2-server-connection)
 
@@ -345,7 +334,6 @@ Key Components Explained
 - Sets up proper communication channels
 - Initializes the session and lists available tools
 
-### 
 
 [​](#3-query-processing)
 
@@ -356,7 +344,6 @@ Key Components Explained
 - Manages the message flow between Claude and tools
 - Combines results into a coherent response
 
-### 
 
 [​](#4-interactive-interface)
 
@@ -367,7 +354,6 @@ Key Components Explained
 - Includes basic error handling
 - Allows graceful exit
 
-### 
 
 [​](#5-resource-management)
 
@@ -377,7 +363,6 @@ Key Components Explained
 - Error handling for connection issues
 - Graceful shutdown procedures
 
-## 
 
 [​](#common-customization-points)
 
@@ -396,7 +381,6 @@ Common Customization Points
     - Implement rich console output
     - Add command history or auto-completion
 
-## 
 
 [​](#running-the-client)
 
@@ -406,7 +390,7 @@ To run your client with any MCP server:
 
 Copy
 
-``` shiki
+```python
 uv run client.py path/to/server.py # python server
 uv run client.py path/to/build/index.js # node server
 ```
@@ -424,7 +408,6 @@ The client will:
 
 Here’s an example of what it should look like if connected to the weather server from the server quickstart:
 
-## 
 
 [​](#how-it-works)
 
@@ -440,7 +423,6 @@ When you submit a query:
 6.  Claude provides a natural language response
 7.  The response is displayed to you
 
-## 
 
 [​](#best-practices)
 
@@ -462,13 +444,11 @@ Best practices
     - Tool names can be validated according to the format specified [here](/specification/draft/server/tools#tool-names)
     - If a tool name conforms to the specified format, it should not fail validation by an MCP client
 
-## 
 
 [​](#troubleshooting)
 
 Troubleshooting
 
-### 
 
 [​](#server-path-issues)
 
@@ -483,7 +463,7 @@ Example of correct path usage:
 
 Copy
 
-``` shiki
+```python
 # Relative path
 uv run client.py ./server/weather.py
 
@@ -495,7 +475,6 @@ uv run client.py C:/projects/mcp-server/weather.py
 uv run client.py C:\\projects\\mcp-server\\weather.py
 ```
 
-### 
 
 [​](#response-timing)
 
@@ -509,7 +488,6 @@ Response Timing
 - Subsequent responses are typically faster
 - Don’t interrupt the process during this initial waiting period
 
-### 
 
 [​](#common-error-messages)
 
@@ -524,7 +502,6 @@ If you see:
 
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/mcp-client-typescript)
 
-## 
 
 [​](#system-requirements-2)
 
@@ -537,7 +514,6 @@ Before starting, ensure your system meets these requirements:
 - Latest version of `npm` installed
 - Anthropic API key (Claude)
 
-## 
 
 [​](#setting-up-your-environment-2)
 
@@ -551,7 +527,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 # Create project directory
 mkdir mcp-client-typescript
 cd mcp-client-typescript
@@ -575,7 +551,7 @@ package.json
 
 Copy
 
-``` shiki
+```python
 {
   "type": "module",
   "scripts": {
@@ -590,7 +566,7 @@ tsconfig.json
 
 Copy
 
-``` shiki
+```python
 {
   "compilerOptions": {
     "target": "ES2022",
@@ -608,7 +584,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#setting-up-your-api-key-2)
 
@@ -618,7 +593,7 @@ You’ll need an Anthropic API key from the [Anthropic Console](https://console.
 
 Copy
 
-``` shiki
+```python
 echo "ANTHROPIC_API_KEY=<your key here>" > .env
 ```
 
@@ -626,19 +601,17 @@ Add `.env` to your `.gitignore`:
 
 Copy
 
-``` shiki
+```python
 echo ".env" >> .gitignore
 ```
 
 Make sure you keep your `ANTHROPIC_API_KEY` secure!
 
-## 
 
 [​](#creating-the-client-2)
 
 Creating the Client
 
-### 
 
 [​](#basic-client-structure-2)
 
@@ -648,7 +621,7 @@ First, let’s set up our imports and create the basic client class in `index.ts
 
 Copy
 
-``` shiki
+```python
 import { Anthropic } from "@anthropic-ai/sdk";
 import {
   MessageParam,
@@ -682,7 +655,6 @@ class MCPClient {
 }
 ```
 
-### 
 
 [​](#server-connection-management-2)
 
@@ -692,7 +664,7 @@ Next, we’ll implement the method to connect to an MCP server:
 
 Copy
 
-``` shiki
+```python
 async connectToServer(serverScriptPath: string) {
   try {
     const isJs = serverScriptPath.endsWith(".js");
@@ -731,7 +703,6 @@ async connectToServer(serverScriptPath: string) {
 }
 ```
 
-### 
 
 [​](#query-processing-logic-2)
 
@@ -741,7 +712,7 @@ Now let’s add the core functionality for processing queries and handling tool 
 
 Copy
 
-``` shiki
+```python
 async processQuery(query: string) {
   const messages: MessageParam[] = [
     {
@@ -795,7 +766,6 @@ async processQuery(query: string) {
 }
 ```
 
-### 
 
 [​](#interactive-chat-interface-2)
 
@@ -805,7 +775,7 @@ Now we’ll add the chat loop and cleanup functionality:
 
 Copy
 
-``` shiki
+```python
 async chatLoop() {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -834,7 +804,6 @@ async cleanup() {
 }
 ```
 
-### 
 
 [​](#main-entry-point-2)
 
@@ -844,7 +813,7 @@ Finally, we’ll add the main execution logic:
 
 Copy
 
-``` shiki
+```python
 async function main() {
   if (process.argv.length < 3) {
     console.log("Usage: node index.ts <path_to_server_script>");
@@ -867,7 +836,6 @@ async function main() {
 main();
 ```
 
-## 
 
 [​](#running-the-client-2)
 
@@ -877,7 +845,7 @@ To run your client with any MCP server:
 
 Copy
 
-``` shiki
+```python
 # Build TypeScript
 npm run build
 
@@ -897,7 +865,6 @@ If you’re continuing [the weather tutorial from the server quickstart](https:/
     - See tool executions
     - Get responses from Claude
 
-## 
 
 [​](#how-it-works-2)
 
@@ -913,7 +880,6 @@ When you submit a query:
 6.  Claude provides a natural language response
 7.  The response is displayed to you
 
-## 
 
 [​](#best-practices-2)
 
@@ -929,13 +895,11 @@ Best practices
     - Validate server responses
     - Be cautious with tool permissions
 
-## 
 
 [​](#troubleshooting-2)
 
 Troubleshooting
 
-### 
 
 [​](#server-path-issues-2)
 
@@ -950,7 +914,7 @@ Example of correct path usage:
 
 Copy
 
-``` shiki
+```python
 # Relative path
 node build/index.js ./server/build/index.js
 
@@ -962,7 +926,6 @@ node build/index.js C:/projects/mcp-server/build/index.js
 node build/index.js C:\\projects\\mcp-server\\build\\index.js
 ```
 
-### 
 
 [​](#response-timing-2)
 
@@ -976,7 +939,6 @@ Response Timing
 - Subsequent responses are typically faster
 - Don’t interrupt the process during this initial waiting period
 
-### 
 
 [​](#common-error-messages-2)
 
@@ -995,7 +957,6 @@ This is a quickstart demo based on Spring AI MCP auto-configuration and boot sta
 
 This example demonstrates how to build an interactive chatbot that combines Spring AI’s Model Context Protocol (MCP) with the [Brave Search MCP Server](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/brave-search). The application creates a conversational interface powered by Anthropic’s Claude AI model that can perform internet searches through Brave Search, enabling natural language interactions with real-time web data. [You can find the complete code for this tutorial here.](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/web-search/brave-chatbot)
 
-## 
 
 [​](#system-requirements-3)
 
@@ -1009,7 +970,6 @@ Before starting, ensure your system meets these requirements:
 - Anthropic API key (Claude)
 - Brave Search API key
 
-## 
 
 [​](#setting-up-your-environment-3)
 
@@ -1050,7 +1010,6 @@ Setting Up Your Environment
 
 Make sure you keep your `ANTHROPIC_API_KEY` and `BRAVE_API_KEY` keys secure!
 
-## 
 
 [​](#how-it-works-3)
 
@@ -1058,7 +1017,6 @@ How it Works
 
 The application integrates Spring AI with the Brave Search MCP server through several components:
 
-### 
 
 [​](#mcp-client-configuration)
 
@@ -1068,7 +1026,7 @@ MCP Client Configuration
 
 Copy
 
-``` shiki
+```python
 <dependency>
     <groupId>org.springframework.ai</groupId>
     <artifactId>spring-ai-starter-mcp-client</artifactId>
@@ -1083,7 +1041,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 spring:
   ai:
     mcp:
@@ -1108,7 +1066,7 @@ This activates the `spring-ai-starter-mcp-client` to create one or more `McpClie
 
 Copy
 
-``` shiki
+```python
 {
   "mcpServers": {
     "brave-search": {
@@ -1122,7 +1080,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#chat-implementation)
 
@@ -1132,7 +1089,7 @@ The chatbot is implemented using Spring AI’s ChatClient with MCP tool integrat
 
 Copy
 
-``` shiki
+```python
 var chatClient = chatClientBuilder
     .defaultSystem("You are useful assistant, expert in AI and Java.")
     .defaultToolCallbacks((Object[]) mcpToolAdapter.toolCallbacks())
@@ -1147,7 +1104,6 @@ Key features:
 - Maintains conversation memory using InMemoryChatMemory
 - Runs as an interactive command-line application
 
-### 
 
 [​](#build-and-run)
 
@@ -1155,7 +1111,7 @@ Build and run
 
 Copy
 
-``` shiki
+```python
 ./mvnw clean install
 java -jar ./target/ai-mcp-brave-chatbot-0.0.1-SNAPSHOT.jar
 ```
@@ -1164,7 +1120,7 @@ or
 
 Copy
 
-``` shiki
+```python
 ./mvnw spring-boot:run
 ```
 
@@ -1175,7 +1131,6 @@ The application will start an interactive chat session where you can ask questio
 - Remember context from previous messages in the conversation
 - Combine information from multiple sources to provide comprehensive answers
 
-### 
 
 [​](#advanced-configuration)
 
@@ -1192,7 +1147,7 @@ For WebFlux-based applications, you can use the WebFlux starter instead:
 
 Copy
 
-``` shiki
+```python
 <dependency>
     <groupId>org.springframework.ai</groupId>
     <artifactId>spring-ai-mcp-client-webflux-spring-boot-starter</artifactId>
@@ -1203,7 +1158,6 @@ This provides similar functionality but uses a WebFlux-based SSE transport imple
 
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/kotlin-sdk/tree/main/samples/kotlin-mcp-client)
 
-## 
 
 [​](#system-requirements-4)
 
@@ -1214,7 +1168,6 @@ Before starting, ensure your system meets these requirements:
 - Java 17 or higher
 - Anthropic API key (Claude)
 
-## 
 
 [​](#setting-up-your-environment-4)
 
@@ -1224,7 +1177,7 @@ First, let’s install `java` and `gradle` if you haven’t already. You can dow
 
 Copy
 
-``` shiki
+```python
 java --version
 ```
 
@@ -1236,7 +1189,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 # Create a new directory for our project
 mkdir kotlin-mcp-client
 cd kotlin-mcp-client
@@ -1253,7 +1206,7 @@ build.gradle
 
 Copy
 
-``` shiki
+```python
 val mcpVersion = "0.4.0"
 val slf4jVersion = "2.0.9"
 val anthropicVersion = "0.8.0"
@@ -1273,13 +1226,12 @@ build.gradle
 
 Copy
 
-``` shiki
+```python
 plugins {
     id("com.gradleup.shadow") version "8.3.9"
 }
 ```
 
-## 
 
 [​](#setting-up-your-api-key-3)
 
@@ -1289,19 +1241,17 @@ You’ll need an Anthropic API key from the [Anthropic Console](https://console.
 
 Copy
 
-``` shiki
+```python
 export ANTHROPIC_API_KEY='your-anthropic-api-key-here'
 ```
 
 Make sure you keep your `ANTHROPIC_API_KEY` secure!
 
-## 
 
 [​](#creating-the-client-3)
 
 Creating the Client
 
-### 
 
 [​](#basic-client-structure-3)
 
@@ -1311,7 +1261,7 @@ First, let’s create the basic client class:
 
 Copy
 
-``` shiki
+```python
 class MCPClient : AutoCloseable {
     private val anthropic = AnthropicOkHttpClient.fromEnv()
     private val mcp: Client = Client(clientInfo = Implementation(name = "mcp-client-cli", version = "1.0.0"))
@@ -1327,7 +1277,6 @@ class MCPClient : AutoCloseable {
     }
 ```
 
-### 
 
 [​](#server-connection-management-3)
 
@@ -1337,7 +1286,7 @@ Next, we’ll implement the method to connect to an MCP server:
 
 Copy
 
-``` shiki
+```python
 suspend fun connectToServer(serverScriptPath: String) {
     try {
         val command = buildList {
@@ -1386,7 +1335,7 @@ Also create a helper function to convert from `JsonObject` to `JsonValue` for An
 
 Copy
 
-``` shiki
+```python
 private fun JsonObject.toJsonValue(): JsonValue {
     val mapper = ObjectMapper()
     val node = mapper.readTree(this.toString())
@@ -1394,7 +1343,6 @@ private fun JsonObject.toJsonValue(): JsonValue {
 }
 ```
 
-### 
 
 [​](#query-processing-logic-3)
 
@@ -1404,7 +1352,7 @@ Now let’s add the core functionality for processing queries and handling tool 
 
 Copy
 
-``` shiki
+```python
 private val messageParamsBuilder: MessageCreateParams.Builder = MessageCreateParams.builder()
     .model(Model.CLAUDE_SONNET_4_20250514)
     .maxTokens(1024)
@@ -1468,7 +1416,6 @@ suspend fun processQuery(query: String): String {
 }
 ```
 
-### 
 
 [​](#interactive-chat)
 
@@ -1478,7 +1425,7 @@ We’ll add the chat loop:
 
 Copy
 
-``` shiki
+```python
 suspend fun chatLoop() {
     println("\nMCP Client Started!")
     println("Type your queries or 'quit' to exit.")
@@ -1493,7 +1440,6 @@ suspend fun chatLoop() {
 }
 ```
 
-### 
 
 [​](#main-entry-point-3)
 
@@ -1503,7 +1449,7 @@ Finally, we’ll add the main execution function:
 
 Copy
 
-``` shiki
+```python
 fun main(args: Array<String>) = runBlocking {
     if (args.isEmpty()) throw IllegalArgumentException("Usage: java -jar <your_path>/build/libs/kotlin-mcp-client-0.1.0-all.jar <path_to_server_script>")
     val serverPath = args.first()
@@ -1515,7 +1461,6 @@ fun main(args: Array<String>) = runBlocking {
 }
 ```
 
-## 
 
 [​](#running-the-client-3)
 
@@ -1525,7 +1470,7 @@ To run your client with any MCP server:
 
 Copy
 
-``` shiki
+```python
 ./gradlew build
 
 # Run the client
@@ -1545,7 +1490,6 @@ If you’re continuing the weather tutorial from the server quickstart, your com
     - See tool executions
     - Get responses from Claude
 
-## 
 
 [​](#how-it-works-4)
 
@@ -1561,7 +1505,6 @@ Here’s a high-level workflow schema:When you submit a query:
 6.  Claude provides a natural language response
 7.  The response is displayed to you
 
-## 
 
 [​](#best-practices-3)
 
@@ -1577,13 +1520,11 @@ Best practices
     - Validate all external responses to avoid unexpected or unsafe data usage
     - Be cautious with permissions and trust boundaries when using tools
 
-## 
 
 [​](#troubleshooting-3)
 
 Troubleshooting
 
-### 
 
 [​](#server-path-issues-3)
 
@@ -1599,7 +1540,7 @@ Example of correct path usage:
 
 Copy
 
-``` shiki
+```python
 # Relative path
 java -jar build/libs/client.jar ./server/build/libs/server.jar
 
@@ -1611,7 +1552,6 @@ java -jar build/libs/client.jar C:/projects/mcp-server/build/libs/server.jar
 java -jar build/libs/client.jar C:\\projects\\mcp-server\\build\\libs\\server.jar
 ```
 
-### 
 
 [​](#response-timing-3)
 
@@ -1625,7 +1565,6 @@ Response Timing
 - Subsequent responses are typically faster
 - Don’t interrupt the process during this initial waiting period
 
-### 
 
 [​](#common-error-messages-3)
 
@@ -1639,7 +1578,6 @@ If you see:
 
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/csharp-sdk/tree/main/samples/QuickstartClient)
 
-## 
 
 [​](#system-requirements-5)
 
@@ -1651,7 +1589,6 @@ Before starting, ensure your system meets these requirements:
 - Anthropic API key (Claude)
 - Windows, Linux, or macOS
 
-## 
 
 [​](#setting-up-your-environment-5)
 
@@ -1661,7 +1598,7 @@ First, create a new .NET project:
 
 Copy
 
-``` shiki
+```python
 dotnet new console -n QuickstartClient
 cd QuickstartClient
 ```
@@ -1670,14 +1607,13 @@ Then, add the required dependencies to your project:
 
 Copy
 
-``` shiki
+```python
 dotnet add package ModelContextProtocol --prerelease
 dotnet add package Anthropic.SDK
 dotnet add package Microsoft.Extensions.Hosting
 dotnet add package Microsoft.Extensions.AI
 ```
 
-## 
 
 [​](#setting-up-your-api-key-4)
 
@@ -1687,18 +1623,16 @@ You’ll need an Anthropic API key from the [Anthropic Console](https://console.
 
 Copy
 
-``` shiki
+```python
 dotnet user-secrets init
 dotnet user-secrets set "ANTHROPIC_API_KEY" "<your key here>"
 ```
 
-## 
 
 [​](#creating-the-client-4)
 
 Creating the Client
 
-### 
 
 [​](#basic-client-structure-4)
 
@@ -1708,7 +1642,7 @@ First, let’s setup the basic client class in the file `Program.cs`:
 
 Copy
 
-``` shiki
+```python
 using Anthropic.SDK;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
@@ -1727,7 +1661,7 @@ This creates the beginnings of a .NET console application that can read the API 
 
 Copy
 
-``` shiki
+```python
 var (command, arguments) = GetCommandAndArguments(args);
 
 var clientTransport = new StdioClientTransport(new()
@@ -1750,7 +1684,7 @@ Add this function at the end of the `Program.cs` file:
 
 Copy
 
-``` shiki
+```python
 static (string command, string[] arguments) GetCommandAndArguments(string[] args)
 {
     return args switch
@@ -1765,7 +1699,6 @@ static (string command, string[] arguments) GetCommandAndArguments(string[] args
 
 This creates an MCP client that will connect to a server that is provided as a command line argument. It then lists the available tools from the connected server.
 
-### 
 
 [​](#query-processing-logic-4)
 
@@ -1775,7 +1708,7 @@ Now let’s add the core functionality for processing queries and handling tool 
 
 Copy
 
-``` shiki
+```python
 using var anthropicClient = new AnthropicClient(new APIAuthentication(builder.Configuration["ANTHROPIC_API_KEY"]))
     .Messages
     .AsBuilder()
@@ -1820,13 +1753,11 @@ static void PromptForInput()
 }
 ```
 
-## 
 
 [​](#key-components-explained-2)
 
 Key Components Explained
 
-### 
 
 [​](#1-client-initialization-2)
 
@@ -1834,7 +1765,6 @@ Key Components Explained
 
 - The client is initialized using `McpClient.CreateAsync()`, which sets up the transport type and command to run the server.
 
-### 
 
 [​](#2-server-connection-2)
 
@@ -1845,7 +1775,6 @@ Key Components Explained
 - Configures to use stdio for communication with the server.
 - Initializes the session and available tools.
 
-### 
 
 [​](#3-query-processing-2)
 
@@ -1857,7 +1786,6 @@ Key Components Explained
 - The server processes the query and returns a response.
 - The response is displayed to the user.
 
-## 
 
 [​](#running-the-client-4)
 
@@ -1867,7 +1795,7 @@ To run your client with any MCP server:
 
 Copy
 
-``` shiki
+```python
 dotnet run -- path/to/server.csproj # dotnet server
 dotnet run -- path/to/server.py # python server
 dotnet run -- path/to/server.js # node server
@@ -1887,19 +1815,16 @@ The client will:
 
 Here’s an example of what it should look like if connected to the weather server quickstart:
 
-## 
 
 [​](#next-steps)
 
 Next steps
 
-[](/examples)
 
 ## Example servers
 
 Check out our gallery of official MCP servers and implementations
 
-[](/clients)
 
 ## Example clients
 

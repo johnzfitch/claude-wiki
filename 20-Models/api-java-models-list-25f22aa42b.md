@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:43Z"
+fetched_at: "2026-03-17T02:02:12Z"
 source_url: "https://platform.claude.com/docs/en/api/java/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -109,7 +109,7 @@ List Models
 
 Java
 
-``` shiki
+```python
 package com.anthropic.example;
 
 import com.anthropic.client.AnthropicClient;
@@ -130,7 +130,7 @@ public final class Main {
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {
@@ -150,7 +150,7 @@ Response 200
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {

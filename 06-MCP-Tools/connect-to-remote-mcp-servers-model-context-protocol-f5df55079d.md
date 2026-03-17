@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:18Z"
+fetched_at: "2026-03-17T02:03:39Z"
 source_url: "https://modelcontextprotocol.io/docs/develop/connect-remote-servers"
 title: "Connect to remote MCP Servers - Model Context Protocol"
 ---
+
 # Connect to remote MCP Servers
 
 
@@ -12,7 +13,6 @@ Learn how to connect Claude to remote MCP servers and extend its capabilities wi
 
 Remote MCP servers extend AI applications’ capabilities beyond your local environment, providing access to internet-hosted tools, services, and data sources. By connecting to remote MCP servers, you transform AI assistants from helpful tools into informed teammates capable of handling complex, multi-step projects with real-time access to external resources. Many clients now support remote MCP servers, enabling a wide range of integration possibilities. This guide demonstrates how to connect to remote MCP servers using [Claude](https://claude.ai/) as an example, one of the [many clients that support MCP](/clients). While we focus on Claude’s implementation through Custom Connectors, the concepts apply broadly to other MCP-compatible clients.
 
-## 
 
 [​](#understanding-remote-mcp-servers)
 
@@ -20,7 +20,6 @@ Understanding Remote MCP Servers
 
 Remote MCP servers function similarly to local MCP servers but are hosted on the internet rather than your local machine. They expose tools, prompts, and resources that Claude can use to perform tasks on your behalf. These servers can integrate with various services such as project management tools, documentation systems, code repositories, and any other API-enabled service. The key advantage of remote MCP servers is their accessibility. Unlike local servers that require installation and configuration on each device, remote servers are available from any MCP client with an internet connection. This makes them ideal for web-based AI applications, integrations that emphasize ease of use, and services that require server-side processing or authentication.
 
-## 
 
 [​](#what-are-custom-connectors)
 
@@ -31,7 +30,6 @@ Custom Connectors serve as the bridge between Claude and remote MCP servers. The
 - [Connect Claude to existing remote MCP servers](https://support.anthropic.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp) provided by third-party developers
 - [Build your own remote MCP servers to connect with any tool](https://support.anthropic.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers)
 
-## 
 
 [​](#connecting-to-a-remote-mcp-server)
 
@@ -41,7 +39,6 @@ The process of connecting Claude to a remote MCP server involves adding a Custom
 
 1
 
-[](#)
 
 Navigate to Connector Settings
 
@@ -49,7 +46,6 @@ Open Claude in your browser and navigate to the settings page. You can access th
 
 2
 
-[](#)
 
 Add a Custom Connector
 
@@ -61,7 +57,6 @@ After entering the URL, click “Add” to proceed with the connection.
 
 3
 
-[](#)
 
 Complete Authentication
 
@@ -71,7 +66,6 @@ Follow the authentication prompts provided by the server. This may redirect you 
 
 4
 
-[](#)
 
 Access Resources and Prompts
 
@@ -81,7 +75,6 @@ The menu displays all available resources and prompts from your connected server
 
 5
 
-[](#)
 
 Configure Tool Permissions
 
@@ -89,7 +82,6 @@ Remote MCP servers often expose multiple tools with varying capabilities. You ca
 
 Navigate back to the Connectors settings and click on your connected server. Here you can enable or disable specific tools, set usage limits, and configure other security parameters according to your needs.
 
-## 
 
 [​](#best-practices-for-using-remote-mcp-servers)
 
@@ -97,7 +89,6 @@ Best Practices for Using Remote MCP Servers
 
 When working with remote MCP servers, consider these recommendations to ensure a secure and efficient experience: **Security considerations**: Always verify the authenticity of remote MCP servers before connecting. Only connect to servers from trusted sources, and review the permissions requested during authentication. Be cautious about granting access to sensitive data or systems. **Managing multiple connectors**: You can connect to multiple remote MCP servers simultaneously. Organize your connectors by purpose or project to maintain clarity. Regularly review and remove connectors you no longer use to keep your workspace organized and secure.
 
-## 
 
 [​](#next-steps)
 
@@ -115,13 +106,11 @@ Create custom remote MCP servers to integrate with proprietary tools and service
 
 Browse our collection of official and community-created MCP servers
 
-[](/docs/develop/connect-local-servers)
 
 ## Connect local servers
 
 Learn how to connect Claude Desktop to local MCP servers for direct system access
 
-[](/docs/learn/architecture)
 
 ## Understand the architecture
 

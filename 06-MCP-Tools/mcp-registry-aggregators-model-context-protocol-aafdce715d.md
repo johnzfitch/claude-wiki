@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:09Z"
+fetched_at: "2026-03-17T02:03:44Z"
 source_url: "https://modelcontextprotocol.io/registry/registry-aggregators"
 title: "MCP Registry Aggregators - Model Context Protocol"
 ---
@@ -12,7 +12,6 @@ The MCP Registry is currently in preview. Breaking changes or data resets may oc
 
 Aggregators are downstream consumers of the MCP Registry that provide additional value. For example, a server marketplace that provides user ratings and security scanning. The MCP Registry provides an unauthenticated read-only REST API that aggregators can use to populate their data stores. Aggregators are expected to scrape data on a regular but infrequent basis (e.g., once per hour), and persist the data in their own data store. The MCP Registry **does not provide uptime or data durability guarantees**.
 
-## 
 
 [​](#consuming-the-mcp-registry-rest-api)
 
@@ -28,7 +27,6 @@ URL path parameters such as `serverName` and `version` **must** be URL-encoded. 
 
 Aggregators will most likely scrape the `GET /v0.1/servers` endpoint.
 
-### 
 
 [​](#pagination)
 
@@ -38,7 +36,7 @@ The `GET /v0.1/servers` endpoint supports cursor-based pagination. For example, 
 
 Copy
 
-``` shiki
+```python
 curl "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100"
 ```
 
@@ -46,7 +44,7 @@ Output
 
 Copy
 
-``` shiki
+```python
 {
   "servers": [
     /* ... */
@@ -62,11 +60,10 @@ Then subsequent pages can be fetched by passing the `nextCursor` value as the `c
 
 Copy
 
-``` shiki
+```python
 curl "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100&cursor=com.example/my-server:1.0.0"
 ```
 
-### 
 
 [​](#filtering-since)
 
@@ -76,11 +73,10 @@ The `GET /v0.1/servers` endpoint supports filtering servers that have been updat
 
 Copy
 
-``` shiki
+```python
 curl "https://registry.modelcontextprotocol.io/v0.1/servers?updated_since=2025-10-23T00:00:00.000Z"
 ```
 
-## 
 
 [​](#server-status)
 
@@ -88,7 +84,6 @@ Server Status
 
 Server metadata is generally immutable, except for the `status` field which may be updated to, e.g., `"deprecated"` or `"deleted"`. We recommend that aggregators keep their copy of each server’s `status` up to date. The `"deleted"` status typically indicates that a server has violated our permissive [moderation policy](./moderation-policy), suggesting the server might be spam, malware, or illegal. Aggregators may prefer to remove these servers from their index.
 
-## 
 
 [​](#acting-as-a-subregistry)
 
@@ -100,7 +95,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/email-integration-mcp",

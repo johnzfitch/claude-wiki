@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:13Z"
+fetched_at: "2026-03-17T02:01:07Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/hosting"
 title: "Hosting the Agent SDK - Claude API Docs"
 ---
@@ -15,11 +15,9 @@ The Claude Agent SDK differs from traditional stateless LLM APIs in that it main
 
 For security hardening beyond basic sandboxing (including network controls, credential management, and isolation options), see [Secure Deployment](/docs/en/agent-sdk/secure-deployment).
 
-## 
 
 Hosting Requirements
 
-### 
 
 Container-Based Sandboxing
 
@@ -27,7 +25,6 @@ For security and isolation, the SDK should run inside a sandboxed container envi
 
 The SDK also supports [programmatic sandbox configuration](/docs/en/agent-sdk/typescript#sandbox-settings) for command execution.
 
-### 
 
 System Requirements
 
@@ -48,7 +45,6 @@ Each SDK instance requires:
   - Outbound HTTPS to `api.anthropic.com`
   - Optional: Access to MCP servers or external tools
 
-## 
 
 Understanding the SDK Architecture
 
@@ -58,7 +54,6 @@ Unlike stateless API calls, the Claude Agent SDK operates as a **long-running pr
 - **Manages file operations** within a working directory
 - **Handles tool execution** with context from previous interactions
 
-## 
 
 Sandbox Provider Options
 
@@ -73,11 +68,9 @@ Several providers specialize in secure container environments for AI code execut
 
 For self-hosted options (Docker, gVisor, Firecracker) and detailed isolation configuration, see [Isolation Technologies](/docs/en/agent-sdk/secure-deployment#isolation-technologies).
 
-## 
 
 Production Deployment Patterns
 
-### 
 
 Pattern 1: Ephemeral Sessions
 
@@ -92,7 +85,6 @@ Best for one-off tasks, the user may still interact with the AI while the task i
 - Translation Tasks: Translate documents or content batches between languages
 - Image/Video Processing: Apply transformations, optimizations, or extract metadata from media files
 
-### 
 
 Pattern 2: Long-Running Sessions
 
@@ -106,7 +98,6 @@ Best for proactive agents that take action without the users input, agents that 
 - Site Builder: Hosts custom websites per user with live editing capabilities served through container ports
 - High-Frequency Chat Bots: Handles continuous message streams from platforms like Slack where rapid response times are critical
 
-### 
 
 Pattern 3: Hybrid Sessions
 
@@ -120,7 +111,6 @@ Best for containers with intermittent interaction from the user that kicks off w
 - Deep Research: Conducts multi-hour research tasks, saves findings and resumes investigation when user returns
 - Customer Support Agent: Handles support tickets that span multiple interactions, loads ticket history and customer context
 
-### 
 
 Pattern 4: Single Containers
 
@@ -132,47 +122,36 @@ Best for agents that must collaborate closely together. This is likely the least
 
 - **Simulations**: Agents that interact with each other in simulations such as video games.
 
-## 
-
-FAQ
-
-### 
 
 How do I communicate with my sandboxes?
 
 When hosting in containers, expose ports to communicate with your SDK instances. Your application can expose HTTP/WebSocket endpoints for external clients while the SDK runs internally within the container.
 
-### 
 
 What is the cost of hosting a container?
 
 The dominant cost of serving agents is the tokens; containers vary based on what you provision, but a minimum cost is roughly 5 cents per hour running.
 
-### 
 
 When should I shut down idle containers vs. keeping them warm?
 
 This is likely provider dependent, different sandbox providers will let you set different criteria for idle timeouts after which a sandbox might spin down. You will want to tune this timeout based on how frequent you think user response might be.
 
-### 
 
 How often should I update the Claude Code CLI?
 
 The Claude Code CLI is versioned with semver, so any breaking changes will be versioned.
 
-### 
 
 How do I monitor container health and agent performance?
 
 Since containers are just servers the same logging infrastructure you use for the backend will work for containers.
 
-### 
 
 How long can an agent session run before timing out?
 
 An agent session will not timeout, but consider setting a 'maxTurns' property to prevent Claude from getting stuck in a loop.
 
-## 
 
 Next Steps
 

@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-16T05:34:01Z"
+fetched_at: "2026-03-17T02:04:23Z"
 source_url: "https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account"
 title: "Logging in to your Console account | Claude Help Center"
 ---
 
 # Logging in to your Console account
+
+Updated today
 
 
 When you navigate to the [Claude Console](https://platform.claude.com), you will see two different options for logging in to your Console account.

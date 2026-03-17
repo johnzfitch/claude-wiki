@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-16T05:34:03Z"
+fetched_at: "2026-03-17T02:04:26Z"
 source_url: "https://support.claude.com/en/articles/11503834-building-custom-connectors-via-remote-mcp-servers"
 title: "Building custom connectors via remote MCP servers | Claude Help Center"
 ---
@@ -9,8 +9,10 @@ title: "Building custom connectors via remote MCP servers | Claude Help Center"
 
 # Building custom connectors via remote MCP servers
 
+Updated today
 
-Custom connectors using remote MCP are available on Claude and Claude Desktop for users on Pro, Max, Team, and Enterprise plans.
+
+Custom connectors using remote MCP are available on Claude, Cowork, and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are limited to one custom connector. This feature is currently in beta.
 
 ## Building remote MCP servers
 
@@ -85,7 +87,6 @@ Alternatively, use the [inspector tool](https://github.com/modelcontextprotocol/
 - that your server correctly implements various parts of the auth flow.
 
 - which tools, prompts, resources, and other MCP features your server exposes.
-
 
 See the [MCP documentation](https://modelcontextprotocol.io/docs/tools/inspector) for more details on using inspector and for other tips on how to debug and troubleshoot your server.
 

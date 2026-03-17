@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:09Z"
+fetched_at: "2026-03-17T02:00:59Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/streaming-output"
 title: "Stream responses in real-time - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ By default, the Agent SDK yields complete `AssistantMessage` objects after Claud
 
 This page covers output streaming (receiving tokens in real-time). For input modes (how you send messages), see [Send messages to agents](/docs/en/agent-sdk/streaming-vs-single-mode). You can also [stream responses using the Agent SDK via the CLI](https://code.claude.com/docs/en/headless).
 
-## 
 
 Enable streaming output
 
@@ -31,7 +30,7 @@ The example below enables streaming and prints text chunks as they arrive. Notic
 
 Python
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
@@ -55,7 +54,6 @@ async def stream_response():
 asyncio.run(stream_response())
 ```
 
-## 
 
 StreamEvent reference
 
@@ -68,7 +66,7 @@ Both contain raw Claude API events, not accumulated text. You need to extract an
 
 Python
 
-``` shiki
+```python
 @dataclass
 class StreamEvent:
     uuid: str  # Unique identifier for this event
@@ -88,7 +86,6 @@ The `event` field contains the raw streaming event from the [Claude API](/docs/e
 | `message_delta`       | Message-level updates (stop reason, usage)      |
 | `message_stop`        | End of the message                              |
 
-## 
 
 Message flow
 
@@ -112,7 +109,6 @@ ResultMessage - final result
 
 Without partial messages enabled (`include_partial_messages` in Python, `includePartialMessages` in TypeScript), you receive all message types except `StreamEvent`. Common types include `SystemMessage` (session initialization), `AssistantMessage` (complete responses), `ResultMessage` (final result), and `CompactBoundaryMessage` (indicates when conversation history was compacted).
 
-## 
 
 Stream text responses
 
@@ -120,7 +116,7 @@ To display text as it's generated, look for `content_block_delta` events where `
 
 Python
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
@@ -144,7 +140,6 @@ async def stream_text():
 asyncio.run(stream_text())
 ```
 
-## 
 
 Stream tool calls
 
@@ -156,7 +151,7 @@ Tool calls also stream incrementally. You can track when tools start, receive th
 
 Python
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions
 from claude_agent_sdk.types import StreamEvent
 import asyncio
@@ -203,7 +198,6 @@ async def stream_tool_calls():
 asyncio.run(stream_tool_calls())
 ```
 
-## 
 
 Build a streaming UI
 
@@ -211,7 +205,7 @@ This example combines text and tool streaming into a cohesive UI. It tracks whet
 
 Python
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage
 from claude_agent_sdk.types import StreamEvent
 import asyncio
@@ -263,7 +257,6 @@ async def streaming_ui():
 asyncio.run(streaming_ui())
 ```
 
-## 
 
 Known limitations
 
@@ -272,7 +265,6 @@ Some SDK features are incompatible with streaming:
 - **Extended thinking**: when you explicitly set `max_thinking_tokens` (Python) or `maxThinkingTokens` (TypeScript), `StreamEvent` messages are not emitted. You'll only receive complete messages after each turn. Note that thinking is disabled by default in the SDK, so streaming works unless you enable it.
 - **Structured output**: the JSON result appears only in the final `ResultMessage.structured_output`, not as streaming deltas. See [structured outputs](/docs/en/agent-sdk/structured-outputs) for details.
 
-## 
 
 Next steps
 

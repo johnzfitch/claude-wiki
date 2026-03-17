@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:25Z"
+fetched_at: "2026-03-17T02:01:31Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry"
 title: "Claude in Microsoft Foundry - Claude API Docs"
 ---
@@ -17,13 +17,11 @@ Regional availability: At launch, Claude is available as a Global Standard deplo
 
 Foundry is supported by the C#, Java, PHP, Python, and TypeScript SDKs. The Go and Ruby SDKs do not currently support Microsoft Foundry. For available SDK platform integrations, see [Client SDKs](/docs/en/api/client-sdks).
 
-## 
 
 Preview
 
 In this preview platform integration, Claude models run on Anthropic's infrastructure. This is a commercial integration for billing and access through Azure. As an independent processor for Microsoft, customers using Claude through Microsoft Foundry are subject to Anthropic's data use terms. Anthropic continues to provide its industry-leading safety and data commitments, including zero data retention availability.
 
-## 
 
 Prerequisites
 
@@ -33,7 +31,6 @@ Before you begin, ensure you have:
 - Access to [Foundry](https://ai.azure.com/)
 - The [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed (optional, for resource management)
 
-## 
 
 Install an SDK
 
@@ -59,17 +56,15 @@ PHP
 
 PHP
 
-``` shiki
+```python
 pip install -U "anthropic"
 ```
 
-## 
 
 Provisioning
 
 Foundry uses a two-level hierarchy: **resources** contain your security and billing configuration, while **deployments** are the model instances you call via API. You'll first create a Foundry resource, then create one or more Claude deployments within it.
 
-### 
 
 Provisioning Foundry resources
 
@@ -83,7 +78,6 @@ To provision your resource:
 4.  Optionally configure the resource to be part of a private network (Azure Virtual Network) for enhanced security
 5.  Note your resource name. You'll use this as `{resource}` in API endpoints (e.g., `https://{resource}.services.ai.azure.com/anthropic/v1/*`)
 
-### 
 
 Creating Foundry deployments
 
@@ -100,13 +94,11 @@ After creating your resource, deploy a Claude model to make it available for API
 
 The deployment name you choose becomes the value you pass in the `model` parameter of your API requests. You can create multiple deployments of the same model with different names to manage separate configurations or rate limits.
 
-## 
 
 Authentication
 
 Claude on Foundry supports two authentication methods: API keys and Entra ID tokens. Both methods use Azure-hosted endpoints in the format `https://{resource}.services.ai.azure.com/anthropic/v1/*`.
 
-### 
 
 API key authentication
 
@@ -155,7 +147,7 @@ Ruby
 
 Ruby
 
-``` shiki
+```python
 curl https://{resource}.services.ai.azure.com/anthropic/v1/messages \
   -H "content-type: application/json" \
   -H "api-key: YOUR_AZURE_API_KEY" \
@@ -171,7 +163,6 @@ curl https://{resource}.services.ai.azure.com/anthropic/v1/messages \
 
 Keep your API keys secure. Never commit them to version control or share them publicly. Anyone with access to your API key can make requests to Claude through your Foundry resource.
 
-## 
 
 Microsoft Entra authentication
 
@@ -211,7 +202,7 @@ Ruby
 
 Ruby
 
-``` shiki
+```python
 # Get Azure Entra ID token
 ACCESS_TOKEN=$(az account get-access-token --resource https://cognitiveservices.azure.com --query accessToken -o tsv)
 
@@ -231,19 +222,23 @@ curl https://{resource}.services.ai.azure.com/anthropic/v1/messages \
 
 Azure Entra ID authentication allows you to manage access using Azure RBAC, integrate with your organization's identity management, and avoid managing API keys manually.
 
-## 
 
 Correlation request IDs
 
 Foundry includes request identifiers in HTTP response headers for debugging and tracing. When contacting support, provide both the `request-id` and `apim-request-id` values to help teams quickly locate and investigate your request across both Anthropic and Azure systems.
 
-## 
 
 Supported features
 
 Claude on Foundry supports most of Claude's powerful features. You can find all the features currently supported in the [overview documentation](/docs/en/build-with-claude/overview).
 
-### 
+
+Context window
+
+Claude Opus 4.6, Sonnet 4.6, and Sonnet 4.5 have a [1M-token context window](/docs/en/build-with-claude/context-windows) on Microsoft Foundry.
+
+For Claude Sonnet 4.5, the 1M-token context window is in beta. To use, include the `context-1m-2025-08-07` [beta header](/docs/en/api/beta-headers) in your API requests.
+
 
 Features not supported
 
@@ -251,7 +246,6 @@ Features not supported
 - Models API (`/v1/models`)
 - Message Batch API (`/v1/messages/batches`)
 
-## 
 
 API responses
 
@@ -259,7 +253,6 @@ API responses from Claude on Foundry follow the standard [Claude API response fo
 
 For details on response headers specific to Foundry, see the [correlation request IDs section](#correlation-request-ids).
 
-## 
 
 API model IDs and deployments
 
@@ -276,7 +269,6 @@ The following Claude models are available through Foundry. The latest generation
 
 By default, deployment names match the model IDs shown above. However, you can create custom deployments with different names in the Foundry portal to manage different configurations, versions, or rate limits. Use the deployment name (not necessarily the model ID) in your API requests.
 
-## 
 
 Monitoring and logging
 
@@ -290,11 +282,9 @@ Anthropic recommends logging your activity on at least a 30-day rolling basis to
 
 Azure's logging services are configured within your Azure subscription. Enabling logging does not provide Microsoft or Anthropic access to your content beyond what's necessary for billing and service operation.
 
-## 
 
 Troubleshooting
 
-### 
 
 Authentication errors
 
@@ -307,7 +297,6 @@ Authentication errors
 
 - **Solution:** Your Azure account may lack the necessary permissions. Ensure you have the appropriate Azure RBAC role assigned (e.g., "Cognitive Services OpenAI User").
 
-### 
 
 Rate limiting
 
@@ -316,13 +305,11 @@ Rate limiting
 - **Solution:** You've exceeded your rate limit. Implement exponential backoff and retry logic in your application.
 - **Solution:** Consider requesting rate limit increases through the Azure portal or Azure support.
 
-#### 
 
 Rate limit headers
 
 Foundry does not include Anthropic's standard rate limit headers (`anthropic-ratelimit-tokens-limit`, `anthropic-ratelimit-tokens-remaining`, `anthropic-ratelimit-tokens-reset`, `anthropic-ratelimit-input-tokens-limit`, `anthropic-ratelimit-input-tokens-remaining`, `anthropic-ratelimit-input-tokens-reset`, `anthropic-ratelimit-output-tokens-limit`, `anthropic-ratelimit-output-tokens-remaining`, and `anthropic-ratelimit-output-tokens-reset`) in responses. Manage rate limiting through Azure's monitoring tools instead.
 
-### 
 
 Model and deployment errors
 
@@ -335,7 +322,6 @@ Model and deployment errors
 
 - **Solution:** The model parameter should contain your deployment name, which can be customized in the Foundry portal. Verify the deployment exists and is properly configured.
 
-## 
 
 Additional resources
 

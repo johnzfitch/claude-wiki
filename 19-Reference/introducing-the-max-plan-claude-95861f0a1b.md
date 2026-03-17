@@ -1,7 +1,7 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T04:10:53Z"
-last_modified: "Sat, 14 Mar 2026 03:47:03 GMT"
+fetched_at: "2026-03-16T23:06:16Z"
+last_modified: "Mon, 16 Mar 2026 20:41:38 GMT"
 source_url: "https://www.anthropic.com/news/max-plan"
 title: "Introducing the Max Plan | Claude"
 ---
@@ -10,31 +10,24 @@ title: "Introducing the Max Plan | Claude"
 
 Claude's new Max plan offers up to 20x higher usage limits and priority access to new features.
 
-[](#)
-
-[](#)
 
 - 
 
-  Category
 
   [Product announcements](https://claude.com/blog/category/announcements)
 
 - 
 
-  Product
 
   Claude apps
 
 - 
 
-  Date
 
   April 9, 2025
 
 - 
 
-  Reading time
 
   5
 
@@ -42,7 +35,6 @@ Claude's new Max plan offers up to 20x higher usage limits and priority access t
 
 - 
 
-  Share
 
   [Copy link](#)
   https://claude.com/blog/max-plan
@@ -79,114 +71,9 @@ The Max plan is available now in all regions where Claude is offered. You can si
 
 Explore our [pricing page](https://anthropic.com/pricing) to see all plan options and select the one that matches the Claude experience that suits you.
 
-No items found.
 
 [Prev](#)
 
 Prev
 
 0/5
-
-[Next](#)
-
-Next
-
-eBook
-
-## 
-
-[](#)
-
-FAQ
-
-No items found.
-
-[](#)
-
-## Related posts
-
-Explore more product news and best practices for teams building with Claude.
-
-Mar 13, 2026
-
-### 1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-Product announcements
-
-[1M context is now generally available for Opus 4.6 and Sonnet 4.6](#)
-
-1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-[1M context is now generally available for Opus 4.6 and Sonnet 4.6](/blog/1m-context-ga)
-
-1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-Mar 12, 2026
-
-### Claude now creates interactive charts, diagrams and visualizations
-
-Product announcements
-
-[Claude now creates interactive charts, diagrams and visualizations](#)
-
-Claude now creates interactive charts, diagrams and visualizations
-
-[Claude now creates interactive charts, diagrams and visualizations](/blog/claude-builds-visuals)
-
-Claude now creates interactive charts, diagrams and visualizations
-
-Feb 17, 2026
-
-### Increase web search accuracy and efficiency with dynamic filtering
-
-Product announcements
-
-[Increase web search accuracy and efficiency with dynamic filtering](#)
-
-Increase web search accuracy and efficiency with dynamic filtering
-
-[Increase web search accuracy and efficiency with dynamic filtering](/blog/improved-web-search-with-dynamic-filtering)
-
-Increase web search accuracy and efficiency with dynamic filtering
-
-Mar 9, 2026
-
-### Bringing Code Review to Claude Code
-
-Claude Code
-
-[Bringing Code Review to Claude Code](#)
-
-Bringing Code Review to Claude Code
-
-[Bringing Code Review to Claude Code](/blog/code-review)
-
-Bringing Code Review to Claude Code
-
-## Transform how your organization operates with Claude
-
-See pricing
-
-[See pricing](https://claude.com/pricing#api)
-
-See pricing
-
-Contact sales
-
-[Contact sales](https://claude.com/contact-sales)
-
-Contact sales
-
-Get the developer newsletter
-
-Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
-
-[Subscribe](#)
-
-Subscribe
-
-Please provide your email address if you'd like to receive our monthly developer newsletter. You can unsubscribe at any time.
-
-Thank you! You’re subscribed.
-
-Sorry, there was a problem with your submission, please try again later.

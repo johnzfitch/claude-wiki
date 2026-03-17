@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:03Z"
+fetched_at: "2026-03-17T02:03:33Z"
 source_url: "https://www.anthropic.com/research/prompt-injection-defenses"
 title: "Mitigating the risk of prompt injections in browser use \\ Anthropic"
 ---
+
 # Mitigating the risk of prompt injections in browser use
 
 Nov 24, 2025
@@ -53,14 +54,14 @@ If you're interested in helping make our models and products more robust to prom
 
 ## Related content
 
-### How AI assistance impacts the formation of coding skills
+### Labor market impacts of AI: A new measure and early evidence
 
-[Read more](/research/AI-assistance-coding-skills)
+[Read more](/research/labor-market-impacts)
 
-### Disempowerment patterns in real-world AI usage
+### An update on our model deprecation commitments for Claude Opus 3
 
-[Read more](/research/disempowerment-patterns)
+[Read more](/research/deprecation-updates-opus-3)
 
-### The assistant axis: situating and stabilizing the character of large language models
+### The persona selection model
 
-[Read more](/research/assistant-axis)
+[Read more](/research/persona-selection-model)

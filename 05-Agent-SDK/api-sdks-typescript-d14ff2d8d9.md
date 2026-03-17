@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:28Z"
+fetched_at: "2026-03-17T02:01:40Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/typescript"
 title: "TypeScript SDK - Claude API Docs"
 ---
@@ -15,15 +15,13 @@ This library provides convenient access to the Anthropic REST API from server-si
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers TypeScript-specific SDK features and configuration.
 
-## 
 
 Installation
 
-``` shiki
+```python
 npm install @anthropic-ai/sdk
 ```
 
-## 
 
 Requirements
 
@@ -44,11 +42,10 @@ Note that React Native is not supported at this time.
 
 If you are interested in other runtime environments, please open or upvote an issue on [GitHub](https://github.com/anthropics/anthropic-sdk-typescript).
 
-## 
 
 Usage
 
-``` shiki
+```python
 const client = new Anthropic({
   apiKey: process.env["ANTHROPIC_API_KEY"] // This is the default and can be omitted
 });
@@ -62,13 +59,12 @@ const message = await client.messages.create({
 console.log(message.content);
 ```
 
-## 
 
 Request and response types
 
 This library includes TypeScript definitions for all request params and response fields. You may import and use them like so:
 
-``` shiki
+```python
 const client = new Anthropic({
   apiKey: process.env["ANTHROPIC_API_KEY"] // This is the default and can be omitted
 });
@@ -83,25 +79,23 @@ const message: Anthropic.Message = await client.messages.create(params);
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
 
-## 
 
 Counting tokens
 
 You can see the exact usage for a given request through the `usage` response property, e.g.
 
-``` shiki
+```python
 const message = await client.messages.create(/* ... */);
 console.log(message.usage);
 // { input_tokens: 25, output_tokens: 13 }
 ```
 
-## 
 
 Streaming responses
 
 The SDK provides support for streaming responses using Server Sent Events (SSE).
 
-``` shiki
+```python
 const stream = await client.messages.create({
   max_tokens: 1024,
   messages: [{ role: "user", content: "Hello, Claude" }],
@@ -115,13 +109,12 @@ for await (const messageStreamEvent of stream) {
 
 If you need to cancel a stream, you can `break` from the loop or call `stream.controller.abort()`.
 
-## 
 
 Streaming helpers
 
 This library provides several conveniences for streaming messages, for example:
 
-``` shiki
+```python
 async function main() {
   const stream = anthropic.messages
     .stream({
@@ -149,7 +142,6 @@ Streaming with `client.messages.stream(...)` exposes various helpers for your co
 
 Alternatively, you can use `client.messages.create({ ..., stream: true })` which only returns an async iterable of the events in the stream and thus uses less memory (it does not build up a final message object for you).
 
-## 
 
 Tool helpers
 
@@ -157,7 +149,7 @@ This SDK provides helpers for making it easy to create and run tools in the Mess
 
 For more details on tool use, see the [tool use overview](/docs/en/agents-and-tools/tool-use/overview).
 
-``` shiki
+```python
 import { betaZodTool } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { z } from "zod";
 
@@ -182,13 +174,12 @@ const finalMessage = await anthropic.beta.messages.toolRunner({
 });
 ```
 
-### 
 
 Tool errors
 
 To report an error from a tool back to the model, throw a `ToolError` from the `run` function. Unlike a plain `Error`, `ToolError` accepts content blocks, allowing you to include images or other structured content in the error response:
 
-``` shiki
+```python
 import { ToolError } from "@anthropic-ai/sdk/lib/tools/BetaRunnableTool";
 
 const screenshotTool = betaZodTool({
@@ -219,13 +210,11 @@ const screenshotTool = betaZodTool({
 
 If a plain `Error` is thrown, the message will be converted to a text content block.
 
-## 
 
 Tool use
 
 This SDK provides support for tool use, aka function calling. More details can be found in the [tool use overview](/docs/en/agents-and-tools/tool-use/overview).
 
-## 
 
 MCP helpers
 
@@ -235,7 +224,7 @@ The Claude API also supports an [`mcp_servers` parameter](/docs/en/agents-and-to
 
 For the Claude API's built-in remote MCP server support, see [MCP Connector](/docs/en/agents-and-tools/mcp-connector).
 
-``` shiki
+```python
 import {
   mcpTools,
   mcpMessages,
@@ -290,25 +279,22 @@ const fileResource = await mcpClient.readResource({ uri: "file:///path/to/data.j
 await anthropic.beta.files.upload({ file: mcpResourceToFile(fileResource) });
 ```
 
-### 
 
 MCP error handling
 
 The conversion functions throw `UnsupportedMCPValueError` if an MCP value isn't supported by the Claude API (e.g., unsupported content type, unsupported MIME type, non-http/https resource link).
 
-## 
 
 Message batches
 
 This SDK provides support for the [Message Batches API](/docs/en/build-with-claude/batch-processing) under the `client.messages.batches` namespace.
 
-### 
 
 Creating a batch
 
 Message Batches takes an array of requests, where each object has a `custom_id` identifier, and the exact same request `params` as the standard Messages API:
 
-``` shiki
+```python
 await client.messages.batches.create({
   requests: [
     {
@@ -331,13 +317,12 @@ await client.messages.batches.create({
 });
 ```
 
-### 
 
 Getting results from a batch
 
 Once a Message Batch has been processed, indicated by `.processing_status === 'ended'`, you can access the results with `.batches.results()`
 
-``` shiki
+```python
 const results = await client.messages.batches.results(batch_id);
 for await (const entry of results) {
   if (entry.result.type === "succeeded") {
@@ -346,7 +331,6 @@ for await (const entry of results) {
 }
 ```
 
-## 
 
 File uploads
 
@@ -359,7 +343,7 @@ Request parameters that correspond to file uploads can be passed in many differe
 
 Set the content-type explicitly as the files API will not infer it for you:
 
-``` shiki
+```python
 import fs from "fs";
 import Anthropic, { toFile } from "@anthropic-ai/sdk";
 
@@ -395,13 +379,12 @@ await client.beta.files.upload({
 });
 ```
 
-## 
 
 Handling errors
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `APIError` will be thrown:
 
-``` shiki
+```python
 const message = await client.messages
   .create({
     max_tokens: 1024,
@@ -432,7 +415,6 @@ Error codes are as follows:
 | \>=500      | `InternalServerError`      |
 | N/A         | `APIConnectionError`       |
 
-## 
 
 Request IDs
 
@@ -440,7 +422,7 @@ Request IDs
 
 All object responses in the SDK provide a `_request_id` property which is added from the `request-id` response header so that you can quickly log failing requests and report them back to Anthropic.
 
-``` shiki
+```python
 const message = await client.messages.create({
   max_tokens: 1024,
   messages: [{ role: "user", content: "Hello, Claude" }],
@@ -449,7 +431,6 @@ const message = await client.messages.create({
 console.log(message._request_id); // req_018EeWyXxfu5pfWkrYcMdjWG
 ```
 
-## 
 
 Retries
 
@@ -457,7 +438,7 @@ Certain errors will be automatically retried 2 times by default, with a short ex
 
 You can use the `maxRetries` option to configure or disable this:
 
-``` shiki
+```python
 // Configure the default for all requests:
 const client = new Anthropic({
   maxRetries: 0 // default is 2
@@ -474,13 +455,12 @@ await client.messages.create(
 );
 ```
 
-## 
 
 Timeouts
 
 By default requests time out after 10 minutes. However if you have specified a large `max_tokens` value and are *not* streaming, the default timeout will be calculated dynamically using the formula:
 
-``` shiki
+```python
 const minimum = 10 * 60;
 const calculated = (60 * 60 * maxTokens) / 128_000;
 return calculated < minimum ? minimum * 1000 : calculated * 1000;
@@ -490,7 +470,7 @@ which will result in a timeout up to 60 minutes, scaled by the `max_tokens` para
 
 You can configure this with a `timeout` option:
 
-``` shiki
+```python
 // Configure the default for all requests:
 const client = new Anthropic({
   timeout: 20 * 1000 // 20 seconds (default is 10 minutes)
@@ -511,7 +491,6 @@ On timeout, an `APIConnectionTimeoutError` is thrown.
 
 Note that requests which time out will be [retried twice by default](#retries).
 
-## 
 
 Long requests
 
@@ -525,13 +504,12 @@ An expected request latency longer than the [timeout](#timeouts) for a non-strea
 
 When supported by the `fetch` implementation, the SDK sets a [TCP socket keep-alive](https://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html) option in order to reduce the impact of idle connection timeouts on some networks. This can be [overridden](#configuring-proxies) by configuring a custom proxy.
 
-## 
 
 Auto-pagination
 
 List methods in the Claude API are paginated. You can use the `for await ... of` syntax to iterate through items across all pages:
 
-``` shiki
+```python
 async function fetchAllMessageBatches(params: Record<string, unknown>) {
   const allMessageBatches = [];
   // Automatically fetches more pages as needed.
@@ -544,7 +522,7 @@ async function fetchAllMessageBatches(params: Record<string, unknown>) {
 
 Alternatively, you can request a single page at a time:
 
-``` shiki
+```python
 let page = await client.messages.batches.list({ limit: 20 });
 for (const messageBatch of page.data) {
   console.log(messageBatch);
@@ -557,7 +535,6 @@ while (page.hasNextPage()) {
 }
 ```
 
-## 
 
 Default headers
 
@@ -567,7 +544,7 @@ If you need to, you can override it by setting default headers on a per-request 
 
 Be aware that doing so may result in incorrect types and other unexpected or undefined behavior in the SDK.
 
-``` shiki
+```python
 const message = await client.messages.create(
   {
     max_tokens: 1024,
@@ -578,11 +555,9 @@ const message = await client.messages.create(
 );
 ```
 
-## 
 
 Advanced usage
 
-### 
 
 Accessing raw Response data (e.g., headers)
 
@@ -590,7 +565,7 @@ The "raw" `Response` returned by `fetch()` can be accessed through the `.asRespo
 
 You can also use the `.withResponse()` method to get the raw `Response` along with the parsed data. Unlike `.asResponse()` this method consumes the body, returning once it is parsed.
 
-``` shiki
+```python
 const response = await client.messages
   .create({
     max_tokens: 1024,
@@ -612,13 +587,11 @@ console.log(raw.headers.get("X-My-Header"));
 console.log(message.content);
 ```
 
-### 
 
 Logging
 
 All log messages are intended for debugging only. The format and content of log messages may change between releases.
 
-#### 
 
 Log levels
 
@@ -627,7 +600,7 @@ The log level can be configured in two ways:
 1.  Via the `ANTHROPIC_LOG` environment variable
 2.  Using the `logLevel` client option (overrides the environment variable if set)
 
-``` shiki
+```python
 import Anthropic from "@anthropic-ai/sdk";
 
 const client = new Anthropic({
@@ -645,7 +618,6 @@ Available log levels, from most to least verbose:
 
 At the `'debug'` level, all HTTP requests and responses are logged, including headers and bodies. Some authentication-related headers are redacted, but sensitive data in request and response bodies may still be visible.
 
-#### 
 
 Custom logger
 
@@ -653,7 +625,7 @@ By default, this library logs to `globalThis.console`. You can also provide a cu
 
 When providing a custom logger, the `logLevel` option still controls which messages are emitted, messages below the configured level will not be sent to your logger.
 
-``` shiki
+```python
 import pino from "pino";
 
 const logger = pino();
@@ -664,32 +636,29 @@ const client = new Anthropic({
 });
 ```
 
-### 
 
 Making custom/undocumented requests
 
 This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, params, or response properties, the library can still be used.
 
-#### 
 
 Undocumented endpoints
 
 To make requests to undocumented endpoints, you can use `client.get`, `client.post`, and other HTTP verbs. Options on the client, such as retries, will be respected when making these requests.
 
-``` shiki
+```python
 await client.post("/some/path", {
   body: { some_prop: "foo" },
   query: { some_query_arg: "bar" }
 });
 ```
 
-#### 
 
 Undocumented request params
 
 To make requests using undocumented parameters, you may use `// @ts-expect-error` on the undocumented parameter. This library doesn't validate at runtime that the request matches the type, so any extra values you send will be sent as-is.
 
-``` shiki
+```python
 client.messages.create({
   // ...
   // @ts-expect-error baz is not yet public
@@ -701,13 +670,11 @@ For requests with the `GET` verb, any extra params will be in the query, all oth
 
 If you want to explicitly send an extra argument, you can do so with the `query`, `body`, and `headers` request options.
 
-#### 
 
 Undocumented response properties
 
 To access undocumented response properties, you may access the response object with `// @ts-expect-error` on the response object, or cast the response object to the requisite type. Like the request params, the SDK does not validate or strip extra properties from the response from the API.
 
-### 
 
 Customizing the fetch client
 
@@ -715,7 +682,7 @@ By default, this library expects a global `fetch` function is defined.
 
 If you want to use a different `fetch` function, you can either polyfill the global:
 
-``` shiki
+```python
 import fetch from "my-fetch";
 
 globalThis.fetch = fetch;
@@ -723,20 +690,19 @@ globalThis.fetch = fetch;
 
 Or pass it to the client:
 
-``` shiki
+```python
 import Anthropic from "@anthropic-ai/sdk";
 import fetch from "my-fetch";
 
 const client = new Anthropic({ fetch });
 ```
 
-### 
 
 Fetch options
 
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
-``` shiki
+```python
 const client = new Anthropic({
   fetchOptions: {
     // `RequestInit` options
@@ -744,7 +710,6 @@ const client = new Anthropic({
 });
 ```
 
-### 
 
 Configuring proxies
 
@@ -762,7 +727,7 @@ Deno
 
 Deno
 
-``` shiki
+```python
 import * as undici from "undici";
 
 const proxyAgent = new undici.ProxyAgent("http://localhost:8888");
@@ -773,7 +738,6 @@ const client = new Anthropic({
 });
 ```
 
-## 
 
 Beta features
 
@@ -783,7 +747,7 @@ You can access most beta API features through the beta property of the client. T
 
 For example, to use the [Files API](/docs/en/build-with-claude/files):
 
-``` shiki
+```python
 const response = await client.beta.messages.create({
   model: "claude-opus-4-6",
   max_tokens: 1024,
@@ -806,13 +770,11 @@ const response = await client.beta.messages.create({
 });
 ```
 
-## 
 
 Runtime support
 
 ### Browser usage
 
-## 
 
 Platform integrations
 
@@ -828,7 +790,6 @@ The TypeScript SDK supports Bedrock, Vertex AI, and Foundry through separate npm
 - **Vertex AI:** `npm install @anthropic-ai/vertex-sdk`: Provides `AnthropicVertex` client
 - **Foundry:** `npm install @anthropic-ai/foundry-sdk`: Provides `AnthropicFoundry` client
 
-## 
 
 Semantic versioning
 
@@ -840,13 +801,11 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 Backwards-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
 
-## 
 
 Frequently asked questions
 
 See the [GitHub repository](https://github.com/anthropics/anthropic-sdk-typescript) for FAQs, issues, and community support.
 
-## 
 
 Additional resources
 

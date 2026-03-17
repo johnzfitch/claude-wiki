@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:14Z"
+fetched_at: "2026-03-17T02:03:49Z"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/basic/utilities/ping"
 title: "Ping - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Ping - Model Context Protocol"
 
 The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the connection is alive.
 
-## 
 
 [​](#overview)
 
@@ -18,7 +17,6 @@ Overview
 
 The ping functionality is implemented through a simple request/response pattern. Either the client or server can initiate a ping by sending a `ping` request.
 
-## 
 
 [​](#message-format)
 
@@ -28,7 +26,7 @@ A ping request is a standard JSON-RPC request with no parameters:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": "123",
@@ -36,7 +34,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#behavior-requirements)
 
@@ -46,7 +43,7 @@ Behavior Requirements
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": "123",
@@ -59,13 +56,11 @@ Copy
     - Terminate the connection
     - Attempt reconnection procedures
 
-## 
 
 [​](#usage-patterns)
 
 Usage Patterns
 
-## 
 
 [​](#implementation-considerations)
 
@@ -76,7 +71,6 @@ Implementation Considerations
 - Timeouts **SHOULD** be appropriate for the network environment
 - Excessive pinging **SHOULD** be avoided to reduce network overhead
 
-## 
 
 [​](#error-handling)
 

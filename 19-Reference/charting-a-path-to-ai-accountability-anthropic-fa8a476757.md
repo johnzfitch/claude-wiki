@@ -1,14 +1,16 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:02Z"
+fetched_at: "2026-03-17T02:03:16Z"
 source_url: "https://www.anthropic.com/news/charting-a-path-to-ai-accountability"
 title: "Charting a Path to AI Accountability \\ Anthropic"
 ---
+
 # Charting a Path to AI Accountability
 
 Jun 13, 2023
 
-  
+\
+
 This week, Anthropic submitted [a response](https://www-cdn.anthropic.com/257e6352c677beeffcbce24233211887173a41dc/2023.06.06-Anthropic_NTIA_Comment_v2.pdf) to the National Telecommunications and Information Administration’s (NTIA) [Request for Comment on AI Accountability](https://ntia.gov/issues/artificial-intelligence/request-for-comments). Today, we want to share our recommendations as they capture some of Anthropic’s core AI policy proposals.
 
 There is currently no robust and comprehensive process for evaluating today’s advanced artificial intelligence (AI) systems, let alone the more capable systems of the future. Our submission presents our perspective on the processes and infrastructure needed to ensure AI accountability. Our recommendations consider the NTIA’s potential role as a coordinating body that sets standards in collaboration with other government agencies like the [National Institute of Standards and Technology (NIST)](/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist).
@@ -49,18 +51,18 @@ You can read our submission in full [here](https://www-cdn.anthropic.com/257e635
 
 ## Related content
 
-### Introducing Claude Opus 4.6
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/claude-partner-network)
 
-### Claude is a space to think
+### Introducing The Anthropic Institute
 
-We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/claude-is-a-space-to-think)
+[Read more](/news/the-anthropic-institute)
 
-### Apple’s Xcode now supports the Claude Agent SDK
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/apple-xcode-claude-agent-sdk)
+[Read more](/news/sydney-fourth-office-asia-pacific)

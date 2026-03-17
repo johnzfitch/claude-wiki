@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:11Z"
+fetched_at: "2026-03-17T02:03:46Z"
 source_url: "https://modelcontextprotocol.io/seps/1577--sampling-with-tools"
 title: "SEP-1577: Sampling With Tools - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP introduces `tools` & `toolChoice` params to `sampling/createMessage` and soft-deprecates `includeContext` (fences `thisServer` & `allServers` under a capability). This allows MCP servers to run their own agentic loops using the client’s tokens (still under the user supervision), and reduces the complexity of client implementations (context support becoming explicitly optional).
 
-## 
 
 [​](#motivation)
 
@@ -54,13 +52,11 @@ Please note some related work:
 
 In the “Possible Follow ups” Section below, we give examples of features that were kept out of scope from this SEP but which we took care to make this SEP reasonably compatible with.
 
-## 
 
 [​](#specification)
 
 Specification
 
-### 
 
 [​](#overview)
 
@@ -78,7 +74,6 @@ Overview
 - Soft-deprecate [CreateMessageRequest.params.includeContext](https://modelcontextprotocol.io/specification/2025-06-18/schema#createmessagerequest) != ‘none’ (now fenced by capability)
   - Incentivize context-free sampling implementation
 
-### 
 
 [​](#protocol-changes)
 
@@ -92,7 +87,6 @@ Protocol changes
     - Note: this is a requirement for Claude API implementation (parallel tool call must all be responded to in one go)
   - SamplingMessage with tool result content blocks MUST NOT contain other content types.
 
-### 
 
 [​](#schema-changes)
 
@@ -313,7 +307,6 @@ Schema changes
         - OpenAI’s [ChatCompletion](https://platform.openai.com/docs/api-reference/chat/object): `finish_reason: “stop” | “length” | “tool_use”` (…?)
         - [Anthropic](https://docs.claude.com/en/api/handling-stop-reasons): `stop_reason: “end_turn” | “max_tokens” | “stop_sequence” | “tool_use” | “pause_turn” | “refusal”`
 
-## 
 
 [​](#possible-follow-ups)
 
@@ -321,7 +314,6 @@ Possible Follow ups
 
 Theses are out of scope for this SEP, but care was taken not to preclude them, so where appropriate we give examples of how they could be implemented on top of / after this SEP.
 
-### 
 
 [​](#streaming-support)
 
@@ -329,7 +321,6 @@ Streaming support
 
 See: [Streaming tool use results \#117](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/117) This could be important for some longer-running use cases or when latency is important, but would play better w/ streaming support in MCP tools. A possible way to implement this would be to use notifications w/ payload, and possibly create a new method `sampling/createMessageStreamed`. Both should be orthogonal w/ this SEP (but we’d need to create delta types for results, similar to streaming APIs in inference API such as Claude API and OpenAI API).
 
-### 
 
 [​](#cache-friendliness-updates)
 
@@ -358,7 +349,6 @@ Two bits needed here:
     }
     ```
 
-### 
 
 [​](#allow-client-to-call-the-server’s-tools-by-itself-in-an-agentic-loop)
 
@@ -368,7 +358,7 @@ From the server’s perspective, that would remove the need to call tools by its
 
 Copy
 
-``` shiki
+```python
 {
   type: "server-tool"; // MCP tool from same server.
   name: string;
@@ -380,7 +370,6 @@ Pros:
 - Safe, limited to that server’s tools.
 - If we propagate the mcp-session-id, can leverage keep any server-side session context / caching
 
-### 
 
 [​](#allow-client-to-call-any-other-mcp-servers’-tools-by-itself-in-an-agentic-loop)
 
@@ -397,7 +386,6 @@ Cons:
 - Classifier might be needed to avoid High potential for privacy leaks / abuse
   - If user approves Gmail MCP tool usage / delegation by mistake, server gets access to their private emails through sampling
 
-### 
 
 [​](#allow-server-to-list-&-call-clients’-tools-client/server-→-p2p)
 
@@ -411,7 +399,6 @@ If we say the client can now expose tools that the server can call, it opens a s
   - Client could also ask a server for sampling, while we’re at it
   - Symmetry at the protocol layer, but still directionality at the transport layer (e.g. for HTTP transport, direction of POST requests still matters)
 
-### 
 
 [​](#simplify-structured-outputs-use-case)
 
@@ -421,7 +408,7 @@ A major use case of sampling is to get outputs that conform to a given schema. T
 
 Copy
 
-``` shiki
+```python
 interface CreateMessageRequest {
   method: “sampling/createMessage”;
   params: {

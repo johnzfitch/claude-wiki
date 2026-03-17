@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:34Z"
+fetched_at: "2026-03-17T02:01:51Z"
 source_url: "https://platform.claude.com/docs/en/api/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
@@ -99,7 +99,7 @@ Get a Model
 
 cURL
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/models/$MODEL_ID \
     -H 'anthropic-version: 2023-06-01' \
     -H "X-Api-Key: $ANTHROPIC_API_KEY"
@@ -107,7 +107,7 @@ curl https://api.anthropic.com/v1/models/$MODEL_ID \
 
 Response 200
 
-``` shiki
+```python
 {
   "id": "claude-opus-4-6",
   "created_at": "2026-02-04T00:00:00Z",
@@ -120,7 +120,7 @@ Response 200
 
 Response 200
 
-``` shiki
+```python
 {
   "id": "claude-opus-4-6",
   "created_at": "2026-02-04T00:00:00Z",

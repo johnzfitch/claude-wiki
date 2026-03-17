@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:30Z"
+fetched_at: "2026-03-17T02:01:43Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/go"
 title: "Go SDK - Claude API Docs"
 ---
@@ -15,11 +15,10 @@ The Anthropic Go library provides convenient access to the Anthropic REST API fr
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers Go-specific SDK features and configuration.
 
-## 
 
 Installation
 
-``` shiki
+```python
 import (
     "github.com/anthropics/anthropic-sdk-go" // imported as anthropic
 )
@@ -27,21 +26,19 @@ import (
 
 Or to pin the version:
 
-``` shiki
+```python
 go get -u 'github.com/anthropics/anthropic-sdk-go@v1.19.0'
 ```
 
-## 
 
 Requirements
 
 This library requires Go 1.22+.
 
-## 
 
 Usage
 
-``` shiki
+```python
 package main
 
 import (
@@ -78,7 +75,6 @@ func main() {
 
 ### Tool calling
 
-## 
 
 Request fields
 
@@ -92,7 +88,7 @@ Any `param.Opt[T]`, map, slice, struct or string enum uses the tag `` `json:"...
 
 The `param.IsOmitted(any)` function can confirm the presence of any `omitzero` field.
 
-``` shiki
+```python
 p := anthropic.ExampleParams{
     ID:   "id_xxx",                // required property
     Name: anthropic.String("..."), // optional property
@@ -109,7 +105,7 @@ p := anthropic.ExampleParams{
 
 To send `null` instead of a `param.Opt[T]`, use `param.Null[T]()`. To send `null` instead of a struct `T`, use `param.NullStruct[T]()`.
 
-``` shiki
+```python
 p.Name = param.Null[string]()       // 'null' instead of string
 p.Point = param.NullStruct[Point]() // 'null' instead of struct
 
@@ -123,7 +119,7 @@ For security reasons, only use `SetExtraFields` with trusted data.
 
 To send a custom value instead of a struct, use the generic function `param.Override` (e.g., `param.Override[anthropic.FooParams](12)`).
 
-``` shiki
+```python
 // In cases where the API specifies a given type,
 // but you want to send something else, use [SetExtraFields]:
 p.SetExtraFields(map[string]any{
@@ -134,7 +130,6 @@ p.SetExtraFields(map[string]any{
 custom := param.Override[anthropic.FooParams](12)
 ```
 
-### 
 
 Request unions
 
@@ -142,7 +137,7 @@ Unions are represented as a struct with fields prefixed by "Of" for each of its 
 
 Sub-properties of the union can be accessed via methods on the union struct. These methods return a mutable pointer to the underlying data, if present.
 
-``` shiki
+```python
 // Only one field can be non-zero, use param.IsOmitted() to check if a field is set
 type AnimalUnionParam struct {
     OfCat *Cat `json:",omitzero,inline`
@@ -164,13 +159,12 @@ if address := animal.GetOwner().GetAddress(); address != nil {
 }
 ```
 
-## 
 
 Response objects
 
 All fields in response structs are ordinary value types (not pointers or wrappers). Response structs also include a special `JSON` field containing metadata about each property.
 
-``` shiki
+```python
 type Animal struct {
     Name   string `json:"name,nullable"`
     Owners int    `json:"owners"`
@@ -188,7 +182,7 @@ To handle optional data, use the `.Valid()` method on the JSON field. `.Valid()`
 
 If `.Valid()` is false, the corresponding field will simply be its zero value.
 
-``` shiki
+```python
 raw := `{"owners": 1, "name": null}`
 
 var res Animal
@@ -217,11 +211,10 @@ res.JSON.Age.Raw() == respjson.Omitted // true
 
 These `.JSON` structs also include an `ExtraFields` map containing any properties in the json response that were not specified in the struct. This can be useful for API features not yet present in the SDK.
 
-``` shiki
+```python
 body := res.JSON.ExtraFields["my_unexpected_field"].Raw()
 ```
 
-### 
 
 Response unions
 
@@ -229,7 +222,7 @@ In responses, unions are represented by a flattened struct containing all possib
 
 If a response value union contains primitive values, primitive fields will be alongside the properties but prefixed with `Of` and feature the tag `json:"...,inline"`.
 
-``` shiki
+```python
 type AnimalUnion struct {
     // From variants [Dog], [Cat]
     Owner Person `json:"owner"`
@@ -259,7 +252,6 @@ default:
 }
 ```
 
-## 
 
 Error handling
 
@@ -267,7 +259,7 @@ When the API returns a non-success status code, the SDK returns an error with ty
 
 To handle errors, use the `errors.As` pattern:
 
-``` shiki
+```python
 _, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
     MaxTokens: 1024,
     Messages: []anthropic.MessageParam{{
@@ -293,7 +285,6 @@ if err != nil {
 
 When other errors occur, they are returned unwrapped; for example, if HTTP transport fails, you might receive `*url.Error` wrapping `*net.OpError`.
 
-## 
 
 Retries
 
@@ -301,7 +292,7 @@ Certain errors will be automatically retried 2 times by default, with a short ex
 
 You can use the `WithMaxRetries` option to configure or disable this:
 
-``` shiki
+```python
 // Configure the default for all requests:
 client := anthropic.NewClient(
     option.WithMaxRetries(0), // default is 2
@@ -327,7 +318,6 @@ client := anthropic.NewClient(
     )
 ```
 
-## 
 
 Timeouts
 
@@ -335,7 +325,7 @@ Requests do not time out by default; use context to configure a timeout for a re
 
 Note that if a request is [retried](#retries), the context timeout does not start over. To set a per-retry timeout, use `option.WithRequestTimeout()`.
 
-``` shiki
+```python
 // This sets the timeout for the request, including all the retries.
 ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 defer cancel()
@@ -359,7 +349,6 @@ defer cancel()
     )
 ```
 
-## 
 
 Long requests
 
@@ -369,13 +358,12 @@ Avoid setting a large `MaxTokens` value without using streaming as some networks
 
 This SDK will also return an error if a non-streaming request is expected to be above roughly 10 minutes long. Calling `.Messages.NewStreaming()` or [setting a custom timeout](#timeouts) disables this error.
 
-## 
 
 File uploads
 
 Request parameters that correspond to file uploads in multipart requests are typed as `io.Reader`. The contents of the `io.Reader` will by default be sent as a multipart form part with the file name of "anonymous_file" and content-type of "application/octet-stream", so the recommended approach is to specify a custom content-type with the `anthropic.File(reader io.Reader, filename string, contentType string)` helper, which easily wraps any `io.Reader` with the appropriate file name and content type.
 
-``` shiki
+```python
 // A file from the file system
 file, err := os.Open("/path/to/file.json")
 anthropic.BetaFileUploadParams{
@@ -392,7 +380,6 @@ anthropic.BetaFileUploadParams{
 
 The file name and content-type can also be customized by implementing `Name() string` or `ContentType() string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a file returned by `os.Open` will be sent with the file name on disk.
 
-## 
 
 Pagination
 
@@ -400,7 +387,7 @@ This library provides some conveniences for working with paginated list endpoint
 
 You can use `.ListAutoPaging()` methods to iterate through items across all pages:
 
-``` shiki
+```python
 iter := client.Messages.Batches.ListAutoPaging(context.TODO(), anthropic.MessageBatchListParams{
     Limit: anthropic.Int(20),
 })
@@ -416,7 +403,7 @@ if err := iter.Err(); err != nil {
 
 Or you can use simple `.List()` methods to fetch a single page and receive a standard response object with additional helper methods like `.GetNextPage()`:
 
-``` shiki
+```python
 page, err := client.Messages.Batches.List(context.TODO(), anthropic.MessageBatchListParams{
     Limit: anthropic.Int(20),
 })
@@ -431,13 +418,12 @@ if err != nil {
 }
 ```
 
-## 
 
 RequestOptions
 
 This library uses the functional options pattern. Functions defined in the `option` package return a `RequestOption`, which is a closure that mutates a `RequestConfig`. These options can be supplied to the client or at individual requests. For example:
 
-``` shiki
+```python
 client := anthropic.NewClient(
     // Adds a header to every request made by the client
     option.WithHeader("X-Some-Header", "custom_header_info"),
@@ -455,17 +441,15 @@ The request option `option.WithDebugLog(nil)` may be helpful while debugging.
 
 See the [full list of request options](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go/option).
 
-## 
 
 HTTP client customization
 
-### 
 
 Middleware
 
 The SDK provides `option.WithMiddleware`, which applies the given middleware to requests.
 
-``` shiki
+```python
 client := anthropic.NewClient(
     option.WithMiddleware(func(req *http.Request, next option.MiddlewareNext) (res *http.Response, err error) {
         // Before the request
@@ -487,7 +471,6 @@ When multiple middlewares are provided as variadic arguments, the middlewares ar
 
 You may also replace the default `http.Client` with `option.WithHTTPClient(client)`. Only one http client is accepted (this overwrites any previous client) and receives requests after any middleware has been applied.
 
-## 
 
 Platform integrations
 
@@ -501,17 +484,15 @@ The Go SDK supports Amazon Bedrock and Google Vertex AI through subpackages:
 - **Bedrock:** `import "github.com/anthropics/anthropic-sdk-go/bedrock"`. Use `bedrock.WithLoadDefaultConfig(ctx)` or `bedrock.WithConfig(cfg)`. Importing this package globally registers a decoder for `application/vnd.amazon.eventstream` for streaming.
 - **Vertex AI:** `import "github.com/anthropics/anthropic-sdk-go/vertex"`. Use `vertex.WithGoogleAuth(ctx, region, projectID)` or `vertex.WithCredentials(ctx, region, projectID, creds)`.
 
-## 
 
 Advanced usage
 
-### 
 
 Accessing raw response data (e.g. response headers)
 
 You can access the raw HTTP response data by using the `option.WithResponseInto()` request option. This is useful when you need to examine response headers, status codes, or other details.
 
-``` shiki
+```python
 // Create a variable to store the HTTP response
 var response *http.Response
 message, err := client.Messages.New(
@@ -539,19 +520,17 @@ fmt.Printf("Status Code: %d\n", response.StatusCode)
 fmt.Printf("Headers: %+#v\n", response.Header)
 ```
 
-### 
 
 Making custom/undocumented requests
 
 This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, params, or response properties, the library can still be used.
 
-#### 
 
 Undocumented endpoints
 
 To make requests to undocumented endpoints, you can use `client.Get`, `client.Post`, and other HTTP verbs. `RequestOptions` on the client, such as retries, will be respected when making these requests.
 
-``` shiki
+```python
 var (
     // params can be an io.Reader, a []byte, an encoding/json serializable object,
     // or a "...Params" struct defined in this library.
@@ -567,13 +546,12 @@ if err != nil {
 }
 ```
 
-#### 
 
 Undocumented request params
 
 To make requests using undocumented parameters, you may use either the `option.WithQuerySet()` or the `option.WithJSONSet()` methods.
 
-``` shiki
+```python
 params := FooNewParams{
     ID: "id_xxxx",
     Data: FooNewParamsData{
@@ -583,7 +561,6 @@ params := FooNewParams{
 client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name", "Doe"))
 ```
 
-#### 
 
 Undocumented response properties
 
@@ -591,7 +568,6 @@ To access undocumented response properties, you may either access the raw JSON o
 
 Any fields that are not present on the response struct will be saved and can be accessed by `result.JSON.ExtraFields()` which returns the extra fields as a `map[string]Field`.
 
-## 
 
 Semantic versioning
 
@@ -604,7 +580,6 @@ Backwards-compatibility is taken seriously to ensure you can rely on a smooth up
 
 Your feedback is welcome; please open an [issue](https://www.github.com/anthropics/anthropic-sdk-go/issues) with questions, bugs, or suggestions.
 
-## 
 
 Additional resources
 

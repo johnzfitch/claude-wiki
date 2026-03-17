@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:28Z"
+fetched_at: "2026-03-17T02:04:04Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/client/sampling"
 title: "Sampling - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Sampling - Model Context Protocol"
 
 The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models via clients. This flow allows clients to maintain control over model access, selection, and permissions while enabling servers to leverage AI capabilities—with no server API keys necessary. Servers can request text, audio, or image-based interactions and optionally include context from MCP servers in their prompts.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -26,7 +25,6 @@ For trust & safety and security, there **SHOULD** always be a human in the loop 
 
 **Request Association Requirement**Servers **MUST** send `sampling/createMessage` requests only in association with an originating client request (e.g., during `tools/call`, `resources/read`, or `prompts/get` processing).Standalone server-initiated sampling on independent communication streams (unrelated to any client request) is not supported and **MUST NOT** be implemented. Future transport implementations are not required to support this pattern.
 
-## 
 
 [​](#tools-in-sampling)
 
@@ -34,7 +32,6 @@ Tools in Sampling
 
 Servers can request that the client’s LLM use tools during sampling by providing a `tools` array and optional `toolChoice` configuration in their sampling requests. The tool definitions in the `tools` array are scoped to the sampling request — they don’t need to correspond to registered tools. This enables servers to implement agentic behaviors where the LLM can call specially designated tools, receive results, and continue the conversation - all within a single sampling request flow. Clients **MUST** declare support for tool use via the `sampling.tools` capability to receive tool-enabled sampling requests. Servers **MUST NOT** send tool-enabled sampling requests to Clients that have not declared support for tool use via the `sampling.tools` capability.
 
-## 
 
 [​](#capabilities)
 
@@ -44,7 +41,7 @@ Clients that support sampling **MUST** declare the `sampling` capability during 
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "sampling": {}
@@ -56,7 +53,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "sampling": {
@@ -70,7 +67,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "sampling": {
@@ -82,13 +79,11 @@ Copy
 
 The `includeContext` parameter values `"thisServer"` and `"allServers"` are soft-deprecated. Servers **SHOULD** avoid using these values (e.g. can just omit `includeContext` since it defaults to `"none"`), and **SHOULD NOT** use them unless the client declares `sampling.context` capability. These values may be removed in future spec releases.
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#creating-messages)
 
@@ -98,7 +93,7 @@ To request a language model generation, servers send a `sampling/createMessage` 
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -135,7 +130,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -151,7 +146,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#sampling-with-tools)
 
@@ -161,7 +155,7 @@ The following diagram illustrates the complete flow of sampling with tools, incl
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -204,7 +198,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -234,7 +228,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#multi-turn-tool-loop)
 
@@ -251,7 +244,7 @@ After receiving tool use requests from the LLM, the server typically:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -330,7 +323,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -346,13 +339,11 @@ Copy
 }
 ```
 
-## 
 
 [​](#message-content-constraints)
 
 Message Content Constraints
 
-### 
 
 [​](#tool-result-messages)
 
@@ -362,7 +353,7 @@ When a user message contains tool results (type: “tool_result”), it **MUST**
 
 Copy
 
-``` shiki
+```python
 {
   "role": "user",
   "content": {
@@ -377,7 +368,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "role": "user",
   "content": [
@@ -399,7 +390,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "role": "user",
   "content": [
@@ -416,7 +407,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#tool-use-and-result-balance)
 
@@ -442,7 +432,6 @@ When using tool use in sampling, every assistant message containing `ToolUseCont
 3.  User message: `ToolResultContent` (`toolUseId: "call_abc123", content: "18°C, partly cloudy"`) ← Missing result for call_def456
 4.  Assistant message: Text response (invalid - not all tool uses were resolved)
 
-## 
 
 [​](#cross-api-compatibility)
 
@@ -450,7 +439,6 @@ Cross-API Compatibility
 
 The sampling specification is designed to work across multiple LLM provider APIs (Claude, OpenAI, Gemini, etc.). Key design decisions for compatibility:
 
-### 
 
 [​](#message-roles)
 
@@ -458,7 +446,6 @@ Message Roles
 
 MCP uses two roles: “user” and “assistant”. Tool use requests are sent in CreateMessageResult with the “assistant” role. Tool results are sent back in messages with the “user” role. Messages with tool results cannot contain other kinds of content.
 
-### 
 
 [​](#tool-choice-modes)
 
@@ -470,7 +457,6 @@ Tool Choice Modes
 - `{mode: "required"}`: Model MUST use at least one tool before completing
 - `{mode: "none"}`: Model MUST NOT use any tools
 
-### 
 
 [​](#parallel-tool-use)
 
@@ -484,19 +470,16 @@ MCP allows models to make multiple tool use requests in parallel (returning an a
 
 Implementations wrapping providers that support disabling parallel tool use MAY expose this as an extension, but it is not part of the core MCP specification.
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#messages)
 
@@ -504,7 +487,6 @@ Messages
 
 Sampling messages **MUST** contain a `role` field of `"user"` or `"assistant"`; and a `content` field representing the message data. The list of messages in a sampling request **SHOULD NOT** be retained between separate requests. The `content` field can contain:
 
-#### 
 
 [​](#text-content)
 
@@ -512,14 +494,13 @@ Text Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "text",
   "text": "The message content"
 }
 ```
 
-#### 
 
 [​](#image-content)
 
@@ -527,7 +508,7 @@ Image Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "image",
   "data": "base64-encoded-image-data",
@@ -535,7 +516,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#audio-content)
 
@@ -543,7 +523,7 @@ Audio Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "audio",
   "data": "base64-encoded-audio-data",
@@ -551,7 +531,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#model-preferences)
 
@@ -559,7 +538,6 @@ Model Preferences
 
 Model selection in MCP requires careful abstraction since servers and clients may use different AI providers with distinct model offerings. A server cannot simply request a specific model by name since the client may not have access to that exact model or may prefer to use a different provider’s equivalent model. To solve this, MCP implements a preference system that combines abstract capability priorities with optional model hints:
 
-#### 
 
 [​](#capability-priorities)
 
@@ -571,7 +549,6 @@ Servers express their needs through three normalized priority values (0-1):
 - `speedPriority`: How important is low latency? Higher values prefer faster models.
 - `intelligencePriority`: How important are advanced capabilities? Higher values prefer more capable models.
 
-#### 
 
 [​](#model-hints)
 
@@ -588,7 +565,7 @@ For example:
 
 Copy
 
-``` shiki
+```python
 {
   "hints": [
     { "name": "claude-3-sonnet" }, // Prefer Sonnet-class models
@@ -602,7 +579,6 @@ Copy
 
 The client processes these preferences to select an appropriate model from its available options. For instance, if the client doesn’t have access to Claude models but has Gemini, it might map the sonnet hint to `gemini-1.5-pro` based on similar capabilities.
 
-### 
 
 [​](#system-prompt)
 
@@ -610,7 +586,6 @@ System Prompt
 
 The optional `systemPrompt` field allows servers to request a specific system prompt. The client **MAY** modify or ignore this field without communicating this to the server.
 
-### 
 
 [​](#context-inclusion)
 
@@ -624,7 +599,6 @@ The `includeContext` parameter specifies what context information the client is 
 
 The client **MAY** modify or ignore this field without communicating this to the server. For example, a client could determine that respecting this field in a particular request would require sharing sensitive information with a server, and constrain its response accordingly.
 
-### 
 
 [​](#sampling-parameters)
 
@@ -639,7 +613,6 @@ LLM sampling can be fine-tuned with the following parameters:
 
 The client **MUST** respect the `maxTokens` parameter. The client **MAY** modify or ignore `temperature`, `stopSequences` and `metadata`. For example, a client could use a model that does not support one or more of these parameters, and would therefore be unable to leverage them.
 
-### 
 
 [​](#result-fields)
 
@@ -660,7 +633,6 @@ Sampling results will contain the following fields:
   - `"maxTokens"`: The token limit was reached.
   - `"toolUse"`: The model wants to use one or more tools.
 
-## 
 
 [​](#error-handling)
 
@@ -677,7 +649,7 @@ Example errors:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -690,7 +662,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -701,7 +673,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#security-considerations)
 

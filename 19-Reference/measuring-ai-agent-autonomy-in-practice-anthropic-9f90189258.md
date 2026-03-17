@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-22T10:51:09Z"
+fetched_at: "2026-03-17T02:03:32Z"
 source_url: "https://www.anthropic.com/research/measuring-agent-autonomy"
 title: "Measuring AI agent autonomy in practice \\ Anthropic"
 ---
+
 # Measuring AI agent autonomy in practice
 
 Feb 18, 2026
@@ -16,15 +17,12 @@ We found that:
 
 - [**Claude Code is working autonomously for longer.**](https://anthropic.com/research/measuring-agent-autonomy#claude-code-is-working-autonomously-for-longer) Among the longest-running sessions, the length of time Claude Code works before stopping has nearly doubled in three months, from under 25 minutes to over 45 minutes. This increase is smooth across model releases, which suggests it isn’t purely a result of increased capabilities, and that existing models are capable of more autonomy than they exercise in practice.
 
-&nbsp;
 
 - [**Experienced users in Claude Code auto-approve more frequently, but interrupt more often.**](https://www.anthropic.com/research/measuring-agent-autonomy#experienced-users-in-claude-code-auto-approve-more-frequently-but-interrupt-more-often) As users gain experience with Claude Code, they tend to stop reviewing each action and instead let Claude run autonomously, intervening only when needed. Among new users, roughly 20% of sessions use full auto-approve, which increases to over 40% as users gain experience.
 
-&nbsp;
 
 - [**Claude Code pauses for clarification more often than humans interrupt it.**](https://www.anthropic.com/research/measuring-agent-autonomy#claude-code-pauses-for-clarification-more-often-than-humans-interrupt-it) In addition to human-initiated stops, *agent*-initiated stops are also an important form of oversight in deployed systems. On the most complex tasks, Claude Code stops to ask for clarification more than twice as often as humans interrupt it.
 
-&nbsp;
 
 - **[Agents are used in risky domains, but not yet at scale.](https://anthropic.com/research/measuring-agent-autonomy#agents-are-used-in-risky-domains-but-not-yet-at-scale)** Most agent actions on our public API are low-risk and reversible. Software engineering accounted for nearly 50% of agentic activity, but we saw emerging usage in healthcare, finance, and cybersecurity.
 
@@ -44,7 +42,6 @@ Next, we developed a collection of metrics that draw on data from both agentic u
 
 - Our **public API** gives us broad visibility into agentic deployments across thousands of different customers. Rather than attempting to infer our customers’ agent architectures, we instead perform our analysis at the level of *individual tool calls*.² This simplifying assumption allows us to make grounded, consistent observations about real-world agents, even as the contexts in which those agents are deployed vary significantly. The limitation of this approach is that we must analyze actions in isolation, and cannot reconstruct how individual actions compose into longer sequences of behavior over time.
 
-&nbsp;
 
 - **Claude Code** offers the opposite tradeoff. Because Claude Code is our own product, we can link requests across sessions and understand entire agent workflows from start to finish. This makes Claude Code especially useful for studying autonomy—for example, how long agents run without human intervention, what triggers interruptions, and how users maintain oversight over Claude as they develop experience. However, because Claude Code is only one product, it does not provide the same diversity of insight into agentic use as API traffic.
 
@@ -246,14 +243,14 @@ On the empirical side, [Kapoor et al. (2024)](https://arxiv.org/abs/2407.01502) 
 
 ## Related content
 
-### India Country Brief: The Anthropic Economic Index
+### Labor market impacts of AI: A new measure and early evidence
 
-[Read more](/research/india-brief-economic-index)
+[Read more](/research/labor-market-impacts)
 
-### How AI assistance impacts the formation of coding skills
+### An update on our model deprecation commitments for Claude Opus 3
 
-[Read more](/research/AI-assistance-coding-skills)
+[Read more](/research/deprecation-updates-opus-3)
 
-### Disempowerment patterns in real-world AI usage
+### The persona selection model
 
-[Read more](/research/disempowerment-patterns)
+[Read more](/research/persona-selection-model)

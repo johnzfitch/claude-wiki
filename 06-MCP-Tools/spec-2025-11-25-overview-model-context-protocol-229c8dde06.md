@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:25Z"
+fetched_at: "2026-03-17T02:04:00Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/server"
 title: "Overview - Model Context Protocol"
 ---
@@ -24,14 +24,11 @@ Each primitive can be summarized in the following control hierarchy:
 
 Explore these key primitives in more detail below:
 
-[](/specification/2025-11-25/server/prompts)
 
 ## Prompts
 
-[](/specification/2025-11-25/server/resources)
 
 ## Resources
 
-[](/specification/2025-11-25/server/tools)
 
 ## Tools

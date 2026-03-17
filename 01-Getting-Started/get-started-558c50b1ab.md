@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-03-12T08:16:03Z"
+fetched_at: "2026-03-17T02:00:38Z"
 source_url: "https://platform.claude.com/docs/en/get-started"
 title: "Get started with Claude - Claude API Docs"
 ---
@@ -11,14 +11,11 @@ title: "Get started with Claude - Claude API Docs"
 Make your first API call to Claude and build a simple web search assistant.
 
 
-## 
-
 Prerequisites
 
 - An Anthropic [Console account](/)
 - An [API key](/settings/keys)
 
-## 
 
 Call the API
 
@@ -93,13 +90,11 @@ Java
     }
     ```
 
-## 
 
 Next steps
 
 You made your first API call. Next, learn the Messages API patterns you'll use in every Claude integration.
 
-[](/docs/en/build-with-claude/working-with-messages)
 
 Working with the Messages API
 
@@ -107,19 +102,16 @@ Learn multi-turn conversations, system prompts, stop reasons, and other core pat
 
 Once you're comfortable with the basics, explore further:
 
-[](/docs/en/about-claude/models/overview)
 
 Models overview
 
 Compare Claude models by capability and cost.
 
-[](/docs/en/build-with-claude/overview)
 
 Features overview
 
 Browse all Claude capabilities: tools, context management, structured outputs, and more.
 
-[](/docs/en/api/client-sdks)
 
 Client SDKs
 

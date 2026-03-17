@@ -1,11 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-16T05:33:56Z"
+fetched_at: "2026-03-17T02:04:15Z"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 title: "What is the Enterprise plan? | Claude Help Center"
 ---
 
 # What is the Enterprise plan?
+
+Updated today
 
 
 The Enterprise plan is designed for organizations that need advanced security, compliance controls, and scalable AI across their teams. It includes everything in the **[Team plan](https://support.claude.com/en/articles/9266767-what-is-the-team-plan)**, plus additional security and compliance features. Enterprise plan pricing works differently than Team plans: the seat fee covers access only, and all usage is billed separately at API rates.

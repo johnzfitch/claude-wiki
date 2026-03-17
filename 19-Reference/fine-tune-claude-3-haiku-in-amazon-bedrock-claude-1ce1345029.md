@@ -1,39 +1,33 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-07T10:11:21Z"
-last_modified: "Sat, 07 Feb 2026 02:58:22 GMT"
+fetched_at: "2026-03-16T23:04:53Z"
+last_modified: "Mon, 16 Mar 2026 20:41:43 GMT"
 source_url: "https://www.anthropic.com/news/fine-tune-claude-3-haiku"
 title: "Fine-tune Claude 3 Haiku in Amazon Bedrock | Claude"
 ---
+
 # Fine-tune Claude 3 Haiku in Amazon Bedrock
 
 Claude 3 Haiku can now be fine-tuned in Amazon Bedrock with custom training data, enabling faster, more accurate performance at lower cost.
 
-[](#)
-
-[](#)
 
 - 
 
-  Category
 
   [Product announcements](https://claude.com/blog/category/announcements)
 
 - 
 
-  Product
 
-  Claude Developer Platform
+  Claude Platform
 
 - 
 
-  Date
 
   July 10, 2024
 
 - 
 
-  Reading time
 
   5
 
@@ -41,7 +35,6 @@ Claude 3 Haiku can now be fine-tuned in Amazon Bedrock with custom training data
 
 - 
 
-  Share
 
   [Copy link](#)
   https://claude.com/blog/fine-tune-claude-3-haiku
@@ -76,7 +69,7 @@ We fine-tuned Haiku to moderate online comments on internet forums¹, including 
 
 [Thomson Reuters](https://www.claude.com/customers/thomson-reuters), a global content and technology company, has seen positive results with Claude 3 Haiku. The company, which serves professionals in legal, tax, accounting, compliance, government, and media, anticipates even faster and more relevant AI results by fine-tuning Claude with their industry expertise.
 
-“We are excited to fine-tune Anthropic’s Claude 3 Haiku model in Amazon Bedrock to further enhance our Claude-powered solutions. Thomson Reuters aims to provide accurate, fast, and consistent user experiences. By optimizing Claude around our industry expertise and specific requirements, we anticipate measurable improvements that deliver high-quality results at even faster speeds. **We’ve already seen positive results with Claude 3 Haiku, and fine-tuning will enable us to tailor AI assistance more precisely**,” said Joel Hron, Head of AI and Labs, Thomson Reuters.  
+“We are excited to fine-tune Anthropic’s Claude 3 Haiku model in Amazon Bedrock to further enhance our Claude-powered solutions. Thomson Reuters aims to provide accurate, fast, and consistent user experiences. By optimizing Claude around our industry expertise and specific requirements, we anticipate measurable improvements that deliver high-quality results at even faster speeds. **We’ve already seen positive results with Claude 3 Haiku, and fine-tuning will enable us to tailor AI assistance more precisely**,” said Joel Hron, Head of AI and Labs, Thomson Reuters.\
 
 ## How to get started
 
@@ -84,114 +77,9 @@ Fine-tuning for Claude 3 Haiku in Amazon Bedrock is now available in preview in 
 
 To request access, contact your AWS account team or submit a support ticket in the [AWS Management Console](https://console.aws.amazon.com/bedrock/).
 
-No items found.
 
 [Prev](#)
 
 Prev
 
 0/5
-
-[Next](#)
-
-Next
-
-eBook
-
-## 
-
-[](#)
-
-FAQ
-
-No items found.
-
-[](#)
-
-## Related posts
-
-Explore more product news and best practices for teams building with Claude.
-
-Dec 18, 2025
-
-### Skills for organizations, partners, the ecosystem
-
-Product announcements
-
-[Skills for organizations, partners, the ecosystem](#)
-
-Skills for organizations, partners, the ecosystem
-
-[Skills for organizations, partners, the ecosystem](/blog/organization-skills-and-directory)
-
-Skills for organizations, partners, the ecosystem
-
-Dec 8, 2025
-
-### Claude Code and Slack
-
-Product announcements
-
-[Claude Code and Slack](#)
-
-Claude Code and Slack
-
-[Claude Code and Slack](/blog/claude-code-and-slack)
-
-Claude Code and Slack
-
-Nov 14, 2025
-
-### Structured outputs on the Claude Developer Platform
-
-Product announcements
-
-[Structured outputs on the Claude Developer Platform](#)
-
-Structured outputs on the Claude Developer Platform
-
-[Structured outputs on the Claude Developer Platform](/blog/structured-outputs-on-the-claude-developer-platform)
-
-Structured outputs on the Claude Developer Platform
-
-Oct 1, 2025
-
-### Claude and Slack
-
-Product announcements
-
-[Claude and Slack](#)
-
-Claude and Slack
-
-[Claude and Slack](/blog/claude-and-slack)
-
-Claude and Slack
-
-## Transform how your organization operates with Claude
-
-See pricing
-
-[See pricing](https://claude.com/pricing#api)
-
-See pricing
-
-Contact sales
-
-[Contact sales](https://claude.com/contact-sales)
-
-Contact sales
-
-Get the developer newsletter
-
-Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
-
-[Subscribe](#)
-
-Subscribe
-
-Please provide your email address if you'd like to receive our monthly developer newsletter. You can unsubscribe at any time.
-
-Thank you! You’re subscribed.
-
-Sorry, there was a problem with your submission, please try again later.

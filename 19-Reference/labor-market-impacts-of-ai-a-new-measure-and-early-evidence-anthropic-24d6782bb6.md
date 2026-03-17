@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-12T08:18:31Z"
+fetched_at: "2026-03-17T02:03:32Z"
 source_url: "https://www.anthropic.com/research/labor-market-impacts"
 title: "Labor market impacts of AI: A new measure and early evidence \\ Anthropic"
 ---

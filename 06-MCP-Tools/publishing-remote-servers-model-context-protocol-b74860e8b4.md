@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:09Z"
+fetched_at: "2026-03-17T02:03:44Z"
 source_url: "https://modelcontextprotocol.io/registry/remote-servers"
 title: "Publishing Remote Servers - Model Context Protocol"
 ---
@@ -16,7 +16,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/acme-analytics",
@@ -34,7 +34,6 @@ Copy
 
 A remote server **MUST** be publicly accessible at its specified URL.
 
-## 
 
 [​](#transport-type)
 
@@ -46,7 +45,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/acme-analytics",
@@ -66,7 +65,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#url-template-variables)
 
@@ -78,7 +76,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/acme-analytics",
@@ -106,7 +104,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/multi-region-mcp",
@@ -134,7 +132,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#http-headers)
 
@@ -146,7 +143,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.example/acme-analytics",
@@ -170,7 +167,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#supporting-remote-and-non-remote-installation)
 
@@ -182,7 +178,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/email-integration-mcp",

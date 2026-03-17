@@ -1,9 +1,10 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-24T04:13:44Z"
+fetched_at: "2026-03-17T02:03:13Z"
 source_url: "https://www.anthropic.com/claude/sonnet"
 title: "Claude Sonnet 4.6 \\ Anthropic"
 ---
+
 # Claude Sonnet 4.6
 
 Hybrid reasoning model with superior intelligence for agents, featuring a 1M context window
@@ -19,7 +20,6 @@ Hybrid reasoning model with superior intelligence for agents, featuring a 1M con
 
   Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale. It can compress multi-day coding projects into hours and deliver production-ready solutions.
 
-  [](/news/claude-sonnet-4-6)
 
   Read more
 
@@ -29,7 +29,6 @@ Hybrid reasoning model with superior intelligence for agents, featuring a 1M con
 
   Sonnet 4.5 is the best model in the world for agents, coding, and computer use. It’s also our most accurate and detailed model for long-running tasks, with enhanced domain knowledge in coding, finance, and cybersecurity.
 
-  [](/news/claude-sonnet-4-5)
 
   Read more
 
@@ -39,7 +38,6 @@ Hybrid reasoning model with superior intelligence for agents, featuring a 1M con
 
   Sonnet 4 improves on Sonnet 3.7 across a variety of areas, especially coding. It offers frontier performance that’s practical for most AI use cases, including user-facing AI assistants and high-volume tasks.
 
-  [](/news/claude-4)
 
   Read more
 
@@ -49,7 +47,6 @@ Hybrid reasoning model with superior intelligence for agents, featuring a 1M con
 
   Sonnet 3.7 is the first hybrid reasoning model and our most intelligent model to date. It’s state-of-the art for coding and delivers significant improvements in content generation, data analysis, and planning.
 
-  [](/news/claude-3-7-sonnet)
 
   Read more
 
@@ -57,7 +54,7 @@ Hybrid reasoning model with superior intelligence for agents, featuring a 1M con
 
 Anyone can chat with Claude using Sonnet 4.6 on Claude.ai, available on web, iOS, and Android.
 
-For developers interested in building agents, Sonnet 4.6 is available on the Claude Developer Platform natively, and in Amazon Bedrock, Google Cloud's Vertex AI, and Microsoft Foundry. The 1M token context window is currently available in beta on the API only.
+For developers interested in building agents, Sonnet 4.6 is available on the Claude Platform natively, and in Amazon Bedrock, Google Cloud's Vertex AI, and Microsoft Foundry. The 1M token context window is currently available in beta on the API only.
 
 Pricing for Sonnet 4.6 starts at \$3 per million input tokens and \$15 per million output tokens, with up to 90% cost savings with [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) and 50% cost savings with [batch processing](https://platform.claude.com/docs/en/build-with-claude/batch-processing#pricing). To learn more, check out our [pricing page](https://claude.com/pricing#api). To get started, simply use `claude-sonnet-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview).
 

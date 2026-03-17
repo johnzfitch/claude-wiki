@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:13Z"
+fetched_at: "2026-03-17T02:03:48Z"
 source_url: "https://modelcontextprotocol.io/seps/973-expose-additional-metadata-for-implementations-res"
 title: "SEP-973: Expose additional metadata for Implementations, Resources, Tools and Prompts - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,13 +33,11 @@ Abstract
 
 This SEP proposes adding two optional fields—`icons` and `websiteUrl`. The `icons` and `websiteUrl` would be added to the `Implementation` schema so that clients can visually identify third-party implementations and link directly to their documentation. The `icons` parameter will also be added to the `Tool`, `Resource` and `Prompt` schemas. While this can be used by both servers and clients for all implementations, we expect it to be used initially for server-provided implementations.
 
-## 
 
 [​](#motivation)
 
 Motivation
 
-### 
 
 [​](#current-state)
 
@@ -48,7 +45,6 @@ Current State
 
 Current implementations only expose namespaced metadata, forcing clients to display generic labels with no visual cues.
 
-### 
 
 [​](#proposed-state)
 
@@ -59,7 +55,6 @@ The proposed implementation would allow us to add visual affordances and links t
 - **Visual Affordance:** Icons make it immediately clear to users which tool or resource source is in use.
 - **Discoverability:** A link to documentation (`websiteUrl`) allows clients to direct users to more information with a single click.
 
-## 
 
 [​](#rationale)
 
@@ -71,7 +66,6 @@ This design builds on prior work in web manifests (MDN) and consolidates communi
 - **Flexible Icon Sizes:** Supports multiple icon sizes (e.g., `48x48`, `96x96`, or `any` for vector formats) to accommodate different client UI needs.
 - **Optional Fields:** By making both fields optional, existing implementations remain fully compatible.
 
-## 
 
 [​](#specification)
 
@@ -81,7 +75,7 @@ Extend the `Implementation` object as follows:
 
 Copy
 
-``` shiki
+```python
 /**
  * A url pointing to an icon URL or a base64-encoded data URI
  *
@@ -145,7 +139,7 @@ Extend the `Tool`, `Resource` and `Prompt` interfaces with the following type:
 
 Copy
 
-``` shiki
+```python
   /**
    * An optional list of icons for a resource.
    * This can be used by clients to display the resource's icon in a user interface.
@@ -157,7 +151,6 @@ Copy
   icons?: Icon[];
 ```
 
-## 
 
 [​](#backwards-compatibility)
 
@@ -165,7 +158,6 @@ Backwards Compatibility
 
 Both icons and websiteUrl are optional fields; clients that ignore them will fall back to existing behavior.
 
-## 
 
 [​](#security-implications)
 

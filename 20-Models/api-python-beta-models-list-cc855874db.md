@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:42Z"
+fetched_at: "2026-03-17T02:02:08Z"
 source_url: "https://platform.claude.com/docs/en/api/python/beta/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -113,7 +113,7 @@ List Models
 
 Python
 
-``` shiki
+```python
 import os
 from anthropic import Anthropic
 
@@ -127,7 +127,7 @@ print(page.id)
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {
@@ -147,7 +147,7 @@ Response 200
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {

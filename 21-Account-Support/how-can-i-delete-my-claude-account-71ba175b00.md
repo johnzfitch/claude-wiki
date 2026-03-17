@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-16T05:33:52Z"
+fetched_at: "2026-03-17T02:04:09Z"
 source_url: "https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account"
 title: "How can I delete my Claude account? | Claude Help Center"
 ---
 
 # How can I delete my Claude account?
+
+Updated today
 
 
 Once you are logged in, click your initials or name in the lower left corner and select "Settings." Navigate to [Settings \> Account](https://claude.ai/settings/account).

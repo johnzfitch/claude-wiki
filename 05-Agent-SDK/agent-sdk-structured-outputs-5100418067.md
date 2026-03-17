@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:13Z"
+fetched_at: "2026-03-17T02:01:06Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/structured-outputs"
 title: "Get structured output from agents - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ Structured outputs let you define the exact shape of data you want back from an 
 
 For full type safety, use [Zod](#type-safe-schemas-with-zod-and-pydantic) (TypeScript) or [Pydantic](#type-safe-schemas-with-zod-and-pydantic) (Python) to define your schema and get strongly-typed objects back.
 
-## 
 
 Why structured outputs?
 
@@ -27,7 +26,6 @@ Consider a recipe app where an agent searches the web and brings back recipes. W
 
 ### With structured outputs
 
-## 
 
 Quick start
 
@@ -37,7 +35,7 @@ The example below asks the agent to research Anthropic and return the company na
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Define the shape of data you want back
@@ -68,7 +66,6 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Type-safe schemas with Zod and Pydantic
 
@@ -78,7 +75,7 @@ The example below defines a schema for a feature implementation plan with a summ
 
 TypeScript
 
-``` shiki
+```python
 import { z } from "zod";
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
@@ -134,7 +131,6 @@ for await (const message of query({
 - Better error messages
 - Composable, reusable schemas
 
-## 
 
 Output format configuration
 
@@ -145,7 +141,6 @@ The `outputFormat` (TypeScript) or `output_format` (Python) option accepts an ob
 
 The SDK supports standard JSON Schema features including all basic types (object, array, string, number, boolean, null), `enum`, `const`, `required`, nested objects, and `$ref` definitions. For the full list of supported features and limitations, see [JSON Schema limitations](/docs/en/build-with-claude/structured-outputs#json-schema-limitations).
 
-## 
 
 Example: TODO tracking agent
 
@@ -155,7 +150,7 @@ The schema includes optional fields (`author` and `date`) since git blame inform
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Define structure for TODO extraction
@@ -204,7 +199,6 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Error handling
 
@@ -221,7 +215,7 @@ The example below checks the `subtype` field to determine whether the output was
 
 TypeScript
 
-``` shiki
+```python
 for await (const msg of query({
   prompt: "Extract contact info from the document",
   options: {
@@ -249,7 +243,6 @@ for await (const msg of query({
 - **Match schema to task.** If the task might not have all the information your schema requires, make those fields optional.
 - **Use clear prompts.** Ambiguous prompts make it harder for the agent to know what output to produce.
 
-## 
 
 Related resources
 

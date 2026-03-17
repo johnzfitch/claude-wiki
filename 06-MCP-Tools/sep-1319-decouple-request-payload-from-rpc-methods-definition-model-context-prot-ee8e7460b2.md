@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:10Z"
+fetched_at: "2026-03-17T02:03:45Z"
 source_url: "https://modelcontextprotocol.io/seps/1319-decouple-request-payload-from-rpc-methods-definiti"
 title: "SEP-1319: Decouple Request Payload from RPC Methods Definition - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP proposes a structural refactoring of the Model Context Protocol (MCP) specification. The core change is to define payload of requests (e.g., CallToolRequest) as independent definitions and have the RPC method definitions refer to these models. This decouples the definition of the data payload from the definition of the remote procedure that transports it, leading to a clearer, more modular, and more maintainable specification.
 
-## 
 
 [​](#motivation)
 
@@ -48,7 +46,6 @@ The current MCP specification tightly couples the data payload of a request with
 
 By refactoring the specification to separate the data model (the “what”) from the RPC method (the “how”), this proposal will create a clearer, more modular specification. This change will immediately improve the developer experience and, most importantly, pave the way for the future evolution of MCP across multiple transports.
 
-## 
 
 [​](#specification)
 
@@ -56,7 +53,6 @@ Specification
 
 The proposal introduces the following principle: All data structures used as parameters (params) or results (result) for RPC methods should be defined as standalone, named schemas. The RPC method definitions will then use references to these schemas.
 
-### 
 
 [​](#current-approach-inline-definition-)
 
@@ -66,7 +62,7 @@ The RPC method definition contains the full structure of its parameters and resu
 
 Copy
 
-``` shiki
+```python
 export interface CallToolRequest extends Request {
   method: "tools/call";
   params: {
@@ -76,7 +72,6 @@ export interface CallToolRequest extends Request {
 }
 ```
 
-### 
 
 [​](#proposed-approach-decoupled-definition-)
 
@@ -86,7 +81,7 @@ First, the data models for the request and response are defined as top-level sch
 
 Copy
 
-``` shiki
+```python
 /**
  * Parameters for a `tools/call` request.
  *
@@ -102,14 +97,13 @@ Then, the RPC method definition becomes much simpler, merely referring to these 
 
 Copy
 
-``` shiki
+```python
 export interface CallToolRequest extends Request {
   method: "tools/call";
   params: CallToolRequestParams;
 }
 ```
 
-## 
 
 [​](#rationale)
 
@@ -122,7 +116,6 @@ The proposed solution—separating payload definitions from the RPC method—was
 
 This architectural separation is superior to maintaining separate, parallel specifications for each transport (e.g., one for JSON-RPC, another for gRPC), which would introduce significant maintenance overhead and risk inconsistencies. Crucially, this design refactors the specification document itself but intentionally **leaves the on-the-wire format unchanged**. This makes the proposal fully backward-compatible, requiring no changes from existing, compliant clients and servers. In short, this change is a strategic, foundational improvement that enables future growth without penalizing the current ecosystem.
 
-## 
 
 [​](#backward-compatibility)
 

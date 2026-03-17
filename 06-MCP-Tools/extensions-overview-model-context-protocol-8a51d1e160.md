@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:08Z"
+fetched_at: "2026-03-17T02:03:42Z"
 source_url: "https://modelcontextprotocol.io/extensions/overview"
 title: "Extensions Overview - Model Context Protocol"
 ---
@@ -11,8 +11,6 @@ title: "Extensions Overview - Model Context Protocol"
 Optional extensions to the Model Context Protocol
 
 
-# 
-
 [​](#mcp-extensions)
 
 MCP Extensions
@@ -21,7 +19,6 @@ MCP extensions are optional additions to the specification that define capabilit
 
 If you’re building a third-party extension, use a reversed domain name you own as the vendor prefix to avoid collisions (similar to Java package naming). For example, a company owning `example.com` would use `com.example/` as their prefix (e.g., `com.example/my-extension`).
 
-## 
 
 [​](#official-extension-repositories)
 
@@ -29,7 +26,6 @@ Official Extension Repositories
 
 Official extensions live inside the [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol/) in repositories with the `ext-` prefix.
 
-### 
 
 [​](#mcp-authorization-extensions)
 
@@ -45,7 +41,6 @@ Extensions for supplementary authorization mechanisms beyond the core specificat
 | [OAuth Client Credentials](/extensions/auth/oauth-client-credentials) | OAuth 2.0 client credentials flow for machine-to-machine authentication. |
 | [Enterprise-Managed Authorization](/extensions/auth/enterprise-managed-authorization) | Framework for enterprise environments requiring centralized access control. |
 
-### 
 
 [​](#mcp-apps)
 
@@ -62,7 +57,6 @@ Extensions for interactive UI elements in conversational MCP clients.
 
 To get started building MCP Apps, see the [quickstart guide](/extensions/apps/build#getting-started) or read the full [MCP Apps documentation](https://apps.extensions.modelcontextprotocol.io/api/documents/Quickstart.html).
 
-## 
 
 [​](#experimental-extensions)
 
@@ -70,7 +64,6 @@ Experimental Extensions
 
 Experimental extensions provide an incubation pathway for [Working Groups and Interest Groups](/community/working-interest-groups) to prototype ideas and collaborate on extension concepts before formal SEP submission. Experimental extension repositories live within the MCP GitHub organization with the `experimental-ext-` prefix (e.g., `experimental-ext-interceptors`).
 
-### 
 
 [​](#ground-rules)
 
@@ -80,7 +73,6 @@ Ground Rules
 - Repositories and published packages need to clearly indicate their experimental status (e.g., in the README and package name)
 - [Core Maintainers](/community/governance#core-maintainers) retain oversight of experimental extension repositories, including the ability to archive or remove them
 
-### 
 
 [​](#graduation-to-official-status)
 
@@ -88,7 +80,6 @@ Graduation to Official Status
 
 To promote an experimental extension to official status, it goes through the standard SEP process (Extensions Track). Feel free to reference the experimental repository and any reference implementations you built during incubation to demonstrate the extension’s practicality.
 
-## 
 
 [​](#creating-extensions)
 
@@ -102,7 +93,6 @@ The lifecycle for official extensions follows a SEP-based process. For full deta
 4.  **Publish**: Once approved, open a PR to add the extension to the extension repository.
 5.  **Adopt**: After that, other clients, servers, and SDKs can implement the extension too.
 
-### 
 
 [​](#requirements)
 
@@ -111,7 +101,6 @@ Requirements
 - Extension specifications need to use RFC 2119 language (MUST, SHOULD, MAY)
 - Extensions must have an associated working group or interest group
 
-### 
 
 [​](#sdk-implementation)
 
@@ -121,7 +110,6 @@ SDKs can choose to implement extensions, but it’s not required for protocol co
 
 Extensions are always disabled by default and require explicit opt-in from the developer.
 
-### 
 
 [​](#evolution)
 
@@ -134,7 +122,6 @@ Extensions evolve independently of the core protocol. Updates are managed by the
 - Altering the semantics of existing behavior
 - Adding new required fields
 
-## 
 
 [​](#negotiation)
 
@@ -142,7 +129,6 @@ Negotiation
 
 Clients and servers advertise their support for extensions in the `extensions` field within their respective capabilities during the [initialization handshake](/specification/latest/basic/lifecycle).
 
-### 
 
 [​](#client-capabilities)
 
@@ -152,7 +138,7 @@ Clients advertise extension support in the `initialize` request:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -177,7 +163,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#server-capabilities)
 
@@ -187,7 +172,7 @@ Servers advertise extension support in the `initialize` response:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -209,7 +194,6 @@ Copy
 
 Each extension specifies the schema of its settings object; an empty object indicates no settings.
 
-### 
 
 [​](#graceful-degradation)
 

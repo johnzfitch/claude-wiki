@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:09Z"
+fetched_at: "2026-03-17T02:03:44Z"
 source_url: "https://modelcontextprotocol.io/seps/1024-mcp-client-security-requirements-for-local-server-"
 title: "SEP-1024: MCP Client Security Requirements for Local Server Installation - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP addresses critical security vulnerabilities in MCP client implementations that support one-click installation of local MCP servers. The current MCP specification lacks explicit security requirements for client-side installation flows, allowing malicious actors to execute arbitrary commands on user systems through crafted MCP server configurations distributed via links or social engineering. This proposal establishes a best practice for MCP clients, requiring explicit user consent before executing any local server installation commands and complete command transparency.
 
-## 
 
 [​](#motivation)
 
@@ -49,13 +47,11 @@ The existing MCP specification does not address client-side security concerns re
 
 Visual Studio Code [addressed this](https://den.dev/blog/vs-code-mcp-install-consent/) by implementing consent dialogs. Similarly, Cursor also supports a consent dialog for one-click local MCP server installation. Without explicit security requirements in the specification, MCP client implementers may unknowingly create vulnerable installation flows, putting end users at risk of system compromise.
 
-## 
 
 [​](#specification)
 
 Specification
 
-### 
 
 [​](#client-security-requirements)
 
@@ -63,7 +59,6 @@ Client Security Requirements
 
 MCP clients that support one-click local MCP server configuration **MUST** implement the following security controls:
 
-#### 
 
 [​](#pre-configuration-consent)
 
@@ -79,13 +74,11 @@ Before executing any command to install or configure a local MCP server, the MCP
 3.  Provide an option for users to cancel the installation
 4.  Not proceed with installation if consent is denied or not provided
 
-## 
 
 [​](#rationale)
 
 Rationale
 
-### 
 
 [​](#design-decisions)
 
@@ -93,7 +86,6 @@ Design Decisions
 
 **Mandatory Consent Dialogs**: The requirement for explicit consent dialogs balances security with usability. While this adds friction to the MCP server configuration process, it prevents potential breaches from silent command execution.
 
-## 
 
 [​](#backward-compatibility)
 
@@ -113,7 +105,6 @@ This SEP introduces new **requirements** for MCP client implementations but does
 
 No protocol-level backward compatibility issues exist, as this SEP addresses client behavior rather than the MCP wire protocol.
 
-## 
 
 [​](#reference-implementation)
 
@@ -121,13 +112,11 @@ Reference Implementation
 
 N/A
 
-## 
 
 [​](#security-implications)
 
 Security Implications
 
-### 
 
 [​](#security-benefits)
 
@@ -140,7 +129,6 @@ This SEP directly addresses:
 - **Supply Chain Attacks**: Creates visibility into MCP server installation commands
 - **Privilege Escalation**: Users can identify and reject commands requesting elevated privileges
 
-### 
 
 [​](#residual-risks)
 
@@ -152,7 +140,6 @@ Even with these controls, risks remain:
 - **Sophisticated Obfuscation**: Advanced attackers may craft commands that appear legitimate
 - **Implementation Gaps**: Clients may implement controls incorrectly
 
-### 
 
 [​](#risk-mitigation)
 

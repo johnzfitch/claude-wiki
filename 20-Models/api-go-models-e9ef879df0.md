@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:17:09Z"
+fetched_at: "2026-03-17T02:02:26Z"
 source_url: "https://platform.claude.com/docs/en/api/go/models"
 title: "Models - Claude API Reference"
 ---

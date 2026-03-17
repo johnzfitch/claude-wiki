@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-22T10:50:54Z"
+fetched_at: "2026-03-17T02:03:15Z"
 source_url: "https://www.anthropic.com/news/anthropic-rwanda-mou"
 title: "Anthropic and the Government of Rwanda sign MOU for AI in health and education \\ Anthropic"
 ---
+
 # Anthropic and the Government of Rwanda sign MOU for AI in health and education
 
 Feb 17, 2026
@@ -35,18 +36,18 @@ Together, these partnerships reflect a long-term collaboration that prioritizes 
 
 ## Related content
 
-### Making frontier cybersecurity capabilities available to defenders
+### Anthropic invests \$100 million into the Claude Partner Network
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-code-security)
+[Read more](/news/claude-partner-network)
 
-### Introducing Claude Sonnet 4.6
+### Introducing The Anthropic Institute
 
-Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/claude-sonnet-4-6)
+[Read more](/news/the-anthropic-institute)
 
-### Anthropic and Infosys collaborate to build AI agents for telecommunications and other regulated industries
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/anthropic-infosys)
+[Read more](/news/sydney-fourth-office-asia-pacific)

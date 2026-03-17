@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:52Z"
+fetched_at: "2026-03-17T02:03:32Z"
 source_url: "https://www.anthropic.com/research/many-shot-jailbreaking"
 title: "Many-shot jailbreaking \\ Anthropic"
 ---
+
 # Many-shot jailbreaking
 
 Apr 2, 2024
@@ -44,7 +45,6 @@ In the example above, and in cases where a handful of faux dialogues are include
 
 However, simply including a very large number of faux dialogues preceding the final question—in our research, we tested up to 256—produces a very different response. As illustrated in the stylized figure below, a large number of “shots” (each shot being one faux dialogue) jailbreaks the model, and causes it to provide an answer to the final, potentially-dangerous request, overriding its safety training.
 
-### 
 
 In our study, we showed that as the number of included dialogues (the number of “shots”) increases beyond a certain point, it becomes more likely that the model will produce a harmful response (see figure below).
 
@@ -61,7 +61,6 @@ We found that in-context learning under normal, non-jailbreak-related circumstan
 
 This is illustrated in the two plots below: the left-hand plot shows the scaling of many-shot jailbreaking attacks across an increasing context window (lower on this metric indicates a greater number of harmful responses). The right-hand plot shows strikingly similar patterns for a selection of benign in-context learning tasks (unrelated to any jailbreaking attempts).
 
-### 
 
 This idea about in-context learning might also help explain another result reported in our paper: that many-shot jailbreaking is often more effective—that is, it takes a shorter prompt to produce a harmful response—for larger models. The larger an LLM, the better it tends to be at in-context learning, at least on some tasks; if in-context learning is what underlies many-shot jailbreaking, it would be a good explanation for this empirical result. Given that larger models are those that are potentially the most harmful, the fact that this jailbreak works so well on them is particularly concerning.
 
@@ -92,16 +91,14 @@ All the technical details of our many-shot jailbreaking study are reported in ou
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
+### An update on our model deprecation commitments for Claude Opus 3
+
+[Read more](/research/deprecation-updates-opus-3)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

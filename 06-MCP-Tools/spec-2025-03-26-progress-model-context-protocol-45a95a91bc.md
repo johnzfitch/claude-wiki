@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:17Z"
+fetched_at: "2026-03-17T02:03:52Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/basic/utilities/progress"
 title: "Progress - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Progress - Model Context Protocol"
 
 The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send progress notifications to provide updates about operation status.
 
-## 
 
 [​](#progress-flow)
 
@@ -23,7 +22,7 @@ When a party wants to *receive* progress updates for a request, it includes a `p
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -45,7 +44,7 @@ The receiver **MAY** then send progress notifications containing:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/progress",
@@ -62,7 +61,6 @@ Copy
 - The `progress` and the `total` values **MAY** be floating point.
 - The `message` field **SHOULD** provide relevant human readable progress information.
 
-## 
 
 [​](#behavior-requirements)
 
@@ -76,7 +74,6 @@ Behavior Requirements
     - Send notifications at whatever frequency they deem appropriate
     - Omit the total value if unknown
 
-## 
 
 [​](#implementation-notes)
 

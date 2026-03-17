@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-16T05:33:54Z"
+fetched_at: "2026-03-17T02:04:12Z"
 source_url: "https://support.claude.com/en/articles/12326764-can-i-use-my-outputs-to-train-an-ai-model"
 title: "Can I use my Outputs to train an AI model? | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Can I use my Outputs to train an AI model? | Claude Help Center"
 3.  Can I use my Outputs to train an AI model?
 
 # Can I use my Outputs to train an AI model?
+
+Updated today
 
 
 ## Understanding our policies on using Claude's Outputs for model training and development

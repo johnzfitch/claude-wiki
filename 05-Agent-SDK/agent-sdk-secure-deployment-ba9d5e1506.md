@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:14Z"
+fetched_at: "2026-03-17T02:01:09Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/secure-deployment"
 title: "Securely deploying AI agents - Claude API Docs"
 ---
@@ -19,7 +19,6 @@ The good news is that securing an agent deployment doesn't require exotic infras
 
 Not every deployment needs maximum security. A developer running Claude Code on their laptop has different requirements than a company processing customer data in a multi-tenant environment. This guide presents options ranging from Claude Code's built-in security features to hardened production architectures, so you can choose what fits your situation.
 
-## 
 
 Threat model
 
@@ -27,7 +26,6 @@ Agents can take unintended actions due to prompt injection (instructions embedde
 
 Defense in depth is still good practice though. For example, if an agent processes a malicious file that instructs it to send customer data to an external server, network controls can block that request entirely.
 
-## 
 
 Built-in security features
 
@@ -38,13 +36,11 @@ Claude Code includes several security features that address common concerns. See
 - **Web search summarization**: Search results are summarized rather than passing raw content directly into the context, reducing the risk of prompt injection from malicious web content.
 - **Sandbox mode**: Bash commands can run in a sandboxed environment that restricts filesystem and network access. See the [sandboxing documentation](https://code.claude.com/docs/en/sandboxing) for details.
 
-## 
 
 Security principles
 
 For deployments that require additional hardening beyond Claude Code's defaults, these principles guide the available options.
 
-### 
 
 Security boundaries
 
@@ -52,7 +48,6 @@ A security boundary separates components with different trust levels. For high-s
 
 For example, rather than giving an agent direct access to an API key, you could run a proxy outside the agent's environment that injects the key into requests. The agent can make API calls, but it never sees the credential itself. This pattern is useful for multi-tenant deployments or when processing untrusted content.
 
-### 
 
 Least privilege
 
@@ -65,7 +60,6 @@ When needed, you can restrict the agent to only the capabilities required for it
 | Credentials         | Inject via proxy rather than exposing directly  |
 | System capabilities | Drop Linux capabilities in containers           |
 
-### 
 
 Defense in depth
 
@@ -78,7 +72,6 @@ For high-security environments, layering multiple controls provides additional p
 
 The right combination depends on your threat model and operational requirements.
 
-## 
 
 Isolation technologies
 
@@ -93,7 +86,6 @@ In all of these configurations, Claude Code (or your Agent SDK application) runs
 | gVisor | Excellent (with correct setup) | Medium/High | Medium |
 | VMs (Firecracker, QEMU) | Excellent (with correct setup) | High | Medium/High |
 
-### 
 
 Sandbox runtime
 
@@ -109,7 +101,7 @@ The main advantage is simplicity: no Docker configuration, container images, or 
 
 **Setup:**
 
-``` shiki
+```python
 npm install @anthropic-ai/sandbox-runtime
 ```
 
@@ -123,7 +115,6 @@ Then create a configuration file specifying allowed paths and domains.
 
 For many single-developer and CI/CD use cases, sandbox-runtime raises the bar significantly with minimal setup. The sections below cover containers and VMs for deployments requiring stronger isolation.
 
-### 
 
 Containers
 
@@ -131,7 +122,7 @@ Containers provide isolation through Linux namespaces. Each container has its ow
 
 A security-hardened container configuration might look like this:
 
-``` shiki
+```python
 docker run \
   --cap-drop ALL \
   --security-opt no-new-privileges \
@@ -178,7 +169,6 @@ This is the same architecture used by [sandbox-runtime](https://github.com/anthr
 | `--userns-remap` | Maps container root to unprivileged host user; requires daemon configuration but limits damage from container escape |
 | `--ipc private` | Isolates inter-process communication to prevent cross-container attacks |
 
-### 
 
 gVisor
 
@@ -188,7 +178,7 @@ If an agent runs malicious code (perhaps due to prompt injection), that code run
 
 To use gVisor with Docker, install the `runsc` runtime and configure the daemon:
 
-``` shiki
+```python
 // /etc/docker/daemon.json
 {
   "runtimes": {
@@ -201,7 +191,7 @@ To use gVisor with Docker, install the `runsc` runtime and configure the daemon:
 
 Then run containers with:
 
-``` shiki
+```python
 docker run --runtime=runsc agent-image
 ```
 
@@ -215,7 +205,6 @@ docker run --runtime=runsc agent-image
 
 For multi-tenant environments or when processing untrusted content, the additional isolation is often worth the overhead.
 
-### 
 
 Virtual machines
 
@@ -225,7 +214,6 @@ Firecracker is designed for lightweight microVM isolation. It can boot VMs in un
 
 With this approach, the agent VM has no external network interface. Instead, it communicates through `vsock` (virtual sockets). All traffic routes through vsock to a proxy on the host, which enforces allowlists and injects credentials before forwarding requests.
 
-### 
 
 Cloud deployments
 
@@ -237,13 +225,11 @@ For cloud deployments, you can combine any of the above isolation technologies w
 4.  Assign minimal IAM permissions to the agent's service account, routing sensitive access through the proxy where possible
 5.  Log all traffic at the proxy for audit purposes
 
-## 
 
 Credential management
 
 Agents often need credentials to call APIs, access repositories, or interact with cloud services. The challenge is providing this access without exposing the credentials themselves.
 
-### 
 
 The proxy pattern
 
@@ -256,7 +242,6 @@ This pattern has several benefits:
 3.  The proxy can log all requests for auditing
 4.  Credentials are stored in one secure location rather than distributed to each agent
 
-### 
 
 Configuring Claude Code to use a proxy
 
@@ -264,7 +249,7 @@ Claude Code supports two methods for routing sampling requests through a proxy:
 
 **Option 1: ANTHROPIC_BASE_URL (simple but only for sampling API requests)**
 
-``` shiki
+```python
 export ANTHROPIC_BASE_URL="http://localhost:8080"
 ```
 
@@ -272,14 +257,13 @@ This tells Claude Code and the Agent SDK to send sampling requests to your proxy
 
 **Option 2: HTTP_PROXY / HTTPS_PROXY (system-wide)**
 
-``` shiki
+```python
 export HTTP_PROXY="http://localhost:8080"
 export HTTPS_PROXY="http://localhost:8080"
 ```
 
 Claude Code and the Agent SDK respect these standard environment variables, routing all HTTP traffic through the proxy. For HTTPS, the proxy creates an encrypted CONNECT tunnel: it cannot see or modify request contents without TLS interception.
 
-### 
 
 Implementing a proxy
 
@@ -290,13 +274,11 @@ You can build your own proxy or use an existing one:
 - [Squid](http://www.squid-cache.org/): caching proxy with access control lists
 - [LiteLLM](https://github.com/BerriAI/litellm): LLM gateway with credential injection and rate limiting
 
-### 
 
 Credentials for other services
 
 Beyond sampling from the Claude API, agents often need authenticated access to other services, such as git repositories, databases, and internal APIs. There are two main approaches:
 
-#### 
 
 Custom tools
 
@@ -309,7 +291,6 @@ Advantages:
 - **No TLS interception**: The external service makes authenticated requests directly
 - **Credentials stay outside**: The agent only sees the tool interface, not the underlying credentials
 
-#### 
 
 Traffic forwarding
 
@@ -329,19 +310,17 @@ A **transparent proxy** intercepts traffic at the network level, so the client d
 
 Both approaches still require the TLS-terminating proxy and trusted CA certificate. They just ensure traffic actually reaches the proxy.
 
-## 
 
 Filesystem configuration
 
 Filesystem controls determine what files the agent can read and write.
 
-### 
 
 Read-only code mounting
 
 When the agent needs to analyze code but not modify it, mount the directory read-only:
 
-``` shiki
+```python
 docker run -v /path/to/code:/workspace:ro agent-image
 ```
 
@@ -362,7 +341,6 @@ Even read-only access to a code directory can expose credentials. Common files t
 
 Consider copying only the source files needed, or using `.dockerignore`-style filtering.
 
-### 
 
 Writable locations
 
@@ -370,7 +348,7 @@ If the agent needs to write files, you have a few options depending on whether y
 
 For ephemeral workspaces in containers, use `tmpfs` mounts that exist only in memory and are cleared when the container stops:
 
-``` shiki
+```python
 docker run \
   --read-only \
   --tmpfs /tmp:rw,noexec,nosuid,size=100m \
@@ -380,7 +358,6 @@ docker run \
 
 If you want to review changes before persisting them, an overlay filesystem lets the agent write without modifying underlying files. Changes are stored in a separate layer you can inspect, apply, or discard. For fully persistent output, mount a dedicated volume but keep it separate from sensitive directories.
 
-## 
 
 Further reading
 

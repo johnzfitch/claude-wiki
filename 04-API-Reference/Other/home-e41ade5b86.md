@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference/Other"
-fetched_at: "2026-03-15T04:10:36Z"
+fetched_at: "2026-03-17T02:04:28Z"
 source_url: "https://platform.claude.com/docs/en/home"
 title: "Documentation - Claude API Docs"
 ---
@@ -9,8 +9,6 @@ Everything you need to integrate Claude into your applications. From first API c
 
 What do you want to build?
 
-
-[](/docs/en/get-started)
 
 Quickstart[](/settings/keys)
 
@@ -34,7 +32,7 @@ C#
 
 cURL
 
-``` shiki
+```python
 import anthropic
 
 client = anthropic.Anthropic()
@@ -60,15 +58,12 @@ Pick the developer surface that matches your approach, and the infrastructure th
 
 Send a request, get a response. You construct every turn, manage conversation state, and write your own tool loop.
 
-[](/docs/en/get-started)
 
 Quickstart
 
-[](/docs/en/api/messages/create)
 
 API reference
 
-[](/docs/en/api/client-sdks)
 
 Client SDKs
 
@@ -76,15 +71,12 @@ Client SDKs
 
 Claude Code as a library. Give Claude a task and the SDK runs the loop with built-in file, shell, and web tools.
 
-[](/docs/en/agent-sdk/quickstart)
 
 Agent SDK quickstart
 
-[](/docs/en/agent-sdk/typescript)
 
 TypeScript Agent SDK
 
-[](/docs/en/agent-sdk/python)
 
 Python Agent SDK
 
@@ -104,23 +96,18 @@ Follow the lifecycle or jump to what you need.
 
     ### Get started
 
-    [](/docs/en/get-started)
 
     Quickstart
 
-    [](/settings/keys)
 
     Get API key
 
-    [](/docs/en/about-claude/models/overview)
 
     Choose a model
 
-    [](/docs/en/api/client-sdks)
 
     Install an SDK
 
-    [](/workbench)
 
     Try the Workbench
 
@@ -128,29 +115,24 @@ Follow the lifecycle or jump to what you need.
 
     ### Build
 
-    [](/docs/en/api/messages/create)
 
     Messages API
 
     [Extended thinking](/docs/en/build-with-claude/extended-thinking)
 
-    [](/docs/en/build-with-claude/vision)
 
     Vision
 
-    [](/docs/en/agents-and-tools/tool-use/overview)
 
     Tool use
 
     [Web search](/docs/en/agents-and-tools/tool-use/web-search-tool)
 
-    [](/docs/en/agents-and-tools/tool-use/code-execution-tool)
 
     Code execution
 
     [Structured outputs](/docs/en/build-with-claude/structured-outputs)
 
-    [](/docs/en/build-with-claude/prompt-caching)
 
     Prompt caching
 
@@ -162,17 +144,14 @@ Follow the lifecycle or jump to what you need.
 
     [Prompting best practices](/docs/en/build-with-claude/prompt-engineering/overview)
 
-    [](/docs/en/test-and-evaluate/develop-tests)
 
     Run evals
 
     [Batch testing](/docs/en/build-with-claude/batch-processing)
 
-    [](/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency)
 
     Safety & guardrails
 
-    [](/docs/en/api/rate-limits)
 
     Rate limits & errors
 
@@ -182,19 +161,15 @@ Follow the lifecycle or jump to what you need.
 
     ### Operate
 
-    [](/docs/en/build-with-claude/workspaces)
 
     Workspaces & admin
 
-    [](/settings/keys)
 
     API key management
 
-    [](/docs/en/build-with-claude/usage-cost-api)
 
     Usage monitoring
 
-    [](/docs/en/about-claude/models/migration-guide)
 
     Model migration
 
@@ -247,7 +222,6 @@ Quickstarts
 
 Deployable starter apps.
 
-[](/docs/en/release-notes/overview)
 
 What's new
 

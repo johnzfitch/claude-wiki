@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-14T10:15:53Z"
+fetched_at: "2026-03-17T02:00:52Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/agent-loop"
 title: "How the agent loop works - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ The Agent SDK lets you embed Claude Code's autonomous agent loop in your own app
 
 When you start an agent, the SDK runs the same [execution loop that powers Claude Code](https://code.claude.com/docs/en/how-claude-code-works#the-agentic-loop): Claude evaluates your prompt, calls tools to take action, receives the results, and repeats until the task is complete. This page explains what happens inside that loop so you can build, debug, and optimize your agents effectively.
 
-## 
 
 The loop at a glance
 
@@ -29,7 +28,6 @@ Every agent session follows the same cycle:
 
 A quick question ("what files are here?") might take one or two turns of calling `Glob` and responding with the results. A complex task ("refactor the auth module and update the tests") can chain dozens of tool calls across many turns, reading files, editing code, and running tests, with Claude adjusting its approach based on each result.
 
-## 
 
 Turns and messages
 
@@ -50,7 +48,6 @@ You can cap the loop with `max_turns` / `maxTurns`, which counts tool-use turns 
 
 Without limits, the loop runs until Claude finishes on its own, which is fine for well-scoped tasks but can run long on open-ended prompts ("improve this codebase"). Setting a budget is a good default for production agents. See [Turns and budget](#turns-and-budget) below for the option reference.
 
-## 
 
 Message types
 
@@ -64,7 +61,6 @@ As the loop runs, the SDK yields a stream of messages. Each message carries a ty
 
 These five types cover the full agent loop lifecycle in both SDKs. The TypeScript SDK also yields additional observability events (hook events, tool progress, rate limits, task notifications) that provide extra detail but are not required to drive the loop. See the [Python message types reference](/docs/en/agent-sdk/python#message-types) and [TypeScript message types reference](/docs/en/agent-sdk/typescript#message-types) for the complete lists.
 
-### 
 
 Handle messages
 
@@ -81,13 +77,11 @@ How you check message types depends on the SDK:
 
 ### Example: Check message types and handle results
 
-## 
 
 Tool execution
 
 Tools give your agent the ability to take action. Without tools, Claude can only respond with text. With tools, Claude can read files, run commands, search code, and interact with external services.
 
-### 
 
 Built-in tools
 
@@ -108,7 +102,6 @@ Beyond built-in tools, you can:
 - **Define custom tools** with [custom tool handlers](/docs/en/agent-sdk/custom-tools)
 - **Load project skills** via [setting sources](/docs/en/agent-sdk/claude-code-features) for reusable workflows
 
-### 
 
 Tool permissions
 
@@ -122,7 +115,6 @@ You can also scope individual tools with rules like `"Bash(npm:*)"` to allow onl
 
 When a tool is denied, Claude receives a rejection message as the tool result and typically attempts a different approach or reports that it couldn't proceed.
 
-### 
 
 Parallel tool execution
 
@@ -130,13 +122,11 @@ When Claude requests multiple tool calls in a single turn, both SDKs can run the
 
 Custom tools default to sequential execution. To enable parallel execution for a custom tool, mark it as read-only in its annotations: `readOnly` in [TypeScript](/docs/en/agent-sdk/typescript#tool) or `readOnlyHint` in [Python](/docs/en/agent-sdk/python#tool).
 
-## 
 
 Control how the loop runs
 
 You can limit how many turns the loop takes, how much it costs, how deeply Claude reasons, and whether tools require approval before running. All of these are fields on [`ClaudeAgentOptions`](/docs/en/agent-sdk/python#claude-agent-options) (Python) / [`Options`](/docs/en/agent-sdk/typescript#options) (TypeScript).
 
-### 
 
 Turns and budget
 
@@ -147,7 +137,6 @@ Turns and budget
 
 When either limit is hit, the SDK returns a `ResultMessage` with a corresponding error subtype (`error_max_turns` or `error_max_budget_usd`). See [Handle the result](#handle-the-result) for how to check these subtypes and [`ClaudeAgentOptions`](/docs/en/agent-sdk/python#claude-agent-options) / [`Options`](/docs/en/agent-sdk/typescript#options) for syntax.
 
-### 
 
 Effort level
 
@@ -166,7 +155,6 @@ If you don't set `effort`, the Python SDK leaves the parameter unset and defers 
 
 Use lower effort for agents doing simple, well-scoped tasks (like listing files or running a single grep) to reduce cost and latency. `effort` is set at the top-level `query()` options, not per-subagent.
 
-### 
 
 Permission mode
 
@@ -182,19 +170,16 @@ The permission mode option (`permission_mode` in Python, `permissionMode` in Typ
 
 For interactive applications, use `"default"` with a tool approval callback to surface approval prompts. For autonomous agents on a dev machine, `"acceptEdits"` auto-approves file edits while still gating `Bash` behind allow rules. Reserve `"bypassPermissions"` for CI, containers, or other isolated environments. See [Permissions](/docs/en/agent-sdk/permissions) for full details.
 
-### 
 
 Model
 
 If you don't set `model`, the SDK uses Claude Code's default, which depends on your authentication method and subscription. Set it explicitly (for example, `model="claude-sonnet-4-6"`) to pin a specific model or to use a smaller model for faster, cheaper agents. See [models](/docs/en/about-claude/models) for available IDs.
 
-## 
 
 The context window
 
 The context window is the total amount of information available to Claude during a session. It does not reset between turns within a session. Everything accumulates: the system prompt, tool definitions, conversation history, tool inputs, and tool outputs. Content that stays the same across turns (system prompt, tool definitions, CLAUDE.md) is automatically [prompt cached](/docs/en/build-with-claude/prompt-caching), which reduces cost and latency for repeated prefixes.
 
-### 
 
 What consumes context
 
@@ -210,7 +195,6 @@ Here's how each component affects context in the SDK:
 
 Large tool outputs consume significant context. Reading a big file or running a command with verbose output can use thousands of tokens in a single turn. Context accumulates across turns, so longer sessions with many tool calls build up significantly more context than short ones.
 
-### 
 
 Automatic compaction
 
@@ -226,7 +210,6 @@ You can customize compaction behavior in several ways:
 
 ### Example: Summarization instructions in CLAUDE.md
 
-### 
 
 Keep context efficient
 
@@ -239,7 +222,6 @@ A few strategies for long-running agents:
 
 For a detailed breakdown of per-feature context costs, see [Understand context costs](https://code.claude.com/docs/en/features-overview#understand-context-costs).
 
-## 
 
 Sessions and continuity
 
@@ -251,7 +233,6 @@ See [Session management](/docs/en/agent-sdk/sessions) for the full guide on resu
 
 In Python, `ClaudeSDKClient` handles session IDs automatically across multiple calls. See the [Python SDK reference](/docs/en/agent-sdk/python#choosing-between-query-and-claude-sdk-client) for details.
 
-## 
 
 Handle the result
 
@@ -269,7 +250,6 @@ The `result` field (the final text output) is only present on the `success` vari
 
 The result also includes a `stop_reason` field (`string | null` in TypeScript, `str | None` in Python) indicating why the model stopped generating on its final turn. Common values are `end_turn` (model finished normally), `max_tokens` (hit the output token limit), and `refusal` (the model declined the request). On error result subtypes, `stop_reason` carries the value from the last assistant response before the loop ended. To detect refusals, check `stop_reason === "refusal"` (TypeScript) or `stop_reason == "refusal"` (Python). See [`SDKResultMessage`](/docs/en/agent-sdk/typescript#sdk-result-message) (TypeScript) or [`ResultMessage`](/docs/en/agent-sdk/python#result-message) (Python) for the full type.
 
-## 
 
 Hooks
 
@@ -288,7 +268,6 @@ Hooks run in your application process, not inside the agent's context window, so
 
 Both SDKs support all the events above. The TypeScript SDK includes additional events that Python does not yet support. See [Control execution with hooks](/docs/en/agent-sdk/hooks) for the complete event list, per-SDK availability, and the full callback API.
 
-## 
 
 Put it all together
 
@@ -296,7 +275,7 @@ This example combines the key concepts from this page into a single agent that f
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage
 
@@ -341,7 +320,6 @@ async def run_agent():
 asyncio.run(run_agent())
 ```
 
-## 
 
 Next steps
 

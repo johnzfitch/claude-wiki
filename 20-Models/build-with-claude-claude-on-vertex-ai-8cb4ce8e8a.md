@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:25Z"
+fetched_at: "2026-03-17T02:01:33Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai"
 title: "Claude on Vertex AI - Claude API Docs"
 ---
@@ -20,7 +20,6 @@ Vertex is also supported by Anthropic's official [client SDKs](/docs/en/api/clie
 
 Note that this guide assumes you already have a GCP project that is able to use Vertex AI. See [using the Claude 3 models from Anthropic](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude) for more information on the setup required, as well as a full walkthrough.
 
-## 
 
 Install an SDK for accessing Vertex AI
 
@@ -54,21 +53,18 @@ Ruby
 
 Ruby
 
-``` shiki
+```python
 pip install -U google-cloud-aiplatform "anthropic[vertex]"
 ```
 
-## 
 
 Accessing Vertex AI
 
-### 
 
 Model availability
 
 Note that Anthropic model availability varies by region. Search for "Claude" in the [Vertex AI Model Garden](https://cloud.google.com/model-garden) or go to [Use Claude 3](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude) for the latest information.
 
-#### 
 
 API model IDs
 
@@ -86,7 +82,6 @@ API model IDs
 | Claude Haiku 3.5 ⚠️  | claude-3-5-haiku@20241022  |
 | Claude Haiku 3 ⚠️    | claude-3-haiku@20240307    |
 
-### 
 
 Making requests
 
@@ -96,7 +91,7 @@ The following examples show how to generate text from Claude on Vertex AI:
 
 Shell
 
-``` shiki
+```python
 MODEL_ID=claude-opus-4-6
 LOCATION=global
 PROJECT_ID=MY_PROJECT_ID
@@ -120,7 +115,6 @@ See the [client SDKs](/docs/en/api/client-sdks) and the official [Vertex AI docs
 
 Claude is also available through [Amazon Bedrock](/docs/en/build-with-claude/claude-on-amazon-bedrock) and [Microsoft Foundry](/docs/en/build-with-claude/claude-in-microsoft-foundry).
 
-## 
 
 Activity logging
 
@@ -130,13 +124,20 @@ Anthropic recommends that you log your activity on at least a 30-day rolling bas
 
 Turning on this service does not give Google or Anthropic any access to your content.
 
-## 
 
 Feature support
 
 For all currently supported features on Vertex AI, see [API features overview](/docs/en/api/overview).
 
-## 
+
+Context window
+
+Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, and Sonnet 4 have a [1M-token context window](/docs/en/build-with-claude/context-windows) on Vertex AI.
+
+For Claude Sonnet 4.5 and Sonnet 4, the 1M-token context window is in beta. To use, include the `context-1m-2025-08-07` [beta header](/docs/en/api/beta-headers) in your API requests.
+
+Vertex AI limits request payloads to 30 MB. When sending large documents or many images, you may reach this limit before the token limit.
+
 
 Global vs regional endpoints
 
@@ -149,7 +150,6 @@ Regional endpoints include a 10% pricing premium over global endpoints.
 
 This applies to Claude Sonnet 4.5 and future models only. Older models (Claude Sonnet 4, Opus 4, and earlier) maintain their existing pricing structures.
 
-### 
 
 When to use each option
 
@@ -168,7 +168,6 @@ When to use each option
 - Support both pay-as-you-go and provisioned throughput
 - 10% pricing premium reflects infrastructure costs for dedicated regional capacity
 
-### 
 
 Implementation
 
@@ -178,7 +177,7 @@ Set the `region` parameter to `"global"` when initializing the client:
 
 Python
 
-``` shiki
+```python
 from anthropic import AnthropicVertex
 
 project_id = "MY_PROJECT_ID"
@@ -205,7 +204,7 @@ Specify a specific region like `"us-east1"` or `"europe-west1"`:
 
 Python
 
-``` shiki
+```python
 from anthropic import AnthropicVertex
 
 project_id = "MY_PROJECT_ID"
@@ -226,7 +225,6 @@ message = client.messages.create(
 print(message)
 ```
 
-### 
 
 Additional resources
 

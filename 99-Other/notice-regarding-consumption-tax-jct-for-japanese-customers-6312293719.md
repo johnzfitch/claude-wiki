@@ -1,6 +1,6 @@
 ---
 category: "99-Other"
-fetched_at: "2026-03-16T05:33:59Z"
+fetched_at: "2026-03-17T02:04:21Z"
 source_url: "https://support.claude.com/en/articles/14051822-notice-regarding-consumption-tax-jct-for-japanese-customers"
 title: "Notice regarding consumption tax (JCT) for Japanese customers | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Notice regarding consumption tax (JCT) for Japanese customers | Claude H
 4.  Notice regarding consumption tax (JCT) for Japanese customers
 
 # Notice regarding consumption tax (JCT) for Japanese customers
+
+Updated today
 
 
 ## Consumption tax

@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:20Z"
+fetched_at: "2026-03-17T02:03:41Z"
 source_url: "https://modelcontextprotocol.io/docs/tutorials/security/authorization"
 title: "Understanding Authorization in MCP - Model Context Protocol"
 ---
+
 # Understanding Authorization in MCP
 
 
@@ -12,7 +13,6 @@ Learn how to implement secure authorization for MCP servers using OAuth 2.1 to p
 
 Authorization in the Model Context Protocol (MCP) secures access to sensitive resources and operations exposed by MCP servers. If your MCP server handles user data or administrative actions, authorization ensures only permitted users can access its endpoints. MCP uses standardized authorization flows to build trust between MCP clients and MCP servers. Its design doesn’t focus on one specific authorization or identity system, but rather follows the conventions outlined for [OAuth 2.1](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-13). For detailed information, see the [Authorization specification](/specification/latest/basic/authorization).
 
-## 
 
 [​](#when-should-you-use-authorization)
 
@@ -28,7 +28,6 @@ While authorization for MCP servers is **optional**, it is strongly recommended 
 
 **Authorization for Local MCP Servers**For MCP servers using the [STDIO transport](/specification/latest/basic/transports#stdio), you can use environment-based credentials or credentials provided by third-party libraries embedded directly in the MCP server instead. Because a STDIO-built MCP server runs locally, it has access to a range of flexible options when it comes to acquiring user credentials that may or may not rely on in-browser authentication and authorization flows.OAuth flows, in turn, are designed for HTTP-based transports where the MCP server is remotely-hosted and the client uses OAuth to establish that a user is authorized to access said remote server.
 
-## 
 
 [​](#the-authorization-flow-step-by-step)
 
@@ -38,7 +37,6 @@ Let’s walk through what happens when a client wants to connect to your protect
 
 1
 
-[](#)
 
 Initial Handshake
 
@@ -46,7 +44,7 @@ When your MCP client first tries to connect, your server responds with a `401 Un
 
 Copy
 
-``` shiki
+```python
 HTTP/1.1 401 Unauthorized
 WWW-Authenticate: Bearer realm="mcp",
   resource_metadata="https://your-server.com/.well-known/oauth-protected-resource"
@@ -56,7 +54,6 @@ This tells the client that authorization is required for the MCP server and wher
 
 2
 
-[](#)
 
 Protected Resource Metadata Discovery
 
@@ -64,7 +61,7 @@ With the URI pointer to the PRM document, the client will fetch the metadata to 
 
 Copy
 
-``` shiki
+```python
 {
   "resource": "https://your-server.com/mcp",
   "authorization_servers": ["https://auth.your-server.com"],
@@ -76,7 +73,6 @@ You can see a more comprehensive example in [RFC 9728 Section 3.2](https://datat
 
 3
 
-[](#)
 
 Authorization Server Discovery
 
@@ -84,7 +80,7 @@ Next, the client discovers what the authorization server can do by fetching its 
 
 Copy
 
-``` shiki
+```python
 {
   "issuer": "https://auth.your-server.com",
   "authorization_endpoint": "https://auth.your-server.com/authorize",
@@ -95,7 +91,6 @@ Copy
 
 4
 
-[](#)
 
 Client Registration
 
@@ -103,7 +98,7 @@ With all the metadata out of the way, the client now needs to make sure that it�
 
 Copy
 
-``` shiki
+```python
 {
   "client_name": "My MCP Client",
   "redirect_uris": ["http://localhost:3000/callback"],
@@ -118,7 +113,6 @@ If the registration succeeds, the authorization server will return a JSON blob w
 
 5
 
-[](#)
 
 User Authorization
 
@@ -126,7 +120,7 @@ The client will now need to open a browser to the `/authorize` endpoint, where t
 
 Copy
 
-``` shiki
+```python
 {
   "access_token": "eyJhbGciOiJSUzI1NiIs...",
   "refresh_token": "def502...",
@@ -139,7 +133,6 @@ The access token is what the client will use to authenticate requests to the MCP
 
 6
 
-[](#)
 
 Making Authenticated Requests
 
@@ -147,7 +140,7 @@ Finally, the client can make requests to your MCP server using the access token 
 
 Copy
 
-``` shiki
+```python
 GET /mcp HTTP/1.1
 Host: your-server.com
 Authorization: Bearer eyJhbGciOiJSUzI1NiIs...
@@ -155,7 +148,6 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIs...
 
 The MCP server will need to validate the token and process the request if the token is valid and has the required permissions.
 
-## 
 
 [​](#implementation-example)
 
@@ -163,7 +155,6 @@ Implementation Example
 
 To get started with a practical implementation, we will use a [Keycloak](https://www.keycloak.org/) authorization server hosted in a Docker container. Keycloak is an open-source authorization server that can be easily deployed locally for testing and experimentation. Make sure that you download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/). We will need it to deploy Keycloak on our development machine.
 
-### 
 
 [​](#keycloak-setup)
 
@@ -173,7 +164,7 @@ From your terminal application, run the following command to start the Keycloak 
 
 Copy
 
-``` shiki
+```python
 docker run -p 127.0.0.1:8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak start-dev
 ```
 
@@ -187,7 +178,7 @@ When running with the default configuration, Keycloak will already support many 
 
 Copy
 
-``` shiki
+```python
 http://localhost:8080/realms/master/.well-known/openid-configuration
 ```
 
@@ -219,7 +210,7 @@ With Keycloak configured, every time the authorization flow is triggered, your M
 
 Copy
 
-``` shiki
+```python
 eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1TjcxMGw1WW5MWk13WGZ1VlJKWGtCS3ZZMzZzb3JnRG5scmlyZ2tlTHlzIn0.eyJleHAiOjE3NTU1NDA4MTcsImlhdCI6MTc1NTU0MDc1NywiYXV0aF90aW1lIjoxNzU1NTM4ODg4LCJqdGkiOiJvbnJ0YWM6YjM0MDgwZmYtODQwNC02ODY3LTgxYmUtMTIzMWI1MDU5M2E4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjMwMDAiLCJzdWIiOiIzM2VkNmM2Yi1jNmUwLTQ5MjgtYTE2MS1mMmY2OWM3YTAzYjkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiI3OTc1YTViNi04YjU5LTRhODUtOWNiYS04ZmFlYmRhYjg5NzQiLCJzaWQiOiI4ZjdlYzI3Ni0zNThmLTRjY2MtYjMxMy1kYjA4MjkwZjM3NmYiLCJzY29wZSI6Im1jcDp0b29scyJ9.P5xCRtXORly0R0EXjyqRCUx-z3J4uAOWNAvYtLPXroykZuVCCJ-K1haiQSwbURqfsVOMbL7jiV-sD6miuPzI1tmKOkN_Yct0Vp-azvj7U5rEj7U6tvPfMkg2Uj_jrIX0KOskyU2pVvGZ-5BgqaSvwTEdsGu_V3_E0xDuSBq2uj_wmhqiyTFm5lJ1WkM3Hnxxx1_AAnTj7iOKMFZ4VCwMmk8hhSC7clnDauORc0sutxiJuYUZzxNiNPkmNeQtMCGqWdP1igcbWbrfnNXhJ6NswBOuRbh97_QraET3hl-CNmyS6C72Xc0aOwR_uJ7xVSBTD02OaQ1JA6kjCATz30kGYg
 ```
 
@@ -227,7 +218,7 @@ Decoded, it will look like this:
 
 Copy
 
-``` shiki
+```python
 {
   "alg": "RS256",
   "typ": "JWT",
@@ -249,7 +240,6 @@ Copy
 
 **Embedded Audience**Notice the `aud` claim embedded in the token - it’s currently set to be the URI of the test MCP server and it’s inferred from the scope that we’ve previously configured. This will be important in our implementation to validate.
 
-### 
 
 [​](#mcp-server-setup)
 
@@ -267,7 +257,7 @@ You can see the complete TypeScript project in the [sample repository](https://g
 
 Copy
 
-``` shiki
+```python
 # Server host/port
 HOST=localhost
 PORT=3000
@@ -286,7 +276,7 @@ OAUTH_CLIENT_SECRET=<YOUR_SERVER_CLIENT_SECRET>
 
 Copy
 
-``` shiki
+```python
 import "dotenv/config";
 import express from "express";
 import { randomUUID } from "node:crypto";
@@ -587,7 +577,7 @@ You can see the complete Python project in the [sample repository](https://githu
 
 Copy
 
-``` shiki
+```python
 """Configuration settings for the MCP auth server."""
 
 import os
@@ -639,7 +629,7 @@ The server implementation is as follows:
 
 Copy
 
-``` shiki
+```python
 import datetime
 import logging
 from typing import Any
@@ -783,7 +773,7 @@ Lastly, the token verification logic is delegated entirely to `token_verifier.py
 
 Copy
 
-``` shiki
+```python
 """Token verifier implementation using OAuth 2.0 Token Introspection (RFC 7662)."""
 
 import logging
@@ -891,7 +881,7 @@ You can see the complete C# project in the [sample repository](https://github.co
 
 Copy
 
-``` shiki
+```python
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using ModelContextProtocol.AspNetCore.Authentication;
@@ -984,7 +974,6 @@ app.Run(serverUrl);
 
 For more details, see the [C# SDK documentation](https://github.com/modelcontextprotocol/csharp-sdk).
 
-## 
 
 [​](#testing-the-mcp-server)
 
@@ -994,7 +983,7 @@ For testing purposes, we will be using [Visual Studio Code](https://code.visuals
 
 Copy
 
-``` shiki
+```python
 "my-mcp-server-18676652": {
   "url": "http://localhost:3000",
   "type": "http"
@@ -1007,7 +996,6 @@ After consenting, you will see the tools listed right above the server entry in 
 
 You will be able to invoke individual tools with the help of the `#` sign in the chat view.
 
-## 
 
 [​](#common-pitfalls-and-how-to-avoid-them)
 
@@ -1030,7 +1018,6 @@ For comprehensive security guidance, including attack vectors, mitigation strate
 - **Error detail leakage**. Return generic messages to clients, but log detailed reasons with correlation IDs internally to aid troubleshooting without exposing internals.
 - **Session identifier hardening**. Treat `Mcp-Session-Id` as untrusted input; never tie authorization to it. Regenerate on auth changes and validate lifecycle server‑side.
 
-## 
 
 [​](#related-standards-and-documentation)
 

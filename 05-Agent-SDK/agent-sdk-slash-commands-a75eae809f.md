@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:17Z"
+fetched_at: "2026-03-17T02:01:17Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/slash-commands"
 title: "Slash Commands in the SDK - Claude API Docs"
 ---
@@ -13,7 +13,6 @@ Learn how to use slash commands to control Claude Code sessions through the SDK
 
 Slash commands provide a way to control Claude Code sessions with special commands that start with `/`. These commands can be sent through the SDK to perform actions like clearing conversation history, compacting messages, or getting help.
 
-## 
 
 Discovering Available Slash Commands
 
@@ -21,7 +20,7 @@ The Claude Agent SDK provides information about available slash commands in the 
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 for await (const message of query({
@@ -35,7 +34,6 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Sending Slash Commands
 
@@ -43,7 +41,7 @@ Send slash commands by including them in your prompt string, just like regular t
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Send a slash command
@@ -57,11 +55,9 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Common Slash Commands
 
-### 
 
 `/compact` - Compact Conversation History
 
@@ -69,7 +65,7 @@ The `/compact` command reduces the size of your conversation history by summariz
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 for await (const message of query({
@@ -84,7 +80,6 @@ for await (const message of query({
 }
 ```
 
-### 
 
 `/clear` - Clear Conversation
 
@@ -92,7 +87,7 @@ The `/clear` command starts a fresh conversation by clearing all previous histor
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Clear conversation and start fresh
@@ -107,22 +102,21 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Creating Custom Slash Commands
 
 In addition to using built-in slash commands, you can create your own custom commands that are available through the SDK. Custom commands are defined as markdown files in specific directories, similar to how subagents are configured.
 
-### 
+The `.claude/commands/` directory is the legacy format. The recommended format is `.claude/skills/<name>/SKILL.md`, which supports the same slash-command invocation (`/name`) plus autonomous invocation by Claude. See [Skills](/docs/en/agent-sdk/skills) for the current format. The CLI continues to support both formats, and the examples below remain accurate for `.claude/commands/`.
+
 
 File Locations
 
 Custom slash commands are stored in designated directories based on their scope:
 
-- **Project commands**: `.claude/commands/` - Available only in the current project
-- **Personal commands**: `~/.claude/commands/` - Available across all your projects
+- **Project commands**: `.claude/commands/` - Available only in the current project (legacy; prefer `.claude/skills/`)
+- **Personal commands**: `~/.claude/commands/` - Available across all your projects (legacy; prefer `~/.claude/skills/`)
 
-### 
 
 File Format
 
@@ -132,26 +126,24 @@ Each custom command is a markdown file where:
 - The file content defines what the command does
 - Optional YAML frontmatter provides configuration
 
-#### 
 
 Basic Example
 
 Create `.claude/commands/refactor.md`:
 
-``` shiki
+```python
 Refactor the selected code to improve readability and maintainability.
 Focus on clean code principles and best practices.
 ```
 
 This creates the `/refactor` command that you can use through the SDK.
 
-#### 
 
 With Frontmatter
 
 Create `.claude/commands/security-check.md`:
 
-``` shiki
+```python
 ---
 allowed-tools: Read, Grep, Glob
 description: Run security vulnerability scan
@@ -165,7 +157,6 @@ Analyze the codebase for security vulnerabilities including:
 - Insecure configurations
 ```
 
-### 
 
 Using Custom Commands in the SDK
 
@@ -173,7 +164,7 @@ Once defined in the filesystem, custom commands are automatically available thro
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Use a custom command
@@ -199,11 +190,9 @@ for await (const message of query({
 }
 ```
 
-### 
 
 Advanced Features
 
-#### 
 
 Arguments and Placeholders
 
@@ -211,7 +200,7 @@ Custom commands support dynamic arguments using placeholders:
 
 Create `.claude/commands/fix-issue.md`:
 
-``` shiki
+```python
 ---
 argument-hint: [issue-number] [priority]
 description: Fix a GitHub issue
@@ -225,7 +214,7 @@ Use in SDK:
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Pass arguments to custom command
@@ -240,7 +229,6 @@ for await (const message of query({
 }
 ```
 
-#### 
 
 Bash Command Execution
 
@@ -248,7 +236,7 @@ Custom commands can execute bash commands and include their output:
 
 Create `.claude/commands/git-commit.md`:
 
-``` shiki
+```python
 ---
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
 description: Create a git commit
@@ -264,7 +252,6 @@ description: Create a git commit
 Create a git commit with appropriate message based on the changes.
 ```
 
-#### 
 
 File References
 
@@ -272,7 +259,7 @@ Include file contents using the `@` prefix:
 
 Create `.claude/commands/review-config.md`:
 
-``` shiki
+```python
 ---
 description: Review configuration files
 ---
@@ -285,13 +272,12 @@ Review the following configuration files for issues:
 Check for security issues, outdated dependencies, and misconfigurations.
 ```
 
-### 
 
 Organization with Namespacing
 
 Organize commands in subdirectories for better structure:
 
-``` shiki
+```python
 .claude/commands/
 ├── frontend/
 │   ├── component.md      # Creates /component (project:frontend)
@@ -304,17 +290,15 @@ Organize commands in subdirectories for better structure:
 
 The subdirectory appears in the command description but doesn't affect the command name itself.
 
-### 
 
 Practical Examples
 
-#### 
 
 Code Review Command
 
 Create `.claude/commands/code-review.md`:
 
-``` shiki
+```python
 ---
 allowed-tools: Read, Grep, Glob, Bash(git diff:*)
 description: Comprehensive code review
@@ -338,13 +322,12 @@ Review the above changes for:
 Provide specific, actionable feedback organized by priority.
 ```
 
-#### 
 
 Test Runner Command
 
 Create `.claude/commands/test.md`:
 
-``` shiki
+```python
 ---
 allowed-tools: Bash, Read, Edit
 argument-hint: [test-pattern]
@@ -363,7 +346,7 @@ Use these commands through the SDK:
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Run code review
@@ -383,7 +366,6 @@ for await (const message of query({
 }
 ```
 
-## 
 
 See Also
 

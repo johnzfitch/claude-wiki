@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:05Z"
+fetched_at: "2026-03-17T02:00:44Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/migration-guide"
 title: "Migration guide - Claude API Docs"
 ---
@@ -11,23 +11,19 @@ title: "Migration guide - Claude API Docs"
 Guide for migrating to Claude 4.6 models from previous Claude versions
 
 
-## 
-
 Migrating to Claude 4.6
 
 Claude Opus 4.6 is a near drop-in replacement for Claude 4.5, with a few breaking changes to be aware of. For a full list of new features, see [What's new in Claude 4.6](/docs/en/about-claude/models/whats-new-claude-4-6).
 
-### 
 
 Update your model name
 
-``` shiki
+```python
 # Opus migration
 model = "claude-opus-4-5"  # Before
 model = "claude-opus-4-6"  # After
 ```
 
-### 
 
 Breaking changes
 
@@ -35,7 +31,6 @@ Breaking changes
 
 2.  **Tool parameter quoting:** Claude 4.6 models may produce slightly different JSON string escaping in tool call arguments (e.g., different handling of Unicode escapes or forward slash escaping). If you parse tool call `input` as a raw string rather than using a JSON parser, verify your parsing logic. Standard JSON parsers (like `json.loads()` or `JSON.parse()`) handle these differences automatically.
 
-### 
 
 Recommended changes
 
@@ -65,13 +60,12 @@ These are not required but will improve your experience:
 
 5.  **Migrate to output_config.format:** If using structured outputs, update `output_format={...}` to `output_config={"format": {...}}`. The old parameter remains functional but is deprecated and will be removed in a future model release.
 
-### 
 
 Migrating from Claude 4.1 or earlier to Claude 4.6
 
 If you're migrating from Opus 4.1, Sonnet 4, or earlier models directly to Claude 4.6, apply the Claude 4.6 breaking changes above plus the additional changes in this section.
 
-``` shiki
+```python
 # From Opus 4.1
 model = "claude-opus-4-1-20250805"  # Before
 model = "claude-opus-4-6"  # After
@@ -85,7 +79,6 @@ model = "claude-3-7-sonnet-20250219"  # Before
 model = "claude-opus-4-6"  # After
 ```
 
-#### 
 
 Additional breaking changes
 
@@ -161,13 +154,11 @@ Additional breaking changes
 
     Claude 4+ models have a more concise, direct communication style and require explicit direction. Review [prompting best practices](/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) for optimization guidance.
 
-#### 
 
 Additional recommended changes
 
 - **Remove legacy beta headers:** Remove `token-efficient-tools-2025-02-19` and `output-128k-2025-02-19`. All Claude 4+ models have built-in token-efficient tool use and these headers have no effect.
 
-### 
 
 Claude 4.6 migration checklist
 
@@ -205,7 +196,6 @@ Test in development environment before production deployment
 
 ------------------------------------------------------------------------
 
-## 
 
 Migrating to Claude Sonnet 4.6
 
@@ -217,7 +207,7 @@ Sonnet 4.6 pricing is \$3 per million input tokens, \$15 per million output toke
 
 **Update your model name:**
 
-``` shiki
+```python
 # From Sonnet 4.5
 model = "claude-sonnet-4-5"  # Before
 model = "claude-sonnet-4-6"  # After
@@ -227,11 +217,9 @@ model = "claude-sonnet-4-20250514"  # Before
 model = "claude-sonnet-4-6"  # After
 ```
 
-### 
 
 Breaking changes
 
-#### 
 
 When migrating from Sonnet 4.5
 
@@ -259,7 +247,6 @@ When migrating from Sonnet 4.5
 
     JSON string escaping in tool parameters may differ from previous models. Standard JSON parsers handle this automatically, but custom string-based parsing may need updates.
 
-#### 
 
 When migrating from Claude 3.x
 
@@ -283,14 +270,12 @@ When migrating from Claude 3.x
 
     Claude 4 models have a more concise, direct communication style. Review [prompting best practices](/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) for optimization guidance.
 
-### 
 
 Recommended changes
 
 1.  **Remove `fine-grained-tool-streaming-2025-05-14` beta header:** Fine-grained tool streaming is now GA on Sonnet 4.6 and no longer requires a beta header.
 2.  **Migrate `output_format` to `output_config.format`:** The `output_format` parameter is deprecated. Use `output_config.format` instead.
 
-### 
 
 Migrating from Sonnet 4.5
 
@@ -298,7 +283,6 @@ Consider migrating from Sonnet 4.5 to Sonnet 4.6, which delivers more intelligen
 
 Sonnet 4.6 defaults to an effort level of `high`, in contrast to Sonnet 4.5 which had no effort parameter. Consider adjusting the effort parameter as you migrate from Sonnet 4.5 to Sonnet 4.6. If not explicitly set, you may experience higher latency with the default effort level.
 
-#### 
 
 If you're not using extended thinking
 
@@ -306,7 +290,7 @@ If you're not using extended thinking on Sonnet 4.5, you can continue without it
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
      --header "x-api-key: $ANTHROPIC_API_KEY" \
      --header "anthropic-version: 2023-06-01" \
@@ -327,7 +311,6 @@ curl https://api.anthropic.com/v1/messages \
 }'
 ```
 
-#### 
 
 If you're using extended thinking
 
@@ -339,7 +322,7 @@ For agentic coding, frontend design, tool-heavy workflows, and complex enterpris
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
      --header "x-api-key: $ANTHROPIC_API_KEY" \
      --header "anthropic-version: 2023-06-01" \
@@ -371,7 +354,7 @@ For chat, content generation, search, classification, and other non-coding tasks
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
      --header "x-api-key: $ANTHROPIC_API_KEY" \
      --header "anthropic-version: 2023-06-01" \
@@ -409,7 +392,7 @@ When using adaptive thinking, evaluate `medium` and `high` effort on your tasks.
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
      --header "x-api-key: $ANTHROPIC_API_KEY" \
      --header "anthropic-version: 2023-06-01" \
@@ -435,7 +418,6 @@ curl https://api.anthropic.com/v1/messages \
 
 If you see inconsistent behavior or quality regressions with adaptive thinking, switch to extended thinking with `budget_tokens`. This provides more predictable results with a cap on thinking costs.
 
-### 
 
 Sonnet 4.6 migration checklist
 
@@ -465,7 +447,6 @@ Test in development environment before production deployment
 
 ------------------------------------------------------------------------
 
-## 
 
 Migrating to Claude Sonnet 4.5
 
@@ -477,7 +458,7 @@ Sonnet 4.5 pricing is \$3 per million input tokens, \$15 per million output toke
 
 **Update your model name:**
 
-``` shiki
+```python
 # From Sonnet 4
 model = "claude-sonnet-4-20250514"  # Before
 model = "claude-sonnet-4-5-20250929"  # After
@@ -487,7 +468,6 @@ model = "claude-3-7-sonnet-20250219"  # Before
 model = "claude-sonnet-4-5-20250929"  # After
 ```
 
-### 
 
 Breaking changes
 
@@ -513,7 +493,6 @@ These breaking changes apply when migrating from Claude 3.x Sonnet models.
 
     Claude 4 models have a more concise, direct communication style. Review [prompting best practices](/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) for optimization guidance.
 
-### 
 
 Sonnet 4.5 migration checklist
 
@@ -535,7 +514,6 @@ Test in development environment before production deployment
 
 ------------------------------------------------------------------------
 
-## 
 
 Migrating to Claude Haiku 4.5
 
@@ -547,7 +525,7 @@ Haiku 4.5 pricing is \$1 per million input tokens, \$5 per million output tokens
 
 **Update your model name:**
 
-``` shiki
+```python
 # From Haiku 3.5
 model = "claude-3-5-haiku-20241022"  # Before
 model = "claude-haiku-4-5-20251001"  # After
@@ -565,9 +543,8 @@ Extended thinking impacts [prompt caching](/docs/en/build-with-claude/prompt-cac
 
 Extended thinking is deprecated in Claude 4.6 or newer models. If using newer models, use [adaptive thinking](/docs/en/build-with-claude/adaptive-thinking) instead.
 
-**Explore new capabilities:** See the [models overview](/docs/en/about-claude/models/overview) for details on context awareness, increased output capacity (64K tokens), higher intelligence, and improved speed.
+**Explore new capabilities:** See the [models overview](/docs/en/about-claude/models/overview) for details on context awareness, increased output capacity (64k tokens), higher intelligence, and improved speed.
 
-### 
 
 Breaking changes
 
@@ -593,7 +570,6 @@ These breaking changes apply when migrating from Claude 3.x Haiku models.
 
     Claude 4 models have a more concise, direct communication style. Review [prompting best practices](/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices) for optimization guidance.
 
-### 
 
 Haiku 4.5 migration checklist
 
@@ -617,7 +593,6 @@ Test in development environment before production deployment
 
 ------------------------------------------------------------------------
 
-## 
 
 Get help
 

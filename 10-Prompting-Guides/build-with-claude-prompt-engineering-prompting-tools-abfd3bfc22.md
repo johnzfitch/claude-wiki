@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-03-12T08:16:26Z"
+fetched_at: "2026-03-17T02:01:35Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-tools"
 title: "Console prompting tools - Claude API Docs"
 ---
@@ -12,7 +12,6 @@ The Claude Console offers a suite of tools to help you build and refine prompts.
 
 ------------------------------------------------------------------------
 
-## 
 
 Prompt generator
 
@@ -28,7 +27,6 @@ If you're interested in analyzing the underlying prompt and architecture, check 
 
 ------------------------------------------------------------------------
 
-## 
 
 Prompt templates and variables
 
@@ -59,7 +57,6 @@ The Console uses prompt templates and variables to power its tooling:
 - **Prompt improver:** Takes your existing template, including all variables, and maintains them in the improved template it outputs
 - **[Evaluation tool](/docs/en/test-and-evaluate/eval-tool):** Allows you to easily test, scale, and track versions of your prompts by separating the variable and fixed portions of your prompt template
 
-### 
 
 Example prompt template
 
@@ -73,7 +70,6 @@ To level up your prompt variables, wrap them in [XML tags](/docs/en/build-with-c
 
 ------------------------------------------------------------------------
 
-## 
 
 Prompt improver
 
@@ -81,7 +77,6 @@ The prompt improver is compatible with all Claude models, including those with e
 
 The prompt improver helps you quickly iterate and improve your prompts through automated analysis and enhancement. It excels at making prompts more robust for complex tasks that require high accuracy.
 
-### 
 
 Before you begin
 
@@ -91,7 +86,6 @@ You'll need:
 - Feedback on current issues with Claude's outputs (optional but recommended)
 - Example inputs and ideal outputs (optional but recommended)
 
-### 
 
 How the prompt improver works
 
@@ -104,7 +98,6 @@ The prompt improver enhances your prompts in 4 steps:
 
 You can watch these steps happen in real-time in the improvement modal.
 
-### 
 
 What you get
 
@@ -117,7 +110,6 @@ The prompt improver generates templates with:
 
 While examples appear separately in the Workbench UI, they're included at the start of the first user message in the actual API call. View the raw format by clicking "**\</\> Get Code**" or insert examples as raw text via the Examples box.
 
-### 
 
 How to use the prompt improver
 
@@ -126,7 +118,6 @@ How to use the prompt improver
 3.  Include example inputs and ideal outputs
 4.  Review the improved prompt
 
-### 
 
 Generate test examples
 
@@ -137,7 +128,6 @@ Don't have examples yet? Use the [Test Case Generator](/docs/en/test-and-evaluat
 3.  Edit the responses to match your ideal outputs
 4.  Add the polished examples to your prompt
 
-### 
 
 When to use the prompt improver
 
@@ -149,7 +139,6 @@ The prompt improver works best for:
 
 For latency or cost-sensitive applications, consider using simpler prompts. The prompt improver creates templates that produce longer, more thorough, but slower responses.
 
-### 
 
 Example improvement
 
@@ -166,7 +155,6 @@ Notice how the improved prompt:
 - Provides explicit output formatting requirements
 - Guides Claude through the analysis process
 
-### 
 
 Troubleshooting
 
@@ -178,23 +166,18 @@ Common issues and solutions:
 
 ------------------------------------------------------------------------
 
-## 
 
 Next steps
 
-[](/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)
 
 Start prompt engineering
 
 Learn core techniques with worked examples.
 
-[](/docs/en/test-and-evaluate/eval-tool)
 
 Test your prompts
 
 Use the evaluation tool to test your improved prompts.
 
-
-GitHub prompting tutorial
 
 An example-filled tutorial that covers the prompt engineering concepts found in our docs.

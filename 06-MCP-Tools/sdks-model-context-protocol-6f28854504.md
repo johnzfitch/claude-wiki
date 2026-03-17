@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:07Z"
+fetched_at: "2026-03-17T02:03:40Z"
 source_url: "https://modelcontextprotocol.io/docs/sdk"
 title: "SDKs - Model Context Protocol"
 ---
@@ -13,7 +13,6 @@ Official SDKs for building with Model Context Protocol
 
 Build MCP servers and clients using our official SDKs. SDKs are classified into tiers based on feature completeness, protocol support, and maintenance commitment. Learn more about [SDK tiers](/community/sdk-tiers).
 
-## 
 
 [​](#available-sdks)
 
@@ -34,7 +33,6 @@ Available SDKs
 
 See [SDK Tiering System](/community/sdk-tiers) for details on what each tier means.
 
-## 
 
 [​](#getting-started)
 
@@ -49,7 +47,6 @@ Each SDK provides the same functionality but follows the idioms and best practic
 
 Visit the SDK page for your chosen language to find installation instructions, documentation, and examples.
 
-## 
 
 [​](#next-steps)
 
@@ -57,13 +54,11 @@ Next Steps
 
 Ready to start building with MCP? Choose your path:
 
-[](/docs/develop/build-server)
 
 ## Build a Server
 
 Learn how to create your first MCP server
 
-[](/docs/develop/build-client)
 
 ## Build a Client
 

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference/Other"
-fetched_at: "2026-03-15T12:17:11Z"
+fetched_at: "2026-03-17T02:04:35Z"
 source_url: "https://platform.claude.com/en/docs/welcome"
 title: "Intro to Claude - Claude API Docs"
 ---
@@ -21,7 +21,6 @@ The latest generation of Claude models:
 
 Looking to chat with Claude? Visit [claude.ai](https://www.claude.ai).
 
-## 
 
 Recommended path for new developers
 
@@ -61,7 +60,6 @@ Follow these steps to go from zero to a working Claude integration.
 
 ------------------------------------------------------------------------
 
-## 
 
 Develop with Claude
 
@@ -73,7 +71,6 @@ Developer Console
 
 Prototype and test prompts in your browser with the Workbench and prompt generator.
 
-[](/docs/en/api/overview)
 
 API Reference
 
@@ -86,19 +83,16 @@ Learn with interactive Jupyter notebooks covering PDFs, embeddings, and more.
 
 ------------------------------------------------------------------------
 
-## 
 
 Key capabilities
 
 Claude can assist with many tasks that involve text, code, and images.
 
-[](/docs/en/build-with-claude/text-generation)
 
 Text and code generation
 
 Summarize text, answer questions, extract data, translate text, and explain and generate code.
 
-[](/docs/en/build-with-claude/vision)
 
 Vision
 
@@ -106,7 +100,6 @@ Process and analyze visual input and generate text and code from images.
 
 ------------------------------------------------------------------------
 
-## 
 
 Support
 

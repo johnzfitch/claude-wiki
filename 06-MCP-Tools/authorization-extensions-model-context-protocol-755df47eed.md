@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:21Z"
+fetched_at: "2026-03-17T02:03:42Z"
 source_url: "https://modelcontextprotocol.io/extensions/auth/overview"
 title: "Authorization Extensions - Model Context Protocol"
 ---
+
 # Authorization Extensions
 
 
@@ -16,7 +17,6 @@ The [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth) cont
 
 Source code, specifications, and reference implementations for MCP authorization extensions.
 
-## 
 
 [​](#why-authorization-extensions)
 
@@ -29,25 +29,21 @@ The core MCP specification includes a robust [authorization framework](/specific
 
 The ext-auth extensions address these gaps.
 
-## 
 
 [​](#available-extensions)
 
 Available extensions
 
-[](/extensions/auth/oauth-client-credentials)
 
 ## OAuth Client Credentials
 
 Machine-to-machine authentication using the OAuth 2.0 client credentials flow. No user interaction required.
 
-[](/extensions/auth/enterprise-managed-authorization)
 
 ## Enterprise-Managed Authorization
 
 Centralized access control via enterprise identity providers. Employees access MCP servers through their organization’s IdP.
 
-## 
 
 [​](#choosing-the-right-extension)
 
@@ -62,7 +58,6 @@ Choosing the right extension
 | Organization-wide MCP access policy enforcement | [Enterprise-Managed Authorization](/extensions/auth/enterprise-managed-authorization) |
 | Standard interactive user authorization | Core MCP spec (no extension needed) |
 
-## 
 
 [​](#client-support)
 
@@ -70,7 +65,6 @@ Client support
 
 Authorization extension support varies by client. See the [client matrix](/extensions/client-matrix) for a full breakdown. Both extensions require explicit support from the MCP client — they are never active by default.
 
-## 
 
 [​](#specification)
 

@@ -1,11 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-16T05:34:02Z"
+fetched_at: "2026-03-17T02:04:25Z"
 source_url: "https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan"
 title: "Get started with the Team plan | Claude Help Center"
 ---
 
 # Get started with the Team plan
+
+Updated today
 
 
 ## Requirements to sign up for a Team plan

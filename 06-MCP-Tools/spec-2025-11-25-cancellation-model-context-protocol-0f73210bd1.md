@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:22Z"
+fetched_at: "2026-03-17T02:03:58Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/cancellation"
 title: "Cancellation - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Cancellation - Model Context Protocol"
 
 The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancellation notification to indicate that a previously-issued request should be terminated.
 
-## 
 
 [​](#cancellation-flow)
 
@@ -23,7 +22,7 @@ When a party wants to cancel an in-progress request, it sends a `notifications/c
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/cancelled",
@@ -34,7 +33,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#behavior-requirements)
 
@@ -55,7 +53,6 @@ Behavior Requirements
     - The request cannot be cancelled
 6.  The sender of the cancellation notification **SHOULD** ignore any response to the request that arrives afterward
 
-## 
 
 [​](#timing-considerations)
 
@@ -63,7 +60,6 @@ Timing Considerations
 
 Due to network latency, cancellation notifications may arrive after request processing has completed, and potentially after a response has already been sent. Both parties **MUST** handle these race conditions gracefully:
 
-## 
 
 [​](#implementation-notes)
 
@@ -72,7 +68,6 @@ Implementation Notes
 - Both parties **SHOULD** log cancellation reasons for debugging
 - Application UIs **SHOULD** indicate when cancellation is requested
 
-## 
 
 [​](#error-handling)
 

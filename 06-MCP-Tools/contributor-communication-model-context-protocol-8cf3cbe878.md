@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:12Z"
+fetched_at: "2026-03-17T02:03:36Z"
 source_url: "https://modelcontextprotocol.io/community/communication"
 title: "Contributor Communication - Model Context Protocol"
 ---
+
 # Contributor Communication
 
 
@@ -12,7 +13,6 @@ Communication strategy and framework for the Model Context Protocol community
 
 This document explains how to communicate and collaborate within the Model Context Protocol (MCP) project.
 
-## 
 
 [​](#communication-channels)
 
@@ -28,7 +28,6 @@ Communication Channels
 
 All communication is governed by our [Code of Conduct](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CODE_OF_CONDUCT.md). We expect respectful, professional, and inclusive interactions across all channels.
 
-## 
 
 [​](#discord)
 
@@ -36,7 +35,6 @@ Discord
 
 The [MCP Contributor Discord](https://discord.gg/6CSzBmMkjX) is for real-time contributor discussion and collaboration. The server is designed for **MCP contributors** and is not intended for general MCP support.
 
-### 
 
 [​](#public-channels-default)
 
@@ -55,7 +53,6 @@ Public Channels (Default)
 - MCP user support - Read official documentation and use GitHub Discussions for questions
 - Service or product marketing - Keep discussions vendor-neutral; mentions of brands are discouraged except as examples relevant to the specification
 
-### 
 
 [​](#private-channels-exceptions)
 
@@ -76,11 +73,9 @@ Private Channels (Exceptions)
 
 Any significant discussion on Discord that leads to a potential decision or proposal must be moved to GitHub Discussion or Issue for a persistent, searchable record.
 
-## 
 
 [​](#github-discussions)
 
-GitHub Discussions
 
 Use for structured, long-form discussion and debate on project direction. **When to use:**
 
@@ -90,11 +85,9 @@ Use for structured, long-form discussion and debate on project direction. **When
 - Feature requests with context and rationale
 - If a repository doesn’t have Discussions enabled, use GitHub Issues instead
 
-## 
 
 [​](#github-issues)
 
-GitHub Issues
 
 Use for bug reports and actionable development tasks. Feature requests should go to [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions). **When to use:**
 
@@ -105,7 +98,6 @@ Use for bug reports and actionable development tasks. Feature requests should go
 
 **Note:** SEP proposals are submitted as pull requests to the [`seps/` directory](https://github.com/modelcontextprotocol/modelcontextprotocol/tree/main/seps), not as GitHub Issues. See the [SEP Guidelines](/community/sep-guidelines).
 
-## 
 
 [​](#security-issues)
 
@@ -117,7 +109,6 @@ Security Issues
 2.  Contact Lead or [Core Maintainers](/community/governance#current-core-maintainers) directly
 3.  Follow responsible disclosure guidelines
 
-## 
 
 [​](#decision-records)
 

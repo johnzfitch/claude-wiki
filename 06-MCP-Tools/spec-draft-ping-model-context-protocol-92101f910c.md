@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:27Z"
+fetched_at: "2026-03-17T02:04:02Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/utilities/ping"
 title: "Ping - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Ping - Model Context Protocol"
 
 The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the connection is alive.
 
-## 
 
 [​](#overview)
 
@@ -20,7 +19,6 @@ The ping functionality is implemented through a simple request/response pattern.
 
 `ping` is an MCP-level liveness check and **MAY** be sent by either party at any time on an established session/connection.In Streamable HTTP, implementations **SHOULD** prefer transport-level SSE keepalive mechanisms for idle-connection maintenance; `ping` remains available for protocol-level responsiveness checks.Request-association requirements for `roots/list`, `sampling/createMessage`, and `elicitation/create` do not apply to `ping`.
 
-## 
 
 [​](#message-format)
 
@@ -30,7 +28,7 @@ A ping request is a standard JSON-RPC request with no parameters:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": "123",
@@ -38,7 +36,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#behavior-requirements)
 
@@ -48,7 +45,7 @@ Behavior Requirements
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": "123",
@@ -61,13 +58,11 @@ Copy
     - Terminate the connection
     - Attempt reconnection procedures
 
-## 
 
 [​](#usage-patterns)
 
 Usage Patterns
 
-## 
 
 [​](#implementation-considerations)
 
@@ -78,7 +73,6 @@ Implementation Considerations
 - Timeouts **SHOULD** be appropriate for the network environment
 - Excessive pinging **SHOULD** be avoided to reduce network overhead
 
-## 
 
 [​](#error-handling)
 

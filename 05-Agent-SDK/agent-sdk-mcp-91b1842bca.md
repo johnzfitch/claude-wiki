@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:15Z"
+fetched_at: "2026-03-17T02:01:12Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/mcp"
 title: "Connect to external tools with MCP - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-
 
 MCP servers can run as local processes, connect over HTTP, or execute directly within your SDK application.
 
-## 
 
 Quickstart
 
@@ -23,7 +22,7 @@ This example connects to the [Claude Code documentation](https://code.claude.com
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 for await (const message of query({
@@ -46,13 +45,11 @@ for await (const message of query({
 
 The agent connects to the documentation server, searches for information about hooks, and returns the results.
 
-## 
 
 Add an MCP server
 
 You can configure MCP servers in code when calling `query()`, or in a `.mcp.json` file that the SDK loads automatically.
 
-### 
 
 In code
 
@@ -60,7 +57,7 @@ Pass MCP servers directly in the `mcpServers` option:
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 for await (const message of query({
@@ -81,13 +78,12 @@ for await (const message of query({
 }
 ```
 
-### 
 
 From a config file
 
 Create a `.mcp.json` file at your project root. The SDK loads this automatically:
 
-``` shiki
+```python
 {
   "mcpServers": {
     "filesystem": {
@@ -98,25 +94,22 @@ Create a `.mcp.json` file at your project root. The SDK loads this automatically
 }
 ```
 
-## 
 
 Allow MCP tools
 
 MCP tools require explicit permission before Claude can use them. Without permission, Claude will see that tools are available but won't be able to call them.
 
-### 
 
 Tool naming convention
 
 MCP tools follow the naming pattern `mcp__<server-name>__<tool-name>`. For example, a GitHub server named `"github"` with a `list_issues` tool becomes `mcp__github__list_issues`.
 
-### 
 
 Grant access with allowedTools
 
 Use `allowedTools` to specify which MCP tools Claude can use:
 
-``` shiki
+```python
 options: {
   mcpServers: {
     // your servers
@@ -131,7 +124,6 @@ options: {
 
 Wildcards (`*`) let you allow all tools from a server without listing each one individually.
 
-### 
 
 Alternative: Change the permission mode
 
@@ -140,7 +132,7 @@ Instead of listing allowed tools, you can change the permission mode to grant br
 - `permissionMode: "acceptEdits"`: Automatically approves tool usage (still prompts for destructive operations)
 - `permissionMode: "bypassPermissions"`: Skips all safety prompts, including for destructive operations like file deletion or running shell commands. Use with caution, especially in production. This mode propagates to subagents spawned by the Agent tool.
 
-``` shiki
+```python
 options: {
   mcpServers: {
     // your servers
@@ -151,13 +143,12 @@ options: {
 
 See [Permissions](/docs/en/agent-sdk/permissions) for more details on permission modes.
 
-### 
 
 Discover available tools
 
 To see what tools an MCP server provides, check the server's documentation or connect to the server and inspect the `system` init message:
 
-``` shiki
+```python
 for await (const message of query({ prompt: "...", options })) {
   if (message.type === "system" && message.subtype === "init") {
     console.log("Available MCP tools:", message.mcp_servers);
@@ -165,7 +156,6 @@ for await (const message of query({ prompt: "...", options })) {
 }
 ```
 
-## 
 
 Transport types
 
@@ -175,7 +165,6 @@ MCP servers communicate with your agent using different transport protocols. Che
 - If the docs give you a **URL**, use HTTP or SSE
 - If you're building your own tools in code, use an SDK MCP server
 
-### 
 
 stdio servers
 
@@ -191,7 +180,7 @@ In code
 
 TypeScript
 
-``` shiki
+```python
 options: {
   mcpServers: {
     github: {
@@ -206,7 +195,6 @@ options: {
 }
 ```
 
-### 
 
 HTTP/SSE servers
 
@@ -222,7 +210,7 @@ In code
 
 TypeScript
 
-``` shiki
+```python
 options: {
   mcpServers: {
     "remote-api": {
@@ -239,19 +227,16 @@ options: {
 
 For HTTP (non-streaming), use `"type": "http"` instead.
 
-### 
 
 SDK MCP servers
 
 Define custom tools directly in your application code instead of running a separate server process. See the [custom tools guide](/docs/en/agent-sdk/custom-tools) for implementation details.
 
-## 
 
 MCP tool search
 
 When you have many MCP tools configured, tool definitions can consume a significant portion of your context window. MCP tool search solves this by dynamically loading tools on-demand instead of preloading all of them.
 
-### 
 
 How it works
 
@@ -263,7 +248,6 @@ Tool search runs in auto mode by default. It activates when your MCP tool descri
 
 Tool search requires models that support `tool_reference` blocks: Sonnet 4 and later, or Opus 4 and later. Haiku models do not support tool search.
 
-### 
 
 Configure tool search
 
@@ -280,7 +264,7 @@ Set the value in the `env` option:
 
 TypeScript
 
-``` shiki
+```python
 const options = {
   mcpServers: {
     // your MCP servers
@@ -291,13 +275,11 @@ const options = {
 };
 ```
 
-## 
 
 Authentication
 
 Most MCP servers require authentication to access external services. Pass credentials through environment variables in the server configuration.
 
-### 
 
 Pass credentials via environment variables
 
@@ -313,7 +295,7 @@ In code
 
 TypeScript
 
-``` shiki
+```python
 options: {
   mcpServers: {
     github: {
@@ -330,7 +312,6 @@ options: {
 
 See [List issues from a repository](#list-issues-from-a-repository) for a complete working example with debug logging.
 
-### 
 
 HTTP headers for remote servers
 
@@ -346,7 +327,7 @@ In code
 
 TypeScript
 
-``` shiki
+```python
 options: {
   mcpServers: {
     "secure-api": {
@@ -361,7 +342,6 @@ options: {
 }
 ```
 
-### 
 
 OAuth2 authentication
 
@@ -369,7 +349,7 @@ The [MCP specification supports OAuth 2.1](https://modelcontextprotocol.io/speci
 
 TypeScript
 
-``` shiki
+```python
 // After completing OAuth flow in your app
 const accessToken = await getAccessTokenFromOAuthFlow();
 
@@ -387,11 +367,9 @@ const options = {
 };
 ```
 
-## 
 
 Examples
 
-### 
 
 List issues from a repository
 
@@ -399,13 +377,13 @@ This example connects to the [GitHub MCP server](https://github.com/modelcontext
 
 Before running, create a [GitHub personal access token](https://github.com/settings/tokens) with `repo` scope and set it as an environment variable:
 
-``` shiki
+```python
 export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
 ```
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 for await (const message of query({
@@ -444,7 +422,6 @@ for await (const message of query({
 }
 ```
 
-### 
 
 Query a database
 
@@ -452,7 +429,7 @@ This example uses the [Postgres MCP server](https://github.com/modelcontextproto
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Connection string from environment variable
@@ -479,7 +456,6 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Error handling
 
@@ -489,7 +465,7 @@ The SDK emits a `system` message with subtype `init` at the start of each query.
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 for await (const message of query({
@@ -514,17 +490,15 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Troubleshooting
 
-### 
 
 Server shows "failed" status
 
 Check the `init` message to see which servers failed to connect:
 
-``` shiki
+```python
 if (message.type === "system" && message.subtype === "init") {
   for (const server of message.mcp_servers) {
     if (server.status === "failed") {
@@ -541,13 +515,12 @@ Common causes:
 - **Invalid connection string**: For database servers, verify the connection string format and that the database is accessible.
 - **Network issues**: For remote HTTP/SSE servers, check the URL is reachable and any firewalls allow the connection.
 
-### 
 
 Tools not being called
 
 If Claude sees tools but doesn't use them, check that you've granted permission with `allowedTools` or by [changing the permission mode](#alternative-change-the-permission-mode):
 
-``` shiki
+```python
 options: {
   mcpServers: {
     // your servers
@@ -556,7 +529,6 @@ options: {
 }
 ```
 
-### 
 
 Connection timeouts
 
@@ -566,7 +538,6 @@ The MCP SDK has a default timeout of 60 seconds for server connections. If your 
 - Pre-warming the server before starting your agent
 - Checking server logs for slow initialization causes
 
-## 
 
 Related resources
 
