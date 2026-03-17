@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:11Z"
+fetched_at: "2026-03-17T02:03:46Z"
 source_url: "https://modelcontextprotocol.io/seps/1613-establish-json-schema-2020-12-as-default-dialect-f"
 title: "SEP-1613: Establish JSON Schema 2020-12 as Default Dialect for MCP - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP establishes JSON Schema 2020-12 as the default dialect for embedded schemas within MCP messages (tool `inputSchema`/`outputSchema` and elicitation `requestedSchema` fields). Schemas may explicitly declare alternative dialects via the `$schema` field. This resolves ambiguity that has caused compatibility issues between implementations.
 
-## 
 
 [​](#motivation)
 
@@ -48,13 +46,11 @@ The MCP specification does not explicitly state which JSON Schema version to use
 
 Community discussion (GitHub Discussion \#366, PR \#655) revealed that implementations were split between draft-07 and 2020-12, with multiple maintainers and community members expressing strong preference for 2020-12 as the default.
 
-## 
 
 [​](#specification)
 
 Specification
 
-### 
 
 [​](#1-default-dialect)
 
@@ -62,7 +58,6 @@ Specification
 
 Embedded JSON schemas within MCP messages **MUST** conform to [JSON Schema 2020-12](https://json-schema.org/draft/2020-12/schema) when no `$schema` field is present.
 
-### 
 
 [​](#2-explicit-dialect-declaration)
 
@@ -72,7 +67,7 @@ Schemas **MAY** include an explicit `$schema` field to declare a different diale
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
@@ -82,7 +77,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#3-schema-validation-requirements)
 
@@ -102,7 +96,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "name": "get_current_time",
   "description": "Returns the current server time",
@@ -113,7 +107,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#4-scope-of-application)
 
@@ -125,7 +118,6 @@ This specification applies to:
 - `prompts/elicit` request: `requestedSchema`
 - Future MCP features embedding JSON Schema definitions
 
-### 
 
 [​](#5-implementation-requirements)
 
@@ -141,13 +133,11 @@ This specification applies to:
 - Validate schemas according to declared or default dialect
 - Support at least JSON Schema 2020-12
 
-## 
 
 [​](#rationale)
 
 Rationale
 
-### 
 
 [​](#why-2020-12)
 
@@ -158,7 +148,6 @@ Why 2020-12?
 3.  **Community preference**: Multiple maintainers and community members in PR \#655 discussion advocated for 2020-12 over draft-07
 4.  **Current standard**: 2020-12 is the stable version as of 2025
 
-### 
 
 [​](#why-allow-explicit-declaration)
 
@@ -168,7 +157,6 @@ Why allow explicit declaration?
 - Provides flexibility without protocol changes
 - Follows JSON Schema best practices
 
-### 
 
 [​](#alternatives-considered)
 
@@ -178,7 +166,6 @@ Alternatives considered
 - **No default**: Rejected as unnecessarily verbose; adds boilerplate
 - **Multiple equal versions**: Rejected; creates unpredictability and fragmentation
 
-## 
 
 [​](#backward-compatibility)
 
@@ -197,13 +184,11 @@ This is technically a **clarification**, and not a breaking change:
 
 **Migration strategy:** Add explicit `$schema: "http://json-schema.org/draft-07/schema#"` during transition, then update to 2020-12 features.
 
-## 
 
 [​](#reference-implementation)
 
 Reference Implementation
 
-### 
 
 [​](#sdk-implementations)
 
@@ -223,7 +208,6 @@ SDK Implementations
 
 - May require updates but based on other examples, there should be straightforward or out-of-the-box options to support this. I can add more examples here or we can create issues to follow up on these after acceptance.
 
-## 
 
 [​](#security-implications)
 
@@ -231,13 +215,11 @@ Security Implications
 
 No specific security implications have been identified from establishing 2020-12 as the default dialect. The clarification reduces ambiguity that could lead to validation mismatches between implementations, which is a minor security improvement through increased predictability. Implementations should use well-maintained JSON Schema validator libraries and keep them updated, as with any dependency.
 
-## 
 
 [​](#related-work)
 
 Related Work
 
-### 
 
 [​](#sep-1330-elicitation-enum-schema-improvements)
 
@@ -246,7 +228,6 @@ Related Work
 **SEP-1330** proposes deprecating the non-standard `enumNames` property in favor of JSON Schema 2020-12 compliant patterns. This work is directly enabled by establishing 2020-12 as the default dialect. **Implementation Consideration:**\
 As noted in SEP-1330 discussion, there is some concern about parsing complexity with advanced JSON Schema features like `oneOf` and `anyOf`. However, these features are part of the JSON Schema standard and well-supported by mature validator libraries. Implementations can balance standards compliance with their parsing needs by using well-tested JSON Schema validation libraries.
 
-### 
 
 [​](#sep-834-full-json-schema-2020-12-support)
 
@@ -254,7 +235,6 @@ As noted in SEP-1330 discussion, there is some concern about parsing complexity 
 
 This SEP establishes the foundation (default dialect) while SEP-834 addresses comprehensive support for 2020-12 features.
 
-## 
 
 [​](#open-questions)
 

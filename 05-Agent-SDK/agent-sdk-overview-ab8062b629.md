@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:08Z"
+fetched_at: "2026-03-17T02:00:50Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/overview"
 title: "Agent SDK overview - Claude API Docs"
 ---
@@ -17,7 +17,7 @@ Build AI agents that autonomously read files, run commands, search the web, edit
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
@@ -35,7 +35,6 @@ asyncio.run(main())
 
 The Agent SDK includes built-in tools for reading files, running commands, and editing code, so your agent can start working immediately without you implementing tool execution. Dive into the quickstart or explore real agents built with the SDK:
 
-[](/docs/en/agent-sdk/quickstart)
 
 Quickstart
 
@@ -46,7 +45,6 @@ Example agents
 
 Email assistant, research agent, and more
 
-## 
 
 Get started
 
@@ -113,7 +111,6 @@ Get started
 
 **Ready to build?** Follow the [Quickstart](/docs/en/agent-sdk/quickstart) to create an agent that finds and fixes bugs in minutes.
 
-## 
 
 Capabilities
 
@@ -161,7 +158,7 @@ This example creates an agent that searches your codebase for TODO comments:
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
@@ -178,7 +175,6 @@ async def main():
 asyncio.run(main())
 ```
 
-### 
 
 Claude Code features
 
@@ -191,7 +187,6 @@ The SDK also supports Claude Code's filesystem-based configuration. To use these
 | [Memory](/docs/en/agent-sdk/modifying-system-prompts) | Project context and instructions | `CLAUDE.md` or `.claude/CLAUDE.md` |
 | [Plugins](/docs/en/agent-sdk/plugins) | Extend with custom commands, agents, and MCP servers | Programmatic via `plugins` option |
 
-## 
 
 Compare the Agent SDK to other Claude tools
 
@@ -211,7 +206,7 @@ With the Client SDK, you implement a tool loop. With the Agent SDK, Claude handl
 
 Python
 
-``` shiki
+```python
 # Client SDK: You implement the tool loop
 response = client.messages.create(...)
 while response.stop_reason == "tool_use":
@@ -223,7 +218,6 @@ async for message in query(prompt="Fix the bug in auth.py"):
     print(message)
 ```
 
-## 
 
 Changelog
 
@@ -232,7 +226,6 @@ View the full changelog for SDK updates, bug fixes, and new features:
 - **TypeScript SDK**: [view CHANGELOG.md](https://github.com/anthropics/claude-agent-sdk-typescript/blob/main/CHANGELOG.md)
 - **Python SDK**: [view CHANGELOG.md](https://github.com/anthropics/claude-agent-sdk-python/blob/main/CHANGELOG.md)
 
-## 
 
 Reporting bugs
 
@@ -241,7 +234,6 @@ If you encounter bugs or issues with the Agent SDK:
 - **TypeScript SDK**: [report issues on GitHub](https://github.com/anthropics/claude-agent-sdk-typescript/issues)
 - **Python SDK**: [report issues on GitHub](https://github.com/anthropics/claude-agent-sdk-python/issues)
 
-## 
 
 Branding guidelines
 
@@ -260,17 +252,14 @@ For partners integrating the Claude Agent SDK, use of Claude branding is optiona
 
 Your product should maintain its own branding and not appear to be Claude Code or any Anthropic product. For questions about branding compliance, contact the Anthropic [sales team](https://www.anthropic.com/contact-sales).
 
-## 
 
 License and terms
 
 Use of the Claude Agent SDK is governed by [Anthropic's Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms), including when you use it to power products and services that you make available to your own customers and end users, except to the extent a specific component or dependency is covered by a different license as indicated in that component's LICENSE file.
 
-## 
 
 Next steps
 
-[](/docs/en/agent-sdk/quickstart)
 
 Quickstart
 
@@ -281,13 +270,11 @@ Example agents
 
 Email assistant, research agent, and more
 
-[](/docs/en/agent-sdk/typescript)
 
 TypeScript SDK
 
 Full TypeScript API reference and examples
 
-[](/docs/en/agent-sdk/python)
 
 Python SDK
 

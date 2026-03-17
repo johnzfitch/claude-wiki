@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:10Z"
+fetched_at: "2026-03-17T02:01:00Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/permissions"
 title: "Configure permissions - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ The Claude Agent SDK provides permission controls to manage how Claude uses tool
 
 This page covers permission modes and rules. To build interactive approval flows where users approve or deny tool requests at runtime, see [Handle approvals and user input](/docs/en/agent-sdk/user-input).
 
-## 
 
 How permissions are evaluated
 
@@ -56,7 +55,6 @@ This page focuses on **allow and deny rules** and **permission modes**. For the 
 - **Hooks:** run custom code to allow, deny, or modify tool requests. See [Control execution with hooks](/docs/en/agent-sdk/hooks).
 - **canUseTool callback:** prompt users for approval at runtime. See [Handle approvals and user input](/docs/en/agent-sdk/user-input).
 
-## 
 
 Allow and deny rules
 
@@ -69,7 +67,7 @@ Allow and deny rules
 
 For a locked-down agent, pair `allowedTools` with `permissionMode: "dontAsk"` (TypeScript only). Listed tools are approved; anything else is denied outright instead of prompting:
 
-``` shiki
+```python
 const options = {
   allowedTools: ["Read", "Glob", "Grep"],
   permissionMode: "dontAsk"
@@ -82,13 +80,11 @@ In Python, `dontAsk` is not yet available as a permission mode. Without it, Clau
 
 You can also configure allow, deny, and ask rules declaratively in `.claude/settings.json`. The SDK does not load filesystem settings by default, so you must set `setting_sources=["project"]` (TypeScript: `settingSources: ["project"]`) in your options for these rules to apply. See [Permission settings](https://code.claude.com/docs/en/settings#permission-settings) for the rule syntax.
 
-## 
 
 Permission modes
 
 Permission modes provide global control over how Claude uses tools. You can set the permission mode when calling `query()` or change it dynamically during streaming sessions.
 
-### 
 
 Available modes
 
@@ -104,7 +100,6 @@ The SDK supports these permission modes:
 
 **Subagent inheritance:** When using `bypassPermissions`, all subagents inherit this mode and it cannot be overridden. Subagents may have different system prompts and less constrained behavior than your main agent. Enabling `bypassPermissions` grants them full, autonomous system access without any approval prompts.
 
-### 
 
 Set permission mode
 
@@ -122,7 +117,7 @@ Pass `permission_mode` (Python) or `permissionMode` (TypeScript) when creating a
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
@@ -141,11 +136,9 @@ async def main():
 asyncio.run(main())
 ```
 
-### 
 
 Mode details
 
-#### 
 
 Accept edits mode (`acceptEdits`)
 
@@ -158,7 +151,6 @@ Auto-approves file operations so Claude can edit code without prompting. Other t
 
 **Use when:** you trust Claude's edits and want faster iteration, such as during prototyping or when working in an isolated directory.
 
-#### 
 
 Don't ask mode (`dontAsk`, TypeScript only)
 
@@ -168,7 +160,6 @@ Converts any permission prompt into a denial. Tools pre-approved by `allowed_too
 
 `dontAsk` is available in the TypeScript SDK only. In Python, there is no exact equivalent. Use `disallowed_tools` to explicitly block tools you don't want Claude to use.
 
-#### 
 
 Bypass permissions mode (`bypassPermissions`)
 
@@ -178,7 +169,6 @@ Use with extreme caution. Claude has full system access in this mode. Only use i
 
 `allowed_tools` does not constrain this mode. Every tool is approved, not just the ones you listed. Deny rules (`disallowed_tools`), explicit `ask` rules, and hooks are evaluated before the mode check and can still block a tool.
 
-#### 
 
 Plan mode (`plan`)
 
@@ -186,7 +176,6 @@ Prevents tool execution entirely. Claude can analyze code and create plans but c
 
 **Use when:** you want Claude to propose changes without executing them, such as during code review or when you need to approve changes before they're made.
 
-## 
 
 Related resources
 

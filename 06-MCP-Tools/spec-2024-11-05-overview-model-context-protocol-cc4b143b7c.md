@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:14Z"
+fetched_at: "2026-03-17T02:03:49Z"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/basic"
 title: "Overview - Model Context Protocol"
 ---
@@ -18,7 +18,6 @@ All messages between MCP clients and servers **MUST** follow the [JSON-RPC 2.0](
 
 **Responses** are further sub-categorized as either **successful results** or **errors**. Results can follow any JSON object structure, while errors must include an error code and message at minimum.
 
-## 
 
 [​](#protocol-layers)
 
@@ -34,31 +33,24 @@ The Model Context Protocol consists of several key components that work together
 
 All implementations **MUST** support the base protocol and lifecycle management components. Other components **MAY** be implemented based on the specific needs of the application. These protocol layers establish clear separation of concerns while enabling rich interactions between clients and servers. The modular design allows implementations to support exactly the features they need. See the following pages for more details on the different components:
 
-[](/specification/2024-11-05/basic/lifecycle)
 
 ## Lifecycle
 
-[](/specification/2024-11-05/server/resources)
 
 ## Resources
 
-[](/specification/2024-11-05/server/prompts)
 
 ## Prompts
 
-[](/specification/2024-11-05/server/tools)
 
 ## Tools
 
-[](/specification/2024-11-05/server/utilities/logging)
 
 ## Logging
 
-[](/specification/2024-11-05/client/sampling)
 
 ## Sampling
 
-## 
 
 [​](#auth)
 
@@ -66,7 +58,6 @@ Auth
 
 Authentication and authorization are not currently part of the core MCP specification, but we are considering ways to introduce them in future. Join us in [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) to help shape the future of the protocol! Clients and servers **MAY** negotiate their own custom authentication and authorization strategies.
 
-## 
 
 [​](#schema)
 

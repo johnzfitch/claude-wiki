@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:13Z"
+fetched_at: "2026-03-17T02:03:48Z"
 source_url: "https://modelcontextprotocol.io/seps"
 title: "Specification Enhancement Proposals (SEPs) - Model Context Protocol"
 ---
@@ -17,7 +17,6 @@ Specification Enhancement Proposals (SEPs) are the primary mechanism for proposi
 
 Learn how to submit your own Specification Enhancement Proposal
 
-## 
 
 [​](#summary)
 
@@ -26,7 +25,6 @@ Summary
 - **Accepted**: 1
 - **Final**: 25
 
-## 
 
 [​](#all-seps)
 
@@ -61,7 +59,6 @@ All SEPs
 | [SEP-932](/seps/932-model-context-protocol-governance) | Model Context Protocol Governance | Final | Process | 2025-07-08 |
 | [SEP-414](/seps/414-request-meta) | Document OpenTelemetry Trace Context Propagation Conventions | Final | Standards Track | 2025-04-25 |
 
-## 
 
 [​](#sep-status-definitions)
 

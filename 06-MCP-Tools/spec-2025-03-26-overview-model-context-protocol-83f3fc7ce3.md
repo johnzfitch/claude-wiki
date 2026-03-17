@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:16Z"
+fetched_at: "2026-03-17T02:03:51Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/basic"
 title: "Overview - Model Context Protocol"
 ---
@@ -18,7 +18,6 @@ The Model Context Protocol consists of several key components that work together
 
 All implementations **MUST** support the base protocol and lifecycle management components. Other components **MAY** be implemented based on the specific needs of the application. These protocol layers establish clear separation of concerns while enabling rich interactions between clients and servers. The modular design allows implementations to support exactly the features they need.
 
-## 
 
 [​](#messages)
 
@@ -26,7 +25,6 @@ Messages
 
 All messages between MCP clients and servers **MUST** follow the [JSON-RPC 2.0](https://www.jsonrpc.org/specification) specification. The protocol defines these types of messages:
 
-### 
 
 [​](#requests)
 
@@ -36,7 +34,7 @@ Requests are sent from the client to the server or vice versa, to initiate an op
 
 Copy
 
-``` shiki
+```python
 {
   jsonrpc: "2.0";
   id: string | number;
@@ -51,7 +49,6 @@ Copy
 - Unlike base JSON-RPC, the ID **MUST NOT** be `null`.
 - The request ID **MUST NOT** have been previously used by the requestor within the same session.
 
-### 
 
 [​](#responses)
 
@@ -61,7 +58,7 @@ Responses are sent in reply to requests, containing the result or error of the o
 
 Copy
 
-``` shiki
+```python
 {
   jsonrpc: "2.0";
   id: string | number;
@@ -81,7 +78,6 @@ Copy
 - Results **MAY** follow any JSON object structure, while errors **MUST** include an error code and message at minimum.
 - Error codes **MUST** be integers.
 
-### 
 
 [​](#notifications)
 
@@ -91,7 +87,7 @@ Notifications are sent from the client to the server or vice versa, as a one-way
 
 Copy
 
-``` shiki
+```python
 {
   jsonrpc: "2.0";
   method: string;
@@ -103,7 +99,6 @@ Copy
 
 - Notifications **MUST NOT** include an ID.
 
-### 
 
 [​](#batching)
 
@@ -111,7 +106,6 @@ Batching
 
 JSON-RPC also defines a means to [batch multiple requests and notifications](https://www.jsonrpc.org/specification#batch), by sending them in an array. MCP implementations **MAY** support sending JSON-RPC batches, but **MUST** support receiving JSON-RPC batches.
 
-## 
 
 [​](#auth)
 
@@ -119,7 +113,6 @@ Auth
 
 MCP provides an [Authorization](/specification/2025-03-26/basic/authorization) framework for use with HTTP. Implementations using an HTTP-based transport **SHOULD** conform to this specification, whereas implementations using STDIO transport **SHOULD NOT** follow this specification, and instead retrieve credentials from the environment. Additionally, clients and servers **MAY** negotiate their own custom authentication and authorization strategies. For further discussions and contributions to the evolution of MCP’s auth mechanisms, join us in [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) to help shape the future of the protocol!
 
-## 
 
 [​](#schema)
 

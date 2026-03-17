@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:18Z"
+fetched_at: "2026-03-17T02:01:18Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/skills"
 title: "Agent Skills in the SDK - Claude API Docs"
 ---
@@ -11,15 +11,12 @@ title: "Agent Skills in the SDK - Claude API Docs"
 Extend Claude with specialized capabilities using Agent Skills in the Claude Agent SDK
 
 
-## 
-
 Overview
 
 Agent Skills extend Claude with specialized capabilities that Claude autonomously invokes when relevant. Skills are packaged as `SKILL.md` files containing instructions, descriptions, and optional supporting resources.
 
 For comprehensive information about Skills, including benefits, architecture, and authoring guidelines, see the [Agent Skills overview](/docs/en/agents-and-tools/agent-skills/overview).
 
-## 
 
 How Skills Work with the SDK
 
@@ -35,7 +32,6 @@ Unlike subagents (which can be defined programmatically), Skills must be created
 
 **Default behavior**: By default, the SDK does not load any filesystem settings. To use Skills, you must explicitly configure `settingSources: ['user', 'project']` (TypeScript) or `setting_sources=["user", "project"]` (Python) in your options.
 
-## 
 
 Using Skills with the SDK
 
@@ -48,7 +44,7 @@ Once configured, Claude automatically discovers Skills from the specified direct
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
@@ -69,7 +65,6 @@ async def main():
 asyncio.run(main())
 ```
 
-## 
 
 Skill Locations
 
@@ -79,7 +74,6 @@ Skills are loaded from filesystem directories based on your `settingSources`/`se
 - **User Skills** (`~/.claude/skills/`): Personal Skills across all projects - loaded when `setting_sources` includes `"user"`
 - **Plugin Skills**: Bundled with installed Claude Code plugins
 
-## 
 
 Creating Skills
 
@@ -87,7 +81,7 @@ Skills are defined as directories containing a `SKILL.md` file with YAML frontma
 
 **Example directory structure**:
 
-``` shiki
+```python
 .claude/skills/processing-pdfs/
 └── SKILL.md
 ```
@@ -97,7 +91,6 @@ For complete guidance on creating Skills, including SKILL.md structure, multi-fi
 - [Agent Skills in Claude Code](https://code.claude.com/docs/en/skills): Complete guide with examples
 - [Agent Skills Best Practices](/docs/en/agents-and-tools/agent-skills/best-practices): Authoring guidelines and naming conventions
 
-## 
 
 Tool Restrictions
 
@@ -111,7 +104,7 @@ Import statements from the first example are assumed in the following code snipp
 
 Python
 
-``` shiki
+```python
 options = ClaudeAgentOptions(
     setting_sources=["user", "project"],  # Load Skills from filesystem
     allowed_tools=["Skill", "Read", "Grep", "Glob"],
@@ -121,7 +114,6 @@ async for message in query(prompt="Analyze the codebase structure", options=opti
     print(message)
 ```
 
-## 
 
 Discovering Available Skills
 
@@ -129,7 +121,7 @@ To see which Skills are available in your SDK application, simply ask Claude:
 
 Python
 
-``` shiki
+```python
 options = ClaudeAgentOptions(
     setting_sources=["user", "project"],  # Load Skills from filesystem
     allowed_tools=["Skill"],
@@ -141,7 +133,6 @@ async for message in query(prompt="What Skills are available?", options=options)
 
 Claude will list the available Skills based on your current working directory and installed plugins.
 
-## 
 
 Testing Skills
 
@@ -149,7 +140,7 @@ Test Skills by asking questions that match their descriptions:
 
 Python
 
-``` shiki
+```python
 options = ClaudeAgentOptions(
     cwd="/path/to/project",
     setting_sources=["user", "project"],  # Load Skills from filesystem
@@ -162,11 +153,9 @@ async for message in query(prompt="Extract text from invoice.pdf", options=optio
 
 Claude automatically invokes the relevant Skill if the description matches your request.
 
-## 
 
 Troubleshooting
 
-### 
 
 Skills Not Found
 
@@ -174,7 +163,7 @@ Skills Not Found
 
 Python
 
-``` shiki
+```python
 # Wrong - Skills won't be loaded
 options = ClaudeAgentOptions(allowed_tools=["Skill"])
 
@@ -191,7 +180,7 @@ For more details on `settingSources`/`setting_sources`, see the [TypeScript SDK 
 
 Python
 
-``` shiki
+```python
 # Ensure your cwd points to the directory containing .claude/skills/
 options = ClaudeAgentOptions(
     cwd="/path/to/project",  # Must contain .claude/skills/
@@ -204,7 +193,7 @@ See the "Using Skills with the SDK" section above for the complete pattern.
 
 **Verify filesystem location**:
 
-``` shiki
+```python
 # Check project Skills
 ls .claude/skills/*/SKILL.md
 
@@ -212,7 +201,6 @@ ls .claude/skills/*/SKILL.md
 ls ~/.claude/skills/*/SKILL.md
 ```
 
-### 
 
 Skill Not Being Used
 
@@ -220,17 +208,14 @@ Skill Not Being Used
 
 **Check the description**: Ensure it's specific and includes relevant keywords. See [Agent Skills Best Practices](/docs/en/agents-and-tools/agent-skills/best-practices#writing-effective-descriptions) for guidance on writing effective descriptions.
 
-### 
 
 Additional Troubleshooting
 
 For general Skills troubleshooting (YAML syntax, debugging, etc.), see the [Claude Code Skills troubleshooting section](https://code.claude.com/docs/en/skills#troubleshooting).
 
-## 
 
 Related Documentation
 
-### 
 
 Skills Guides
 
@@ -239,7 +224,6 @@ Skills Guides
 - [Agent Skills Best Practices](/docs/en/agents-and-tools/agent-skills/best-practices): Authoring guidelines for effective Skills
 - [Agent Skills Cookbook](https://platform.claude.com/cookbook/skills-notebooks-01-skills-introduction): Example Skills and templates
 
-### 
 
 SDK Resources
 

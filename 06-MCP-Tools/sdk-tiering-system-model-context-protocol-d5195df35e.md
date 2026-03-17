@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:12Z"
+fetched_at: "2026-03-17T02:03:36Z"
 source_url: "https://modelcontextprotocol.io/community/sdk-tiers"
 title: "SDK Tiering System - Model Context Protocol"
 ---
+
 # SDK Tiering System
 
 
@@ -19,7 +20,6 @@ The MCP SDK Tiering System establishes clear expectations for feature completene
 
 Between January 23 and February 23, SDK maintainers can work with the Conformance Testing working group to adopt the tests and set up GitHub issue tracking with the standardized labels defined below.
 
-## 
 
 [​](#overview)
 
@@ -33,7 +33,6 @@ SDKs are classified into three tiers based on feature completeness, maintenance 
 
 Experimental features (such as Tasks) and protocol extensions (such as MCP Apps) are not required for any tier.
 
-## 
 
 [​](#tier-requirements)
 
@@ -52,7 +51,6 @@ Tier Requirements
 
 **Issue Triage** means labeling and determining whether an issue is valid, not resolving the issue. **Critical Bug** refers to P0 issues (see [Priority labels](#priority-only-if-actionable) for detailed criteria). **Stable Release** is a published version explicitly marked as production-ready (e.g., version `1.0.0` or higher without pre-release identifiers like `-alpha`, `-beta`, or `-rc`). **Clear Versioning** means following idiomatic versioning patterns with documented breaking change policies, so users can understand compatibility expectations when upgrading. **Roadmap** outlines concrete steps and work items that track implementation of required MCP specification components (non-experimental features and optional capabilities as described in [Conformance Testing](#conformance-testing)), giving users visibility into upcoming feature support.
 
-## 
 
 [​](#conformance-testing)
 
@@ -73,7 +71,6 @@ Conformance scores are calculated against **applicable required tests** only:
 
 Conformance testing validates that SDKs correctly implement the protocol by running standardized test scenarios and checking protocol message exchanges. See [Tier Relegation](#tier-relegation) for how temporary test failures are handled.
 
-## 
 
 [​](#tier-advancement)
 
@@ -88,7 +85,6 @@ SDK maintainers can request tier advancement by:
 
 The SDK Working Group reviews advancement requests and makes final tier assignments.
 
-## 
 
 [​](#tier-relegation)
 
@@ -99,7 +95,6 @@ An SDK may be moved to a lower tier if existing conformance tests on the latest 
 - **Tier 1 → Tier 2**: Any conformance test fails
 - **Tier 2 → Tier 3**: More than 20% of conformance tests fail
 
-## 
 
 [​](#issue-triage-labels)
 
@@ -107,7 +102,6 @@ Issue Triage Labels
 
 SDK repositories must use consistent labels to enable automated reporting on issue handling metrics. Tier calculations use these metrics to measure triage response times (time from issue creation to first label) and critical bug resolution times (time from P0 label to issue close).
 
-### 
 
 [​](#type-pick-one)
 
@@ -121,7 +115,6 @@ Type (pick one)
 
 Repositories using [GitHub’s native issue types](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/managing-issue-types-in-an-organization) satisfy this requirement without needing type labels.
 
-### 
 
 [​](#status-pick-one)
 
@@ -137,7 +130,6 @@ Use these exact label names across all repositories to enable consistent reporti
 | `good first issue` | Good for newcomers |
 | `help wanted` | Contributions welcome from those familiar with codebase |
 
-### 
 
 [​](#priority-only-if-actionable)
 

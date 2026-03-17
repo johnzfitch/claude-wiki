@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:18:30Z"
+fetched_at: "2026-03-17T02:03:10Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -121,7 +121,7 @@ List Models
 
 C#
 
-``` shiki
+```python
 ModelListParams parameters = new();
 
 var page = await client.Beta.Models.List(parameters);
@@ -133,7 +133,7 @@ await foreach (var item in page.Paginate())
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {
@@ -153,7 +153,7 @@ Response 200
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {

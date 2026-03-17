@@ -1,11 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:34:08Z"
+fetched_at: "2026-03-17T02:04:31Z"
 source_url: "https://support.claude.com/en/articles/11697096-anthropic-mcp-directory-policy"
 title: "Anthropic MCP Directory Policy | Claude Help Center"
 ---
 
 # Anthropic MCP Directory Policy
+
+Updated today
 
 
 This is a prior version of our policy. Please refer to [Anthropic Software Directory Policy](https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy) for the most updated version.

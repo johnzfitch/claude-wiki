@@ -1,11 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-16T05:34:03Z"
+fetched_at: "2026-03-17T02:04:26Z"
 source_url: "https://support.claude.com/en/articles/11596036-anthropic-connectors-directory-faq"
 title: "Anthropic Connectors Directory FAQ | Claude Help Center"
 ---
 
 # Anthropic Connectors Directory FAQ
+
+Updated today
 
 
 ## What is MCP?

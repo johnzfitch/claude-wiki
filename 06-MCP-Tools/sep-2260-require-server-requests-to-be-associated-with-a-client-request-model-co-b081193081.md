@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:12Z"
+fetched_at: "2026-03-17T02:03:47Z"
 source_url: "https://modelcontextprotocol.io/seps/2260-Require-Server-requests-to-be-associated-with-Client-requests"
 title: "SEP-2260: Require Server requests to be associated with a Client request. - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ AcceptedStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,13 +33,11 @@ Abstract
 
 This SEP clarifies that `roots/list`, `sampling/createMessage`, and `elicitation/create` requests **MUST** be associated with an originating client-to-server request (e.g., during `tools/call`, `resources/read`, or `prompts/get` processing). Standalone server-initiated requests of these types outside notifications **MUST NOT** be implemented. Although not enforced in the current MCP Data Layer, logically these requests **MUST** be associated with a valid client-to-server JSON-RPC Request Id. The operational server-to-client **Ping** is excepted from this restriction.
 
-## 
 
 [​](#motivation)
 
 Motivation
 
-### 
 
 [​](#current-specification)
 
@@ -57,7 +54,6 @@ For the optional GET SSE Stream [(2025-11-25/basic/transports.mdx:146-L148)](htt
 
 Although the GET stream allows “unsolicited” requests, its use is entirely optional and cannot be relied upon by MCP Server authors.
 
-### 
 
 [​](#design-intent)
 
@@ -75,7 +71,6 @@ The design intent of MCP Server Requests is to operate reactively **nested withi
 
 However, the normative requirements don’t enforce this constraint.
 
-### 
 
 [​](#simplification-benefits)
 
@@ -88,13 +83,11 @@ Making this constraint explicit:
 3.  **Reduces security surface** - Ensures client has context for what scope the additional requested information will be used for. This allows clients to make better informed decisions on whether to provide the requested info.
 4.  **Aligns with practice** - Based on a scan of GitHub all existing implementations already follow this pattern, except one repo owned by the SEP author with a contrived scenario.
 
-## 
 
 [​](#specification-changes)
 
 Specification Changes
 
-### 
 
 [​](#1-add-warning-blocks-to-feature-documentation)
 
@@ -104,7 +97,7 @@ Specification Changes
 
 Copy
 
-``` shiki
+```python
 <Warning>
 
 **Request Association Requirement**
@@ -120,7 +113,7 @@ Standalone server-initiated sampling on independent communication streams (unrel
 
 Copy
 
-``` shiki
+```python
 <Warning>
 
 **Request Association Requirement**
@@ -142,7 +135,7 @@ to support this pattern.
 
 Copy
 
-``` shiki
+```python
 <Warning>
 
 Servers **MUST** send server-to-client requests (such as `roots/list`,
@@ -162,7 +155,7 @@ to support this pattern.
 
 Copy
 
-``` shiki
+```python
 <Warning>
 
 `ping` is an MCP-level liveness check and **MAY** be sent by either party at
@@ -178,7 +171,6 @@ and `elicitation/create` do not apply to `ping`.
 </Warning>
 ```
 
-### 
 
 [​](#2-clarify-transport-layer-constraints)
 
@@ -188,7 +180,7 @@ and `elicitation/create` do not apply to `ping`.
 
 Copy
 
-``` shiki
+```python
 - The server **MAY** send JSON-RPC _requests_ and _notifications_ before sending the
 - JSON-RPC _response_. These messages **SHOULD** relate to the originating client
 - _request_.
@@ -201,7 +193,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 - The server **MAY** send JSON-RPC _requests_ and _notifications_ on the stream.
 - These messages **SHOULD** be unrelated to any concurrently-running JSON-RPC
 - _request_ from the client.
@@ -212,13 +204,11 @@ Copy
 + sent on standalone streams.
 ```
 
-## 
 
 [​](#backward-compatibility)
 
 Backward Compatibility
 
-### 
 
 [​](#impact-assessment)
 
@@ -229,7 +219,6 @@ This change is expected to have **minimal to no impact** on existing implementat
 1.  **Common usage patterns are preserved** - Sampling/elicitation within tool execution, resource reading, and prompt handling remain fully supported
 2.  **No known implementations affected** - Research conducted on GitHub has shown only one implementation of this pattern. This singular implementation is owned by the SEP author.
 
-### 
 
 [​](#what’s-disallowed)
 
@@ -239,7 +228,7 @@ The following pattern, which was never explicitly documented or recommended, is 
 
 Copy
 
-``` shiki
+```python
 # ❌ PROHIBITED: Standalone server push
 async def background_task():
     while True:
@@ -248,7 +237,6 @@ async def background_task():
         await session.create_message(...)  # NOT ALLOWED
 ```
 
-### 
 
 [​](#what-remains-supported)
 
@@ -258,7 +246,7 @@ The canonical pattern remains fully supported:
 
 Copy
 
-``` shiki
+```python
 # ✅ SUPPORTED: Sampling during tool execution
 @mcp.tool()
 async def analyze_data(data: str, ctx: Context) -> str:
@@ -269,13 +257,11 @@ async def analyze_data(data: str, ctx: Context) -> str:
     return result.content.text
 ```
 
-## 
 
 [​](#implementation-guidance)
 
 Implementation Guidance
 
-### 
 
 [​](#for-server-implementers)
 
@@ -295,7 +281,6 @@ For Server Implementers
 
 Alternative designs will need to be implemented for the “Changes Required” case. Implementors performing unsolicited server-to-client requests (typically URL Elicitation) immediately following initialization are encouraged to lazily perform these requests within the scope of a client-to-server request that requires that information from the client.
 
-### 
 
 [​](#timeout-considerations)
 
@@ -306,7 +291,6 @@ When an MCP Server initiates a “nested” request inside a client request, the
 1.  Transport timeouts (e.g. HTTP Request Timeout) are sufficient to accommodate “Human-in-the-loop” delays, which may be unbounded.
 2.  Short timeouts enforced by infrastructure (e.g. Load Balancers) may result in connection termination before the user responds. For Streamable HTTP, transport-level SSE keepalive mechanisms **SHOULD** be used to keep connections alive and reset timers; `ping` requests **MAY** additionally be used for protocol-level responsiveness checks.
 
-### 
 
 [​](#for-client-implementers)
 
@@ -314,7 +298,6 @@ For Client Implementers
 
 **No changes required** - Clients should already handle sampling/elicitation requests in the context of their own outbound requests. Potential to simplify implementations if out-of-band is currently supported. Clients recieving server-to-client requests with no associated outbound request **SHOULD** respond with a `-32602` (Invalid Params) error.
 
-### 
 
 [​](#for-transport-implementers)
 
@@ -326,7 +309,6 @@ Future transport implementations can rely on the guarantee that:
 - Transports don’t need to support arbitrary server-initiated request/response flows on standalone channels
 - Request correlation and lifecycle management is simplified
 
-## 
 
 [​](#timeline)
 
@@ -334,13 +316,11 @@ Timeline
 
 (This SEP intends to serve as a public notice of the change prior to future protocol versions that will not be compatible with this usage)
 
-## 
 
 [​](#alternatives-considered)
 
 Alternatives Considered
 
-### 
 
 [​](#1-soft-deprecation)
 
@@ -348,7 +328,6 @@ Alternatives Considered
 
 Use **SHOULD NOT** language to discourage but not prohibit the pattern. **Rejected because:** The behavior was never intentionally supported, and leaving it ambiguous prevents transport simplification.
 
-### 
 
 [​](#2-keep-current-ambiguity)
 
@@ -356,7 +335,6 @@ Use **SHOULD NOT** language to discourage but not prohibit the pattern. **Reject
 
 Leave the existing **SHOULD** language unchanged. **Rejected because:** This blocks future transport implementations and leaves implementers uncertain about whether the pattern is supported.
 
-### 
 
 [​](#3-create-a-capability-flag)
 
@@ -364,7 +342,6 @@ Leave the existing **SHOULD** language unchanged. **Rejected because:** This blo
 
 Add a `sampling.standalone` or similar capability for servers that want this behavior. **Rejected because:** This adds complexity for a use case with no known demand, and contradicts the “nested” design principle.
 
-## 
 
 [​](#references)
 

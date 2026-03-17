@@ -1,7 +1,7 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T04:10:39Z"
-last_modified: "Sat, 14 Mar 2026 03:46:44 GMT"
+fetched_at: "2026-03-16T23:06:15Z"
+last_modified: "Mon, 16 Mar 2026 20:41:38 GMT"
 source_url: "https://www.anthropic.com/news/claude-for-chrome"
 title: "Piloting Claude in Chrome | Claude"
 ---
@@ -10,33 +10,24 @@ title: "Piloting Claude in Chrome | Claude"
 
 We're piloting Claude in Chrome to test browser-based AI capabilities while addressing prompt injection risks and building the safety measures needed before wider release.
 
-‍
-
-[](#)
-
-[](#)
 
 - 
 
-  Category
 
   [Product announcements](https://claude.com/blog/category/announcements)
 
 - 
 
-  Product
 
   Claude apps
 
 - 
 
-  Date
 
   August 25, 2025
 
 - 
 
-  Reading time
 
   5
 
@@ -44,7 +35,6 @@ We're piloting Claude in Chrome to test browser-based AI capabilities while addr
 
 - 
 
-  Share
 
   [Copy link](#)
   https://claude.com/blog/claude-for-chrome
@@ -55,13 +45,11 @@ After months of real-world testing, we're ready to expand to all paid plans. We'
 
 **For Teams and Enterprise:** Admins can enable or disable the extension org-wide and configure site allowlists and blocklists.
 
-‍
 
 ***Update: Now available to all Max plan subscribers*** *(Nov 24, 2025)*
 
 *After three months of testing,* [*Claude in Chrome*](https://claude.ai/chrome) *is now available in beta to all Max plan subscribers. Since the research preview, we've shipped major updates including scheduled tasks, multi-tab workflows, and smarter navigation on sites you use every day. Read our* [*release notes*](https://support.claude.com/en/articles/12306336-claude-for-chrome-release-notes) *for the full list of updates, and our* [*safety blog*](http://anthropic.com/research/prompt-injection-defenses) *for details on prompt injection defenses and learnings from the pilot.*
 
-‍
 
 We've spent recent months connecting Claude to your calendar, documents, and many other pieces of software. The next logical step is letting Claude work directly in your browser.
 
@@ -118,114 +106,9 @@ We recommend starting with trusted sites—always be mindful of the data that’
 
 We hope that you’ll share your feedback to help us continue to improve both the capabilities and safeguards for Claude in Chrome—and help us take an important step towards a fundamentally new way to integrate AI into our lives.
 
-No items found.
 
 [Prev](#)
 
 Prev
 
 0/5
-
-[Next](#)
-
-Next
-
-eBook
-
-## 
-
-[](#)
-
-FAQ
-
-No items found.
-
-[](#)
-
-## Related posts
-
-Explore more product news and best practices for teams building with Claude.
-
-Mar 13, 2026
-
-### 1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-Product announcements
-
-[1M context is now generally available for Opus 4.6 and Sonnet 4.6](#)
-
-1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-[1M context is now generally available for Opus 4.6 and Sonnet 4.6](/blog/1m-context-ga)
-
-1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-Mar 12, 2026
-
-### Claude now creates interactive charts, diagrams and visualizations
-
-Product announcements
-
-[Claude now creates interactive charts, diagrams and visualizations](#)
-
-Claude now creates interactive charts, diagrams and visualizations
-
-[Claude now creates interactive charts, diagrams and visualizations](/blog/claude-builds-visuals)
-
-Claude now creates interactive charts, diagrams and visualizations
-
-Feb 17, 2026
-
-### Increase web search accuracy and efficiency with dynamic filtering
-
-Product announcements
-
-[Increase web search accuracy and efficiency with dynamic filtering](#)
-
-Increase web search accuracy and efficiency with dynamic filtering
-
-[Increase web search accuracy and efficiency with dynamic filtering](/blog/improved-web-search-with-dynamic-filtering)
-
-Increase web search accuracy and efficiency with dynamic filtering
-
-Mar 9, 2026
-
-### Bringing Code Review to Claude Code
-
-Claude Code
-
-[Bringing Code Review to Claude Code](#)
-
-Bringing Code Review to Claude Code
-
-[Bringing Code Review to Claude Code](/blog/code-review)
-
-Bringing Code Review to Claude Code
-
-## Transform how your organization operates with Claude
-
-See pricing
-
-[See pricing](https://claude.com/pricing#api)
-
-See pricing
-
-Contact sales
-
-[Contact sales](https://claude.com/contact-sales)
-
-Contact sales
-
-Get the developer newsletter
-
-Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
-
-[Subscribe](#)
-
-Subscribe
-
-Please provide your email address if you'd like to receive our monthly developer newsletter. You can unsubscribe at any time.
-
-Thank you! You’re subscribed.
-
-Sorry, there was a problem with your submission, please try again later.

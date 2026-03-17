@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-13T09:23:10Z"
+fetched_at: "2026-03-17T02:03:21Z"
 source_url: "https://www.anthropic.com/news/healthcare-life-sciences"
 title: "Advancing Claude in healthcare and the life sciences \\ Anthropic"
 ---
+
 # Advancing Claude in healthcare and the life sciences
 
 Jan 11, 2026
@@ -30,7 +31,7 @@ With these model improvements and our new tools, Claude is now dramatically more
 
 #### **What’s new**
 
-[Connectors](https://claude.ai/redirect/website.v1.9c36c1d5-811b-4eb8-a91f-414f892fa05a/settings/connectors) are tools that allow users to give Claude access to other platforms directly. For payers and providers, we’ve added several connectors that make healthcare information easier to find, access, and understand. These allow Claude to pull information from industry-standard systems and databases, meaning that clinicians and administrators can save significant time finding the data and generating the reports they need.
+[Connectors](https://claude.ai/redirect/website.v1.98268848-3f09-4114-aa3b-fc4b87f65524/settings/connectors) are tools that allow users to give Claude access to other platforms directly. For payers and providers, we’ve added several connectors that make healthcare information easier to find, access, and understand. These allow Claude to pull information from industry-standard systems and databases, meaning that clinicians and administrators can save significant time finding the data and generating the reports they need.
 
 Claude can now connect to:
 
@@ -207,16 +208,18 @@ February 7, 2026: *Edited the introductory paragraph to clarify that HIPAA-ready
 
 ## Related content
 
-### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
+[Read more](/news/claude-partner-network)
 
-### Anthropic is donating \$20 million to Public First Action
+### Introducing The Anthropic Institute
 
-[Read more](/news/donate-public-first-action)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Covering electricity price increases from our data centers
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/covering-electricity-price-increases)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

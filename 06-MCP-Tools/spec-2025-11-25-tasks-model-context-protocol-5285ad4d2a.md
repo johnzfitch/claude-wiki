@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:23Z"
+fetched_at: "2026-03-17T02:03:58Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks"
 title: "Tasks - Model Context Protocol"
 ---
@@ -12,7 +12,6 @@ Tasks were introduced in version 2025-11-25 of the MCP specification and are cur
 
 The Model Context Protocol (MCP) allows requestors — which can be either clients or servers, depending on the direction of communication — to augment their requests with **tasks**. Tasks are durable state machines that carry information about the underlying execution state of the request they wrap, and are intended for requestor polling and deferred result retrieval. Each task is uniquely identifiable by a receiver-generated **task ID**. Tasks are useful for representing expensive computations and batch processing requests, and integrate seamlessly with external job APIs.
 
-## 
 
 [​](#definitions)
 
@@ -23,7 +22,6 @@ Tasks represent parties as either “requestors” or “receivers,” defined a
 - **Requestor:** The sender of a task-augmented request. This can be the client or the server — either can create tasks.
 - **Receiver:** The receiver of a task-augmented request, and the entity executing the task. This can be the client or the server — either can receive and execute tasks.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -31,7 +29,6 @@ User Interaction Model
 
 Tasks are designed to be **requestor-driven** - requestors are responsible for augmenting requests with tasks and for polling for the results of those tasks; meanwhile, receivers tightly control which requests (if any) support task-based execution and manages the lifecycles of those tasks. This requestor-driven approach ensures deterministic response handling and enables sophisticated patterns such as dispatching concurrent requests, which only the requestor has sufficient context to orchestrate. Implementations are free to expose tasks through any interface pattern that suits their needs — the protocol itself does not mandate any specific user interaction model.
 
-## 
 
 [​](#capabilities)
 
@@ -39,7 +36,6 @@ Capabilities
 
 Servers and clients that support task-augmented requests **MUST** declare a `tasks` capability during initialization. The `tasks` capability is structured by request category, with boolean properties indicating which specific request types support task augmentation.
 
-### 
 
 [​](#server-capabilities)
 
@@ -55,7 +51,7 @@ Servers declare if they support tasks, and if so, which server-side requests can
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "tasks": {
@@ -71,7 +67,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#client-capabilities)
 
@@ -88,7 +83,7 @@ Clients declare if they support tasks, and if so, which client-side requests can
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "tasks": {
@@ -107,7 +102,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#capability-negotiation)
 
@@ -115,7 +109,6 @@ Capability Negotiation
 
 During the initialization phase, both parties exchange their `tasks` capabilities to establish which operations support task-based execution. Requestors **SHOULD** only augment requests with a task if the corresponding capability has been declared by the receiver. For example, if a server’s capabilities include `tasks.requests.tools.call: {}`, then clients may augment `tools/call` requests with a task. If a client’s capabilities include `tasks.requests.sampling.createMessage: {}`, then servers may augment `sampling/createMessage` requests with a task. If `capabilities.tasks` is not defined, the peer **SHOULD NOT** attempt to create tasks during requests. The set of capabilities in `capabilities.tasks.requests` is exhaustive. If a request type is not present, it does not support task-augmentation. `capabilities.tasks.list` controls if the `tasks/list` operation is supported by the party. `capabilities.tasks.cancel` controls if the `tasks/cancel` operation is supported by the party.
 
-### 
 
 [​](#tool-level-negotiation)
 
@@ -129,13 +122,11 @@ Tool calls are given special consideration for the purpose of task augmentation.
     2.  If `execution.taskSupport` is `"optional"`, clients **MAY** invoke the tool as a task or as a normal request.
     3.  If `execution.taskSupport` is `"required"`, clients **MUST** invoke the tool as a task. Servers **MUST** return a `-32601` (Method not found) error if a client does not attempt to do so.
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#creating-tasks)
 
@@ -150,7 +141,7 @@ To create a task, requestors send a request with the `task` field included in th
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -171,7 +162,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -193,7 +184,6 @@ When a receiver accepts a task-augmented request, it returns a [`CreateTaskResul
 
 When a task is created in response to a `tools/call` request, host applications may wish to return control to the model while the task is executing. This allows the model to continue processing other requests or perform additional work while waiting for the task to complete.To support this pattern, servers can provide an optional `io.modelcontextprotocol/model-immediate-response` key in the `_meta` field of the `CreateTaskResult`. The value of this key should be a string intended to be passed as an immediate tool result to the model. If a server does not provide this field, the host application can fall back to its own predefined message.This guidance is non-binding and is provisional logic intended to account for the specific use case. This behavior may be formalized or modified as part of `CreateTaskResult` in future protocol versions.
 
-### 
 
 [​](#getting-tasks)
 
@@ -205,7 +195,7 @@ Requestors poll for task completion by sending [`tasks/get`](/specification/2025
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -220,7 +210,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -236,7 +226,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#retrieving-task-results)
 
@@ -248,7 +237,7 @@ After a task completes the operation result is retrieved via [`tasks/result`](/s
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -263,7 +252,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -284,7 +273,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#task-status-notification)
 
@@ -294,7 +282,7 @@ When a task status changes, receivers **MAY** send a [`notifications/tasks/statu
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/tasks/status",
@@ -311,7 +299,6 @@ Copy
 
 The notification includes the full [`Task`](/specification/2025-11-25/schema#task) object, including the updated `status` and `statusMessage` (if present). This allows requestors to access the complete task state without making an additional `tasks/get` request. Requestors **MUST NOT** rely on receiving this notifications, as it is optional. Receivers are not required to send status notifications and may choose to only send them for certain status transitions. Requestors **SHOULD** continue to poll via `tasks/get` to ensure they receive status updates.
 
-### 
 
 [​](#listing-tasks)
 
@@ -321,7 +308,7 @@ To retrieve a list of tasks, requestors can send a [`tasks/list`](/specification
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 5,
@@ -336,7 +323,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 5,
@@ -363,7 +350,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#cancelling-tasks)
 
@@ -373,7 +359,7 @@ To explicitly cancel a task, requestors can send a [`tasks/cancel`](/specificati
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 6,
@@ -388,7 +374,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 6,
@@ -404,7 +390,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#behavior-requirements)
 
@@ -412,7 +397,6 @@ Behavior Requirements
 
 These requirements apply to all parties that support receiving task-augmented requests.
 
-### 
 
 [​](#task-support-and-handling)
 
@@ -421,7 +405,6 @@ Task Support and Handling
 1.  Receivers that do not declare the task capability for a request type **MUST** process requests of that type normally, ignoring any task-augmentation metadata if present.
 2.  Receivers that declare the task capability for a request type **MAY** return an error for non-task-augmented requests, requiring requestors to use task augmentation.
 
-### 
 
 [​](#task-id-requirements)
 
@@ -431,7 +414,6 @@ Task ID Requirements
 2.  Task IDs **MUST** be generated by the receiver when creating a task.
 3.  Task IDs **MUST** be unique among all tasks controlled by the receiver.
 
-### 
 
 [​](#task-status-lifecycle)
 
@@ -445,7 +427,6 @@ Task Status Lifecycle
 
 **Task Status State Diagram:**
 
-### 
 
 [​](#input-required-status)
 
@@ -458,7 +439,6 @@ With the Streamable HTTP (SSE) transport, servers often close SSE streams after 
 3.  When the requestor encounters the `input_required` status, it **SHOULD** preemptively call `tasks/result`.
 4.  When the receiver receives all required input, the task **SHOULD** transition out of `input_required` status (typically back to `working`).
 
-### 
 
 [​](#ttl-and-resource-management)
 
@@ -471,7 +451,6 @@ TTL and Resource Management
 5.  After a task’s `ttl` lifetime has elapsed, receivers **MAY** delete the task and its results, regardless of the task status.
 6.  Receivers **MAY** include a `pollInterval` value (in milliseconds) in `tasks/get` responses to suggest polling intervals. Requestors **SHOULD** respect this value when provided.
 
-### 
 
 [​](#result-retrieval)
 
@@ -482,7 +461,6 @@ Result Retrieval
 3.  When a receiver receives a `tasks/result` request for a task in any other non-terminal status (`working` or `input_required`), it **MUST** block the response until the task reaches a terminal status.
 4.  For tasks in a terminal status, receivers **MUST** return from `tasks/result` exactly what the underlying request would have returned, whether that is a successful result or a JSON-RPC error.
 
-### 
 
 [​](#associating-task-related-messages)
 
@@ -492,7 +470,6 @@ Associating Task-Related Messages
     1.  For example, an elicitation that a task-augmented tool call depends on **MUST** share the same related task ID with that tool call’s task.
 2.  For the `tasks/get`, `tasks/result`, and `tasks/cancel` operations, the `taskId` parameter in the request **MUST** be used as the source of truth for identifying the target task. Requestors **SHOULD NOT** include `io.modelcontextprotocol/related-task` metadata in these requests, and receivers **MUST** ignore such metadata if present in favor of the RPC method parameter. Similarly, for the `tasks/get`, `tasks/list`, and `tasks/cancel` operations, receivers **SHOULD NOT** include `io.modelcontextprotocol/related-task` metadata in the result messages, as the `taskId` is already present in the response structure.
 
-### 
 
 [​](#task-notifications)
 
@@ -502,7 +479,6 @@ Task Notifications
 2.  Requestors **MUST NOT** rely on receiving the `notifications/tasks/status` notification, as it is optional.
 3.  When sent, the `notifications/tasks/status` notification **SHOULD NOT** include the `io.modelcontextprotocol/related-task` metadata, as the task ID is already present in the notification parameters.
 
-### 
 
 [​](#task-progress-notifications)
 
@@ -510,7 +486,6 @@ Task Progress Notifications
 
 Task-augmented requests support progress notifications as defined in the [progress](./progress) specification. The `progressToken` provided in the initial request remains valid throughout the task lifetime.
 
-### 
 
 [​](#task-listing)
 
@@ -521,7 +496,6 @@ Task Listing
 3.  Requestors **MUST** treat cursors as opaque tokens and not attempt to parse or modify them.
 4.  If a task is retrievable via `tasks/get` for a requestor, it **MUST** be retrievable via `tasks/list` for that requestor.
 
-### 
 
 [​](#task-cancellation)
 
@@ -533,43 +507,36 @@ Task Cancellation
 4.  The `tasks/cancel` operation does not define deletion behavior. However, receivers **MAY** delete cancelled tasks at their discretion at any time, including immediately after cancellation or after the task `ttl` expires.
 5.  Requestors **SHOULD NOT** rely on cancelled tasks being retained for any specific duration and should retrieve any needed information before cancelling.
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-### 
 
 [​](#basic-task-lifecycle)
 
 Basic Task Lifecycle
 
-### 
 
 [​](#task-augmented-tool-call-with-elicitation)
 
 Task-Augmented Tool Call With Elicitation
 
-### 
 
 [​](#task-augmented-sampling-request)
 
 Task-Augmented Sampling Request
 
-### 
 
 [​](#task-cancellation-flow)
 
 Task Cancellation Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#task)
 
@@ -585,7 +552,6 @@ A task represents the execution state of a request. The task state includes:
 - `pollInterval`: Suggested time in milliseconds between status checks
 - `lastUpdatedAt`: ISO 8601 timestamp when the task status was last updated
 
-### 
 
 [​](#task-status)
 
@@ -599,7 +565,6 @@ Tasks can be in one of the following states:
 - `failed`: The associated request did not complete successfully. For tool calls specifically, this includes cases where the tool call result has `isError` set to true.
 - `cancelled`: The request was cancelled before completion.
 
-### 
 
 [​](#task-parameters)
 
@@ -609,7 +574,7 @@ When augmenting a request with task execution, the `task` field is included in t
 
 Copy
 
-``` shiki
+```python
 {
   "task": {
     "ttl": 60000
@@ -621,7 +586,6 @@ Fields:
 
 - `ttl` (number, optional): Requested duration in milliseconds to retain task from creation
 
-### 
 
 [​](#related-task-metadata)
 
@@ -631,7 +595,7 @@ All requests, responses, and notifications associated with a task **MUST** inclu
 
 Copy
 
-``` shiki
+```python
 {
   "io.modelcontextprotocol/related-task": {
     "taskId": "786512e2-9e0d-44bd-8f29-789f320fe840"
@@ -641,7 +605,6 @@ Copy
 
 This associates messages with their originating task across the entire request lifecycle. For the `tasks/get`, `tasks/list`, and `tasks/cancel` operations, requestors and receivers **SHOULD NOT** include this metadata in their messages, as the `taskId` is already present in the message structure. The `tasks/result` operation **MUST** include this metadata in its response, as the result structure itself does not contain the task ID.
 
-## 
 
 [​](#error-handling)
 
@@ -652,7 +615,6 @@ Tasks use two error reporting mechanisms:
 1.  **Protocol Errors**: Standard JSON-RPC errors for protocol-level issues
 2.  **Task Execution Errors**: Errors in the underlying request execution, reported through task status
 
-### 
 
 [​](#protocol-errors)
 
@@ -673,7 +635,7 @@ Receivers **SHOULD** provide informative error messages to describe the cause of
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -688,7 +650,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 70,
@@ -703,7 +665,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 71,
@@ -720,7 +682,7 @@ Receivers are not required to retain tasks indefinitely. It is compliant behavio
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 74,
@@ -731,7 +693,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#task-execution-errors)
 
@@ -741,7 +702,7 @@ When the underlying request does not complete successfully, the task moves to th
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -761,13 +722,11 @@ For tasks that wrap tool call requests, when the tool result has `isError` set t
 - If the underlying request resulted in a JSON-RPC error, `tasks/result` **MUST** return that same JSON-RPC error.
 - If the request completed with a JSON-RPC response, `tasks/result` **MUST** return a successful JSON-RPC response containing that result.
 
-## 
 
 [​](#security-considerations)
 
 Security Considerations
 
-### 
 
 [​](#task-isolation-and-access-control)
 
@@ -775,7 +734,6 @@ Task Isolation and Access Control
 
 Task IDs are the primary mechanism for accessing task state and results. Without proper access controls, any party that can guess or obtain a task ID could potentially access sensitive information or manipulate tasks they did not create. When an authorization context is provided, receivers **MUST** bind tasks to said context. Context-binding is not practical for all applications. Some MCP servers operate in environments without authorization, such as single-user tools, or use transports that don’t support authorization. In these scenarios, receivers **SHOULD** document this limitation clearly, as task results may be accessible to any requestor that can guess the task ID. If context-binding is unavailable, receivers **MUST** generate cryptographically secure task IDs with enough entropy to prevent guessing and should consider using shorter TTL durations to reduce the exposure window. Furthermore, receivers that cannot identify requestors **SHOULD NOT** declare the `tasks.list` capability, as listing tasks would expose task metadata to any requestor regardless of task ID entropy. If context-binding is available, receivers **MUST** reject `tasks/get`, `tasks/result`, and `tasks/cancel` requests for tasks that do not belong to the same authorization context as the requestor. For `tasks/list` requests, receivers **MUST** ensure the returned task list includes only tasks associated with the requestor’s authorization context. Additionally, receivers **SHOULD** implement rate limiting on task operations to prevent denial-of-service and enumeration attacks.
 
-### 
 
 [​](#resource-management)
 
@@ -789,7 +747,6 @@ Resource Management
     5.  Document maximum concurrent tasks per requestor
     6.  Implement monitoring and alerting for resource usage
 
-### 
 
 [​](#audit-and-logging)
 

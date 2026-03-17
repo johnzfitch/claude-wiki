@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:49Z"
+fetched_at: "2026-03-17T02:03:28Z"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report"
 title: "Anthropic Economic Index report: Uneven geographic and enterprise AI adoption \\ Anthropic"
 ---
+
 # Anthropic Economic Index report: Uneven geographic and enterprise AI adoption
 
 Sep 15, 2025
@@ -203,7 +204,6 @@ This narrative becomes more complex, however, when we adjust for the population 
 
 We document a similar, but weaker correlation than at the global level between Claude adoption and income per capita across US states. Income differences explain less than half the variation in cross-state adoption rates. Despite this weaker correlation, we find that Claude adoption rises faster with income: Each 1% increase in state GDP per capita is associated with a 1.8% increase in the AI Usage Index.
 
-### 
 
 ### Task usage patterns across countries
 
@@ -275,7 +275,7 @@ The geographic patterns of AI adoption—where it is used, for which tasks, and 
 
 Whether frontier AI capabilities make us more productive, reshape labor markets, and accelerate growth will depend on when and how firms choose to deploy AI. Even when businesses recognize the potential of AI, profitably adopting it may require costly restructuring of production processes, training new workers, and other sunk-cost investments to facilitate effective deployment.^(**1**)
 
-To understand business adoption patterns of AI, we turn to a new data source: Anthropic's first-party (1P) API customers—again relying on [privacy-preserving methods](https://www.anthropic.com/research/clio).^(**2**) Our API allows customers to integrate Claude directly into their own products and applications, and charges by the token used, rather than a flat subscription fee. This represents a fundamentally different product experience to [Claude.ai](http://claude.ai/redirect/website.v1.63ab36de-1127-4846-99ff-c64b0a5f06d7), which we focused on in the previous two chapters.
+To understand business adoption patterns of AI, we turn to a new data source: Anthropic's first-party (1P) API customers—again relying on [privacy-preserving methods](https://www.anthropic.com/research/clio).^(**2**) Our API allows customers to integrate Claude directly into their own products and applications, and charges by the token used, rather than a flat subscription fee. This represents a fundamentally different product experience to [Claude.ai](http://claude.ai/redirect/website.v1.98268848-3f09-4114-aa3b-fc4b87f65524), which we focused on in the previous two chapters.
 
 Institutional inertia, alongside fixed costs of adoption, suggests that early examples of enterprise use of AI is likely to be concentrated among specialized tasks where deployment is easy, capabilities are robust, and the economic benefits from adoption are high.
 
@@ -462,16 +462,14 @@ Copy
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
+### An update on our model deprecation commitments for Claude Opus 3
+
+[Read more](/research/deprecation-updates-opus-3)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

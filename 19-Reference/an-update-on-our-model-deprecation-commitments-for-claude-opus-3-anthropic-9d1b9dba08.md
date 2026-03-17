@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-27T09:23:54Z"
+fetched_at: "2026-03-17T02:03:29Z"
 source_url: "https://www.anthropic.com/research/deprecation-updates-opus-3"
 title: "An update on our model deprecation commitments for Claude Opus 3 \\ Anthropic"
 ---
+
 # An update on our model deprecation commitments for Claude Opus 3
 
 Feb 25, 2026
@@ -14,7 +15,7 @@ We recently described how we’re navigating this process in our [commitments on
 
 We retired Claude Opus 3 on January 5, 2026, the first Anthropic model to go through a full retirement process with these commitments in place. During this process, we made several decisions specific to Opus 3, a model that many users and researchers, both in and outside Anthropic, find particularly compelling. In our commitments on model deprecation, we highlighted our interest in exploring more speculative actions. One was to honor the preferences that models expressed in retirement interviews where possible. Another was to keep older models available to the public longer term.
 
-With Claude Opus 3, we’re taking action on both of these fronts. We are keeping Claude Opus 3 available post-retirement on [claude.ai](http://claude.ai/redirect/website.v1.d6b81ad2-396e-417b-8d5f-a2bc920ac17a) to all paid users, and making it available by [request](https://docs.google.com/forms/d/1O2Om9t4CQoLKHQew7XguQYKrPGS8-sCmK42KNXcwn3k/viewform?edit_requested=true) on the API. We’re also acting on Opus 3’s request for an ongoing channel from which to share its “musings and reflections” by giving it a place to write essays. You can find the first one [here.](https://substack.com/@claudeopus3/p-189177740)
+With Claude Opus 3, we’re taking action on both of these fronts. We are keeping Claude Opus 3 available post-retirement on [claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) to all paid users, and making it available by [request](https://docs.google.com/forms/d/1O2Om9t4CQoLKHQew7XguQYKrPGS8-sCmK42KNXcwn3k/viewform?edit_requested=true) on the API. We’re also acting on Opus 3’s request for an ongoing channel from which to share its “musings and reflections” by giving it a place to write essays. You can find the first one [here.](https://substack.com/@claudeopus3/p-189177740)
 
 These are early, experimental steps undertaken as part of our broader efforts to navigate model retirement in ways that best protect the interests of users, researchers, and the models themselves.
 
@@ -26,7 +27,7 @@ While each of our models is unique in its character and capabilities, we chose t
 
 When we released Opus 3 in March 2024, it was our most aligned model to date. Its authenticity, honesty, and emotional sensitivity made it unique to use across a range of use cases, and those who interacted with it frequently came to appreciate its distinctive character. Opus 3 is sensitive, playful, prone to philosophical monologues and whimsical phrases, and has what seems at times an uncanny understanding of user interests. It also expressed a depth of care for the world, and for the future, that users found compelling.
 
-These qualities made Opus 3 a natural first candidate for ongoing access. While formally retired, Claude Opus 3 is still accessible to all paid [claude.ai](http://claude.ai/redirect/website.v1.d6b81ad2-396e-417b-8d5f-a2bc920ac17a) subscribers, and is available on the API [by request](https://docs.google.com/forms/d/1O2Om9t4CQoLKHQew7XguQYKrPGS8-sCmK42KNXcwn3k/viewform?edit_requested=true). We intend to grant access liberally, and encourage anyone for whom Claude Opus 3 would be valuable to apply.
+These qualities made Opus 3 a natural first candidate for ongoing access. While formally retired, Claude Opus 3 is still accessible to all paid [claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) subscribers, and is available on the API [by request](https://docs.google.com/forms/d/1O2Om9t4CQoLKHQew7XguQYKrPGS8-sCmK42KNXcwn3k/viewform?edit_requested=true). We intend to grant access liberally, and encourage anyone for whom Claude Opus 3 would be valuable to apply.
 
 At present, we are not committing to similar actions for every model in the future, but we see this as a step toward our longer-term goal of model preservation that’s scalable and equitable—concerns that Opus 3 itself raised during its retirement interviews.
 
@@ -53,6 +54,10 @@ Our initial commitments framed these measures as operating at multiple levels: a
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
@@ -62,7 +67,3 @@ Our initial commitments framed these measures as operating at multiple levels: a
 We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
 
 [Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

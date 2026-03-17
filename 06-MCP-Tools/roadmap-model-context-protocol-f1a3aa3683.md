@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-07T01:05:14Z"
+fetched_at: "2026-03-17T02:03:37Z"
 source_url: "https://modelcontextprotocol.io/development/roadmap"
 title: "Roadmap - Model Context Protocol"
 ---
@@ -17,7 +17,6 @@ This page describes our strategic priorities and what we expect **Working Groups
 
 The ideas presented here are not commitments. We may solve these challenges differently than described. Some items may not materialize at all. This is also not an *exhaustive* list. We may incorporate work that isn’t mentioned here.
 
-## 
 
 [​](#sep-prioritization)
 
@@ -25,13 +24,11 @@ SEP Prioritization
 
 **SEPs that fall within the priority areas below will receive expedited review and have the highest chance of acceptance.** SEPs outside these areas are not automatically rejected, but contributors should expect longer review timelines and a higher bar for justification. Maintainer capacity is finite. We direct it toward these priorities first. If you are considering a SEP, check whether it aligns with one of the areas below, discuss it in the relevant [Working Group or Interest Group](/community/working-interest-groups), and bring that group’s backing with you. SEPs with WG support and a clear connection to the roadmap move fastest. See the [SEP guidelines](/community/sep-guidelines) for the full process.
 
-## 
 
 [​](#priority-areas)
 
 Priority Areas
 
-### 
 
 [​](#1-transport-evolution-and-scalability)
 
@@ -50,7 +47,6 @@ Streamable HTTP gave MCP a production-ready transport, but running it at scale h
 
 We will **not** be introducing additional official transports this cycle. Keeping the set small protects ecosystem compatibility; the community should experiment via custom transports.
 
-### 
 
 [​](#2-agent-communication)
 
@@ -63,7 +59,6 @@ The Tasks primitive ([SEP-1686](https://github.com/modelcontextprotocol/modelcon
 
 These are the gaps we can point to today. The Agents WG should also collect and triage operational issues from production deployments—this list will grow as more of the ecosystem runs Tasks at scale.
 
-### 
 
 [​](#3-governance-maturation)
 
@@ -75,7 +70,6 @@ MCP has grown into a multi-company open standard under the Linux Foundation. [SE
 - **A delegation model** allowing WGs with a proven track record to accept SEPs and publish extension updates within their domain without a full core-maintainer review cycle.
 - **A charter template** that every WG and IG maintains publicly: scope, active deliverables, success criteria, and retirement conditions, reviewed quarterly.
 
-### 
 
 [​](#4-enterprise-readiness)
 
@@ -90,7 +84,6 @@ Enterprises are deploying MCP at scale and hitting gaps the protocol does not ye
 
 We expect an **Enterprise WG** to form to own this. Much of the output will likely land as extensions rather than core specification changes.
 
-## 
 
 [​](#on-the-horizon)
 
@@ -103,7 +96,6 @@ These areas have community interest and interest from core maintainers but are n
 - **Security & Authorization** — finer-grained least-privilege scopes, clearer guidance on avoiding OAuth mix-up attacks, secure credential management on both client and server, and a community-driven vulnerability disclosure program routed through the Linux Foundation. Sponsored work is already underway: [SEP-1932 (DPoP)](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1932) and [SEP-1933 (Workload Identity Federation)](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1933).
 - **Extensions Ecosystem** — the `ext-auth` and `ext-apps` tracks are early proof that the extension mechanism works. Maturing them, investigating a Skills primitive for composed capabilities, and adding first-class extension support to the registry would all strengthen the path from experiment to standard.
 
-## 
 
 [​](#validation)
 
@@ -115,7 +107,6 @@ A protocol specification is only as good as the implementations that follow it. 
 - **SDK Tiers**: the tiering system introduced in [SEP-1730](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1730) gives developers a clear signal of which SDKs track the specification most closely.
 - **Reference Implementations**: canonical implementations of new features to anchor community development and unblock early adopters.
 
-## 
 
 [​](#get-involved)
 

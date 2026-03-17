@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:16Z"
+fetched_at: "2026-03-17T02:01:14Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/custom-tools"
 title: "Custom Tools - Claude API Docs"
 ---
@@ -13,7 +13,6 @@ Build and integrate custom tools to extend Claude Agent SDK functionality
 
 Custom tools allow you to extend Claude Code's capabilities with your own functionality through in-process MCP servers, enabling Claude to interact with external services, APIs, or perform specialized operations.
 
-## 
 
 Creating Custom Tools
 
@@ -21,7 +20,7 @@ Use the `createSdkMcpServer` and `tool` helper functions to define type-safe cus
 
 TypeScript
 
-``` shiki
+```python
 import { query, tool, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk";
 import { z } from "zod";
 
@@ -57,7 +56,6 @@ const customServer = createSdkMcpServer({
 });
 ```
 
-## 
 
 Using Custom Tools
 
@@ -65,7 +63,6 @@ Pass the custom server to the `query` function via the `mcpServers` option as a 
 
 **Important:** Custom MCP tools require streaming input mode. You must use an async generator/iterable for the `prompt` parameter - a simple string will not work with MCP servers.
 
-### 
 
 Tool Name Format
 
@@ -74,7 +71,6 @@ When MCP tools are exposed to Claude, their names follow a specific format:
 - Pattern: `mcp__{server_name}__{tool_name}`
 - Example: A tool named `get_weather` in server `my-custom-tools` becomes `mcp__my-custom-tools__get_weather`
 
-### 
 
 Configuring Allowed Tools
 
@@ -82,7 +78,7 @@ You can control which tools Claude can use via the `allowedTools` option:
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Use the custom tools in your query with streaming input
@@ -116,7 +112,6 @@ for await (const message of query({
 }
 ```
 
-### 
 
 Multiple Tools Example
 
@@ -124,7 +119,7 @@ When your MCP server has multiple tools, you can selectively allow them:
 
 TypeScript
 
-``` shiki
+```python
 const multiToolServer = createSdkMcpServer({
   name: "utilities",
   version: "1.0.0",
@@ -190,7 +185,6 @@ for await (const message of query({
 }
 ```
 
-## 
 
 Type Safety with Python
 
@@ -198,7 +192,7 @@ The `@tool` decorator supports various schema definition approaches for type saf
 
 TypeScript
 
-``` shiki
+```python
 import { z } from "zod";
 
 tool(
@@ -232,7 +226,6 @@ tool(
 );
 ```
 
-## 
 
 Error Handling
 
@@ -240,7 +233,7 @@ Handle errors gracefully to provide meaningful feedback:
 
 TypeScript
 
-``` shiki
+```python
 tool(
   "fetch_data",
   "Fetch data from an API",
@@ -285,17 +278,15 @@ tool(
 );
 ```
 
-## 
 
 Example Tools
 
-### 
 
 Database Query Tool
 
 TypeScript
 
-``` shiki
+```python
 const databaseServer = createSdkMcpServer({
   name: "database-tools",
   version: "1.0.0",
@@ -323,13 +314,12 @@ const databaseServer = createSdkMcpServer({
 });
 ```
 
-### 
 
 API Gateway Tool
 
 TypeScript
 
-``` shiki
+```python
 const apiGatewayServer = createSdkMcpServer({
   name: "api-gateway",
   version: "1.0.0",
@@ -380,13 +370,12 @@ const apiGatewayServer = createSdkMcpServer({
 });
 ```
 
-### 
 
 Calculator Tool
 
 TypeScript
 
-``` shiki
+```python
 const calculatorServer = createSdkMcpServer({
   name: "calculator",
   version: "1.0.0",
@@ -459,7 +448,6 @@ const calculatorServer = createSdkMcpServer({
 });
 ```
 
-## 
 
 Related Documentation
 

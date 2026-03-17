@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:46Z"
+fetched_at: "2026-03-17T02:03:23Z"
 source_url: "https://www.anthropic.com/news/mou-uk-government"
 title: "Anthropic signs MOU with UK Government to explore how AI can transform UK public services \\ Anthropic"
 ---
+
 # Anthropic signs MOU with UK Government to explore how AI can transform UK public services
 
 Feb 14, 2025
@@ -20,7 +21,7 @@ DSIT and Anthropic plan to deepen their partnership by exploring additional oppo
 - Securing the supply chain for advanced AI and the UK’s future infrastructure;
 - Boosting the innovation economy with Anthropic’s AI systems and tools, supporting the UK’s world-leading startup community as well as universities and other organisations.
 
-The collaboration will also draw on Anthropic's recently released [Economic Index](https://www.anthropic.com/news/the-anthropic-economic-index)—which uses anonymized conversations on [Claude.ai](https://claude.ai/redirect/website.v1.b97a16d8-15f0-4f60-80b4-9db2b6109bc2) to understand AI's effects on labor markets and the economy over time—to provide insights to help the UK adapt its workforce and innovation strategies for an AI-enabled future.
+The collaboration will also draw on Anthropic's recently released [Economic Index](https://www.anthropic.com/news/the-anthropic-economic-index)—which uses anonymized conversations on [Claude.ai](https://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) to understand AI's effects on labor markets and the economy over time—to provide insights to help the UK adapt its workforce and innovation strategies for an AI-enabled future.
 
 Anthropic will continue to work closely with the UK AI Security Institute to research and evaluate AI capabilities and potential security risks. Together, we're committed to developing robust safeguards that will help unlock the significant opportunities AI presents while ensuring its responsible and secure deployment.
 
@@ -34,16 +35,18 @@ Governments and public institutions worldwide are already using Claude to enhanc
 
 ## Related content
 
-### Detecting and preventing distillation attacks
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Making frontier cybersecurity capabilities available to defenders
+[Read more](/news/claude-partner-network)
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+### Introducing The Anthropic Institute
 
-[Read more](/news/claude-code-security)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

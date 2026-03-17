@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-13T09:23:09Z"
+fetched_at: "2026-03-17T02:03:15Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
 title: "Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation \\ Anthropic"
 ---
+
 # Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
 
 Feb 12, 2026
@@ -39,16 +40,18 @@ The demand we are seeing from enterprises and developers reflects the trust they
 
 ## Related content
 
-### Anthropic is donating \$20 million to Public First Action
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/donate-public-first-action)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Covering electricity price increases from our data centers
+[Read more](/news/claude-partner-network)
 
-[Read more](/news/covering-electricity-price-increases)
+### Introducing The Anthropic Institute
 
-### Introducing Claude Opus 4.6
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/claude-opus-4-6)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

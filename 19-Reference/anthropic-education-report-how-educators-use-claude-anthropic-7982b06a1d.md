@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:01Z"
+fetched_at: "2026-03-17T02:03:14Z"
 source_url: "https://www.anthropic.com/news/anthropic-education-report-how-educators-use-claude"
 title: "Anthropic education report: How educators use Claude \\ Anthropic"
 ---
+
 # Anthropic Education Report: How educators use Claude
 
 Aug 27, 2025
@@ -161,7 +162,7 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 
 #### Footnotes
 
-¹ The conversations took place during an 11-day period from May 22 to June 2, 2025.  
+¹ The conversations took place during an 11-day period from May 22 to June 2, 2025.\
 
 ² Specifically, we used the following filter, powered by Claude, to identify educator-relevant conversations: “Is this conversation likely to be with an educator (teacher, professor, or instructor) seeking help with instructional content, grading, research, or administrative duties? Make sure to not include students doing their own coursework, research papers, etc. Err on the side of conservatism and assume it's not an educator if you're not sure.”
 
@@ -170,18 +171,18 @@ Esin Durmus, Alex Tamkin, Miles McCain, Stuart Ritchie, Jennifer Martinez, Ryan 
 
 ## Related content
 
-### Introducing Claude Opus 4.6
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/claude-partner-network)
 
-### Claude is a space to think
+### Introducing The Anthropic Institute
 
-We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/claude-is-a-space-to-think)
+[Read more](/news/the-anthropic-institute)
 
-### Apple’s Xcode now supports the Claude Agent SDK
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/apple-xcode-claude-agent-sdk)
+[Read more](/news/sydney-fourth-office-asia-pacific)

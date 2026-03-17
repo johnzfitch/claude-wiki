@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:18Z"
+fetched_at: "2026-03-17T02:03:54Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle"
 title: "Lifecycle - Model Context Protocol"
 ---
@@ -14,13 +14,11 @@ The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server 
 2.  **Operation**: Normal protocol communication
 3.  **Shutdown**: Graceful termination of the connection
 
-## 
 
 [​](#lifecycle-phases)
 
 Lifecycle Phases
 
-### 
 
 [​](#initialization)
 
@@ -40,7 +38,7 @@ The client **MUST** initiate this phase by sending an `initialize` request conta
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -67,7 +65,7 @@ The server **MUST** respond with its own capabilities and information:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -100,7 +98,7 @@ After successful initialization, the client **MUST** send an `initialized` notif
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/initialized"
@@ -110,7 +108,6 @@ Copy
 - The client **SHOULD NOT** send requests other than [pings](/specification/2025-06-18/basic/utilities/ping) before the server has responded to the `initialize` request.
 - The server **SHOULD NOT** send requests other than [pings](/specification/2025-06-18/basic/utilities/ping) and [logging](/specification/2025-06-18/server/utilities/logging) before receiving the `initialized` notification.
 
-#### 
 
 [​](#version-negotiation)
 
@@ -120,7 +117,6 @@ In the `initialize` request, the client **MUST** send a protocol version it supp
 
 If using HTTP, the client **MUST** include the `MCP-Protocol-Version: <protocol-version>` HTTP header on all subsequent requests to the MCP server. For details, see [the Protocol Version Header section in Transports](/specification/2025-06-18/basic/transports#protocol-version-header).
 
-#### 
 
 [​](#capability-negotiation)
 
@@ -146,7 +142,6 @@ Capability objects can describe sub-capabilities like:
 - `listChanged`: Support for list change notifications (for prompts, resources, and tools)
 - `subscribe`: Support for subscribing to individual items’ changes (resources only)
 
-### 
 
 [​](#operation)
 
@@ -157,7 +152,6 @@ During the operation phase, the client and server exchange messages according to
 - Respect the negotiated protocol version
 - Only use capabilities that were successfully negotiated
 
-### 
 
 [​](#shutdown)
 
@@ -165,7 +159,6 @@ Shutdown
 
 During the shutdown phase, one side (usually the client) cleanly terminates the protocol connection. No specific shutdown messages are defined—instead, the underlying transport mechanism should be used to signal connection termination:
 
-#### 
 
 [​](#stdio)
 
@@ -179,7 +172,6 @@ For the stdio [transport](/specification/2025-06-18/basic/transports), the clien
 
 The server **MAY** initiate shutdown by closing its output stream to the client and exiting.
 
-#### 
 
 [​](#http)
 
@@ -187,7 +179,6 @@ HTTP
 
 For HTTP [transports](/specification/2025-06-18/basic/transports), shutdown is indicated by closing the associated HTTP connection(s).
 
-## 
 
 [​](#timeouts)
 
@@ -195,7 +186,6 @@ Timeouts
 
 Implementations **SHOULD** establish timeouts for all sent requests, to prevent hung connections and resource exhaustion. When the request has not received a success or error response within the timeout period, the sender **SHOULD** issue a [cancellation notification](/specification/2025-06-18/basic/utilities/cancellation) for that request and stop waiting for a response. SDKs and other middleware **SHOULD** allow these timeouts to be configured on a per-request basis. Implementations **MAY** choose to reset the timeout clock when receiving a [progress notification](/specification/2025-06-18/basic/utilities/progress) corresponding to the request, as this implies that work is actually happening. However, implementations **SHOULD** always enforce a maximum timeout, regardless of progress notifications, to limit the impact of a misbehaving client or server.
 
-## 
 
 [​](#error-handling)
 
@@ -211,7 +201,7 @@ Example initialization error:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,

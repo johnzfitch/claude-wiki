@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-03-12T08:16:08Z"
+fetched_at: "2026-03-17T02:00:48Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
 title: "Prompt caching - Claude API Docs"
 ---
@@ -21,7 +21,7 @@ The simplest way to start is with automatic caching:
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
   -H "content-type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
@@ -44,7 +44,6 @@ With automatic caching, the system caches all content up to and including the la
 
 ------------------------------------------------------------------------
 
-## 
 
 How prompt caching works
 
@@ -73,7 +72,6 @@ Prompt caching references the entire prompt - `tools`, `system`, and `messages` 
 
 ------------------------------------------------------------------------
 
-## 
 
 Pricing
 
@@ -104,7 +102,6 @@ These multipliers stack with other pricing modifiers such as the Batch API disco
 
 ------------------------------------------------------------------------
 
-## 
 
 Supported models
 
@@ -124,7 +121,6 @@ Prompt caching (both automatic and explicit) is currently supported on:
 
 ------------------------------------------------------------------------
 
-## 
 
 Automatic caching
 
@@ -132,7 +128,7 @@ Automatic caching is the simplest way to enable prompt caching. Instead of placi
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
   -H "content-type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
@@ -150,7 +146,6 @@ curl https://api.anthropic.com/v1/messages \
   }'
 ```
 
-### 
 
 How automatic caching works in multi-turn conversations
 
@@ -160,17 +155,15 @@ With automatic caching, the cache point moves forward automatically as conversat
 
 The cache breakpoint automatically moves to the last cacheable block in each request, so you don't need to update any `cache_control` markers as the conversation grows.
 
-### 
 
 TTL support
 
 By default, automatic caching uses a 5-minute TTL. You can specify a 1-hour TTL at 2x the base input token price:
 
-``` shiki
+```python
 { "cache_control": { "type": "ephemeral", "ttl": "1h" } }
 ```
 
-### 
 
 Combining with block-level caching
 
@@ -178,7 +171,7 @@ Automatic caching is compatible with [explicit cache breakpoints](#explicit-cach
 
 This lets you combine both approaches. For example, use explicit breakpoints to cache your system prompt and tools independently, while automatic caching handles the conversation:
 
-``` shiki
+```python
 {
   "model": "claude-opus-4-6",
   "max_tokens": 1024,
@@ -194,13 +187,11 @@ This lets you combine both approaches. For example, use explicit breakpoints to 
 }
 ```
 
-### 
 
 What stays the same
 
 Automatic caching uses the same underlying caching infrastructure. Pricing, minimum token thresholds, context ordering requirements, and the 20-block lookback window all apply the same as with explicit breakpoints.
 
-### 
 
 Edge cases
 
@@ -213,13 +204,11 @@ Automatic caching is available on the Claude API and Azure AI Foundry (preview).
 
 ------------------------------------------------------------------------
 
-## 
 
 Explicit cache breakpoints
 
 For more control over caching, you can place `cache_control` directly on individual content blocks. This is useful when you need to cache different sections that change at different frequencies, or need fine-grained control over exactly what gets cached.
 
-### 
 
 Structuring your prompt
 
@@ -227,7 +216,6 @@ Place static content (tool definitions, system instructions, context, examples) 
 
 Cache prefixes are created in the following order: `tools`, `system`, then `messages`. This order forms a hierarchy where each level builds upon the previous ones.
 
-#### 
 
 How automatic prefix checking works
 
@@ -253,7 +241,6 @@ Consider a conversation with 30 content blocks where you set `cache_control` onl
 
 **Key takeaway**: Always set an explicit cache breakpoint at the end of your conversation to maximize your chances of cache hits. Additionally, set breakpoints just before content blocks that might be editable to ensure those sections can be cached independently.
 
-#### 
 
 When to use multiple breakpoints
 
@@ -266,7 +253,6 @@ You can define up to 4 cache breakpoints if you want to:
 
 **Important limitation**: If your prompt has more than 20 content blocks before your cache breakpoint, and you modify content earlier than those 20 blocks, you won't get a cache hit unless you add additional explicit breakpoints closer to that content.
 
-### 
 
 Understanding cache breakpoint costs
 
@@ -280,11 +266,9 @@ Adding more `cache_control` breakpoints doesn't increase your costs - you still 
 
 ------------------------------------------------------------------------
 
-## 
 
 Caching strategies and considerations
 
-### 
 
 Cache limitations
 
@@ -302,7 +286,6 @@ For concurrent requests, note that a cache entry only becomes available after th
 
 Currently, "ephemeral" is the only supported cache type, which by default has a 5-minute lifetime.
 
-### 
 
 What can be cached
 
@@ -316,7 +299,6 @@ Most blocks in the request can be cached. This includes:
 
 Each of these elements can be cached, either automatically or by marking them with `cache_control`.
 
-### 
 
 What cannot be cached
 
@@ -330,7 +312,6 @@ While most request blocks can be cached, there are some exceptions:
 
 - Empty text blocks cannot be cached.
 
-### 
 
 What invalidates the cache
 
@@ -351,7 +332,6 @@ The following table shows which parts of the cache are invalidated by different 
 | **Thinking parameters** | ✓ | ✓ | ✘ | Changes to extended thinking settings (enable/disable, budget) affect message blocks |
 | **Non-tool results passed to extended thinking requests** | ✓ | ✓ | ✘ | When non-tool results are passed in requests while extended thinking is enabled, all previously-cached thinking blocks are stripped from context, and any messages in context that follow those thinking blocks are removed from the cache. For more details, see [Caching with thinking blocks](#caching-with-thinking-blocks). |
 
-### 
 
 Tracking cache performance
 
@@ -386,7 +366,6 @@ total_input_tokens = cache_read_input_tokens + cache_creation_input_tokens + inp
 
 This is important for understanding both costs and rate limits, as `input_tokens` will typically be much smaller than your total input when using caching effectively.
 
-### 
 
 Caching with thinking blocks
 
@@ -432,7 +411,6 @@ When a non-tool-result user block is included, it designates a new assistant loo
 
 For more detailed information, see the [extended thinking documentation](/docs/en/build-with-claude/extended-thinking#understanding-thinking-block-caching-behavior).
 
-### 
 
 Cache storage and sharing
 
@@ -444,7 +422,6 @@ Starting February 5, 2026, prompt caching will use workspace-level isolation ins
 
 - **Output Token Generation**: Prompt caching has no effect on output token generation. The response you receive will be identical to what you would get if prompt caching was not used.
 
-### 
 
 Best practices for effective caching
 
@@ -458,7 +435,6 @@ To optimize prompt caching performance:
 - Set cache breakpoints at the end of conversations and just before editable content to maximize cache hit rates, especially when working with prompts that have more than 20 content blocks.
 - Regularly analyze cache hit rates and adjust your strategy as needed.
 
-### 
 
 Optimizing for different use cases
 
@@ -471,7 +447,6 @@ Tailor your prompt caching strategy to your scenario:
 - Agentic tool use: Enhance performance for scenarios involving multiple tool calls and iterative code changes, where each step typically requires a new API call.
 - Talk to books, papers, documentation, podcast transcripts, and other longform content: Bring any knowledge base alive by embedding the entire document(s) into the prompt, and letting users ask it questions.
 
-### 
 
 Troubleshooting common issues
 
@@ -488,7 +463,6 @@ Changes to `tool_choice` or the presence/absence of images anywhere in the promp
 
 ------------------------------------------------------------------------
 
-## 
 
 1-hour cache duration
 
@@ -496,7 +470,7 @@ If you find that 5 minutes is too short, Anthropic also offers a 1-hour cache du
 
 To use the extended cache, include `ttl` in the `cache_control` definition like this:
 
-``` shiki
+```python
 "cache_control": {
   "type": "ephemeral",
   "ttl": "1h"
@@ -505,7 +479,7 @@ To use the extended cache, include `ttl` in the `cache_control` definition like 
 
 The response will include detailed cache information like the following:
 
-``` shiki
+```python
 {
   "usage": {
     "input_tokens": 2048,
@@ -523,7 +497,6 @@ The response will include detailed cache information like the following:
 
 Note that the current `cache_creation_input_tokens` field equals the sum of the values in the `cache_creation` object.
 
-### 
 
 When to use the 1-hour cache
 
@@ -537,7 +510,6 @@ The 1-hour cache is best used in the following scenarios:
 
 The 5-minute and 1-hour cache behave the same with respect to latency. You will generally see improved time-to-first-token for long documents.
 
-### 
 
 Mixing different TTLs
 
@@ -561,7 +533,6 @@ Here are 3 examples. This depicts the input tokens of 3 requests, each of which 
 
 ------------------------------------------------------------------------
 
-## 
 
 Prompt caching examples
 
@@ -579,9 +550,6 @@ The following code snippets showcase various prompt caching patterns. These exam
 
 ------------------------------------------------------------------------
 
-## 
-
-FAQ
 
 ### Do I need multiple cache breakpoints or is one at the end sufficient?
 

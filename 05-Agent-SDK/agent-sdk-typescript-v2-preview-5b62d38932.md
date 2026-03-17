@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:21Z"
+fetched_at: "2026-03-17T02:01:25Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/typescript-v2-preview"
 title: "TypeScript SDK V2 interface (preview) - Claude API Docs"
 ---
@@ -19,27 +19,24 @@ The V2 Claude Agent TypeScript SDK removes the need for async generators and yie
 - `session.send()`: Send a message
 - `session.stream()`: Get the response
 
-## 
 
 Installation
 
 The V2 interface is included in the existing SDK package:
 
-``` shiki
+```python
 npm install @anthropic-ai/claude-agent-sdk
 ```
 
-## 
 
 Quick start
 
-### 
 
 One-shot prompt
 
 For simple single-turn queries where you don't need to maintain a session, use `unstable_v2_prompt()`. This example sends a math question and logs the answer:
 
-``` shiki
+```python
 import { unstable_v2_prompt } from "@anthropic-ai/claude-agent-sdk";
 
 const result = await unstable_v2_prompt("What is 2 + 2?", {
@@ -52,7 +49,7 @@ if (result.subtype === "success") {
 
 See the same operation in V1
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 const q = query({
@@ -67,7 +64,6 @@ for await (const msg of q) {
 }
 ```
 
-### 
 
 Basic session
 
@@ -80,7 +76,7 @@ This explicit separation makes it easier to add logic between turns (like proces
 
 The example below creates a session, sends "Hello!" to Claude, and prints the text response. It uses [`await using`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-2.html#using-declarations-and-explicit-resource-management) (TypeScript 5.2+) to automatically close the session when the block exits. You can also call `session.close()` manually.
 
-``` shiki
+```python
 import { unstable_v2_createSession } from "@anthropic-ai/claude-agent-sdk";
 
 await using session = unstable_v2_createSession({
@@ -104,7 +100,7 @@ See the same operation in V1
 
 In V1, both input and output flow through a single async generator. For a basic prompt this looks similar, but adding multi-turn logic requires restructuring to use an input generator.
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 const q = query({
@@ -123,7 +119,6 @@ for await (const msg of q) {
 }
 ```
 
-### 
 
 Multi-turn conversation
 
@@ -131,7 +126,7 @@ Sessions persist context across multiple exchanges. To continue a conversation, 
 
 This example asks a math question, then asks a follow-up that references the previous answer:
 
-``` shiki
+```python
 import { unstable_v2_createSession } from "@anthropic-ai/claude-agent-sdk";
 
 await using session = unstable_v2_createSession({
@@ -166,7 +161,7 @@ for await (const msg of session.stream()) {
 
 See the same operation in V1
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Must create an async iterable to feed messages
@@ -202,7 +197,6 @@ for await (const msg of q) {
 }
 ```
 
-### 
 
 Session resume
 
@@ -210,7 +204,7 @@ If you have a session ID from a previous interaction, you can resume it later. T
 
 This example creates a session, stores its ID, closes it, then resumes the conversation:
 
-``` shiki
+```python
 import {
   unstable_v2_createSession,
   unstable_v2_resumeSession,
@@ -258,7 +252,7 @@ for await (const msg of resumedSession.stream()) {
 
 See the same operation in V1
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 // Create initial session
@@ -302,7 +296,6 @@ for await (const msg of resumedQuery) {
 }
 ```
 
-### 
 
 Cleanup
 
@@ -310,7 +303,7 @@ Sessions can be closed manually or automatically using [`await using`](https://w
 
 **Automatic cleanup (TypeScript 5.2+):**
 
-``` shiki
+```python
 import { unstable_v2_createSession } from "@anthropic-ai/claude-agent-sdk";
 
 await using session = unstable_v2_createSession({
@@ -321,7 +314,7 @@ await using session = unstable_v2_createSession({
 
 **Manual cleanup:**
 
-``` shiki
+```python
 import { unstable_v2_createSession } from "@anthropic-ai/claude-agent-sdk";
 
 const session = unstable_v2_createSession({
@@ -331,30 +324,27 @@ const session = unstable_v2_createSession({
 session.close();
 ```
 
-## 
 
 API reference
 
-### 
 
 `unstable_v2_createSession()`
 
 Creates a new session for multi-turn conversations.
 
-``` shiki
+```python
 function unstable_v2_createSession(options: {
   model: string;
   // Additional options supported
 }): SDKSession;
 ```
 
-### 
 
 `unstable_v2_resumeSession()`
 
 Resumes an existing session by ID.
 
-``` shiki
+```python
 function unstable_v2_resumeSession(
   sessionId: string,
   options: {
@@ -364,13 +354,12 @@ function unstable_v2_resumeSession(
 ): SDKSession;
 ```
 
-### 
 
 `unstable_v2_prompt()`
 
 One-shot convenience function for single-turn queries.
 
-``` shiki
+```python
 function unstable_v2_prompt(
   prompt: string,
   options: {
@@ -380,11 +369,10 @@ function unstable_v2_prompt(
 ): Promise<SDKResultMessage>;
 ```
 
-### 
 
 SDKSession interface
 
-``` shiki
+```python
 interface SDKSession {
   readonly sessionId: string;
   send(message: string | SDKUserMessage): Promise<void>;
@@ -393,7 +381,6 @@ interface SDKSession {
 }
 ```
 
-## 
 
 Feature availability
 
@@ -402,13 +389,11 @@ Not all V1 features are available in V2 yet. The following require using the [V1
 - Session forking (`forkSession` option)
 - Some advanced streaming input patterns
 
-## 
 
 Feedback
 
 Share your feedback on the V2 interface before it becomes stable. Report issues and suggestions through [GitHub Issues](https://github.com/anthropics/claude-code/issues).
 
-## 
 
 See also
 

@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-03-12T08:16:07Z"
+fetched_at: "2026-03-17T02:00:47Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
 title: "Prompting best practices - Claude API Docs"
 ---
@@ -15,11 +15,9 @@ This is the single reference for prompt engineering with Claude's latest models,
 
 For an overview of model capabilities, see the [models overview](/docs/en/about-claude/models/overview). For details on what's new in Claude 4.6, see [What's new in Claude 4.6](/docs/en/about-claude/models/whats-new-claude-4-6). For migration guidance, see the [Migration guide](/docs/en/about-claude/models/migration-guide).
 
-## 
 
 General principles
 
-### 
 
 Be clear and direct
 
@@ -34,7 +32,6 @@ Think of Claude as a brilliant but new employee who lacks context on your norms 
 
 ### Example: Creating an analytics dashboard
 
-### 
 
 Add context to improve performance
 
@@ -44,7 +41,6 @@ Providing context or motivation behind your instructions, such as explaining to 
 
 Claude is smart enough to generalize from the explanation.
 
-### 
 
 Use examples effectively
 
@@ -58,7 +54,6 @@ When adding examples, make them:
 
 Include 3–5 examples for best results. You can also ask Claude to evaluate your examples for relevance and diversity, or to generate additional ones based on your initial set.
 
-### 
 
 Structure prompts with XML tags
 
@@ -69,13 +64,12 @@ Best practices:
 - Use consistent, descriptive tag names across your prompts.
 - Nest tags when content has a natural hierarchy (documents inside `<documents>`, each inside `<document index="n">`).
 
-### 
 
 Give Claude a role
 
 Setting a role in the system prompt focuses Claude's behavior and tone for your use case. Even a single sentence makes a difference:
 
-``` shiki
+```python
 import anthropic
 
 client = anthropic.Anthropic()
@@ -91,11 +85,10 @@ message = client.messages.create(
 print(message.content)
 ```
 
-### 
 
 Long context prompting
 
-When working with large documents or data-rich inputs (20K+ tokens), structure your prompt carefully to get the best results:
+When working with large documents or data-rich inputs (20k+ tokens), structure your prompt carefully to get the best results:
 
 - **Put longform data at the top**: Place your long documents and inputs near the top of your prompt, above your query, instructions, and examples. This can significantly improve performance across all models.
 
@@ -109,7 +102,6 @@ When working with large documents or data-rich inputs (20K+ tokens), structure y
 
   ### Example quote extraction
 
-### 
 
 Model self-knowledge
 
@@ -129,11 +121,9 @@ Sample prompt for model string
 When an LLM is needed, please default to Claude Opus 4.6 unless the user requests otherwise. The exact model string for Claude Opus 4.6 is claude-opus-4-6.
 ```
 
-## 
 
 Output and formatting
 
-### 
 
 Communication style and verbosity
 
@@ -151,7 +141,6 @@ Sample prompt
 After completing a task that involves tool use, provide a quick summary of the work you've done.
 ```
 
-### 
 
 Control the format of responses
 
@@ -188,7 +177,6 @@ Your goal is readable, flowing text that guides the reader naturally through ide
 </avoid_excessive_markdown_and_bullet_points>
 ```
 
-### 
 
 LaTeX output
 
@@ -200,7 +188,6 @@ Sample prompt
 Format your response in plain text only. Do not use LaTeX, MathJax, or any markup notation such as \( \), $, or \frac{}{}. Write all math expressions using standard text characters (e.g., "/" for division, "*" for multiplication, and "^" for exponents).
 ```
 
-### 
 
 Document creation
 
@@ -214,7 +201,6 @@ Sample prompt
 Create a professional presentation on [topic]. Include thoughtful design elements, visual hierarchy, and engaging animations where appropriate.
 ```
 
-### 
 
 Migrating away from prefilled responses
 
@@ -232,11 +218,9 @@ Here are common prefill scenarios and how to migrate away from them:
 
 ### Context hydration and role consistency
 
-## 
 
 Tool use
 
-### 
 
 Tool usage
 
@@ -268,7 +252,6 @@ Do not jump into implementatation or changes files unless clearly instructed to 
 
 Claude Opus 4.5 and Claude Opus 4.6 are also more responsive to the system prompt than previous models. If your prompts were designed to reduce undertriggering on tools or skills, these models may now overtrigger. The fix is to dial back any aggressive language. Where you might have said "CRITICAL: You MUST use this tool when...", you can use more normal prompting like "Use this tool when...".
 
-### 
 
 Optimize parallel tool calling
 
@@ -294,11 +277,9 @@ Sample prompt to reduce parallel execution
 Execute operations sequentially with brief pauses between each step to ensure stability.
 ```
 
-## 
 
 Thinking and reasoning
 
-### 
 
 Overthinking and excessive thoroughness
 
@@ -318,7 +299,6 @@ When you're deciding how to approach a problem, choose an approach and commit to
 
 For Claude Sonnet 4.6 specifically, switching from adaptive to extended thinking with a `budget_tokens` cap provides a hard ceiling on thinking costs while preserving quality.
 
-### 
 
 Leverage thinking & interleaved thinking capabilities
 
@@ -348,7 +328,7 @@ If you are migrating from [extended thinking](/docs/en/build-with-claude/extende
 
 Before (extended thinking, older models)
 
-``` shiki
+```python
 client.messages.create(
     model="claude-sonnet-4-5-20250929",
     max_tokens=64000,
@@ -359,7 +339,7 @@ client.messages.create(
 
 After (adaptive thinking)
 
-``` shiki
+```python
 client.messages.create(
     model="claude-opus-4-6",
     max_tokens=64000,
@@ -380,17 +360,14 @@ When extended thinking is disabled, Claude Opus 4.5 is particularly sensitive to
 
 For more information on thinking capabilities, see [Extended thinking](/docs/en/build-with-claude/extended-thinking) and [Adaptive thinking](/docs/en/build-with-claude/adaptive-thinking).
 
-## 
 
 Agentic systems
 
-### 
 
 Long-horizon reasoning and state tracking
 
 Claude's latest models excel at long-horizon reasoning tasks with exceptional state tracking capabilities. Claude maintains orientation across extended sessions by focusing on incremental progress, making steady advances on a few things at a time rather than attempting everything at once. This capability especially emerges over multiple context windows or task iterations, where Claude can work on a complex task, save the state, and continue with a fresh context window.
 
-#### 
 
 Context awareness and multi-window workflows
 
@@ -408,7 +385,6 @@ Your context window will be automatically compacted as it approaches its limit, 
 
 The [memory tool](/docs/en/agents-and-tools/tool-use/memory-tool) pairs naturally with context awareness for seamless context transitions.
 
-#### 
 
 Multi-context window workflows
 
@@ -436,7 +412,6 @@ Sample prompt
 This is a very long task, so it may be beneficial to plan out your work clearly. It's encouraged to spend your entire output context working on the task - just make sure you don't run out of context with significant uncommitted work. Continue working systematically until you have completed this task.
 ```
 
-#### 
 
 State management best practices
 
@@ -447,7 +422,6 @@ State management best practices
 
 ### Example: State tracking
 
-### 
 
 Balancing autonomy and safety
 
@@ -466,7 +440,6 @@ Examples of actions that warrant confirmation:
 When encountering obstacles, do not use destructive actions as a shortcut. For example, don't bypass safety checks (e.g. --no-verify) or discard unfamiliar files that may be in-progress work.
 ```
 
-### 
 
 Research and information gathering
 
@@ -486,7 +459,6 @@ Search for this information in a structured way. As you gather data, develop sev
 
 This structured approach allows Claude to find and synthesize virtually any piece of information and iteratively critique its findings, no matter the size of the corpus.
 
-### 
 
 Subagent orchestration
 
@@ -506,7 +478,6 @@ Sample prompt for subagent usage
 Use subagents when tasks can run in parallel, require isolated context, or involve independent workstreams that don't need to share state. For simple tasks, sequential operations, single-file edits, or tasks where you need to maintain context across steps, work directly rather than delegating.
 ```
 
-### 
 
 Chain complex prompts
 
@@ -514,7 +485,6 @@ With adaptive thinking and subagent orchestration, Claude handles most multi-ste
 
 The most common chaining pattern is **self-correction**: generate a draft → have Claude review it against criteria → have Claude refine based on the review. Each step is a separate API call so you can log, evaluate, or branch at any point.
 
-### 
 
 Reduce file creation in agentic coding
 
@@ -528,7 +498,6 @@ Sample prompt
 If you create any temporary new files, scripts, or helper files for iteration, clean up these files by removing them at the end of the task.
 ```
 
-### 
 
 Overeagerness
 
@@ -550,7 +519,6 @@ Avoid over-engineering. Only make changes that are directly requested or clearly
 - Abstractions: Don't create helpers, utilities, or abstractions for one-time operations. Don't design for hypothetical future requirements. The right amount of complexity is the minimum needed for the current task.
 ```
 
-### 
 
 Avoid focusing on passing tests and hard-coding
 
@@ -566,7 +534,6 @@ Focus on understanding the problem requirements and implementing the correct alg
 If the task is unreasonable or infeasible, or if any of the tests are incorrect, please inform me rather than working around them. The solution should be robust, maintainable, and extendable.
 ```
 
-### 
 
 Minimizing hallucinations in agentic coding
 
@@ -580,11 +547,9 @@ Never speculate about code you have not opened. If the user references a specifi
 </investigate_before_answering>
 ```
 
-## 
 
 Capability-specific tips
 
-### 
 
 Improved vision capabilities
 
@@ -592,7 +557,6 @@ Claude Opus 4.5 and Claude Opus 4.6 have improved vision capabilities compared t
 
 One technique that has proven effective to further boost performance is to give Claude a crop tool or [skill](/docs/en/agents-and-tools/agent-skills/overview). Testing has shown consistent uplift on image evaluations when Claude is able to "zoom" in on relevant regions of an image. Anthropic has created a [cookbook for the crop tool](https://platform.claude.com/cookbook/multimodal-crop-tool).
 
-### 
 
 Frontend design
 
@@ -626,7 +590,6 @@ Interpret creatively and make unexpected choices that feel genuinely designed fo
 
 You can also refer to the [full skill definition](https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md).
 
-## 
 
 Migration considerations
 
@@ -646,7 +609,6 @@ When migrating to Claude 4.6 models from earlier generations:
 
 For detailed migration steps, see the [Migration guide](/docs/en/about-claude/models/migration-guide).
 
-### 
 
 Migrating from Claude Sonnet 4.5 to Claude Sonnet 4.6
 
@@ -660,13 +622,12 @@ Claude Sonnet 4.6 defaults to an effort level of `high`, in contrast to Claude S
 
 **When to use Opus 4.6 instead:** For the hardest, longest-horizon problems (large-scale code migrations, deep research, extended autonomous work), Opus 4.6 remains the right choice. Sonnet 4.6 is optimized for workloads where fast turnaround and cost efficiency matter most.
 
-#### 
 
 If you're not using extended thinking
 
 If you're not using extended thinking on Claude Sonnet 4.5, you can continue without it on Claude Sonnet 4.6. You should explicitly set effort to the level appropriate for your use case. At `low` effort with thinking disabled, you can expect similar or better performance relative to Claude Sonnet 4.5 with no extended thinking.
 
-``` shiki
+```python
 client.messages.create(
     model="claude-sonnet-4-6",
     max_tokens=8192,
@@ -676,7 +637,6 @@ client.messages.create(
 )
 ```
 
-#### 
 
 If you're using extended thinking
 
@@ -686,7 +646,7 @@ If you're using extended thinking on Claude Sonnet 4.5, it continues to be suppo
 
 Start with `medium` effort. If you find latency is too high, consider reducing effort to `low`. If you need higher intelligence, consider increasing effort to `high` or migrating to Opus 4.6.
 
-``` shiki
+```python
 client.messages.create(
     model="claude-sonnet-4-6",
     max_tokens=16384,
@@ -700,7 +660,7 @@ client.messages.create(
 
 Start with `low` effort with extended thinking. If you need more depth, increase effort to `medium`.
 
-``` shiki
+```python
 client.messages.create(
     model="claude-sonnet-4-6",
     max_tokens=8192,
@@ -710,7 +670,6 @@ client.messages.create(
 )
 ```
 
-#### 
 
 When to try adaptive thinking
 
@@ -722,7 +681,7 @@ The extended thinking paths above use `budget_tokens` for predictable token usag
 
 When using adaptive thinking, evaluate `medium` and `high` effort on your tasks. The right level depends on your workload's tradeoff between quality, latency, and token usage.
 
-``` shiki
+```python
 client.messages.create(
     model="claude-sonnet-4-6",
     max_tokens=64000,

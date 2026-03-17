@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:23Z"
+fetched_at: "2026-03-17T02:01:27Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/python"
 title: "Agent SDK reference - Python - Claude API Docs"
 ---
@@ -11,21 +11,17 @@ title: "Agent SDK reference - Python - Claude API Docs"
 Complete API reference for the Python Agent SDK, including all functions, types, and classes.
 
 
-## 
-
 Installation
 
-``` shiki
+```python
 pip install claude-agent-sdk
 ```
 
-## 
 
 Choosing between `query()` and `ClaudeSDKClient`
 
 The Python SDK provides two ways to interact with Claude Code:
 
-### 
 
 Quick comparison
 
@@ -41,7 +37,6 @@ Quick comparison
 | **Continue Chat** | ❌ New session each time | ✅ Maintains conversation |
 | **Use Case** | One-off tasks | Continuous conversations |
 
-### 
 
 When to use `query()` (new session each time)
 
@@ -52,7 +47,6 @@ When to use `query()` (new session each time)
 - Simple automation scripts
 - When you want a fresh start each time
 
-### 
 
 When to use `ClaudeSDKClient` (continuous conversation)
 
@@ -64,17 +58,15 @@ When to use `ClaudeSDKClient` (continuous conversation)
 - **Response-driven logic** - When next action depends on Claude's response
 - **Session control** - Managing conversation lifecycle explicitly
 
-## 
 
 Functions
 
-### 
 
 `query()`
 
 Creates a new session for each interaction with Claude Code. Returns an async iterator that yields messages as they arrive. Each call to `query()` starts fresh with no memory of previous interactions.
 
-``` shiki
+```python
 async def query(
     *,
     prompt: str | AsyncIterable[dict[str, Any]],
@@ -83,7 +75,6 @@ async def query(
 ) -> AsyncIterator[Message]
 ```
 
-#### 
 
 Parameters
 
@@ -93,17 +84,15 @@ Parameters
 | `options` | `ClaudeAgentOptions | None` | Optional configuration object (defaults to `ClaudeAgentOptions()` if None) |
 | `transport` | `Transport | None` | Optional custom transport for communicating with the CLI process |
 
-#### 
 
 Returns
 
 Returns an `AsyncIterator[Message]` that yields messages from the conversation.
 
-#### 
 
 Example - With options
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions
 
@@ -122,13 +111,12 @@ async def main():
 asyncio.run(main())
 ```
 
-### 
 
 `tool()`
 
 Decorator for defining MCP tools with type safety.
 
-``` shiki
+```python
 def tool(
     name: str,
     description: str,
@@ -137,7 +125,6 @@ def tool(
 ) -> Callable[[Callable[[Any], Awaitable[dict[str, Any]]]], SdkMcpTool[Any]]
 ```
 
-#### 
 
 Parameters
 
@@ -148,7 +135,6 @@ Parameters
 | `input_schema` | `type | dict[str, Any]` | Schema defining the tool's input parameters (see below) |
 | `annotations` | `ToolAnnotations | None` | Optional MCP tool annotations (e.g., `readOnlyHint`, `destructiveHint`, `openWorldHint`). Imported from `mcp.types` |
 
-#### 
 
 Input schema options
 
@@ -171,17 +157,15 @@ Input schema options
     }
     ```
 
-#### 
 
 Returns
 
 A decorator function that wraps the tool implementation and returns an `SdkMcpTool` instance.
 
-#### 
 
 Example
 
-``` shiki
+```python
 from claude_agent_sdk import tool
 from typing import Any
 
@@ -191,13 +175,12 @@ async def greet(args: dict[str, Any]) -> dict[str, Any]:
     return {"content": [{"type": "text", "text": f"Hello, {args['name']}!"}]}
 ```
 
-### 
 
 `create_sdk_mcp_server()`
 
 Create an in-process MCP server that runs within your Python application.
 
-``` shiki
+```python
 def create_sdk_mcp_server(
     name: str,
     version: str = "1.0.0",
@@ -205,7 +188,6 @@ def create_sdk_mcp_server(
 ) -> McpSdkServerConfig
 ```
 
-#### 
 
 Parameters
 
@@ -215,17 +197,15 @@ Parameters
 | `version` | `str` | `"1.0.0"` | Server version string |
 | `tools` | `list[SdkMcpTool[Any]] | None` | `None` | List of tool functions created with `@tool` decorator |
 
-#### 
 
 Returns
 
 Returns an `McpSdkServerConfig` object that can be passed to `ClaudeAgentOptions.mcp_servers`.
 
-#### 
 
 Example
 
-``` shiki
+```python
 from claude_agent_sdk import tool, create_sdk_mcp_server
 
 
@@ -252,13 +232,12 @@ options = ClaudeAgentOptions(
 )
 ```
 
-### 
 
 `list_sessions()`
 
 Lists past sessions with metadata. Filter by project directory or list sessions across all projects. Synchronous; returns immediately.
 
-``` shiki
+```python
 def list_sessions(
     directory: str | None = None,
     limit: int | None = None,
@@ -266,7 +245,6 @@ def list_sessions(
 ) -> list[SDKSessionInfo]
 ```
 
-#### 
 
 Parameters
 
@@ -276,7 +254,6 @@ Parameters
 | `limit` | `int | None` | `None` | Maximum number of sessions to return |
 | `include_worktrees` | `bool` | `True` | When `directory` is inside a git repository, include sessions from all worktree paths |
 
-#### 
 
 Return type: `SDKSessionInfo`
 
@@ -291,26 +268,24 @@ Return type: `SDKSessionInfo`
 | `git_branch` | `str | None` | Git branch at the end of the session |
 | `cwd` | `str | None` | Working directory for the session |
 
-#### 
 
 Example
 
 Print the 10 most recent sessions for a project. Results are sorted by `last_modified` descending, so the first item is the newest. Omit `directory` to search across all projects.
 
-``` shiki
+```python
 from claude_agent_sdk import list_sessions
 
 for session in list_sessions(directory="/path/to/project", limit=10):
     print(f"{session.summary} ({session.session_id})")
 ```
 
-### 
 
 `get_session_messages()`
 
 Retrieves messages from a past session. Synchronous; returns immediately.
 
-``` shiki
+```python
 def get_session_messages(
     session_id: str,
     directory: str | None = None,
@@ -319,7 +294,6 @@ def get_session_messages(
 ) -> list[SessionMessage]
 ```
 
-#### 
 
 Parameters
 
@@ -330,7 +304,6 @@ Parameters
 | `limit` | `int | None` | `None` | Maximum number of messages to return |
 | `offset` | `int` | `0` | Number of messages to skip from the start |
 
-#### 
 
 Return type: `SessionMessage`
 
@@ -342,11 +315,10 @@ Return type: `SessionMessage`
 | `message` | `Any` | Raw message content |
 | `parent_tool_use_id` | `None` | Reserved for future use |
 
-#### 
 
 Example
 
-``` shiki
+```python
 from claude_agent_sdk import list_sessions, get_session_messages
 
 sessions = list_sessions(limit=1)
@@ -356,17 +328,14 @@ if sessions:
         print(f"[{msg.type}] {msg.uuid}")
 ```
 
-## 
 
 Classes
 
-### 
 
 `ClaudeSDKClient`
 
 **Maintains a conversation session across multiple exchanges.** This is the Python equivalent of how the TypeScript SDK's `query()` function works internally - it creates a client object that can continue conversations.
 
-#### 
 
 Key Features
 
@@ -377,7 +346,7 @@ Key Features
 - **Response-driven flow**: Can react to responses and send follow-ups
 - **Custom tools and hooks**: Supports custom tools (created with `@tool` decorator) and hooks
 
-``` shiki
+```python
 class ClaudeSDKClient:
     def __init__(self, options: ClaudeAgentOptions | None = None, transport: Transport | None = None)
     async def connect(self, prompt: str | AsyncIterable[dict] | None = None) -> None
@@ -395,7 +364,6 @@ class ClaudeSDKClient:
     async def disconnect(self) -> None
 ```
 
-#### 
 
 Methods
 
@@ -416,13 +384,12 @@ Methods
 | `get_server_info()` | Get server information including session ID and capabilities |
 | `disconnect()` | Disconnect from Claude |
 
-#### 
 
 Context Manager Support
 
 The client can be used as an async context manager for automatic connection management:
 
-``` shiki
+```python
 async with ClaudeSDKClient() as client:
     await client.query("Hello Claude")
     async for message in client.receive_response():
@@ -431,11 +398,10 @@ async with ClaudeSDKClient() as client:
 
 > **Important:** When iterating over messages, avoid using `break` to exit early as this can cause asyncio cleanup issues. Instead, let the iteration complete naturally or use flags to track when you've found what you need.
 
-#### 
 
 Example - Continuing a conversation
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import ClaudeSDKClient, AssistantMessage, TextBlock, ResultMessage
 
@@ -474,11 +440,10 @@ async def main():
 asyncio.run(main())
 ```
 
-#### 
 
 Example - Streaming input with ClaudeSDKClient
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import ClaudeSDKClient
 
@@ -520,11 +485,10 @@ async def main():
 asyncio.run(main())
 ```
 
-#### 
 
 Example - Using interrupts
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import ClaudeSDKClient, ClaudeAgentOptions
 
@@ -554,11 +518,10 @@ async def interruptible_task():
 asyncio.run(interruptible_task())
 ```
 
-#### 
 
 Example - Advanced permission control
 
-``` shiki
+```python
 from claude_agent_sdk import ClaudeSDKClient, ClaudeAgentOptions
 from claude_agent_sdk.types import (
     PermissionResultAllow,
@@ -605,17 +568,15 @@ async def main():
 asyncio.run(main())
 ```
 
-## 
 
 Types
 
-### 
 
 `SdkMcpTool`
 
 Definition for an SDK MCP tool created with the `@tool` decorator.
 
-``` shiki
+```python
 @dataclass
 class SdkMcpTool(Generic[T]):
     name: str
@@ -633,7 +594,6 @@ class SdkMcpTool(Generic[T]):
 | `handler` | `Callable[[T], Awaitable[dict[str, Any]]]` | Async function that handles tool execution |
 | `annotations` | `ToolAnnotations | None` | Optional MCP tool annotations (e.g., `readOnlyHint`, `destructiveHint`, `openWorldHint`). From `mcp.types` |
 
-### 
 
 `Transport`
 
@@ -641,7 +601,7 @@ Abstract base class for custom transport implementations. Use this to communicat
 
 This is a low-level internal API. The interface may change in future releases. Custom implementations must be updated to match any interface changes.
 
-``` shiki
+```python
 from abc import ABC, abstractmethod
 from collections.abc import AsyncIterator
 from typing import Any
@@ -678,13 +638,12 @@ class Transport(ABC):
 
 Import: `from claude_agent_sdk import Transport`
 
-### 
 
 `ClaudeAgentOptions`
 
 Configuration dataclass for Claude Code queries.
 
-``` shiki
+```python
 @dataclass
 class ClaudeAgentOptions:
     tools: list[str] | ToolsPreset | None = None
@@ -766,13 +725,12 @@ class ClaudeAgentOptions:
 | `thinking` | [`ThinkingConfig`](#thinking-config) ` | None` | `None` | Controls extended thinking behavior. Takes precedence over `max_thinking_tokens` |
 | `effort` | `Literal["low", "medium", "high", "max"] | None` | `None` | Effort level for thinking depth |
 
-### 
 
 `OutputFormat`
 
 Configuration for structured output validation. Pass this as a `dict` to the `output_format` field on `ClaudeAgentOptions`:
 
-``` shiki
+```python
 # Expected dict shape for output_format
 {
     "type": "json_schema",
@@ -785,13 +743,12 @@ Configuration for structured output validation. Pass this as a `dict` to the `ou
 | `type`   | Yes      | Must be `"json_schema"` for JSON Schema validation |
 | `schema` | Yes      | JSON Schema definition for output validation       |
 
-### 
 
 `SystemPromptPreset`
 
 Configuration for using Claude Code's preset system prompt with optional additions.
 
-``` shiki
+```python
 class SystemPromptPreset(TypedDict):
     type: Literal["preset"]
     preset: Literal["claude_code"]
@@ -804,13 +761,12 @@ class SystemPromptPreset(TypedDict):
 | `preset` | Yes | Must be `"claude_code"` to use Claude Code's system prompt |
 | `append` | No | Additional instructions to append to the preset system prompt |
 
-### 
 
 `SettingSource`
 
 Controls which filesystem-based configuration sources the SDK loads settings from.
 
-``` shiki
+```python
 SettingSource = Literal["user", "project", "local"]
 ```
 
@@ -820,19 +776,17 @@ SettingSource = Literal["user", "project", "local"]
 | `"project"` | Shared project settings (version controlled) | `.claude/settings.json` |
 | `"local"` | Local project settings (gitignored) | `.claude/settings.local.json` |
 
-#### 
 
 Default behavior
 
 When `setting_sources` is **omitted** or **`None`**, the SDK does **not** load any filesystem settings. This provides isolation for SDK applications.
 
-#### 
 
 Why use setting_sources
 
 **Load all filesystem settings (legacy behavior):**
 
-``` shiki
+```python
 # Load all settings like SDK v0.0.x did
 from claude_agent_sdk import query, ClaudeAgentOptions
 
@@ -847,7 +801,7 @@ async for message in query(
 
 **Load only specific setting sources:**
 
-``` shiki
+```python
 # Load only project settings, ignore user and local
 async for message in query(
     prompt="Run CI checks",
@@ -860,7 +814,7 @@ async for message in query(
 
 **Testing and CI environments:**
 
-``` shiki
+```python
 # Ensure consistent behavior in CI by excluding local settings
 async for message in query(
     prompt="Run tests",
@@ -874,7 +828,7 @@ async for message in query(
 
 **SDK-only applications:**
 
-``` shiki
+```python
 # Define everything programmatically (default behavior)
 # No filesystem dependencies - setting_sources defaults to None
 async for message in query(
@@ -891,7 +845,7 @@ async for message in query(
 
 **Loading CLAUDE.md project instructions:**
 
-``` shiki
+```python
 # Load project settings to include CLAUDE.md files
 async for message in query(
     prompt="Add a new feature following project conventions",
@@ -907,7 +861,6 @@ async for message in query(
     print(message)
 ```
 
-#### 
 
 Settings precedence
 
@@ -919,13 +872,12 @@ When multiple sources are loaded, settings are merged with this precedence (high
 
 Programmatic options (like `agents`, `allowed_tools`) always override filesystem settings.
 
-### 
 
 `AgentDefinition`
 
 Configuration for a subagent defined programmatically.
 
-``` shiki
+```python
 @dataclass
 class AgentDefinition:
     description: str
@@ -941,13 +893,12 @@ class AgentDefinition:
 | `prompt` | Yes | The agent's system prompt |
 | `model` | No | Model override for this agent. If omitted, uses the main model |
 
-### 
 
 `PermissionMode`
 
 Permission modes for controlling tool execution.
 
-``` shiki
+```python
 PermissionMode = Literal[
     "default",  # Standard permission behavior
     "acceptEdits",  # Auto-accept file edits
@@ -956,13 +907,12 @@ PermissionMode = Literal[
 ]
 ```
 
-### 
 
 `CanUseTool`
 
 Type alias for tool permission callback functions.
 
-``` shiki
+```python
 CanUseTool = Callable[
     [str, dict[str, Any], ToolPermissionContext], Awaitable[PermissionResult]
 ]
@@ -976,13 +926,12 @@ The callback receives:
 
 Returns a `PermissionResult` (either `PermissionResultAllow` or `PermissionResultDeny`).
 
-### 
 
 `ToolPermissionContext`
 
 Context information passed to tool permission callbacks.
 
-``` shiki
+```python
 @dataclass
 class ToolPermissionContext:
     signal: Any | None = None  # Future: abort signal support
@@ -994,23 +943,21 @@ class ToolPermissionContext:
 | `signal` | `Any | None` | Reserved for future abort signal support |
 | `suggestions` | `list[PermissionUpdate]` | Permission update suggestions from the CLI |
 
-### 
 
 `PermissionResult`
 
 Union type for permission callback results.
 
-``` shiki
+```python
 PermissionResult = PermissionResultAllow | PermissionResultDeny
 ```
 
-### 
 
 `PermissionResultAllow`
 
 Result indicating the tool call should be allowed.
 
-``` shiki
+```python
 @dataclass
 class PermissionResultAllow:
     behavior: Literal["allow"] = "allow"
@@ -1024,13 +971,12 @@ class PermissionResultAllow:
 | `updated_input` | `dict[str, Any] | None` | `None` | Modified input to use instead of original |
 | `updated_permissions` | `list[PermissionUpdate] | None` | `None` | Permission updates to apply |
 
-### 
 
 `PermissionResultDeny`
 
 Result indicating the tool call should be denied.
 
-``` shiki
+```python
 @dataclass
 class PermissionResultDeny:
     behavior: Literal["deny"] = "deny"
@@ -1044,13 +990,12 @@ class PermissionResultDeny:
 | `message` | `str` | `""` | Message explaining why the tool was denied |
 | `interrupt` | `bool` | `False` | Whether to interrupt the current execution |
 
-### 
 
 `PermissionUpdate`
 
 Configuration for updating permissions programmatically.
 
-``` shiki
+```python
 @dataclass
 class PermissionUpdate:
     type: Literal[
@@ -1079,38 +1024,35 @@ class PermissionUpdate:
 | `directories` | `list[str] | None` | Directories for add/remove directory operations |
 | `destination` | `Literal[...] | None` | Where to apply the permission update |
 
-### 
 
 `PermissionRuleValue`
 
 A rule to add, replace, or remove in a permission update.
 
-``` shiki
+```python
 @dataclass
 class PermissionRuleValue:
     tool_name: str
     rule_content: str | None = None
 ```
 
-### 
 
 `ToolsPreset`
 
 Preset tools configuration for using Claude Code's default tool set.
 
-``` shiki
+```python
 class ToolsPreset(TypedDict):
     type: Literal["preset"]
     preset: Literal["claude_code"]
 ```
 
-### 
 
 `ThinkingConfig`
 
 Controls extended thinking behavior. A union of three configurations:
 
-``` shiki
+```python
 class ThinkingConfigAdaptive(TypedDict):
     type: Literal["adaptive"]
 
@@ -1133,48 +1075,46 @@ ThinkingConfig = ThinkingConfigAdaptive | ThinkingConfigEnabled | ThinkingConfig
 | `enabled` | `type`, `budget_tokens` | Enable thinking with a specific token budget |
 | `disabled` | `type` | Disable thinking |
 
-### 
 
 `SdkBeta`
 
 Literal type for SDK beta features.
 
-``` shiki
+```python
 SdkBeta = Literal["context-1m-2025-08-07"]
 ```
 
-Use with the `betas` field in `ClaudeAgentOptions` to enable beta features.
+Use with the `betas` field in `ClaudeAgentOptions` to enable beta features. Use `context-1m-2025-08-07` with Claude Sonnet 4.5 and Sonnet 4 to enable the 1M-token context window.
 
-### 
+Claude Opus 4.6 and Sonnet 4.6 have a 1M token context window. Including `context-1m-2025-08-07` has no effect on those models.
+
 
 `McpSdkServerConfig`
 
 Configuration for SDK MCP servers created with `create_sdk_mcp_server()`.
 
-``` shiki
+```python
 class McpSdkServerConfig(TypedDict):
     type: Literal["sdk"]
     name: str
     instance: Any  # MCP Server instance
 ```
 
-### 
 
 `McpServerConfig`
 
 Union type for MCP server configurations.
 
-``` shiki
+```python
 McpServerConfig = (
     McpStdioServerConfig | McpSSEServerConfig | McpHttpServerConfig | McpSdkServerConfig
 )
 ```
 
-#### 
 
 `McpStdioServerConfig`
 
-``` shiki
+```python
 class McpStdioServerConfig(TypedDict):
     type: NotRequired[Literal["stdio"]]  # Optional for backwards compatibility
     command: str
@@ -1182,35 +1122,32 @@ class McpStdioServerConfig(TypedDict):
     env: NotRequired[dict[str, str]]
 ```
 
-#### 
 
 `McpSSEServerConfig`
 
-``` shiki
+```python
 class McpSSEServerConfig(TypedDict):
     type: Literal["sse"]
     url: str
     headers: NotRequired[dict[str, str]]
 ```
 
-#### 
 
 `McpHttpServerConfig`
 
-``` shiki
+```python
 class McpHttpServerConfig(TypedDict):
     type: Literal["http"]
     url: str
     headers: NotRequired[dict[str, str]]
 ```
 
-### 
 
 `McpServerStatus`
 
 Status of a connected MCP server, returned by `get_mcp_status()`.
 
-``` shiki
+```python
 class McpServerStatus(TypedDict):
     name: str
     status: McpServerConnectionStatus  # "connected" | "failed" | "needs-auth" | "pending" | "disabled"
@@ -1231,13 +1168,12 @@ class McpServerStatus(TypedDict):
 | `scope` | `str` (optional) | Configuration scope |
 | `tools` | `list` (optional) | Tools provided by this server, each with `name`, `description`, and `annotations` fields |
 
-### 
 
 `SdkPluginConfig`
 
 Configuration for loading plugins in the SDK.
 
-``` shiki
+```python
 class SdkPluginConfig(TypedDict):
     type: Literal["local"]
     path: str
@@ -1250,7 +1186,7 @@ class SdkPluginConfig(TypedDict):
 
 **Example:**
 
-``` shiki
+```python
 plugins = [
     {"type": "local", "path": "./my-plugin"},
     {"type": "local", "path": "/absolute/path/to/plugin"},
@@ -1259,27 +1195,24 @@ plugins = [
 
 For complete information on creating and using plugins, see [Plugins](/docs/en/agent-sdk/plugins).
 
-## 
 
 Message Types
 
-### 
 
 `Message`
 
 Union type of all possible messages.
 
-``` shiki
+```python
 Message = UserMessage | AssistantMessage | SystemMessage | ResultMessage | StreamEvent
 ```
 
-### 
 
 `UserMessage`
 
 User input message.
 
-``` shiki
+```python
 @dataclass
 class UserMessage:
     content: str | list[ContentBlock]
@@ -1295,13 +1228,12 @@ class UserMessage:
 | `parent_tool_use_id` | `str | None` | Tool use ID if this message is a tool result response |
 | `tool_use_result` | `dict[str, Any] | None` | Tool result data if applicable |
 
-### 
 
 `AssistantMessage`
 
 Assistant response message with content blocks.
 
-``` shiki
+```python
 @dataclass
 class AssistantMessage:
     content: list[ContentBlock]
@@ -1317,13 +1249,12 @@ class AssistantMessage:
 | `parent_tool_use_id` | `str | None` | Tool use ID if this is a nested response |
 | `error` | [`AssistantMessageError`](#assistant-message-error) ` | None` | Error type if the response encountered an error |
 
-### 
 
 `AssistantMessageError`
 
 Possible error types for assistant messages.
 
-``` shiki
+```python
 AssistantMessageError = Literal[
     "authentication_failed",
     "billing_error",
@@ -1334,26 +1265,24 @@ AssistantMessageError = Literal[
 ]
 ```
 
-### 
 
 `SystemMessage`
 
 System message with metadata.
 
-``` shiki
+```python
 @dataclass
 class SystemMessage:
     subtype: str
     data: dict[str, Any]
 ```
 
-### 
 
 `ResultMessage`
 
 Final result message with cost and usage information.
 
-``` shiki
+```python
 @dataclass
 class ResultMessage:
     subtype: str
@@ -1378,13 +1307,12 @@ The `usage` dict contains the following keys when present:
 | `cache_creation_input_tokens` | `int` | Tokens used to create new cache entries. |
 | `cache_read_input_tokens` | `int` | Tokens read from existing cache entries. |
 
-### 
 
 `StreamEvent`
 
 Stream event for partial message updates during streaming. Only received when `include_partial_messages=True` in `ClaudeAgentOptions`. Import via `from claude_agent_sdk.types import StreamEvent`.
 
-``` shiki
+```python
 @dataclass
 class StreamEvent:
     uuid: str
@@ -1400,13 +1328,12 @@ class StreamEvent:
 | `event` | `dict[str, Any]` | The raw Claude API stream event data |
 | `parent_tool_use_id` | `str | None` | Parent tool use ID if this event is from a subagent |
 
-### 
 
 `TaskStartedMessage`
 
 Emitted when a background task starts. A background task is anything tracked outside the main turn: a backgrounded Bash command, a subagent spawned via the Agent tool, or a remote agent. The `task_type` field tells you which. This naming is unrelated to the `Task`-to-`Agent` tool rename.
 
-``` shiki
+```python
 @dataclass
 class TaskStartedMessage(SystemMessage):
     task_id: str
@@ -1426,26 +1353,24 @@ class TaskStartedMessage(SystemMessage):
 | `tool_use_id` | `str | None` | Associated tool use ID |
 | `task_type` | `str | None` | Which kind of background task: `"local_bash"`, `"local_agent"`, `"remote_agent"` |
 
-### 
 
 `TaskUsage`
 
 Token and timing data for a background task.
 
-``` shiki
+```python
 class TaskUsage(TypedDict):
     total_tokens: int
     tool_uses: int
     duration_ms: int
 ```
 
-### 
 
 `TaskProgressMessage`
 
 Emitted periodically with progress updates for a running background task.
 
-``` shiki
+```python
 @dataclass
 class TaskProgressMessage(SystemMessage):
     task_id: str
@@ -1467,13 +1392,12 @@ class TaskProgressMessage(SystemMessage):
 | `tool_use_id`    | `str | None` | Associated tool use ID              |
 | `last_tool_name` | `str | None` | Name of the last tool the task used |
 
-### 
 
 `TaskNotificationMessage`
 
 Emitted when a task completes, fails, or is stopped.
 
-``` shiki
+```python
 @dataclass
 class TaskNotificationMessage(SystemMessage):
     task_id: str
@@ -1497,52 +1421,47 @@ class TaskNotificationMessage(SystemMessage):
 | `tool_use_id` | `str | None` | Associated tool use ID |
 | `usage` | `TaskUsage | None` | Final token usage for the task |
 
-## 
 
 Content Block Types
 
-### 
 
 `ContentBlock`
 
 Union type of all content blocks.
 
-``` shiki
+```python
 ContentBlock = TextBlock | ThinkingBlock | ToolUseBlock | ToolResultBlock
 ```
 
-### 
 
 `TextBlock`
 
 Text content block.
 
-``` shiki
+```python
 @dataclass
 class TextBlock:
     text: str
 ```
 
-### 
 
 `ThinkingBlock`
 
 Thinking content block (for models with thinking capability).
 
-``` shiki
+```python
 @dataclass
 class ThinkingBlock:
     thinking: str
     signature: str
 ```
 
-### 
 
 `ToolUseBlock`
 
 Tool use request block.
 
-``` shiki
+```python
 @dataclass
 class ToolUseBlock:
     id: str
@@ -1550,13 +1469,12 @@ class ToolUseBlock:
     input: dict[str, Any]
 ```
 
-### 
 
 `ToolResultBlock`
 
 Tool execution result block.
 
-``` shiki
+```python
 @dataclass
 class ToolResultBlock:
     tool_use_id: str
@@ -1564,28 +1482,25 @@ class ToolResultBlock:
     is_error: bool | None = None
 ```
 
-## 
 
 Error Types
 
-### 
 
 `ClaudeSDKError`
 
 Base exception class for all SDK errors.
 
-``` shiki
+```python
 class ClaudeSDKError(Exception):
     """Base error for Claude SDK."""
 ```
 
-### 
 
 `CLINotFoundError`
 
 Raised when Claude Code CLI is not installed or not found.
 
-``` shiki
+```python
 class CLINotFoundError(CLIConnectionError):
     def __init__(
         self, message: str = "Claude Code not found", cli_path: str | None = None
@@ -1597,24 +1512,22 @@ class CLINotFoundError(CLIConnectionError):
         """
 ```
 
-### 
 
 `CLIConnectionError`
 
 Raised when connection to Claude Code fails.
 
-``` shiki
+```python
 class CLIConnectionError(ClaudeSDKError):
     """Failed to connect to Claude Code."""
 ```
 
-### 
 
 `ProcessError`
 
 Raised when the Claude Code process fails.
 
-``` shiki
+```python
 class ProcessError(ClaudeSDKError):
     def __init__(
         self, message: str, exit_code: int | None = None, stderr: str | None = None
@@ -1623,13 +1536,12 @@ class ProcessError(ClaudeSDKError):
         self.stderr = stderr
 ```
 
-### 
 
 `CLIJSONDecodeError`
 
 Raised when JSON parsing fails.
 
-``` shiki
+```python
 class CLIJSONDecodeError(ClaudeSDKError):
     def __init__(self, line: str, original_error: Exception):
         """
@@ -1641,19 +1553,17 @@ class CLIJSONDecodeError(ClaudeSDKError):
         self.original_error = original_error
 ```
 
-## 
 
 Hook Types
 
 For a comprehensive guide on using hooks with examples and common patterns, see the [Hooks guide](/docs/en/agent-sdk/hooks).
 
-### 
 
 `HookEvent`
 
 Supported hook event types.
 
-``` shiki
+```python
 HookEvent = Literal[
     "PreToolUse",  # Called before tool execution
     "PostToolUse",  # Called after tool execution
@@ -1668,13 +1578,12 @@ HookEvent = Literal[
 ]
 ```
 
-### 
 
 `HookCallback`
 
 Type definition for hook callback functions.
 
-``` shiki
+```python
 HookCallback = Callable[[HookInput, str | None, HookContext], Awaitable[HookJSONOutput]]
 ```
 
@@ -1690,24 +1599,22 @@ Returns a [`HookJSONOutput`](#hook-json-output) that may contain:
 - `systemMessage`: System message to add to the transcript
 - `hookSpecificOutput`: Hook-specific output data
 
-### 
 
 `HookContext`
 
 Context information passed to hook callbacks.
 
-``` shiki
+```python
 class HookContext(TypedDict):
     signal: Any | None  # Future: abort signal support
 ```
 
-### 
 
 `HookMatcher`
 
 Configuration for matching hooks to specific events or tools.
 
-``` shiki
+```python
 @dataclass
 class HookMatcher:
     matcher: str | None = (
@@ -1721,13 +1628,12 @@ class HookMatcher:
     )
 ```
 
-### 
 
 `HookInput`
 
 Union type of all hook input types. The actual type depends on the `hook_event_name` field.
 
-``` shiki
+```python
 HookInput = (
     PreToolUseHookInput
     | PostToolUseHookInput
@@ -1742,13 +1648,12 @@ HookInput = (
 )
 ```
 
-### 
 
 `BaseHookInput`
 
 Base fields present in all hook input types.
 
-``` shiki
+```python
 class BaseHookInput(TypedDict):
     session_id: str
     transcript_path: str
@@ -1763,13 +1668,12 @@ class BaseHookInput(TypedDict):
 | `cwd`             | `str`            | Current working directory           |
 | `permission_mode` | `str` (optional) | Current permission mode             |
 
-### 
 
 `PreToolUseHookInput`
 
 Input data for `PreToolUse` hook events.
 
-``` shiki
+```python
 class PreToolUseHookInput(BaseHookInput):
     hook_event_name: Literal["PreToolUse"]
     tool_name: str
@@ -1788,13 +1692,12 @@ class PreToolUseHookInput(BaseHookInput):
 | `agent_id` | `str` (optional) | Subagent identifier, present when the hook fires inside a subagent |
 | `agent_type` | `str` (optional) | Subagent type, present when the hook fires inside a subagent |
 
-### 
 
 `PostToolUseHookInput`
 
 Input data for `PostToolUse` hook events.
 
-``` shiki
+```python
 class PostToolUseHookInput(BaseHookInput):
     hook_event_name: Literal["PostToolUse"]
     tool_name: str
@@ -1815,13 +1718,12 @@ class PostToolUseHookInput(BaseHookInput):
 | `agent_id` | `str` (optional) | Subagent identifier, present when the hook fires inside a subagent |
 | `agent_type` | `str` (optional) | Subagent type, present when the hook fires inside a subagent |
 
-### 
 
 `PostToolUseFailureHookInput`
 
 Input data for `PostToolUseFailure` hook events. Called when a tool execution fails.
 
-``` shiki
+```python
 class PostToolUseFailureHookInput(BaseHookInput):
     hook_event_name: Literal["PostToolUseFailure"]
     tool_name: str
@@ -1844,13 +1746,12 @@ class PostToolUseFailureHookInput(BaseHookInput):
 | `agent_id` | `str` (optional) | Subagent identifier, present when the hook fires inside a subagent |
 | `agent_type` | `str` (optional) | Subagent type, present when the hook fires inside a subagent |
 
-### 
 
 `UserPromptSubmitHookInput`
 
 Input data for `UserPromptSubmit` hook events.
 
-``` shiki
+```python
 class UserPromptSubmitHookInput(BaseHookInput):
     hook_event_name: Literal["UserPromptSubmit"]
     prompt: str
@@ -1861,13 +1762,12 @@ class UserPromptSubmitHookInput(BaseHookInput):
 | `hook_event_name` | `Literal["UserPromptSubmit"]` | Always "UserPromptSubmit" |
 | `prompt` | `str` | The user's submitted prompt |
 
-### 
 
 `StopHookInput`
 
 Input data for `Stop` hook events.
 
-``` shiki
+```python
 class StopHookInput(BaseHookInput):
     hook_event_name: Literal["Stop"]
     stop_hook_active: bool
@@ -1878,13 +1778,12 @@ class StopHookInput(BaseHookInput):
 | `hook_event_name`  | `Literal["Stop"]` | Always "Stop"                   |
 | `stop_hook_active` | `bool`            | Whether the stop hook is active |
 
-### 
 
 `SubagentStopHookInput`
 
 Input data for `SubagentStop` hook events.
 
-``` shiki
+```python
 class SubagentStopHookInput(BaseHookInput):
     hook_event_name: Literal["SubagentStop"]
     stop_hook_active: bool
@@ -1901,13 +1800,12 @@ class SubagentStopHookInput(BaseHookInput):
 | `agent_transcript_path` | `str` | Path to the subagent's transcript file |
 | `agent_type` | `str` | Type of the subagent |
 
-### 
 
 `PreCompactHookInput`
 
 Input data for `PreCompact` hook events.
 
-``` shiki
+```python
 class PreCompactHookInput(BaseHookInput):
     hook_event_name: Literal["PreCompact"]
     trigger: Literal["manual", "auto"]
@@ -1920,13 +1818,12 @@ class PreCompactHookInput(BaseHookInput):
 | `trigger` | `Literal["manual", "auto"]` | What triggered the compaction |
 | `custom_instructions` | `str | None` | Custom instructions for compaction |
 
-### 
 
 `NotificationHookInput`
 
 Input data for `Notification` hook events.
 
-``` shiki
+```python
 class NotificationHookInput(BaseHookInput):
     hook_event_name: Literal["Notification"]
     message: str
@@ -1941,13 +1838,12 @@ class NotificationHookInput(BaseHookInput):
 | `title`             | `str` (optional)          | Notification title           |
 | `notification_type` | `str`                     | Type of notification         |
 
-### 
 
 `SubagentStartHookInput`
 
 Input data for `SubagentStart` hook events.
 
-``` shiki
+```python
 class SubagentStartHookInput(BaseHookInput):
     hook_event_name: Literal["SubagentStart"]
     agent_id: str
@@ -1960,13 +1856,12 @@ class SubagentStartHookInput(BaseHookInput):
 | `agent_id` | `str` | Unique identifier for the subagent |
 | `agent_type` | `str` | Type of the subagent |
 
-### 
 
 `PermissionRequestHookInput`
 
 Input data for `PermissionRequest` hook events. Allows hooks to handle permission decisions programmatically.
 
-``` shiki
+```python
 class PermissionRequestHookInput(BaseHookInput):
     hook_event_name: Literal["PermissionRequest"]
     tool_name: str
@@ -1981,23 +1876,21 @@ class PermissionRequestHookInput(BaseHookInput):
 | `tool_input` | `dict[str, Any]` | Input parameters for the tool |
 | `permission_suggestions` | `list[Any]` (optional) | Suggested permission updates from the CLI |
 
-### 
 
 `HookJSONOutput`
 
 Union type for hook callback return values.
 
-``` shiki
+```python
 HookJSONOutput = AsyncHookJSONOutput | SyncHookJSONOutput
 ```
 
-#### 
 
 `SyncHookJSONOutput`
 
 Synchronous hook output with control and decision fields.
 
-``` shiki
+```python
 class SyncHookJSONOutput(TypedDict):
     # Control fields
     continue_: NotRequired[bool]  # Whether to proceed (default: True)
@@ -2015,7 +1908,6 @@ class SyncHookJSONOutput(TypedDict):
 
 Use `continue_` (with underscore) in Python code. It is automatically converted to `continue` when sent to the CLI.
 
-#### 
 
 `HookSpecificOutput`
 
@@ -2023,7 +1915,7 @@ A `TypedDict` containing the hook event name and event-specific fields. The shap
 
 A discriminated union of event-specific output types. The `hookEventName` field determines which fields are valid.
 
-``` shiki
+```python
 class PreToolUseHookSpecificOutput(TypedDict):
     hookEventName: Literal["PreToolUse"]
     permissionDecision: NotRequired[Literal["allow", "deny", "ask"]]
@@ -2074,13 +1966,12 @@ HookSpecificOutput = (
 )
 ```
 
-#### 
 
 `AsyncHookJSONOutput`
 
 Async hook output that defers hook execution.
 
-``` shiki
+```python
 class AsyncHookJSONOutput(TypedDict):
     async_: Literal[True]  # Set to True to defer execution
     asyncTimeout: NotRequired[int]  # Timeout in milliseconds
@@ -2088,13 +1979,12 @@ class AsyncHookJSONOutput(TypedDict):
 
 Use `async_` (with underscore) in Python code. It is automatically converted to `async` when sent to the CLI.
 
-### 
 
 Hook Usage Example
 
 This example registers two hooks: one that blocks dangerous bash commands like `rm -rf /`, and another that logs all tool usage for auditing. The security hook only runs on Bash commands (via the `matcher`), while the logging hook runs on all tools.
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions, HookMatcher, HookContext
 from typing import Any
 
@@ -2142,13 +2032,11 @@ async for message in query(prompt="Analyze this codebase", options=options):
     print(message)
 ```
 
-## 
 
 Tool Input/Output Types
 
 Documentation of input/output schemas for all built-in Claude Code tools. While the Python SDK doesn't export these as types, they represent the structure of tool inputs and outputs in messages.
 
-### 
 
 Agent
 
@@ -2156,7 +2044,7 @@ Agent
 
 **Input:**
 
-``` shiki
+```python
 {
     "description": str,  # A short (3-5 word) description of the task
     "prompt": str,  # The task for the agent to perform
@@ -2166,7 +2054,7 @@ Agent
 
 **Output:**
 
-``` shiki
+```python
 {
     "result": str,  # Final result from the subagent
     "usage": dict | None,  # Token usage statistics
@@ -2175,7 +2063,6 @@ Agent
 }
 ```
 
-### 
 
 AskUserQuestion
 
@@ -2185,7 +2072,7 @@ Asks the user clarifying questions during execution. See [Handle approvals and u
 
 **Input:**
 
-``` shiki
+```python
 {
     "questions": [  # Questions to ask the user (1-4 questions)
         {
@@ -2206,7 +2093,7 @@ Asks the user clarifying questions during execution. See [Handle approvals and u
 
 **Output:**
 
-``` shiki
+```python
 {
     "questions": [  # The questions that were asked
         {
@@ -2221,7 +2108,6 @@ Asks the user clarifying questions during execution. See [Handle approvals and u
 }
 ```
 
-### 
 
 Bash
 
@@ -2229,7 +2115,7 @@ Bash
 
 **Input:**
 
-``` shiki
+```python
 {
     "command": str,  # The command to execute
     "timeout": int | None,  # Optional timeout in milliseconds (max 600000)
@@ -2240,7 +2126,7 @@ Bash
 
 **Output:**
 
-``` shiki
+```python
 {
     "output": str,  # Combined stdout and stderr output
     "exitCode": int,  # Exit code of the command
@@ -2249,7 +2135,6 @@ Bash
 }
 ```
 
-### 
 
 Edit
 
@@ -2257,7 +2142,7 @@ Edit
 
 **Input:**
 
-``` shiki
+```python
 {
     "file_path": str,  # The absolute path to the file to modify
     "old_string": str,  # The text to replace
@@ -2268,7 +2153,7 @@ Edit
 
 **Output:**
 
-``` shiki
+```python
 {
     "message": str,  # Confirmation message
     "replacements": int,  # Number of replacements made
@@ -2276,7 +2161,6 @@ Edit
 }
 ```
 
-### 
 
 Read
 
@@ -2284,7 +2168,7 @@ Read
 
 **Input:**
 
-``` shiki
+```python
 {
     "file_path": str,  # The absolute path to the file to read
     "offset": int | None,  # The line number to start reading from
@@ -2294,7 +2178,7 @@ Read
 
 **Output (Text files):**
 
-``` shiki
+```python
 {
     "content": str,  # File contents with line numbers
     "total_lines": int,  # Total number of lines in file
@@ -2304,7 +2188,7 @@ Read
 
 **Output (Images):**
 
-``` shiki
+```python
 {
     "image": str,  # Base64 encoded image data
     "mime_type": str,  # Image MIME type
@@ -2312,7 +2196,6 @@ Read
 }
 ```
 
-### 
 
 Write
 
@@ -2320,7 +2203,7 @@ Write
 
 **Input:**
 
-``` shiki
+```python
 {
     "file_path": str,  # The absolute path to the file to write
     "content": str,  # The content to write to the file
@@ -2329,7 +2212,7 @@ Write
 
 **Output:**
 
-``` shiki
+```python
 {
     "message": str,  # Success message
     "bytes_written": int,  # Number of bytes written
@@ -2337,7 +2220,6 @@ Write
 }
 ```
 
-### 
 
 Glob
 
@@ -2345,7 +2227,7 @@ Glob
 
 **Input:**
 
-``` shiki
+```python
 {
     "pattern": str,  # The glob pattern to match files against
     "path": str | None,  # The directory to search in (defaults to cwd)
@@ -2354,7 +2236,7 @@ Glob
 
 **Output:**
 
-``` shiki
+```python
 {
     "matches": list[str],  # Array of matching file paths
     "count": int,  # Number of matches found
@@ -2362,7 +2244,6 @@ Glob
 }
 ```
 
-### 
 
 Grep
 
@@ -2370,7 +2251,7 @@ Grep
 
 **Input:**
 
-``` shiki
+```python
 {
     "pattern": str,  # The regular expression pattern
     "path": str | None,  # File or directory to search in
@@ -2389,7 +2270,7 @@ Grep
 
 **Output (content mode):**
 
-``` shiki
+```python
 {
     "matches": [
         {
@@ -2406,14 +2287,13 @@ Grep
 
 **Output (files_with_matches mode):**
 
-``` shiki
+```python
 {
     "files": list[str],  # Files containing matches
     "count": int,  # Number of files with matches
 }
 ```
 
-### 
 
 NotebookEdit
 
@@ -2421,7 +2301,7 @@ NotebookEdit
 
 **Input:**
 
-``` shiki
+```python
 {
     "notebook_path": str,  # Absolute path to the Jupyter notebook
     "cell_id": str | None,  # The ID of the cell to edit
@@ -2433,7 +2313,7 @@ NotebookEdit
 
 **Output:**
 
-``` shiki
+```python
 {
     "message": str,  # Success message
     "edit_type": "replaced" | "inserted" | "deleted",  # Type of edit performed
@@ -2442,7 +2322,6 @@ NotebookEdit
 }
 ```
 
-### 
 
 WebFetch
 
@@ -2450,7 +2329,7 @@ WebFetch
 
 **Input:**
 
-``` shiki
+```python
 {
     "url": str,  # The URL to fetch content from
     "prompt": str,  # The prompt to run on the fetched content
@@ -2459,7 +2338,7 @@ WebFetch
 
 **Output:**
 
-``` shiki
+```python
 {
     "response": str,  # AI model's response to the prompt
     "url": str,  # URL that was fetched
@@ -2468,7 +2347,6 @@ WebFetch
 }
 ```
 
-### 
 
 WebSearch
 
@@ -2476,7 +2354,7 @@ WebSearch
 
 **Input:**
 
-``` shiki
+```python
 {
     "query": str,  # The search query to use
     "allowed_domains": list[str] | None,  # Only include results from these domains
@@ -2486,7 +2364,7 @@ WebSearch
 
 **Output:**
 
-``` shiki
+```python
 {
     "results": [{"title": str, "url": str, "snippet": str, "metadata": dict | None}],
     "total_results": int,
@@ -2494,7 +2372,6 @@ WebSearch
 }
 ```
 
-### 
 
 TodoWrite
 
@@ -2502,7 +2379,7 @@ TodoWrite
 
 **Input:**
 
-``` shiki
+```python
 {
     "todos": [
         {
@@ -2516,14 +2393,13 @@ TodoWrite
 
 **Output:**
 
-``` shiki
+```python
 {
     "message": str,  # Success message
     "stats": {"total": int, "pending": int, "in_progress": int, "completed": int},
 }
 ```
 
-### 
 
 BashOutput
 
@@ -2531,7 +2407,7 @@ BashOutput
 
 **Input:**
 
-``` shiki
+```python
 {
     "bash_id": str,  # The ID of the background shell
     "filter": str | None,  # Optional regex to filter output lines
@@ -2540,7 +2416,7 @@ BashOutput
 
 **Output:**
 
-``` shiki
+```python
 {
     "output": str,  # New output since last check
     "status": "running" | "completed" | "failed",  # Current shell status
@@ -2548,7 +2424,6 @@ BashOutput
 }
 ```
 
-### 
 
 KillBash
 
@@ -2556,7 +2431,7 @@ KillBash
 
 **Input:**
 
-``` shiki
+```python
 {
     "shell_id": str  # The ID of the background shell to kill
 }
@@ -2564,14 +2439,13 @@ KillBash
 
 **Output:**
 
-``` shiki
+```python
 {
     "message": str,  # Success message
     "shell_id": str,  # ID of the killed shell
 }
 ```
 
-### 
 
 ExitPlanMode
 
@@ -2579,7 +2453,7 @@ ExitPlanMode
 
 **Input:**
 
-``` shiki
+```python
 {
     "plan": str  # The plan to run by the user for approval
 }
@@ -2587,14 +2461,13 @@ ExitPlanMode
 
 **Output:**
 
-``` shiki
+```python
 {
     "message": str,  # Confirmation message
     "approved": bool | None,  # Whether user approved the plan
 }
 ```
 
-### 
 
 ListMcpResources
 
@@ -2602,7 +2475,7 @@ ListMcpResources
 
 **Input:**
 
-``` shiki
+```python
 {
     "server": str | None  # Optional server name to filter resources by
 }
@@ -2610,7 +2483,7 @@ ListMcpResources
 
 **Output:**
 
-``` shiki
+```python
 {
     "resources": [
         {
@@ -2625,7 +2498,6 @@ ListMcpResources
 }
 ```
 
-### 
 
 ReadMcpResource
 
@@ -2633,7 +2505,7 @@ ReadMcpResource
 
 **Input:**
 
-``` shiki
+```python
 {
     "server": str,  # The MCP server name
     "uri": str,  # The resource URI to read
@@ -2642,7 +2514,7 @@ ReadMcpResource
 
 **Output:**
 
-``` shiki
+```python
 {
     "contents": [
         {"uri": str, "mimeType": str | None, "text": str | None, "blob": str | None}
@@ -2651,15 +2523,13 @@ ReadMcpResource
 }
 ```
 
-## 
 
 Advanced Features with ClaudeSDKClient
 
-### 
 
 Building a Continuous Conversation Interface
 
-``` shiki
+```python
 from claude_agent_sdk import (
     ClaudeSDKClient,
     ClaudeAgentOptions,
@@ -2736,11 +2606,10 @@ async def main():
 asyncio.run(main())
 ```
 
-### 
 
 Using Hooks for Behavior Modification
 
-``` shiki
+```python
 from claude_agent_sdk import (
     ClaudeSDKClient,
     ClaudeAgentOptions,
@@ -2822,11 +2691,10 @@ async def main():
 asyncio.run(main())
 ```
 
-### 
 
 Real-time Progress Monitoring
 
-``` shiki
+```python
 from claude_agent_sdk import (
     ClaudeSDKClient,
     ClaudeAgentOptions,
@@ -2865,15 +2733,13 @@ async def monitor_progress():
 asyncio.run(monitor_progress())
 ```
 
-## 
 
 Example Usage
 
-### 
 
 Basic file operations (using query)
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions, AssistantMessage, ToolUseBlock
 import asyncio
 
@@ -2897,11 +2763,10 @@ async def create_project():
 asyncio.run(create_project())
 ```
 
-### 
 
 Error handling
 
-``` shiki
+```python
 from claude_agent_sdk import query, CLINotFoundError, ProcessError, CLIJSONDecodeError
 
 try:
@@ -2917,11 +2782,10 @@ except CLIJSONDecodeError as e:
     print(f"Failed to parse response: {e}")
 ```
 
-### 
 
 Streaming mode with client
 
-``` shiki
+```python
 from claude_agent_sdk import ClaudeSDKClient
 import asyncio
 
@@ -2946,11 +2810,10 @@ async def interactive_session():
 asyncio.run(interactive_session())
 ```
 
-### 
 
 Using custom tools with ClaudeSDKClient
 
-``` shiki
+```python
 from claude_agent_sdk import (
     ClaudeSDKClient,
     ClaudeAgentOptions,
@@ -3020,17 +2883,15 @@ async def main():
 asyncio.run(main())
 ```
 
-## 
 
 Sandbox Configuration
 
-### 
 
 `SandboxSettings`
 
 Configuration for sandbox behavior. Use this to enable command sandboxing and configure network restrictions programmatically.
 
-``` shiki
+```python
 class SandboxSettings(TypedDict, total=False):
     enabled: bool
     autoAllowBashIfSandboxed: bool
@@ -3059,11 +2920,10 @@ class SandboxSettings(TypedDict, total=False):
 
 Use sandbox settings for command execution sandboxing, and permission rules for filesystem and network access control.
 
-#### 
 
 Example usage
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions, SandboxSettings
 
 sandbox_settings: SandboxSettings = {
@@ -3081,13 +2941,12 @@ async for message in query(
 
 **Unix socket security**: The `allowUnixSockets` option can grant access to powerful system services. For example, allowing `/var/run/docker.sock` effectively grants full host system access through the Docker API, bypassing sandbox isolation. Only allow Unix sockets that are strictly necessary and understand the security implications of each.
 
-### 
 
 `SandboxNetworkConfig`
 
 Network-specific configuration for sandbox mode.
 
-``` shiki
+```python
 class SandboxNetworkConfig(TypedDict, total=False):
     allowLocalBinding: bool
     allowUnixSockets: list[str]
@@ -3104,13 +2963,12 @@ class SandboxNetworkConfig(TypedDict, total=False):
 | `httpProxyPort` | `int` | `None` | HTTP proxy port for network requests |
 | `socksProxyPort` | `int` | `None` | SOCKS proxy port for network requests |
 
-### 
 
 `SandboxIgnoreViolations`
 
 Configuration for ignoring specific sandbox violations.
 
-``` shiki
+```python
 class SandboxIgnoreViolations(TypedDict, total=False):
     file: list[str]
     network: list[str]
@@ -3121,7 +2979,6 @@ class SandboxIgnoreViolations(TypedDict, total=False):
 | `file`    | `list[str]` | `[]`    | File path patterns to ignore violations for |
 | `network` | `list[str]` | `[]`    | Network patterns to ignore violations for   |
 
-### 
 
 Permissions Fallback for Unsandboxed Commands
 
@@ -3132,7 +2989,7 @@ When `allowUnsandboxedCommands` is enabled, the model can request to run command
 - `excludedCommands`: A static list of commands that always bypass the sandbox automatically (e.g., `["docker"]`). The model has no control over this.
 - `allowUnsandboxedCommands`: Lets the model decide at runtime whether to request unsandboxed execution by setting `dangerouslyDisableSandbox: True` in the tool input.
 
-``` shiki
+```python
 from claude_agent_sdk import (
     query,
     ClaudeAgentOptions,
@@ -3197,7 +3054,6 @@ Commands running with `dangerouslyDisableSandbox: True` have full system access.
 
 If `permission_mode` is set to `bypassPermissions` and `allow_unsandboxed_commands` is enabled, the model can autonomously execute commands outside the sandbox without any approval prompts. This combination effectively allows the model to escape sandbox isolation silently.
 
-## 
 
 See also
 

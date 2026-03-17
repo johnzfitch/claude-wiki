@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:17:14Z"
+fetched_at: "2026-03-17T02:02:38Z"
 source_url: "https://platform.claude.com/docs/en/api/ruby/models/retrieve"
 title: "Get a Model - Claude API Reference"
 ---
@@ -99,7 +99,7 @@ Get a Model
 
 Ruby
 
-``` shiki
+```python
 require "anthropic"
 
 anthropic = Anthropic::Client.new(api_key: "my-anthropic-api-key")
@@ -111,7 +111,7 @@ puts(model_info)
 
 Response 200
 
-``` shiki
+```python
 {
   "id": "claude-opus-4-6",
   "created_at": "2026-02-04T00:00:00Z",
@@ -124,7 +124,7 @@ Response 200
 
 Response 200
 
-``` shiki
+```python
 {
   "id": "claude-opus-4-6",
   "created_at": "2026-02-04T00:00:00Z",

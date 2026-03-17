@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:23Z"
+fetched_at: "2026-03-17T02:03:58Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/changelog"
 title: "Key Changes - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Key Changes - Model Context Protocol"
 
 This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2025-06-18](/specification/2025-06-18).
 
-## 
 
 [​](#major-changes)
 
@@ -26,7 +25,6 @@ Major changes
 8.  Add support for OAuth Client ID Metadata Documents as a recommended client registration mechanism ([SEP-991](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/991), PR [\#1296](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1296))
 9.  Add experimental support for [tasks](/specification/2025-11-25/basic/utilities/tasks) to enable tracking durable requests with polling and deferred result retrieval ([SEP-1686](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1686)).
 
-## 
 
 [​](#minor-changes)
 
@@ -43,7 +41,6 @@ Minor changes
 9.  Add support for default values in all primitive types (string, number, enum) for elicitation schemas ([SEP-1034](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1034)).
 10. Establish JSON Schema 2020-12 as the default dialect for MCP schema definitions ([SEP-1613](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1613)).
 
-## 
 
 [​](#other-schema-changes)
 
@@ -51,7 +48,6 @@ Other schema changes
 
 1.  Decouple request payloads from RPC method definitions into standalone parameter schemas. ([SEP-1319](https://github.com/modelcontextprotocol/specification/issues/1319), PR [\#1284](https://github.com/modelcontextprotocol/specification/pull/1284))
 
-## 
 
 [​](#governance-and-process-updates)
 
@@ -62,7 +58,6 @@ Governance and process updates
 3.  Formalize Working Groups and Interest Groups in MCP governance ([SEP-1302](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1302)).
 4.  Establish SDK tiering system with clear requirements for feature support and maintenance commitments ([SEP-1730](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1730)).
 
-## 
 
 [​](#full-changelog)
 

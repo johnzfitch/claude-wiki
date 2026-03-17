@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:32Z"
+fetched_at: "2026-03-17T02:01:47Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/php"
 title: "PHP SDK - Claude API Docs"
 ---
@@ -17,27 +17,24 @@ The PHP SDK is currently in beta. APIs may change between versions.
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers PHP-specific SDK features and configuration.
 
-## 
 
 Installation
 
-``` shiki
+```python
 composer require "anthropic-ai/sdk"
 ```
 
-## 
 
 Requirements
 
 PHP 8.1.0 or higher.
 
-## 
 
 Usage
 
 This library uses named parameters to specify optional arguments. Parameters with a default value must be set by name.
 
-``` shiki
+```python
 <?php
 
 use Anthropic\Client;
@@ -55,7 +52,6 @@ $message = $client->messages->create(
 var_dump($message->content);
 ```
 
-## 
 
 Value objects
 
@@ -63,13 +59,12 @@ It is recommended to use the static `with` constructor `Base64ImageSource::with(
 
 However, builders are also provided `(new Base64ImageSource)->withData("U3RhaW5sZXNzIHJvY2tz")`.
 
-## 
 
 Streaming
 
 The SDK provides support for streaming responses using Server-Sent Events (SSE).
 
-``` shiki
+```python
 <?php
 
 use Anthropic\Client;
@@ -89,13 +84,12 @@ foreach ($stream as $message) {
 }
 ```
 
-## 
 
 Error handling
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `Anthropic\Core\Exceptions\APIException` is thrown:
 
-``` shiki
+```python
 <?php
 // ...
 use Anthropic\Core\Exceptions\APIConnectionException;
@@ -136,7 +130,6 @@ Error codes are as follows:
 | Timeout          | `APITimeoutException`          |
 | Network error    | `APIConnectionException`       |
 
-## 
 
 Retries
 
@@ -146,7 +139,7 @@ Connection errors (for example, due to a network connectivity problem), 408 Requ
 
 You can use the `maxRetries` option to configure or disable this:
 
-``` shiki
+```python
 <?php
 
 use Anthropic\Client;
@@ -164,7 +157,6 @@ $result = $client->messages->create(
 );
 ```
 
-## 
 
 Pagination
 
@@ -172,7 +164,7 @@ List methods in the Claude API are paginated.
 
 This library provides auto-paginating iterators with each list response, so you do not have to request successive pages manually:
 
-``` shiki
+```python
 <?php
 
 use Anthropic\Client;
@@ -195,11 +187,9 @@ foreach ($page->pagingEachItem() as $item) {
 }
 ```
 
-## 
 
 Advanced usage
 
-### 
 
 Undocumented properties
 
@@ -207,7 +197,7 @@ You can send undocumented parameters to any endpoint, and read undocumented resp
 
 The `extra*` parameters of the same name override the documented parameters.
 
-``` shiki
+```python
 <?php
 // ...
 use Anthropic\RequestOptions;
@@ -225,19 +215,17 @@ $message = $client->messages->create(
 );
 ```
 
-### 
 
 Undocumented request params
 
 If you want to explicitly send an extra param, you can do so with the `extraQueryParams`, `extraBodyParams`, and `extraHeaders` options under `RequestOptions::with()` when making a request, as seen in the example above.
 
-### 
 
 Undocumented endpoints
 
 To make requests to undocumented endpoints while retaining the benefit of auth, retries, and so on, you can make requests using `client->request`, like so:
 
-``` shiki
+```python
 <?php
 // ...
 $response = $client->request(
@@ -249,7 +237,6 @@ $response = $client->request(
 );
 ```
 
-## 
 
 Semantic versioning
 
@@ -257,7 +244,6 @@ This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. 
 
 This package considers improvements to the (non-runtime) PHPDoc type definitions to be non-breaking changes.
 
-## 
 
 Additional resources
 

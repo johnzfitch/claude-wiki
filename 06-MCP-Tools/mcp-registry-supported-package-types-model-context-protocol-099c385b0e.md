@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:08Z"
+fetched_at: "2026-03-17T02:03:43Z"
 source_url: "https://modelcontextprotocol.io/registry/package-types"
 title: "MCP Registry Supported Package Types - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "MCP Registry Supported Package Types - Model Context Protocol"
 
 The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
-# 
 
 [​](#package-types)
 
@@ -18,7 +17,6 @@ Package Types
 
 The MCP Registry supports several different package types, and each package type has its own verification method.
 
-## 
 
 [​](#npm-packages)
 
@@ -30,7 +28,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/email-integration-mcp",
@@ -50,7 +48,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#ownership-verification)
 
@@ -62,7 +59,7 @@ package.json
 
 Copy
 
-``` shiki
+```python
 {
   "name": "@username/email-integration-mcp",
   "version": "1.0.0",
@@ -70,7 +67,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#pypi-packages)
 
@@ -82,7 +78,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/database-query-mcp",
@@ -102,7 +98,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#ownership-verification-2)
 
@@ -114,7 +109,7 @@ README.md
 
 Copy
 
-``` shiki
+```python
 # Database Query MCP Server
 
 This MCP server executes SQL queries and manages database connections.
@@ -122,7 +117,6 @@ This MCP server executes SQL queries and manages database connections.
 <!-- mcp-name: io.github.username/database-query-mcp -->
 ```
 
-## 
 
 [​](#nuget-packages)
 
@@ -134,7 +128,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/azure-devops-mcp",
@@ -154,7 +148,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#ownership-verification-3)
 
@@ -166,7 +159,7 @@ README.md
 
 Copy
 
-``` shiki
+```python
 # Azure DevOps MCP Server
 
 This MCP server manages Azure DevOps work items and pipelines.
@@ -174,7 +167,6 @@ This MCP server manages Azure DevOps work items and pipelines.
 <!-- mcp-name: io.github.username/azure-devops-mcp -->
 ```
 
-## 
 
 [​](#docker/oci-images)
 
@@ -194,7 +186,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/kubernetes-manager-mcp",
@@ -215,7 +207,6 @@ Copy
 
 The format of `identifier` is `registry/namespace/repository:tag`. For example, `docker.io/user/app:1.0.0` or `ghcr.io/user/app:1.0.0`. The tag can also be specified as a digest.
 
-### 
 
 [​](#ownership-verification-4)
 
@@ -227,11 +218,10 @@ Dockerfile
 
 Copy
 
-``` shiki
+```python
 LABEL io.modelcontextprotocol.server.name="io.github.username/kubernetes-manager-mcp"
 ```
 
-## 
 
 [​](#mcpb-packages)
 
@@ -243,7 +233,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/image-processor-mcp",
@@ -263,7 +253,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#verification)
 
@@ -273,7 +262,7 @@ The MCPB package URL (`identifier` in `server.json`) **MUST** contain the string
 
 Copy
 
-``` shiki
+```python
 openssl dgst -sha256 image-processor.mcpb
 ```
 

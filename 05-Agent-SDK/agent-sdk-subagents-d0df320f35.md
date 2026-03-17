@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:17Z"
+fetched_at: "2026-03-17T02:01:16Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/subagents"
 title: "Subagents in the SDK - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ Subagents are separate agent instances that your main agent can spawn to handle 
 
 This guide explains how to define and use subagents in the SDK using the `agents` parameter.
 
-## 
 
 Overview
 
@@ -29,11 +28,9 @@ This guide focuses on the programmatic approach, which is recommended for SDK ap
 
 When you define subagents, Claude determines whether to invoke them based on each subagent's `description` field. Write clear descriptions that explain when the subagent should be used, and Claude will automatically delegate appropriate tasks. You can also explicitly request a subagent by name in your prompt (for example, "Use the code-reviewer agent to...").
 
-## 
 
 Benefits of using subagents
 
-### 
 
 Context isolation
 
@@ -41,7 +38,6 @@ Each subagent runs in its own fresh conversation. Intermediate tool calls and re
 
 **Example:** a `research-assistant` subagent can explore dozens of files without any of that content accumulating in the main conversation. The parent receives a concise summary, not every file the subagent read.
 
-### 
 
 Parallelization
 
@@ -49,7 +45,6 @@ Multiple subagents can run concurrently, dramatically speeding up complex workfl
 
 **Example:** during a code review, you can run `style-checker`, `security-scanner`, and `test-coverage` subagents simultaneously, reducing review time from minutes to seconds.
 
-### 
 
 Specialized instructions and knowledge
 
@@ -57,7 +52,6 @@ Each subagent can have tailored system prompts with specific expertise, best pra
 
 **Example:** a `database-migration` subagent can have detailed knowledge about SQL best practices, rollback strategies, and data integrity checks that would be unnecessary noise in the main agent's instructions.
 
-### 
 
 Tool restrictions
 
@@ -65,11 +59,9 @@ Subagents can be limited to specific tools, reducing the risk of unintended acti
 
 **Example:** a `doc-reviewer` subagent might only have access to Read and Grep tools, ensuring it can analyze but never accidentally modify your documentation files.
 
-## 
 
 Creating subagents
 
-### 
 
 Programmatic definition (recommended)
 
@@ -77,7 +69,7 @@ Define subagents directly in your code using the `agents` parameter. This exampl
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AgentDefinition
 
@@ -129,7 +121,6 @@ Focus on:
 asyncio.run(main())
 ```
 
-### 
 
 AgentDefinition configuration
 
@@ -142,7 +133,6 @@ AgentDefinition configuration
 
 Subagents cannot spawn their own subagents. Don't include `Agent` in a subagent's `tools` array.
 
-### 
 
 Filesystem-based definition (alternative)
 
@@ -150,7 +140,6 @@ You can also define subagents as markdown files in `.claude/agents/` directories
 
 Even without defining custom subagents, Claude can spawn the built-in `general-purpose` subagent when `Agent` is in your `allowedTools`. This is useful for delegating research or exploration tasks without creating specialized agents.
 
-## 
 
 What subagents inherit
 
@@ -164,11 +153,9 @@ A subagent's context window starts fresh (no parent conversation) but isn't empt
 
 The parent receives the subagent's final message verbatim as the Agent tool result, but may summarize it in its own response. To preserve subagent output verbatim in the user-facing response, include an instruction to do so in the prompt or `systemPrompt` option you pass to the **main** `query()` call.
 
-## 
 
 Invoking subagents
 
-### 
 
 Automatic invocation
 
@@ -176,7 +163,6 @@ Claude automatically decides when to invoke subagents based on the task and each
 
 Write clear, specific descriptions so Claude can match tasks to the right subagent.
 
-### 
 
 Explicit invocation
 
@@ -188,7 +174,6 @@ To guarantee Claude uses a specific subagent, mention it by name in your prompt:
 
 This bypasses automatic matching and directly invokes the named subagent.
 
-### 
 
 Dynamic agent configuration
 
@@ -196,7 +181,7 @@ You can create agent definitions dynamically based on runtime conditions. This e
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AgentDefinition
 
@@ -234,7 +219,6 @@ async def main():
 asyncio.run(main())
 ```
 
-## 
 
 Detecting subagent invocation
 
@@ -248,7 +232,7 @@ The message structure differs between SDKs. In Python, content blocks are access
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AgentDefinition
 
@@ -288,7 +272,6 @@ async def main():
 asyncio.run(main())
 ```
 
-## 
 
 Resuming subagents
 
@@ -308,7 +291,7 @@ The example below demonstrates this flow: the first query runs a subagent and ca
 
 TypeScript
 
-``` shiki
+```python
 import { query, type SDKMessage } from "@anthropic-ai/claude-agent-sdk";
 
 // Helper to extract agentId from message content
@@ -355,7 +338,6 @@ Subagent transcripts persist independently of the main conversation:
 - **Session persistence**: Subagent transcripts persist within their session. You can resume a subagent after restarting Claude Code by resuming the same session.
 - **Automatic cleanup**: Transcripts are cleaned up based on the `cleanupPeriodDays` setting (default: 30 days).
 
-## 
 
 Tool restrictions
 
@@ -368,7 +350,7 @@ This example creates a read-only analysis agent that can examine code but cannot
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AgentDefinition
 
@@ -396,7 +378,6 @@ identify patterns, and suggest improvements without making changes.""",
 asyncio.run(main())
 ```
 
-### 
 
 Common tool combinations
 
@@ -407,11 +388,9 @@ Common tool combinations
 | Code modification | `Read`, `Edit`, `Write`, `Grep`, `Glob` | Full read/write access without command execution |
 | Full access | All tools | Inherits all tools from parent (omit `tools` field) |
 
-## 
 
 Troubleshooting
 
-### 
 
 Claude not delegating to subagents
 
@@ -421,19 +400,16 @@ If Claude completes tasks directly instead of delegating to your subagent:
 2.  **Use explicit prompting**: mention the subagent by name in your prompt (for example, "Use the code-reviewer agent to...")
 3.  **Write a clear description**: explain exactly when the subagent should be used so Claude can match tasks appropriately
 
-### 
 
 Filesystem-based agents not loading
 
 Agents defined in `.claude/agents/` are loaded at startup only. If you create a new agent file while Claude Code is running, restart the session to load it.
 
-### 
 
 Windows: long prompt failures
 
 On Windows, subagents with very long prompts may fail due to command line length limits (8191 chars). Keep prompts concise or use filesystem-based agents for complex instructions.
 
-## 
 
 Related documentation
 

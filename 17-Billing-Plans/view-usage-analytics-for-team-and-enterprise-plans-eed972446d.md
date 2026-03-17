@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-16T05:34:03Z"
+fetched_at: "2026-03-17T02:04:25Z"
 source_url: "https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans"
 title: "View usage analytics for Team and Enterprise plans | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "View usage analytics for Team and Enterprise plans | Claude Help Center"
 4.  View usage analytics for Team and Enterprise plans
 
 # View usage analytics for Team and Enterprise plans
+
+Updated today
 
 
 This article explains how to view and export usage analytics for your organization.

@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:01Z"
+fetched_at: "2026-03-17T02:03:15Z"
 source_url: "https://www.anthropic.com/news/anthropic-partners-with-menlo-ventures-to-launch-anthology-fund"
 title: "Anthropic partners with Menlo Ventures to launch Anthology Fund \\ Anthropic"
 ---
+
 # Anthropic partners with Menlo Ventures to launch Anthology Fund
 
 Jul 17, 2024
@@ -16,27 +17,29 @@ The Fund will back selected entrepreneurs primarily innovating in five key areas
 
 Startups backed by the Anthology Fund will gain access to Anthropic products and research, \$25,000 in free credits towards our most advanced models, and best-in-class venture support from Menlo, among other benefits and resources.
 
-“We are thrilled to join forces with Anthropic to launch the Anthology Fund,” said Matt Murphy, Partner at Menlo Ventures. “By combining Menlo’s company-building experience with Anthropic’s cutting-edge AI technology and talent, we are uniquely positioned to identify and partner with the most promising entrepreneurs shaping the future of AI.”  
+“We are thrilled to join forces with Anthropic to launch the Anthology Fund,” said Matt Murphy, Partner at Menlo Ventures. “By combining Menlo’s company-building experience with Anthropic’s cutting-edge AI technology and talent, we are uniquely positioned to identify and partner with the most promising entrepreneurs shaping the future of AI.”\
 
 We look forward to working with Menlo in supporting the startup ecosystem and driving responsible AI innovation.
 
 Interested startups can learn more and apply [here](https://menlovc.com/anthology-fund-application/).
 
-  
+\
+
+
 ## Related content
 
-### Introducing Claude Opus 4.6
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/claude-partner-network)
 
-### Claude is a space to think
+### Introducing The Anthropic Institute
 
-We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/claude-is-a-space-to-think)
+[Read more](/news/the-anthropic-institute)
 
-### Apple’s Xcode now supports the Claude Agent SDK
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/apple-xcode-claude-agent-sdk)
+[Read more](/news/sydney-fourth-office-asia-pacific)

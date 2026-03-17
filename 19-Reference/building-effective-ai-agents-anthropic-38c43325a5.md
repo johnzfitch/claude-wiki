@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:49Z"
+fetched_at: "2026-03-17T02:03:28Z"
 source_url: "https://www.anthropic.com/research/building-effective-agents"
 title: "Building Effective AI Agents \\ Anthropic"
 ---
+
 # Building effective agents
 
 Published Dec 19, 2024
@@ -201,9 +202,3 @@ One rule of thumb is to think about how much effort goes into human-computer int
 - [Poka-yoke](https://en.wikipedia.org/wiki/Poka-yoke) your tools. Change the arguments so that it is harder to make mistakes.
 
 While building our agent for [SWE-bench](https://www.anthropic.com/research/swe-bench-sonnet), we actually spent more time optimizing our tools than the overall prompt. For example, we found that the model would make mistakes with tools using relative filepaths after the agent had moved out of the root directory. To fix this, we changed the tool to always require absolute filepaths—and we found that the model used this method flawlessly.
-
-## Get the developer newsletter
-
-Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
-
-Please provide your email address if you’d like to receive our monthly developer newsletter. You can unsubscribe at any time.

@@ -1,11 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:33:57Z"
+fetched_at: "2026-03-17T02:04:19Z"
 source_url: "https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude"
 title: "Crisis Helpline Support in Claude | Claude Help Center"
 ---
 
 # Crisis Helpline Support in Claude
+
+Updated today
 
 
 *For medical emergencies, active injuries, or situations where you're in immediate physical danger, please contact emergency services (such as 911 in the US and Canada, or 112 in much of Europe) or go to your nearest emergency room.*

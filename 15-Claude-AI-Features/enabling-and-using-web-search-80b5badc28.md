@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-16T05:33:58Z"
+fetched_at: "2026-03-17T02:04:20Z"
 source_url: "https://support.claude.com/en/articles/10684626-enabling-and-using-web-search"
 title: "Enabling and using web search | Claude Help Center"
 ---
 
 # Enabling and using web search
+
+Updated today
 
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:

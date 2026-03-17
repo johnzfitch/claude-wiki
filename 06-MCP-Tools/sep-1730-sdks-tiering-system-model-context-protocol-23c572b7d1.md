@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:12Z"
+fetched_at: "2026-03-17T02:03:46Z"
 source_url: "https://modelcontextprotocol.io/seps/1730-sdks-tiering-system"
 title: "SEP-1730: SDKs Tiering System - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP proposes a tiering system for Model Context Protocol (MCP) SDKs to establish clear expectations for feature support, maintenance commitments, and quality standards. The system defines three tiers of SDK support with objective, measurable criteria for classification.
 
-## 
 
 [​](#motivation)
 
@@ -46,19 +44,16 @@ The MCP ecosystem needs SDK harmonization to help users make informed decisions.
 - **Maintenance Expectations**: Unclear commitment levels for bug fixes, security patches, and feature updates
 - **Implementation Timelines**: No visibility into when SDKs will support new protocol versions and features
 
-## 
 
 [​](#specification)
 
 Specification
 
-### 
 
 [​](#tier-definitions)
 
 Tier Definitions
 
-#### 
 
 [​](#tier-1-fully-supported)
 
@@ -77,7 +72,6 @@ SDKs in this tier provides full protocol implementation and is well supported **
   - Comprehensive documentation with examples for all features
   - Published dependency update policy
 
-#### 
 
 [​](#tier-2-commitment-to-be-fully-supported)
 
@@ -97,7 +91,6 @@ SDKs with established implementations actively working toward full protocol supp
 - **Commitment to move to Tier1**
   - Published roadmap showing intent to achieve Tier 1 or, if SDK will remain in Tier 2 indefinitely, a transparent roadmap about the direction of the SDK and reasons for not being feature complete
 
-#### 
 
 [​](#tier-3-experimental)
 
@@ -111,7 +104,6 @@ Early-stage or specialized SDKs exploring the protocol space. **Characteristics:
 - No timeline commitments for updates
 - Suitable for niche implementations that may remain at this tier
 
-### 
 
 [​](#conformance-testing)
 
@@ -125,7 +117,6 @@ All SDKs must undergo conformance testing using protocol trace validation: for d
 - Tier 2: 80% compliance required
 - Tier 3: No minimum requirement
 
-### 
 
 [​](#tier-advancement-process)
 
@@ -137,7 +128,6 @@ Tier Advancement Process
 4.  **Validation:** Automated conformance testing, github stats on issues
 5.  **Decision:** Tier assignment by MCP maintainers
 
-### 
 
 [​](#tier-relegation-process)
 
@@ -149,7 +139,6 @@ Tier Relegation Process
 2.  Issues:
     1.  Issues are not addressed within two months
 
-### 
 
 [​](#requirements-matrix)
 
@@ -162,13 +151,11 @@ Requirements matrix
 | **Documentation (self reported)**                 | Good    | Minimal  | Good   |
 | **Tier (computed from above)**                    | Tier 2  | Tier 3   | Tier 1 |
 
-## 
 
 [​](#rationale)
 
 Rationale
 
-### 
 
 [​](#why-three-tiers)
 
@@ -178,7 +165,6 @@ Why Three Tiers?
 - **Tier 2** provides a clear pathway for improving SDKs
 - **Tier 3** allows experimentation without creating barriers to entry
 
-### 
 
 [​](#why-time-based-commitments)
 
@@ -190,7 +176,6 @@ While the community raised concerns about rigid timelines, they provide:
 - Measurable goals for maintainers
 - Flexibility through tier progression
 
-### 
 
 [​](#why-not-just-feature-matrices)
 
@@ -204,13 +189,11 @@ Feature matrices alone don’t communicate:
 
 The tiering system combines feature support with quality guarantees.
 
-## 
 
 [​](#alternatives-considered)
 
 Alternatives Considered
 
-### 
 
 [​](#1-feature-matrix-only)
 
@@ -218,7 +201,6 @@ Alternatives Considered
 
 **Rejected because:** Doesn’t communicate maintenance commitments or quality standards
 
-### 
 
 [​](#2-percentage-based-scoring)
 
@@ -226,7 +208,6 @@ Alternatives Considered
 
 **Rejected because:** Too granular and doesn’t capture qualitative aspects like support
 
-### 
 
 [​](#3-properties-based-system)
 
@@ -234,7 +215,6 @@ Alternatives Considered
 
 **Rejected because:** Multiple overlapping properties could confuse users
 
-### 
 
 [​](#4-latest-version-listing-only)
 
@@ -248,7 +228,6 @@ Alternatives Considered
 - Doesn’t communicate dependency update policies
 - Version numbers alone don’t indicate production readiness
 
-### 
 
 [​](#5-no-formal-system)
 
@@ -256,7 +235,6 @@ Alternatives Considered
 
 **Rejected because:** Current ad-hoc approach creates uncertainty for users
 
-## 
 
 [​](#backward-compatibility)
 
@@ -268,7 +246,6 @@ This proposal introduces a new classification system with no breaking changes:
 - Classification is opt-in initially
 - Grace period for existing SDKs to achieve tier status
 
-## 
 
 [​](#security-implications)
 
@@ -278,7 +255,6 @@ Security Implications
 - All tiers encouraged to follow security best practices
 - Conformance tests include security validation
 
-## 
 
 [​](#implementation-plan)
 
@@ -290,13 +266,11 @@ Implementation Plan
 - [ ] Implement full compliance tests
 - [ ] Implement automatic issue tracking analysis for SDKs
 
-## 
 
 [​](#community-impact)
 
 Community Impact
 
-### 
 
 [​](#sdk-maintainers)
 
@@ -306,7 +280,6 @@ SDK Maintainers
 - Recognition for quality implementations
 - Structured pathway for advancement
 
-### 
 
 [​](#sdk-users)
 
@@ -316,7 +289,6 @@ SDK Users
 - Clear expectations for support
 - Confidence in tier 1 implementations
 
-### 
 
 [​](#ecosystem)
 
@@ -326,7 +298,6 @@ Ecosystem
 - Standardized feature support
 - Healthy competition between implementations
 
-## 
 
 [​](#references)
 
@@ -336,13 +307,11 @@ References
 - [SDK Harmonization Goals (#1444)](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1444)
 - [Conformance Testing SEP (DRAFT)](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1627)
 
-## 
 
 [​](#appendix)
 
 Appendix
 
-### 
 
 [​](#simplified-conformance-tests)
 

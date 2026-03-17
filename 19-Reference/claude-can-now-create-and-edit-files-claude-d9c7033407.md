@@ -1,7 +1,7 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T04:10:37Z"
-last_modified: "Sat, 14 Mar 2026 03:45:30 GMT"
+fetched_at: "2026-03-16T23:06:14Z"
+last_modified: "Mon, 16 Mar 2026 20:41:36 GMT"
 source_url: "https://www.anthropic.com/news/create-files"
 title: "Claude can now create and edit files | Claude"
 ---
@@ -10,19 +10,14 @@ title: "Claude can now create and edit files | Claude"
 
 Describe what you need and get back ready-to-use spreadsheets, documents, presentations, and PDFs instead of just text responses.
 
-[](#)
-
-[](#)
 
 - 
 
-  Category
 
   [Product announcements](https://claude.com/blog/category/announcements)
 
 - 
 
-  Product
 
   Claude apps
 
@@ -30,13 +25,11 @@ Describe what you need and get back ready-to-use spreadsheets, documents, presen
 
 - 
 
-  Date
 
   September 9, 2025
 
 - 
 
-  Reading time
 
   5
 
@@ -44,7 +37,6 @@ Describe what you need and get back ready-to-use spreadsheets, documents, presen
 
 - 
 
-  Share
 
   [Copy link](#)
   https://claude.com/blog/create-files
@@ -63,7 +55,6 @@ Claude creates actual files from your instructions—whether working from upload
 - **Build spreadsheets**: Describe what you need—financial models with scenario analysis, project trackers with automated dashboards, or budget templates with variance calculations. Claude creates it with working formulas and multiple sheets.
 - **Cross-format work**: Upload a PDF report and get PowerPoint slides. Share meeting notes and get a formatted document. Upload invoices and get organized spreadsheets with calculations. Claude handles the tedious work and presents information how you need it.
 
-‍
 
 Whether you need a customer segmentation analysis, sales forecasting, or budget tracking, Claude handles the technical work and produces the files you need. File creation turns projects that normally require programming expertise, statistical knowledge, and hours of effort into minutes of conversation.
 
@@ -86,114 +77,9 @@ Start with straightforward tasks like data cleaning or simple reports, then work
 
 This feature gives Claude internet access to create and analyze files, which may put your data at risk. Monitor chats closely when using this feature. [Learn more](https://support.anthropic.com/en/articles/12111783-create-and-edit-files-with-claude).
 
-No items found.
 
 [Prev](#)
 
 Prev
 
 0/5
-
-[Next](#)
-
-Next
-
-eBook
-
-## 
-
-[](#)
-
-FAQ
-
-No items found.
-
-[](#)
-
-## Related posts
-
-Explore more product news and best practices for teams building with Claude.
-
-Mar 13, 2026
-
-### 1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-Product announcements
-
-[1M context is now generally available for Opus 4.6 and Sonnet 4.6](#)
-
-1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-[1M context is now generally available for Opus 4.6 and Sonnet 4.6](/blog/1m-context-ga)
-
-1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-Mar 12, 2026
-
-### Claude now creates interactive charts, diagrams and visualizations
-
-Product announcements
-
-[Claude now creates interactive charts, diagrams and visualizations](#)
-
-Claude now creates interactive charts, diagrams and visualizations
-
-[Claude now creates interactive charts, diagrams and visualizations](/blog/claude-builds-visuals)
-
-Claude now creates interactive charts, diagrams and visualizations
-
-Feb 17, 2026
-
-### Increase web search accuracy and efficiency with dynamic filtering
-
-Product announcements
-
-[Increase web search accuracy and efficiency with dynamic filtering](#)
-
-Increase web search accuracy and efficiency with dynamic filtering
-
-[Increase web search accuracy and efficiency with dynamic filtering](/blog/improved-web-search-with-dynamic-filtering)
-
-Increase web search accuracy and efficiency with dynamic filtering
-
-Mar 9, 2026
-
-### Bringing Code Review to Claude Code
-
-Claude Code
-
-[Bringing Code Review to Claude Code](#)
-
-Bringing Code Review to Claude Code
-
-[Bringing Code Review to Claude Code](/blog/code-review)
-
-Bringing Code Review to Claude Code
-
-## Transform how your organization operates with Claude
-
-See pricing
-
-[See pricing](https://claude.com/pricing#api)
-
-See pricing
-
-Contact sales
-
-[Contact sales](https://claude.com/contact-sales)
-
-Contact sales
-
-Get the developer newsletter
-
-Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
-
-[Subscribe](#)
-
-Subscribe
-
-Please provide your email address if you'd like to receive our monthly developer newsletter. You can unsubscribe at any time.
-
-Thank you! You’re subscribed.
-
-Sorry, there was a problem with your submission, please try again later.

@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:00Z"
+fetched_at: "2026-03-17T02:03:13Z"
 source_url: "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations"
 title: "A new initiative for developing third-party model evaluations \\ Anthropic"
 ---
+
 # A new initiative for developing third-party model evaluations
 
 Jul 1, 2024
@@ -102,23 +103,24 @@ Our team will review submissions on a rolling basis and follow up with selected 
 
 Our experience has shown that refining an evaluation typically requires several iterations. You will have the opportunity to interact directly with our domain experts from the Frontier Red Team, Finetuning, Trust & Safety, and other relevant teams. Our teams can provide guidance to help shape your evaluations for maximum impact.
 
-We hope this initiative serves as a catalyst for progress towards a future where comprehensive AI evaluation is an industry standard. We invite you to join us in this important work and help shape the path forward.  
-  
+We hope this initiative serves as a catalyst for progress towards a future where comprehensive AI evaluation is an industry standard. We invite you to join us in this important work and help shape the path forward.\
+\
+
 
 ## Related content
 
-### Introducing Claude Opus 4.6
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/claude-partner-network)
 
-### Claude is a space to think
+### Introducing The Anthropic Institute
 
-We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/claude-is-a-space-to-think)
+[Read more](/news/the-anthropic-institute)
 
-### Apple’s Xcode now supports the Claude Agent SDK
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/apple-xcode-claude-agent-sdk)
+[Read more](/news/sydney-fourth-office-asia-pacific)

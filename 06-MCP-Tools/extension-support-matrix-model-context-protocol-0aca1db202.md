@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-24T05:05:49Z"
+fetched_at: "2026-03-17T02:03:42Z"
 source_url: "https://modelcontextprotocol.io/extensions/client-matrix"
 title: "Extension Support Matrix - Model Context Protocol"
 ---
+
 # Extension Support Matrix
 
 
@@ -14,7 +15,6 @@ This matrix shows which MCP clients support each [official extension](/extension
 
 This list is maintained by the community. If you notice any inaccuracies or would like to add or update information, please [submit a pull request](https://github.com/modelcontextprotocol/modelcontextprotocol/pulls).
 
-## 
 
 [​](#extension-overview)
 
@@ -26,7 +26,6 @@ Extension overview
 | [OAuth Client Credentials](/extensions/auth/oauth-client-credentials) | `io.modelcontextprotocol/oauth-client-credentials` | Machine-to-machine auth without interactive user login |
 | [Enterprise-Managed Authorization](/extensions/auth/enterprise-managed-authorization) | `io.modelcontextprotocol/enterprise-managed-authorization` | Centralized access control via enterprise IdP |
 
-## 
 
 [​](#support-matrix)
 
@@ -44,7 +43,6 @@ Support matrix
 
 Auth extension support (OAuth Client Credentials and Enterprise-Managed Authorization) is tracked separately from the core MCP authorization features (DCR, CIMD) shown on the [clients page](/clients). Check each extension’s specification and the [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth) for the latest implementation status.
 
-## 
 
 [​](#adding-extension-support-to-your-client)
 

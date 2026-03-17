@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:01Z"
+fetched_at: "2026-03-17T02:03:13Z"
 source_url: "https://www.anthropic.com/news/ai-for-science-program"
 title: "Introducing Anthropic&#x27;s AI for Science Program \\ Anthropic"
 ---
+
 # Introducing Anthropic's AI for Science Program
 
 May 5, 2025
@@ -26,21 +27,23 @@ Researchers attached to a research institution interested in the AI for Science 
 
 We look forward to seeing how researchers use our API to push the boundaries of scientific discovery and create positive impact in the world.
 
-  
+\
+
+
 ## Related content
 
-### Introducing Claude Opus 4.6
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/claude-partner-network)
 
-### Claude is a space to think
+### Introducing The Anthropic Institute
 
-We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/claude-is-a-space-to-think)
+[Read more](/news/the-anthropic-institute)
 
-### Apple’s Xcode now supports the Claude Agent SDK
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/apple-xcode-claude-agent-sdk)
+[Read more](/news/sydney-fourth-office-asia-pacific)

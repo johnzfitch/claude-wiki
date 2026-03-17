@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:53Z"
+fetched_at: "2026-03-17T02:03:34Z"
 source_url: "https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data"
 title: "Scaling Laws and Interpretability of Learning from Repeated Data \\ Anthropic"
 ---
+
 # Scaling Laws and Interpretability of Learning from Repeated Data
 
 May 21, 2022
@@ -21,16 +22,14 @@ Amanda Askell, Yuntao Bai, Anna Chen, Dawn Drain, Deep Ganguli, Tom Henighan, An
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
+### An update on our model deprecation commitments for Claude Opus 3
+
+[Read more](/research/deprecation-updates-opus-3)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

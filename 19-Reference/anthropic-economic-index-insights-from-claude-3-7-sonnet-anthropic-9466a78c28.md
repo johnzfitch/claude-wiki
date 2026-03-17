@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:01Z"
+fetched_at: "2026-03-17T02:03:14Z"
 source_url: "https://www.anthropic.com/news/anthropic-economic-index-insights-from-claude-sonnet-3-7"
 title: "Anthropic Economic Index: Insights from Claude 3.7 Sonnet \\ Anthropic"
 ---
+
 # Anthropic Economic Index: Insights from Claude 3.7 Sonnet
 
 Mar 27, 2025
@@ -32,7 +33,9 @@ As a reminder, our privacy-preserving analysis tool, [Clio](https://www.anthropi
 
 When looking at the breakdown of these 1 million conversations, we see that the proportion of usage in several occupational categories has increased modestly, including coding, education and the sciences. While this increase in coding usage was expected due to Claude 3.7 Sonnet’s improved scores on coding benchmarks, the increase in these other categories could reflect either ongoing diffusion of AI throughout the economy, novel applications of coding to those domains, or unexpected capability improvements in the model.
 
-##  How are people using extended thinking mode?
+\
+How are people using extended thinking mode?
+--------------------------------------------
 
 Claude 3.7 Sonnet features a new “extended thinking” mode which, when activated by the user, enables the model to think for longer when answering more complex questions.
 
@@ -42,14 +45,14 @@ While these early usage patterns reveal insights about when people choose to use
 
 ## How does augmentation vs. automation vary by task and occupation?
 
-In our last report, we analyzed how AI usage varied between *augmentative* uses, like learning or iterating on an output, and *automative* uses, like asking the model to directly complete a task or debug errors. Our analysis shows the balance of augmentation and automation is essentially unchanged in our new data, with augmentation still comprising 57% of usage. However, we did see some change in *types* of automation and augmentation uses—for example, we saw *learning* interactions, where the user asks Claude for information or explanation about different topics, rise from ~23% to ~28%.  
+In our last report, we analyzed how AI usage varied between *augmentative* uses, like learning or iterating on an output, and *automative* uses, like asking the model to directly complete a task or debug errors. Our analysis shows the balance of augmentation and automation is essentially unchanged in our new data, with augmentation still comprising 57% of usage. However, we did see some change in *types* of automation and augmentation uses—for example, we saw *learning* interactions, where the user asks Claude for information or explanation about different topics, rise from ~23% to ~28%.\
 
-  
+\
 We received a number of requests via our [researcher input form](https://docs.google.com/forms/d/e/1FAIpQLSfDEdY-mT5lcXPaDSv-0Ci1rSXGlbIJierxkUbNB7_07-kddw/viewform) to release automation and augmentation data at the level of tasks and occupations. We do just that in this report, providing this data on our [Hugging Face page](https://huggingface.co/datasets/Anthropic/EconomicIndex/).
 
 When splitting the data by high-level occupational categories, we find some categories are highly augmentative; for example, Community and Social Service tasks, which includes education and guidance counseling, approach 75% augmentation. At the other end of the extreme, tasks associated with production or computer and mathematical occupations, we see the balance skew closer to 50-50%. We don’t see any occupational categories where automation dominates.
 
-  
+\
 Getting more granular, we can also look at specific occupations within these occupational categories, as well as tasks associated with that occupation. For example, tasks associated with copywriters and editors show the highest amount of *task iteration*, where the user iterates on various writing and editing tasks with the model. By contrast, tasks associated with Translators and Interpreters show among the highest amounts of *directive* behavior—where the model is used for translating documents with minimal human involvement. Note that the O\*NET descriptions may not be optimally representative of what Claude is being used for—for example, while we see usage in the occupation “fine artists, including painters, sculptors, and illustrators,” Claude is probably used far more for creating digital art than for painting or sculpture.
 
 ## A bottom-up taxonomy of usage on Claude.ai
@@ -87,7 +90,8 @@ We also recompute the “depth of task usage” plot from our original paper. We
 
 ### Full change across occupational categories
 
-###  Results for other interaction modes
+### \
+Results for other interaction modes
 
 ## Additional methodological details
 
@@ -99,18 +103,18 @@ While we mainly follow the methodology of our original report, we make a few cha
 
 ## Related content
 
-### Introducing Claude Opus 4.6
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/claude-partner-network)
 
-### Claude is a space to think
+### Introducing The Anthropic Institute
 
-We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/claude-is-a-space-to-think)
+[Read more](/news/the-anthropic-institute)
 
-### Apple’s Xcode now supports the Claude Agent SDK
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/apple-xcode-claude-agent-sdk)
+[Read more](/news/sydney-fourth-office-asia-pacific)

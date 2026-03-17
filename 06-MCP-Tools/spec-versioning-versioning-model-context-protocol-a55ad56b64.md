@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:31Z"
+fetched_at: "2026-03-17T02:04:07Z"
 source_url: "https://modelcontextprotocol.io/specification/versioning"
 title: "Versioning - Model Context Protocol"
 ---
@@ -12,7 +12,6 @@ The Model Context Protocol uses string-based version identifiers following the f
 
 The protocol version will *not* be incremented when the protocol is updated, as long as the changes maintain backwards compatibility. This allows for incremental improvements while preserving interoperability.
 
-## 
 
 [​](#revisions)
 
@@ -26,7 +25,6 @@ Revisions may be marked as:
 
 The **current** protocol version is [**2025-11-25**](/specification/2025-11-25).
 
-## 
 
 [​](#negotiation)
 

@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:44Z"
+fetched_at: "2026-03-17T02:03:20Z"
 source_url: "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
 title: "Expanding our use of Google Cloud TPUs and Services \\ Anthropic"
 ---
+
 # Expanding our use of Google Cloud TPUs and Services
 
 Oct 23, 2025
@@ -25,16 +26,18 @@ Anthropic will continue to invest in additional compute capacity to ensure our m
 
 ## Related content
 
-### Detecting and preventing distillation attacks
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Making frontier cybersecurity capabilities available to defenders
+[Read more](/news/claude-partner-network)
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+### Introducing The Anthropic Institute
 
-[Read more](/news/claude-code-security)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

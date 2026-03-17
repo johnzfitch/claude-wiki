@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-27T09:23:54Z"
+fetched_at: "2026-03-17T02:03:24Z"
 source_url: "https://www.anthropic.com/news/responsible-scaling-policy-v3"
 title: "Responsible Scaling Policy Version 3.0 \\ Anthropic"
 ---
+
 # Anthropic’s Responsible Scaling Policy: Version 3.0
 
 Feb 24, 2026
@@ -104,16 +105,18 @@ In that same spirit of pragmatism we will continue to revise and refine our RSP,
 
 ## Related content
 
-### Statement from Dario Amodei on our discussions with the Department of War
+### Anthropic invests \$100 million into the Claude Partner Network
 
-A statement from our CEO on national security uses of AI.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/statement-department-of-war)
+[Read more](/news/claude-partner-network)
 
-### Anthropic acquires Vercept to advance Claude's computer use capabilities
+### Introducing The Anthropic Institute
 
-[Read more](/news/acquires-vercept)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Detecting and preventing distillation attacks
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

@@ -1,11 +1,13 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-16T05:34:02Z"
+fetched_at: "2026-03-17T02:04:25Z"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 title: "Team plan billing FAQs | Claude Help Center"
 ---
 
 # Team plan billing FAQs
+
+Updated today
 
 
 ## What payment methods can I use to pay for the Team plan?

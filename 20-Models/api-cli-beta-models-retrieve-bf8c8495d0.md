@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:17:49Z"
+fetched_at: "2026-03-17T02:02:57Z"
 source_url: "https://platform.claude.com/docs/en/api/cli/beta/models/retrieve"
 title: "API Reference - Claude API Docs"
 ---

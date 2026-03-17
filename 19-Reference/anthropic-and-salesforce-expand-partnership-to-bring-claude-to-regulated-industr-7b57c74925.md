@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:47Z"
+fetched_at: "2026-03-17T02:03:24Z"
 source_url: "https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership"
 title: "Anthropic and Salesforce expand partnership to bring Claude to regulated industries \\ Anthropic"
 ---
+
 # Anthropic and Salesforce expand partnership to bring Claude to regulated industries
 
 Oct 14, 2025
@@ -50,16 +51,18 @@ This partnership is strengthened by both companies using each other's products:
 
 ## Related content
 
-### Detecting and preventing distillation attacks
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Making frontier cybersecurity capabilities available to defenders
+[Read more](/news/claude-partner-network)
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+### Introducing The Anthropic Institute
 
-[Read more](/news/claude-code-security)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

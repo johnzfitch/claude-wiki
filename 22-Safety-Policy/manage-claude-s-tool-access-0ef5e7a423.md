@@ -1,16 +1,18 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:34:03Z"
+fetched_at: "2026-03-17T02:04:26Z"
 source_url: "https://support.claude.com/en/articles/13730515-manage-claude-s-tool-access"
 title: "Manage Claude’s tool access | Claude Help Center"
 ---
 
 # Manage Claude’s tool access
 
+Updated today
+
 
 When you connect many services to Claude, you can control how those connectors are loaded into your conversations. This helps Claude work more accurately and efficiently, especially if you've added 10 or more connectors.
 
-Tool access modes are available for all users on Claude, Claude Desktop, and Claude Mobile (iOS and Android).
+Tool access modes are available for all users on Claude, Cowork, Claude Desktop, and Claude Mobile (iOS and Android).
 
 ## Why tool access matters
 
@@ -58,8 +60,7 @@ You can set your tool access mode per conversation by following these steps:
 
 3.  Mouse over “Connectors,” then “Tool access.”
 
-4.  Select your preferred mode from the three options:
-
+4.  Select your preferred mode from the three options.
 
 Your selection only applies to that conversation. You can change it at any time.
 

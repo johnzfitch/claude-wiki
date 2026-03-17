@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-14T10:15:54Z"
+fetched_at: "2026-03-17T02:00:54Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/claude-code-features"
 title: "Use Claude Code features in the SDK - Claude API Docs"
 ---
@@ -17,7 +17,6 @@ By default, the SDK loads no filesystem settings. Your agent runs in isolation m
 
 For a conceptual overview of what each feature does and when to use it, see [Extend Claude Code](https://code.claude.com/docs/en/features-overview).
 
-## 
 
 Enable Claude Code features with settingSources
 
@@ -27,7 +26,7 @@ This example loads both user-level and project-level settings by setting `settin
 
 Python
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions, AssistantMessage, ResultMessage
 
 async for message in query(
@@ -60,13 +59,11 @@ To match the full Claude Code CLI behavior, use `["user", "project", "local"]`.
 
 The `cwd` option determines where the SDK looks for project settings. If neither `cwd` nor any of its parent directories contains a `.claude/` folder, project-level features won't load. Auto memory (the `~/.claude/projects/<project>/memory/` directory that Claude Code uses to persist notes across interactive sessions) is a CLI-only feature and is never loaded by the SDK.
 
-## 
 
 Project instructions (CLAUDE.md and rules)
 
 `CLAUDE.md` files and `.claude/rules/*.md` files give your agent persistent context about your project: coding conventions, build commands, architecture decisions, and instructions. When `settingSources` includes `"project"` (as in the example above), the SDK loads these files into context at session start. The agent then follows your project conventions without you repeating them in every prompt.
 
-### 
 
 CLAUDE.md load locations
 
@@ -86,7 +83,6 @@ You can also inject context directly via `systemPrompt` without using CLAUDE.md 
 
 For how to structure and organize CLAUDE.md content, see [Manage Claude's memory](https://code.claude.com/docs/en/memory).
 
-## 
 
 Skills
 
@@ -96,7 +92,7 @@ To use skills in the SDK, set `settingSources` so the agent discovers skill file
 
 Python
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions, ResultMessage
 
 # Skills in .claude/skills/ are discovered automatically
@@ -116,7 +112,6 @@ Skills must be created as filesystem artifacts (`.claude/skills/<name>/SKILL.md`
 
 For more on creating and using skills, see [Agent Skills in the SDK](/docs/en/agent-sdk/skills).
 
-## 
 
 Hooks
 
@@ -131,7 +126,7 @@ Hook callbacks receive the tool input and return a decision dict. Returning `{}`
 
 Python
 
-``` shiki
+```python
 from claude_agent_sdk import query, ClaudeAgentOptions, HookMatcher, ResultMessage
 
 
@@ -163,7 +158,6 @@ async for message in query(
         print(message.result)
 ```
 
-### 
 
 When to use which hook type
 
@@ -176,7 +170,6 @@ The TypeScript SDK supports additional hook events beyond Python, including `Ses
 
 For full details on programmatic hooks, see [Control execution with hooks](/docs/en/agent-sdk/hooks). For filesystem hook syntax, see [Hooks](https://code.claude.com/docs/en/hooks).
 
-## 
 
 Choose the right feature
 
@@ -196,7 +189,6 @@ The Agent SDK gives you access to several ways to extend your agent's behavior. 
 
 Every feature you enable adds to your agent's context window. For per-feature costs and how these features layer together, see [Extend Claude Code](https://code.claude.com/docs/en/features-overview#understand-context-costs).
 
-## 
 
 Related resources
 

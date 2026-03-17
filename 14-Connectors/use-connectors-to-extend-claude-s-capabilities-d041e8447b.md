@@ -1,6 +1,6 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-16T05:34:03Z"
+fetched_at: "2026-03-17T02:04:26Z"
 source_url: "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
 title: "Use connectors to extend Claude&#x27;s capabilities | Claude Help Center"
 ---
@@ -9,10 +9,12 @@ title: "Use connectors to extend Claude&#x27;s capabilities | Claude Help Center
 
 # Use connectors to extend Claude's capabilities
 
+Updated today
+
 
 This guide explains how to enable and use connectors with Claude to enhance its capabilities.
 
-Web connectors are available for all users on Claude, Claude Desktop, and Claude Mobile (iOS and Android). Desktop extensions are available to all users on Claude Desktop.
+Web connectors are available for all users on Claude, Cowork, Claude Desktop, and Claude Mobile (iOS and Android). Desktop extensions are available to all users on Claude Desktop.
 
 ## What are connectors?
 
@@ -129,7 +131,7 @@ To manage your connected services:
 
 ## Custom connectors
 
-Custom connectors using remote MCP are available on Claude and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are limited to one custom connector. This feature is currently in beta.
+Custom connectors using remote MCP are available on Claude, Cowork, and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are limited to one custom connector. This feature is currently in beta.
 
 In addition to directory connectors, you can add custom connectors:
 

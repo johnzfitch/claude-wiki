@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:08Z"
+fetched_at: "2026-03-17T02:03:43Z"
 source_url: "https://modelcontextprotocol.io/registry/moderation-policy"
 title: "The MCP Registry Moderation Policy - Model Context Protocol"
 ---
@@ -12,7 +12,6 @@ The MCP Registry is currently in preview. Breaking changes or data resets may oc
 
 **TL;DR**: The MCP Registry is quite permissive! We only remove illegal content, malware, spam, and completely broken servers.
 
-## 
 
 [​](#scope)
 
@@ -20,7 +19,6 @@ Scope
 
 This policy applies to the official MCP Registry at `registry.modelcontextprotocol.io`. Subregistries may have their own moderation policies. If you have questions about content on a specific subregistry, please contact them directly.
 
-## 
 
 [​](#disclaimer)
 
@@ -28,7 +26,6 @@ Disclaimer
 
 The MCP Registry **does not** make guarantees about moderation, and consumers should assume minimal-to-no moderation. The MCP Registry is a community supported project, and we have limited active moderation capabilities. We largely rely on upstream package registries (like NPM, PyPI, and Docker) or downstream subregistries (like the GitHub MCP Registry) to do more in-depth moderation. This means there may be content in the MCP Registry that should be removed under this policy, but which we haven’t yet removed. Consumers should treat scraped data accordingly.
 
-## 
 
 [​](#what-we-remove)
 
@@ -44,7 +41,6 @@ We will remove servers that contain:
   - A server with a description stuffed with marketing copy and an unrelated implementation
 - Non-functioning servers
 
-## 
 
 [​](#what-we-don’t-remove)
 
@@ -57,7 +53,6 @@ Generally, we believe in keeping the registry open and pushing moderation to sub
 - Servers that do the same thing as other servers
 - Servers that provide or contain adult content
 
-## 
 
 [​](#how-removal-works)
 
@@ -65,7 +60,6 @@ How Removal Works
 
 When we remove a server, we set the server’s `status` to `"deleted"`, but the server’s metadata remains accessible via the MCP Registry API. Aggregators may then remove the server from their indexes. In extreme cases, we may overwrite or erase the server’s metadata. For example, if the metadata itself is unlawful.
 
-## 
 
 [​](#appeals)
 
@@ -76,7 +70,6 @@ Think we made a mistake? Open an issue on our [GitHub repository](https://github
 - The name of the server
 - Why you believe the server doesn’t meet the above criteria for removal
 
-## 
 
 [​](#changes-to-this-policy)
 

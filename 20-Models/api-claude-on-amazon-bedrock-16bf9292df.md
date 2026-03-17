@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-15T04:10:46Z"
+fetched_at: "2026-03-17T02:04:32Z"
 source_url: "https://platform.claude.com/docs/en/api/claude-on-amazon-bedrock"
 title: "Claude on Amazon Bedrock - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ Calling Claude through Bedrock slightly differs from how you would call Claude w
 
 Note that this guide assumes you have already signed up for an [AWS account](https://portal.aws.amazon.com/billing/signup) and configured programmatic access.
 
-## 
 
 Install and configure the AWS CLI
 
@@ -25,11 +24,10 @@ Install and configure the AWS CLI
 
 Shell
 
-``` shiki
+```python
 aws sts get-caller-identity
 ```
 
-## 
 
 Install an SDK for accessing Bedrock
 
@@ -67,21 +65,18 @@ Boto3 (Python)
 
 Boto3 (Python)
 
-``` shiki
+```python
 pip install -U "anthropic[bedrock]"
 ```
 
-## 
 
 Accessing Bedrock
 
-### 
 
 Subscribe to Anthropic models
 
 Go to the [AWS Console \> Bedrock \> Model Access](https://console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess) and request access to Anthropic models. Note that Anthropic model availability varies by region. See [AWS documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/models-regions.html) for latest information.
 
-#### 
 
 API model IDs
 
@@ -101,7 +96,6 @@ API model IDs
 
 For more information about regional vs global model IDs, see the [Global vs regional endpoints](#global-vs-regional-endpoints) section below.
 
-### 
 
 List available models
 
@@ -109,11 +103,10 @@ The following examples show how to print a list of all the Claude models availab
 
 AWS CLI
 
-``` shiki
+```python
 aws bedrock list-foundation-models --region=us-west-2 --by-provider anthropic --query "modelSummaries[*].modelId"
 ```
 
-### 
 
 Making requests
 
@@ -121,7 +114,7 @@ The following examples show how to generate text from Claude on Bedrock:
 
 Python
 
-``` shiki
+```python
 from anthropic import AnthropicBedrock
 
 client = AnthropicBedrock(
@@ -147,7 +140,6 @@ print(message.content)
 
 See the [client SDKs](/docs/en/api/client-sdks) for more details, and the [official Bedrock documentation](https://docs.aws.amazon.com/bedrock/).
 
-### 
 
 Bearer token authentication
 
@@ -161,7 +153,7 @@ To provide a token programmatically:
 
 C#
 
-``` shiki
+```python
 using Anthropic.Bedrock;
 using Anthropic.Models.Messages;
 
@@ -181,7 +173,6 @@ var response = await client.Messages.Create(new MessageCreateParams
 });
 ```
 
-## 
 
 Activity logging
 
@@ -191,13 +182,11 @@ Anthropic recommends that you log your activity on at least a 30-day rolling bas
 
 Turning on this service does not give AWS or Anthropic any access to your content.
 
-## 
 
 Feature support
 
 For all currently supported features on Bedrock, see [API features overview](/docs/en/api/overview).
 
-### 
 
 PDF support on Bedrock
 
@@ -211,7 +200,6 @@ PDF support is available on Amazon Bedrock through both the Converse API and Inv
 
 For more details on the two document processing modes and their limitations, refer to the [PDF support guide](/docs/en/build-with-claude/pdf-support#amazon-bedrock-pdf-support).
 
-### 
 
 Context window
 
@@ -221,7 +209,6 @@ For Claude Sonnet 4.5 and Sonnet 4, the 1M-token context window is in beta. To u
 
 Amazon Bedrock limits request payloads to 20 MB. When sending large documents or many images, you may reach this limit before the token limit.
 
-## 
 
 Global vs regional endpoints
 
@@ -234,7 +221,6 @@ Regional endpoints include a 10% pricing premium over global endpoints.
 
 This applies to Claude Sonnet 4.5 and future models only. Older models (Claude Sonnet 4, Opus 4, and earlier) maintain their existing pricing structures.
 
-### 
 
 When to use each option
 
@@ -252,7 +238,6 @@ When to use each option
 - Available for US, EU, Japan, and Australia
 - 10% pricing premium reflects infrastructure costs for dedicated regional capacity
 
-### 
 
 Implementation
 
@@ -262,7 +247,7 @@ The model IDs for Claude Sonnet 4.5 and 4 already include the `global.` prefix:
 
 Python
 
-``` shiki
+```python
 from anthropic import AnthropicBedrock
 
 client = AnthropicBedrock(aws_region="us-west-2")
@@ -280,7 +265,7 @@ To use regional endpoints, remove the `global.` prefix from the model ID:
 
 Python
 
-``` shiki
+```python
 from anthropic import AnthropicBedrock
 
 client = AnthropicBedrock(aws_region="us-west-2")
@@ -293,7 +278,6 @@ message = client.messages.create(
 )
 ```
 
-### 
 
 Additional resources
 

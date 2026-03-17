@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-03T15:07:17Z"
+fetched_at: "2026-03-17T02:03:20Z"
 source_url: "https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously"
 title: "Enabling Claude Code to work more autonomously \\ Anthropic"
 ---
@@ -59,18 +59,18 @@ These updates are available now for Claude Code users.
 
 ## Related content
 
-### Statement on the comments from Secretary of War Pete Hegseth
+### Anthropic invests \$100 million into the Claude Partner Network
 
-Anthropic's response to the Secretary of War and advice to customers.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/statement-comments-secretary-war)
+[Read more](/news/claude-partner-network)
 
-### Statement from Dario Amodei on our discussions with the Department of War
+### Introducing The Anthropic Institute
 
-A statement from our CEO on national security uses of AI.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/statement-department-of-war)
+[Read more](/news/the-anthropic-institute)
 
-### Anthropic acquires Vercept to advance Claude's computer use capabilities
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/acquires-vercept)
+[Read more](/news/sydney-fourth-office-asia-pacific)

@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:11Z"
+fetched_at: "2026-03-17T02:01:02Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/user-input"
 title: "Handle approvals and user input - Claude API Docs"
 ---
@@ -19,7 +19,6 @@ For clarifying questions, Claude generates the questions and options. Your role 
 
 This guide shows you how to detect each type of request and respond appropriately.
 
-## 
 
 Detect when Claude needs input
 
@@ -27,7 +26,7 @@ Pass a `canUseTool` callback in your query options. The callback fires whenever 
 
 Python
 
-``` shiki
+```python
 async def handle_tool_request(tool_name, input_data, context):
     # Prompt user and return allow or deny
     ...
@@ -43,7 +42,6 @@ The callback fires in two cases:
 
 To automatically allow or deny tools without prompting users, use [hooks](/docs/en/agent-sdk/hooks) instead. Hooks execute before `canUseTool` and can allow, deny, or modify requests based on your own logic. You can also use the [`PermissionRequest` hook](/docs/en/agent-sdk/hooks#available-hooks) to send external notifications (Slack, email, push) when Claude is waiting for approval.
 
-## 
 
 Handle tool approval requests
 
@@ -71,7 +69,7 @@ The following example asks Claude to create and delete a test file. When Claude 
 
 Python
 
-``` shiki
+```python
 import asyncio
 
 from claude_agent_sdk import ClaudeAgentOptions, query
@@ -141,7 +139,6 @@ In Python, `can_use_tool` requires [streaming mode](/docs/en/agent-sdk/streaming
 
 This example uses a `y/n` flow where any input other than `y` is treated as a denial. In practice, you might build a richer UI that lets users modify the request, provide feedback, or redirect Claude entirely. See [Respond to tool requests](#respond-to-tool-requests) for all the ways you can respond.
 
-### 
 
 Respond to tool requests
 
@@ -156,7 +153,7 @@ When allowing, pass the tool input (original or modified). When denying, provide
 
 Python
 
-``` shiki
+```python
 from claude_agent_sdk.types import PermissionResultAllow, PermissionResultDeny
 
 # Allow the tool to execute
@@ -198,7 +195,7 @@ The user approves the action as-is. Pass through the `input` from your callback 
 
 Python
 
-``` shiki
+```python
 async def can_use_tool(tool_name, input_data, context):
     print(f"Claude wants to use {tool_name}")
     approved = await ask_user("Allow this action?")
@@ -208,7 +205,6 @@ async def can_use_tool(tool_name, input_data, context):
     return PermissionResultDeny(message="User declined")
 ```
 
-## 
 
 Handle clarifying questions
 
@@ -321,7 +317,6 @@ The following steps show how to handle clarifying questions:
     )
     ```
 
-### 
 
 Question format
 
@@ -336,7 +331,7 @@ The input contains Claude's generated questions in a `questions` array. Each que
 
 The structure your callback receives:
 
-``` shiki
+```python
 {
   "questions": [
     {
@@ -352,7 +347,6 @@ The structure your callback receives:
 }
 ```
 
-#### 
 
 Option previews (TypeScript)
 
@@ -366,7 +360,7 @@ Option previews (TypeScript)
 
 The format applies to all questions in the session. Claude includes `preview` on options where a visual comparison helps (layout choices, color schemes) and omits it where one wouldn't (yes/no confirmations, text-only choices). Check for `undefined` before rendering.
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 for await (const message of query({
@@ -387,7 +381,7 @@ for await (const message of query({
 
 An option with an HTML preview:
 
-``` shiki
+```python
 {
   "label": "Compact",
   "description": "Title and metric value only",
@@ -395,7 +389,6 @@ An option with an HTML preview:
 }
 ```
 
-### 
 
 Response format
 
@@ -408,7 +401,7 @@ Return an `answers` object mapping each question's `question` field to the selec
 
 For multi-select questions, join multiple labels with `", "`. For free-text input, use the user's custom text directly.
 
-``` shiki
+```python
 {
   "questions": [
     // ...
@@ -420,7 +413,6 @@ For multi-select questions, join multiple labels with `", "`. For free-text inpu
 }
 ```
 
-#### 
 
 Support free-text input
 
@@ -431,7 +423,6 @@ Claude's predefined options won't always cover what users want. To let users typ
 
 See the [complete example](#complete-example) below for a full implementation.
 
-### 
 
 Complete example
 
@@ -447,7 +438,7 @@ This example handles those questions in a terminal application. Here's what happ
 
 Python
 
-``` shiki
+```python
 import asyncio
 
 from claude_agent_sdk import ClaudeAgentOptions, query
@@ -530,20 +521,17 @@ async def main():
 asyncio.run(main())
 ```
 
-## 
 
 Limitations
 
 - **Subagents**: `AskUserQuestion` is not currently available in subagents spawned via the Agent tool
 - **Question limits**: each `AskUserQuestion` call supports 1-4 questions with 2-4 options each
 
-## 
 
 Other ways to get user input
 
 The `canUseTool` callback and `AskUserQuestion` tool cover most approval and clarification scenarios, but the SDK offers other ways to get input from users:
 
-### 
 
 Streaming input
 
@@ -555,7 +543,6 @@ Use [streaming input](/docs/en/agent-sdk/streaming-vs-single-mode) when you need
 
 Streaming input is ideal for conversational UIs where users interact with the agent throughout execution, not just at approval checkpoints.
 
-### 
 
 Custom tools
 
@@ -567,7 +554,6 @@ Use [custom tools](/docs/en/agent-sdk/custom-tools) when you need to:
 
 Custom tools give you full control over the interaction, but require more implementation work than using the built-in `canUseTool` callback.
 
-## 
 
 Related resources
 

@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-03T15:07:17Z"
+fetched_at: "2026-03-17T02:03:32Z"
 source_url: "https://www.anthropic.com/research/mapping-mind-language-model"
 title: "Mapping the Mind of a Large Language Model \\ Anthropic"
 ---
@@ -27,7 +27,7 @@ There was both an engineering challenge (the raw sizes of the models involved re
 
 As for the scientific risk, the proof is in the pudding.
 
-We successfully extracted millions of features from the middle layer of Claude 3.0 Sonnet, (a member of our current, state-of-the-art model family, currently available on [claude.ai](https://claude.ai/redirect/website.v1.6828d5f8-ef33-49d1-b013-3e07a5ed2835)), providing a rough conceptual map of its internal states halfway through its computation. This is the first ever detailed look inside a modern, production-grade large language model.
+We successfully extracted millions of features from the middle layer of Claude 3.0 Sonnet, (a member of our current, state-of-the-art model family, currently available on [claude.ai](https://claude.ai/redirect/website.v1.98268848-3f09-4114-aa3b-fc4b87f65524)), providing a rough conceptual map of its internal states halfway through its computation. This is the first ever detailed look inside a modern, production-grade large language model.
 
 Whereas the features we found in the toy language model were rather superficial, the features we found in Sonnet have a depth, breadth, and abstraction reflecting Sonnet's advanced capabilities.
 
@@ -75,6 +75,10 @@ For full details, please read our paper, "[Scaling Monosemanticity: Extracting I
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
 ### An update on our model deprecation commitments for Claude Opus 3
 
 [Read more](/research/deprecation-updates-opus-3)
@@ -82,9 +86,3 @@ For full details, please read our paper, "[Scaling Monosemanticity: Extracting I
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)

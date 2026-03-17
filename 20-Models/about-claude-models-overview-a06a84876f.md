@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:19:41Z"
+fetched_at: "2026-03-17T02:04:18Z"
 source_url: "https://platform.claude.com/en/docs/about-claude/models/overview"
 title: "Models overview - Claude API Docs"
 ---
@@ -11,8 +11,6 @@ title: "Models overview - Claude API Docs"
 Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their performance.
 
 
-## 
-
 Choosing a model
 
 If you're unsure which model to use, consider starting with **Claude Opus 4.6** for the most complex tasks. It is the latest generation model with exceptional performance in coding and reasoning.
@@ -21,7 +19,6 @@ All current Claude models support text and image input, text output, multilingua
 
 Once you've picked a model, [learn how to make your first API call](/docs/en/get-started).
 
-### 
 
 Latest models comparison
 
@@ -31,15 +28,12 @@ Latest models comparison
 
 *^(2 - **Reliable knowledge cutoff** indicates the date through which a model's knowledge is most extensive and reliable. **Training data cutoff** is the broader date range of training data used. For more information, see [Anthropic's Transparency Hub](https://www.anthropic.com/transparency).)*
 
-*^(3 - Claude Opus 4.6 and Sonnet 4.6 support a [1M token context window](/docs/en/build-with-claude/context-windows#1m-token-context-window) when using the `context-1m-2025-08-07` beta header. [Long context pricing](/docs/en/about-claude/pricing#long-context-pricing) applies to requests exceeding 200K tokens.)*
-
 Models with the same snapshot date (e.g., 20240620) are identical across all platforms and do not change. The snapshot date in the model name ensures consistency and allows developers to rely on stable performance across different environments.
 
 Starting with **Claude Sonnet 4.5 and all subsequent models** (including Claude Sonnet 4.6), AWS Bedrock and Google Vertex AI offer two endpoint types: **global endpoints** (dynamic routing for maximum availability) and **regional endpoints** (guaranteed data routing through specific geographic regions). For more information, see the [third-party platform pricing section](/docs/en/about-claude/pricing#third-party-platform-pricing).
 
 ### Legacy models
 
-## 
 
 Prompt and output performance
 
@@ -54,13 +48,11 @@ Claude 4 models excel in:
 
 - **Output quality**: When migrating from previous model generations to Claude 4, you may notice larger improvements in overall performance.
 
-## 
 
 Migrating to Claude 4.6
 
 If you're currently using older Claude models, consider migrating to Claude Opus 4.6 to take advantage of improved intelligence and enhanced capabilities. For detailed migration instructions, see [Migrating to Claude 4.6](/docs/en/about-claude/models/migration-guide).
 
-## 
 
 Get started with Claude
 
@@ -68,13 +60,11 @@ If you're ready to start exploring what Claude can do for you, dive in! Whether 
 
 Looking to chat with Claude? Visit [claude.ai](http://www.claude.ai)!
 
-[](/docs/en/intro)
 
 Intro to Claude
 
 Explore Claude's capabilities and development flow.
 
-[](/docs/en/get-started)
 
 Quickstart
 

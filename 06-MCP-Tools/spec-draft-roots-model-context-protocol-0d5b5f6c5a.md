@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:28Z"
+fetched_at: "2026-03-17T02:04:03Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/client/roots"
 title: "Roots - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Roots - Model Context Protocol"
 
 The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where servers can operate within the filesystem, allowing them to understand which directories and files they have access to. Servers can request the list of roots from supporting clients and receive notifications when that list changes.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -20,7 +19,6 @@ Roots in MCP are typically exposed through workspace or project configuration in
 
 Servers **MUST** send server-to-client requests (such as `roots/list`, `sampling/createMessage`, or `elicitation/create`) only in association with an originating client request (e.g., during `tools/call`, `resources/read`, or `prompts/get` processing).Standalone server-initiated requests of these types on independent communication streams (unrelated to any client request) are not supported and **MUST NOT** be implemented. Future transport implementations are not required to support this pattern.
 
-## 
 
 [​](#capabilities)
 
@@ -30,7 +28,7 @@ Clients that support roots **MUST** declare the `roots` capability during [initi
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "roots": {
@@ -42,13 +40,11 @@ Copy
 
 `listChanged` indicates whether the client will emit notifications when the list of roots changes.
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#listing-roots)
 
@@ -58,7 +54,7 @@ To retrieve roots, servers send a `roots/list` request: **Request:**
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -70,7 +66,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -85,7 +81,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#root-list-changes)
 
@@ -95,26 +90,23 @@ When roots change, clients that support `listChanged` **MUST** send a notificati
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/roots/list_changed"
 }
 ```
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#root)
 
@@ -127,7 +119,6 @@ A root definition includes:
 
 Example roots for different use cases:
 
-#### 
 
 [​](#project-directory)
 
@@ -135,14 +126,13 @@ Project Directory
 
 Copy
 
-``` shiki
+```python
 {
   "uri": "file:///home/user/projects/myproject",
   "name": "My Project"
 }
 ```
 
-#### 
 
 [​](#multiple-repositories)
 
@@ -150,7 +140,7 @@ Multiple Repositories
 
 Copy
 
-``` shiki
+```python
 [
   {
     "uri": "file:///home/user/repos/frontend",
@@ -163,7 +153,6 @@ Copy
 ]
 ```
 
-## 
 
 [​](#error-handling)
 
@@ -179,7 +168,7 @@ Example error:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -193,7 +182,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#security-considerations)
 
@@ -209,7 +197,6 @@ Security Considerations
     - Respect root boundaries during operations
     - Validate all paths against provided roots
 
-## 
 
 [​](#implementation-guidelines)
 

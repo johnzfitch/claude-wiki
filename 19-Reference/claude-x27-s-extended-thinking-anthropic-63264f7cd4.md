@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:54Z"
+fetched_at: "2026-03-17T02:03:35Z"
 source_url: "https://www.anthropic.com/research/visible-extended-thinking"
 title: "Claude&#x27;s extended thinking \\ Anthropic"
 ---
+
 # Claude’s extended thinking
 
 Feb 24, 2025
@@ -80,7 +81,7 @@ The above is just a short summary of some of our extensive safety work on Claude
 
 ## **Using Claude**
 
-You can use Claude 3.7 Sonnet now at [Claude.ai](http://claude.ai/redirect/website.v1.b97a16d8-15f0-4f60-80b4-9db2b6109bc2) or on [our API](https://docs.anthropic.com/en/api/getting-started). And just as Claude can now let you know what it thinks, we hope you’ll let us know what you think, too. Please send your feedback about the new model to <feedback@anthropic.com>.
+You can use Claude 3.7 Sonnet now at [Claude.ai](http://claude.ai/redirect/website.v1.98268848-3f09-4114-aa3b-fc4b87f65524) or on [our API](https://docs.anthropic.com/en/api/getting-started). And just as Claude can now let you know what it thinks, we hope you’ll let us know what you think, too. Please send your feedback about the new model to <feedback@anthropic.com>.
 
 #### Footnotes
 
@@ -95,16 +96,14 @@ You can use Claude 3.7 Sonnet now at [Claude.ai](http://claude.ai/redirect/websi
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
+### An update on our model deprecation commitments for Claude Opus 3
+
+[Read more](/research/deprecation-updates-opus-3)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

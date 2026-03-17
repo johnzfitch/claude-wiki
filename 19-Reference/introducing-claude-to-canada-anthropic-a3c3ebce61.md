@@ -1,16 +1,17 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:45Z"
+fetched_at: "2026-03-17T02:03:22Z"
 source_url: "https://www.anthropic.com/news/introducing-claude-to-canada"
 title: "Introducing Claude to Canada \\ Anthropic"
 ---
+
 # Introducing Claude to Canada
 
 Jun 5, 2024
 
 [Claude](https://www.anthropic.com/claude) is now available in Canada. Starting today, people and businesses across the country will be able to access Claude via:
 
-- [Claude.ai](http://claude.ai/redirect/website.v1.06c80b46-cd2c-487f-80a7-ba741356c52c): the web-based version of our next-generation AI assistant.
+- [Claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06): the web-based version of our next-generation AI assistant.
 - The [Claude iOS app](https://apps.apple.com/app/claude/id6473753684): the free mobile app available in the Apple App Store that offers the same intuitive experience as mobile web.
 - The [Claude API](https://www.anthropic.com/api): an interface that allows developers to integrate Anthropic’s state-of-the-art AI models into their own applications, websites, or services.
 - The [Claude Team plan](https://www.anthropic.com/news/team-plan-and-ios): a secure workspace for teams to collaborate that offers increased usage for members.
@@ -24,16 +25,18 @@ We’re excited to expand our offerings to Canada—a country that has made sign
 
 ## Related content
 
-### Detecting and preventing distillation attacks
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Making frontier cybersecurity capabilities available to defenders
+[Read more](/news/claude-partner-network)
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+### Introducing The Anthropic Institute
 
-[Read more](/news/claude-code-security)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

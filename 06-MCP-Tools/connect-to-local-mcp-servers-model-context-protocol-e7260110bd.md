@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:06Z"
+fetched_at: "2026-03-17T02:03:39Z"
 source_url: "https://modelcontextprotocol.io/docs/develop/connect-local-servers"
 title: "Connect to local MCP servers - Model Context Protocol"
 ---
@@ -13,7 +13,6 @@ Learn how to extend Claude Desktop with local MCP servers to enable file system 
 
 Model Context Protocol (MCP) servers extend AI applications’ capabilities by providing secure, controlled access to local resources and tools. Many clients support MCP, enabling diverse integration possibilities across different platforms and applications. This guide demonstrates how to connect to local MCP servers using Claude Desktop as an example, one of the [many clients that support MCP](/clients). While we focus on Claude Desktop’s implementation, the concepts apply broadly to other MCP-compatible clients. By the end of this tutorial, Claude will be able to interact with files on your computer, create new documents, organize folders, and search through your file system—all with your explicit permission for each action.
 
-## 
 
 [​](#prerequisites)
 
@@ -21,7 +20,6 @@ Prerequisites
 
 Before starting this tutorial, ensure you have the following installed on your system:
 
-### 
 
 [​](#claude-desktop)
 
@@ -29,7 +27,6 @@ Claude Desktop
 
 Download and install [Claude Desktop](https://claude.ai/download) for your operating system. Claude Desktop is available for macOS and Windows. If you already have Claude Desktop installed, verify you’re running the latest version by clicking the Claude menu and selecting “Check for Updates…”
 
-### 
 
 [​](#node-js)
 
@@ -39,13 +36,12 @@ The Filesystem Server and many other MCP servers require Node.js to run. Verify 
 
 Copy
 
-``` shiki
+```python
 node --version
 ```
 
 If Node.js is not installed, download it from [nodejs.org](https://nodejs.org/). We recommend the LTS (Long Term Support) version for stability.
 
-## 
 
 [​](#understanding-mcp-servers)
 
@@ -60,7 +56,6 @@ MCP servers are programs that run on your computer and provide specific capabili
 
 All actions require your explicit approval before execution, ensuring you maintain full control over what Claude can access and modify.
 
-## 
 
 [​](#installing-the-filesystem-server)
 
@@ -70,7 +65,6 @@ The process involves configuring Claude Desktop to automatically start the Files
 
 1
 
-[](#)
 
 Open Claude Desktop Settings
 
@@ -80,7 +74,6 @@ This opens the Claude Desktop configuration window, which is separate from your 
 
 2
 
-[](#)
 
 Access Developer Settings
 
@@ -93,7 +86,6 @@ This action creates a new configuration file if one doesn’t exist, or opens yo
 
 3
 
-[](#)
 
 Configure the Filesystem Server
 
@@ -105,7 +97,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 {
   "mcpServers": {
     "filesystem": {
@@ -135,7 +127,6 @@ Replace `username` with your actual computer username. The paths listed in the `
 
 4
 
-[](#)
 
 Restart Claude Desktop
 
@@ -145,7 +136,6 @@ Click on this indicator to view the available tools provided by the Filesystem S
 
 If the server indicator doesn’t appear, refer to the [Troubleshooting](#troubleshooting) section for debugging steps.
 
-## 
 
 [​](#using-the-filesystem-server)
 
@@ -153,7 +143,6 @@ Using the Filesystem Server
 
 With the Filesystem Server connected, Claude can now interact with your file system. Try these example requests to explore the capabilities:
 
-### 
 
 [​](#file-management-examples)
 
@@ -163,7 +152,6 @@ File Management Examples
 - **“What work-related files are in my downloads folder?”** - Claude will scan your downloads and identify work-related documents
 - **“Please organize all images on my desktop into a new folder called ‘Images’”** - Claude will create a folder and move image files into it
 
-### 
 
 [​](#how-approval-works)
 
@@ -173,7 +161,6 @@ Before executing any file system operation, Claude will request your approval. T
 
 Review each request carefully before approving. You can always deny a request if you’re not comfortable with the proposed action.
 
-## 
 
 [​](#troubleshooting)
 
@@ -195,7 +182,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 npx -y @modelcontextprotocol/server-filesystem /Users/username/Desktop /Users/username/Downloads
 ```
 
@@ -216,7 +203,7 @@ Windows
 
 Copy
 
-``` shiki
+```python
 tail -n 20 -f ~/Library/Logs/Claude/mcp*.log
 ```
 
@@ -238,7 +225,7 @@ If your configured server fails to load, and you see within its logs an error re
 
 Copy
 
-``` shiki
+```python
 {
   "brave-search": {
     "command": "npx",
@@ -257,11 +244,10 @@ With this change in place, launch Claude Desktop once again.
 
 Copy
 
-``` shiki
+```python
 npm install -g npm
 ```
 
-## 
 
 [​](#next-steps)
 
@@ -274,19 +260,16 @@ Now that you’ve successfully connected Claude Desktop to a local MCP server, e
 
 Browse our collection of official and community-created MCP servers for additional capabilities
 
-[](/docs/develop/build-server)
 
 ## Build your own server
 
 Create custom MCP servers tailored to your specific workflows and integrations
 
-[](/docs/develop/connect-remote-servers)
 
 ## Connect to remote servers
 
 Learn how to connect Claude to remote MCP servers for cloud-based tools and services
 
-[](/docs/learn/architecture)
 
 ## Understand the protocol
 

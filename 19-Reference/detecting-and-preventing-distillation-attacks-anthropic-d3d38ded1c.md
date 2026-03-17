@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:44Z"
+fetched_at: "2026-03-17T02:03:19Z"
 source_url: "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks"
 title: "Detecting and preventing distillation attacks \\ Anthropic"
 ---
+
 # Detecting and preventing distillation attacks
 
 Feb 23, 2026
@@ -96,18 +97,18 @@ But no company can solve this alone. As we noted above, distillation attacks at 
 
 ## Related content
 
-### Making frontier cybersecurity capabilities available to defenders
+### Anthropic invests \$100 million into the Claude Partner Network
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-code-security)
+[Read more](/news/claude-partner-network)
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+### Introducing The Anthropic Institute
 
-[Read more](/news/anthropic-rwanda-mou)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Introducing Claude Sonnet 4.6
+[Read more](/news/the-anthropic-institute)
 
-Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/claude-sonnet-4-6)
+[Read more](/news/sydney-fourth-office-asia-pacific)

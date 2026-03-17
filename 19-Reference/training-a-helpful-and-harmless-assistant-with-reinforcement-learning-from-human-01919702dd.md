@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:54Z"
+fetched_at: "2026-03-17T02:03:35Z"
 source_url: "https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback"
 title: "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback \\ Anthropic"
 ---
+
 # Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback
 
 Apr 12, 2022
@@ -21,16 +22,14 @@ Yuntao Bai, Andy Jones, Kamal Ndousse, Amanda Askell, Anna Chen, Nova DasSarma, 
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
+### An update on our model deprecation commitments for Claude Opus 3
+
+[Read more](/research/deprecation-updates-opus-3)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

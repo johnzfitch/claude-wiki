@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:19Z"
+fetched_at: "2026-03-17T02:03:55Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation"
 title: "Elicitation - Model Context Protocol"
 ---
@@ -12,7 +12,6 @@ Elicitation is newly introduced in this version of the MCP specification and its
 
 The Model Context Protocol (MCP) provides a standardized way for servers to request additional information from users through the client during interactions. This flow allows clients to maintain control over user interactions and data sharing while enabling servers to gather necessary information dynamically. Servers request structured data from users with JSON schemas to validate responses.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -30,7 +29,6 @@ Applications **SHOULD**:
 - Allow users to review and modify their responses before sending
 - Respect user privacy and provide clear decline and cancel options
 
-## 
 
 [​](#capabilities)
 
@@ -40,7 +38,7 @@ Clients that support elicitation **MUST** declare the `elicitation` capability d
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "elicitation": {}
@@ -48,13 +46,11 @@ Copy
 }
 ```
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#creating-elicitation-requests)
 
@@ -62,7 +58,6 @@ Creating Elicitation Requests
 
 To request information from a user, servers send an `elicitation/create` request:
 
-#### 
 
 [​](#simple-text-request)
 
@@ -72,7 +67,7 @@ Simple Text Request
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -96,7 +91,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -109,7 +104,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#structured-data-request)
 
@@ -119,7 +113,7 @@ Structured Data Request
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -154,7 +148,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -173,7 +167,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -187,7 +181,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -197,13 +191,11 @@ Copy
 }
 ```
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#request-schema)
 
@@ -213,7 +205,7 @@ The `requestedSchema` field allows servers to define the structure of the expect
 
 Copy
 
-``` shiki
+```python
 "requestedSchema": {
   "type": "object",
   "properties": {
@@ -232,7 +224,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#supported-schema-types)
 
@@ -299,7 +290,6 @@ Clients can use this schema to:
 
 Note that complex nested structures, arrays of objects, and other advanced JSON Schema features are intentionally not supported to simplify client implementation.
 
-## 
 
 [​](#response-actions)
 
@@ -309,7 +299,7 @@ Elicitation responses use a three-action model to clearly distinguish between di
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -341,7 +331,6 @@ Servers should handle each state appropriately:
 - **Decline**: Handle explicit decline (e.g., offer alternatives)
 - **Cancel**: Handle dismissal (e.g., prompt again later)
 
-## 
 
 [​](#security-considerations)
 

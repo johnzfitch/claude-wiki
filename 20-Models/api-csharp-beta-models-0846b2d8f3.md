@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:18:29Z"
+fetched_at: "2026-03-17T02:03:09Z"
 source_url: "https://platform.claude.com/docs/en/api/csharp/beta/models"
 title: "Models - Claude API Reference"
 ---

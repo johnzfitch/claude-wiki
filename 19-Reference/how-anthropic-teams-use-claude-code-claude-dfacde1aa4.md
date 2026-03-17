@@ -1,7 +1,7 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-15T04:10:47Z"
-last_modified: "Sat, 14 Mar 2026 03:47:02 GMT"
+fetched_at: "2026-03-16T23:06:16Z"
+last_modified: "Mon, 16 Mar 2026 20:41:38 GMT"
 source_url: "https://www.anthropic.com/news/how-anthropic-teams-use-claude-code"
 title: "How Anthropic teams use Claude Code | Claude"
 ---
@@ -10,31 +10,24 @@ title: "How Anthropic teams use Claude Code | Claude"
 
 Teams across Anthropic use Claude Code for everything from debugging production issues and navigating unfamiliar codebases to building custom automation tools. Here's how.
 
-[](#)
-
-[](#)
 
 - 
 
-  Category
 
   [Enterprise AI](https://claude.com/blog/category/enterprise-ai)
 
 - 
 
-  Product
 
   Claude Code
 
 - 
 
-  Date
 
   July 24, 2025
 
 - 
 
-  Reading time
 
   5
 
@@ -42,7 +35,6 @@ Teams across Anthropic use Claude Code for everything from debugging production 
 
 - 
 
-  Share
 
   [Copy link](#)
   https://claude.com/blog/how-anthropic-teams-use-claude-code
@@ -119,7 +111,6 @@ These stories reveal a pattern: Claude Code works best when you focus on the hum
 
 They explore possibilities, prototype rapidly, and share discoveries across technical and non-technical users. This collaborative approach between humans and AI creates opportunities we're only beginning to understand.
 
-No items found.
 
 [Prev](#)
 
@@ -127,11 +118,6 @@ Prev
 
 0/5
 
-[Next](#)
-
-Next
-
-eBook
 
 ## Building trusted AI in the enterprise
 
@@ -143,9 +129,6 @@ Download now
 
 Download now
 
-FAQ
-
-No items found.
 
 Get started with Claude Code.
 
@@ -154,91 +137,3 @@ Learn more.
 [Learn more.](#)
 
 Learn more.
-
-## Related posts
-
-Explore more product news and best practices for teams building with Claude.
-
-Mar 13, 2026
-
-### 1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-Product announcements
-
-[1M context is now generally available for Opus 4.6 and Sonnet 4.6](#)
-
-1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-[1M context is now generally available for Opus 4.6 and Sonnet 4.6](/blog/1m-context-ga)
-
-1M context is now generally available for Opus 4.6 and Sonnet 4.6
-
-Mar 11, 2026
-
-### Advancing Claude for Excel and PowerPoint
-
-Enterprise AI
-
-[Advancing Claude for Excel and PowerPoint](#)
-
-Advancing Claude for Excel and PowerPoint
-
-[Advancing Claude for Excel and PowerPoint](/blog/claude-excel-powerpoint-updates)
-
-Advancing Claude for Excel and PowerPoint
-
-Feb 24, 2026
-
-### Cowork and plugins for finance
-
-Enterprise AI
-
-[Cowork and plugins for finance ](#)
-
-Cowork and plugins for finance
-
-[Cowork and plugins for finance ](/blog/cowork-plugins-finance)
-
-Cowork and plugins for finance
-
-Feb 24, 2026
-
-### Cowork and plugins for teams across the enterprise
-
-Agents
-
-[Cowork and plugins for teams across the enterprise](#)
-
-Cowork and plugins for teams across the enterprise
-
-[Cowork and plugins for teams across the enterprise](/blog/cowork-plugins-across-enterprise)
-
-Cowork and plugins for teams across the enterprise
-
-## Transform how your organization operates with Claude
-
-See pricing
-
-[See pricing](https://claude.com/pricing#api)
-
-See pricing
-
-Contact sales
-
-[Contact sales](https://claude.com/contact-sales)
-
-Contact sales
-
-Get the developer newsletter
-
-Product updates, how-tos, community spotlights, and more. Delivered monthly to your inbox.
-
-[Subscribe](#)
-
-Subscribe
-
-Please provide your email address if you'd like to receive our monthly developer newsletter. You can unsubscribe at any time.
-
-Thank you! You’re subscribed.
-
-Sorry, there was a problem with your submission, please try again later.

@@ -1,11 +1,13 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:34:08Z"
+fetched_at: "2026-03-17T02:04:31Z"
 source_url: "https://support.claude.com/en/articles/11697081-anthropic-mcp-directory-terms-and-conditions"
 title: "Anthropic MCP Directory Terms and Conditions | Claude Help Center"
 ---
 
 # Anthropic MCP Directory Terms and Conditions
+
+Updated today
 
 
 This is a prior version of our terms. Please refer to [Anthropic Software Directory Terms](https://support.claude.com/en/articles/13145338-anthropic-software-directory-terms) for the most updated version.

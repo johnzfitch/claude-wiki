@@ -1,14 +1,16 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-16T05:34:03Z"
+fetched_at: "2026-03-17T02:04:25Z"
 source_url: "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp"
 title: "Get started with custom connectors using remote MCP | Claude Help Center"
 ---
 
 # Get started with custom connectors using remote MCP
 
+Updated today
 
-Custom connectors using remote MCP are available on Claude and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are limited to one custom connector. This feature is currently in beta.
+
+Custom connectors using remote MCP are available on Claude, Cowork, and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are limited to one custom connector. This feature is currently in beta.
 
 ## What are custom connectors?
 
@@ -77,7 +79,6 @@ If you are using an individual Pro or Max plan, follow these steps to add a cust
 5.  Optionally, click “Advanced settings” to specify an OAuth Client ID and OAuth Client Secret for your server.
 
 6.  Finish configuring your connector by clicking "Add."
-
 
 ### Enabling connectors after configuration
 

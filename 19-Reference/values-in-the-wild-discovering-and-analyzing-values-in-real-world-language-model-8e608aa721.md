@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:54Z"
+fetched_at: "2026-03-17T02:03:35Z"
 source_url: "https://www.anthropic.com/research/values-wild"
 title: "Values in the wild: Discovering and analyzing values in real-world language model interactions \\ Anthropic"
 ---
+
 # Values in the wild: Discovering and analyzing values in real-world language model interactions
 
 Apr 21, 2025
@@ -65,16 +66,14 @@ If you’re interested in working with us on these or related questions, you sho
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
+### An update on our model deprecation commitments for Claude Opus 3
+
+[Read more](/research/deprecation-updates-opus-3)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

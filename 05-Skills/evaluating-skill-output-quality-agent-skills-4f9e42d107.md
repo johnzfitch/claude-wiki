@@ -1,6 +1,6 @@
 ---
 category: "05-Skills"
-fetched_at: "2026-03-07T01:05:33Z"
+fetched_at: "2026-03-17T02:04:07Z"
 source_url: "https://agentskills.io/skill-creation/evaluating-skills"
 title: "Evaluating skill output quality - Agent Skills"
 ---
@@ -13,7 +13,6 @@ How to test whether your skill produces good outputs using eval-driven iteration
 
 You wrote a skill, tried it on a prompt, and it seemed to work. But does it work reliably — across varied prompts, in edge cases, better than no skill at all? Running structured evaluations (evals) answers these questions and gives you a feedback loop for improving the skill systematically.
 
-## 
 
 [​](#designing-test-cases)
 
@@ -34,7 +33,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 {
   "skill_name": "csv-analyzer",
   "evals": [
@@ -63,7 +62,6 @@ Copy
 
 Don’t worry about defining specific pass/fail checks yet — just the prompts and expected outputs. You’ll add detailed checks (called assertions) after you see what the first run produces.
 
-## 
 
 [​](#running-evals)
 
@@ -71,7 +69,6 @@ Running evals
 
 The core pattern is to run each test case twice: once **with the skill** and once **without it** (or with a previous version). This gives you a baseline to compare against.
 
-### 
 
 [​](#workspace-structure)
 
@@ -84,7 +81,11 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
+csv-analyzer/
+├── SKILL.md
+└── evals/
+    └── evals.json
 csv-analyzer-workspace/
 └── iteration-1/
     ├── eval-top-months-chart/
@@ -110,7 +111,6 @@ csv-analyzer-workspace/
 
 The main file you author by hand is `evals/evals.json`. The other JSON files (`grading.json`, `timing.json`, `benchmark.json`) are produced during the eval process — by the agent, by scripts, or by you.
 
-### 
 
 [​](#spawning-runs)
 
@@ -130,7 +130,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 Execute this task:
 - Skill path: /path/to/csv-analyzer
 - Task: I have a CSV of monthly sales data in data/sales_2025.csv.
@@ -141,7 +141,6 @@ Execute this task:
 
 For the baseline, use the same prompt but without the skill path, saving to `without_skill/outputs/`. When improving an existing skill, use the previous version as your baseline. Snapshot it before editing (`cp -r <skill-path> <workspace>/skill-snapshot/`), point the baseline run at the snapshot, and save to `old_skill/outputs/` instead of `without_skill/`.
 
-### 
 
 [​](#capturing-timing-data)
 
@@ -156,7 +155,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 {
   "total_tokens": 84852,
   "duration_ms": 23332
@@ -165,7 +164,6 @@ Copy
 
 In Claude Code, when a subagent task finishes, the [task completion notification](https://platform.claude.com/docs/en/agent-sdk/typescript#sdk-task-notification-message) includes `total_tokens` and `duration_ms`. Save these values immediately — they aren’t persisted anywhere else.
 
-## 
 
 [​](#writing-assertions)
 
@@ -191,7 +189,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 {
   "skill_name": "csv-analyzer",
   "evals": [
@@ -211,7 +209,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#grading-outputs)
 
@@ -226,7 +223,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 {
   "assertion_results": [
     {
@@ -259,7 +256,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#grading-principles)
 
@@ -270,7 +266,6 @@ Grading principles
 
 For comparing two skill versions, try **blind comparison**: present both outputs to an LLM judge without revealing which came from which version. The judge scores holistic qualities — organization, formatting, usability, polish — on its own rubric, free from bias about which version “should” be better. This complements assertion grading: two outputs might both pass all assertions but differ significantly in overall quality.
 
-## 
 
 [​](#aggregating-results)
 
@@ -285,7 +280,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 {
   "run_summary": {
     "with_skill": {
@@ -311,7 +306,6 @@ The `delta` tells you what the skill costs (more time, more tokens) and what it 
 
 Standard deviation (`stddev`) is only meaningful with multiple runs per eval. In early iterations with just 2-3 test cases and single runs, focus on the raw pass counts and the delta — the statistical measures become useful as you expand the test set and run each eval multiple times.
 
-## 
 
 [​](#analyzing-patterns)
 
@@ -325,7 +319,6 @@ Aggregate statistics can hide important patterns. After computing the benchmarks
 - **Tighten instructions when results are inconsistent across runs.** If the same eval passes sometimes and fails others (reflected as high `stddev` in the benchmark), the eval may be flaky (sensitive to model randomness), or the skill’s instructions may be ambiguous enough that the model interprets them differently each time. Add examples or more specific guidance to reduce ambiguity.
 - **Check time and token outliers.** If one eval takes 3x longer than the others, read its execution transcript (the full log of what the model did during the run) to find the bottleneck.
 
-## 
 
 [​](#reviewing-results-with-a-human)
 
@@ -340,7 +333,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 {
   "eval-top-months-chart": "The chart is missing axis labels and the months are in alphabetical order instead of chronological.",
   "eval-clean-missing-emails": ""
@@ -349,7 +342,6 @@ Copy
 
 “The chart is missing axis labels” is actionable; “looks bad” is not. Empty feedback means the output looked fine — that test case passed your review. During the [iteration step](#iterating-on-the-skill), focus your improvements on the test cases where you had specific complaints.
 
-## 
 
 [​](#iterating-on-the-skill)
 
@@ -368,7 +360,6 @@ The most effective way to turn these signals into skill improvements is to give 
 - **Explain the why.** Reasoning-based instructions (“Do X because Y tends to cause Z”) work better than rigid directives (“ALWAYS do X, NEVER do Y”). Models follow instructions more reliably when they understand the purpose.
 - **Bundle repeated work.** If every test run independently wrote a similar helper script (a chart builder, a data parser), that’s a signal to bundle the script into the skill’s `scripts/` directory. See [Using scripts](/skill-creation/using-scripts) for how to do this.
 
-### 
 
 [​](#the-loop)
 
@@ -384,4 +375,4 @@ Stop when you’re satisfied with the results, feedback is consistently empty, o
 
 The [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) Skill automates much of this workflow — running evals, grading assertions, aggregating benchmarks, and presenting results for human review.
 
-[Specification](/specification)[Using scripts](/skill-creation/using-scripts)
+[Optimizing descriptions](/skill-creation/optimizing-descriptions)[Using scripts](/skill-creation/using-scripts)

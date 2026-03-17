@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-22T10:51:08Z"
+fetched_at: "2026-03-17T02:03:31Z"
 source_url: "https://www.anthropic.com/research/india-brief-economic-index"
 title: "India Country Brief: The Anthropic Economic Index \\ Anthropic"
 ---
+
 # India Country Brief: The Anthropic Economic Index
 
 Feb 16, 2026
@@ -89,14 +90,14 @@ Sally Aldous, Jake Eaton, Ria Strasser Galvis, Hanah Ho, Maxim Massenkoff, Peter
 
 ## Related content
 
-### Measuring AI agent autonomy in practice
+### Labor market impacts of AI: A new measure and early evidence
 
-[Read more](/research/measuring-agent-autonomy)
+[Read more](/research/labor-market-impacts)
 
-### How AI assistance impacts the formation of coding skills
+### An update on our model deprecation commitments for Claude Opus 3
 
-[Read more](/research/AI-assistance-coding-skills)
+[Read more](/research/deprecation-updates-opus-3)
 
-### Disempowerment patterns in real-world AI usage
+### The persona selection model
 
-[Read more](/research/disempowerment-patterns)
+[Read more](/research/persona-selection-model)

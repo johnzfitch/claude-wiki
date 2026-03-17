@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:07Z"
+fetched_at: "2026-03-17T02:03:40Z"
 source_url: "https://modelcontextprotocol.io/docs/learn/architecture"
 title: "Architecture overview - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Architecture overview - Model Context Protocol"
 
 This overview of the Model Context Protocol (MCP) discusses its [scope](#scope) and [core concepts](#concepts-of-mcp), and provides an [example](#example) demonstrating each core concept. Because MCP SDKs abstract away many concerns, most developers will likely find the [data layer protocol](#data-layer-protocol) section to be the most useful. It discusses how MCP servers can provide context to an AI application. For specific implementation details, please refer to the documentation for your [language-specific SDK](/docs/sdk).
 
-## 
 
 [​](#scope)
 
@@ -25,13 +24,11 @@ The Model Context Protocol includes the following projects:
 
 MCP focuses solely on the protocol for context exchange—it does not dictate how AI applications use LLMs or manage the provided context.
 
-## 
 
 [​](#concepts-of-mcp)
 
 Concepts of MCP
 
-### 
 
 [​](#participants)
 
@@ -45,7 +42,6 @@ MCP follows a client-server architecture where an MCP host — an AI application
 
 **For example**: Visual Studio Code acts as an MCP host. When Visual Studio Code establishes a connection to an MCP server, such as the [Sentry MCP server](https://docs.sentry.io/product/sentry-mcp/), the Visual Studio Code runtime instantiates an MCP client object that maintains the connection to the Sentry MCP server. When Visual Studio Code subsequently connects to another MCP server, such as the [local filesystem server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem), the Visual Studio Code runtime instantiates an additional MCP client object to maintain this connection. Note that **MCP server** refers to the program that serves context data, regardless of where it runs. MCP servers can execute locally or remotely. For example, when Claude Desktop launches the [filesystem server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem), the server runs locally on the same machine because it uses the STDIO transport. This is commonly referred to as a “local” MCP server. The official [Sentry MCP server](https://docs.sentry.io/product/sentry-mcp/) runs on the Sentry platform, and uses the Streamable HTTP transport. This is commonly referred to as a “remote” MCP server.
 
-### 
 
 [​](#layers)
 
@@ -58,7 +54,6 @@ MCP consists of two layers:
 
 Conceptually the data layer is the inner layer, while the transport layer is the outer layer.
 
-#### 
 
 [​](#data-layer)
 
@@ -71,7 +66,6 @@ The data layer implements a [JSON-RPC 2.0](https://www.jsonrpc.org/) based excha
 - **Client features**: Enables servers to ask the client to sample from the host LLM, elicit input from the user, and log messages to the client
 - **Utility features**: Supports additional capabilities like notifications for real-time updates and progress tracking for long-running operations
 
-#### 
 
 [​](#transport-layer)
 
@@ -84,7 +78,6 @@ The transport layer manages communication channels and authentication between cl
 
 The transport layer abstracts communication details from the protocol layer, enabling the same JSON-RPC 2.0 message format across all transport mechanisms.
 
-### 
 
 [​](#data-layer-protocol)
 
@@ -92,7 +85,6 @@ Data Layer Protocol
 
 A core part of MCP is defining the schema and semantics between MCP clients and MCP servers. Developers will likely find the data layer — in particular, the set of [primitives](#primitives) — to be the most interesting part of MCP. It is the part of MCP that defines the ways developers can share context from MCP servers to MCP clients. MCP uses [JSON-RPC 2.0](https://www.jsonrpc.org/) as its underlying RPC protocol. Client and servers send requests to each other and respond accordingly. Notifications can be used when no response is required.
 
-#### 
 
 [​](#lifecycle-management)
 
@@ -108,7 +100,6 @@ capabilities
 
 that both client and server support. Detailed information can be found in the [specification](/specification/latest/basic/lifecycle), and the [example](#example) showcases the initialization sequence.
 
-#### 
 
 [​](#primitives)
 
@@ -130,7 +121,6 @@ For more details about client primitives see [client concepts](./client-concepts
 
 - **Tasks (Experimental)**: Durable execution wrappers that enable deferred result retrieval and status tracking for MCP requests (e.g., expensive computations, workflow automation, batch processing, multi-step operations)
 
-#### 
 
 [​](#notifications)
 
@@ -138,13 +128,11 @@ Notifications
 
 The protocol supports real-time notifications to enable dynamic updates between servers and clients. For example, when a server’s available tools change—such as when new functionality becomes available or existing tools are modified—the server can send tool update notifications to inform connected clients about these changes. Notifications are sent as JSON-RPC 2.0 notification messages (without expecting a response) and enable MCP servers to provide real-time updates to connected clients.
 
-## 
 
 [​](#example)
 
 Example
 
-### 
 
 [​](#data-layer-2)
 
@@ -154,7 +142,6 @@ This section provides a step-by-step walkthrough of an MCP client-server interac
 
 1
 
-[](#)
 
 Initialization (Lifecycle Management)
 
@@ -166,7 +153,7 @@ Initialize Response
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -184,7 +171,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#understanding-the-initialization-exchange)
 
@@ -211,14 +197,13 @@ Notification
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/initialized"
 }
 ```
 
-#### 
 
 [​](#how-this-works-in-ai-applications)
 
@@ -230,7 +215,7 @@ Pseudo-code for AI application initialization
 
 Copy
 
-``` shiki
+```python
 # Pseudo Code
 async with stdio_client(server_config) as (read, write):
     async with ClientSession(read, write) as session:
@@ -242,7 +227,6 @@ async with stdio_client(server_config) as (read, write):
 
 2
 
-[](#)
 
 Tool Discovery (Primitives)
 
@@ -254,7 +238,7 @@ Tools List Response
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -262,7 +246,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#understanding-the-tool-discovery-request)
 
@@ -270,7 +253,6 @@ Understanding the Tool Discovery Request
 
 The `tools/list` request is simple, containing no parameters.
 
-#### 
 
 [​](#understanding-the-tool-discovery-response)
 
@@ -283,7 +265,6 @@ The response contains a `tools` array that provides comprehensive metadata about
 - **`description`**: Detailed explanation of what the tool does and when to use it
 - **`inputSchema`**: A JSON Schema that defines the expected input parameters, enabling type validation and providing clear documentation about required and optional parameters
 
-#### 
 
 [​](#how-this-works-in-ai-applications-2)
 
@@ -295,7 +276,7 @@ Pseudo-code for AI application tool discovery
 
 Copy
 
-``` shiki
+```python
 # Pseudo-code using MCP Python SDK patterns
 available_tools = []
 for session in app.mcp_server_sessions():
@@ -306,13 +287,11 @@ conversation.register_available_tools(available_tools)
 
 3
 
-[](#)
 
 Tool Execution (Primitives)
 
 The client can now execute a tool using the `tools/call` method. This demonstrates how MCP primitives are used in practice: after discovering available tools, the client can invoke them with appropriate arguments.
 
-#### 
 
 [​](#understanding-the-tool-execution-request)
 
@@ -326,7 +305,7 @@ Tool Call Response
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -341,7 +320,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#key-elements-of-tool-execution)
 
@@ -355,7 +333,6 @@ The request structure includes several important components:
     - `units`: “imperial” (optional parameter, defaults to “metric” if not specified)
 3.  **JSON-RPC Structure**: Uses standard JSON-RPC 2.0 format with unique `id` for request-response correlation.
 
-#### 
 
 [​](#understanding-the-tool-execution-response)
 
@@ -369,7 +346,6 @@ The response demonstrates MCP’s flexible content system:
 
 This execution pattern allows AI applications to dynamically invoke server functionality and receive structured responses that can be integrated into conversations with language models.
 
-#### 
 
 [​](#how-this-works-in-ai-applications-3)
 
@@ -379,7 +355,7 @@ When the language model decides to use a tool during a conversation, the AI appl
 
 Copy
 
-``` shiki
+```python
 # Pseudo-code for AI application tool execution
 async def handle_tool_call(conversation, tool_name, arguments):
     session = app.find_mcp_session_for_tool(tool_name)
@@ -389,13 +365,11 @@ async def handle_tool_call(conversation, tool_name, arguments):
 
 4
 
-[](#)
 
 Real-time Updates (Notifications)
 
 MCP supports real-time notifications that enable servers to inform clients about changes without being explicitly requested. This demonstrates the notification system, a key feature that keeps MCP connections synchronized and responsive.
 
-#### 
 
 [​](#understanding-tool-list-change-notifications)
 
@@ -407,14 +381,13 @@ Request
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/tools/list_changed"
 }
 ```
 
-#### 
 
 [​](#key-features-of-mcp-notifications)
 
@@ -424,7 +397,6 @@ Key Features of MCP Notifications
 2.  **Capability-Based**: This notification is only sent by servers that declared `"listChanged": true` in their tools capability during initialization (as shown in Step 1).
 3.  **Event-Driven**: The server decides when to send notifications based on internal state changes, making MCP connections dynamic and responsive.
 
-#### 
 
 [​](#client-response-to-notifications)
 
@@ -436,7 +408,7 @@ Request
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -444,7 +416,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#why-notifications-matter)
 
@@ -459,7 +430,6 @@ This notification system is crucial for several reasons:
 
 This notification pattern extends beyond tools to other MCP primitives, enabling comprehensive real-time synchronization between clients and servers.
 
-#### 
 
 [​](#how-this-works-in-ai-applications-4)
 
@@ -469,7 +439,7 @@ When the AI application receives a notification about changed tools, it immediat
 
 Copy
 
-``` shiki
+```python
 # Pseudo-code for AI application notification handling
 async def handle_tools_changed_notification(session):
     tools_response = await session.list_tools()

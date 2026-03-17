@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:51Z"
+fetched_at: "2026-03-17T02:03:31Z"
 source_url: "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic"
 title: "How AI Is Transforming Work at Anthropic \\ Anthropic"
 ---
+
 # How AI is transforming work at Anthropic
 
 Dec 2, 2025
@@ -300,16 +301,14 @@ Finally, this research was conducted in August 2025 when Claude Sonnet 4 and Cla
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
+### An update on our model deprecation commitments for Claude Opus 3
+
+[Read more](/research/deprecation-updates-opus-3)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

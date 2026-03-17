@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:08Z"
+fetched_at: "2026-03-17T02:03:43Z"
 source_url: "https://modelcontextprotocol.io/registry/github-actions"
 title: "How to Automate Publishing with GitHub Actions - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "How to Automate Publishing with GitHub Actions - Model Context Protocol"
 
 The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
-## 
 
 [​](#step-1-create-a-workflow-file)
 
@@ -26,7 +25,7 @@ DNS authentication
 
 Copy
 
-``` shiki
+```python
 name: Publish to MCP Registry
 
 on:
@@ -84,7 +83,6 @@ jobs:
         run: ./mcp-publisher publish
 ```
 
-## 
 
 [​](#step-2-add-secrets)
 
@@ -98,7 +96,6 @@ You may need to add a secret to the repository depending on which authentication
 
 You may also need to add secrets for your package registry. For example, the workflow above needs an `NPM_TOKEN` secret with your npm token. For information about how to add secrets to a repository, see [Using secrets in GitHub Actions](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 
-## 
 
 [​](#step-3-tag-and-release)
 
@@ -108,14 +105,13 @@ Create and push a version tag to trigger the workflow:
 
 Copy
 
-``` shiki
+```python
 git tag v1.0.0
 git push origin v1.0.0
 ```
 
 The workflow will run tests, build the package, publish the package to npm, and publish the server to the MCP Registry.
 
-## 
 
 [​](#troubleshooting)
 

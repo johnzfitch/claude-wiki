@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-03-12T08:19:44Z"
+fetched_at: "2026-03-17T02:04:16Z"
 source_url: "https://platform.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool"
 title: "Code execution tool - Claude API Docs"
 ---
@@ -18,7 +18,6 @@ Reach out through the [feedback form](https://forms.gle/LTAU6Xn2puCJMi1n6) to sh
 
 This feature is **not** eligible for [Zero Data Retention (ZDR)](/docs/en/build-with-claude/zero-data-retention). Data is retained according to the feature's standard retention policy.
 
-## 
 
 Model compatibility
 
@@ -41,7 +40,6 @@ The current version `code_execution_20250825` supports Bash commands and file op
 
 Older tool versions are not guaranteed to be backwards-compatible with newer models. Always use the tool version that corresponds to your model version.
 
-## 
 
 Platform availability
 
@@ -52,7 +50,6 @@ Code execution is available on:
 
 Code execution is not currently available on Amazon Bedrock or Google Vertex AI.
 
-## 
 
 Quick start
 
@@ -60,7 +57,7 @@ Here's a simple example that asks Claude to perform a calculation:
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
     --header "anthropic-version: 2023-06-01" \
@@ -81,7 +78,6 @@ curl https://api.anthropic.com/v1/messages \
     }'
 ```
 
-## 
 
 How code execution works
 
@@ -95,7 +91,6 @@ When you add the code execution tool to your API request:
 4.  All operations run in a secure sandbox environment
 5.  Claude provides results with any generated charts, calculations, or analysis
 
-## 
 
 Using code execution with other execution tools
 
@@ -113,11 +108,9 @@ When multiple code execution environments are available, be aware that:
 
 This is especially important when combining code execution with [web search](/docs/en/agents-and-tools/tool-use/web-search-tool) or [web fetch](/docs/en/agents-and-tools/tool-use/web-fetch-tool), which enable code execution automatically. If your application already provides a client-side shell tool, the automatic code execution creates a second execution environment that Claude needs to distinguish between.
 
-## 
 
 How to use the tool
 
-### 
 
 Execute Bash commands
 
@@ -125,7 +118,7 @@ Ask Claude to check system information and install packages:
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
     --header "anthropic-version: 2023-06-01" \
@@ -144,7 +137,6 @@ curl https://api.anthropic.com/v1/messages \
     }'
 ```
 
-### 
 
 Create and edit files directly
 
@@ -152,7 +144,7 @@ Claude can create, view, and edit files directly in the sandbox using the file m
 
 Shell
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/messages \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
     --header "anthropic-version: 2023-06-01" \
@@ -171,7 +163,6 @@ curl https://api.anthropic.com/v1/messages \
     }'
 ```
 
-### 
 
 Upload and analyze your own files
 
@@ -188,7 +179,6 @@ The Python environment can process various file types uploaded via the Files API
 - Images (JPEG, PNG, GIF, WebP)
 - Text files (.txt, .md, .py, etc)
 
-#### 
 
 Upload and analyze files
 
@@ -198,7 +188,7 @@ Upload and analyze files
 
 Shell
 
-``` shiki
+```python
 # First, upload a file
 curl https://api.anthropic.com/v1/files \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
@@ -229,7 +219,6 @@ curl https://api.anthropic.com/v1/messages \
     }'
 ```
 
-#### 
 
 Retrieve generated files
 
@@ -237,7 +226,7 @@ When Claude creates files during code execution, you can retrieve these files us
 
 Python
 
-``` shiki
+```python
 # Request code execution that creates files
 response = client.beta.messages.create(
     model="claude-opus-4-6",
@@ -274,7 +263,6 @@ for file_id in extract_file_ids(response):
     print(f"Downloaded: {file_metadata.filename}")
 ```
 
-### 
 
 Combine operations
 
@@ -282,7 +270,7 @@ A complex workflow using all capabilities:
 
 Shell
 
-``` shiki
+```python
 # First, upload a file
 curl https://api.anthropic.com/v1/files \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
@@ -323,7 +311,6 @@ curl https://api.anthropic.com/v1/messages \
     }'
 ```
 
-## 
 
 Tool definition
 
@@ -331,7 +318,7 @@ The code execution tool requires no additional parameters:
 
 JSON
 
-``` shiki
+```python
 {
   "type": "code_execution_20250825",
   "name": "code_execution"
@@ -343,17 +330,15 @@ When this tool is provided, Claude automatically gains access to two sub-tools:
 - `bash_code_execution`: Run shell commands
 - `text_editor_code_execution`: View, create, and edit files, including writing code
 
-## 
 
 Response format
 
 The code execution tool can return two types of results depending on the operation:
 
-### 
 
 Bash command response
 
-``` shiki
+```python
 {
   "type": "server_tool_use",
   "id": "srvtoolu_01B3C4D5E6F7G8H9I0J1K2L3",
@@ -374,13 +359,12 @@ Bash command response
 }
 ```
 
-### 
 
 File operation responses
 
 **View file:**
 
-``` shiki
+```python
 {
   "type": "server_tool_use",
   "id": "srvtoolu_01C4D5E6F7G8H9I0J1K2L3M4",
@@ -406,7 +390,7 @@ File operation responses
 
 **Create file:**
 
-``` shiki
+```python
 {
   "type": "server_tool_use",
   "id": "srvtoolu_01D5E6F7G8H9I0J1K2L3M4N5",
@@ -429,7 +413,7 @@ File operation responses
 
 **Edit file (str_replace):**
 
-``` shiki
+```python
 {
   "type": "server_tool_use",
   "id": "srvtoolu_01E6F7G8H9I0J1K2L3M4N5O6",
@@ -455,7 +439,6 @@ File operation responses
 }
 ```
 
-### 
 
 Results
 
@@ -471,7 +454,6 @@ Additional fields for file operations:
 - **Create**: `is_file_update` (whether file already existed)
 - **Edit**: `oldStart`, `oldLines`, `newStart`, `newLines`, `lines` (diff format)
 
-### 
 
 Errors
 
@@ -479,7 +461,7 @@ Each tool type can return specific errors:
 
 **Common errors (all tools):**
 
-``` shiki
+```python
 {
   "type": "bash_code_execution_tool_result",
   "tool_use_id": "srvtoolu_01VfmxgZ46TiHbmXgy928hQR",
@@ -502,19 +484,16 @@ Each tool type can return specific errors:
 | text_editor | `file_not_found` | File doesn't exist (for view/edit operations) |
 | text_editor | `string_not_found` | The `old_str` not found in file (for str_replace) |
 
-#### 
 
 `pause_turn` stop reason
 
 The response may include a `pause_turn` stop reason, which indicates that the API paused a long-running turn. You may provide the response back as-is in a subsequent request to let Claude continue its turn, or modify the content if you wish to interrupt the conversation.
 
-## 
 
 Containers
 
 The code execution tool runs in a secure, containerized environment designed specifically for code execution, with a higher focus on Python.
 
-### 
 
 Runtime environment
 
@@ -522,7 +501,6 @@ Runtime environment
 - **Operating system**: Linux-based container
 - **Architecture**: x86_64 (AMD64)
 
-### 
 
 Resource limits
 
@@ -530,7 +508,6 @@ Resource limits
 - **Disk space**: 5GiB workspace storage
 - **CPU**: 1 CPU
 
-### 
 
 Networking and security
 
@@ -541,7 +518,6 @@ Networking and security
 - **Workspace scoping**: Like [Files](/docs/en/build-with-claude/files), containers are scoped to the workspace of the API key
 - **Expiration**: Containers expire 30 days after creation
 
-### 
 
 Pre-installed libraries
 
@@ -553,19 +529,17 @@ The sandboxed Python environment includes these commonly used libraries:
 - **Math & Computing**: sympy, mpmath
 - **Utilities**: tqdm, python-dateutil, pytz, joblib, unzip, unrar, 7zip, bc, rg (ripgrep), fd, sqlite
 
-## 
 
 Container reuse
 
 You can reuse an existing container across multiple API requests by providing the container ID from a previous response. This allows you to maintain created files between requests.
 
-### 
 
 Example
 
 Shell
 
-``` shiki
+```python
 # First request: Create a file with a random number
 curl https://api.anthropic.com/v1/messages \
     --header "x-api-key: $ANTHROPIC_API_KEY" \
@@ -607,13 +581,12 @@ curl https://api.anthropic.com/v1/messages \
     }'
 ```
 
-## 
 
 Streaming
 
 With streaming enabled, you'll receive code execution events as they occur:
 
-``` shiki
+```python
 event: content_block_start
 data: {"type": "content_block_start", "index": 1, "content_block": {"type": "server_tool_use", "id": "srvtoolu_xyz789", "name": "code_execution"}}
 
@@ -628,13 +601,11 @@ event: content_block_start
 data: {"type": "content_block_start", "index": 2, "content_block": {"type": "code_execution_tool_result", "tool_use_id": "srvtoolu_xyz789", "content": {"stdout": "   A  B  C\n0  1  2  3\n1  4  5  6", "stderr": ""}}}
 ```
 
-## 
 
 Batch requests
 
 You can include the code execution tool in the [Messages Batches API](/docs/en/build-with-claude/batch-processing). Code execution tool calls through the Messages Batches API are priced the same as those in regular Messages API requests.
 
-## 
 
 Usage and pricing
 
@@ -649,7 +620,7 @@ When used without these tools, code execution is billed by execution time, track
 
 Code execution usage is tracked in the response:
 
-``` shiki
+```python
 "usage": {
   "input_tokens": 105,
   "output_tokens": 239,
@@ -659,13 +630,11 @@ Code execution usage is tracked in the response:
 }
 ```
 
-## 
 
 Upgrade to latest tool version
 
 By upgrading to `code-execution-2025-08-25`, you get access to file manipulation and Bash capabilities, including code in multiple languages. There is no price difference.
 
-### 
 
 What's changed
 
@@ -676,20 +645,18 @@ What's changed
 | Capabilities | Python only | Bash commands, file operations |
 | Response types | `code_execution_result` | `bash_code_execution_result`, `text_editor_code_execution_result` |
 
-### 
 
 Backward compatibility
 
 - All existing Python code execution continues to work exactly as before
 - No changes required to existing Python-only workflows
 
-### 
 
 Upgrade steps
 
 To upgrade, update the tool type in your API requests:
 
-``` shiki
+```python
 - "type": "code_execution_20250522"
 + "type": "code_execution_20250825"
 ```
@@ -699,7 +666,6 @@ To upgrade, update the tool type in your API requests:
 - The previous blocks for Python execution responses will no longer be sent
 - Instead, new response types for Bash and file operations will be sent (see Response Format section)
 
-## 
 
 Programmatic tool calling
 
@@ -707,7 +673,7 @@ The code execution tool powers [programmatic tool calling](/docs/en/agents-and-t
 
 Python
 
-``` shiki
+```python
 # Enable programmatic calling for your tools
 response = client.messages.create(
     model="claude-opus-4-6",
@@ -731,7 +697,6 @@ response = client.messages.create(
 
 Learn more in the [Programmatic tool calling documentation](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling).
 
-## 
 
 Using code execution with Agent Skills
 

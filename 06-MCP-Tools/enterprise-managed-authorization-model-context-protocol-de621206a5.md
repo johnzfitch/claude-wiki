@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:08Z"
+fetched_at: "2026-03-17T02:03:42Z"
 source_url: "https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization"
 title: "Enterprise-Managed Authorization - Model Context Protocol"
 ---
@@ -17,7 +17,6 @@ The Enterprise-Managed Authorization extension (`io.modelcontextprotocol/enterpr
 
 Full technical specification for the Enterprise-Managed Authorization extension.
 
-## 
 
 [​](#what-it-is)
 
@@ -32,7 +31,6 @@ In a standard MCP deployment, each user independently authorizes an MCP client t
 
 Enterprise-Managed Authorization solves this by introducing the organization’s IdP as the authoritative decision-maker. The IdP (such as Okta, Azure AD, or a corporate SSO system) controls which MCP servers employees can access, and under what conditions. Employees authenticate with their corporate identity — the same credentials they use for email, Slack, and other work tools — and the IdP grants or denies MCP server access based on organizational policy.
 
-## 
 
 [​](#when-to-use-it)
 
@@ -46,7 +44,6 @@ Use Enterprise-Managed Authorization when:
 - **Meeting compliance requirements** — your organization needs an auditable authorization trail for all MCP server access
 - **Simplifying employee experience** — employees should access MCP tools with their existing corporate SSO credentials, without per-service authorization flows
 
-## 
 
 [​](#how-it-works)
 

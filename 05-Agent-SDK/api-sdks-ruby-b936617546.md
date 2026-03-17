@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:31Z"
+fetched_at: "2026-03-17T02:01:44Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/ruby"
 title: "Ruby SDK - Claude API Docs"
 ---
@@ -15,27 +15,24 @@ The Anthropic Ruby library provides convenient access to the Anthropic REST API 
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers Ruby-specific SDK features and configuration.
 
-## 
 
 Installation
 
 To use this gem, install via Bundler by adding the following to your application's `Gemfile`:
 
-``` shiki
+```python
 gem "anthropic", "~> 1.19.0"
 ```
 
-## 
 
 Requirements
 
 Ruby 3.2.0 or higher.
 
-## 
 
 Usage
 
-``` shiki
+```python
 require "anthropic"
 
 anthropic = Anthropic::Client.new(
@@ -51,13 +48,12 @@ message = anthropic.messages.create(
 puts(message.content)
 ```
 
-## 
 
 Streaming
 
 The SDK provides support for streaming responses using Server-Sent Events (SSE).
 
-``` shiki
+```python
 stream = anthropic.messages.stream(
   max_tokens: 1024,
   messages: [{role: "user", content: "Hello, Claude"}],
@@ -69,13 +65,12 @@ stream.each do |message|
 end
 ```
 
-### 
 
 Streaming helpers
 
 This library provides several conveniences for streaming messages, for example:
 
-``` shiki
+```python
 stream = anthropic.messages.stream(
   max_tokens: 1024,
   messages: [{role: :user, content: "Say hello there!"}],
@@ -89,13 +84,12 @@ end
 
 Streaming with `anthropic.messages.stream(...)` exposes various helpers including accumulation and SDK-specific events.
 
-## 
 
 Input schema and tool calling
 
 The SDK provides helper mechanisms to define structured data classes for tools and let Claude automatically execute them. For detailed documentation on tool use patterns including the tool runner, see [Implementing Tool Use](/docs/en/agents-and-tools/tool-use/implement-tool-use).
 
-``` shiki
+```python
 class CalculatorInput < Anthropic::BaseModel
   required :lhs, Float
   required :rhs, Float
@@ -119,19 +113,17 @@ client.beta.messages.tool_runner(
 ).each_message { puts _1.content }
 ```
 
-## 
 
 Structured outputs
 
 For complete structured outputs documentation including Ruby examples, see [Structured Outputs](/docs/en/build-with-claude/structured-outputs).
 
-## 
 
 Handling errors
 
 When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `Anthropic::Errors::APIError` will be thrown:
 
-``` shiki
+```python
 begin
   message = anthropic.messages.create(
     max_tokens: 1024,
@@ -165,7 +157,6 @@ Error codes are as follows:
 | Timeout          | `APITimeoutError`          |
 | Network error    | `APIConnectionError`       |
 
-## 
 
 Retries
 
@@ -175,7 +166,7 @@ Connection errors (for example, due to a network connectivity problem), 408 Requ
 
 You can use the `max_retries` option to configure or disable this:
 
-``` shiki
+```python
 # Configure the default for all requests:
 anthropic = Anthropic::Client.new(
   max_retries: 0 # default is 2
@@ -190,13 +181,12 @@ anthropic.messages.create(
 )
 ```
 
-## 
 
 Timeouts
 
 By default, requests will time out after 600 seconds. You can use the timeout option to configure or disable this:
 
-``` shiki
+```python
 # Configure the default for all requests:
 anthropic = Anthropic::Client.new(
   timeout: nil # default is 600
@@ -215,7 +205,6 @@ On timeout, `Anthropic::Errors::APITimeoutError` is raised.
 
 Note that requests that time out are retried by default.
 
-## 
 
 Pagination
 
@@ -223,7 +212,7 @@ List methods in the Claude API are paginated.
 
 This library provides auto-paginating iterators with each list response, so you do not have to request successive pages manually:
 
-``` shiki
+```python
 page = anthropic.messages.batches.list(limit: 20)
 
 # Fetch single item from page.
@@ -238,20 +227,19 @@ end
 
 Alternatively, you can use the `#next_page?` and `#next_page` methods for more granular control working with pages.
 
-``` shiki
+```python
 while page.next_page?
   page = page.next_page
   page.data&.each { |batch| puts(batch.id) }
 end
 ```
 
-## 
 
 File uploads
 
 Request parameters that correspond to file uploads can be passed as raw contents, a [`Pathname`](https://rubyapi.org/3.2/o/pathname) instance, [`StringIO`](https://rubyapi.org/3.2/o/stringio), or more.
 
-``` shiki
+```python
 require "pathname"
 
 # Use `Pathname` to send the filename and/or avoid paging a large file into memory:
@@ -269,7 +257,6 @@ puts(file_metadata.id)
 
 Note that you can also pass a raw `IO` descriptor, but this disables retries, as the library can't be sure if the descriptor is a file or pipe (which cannot be rewound).
 
-## 
 
 Sorbet
 
@@ -277,7 +264,7 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 
 You can provide typesafe request parameters like so:
 
-``` shiki
+```python
 anthropic.messages.create(
   max_tokens: 1024,
   messages: [Anthropic::MessageParam.new(role: "user", content: "Hello, Claude")],
@@ -287,7 +274,7 @@ anthropic.messages.create(
 
 Or, equivalently:
 
-``` shiki
+```python
 # Hashes work, but are not typesafe:
 anthropic.messages.create(
   max_tokens: 1024,
@@ -304,13 +291,12 @@ params = Anthropic::MessageCreateParams.new(
 anthropic.messages.create(**params)
 ```
 
-### 
 
 Enums
 
 Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, the SDK provides "tagged symbols", which is always a primitive at runtime:
 
-``` shiki
+```python
 # :auto
 puts(Anthropic::MessageCreateParams::ServiceTier::AUTO)
 
@@ -320,7 +306,7 @@ T.reveal_type(Anthropic::MessageCreateParams::ServiceTier::AUTO)
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
 
-``` shiki
+```python
 # Using the enum constants preserves the tagged type information:
 anthropic.messages.create(
   service_tier: Anthropic::MessageCreateParams::ServiceTier::AUTO,
@@ -334,7 +320,6 @@ anthropic.messages.create(
 )
 ```
 
-## 
 
 BaseModel
 
@@ -348,7 +333,6 @@ All parameter and response objects inherit from `Anthropic::Internal::Type::Base
 
 4.  Helpers such as `#to_h`, `#deep_to_h`, `#to_json`, and `#to_yaml`.
 
-## 
 
 Concurrency and connection pooling
 
@@ -360,11 +344,9 @@ When all available connections from the pool are checked out, requests wait for 
 
 Unless otherwise specified, other classes in the SDK do not have locks protecting their underlying data structure.
 
-## 
 
 Making custom or undocumented requests
 
-### 
 
 Undocumented properties
 
@@ -372,7 +354,7 @@ You can send undocumented parameters to any endpoint, and read undocumented resp
 
 The `extra_` parameters of the same name override the documented parameters. For security reasons, ensure these methods are only used with trusted input data.
 
-``` shiki
+```python
 message =
   anthropic.messages.create(
     max_tokens: 1024,
@@ -388,19 +370,17 @@ message =
 puts(message[:my_undocumented_property])
 ```
 
-### 
 
 Undocumented request params
 
 If you want to explicitly send an extra param, you can do so with the `extra_query`, `extra_body`, and `extra_headers` under the `request_options:` parameter when making a request, as seen in the examples above.
 
-### 
 
 Undocumented endpoints
 
 To make requests to undocumented endpoints while retaining the benefit of auth, retries, and so on, you can make requests using `client.request`, like so:
 
-``` shiki
+```python
 response = client.request(
   method: :post,
   path: '/undocumented/endpoint',
@@ -410,7 +390,6 @@ response = client.request(
 )
 ```
 
-## 
 
 Platform integrations
 
@@ -424,7 +403,6 @@ The Ruby SDK supports Bedrock and Vertex AI through dedicated client classes:
 - **Bedrock:** `Anthropic::BedrockClient`. Requires the `aws-sdk-bedrockruntime` gem.
 - **Vertex AI:** `Anthropic::VertexClient`. Requires the `googleauth` gem.
 
-## 
 
 Semantic versioning
 
@@ -432,7 +410,6 @@ This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. 
 
 This package considers improvements to the (non-runtime) `*.rbi` and `*.rbs` type definitions to be non-breaking changes.
 
-## 
 
 Additional resources
 

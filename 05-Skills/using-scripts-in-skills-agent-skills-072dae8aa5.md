@@ -1,9 +1,10 @@
 ---
 category: "05-Skills"
-fetched_at: "2026-02-28T00:44:09Z"
+fetched_at: "2026-03-17T02:04:08Z"
 source_url: "https://agentskills.io/skill-creation/using-scripts"
 title: "Using scripts in skills - Agent Skills"
 ---
+
 # Using scripts in skills
 
 
@@ -12,7 +13,6 @@ How to run commands and bundle executable scripts in your skills.
 
 Skills can instruct agents to run shell commands and bundle reusable scripts in a `scripts/` directory. This guide covers one-off commands, self-contained scripts with their own dependencies, and how to design script interfaces for agentic use.
 
-## 
 
 [​](#one-off-commands)
 
@@ -39,7 +39,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 uvx ruff@0.8.0 check .
 uvx black@24.10.0 .
 ```
@@ -54,7 +54,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 pipx run 'black==24.10.0' .
 pipx run 'ruff==0.8.0' check .
 ```
@@ -69,7 +69,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 npx eslint@9 --fix .
 npx create-vite@6 my-app
 ```
@@ -85,7 +85,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 bunx eslint@9 --fix .
 bunx create-vite@6 my-app
 ```
@@ -100,7 +100,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 deno run npm:create-vite@6 my-app
 deno run --allow-read npm:eslint@9 -- --fix .
 ```
@@ -115,7 +115,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 go run golang.org/x/tools/cmd/goimports@v0.28.0 .
 go run github.com/golangci/golangci-lint/cmd/golangci-lint@v1.62.0 run
 ```
@@ -129,7 +129,6 @@ go run github.com/golangci/golangci-lint/cmd/golangci-lint@v1.62.0 run
 - **State prerequisites** in your `SKILL.md` (e.g., “Requires Node.js 18+”) rather than assuming the agent’s environment has them. For runtime-level requirements, use the [`compatibility` frontmatter field](/specification#compatibility-field).
 - **Move complex commands into scripts.** A one-off command works well when you’re invoking a tool with a few flags. When a command grows complex enough that it’s hard to get right on the first try, a tested script in `scripts/` is more reliable.
 
-## 
 
 [​](#referencing-scripts-from-skill-md)
 
@@ -144,7 +143,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 ## Available scripts
 
 - **`scripts/validate.sh`** — Validates configuration files
@@ -176,7 +175,6 @@ Copy
 
 The same relative-path convention works in support files like `references/*.md` — script execution paths (in code blocks) are relative to the **skill directory root**, because the agent runs commands from there.
 
-## 
 
 [​](#self-contained-scripts)
 
@@ -201,7 +199,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 # /// script
 # dependencies = [
 #   "beautifulsoup4",
@@ -221,7 +219,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 uv run scripts/extract.py
 ```
 
@@ -240,7 +238,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 #!/usr/bin/env -S deno run
 
 import * as cheerio from "npm:cheerio@1.0.0";
@@ -255,7 +253,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 deno run scripts/extract.ts
 ```
 
@@ -273,7 +271,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 #!/usr/bin/env bun
 
 import * as cheerio from "cheerio@1.0.0";
@@ -288,7 +286,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 bun run scripts/extract.ts
 ```
 
@@ -305,7 +303,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 require 'bundler/inline'
 
 gemfile do
@@ -323,14 +321,13 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 ruby scripts/extract.rb
 ```
 
 - Pin versions explicitly (`gem 'nokogiri', '~> 1.16'`) — there is no lockfile.
 - An existing `Gemfile` or `BUNDLE_GEMFILE` env var in the working directory can interfere.
 
-## 
 
 [​](#designing-scripts-for-agentic-use)
 
@@ -338,7 +335,6 @@ Designing scripts for agentic use
 
 When an agent runs your script, it reads stdout and stderr to decide what to do next. A few design choices make scripts dramatically easier for agents to use.
 
-### 
 
 [​](#avoid-interactive-prompts)
 
@@ -351,7 +347,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 # Bad: hangs waiting for input
 $ python scripts/deploy.py
 Target environment: _
@@ -362,7 +358,6 @@ Error: --env is required. Options: development, staging, production.
 Usage: python scripts/deploy.py --env staging --tag v1.2.3
 ```
 
-### 
 
 [​](#document-usage-with-help)
 
@@ -375,7 +370,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 Usage: scripts/process.py [OPTIONS] INPUT_FILE
 
 Process input data and produce a summary report.
@@ -392,7 +387,6 @@ Examples:
 
 Keep it concise — the output enters the agent’s context window alongside everything else it’s working with.
 
-### 
 
 [​](#write-helpful-error-messages)
 
@@ -405,12 +399,11 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 Error: --format must be one of: json, csv, table.
        Received: "xml"
 ```
 
-### 
 
 [​](#use-structured-output)
 
@@ -423,7 +416,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```python
 # Whitespace-aligned — hard to parse programmatically
 NAME          STATUS    CREATED
 my-service    running   2025-01-15
@@ -434,7 +427,6 @@ my-service    running   2025-01-15
 
 **Separate data from diagnostics:** send structured data to stdout and progress messages, warnings, and other diagnostics to stderr. This lets the agent capture clean, parseable output while still having access to diagnostic information when needed.
 
-### 
 
 [​](#further-considerations)
 
@@ -447,4 +439,4 @@ Further considerations
 - **Safe defaults.** Consider whether destructive operations should require explicit confirmation flags (`--confirm`, `--force`) or other safeguards appropriate to the risk level.
 - **Predictable output size.** Many agent harnesses automatically truncate tool output beyond a threshold (e.g., 10-30K characters), potentially losing critical information. If your script might produce large output, default to a summary or a reasonable limit, and support flags like `--offset` so the agent can request more information when needed. Alternatively, if output is large and not amenable to pagination, require agents to pass an `--output` flag that specifies either an output file or `-` to explicitly opt in to stdout.
 
-[Specification](/specification)[Integrate skills](/integrate-skills)
+[Evaluating skills](/skill-creation/evaluating-skills)[Adding skills support](/client-implementation/adding-skills-support)

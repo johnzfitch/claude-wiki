@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:19Z"
+fetched_at: "2026-03-17T02:03:40Z"
 source_url: "https://modelcontextprotocol.io/docs/tools/inspector"
 title: "MCP Inspector - Model Context Protocol"
 ---
+
 # MCP Inspector
 
 
@@ -12,13 +13,11 @@ In-depth guide to using the MCP Inspector for testing and debugging Model Contex
 
 The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is an interactive developer tool for testing and debugging MCP servers. While the [Debugging Guide](/legacy/tools/debugging) covers the Inspector as part of the overall debugging toolkit, this document provides a detailed exploration of the Inspector’s features and capabilities.
 
-## 
 
 [​](#getting-started)
 
 Getting started
 
-### 
 
 [​](#installation-and-basic-usage)
 
@@ -28,17 +27,16 @@ The Inspector runs directly through `npx` without requiring installation:
 
 Copy
 
-``` shiki
+```python
 npx @modelcontextprotocol/inspector <command>
 ```
 
 Copy
 
-``` shiki
+```python
 npx @modelcontextprotocol/inspector <command> <arg1> <arg2>
 ```
 
-#### 
 
 [​](#inspecting-servers-from-npm-or-pypi)
 
@@ -52,7 +50,7 @@ A common way to start server packages from [npm](https://npmjs.com) or [PyPI](ht
 
 Copy
 
-``` shiki
+```python
 npx -y @modelcontextprotocol/inspector npx <package-name> <args>
 # For example
 npx -y @modelcontextprotocol/inspector npx @modelcontextprotocol/server-filesystem /Users/username/Desktop
@@ -60,13 +58,12 @@ npx -y @modelcontextprotocol/inspector npx @modelcontextprotocol/server-filesyst
 
 Copy
 
-``` shiki
+```python
 npx @modelcontextprotocol/inspector uvx <package-name> <args>
 # For example
 npx @modelcontextprotocol/inspector uvx mcp-server-git --repository ~/code/mcp/servers.git
 ```
 
-#### 
 
 [​](#inspecting-locally-developed-servers)
 
@@ -80,13 +77,13 @@ To inspect servers locally developed or downloaded as a repository, the most com
 
 Copy
 
-``` shiki
+```python
 npx @modelcontextprotocol/inspector node path/to/server/index.js args...
 ```
 
 Copy
 
-``` shiki
+```python
 npx @modelcontextprotocol/inspector \
   uv \
   --directory path/to/server \
@@ -97,7 +94,6 @@ npx @modelcontextprotocol/inspector \
 
 Please carefully read any attached README for the most accurate instructions.
 
-## 
 
 [​](#feature-overview)
 
@@ -105,7 +101,6 @@ Feature overview
 
 The Inspector provides several features for interacting with your MCP server:
 
-### 
 
 [​](#server-connection-pane)
 
@@ -114,7 +109,6 @@ Server connection pane
 - Allows selecting the [transport](/legacy/concepts/transports) for connecting to the server
 - For local servers, supports customizing the command-line arguments and environment
 
-### 
 
 [​](#resources-tab)
 
@@ -125,7 +119,6 @@ Resources tab
 - Allows resource content inspection
 - Supports subscription testing
 
-### 
 
 [​](#prompts-tab)
 
@@ -136,7 +129,6 @@ Prompts tab
 - Enables prompt testing with custom arguments
 - Previews generated messages
 
-### 
 
 [​](#tools-tab)
 
@@ -147,7 +139,6 @@ Tools tab
 - Enables tool testing with custom inputs
 - Displays tool execution results
 
-### 
 
 [​](#notifications-pane)
 
@@ -156,13 +147,11 @@ Notifications pane
 - Presents all logs recorded from the server
 - Shows notifications received from the server
 
-## 
 
 [​](#best-practices)
 
 Best practices
 
-### 
 
 [​](#development-workflow)
 
@@ -184,7 +173,6 @@ Development workflow
     - Concurrent operations
     - Verify error handling and error responses
 
-## 
 
 [​](#next-steps)
 
@@ -195,7 +183,6 @@ Next steps
 
 Check out the MCP Inspector source code
 
-[](/legacy/tools/debugging)
 
 ## Debugging Guide
 

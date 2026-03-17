@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:47Z"
+fetched_at: "2026-03-17T02:03:24Z"
 source_url: "https://www.anthropic.com/news/prompt-engineering-for-business-performance"
 title: "Prompt engineering for business performance \\ Anthropic"
 ---
+
 # Prompt engineering for business performance
 
 Feb 29, 2024
@@ -46,7 +47,7 @@ For example, if you wanted Claude to solve a logic puzzle, you could say:
 
 It’s helpful to give Claude realistic and specific examples of the inputs and ideal outputs you’re hoping to see. It’s useful to include challenging examples and edge cases to help Claude understand exactly what you’re looking for.
 
-For a simple example, consider how Claude can help with removing personally-identifiable information (PII) from information, using 2 examples to help Claude understand different ways that PII could present itself in a prompt. A simplified example using [claude.ai](https://claude.ai/redirect/website.v1.06c80b46-cd2c-487f-80a7-ba741356c52c) may look something like this:
+For a simple example, consider how Claude can help with removing personally-identifiable information (PII) from information, using 2 examples to help Claude understand different ways that PII could present itself in a prompt. A simplified example using [claude.ai](https://claude.ai/redirect/website.v1.98268848-3f09-4114-aa3b-fc4b87f65524) may look something like this:
 
 *You are an expert redactor. I am going to provide you with some text. Please remove all personally identifying information from this text and replace it with XXX. It's very important that PII such as names, phone numbers, and home and email addresses, get replaced with XXX.*
 
@@ -147,16 +148,18 @@ To get started on optimizing Claude for your use case, read our [prompt engineer
 
 ## Related content
 
-### Detecting and preventing distillation attacks
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Making frontier cybersecurity capabilities available to defenders
+[Read more](/news/claude-partner-network)
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+### Introducing The Anthropic Institute
 
-[Read more](/news/claude-code-security)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

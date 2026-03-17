@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:17Z"
+fetched_at: "2026-03-17T02:03:52Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/client/sampling"
 title: "Sampling - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Sampling - Model Context Protocol"
 
 The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models via clients. This flow allows clients to maintain control over model access, selection, and permissions while enabling servers to leverage AI capabilities—with no server API keys necessary. Servers can request text, audio, or image-based interactions and optionally include context from MCP servers in their prompts.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -24,7 +23,6 @@ For trust & safety and security, there **SHOULD** always be a human in the loop 
 - Allow users to view and edit prompts before sending
 - Present generated responses for review before delivery
 
-## 
 
 [​](#capabilities)
 
@@ -34,7 +32,7 @@ Clients that support sampling **MUST** declare the `sampling` capability during 
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "sampling": {}
@@ -42,13 +40,11 @@ Copy
 }
 ```
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#creating-messages)
 
@@ -58,7 +54,7 @@ To request a language model generation, servers send a `sampling/createMessage` 
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -92,7 +88,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -108,19 +104,16 @@ Copy
 }
 ```
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#messages)
 
@@ -128,7 +121,6 @@ Messages
 
 Sampling messages can contain:
 
-#### 
 
 [​](#text-content)
 
@@ -136,14 +128,13 @@ Text Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "text",
   "text": "The message content"
 }
 ```
 
-#### 
 
 [​](#image-content)
 
@@ -151,7 +142,7 @@ Image Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "image",
   "data": "base64-encoded-image-data",
@@ -159,7 +150,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#audio-content)
 
@@ -167,7 +157,7 @@ Audio Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "audio",
   "data": "base64-encoded-audio-data",
@@ -175,7 +165,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#model-preferences)
 
@@ -183,7 +172,6 @@ Model Preferences
 
 Model selection in MCP requires careful abstraction since servers and clients may use different AI providers with distinct model offerings. A server cannot simply request a specific model by name since the client may not have access to that exact model or may prefer to use a different provider’s equivalent model. To solve this, MCP implements a preference system that combines abstract capability priorities with optional model hints:
 
-#### 
 
 [​](#capability-priorities)
 
@@ -195,7 +183,6 @@ Servers express their needs through three normalized priority values (0-1):
 - `speedPriority`: How important is low latency? Higher values prefer faster models.
 - `intelligencePriority`: How important are advanced capabilities? Higher values prefer more capable models.
 
-#### 
 
 [​](#model-hints)
 
@@ -212,7 +199,7 @@ For example:
 
 Copy
 
-``` shiki
+```python
 {
   "hints": [
     { "name": "claude-3-sonnet" }, // Prefer Sonnet-class models
@@ -226,7 +213,6 @@ Copy
 
 The client processes these preferences to select an appropriate model from its available options. For instance, if the client doesn’t have access to Claude models but has Gemini, it might map the sonnet hint to `gemini-1.5-pro` based on similar capabilities.
 
-## 
 
 [​](#error-handling)
 
@@ -236,7 +222,7 @@ Clients **SHOULD** return errors for common failure cases: Example error:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -247,7 +233,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#security-considerations)
 

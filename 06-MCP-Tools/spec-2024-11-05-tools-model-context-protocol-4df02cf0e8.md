@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:15Z"
+fetched_at: "2026-03-17T02:03:50Z"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/server/tools"
 title: "Tools - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Tools - Model Context Protocol"
 
 The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems, such as querying databases, calling APIs, or performing computations. Each tool is uniquely identified by a name and includes metadata describing its schema.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -24,7 +23,6 @@ For trust & safety and security, there **SHOULD** always be a human in the loop 
 - Insert clear visual indicators when tools are invoked
 - Present confirmation prompts to the user for operations, to ensure a human is in the loop
 
-## 
 
 [​](#capabilities)
 
@@ -34,7 +32,7 @@ Servers that support tools **MUST** declare the `tools` capability:
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "tools": {
@@ -46,13 +44,11 @@ Copy
 
 `listChanged` indicates whether the server will emit notifications when the list of available tools changes.
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#listing-tools)
 
@@ -62,7 +58,7 @@ To discover available tools, clients send a `tools/list` request. This operation
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -77,7 +73,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -103,7 +99,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#calling-tools)
 
@@ -113,7 +108,7 @@ To invoke a tool, clients send a `tools/call` request: **Request:**
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -131,7 +126,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -147,7 +142,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#list-changed-notification)
 
@@ -157,26 +151,23 @@ When the list of available tools changes, servers that declared the `listChanged
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/tools/list_changed"
 }
 ```
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#tool)
 
@@ -188,7 +179,6 @@ A tool definition includes:
 - `description`: Human-readable description of functionality
 - `inputSchema`: JSON Schema defining expected parameters
 
-### 
 
 [​](#tool-result)
 
@@ -196,7 +186,6 @@ Tool Result
 
 Tool results can contain multiple content items of different types:
 
-#### 
 
 [​](#text-content)
 
@@ -204,14 +193,13 @@ Text Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "text",
   "text": "Tool result text"
 }
 ```
 
-#### 
 
 [​](#image-content)
 
@@ -219,7 +207,7 @@ Image Content
 
 Copy
 
-``` shiki
+```python
 {
   "type": "image",
   "data": "base64-encoded-data",
@@ -227,7 +215,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#embedded-resources)
 
@@ -237,7 +224,7 @@ Embedded Resources
 
 Copy
 
-``` shiki
+```python
 {
   "type": "resource",
   "resource": {
@@ -248,7 +235,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#error-handling)
 
@@ -269,7 +255,7 @@ Example protocol error:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -284,7 +270,7 @@ Example tool execution error:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -300,7 +286,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#security-considerations)
 

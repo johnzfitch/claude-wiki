@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:31Z"
+fetched_at: "2026-03-17T02:04:07Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/server/utilities/completion"
 title: "Completion - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Completion - Model Context Protocol"
 
 The Model Context Protocol (MCP) provides a standardized way for servers to offer autocompletion suggestions for the arguments of prompts and resource templates. When users are filling in argument values for a specific prompt (identified by name) or resource template (identified by URI), servers can provide contextual suggestions.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -18,7 +17,6 @@ User Interaction Model
 
 Completion in MCP is designed to support interactive user experiences similar to IDE code completion. For example, applications may show completion suggestions in a dropdown or popup menu as users type, with the ability to filter and select from available options. However, implementations are free to expose completion through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-## 
 
 [​](#capabilities)
 
@@ -28,7 +26,7 @@ Servers that support completions **MUST** declare the `completions` capability:
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "completions": {}
@@ -36,13 +34,11 @@ Copy
 }
 ```
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#requesting-completions)
 
@@ -52,7 +48,7 @@ To get completion suggestions, clients send a `completion/complete` request spec
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -74,7 +70,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -92,7 +88,7 @@ For prompts or URI templates with multiple arguments, clients should include pre
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -119,7 +115,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -133,7 +129,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#reference-types)
 
@@ -146,7 +141,6 @@ The protocol supports two types of completion references:
 | `ref/prompt` | References a prompt by name | `{"type": "ref/prompt", "name": "code_review"}` |
 | `ref/resource` | References a resource URI | `{"type": "ref/resource", "uri": "file:///{path}"}` |
 
-### 
 
 [​](#completion-results)
 
@@ -158,19 +152,16 @@ Servers return an array of completion values ranked by relevance, with:
 - Optional total number of available matches
 - Boolean indicating if additional results exist
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#completerequest)
 
@@ -183,7 +174,6 @@ CompleteRequest
 - `context`: Object containing:
   - `arguments`: A mapping of already-resolved argument names to their values.
 
-### 
 
 [​](#completeresult)
 
@@ -194,7 +184,6 @@ CompleteResult
   - `total`: Optional total matches
   - `hasMore`: Additional results flag
 
-## 
 
 [​](#error-handling)
 
@@ -207,7 +196,6 @@ Servers **SHOULD** return standard JSON-RPC errors for common failure cases:
 - Missing required arguments: `-32602` (Invalid params)
 - Internal errors: `-32603` (Internal error)
 
-## 
 
 [​](#implementation-considerations)
 
@@ -223,7 +211,6 @@ Implementation Considerations
     - Cache completion results where appropriate
     - Handle missing or partial results gracefully
 
-## 
 
 [​](#security)
 

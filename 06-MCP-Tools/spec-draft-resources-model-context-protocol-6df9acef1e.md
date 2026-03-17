@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:30Z"
+fetched_at: "2026-03-17T02:04:06Z"
 source_url: "https://modelcontextprotocol.io/specification/draft/server/resources"
 title: "Resources - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Resources - Model Context Protocol"
 
 The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that provides context to language models, such as files, database schemas, or application-specific information. Each resource is uniquely identified by a [URI](https://datatracker.ietf.org/doc/html/rfc3986).
 
-## 
 
 [​](#user-interaction-model)
 
@@ -24,7 +23,6 @@ Resources in MCP are designed to be **application-driven**, with host applicatio
 
 However, implementations are free to expose resources through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-## 
 
 [​](#capabilities)
 
@@ -34,7 +32,7 @@ Servers that support resources **MUST** declare the `resources` capability:
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "resources": {
@@ -54,7 +52,7 @@ Both `subscribe` and `listChanged` are optional—servers can support neither, e
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "resources": {} // Neither feature supported
@@ -64,7 +62,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "resources": {
@@ -76,7 +74,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "resources": {
@@ -86,13 +84,11 @@ Copy
 }
 ```
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#listing-resources)
 
@@ -102,7 +98,7 @@ To discover available resources, clients send a `resources/list` request. This o
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -117,7 +113,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -143,7 +139,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#reading-resources)
 
@@ -153,7 +148,7 @@ To retrieve resource contents, clients send a `resources/read` request: **Reques
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -168,7 +163,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -186,7 +181,6 @@ Copy
 
 Alternatively, if the scheme of `uri` is `https://`, clients may fetch the resource directly from the web. See the [Common URI Schemes section](#https%3A%2F%2F) for more information.
 
-### 
 
 [​](#resource-templates)
 
@@ -196,7 +190,7 @@ Resource templates allow servers to expose parameterized resources using [URI te
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -211,7 +205,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -237,7 +231,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#list-changed-notification)
 
@@ -247,14 +240,13 @@ When the list of available resources changes, servers that declared the `listCha
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/resources/list_changed"
 }
 ```
 
-### 
 
 [​](#subscriptions)
 
@@ -264,7 +256,7 @@ The protocol supports optional subscriptions to resource changes. Clients can su
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 4,
@@ -279,7 +271,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/resources/updated",
@@ -289,19 +281,16 @@ Copy
 }
 ```
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#resource)
 
@@ -317,7 +306,6 @@ A resource definition includes:
 - `mimeType`: Optional MIME type
 - `size`: Optional size in bytes
 
-### 
 
 [​](#resource-contents)
 
@@ -325,7 +313,6 @@ Resource Contents
 
 Resources can contain either text or binary data:
 
-#### 
 
 [​](#text-content)
 
@@ -333,7 +320,7 @@ Text Content
 
 Copy
 
-``` shiki
+```python
 {
   "uri": "file:///example.txt",
   "mimeType": "text/plain",
@@ -341,7 +328,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#binary-content)
 
@@ -349,7 +335,7 @@ Binary Content
 
 Copy
 
-``` shiki
+```python
 {
   "uri": "file:///example.png",
   "mimeType": "image/png",
@@ -357,7 +343,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#annotations)
 
@@ -373,7 +358,7 @@ Example resource with annotations:
 
 Copy
 
-``` shiki
+```python
 {
   "uri": "file:///project/README.md",
   "name": "README.md",
@@ -393,7 +378,6 @@ Clients can use these annotations to:
 - Prioritize which resources to include in context
 - Display modification times or sort by recency
 
-## 
 
 [​](#common-uri-schemes)
 
@@ -401,7 +385,6 @@ Common URI Schemes
 
 The protocol defines several standard URI schemes. This list is not exhaustive—implementations are always free to use additional, custom URI schemes.
 
-### 
 
 [​](#https//)
 
@@ -409,7 +392,6 @@ https://
 
 Used to represent a resource available on the web. Servers **SHOULD** use this scheme only when the client is able to fetch and load the resource directly from the web on its own—that is, it doesn’t need to read the resource via the MCP server. For other use cases, servers **SHOULD** prefer to use another URI scheme, or define a custom one, even if the server will itself be downloading resource contents over the internet.
 
-### 
 
 [​](#file//)
 
@@ -417,7 +399,6 @@ file://
 
 Used to identify resources that behave like a filesystem. However, the resources do not need to map to an actual physical filesystem. MCP servers **MAY** identify file:// resources with an [XDG MIME type](https://specifications.freedesktop.org/shared-mime-info-spec/0.14/ar01s02.html#id-1.3.14), like `inode/directory`, to represent non-regular files (such as directories) that don’t otherwise have a standard MIME type.
 
-### 
 
 [​](#git//)
 
@@ -425,7 +406,6 @@ git://
 
 Git version control integration.
 
-### 
 
 [​](#custom-uri-schemes)
 
@@ -433,7 +413,6 @@ Custom URI Schemes
 
 Custom URI schemes **MUST** be in accordance with [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986), taking the above guidance in to account.
 
-## 
 
 [​](#error-handling)
 
@@ -448,7 +427,7 @@ Example error:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 5,
@@ -462,7 +441,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#security-considerations)
 

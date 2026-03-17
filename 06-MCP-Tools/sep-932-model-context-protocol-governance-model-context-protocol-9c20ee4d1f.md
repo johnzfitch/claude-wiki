@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:13Z"
+fetched_at: "2026-03-17T02:03:47Z"
 source_url: "https://modelcontextprotocol.io/seps/932-model-context-protocol-governance"
 title: "SEP-932: Model Context Protocol Governance - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalProcess
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP establishes the formal governance model for the Model Context Protocol (MCP) project. It defines the organizational structure, decision-making processes, and contribution guidelines necessary for transparent and effective project stewardship. The proposal introduces a hierarchical governance structure with clear roles and responsibilities, along with the Specification Enhancement Proposal (SEP) process for managing protocol changes.
 
-## 
 
 [​](#motivation)
 
@@ -54,7 +52,6 @@ Without formal governance, the project risks:
 - Reduced community trust and participation
 - Inability to effectively manage contributions at scale
 
-## 
 
 [​](#rationale)
 
@@ -62,7 +59,6 @@ Rationale
 
 The proposed governance model draws inspiration from successful open source projects like Python, PyTorch, and Rust. Key design decisions include:
 
-### 
 
 [​](#hierarchical-structure)
 
@@ -70,7 +66,6 @@ Hierarchical Structure
 
 We chose a hierarchical model (Contributors → Maintainers → Core Maintainers → Lead Maintainers) that is effectively how the project decisions are made today. From there we will continue to evolve governance in the best interest of the project.
 
-### 
 
 [​](#individual-vs-corporate-membership)
 
@@ -82,7 +77,6 @@ Membership is explicitly tied to individuals rather than companies to:
 - Prevent capture by any single organization
 - Maintain continuity when individuals change employers
 
-### 
 
 [​](#sep-process)
 
@@ -95,19 +89,16 @@ The Specification Enhancement Proposal process ensures:
 - Design decisions are documented for posterity
 - Implementation precedes finalization
 
-## 
 
 [​](#specification)
 
 Specification
 
-### 
 
 [​](#governance-structure)
 
 Governance Structure
 
-#### 
 
 [​](#contributors)
 
@@ -116,7 +107,6 @@ Contributors
 - Any individual who files issues, submits pull requests, or participates in discussions
 - No formal membership or approval required
 
-#### 
 
 [​](#maintainers)
 
@@ -127,7 +117,6 @@ Maintainers
 - Have write/admin access to their repositories
 - May establish component-specific processes
 
-#### 
 
 [​](#core-maintainers)
 
@@ -139,7 +128,6 @@ Core Maintainers
 - Can veto maintainer decisions by majority vote
 - Current members listed in governance documentation
 
-#### 
 
 [​](#lead-maintainers)
 
@@ -150,7 +138,6 @@ Lead Maintainers
 - Appoint/remove Core Maintainers
 - Admin access to all infrastructure
 
-## 
 
 [​](#backwards-compatibility)
 
@@ -158,7 +145,6 @@ Backwards Compatibility
 
 N/A
 
-## 
 
 [​](#reference-implementation)
 
@@ -170,7 +156,6 @@ See \#931
     - `/docs/community/governance.mdx` - Full governance documentation
     - `/docs/community/sep-guidelines.mdx` - SEP process guidelines
 
-## 
 
 [​](#security-implications)
 

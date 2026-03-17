@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:33:58Z"
+fetched_at: "2026-03-17T02:04:20Z"
 source_url: "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language"
 title: "How to use Claude in your preferred language | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "How to use Claude in your preferred language | Claude Help Center"
 4.  How to use Claude in your preferred language
 
 # How to use Claude in your preferred language
+
+Updated today
 
 
 Claude is available in multiple languages on web and desktop applications.

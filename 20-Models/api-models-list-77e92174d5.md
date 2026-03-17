@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:33Z"
+fetched_at: "2026-03-17T02:01:49Z"
 source_url: "https://platform.claude.com/docs/en/api/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -125,7 +125,7 @@ List Models
 
 cURL
 
-``` shiki
+```python
 curl https://api.anthropic.com/v1/models \
     -H 'anthropic-version: 2023-06-01' \
     -H "X-Api-Key: $ANTHROPIC_API_KEY"
@@ -133,7 +133,7 @@ curl https://api.anthropic.com/v1/models \
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {
@@ -153,7 +153,7 @@ Response 200
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {

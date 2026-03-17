@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:31Z"
+fetched_at: "2026-03-17T02:01:45Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/csharp"
 title: "C# SDK - Claude API Docs"
 ---
@@ -19,27 +19,24 @@ For API feature documentation with code examples, see the [API reference](/docs/
 
 As of version 10+, the `Anthropic` package is now the official Anthropic SDK for C#. Package versions 3.X and below were previously used for the tryAGI community-built SDK, which has moved to [`tryAGI.Anthropic`](https://www.nuget.org/packages/tryagi.Anthropic/). If you need to continue using the former client in your project, update your package reference to `tryAGI.Anthropic`.
 
-## 
 
 Installation
 
 Install the package from [NuGet](https://www.nuget.org/packages/Anthropic):
 
-``` shiki
+```python
 dotnet add package Anthropic
 ```
 
-## 
 
 Requirements
 
 This library requires .NET Standard 2.0 or later.
 
-## 
 
 Usage
 
-``` shiki
+```python
 using System;
 using Anthropic;
 using Anthropic.Models.Messages;
@@ -65,13 +62,12 @@ var message = await client.Messages.Create(parameters);
 Console.WriteLine(message);
 ```
 
-## 
 
 Client configuration
 
 Configure the client using environment variables:
 
-``` shiki
+```python
 using Anthropic;
 
 // Configured using the ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN and ANTHROPIC_BASE_URL environment variables
@@ -80,7 +76,7 @@ AnthropicClient client = new();
 
 Or manually:
 
-``` shiki
+```python
 using Anthropic;
 
 AnthropicClient client = new() { ApiKey = "my-anthropic-api-key" };
@@ -96,13 +92,12 @@ See this table for the available options:
 | `AuthToken` | `ANTHROPIC_AUTH_TOKEN` | false    | \-                            |
 | `BaseUrl`   | `ANTHROPIC_BASE_URL`   | true     | `"https://api.anthropic.com"` |
 
-### 
 
 Modifying configuration
 
 To temporarily use a modified client configuration, while reusing the same connection and thread pools, call `WithOptions` on any client or service:
 
-``` shiki
+```python
 using System;
 
 var message = await client
@@ -122,7 +117,6 @@ Using a [`with` expression](https://learn.microsoft.com/en-us/dotnet/csharp/lang
 
 The `WithOptions` method does not affect the original client or service.
 
-## 
 
 Streaming
 
@@ -132,7 +126,7 @@ A streaming method always has a `Streaming` suffix in its name, even if it doesn
 
 These streaming methods return [`IAsyncEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iasyncenumerable-1):
 
-``` shiki
+```python
 using System;
 using Anthropic.Models.Messages;
 
@@ -156,7 +150,6 @@ await foreach (var message in client.Messages.CreateStreaming(parameters))
 }
 ```
 
-## 
 
 Error handling
 
@@ -185,7 +178,6 @@ Additionally, all 4xx errors inherit from `Anthropic4xxException`.
 
 - `AnthropicException`: Base class for all exceptions.
 
-## 
 
 Retries
 
@@ -203,7 +195,7 @@ The API may also explicitly instruct the SDK to retry or not retry a request.
 
 To set a custom number of retries, configure the client using the `MaxRetries` property:
 
-``` shiki
+```python
 using Anthropic;
 
 AnthropicClient client = new() { MaxRetries = 3 };
@@ -211,7 +203,7 @@ AnthropicClient client = new() { MaxRetries = 3 };
 
 Or configure a single method call using `WithOptions`:
 
-``` shiki
+```python
 using System;
 
 var message = await client
@@ -223,7 +215,6 @@ var message = await client
 Console.WriteLine(message);
 ```
 
-## 
 
 Timeouts
 
@@ -231,7 +222,7 @@ Requests time out after 10 minutes by default.
 
 To set a custom timeout, configure the client using the `Timeout` option:
 
-``` shiki
+```python
 using System;
 using Anthropic;
 
@@ -240,7 +231,7 @@ AnthropicClient client = new() { Timeout = TimeSpan.FromSeconds(42) };
 
 Or configure a single method call using `WithOptions`:
 
-``` shiki
+```python
 using System;
 
 var message = await client
@@ -252,19 +243,17 @@ var message = await client
 Console.WriteLine(message);
 ```
 
-## 
 
 Pagination
 
 The SDK defines methods that return paginated lists of results. It provides convenient ways to access the results either one page at a time or item-by-item across all pages.
 
-### 
 
 Auto-pagination
 
 To iterate through all results across all pages, use the `Paginate` method, which automatically fetches more pages as needed. The method returns an [`IAsyncEnumerable`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iasyncenumerable-1):
 
-``` shiki
+```python
 using System;
 
 var page = await client.Messages.Batches.List(parameters);
@@ -274,13 +263,12 @@ await foreach (var item in page.Paginate())
 }
 ```
 
-### 
 
 Manual pagination
 
 To access individual page items and manually request the next page, use the `Items` property, and `HasNext` and `Next` methods:
 
-``` shiki
+```python
 var page = await client.Messages.Batches.List();
 while (true)
 {
@@ -296,7 +284,6 @@ while (true)
 }
 ```
 
-## 
 
 Response validation
 
@@ -304,14 +291,14 @@ In rare cases, the API may return a response that doesn't match the expected typ
 
 If you would prefer to check that the response is completely well-typed upfront, then either call `Validate`:
 
-``` shiki
+```python
 var message = await client.Messages.Create(parameters);
 message.Validate();
 ```
 
 Or configure the client using the `ResponseValidation` option:
 
-``` shiki
+```python
 using Anthropic;
 
 AnthropicClient client = new() { ResponseValidation = true };
@@ -319,7 +306,7 @@ AnthropicClient client = new() { ResponseValidation = true };
 
 Or configure a single method call using `WithOptions`:
 
-``` shiki
+```python
 using System;
 
 var message = await client
@@ -331,13 +318,12 @@ var message = await client
 Console.WriteLine(message);
 ```
 
-## 
 
 IChatClient integration
 
 The SDK provides an implementation of the `IChatClient` interface from the `Microsoft.Extensions.AI.Abstractions` library. This enables `AnthropicClient` (and `Anthropic.Services.IBetaService`) to be used with other libraries that integrate with these core abstractions. For example, tools in the MCP C# SDK (`ModelContextProtocol`) library can be used directly with an `AnthropicClient` exposed via `IChatClient`.
 
-``` shiki
+```python
 using Anthropic;
 using Microsoft.Extensions.AI;
 using ModelContextProtocol.Client;
@@ -357,7 +343,6 @@ ChatOptions options = new() { Tools = [.. await learningServer.ListToolsAsync()]
 Console.WriteLine(await chatClient.GetResponseAsync("Tell me about IChatClient", options));
 ```
 
-## 
 
 Requests and responses
 
@@ -365,11 +350,9 @@ To send a request to the Claude API, build an instance of a `Params` class and p
 
 For example, `client.Messages.Create` should be called with an instance of `MessageCreateParams`, and it will return an instance of `Task<Message>`.
 
-## 
 
 Advanced usage
 
-### 
 
 Binary responses
 
@@ -377,7 +360,7 @@ The SDK defines methods that return binary responses, which are used for API res
 
 These methods return `HttpResponse`:
 
-``` shiki
+```python
 using System;
 using Anthropic.Models.Beta.Files;
 
@@ -390,7 +373,7 @@ Console.WriteLine(response);
 
 To save the response content to a file, or any [`Stream`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream), use the [`CopyToAsync`](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream.copytoasync) method:
 
-``` shiki
+```python
 using System.IO;
 
 using var response = await client.Beta.Files.Download(parameters);
@@ -399,13 +382,12 @@ using var fileStream = File.Open(path, FileMode.OpenOrCreate);
 await contentStream.CopyToAsync(fileStream); // Or any other Stream
 ```
 
-### 
 
 Raw responses
 
 The SDK defines methods that deserialize responses into instances of C# classes. To access response headers, status code, or the raw response body, prefix any HTTP method call on a client or service with `WithRawResponse`:
 
-``` shiki
+```python
 var response = await client.WithRawResponse.Messages.Create(parameters);
 var statusCode = response.StatusCode;
 var headers = response.Headers;
@@ -415,7 +397,7 @@ The raw `HttpResponseMessage` can also be accessed through the `RawMessage` prop
 
 For non-streaming responses, you can deserialize the response into an instance of a C# class if needed:
 
-``` shiki
+```python
 using System;
 using Anthropic.Models.Messages;
 
@@ -426,7 +408,7 @@ Console.WriteLine(deserialized);
 
 For streaming responses, you can deserialize the response to an `IAsyncEnumerable` if needed:
 
-``` shiki
+```python
 using System;
 
 var response = await client.WithRawResponse.Messages.CreateStreaming(parameters);
@@ -436,7 +418,6 @@ await foreach (var item in response.Enumerate())
 }
 ```
 
-### 
 
 Logging
 
@@ -444,17 +425,15 @@ All log messages are intended for debugging only. The format and content of log 
 
 Enable debug logging via environment variable:
 
-``` shiki
+```python
 export ANTHROPIC_LOG=debug
 ```
 
-### 
 
 Undocumented API functionality
 
 The SDK is typed for convenient usage of the documented API. However, it also supports working with undocumented or not yet supported parts of the API.
 
-## 
 
 Platform integrations
 
@@ -468,7 +447,6 @@ The C# SDK supports Bedrock and Foundry through separate NuGet packages:
 - **Bedrock:** `Anthropic.Bedrock`. Uses `AnthropicBedrockClient` with `AnthropicBedrockCredentialsHelper.FromEnv()` or explicit credentials.
 - **Foundry:** `Anthropic.Foundry`. Uses `AnthropicFoundryClient` with `DefaultAnthropicFoundryCredentials.FromEnv()` or explicit credentials.
 
-## 
 
 Semantic versioning
 
@@ -481,7 +459,6 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 Backwards-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
 
-## 
 
 Additional resources
 

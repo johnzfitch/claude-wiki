@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:19Z"
+fetched_at: "2026-03-17T02:03:54Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/changelog"
 title: "Key Changes - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Key Changes - Model Context Protocol"
 
 This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2025-03-26](/specification/2025-03-26).
 
-## 
 
 [​](#major-changes)
 
@@ -26,7 +25,6 @@ Major changes
 8.  Require [negotiated protocol version to be specified](/specification/2025-06-18/basic/transports#protocol-version-header) via `MCP-Protocol-Version` header in subsequent requests when using HTTP (PR [\#548](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/548)).
 9.  Change **SHOULD** to **MUST** in [Lifecycle Operation](/specification/2025-06-18/basic/lifecycle#operation)
 
-## 
 
 [​](#other-schema-changes)
 
@@ -36,7 +34,6 @@ Other schema changes
 2.  Add `context` field to `CompletionRequest`, providing for completion requests to include previously-resolved variables (PR [\#598](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/598)).
 3.  Add `title` field for human-friendly display names, so that `name` can be used as a programmatic identifier (PR [\#663](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/663))
 
-## 
 
 [​](#full-changelog)
 

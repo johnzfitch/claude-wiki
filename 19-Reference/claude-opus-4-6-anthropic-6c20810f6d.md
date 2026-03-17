@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-12T08:18:31Z"
+fetched_at: "2026-03-17T02:03:18Z"
 source_url: "https://www.anthropic.com/news/claude-opus-4-6"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---
@@ -31,7 +31,7 @@ In [Claude Code](https://claude.com/product/claude-code), you can now assemble [
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
-Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.b725c14b-347a-4173-89d1-6dc236ff7274), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
+Claude Opus 4.6 is available today on [claude.ai](https://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06), our API, and all major cloud platforms. If you’re a developer, use `claude-opus-4-6` via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview). Pricing remains the same at \$5/\$25 per million tokens; for full details, see our [pricing page](https://claude.com/pricing#api).
 
 We cover the model, our new product updates, our evaluations, and our extensive safety testing in depth below.
 
@@ -229,6 +229,12 @@ Claude now also works better with the office tools you already use. Claude in Ex
 
 ## Related content
 
+### Anthropic invests \$100 million into the Claude Partner Network
+
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
+
+[Read more](/news/claude-partner-network)
+
 ### Introducing The Anthropic Institute
 
 We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
@@ -238,7 +244,3 @@ We’re launching The Anthropic Institute, a new effort to confront the most sig
 ### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
 [Read more](/news/sydney-fourth-office-asia-pacific)
-
-### Partnering with Mozilla to improve Firefox’s security
-
-[Read more](/news/mozilla-firefox-security)

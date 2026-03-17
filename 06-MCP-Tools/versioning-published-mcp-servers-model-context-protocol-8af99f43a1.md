@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:09Z"
+fetched_at: "2026-03-17T02:03:44Z"
 source_url: "https://modelcontextprotocol.io/registry/versioning"
 title: "Versioning Published MCP Servers - Model Context Protocol"
 ---
@@ -16,7 +16,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.username/email-integration-mcp",
@@ -38,7 +38,6 @@ Copy
 
 The version string **MUST** be unique for each publication of the server. Once published, the version string (and other metadata) cannot be changed.
 
-## 
 
 [​](#version-format)
 
@@ -72,13 +71,11 @@ As an error prevention mechanism, the MCP Registry prohibits version strings tha
 | `1 - 2`        | version range       | Prohibited                     |
 | `1.2 || 1.3`   | version range       | Prohibited                     |
 
-## 
 
 [​](#best-practices)
 
 Best Practices
 
-### 
 
 [​](#use-semantic-versioning)
 
@@ -86,7 +83,6 @@ Use Semantic Versioning
 
 Use [semantic versioning](https://semver.org/) for version strings.
 
-### 
 
 [​](#align-server-version-with-package-version)
 
@@ -98,7 +94,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "version": "1.2.3",
   "packages": [
@@ -120,7 +116,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "version": "1.3.0",
   "packages": [
@@ -144,7 +140,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#align-server-version-with-remote-api-version)
 
@@ -156,7 +151,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "version": "2.1.0",
   "remotes": [
@@ -168,7 +163,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#use-prerelease-versions-for-registry-only-updates)
 
@@ -180,7 +174,7 @@ server.json
 
 Copy
 
-``` shiki
+```python
 {
   "version": "1.2.3-1",
   "packages": [
@@ -198,7 +192,6 @@ Copy
 
 According to semantic versioning, prerelease versions such as `1.2.3-1` are sorted before regular semantic versions such as `1.2.3`. Therefore, if you publish a prerelease version *after* its corresponding regular version, the prerelease version will **not** be marked as “latest”.
 
-## 
 
 [​](#aggregator-recommendations)
 

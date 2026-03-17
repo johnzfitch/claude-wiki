@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:23Z"
+fetched_at: "2026-03-17T02:01:28Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/migration-guide"
 title: "Migrate to Claude Agent SDK - Claude API Docs"
 ---
@@ -11,13 +11,10 @@ title: "Migrate to Claude Agent SDK - Claude API Docs"
 Guide for migrating the Claude Code TypeScript and Python SDKs to the Claude Agent SDK
 
 
-## 
-
 Overview
 
 The Claude Code SDK has been renamed to the **Claude Agent SDK** and its documentation has been reorganized. This change reflects the SDK's broader capabilities for building AI agents beyond just coding tasks.
 
-## 
 
 What's Changed
 
@@ -29,23 +26,21 @@ What's Changed
 
 **Documentation Changes:** The Agent SDK documentation has moved from the Claude Code docs to the API Guide under a dedicated [Agent SDK](/docs/en/agent-sdk/overview) section. The Claude Code docs now focus on the CLI tool and automation features.
 
-## 
 
 Migration Steps
 
-### 
 
 For TypeScript/JavaScript Projects
 
 **1. Uninstall the old package:**
 
-``` shiki
+```python
 npm uninstall @anthropic-ai/claude-code
 ```
 
 **2. Install the new package:**
 
-``` shiki
+```python
 npm install @anthropic-ai/claude-agent-sdk
 ```
 
@@ -53,7 +48,7 @@ npm install @anthropic-ai/claude-agent-sdk
 
 Change all imports from `@anthropic-ai/claude-code` to `@anthropic-ai/claude-agent-sdk`:
 
-``` shiki
+```python
 // Before
 import { query, tool, createSdkMcpServer } from "@anthropic-ai/claude-code";
 
@@ -67,7 +62,7 @@ If you have the package listed in your `package.json`, update it:
 
 Before:
 
-``` shiki
+```python
 {
   "dependencies": {
     "@anthropic-ai/claude-code": "^0.0.42"
@@ -77,7 +72,7 @@ Before:
 
 After:
 
-``` shiki
+```python
 {
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.2.0"
@@ -87,19 +82,18 @@ After:
 
 That's it! No other code changes are required.
 
-### 
 
 For Python Projects
 
 **1. Uninstall the old package:**
 
-``` shiki
+```python
 pip uninstall claude-code-sdk
 ```
 
 **2. Install the new package:**
 
-``` shiki
+```python
 pip install claude-agent-sdk
 ```
 
@@ -107,7 +101,7 @@ pip install claude-agent-sdk
 
 Change all imports from `claude_code_sdk` to `claude_agent_sdk`:
 
-``` shiki
+```python
 # Before
 from claude_code_sdk import query, ClaudeCodeOptions
 
@@ -119,7 +113,7 @@ from claude_agent_sdk import query, ClaudeAgentOptions
 
 Change `ClaudeCodeOptions` to `ClaudeAgentOptions`:
 
-``` shiki
+```python
 # Before
 from claude_code_sdk import query, ClaudeCodeOptions
 
@@ -135,13 +129,11 @@ options = ClaudeAgentOptions(model="claude-opus-4-6")
 
 Make any code changes needed to complete the migration.
 
-## 
 
 Breaking changes
 
 To improve isolation and explicit configuration, Claude Agent SDK v0.1.0 introduces breaking changes for users migrating from Claude Code SDK. Review this section carefully before migrating.
 
-### 
 
 Python: ClaudeCodeOptions renamed to ClaudeAgentOptions
 
@@ -149,7 +141,7 @@ Python: ClaudeCodeOptions renamed to ClaudeAgentOptions
 
 **Migration:**
 
-``` shiki
+```python
 # BEFORE (claude-code-sdk)
 from claude_code_sdk import query, ClaudeCodeOptions
 
@@ -163,7 +155,6 @@ options = ClaudeAgentOptions(model="claude-opus-4-6", permission_mode="acceptEdi
 
 **Why this changed:** The type name now matches the "Claude Agent SDK" branding and provides consistency across the SDK's naming conventions.
 
-### 
 
 System prompt no longer default
 
@@ -173,7 +164,7 @@ System prompt no longer default
 
 TypeScript
 
-``` shiki
+```python
 // BEFORE (v0.0.x) - Used Claude Code's system prompt by default
 const result = query({ prompt: "Hello" });
 
@@ -197,7 +188,6 @@ const result = query({
 
 **Why this changed:** Provides better control and isolation for SDK applications. You can now build agents with custom behavior without inheriting Claude Code's CLI-focused instructions.
 
-### 
 
 Settings Sources No Longer Loaded by Default
 
@@ -207,7 +197,7 @@ Settings Sources No Longer Loaded by Default
 
 TypeScript
 
-``` shiki
+```python
 // BEFORE (v0.0.x) - Loaded all settings automatically
 const result = query({ prompt: "Hello" });
 // Would read from:
@@ -244,7 +234,6 @@ const result = query({
 
 **Backward compatibility:** If your application relied on filesystem settings (custom slash commands, CLAUDE.md instructions, etc.), add `settingSources: ['user', 'project', 'local']` to your options.
 
-## 
 
 Why the Rename?
 
@@ -254,7 +243,6 @@ The Claude Code SDK was originally designed for coding tasks, but it has evolved
 - Creating specialized coding agents (SRE bots, security reviewers, code review agents)
 - Developing custom agents for any domain with tool use, MCP integration, and more
 
-## 
 
 Getting Help
 
@@ -272,7 +260,6 @@ If you encounter any issues during migration:
 2.  Verify your requirements.txt or pyproject.toml has the new package name
 3.  Run `pip install claude-agent-sdk` to ensure the package is installed
 
-## 
 
 Next Steps
 

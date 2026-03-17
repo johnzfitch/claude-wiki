@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-08T23:10:02Z"
+fetched_at: "2026-03-17T02:03:16Z"
 source_url: "https://www.anthropic.com/news/build-ai-in-america"
 title: "Build AI in America: Anthropic Energy Report \\ Anthropic"
 ---
+
 # Build AI in America
 
 Jul 21, 2025
@@ -48,25 +49,27 @@ We propose two strategic pillars that will address the full spectrum of infrastr
 
 America has the economic strength, technical prowess, and innovative spirit to meet AI's infrastructure challenges. Our recommendations offer a practical blueprint that uses existing federal authorities while cutting through regulatory barriers that have held back energy development for too long.
 
-By partnering across government, industry, and communities, we can build the foundation for decades of American leadership in AI.  
+By partnering across government, industry, and communities, we can build the foundation for decades of American leadership in AI.\
 
 Read the full [report](https://www-cdn.anthropic.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf).
 
-  
+\
+
+
 ## Related content
 
-### Introducing Claude Opus 4.6
+### Anthropic invests \$100 million into the Claude Partner Network
 
-We’re upgrading our smartest model. Across agentic coding, computer use, tool use, search, and finance, Opus 4.6 is an industry-leading model, often by wide margin.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-opus-4-6)
+[Read more](/news/claude-partner-network)
 
-### Claude is a space to think
+### Introducing The Anthropic Institute
 
-We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a genuinely helpful AI assistant, and how we plan to expand access without compromising user trust.
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-[Read more](/news/claude-is-a-space-to-think)
+[Read more](/news/the-anthropic-institute)
 
-### Apple’s Xcode now supports the Claude Agent SDK
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/apple-xcode-claude-agent-sdk)
+[Read more](/news/sydney-fourth-office-asia-pacific)

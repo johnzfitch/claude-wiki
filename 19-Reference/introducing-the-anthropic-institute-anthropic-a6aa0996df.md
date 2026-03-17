@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-12T08:18:31Z"
+fetched_at: "2026-03-17T02:03:26Z"
 source_url: "https://www.anthropic.com/news/the-anthropic-institute"
 title: "Introducing The Anthropic Institute \\ Anthropic"
 ---
@@ -42,6 +42,12 @@ We're growing our Public Policy team to help inform and shape AI governance arou
 
 ## Related content
 
+### Anthropic invests \$100 million into the Claude Partner Network
+
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
+
+[Read more](/news/claude-partner-network)
+
 ### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
 [Read more](/news/sydney-fourth-office-asia-pacific)
@@ -49,9 +55,3 @@ We're growing our Public Policy team to help inform and shape AI governance arou
 ### Partnering with Mozilla to improve Firefox’s security
 
 [Read more](/news/mozilla-firefox-security)
-
-### Where things stand with the Department of War
-
-A statement from Dario Amodei.
-
-[Read more](/news/where-stand-department-war)

@@ -1,14 +1,15 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-22T10:50:57Z"
+fetched_at: "2026-03-17T02:03:16Z"
 source_url: "https://www.anthropic.com/news/bengaluru-office-partnerships-across-india"
 title: "Anthropic opens Bengaluru office and announces new partnerships across India \\ Anthropic"
 ---
+
 # Anthropic opens Bengaluru office and announces new partnerships across India
 
 Feb 16, 2026
 
-India is the second-largest market for [Claude.ai](http://claude.ai/redirect/website.v1.30b21a27-49fe-42d2-a076-cdc59651fa1c), home to a developer community doing some of the most technically intense AI work we see anywhere. [Nearly half of Claude usage](https://www.anthropic.com/research/india-brief-economic-index) in India comprises computer and mathematical tasks: building applications, modernizing systems, and shipping production software.
+India is the second-largest market for [Claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06), home to a developer community doing some of the most technically intense AI work we see anywhere. [Nearly half of Claude usage](https://www.anthropic.com/research/india-brief-economic-index) in India comprises computer and mathematical tasks: building applications, modernizing systems, and shipping production software.
 
 Today, as we officially open our Bengaluru office, we’re announcing partnerships across enterprise, education, and agriculture that deepen our commitment to India across a range of sectors.
 
@@ -59,18 +60,18 @@ For information about career opportunities at our Bengaluru office, visit our [c
 
 ## Related content
 
-### Making frontier cybersecurity capabilities available to defenders
+### Anthropic invests \$100 million into the Claude Partner Network
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/claude-code-security)
+[Read more](/news/claude-partner-network)
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+### Introducing The Anthropic Institute
 
-[Read more](/news/anthropic-rwanda-mou)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Introducing Claude Sonnet 4.6
+[Read more](/news/the-anthropic-institute)
 
-Sonnet 4.6 delivers frontier performance across coding, agents, and professional work at scale.
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/claude-sonnet-4-6)
+[Read more](/news/sydney-fourth-office-asia-pacific)

@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference/Guides"
-fetched_at: "2026-03-15T12:17:21Z"
+fetched_at: "2026-03-17T02:04:36Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/text-generation"
 title: "Text generation - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ Prompts are best written as natural language queries as if you are instructing s
 
 ------------------------------------------------------------------------
 
-## 
 
 Text capabilities and use cases
 
@@ -34,7 +33,6 @@ Claude has a broad range of text-based capabilities, including but not limited t
 
 ------------------------------------------------------------------------
 
-## 
 
 Claude Cookbook
 
@@ -55,19 +53,16 @@ Embeddings with VoyageAI
 
 Explore how to create and use embeddings with VoyageAI for advanced text similarity and search tasks.
 
-## 
 
 More Resources
 
 From crafting the perfect prompt to understanding API details, these resources can help.
 
-[](/docs/en/build-with-claude/prompt-engineering/overview)
 
 Prompt Engineering Guide
 
 Master the art of prompt crafting to get the most out of Claude.
 
-[](/docs/en/api/overview)
 
 API Documentation
 

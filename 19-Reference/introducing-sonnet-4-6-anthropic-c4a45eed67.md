@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-12T08:18:31Z"
+fetched_at: "2026-03-17T02:03:19Z"
 source_url: "https://www.anthropic.com/news/claude-sonnet-4-6"
 title: "Introducing Sonnet 4.6 \\ Anthropic"
 ---
@@ -11,7 +11,7 @@ Feb 17, 2026
 
 *Claude Sonnet 4.6 is our most capable Sonnet model yet*. It’s a full upgrade of the model’s skills across coding, computer use, long-context reasoning, agent planning, knowledge work, and design. Sonnet 4.6 also features a 1M token context window in beta.
 
-For those on our [Free and Pro plans](https://claude.com/pricing), Claude Sonnet 4.6 is now the default model in [claude.ai](https://claude.ai/redirect/website.v1.3ea35f6e-7bd3-4045-b26e-10e669876a23) and [Claude Cowork](https://claude.com/product/cowork). [Pricing](https://claude.com/pricing#api) remains the same as Sonnet 4.5, starting at \$3/\$15 per million tokens.
+For those on our [Free and Pro plans](https://claude.com/pricing), Claude Sonnet 4.6 is now the default model in [claude.ai](https://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) and [Claude Cowork](https://claude.com/product/cowork). [Pricing](https://claude.com/pricing#api) remains the same as Sonnet 4.5, starting at \$3/\$15 per million tokens.
 
 Sonnet 4.6 brings much-improved coding skills to more of our users. Improvements in consistency, instruction following, and more have made developers with early access prefer Sonnet 4.6 to its predecessor by a wide margin. They often even prefer it to our smartest model from November 2025, Claude Opus 4.5.
 
@@ -154,6 +154,12 @@ If you’re a developer, you can get started quickly by using `claude-sonnet-4-6
 
 ## Related content
 
+### Anthropic invests \$100 million into the Claude Partner Network
+
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
+
+[Read more](/news/claude-partner-network)
+
 ### Introducing The Anthropic Institute
 
 We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
@@ -163,7 +169,3 @@ We’re launching The Anthropic Institute, a new effort to confront the most sig
 ### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
 [Read more](/news/sydney-fourth-office-asia-pacific)
-
-### Partnering with Mozilla to improve Firefox’s security
-
-[Read more](/news/mozilla-firefox-security)

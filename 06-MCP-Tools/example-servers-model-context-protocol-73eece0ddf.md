@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:20Z"
+fetched_at: "2026-03-17T02:03:41Z"
 source_url: "https://modelcontextprotocol.io/examples"
 title: "Example Servers - Model Context Protocol"
 ---
+
 # Example Servers
 
 
@@ -12,7 +13,6 @@ A list of example servers and implementations
 
 This page showcases various Model Context Protocol (MCP) servers that demonstrate the protocol’s capabilities and versatility. These servers enable Large Language Models (LLMs) to securely access tools and data sources.
 
-## 
 
 [​](#reference-implementations)
 
@@ -20,7 +20,6 @@ Reference implementations
 
 These official reference servers demonstrate core MCP features and SDK usage:
 
-### 
 
 [​](#current-reference-servers)
 
@@ -34,7 +33,6 @@ Current reference servers
 - **[Sequential Thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking)** - Dynamic and reflective problem-solving through thought sequences
 - **[Time](https://github.com/modelcontextprotocol/servers/tree/main/src/time)** - Time and timezone conversion capabilities
 
-### 
 
 [​](#additional-example-servers-archived)
 
@@ -42,7 +40,6 @@ Additional example servers (archived)
 
 Visit the [servers-archived repository](https://github.com/modelcontextprotocol/servers-archived) to get access to archived example servers that are no longer actively maintained. They are provided for historical reference only.
 
-## 
 
 [​](#official-integrations)
 
@@ -50,7 +47,6 @@ Official integrations
 
 Visit the [MCP Servers Repository (Official Integrations section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#%EF%B8%8F-official-integrations) for a list of MCP servers maintained by companies for their platforms.
 
-## 
 
 [​](#community-implementations)
 
@@ -58,13 +54,11 @@ Community implementations
 
 Visit the [MCP Servers Repository (Community section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) for a list of MCP servers maintained by community members.
 
-## 
 
 [​](#getting-started)
 
 Getting started
 
-### 
 
 [​](#using-reference-servers)
 
@@ -74,7 +68,7 @@ TypeScript-based servers can be used directly with `npx`:
 
 Copy
 
-``` shiki
+```python
 npx -y @modelcontextprotocol/server-memory
 ```
 
@@ -82,7 +76,7 @@ Python-based servers can be used with `uvx` (recommended) or `pip`:
 
 Copy
 
-``` shiki
+```python
 # Using uvx
 uvx mcp-server-git
 
@@ -91,7 +85,6 @@ pip install mcp-server-git
 python -m mcp_server_git
 ```
 
-### 
 
 [​](#configuring-with-claude)
 
@@ -101,7 +94,7 @@ To use an MCP server with Claude, add it to your configuration:
 
 Copy
 
-``` shiki
+```python
 {
   "mcpServers": {
     "memory": {
@@ -127,7 +120,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#additional-resources)
 

@@ -1,11 +1,13 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-16T05:33:55Z"
+fetched_at: "2026-03-17T02:04:12Z"
 source_url: "https://support.claude.com/en/articles/13851150-install-financial-services-plugins-for-cowork"
 title: "Install financial services plugins for Cowork | Claude Help Center"
 ---
 
 # Install financial services plugins for Cowork
+
+Updated today
 
 
 We offer a set of open-source plugins that extend Cowork with specialized capabilities for financial services workflows, including financial modeling, equity research, investment banking, private equity, and wealth management.

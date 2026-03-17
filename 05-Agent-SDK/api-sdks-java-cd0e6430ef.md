@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:29Z"
+fetched_at: "2026-03-17T02:01:41Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/java"
 title: "Java SDK - Claude API Docs"
 ---
@@ -15,7 +15,6 @@ The Anthropic Java SDK provides convenient access to the Anthropic REST API from
 
 For API feature documentation with code examples, see the [API reference](/docs/en/api/overview). This page covers Java-specific SDK features and configuration.
 
-## 
 
 Installation
 
@@ -27,21 +26,19 @@ Maven
 
 Maven
 
-``` shiki
+```python
 implementation("com.anthropic:anthropic-java:2.15.0")
 ```
 
-## 
 
 Requirements
 
 This library requires Java 8 or later.
 
-## 
 
 Quick start
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import com.anthropic.models.messages.Message;
@@ -61,17 +58,15 @@ MessageCreateParams params = MessageCreateParams.builder()
 Message message = client.messages().create(params);
 ```
 
-## 
 
 Client configuration
 
-### 
 
 API key setup
 
 Configure the client using system properties or environment variables:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
@@ -82,7 +77,7 @@ AnthropicClient client = AnthropicOkHttpClient.fromEnv();
 
 Or configure manually:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
@@ -93,7 +88,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 Or use a combination of both approaches:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
@@ -104,7 +99,6 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
   .build();
 ```
 
-### 
 
 Configuration options
 
@@ -118,13 +112,12 @@ System properties take precedence over environment variables.
 
 Don't create more than one client in the same application. Each client has a connection pool and thread pools, which are more efficient to share between requests.
 
-### 
 
 Modifying configuration
 
 To temporarily use a modified client configuration while reusing the same connection and thread pools, call `withOptions()` on any client or service:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 
 AnthropicClient clientWithOptions = client.withOptions(optionsBuilder -> {
@@ -135,13 +128,12 @@ AnthropicClient clientWithOptions = client.withOptions(optionsBuilder -> {
 
 The `withOptions()` method does not affect the original client or service.
 
-## 
 
 Async usage
 
 The default client is synchronous. To switch to asynchronous execution, call the `async()` method:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import com.anthropic.models.messages.Message;
@@ -162,7 +154,7 @@ CompletableFuture<Message> message = client.async().messages().create(params);
 
 Or create an asynchronous client from the beginning:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClientAsync;
 import com.anthropic.client.okhttp.AnthropicOkHttpClientAsync;
 import com.anthropic.models.messages.Message;
@@ -183,19 +175,17 @@ CompletableFuture<Message> message = client.messages().create(params);
 
 The asynchronous client supports the same options as the synchronous one, except most methods return `CompletableFuture`s.
 
-## 
 
 Streaming
 
 The SDK defines methods that return response "chunk" streams, where each chunk can be individually processed as soon as it arrives instead of waiting on the full response.
 
-### 
 
 Synchronous streaming
 
 These streaming methods return `StreamResponse` for synchronous clients:
 
-``` shiki
+```python
 import com.anthropic.core.http.StreamResponse;
 import com.anthropic.models.messages.RawMessageStreamEvent;
 
@@ -207,13 +197,12 @@ try (StreamResponse<RawMessageStreamEvent> streamResponse = client.messages().cr
 }
 ```
 
-### 
 
 Asynchronous streaming
 
 For asynchronous clients, the method returns `AsyncStreamResponse`:
 
-``` shiki
+```python
 import com.anthropic.core.http.AsyncStreamResponse;
 import com.anthropic.models.messages.RawMessageStreamEvent;
 import java.util.Optional;
@@ -258,7 +247,7 @@ client.async().messages().createStreaming(params)
 
 Async streaming uses a dedicated per-client cached thread pool `Executor` to stream without blocking the current thread. To use a different `Executor`:
 
-``` shiki
+```python
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -270,7 +259,7 @@ client.async().messages().createStreaming(params).subscribe(
 
 Or configure the client globally using the `streamHandlerExecutor` method:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import java.util.concurrent.Executors;
@@ -281,7 +270,6 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
   .build();
 ```
 
-### 
 
 Streaming with message accumulator
 
@@ -289,7 +277,7 @@ A `MessageAccumulator` can record the stream of events in the response as they a
 
 For a synchronous response, add a `Stream.peek()` call to the stream pipeline to accumulate each event:
 
-``` shiki
+```python
 import com.anthropic.core.http.StreamResponse;
 import com.anthropic.helpers.MessageAccumulator;
 import com.anthropic.models.messages.Message;
@@ -311,7 +299,7 @@ Message message = messageAccumulator.message();
 
 For an asynchronous response, add the `MessageAccumulator` to the `subscribe()` call:
 
-``` shiki
+```python
 import com.anthropic.helpers.MessageAccumulator;
 import com.anthropic.models.messages.Message;
 
@@ -330,13 +318,11 @@ Message message = messageAccumulator.message();
 
 A `BetaMessageAccumulator` is also available for the accumulation of a `BetaMessage` object. It is used in the same manner as the `MessageAccumulator`.
 
-## 
 
 Structured outputs
 
 For complete structured outputs documentation including Java examples, see [Structured Outputs](/docs/en/build-with-claude/structured-outputs).
 
-## 
 
 Tool use
 
@@ -346,11 +332,10 @@ The tool use feature supports a "strict" mode (beta) that guarantees that the JS
 
 The SDK can derive a tool and its parameters automatically from the structure of an arbitrary Java class: the class's name (converted to snake case) provides the tool name, and the class's fields define the tool's parameters.
 
-### 
 
 Defining tools with annotations
 
-``` shiki
+```python
 import com.fasterxml.jackson.annotation.JsonClassDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
@@ -418,7 +403,6 @@ static class Weather {
 }
 ```
 
-### 
 
 Calling tools
 
@@ -426,7 +410,7 @@ When your tool classes are defined, add them to the message parameters using `Me
 
 After invoking the tool, use `BetaToolResultBlockParam.Builder.contentAsJson(Object)` to pass the tool's result back to the AI model:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import com.anthropic.models.beta.messages.*;
@@ -472,19 +456,17 @@ private static Object callTool(BetaToolUseBlock toolUseBlock) {
 }
 ```
 
-### 
 
 Tool name conversion
 
 Tool names are derived from the camel case tool class names (e.g., `GetWeather`) and converted to snake case (e.g., `get_weather`). Word boundaries begin where the current character is not the first character, is upper-case, and either the preceding character is lower-case, or the following character is lower-case. For example, `MyJSONParser` becomes `my_json_parser` and `ParseJSON` becomes `parse_json`. This conversion can be overridden using the `@JsonTypeName` annotation.
 
-### 
 
 Local tool JSON schema validation
 
 Like for structured outputs, you can perform local validation to check that the JSON schema derived from your tool class respects Anthropic's restrictions. Local validation is enabled by default, but it can be disabled:
 
-``` shiki
+```python
 MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
   .model(Model.CLAUDE_OPUS_4_6)
   .maxTokens(2048)
@@ -492,7 +474,6 @@ MessageCreateParams.Builder createParamsBuilder = MessageCreateParams.builder()
   .addUserMessage("What's the temperature in New York?");
 ```
 
-### 
 
 Annotating tool classes
 
@@ -504,19 +485,17 @@ You can use annotations to add further information about tools to the JSON schem
 - `@JsonIgnore` - Exclude a `public` field or getter method from the generated JSON schema for a tool's parameters.
 - `@JsonProperty` - Include a non-`public` field or getter method in the generated JSON schema for a tool's parameters.
 
-## 
 
 Message batches
 
 The SDK provides support for the [Message Batches API](/docs/en/build-with-claude/batch-processing) under the `client.messages().batches()` namespace. See the [pagination section](#pagination) for how to iterate through batch results.
 
-## 
 
 File uploads
 
 The SDK defines methods that accept files through the `MultipartField` interface:
 
-``` shiki
+```python
 import com.anthropic.core.MultipartField;
 import com.anthropic.models.beta.AnthropicBeta;
 import com.anthropic.models.beta.files.FileMetadata;
@@ -539,7 +518,7 @@ FileMetadata fileMetadata = client.beta().files().upload(params);
 
 Or from an `InputStream`:
 
-``` shiki
+```python
 import com.anthropic.core.MultipartField;
 import com.anthropic.models.beta.AnthropicBeta;
 import com.anthropic.models.beta.files.FileMetadata;
@@ -563,7 +542,7 @@ FileMetadata fileMetadata = client.beta().files().upload(params);
 
 Or a `byte[]` array:
 
-``` shiki
+```python
 import com.anthropic.core.MultipartField;
 import com.anthropic.models.beta.AnthropicBeta;
 import com.anthropic.models.beta.files.FileMetadata;
@@ -583,13 +562,12 @@ FileUploadParams params = FileUploadParams.builder()
 FileMetadata fileMetadata = client.beta().files().upload(params);
 ```
 
-### 
 
 Binary responses
 
 The SDK defines methods that return binary responses for API responses that aren't necessarily parsed as JSON:
 
-``` shiki
+```python
 import com.anthropic.core.http.HttpResponse;
 import com.anthropic.models.beta.files.FileDownloadParams;
 
@@ -598,7 +576,7 @@ HttpResponse response = client.beta().files().download("file_id");
 
 To save the response content to a file:
 
-``` shiki
+```python
 import com.anthropic.core.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -618,7 +596,7 @@ try (HttpResponse response = client.beta().files().download(params)) {
 
 Or transfer the response content to any `OutputStream`:
 
-``` shiki
+```python
 import com.anthropic.core.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -631,7 +609,6 @@ try (HttpResponse response = client.beta().files().download(params)) {
 }
 ```
 
-## 
 
 Error handling
 
@@ -643,7 +620,6 @@ The SDK throws custom unchecked exception types:
 - `AnthropicInvalidDataException` - Failure to interpret successfully parsed data (e.g., when accessing a property that's supposed to be required, but the API unexpectedly omitted it).
 - `AnthropicException` - Base class for all exceptions.
 
-### 
 
 Status code mapping
 
@@ -660,7 +636,7 @@ Status code mapping
 
 `SseException` is thrown for errors encountered during SSE streaming after a successful initial HTTP response.
 
-``` shiki
+```python
 import com.anthropic.errors.*;
 
 try {
@@ -676,13 +652,12 @@ try {
 }
 ```
 
-## 
 
 Request IDs
 
 When using raw responses, you can access the `request-id` response header using the `requestId()` method:
 
-``` shiki
+```python
 import com.anthropic.core.http.HttpResponseFor;
 import com.anthropic.models.messages.Message;
 import java.util.Optional;
@@ -694,7 +669,6 @@ Optional<String> requestId = message.requestId();
 
 This can be used to quickly log failing requests and report them back to Anthropic. For more information on debugging requests, see the [API error documentation](/docs/en/api/errors#request-id).
 
-## 
 
 Retries
 
@@ -712,14 +686,13 @@ The API may also explicitly instruct the SDK to retry or not retry a request.
 
 To set a custom number of retries, configure the client using the `maxRetries` method:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
 AnthropicClient client = AnthropicOkHttpClient.builder().fromEnv().maxRetries(4).build();
 ```
 
-## 
 
 Timeouts
 
@@ -727,7 +700,7 @@ Requests time out after 10 minutes by default.
 
 However, for methods that accept `maxTokens`, if you specify a large `maxTokens` value and are not streaming, then the default timeout will be calculated dynamically using this formula:
 
-``` shiki
+```python
 Duration.ofSeconds(
     Math.min(
         60 * 60, // 1 hour max
@@ -743,7 +716,7 @@ This results in a timeout of up to 60 minutes, scaled by the `maxTokens` paramet
 
 To set a custom timeout per-request:
 
-``` shiki
+```python
 import com.anthropic.models.messages.Message;
 
 Message message = client
@@ -753,7 +726,7 @@ Message message = client
 
 Or configure the default for all method calls at the client level:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import java.time.Duration;
@@ -764,7 +737,6 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
   .build();
 ```
 
-## 
 
 Long requests
 
@@ -774,19 +746,17 @@ Avoid setting a large `maxTokens` value without using streaming. Some networks m
 
 The SDK throws an error if a non-streaming request is expected to take longer than 10 minutes. Using a [streaming method](#streaming) or [overriding the timeout](#timeouts) at the client or request level disables the error.
 
-## 
 
 Pagination
 
 The SDK provides convenient ways to access paginated results either one page at a time or item-by-item across all pages.
 
-### 
 
 Auto-pagination
 
 To iterate through all results across all pages, use the `autoPager()` method, which automatically fetches more pages as needed.
 
-``` shiki
+```python
 import com.anthropic.models.messages.batches.BatchListPage;
 import com.anthropic.models.messages.batches.MessageBatch;
 
@@ -806,7 +776,7 @@ page.autoPager()
 
 When using the asynchronous client, the method returns an `AsyncStreamResponse`:
 
-``` shiki
+```python
 import com.anthropic.core.http.AsyncStreamResponse;
 import com.anthropic.models.messages.batches.BatchListPageAsync;
 import com.anthropic.models.messages.batches.MessageBatch;
@@ -853,13 +823,12 @@ pageFuture.thenAccept(page -> page.autoPager()
     }));
 ```
 
-### 
 
 Manual pagination
 
 To access individual page items and manually request the next page:
 
-``` shiki
+```python
 import com.anthropic.models.messages.batches.BatchListPage;
 import com.anthropic.models.messages.batches.MessageBatch;
 
@@ -877,17 +846,15 @@ while (true) {
 }
 ```
 
-## 
 
 Type system
 
-### 
 
 Immutability and builders
 
 Each class in the SDK has an associated builder for constructing it. Each class is immutable once constructed. If the class has an associated builder, then it has a `toBuilder()` method, which can be used to convert it back to a builder for making a modified copy.
 
-``` shiki
+```python
 MessageCreateParams params = MessageCreateParams.builder()
   .maxTokens(1024L)
   .addUserMessage("Hello, Claude")
@@ -900,7 +867,6 @@ MessageCreateParams modified = params.toBuilder().maxTokens(2048L).build();
 
 Because each class is immutable, builder modification will never affect already built class instances.
 
-### 
 
 Requests and responses
 
@@ -908,13 +874,12 @@ To send a request to the Claude API, build an instance of some `Params` class an
 
 For example, `client.messages().create(...)` should be called with an instance of `MessageCreateParams`, and it will return an instance of `Message`.
 
-### 
 
 Undocumented parameters
 
 To set undocumented parameters, call the `putAdditionalHeader`, `putAdditionalQueryParam`, or `putAdditionalBodyProperty` methods on any `Params` class:
 
-``` shiki
+```python
 import com.anthropic.core.JsonValue;
 import com.anthropic.models.messages.MessageCreateParams;
 
@@ -931,7 +896,7 @@ The values passed to these methods overwrite values passed to earlier methods. F
 
 To set undocumented parameters on nested headers, query params, or body classes:
 
-``` shiki
+```python
 import com.anthropic.core.JsonValue;
 import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Metadata;
@@ -947,7 +912,7 @@ These properties can be accessed on the nested built object later using the `_ad
 
 To set a documented parameter or property to an undocumented or not yet supported value, pass a `JsonValue` object to its setter:
 
-``` shiki
+```python
 import com.anthropic.core.JsonValue;
 import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Model;
@@ -959,13 +924,12 @@ MessageCreateParams params = MessageCreateParams.builder()
   .build();
 ```
 
-### 
 
 JsonValue creation
 
 The most straightforward way to create a `JsonValue` is using its `from(...)` method:
 
-``` shiki
+```python
 import com.anthropic.core.JsonValue;
 import java.util.List;
 import java.util.Map;
@@ -990,13 +954,12 @@ JsonValue objectValue = JsonValue.from(Map.of("a", 1, "b", 2));
 JsonValue complexValue = JsonValue.from(Map.of("a", List.of(1, 2), "b", List.of(3, 4)));
 ```
 
-### 
 
 Forcibly omitting required parameters
 
 Normally a `Builder` class's `build` method will throw `IllegalStateException` if any required parameter or property is unset. To forcibly omit a required parameter or property, pass `JsonMissing`:
 
-``` shiki
+```python
 import com.anthropic.core.JsonMissing;
 import com.anthropic.models.messages.MessageCreateParams;
 import com.anthropic.models.messages.Model;
@@ -1008,13 +971,12 @@ MessageCreateParams params = MessageCreateParams.builder()
   .build();
 ```
 
-### 
 
 Response properties
 
 To access undocumented response properties, call the `_additionalProperties()` method:
 
-``` shiki
+```python
 import com.anthropic.core.JsonValue;
 import java.util.Map;
 
@@ -1049,7 +1011,7 @@ String result = secretPropertyValue.accept(new JsonValue.Visitor<>() {
 
 To access a property's raw JSON value, call its `_` prefixed method:
 
-``` shiki
+```python
 import com.anthropic.core.JsonField;
 import java.util.Optional;
 
@@ -1069,7 +1031,6 @@ if (maxTokens.isMissing()) {
 }
 ```
 
-### 
 
 Response validation
 
@@ -1077,7 +1038,7 @@ By default, the SDK does not throw an exception when the API returns a response 
 
 To check that the response is completely well-typed upfront, call `validate()`:
 
-``` shiki
+```python
 import com.anthropic.models.messages.Message;
 
 Message message = client.messages().create(params).validate();
@@ -1085,7 +1046,7 @@ Message message = client.messages().create(params).validate();
 
 Or configure per-request:
 
-``` shiki
+```python
 import com.anthropic.models.messages.Message;
 
 Message message = client
@@ -1095,7 +1056,7 @@ Message message = client
 
 Or configure the default for all method calls at the client level:
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
@@ -1105,15 +1066,13 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
   .build();
 ```
 
-## 
 
 HTTP client customization
 
-### 
 
 Proxy configuration
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 import java.net.InetSocketAddress;
@@ -1125,13 +1084,12 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
   .build();
 ```
 
-### 
 
 HTTPS / SSL configuration
 
 Most applications should not call these methods, and instead use the system defaults. The defaults include special optimizations that can be lost if the implementations are modified.
 
-``` shiki
+```python
 import com.anthropic.client.AnthropicClient;
 import com.anthropic.client.okhttp.AnthropicOkHttpClient;
 
@@ -1143,7 +1101,6 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
   .build();
 ```
 
-### 
 
 Custom HTTP client
 
@@ -1155,7 +1112,6 @@ The SDK consists of three artifacts:
 
 This structure allows replacing the SDK's default HTTP client without pulling in unnecessary dependencies.
 
-#### 
 
 Customized OkHttpClient
 
@@ -1167,7 +1123,6 @@ To use a customized `OkHttpClient`:
 2.  Copy `anthropic-java-client-okhttp`'s `OkHttpClient` class into your code and customize it.
 3.  Construct `AnthropicClientImpl` or `AnthropicClientAsyncImpl` using your customized client.
 
-#### 
 
 Completely custom HTTP client
 
@@ -1177,7 +1132,6 @@ To use a completely custom HTTP client:
 2.  Write a class that implements the `HttpClient` interface.
 3.  Construct `AnthropicClientImpl` or `AnthropicClientAsyncImpl` using your new client class.
 
-## 
 
 Platform integrations
 
@@ -1195,17 +1149,15 @@ The Java SDK supports Bedrock, Vertex AI, and Foundry through separate dependenc
 
 Each backend is passed to the client via `.backend()` on `AnthropicOkHttpClient.builder()`. AWS, Google Cloud, and Azure classes are included as transitive dependencies of the respective library.
 
-## 
 
 Advanced usage
 
-### 
 
 Raw response access
 
 To access HTTP headers, status codes, and the raw response body, prefix any HTTP method call with `withRawResponse()`:
 
-``` shiki
+```python
 import com.anthropic.core.http.Headers;
 import com.anthropic.core.http.HttpResponseFor;
 import com.anthropic.models.messages.Message;
@@ -1227,13 +1179,12 @@ Headers headers = message.headers();
 
 You can still deserialize the response into an instance of a Java class if needed:
 
-``` shiki
+```python
 import com.anthropic.models.messages.Message;
 
 Message parsedMessage = message.parse();
 ```
 
-### 
 
 Logging
 
@@ -1241,13 +1192,13 @@ The SDK uses the standard OkHttp logging interceptor.
 
 Enable logging by setting the `ANTHROPIC_LOG` environment variable to `info`:
 
-``` shiki
+```python
 export ANTHROPIC_LOG=info
 ```
 
 Or to `debug` for more verbose logging:
 
-``` shiki
+```python
 export ANTHROPIC_LOG=debug
 ```
 
@@ -1255,25 +1206,21 @@ export ANTHROPIC_LOG=debug
 
 ### ProGuard/R8 configuration
 
-### 
 
 Undocumented API functionality
 
 The SDK is typed for convenient usage of the documented API. However, it also supports working with undocumented or not yet supported parts of the API.
 
-#### 
 
 Undocumented endpoints
 
 To make requests to undocumented endpoints, you can use the `putAdditionalHeader`, `putAdditionalQueryParam`, or `putAdditionalBodyProperty` methods as described in [Undocumented parameters](#undocumented-parameters).
 
-#### 
 
 Undocumented response properties
 
 To access undocumented response properties, use the `_additionalProperties()` method as described in [Response properties](#response-properties).
 
-## 
 
 Beta features
 
@@ -1281,7 +1228,7 @@ You can access most beta API features through the `beta()` method on the client.
 
 For example, to use structured outputs:
 
-``` shiki
+```python
 import com.anthropic.models.beta.messages.MessageCreateParams;
 import com.anthropic.models.beta.messages.StructuredMessageCreateParams;
 import com.anthropic.models.messages.Model;
@@ -1296,7 +1243,6 @@ StructuredMessageCreateParams<BookList> createParams = MessageCreateParams.build
 client.beta().messages().create(createParams);
 ```
 
-## 
 
 Frequently asked questions
 
@@ -1308,7 +1254,6 @@ Frequently asked questions
 
 ### Why doesn't the SDK use checked exceptions?
 
-## 
 
 Semantic versioning
 
@@ -1317,7 +1262,6 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 1.  Changes to library internals which are technically public but not intended or documented for external use.
 2.  Changes that aren't expected to impact the vast majority of users in practice.
 
-## 
 
 Additional resources
 

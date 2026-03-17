@@ -1,9 +1,10 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-02-22T14:29:12Z"
+fetched_at: "2026-03-17T02:03:36Z"
 source_url: "https://modelcontextprotocol.io/community/contributing"
 title: "Contributing to MCP - Model Context Protocol"
 ---
+
 # Contributing to MCP
 
 
@@ -12,13 +13,11 @@ How to contribute to the Model Context Protocol project
 
 The Model Context Protocol (MCP) is an open source project that welcomes contributions from the community. This guide walks you through everything you need to get started.
 
-## 
 
 [​](#before-you-begin)
 
 Before You Begin
 
-### 
 
 [​](#prerequisites)
 
@@ -36,7 +35,7 @@ Verify your setup:
 
 Copy
 
-``` shiki
+```python
 node --version  # Should be 24.x or higher
 npm --version   # Should be 11.x or higher
 git --version   # Any recent version
@@ -44,7 +43,6 @@ git --version   # Any recent version
 
 These commands work the same on macOS, Linux, and Windows, so you’re good to go on any platform.
 
-### 
 
 [​](#repository-structure)
 
@@ -68,7 +66,6 @@ MCP spans multiple repositories in the [`modelcontextprotocol`](https://github.c
 
 Throughout this guide, **specification repository** refers to `modelcontextprotocol/modelcontextprotocol`, which contains the protocol spec, this documentation site, and [Spec Enhancement Proposals (SEPs)](/community/sep-guidelines).
 
-### 
 
 [​](#project-roles)
 
@@ -82,7 +79,6 @@ MCP follows a [governance model](/community/governance) with different levels of
 
 You can find the current list of maintainers in the [`MAINTAINERS.md`](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md) file. Maintainers are here to help you succeed! Don’t hesitate to reach out if you have questions or need guidance on your contribution.
 
-## 
 
 [​](#your-first-contribution)
 
@@ -92,7 +88,6 @@ Start here if you are new to MCP and contributing to its ecosystem.
 
 While we use the specification repository as an example, the key patterns are applicable to other MCP repos as well.
 
-### 
 
 [​](#step-1-set-up-your-environment)
 
@@ -102,7 +97,6 @@ Set up your local environment so you can test and validate changes before submit
 
 1
 
-[](#)
 
 Fork the repository
 
@@ -110,13 +104,12 @@ Click the **Fork** button on the [repository page](https://github.com/modelconte
 
 2
 
-[](#)
 
 Clone your fork
 
 Copy
 
-``` shiki
+```python
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 ```
@@ -125,13 +118,12 @@ Replace `YOUR-USERNAME` with your GitHub username.
 
 3
 
-[](#)
 
 Install dependencies
 
 Copy
 
-``` shiki
+```python
 npm install
 ```
 
@@ -139,13 +131,12 @@ This installs the tools needed for schema generation, documentation building, an
 
 4
 
-[](#)
 
 Verify everything works
 
 Copy
 
-``` shiki
+```python
 npm run check
 ```
 
@@ -153,7 +144,6 @@ This runs TypeScript compilation, schema validation, example validation, documen
 
 If `npm run check` fails, see [Troubleshooting](#troubleshooting) below.
 
-### 
 
 [​](#step-2-find-something-to-work-on)
 
@@ -165,7 +155,6 @@ While a lot of the items you might see tracked in the repository can feel intimi
 2.  **Issues labeled `good first issue`** - Tackle issues tagged in the [specification repo](https://github.com/modelcontextprotocol/modelcontextprotocol/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) as well as our SDK repos
 3.  **Schema examples** - Add examples to `schema/draft/examples/` to make it easier for developers to understand protocol primitives
 
-### 
 
 [​](#step-3-make-your-change)
 
@@ -175,13 +164,12 @@ Create your changes in a dedicated branch.
 
 1
 
-[](#)
 
 Create a branch
 
 Copy
 
-``` shiki
+```python
 git checkout -b fix/your-description
 ```
 
@@ -189,7 +177,6 @@ Use a descriptive branch name that reflects your change, like `fix/typo-in-tools
 
 2
 
-[](#)
 
 Make your changes
 
@@ -197,13 +184,12 @@ Edit the relevant files in your local copy. If you’re editing schema files, re
 
 3
 
-[](#)
 
 Run checks
 
 Copy
 
-``` shiki
+```python
 npm run check
 ```
 
@@ -211,19 +197,17 @@ Fix any issues before committing. If you have formatting errors, `npm run format
 
 4
 
-[](#)
 
 Commit with a clear message
 
 Copy
 
-``` shiki
+```python
 git commit -m "Fix typo in tools documentation"
 ```
 
 Write a concise message that describes what you changed and why. Reference issue numbers if applicable (e.g., `Fix typo in tools documentation (#123)`).
 
-### 
 
 [​](#step-4-submit-a-pull-request)
 
@@ -233,19 +217,17 @@ When you’re ready, push your branch and open a pull request.
 
 1
 
-[](#)
 
 Push your branch
 
 Copy
 
-``` shiki
+```python
 git push origin fix/your-description
 ```
 
 2
 
-[](#)
 
 Open a PR on GitHub
 
@@ -253,7 +235,7 @@ You can use the [GitHub CLI](https://cli.github.com/) to make this process easie
 
 Copy
 
-``` shiki
+```python
 gh pr create --fill
 ```
 
@@ -261,7 +243,6 @@ Alternatively, navigate to your fork on GitHub and click **Compare & pull reques
 
 3
 
-[](#)
 
 Fill in the PR template
 
@@ -269,7 +250,6 @@ Provide a clear description of your changes and link any related issues.
 
 4
 
-[](#)
 
 Wait for review
 
@@ -277,7 +257,6 @@ Maintainers typically respond within 1-5 business days.
 
 That’s it, **congratulations on your first contribution**! Every improvement, no matter how small, helps make MCP better for everyone.
 
-### 
 
 [​](#what-makes-a-good-contribution)
 
@@ -293,7 +272,6 @@ Help us review your contribution quickly by following these patterns:
 | Submitting with failing CI checks | All CI tests pass before requesting review |
 | Duplicating existing documentation | Documenting an undocumented feature or edge case |
 
-## 
 
 [​](#types-of-contributions)
 
@@ -303,7 +281,6 @@ Different contributions follow different processes depending on their scope.
 
 Not sure which category your change falls into? Ask in the [MCP Contributor Discord](/community/communication#discord) before starting any significant work.
 
-### 
 
 [​](#small-changes-direct-pr)
 
@@ -317,7 +294,6 @@ Simply submit a pull request directly to the repo for:
 - Minor schema fixes that don’t materially change the specification or SDK behavior
 - Test improvements
 
-### 
 
 [​](#major-changes-sep-required)
 
@@ -338,7 +314,6 @@ Here are a few concrete examples of what would require following the SEP steps:
 - Adding a new capability negotiation field
 - Modifying the transport layer specification
 
-## 
 
 [​](#working-with-the-specification-repository)
 
@@ -346,7 +321,6 @@ Working with the Specification Repository
 
 Once you’ve determined [what type of contribution](#types-of-contributions) you’re making, here’s how to work with the specification repository.
 
-### 
 
 [​](#schema-changes)
 
@@ -361,7 +335,6 @@ To modify the schema:
 
 1
 
-[](#)
 
 Edit the TypeScript schema
 
@@ -369,7 +342,6 @@ Make your changes in `schema/draft/schema.ts`.
 
 2
 
-[](#)
 
 Add examples (optional)
 
@@ -377,29 +349,26 @@ Add JSON examples in `schema/draft/examples/[TypeName]/` (e.g., `Tool/my-example
 
 3
 
-[](#)
 
 Generate JSON schema and docs
 
 Copy
 
-``` shiki
+```python
 npm run generate:schema
 ```
 
 4
 
-[](#)
 
 Validate your changes
 
 Copy
 
-``` shiki
+```python
 npm run check
 ```
 
-### 
 
 [​](#documentation-changes)
 
@@ -414,13 +383,12 @@ Here is how you can contribute to our documentation:
 
 1
 
-[](#)
 
 Start the local docs server
 
 Copy
 
-``` shiki
+```python
 npm run serve:docs
 ```
 
@@ -428,7 +396,6 @@ This launches a live preview at `http://localhost:3000` with hot reloading.
 
 2
 
-[](#)
 
 Make your changes
 
@@ -436,19 +403,17 @@ Edit the relevant `.mdx` files. You can use [Mintlify components](https://www.mi
 
 3
 
-[](#)
 
 Check for issues
 
 Copy
 
-``` shiki
+```python
 npm run check:docs
 ```
 
 This validates formatting, broken links, and other common issues.
 
-### 
 
 [​](#major-protocol-changes)
 
@@ -458,7 +423,6 @@ For significant changes, follow the [SEP process](/community/sep-guidelines). Pr
 
 1
 
-[](#)
 
 Validate your idea first
 
@@ -466,7 +430,6 @@ Discuss in an [Interest Group](/community/working-interest-groups) or on [Discor
 
 2
 
-[](#)
 
 Build a prototype
 
@@ -474,7 +437,6 @@ Demonstrate practical application of your idea.
 
 3
 
-[](#)
 
 Find a sponsor
 
@@ -482,13 +444,11 @@ A maintainer from the [maintainer list](https://github.com/modelcontextprotocol/
 
 4
 
-[](#)
 
 Write the SEP
 
 Follow the [SEP Guidelines](/community/sep-guidelines).
 
-## 
 
 [​](#working-with-the-sdk-repositories)
 
@@ -498,7 +458,6 @@ MCP maintains official SDKs in multiple languages. Contributions are welcome - w
 
 Each SDK has its own repository, maintainers, and contribution guidelines. Some SDKs are maintained in collaboration with larger partner organizations, such as Google, Microsoft, JetBrains, and others, so processes may vary slightly between repositories.
 
-### 
 
 [​](#before-contributing-to-an-sdk)
 
@@ -508,7 +467,6 @@ Before diving into code, follow these steps.
 
 1
 
-[](#)
 
 Open an issue first
 
@@ -516,7 +474,6 @@ Before starting significant work, open an issue to discuss your approach. This h
 
 2
 
-[](#)
 
 Join the SDK channel
 
@@ -524,7 +481,6 @@ Find the relevant channel in [Discord](https://discord.gg/6CSzBmMkjX) (e.g., `#t
 
 3
 
-[](#)
 
 Read the SDK's CONTRIBUTING.md
 
@@ -532,13 +488,11 @@ Each repository has its own `CONTRIBUTING.md` with specific instructions for set
 
 4
 
-[](#)
 
 Write tests
 
 All contributions should include appropriate test coverage. Bug fixes should include a test that reproduces the issue, and new features should have tests covering the expected behavior. This helps maintain SDK reliability and prevents regressions.
 
-### 
 
 [​](#sdk-repositories)
 
@@ -574,13 +528,11 @@ SDK Repositories
 
 ## PHP SDK
 
-## 
 
 [​](#getting-help)
 
 Getting Help
 
-### 
 
 [​](#communication-channels)
 
@@ -594,7 +546,6 @@ Got questions or need guidance? The MCP community is here to help.
 
 This separation helps maintainers focus on work that’s ready for implementation while giving ideas room to develop. If you’re unsure whether something is ready to be an issue, start with a discussion. For a complete guide, see our [Contributor Communication](/community/communication) documentation. For protocol discussions, join [Working Group](/community/working-interest-groups) channels like `#auth-wg` or `#server-identity-wg`. For SDK help, find your language’s channel (e.g., `#typescript-sdk-dev`).
 
-### 
 
 [​](#finding-a-sponsor-for-seps)
 
@@ -608,7 +559,6 @@ To find a sponsor:
 
 1
 
-[](#)
 
 Find relevant maintainers
 
@@ -616,7 +566,6 @@ Look at the [maintainer list](https://github.com/modelcontextprotocol/modelconte
 
 2
 
-[](#)
 
 Tag maintainers in your PR
 
@@ -624,7 +573,6 @@ Tag 1-2 relevant maintainers (don’t spam everyone).
 
 3
 
-[](#)
 
 Share in Discord
 
@@ -632,7 +580,6 @@ Post your PR in the relevant Discord channel to increase visibility.
 
 4
 
-[](#)
 
 Follow up if needed
 
@@ -640,7 +587,6 @@ If no response after 2 weeks, ask in `#general` or reach out to a Core Maintaine
 
 Maintainers review open proposals regularly, but response time varies based on complexity and availability.
 
-## 
 
 [​](#troubleshooting)
 
@@ -648,7 +594,6 @@ Troubleshooting
 
 Sometimes things don’t go as planned - that’s completely normal! Here are solutions to common issues. If you’re still stuck, don’t hesitate to ask for help in [Discord](/community/communication#discord). The community is friendly and happy to help you get unstuck.
 
-### 
 
 [​](#npm-run-check-fails)
 
@@ -661,7 +606,6 @@ Common causes:
 - **Schema out of sync** - Run `npm run generate:schema`
 - **Formatting issues** - Run `npm run format` to auto-fix
 
-### 
 
 [​](#my-pr-has-been-sitting-unnoticed-for-weeks)
 
@@ -672,7 +616,6 @@ My PR has been sitting unnoticed for weeks
 3.  Ask in the relevant Discord channel
 4.  For urgent issues, reach out to a Core Maintainer
 
-### 
 
 [​](#i-can’t-find-a-sponsor-for-my-sep)
 
@@ -682,7 +625,6 @@ I can’t find a sponsor for my SEP
 2.  Proposals with demonstrated community interest are more likely to find sponsors
 3.  Consider whether your change might be too large - could it be split into smaller SEPs?
 
-### 
 
 [​](#my-sep-was-rejected)
 
@@ -695,7 +637,6 @@ Don’t take it personally - a SEP rejection doesn’t mean your idea was bad. S
 3.  **Try a different approach** - Submit a new SEP that addresses the same problem differently, incorporating what you learned.
 4.  **Wait for the right moment** - Circumstances change. New use cases emerge, the community grows, and priorities shift. An idea rejected today might be welcomed tomorrow.
 
-## 
 
 [​](#out-of-scope)
 
@@ -709,7 +650,6 @@ This guide covers contributions to the **core MCP project** - the specification,
 
 If you build something you’d like to share with the community, you can submit it to the [MCP Registry](/registry/about).
 
-## 
 
 [​](#ai-contributions)
 
@@ -723,7 +663,6 @@ We welcome the use of AI tools like Claude or ChatGPT to help with your contribu
 
 You can read more about our stance in [our spec contribution guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md#ai-contributions).
 
-## 
 
 [​](#code-of-conduct)
 
@@ -731,7 +670,6 @@ Code of Conduct
 
 All contributors must follow the [Code of Conduct](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CODE_OF_CONDUCT.md). We expect respectful, professional, and inclusive interactions across all channels.
 
-## 
 
 [​](#license)
 

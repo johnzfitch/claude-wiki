@@ -1,11 +1,13 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-16T05:34:01Z"
+fetched_at: "2026-03-17T02:04:23Z"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 title: "Account management FAQs | Claude Help Center"
 ---
 
 # Account management FAQs
+
+Updated today
 
 
 ## How do I change my team name?

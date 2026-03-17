@@ -1,9 +1,10 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-02-08T23:10:00Z"
+fetched_at: "2026-03-17T02:03:12Z"
 source_url: "https://www.anthropic.com/claude/haiku"
 title: "Claude Haiku 4.5 \\ Anthropic"
 ---
+
 # Claude 4.5 Haiku
 
 Our fastest model, a lightweight version of our most powerful AI, at a more affordable price
@@ -19,7 +20,6 @@ Our fastest model, a lightweight version of our most powerful AI, at a more affo
 
   Claude Haiku 4.5 is our fastest, most cost-efficient model, matching Sonnet 4’s performance on coding, computer use, and agent tasks. Claude Haiku 4.5 scores 73.3% on SWE-bench Verified, making it one of the world's best coding models.
 
-  [](/news/claude-haiku-4-5)
 
   Read more
 
@@ -29,19 +29,18 @@ Our fastest model, a lightweight version of our most powerful AI, at a more affo
 
   For a similar speed to Haiku 3, Haiku 3.5 improved across every skill set and surpassed Opus 3, the largest model in our previous generation, on many intelligence benchmarks.
 
-  [](/news/3-5-models-and-computer-use)
 
   Read more
 
 ## Availability and pricing
 
-Anyone can chat with Claude using Haiku 4.5 on [Claude.ai](http://claude.ai/redirect/website.v1.4fe984ab-642c-4352-8f16-c71249567737), available on web, iOS, and Android.
+Anyone can chat with Claude using Haiku 4.5 on [Claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06), available on web, iOS, and Android.
 
-For developers, Haiku 4.5 is available on the Claude Developer Platform natively, and in Amazon Bedrock, Google Cloud's Vertex AI, and Microsoft Foundry.
+For developers, Haiku 4.5 is available on the Claude Platform natively, and in Amazon Bedrock, Google Cloud's Vertex AI, and Microsoft Foundry.
 
 Claude Haiku 4.5 is also available in Claude Code.
 
-Pricing for Haiku 4.5 on the Claude Developer Platform starts at \$1 per million input tokens and \$5 per million output tokens, with up to 90% cost savings with [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) and 50% cost savings with [batch processing](https://platform.claude.com/docs/en/build-with-claude/batch-processing#pricing). To get started, simply use claude-haiku-4-5 via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview).
+Pricing for Haiku 4.5 on the Claude Platform starts at \$1 per million input tokens and \$5 per million output tokens, with up to 90% cost savings with [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) and 50% cost savings with [batch processing](https://platform.claude.com/docs/en/build-with-claude/batch-processing#pricing). To get started, simply use claude-haiku-4-5 via the [Claude API](https://platform.claude.com/docs/en/about-claude/models/overview).
 
 ## Use cases
 
@@ -79,42 +78,42 @@ We've conducted extensive testing and evaluation of Haiku 4.5, working with exte
 
 > Our early testing shows that Claude Haiku 4.5 brings efficient code generation to GitHub Copilot **with comparable quality to Sonnet 4 but at faster speed**. Already we're seeing it as an excellent choice for Copilot users who value speed and responsiveness in their AI-powered development workflows.
 >
-> Matthew Isabel  
+> Matthew Isabel\
 > Distinguished Product Manager
 
 > Historically models have sacrificed speed and cost for quality. Claude Haiku 4.5 is blurring the lines on this trade off: **it's a fast frontier model that keeps costs efficient** and signals where this class of models is headed.
 >
-> Jeff Wang  
+> Jeff Wang\
 > CEO
 
 > **Claude Haiku 4.5 delivers intelligence without sacrificing speed**, enabling us to build AI applications that utilize both deep reasoning and real-time responsiveness.
 >
-> Ben Lafferty  
+> Ben Lafferty\
 > Staff Engineer
 
 > Claude Haiku 4.5 is remarkably capable—**just six months ago, this level of performance would have been state-of-the-art** on our internal benchmarks. Now it runs up to 4-5 times faster than Sonnet 4.5 at a fraction of the cost, unlocking an entirely new set of use cases.
 >
-> Andrew Filev  
+> Andrew Filev\
 > CEO
 
 > Claude Haiku 4.5 hit a sweet spot we didn't think was possible: **near-frontier coding quality with blazing speed and cost efficiency**. In Augment's agentic coding evaluation, it achieves 90% of Sonnet 4.5's performance, matching much larger models. We're excited to offer it to our users.
 >
-> Guy Gur-Ari  
+> Guy Gur-Ari\
 > Co-Founder
 
 > Claude Haiku 4.5 **outperformed our current models on instruction-following for slide text generation**, achieving 65% accuracy versus 44% from our premium tier model—that's a game-changer for our unit economics.
 >
-> Jon Noronha  
+> Jon Noronha\
 > Co-Founder, Gamma
 
 > Speed is the new frontier for AI agents operating in feedback loops. **Haiku 4.5 proves you can have both intelligence and rapid output**. It handles complex workflows reliably, self-corrects in real-time, and maintains momentum without latency overhead. For most development tasks, it's the ideal performance balance.
 >
-> Brad Axen  
+> Brad Axen\
 > Tech Lead, AI
 
 > **Claude Haiku 4.5 is a leap forward for agentic coding**, particularly for sub-agent orchestration and computer use tasks. The responsiveness makes AI-assisted development in Warp feel instantaneous.
 >
-> Zach Lloyd  
+> Zach Lloyd\
 > Founder & CEO
 
 01 / 08

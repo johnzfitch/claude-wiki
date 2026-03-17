@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-03T15:07:17Z"
+fetched_at: "2026-03-17T02:03:25Z"
 source_url: "https://www.anthropic.com/news/statement-comments-secretary-war"
 title: "Statement on the comments from Secretary of War Pete Hegseth \\ Anthropic"
 ---
@@ -39,16 +39,18 @@ We are deeply grateful to our users, and to the industry peers, policymakers, ve
 
 ## Related content
 
-### Statement from Dario Amodei on our discussions with the Department of War
+### Anthropic invests \$100 million into the Claude Partner Network
 
-A statement from our CEO on national security uses of AI.
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-[Read more](/news/statement-department-of-war)
+[Read more](/news/claude-partner-network)
 
-### Anthropic acquires Vercept to advance Claude's computer use capabilities
+### Introducing The Anthropic Institute
 
-[Read more](/news/acquires-vercept)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Anthropic’s Responsible Scaling Policy: Version 3.0
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/responsible-scaling-policy-v3)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

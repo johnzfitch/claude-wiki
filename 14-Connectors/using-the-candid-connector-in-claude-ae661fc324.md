@@ -1,11 +1,13 @@
 ---
 category: "14-Connectors"
-fetched_at: "2026-03-16T05:33:53Z"
+fetched_at: "2026-03-17T02:04:11Z"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 title: "Using the Candid Connector in Claude | Claude Help Center"
 ---
 
 # Using the Candid Connector in Claude
+
+Updated today
 
 
 The Candid integration brings the power of Candid’s comprehensive nonprofit and funder data directly into Claude. This article explains how to set up and use the Candid connector to search millions of organizations, discover funding opportunities, and access expert knowledge about the social sector—all through natural conversation.
@@ -33,7 +35,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#b6d9d8dadfd8d3dadfd4c4d7c4dfd7d8f6d5d7d8d2dfd298d9c4d1).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#deb1b0b2b7b0bbb2b7bcacbfacb7bfb09ebdbfb0bab7baf0b1acb9).
 
 ## Setting up the Candid integration
 

@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:17Z"
+fetched_at: "2026-03-17T02:03:52Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/server/prompts"
 title: "Prompts - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Prompts - Model Context Protocol"
 
 The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured messages and instructions for interacting with language models. Clients can discover available prompts, retrieve their contents, and provide arguments to customize them.
 
-## 
 
 [​](#user-interaction-model)
 
@@ -18,7 +17,6 @@ User Interaction Model
 
 Prompts are designed to be **user-controlled**, meaning they are exposed from servers to clients with the intention of the user being able to explicitly select them for use. Typically, prompts would be triggered through user-initiated commands in the user interface, which allows users to naturally discover and invoke available prompts. For example, as slash commands: However, implementors are free to expose prompts through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-## 
 
 [​](#capabilities)
 
@@ -28,7 +26,7 @@ Servers that support prompts **MUST** declare the `prompts` capability during [i
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "prompts": {
@@ -40,13 +38,11 @@ Copy
 
 `listChanged` indicates whether the server will emit notifications when the list of available prompts changes.
 
-## 
 
 [​](#protocol-messages)
 
 Protocol Messages
 
-### 
 
 [​](#listing-prompts)
 
@@ -56,7 +52,7 @@ To retrieve available prompts, clients send a `prompts/list` request. This opera
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -71,7 +67,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -94,7 +90,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#getting-a-prompt)
 
@@ -104,7 +99,7 @@ To retrieve a specific prompt, clients send a `prompts/get` request. Arguments m
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -122,7 +117,7 @@ Copy
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -141,7 +136,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#list-changed-notification)
 
@@ -151,26 +145,23 @@ When the list of available prompts changes, servers that declared the `listChang
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/prompts/list_changed"
 }
 ```
 
-## 
 
 [​](#message-flow)
 
 Message Flow
 
-## 
 
 [​](#data-types)
 
 Data Types
 
-### 
 
 [​](#prompt)
 
@@ -182,7 +173,6 @@ A prompt definition includes:
 - `description`: Optional human-readable description
 - `arguments`: Optional list of arguments for customization
 
-### 
 
 [​](#promptmessage)
 
@@ -193,7 +183,6 @@ Messages in a prompt can contain:
 - `role`: Either “user” or “assistant” to indicate the speaker
 - `content`: One of the following content types:
 
-#### 
 
 [​](#text-content)
 
@@ -203,7 +192,7 @@ Text content represents plain text messages:
 
 Copy
 
-``` shiki
+```python
 {
   "type": "text",
   "text": "The text content of the message"
@@ -212,7 +201,6 @@ Copy
 
 This is the most common content type used for natural language interactions.
 
-#### 
 
 [​](#image-content)
 
@@ -222,7 +210,7 @@ Image content allows including visual information in messages:
 
 Copy
 
-``` shiki
+```python
 {
   "type": "image",
   "data": "base64-encoded-image-data",
@@ -232,7 +220,6 @@ Copy
 
 The image data **MUST** be base64-encoded and include a valid MIME type. This enables multi-modal interactions where visual context is important.
 
-#### 
 
 [​](#audio-content)
 
@@ -242,7 +229,7 @@ Audio content allows including audio information in messages:
 
 Copy
 
-``` shiki
+```python
 {
   "type": "audio",
   "data": "base64-encoded-audio-data",
@@ -252,7 +239,6 @@ Copy
 
 The audio data MUST be base64-encoded and include a valid MIME type. This enables multi-modal interactions where audio context is important.
 
-#### 
 
 [​](#embedded-resources)
 
@@ -262,7 +248,7 @@ Embedded resources allow referencing server-side resources directly in messages:
 
 Copy
 
-``` shiki
+```python
 {
   "type": "resource",
   "resource": {
@@ -281,7 +267,6 @@ Resources can contain either text or binary (blob) data and **MUST** include:
 
 Embedded resources enable prompts to seamlessly incorporate server-managed content like documentation, code samples, or other reference materials directly into the conversation flow.
 
-## 
 
 [​](#error-handling)
 
@@ -293,7 +278,6 @@ Servers **SHOULD** return standard JSON-RPC errors for common failure cases:
 - Missing required arguments: `-32602` (Invalid params)
 - Internal errors: `-32603` (Internal error)
 
-## 
 
 [​](#implementation-considerations)
 
@@ -303,7 +287,6 @@ Implementation Considerations
 2.  Clients **SHOULD** handle pagination for large prompt lists
 3.  Both parties **SHOULD** respect capability negotiation
 
-## 
 
 [​](#security)
 

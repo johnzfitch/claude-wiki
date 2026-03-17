@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:10Z"
+fetched_at: "2026-03-17T02:03:44Z"
 source_url: "https://modelcontextprotocol.io/seps/1036-url-mode-elicitation-for-secure-out-of-band-intera"
 title: "SEP-1036: URL Mode Elicitation for secure out-of-band interactions - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP introduces a new `url` mode for the existing elicitation client capability, enabling secure out-of-band interactions that bypass the MCP client. URL mode elicitation addresses sensitive use cases that form mode elicitation cannot, such as gathering sensitive credentials, performing OAuth flows for external (3rd-party) authorization, and handling payments, *without* exposing sensitive data to the MCP client. By directing users to trusted URLs in their browser, this mode maintains security boundaries while enabling rich integrations with third-party services.
 
-## 
 
 [​](#motivation)
 
@@ -48,13 +46,11 @@ The current MCP specification (2025-06-18) provides an elicitation mechanism for
 
 Without a standardized mechanism for these interactions, MCP servers must resort to non-standard workarounds or insecure practices like requesting API keys through in-band, form-style elicitation. This SEP addresses these gaps by introducing a URL elicitation mode that leverages established web security patterns to handle sensitive interactions securely. URL elicitation is fundamentally different from [MCP authorization](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization). URL elicitation is not for authorizing the MCP client’s access to the MCP server (that’s handled directly by MCP authorization). Instead, it’s used when the MCP server needs to obtain sensitive information or third-party authorization on behalf of the user. The MCP client’s bearer token remains unchanged, and the client’s only responsibility is to provide the user with context about the elicitation URL the server wants them to open.
 
-## 
 
 [​](#specification)
 
 Specification
 
-### 
 
 [​](#overview)
 
@@ -65,7 +61,6 @@ Elicitation is updated to support two modes:
 - **Form mode** (in-band): Servers can request structured data from users with optional JSON schemas to validate responses (no change here, other than adding a name to the existing capability)
 - **URL mode** (out-of-band): Servers can direct users to external URLs for sensitive interactions that must not pass through the MCP client
 
-### 
 
 [​](#capabilities)
 
@@ -75,7 +70,7 @@ Clients that support elicitation **MUST** declare the `elicitation` capability d
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "elicitation": {
@@ -90,7 +85,7 @@ For backwards compatibility, an empty capabilities object is equivalent to decla
 
 Copy
 
-``` shiki
+```python
 {
   "capabilities": {
     "elicitation": {},
@@ -100,7 +95,6 @@ Copy
 
 Clients declaring the `elicitation` capability **MUST** support at least one mode (`form` or `url`).
 
-### 
 
 [​](#form-elicitation-requests)
 
@@ -110,7 +104,7 @@ The only change from the existing specification is the addition of a `mode` fiel
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -131,7 +125,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#url-elicitation-requests)
 
@@ -145,7 +138,6 @@ URL elicitation requests **MUST** specify `mode: "url"` and include these parame
 | `elicitationId` | string | A unique identifier for the elicitation. |
 | `message` | string | A human-readable message explaining why the interaction is needed. |
 
-#### 
 
 [​](#example-oauth-authorization-flow)
 
@@ -153,7 +145,7 @@ Example: OAuth Authorization Flow
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -167,7 +159,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#response-actions)
 
@@ -177,7 +168,7 @@ URL elicitation responses use the same three-action model as form elicitation:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 3,
@@ -189,7 +180,6 @@ Copy
 
 The response with `action: "accept"` indicates that the user has consented to the interaction. The interaction occurs out of band and the client is not aware of the outcome unless the server sends a completion notification.
 
-#### 
 
 [​](#completion-notifications)
 
@@ -206,7 +196,7 @@ Clients **MAY** use the notification to automatically retry requests that receiv
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "notifications/elicitation/complete",
@@ -216,7 +206,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#url-elicitation-required-error)
 
@@ -226,7 +215,7 @@ When a request cannot be processed until an elicitation is completed, the server
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": 2,
@@ -249,13 +238,11 @@ Copy
 
 Any elicitations returned in the error **MUST** be URL mode elicitations and include an `elicitationId`. Returning a `URLElicitationRequiredError` is equivalent to sending an `elicitation/create` request. The server may return an error (instead of sending a separate `elicitation/create` request) as an affordance to the client to make it clear that a particular elicitation is directly related to a failed client request. The client must treat `URLElicitationRequiredError` responses as equivalent to `elicitation/create` requests. Clients may automatically retry the failed request after the elicitation is completed successfully, for example after receiving a completion notification.
 
-## 
 
 [​](#rationale)
 
 Rationale
 
-### 
 
 [​](#design-decisions)
 
@@ -274,7 +261,6 @@ Design Decisions
 
 **Why doesn’t the server block (wait) on the elicitation to complete?** URL mode elicitation requests are asynchronous or “disconnected” flows by design, because the kinds of interactions they enable are inherently asynchronous. Payment flows, external authorization, etc. can take minutes or more to complete, and in some cases never complete at all (if abandoned by the end-user). **Why disallow URLs in form mode?** Being very explicit about when URLs can (and cannot) be sent in an elicitation request improves the client’s security posture. By clearly stating in the spec that URLs are *only* allowed in the `url` field of a URL mode elicitation request, client implementers can implement UX patterns that are consistent with the security model. For example, a client could refuse to render a URL as a clickable hyperlink in a form mode elicitation request, reducing the likelihood of a user clicking on a malicious URL sent by a malicious server.
 
-### 
 
 [​](#alternative-approaches-considered)
 
@@ -283,7 +269,6 @@ Alternative Approaches Considered
 1.  **Token Passthrough**: Simply passing the MCP client’s token to external services was rejected due to security concerns documented in the Security Best Practices. Having the MCP client obtain additional tokens and passing those to the MCP server was rejected for the same reason.
 2.  **OAuth-specific Capability**: Creating a capability specific to external (3rd-party) authorization with OAuth was considered, but rejected in favor of the more general URL mode elicitation approach that supports multiple use cases.
 
-### 
 
 [​](#community-feedback)
 
@@ -296,7 +281,6 @@ This proposal incorporates extensive community feedback from discussions in \#47
 - Payment and subscription flow support
 - Clear security boundaries and trust models
 
-## 
 
 [​](#backward-compatibility)
 
@@ -321,7 +305,6 @@ This SEP introduces the following breaking changes:
     Previously, clients only declared `"elicitation": {}` without mode specification.
 2.  **Mode Parameter**: All `elicitation/create` requests must now include a `mode` parameter (`"form"` or `"url"`).
 
-### 
 
 [​](#migration-path)
 
@@ -333,7 +316,6 @@ To ease migration:
 - Clients MAY initially support only form mode to maintain compatibility
 - Existing form elicitation implementations continue to work with the addition of the mode parameter
 
-# 
 
 [​](#reference-implementation)
 
@@ -341,7 +323,6 @@ Reference Implementation
 
 Client/server implementation in TypeScript: [feat/url-elicitation](https://github.com/modelcontextprotocol/typescript-sdk/compare/main...ArcadeAI:mcp-typescript-sdk:feat/url-elicitation) Explainer video: [https://drive.google.com/file/d/1llCFS9wmkK_RUgi5B-zHfUUgy-CNb0n0/view?usp=sharing](https://drive.google.com/file/d/1llCFS9wmkK_RUgi5B-zHfUUgy-CNb0n0/view?usp=sharing)
 
-## 
 
 [​](#security-implications)
 
@@ -349,7 +330,6 @@ Security Implications
 
 This SEP introduces several security considerations:
 
-### 
 
 [​](#url-security-requirements)
 
@@ -359,7 +339,6 @@ URL Security Requirements
 2.  **Protocol Restrictions**: Only HTTPS URLs are allowed for URL elicitation
 3.  **Domain Validation**: Clients must clearly display target domains to users
 
-### 
 
 [​](#trust-boundaries)
 
@@ -371,7 +350,6 @@ URL elicitation explicitly creates clear trust boundaries:
 - The MCP server must independently verify user identity
 - Third-party services interact directly with users through secure browser contexts
 
-### 
 
 [​](#identity-verification)
 
@@ -379,7 +357,6 @@ Identity Verification
 
 Servers must verify that the user completing a URL elicitation is the same user who initiated the request. Verifying the identity of the user must not rely on untrusted input (e.g. user input) from the client.
 
-### 
 
 [​](#implementation-requirements)
 
@@ -399,7 +376,6 @@ Implementation Requirements
     - Implement timeout mechanisms for elicitation requests
     - Provide clear error messages for security failures
 
-### 
 
 [​](#relationship-to-existing-security-measures)
 

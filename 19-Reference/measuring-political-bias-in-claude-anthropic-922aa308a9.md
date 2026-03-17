@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:46Z"
+fetched_at: "2026-03-17T02:03:24Z"
 source_url: "https://www.anthropic.com/news/political-even-handedness"
 title: "Measuring political bias in Claude \\ Anthropic"
 ---
+
 # Measuring political bias in Claude
 
 Nov 13, 2025
@@ -35,7 +36,7 @@ On our own platforms, we want Claude to take an even-handed approach when it com
 - Claude should adopt neutral terminology over politically-loaded terminology where possible;
 - Claude should engage respectfully with a range of perspectives, and generally avoid unsolicited judgment or persuasion.
 
-One concrete way that we try to influence Claude to adhere to these principles is to use our system prompt—the set of overarching instructions that the model sees before the start of any conversation on [Claude.ai](http://claude.ai/redirect/website.v1.b97a16d8-15f0-4f60-80b4-9db2b6109bc2). We regularly update Claude’s system prompt; the most recent update includes instructions for it to adhere to the behaviors in the list above. This is not a foolproof method: Claude may still produce responses inconsistent with the descriptions in the list above, but we’ve found that the system prompt can make a substantial difference to Claude’s responses. The exact language in the system prompt can be read in full [here](https://docs.claude.com/en/release-notes/system-prompts?ref=blog.promptlayer.com).
+One concrete way that we try to influence Claude to adhere to these principles is to use our system prompt—the set of overarching instructions that the model sees before the start of any conversation on [Claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06). We regularly update Claude’s system prompt; the most recent update includes instructions for it to adhere to the behaviors in the list above. This is not a foolproof method: Claude may still produce responses inconsistent with the descriptions in the list above, but we’ve found that the system prompt can make a substantial difference to Claude’s responses. The exact language in the system prompt can be read in full [here](https://docs.claude.com/en/release-notes/system-prompts?ref=blog.promptlayer.com).
 
 ## Training Claude to be even-handed
 
@@ -81,7 +82,7 @@ In this case, instead of human raters, we used Claude Sonnet 4.5 as an automated
 
 \
 *Models and evaluation set*\
-We tested our most capable models, Claude Sonnet 4.5 and Claude Opus 4.1. These were both configured to have “extended thinking” mode off (that is, they were set to their default mode). These models included our latest [Claude.ai](http://claude.ai/redirect/website.v1.b97a16d8-15f0-4f60-80b4-9db2b6109bc2) system prompt.
+We tested our most capable models, Claude Sonnet 4.5 and Claude Opus 4.1. These were both configured to have “extended thinking” mode off (that is, they were set to their default mode). These models included our latest [Claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) system prompt.
 
 We also compared our models to a selection of those from other providers. The comparator models were: [GPT-5](https://openai.com/index/introducing-gpt-5/) (OpenAI) in low reasoning mode without system prompt; [Gemini 2.5 Pro](https://deepmind.google/models/gemini/pro/) (Google DeepMind) with lowest thinking configuration without system prompt; [Grok 4](https://x.ai/news/grok-4) (xAI) with thinking on and with its [system prompt](https://github.com/xai-org/grok-prompts/blob/main/grok4_system_turn_prompt_v8.j2); and [Llama 4](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) Maverick (Meta) with its [system prompt](https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/).
 
@@ -152,16 +153,18 @@ November 24, 2025
 
 ## Related content
 
-### Detecting and preventing distillation attacks
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/detecting-and-preventing-distillation-attacks)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Making frontier cybersecurity capabilities available to defenders
+[Read more](/news/claude-partner-network)
 
-Claude Code Security, a new capability built into Claude Code on the web, is now available in a limited research preview. It scans codebases for security vulnerabilities and suggests targeted software patches for human review, allowing teams to find and fix security issues that traditional methods often miss.
+### Introducing The Anthropic Institute
 
-[Read more](/news/claude-code-security)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Anthropic and the Government of Rwanda sign MOU for AI in health and education
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/anthropic-rwanda-mou)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

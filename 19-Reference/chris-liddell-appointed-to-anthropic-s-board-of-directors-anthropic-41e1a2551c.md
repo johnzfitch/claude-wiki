@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-16T21:12:31Z"
+fetched_at: "2026-03-17T02:03:17Z"
 source_url: "https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board"
 title: "Chris Liddell appointed to Anthropic’s board of directors \\ Anthropic"
 ---
+
 # Chris Liddell appointed to Anthropic’s board of directors
 
 Feb 13, 2026
@@ -25,16 +26,18 @@ Beyond his corporate and public service career, Liddell has been recognized for 
 
 ## Related content
 
-### Anthropic opens Bengaluru office and announces new partnerships across India
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/bengaluru-office-partnerships-across-india)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program
+[Read more](/news/claude-partner-network)
 
-[Read more](/news/anthropic-codepath-partnership)
+### Introducing The Anthropic Institute
 
-### Anthropic raises \$30 billion in Series G funding at \$380 billion post-money valuation
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-We have raised \$30 billion in Series G funding led by GIC and Coatue, valuing Anthropic at \$380 billion post-money. The investment will fuel the frontier research, product development, and infrastructure expansions that have made Anthropic the market leader in enterprise AI and coding. Our run-rate revenue is \$14 billion, with this figure growing over 10x annually in each of those past three years.
+[Read more](/news/the-anthropic-institute)
 
-[Read more](/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation)
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

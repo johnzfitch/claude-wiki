@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:14Z"
+fetched_at: "2026-03-17T02:03:49Z"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/basic/transports"
 title: "Transports - Model Context Protocol"
 ---
@@ -15,7 +15,6 @@ MCP currently defines two standard transport mechanisms for client-server commun
 
 Clients **SHOULD** support stdio whenever possible. It is also possible for clients and servers to implement [custom transports](#custom-transports) in a pluggable fashion.
 
-## 
 
 [​](#stdio)
 
@@ -30,7 +29,6 @@ In the **stdio** transport:
 - The server **MUST NOT** write anything to its `stdout` that is not a valid MCP message.
 - The client **MUST NOT** write anything to the server’s `stdin` that is not a valid MCP message.
 
-## 
 
 [​](#http-with-sse)
 
@@ -38,7 +36,6 @@ HTTP with SSE
 
 In the **SSE** transport, the server operates as an independent process that can handle multiple client connections.
 
-#### 
 
 [​](#security-warning)
 
@@ -57,7 +54,6 @@ Without these protections, attackers could use DNS rebinding to interact with lo
 
 When a client connects, the server **MUST** send an `endpoint` event containing a URI for the client to use for sending messages. All subsequent client messages **MUST** be sent as HTTP POST requests to this endpoint. Server messages are sent as SSE `message` events, with the message content encoded as JSON in the event data.
 
-## 
 
 [​](#custom-transports)
 

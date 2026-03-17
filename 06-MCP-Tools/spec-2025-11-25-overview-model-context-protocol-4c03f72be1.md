@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:22Z"
+fetched_at: "2026-03-17T02:03:57Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/basic"
 title: "Overview - Model Context Protocol"
 ---
@@ -19,7 +19,6 @@ The Model Context Protocol consists of several key components that work together
 
 All implementations **MUST** support the base protocol and lifecycle management components. Other components **MAY** be implemented based on the specific needs of the application. These protocol layers establish clear separation of concerns while enabling rich interactions between clients and servers. The modular design allows implementations to support exactly the features they need.
 
-## 
 
 [​](#messages)
 
@@ -27,7 +26,6 @@ Messages
 
 All messages between MCP clients and servers **MUST** follow the [JSON-RPC 2.0](https://www.jsonrpc.org/specification) specification. The protocol defines these types of messages:
 
-### 
 
 [​](#requests)
 
@@ -37,7 +35,7 @@ Requests
 
 Copy
 
-``` shiki
+```python
 {
   jsonrpc: "2.0";
   id: string | number;
@@ -52,7 +50,6 @@ Copy
 - Unlike base JSON-RPC, the ID **MUST NOT** be `null`.
 - The request ID **MUST NOT** have been previously used by the requestor within the same session.
 
-### 
 
 [​](#responses)
 
@@ -60,7 +57,6 @@ Responses
 
 Responses are sent in reply to requests, containing either the result or error of the operation.
 
-#### 
 
 [​](#result-responses)
 
@@ -70,7 +66,7 @@ Result Responses
 
 Copy
 
-``` shiki
+```python
 {
   jsonrpc: "2.0";
   id: string | number;
@@ -84,7 +80,6 @@ Copy
 - Result responses **MUST** include a `result` field.
 - The `result` **MAY** follow any JSON object structure.
 
-#### 
 
 [​](#error-responses)
 
@@ -94,7 +89,7 @@ Error Responses
 
 Copy
 
-``` shiki
+```python
 {
   jsonrpc: "2.0";
   id?: string | number;
@@ -110,7 +105,6 @@ Copy
 - Error responses **MUST** include an `error` field with a `code` and `message`.
 - Error codes **MUST** be integers.
 
-### 
 
 [​](#notifications)
 
@@ -120,7 +114,7 @@ Notifications
 
 Copy
 
-``` shiki
+```python
 {
   jsonrpc: "2.0";
   method: string;
@@ -132,7 +126,6 @@ Copy
 
 - Notifications **MUST NOT** include an ID.
 
-## 
 
 [​](#auth)
 
@@ -140,7 +133,6 @@ Auth
 
 MCP provides an [Authorization](/specification/2025-11-25/basic/authorization) framework for use with HTTP. Implementations using an HTTP-based transport **SHOULD** conform to this specification, whereas implementations using STDIO transport **SHOULD NOT** follow this specification, and instead retrieve credentials from the environment. Additionally, clients and servers **MAY** negotiate their own custom authentication and authorization strategies. For further discussions and contributions to the evolution of MCP’s auth mechanisms, join us in [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) to help shape the future of the protocol!
 
-## 
 
 [​](#schema)
 
@@ -148,7 +140,6 @@ Schema
 
 The full specification of the protocol is defined as a [TypeScript schema](https://github.com/modelcontextprotocol/specification/blob/main/schema/2025-11-25/schema.ts). This is the source of truth for all protocol messages and structures. There is also a [JSON Schema](https://github.com/modelcontextprotocol/specification/blob/main/schema/2025-11-25/schema.json), which is automatically generated from the TypeScript source of truth, for use with various automated tooling.
 
-## 
 
 [​](#json-schema-usage)
 
@@ -156,7 +147,6 @@ JSON Schema Usage
 
 The Model Context Protocol uses JSON Schema for validation throughout the protocol. This section clarifies how JSON Schema should be used within MCP messages.
 
-### 
 
 [​](#schema-dialect)
 
@@ -169,13 +159,11 @@ MCP supports JSON Schema with the following rules:
 3.  **Supported dialects**: Implementations MUST support at least 2020-12 and SHOULD document which additional dialects they support
 4.  **Recommendation**: Implementors are RECOMMENDED to use JSON Schema 2020-12.
 
-### 
 
 [​](#example-usage)
 
 Example Usage
 
-#### 
 
 [​](#default-dialect-2020-12-)
 
@@ -183,7 +171,7 @@ Default dialect (2020-12):
 
 Copy
 
-``` shiki
+```python
 {
   "type": "object",
   "properties": {
@@ -194,7 +182,6 @@ Copy
 }
 ```
 
-#### 
 
 [​](#explicit-dialect-draft-07-)
 
@@ -202,7 +189,7 @@ Explicit dialect (draft-07):
 
 Copy
 
-``` shiki
+```python
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
@@ -214,7 +201,6 @@ Copy
 }
 ```
 
-### 
 
 [​](#implementation-requirements)
 
@@ -224,7 +210,6 @@ Implementation Requirements
 - Clients and servers **MUST** validate schemas according to their declared or default dialect. They **MUST** handle unsupported dialects gracefully by returning an appropriate error indicating the dialect is not supported.
 - Clients and servers **SHOULD** document which schema dialects they support
 
-### 
 
 [​](#schema-validation)
 
@@ -232,13 +217,11 @@ Schema Validation
 
 - Schemas **MUST** be valid according to their declared or default dialect
 
-## 
 
 [​](#general-fields)
 
 General fields
 
-### 
 
 [​](#_meta)
 
@@ -258,7 +241,6 @@ The `_meta` property/parameter is reserved by MCP to allow clients and servers t
 - Unless empty, MUST begin and end with an alphanumeric character (`[a-z0-9A-Z]`).
 - MAY contain hyphens (`-`), underscores (`_`), dots (`.`), and alphanumerics in between.
 
-### 
 
 [​](#icons)
 

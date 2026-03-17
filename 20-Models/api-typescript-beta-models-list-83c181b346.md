@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:38Z"
+fetched_at: "2026-03-17T02:02:01Z"
 source_url: "https://platform.claude.com/docs/en/api/typescript/beta/models/list"
 title: "List Models - Claude API Reference"
 ---
@@ -113,7 +113,7 @@ List Models
 
 TypeScript
 
-``` shiki
+```python
 import Anthropic from '@anthropic-ai/sdk';
 
 const client = new Anthropic({
@@ -128,7 +128,7 @@ for await (const betaModelInfo of client.beta.models.list()) {
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {
@@ -148,7 +148,7 @@ Response 200
 
 Response 200
 
-``` shiki
+```python
 {
   "data": [
     {

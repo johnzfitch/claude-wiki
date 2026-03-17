@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:17Z"
+fetched_at: "2026-03-17T02:03:52Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/changelog"
 title: "Key Changes - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Key Changes - Model Context Protocol"
 
 This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2024-11-05](/specification/2024-11-05).
 
-## 
 
 [​](#major-changes)
 
@@ -21,7 +20,6 @@ Major changes
 3.  Added support for JSON-RPC **[batching](https://www.jsonrpc.org/specification#batch)** (PR [\#228](https://github.com/modelcontextprotocol/specification/pull/228))
 4.  Added comprehensive **tool annotations** for better describing tool behavior, like whether it is read-only or destructive (PR [\#185](https://github.com/modelcontextprotocol/specification/pull/185))
 
-## 
 
 [​](#other-schema-changes)
 
@@ -33,7 +31,6 @@ Other schema changes
 
 See [the updated schema](http://github.com/modelcontextprotocol/specification/tree/main/schema/2025-03-26/schema.ts) for more details.
 
-## 
 
 [​](#full-changelog)
 

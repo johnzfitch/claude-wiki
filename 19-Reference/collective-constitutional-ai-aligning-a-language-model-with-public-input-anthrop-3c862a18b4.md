@@ -1,9 +1,10 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-02-24T05:03:50Z"
+fetched_at: "2026-03-17T02:03:29Z"
 source_url: "https://www.anthropic.com/research/collective-constitutional-ai-aligning-a-language-model-with-public-input"
 title: "Collective Constitutional AI: Aligning a Language Model with Public Input \\ Anthropic"
 ---
+
 # Collective Constitutional AI: Aligning a Language Model with Public Input
 
 Oct 17, 2023
@@ -117,16 +118,14 @@ We believe that our work may be one of the first instances in which members of t
 
 ## Related content
 
+### Labor market impacts of AI: A new measure and early evidence
+
+[Read more](/research/labor-market-impacts)
+
+### An update on our model deprecation commitments for Claude Opus 3
+
+[Read more](/research/deprecation-updates-opus-3)
+
 ### The persona selection model
 
 [Read more](/research/persona-selection-model)
-
-### Anthropic Education Report: The AI Fluency Index
-
-We tracked 11 observable behaviors across thousands of Claude.ai conversations to build the AI Fluency Index — a baseline for measuring how people collaborate with AI today.
-
-[Read more](/research/AI-fluency-index)
-
-### Measuring AI agent autonomy in practice
-
-[Read more](/research/measuring-agent-autonomy)

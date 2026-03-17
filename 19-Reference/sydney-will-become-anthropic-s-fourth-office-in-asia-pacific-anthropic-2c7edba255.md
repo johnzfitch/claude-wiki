@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-12T08:18:31Z"
+fetched_at: "2026-03-17T02:03:25Z"
 source_url: "https://www.anthropic.com/news/sydney-fourth-office-asia-pacific"
 title: "Sydney will become Anthropic’s fourth office in Asia-Pacific \\ Anthropic"
 ---
@@ -28,6 +28,12 @@ For information about career opportunities at our new Sydney office, visit [anth
 
 ## Related content
 
+### Anthropic invests \$100 million into the Claude Partner Network
+
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
+
+[Read more](/news/claude-partner-network)
+
 ### Introducing The Anthropic Institute
 
 We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
@@ -37,9 +43,3 @@ We’re launching The Anthropic Institute, a new effort to confront the most sig
 ### Partnering with Mozilla to improve Firefox’s security
 
 [Read more](/news/mozilla-firefox-security)
-
-### Where things stand with the Department of War
-
-A statement from Dario Amodei.
-
-[Read more](/news/where-stand-department-war)

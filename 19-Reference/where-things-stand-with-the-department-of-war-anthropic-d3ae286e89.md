@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-07T01:04:50Z"
+fetched_at: "2026-03-17T02:03:26Z"
 source_url: "https://www.anthropic.com/news/where-stand-department-war"
 title: "Where things stand with the Department of War \\ Anthropic"
 ---
@@ -32,18 +32,18 @@ Anthropic has much more in common with the Department of War than we have differ
 
 ## Related content
 
-### Partnering with Mozilla to improve Firefox’s security
+### Anthropic invests \$100 million into the Claude Partner Network
 
-[Read more](/news/mozilla-firefox-security)
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
 
-### Statement on the comments from Secretary of War Pete Hegseth
+[Read more](/news/claude-partner-network)
 
-Anthropic's response to the Secretary of War and advice to customers.
+### Introducing The Anthropic Institute
 
-[Read more](/news/statement-comments-secretary-war)
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
 
-### Statement from Dario Amodei on our discussions with the Department of War
+[Read more](/news/the-anthropic-institute)
 
-A statement from our CEO on national security uses of AI.
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
 
-[Read more](/news/statement-department-of-war)
+[Read more](/news/sydney-fourth-office-asia-pacific)

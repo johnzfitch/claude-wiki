@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:18Z"
+fetched_at: "2026-03-17T02:03:53Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/architecture"
 title: "Architecture - Model Context Protocol"
 ---
@@ -10,13 +10,11 @@ title: "Architecture - Model Context Protocol"
 
 The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enables users to integrate AI capabilities across applications while maintaining clear security boundaries and isolating concerns. Built on JSON-RPC, MCP provides a stateful session protocol focused on context exchange and sampling coordination between clients and servers.
 
-## 
 
 [​](#core-components)
 
 Core Components
 
-### 
 
 [​](#host)
 
@@ -31,7 +29,6 @@ The host process acts as the container and coordinator:
 - Coordinates AI/LLM integration and sampling
 - Manages context aggregation across clients
 
-### 
 
 [​](#clients)
 
@@ -47,7 +44,6 @@ Each client is created by the host and maintains an isolated server connection:
 
 A host application creates and manages multiple clients, with each client having a 1:1 relationship with a particular server.
 
-### 
 
 [​](#servers)
 
@@ -61,7 +57,6 @@ Servers provide specialized context and capabilities:
 - Must respect security constraints
 - Can be local processes or remote services
 
-## 
 
 [​](#design-principles)
 
@@ -92,7 +87,6 @@ MCP is built on several key design principles that inform its architecture and i
     - Protocol designed for future extensibility
     - Backwards compatibility is maintained
 
-## 
 
 [​](#capability-negotiation)
 

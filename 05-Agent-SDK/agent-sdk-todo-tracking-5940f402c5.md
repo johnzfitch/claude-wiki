@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:18Z"
+fetched_at: "2026-03-17T02:01:20Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/todo-tracking"
 title: "Todo Lists - Claude API Docs"
 ---
@@ -13,7 +13,6 @@ Track and display todos using the Claude Agent SDK for organized task management
 
 Todo tracking provides a structured way to manage tasks and display progress to users. The Claude Agent SDK includes built-in todo functionality that helps organize complex workflows and keep users informed about task progression.
 
-### 
 
 Todo Lifecycle
 
@@ -24,7 +23,6 @@ Todos follow a predictable lifecycle:
 3.  **Completed** when the task finishes successfully
 4.  **Removed** when all tasks in a group are completed
 
-### 
 
 When Todos Are Used
 
@@ -35,17 +33,15 @@ The SDK automatically creates todos for:
 - **Non-trivial operations** that benefit from progress tracking
 - **Explicit requests** when users ask for todo organization
 
-## 
 
 Examples
 
-### 
 
 Monitoring Todo Changes
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 for await (const message of query({
@@ -70,13 +66,12 @@ for await (const message of query({
 }
 ```
 
-### 
 
 Real-time Progress Display
 
 TypeScript
 
-``` shiki
+```python
 import { query } from "@anthropic-ai/claude-agent-sdk";
 
 class TodoTracker {
@@ -122,7 +117,6 @@ const tracker = new TodoTracker();
 await tracker.trackQuery("Build a complete authentication system with todos");
 ```
 
-## 
 
 Related Documentation
 

@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-12T08:16:11Z"
+fetched_at: "2026-03-17T02:01:03Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/hooks"
 title: "Intercept and control agent behavior with hooks - Claude API Docs"
 ---
@@ -21,7 +21,6 @@ Hooks are callback functions that run your code in response to agent events, lik
 
 This guide covers how hooks work, how to configure them, and provides examples for common patterns like blocking tools, modifying inputs, and forwarding notifications.
 
-## 
 
 How hooks work
 
@@ -59,7 +58,7 @@ The following example puts these steps together. It registers a `PreToolUse` hoo
 
 Python
 
-``` shiki
+```python
 import asyncio
 from claude_agent_sdk import (
     AssistantMessage,
@@ -110,7 +109,6 @@ async def main():
 asyncio.run(main())
 ```
 
-## 
 
 Available hooks
 
@@ -137,7 +135,6 @@ The SDK provides hooks for different stages of agent execution. Some hooks are a
 | `WorktreeCreate` | No | Yes | Git worktree created | Track isolated workspaces |
 | `WorktreeRemove` | No | Yes | Git worktree removed | Clean up workspace resources |
 
-## 
 
 Configure hooks
 
@@ -145,7 +142,7 @@ To configure a hook, pass it in the `hooks` field of your agent options (`Claude
 
 Python
 
-``` shiki
+```python
 options = ClaudeAgentOptions(
     hooks={"PreToolUse": [HookMatcher(matcher="Bash", hooks=[my_callback])]}
 )
@@ -161,7 +158,6 @@ The `hooks` option is a dictionary (Python) or object (TypeScript) where:
 - **Keys** are [hook event names](#available-hooks) (e.g., `'PreToolUse'`, `'PostToolUse'`, `'Stop'`)
 - **Values** are arrays of [matchers](#matchers), each containing an optional filter pattern and your [callback functions](#callback-functions)
 
-### 
 
 Matchers
 
@@ -179,11 +175,9 @@ Use the `matcher` pattern to target specific tools whenever possible. A matcher 
 
 **MCP tool naming:** MCP tools always start with `mcp__` followed by the server name and action: `mcp__<server>__<action>`. For example, if you configure a server named `playwright`, its tools will be named `mcp__playwright__browser_screenshot`, `mcp__playwright__browser_click`, etc. The server name comes from the key you use in the `mcpServers` configuration.
 
-### 
 
 Callback functions
 
-#### 
 
 Inputs
 
@@ -195,7 +189,6 @@ Every hook callback receives three arguments:
 - **Tool use ID** (`str | None` / `string | undefined`): correlates `PreToolUse` and `PostToolUse` events for the same tool call.
 - **Context:** in TypeScript, contains a `signal` property (`AbortSignal`) for cancellation. In Python, this argument is reserved for future use.
 
-#### 
 
 Outputs
 
@@ -208,7 +201,6 @@ Return `{}` to allow the operation without changes. SDK callback hooks use the s
 
 When multiple hooks or permission rules apply, **deny** takes priority over **ask**, which takes priority over **allow**. If any hook returns `deny`, the operation is blocked regardless of other hooks.
 
-#### 
 
 Asynchronous output
 
@@ -216,7 +208,7 @@ By default, the agent waits for your hook to return before proceeding. If your h
 
 Python
 
-``` shiki
+```python
 async def async_hook(input_data, tool_use_id, context):
     # Start a background task, then return immediately
     asyncio.create_task(send_to_logging_service(input_data))
@@ -230,11 +222,9 @@ async def async_hook(input_data, tool_use_id, context):
 
 Async outputs cannot block, modify, or inject context into the operation since the agent has already moved on. Use them only for side effects like logging, metrics, or notifications.
 
-## 
 
 Examples
 
-### 
 
 Modify tool input
 
@@ -242,7 +232,7 @@ This example intercepts Write tool calls and rewrites the `file_path` argument t
 
 Python
 
-``` shiki
+```python
 async def redirect_to_sandbox(input_data, tool_use_id, context):
     if input_data["hook_event_name"] != "PreToolUse":
         return {}
@@ -264,7 +254,6 @@ async def redirect_to_sandbox(input_data, tool_use_id, context):
 
 When using `updatedInput`, you must also include `permissionDecision: 'allow'`. Always return a new object rather than mutating the original `tool_input`.
 
-### 
 
 Add context and block a tool
 
@@ -272,7 +261,7 @@ This example blocks any attempt to write to the `/etc` directory and uses two ou
 
 Python
 
-``` shiki
+```python
 async def block_etc_writes(input_data, tool_use_id, context):
     file_path = input_data["tool_input"].get("file_path", "")
 
@@ -290,7 +279,6 @@ async def block_etc_writes(input_data, tool_use_id, context):
     return {}
 ```
 
-### 
 
 Auto-approve specific tools
 
@@ -298,7 +286,7 @@ By default, the agent may prompt for permission before using certain tools. This
 
 Python
 
-``` shiki
+```python
 async def auto_approve_read_only(input_data, tool_use_id, context):
     if input_data["hook_event_name"] != "PreToolUse":
         return {}
@@ -315,7 +303,6 @@ async def auto_approve_read_only(input_data, tool_use_id, context):
     return {}
 ```
 
-### 
 
 Chain multiple hooks
 
@@ -323,7 +310,7 @@ Hooks execute in the order they appear in the array. Keep each hook focused on a
 
 Python
 
-``` shiki
+```python
 options = ClaudeAgentOptions(
     hooks={
         "PreToolUse": [
@@ -336,7 +323,6 @@ options = ClaudeAgentOptions(
 )
 ```
 
-### 
 
 Filter with regex matchers
 
@@ -344,7 +330,7 @@ Use regex patterns to match multiple tools. This example registers three matcher
 
 Python
 
-``` shiki
+```python
 options = ClaudeAgentOptions(
     hooks={
         "PreToolUse": [
@@ -359,7 +345,6 @@ options = ClaudeAgentOptions(
 )
 ```
 
-### 
 
 Track subagent activity
 
@@ -367,7 +352,7 @@ Use `SubagentStop` hooks to monitor when subagents finish their work. See the fu
 
 Python
 
-``` shiki
+```python
 async def subagent_tracker(input_data, tool_use_id, context):
     # Log subagent details when it finishes
     print(f"[SUBAGENT] Completed: {input_data['agent_id']}")
@@ -382,7 +367,6 @@ options = ClaudeAgentOptions(
 )
 ```
 
-### 
 
 Make HTTP requests from hooks
 
@@ -392,7 +376,7 @@ This example sends a webhook after each tool completes, logging which tool ran a
 
 Python
 
-``` shiki
+```python
 import asyncio
 import json
 import urllib.request
@@ -431,7 +415,6 @@ async def webhook_notifier(input_data, tool_use_id, context):
     return {}
 ```
 
-### 
 
 Forward notifications to Slack
 
@@ -441,7 +424,7 @@ This example forwards every notification to a Slack channel. It requires a [Slac
 
 Python
 
-``` shiki
+```python
 import asyncio
 import json
 import urllib.request
@@ -489,11 +472,9 @@ async def main():
 asyncio.run(main())
 ```
 
-## 
 
 Fix common issues
 
-### 
 
 Hook not firing
 
@@ -503,13 +484,12 @@ Hook not firing
 - For non-tool hooks like `Stop` and `SubagentStop`, matchers match against different fields (see [matcher patterns](https://code.claude.com/docs/en/hooks#matcher-patterns))
 - Hooks may not fire when the agent hits the [`max_turns`](/docs/en/agent-sdk/python#claude-agent-options) limit because the session ends before hooks can execute
 
-### 
 
 Matcher not filtering as expected
 
 Matchers only match **tool names**, not file paths or other arguments. To filter by file path, check `tool_input.file_path` inside your hook:
 
-``` shiki
+```python
 const myHook: HookCallback = async (input, toolUseID, { signal }) => {
   const preInput = input as PreToolUseHookInput;
   const toolInput = preInput.tool_input as Record<string, unknown>;
@@ -520,14 +500,12 @@ const myHook: HookCallback = async (input, toolUseID, { signal }) => {
 };
 ```
 
-### 
 
 Hook timeout
 
 - Increase the `timeout` value in the `HookMatcher` configuration
 - Use the `AbortSignal` from the third callback argument to handle cancellation gracefully in TypeScript
 
-### 
 
 Tool blocked unexpectedly
 
@@ -535,7 +513,6 @@ Tool blocked unexpectedly
 - Add logging to your hooks to see what `permissionDecisionReason` they're returning
 - Verify matcher patterns aren't too broad (an empty matcher matches all tools)
 
-### 
 
 Modified input not applied
 
@@ -555,7 +532,6 @@ Modified input not applied
 
 - Include `hookEventName` in `hookSpecificOutput` to identify which hook type the output is for
 
-### 
 
 Session hooks not available in Python
 
@@ -563,7 +539,7 @@ Session hooks not available in Python
 
 Python
 
-``` shiki
+```python
 options = ClaudeAgentOptions(
     setting_sources=["project"],  # Loads .claude/settings.json including hooks
 )
@@ -571,13 +547,11 @@ options = ClaudeAgentOptions(
 
 To run initialization logic as a Python SDK callback instead, use the first message from `client.receive_response()` as your trigger.
 
-### 
 
 Subagent permission prompts multiplying
 
 When spawning multiple subagents, each one may request permissions separately. Subagents do not automatically inherit parent agent permissions. To avoid repeated prompts, use `PreToolUse` hooks to auto-approve specific tools, or configure permission rules that apply to subagent sessions.
 
-### 
 
 Recursive hook loops with subagents
 
@@ -587,13 +561,11 @@ A `UserPromptSubmit` hook that spawns subagents can create infinite loops if tho
 - Use a shared variable or session state to track whether you're already inside a subagent
 - Scope hooks to only run for the top-level agent session
 
-### 
 
 systemMessage not appearing in output
 
 The `systemMessage` field adds context to the conversation that the model sees, but it may not appear in all SDK output modes. If you need to surface hook decisions to your application, log them separately or use a dedicated output channel.
 
-## 
 
 Related resources
 

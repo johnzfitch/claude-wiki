@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:18Z"
+fetched_at: "2026-03-17T02:03:53Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/server/utilities/pagination"
 title: "Pagination - Model Context Protocol"
 ---
@@ -10,7 +10,6 @@ title: "Pagination - Model Context Protocol"
 
 The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller chunks rather than all at once. Pagination is especially important when connecting to external services over the internet, but also useful for local integrations to avoid performance issues with large data sets.
 
-## 
 
 [​](#pagination-model)
 
@@ -21,7 +20,6 @@ Pagination in MCP uses an opaque cursor-based approach, instead of numbered page
 - The **cursor** is an opaque string token, representing a position in the result set
 - **Page size** is determined by the server, and clients **MUST NOT** assume a fixed page size
 
-## 
 
 [​](#response-format)
 
@@ -34,7 +32,7 @@ Pagination starts when the server sends a **response** that includes:
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "id": "123",
@@ -45,7 +43,6 @@ Copy
 }
 ```
 
-## 
 
 [​](#request-format)
 
@@ -55,7 +52,7 @@ After receiving a cursor, the client can *continue* paginating by issuing a requ
 
 Copy
 
-``` shiki
+```python
 {
   "jsonrpc": "2.0",
   "method": "resources/list",
@@ -65,13 +62,11 @@ Copy
 }
 ```
 
-## 
 
 [​](#pagination-flow)
 
 Pagination Flow
 
-## 
 
 [​](#operations-supporting-pagination)
 
@@ -84,7 +79,6 @@ The following MCP operations support pagination:
 - `prompts/list` - List available prompts
 - `tools/list` - List available tools
 
-## 
 
 [​](#implementation-guidelines)
 
@@ -101,7 +95,6 @@ Implementation Guidelines
     - Don’t attempt to parse or modify cursors
     - Don’t persist cursors across sessions
 
-## 
 
 [​](#error-handling)
 

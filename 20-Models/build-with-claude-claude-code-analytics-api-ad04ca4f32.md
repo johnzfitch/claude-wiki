@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-12T08:16:27Z"
+fetched_at: "2026-03-17T02:01:37Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-code-analytics-api"
 title: "Claude Code Analytics API - Claude API Docs"
 ---
@@ -27,13 +27,12 @@ This API enables you to better monitor, analyze, and optimize your Claude Code a
 
 This API is part of the [Admin API](/docs/en/build-with-claude/administration-api). These endpoints require an Admin API key (starting with `sk-ant-admin...`) that differs from standard API keys. Only organization members with the admin role can provision Admin API keys through the [Claude Console](/settings/admin-keys).
 
-## 
 
 Quick start
 
 Get your organization's Claude Code analytics for a specific day:
 
-``` shiki
+```python
 curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
 starting_at=2025-09-08&\
 limit=20" \
@@ -49,13 +48,11 @@ If you're building an integration, set your User-Agent header to help us underst
 User-Agent: YourApp/1.0.0 (https://yourapp.com)
 ```
 
-## 
 
 Claude Code Analytics API
 
 Track Claude Code usage, productivity metrics, and developer activity across your organization with the `/v1/organizations/usage_report/claude_code` endpoint.
 
-### 
 
 Key concepts
 
@@ -68,26 +65,23 @@ Key concepts
 
 For complete parameter details and response schemas, see the [Claude Code Analytics API reference](/docs/en/api/admin-api/claude-code/get-claude-code-usage-report).
 
-### 
 
 Basic examples
 
-#### 
 
 Get analytics for a specific day
 
-``` shiki
+```python
 curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
 starting_at=2025-09-08" \
   --header "anthropic-version: 2023-06-01" \
   --header "x-api-key: $ADMIN_API_KEY"
 ```
 
-#### 
 
 Get analytics with pagination
 
-``` shiki
+```python
 # First request
 curl "https://api.anthropic.com/v1/organizations/usage_report/claude_code?\
 starting_at=2025-09-08&\
@@ -103,7 +97,6 @@ page=page_MjAyNS0wNS0xNFQwMDowMDowMFo=" \
   --header "x-api-key: $ADMIN_API_KEY"
 ```
 
-### 
 
 Request parameters
 
@@ -113,13 +106,11 @@ Request parameters
 | `limit` | integer | No | Number of records per page (default: 20, max: 1000) |
 | `page` | string | No | Opaque cursor token from previous response's `next_page` field |
 
-### 
 
 Available metrics
 
 Each response record contains the following metrics for a single user on a single day:
 
-#### 
 
 Dimensions
 
@@ -129,7 +120,6 @@ Dimensions
 - **customer_type**: Type of customer account (`api` for API customers, `subscription` for Pro/Team customers)
 - **terminal_type**: Type of terminal or environment where Claude Code was used (e.g., `vscode`, `iTerm.app`, `tmux`)
 
-#### 
 
 Core metrics
 
@@ -139,7 +129,6 @@ Core metrics
 - **commits_by_claude_code**: Number of git commits created through Claude Code's commit functionality
 - **pull_requests_by_claude_code**: Number of pull requests created through Claude Code's PR functionality
 
-#### 
 
 Tool action metrics
 
@@ -149,7 +138,6 @@ Breakdown of tool action acceptance and rejection rates by tool type:
 - **write_tool.accepted/rejected**: Number of Write tool proposals that the user accepted/rejected
 - **notebook_edit_tool.accepted/rejected**: Number of NotebookEdit tool proposals that the user accepted/rejected
 
-#### 
 
 Model breakdown
 
@@ -161,13 +149,12 @@ For each Claude model used:
 - **estimated_cost.amount**: Estimated cost in cents USD for this model
 - **estimated_cost.currency**: Currency code for the cost amount (currently always `USD`)
 
-### 
 
 Response structure
 
 The API returns data in the following format:
 
-``` shiki
+```python
 {
   "data": [
     {
@@ -228,7 +215,6 @@ The API returns data in the following format:
 }
 ```
 
-## 
 
 Pagination
 
@@ -240,7 +226,6 @@ The API supports cursor-based pagination for organizations with large numbers of
 
 The cursor encodes the position of the last record and ensures stable pagination even as new data arrives. Each pagination session maintains a consistent data boundary to ensure you don't miss or duplicate records.
 
-## 
 
 Common use cases
 
@@ -251,23 +236,19 @@ Common use cases
 - **Adoption monitoring**: Identify which teams and users are getting the most value from Claude Code
 - **ROI justification**: Provide concrete metrics to justify and expand Claude Code adoption internally
 
-## 
 
 Frequently asked questions
 
-### 
 
 How fresh is the analytics data?
 
 Claude Code analytics data typically appears within 1 hour of user activity completion. To ensure consistent pagination results, only data older than 1 hour is included in responses.
 
-### 
 
 Can I get real-time metrics?
 
 No, this API provides daily aggregated metrics only. For real-time monitoring, consider using the [OpenTelemetry integration](https://code.claude.com/docs/en/monitoring-usage).
 
-### 
 
 How are users identified in the data?
 
@@ -278,37 +259,31 @@ Users are identified through the `actor` field in two ways:
 
 The `customer_type` field indicates whether the usage is from `api` customers (API PAYG) or `subscription` customers (Pro/Team plans).
 
-### 
 
 What's the data retention period?
 
 Historical Claude Code analytics data is retained and accessible through the API. There is no specified deletion period for this data.
 
-### 
 
 Which Claude Code deployments are supported?
 
 This API only tracks Claude Code usage on the Claude API (1st party). Usage on Amazon Bedrock, Google Vertex AI, or other third-party platforms is not included.
 
-### 
 
 What does it cost to use this API?
 
 The Claude Code Analytics API is free to use for all organizations with access to the Admin API.
 
-### 
 
 How do I calculate tool acceptance rates?
 
 Tool acceptance rate = `accepted / (accepted + rejected)` for each tool type. For example, if the edit tool shows 45 accepted and 5 rejected, the acceptance rate is 90%.
 
-### 
 
 What time zone is used for the date parameter?
 
 All dates are in UTC. The `starting_at` parameter should be in YYYY-MM-DD format and represents UTC midnight for that day.
 
-## 
 
 See also
 

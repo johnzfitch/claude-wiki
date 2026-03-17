@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:10Z"
+fetched_at: "2026-03-17T02:03:45Z"
 source_url: "https://modelcontextprotocol.io/seps/1303-input-validation-errors-as-tool-execution-errors"
 title: "SEP-1303: Input Validation Errors as Tool Execution Errors - Model Context Protocol"
 ---
@@ -26,7 +26,6 @@ FinalStandards Track
 
 ------------------------------------------------------------------------
 
-## 
 
 [​](#abstract)
 
@@ -34,7 +33,6 @@ Abstract
 
 This SEP proposes treating tools input validation errors as Tool Execution Errors rather than Protocol Errors. This change would enable language models to receive validation error feedback in their context window, allowing them to self-correct and successfully complete tasks without human intervention, significantly improving task completion rate.
 
-## 
 
 [​](#motivation)
 
@@ -42,7 +40,6 @@ Motivation
 
 Language models can learn from tool input validation error messages and retry a tools/call with corrected parameters accordingly, but only if they receive the error feedback in their context window. Protocol Errors are catch at the application level by the MCP Client. Only Tool Execution Errors are forwarded back to the model as JSON-RPC responses. With the current specifications, models cannot see these error messages and thus cannot self-correct, leading to repeated failures and poor user experiences.
 
-### 
 
 [​](#problem-statement)
 
@@ -52,7 +49,7 @@ Consider a flight booking tool that validates departure dates using the followin
 
 Copy
 
-``` shiki
+```python
 departureDate: z.string()
   .regex(/^\d{2}\/\d{2}\/\d{4}$/, "date must be in dd/mm/yyyy format")
   .superRefine((dateStr, ctx) => {
@@ -77,7 +74,6 @@ Tool expected input JSON schema can only describe the regex statement. The actua
 3.  The task fails despite the model being capable of correcting itself if given proper feedback
 4.  Users experience frustration and must manually intervene
 
-### 
 
 [​](#benefits-of-this-proposal)
 
@@ -88,13 +84,11 @@ Benefits of This Proposal
 3.  **Leverages Model Capabilities**: Modern LLMs excel at understanding and responding to error messages
 4.  **Reduced API Calls**: Fewer retry attempts as models correct themselves on the first error
 
-## 
 
 [​](#specification)
 
 Specification
 
-### 
 
 [​](#current-behavior)
 
@@ -107,7 +101,6 @@ The [tool errors specification](https://modelcontextprotocol.io/specification/20
 
 This ambiguity leads to inconsistent implementations where valuable error feedback is lost.
 
-### 
 
 [​](#proposed-change)
 
@@ -118,7 +111,6 @@ Clarify the specification with the following changes:
 1.  Removes the “invalid argument” category from **Protocol Errors**.
 2.  **Tool Execution Errors** should be used for all tool argument validation failures (merging `invalid argument` and `invalid input data` under a new `input validation errors` category)
 
-### 
 
 [​](#specification-text-changes)
 
@@ -128,7 +120,7 @@ Update the error handling section to include:
 
 Copy
 
-``` shiki
+```python
 ## Error Handling
 
 Tools use two error reporting mechanisms:
@@ -144,13 +136,11 @@ Tools use two error reporting mechanisms:
    - Business logic errors
 ```
 
-## 
 
 [​](#implementation)
 
 Implementation
 
-### 
 
 [​](#before-protocol-error)
 
@@ -158,7 +148,7 @@ Before (Protocol Error)
 
 Copy
 
-``` shiki
+```python
 // Model submits past date
 request: {
   ...
@@ -184,7 +174,6 @@ response: {
 // This cycle repeats until failure
 ```
 
-### 
 
 [​](#after-tool-execution-error)
 
@@ -192,7 +181,7 @@ After (Tool Execution Error)
 
 Copy
 
-``` shiki
+```python
 // Model submits past date
 request: {
   ...
@@ -231,7 +220,6 @@ request: {
 }
 ```
 
-## 
 
 [​](#backwards-compatibility)
 
@@ -246,7 +234,6 @@ This change is backwards compatible as it:
 
 Servers implementing the clarified behavior will provide better model self-recovery while continuing to work with all existing clients.
 
-## 
 
 [​](#references)
 

@@ -1,6 +1,6 @@
 ---
 category: "06-MCP-Tools"
-fetched_at: "2026-03-12T08:19:20Z"
+fetched_at: "2026-03-17T02:03:56Z"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/schema"
 title: "Schema Reference - Model Context Protocol"
 ---
@@ -8,13 +8,10 @@ title: "Schema Reference - Model Context Protocol"
 # Schema Reference
 
 
-## 
-
 [​](#json-rpc)
 
 JSON-RPC
 
-### 
 
 [​](#jsonrpcerror)
 
@@ -48,7 +45,6 @@ Type Declaration
 
   Additional information about the error. The value of this member is defined by the sender (e.g. detailed error information, nested errors etc.).
 
-### 
 
 [​](#jsonrpcmessage)
 
@@ -62,7 +58,6 @@ JSONRPCMessage:\
 
 Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
 
-### 
 
 [​](#jsonrpcnotification)
 
@@ -94,7 +89,6 @@ Inherited from Notification.params
 
 jsonrpc: “2.0”[](#jsonrpcnotification-jsonrpc)
 
-### 
 
 [​](#jsonrpcrequest)
 
@@ -136,7 +130,6 @@ jsonrpc: “2.0”[](#jsonrpcrequest-jsonrpc)
 
 id: RequestId[](#jsonrpcrequest-id)
 
-### 
 
 [​](#jsonrpcresponse)
 
@@ -156,13 +149,11 @@ id: RequestId[](#jsonrpcresponse-id)
 
 result: Result[](#jsonrpcresponse-result)
 
-## 
 
 [​](#common-types)
 
 Common Types
 
-### 
 
 [​](#annotations)
 
@@ -196,7 +187,6 @@ Should be an ISO 8601 formatted string (e.g., “2025-01-12T15:00:58Z”).
 
 Examples: last activity timestamp in an open file, timestamp when the resource was attached, etc.
 
-### 
 
 [​](#cursor)
 
@@ -206,7 +196,6 @@ Cursor: string
 
 An opaque token used to represent a cursor for pagination.
 
-### 
 
 [​](#emptyresult)
 
@@ -216,7 +205,6 @@ EmptyResult: [Result](#result)
 
 A response that indicates success but carries no data.
 
-### 
 
 [​](#logginglevel)
 
@@ -236,7 +224,6 @@ The severity of a log message.
 
 These map to syslog message severities, as specified in RFC-5424: [](https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1)[https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1](https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1)
 
-### 
 
 [​](#progresstoken)
 
@@ -246,7 +233,6 @@ ProgressToken: string \| number
 
 A progress token, used to associate progress notifications with the original request.
 
-### 
 
 [​](#requestid)
 
@@ -256,7 +242,6 @@ RequestId: string \| number
 
 A uniquely identifying ID for a request in JSON-RPC.
 
-### 
 
 [​](#result)
 
@@ -271,7 +256,6 @@ interface Result {\
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#role)
 
@@ -281,13 +265,11 @@ Role: “user” \| “assistant”
 
 The sender or recipient of messages and data in a conversation.
 
-## 
 
 [​](#content)
 
 Content
 
-### 
 
 [​](#audiocontent)
 
@@ -321,7 +303,6 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#blobresourcecontents)
 
@@ -356,7 +337,6 @@ blob: string[](#blobresourcecontents-blob)
 
 A base64-encoded string representing the binary data of the item.
 
-### 
 
 [​](#contentblock)
 
@@ -369,7 +349,6 @@ ContentBlock:\
   \| [ResourceLink](#resourcelink)\
   \| [EmbeddedResource](#embeddedresource)
 
-### 
 
 [​](#embeddedresource)
 
@@ -398,7 +377,6 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#imagecontent)
 
@@ -432,7 +410,6 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#resourcelink)
 
@@ -510,7 +487,6 @@ Inherited from [Resource](#resource).[\_meta](#resource-_meta)
 
 type: “resource_link”[](#resourcelink-type)
 
-### 
 
 [​](#textcontent)
 
@@ -539,7 +515,6 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#textresourcecontents)
 
@@ -574,13 +549,11 @@ text: string[](#textresourcecontents-text)
 
 The text of the item. This must only be set if the item can actually be represented as text (not binary data).
 
-## 
 
 [​](#completion/complete)
 
 `completion/complete`
 
-### 
 
 [​](#completerequest)
 
@@ -629,7 +602,6 @@ Type Declaration
 
 Overrides Request.params
 
-### 
 
 [​](#completeresult)
 
@@ -665,7 +637,6 @@ Type Declaration
 
   Indicates whether there are additional completion options beyond those provided in the current response, even if the exact total is unknown.
 
-### 
 
 [​](#promptreference)
 
@@ -695,7 +666,6 @@ Inherited from BaseMetadata.title
 
 type: “ref/prompt”[](#promptreference-type)
 
-### 
 
 [​](#resourcetemplatereference)
 
@@ -714,13 +684,11 @@ uri: string[](#resourcetemplatereference-uri)
 
 The URI or URI template of the resource.
 
-## 
 
 [​](#elicitation/create)
 
 `elicitation/create`
 
-### 
 
 [​](#elicitrequest)
 
@@ -762,7 +730,6 @@ Type Declaration
 
 Overrides Request.params
 
-### 
 
 [​](#elicitresult)
 
@@ -795,7 +762,6 @@ content?: { \[key: string\]: string \| number \| boolean }[](#elicitresult-conte
 
 The submitted form data, only present when action is “accept”. Contains values matching the requested schema.
 
-### 
 
 [​](#booleanschema)
 
@@ -816,7 +782,6 @@ description?: string[](#booleanschema-description)
 
 default?: boolean[](#booleanschema-default)
 
-### 
 
 [​](#enumschema)
 
@@ -840,7 +805,6 @@ enum: string\[\][](#enumschema-enum)
 
 enumNames?: string\[\][](#enumschema-enumnames)
 
-### 
 
 [​](#numberschema)
 
@@ -864,7 +828,6 @@ minimum?: number[](#numberschema-minimum)
 
 maximum?: number[](#numberschema-maximum)
 
-### 
 
 [​](#primitiveschemadefinition)
 
@@ -878,7 +841,6 @@ PrimitiveSchemaDefinition:\
 
 Restricted schema definitions that only allow primitive types without nested objects or arrays.
 
-### 
 
 [​](#stringschema)
 
@@ -905,13 +867,11 @@ maxLength?: number[](#stringschema-maxlength)
 
 format?: “uri” \| “email” \| “date” \| “date-time”[](#stringschema-format)
 
-## 
 
 [​](#initialize)
 
 `initialize`
 
-### 
 
 [​](#initializerequest)
 
@@ -946,7 +906,6 @@ Type Declaration
 
 Overrides Request.params
 
-### 
 
 [​](#initializeresult)
 
@@ -983,7 +942,6 @@ Instructions describing how to use the server and its features.
 
 This can be used by clients to improve the LLM’s understanding of available tools, resources, etc. It can be thought of like a “hint” to the model. For example, this information MAY be added to the system prompt.
 
-### 
 
 [​](#clientcapabilities)
 
@@ -1020,7 +978,6 @@ elicitation?: object[](#clientcapabilities-elicitation)
 
 Present if the client supports elicitation from the server.
 
-### 
 
 [​](#implementation)
 
@@ -1050,7 +1007,6 @@ Inherited from BaseMetadata.title
 
 version: string[](#implementation-version)
 
-### 
 
 [​](#servercapabilities)
 
@@ -1113,13 +1069,11 @@ Type Declaration
 
   Whether this server supports notifications for changes to the tool list.
 
-## 
 
 [​](#logging/setlevel)
 
 `logging/setLevel`
 
-### 
 
 [​](#setlevelrequest)
 
@@ -1146,13 +1100,11 @@ Type Declaration
 
 Overrides Request.params
 
-## 
 
 [​](#notifications/cancelled)
 
 `notifications/cancelled`
 
-### 
 
 [​](#cancellednotification)
 
@@ -1191,13 +1143,11 @@ Type Declaration
 
 Overrides Notification.params
 
-## 
 
 [​](#notifications/initialized)
 
 `notifications/initialized`
 
-### 
 
 [​](#initializednotification)
 
@@ -1226,13 +1176,11 @@ method: “notifications/initialized”[](#initializednotification-method)
 
 Overrides Notification.method
 
-## 
 
 [​](#notifications/message)
 
 `notifications/message`
 
-### 
 
 [​](#loggingmessagenotification)
 
@@ -1267,13 +1215,11 @@ Type Declaration
 
 Overrides Notification.params
 
-## 
 
 [​](#notifications/progress)
 
 `notifications/progress`
 
-### 
 
 [​](#progressnotification)
 
@@ -1317,13 +1263,11 @@ Type Declaration
 
 Overrides Notification.params
 
-## 
 
 [​](#notifications/prompts/list_changed)
 
 `notifications/prompts/list_changed`
 
-### 
 
 [​](#promptlistchangednotification)
 
@@ -1352,13 +1296,11 @@ method: “notifications/prompts/list_changed”[](#promptlistchangednotificatio
 
 Overrides Notification.method
 
-## 
 
 [​](#notifications/resources/list_changed)
 
 `notifications/resources/list_changed`
 
-### 
 
 [​](#resourcelistchangednotification)
 
@@ -1387,13 +1329,11 @@ method: “notifications/resources/list_changed”[](#resourcelistchangednotific
 
 Overrides Notification.method
 
-## 
 
 [​](#notifications/resources/updated)
 
 `notifications/resources/updated`
 
-### 
 
 [​](#resourceupdatednotification)
 
@@ -1420,13 +1360,11 @@ Type Declaration
 
 Overrides Notification.params
 
-## 
 
 [​](#notifications/roots/list_changed)
 
 `notifications/roots/list_changed`
 
-### 
 
 [​](#rootslistchangednotification)
 
@@ -1455,13 +1393,11 @@ method: “notifications/roots/list_changed”[](#rootslistchangednotification-m
 
 Overrides Notification.method
 
-## 
 
 [​](#notifications/tools/list_changed)
 
 `notifications/tools/list_changed`
 
-### 
 
 [​](#toollistchangednotification)
 
@@ -1490,13 +1426,11 @@ method: “notifications/tools/list_changed”[](#toollistchangednotification-me
 
 Overrides Notification.method
 
-## 
 
 [​](#ping)
 
 `ping`
 
-### 
 
 [​](#pingrequest)
 
@@ -1532,13 +1466,11 @@ method: “ping”[](#pingrequest-method)
 
 Overrides Request.method
 
-## 
 
 [​](#prompts/get)
 
 `prompts/get`
 
-### 
 
 [​](#getpromptrequest)
 
@@ -1569,7 +1501,6 @@ Type Declaration
 
 Overrides Request.params
 
-### 
 
 [​](#getpromptresult)
 
@@ -1596,7 +1527,6 @@ An optional description for the prompt.
 
 messages: PromptMessage\[\][](#getpromptresult-messages)
 
-### 
 
 [​](#promptmessage)
 
@@ -1615,13 +1545,11 @@ role: Role[](#promptmessage-role)
 
 content: ContentBlock[](#promptmessage-content)
 
-## 
 
 [​](#prompts/list)
 
 `prompts/list`
 
-### 
 
 [​](#listpromptsrequest)
 
@@ -1648,7 +1576,6 @@ method: “prompts/list”[](#listpromptsrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listpromptsresult)
 
@@ -1677,7 +1604,6 @@ Inherited from PaginatedResult.nextCursor
 
 prompts: Prompt\[\][](#listpromptsresult-prompts)
 
-### 
 
 [​](#prompt)
 
@@ -1719,7 +1645,6 @@ A list of arguments to use for templating the prompt.
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#promptargument)
 
@@ -1756,13 +1681,11 @@ required?: boolean[](#promptargument-required)
 
 Whether this argument must be provided.
 
-## 
 
 [​](#resources/list)
 
 `resources/list`
 
-### 
 
 [​](#listresourcesrequest)
 
@@ -1789,7 +1712,6 @@ method: “resources/list”[](#listresourcesrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listresourcesresult)
 
@@ -1818,7 +1740,6 @@ Inherited from PaginatedResult.nextCursor
 
 resources: Resource\[\][](#listresourcesresult-resources)
 
-### 
 
 [​](#resource)
 
@@ -1879,13 +1800,11 @@ This can be used by Hosts to display file sizes and estimate context window usag
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-## 
 
 [​](#resources/read)
 
 `resources/read`
 
-### 
 
 [​](#readresourcerequest)
 
@@ -1912,7 +1831,6 @@ Type Declaration
 
 Overrides Request.params
 
-### 
 
 [​](#readresourceresult)
 
@@ -1934,13 +1852,11 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 
 contents: (TextResourceContents \| BlobResourceContents)\[\][](#readresourceresult-contents)
 
-## 
 
 [​](#resources/subscribe)
 
 `resources/subscribe`
 
-### 
 
 [​](#subscriberequest)
 
@@ -1967,13 +1883,11 @@ Type Declaration
 
 Overrides Request.params
 
-## 
 
 [​](#resources/templates/list)
 
 `resources/templates/list`
 
-### 
 
 [​](#listresourcetemplatesrequest)
 
@@ -2000,7 +1914,6 @@ method: “resources/templates/list”[](#listresourcetemplatesrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listresourcetemplatesresult)
 
@@ -2029,7 +1942,6 @@ Inherited from PaginatedResult.nextCursor
 
 resourceTemplates: ResourceTemplate\[\][](#listresourcetemplatesresult-resourcetemplates)
 
-### 
 
 [​](#resourcetemplate)
 
@@ -2083,13 +1995,11 @@ Optional annotations for the client.
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-## 
 
 [​](#resources/unsubscribe)
 
 `resources/unsubscribe`
 
-### 
 
 [​](#unsubscriberequest)
 
@@ -2116,13 +2026,11 @@ Type Declaration
 
 Overrides Request.params
 
-## 
 
 [​](#roots/list)
 
 `roots/list`
 
-### 
 
 [​](#listrootsrequest)
 
@@ -2160,7 +2068,6 @@ method: “roots/list”[](#listrootsrequest-method)
 
 Overrides Request.method
 
-### 
 
 [​](#listrootsresult)
 
@@ -2182,7 +2089,6 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 
 roots: Root\[\][](#listrootsresult-roots)
 
-### 
 
 [​](#root)
 
@@ -2208,13 +2114,11 @@ An optional name for the root. This can be used to provide a human-readable iden
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-## 
 
 [​](#sampling/createmessage)
 
 `sampling/createMessage`
 
-### 
 
 [​](#createmessagerequest)
 
@@ -2274,7 +2178,6 @@ Type Declaration
 
 Overrides Request.params
 
-### 
 
 [​](#createmessageresult)
 
@@ -2313,7 +2216,6 @@ content: TextContent \| ImageContent \| AudioContent[](#createmessageresult-cont
 
 Inherited from [SamplingMessage](#samplingmessage).[content](#samplingmessage-content)
 
-### 
 
 [​](#modelhint)
 
@@ -2341,7 +2243,6 @@ The client MAY also map the string to a different provider’s model name or a d
 
 - `gemini-1.5-flash` could match `claude-3-haiku-20240307`
 
-### 
 
 [​](#modelpreferences)
 
@@ -2380,7 +2281,6 @@ intelligencePriority?: number[](#modelpreferences-intelligencepriority)
 
 How much to prioritize intelligence and capabilities when selecting a model. A value of 0 means intelligence is not important, while a value of 1 means intelligence is the most important factor.
 
-### 
 
 [​](#samplingmessage)
 
@@ -2397,13 +2297,11 @@ role: Role[](#samplingmessage-role)
 
 content: TextContent \| ImageContent \| AudioContent[](#samplingmessage-content)
 
-## 
 
 [​](#tools/call)
 
 `tools/call`
 
-### 
 
 [​](#calltoolrequest)
 
@@ -2424,7 +2322,6 @@ params: { name: string; arguments?: { \[key: string\]: unknown } }[](#calltoolre
 
 Overrides Request.params
 
-### 
 
 [​](#calltoolresult)
 
@@ -2464,13 +2361,11 @@ Any errors that originate from the tool SHOULD be reported inside the result obj
 
 However, any errors in *finding* the tool, an error indicating that the server does not support tool calls, or any other exceptional conditions, should be reported as an MCP error response.
 
-## 
 
 [​](#tools/list)
 
 `tools/list`
 
-### 
 
 [​](#listtoolsrequest)
 
@@ -2497,7 +2392,6 @@ method: “tools/list”[](#listtoolsrequest-method)
 
 Overrides PaginatedRequest.method
 
-### 
 
 [​](#listtoolsresult)
 
@@ -2526,7 +2420,6 @@ Inherited from PaginatedResult.nextCursor
 
 tools: Tool\[\][](#listtoolsresult-tools)
 
-### 
 
 [​](#tool)
 
@@ -2590,7 +2483,6 @@ Display name precedence order is: title, annotations.title, then name.
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-### 
 
 [​](#toolannotations)
 
