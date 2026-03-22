@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:30Z"
+fetched_at: "2026-03-20T10:37:05Z"
 source_url: "https://www.anthropic.com/research/distributed-representations-composition-superposition"
 title: "Distributed Representations: Composition &amp; Superposition \\ Anthropic"
 ---

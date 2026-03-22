@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-16T05:34:06Z"
+fetched_at: "2026-03-20T11:32:01Z"
 source_url: "https://support.claude.com/en/articles/13065128-claude-for-chrome-admin-controls"
 title: "Claude in Chrome admin controls | Claude Help Center"
 ---

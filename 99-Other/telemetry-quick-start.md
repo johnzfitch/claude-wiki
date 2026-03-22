@@ -102,6 +102,10 @@ export OTEL_SERVICE_NAME=claude-code
 
 ## Perfetto Trace Capture
 
+> **DISABLED in 2.1.78**: Perfetto tracing is dead code. The enable flag
+> is never activated. Setting `CLAUDE_CODE_PERFETTO_TRACE` has no effect.
+> Use OTEL traces or `CLAUDE_CODE_PROFILE_STARTUP=1` instead.
+
 Perfetto gives you **single-file, shareable performance traces** (like Chrome DevTools).
 
 ```bash

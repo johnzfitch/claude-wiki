@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:22Z"
+fetched_at: "2026-03-20T10:36:58Z"
 source_url: "https://www.anthropic.com/news/mariano-florentino-long-term-benefit-trust"
 title: "Mariano-Florentino Cuéllar appointed to Anthropic’s Long-Term Benefit Trust \\ Anthropic"
 ---

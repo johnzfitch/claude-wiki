@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:16Z"
+fetched_at: "2026-03-20T10:36:48Z"
 source_url: "https://www.anthropic.com/news/apple-xcode-claude-agent-sdk"
 title: "Apple’s Xcode now supports the Claude Agent SDK \\ Anthropic"
 ---

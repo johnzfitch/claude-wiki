@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-16T05:34:05Z"
+fetched_at: "2026-03-20T11:32:06Z"
 source_url: "https://support.claude.com/en/articles/9547008-discovering-publishing-customizing-and-sharing-artifacts"
 title: "Publishing and sharing artifacts | Claude Help Center"
 ---

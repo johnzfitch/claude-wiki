@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:30Z"
+fetched_at: "2026-03-20T10:37:06Z"
 source_url: "https://www.anthropic.com/research/evaluating-and-mitigating-discrimination-in-language-model-decisions"
 title: "Evaluating and Mitigating Discrimination in Language Model Decisions \\ Anthropic"
 ---

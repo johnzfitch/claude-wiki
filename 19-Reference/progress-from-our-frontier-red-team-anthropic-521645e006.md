@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:25Z"
+fetched_at: "2026-03-20T10:37:01Z"
 source_url: "https://www.anthropic.com/news/strategic-warning-for-ai-risk-progress-and-insights-from-our-frontier-red-team"
 title: "Progress from our Frontier Red Team \\ Anthropic"
 ---

@@ -1,13 +1,12 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-17T02:04:22Z"
+fetched_at: "2026-03-20T11:32:05Z"
 source_url: "https://support.claude.com/en/articles/9002504-can-claude-produce-images"
 title: "Can Claude produce images? | Claude Help Center"
 ---
 
 # Can Claude produce images?
 
-Updated today
 
 Claude doesn’t generate photos or illustrations the way image-generation tools do.
 

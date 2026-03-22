@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-17T02:04:15Z"
+fetched_at: "2026-03-20T11:32:03Z"
 source_url: "https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization"
 title: "Manage Cowork plugins for your organization | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Manage Cowork plugins for your organization | Claude Help Center"
 4.  Manage Cowork plugins for your organization
 
 # Manage Cowork plugins for your organization
-
-Updated today
 
 
 Plugin marketplaces allow Team and Enterprise plan owners to distribute curated plugins to everyone in their organization through Cowork. You create a marketplace, add plugins to it, and control exactly which plugins your team members can see and use.
@@ -81,7 +79,7 @@ Additional resources:
 
 Your personal GitHub token is verified to confirm you have access, then Cowork uses its GitHub App installation token for sync operations.
 
-**Can't see your repo?** Make sure the Cowork GitHub App is installed in that repository.
+**Can't see your repo?** Make sure the Claude GitHub App is installed in that repository.
 
 ### How syncing works
 
@@ -95,7 +93,7 @@ During a sync, Cowork compares the latest commit in your repo against the last-s
 
 ## Control plugin distribution
 
-Once your marketplace has plugins, you control how they're distributed using installation preferences. For each plugin, you can set one of three options:
+Once your marketplace has plugins, you control how they're distributed using installation preferences. For each plugin, you can set one of four options:
 
 [TABLE]
 

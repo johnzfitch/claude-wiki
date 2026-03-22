@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:16Z"
+fetched_at: "2026-03-20T10:36:48Z"
 source_url: "https://www.anthropic.com/news/anthropics-responsible-scaling-policy"
 title: "Anthropic&#x27;s Responsible Scaling Policy \\ Anthropic"
 ---

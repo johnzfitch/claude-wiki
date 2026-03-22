@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-16T05:34:07Z"
+fetched_at: "2026-03-20T11:31:55Z"
 source_url: "https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-claude-enterprise"
 title: "Configure custom data retention controls for Enterprise plans | Claude Help Center"
 ---

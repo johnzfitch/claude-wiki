@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-16T05:34:07Z"
+fetched_at: "2026-03-20T11:31:58Z"
 source_url: "https://support.claude.com/en/articles/12429409-extra-usage-for-max-20x-plans"
 title: "Extra usage for paid Claude plans | Claude Help Center"
 ---

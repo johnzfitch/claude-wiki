@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:34Z"
+fetched_at: "2026-03-20T10:37:09Z"
 source_url: "https://www.anthropic.com/research/team/societal-impacts"
 title: "Societal Impacts Research \\ Anthropic"
 ---
@@ -19,10 +19,20 @@ Which human values should AI models hold, and how should they operate in the fac
 
 Though the Societal Impacts team is technical, they often pick research questions that have policy relevance. They believe that providing trustworthy research concerning topics policymakers care about will lead to better policy (and overall) outcomes for everyone.
 
+[](/81k-interviews)
 
-## How AI is transforming work at Anthropic
+## What 81,000 people want from AI
+
+[](/81k-interviews)
+
+Mar 18, 2026
+
+We invited Claude.ai users to share how they use AI, what they dream it could make possible, and what they fear it might do. Nearly 81,000 people participated—the largest and most multilingual qualitative study of its kind. Here's what we found.
+
 
 Societal ImpactsDec 2, 2025
+
+#### How AI is transforming work at Anthropic
 
 We surveyed Anthropic engineers and researchers, conducted in-depth qualitative interviews, and studied internal Claude Code usage data to find out how AI use is changing how we do our jobs. We found that AI use is radically changing the nature of work for software developers.
 
@@ -39,13 +49,6 @@ Societal ImpactsApr 21, 2025
 #### Values in the wild: Discovering and analyzing values in real-world language model interactions
 
 What values does Claude actually express during real conversations? Analyzing 700,000 interactions, this paper creates the first large-scale empirical taxonomy of AI values and finds that Claude adapts its expressed values to context—mirroring users in most cases, but resisting when core principles are at stake.
-
-
-PolicyOct 17, 2023
-
-#### Collective Constitutional AI: Aligning a Language Model with Public Input
-
-Anthropic and the Collective Intelligence Project ran a public process with ~1,000 Americans to draft a constitution for an AI system, then trained a model on it.
 
 
 Societal ImpactsFeb 15, 2022

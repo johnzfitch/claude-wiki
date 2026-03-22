@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:21Z"
+fetched_at: "2026-03-20T10:34:27Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/plugins"
 title: "Plugins in the SDK - Claude API Docs"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-17T02:01:33Z"
+fetched_at: "2026-03-20T10:36:16Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai"
 title: "Claude on Vertex AI - Claude API Docs"
 ---

@@ -1,13 +1,12 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-17T02:04:22Z"
+fetched_at: "2026-03-20T11:31:55Z"
 source_url: "https://support.claude.com/en/articles/11049762-choosing-a-claude-plan"
 title: "Choosing a Claude plan | Claude Help Center"
 ---
 
 # Choosing a Claude plan
 
-Updated today
 
 Use the following guide to determine which plan is right for you.
 

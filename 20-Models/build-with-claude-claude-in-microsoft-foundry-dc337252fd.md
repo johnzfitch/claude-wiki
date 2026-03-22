@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-17T02:01:31Z"
+fetched_at: "2026-03-20T10:36:14Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry"
 title: "Claude in Microsoft Foundry - Claude API Docs"
 ---

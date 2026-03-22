@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:27Z"
+fetched_at: "2026-03-20T10:37:02Z"
 source_url: "https://www.anthropic.com/research/a-general-language-assistant-as-a-laboratory-for-alignment"
 title: "A General Language Assistant as a Laboratory for Alignment \\ Anthropic"
 ---

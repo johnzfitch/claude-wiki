@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:00:54Z"
+fetched_at: "2026-03-20T10:34:17Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/claude-code-features"
 title: "Use Claude Code features in the SDK - Claude API Docs"
 ---

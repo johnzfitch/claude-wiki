@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:04:14Z"
+fetched_at: "2026-03-20T11:32:03Z"
 source_url: "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork"
 title: "Schedule recurring tasks in Cowork | Claude Help Center"
 ---
 
 # Schedule recurring tasks in Cowork
-
-Updated today
 
 
 Scheduled tasks allow you to delegate work to Cowork by creating tasks that run automatically on a recurring basis, or on demand. Instead of starting each task from scratch, you describe it once and Claude handles it on your schedule—delivering finished outputs like reports, briefings, and summaries every time.

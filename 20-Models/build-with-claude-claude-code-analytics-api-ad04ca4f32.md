@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-17T02:01:37Z"
+fetched_at: "2026-03-20T10:36:13Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-code-analytics-api"
 title: "Claude Code Analytics API - Claude API Docs"
 ---

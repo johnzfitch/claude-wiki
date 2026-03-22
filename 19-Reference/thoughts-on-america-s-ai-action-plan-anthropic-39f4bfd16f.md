@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:26Z"
+fetched_at: "2026-03-20T10:37:02Z"
 source_url: "https://www.anthropic.com/news/thoughts-on-america-s-ai-action-plan"
 title: "Thoughts on America’s AI Action Plan \\ Anthropic"
 ---

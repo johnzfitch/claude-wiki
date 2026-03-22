@@ -1,8 +1,8 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-16T23:06:26Z"
-last_modified: "Mon, 16 Mar 2026 21:47:13 GMT"
-source_url: "https://claude.com/customers/postman"
+fetched_at: "2026-03-18T13:48:03Z"
+last_modified: "Wed, 18 Mar 2026 03:04:56 GMT"
+source_url: "https://www.claude.com/customers/postman"
 title: "Customer story | Postman | Claude"
 ---
 
@@ -144,6 +144,18 @@ CEO, Postman
 
 ## Related stories
 
+[How Tasklet built 24/7 business automation with Claude ](/customers/tasklet)
+
+How Tasklet built 24/7 business automation with Claude
+
+How Tasklet built 24/7 business automation with Claude
+
+Customer story
+
+[Customer story](/customers/tasklet)
+
+Customer story
+
 [How CircleCI built a code validation agent with Claude](/customers/circleci)
 
 How CircleCI built a code validation agent with Claude
@@ -177,18 +189,6 @@ How Slack, a Salesforce company, unlocks organizational knowledge with Claude
 Customer story
 
 [Customer story](/customers/slack)
-
-Customer story
-
-[Attention automates sales operations and accelerates revenue with Claude](/customers/attention)
-
-Attention automates sales operations and accelerates revenue with Claude
-
-Attention automates sales operations and accelerates revenue with Claude
-
-Customer story
-
-[Customer story](/customers/attention)
 
 Customer story
 

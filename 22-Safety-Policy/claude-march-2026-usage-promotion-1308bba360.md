@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-17T02:04:21Z"
+fetched_at: "2026-03-20T11:32:04Z"
 source_url: "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
 title: "Claude March 2026 usage promotion | Claude Help Center"
 ---
 
 # Claude March 2026 usage promotion
-
-Updated today
 
 
 We're offering a limited-time promotion that doubles usage limits for Claude users outside 8 AM-2 PM ET / 5-11 AM PT / 12-6 PM GMT on weekdays.

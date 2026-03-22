@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-16T05:33:57Z"
+fetched_at: "2026-03-20T11:32:03Z"
 source_url: "https://support.claude.com/en/articles/13892150-work-across-apps-with-cowork"
 title: "Work across Excel and PowerPoint | Claude Help Center"
 ---

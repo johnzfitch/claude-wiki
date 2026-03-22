@@ -1,13 +1,11 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-17T02:04:19Z"
+fetched_at: "2026-03-20T11:31:54Z"
 source_url: "https://support.claude.com/en/articles/10065434-using-dictation-on-claude-mobile"
 title: "Using dictation on Claude Mobile | Claude Help Center"
 ---
 
 # Using dictation on Claude Mobile
-
-Updated today
 
 
 Dictation is currently available for users on free, Pro, and Team plans

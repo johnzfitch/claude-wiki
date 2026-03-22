@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:28Z"
+fetched_at: "2026-03-20T10:37:03Z"
 source_url: "https://www.anthropic.com/research/auditing-hidden-objectives"
 title: "Auditing language models for hidden objectives \\ Anthropic"
 ---

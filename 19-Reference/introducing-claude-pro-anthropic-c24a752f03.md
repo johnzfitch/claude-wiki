@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:18Z"
+fetched_at: "2026-03-20T10:36:51Z"
 source_url: "https://www.anthropic.com/news/claude-pro"
 title: "Introducing Claude Pro \\ Anthropic"
 ---
@@ -11,11 +11,11 @@ Sep 7, 2023
 
 [Subscribe today](https://claude.ai/settings/billing?action=subscribe)
 
-Today, we’re introducing a paid plan for our [Claude.ai](https://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) chat experience, currently available in the US and UK.\
+Today, we’re introducing a paid plan for our [Claude.ai](https://claude.ai/redirect/website.v1.1cbad88e-9feb-4178-be07-03500953c115) chat experience, currently available in the US and UK.\
 \
 Since launching in July, users tell us they’ve chosen Claude.ai as their day-to-day AI assistant for its longer context windows, faster outputs, complex reasoning capabilities, and more. Many also shared that they would value more file uploads and conversations over longer periods.\
 \
-With [Claude Pro](https://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06/settings/billing?action=subscribe), subscribers can now gain **5x more usage** of our latest model, Claude 2, for a monthly price of \$20 (US) or £18 (UK).\
+With [Claude Pro](https://claude.ai/redirect/website.v1.1cbad88e-9feb-4178-be07-03500953c115/settings/billing?action=subscribe), subscribers can now gain **5x more usage** of our latest model, Claude 2, for a monthly price of \$20 (US) or £18 (UK).\
 \
 This means you can level up your productivity across a range of tasks, including summarizing research papers, querying contracts, and iterating further on coding projects—like this recent [demo](https://www.youtube.com/watch?v=oVsHikXgK9Y) of building an interactive map.
 

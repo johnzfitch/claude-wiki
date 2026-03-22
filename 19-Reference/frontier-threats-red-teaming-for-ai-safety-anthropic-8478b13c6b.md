@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:21Z"
+fetched_at: "2026-03-20T10:36:56Z"
 source_url: "https://www.anthropic.com/news/frontier-threats-red-teaming-for-ai-safety"
 title: "Frontier Threats Red Teaming for AI Safety \\ Anthropic"
 ---

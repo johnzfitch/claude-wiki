@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:04:37Z"
+fetched_at: "2026-03-20T11:31:58Z"
 source_url: "https://support.claude.com/en/articles/12306336-claude-for-chrome-release-notes"
 title: "Claude Help Center"
 ---

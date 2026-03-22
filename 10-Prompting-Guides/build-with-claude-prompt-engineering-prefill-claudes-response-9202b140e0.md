@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-03-17T02:04:30Z"
+fetched_at: "2026-03-20T10:36:22Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prefill-claudes-response"
 title: "Prompt engineering overview - Claude API Docs"
 ---

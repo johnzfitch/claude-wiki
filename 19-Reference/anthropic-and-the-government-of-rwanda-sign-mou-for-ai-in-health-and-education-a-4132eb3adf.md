@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:15Z"
+fetched_at: "2026-03-20T10:36:48Z"
 source_url: "https://www.anthropic.com/news/anthropic-rwanda-mou"
 title: "Anthropic and the Government of Rwanda sign MOU for AI in health and education \\ Anthropic"
 ---

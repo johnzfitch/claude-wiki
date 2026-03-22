@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:32Z"
+fetched_at: "2026-03-20T10:37:07Z"
 source_url: "https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning"
 title: "Measuring Faithfulness in Chain-of-Thought Reasoning \\ Anthropic"
 ---

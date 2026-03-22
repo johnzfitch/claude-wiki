@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:17Z"
+fetched_at: "2026-03-20T10:36:49Z"
 source_url: "https://www.anthropic.com/news/claude-code-on-team-and-enterprise"
 title: "Claude Code and new admin controls for business plans \\ Anthropic"
 ---

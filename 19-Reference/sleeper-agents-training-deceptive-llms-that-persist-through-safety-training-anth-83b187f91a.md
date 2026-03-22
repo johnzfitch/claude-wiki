@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:34Z"
+fetched_at: "2026-03-20T10:37:08Z"
 source_url: "https://www.anthropic.com/research/sleeper-agents-training-deceptive-llms-that-persist-through-safety-training"
 title: "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training \\ Anthropic"
 ---

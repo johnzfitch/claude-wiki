@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:25Z"
+fetched_at: "2026-03-20T10:37:01Z"
 source_url: "https://www.anthropic.com/news/statement-dario-amodei-american-ai-leadership"
 title: "A statement from Dario Amodei on Anthropic&#x27;s commitment to American AI leadership \\ Anthropic"
 ---

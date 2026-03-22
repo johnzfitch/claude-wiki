@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-17T02:04:10Z"
+fetched_at: "2026-03-20T11:31:54Z"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Important considerations before enabling single sign-on (SSO) and JIT/SC
 3.  Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
 
 # Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning
-
-Updated today
 
 
 Before setting up SSO for your Claude or Claude Console organization, review this guide to understand key concepts, plan your approach, and complete any prerequisite steps.

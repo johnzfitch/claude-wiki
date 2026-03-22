@@ -1,13 +1,11 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-17T02:04:23Z"
+fetched_at: "2026-03-20T11:31:59Z"
 source_url: "https://support.claude.com/en/articles/12489464-use-enterprise-search"
 title: "Use enterprise search | Claude Help Center"
 ---
 
 # Use enterprise search
-
-Updated today
 
 
 Enterprise search capabilities are available for users on Claude for Work (Team and Enterprise) plans.

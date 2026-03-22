@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-17T02:04:20Z"
+fetched_at: "2026-03-20T11:32:06Z"
 source_url: "https://support.claude.com/en/articles/9612901-why-can-t-i-find-claude-for-android-in-the-play-store"
 title: "Why can’t I find Claude for Android in the Play Store? | Claude Help Center"
 ---
@@ -9,6 +9,5 @@ title: "Why can’t I find Claude for Android in the Play Store? | Claude Help C
 
 # Why can’t I find Claude for Android in the Play Store?
 
-Updated today
 
 If you’re unable to locate the Claude app in your Play Store, you may be located in an [unsupported region](https://support.anthropic.com/en/articles/8461763-where-can-i-access-claude-ai), using an unsupported device, or using an unsupported version of Android.

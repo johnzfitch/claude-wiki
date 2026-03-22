@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:21Z"
+fetched_at: "2026-03-20T10:36:57Z"
 source_url: "https://www.anthropic.com/news/how-people-use-claude-for-support-advice-and-companionship"
 title: "How people use Claude for support, advice, and companionship \\ Anthropic"
 ---

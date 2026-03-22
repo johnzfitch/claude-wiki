@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-17T02:04:20Z"
+fetched_at: "2026-03-20T11:32:01Z"
 source_url: "https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation"
 title: "Understanding your billing address and tax calculation | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Understanding your billing address and tax calculation | Claude Help Cen
 4.  Understanding your billing address and tax calculation
 
 # Understanding your billing address and tax calculation
-
-Updated today
 
 
 Your billing address determines how taxes are calculated on your Claude purchases. This address should represent the primary place of business receiving the product.

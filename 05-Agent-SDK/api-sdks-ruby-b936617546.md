@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:44Z"
+fetched_at: "2026-03-20T10:35:57Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/ruby"
 title: "Ruby SDK - Claude API Docs"
 ---
@@ -21,7 +21,7 @@ Installation
 To use this gem, install via Bundler by adding the following to your application's `Gemfile`:
 
 ```python
-gem "anthropic", "~> 1.19.0"
+gem "anthropic", "~> 1.25.0"
 ```
 
 

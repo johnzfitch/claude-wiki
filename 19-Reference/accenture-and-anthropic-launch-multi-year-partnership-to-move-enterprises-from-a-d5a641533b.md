@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:14Z"
+fetched_at: "2026-03-20T10:36:46Z"
 source_url: "https://www.anthropic.com/news/anthropic-accenture-partnership"
 title: "Accenture and Anthropic launch multi-year partnership to move enterprises from AI pilots to production \\ Anthropic"
 ---

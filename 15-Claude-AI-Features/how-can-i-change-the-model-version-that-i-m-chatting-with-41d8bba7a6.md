@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:04:21Z"
+fetched_at: "2026-03-20T11:32:04Z"
 source_url: "https://support.claude.com/en/articles/8664678-how-can-i-change-the-model-version-that-i-m-chatting-with"
 title: "How can I change the model version that I’m chatting with? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "How can I change the model version that I’m chatting with? | Claude He
 
 # How can I change the model version that I’m chatting with?
 
-Updated today
 
 Use the model selector to switch between available models:
 

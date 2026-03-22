@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:22Z"
+fetched_at: "2026-03-20T10:36:59Z"
 source_url: "https://www.anthropic.com/news/mike-krieger-joins-anthropic"
 title: "Mike Krieger joins Anthropic as Chief Product Officer \\ Anthropic"
 ---

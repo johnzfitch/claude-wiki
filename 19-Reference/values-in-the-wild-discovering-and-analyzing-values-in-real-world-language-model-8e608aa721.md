@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:35Z"
+fetched_at: "2026-03-20T10:37:10Z"
 source_url: "https://www.anthropic.com/research/values-wild"
 title: "Values in the wild: Discovering and analyzing values in real-world language model interactions \\ Anthropic"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:04:25Z"
+fetched_at: "2026-03-20T11:32:06Z"
 source_url: "https://support.claude.com/en/articles/9927533-disable-public-projects-for-your-organization"
 title: "Disable public projects for your organization | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Disable public projects for your organization | Claude Help Center"
 4.  Disable public projects for your organization
 
 # Disable public projects for your organization
-
-Updated today
 
 
 This feature is available to Primary Owners and Owners on Team and Enterprise plans.

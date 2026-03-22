@@ -1,13 +1,11 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-17T02:04:10Z"
+fetched_at: "2026-03-20T11:32:01Z"
 source_url: "https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso"
 title: "Set up single sign-on (SSO) | Claude Help Center"
 ---
 
 # Set up single sign-on (SSO)
-
-Updated today
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
@@ -122,13 +120,13 @@ Before you decide, review **[What happens to existing users when SSO is enabled]
 
 Once SSO is enabled, you need to decide how users will be added to your organization. This is controlled by the **Provisioning mode** setting in the **Global access settings** section of your Identity and access settings.
 
-**Invite only** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Managing members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
+**Invite only** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
 
 **JIT (Just-in-Time) provisioning** can be enabled to automatically provision users when they first log in. By default, users assigned to your Anthropic IdP app first login, they will receive the User role. This is the simplest automated option and requires no additional configuration beyond selecting "Approve automatically (JIT)" as your provisioning mode.
 
 ### Enable group mappings - when to configure additional provisioning features
 
-For more control over provisioning, see **[Setting up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)**. You'll want to review this guide if you need to:
+For more control over provisioning, see **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)**. You'll want to review this guide if you need to:
 
 - Automatically assign roles or seat tiers based on IdP group membership.
 
@@ -159,7 +157,6 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 5.  Update your certificate information and save your changes.
 
 6.  Click "Test sign-in" on the same page to confirm everything is working.
-
 
 ------------------------------------------------------------------------
 

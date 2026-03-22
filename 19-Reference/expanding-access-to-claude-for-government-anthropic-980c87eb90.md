@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:20Z"
+fetched_at: "2026-03-20T10:36:56Z"
 source_url: "https://www.anthropic.com/news/expanding-access-to-claude-for-government"
 title: "Expanding Access to Claude for Government \\ Anthropic"
 ---

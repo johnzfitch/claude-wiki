@@ -1,6 +1,6 @@
 ---
 category: "05-Skills"
-fetched_at: "2026-03-17T02:04:07Z"
+fetched_at: "2026-03-20T10:34:08Z"
 source_url: "https://agentskills.io/skill-creation/best-practices"
 title: "Best practices for skill creators - Agent Skills"
 ---
@@ -379,4 +379,4 @@ Once you have a working skill, two guides can help you refine it further:
 - **[Evaluating skill output quality](/skill-creation/evaluating-skills)** — Set up test cases, grade results, and iterate systematically.
 - **[Optimizing skill descriptions](/skill-creation/optimizing-descriptions)** — Test and improve your skill’s `description` field so it triggers on the right prompts.
 
-[Specification](/specification)[Optimizing descriptions](/skill-creation/optimizing-descriptions)
+[Quickstart](/skill-creation/quickstart)[Optimizing descriptions](/skill-creation/optimizing-descriptions)

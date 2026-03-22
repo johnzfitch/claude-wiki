@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:47Z"
+fetched_at: "2026-03-20T10:35:55Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/php"
 title: "PHP SDK - Claude API Docs"
 ---

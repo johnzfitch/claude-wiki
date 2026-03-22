@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference/Guides"
-fetched_at: "2026-03-17T02:04:14Z"
+fetched_at: "2026-03-20T10:36:31Z"
 source_url: "https://platform.claude.com/en/docs/build-with-claude/context-windows"
 title: "Context windows - Claude API Docs"
 ---

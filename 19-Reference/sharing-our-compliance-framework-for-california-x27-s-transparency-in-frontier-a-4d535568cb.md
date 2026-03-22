@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:19Z"
+fetched_at: "2026-03-20T10:36:54Z"
 source_url: "https://www.anthropic.com/news/compliance-framework-SB53"
 title: "Sharing our compliance framework for California&#x27;s Transparency in Frontier AI Act \\ Anthropic"
 ---

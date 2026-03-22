@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:15Z"
+fetched_at: "2026-03-20T10:36:48Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation"
 title: "Anthropic raises $13B Series F at $183B post-money valuation \\ Anthropic"
 ---

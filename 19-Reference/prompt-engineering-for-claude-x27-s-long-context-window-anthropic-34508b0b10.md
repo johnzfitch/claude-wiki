@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:24Z"
+fetched_at: "2026-03-20T10:37:00Z"
 source_url: "https://www.anthropic.com/news/prompting-long-context"
 title: "Prompt engineering for Claude&#x27;s long context window \\ Anthropic"
 ---
