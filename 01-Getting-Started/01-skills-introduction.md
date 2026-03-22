@@ -6,43 +6,32 @@ title: "Introduction to Claude Skills"
 
 # Introduction to Claude Skills
 
-Learn how to use Claude\'s Skills feature to create professional
-documents, analyze data, and automate business workflows with Excel,
-PowerPoint, and PDF generation.
+Learn how to use Claude's Skills feature to create professional documents, analyze data, and automate business workflows with Excel, PowerPoint, and PDF generation.
 
-> **See it in action:** The Skills you\'ll learn about power Claude\'s
-> file creation capabilities! Check out **[Claude Creates
-> Files](https://www.anthropic.com/news/create-files)** to see how these
-> Skills enable Claude to create and edit documents directly in
-> Claude.ai.
-:::
+> **See it in action:** The Skills you'll learn about power Claude's file creation capabilities! Check out **[Claude Creates Files](https://www.anthropic.com/news/create-files)** to see how these Skills enable Claude to create and edit documents directly in Claude.ai.
 
-::: {.cell .markdown}
 ## Table of Contents
 
-1.  [Setup & Installation](#setup)
-2.  [Understanding Skills](#understanding)
-3.  [Discovering Available Skills](#discovering)
-4.  [Quick Start: Excel](#excel-quickstart)
-5.  [Quick Start: PowerPoint](#powerpoint-quickstart)
-6.  [Quick Start: PDF](#pdf-quickstart)
-7.  [Troubleshooting](#troubleshooting)
-:::
+1. [Setup & Installation](#setup)
+2. [Understanding Skills](#understanding)
+3. [Discovering Available Skills](#discovering)
+4. [Quick Start: Excel](#excel-quickstart)
+5. [Quick Start: PowerPoint](#powerpoint-quickstart)
+6. [Quick Start: PDF](#pdf-quickstart)
+7. [Troubleshooting](#troubleshooting)
 
-::: {.cell .markdown}
-## 1. Setup & Installation {#setup} {#1-setup--installation-setup}
+## 1. Setup & Installation {#setup}
 
 ### Prerequisites
 
 Before starting, make sure you have:
 
 - Python 3.8 or higher
-- An Anthropic API key from
-  [console.anthropic.com](https://console.anthropic.com/)
+- An Anthropic API key from [console.anthropic.com](https://console.anthropic.com/)
 
 ### Environment Setup (First Time Only)
 
-**If you haven\'t set up your environment yet**, follow these steps:
+**If you haven't set up your environment yet**, follow these steps:
 
 #### Step 1: Create Virtual Environment
 
@@ -70,15 +59,15 @@ pip install -r requirements.txt
 
 **In VSCode:**
 
-1.  Open this notebook
-2.  Click the kernel picker in the top-right (e.g., \"Python 3.11.x\")
-3.  Select \"Python Environments\...\"
-4.  Choose the `./venv/bin/python` interpreter
+1. Open this notebook
+2. Click the kernel picker in the top-right (e.g., "Python 3.11.x")
+3. Select "Python Environments..."
+4. Choose the `./venv/bin/python` interpreter
 
 **In Jupyter:**
 
-1.  From the Kernel menu → Change Kernel
-2.  Select the kernel matching your venv
+1. From the Kernel menu → Change Kernel
+2. Select the kernel matching your venv
 
 #### Step 4: Configure API Key
 
@@ -93,11 +82,8 @@ cp .env.example .env
 ### Quick Installation Check
 
 Run the cell below to verify your environment is set up correctly:
-:::
 
-::: {.cell .markdown}
-**If you see any ❌ or ⚠️ warnings above**, please complete the setup
-steps before continuing.
+**If you see any ❌ or ⚠️ warnings above**, please complete the setup steps before continuing.
 
 **If anthropic SDK version is too old (needs 0.71.0 or later):**
 
@@ -107,15 +93,9 @@ pip install anthropic>=0.71.0
 
 Then **restart the Jupyter kernel** to pick up the new version.
 
-------------------------------------------------------------------------
-
 ### API Configuration
 
-Now let\'s load the API key and configure the client:
-:::
-
-::: {.cell .markdown}
-### API Configuration {#api-configuration}
+Now let's load the API key and configure the client:
 
 **⚠️ Important**: Create a `.env` file in the skills directory:
 
@@ -125,9 +105,7 @@ cp ../.env.example ../.env
 ```
 
 Then edit `../.env` to add your Anthropic API key.
-:::
 
-::: {.cell .code}
 ``` python
 import os
 import sys
@@ -172,15 +150,11 @@ print(f"✓ Using model: {MODEL}")
 print(f"✓ Output directory: {OUTPUT_DIR}")
 print("\n📝 Note: Beta headers will be added per-request when using Skills")
 ```
-:::
 
-::: {.cell .markdown}
 ### Test Connection
 
-Let\'s verify our API connection works:
-:::
+Let's verify our API connection works:
 
-::: {.cell .code}
 ``` python
 # Simple test to verify API connection
 test_response = client.messages.create(
@@ -200,48 +174,32 @@ print(
     f"\n✓ Token usage: {test_response.usage.input_tokens} in, {test_response.usage.output_tokens} out"
 )
 ```
-:::
 
-::: {.cell .markdown}
-## 2. Understanding Skills {#understanding} {#2-understanding-skills-understanding}
+## 2. Understanding Skills {#understanding}
 
 ### What are Skills?
 
-**Skills** are organized packages of instructions, executable code, and
-resources that give Claude specialized capabilities for specific tasks.
-Think of them as \"expertise packages\" that Claude can discover and
-load dynamically.
+**Skills** are organized packages of instructions, executable code, and resources that give Claude specialized capabilities for specific tasks. Think of them as "expertise packages" that Claude can discover and load dynamically.
 
-📖 Read our engineering blog post on [Equipping agents for the real
-world with
-Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+📖 Read our engineering blog post on [Equipping agents for the real world with Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
 
 ### Why Skills Matter
 
-After learning about MCPs (Model Context Protocol) and tools, you might
-wonder why Skills are important:
+After learning about MCPs (Model Context Protocol) and tools, you might wonder why Skills are important:
 
-- **Skills are higher-level** than individual tools - they combine
-  instructions, code, and resources
+- **Skills are higher-level** than individual tools - they combine instructions, code, and resources
 - **Skills are composable** - multiple skills work together seamlessly
-- **Skills are efficient** - progressive disclosure means you only pay
-  for what you use
-- **Skills include proven code** - helper scripts that work reliably,
-  saving time and reducing errors
+- **Skills are efficient** - progressive disclosure means you only pay for what you use
+- **Skills include proven code** - helper scripts that work reliably, saving time and reducing errors
 
 ### Key Benefits
 
-- **Expert-level Performance**: Deliver professional results without the
-  learning curve
-- **Proven Helper Scripts**: Skills contain tested, working code that
-  Claude can use immediately
-- **Organizational Knowledge**: Package company workflows and best
-  practices
+- **Expert-level Performance**: Deliver professional results without the learning curve
+- **Proven Helper Scripts**: Skills contain tested, working code that Claude can use immediately
+- **Organizational Knowledge**: Package company workflows and best practices
 - **Cost Efficiency**: Progressive disclosure minimizes token usage
-- **Reliability**: Pre-tested scripts mean fewer errors and consistent
-  results
-- **Time Savings**: Claude uses existing solutions instead of generating
-  code from scratch
+- **Reliability**: Pre-tested scripts mean fewer errors and consistent results
+- **Time Savings**: Claude uses existing solutions instead of generating code from scratch
 - **Composable**: Multiple skills work together for complex workflows
 
 ### Progressive Disclosure Architecture
@@ -250,52 +208,35 @@ Skills use a three-tier loading model:
 
 ![Progressive Disclosure - How Skills Load](../assets/prog-disc-1.png)
 
-1.  **Metadata** (name: 64 chars, description: 1024 chars): Claude sees
-    skill name and description
-2.  **Full Instructions** (\<5k tokens): Loaded when skill is relevant
-3.  **Linked Files**: Additional resources loaded only if needed
+1. **Metadata** (name: 64 chars, description: 1024 chars): Claude sees skill name and description
+2. **Full Instructions** (<5k tokens): Loaded when skill is relevant
+3. **Linked Files**: Additional resources loaded only if needed
 
 ![Progressive Disclosure Stages](../assets/prog-disc-2.png)
 
-This keeps operations efficient while providing deep expertise on
-demand. Initially, Claude sees just the metadata from the YAML
-frontmatter of SKILL.md. Only when a skill is relevant does Claude load
-the full contents, including any helper scripts and resources.
+This keeps operations efficient while providing deep expertise on demand. Initially, Claude sees just the metadata from the YAML frontmatter of SKILL.md. Only when a skill is relevant does Claude load the full contents, including any helper scripts and resources.
 
 ### Skill Types
 
-  --------------------------------------------------------------------------------
-  Type                    Description                     Example
-  ----------------------- ------------------------------- ------------------------
-  **Anthropic-Managed**   Pre-built skills maintained by  `xlsx`, `pptx`, `pdf`,
-                          Anthropic                       `docx`
+| Type | Description | Example |
+|------|-------------|---------|
+| **Anthropic-Managed** | Pre-built skills maintained by Anthropic | `xlsx`, `pptx`, `pdf`, `docx` |
+| **Custom** | User-defined skills for specific workflows | Brand guidelines, financial models |
 
-  **Custom**              User-defined skills for         Brand guidelines,
-                          specific workflows              financial models
-  --------------------------------------------------------------------------------
-:::
-
-::: {.cell .markdown}
 ### Skills Conceptual Overview
 
 ![Skills Conceptual Diagram](../assets/skills-conceptual-diagram.png)
 
 This diagram illustrates:
 
-- **Skill Directory Structure**: How Skills are organized with SKILL.md
-  and supporting files
+- **Skill Directory Structure**: How Skills are organized with SKILL.md and supporting files
 - **YAML Frontmatter**: The metadata that Claude sees initially
-- **Progressive Loading**: How Skills are discovered and loaded
-  on-demand
-- **Composability**: Multiple Skills working together in a single
-  request
-:::
+- **Progressive Loading**: How Skills are discovered and loaded on-demand
+- **Composability**: Multiple Skills working together in a single request
 
-::: {.cell .markdown}
 ### How Skills Work with Code Execution
 
-Skills require the **code execution** tool to be enabled. Here\'s the
-typical workflow:
+Skills require the **code execution** tool to be enabled. Here's the typical workflow:
 
 ``` python
 # Use client.beta.messages.create() for Skills support
@@ -316,10 +257,10 @@ response = client.beta.messages.create(
 
 **What happens:**
 
-1.  Claude receives your request with the xlsx skill loaded
-2.  Claude uses code execution to create the file
-3.  The response includes a `file_id` for the created file
-4.  You use the **Files API** to download the file
+1. Claude receives your request with the xlsx skill loaded
+2. Claude uses code execution to create the file
+3. The response includes a `file_id` for the created file
+4. You use the **Files API** to download the file
 
 **Important: Beta API**
 
@@ -330,88 +271,61 @@ response = client.beta.messages.create(
   - `files-api-2025-04-14` - Required for downloading files
   - `skills-2025-10-02` - Enables Skills feature
 
-⚠️ **Note**: When using Skills, you MUST include the code_execution tool
-in your request.
-:::
+⚠️ **Note**: When using Skills, you MUST include the code_execution tool in your request.
 
-::: {.cell .markdown}
 ### Token Usage Optimization
 
-Skills dramatically reduce token usage compared to providing
-instructions in prompts:
+Skills dramatically reduce token usage compared to providing instructions in prompts:
 
-  ------------------------------------------------------------------------
-  Approach             Token Cost               Performance
-  -------------------- ------------------------ --------------------------
-  Manual instructions  5,000-10,000             Variable quality
-                       tokens/request           
+| Approach | Token Cost | Performance |
+|----------|-----------|-------------|
+| Manual instructions | 5,000-10,000 tokens/request | Variable quality |
+| Skills (metadata only) | Minimal (just name/description) | Expert-level |
+| Skills (full load) | ~5,000 tokens when skill is used | Expert-level |
 
-  Skills (metadata     Minimal (just            Expert-level
-  only)                name/description)        
-
-  Skills (full load)   \~5,000 tokens when      Expert-level
-                       skill is used            
-  ------------------------------------------------------------------------
-
-**The Big Win:** You can pack multiple skills into your prompt without
-bloating it. Each skill only costs you the metadata (name + description)
-until you actually use it.
+**The Big Win:** You can pack multiple skills into your prompt without bloating it. Each skill only costs you the metadata (name + description) until you actually use it.
 
 **Example**: Creating an Excel file with formatting
 
-- Without Skills: \~8,000 tokens to explain all Excel features upfront
-- With Skills: Minimal metadata overhead initially, \~5,000 tokens only
-  when Excel skill is invoked
-- **Key Insight**: The 98% savings applies to the initial context. Once
-  you use a skill, the full instructions are loaded.
+- Without Skills: ~8,000 tokens to explain all Excel features upfront
+- With Skills: Minimal metadata overhead initially, ~5,000 tokens only when Excel skill is invoked
+- **Key Insight**: The 98% savings applies to the initial context. Once you use a skill, the full instructions are loaded.
 
 **Additional Benefits:**
 
-- Skills contain helper scripts that are known to work, improving
-  reliability
-- Claude saves time by using proven code patterns instead of generating
-  from scratch
+- Skills contain helper scripts that are known to work, improving reliability
+- Claude saves time by using proven code patterns instead of generating from scratch
 - You get more consistent, professional results
-:::
 
-::: {.cell .markdown}
-### ⏱️ Expected Generation Times {#stopwatch-expected-generation-times}
+### ⏱️ Expected Generation Times
 
-**⚠️ IMPORTANT**: Document generation with Skills requires code
-execution and file creation, which takes time. Be patient and let cells
-complete.
+**⚠️ IMPORTANT**: Document generation with Skills requires code execution and file creation, which takes time. Be patient and let cells complete.
 
 **Observed generation times:**
 
-- **Excel files**: \~2 minutes (with charts and formatting)
-- **PowerPoint presentations**: \~1-2 minutes (simple 2-slide
-  presentations with charts)
-- **PDF documents**: \~40-60 seconds (simple documents)
+- **Excel files**: ~2 minutes (with charts and formatting)
+- **PowerPoint presentations**: ~1-2 minutes (simple 2-slide presentations with charts)
+- **PDF documents**: ~40-60 seconds (simple documents)
 
 **What to expect:**
 
 - The cell will show `[*]` while running
-- You may see \"Executing\...\" status for 1-2 minutes
+- You may see "Executing..." status for 1-2 minutes
 - **Do not interrupt the cell** - let it complete fully
 
 **💡 Recommendations:**
 
-1.  **Start simple**: Begin with minimal examples to verify your setup
-2.  **Gradually increase complexity**: Add features incrementally
-3.  **Be patient**: Operations typically take 40 seconds to 2 minutes
-4.  **Note**: Very complex documents may take longer - keep examples
-    focused
-:::
+1. **Start simple**: Begin with minimal examples to verify your setup
+2. **Gradually increase complexity**: Add features incrementally
+3. **Be patient**: Operations typically take 40 seconds to 2 minutes
+4. **Note**: Very complex documents may take longer - keep examples focused
 
-::: {.cell .markdown}
-## 3. Discovering Available Skills {#discovering} {#3-discovering-available-skills-discovering}
+## 3. Discovering Available Skills {#discovering}
 
 ### List All Built-in Skills
 
-Let\'s discover what Anthropic-managed skills are available:
-:::
+Let's discover what Anthropic-managed skills are available:
 
-::: {.cell .code}
 ``` python
 # List all available Anthropic skills
 # Note: Skills API requires the skills beta header
@@ -442,18 +356,16 @@ for skill in skills_response.data:
 
 print(f"\n\n✓ Found {len(skills_response.data)} Anthropic-managed skills")
 ```
-:::
 
-::: {.cell .markdown}
 ### Understanding Skill Metadata
 
 Each skill has:
 
-- **skill_id**: Unique identifier (e.g., \"xlsx\", \"pptx\")
-- **version**: Version number or \"latest\"
+- **skill_id**: Unique identifier (e.g., "xlsx", "pptx")
+- **version**: Version number or "latest"
 - **name**: Human-readable name
 - **description**: What the skill does
-- **directory**: Skill\'s folder structure
+- **directory**: Skill's folder structure
 
 ### Versioning Strategy
 
@@ -461,49 +373,19 @@ Each skill has:
 - Anthropic updates skills automatically
 - Pin specific versions for production stability
 - Custom skills use epoch timestamps for versions
-:::
 
-::: {.cell .markdown}
+## 4. Quick Start: Excel {#excel-quickstart}
+
 ### Example: Monthly Budget Spreadsheet
 
-We\'ll start with two examples - a simple one-liner and a detailed
-request.
-
-#### Simple Example (1-2 lines)
-
-First, let\'s see how Skills work with a minimal prompt:
-
-``` python
-# Simple prompt - Skills handle the complexity
-prompt = "Create a quarterly sales report Excel file with revenue data and a chart"
-```
-
-#### Detailed Example
-
-For more control, you can provide specific requirements:
+We'll create a simple budget spreadsheet with:
 
 - Income and expense categories
 - Formulas for totals
 - Basic formatting
-:::
 
-::: {.cell .markdown}
-### Example: Monthly Budget Spreadsheet {#example-monthly-budget-spreadsheet}
+**⏱️ Note**: Excel generation typically takes **1-2 minutes** (with charts and formatting). The cell will show `[*]` while running - be patient!
 
-We\'ll create a simple budget spreadsheet with:
-
-- Income and expense categories
-- Formulas for totals
-- Basic formatting
-:::
-
-::: {.cell .markdown}
-**⏱️ Note**: Excel generation typically takes **1-2 minutes** (with
-charts and formatting). The cell will show `[*]` while running - be
-patient!
-:::
-
-::: {.cell .code}
 ``` python
 # Create an Excel budget spreadsheet
 excel_response = client.beta.messages.create(  # Note: Using beta.messages for Skills support
@@ -556,15 +438,11 @@ print("\n\n📊 Token Usage:")
 print(f"   Input: {excel_response.usage.input_tokens}")
 print(f"   Output: {excel_response.usage.output_tokens}")
 ```
-:::
 
-::: {.cell .markdown}
 ### Download the Excel File
 
-Now let\'s extract the file_id and download the generated Excel file:
-:::
+Now let's extract the file_id and download the generated Excel file:
 
-::: {.cell .code}
 ``` python
 # Extract file IDs from the response
 file_ids = extract_file_ids(excel_response)
@@ -594,51 +472,26 @@ else:
     for i, content in enumerate(excel_response.content):
         print(f"  {i}. {content.type}")
 ```
-:::
 
-::: {.cell .markdown}
 **✨ What just happened?**
 
-1.  Claude used the `xlsx` skill to create a professional Excel file
-2.  The skill handled all Excel-specific formatting and formulas
-3.  The file was created in Claude\'s code execution environment
-4.  We extracted the `file_id` from the response
-5.  We downloaded the file using the Files API
-6.  The file is now saved in `outputs/budget_*.xlsx`
+1. Claude used the `xlsx` skill to create a professional Excel file
+2. The skill handled all Excel-specific formatting and formulas
+3. The file was created in Claude's code execution environment
+4. We extracted the `file_id` from the response
+5. We downloaded the file using the Files API
+6. The file is now saved in `outputs/budget_*.xlsx`
 
 Open the file in Excel to see the results!
-:::
 
-::: {.cell .markdown}
-## 5. Quick Start: PowerPoint {#powerpoint-quickstart} {#5-quick-start-powerpoint-powerpoint-quickstart}
+## 5. Quick Start: PowerPoint {#powerpoint-quickstart}
 
-Now let\'s create a PowerPoint presentation using the `pptx` skill.
-:::
+Now let's create a PowerPoint presentation using the `pptx` skill.
 
-::: {.cell .markdown}
-### Example: Revenue Presentation
-
-#### Simple Example (1 line)
-
-``` python
-# Minimal prompt - let Skills handle the details
-prompt = "Create an executive summary presentation with 3 slides about Q3 results"
-```
-
-#### Detailed Example {#detailed-example}
-
-**Note**: This is intentionally kept simple (2 slides, 1 chart) to
-minimize generation time and demonstrate the core functionality.
-:::
-
-::: {.cell .markdown}
 ### Example: Simple Revenue Presentation
 
-**Note**: This is intentionally kept simple (2 slides, 1 chart) to
-minimize generation time and demonstrate the core functionality.
-:::
+**Note**: This is intentionally kept simple (2 slides, 1 chart) to minimize generation time and demonstrate the core functionality.
 
-::: {.cell .code}
 ``` python
 # Create a PowerPoint presentation
 pptx_response = client.beta.messages.create(
@@ -679,13 +532,9 @@ print("\n\n📊 Token Usage:")
 print(f"   Input: {pptx_response.usage.input_tokens}")
 print(f"   Output: {pptx_response.usage.output_tokens}")
 ```
-:::
 
-::: {.cell .markdown}
 ### Download the PowerPoint File
-:::
 
-::: {.cell .code}
 ``` python
 # Download the PowerPoint file
 file_ids = extract_file_ids(pptx_response)
@@ -701,35 +550,15 @@ if file_ids:
 else:
     print("❌ No files found in response")
 ```
-:::
 
-::: {.cell .markdown}
-**⏱️ Note**: PDF generation typically takes **1-2 minutes** for simple
-documents. The cell will show `[*]` while running - be patient!
-:::
+## 6. Quick Start: PDF {#pdf-quickstart}
 
-::: {.cell .markdown}
-### Example: PDF Documents
+**⏱️ Note**: PDF generation typically takes **40-60 seconds** for simple documents. The cell will show `[*]` while running - be patient!
 
-#### Simple Example (1 line) {#simple-example-1-line}
-
-``` python
-# Quick PDF generation
-prompt = "Create a professional invoice PDF for $500 consulting services"
-```
-
-#### Detailed Example: Receipt
-
-**Note**: This is intentionally kept simple to ensure clean formatting.
-:::
-
-::: {.cell .markdown}
 ### Example: Simple Receipt
 
 **Note**: This is intentionally kept simple to ensure clean formatting.
-:::
 
-::: {.cell .code}
 ``` python
 # Create a PDF receipt
 pdf_response = client.beta.messages.create(
@@ -778,13 +607,9 @@ print("\n\n📊 Token Usage:")
 print(f"   Input: {pdf_response.usage.input_tokens}")
 print(f"   Output: {pdf_response.usage.output_tokens}")
 ```
-:::
 
-::: {.cell .markdown}
 ### Download and Verify the PDF
-:::
 
-::: {.cell .code}
 ``` python
 # Download the PDF file
 file_ids = extract_file_ids(pdf_response)
@@ -813,35 +638,34 @@ if file_ids:
 else:
     print("❌ No files found in response")
 ```
-:::
 
-::: {.cell .markdown}
-## 7. Troubleshooting {#troubleshooting} {#7-troubleshooting-troubleshooting}
+## 7. Troubleshooting {#troubleshooting}
 
 ### Common Issues and Solutions
-:::
 
-::: {.cell .markdown}
 ### Issue 1: API Key Not Found
 
 **Error:**
 
-    ValueError: ANTHROPIC_API_KEY not found
+```
+ValueError: ANTHROPIC_API_KEY not found
+```
 
 **Solution:**
 
-1.  Ensure `.env` file exists in the parent directory
-2.  Check that `ANTHROPIC_API_KEY=sk-ant-api03-...` is set
-3.  Restart the Jupyter kernel after creating/editing `.env`
+1. Ensure `.env` file exists in the parent directory
+2. Check that `ANTHROPIC_API_KEY=sk-ant-api03-...` is set
+3. Restart the Jupyter kernel after creating/editing `.env`
 
 ### Issue 2: Container Parameter Not Recognized
 
 **Error:**
 
-    TypeError: Messages.create() got an unexpected keyword argument 'container'
+```
+TypeError: Messages.create() got an unexpected keyword argument 'container'
+```
 
-**Solution:** Use `client.beta.messages.create()` instead of
-`client.messages.create()`:
+**Solution:** Use `client.beta.messages.create()` instead of `client.messages.create()`:
 
 ``` python
 # ✅ Correct - use beta.messages
@@ -865,10 +689,11 @@ response = client.messages.create(
 
 **Error:**
 
-    BadRequestError: Skills beta requires the code_execution tool to be included in the request.
+```
+BadRequestError: Skills beta requires the code_execution tool to be included in the request.
+```
 
-**Solution:** When using Skills, you MUST include the code_execution
-tool:
+**Solution:** When using Skills, you MUST include the code_execution tool:
 
 ``` python
 # ✅ Correct
@@ -891,42 +716,39 @@ response = client.beta.messages.create(
 
 **Error:**
 
-    ❌ No files found in response
+```
+❌ No files found in response
+```
 
 **Solution:**
 
-1.  Check that code execution tool is included in the request
-2.  Verify the skill was loaded (check response content)
-3.  Ensure the task actually requires file creation
-4.  Look for error messages in the response text
+1. Check that code execution tool is included in the request
+2. Verify the skill was loaded (check response content)
+3. Ensure the task actually requires file creation
+4. Look for error messages in the response text
 
 ### Issue 5: File Download Failed
 
 **Error:**
 
-    Error retrieving file: File not found
+```
+Error retrieving file: File not found
+```
 
 **Solution:**
 
-1.  Files may have a limited lifetime on Anthropic\'s servers
-2.  Download files immediately after creation
-3.  Check file_id is correctly extracted from response
-4.  Verify Files API beta is included in betas list
-:::
+1. Files may have a limited lifetime on Anthropic's servers
+2. Download files immediately after creation
+3. Check file_id is correctly extracted from response
+4. Verify Files API beta is included in betas list
 
-::: {.cell .markdown}
 ### Token Optimization Tips
 
-1.  **Use \"latest\" version** for Anthropic skills - automatically
-    optimized
-2.  **Batch operations** - Create multiple files in one conversation
-    when possible
-3.  **Reuse containers** - Use `container.id` from previous responses to
-    avoid reloading skills
-4.  **Be specific** - Clear instructions mean fewer iterations
-:::
+1. **Use "latest" version** for Anthropic skills - automatically optimized
+2. **Batch operations** - Create multiple files in one conversation when possible
+3. **Reuse containers** - Use `container.id` from previous responses to avoid reloading skills
+4. **Be specific** - Clear instructions mean fewer iterations
 
-::: {.cell .markdown}
 ### API Rate Limiting
 
 If you encounter rate limits:
@@ -934,57 +756,39 @@ If you encounter rate limits:
 - Implement exponential backoff for retries
 - Use batch processing for multiple files
 - Consider upgrading your API tier for higher limits
-:::
 
-::: {.cell .markdown}
 ## Next Steps
 
-🎉 **Congratulations!** You\'ve learned the basics of Claude Skills.
+🎉 **Congratulations!** You've learned the basics of Claude Skills.
 
 ### See Skills in Action
 
-Check out the official announcement to see how these Skills power
-Claude\'s file creation capabilities:
+Check out the official announcement to see how these Skills power Claude's file creation capabilities:
 
-- **[Claude Creates
-  Files](https://www.anthropic.com/news/create-files)** - See how Skills
-  enable Claude to create and edit Excel, PowerPoint, and PDF files
-  directly
+- **[Claude Creates Files](https://www.anthropic.com/news/create-files)** - See how Skills enable Claude to create and edit Excel, PowerPoint, and PDF files directly
 
-### Continue Learning:
+### Continue Learning
 
-- **[Notebook 2: Financial
-  Applications](02_skills_financial_applications.ipynb)** - Real-world
-  business use cases with financial data
-- **[Notebook 3: Custom Skills
-  Development](03_skills_custom_development.ipynb)** - Build your own
-  specialized skills
+- **[Notebook 2: Financial Applications](02_skills_financial_applications.ipynb)** - Real-world business use cases with financial data
+- **[Notebook 3: Custom Skills Development](03_skills_custom_development.ipynb)** - Build your own specialized skills
 
-### Support Articles:
+### Support Articles
 
-- 📚 **[Teach Claude your way of working using
-  Skills](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)** -
-  User guide for working with Skills
-- 🛠️ **[How to create a skill with Claude through
-  conversation](https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation)** -
-  Interactive skill creation guide
+- 📚 **[Teach Claude your way of working using Skills](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)** - User guide for working with Skills
+- 🛠️ **[How to create a skill with Claude through conversation](https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation)** - Interactive skill creation guide
 
-### Resources:
+### Resources
 
 - [Claude API Documentation](https://docs.anthropic.com/en/api/messages)
-- [Skills
-  Documentation](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
-- [Skills Best
-  Practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices)
-- [Files API
-  Documentation](https://docs.claude.com/en/api/files-content)
+- [Skills Documentation](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
+- [Skills Best Practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices)
+- [Files API Documentation](https://docs.claude.com/en/api/files-content)
 - [Claude Support](https://support.claude.com)
 
-### Try These Experiments:
+### Try These Experiments
 
-1.  Start with simple one-line prompts to see Skills in action
-2.  Modify the budget example to include more categories
-3.  Create a presentation with your own data
-4.  Generate a PDF report combining text and tables
-5.  Use multiple skills together in a single request
-:::
+1. Start with simple one-line prompts to see Skills in action
+2. Modify the budget example to include more categories
+3. Create a presentation with your own data
+4. Generate a PDF report combining text and tables
+5. Use multiple skills together in a single request
