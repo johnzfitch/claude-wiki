@@ -1,8 +1,10 @@
 # Claude Wiki
 
-Unofficial mirror of Anthropic's Claude documentation — 2,303 Markdown articles across 23 categories, sourced from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and related Anthropic properties.
+Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 2,000+ Markdown articles across 24 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
 
-Updated weekly. Not affiliated with Anthropic.
+Covers the full Claude platform: API reference, Claude Code CLI, Model Context Protocol (MCP), Agent SDK, hooks, plugins, prompting guides, enterprise administration, safety & policy, billing, and model specifications. Every article is plain Markdown with YAML frontmatter — ready for grep, RAG pipelines, or direct LLM ingestion via `llms.txt`.
+
+Not affiliated with Anthropic.
 
 ---
 
@@ -41,36 +43,38 @@ find . -name '*.md' | grep -i "prompt"
 
 | Category | Docs | Folder |
 |----------|-----:|--------|
-| Getting Started | 21 | [`01-Getting-Started`](./01-Getting-Started/) |
-| Claude Code CLI | 53 | [`02-Claude-Code-CLI`](./02-Claude-Code-CLI/) |
+| Getting Started | 16 | [`01-Getting-Started`](./01-Getting-Started/) |
+| Claude Code CLI | 48 | [`02-Claude-Code-CLI`](./02-Claude-Code-CLI/) |
 | IDE Integrations | 5 | [`03-IDE-Integrations`](./03-IDE-Integrations/) |
-| API Reference | 329 | [`04-API-Reference`](./04-API-Reference/) |
+| API Reference | 24 | [`04-API-Reference`](./04-API-Reference/) |
 | Agent SDK | 35 | [`05-Agent-SDK`](./05-Agent-SDK/) |
-| MCP Tools | 409 | [`06-MCP-Tools`](./06-MCP-Tools/) |
-| Hooks | 15 | [`07-Hooks`](./07-Hooks/) |
-| Plugins & Skills | 73 | [`08-Plugins-Skills`](./08-Plugins-Skills/) |
-| Agent Patterns | 34 | [`09-Agents-Patterns`](./09-Agents-Patterns/) |
-| Prompting Guides | 82 | [`10-Prompting-Guides`](./10-Prompting-Guides/) |
+| Skills | 6 | [`05-Skills`](./05-Skills/) |
+| MCP Tools | 300 | [`06-MCP-Tools`](./06-MCP-Tools/) |
+| Hooks | 16 | [`07-Hooks`](./07-Hooks/) |
+| Plugins & Skills | 74 | [`08-Plugins-Skills`](./08-Plugins-Skills/) |
+| Agent Patterns | 32 | [`09-Agents-Patterns`](./09-Agents-Patterns/) |
+| Prompting Guides | 18 | [`10-Prompting-Guides`](./10-Prompting-Guides/) |
 | RAG & Search | 17 | [`11-RAG-Search`](./11-RAG-Search/) |
 | Eval & Testing | 6 | [`12-Eval-Testing`](./12-Eval-Testing/) |
-| Enterprise Admin | 23 | [`13-Enterprise-Admin`](./13-Enterprise-Admin/) |
+| Enterprise Admin | 28 | [`13-Enterprise-Admin`](./13-Enterprise-Admin/) |
 | Connectors | 30 | [`14-Connectors`](./14-Connectors/) |
-| Claude AI Features | 627 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
-| Mobile & Desktop | 21 | [`16-Mobile-Desktop`](./16-Mobile-Desktop/) |
-| Billing & Plans | 52 | [`17-Billing-Plans`](./17-Billing-Plans/) |
-| Reference | 339 | [`19-Reference`](./19-Reference/) |
-| Models | 72 | [`20-Models`](./20-Models/) |
-| Account & Support | 27 | [`21-Account-Support`](./21-Account-Support/) |
-| Safety & Policy | 32 | [`22-Safety-Policy`](./22-Safety-Policy/) |
+| Claude AI Features | 282 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
+| Mobile & Desktop | 11 | [`16-Mobile-Desktop`](./16-Mobile-Desktop/) |
+| Billing & Plans | 63 | [`17-Billing-Plans`](./17-Billing-Plans/) |
+| Reference | 342 | [`19-Reference`](./19-Reference/) |
+| Models | 95 | [`20-Models`](./20-Models/) |
+| Account & Support | 35 | [`21-Account-Support`](./21-Account-Support/) |
+| Safety & Policy | 37 | [`22-Safety-Policy`](./22-Safety-Policy/) |
+| Other | 99 | [`99-Other`](./99-Other/) |
 
 <details>
 <summary>Largest categories by doc count</summary>
 
-1. **Claude AI Features** (627) — Projects, artifacts, analysis, canvas, conversations
-2. **MCP Tools** (409) — Model Context Protocol servers, integrations, tooling
-3. **Reference** (339) — API specs, schemas, error codes, SDKs
-4. **API Reference** (329) — REST endpoints, parameters, authentication
-5. **Prompting Guides** (82) — Prompt engineering, system prompts, best practices
+1. **Reference** (342) — API specs, schemas, error codes, SDKs
+2. **MCP Tools** (300) — Model Context Protocol servers, integrations, tooling
+3. **Claude AI Features** (282) — Projects, artifacts, analysis, canvas, conversations
+4. **Models** (95) — Model cards, specifications, benchmarks, changelogs
+5. **Plugins & Skills** (74) — Plugin development, skill authoring, marketplace
 
 </details>
 
@@ -84,7 +88,7 @@ This repo mirrors content from Anthropic's official documentation:
 - [support.anthropic.com](https://support.anthropic.com) — Help center, account, billing
 - [docs.claude.ai](https://docs.claude.ai) — Claude Code, MCP, hooks
 
-Content is fetched, converted to Markdown via Pandoc, and organized into numbered categories. See the [private repo](https://github.com/johnzfitch/claude-wiki) tooling for details on the pipeline.
+Content is fetched, converted to Markdown, and organized into numbered categories by an automated pipeline with AI-powered quality checks, content enhancement, and deduplication.
 
 ## Releases
 
