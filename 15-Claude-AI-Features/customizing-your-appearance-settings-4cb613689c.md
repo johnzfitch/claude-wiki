@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-20T11:32:04Z"
+fetched_at: "2026-03-22T09:01:47Z"
 source_url: "https://support.claude.com/en/articles/8887527-customizing-your-appearance-settings"
 title: "Customizing your appearance settings | Claude Help Center"
 ---

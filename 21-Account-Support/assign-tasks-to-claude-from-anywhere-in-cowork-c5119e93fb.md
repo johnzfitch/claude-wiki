@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-20T11:32:04Z"
+fetched_at: "2026-03-22T09:01:46Z"
 source_url: "https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork"
 title: "Assign tasks to Claude from anywhere in Cowork | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Assign tasks to Claude from anywhere in Cowork | Claude Help Center"
 4.  Assign tasks to Claude from anywhere in Cowork
 
 # Assign tasks to Claude from anywhere in Cowork
-
-Updated today
 
 
 Cowork now gives you one continuous conversation with Claude that you can reach from your phone or your desktop. Assign Claude a task, go do something else, and come back to the finished work. Claude runs on your computer—with access to your local files, connectors, and plugins—and messages you the result when it's done.

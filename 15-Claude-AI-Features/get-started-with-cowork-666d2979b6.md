@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-20T11:32:02Z"
+fetched_at: "2026-03-22T09:01:44Z"
 source_url: "https://support.claude.com/en/articles/13345190-get-started-with-cowork"
 title: "Get started with Cowork | Claude Help Center"
 ---
 
 # Get started with Cowork
-
-Updated today
 
 
 This article explains how to use **[Cowork](https://claude.com/product/cowork)**, a research preview that brings Claude Code's agentic capabilities to Claude Desktop for knowledge work beyond coding.
@@ -32,7 +30,7 @@ Cowork is available as a research preview for paid plans (Pro, Max, Team, Enterp
 
 Cowork uses the same agentic architecture that powers Claude Code, now accessible within Claude Desktop and without opening the terminal. Instead of responding to prompts one at a time, Claude can take on complex, multi-step tasks and execute them on your behalf.
 
-With Cowork, you can describe an outcome, step away, and come back to finished work—formatted documents, organized files, synthesized research, and more. With scheduled tasks, Claude can complete work for you automatically, which isn't possible in regular chats outside of Cowork.
+With Cowork, you can describe an outcome, step away, and come back to finished work—formatted documents, organized files, synthesized research, and more. With scheduled tasks, Claude can complete work for you automatically, which isn't possible in regular chats outside of Cowork. With the introduction of projects in Cowork, you can organize related tasks into persistent, self-contained workspaces with their own files, links, instructions, and memory, making Cowork more powerful for recurring or long-running work.
 
 **Important:**
 
@@ -63,6 +61,8 @@ For important limitations and considerations for Team and Enterprise organizatio
 - **Scheduled tasks:** Create and save tasks that you can have Claude run on-demand, or automatically on a cadence of your choosing.
 
 - **Spreadsheets and presentations:** Cowork can produce spreadsheets and slides that can be further edited with Claude for Excel and Powerpoint.
+
+- **Projects:** Group related tasks into separate workspaces with their own files, context, instructions, and memory. See **[Organize your tasks with projects in Cowork](https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-cowork).**
 
 - **Mobile access for Pro and Max:** Message Claude from your phone and get results delivered back to the same conversation. Claude works on your desktop using your local files and connectors — you just don't have to be sitting in front of it. See **[Assign tasks to Claude from anywhere in Cowork](https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork)**.
 
@@ -246,6 +246,8 @@ Please carefully assess how much you trust an MCP or website before extending ac
 ## Current limitations
 
 Cowork is a feature preview, which means some capabilities are not yet available:
+
+- **Memory in projects only:** Memory is supported within projects but is not retained across standalone Cowork sessions.
 
 - **No chat or artifact sharing:** Sessions cannot be shared with others.
 

@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-20T11:32:04Z"
+fetched_at: "2026-03-22T09:01:46Z"
 source_url: "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers"
 title: "Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Business Associate Agreements (BAA) for Commercial Customers | Claude He
 3.  Business Associate Agreements (BAA) for Commercial Customers
 
 # Business Associate Agreements (BAA) for Commercial Customers
-
-Updated today
 
 
 *This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* ***[here](https://privacy.claude.com/en/collections/10663362-consumers)****.*
@@ -32,4 +30,4 @@ Below is a breakdown of what’s covered under the BAA, by feature and product s
 
 To learn more about Anthropic’s HIPAA-ready services or begin the BAA process, please submit an inquiry with the details of your deployment to our **[Sales team via this form](https://claude.com/contact-sales)**.
 
-Please see our **[Trust Portal](http://trust.anthropic.com/)** for more information about our compliance commitments.
+Please see our **[Trust Portal](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)** for more information about our compliance commitments.

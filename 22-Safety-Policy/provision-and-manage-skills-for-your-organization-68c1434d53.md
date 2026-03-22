@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-20T11:32:01Z"
+fetched_at: "2026-03-22T09:01:43Z"
 source_url: "https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization"
 title: "Provision and manage Skills for your organization | Claude Help Center"
 ---
