@@ -1,58 +1,100 @@
 # Claude Wiki
 
-Comprehensive mirror of Anthropic and Claude documentation -- 1,996 articles across 24 categories, updated daily.
+Unofficial mirror of Anthropic's Claude documentation — 2,303 Markdown articles across 23 categories, sourced from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and related Anthropic properties.
+
+Updated weekly. Not affiliated with Anthropic.
+
+---
+
+## For LLMs
+
+Grab [`llms.txt`](./llms.txt) for a structured outline of every document in this repo, or download the full [LLMX search bundle](https://github.com/johnzfitch/claude-wiki/releases/latest) from releases.
+
+```
+# Fetch the outline
+curl -sL https://raw.githubusercontent.com/johnzfitch/claude-wiki/master/llms.txt
+
+# Download the latest LLMX bundle
+gh release download --repo johnzfitch/claude-wiki -p 'claude-wiki-llmx.zip'
+```
+
+## For Humans
+
+Every doc is plain Markdown with YAML frontmatter. Browse the folders below or search locally:
+
+<kbd>Ctrl</kbd>+<kbd>F</kbd> in any folder, or clone and grep:
+
+```bash
+# Search everything
+grep -ri "tool use" */
+
+# Search one category
+grep -ri "streaming" 04-API-Reference/
+
+# Find docs by title
+find . -name '*.md' | grep -i "prompt"
+```
+
+---
 
 ## Categories
 
-| # | Category | Docs | Description |
-|---|----------|------|-------------|
-| 01 | Getting Started | 29 | Onboarding, quickstart guides |
-| 02 | Claude Code CLI | 46 | Command-line interface reference |
-| 03 | IDE Integrations | 5 | VS Code, JetBrains, editor plugins |
-| 04 | API Reference | 498 | REST API, SDKs, endpoints, parameters |
-| 05 | Agent SDK | 60 | Building agents with Claude |
-| 06 | MCP Tools | 55 | Model Context Protocol tools |
-| 07 | Hooks | 15 | Event hooks and automation |
-| 08 | Plugins & Skills | 72 | Extensions and custom skills |
-| 09 | Agents & Patterns | 32 | Agent architectures and design patterns |
-| 10 | Prompting Guides | 105 | Prompt engineering techniques |
-| 11 | RAG & Search | 17 | Retrieval-augmented generation |
-| 12 | Eval & Testing | 6 | Evaluation frameworks and benchmarks |
-| 13 | Enterprise Admin | 34 | SSO, SCIM, org management |
-| 14 | Connectors | 59 | Slack, GitHub, Google, Microsoft integrations |
-| 15 | Claude AI Features | 124 | Artifacts, research, memory, models |
-| 16 | Mobile & Desktop | 42 | iOS, Android, desktop apps |
-| 17 | Billing & Plans | 77 | Pro, Max, Team, Enterprise plans |
-| 19 | Reference | 115 | Announcements, research, partnerships |
-| 20 | Models | 89 | Model specifications and capabilities |
-| 21 | Account & Support | 53 | Account management, troubleshooting |
-| 22 | Safety & Policy | 57 | Usage policy, content filtering, compliance |
-| 23 | General FAQ | 2 | Frequently asked questions |
-| 24 | Model Context Protocol | 189 | MCP specification and implementations |
-| 99 | Other | 215 | Miscellaneous articles |
+| Category | Docs | Folder |
+|----------|-----:|--------|
+| Getting Started | 21 | [`01-Getting-Started`](./01-Getting-Started/) |
+| Claude Code CLI | 53 | [`02-Claude-Code-CLI`](./02-Claude-Code-CLI/) |
+| IDE Integrations | 5 | [`03-IDE-Integrations`](./03-IDE-Integrations/) |
+| API Reference | 329 | [`04-API-Reference`](./04-API-Reference/) |
+| Agent SDK | 35 | [`05-Agent-SDK`](./05-Agent-SDK/) |
+| MCP Tools | 409 | [`06-MCP-Tools`](./06-MCP-Tools/) |
+| Hooks | 15 | [`07-Hooks`](./07-Hooks/) |
+| Plugins & Skills | 73 | [`08-Plugins-Skills`](./08-Plugins-Skills/) |
+| Agent Patterns | 34 | [`09-Agents-Patterns`](./09-Agents-Patterns/) |
+| Prompting Guides | 82 | [`10-Prompting-Guides`](./10-Prompting-Guides/) |
+| RAG & Search | 17 | [`11-RAG-Search`](./11-RAG-Search/) |
+| Eval & Testing | 6 | [`12-Eval-Testing`](./12-Eval-Testing/) |
+| Enterprise Admin | 23 | [`13-Enterprise-Admin`](./13-Enterprise-Admin/) |
+| Connectors | 30 | [`14-Connectors`](./14-Connectors/) |
+| Claude AI Features | 627 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
+| Mobile & Desktop | 21 | [`16-Mobile-Desktop`](./16-Mobile-Desktop/) |
+| Billing & Plans | 52 | [`17-Billing-Plans`](./17-Billing-Plans/) |
+| Reference | 339 | [`19-Reference`](./19-Reference/) |
+| Models | 72 | [`20-Models`](./20-Models/) |
+| Account & Support | 27 | [`21-Account-Support`](./21-Account-Support/) |
+| Safety & Policy | 32 | [`22-Safety-Policy`](./22-Safety-Policy/) |
 
-## Usage
+<details>
+<summary>Largest categories by doc count</summary>
 
-Browse directly on GitHub, or clone for local search:
+1. **Claude AI Features** (627) — Projects, artifacts, analysis, canvas, conversations
+2. **MCP Tools** (409) — Model Context Protocol servers, integrations, tooling
+3. **Reference** (339) — API specs, schemas, error codes, SDKs
+4. **API Reference** (329) — REST endpoints, parameters, authentication
+5. **Prompting Guides** (82) — Prompt engineering, system prompts, best practices
 
-```bash
-git clone https://github.com/johnzfitch/claude-wiki.git
-cd claude-wiki
+</details>
 
-# Search across all docs
-grep -r "prompt engineering" .
-```
+---
 
-All documents are Markdown with YAML front matter containing source URL and metadata. Category folders sit at the repository root for easy browsing.
+## Upstream Sources
 
-## Updates
+This repo mirrors content from Anthropic's official documentation:
 
-This repository is updated daily via automated pipeline. Documentation content is sourced from:
+- [docs.anthropic.com](https://docs.anthropic.com) — API docs, guides, SDK references
+- [support.anthropic.com](https://support.anthropic.com) — Help center, account, billing
+- [docs.claude.ai](https://docs.claude.ai) — Claude Code, MCP, hooks
 
-- [docs.anthropic.com](https://docs.anthropic.com)
-- [support.anthropic.com](https://support.anthropic.com)
-- [www.anthropic.com](https://www.anthropic.com)
+Content is fetched, converted to Markdown via Pandoc, and organized into numbered categories. See the [private repo](https://github.com/johnzfitch/claude-wiki) tooling for details on the pipeline.
+
+## Releases
+
+Weekly [releases](https://github.com/johnzfitch/claude-wiki/releases) include:
+
+| Asset | Description |
+|-------|-------------|
+| `llms.txt` | Tiered document outline for LLM context windows |
+| `claude-wiki-llmx.zip` | Full LLMX search bundle (offline semantic search) |
 
 ## License
 
-Documentation content is owned by Anthropic. This mirror is provided for reference and search convenience.
+This repo contains documentation authored by Anthropic. All content remains under Anthropic's original terms. This mirror is provided for convenience and searchability.
