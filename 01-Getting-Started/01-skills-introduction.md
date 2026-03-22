@@ -1,3 +1,9 @@
+---
+category: "01-Getting-Started"
+source_url: "https://support.claude.com/en/articles/skills-introduction"
+title: "Introduction to Claude Skills"
+---
+
 # Introduction to Claude Skills
 
 Learn how to use Claude\'s Skills feature to create professional
