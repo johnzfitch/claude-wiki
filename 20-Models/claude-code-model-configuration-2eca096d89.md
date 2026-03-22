@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-20T11:31:56Z"
+fetched_at: "2026-03-22T09:01:39Z"
 source_url: "https://support.claude.com/en/articles/11940350-claude-code-model-configuration"
 title: "Claude Code model configuration | Claude Help Center"
 ---

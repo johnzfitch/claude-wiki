@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-20T11:31:55Z"
+fetched_at: "2026-03-22T09:01:38Z"
 source_url: "https://support.claude.com/en/articles/11107691-why-is-a-coupon-or-promotion-not-available-for-my-account"
 title: "Why is a coupon or promotion not available for my account? | Claude Help Center"
 ---

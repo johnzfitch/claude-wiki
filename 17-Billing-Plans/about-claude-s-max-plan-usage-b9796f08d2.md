@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:31:55Z"
+fetched_at: "2026-03-22T09:01:37Z"
 source_url: "https://support.claude.com/en/articles/11014257-about-claude-s-max-plan-usage"
 title: "Claude Help Center"
 ---

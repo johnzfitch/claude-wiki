@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-20T11:32:07Z"
+fetched_at: "2026-03-22T09:01:49Z"
 source_url: "https://support.claude.com/en/articles/9970975-access-audit-logs"
 title: "Access audit logs | Claude Help Center"
 ---

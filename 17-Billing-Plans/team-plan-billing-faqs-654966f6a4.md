@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:32:01Z"
+fetched_at: "2026-03-22T09:01:43Z"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 title: "Team plan billing FAQs | Claude Help Center"
 ---

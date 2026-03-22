@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:32:01Z"
+fetched_at: "2026-03-22T09:01:43Z"
 source_url: "https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation"
 title: "Understanding your billing address and tax calculation | Claude Help Center"
 ---

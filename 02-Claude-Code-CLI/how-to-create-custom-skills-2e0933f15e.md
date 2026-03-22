@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-03-20T11:31:59Z"
+fetched_at: "2026-03-22T09:01:41Z"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 title: "How to create custom Skills | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-20T11:31:59Z"
+fetched_at: "2026-03-22T09:01:41Z"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 title: "Adapting to new model personas after deprecations | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:31:56Z"
+fetched_at: "2026-03-22T09:01:39Z"
 source_url: "https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan"
 title: "Use Claude Code with your Team or Enterprise plan | Claude Help Center"
 ---

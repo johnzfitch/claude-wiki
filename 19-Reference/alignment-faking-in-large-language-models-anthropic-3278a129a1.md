@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-20T11:32:07Z"
+fetched_at: "2026-03-22T09:01:49Z"
 source_url: "https://www.anthropic.com/news/alignment-faking"
 title: "Alignment faking in large language models \\ Anthropic"
 ---

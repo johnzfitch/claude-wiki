@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-20T11:31:54Z"
+fetched_at: "2026-03-22T09:01:37Z"
 source_url: "https://support.claude.com/en/articles/10280258-setting-up-single-sign-on-on-the-claude-console"
 title: "Claude Help Center"
 ---

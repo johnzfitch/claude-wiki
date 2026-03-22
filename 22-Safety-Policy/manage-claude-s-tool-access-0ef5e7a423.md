@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-20T11:32:03Z"
+fetched_at: "2026-03-22T09:01:45Z"
 source_url: "https://support.claude.com/en/articles/13730515-manage-claude-s-tool-access"
 title: "Manage Claude’s tool access | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-20T11:31:59Z"
+fetched_at: "2026-03-22T09:01:42Z"
 source_url: "https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely"
 title: "Using Claude in Chrome Safely | Claude Help Center"
 ---
@@ -84,7 +84,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 - Known pirated content sites
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#681d1b0d1a1b090e0d1c112809061c001a0718010b460b0705).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#0f7a7c6a7d7c6e696a7b764f6e617b677d607f666c216c6062).
 
 ------------------------------------------------------------------------
 

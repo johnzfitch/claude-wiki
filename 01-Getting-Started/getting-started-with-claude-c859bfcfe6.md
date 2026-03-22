@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-03-20T11:32:04Z"
+fetched_at: "2026-03-22T09:01:46Z"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 title: "Getting started with Claude | Claude Help Center"
 ---

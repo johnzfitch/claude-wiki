@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:32:03Z"
+fetched_at: "2026-03-22T09:01:45Z"
 source_url: "https://support.claude.com/en/articles/13455879-use-cowork-on-team-and-enterprise-plans"
 title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 4.  Use Cowork on Team and Enterprise plans
 
 # Use Cowork on Team and Enterprise plans
-
-Updated today
 
 
 This article explains important limitations and considerations for Team and Enterprise organizations using Cowork during the research preview period.
@@ -51,6 +49,15 @@ Cowork will be on by default when the research preview launches, but organizatio
 Plugins are included with Cowork and controlled by the same admin toggle—there's no separate setting to manage plugin access within Cowork.
 
 For details on what members can do with plugins, see **[Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)**.
+
+
+------------------------------------------------------------------------
+
+## Projects
+
+Projects in Cowork let users organize tasks into dedicated workspaces with their own files, links, instructions, and memory. Projects are available to all Cowork users. There are no separate admin controls for projects, so owners cannot restrict project creation at the organization level at this time.
+
+Project data (tasks and memory) is stored locally on each user's computer, consistent with how other Cowork data is handled. For full details, see **[Organize your tasks with projects in Cowork](https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-cowork).**
 
 ------------------------------------------------------------------------
 

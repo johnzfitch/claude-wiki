@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-20T11:32:03Z"
+fetched_at: "2026-03-22T09:01:46Z"
 source_url: "https://support.claude.com/en/articles/13851150-install-financial-services-plugins-for-cowork"
 title: "Install financial services plugins for Cowork | Claude Help Center"
 ---

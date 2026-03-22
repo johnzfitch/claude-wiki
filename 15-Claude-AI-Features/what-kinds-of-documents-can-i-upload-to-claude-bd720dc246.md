@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-20T11:32:04Z"
+fetched_at: "2026-03-22T09:01:46Z"
 source_url: "https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude"
 title: "Uploading files to Claude | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-20T11:32:05Z"
+fetched_at: "2026-03-22T09:01:47Z"
 source_url: "https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team"
 title: "Who owns and manages the data of my team? | Claude Help Center"
 ---

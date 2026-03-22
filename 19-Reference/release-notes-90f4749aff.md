@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-20T11:31:58Z"
+fetched_at: "2026-03-22T09:01:40Z"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
 title: "Release notes | Claude Help Center"
 ---

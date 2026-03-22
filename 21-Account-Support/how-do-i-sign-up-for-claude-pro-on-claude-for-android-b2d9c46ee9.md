@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-20T11:32:06Z"
+fetched_at: "2026-03-22T09:01:48Z"
 source_url: "https://support.claude.com/en/articles/9612892-how-do-i-sign-up-for-claude-pro-on-claude-for-android"
 title: "How do I sign up for Claude Pro on Claude for Android? | Claude Help Center"
 ---

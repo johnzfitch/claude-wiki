@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:32:04Z"
+fetched_at: "2026-03-22T09:01:46Z"
 source_url: "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
 title: "What is the Pro plan? | Claude Help Center"
 ---

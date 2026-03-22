@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-20T11:32:02Z"
+fetched_at: "2026-03-22T09:01:44Z"
 source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
 title: "Logging in to your Claude account | Claude Help Center"
 ---

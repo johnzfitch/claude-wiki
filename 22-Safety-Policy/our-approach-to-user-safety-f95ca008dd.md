@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-20T11:32:04Z"
+fetched_at: "2026-03-22T09:01:46Z"
 source_url: "https://support.claude.com/en/articles/8106465-our-approach-to-user-safety"
 title: "Our Approach to User Safety | Claude Help Center"
 ---
@@ -16,4 +16,4 @@ User safety is core to Anthropic’s mission of creating reliable, interpretable
 
 - Enhanced safety filters, which allow us to increase the sensitivity of our detection models. We may temporarily apply enhanced safety filters to users who repeatedly violate our policies, and remove these controls after a period of no or few violations.
 
-These features are not failsafe, and we may make mistakes through false positives or false negatives. Your feedback on these measures and how we explain them to users will play a key role in helping us improve these safety systems, and we encourage you to reach out to us at [\[email protected\]](/cdn-cgi/l/email-protection#582d2b3d2a2b393e3d2c211839362c302a3728313b763b3735) with any feedback you may have. To learn more, [read about our core views on AI safety](https://www.anthropic.com/index/core-views-on-ai-safety).
+These features are not failsafe, and we may make mistakes through false positives or false negatives. Your feedback on these measures and how we explain them to users will play a key role in helping us improve these safety systems, and we encourage you to reach out to us at [\[email protected\]](/cdn-cgi/l/email-protection#9eebedfbecedfff8fbeae7defff0eaf6ecf1eef7fdb0fdf1f3) with any feedback you may have. To learn more, [read about our core views on AI safety](https://www.anthropic.com/index/core-views-on-ai-safety).

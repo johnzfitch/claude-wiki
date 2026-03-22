@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:32:01Z"
+fetched_at: "2026-03-22T09:01:43Z"
 source_url: "https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription"
 title: "How to redeem a Claude gift subscription | Claude Help Center"
 ---

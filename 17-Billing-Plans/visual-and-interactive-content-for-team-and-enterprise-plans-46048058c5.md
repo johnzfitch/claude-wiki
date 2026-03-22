@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:32:03Z"
+fetched_at: "2026-03-22T09:01:45Z"
 source_url: "https://support.claude.com/en/articles/13663666-visual-and-interactive-content-for-team-and-enterprise-plans"
 title: "Use visual and interactive content on Team and Enterprise plans | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-20T11:32:06Z"
+fetched_at: "2026-03-22T09:01:48Z"
 source_url: "https://support.claude.com/en/articles/9267400-can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan-organizations"
 title: "Can individuals with Pro or Max plan accounts migrate them to Team or Enterprise plan organizations? | Claude Help Center"
 ---

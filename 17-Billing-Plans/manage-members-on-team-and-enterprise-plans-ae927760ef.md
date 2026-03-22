@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-20T11:32:01Z"
+fetched_at: "2026-03-22T09:01:44Z"
 source_url: "https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans"
 title: "Manage members on Team and Enterprise plans | Claude Help Center"
 ---

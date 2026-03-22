@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-20T11:31:54Z"
+fetched_at: "2026-03-22T09:01:36Z"
 source_url: "https://support.claude.com/en/articles/10023638-why-am-i-receiving-an-output-blocked-by-content-filtering-policy-error"
 title: "Why am I receiving an &#x27;Output blocked by content filtering policy&#x27; error? | Claude Help Center"
 ---

@@ -1,13 +1,11 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-20T11:32:01Z"
+fetched_at: "2026-03-22T09:01:43Z"
 source_url: "https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning"
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
 ---
 
 # Set up JIT or SCIM provisioning
-
-Updated today
 
 
 JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console organizations only.

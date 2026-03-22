@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-20T11:32:03Z"
+fetched_at: "2026-03-22T09:01:46Z"
 source_url: "https://support.claude.com/en/articles/13892150-work-across-apps-with-cowork"
 title: "Work across Excel and PowerPoint | Claude Help Center"
 ---
@@ -27,6 +27,8 @@ Claude can now work across apps to coordinate between the Excel and PowerPoint a
 Get **[Claude for Excel](https://marketplace.microsoft.com/en-us/product/saas/wa200009404?tab=overview)** and **[Claude for PowerPoint](https://marketplace.microsoft.com/en-us/product/office/WA200010001?tab=Overview)** from the Microsoft Marketplace. Open each app and activate the add-in at least once before using the cross-app features.
 
 ### 2. Toggle the setting on
+
+**Note:** If you're a member of a Team or Enterprise plan, the **Let Claude work across apps** setting needs to be toggled on by an organization owner before this capability can be enabled individually.
 
 Go to **Settings** in each of Claude for Excel and Powerpoint and toggle **Let Claude work across files** on:
 
@@ -78,9 +80,18 @@ For more on how Skills work, see **[Use Skills in Claude](https://support.claude
 
 Inputs and outputs are automatically deleted from Anthropic's backend within 30 days of receipt or generation, except in cases outlined in **[How long do you store my organization's data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)** The Claude for Excel and Claude for PowerPoint add-ins do not inherit custom data retention settings your organization may have set, and activity is not currently included in Enterprise audit logs, the Compliance API, or data exports. Chat history is not saved between sessions.
 
-### For admins who want to restrict access
+### For admins who want to manage access
 
-Team and Enterprise organization owners can control whether team members have access to the Claude for Excel and Claude for PowerPoint add-ins through the **[Microsoft 365 Admin Center](https://admin.microsoft.com)**.
+Team and Enterprise organization owners can control whether team members can access this capability:
+
+1.  Go to **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**
+
+2.  Find the **Integration permissions** section.
+
+3.  Toggle **Let Claude work across apps** on or off:
+
+
+Admins can also manage member access to the Claude for Excel and Claude for PowerPoint add-ins through the **[Microsoft 365 Admin Center](https://admin.microsoft.com)**.
 
 ------------------------------------------------------------------------
 
