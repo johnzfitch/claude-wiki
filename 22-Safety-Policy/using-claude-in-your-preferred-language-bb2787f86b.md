@@ -1,7 +1,7 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:34:04Z"
-source_url: "https://support.anthropic.com/en/articles/10769299-using-claude-in-your-preferred-language"
+fetched_at: "2026-03-20T11:31:55Z"
+source_url: "https://support.claude.com/en/articles/10769299-using-claude-in-your-preferred-language"
 title: "How to use Claude in your preferred language | Claude Help Center"
 ---
 

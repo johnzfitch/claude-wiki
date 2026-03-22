@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-17T02:04:24Z"
+fetched_at: "2026-03-20T11:32:02Z"
 source_url: "https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions"
 title: "Enforce network-level access control with Tenant Restrictions | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Enforce network-level access control with Tenant Restrictions | Claude H
 4.  Enforce network-level access control with Tenant Restrictions
 
 # Enforce network-level access control with Tenant Restrictions
-
-Updated today
 
 
 Tenant Restrictions are available for members of Enterprise plans and Console organizations.

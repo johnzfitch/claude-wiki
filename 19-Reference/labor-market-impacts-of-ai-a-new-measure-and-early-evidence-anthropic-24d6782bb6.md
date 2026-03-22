@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:32Z"
+fetched_at: "2026-03-20T10:37:07Z"
 source_url: "https://www.anthropic.com/research/labor-market-impacts"
 title: "Labor market impacts of AI: A new measure and early evidence \\ Anthropic"
 ---
@@ -11,7 +11,7 @@ Mar 5, 2026
 
 [Read in PDF](https://cdn.sanity.io/files/4zrzovbb/website/2b5bbaf2c1eb81dbf6e6fb813c1a24e35a64d376.pdf)
 
-## Key Findings
+## Key findings
 
 - We introduce a new measure of AI displacement risk, *observed exposure*, that combines theoretical LLM capability and real-world usage data, weighting automated (rather than augmentative) and work-related uses more heavily
 - AI is far from reaching its theoretical capability: actual coverage remains a fraction of what's feasible
@@ -29,9 +29,7 @@ In this paper, we present a new framework for understanding AI’s labor market 
 
 It is possible that the impacts of AI will be unmistakable. This framework is most useful when the effects are ambiguous—and could help identify the most vulnerable jobs before displacement is visible.
 
-\
-Counterfactuals
----------------
+## Counterfactuals
 
 Causal inference is easier when the effects are large and sudden. The COVID-19 pandemic and accompanying policy measures caused economic disruption so stark that sophisticated statistical approaches were unnecessary for many questions. For example, unemployment jumped sharply in the early weeks of the pandemic, leaving little room for alternative explanations.
 
@@ -55,8 +53,7 @@ Why might actual usage fall short of theoretical capability? Some tasks that are
 
 That said, these measures of theoretical capability and actual usage are highly correlated. As Figure 1 shows, 97% of the tasks observed across the previous four Economic Index reports fall into categories rated as theoretically feasible by Eloundou et al. (β=0.5 or β=1.0).
 
-### \
-A new measure of occupational exposure
+### A new measure of occupational exposure
 
 Our new measure, *observed exposure*, is meant to quantify: of those tasks that LLMs could theoretically speed up, which are actually seeing automated usage in professional settings? Theoretical capability encompasses a much broader range of tasks. By tracking how that gap narrows, observed exposure provides insight into economic changes as they emerge.
 
@@ -79,7 +76,6 @@ As capabilities advance, adoption spreads, and deployment deepens, the red area 
 Figure 3 shows the ten occupations most exposed under this measure. In line with other data showing that Claude is extensively used for coding, Computer Programmers are at the top, with 75% coverage, followed by Customer Service Representatives, whose main tasks we increasingly see in first-party API traffic. Finally, Data Entry Keyers, whose primary task of reading source documents and entering data sees significant automation, are 67% covered.
 
 \
-\
 At the bottom end, 30% of workers have zero coverage, as their tasks appeared too infrequently in our data to meet the minimum threshold. This group includes, for example, Cooks, Motorcycle Mechanics, Lifeguards, Bartenders, Dishwashers, and Dressing Room Attendants.
 
 ## **How exposure tracks with projected job growth and worker characteristics**
@@ -88,11 +84,7 @@ The US Bureau of Labor Statistics (BLS) publishes regular employment projections
 
 A regression at the occupation level weighted by current employment finds that growth projections are somewhat weaker for jobs with more observed exposure. For every 10 percentage point increase in coverage, the BLS’s growth projection drops by 0.6 percentage points. This provides some validation in that our measures track the independently derived estimates from labor market analysts, although the relationship is slight. Interestingly, there is no such correlation using the Eloundou et al. measure alone.
 
-\
-
 Figure 5 shows characteristics of workers in the top quartile of exposure and the 30% of workers with zero exposure in the three months before ChatGPT was released, August to October 2022, using data from the Current Population Survey.⁷ The groups are very different. The more exposed group is 16 percentage points more likely to be female, 11 percentage points more likely to be white, and almost twice as likely to be Asian. They earn 47% more, on average, and have higher levels of education. For example, people with graduate degrees are 4.5% of the unexposed group, but 17.4% of the most exposed group, an almost fourfold difference.
-
-\
 
 ## Prioritizing outcomes
 
@@ -100,9 +92,7 @@ With these exposure measures in hand, the question is what to look for. Research
 
 We focus on unemployment as our priority outcome because it most directly captures the potential for economic harm—a worker who is unemployed wants a job and has not yet found one. In this case, job postings and employment do not necessarily signal the need for policy responses; a decline in job postings for a highly exposed role may be counteracted by increased openings in a related one. Most harmful labor market developments of AI should arguably include a period of increased unemployment, as displaced workers search for alternatives. The Current Population Survey is well suited to tracking this, as unemployed respondents report their previous job and industry.
 
-\
-Initial results\
-----------------
+## Initial results
 
 We next study trends in unemployment, matching our occupation-level measures to respondents in the Current Population Survey.
 
@@ -112,7 +102,6 @@ With an eye toward simplicity, and noting that we are most concerned with large 
 
 The upper panel of Figure 6 shows raw trends in the unemployment rate since 2016 for workers in the top quartile of exposure and the unexposed group. During COVID, the less AI-exposed workers—who are more likely to have in-person jobs—saw a much larger increase in unemployment. Since then, the trends have been largely similar between the two groups. The lower panel measures the size of the gap between the most and least exposed workers in a difference-in-differences framework, mirroring the findings from the raw data. The average change in the gap since the release of ChatGPT is small and insignificant, suggesting that the unemployment rate of the more exposed group has increased slightly but the effect is indistinguishable from zero.⁸
 
-**\**
 What kind of scenarios can this framework identify? Based on the confidence interval of the pooled estimate, differential increases in unemployment on the order of 1 percentage point would be detectable (this will change as new data comes in, so it is merely a ballpark estimate). If all workers within the top 10% were laid off, it would increase unemployment within the top quartile group from 3% to 43%, and it would increase aggregate unemployment from 4% to 13%.
 
 A smaller but still concerning impact would be a scenario such as a “Great Recession for white-collar workers.” During the 2007-2009 Great Recession, unemployment rates doubled from 5% to 10% in the US. Such a doubling in the top quartile of exposure would increase its unemployment rate from 3% to 6%. This should be visible in our analysis as well. Note that our core estimate is based on *differential* changes in the unemployment rate in the exposed group compared to the less exposed group. If unemployment increased for all workers in parallel, we would not attribute this to AI advancements that still leave many tasks unaffected.
@@ -123,11 +112,9 @@ We find that the unemployment rate for young workers in the exposed occupations 
 
 Apart from some large swings in 2020-2021, these series visually diverge in 2024, with young workers relatively less likely to be hired into exposed occupations. Job finding rates at the less exposed occupations remain stable at 2% per month, while entry into the most exposed jobs decreases by about half a percentage point. The averaged estimate in the post-ChatGPT era is a 14% drop in the job finding rate compared to that in 2022 in the exposed occupations, although this is just barely statistically significant. (There is no such decrease for workers older than 25.)
 
-This may provide some signal of the early effects of AI on employment, and echoes the findings from Brynjolfsson et al. But there are several alternative interpretations. The young workers who are not hired may be remaining at their existing jobs, taking different jobs, or returning to school. A further data-related caveat is that job transitions may be more vulnerable to mismeasurement in surveys.¹⁰\
+This may provide some signal of the early effects of AI on employment, and echoes the findings from Brynjolfsson et al. But there are several alternative interpretations. The young workers who are not hired may be remaining at their existing jobs, taking different jobs, or returning to school. A further data-related caveat is that job transitions may be more vulnerable to mismeasurement in surveys.¹⁰
 
-\
-Discussion
-----------
+## Discussion
 
 This report introduces a new measure for understanding the labor market effects of AI and studies impacts on unemployment and hiring. Jobs are more exposed to AI to the extent that their tasks are theoretically feasible with LLMs and observed on our platforms in automated, work-related use cases. We find that computer programmers, customer service representatives, and financial analysts are among the most exposed. Using survey data from the US, we find no impact on unemployment rates for workers in the most exposed occupations, although there’s tentative evidence that hiring into those professions has slowed slightly for workers aged 22-25.
 
@@ -135,14 +122,11 @@ Our work is a first step toward cataloging the impact of AI on the labor market.
 
 There are several improvements to be made to the present work. Our usage data will be incorporated in future updates, forming an evolving picture of task and job coverage in the economy. The Eloundou et al. metric could also be updated, to the extent that it is linked to LLM capabilities as of early 2023. And, given the suggestive results around young workers and labor market entrants, a key next step might be to look at how recent graduates with educational credentials in exposed areas are navigating the labor market.
 
-\
-
 ## Appendix
 
 Available [here.](https://cdn.sanity.io/files/4zrzovbb/website/e5f77fc0e77c0185110b5e4b909602791ae76eae.pdf)\
 
-### \
-Acknowledgements
+### Acknowledgements
 
 Written by Maxim Massenkoff and Peter McCrory.
 
@@ -150,8 +134,7 @@ With acknowledgements to: Ruth Appel, Tim Belonax, Keir Bradwell, Andy Braden, D
 
 We additionally thank Martha Gimbel, Anders Humlum, Evan Rose, and Nathan Wilmers for feedback on earlier versions of this report.
 
-### \
-Citation
+### Citation
 
 ```
 @online{massenkoffmccrory2026labor,

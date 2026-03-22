@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:00:52Z"
+fetched_at: "2026-03-20T10:34:15Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/agent-loop"
 title: "How the agent loop works - Claude API Docs"
 ---

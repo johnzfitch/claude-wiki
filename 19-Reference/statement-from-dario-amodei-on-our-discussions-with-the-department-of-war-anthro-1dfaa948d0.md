@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:25Z"
+fetched_at: "2026-03-20T10:37:01Z"
 source_url: "https://www.anthropic.com/news/statement-department-of-war"
 title: "Statement from Dario Amodei on our discussions with the Department of War \\ Anthropic"
 ---

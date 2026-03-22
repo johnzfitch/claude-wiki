@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:43Z"
+fetched_at: "2026-03-20T10:35:52Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/go"
 title: "Go SDK - Claude API Docs"
 ---
@@ -27,13 +27,13 @@ import (
 Or to pin the version:
 
 ```python
-go get -u 'github.com/anthropics/anthropic-sdk-go@v1.19.0'
+go get -u 'github.com/anthropics/anthropic-sdk-go@v1.27.1'
 ```
 
 
 Requirements
 
-This library requires Go 1.22+.
+This library requires Go 1.23+.
 
 
 Usage
@@ -117,7 +117,7 @@ Request structs contain a `.SetExtraFields(map[string]any)` method which can sen
 
 For security reasons, only use `SetExtraFields` with trusted data.
 
-To send a custom value instead of a struct, use the generic function `param.Override` (e.g., `param.Override[anthropic.FooParams](12)`).
+To send a custom value instead of a struct, use the generic function `param.Override` (for example, `param.Override[anthropic.FooParams](12)`).
 
 ```python
 // In cases where the API specifies a given type,
@@ -158,6 +158,39 @@ if address := animal.GetOwner().GetAddress(); address != nil {
     address.ZipCode = 94304
 }
 ```
+
+
+Deserializing params
+
+`param.SetJSON` requires SDK v1.20.0 or later.
+
+Param types (types ending in `Param`, such as `MessageNewParams` or `ToolUnionParam`) are designed for outgoing requests only. They marshal correctly to JSON but do not fully support round-trip deserialization. If you unmarshal raw JSON into a param struct, typed union fields like `OfBashTool20250124` will be nil even when the underlying JSON is valid.
+
+If you need to reconstruct params from raw JSON (for example, from a database, middleware, or a previous request), call `UnmarshalJSON` to populate non-union fields, then use `param.SetJSON` to attach the raw bytes for correct re-serialization:
+
+```python
+// Serialize params (for example, for storage or forwarding)
+b, err := json.Marshal(original)
+if err != nil {
+    panic(err)
+}
+
+// Later, reconstruct params from the stored JSON
+var params anthropic.MessageNewParams
+if err := params.UnmarshalJSON(b); err != nil {
+    panic(err)
+}
+param.SetJSON(b, &params)
+
+// params.Model and other scalar fields are populated by UnmarshalJSON.
+// params.Tools[0].OfBashTool20250124 is nil (the union limitation),
+// but the raw JSON is preserved. When params is marshaled again
+// for the API call, the tools serialize correctly.
+b2, _ := json.Marshal(params)
+fmt.Println(string(b) == string(b2)) // true
+```
+
+For this use case, `param.SetJSON` (available since v1.20.0) is preferred over the more general `param.Override[T](any)` because it doesn't require spelling out the type parameter and makes the round-trip intent explicit.
 
 
 Response objects
@@ -488,7 +521,7 @@ The Go SDK supports Amazon Bedrock and Google Vertex AI through subpackages:
 Advanced usage
 
 
-Accessing raw response data (e.g. response headers)
+Accessing raw response data (for example, response headers)
 
 You can access the raw HTTP response data by using the `option.WithResponseInto()` request option. This is useful when you need to examine response headers, status codes, or other details.
 

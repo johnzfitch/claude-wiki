@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-16T05:34:06Z"
+fetched_at: "2026-03-20T11:32:03Z"
 source_url: "https://support.claude.com/en/articles/13455879-cowork-for-team-and-enterprise-plans"
 title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 ---
@@ -8,6 +8,8 @@ title: "Use Cowork on Team and Enterprise plans | Claude Help Center"
 4.  Use Cowork on Team and Enterprise plans
 
 # Use Cowork on Team and Enterprise plans
+
+Updated today
 
 
 This article explains important limitations and considerations for Team and Enterprise organizations using Cowork during the research preview period.
@@ -22,9 +24,9 @@ Cowork is available as a research preview for paid plans (Pro, Max, Team, Enterp
 
 - **Claude Desktop for Windows** (x64 only)
 
-**Windows users:** Cowork requires the latest version of Claude for Windows. Download or update at **[claude.com/download](https://claude.com/download)**.
+  - **Windows users:** Cowork requires the latest version of Claude for Windows. Download or update at **[claude.com/download](https://claude.com/download)**.
 
-Windows arm64 is not supported.
+  - Windows arm64 is not supported.
 
 ------------------------------------------------------------------------
 
@@ -126,7 +128,7 @@ Users should:
 
 - Report suspicious behavior immediately
 
-For detailed guidance, see **[Using Cowork safely](https://support.claude.com/en/articles/13364135-using-cowork-safely)**.
+For detailed guidance, see **[Use Cowork safely](https://support.claude.com/en/articles/13364135-use-cowork-safely)**.
 
 ### Network access
 

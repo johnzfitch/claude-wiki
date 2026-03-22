@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:21Z"
+fetched_at: "2026-03-20T10:36:56Z"
 source_url: "https://www.anthropic.com/news/genesis-mission-partnership"
 title: "Working with the US Department of Energy to unlock the next era of scientific discovery \\ Anthropic"
 ---

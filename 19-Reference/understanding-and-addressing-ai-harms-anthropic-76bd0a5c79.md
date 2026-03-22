@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:23Z"
+fetched_at: "2026-03-20T10:36:59Z"
 source_url: "https://www.anthropic.com/news/our-approach-to-understanding-and-addressing-ai-harms"
 title: "Understanding and Addressing AI Harms \\ Anthropic"
 ---

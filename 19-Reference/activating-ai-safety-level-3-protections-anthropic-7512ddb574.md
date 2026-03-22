@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:13Z"
+fetched_at: "2026-03-20T10:36:46Z"
 source_url: "https://www.anthropic.com/news/activating-asl3-protections"
 title: "Activating AI Safety Level 3 protections \\ Anthropic"
 ---

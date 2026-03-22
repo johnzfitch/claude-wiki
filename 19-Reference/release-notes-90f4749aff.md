@@ -1,16 +1,24 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:04:09Z"
+fetched_at: "2026-03-20T11:31:58Z"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
 title: "Release notes | Claude Help Center"
 ---
 
 # Release notes
 
-Updated today
-
 
 ## March 2026
+
+### March 17, 2026
+
+**Control Cowork from your phone with a persistent thread (research preview for Pro/Max)**
+
+Users on Pro and Max plans can access a persistent agent thread via Claude Desktop or Claude for iOS/Android to manage tasks in Cowork. We're rolling this out to Max plans starting today, and Pro plans over the next two days. For more information, see **[Assign tasks to Claude from anywhere in Cowork](https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork)**.
+
+# An error occurred.
+
+Unable to execute JavaScript.
 
 ### March 12, 2026
 

@@ -1,8 +1,8 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-16T23:06:20Z"
-last_modified: "Mon, 16 Mar 2026 21:43:08 GMT"
-source_url: "https://claude.com/customers/epic-systems"
+fetched_at: "2026-03-17T10:27:08Z"
+last_modified: "Tue, 17 Mar 2026 04:17:43 GMT"
+source_url: "https://www.claude.com/customers/epic-systems"
 title: "Customer story | Epic Systems | Claude"
 ---
 

@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:15Z"
+fetched_at: "2026-03-20T10:36:47Z"
 source_url: "https://www.anthropic.com/news/anthropic-partners-with-the-university-of-chicago-s-becker-friedman-institute-on-ai-economic"
 title: "Anthropic partners with the University of Chicago’s Becker Friedman Institute for Economics on AI economic research \\ Anthropic"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:14Z"
+fetched_at: "2026-03-20T10:36:47Z"
 source_url: "https://www.anthropic.com/news/anthropic-expands-global-leadership-in-enterprise-ai-naming-chris-ciauri-as-managing-director-of"
 title: "Anthropic expands global leadership in enterprise AI, naming Chris Ciauri as Managing Director of International \\ Anthropic"
 ---

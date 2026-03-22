@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:30Z"
+fetched_at: "2026-03-20T10:37:05Z"
 source_url: "https://www.anthropic.com/research/economic-policy-responses"
 title: "Preparing for AI’s economic impact: exploring policy responses \\ Anthropic"
 ---

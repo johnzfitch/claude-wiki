@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:27Z"
+fetched_at: "2026-03-20T10:34:29Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/python"
 title: "Agent SDK reference - Python - Claude API Docs"
 ---

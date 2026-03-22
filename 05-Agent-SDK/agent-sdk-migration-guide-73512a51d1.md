@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:28Z"
+fetched_at: "2026-03-20T10:34:22Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/migration-guide"
 title: "Migrate to Claude Agent SDK - Claude API Docs"
 ---

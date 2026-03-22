@@ -1,8 +1,8 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-16T23:05:18Z"
-last_modified: "Mon, 16 Mar 2026 21:46:58 GMT"
-source_url: "https://claude.com/customers/circleci"
+fetched_at: "2026-03-17T10:27:02Z"
+last_modified: "Tue, 17 Mar 2026 04:07:50 GMT"
+source_url: "https://www.claude.com/customers/circleci"
 title: "Customer story | CircleCI | Claude"
 ---
 

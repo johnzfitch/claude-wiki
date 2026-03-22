@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:16Z"
+fetched_at: "2026-03-20T10:36:49Z"
 source_url: "https://www.anthropic.com/news/child-safety-principles"
 title: "Aligning on child safety principles \\ Anthropic"
 ---

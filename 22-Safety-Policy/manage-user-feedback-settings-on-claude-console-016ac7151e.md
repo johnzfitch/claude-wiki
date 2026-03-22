@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-17T02:04:23Z"
+fetched_at: "2026-03-20T11:31:55Z"
 source_url: "https://support.claude.com/en/articles/10504853-manage-user-feedback-settings-on-claude-console"
 title: "Manage user feedback settings on Claude Console | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "Manage user feedback settings on Claude Console | Claude Help Center"
 
 # Manage user feedback settings on Claude Console
 
-Updated today
 
 As an Admin of your Claude Console account, you can manage the ability for members of your organization to submit feedback to Anthropic via thumbs up / thumbs down.
 

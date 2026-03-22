@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:31Z"
+fetched_at: "2026-03-20T10:37:06Z"
 source_url: "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic"
 title: "How AI Is Transforming Work at Anthropic \\ Anthropic"
 ---

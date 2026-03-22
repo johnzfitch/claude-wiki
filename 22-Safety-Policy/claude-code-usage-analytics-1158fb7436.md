@@ -1,13 +1,11 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-17T02:04:09Z"
+fetched_at: "2026-03-20T11:31:58Z"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 title: "Claude Code usage analytics | Claude Help Center"
 ---
 
 # Claude Code usage analytics
-
-Updated today
 
 
 This feature allows Console users and owners of Team and Enterprise plans to monitor how their organization uses Claude Code, tracking productivity metrics and adoption patterns across teams.

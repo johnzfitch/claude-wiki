@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:18Z"
+fetched_at: "2026-03-20T10:34:33Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/skills"
 title: "Agent Skills in the SDK - Claude API Docs"
 ---

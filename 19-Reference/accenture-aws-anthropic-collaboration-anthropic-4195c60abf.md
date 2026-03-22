@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:13Z"
+fetched_at: "2026-03-20T10:36:46Z"
 source_url: "https://www.anthropic.com/news/accenture-aws-anthropic"
 title: "Accenture, AWS, Anthropic Collaboration \\ Anthropic"
 ---

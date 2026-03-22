@@ -1,8 +1,8 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-16T23:05:08Z"
-last_modified: "Mon, 16 Mar 2026 20:41:31 GMT"
-source_url: "https://claude.com/pricing"
+fetched_at: "2026-03-17T10:28:27Z"
+last_modified: "Tue, 17 Mar 2026 04:03:40 GMT"
+source_url: "https://www.claude.com/pricing"
 title: "Plans &amp; Pricing | Claude by Anthropic"
 ---
 

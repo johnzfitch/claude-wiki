@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-17T02:04:23Z"
+fetched_at: "2026-03-20T11:32:03Z"
 source_url: "https://support.claude.com/en/articles/13694757-access-engagement-and-adoption-data-with-the-analytics-api"
 title: "Access engagement and adoption data with the Analytics API | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "Access engagement and adoption data with the Analytics API | Claude Help
 4.  Access engagement and adoption data with the Analytics API
 
 # Access engagement and adoption data with the Analytics API
-
-Updated today
 
 
 The Analytics API gives Enterprise plan Primary Owners programmatic access to engagement and adoption data for their organization. Use it to build internal dashboards, track adoption trends, and feed Claude engagement data into your existing reporting tools.

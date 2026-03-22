@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:14Z"
+fetched_at: "2026-03-20T10:36:47Z"
 source_url: "https://www.anthropic.com/news/anthropic-appoints-irina-ghose-as-managing-director-of-india"
 title: "Anthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening \\ Anthropic"
 ---

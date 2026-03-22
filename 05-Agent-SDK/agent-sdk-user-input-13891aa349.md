@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:02Z"
+fetched_at: "2026-03-20T10:34:44Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/user-input"
 title: "Handle approvals and user input - Claude API Docs"
 ---

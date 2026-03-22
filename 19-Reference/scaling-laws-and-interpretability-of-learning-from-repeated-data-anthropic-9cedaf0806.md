@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:34Z"
+fetched_at: "2026-03-20T10:37:08Z"
 source_url: "https://www.anthropic.com/research/scaling-laws-and-interpretability-of-learning-from-repeated-data"
 title: "Scaling Laws and Interpretability of Learning from Repeated Data \\ Anthropic"
 ---

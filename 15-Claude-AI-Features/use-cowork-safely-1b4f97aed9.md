@@ -1,13 +1,11 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:04:21Z"
+fetched_at: "2026-03-20T11:32:02Z"
 source_url: "https://support.claude.com/en/articles/13364135-use-cowork-safely"
 title: "Use Cowork safely | Claude Help Center"
 ---
 
 # Use Cowork safely
-
-Updated today
 
 
 ## Availability
@@ -60,7 +58,7 @@ We've implemented multiple layers of protection:
 
 ------------------------------------------------------------------------
 
-## Protecting yourself from malicious attackers
+## Protect yourself from malicious attackers
 
 **1. Be selective about file access**
 
@@ -82,9 +80,7 @@ Scheduled tasks run automatically, which means Claude may be working without you
 
 - **Pause tasks you're not actively using.** If you no longer need a scheduled task, pause or delete it rather than leaving it running in the background.
 
-Scheduled tasks only run while your computer is awake and the Claude Desktop app is open.
-
-For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
+Scheduled tasks only run while your computer is awake and the Claude Desktop app is open. For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
 
 **4. Limit browser and web access to trusted sources**
 
@@ -104,9 +100,15 @@ For more on plugins, see **[Use plugins in Cowork](https://support.claude.com/en
 
 When using the Claude for Excel and Claude for PowerPoint add-ins with Cowork, Claude can read, edit, and pass context between these applications. For example, Claude might analyze data in Excel and move a chart into a presentation—without you explicitly directing that transfer. Be aware that data from one application may flow into another during a Cowork session, and avoid working with sensitive information in these add-ins while Cowork is active.
 
-**7. Report suspicious behavior immediately**
+**7. Be aware of mobile access to your desktop**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#c1b4b2a4b3b2a0a7a4b5b881a0afb5a9b3aeb1a8a2efa2aeac) or use the in-app feedback button. Your reports help us improve our defenses.
+When you message Claude from your phone, Claude works on your desktop computer using whatever file access, connectors, and plugins you've already granted. This means your phone effectively becomes a remote control for your desktop's resources.
+
+If your organization manages your computer, be aware that this extends access to a personal mobile device. Review what access you've granted Claude in Cowork, and consider whether that level of access is appropriate when reachable from your phone.
+
+**8. Report suspicious behavior immediately**
+
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#ff8a8c9a8d8c9e999a8b86bf9e918b978d908f969cd19c9092) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 

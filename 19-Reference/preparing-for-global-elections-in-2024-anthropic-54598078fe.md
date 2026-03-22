@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:24Z"
+fetched_at: "2026-03-20T10:37:00Z"
 source_url: "https://www.anthropic.com/news/preparing-for-global-elections-in-2024"
 title: "Preparing for global elections in 2024 \\ Anthropic"
 ---

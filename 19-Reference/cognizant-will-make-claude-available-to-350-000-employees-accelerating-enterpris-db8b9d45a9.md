@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:19Z"
+fetched_at: "2026-03-20T10:36:53Z"
 source_url: "https://www.anthropic.com/news/cognizant-partnership"
 title: "Cognizant will make Claude available to 350,000 employees, accelerating enterprise AI adoption and internal transformation \\ Anthropic"
 ---

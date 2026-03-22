@@ -1,6 +1,6 @@
 ---
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-03-17T02:04:16Z"
+fetched_at: "2026-03-20T10:36:30Z"
 source_url: "https://platform.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool"
 title: "Code execution tool - Claude API Docs"
 ---
@@ -12,7 +12,7 @@ Claude can analyze data, create visualizations, perform complex calculations, ru
 
 **Code execution is free when used with web search or web fetch.** When `web_search_20260209` or `web_fetch_20260209` is included in your request, there are no additional charges for code execution tool calls beyond the standard input and output token costs. Standard code execution charges apply when these tools are not included.
 
-Code execution is a core primitive for building high-performance agents. It enables dynamic filtering in web search and web fetch tools, allowing Claude to process results before they reach the context window—improving accuracy while reducing token consumption.
+Code execution is a core primitive for building high-performance agents. It enables dynamic filtering in web search and web fetch tools, allowing Claude to process results before they reach the context window, improving accuracy while reducing token consumption.
 
 Reach out through the [feedback form](https://forms.gle/LTAU6Xn2puCJMi1n6) to share your feedback on this feature.
 

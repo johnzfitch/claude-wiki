@@ -1,13 +1,11 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-17T02:04:12Z"
+fetched_at: "2026-03-20T11:31:59Z"
 source_url: "https://support.claude.com/en/articles/12622667-enterprise-configuration"
 title: "Enterprise configuration | Claude Help Center"
 ---
 
 # Enterprise configuration
-
-Updated today
 
 
 Administrators on Team or Enterprise plans can control Claude Desktop through system policies.

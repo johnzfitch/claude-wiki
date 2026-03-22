@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-17T02:04:24Z"
+fetched_at: "2026-03-20T11:31:56Z"
 source_url: "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "How am I billed for my Enterprise plan? | Claude Help Center"
 4.  How am I billed for my Enterprise plan?
 
 # How am I billed for my Enterprise plan?
-
-Updated today
 
 
 Enterprise plan billing has two parts: a fixed seat fee and separate usage charges. The seat fee covers platform access. Usage is billed on top of that, based on what your team actually consumes. How and when usage is billed depends on whether your organization purchased self-serve or sales-assisted.
@@ -40,7 +38,7 @@ How and when you're billed for usage depends on your plan type:
 
 ### Self-serve Enterprise
 
-Usage is purchased **upfront in credits**. Your credits draw down as your team uses Claude and Claude Code. When your credits run out, usage stops until an Owner or Primary Owner purchases more.
+Usage is purchased **upfront in credits**. Your credits draw down as your team uses Claude and Claude Code. When your credits run out, usage stops until an Owner or Primary Owner purchases more. Self-serve Enterprise plans are billed in USD only. If your organization needs to pay in another currency, **[contact our Sales team](https://claude.com/contact-sales)** to set up a sales-assisted plan.
 
 - After setup, Owners and Primary Owners can purchase additional credits at any time from **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Usage](https://claude.ai/admin-settings/usage)**.
 

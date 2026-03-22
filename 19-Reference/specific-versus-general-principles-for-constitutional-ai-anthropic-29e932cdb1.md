@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:34Z"
+fetched_at: "2026-03-20T10:37:09Z"
 source_url: "https://www.anthropic.com/research/specific-versus-general-principles-for-constitutional-ai"
 title: "Specific versus General Principles for Constitutional AI \\ Anthropic"
 ---

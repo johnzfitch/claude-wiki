@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:25Z"
+fetched_at: "2026-03-20T10:37:01Z"
 source_url: "https://www.anthropic.com/news/securing-america-s-compute-advantage-anthropic-s-position-on-the-diffusion-rule"
 title: "Anthropic&#x27;s AI Export Controls Framework Response \\ Anthropic"
 ---

@@ -10,7 +10,7 @@ Claude Code 2.1.76 has **six distinct telemetry surfaces**, not just OTEL. The f
 | 2 | **1P Event Logging** (Anthropic internal) | OTEL LoggerProvider → Anthropic pipeline | `is1PEventLoggingEnabled()` | Partially (via OTEL export) |
 | 3 | **Segment.io Analytics** | `api.segment.io/v1/batch` | `tengu_log_segment_events` Statsig gate | No (hardcoded write key) |
 | 4 | **DataDog Logs** | `https://http-intake.logs.us5.datadoghq.com/api/v2/logs` | `tengu_log_datadog_events` Statsig gate | No (hardcoded API key) |
-| 5 | **Perfetto Tracing** | Local `.pftrace` file | `CLAUDE_CODE_PERFETTO_TRACE` env var | Yes |
+| 5 | **Perfetto Tracing** (DISABLED in 2.1.78) | Local `.pftrace` file | `CLAUDE_CODE_PERFETTO_TRACE` env var | Yes |
 | 6 | **Beta Tracing** (detailed OTEL) | `BETA_TRACING_ENDPOINT` | `ENABLE_BETA_TRACING_DETAILED` + `tengu_trace_lantern` | Yes (if you set the env vars) |
 
 Plus:
@@ -394,6 +394,16 @@ toolName, userBucket, userType, version, versionBase
 
 ## 5. Perfetto Tracing
 
+> **STATUS (2.1.78): DISABLED / DEAD CODE**
+> As of 2.1.78, Perfetto tracing is scaffolded but non-functional. The
+> initialization function `g4f()` reads `CLAUDE_CODE_PERFETTO_TRACE` and
+> logs it, but never sets the internal enable flag (`by`) to `true`. All
+> recording functions (`Hr1`, `d4f`, `c2$`, etc.) check `if (!by) return`
+> and exit immediately. No flush/write function exists to produce `.pftrace`
+> files. Setting this env var has no effect. The Chrome Trace Event
+> infrastructure (arrays, span types, agent mapping) remains in the binary
+> but is unreachable. This needs an Anthropic binary update to activate.
+
 ### Activation
 ```bash
 export CLAUDE_CODE_PERFETTO_TRACE=/path/to/session.pftrace
@@ -436,6 +446,13 @@ export BETA_TRACING_ENDPOINT=http://your-collector:4318
 ---
 
 ## 7. Local Debug Logging
+
+> **BUG (2.1.78): `CLAUDE_CODE_DEBUG_LOGS_DIR` is misnamed.**
+> Despite ending in `_DIR`, the binary uses this value as a **direct file
+> path** for `appendFileSync()`. Setting it to a directory causes `EISDIR`,
+> silently swallowed by an empty catch handler. Debug logs work correctly
+> at the default path `~/.claude/debug/<session-id>.txt` — do not set this
+> env var to a directory. If you must override, use a full file path.
 
 ### Configuration
 ```bash

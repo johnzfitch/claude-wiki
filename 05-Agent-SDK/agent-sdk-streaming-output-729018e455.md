@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:00:59Z"
+fetched_at: "2026-03-20T10:34:35Z"
 source_url: "https://platform.claude.com/docs/en/agent-sdk/streaming-output"
 title: "Stream responses in real-time - Claude API Docs"
 ---

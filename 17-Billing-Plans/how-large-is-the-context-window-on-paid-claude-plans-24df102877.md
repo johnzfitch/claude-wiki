@@ -1,6 +1,6 @@
 ---
 category: "17-Billing-Plans"
-fetched_at: "2026-03-17T02:04:09Z"
+fetched_at: "2026-03-20T11:32:04Z"
 source_url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans"
 title: "How large is the context window on paid Claude plans? | Claude Help Center"
 ---
@@ -8,8 +8,6 @@ title: "How large is the context window on paid Claude plans? | Claude Help Cent
 4.  How large is the context window on paid Claude plans?
 
 # How large is the context window on paid Claude plans?
-
-Updated today
 
 
 Claude’s context window size is 200K, meaning it can ingest 200K+ tokens (about 500 pages of text or more) when using a paid Claude plan.

@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-03-17T02:04:19Z"
+fetched_at: "2026-03-20T11:32:06Z"
 source_url: "https://support.claude.com/en/articles/9612889-how-can-i-uninstall-claude-for-android"
 title: "How can I uninstall Claude for Android? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "How can I uninstall Claude for Android? | Claude Help Center"
 
 # How can I uninstall Claude for Android?
 
-Updated today
 
 To uninstall the Claude app from your Android device, hold down on the app from your screen until you see the menu options. Click on “App Info.” From the next series of options, select “Uninstall.”
 

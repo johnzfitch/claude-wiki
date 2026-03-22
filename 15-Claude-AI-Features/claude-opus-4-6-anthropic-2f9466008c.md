@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:03:12Z"
+fetched_at: "2026-03-20T10:36:45Z"
 source_url: "https://www.anthropic.com/claude/opus"
 title: "Claude Opus 4.6 \\ Anthropic"
 ---

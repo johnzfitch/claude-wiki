@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:14Z"
+fetched_at: "2026-03-20T10:36:47Z"
 source_url: "https://www.anthropic.com/news/anthropic-codepath-partnership"
 title: "Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program \\ Anthropic"
 ---

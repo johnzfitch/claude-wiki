@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:15Z"
+fetched_at: "2026-03-20T10:36:48Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-series-e-at-usd61-5b-post-money-valuation"
 title: "Anthropic raises Series E at $61.5B post-money valuation \\ Anthropic"
 ---

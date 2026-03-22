@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-17T02:01:30Z"
+fetched_at: "2026-03-20T10:36:15Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock"
 title: "Claude on Amazon Bedrock - Claude API Docs"
 ---

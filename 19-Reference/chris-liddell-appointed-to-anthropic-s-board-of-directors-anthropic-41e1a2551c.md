@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:17Z"
+fetched_at: "2026-03-20T10:36:49Z"
 source_url: "https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board"
 title: "Chris Liddell appointed to Anthropic’s board of directors \\ Anthropic"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:25Z"
+fetched_at: "2026-03-20T10:37:01Z"
 source_url: "https://www.anthropic.com/news/seoul-becomes-third-anthropic-office-in-asia-pacific"
 title: "Seoul becomes Anthropic’s third office in Asia-Pacific as we continue our international growth \\ Anthropic"
 ---

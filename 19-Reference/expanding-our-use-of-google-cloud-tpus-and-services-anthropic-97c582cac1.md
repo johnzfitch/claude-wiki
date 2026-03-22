@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:20Z"
+fetched_at: "2026-03-20T10:36:56Z"
 source_url: "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
 title: "Expanding our use of Google Cloud TPUs and Services \\ Anthropic"
 ---

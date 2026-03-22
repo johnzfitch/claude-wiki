@@ -1,6 +1,6 @@
 ---
 category: "05-Agent-SDK"
-fetched_at: "2026-03-17T02:01:41Z"
+fetched_at: "2026-03-20T10:35:53Z"
 source_url: "https://platform.claude.com/docs/en/api/sdks/java"
 title: "Java SDK - Claude API Docs"
 ---
@@ -27,7 +27,7 @@ Maven
 Maven
 
 ```python
-implementation("com.anthropic:anthropic-java:2.15.0")
+implementation("com.anthropic:anthropic-java:2.18.0")
 ```
 
 

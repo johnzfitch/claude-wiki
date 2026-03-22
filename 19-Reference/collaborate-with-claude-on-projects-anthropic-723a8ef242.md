@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:24Z"
+fetched_at: "2026-03-20T10:37:00Z"
 source_url: "https://www.anthropic.com/news/projects"
 title: "Collaborate with Claude on Projects \\ Anthropic"
 ---
@@ -9,9 +9,9 @@ title: "Collaborate with Claude on Projects \\ Anthropic"
 
 Jun 25, 2024
 
-Our vision for Claude has always been to create AI systems that work alongside people and meaningfully enhance their workflows. As a step in this direction, [Claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) Pro and Team users can now organize their chats into Projects, bringing together curated sets of knowledge and chat activity in one place—with the ability to make their best chats with Claude viewable by teammates. With this new functionality, Claude can enable idea generation, more strategic decision-making, and exceptional results.
+Our vision for Claude has always been to create AI systems that work alongside people and meaningfully enhance their workflows. As a step in this direction, [Claude.ai](http://claude.ai/redirect/website.v1.16448306-082f-4289-98dd-f772f4d6cec4) Pro and Team users can now organize their chats into Projects, bringing together curated sets of knowledge and chat activity in one place—with the ability to make their best chats with Claude viewable by teammates. With this new functionality, Claude can enable idea generation, more strategic decision-making, and exceptional results.
 
-Projects are available on [Claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) for all Pro and Team customers, and can be powered by [Claude 3.5 Sonnet](https://www.anthropic.com/news/claude-3-5-sonnet), our latest release which outperforms its peers on a wide variety of benchmarks. Each project includes a 200K context window, the equivalent of a 500-page book, so users can add all of the relevant documents, code, and insights to enhance Claude’s effectiveness.
+Projects are available on [Claude.ai](http://claude.ai/redirect/website.v1.16448306-082f-4289-98dd-f772f4d6cec4) for all Pro and Team customers, and can be powered by [Claude 3.5 Sonnet](https://www.anthropic.com/news/claude-3-5-sonnet), our latest release which outperforms its peers on a wide variety of benchmarks. Each project includes a 200K context window, the equivalent of a 500-page book, so users can add all of the relevant documents, code, and insights to enhance Claude’s effectiveness.
 
 ## Avoid the cold start problem
 

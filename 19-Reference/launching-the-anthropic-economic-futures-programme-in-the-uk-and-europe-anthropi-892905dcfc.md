@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:20Z"
+fetched_at: "2026-03-20T10:36:55Z"
 source_url: "https://www.anthropic.com/news/economic-futures-uk-europe"
 title: "Launching the Anthropic Economic Futures Programme in the UK and Europe \\ Anthropic"
 ---

@@ -1,11 +1,13 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-16T05:34:04Z"
+fetched_at: "2026-03-20T11:32:01Z"
 source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning"
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
 ---
 
 # Set up JIT or SCIM provisioning
+
+Updated today
 
 
 JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console organizations only.
@@ -34,7 +36,8 @@ Use this table to help decide which provisioning mode is right for your organiza
 
 [TABLE]
 
-Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership.
+Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership. If you select either of these options for your provisioning mode, **Enable group mappings** will appear within that section:
+
 
 ### Available roles and seat tiers
 
@@ -88,15 +91,19 @@ Once your IdP is connected, continue to Step 3.
 
     3.  **Sync with SCIM**: Add or remove members automatically as your directory changes. Your org always stays current.
 
-3.  Toggle on **Enable group mappings** if using.
+3.  If you selected “Approve automatically (JIT)” or “Sync with SCIM,” do NOT click “Save changes” immediately. You must first ensure all users are assigned to your Anthropic application in your IdP.
 
-    1.  **Important:** Do NOT click “Save changes” yet. You must first ensure all users are assigned to your Anthropic application in your IdP. When you enable group mappings, users must also be assigned to the appropriate groups (Steps 4 and 5). Saving before users are properly assigned will result in those users being deprovisioned from the organization.
+4.  Once you’ve confirmed all users are assigned in your IdP you can either:
 
-4.  **If you are not using group mappings:** Ensure all users are assigned to your Anthropic application in your IdP for SCIM provisioning, then click “Save changes” to complete your setup.
+    1.  Click “Save changes” to complete the set up and trigger the initial provisioning, or
+
+    2.  Toggle on **Enable group mappings** and move to Step 4.
+
+**Important**: Saving before users are properly assigned will result in those users being deprovisioned from the organization.
 
 ------------------------------------------------------------------------
 
-## Step 4: Configure groups and assign users in your Identity Provider for group mappings
+## Step 4: Configure groups in your Identity Provider and map groups to roles and seat types
 
 1.  Create groups in your IdP for each role you want to assign. Unless you're on the single-seat Enterprise plan, create groups for each seat type as well.
 
@@ -104,25 +111,26 @@ Once your IdP is connected, continue to Step 3.
 
 2.  Add users to the groups you created, ensuring at least one user (including yourself) is in a group that will be mapped to an Admin (Console) or Owner (Claude) role.
 
-**Important:** All users who need access must be assigned to the appropriate groups before you save your group mappings configuration in the next step. These users should already be assigned to your Anthropic application in your IdP from when you enabled SSO.
+3.  Return to your Identity and access settings in Claude or Console, and find **Provisioning mode**.
 
-------------------------------------------------------------------------
+4.  Toggle **Enable group mappings** on (if it’s not already):
 
-## Step 5: Map groups to roles and seat types
 
-1.  Return to your Identity and access settings in Claude or Console, and toggle **Enable group mappings** on (if it’s not already).
+5.  In the **Enable group mappings** section, click “Add” next to each role and select the corresponding group from your IdP in the dropdown.
 
-2.  In the **Enable group mappings** section, click “Add” next to each role and select the corresponding group from your IdP in the dropdown.
+    1.  **Note:** When using group mappings, you *must* assign all users to a role-based group in order to ensure they’re provisioned an account. Assigning users to seat-tier based groups is optional.
 
-3.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section, click "Add" next to each seat type and select the corresponding group from your IdP. If a user isn't assigned to a seat type group, they will be assigned to the highest available type by default.
+6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. If a user isn't assigned to a seat type group, they will be assigned to the highest available type by default.
 
     1.  **For single-seat Enterprise:** Seat type mapping does not apply. All provisioned users are automatically assigned an Enterprise seat, provided one is available in your organization.
 
-4.  Verify all necessary groups are mapped to the appropriate roles and seat types.
+7.  Verify all necessary groups are mapped to the appropriate roles and seat types.
 
-5.  Click “Save changes.”
+8.  Click “Save changes.”
 
-**Note:** Microsoft Entra only pushes SCIM changes every 40 minutes, so there may be a delay before changes appear.
+    1.  **Note:** Microsoft Entra only pushes SCIM changes every 40 minutes, so there may be a delay before changes appear. You can check which users are synced from your IdP by clicking "Manage SCIM" and viewing the Directory. Those users in the Directory will be provisioned to Claude / Console.
+
+**Important:** All users who need access must be assigned to the appropriate groups before you save your group mappings configuration. These users should already be assigned to your Anthropic application in your IdP from when you enabled SSO.
 
 ------------------------------------------------------------------------
 

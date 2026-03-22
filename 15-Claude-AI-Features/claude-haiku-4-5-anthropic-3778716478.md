@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:03:12Z"
+fetched_at: "2026-03-20T10:36:45Z"
 source_url: "https://www.anthropic.com/claude/haiku"
 title: "Claude Haiku 4.5 \\ Anthropic"
 ---
@@ -34,7 +34,7 @@ Our fastest model, a lightweight version of our most powerful AI, at a more affo
 
 ## Availability and pricing
 
-Anyone can chat with Claude using Haiku 4.5 on [Claude.ai](http://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06), available on web, iOS, and Android.
+Anyone can chat with Claude using Haiku 4.5 on [Claude.ai](http://claude.ai/redirect/website.v1.4048f043-d2ea-4b58-b3d4-8f0f2c3bb9f7), available on web, iOS, and Android.
 
 For developers, Haiku 4.5 is available on the Claude Platform natively, and in Amazon Bedrock, Google Cloud's Vertex AI, and Microsoft Foundry.
 

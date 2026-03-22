@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:04:37Z"
+fetched_at: "2026-03-17T10:24:51Z"
 source_url: "https://support.claude.com/en/articles/11724452-browsing-and-connecting-to-tools-from-the-directory"
 title: "Claude Help Center"
 ---

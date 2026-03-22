@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:17Z"
+fetched_at: "2026-03-20T10:36:49Z"
 source_url: "https://www.anthropic.com/news/claude-4"
 title: "Introducing Claude 4 \\ Anthropic"
 ---
@@ -54,7 +54,7 @@ Beyond the IDE, we're releasing an extensible Claude Code SDK, so you can build 
 
 These models are a large step toward the virtual collaborator—maintaining full context, sustaining focus on longer projects, and driving transformational impact. They come with extensive testing and evaluation to minimize risk and maximize safety, including [implementing measures](https://www.anthropic.com/news/activating-asl3-protections) for higher AI Safety Levels like ASL-3.
 
-We're excited to see what you'll create. Get started today on [Claude](https://claude.ai/redirect/website.v1.98268848-3f09-4114-aa3b-fc4b87f65524), [Claude Code](https://www.anthropic.com/claude-code), or the platform of your choice.
+We're excited to see what you'll create. Get started today on [Claude](https://claude.ai/redirect/website.v1.574b099e-4b4b-415d-b595-3405363741a0), [Claude Code](https://www.anthropic.com/claude-code), or the platform of your choice.
 
 *As always, your [feedback](mailto:%20feedback@anthropic.com) helps us improve.*
 

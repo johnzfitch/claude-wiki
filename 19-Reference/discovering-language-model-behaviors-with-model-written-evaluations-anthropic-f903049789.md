@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:29Z"
+fetched_at: "2026-03-20T10:37:05Z"
 source_url: "https://www.anthropic.com/research/discovering-language-model-behaviors-with-model-written-evaluations"
 title: "Discovering Language Model Behaviors with Model-Written Evaluations \\ Anthropic"
 ---

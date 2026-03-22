@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-17T02:00:42Z"
+fetched_at: "2026-03-20T10:34:13Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6"
 title: "What's new in Claude 4.6 - Claude API Docs"
 ---
@@ -79,7 +79,7 @@ Compaction API (beta)
 [Compaction](/docs/en/build-with-claude/compaction) provides automatic, server-side context summarization, enabling effectively infinite conversations. When context approaches the window limit, the API automatically summarizes earlier parts of the conversation.
 
 
-Fast mode (research preview)
+Fast mode (beta: research preview)
 
 [Fast mode](/docs/en/build-with-claude/fast-mode) (`speed: "fast"`) delivers significantly faster output token generation for Opus models. Fast mode is up to 2.5x as fast at premium pricing (\$30/\$150 per MTok). This is the same model running with faster inference (no change to intelligence or capabilities).
 

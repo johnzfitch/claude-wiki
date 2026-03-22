@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:33Z"
+fetched_at: "2026-03-20T10:37:08Z"
 source_url: "https://www.anthropic.com/research/project-vend-2"
 title: "Project Vend: Phase two \\ Anthropic"
 ---

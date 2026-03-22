@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:19Z"
+fetched_at: "2026-03-20T10:36:52Z"
 source_url: "https://www.anthropic.com/news/claude-sonnet-4-6"
 title: "Introducing Sonnet 4.6 \\ Anthropic"
 ---
@@ -11,7 +11,7 @@ Feb 17, 2026
 
 *Claude Sonnet 4.6 is our most capable Sonnet model yet*. It’s a full upgrade of the model’s skills across coding, computer use, long-context reasoning, agent planning, knowledge work, and design. Sonnet 4.6 also features a 1M token context window in beta.
 
-For those on our [Free and Pro plans](https://claude.com/pricing), Claude Sonnet 4.6 is now the default model in [claude.ai](https://claude.ai/redirect/website.v1.2082d575-c09f-4d9e-8aad-523343cf4a06) and [Claude Cowork](https://claude.com/product/cowork). [Pricing](https://claude.com/pricing#api) remains the same as Sonnet 4.5, starting at \$3/\$15 per million tokens.
+For those on our [Free and Pro plans](https://claude.com/pricing), Claude Sonnet 4.6 is now the default model in [claude.ai](https://claude.ai/redirect/website.v1.4048f043-d2ea-4b58-b3d4-8f0f2c3bb9f7) and [Claude Cowork](https://claude.com/product/cowork). [Pricing](https://claude.com/pricing#api) remains the same as Sonnet 4.5, starting at \$3/\$15 per million tokens.
 
 Sonnet 4.6 brings much-improved coding skills to more of our users. Improvements in consistency, instruction following, and more have made developers with early access prefer Sonnet 4.6 to its predecessor by a wide margin. They often even prefer it to our smartest model from November 2025, Claude Opus 4.5.
 

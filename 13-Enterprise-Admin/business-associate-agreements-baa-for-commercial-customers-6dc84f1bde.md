@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-03-17T02:04:12Z"
+fetched_at: "2026-03-20T11:32:04Z"
 source_url: "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers"
 title: "Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "15-Claude-AI-Features"
-fetched_at: "2026-03-17T02:04:22Z"
+fetched_at: "2026-03-20T11:32:02Z"
 source_url: "https://support.claude.com/en/articles/13345190-get-started-with-cowork"
 title: "Get started with Cowork | Claude Help Center"
 ---
@@ -32,7 +32,7 @@ Cowork is available as a research preview for paid plans (Pro, Max, Team, Enterp
 
 Cowork uses the same agentic architecture that powers Claude Code, now accessible within Claude Desktop and without opening the terminal. Instead of responding to prompts one at a time, Claude can take on complex, multi-step tasks and execute them on your behalf.
 
-With Cowork, you can describe an outcome, step away, and come back to finished work—formatted documents, organized files, synthesized research, and more. With the introduction of scheduled tasks, Claude can complete work for you automatically—something that isn't possible in regular chats outside of Cowork.
+With Cowork, you can describe an outcome, step away, and come back to finished work—formatted documents, organized files, synthesized research, and more. With scheduled tasks, Claude can complete work for you automatically, which isn't possible in regular chats outside of Cowork.
 
 **Important:**
 
@@ -42,7 +42,7 @@ With Cowork, you can describe an outcome, step away, and come back to finished w
 
   - Network egress permissions don't apply to the web search tool.
 
-- Cowork stores conversation history locally on your computer, so is not subject to Anthropic’s **[data retention timeframe](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**.
+- Cowork stores conversation history locally on your computer, so is not subject to Anthropic's **[data retention timeframe](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**.
 
 - Cowork activity is not captured in Audit Logs, Compliance API, or Data Exports. Do not use Cowork for regulated workloads.
 
@@ -63,6 +63,8 @@ For important limitations and considerations for Team and Enterprise organizatio
 - **Scheduled tasks:** Create and save tasks that you can have Claude run on-demand, or automatically on a cadence of your choosing.
 
 - **Spreadsheets and presentations:** Cowork can produce spreadsheets and slides that can be further edited with Claude for Excel and Powerpoint.
+
+- **Mobile access for Pro and Max:** Message Claude from your phone and get results delivered back to the same conversation. Claude works on your desktop using your local files and connectors — you just don't have to be sitting in front of it. See **[Assign tasks to Claude from anywhere in Cowork](https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork)**.
 
 ------------------------------------------------------------------------
 
@@ -96,13 +98,13 @@ You maintain visibility into what Claude is planning and doing throughout the pr
 
 - **Active internet connection:** Required throughout the session.
 
-### Accessing Cowork
+### Access Cowork
 
 1.  Open Claude Desktop.
 
 2.  Look for the mode selector that includes "Chat" and the Cowork tab.
 
-3.  Click the "Cowork" tab to switch modes to “Tasks”.
+3.  Click the "Cowork" tab to switch modes to "Tasks".
 
 4.  Describe the task you want Claude to complete.
 
@@ -138,9 +140,9 @@ To set global instructions:
 
 1.  Navigate to Settings \> Cowork within Claude Desktop.
 
-2.  Click “Edit” next to **Global instructions**.
+2.  Click "Edit" next to **Global instructions**.
 
-3.  Type your instructions in the text box and click “Save”:
+3.  Type your instructions in the text box and click "Save":
 
 
 ### Folder instructions
@@ -157,7 +159,7 @@ Plugins customize how Claude works for your role, team, and company in Cowork. E
 
 ## Schedule recurring tasks
 
-You can set up tasks that Claude runs automatically or on demand. To schedule a task, type `/schedule` in any Cowork task. You can also click “Scheduled” in the left sidebar to view, create, and manage your scheduled tasks.
+You can set up tasks that Claude runs automatically or on demand. To schedule a task, type `/schedule` in any Cowork task. You can also click "Scheduled" in the left sidebar to view, create, and manage your scheduled tasks.
 
 Scheduled tasks only run while your computer is awake and the Claude Desktop app is open.
 
@@ -235,9 +237,9 @@ Permissions work the same as for chat. You control:
 
 1.  Which **[MCPs you connect to Claude](https://claude.ai/settings/connectors)** and how often they ask for permission.
 
-2.  **[Claude’s internet access](https://claude.ai/settings/capabilities)**
+2.  **[Claude's internet access](https://claude.ai/settings/capabilities)**
 
-Please carefully assess how much you trust an MCP or website before extending access beyond Claude’s default settings.
+Please carefully assess how much you trust an MCP or website before extending access beyond Claude's default settings.
 
 ------------------------------------------------------------------------
 
@@ -245,13 +247,11 @@ Please carefully assess how much you trust an MCP or website before extending ac
 
 Cowork is a feature preview, which means some capabilities are not yet available:
 
-- **No memory across sessions:** Claude does not retain memory from previous Cowork sessions.
-
 - **No chat or artifact sharing:** Sessions cannot be shared with others.
 
-- **Desktop only:** Cowork is only available in the Claude Desktop app and does not sync across devices.
+- **Desktop app required:** Cowork runs on your desktop computer via the Claude Desktop app. Pro and Max users can also message Claude from the mobile app while your desktop stays active. See Assign tasks to Claude from anywhere in Cowork for details.
 
-- **Session persistence:** The desktop app must remain open for your session to continue. Closing the app ends the session.
+- **Session persistence:** The Claude Desktop app must remain open and your computer must be awake for Claude to work on tasks. If you close the app or your computer goes to sleep, active tasks will stop.
 
 We're iterating on Cowork based on feedback. If you encounter issues or have suggestions, use the feedback button in the app to share feedback with our team.
 

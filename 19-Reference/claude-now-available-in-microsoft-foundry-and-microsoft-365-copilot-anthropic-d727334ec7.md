@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:18Z"
+fetched_at: "2026-03-20T10:36:50Z"
 source_url: "https://www.anthropic.com/news/claude-in-microsoft-foundry"
 title: "Claude now available in Microsoft Foundry and Microsoft 365 Copilot \\ Anthropic"
 ---

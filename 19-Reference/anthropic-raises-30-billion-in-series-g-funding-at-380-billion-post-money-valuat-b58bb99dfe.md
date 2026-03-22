@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:15Z"
+fetched_at: "2026-03-20T10:36:48Z"
 source_url: "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
 title: "Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation \\ Anthropic"
 ---

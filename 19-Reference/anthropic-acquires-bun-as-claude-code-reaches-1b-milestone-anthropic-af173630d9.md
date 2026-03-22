@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:14Z"
+fetched_at: "2026-03-20T10:36:46Z"
 source_url: "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
 title: "Anthropic acquires Bun as Claude Code reaches $1B milestone \\ Anthropic"
 ---

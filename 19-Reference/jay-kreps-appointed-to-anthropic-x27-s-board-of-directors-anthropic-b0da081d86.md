@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:22Z"
+fetched_at: "2026-03-20T10:36:58Z"
 source_url: "https://www.anthropic.com/news/jay-kreps-appointed-to-board-of-directors"
 title: "Jay Kreps appointed to Anthropic&#x27;s Board of Directors \\ Anthropic"
 ---

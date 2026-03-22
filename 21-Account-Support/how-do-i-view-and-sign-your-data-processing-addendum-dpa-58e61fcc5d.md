@@ -1,6 +1,6 @@
 ---
 category: "21-Account-Support"
-fetched_at: "2026-03-17T02:04:12Z"
+fetched_at: "2026-03-20T11:32:04Z"
 source_url: "https://support.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa"
 title: "How do I view and sign your Data Processing Addendum (DPA)? | Claude Help Center"
 ---
@@ -9,7 +9,6 @@ title: "How do I view and sign your Data Processing Addendum (DPA)? | Claude Hel
 
 # How do I view and sign your Data Processing Addendum (DPA)?
 
-Updated today
 
 *This article is about our commercial products (e.g. Claude for Work, Claude API). For our consumer products (e.g. Claude Free, Claude Pro), see [here](https://privacy.claude.com/en/collections/10663362-consumers).*
 

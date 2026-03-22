@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-03-17T02:00:44Z"
+fetched_at: "2026-03-20T10:34:11Z"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/migration-guide"
 title: "Migration guide - Claude API Docs"
 ---

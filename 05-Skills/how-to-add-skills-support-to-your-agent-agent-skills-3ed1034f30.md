@@ -1,6 +1,6 @@
 ---
 category: "05-Skills"
-fetched_at: "2026-03-17T02:04:07Z"
+fetched_at: "2026-03-20T10:34:08Z"
 source_url: "https://agentskills.io/client-implementation/adding-skills-support"
 title: "How to add skills support to your agent - Agent Skills"
 ---

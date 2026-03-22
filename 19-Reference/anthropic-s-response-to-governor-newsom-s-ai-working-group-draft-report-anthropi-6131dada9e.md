@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:16Z"
+fetched_at: "2026-03-20T10:36:48Z"
 source_url: "https://www.anthropic.com/news/anthropic-s-response-to-governor-newsom-s-ai-working-group-draft-report"
 title: "Anthropic’s response to Governor Newsom’s AI working group draft report \\ Anthropic"
 ---

@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:15Z"
+fetched_at: "2026-03-20T10:36:48Z"
 source_url: "https://www.anthropic.com/news/anthropic-s-recommendations-ostp-u-s-ai-action-plan"
 title: "Anthropic’s Recommendations to OSTP for the U.S. AI Action Plan \\ Anthropic"
 ---

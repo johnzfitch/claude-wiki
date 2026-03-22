@@ -1,6 +1,6 @@
 ---
 category: "10-Prompting-Guides"
-fetched_at: "2026-03-17T02:00:47Z"
+fetched_at: "2026-03-20T10:36:20Z"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
 title: "Prompting best practices - Claude API Docs"
 ---

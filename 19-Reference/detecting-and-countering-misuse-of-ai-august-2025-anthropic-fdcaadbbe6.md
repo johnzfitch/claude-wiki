@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:19Z"
+fetched_at: "2026-03-20T10:36:55Z"
 source_url: "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
 title: "Detecting and countering misuse of AI: August 2025 \\ Anthropic"
 ---

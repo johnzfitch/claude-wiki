@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-03-16T05:34:07Z"
+fetched_at: "2026-03-20T11:32:05Z"
 source_url: "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-api-usage"
 title: "How do I pay for my Claude API usage? | Claude Help Center"
 ---

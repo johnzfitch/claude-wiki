@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:27Z"
+fetched_at: "2026-03-20T10:37:03Z"
 source_url: "https://www.anthropic.com/research/agentic-misalignment"
 title: "Agentic Misalignment: How LLMs could be insider threats \\ Anthropic"
 ---

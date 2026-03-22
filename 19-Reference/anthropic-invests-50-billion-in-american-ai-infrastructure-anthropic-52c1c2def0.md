@@ -1,6 +1,6 @@
 ---
 category: "19-Reference"
-fetched_at: "2026-03-17T02:03:15Z"
+fetched_at: "2026-03-20T10:36:47Z"
 source_url: "https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure"
 title: "Anthropic invests $50 billion in American AI infrastructure \\ Anthropic"
 ---
