@@ -1,6 +1,703 @@
 {
-  "quarantined_files": [],
-  "quarantine_counts": {},
+  "quarantined_files": [
+    {
+      "reason": "placeholder_stubs",
+      "from": "06-MCP-Tools/mcp-community-communication-2f08b8773c.md",
+      "to": "meta/quarantine/placeholder_stubs/06-MCP-Tools/mcp-community-communication-2f08b8773c.md"
+    },
+    {
+      "reason": "placeholder_stubs",
+      "from": "06-MCP-Tools/mcp-community-contributing-bc99a626a6.md",
+      "to": "meta/quarantine/placeholder_stubs/06-MCP-Tools/mcp-community-contributing-bc99a626a6.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "07-Hooks/configure.md",
+      "to": "meta/quarantine/agent_prompt_files/07-Hooks/configure.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "07-Hooks/help.md",
+      "to": "meta/quarantine/agent_prompt_files/07-Hooks/help.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "07-Hooks/hookify-9e1c766935.md",
+      "to": "meta/quarantine/agent_prompt_files/07-Hooks/hookify-9e1c766935.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "07-Hooks/hookify.md",
+      "to": "meta/quarantine/agent_prompt_files/07-Hooks/hookify.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "07-Hooks/list.md",
+      "to": "meta/quarantine/agent_prompt_files/07-Hooks/list.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "08-Plugins-Skills/code-review.md",
+      "to": "meta/quarantine/agent_prompt_files/08-Plugins-Skills/code-review.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "08-Plugins-Skills/commit-push-pr.md",
+      "to": "meta/quarantine/agent_prompt_files/08-Plugins-Skills/commit-push-pr.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "08-Plugins-Skills/commit.md",
+      "to": "meta/quarantine/agent_prompt_files/08-Plugins-Skills/commit.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "08-Plugins-Skills/create-plugin.md",
+      "to": "meta/quarantine/agent_prompt_files/08-Plugins-Skills/create-plugin.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "08-Plugins-Skills/create-settings-command.md",
+      "to": "meta/quarantine/agent_prompt_files/08-Plugins-Skills/create-settings-command.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "08-Plugins-Skills/ralph-loop-e3b0c44298.md",
+      "to": "meta/quarantine/agent_prompt_files/08-Plugins-Skills/ralph-loop-e3b0c44298.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "08-Plugins-Skills/review-pr.md",
+      "to": "meta/quarantine/agent_prompt_files/08-Plugins-Skills/review-pr.md"
+    },
+    {
+      "reason": "local_only_rules",
+      "from": "12-Eval-Testing/require-tests-stop.local.md",
+      "to": "meta/quarantine/local_only_rules/12-Eval-Testing/require-tests-stop.local.md"
+    },
+    {
+      "reason": "local_only_rules",
+      "from": "13-Enterprise-Admin/console-log-warning.local.md",
+      "to": "meta/quarantine/local_only_rules/13-Enterprise-Admin/console-log-warning.local.md"
+    },
+    {
+      "reason": "local_only_rules",
+      "from": "15-Claude-AI-Features/sensitive-files-warning.local.md",
+      "to": "meta/quarantine/local_only_rules/15-Claude-AI-Features/sensitive-files-warning.local.md"
+    },
+    {
+      "reason": "placeholder_stubs",
+      "from": "19-Reference/mcp-docs-archive-community-communication-694143bf6b.md",
+      "to": "meta/quarantine/placeholder_stubs/19-Reference/mcp-docs-archive-community-communication-694143bf6b.md"
+    },
+    {
+      "reason": "placeholder_stubs",
+      "from": "19-Reference/mcp-docs-archive-community-contributing-5086a5ef73.md",
+      "to": "meta/quarantine/placeholder_stubs/19-Reference/mcp-docs-archive-community-contributing-5086a5ef73.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-cli-beta-models-list-d2873b8c04.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-cli-beta-models-list-d2873b8c04.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-cli-beta-models-retrieve-bf8c8495d0.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-cli-beta-models-retrieve-bf8c8495d0.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-cli-models-818bd52ef9.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-cli-models-818bd52ef9.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-cli-models-list-135ced42f3.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-cli-models-list-135ced42f3.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-cli-models-retrieve-853b41385f.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-cli-models-retrieve-853b41385f.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-kotlin-beta-models-6dc98f1334.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-kotlin-beta-models-6dc98f1334.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-kotlin-beta-models-list-c0a3893b3b.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-kotlin-beta-models-list-c0a3893b3b.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-kotlin-beta-models-retrieve-0dd6e8d1bc.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-kotlin-beta-models-retrieve-0dd6e8d1bc.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-kotlin-models-14d15882f9.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-kotlin-models-14d15882f9.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-kotlin-models-list-8d0c5fec29.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-kotlin-models-list-8d0c5fec29.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-kotlin-models-retrieve-7278b29d2b.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-kotlin-models-retrieve-7278b29d2b.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-php-beta-models-4d83a5e6ac.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-php-beta-models-4d83a5e6ac.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-php-beta-models-list-2029382db5.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-php-beta-models-list-2029382db5.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-php-beta-models-retrieve-e351136361.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-php-beta-models-retrieve-e351136361.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-php-models-342116ad2b.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-php-models-342116ad2b.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-php-models-list-5996382366.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-php-models-list-5996382366.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-php-models-retrieve-780873159b.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-php-models-retrieve-780873159b.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-terraform-beta-models-6986ff71f0.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-terraform-beta-models-6986ff71f0.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-terraform-beta-models-list-4bdeddf837.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-terraform-beta-models-list-4bdeddf837.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-terraform-beta-models-retrieve-9465bee7f1.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-terraform-beta-models-retrieve-9465bee7f1.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-terraform-models-e0b7a3ae03.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-terraform-models-e0b7a3ae03.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-terraform-models-list-06d2407db6.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-terraform-models-list-06d2407db6.md"
+    },
+    {
+      "reason": "empty_body_stubs",
+      "from": "20-Models/api-terraform-models-retrieve-3faaeb7c33.md",
+      "to": "meta/quarantine/empty_body_stubs/20-Models/api-terraform-models-retrieve-3faaeb7c33.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/BINARY_INFO_REPORT.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/BINARY_INFO_REPORT.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/BURN_KB_ARCHITECTURE_VERIFIED.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/BURN_KB_ARCHITECTURE_VERIFIED.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/BURN_KNOWLEDGEBASE_ARCHITECTURE.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/BURN_KNOWLEDGEBASE_ARCHITECTURE.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/CLAUDE_CODE_PLAN_MODE.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/CLAUDE_CODE_PLAN_MODE.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/DELTA.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/DELTA.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/ENTERPRISE_ARCHITECTURE_DIAGRAM.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/ENTERPRISE_ARCHITECTURE_DIAGRAM.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/ENV_VARS_COMPLETE_GUIDE.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/ENV_VARS_COMPLETE_GUIDE.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/ENV_VARS_DEEP_DIVE.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/ENV_VARS_DEEP_DIVE.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/FUNCTION_NAME_MAPPING.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/FUNCTION_NAME_MAPPING.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/HOOKS-NEW-FORMAT.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/HOOKS-NEW-FORMAT.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/HOOKS.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/HOOKS.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/HOOKS_2.1.76_STATUS.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/HOOKS_2.1.76_STATUS.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/HOOKS_DYNAMIC_CONTEXT_INJECTION.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/HOOKS_DYNAMIC_CONTEXT_INJECTION.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/HOOKS_SUMMARY_FOR_BURN_PLUGIN.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/HOOKS_SUMMARY_FOR_BURN_PLUGIN.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/IDENTIFIER_MAPPINGS.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/IDENTIFIER_MAPPINGS.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/PATTERN_ANALYSIS_COMPLETE.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/PATTERN_ANALYSIS_COMPLETE.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/PLUGIN_MARKETPLACE_COMPLETE_ANALYSIS.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/PLUGIN_MARKETPLACE_COMPLETE_ANALYSIS.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/PLUGIN_MARKETPLACE_REALITY_CHECK.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/PLUGIN_MARKETPLACE_REALITY_CHECK.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/QUICK_REFERENCE.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/QUICK_REFERENCE.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/README.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/README.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/SUMMARY.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/SUMMARY.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/SUSPICIOUS_FUNCTIONS_DISASSEMBLY.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/SUSPICIOUS_FUNCTIONS_DISASSEMBLY.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/advanced.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/advanced.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/analysis.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/analysis.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/authentication.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/authentication.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/auto-compact-deep-dive.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/auto-compact-deep-dive.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/auto-memory-internals.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/auto-memory-internals.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/burn-team-plugin-summary.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/burn-team-plugin-summary.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/change_breakdown_2.1.42_vs_2.1.41.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/change_breakdown_2.1.42_vs_2.1.41.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/claude-code-mcp-knowledgebase.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/claude-code-mcp-knowledgebase.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/claude_diff_2142_vs_2150.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/claude_diff_2142_vs_2150.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/claude_pyghidra_diff_2.1.50_2.1.55_2.1.59.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/claude_pyghidra_diff_2.1.50_2.1.55_2.1.59.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "99-Other/configure.md",
+      "to": "meta/quarantine/agent_prompt_files/99-Other/configure.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/cowork-protocol-spec.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/cowork-protocol-spec.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/diff.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/diff.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/duplicate-groups.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/duplicate-groups.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/enterprise-providers-changes.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/enterprise-providers-changes.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/env-vars.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/env-vars.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/env_var_runtime_behavior_2.1.55_2.1.59.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/env_var_runtime_behavior_2.1.55_2.1.59.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/executive-summary.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/executive-summary.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/extraction_round2_summary.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/extraction_round2_summary.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/extraction_summary.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/extraction_summary.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/feature-flags.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/feature-flags.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/full_changed_surface_decompile_report.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/full_changed_surface_decompile_report.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hackerone_report_1_ssrf_domain_info.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hackerone_report_1_ssrf_domain_info.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hackerone_report_1_ssrf_domain_info_REVISED.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hackerone_report_1_ssrf_domain_info_REVISED.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hackerone_report_2_artifactory_FINAL.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hackerone_report_2_artifactory_FINAL.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hackerone_report_2_artifactory_public_exposure.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hackerone_report_2_artifactory_public_exposure.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "99-Other/help.md",
+      "to": "meta/quarantine/agent_prompt_files/99-Other/help.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/high-dimensional-wiki-architecture.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/high-dimensional-wiki-architecture.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hooks-1.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hooks-1.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hooks-2.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hooks-2.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hooks-changes.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hooks-changes.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hooks-comparison.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hooks-comparison.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hooks-guide.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hooks-guide.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hooks-new-format.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hooks-new-format.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/hooks.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/hooks.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/implementer.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/implementer.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/index.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/index.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/init-verifiers.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/init-verifiers.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/intercept-hooks.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/intercept-hooks.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/knowledgebase-consolidation-map.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/knowledgebase-consolidation-map.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/lifecycle-map.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/lifecycle-map.md"
+    },
+    {
+      "reason": "agent_prompt_files",
+      "from": "99-Other/list.md",
+      "to": "meta/quarantine/agent_prompt_files/99-Other/list.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/mcp-2.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/mcp-2.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/mcp-agent-knowledgebase.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/mcp-agent-knowledgebase.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/mcp-overview-report.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/mcp-overview-report.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/mcp.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/mcp.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/migration.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/migration.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/multi_cloud_llm_automated_lab_plan.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/multi_cloud_llm_automated_lab_plan.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/new-functions.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/new-functions.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/opus-1m-migration.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/opus-1m-migration.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/p1-symbol-diff.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/p1-symbol-diff.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/p2-string-labeling.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/p2-string-labeling.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/p5-runtime.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/p5-runtime.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/patterns.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/patterns.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/plugin-teammate-integration.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/plugin-teammate-integration.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/privacy-changes.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/privacy-changes.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/prompt_env_model_changes_2.1.50_2.1.55_2.1.59.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/prompt_env_model_changes_2.1.50_2.1.55_2.1.59.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/pyghidra-lite.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/pyghidra-lite.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/rebuttal_vdp1.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/rebuttal_vdp1.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/redteam_drill_report.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/redteam_drill_report.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/release-notes-style.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/release-notes-style.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/report.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/report.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/reporter.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/reporter.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/scope_alignment.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/scope_alignment.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/server-types.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/server-types.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/skills-frontmatter-report.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/skills-frontmatter-report.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/summary.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/summary.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/tag-sequence.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/tag-sequence.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/teammate-architecture.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/teammate-architecture.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/telemetry-observability-report-v2.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/telemetry-observability-report-v2.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/telemetry-observability-report.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/telemetry-observability-report.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/telemetry-quick-start.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/telemetry-quick-start.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/tool-usage.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/tool-usage.md"
+    },
+    {
+      "reason": "uncurated_99_other",
+      "from": "99-Other/verifier.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/verifier.md"
+    }
+  ],
+  "quarantine_counts": {
+    "placeholder_stubs": 4,
+    "agent_prompt_files": 15,
+    "local_only_rules": 3,
+    "empty_body_stubs": 23,
+    "uncurated_99_other": 93
+  },
   "category_counts": [
     {
       "folder": "01-Getting-Started",
@@ -64,7 +761,7 @@
     },
     {
       "folder": "15-Claude-AI-Features",
-      "count": 281
+      "count": 280
     },
     {
       "folder": "16-Mobile-Desktop",
@@ -73,6 +770,10 @@
     {
       "folder": "17-Billing-Plans",
       "count": 63
+    },
+    {
+      "folder": "18-Industry-UseCases",
+      "count": 1
     },
     {
       "folder": "19-Reference",
