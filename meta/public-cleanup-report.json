@@ -1,0 +1,98 @@
+{
+  "quarantined_files": [],
+  "quarantine_counts": {},
+  "category_counts": [
+    {
+      "folder": "01-Getting-Started",
+      "count": 16
+    },
+    {
+      "folder": "02-Claude-Code-CLI",
+      "count": 48
+    },
+    {
+      "folder": "03-IDE-Integrations",
+      "count": 5
+    },
+    {
+      "folder": "04-API-Reference",
+      "count": 24
+    },
+    {
+      "folder": "05-Agent-SDK",
+      "count": 35
+    },
+    {
+      "folder": "05-Skills",
+      "count": 6
+    },
+    {
+      "folder": "06-MCP-Tools",
+      "count": 298
+    },
+    {
+      "folder": "07-Hooks",
+      "count": 11
+    },
+    {
+      "folder": "08-Plugins-Skills",
+      "count": 67
+    },
+    {
+      "folder": "09-Agents-Patterns",
+      "count": 32
+    },
+    {
+      "folder": "10-Prompting-Guides",
+      "count": 18
+    },
+    {
+      "folder": "11-RAG-Search",
+      "count": 17
+    },
+    {
+      "folder": "12-Eval-Testing",
+      "count": 5
+    },
+    {
+      "folder": "13-Enterprise-Admin",
+      "count": 27
+    },
+    {
+      "folder": "14-Connectors",
+      "count": 30
+    },
+    {
+      "folder": "15-Claude-AI-Features",
+      "count": 281
+    },
+    {
+      "folder": "16-Mobile-Desktop",
+      "count": 11
+    },
+    {
+      "folder": "17-Billing-Plans",
+      "count": 63
+    },
+    {
+      "folder": "19-Reference",
+      "count": 340
+    },
+    {
+      "folder": "20-Models",
+      "count": 72
+    },
+    {
+      "folder": "21-Account-Support",
+      "count": 35
+    },
+    {
+      "folder": "22-Safety-Policy",
+      "count": 37
+    },
+    {
+      "folder": "99-Other",
+      "count": 3
+    }
+  ]
+}

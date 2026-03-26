@@ -1,6 +1,6 @@
 # Claude Wiki
 
-Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 2,000+ Markdown articles across 24 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
+Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,481 Markdown articles across 23 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
 
 Covers the full Claude platform: API reference, Claude Code CLI, Model Context Protocol (MCP), Agent SDK, hooks, plugins, prompting guides, enterprise administration, safety & policy, billing, and model specifications. Every article is plain Markdown with YAML frontmatter — ready for grep, RAG pipelines, or direct LLM ingestion via `llms.txt`.
 
@@ -41,6 +41,7 @@ find . -name '*.md' | grep -i "prompt"
 
 ## Categories
 
+<!-- CATEGORY_TABLE_START -->
 | Category | Docs | Folder |
 |----------|-----:|--------|
 | Getting Started | 16 | [`01-Getting-Started`](./01-Getting-Started/) |
@@ -49,32 +50,35 @@ find . -name '*.md' | grep -i "prompt"
 | API Reference | 24 | [`04-API-Reference`](./04-API-Reference/) |
 | Agent SDK | 35 | [`05-Agent-SDK`](./05-Agent-SDK/) |
 | Skills | 6 | [`05-Skills`](./05-Skills/) |
-| MCP Tools | 300 | [`06-MCP-Tools`](./06-MCP-Tools/) |
-| Hooks | 16 | [`07-Hooks`](./07-Hooks/) |
-| Plugins & Skills | 74 | [`08-Plugins-Skills`](./08-Plugins-Skills/) |
+| MCP Tools | 298 | [`06-MCP-Tools`](./06-MCP-Tools/) |
+| Hooks | 11 | [`07-Hooks`](./07-Hooks/) |
+| Plugins & Skills | 67 | [`08-Plugins-Skills`](./08-Plugins-Skills/) |
 | Agent Patterns | 32 | [`09-Agents-Patterns`](./09-Agents-Patterns/) |
 | Prompting Guides | 18 | [`10-Prompting-Guides`](./10-Prompting-Guides/) |
 | RAG & Search | 17 | [`11-RAG-Search`](./11-RAG-Search/) |
-| Eval & Testing | 6 | [`12-Eval-Testing`](./12-Eval-Testing/) |
-| Enterprise Admin | 28 | [`13-Enterprise-Admin`](./13-Enterprise-Admin/) |
+| Eval & Testing | 5 | [`12-Eval-Testing`](./12-Eval-Testing/) |
+| Enterprise Admin | 27 | [`13-Enterprise-Admin`](./13-Enterprise-Admin/) |
 | Connectors | 30 | [`14-Connectors`](./14-Connectors/) |
-| Claude AI Features | 282 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
+| Claude AI Features | 281 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
 | Mobile & Desktop | 11 | [`16-Mobile-Desktop`](./16-Mobile-Desktop/) |
 | Billing & Plans | 63 | [`17-Billing-Plans`](./17-Billing-Plans/) |
-| Reference | 342 | [`19-Reference`](./19-Reference/) |
-| Models | 95 | [`20-Models`](./20-Models/) |
+| Reference | 340 | [`19-Reference`](./19-Reference/) |
+| Models | 72 | [`20-Models`](./20-Models/) |
 | Account & Support | 35 | [`21-Account-Support`](./21-Account-Support/) |
 | Safety & Policy | 37 | [`22-Safety-Policy`](./22-Safety-Policy/) |
-| Other | 99 | [`99-Other`](./99-Other/) |
+| Other | 3 | [`99-Other`](./99-Other/) |
+<!-- CATEGORY_TABLE_END -->
 
 <details>
 <summary>Largest categories by doc count</summary>
 
-1. **Reference** (342) — API specs, schemas, error codes, SDKs
-2. **MCP Tools** (300) — Model Context Protocol servers, integrations, tooling
-3. **Claude AI Features** (282) — Projects, artifacts, analysis, canvas, conversations
-4. **Models** (95) — Model cards, specifications, benchmarks, changelogs
-5. **Plugins & Skills** (74) — Plugin development, skill authoring, marketplace
+<!-- LARGEST_CATEGORIES_START -->
+1. **Reference** (340)
+2. **MCP Tools** (298)
+3. **Claude AI Features** (281)
+4. **Models** (72)
+5. **Plugins & Skills** (67)
+<!-- LARGEST_CATEGORIES_END -->
 
 </details>
 
@@ -88,7 +92,7 @@ This repo mirrors content from Anthropic's official documentation:
 - [support.anthropic.com](https://support.anthropic.com) — Help center, account, billing
 - [docs.claude.ai](https://docs.claude.ai) — Claude Code, MCP, hooks
 
-Content is fetched, converted to Markdown, and organized into numbered categories by an automated pipeline with AI-powered quality checks, content enhancement, and deduplication.
+Content is fetched, converted to Markdown, and organized into numbered categories by an automated pipeline. A public-repo normalization pass then quarantines low-confidence files such as local-only prompts, placeholder captures, empty stubs, and uncurated `99-Other` artifacts into `meta/quarantine/`.
 
 ## Releases
 
