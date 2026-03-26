@@ -1,6 +1,6 @@
 # Claude Wiki
 
-Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,481 Markdown articles across 23 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
+Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,481 Markdown articles across 24 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
 
 Covers the full Claude platform: API reference, Claude Code CLI, Model Context Protocol (MCP), Agent SDK, hooks, plugins, prompting guides, enterprise administration, safety & policy, billing, and model specifications. Every article is plain Markdown with YAML frontmatter — ready for grep, RAG pipelines, or direct LLM ingestion via `llms.txt`.
 
@@ -59,9 +59,10 @@ find . -name '*.md' | grep -i "prompt"
 | Eval & Testing | 5 | [`12-Eval-Testing`](./12-Eval-Testing/) |
 | Enterprise Admin | 27 | [`13-Enterprise-Admin`](./13-Enterprise-Admin/) |
 | Connectors | 30 | [`14-Connectors`](./14-Connectors/) |
-| Claude AI Features | 281 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
+| Claude AI Features | 280 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
 | Mobile & Desktop | 11 | [`16-Mobile-Desktop`](./16-Mobile-Desktop/) |
 | Billing & Plans | 63 | [`17-Billing-Plans`](./17-Billing-Plans/) |
+| Industry Use Cases | 1 | [`18-Industry-UseCases`](./18-Industry-UseCases/) |
 | Reference | 340 | [`19-Reference`](./19-Reference/) |
 | Models | 72 | [`20-Models`](./20-Models/) |
 | Account & Support | 35 | [`21-Account-Support`](./21-Account-Support/) |
@@ -75,7 +76,7 @@ find . -name '*.md' | grep -i "prompt"
 <!-- LARGEST_CATEGORIES_START -->
 1. **Reference** (340)
 2. **MCP Tools** (298)
-3. **Claude AI Features** (281)
+3. **Claude AI Features** (280)
 4. **Models** (72)
 5. **Plugins & Skills** (67)
 <!-- LARGEST_CATEGORIES_END -->
