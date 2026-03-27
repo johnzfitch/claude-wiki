@@ -1,6 +1,6 @@
 # Claude Wiki
 
-Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1620 Markdown articles across 24 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
+Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,481 Markdown articles across 24 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
 
 Covers the full Claude platform: API reference, Claude Code CLI, Model Context Protocol (MCP), Agent SDK, hooks, plugins, prompting guides, enterprise administration, safety & policy, billing, and model specifications. Every article is plain Markdown with YAML frontmatter — ready for grep, RAG pipelines, or direct LLM ingestion via `llms.txt`.
 
@@ -62,7 +62,7 @@ find . -name '*.md' | grep -i "prompt"
 | Claude AI Features | 280 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
 | Mobile & Desktop | 11 | [`16-Mobile-Desktop`](./16-Mobile-Desktop/) |
 | Billing & Plans | 63 | [`17-Billing-Plans`](./17-Billing-Plans/) |
-| Industry & Use Cases | 1 | [`18-Industry-UseCases`](./18-Industry-UseCases/) |
+| Industry Use Cases | 1 | [`18-Industry-UseCases`](./18-Industry-UseCases/) |
 | Reference | 340 | [`19-Reference`](./19-Reference/) |
 | Models | 72 | [`20-Models`](./20-Models/) |
 | Account & Support | 35 | [`21-Account-Support`](./21-Account-Support/) |
