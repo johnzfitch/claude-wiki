@@ -1,5 +1,5 @@
 ---
-category: "18-Industry-UseCases"
+category: "15-Claude-AI-Features"
 fetched_at: "2026-03-22T09:01:49Z"
 last_modified: "Sat, 21 Mar 2026 23:53:23 GMT"
 source_url: "https://www.claude.com/customers/zingage"
