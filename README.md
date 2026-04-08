@@ -1,6 +1,6 @@
 # Claude Wiki
 
-Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,544 Markdown articles across 22 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
+Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,594 Markdown articles across 22 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
 
 Covers the full Claude platform: API reference, Claude Code CLI, Model Context Protocol (MCP), Agent SDK, hooks, plugins, prompting guides, enterprise administration, safety & policy, billing, and model specifications. Every article is plain Markdown with YAML frontmatter — ready for grep, RAG pipelines, or direct LLM ingestion via `llms.txt`.
 
@@ -45,37 +45,37 @@ find . -name '*.md' | grep -i "prompt"
 | Category | Docs | Folder |
 |----------|-----:|--------|
 | Getting Started | 16 | [`01-Getting-Started`](./01-Getting-Started/) |
-| Claude Code CLI | 57 | [`02-Claude-Code-CLI`](./02-Claude-Code-CLI/) |
-| IDE Integrations | 5 | [`03-IDE-Integrations`](./03-IDE-Integrations/) |
-| API Reference | 24 | [`04-API-Reference`](./04-API-Reference/) |
-| Agent SDK | 35 | [`05-Agent-SDK`](./05-Agent-SDK/) |
+| Claude Code CLI | 74 | [`02-Claude-Code-CLI`](./02-Claude-Code-CLI/) |
+| IDE Integrations | 6 | [`03-IDE-Integrations`](./03-IDE-Integrations/) |
+| API Reference | 29 | [`04-API-Reference`](./04-API-Reference/) |
+| Agent SDK | 36 | [`05-Agent-SDK`](./05-Agent-SDK/) |
 | MCP Tools | 302 | [`06-MCP-Tools`](./06-MCP-Tools/) |
 | Hooks | 18 | [`07-Hooks`](./07-Hooks/) |
 | Plugins & Skills | 75 | [`08-Plugins-Skills`](./08-Plugins-Skills/) |
-| Agent Patterns | 32 | [`09-Agents-Patterns`](./09-Agents-Patterns/) |
-| Prompting Guides | 18 | [`10-Prompting-Guides`](./10-Prompting-Guides/) |
+| Agent Patterns | 41 | [`09-Agents-Patterns`](./09-Agents-Patterns/) |
+| Prompting Guides | 21 | [`10-Prompting-Guides`](./10-Prompting-Guides/) |
 | RAG & Search | 17 | [`11-RAG-Search`](./11-RAG-Search/) |
 | Eval & Testing | 5 | [`12-Eval-Testing`](./12-Eval-Testing/) |
 | Enterprise Admin | 29 | [`13-Enterprise-Admin`](./13-Enterprise-Admin/) |
 | Connectors | 30 | [`14-Connectors`](./14-Connectors/) |
 | Claude AI Features | 283 | [`15-Claude-AI-Features`](./15-Claude-AI-Features/) |
-| Mobile & Desktop | 11 | [`16-Mobile-Desktop`](./16-Mobile-Desktop/) |
+| Mobile & Desktop | 14 | [`16-Mobile-Desktop`](./16-Mobile-Desktop/) |
 | Billing & Plans | 63 | [`17-Billing-Plans`](./17-Billing-Plans/) |
 | 18-Skills | 6 | [`18-Skills`](./18-Skills/) |
-| Reference | 361 | [`19-Reference`](./19-Reference/) |
-| Models | 78 | [`20-Models`](./20-Models/) |
+| Reference | 365 | [`19-Reference`](./19-Reference/) |
+| Models | 80 | [`20-Models`](./20-Models/) |
 | Account & Support | 35 | [`21-Account-Support`](./21-Account-Support/) |
-| Safety & Policy | 44 | [`22-Safety-Policy`](./22-Safety-Policy/) |
+| Safety & Policy | 49 | [`22-Safety-Policy`](./22-Safety-Policy/) |
 <!-- CATEGORY_TABLE_END -->
 
 <details>
 <summary>Largest categories by doc count</summary>
 
 <!-- LARGEST_CATEGORIES_START -->
-1. **Reference** (361)
+1. **Reference** (365)
 2. **MCP Tools** (302)
 3. **Claude AI Features** (283)
-4. **Models** (78)
+4. **Models** (80)
 5. **Plugins & Skills** (75)
 <!-- LARGEST_CATEGORIES_END -->
 
