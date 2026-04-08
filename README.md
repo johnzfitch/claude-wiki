@@ -1,6 +1,6 @@
 # Claude Wiki
 
-Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,543 Markdown articles across 22 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
+Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,544 Markdown articles across 22 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
 
 Covers the full Claude platform: API reference, Claude Code CLI, Model Context Protocol (MCP), Agent SDK, hooks, plugins, prompting guides, enterprise administration, safety & policy, billing, and model specifications. Every article is plain Markdown with YAML frontmatter — ready for grep, RAG pipelines, or direct LLM ingestion via `llms.txt`.
 
@@ -50,7 +50,7 @@ find . -name '*.md' | grep -i "prompt"
 | API Reference | 24 | [`04-API-Reference`](./04-API-Reference/) |
 | Agent SDK | 35 | [`05-Agent-SDK`](./05-Agent-SDK/) |
 | MCP Tools | 302 | [`06-MCP-Tools`](./06-MCP-Tools/) |
-| Hooks | 17 | [`07-Hooks`](./07-Hooks/) |
+| Hooks | 18 | [`07-Hooks`](./07-Hooks/) |
 | Plugins & Skills | 75 | [`08-Plugins-Skills`](./08-Plugins-Skills/) |
 | Agent Patterns | 32 | [`09-Agents-Patterns`](./09-Agents-Patterns/) |
 | Prompting Guides | 18 | [`10-Prompting-Guides`](./10-Prompting-Guides/) |
