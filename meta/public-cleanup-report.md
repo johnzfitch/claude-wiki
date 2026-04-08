@@ -1,6 +1,6 @@
 # Public Mirror Cleanup Report
 
-- Total quarantined files: 65
+- Total quarantined files: 66
 
 ## Quarantine Summary
 
@@ -8,7 +8,7 @@
 - `empty_body_stubs`: 23
 - `local_only_rules`: 3
 - `placeholder_stubs`: 4
-- `uncurated_99_other`: 20
+- `uncurated_99_other`: 21
 
 ## Quarantined Files
 
@@ -75,5 +75,6 @@
 - `99-Other/report.md` -> `meta/quarantine/uncurated_99_other/99-Other/report.md`
 - `99-Other/reporter.md` -> `meta/quarantine/uncurated_99_other/99-Other/reporter.md`
 - `99-Other/scope-alignment.md` -> `meta/quarantine/uncurated_99_other/99-Other/scope-alignment.md`
+- `99-Other/summary-overview.md` -> `meta/quarantine/uncurated_99_other/99-Other/summary-overview.md`
 - `99-Other/summary.md` -> `meta/quarantine/uncurated_99_other/99-Other/summary.md`
 - `99-Other/verifier.md` -> `meta/quarantine/uncurated_99_other/99-Other/verifier.md`

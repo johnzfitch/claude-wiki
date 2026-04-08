@@ -317,6 +317,11 @@
     },
     {
       "reason": "uncurated_99_other",
+      "from": "99-Other/summary-overview.md",
+      "to": "meta/quarantine/uncurated_99_other/99-Other/summary-overview.md"
+    },
+    {
+      "reason": "uncurated_99_other",
       "from": "99-Other/summary.md",
       "to": "meta/quarantine/uncurated_99_other/99-Other/summary.md"
     },
@@ -331,7 +336,7 @@
     "placeholder_stubs": 4,
     "local_only_rules": 3,
     "empty_body_stubs": 23,
-    "uncurated_99_other": 20
+    "uncurated_99_other": 21
   },
   "category_counts": [
     {
@@ -360,7 +365,7 @@
     },
     {
       "folder": "07-Hooks",
-      "count": 17
+      "count": 18
     },
     {
       "folder": "08-Plugins-Skills",
