@@ -1,6 +1,6 @@
 # Claude Wiki
 
-Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,543 Markdown articles across 22 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
+Comprehensive unofficial mirror of Anthropic's Claude ecosystem documentation — 1,542 Markdown articles across 22 categories, sourced daily from [docs.anthropic.com](https://docs.anthropic.com), [support.anthropic.com](https://support.anthropic.com), and [docs.claude.ai](https://docs.claude.ai).
 
 Covers the full Claude platform: API reference, Claude Code CLI, Model Context Protocol (MCP), Agent SDK, hooks, plugins, prompting guides, enterprise administration, safety & policy, billing, and model specifications. Every article is plain Markdown with YAML frontmatter — ready for grep, RAG pipelines, or direct LLM ingestion via `llms.txt`.
 
@@ -65,7 +65,7 @@ find . -name '*.md' | grep -i "prompt"
 | Reference | 361 | [`19-Reference`](./19-Reference/) |
 | Models | 78 | [`20-Models`](./20-Models/) |
 | Account & Support | 35 | [`21-Account-Support`](./21-Account-Support/) |
-| Safety & Policy | 43 | [`22-Safety-Policy`](./22-Safety-Policy/) |
+| Safety & Policy | 42 | [`22-Safety-Policy`](./22-Safety-Policy/) |
 <!-- CATEGORY_TABLE_END -->
 
 <details>
