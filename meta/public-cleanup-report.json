@@ -345,19 +345,19 @@
     },
     {
       "folder": "02-Claude-Code-CLI",
-      "count": 74
+      "count": 57
     },
     {
       "folder": "03-IDE-Integrations",
-      "count": 6
+      "count": 5
     },
     {
       "folder": "04-API-Reference",
-      "count": 29
+      "count": 24
     },
     {
       "folder": "05-Agent-SDK",
-      "count": 36
+      "count": 35
     },
     {
       "folder": "06-MCP-Tools",
@@ -373,11 +373,11 @@
     },
     {
       "folder": "09-Agents-Patterns",
-      "count": 41
+      "count": 32
     },
     {
       "folder": "10-Prompting-Guides",
-      "count": 21
+      "count": 18
     },
     {
       "folder": "11-RAG-Search",
@@ -401,7 +401,7 @@
     },
     {
       "folder": "16-Mobile-Desktop",
-      "count": 14
+      "count": 11
     },
     {
       "folder": "17-Billing-Plans",
@@ -413,11 +413,11 @@
     },
     {
       "folder": "19-Reference",
-      "count": 365
+      "count": 361
     },
     {
       "folder": "20-Models",
-      "count": 80
+      "count": 78
     },
     {
       "folder": "21-Account-Support",
@@ -425,7 +425,7 @@
     },
     {
       "folder": "22-Safety-Policy",
-      "count": 49
+      "count": 44
     }
   ]
 }
