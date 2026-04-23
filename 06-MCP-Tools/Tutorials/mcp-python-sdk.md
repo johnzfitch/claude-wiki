@@ -1007,7 +1007,7 @@ _Full example: [examples/snippets/servers/notifications.py](https://github.com/m
 
 Authentication can be used by servers that want to expose tools accessing protected resources.
 
-`mcp.server.auth` implements OAuth 2.1 resource server functionality, where MCP servers act as Resource Servers (RS) that validate tokens issued by separate Authorization Servers (AS). This follows the [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) and implements RFC 9728 (Protected Resource Metadata) for AS discovery.
+`mcp.server.auth` implements OAuth 2.1 resource server functionality, where MCP servers act as Resource Servers (RS) that validate tokens issued by separate Authorization Servers (AS). This follows the [MCP authorization specification](../Spec-Archive/spec-2025-06-18-authorization-model-context-protocol.md) and implements RFC 9728 (Protected Resource Metadata) for AS discovery.
 
 MCP servers can use authentication by providing an implementation of the `TokenVerifier` protocol:
 
@@ -1600,7 +1600,7 @@ _Full example: [examples/snippets/servers/streamable_http_path_config.py](https:
 
 #### SSE servers
 
-> **Note**: SSE transport is being superseded by [Streamable HTTP transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http).
+> **Note**: SSE transport is being superseded by [Streamable HTTP transport](../Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#streamable-http).
 
 You can mount the SSE server to an existing ASGI server using the `sse_app` method. This allows you to integrate the SSE server with other ASGI applications.
 
@@ -2153,7 +2153,7 @@ See the [simple-pagination example](examples/servers/simple-pagination) for a co
 
 ### Writing MCP Clients
 
-The SDK provides a high-level client interface for connecting to MCP servers using various [transports](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports):
+The SDK provides a high-level client interface for connecting to MCP servers using various [transports](../Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md):
 
 <!-- snippet-source examples/snippets/clients/stdio_client.py -->
 ```python
@@ -2245,7 +2245,7 @@ if __name__ == "__main__":
 _Full example: [examples/snippets/clients/stdio_client.py](https://github.com/modelcontextprotocol/python-sdk/blob/main/examples/snippets/clients/stdio_client.py)_
 <!-- /snippet-source -->
 
-Clients can also connect using [Streamable HTTP transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http):
+Clients can also connect using [Streamable HTTP transport](../Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#streamable-http):
 
 <!-- snippet-source examples/snippets/clients/streamable_basic.py -->
 ```python
@@ -2370,7 +2370,7 @@ This ensures your client UI shows the most user-friendly names that servers prov
 
 ### OAuth Authentication for Clients
 
-The SDK includes [authorization support](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization) for connecting to protected MCP servers:
+The SDK includes [authorization support](../Spec-Archive/spec-2025-03-26-authorization-model-context-protocol.md) for connecting to protected MCP servers:
 
 <!-- snippet-source examples/snippets/clients/oauth_client.py -->
 ```python
