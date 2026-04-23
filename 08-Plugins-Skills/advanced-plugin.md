@@ -1,3 +1,9 @@
+---
+title: "Advanced Plugin Example"
+category: "08-Plugins-Skills"
+tags: ["mcp", "plugins", "security"]
+---
+
 # Advanced Plugin Example
 
 A complex, enterprise-grade plugin with MCP integration and advanced organization.

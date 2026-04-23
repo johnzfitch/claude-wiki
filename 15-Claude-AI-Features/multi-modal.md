@@ -1,3 +1,8 @@
+---
+title: "Multi-Modal"
+category: "15-Claude-AI-Features"
+---
+
 ::: {#6d20a415-d81e-4ec7-9394-990594f041dc .cell .markdown}
 # Multi-Modal
 

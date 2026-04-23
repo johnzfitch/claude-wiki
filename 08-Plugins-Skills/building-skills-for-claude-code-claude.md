@@ -1,3 +1,9 @@
+---
+title: "SQL Analysis Skill"
+category: "08-Plugins-Skills"
+tags: ["claude-code", "plugins", "skills"]
+---
+
 ## **When AI lacks your institutional knowledge**
 
 Your team has built up hard-won knowledge about your data—you know which tables are the source of truth, why certain filters must always apply, and how revenue can be calculated differently, depending on the context. But Claude doesn't retain context from previous sessions.

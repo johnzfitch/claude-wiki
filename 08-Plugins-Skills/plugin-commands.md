@@ -1,3 +1,9 @@
+---
+title: "Plugin Command Examples"
+category: "08-Plugins-Skills"
+tags: ["agents", "plugins"]
+---
+
 # Plugin Command Examples
 
 Practical examples of commands designed for Claude Code plugins, demonstrating plugin-specific patterns and features.

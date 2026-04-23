@@ -1,3 +1,9 @@
+---
+title: "Working with Charts, Graphs, and Slide Decks"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Working with Charts, Graphs, and Slide Decks
 
 Claude is highly capable of working with charts, graphs, and broader

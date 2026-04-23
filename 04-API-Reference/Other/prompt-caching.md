@@ -1,3 +1,9 @@
+---
+title: "Prompt caching through the Claude API"
+category: "04-API-Reference/Other"
+tags: ["api", "prompting"]
+---
+
 # Prompt caching through the Claude API
 
 Prompt caching allows you to store and reuse context within your prompt.

@@ -1,3 +1,9 @@
+---
+title: "Claude Code Hooks Documentation"
+category: "07-Hooks"
+tags: ["claude-code", "hooks", "prompting", "testing"]
+---
+
 # Claude Code Hooks Documentation
 
 ## Installed Hooks

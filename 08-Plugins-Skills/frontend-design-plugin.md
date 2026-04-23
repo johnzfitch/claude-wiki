@@ -1,3 +1,9 @@
+---
+title: "Frontend Design Plugin"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Frontend Design Plugin
 
 Generates distinctive, production-grade frontend interfaces that avoid generic AI aesthetics.

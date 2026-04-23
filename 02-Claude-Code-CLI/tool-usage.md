@@ -1,3 +1,9 @@
+---
+title: "Using MCP Tools in Commands and Agents"
+category: "02-Claude-Code-CLI"
+tags: ["agents", "claude-code", "mcp", "search", "testing"]
+---
+
 # Using MCP Tools in Commands and Agents
 
 Complete guide to using MCP tools effectively in Claude Code plugin commands and agents.

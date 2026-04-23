@@ -1,3 +1,9 @@
+---
+title: "Command Documentation Patterns"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Command Documentation Patterns
 
 Strategies for creating self-documenting, maintainable commands with excellent user experience.

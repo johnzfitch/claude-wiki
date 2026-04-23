@@ -1,3 +1,9 @@
+---
+title: "Example Plugin Settings File"
+category: "01-Getting-Started"
+tags: ["agents", "git", "hooks"]
+---
+
 # Example Plugin Settings File
 
 ## Template: Basic Configuration

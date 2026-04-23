@@ -1,3 +1,9 @@
+---
+title: "Claude Code 2.1.59 — Complete Minified Identifier Mappings"
+category: "19-Reference"
+tags: ["claude-code"]
+---
+
 # Claude Code 2.1.59 — Complete Minified Identifier Mappings
 
 **Generated**: 2026-02-28

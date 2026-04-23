@@ -1,3 +1,9 @@
+---
+title: "How To Create A Skill With Claude Through Conversation Claude Help Center"
+category: "08-Plugins-Skills"
+tags: ["plugins", "skills"]
+---
+
 With Skills, you are able to teach Claude specific workflows, tools, and processes. By creating a skill, you're giving Claude a playbook it can reference whenever you need a particular type of help—whether that's generating reports in your company's format, cleaning and using data the way you normally do, or pulling and analyzing CRM data your way.
 
   
@@ -70,7 +76,7 @@ Related Articles
 
 What are Skills?
 
-](https://support.claude.com/en/articles/12512176-what-are-skills)[
+](../02-Claude-Code-CLI/what-are-skills.md)[
 
 Using Skills in Claude
 
@@ -78,7 +84,7 @@ Using Skills in Claude
 
 How to create custom Skills
 
-](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)[
+](../02-Claude-Code-CLI/how-to-create-custom-skills.md)[
 
 Teach Claude your way of working using skills
 
@@ -86,4 +92,4 @@ Teach Claude your way of working using skills
 
 Claude for Financial Services Skills
 
-](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
+](../02-Claude-Code-CLI/claude-for-financial-services-skills.md)

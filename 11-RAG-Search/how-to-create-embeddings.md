@@ -1,3 +1,9 @@
+---
+title: "Embeddings"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Embeddings
 Text embeddings are numerical representations of text strings, represented as a vector of floating point numbers. We can use the distance between two text embeddings (popularly cosine similarity) to measure how related two pieces of text are to one another, with smaller distances predicting higher relatedness.
 

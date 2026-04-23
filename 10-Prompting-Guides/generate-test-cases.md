@@ -1,3 +1,9 @@
+---
+title: "Generate Synthetic Test Data for Your Prompt Template"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 ::: {#10a4f45b-83bc-4d30-b7d1-a2d6ec8017d3 .cell .markdown}
 # Generate Synthetic Test Data for Your Prompt Template
 

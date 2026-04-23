@@ -1,3 +1,9 @@
+---
+title: "Plugin Structure Skill"
+category: "08-Plugins-Skills"
+tags: ["plugins", "skills"]
+---
+
 # Plugin Structure Skill
 
 Comprehensive guidance on Claude Code plugin architecture, directory layout, and best practices.

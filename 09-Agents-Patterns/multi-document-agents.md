@@ -1,3 +1,9 @@
+---
+title: "Multi-Document Agents"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Multi-Document Agents
 
 In this notebook we will look into Building RAG when you have a large

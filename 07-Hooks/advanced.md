@@ -1,3 +1,9 @@
+---
+title: "Advanced Hook Use Cases"
+category: "07-Hooks"
+tags: ["hooks", "prompting", "security", "testing"]
+---
+
 # Advanced Hook Use Cases
 
 This reference covers advanced hook patterns and techniques for sophisticated automation workflows.

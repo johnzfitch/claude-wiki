@@ -1,3 +1,9 @@
+---
+title: "Commit Commands Plugin"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Commit Commands Plugin
 
 Streamline your git workflow with simple commands for committing, pushing, and creating pull requests.

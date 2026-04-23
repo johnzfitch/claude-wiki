@@ -1,3 +1,9 @@
+---
+title: "2.1.74 Binary Information Report"
+category: "19-Reference"
+tags: ["security"]
+---
+
 # 2.1.74 Binary Information Report
 
 **Generated**: 2026-03-13

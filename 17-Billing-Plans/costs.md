@@ -1,3 +1,9 @@
+---
+title: "Manage costs effectively"
+category: "17-Billing-Plans"
+tags: ["billing", "claude-code"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -98,9 +104,9 @@ Each MCP server adds tool definitions to your context, even when idle. Run `/con
 
 ### Offload processing to hooks and skills
 
-Custom [hooks](/en/hooks) can preprocess data before Claude sees it. Instead of Claude reading a 10,000-line log file to find errors, a hook can grep for `ERROR` and return only matching lines, reducing context from tens of thousands of tokens to hundreds.
+Custom [hooks](../07-Hooks/hooks-reference-claude-code-docs.md) can preprocess data before Claude sees it. Instead of Claude reading a 10,000-line log file to find errors, a hook can grep for `ERROR` and return only matching lines, reducing context from tens of thousands of tokens to hundreds.
 
-A [skill](/en/skills) can give Claude domain knowledge so it doesn't have to explore. For example, a "codebase-overview" skill could describe your project's architecture, key directories, and naming conventions. When Claude invokes the skill, it gets this context immediately instead of spending tokens reading multiple files to understand the structure.
+A [skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) can give Claude domain knowledge so it doesn't have to explore. For example, a "codebase-overview" skill could describe your project's architecture, key directories, and naming conventions. When Claude invokes the skill, it gets this context immediately instead of spending tokens reading multiple files to understand the structure.
 
 For example, this PreToolUse hook filters test output to show only failures:
 
@@ -148,7 +154,7 @@ For example, this PreToolUse hook filters test output to show only failures:
 
 ### Move instructions from CLAUDE.md to skills
 
-Your [CLAUDE.md](/en/memory) file is loaded into context at session start. If it contains detailed instructions for specific workflows (like PR reviews or database migrations), those tokens are present even when you're doing unrelated work. [Skills](/en/skills) load on-demand only when invoked, so moving specialized instructions into skills keeps your base context smaller. Aim to keep CLAUDE.md under \~500 lines by including only essentials.
+Your [CLAUDE.md](/en/memory) file is loaded into context at session start. If it contains detailed instructions for specific workflows (like PR reviews or database migrations), those tokens are present even when you're doing unrelated work. [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) load on-demand only when invoked, so moving specialized instructions into skills keeps your base context smaller. Aim to keep CLAUDE.md under \~500 lines by including only essentials.
 
 ### Adjust extended thinking
 

@@ -1,3 +1,9 @@
+---
+title: "Claude Code 2.1.76 — Complete Telemetry & Observability Report (v2)"
+category: "19-Reference"
+tags: ["claude-code", "enterprise", "hooks", "security"]
+---
+
 # Claude Code 2.1.76 — Complete Telemetry & Observability Report (v2)
 
 ## Executive Summary

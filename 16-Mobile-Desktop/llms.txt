@@ -1,0 +1,869 @@
+# Mobile Desktop
+
+All documentation for Mobile Desktop.
+
+
+---
+## accessing-claude-app-on-ios-lock-screen-control-center-and-action-button.md
+
+4.  Accessing Claude app on iOS Lock Screen, Control Center, and Action Button
+
+# Accessing Claude app on iOS Lock Screen, Control Center, and Action Button
+
+
+The features described in this guide are available on iOS 18 and above.
+
+Quickly access Claude app functionality from your Lock Screen, Control Center, or Action Button on iOS. This article will explain how to add the Claude app into these areas.
+
+## **Add Claude app to your Lock Screen**
+
+- Tap and hold your Lock Screen to open Customize Wallpaper
+
+- Tap Customize
+
+- Choose Lock Screen
+
+- Click on an empty area on either of the two bottom circular slots
+
+- Scroll to add “Open Claude”
+
+- Click “Done” on the top right corner
+
+You’ll now be able to tap and hold to open the Claude app from your [Lock Screen](https://support.apple.com/guide/iphone/create-a-custom-lock-screen-iph4d0e6c351/ios).
+
+## **Add Claude app to Control Center**
+
+- Swipe down from the upper right side of your screen to open the Control Center
+
+- Tap & Hold to add a control
+
+- Tap “Add a Control”
+
+- Scroll to add “Open Claude”
+
+You’ll now be able to access the Claude app from your [Control Center](https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/ios).
+
+## **Use the Action Button to Open Claude app**
+
+- Open the Settings app
+
+- Go into the “Action Button” settings
+
+- Swipe until you see "Controls"
+
+- Click "Choose a Control..."
+
+- Scroll to “Open Claude”
+
+- Click back into Settings
+
+You’ll now be able to Hold to Open the [Action Button](https://support.apple.com/guide/iphone/use-and-customize-the-action-button-iphe89d61d66/18.0/ios/18.0) to access the Claude app.
+
+
+---
+## desktop-quickstart.md
+
+# Get started with the desktop app
+
+Install Claude Code on desktop and start your first coding session.
+
+The desktop app gives you Claude Code with a graphical interface: visual diff review, live app preview, GitHub PR monitoring with auto-merge, parallel sessions with Git worktree isolation, scheduled tasks, and the ability to run tasks remotely. No terminal required.
+
+## Downloads
+
+- **macOS**: Universal build for Intel and Apple Silicon
+- **Windows**: x64 and ARM64 installers
+- Linux is not currently supported.
+
+> Claude Code requires a Pro, Max, Team, or Enterprise subscription.
+
+The desktop app has three tabs:
+
+- **Chat**: General conversation with no file access, similar to claude.ai
+- **Cowork**: An autonomous background agent that works on tasks in a cloud VM with its own environment
+- **Code**: An interactive coding assistant with direct access to your local files
+
+## Install
+
+1. **Install and sign in**: Download Claude for your platform and run the installer. Launch and sign in with your Anthropic account.
+2. **Open the Code tab**: Click the Code tab at the top center. If it prompts you to upgrade, you need a paid plan.
+
+The desktop app includes Claude Code. You don't need to install Node.js or the CLI separately. To use `claude` from the terminal, install the CLI separately.
+
+## Start your first session
+
+1. **Choose an environment and folder**: Select **Local** to run Claude on your machine. Click **Select folder** and choose your project directory. You can also select **Remote** (Anthropic cloud) or **SSH** (remote machine).
+
+2. **Choose a model**: Select from the dropdown next to the send button. You cannot change the model after the session starts.
+
+3. **Tell Claude what to do**:
+   - `Find a TODO comment and fix it`
+   - `Add tests for the main function`
+   - `Create a CLAUDE.md with instructions for this codebase`
+
+4. **Review and accept changes**: By default, Claude proposes changes and waits for your approval before applying them. You'll see diff views showing exactly what will change, with Accept/Reject buttons.
+
+## Now what?
+
+- **Interrupt and steer**: Click the stop button or type your correction at any point
+- **Give Claude more context**: Type `@filename` to pull a specific file, attach images and PDFs, or drag and drop files
+- **Use skills**: Type `/` or click **+** → **Slash commands** to browse commands and skills
+- **Review changes**: Click `+12 -1` indicators to open the diff view. Click **Review code** to have Claude evaluate diffs
+- **Adjust permissions**: Ask permissions (default) requires approval before every edit. Auto accept edits auto-accepts file edits. Plan mode lets Claude map out an approach without touching files
+- **Add plugins**: Click **+** → **Plugins** to browse and install plugins
+- **Preview your app**: Click **Preview** to run your dev server in the desktop
+- **Track pull requests**: After opening a PR, Claude monitors CI and can auto-fix failures or merge
+- **Schedule tasks**: Set up scheduled tasks for recurring work (daily code review, dependency audit)
+- **Scale up**: Open parallel sessions, send work to the cloud, or continue in another surface
+
+## Coming from the CLI?
+
+Desktop runs the same engine as the CLI with a graphical interface. You can run both simultaneously on the same project, and they share configuration (CLAUDE.md files, MCP servers, hooks, skills, and settings).
+
+## See Also
+
+- [Use Claude Code Desktop](desktop.md)
+- [Troubleshooting](/en/desktop#troubleshooting)
+- [Best practices](/en/best-practices)
+- [Common workflows](/en/common-workflows)
+
+
+---
+## desktop-scheduled-tasks.md
+
+# Schedule recurring tasks in Claude Code Desktop
+
+Set up scheduled tasks in Claude Code Desktop to run Claude automatically on a recurring basis for daily code reviews, dependency audits, or morning briefings.
+
+By default, scheduled tasks start a new session automatically at a time and frequency you choose.
+
+## Compare scheduling options
+
+|                            | Cloud              | Desktop            | `/loop`            |
+| :------------------------- | :----------------- | :----------------- | :----------------- |
+| Runs on                    | Anthropic cloud    | Your machine       | Your machine       |
+| Requires machine on        | No                 | Yes                | Yes                |
+| Requires open session      | No                 | No                 | Yes                |
+| Persistent across restarts | Yes                | Yes                | No                 |
+| Access to local files      | No (fresh clone)   | Yes                | Yes                |
+| Minimum interval           | 1 hour             | 1 minute           | 1 minute           |
+
+The Schedule page supports two kinds of tasks:
+
+- **Local tasks**: run on your machine with direct access to local files and tools. Desktop app must be open and computer awake.
+- **Remote tasks**: run on Anthropic-managed cloud infrastructure. Keep running even when your computer is off.
+
+## Create a scheduled task
+
+Click **Schedule** in the sidebar, click **New task**, and choose **New local task**. Configure:
+
+| Field       | Description                                               |
+| ----------- | --------------------------------------------------------- |
+| Name        | Identifier for the task (lowercase kebab-case)            |
+| Description | Short summary shown in the task list                      |
+| Prompt      | Instructions sent to Claude when the task runs            |
+| Frequency   | How often the task runs                                   |
+
+## Frequency options
+
+- **Manual**: no schedule, only runs when you click **Run now**
+- **Hourly**: runs every hour with a fixed offset of up to 10 minutes
+- **Daily**: shows a time picker, defaults to 9:00 AM local
+- **Weekdays**: same as Daily but skips Saturday and Sunday
+- **Weekly**: shows a time and day picker
+
+For custom intervals, ask Claude in any Desktop session.
+
+## How scheduled tasks run
+
+Desktop checks the schedule every minute while the app is open and starts a fresh session when a task is due. Each task gets a fixed delay of up to 10 minutes for staggering.
+
+When a task fires:
+- Desktop notification appears
+- New session under **Scheduled** section in sidebar
+- Claude can edit files, run commands, create commits, open PRs
+
+Tasks only run while the desktop app is running and your computer is awake. Enable **Keep computer awake** in Settings to prevent idle-sleep.
+
+## Missed runs
+
+When the app starts or your computer wakes, Desktop checks whether each task missed any runs in the last seven days. If it did, exactly one catch-up run starts for the most recently missed time.
+
+## Permissions for scheduled tasks
+
+Each task has its own permission mode. Allow rules from `~/.claude/settings.json` also apply.
+
+To avoid stalls, click **Run now** after creating a task, watch for permission prompts, and select "always allow" for each one.
+
+## Manage scheduled tasks
+
+From a task's detail page:
+
+- **Run now**: start immediately
+- **Toggle repeats**: pause/resume scheduled runs
+- **Edit**: change prompt, frequency, folder, or settings
+- **Review history**: see past runs
+- **Review allowed permissions**: see and revoke tool approvals
+- **Delete**: remove the task
+
+Task prompts on disk: `~/.claude/scheduled-tasks/<task-name>/SKILL.md`
+
+## See Also
+
+- [Cloud scheduled tasks](../02-Claude-Code-CLI/web-scheduled-tasks.md)
+- [Run prompts on a schedule](../02-Claude-Code-CLI/run-prompts-on-a-schedule-claude-code-docs.md) — session-scoped `/loop`
+- [Claude Code GitHub Actions](/en/github-actions)
+- [Use Claude Code Desktop](desktop.md)
+
+
+---
+## desktop.md
+
+# Use Claude Code Desktop
+
+Get more out of Claude Code Desktop: computer use, Dispatch sessions from your phone, parallel sessions with Git isolation, visual diff review, app previews, PR monitoring, connectors, and enterprise configuration.
+
+The Code tab within the Claude Desktop app lets you use Claude Code through a graphical interface instead of the terminal.
+
+## Key capabilities
+
+- **Visual diff review** with inline comments
+- **Live app preview** with dev servers
+- **Computer use** to open apps and control your screen on macOS and Windows
+- **GitHub PR monitoring** with auto-fix and auto-merge
+- **Parallel sessions** with automatic Git worktree isolation
+- **Dispatch** integration: send a task from your phone, get a session here
+- **Scheduled tasks** that run Claude on a recurring schedule
+- **Connectors** for GitHub, Slack, Linear, and more
+- Local, SSH, and cloud environments
+
+## Start a session
+
+Configure four things in the prompt area before sending your first message:
+
+1. **Environment**: Local, Remote, or SSH
+2. **Folder**: the project directory Claude will work in
+3. **Model**: Opus, Sonnet, or Haiku (cannot change after session starts)
+4. **Permission mode**: controls what Claude can do without asking
+
+## Work with code
+
+### Add files and context to prompts
+
+- Type `@filename` to pull a specific file into conversation
+- Attach images and PDFs using the attachment button
+- Drag and drop files into the prompt
+
+### Review changes with diff view
+
+After Claude edits files, a `+12 -1` indicator appears. Click it to open the diff view:
+- Review modifications file by file
+- Comment on specific lines (Claude reads comments and revises)
+- Click **Review code** for Claude to self-evaluate diffs
+
+### Choose a permission mode
+
+| Mode             | What it does                              |
+| :--------------- | :---------------------------------------- |
+| Ask permissions  | Default. Claude asks before every edit    |
+| Auto accept      | Auto-accepts file edits                   |
+| Plan mode        | Claude plans without editing              |
+| Auto mode        | Everything runs with safety checks        |
+| Bypass           | No permission prompts (containers only)   |
+
+### Preview your app
+
+Click **Preview** dropdown to run your dev server in the desktop. Claude can view the running app, test endpoints, inspect logs, and iterate.
+
+## Let Claude use your computer
+
+Computer use is available on macOS and Windows (Pro and Max plans). Enable in **Settings > General** under Desktop app.
+
+Claude can open apps, click, type, and see your screen. Each app requires per-session approval.
+
+## Monitor pull request status
+
+After opening a PR, Claude monitors CI check results. You can enable:
+- **Auto-fix**: Claude automatically fixes CI failures
+- **Auto-merge**: Claude merges the PR once all checks pass
+
+## Manage sessions
+
+### Work in parallel with sessions
+
+Open parallel sessions from the sidebar. Each session can use its own Git worktree for isolation.
+
+### Run long-running tasks remotely
+
+Send work to Anthropic's cloud so it continues even if you close the app. Remote sessions work against a fresh clone of your repository.
+
+### Continue in another surface
+
+Transfer a session to the web, CLI, or mobile app to continue working elsewhere.
+
+## Extend Claude Code
+
+### Install plugins
+
+Click **+** → **Plugins** to browse and install plugins that add skills, agents, MCP servers, and more.
+
+### Connect external tools
+
+Use connectors for GitHub, Slack, Linear, and more. Available in **Settings > Connectors**.
+
+### Sessions from Dispatch
+
+Pair the Claude mobile app with Desktop. When you message a task from your phone, Desktop spawns a session to handle it.
+
+## SSH sessions
+
+Connect to remote machines over SSH. Claude Code must be installed on the remote machine.
+
+## Environment configuration
+
+### Enterprise settings
+
+Admins can configure:
+- Allowed models and permission modes
+- MCP server allowlists
+- Network and proxy settings
+- Feature flags
+
+## Coming from the CLI
+
+Desktop runs the same engine as the CLI with a graphical interface. They share configuration (CLAUDE.md, MCP servers, hooks, skills, settings).
+
+Key differences:
+- Desktop adds diff viewer, app preview, computer use (Windows), Dispatch
+- CLI has Agent SDK, third-party providers, headless mode
+- Both can run simultaneously on the same project
+
+## Troubleshooting
+
+### 403 or authentication errors
+
+Sign out and sign back in. Check your subscription is active.
+
+### Code tab not appearing
+
+Ensure you have a Pro, Max, Team, or Enterprise subscription.
+
+### Session hangs or stops responding
+
+Try creating a new session. If persistent, restart the desktop app.
+
+## See Also
+
+- [Get started with Desktop](desktop-quickstart.md)
+- [Desktop scheduled tasks](desktop-scheduled-tasks.md)
+- [Permission modes](../02-Claude-Code-CLI/permission-modes.md)
+- [Best practices](/en/best-practices)
+
+
+---
+## getting-started-with-local-mcp-servers-on-claude-desktop.md
+
+4.  Getting Started with Local MCP Servers on Claude Desktop
+
+# Getting Started with Local MCP Servers on Claude Desktop
+
+
+The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. With the introduction of desktop extensions, installing and managing local MCP servers has become significantly easier.
+
+## Desktop Extensions
+
+Desktop extensions provide a streamlined way to install and manage local MCP servers through single-click installable packages. Instead of manually configuring JSON files and managing dependencies, you can now install local MCP servers on your computer as easily as browser extensions.
+
+**Note:** We’re building a directory of desktop extensions – if you’re a developer hoping to add an extension you built to the directory, complete our [desktop extensions interest form](https://docs.google.com/forms/d/14_Dmcig4z8NeRMB_e7TOyrKzuZ88-BLYdLvS6LPhiZU/viewform?edit_requested=true) to share more information with us.
+
+## Installing desktop extensions from the directory
+
+1.  Navigate to Settings \> Extensions on Claude Desktop.
+
+2.  Click “Browse extensions” to view our directory and click on any Anthropic-reviewed tools you want to use. Click "Install" on your desired extension.
+
+3.  Configure any required settings (like API keys) through the user-friendly interface.
+
+4.  The extension will automatically be available in your conversations.
+
+## Installing custom desktop extensions
+
+1.  Navigate to Settings \> Extensions on Claude Desktop.
+
+2.  Click “Advanced settings” and find the **Extension Developer** section.
+
+3.  Click “Install Extension…”
+
+4.  Select the .mcpb file and follow the prompts to install.
+
+## Admin Controls for Desktop Extensions
+
+Owners and Primary Owners of Team and Enterprise plans can manage team access to desktop extensions using two controls:
+
+1.  Enable or disable public desktop extensions depending on your organization’s security standards.
+
+2.  Upload custom desktop extensions and make them available to your team for one-click install.
+
+These controls allow organizations to fully customize their registries by adding only the extensions the team needs to access, and removing any others.
+
+### Enabling/disabling specific extensions on Team and Enterprise plans
+
+Owners and Primary Owners of Team and Enterprise organizations can manage which desktop extensions are enabled for your organization and accessible to other members via Claude Desktop. See [Enabling and using the desktop extension allowlist](https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist)
+
+for specific instructions.
+
+### Create and upload custom extensions for your organization
+
+Custom desktop extensions uploads allow Team and Enterprise plans to leverage organization-specific workflows that aren’t available in the public directory. After creating a custom desktop extension, Owners and Primary Owners can navigate to Settings \> Extensions within Claude Desktop and click “Advanced settings” to access the **Extension Developer** section:
+
+
+Click “Install Extension…” and select the .mcpb file. Follow the prompts to install and configure your custom desktop extension. For more in-depth information, please refer to our [desktop extension developer documentation](https://github.com/anthropics/mcpb).
+
+## Enterprise Policy Controls
+
+**Note:** Enterprise policy controls at the user-machine level will override any in-app controls (blocklist and allowlist). If you want to use an in-app control, ensure `isDesktopExtensionEnabled` and `isDesktopExtensionDirectoryEnabled` are not set to "false" so the allowlist can populate the available registry.
+
+For controlling desktop extensions through system policies, please refer to our [desktop enterprise configuration documentation](../13-Enterprise-Admin/enterprise-configuration.md).
+
+## Troubleshooting desktop extension installation issues
+
+### Extension won't install
+
+- Ensure you're running the latest version of Claude Desktop.
+
+- Check that the extension file isn't corrupted by re-downloading it.
+
+- Verify you have sufficient disk space for the installation.
+
+### Extension appears installed but tools aren't available
+
+- Restart Claude Desktop to refresh the extension registry.
+
+- Check the extension's configuration settings for missing required fields.
+
+- Verify any API keys or authentication credentials are entered correctly.
+
+### Extension configuration issues
+
+- Navigate to Settings \> Extensions and click on the extension to review its settings.
+
+- Ensure all required configuration fields are completed.
+
+- Check that file paths (if applicable) point to existing directories you have access to.
+
+### Permission or security errors
+
+- On macOS, check System Preferences \> Security & Privacy if you receive security warnings.
+
+- On Windows, ensure Claude Desktop has necessary permissions to access required directories.
+
+- For enterprise environments, verify that desktop extensions are enabled through your organization's policies.
+
+## Developer FAQ
+
+### How do I check if my MCP servers are properly connected in Claude Desktop?
+
+Click the "+" button on bottom the chat box within Claude Desktop, then select "Connectors." This will show you connected MCP servers and their tools. Alternatively, you can visit Developer settings (under **Desktop app**) to see connection status and look at the logs for any MCP servers.
+
+### How do I convert my existing MCP server to a desktop extension?
+
+1.  Add a manifest.json file to your MCP server directory with the required metadata.
+
+2.  Package it using the `mcpb pack` command.
+
+3.  See the [MCPB documentation](https://github.com/anthropics/mcpb) for detailed instructions.
+
+### What programming languages are supported for desktop extensions?
+
+Desktop extensions support Node.js, Python, and binary MCP servers. Claude Desktop includes a built-in Node.js environment, so Node.js installation isn't required.
+
+### How do I handle sensitive configuration like API keys?
+
+Mark configuration fields as "sensitive": true in your manifest.json. Claude Desktop will automatically encrypt these values using the operating system's secure storage (Keychain on macOS, Credential Manager on Windows).
+
+### Can I distribute my custom desktop extension privately?
+
+Yes, you can share .mcpb files directly with specific users or teams. For broader distribution, you can submit extensions to the official directory.
+
+### How do I debug issues with my desktop extension?
+
+Enable debug logging in Claude Desktop settings, check the extension logs in the Extensions settings panel, and refer to the MCP debugging guide for protocol-specific troubleshooting.
+
+### What happens when my extension needs updates?
+
+Extensions from the official directory update automatically by default. For privately distributed extensions, users will need to install updated .mcpb files manually.
+
+## Interested in learning more about MCP?
+
+For more in-depth information on building your own MCP clients and servers, we recommend reviewing the following resources:
+
+- [MCP Quickstart Guide](../06-MCP-Tools/Tutorials/what-is-the-model-context-protocol-mcp-model-context-protocol.md) - A step-by-step tutorial perfect for getting started with basic MCP integration.
+
+- [Model Context Protocol Github](https://github.com/modelcontextprotocol) - Contains the complete technical documentation, code examples, and implementation guides.
+
+- [Guide to debugging MCP integrations](https://modelcontextprotocol.io/docs/tools/debugging) - Troubleshooting tips and solutions for common implementation challenges.
+
+If you need further guidance, visit our guide on [How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support) for additional support options.
+
+
+---
+## how-can-i-uninstall-claude-for-android.md
+
+4.  How can I uninstall Claude for Android?
+
+# How can I uninstall Claude for Android?
+
+
+To uninstall the Claude app from your Android device, hold down on the app from your screen until you see the menu options. Click on “App Info.” From the next series of options, select “Uninstall.”
+
+Note that if you have an active Claude Pro subscription and would like to uninstall the app, your subscription will not be automatically canceled. To cancel your subscription, follow the cancellation instructions [here](https://support.anthropic.com/en/articles/9612898-how-can-i-cancel-my-claude-pro-subscription-on-claude-for-android).
+
+
+---
+## how-do-i-install-claude-for-android.md
+
+# How do I install Claude for Android?
+
+
+You can install the Claude app onto your device by navigating to the Play Store and searching for “Claude by Anthropic”, or by navigating directly to our [Play Store listing](https://play.google.com/store/apps/details?id=com.anthropic.claude). Click on “Install” from the app listing to prompt your download.
+
+
+---
+## how-to-update-claude-for-android.md
+
+# How to update Claude for Android
+
+
+If you aren’t seeing the latest features on Claude for Android, you may need to [update your mobile app manually by following these instructions from Google](https://support.google.com/googleplay/answer/113412?hl=en):
+
+1.  Open the Google Play Store app .
+
+2.  At the top right, tap the profile icon.
+
+3.  Tap “Manage apps & device.”
+
+4.  Under **Updates available**, tap “See details.”
+
+5.  Tap “Update” next to Claude for Android.
+
+
+---
+## installing-claude-for-ios.md
+
+# Installing Claude for iOS
+
+
+## How do I install the Claude for iOS app?
+
+You can install the Claude app onto your iOS device by navigating to the App Store and searching for “Claude by Anthropic”, or by navigating directly to our [App Store listing](https://apps.apple.com/us/app/claude/id6473753684). Click on “Get” from the app listing to prompt your download.
+
+## Why can’t I find Claude for iOS in the App Store?
+
+If you’re unable to locate Claude for iOS in your App Store, you may be located in an [unsupported region](https://support.claude.com/en/articles/8461763-where-can-i-access-claude), using an unsupported device, or using an unsupported version of iOS.
+
+## What versions of iOS are supported?
+
+We currently support iOS version 17.0 and above.
+
+## How do I uninstall the Claude for iOS app?
+
+To uninstall the Claude for iOS from your device, hold down on the app from your home screen until you see the menu options. Click on “Remove App.” From the next series of options, select “Delete App.”
+
+Note that if you have an active paid Claude subscription and would like to uninstall the app, your subscription will not be automatically canceled. To cancel your subscription, follow the instructions here: [How do I cancel my paid Claude subscription?](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription)
+
+
+---
+## using-claude-app-intents-shortcuts-and-widgets-on-ios.md
+
+4.  Using Claude App Intents, Shortcuts, and Widgets on iOS
+
+# Using Claude App Intents, Shortcuts, and Widgets on iOS
+
+
+The features described in this guide are available on iOS 18 and above.
+
+Claude for iOS supports multiple powerful features: the Claude widget, the "Analyze Photo with Claude" control, the "Ask Claude" App Intent, and the ability to use this intent within iOS Shortcuts. This guide will explain these features and show you how to make the most of them.
+
+## Ask Claude Intent
+
+The "Ask Claude" intent is a standalone feature that lets you interact with Claude directly from:
+
+- Spotlight search
+
+- Siri
+
+- The Share menu
+
+- Any app that supports iOS intents
+
+You can use this intent on its own to quickly ask Claude questions or give it tasks without opening the Claude app. For example, you can:
+
+- Select text and use the Share menu to send it directly to Claude
+
+- Ask Siri to "Ask Claude” and it will prompt you for a message
+
+- Type "Ask Claude" in Spotlight search to quickly send a query
+
+## Using Ask Claude With Shortcuts
+
+While the "Ask Claude" intent is powerful on its own, you can also use it as a building block within the Shortcuts app to create more complex workflows. Shortcuts allow you to:
+
+- Chain multiple "Ask Claude" actions together
+
+- Combine Claude's capabilities with other apps and actions
+
+- Create automated workflows
+
+- Process Claude's responses in various ways
+
+## Creating Your First Claude Shortcut
+
+There are many customizable workflows you can set up within the Shortcuts app. Let's look at an example of a brief but useful shortcut that helps you summarize text:
+
+1.  Open the Shortcuts app on your iOS device
+
+2.  Tap the "+" button to create a new shortcut
+
+3.  Add the "Share" action and select your preferred input type
+
+4.  Add the "Ask Claude" action
+
+5.  In the "Ask Claude" action, create a prompt like: "Please summarize the following text: \[Shortcut Input\]"
+
+6.  Name your shortcut (e.g., "Summarize with Claude")
+
+7.  Optional: Add the shortcut to your Share Sheet for easy access
+
+Now you can select text anywhere in iOS, tap the Share button, and choose your "Summarize with Claude" shortcut to get an instant summary.
+
+When using "Ask Claude" intent and in shortcuts, the default model you see when opening the Claude app will be used.
+
+More information on setting up shortcuts on your iOS device can be found [here](https://support.apple.com/guide/shortcuts/welcome/ios).
+
+**Note:** When using the "Ask Claude" intent, messages to Claude will count towards your overall usage limit.
+
+## Adding the Claude Widget
+
+The Claude widget provides quick access to chat and voice features directly from your Home Screen or Today View. The widget includes buttons for:
+
+- Starting a new chat
+
+- Instantly opening the app in dictation mode
+
+- Taking a photo to share with Claude
+
+### Add the Claude widget to your Home Screen
+
+1.  From the Home Screen, touch and hold a widget or an empty area until the apps jiggle
+
+2.  Tap Edit in the upper-left corner
+
+3.  Tap Add Widget
+
+4.  Search for and select Claude
+
+5.  Tap Add Widget
+
+6.  Tap Done
+
+### To add the Claude widget to your Today View
+
+Swipe right from the Home Screen or Lock Screen, then follow the same steps as adding to the Home Screen.
+
+### Using the Widget
+
+- Tap the chat button to start a new conversation with Claude.
+
+- Tap the microphone button to instantly open the app in dictation mode, allowing you to start speaking to Claude right away.
+
+- Tap the camera button to take a photo and share it with Claude for analysis.
+
+**Note:** Like the "Ask Claude" intent, interactions started through the widget will count toward your usage limit.
+
+## The Analyze Photo with Claude Control
+
+The "Analyze Photo with Claude" control lets you quickly send images to Claude for analysis directly from Control Center or your Lock Screen.
+
+### Adding to Control Center
+
+1.  Open Control Center (swipe down from the top-right corner on iPhones with Face ID, or swipe up from the bottom on iPhones with a Home button)
+
+2.  Tap the Add button (plus sign) at the top left of Control Center to begin editing
+
+3.  Tap "Add a Control" at the bottom of the screen to open the controls gallery
+
+4.  Find and tap "Analyze Photo with Claude" to add it to Control Center
+
+5.  You can rearrange its position by dragging it to your preferred location
+
+6.  When finished, close Control Center by swiping up from the bottom center of the screen
+
+Once added, you can quickly access it from Control Center by swiping down from the top-right corner of the screen.
+
+More information on using and setting up controls via Control Center can be found [here](https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/ios).
+
+### Adding to Your Lock Screen
+
+1.  On your Lock Screen, touch and hold until the customization screen appears
+
+2.  Tap "Customize"
+
+3.  Select the lock screen you want to modify
+
+4.  Remove one of the controls at the bottom of the screen using the Remove button (minus sign), then tap the Add button (plus sign) to open the controls gallery
+
+5.  From the available controls menu, scroll or search for "Analyze Photo with Claude"
+
+6.  Tap to select it
+
+7.  Tap "Done" to save your changes
+
+You can now quickly access the "Analyze Photo with Claude" control without needing to unlock your device or open the Claude app first.
+
+
+---
+## using-dictation-on-claude-mobile.md
+
+# Using dictation on Claude Mobile
+
+
+Dictation is currently available for users on free, Pro, and Team plans
+
+Dictation allows you to speak your prompts instead of typing them when using Claude for iOS or Android.
+
+## Getting started
+
+1.  Open Claude for iOS or Android.
+
+2.  Start a new chat with Claude.
+
+3.  Tap the microphone icon on the right side of the chat input field.
+
+    - If this is your first time using dictation, you'll need to select your preferred language. You can change this later in Settings.
+
+4.  Dictate your prompt.
+
+5.  Tap the arrow icon to send your prompt.
+
+    - To cancel without sending, tap the "X" icon.
+
+Your prompt will automatically appear as text in the chat window. Claude will respond to your prompt in text format.
+
+## Supported languages
+
+Dictation is currently available in these languages:
+
+- English
+
+- French
+
+- German
+
+- Hindi
+
+- Italian
+
+- Japanese
+
+- Korean
+
+- Portuguese
+
+- Russian
+
+- Spanish
+
+- Turkish
+
+- Ukrainian
+
+## Changing your language settings
+
+To change your speech input language:
+
+1.  Tap your initials in the upper right corner.
+
+2.  Select “Speech Input Language.”
+
+3.  Choose your preferred language from the dropdown.
+
+## Data privacy
+
+After converting your speech input to text, we will delete your audio recording. We will not retain a copy of your speech input or use it for training our generative models.
+
+Learn more about our privacy practices by visiting our [Privacy Policy](https://www.anthropic.com/legal/privacy) and [Privacy Center](https://privacy.anthropic.com/en/).
+
+
+---
+## using-the-claude-widget-on-android.md
+
+# Using the Claude Widget on Android
+
+
+The Claude Android widget is available on Android 8.0 Oreo and above.
+
+The Claude Android widget provides quick and convenient access to core features directly from your home screen, allowing you to start new chats, capture images, and use voice dictation with a single tap.
+
+## Adding the Claude Widget
+
+The Claude widget puts Claude's key features right on your home screen. To add it:
+
+1.  Touch and hold an empty area on your home screen
+
+2.  Tap "Widgets"
+
+3.  Find and tap "Claude"
+
+4.  Drag the widget to your desired location
+
+5.  Release to place it
+
+6.  Optional: Drag the edges of the widget to resize it
+
+## Widget Features
+
+The widget offers three quick-access buttons:
+
+- A primary chat button (with Claude's spark icon) to start a new conversation
+
+- A camera button for capturing and sharing images with Claude
+
+- A microphone button for voice dictation
+
+## Using the Widget
+
+### Starting a Chat
+
+Tap the main chat button (with the spark icon) to instantly start a new conversation with Claude.
+
+### Taking Photos
+
+Tap the camera button to start a new chat and immediately open your camera. You can capture an image and share it with Claude for analysis.
+
+### Voice Dictation
+
+Tap the microphone button to start a new chat and begin voice dictation. The first time you use this feature, you'll see a brief explanation about how automatic recording works. You may also need to grant voice permissions if you haven't already done so.
+
+**Note:** All interactions started through the widget will count toward your usage limit.
+
+
+---
+## what-versions-of-android-are-supported.md
+
+4.  What versions of Android are supported?
+
+# What versions of Android are supported?
+
+
+We currently support Android 8.0 Oreo and above.
+
+
+---
+## why-can-t-i-find-claude-for-android-in-the-play-store.md
+
+4.  Why can’t I find Claude for Android in the Play Store?
+
+# Why can’t I find Claude for Android in the Play Store?
+
+
+If you’re unable to locate the Claude app in your Play Store, you may be located in an [unsupported region](https://support.anthropic.com/en/articles/8461763-where-can-i-access-claude-ai), using an unsupported device, or using an unsupported version of Android.

@@ -1,0 +1,3938 @@
+# IDE Integrations
+
+All documentation for IDE Integrations.
+
+
+---
+## chrome.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Use Claude Code with Chrome (beta)
+
+> Connect Claude Code to your browser to test web apps, debug with console logs, and automate browser tasks.
+
+<Note>
+  Chrome integration is in beta and currently works with Google Chrome only. It is not yet supported on Brave, Arc, or other Chromium-based browsers. WSL (Windows Subsystem for Linux) is also not supported.
+</Note>
+
+Claude Code integrates with the Claude in Chrome browser extension to give you browser automation capabilities directly from your terminal. Build in your terminal, then test and debug in your browser without switching contexts.
+
+## What the integration enables
+
+With Chrome connected, you can chain browser actions with terminal commands in a single workflow. For example: scrape documentation from a website, analyze it, generate code based on what you learned, and commit the result.
+
+Key capabilities include:
+
+* **Live debugging**: Claude reads console errors and DOM state directly, then fixes the code that caused them
+* **Design verification**: Build a UI from a Figma mock, then have Claude open it in the browser and verify it matches
+* **Web app testing**: Test form validation, check for visual regressions, or verify user flows work correctly
+* **Authenticated web apps**: Interact with Google Docs, Gmail, Notion, or any app you're logged into without needing API connectors
+* **Data extraction**: Pull structured information from web pages and save it locally
+* **Task automation**: Automate repetitive browser tasks like data entry, form filling, or multi-site workflows
+* **Session recording**: Record browser interactions as GIFs to document or share what happened
+
+## Prerequisites
+
+Before using Claude Code with Chrome, you need:
+
+* [Google Chrome](https://www.google.com/chrome/) browser
+* [Claude in Chrome extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) version 1.0.36 or higher
+* [Claude Code CLI](/en/quickstart#step-1-install-claude-code) version 2.0.73 or higher
+* A paid Claude plan (Pro, Team, or Enterprise)
+
+## How the integration works
+
+Claude Code communicates with Chrome through the Claude in Chrome browser extension. The extension uses Chrome's [Native Messaging API](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging) to receive commands from Claude Code and execute them in your browser. This architecture lets Claude Code control browser tabs, read page content, and perform actions while you continue working in your terminal.
+
+When Claude encounters a login page, CAPTCHA, or other blocker, it pauses and asks you to handle it. You can provide credentials for Claude to enter, or log in manually in the browser. Once you're past the blocker, tell Claude to continue and it picks up where it left off.
+
+Claude opens new tabs for browser tasks rather than taking over existing ones. However, it shares your browser's login state, so if you're already signed into a site in Chrome, Claude can access it without re-authenticating.
+
+<Note>
+  The Chrome integration requires a visible browser window. When Claude performs browser actions, you'll see Chrome open and navigate in real time. There's no headless mode since the integration relies on your actual browser session with its login state.
+</Note>
+
+## Set up the integration
+
+<Steps>
+  <Step title="Update Claude Code">
+    Chrome integration requires a recent version of Claude Code. If you installed using the [native installer](/en/quickstart#step-1-install-claude-code), updates happen automatically. Otherwise, run:
+
+    ```bash  theme={null}
+    claude update
+    ```
+  </Step>
+
+  <Step title="Start Claude Code with Chrome enabled">
+    Launch Claude Code with the `--chrome` flag:
+
+    ```bash  theme={null}
+    claude --chrome
+    ```
+  </Step>
+
+  <Step title="Verify the connection">
+    Run `/chrome` to check the connection status and manage settings. If the extension isn't detected, you'll see a warning with a link to install it.
+  </Step>
+</Steps>
+
+You can also enable Chrome integration from within an existing session using the `/chrome` command.
+
+## Try it out
+
+Once connected, type this into Claude to see the integration in action:
+
+```
+Go to code.claude.com/docs, click on the search box,
+type "hooks", and tell me what results appear
+```
+
+Claude opens the page, clicks into the search field, types the query, and reports the autocomplete results. This shows navigation, clicking, and typing in a single workflow.
+
+## Example workflows
+
+Claude can navigate pages, click and type, fill forms, scroll, read console logs and network requests, manage tabs, resize windows, and record GIFs. Run `/mcp` and click into `claude-in-chrome` to see the full list of available tools.
+
+The following examples show common patterns for browser automation.
+
+### Test a local web application
+
+When developing a web app, ask Claude to verify your changes work correctly:
+
+```
+I just updated the login form validation. Can you open localhost:3000,
+try submitting the form with invalid data, and check if the error
+messages appear correctly?
+```
+
+Claude navigates to your local server, interacts with the form, and reports what it observes.
+
+### Debug with console logs
+
+If your app has issues, Claude can read console output to help diagnose problems:
+
+```
+Open the dashboard page and check the console for any errors when
+the page loads.
+```
+
+Claude reads the console messages and can filter for specific patterns or error types.
+
+### Automate form filling
+
+Speed up repetitive data entry tasks:
+
+```
+I have a spreadsheet of customer contacts in contacts.csv. For each row,
+go to our CRM at crm.example.com, click "Add Contact", and fill in the
+name, email, and phone fields.
+```
+
+Claude reads your local file, navigates the web interface, and enters the data for each record.
+
+### Draft content in Google Docs
+
+Use Claude to write directly in your documents without API setup:
+
+```
+Draft a project update based on our recent commits and add it to my
+Google Doc at docs.google.com/document/d/abc123
+```
+
+Claude opens the document, clicks into the editor, and types the content. This works with any web app you're logged into: Gmail, Notion, Sheets, and more.
+
+### Extract data from web pages
+
+Pull structured information from websites:
+
+```
+Go to the product listings page and extract the name, price, and
+availability for each item. Save the results as a CSV file.
+```
+
+Claude navigates to the page, reads the content, and compiles the data into a structured format.
+
+### Run multi-site workflows
+
+Coordinate tasks across multiple websites:
+
+```
+Check my calendar for meetings tomorrow, then for each meeting with
+an external attendee, look up their company on LinkedIn and add a
+note about what they do.
+```
+
+Claude works across tabs to gather information and complete the workflow.
+
+### Record a demo GIF
+
+Create shareable recordings of browser interactions:
+
+```
+Record a GIF showing how to complete the checkout flow, from adding
+an item to the cart through to the confirmation page.
+```
+
+Claude records the interaction sequence and saves it as a GIF file.
+
+## Best practices
+
+When using browser automation, keep these guidelines in mind:
+
+* **Modal dialogs can interrupt the flow**: JavaScript alerts, confirms, and prompts block browser events and prevent Claude from receiving commands. If a dialog appears, dismiss it manually and tell Claude to continue.
+* **Use fresh tabs**: Claude creates new tabs for each session. If a tab becomes unresponsive, ask Claude to create a new one.
+* **Filter console output**: Console logs can be verbose. When debugging, tell Claude what patterns to look for rather than asking for all console output.
+
+## Troubleshooting
+
+### Extension not detected
+
+If Claude Code shows "Chrome extension not detected":
+
+1. Verify the Chrome extension (version 1.0.36 or higher) is installed
+2. Verify Claude Code is version 2.0.73 or higher by running `claude --version`
+3. Check that Chrome is running
+4. Run `/chrome` and select "Reconnect extension" to re-establish the connection
+5. If the issue persists, restart both Claude Code and Chrome
+
+### Browser not responding
+
+If Claude's browser commands stop working:
+
+1. Check if a modal dialog (alert, confirm, prompt) is blocking the page
+2. Ask Claude to create a new tab and try again
+3. Restart the Chrome extension by disabling and re-enabling it
+
+### First-time setup
+
+The first time you use the integration, Claude Code installs a native messaging host that allows communication between the CLI and Chrome. If you encounter permission errors, you may need to restart Chrome for the installation to take effect.
+
+## Enable by default
+
+Chrome integration requires the `--chrome` flag each time you start Claude Code. To enable it by default, run `/chrome` and select "Enabled by default".
+
+<Note>
+  Enabling Chrome by default increases context usage since browser tools are always loaded. If you notice increased context consumption, disable this setting and use `--chrome` only when needed.
+</Note>
+
+Site-level permissions are inherited from the Chrome extension. Manage permissions in the Chrome extension settings to control which sites Claude can browse, click, and type on. Run `/chrome` to see current permission settings.
+
+## See also
+
+* [CLI reference](/en/cli-reference) - Command-line flags including `--chrome`
+* [Common workflows](/en/common-workflows) - More ways to use Claude Code
+* [Getting started with Claude for Chrome](https://support.anthropic.com/en/articles/12012173-getting-started-with-claude-for-chrome) - Full documentation for the Chrome extension, including shortcuts, scheduling, and permissions
+
+
+---
+## desktop.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Claude Code on desktop
+
+> Run Claude Code tasks locally or on secure cloud infrastructure with the Claude desktop app
+
+<Note>
+  Claude Code on desktop is currently in preview.
+</Note>
+
+Claude Code is an AI coding assistant that works directly with your codebase. Unlike Claude.ai chat, it can read your project files, edit code, run terminal commands, and understand how different parts of your code connect. You watch changes happen in real time.
+
+You can use Claude Code through the terminal ([CLI](/en/quickstart)) or through the desktop app described here. Both provide the same core capabilities. The desktop app adds a graphical interface and visual session management.
+
+<CardGroup cols={2}>
+  <Card title="New to Claude Code?" icon="rocket" href="#installation-and-setup">
+    Start here to install and make your first edit
+  </Card>
+
+  <Card title="Coming from the CLI?" icon="terminal" href="#how-desktop-relates-to-cli">
+    See what's shared and what's different
+  </Card>
+</CardGroup>
+
+The desktop app has three tabs:
+
+* **Chat**: A conversational interface for general questions and tasks (like Claude.ai)
+* **Cowork**: An autonomous agent that works on tasks in the background
+* **Code**: An AI coding assistant that reads and edits your project files directly
+
+This documentation covers the **Code** tab. For the chat interface, see the [Claude Desktop support articles](https://support.claude.com/en/collections/16163169-claude-desktop).
+
+## Installation and setup
+
+<Steps>
+  <Step title="Download the app">
+    Download Claude for your platform. You'll need an Anthropic account ([sign up at claude.ai](https://claude.ai) if you don't have one).
+
+    <CardGroup cols={2}>
+      <Card title="macOS" icon="apple" href="https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code&utm_medium=docs">
+        Universal build for Intel and Apple Silicon
+      </Card>
+
+      <Card title="Windows" icon="windows" href="https://claude.ai/api/desktop/win32/x64/exe/latest/redirect?utm_source=claude_code&utm_medium=docs">
+        For x64 processors
+      </Card>
+    </CardGroup>
+
+    For Windows ARM64, [download here](https://claude.ai/api/desktop/win32/arm64/exe/latest/redirect?utm_source=claude_code\&utm_medium=docs). Local sessions are not available on ARM64 devices, so use remote sessions instead.
+
+    Linux is not currently supported.
+  </Step>
+
+  <Step title="Open the app and sign in">
+    Launch Claude from your Applications folder (macOS) or Start menu (Windows). Sign in with your Anthropic account.
+  </Step>
+
+  <Step title="Select the Code tab">
+    Click the **Code** tab in the top left. If clicking Code prompts you to sign in online, complete the sign-in and restart the app.
+  </Step>
+</Steps>
+
+## Getting started
+
+If you already use the CLI, you can skip to [How Desktop relates to CLI](#how-desktop-relates-to-cli) for a quick overview of differences.
+
+<Steps>
+  <Step title="Choose a folder and environment">
+    Select **Local** to run Claude on your machine using your files directly. This is the best choice for getting started. Click **Select folder** and choose your project directory.
+
+    You can also run [remote sessions](/en/claude-code-on-the-web) that continue in the cloud even if you close the app.
+  </Step>
+
+  <Step title="Start a session">
+    Type what you want Claude to do:
+
+    * "Find a TODO comment and fix it"
+    * "Add tests for the main function"
+    * "Create a CLAUDE.md with instructions for this codebase"
+
+    A **session** is a conversation with Claude about your code. Each session tracks its own context and changes, so you can work on multiple tasks without them interfering with each other.
+  </Step>
+
+  <Step title="Review and accept changes">
+    By default, Code is in **Ask** mode, where Claude proposes changes and waits for your approval before applying them. You'll see:
+
+    1. **A diff view** showing exactly what will change in each file
+    2. **Accept/Reject buttons** to approve or decline each change
+    3. **Real-time updates** as Claude works through your request
+
+    If you reject a change, Claude will ask how you'd like to proceed differently. Your files aren't modified until you accept.
+  </Step>
+</Steps>
+
+The sections below cover commands, permission modes, parallel sessions, and ways to extend Claude Code with custom workflows and integrations.
+
+## What you can do
+
+Claude Code can edit files, run terminal commands, and understand how your code connects. Try prompts like:
+
+* `Fix the bug in the login function`
+* `Run the tests and fix any failures`
+* `How does the authentication flow work?`
+
+You can rename, resume, and archive sessions through the sidebar.
+
+### Choose a permission mode
+
+Control how Claude works using the mode selector next to the send button:
+
+* **Ask** (recommended for new users): Claude asks for your approval before each file edit or command. You see a diff view and can accept or reject each change.
+* **Code**: Claude auto-accepts file edits but still asks before running terminal commands. Use this when you trust file changes and want faster iteration.
+* **Plan**: Claude creates a detailed plan for your approval before making any changes. Good for complex tasks where you want to review the approach first.
+
+To stop Claude mid-task, click the stop button.
+
+Remote sessions only support **Code** and **Plan** modes because they continue running in the background without requiring your active participation. See [permission modes](/en/iam#permission-modes) for details on how these work internally.
+
+### Work in parallel with sessions
+
+Click **+ New session** in the sidebar to work on multiple tasks in parallel. For Git repositories, each session gets its own isolated copy of your project using worktrees, so changes in one session don't affect another until you commit them. Worktrees are stored in `~/.claude-worktrees/` by default.
+
+<Note>
+  Session isolation requires [Git](https://git-scm.com/downloads). Without Git, sessions in the same directory edit the same files, so changes in one session are immediately visible in others.
+</Note>
+
+To include files listed in your `.gitignore` (like `.env`) in new worktrees, create a `.worktreeinclude` file in your project root listing the file patterns to copy.
+
+To manage a session, click its dropdown in the sidebar to rename it, archive it, or check context usage. When context fills up, Claude automatically summarizes the conversation. You can also ask Claude to compact if you want to free up space earlier.
+
+### Run long-running tasks remotely
+
+For large refactors, test suites, migrations, or other long-running tasks, select **Remote** instead of **Local** when starting a session. Remote sessions run on Anthropic's cloud infrastructure and continue even if you close the app or shut down your computer. Check back anytime to see progress or steer Claude in a different direction.
+
+Remote sessions support **Code** and **Plan** modes. See [Claude Code on the web](/en/claude-code-on-the-web) for details on configuring remote environments.
+
+### Review changes with diff view
+
+After Claude makes changes to your code, the diff view lets you review modifications file by file before creating a pull request.
+
+When Claude changes files, a diff stats indicator appears showing the number of lines added and removed (for example, `+12 -1`). Click this indicator to open the diff viewer, which displays a file list on the left and the changes for each file on the right.
+
+To comment on specific lines, click any line in the diff to open a comment box. Type your feedback and press **Enter** to send. In the full diff view, press **Enter** to accept each comment, then **Cmd+Enter** to send them all. Claude reads your comments and makes the requested changes, which appear as a new diff you can review.
+
+## Extend Claude Code
+
+You can extend Claude Code with custom commands, automated workflows, and external integrations.
+
+### Connect external tools
+
+For local sessions, click the **...** button before starting and select **Connectors** to add integrations like Google Calendar, Slack, GitHub, Linear, Notion, and more. Connectors must be configured before the session starts and are only available for local sessions. Once connected, Claude can read your calendar, send messages, create issues, and interact with your tools directly. You can ask Claude what connectors are configured in your session.
+
+Connectors are [MCP (Model Context Protocol) servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) with built-in setup. You can also [create custom connectors](../14-Connectors/getting-started-with-custom-connectors-using-remote-mcp.md) or add MCP servers manually via [configuration files](/en/mcp#configure-mcp-servers).
+
+### Create custom skills
+
+[Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) are reusable prompts that extend Claude's capabilities. For example, you could create a `review` skill that runs your standard code review checklist, or a `deploy` skill that walks through your deployment steps. Skills are defined as markdown files in `.claude/skills/` and can include instructions, context, and even call other tools. Ask Claude what skills are available or to run a specific skill. Claude can also help you create a skill if you describe what you want, or see [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) to learn how to write them yourself.
+
+### Automate workflows with hooks
+
+[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md) run shell commands automatically in response to Claude Code events. For example, you could run a linter after every file edit, auto-format code, or send notifications when tasks complete. Hooks are configured in your [settings files](/en/settings). See [hooks](../07-Hooks/hooks-reference-claude-code-docs.md) for available events and configuration examples.
+
+## Environment configuration
+
+When starting a session, you choose between **Local** (runs on your machine) or **Remote** (runs on Anthropic's cloud).
+
+**Local sessions** inherit environment variables from your shell. If you need additional variables, set them in your shell profile (`~/.zshrc`, `~/.bashrc`) and restart the desktop app. See [environment variables](/en/settings#environment-variables) for the full list of supported variables.
+
+[Extended thinking](/en/common-workflows#use-extended-thinking-thinking-mode) is enabled by default, which improves performance on complex reasoning tasks but uses additional tokens. The thinking process runs in the background but isn't displayed in the Desktop interface. To disable it or adjust the budget, set `MAX_THINKING_TOKENS` in your shell profile (use `0` to disable).
+
+**Remote sessions** run on Anthropic's cloud infrastructure and continue even if you close the app. Usage counts toward your subscription plan limits with no separate compute charges. See [Claude Code on the web](/en/claude-code-on-the-web) for details on configuring remote environments.
+
+## How Desktop relates to CLI
+
+If you already use the Claude Code CLI, Desktop runs the same underlying engine with a graphical interface. You can run both simultaneously on the same machine, even on the same project. Each maintains separate session history, but they share configuration and project memory (CLAUDE.md files).
+
+### CLI flag equivalents
+
+If you're used to CLI flags, the table below shows the Desktop equivalent for each. Some flags have no Desktop equivalent because they're designed for scripting or automation.
+
+| CLI                                   | Desktop equivalent                             |
+| ------------------------------------- | ---------------------------------------------- |
+| `--model sonnet`                      | **...** menu > Model (before starting session) |
+| `--resume`, `--continue`              | Click a session in the sidebar                 |
+| `--allowedTools`, `--disallowedTools` | Not available in Desktop                       |
+| `--dangerously-skip-permissions`      | Not available in Desktop                       |
+| `--print`                             | Not available (Desktop is interactive)         |
+
+### Shared configuration
+
+Desktop and CLI read the same configuration files, so your setup carries over:
+
+* **[CLAUDE.md](/en/memory)** and **CLAUDE.local.md** files in your project are used by both
+* **[MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md)** configured in `~/.claude.json` or `.mcp.json` work in both
+* **[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md)** and **[skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)** defined in settings apply to both
+* **[Settings](/en/settings)** in `~/.claude.json` and `~/.claude/settings.json` are shared
+* **Models** (Sonnet, Opus, Haiku) are available in both (Desktop requires selecting before starting a session)
+
+<Note>
+  MCP servers configured for the **Claude Desktop chat app** (in `claude_desktop_config.json`) are separate from Claude Code. To use MCP servers in Claude Code, configure them in `~/.claude.json` or your project's `.mcp.json` file. See [MCP configuration](/en/mcp#configure-mcp-servers) for details.
+</Note>
+
+### What's different
+
+**Desktop adds:**
+
+* Graphical interface with visual session management
+* Built-in connectors for common integrations
+* Automatic session isolation for Git repositories (each session gets its own worktree)
+
+**CLI adds:**
+
+* [Third-party API providers](/en/third-party-integrations) (Bedrock, Vertex, Foundry). If you use these, continue using CLI for those projects.
+* [CLI flags](/en/cli-reference) for scripting (`--print`, `--resume`, `--continue`)
+* [Programmatic usage](/en/headless) via the Agent SDK
+
+## Troubleshooting
+
+Solutions to common issues with the Claude desktop app. For CLI issues, see [CLI troubleshooting](/en/troubleshooting).
+
+### Check your version
+
+To see which version of the desktop app you're running:
+
+* **macOS**: Click **Claude** in the menu bar, then **About Claude**
+* **Windows**: Click **Help**, then **About**
+
+Click the version number to copy it to your clipboard.
+
+### "Branch doesn't exist yet" when opening in CLI
+
+Remote sessions can create branches that don't exist on your local machine. Click the branch name in the session toolbar to copy it, then fetch it locally:
+
+```bash  theme={null}
+git fetch origin <branch-name>
+git checkout <branch-name>
+```
+
+### "Failed to load session" error
+
+This error can occur for several reasons:
+
+* The selected folder no longer exists or is inaccessible
+* A Git repository requires Git LFS but it's not installed (see [Git LFS errors](#git-lfs-errors))
+* File permissions prevent access to the project directory
+
+Try selecting a different folder or restarting the desktop app.
+
+### App won't quit
+
+If the desktop app doesn't close properly:
+
+* **macOS**: Press Cmd+Q. If the app doesn't respond, use Force Quit (Cmd+Option+Esc, select Claude, click Force Quit).
+* **Windows**: Use Task Manager (Ctrl+Shift+Esc) to end the Claude process.
+
+### Windows installation issues
+
+If the installer fails silently or doesn't complete properly:
+
+1. **PATH not updated**: After installation, open a new terminal window. The PATH updates only apply to new terminal sessions.
+2. **Concurrent installation error**: If you see an error about another installation in progress but there isn't one, try running the installer as Administrator.
+
+### Session not finding installed tools
+
+If Claude can't find tools like `npm`, `node`, or other CLI commands:
+
+1. Verify the tools work in your regular terminal
+2. Check that your shell profile (`~/.zshrc`, `~/.bashrc`) properly sets up PATH
+3. Restart the desktop app to reload environment variables
+
+### MCP servers not working (Windows)
+
+If MCP server toggles don't respond or servers fail to connect on Windows:
+
+1. Check that the MCP server is properly configured in your settings
+2. Restart the desktop app after making changes
+3. Verify the MCP server process is running (check Task Manager)
+4. Review the server logs for connection errors
+
+### Git LFS errors
+
+If you see "Git LFS is required by this repository but is not installed," your repository uses Git Large File Storage for large binary files. Install Git LFS before opening this repository:
+
+1. Install Git LFS from [git-lfs.com](https://git-lfs.com/)
+2. Run `git lfs install` in your terminal
+3. Restart the desktop app
+
+## Enterprise configuration
+
+Organizations can disable local Claude Code use in the desktop application with the `isClaudeCodeForDesktopEnabled` [enterprise policy option](../13-Enterprise-Admin/enterprise-configuration.md#h_003283c7cb). Additionally, Claude Code on the web can be disabled in your [admin settings](https://claude.ai/admin-settings/claude-code).
+
+## Related resources
+
+* [Claude Code on the web](/en/claude-code-on-the-web): Run remote sessions that continue in the cloud
+* [CLI reference](/en/cli-reference): Use Claude Code in your terminal with flags and scripting
+* [Common workflows](/en/common-workflows): Tutorials for debugging, refactoring, testing, and more
+* [Settings reference](/en/settings): Configure Claude Code behavior with settings files
+* [Claude Desktop support](https://support.claude.com/en/collections/16163169-claude-desktop): Help articles for the Chat tab and general desktop app usage
+* [Enterprise configuration](../13-Enterprise-Admin/enterprise-configuration.md): Admin policies for organizational deployments
+
+
+---
+## github-enterprise-server.md
+
+# Claude Code with GitHub Enterprise Server
+
+> Connect Claude Code to your self-hosted GitHub Enterprise Server instance for web sessions, code review, and plugin marketplaces.
+
+<Note>
+  GitHub Enterprise Server support is available for Team and Enterprise plans.
+</Note>
+
+GitHub Enterprise Server (GHES) support lets your organization use Claude Code with repositories hosted on your self-managed GitHub instance instead of github.com. Once an admin connects your GHES instance, developers can run web sessions, get automated code reviews, and install plugins from internal marketplaces without any per-repository configuration.
+
+For repositories on github.com, see [Claude Code on the web](/en/claude-code-on-the-web) and [Code Review](../02-Claude-Code-CLI/code-review.md). To run Claude in your own CI infrastructure, see [GitHub Actions](/en/github-actions).
+
+## What works with GitHub Enterprise Server
+
+The table below shows which Claude Code features support GHES and any differences from github.com behavior.
+
+| Feature                | GHES support    | Notes                                                                                                                        |
+| :--------------------- | :-------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| Claude Code on the web | Supported     | Admin connects the GHES instance once; developers use `claude --remote` or [claude.ai/code](https://claude.ai/code) as usual |
+| Code Review            | Supported     | Same automated PR reviews as github.com                                                                                      |
+| Teleport sessions      | Supported     | Move sessions between web and terminal with `--teleport`                                                                     |
+| Plugin marketplaces    | Supported     | Use full git URLs instead of `owner/repo` shorthand                                                                          |
+| Contribution metrics   | Supported     | Delivered via webhooks to the [analytics dashboard](/en/analytics)                                                           |
+| GitHub Actions         | Supported     | Requires manual workflow setup; `/install-github-app` is github.com only                                                     |
+| GitHub MCP server      | Not supported | The GitHub MCP server does not work with GHES instances                                                                      |
+
+## Admin setup
+
+An admin connects your GHES instance to Claude Code once. After that, developers in your organization can use GHES repositories without any additional configuration. You need admin access to your Claude organization and permission to create GitHub Apps on your GHES instance.
+
+The guided setup generates a GitHub App manifest and redirects you to your GHES instance to create the app in one click. If your environment blocks the redirect flow, an [alternative manual setup](#manual-setup) is available.
+
+### Step 1: Open Claude Code admin settings
+
+Go to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and find the GitHub Enterprise Server section.
+
+### Step 2: Start the guided setup
+
+Click **Connect**. Enter a display name for the connection and your GHES hostname, for example `github.example.com`. If your GHES instance uses a self-signed or private certificate authority, paste the CA certificate in the optional field.
+
+### Step 3: Create the GitHub App
+
+Click **Continue to GitHub Enterprise**. Your browser redirects to your GHES instance with a pre-filled app manifest. Review the configuration and click **Create GitHub App**. GHES redirects you back to Claude with the app credentials stored automatically.
+
+### Step 4: Install the app on your repositories
+
+From the GitHub App page on your GHES instance, install the app on the repositories or organizations you want Claude to access. You can start with a subset and add more later.
+
+### Step 5: Enable features
+
+Return to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enable [Code Review](/en/code-review#set-up-code-review) and [contribution metrics](/en/analytics#enable-contribution-metrics) for your GHES repositories using the same configuration as github.com.
+
+### GitHub App permissions
+
+The manifest configures the GitHub App with the permissions and webhook events Claude needs across web sessions, Code Review, and contribution metrics:
+
+| Permission       | Access         | Used for                                    |
+| :--------------- | :------------- | :------------------------------------------ |
+| Contents         | Read and write | Cloning repositories and pushing branches   |
+| Pull requests    | Read and write | Creating PRs and posting review comments    |
+| Issues           | Read and write | Responding to issue mentions                |
+| Checks           | Read and write | Posting Code Review check runs              |
+| Actions          | Read           | Reading CI status for auto-fix              |
+| Repository hooks | Read and write | Receiving webhooks for contribution metrics |
+| Metadata         | Read           | Required by GitHub for all apps             |
+
+The app subscribes to `pull_request`, `issue_comment`, `pull_request_review_comment`, `pull_request_review`, and `check_run` events.
+
+### Manual setup
+
+If the guided redirect flow is blocked by your network configuration, click **Add manually** instead of Connect. Create a GitHub App on your GHES instance with the [permissions and events above](#github-app-permissions), then enter the app credentials in the form: hostname, OAuth client ID and secret, GitHub App ID, client ID, client secret, webhook secret, and private key.
+
+### Network requirements
+
+Your GHES instance must be reachable from Anthropic infrastructure so Claude can clone repositories and post review comments. If your GHES instance is behind a firewall, allowlist the [Anthropic API IP addresses](https://platform.claude.com/docs/en/api/ip-addresses).
+
+## Developer workflow
+
+Once your admin has connected the GHES instance, no developer-side configuration is needed. Claude Code detects your GHES hostname automatically from the git remote in your working directory.
+
+Clone a repository from your GHES instance as you normally would:
+
+```bash
+git clone git@github.example.com:platform/api-service.git
+cd api-service
+```
+
+Then start a web session. Claude detects the GHES host from your git remote and routes the session through your organization's configured instance:
+
+```bash
+claude --remote "Add retry logic to the payment webhook handler"
+```
+
+The session runs on Anthropic infrastructure, clones your repository from GHES, and pushes changes back to a branch. Monitor progress with `/tasks` or at [claude.ai/code](https://claude.ai/code). See [Claude Code on the web](/en/claude-code-on-the-web) for the full remote session workflow including diff review, auto-fix, and scheduled tasks.
+
+### Teleport sessions to your terminal
+
+Pull a web session into your local terminal with `claude --teleport`. Teleport verifies you're in a checkout of the same GHES repository before fetching the branch and loading the session history. See [teleport requirements](/en/claude-code-on-the-web#teleport-requirements) for details.
+
+## Plugin marketplaces on GHES
+
+Host plugin marketplaces on your GHES instance to distribute internal tooling across your organization. The marketplace structure is identical to github.com-hosted marketplaces; the only difference is how you reference them.
+
+### Add a GHES marketplace
+
+The `owner/repo` shorthand always resolves to github.com. For GHES-hosted marketplaces, use the full git URL:
+
+```bash
+/plugin marketplace add git@github.example.com:platform/claude-plugins.git
+```
+
+HTTPS URLs work as well:
+
+```bash
+/plugin marketplace add https://github.example.com/platform/claude-plugins.git
+```
+
+See [Create and distribute a plugin marketplace](/en/plugin-marketplaces) for the full guide to building marketplaces.
+
+### Allowlist GHES marketplaces in managed settings
+
+If your organization uses [managed settings](/en/settings) to restrict which marketplaces developers can add, use the `hostPattern` source type to allow all marketplaces from your GHES instance without enumerating each repository:
+
+```json
+{
+  "strictKnownMarketplaces": [
+    {
+      "source": "hostPattern",
+      "hostPattern": "^github\\.example\\.com$"
+    }
+  ]
+}
+```
+
+You can also pre-register marketplaces for developers so they appear without manual setup. This example makes an internal tools marketplace available organization-wide:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "internal-tools": {
+      "source": {
+        "source": "git",
+        "url": "git@github.example.com:platform/claude-plugins.git"
+      }
+    }
+  }
+}
+```
+
+See the [strictKnownMarketplaces](/en/settings#strictknownmarketplaces) and [extraKnownMarketplaces](/en/settings#extraknownmarketplaces) settings reference for the complete schema.
+
+## Limitations
+
+A few features behave differently on GHES than on github.com. The [feature table](#what-works-with-github-enterprise-server) summarizes support; this section covers the workarounds.
+
+* **`/install-github-app` command**: follow the [admin setup](#admin-setup) flow on claude.ai instead. If you also want GitHub Actions workflows on GHES, adapt the [example workflow](https://github.com/anthropics/claude-code-action/blob/main/examples/claude.yml) manually.
+* **GitHub MCP server**: use the `gh` CLI configured for your GHES host instead. Run `gh auth login --hostname github.example.com` to authenticate, then Claude can use `gh` commands in sessions.
+
+## Troubleshooting
+
+### Web session fails to clone repository
+
+If `claude --remote` fails with a clone error, verify that your admin has completed setup for your GHES instance and that the GitHub App is installed on the repository you're working in. Check with your admin that the instance hostname registered in Claude settings matches the hostname in your git remote.
+
+### Marketplace add fails with a policy error
+
+If `/plugin marketplace add` is blocked for your GHES URL, your organization has restricted marketplace sources. Ask your admin to add a `hostPattern` entry for your GHES hostname in [managed settings](#allowlist-ghes-marketplaces-in-managed-settings).
+
+### GHES instance not reachable
+
+If reviews or web sessions time out, your GHES instance may not be reachable from Anthropic infrastructure. Confirm your firewall allows inbound connections from the [Anthropic API IP addresses](https://platform.claude.com/docs/en/api/ip-addresses).
+
+## Related resources
+
+These pages cover the features referenced throughout this guide in more depth:
+
+* [Claude Code on the web](/en/claude-code-on-the-web): run Claude Code sessions on cloud infrastructure
+* [Code Review](../02-Claude-Code-CLI/code-review.md): automated PR reviews
+* [Plugin marketplaces](/en/plugin-marketplaces): build and distribute plugin catalogs
+* [Analytics](/en/analytics): track usage and contribution metrics
+* [Managed settings](/en/settings): organization-wide policy configuration
+* [Network configuration](../02-Claude-Code-CLI/enterprise-network-configuration-claude-code-docs.md): firewall and IP allowlist requirements
+
+
+---
+## jetbrains.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# JetBrains IDEs
+
+> Use Claude Code with JetBrains IDEs including IntelliJ, PyCharm, WebStorm, and more
+
+Claude Code integrates with JetBrains IDEs through a dedicated plugin, providing features like interactive diff viewing, selection context sharing, and more.
+
+## Supported IDEs
+
+The Claude Code plugin works with most JetBrains IDEs, including:
+
+* IntelliJ IDEA
+* PyCharm
+* Android Studio
+* WebStorm
+* PhpStorm
+* GoLand
+
+## Features
+
+* **Quick launch**: Use `Cmd+Esc` (Mac) or `Ctrl+Esc` (Windows/Linux) to open Claude Code directly from your editor, or click the Claude Code button in the UI
+* **Diff viewing**: Code changes can be displayed directly in the IDE diff viewer instead of the terminal
+* **Selection context**: The current selection/tab in the IDE is automatically shared with Claude Code
+* **File reference shortcuts**: Use `Cmd+Option+K` (Mac) or `Alt+Ctrl+K` (Linux/Windows) to insert file references (for example, @File#L1-99)
+* **Diagnostic sharing**: Diagnostic errors (lint, syntax, etc.) from the IDE are automatically shared with Claude as you work
+
+## Installation
+
+### Marketplace Installation
+
+Find and install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains marketplace and restart your IDE.
+
+If you haven't installed Claude Code yet, see [our quickstart guide](/en/quickstart) for installation instructions.
+
+<Note>
+  After installing the plugin, you may need to restart your IDE completely for it to take effect.
+</Note>
+
+## Usage
+
+### From Your IDE
+
+Run `claude` from your IDE's integrated terminal, and all integration features will be active.
+
+### From External Terminals
+
+Use the `/ide` command in any external terminal to connect Claude Code to your JetBrains IDE and activate all features:
+
+```bash  theme={null}
+claude
+> /ide
+```
+
+If you want Claude to have access to the same files as your IDE, start Claude Code from the same directory as your IDE project root.
+
+## Configuration
+
+### Claude Code Settings
+
+Configure IDE integration through Claude Code's settings:
+
+1. Run `claude`
+2. Enter the `/config` command
+3. Set the diff tool to `auto` for automatic IDE detection
+
+### Plugin Settings
+
+Configure the Claude Code plugin by going to **Settings → Tools → Claude Code \[Beta]**:
+
+#### General Settings
+
+* **Claude command**: Specify a custom command to run Claude (for example, `claude`, `/usr/local/bin/claude`, or `npx @anthropic/claude`)
+* **Suppress notification for Claude command not found**: Skip notifications about not finding the Claude command
+* **Enable using Option+Enter for multi-line prompts** (macOS only): When enabled, Option+Enter inserts new lines in Claude Code prompts. Disable if experiencing issues with the Option key being captured unexpectedly (requires terminal restart)
+* **Enable automatic updates**: Automatically check for and install plugin updates (applied on restart)
+
+<Tip>
+  For WSL users: Set `wsl -d Ubuntu -- bash -lic "claude"` as your Claude command (replace `Ubuntu` with your WSL distribution name)
+</Tip>
+
+#### ESC Key Configuration
+
+If the ESC key doesn't interrupt Claude Code operations in JetBrains terminals:
+
+1. Go to **Settings → Tools → Terminal**
+2. Either:
+   * Uncheck "Move focus to the editor with Escape", or
+   * Click "Configure terminal keybindings" and delete the "Switch focus to Editor" shortcut
+3. Apply the changes
+
+This allows the ESC key to properly interrupt Claude Code operations.
+
+## Special Configurations
+
+### Remote Development
+
+<Warning>
+  When using JetBrains Remote Development, you must install the plugin in the remote host via **Settings → Plugin (Host)**.
+</Warning>
+
+The plugin must be installed on the remote host, not on your local client machine.
+
+### WSL Configuration
+
+<Warning>
+  WSL users may need additional configuration for IDE detection to work properly. See our [WSL troubleshooting guide](/en/troubleshooting#jetbrains-ide-not-detected-on-wsl2) for detailed setup instructions.
+</Warning>
+
+WSL configuration may require:
+
+* Proper terminal configuration
+* Networking mode adjustments
+* Firewall settings updates
+
+## Troubleshooting
+
+### Plugin Not Working
+
+* Ensure you're running Claude Code from the project root directory
+* Check that the JetBrains plugin is enabled in the IDE settings
+* Completely restart the IDE (you may need to do this multiple times)
+* For Remote Development, ensure the plugin is installed in the remote host
+
+### IDE Not Detected
+
+* Verify the plugin is installed and enabled
+* Restart the IDE completely
+* Check that you're running Claude Code from the integrated terminal
+* For WSL users, see the [WSL troubleshooting guide](/en/troubleshooting#jetbrains-ide-not-detected-on-wsl2)
+
+### Command Not Found
+
+If clicking the Claude icon shows "command not found":
+
+1. Verify Claude Code is installed: `npm list -g @anthropic-ai/claude-code`
+2. Configure the Claude command path in plugin settings
+3. For WSL users, use the WSL command format mentioned in the configuration section
+
+## Security Considerations
+
+When Claude Code runs in a JetBrains IDE with auto-edit permissions enabled, it may be able to modify IDE configuration files that can be automatically executed by your IDE. This may increase the risk of running Claude Code in auto-edit mode and allow bypassing Claude Code's permission prompts for bash execution.
+
+When running in JetBrains IDEs, consider:
+
+* Using manual approval mode for edits
+* Taking extra care to ensure Claude is only used with trusted prompts
+* Being aware of which files Claude Code has access to modify
+
+For additional help, see our [troubleshooting guide](/en/troubleshooting).
+
+
+---
+## resources-tutorials-simplify-your-browsing-experience-with-claude-for-chrome.md
+
+<!-- Source: https://claude.com/resources/tutorials/simplify-your-browsing-experience-with-claude-for-chrome -->
+
+:root {
+ --grid-breakout: [full-start] minmax(0, 1fr) [content-start] repeat(var(--_grid---column-count), minmax(0, var(--_grid---column-width))) [content-end] minmax(0, 1fr) [full-end];
+ --grid-breakout-single: [full-start] minmax(0, 1fr) [content-start] minmax(0, calc(100% - var(--site--margin) * 2)) [content-end] minmax(0, 1fr) [full-end];
+ }
+ ::before, ::after {
+ box-sizing: border-box;
+ }
+ .w-embed:before, .w-embed:after,
+ .w-richtext:before, .w-richtext:after {
+ content: unset;
+ }
+ html {
+ background-color: var(--_theme---background);
+ }
+ button {
+ background-color: unset;
+ padding: unset;
+ text-align: inherit;
+ }
+ button:not(:disabled) {
+ cursor: pointer;
+ }
+ video {
+ width: 100%;
+ object-fit: cover;
+ }
+ /* remove padding of empty element */
+ .wf-empty {
+ padding: 0;
+ }
+ svg {
+ max-width: 100%;
+ }
+ @media (prefers-color-scheme: light) {
+ option { color: black; }
+ }
+ img::selection {
+ background: transparent;
+ }
+ /* Typography */
+ body {
+ text-transform: var(--_text-style---text-transform);
+ font-smoothing: antialiased;
+ -webkit-font-smoothing: antialiased;
+ }
+
+ /* Clear Defaults */
+ a:not ([class]) {
+ text-decoration: underline;} 
+
+ [class~="u-rich-text"] a,
+ [class~="u-rich-text-cs"] a,
+ [class~="u-rich-text-blog"] a,
+ [class~="u-rich-text-tutorials"] a,
+ a.u-rich-text,
+ [class~="command_instruction"] a {
+ transition: color .15s ease-out, text-decoration-color .15s ease-out;
+ text-underline-offset: 3px;
+ text-decoration: underline;
+ color: currentcolor;
+ text-decoration-color: var(--_theme---border-primary);
+ }
+
+ [class~="u-rich-text"] a:hover,
+ [class~="u-rich-text-cs"] a:hover,
+ [class~="u-rich-text-blog"] a:hover,
+ [class~="u-rich-text-tutorials"] a:hover,
+ a.u-rich-text:hover,
+ [class~="command_instruction"] a:hover {
+ text-decoration-color: var(--_theme---foreground-primary);
+ color: var(--_theme---foreground-primary);
+ }
+
+ h1,h2,h3,h4,h5,h6,p,blockquote,label {
+ font-family: inherit;
+ font-size: inherit;
+ font-weight: inherit;
+ line-height: inherit;
+ letter-spacing: inherit;
+ text-transform: inherit;
+ text-wrap: inherit;
+ margin-top: 0;
+ margin-bottom: 0;
+ }
+ select:has(option[value=""]:checked) {
+ color: color-mix(in lab, currentcolor 60%, transparent)
+ }
+ /* Selection Color */
+ ::selection {
+ background-color: var(--_theme---selection--background);
+ color: var(--_theme---selection--text);
+ }
+ /* Margin Trim */
+ :is(.u-margin-trim,.u-rich-text) > :not(:not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim) ~ :not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim)),
+ :is(.u-margin-trim,.u-rich-text) > :not(:not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim) ~ :not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim)).u-display-contents > :first-child {
+ margin-top: 0;
+ }
+ :is(.u-margin-trim,.u-rich-text) > :not(:has(~ :not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim))),
+ :is(.u-margin-trim,.u-rich-text) > :not(:has(~ :not(.w-condition-invisible,.u-cover-absolute,.u-ignore-trim))).u-display-contents > :last-child {
+ margin-bottom: 0;
+ }
+ /* Line Height Trim */
+ :is(h1,h2,h3,h4,h5,h6,p):not(.u-text-trim-off,:has([class*="u-text-style-"]))::before,
+ [class*="u-text-style-"]:not(.u-text-trim-off,:has(h1,h2,h3,h4,h5,h6,p))::before {
+ content: "";
+ display: table;
+ margin-bottom: calc(-0.5lh + var(--_text-style---trim-top));
+ }
+ :is(h1,h2,h3,h4,h5,h6,p):not(.u-text-trim-off,:has([class*="u-text-style-"]))::after,
+ [class*="u-text-style-"]:not(.u-text-trim-off,:has(h1,h2,h3,h4,h5,h6,p))::after {
+ content: "";
+ display: table;
+ margin-bottom: calc(-0.5lh + var(--_text-style---trim-bottom));
+ }
+ /* Rich Text Links */
+ .w-richtext a {
+ position: relative;
+ z-index: 4;
+ }
+ /* Line Clamp */
+ .u-line-clamp-1, .u-line-clamp-2, .u-line-clamp-3, .u-line-clamp-4 {
+ -webkit-line-clamp: 1;
+ -webkit-box-orient: vertical;
+ }
+ .u-line-clamp-2 { -webkit-line-clamp: 2; }
+ .u-line-clamp-3 { -webkit-line-clamp: 3; }
+ .u-line-clamp-4 { -webkit-line-clamp: 4; }
+ /* Child Contain */
+ .u-child-contain > * {
+ width: 100%;
+ max-width: inherit !important;
+ margin-inline: 0 !important;
+ margin-top: 0 !important;
+ }
+ /* Hide */
+ .u-hide-if-empty:empty,
+ .u-hide-if-empty:not(:has(> :not(.w-condition-invisible))),
+ .u-hide-if-empty-cms:not(:has(.w-dyn-item)),
+ .u-embed-js,
+ .u-embed-css {
+ display: none !important;
+ }
+ /* Focus State */
+ a, button, :where([tabindex]), [data-outline] {
+ outline-offset: var(--focus--offset-outer);
+ }
+ a:focus-visible,
+ button:focus-visible,
+ [tabindex]:focus-visible,
+ label:has(input:focus-visible) [data-outline] {
+ outline-color: color-mix(in srgb, var(--_button-style---border) 50%, transparent);
+ outline-width: var(--focus--width);
+ outline-style: solid;
+ }
+
+ /* Global / Clickable Component */
+ .wf-design-mode .clickable_wrap {
+ z-index: 0;
+ }
+ .clickable_wrap a[href="#"] {
+ display: none;
+ }
+ .clickable_wrap a[href="#"] ~ button {
+ display: block;
+ }
+ /* Responsive Above */
+ @container threshold-large (width >= 62em) {
+ .u-order-unset-above { order: unset !important; }
+ .u-all-unset-above { all: unset !important; }
+ .u-grid-below { display: flex !important; }
+ .u-max-width-unset-above { max-width: unset !important; }
+ .u-width-unset-above { width: unset !important; }
+ .u-hide-above { display: none !important; }
+ }
+ @container threshold-medium (width >= 48em) {
+ .u-order-unset-above { order: unset !important; }
+ .u-all-unset-above { all: unset !important; }
+ .u-grid-below { display: flex !important; }
+ .u-max-width-unset-above { max-width: unset !important; }
+ .u-width-unset-above { width: unset !important; }
+ .u-hide-above { display: none !important; }
+ }
+ @container threshold-small (width >= 30em) {
+ .u-order-unset-above { order: unset !important; }
+ .u-all-unset-above { all: unset !important; }
+ .u-grid-below { display: flex !important; }
+ .u-max-width-unset-above { max-width: unset !important; }
+ .u-width-unset-above { width: unset !important; }
+ .u-hide-above { display: none !important; }
+ }
+ /* Responsive Below */
+ @container threshold-large (width < 62em) {
+ .u-order-unset-below { order: unset !important; }
+ .u-all-unset-below { all: unset !important; }
+ .u-grid-above { display: flex !important; }
+ .u-max-width-unset-below { max-width: unset !important; }
+ .u-width-unset-below { width: unset !important; }
+ .u-alignment-unset-below {
+ --_alignment---direction: start;
+ align-self: start;
+ }
+ .u-hide-below { display: none !important; }
+ }
+ @container threshold-medium (width < 48em) {
+ .u-order-unset-below { order: unset !important; }
+ .u-all-unset-below { all: unset !important; }
+ .u-grid-above { display: flex !important; }
+ .u-max-width-unset-below { max-width: unset !important; }
+ .u-width-unset-below { width: unset !important; }
+ .u-alignment-unset-below {
+ --_alignment---direction: start;
+ align-self: start;
+ }
+ .u-hide-below { display: none !important; }
+ }
+ @container threshold-small (width < 30em) {
+ .u-order-unset-below { order: unset !important; }
+ .u-all-unset-below { all: unset !important; }
+ .u-grid-above { display: flex !important; }
+ .u-max-width-unset-below { max-width: unset !important; }
+ .u-width-unset-below { width: unset !important; }
+ .u-alignment-unset-below {
+ --_alignment---direction: start;
+ align-self: start;
+ }
+ .u-hide-below { display: none !important; }
+ }
+ /* Form Radio */
+ .form_main_radio_label:has(input:checked) .form_main_radio_circle_inner {
+ opacity: 1;
+ }
+ /* Form Checkbox */
+ .form_main_checkbox_label:has(input:checked) .form_main_checkbox_box {
+ background-color: currentColor;
+ border-color: currentColor;
+ }
+ .form_main_checkbox_label:has(input:checked) .form_main_checkbox_icon {
+ opacity: 1;
+ }
+ /* State Manager */
+ [data-state] { --_state---true: 1; --_state---false: 0; }
+ .is-active,
+ [data-state~="checked"]:is(:checked, :has(:checked)),
+ [data-state~="current"]:is(.w--current, :has(.w--current)),
+ [data-state~="open"]:is(.w--open, :has(.w--open)),
+ [data-state~="expanded"]:is([aria-expanded="true"], :has([aria-expanded="true"])),
+ [data-state~="external"]:is([target="_blank"], :has([target="_blank"])) { 
+ --_state---true: 0; --_state---false: 1;
+ }
+ .wf-design-mode [data-trigger~="preview"],
+ [data-trigger~="focus"]:is(:focus-visible, :has(:focus-visible)),
+ [data-trigger~="group"]:has([data-trigger~="focus-other"]:focus-visible, [data-trigger~="focus-other"] :focus-visible)
+ [data-trigger~="focus-other"]:not(:focus-visible, :has(:focus-visible)) {
+ --_trigger---on: 0; --_trigger---off: 1;
+ }
+ @media (hover: hover) {
+ [data-button]:hover,
+ [data-trigger~="hover"]:is(a:hover,button:hover,:has(a:hover,button:hover)),
+ [data-trigger~="group"]:has([data-trigger~="hover-other"]:hover) [data-trigger~="hover-other"]:not(:hover) { 
+ --_trigger---on: 0; --_trigger---off: 1;
+ }
+ [data-trigger~="hover-other"]:hover { --_trigger---on: 1 !important; --_trigger---off: 0 !important; }
+ }
+ @media (hover: none) {
+ [data-trigger~="mobile"] { --_trigger---on: 0; --_trigger---off: 1; }
+ }
+
+ code, kbd, pre, samp {
+ font-family: var(--_typography---font--mono-family);
+ }
+ body * {
+ scrollbar-width: none; /* Firefox */
+ -ms-overflow-style: none; /* IE/Edge Legacy */
+ }
+ body *::-webkit-scrollbar {
+ display: none; /* Unreliable */
+ width: 0px; /* WebKit/Blink */
+ }
+
+ @media (prefers-color-scheme: dark) {
+ body,
+ .u-theme-ivory,
+ [data-wf--section--theme="ivory"] {
+ --_theme---background-primary: var(--swatch--gray-950);
+ --_theme---background-secondary: var(--swatch--gray-900);
+ --_theme---background-tertiary: var(--swatch--gray-850);
+ --_theme---border-primary: var(--swatch--gray-600);
+ --_theme---border-secondary: var(--swatch--gray-700);
+ --_theme---border-tertiary: var(--swatch--gray-750);
+ --_theme---foreground-primary: var(--swatch--gray-050);
+ --_theme---foreground-secondary: var(--swatch--gray-400);
+ --_theme---foreground-tertiary: var(--swatch--gray-500);
+ --_theme---pictogram-accent: var(--swatch--gray-750);
+ --_theme---button-primary--background: var(--swatch--gray-050);
+ --_theme---button-primary--text: var(--swatch--gray-950);
+ --_theme---button-primary--border: var(--swatch--transparent);
+ --_theme---button-primary--icon: var(--_theme---button-primary--text);
+ --_theme---button-primary--background-hover: var(--_theme---button-primary--background);
+ --_theme---button-primary--text-hover: var(--_theme---button-primary--text);
+ --_theme---button-primary--border-hover: var(--_theme---button-primary--border);
+ --_theme---button-primary--icon-hover: var(--_theme---background-primary);
+ --_theme---button-secondary--background: var(--swatch--gray-750);
+ --_theme---button-secondary--text: var(--swatch--gray-050);
+ --_theme---button-secondary--border: var(--_theme---border-secondary);
+ --_theme---button-secondary--icon: var(--_theme---button-secondary--text);
+ --_theme---button-secondary--background-hover: var(--_theme---button-secondary--background);
+ --_theme---button-secondary--text-hover: var(--_theme---button-secondary--text);
+ --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background);
+ --_theme---button-secondary--icon-hover: var(--_theme---foreground-secondary);
+ --_theme---button-tertiary--background: var(--_theme---background-primary);
+ --_theme---button-tertiary--text: var(--swatch--gray-050);
+ --_theme---button-tertiary--border: var(--_theme---border-secondary);
+ --_theme---button-tertiary--icon: var(--_theme---button-tertiary--text);
+ --_theme---button-tertiary--background-hover: var(--_theme---button-tertiary--background);
+ --_theme---button-tertiary--text-hover: var(--_theme---button-tertiary--text);
+ --_theme---button-tertiary--border-hover: var(--_theme---button-tertiary--border);
+ --_theme---button-tertiary--icon-hover: var(--_theme---foreground-primary);
+ --_theme---error-text: #df6666;
+ --_theme---heroes-accent: #C46849;
+ --_theme---white: var(--_theme---background-primary);
+ }
+ .u-theme-white,
+ [data-wf--section--theme="white"] {
+ --_theme---background-primary: var(--swatch--gray-850);
+ --_theme---background-secondary: var(--swatch--gray-800);
+ --_theme---background-tertiary: var(--swatch--gray-750);
+ --_theme---border-primary: var(--swatch--gray-550);
+ --_theme---border-secondary: var(--swatch--gray-650);
+ --_theme---border-tertiary: var(--swatch--gray-700);
+ --_theme---foreground-primary: var(--swatch--gray-050);
+ --_theme---foreground-secondary: var(--swatch--gray-350);
+ --_theme---foreground-tertiary: var(--swatch--gray-450);
+ --_theme---pictogram-accent: var(--swatch--gray-700);
+ --_theme---button-primary--background: var(--swatch--gray-050);
+ --_theme---button-primary--text: var(--swatch--gray-950);
+ --_theme---button-primary--border: var(--swatch--transparent);
+ --_theme---button-primary--icon: var(--_theme---button-primary--text);
+ --_theme---button-primary--background-hover: var(--_theme---button-primary--background);
+ --_theme---button-primary--text-hover: var(--_theme---button-primary--text);
+ --_theme---button-primary--border-hover: var(--_theme---button-primary--border);
+ --_theme---button-primary--icon-hover: var(--_theme---background-primary);
+ --_theme---button-secondary--background: var(--swatch--gray-700);
+ --_theme---button-secondary--text: var(--swatch--gray-050);
+ --_theme---button-secondary--border: var(--_theme---border-secondary);
+ --_theme---button-secondary--icon: var(--_theme---button-secondary--text);
+ --_theme---button-secondary--background-hover: var(--_theme---button-secondary--background);
+ --_theme---button-secondary--text-hover: var(--_theme---button-secondary--text);
+ --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background);
+ --_theme---button-secondary--icon-hover: var(--_theme---foreground-secondary);
+ --_theme---button-tertiary--background: var(--_theme---background-primary);
+ --_theme---button-tertiary--text: var(--swatch--gray-050);
+ --_theme---button-tertiary--border: var(--_theme---border-secondary);
+ --_theme---button-tertiary--icon: var(--_theme---button-tertiary--text);
+ --_theme---button-tertiary--background-hover: var(--_theme---button-tertiary--background);
+ --_theme---button-tertiary--text-hover: var(--_theme---button-tertiary--text);
+ --_theme---button-tertiary--border-hover: var(--_theme---button-tertiary--border);
+ --_theme---button-tertiary--icon-hover: var(--_theme---foreground-primary);
+ --_theme---error-text: #df6666;
+ --_theme---heroes-accent: #C46849;
+ --_theme---white: var(--_theme---background-primary);
+ }
+ .u-theme-neutral-1,
+ [data-wf--section--theme="neutral-1"] {
+ --_theme---background-primary: var(--swatch--gray-800);
+ --_theme---background-secondary: var(--swatch--gray-750);
+ --_theme---background-tertiary: var(--swatch--gray-700);
+ --_theme---border-primary: var(--swatch--gray-500);
+ --_theme---border-secondary: var(--swatch--gray-600);
+ --_theme---border-tertiary: var(--swatch--gray-650);
+ --_theme---foreground-primary: var(--swatch--gray-050);
+ --_theme---foreground-secondary: var(--swatch--gray-300);
+ --_theme---foreground-tertiary: var(--swatch--gray-400);
+ --_theme---pictogram-accent: var(--swatch--gray-650);
+ --_theme---button-primary--background: var(--swatch--gray-050);
+ --_theme---button-primary--text: var(--swatch--gray-950);
+ --_theme---button-primary--border: var(--swatch--transparent);
+ --_theme---button-primary--icon: var(--_theme---button-primary--text);
+ --_theme---button-primary--background-hover: var(--_theme---button-primary--background);
+ --_theme---button-primary--text-hover: var(--_theme---button-primary--text);
+ --_theme---button-primary--border-hover: var(--_theme---button-primary--border);
+ --_theme---button-primary--icon-hover: var(--_theme---background-primary);
+ --_theme---button-secondary--background: var(--swatch--gray-650);
+ --_theme---button-secondary--text: var(--swatch--gray-050);
+ --_theme---button-secondary--border: var(--_theme---border-secondary);
+ --_theme---button-secondary--icon: var(--_theme---button-secondary--text);
+ --_theme---button-secondary--background-hover: var(--_theme---button-secondary--background);
+ --_theme---button-secondary--text-hover: var(--_theme---button-secondary--text);
+ --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background);
+ --_theme---button-secondary--icon-hover: var(--_theme---foreground-secondary);
+ --_theme---button-tertiary--background: var(--_theme---background-primary);
+ --_theme---button-tertiary--text: var(--swatch--gray-050);
+ --_theme---button-tertiary--border: var(--_theme---border-secondary);
+ --_theme---button-tertiary--icon: var(--_theme---button-tertiary--text);
+ --_theme---button-tertiary--background-hover: var(--_theme---button-tertiary--background);
+ --_theme---button-tertiary--text-hover: var(--_theme---button-tertiary--text);
+ --_theme---button-tertiary--border-hover: var(--_theme---button-tertiary--border);
+ --_theme---button-tertiary--icon-hover: var(--_theme---foreground-primary);
+ --_theme---error-text: #df6666;
+ --_theme---heroes-accent: #C46849;
+ --_theme---white: var(--_theme---background-primary);
+ }
+
+ .logo_light {
+ display: none;
+ }
+ .logo_dark {
+ display: block;
+ }
+ .illustration_light {
+ display: none;
+ }
+ .illustration_dark {
+ display: block;
+ }
+
+ }
+
+ @media (prefers-color-scheme: light) {
+ .logo_light {
+ display: block;
+ }
+ .logo_dark {
+ display: none;
+ }
+ .illustration_light {
+ display: block;
+ }
+ .illustration_dark {
+ display: none;
+ }
+ }
+
+ .u-text-font-mono {
+ --_text-style---trim-top: var(--_typography---font--mono-text-trim-top);
+ --_text-style---trim-bottom: var(--_typography---font--mono-text-trim-bottom);
+ }
+
+ .u-checklist ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ }
+
+ .u-checklist ul li {
+ position: relative; 
+ padding-left: 2rem; 
+ }
+
+ .u-checklist ul li::before {
+ content: ""; 
+ position: absolute;
+ left: 0;
+ top: 0.1em;
+ width: 1.5rem;
+ height: 1.5rem;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: contain;
+ background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M18.226%206.13068C18.4439%205.95655%2018.7615%205.95361%2018.9842%206.13888C19.2067%206.32458%2019.2604%206.63728%2019.1283%206.88304L19.0604%206.98382L10.0602%2017.784C9.95233%2017.9133%209.7949%2017.9908%209.62665%2017.9984C9.45844%2018.0059%209.29454%2017.9429%209.17547%2017.8238L4.97541%2013.6237L4.89806%2013.53C4.7446%2013.2971%204.7705%2012.9802%204.97541%2012.7753C5.18032%2012.5704%205.49726%2012.5445%205.73011%2012.698L5.82386%2012.7753L9.55868%2016.5101L18.1393%206.21506L18.226%206.13068Z%22%20fill%3D%22%235E5D59%22/%3E%3C/svg%3E");
+ }
+
+ [class^="card_"][class$="_wrap"] .clickable_wrap.u-cover-absolute .clickable_link,
+ [class^="card_"][class$="_wrap"] .clickable_wrap.u-cover-absolute .clickable_btn {
+ outline-offset: var(--focus--offset-inner);
+ }
+
+ textarea[data-autogrow] {
+ overflow-y: hidden;
+ resize: none;
+ height: 1.75rem; 
+ min-height: 0; 
+ }
+
+ .btn_main_wrap::hover,
+ .btn_small_wrap::hover,
+ .btn_tiny_wrap::hover,
+ .button_toggle_wrap::hover,
+ .btn_icon_main_wrap::hover,
+ .btn_icon_small_wrap::hover,
+ .btn_icon_tiny_wrap::hover{
+ transition: /* Transition to click/active */
+ box-shadow ease-in-out 100ms, 
+ background ease-in-out 100ms,
+ color ease-in-out 50ms;
+ }
+
+ .btn_main_wrap::active,
+ .btn_small_wrap::active,
+ .btn_tiny_wrap::active,
+ .button_toggle_wrap::active,
+ .btn_icon_main_wrap::active,
+ .btn_icon_small_wrap::active,
+ .btn_icon_tiny_wrap::active{
+ transition: /* Transition to click/active */
+ box-shadow ease-in-out 50ms, 
+ background ease-in-out 50ms,
+ color ease-in-out 25ms;
+ }
+
+ .card_cs_grid_img img {
+ max-width: 60%;
+ max-height: 60%;
+ }
+
+ @container viewport (width < 30em) {
+ [data-wf--grid--column-count="4"]:has(.card_feature_wrap) .c-grid {
+ --_column-count---value: 1;
+ }
+ }
+ @container viewport (min-width: 30em) and (max-width: 62em) {
+ [data-wf--grid--column-count="4"]:has(.card_feature_wrap) .c-grid {
+ --_column-count---value: 2;
+ }
+ }
+
+ /* Mods for spacing and visibility of embed in accordian content used for schema */
+ .accordion_content_text p:has(+ .w-embed.w-script) {
+ margin-bottom: 0;
+ }
+
+ /* Absolute inner SVG of lottie to prevent page jump */
+ .heroes_lottie_component svg {
+ position: absolute;
+ top: 0;
+ left: 0;
+ }
+
+ /* Sticky scroll */
+ @media screen and (min-width: 992px) {
+ .sticky_image_link_wrap:has(.sticky_image_link.w--current) {
+ opacity: 1;
+ width: calc((100% - var(--_grid---gutter)) * (6 / 12));
+ }
+ }
+ @media screen and (max-width: 767px) {
+ .c-grid:last-child .sticky_image_block,
+ .sticky_image_block:last-child {
+ padding: 0;
+ }
+ .c-grid:last-child .sticky_image_wrap {
+ margin-bottom: 0;
+ }
+ }
+
+ #send, #threads, #get-help, #collaborate {
+ display: block; /* or grid, flex - anything but contents */
+ }
+
+ /* Select text below clickable overlay */
+ html.wf-design-mode .clickable_wrap {
+ pointer-events: none;
+ }
+
+ document.addEventListener("DOMContentLoaded", function () {
+ // ---------------- Config ----------------
+ const EDGE_PADDING = 16; // >= 1rem from edges
+ const OFFSET_Y = 10; // gap under trigger
+ const DIM_OPACITY = 0.3;
+ const DIM_EASE_MS = 350;
+ const CLOSE_DELAY = 120;
+ const isCoarse = () => matchMedia("(hover: none), (pointer: coarse)").matches;
+
+ // ---------------- Bubble (single instance) ----------------
+ function ensureBubble(){
+ let el = document.querySelector(".tt-bubble");
+ if (el) return el;
+ el = document.createElement("div");
+ el.className = "tt-bubble u-theme-white";
+ el.setAttribute("role","tooltip");
+ el.setAttribute("aria-hidden","true");
+ el.style.left = "0px";
+ el.style.top = "0px";
+ el.innerHTML = `
+ <div class="tt-inner">
+ <div class="tt-h" id="tt-title"></div>
+ <p class="tt-b" id="tt-body"></p>
+ <button type="button" class="tt-close" aria-label="Close">×</button>
+ </div>`;
+ document.body.appendChild(el);
+ return el;
+ }
+ const bubble = ensureBubble();
+ const elH = bubble.querySelector("#tt-title");
+ const elB = bubble.querySelector("#tt-body");
+ const elClose = bubble.querySelector(".tt-close");
+
+ // ---------------- Parse [[term|heading|body]] anywhere ----------------
+ const TOKEN_RE = /\[\[([^|\]]+)\|([^|\]]+)\|([^\]]+)\]\]/g;
+ const BLOCK_SKIP = new Set(["SCRIPT","STYLE","NOSCRIPT","TEXTAREA","INPUT","SELECT","CODE","PRE","TEMPLATE","IFRAME"]);
+ function shouldSkipTextNode(n){
+ let el = n.parentElement;
+ while (el){
+ if (BLOCK_SKIP.has(el.tagName) || el.isContentEditable) return true;
+ el = el.parentElement;
+ }
+ return false;
+ }
+ const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+ const textNodes = [];
+ while (walker.nextNode()){
+ const n = walker.currentNode;
+ if (!n.nodeValue || shouldSkipTextNode(n)) continue;
+ if (TOKEN_RE.test(n.nodeValue)) textNodes.push(n);
+ TOKEN_RE.lastIndex = 0;
+ }
+ textNodes.forEach(node => {
+ const frag = document.createDocumentFragment();
+ const insideLink = !!node.parentElement.closest("a");
+ let text = node.nodeValue, last = 0; TOKEN_RE.lastIndex = 0; let m;
+ while ((m = TOKEN_RE.exec(text))){
+ if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+ const term=m[1].trim(), heading=m[2].trim(), body=m[3].trim();
+ const t = insideLink ? document.createElement("span") : document.createElement("button");
+ if (insideLink){ t.setAttribute("role","button"); t.setAttribute("tabindex","0"); } else { t.type="button"; }
+ t.className="tt-trigger";
+ t.textContent=term;
+ t.setAttribute("data-tt-h", heading);
+ t.setAttribute("data-tt-b", body);
+ t.setAttribute("aria-haspopup","dialog");
+ t.setAttribute("aria-expanded","false");
+ frag.appendChild(t);
+ last = TOKEN_RE.lastIndex;
+ }
+ if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+ node.parentNode.replaceChild(frag, node);
+ });
+
+ // ---------------- State ----------------
+ let current = null;
+ let hoverCount = 0;
+ let closeTimer = null;
+
+ // Dimming bookkeeping
+ let dimCtx = null; // { container, dimEls:[], wrappedTexts:[], pathEls:[] }
+
+ // ---------------- Find the correct "text element" container ----------------
+ function findTextContainer(trigger){
+ // Prefer common RTE wrappers
+ let el = trigger.closest(".w-richtext, .rich-text, .rte, [data-rte]");
+ if (el) return el;
+
+ // Otherwise climb until we find an ancestor that contains multiple block nodes anywhere inside.
+ const BLOCK_SEL = "p,h1,h2,h3,h4,h5,h6,ul,ol,li,blockquote,pre,figure,figcaption";
+ el = trigger.parentElement;
+ while (el && el !== document.body){
+ const blockCount = el.querySelectorAll(BLOCK_SEL).length;
+ if (blockCount >= 2) return el;
+ el = el.parentElement;
+ }
+
+ // Fallback: nearest non-inline container
+ el = trigger.parentElement || document.body;
+ while (el && el !== document.body){
+ const d = getComputedStyle(el).display;
+ if (d !== "inline" && d !== "contents") return el;
+ el = el.parentElement;
+ }
+ return document.body;
+ }
+
+ // Utility: child of `ancestor` that contains `target` (direct child)
+ function directChildContaining(ancestor, target){
+ for (const ch of ancestor.children){
+ if (ch === target || ch.contains(target)) return ch;
+ }
+ return null;
+ }
+
+ function getElementTarget(e) {
+ // If target is already an Element, use it
+ if (e.target instanceof Element) return e.target;
+ // Otherwise, walk the composed/path for the first Element
+ const path = (typeof e.composedPath === 'function') ? e.composedPath() : [];
+ for (const n of path) if (n instanceof Element) return n;
+ return null;
+ }
+
+ // ---------------- Dim everything except the trigger branch (sibling branches only) ----------------
+ function dimAllOtherBranches(container, trigger){
+ undim(); // clear previous
+
+ const dimEls = [];
+ const wrappedTexts = [];
+ const pathEls = [];
+
+ // Build ELEMENT-only path [container -> ... -> trigger]
+ const path = [];
+ for (let el = trigger; el && el !== container; el = el.parentElement) path.push(el);
+ path.push(container);
+ path.reverse();
+
+ // At each ancestor level, find the *direct* child that leads to the trigger
+ for (let i = 0; i < path.length; i++){
+ const anc = path[i];
+ const branchChild = (i < path.length - 1) ? directChildContaining(anc, path[i+1]) : path[i]; // last step is the trigger itself
+
+ // Fade element siblings (whole branches)
+ for (const child of anc.children){
+ if (child === branchChild) continue; // keep the path branch crisp
+ // Never fade any element that is (or contains) the trigger
+ if (child === trigger || child.contains(trigger)) continue;
+ child.style.transition = `opacity ${DIM_EASE_MS}ms ease`;
+ child.style.opacity = String(DIM_OPACITY);
+ dimEls.push(child);
+ }
+
+ // Fade TEXT NODE siblings directly under this ancestor (outside branchChild)
+ anc.childNodes.forEach(node => {
+ if (node.nodeType !== 3) return; // text only
+ if (!node.nodeValue || !node.nodeValue.trim()) return;
+ // If this text node sits inside branchChild, skip
+ if (branchChild && branchChild.contains && branchChild.contains(node)) return;
+ const span = document.createElement("span");
+ span.style.transition = `opacity ${DIM_EASE_MS}ms ease`;
+ span.style.opacity = String(DIM_OPACITY);
+ span.textContent = node.nodeValue;
+ node.parentNode.replaceChild(span, node);
+ wrappedTexts.push(span);
+ });
+
+ // Keep a reference to the path elements (so we can explicitly restore opacity if needed)
+ if (anc && anc.nodeType === 1) pathEls.push(anc);
+ }
+
+ // Hard-guard: explicitly set opacity:1 on the entire path to neutralize any inherited fade
+ pathEls.forEach(el => {
+ el.style.opacity = "1";
+ });
+
+ dimCtx = { container, dimEls, wrappedTexts, pathEls };
+ }
+
+ function undim(){
+ if (!dimCtx) return;
+ const { dimEls, wrappedTexts, pathEls } = dimCtx;
+
+ // Animate back
+ dimEls.forEach(el => {
+ el.style.transition = `opacity ${DIM_EASE_MS}ms ease`;
+ el.style.opacity = "1";
+ // remove inline style after the animation so we don't override site CSS
+ setTimeout(() => { if (el) el.style.opacity = ""; }, DIM_EASE_MS + 50);
+ });
+
+ wrappedTexts.forEach(span => {
+ span.style.transition = `opacity ${DIM_EASE_MS}ms ease`;
+ span.style.opacity = "1";
+ span.addEventListener("transitionend", () => {
+ if (!span.parentNode) return;
+ span.parentNode.replaceChild(document.createTextNode(span.textContent || ""), span);
+ }, { once:true });
+ });
+
+ // Clear hard-guard on path
+ pathEls.forEach(el => { if (el) el.style.opacity = ""; });
+
+ dimCtx = null;
+ }
+
+ // ---------------- Positioning (centered, edge-aware, flip) ----------------
+ function clamp(v,min,max){ return Math.max(min,Math.min(max,v)); }
+ function measureBubbleForPlacement(){
+ const wasOpen = bubble.classList.contains("is-open");
+ if (!wasOpen){ bubble.style.visibility="hidden"; bubble.classList.add("is-open"); }
+ const rect = bubble.getBoundingClientRect();
+ if (!wasOpen){ bubble.classList.remove("is-open"); bubble.style.visibility=""; }
+ return { w: rect.width, h: rect.height };
+ }
+ function placeAnchored(trigger){
+ const vw=innerWidth, vh=innerHeight;
+ const r = trigger.getBoundingClientRect();
+ const { w, h } = measureBubbleForPlacement();
+
+ let left = r.left + (r.width/2) - (w/2);
+ left = clamp(left, EDGE_PADDING, Math.max(EDGE_PADDING, vw - EDGE_PADDING - w));
+
+ const topBelow = r.bottom + OFFSET_Y;
+ const spaceBelow = vh - topBelow - EDGE_PADDING;
+ const placeBelow = spaceBelow >= h;
+ let top = placeBelow ? topBelow : (r.top - h - OFFSET_Y);
+ top = clamp(top, EDGE_PADDING, Math.max(EDGE_PADDING, vh - EDGE_PADDING - h));
+
+ bubble.style.left = left + "px";
+ bubble.style.top = top + "px";
+
+ const br = bubble.getBoundingClientRect();
+ if (br.bottom > vh - EDGE_PADDING){
+ bubble.style.maxHeight = (vh - 2*EDGE_PADDING) + "px";
+ bubble.style.overflowY = "auto";
+ } else {
+ bubble.style.maxHeight = "none";
+ bubble.style.overflowY = "visible";
+ }
+ }
+
+ // ---------------- Open / Close (place → fade/scale) ----------------
+ function animateIn(){
+ bubble.style.transition = "none";
+ bubble.style.opacity = "0";
+ bubble.style.transform = "scale(0.95)";
+ void bubble.offsetWidth;
+ bubble.style.transition = "opacity .18s ease, transform .18s ease";
+ bubble.style.opacity = "1";
+ bubble.style.transform = "scale(1)";
+ }
+ function animateOut(done){
+ bubble.style.transition = "opacity .16s ease, transform .16s ease";
+ bubble.style.opacity = "0";
+ bubble.style.transform = "scale(0.95)";
+ const end = () => { bubble.removeEventListener("transitionend", end); done && done(); };
+ bubble.addEventListener("transitionend", end);
+ setTimeout(end, 260);
+ }
+
+ function openFromTrigger(trigger){
+ if (current && current !== trigger) forceClose();
+ current = trigger;
+ trigger.setAttribute("aria-expanded","true");
+
+ elH.textContent = trigger.getAttribute("data-tt-h") || "";
+ elB.textContent = trigger.getAttribute("data-tt-b") || "";
+
+ bubble.classList.add("is-open");
+ bubble.setAttribute("aria-hidden","false");
+
+ placeAnchored(trigger);
+ animateIn();
+
+ const container = findTextContainer(trigger);
+ dimAllOtherBranches(container, trigger);
+
+ hoverCount = 0;
+ cancelCloseTimer();
+ }
+
+ function forceClose(){
+ if (!current) return;
+ bubble.classList.remove("is-open");
+ bubble.setAttribute("aria-hidden","true");
+ current.setAttribute("aria-expanded","false");
+ current = null;
+ undim();
+ hoverCount = 0;
+ cancelCloseTimer();
+ }
+
+ function closeWithAnim(){
+ if (!current) return;
+ const t = current;
+ animateOut(() => {
+ bubble.classList.remove("is-open");
+ bubble.setAttribute("aria-hidden","true");
+ t.setAttribute("aria-expanded","false");
+ current = null;
+ undim();
+ });
+ }
+
+ function scheduleClose(){
+ cancelCloseTimer();
+ closeTimer = setTimeout(() => {
+ if (hoverCount <= 0 && !isCoarse()) closeWithAnim();
+ }, CLOSE_DELAY);
+ }
+ function cancelCloseTimer(){ if (closeTimer){ clearTimeout(closeTimer); closeTimer = null; } }
+
+ // ---------------- Hover-intent (desktop) ----------------
+ function onZoneEnter(){ if (isCoarse()) return; hoverCount++; cancelCloseTimer(); }
+ function onZoneLeave(){ if (isCoarse()) return; hoverCount = Math.max(0, hoverCount - 1); if (hoverCount === 0) scheduleClose(); }
+
+ bubble.addEventListener("pointerenter", onZoneEnter, true);
+ bubble.addEventListener("mouseenter", onZoneEnter, true);
+ bubble.addEventListener("pointerleave", onZoneLeave, true);
+ bubble.addEventListener("mouseleave", onZoneLeave, true);
+
+ const handleEnter = (e) => {
+ if (isCoarse()) return;
+ const target = getElementTarget(e);
+ if (!target) return;
+ const t = target.closest(".tt-trigger");
+ if (!t) return;
+ onZoneEnter();
+ if (!current || current !== t) openFromTrigger(t);
+ };
+ const handleLeave = (e) => {
+ if (isCoarse()) return;
+ const target = getElementTarget(e);
+ if (!target) return;
+ const t = target.closest(".tt-trigger");
+ if (!t) return;
+ onZoneLeave();
+ };
+ document.addEventListener("pointerenter", handleEnter, true);
+ document.addEventListener("mouseenter", handleEnter, true);
+ document.addEventListener("pointerleave", handleLeave, true);
+ document.addEventListener("mouseleave", handleLeave, true);
+
+ // ---------------- Keyboard ----------------
+ document.addEventListener("focusin", (e) => {
+ if (!e.target) return;
+ const t = e.target.closest(".tt-trigger");
+ if (t) openFromTrigger(t);
+ });
+ document.addEventListener("focusout", (e) => {
+ if (!e.target) return;
+ const t = e.target.closest(".tt-trigger");
+ if (t && current === t) closeWithAnim();
+ });
+
+ // ---------------- Mobile / coarse ----------------
+ document.addEventListener("pointerdown", (e) => {
+ if (!isCoarse()) return;
+
+ const t = e.target.closest(".tt-trigger");
+ if (!t) return;
+ e.preventDefault();
+ e.stopPropagation();
+ if (current === t && bubble.classList.contains("is-open")) { closeWithAnim(); return; }
+ openFromTrigger(t);
+ }, true);
+
+ document.addEventListener("click", (e) => {
+ if (!isCoarse()) return;
+ if (!bubble.classList.contains("is-open")) return;
+ const inBubble = !!e.target.closest(".tt-bubble");
+ const onTrigger = !!e.target.closest(".tt-trigger");
+ if (!inBubble && !onTrigger) closeWithAnim();
+ }, true);
+
+ // Close button + ESC
+ elClose.addEventListener("click", closeWithAnim);
+ document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeWithAnim(); });
+
+ // Reposition on resize/scroll while open
+ const reposition = () => { if (!current) return; placeAnchored(current); };
+ addEventListener("resize", reposition, { passive: true });
+ addEventListener("scroll", reposition, { passive: true });
+ });
+ 
+/* Tooltip Styles */
+
+ /* Trigger */
+ .tt-trigger {
+ cursor: help;
+ text-decoration: underline dotted;
+ text-underline-offset: .2em;
+ color: inherit;
+ }
+ .tt-trigger:focus-visible{ outline:2px solid currentColor; outline-offset:2px; }
+
+ /* Bubble */
+ .tt-bubble{
+ position: fixed;
+ z-index: 10;
+ max-width: 17rem;
+ background: var(--_theme---background-primary);
+ box-shadow: 0 4px 24px rgba(0,0,0,.05);
+ border-radius: var(--radius--large);
+ border-style: solid;
+ border-color: var(--_theme---border-tertiary);
+ padding: var(--_spacing---space--1-5rem);
+ pointer-events: none;
+ opacity: 0;
+ transform: translate3d(0,0,0) scale(.98);
+ transition: opacity .3s ease, transform .3s ease;
+ will-change: transform, opacity;
+ }
+ .tt-bubble.is-open{ opacity:1; transform:translate3d(0,0,0) scale(1); pointer-events:auto; }
+
+ .tt-h{ 
+ margin-bottom: var(--_spacing---space--0-5rem); 
+ font-size: var(--_typography---font-size--body-3); 
+ font-family: var(--_typography---font--secondary-family);
+ line-height: var(--_typography---line-height--1-6); 
+ color: var(--_theme---foreground-primary);
+ }
+ .tt-b{ 
+ margin:0; 
+ font-size: var(--_typography---font-size--caption);
+ line-height: var(--_typography---line-height--1-6);
+ color: var(--_theme---foreground-tertiary);
+ }
+
+ /* Mobile close button */
+ .tt-close {
+ display: none;
+ }
+ @media (hover: none), (pointer: coarse) {
+ .tt-close {
+ display: inline-flex;
+ position: absolute;
+ top: 0.5rem;
+ right: 0.5rem;
+ width: 32px;
+ height: 32px;
+ align-items: center;
+ justify-content: center;
+ border: 0;
+ border-radius: 999px;
+ background: transparent;
+ font-size: 22px; 
+ line-height: 1;
+ color: inherit;
+ cursor: pointer;
+ touch-action: manipulation;
+ }
+ .tt-close:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+ .tt-close:hover { opacity: 1; }
+ }
+
+ html[lang="de-DE"] h1, html[lang="de-DE"] h2, html[lang="de-DE"] h3, 
+ html[lang="de-DE"] h4, html[lang="de-DE"] h5, html[lang="de-DE"] h6,
+ html[lang="de-DE"] p, html[lang="de-DE"] li,
+ html[lang="fr-FR"] h1, html[lang="fr-FR"] h2, html[lang="fr-FR"] h3,
+ html[lang="fr-FR"] h4, html[lang="fr-FR"] h5, html[lang="fr-FR"] h6,
+ html[lang="fr-FR"] p, html[lang="fr-FR"] li {
+ overflow-wrap: break-word;
+ hyphens: auto;
+ }
+
+ :root {
+ --nav--icon-thickness: var(--border-width--main);
+ --nav--hamburger-thickness: var(--nav--icon-thickness);
+ --nav--hamburger-gap: var(--_spacing---space--0-25rem);
+ --nav--hamburger-rotate: 45;
+ --nav--dropdown-duration: 300ms;
+ --nav--dropdown-open-duration: 600ms;
+ --nav--dropdown-delay: 0ms;
+ --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ /* ========== GENERAL RESPONSIVE RULES ========== */
+
+ /* Lock body when nav is open (script toggles .is-nav-open) */
+ @media (width < 56em) {
+ body.is-nav-open { overflow: hidden; }
+ }
+
+ @container (min-width: 56em) {
+ .nav_wrap.is-desktop { display: block; }
+ .nav_wrap.is-mobile { display: none; }
+ }
+ @container (width < 28em) {
+ .nav_mobile_layout .nav_actions_mobile { display: none; }
+ }
+
+ /* ========== DROPDOWN STYLING ========== */
+
+ html:not(.wf-design-mode) .nav_dropdown_component > .w-dropdown-list {
+ display: grid !important;
+ grid-template-columns: minmax(0, 1fr);
+ grid-template-rows: 0fr;
+ transition:
+ grid-template-rows var(--nav--dropdown-duration) var(--ease-expo-out),
+ visibility 0s var(--nav--dropdown-duration),
+ opacity var(--nav--dropdown-duration) var(--ease-expo-out);
+ visibility: hidden;
+ opacity: 0;
+ }
+ html:not(.wf-design-mode) .nav_dropdown_component > .w-dropdown-list.w--open {
+ visibility: visible;
+ opacity: 1;
+ transition:
+ grid-template-rows var(--nav--dropdown-duration) var(--ease-expo-out),
+ visibility 0s 0s,
+ opacity var(--nav--dropdown-duration) var(--ease-expo-out);
+ }
+ .nav_dropdown_component > .w-dropdown-list > * { overflow: hidden; }
+ .nav_dropdown_component:has(> .w-dropdown-toggle[aria-expanded="true"]) > .w-dropdown-list {
+ --nav--dropdown-duration: var(--nav--dropdown-open-duration);
+ grid-template-rows: 1fr;
+ }
+ /*.nav_wrap.is-desktop:has(.nav_dropdown_component > .w-dropdown-toggle.w--open[aria-expanded="false"])
+ .nav_dropdown_component:has(> .w--open[aria-expanded="true"]) > .w-dropdown-list {
+ transition-delay: var(--nav--dropdown-duration);
+ }*/
+
+ /* Dropdown caret rotation */
+ .nav_links_svg.is-desktop { transition: transform 750ms var(--ease-expo-out); }
+ .w-dropdown-toggle[aria-expanded="true"] .nav_links_svg.is-desktop { transform: rotate(-180deg); }
+
+ .nav_links_svg_line.is-2 { transition: transform 500ms var(--ease-expo-out); }
+ .w-dropdown-toggle[aria-expanded="true"] .nav_links_svg_line.is-2 { transform: rotate(0deg); }
+
+ /* open (replicates your original transforms) */
+ .nav_btn_wrap[aria-expanded="true"] .nav_btn_line:nth-child(1),
+ .nav_btn_wrap[aria-expanded="true"] > * > :first-child {
+ transform:
+ translateY(calc(var(--nav--hamburger-thickness) * 1 + var(--nav--hamburger-gap) * 1))
+ rotate(calc(var(--nav--hamburger-rotate) * -1deg));
+ }
+ .nav_btn_wrap[aria-expanded="true"] .nav_btn_line:nth-child(2),
+ .nav_btn_wrap[aria-expanded="true"] > * > :nth-child(2) {
+ opacity: 0;
+ }
+ .nav_btn_wrap[aria-expanded="true"] .nav_btn_line:nth-child(3),
+ .nav_btn_wrap[aria-expanded="true"] > * > :last-child {
+ transform:
+ translateY(calc(var(--nav--hamburger-thickness) * -1 + var(--nav--hamburger-gap) * -1))
+ rotate(calc(var(--nav--hamburger-rotate) * 1deg));
+ width: 1rem;
+ }
+
+ /* ========== HOVER & THEME EFFECTS ========== */
+ @media (hover: hover) and (pointer: fine) {
+ body:has(.nav_dropdown_item:hover) .nav_dropdown_item:not(:hover) > * > * {
+ color: var(--_theme---foreground-tertiary);
+ }
+ .nav_dropdown_link {
+ transition:
+ background-color 300ms ease,
+ color 300ms ease;
+ }
+ .nav_dropdown_item:hover .nav_dropdown_link {
+ background: var(--_theme---background-tertiary);
+ color: var(--_theme---foreground-primary);
+ }
+ .nav_secondary_wrap .nav_dropdown_item:hover .nav_dropdown_link {
+ background: var(--_theme---background-tertiary);
+ color: var(--_theme---foreground-primary);
+ }
+ .nav_wrap.is-mobile .nav_dropdown_item:hover .nav_dropdown_link {
+ color: var(--_theme---foreground-primary);
+ }
+ .nav_links_text { transition: color 500ms var(--ease-expo-out); }
+ .nav_links_svg {
+ transition:
+ transform 500ms var(--ease-expo-out),
+ color 500ms var(--ease-expo-out);
+ }
+ .nav_links_item:hover .nav_links_text,
+ .nav_links_item:hover .nav_links_svg { color: var(--_theme---foreground-primary); }
+ }
+
+ /* ========== LAYOUT / UTILITY (kept, de-Webflow’d) ========== */
+ .nav_wrap.is-mobile [data-open-on-mobile] > .w-dropdown-toggle { display: none; }
+ .nav_wrap.is-mobile [data-open-on-mobile] > .w-dropdown-list {
+ visibility: visible;
+ opacity: 1;
+ display: block;
+ grid-template-rows: 1fr;
+ }
+ .nav_buttons_item .button_main_wrap { width: 100%; min-width: max-content; }
+
+ /* Optional: fade out mobile actions while open */
+ .nav_actions_wrap { transition: opacity 500ms var(--ease-expo-out); }
+ body.is-nav-open .nav_actions_mobile .nav_actions_wrap {
+ opacity: 0;
+ pointer-events: none;
+ }
+
+ .nav_links_item:first-child {
+ border-top: none;
+ }
+
+ /* ========== Breadcrumbs ========== */
+ .breadcrumb_text.is_linked[href="#"],
+ .breadcrumb_text:has(+.breadcrumb_text.is_linked:not([href="#"])) {
+ display: none;
+ }
+ .breadcrumb_text.is_linked:not([href="#"]) {
+ display: block;
+ }
+
+document.addEventListener("DOMContentLoaded", function () {
+ document.querySelectorAll(".nav_component").forEach((root) => {
+ if (root.dataset.scriptInitialized) return;
+ root.dataset.scriptInitialized = "true";
+
+ if (!window.gsap) { console.error("GSAP not found"); return; }
+
+ const btn = root.querySelector('.nav_btn_wrap');
+ const menu = root.querySelector('.nav_menu_wrap');
+ if (!btn || !menu) { console.warn('Missing .nav_btn_wrap or .nav_menu_wrap in', root); return; }
+
+ // a11y setup (scoped)
+ if (!btn.hasAttribute('type')) btn.setAttribute('type', 'button');
+ if (!btn.hasAttribute('aria-expanded')) btn.setAttribute('aria-expanded', 'false');
+ if (!menu.id) menu.id = 'primary-nav-' + Math.random().toString(36).slice(2);
+ if (!btn.hasAttribute('aria-controls')) btn.setAttribute('aria-controls', menu.id);
+ menu.setAttribute('aria-hidden', 'true');
+
+ // targets (scoped)
+ const items = Array.from(menu.querySelectorAll('.nav_links_item'));
+ const actions = menu.querySelector('.nav_menu_actions_wrap');
+
+ // feature detection
+ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const canClipInset = !!(window.CSS && CSS.supports && (
+ CSS.supports('clip-path','inset(0 0 100% 0)') || CSS.supports('-webkit-clip-path','inset(0 0 100% 0)')
+ ));
+ const useClip = canClipInset && !prefersReduced;
+
+ // durations from CSS vars
+ function readDur(varName, fallbackSec) {
+ const v = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+ if (!v) return fallbackSec;
+ if (v.endsWith('ms')) return parseFloat(v)/1000;
+ if (v.endsWith('s')) return parseFloat(v);
+ const n = parseFloat(v);
+ return isNaN(n) ? fallbackSec : n;
+ }
+ const OPEN_DUR = readDur('--nav--menu-open-duration', 0.8);
+ const CLOSE_DUR = readDur('--nav--menu-close-duration', 0.4);
+
+ // state per component
+ let isOpen = false;
+ let current = null;
+
+ function setMenuVisibleForAnim() {
+ menu.style.display = 'flex'; // ensure it's shown before anim
+ menu.removeAttribute('hidden');
+ menu.setAttribute('aria-hidden', 'false');
+ menu.style.willChange = useClip ? 'clip-path' : 'transform, opacity';
+ }
+ function clearMenuInline() {
+ gsap.set(menu, { clearProps: 'clipPath,webkitClipPath,opacity,transform,willChange,pointerEvents' });
+ }
+
+ // OPEN
+ function playOpen() {
+ setMenuVisibleForAnim();
+ menu.style.pointerEvents = 'none';
+ document.body.classList.add('is-nav-open');
+ btn.setAttribute('aria-expanded', 'true');
+
+ if (useClip) {
+ gsap.set(menu, { clipPath: 'inset(0 0 100% 0)', webkitClipPath: 'inset(0 0 100% 0)' });
+ } else {
+ gsap.set(menu, { yPercent: -2, opacity: 0 });
+ }
+ if (items.length) gsap.set(items, { y: 20, autoAlpha: 0 });
+ if (actions) gsap.set(actions, { y: 20, autoAlpha: 0 });
+
+ const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+ if (useClip) {
+ tl.to(menu, {
+ clipPath: 'inset(0 0 0% 0)',
+ webkitClipPath: 'inset(0 0 0% 0)',
+ duration: prefersReduced ? 0.01 : OPEN_DUR,
+ ease: 'expo.out'
+ }, 0);
+ } else {
+ tl.to(menu, { yPercent: 0, opacity: 1, duration: prefersReduced ? 0.01 : Math.min(OPEN_DUR, 0.36) }, 0.02);
+ }
+
+ if (items.length) {
+ tl.to(items, { y: 0, autoAlpha: 1, stagger: prefersReduced ? 0 : 0.08, duration: prefersReduced ? 0.01 : 0.4 }, 0.10);
+ }
+ if (actions) {
+ const base = 0.10 + (items.length ? items.length * (prefersReduced ? 0 : 0.08) : 0);
+ tl.to(actions, { y: 0, autoAlpha: 1, duration: prefersReduced ? 0.01 : 0.4 }, base);
+ }
+
+ tl.add(() => { menu.style.pointerEvents = 'auto'; }, '>-0.1');
+
+ // listeners (per open)
+ document.addEventListener('keydown', onKeydown);
+ menu.addEventListener('click', onMenuLinkClick);
+
+ return tl;
+ }
+
+ // CLOSE (fade all together, then clip inset close)
+ function playClose() {
+ menu.style.pointerEvents = 'none';
+ btn.setAttribute('aria-expanded', 'false');
+ document.body.classList.remove('is-nav-open');
+
+ const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+ const fadeTargets = items.concat(actions ? [actions] : []);
+ if (fadeTargets.length) tl.to(fadeTargets, { autoAlpha: 0, y: 0, duration: prefersReduced ? 0.01 : 0.2 }, 0);
+
+ if (useClip) {
+ gsap.set(menu, { clipPath: 'inset(0 0 0% 0)', webkitClipPath: 'inset(0 0 0% 0)' });
+ tl.to(menu, {
+ clipPath: 'inset(0 0 100% 0)',
+ webkitClipPath: 'inset(0 0 100% 0)',
+ duration: prefersReduced ? 0.01 : CLOSE_DUR
+ }, '>-0.02');
+ } else {
+ tl.to(menu, { yPercent: -2, opacity: 0, duration: prefersReduced ? 0.01 : Math.min(CLOSE_DUR, 0.28) }, '>-0.02');
+ }
+
+ tl.add(() => {
+ menu.style.display = 'none';
+ menu.setAttribute('aria-hidden', 'true');
+ clearMenuInline();
+ if (items.length) gsap.set(items, { clearProps: 'all' });
+ if (actions) gsap.set(actions, { clearProps: 'all' });
+
+ // remove listeners added on open
+ document.removeEventListener('keydown', onKeydown);
+ menu.removeEventListener('click', onMenuLinkClick);
+ });
+
+ return tl;
+ }
+
+ function openMenu() {
+ if (isOpen) return;
+ isOpen = true;
+ if (current && current.isActive()) current.kill();
+ current = playOpen();
+ }
+ function closeMenu() {
+ if (!isOpen) return;
+ isOpen = false;
+ if (current && current.isActive()) current.kill();
+ current = playClose();
+ }
+
+ function onKeydown(e){ if (e.key === 'Escape' && isOpen) { e.preventDefault(); closeMenu(); } }
+
+ function onMenuLinkClick(e){
+ const a = e.target.closest('a[href]');
+ if (!a) return;
+ const url = new URL(a.href, location.href);
+ if (url.origin === location.origin) {
+ e.preventDefault();
+ const tl = playClose();
+ tl.eventCallback('onComplete', () => { window.location.href = a.href; });
+ isOpen = false;
+ }
+ }
+
+ // Toggle (scoped)
+ btn.addEventListener('click', () => (isOpen ? closeMenu() : openMenu()));
+
+ // Normalize if visible on load (scoped)
+ if (getComputedStyle(menu).display !== 'none') {
+ btn.setAttribute('aria-expanded', 'true');
+ menu.setAttribute('aria-hidden', 'false');
+ document.body.classList.add('is-nav-open');
+ isOpen = true;
+ }
+ });
+});
+
+ (function () {
+ 'use strict';
+
+ // ---------- tiny utils ----------
+ var NS = 'navBundleInit';
+ function onceFlag(el, k){ k=k||'scriptInitialized'; if (el.dataset[k]) return true; el.dataset[k]='true'; return false; }
+ function ready(fn){ if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fn,{once:true});} else { fn(); } }
+
+ // ---------- 1) Ask Claude about this page ----------
+ function initAskPage(){
+ var buttons = document.querySelectorAll('[data-ask-page]');
+ if (!buttons.length) return; // Early exit if no buttons
+
+ buttons.forEach(function(btn){
+ if (onceFlag(btn, NS)) return;
+ btn.addEventListener('click', function (e) {
+ e.preventDefault();
+ var pageUrl = window.location.href;
+ var prompt = "Read this page " + pageUrl + " so that I can ask you questions about it";
+ var claudeUrl = new URL('https://claude.ai/new');
+ claudeUrl.searchParams.set('q', prompt);
+ window.open(claudeUrl.toString(), '_blank', 'noopener');
+ });
+ });
+ }
+
+ // ---------- 2) Copy page content as Markdown (Turndown) ----------
+ var _turndownReady;
+ function ensureTurndown(){
+ if (window.TurndownService) return Promise.resolve();
+ if (_turndownReady) return _turndownReady;
+ _turndownReady = new Promise(function(resolve, reject){
+ var s = document.createElement('script');
+ s.src = 'https://unpkg.com/turndown/dist/turndown.js';
+ s.async = true;
+ s.onload = function(){ resolve(); };
+ s.onerror = function(){ reject(new Error('Failed to load Turndown')); };
+ document.head.appendChild(s);
+ });
+ return _turndownReady;
+ }
+
+ function initCopyAsMarkdown(){
+ var copyButton = document.getElementById('copy-as-markdown');
+ if (!copyButton) return; // Early exit
+
+ if (onceFlag(copyButton, NS)) return;
+
+ var buttonTextEl = copyButton.querySelector('.nav_dropdown_text') || copyButton;
+ var originalText = buttonTextEl.textContent;
+
+ copyButton.addEventListener('click', function(){
+ ensureTurndown().then(function(){
+ try {
+ var TurndownService = window.TurndownService;
+ var turndownService = new TurndownService({
+ headingStyle: 'atx',
+ codeBlockStyle: 'fenced',
+ fence: '```',
+ emDelimiter: '*',
+ strongDelimiter: '**',
+ linkStyle: 'inlined'
+ });
+
+ // Skip junk
+ turndownService.addRule('skipWebflowElements', {
+ filter: function(node){
+ return node.nodeName === 'SCRIPT' ||
+ node.nodeName === 'STYLE' ||
+ (node.className && (String(node.className).includes('w-editor') || String(node.className).includes('w-embed')));
+ },
+ replacement: function(){ return ''; }
+ });
+
+ buttonTextEl.textContent = 'Copying...';
+ copyButton.disabled = true;
+
+ var contentElement = document.querySelector('main') ||
+ document.querySelector('.main-content') ||
+ document.querySelector('body');
+ if (!contentElement) throw new Error('No content found to copy');
+
+ var cloned = contentElement.cloneNode(true);
+ cloned.querySelectorAll('script, style, nav, footer, .w-nav, .footer').forEach(function(el){ el.remove(); });
+
+ var markdown = turndownService.turndown(cloned);
+
+ var done = function(){
+ buttonTextEl.textContent = 'Copied!';
+ setTimeout(function(){
+ buttonTextEl.textContent = originalText;
+ copyButton.disabled = false;
+ }, 2000);
+ };
+
+ if (navigator.clipboard && window.isSecureContext) {
+ navigator.clipboard.writeText(markdown).then(done, function(err){ throw err; });
+ } else {
+ var ta = document.createElement('textarea');
+ ta.value = markdown; ta.style.position='fixed'; ta.style.opacity='0';
+ document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+ done();
+ }
+ } catch (err){
+ console.error('Copy failed:', err);
+ buttonTextEl.textContent = 'Copy failed';
+ setTimeout(function(){
+ buttonTextEl.textContent = originalText;
+ copyButton.disabled = false;
+ }, 2000);
+ }
+ }).catch(function(err){
+ console.error('Turndown load failed:', err);
+ buttonTextEl.textContent = 'Copy failed';
+ setTimeout(function(){
+ buttonTextEl.textContent = originalText;
+ copyButton.disabled = false;
+ }, 2000);
+ });
+ });
+ }
+
+ // ---------- init all ----------
+ ready(function(){
+ initAskPage();
+ initCopyAsMarkdown();
+ });
+
+ // Optional: expose minimal API for debugging (comment out in production if not needed)
+ // window.NavBundle = {
+ // initCopyAsMarkdown: initCopyAsMarkdown,
+ // initAskPage: initAskPage
+ // };
+ })();
+Explore here
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+THUMBNAIL BG COLORS
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+[data-thumbnail-bg="Clay"] { background-color: var(--swatch--clay); }
+[data-thumbnail-bg="Cactus"] { background-color: var(--swatch--cactus); }
+[data-thumbnail-bg="Coral"] { background-color: var(--swatch--coral); }
+[data-thumbnail-bg="Fig"] { background-color: var(--swatch--fig); }
+[data-thumbnail-bg="Heather"] { background-color: var(--swatch--heather); }
+[data-thumbnail-bg="Oat"] { background-color: var(--swatch--oat); }
+[data-thumbnail-bg="Olive"] { background-color: var(--swatch--olive); }
+[data-thumbnail-bg="Sky"] { background-color: var(--swatch--sky); }
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+CONDITIONAL STYLES BASED ON IF IMAGE OR VIDEO ARE VISIBLE
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.hero_tutorial_post_wrap:has(+ .tutorial_post_media_wrap :is(.tutorial_post_image_wrap, .tutorial_post_video_wrap):not(.w-condition-invisible)) {
+ border-bottom: none !important;
+}
+
+.tutorial_post_media_wrap:has(+ .tutorial_post_wrap:not(.w-condition-invisible)) .u-section-spacer {
+ display: none !important;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+TABLE OF CONTENTS
+Adding here so classes don't get accidentally cleared
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.tutorial_post_toc_list {
+ color: var(--_theme---foreground-tertiary); 
+ font-size: var(--_typography---font-size--body-3);
+}
+
+.tutorial_post_toc_item {
+ margin-left: -0.0625rem; 
+ padding-top: var(--_spacing---space--0-25rem);
+ padding-bottom: var(--_spacing---space--0-25rem); 
+ padding-left: var(--_spacing---space--1rem); 
+ border-left-style: solid; 
+ border-left-width: var(--border-width--main); 
+ border-left-color: var(--_theme---border-secondary);
+}
+
+.tutorial_post_toc_item.active {
+ border-left-color: var(--_theme---heroes-accent);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ANCHOR LINK
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* offset for <span class="anchor"> that takes fixed header height into account */
+.anchor { 
+ position: relative;
+ top: calc(-1 * var(--_spacing---space--4rem) - 120px); 
+}
+/* Copy anchor link to clipboard button */
+.anchor-link-box {
+ /* quick btn reset */
+ background: none;
+ border: none;
+ padding: 0;
+ cursor: pointer;
+ /* other styles */
+ position: absolute !important;
+ left: -3rem;
+ top: 50%;
+ transform: translateY(-50%);
+ opacity: 0;
+ transition: opacity 0.2s ease;
+ width: 2.5rem;
+ height: 2.5rem;
+ background: var(--_theme---background-tertiary);
+ border: var(--border-width--main) solid var(--_theme---border-tertiary);
+ border-radius: var(--radius--main);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: var(--_spacing---space--0-5rem);
+}
+
+.anchor-link-box:hover {
+ opacity: 1;
+}
+
+.tooltip {
+ opacity: 0;
+ transition: opacity 0.2s ease;
+ position: absolute;
+ left: 50%;
+ bottom: calc(100% + 0.5rem);
+ transform: translateX(-50%);
+ background: var(--_theme---button-primary--background);
+ color: var(--_theme---button-primary--text);
+ white-space: nowrap;
+ padding: 0.125rem 0.5rem;
+ border-radius: var(--radius--x-small);
+ font-family: var(--_typography---font--primary-family);
+ font-size: var(--_typography---font-size--caption);
+ line-height: var(--_typography---line-height--1-6);
+}
+
+.tooltip.active {
+ opacity: 1;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+HIDE EMPTY <p> TAGS
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+p:empty,
+p:has(> br:only-child) {
+ display: none;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+BORDER RADIUS ON RICH TEXT VIDEOS
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.w-richtext-figure-type-video {
+ border-radius: var(--radius--main);
+ overflow: hidden;
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+FIX GRID SPACING IF TUTORIAL HAS NO VIDEO
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.tutorial_post_video_layout:has(.w-dyn-bind-empty) {
+ display: none;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+ // Helper function to convert text to slug
+ function textToSlug(text) {
+ return text
+ .toLowerCase()
+ .trim()
+ .replace(/[''"&]/g, '')
+ .replace(/"([^"]+)"/, '$1')
+ .replace(/\s*[:.,?—–\\/-]\s*/g, '-')
+ .replace(/\s+/g, '-')
+ .replace(/-+/g, '-')
+ .replace(/^-+|-+$/g, '');
+ }
+ 
+ // Track used slugs to prevent duplicate IDs
+ const usedSlugs = new Set();
+ 
+ function getUniqueSlug(baseSlug) {
+ let slug = baseSlug;
+ let counter = 1;
+ while (usedSlugs.has(slug)) {
+ slug = `${baseSlug}-${counter}`;
+ counter++;
+ }
+ usedSlugs.add(slug);
+ return slug;
+ }
+ 
+ // Add/Remove class helper functions
+ const addClass = (element, className) => {
+ if (element && className) {
+ element.classList.add(className);
+ }
+ };
+ 
+ const removeClass = (element, className) => {
+ if (element && className) {
+ element.classList.remove(className);
+ }
+ };
+ 
+ // Debounce helper for resize events
+ function debounce(func, wait) {
+ let timeout;
+ return function executedFunction(...args) {
+ const later = () => {
+ clearTimeout(timeout);
+ func(...args);
+ };
+ clearTimeout(timeout);
+ timeout = setTimeout(later, wait);
+ };
+ }
+ 
+ // Get elements
+ const tutorialContent = document.getElementById('tutorial_content');
+ const tocContainer = document.getElementById('tutorial_toc');
+ 
+ if (!tutorialContent || !tocContainer) {
+ return;
+ }
+ 
+ const h2Elements = tutorialContent.querySelectorAll('h2');
+ 
+ if (h2Elements.length === 0) {
+ tocContainer.style.display = 'none';
+ return;
+ }
+ 
+ // Create ToC list
+ const tocList = document.createElement('ul');
+ addClass(tocList, 'tutorial_post_toc_list');
+ 
+ const tocItems = [];
+ 
+ // Copy anchor link to clipboard with tooltip
+ const copyAnchorToClipboard = (element, spanElement, mouseEnterTime = 750) => {
+ let hoverTimeout;
+ let tooltip;
+ 
+ element.addEventListener("mouseenter", function () {
+ clearTimeout(hoverTimeout);
+ tooltip = document.createElement("span");
+ addClass(tooltip, 'tooltip');
+ tooltip.innerText = "Copy anchor link";
+ this.appendChild(tooltip);
+ hoverTimeout = setTimeout(() => {
+ addClass(tooltip, "active");
+ }, mouseEnterTime);
+ });
+
+ element.addEventListener("mouseleave", function () {
+ clearTimeout(hoverTimeout);
+ if (tooltip) {
+ removeClass(tooltip, "active");
+ this.removeChild(tooltip);
+ tooltip = null;
+ }
+ });
+
+ element.addEventListener("click", function (event) {
+ event.preventDefault();
+ clearTimeout(hoverTimeout);
+
+ if (spanElement && spanElement.classList.contains("anchor")) {
+ const id = spanElement.id;
+
+ if (tooltip) {
+ tooltip.innerText = "Copied!";
+ addClass(tooltip, "active");
+
+ const url = new URL(window.location.href);
+ url.searchParams.delete("topic");
+ const anchorLink = `${url.origin}${url.pathname}#${id}`;
+
+ if (navigator && navigator.clipboard) {
+ navigator.clipboard.writeText(anchorLink).catch((err) => {
+ console.error("Could not copy text: ", err);
+ });
+ }
+ hoverTimeout = setTimeout(() => {
+ removeClass(tooltip, "active");
+ }, 1500);
+ }
+ } else {
+ console.error("Couldn't find Span with the ID");
+ }
+ });
+ };
+ 
+ // Anchor link SVG icon
+ const anchorLinkSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.59608 7.99088C9.01909 7.43035 10.5884 7.86617 11.5326 8.96256L11.7123 9.19108C11.7695 9.27004 11.8243 9.35165 11.8754 9.4362L12.018 9.69792L12.0531 9.79362C12.1116 10.0184 12.0068 10.2611 11.7904 10.3678C11.5738 10.4744 11.3168 10.4098 11.1742 10.2262L11.1205 10.1403L11.018 9.95377C10.9816 9.8936 10.9434 9.83515 10.9027 9.77897L10.7738 9.61491C10.0992 8.83195 8.97855 8.52172 7.96327 8.92155C6.67866 9.42757 6.04713 10.8791 6.55311 12.1637L7.83631 15.4206C8.34249 16.7049 9.794 17.3357 11.0785 16.8298C12.3629 16.3236 12.9937 14.8721 12.4877 13.5876L12.3969 13.3551C12.2957 13.0983 12.4213 12.808 12.6781 12.7067C12.935 12.6055 13.2253 12.732 13.3265 12.9889L13.4183 13.2214C14.1268 15.0198 13.2432 17.052 11.4447 17.7604C9.64625 18.4688 7.61412 17.5852 6.90565 15.7868L5.62245 12.5299C4.91434 10.7317 5.79792 8.69938 7.59608 7.99088ZM8.55506 2.23991C10.3536 1.53146 12.3857 2.41505 13.0941 4.21354L14.3773 7.4694C15.0857 9.26779 14.202 11.2999 12.4037 12.0085C10.9807 12.569 9.41236 12.1332 8.46815 11.0368L8.28749 10.8092C8.17297 10.6512 8.07027 10.481 7.98182 10.3014C7.86013 10.0539 7.96206 9.75458 8.20936 9.63249C8.4571 9.5105 8.7573 9.61229 8.87928 9.86002C8.9425 9.98839 9.0156 10.1089 9.09706 10.2214L9.22596 10.3844C9.90056 11.1677 11.022 11.4788 12.0375 11.0788C13.3218 10.5727 13.9524 9.12105 13.4467 7.83659L12.1644 4.57975C11.6584 3.29511 10.2059 2.66356 8.92128 3.1696C7.63695 3.67569 7.00633 5.12732 7.5121 6.41178L7.60389 6.64518C7.70479 6.902 7.57845 7.19247 7.32167 7.29362C7.06479 7.39475 6.77446 7.26823 6.67323 7.01139L6.58143 6.77897C5.87303 4.98058 6.75677 2.94846 8.55506 2.23991Z" fill="currentColor"/></svg>`;
+
+ // Process each H2 and build ToC
+ h2Elements.forEach((h2) => {
+ const headingText = h2.textContent;
+ const baseSlug = textToSlug(headingText);
+ const slug = getUniqueSlug(baseSlug);
+ 
+ // Add anchor span
+ const anchorSpan = document.createElement('span');
+ anchorSpan.id = slug;
+ addClass(anchorSpan, 'anchor');
+ h2.prepend(anchorSpan);
+ 
+ // Add anchor link box
+ const anchorLinkBox = document.createElement('button');
+ anchorLinkBox.type = 'button';
+ addClass(anchorLinkBox, 'anchor-link-box');
+ anchorLinkBox.innerHTML = anchorLinkSVG;
+ h2.prepend(anchorLinkBox);
+ 
+ // Initialize copy functionality
+ copyAnchorToClipboard(anchorLinkBox, anchorSpan);
+ 
+ // Create ToC item
+ const listItem = document.createElement('li');
+ addClass(listItem, 'tutorial_post_toc_item');
+ 
+ const link = document.createElement('a');
+ link.href = `#${slug}`;
+ 
+ const textDiv = document.createElement('div');
+ textDiv.textContent = headingText;
+ 
+ link.appendChild(textDiv);
+ listItem.appendChild(link);
+ tocList.appendChild(listItem);
+ 
+ tocItems.push({
+ element: listItem,
+ target: h2
+ });
+ });
+ 
+ tocContainer.appendChild(tocList);
+ 
+ // Configuration
+ const headerHeight = 134;
+ const activationOffset = 100;
+ 
+ // State
+ let currentActive = 0;
+ let ranges = [];
+ let frameRequested = false;
+ 
+ // Calculate activation ranges using getBoundingClientRect for reliability
+ // (offsetTop can be relative to offsetParent, not document)
+ function calculateRanges() {
+ const scrollY = window.scrollY;
+ 
+ ranges = tocItems.map((item, index) => {
+ const rect = item.target.getBoundingClientRect();
+ const absoluteTop = rect.top + scrollY;
+ const activationPoint = absoluteTop - headerHeight - activationOffset;
+ 
+ const nextAbsoluteTop = index < tocItems.length - 1
+ ? tocItems[index + 1].target.getBoundingClientRect().top + scrollY
+ : Infinity;
+ const nextActivation = nextAbsoluteTop === Infinity 
+ ? Infinity 
+ : nextAbsoluteTop - headerHeight - activationOffset;
+ 
+ return {
+ index: index,
+ start: Math.max(0, activationPoint),
+ end: nextActivation
+ };
+ });
+ }
+ 
+ // Update active section
+ function updateActiveSection() {
+ if (ranges.length === 0) return;
+ 
+ const scrollPosition = window.scrollY;
+ let newActive = 0;
+ 
+ // Find current range
+ if (scrollPosition < ranges[0].start) {
+ newActive = 0;
+ } else {
+ for (let i = 0; i < ranges.length; i++) {
+ if (scrollPosition >= ranges[i].start && scrollPosition < ranges[i].end) {
+ newActive = i;
+ break;
+ }
+ }
+ }
+ 
+ // Special case: if near bottom of page, activate last item
+ const scrollBottom = scrollPosition + window.innerHeight;
+ const documentHeight = document.documentElement.scrollHeight;
+ if (documentHeight - scrollBottom < 100) {
+ newActive = tocItems.length - 1;
+ }
+ 
+ // Update classes if changed
+ if (newActive !== currentActive) {
+ tocItems.forEach(item => removeClass(item.element, 'active'));
+ currentActive = newActive;
+ if (tocItems[currentActive]) {
+ addClass(tocItems[currentActive].element, 'active');
+ }
+ }
+ 
+ frameRequested = false;
+ }
+ 
+ // Scroll handler
+ function handleScroll() {
+ if (!frameRequested) {
+ frameRequested = true;
+ window.requestAnimationFrame(updateActiveSection);
+ }
+ }
+ 
+ // Recalculate on resize (debounced)
+ const handleResize = debounce(() => {
+ calculateRanges();
+ updateActiveSection();
+ }, 250);
+ 
+ // Smooth scroll behavior for ToC links
+ tocItems.forEach(item => {
+ item.element.querySelector('a').addEventListener('click', function(e) {
+ e.preventDefault();
+ const targetId = this.getAttribute('href').substring(1);
+ const targetElement = document.getElementById(targetId);
+ 
+ if (targetElement) {
+ const scrollTo = targetElement.parentElement.offsetTop - headerHeight - 20;
+ window.scrollTo({
+ top: scrollTo,
+ behavior: 'smooth'
+ });
+ }
+ });
+ });
+ 
+ // Initialize
+ calculateRanges();
+ addClass(tocItems[0].element, 'active');
+ 
+ // Handle hash on initial page load
+ if (window.location.hash) {
+ const hash = window.location.hash.substring(1);
+ const targetIndex = tocItems.findIndex(item => 
+ item.target.querySelector('.anchor')?.id === hash
+ );
+ if (targetIndex !== -1) {
+ tocItems.forEach(item => removeClass(item.element, 'active'));
+ addClass(tocItems[targetIndex].element, 'active');
+ currentActive = targetIndex;
+ }
+ }
+ 
+ // Re-check after browser might restore scroll position
+ requestAnimationFrame(() => {
+ requestAnimationFrame(() => {
+ calculateRanges();
+ updateActiveSection();
+ });
+ });
+ 
+ // Event listeners
+ window.addEventListener('scroll', handleScroll, { passive: true });
+ window.addEventListener('resize', handleResize);
+ 
+ // Visual Viewport API for mobile viewport changes (keyboard, browser chrome)
+ if (window.visualViewport) {
+ window.visualViewport.addEventListener('resize', handleResize);
+ window.visualViewport.addEventListener('scroll', handleResize);
+ }
+ 
+ // Browser back/forward navigation with hash changes
+ window.addEventListener('popstate', () => {
+ calculateRanges();
+ updateActiveSection();
+ });
+ 
+ // Handle dynamic content changes (if Webflow adds/removes content)
+ const observer = new MutationObserver(debounce(() => {
+ calculateRanges();
+ updateActiveSection();
+ }, 500));
+ 
+ observer.observe(tutorialContent, {
+ childList: true,
+ subtree: true,
+ attributes: false
+ });
+ 
+ // Recalculate after images load (affects layout positions)
+ const images = tutorialContent.querySelectorAll('img');
+ images.forEach(img => {
+ if (!img.complete) {
+ img.addEventListener('load', handleResize, { once: true });
+ img.addEventListener('error', handleResize, { once: true });
+ }
+ });
+ 
+ // Recalculate after fonts load
+ if (document.fonts && document.fonts.ready) {
+ document.fonts.ready.then(handleResize);
+ }
+});
+Simplify your browsing experience with Claude in ChromeLearn how Claude in Chrome enables Claude to work alongside you in your browser with visual intelligence and contextual understanding.CategoryProfessionalProductClaude in ChromeReading timeWatch time4minminShareCopy linkhttps://claude.com/resources/tutorials/simplify-your-browsing-experience-with-claude-for-chromeClaude can now work alongside you in your browser, in your context, on your actual work. Claude can see what you see, click on what needs clicking, and act as your collaborator, sharing the cognitive load of digital work. This guide will help you delegate the right tasks, build effective workflows, and maximize Claude's browser capabilities.Claude in Chrome is available for paid plan users on the Chrome web browser.​Important: Browser use is a feature that allows Claude to interact directly with websites on your behalf, which carries inherent risks. Please review Using Claude for Chrome Safely before use.How Claude understands your browserThe Chrome extension brings Claude directly into your web workflow. Claude operates in your browser with your permissions, your logins, and your context to take action in the sites you use every day.Visual Intelligence — Claude sees your browser and recognizes the interface the same way you do, through buttons, forms, navigation menus, and content areas.‍Contextual Understanding - Claude understands what buttons on the page do. It knows that "Archive" in Gmail removes emails from the inbox, that "Share" in documents grants others access, that form fields labeled "Email" expect email addresses.‍Tab Group Awareness — Claude can see and work across all tabs within the same tab group, providing larger context for its workflows. This means Claude can reference information and coordinate actions across multiple tabs.‍Persistent Work Across Tabs — Claude continues working when you switch tabs. Start a research task, jump to email to handle something urgent and Claude keeps gathering information as long as Chrome is open. Turn on notifications and Claude will ping you when it needs your permission or a task is complete.Note: Claude maintains context within a single task but doesn't remember information across sessions.What makes a good browser taskNot every browser activity suits delegation to the Claude browser extension. Here are a few examples to help you understand which tool to use to work more effectively:Ideal for Claude in Chrome:Taking action on specific websites like filling forms, clicking buttons, navigating interfaces, making changes to live pagesExecuting well-defined workflows using shortcuts you've created, repeating proven processesSpecific, targeted tasks or information gathering behind a login or using your permissionsIdeal for Claude apps:Exploratory research when you don't know exactly where to look and need Claude to discover relevant sourcesComplex synthesis across many sources like creating reports that pull from dozens of articles, academic research requiring extensive citationsBetter handled yourself:One-time tasks that are faster to do than explain like single clicks, simple copy-paste, quick editsHighly subjective decisions requiring nuanced judgmentLearning through doing tasks like exploring new tools or understanding workflowsRepeat effective workflows with shortcutsOnce you create a successful workflow or find yourself repeating the same request to Claude, there are a few ways to save it as a shortcut for Claude to follow next time. From then on, type / to select your shortcut and trigger the workflow instantly. Record a workflow to create a shortcut Teach Claude your task by demonstration. Click the cursor icon in the menu bar or type /  in the chat bar and select ‘Record workflow’. Perform the task, clicking, typing, and narrating, while Claude watches your screen and listens to your voice. When you finish, Claude generates a shortcut: a name, a prompt describing what you did, and the starting URL. Convert a conversation to a shortcut If you’ve completed a workflow across several chats, click Convert to task in the conversation header to save it as a repeatable shortcut. Save a prompt as a shortcutIf you've already sent a well-crafted prompt in chat, hover over it to reveal an icon that lets you save it directly as a shortcut.Schedule recurring tasks using shortcutsOnce a workflow runs reliably — whether from a recording or a saved shortcut — schedule it to run automatically. When creating or editing a shortcut, toggle on Schedule. Choose the frequency, set the date and time, and select which model to use. Claude runs the workflow at the specified time and notifies you when it's done or needs input.Good candidates for scheduling:Email cleanup to archive promotional emails and flag items needing responseData extraction that pulls weekly metrics from dashboards that don't offer exports‍Calendar planning for your upcoming week by flagging which meetings need prep and finding the details.Additional shortcuts to try:Taking action:/vendor-application: Fill out this vendor application using information from our company info document. Pause before submitting for my review‍/inbox-cleanup: Go through my mail inbox: archive emails from these senders [list], star anything mentioning deadlines, delete obvious spam. Tell me what you archived and what needs my attention.Research tasks:/competitor-scan: Visit [competitor website]. Check: latest blog posts, pricing page updates, careers section for new roles. Note anything new or changed. Summarize in a brief.‍/restaurant-finder:Search [food delivery site] for [cuisine type] restaurants. Filter by rating above 4 stars, check menus for [dietary preference]. Show me top 3 options with prices.Communication prep:/email-batch-draft: For unread emails tagged "needs response": draft replies maintaining my usual tone. Don't send, just stage them for my review. Note which ones need more context from me.‍/stakeholder-map: For each person in this meeting invite: look up their professional background, note their role, identify their likely priorities, find any recent posts/articles. Create a pre-meeting brief.Setting yourself up for successAs Claude in your browser has limitations that are helpful to understand.Permission confirmationsVisit our help center to learn more about which actions Claude will always ask permission for, regardless of your settings.Reduced functionalityClaude in Chrome is "pure Claude" without extended features of Claude.ai, such as Projects, MCP tool connections, or memory between sessions.Blocked sitesFor safety, Claude cannot access financial services, adult content, or pirated content sites.Ready to practice?Claude in your browser represents an early step in our work on AI that can handle increasingly complex workflows and work seamlessly where you do. Try our interactive demo to build confidence before working with real tasks.How Claude understands your browserWhat makes a good browser taskRepeat effective workflows with shortcutsSetting yourself up for successReady to practice?Related tutorialsHow to use Claude in Excel for accounting: Revenue model validationHow to use Claude in Excel for accounting: Revenue model validationHow to use Claude in Excel for accounting: Revenue model validationTutorialTutorialTutorialCowork, a research previewCowork, a research previewCowork, a research previewTutorialTutorialTutorialUsing the GitHub integrationUsing the GitHub integrationUsing the GitHub integrationTutorialTutorialTutorialUse artifacts to visualize and create AI apps without ever writing a line of codeUse artifacts to visualize and create AI apps without ever writing a line of codeUse artifacts to visualize and create AI apps without ever writing a line of codeTutorialTutorialTutorial
+ @container (width < 52em) {
+ .footer_layout {
+ display: flex;
+ column-gap: var(--_spacing---space--4rem);
+ row-gap: var(--_spacing---space--4rem);
+ }
+ .footer_content_wrap.u-column-custom {
+ display: contents;
+ }
+ }
+
+ .footer_link {
+ opacity: 1;
+ transition: opacity 0.3s ease;
+ }
+ .footer_links_list:has(.footer_link:hover) .footer_link:not(:hover) {
+ opacity: 0.4;
+ }
+HomepageHomepageNextNextThank you! Your submission has been received!Oops! Something went wrong while submitting the form.
+ (function () {
+ const ROOT_SEL = "[data-prompt-scope]";
+ const TRIGGER_SEL = "[data-prompt-trigger]";
+ const MENU_ATTR = "data-prompt-menu";
+ const CLOSE_SEL = "[data-prompt-menu-close]";
+ const ACTION_SEL = "a, button, [data-prompt-menu-action]";
+ const ITEM_SEL = "[data-prompt-item], li, .menu-item, .w-dyn-item";
+
+ // ---------- Claude helper ----------
+ function buildClaudeUrl(text) {
+ const url = new URL("https://claude.ai/new");
+ url.searchParams.set("q", text || "");
+ return url.toString();
+ }
+ function openClaude(text) {
+ const q = (text || "").trim();
+ if (!q) return;
+ window.open(buildClaudeUrl(q), "_blank", "noopener");
+ }
+
+ // ---------- Utilities ----------
+ let uid = 0;
+ function makeId(prefix = "prompt-menu") {
+ uid += 1;
+ return `${prefix}-${Date.now().toString(36)}-${uid}`;
+ }
+
+ // Limit queries to elements that belong to THIS scope (ignore nested scopes)
+ function qsaInScope(root, sel) {
+ return Array.from(root.querySelectorAll(sel)).filter(
+ (el) => el.closest(ROOT_SEL) === root
+ );
+ }
+
+ // Lightweight shield to stop click-through during the brief close animation
+ function deployClickShield(ms = 300) {
+ const sh = document.createElement("div");
+ sh.style.cssText =
+ "position:fixed;inset:0;z-index:2147483647;pointer-events:auto;background:transparent";
+ document.body.appendChild(sh);
+ setTimeout(() => {
+ sh.remove();
+ }, ms);
+ }
+
+ // Pairing: find which menu a trigger controls (no manual ids needed)
+ function resolveMenuForTrigger(root, trigger) {
+ // 1) explicit data-prompt-trigger="x" -> [data-prompt-menu="x"]
+ const explicit = trigger.getAttribute("data-prompt-trigger");
+ if (explicit) {
+ const m = qsaInScope(root, `[${MENU_ATTR}="${explicit}"]`)[0];
+ if (m) return m;
+ }
+ // 2) aria-controls
+ const ctrl = trigger.getAttribute("aria-controls");
+ if (ctrl) {
+ const m = qsaInScope(root, `#${ctrl.replace(/(["'\\])/g, "\\$1")}`)[0];
+ if (m) return m;
+ }
+ // 3) nearest following sibling with [data-prompt-menu]
+ let sib = trigger.nextElementSibling;
+ while (sib && sib !== root) {
+ if (
+ sib.hasAttribute &&
+ sib.hasAttribute(MENU_ATTR) &&
+ sib.closest(ROOT_SEL) === root
+ )
+ return sib;
+ sib = sib.nextElementSibling;
+ }
+ // 4) first menu in this root
+ return qsaInScope(root, `[${MENU_ATTR}]`)[0] || null;
+ }
+
+ function ensurePairing(trigger, menu) {
+ if (!menu.id) menu.id = makeId();
+ trigger.setAttribute("aria-controls", menu.id);
+ if (trigger.tagName === "BUTTON" && !trigger.hasAttribute("type"))
+ trigger.type = "button";
+ }
+
+ // ---------- Animations (GSAP) ----------
+ function revealMenu(menu) {
+ return new Promise((resolve) => {
+ gsap.set(menu, {
+ visibility: "visible",
+ pointerEvents: "auto",
+ willChange: "transform, opacity",
+ });
+ gsap.killTweensOf(menu);
+ gsap.fromTo(
+ menu,
+ { opacity: 0, scale: 0.96 },
+ {
+ opacity: 1,
+ scale: 1,
+ duration: 0.28,
+ ease: "power3.out",
+ clearProps: "willChange",
+ onComplete: resolve,
+ }
+ );
+ });
+ }
+ function hideMenu(menu) {
+ return new Promise((resolve) => {
+ gsap.killTweensOf(menu);
+ gsap.to(menu, {
+ opacity: 0,
+ duration: 0.2,
+ ease: "power2.out",
+ onComplete: () => {
+ gsap.set(menu, {
+ visibility: "hidden",
+ pointerEvents: "none",
+ clearProps: "opacity,scale,willChange",
+ });
+ resolve();
+ },
+ });
+ });
+ }
+
+ // ---------- Per-scope controller ----------
+ const stateMap = new WeakMap(); // root -> { openMenuEl, openTrigger, isAnimating }
+
+ function getState(root) {
+ let s = stateMap.get(root);
+ if (!s) {
+ s = { openMenuEl: null, openTrigger: null, isAnimating: false };
+ stateMap.set(root, s);
+ }
+ return s;
+ }
+
+ function setTriggersInteractive(root, enabled) {
+ qsaInScope(root, TRIGGER_SEL).forEach((el) => {
+ el.style.pointerEvents = enabled ? "auto" : "none";
+ });
+ }
+
+ // ---------- Button fade animations ----------
+ function fadeOutButtons(root) {
+ return new Promise((resolve) => {
+ const buttons = qsaInScope(root, TRIGGER_SEL);
+ if (buttons.length === 0) {
+ resolve();
+ return;
+ }
+
+ gsap.killTweensOf(buttons);
+ gsap.to(buttons, {
+ autoAlpha: 0,
+ duration: 0.2,
+ ease: "power2.out",
+ onComplete: resolve,
+ });
+ });
+ }
+
+ function fadeInButtons(root) {
+ return new Promise((resolve) => {
+ const buttons = qsaInScope(root, TRIGGER_SEL);
+ if (buttons.length === 0) {
+ resolve();
+ return;
+ }
+
+ gsap.killTweensOf(buttons);
+ gsap.to(buttons, {
+ autoAlpha: 1,
+ duration: 0.2,
+ ease: "power2.out",
+ onComplete: resolve,
+ });
+ });
+ }
+
+ async function openMenuIn(root, menu, trigger) {
+ const s = getState(root);
+ if (s.isAnimating || s.openMenuEl === menu) return;
+ s.isAnimating = true;
+
+ // close any currently open in THIS scope only
+ if (s.openMenuEl && s.openMenuEl !== menu) {
+ await hideMenu(s.openMenuEl);
+ if (s.openTrigger) s.openTrigger.setAttribute("aria-expanded", "false");
+ }
+
+ // Fade out buttons when opening menu
+ await fadeOutButtons(root);
+
+ await revealMenu(menu);
+ s.openMenuEl = menu;
+ s.openTrigger = trigger || null;
+ if (s.openTrigger) s.openTrigger.setAttribute("aria-expanded", "true");
+
+ // Disable only this scope's triggers while open
+ setTriggersInteractive(root, false);
+
+ s.isAnimating = false;
+ }
+
+ async function closeMenuIn(root) {
+ const s = getState(root);
+ if (!s.openMenuEl || s.isAnimating) return;
+ s.isAnimating = true;
+
+ deployClickShield(280); // prevent click-through during closing
+ await hideMenu(s.openMenuEl);
+
+ if (s.openTrigger) s.openTrigger.setAttribute("aria-expanded", "false");
+ s.openMenuEl = null;
+ s.openTrigger = null;
+
+ // Re-enable only this scope's triggers
+ setTriggersInteractive(root, true);
+
+ // Fade in buttons when closing menu
+ await fadeInButtons(root);
+
+ s.isAnimating = false;
+ }
+
+ // ---------- Initializer ----------
+ const initedRoots = new WeakSet();
+
+ function initScope(root) {
+ if (!root || initedRoots.has(root)) return;
+ initedRoots.add(root);
+
+ if (!window.gsap) {
+ console.warn("GSAP is required for prompt menus.");
+ return;
+ }
+
+ // Normalize ALL menus in this scope to hidden on init (prevents “open on load” bugs)
+ qsaInScope(root, `[${MENU_ATTR}]`).forEach((menu) => {
+ if (menu.dataset.pmMenuInit) return;
+ menu.dataset.pmMenuInit = "true";
+ gsap.set(menu, {
+ visibility: "hidden",
+ opacity: 0,
+ scale: 1,
+ pointerEvents: "none",
+ });
+
+ // Optional close button
+ const closer = menu.querySelector(CLOSE_SEL);
+ if (closer) {
+ if (closer.tagName === "BUTTON" && !closer.hasAttribute("type"))
+ closer.type = "button";
+ closer.addEventListener("click", (e) => {
+ e.preventDefault();
+ e.stopPropagation();
+ closeMenuIn(root);
+ });
+ }
+
+ // Menu item -> Claude
+ menu.addEventListener("click", (e) => {
+ const target = e.target.closest(ACTION_SEL);
+ if (!target || !menu.contains(target)) return;
+
+ const container = target.closest(ITEM_SEL) || target;
+ const hiddenP = container.querySelector("[data-prompt-menu-text]");
+ if (!hiddenP) return;
+
+ e.preventDefault();
+ e.stopPropagation();
+
+ const text = hiddenP.textContent || hiddenP.innerText || "";
+ openClaude(text);
+
+ // close after action
+ closeMenuIn(root);
+ });
+ });
+
+ // Bind triggers (auto-wire)
+ qsaInScope(root, TRIGGER_SEL).forEach((trigger) => {
+ if (trigger.dataset.pmTrigInit) return;
+ trigger.dataset.pmTrigInit = "true";
+
+ const menu = resolveMenuForTrigger(root, trigger);
+ if (menu) ensurePairing(trigger, menu);
+
+ trigger.setAttribute("aria-expanded", "false");
+
+ trigger.addEventListener("click", async (e) => {
+ e.preventDefault();
+
+ const targetMenu = resolveMenuForTrigger(root, trigger);
+ if (!targetMenu) return;
+
+ const s = getState(root);
+ if (s.openMenuEl === targetMenu) {
+ await closeMenuIn(root); // toggle close
+ return;
+ }
+ await openMenuIn(root, targetMenu, trigger);
+ });
+ });
+
+ // Outside click (this scope only)
+ document.addEventListener("click", (e) => {
+ const s = getState(root);
+ if (!s.openMenuEl) return;
+ const insideMenu = s.openMenuEl.contains(e.target);
+ const onTrigger =
+ !!e.target.closest(TRIGGER_SEL) && root.contains(e.target);
+ if (!insideMenu && !onTrigger) closeMenuIn(root);
+ });
+
+ // ESC (this scope only)
+ document.addEventListener("keydown", (e) => {
+ if (e.key === "Escape") closeMenuIn(root);
+ });
+ }
+
+ // ---------- Boot + observe ----------
+ function boot(container = document) {
+ const roots = container.querySelectorAll
+ ? container.querySelectorAll(ROOT_SEL)
+ : [];
+ roots.forEach(initScope);
+ }
+
+ if (document.readyState === "loading") {
+ document.addEventListener("DOMContentLoaded", () => boot(), {
+ once: true,
+ });
+ } else {
+ boot();
+ }
+
+ const mo = new MutationObserver((muts) => {
+ for (const m of muts) {
+ for (const node of m.addedNodes || []) {
+ if (node.nodeType !== 1) continue;
+ if (node.matches && node.matches(ROOT_SEL)) initScope(node);
+ if (node.querySelectorAll) {
+ node.querySelectorAll(ROOT_SEL).forEach(initScope);
+ }
+ }
+ }
+ });
+ mo.observe(document.documentElement, { childList: true, subtree: true });
+ })();
+
+(function () {
+ // ---------- Claude helper ----------
+ function buildClaudeUrl(text) {
+ const url = new URL('https://claude.ai/new');
+ url.searchParams.set('q', text || '');
+ return url.toString();
+ }
+
+ // ---------- Auto-grow helpers ----------
+ function sizeTextarea(el) {
+ // Ensure UA defaults don't force a starting height
+ el.setAttribute('rows', el.getAttribute('data-min-rows') || '1');
+ el.style.minHeight = '0px';
+ el.style.height = 'auto'; // allow shrink
+ el.style.height = el.scrollHeight + 'px'; // fit content
+ }
+
+ function initAutogrow(root = document) {
+ root.querySelectorAll('textarea[data-autogrow]').forEach((el) => {
+ if (el.dataset.autogrowInit) return;
+ el.dataset.autogrowInit = 'true';
+
+ // Respect your existing pattern for default text
+ const preset = el.getAttribute('data-default-text');
+ if (preset != null && !el.value) el.value = preset;
+
+ // Initial sizing
+ sizeTextarea(el);
+
+ // Resize as you type
+ el.addEventListener('input', () => sizeTextarea(el));
+
+ // In case fonts/styles load late and change line-height
+ window.addEventListener('load', () => sizeTextarea(el), { once: true });
+ });
+ }
+
+ // ---------- Claude form initializer ----------
+ function initClaudeForms(root = document) {
+ root.querySelectorAll('form[data-claude-form]').forEach((form) => {
+ if (form.dataset.claudeInit) return;
+ form.dataset.claudeInit = 'true';
+
+ const textarea = form.querySelector('[data-claude-textarea], textarea');
+ const trigger = form.querySelector('[data-claude-button], button[type="button"], a[data-claude-button]');
+
+ if (!textarea || !trigger) {
+ console.warn('Claude form: missing textarea or trigger in', form);
+ return;
+ }
+
+ // If the trigger is a <button> but has no type, force "button" so it won't submit
+ if (trigger.tagName === 'BUTTON' && !trigger.hasAttribute('type')) {
+ trigger.type = 'button';
+ }
+
+ // Keep <a> from navigating away while still opening Claude
+ if (trigger.tagName === 'A') {
+ trigger.addEventListener('click', (e) => e.preventDefault());
+ }
+
+ // Optional: support data-default-text on the textarea
+ const preset = textarea.getAttribute('data-default-text');
+ if (preset != null && !textarea.value) textarea.value = preset;
+
+ // Click opens Claude; submission is optional
+ trigger.addEventListener('click', () => {
+ const text = (textarea.value || '').trim();
+ if (!text) {
+ textarea.focus();
+ return;
+ }
+
+ window.open(buildClaudeUrl(text), '_blank', 'noopener');
+
+ const mode = form.getAttribute('data-claude-mode') || 'intercept';
+ if (mode === 'also') {
+ // Submit after opening Claude
+ form.submit();
+ }
+ // intercept mode: do nothing (no submit)
+ });
+
+ // (Optional) Keep an <a data-claude-button> href in sync for right-click/open-in-new-tab UX
+ if (trigger.tagName === 'A') {
+ const syncHref = () => trigger.setAttribute('href', buildClaudeUrl((textarea.value || '').trim()));
+ syncHref();
+ textarea.addEventListener('input', syncHref);
+ textarea.addEventListener('change', syncHref);
+ }
+ });
+ }
+
+ // ---------- Boot ----------
+ function initAll(root = document) {
+ initAutogrow(root);
+ initClaudeForms(root);
+ }
+
+ if (document.readyState === 'loading') {
+ document.addEventListener('DOMContentLoaded', () => initAll(), { once: true });
+ } else {
+ initAll();
+ }
+
+ // Re-init if content is injected later (Webflow CMS / IX / tabs)
+ const mo = new MutationObserver((muts) => {
+ for (const m of muts) {
+ for (const node of m.addedNodes || []) {
+ if (node.nodeType === 1) initAll(node);
+ }
+ }
+ });
+ mo.observe(document.documentElement, { childList: true, subtree: true });
+})();
+
+ .prompt_menu_item {
+ transition: border-color 0.2s ease, color 0.2s ease;
+ }
+ .prompt_menu_item_base, .prompt_menu_item_icon {
+ transition: opacity 0.2s ease;
+ }
+ .prompt_menu_list .prompt_menu_item:first-child {
+ border-color: transparent;
+ }
+ .prompt_menu_item:hover {
+ border-color: transparent;
+ color: var(--_theme---foreground-primary);
+ }
+ .prompt_menu_item:hover .prompt_menu_item_base {
+ opacity: 1;
+ }
+ .prompt_menu_item:hover .prompt_menu_item_icon {
+ opacity: 1;
+ }
+ .prompt_menu_item:hover + .prompt_menu_item {
+ border-top-color: transparent;
+ }
+
+ .button_prompt_icon {
+ transition: color 0.3s ease;
+ }
+ .button_prompt_wrap:hover .button_prompt_icon {
+ color: var(--_button-style---icon-hover); 
+ }
+ .button_prompt_wrap:focus-within .button_prompt_icon {
+ color: var(--_button-style---text-hover) !important;
+ }
+ .button_prompt_wrap:focus-within {
+ color: var(--_button-style---text-hover) !important;
+ }
+
+WriteButton TextButton TextLearnButton TextButton TextCodeButton TextButton TextWriteHelp me develop a unique voice for an audienceHi Claude! Could you help me develop a unique voice for an audience? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!Improve my writing styleHi Claude! Could you improve my writing style? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!Brainstorm creative ideasHi Claude! Could you brainstorm creative ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!LearnExplain a complex topic simplyHi Claude! Could you explain a complex topic simply? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!Help me make sense of these ideasHi Claude! Could you help me make sense of these ideas? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!Prepare for an exam or interviewHi Claude! Could you prepare for an exam or interview? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!CodeExplain a programming conceptHi Claude! Could you explain a programming concept? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!Look over my code and give me tipsHi Claude! Could you look over my code and give me tips? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!Vibe code with meHi Claude! Could you vibe code with me? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to— like Google Drive, web search, etc.—if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can—an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!MoreWrite case studiesThis is another testWrite grant proposalsHi Claude! Could you write grant proposals? If you need more information from me, ask me 1-2 key questions right away. If you think I should upload any documents that would help you do a better job, let me know. You can use the tools you have access to — like Google Drive, web search, etc. — if they’ll help you better accomplish this task. Do not use analysis tool. Please keep your responses friendly, brief and conversational. Please execute the task as soon as you can - an artifact would be great if it makes sense. If using an artifact, consider what kind of artifact (interactive, visual, checklist, etc.) might be most helpful for this specific task. Thanks for your help!Write video scriptsthis is a testAnthropicAnthropic© 2026 Anthropic PBCProductsClaudeClaudeClaudeClaude CodeClaude CodeClaude CodeCoworkCoworkCoworkMax planMax planMax planTeam planTeam planTeam planEnterprise planEnterprise planEnterprise planDownload appDownload appDownload appPricingPricingPricingLog inLog inLog inFeaturesClaude in ChromeClaude in ChromeClaude in ChromeClaude in SlackClaude in SlackClaude in SlackClaude in ExcelClaude in ExcelClaude in ExcelSkillsSkillsSkillsModelsOpusOpusOpusSonnetSonnetSonnetHaikuHaikuHaikuSolutionsAI agentsAI agentsAI agentsCode modernizationCode modernizationCode modernizationCodingCodingCodingCustomer supportCustomer supportCustomer supportEducationEducationEducationFinancial servicesFinancial servicesFinancial servicesGovernmentGovernmentGovernmentHealthcareHealthcareHealthcareLife sciencesLife sciencesLife sciencesNonprofitsNonprofitsNonprofitsClaude Developer PlatformOverviewOverviewOverviewDeveloper docsDeveloper docsDeveloper docsPricingPricingPricingRegional ComplianceRegional ComplianceRegional ComplianceAmazon BedrockAmazon BedrockAmazon BedrockGoogle Cloud’s Vertex AIGoogle Cloud’s Vertex AIGoogle Cloud’s Vertex AIConsole loginConsole loginConsole loginLearnBlogBlogBlogClaude partner networkClaude partner networkClaude partner networkCoursesCoursesCoursesConnectorsConnectorsConnectorsCustomer storiesCustomer storiesCustomer storiesEngineering at AnthropicEngineering at AnthropicEngineering at AnthropicEventsEventsEventsPluginsPluginsPluginsPowered by ClaudePowered by ClaudePowered by ClaudeService partnersService partnersService partnersStartups programStartups programStartups programTutorialsTutorialsTutorialsUse casesUse casesUse casesCompanyAnthropicAnthropicAnthropicCareersCareersCareersEconomic FuturesEconomic FuturesEconomic FuturesResearchResearchResearchNewsNewsNewsResponsible Scaling PolicyResponsible Scaling PolicyResponsible Scaling PolicySecurity and complianceSecurity and complianceSecurity and complianceTransparencyTransparencyTransparencyHelp and securityAvailabilityAvailabilityAvailabilityStatusStatusStatusSupport centerSupport centerSupport centerTerms and policiesPrivacy choices
+ /* Dialog styling */
+ dialog#consent-container {
+ margin: 0;
+ padding: 8px;
+ opacity: 0;
+ transform: translateY(16px);
+ transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+ }
+
+ dialog#consent-container.show {
+ opacity: 1;
+ transform: translateY(0);
+ }
+
+ dialog#consent-container::backdrop {
+ background: transparent;
+ }
+
+ dialog button span {
+ display: inline !important;
+ }
+
+ /* Toggle switch styling */
+ .toggle_switch {
+ position: relative;
+ display: inline-block;
+ width: 36px;
+ height: 24px;
+ }
+
+ .toggle_switch input {
+ opacity: 0;
+ width: 0;
+ height: 0;
+ }
+
+ .toggle_slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #87867f;
+ transition: .4s;
+ border-radius: 24px;
+ }
+
+ .toggle_slider:before {
+ position: absolute;
+ content: "";
+ height: 18px;
+ width: 18px;
+ left: 3px;
+ bottom: 3px;
+ background-color: white;
+ transition: .4s;
+ border-radius: 50%;
+ }
+
+ input:checked + .toggle_slider {
+ background-color: #d97757;
+ }
+
+ input:checked + .toggle_slider:before {
+ transform: translateX(12px);
+ }
+
+ input:disabled + .toggle_slider {
+ cursor: not-allowed;
+ opacity: 0.5;
+ }
+
+ @media only screen and (max-width: 501px) {
+ dialog#consent-container {
+ left: 8px !important;
+ bottom: 8px !important;
+ right: 8px !important;
+ }
+ #consent-banner {
+ padding: 24px 16px 16px !important;
+ }
+ #simple-options {
+ grid-template-columns: repeat(3, 1fr) !important;
+ grid-template-rows: auto auto !important;
+ }
+ #customize-btn {
+ grid-column: span 1 !important;
+ }
+ dialog button span {
+ display: none !important;
+ }
+
+ 
+ Cookie settings
+ 
+ We use cookies to deliver and improve our services, analyze site usage, and if you agree, to customize or personalize your experience and market our services to you. You can read our Cookie Policy here.
+ 
+
+ Customize cookie settings
+ 
+ 
+ Reject all cookies
+ 
+ 
+ Accept all cookies
+ 
+ 
+ Necessary
+ Enables security and basic functionality.
+ 
+ 
+ Required
+ 
+ 
+ Analytics
+ Enables tracking of site performance.
+ 
+ 
+ Off
+ 
+ 
+ Marketing
+ Enables ads personalization and tracking.
+ 
+ 
+ Off
+ 
+ 
+ Save preferences
+ 
+ 
+Privacy policyPrivacy policyPrivacy policyResponsible disclosure policyResponsible disclosure policyResponsible disclosure policyTerms of service: CommercialTerms of service: CommercialTerms of service: CommercialTerms of service: ConsumerTerms of service: ConsumerTerms of service: ConsumerUsage policyUsage policyUsage policyx.comx.comLinkedInLinkedInYouTubeYouTubeInstagramInstagramEnglish (US)
+
+ function initDynamicCurrentYear() { 
+ const currentYear = new Date().getFullYear();
+ const currentYearElements = document.querySelectorAll('[data-current-year]');
+ currentYearElements.forEach(currentYearElement => {
+ currentYearElement.textContent = currentYear;
+ });
+ }
+
+ // Initialize Dynamic Current Year
+ document.addEventListener('DOMContentLoaded', () => {
+ initDynamicCurrentYear();
+ });
+gsap.registerPlugin(ScrollTrigger,SplitText,TextPlugin,Flip,Draggable,InertiaPlugin);
+
+ document.addEventListener('DOMContentLoaded', function() {
+ const contentElement = document.querySelector('[data-readtime="content"]');
+ const minutesElement = document.querySelector('[data-readtime="minutes"]');
+
+ if (!contentElement || !minutesElement) return;
+
+ const text = contentElement.innerText || contentElement.textContent;
+ const wordCount = text.trim().split(/\s+/).length;
+ const wordsPerMinute = 250;
+ const minutes = Math.round(wordCount / wordsPerMinute);
+
+ minutesElement.textContent = minutes || 1; // minimum 1 minute
+ });
+ 
+ // Hide all empty paragraph tags from the main content RTF
+ document.querySelectorAll('#tutorial_content p').forEach(p => {
+ if (p.textContent.trim() === '' || /^[\u200B-\u200D\uFEFF]+$/.test(p.textContent)) {
+ p.remove();
+ }
+ });
+
+ 
+ ×
+
+
+---
+## vs-code.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Use Claude Code in VS Code
+
+> Install and configure the Claude Code extension for VS Code. Get AI coding assistance with inline diffs, @-mentions, plan review, and keyboard shortcuts.
+
+<img src="https://mintcdn.com/claude-code/-YhHHmtSxwr7W8gy/images/vs-code-extension-interface.jpg?fit=max&auto=format&n=-YhHHmtSxwr7W8gy&q=85&s=300652d5678c63905e6b0ea9e50835f8" alt="VS Code editor with the Claude Code extension panel open on the right side, showing a conversation with Claude" data-og-width="2500" width="2500" data-og-height="1155" height="1155" data-path="images/vs-code-extension-interface.jpg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/claude-code/-YhHHmtSxwr7W8gy/images/vs-code-extension-interface.jpg?w=280&fit=max&auto=format&n=-YhHHmtSxwr7W8gy&q=85&s=87630c671517a3d52e9aee627041696e 280w, https://mintcdn.com/claude-code/-YhHHmtSxwr7W8gy/images/vs-code-extension-interface.jpg?w=560&fit=max&auto=format&n=-YhHHmtSxwr7W8gy&q=85&s=716b093879204beec8d952649ef75292 560w, https://mintcdn.com/claude-code/-YhHHmtSxwr7W8gy/images/vs-code-extension-interface.jpg?w=840&fit=max&auto=format&n=-YhHHmtSxwr7W8gy&q=85&s=c1525d1a01513acd9d83d8b5a8fe2fc8 840w, https://mintcdn.com/claude-code/-YhHHmtSxwr7W8gy/images/vs-code-extension-interface.jpg?w=1100&fit=max&auto=format&n=-YhHHmtSxwr7W8gy&q=85&s=1d90021d58bbb51f871efec13af955c3 1100w, https://mintcdn.com/claude-code/-YhHHmtSxwr7W8gy/images/vs-code-extension-interface.jpg?w=1650&fit=max&auto=format&n=-YhHHmtSxwr7W8gy&q=85&s=7babdd25440099886f193cfa99af88ae 1650w, https://mintcdn.com/claude-code/-YhHHmtSxwr7W8gy/images/vs-code-extension-interface.jpg?w=2500&fit=max&auto=format&n=-YhHHmtSxwr7W8gy&q=85&s=08c92eedfb56fe61a61e480fb63784b6 2500w" />
+
+The VS Code extension provides a native graphical interface for Claude Code, integrated directly into your IDE. This is the recommended way to use Claude Code in VS Code.
+
+With the extension, you can review and edit Claude's plans before accepting them, auto-accept edits as they're made, @-mention files with specific line ranges from your selection, access conversation history, and open multiple conversations in separate tabs or windows.
+
+## Prerequisites
+
+* VS Code 1.98.0 or higher
+* An Anthropic account (you'll sign in when you first open the extension). If you're using a third-party provider like Amazon Bedrock or Google Vertex AI, see [Use third-party providers](#use-third-party-providers) instead.
+
+<Tip>
+  The extension includes the CLI (command-line interface), which you can access from VS Code's integrated terminal for advanced features. See [VS Code extension vs. Claude Code CLI](#vs-code-extension-vs-claude-code-cli) for details.
+</Tip>
+
+## Install the extension
+
+Click the link for your IDE to install directly:
+
+* [Install for VS Code](vscode:extension/anthropic.claude-code)
+* [Install for Cursor](cursor:extension/anthropic.claude-code)
+
+Or in VS Code, press `Cmd+Shift+X` (Mac) or `Ctrl+Shift+X` (Windows/Linux) to open the Extensions view, search for "Claude Code", and click **Install**.
+
+<Note>If the extension doesn't appear after installation, restart VS Code or run "Developer: Reload Window" from the Command Palette.</Note>
+
+## Get started
+
+Once installed, you can start using Claude Code through the VS Code interface:
+
+<Steps>
+  <Step title="Open the Claude Code panel">
+    Throughout VS Code, the Spark icon indicates Claude Code: <img src="https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-spark-icon.svg?fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=a734d84e785140016672f08e0abb236c" alt="Spark icon" style={{display: "inline", height: "0.85em", verticalAlign: "middle"}} data-og-width="16" width="16" data-og-height="16" height="16" data-path="images/vs-code-spark-icon.svg" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-spark-icon.svg?w=280&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=9a45aad9a84b9fa1701ac99a1f9aa4e9 280w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-spark-icon.svg?w=560&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=3f4cb9254c4d4e93989c4b6bf9292f4b 560w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-spark-icon.svg?w=840&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=e75ccc9faa3e572db8f291ceb65bb264 840w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-spark-icon.svg?w=1100&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=f147bd81a381a62539a4ce361fac41c7 1100w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-spark-icon.svg?w=1650&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=78fe68efaee5d6e844bbacab1b442ed5 1650w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-spark-icon.svg?w=2500&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=efb8dbe1dfa722d094edc6ad2ad4bedb 2500w" />
+
+    The quickest way to open Claude is to click the Spark icon in the **Editor Toolbar** (top-right corner of the editor). The icon only appears when you have a file open.
+
+        <img src="https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-editor-icon.png?fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=eb4540325d94664c51776dbbfec4cf02" alt="VS Code editor showing the Spark icon in the Editor Toolbar" data-og-width="2796" width="2796" data-og-height="734" height="734" data-path="images/vs-code-editor-icon.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-editor-icon.png?w=280&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=56f218d5464359d6480cfe23f70a923e 280w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-editor-icon.png?w=560&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=344a8db024b196c795a80dc85cacb8d1 560w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-editor-icon.png?w=840&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=f30bf834ee0625b2a4a635d552d87163 840w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-editor-icon.png?w=1100&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=81fdf984840e43a9f08ae42729d1484d 1100w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-editor-icon.png?w=1650&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=8b60fb32de54717093d512afaa99785c 1650w, https://mintcdn.com/claude-code/mfM-EyoZGnQv8JTc/images/vs-code-editor-icon.png?w=2500&fit=max&auto=format&n=mfM-EyoZGnQv8JTc&q=85&s=893e6bda8f2e9d42c8a294d394f0b736 2500w" />
+
+    Other ways to open Claude Code:
+
+    * **Command Palette**: `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux), type "Claude Code", and select an option like "Open in New Tab"
+    * **Status Bar**: Click **✱ Claude Code** in the bottom-right corner of the window. This works even when no file is open.
+
+    You can drag the Claude panel to reposition it anywhere in VS Code. See [Customize your workflow](#customize-your-workflow) for details.
+  </Step>
+
+  <Step title="Send a prompt">
+    Ask Claude to help with your code or files, whether that's explaining how something works, debugging an issue, or making changes.
+
+    <Tip>Claude automatically sees your selected text. Press `Option+K` (Mac) / `Alt+K` (Windows/Linux) to also insert an @-mention reference (like `@file.ts#5-10`) into your prompt.</Tip>
+
+    Here's an example of asking about a particular line in a file:
+
+        <img src="https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-send-prompt.png?fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=ede3ed8d8d5f940e01c5de636d009cfd" alt="VS Code editor with lines 2-3 selected in a Python file, and the Claude Code panel showing a question about those lines with an @-mention reference" data-og-width="3288" width="3288" data-og-height="1876" height="1876" data-path="images/vs-code-send-prompt.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-send-prompt.png?w=280&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=f40bde7b2c245fe8f0f5b784e8106492 280w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-send-prompt.png?w=560&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=fad66a27a9a6faa23b05370aa4f398b2 560w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-send-prompt.png?w=840&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=4539c8a3823ca80a5c8771f6c088ce9e 840w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-send-prompt.png?w=1100&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=fae8ebf300c7853409a562ffa46d9c71 1100w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-send-prompt.png?w=1650&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=22e4462bb8cf0c0ca20f8102bc4c971a 1650w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-send-prompt.png?w=2500&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=739bfd045f70fe7be1a109a53494590e 2500w" />
+  </Step>
+
+  <Step title="Review changes">
+    When Claude wants to edit a file, it shows a side-by-side comparison of the original and proposed changes, then asks for permission. You can accept, reject, or tell Claude what to do instead.
+
+        <img src="https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-edits.png?fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=e005f9b41c541c5c7c59c082f7c4841c" alt="VS Code showing a diff of Claude's proposed changes with a permission prompt asking whether to make the edit" data-og-width="3292" width="3292" data-og-height="1876" height="1876" data-path="images/vs-code-edits.png" data-optimize="true" data-opv="3" srcset="https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-edits.png?w=280&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=cb5d41b81087f79b842a56b5a3304660 280w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-edits.png?w=560&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=90bb691960decdc06393c3c21cd62c75 560w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-edits.png?w=840&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=9a11bf878ba619e850380904ff4f38e8 840w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-edits.png?w=1100&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=6dddbf596b4f69ec6245bdc5eb6dd487 1100w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-edits.png?w=1650&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=ef2713b8cbfd2cee97af817d813d64c7 1650w, https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-edits.png?w=2500&fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=1f7e1c52919cdfddf295f32a2ec7ae59 2500w" />
+  </Step>
+</Steps>
+
+For more ideas on what you can do with Claude Code, see [Common workflows](/en/common-workflows).
+
+<Tip>
+  The extension includes two built-in tutorials:
+
+  * **VS Code walkthrough**: Run "Claude Code: Open Walkthrough" from the Command Palette for a guided tour of the basics.
+  * **Interactive checklist**: Click the graduation cap icon in the Claude panel header to work through features like writing code, using Plan mode, and setting up rules.
+</Tip>
+
+## Use the prompt box
+
+The prompt box supports several features:
+
+* **Permission modes**: Click the mode indicator at the bottom of the prompt box to switch modes. In normal mode, Claude asks permission before each action. In Plan mode, Claude describes what it will do and waits for approval before making changes. In auto-accept mode, Claude makes edits without asking. Set the default in VS Code settings under `claudeCode.initialPermissionMode`.
+* **Command menu**: Click `/` or type `/` to open the command menu. Options include attaching files, switching models, toggling extended thinking, and viewing plan usage (`/usage`). The Customize section provides access to MCP servers, hooks, memory, permissions, and plugins. Items with a terminal icon open in the integrated terminal.
+* **Context indicator**: The prompt box shows how much of Claude's context window you're using. Claude automatically compacts when needed, or you can run `/compact` manually.
+* **Extended thinking**: Lets Claude spend more time reasoning through complex problems. Toggle it on via the command menu (`/`). See [Extended thinking](/en/common-workflows#use-extended-thinking-thinking-mode) for details.
+* **Multi-line input**: Press `Shift+Enter` to add a new line without sending.
+
+### Reference files and folders
+
+Use @-mentions to give Claude context about specific files or folders. When you type `@` followed by a file or folder name, Claude reads that content and can answer questions about it or make changes to it. Claude Code supports fuzzy matching, so you can type partial names to find what you need:
+
+```
+> Explain the logic in @auth (fuzzy matches auth.js, AuthService.ts, etc.)
+> What's in @src/components/ (include a trailing slash for folders)
+```
+
+When you select text in the editor, Claude can see your highlighted code automatically. The prompt box footer shows how many lines are selected. Press `Option+K` (Mac) / `Alt+K` (Windows/Linux) to insert an @-mention with the file path and line numbers (e.g., `@app.ts#5-10`). Click the selection indicator to toggle whether Claude can see your highlighted text - the eye-slash icon means the selection is hidden from Claude.
+
+You can also hold `Shift` while dragging files into the prompt box to add them as attachments. Click the X on any attachment to remove it from context.
+
+### Resume past conversations
+
+Click the dropdown at the top of the Claude Code panel to access your conversation history. You can search by keyword or browse by time (Today, Yesterday, Last 7 days, etc.). Click any conversation to resume it with the full message history. For more on resuming sessions, see [Common workflows](/en/common-workflows#resume-previous-conversations).
+
+### Resume remote sessions from Claude.ai
+
+If you use [Claude Code on the web](/en/claude-code-on-the-web), you can resume those remote sessions directly in VS Code. This requires signing in with **Claude.ai Subscription**, not Anthropic Console.
+
+<Steps>
+  <Step title="Open Past Conversations">
+    Click the **Past Conversations** dropdown at the top of the Claude Code panel.
+  </Step>
+
+  <Step title="Select the Remote tab">
+    The dialog shows two tabs: Local and Remote. Click **Remote** to see sessions from claude.ai.
+  </Step>
+
+  <Step title="Select a session to resume">
+    Browse or search your remote sessions. Click any session to download it and continue the conversation locally.
+  </Step>
+</Steps>
+
+<Note>
+  Only web sessions started with a GitHub repository appear in the Remote tab. Resuming loads the conversation history locally; changes are not synced back to claude.ai.
+</Note>
+
+## Customize your workflow
+
+Once you're up and running, you can reposition the Claude panel, run multiple sessions, or switch to terminal mode.
+
+### Choose where Claude lives
+
+You can drag the Claude panel to reposition it anywhere in VS Code. Grab the panel's tab or title bar and drag it to:
+
+* **Secondary sidebar**: The right side of the window. Keeps Claude visible while you code.
+* **Primary sidebar**: The left sidebar with icons for Explorer, Search, etc.
+* **Editor area**: Opens Claude as a tab alongside your files. Useful for side tasks.
+
+<Tip>
+  Use the sidebar for your main Claude session and open additional tabs for side tasks. Claude remembers your preferred location. Note that the Spark icon only appears in the Activity Bar when the Claude panel is docked to the left. Since Claude defaults to the right side, use the Editor Toolbar icon to open Claude.
+</Tip>
+
+### Run multiple conversations
+
+Use **Open in New Tab** or **Open in New Window** from the Command Palette to start additional conversations. Each conversation maintains its own history and context, allowing you to work on different tasks in parallel.
+
+When using tabs, a small colored dot on the spark icon indicates status: blue means a permission request is pending, orange means Claude finished while the tab was hidden.
+
+### Switch to terminal mode
+
+By default, the extension opens a graphical chat panel. If you prefer the CLI-style interface, open the [Use Terminal setting](vscode://settings/claudeCode.useTerminal) and check the box.
+
+You can also open VS Code settings (`Cmd+,` on Mac or `Ctrl+,` on Windows/Linux), go to Extensions → Claude Code, and check **Use Terminal**.
+
+## Manage plugins
+
+The VS Code extension includes a graphical interface for installing and managing [plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md). Type `/plugins` in the prompt box to open the **Manage plugins** interface.
+
+### Install plugins
+
+The plugin dialog shows two tabs: **Plugins** and **Marketplaces**.
+
+In the Plugins tab:
+
+* **Installed plugins** appear at the top with toggle switches to enable or disable them
+* **Available plugins** from your configured marketplaces appear below
+* Search to filter plugins by name or description
+* Click **Install** on any available plugin
+
+When you install a plugin, choose the installation scope:
+
+* **Install for you**: Available in all your projects (user scope)
+* **Install for this project**: Shared with project collaborators (project scope)
+* **Install locally**: Only for you, only in this repository (local scope)
+
+### Manage marketplaces
+
+Switch to the **Marketplaces** tab to add or remove plugin sources:
+
+* Enter a GitHub repo, URL, or local path to add a new marketplace
+* Click the refresh icon to update a marketplace's plugin list
+* Click the trash icon to remove a marketplace
+
+After making changes, a banner prompts you to restart Claude Code to apply the updates.
+
+<Note>
+  Plugin management in VS Code uses the same CLI commands under the hood. Plugins and marketplaces you configure in the extension are also available in the CLI, and vice versa.
+</Note>
+
+For more about the plugin system, see [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) and [Plugin marketplaces](/en/plugin-marketplaces).
+
+## VS Code commands and shortcuts
+
+Open the Command Palette (`Cmd+Shift+P` on Mac or `Ctrl+Shift+P` on Windows/Linux) and type "Claude Code" to see all available VS Code commands for the Claude Code extension.
+
+Some shortcuts depend on which panel is "focused" (receiving keyboard input). When your cursor is in a code file, the editor is focused. When your cursor is in Claude's prompt box, Claude is focused. Use `Cmd+Esc` / `Ctrl+Esc` to toggle between them.
+
+<Note>
+  These are VS Code commands for controlling the extension. Not all built-in Claude Code commands are available in the extension. See [VS Code extension vs. Claude Code CLI](#vs-code-extension-vs-claude-code-cli) for details.
+</Note>
+
+| Command                    | Shortcut                                                 | Description                                                                          |
+| -------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Focus Input                | `Cmd+Esc` (Mac) / `Ctrl+Esc` (Windows/Linux)             | Toggle focus between editor and Claude                                               |
+| Open in Side Bar           | -                                                        | Open Claude in the left sidebar                                                      |
+| Open in Terminal           | -                                                        | Open Claude in terminal mode                                                         |
+| Open in New Tab            | `Cmd+Shift+Esc` (Mac) / `Ctrl+Shift+Esc` (Windows/Linux) | Open a new conversation as an editor tab                                             |
+| Open in New Window         | -                                                        | Open a new conversation in a separate window                                         |
+| New Conversation           | `Cmd+N` (Mac) / `Ctrl+N` (Windows/Linux)                 | Start a new conversation (requires Claude to be focused)                             |
+| Insert @-Mention Reference | `Option+K` (Mac) / `Alt+K` (Windows/Linux)               | Insert a reference to the current file and selection (requires editor to be focused) |
+| Show Logs                  | -                                                        | View extension debug logs                                                            |
+| Logout                     | -                                                        | Sign out of your Anthropic account                                                   |
+
+## Configure settings
+
+The extension has two types of settings:
+
+* **Extension settings** in VS Code: Control the extension's behavior within VS Code. Open with `Cmd+,` (Mac) or `Ctrl+,` (Windows/Linux), then go to Extensions → Claude Code. You can also type `/` and select **General Config** to open settings.
+* **Claude Code settings** in `~/.claude/settings.json`: Shared between the extension and CLI. Use for allowed commands, environment variables, hooks, and MCP servers. See [Settings](/en/settings) for details.
+
+### Extension settings
+
+| Setting                           | Default   | Description                                                                                           |
+| --------------------------------- | --------- | ----------------------------------------------------------------------------------------------------- |
+| `selectedModel`                   | `default` | Model for new conversations. Change per-session with `/model`.                                        |
+| `useTerminal`                     | `false`   | Launch Claude in terminal mode instead of graphical panel                                             |
+| `initialPermissionMode`           | `default` | Controls approval prompts: `default` (ask each time), `plan`, `acceptEdits`, or `bypassPermissions`   |
+| `preferredLocation`               | `panel`   | Where Claude opens: `sidebar` (right) or `panel` (new tab)                                            |
+| `autosave`                        | `true`    | Auto-save files before Claude reads or writes them                                                    |
+| `useCtrlEnterToSend`              | `false`   | Use Ctrl/Cmd+Enter instead of Enter to send prompts                                                   |
+| `enableNewConversationShortcut`   | `true`    | Enable Cmd/Ctrl+N to start a new conversation                                                         |
+| `hideOnboarding`                  | `false`   | Hide the onboarding checklist (graduation cap icon)                                                   |
+| `respectGitIgnore`                | `true`    | Exclude .gitignore patterns from file searches                                                        |
+| `environmentVariables`            | `[]`      | Set environment variables for the Claude process. Use Claude Code settings instead for shared config. |
+| `disableLoginPrompt`              | `false`   | Skip authentication prompts (for third-party provider setups)                                         |
+| `allowDangerouslySkipPermissions` | `false`   | Bypass all permission prompts. **Use with extreme caution.**                                          |
+| `claudeProcessWrapper`            | -         | Executable path used to launch the Claude process                                                     |
+
+## VS Code extension vs. Claude Code CLI
+
+Claude Code is available as both a VS Code extension (graphical panel) and a CLI (command-line interface in the terminal). Some features are only available in the CLI. If you need a CLI-only feature, run `claude` in VS Code's integrated terminal.
+
+| Feature             | CLI                                           | VS Code Extension                        |
+| ------------------- | --------------------------------------------- | ---------------------------------------- |
+| Commands and skills | [All](/en/interactive-mode#built-in-commands) | Subset (type `/` to see available)       |
+| MCP server config   | Yes                                           | No (configure via CLI, use in extension) |
+| Checkpoints         | Yes                                           | Yes                                      |
+| `!` bash shortcut   | Yes                                           | No                                       |
+| Tab completion      | Yes                                           | No                                       |
+
+### Rewind with checkpoints
+
+The VS Code extension supports checkpoints, which track Claude's file edits and let you rewind to a previous state. Hover over any message to reveal the rewind button, then choose from three options:
+
+* **Fork conversation from here**: start a new conversation branch from this message while keeping all code changes intact
+* **Rewind code to here**: revert file changes back to this point in the conversation while keeping the full conversation history
+* **Fork conversation and rewind code**: start a new conversation branch and revert file changes to this point
+
+For full details on how checkpoints work and their limitations, see [Checkpointing](../02-Claude-Code-CLI/checkpointing-claude-code-docs.md).
+
+### Run CLI in VS Code
+
+To use the CLI while staying in VS Code, open the integrated terminal (`` Ctrl+` `` on Windows/Linux or `` Cmd+` `` on Mac) and run `claude`. The CLI automatically integrates with your IDE for features like diff viewing and diagnostic sharing.
+
+If using an external terminal, run `/ide` inside Claude Code to connect it to VS Code.
+
+### Switch between extension and CLI
+
+The extension and CLI share the same conversation history. To continue an extension conversation in the CLI, run `claude --resume` in the terminal. This opens an interactive picker where you can search for and select your conversation.
+
+### Include terminal output in prompts
+
+Reference terminal output in your prompts using `@terminal:name` where `name` is the terminal's title. This lets Claude see command output, error messages, or logs without copy-pasting.
+
+### Monitor background processes
+
+When Claude runs long-running commands, the extension shows progress in the status bar. However, visibility for background tasks is limited compared to the CLI. For better visibility, have Claude output the command so you can run it in VS Code's integrated terminal.
+
+### Connect to external tools with MCP
+
+MCP (Model Context Protocol) servers give Claude access to external tools, databases, and APIs. Configure them via CLI, then use them in both extension and CLI.
+
+To add an MCP server, open the integrated terminal (`` Ctrl+` `` or `` Cmd+` ``) and run:
+
+```bash  theme={null}
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/
+```
+
+Once configured, ask Claude to use the tools (e.g., "Review PR #456"). Some servers require authentication: run `claude` in the terminal, then type `/mcp` to authenticate. See the [MCP documentation](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) for available servers.
+
+## Work with git
+
+Claude Code integrates with git to help with version control workflows directly in VS Code. Ask Claude to commit changes, create pull requests, or work across branches.
+
+### Create commits and pull requests
+
+Claude can stage changes, write commit messages, and create pull requests based on your work:
+
+```
+> commit my changes with a descriptive message
+> create a pr for this feature
+> summarize the changes I've made to the auth module
+```
+
+When creating pull requests, Claude generates descriptions based on the actual code changes and can add context about testing or implementation decisions.
+
+### Use git worktrees for parallel tasks
+
+Git worktrees allow multiple Claude Code sessions to work on separate branches simultaneously, each with isolated files:
+
+```bash  theme={null}
+# Create a worktree for a new feature
+git worktree add ../project-feature-a -b feature-a
+
+# Run Claude Code in each worktree
+cd ../project-feature-a && claude
+```
+
+Each worktree maintains independent file state while sharing git history. This prevents Claude instances from interfering with each other when working on different tasks.
+
+For detailed git workflows including PR reviews and branch management, see [Common workflows](/en/common-workflows#create-pull-requests).
+
+## Use third-party providers
+
+By default, Claude Code connects directly to Anthropic's API. If your organization uses Amazon Bedrock, Google Vertex AI, or Microsoft Foundry to access Claude, configure the extension to use your provider instead:
+
+<Steps>
+  <Step title="Disable login prompt">
+    Open the [Disable Login Prompt setting](vscode://settings/claudeCode.disableLoginPrompt) and check the box.
+
+    You can also open VS Code settings (`Cmd+,` on Mac or `Ctrl+,` on Windows/Linux), search for "Claude Code login", and check **Disable Login Prompt**.
+  </Step>
+
+  <Step title="Configure your provider">
+    Follow the setup guide for your provider:
+
+    * [Claude Code on Amazon Bedrock](../02-Claude-Code-CLI/claude-code-on-amazon-bedrock-claude-code-docs.md)
+    * [Claude Code on Google Vertex AI](../02-Claude-Code-CLI/claude-code-on-google-vertex-ai-claude-code-docs.md)
+    * [Claude Code on Microsoft Foundry](../02-Claude-Code-CLI/claude-code-on-microsoft-foundry-claude-code-docs.md)
+
+    These guides cover configuring your provider in `~/.claude/settings.json`, which ensures your settings are shared between the VS Code extension and the CLI.
+  </Step>
+</Steps>
+
+## Security and privacy
+
+Your code stays private. Claude Code processes your code to provide assistance but does not use it to train models. For details on data handling and how to opt out of logging, see [Data and privacy](/en/data-usage).
+
+With auto-edit permissions enabled, Claude Code can modify VS Code configuration files (like `settings.json` or `tasks.json`) that VS Code may execute automatically. To reduce risk when working with untrusted code:
+
+* Enable [VS Code Restricted Mode](https://code.visualstudio.com/docs/editor/workspace-trust#_restricted-mode) for untrusted workspaces
+* Use manual approval mode instead of auto-accept for edits
+* Review changes carefully before accepting them
+
+## Fix common issues
+
+### Extension won't install
+
+* Ensure you have a compatible version of VS Code (1.98.0 or later)
+* Check that VS Code has permission to install extensions
+* Try installing directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
+
+### Spark icon not visible
+
+The Spark icon appears in the **Editor Toolbar** (top-right of editor) when you have a file open. If you don't see it:
+
+1. **Open a file**: The icon requires a file to be open. Having just a folder open isn't enough.
+2. **Check VS Code version**: Requires 1.98.0 or higher (Help → About)
+3. **Restart VS Code**: Run "Developer: Reload Window" from the Command Palette
+4. **Disable conflicting extensions**: Temporarily disable other AI extensions (Cline, Continue, etc.)
+5. **Check workspace trust**: The extension doesn't work in Restricted Mode
+
+Alternatively, click "✱ Claude Code" in the **Status Bar** (bottom-right corner). This works even without a file open. You can also use the **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`) and type "Claude Code".
+
+### Claude Code never responds
+
+If Claude Code isn't responding to your prompts:
+
+1. **Check your internet connection**: Ensure you have a stable internet connection
+2. **Start a new conversation**: Try starting a fresh conversation to see if the issue persists
+3. **Try the CLI**: Run `claude` from the terminal to see if you get more detailed error messages
+
+If problems persist, [file an issue on GitHub](https://github.com/anthropics/claude-code/issues) with details about the error.
+
+## Uninstall the extension
+
+To uninstall the Claude Code extension:
+
+1. Open the Extensions view (`Cmd+Shift+X` on Mac or `Ctrl+Shift+X` on Windows/Linux)
+2. Search for "Claude Code"
+3. Click **Uninstall**
+
+To also remove extension data and reset all settings:
+
+```bash  theme={null}
+rm -rf ~/.vscode/globalStorage/anthropic.claude-code
+```
+
+For additional help, see the [troubleshooting guide](/en/troubleshooting).
+
+## Next steps
+
+Now that you have Claude Code set up in VS Code:
+
+* [Explore common workflows](/en/common-workflows) to get the most out of Claude Code
+* [Set up MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) to extend Claude's capabilities with external tools. Configure servers using the CLI, then use them in the extension.
+* [Configure Claude Code settings](/en/settings) to customize allowed commands, hooks, and more. These settings are shared between the extension and CLI.

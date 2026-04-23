@@ -1,3 +1,9 @@
+---
+title: "Building Custom Skills for Claude"
+category: "08-Plugins-Skills"
+tags: ["plugins", "skills"]
+---
+
 # Building Custom Skills for Claude
 
 Learn how to create, deploy, and manage custom skills to extend

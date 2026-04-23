@@ -1,3 +1,9 @@
+---
+title: "Common Hook Patterns"
+category: "07-Hooks"
+tags: ["hooks", "mcp", "security"]
+---
+
 # Common Hook Patterns
 
 This reference provides common, proven patterns for implementing Claude Code hooks. Use these patterns as starting points for typical hook use cases.

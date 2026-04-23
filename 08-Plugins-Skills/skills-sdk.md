@@ -1,3 +1,9 @@
+---
+title: "Agent Skills in the SDK"
+category: "08-Plugins-Skills"
+tags: ["agents", "plugins", "sdk", "skills", "testing"]
+---
+
 # Agent Skills in the SDK
 
 Extend Claude with specialized capabilities using Agent Skills in the Claude Agent SDK
@@ -93,7 +99,7 @@ Skills are defined as directories containing a `SKILL.md` file with YAML frontma
 ```
 
 For complete guidance on creating Skills, including SKILL.md structure, multi-file Skills, and examples, see:
-- [Agent Skills in Claude Code](https://code.claude.com/docs/en/skills): Complete guide with examples
+- [Agent Skills in Claude Code](extend-claude-with-skills-claude-code-docs.md): Complete guide with examples
 - [Agent Skills Best Practices](/docs/en/agents-and-tools/agent-skills/best-practices): Authoring guidelines and naming conventions
 
 ## Tool Restrictions
@@ -293,12 +299,12 @@ ls ~/.claude/skills/*/SKILL.md
 
 ### Additional Troubleshooting
 
-For general Skills troubleshooting (YAML syntax, debugging, etc.), see the [Claude Code Skills troubleshooting section](https://code.claude.com/docs/en/skills#troubleshooting).
+For general Skills troubleshooting (YAML syntax, debugging, etc.), see the [Claude Code Skills troubleshooting section](extend-claude-with-skills-claude-code-docs.md#troubleshooting).
 
 ## Related Documentation
 
 ### Skills Guides
-- [Agent Skills in Claude Code](https://code.claude.com/docs/en/skills): Complete Skills guide with creation, examples, and troubleshooting
+- [Agent Skills in Claude Code](extend-claude-with-skills-claude-code-docs.md): Complete Skills guide with creation, examples, and troubleshooting
 - [Agent Skills Overview](/docs/en/agents-and-tools/agent-skills/overview): Conceptual overview, benefits, and architecture
 - [Agent Skills Best Practices](/docs/en/agents-and-tools/agent-skills/best-practices): Authoring guidelines for effective Skills
 - [Agent Skills Cookbook](https://platform.claude.com/cookbook/skills-notebooks-01-skills-introduction): Example Skills and templates

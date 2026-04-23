@@ -1,3 +1,9 @@
+---
+title: "2.1.74 Suspicious Functions — Disassembly Report"
+category: "19-Reference"
+tags: ["rag", "security"]
+---
+
 # 2.1.74 Suspicious Functions — Disassembly Report
 
 **Analysis Date**: 2026-03-13

@@ -1,3 +1,9 @@
+---
+title: "Prompt Extraction Summary (2.1.39 vs 2.1.41 vs 2.1.42)"
+category: "19-Reference"
+tags: ["prompting"]
+---
+
 # Prompt Extraction Summary (2.1.39 vs 2.1.41 vs 2.1.42)
 
 ## Unique counts by category

@@ -1,3 +1,9 @@
+---
+title: "Extend Claude Code"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -18,13 +24,13 @@ Claude Code combines a model that reasons about your code with [built-in tools](
 Extensions plug into different parts of the agentic loop:
 
 * **[CLAUDE.md](/en/memory)** adds persistent context Claude sees every session
-* **[Skills](/en/skills)** add reusable knowledge and invocable workflows
-* **[MCP](/en/mcp)** connects Claude to external services and tools
+* **[Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)** add reusable knowledge and invocable workflows
+* **[MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md)** connects Claude to external services and tools
 * **[Subagents](/en/sub-agents)** run their own loops in isolated context, returning summaries
-* **[Hooks](/en/hooks)** run outside the loop entirely as deterministic scripts
-* **[Plugins](/en/plugins)** and **[marketplaces](/en/plugin-marketplaces)** package and distribute these features
+* **[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md)** run outside the loop entirely as deterministic scripts
+* **[Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)** and **[marketplaces](/en/plugin-marketplaces)** package and distribute these features
 
-[Skills](/en/skills) are the most flexible extension. A skill is a markdown file containing knowledge, workflows, or instructions. You can invoke skills with a slash command like `/deploy`, or Claude can load them automatically when relevant. Skills can run in your current conversation or in an isolated context via subagents.
+[Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) are the most flexible extension. A skill is a markdown file containing knowledge, workflows, or instructions. You can invoke skills with a slash command like `/deploy`, or Claude can load them automatically when relevant. Skills can run in your current conversation or in an isolated context via subagents.
 
 ## Match features to your goal
 
@@ -38,7 +44,7 @@ Features range from always-on context that Claude sees every session, to on-dema
 | **MCP**       | Connect to external services                               | External data or actions                               | Query your database, post to Slack, control a browser                            |
 | **Hook**      | Deterministic script that runs on events                   | Predictable automation, no LLM involved                | Run ESLint after every file edit                                                 |
 
-**[Plugins](/en/plugins)** are the packaging layer. A plugin bundles skills, hooks, subagents, and MCP servers into a single installable unit. Plugin skills are namespaced (like `/my-plugin:review`) so multiple plugins can coexist. Use plugins when you want to reuse the same setup across multiple repositories or distribute to others via a **[marketplace](/en/plugin-marketplaces)**.
+**[Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)** are the packaging layer. A plugin bundles skills, hooks, subagents, and MCP servers into a single installable unit. Plugin skills are namespaced (like `/my-plugin:review`) so multiple plugins can coexist. Use plugins when you want to reuse the same setup across multiple repositories or distribute to others via a **[marketplace](/en/plugin-marketplaces)**.
 
 ### Compare similar features
 
@@ -61,7 +67,7 @@ Some features can seem similar. Here's how to tell them apart.
 
     **Use a subagent** when you need context isolation or when your context window is getting full. The subagent might read dozens of files or run extensive searches, but your main conversation only receives a summary. Since subagent work doesn't consume your main context, this is also useful when you don't need the intermediate work to remain visible. Custom subagents can have their own instructions and can preload skills.
 
-    **They can combine.** A subagent can preload specific skills (`skills:` field). A skill can run in isolated context using `context: fork`. See [Skills](/en/skills) for details.
+    **They can combine.** A subagent can preload specific skills (`skills:` field). A skill can run in isolated context using `context: fork`. See [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) for details.
   </Tab>
 
   <Tab title="CLAUDE.md vs Skill">
@@ -107,7 +113,7 @@ Features can be defined at multiple levels: user-wide, per-project, via plugins,
 * **CLAUDE.md files** are additive: all levels contribute content to Claude's context simultaneously. Files from your working directory and above load at launch; subdirectories load as you work in them. When instructions conflict, Claude uses judgment to reconcile them, with more specific instructions typically taking precedence. See [how Claude looks up memories](/en/memory#how-claude-looks-up-memories).
 * **Skills and subagents** override by name: when the same name exists at multiple levels, one definition wins based on priority (managed > user > project for skills; managed > CLI flag > project > user > plugin for subagents). Plugin skills are [namespaced](/en/plugins#add-skills-to-your-plugin) to avoid conflicts. See [skill discovery](/en/skills#where-skills-live) and [subagent scope](/en/sub-agents#choose-the-subagent-scope).
 * **MCP servers** override by name: local > project > user. See [MCP scope](/en/mcp#scope-hierarchy-and-precedence).
-* **Hooks** merge: all registered hooks fire for their matching events regardless of source. See [hooks](/en/hooks).
+* **Hooks** merge: all registered hooks fire for their matching events regardless of source. See [hooks](../07-Hooks/hooks-reference-claude-code-docs.md).
 
 ### Combine features
 
@@ -201,7 +207,7 @@ Each feature loads at different points in your session. The tabs below explain w
   </Tab>
 
   <Tab title="Hooks">
-    **When:** On trigger. Hooks fire at specific lifecycle events like tool execution, session boundaries, prompt submission, permission requests, and compaction. See [Hooks](/en/hooks) for the full list.
+    **When:** On trigger. Hooks fire at specific lifecycle events like tool execution, session boundaries, prompt submission, permission requests, and compaction. See [Hooks](../07-Hooks/hooks-reference-claude-code-docs.md) for the full list.
 
     **What loads:** Nothing by default. Hooks run as external scripts.
 

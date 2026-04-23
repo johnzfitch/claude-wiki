@@ -1,3 +1,9 @@
+---
+title: "Coordinating subagent outputs and alignment"
+category: "09-Agents-Patterns"
+tags: ["agents", "subagents"]
+---
+
 # Coordinating subagent outputs and alignment
 
 ## User

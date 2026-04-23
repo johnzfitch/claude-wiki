@@ -1,3 +1,9 @@
+---
+title: "Batch Processing with Message Batches API"
+category: "04-API-Reference/Other"
+tags: ["api"]
+---
+
 # Batch Processing with Message Batches API
 
 Message Batches allow you to process large volumes of Messages requests

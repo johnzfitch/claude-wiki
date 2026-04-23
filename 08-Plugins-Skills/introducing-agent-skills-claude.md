@@ -1,3 +1,9 @@
+---
+title: "Introducing Agent Skills Claude"
+category: "08-Plugins-Skills"
+tags: ["agents", "plugins", "skills"]
+---
+
 ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6903d2307f9555d7c1bc46cb_77dd9077412abc790bf2bc6fa3383b37724d6305-1000x1000.svg)
 
 -   Product
@@ -152,7 +158,7 @@ Skills extend Claude Code with your team's expertise and workflows. Install skil
 
 ## Getting started
 
--   **Claude apps:** [User Guide](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills) & [Help Center](https://support.claude.com/en/articles/12512176-what-are-skills)
+-   **Claude apps:** [User Guide](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills) & [Help Center](../02-Claude-Code-CLI/what-are-skills.md)
 -   **API developers:** [Documentation](https://docs.claude.com/en/api/skills-guide)
 -   **Claude Code:** [Documentation](https://docs.claude.com/en/docs/claude-code/skills)
 -   **Example Skills to customize:** [GitHub repository](https://github.com/anthropics/skills)

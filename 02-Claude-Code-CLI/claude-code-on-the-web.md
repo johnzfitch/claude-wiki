@@ -1,3 +1,9 @@
+---
+title: "Claude Code on the web"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "security"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -576,7 +582,7 @@ Claude Code on the web shares rate limits with all other Claude and Claude Code 
 
 ## Related resources
 
-* [Hooks configuration](/en/hooks)
+* [Hooks configuration](../07-Hooks/hooks-reference-claude-code-docs.md)
 * [Settings reference](/en/settings)
-* [Security](/en/security)
+* [Security](security-claude-code-docs.md)
 * [Data usage](/en/data-usage)

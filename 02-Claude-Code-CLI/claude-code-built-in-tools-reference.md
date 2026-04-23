@@ -1,3 +1,9 @@
+---
+title: "Claude Code Built In Tools Reference"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "search"]
+---
+
 This is a guide I created while exploring the built-in tools Claude Code ships with and how it’s trained/prompted to use them. Included below is every built-in tool, their parameters, usage patterns, and examples. This was basically all written by prompting Claude Code itself.
 
 ___

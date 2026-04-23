@@ -1,3 +1,9 @@
+---
+title: "Minimal Plugin Example"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Minimal Plugin Example
 
 A bare-bones plugin with a single command.

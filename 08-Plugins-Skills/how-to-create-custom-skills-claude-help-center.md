@@ -1,3 +1,9 @@
+---
+title: "How To Create Custom Skills Claude Help Center"
+category: "08-Plugins-Skills"
+tags: ["plugins", "security", "skills", "testing"]
+---
+
 Custom Skills let you enhance Claude with specialized knowledge and workflows specific to your organization or personal work style. This article explains how to create, structure, and test your own Skills.
 
 Skills can be as simple as a few lines of instructions or as complex as multi-file packages with executable code. The best Skills:
@@ -102,7 +108,7 @@ Related Articles
 
 What are Skills?
 
-](https://support.claude.com/en/articles/12512176-what-are-skills)[
+](../02-Claude-Code-CLI/what-are-skills.md)[
 
 Using Skills in Claude
 
@@ -118,4 +124,4 @@ How to create a skill with Claude through conversation
 
 Claude for Financial Services Skills
 
-](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
+](../02-Claude-Code-CLI/claude-for-financial-services-skills.md)

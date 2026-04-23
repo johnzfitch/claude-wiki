@@ -1,3 +1,9 @@
+---
+title: "Create plugins"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -7,7 +13,7 @@
 
 Plugins let you extend Claude Code with custom functionality that can be shared across projects and teams. This guide covers creating your own plugins with skills, agents, hooks, and MCP servers.
 
-Looking to install existing plugins? See [Discover and install plugins](/en/discover-plugins). For complete technical specifications, see [Plugins reference](/en/plugins-reference).
+Looking to install existing plugins? See [Discover and install plugins](../02-Claude-Code-CLI/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs.md). For complete technical specifications, see [Plugins reference](plugins-reference-claude-code-docs.md).
 
 ## When to use plugins vs standalone configuration
 
@@ -190,7 +196,7 @@ You've created a plugin with a skill, but plugins can include much more: custom 
 | `.lsp.json`       | Plugin root | LSP server configurations for code intelligence |
 
 <Note>
-  **Next steps**: Ready to add more features? Jump to [Develop more complex plugins](#develop-more-complex-plugins) to add agents, hooks, MCP servers, and LSP servers. For complete technical specifications of all plugin components, see [Plugins reference](/en/plugins-reference).
+  **Next steps**: Ready to add more features? Jump to [Develop more complex plugins](#develop-more-complex-plugins) to add agents, hooks, MCP servers, and LSP servers. For complete technical specifications of all plugin components, see [Plugins reference](plugins-reference-claude-code-docs.md).
 </Note>
 
 ## Develop more complex plugins
@@ -199,7 +205,7 @@ Once you're comfortable with basic plugins, you can create more sophisticated ex
 
 ### Add Skills to your plugin
 
-Plugins can include [Agent Skills](/en/skills) to extend Claude's capabilities. Skills are model-invoked: Claude automatically uses them based on the task context.
+Plugins can include [Agent Skills](extend-claude-with-skills-claude-code-docs.md) to extend Claude's capabilities. Skills are model-invoked: Claude automatically uses them based on the task context.
 
 Add a `skills/` directory at your plugin root with Skill folders containing `SKILL.md` files:
 
@@ -227,7 +233,7 @@ When reviewing code, check for:
 4. Test coverage
 ```
 
-After installing the plugin, restart Claude Code to load the Skills. For complete Skill authoring guidance including progressive disclosure and tool restrictions, see [Agent Skills](/en/skills).
+After installing the plugin, restart Claude Code to load the Skills. For complete Skill authoring guidance including progressive disclosure and tool restrictions, see [Agent Skills](extend-claude-with-skills-claude-code-docs.md).
 
 ### Add LSP servers to your plugin
 
@@ -296,10 +302,10 @@ When your plugin is ready to share:
 3. **Create or use a marketplace**: Distribute through [plugin marketplaces](/en/plugin-marketplaces) for installation
 4. **Test with others**: Have team members test the plugin before wider distribution
 
-Once your plugin is in a marketplace, others can install it using the instructions in [Discover and install plugins](/en/discover-plugins).
+Once your plugin is in a marketplace, others can install it using the instructions in [Discover and install plugins](../02-Claude-Code-CLI/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs.md).
 
 <Note>
-  For complete technical specifications, debugging techniques, and distribution strategies, see [Plugins reference](/en/plugins-reference).
+  For complete technical specifications, debugging techniques, and distribution strategies, see [Plugins reference](plugins-reference-claude-code-docs.md).
 </Note>
 
 ## Convert existing configurations to plugins
@@ -395,15 +401,15 @@ Now that you understand Claude Code's plugin system, here are suggested paths fo
 
 ### For plugin users
 
-* [Discover and install plugins](/en/discover-plugins): browse marketplaces and install plugins
+* [Discover and install plugins](../02-Claude-Code-CLI/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs.md): browse marketplaces and install plugins
 * [Configure team marketplaces](/en/discover-plugins#configure-team-marketplaces): set up repository-level plugins for your team
 
 ### For plugin developers
 
 * [Create and distribute a marketplace](/en/plugin-marketplaces): package and share your plugins
-* [Plugins reference](/en/plugins-reference): complete technical specifications
+* [Plugins reference](plugins-reference-claude-code-docs.md): complete technical specifications
 * Dive deeper into specific plugin components:
-  * [Skills](/en/skills): skill development details
+  * [Skills](extend-claude-with-skills-claude-code-docs.md): skill development details
   * [Subagents](/en/sub-agents): agent configuration and capabilities
-  * [Hooks](/en/hooks): event handling and automation
-  * [MCP](/en/mcp): external tool integration
+  * [Hooks](../07-Hooks/hooks-reference-claude-code-docs.md): event handling and automation
+  * [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md): external tool integration

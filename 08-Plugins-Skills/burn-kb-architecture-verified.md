@@ -1,3 +1,9 @@
+---
+title: "Burn Knowledgebase Architecture — Verified Against Claude Code Source"
+category: "08-Plugins-Skills"
+tags: ["claude-code", "plugins"]
+---
+
 # Burn Knowledgebase Architecture — Verified Against Claude Code Source
 
 **Date**: 2026-03-15

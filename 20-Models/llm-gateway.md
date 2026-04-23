@@ -1,3 +1,8 @@
+---
+title: "LLM gateway configuration"
+category: "20-Models"
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -169,5 +174,5 @@ For more detailed information, refer to the [LiteLLM documentation](https://docs
 
 * [LiteLLM documentation](https://docs.litellm.ai/)
 * [Claude Code settings](/en/settings)
-* [Enterprise network configuration](/en/network-config)
+* [Enterprise network configuration](../02-Claude-Code-CLI/enterprise-network-configuration-claude-code-docs.md)
 * [Third-party integrations overview](/en/third-party-integrations)

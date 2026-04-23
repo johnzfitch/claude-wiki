@@ -1,3 +1,9 @@
+---
+title: "Command Testing Strategies"
+category: "12-Eval-Testing"
+tags: ["testing"]
+---
+
 # Command Testing Strategies
 
 Comprehensive strategies for testing slash commands before deployment and distribution.

@@ -1,3 +1,9 @@
+---
+title: "Plugin Marketplace: What It Actually Is"
+category: "08-Plugins-Skills"
+tags: ["enterprise", "plugins"]
+---
+
 # Plugin Marketplace: What It Actually Is
 
 **Date**: 2026-03-13

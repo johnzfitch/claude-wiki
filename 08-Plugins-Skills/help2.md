@@ -1,6 +1,9 @@
 ---
-description: "Explain Ralph Wiggum technique and available commands"
+title: "Ralph Wiggum Plugin Help"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
 ---
+
 # Ralph Wiggum Plugin Help
 
 Please explain the following to the user:

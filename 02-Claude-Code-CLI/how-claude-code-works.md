@@ -1,3 +1,9 @@
+---
+title: "How Claude Code works"
+category: "02-Claude-Code-CLI"
+tags: ["agents", "claude-code"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -56,7 +62,7 @@ Claude chooses which tools to use based on your prompt and what it learns along 
 
 Each tool use gives Claude new information that informs the next step. This is the agentic loop in action.
 
-**Extending the base capabilities:** The built-in tools are the foundation. You can extend what Claude knows with [skills](/en/skills), connect to external services with [MCP](/en/mcp), automate workflows with [hooks](/en/hooks), and offload tasks to [subagents](/en/sub-agents). These extensions form a layer on top of the core agentic loop. See [Extend Claude Code](/en/features-overview) for guidance on choosing the right extension for your needs.
+**Extending the base capabilities:** The built-in tools are the foundation. You can extend what Claude knows with [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md), connect to external services with [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md), automate workflows with [hooks](../07-Hooks/hooks-reference-claude-code-docs.md), and offload tasks to subagents. These extensions form a layer on top of the core agentic loop. See the extension guides above for help choosing the right extension for your needs.
 
 ## What Claude can access
 
@@ -68,7 +74,7 @@ When you run `claude` in a directory, Claude Code gains access to:
 * **Your terminal.** Any command you could run: build tools, git, package managers, system utilities, scripts. If you can do it from the command line, Claude can too.
 * **Your git state.** Current branch, uncommitted changes, and recent commit history.
 * **Your [CLAUDE.md](/en/memory).** A markdown file where you store project-specific instructions, conventions, and context that Claude should know every session.
-* **Extensions you configure.** [MCP servers](/en/mcp) for external services, [skills](/en/skills) for workflows, [subagents](/en/sub-agents) for delegated work, and [Claude in Chrome](/en/chrome) for browser interaction.
+* **Extensions you configure.** [MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) for external services, [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) for workflows, [subagents](/en/sub-agents) for delegated work, and [Claude in Chrome](chrome.md) for browser interaction.
 
 Because Claude sees your whole project, it can work across it. When you ask Claude to "fix the authentication bug," it searches for relevant files, reads multiple files to understand context, makes coordinated edits across them, runs tests to verify the fix, and commits the changes if you ask. This is different from inline code assistants that only see the current file.
 
@@ -118,7 +124,7 @@ Run `/context` to see what's using space. MCP servers add tool definitions to ev
 
 Beyond compaction, you can use other features to control what loads into context.
 
-[Skills](/en/skills) load on demand. Claude sees skill descriptions at session start, but the full content only loads when a skill is used. For skills you invoke manually, set `disable-model-invocation: true` to keep descriptions out of context until you need them.
+[Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) load on demand. Claude sees skill descriptions at session start, but the full content only loads when a skill is used. For skills you invoke manually, set `disable-model-invocation: true` to keep descriptions out of context until you need them.
 
 [Subagents](/en/sub-agents) get their own fresh context, completely separate from your main conversation. Their work doesn't bloat your context. When done, they return a summary. This isolation is why subagents help with long sessions.
 

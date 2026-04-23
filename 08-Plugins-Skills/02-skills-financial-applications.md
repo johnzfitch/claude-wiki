@@ -1,3 +1,9 @@
+---
+title: "Claude Skills for Financial Applications"
+category: "08-Plugins-Skills"
+tags: ["plugins", "skills"]
+---
+
 # Claude Skills for Financial Applications
 
 Build real-world financial dashboards, portfolio analytics, and
@@ -6,7 +12,7 @@ skills.
 
 > **💡 Real-world Impact:** These are the same Skills that power
 > **[Claude Creates
-> Files](https://www.anthropic.com/news/create-files)**, enabling Claude
+> Files](../19-Reference/claude-can-now-create-and-edit-files-claude.md)**, enabling Claude
 > to create professional financial documents directly in the interface.
 
 **What you\'ll learn:**

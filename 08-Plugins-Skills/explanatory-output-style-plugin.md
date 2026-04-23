@@ -1,3 +1,9 @@
+---
+title: "Explanatory Output Style Plugin"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Explanatory Output Style Plugin
 
 This plugin recreates the deprecated Explanatory output style as a SessionStart

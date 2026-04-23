@@ -1,3 +1,9 @@
+---
+title: "Learning Style Plugin"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Learning Style Plugin
 
 This plugin combines the unshipped Learning output style with explanatory functionality as a SessionStart hook.

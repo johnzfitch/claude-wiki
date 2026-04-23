@@ -1,3 +1,9 @@
+---
+title: "How to transcribe documents with Claude"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # How to transcribe documents with Claude
 
 Claude 3 is great at reading unstructured text and information within

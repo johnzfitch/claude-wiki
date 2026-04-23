@@ -1,3 +1,9 @@
+---
+title: "Hook Development Utility Scripts"
+category: "07-Hooks"
+tags: ["hooks"]
+---
+
 # Hook Development Utility Scripts
 
 These scripts help validate, test, and lint hook implementations before deployment.

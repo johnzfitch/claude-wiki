@@ -1,3 +1,9 @@
+---
+title: "Migrating from Basic to Advanced Hooks"
+category: "07-Hooks"
+tags: ["hooks"]
+---
+
 # Migrating from Basic to Advanced Hooks
 
 This guide shows how to migrate from basic command hooks to advanced prompt-based hooks for better maintainability and flexibility.

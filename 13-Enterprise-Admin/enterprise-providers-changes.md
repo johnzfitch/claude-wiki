@@ -1,3 +1,9 @@
+---
+title: "Enterprise Providers Changes: 2.1.59 → 2.1.70"
+category: "13-Enterprise-Admin"
+tags: ["bedrock", "enterprise"]
+---
+
 # Enterprise Providers Changes: 2.1.59 → 2.1.70
 
 ## Overview

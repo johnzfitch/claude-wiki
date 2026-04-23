@@ -1,3 +1,9 @@
+---
+title: "Claude API Monitoring Setup Guide"
+category: "04-API-Reference/Other"
+tags: ["api", "security"]
+---
+
 # Claude API Monitoring Setup Guide
 
 This guide will help you set up monitoring for Claude Opus API calls using MITMproxy and view them in your terminal viewer at localhost:3001.

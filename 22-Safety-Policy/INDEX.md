@@ -1,0 +1,53 @@
+# Safety Policy
+
+*48 documents*
+
+
+- [Claude Help Center](about-claude-pro-usage.md) - Search for articles...
+- [Access engagement and adoption data with the Analytics API | Claude Help Center](access-engagement-and-adoption-data-with-the-analytics-api.md) - 4.  Access engagement and adoption data with the Analytics API
+- [Access engagement and adoption data with the Analytics API | Claude Help Center](access-usage-data-with-the-analytics-api.md) - 4.  Access engagement and adoption data with the Analytics API
+- [Anthropic MCP Directory Policy | Claude Help Center](anthropic-mcp-directory-policy.md) - Updated today
+- [Anthropic MCP Directory Terms and Conditions | Claude Help Center](anthropic-mcp-directory-terms-and-conditions.md) - Updated today
+- [Anthropic Software Directory Policy | Claude Help Center](anthropic-software-directory-policy.md) - Anthropic allows users to discover high-quality Model Context Protocol servers, Skill folders, plugins, apps, and other software, containers, or data 
+- [Anthropic Software Directory Terms | Claude Help Center](anthropic-software-directory-terms.md) - By submitting your MCP server, Skill folder, plugin, app, or other software, container, or data (“Software”) for inclusion in any Anthropic directory,
+- [Can Claude produce images? | Claude Help Center](can-claude-produce-images.md) - Claude doesn’t generate photos or illustrations the way image-generation tools do.
+- [Claude Code usage analytics | Claude Help Center](claude-code-usage-analytics.md) - This feature allows Console users and owners of Team and Enterprise plans to monitor how their organization uses Claude Code, tracking productivity me
+- [Claude March 2026 usage promotion | Claude Help Center](claude-march-2026-usage-promotion.md) - We're offering a limited-time promotion that doubles usage limits for Claude users outside 8 AM-2 PM ET / 5-11 AM PT / 12-6 PM GMT on weekdays.
+- [Configuring session security settings | Claude Help Center](configuring-session-security-settings.md) - 4.  Configuring session security settings
+- [Consumer Terms of Service Updates | Claude Help Center](consumer-terms-of-service-updates.md) - This support article covers the changes to our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) that take effect **May 1, 2
+- [Crisis Helpline Support in Claude | Claude Help Center](crisis-helpline-support-in-claude.md) - *For medical emergencies, active injuries, or situations where you're in immediate physical danger, please contact emergency services (such as 911 in 
+- [Exceptions to our Usage Policy | Claude Help Center](exceptions-to-our-usage-policy.md) - Anthropic maintains a comprehensive Usage Policy to ensure the responsible deployment of our AI systems. Anthropic may enter into contracts with gover
+- [Get started with Cowork | Claude Help Center](getting-started-with-local-agent-mode.md) - This article explains how to use **[Cowork](https://claude.com/product/cowork)**, a research preview that brings Claude Code's agentic capabilities to
+- [HackerOne VDP Report: SSRF via domain_info API Allows Claude Code to Fetch Cloud Metadata Endpoints](hackerone-report-1-ssrf-domain-info-revised.md) - **Program**: Anthropic (VDP)
+- [HackerOne VDP Report: SSRF via domain_info API Allows Claude Code to Fetch Cloud Metadata Endpoints](hackerone-report-1-ssrf-domain-info.md) - **Program**: Anthropic (VDP)
+- [HackerOne VDP Report: Internal Artifactory Instance Publicly Exposed with Unpatched CVE-2025-14830](hackerone-report-2-artifactory-final.md) - **Program**: Anthropic (VDP)
+- [HackerOne VDP Report: Internal JFrog Artifactory Instance Publicly Exposed on Internet](hackerone-report-2-artifactory-public-exposure.md) - **Program**: Anthropic (VDP)
+- [How do I pay for my Claude API usage? | Claude Help Center](how-do-i-pay-for-my-api-usage.md) - 4.  How do I pay for my Claude API usage?
+- [How do usage and length limits work? | Claude Help Center](how-do-usage-and-length-limits-work.md) - When chatting with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Underst
+- [How to use Claude in your preferred language | Claude Help Center](how-to-use-claude-in-your-preferred-language.md) - 4.  How to use Claude in your preferred language
+- [I’ve been using other large language models (LLMs) to power my product. How should I alter my prompts when switching to Claude? | Claude Help Center](i-ve-been-using-other-large-language-models-llms-to-power-my-product-how-should.md) - 4.  I’ve been using other large language models (LLMs) to power my product. How should I alter my prompts when switching to Claude?
+- [Law Enforcement Requests | Claude Help Center](law-enforcement-requests.md) - Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s poli
+- [Manage Claude’s tool access | Claude Help Center](manage-claude-s-tool-access.md) - When you connect many services to Claude, you can control how those connectors are loaded into your conversations. This helps Claude work more accurat
+- [Manage Cowork plugins for your organization | Claude Help Center](manage-cowork-plugins-for-your-organization.md) - 4.  Manage Cowork plugins for your organization
+- [Manage project visibility and sharing | Claude Help Center](manage-project-visibility-and-sharing.md) - 4.  Manage project visibility and sharing
+- [Manage user feedback settings on Claude Console | Claude Help Center](manage-user-feedback-settings-on-claude-console.md) - 4.  Manage user feedback settings on Claude Console
+- [Model Safety Bug Bounty Program | Claude Help Center](model-safety-bug-bounty-program.md) - We believe external testing is crucial for building a safe AI ecosystem. As model capabilities advance, the consequences of jailbreaks could become in
+- [Online Safety Contacts | Claude Help Center](online-safety-contacts.md) - Government authorities can contact Anthropic directly by emailing [\[email protected\]](/cdn-cgi/l/email-protection#8dffe8eaf8e1ecf9e2ffa0e4e3fcf8e4ff
+- [Our Approach to User Safety | Claude Help Center](our-approach-to-user-safety.md) - User safety is core to Anthropic’s mission of creating reliable, interpretable, and steerable AI systems. As we launch new ways for people to interact
+- [Privacy-Related Changes (Audit Index)](privacy-changes.md) - Scope: `rust-v0.105.0-alpha.1` -> `rust-v0.106.0-alpha.5` (30 transitions).
+- [Project Glasswing: Securing Critical Software for the AI Era](project-glasswing.md) - Project Glasswing is Anthropic's cross-industry initiative to secure the world's most critical software, powered by Claude Mythos Preview — Anthropic'
+- [Provision and manage Skills for your organization | Claude Help Center](provision-and-manage-skills-for-your-organization.md) - 4.  Provision and manage Skills for your organization
+- [Rebuttal — VDP #1 (SSRF via domain_info)](rebuttal-vdp1.md) - Thank you for the response and the detailed explanation of the intended threat model. I'd like to address two specific points and then respond to the 
+- [red.anthropic.com — Anthropic Cybersecurity Research](red-anthropic-com-index.md) - red.anthropic.com is Anthropic's dedicated cybersecurity research site, publishing technical analyses of Claude's capabilities in vulnerability discov
+- [AI for Critical Infrastructure Defense](red-critical-infrastructure-defense.md) - Anthropic partnered with Pacific Northwest National Laboratory (PNNL) to explore AI's defensive application in protecting critical infrastructure from
+- [AI Models on Realistic Cyber Ranges](red-cyber-toolkits-update.md) - Current Claude models can now succeed at multistage attacks on networks with dozens of hosts using only standard, open-source tools, instead of the cu
+- [Partnering with Mozilla to Improve Firefox's Security](red-firefox-vulnerabilities.md) - In a collaboration with researchers at Mozilla, Claude Opus 4.6 discovered 22 vulnerabilities in Firefox over the course of two weeks.
+- [Redteam Drill Report](redteam-drill-report.md) - - Run ID: `20260301T101853Z`
+- [Safeguards Warnings and Appeals | Claude Help Center](safeguards-warnings-and-appeals.md) - Updated yesterday
+- [Terms of Service Updates | Claude Help Center](terms-of-service-updates.md) - At Anthropic, we review our policies and terms to ensure we’re providing the highest level of protection and clarity for our users. This support artic
+- [Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy | Claude Help Center](updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service.md) - 3.  Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
+- [Using Agents According to Our Usage Policy | Claude Help Center](using-agents-according-to-our-usage-policy.md) - 3.  Using Agents According to Our Usage Policy
+- [How to use Claude in your preferred language | Claude Help Center](using-claude-in-your-preferred-language.md) - 4.  How to use Claude in your preferred language
+- [Using Egnyte for data room management with Claude | Claude](using-egnyte-for-data-room-management-with-claude.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Where can I learn more about Anthropic&#x27;s Privacy practices? | Claude Help Center](where-can-i-learn-more-about-anthropic-s-privacy-practices.md) - 3.  Where can I learn more about Anthropic's Privacy practices?
+- [Why am I receiving an &#x27;Output blocked by content filtering policy&#x27; error? | Claude Help Center](why-am-i-receiving-an-output-blocked-by-content-filtering-policy-error.md) - 3.  Why am I receiving an 'Output blocked by content filtering policy' error?

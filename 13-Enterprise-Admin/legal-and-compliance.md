@@ -1,3 +1,9 @@
+---
+title: "Legal and compliance"
+category: "13-Enterprise-Admin"
+tags: ["enterprise", "security"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 

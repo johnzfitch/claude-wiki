@@ -1,3 +1,9 @@
+---
+title: "Session Memory Compaction"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "prompting"]
+---
+
 # Session Memory Compaction
 
 Long-running conversations with Claude can exceed context limits,

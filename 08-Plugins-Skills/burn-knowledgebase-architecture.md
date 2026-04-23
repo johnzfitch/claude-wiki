@@ -1,3 +1,9 @@
+---
+title: "Burn Knowledgebase Architecture Strategy"
+category: "08-Plugins-Skills"
+tags: ["agents", "mcp", "plugins", "prompting", "skills"]
+---
+
 # Burn Knowledgebase Architecture Strategy
 
 **Date**: 2026-03-15

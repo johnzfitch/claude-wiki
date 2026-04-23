@@ -1,3 +1,8 @@
+---
+title: "Building a moderation filter with Claude"
+category: "12-Eval-Testing"
+---
+
 # Building a moderation filter with Claude
 
 This guide will show you how to use Claude to build a content moderation

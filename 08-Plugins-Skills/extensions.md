@@ -1,7 +1,9 @@
 ---
-source: https://modelcontextprotocol.io/extensions.md
-downloaded: 2026-02-02
+title: "Extensions"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
 ---
+
 # Extensions
 
 > Optional extensions to the Model Context Protocol

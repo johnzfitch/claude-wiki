@@ -1,3 +1,9 @@
+---
+title: "Hook Events Status — 2.1.76"
+category: "07-Hooks"
+tags: ["hooks", "mcp"]
+---
+
 # Hook Events Status — 2.1.76
 
 **Date**: 2026-03-15

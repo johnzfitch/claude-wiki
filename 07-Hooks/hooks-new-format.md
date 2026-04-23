@@ -1,3 +1,9 @@
+---
+title: "Claude Code Hooks - Configuration Reference"
+category: "07-Hooks"
+tags: ["claude-code", "hooks", "testing"]
+---
+
 # Claude Code Hooks - Configuration Reference
 
 ## Hook Configuration Format

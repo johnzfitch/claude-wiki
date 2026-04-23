@@ -1,3 +1,9 @@
+---
+title: "Resources Tutorials How To Use Claude In Excel For Hr Headcount Planning"
+category: "14-Connectors"
+tags: ["connectors"]
+---
+
 <!-- Source: https://claude.com/resources/tutorials/how-to-use-claude-in-excel-for-hr-headcount-planning -->
 
 :root {

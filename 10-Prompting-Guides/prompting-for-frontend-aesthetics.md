@@ -1,3 +1,9 @@
+---
+title: "Frontend Aesthetics: A Prompting Guide"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 # Frontend Aesthetics: A Prompting Guide
 
 Claude can generate high-quality frontends, but without guidance it

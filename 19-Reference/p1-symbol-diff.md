@@ -1,3 +1,8 @@
+---
+title: "Phase 1 — Symbol Diff: 2.1.59 → 2.1.70"
+category: "19-Reference"
+---
+
 # Phase 1 — Symbol Diff: 2.1.59 → 2.1.70
 
 **Log:** [../logs/p1-diff_symbols.json](../logs/p1-diff_symbols.json)

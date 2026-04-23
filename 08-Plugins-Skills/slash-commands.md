@@ -1,3 +1,9 @@
+---
+title: "Slash Commands in the SDK"
+category: "08-Plugins-Skills"
+tags: ["plugins", "sdk"]
+---
+
 # Slash Commands in the SDK
 
 Learn how to use slash commands to control Claude Code sessions through the SDK

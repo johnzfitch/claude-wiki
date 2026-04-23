@@ -1,3 +1,9 @@
+---
+title: "Checkpointing"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -63,6 +69,6 @@ Checkpoints are designed for quick, session-level recovery. For permanent versio
 
 ## See also
 
-* [Interactive mode](/en/interactive-mode) - Keyboard shortcuts and session controls
+* [Interactive mode](interactive-mode-claude-code-docs.md) - Keyboard shortcuts and session controls
 * [Built-in commands](/en/interactive-mode#built-in-commands) - Accessing checkpoints using `/rewind`
 * [CLI reference](/en/cli-reference) - Command-line options

@@ -1,3 +1,9 @@
+---
+title: "Hooks Summary for Burn Development Team Plugin"
+category: "07-Hooks"
+tags: ["agents", "hooks", "testing"]
+---
+
 # Hooks Summary for Burn Development Team Plugin
 
 **Date**: 2026-03-15

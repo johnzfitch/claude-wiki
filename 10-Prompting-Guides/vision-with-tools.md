@@ -1,3 +1,9 @@
+---
+title: "Using Vision with Tools"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 # Using Vision with Tools
 :::
 

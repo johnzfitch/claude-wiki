@@ -1,7 +1,9 @@
 ---
-source: https://modelcontextprotocol.io/examples.md
-downloaded: 2026-02-02
+title: "Example Servers"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
 ---
+
 # Example Servers
 
 > A list of example servers and implementations

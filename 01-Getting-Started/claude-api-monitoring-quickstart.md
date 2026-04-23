@@ -1,3 +1,9 @@
+---
+title: "Claude API Monitoring - Quick Start"
+category: "01-Getting-Started"
+tags: ["api", "security"]
+---
+
 # Claude API Monitoring - Quick Start
 
 ## Installation Complete

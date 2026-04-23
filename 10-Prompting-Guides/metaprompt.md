@@ -1,3 +1,9 @@
+---
+title: "Metaprompt"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 # Metaprompt
 
 Welcome to the Metaprompt! This is a prompt engineering tool designed to

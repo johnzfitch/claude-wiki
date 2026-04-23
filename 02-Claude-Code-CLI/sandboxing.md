@@ -1,3 +1,9 @@
+---
+title: "Sandboxing"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "security"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -210,7 +216,7 @@ For organizations requiring advanced network security, you can implement a custo
 The sandboxed bash tool works alongside:
 
 * **IAM policies**: Combine with [permission settings](/en/iam) for defense-in-depth
-* **Development containers**: Use with [devcontainers](/en/devcontainer) for additional isolation
+* **Development containers**: Use with [devcontainers](development-containers-claude-code-docs.md) for additional isolation
 * **Enterprise policies**: Enforce sandbox configurations through [managed settings](/en/settings#settings-precedence)
 
 ## Best practices
@@ -239,7 +245,7 @@ For implementation details and source code, visit the [GitHub repository](https:
 
 ## See also
 
-* [Security](/en/security) - Comprehensive security features and best practices
+* [Security](security-claude-code-docs.md) - Comprehensive security features and best practices
 * [IAM](/en/iam) - Permission configuration and access control
 * [Settings](/en/settings) - Complete configuration reference
 * [CLI reference](/en/cli-reference) - Command-line options

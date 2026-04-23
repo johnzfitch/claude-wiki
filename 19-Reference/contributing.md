@@ -1,3 +1,9 @@
+---
+title: "Contributing to Claude Cookbooks"
+category: "19-Reference"
+tags: ["security", "testing"]
+---
+
 # Contributing to Claude Cookbooks
 
 Thank you for your interest in contributing to the Claude Cookbooks! This guide will help you get started with development and ensure your contributions meet our quality standards.

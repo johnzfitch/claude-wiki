@@ -1,3 +1,9 @@
+---
+title: "Claude Code Plan Mode Configuration"
+category: "02-Claude-Code-CLI"
+tags: ["agents", "claude-code"]
+---
+
 # Claude Code Plan Mode Configuration
 
 Comprehensive guide to plan mode behavior, environment variables, and agent configuration.

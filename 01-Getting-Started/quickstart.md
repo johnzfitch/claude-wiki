@@ -1,3 +1,9 @@
+---
+title: "Quickstart"
+category: "01-Getting-Started"
+tags: ["claude-code", "git"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -16,7 +22,7 @@ Make sure you have:
 * A [Claude subscription](https://claude.com/pricing) (Pro, Max, Teams, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](/en/third-party-integrations)
 
 <Note>
-  This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/en/desktop), in [VS Code](/en/vs-code) and [JetBrains IDEs](/en/jetbrains), in [Slack](/en/slack), and in CI/CD with [GitHub Actions](/en/github-actions) and [GitLab](/en/gitlab-ci-cd). See [all interfaces](/en/overview#use-claude-code-everywhere).
+  This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](/en/vs-code) and [JetBrains IDEs](/en/jetbrains), in [Slack](../02-Claude-Code-CLI/slack.md), and in CI/CD with [GitHub Actions](/en/github-actions) and [GitLab](/en/gitlab-ci-cd). See [all interfaces](/en/overview#use-claude-code-everywhere).
 </Note>
 
 ## Step 1: Install Claude Code

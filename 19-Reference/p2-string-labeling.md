@@ -1,3 +1,8 @@
+---
+title: "Phase 2 — String-Based Labeling: 2.1.59 → 2.1.70"
+category: "19-Reference"
+---
+
 # Phase 2 — String-Based Labeling: 2.1.59 → 2.1.70
 
 **Logs:** [../logs/p2a-batch_search_strings.json](../logs/p2a-batch_search_strings.json)

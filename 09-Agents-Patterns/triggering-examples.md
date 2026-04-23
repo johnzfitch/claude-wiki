@@ -1,3 +1,9 @@
+---
+title: "Agent Triggering Examples: Best Practices"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Agent Triggering Examples: Best Practices
 
 Complete guide to writing effective `<example>` blocks in agent descriptions for reliable triggering.

@@ -1,3 +1,9 @@
+---
+title: "Claude Binary Intel Diff"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code"]
+---
+
 # Claude Binary Intel Diff
 
 - New: `/home/zack/claude-binary/2.1.74/2.1.74`

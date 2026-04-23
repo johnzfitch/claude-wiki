@@ -1,3 +1,9 @@
+---
+title: "Claude Code 2.1.76 — Telemetry & Observability Report"
+category: "19-Reference"
+tags: ["claude-code", "sdk", "search", "security"]
+---
+
 # Claude Code 2.1.76 — Telemetry & Observability Report
 
 ## Executive Summary

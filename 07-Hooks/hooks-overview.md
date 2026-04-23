@@ -1,3 +1,9 @@
+---
+title: "Hooks Overview"
+category: "07-Hooks"
+tags: ["hooks"]
+---
+
 Interesting! Some things I thought were new are actually already in 2.1.59:
   - agent_type and model fields in SessionStart — already in 2.1.59
   - last_assistant_message in Stop and SubagentStop — already in 2.1.59

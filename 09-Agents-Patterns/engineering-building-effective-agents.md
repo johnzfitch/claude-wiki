@@ -1,3 +1,9 @@
+---
+title: "Building Effective Agents"
+category: "09-Agents-Patterns"
+tags: ["agents", "prompting"]
+---
+
 <!-- Source: https://www.anthropic.com/engineering/building-effective-agents -->
 
 # Building Effective Agents

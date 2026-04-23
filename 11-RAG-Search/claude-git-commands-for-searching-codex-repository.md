@@ -1,3 +1,9 @@
+---
+title: "Git commands for searching Codex repository"
+category: "11-RAG-Search"
+tags: ["agents", "git", "prompting", "rag", "sdk", "search", "typescript"]
+---
+
 # Git commands for searching Codex repository
 
 ## User

@@ -1,3 +1,9 @@
+---
+title: "Claude Code CoWork Protocol Specification"
+category: "02-Claude-Code-CLI"
+tags: ["agents", "api", "claude-code", "cli", "oauth", "sdk"]
+---
+
 # Claude Code CoWork Protocol Specification
 
 Reverse-engineered from claude binaries 2.1.74-2.1.75 (2026-03-11 to 2026-03-14).

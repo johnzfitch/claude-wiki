@@ -1,3 +1,9 @@
+---
+title: "Hook System Changes: 2.1.59 → 2.1.70"
+category: "07-Hooks"
+tags: ["hooks", "security"]
+---
+
 # Hook System Changes: 2.1.59 → 2.1.70
 
 ## Overview of Changes

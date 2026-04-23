@@ -1,3 +1,9 @@
+---
+title: "Track team usage with analytics"
+category: "13-Enterprise-Admin"
+tags: ["api", "enterprise"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -215,5 +221,5 @@ The team insights table shows per-user metrics:
 ## Related resources
 
 * [Monitoring with OpenTelemetry](/en/monitoring-usage): export real-time metrics and events to your observability stack
-* [Manage costs effectively](/en/costs): set spend limits and optimize token usage
+* [Manage costs effectively](../02-Claude-Code-CLI/costs.md): set spend limits and optimize token usage
 * [Identity and access management](/en/iam): configure roles and permissions

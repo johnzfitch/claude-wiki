@@ -1,3 +1,9 @@
+---
+title: "Equipping Agents For The Real World With Agent Skills Anthropic Claude"
+category: "08-Plugins-Skills"
+tags: ["agents", "plugins", "skills"]
+---
+
 _Update: We've published_ [_Agent Skills_](https://agentskills.io/) _as an open standard for cross-platform portability. (December 18, 2025)_
 
 As model capabilities improve, we can now build general-purpose agents that interact with full-fledged computing environments. [Claude Code](https://claude.com/product/claude-code), for example, can accomplish complex tasks across domains using local code execution and filesystems. But as these agents become more powerful, we need more composable, scalable, and portable ways to equip them with domain-specific expertise.
@@ -12,7 +18,7 @@ A skill is a directory containing a SKILL.md file that contains organized folder
 
 ## The anatomy of a skill
 
-To see Skills in action, let’s walk through a real example: one of the skills that powers [Claude’s recently launched document editing abilities](https://www.anthropic.com/news/create-files). Claude already knows a lot about understanding PDFs, but is limited in its ability to manipulate them directly (e.g. to fill out a form). This [PDF skill](https://github.com/anthropics/skills/tree/main/document-skills/pdf) lets us give Claude these new abilities.
+To see Skills in action, let’s walk through a real example: one of the skills that powers [Claude’s recently launched document editing abilities](../19-Reference/claude-can-now-create-and-edit-files-claude.md). Claude already knows a lot about understanding PDFs, but is limited in its ability to manipulate them directly (e.g. to fill out a form). This [PDF skill](https://github.com/anthropics/skills/tree/main/document-skills/pdf) lets us give Claude these new abilities.
 
 At its simplest, a skill is a directory that contains a `SKILL.md file`. This file must start with YAML frontmatter that contains some required metadata: `name` and `description`. At startup, the agent pre-loads the `name` and `description` of every installed skill into its system prompt.
 

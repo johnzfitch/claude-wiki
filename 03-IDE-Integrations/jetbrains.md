@@ -1,3 +1,9 @@
+---
+title: "JetBrains IDEs"
+category: "03-IDE-Integrations"
+tags: ["security"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 

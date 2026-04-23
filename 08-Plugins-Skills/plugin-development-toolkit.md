@@ -1,3 +1,9 @@
+---
+title: "Plugin Development Toolkit"
+category: "08-Plugins-Skills"
+tags: ["plugins", "skills"]
+---
+
 # Plugin Development Toolkit
 
 A comprehensive toolkit for developing Claude Code plugins with expert guidance on hooks, MCP integration, plugin structure, and marketplace publishing.

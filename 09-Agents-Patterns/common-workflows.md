@@ -1,3 +1,9 @@
+---
+title: "Common workflows"
+category: "09-Agents-Patterns"
+tags: ["agents", "claude-code", "git", "subagents"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -337,7 +343,7 @@ You can create pull requests by asking Claude directly ("create a pr for my chan
 
 If you have a Slack MCP server configured and specify channels in your CLAUDE.md (for example, "post PR URLs to #team-prs"), the skill automatically posts the PR URL to those channels.
 
-For more control over the process, guide Claude through it step-by-step or [create your own skill](/en/skills):
+For more control over the process, guide Claude through it step-by-step or [create your own skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md):
 
 <Steps>
   <Step title="Summarize your changes">

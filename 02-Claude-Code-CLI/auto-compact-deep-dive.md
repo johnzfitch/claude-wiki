@@ -1,3 +1,9 @@
+---
+title: "Auto-Compact Deep Dive — Window vs Percentage Override"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "testing"]
+---
+
 # Auto-Compact Deep Dive — Window vs Percentage Override
 
 **Topic**: `CLAUDE_CODE_AUTO_COMPACT_WINDOW` vs `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE`

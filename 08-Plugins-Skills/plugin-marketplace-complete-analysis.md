@@ -1,3 +1,9 @@
+---
+title: "Plugin Marketplace — Complete Architecture Analysis (2.1.74)"
+category: "08-Plugins-Skills"
+tags: ["plugins", "security"]
+---
+
 # Plugin Marketplace — Complete Architecture Analysis (2.1.74)
 
 **Date**: 2026-03-13

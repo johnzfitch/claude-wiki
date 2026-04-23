@@ -1,3 +1,9 @@
+---
+title: "Usage & Cost Admin API Cookbook {#usage--cost-admin-api-cookbook}"
+category: "04-API-Reference/Other"
+tags: ["api"]
+---
+
 ::: {#9610be80 .cell .markdown id="9610be80"}
 # Usage & Cost Admin API Cookbook {#usage--cost-admin-api-cookbook}
 

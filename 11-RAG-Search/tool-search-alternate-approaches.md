@@ -1,3 +1,9 @@
+---
+title: "Tool Search: Alternate Approaches"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Tool Search: Alternate Approaches
 
 **Recommend first reading see the cookbook: Tool Search with

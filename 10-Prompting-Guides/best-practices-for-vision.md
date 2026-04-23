@@ -1,3 +1,9 @@
+---
+title: "Best practices for using vision with Claude"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 # Best practices for using vision with Claude
 
 Vision allows for a new mode of interaction with Claude. We've compiled

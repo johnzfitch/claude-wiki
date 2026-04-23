@@ -1,3 +1,9 @@
+---
+title: "Claude Binary Reverse Engineering Diff Report"
+category: "20-Models"
+tags: ["api"]
+---
+
 # Claude Binary Reverse Engineering Diff Report
 
 Scope: `/home/zack/.local/share/claude/versions/2.1.50` -> `/home/zack/.local/share/claude/versions/2.1.55` -> `/home/zack/.local/share/claude/versions/2.1.59`

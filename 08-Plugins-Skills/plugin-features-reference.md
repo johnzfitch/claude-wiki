@@ -1,3 +1,9 @@
+---
+title: "Plugin-Specific Command Features Reference"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Plugin-Specific Command Features Reference
 
 This reference covers features and patterns specific to commands bundled in Claude Code plugins.

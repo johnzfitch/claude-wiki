@@ -1,3 +1,9 @@
+---
+title: "ReAct Agent"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # ReAct Agent
 
 In this notebook we will look into creating ReAct Agent over tools.

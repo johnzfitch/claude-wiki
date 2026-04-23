@@ -1,3 +1,9 @@
+---
+title: "Speculative Prompt Caching"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 # Speculative Prompt Caching
 
 This cookbook demonstrates \"Speculative Prompt Caching\" - a pattern

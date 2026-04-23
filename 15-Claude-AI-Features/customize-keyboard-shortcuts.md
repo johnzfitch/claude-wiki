@@ -1,3 +1,8 @@
+---
+title: "Customize Keyboard Shortcuts"
+category: "15-Claude-AI-Features"
+---
+
 Claude Code supports customizable keyboard shortcuts. Run `/keybindings` to create or open your configuration file at `~/.claude/keybindings.json`.
 
 ## Configuration file

@@ -1,3 +1,9 @@
+---
+title: "Plugins reference"
+category: "08-Plugins-Skills"
+tags: ["cli", "plugins"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -6,7 +12,7 @@
 > Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
 
 <Tip>
-  Looking to install plugins? See [Discover and install plugins](/en/discover-plugins). For creating plugins, see [Plugins](/en/plugins). For distributing plugins, see [Plugin marketplaces](/en/plugin-marketplaces).
+  Looking to install plugins? See [Discover and install plugins](../02-Claude-Code-CLI/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs.md). For creating plugins, see [Plugins](create-plugins-claude-code-docs.md). For distributing plugins, see [Plugin marketplaces](/en/plugin-marketplaces).
 </Tip>
 
 This reference provides complete technical specifications for the Claude Code plugin system, including component schemas, CLI commands, and development tools.
@@ -41,7 +47,7 @@ skills/
 * Claude can invoke them automatically based on task context
 * Skills can include supporting files alongside SKILL.md
 
-For complete details, see [Skills](/en/skills).
+For complete details, see [Skills](extend-claude-with-skills-claude-code-docs.md).
 
 ### Agents
 
@@ -723,10 +729,10 @@ Follow semantic versioning for plugin releases:
 
 ## See also
 
-* [Plugins](/en/plugins) - Tutorials and practical usage
+* [Plugins](create-plugins-claude-code-docs.md) - Tutorials and practical usage
 * [Plugin marketplaces](/en/plugin-marketplaces) - Creating and managing marketplaces
-* [Skills](/en/skills) - Skill development details
+* [Skills](extend-claude-with-skills-claude-code-docs.md) - Skill development details
 * [Subagents](/en/sub-agents) - Agent configuration and capabilities
-* [Hooks](/en/hooks) - Event handling and automation
-* [MCP](/en/mcp) - External tool integration
+* [Hooks](../07-Hooks/hooks-reference-claude-code-docs.md) - Event handling and automation
+* [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) - External tool integration
 * [Settings](/en/settings) - Configuration options for plugins

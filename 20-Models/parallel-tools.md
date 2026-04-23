@@ -1,3 +1,8 @@
+---
+title: "Parallel tool calls on Claude 3.7 Sonnet {#parallel-tool-calls-on-claude-37-sonnet}"
+category: "20-Models"
+---
+
 # Parallel tool calls on Claude 3.7 Sonnet {#parallel-tool-calls-on-claude-37-sonnet}
 :::
 

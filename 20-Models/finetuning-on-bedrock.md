@@ -1,3 +1,9 @@
+---
+title: "Finetuning Claude 3 Haiku on Bedrock"
+category: "20-Models"
+tags: ["bedrock"]
+---
+
 # Finetuning Claude 3 Haiku on Bedrock
 
 In this notebook, we\'ll walk you through the process of finetuning

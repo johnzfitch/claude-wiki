@@ -1,3 +1,9 @@
+---
+title: "Claude Code Architecture for Zack's Setup"
+category: "02-Claude-Code-CLI"
+tags: ["agents", "claude-code", "git", "github", "hooks", "mcp", "search", "skills"]
+---
+
 # Claude Code Architecture for Zack's Setup
 
 > Arch Linux (omarchy) · Ryzen 9800X3D · RTX 4090 · 10Gbps fiber

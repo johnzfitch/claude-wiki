@@ -1,3 +1,9 @@
+---
+title: "Hooks: Dynamic Context Injection for Agents"
+category: "07-Hooks"
+tags: ["agents", "hooks", "plugins"]
+---
+
 # Hooks: Dynamic Context Injection for Agents
 
 **Date**: 2026-03-15

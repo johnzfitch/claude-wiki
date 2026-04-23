@@ -1,3 +1,9 @@
+---
+title: "Discover and install prebuilt plugins through marketplaces"
+category: "01-Getting-Started"
+tags: ["plugins"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -78,7 +84,7 @@ If you run into issues, see [Code intelligence troubleshooting](#code-intelligen
 
 ### External integrations
 
-These plugins bundle pre-configured [MCP servers](/en/mcp) so you can connect Claude to external services without manual setup:
+These plugins bundle pre-configured [MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) so you can connect Claude to external services without manual setup:
 
 * **Source control**: `github`, `gitlab`
 * **Project management**: `atlassian` (Jira/Confluence), `asana`, `linear`, `notion`
@@ -387,6 +393,6 @@ For detailed troubleshooting with solutions, see [Troubleshooting](/en/plugin-ma
 
 ## Next steps
 
-* **Build your own plugins**: See [Plugins](/en/plugins) to create skills, agents, and hooks
+* **Build your own plugins**: See [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) to create skills, agents, and hooks
 * **Create a marketplace**: See [Create a plugin marketplace](/en/plugin-marketplaces) to distribute plugins to your team or community
-* **Technical reference**: See [Plugins reference](/en/plugins-reference) for complete specifications
+* **Technical reference**: See [Plugins reference](../08-Plugins-Skills/plugins-reference-claude-code-docs.md) for complete specifications

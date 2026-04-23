@@ -1,3 +1,9 @@
+---
+title: "Skills Frontmatter Analysis - Claude Code 2.1.72"
+category: "08-Plugins-Skills"
+tags: ["claude-code", "plugins", "skills"]
+---
+
 # Skills Frontmatter Analysis - Claude Code 2.1.72
 
 Binary: `/home/zack/.local/share/claude/versions/2.1.72` (234MB, 13,675-line JS payload)

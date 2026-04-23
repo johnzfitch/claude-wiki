@@ -1,3 +1,9 @@
+---
+title: "Command Development Skill"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Command Development Skill
 
 Comprehensive guidance on creating Claude Code slash commands, including file format, frontmatter options, dynamic arguments, and best practices.

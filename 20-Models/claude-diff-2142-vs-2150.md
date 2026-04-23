@@ -1,3 +1,9 @@
+---
+title: "Claude Code Binary Diff: 2.1.42 → 2.1.50"
+category: "20-Models"
+tags: ["claude-code"]
+---
+
 # Claude Code Binary Diff: 2.1.42 → 2.1.50
 
 **Method:** ELF section analysis + Bun SFE bundle string extraction

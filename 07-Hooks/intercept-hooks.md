@@ -1,3 +1,9 @@
+---
+title: "Intercept and control agent behavior with hooks"
+category: "07-Hooks"
+tags: ["agents", "hooks"]
+---
+
 # Intercept and control agent behavior with hooks
 
 Intercept and customize agent behavior at key execution points with hooks

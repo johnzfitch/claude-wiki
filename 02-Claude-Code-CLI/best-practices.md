@@ -1,3 +1,9 @@
+---
+title: "Best Practices for Claude Code"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "prompting"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -39,7 +45,7 @@ Without clear success criteria, it might produce something that looks right but 
 | **Verify UI changes visually**        | *"make the dashboard look better"*                      | *"\[paste screenshot] implement this design. take a screenshot of the result and compare it to the original. list differences and fix them"*                                                            |
 | **Address root causes, not symptoms** | *"the build is failing"*                                | *"the build fails with this error: \[paste error]. fix it and verify the build succeeds. address the root cause, don't suppress the error"*                                                             |
 
-UI changes can be verified using the [Claude in Chrome extension](/en/chrome). It opens a browser, tests the UI, and iterates until the code works.
+UI changes can be verified using the [Claude in Chrome extension](chrome.md). It opens a browser, tests the UI, and iterates until the code works.
 
 Your verification can also be a test suite, a linter, or a Bash command that checks output. Invest in making your verification rock-solid.
 
@@ -163,7 +169,7 @@ There's no required format for CLAUDE.md files, but keep it short and human-read
 - Prefer running single tests, and not the whole test suite, for performance
 ```
 
-CLAUDE.md is loaded every session, so only include things that apply broadly. For domain knowledge or workflows that are only relevant sometimes, use [skills](/en/skills) instead. Claude loads them on demand without bloating every conversation.
+CLAUDE.md is loaded every session, so only include things that apply broadly. For domain knowledge or workflows that are only relevant sometimes, use [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) instead. Claude loads them on demand without bloating every conversation.
 
 Keep it concise. For each line, ask: *"Would removing this cause Claude to make mistakes?"* If not, cut it. Bloated CLAUDE.md files cause Claude to ignore your actual instructions!
 
@@ -233,7 +239,7 @@ Claude is also effective at learning CLI tools it doesn't already know. Try prom
   Run `claude mcp add` to connect external tools like Notion, Figma, or your database.
 </Tip>
 
-With [MCP servers](/en/mcp), you can ask Claude to implement features from issue trackers, query databases, analyze monitoring data, integrate designs from Figma, and automate workflows.
+With [MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md), you can ask Claude to implement features from issue trackers, query databases, analyze monitoring data, integrate designs from Figma, and automate workflows.
 
 ### Set up hooks
 
@@ -251,7 +257,7 @@ Claude can write hooks for you. Try prompts like *"Write a hook that runs eslint
   Create `SKILL.md` files in `.claude/skills/` to give Claude domain knowledge and reusable workflows.
 </Tip>
 
-[Skills](/en/skills) extend Claude's knowledge with information specific to your project, team, or domain. Claude applies them automatically when relevant, or you can invoke them directly with `/skill-name`.
+[Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) extend Claude's knowledge with information specific to your project, team, or domain. Claude applies them automatically when relevant, or you can invoke them directly with `/skill-name`.
 
 Create a skill by adding a directory with a `SKILL.md` to `.claude/skills/`:
 
@@ -321,7 +327,7 @@ Tell Claude to use subagents explicitly: *"Use a subagent to review this code fo
   Run `/plugin` to browse the marketplace. Plugins add skills, tools, and integrations without configuration.
 </Tip>
 
-[Plugins](/en/plugins) bundle skills, hooks, subagents, and MCP servers into a single installable unit from the community and Anthropic. If you work with a typed language, install a [code intelligence plugin](/en/discover-plugins#code-intelligence) to give Claude precise symbol navigation and automatic error detection after edits.
+[Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) bundle skills, hooks, subagents, and MCP servers into a single installable unit from the community and Anthropic. If you work with a typed language, install a [code intelligence plugin](/en/discover-plugins#code-intelligence) to give Claude precise symbol navigation and automatic error detection after edits.
 
 For guidance on choosing between skills, subagents, hooks, and MCP, see [Extend Claude Code](/en/features-overview#match-features-to-your-goal).
 
@@ -486,7 +492,7 @@ claude -p "Analyze this log file" --output-format stream-json
 
 There are two main ways to run parallel sessions:
 
-* [Claude Desktop](/en/desktop): Manage multiple local sessions visually. Each session gets its own isolated worktree.
+* [Claude Desktop](../16-Mobile-Desktop/desktop.md): Manage multiple local sessions visually. Each session gets its own isolated worktree.
 * [Claude Code on the web](/en/claude-code-on-the-web): Run on Anthropic's secure cloud infrastructure in isolated VMs.
 
 Beyond parallelizing work, multiple sessions enable quality-focused workflows. A fresh context improves code review since Claude won't be biased toward code it just wrote.
