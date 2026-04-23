@@ -12059,7 +12059,7 @@ Configure Claude Code for enterprise environments with proxy servers, custom Cer
 
 Claude Code supports various enterprise network and security configurations through environment variables. This includes routing traffic through corporate proxy servers, trusting custom Certificate Authorities (CA), and authenticating with mutual Transport Layer Security (mTLS) certificates for enhanced security.
 
-All environment variables shown on this page can also be configured in [`settings.json`](/docs/en/settings).
+All environment variables shown on this page can also be configured in [`settings.json`](settings.md).
 
 ## 
 
@@ -12181,7 +12181,7 @@ Additional resources
 
 - [Claude Code settings](/docs/en/settings)
 - [Environment variables reference](/docs/en/env-vars)
-- [Troubleshooting guide](/docs/en/troubleshooting)
+- [Troubleshooting guide](troubleshooting.md)
 
 
 ---
@@ -14240,7 +14240,7 @@ Claude chooses which tools to use based on your prompt and what it learns along 
 
 Each tool use gives Claude new information that informs the next step. This is the agentic loop in action.
 
-**Extending the base capabilities:** The built-in tools are the foundation. You can extend what Claude knows with [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md), connect to external services with [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md), automate workflows with [hooks](../07-Hooks/hooks-reference-claude-code-docs.md), and offload tasks to [subagents](/en/sub-agents). These extensions form a layer on top of the core agentic loop. See [Extend Claude Code](/en/features-overview) for guidance on choosing the right extension for your needs.
+**Extending the base capabilities:** The built-in tools are the foundation. You can extend what Claude knows with [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md), connect to external services with [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md), automate workflows with [hooks](../07-Hooks/hooks-reference-claude-code-docs.md), and offload tasks to subagents. These extensions form a layer on top of the core agentic loop. See the extension guides above for help choosing the right extension for your needs.
 
 ## What Claude can access
 
@@ -16562,9 +16562,9 @@ When working on a branch with an open pull request, Claude Code displays a click
 
 * [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) - Custom prompts and workflows
 * [Checkpointing](checkpointing-claude-code-docs.md) - Rewind Claude's edits and restore previous states
-* [CLI reference](/en/cli-reference) - Command-line flags and options
-* [Settings](/en/settings) - Configuration options
-* [Memory management](/en/memory) - Managing CLAUDE.md files
+* [CLI reference](cli-reference.md) - Command-line flags and options
+* [Settings](settings.md) - Configuration options
+* [Memory management](memory.md) - Managing CLAUDE.md files
 
 
 ---
@@ -17714,11 +17714,7 @@ LLM gateways provide a centralized proxy layer between Claude Code and model pro
 - **Audit logging** - Track all model interactions for compliance
 - **Model routing** - Switch between providers without code changes
 
-## 
-
-[​](#gateway-requirements)
-
-Gateway requirements
+## Gateway requirements
 
 For an LLM gateway to work with Claude Code, it must meet the following requirements: **API format** The gateway must expose to clients at least one of the following API formats:
 
@@ -17733,51 +17729,27 @@ Failure to forward headers or preserve body fields may result in reduced functio
 
 Claude Code determines which features to enable based on the API format. When using the Anthropic Messages format with Bedrock or Vertex, you may need to set environment variable `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1`.
 
-## 
+## Configuration
 
-[​](#configuration)
-
-Configuration
-
-### 
-
-[​](#model-selection)
-
-Model selection
+### Model selection
 
 By default, Claude Code will use standard model names for the selected API format. If you have configured custom model names in your gateway, use the environment variables documented in [Model configuration](/docs/en/model-config) to match your custom names.
 
-## 
-
-[​](#litellm-configuration)
-
-LiteLLM configuration
+## LiteLLM configuration
 
 LiteLLM is a third-party proxy service. Anthropic doesn’t endorse, maintain, or audit LiteLLM’s security or functionality. This guide is provided for informational purposes and may become outdated. Use at your own discretion.
 
-### 
-
-[​](#prerequisites)
-
-Prerequisites
+### Prerequisites
 
 - Claude Code updated to the latest version
 - LiteLLM Proxy Server deployed and accessible
 - Access to Claude models through your chosen provider
 
-### 
-
-[​](#basic-litellm-setup)
-
-Basic LiteLLM setup
+### Basic LiteLLM setup
 
 **Configure Claude Code**:
 
-#### 
-
-[​](#authentication-methods)
-
-Authentication methods
+#### Authentication methods
 
 ##### Static API key
 
@@ -17788,7 +17760,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```bash
 # Set in environment
 export ANTHROPIC_AUTH_TOKEN=sk-litellm-static-key
 
@@ -17813,7 +17785,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```bash
 #!/bin/bash
 # ~/bin/get-litellm-key.sh
 
@@ -17834,7 +17806,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```json
 {
   "apiKeyHelper": "~/bin/get-litellm-key.sh"
 }
@@ -17847,18 +17819,14 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```bash
 # Refresh every hour (3600000 ms)
 export CLAUDE_CODE_API_KEY_HELPER_TTL_MS=3600000
 ```
 
 This value will be sent as `Authorization` and `X-Api-Key` headers. The `apiKeyHelper` has lower precedence than `ANTHROPIC_AUTH_TOKEN` or `ANTHROPIC_API_KEY`.
 
-#### 
-
-[​](#unified-endpoint-recommended)
-
-Unified endpoint (recommended)
+#### Unified endpoint (recommended)
 
 Using LiteLLM’s [Anthropic format endpoint](https://docs.litellm.ai/docs/anthropic_unified):
 
@@ -17867,7 +17835,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```bash
 export ANTHROPIC_BASE_URL=https://litellm-server:4000
 ```
 
@@ -17877,11 +17845,7 @@ export ANTHROPIC_BASE_URL=https://litellm-server:4000
 - Fallbacks
 - Consistent support for cost tracking and end-user tracking
 
-#### 
-
-[​](#provider-specific-pass-through-endpoints-alternative)
-
-Provider-specific pass-through endpoints (alternative)
+#### Provider-specific pass-through endpoints (alternative)
 
 ##### Claude API through LiteLLM
 
@@ -17892,7 +17856,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```bash
 export ANTHROPIC_BASE_URL=https://litellm-server:4000/anthropic
 ```
 
@@ -17905,7 +17869,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```bash
 export ANTHROPIC_BEDROCK_BASE_URL=https://litellm-server:4000/bedrock
 export CLAUDE_CODE_SKIP_BEDROCK_AUTH=1
 export CLAUDE_CODE_USE_BEDROCK=1
@@ -17920,7 +17884,7 @@ Report incorrect code
 Copy
 
 
-``` shiki
+```bash
 export ANTHROPIC_VERTEX_BASE_URL=https://litellm-server:4000/vertex_ai/v1
 export ANTHROPIC_VERTEX_PROJECT_ID=your-gcp-project-id
 export CLAUDE_CODE_SKIP_VERTEX_AUTH=1
@@ -17930,11 +17894,7 @@ export CLOUD_ML_REGION=us-east5
 
 For more detailed information, refer to the [LiteLLM documentation](https://docs.litellm.ai/).
 
-## 
-
-[​](#additional-resources)
-
-Additional resources
+## Additional resources
 
 - [LiteLLM documentation](https://docs.litellm.ai/)
 - [Claude Code settings](/docs/en/settings)

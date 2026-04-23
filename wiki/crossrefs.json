@@ -1021,7 +1021,7 @@
   },
   "06-MCP-Tools/General/mcp-server-everything.md": {
     "backlinks": [],
-    "external_links": 9,
+    "external_links": 5,
     "outlinks": [
       "../Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md",
       "../Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md"
@@ -1034,7 +1034,7 @@
   },
   "06-MCP-Tools/General/mcp-server-filesystem.md": {
     "backlinks": [],
-    "external_links": 7,
+    "external_links": 5,
     "outlinks": [
       "../Spec-Archive/spec-2025-03-26-tools-model-context-protocol.md",
       "../Tutorials/understanding-mcp-clients-model-context-protocol.md"
@@ -1042,7 +1042,7 @@
   },
   "06-MCP-Tools/General/mcp-server-memory.md": {
     "backlinks": [],
-    "external_links": 6,
+    "external_links": 5,
     "outlinks": [
       "../../19-Reference/collaborate-with-claude-on-projects-anthropic.md"
     ]
@@ -2310,7 +2310,7 @@
   },
   "06-MCP-Tools/Tutorials/mcp-python-sdk.md": {
     "backlinks": [],
-    "external_links": 45,
+    "external_links": 41,
     "outlinks": [
       "../Spec-Archive/spec-2025-03-26-authorization-model-context-protocol.md",
       "../Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md",

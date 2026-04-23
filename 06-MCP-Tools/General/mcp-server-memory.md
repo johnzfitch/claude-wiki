@@ -248,7 +248,7 @@ Alternatively, you can add the configuration to a file called `.vscode/mcp.json`
 
 The prompt for utilizing memory depends on the use case. Changing the prompt will help the model determine the frequency and types of memories created.
 
-Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](https://www.anthropic.com/news/projects). 
+Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](../../19-Reference/collaborate-with-claude-on-projects-anthropic.md). 
 
 ```
 Follow these steps for each interaction:

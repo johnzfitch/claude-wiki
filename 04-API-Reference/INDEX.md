@@ -24,7 +24,7 @@
 - [Documentation - Claude API Docs](Other/home.md) - Everything you need to integrate Claude into your applications. From first API call to production.
 - [How can I access the Claude API? | Claude Help Center](Other/how-can-i-access-the-anthropic-api.md) - Organizations interested in building with the Claude API can create a [Claude Console account](platform-claude-com.md). The Claude Console is where yo
 - [Partners | Claude by Anthropic](Other/partners-claude-by-anthropic.md) - Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
-- [\\\\](Other/pdf-upload-summarization.md) - :::
+- [\\\\\](Other/pdf-upload-summarization.md) - :::
 - [Sign In | Claude Platform](Other/platform-claude-com.md) - Continue with Google
 - [Powered by Claude | Claude](Other/powered-by-claude-claude.md) - A curated list of businesses that use Claude to build better, faster, and safer.
 - [Programatic Tool Calling (PTC) with the Claude API](Other/programmatic-tool-calling-ptc.md) - Programmatic Tool Calling (PTC) allows Claude to write code that calls

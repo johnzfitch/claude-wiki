@@ -14527,7 +14527,7 @@ This MCP server attempts to exercise all the features of the MCP protocol. It is
 
 A complete list of the registered MCP primitives and other protocol features demonstrated can be found in the [Server Features](docs/features.md) document.
 
-## Usage with Claude Desktop (uses [stdio Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#stdio))
+## Usage with Claude Desktop (uses [stdio Transport](../Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#stdio))
 
 Add to your `claude_desktop_config.json`:
 
@@ -14576,7 +14576,7 @@ Alternatively, you can add the configuration to a file called `.vscode/mcp.json`
 }
 ```
 
-## Running from source with [HTTP+SSE Transport](https://modelcontextprotocol.io/specification/2024-11-05/basic/transports#http-with-sse) (deprecated as of [2025-03-26](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports))
+## Running from source with [HTTP+SSE Transport](../Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md#http-with-sse) (deprecated as of [2025-03-26](../Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md))
 
 ```shell
 cd src/everything
@@ -14584,7 +14584,7 @@ npm install
 npm run start:sse
 ```
 
-## Run from source with [Streamable HTTP Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
+## Run from source with [Streamable HTTP Transport](../Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#streamable-http)
 
 ```shell
 cd src/everything
@@ -14882,11 +14882,11 @@ Node.js server implementing Model Context Protocol (MCP) for filesystem operatio
 - Move files/directories
 - Search files
 - Get file metadata
-- Dynamic directory access control via [Roots](https://modelcontextprotocol.io/docs/learn/client-concepts#roots)
+- Dynamic directory access control via [Roots](../Tutorials/understanding-mcp-clients-model-context-protocol.md#roots)
 
 ## Directory Access Control
 
-The server uses a flexible directory access control system. Directories can be specified via command-line arguments or dynamically via [Roots](https://modelcontextprotocol.io/docs/learn/client-concepts#roots).
+The server uses a flexible directory access control system. Directories can be specified via command-line arguments or dynamically via [Roots](../Tutorials/understanding-mcp-clients-model-context-protocol.md#roots).
 
 ### Method 1: Command-line Arguments
 Specify Allowed directories when starting the server:
@@ -14895,7 +14895,7 @@ mcp-server-filesystem /path/to/dir1 /path/to/dir2
 ```
 
 ### Method 2: MCP Roots (Recommended)
-MCP clients that support [Roots](https://modelcontextprotocol.io/docs/learn/client-concepts#roots) can dynamically update the Allowed directories. 
+MCP clients that support [Roots](../Tutorials/understanding-mcp-clients-model-context-protocol.md#roots) can dynamically update the Allowed directories. 
 
 Roots notified by Client to Server, completely replace any server-side Allowed directories when provided.
 
@@ -15050,7 +15050,7 @@ The server's directory access control follows this flow:
 
 ### Tool annotations (MCP hints)
 
-This server sets [MCP ToolAnnotations](https://modelcontextprotocol.io/specification/2025-03-26/server/tools#toolannotations)
+This server sets [MCP ToolAnnotations](../Spec-Archive/spec-2025-03-26-tools-model-context-protocol.md#toolannotations)
 on each tool so clients can:
 
 - Distinguish **read‑only** tools from write‑capable tools.
@@ -15440,7 +15440,7 @@ Alternatively, you can add the configuration to a file called `.vscode/mcp.json`
 
 The prompt for utilizing memory depends on the use case. Changing the prompt will help the model determine the frequency and types of memories created.
 
-Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](https://www.anthropic.com/news/projects). 
+Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](../../19-Reference/collaborate-with-claude-on-projects-anthropic.md). 
 
 ```
 Follow these steps for each interaction:
