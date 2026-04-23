@@ -1,3 +1,9 @@
+---
+title: "Teach Claude Your Way Of Working Using Skills Claude Help Center"
+category: "08-Plugins-Skills"
+tags: ["plugins", "skills"]
+---
+
 ## **What are skills?**
 
 Think about the last time you created something with Claude that turned out really well. Maybe it was a presentation, an analysis, or a report. What made it work? Claude brought intelligence and capability, but you also played a crucial part—you explained your standards, you described the structure that works for your needs, you provided examples showing what you wanted, and you caught and fixed things that weren't quite right.
@@ -60,7 +66,7 @@ Even occasional work might require gathering multiple files or tools, explaining
 Skills are available as a preview to all paid plans. To get started, navigate to `Settings` > `Capabilities` > `Skills` and toggle on some of the pre-built example skills. From there, when you describe a task to Claude that references a skill’s name or description, Claude recognizes it and loads the skill automatically.
 
   
-Learn how to write your own [custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills), incorporating guidance from our [skills best practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices) to understand the principles that make skills most effective.
+Learn how to write your own [custom skills](../02-Claude-Code-CLI/creating-custom-skills.md), incorporating guidance from our [skills best practices](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices) to understand the principles that make skills most effective.
 
   
 You also don’t have to be technical to start creating skills. Try [creating skills using Claude](https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation). Start by identifying a well-suited task and describing it for Claude to turn into a skill. Claude will build and structure it into a properly formatted skill file.
@@ -84,7 +90,7 @@ Claude for Financial Services Overview
 
 What are Skills?
 
-](https://support.claude.com/en/articles/12512176-what-are-skills)[
+](../02-Claude-Code-CLI/what-are-skills.md)[
 
 Using Skills in Claude
 
@@ -96,4 +102,4 @@ How to create a skill with Claude through conversation
 
 Claude for Financial Services Skills
 
-](https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills)
+](../02-Claude-Code-CLI/claude-for-financial-services-skills.md)

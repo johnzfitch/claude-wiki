@@ -1,3 +1,9 @@
+---
+title: "RouterQuery Engine"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # RouterQuery Engine
 
 In this notebook we will look into `RouterQueryEngine` to route the user

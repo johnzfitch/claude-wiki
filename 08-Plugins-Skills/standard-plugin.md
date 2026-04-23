@@ -1,3 +1,9 @@
+---
+title: "Standard Plugin Example"
+category: "08-Plugins-Skills"
+tags: ["plugins", "python", "security", "skills", "typescript"]
+---
+
 # Standard Plugin Example
 
 A well-structured plugin with commands, agents, and skills.

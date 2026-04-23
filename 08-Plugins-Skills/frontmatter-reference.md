@@ -1,3 +1,9 @@
+---
+title: "Command Frontmatter Reference"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Command Frontmatter Reference
 
 Complete reference for YAML frontmatter fields in slash commands.

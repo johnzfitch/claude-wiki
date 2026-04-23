@@ -1,3 +1,9 @@
+---
+title: "Enhancing RAG with Contextual Retrieval"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Enhancing RAG with Contextual Retrieval
 
 > Note: For more background information on Contextual Retrieval,

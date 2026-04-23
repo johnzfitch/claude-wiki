@@ -1,3 +1,9 @@
+---
+title: "Skills Cookbook - Claude Code Guide"
+category: "08-Plugins-Skills"
+tags: ["claude-code", "plugins", "skills", "testing"]
+---
+
 # Skills Cookbook - Claude Code Guide
 
 ## Project Overview

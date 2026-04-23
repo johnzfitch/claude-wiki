@@ -1,3 +1,14 @@
+---
+title: "02 - The Observability Agent {#02"
+category: "09-Agents-Patterns"
+tags: ["agents", "git", "mcp"]
+---
+
+the-observability-agent}"
+category: "09-Agents-Patterns"
+tags: ["agents", "git", "mcp"]
+---
+
 ::: {#7e7958dd .cell .code execution_count="1"}
 ``` python
 import os
@@ -32,7 +43,7 @@ agent was limited to interacting with its own filesystem.
 This is a serious constraint: real-world agents often need to interact
 with other systems like databases, APIs, file systems, and other
 specialized services. [MCP (Model Context
-Protocol)](https://modelcontextprotocol.io/docs/getting-started/intro)
+Protocol)](../06-MCP-Tools/Tutorials/what-is-the-model-context-protocol-mcp-model-context-protocol.md)
 is an open-source standard for AI-tool integrations that allows for an
 easy connection between our agents and these external systems. In this
 notebook, we will explore how to connect MCP servers to our agent.

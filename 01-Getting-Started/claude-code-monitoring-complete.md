@@ -1,3 +1,9 @@
+---
+title: "Claude Code API Monitoring - Complete Setup"
+category: "01-Getting-Started"
+tags: ["api", "claude-code"]
+---
+
 # Claude Code API Monitoring - Complete Setup
 
 ## Overview

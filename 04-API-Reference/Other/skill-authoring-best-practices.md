@@ -1,3 +1,9 @@
+---
+title: "Skill Authoring Best Practices"
+category: "04-API-Reference/Other"
+tags: ["api", "skills"]
+---
+
 Learn how to write effective Skills that Claude can discover and use successfully.
 
 Good Skills are concise, well-structured, and tested with real usage. This guide provides practical authoring decisions to help you write Skills that Claude can discover and use effectively.

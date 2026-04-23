@@ -1,3 +1,9 @@
+---
+title: "The Complete Guide to Building Skills for Claude"
+category: "08-Plugins-Skills"
+tags: ["plugins", "skills"]
+---
+
 # The Complete Guide to Building Skills for Claude
 
 ![](images/_page_0_Picture_1.jpeg)

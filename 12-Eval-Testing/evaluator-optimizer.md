@@ -1,3 +1,8 @@
+---
+title: "Evaluator Optimizer"
+category: "12-Eval-Testing"
+---
+
 ## Evaluator-Optimizer Workflow
 
 In this workflow, one LLM call generates a response while another

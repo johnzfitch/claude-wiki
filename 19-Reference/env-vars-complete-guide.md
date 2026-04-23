@@ -1,3 +1,9 @@
+---
+title: "Claude Code Environment Variables - Complete Guide"
+category: "19-Reference"
+tags: ["claude-code", "security"]
+---
+
 # Claude Code Environment Variables - Complete Guide
 ## 2.1.42 → 2.1.59 → 2.1.70 Evolution
 

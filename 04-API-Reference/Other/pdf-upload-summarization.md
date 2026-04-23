@@ -1,3 +1,9 @@
+---
+title: "\\\\"Uploading\\\\" PDFs to Claude Via the API"
+category: "04-API-Reference/Other"
+tags: ["api"]
+---
+
 # \"Uploading\" PDFs to Claude Via the API
 :::
 

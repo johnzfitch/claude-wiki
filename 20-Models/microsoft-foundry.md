@@ -1,3 +1,9 @@
+---
+title: "Claude Code on Microsoft Foundry"
+category: "20-Models"
+tags: ["claude-code"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 

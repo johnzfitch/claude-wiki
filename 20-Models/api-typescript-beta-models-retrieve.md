@@ -1,0 +1,412 @@
+---
+title: "Get a Model - Claude API Reference"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/models/retrieve"
+category: "20-Models"
+fetched_at: "2026-03-20T10:36:09Z"
+tags: ["api"]
+---
+
+# Get a Model
+
+client.beta.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more }
+
+GET/v1/models/{model_id}
+
+Get a specific model.
+
+The Models API response can be used to determine information about a specific model or resolve a model alias to a model ID.
+
+##### ParametersExpand Collapse 
+
+modelID: string
+
+Model identifier or alias.
+
+params: ModelRetrieveParams { betas }
+
+betas?: Array\<[AnthropicBeta](/docs/en/api/beta#anthropic_beta)\>
+
+Optional header to specify the beta version(s) you want to use.
+
+Accepts one of the following:
+
+(string & {})
+
+"message-batches-2024-09-24" \| "prompt-caching-2024-07-31" \| "computer-use-2024-10-22" \| 17 more
+
+"message-batches-2024-09-24"
+
+"prompt-caching-2024-07-31"
+
+"computer-use-2024-10-22"
+
+"computer-use-2025-01-24"
+
+"pdfs-2024-09-25"
+
+"token-counting-2024-11-01"
+
+"token-efficient-tools-2025-02-19"
+
+"output-128k-2025-02-19"
+
+"files-api-2025-04-14"
+
+"mcp-client-2025-04-04"
+
+"mcp-client-2025-11-20"
+
+"dev-full-thinking-2025-05-14"
+
+"interleaved-thinking-2025-05-14"
+
+"code-execution-2025-05-22"
+
+"extended-cache-ttl-2025-04-11"
+
+"context-1m-2025-08-07"
+
+"context-management-2025-06-27"
+
+"model-context-window-exceeded-2025-08-26"
+
+"skills-2025-10-02"
+
+"fast-mode-2026-02-01"
+
+##### ReturnsExpand Collapse 
+
+BetaModelInfo { id, capabilities, created_at, 4 more }
+
+id: string
+
+Unique model identifier.
+
+capabilities: [BetaModelCapabilities](/docs/en/api/beta#beta_model_capabilities) { batch, citations, code_execution, 6 more } \| null
+
+Model capability information.
+
+batch: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports the Batch API.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+citations: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports citation generation.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+code_execution: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports code execution tools.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+context_management: [BetaContextManagementCapability](/docs/en/api/beta#beta_context_management_capability) { clear_thinking_20251015, clear_tool_uses_20250919, compact_20260112, supported }
+
+Context management support and available strategies.
+
+clear_thinking_20251015: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported } \| null
+
+Indicates whether a capability is supported.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+clear_tool_uses_20250919: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported } \| null
+
+Indicates whether a capability is supported.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+compact_20260112: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported } \| null
+
+Indicates whether a capability is supported.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+effort: [BetaEffortCapability](/docs/en/api/beta#beta_effort_capability) { high, low, max, 2 more }
+
+Effort (reasoning_effort) support and available levels.
+
+high: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports high effort level.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+low: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports low effort level.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+max: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports max effort level.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+medium: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports medium effort level.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+image_input: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model accepts image content blocks.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+pdf_input: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model accepts PDF content blocks.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+structured_outputs: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports structured output / JSON mode / strict tool schemas.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+thinking: [BetaThinkingCapability](/docs/en/api/beta#beta_thinking_capability) { supported, types }
+
+Thinking capability and supported type configurations.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+types: [BetaThinkingTypes](/docs/en/api/beta#beta_thinking_types) { adaptive, enabled }
+
+Supported thinking type configurations.
+
+adaptive: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports thinking with type 'adaptive' (auto).
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+enabled: [BetaCapabilitySupport](/docs/en/api/beta#beta_capability_support) { supported }
+
+Whether the model supports thinking with type 'enabled'.
+
+supported: boolean
+
+Whether this capability is supported by the model.
+
+created_at: string
+
+RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
+
+display_name: string
+
+A human-readable name for the model.
+
+max_input_tokens: number \| null
+
+Maximum input context window size in tokens for this model.
+
+max_tokens: number \| null
+
+Maximum value for the `max_tokens` parameter when using this model.
+
+type: "model"
+
+Object type.
+
+For Models, this is always `"model"`.
+
+Get a Model
+
+TypeScript
+
+```python
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  apiKey: process.env['ANTHROPIC_API_KEY'], // This is the default and can be omitted
+});
+
+const betaModelInfo = await client.beta.models.retrieve('model_id');
+
+console.log(betaModelInfo.id);
+```
+
+Response 200
+
+```python
+{
+  "id": "claude-opus-4-6",
+  "capabilities": {
+    "batch": {
+      "supported": true
+    },
+    "citations": {
+      "supported": true
+    },
+    "code_execution": {
+      "supported": true
+    },
+    "context_management": {
+      "clear_thinking_20251015": {
+        "supported": true
+      },
+      "clear_tool_uses_20250919": {
+        "supported": true
+      },
+      "compact_20260112": {
+        "supported": true
+      },
+      "supported": true
+    },
+    "effort": {
+      "high": {
+        "supported": true
+      },
+      "low": {
+        "supported": true
+      },
+      "max": {
+        "supported": true
+      },
+      "medium": {
+        "supported": true
+      },
+      "supported": true
+    },
+    "image_input": {
+      "supported": true
+    },
+    "pdf_input": {
+      "supported": true
+    },
+    "structured_outputs": {
+      "supported": true
+    },
+    "thinking": {
+      "supported": true,
+      "types": {
+        "adaptive": {
+          "supported": true
+        },
+        "enabled": {
+          "supported": true
+        }
+      }
+    }
+  },
+  "created_at": "2026-02-04T00:00:00Z",
+  "display_name": "Claude Opus 4.6",
+  "max_input_tokens": 0,
+  "max_tokens": 0,
+  "type": "model"
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+```python
+{
+  "id": "claude-opus-4-6",
+  "capabilities": {
+    "batch": {
+      "supported": true
+    },
+    "citations": {
+      "supported": true
+    },
+    "code_execution": {
+      "supported": true
+    },
+    "context_management": {
+      "clear_thinking_20251015": {
+        "supported": true
+      },
+      "clear_tool_uses_20250919": {
+        "supported": true
+      },
+      "compact_20260112": {
+        "supported": true
+      },
+      "supported": true
+    },
+    "effort": {
+      "high": {
+        "supported": true
+      },
+      "low": {
+        "supported": true
+      },
+      "max": {
+        "supported": true
+      },
+      "medium": {
+        "supported": true
+      },
+      "supported": true
+    },
+    "image_input": {
+      "supported": true
+    },
+    "pdf_input": {
+      "supported": true
+    },
+    "structured_outputs": {
+      "supported": true
+    },
+    "thinking": {
+      "supported": true,
+      "types": {
+        "adaptive": {
+          "supported": true
+        },
+        "enabled": {
+          "supported": true
+        }
+      }
+    }
+  },
+  "created_at": "2026-02-04T00:00:00Z",
+  "display_name": "Claude Opus 4.6",

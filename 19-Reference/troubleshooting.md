@@ -1,3 +1,9 @@
+---
+title: "Troubleshooting"
+category: "19-Reference"
+tags: ["authentication"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -209,7 +215,7 @@ On Windows, `~` refers to your user home directory, such as `C:\Users\YourName`.
 * Linux/WSL: `/etc/claude-code/`
 * Windows: `C:\Program Files\ClaudeCode\`
 
-For details on configuring these files, see [Settings](/en/settings) and [MCP](/en/mcp).
+For details on configuring these files, see [Settings](/en/settings) and [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md).
 
 ### Resetting configuration
 

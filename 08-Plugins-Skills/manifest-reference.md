@@ -1,3 +1,9 @@
+---
+title: "Plugin Manifest Reference"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Plugin Manifest Reference
 
 Complete reference for `plugin.json` configuration.

@@ -1,3 +1,9 @@
+---
+title: "Burn Development Team Plugin - Complete Implementation Guide"
+category: "08-Plugins-Skills"
+tags: ["agents", "hooks", "plugins", "security", "skills"]
+---
+
 # Burn Development Team Plugin - Complete Implementation Guide
 
 **Date**: 2026-03-14

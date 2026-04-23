@@ -1,3 +1,9 @@
+---
+title: "Define the model to use throughout this notebook"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKClient
 
 load_dotenv()

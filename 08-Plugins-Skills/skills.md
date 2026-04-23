@@ -1,3 +1,9 @@
+---
+title: "Extend Claude with skills"
+category: "08-Plugins-Skills"
+tags: ["plugins", "skills"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -443,7 +449,7 @@ Permission syntax: `Skill(name)` for exact match, `Skill(name *)` for prefix mat
 Skills can be distributed at different scopes depending on your audience:
 
 * **Project skills**: Commit `.claude/skills/` to version control
-* **Plugins**: Create a `skills/` directory in your [plugin](/en/plugins)
+* **Plugins**: Create a `skills/` directory in your [plugin](create-plugins-claude-code-docs.md)
 * **Managed**: Deploy organization-wide through [managed settings](/en/iam#managed-settings)
 
 ### Generate visual output
@@ -662,8 +668,8 @@ To increase the limit, set the `SLASH_COMMAND_TOOL_CHAR_BUDGET` environment vari
 ## Related resources
 
 * **[Subagents](/en/sub-agents)**: delegate tasks to specialized agents
-* **[Plugins](/en/plugins)**: package and distribute skills with other extensions
-* **[Hooks](/en/hooks)**: automate workflows around tool events
+* **[Plugins](create-plugins-claude-code-docs.md)**: package and distribute skills with other extensions
+* **[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md)**: automate workflows around tool events
 * **[Memory](/en/memory)**: manage CLAUDE.md files for persistent context
 * **[Interactive mode](/en/interactive-mode#built-in-commands)**: built-in commands and shortcuts
 * **[Permissions](/en/iam)**: control tool and skill access

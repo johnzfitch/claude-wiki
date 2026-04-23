@@ -1,3 +1,9 @@
+---
+title: "Use Claude Code in VS Code"
+category: "03-IDE-Integrations"
+tags: ["claude-code", "cli", "git", "plugins", "prompting", "security"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -156,7 +162,7 @@ You can also open VS Code settings (`Cmd+,` on Mac or `Ctrl+,` on Windows/Linux)
 
 ## Manage plugins
 
-The VS Code extension includes a graphical interface for installing and managing [plugins](/en/plugins). Type `/plugins` in the prompt box to open the **Manage plugins** interface.
+The VS Code extension includes a graphical interface for installing and managing [plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md). Type `/plugins` in the prompt box to open the **Manage plugins** interface.
 
 ### Install plugins
 
@@ -189,7 +195,7 @@ After making changes, a banner prompts you to restart Claude Code to apply the u
   Plugin management in VS Code uses the same CLI commands under the hood. Plugins and marketplaces you configure in the extension are also available in the CLI, and vice versa.
 </Note>
 
-For more about the plugin system, see [Plugins](/en/plugins) and [Plugin marketplaces](/en/plugin-marketplaces).
+For more about the plugin system, see [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) and [Plugin marketplaces](/en/plugin-marketplaces).
 
 ## VS Code commands and shortcuts
 
@@ -258,7 +264,7 @@ The VS Code extension supports checkpoints, which track Claude's file edits and 
 * **Rewind code to here**: revert file changes back to this point in the conversation while keeping the full conversation history
 * **Fork conversation and rewind code**: start a new conversation branch and revert file changes to this point
 
-For full details on how checkpoints work and their limitations, see [Checkpointing](/en/checkpointing).
+For full details on how checkpoints work and their limitations, see [Checkpointing](../02-Claude-Code-CLI/checkpointing-claude-code-docs.md).
 
 ### Run CLI in VS Code
 
@@ -288,7 +294,7 @@ To add an MCP server, open the integrated terminal (`` Ctrl+` `` or `` Cmd+` ``)
 claude mcp add --transport http github https://api.githubcopilot.com/mcp/
 ```
 
-Once configured, ask Claude to use the tools (e.g., "Review PR #456"). Some servers require authentication: run `claude` in the terminal, then type `/mcp` to authenticate. See the [MCP documentation](/en/mcp) for available servers.
+Once configured, ask Claude to use the tools (e.g., "Review PR #456"). Some servers require authentication: run `claude` in the terminal, then type `/mcp` to authenticate. See the [MCP documentation](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) for available servers.
 
 ## Work with git
 
@@ -336,9 +342,9 @@ By default, Claude Code connects directly to Anthropic's API. If your organizati
   <Step title="Configure your provider">
     Follow the setup guide for your provider:
 
-    * [Claude Code on Amazon Bedrock](/en/amazon-bedrock)
-    * [Claude Code on Google Vertex AI](/en/google-vertex-ai)
-    * [Claude Code on Microsoft Foundry](/en/microsoft-foundry)
+    * [Claude Code on Amazon Bedrock](../02-Claude-Code-CLI/claude-code-on-amazon-bedrock-claude-code-docs.md)
+    * [Claude Code on Google Vertex AI](../02-Claude-Code-CLI/claude-code-on-google-vertex-ai-claude-code-docs.md)
+    * [Claude Code on Microsoft Foundry](../02-Claude-Code-CLI/claude-code-on-microsoft-foundry-claude-code-docs.md)
 
     These guides cover configuring your provider in `~/.claude/settings.json`, which ensures your settings are shared between the VS Code extension and the CLI.
   </Step>
@@ -405,5 +411,5 @@ For additional help, see the [troubleshooting guide](/en/troubleshooting).
 Now that you have Claude Code set up in VS Code:
 
 * [Explore common workflows](/en/common-workflows) to get the most out of Claude Code
-* [Set up MCP servers](/en/mcp) to extend Claude's capabilities with external tools. Configure servers using the CLI, then use them in the extension.
+* [Set up MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) to extend Claude's capabilities with external tools. Configure servers using the CLI, then use them in the extension.
 * [Configure Claude Code settings](/en/settings) to customize allowed commands, hooks, and more. These settings are shared between the extension and CLI.

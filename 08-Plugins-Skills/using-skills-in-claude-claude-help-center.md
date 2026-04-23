@@ -1,3 +1,9 @@
+---
+title: "Using Skills In Claude Claude Help Center"
+category: "08-Plugins-Skills"
+tags: ["enterprise", "plugins", "security", "skills"]
+---
+
 Skills extend Claude's capabilities by giving it access to specialized knowledge and workflows. This guide shows you how to enable, discover, and use Skills in Claude.
 
 ## Prerequisites
@@ -32,7 +38,7 @@ You can also create and upload your own skills to teach Claude your specific wor
 
 ## How Claude uses Skills
 
-Claude automatically identifies and loads relevant skills based on your task. Refer to [What are Skills?](https://support.claude.com/en/articles/12512176-what-are-skills) to learn how this works.
+Claude automatically identifies and loads relevant skills based on your task. Refer to [What are Skills?](../02-Claude-Code-CLI/what-are-skills.md) to learn how this works.
 
 ## Discovering skills from the Skills Directory
 
@@ -112,15 +118,15 @@ Create and edit files with Claude
 
 What are Skills?
 
-](https://support.claude.com/en/articles/12512176-what-are-skills)[
+](../02-Claude-Code-CLI/what-are-skills.md)[
 
 How to create custom Skills
 
-](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)[
+](../02-Claude-Code-CLI/how-to-create-custom-skills.md)[
 
 How to use the single-cell-rna-qc skill with Claude
 
-](https://support.claude.com/en/articles/12621831-how-to-use-the-single-cell-rna-qc-skill-with-claude)[
+](../02-Claude-Code-CLI/how-to-use-the-single-cell-rna-qc-skill-with-claude.md)[
 
 Provisioning and managing Skills for your organization
 

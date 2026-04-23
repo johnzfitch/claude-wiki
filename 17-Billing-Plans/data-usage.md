@@ -1,3 +1,9 @@
+---
+title: "Data usage"
+category: "17-Billing-Plans"
+tags: ["api", "billing", "claude-code"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 

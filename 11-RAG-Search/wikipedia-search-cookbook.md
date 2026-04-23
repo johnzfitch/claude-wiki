@@ -1,3 +1,9 @@
+---
+title: "Iteratively Searching Wikipedia with Claude"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Iteratively Searching Wikipedia with Claude
 :::
 

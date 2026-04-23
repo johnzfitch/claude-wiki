@@ -1,3 +1,9 @@
+---
+title: "Agent SDK Development Plugin"
+category: "08-Plugins-Skills"
+tags: ["agents", "plugins", "sdk"]
+---
+
 # Agent SDK Development Plugin
 
 A comprehensive plugin for creating and verifying Claude Agent SDK applications in Python and TypeScript.

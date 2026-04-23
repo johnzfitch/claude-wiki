@@ -1,3 +1,9 @@
+---
+title: "Automate workflows with hooks"
+category: "07-Hooks"
+tags: ["agents", "hooks", "prompting"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -9,10 +15,10 @@ Hooks are user-defined shell commands that execute at specific points in Claude 
 
 For decisions that require judgment rather than deterministic rules, you can also use [prompt-based hooks](#prompt-based-hooks) or [agent-based hooks](#agent-based-hooks) that use a Claude model to evaluate conditions.
 
-For other ways to extend Claude Code, see [skills](/en/skills) for giving Claude additional instructions and executable commands, [subagents](/en/sub-agents) for running tasks in isolated contexts, and [plugins](/en/plugins) for packaging extensions to share across projects.
+For other ways to extend Claude Code, see [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) for giving Claude additional instructions and executable commands, [subagents](/en/sub-agents) for running tasks in isolated contexts, and [plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) for packaging extensions to share across projects.
 
 <Tip>
-  This guide covers common use cases and how to get started. For full event schemas, JSON input/output formats, and advanced features like async hooks and MCP tool hooks, see the [Hooks reference](/en/hooks).
+  This guide covers common use cases and how to get started. For full event schemas, JSON input/output formats, and advanced features like async hooks and MCP tool hooks, see the [Hooks reference](hooks-reference-claude-code-docs.md).
 </Tip>
 
 ## Set up your first hook
@@ -473,8 +479,8 @@ Where you add a hook determines its scope:
 | `.claude/settings.json`                                    | Single project                     | Yes, can be committed to the repo  |
 | `.claude/settings.local.json`                              | Single project                     | No, gitignored                     |
 | Managed policy settings                                    | Organization-wide                  | Yes, admin-controlled              |
-| [Plugin](/en/plugins) `hooks/hooks.json`                   | When plugin is enabled             | Yes, bundled with the plugin       |
-| [Skill](/en/skills) or [agent](/en/sub-agents) frontmatter | While the skill or agent is active | Yes, defined in the component file |
+| [Plugin](../08-Plugins-Skills/create-plugins-claude-code-docs.md) `hooks/hooks.json`                   | When plugin is enabled             | Yes, bundled with the plugin       |
+| [Skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) or [agent](/en/sub-agents) frontmatter | While the skill or agent is active | Yes, defined in the component file |
 
 You can also use the [`/hooks` menu](/en/hooks#the-hooks-menu) in Claude Code to add, delete, and view hooks interactively. To disable all hooks at once, use the toggle at the bottom of the `/hooks` menu or set `"disableAllHooks": true` in your settings file.
 
@@ -623,6 +629,6 @@ Toggle verbose mode with `Ctrl+O` to see hook output in the transcript, or run `
 
 ## Learn more
 
-* [Hooks reference](/en/hooks): full event schemas, JSON output format, async hooks, and MCP tool hooks
+* [Hooks reference](hooks-reference-claude-code-docs.md): full event schemas, JSON output format, async hooks, and MCP tool hooks
 * [Security considerations](/en/hooks#security-considerations): review before deploying hooks in shared or production environments
 * [Bash command validator example](https://github.com/anthropics/claude-code/blob/main/examples/hooks/bash_command_validator_example.py): complete reference implementation

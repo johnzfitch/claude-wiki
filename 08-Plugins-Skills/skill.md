@@ -1,7 +1,9 @@
 ---
-name: creating-financial-models
-description: This skill provides an advanced financial modeling suite with DCF analysis, sensitivity testing, Monte Carlo simulations, and scenario planning for investment decisions
+title: "Financial Modeling Suite"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
 ---
+
 # Financial Modeling Suite
 
 A comprehensive financial modeling toolkit for investment analysis, valuation, and risk assessment using industry-standard methodologies.

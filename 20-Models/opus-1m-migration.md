@@ -1,3 +1,9 @@
+---
+title: "Opus 1M Context Migration — Implementation Details"
+category: "20-Models"
+tags: ["testing"]
+---
+
 # Opus 1M Context Migration — Implementation Details
 
 **Feature Flag**: `tengu_cobalt_compass`

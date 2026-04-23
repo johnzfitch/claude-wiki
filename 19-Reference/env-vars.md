@@ -1,3 +1,9 @@
+---
+title: "Environment Variables — 2.1.75 Reference"
+category: "19-Reference"
+tags: ["testing"]
+---
+
 # Environment Variables — 2.1.75 Reference
 
 Complete reference for new and updated environment variables in Claude Code 2.1.75.

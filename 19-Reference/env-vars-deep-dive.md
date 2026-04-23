@@ -1,3 +1,9 @@
+---
+title: "Claude Code Environment Variables - Deep Implementation Guide"
+category: "19-Reference"
+tags: ["agents", "claude-code", "desktop", "git", "mcp", "plugins", "rag", "security"]
+---
+
 # Claude Code Environment Variables - Deep Implementation Guide
 ## What Each Setting Actually Does
 

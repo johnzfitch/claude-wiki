@@ -1,3 +1,8 @@
+---
+title: "Settings File Parsing Techniques"
+category: "15-Claude-AI-Features"
+---
+
 # Settings File Parsing Techniques
 
 Complete guide to parsing `.claude/plugin-name.local.md` files in bash scripts.

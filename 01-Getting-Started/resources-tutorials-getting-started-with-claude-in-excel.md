@@ -1,3 +1,8 @@
+---
+title: "Resources Tutorials Getting Started With Claude In Excel"
+category: "01-Getting-Started"
+---
+
 <!-- Source: https://claude.com/resources/tutorials/getting-started-with-claude-in-excel -->
 
 :root {

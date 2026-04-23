@@ -1,3 +1,8 @@
+---
+title: "Summarizing Web Page Content with Claude 3 Haiku"
+category: "20-Models"
+---
+
 # Summarizing Web Page Content with Claude 3 Haiku
 
 In this recipe, we\'ll learn how to fetch the content of a web page

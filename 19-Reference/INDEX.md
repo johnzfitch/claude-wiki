@@ -1,0 +1,369 @@
+# Reference
+
+*364 documents*
+
+
+- [A framework for AI development transparency \\ Anthropic](a-framework-for-ai-development-transparency-anthropic.md) - Jul 7, 2025
+- [A General Language Assistant as a Laboratory for Alignment \\ Anthropic](a-general-language-assistant-as-a-laboratory-for-alignment-anthropic.md) - Dec 1, 2021
+- [A Mathematical Framework for Transformer Circuits \\ Anthropic](a-mathematical-framework-for-transformer-circuits-anthropic.md) - Dec 22, 2021
+- [A new initiative for developing third-party model evaluations \\ Anthropic](a-new-initiative-for-developing-third-party-model-evaluations-anthropic.md) - Jul 1, 2024
+- [A small number of samples can poison LLMs of any size \\ Anthropic](a-small-number-of-samples-can-poison-llms-of-any-size-anthropic.md) - Oct 9, 2025
+- [A statement from Dario Amodei on Anthropic&#x27;s commitment to American AI leadership \\ Anthropic](a-statement-from-dario-amodei-on-anthropic-x27-s-commitment-to-american-ai-leade.md) - Oct 21, 2025
+- [A statistical approach to model evaluations \\ Anthropic](a-statistical-approach-to-model-evaluations-anthropic.md) - Nov 19, 2024
+- [Accenture and Anthropic launch multi-year partnership to move enterprises from AI pilots to production \\ Anthropic](accenture-and-anthropic-launch-multi-year-partnership-to-move-enterprises-from-a.md) - Dec 9, 2025
+- [Accenture, AWS, Anthropic Collaboration \\ Anthropic](accenture-aws-anthropic-collaboration-anthropic.md) - Mar 20, 2024
+- [Activating AI Safety Level 3 protections \\ Anthropic](activating-ai-safety-level-3-protections-anthropic.md) - May 22, 2025
+- [Advancing Claude for Education \\ Anthropic](advancing-claude-for-education-anthropic.md) - Jul 9, 2025
+- [Advancing Claude for Financial Services \\ Anthropic](advancing-claude-for-financial-services-anthropic.md) - Oct 27, 2025
+- [Advancing Claude in healthcare and the life sciences \\ Anthropic](advancing-claude-in-healthcare-and-the-life-sciences-anthropic.md) - Jan 11, 2026
+- [Agentic Misalignment: How LLMs could be insider threats \\ Anthropic](agentic-misalignment-how-llms-could-be-insider-threats-anthropic.md) - Jun 20, 2025
+- [Aligning on child safety principles \\ Anthropic](aligning-on-child-safety-principles-anthropic.md) - Apr 23, 2024
+- [Alignment faking in large language models \\ Anthropic](alignment-faking-in-large-language-models-anthropic.md) - Dec 18, 2024
+- [Alignment Research \\ Anthropic](alignment-research-anthropic.md) - Future AI systems will be even more powerful than today’s, likely in ways that break key assumptions behind current safety techniques. That’s why it’s
+- [An AI Policy Tool for Today: Ambitiously Invest in NIST \\ Anthropic](an-ai-policy-tool-for-today-ambitiously-invest-in-nist-anthropic.md) - Apr 20, 2023
+- [An update on our model deprecation commitments for Claude Opus 3 \\ Anthropic](an-update-on-our-model-deprecation-commitments-for-claude-opus-3-anthropic.md) - Feb 25, 2026
+- [Announcing our updated Responsible Scaling Policy \\ Anthropic](announcing-our-updated-responsible-scaling-policy-anthropic.md) - Oct 15, 2024
+- [Anthropic achieves ISO 42001 certification for responsible AI \\ Anthropic](anthropic-achieves-iso-42001-certification-for-responsible-ai-anthropic.md) - Jan 13, 2025
+- [Anthropic acquires Bun as Claude Code reaches $1B milestone \\ Anthropic](anthropic-acquires-bun-as-claude-code-reaches-1b-milestone-anthropic.md) - Dec 3, 2025
+- [Anthropic acquires Vercept to advance Claude&#x27;s computer use capabilities \\ Anthropic](anthropic-acquires-vercept-to-advance-claude-x27-s-computer-use-capabilities-ant.md) - Feb 25, 2026
+- [Anthropic and Iceland announce one of the world’s first national AI education pilots \\ Anthropic](anthropic-and-iceland-announce-one-of-the-world-s-first-national-ai-education-pi.md) - Nov 4, 2025
+- [Anthropic and Infosys collaborate to build AI agents for telecommunications and other regulated industries \\ Anthropic](anthropic-and-infosys-collaborate-to-build-ai-agents-for-telecommunications-and.md) - Feb 17, 2026
+- [Anthropic and Salesforce expand partnership to bring Claude to regulated industries \\ Anthropic](anthropic-and-salesforce-expand-partnership-to-bring-claude-to-regulated-industr.md) - Oct 14, 2025
+- [Anthropic and Teach For All launch global AI training initiative for educators \\ Anthropic](anthropic-and-teach-for-all-launch-global-ai-training-initiative-for-educators-a.md) - Jan 21, 2026
+- [Anthropic and the Government of Rwanda sign MOU for AI in health and education \\ Anthropic](anthropic-and-the-government-of-rwanda-sign-mou-for-ai-in-health-and-education-a.md) - Feb 17, 2026
+- [Anthropic Appoints Guillaume Princen as Head of EMEA and Announces 100+ New Roles Across the Region \\ Anthropic](anthropic-appoints-guillaume-princen-as-head-of-emea-and-announces-100-new-roles.md) - Apr 8, 2025
+- [Anthropic appoints Hidetoshi Tojo as Head of Japan and announces hiring plans \\ Anthropic](anthropic-appoints-hidetoshi-tojo-as-head-of-japan-and-announces-hiring-plans-an.md) - Aug 6, 2025
+- [Anthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening \\ Anthropic](anthropic-appoints-irina-ghose-as-managing-director-of-india-ahead-of-bengaluru.md) - Jan 16, 2026
+- [Anthropic awarded $200M DOD agreement for AI capabilities \\ Anthropic](anthropic-awarded-200m-dod-agreement-for-ai-capabilities-anthropic.md) - Jul 14, 2025
+- [Anthropic Deloitte Partnership \\ Anthropic](anthropic-deloitte-partnership-anthropic.md) - Oct 6, 2025
+- [Anthropic Economic Futures Program Launch \\ Anthropic](anthropic-economic-futures-program-launch-anthropic.md) - Jun 27, 2025
+- [Anthropic Economic Index: AI&#x27;s impact on software development \\ Anthropic](anthropic-economic-index-ai-x27-s-impact-on-software-development-anthropic.md) - Apr 28, 2025
+- [Anthropic Economic Index: Insights from Claude 3.7 Sonnet \\ Anthropic](anthropic-economic-index-insights-from-claude-3-7-sonnet-anthropic.md) - Mar 27, 2025
+- [Anthropic Economic Index report: Economic primitives \\ Anthropic](anthropic-economic-index-report-economic-primitives-anthropic.md) - Jan 15, 2026
+- [Anthropic Economic Index report: Uneven geographic and enterprise AI adoption \\ Anthropic](anthropic-economic-index-report-uneven-geographic-and-enterprise-ai-adoption-ant.md) - Sep 15, 2025
+- [Anthropic Economic Index: Tracking AI&#x27;s role in the US and global economy \\ Anthropic](anthropic-economic-index-tracking-ai-x27-s-role-in-the-us-and-global-economy-ant.md) - Sep 15, 2025
+- [Anthropic education report: How educators use Claude \\ Anthropic](anthropic-education-report-how-educators-use-claude-anthropic.md) - Aug 27, 2025
+- [Anthropic Education Report: How University Students Use Claude \\ Anthropic](anthropic-education-report-how-university-students-use-claude-anthropic.md) - Apr 8, 2025
+- [Anthropic Education Report: The AI Fluency Index \\ Anthropic](anthropic-education-report-the-ai-fluency-index-anthropic.md) - Feb 23, 2026
+- [Anthropic expands global leadership in enterprise AI, naming Chris Ciauri as Managing Director of International \\ Anthropic](anthropic-expands-global-leadership-in-enterprise-ai-naming-chris-ciauri-as-mana.md) - Sep 26, 2025
+- [Anthropic expands global operations to India, plans to open an office in Bengaluru. \\ Anthropic](anthropic-expands-global-operations-to-india-plans-to-open-an-office-in-bengalur.md) - Oct 7, 2025
+- [Anthropic invests $50 billion in American AI infrastructure \\ Anthropic](anthropic-invests-50-billion-in-american-ai-infrastructure-anthropic.md) - Nov 12, 2025
+- [Anthropic is donating $20 million to Public First Action \\ Anthropic](anthropic-is-donating-20-million-to-public-first-action-anthropic.md) - Feb 12, 2026
+- [Anthropic is endorsing SB 53 \\ Anthropic](anthropic-is-endorsing-sb-53-anthropic.md) - Sep 8, 2025
+- [Anthropic joins White House pledge for AI education \\ Anthropic](anthropic-joins-white-house-pledge-for-ai-education-anthropic.md) - Sep 4, 2025
+- [Anthropic launches higher education advisory board and AI Fluency courses \\ Anthropic](anthropic-launches-higher-education-advisory-board-and-ai-fluency-courses-anthro.md) - Aug 21, 2025
+- [Anthropic opens Bengaluru office and announces new partnerships across India \\ Anthropic](anthropic-opens-bengaluru-office-and-announces-new-partnerships-across-india-ant.md) - Feb 16, 2026
+- [Anthropic opens Tokyo office, signs a Memorandum of Cooperation with the Japan AI Safety Institute \\ Anthropic](anthropic-opens-tokyo-office-signs-a-memorandum-of-cooperation-with-the-japan-ai.md) - Oct 29, 2025
+- [Anthropic partners with Allen Institute and Howard Hughes Medical Institute to accelerate scientific discovery \\ Anthropic](anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute-to-a.md) - Feb 2, 2026
+- [Anthropic partners with BCG \\ Anthropic](anthropic-partners-with-bcg-anthropic.md) - Sep 14, 2023
+- [Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program \\ Anthropic](anthropic-partners-with-codepath-to-bring-claude-to-the-us-s-largest-collegiate.md) - Feb 13, 2026
+- [Anthropic Partners with Google Cloud \\ Anthropic](anthropic-partners-with-google-cloud-anthropic.md) - Feb 3, 2023
+- [Anthropic partners with Menlo Ventures to launch Anthology Fund \\ Anthropic](anthropic-partners-with-menlo-ventures-to-launch-anthology-fund-anthropic.md) - Jul 17, 2024
+- [Anthropic partners with Rwandan Government and ALX to bring AI education to hundreds of thousands of learners across Africa \\ Anthropic](anthropic-partners-with-rwandan-government-and-alx-to-bring-ai-education-to-hund.md) - Nov 18, 2025
+- [Anthropic partners with the UK Government to bring AI assistance to GOV.UK services \\ Anthropic](anthropic-partners-with-the-uk-government-to-bring-ai-assistance-to-gov-uk-servi.md) - Jan 27, 2026
+- [Anthropic partners with the University of Chicago’s Becker Friedman Institute for Economics on AI economic research \\ Anthropic](anthropic-partners-with-the-university-of-chicago-s-becker-friedman-institute-fo.md) - Jul 23, 2025
+- [Anthropic partners with U.S. National Labs for first 1,000 Scientist AI Jam \\ Anthropic](anthropic-partners-with-u-s-national-labs-for-first-1-000-scientist-ai-jam-anthr.md) - Feb 28, 2025
+- [Anthropic raises $124 million to build more reliable, general AI systems \\ Anthropic](anthropic-raises-124-million-to-build-more-reliable-general-ai-systems-anthropic.md) - May 28, 2021
+- [Anthropic raises $13B Series F at $183B post-money valuation \\ Anthropic](anthropic-raises-13b-series-f-at-183b-post-money-valuation-anthropic.md) - Sep 2, 2025
+- [Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation \\ Anthropic](anthropic-raises-30-billion-in-series-g-funding-at-380-billion-post-money-valuat.md) - Feb 12, 2026
+- [Anthropic Raises $450 Million in Series C Funding to Scale Reliable AI Products \\ Anthropic](anthropic-raises-450-million-in-series-c-funding-to-scale-reliable-ai-products-a.md) - May 23, 2023
+- [Anthropic Raises Series B to build steerable, interpretable, robust AI systems \\ Anthropic](anthropic-raises-series-b-to-build-steerable-interpretable-robust-ai-systems-ant.md) - Apr 29, 2022
+- [Anthropic raises Series E at $61.5B post-money valuation \\ Anthropic](anthropic-raises-series-e-at-61-5b-post-money-valuation-anthropic.md) - Mar 3, 2025
+- [Anthropic’s Recommendations to OSTP for the U.S. AI Action Plan \\ Anthropic](anthropic-s-recommendations-to-ostp-for-the-u-s-ai-action-plan-anthropic.md) - Mar 6, 2025
+- [Anthropic’s response to Governor Newsom’s AI working group draft report \\ Anthropic](anthropic-s-response-to-governor-newsom-s-ai-working-group-draft-report-anthropi.md) - Mar 19, 2025
+- [Anthropic signs CMS health tech pledge \\ Anthropic](anthropic-signs-cms-health-tech-pledge-anthropic.md) - Jul 30, 2025
+- [Anthropic signs MOU with UK Government to explore how AI can transform UK public services \\ Anthropic](anthropic-signs-mou-with-uk-government-to-explore-how-ai-can-transform-uk-public.md) - Feb 14, 2025
+- [Anthropic to sign the EU Code of Practice \\ Anthropic](anthropic-to-sign-the-eu-code-of-practice-anthropic.md) - Jul 21, 2025
+- [Anthropic&#x27;s AI Export Controls Framework Response \\ Anthropic](anthropic-x27-s-ai-export-controls-framework-response-anthropic.md) - Apr 30, 2025
+- [Anthropic&#x27;s Responsible Scaling Policy \\ Anthropic](anthropic-x27-s-responsible-scaling-policy-anthropic.md) - Sep 19, 2023
+- [Apple’s Xcode now supports the Claude Agent SDK \\ Anthropic](apple-s-xcode-now-supports-the-claude-agent-sdk-anthropic.md) - Feb 3, 2026
+- [Auditing language models for hidden objectives \\ Anthropic](auditing-language-models-for-hidden-objectives-anthropic.md) - Mar 13, 2025
+- [2.1.74 Binary Information Report](binary-info-report.md) - **Generated**: 2026-03-13
+- [Reporting, Blocking, and Removing Content from Claude | Claude Help Center](blocking-and-removing-content-from-claude.md) - 3.  Reporting, Blocking, and Removing Content from Claude
+- [Build AI in America: Anthropic Energy Report \\ Anthropic](build-ai-in-america-anthropic-energy-report-anthropic.md) - Jul 21, 2025
+- [Building AI for cyber defenders \\ Anthropic](building-ai-for-cyber-defenders-anthropic.md) - Oct 3, 2025
+- [Building Effective AI Agents \\ Anthropic](building-effective-ai-agents-anthropic.md) - Published Dec 19, 2024
+- [Building safeguards for Claude \\ Anthropic](building-safeguards-for-claude-anthropic.md) - Aug 12, 2025
+- [Challenges in evaluating AI systems \\ Anthropic](challenges-in-evaluating-ai-systems-anthropic.md) - Oct 4, 2023
+- [Challenges in Red Teaming AI Systems \\ Anthropic](challenges-in-red-teaming-ai-systems-anthropic.md) - Jun 12, 2024
+- [Changelog](changelog.md) - data-color-mode="auto" data-light-theme="light" data-dark-theme="dark"
+- [Charting a Path to AI Accountability \\ Anthropic](charting-a-path-to-ai-accountability-anthropic.md) - Jun 13, 2023
+- [Chris Liddell appointed to Anthropic’s board of directors \\ Anthropic](chris-liddell-appointed-to-anthropic-s-board-of-directors-anthropic.md) - Feb 13, 2026
+- [Circuits Updates – April 2024 \\ Anthropic](circuits-updates-april-2024-anthropic.md) - Apr 26, 2024
+- [Circuits Updates – August 2024 \\ Anthropic](circuits-updates-august-2024-anthropic.md) - Sep 6, 2024
+- [Circuits Updates – July 2024 \\ Anthropic](circuits-updates-july-2024-anthropic.md) - Jul 31, 2024
+- [Circuits Updates – June 2024 \\ Anthropic](circuits-updates-june-2024-anthropic.md) - Jun 28, 2024
+- [Circuits Updates — May 2023 \\ Anthropic](circuits-updates-may-2023-anthropic.md) - May 24, 2023
+- [Circuits Updates – September 2024 \\ Anthropic](circuits-updates-september-2024-anthropic.md) - Oct 1, 2024
+- [Claude 2 \\ Anthropic](claude-2-anthropic.md) - Jul 11, 2023
+- [Claude 3.5 Sonnet on GitHub Copilot \\ Anthropic](claude-3-5-sonnet-on-github-copilot-anthropic.md) - Oct 29, 2024
+- [Claude 3.7 Sonnet and Claude Code \\ Anthropic](claude-3-7-sonnet-and-claude-code-anthropic.md) - Feb 24, 2025
+- [Claude 3 Haiku: our fastest model yet \\ Anthropic](claude-3-haiku-our-fastest-model-yet-anthropic.md) - Mar 13, 2024
+- [Claude 3 models on Vertex AI \\ Anthropic](claude-3-models-on-vertex-ai-anthropic.md) - Mar 19, 2024
+- [Claude and Alexa+ \\ Anthropic](claude-and-alexa-anthropic.md) - Feb 26, 2025
+- [Claude can now connect to your world | Claude](claude-can-now-connect-to-your-world-claude.md) - Claude can now connect to your apps and tools through Integrations, while advanced Research searches across the web, Google Workspace, and connected s
+- [Claude can now create and edit files | Claude](claude-can-now-create-and-edit-files-claude.md) - Describe what you need and get back ready-to-use spreadsheets, documents, presentations, and PDFs instead of just text responses.
+- [Claude can now use tools | Claude](claude-can-now-use-tools-claude.md) - Claude now connects with external tools and APIs to perform tasks, manipulate data, and deliver more accurate responses.
+- [Claude Code and new admin controls for business plans \\ Anthropic](claude-code-and-new-admin-controls-for-business-plans-anthropic.md) - Aug 20, 2025
+- [Claude for Enterprise Powers LLNL Research \\ Anthropic](claude-for-enterprise-powers-llnl-research-anthropic.md) - Jul 9, 2025
+- [Claude for Financial Services \\ Anthropic](claude-for-financial-services-anthropic.md) - Jul 15, 2025
+- [Claude for Life Sciences \\ Anthropic](claude-for-life-sciences-anthropic.md) - Oct 20, 2025
+- [Claude Gov models for U.S. national security customers \\ Anthropic](claude-gov-models-for-u-s-national-security-customers-anthropic.md) - Jun 6, 2025
+- [Claude in Amazon Bedrock: Approved for Use in FedRAMP High and DoD IL4/5 Workloads \\ Anthropic](claude-in-amazon-bedrock-approved-for-use-in-fedramp-high-and-dod-il4-5-workload.md) - Jun 11, 2025
+- [Claude is a space to think | Anthropic \\ Anthropic](claude-is-a-space-to-think-anthropic-anthropic.md) - Feb 4, 2026
+- [Claude is now available in Brazil \\ Anthropic](claude-is-now-available-in-brazil-anthropic.md) - Aug 1, 2024
+- [Claude is now available in the EU \\ Anthropic](claude-is-now-available-in-the-eu-anthropic.md) - May 14, 2024
+- [Claude is now generally available in Xcode \\ Anthropic](claude-is-now-generally-available-in-xcode-anthropic.md) - Sep 15, 2025
+- [Claude now available in Microsoft Foundry and Microsoft 365 Copilot \\ Anthropic](claude-now-available-in-microsoft-foundry-and-microsoft-365-copilot-anthropic.md) - Nov 18, 2025
+- [Claude Opus 4.1 \\ Anthropic](claude-opus-4-1-anthropic.md) - Aug 5, 2025
+- [Claude Opus 4 and 4.1 can now end a rare subset of conversations \\ Anthropic](claude-opus-4-and-4-1-can-now-end-a-rare-subset-of-conversations-anthropic.md) - Aug 15, 2025
+- [Claude’s Character \\ Anthropic](claude-s-character-anthropic.md) - Jun 8, 2024
+- [Claude’s Constitution \\ Anthropic](claude-s-constitution-anthropic.md) - May 9, 2023
+- [Claude SWE-Bench Performance \\ Anthropic](claude-swe-bench-performance-anthropic.md) - Published Jan 06, 2025
+- [Claude takes research to new places | Claude](claude-takes-research-to-new-places-claude.md) - Claude can now conduct in-depth Research by searching across the web and your Google Workspace to deliver comprehensive answers in minutes.
+- [Claude&#x27;s extended thinking \\ Anthropic](claude-x27-s-extended-thinking-anthropic.md) - Feb 24, 2025
+- [Claude&#x27;s new constitution \\ Anthropic](claude-x27-s-new-constitution-anthropic.md) - Jan 22, 2026
+- [Clio: Privacy-preserving insights into real-world AI use \\ Anthropic](clio-privacy-preserving-insights-into-real-world-ai-use-anthropic.md) - Dec 12, 2024
+- [Code with Claude - Anthropic&#x27;s First Developer Conference \\ Anthropic](code-with-claude-anthropic-x27-s-first-developer-conference-anthropic.md) - Apr 3, 2025
+- [Cognizant will make Claude available to 350,000 employees, accelerating enterprise AI adoption and internal transformation \\ Anthropic](cognizant-will-make-claude-available-to-350-000-employees-accelerating-enterpris.md) - Nov 4, 2025
+- [Collaborate with Claude on Projects \\ Anthropic](collaborate-with-claude-on-projects-anthropic.md) - Jun 25, 2024
+- [Collective Constitutional AI: Aligning a Language Model with Public Input \\ Anthropic](collective-constitutional-ai-aligning-a-language-model-with-public-input-anthrop.md) - Oct 17, 2023
+- [Commitments on model deprecation and preservation \\ Anthropic](commitments-on-model-deprecation-and-preservation-anthropic.md) - Nov 4, 2025
+- [Confidential Inference via Trusted Virtual Machines \\ Anthropic](confidential-inference-via-trusted-virtual-machines-anthropic.md) - Jun 18, 2025
+- [Constitutional AI: Harmlessness from AI Feedback \\ Anthropic](constitutional-ai-harmlessness-from-ai-feedback-anthropic.md) - Dec 15, 2022
+- [Constitutional Classifiers: Defending against universal jailbreaks \\ Anthropic](constitutional-classifiers-defending-against-universal-jailbreaks-anthropic.md) - Feb 3, 2025
+- [Contributing to Claude Cookbooks](contributing.md) - Thank you for your interest in contributing to the Claude Cookbooks! This guide will help you get started with development and ensure your contributio
+- [Core Views on AI Safety: When, Why, What, and How \\ Anthropic](core-views-on-ai-safety-when-why-what-and-how-anthropic.md) - Mar 8, 2023
+- [Covering electricity price increases from our data centers \\ Anthropic](covering-electricity-price-increases-from-our-data-centers-anthropic.md) - Feb 11, 2026
+- [Dario Amodei’s prepared remarks from the AI Safety Summit on Anthropic’s Responsible Scaling Policy \\ Anthropic](dario-amodei-s-prepared-remarks-from-the-ai-safety-summit-on-anthropic-s-respons.md) - Nov 1, 2023
+- [Decomposing Language Models Into Understandable Components \\ Anthropic](decomposing-language-models-into-understandable-components-anthropic.md) - Oct 5, 2023
+- [Detecting and Countering Malicious Uses of Claude \\ Anthropic](detecting-and-countering-malicious-uses-of-claude-anthropic.md) - Apr 23, 2025
+- [Detecting and countering misuse of AI: August 2025 \\ Anthropic](detecting-and-countering-misuse-of-ai-august-2025-anthropic.md) - Aug 27, 2025
+- [Detecting and preventing distillation attacks \\ Anthropic](detecting-and-preventing-distillation-attacks-anthropic.md) - Feb 23, 2026
+- [Developing a computer use model \\ Anthropic](developing-a-computer-use-model-anthropic.md) - Oct 22, 2024
+- [Developing nuclear safeguards for AI through public-private partnership \\ Anthropic](developing-nuclear-safeguards-for-ai-through-public-private-partnership-anthropi.md) - Aug 21, 2025
+- [Discovering Language Model Behaviors with Model-Written Evaluations \\ Anthropic](discovering-language-model-behaviors-with-model-written-evaluations-anthropic.md) - Dec 19, 2022
+- [Disempowerment patterns in real-world AI usage \\ Anthropic](disempowerment-patterns-in-real-world-ai-usage-anthropic.md) - Jan 28, 2026
+- [Disrupting the first reported AI-orchestrated cyber espionage campaign \\ Anthropic](disrupting-the-first-reported-ai-orchestrated-cyber-espionage-campaign-anthropic.md) - Nov 13, 2025
+- [Distributed Representations: Composition &amp; Superposition \\ Anthropic](distributed-representations-composition-amp-superposition-anthropic.md) - May 4, 2023
+- [Does Anthropic crawl data from the web, and how can site owners block the crawler? | Claude Help Center](does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler.md) - 3.  Does Anthropic crawl data from the web, and how can site owners block the crawler?
+- [Donating the Model Context Protocol and establishing the Agentic AI Foundation \\ Anthropic](donating-the-model-context-protocol-and-establishing-the-agentic-ai-foundation-a.md) - Dec 9, 2025
+- [Economic Research \\ Anthropic](economic-research-anthropic.md) - The Economic Research team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data coll
+- [Elections and AI in 2024: Anthropic observations and learnings \\ Anthropic](elections-and-ai-in-2024-anthropic-observations-and-learnings-anthropic.md) - Dec 12, 2024
+- [Emergent introspective awareness in large language models \\ Anthropic](emergent-introspective-awareness-in-large-language-models-anthropic.md) - Oct 29, 2025
+- [Env var runtime behavior (binary-derived)](env-var-runtime-behavior-2.1.55-2.1.59.md) - Binaries analyzed:
+- [Claude Code Environment Variables - Complete Guide](env-vars-complete-guide.md) - **Generated**: 2026-03-07
+- [Claude Code Environment Variables - Deep Implementation Guide](env-vars-deep-dive.md) - **Generated**: 2026-03-07
+- [Environment Variables — 2.1.75 Reference](env-vars.md) - Complete reference for new and updated environment variables in Claude Code 2.1.75.
+- [Estimating AI productivity gains \\ Anthropic](estimating-ai-productivity-gains-anthropic.md) - Nov 25, 2025
+- [Evaluating and Mitigating Discrimination in Language Model Decisions \\ Anthropic](evaluating-and-mitigating-discrimination-in-language-model-decisions-anthropic.md) - Dec 7, 2023
+- [Evaluating feature steering: A case study in mitigating social biases \\ Anthropic](evaluating-feature-steering-a-case-study-in-mitigating-social-biases-anthropic.md) - Oct 25, 2024
+- [Expanded legal protections and improvements to our API \\ Anthropic](expanded-legal-protections-and-improvements-to-our-api-anthropic.md) - Dec 19, 2023
+- [Expanding Access to Claude for Government \\ Anthropic](expanding-access-to-claude-for-government-anthropic.md) - Jun 26, 2024
+- [Expanding access to safer AI with Amazon \\ Anthropic](expanding-access-to-safer-ai-with-amazon-anthropic.md) - Sep 25, 2023
+- [Expanding our model safety bug bounty program \\ Anthropic](expanding-our-model-safety-bug-bounty-program-anthropic.md) - Aug 8, 2024
+- [Expanding our use of Google Cloud TPUs and Services \\ Anthropic](expanding-our-use-of-google-cloud-tpus-and-services-anthropic.md) - Oct 23, 2025
+- [Exploring model welfare \\ Anthropic](exploring-model-welfare-anthropic.md) - Apr 24, 2025
+- [Extraction Round 2 Summary](extraction-round2-summary.md) - - Path: `/home/zack/.local/share/claude/versions/2.1.50`
+- [Prompt Extraction Summary (2.1.39 vs 2.1.41 vs 2.1.42)](extraction-summary.md) - - 2.1.39
+- [Feature Flags — 2.1.75 Reference](feature-flags.md) - Complete reference for new and updated feature flags in Claude Code 2.1.75.
+- [Fine-tune Claude 3 Haiku in Amazon Bedrock | Claude](fine-tune-claude-3-haiku-in-amazon-bedrock-claude.md) - Claude 3 Haiku can now be fine-tuned in Amazon Bedrock with custom training data, enabling faster, more accurate performance at lower cost.
+- [Forecasting rare language model behaviors \\ Anthropic](forecasting-rare-language-model-behaviors-anthropic.md) - Feb 25, 2025
+- [From shortcuts to sabotage: natural emergent misalignment from reward hacking \\ Anthropic](from-shortcuts-to-sabotage-natural-emergent-misalignment-from-reward-hacking-ant.md) - Nov 21, 2025
+- [Frontier Model Security \\ Anthropic](frontier-model-security-anthropic.md) - Jul 25, 2023
+- [Frontier Threats Red Teaming for AI Safety \\ Anthropic](frontier-threats-red-teaming-for-ai-safety-anthropic.md) - Jul 26, 2023
+- [Changed-Surface Decompile Report](full-changed-surface-decompile-report.md) - Scope: `/home/zack/.local/share/claude/versions/2.1.50` vs `2.1.55`, then `2.1.55` vs `2.1.59`.
+- [2.1.74 Minified Function Name Mapping](function-name-mapping.md) - **Quick reference for reverse engineering the Claude Code 2.1.74 JavaScript payload.**
+- [Glossary](glossary.md) - These concepts are not unique to Anthropic's language models, but we present a brief summary of key terms below.
+- [Golden Gate Claude \\ Anthropic](golden-gate-claude-anthropic.md) - May 23, 2024
+- [How AI assistance impacts the formation of coding skills \\ Anthropic](how-ai-assistance-impacts-the-formation-of-coding-skills-anthropic.md) - Jan 29, 2026
+- [How AI Is Transforming Work at Anthropic \\ Anthropic](how-ai-is-transforming-work-at-anthropic-anthropic.md) - Dec 2, 2025
+- [How Anthropic teams use Claude Code | Claude](how-anthropic-teams-use-claude-code-claude.md) - Teams across Anthropic use Claude Code for everything from debugging production issues and navigating unfamiliar codebases to building custom automati
+- [How people use Claude for support, advice, and companionship \\ Anthropic](how-people-use-claude-for-support-advice-and-companionship-anthropic.md) - Jun 27, 2025
+- [How scientists are using Claude to accelerate research and discovery \\ Anthropic](how-scientists-are-using-claude-to-accelerate-research-and-discovery-anthropic.md) - Jan 15, 2026
+- [Claude Code 2.1.59 — Complete Minified Identifier Mappings](identifier-mappings.md) - **Generated**: 2026-02-28
+- [In-context Learning and Induction Heads \\ Anthropic](in-context-learning-and-induction-heads-anthropic.md) - Mar 8, 2022
+- [India Country Brief: The Anthropic Economic Index \\ Anthropic](india-country-brief-the-anthropic-economic-index-anthropic.md) - Feb 16, 2026
+- [Insights on Crosscoder Model Diffing \\ Anthropic](insights-on-crosscoder-model-diffing-anthropic.md) - Feb 20, 2025
+- [Interpretability Dreams \\ Anthropic](interpretability-dreams-anthropic.md) - May 24, 2023
+- [Interpretability Research \\ Anthropic](interpretability-research-anthropic.md) - The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and po
+- [Introducing 100K Context Windows \\ Anthropic](introducing-100k-context-windows-anthropic.md) - May 11, 2023
+- [Introducing Anthropic Interviewer \\ Anthropic](introducing-anthropic-interviewer-anthropic.md) - Dec 4, 2025
+- [Introducing Anthropic&#x27;s AI for Science Program \\ Anthropic](introducing-anthropic-x27-s-ai-for-science-program-anthropic.md) - May 5, 2025
+- [Introducing Anthropic&#x27;s Transparency Hub \\ Anthropic](introducing-anthropic-x27-s-transparency-hub-anthropic.md) - Feb 27, 2025
+- [Introducing Bloom: an open source tool for automated behavioral evaluations \\ Anthropic](introducing-bloom-an-open-source-tool-for-automated-behavioral-evaluations-anthr.md) - Dec 19, 2025
+- [Introducing Claude 2.1 \\ Anthropic](introducing-claude-2-1-anthropic.md) - Nov 21, 2023
+- [Introducing Claude 4 \\ Anthropic](introducing-claude-4-anthropic.md) - May 22, 2025
+- [Introducing Claude \\ Anthropic](introducing-claude-anthropic.md) - Mar 14, 2023
+- [Introducing Claude for education \\ Anthropic](introducing-claude-for-education-anthropic.md) - Apr 2, 2025
+- [Introducing Claude for Nonprofits \\ Anthropic](introducing-claude-for-nonprofits-anthropic.md) - Dec 2, 2025
+- [Introducing Claude Haiku 4.5 \\ Anthropic](introducing-claude-haiku-4-5-anthropic.md) - Oct 15, 2025
+- [Introducing Claude Pro \\ Anthropic](introducing-claude-pro-anthropic.md) - Sep 7, 2023
+- [Introducing Claude Sonnet 4.5 \\ Anthropic](introducing-claude-sonnet-4-5-anthropic.md) - Sep 29, 2025
+- [Introducing Claude to Canada \\ Anthropic](introducing-claude-to-canada-anthropic.md) - Jun 5, 2024
+- [Introducing Labs \\ Anthropic](introducing-labs-anthropic.md) - Jan 13, 2026
+- [Introducing Sonnet 4.6 \\ Anthropic](introducing-sonnet-4-6-anthropic.md) - Feb 17, 2026
+- [Introducing the Anthropic Economic Advisory Council \\ Anthropic](introducing-the-anthropic-economic-advisory-council-anthropic.md) - Apr 28, 2025
+- [Introducing the Anthropic Economic Index \\ Anthropic](introducing-the-anthropic-economic-index-anthropic.md) - Feb 10, 2025
+- [Introducing the Anthropic National Security and Public Sector Advisory Council \\ Anthropic](introducing-the-anthropic-national-security-and-public-sector-advisory-council-a.md) - Aug 27, 2025
+- [Introducing the Max Plan | Claude](introducing-the-max-plan-claude.md) - Claude's new Max plan offers up to 20x higher usage limits and priority access to new features.
+- [Introducing the Model Context Protocol \\ Anthropic](introducing-the-model-context-protocol-anthropic.md) - Nov 25, 2024
+- [Introducing the next generation of Claude \\ Anthropic](introducing-the-next-generation-of-claude-anthropic.md) - Mar 4, 2024
+- [Introducing the Science Blog \\ Anthropic](introducing-the-science-blog-anthropic.md) - Feb 1, 2026
+- [Investing in energy to secure America&#x27;s AI future \\ Anthropic](investing-in-energy-to-secure-america-x27-s-ai-future-anthropic.md) - Jul 15, 2025
+- [Jay Kreps appointed to Anthropic&#x27;s Board of Directors \\ Anthropic](jay-kreps-appointed-to-anthropic-x27-s-board-of-directors-anthropic.md) - May 29, 2024
+- [Krishna Rao joins Anthropic as Chief Financial Officer \\ Anthropic](krishna-rao-joins-anthropic-as-chief-financial-officer-anthropic.md) - May 21, 2024
+- [Labor market impacts of AI: A new measure and early evidence \\ Anthropic](labor-market-impacts-of-ai-a-new-measure-and-early-evidence-anthropic.md) - Mar 5, 2026
+- [Language Models (Mostly) Know What They Know \\ Anthropic](language-models-mostly-know-what-they-know-anthropic.md) - Jul 11, 2022
+- [Launching the Anthropic Economic Futures Programme in the UK and Europe \\ Anthropic](launching-the-anthropic-economic-futures-programme-in-the-uk-and-europe-anthropi.md) - Nov 5, 2025
+- [LLMs Conjecture, Prove, and Challenge: February 2026 \\ Anthropic](llms-conjecture-prove-and-challenge-february-2026-anthropic.md) - Feb 1, 2026
+- [Long-Running Claude for Scientific Research \\ Anthropic](long-running-claude-for-scientific-research-anthropic.md) - Feb 1, 2026
+- [Lyft to bring Claude to more than 40 million riders and over 1 million drivers \\ Anthropic](lyft-to-bring-claude-to-more-than-40-million-riders-and-over-1-million-drivers-a.md) - Feb 6, 2025
+- [Making frontier cybersecurity capabilities available to defenders \\ Anthropic](making-frontier-cybersecurity-capabilities-available-to-defenders-anthropic.md) - Feb 20, 2026
+- [Many-shot jailbreaking \\ Anthropic](many-shot-jailbreaking-anthropic.md) - Apr 2, 2024
+- [Mapping the Mind of a Large Language Model \\ Anthropic](mapping-the-mind-of-a-large-language-model-anthropic.md) - May 21, 2024
+- [Mariano-Florentino Cuéllar appointed to Anthropic’s Long-Term Benefit Trust \\ Anthropic](mariano-florentino-cu-llar-appointed-to-anthropic-s-long-term-benefit-trust-anth.md) - Jan 21, 2026
+- [Antitrust Policy](mcp-docs-archive-community-antitrust.md) - MCP Project Antitrust Policy for participants and contributors
+- [Mcp Docs Archive Community Communication](mcp-docs-archive-community-communication.md) - [Content of the communication.md file from the previous WebFetch result - the full content about Contributor Communication, Discord, GitHub Discussion
+- [Mcp Docs Archive Community Contributing](mcp-docs-archive-community-contributing.md) - [Content of the contributing.md file - the full guide about Contributing to MCP]
+- [SEP-1024: MCP Client Security Requirements for Local Server Installation](mcp-docs-archive-community-seps-1024-mcp-client-security-requirements-for-local-server.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1034: Support default values for all primitive types in elicitation schemas](mcp-docs-archive-community-seps-1034-support-default-values-for-all-primitive-types-in.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1036: URL Mode Elicitation for secure out-of-band interactions](mcp-docs-archive-community-seps-1036-url-mode-elicitation-for-secure-out-of-band-intera.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1046: Support OAuth client credentials flow in authorization](mcp-docs-archive-community-seps-1046-support-oauth-client-credentials-flow-in-authoriza.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1302: Formalize Working Groups and Interest Groups in MCP Governance](mcp-docs-archive-community-seps-1302-formalize-working-groups-and-interest-groups-in-mc.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1303: Input Validation Errors as Tool Execution Errors](mcp-docs-archive-community-seps-1303-input-validation-errors-as-tool-execution-errors.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1319: Decouple Request Payload from RPC Methods Definition](mcp-docs-archive-community-seps-1319-decouple-request-payload-from-rpc-methods-definiti.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1330: Elicitation Enum Schema Improvements and Standards Compliance](mcp-docs-archive-community-seps-1330-elicitation-enum-schema-improvements-and-standards.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1577: Sampling With Tools](mcp-docs-archive-community-seps-1577-sampling-with-tools.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1613: Establish JSON Schema 2020-12 as Default Dialect for MCP](mcp-docs-archive-community-seps-1613-establish-json-schema-2020-12-as-default-dialect-f.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1686: Tasks](mcp-docs-archive-community-seps-1686-tasks.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1699: Support SSE polling via server-side disconnect](mcp-docs-archive-community-seps-1699-support-sse-polling-via-server-side-disconnect.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1730: SDKs Tiering System](mcp-docs-archive-community-seps-1730-sdks-tiering-system.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1850: PR-Based SEP Workflow](mcp-docs-archive-community-seps-1850-pr-based-sep-workflow.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-1865: MCP Apps - Interactive User Interfaces for MCP](mcp-docs-archive-community-seps-1865-mcp-apps-interactive-user-interfaces-for-mcp.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-2085: Governance Succession and Amendment Procedures](mcp-docs-archive-community-seps-2085-governance-succession-and-amendment.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-2133: Extensions](mcp-docs-archive-community-seps-2133-extensions.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-932: Model Context Protocol Governance](mcp-docs-archive-community-seps-932-model-context-protocol-governance.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-973: Expose additional metadata for Implementations, Resources, Tools and Prompts](mcp-docs-archive-community-seps-973-expose-additional-metadata-for-implementations-res.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-985: Align OAuth 2.0 Protected Resource Metadata with RFC 9728](mcp-docs-archive-community-seps-985-align-oauth-20-protected-resource-metadata-with-rf.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-986: Specify Format for Tool Names](mcp-docs-archive-community-seps-986-specify-format-for-tool-names.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-990: Enable enterprise IdP policy controls during MCP OAuth flows](mcp-docs-archive-community-seps-990-enable-enterprise-idp-policy-controls-during-mcp-o.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-991: Enable URL-based Client Registration using OAuth Client ID Metadata Documents](mcp-docs-archive-community-seps-991-enable-url-based-client-registration-using-oauth-c.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SEP-994: Shared Communication Practices/Guidelines](mcp-docs-archive-community-seps-994-shared-communication-practicesguidelines.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [MCP Apps](mcp-docs-archive-docs-extensions-apps.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [SDKs](mcp-docs-archive-docs-sdk.md) - Official SDKs for building with Model Context Protocol
+- [MCP Inspector](mcp-docs-archive-docs-tools-inspector.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [Understanding Authorization in MCP](mcp-docs-archive-docs-tutorials-security-authorization.md) - Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt
+- [Measuring Faithfulness in Chain-of-Thought Reasoning \\ Anthropic](measuring-faithfulness-in-chain-of-thought-reasoning-anthropic.md) - Jul 18, 2023
+- [Measuring political bias in Claude \\ Anthropic](measuring-political-bias-in-claude-anthropic.md) - Nov 13, 2025
+- [Measuring Progress on Scalable Oversight for Large Language Models \\ Anthropic](measuring-progress-on-scalable-oversight-for-large-language-models-anthropic.md) - Nov 4, 2022
+- [Measuring the Persuasiveness of Language Models \\ Anthropic](measuring-the-persuasiveness-of-language-models-anthropic.md) - Apr 9, 2024
+- [Microsoft, NVIDIA and Anthropic announced new strategic partnerships. \\ Anthropic](microsoft-nvidia-and-anthropic-announced-new-strategic-partnerships-anthropic.md) - Nov 18, 2025
+- [Mike Krieger joins Anthropic as Chief Product Officer \\ Anthropic](mike-krieger-joins-anthropic-as-chief-product-officer-anthropic.md) - May 15, 2024
+- [Mitigating the risk of prompt injections in browser use \\ Anthropic](mitigating-the-risk-of-prompt-injections-in-browser-use-anthropic.md) - Nov 24, 2025
+- [National security expert Richard Fontaine appointed to Anthropic’s long-term benefit trust \\ Anthropic](national-security-expert-richard-fontaine-appointed-to-anthropic-s-long-term-ben.md) - Jun 7, 2025
+- [New Functions Module: 2.1.70](new-functions.md) - **+8,660 functions** (60,300 → 68,960), estimated from `.text` size delta (+4,340,776 bytes).
+- [New offices in Paris and Munich expand Anthropic’s European presence \\ Anthropic](new-offices-in-paris-and-munich-expand-anthropic-s-european-presence-anthropic.md) - Nov 7, 2025
+- [News Prompt Caching](news-prompt-caching.md) - Claude caches frequently used context between API calls, reducing costs and latency for long prompts.
+- [Next-generation Constitutional Classifiers: More efficient protection against universal jailbreaks \\ Anthropic](next-generation-constitutional-classifiers-more-efficient-protection-against-uni.md) - Jan 9, 2026
+- [Notice regarding consumption tax (JCT) for Japanese customers | Claude Help Center](notice-regarding-consumption-tax-jct-for-japanese-customers.md) - 4.  Notice regarding consumption tax (JCT) for Japanese customers
+- [Offering expanded Claude access across all three branches of government \\ Anthropic](offering-expanded-claude-access-across-all-three-branches-of-government-anthropi.md) - Aug 12, 2025
+- [Open-sourcing circuit-tracing tools \\ Anthropic](open-sourcing-circuit-tracing-tools-anthropic.md) - May 29, 2025
+- [Our framework for developing safe and trustworthy agents \\ Anthropic](our-framework-for-developing-safe-and-trustworthy-agents-anthropic.md) - Aug 4, 2025
+- [Phase 1 — Symbol Diff: 2.1.59 → 2.1.70](p1-symbol-diff.md) - **Log:** [../logs/p1-diff_symbols.json](../logs/p1-diff_symbols.json)
+- [Phase 2 — String-Based Labeling: 2.1.59 → 2.1.70](p2-string-labeling.md) - **Logs:** [../logs/p2a-batch_search_strings.json](../logs/p2a-batch_search_strings.json)
+- [Phase 5 — Runtime & Format Analysis: 2.1.59 → 2.1.70](p5-runtime.md) - **Logs:**
+- [Partnering with Mozilla to improve Firefox’s security \\ Anthropic](partnering-with-mozilla-to-improve-firefox-s-security-anthropic.md) - Mar 6, 2026
+- [Partnering with Scale to Bring Generative AI to Enterprises \\ Anthropic](partnering-with-scale-to-bring-generative-ai-to-enterprises-anthropic.md) - Apr 26, 2023
+- [2.1.74 Pattern Analysis — Complete Report](pattern-analysis-complete.md) - **Date**: 2026-03-13
+- [Paul Smith to join Anthropic as Chief Commercial Officer \\ Anthropic](paul-smith-to-join-anthropic-as-chief-commercial-officer-anthropic.md) - Jul 15, 2025
+- [Persona vectors: Monitoring and controlling character traits in language models \\ Anthropic](persona-vectors-monitoring-and-controlling-character-traits-in-language-models-a.md) - Aug 1, 2025
+- [Petri: An open-source auditing tool to accelerate AI safety research \\ Anthropic](petri-an-open-source-auditing-tool-to-accelerate-ai-safety-research-anthropic.md) - Oct 6, 2025
+- [Piloting Claude in Chrome | Claude](piloting-claude-in-chrome-claude.md) - We're piloting Claude in Chrome to test browser-based AI capabilities while addressing prompt injection risks and building the safety measures needed 
+- [Powering the next generation of AI development with AWS \\ Anthropic](powering-the-next-generation-of-ai-development-with-aws-anthropic.md) - Nov 22, 2024
+- [Predictability and Surprise in Large Generative Models \\ Anthropic](predictability-and-surprise-in-large-generative-models-anthropic.md) - Feb 15, 2022
+- [Preparing for AI’s economic impact: exploring policy responses \\ Anthropic](preparing-for-ai-s-economic-impact-exploring-policy-responses-anthropic.md) - Oct 14, 2025
+- [Preparing for global elections in 2024 \\ Anthropic](preparing-for-global-elections-in-2024-anthropic.md) - Feb 16, 2024
+- [Privileged Bases in the Transformer Residual Stream \\ Anthropic](privileged-bases-in-the-transformer-residual-stream-anthropic.md) - Mar 16, 2023
+- [Progress from our Frontier Red Team \\ Anthropic](progress-from-our-frontier-red-team-anthropic.md) - Mar 19, 2025
+- [Project Fetch: Can Claude train a robot dog? \\ Anthropic](project-fetch-can-claude-train-a-robot-dog-anthropic.md) - Nov 12, 2025
+- [Project Vend: Can Claude run a small shop? (And why does that matter?) \\ Anthropic](project-vend-can-claude-run-a-small-shop-and-why-does-that-matter-anthropic.md) - Jun 27, 2025
+- [Project Vend: Phase two \\ Anthropic](project-vend-phase-two-anthropic.md) - Dec 18, 2025
+- [Prompt engineering for business performance \\ Anthropic](prompt-engineering-for-business-performance-anthropic.md) - Feb 29, 2024
+- [Prompt engineering for Claude&#x27;s long context window \\ Anthropic](prompt-engineering-for-claude-x27-s-long-context-window-anthropic.md) - Sep 23, 2023
+- [Protecting the wellbeing of our users \\ Anthropic](protecting-the-wellbeing-of-our-users-anthropic.md) - Dec 18, 2025
+- [MCP Technical Reference](pyghidra-lite.md) - Technical details for MCP server implementation and integration.
+- [Question Decomposition Improves the Faithfulness of Model-Generated Reasoning \\ Anthropic](question-decomposition-improves-the-faithfulness-of-model-generated-reasoning-an.md) - Jul 18, 2023
+- [Rahul Patil joins Anthropic as Chief Technology Officer \\ Anthropic](rahul-patil-joins-anthropic-as-chief-technology-officer-anthropic.md) - Oct 7, 2025
+- [Reasoning models don&#x27;t always say what they think \\ Anthropic](reasoning-models-don-x27-t-always-say-what-they-think-anthropic.md) - Apr 3, 2025
+- [Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned \\ Anthropic](red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lesson.md) - Aug 22, 2022
+- [Reed Hastings appointed to Anthropic’s board of directors \\ Anthropic](reed-hastings-appointed-to-anthropic-s-board-of-directors-anthropic.md) - May 28, 2025
+- [Reflections on our Responsible Scaling Policy \\ Anthropic](reflections-on-our-responsible-scaling-policy-anthropic.md) - May 20, 2024
+- [Reflections on Qualitative Research \\ Anthropic](reflections-on-qualitative-research-anthropic.md) - Mar 8, 2024
+- [Release notes | Claude Help Center](release-notes.md) - **Control Cowork from your phone with a persistent thread (research preview for Pro/Max)**
+- [Releasing Claude Instant 1.2 \\ Anthropic](releasing-claude-instant-1-2-anthropic.md) - Aug 9, 2023
+- [Report a Concern: Australian DIS Standard compliance | Claude Help Center](report-a-concern-australian-dis-standard-compliance.md) - 3.  Report a Concern: Australian DIS Standard compliance
+- [Responsible Scaling Policy Version 3.0 \\ Anthropic](responsible-scaling-policy-version-3-0-anthropic.md) - Feb 24, 2026
+- [Sabotage evaluations for frontier models \\ Anthropic](sabotage-evaluations-for-frontier-models-anthropic.md) - Oct 18, 2024
+- [Salesforce integrates Anthropic&#x27;s Claude AI to boost Einstein capabilities \\ Anthropic](salesforce-integrates-anthropic-x27-s-claude-ai-to-boost-einstein-capabilities-a.md) - Sep 3, 2024
+- [Scaling Laws and Interpretability of Learning from Repeated Data \\ Anthropic](scaling-laws-and-interpretability-of-learning-from-repeated-data-anthropic.md) - May 21, 2022
+- [Seoul becomes Anthropic’s third office in Asia-Pacific as we continue our international growth \\ Anthropic](seoul-becomes-anthropic-s-third-office-in-asia-pacific-as-we-continue-our-intern.md) - Oct 23, 2025
+- [ServiceNow chooses Claude to power customer apps and increase internal productivity \\ Anthropic](servicenow-chooses-claude-to-power-customer-apps-and-increase-internal-productiv.md) - Jan 28, 2026
+- [SHADE-Arena: Evaluating Sabotage and Monitoring in LLM Agents \\ Anthropic](shade-arena-evaluating-sabotage-and-monitoring-in-llm-agents-anthropic.md) - Jun 16, 2025
+- [Sharing our compliance framework for California&#x27;s Transparency in Frontier AI Act \\ Anthropic](sharing-our-compliance-framework-for-california-x27-s-transparency-in-frontier-a.md) - Dec 19, 2025
+- [Simple probes can catch sleeper agents \\ Anthropic](simple-probes-can-catch-sleeper-agents-anthropic.md) - Apr 23, 2024
+- [SKT Partnership Announcement \\ Anthropic](skt-partnership-announcement-anthropic.md) - Aug 15, 2023
+- [Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training \\ Anthropic](sleeper-agents-training-deceptive-llms-that-persist-through-safety-training-anth.md) - Jan 14, 2024
+- [Snowflake and Anthropic announce $200 million partnership to bring agentic AI to global enterprises \\ Anthropic](snowflake-and-anthropic-announce-200-million-partnership-to-bring-agentic-ai-to.md) - Dec 3, 2025
+- [Societal Impacts Research \\ Anthropic](societal-impacts-research-anthropic.md) - Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real
+- [Softmax Linear Units \\ Anthropic](softmax-linear-units-anthropic.md) - Jun 17, 2022
+- [Specific versus General Principles for Constitutional AI \\ Anthropic](specific-versus-general-principles-for-constitutional-ai-anthropic.md) - Oct 24, 2023
+- [Statement from Dario Amodei on our discussions with the Department of War \\ Anthropic](statement-from-dario-amodei-on-our-discussions-with-the-department-of-war-anthro.md) - Feb 26, 2026
+- [Statement from Dario Amodei on the Paris AI Action Summit \\ Anthropic](statement-from-dario-amodei-on-the-paris-ai-action-summit-anthropic.md) - Feb 11, 2025
+- [Statement on the comments from Secretary of War Pete Hegseth \\ Anthropic](statement-on-the-comments-from-secretary-of-war-pete-hegseth-anthropic.md) - Feb 27, 2026
+- [Strengthening our safeguards through collaboration with US CAISI and UK AISI \\ Anthropic](strengthening-our-safeguards-through-collaboration-with-us-caisi-and-uk-aisi-ant.md) - Sep 12, 2025
+- [Studying Large Language Model Generalization with Influence Functions \\ Anthropic](studying-large-language-model-generalization-with-influence-functions-anthropic.md) - Aug 8, 2023
+- [Superposition, Memorization, and Double Descent \\ Anthropic](superposition-memorization-and-double-descent-anthropic.md) - Jan 5, 2023
+- [2.1.74 Suspicious Functions — Disassembly Report](suspicious-functions-disassembly.md) - **Analysis Date**: 2026-03-13
+- [Sycophancy to subterfuge: Investigating reward tampering in language models \\ Anthropic](sycophancy-to-subterfuge-investigating-reward-tampering-in-language-models-anthr.md) - Jun 17, 2024
+- [Claude Code 2.1.76 — Complete Telemetry & Observability Report (v2)](telemetry-observability-report-v2.md) - Claude Code 2.1.76 has **six distinct telemetry surfaces**, not just OTEL. The first report missed three significant ones. This is the corrected, exha
+- [Claude Code 2.1.76 — Telemetry & Observability Report](telemetry-observability-report.md) - Claude Code 2.1.76 contains comprehensive telemetry infrastructure built on **OpenTelemetry** (OTEL) with **GrowthBook** (feature flags), **Statsig** 
+- [Claude Code Telemetry — Quick Start Guide](telemetry-quick-start.md) - Claude Code has **full OpenTelemetry support** but it's **disabled by default**. Enable it to track:
+- [Testing and mitigating elections-related risks \\ Anthropic](testing-and-mitigating-elections-related-risks-anthropic.md) - Jun 6, 2024
+- [Testing our safety defenses with a new bug bounty program \\ Anthropic](testing-our-safety-defenses-with-a-new-bug-bounty-program-anthropic.md) - May 14, 2025
+- [The Anthropic Economic Index report: New building blocks for understanding AI use \\ Anthropic](the-anthropic-economic-index-report-new-building-blocks-for-understanding-ai-use.md) - Jan 15, 2026
+- [The assistant axis: situating and stabilizing the character of large language models \\ Anthropic](the-assistant-axis-situating-and-stabilizing-the-character-of-large-language-mod.md) - Jan 19, 2026
+- [The Capacity for Moral Self-Correction in Large Language Models \\ Anthropic](the-capacity-for-moral-self-correction-in-large-language-models-anthropic.md) - Feb 15, 2023
+- [The case for targeted regulation \\ Anthropic](the-case-for-targeted-regulation-anthropic.md) - Oct 31, 2024
+- [The engineering challenges of scaling interpretability \\ Anthropic](the-engineering-challenges-of-scaling-interpretability-anthropic.md) - Jun 13, 2024
+- [The Long-Term Benefit Trust \\ Anthropic](the-long-term-benefit-trust-anthropic.md) - Sep 19, 2023
+- [The persona selection model \\ Anthropic](the-persona-selection-model-anthropic.md) - Feb 23, 2026
+- [The State of Maryland partners with Anthropic to better serve residents \\ Anthropic](the-state-of-maryland-partners-with-anthropic-to-better-serve-residents-anthropi.md) - Nov 13, 2025
+- [Third-party testing as a key ingredient of AI policy \\ Anthropic](third-party-testing-as-a-key-ingredient-of-ai-policy-anthropic.md) - Mar 25, 2024
+- [Thoughts on America’s AI Action Plan \\ Anthropic](thoughts-on-america-s-ai-action-plan-anthropic.md) - Jul 23, 2025
+- [Thoughts on the US Executive Order, G7 Code of Conduct, and Bletchley Park Summit \\ Anthropic](thoughts-on-the-us-executive-order-g7-code-of-conduct-and-bletchley-park-summit.md) - Nov 5, 2023
+- [Towards Measuring the Representation of Subjective Global Opinions in Language Models \\ Anthropic](towards-measuring-the-representation-of-subjective-global-opinions-in-language-m.md) - Jun 29, 2023
+- [Towards Monosemanticity: Decomposing Language Models With Dictionary Learning \\ Anthropic](towards-monosemanticity-decomposing-language-models-with-dictionary-learning-ant.md) - Oct 5, 2023
+- [Towards Understanding Sycophancy in Language Models \\ Anthropic](towards-understanding-sycophancy-in-language-models-anthropic.md) - Oct 23, 2023
+- [Toy Models of Superposition \\ Anthropic](toy-models-of-superposition-anthropic.md) - Sep 14, 2022
+- [Tracing Model Outputs to the Training Data \\ Anthropic](tracing-model-outputs-to-the-training-data-anthropic.md) - Aug 8, 2023
+- [Tracing the thoughts of a large language model \\ Anthropic](tracing-the-thoughts-of-a-large-language-model-anthropic.md) - Mar 27, 2025
+- [Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback \\ Anthropic](training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human.md) - Apr 12, 2022
+- [Troubleshooting](troubleshooting.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [U.S. Elections Readiness \\ Anthropic](u-s-elections-readiness-anthropic.md) - Oct 8, 2024
+- [U.S. federal departments and agencies can now more quickly and easily get access to Claude \\ Anthropic](u-s-federal-departments-and-agencies-can-now-more-quickly-and-easily-get-access.md) - Aug 5, 2025
+- [Understanding and Addressing AI Harms \\ Anthropic](understanding-and-addressing-ai-harms-anthropic.md) - Apr 21, 2025
+- [Updates to Consumer Terms and Privacy Policy \\ Anthropic](updates-to-consumer-terms-and-privacy-policy-anthropic.md) - Aug 28, 2025
+- [Updating our Usage Policy \\ Anthropic](updating-our-usage-policy-anthropic.md) - May 10, 2024
+- [Updating restrictions of sales to unsupported regions \\ Anthropic](updating-restrictions-of-sales-to-unsupported-regions-anthropic.md) - Sep 4, 2025
+- [Usage Policy Update \\ Anthropic](usage-policy-update-anthropic.md) - Aug 15, 2025
+- [Using dictionary learning features as classifiers \\ Anthropic](using-dictionary-learning-features-as-classifiers-anthropic.md) - Oct 16, 2024
+- [Values in the wild: Discovering and analyzing values in real-world language model interactions \\ Anthropic](values-in-the-wild-discovering-and-analyzing-values-in-real-world-language-model.md) - Apr 21, 2025
+- [Vibe Physics: The AI Grad Student \\ Anthropic](vibe-physics-the-ai-grad-student-anthropic.md) - Feb 1, 2026
+- [What Certifications has Anthropic obtained? | Claude Help Center](what-certifications-has-anthropic-obtained.md) - 3.  What Certifications has Anthropic obtained?
+- [Week 13 - March 23-27, 2026](whats-new-2026-w13.md) - Auto mode for hands-off permissions, computer use built in, PR auto-fix in the cloud, transcript search, and a PowerShell tool for Windows.
+- [Week 14 - March 30 - April 3, 2026](whats-new-2026-w14.md) - Computer use in the CLI, interactive in-product lessons, flicker-free rendering, per-tool MCP result-size overrides, and plugin executables on PATH.
+- [What's new in Claude 4.6](whats-new-claude-4-6.md) - Overview of new features and capabilities in Claude Opus 4.6 and Sonnet 4.6.
+- [Where things stand with the Department of War \\ Anthropic](where-things-stand-with-the-department-of-war-anthropic.md) - Mar 5, 2026
+- [Working with the US Department of Energy to unlock the next era of scientific discovery \\ Anthropic](working-with-the-us-department-of-energy-to-unlock-the-next-era-of-scientific-di.md) - Dec 18, 2025
+- [Zoom Partnership and Investment in Anthropic \\ Anthropic](zoom-partnership-and-investment-in-anthropic-anthropic.md) - May 16, 2023

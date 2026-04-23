@@ -1,3 +1,9 @@
+---
+title: "Claude Code GitLab CI/CD"
+category: "02-Claude-Code-CLI"
+tags: ["bedrock", "claude-code", "git", "security", "vertex"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 

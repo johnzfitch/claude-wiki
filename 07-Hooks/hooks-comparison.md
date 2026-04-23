@@ -1,3 +1,9 @@
+---
+title: "Hooks & Agents Comparison: Your Setup vs Official Docs"
+category: "07-Hooks"
+tags: ["agents", "hooks"]
+---
+
 # Hooks & Agents Comparison: Your Setup vs Official Docs
 
 ## Summary

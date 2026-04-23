@@ -1,3 +1,9 @@
+---
+title: "Plugin System + Teammate Architecture Integration"
+category: "08-Plugins-Skills"
+tags: ["agents", "plugins"]
+---
+
 # Plugin System + Teammate Architecture Integration
 
 **Version**: 2.1.76

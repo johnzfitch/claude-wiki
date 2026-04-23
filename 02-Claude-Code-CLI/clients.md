@@ -1,7 +1,9 @@
 ---
-source: https://modelcontextprotocol.io/clients.md
-downloaded: 2026-02-02
+title: "Example Clients"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "cli"]
 ---
+
 # Example Clients
 
 > A list of applications that support MCP integrations

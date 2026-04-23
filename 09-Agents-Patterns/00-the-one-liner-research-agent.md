@@ -1,3 +1,9 @@
+---
+title: "Building a One-Liner Research Agent"
+category: "09-Agents-Patterns"
+tags: ["agents", "search"]
+---
+
 # Building a One-Liner Research Agent
 
 Research tasks consume hours of expert time: market analysts manually

@@ -1,3 +1,9 @@
+---
+title: "Claude Code Enterprise Architecture — System Interconnections"
+category: "13-Enterprise-Admin"
+tags: ["claude-code", "enterprise", "rag"]
+---
+
 # Claude Code Enterprise Architecture — System Interconnections
 
 **Date**: 2026-03-13

@@ -1,7 +1,9 @@
 ---
-description: Guided feature development with codebase understanding and architecture focus
-argument-hint: Optional feature description
+title: "Feature Development"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
 ---
+
 # Feature Development
 
 You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspecified details, design elegant architectures, then implement.

@@ -1,3 +1,9 @@
+---
+title: "Feature Development Plugin"
+category: "08-Plugins-Skills"
+tags: ["agents", "plugins"]
+---
+
 # Feature Development Plugin
 
 A comprehensive, structured workflow for feature development with specialized agents for codebase exploration, architecture design, and quality review.

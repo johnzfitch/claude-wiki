@@ -1,3 +1,9 @@
+---
+title: "Extended Thinking"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 # Extended Thinking
 
 ## Table of contents

@@ -1,3 +1,9 @@
+---
+title: "Subagents in the SDK"
+category: "09-Agents-Patterns"
+tags: ["agents", "sdk", "subagents"]
+---
+
 # Subagents in the SDK
 
 Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.

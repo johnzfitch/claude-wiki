@@ -1,3 +1,9 @@
+---
+title: "Marketplace Considerations for Commands"
+category: "08-Plugins-Skills"
+tags: ["plugins", "security", "testing"]
+---
+
 # Marketplace Considerations for Commands
 
 Guidelines for creating commands designed for distribution and marketplace success.

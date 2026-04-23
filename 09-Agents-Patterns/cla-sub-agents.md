@@ -1,3 +1,9 @@
+---
+title: "Create custom subagents"
+category: "09-Agents-Patterns"
+tags: ["agents", "subagents"]
+---
+
 # Create custom subagents
 
 > Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
@@ -147,7 +153,7 @@ Subagents are Markdown files with YAML frontmatter. Store them in different loca
 | `--agents` CLI flag          | Current session         | 1 (highest) | Pass JSON when launching Claude Code  |
 | `.claude/agents/`            | Current project         | 2           | Interactive or manual                 |
 | `~/.claude/agents/`          | All your projects       | 3           | Interactive or manual                 |
-| Plugin's `agents/` directory | Where plugin is enabled | 4 (lowest)  | Installed with [plugins](/en/plugins) |
+| Plugin's `agents/` directory | Where plugin is enabled | 4 (lowest)  | Installed with [plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) |
 
 **Project subagents** (`.claude/agents/`) are ideal for subagents specific to a codebase. Check them into version control so your team can use and improve them collaboratively.
 
@@ -168,7 +174,7 @@ claude --agents '{
 
 The `--agents` flag accepts JSON with the same fields as [frontmatter](#supported-frontmatter-fields). Use `prompt` for the system prompt (equivalent to the markdown body in file-based subagents). See the [CLI reference](/en/cli-reference#agents-flag-format) for the full JSON format.
 
-**Plugin subagents** come from [plugins](/en/plugins) you've installed. They appear in `/agents` alongside your custom subagents. See the [plugin components reference](/en/plugins-reference#agents) for details on creating plugin subagents.
+**Plugin subagents** come from [plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) you've installed. They appear in `/agents` alongside your custom subagents. See the [plugin components reference](/en/plugins-reference#agents) for details on creating plugin subagents.
 
 ### Write subagent files
 
@@ -204,7 +210,7 @@ The following fields can be used in the YAML frontmatter. Only `name` and `descr
 | `disallowedTools` | No       | Tools to deny, removed from inherited or specified list                                                                                                                                                      |
 | `model`           | No       | [Model](#choose-a-model) to use: `sonnet`, `opus`, `haiku`, or `inherit`. Defaults to `sonnet`                                                                                                               |
 | `permissionMode`  | No       | [Permission mode](#permission-modes): `default`, `acceptEdits`, `dontAsk`, `bypassPermissions`, or `plan`                                                                                                    |
-| `skills`          | No       | [Skills](/en/skills) to load into the subagent's context at startup. The full skill content is injected, not just made available for invocation. Subagents don't inherit skills from the parent conversation |
+| `skills`          | No       | [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) to load into the subagent's context at startup. The full skill content is injected, not just made available for invocation. Subagents don't inherit skills from the parent conversation |
 | `hooks`           | No       | [Lifecycle hooks](#define-hooks-for-subagents) scoped to this subagent                                                                                                                                       |
 
 ### Choose a model
@@ -314,7 +320,7 @@ See [IAM documentation](/en/iam#tool-specific-permission-rules) for more details
 
 ### Define hooks for subagents
 
-Subagents can define [hooks](/en/hooks) that run during the subagent's lifecycle. There are two ways to configure hooks:
+Subagents can define [hooks](../07-Hooks/hooks-reference-claude-code-docs.md) that run during the subagent's lifecycle. There are two ways to configure hooks:
 
 1. **In the subagent's frontmatter**: Define hooks that run only while that subagent is active
 2. **In `settings.json`**: Define hooks that run in the main session when subagents start or stop
@@ -385,7 +391,7 @@ This example runs setup and cleanup scripts only when the `db-agent` subagent st
 }
 ```
 
-See [Hooks](/en/hooks) for the complete hook configuration format.
+See [Hooks](../07-Hooks/hooks-reference-claude-code-docs.md) for the complete hook configuration format.
 
 ## Work with subagents
 
@@ -463,10 +469,10 @@ Use **subagents** when:
 * You want to enforce specific tool restrictions or permissions
 * The work is self-contained and can return a summary
 
-Consider [Skills](/en/skills) instead when you want reusable prompts or workflows that run in the main conversation context rather than isolated subagent context.
+Consider [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) instead when you want reusable prompts or workflows that run in the main conversation context rather than isolated subagent context.
 
 <Note>
-  Subagents cannot spawn other subagents. If your workflow requires nested delegation, use [Skills](/en/skills) or [chain subagents](#chain-subagents) from the main conversation.
+  Subagents cannot spawn other subagents. If your workflow requires nested delegation, use [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) or [chain subagents](#chain-subagents) from the main conversation.
 </Note>
 
 ### Manage subagent context
@@ -706,9 +712,9 @@ The hook receives JSON via stdin with the Bash command in `tool_input.command`. 
 
 Now that you understand subagents, explore these related features:
 
-* [Distribute subagents with plugins](/en/plugins) to share subagents across teams or projects
+* [Distribute subagents with plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) to share subagents across teams or projects
 * [Run Claude Code programmatically](/en/headless) with the Agent SDK for CI/CD and automation
-* [Use MCP servers](/en/mcp) to give subagents access to external tools and data
+* [Use MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) to give subagents access to external tools and data
 
 
 ---

@@ -1,3 +1,9 @@
+---
+title: "Hook Lifecycle Map — Claude Code 2.1.59"
+category: "02-Claude-Code-CLI"
+tags: ["agents", "claude-code", "subagents"]
+---
+
 # Hook Lifecycle Map — Claude Code 2.1.59
 
 Mapping every hook event to its position in the conversation/process lifecycle.

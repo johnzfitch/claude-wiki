@@ -1,3 +1,9 @@
+---
+title: "Improving Frontend Design Through Skills Claude"
+category: "08-Plugins-Skills"
+tags: ["plugins", "prompting", "skills"]
+---
+
 You might notice that when you ask an LLM to build a landing page without guidance, it will almost always conform to Inter fonts, purple gradients on white backgrounds, and minimal animations. 
 
 The issue?  [Distributional convergence.](https://en.wikipedia.org/wiki/Convergence_of_random_variables) During sampling, models predict tokens based on statistical patterns in training data. Safe design choices–those that work universally and offend no one–dominate web training data. Without direction, Claude samples from this high-probability center.

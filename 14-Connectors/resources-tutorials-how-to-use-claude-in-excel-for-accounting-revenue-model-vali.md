@@ -1,3 +1,9 @@
+---
+title: "Resources Tutorials How To Use Claude In Excel For Accounting Revenue Model Vali"
+category: "14-Connectors"
+tags: ["connectors"]
+---
+
 <!-- Source: https://claude.com/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validation -->
 
 :root {

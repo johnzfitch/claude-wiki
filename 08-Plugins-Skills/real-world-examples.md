@@ -1,3 +1,9 @@
+---
+title: "Real-World Plugin Settings Examples"
+category: "08-Plugins-Skills"
+tags: ["agents", "plugins"]
+---
+
 # Real-World Plugin Settings Examples
 
 Detailed analysis of how production plugins use the `.claude/plugin-name.local.md` pattern.

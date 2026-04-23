@@ -1,3 +1,9 @@
+---
+title: "Citations"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Citations
 
 The Claude API features citation support that enables Claude to provide

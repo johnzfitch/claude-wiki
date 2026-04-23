@@ -1,3 +1,9 @@
+---
+title: "DELTA: Claude Code 2.1.59 → 2.1.70"
+category: "20-Models"
+tags: ["claude-code"]
+---
+
 # DELTA: Claude Code 2.1.59 → 2.1.70
 
 **Analysis date:** 2026-03-06

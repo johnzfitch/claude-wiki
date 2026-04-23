@@ -1,3 +1,9 @@
+---
+title: "Feature Flags — 2.1.75 Reference"
+category: "19-Reference"
+tags: ["testing"]
+---
+
 # Feature Flags — 2.1.75 Reference
 
 Complete reference for new and updated feature flags in Claude Code 2.1.75.

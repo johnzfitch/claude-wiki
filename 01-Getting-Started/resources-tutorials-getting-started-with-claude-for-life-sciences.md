@@ -1,3 +1,8 @@
+---
+title: "Resources Tutorials Getting Started With Claude For Life Sciences"
+category: "01-Getting-Started"
+---
+
 <!-- Source: https://claude.com/resources/tutorials/getting-started-with-claude-for-life-sciences -->
 
 :root {

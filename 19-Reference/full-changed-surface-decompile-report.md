@@ -1,3 +1,8 @@
+---
+title: "Changed-Surface Decompile Report"
+category: "19-Reference"
+---
+
 # Changed-Surface Decompile Report
 Scope: `/home/zack/.local/share/claude/versions/2.1.50` vs `2.1.55`, then `2.1.55` vs `2.1.59`.
 

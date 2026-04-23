@@ -1,3 +1,9 @@
+---
+title: "Automatic Context Compaction"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code"]
+---
+
 # Automatic Context Compaction
 
 Long-running agentic tasks can often exceed context limits. Tool heavy

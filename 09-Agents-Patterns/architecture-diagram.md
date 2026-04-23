@@ -1,3 +1,9 @@
+---
+title: "Observability Agent Architecture"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Observability Agent Architecture
 
 ```mermaid

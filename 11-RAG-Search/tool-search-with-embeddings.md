@@ -1,3 +1,9 @@
+---
+title: "Tool Search with Embeddings: Scaling Claude to Thousands of Tools"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Tool Search with Embeddings: Scaling Claude to Thousands of Tools
 
 Building Claude applications with dozens of specialized tools quickly

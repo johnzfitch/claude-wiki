@@ -1,0 +1,107 @@
+# Models
+
+*102 documents*
+
+
+- [Choosing the right model - Claude API Docs](about-claude-models-choosing-a-model.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
+- [Before (Claude Sonnet 3.7)](about-claude-models-migrating-to-claude-4.md) - This guide covers two key migration paths to Claude 4.5 models:
+- [Migration guide - Claude API Docs](about-claude-models-migration-guide.md) - Guide for migrating to Claude 4.6 models from previous Claude versions
+- [Models overview - Claude API Docs](about-claude-models-overview.md) - Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their per
+- [Claude Sonnet 3.7](about-claude-models-whats-new-claude-4-5.md) - Claude 4.5 introduces three models designed for different use cases:
+- [What's new in Claude 4.6 - Claude API Docs](about-claude-models-whats-new-claude-4-6.md) - Overview of new features and capabilities in Claude Opus 4.6 and Sonnet 4.6.
+- [Adapting to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations.md) - 4.  Adapting to new model personas after deprecations
+- [Claude Code on Amazon Bedrock](amazon-bedrock.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [List Models - Claude API Reference](api-beta-models-list.md) - GET/v1/models
+- [Get a Model - Claude API Reference](api-beta-models-retrieve.md) - GET/v1/models/{model_id}
+- [Models - Claude API Reference](api-beta-models.md) - GET/v1/models
+- [Claude on Amazon Bedrock - Claude API Docs](api-claude-on-amazon-bedrock.md) - Anthropic's Claude models are now generally available through Amazon Bedrock.
+- [Claude on Vertex AI - Claude API Docs](api-claude-on-vertex-ai.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
+- [API Reference - Claude API Docs](api-cli-beta-models-list.md)
+- [API Reference - Claude API Docs](api-cli-beta-models-retrieve.md)
+- [API Reference - Claude API Docs](api-cli-models-list.md)
+- [API Reference - Claude API Docs](api-cli-models-retrieve.md)
+- [API Reference - Claude API Docs](api-cli-models.md)
+- [List Models - Claude API Reference](api-csharp-beta-models-list.md) - [ModelListPageResponse](/docs/en/api/beta#ModelListPageResponse) Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = def
+- [Get a Model - Claude API Reference](api-csharp-beta-models-retrieve.md) - [BetaModelInfo](/docs/en/api/beta#beta_model_info) Beta.Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Models - Claude API Reference](api-csharp-beta-models.md) - [ModelListPageResponse](/docs/en/api/beta#ModelListPageResponse) Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = def
+- [List Models - Claude API Reference](api-csharp-models-list.md) - [ModelListPageResponse](/docs/en/api/models#ModelListPageResponse) Models.List(ModelListParams?parameters, CancellationTokencancellationToken = defaul
+- [Get a Model - Claude API Reference](api-csharp-models-retrieve.md) - [ModelInfo](/docs/en/api/models#model_info) Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)
+- [Models - Claude API Reference](api-csharp-models.md) - [ModelListPageResponse](/docs/en/api/models#ModelListPageResponse) Models.List(ModelListParams?parameters, CancellationTokencancellationToken = defaul
+- [List Models - Claude API Reference](api-go-beta-models-list.md) - client.Beta.Models.List(ctx, params) (\*Page\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\], error)
+- [Get a Model - Claude API Reference](api-go-beta-models-retrieve.md) - client.Beta.Models.Get(ctx, modelID, query) (\*[BetaModelInfo](/docs/en/api/beta#beta_model_info), error)
+- [Models - Claude API Reference](api-go-beta-models.md) - client.Beta.Models.List(ctx, params) (\*Page\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\], error)
+- [List Models - Claude API Reference](api-go-models-list.md) - client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)
+- [Get a Model - Claude API Reference](api-go-models-retrieve.md) - client.Models.Get(ctx, modelID, query) (\*[ModelInfo](/docs/en/api/models#model_info), error)
+- [Models - Claude API Reference](api-go-models.md) - client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)
+- [List Models - Claude API Reference](api-java-beta-models-list.md) - ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Get a Model - Claude API Reference](api-java-beta-models-retrieve.md) - [BetaModelInfo](/docs/en/api/beta#beta_model_info) beta().models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequ
+- [Models - Claude API Reference](api-java-beta-models.md) - ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [List Models - Claude API Reference](api-java-models-list.md) - ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Get a Model - Claude API Reference](api-java-models-retrieve.md) - [ModelInfo](/docs/en/api/models#model_info) models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = R
+- [Models - Claude API Reference](api-java-models.md) - ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [API Reference - Claude API Docs](api-kotlin-beta-models-list.md)
+- [API Reference - Claude API Docs](api-kotlin-beta-models-retrieve.md)
+- [API Reference - Claude API Docs](api-kotlin-beta-models.md)
+- [API Reference - Claude API Docs](api-kotlin-models-list.md)
+- [API Reference - Claude API Docs](api-kotlin-models-retrieve.md)
+- [API Reference - Claude API Docs](api-kotlin-models.md)
+- [List Models - Claude API Reference](api-models-list.md) - GET/v1/models
+- [Get a Model - Claude API Reference](api-models-retrieve.md) - GET/v1/models/{model_id}
+- [Models - Claude API Reference](api-models.md) - GET/v1/models
+- [API Reference - Claude API Docs](api-php-beta-models-list.md)
+- [API Reference - Claude API Docs](api-php-beta-models-retrieve.md)
+- [API Reference - Claude API Docs](api-php-beta-models.md)
+- [API Reference - Claude API Docs](api-php-models-list.md)
+- [API Reference - Claude API Docs](api-php-models-retrieve.md)
+- [API Reference - Claude API Docs](api-php-models.md)
+- [List Models - Claude API Reference](api-python-beta-models-list.md) - beta.models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\]
+- [Get a Model - Claude API Reference](api-python-beta-models-retrieve.md) - beta.models.retrieve(strmodel_id, ModelRetrieveParams\*\*kwargs) -\> [BetaModelInfo](/docs/en/api/beta#beta_model_info)
+- [Models - Claude API Reference](api-python-beta-models.md) - beta.models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\]
+- [List Models - Claude API Reference](api-python-models-list.md) - models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[ModelInfo](/docs/en/api/models#model_info)\]
+- [Get a Model - Claude API Reference](api-python-models-retrieve.md) - models.retrieve(strmodel_id, ModelRetrieveParams\*\*kwargs) -\> [ModelInfo](/docs/en/api/models#model_info)
+- [Models - Claude API Reference](api-python-models.md) - models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[ModelInfo](/docs/en/api/models#model_info)\]
+- [List Models - Claude API Reference](api-ruby-beta-models-list.md) - beta.models.list(\*\*kwargs) -\> Page\<[BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more } \>
+- [Get a Model - Claude API Reference](api-ruby-beta-models-retrieve.md) - beta.models.retrieve(model_id, \*\*kwargs) -\> [BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more }
+- [Models - Claude API Reference](api-ruby-beta-models.md) - beta.models.list(\*\*kwargs) -\> Page\<[BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more } \>
+- [List Models - Claude API Reference](api-ruby-models-list.md) - models.list(\*\*kwargs) -\> Page\<[ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more } \>
+- [Get a Model - Claude API Reference](api-ruby-models-retrieve.md) - models.retrieve(model_id, \*\*kwargs) -\> [ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more }
+- [Models - Claude API Reference](api-ruby-models.md) - models.list(\*\*kwargs) -\> Page\<[ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more } \>
+- [API Reference - Claude API Docs](api-terraform-beta-models-list.md)
+- [API Reference - Claude API Docs](api-terraform-beta-models-retrieve.md)
+- [API Reference - Claude API Docs](api-terraform-beta-models.md)
+- [API Reference - Claude API Docs](api-terraform-models-list.md)
+- [API Reference - Claude API Docs](api-terraform-models-retrieve.md)
+- [API Reference - Claude API Docs](api-terraform-models.md)
+- [List Models - Claude API Reference](api-typescript-beta-models-list.md) - client.beta.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaModelInfo](/docs/en/api/bet
+- [Get a Model - Claude API Reference](api-typescript-beta-models-retrieve.md) - client.beta.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [BetaModelInfo](/docs/en/api/beta#beta_mode
+- [Models - Claude API Reference](api-typescript-beta-models.md) - client.beta.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaModelInfo](/docs/en/api/bet
+- [List Models - Claude API Reference](api-typescript-models-list.md) - client.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[ModelInfo](/docs/en/api/models#model
+- [Get a Model - Claude API Reference](api-typescript-models-retrieve.md) - client.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [ModelInfo](/docs/en/api/models#model_info) { id
+- [Models - Claude API Reference](api-typescript-models.md) - client.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[ModelInfo](/docs/en/api/models#model
+- [Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude](applying-claude-opus-4-5-s-strengths-to-your-everyday-work.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Claude Code Analytics API - Claude API Docs](build-with-claude-claude-code-analytics-api.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
+- [Claude in Microsoft Foundry - Claude API Docs](build-with-claude-claude-in-microsoft-foundry.md) - Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
+- [Claude on Amazon Bedrock - Claude API Docs](build-with-claude-claude-on-amazon-bedrock.md) - Anthropic's Claude models are now generally available through Amazon Bedrock.
+- [Claude on Vertex AI - Claude API Docs](build-with-claude-claude-on-vertex-ai.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
+- [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model.md) - 3.  Can I use my Outputs to train an AI model?
+- [Change Breakdown: 2.1.42 vs 2.1.41](change-breakdown-2.1.42-vs-2.1.41.md) - - Most differences are minifier/symbol churn.
+- [Claude Code model configuration | Claude Help Center](claude-code-model-configuration.md) - This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--mod
+- [Claude Code Binary Diff: 2.1.42 → 2.1.50](claude-diff-2142-vs-2150.md) - **Method:** ELF section analysis + Bun SFE bundle string extraction
+- [Claude Mythos Preview](claude-mythos-preview.md) - Claude Mythos Preview is a new general-purpose language model announced April 7, 2026, that is strikingly capable at computer security tasks. It is no
+- [Claude Binary Reverse Engineering Diff Report](claude-pyghidra-diff-2.1.50-2.1.55-2.1.59.md) - Scope: `/home/zack/.local/share/claude/versions/2.1.50` -> `/home/zack/.local/share/claude/versions/2.1.55` -> `/home/zack/.local/share/claude/version
+- [Create professional results across tools with Claude Sonnet 4.5 | Claude](create-professional-results-across-tools-with-claude-sonnet-4-5.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [DELTA: Claude Code 2.1.59 → 2.1.70](delta.md) - **Analysis date:** 2026-03-06
+- [Finetuning Claude 3 Haiku on Bedrock](finetuning-on-bedrock.md) - In this notebook, we\'ll walk you through the process of finetuning
+- [Getting the most out of Sonnet 4.5 in Claude.ai | Claude](getting-the-most-out-of-sonnet-4-5-in-claude-ai.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Claude Code on Google Vertex AI](google-vertex-ai.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [LLM gateway configuration](llm-gateway.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Claude Code on Microsoft Foundry](microsoft-foundry.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Model configuration](model-config.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Model deprecations](model-deprecations.md)
+- [Opus 1M Context Migration — Implementation Details](opus-1m-migration.md) - **Feature Flag**: `tengu_cobalt_compass`
+- [Parallel tool calls on Claude 3.7 Sonnet {#parallel-tool-calls-on-claude-37-sonnet}](parallel-tools.md) - :::
+- [Prompt / Env / Model Change Report](prompt-env-model-changes-2.1.50-2.1.55-2.1.59.md) - Scope: `2.1.50 -> 2.1.55 -> 2.1.59`
+- [Summarizing Web Page Content with Claude 3 Haiku](read-web-pages-with-haiku.md) - In this recipe, we\'ll learn how to fetch the content of a web page
+- [Keep Claude in character with role prompting and prefilling - Claude API Docs](test-and-evaluate-strengthen-guardrails-keep-claude-in-character.md) - This guide provides actionable tips to keep Claude in character, even during long, complex interactions.
+- [Claude Help Center](using-claude-for-financial-services-for-analysis-and-modeling.md) - Search for articles...
+- [What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center](what-aws-regions-are-claude-models-available-in-amazon-bedrock.md) - 3.  What AWS Regions are Claude models available in Amazon Bedrock?

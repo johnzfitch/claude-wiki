@@ -1,0 +1,3498 @@
+# Enterprise Admin
+
+All documentation for Enterprise Admin.
+
+
+---
+## access-audit-logs.md
+
+# Access audit logs
+
+
+Audit logs are available for Enterprise organizations only.
+
+Organization Owners and Primary Owners can export data within **[Organization settings \> Data and Privacy](https://claude.ai/admin-settings/data-privacy-controls)** and clicking the "Export logs" button. Upon triggering this export, all audit logs for the organization within the past 180 days will be aggregated. The Owner who requested the export will receive an email containing a download link, which is active for 24 hours. Note that there may be a delay between triggering the export and receiving the email as logs are aggregated.
+
+Please note that title and content of chats and projects are not available to be exported in audit logs (only their unique identifiers will be exported). However, chat inputs/outputs will be exportable by Primary Owners via **[data exports](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**.
+
+**Note:** Audit log events are available in the Compliance API. For more information, refer to **[Access the Compliance API](https://support.claude.com/en/articles/13015708-access-the-compliance-api)**.
+
+## Log Structure
+
+Audit logs consist of the following columns:
+
+[TABLE]
+
+## Entities
+
+The entities that can be affected by events. Entity info follows this structure:
+
+[TABLE]
+
+[TABLE]
+
+## Recorded Events
+
+[TABLE]
+
+
+---
+## analytics.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Track team usage with analytics
+
+> View Claude Code usage metrics, track adoption, and measure engineering velocity in the analytics dashboard.
+
+Claude Code provides analytics dashboards to help organizations understand developer usage patterns, track contribution metrics, and measure how Claude Code impacts engineering velocity. Access the dashboard for your plan:
+
+| Plan                          | Dashboard URL                                                              | Includes                                                                              | Read more                                             |
+| ----------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Claude for Teams / Enterprise | [claude.ai/analytics/claude-code](https://claude.ai/analytics/claude-code) | Usage metrics, contribution metrics with GitHub integration, leaderboard, data export | [Details](#access-analytics-for-teams-and-enterprise) |
+| API (Claude Console)          | [platform.claude.com/claude-code](https://platform.claude.com/claude-code) | Usage metrics, spend tracking, team insights                                          | [Details](#access-analytics-for-api-customers)        |
+
+## Access analytics for Teams and Enterprise
+
+Navigate to [claude.ai/analytics/claude-code](https://claude.ai/analytics/claude-code). Admins and Owners can view the dashboard.
+
+The Teams and Enterprise dashboard includes:
+
+* **Usage metrics**: lines of code accepted, suggestion accept rate, daily active users and sessions
+* **Contribution metrics**: PRs and lines of code shipped with Claude Code assistance, with [GitHub integration](#enable-contribution-metrics)
+* **Leaderboard**: top contributors ranked by Claude Code usage
+* **Data export**: download contribution data as CSV for custom reporting
+
+### Enable contribution metrics
+
+<Note>
+  Contribution metrics are in public beta and available on Claude for Teams and Claude for Enterprise plans. These metrics only cover users within your claude.ai organization. Usage through the Claude Console API or third-party integrations is not included.
+</Note>
+
+Usage and adoption data is available for all Claude for Teams and Claude for Enterprise accounts. Contribution metrics require additional setup to connect your GitHub organization.
+
+You need the Owner role to configure analytics settings. A GitHub admin must install the GitHub app.
+
+<Steps>
+  <Step title="Install the GitHub app">
+    A GitHub admin installs the Claude GitHub app on your organization's GitHub account at [github.com/apps/claude](https://github.com/apps/claude).
+  </Step>
+
+  <Step title="Enable Claude Code analytics">
+    A Claude Owner navigates to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enables the Claude Code analytics feature.
+  </Step>
+
+  <Step title="Enable GitHub analytics">
+    On the same page, enable the "GitHub analytics" toggle.
+  </Step>
+
+  <Step title="Authenticate with GitHub">
+    Complete the GitHub authentication flow and select which GitHub organizations to include in the analysis.
+  </Step>
+</Steps>
+
+Data typically appears within 24 hours after enabling, with daily updates. If no data appears, you may see one of these messages:
+
+* **"GitHub app required"**: install the GitHub app to view contribution metrics
+* **"Data processing in progress"**: check back in a few days and confirm the GitHub app is installed if data doesn't appear
+
+Contribution metrics support GitHub Cloud and GitHub Enterprise Server.
+
+### Review summary metrics
+
+<Note>
+  These metrics are deliberately conservative and represent an underestimate of Claude Code's actual impact. Only lines and PRs where there is high confidence in Claude Code's involvement are counted.
+</Note>
+
+The dashboard displays these summary metrics at the top:
+
+* **PRs with CC**: total count of merged pull requests that contain at least one line of code written with Claude Code
+* **Lines of code with CC**: total lines of code across all merged PRs that were written with Claude Code assistance. Only "effective lines" are counted: lines with more than 3 characters after normalization, excluding empty lines and lines with only brackets or trivial punctuation.
+* **PRs with Claude Code (%)**: percentage of all merged PRs that contain Claude Code-assisted code
+* **Suggestion accept rate**: percentage of times users accept Claude Code's code editing suggestions, including Edit, Write, and NotebookEdit tool usage
+* **Lines of code accepted**: total lines of code written by Claude Code that users have accepted in their sessions. This excludes rejected suggestions and does not track subsequent deletions.
+
+### Explore the charts
+
+The dashboard includes several charts to visualize trends over time.
+
+#### Track adoption
+
+The Adoption chart shows daily usage trends:
+
+* **users**: daily active users
+* **sessions**: number of active Claude Code sessions per day
+
+#### Measure PRs per user
+
+This chart displays individual developer activity over time:
+
+* **PRs per user**: total number of PRs merged per day divided by daily active users
+* **users**: daily active users
+
+Use this to understand how individual productivity changes as Claude Code adoption increases.
+
+#### View pull requests breakdown
+
+The Pull requests chart shows a daily breakdown of merged PRs:
+
+* **PRs with CC**: pull requests containing Claude Code-assisted code
+* **PRs without CC**: pull requests without Claude Code-assisted code
+
+Toggle to **Lines of code** view to see the same breakdown by lines of code rather than PR count.
+
+#### Find top contributors
+
+The Leaderboard shows the top 10 users ranked by contribution volume. Toggle between:
+
+* **Pull requests**: shows PRs with Claude Code vs All PRs for each user
+* **Lines of code**: shows lines with Claude Code vs All lines for each user
+
+Click **Export all users** to download complete contribution data for all users as a CSV file. The export includes all users, not just the top 10 displayed.
+
+### PR attribution
+
+When contribution metrics are enabled, Claude Code analyzes merged pull requests to determine which code was written with Claude Code assistance. This is done by matching Claude Code session activity against the code in each PR.
+
+#### Tagging criteria
+
+PRs are tagged as "with Claude Code" if they contain at least one line of code written during a Claude Code session. The system uses conservative matching: only code where there is high confidence in Claude Code's involvement is counted as assisted.
+
+#### Attribution process
+
+When a pull request is merged:
+
+1. Added lines are extracted from the PR diff
+2. Claude Code sessions that edited matching files within a time window are identified
+3. PR lines are matched against Claude Code output using multiple strategies
+4. Metrics are calculated for AI-assisted lines and total lines
+
+Before comparison, lines are normalized: whitespace is trimmed, multiple spaces are collapsed, quotes are standardized, and text is converted to lowercase.
+
+Merged pull requests containing Claude Code-assisted lines are labeled as `claude-code-assisted` in GitHub.
+
+#### Time window
+
+Sessions from 21 days before to 2 days after the PR merge date are considered for attribution matching.
+
+#### Excluded files
+
+Certain files are automatically excluded from analysis because they are auto-generated:
+
+* Lock files: package-lock.json, yarn.lock, Cargo.lock, and similar
+* Generated code: Protobuf outputs, build artifacts, minified files
+* Build directories: dist/, build/, node\_modules/, target/
+* Test fixtures: snapshots, cassettes, mock data
+* Lines over 1,000 characters, which are likely minified or generated
+
+#### Attribution notes
+
+Keep these additional details in mind when interpreting attribution data:
+
+* Code substantially rewritten by developers, with more than 20% difference, is not attributed to Claude Code
+* Sessions outside the 21-day window are not considered
+* The algorithm does not consider the PR source or destination branch when performing attribution
+
+### Get the most from analytics
+
+Use contribution metrics to demonstrate ROI, identify adoption patterns, and find team members who can help others get started.
+
+#### Monitor adoption
+
+Track the Adoption chart and user counts to identify:
+
+* Active users who can share best practices
+* Overall adoption trends across your organization
+* Dips in usage that may indicate friction or issues
+
+#### Measure ROI
+
+Contribution metrics help answer "Is this tool worth the investment?" with data from your own codebase:
+
+* Track changes in PRs per user over time as adoption increases
+* Compare PRs and lines of code shipped with vs. without Claude Code
+* Use alongside [DORA metrics](https://dora.dev/), sprint velocity, or other engineering KPIs to understand changes from adopting Claude Code
+
+#### Identify power users
+
+The Leaderboard helps you find team members with high Claude Code adoption who can:
+
+* Share prompting techniques and workflows with the team
+* Provide feedback on what's working well
+* Help onboard new users
+
+#### Access data programmatically
+
+To query this data through GitHub, search for PRs labeled with `claude-code-assisted`.
+
+## Access analytics for API customers
+
+API customers using the Claude Console can access analytics at [platform.claude.com/claude-code](https://platform.claude.com/claude-code). You need the UsageView permission to access the dashboard, which is granted to Developer, Billing, Admin, Owner, and Primary Owner roles.
+
+<Note>
+  Contribution metrics with GitHub integration are not currently available for API customers. The Console dashboard shows usage and spend metrics only.
+</Note>
+
+The Console dashboard displays:
+
+* **Lines of code accepted**: total lines of code written by Claude Code that users have accepted in their sessions. This excludes rejected suggestions and does not track subsequent deletions.
+* **Suggestion accept rate**: percentage of times users accept code editing tool usage, including Edit, Write, and NotebookEdit tools.
+* **Activity**: daily active users and sessions shown on a chart.
+* **Spend**: daily API costs in dollars alongside user count.
+
+### View team insights
+
+The team insights table shows per-user metrics:
+
+* **Members**: all users who have authenticated to Claude Code. API key users display by key identifier, OAuth users display by email address.
+* **Spend this month**: per-user total API costs for the current month.
+* **Lines this month**: per-user total of accepted code lines for the current month.
+
+<Note>
+  Spend figures in the Console dashboard are estimates for analytics purposes. For actual costs, refer to your billing page.
+</Note>
+
+## Related resources
+
+* [Monitoring with OpenTelemetry](/en/monitoring-usage): export real-time metrics and events to your observability stack
+* [Manage costs effectively](../02-Claude-Code-CLI/costs.md): set spend limits and optimize token usage
+* [Identity and access management](/en/iam): configure roles and permissions
+
+
+---
+## business-associate-agreements-baa-for-commercial-customers.md
+
+3.  Business Associate Agreements (BAA) for Commercial Customers
+
+# Business Associate Agreements (BAA) for Commercial Customers
+
+
+*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* ***[here](https://privacy.claude.com/en/collections/10663362-consumers)****.*
+
+After review of HIPAA-related compliance items and your specific use case, Anthropic may provide a Business Associate Agreement (BAA) covering our HIPAA-ready services, such as use of our first-party API or Enterprise plans.
+
+For our first-party API, our BAA is only available for customers who qualify for certain HIPAA-ready services such as those subject to **[zero data retention agreements](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to)**.
+
+For clarity, the BAA does not cover Workbench and Console, Claude Free, Pro, Max, or Team plans, and other beta or chat products, features, or integrations. As part of the BAA, customers of Anthropic’s HIPAA-ready services are subject to certain configuration requirements and limitations on what features/integrations are available.
+
+Below is a breakdown of what’s covered under the BAA, by feature and product surface.
+
+## What’s covered under Anthropic’s BAA
+
+[TABLE]
+
+## Product BAA coverage by surface
+
+[TABLE]
+
+To learn more about Anthropic’s HIPAA-ready services or begin the BAA process, please submit an inquiry with the details of your deployment to our **[Sales team via this form](https://claude.com/contact-sales)**.
+
+Please see our **[Trust Portal](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)** for more information about our compliance commitments.
+
+
+---
+## claude-enterprise-analytics-api-reference-guide.md
+
+4.  Claude Enterprise Analytics API reference guide
+
+# Claude Enterprise Analytics API reference guide
+
+
+## Overview
+
+The Claude Enterprise Analytics API gives your organization programmatic access to engagement data for Claude and Claude Code usage within your Enterprise organization. Whether you're building internal dashboards for user activity or tracking adoption of projects, this API provides the aggregated metrics you need.
+
+## Data aggregation
+
+All data is aggregated **per organization, per day**. Each endpoint returns a snapshot for a single date that you specify. **Data for day (N-1) is run at 10:00:00 UTC time on day N**, and is available for querying three days after aggregation, to ensure accuracy of data.
+
+If data is not available within the timeline above, this usually indicates a data pipeline failure that our team will need to investigate internally. We are usually aware of such problems, but please raise this to your CSM if you want a gut check, or suspect something else.
+
+## Enabling access
+
+In order to mint new analytics API keys, you must be a Primary Owner within your Enterprise organization. You can do so by navigating to **[claude.ai/analytics/api-keys](http://claude.ai/analytics/api-keys)**.
+
+Some more details that might be helpful:
+
+- You can *enable/disable* access to the public API anytime. If you disable access by toggling the switch off, all requests will be denied.
+
+- You’ll need a key with the `read:analytics` scope in order to access the API. You can create multiple keys for your organization, but rate limits apply at the *organization* level, not the *key* level. See the “Rate limiting” section below.
+
+- As always, *we strongly recommend handling API keys securely*: *never* share these keys publicly - they are secret, and should be shared securely.
+
+
+## Base URL
+
+All requests are sent to:
+
+    https://api.anthropic.com/v1/organizations/analytics/
+
+## Authentication
+
+Every request requires an API key passed in the `x-api-key` header. Your API key must have the `read:analytics` scope. You can create and manage API keys from the claude.ai admin settings under the API Keys section.
+
+**Example request headers:**
+
+    x-api-key: $YOUR_API_KEY
+
+## Pagination
+
+Several endpoints return paginated results. Pagination uses a cursor-based approach, where the response includes a `next_page` token you pass back in your next request to retrieve the following page of results.
+
+Two optional parameters control pagination:
+
+**limit** (integer): Number of records per page. Defaults to 20 for the /users endpoint and 100 for all other endpoints. The maximum is 1000.
+
+**page** (string): The opaque cursor token from the previous response's `next_page` field. Omit this on your first request.
+
+When there are no more results, `next_page` will be `null` in the response.
+
+## Error responses
+
+All endpoints return standard HTTP error codes:
+
+[TABLE]
+
+## Rate limiting
+
+We do have default rate limits in place. If that isn’t sufficient for your use case, we’d love to understand why. If necessary, we can adjust the rate limits for your organization—please reach out to your CSM.
+
+## Endpoints
+
+### 1. List user activity
+
+`GET /v1/organizations/analytics/users`
+
+Returns per-user engagement metrics for a single day. Each item in the response represents one user and includes their activity counts across Claude (chat) and Claude Code.
+
+**Query parameters**
+
+[TABLE]
+
+**Response fields (per user)**
+
+[TABLE]
+
+**Example request**
+
+    curl -X GET "https://api.anthropic.com/v1/organizations/analytics/users?date=2025-01-01&limit=3"
+       --header "x-api-key: $YOUR_API_KEY"
+
+### 2. Activity summary
+
+`GET /v1/organizations/analytics/summaries`
+
+Returns a high-level summary of engagement and seat utilization **per-day** for your organization for a given date range. The response is a list of days with aggregated counts within the date range. Note that the maximum difference between `ending_date` and `starting_date` must be **31 days**, and there is a three-day delay in data availability. This is useful for tracking daily active users, weekly and monthly trends, and seat allocation at a glance.
+
+**We define “active”** if any one of the following is true:
+
+- The user sent at least one chat message on Claude (chat).
+
+- The user had at least one Claude Code (local or remote) session associated with the C4E org, with tool use/git activity
+
+**Query parameters**
+
+[TABLE]
+
+**Response fields**
+
+[TABLE]
+
+**Note:** The rolling windows for weekly and monthly counts look backward from the specified date (inclusive). If data is incomplete for some days within the window (for example, if the date is less than 30 days in the past), the monthly count may undercount activity.
+
+**Example request**
+
+    curl -X GET "https://api.anthropic.com/v1/organizations/analytics/summaries?starting_date=2025-01-01"
+       --header "x-api-key: $YOUR_API_KEY"
+
+### 3. Chat project usage
+
+`GET /v1/organizations/analytics/apps/chat/projects`
+
+Returns usage data broken down by chat project for a given date. Projects are specific to Claude (chat), so this endpoint focuses on that surface. Each item shows the project name, how many unique users interacted with it, and the total number of conversations held in that project.
+
+**Query parameters**
+
+[TABLE]
+
+**Response fields (per project)**
+
+[TABLE]
+
+**Example request**
+
+    curl -X GET "https://api.anthropic.com/v1/organizations/analytics/apps/chat/projects?date=2025-01-01&limit=50"
+       --header "x-api-key: $YOUR_API_KEY"
+
+### 4. Skill usage
+
+`GET /v1/organizations/analytics/skills`
+
+Returns skill usage data across both Claude (chat) and Claude Code within your organization for a given date. Each item represents a skill and shows how many unique users used it.
+
+**Query parameters**
+
+[TABLE]
+
+**Response fields (per skill)**
+
+[TABLE]
+
+**Example request**
+
+    curl -X GET "https://api.anthropic.com/v1/organizations/analytics/skills?date=2025-01-01"
+       --header "x-api-key: $YOUR_API_KEY"
+
+### 5. Connector usage
+
+`GET /v1/organizations/analytics/connectors`
+
+Returns MCP/connector usage data across both Claude (chat) and Claude Code within your organization for a given date. Each item represents a connector and shows how many unique users used it. Connector names are normalized from various sources — for example, "Atlassian MCP server," "mcp-atlassian," and "atlassian_MCP" would all appear as "atlassian."
+
+**Query parameters**
+
+[TABLE]
+
+**Response fields (per connector)**
+
+[TABLE]
+
+**Example request**
+
+    curl -X GET "https://api.anthropic.com/v1/organizations/analytics/connectors?date=2025-01-01"
+       --header "x-api-key: $YOUR_API_KEY"
+
+
+---
+## claude-for-chrome-admin-controls.md
+
+# Claude in Chrome admin controls
+
+
+Claude in Chrome admin controls are available in beta for Team and Enterprise plans.
+
+This article explains how Team and Enterprise Owners can manage Claude in Chrome for their organization.
+
+Claude in Chrome is a browser extension that allows Claude to read, click, and navigate websites on behalf of your users. As an Owner, you control whether the extension is available for users to install and which sites they can access.
+
+**Important:** Before enabling Claude in Chrome for your organization, review **[Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)** to understand the risks of browser-based AI, including prompt injection attacks.
+
+## Accessing Claude in Chrome settings
+
+To manage Claude in Chrome settings for your organization:
+
+1.  Sign in to Claude with your Owner account.
+
+2.  Navigate to **[Organization settings \> Claude in Chrome](http://claude.ai/admin-settings/browser-extension)**.
+
+## Enabling or disabling the extension
+
+Use the toggle to enable or disable Claude in Chrome for your entire organization.
+
+- **Team plans:** The extension is enabled by default. Disable it if you prefer users not to have access.
+
+- **Enterprise plans:** The extension is disabled by default. Enable it when you're ready for users to access the feature.
+
+**Note:** When you enable the extension for an Enterprise organization, users are not automatically notified. You may want to communicate availability through your internal channels.
+
+## Configuring site access
+
+Use allowlists and blocklists to control which websites Claude can access when users are working with the extension.
+
+**Allowlist:** Specify which sites Claude is permitted to access by adding them to the allowlist. We recommend starting with a restrictive allowlist, especially during initial rollout.
+
+**Blocklist:** Specify sites Claude should never access, regardless of other settings, by adding them to the blocklist. This adds an extra layer of protection beyond **[Claude's default blocked categories](../15-Claude-AI-Features/using-claude-for-chrome-safely.md#h_34f8d5ca87)**.
+
+**Recommendation:** Start with a more restrictive allowlist for the security of your organization's data, then expand access over time as you become comfortable with the extension's behavior.
+
+## Managing user access on Claude Desktop
+
+Users with both Claude in Chrome and Claude Desktop installed will now have the option to start a task on the desktop app and let it handle work in the browser without switching windows.
+
+If you want to disable this for members of your organization, you can toggle the extension off entirely, or edit your Enterprise configuration.
+
+**Disable the Chrome extension in organization settings:**
+
+1.  Click your initials in the lower left corner, then select “Organization settings.”
+
+2.  Navigate to “Connectors.”
+
+3.  Find **Claude in Chrome** in the list and click “Configure.”
+
+4.  Toggle the connector off.
+
+Alternatively, disable `isLocalDevMcpEnabled` in **[your Enterprise configuration](enterprise-configuration.md)**.
+
+## Deployment options
+
+Once enabled, users can access Claude in Chrome in two ways:
+
+- **Self-service:** Users install the extension themselves from the **[Chrome Web Store](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn)**.
+
+- **Managed deployment:** Use your existing Chrome management tools (Google Workspace admin console or MDM) to deploy the extension to specific users or groups.
+
+Most Enterprise organizations already have Chrome extension management in place. You can use these existing controls to limit which employees can install the extension during a pilot phase.
+
+## Running a pilot
+
+To test Claude in Chrome with a subset of users before broader rollout:
+
+1.  Enable the extension at the organization level.
+
+2.  Configure a restrictive allowlist limiting Claude to specific, trusted sites.
+
+3.  Use your IT controls to limit which employees can install the extension.
+
+4.  Share **[Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)** with pilot users.
+
+5.  Gather feedback and expand access over time.
+
+## Educating your users
+
+We recommend sharing these resources with users before they start using Claude in Chrome:
+
+- **[Getting started with Claude in Chrome](../15-Claude-AI-Features/getting-started-with-claude-for-chrome.md)**: Installation and core capabilities
+
+- **[Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)**: Risks and best practices
+
+- **[Claude in Chrome permissions guide](../15-Claude-AI-Features/claude-for-chrome-permissions-guide.md)**: How users control what Claude can access
+
+
+---
+## claude-in-chrome-admin-controls.md
+
+# Claude in Chrome admin controls
+
+
+Claude in Chrome admin controls are available in beta for Team and Enterprise plans.
+
+This article explains how Team and Enterprise Owners can manage Claude in Chrome for their organization.
+
+Claude in Chrome is a browser extension that allows Claude to read, click, and navigate websites on behalf of your users. As an Owner, you control whether the extension is available for users to install and which sites they can access.
+
+**Important:** Before enabling Claude in Chrome for your organization, review **[Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)** to understand the risks of browser-based AI, including prompt injection attacks.
+
+## Accessing Claude in Chrome settings
+
+To manage Claude in Chrome settings for your organization:
+
+1.  Sign in to Claude with your Owner account.
+
+2.  Navigate to **[Organization settings \> Claude in Chrome](http://claude.ai/admin-settings/browser-extension)**.
+
+## Enabling or disabling the extension
+
+Use the toggle to enable or disable Claude in Chrome for your entire organization.
+
+- **Team plans:** The extension is enabled by default. Disable it if you prefer users not to have access.
+
+- **Enterprise plans:** The extension is disabled by default. Enable it when you're ready for users to access the feature.
+
+**Note:** When you enable the extension for an Enterprise organization, users are not automatically notified. You may want to communicate availability through your internal channels.
+
+## Configuring site access
+
+Use allowlists and blocklists to control which websites Claude can access when users are working with the extension.
+
+**Allowlist:** Specify which sites Claude is permitted to access by adding them to the allowlist. We recommend starting with a restrictive allowlist, especially during initial rollout.
+
+**Blocklist:** Specify sites Claude should never access, regardless of other settings, by adding them to the blocklist. This adds an extra layer of protection beyond **[Claude's default blocked categories](../15-Claude-AI-Features/using-claude-for-chrome-safely.md#h_34f8d5ca87)**.
+
+**Recommendation:** Start with a more restrictive allowlist for the security of your organization's data, then expand access over time as you become comfortable with the extension's behavior.
+
+## Managing user access on Claude Desktop
+
+Users with both Claude in Chrome and Claude Desktop installed will now have the option to start a task on the desktop app and let it handle work in the browser without switching windows.
+
+If you want to disable this for members of your organization, you can toggle the extension off entirely, or edit your Enterprise configuration.
+
+**Disable the Chrome extension in organization settings:**
+
+1.  Click your initials in the lower left corner, then select “Organization settings.”
+
+2.  Navigate to “Connectors.”
+
+3.  Find **Claude in Chrome** in the list and click “Configure.”
+
+4.  Toggle the connector off.
+
+Alternatively, disable `isLocalDevMcpEnabled` in **[your Enterprise configuration](enterprise-configuration.md)**.
+
+## Deployment options
+
+Once enabled, users can access Claude in Chrome in two ways:
+
+- **Self-service:** Users install the extension themselves from the **[Chrome Web Store](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn)**.
+
+- **Managed deployment:** Use your existing Chrome management tools (Google Workspace admin console or MDM) to deploy the extension to specific users or groups.
+
+Most Enterprise organizations already have Chrome extension management in place. You can use these existing controls to limit which employees can install the extension during a pilot phase.
+
+## Running a pilot
+
+To test Claude in Chrome with a subset of users before broader rollout:
+
+1.  Enable the extension at the organization level.
+
+2.  Configure a restrictive allowlist limiting Claude to specific, trusted sites.
+
+3.  Use your IT controls to limit which employees can install the extension.
+
+4.  Share **[Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)** with pilot users.
+
+5.  Gather feedback and expand access over time.
+
+## Educating your users
+
+We recommend sharing these resources with users before they start using Claude in Chrome:
+
+- **[Getting started with Claude in Chrome](../15-Claude-AI-Features/getting-started-with-claude-for-chrome.md)**: Installation and core capabilities
+
+- **[Using Claude in Chrome safely](../15-Claude-AI-Features/using-claude-for-chrome-safely.md)**: Risks and best practices
+
+- **[Claude in Chrome permissions guide](../15-Claude-AI-Features/claude-for-chrome-permissions-guide.md)**: How users control what Claude can access
+
+
+---
+## console-log-warning.local.md
+
+You're adding a console.log statement. Please consider:
+- Is this for debugging or should it be proper logging?
+- Will this ship to production?
+- Should this use a logging library instead?
+
+
+---
+## custom-data-retention-controls-for-claude-enterprise.md
+
+4.  Configure custom data retention controls for Enterprise plans
+
+# Configure custom data retention controls for Enterprise plans
+
+
+This feature is available to Enterprise plan customers. To set custom retention periods for your organization, you must have either a Primary Owner or Owner role.
+
+*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see **[here](https://privacy.claude.com/en/collections/10663362-consumers)**.*
+
+Custom data retention controls allow organizations to manage how long Claude stores conversation and project data. This article explains how to set up and manage data retention periods for your organization.
+
+## How data retention works
+
+Data retention is based on the last observed activity:
+
+- **For chats:** Retention period starts from the time of the last message in the conversation.
+
+- **For projects:** Retention period starts from the time the project was last updated (this includes chat creation or project knowledge base modifications).
+
+  - Note that your custom data retention periods set for projects will supersede your custom retention periods for any chats.
+
+The minimum retention period is 30 days, and each month is counted as 30 days. For example, a three-month retention period equals 90 days.
+
+## What gets deleted
+
+When data reaches the end of its retention period:
+
+- **For chats:** All chats (including chats within projects) and any artifacts within those chats will be deleted.
+
+- **For projects:** All projects will be deleted, including any chats and artifacts within those projects.
+
+## Important considerations
+
+- Deletion occurs at midnight UTC on the scheduled day.
+
+- By default, data is retained indefinitely unless a custom retention period is set.
+
+- When you modify retention settings, any data that falls outside the new retention period will be deleted immediately upon saving.
+
+- Data past its retention period will be permanently deleted and cannot be recovered.
+
+## Setting up data retention
+
+## To set custom retention periods:
+
+1.  Log in to your Owner Enterprise plan account.
+
+2.  Navigate to **[Organization settings \> Data and Privacy](https://claude.ai/admin-settings/data-privacy-controls)**.
+
+3.  Set your desired retention period (minimum 30 days).
+
+4.  Save your changes.
+
+## Example retention calculation
+
+If a conversation’s last message is at 3PM UTC on March 1 with a 30-day retention period, the deletion will occur at midnight UTC on March 31.
+
+## Monitoring retention-related activities
+
+All retention-related actions and changes are automatically tracked in **[audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**. You can access these logs to monitor changes to retention settings and data deletion events.
+
+
+---
+## deploying-enterprise-grade-mcp-servers-with-desktop-extensions.md
+
+4.  Deploying enterprise-grade MCP servers with desktop extensions
+
+# Deploying enterprise-grade MCP servers with desktop extensions
+
+Updated today
+
+
+Desktop extensions are installable packages that run Model Context Protocol (MCP) servers locally on your machine. They provide Claude Desktop with secure access to your local resources, internal systems, and personal tools without the complexity of remote infrastructure.
+
+With desktop extensions, you can deploy enterprise-grade MCP implementations with fine-grained admin controls. This article explains why desktop extensions are valuable for organizations and how to use them effectively.
+
+## Why use desktop extensions?
+
+### Seamless authentication
+
+Desktop extensions operate within your corporate network boundaries, using the user’s existing authenticated context without requiring additional firewall rules or VPN configurations. They leverage existing SSO and browser sessions automatically with no token management required – credentials stay securely on user devices.
+
+### Access internal resources
+
+Desktop extensions connect to internal wikis, JIRA, Confluence, and other systems behind your firewall. They can query private databases and APIs without VPN configuration, connect to on-premises systems like SAP, Oracle, and custom applications, and access internal resources without exposing them on public infrastructure.
+
+### Read and manipulate local resources
+
+Desktop extensions provide access to local resources that remote connectors cannot reach. This includes direct filesystem access for code editing and Git operations, integration with locally installed tools like Docker, IDEs, and databases, control over desktop applications via local APIs, and hardware integration for specialized workflows.
+
+### Instant deployment with minimal infrastructure overhead
+
+One-click installation through Claude Desktop comes with no dependencies to manage. The built-in [Node.js](http://node.js) runtime is included, there’s no cloud infrastructure to provision, and updates are distributed directly through the extension marketplace.
+
+### Enterprise-grade controls
+
+Organization owners can upload custom extensions to their organization and control which desktop extensions their users have access to through the desktop extension allowlist. To learn more about managing desktop extensions in your organization, see Enabling and using the desktop extension allowlist.
+
+## Enterprise use cases
+
+**Multiple enterprises are building desktop extensions to serve a variety of use cases:**
+
+- As secure proxies to internal MCP servers, giving them complete control over access, authentication, and audit logs while maintaining their zero-trust architecture.
+
+- To give Claude access to internal documentation and knowledge bases.
+
+- To connect to development tools and databases securely, and maintain complete control over authentication, authorization, and audit logging.
+
+Desktop extensions eliminate the traditional tradeoff between security and usability—providing Claude with powerful capabilities while maintaining your enterprise security posture.
+
+
+---
+## does-anthropic-act-as-a-data-processor-or-controller.md
+
+4.  Does Anthropic Act as a Data Processor or Controller?
+
+# Does Anthropic Act as a Data Processor or Controller?
+
+
+*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
+
+When a commercial customer creates a Claude for Work account (Team or Enterprise plan), under our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) the customer is the "Controller" of the data submitted by its Users. This means:
+
+- The customer has control over who can be a member of their team and provides us with instructions for how submitted data can be used.
+
+- The customer may access and export data (such as conversation history) submitted by its Users.
+
+- Anthropic acts as a "Processor" of the data on behalf of the customer. Anthropic only processes the data as instructed by the customer in order to provide the Claude service.
+
+- Anthropic does not use the data you share when using our commercial products to train our models, unless you choose to participate in our [Development Partner Program](https://support.claude.com/en/articles/11174108-about-the-development-partner-program).
+
+In summary, for Claude for Work, the customer organization maintains control over their Users' data, and Anthropic only processes that data to provide the service on the customer's behalf, according to our agreement. You should consult with your organization's administrators regarding Claude usage policies.
+
+## Resources
+
+For more details on our data practices, please see the:
+
+- [Anthropic Privacy Center](https://privacy.claude.com/en/collections/10663361-commercial-customers)
+
+- [Anthropic Trust Center](http://trust.anthropic.com)
+
+- [Anthropic Privacy Policy](https://www.anthropic.com/legal/privacy)
+
+
+---
+## enforce-network-level-access-control-with-tenant-restrictions.md
+
+4.  Enforce network-level access control with Tenant Restrictions
+
+# Enforce network-level access control with Tenant Restrictions
+
+
+Tenant Restrictions are available for members of Enterprise plans and Console organizations.
+
+Tenant Restrictions enable IT administrators on Enterprise plans to enforce network-level access control for Claude. This feature ensures that users on corporate networks can only access approved organizational accounts, preventing unauthorized use of personal accounts.
+
+## How it works
+
+When enabled, your network proxy injects an HTTP header into requests to Claude. Anthropic validates this header and blocks access from any organization not in the allowed list.
+
+**Supported authentication methods:**
+
+- Web access ([claude.ai](http://claude.ai))
+
+- Desktop / App Access
+
+- API key authentication
+
+- OAuth token authentication
+
+## Header format
+
+    anthropic-allowed-org-ids: <org-uuid-1>,<org-uuid-2>,...
+
+- Comma-delimited list of organization UUIDs
+
+- No spaces between values
+
+**Example:**
+
+    anthropic-allowed-org-ids: 550e8400-e29b-41d4-a716-446655440000,6ba7b810-
+    9dad-11d1-80b4-00c04fd430c8
+
+## Configuration steps
+
+### 1. Find your organization UUID
+
+Members of Enterprise plans can find this in two different places:
+
+1.  Navigate to **[Settings \> Account](https://claude.ai/settings/account)** and find **Organization ID**.
+
+2.  Navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** and scroll down to the bottom of the page to locate **Organization ID**.
+
+Members of Console organizations can find this in **[Settings \> Organization](https://platform.claude.com/settings/organization)**.
+
+### 2. Configure your network proxy
+
+Configure your proxy to inject the header for Claude traffic:
+
+    Rule: Claude Tenant Restriction
+    Application: claude.ai, api.anthropic.com, claude.com, anthropic.com
+    Action: Inject Header
+    Header Name: anthropic-allowed-org-ids
+    Header Value: 
+    TLS Inspection: Required
+
+### 3. Test your configuration
+
+From restricted network, test with your org's API key:
+
+    curl https://api.anthropic.com/v1/messages \
+      -H "x-api-key: $CLAUDE_API_KEY" \
+      -H "anthropic-version: 2023-06-01" \
+      -H "content-type: application/json" \
+      -d '{"model":"claude-sonnet-4-6","max_tokens":1024,"messages":
+     [{"role":"user","content":"Hello"}]}'
+
+## Error response
+
+When access is blocked, users receive the following error:
+
+    {
+      "type": "error",
+      "error": {
+        "type": "permission_error",
+        "message": "Access restricted by network policy. Contact IT Administrator.",
+        "error_code": "tenant_restriction_violation"
+      }
+    }
+
+## Supported proxy platforms
+
+- Zscaler ZIA (Cloud App Control policies)
+
+- Palo Alto Prisma Access (SaaS App Management)
+
+- Cato Networks (Tenant Restriction policy)
+
+- Netskope (Header Insertion rules)
+
+- Generic HTTPS proxies with header injection capability
+
+## Use cases
+
+[TABLE]
+
+## Security benefits
+
+- **Data Loss Prevention:** Block personal account usage from corporate networks.
+
+- **Compliance:** Enforce data residency and access policies.
+
+- **Shadow IT Control:** Prevent unauthorized Claude usage.
+
+- **Audit Trail:** Complete visibility into access attempts.
+
+## Backward compatibility
+
+- No impact to networks without tenant restrictions configured.
+
+- Standard authentication continues for unmanaged networks.
+
+- Existing API key authentication remains unchanged.
+
+
+---
+## enterprise-architecture-diagram.md
+
+# Claude Code Enterprise Architecture — System Interconnections
+
+**Date**: 2026-03-13
+**Visual Reference**: How all enterprise systems connect together
+
+---
+
+## High-Level Enterprise Platform Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        ORGANIZATION MANAGEMENT LAYER                         │
+│                                                                              │
+│  ┌──────────────────┐    ┌──────────────────┐    ┌────────────────────┐   │
+│  │  Organization    │    │   Seat Tiers     │    │  Member Accounts   │   │
+│  │  UUID: org-123   │───▶│  - Free          │───▶│  user@example.com  │   │
+│  │  Name: "Acme"    │    │  - Pro           │    │  Role: admin       │   │
+│  │  Type: Enterprise│    │  - Max           │    │  Credits: 10000    │   │
+│  └──────────────────┘    │  - Enterprise    │    └────────────────────┘   │
+│                          └──────────────────┘                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                       │
+                    ┌──────────────────┼──────────────────┐
+                    │                  │                  │
+                    ▼                  ▼                  ▼
+┌────────────────────────┐ ┌──────────────────┐ ┌─────────────────────┐
+│   BILLING & CREDITS    │ │  ACCESS CONTROL  │ │  ENTERPRISE INFRA   │
+│                        │ │                  │ │                     │
+│  Credit Balance        │ │  Permission      │ │  Provider Routing   │
+│  Overage Tracking      │ │  Checks (4-tier) │ │  - AWS Bedrock      │
+│  Usage Limits          │ │  - Org level     │ │  - Google Vertex    │
+│  Admin Requests        │ │  - Seat level    │ │  - MS Foundry       │
+│  - limit_increase      │ │  - Member level  │ │                     │
+│                        │ │  - Service level │ │  Unix Socket Mode   │
+│  Referral Campaigns    │ │                  │ │  Policy Enforcement │
+│  - Guest passes        │ │  Role System     │ │  Plugin Management  │
+└────────────────────────┘ │  - user          │ └─────────────────────┘
+            │              │  - admin         │              │
+            │              └──────────────────┘              │
+            │                       │                        │
+            └───────────────────────┼────────────────────────┘
+                                    │
+                                    ▼
+                    ┌────────────────────────────────┐
+                    │     RUNTIME ENFORCEMENT        │
+                    │                                │
+                    │  - Fast mode enable/disable    │
+                    │  - Feature gating              │
+                    │  - Usage telemetry             │
+                    │  - Audit logging               │
+                    └────────────────────────────────┘
+```
+
+---
+
+## Credit & Overage System Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      CREDIT ALLOCATION HIERARCHY                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+    ┌──────────────────────────────────────────────────┐
+    │         Organization Credit Pool                 │
+    │         - Total allocated: 100,000               │
+    │         - org_service_zero_credit_limit          │
+    └──────────────────┬───────────────────────────────┘
+                       │
+         ┌─────────────┴─────────────┬─────────────────┐
+         │                           │                 │
+         ▼                           ▼                 ▼
+┌────────────────┐          ┌────────────────┐  ┌──────────────┐
+│   Seat Tier 1  │          │   Seat Tier 2  │  │  Seat Tier N │
+│   (Pro)        │          │   (Enterprise) │  │  (Free)      │
+│   Limit: 5,000 │          │   Limit: 25k   │  │  Limit: 500  │
+│   ──────────── │          │   ──────────── │  │  ────────────│
+│   seat_tier_   │          │   seat_tier_   │  │  seat_tier_  │
+│   zero_credit_ │          │   zero_credit_ │  │  zero_credit_│
+│   limit        │          │   limit        │  │  limit       │
+└────────┬───────┘          └────────┬───────┘  └──────┬───────┘
+         │                           │                 │
+    ┌────┴────┬─────┐           ┌────┴────┐       ┌────┴────┐
+    │         │     │           │         │       │         │
+    ▼         ▼     ▼           ▼         ▼       ▼         ▼
+┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐
+│Member│ │Member│ │Member│ │Member│ │Member│ │Member│ │Member│
+│ user1│ │ user2│ │ user3│ │ user4│ │ user5│ │ user6│ │ user7│
+│──────│ │──────│ │──────│ │──────│ │──────│ │──────│ │──────│
+│member│ │member│ │member│ │member│ │member│ │member│ │member│
+│_zero │ │_zero │ │_zero │ │_zero │ │_zero │ │_zero │ │_zero │
+│_cred │ │_cred │ │_cred │ │_cred │ │_cred │ │_cred │ │_cred │
+│it_   │ │it_   │ │it_   │ │it_   │ │it_   │ │it_   │ │it_   │
+│limit │ │limit │ │limit │ │limit │ │limit │ │limit │ │limit │
+└──────┘ └──────┘ └──────┘ └──────┘ └──────┘ └──────┘ └──────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        OVERAGE HANDLING                                 │
+└─────────────────────────────────────────────────────────────────────────┘
+
+Member usage flow:
+
+1. Normal usage (within limit)
+   │
+   ├─ Credits deducted from member allocation
+   │
+   ▼
+2. Limit reached → Switch to overage mode
+   │
+   ├─ isUsingOverage = true
+   ├─ Charges against overage pool
+   ├─ User notified: "Using extra usage"
+   │
+   ▼
+3. Overage pool exhausted
+   │
+   ├─ overageDisabledReason = "out_of_credits"
+   ├─ Fast mode disabled
+   ├─ User sees: "You're out of extra usage · resets <time>"
+   │
+   ▼
+4. Admin intervention
+   │
+   ├─ User requests: POST /admin_requests {type: "limit_increase"}
+   ├─ Admin approves via dashboard
+   ├─ Credits replenished
+   │
+   ▼
+5. Back to normal usage
+```
+
+---
+
+## Permission Check Flow (4-Tier System)
+
+```
+User attempts to use Fast Mode
+│
+├─ Check 1: Organization Level
+│   │
+│   ├─ Is feature org_level_disabled? ──────────────────────┐
+│   ├─ Is feature org_level_disabled_until <timestamp>? ────┤
+│   ├─ Is org_service_level_disabled? ──────────────────────┤
+│   └─ Is org_service_zero_credit_limit? ───────────────────┤
+│                                                           │
+├─ Check 2: Seat Tier Level                                 │
+│   │                                                       │
+│   ├─ Does seat tier include Fast Mode?                    │
+│   ├─ Is seat_tier_level_disabled? ────────────────────────┤
+│   └─ Is seat_tier_zero_credit_limit? ─────────────────────┤
+│                                                           │
+├─ Check 3: Member Level                                    │
+│   │                                                       │
+│   ├─ Is user member_level_disabled? ───────────────────────┤
+│   └─ Is member_zero_credit_limit? ────────────────────────┤
+│                                                           │
+├─ Check 4: Service Level (runtime)                         │
+│   │                                                       │
+│   ├─ Network connectivity OK?                             │
+│   ├─ Not using enterprise provider (Bedrock/Vertex)?      │
+│   └─ Not in Agent SDK mode?                               │
+│                                                           │
+▼                                                            ▼
+✅ ALLOW                                                    ❌ DENY
+Fast Mode enabled                                          Show reason:
+                                                           - "extra usage disabled"
+                                                           - "not available on <provider>"
+                                                           - "network issues"
+```
+
+---
+
+## Admin Request Workflow
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│                     LIMIT INCREASE REQUEST FLOW                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+User (member_zero_credit_limit)
+    │
+    ├─ 1. Check Eligibility
+    │     GET /api/oauth/organizations/{orgId}/admin_requests/eligibility
+    │     ?request_type=limit_increase
+    │
+    ▼
+  ┌──────────────┐
+  │  Eligible?   │
+  └───┬──────────┘
+      │ YES
+      ▼
+    ┌─────────────────────┐
+    │ 2. Submit Request   │
+    │ POST /admin_requests│
+    │ {                   │
+    │   request_type:     │
+    │   "limit_increase", │
+    │   details: {...}    │
+    │ }                   │
+    └──────┬──────────────┘
+           │
+           │ Request ID: req-abc123
+           │
+           ▼
+    ┌──────────────────────────┐
+    │  3. Admin Dashboard      │
+    │  https://claude.ai/      │
+    │  admin-settings/usage    │
+    │                          │
+    │  Pending Requests:       │
+    │  ┌────────────────────┐ │
+    │  │ user@example.com   │ │
+    │  │ Requested: +5000   │ │
+    │  │ Current: 1000      │ │
+    │  │ [Approve] [Deny]   │ │
+    │  └────────────────────┘ │
+    └──────┬───────────────────┘
+           │
+           │ Admin approves
+           │
+           ▼
+    ┌──────────────────────┐
+    │ 4. Limit Updated     │
+    │ member_credit_limit  │
+    │ 1000 → 6000          │
+    └──────┬───────────────┘
+           │
+           ▼
+    User notified via UI:
+    "Your limit increase was approved"
+```
+
+---
+
+## Enterprise Provider Routing
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│                   ENTERPRISE PROVIDER SELECTION                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+Organization configuration:
+  └─ enterpriseProvider: "bedrock" | "vertex" | "foundry" | null
+
+┌───────────────┐
+│  User Request │
+│  (Sonnet 4.6) │
+└───────┬───────┘
+        │
+        ├─ Check org enterpriseProvider
+        │
+        ▼
+┌─────────────────────────────────────────────────────┐
+│              Provider Routing Decision              │
+├─────────────────────────────────────────────────────┤
+│                                                     │
+│  IF CLAUDE_CODE_USE_BEDROCK=1:                      │
+│    └─ Route to AWS Bedrock                          │
+│       - Model: "anthropic.claude-sonnet-4-6-v1"     │
+│       - Auth: IAM or AWS_BEARER_TOKEN_BEDROCK       │
+│       - Fast mode: DISABLED                         │
+│                                                     │
+│  ELSE IF CLAUDE_CODE_USE_VERTEX=1:                  │
+│    └─ Route to Google Vertex AI                     │
+│       - Model: "claude-sonnet-4-6@20260311"         │
+│       - Auth: Application Default Credentials       │
+│       - Fast mode: DISABLED                         │
+│                                                     │
+│  ELSE IF CLAUDE_CODE_USE_FOUNDRY=1:                 │
+│    └─ Route to Microsoft Foundry                    │
+│       - Model: "claude-sonnet-4-6"                  │
+│       - Auth: Azure AD or ANTHROPIC_FOUNDRY_API_KEY │
+│       - Fast mode: DISABLED                         │
+│                                                     │
+│  ELSE:                                              │
+│    └─ Route to Anthropic (first-party)              │
+│       - Model: "claude-sonnet-4-6"                  │
+│       - Auth: ANTHROPIC_API_KEY or OAuth            │
+│       - Fast mode: ENABLED (if credits allow)       │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+## Unix Socket Proxy Architecture (Zero-Trust Mode)
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│                  UNIX SOCKET ENTERPRISE PROXY                        │
+│                   (Added in 2.1.74)                                  │
+└──────────────────────────────────────────────────────────────────────┘
+
+Enterprise Environment:
+
+  ┌───────────────────────────────────────────────────────┐
+  │  Corporate Network (kubernetes/docker)                │
+  │                                                       │
+  │  ┌───────────────────────────────────────────────┐    │
+  │  │  Pod: claude-code-worker                      │    │
+  │  │                                               │    │
+  │  │  Environment:                                 │    │
+  │  │  ❌ ANTHROPIC_API_KEY=<not set>               │    │
+  │  │  ❌ AWS_ACCESS_KEY_ID=<stripped>              │    │
+  │  │  ✅ ANTHROPIC_UNIX_SOCKET=/run/claude.sock    │    │
+  │  │  ✅ CLAUDE_CODE_OAUTH_TOKEN=<token>           │    │
+  │  │                                               │    │
+  │  │  ┌──────────────────────────────────┐         │    │
+  │  │  │  Claude Code Process             │         │    │
+  │  │  │  (restricted subprocess)         │         │    │
+  │  │  │                                  │         │    │
+  │  │  │  ✓ All creds stripped from env  │          │    │
+  │  │  │  ✓ OAuth-only auth enforced     │          │    │
+  │  │  │  ✓ Connects via socket only     │          │    │
+  │  │  └──────────────┬───────────────────┘         │    │
+  │  │                 │                             │    │
+  │  │                 │ Unix Socket                 │    │
+  │  │                 │ /run/claude.sock            │    │
+  │  │                 ▼                             │    │
+  │  │  ┌───────────────────────────────────────┐    │    │
+  │  │  │  Auth Proxy Sidecar                   │    │    │
+  │  │  │  (managed by IT)                      │    │    │
+  │  │  │                                       │    │    │
+  │  │  │  ✅ Validates OAuth token             │    │    │
+  │  │  │  ✅ Injects org-level credentials     │    │    │
+  │  │  │  ✅ Logs all API calls                │    │    │
+  │  │  │  ✅ Enforces rate limits              │    │    │
+  │  │  │  ✅ Routes to enterprise provider     │    │    │
+  │  │  └───────────────┬───────────────────────┘    │    │
+  │  │                  │                            │    │
+  │  └──────────────────┼────────────────────────────┘    │
+  │                     │ HTTPS                           │
+  └─────────────────────┼─────────────────────────────────┘
+                        │
+                        ▼
+            ┌────────────────────────┐
+            │  Anthropic API         │
+            │  (or Bedrock/Vertex)   │
+            └────────────────────────┘
+
+Benefits:
+  ✅ Zero-trust: Worker process cannot access credentials
+  ✅ Auditability: All API calls logged at proxy level
+  ✅ Multi-tenant isolation: Per-org credentials at proxy
+  ✅ Simplified rotation: Creds managed centrally
+  ✅ Compliance: Proxy can enforce PII filtering
+```
+
+---
+
+## Policy & Plugin Management
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│               ENTERPRISE PLUGIN & POLICY ENFORCEMENT                  │
+└──────────────────────────────────────────────────────────────────────┘
+
+Organization Admin configures:
+
+  ┌────────────────────────────────────────────────────┐
+  │  /nfs/corporate/claude-plugins/                    │
+  │  (CLAUDE_CODE_PLUGIN_SEED_DIR)                     │
+  │                                                    │
+  │  ├── cache/                                        │
+  │  │   └── corporate-internal/                       │
+  │  │       ├── security-scanner/1.0.0/               │
+  │  │       │   ├── package.json                      │
+  │  │       │   ├── plugin.json                       │
+  │  │       │   └── mcp-server/                       │
+  │  │       └── compliance-agent/2.1.0/               │
+  │  │                                                 │
+  │  └── known_marketplaces.json                       │
+  │      {                                             │
+  │        "corporate-internal": {                     │
+  │          "source": "https://plugins.corp.com",     │
+  │          "readonly": true                          │
+  │        }                                           │
+  │      }                                             │
+  └────────────────────────────────────────────────────┘
+
+User's settings.json:
+
+  {
+    "policySettings": {
+      "strictKnownMarketplaces": ["corporate-internal"],
+      "blockedMarketplaces": ["community-untrusted"],
+      "managedPlugins": {
+        "security-scanner": {
+          "version": "1.0.0",
+          "enabled": true,
+          "__readonly": true  // User cannot disable
+        }
+      }
+    },
+    "enabledPlugins": {
+      "security-scanner": true,  // Locked by policy
+      "my-personal-plugin": false // User can control
+    }
+  }
+
+Runtime enforcement:
+
+  User tries: `claude plugin disable security-scanner`
+  │
+  ├─ Check if plugin is in managedPlugins
+  │  └─ YES
+  │
+  ├─ Error: "Plugin 'security-scanner' is managed by policy and cannot be disabled"
+  │
+  └─ Operation blocked
+
+  User tries: `claude plugin marketplace add malicious --source evil.com`
+  │
+  ├─ Check strictKnownMarketplaces
+  │  └─ "evil.com" not in allowlist
+  │
+  ├─ Error: "Marketplace source blocked by enterprise policy"
+  │
+  └─ Operation blocked
+```
+
+---
+
+## Data Flow Summary
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│          COMPLETE ENTERPRISE DATA FLOW                              │
+└─────────────────────────────────────────────────────────────────────┘
+
+1. User Authentication
+   └─ OAuth → organizationUuid + accessToken + role
+
+2. Session Initialization
+   ├─ Load org settings from API
+   ├─ Check seat tier assignment
+   ├─ Fetch credit balance & limits
+   └─ Apply managed settings (if enterprise tier)
+
+3. Feature Gate Check (e.g., Fast Mode)
+   ├─ Org level: Is feature enabled for org?
+   ├─ Seat level: Does tier include feature?
+   ├─ Member level: User's credit balance OK?
+   └─ Service level: Runtime constraints (network, provider)
+
+4. API Request
+   ├─ Route to provider (first-party / Bedrock / Vertex / Foundry)
+   ├─ Deduct credits from member balance
+   ├─ Track usage for billing
+   └─ Emit telemetry (if metrics_enabled)
+
+5. Credit Exhaustion
+   ├─ Switch to overage mode
+   ├─ User sees warning
+   └─ If overage exhausted → disable features
+
+6. Admin Request
+   ├─ User requests limit increase
+   ├─ Admin reviews in dashboard
+   └─ Approval → credits replenished
+
+7. Audit & Compliance
+   ├─ All API calls logged (if unix socket mode)
+   ├─ Usage data sent to org admin dashboard
+   └─ Periodic reports for billing
+```
+
+---
+
+## Key Integration Points
+
+| System | Integrates With | Data Exchanged |
+|--------|----------------|----------------|
+| **Billing** | Credit system, Overage tracking, Admin requests | Credit balance, usage metrics, limit changes |
+| **Access Control** | Org settings, Seat tiers, Member roles | Permission states, feature flags |
+| **Enterprise Providers** | Org config, Unix socket proxy | Provider selection, credential routing |
+| **Plugin Management** | Policy enforcement, Seed directory | Allowed marketplaces, managed plugins |
+| **Telemetry** | Org metrics toggle, Usage tracking | Event streams, audit logs |
+| **Admin Dashboard** | All systems | Consolidated view, approval workflows |
+
+---
+
+## Conclusion
+
+Claude Code 2.1.74 implements a **fully-integrated enterprise SaaS architecture** with:
+
+- ✅ **Multi-tenancy** at org/seat/member levels
+- ✅ **Fine-grained access control** (4-tier permission checks)
+- ✅ **Production billing system** (credits, overage, admin approval)
+- ✅ **Enterprise-grade security** (Unix socket proxy, OAuth-only mode)
+- ✅ **Policy governance** (plugin management, managed settings)
+- ✅ **Scalable provider routing** (Bedrock, Vertex, Foundry)
+
+All systems work together to provide **enterprise-ready Claude Code** for large organizations.
+
+
+---
+## enterprise-configuration.md
+
+# Enterprise configuration
+
+
+Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
+
+**Note:** Enterprise policy controls at the user-machine level will override the in-app **[allowlist](https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist)**. If you want to use the allowlist, ensure `isDesktopExtensionEnabled` and `isDesktopExtensionDirectoryEnabled` are not set to "false" so the allowlist can populate the available registry.
+
+------------------------------------------------------------------------
+
+## macOS Enterprise Configuration
+
+Deploy configuration settings through your MDM solution using configuration profiles. Claude Desktop reads preferences from the domain \`com.anthropic.claudefordesktop\`. Use your MDM tool (Jamf Pro, Kandji, Microsoft Intune) to deploy configuration profiles to target machines or user groups. Configuration profiles allow you to manage Claude Desktop settings centrally without user intervention.
+
+**Configuration profile tools:**
+
+- Built-in MDM profile editors (Jamf Pro, Kandji, Intune)
+
+- **[ProfileCreator](https://github.com/profileCreator/ProfileCreator/)** - Profile management
+
+- **[iMazing Profile Editor](https://imazing.com/profile-editor)** - Configuration profiles
+
+------------------------------------------------------------------------
+
+## Windows Enterprise Configuration
+
+Deploy configuration settings through your enterprise management solution using **[Group Policy](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/policy/group-policy-objects)** or Intune policies. Settings can be configured at machine-wide (HKLM) or per-user (HKCU) level. Machine-level settings take priority over user-level settings when both are configured.
+
+    ```powershell
+    # Set machine-wide settings (recommended)
+    New-Item -Path "HKLM:\SOFTWARE\Policies\Claude" -Force
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "disableAutoUpdates" -Value 0 -Type DWord
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "autoUpdaterEnforcementHours" -Value 72 -Type DWord
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "isDesktopExtensionEnabled" -Value 1 -Type DWord
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "isDesktopExtensionDirectoryEnabled" -Value 1 -Type DWord
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "isLocalDevMcpEnabled" -Value 1 -Type DWord
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "isClaudeCodeForDesktopEnabled" -Value 1 -Type DWord
+    ```
+
+------------------------------------------------------------------------
+
+## Enterprise Policy Options
+
+[TABLE]
+
+
+---
+## enterprise-providers-changes.md
+
+# Enterprise Providers Changes: 2.1.59 → 2.1.70
+
+## Overview
+
+2.1.70 adds **Microsoft Foundry** as a third enterprise provider, making Claude Code
+work across three hyperscaler platforms:
+
+```
+                      ┌─────────────────────────────────┐
+                      │         Claude Code CLI         │ 
+                      └────────────┬────────────────────┘
+                                   │ provider selection
+              ┌────────────────────┼────────────────────────┐
+              │                    │                        │
+    ┌─────────▼──────────┐ ┌───────▼───────┐  ┌─────────────▼────────────────────┐
+    │   AWS Bedrock      │ │ Google Vertex │  │       Microsoft Foundry          │  ← NEW
+    │ CLAUDE_CODE_USE_   │ │  AI (exists)  │  │     CLAUDE_CODE_USE_FOUNDRY      │
+    │    BEDROCK         │ └───────────────┘  │        + Azure AD Auth           │          
+    │  + IAM/STS chain   │                    │        + FOUNDRY_RESOURCE        │ 
+    │  + SSO support     │                    │                                  │
+    └────────────────────┘                    └──────────────────────────────────┘
+```
+
+## Microsoft Foundry (New)
+
+### Authentication Flow
+```
+CLAUDE_CODE_USE_FOUNDRY=true
+  → FoundryClient(baseURL=ANTHROPIC_FOUNDRY_BASE_URL,
+                  apiKey=ANTHROPIC_FOUNDRY_API_KEY,
+                  resource=ANTHROPIC_FOUNDRY_RESOURCE)
+  → DefaultAzureCredential (MSAL / Azure AD)
+  OR
+  CLAUDE_CODE_SKIP_FOUNDRY_AUTH=true → empty credential
+```
+
+### Restrictions
+- Fast mode unavailable: "Fast mode is not available on Bedrock, Vertex, or Foundry"
+- Telemetry disabled when Foundry active
+- Feedback command disabled when Foundry active
+
+### Model naming (inferred)
+The `foundry` slot in the model map (e.g., `sonnet37.foundry`) likely uses
+Azure-specific model deployment names, not claude-* IDs.
+
+## AWS Bedrock Expansion
+
+### New Headers (2.1.70 only)
+| Header | Purpose |
+|--------|---------|
+| `X-Amzn-Bedrock-GuardrailIdentifier` | AWS Guardrails policy ID |
+| `X-Amzn-Bedrock-GuardrailVersion` | Guardrails version |
+| `X-Amzn-Bedrock-Service-Tier` | Service tier selection |
+| `X-Amzn-Bedrock-PerformanceConfig-Latency` | Latency optimization |
+| `X-Amzn-Bedrock-Trace` | Request tracing |
+
+### New Bedrock APIs
+- **Reranking**: `VectorSearchBedrockRerankingConfiguration`, `BEDROCK_RERANKING_MODEL`
+- **Inference Profiles**: `ListInferenceProfilesCommand`, `GetInferenceProfileCommand`
+- **Prompt Routers**: `paginateListPromptRouters`
+- **Provisioned Throughput**: `paginateListProvisionedModelThroughputs`
+
+### New Auth Options
+- `AWS_BEARER_TOKEN_BEDROCK` — bearer token (simpler than IAM role chain)
+- `CLAUDE_CODE_SKIP_BEDROCK_AUTH` — skip auth (for testing/custom endpoints)
+- `ANTHROPIC_BEDROCK_BASE_URL` — custom Bedrock endpoint
+
+## Model Routing Map (2.1.70)
+
+```javascript
+// Each model has 4 provider variants
+const modelMap = {
+  haiku35:  { firstParty: "claude-haiku-3-5-...", bedrock: "...", vertex: "...", foundry: "..." },
+  haiku45:  { firstParty: "claude-haiku-4-5-...", ... },
+  sonnet35: { ... },
+  sonnet37: { firstParty: "claude-3-7-sonnet-20250219", bedrock: "...", vertex: "claude-3-7-sonnet@20250219", foundry: "claude-3-7-sonnet" },
+  sonnet40: { ... },
+  sonnet45: { ... },  // NEW
+  sonnet46: { ... },  // NEW — current model (claude-sonnet-4-6)
+  opus40:   { ... },
+  opus41:   { ... },  // NEW
+  opus45:   { ... },  // NEW
+  opus46:   { ... },  // NEW
+}
+```
+
+
+---
+## find-and-join-a-team-or-enterprise-organization.md
+
+4.  Find and join a Team or Enterprise organization
+
+# Find and join a Team or Enterprise organization
+
+
+Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
+
+**Note:** Organization discovery is only available for organizations that don't have **[single sign-on (SSO) enabled](../21-Account-Support/setting-up-single-sign-on-sso.md)**. If your organization uses SSO, your existing provisioning settings remain in effect.
+
+------------------------------------------------------------------------
+
+## Admin setup
+
+### Enable discoverability
+
+Admins and above can manage organization discovery from **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+
+- **New organizations:**
+
+  - **Team plans:** Discoverability is on by default. Admins see the option during plan onboarding with it pre-selected.
+
+  - **Enterprise plans:** Discoverability is off by default. Admins will see the option disabled on the Identity and access page.
+
+- **Existing organizations:** Discoverability is off by default. Admins can turn it on from settings at any time.
+
+To enable discoverability:
+
+1.  Log in as an Admin, Owner, Primary Owner.
+
+2.  Navigate to **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+
+3.  Your organization’s domains are listed at the top of the page.
+
+4.  Find the domain you want users to search for and click the toggle under **Discoverable**.
+
+5.  Find **New member approval** under **Global access settings** and choose either “Approve automatically” or “Require admin approval.”
+
+### Configure allowed domains
+
+Admins can specify which email domains are allowed to discover and join the organization by clicking “+ Add domain” under **Domains** on the Identity and access page. The organization owner’s domain will appear on the **Domains** list automatically, but admins can configure additional allowed domains by adding them here, verifying them, and toggling **Discoverable** on. Personal email domains (like Gmail) and .edu domains can't be added to the allowed list.
+
+### Choose an approval mode
+
+Admins select how join requests are handled:
+
+**Instant approval:** Users are added to the organization’s lowest available seat tier automatically when they ask to join. Billing begins as soon as a user joins—if the organization has no available seats, billing auto-expands and a new seat is purchased immediately.
+
+**Request + approve:** The admin reviews and approves each join request individually. Users aren't added to the organization until the admin approves. Billing begins when the request is approved—if no seats are available at that point, a new seat is purchased.
+
+This approval mode also applies to invitations sent by existing members of your organization. For additional details, see **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
+
+------------------------------------------------------------------------
+
+## How to find and join an organization
+
+When someone signs up for Claude with a work email address that matches a discoverable organization, they'll see the option to join during the signup flow. They can choose to join or continue with a personal account.
+
+- If the organization uses **instant approval**, they're added right away.
+
+- If the organization uses **request + approve**, a request is sent to the admin. The requester can choose to continue with a personal account (as long as "Restrict organization creation" is disabled) until the request is approved or denied.
+
+If multiple organizations share the same email domain and are all discoverable, users will see all of them and can choose which one to join.
+
+------------------------------------------------------------------------
+
+## Other ways to join an organization
+
+In addition to organization discovery, there are a few other ways to join a Team or Enterprise organization:
+
+- **Invite link:** Your admin may share an invite link that lets you join directly. See **[Join an organization via invite link](https://support.claude.com/en/articles/13776697-join-an-organization-via-invite-link#h_af9f6b7825)**.
+
+  - **Note:** If the invite link has been disabled or regenerated by your admin, it will no longer work. Ask your admin to share a new link.
+
+- **Email invitation:** An admin or existing member of the organization may send you an email invitation to join.
+
+- **Admin invitation:** An admin can add you directly from admin settings. See **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
+
+------------------------------------------------------------------------
+
+## SSO and organization discovery
+
+Organization discovery is not available for organizations with single sign-on enabled. If your organization uses SSO, the feature doesn't apply—your existing provisioning settings (including any just-in-time provisioning) remain unchanged.
+
+If you'd like to enable organization discovery, SSO must be turned off first.
+
+
+---
+## getting-started-with-claude-for-enterprise.md
+
+# Getting started with Claude Enterprise
+
+Resources for new enterprise customers.
+
+
+Welcome to Claude Enterprise! Our Customer Success team has put together the following guides to jumpstart your Claude for Enterprise journey with best practices, practical guidance, launch checklists, and more.
+
+- [Getting started guide for admin setup](https://cdn.sanity.io/files/4zrzovbb/website/f445a7cc34957e7c145ffb2937af85916356e8da.pdf)
+
+- [Getting started guide for end users](https://cdn.sanity.io/files/4zrzovbb/website/97c4b90b0af9ad8b8332980010157044d58b40ba.pdf)
+
+If you're responsible for rolling out Claude to your organization, you may also like this [course](https://anthropic.skilljar.com/driving-enterprise-adoption-of-claude) in Anthropic Academy, designed for project owners like you!
+
+## Additional support
+
+Anthropic has services partners (advisory, training, change management, MCP development) available who can help provide additional support. If you'd like to discuss further, please submit [this interest form](https://forms.gle/ubnR5f7q5E71ECR79). For requests to connect with our Sales team, please contact [\[email protected\]](/cdn-cgi/l/email-protection#75061419100635141b011d071a051c165b161a18)
+
+\
+​
+
+
+---
+## iam.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Identity and Access Management
+
+> Learn how to configure user authentication, authorization, and access controls for Claude Code in your organization.
+
+## Authentication methods
+
+Setting up Claude Code requires access to Anthropic models. For teams, you can set up Claude Code access in one of these ways:
+
+* [Claude for Teams or Enterprise](/en/setup#for-teams-and-organizations) (recommended)
+* [Claude Console with team billing](/en/setup#for-teams-and-organizations)
+* [Amazon Bedrock](../02-Claude-Code-CLI/claude-code-on-amazon-bedrock-claude-code-docs.md)
+* [Google Vertex AI](../02-Claude-Code-CLI/claude-code-on-google-vertex-ai-claude-code-docs.md)
+* [Microsoft Foundry](../02-Claude-Code-CLI/claude-code-on-microsoft-foundry-claude-code-docs.md)
+
+### Claude for Teams or Enterprise (recommended)
+
+[Claude for Teams](https://claude.com/pricing#team-&-enterprise) and [Claude for Enterprise](https://anthropic.com/contact-sales) provide the best experience for organizations using Claude Code. Team members get access to both Claude Code and Claude on the web with centralized billing and team management.
+
+* **Claude for Teams**: Self-service plan with collaboration features, admin tools, and billing management. Best for smaller teams.
+* **Claude for Enterprise**: Adds SSO, domain capture, role-based permissions, compliance API, and managed policy settings for organization-wide Claude Code configurations. Best for larger organizations with security and compliance requirements.
+
+**To set up Claude Code access:**
+
+1. Subscribe to [Claude for Teams](https://claude.com/pricing#team-&-enterprise) or contact sales for [Claude for Enterprise](https://anthropic.com/contact-sales)
+2. Invite team members from the admin dashboard
+3. Team members install Claude Code and log in with their Claude.ai accounts
+
+### Claude Console authentication
+
+For organizations that prefer API-based billing, you can set up access through the Claude Console.
+
+**To set up Claude Code access for your team via Claude Console:**
+
+1. Use your existing Claude Console account or create a new Claude Console account
+2. You can add users through either method below:
+   * Bulk invite users from within the Console (Console -> Settings -> Members -> Invite)
+   * [Set up SSO](../21-Account-Support/setting-up-single-sign-on-sso.md)
+3. When inviting users, they need one of the following roles:
+   * "Claude Code" role means users can only create Claude Code API keys
+   * "Developer" role means users can create any kind of API key
+4. Each invited user needs to complete these steps:
+   * Accept the Console invite
+   * [Check system requirements](/en/setup#system-requirements)
+   * [Install Claude Code](/en/setup#installation)
+   * Login with Console account credentials
+
+### Cloud provider authentication
+
+**To set up Claude Code access for your team via Bedrock, Vertex, or Azure:**
+
+1. Follow the [Bedrock docs](../02-Claude-Code-CLI/claude-code-on-amazon-bedrock-claude-code-docs.md), [Vertex docs](../02-Claude-Code-CLI/claude-code-on-google-vertex-ai-claude-code-docs.md), or [Microsoft Foundry docs](../02-Claude-Code-CLI/claude-code-on-microsoft-foundry-claude-code-docs.md)
+2. Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](/en/settings).
+3. Users can [install Claude Code](/en/setup#installation)
+
+## Access control and permissions
+
+We support fine-grained permissions so that you're able to specify exactly what the agent is allowed to do (e.g. run tests, run linter) and what it is not allowed to do (e.g. update cloud infrastructure). These permission settings can be checked into version control and distributed to all developers in your organization, as well as customized by individual developers.
+
+### Permission system
+
+Claude Code uses a tiered permission system to balance power and safety:
+
+| Tool Type         | Example          | Approval Required | "Yes, don't ask again" Behavior               |
+| :---------------- | :--------------- | :---------------- | :-------------------------------------------- |
+| Read-only         | File reads, Grep | No                | N/A                                           |
+| Bash Commands     | Shell execution  | Yes               | Permanently per project directory and command |
+| File Modification | Edit/write files | Yes               | Until session end                             |
+
+### Configuring permissions
+
+You can view & manage Claude Code's tool permissions with `/permissions`. This UI lists all permission rules and the settings.json file they are sourced from.
+
+* **Allow** rules let Claude Code use the specified tool without manual approval.
+* **Ask** rules prompt for confirmation whenever Claude Code tries to use the specified tool.
+* **Deny** rules prevent Claude Code from using the specified tool.
+
+Rules are evaluated in order: **deny → ask → allow**. The first matching rule wins, so deny rules always take precedence.
+
+* **Additional directories** extend Claude's file access to directories beyond the initial working directory.
+* **Default mode** controls Claude's permission behavior when encountering new requests.
+
+Permission rules use the format: `Tool` or `Tool(optional-specifier)`
+
+A rule that is just the tool name matches any use of that tool. For example, adding `Bash` to the allow list allows Claude Code to use the Bash tool without requiring user approval. `Bash(*)` is equivalent to `Bash` and can be used interchangeably.
+
+<Note>
+  For a quick reference on permission rule syntax including wildcards, see [Permission rule syntax](/en/settings#permission-rule-syntax) in the settings documentation.
+</Note>
+
+#### Permission modes
+
+Claude Code supports several permission modes that can be set as the `defaultMode` in [settings files](/en/settings#settings-files):
+
+| Mode                | Description                                                                                                               |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------ |
+| `default`           | Standard behavior - prompts for permission on first use of each tool                                                      |
+| `acceptEdits`       | Automatically accepts file edit permissions for the session                                                               |
+| `plan`              | Plan Mode - Claude can analyze but not modify files or execute commands                                                   |
+| `dontAsk`           | Auto-denies tools unless pre-approved via `/permissions` or [`permissions.allow`](/en/settings#permission-settings) rules |
+| `bypassPermissions` | Skips all permission prompts (requires safe environment - see warning below)                                              |
+
+#### Working directories
+
+By default, Claude has access to files in the directory where it was launched. You can extend this access:
+
+* **During startup**: Use `--add-dir <path>` CLI argument
+* **During session**: Use `/add-dir` command
+* **Persistent configuration**: Add to `additionalDirectories` in [settings files](/en/settings#settings-files)
+
+Files in additional directories follow the same permission rules as the original working directory - they become readable without prompts, and file editing permissions follow the current permission mode.
+
+#### Tool-specific permission rules
+
+Some tools support more fine-grained permission controls:
+
+**Bash**
+
+Bash permission rules support wildcard matching with `*`. Wildcards can appear at any position in the command, including at the beginning, middle, or end:
+
+* `Bash(npm run build)` Matches the exact Bash command `npm run build`
+* `Bash(npm run test *)` Matches Bash commands starting with `npm run test`
+* `Bash(npm *)` Matches any command starting with `npm ` (e.g., `npm install`, `npm run build`)
+* `Bash(* install)` Matches any command ending with ` install` (e.g., `npm install`, `yarn install`)
+* `Bash(git * main)` Matches commands like `git checkout main`, `git merge main`
+* `Bash(* --help *)` Matches any command with `--help` followed by additional arguments
+
+When `*` appears at the end with a space before it (like `Bash(ls *)`), it enforces a word boundary, requiring the prefix to be followed by a space or end-of-string. For example, `Bash(ls *)` matches `ls -la` but not `lsof`. In contrast, `Bash(ls*)` without a space matches both `ls -la` and `lsof` because there's no word boundary constraint. The legacy `:*` suffix syntax is equivalent to ` *` but is deprecated.
+
+<Tip>
+  Claude Code is aware of shell operators (like `&&`) so a prefix match rule like `Bash(safe-cmd *)` won't give it permission to run the command `safe-cmd && other-cmd`
+</Tip>
+
+<Warning>
+  Important limitations of Bash permission patterns:
+
+  1. The space before `*` matters: `Bash(ls *)` matches `ls -la` but not `lsof`, while `Bash(ls*)` matches both
+  2. The `*` wildcard can appear at any position and matches any sequence of characters
+  3. Patterns like `Bash(curl http://github.com/ *)` can be bypassed in many ways:
+     * Options before URL: `curl -X GET http://github.com/...` won't match
+     * Different protocol: `curl https://github.com/...` won't match
+     * Redirects: `curl -L http://bit.ly/xyz` (redirects to github)
+     * Variables: `URL=http://github.com && curl $URL` won't match
+     * Extra spaces: `curl  http://github.com` won't match
+
+  For more reliable URL filtering, consider:
+
+  * **Restrict Bash network tools**: Use deny rules to block `curl`, `wget`, and similar commands, then use the WebFetch tool with `WebFetch(domain:github.com)` permission for allowed domains
+  * **Use PreToolUse hooks**: Implement a hook that validates URLs in Bash commands and blocks disallowed domains
+  * Instructing Claude Code about your allowed curl patterns via CLAUDE.md
+
+  Note that using WebFetch alone does not prevent network access. If Bash is allowed, Claude can still use `curl`, `wget`, or other tools to reach any URL.
+</Warning>
+
+**Read & Edit**
+
+`Edit` rules apply to all built-in tools that edit files. Claude will make a best-effort attempt to apply `Read` rules to all built-in tools that read files like Grep and Glob.
+
+Read & Edit rules both follow the [gitignore](https://git-scm.com/docs/gitignore) specification with four distinct pattern types:
+
+| Pattern            | Meaning                                | Example                          | Matches                            |
+| ------------------ | -------------------------------------- | -------------------------------- | ---------------------------------- |
+| `//path`           | **Absolute** path from filesystem root | `Read(//Users/alice/secrets/**)` | `/Users/alice/secrets/**`          |
+| `~/path`           | Path from **home** directory           | `Read(~/Documents/*.pdf)`        | `/Users/alice/Documents/*.pdf`     |
+| `/path`            | Path **relative to settings file**     | `Edit(/src/**/*.ts)`             | `<settings file path>/src/**/*.ts` |
+| `path` or `./path` | Path **relative to current directory** | `Read(*.env)`                    | `<cwd>/*.env`                      |
+
+<Warning>
+  A pattern like `/Users/alice/file` is NOT an absolute path - it's relative to your settings file! Use `//Users/alice/file` for absolute paths.
+</Warning>
+
+* `Edit(/docs/**)` - Edits in `<project>/docs/` (NOT `/docs/`!)
+* `Read(~/.zshrc)` - Reads your home directory's `.zshrc`
+* `Edit(//tmp/scratch.txt)` - Edits the absolute path `/tmp/scratch.txt`
+* `Read(src/**)` - Reads from `<current-directory>/src/`
+
+<Note>
+  In gitignore patterns, `*` matches files in a single directory while `**` matches recursively across directories. To allow all file access, use just the tool name without parentheses: `Read`, `Edit`, or `Write`.
+</Note>
+
+**WebFetch**
+
+* `WebFetch(domain:example.com)` Matches fetch requests to example.com
+
+**MCP**
+
+* `mcp__puppeteer` Matches any tool provided by the `puppeteer` server (name configured in Claude Code)
+* `mcp__puppeteer__*` Wildcard syntax that also matches all tools from the `puppeteer` server
+* `mcp__puppeteer__puppeteer_navigate` Matches the `puppeteer_navigate` tool provided by the `puppeteer` server
+
+**Task (Subagents)**
+
+Use `Task(AgentName)` rules to control which [subagents](/en/sub-agents) Claude can use:
+
+* `Task(Explore)` Matches the Explore subagent
+* `Task(Plan)` Matches the Plan subagent
+* `Task(Verify)` Matches the Verify subagent
+
+Add these rules to the `deny` array in your [settings](/en/settings#permission-settings) or use the `--disallowedTools` CLI flag to disable specific agents. For example, to disable the Explore agent:
+
+```json  theme={null}
+{
+  "permissions": {
+    "deny": ["Task(Explore)"]
+  }
+}
+```
+
+### Additional permission control with hooks
+
+[Claude Code hooks](/en/hooks-guide) provide a way to register custom shell commands to perform permission evaluation at runtime. When Claude Code makes a tool call, PreToolUse hooks run before the permission system runs, and the hook output can determine whether to approve or deny the tool call in place of the permission system.
+
+### Managed settings
+
+For organizations that need centralized control over Claude Code configuration, administrators can deploy `managed-settings.json` files to [system directories](/en/settings#settings-files). These policy files follow the same format as regular settings files and cannot be overridden by user or project settings.
+
+### Settings precedence
+
+When multiple settings sources exist, they are applied in the following order (highest to lowest precedence):
+
+1. Managed settings (`managed-settings.json`)
+2. Command line arguments
+3. Local project settings (`.claude/settings.local.json`)
+4. Shared project settings (`.claude/settings.json`)
+5. User settings (`~/.claude/settings.json`)
+
+This hierarchy ensures that organizational policies are always enforced while still allowing flexibility at the project and user levels where appropriate.
+
+## Credential management
+
+Claude Code securely manages your authentication credentials:
+
+* **Storage location**: On macOS, API keys, OAuth tokens, and other credentials are stored in the encrypted macOS Keychain.
+* **Supported authentication types**: Claude.ai credentials, Claude API credentials, Azure Auth, Bedrock Auth, and Vertex Auth.
+* **Custom credential scripts**: The [`apiKeyHelper`](/en/settings#available-settings) setting can be configured to run a shell script that returns an API key.
+* **Refresh intervals**: By default, `apiKeyHelper` is called after 5 minutes or on HTTP 401 response. Set `CLAUDE_CODE_API_KEY_HELPER_TTL_MS` environment variable for custom refresh intervals.
+
+
+---
+## legal-and-compliance.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Legal and compliance
+
+> Legal agreements, compliance certifications, and security information for Claude Code.
+
+## Legal agreements
+
+### License
+
+Your use of Claude Code is subject to:
+
+* [Commercial Terms](https://www.anthropic.com/legal/commercial-terms) - for Team, Enterprise, and Claude API users
+* [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) - for Free, Pro, and Max users
+
+### Commercial agreements
+
+Whether you're using the Claude API directly (1P) or accessing it through AWS Bedrock or Google Vertex (3P), your existing commercial agreement will apply to Claude Code usage, unless we've mutually agreed otherwise.
+
+## Compliance
+
+### Healthcare compliance (BAA)
+
+If a customer has a Business Associate Agreement (BAA) with us, and wants to use Claude Code, the BAA will automatically extend to cover Claude Code if the customer has executed a BAA and has Zero Data Retention (ZDR) activated. The BAA will be applicable to that customer's API traffic flowing through Claude Code.
+
+## Security and trust
+
+### Trust and safety
+
+You can find more information in the [Anthropic Trust Center](https://trust.anthropic.com) and [Transparency Hub](https://www.anthropic.com/transparency).
+
+### Security vulnerability reporting
+
+Anthropic manages our security program through HackerOne. [Use this form to report vulnerabilities](https://hackerone.com/anthropic-vdp/reports/new?type=team\&report_type=vulnerability).
+
+***
+
+© Anthropic PBC. All rights reserved. Use is subject to applicable Anthropic Terms of Service.
+
+
+---
+## migrate-your-organization-from-team-to-enterprise.md
+
+4.  Migrate your organization from Team to Enterprise
+
+# Migrate your organization from Team to Enterprise
+
+
+When upgrading from a Team plan to an Enterprise plan, we recommend you keep the same Team organization and follow the upgrade path to change it to Enterprise. This way your data (memberships/roles, conversations and projects) and settings will be preserved. If a you create a brand new Enterprise organization, then you'll need to set up everything from scratch.
+
+## What's retained (same organization upgrade)
+
+- All chat history and conversations
+
+- Projects and shared content
+
+- User memberships and roles
+
+## Migrate from Team to Enterprise
+
+You can migrate from a Team plan to a self-serve Enterprise plan by following these steps:
+
+1.  Navigate to **[claude.ai/upgrade](https://claude.ai/upgrade)** and click "Get Enterprise plan."
+
+2.  When prompted, choose "Upgrade an existing organization" and select your Team plan organization.
+
+3.  Add the number of seats needed for all your team members (Enterprise organizations have a 20 seat minimum).
+
+4.  Set a per-user spend limit and a starting usage balance for the whole team.
+
+5.  Your payment information will be saved from previous Team plan payments, but you can click the pencil icon to change it if needed.
+
+    1.  We only support credit card payments for self-serve Enterprise plans. For more information, see **[Self-serve vs. sales-assisted Enterprise](../17-Billing-Plans/what-is-the-enterprise-plan.md#h_3058c781c5)**.
+
+6.  Review your order summary and click "Confirm upgrade."
+
+**Important:** Migrating an organization from Team to Enterprise via this pathway is not reversible; please ensure that an Enterprise plan is the right fit for your organization before initiating this change.
+
+## Seat assignment
+
+During migration, some users may appear as "Unassigned" rather than being automatically mapped to seat tiers. Admins should verify all users have correct seat assignments after the cutover.
+
+For detailed guidance, refer to **[Purchasing and managing seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
+
+## SSO and identity setup timeline
+
+- **Domain verification (DNS):** Allow 24–48 hours for DNS changes to propagate globally, though many changes take effect within 10 minutes.
+
+- **SCIM provisioning sync:** Microsoft Entra ID pushes changes approximately every 40 minutes. Okta syncs more frequently.
+
+For detailed setup instructions, refer to **[Setting up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso.md)** and **[Setting up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning.md).**
+
+**Note:** Once you turn on SSO, existing users will be forced to log out and log back in.
+
+## Billing and usage configuration
+
+For usage-based Enterprise plans, usage is billed based on actual consumption. For more detailed information, refer to **[How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
+
+If you had purchased extra usage for your Team plan, any unused credits will roll over and become available on your new usage-based Enterprise plan.
+
+## Provisioning process
+
+On the start date, you'll be provisioned and able to use the new features by the end of the day. After initial setup, Owners and Primary Owners can self-serve additional seats by navigating to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** and clicking "Manage" under **Total seats**.
+
+## Helpful resources
+
+- **[Set up single sign-on (SSO)](../21-Account-Support/set-up-single-sign-on-sso.md)**
+
+- **[Set up JIT or SCIM provisioning](set-up-jit-or-scim-provisioning.md)**
+
+- **[Purchase and manage seats on Enterprise plans](../17-Billing-Plans/purchase-and-manage-seats-on-enterprise-plans.md)**
+
+- **[Manage members on Team and Enterprise plans](../17-Billing-Plans/manage-members-on-team-and-enterprise-plans.md)**
+
+- **[Enterprise billing information](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
+
+- **[Use Claude Code with your Team or Enterprise plan](../17-Billing-Plans/use-claude-code-with-your-team-or-enterprise-plan.md)**
+
+
+---
+## network-config.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Enterprise network configuration
+
+> Configure Claude Code for enterprise environments with proxy servers, custom Certificate Authorities (CA), and mutual Transport Layer Security (mTLS) authentication.
+
+Claude Code supports various enterprise network and security configurations through environment variables. This includes routing traffic through corporate proxy servers, trusting custom Certificate Authorities (CA), and authenticating with mutual Transport Layer Security (mTLS) certificates for enhanced security.
+
+<Note>
+  All environment variables shown on this page can also be configured in [`settings.json`](/en/settings).
+</Note>
+
+## Proxy configuration
+
+### Environment variables
+
+Claude Code respects standard proxy environment variables:
+
+```bash  theme={null}
+# HTTPS proxy (recommended)
+export HTTPS_PROXY=https://proxy.example.com:8080
+
+# HTTP proxy (if HTTPS not available)
+export HTTP_PROXY=http://proxy.example.com:8080
+
+# Bypass proxy for specific requests - space-separated format
+export NO_PROXY="localhost 192.168.1.1 example.com .example.com"
+# Bypass proxy for specific requests - comma-separated format
+export NO_PROXY="localhost,192.168.1.1,example.com,.example.com"
+# Bypass proxy for all requests
+export NO_PROXY="*"
+```
+
+<Note>
+  Claude Code does not support SOCKS proxies.
+</Note>
+
+### Basic authentication
+
+If your proxy requires basic authentication, include credentials in the proxy URL:
+
+```bash  theme={null}
+export HTTPS_PROXY=http://username:password@proxy.example.com:8080
+```
+
+<Warning>
+  Avoid hardcoding passwords in scripts. Use environment variables or secure credential storage instead.
+</Warning>
+
+<Tip>
+  For proxies requiring advanced authentication (NTLM, Kerberos, etc.), consider using an LLM Gateway service that supports your authentication method.
+</Tip>
+
+## Custom CA certificates
+
+If your enterprise environment uses custom CAs for HTTPS connections (whether through a proxy or direct API access), configure Claude Code to trust them:
+
+```bash  theme={null}
+export NODE_EXTRA_CA_CERTS=/path/to/ca-cert.pem
+```
+
+## mTLS authentication
+
+For enterprise environments requiring client certificate authentication:
+
+```bash  theme={null}
+# Client certificate for authentication
+export CLAUDE_CODE_CLIENT_CERT=/path/to/client-cert.pem
+
+# Client private key
+export CLAUDE_CODE_CLIENT_KEY=/path/to/client-key.pem
+
+# Optional: Passphrase for encrypted private key
+export CLAUDE_CODE_CLIENT_KEY_PASSPHRASE="your-passphrase"
+```
+
+## Network access requirements
+
+Claude Code requires access to the following URLs:
+
+* `api.anthropic.com` - Claude API endpoints
+* `claude.ai` - WebFetch safeguards
+* `statsig.anthropic.com` - Telemetry and metrics
+* `sentry.io` - Error reporting
+
+Ensure these URLs are allowlisted in your proxy configuration and firewall rules. This is especially important when using Claude Code in containerized or restricted network environments.
+
+## Additional resources
+
+* [Claude Code settings](/en/settings)
+* [Environment variables reference](/en/settings#environment-variables)
+* [Troubleshooting guide](/en/troubleshooting)
+
+
+---
+## organization-discovery.md
+
+4.  Find and join a Team or Enterprise organization
+
+# Find and join a Team or Enterprise organization
+
+
+Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
+
+**Note:** Organization discovery is only available for organizations that don't have **[single sign-on (SSO) enabled](../21-Account-Support/setting-up-single-sign-on-sso.md)**. If your organization uses SSO, your existing provisioning settings remain in effect.
+
+------------------------------------------------------------------------
+
+## Admin setup
+
+### Enable discoverability
+
+Admins and above can manage organization discovery from **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+
+- **New organizations:**
+
+  - **Team plans:** Discoverability is on by default. Admins see the option during plan onboarding with it pre-selected.
+
+  - **Enterprise plans:** Discoverability is off by default. Admins will see the option disabled on the Identity and access page.
+
+- **Existing organizations:** Discoverability is off by default. Admins can turn it on from settings at any time.
+
+To enable discoverability:
+
+1.  Log in as an Admin, Owner, Primary Owner.
+
+2.  Navigate to **[Organization settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+
+3.  Your organization’s domains are listed at the top of the page.
+
+4.  Find the domain you want users to search for and click the toggle under **Discoverable**.
+
+5.  Find **New member approval** under **Global access settings** and choose either “Approve automatically” or “Require admin approval.”
+
+### Configure allowed domains
+
+Admins can specify which email domains are allowed to discover and join the organization by clicking “+ Add domain” under **Domains** on the Identity and access page. The organization owner’s domain will appear on the **Domains** list automatically, but admins can configure additional allowed domains by adding them here, verifying them, and toggling **Discoverable** on. Personal email domains (like Gmail) and .edu domains can't be added to the allowed list.
+
+### Choose an approval mode
+
+Admins select how join requests are handled:
+
+**Instant approval:** Users are added to the organization’s lowest available seat tier automatically when they ask to join. Billing begins as soon as a user joins—if the organization has no available seats, billing auto-expands and a new seat is purchased immediately.
+
+**Request + approve:** The admin reviews and approves each join request individually. Users aren't added to the organization until the admin approves. Billing begins when the request is approved—if no seats are available at that point, a new seat is purchased.
+
+This approval mode also applies to invitations sent by existing members of your organization. For additional details, see **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
+
+------------------------------------------------------------------------
+
+## How to find and join an organization
+
+When someone signs up for Claude with a work email address that matches a discoverable organization, they'll see the option to join during the signup flow. They can choose to join or continue with a personal account.
+
+- If the organization uses **instant approval**, they're added right away.
+
+- If the organization uses **request + approve**, a request is sent to the admin. The requester can choose to continue with a personal account (as long as "Restrict organization creation" is disabled) until the request is approved or denied.
+
+If multiple organizations share the same email domain and are all discoverable, users will see all of them and can choose which one to join.
+
+------------------------------------------------------------------------
+
+## Other ways to join an organization
+
+In addition to organization discovery, there are a few other ways to join a Team or Enterprise organization:
+
+- **Invite link:** Your admin may share an invite link that lets you join directly. See **[Join an organization via invite link](https://support.claude.com/en/articles/13776697-join-an-organization-via-invite-link#h_af9f6b7825)**.
+
+  - **Note:** If the invite link has been disabled or regenerated by your admin, it will no longer work. Ask your admin to share a new link.
+
+- **Email invitation:** An admin or existing member of the organization may send you an email invitation to join.
+
+- **Admin invitation:** An admin can add you directly from admin settings. See **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
+
+------------------------------------------------------------------------
+
+## SSO and organization discovery
+
+Organization discovery is not available for organizations with single sign-on enabled. If your organization uses SSO, the feature doesn't apply—your existing provisioning settings (including any just-in-time provisioning) remain unchanged.
+
+If you'd like to enable organization discovery, SSO must be turned off first.
+
+
+---
+## responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minor.md
+
+3.  Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors
+
+# Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors
+
+Updated today
+
+At Anthropic, we recognize the unique vulnerabilities and needs of children in digital spaces. In order to create a safer digital environment and mitigate risks, organizations providing minors with the ability to directly interact with products that incorporate our API(s) should implement the following safeguards:
+
+**1. Additional Technical Measures**
+
+Organizations with products serving minors should implement additional safety features tailored to their unique use cases, as they are best situated to understand the specific ways their end users may interact with products that incorporate Anthropic's services. These safety measures may include, but are not limited to:
+
+- Age verification systems to ensure only intended users can access the product
+
+- Content moderation and filtering to block inappropriate or harmful content
+
+- Monitoring and reporting mechanisms to identify and address potential issues
+
+- Educational resources and guidance for minors on safe and responsible use of the product
+
+In addition to these organization-specific measures, Anthropic may make available technical measures intended to tailor product experiences for certain end users, including minors. For example, we may provide a child-safety system prompt, which organizations serving minors should implement as part of a comprehensive suite of safety measures. It is important to note that, while helpful, these technical measures are not infallible and should be used in conjunction with the organization's own safety features to ensure a robust approach to child safety.
+
+**2. Regulatory Compliance**
+
+It is the responsibility of organizations to comply with all applicable child safety and data privacy regulations, such as the Children's Online Privacy Protection Act (COPPA) in the United States. Compliance with these regulations should be clearly stated on the organization’s website or similar public-facing documentation.
+
+**3. Disclosure Requirements**
+
+Organizations must disclose to their users that they are interacting with an AI system rather than a human.
+
+Anthropic will periodically audit organizations for compliance with these safeguards. If your organization has a high violation rate and has not implemented these safety recommendations, we may ask you to implement them. Failure to implement these recommendations when requested, or a continued high violation rate, may lead to the suspension or termination of your account.
+
+
+---
+## restrict-access-to-claude-with-ip-allowlisting.md
+
+4.  Restrict access to Claude with IP allowlisting
+
+# Restrict access to Claude with IP allowlisting
+
+
+IP allowlisting is available for Enterprise plans only.
+
+IP allowlisting enables Enterprise plan administrators to control which IP addresses can access Claude through their organization. This feature ensures that requests can only be made from approved network locations, providing an additional layer of security.
+
+When enabled, we validate the source IP address of every authenticated request against your organization's configured allowlist. Requests from IP addresses not added to the allowlist will be blocked.
+
+IP allowlisting supports CIDR ranges. For example: `10.0.0.0/8, 2001:db8::/32`.
+
+## How to configure IP allowlisting
+
+If your Enterprise organization is interested in enabling an IP allowlist, please compile a list of all necessary CIDR ranges for your organization, including office locations, VPN exit points, and any other approved access points. Omitting required CIDR ranges could result in users getting locked out of Claude. Then, reach out to your Anthropic Contact or our [Sales team](https://claude.com/contact-sales) to share your list of CIDR ranges. They can add these to your account’s allowlist to enable the feature.
+
+When a request originates from an IP address that’s not in your allowlist, access is denied. Users should contact their IT administrator if they believe they're being blocked in error.
+
+
+---
+## security.md
+
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Security
+
+> Learn about Claude Code's security safeguards and best practices for safe usage.
+
+## How we approach security
+
+### Security foundation
+
+Your code's security is paramount. Claude Code is built with security at its core, developed according to Anthropic's comprehensive security program. Learn more and access resources (SOC 2 Type 2 report, ISO 27001 certificate, etc.) at [Anthropic Trust Center](https://trust.anthropic.com).
+
+### Permission-based architecture
+
+Claude Code uses strict read-only permissions by default. When additional actions are needed (editing files, running tests, executing commands), Claude Code requests explicit permission. Users control whether to approve actions once or allow them automatically.
+
+We designed Claude Code to be transparent and secure. For example, we require approval for bash commands before executing them, giving you direct control. This approach enables users and organizations to configure permissions directly.
+
+For detailed permission configuration, see [Identity and Access Management](/en/iam).
+
+### Built-in protections
+
+To mitigate risks in agentic systems:
+
+* **Sandboxed bash tool**: [Sandbox](/en/sandboxing) bash commands with filesystem and network isolation, reducing permission prompts while maintaining security. Enable with `/sandbox` to define boundaries where Claude Code can work autonomously
+* **Write access restriction**: Claude Code can only write to the folder where it was started and its subfolders—it cannot modify files in parent directories without explicit permission. While Claude Code can read files outside the working directory (useful for accessing system libraries and dependencies), write operations are strictly confined to the project scope, creating a clear security boundary
+* **Prompt fatigue mitigation**: Support for allowlisting frequently used safe commands per-user, per-codebase, or per-organization
+* **Accept Edits mode**: Batch accept multiple edits while maintaining permission prompts for commands with side effects
+
+### User responsibility
+
+Claude Code only has the permissions you grant it. You're responsible for reviewing proposed code and commands for safety before approval.
+
+## Protect against prompt injection
+
+Prompt injection is a technique where an attacker attempts to override or manipulate an AI assistant's instructions by inserting malicious text. Claude Code includes several safeguards against these attacks:
+
+### Core protections
+
+* **Permission system**: Sensitive operations require explicit approval
+* **Context-aware analysis**: Detects potentially harmful instructions by analyzing the full request
+* **Input sanitization**: Prevents command injection by processing user inputs
+* **Command blocklist**: Blocks risky commands that fetch arbitrary content from the web like `curl` and `wget` by default. When explicitly allowed, be aware of [permission pattern limitations](/en/iam#tool-specific-permission-rules)
+
+### Privacy safeguards
+
+We have implemented several safeguards to protect your data, including:
+
+* Limited retention periods for sensitive information (see the [Privacy Center](https://privacy.anthropic.com/en/articles/10023548-how-long-do-you-store-my-data) to learn more)
+* Restricted access to user session data
+* User control over data training preferences. Consumer users can change their [privacy settings](https://claude.ai/settings/privacy) at any time.
+
+For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, and Max users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
+
+### Additional safeguards
+
+* **Network request approval**: Tools that make network requests require user approval by default
+* **Isolated context windows**: Web fetch uses a separate context window to avoid injecting potentially malicious prompts
+* **Trust verification**: First-time codebase runs and new MCP servers require trust verification
+  * Note: Trust verification is disabled when running non-interactively with the `-p` flag
+* **Command injection detection**: Suspicious bash commands require manual approval even if previously allowlisted
+* **Fail-closed matching**: Unmatched commands default to requiring manual approval
+* **Natural language descriptions**: Complex bash commands include explanations for user understanding
+* **Secure credential storage**: API keys and tokens are encrypted. See [Credential Management](/en/iam#credential-management)
+
+<Warning>
+  **Windows WebDAV security risk**: When running Claude Code on Windows, we recommend against enabling WebDAV or allowing Claude Code to access paths such as `\\*` that may contain WebDAV subdirectories. [WebDAV has been deprecated by Microsoft](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features#:~:text=The%20Webclient%20\(WebDAV\)%20service%20is%20deprecated) due to security risks. Enabling WebDAV may allow Claude Code to trigger network requests to remote hosts, bypassing the permission system.
+</Warning>
+
+**Best practices for working with untrusted content**:
+
+1. Review suggested commands before approval
+2. Avoid piping untrusted content directly to Claude
+3. Verify proposed changes to critical files
+4. Use virtual machines (VMs) to run scripts and make tool calls, especially when interacting with external web services
+5. Report suspicious behavior with `/bug`
+
+<Warning>
+  While these protections significantly reduce risk, no system is completely
+  immune to all attacks. Always maintain good security practices when working
+  with any AI tool.
+</Warning>
+
+## MCP security
+
+Claude Code allows users to configure Model Context Protocol (MCP) servers. The list of allowed MCP servers is configured in your source code, as part of Claude Code settings engineers check into source control.
+
+We encourage either writing your own MCP servers or using MCP servers from providers that you trust. You are able to configure Claude Code permissions for MCP servers. Anthropic does not manage or audit any MCP servers.
+
+## IDE security
+
+See [VS Code security and privacy](/en/vs-code#security-and-privacy) for more information on running Claude Code in an IDE.
+
+## Cloud execution security
+
+When using [Claude Code on the web](/en/claude-code-on-the-web), additional security controls are in place:
+
+* **Isolated virtual machines**: Each cloud session runs in an isolated, Anthropic-managed VM
+* **Network access controls**: Network access is limited by default and can be configured to be disabled or allow only specific domains
+* **Credential protection**: Authentication is handled through a secure proxy that uses a scoped credential inside the sandbox, which is then translated to your actual GitHub authentication token
+* **Branch restrictions**: Git push operations are restricted to the current working branch
+* **Audit logging**: All operations in cloud environments are logged for compliance and audit purposes
+* **Automatic cleanup**: Cloud environments are automatically terminated after session completion
+
+For more details on cloud execution, see [Claude Code on the web](/en/claude-code-on-the-web).
+
+## Security best practices
+
+### Working with sensitive code
+
+* Review all suggested changes before approval
+* Use project-specific permission settings for sensitive repositories
+* Consider using [devcontainers](../02-Claude-Code-CLI/development-containers-claude-code-docs.md) for additional isolation
+* Regularly audit your permission settings with `/permissions`
+
+### Team security
+
+* Use [managed settings](/en/iam#managed-settings) to enforce organizational standards
+* Share approved permission configurations through version control
+* Train team members on security best practices
+* Monitor Claude Code usage through [OpenTelemetry metrics](/en/monitoring-usage)
+
+### Reporting security issues
+
+If you discover a security vulnerability in Claude Code:
+
+1. Do not disclose it publicly
+2. Report it through our [HackerOne program](https://hackerone.com/anthropic-vdp/reports/new?type=team\&report_type=vulnerability)
+3. Include detailed reproduction steps
+4. Allow time for us to address the issue before public disclosure
+
+## Related resources
+
+* [Sandboxing](/en/sandboxing) - Filesystem and network isolation for bash commands
+* [Identity and Access Management](/en/iam) - Configure permissions and access controls
+* [Monitoring usage](/en/monitoring-usage) - Track and audit Claude Code activity
+* [Development containers](../02-Claude-Code-CLI/development-containers-claude-code-docs.md) - Secure, isolated environments
+* [Anthropic Trust Center](https://trust.anthropic.com) - Security certifications and compliance
+
+
+---
+## set-up-jit-or-scim-provisioning.md
+
+# Set up JIT or SCIM provisioning
+
+
+JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console organizations only.
+
+This guide covers how to configure user provisioning and role assignment for your Claude or Claude Console organization.
+
+**Before you begin:** This guide assumes you have already completed the steps in **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso.md)**, including domain verification and SSO configuration with your Identity Provider (IdP), and you have an Admin (Console) or Owner (Claude) role.
+
+------------------------------------------------------------------------
+
+## Step 1: Choose your provisioning mode
+
+Once SSO is configured, you need to decide how users will be provisioned to your organization. This is controlled by the **Provisioning mode** setting in **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+
+### Provisioning options
+
+**Invite only** is the default. Users are added and removed directly in Claude or Console settings.
+
+**Approve automatically (JIT):** Users assigned to your Anthropic IdP app are automatically provisioned when they first log in. This option is available to all plans.
+
+**Sync with SCIM:** Users are automatically provisioned and deprovisioned based on assignments in your IdP, without requiring them to log in first. SCIM is available for Enterprise plans and Console organizations with their own parent organization or joined to an Enterprise parent organization. SCIM is not available for Team plans or Console organizations joined to a Team plan's parent organization.
+
+### Provisioning behavior overview
+
+Use this table to help decide which provisioning mode is right for your organization:
+
+[TABLE]
+
+Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership. If you select either of these options for your provisioning mode, **Enable group mappings** will appear within that section:
+
+
+### Available roles and seat tiers
+
+[TABLE]
+
+For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
+
+------------------------------------------------------------------------
+
+## Step 2: Set up SCIM directory sync (if using SCIM)
+
+**Note:** Skip this step if you're using Invite only or JIT provisioning.
+
+If you chose SCIM as your provisioning mode, you need to establish the connection between your Identity Provider and Anthropic before enabling it.
+
+1.  Navigate to your Identity and access settings in Claude (**[claude.ai/admin-settings/identity](http://claude.ai/admin-settings/identity)**) or Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identit)**)
+
+2.  In the **Global access settings** section, click “Setup SCIM” (or “Manage SCIM”) next to **Directory sync (SCIM)**.
+
+3.  Follow the WorkOS setup guide to configure SCIM in your Identity Provider. You'll need to copy values from WorkOS into your IdP's Anthropic application.
+
+**‼️ When you reach the IdP Group step, pause to review Steps 3 and 4 of this guide, alongside the other guides.**
+
+For IdP-specific JIT / SCIM setup instructions, see:
+
+- **[Okta SAML](https://workos.com/docs/integrations/okta-saml)** / **[OKTA SCIM](https://workos.com/docs/integrations/okta-scim)**
+
+- **[Entra ID SAML](https://workos.com/docs/integrations/entra-id-saml)** / **[Entra ID SCIM](https://workos.com/docs/integrations/entra-id-scim)**
+
+- **[Google SAML](https://workos.com/docs/integrations/google-saml)** / **[Directory Sync](https://workos.com/docs/integrations/google-directory-sync)**
+
+- **[OneLogin SAML](https://workos.com/docs/integrations/onelogin-saml)** / **[OneLogin SCIM](https://workos.com/docs/integrations/onelogin-scim)**
+
+- **[JumpCloud SAML](https://workos.com/docs/integrations/jumpcloud-saml)** / **[JumpCloud SCIM](https://workos.com/docs/integrations/jumpcloud-scim)**
+
+- See additional IdPs **[here](https://workos.com/docs/integrations)**
+
+Once your IdP is connected, continue to Step 3.
+
+------------------------------------------------------------------------
+
+## Step 3: Configure provisioning mode and enable group mappings
+
+1.  In the **Global access settings** section of your Identity and access settings, find **Provisioning mode**.
+
+2.  Select your chosen option from the dropdown:
+
+    1.  **Invite only**: New members can only join if manually invited by an existing member. SSO access alone won't add them to your org.
+
+    2.  **Approve automatically (JIT)**: Allow people with SSO access to join when they first log in. Each new member uses one of your available seats.
+
+    3.  **Sync with SCIM**: Add or remove members automatically as your directory changes. Your org always stays current.
+
+3.  If you selected “Approve automatically (JIT)” or “Sync with SCIM,” do NOT click “Save changes” immediately. You must first ensure all users are assigned to your Anthropic application in your IdP.
+
+4.  Once you’ve confirmed all users are assigned in your IdP you can either:
+
+    1.  Click “Save changes” to complete the set up and trigger the initial provisioning, or
+
+    2.  Toggle on **Enable group mappings** and move to Step 4.
+
+**Important**: Saving before users are properly assigned will result in those users being deprovisioned from the organization.
+
+------------------------------------------------------------------------
+
+## Step 4: Configure groups in your Identity Provider and map groups to roles and seat types
+
+1.  Create groups in your IdP for each role you want to assign. Unless you're on the single-seat Enterprise plan, create groups for each seat type as well.
+
+    1.  While there are no longer naming requirements for these groups, we recommend including something in the group name (e.g., `anthropic-claude-` or `anthropic-console-`) to make them easier to identify.
+
+2.  Add users to the groups you created, ensuring at least one user (including yourself) is in a group that will be mapped to an Admin (Console) or Owner (Claude) role.
+
+3.  Return to your Identity and access settings in Claude or Console, and find **Provisioning mode**.
+
+4.  Toggle **Enable group mappings** on (if it’s not already):
+
+
+5.  In the **Enable group mappings** section, click “Add” next to each role and select the corresponding group from your IdP in the dropdown.
+
+    1.  **Note:** When using group mappings, you *must* assign all users to a role-based group in order to ensure they’re provisioned an account. Assigning users to seat-tier based groups is optional.
+
+6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. If a user isn't assigned to a seat type group, they will be assigned to the highest available type by default.
+
+    1.  **For single-seat Enterprise:** Seat type mapping does not apply. All provisioned users are automatically assigned an Enterprise seat, provided one is available in your organization.
+
+7.  Verify all necessary groups are mapped to the appropriate roles and seat types.
+
+8.  Click “Save changes.”
+
+    1.  **Note:** Microsoft Entra only pushes SCIM changes every 40 minutes, so there may be a delay before changes appear. You can check which users are synced from your IdP by clicking "Manage SCIM" and viewing the Directory. Those users in the Directory will be provisioned to Claude / Console.
+
+**Important:** All users who need access must be assigned to the appropriate groups before you save your group mappings configuration. These users should already be assigned to your Anthropic application in your IdP from when you enabled SSO.
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+### Users assigned correctly and showing in the directory but aren’t being added to the Claude as members?
+
+Verify you have enough seats purchased and available to add members to your org.
+
+1.  Check the number of available seats shown in **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Billing](https://claude.ai/admin-settings/billing)** and purchase additional seats if needed (see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**).
+
+2.  Once you have available seats, go back to the Identity and access page and click “Sync now,” next to **Directory sync (SCIM)**. This will trigger a sync to provision accounts for those users not yet added as members.
+
+### Users aren't being provisioned with the correct role
+
+1.  Verify the user is assigned to the correct group in your IdP.
+
+2.  Verify the group is mapped to the correct role in your Identity and access settings.
+
+3.  **For JIT:** The user needs to log out and log back in for role changes to take effect.
+
+4.  **For SCIM:** Click "Sync Now" to prompt an immediate sync, or wait for the automatic sync cycle.
+
+### I lost Admin/Owner access after enabling group mappings
+
+This happens when the person configuring group mappings isn't assigned to a group mapped to an Admin or Owner role, causing their permissions to be downgraded to User.
+
+To fix this:
+
+**Option 1: Have another Admin/Owner reinstate your role**
+
+1.  Contact another Admin or Owner of your organization.
+
+2.  Ask them to navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** (for Claude) or **[Settings \> Members](https://platform.claude.com/settings/members)** (for Console).
+
+3.  Have them change your role back to Admin or Owner.
+
+**Option 2: Fix via your Identity Provider**
+
+1.  In your IdP, assign yourself to a group with the correct prefix that maps to an Admin or Owner role.
+
+2.  **For JIT:** Log out and log back in to regain access.
+
+3.  **For SCIM:** Ask another Admin or Owner to click "Sync Now" in the Identity and access settings, or wait for the automatic sync cycle.
+
+
+---
+## setting-up-jit-or-scim-provisioning.md
+
+# Set up JIT or SCIM provisioning
+
+
+JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console organizations only.
+
+This guide covers how to configure user provisioning and role assignment for your Claude or Claude Console organization.
+
+**Before you begin:** This guide assumes you have already completed the steps in **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso.md)**, including domain verification and SSO configuration with your Identity Provider (IdP), and you have an Admin (Console) or Owner (Claude) role.
+
+------------------------------------------------------------------------
+
+## Step 1: Choose your provisioning mode
+
+Once SSO is configured, you need to decide how users will be provisioned to your organization. This is controlled by the **Provisioning mode** setting in **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Identity and access](https://claude.ai/admin-settings/identity)**.
+
+### Provisioning options
+
+**Invite only** is the default. Users are added and removed directly in Claude or Console settings.
+
+**Approve automatically (JIT):** Users assigned to your Anthropic IdP app are automatically provisioned when they first log in. This option is available to all plans.
+
+**Sync with SCIM:** Users are automatically provisioned and deprovisioned based on assignments in your IdP, without requiring them to log in first. SCIM is available for Enterprise plans and Console organizations with their own parent organization or joined to an Enterprise parent organization. SCIM is not available for Team plans or Console organizations joined to a Team plan's parent organization.
+
+### Provisioning behavior overview
+
+Use this table to help decide which provisioning mode is right for your organization:
+
+[TABLE]
+
+Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership. If you select either of these options for your provisioning mode, **Enable group mappings** will appear within that section:
+
+
+### Available roles and seat tiers
+
+[TABLE]
+
+For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
+
+------------------------------------------------------------------------
+
+## Step 2: Set up SCIM directory sync (if using SCIM)
+
+**Note:** Skip this step if you're using Invite only or JIT provisioning.
+
+If you chose SCIM as your provisioning mode, you need to establish the connection between your Identity Provider and Anthropic before enabling it.
+
+1.  Navigate to your Identity and access settings in Claude (**[claude.ai/admin-settings/identity](http://claude.ai/admin-settings/identity)**) or Console (**[platform.claude.com/settings/identity](http://platform.claude.com/settings/identit)**)
+
+2.  In the **Global access settings** section, click “Setup SCIM” (or “Manage SCIM”) next to **Directory sync (SCIM)**.
+
+3.  Follow the WorkOS setup guide to configure SCIM in your Identity Provider. You'll need to copy values from WorkOS into your IdP's Anthropic application.
+
+**‼️ When you reach the IdP Group step, pause to review Steps 3 and 4 of this guide, alongside the other guides.**
+
+For IdP-specific JIT / SCIM setup instructions, see:
+
+- **[Okta SAML](https://workos.com/docs/integrations/okta-saml)** / **[OKTA SCIM](https://workos.com/docs/integrations/okta-scim)**
+
+- **[Entra ID SAML](https://workos.com/docs/integrations/entra-id-saml)** / **[Entra ID SCIM](https://workos.com/docs/integrations/entra-id-scim)**
+
+- **[Google SAML](https://workos.com/docs/integrations/google-saml)** / **[Directory Sync](https://workos.com/docs/integrations/google-directory-sync)**
+
+- **[OneLogin SAML](https://workos.com/docs/integrations/onelogin-saml)** / **[OneLogin SCIM](https://workos.com/docs/integrations/onelogin-scim)**
+
+- **[JumpCloud SAML](https://workos.com/docs/integrations/jumpcloud-saml)** / **[JumpCloud SCIM](https://workos.com/docs/integrations/jumpcloud-scim)**
+
+- See additional IdPs **[here](https://workos.com/docs/integrations)**
+
+Once your IdP is connected, continue to Step 3.
+
+------------------------------------------------------------------------
+
+## Step 3: Configure provisioning mode and enable group mappings
+
+1.  In the **Global access settings** section of your Identity and access settings, find **Provisioning mode**.
+
+2.  Select your chosen option from the dropdown:
+
+    1.  **Invite only**: New members can only join if manually invited by an existing member. SSO access alone won't add them to your org.
+
+    2.  **Approve automatically (JIT)**: Allow people with SSO access to join when they first log in. Each new member uses one of your available seats.
+
+    3.  **Sync with SCIM**: Add or remove members automatically as your directory changes. Your org always stays current.
+
+3.  If you selected “Approve automatically (JIT)” or “Sync with SCIM,” do NOT click “Save changes” immediately. You must first ensure all users are assigned to your Anthropic application in your IdP.
+
+4.  Once you’ve confirmed all users are assigned in your IdP you can either:
+
+    1.  Click “Save changes” to complete the set up and trigger the initial provisioning, or
+
+    2.  Toggle on **Enable group mappings** and move to Step 4.
+
+**Important**: Saving before users are properly assigned will result in those users being deprovisioned from the organization.
+
+------------------------------------------------------------------------
+
+## Step 4: Configure groups in your Identity Provider and map groups to roles and seat types
+
+1.  Create groups in your IdP for each role you want to assign. Unless you're on the single-seat Enterprise plan, create groups for each seat type as well.
+
+    1.  While there are no longer naming requirements for these groups, we recommend including something in the group name (e.g., `anthropic-claude-` or `anthropic-console-`) to make them easier to identify.
+
+2.  Add users to the groups you created, ensuring at least one user (including yourself) is in a group that will be mapped to an Admin (Console) or Owner (Claude) role.
+
+3.  Return to your Identity and access settings in Claude or Console, and find **Provisioning mode**.
+
+4.  Toggle **Enable group mappings** on (if it’s not already):
+
+
+5.  In the **Enable group mappings** section, click “Add” next to each role and select the corresponding group from your IdP in the dropdown.
+
+    1.  **Note:** When using group mappings, you *must* assign all users to a role-based group in order to ensure they’re provisioned an account. Assigning users to seat-tier based groups is optional.
+
+6.  **For all plans except single-seat Enterprise:** In the **Assign seat tiers to IdP groups** section (optional), click "Add" next to each seat type and select the corresponding group from your IdP. If a user isn't assigned to a seat type group, they will be assigned to the highest available type by default.
+
+    1.  **For single-seat Enterprise:** Seat type mapping does not apply. All provisioned users are automatically assigned an Enterprise seat, provided one is available in your organization.
+
+7.  Verify all necessary groups are mapped to the appropriate roles and seat types.
+
+8.  Click “Save changes.”
+
+    1.  **Note:** Microsoft Entra only pushes SCIM changes every 40 minutes, so there may be a delay before changes appear. You can check which users are synced from your IdP by clicking "Manage SCIM" and viewing the Directory. Those users in the Directory will be provisioned to Claude / Console.
+
+**Important:** All users who need access must be assigned to the appropriate groups before you save your group mappings configuration. These users should already be assigned to your Anthropic application in your IdP from when you enabled SSO.
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+### Users assigned correctly and showing in the directory but aren’t being added to the Claude as members?
+
+Verify you have enough seats purchased and available to add members to your org.
+
+1.  Check the number of available seats shown in **[Organization](https://claude.ai/admin-settings/organization)** **[settings \> Billing](https://claude.ai/admin-settings/billing)** and purchase additional seats if needed (see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**).
+
+2.  Once you have available seats, go back to the Identity and access page and click “Sync now,” next to **Directory sync (SCIM)**. This will trigger a sync to provision accounts for those users not yet added as members.
+
+### Users aren't being provisioned with the correct role
+
+1.  Verify the user is assigned to the correct group in your IdP.
+
+2.  Verify the group is mapped to the correct role in your Identity and access settings.
+
+3.  **For JIT:** The user needs to log out and log back in for role changes to take effect.
+
+4.  **For SCIM:** Click "Sync Now" to prompt an immediate sync, or wait for the automatic sync cycle.
+
+### I lost Admin/Owner access after enabling group mappings
+
+This happens when the person configuring group mappings isn't assigned to a group mapped to an Admin or Owner role, causing their permissions to be downgraded to User.
+
+To fix this:
+
+**Option 1: Have another Admin/Owner reinstate your role**
+
+1.  Contact another Admin or Owner of your organization.
+
+2.  Ask them to navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** (for Claude) or **[Settings \> Members](https://platform.claude.com/settings/members)** (for Console).
+
+3.  Have them change your role back to Admin or Owner.
+
+**Option 2: Fix via your Identity Provider**
+
+1.  In your IdP, assign yourself to a group with the correct prefix that maps to an Admin or Owner role.
+
+2.  **For JIT:** Log out and log back in to regain access.
+
+3.  **For SCIM:** Ask another Admin or Owner to click "Sync Now" in the Identity and access settings, or wait for the automatic sync cycle.
+
+
+---
+## use-enterprise-search.md
+
+# Use enterprise search
+
+
+Enterprise search capabilities are available for users on Claude for Work (Team and Enterprise) plans.
+
+Enterprise search adds a dedicated project for searching across your organization's knowledge sources with optimized instructions and seamless connector integrations.
+
+## What is enterprise search?
+
+We’ve added a pre-configured “Ask Your Org” [project](https://support.claude.com/en/articles/9517075-what-are-projects) that appears in your sidebar. This project is designed specifically for unified knowledge access across your company's tools and data sources. This dedicated workspace provides:
+
+- **Guided setup:** Easy onboarding flow for connecting your work apps.
+
+- **Organization-wide availability:** Available to all members of your organization after an Owner completes the initial setup process.
+
+  - Owners can control which apps are connected to the project.
+
+  - Users need to authenticate with the connected apps before they can start using them.
+
+- **Optimized instructions:** Specialized system prompts maintained by Anthropic for effective searches.
+
+- **Unified access:** Search across multiple data sources (Slack, Microsoft 365, and more) in one place.
+
+------------------------------------------------------------------------
+
+## Get started
+
+### For Owners
+
+The enterprise search project is enabled by default for all Team and Enterprise plan organizations within Admin settings, but Owners will need to complete this initial setup process before other members can use it:
+
+1.  Click “Ask Your Org” in the menu on the left of your screen.
+
+2.  Click the “Set up for your org” button to continue or “Disable” to turn the project off for your team.
+
+3.  If setting up the project, you’ll be prompted to connect some tools to the project.
+
+    1.  You are required to choose a connector for both **Documents** and **Chat**; **Email** is recommended but optional.
+
+    2.  Only enabled connectors will be available in the enterprise search project.
+
+4.  Click “+ Add more” to set up any other tools your team needs.
+
+    1.  Choose between “Select another MCP” to open the Connectors directory, or “+ Add custom connector”
+
+5.  Click “Next” when you’re finished.
+
+6.  On the last screen, you can edit the name of your project. The format will be “Ask \[Name field\],” so whatever you enter here will impact what shows on the left panel.
+
+7.  Enter a description, then click “Finish set up.”
+
+If you decide to stop using the project after setting it up, an Owner will need to manually disable this feature organization-wide to remove it from users’ accounts:
+
+1.  Navigate to **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
+
+2.  Locate "Ask Your Org"
+
+3.  Click the “Disable” button to turn the feature off.
+
+### For users
+
+The enterprise search project will be starred in your sidebar by default when the feature is enabled for your organization.
+
+**First-time setup:**
+
+1.  Click on the "Ask {org name}" project in your sidebar.
+
+2.  Follow the guided onboarding flow to connect to recommended services.
+
+3.  Authenticate with the services you want to search (Slack, Google, Microsoft 365).
+
+    1.  The more connectors you enable, the more comprehensive your search results will be.
+
+4.  Start asking Claude questions about your organization’s knowledge.
+
+## Customize your enterprise search project
+
+**Connecting additional tools:**
+
+After initial setup, you can enable additional connectors in your search project by clicking “Connect” in the **Instructions** section and allowing access to the tools and connectors shown in the modal.
+
+**To unstar or hide the project:**
+
+1.  Click the “...” next to the project in your sidebar
+
+2.  Select "Unstar"
+
+**To adjust connected tools:**
+
+1.  Open the search project.
+
+2.  Click "Search and tools" in the lower left.
+
+3.  Enable or disable specific connectors.
+
+4.  Changes apply to new conversations in the project.
+
+------------------------------------------------------------------------
+
+## How does enterprise search work?
+
+When you ask a question within your organization’s dedicated project, Claude searches across all your connected data sources to generate comprehensive, well-cited responses.
+
+**Example queries:**
+
+- "What is our company's remote work policy?"
+
+- "Summarize discussions about the Q4 product roadmap."
+
+- "Find information about our customer onboarding process."
+
+- "What were the key decisions from last week's leadership meetings?"
+
+Claude will search your connected tools—such as SharePoint documents, Slack conversations, Gmail threads, and Google Drive files—and synthesize information into a unified response with source citations.
+
+## Compare enterprise search to standard projects
+
+[TABLE]
+
+## Use cases
+
+Enterprise Search is particularly valuable for:
+
+**Executive briefings:**
+
+- "What happened yesterday while I was out?"
+
+- "Summarize key updates across the business"
+
+**Project research:**
+
+- "What are the main reasons customers cite for why they pick our competitors?"
+
+- "What are the current blockers on the Infrastructure project?"
+
+**Policy and process questions:**
+
+- "What is our vacation policy?"
+
+- "How do I submit an expense report?"
+
+**Onboarding:**
+
+- "How does our authentication system work?"
+
+- "Who should I talk to, to learn about X?"
+
+**Performance reviews:**
+
+- "Find discussions and documents related to \[employee\]'s Q3 projects"
+
+- "Summarize team contributions to the Platform initiative"
+
+------------------------------------------------------------------------
+
+## Privacy and permissions
+
+- **Permission-aware:** You only see search results from data you have permission to access in the original systems.
+
+- **User-level authentication for connectors:** Each user authenticates with their own credentials to enable connectors.
+
+- **No external indexing:** Search results are generated by making MCP calls. No data from connected services are indexed in our systems for serving queries.
+
+- **Data security:** All data access follows your organization's existing security controls and policies.
+
+## Best practices
+
+**Be specific about sources:** Instead of "Find information about the product launch,” try "Search Slack and Google Drive for discussions about the Q4 product launch."
+
+**Use date ranges:** "Summarize emails from last week about the budget review."
+
+**Combine multiple sources:** "Compile information from SharePoint documents, Slack discussions, and meeting notes about our hiring process."
+
+**Break complex queries into steps:** For thorough research, ask Claude to search one source at a time, then synthesize findings.
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+### The search project isn't appearing in my sidebar
+
+- Verify you’re using a Team or Enterprise plan..
+
+- Have an Owner check that the feature is enabled for your organization.
+
+- Try refreshing your browser or signing out and back in.
+
+### I can't connect a recommended connector
+
+- Check that an Owner has enabled the connector at the organization level.
+
+- Confirm that you have an active account with the service.
+
+- Ensure your organization's policies don't block third-party integrations.
+
+- Make sure you've completed the authentication flow properly.
+
+- Contact your administrator or IT department if problems persist.
+
+### My search results seem incomplete
+
+- Verify you've connected the relevant services through the onboarding flow.
+
+- Check that you've authenticated successfully with each connected service.
+
+- Confirm you have permissions to access the content in the original systems.
+
+- Try being more specific about which tools to search or what information you need.
+
+- Narrow your search with date ranges or specific keywords.
+
+- Break complex queries into smaller, focused sections.
+
+### Connected tools aren't working
+
+- Revisit [Settings \> Connectors](http://claude.ai/settings/connectors) to verify authentication status.
+
+- Try disconnecting and reconnecting the problematic connector.
+
+- Check if the connector was recently disabled at the organization level.
+
+### Claude is responding slowly in my search project – what should I do?
+
+**Possible causes:**
+
+- Searching across many large data sources takes time
+
+- Network connectivity issues
+
+- High load on connected services
+
+**Try:**
+
+- Narrowing your search scope
+
+- Searching one tool at a time
+
+- Being more specific about what you're looking for
+
+### What happens if a connector stops working?
+
+If a connector fails:
+
+1.  The dedicated project will search remaining connected tools.
+
+2.  You'll see a notice about the failed connector.
+
+3.  Try reconnecting the tool through [Settings \> Connectors](http://claude.ai/settings/connectors).
+
+4.  Contact an organization Owner if the issue persists.
+
+
+------------------------------------------------------------------------
+
+## Frequently asked questions
+
+### Can I add my own custom connectors to the search project?
+
+Yes. You can add connectors available through [Settings \> Connectors](http://claude.ai/settings/connectors), and you can also add custom connectors if permitted by your organization. The guided onboarding recommends a few connectors, but you're not limited to those.
+
+For more information, refer to [Getting Started with Custom Connectors Using Remote MCP](../14-Connectors/getting-started-with-custom-connectors-using-remote-mcp.md).
+
+### Can I use enterprise search on mobile or desktop apps?
+
+The search project mirrors the availability of regular projects and is fully functional on the Claude web app, Claude Desktop, and Claude Mobile (iOS/Android).
+
+### Will using the search project count against my usage limits?
+
+Yes. Search queries within the project count toward your plan's standard usage limits, just like other projects and conversations.
+
+### How is this feature different from using Research?
+
+**Research**:
+
+- Designed for deep, multi-step research on specific topics
+
+- Performs extensive web and internal data searches automatically
+
+- Takes longer and may use more messages
+
+- Best for complex research projects
+
+**Enterprise search:**
+
+- Optimized for quick knowledge retrieval
+
+- Searches internal sources you've connected
+
+- Faster responses for finding specific information
+
+- Best for everyday knowledge access
+
+See [When should I use web search, extended thinking, and Research?](../15-Claude-AI-Features/when-should-i-use-web-search-extended-thinking-and-research-claude-help-center.md) for more guidance.
+
+### What data can Claude access in my search project?
+
+Claude can only access data within the project that:
+
+1.  Comes from connectors you've individually added and authenticated to.
+
+2.  You have permission to view within the original systems.
+
+3.  Is potentially relevant based on your search queries.
+
+### Does everyone in my organization see the same search results?
+
+No. Search results are permission-aware. You only see data that you have permission to access in each connected system.
+
+### Is my search history visible to others?
+
+No. Conversations within your search project are private to you unless you choose to manually share them, just like other conversations with Claude. However, on Enterprise plans, conversations follow your [organization's data retention policies](../17-Billing-Plans/custom-data-retention-controls-for-enterprise-plans.md).
+
+### How long are search results retained?
+
+Search results are retained with their associated chats. You can delete search data by deleting the associated conversation. Enterprise organizations may have custom data retention policies that apply to all conversations, including those within the search project. Check with your organization Owner for details.
+
+
+---
+## using-enterprise-search.md
+
+# Use enterprise search
+
+
+Enterprise search capabilities are available for users on Claude for Work (Team and Enterprise) plans.
+
+Enterprise search adds a dedicated project for searching across your organization's knowledge sources with optimized instructions and seamless connector integrations.
+
+## What is enterprise search?
+
+We’ve added a pre-configured “Ask Your Org” [project](https://support.claude.com/en/articles/9517075-what-are-projects) that appears in your sidebar. This project is designed specifically for unified knowledge access across your company's tools and data sources. This dedicated workspace provides:
+
+- **Guided setup:** Easy onboarding flow for connecting your work apps.
+
+- **Organization-wide availability:** Available to all members of your organization after an Owner completes the initial setup process.
+
+  - Owners can control which apps are connected to the project.
+
+  - Users need to authenticate with the connected apps before they can start using them.
+
+- **Optimized instructions:** Specialized system prompts maintained by Anthropic for effective searches.
+
+- **Unified access:** Search across multiple data sources (Slack, Microsoft 365, and more) in one place.
+
+------------------------------------------------------------------------
+
+## Get started
+
+### For Owners
+
+The enterprise search project is enabled by default for all Team and Enterprise plan organizations within Admin settings, but Owners will need to complete this initial setup process before other members can use it:
+
+1.  Click “Ask Your Org” in the menu on the left of your screen.
+
+2.  Click the “Set up for your org” button to continue or “Disable” to turn the project off for your team.
+
+3.  If setting up the project, you’ll be prompted to connect some tools to the project.
+
+    1.  You are required to choose a connector for both **Documents** and **Chat**; **Email** is recommended but optional.
+
+    2.  Only enabled connectors will be available in the enterprise search project.
+
+4.  Click “+ Add more” to set up any other tools your team needs.
+
+    1.  Choose between “Select another MCP” to open the Connectors directory, or “+ Add custom connector”
+
+5.  Click “Next” when you’re finished.
+
+6.  On the last screen, you can edit the name of your project. The format will be “Ask \[Name field\],” so whatever you enter here will impact what shows on the left panel.
+
+7.  Enter a description, then click “Finish set up.”
+
+If you decide to stop using the project after setting it up, an Owner will need to manually disable this feature organization-wide to remove it from users’ accounts:
+
+1.  Navigate to **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
+
+2.  Locate "Ask Your Org"
+
+3.  Click the “Disable” button to turn the feature off.
+
+### For users
+
+The enterprise search project will be starred in your sidebar by default when the feature is enabled for your organization.
+
+**First-time setup:**
+
+1.  Click on the "Ask {org name}" project in your sidebar.
+
+2.  Follow the guided onboarding flow to connect to recommended services.
+
+3.  Authenticate with the services you want to search (Slack, Google, Microsoft 365).
+
+    1.  The more connectors you enable, the more comprehensive your search results will be.
+
+4.  Start asking Claude questions about your organization’s knowledge.
+
+## Customize your enterprise search project
+
+**Connecting additional tools:**
+
+After initial setup, you can enable additional connectors in your search project by clicking “Connect” in the **Instructions** section and allowing access to the tools and connectors shown in the modal.
+
+**To unstar or hide the project:**
+
+1.  Click the “...” next to the project in your sidebar
+
+2.  Select "Unstar"
+
+**To adjust connected tools:**
+
+1.  Open the search project.
+
+2.  Click "Search and tools" in the lower left.
+
+3.  Enable or disable specific connectors.
+
+4.  Changes apply to new conversations in the project.
+
+------------------------------------------------------------------------
+
+## How does enterprise search work?
+
+When you ask a question within your organization’s dedicated project, Claude searches across all your connected data sources to generate comprehensive, well-cited responses.
+
+**Example queries:**
+
+- "What is our company's remote work policy?"
+
+- "Summarize discussions about the Q4 product roadmap."
+
+- "Find information about our customer onboarding process."
+
+- "What were the key decisions from last week's leadership meetings?"
+
+Claude will search your connected tools—such as SharePoint documents, Slack conversations, Gmail threads, and Google Drive files—and synthesize information into a unified response with source citations.
+
+## Compare enterprise search to standard projects
+
+[TABLE]
+
+## Use cases
+
+Enterprise Search is particularly valuable for:
+
+**Executive briefings:**
+
+- "What happened yesterday while I was out?"
+
+- "Summarize key updates across the business"
+
+**Project research:**
+
+- "What are the main reasons customers cite for why they pick our competitors?"
+
+- "What are the current blockers on the Infrastructure project?"
+
+**Policy and process questions:**
+
+- "What is our vacation policy?"
+
+- "How do I submit an expense report?"
+
+**Onboarding:**
+
+- "How does our authentication system work?"
+
+- "Who should I talk to, to learn about X?"
+
+**Performance reviews:**
+
+- "Find discussions and documents related to \[employee\]'s Q3 projects"
+
+- "Summarize team contributions to the Platform initiative"
+
+------------------------------------------------------------------------
+
+## Privacy and permissions
+
+- **Permission-aware:** You only see search results from data you have permission to access in the original systems.
+
+- **User-level authentication for connectors:** Each user authenticates with their own credentials to enable connectors.
+
+- **No external indexing:** Search results are generated by making MCP calls. No data from connected services are indexed in our systems for serving queries.
+
+- **Data security:** All data access follows your organization's existing security controls and policies.
+
+## Best practices
+
+**Be specific about sources:** Instead of "Find information about the product launch,” try "Search Slack and Google Drive for discussions about the Q4 product launch."
+
+**Use date ranges:** "Summarize emails from last week about the budget review."
+
+**Combine multiple sources:** "Compile information from SharePoint documents, Slack discussions, and meeting notes about our hiring process."
+
+**Break complex queries into steps:** For thorough research, ask Claude to search one source at a time, then synthesize findings.
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+### The search project isn't appearing in my sidebar
+
+- Verify you’re using a Team or Enterprise plan..
+
+- Have an Owner check that the feature is enabled for your organization.
+
+- Try refreshing your browser or signing out and back in.
+
+### I can't connect a recommended connector
+
+- Check that an Owner has enabled the connector at the organization level.
+
+- Confirm that you have an active account with the service.
+
+- Ensure your organization's policies don't block third-party integrations.
+
+- Make sure you've completed the authentication flow properly.
+
+- Contact your administrator or IT department if problems persist.
+
+### My search results seem incomplete
+
+- Verify you've connected the relevant services through the onboarding flow.
+
+- Check that you've authenticated successfully with each connected service.
+
+- Confirm you have permissions to access the content in the original systems.
+
+- Try being more specific about which tools to search or what information you need.
+
+- Narrow your search with date ranges or specific keywords.
+
+- Break complex queries into smaller, focused sections.
+
+### Connected tools aren't working
+
+- Revisit [Settings \> Connectors](http://claude.ai/settings/connectors) to verify authentication status.
+
+- Try disconnecting and reconnecting the problematic connector.
+
+- Check if the connector was recently disabled at the organization level.
+
+### Claude is responding slowly in my search project – what should I do?
+
+**Possible causes:**
+
+- Searching across many large data sources takes time
+
+- Network connectivity issues
+
+- High load on connected services
+
+**Try:**
+
+- Narrowing your search scope
+
+- Searching one tool at a time
+
+- Being more specific about what you're looking for
+
+### What happens if a connector stops working?
+
+If a connector fails:
+
+1.  The dedicated project will search remaining connected tools.
+
+2.  You'll see a notice about the failed connector.
+
+3.  Try reconnecting the tool through [Settings \> Connectors](http://claude.ai/settings/connectors).
+
+4.  Contact an organization Owner if the issue persists.
+
+
+------------------------------------------------------------------------
+
+## Frequently asked questions
+
+### Can I add my own custom connectors to the search project?
+
+Yes. You can add connectors available through [Settings \> Connectors](http://claude.ai/settings/connectors), and you can also add custom connectors if permitted by your organization. The guided onboarding recommends a few connectors, but you're not limited to those.
+
+For more information, refer to [Getting Started with Custom Connectors Using Remote MCP](../14-Connectors/getting-started-with-custom-connectors-using-remote-mcp.md).
+
+### Can I use enterprise search on mobile or desktop apps?
+
+The search project mirrors the availability of regular projects and is fully functional on the Claude web app, Claude Desktop, and Claude Mobile (iOS/Android).
+
+### Will using the search project count against my usage limits?
+
+Yes. Search queries within the project count toward your plan's standard usage limits, just like other projects and conversations.
+
+### How is this feature different from using Research?
+
+**Research**:
+
+- Designed for deep, multi-step research on specific topics
+
+- Performs extensive web and internal data searches automatically
+
+- Takes longer and may use more messages
+
+- Best for complex research projects
+
+**Enterprise search:**
+
+- Optimized for quick knowledge retrieval
+
+- Searches internal sources you've connected
+
+- Faster responses for finding specific information
+
+- Best for everyday knowledge access
+
+See [When should I use web search, extended thinking, and Research?](../15-Claude-AI-Features/when-should-i-use-web-search-extended-thinking-and-research-claude-help-center.md) for more guidance.
+
+### What data can Claude access in my search project?
+
+Claude can only access data within the project that:
+
+1.  Comes from connectors you've individually added and authenticated to.
+
+2.  You have permission to view within the original systems.
+
+3.  Is potentially relevant based on your search queries.
+
+### Does everyone in my organization see the same search results?
+
+No. Search results are permission-aware. You only see data that you have permission to access in each connected system.
+
+### Is my search history visible to others?
+
+No. Conversations within your search project are private to you unless you choose to manually share them, just like other conversations with Claude. However, on Enterprise plans, conversations follow your [organization's data retention policies](../17-Billing-Plans/custom-data-retention-controls-for-enterprise-plans.md).
+
+### How long are search results retained?
+
+Search results are retained with their associated chats. You can delete search data by deleting the associated conversation. Enterprise organizations may have custom data retention policies that apply to all conversations, including those within the search project. Check with your organization Owner for details.
+
+
+---
+## what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-or.md
+
+4.  What happens to a user's data when they are removed from a Team or Enterprise organization?
+
+# What happens to a user's data when they are removed from a Team or Enterprise organization?
+
+
+This article explains what happens to projects and chats when a member is removed from your Team or Enterprise plan organization.
+
+## Deleting individual accounts within an organization
+
+If you are a non-Owner member of a Team or Enterprise plan, you will need to contact an organization Owner to have your account removed.
+
+## Deleting organization-level accounts
+
+For help with deleting your organization’s Team or Enterprise plan, please **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Note that organization level account deletion requests must be made by your account's Primary Owner.
+
+## Will a user’s projects still be accessible after removing them?
+
+Once a user is removed from your Team or Enterprise organization, whether remaining members can access their projects or not depends on the project's visibility settings.
+
+### Private projects
+
+If the project’s visibility was set to private, other members of the organization will not be able to access it once the team member has been removed from the account. If a team member knows they're working on something in a private project they want to pass on, they will need to adjust the project’s permissions so either everyone in the organization can edit it, or invite specific users and grant them "Can edit" permissions.
+
+### Shared projects
+
+If a deleted team member shared their project with the entire organization, it will appear under the "Team" tab where remaining members can view or edit the project, depending on their permissions. If the deleted team member shared the project with specific users only, it will appear under the "Shared with me" tab for those specific users after the member is removed from the organization.
+
+## Will a user’s chats still be accessible after removing them?
+
+When a user is removed from your Team or Enterprise organization, remaining members will no longer be able to access their chats. This applies to chat snapshots that are shared with the organization. After the user who created the chat is removed, remaining members will see this message when they try to access any shared chat URLs: "Conversation not found. The requested conversation either doesn't exist or you don't have permission to access it."
+
+Note that the removed user’s data will still be included in any **[data exports](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** run by your organization’s Primary Owner. For Enterprise organizations specifically, the removed user’s data will still be subject to any configured **[custom data retention settings](../17-Billing-Plans/custom-data-retention-controls-for-enterprise-plans.md)**.
+
+## What happens if a member is re-added to an organization?
+
+If a team member is removed and later added back to the same organization using the same email address, previous chats and projects will be restored. The Primary Owner can also always export the member's project data and chats (note that customer data retention settings may impact this).
+
+To learn more about Anthropic’s data retention periods see **[here](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**.
+
+
+---
+## who-owns-and-manages-the-data-of-my-team.md
+
+4.  Who owns and manages the data of my team?
+
+# Who owns and manages the data of my team?
+
+
+This article provides important information about your Claude for Work account associated with your organization's Claude for Work plan (Team or Enterprise plans). It includes details about data access and control that were shared with you when your Claude for Work plan account was set up.
+
+*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see [here](https://privacy.claude.com/en/collections/10663362-consumers).*
+
+## Account Management
+
+Your organization's designated Primary Owner manages your Work account and all associated data. This includes the ability to request access to your user data through data exports, which may contain your conversations with Claude, uploaded files, and usage patterns. Primary Owners can also remove your access to the Claude for Work plan account if necessary.
+
+Your organization determines which Claude services and features you can access in your Claude for Work plan account and they may choose to limit certain functionality.
+
+## Governing Agreements
+
+The use of your Claude for Work plan account is governed by the agreement between Anthropic and your organization. Please contact your Primary Owner for details of this agreement.
+
+While Anthropic’s [Privacy Policy](https://www.anthropic.com/legal/privacy) describes how we collect, use, and share personal information when acting as a data controller in providing the Claude services to your organization, please note that the Anthropic [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) and [Privacy Policy](https://www.anthropic.com/legal/privacy) do not apply to the use of the Claude for Work plan where Anthropic acts as the data processor.
+
+## Organizational Policies
+
+Your organization may have its own internal policies regarding usage of Claude for Work plan. Please refer to your Primary Owner for guidance.
+
+## Questions about Privacy
+
+If you have any questions about data privacy in your Claude for Work plan account, we encourage you to contact your organization's account owner(s).

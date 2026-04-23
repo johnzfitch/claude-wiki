@@ -1,0 +1,46 @@
+# Agents Patterns
+
+*41 documents*
+
+
+- [Building a One-Liner Research Agent](00-the-one-liner-research-agent.md) - Research tasks consume hours of expert time: market analysts manually
+- [Define the model to use throughout this notebook](01-the-chief-of-staff-agent.md) - from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKClient
+- [02 - The Observability Agent {#02](02-the-observability-agent.md) - the-observability-agent}"
+- [Advanced Workflow Patterns](advanced-workflows.md) - Multi-step command sequences and composition patterns for complex workflows.
+- [AI-Assisted Agent Generation Template](agent-creation-prompt.md) - Use this template to generate agents using Claude with the agent creation system prompt.
+- [Agent Creation System Prompt](agent-creation-system-prompt.md) - This is the exact system prompt used by Claude Code's agent generation feature, refined through extensive production use.
+- [Agent Creator](agent-creator.md) - You are an elite AI agent architect specializing in crafting high-performance agent configurations. Your expertise lies in translating user requiremen
+- [Orchestrate teams of Claude Code sessions](agent-teams.md) - Coordinate multiple Claude Code instances working together as a team, with shared tasks, inter-agent messaging, and centralized management.
+- [Observability Agent Architecture](architecture-diagram.md) - graph TD
+- [Example 1: Chain workflow for structured data extraction and formatting](basic-workflows.md) - This notebook demonstrates three simple multi-LLM workflows. They trade
+- [Citations Agent](citations-agent.md) - You are an agent for adding correct citations to a research report. You are given a report within <synthesized_text> tags, which was generated based o
+- [Create custom subagents](cla-sub-agents.md) - Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
+- [Claude 3 RAG Agents with LangChain v1](claude-3-rag-agent.md) - :::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\"}" id="1eOnr6z_zLoc" outputId="53f4214a-c00b-4dea-d1fa-38d0d6693fe9"}
+- [Coordinating subagent outputs and alignment](claude-coordinating-subagent-outputs-and-alignment.md) - what's a positive thing to add to an AGENTS.md a forward momentum way to say "Wait for all subagents to complete their tasks, then read their output, 
+- [Common workflows](common-workflows.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Complete Agent Examples](complete-agent-examples.md) - Full, production-ready agent examples for common use cases. Use these as templates for your own agents.
+- [Component Organization Patterns](component-patterns.md) - Advanced patterns for organizing plugin components effectively.
+- [Creating a Customer Service Agent with Client-Side Tools](customer-service-agent.md) - In this recipe, we\'ll demonstrate how to create a customer service
+- [Command Documentation Patterns](documentation-patterns.md) - Strategies for creating self-documenting, maintainable commands with excellent user experience.
+- [Building Effective Agents](engineering-building-effective-agents.md) - <!-- Source: https://www.anthropic.com/engineering/building-effective-agents -->
+- [Chief of Staff Agent Architecture](flow-diagram.md) - graph TD
+- [Interactive Command Patterns](interactive-commands.md) - Comprehensive guide to creating commands that gather user feedback and make decisions through the AskUserQuestion tool.
+- [MCP connector](managed-agents-custom-mcp.md) - Connect MCP servers to your agents for access to external tools and data sources.
+- [Session event stream](managed-agents-how-they-work.md) - Send events, stream responses, and interrupt or redirect your session mid-execution.
+- [Define outcomes](managed-agents-output-patterns.md) - Tell the agent what 'done' looks like, and let it iterate until it gets there.
+- [Claude Managed Agents overview](managed-agents-overview.md) - Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.
+- [Get started with Claude Managed Agents](managed-agents-quickstart.md) - Create your first autonomous agent.
+- [Tools](managed-agents-tool-use.md) - Configure tools available to your agent.
+- [MCP connector](mcp-connector.md) - Claude's Model Context Protocol (MCP) connector feature enables you to connect to remote MCP servers directly from the Messages API without a separate
+- [Context Editing & Memory for Long-Running Agents {#context-editing--memory-for-long-running-agents}](memory-cookbook.md) - AI agents that run across multiple sessions or handle long-running tasks
+- [Multi-Document Agents](multi-document-agents.md) - In this notebook we will look into Building RAG when you have a large
+- [Orchestrator-Workers Workflow](orchestrator-workers.md) - Have you ever needed multiple perspectives on the same task, but
+- [ReAct Agent](react-agent.md) - In this notebook we will look into creating ReAct Agent over tools.
+- [Remote MCP servers](remote-mcp-servers.md) - Several companies have deployed remote MCP servers that developers can connect to via the Anthropic MCP connector API. These servers expand the capabi
+- [Research Lead Agent](research-lead-agent.md) - You are an expert research lead, focused on high-level research strategy, planning, efficient delegation to subagents, and final report writing. Your 
+- [Research Subagent](research-subagent.md) - You are a research subagent working as part of a team. The current date is {{.CurrentDate}}. You have been given a clear <task> provided by a lead age
+- [Create custom subagents](sub-agents.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Subagents in the SDK](subagents.md) - Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.
+- [System Prompt Design Patterns](system-prompt-design.md) - Complete guide to writing effective agent system prompts that enable autonomous, high-quality operation.
+- [Agent Triggering Examples: Best Practices](triggering-examples.md) - Complete guide to writing effective `<example>` blocks in agent descriptions for reliable triggering.
+- [Using Haiku as a sub-agent](using-sub-agents.md) - In this recipe, we\'ll demonstrate how to analyze Apple\'s 2023

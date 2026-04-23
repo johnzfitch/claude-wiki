@@ -1,0 +1,79 @@
+# Claude Code CLI
+
+*74 documents*
+
+
+- [Authentication - Claude Code Docs](authentication-claude-code-docs.md) - Log in to Claude Code and configure authentication for individuals, teams, and organizations.
+- [Auto-Compact Deep Dive — Window vs Percentage Override](auto-compact-deep-dive.md) - **Topic**: `CLAUDE_CODE_AUTO_COMPACT_WINDOW` vs `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE`
+- [Claude Code 2.1.76 — Auto-Memory Internals](auto-memory-internals.md) - How the post-sampling hook system and auto-memory extraction work under the hood.
+- [Automatic Context Compaction](automatic-context-compaction.md) - Long-running agentic tasks can often exceed context limits. Tool heavy
+- [Best Practices for Claude Code](best-practices.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Built-in commands - Claude Code Docs](built-in-commands-claude-code-docs.md) - Complete reference for built-in commands available in Claude Code.
+- [Channels reference](channels-reference.md) - Build an MCP server that pushes webhooks, alerts, and chat messages into a Claude Code session. Reference for the channel contract: capability declara
+- [Push events into a running session with channels](channels.md) - Use channels to push messages, alerts, and webhooks into your Claude Code session from an MCP server. Forward CI results, chat messages, and monitorin
+- [Checkpointing - Claude Code Docs](checkpointing-claude-code-docs.md) - Track, rewind, and summarize Claude’s edits and conversation to manage session state.
+- [Checkpointing](checkpointing.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Use Claude Code with Chrome (beta)](chrome.md) - Connect Claude Code to your Chrome browser to test web apps, debug with console logs, automate form filling, and extract data from web pages.
+- [Claude Code Architecture for Zack's Setup](claude-code-architecture.md) - Arch Linux (omarchy) · Ryzen 9800X3D · RTX 4090 · 10Gbps fiber
+- [Claude Code Built In Tools Reference](claude-code-built-in-tools-reference.md) - This is a guide I created while exploring the built-in tools Claude Code ships with and how it’s trained/prompted to use them. Included below is every
+- [Claude Code on Amazon Bedrock - Claude Code Docs](claude-code-on-amazon-bedrock-claude-code-docs.md) - Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting.
+- [Claude Code on Google Vertex AI - Claude Code Docs](claude-code-on-google-vertex-ai-claude-code-docs.md) - Learn about configuring Claude Code through Google Vertex AI, including setup, IAM configuration, and troubleshooting.
+- [Claude Code on Microsoft Foundry - Claude Code Docs](claude-code-on-microsoft-foundry-claude-code-docs.md) - Learn about configuring Claude Code through Microsoft Foundry, including setup, configuration, and troubleshooting.
+- [Claude Code on the web](claude-code-on-the-web.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Claude Code overview - Claude Code Docs](claude-code-overview-claude-code-docs.md) - Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools. Available in y
+- [Claude Code Plan Mode Configuration](claude-code-plan-mode.md) - Comprehensive guide to plan mode behavior, environment variables, and agent configuration.
+- [Six skills for financial service professionals | Claude](claude-for-financial-services-skills.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [CLI reference](cli-reference.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Example Clients](clients.md) - A list of applications that support MCP integrations
+- [Code Review](code-review.md) - Set up automated PR reviews that catch logic errors, security vulnerabilities, and regressions using multi-agent analysis of your full codebase.
+- [Let Claude use your computer from the CLI](computer-use.md) - Enable computer use in the Claude Code CLI so Claude can open apps, click, type, and see your screen on macOS. Test native apps, debug visual issues, 
+- [Configure server-managed settings (public beta) - Claude Code Docs](configure-server-managed-settings-public-beta-claude-code-docs.md) - Centrally configure Claude Code for your organization through server-delivered settings, without requiring device management infrastructure.
+- [Configure Hookify Rules](configure.md) - **Load hookify:writing-rules skill first** to understand rule format.
+- [Manage costs effectively](costs.md) - Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and prepr
+- [Claude Code CoWork Protocol Specification](cowork-protocol-spec.md) - Reverse-engineered from claude binaries 2.1.74-2.1.75 (2026-03-11 to 2026-03-14).
+- [How to create custom Skills | Claude Help Center](creating-custom-skills.md) - Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.c
+- [Development containers](devcontainer.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Development containers - Claude Code Docs](development-containers-claude-code-docs.md) - Learn about the Claude Code development container for teams that need consistent, secure environments.
+- [Claude Binary Intel Diff](diff.md) - - New: `/home/zack/claude-binary/2.1.74/2.1.74`
+- [Discover and install prebuilt plugins through marketplaces - Claude Code Docs](discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs.md) - Find and install plugins from marketplaces to extend Claude Code with new commands, agents, and capabilities.
+- [Enterprise network configuration - Claude Code Docs](enterprise-network-configuration-claude-code-docs.md) - Configure Claude Code for enterprise environments with proxy servers, custom Certificate Authorities (CA), and mutual Transport Layer Security (mTLS) 
+- [Environment variables - Claude Code Docs](environment-variables-claude-code-docs.md) - Complete reference for environment variables that control Claude Code behavior.
+- [Speed up responses with fast mode](fast-mode.md) - Get faster Opus 4.6 responses in Claude Code by toggling fast mode.
+- [Extend Claude Code](features-overview.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Fullscreen rendering](fullscreen.md) - Enable a smoother, flicker-free rendering mode with mouse support and stable memory usage in long conversations.
+- [Claude Code GitHub Actions](github-actions.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Claude Code GitLab CI/CD](gitlab-ci-cd.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Run Claude Code programmatically](headless.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [How Claude Code works](how-claude-code-works.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [How to create custom Skills | Claude Help Center](how-to-create-custom-skills.md) - Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.c
+- [How to use the single-cell-rna-qc skill with Claude | Claude](how-to-use-the-single-cell-rna-qc-skill-with-claude.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [`/init-verifiers` -- Automated Verifier Skill Scaffolding](init-verifiers.md) - Bundled skill that creates `.claude/skills/verifier-*/SKILL.md` files so the **Verify
+- [Interactive mode - Claude Code Docs](interactive-mode-claude-code-docs.md) - Complete reference for keyboard shortcuts, input modes, and interactive features in Claude Code sessions.
+- [Interactive mode](interactive-mode.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Customize keyboard shortcuts](keybindings.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Legal and compliance - Claude Code Docs](legal-and-compliance-claude-code-docs.md) - Legal agreements, compliance certifications, and security information for Claude Code.
+- [Hook Lifecycle Map — Claude Code 2.1.59](lifecycle-map.md) - Mapping every hook event to its position in the conversation/process lifecycle.
+- [LLM gateway configuration - Claude Code Docs](llm-gateway-configuration-claude-code-docs.md) - Learn how to configure Claude Code to work with LLM gateway solutions. Covers gateway requirements, authentication configuration, model selection, and
+- [Output styles](output-styles.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Choose a permission mode](permission-modes.md) - Control whether Claude asks before editing files or running commands. Cycle modes with Shift+Tab in the CLI or use the mode selector in VS Code, Deskt
+- [Platforms and integrations](platforms.md) - Choose where to run Claude Code and what to connect it to. Compare the CLI, Desktop, VS Code, JetBrains, web, mobile, and integrations like Chrome, Sl
+- [Continue local sessions from any device with Remote Control](remote-control.md) - Continue a local Claude Code session from your phone, tablet, or any browser using Remote Control. Works with claude.ai/code and the Claude mobile app
+- [Run prompts on a schedule - Claude Code Docs](run-prompts-on-a-schedule-claude-code-docs.md) - Use /loop and the cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Claude Code session.
+- [Sandboxing](sandboxing.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Run prompts on a schedule](scheduled-tasks.md) - Use /loop and the cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Claude Code session.
+- [Security - Claude Code Docs](security-claude-code-docs.md) - Learn about Claude Code’s security safeguards and best practices for safe usage.
+- [Session Memory Compaction](session-memory-compaction.md) - Long-running conversations with Claude can exceed context limits,
+- [Claude Code settings](settings.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Claude Code in Slack](slack.md) - Delegate coding tasks directly from your Slack workspace. When you mention `@Claude` with a coding task, Claude automatically detects the intent and c
+- [Status line configuration](statusline.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Tag Sequence](tag-sequence.md) - - rust-v0.105.0-alpha.1
+- [Optimize your terminal setup](terminal-config.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Using MCP Tools in Commands and Agents](tool-usage.md) - Complete guide to using MCP tools effectively in Claude Code plugin commands and agents.
+- [Tools reference - Claude Code Docs](tools-reference-claude-code-docs.md) - Complete reference for the tools Claude Code can use, including permission requirements.
+- [Plan in the cloud with ultraplan](ultraplan.md) - Start a plan from your CLI, draft it on Claude Code on the web, then execute it remotely or back in your terminal
+- [Use Skills in Claude | Claude Help Center](use-skills-in-claude.md) - Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.c
+- [Voice dictation](voice-dictation.md) - Use push-to-talk voice dictation to speak your prompts instead of typing them in the Claude Code CLI.
+- [Get started with Claude Code on the web](web-quickstart.md) - Run Claude Code in the cloud from your browser or phone. Connect a GitHub repository, submit a task, and review the PR without local setup.
+- [Schedule tasks on the web](web-scheduled-tasks.md) - Schedule recurring Claude Code tasks on a cron-like interval. Automate PR reviews, dependency audits, and CI triage in cloud sessions.
+- [What are Skills? | Claude Help Center](what-are-skills.md) - Skills are available for users on free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](https://support.c
+- [Zero data retention - Claude Code Docs](zero-data-retention-claude-code-docs.md) - Learn about Zero Data Retention (ZDR) for Claude Code on Claude for Enterprise, including scope, disabled features, and how to request enablement.

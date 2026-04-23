@@ -1,3 +1,9 @@
+---
+title: "Using Haiku as a sub-agent"
+category: "09-Agents-Patterns"
+tags: ["agents", "prompting", "subagents"]
+---
+
 # Using Haiku as a sub-agent
 
 In this recipe, we\'ll demonstrate how to analyze Apple\'s 2023

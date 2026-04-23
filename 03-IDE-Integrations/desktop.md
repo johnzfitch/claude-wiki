@@ -1,3 +1,9 @@
+---
+title: "Claude Code on desktop"
+category: "03-IDE-Integrations"
+tags: ["claude-code", "cli", "desktop", "enterprise"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -151,15 +157,15 @@ You can extend Claude Code with custom commands, automated workflows, and extern
 
 For local sessions, click the **...** button before starting and select **Connectors** to add integrations like Google Calendar, Slack, GitHub, Linear, Notion, and more. Connectors must be configured before the session starts and are only available for local sessions. Once connected, Claude can read your calendar, send messages, create issues, and interact with your tools directly. You can ask Claude what connectors are configured in your session.
 
-Connectors are [MCP (Model Context Protocol) servers](/en/mcp) with built-in setup. You can also [create custom connectors](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp) or add MCP servers manually via [configuration files](/en/mcp#configure-mcp-servers).
+Connectors are [MCP (Model Context Protocol) servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) with built-in setup. You can also [create custom connectors](../14-Connectors/getting-started-with-custom-connectors-using-remote-mcp.md) or add MCP servers manually via [configuration files](/en/mcp#configure-mcp-servers).
 
 ### Create custom skills
 
-[Skills](/en/skills) are reusable prompts that extend Claude's capabilities. For example, you could create a `review` skill that runs your standard code review checklist, or a `deploy` skill that walks through your deployment steps. Skills are defined as markdown files in `.claude/skills/` and can include instructions, context, and even call other tools. Ask Claude what skills are available or to run a specific skill. Claude can also help you create a skill if you describe what you want, or see [skills](/en/skills) to learn how to write them yourself.
+[Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) are reusable prompts that extend Claude's capabilities. For example, you could create a `review` skill that runs your standard code review checklist, or a `deploy` skill that walks through your deployment steps. Skills are defined as markdown files in `.claude/skills/` and can include instructions, context, and even call other tools. Ask Claude what skills are available or to run a specific skill. Claude can also help you create a skill if you describe what you want, or see [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) to learn how to write them yourself.
 
 ### Automate workflows with hooks
 
-[Hooks](/en/hooks) run shell commands automatically in response to Claude Code events. For example, you could run a linter after every file edit, auto-format code, or send notifications when tasks complete. Hooks are configured in your [settings files](/en/settings). See [hooks](/en/hooks) for available events and configuration examples.
+[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md) run shell commands automatically in response to Claude Code events. For example, you could run a linter after every file edit, auto-format code, or send notifications when tasks complete. Hooks are configured in your [settings files](/en/settings). See [hooks](../07-Hooks/hooks-reference-claude-code-docs.md) for available events and configuration examples.
 
 ## Environment configuration
 
@@ -192,8 +198,8 @@ If you're used to CLI flags, the table below shows the Desktop equivalent for ea
 Desktop and CLI read the same configuration files, so your setup carries over:
 
 * **[CLAUDE.md](/en/memory)** and **CLAUDE.local.md** files in your project are used by both
-* **[MCP servers](/en/mcp)** configured in `~/.claude.json` or `.mcp.json` work in both
-* **[Hooks](/en/hooks)** and **[skills](/en/skills)** defined in settings apply to both
+* **[MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md)** configured in `~/.claude.json` or `.mcp.json` work in both
+* **[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md)** and **[skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)** defined in settings apply to both
 * **[Settings](/en/settings)** in `~/.claude.json` and `~/.claude/settings.json` are shared
 * **Models** (Sonnet, Opus, Haiku) are available in both (Desktop requires selecting before starting a session)
 
@@ -288,7 +294,7 @@ If you see "Git LFS is required by this repository but is not installed," your r
 
 ## Enterprise configuration
 
-Organizations can disable local Claude Code use in the desktop application with the `isClaudeCodeForDesktopEnabled` [enterprise policy option](https://support.claude.com/en/articles/12622667-enterprise-configuration#h_003283c7cb). Additionally, Claude Code on the web can be disabled in your [admin settings](https://claude.ai/admin-settings/claude-code).
+Organizations can disable local Claude Code use in the desktop application with the `isClaudeCodeForDesktopEnabled` [enterprise policy option](../13-Enterprise-Admin/enterprise-configuration.md#h_003283c7cb). Additionally, Claude Code on the web can be disabled in your [admin settings](https://claude.ai/admin-settings/claude-code).
 
 ## Related resources
 
@@ -297,4 +303,4 @@ Organizations can disable local Claude Code use in the desktop application with 
 * [Common workflows](/en/common-workflows): Tutorials for debugging, refactoring, testing, and more
 * [Settings reference](/en/settings): Configure Claude Code behavior with settings files
 * [Claude Desktop support](https://support.claude.com/en/collections/16163169-claude-desktop): Help articles for the Chat tab and general desktop app usage
-* [Enterprise configuration](https://support.claude.com/en/articles/12622667-enterprise-configuration): Admin policies for organizational deployments
+* [Enterprise configuration](../13-Enterprise-Admin/enterprise-configuration.md): Admin policies for organizational deployments

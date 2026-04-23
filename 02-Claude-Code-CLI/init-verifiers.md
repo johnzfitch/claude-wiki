@@ -1,3 +1,9 @@
+---
+title: "`/init-verifiers` -- Automated Verifier Skill Scaffolding"
+category: "02-Claude-Code-CLI"
+tags: ["agents", "authentication", "claude-code"]
+---
+
 # `/init-verifiers` -- Automated Verifier Skill Scaffolding
 
 Bundled skill that creates `.claude/skills/verifier-*/SKILL.md` files so the **Verify

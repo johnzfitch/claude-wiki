@@ -1,3 +1,9 @@
+---
+title: "Component Organization Patterns"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Component Organization Patterns
 
 Advanced patterns for organizing plugin components effectively.

@@ -1,3 +1,9 @@
+---
+title: "Agent Skills"
+category: "04-API-Reference/Other"
+tags: ["agents", "api", "skills"]
+---
+
 Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts, templates) that Claude uses automatically when relevant.
 
 Skills are reusable, filesystem-based resources that provide Claude with domain-specific expertise: workflows, context, and best practices that transform general-purpose agents into specialists. Unlike prompts (conversation-level instructions for one-off tasks), Skills load on-demand and eliminate the need to repeatedly provide the same guidance across multiple conversations.
@@ -126,15 +132,15 @@ To learn more, see [Use Skills with the Claude API](https://platform.claude.com/
 
 Custom Skills in Claude Code are filesystem-based and don't require API uploads.
 
-To learn more, see [Use Skills in Claude Code](https://code.claude.com/docs/en/skills).
+To learn more, see [Use Skills in Claude Code](../../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md).
 
-The [Claude Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview) supports custom Skills through filesystem-based configuration.
+The [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md) supports custom Skills through filesystem-based configuration.
 
 **Custom Skills**: Create Skills as directories with SKILL.md files in `.claude/skills/`. Enable Skills by including `"Skill"` in your `allowed_tools` configuration.
 
 Skills in the Agent SDK are then automatically discovered when the SDK runs.
 
-To learn more, see [Agent Skills in the SDK](https://platform.claude.com/docs/en/agent-sdk/skills).
+To learn more, see [Agent Skills in the SDK](../../05-Agent-SDK/agent-sdk-skills.md).
 
 [Claude.ai](https://claude.ai/) supports both pre-built Agent Skills and custom Skills.
 
@@ -144,9 +150,9 @@ To learn more, see [Agent Skills in the SDK](https://platform.claude.com/docs/en
 
 To learn more about using Skills in Claude.ai, see the following resources in the Claude Help Center:
 
--   [What are Skills?](https://support.claude.com/en/articles/12512176-what-are-skills)
+-   [What are Skills?](../../02-Claude-Code-CLI/what-are-skills.md)
 -   [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
--   [How to create custom Skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)
+-   [How to create custom Skills](../../02-Claude-Code-CLI/creating-custom-skills.md)
 -   [Teach Claude your way of working using Skills](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)
 
 Every Skill requires a `SKILL.md` file with YAML frontmatter:

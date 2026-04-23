@@ -1,3 +1,9 @@
+---
+title: "Extracting Structured JSON using Claude and Tool Use"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Extracting Structured JSON using Claude and Tool Use
 
 In this cookbook, we\'ll explore various examples of using Claude and

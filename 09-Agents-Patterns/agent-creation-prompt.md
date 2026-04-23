@@ -1,3 +1,9 @@
+---
+title: "AI-Assisted Agent Generation Template"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # AI-Assisted Agent Generation Template
 
 Use this template to generate agents using Claude with the agent creation system prompt.

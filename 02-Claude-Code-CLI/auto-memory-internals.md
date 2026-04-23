@@ -1,3 +1,9 @@
+---
+title: "Claude Code 2.1.76 — Auto-Memory Internals"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "prompting"]
+---
+
 # Claude Code 2.1.76 — Auto-Memory Internals
 
 How the post-sampling hook system and auto-memory extraction work under the hood.

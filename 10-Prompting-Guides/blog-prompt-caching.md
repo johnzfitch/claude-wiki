@@ -1,3 +1,9 @@
+---
+title: "Prompt Caching with Claude"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 <!-- Source: https://claude.com/blog/prompt-caching -->
 
 # Prompt Caching with Claude

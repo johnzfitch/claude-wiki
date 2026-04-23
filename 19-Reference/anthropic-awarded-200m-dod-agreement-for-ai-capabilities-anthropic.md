@@ -1,0 +1,59 @@
+---
+title: "Anthropic awarded $200M DOD agreement for AI capabilities \\ Anthropic"
+source_url: "https://www.anthropic.com/news/anthropic-and-the-department-of-defense-to-advance-responsible-ai-in-defense-operations"
+category: "19-Reference"
+fetched_at: "2026-03-20T10:36:47Z"
+---
+
+# Anthropic and the Department of Defense to advance responsible AI in defense operations
+
+Jul 14, 2025
+
+The U.S. Department of Defense (DOD), through its Chief Digital and Artificial Intelligence Office (CDAO), has awarded Anthropic a two-year prototype other transaction agreement with a \$200 million ceiling. As part of the agreement, Anthropic will prototype frontier AI capabilities that advance U.S. national security.
+
+"This award opens a new chapter in Anthropic’s commitment to supporting U.S. national security, which is where our earliest federal deployments began more than a year ago,” said Thiyagu Ramasamy, Anthropic's Head of Public Sector. "We look forward to deepening our collaboration across the Department to solve critical mission challenges through our technical expertise, products like our Claude Gov models and accredited Claude for Enterprise offerings, and leadership in safe and responsible AI.”
+
+With CDAO and other DOD organizations and commands, we'll engage in:
+
+- Working directly with the DOD to identify where frontier AI can deliver the most impact, then developing working prototypes fine-tuned on DOD data
+- Collaborating with defense experts to anticipate and mitigate potential adversarial uses of AI, drawing on our advanced risk forecasting capabilities
+- Exchanging technical insights, performance data, and operational feedback to accelerate responsible AI adoption across the defense enterprise
+
+## Our commitment to responsible AI deployment
+
+At the heart of this work lies our conviction that the most powerful technologies carry the greatest responsibility. We're building AI systems to be reliable, interpretable, and steerable precisely because we recognize that in government contexts, where decisions affect millions and stakes couldn't be higher, these qualities are essential.
+
+We believe democracies must work together to ensure AI development strengthens democratic values globally by maintaining technological leadership to protect against authoritarian misuse.
+
+## Building on a strong foundation of government partnerships
+
+Our commitment to responsible AI deployment, including rigorous safety testing, collaborative governance development, and strict usage policies, makes Claude uniquely suited for sensitive national security applications.
+
+This agreement with CDAO builds upon Anthropic's growing ecosystem of public sector deployments. Last week, we [announced](claude-for-enterprise-powers-llnl-research-anthropic.md) that Lawrence Livermore National Laboratory will make advanced AI capabilities available to over 10,000 scientists, researchers, and staff. LLNL's expansion of Claude access will help bolster research across nuclear deterrence, energy security, and materials science.
+
+We’ve accelerated mission impact across U.S. defense workflows with partners like Palantir, where Claude is integrated into mission workflows on classified networks. This has enabled U.S. defense and intelligence organizations with powerful AI tools to rapidly process and analyze vast amounts of complex data.
+
+[Claude Gov models](claude-gov-models-for-u-s-national-security-customers-anthropic.md), which we custom built for national security customers, already power deployments by agencies across the national security community atop infrastructure powered by Amazon Web Services(AWS).
+
+Organizations interested in transforming their operations with Claude can [contact our public sector team](mailto:pubsec@anthropic.com) to learn more and get started.
+
+\
+
+
+## Related content
+
+### Anthropic invests \$100 million into the Claude Partner Network
+
+We’re launching the Claude Partner Network, a program for partner organizations helping enterprises adopt Claude.
+
+[Read more](/news/claude-partner-network)
+
+### Introducing The Anthropic Institute
+
+We’re launching The Anthropic Institute, a new effort to confront the most significant challenges that powerful AI will pose to our societies.
+
+[Read more](/news/the-anthropic-institute)
+
+### Sydney will become Anthropic’s fourth office in Asia-Pacific
+
+[Read more](/news/sydney-fourth-office-asia-pacific)

@@ -1,3 +1,8 @@
+---
+title: "New Functions Module: 2.1.70"
+category: "19-Reference"
+---
+
 # New Functions Module: 2.1.70
 
 ## Summary

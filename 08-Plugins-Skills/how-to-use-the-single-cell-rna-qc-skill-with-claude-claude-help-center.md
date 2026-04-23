@@ -1,3 +1,9 @@
+---
+title: "How To Use The Single Cell Rna Qc Skill With Claude Claude Help Center"
+category: "08-Plugins-Skills"
+tags: ["claude-code", "plugins"]
+---
+
 ## What is the single-cell-rna-qc skill?
 
 The single-cell-rna-qc skill gives Claude the ability to perform quality control on single-cell RNA-seq data using scverse best practices with MAD-based filtering and comprehensive visualizations for .h5a and .h5ad files.
@@ -30,16 +36,16 @@ Using Skills in Claude
 
 Getting Started with Claude for Life Sciences
 
-](https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences)[
+](../01-Getting-Started/getting-started-with-claude-for-life-sciences.md)[
 
 Using the BioRender Connector in Claude
 
-](https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude)[
+](../14-Connectors/using-the-biorender-connector-in-claude.md)[
 
 Using the Synapse.org Connector in Claude
 
-](https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude)[
+](../14-Connectors/using-the-synapse-org-connector-in-claude.md)[
 
 Using the 10x Genomics Extension in Claude
 
-](https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude)
+](../15-Claude-AI-Features/using-the-10x-genomics-extension-in-claude.md)

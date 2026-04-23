@@ -1,3 +1,9 @@
+---
+title: "Interactive mode"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -77,7 +83,7 @@
 
 | Shortcut     | Description       | Notes                                                                |
 | :----------- | :---------------- | :------------------------------------------------------------------- |
-| `/` at start | Command or skill  | See [built-in commands](#built-in-commands) and [skills](/en/skills) |
+| `/` at start | Command or skill  | See [built-in commands](#built-in-commands) and [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) |
 | `!` at start | Bash mode         | Run commands directly and add execution output to the session        |
 | `@`          | File path mention | Trigger file path autocomplete                                       |
 
@@ -85,7 +91,7 @@
 
 Built-in commands are shortcuts for common actions. The table below covers commonly used commands but not all available options. Type `/` in Claude Code to see the full list, or type `/` followed by any letters to filter.
 
-To create your own commands you can invoke with `/`, see [skills](/en/skills).
+To create your own commands you can invoke with `/`, see [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md).
 
 | Command                   | Purpose                                                                                                                     |
 | :------------------------ | :-------------------------------------------------------------------------------------------------------------------------- |
@@ -297,8 +303,8 @@ When working on a branch with an open pull request, Claude Code displays a click
 
 ## See also
 
-* [Skills](/en/skills) - Custom prompts and workflows
-* [Checkpointing](/en/checkpointing) - Rewind Claude's edits and restore previous states
-* [CLI reference](/en/cli-reference) - Command-line flags and options
-* [Settings](/en/settings) - Configuration options
-* [Memory management](/en/memory) - Managing CLAUDE.md files
+* [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) - Custom prompts and workflows
+* [Checkpointing](checkpointing-claude-code-docs.md) - Rewind Claude's edits and restore previous states
+* [CLI reference](cli-reference.md) - Command-line flags and options
+* [Settings](settings.md) - Configuration options
+* [Memory management](memory.md) - Managing CLAUDE.md files

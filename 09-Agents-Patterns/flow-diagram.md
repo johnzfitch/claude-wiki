@@ -1,3 +1,9 @@
+---
+title: "Chief of Staff Agent Architecture"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Chief of Staff Agent Architecture
 
 ```mermaid

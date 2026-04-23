@@ -1,3 +1,9 @@
+---
+title: "Complete Agent Examples"
+category: "09-Agents-Patterns"
+tags: ["agents", "security"]
+---
+
 # Complete Agent Examples
 
 Full, production-ready agent examples for common use cases. Use these as templates for your own agents.

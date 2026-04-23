@@ -1,3 +1,8 @@
+---
+title: "Resources Tutorials Simplify Your Browsing Experience With Claude For Chrome"
+category: "03-IDE-Integrations"
+---
+
 <!-- Source: https://claude.com/resources/tutorials/simplify-your-browsing-experience-with-claude-for-chrome -->
 
 :root {

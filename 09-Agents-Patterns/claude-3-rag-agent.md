@@ -1,3 +1,9 @@
+---
+title: "Claude 3 RAG Agents with LangChain v1"
+category: "09-Agents-Patterns"
+tags: ["agents", "rag"]
+---
+
 :::: {.cell .code colab="{\"base_uri\":\"https://localhost:8080/\"}" id="1eOnr6z_zLoc" outputId="53f4214a-c00b-4dea-d1fa-38d0d6693fe9"}
 ``` python
 !python --version

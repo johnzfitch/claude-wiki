@@ -1,3 +1,9 @@
+---
+title: "Enterprise deployment overview"
+category: "01-Getting-Started"
+tags: ["enterprise"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -15,7 +21,7 @@ For most organizations, Claude for Teams or Claude for Enterprise provides the b
 
 **Claude for Enterprise** adds SSO and domain capture, role-based permissions, compliance API access, and managed policy settings for deploying organization-wide Claude Code configurations. Best for larger organizations with security and compliance requirements.
 
-Learn more about [Team plans](https://support.claude.com/en/articles/9266767-what-is-the-team-plan) and [Enterprise plans](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan).
+Learn more about [Team plans](../17-Billing-Plans/what-is-the-team-plan.md) and [Enterprise plans](../17-Billing-Plans/what-is-the-enterprise-plan.md).
 
 If your organization has specific infrastructure requirements, compare the options below:
 
@@ -110,16 +116,16 @@ Select a deployment option to view setup instructions:
 
 * [Claude for Teams or Enterprise](/en/iam#claude-for-teams-or-enterprise-recommended)
 * [Anthropic Console](/en/iam#claude-console-authentication)
-* [Amazon Bedrock](/en/amazon-bedrock)
-* [Google Vertex AI](/en/google-vertex-ai)
-* [Microsoft Foundry](/en/microsoft-foundry)
+* [Amazon Bedrock](../02-Claude-Code-CLI/claude-code-on-amazon-bedrock-claude-code-docs.md)
+* [Google Vertex AI](../02-Claude-Code-CLI/claude-code-on-google-vertex-ai-claude-code-docs.md)
+* [Microsoft Foundry](../02-Claude-Code-CLI/claude-code-on-microsoft-foundry-claude-code-docs.md)
 
 ## Configure proxies and gateways
 
 Most organizations can use a cloud provider directly without additional configuration. However, you may need to configure a corporate proxy or LLM gateway if your organization has specific network or management requirements. These are different configurations that can be used together:
 
-* **Corporate proxy**: Routes traffic through an HTTP/HTTPS proxy. Use this if your organization requires all outbound traffic to pass through a proxy server for security monitoring, compliance, or network policy enforcement. Configure with the `HTTPS_PROXY` or `HTTP_PROXY` environment variables. Learn more in [Enterprise network configuration](/en/network-config).
-* **LLM Gateway**: A service that sits between Claude Code and the cloud provider to handle authentication and routing. Use this if you need centralized usage tracking across teams, custom rate limiting or budgets, or centralized authentication management. Configure with the `ANTHROPIC_BASE_URL`, `ANTHROPIC_BEDROCK_BASE_URL`, or `ANTHROPIC_VERTEX_BASE_URL` environment variables. Learn more in [LLM gateway configuration](/en/llm-gateway).
+* **Corporate proxy**: Routes traffic through an HTTP/HTTPS proxy. Use this if your organization requires all outbound traffic to pass through a proxy server for security monitoring, compliance, or network policy enforcement. Configure with the `HTTPS_PROXY` or `HTTP_PROXY` environment variables. Learn more in [Enterprise network configuration](../02-Claude-Code-CLI/enterprise-network-configuration-claude-code-docs.md).
+* **LLM Gateway**: A service that sits between Claude Code and the cloud provider to handle authentication and routing. Use this if you need centralized usage tracking across teams, custom rate limiting or budgets, or centralized authentication management. Configure with the `ANTHROPIC_BASE_URL`, `ANTHROPIC_BEDROCK_BASE_URL`, or `ANTHROPIC_VERTEX_BASE_URL` environment variables. Learn more in [LLM gateway configuration](../02-Claude-Code-CLI/llm-gateway-configuration-claude-code-docs.md).
 
 The following examples show the environment variables to set in your shell or shell profile (`.bashrc`, `.zshrc`). See [Settings](/en/settings) for other configuration methods.
 
@@ -240,11 +246,11 @@ Encourage new users to try Claude Code for codebase Q\&A, or on smaller bug fixe
 
 ### Configure security policies
 
-Security teams can configure managed permissions for what Claude Code is and is not allowed to do, which cannot be overwritten by local configuration. [Learn more](/en/security).
+Security teams can configure managed permissions for what Claude Code is and is not allowed to do, which cannot be overwritten by local configuration. [Learn more](../02-Claude-Code-CLI/security-claude-code-docs.md).
 
 ### Leverage MCP for integrations
 
-MCP is a great way to give Claude Code more information, such as connecting to ticket management systems or error logs. We recommend that one central team configures MCP servers and checks a `.mcp.json` configuration into the codebase so that all users benefit. [Learn more](/en/mcp).
+MCP is a great way to give Claude Code more information, such as connecting to ticket management systems or error logs. We recommend that one central team configures MCP servers and checks a `.mcp.json` configuration into the codebase so that all users benefit. [Learn more](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md).
 
 At Anthropic, we trust Claude Code to power development across every Anthropic codebase. We hope you enjoy using Claude Code as much as we do.
 
@@ -254,4 +260,4 @@ Once you've chosen a deployment option and configured access for your team:
 
 1. **Roll out to your team**: Share installation instructions and have team members [install Claude Code](/en/setup) and authenticate with their credentials.
 2. **Set up shared configuration**: Create a [CLAUDE.md file](/en/memory) in your repositories to help Claude Code understand your codebase and coding standards.
-3. **Configure permissions**: Review [security settings](/en/security) to define what Claude Code can and cannot do in your environment.
+3. **Configure permissions**: Review [security settings](../02-Claude-Code-CLI/security-claude-code-docs.md) to define what Claude Code can and cannot do in your environment.

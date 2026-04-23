@@ -1,3 +1,9 @@
+---
+title: "Hooks reference"
+category: "07-Hooks"
+tags: ["agents", "hooks", "prompting", "security"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -134,8 +140,8 @@ Where you define a hook determines its scope:
 | `.claude/settings.json`                                    | Single project                | Yes, can be committed to the repo  |
 | `.claude/settings.local.json`                              | Single project                | No, gitignored                     |
 | Managed policy settings                                    | Organization-wide             | Yes, admin-controlled              |
-| [Plugin](/en/plugins) `hooks/hooks.json`                   | When plugin is enabled        | Yes, bundled with the plugin       |
-| [Skill](/en/skills) or [agent](/en/sub-agents) frontmatter | While the component is active | Yes, defined in the component file |
+| [Plugin](../08-Plugins-Skills/create-plugins-claude-code-docs.md) `hooks/hooks.json`                   | When plugin is enabled        | Yes, bundled with the plugin       |
+| [Skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) or [agent](/en/sub-agents) frontmatter | While the component is active | Yes, defined in the component file |
 
 For details on settings file resolution, see [settings](/en/settings). Enterprise administrators can use `allowManagedHooksOnly` to block user, project, and plugin hooks. See [Hook configuration](/en/settings#hook-configuration).
 
@@ -180,7 +186,7 @@ This example runs a linting script only when Claude writes or edits a file:
 
 #### Match MCP tools
 
-[MCP](/en/mcp) server tools appear as regular tools in tool events (`PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PermissionRequest`), so you can match them the same way you match any other tool name.
+[MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) server tools appear as regular tools in tool events (`PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PermissionRequest`), so you can match them the same way you match any other tool name.
 
 MCP tools follow the naming pattern `mcp__<server>__<tool>`, for example:
 
@@ -266,7 +272,7 @@ All matching hooks run in parallel, and identical handlers are deduplicated auto
 Use environment variables to reference hook scripts relative to the project or plugin root, regardless of the working directory when the hook runs:
 
 * `$CLAUDE_PROJECT_DIR`: the project root. Wrap in quotes to handle paths with spaces.
-* `${CLAUDE_PLUGIN_ROOT}`: the plugin's root directory, for scripts bundled with a [plugin](/en/plugins).
+* `${CLAUDE_PLUGIN_ROOT}`: the plugin's root directory, for scripts bundled with a [plugin](../08-Plugins-Skills/create-plugins-claude-code-docs.md).
 
 <Tabs>
   <Tab title="Project scripts">
@@ -322,7 +328,7 @@ Use environment variables to reference hook scripts relative to the project or p
 
 ### Hooks in skills and agents
 
-In addition to settings files and plugins, hooks can be defined directly in [skills](/en/skills) and [subagents](/en/sub-agents) using frontmatter. These hooks are scoped to the component's lifecycle and only run when that component is active.
+In addition to settings files and plugins, hooks can be defined directly in [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) and [subagents](/en/sub-agents) using frontmatter. These hooks are scoped to the component's lifecycle and only run when that component is active.
 
 All hook events are supported. For subagents, `Stop` hooks are automatically converted to `SubagentStop` since that is the event that fires when a subagent completes.
 

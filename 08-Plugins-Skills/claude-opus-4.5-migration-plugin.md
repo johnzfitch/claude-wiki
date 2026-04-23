@@ -1,3 +1,9 @@
+---
+title: "Claude Opus 4.5 Migration Plugin"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Claude Opus 4.5 Migration Plugin
 
 Migrate your code and prompts from Sonnet 4.x and Opus 4.1 to Opus 4.5.
@@ -14,7 +20,7 @@ This skill updates your code and prompts to be compatible with Opus 4.5. It auto
 
 ## Learn More
 
-Refer to our [prompting guide](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices) for best practices on prompting Claude models.
+Refer to our [prompting guide](../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-4-best-practices.md) for best practices on prompting Claude models.
 
 ## Authors
 

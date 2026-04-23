@@ -1,3 +1,9 @@
+---
+title: "2.1.74 Minified Function Name Mapping"
+category: "19-Reference"
+tags: ["security"]
+---
+
 # 2.1.74 Minified Function Name Mapping
 
 **Quick reference for reverse engineering the Claude Code 2.1.74 JavaScript payload.**

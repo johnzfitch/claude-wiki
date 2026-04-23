@@ -1,3 +1,9 @@
+---
+title: "Getting started - how to pass images into Claude"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 # Getting started - how to pass images into Claude
 
 The Claude 3 model family supports image inputs in the API. Here's how

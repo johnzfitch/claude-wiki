@@ -1,3 +1,9 @@
+---
+title: "Prompt Snippets for Opus 4.5"
+category: "10-Prompting-Guides"
+tags: ["prompting"]
+---
+
 # Prompt Snippets for Opus 4.5
 
 Only apply these snippets if the user explicitly requests them or reports a specific issue. By default, the migration should only update model strings.

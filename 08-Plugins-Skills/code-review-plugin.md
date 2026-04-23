@@ -1,3 +1,9 @@
+---
+title: "Code Review Plugin"
+category: "08-Plugins-Skills"
+tags: ["plugins"]
+---
+
 # Code Review Plugin
 
 Automated code review for pull requests using multiple specialized agents with confidence-based scoring to filter false positives.

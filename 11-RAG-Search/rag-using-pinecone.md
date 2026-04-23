@@ -1,3 +1,9 @@
+---
+title: "Retrieval-Augmented Generation using Pinecone"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # Retrieval-Augmented Generation using Pinecone
 
 This notebook demonstrates how to connect Claude with the data in your

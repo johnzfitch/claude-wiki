@@ -1,3 +1,8 @@
+---
+title: "Env var runtime behavior (binary-derived)"
+category: "19-Reference"
+---
+
 # Env var runtime behavior (binary-derived)
 
 Binaries analyzed:

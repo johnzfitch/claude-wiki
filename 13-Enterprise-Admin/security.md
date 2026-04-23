@@ -1,3 +1,9 @@
+---
+title: "Security"
+category: "13-Enterprise-Admin"
+tags: ["enterprise", "mcp", "prompting", "security"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -111,7 +117,7 @@ For more details on cloud execution, see [Claude Code on the web](/en/claude-cod
 
 * Review all suggested changes before approval
 * Use project-specific permission settings for sensitive repositories
-* Consider using [devcontainers](/en/devcontainer) for additional isolation
+* Consider using [devcontainers](../02-Claude-Code-CLI/development-containers-claude-code-docs.md) for additional isolation
 * Regularly audit your permission settings with `/permissions`
 
 ### Team security
@@ -135,5 +141,5 @@ If you discover a security vulnerability in Claude Code:
 * [Sandboxing](/en/sandboxing) - Filesystem and network isolation for bash commands
 * [Identity and Access Management](/en/iam) - Configure permissions and access controls
 * [Monitoring usage](/en/monitoring-usage) - Track and audit Claude Code activity
-* [Development containers](/en/devcontainer) - Secure, isolated environments
+* [Development containers](../02-Claude-Code-CLI/development-containers-claude-code-docs.md) - Secure, isolated environments
 * [Anthropic Trust Center](https://trust.anthropic.com) - Security certifications and compliance

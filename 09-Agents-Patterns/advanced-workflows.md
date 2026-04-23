@@ -1,3 +1,9 @@
+---
+title: "Advanced Workflow Patterns"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Advanced Workflow Patterns
 
 Multi-step command sequences and composition patterns for complex workflows.

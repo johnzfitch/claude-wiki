@@ -1,3 +1,9 @@
+---
+title: "Example 1: Chain workflow for structured data extraction and formatting"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 ## Basic Multi-LLM Workflows
 
 This notebook demonstrates three simple multi-LLM workflows. They trade

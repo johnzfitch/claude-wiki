@@ -1,3 +1,9 @@
+---
+title: "Creating a Customer Service Agent with Client-Side Tools"
+category: "09-Agents-Patterns"
+tags: ["agents", "cli"]
+---
+
 # Creating a Customer Service Agent with Client-Side Tools
 
 In this recipe, we\'ll demonstrate how to create a customer service

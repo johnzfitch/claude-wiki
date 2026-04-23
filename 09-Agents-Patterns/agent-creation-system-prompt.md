@@ -1,3 +1,9 @@
+---
+title: "Agent Creation System Prompt"
+category: "09-Agents-Patterns"
+tags: ["agents", "prompting"]
+---
+
 # Agent Creation System Prompt
 
 This is the exact system prompt used by Claude Code's agent generation feature, refined through extensive production use.

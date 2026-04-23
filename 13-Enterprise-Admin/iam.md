@@ -1,3 +1,9 @@
+---
+title: "Identity and Access Management"
+category: "13-Enterprise-Admin"
+tags: ["authentication", "enterprise"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -11,9 +17,9 @@ Setting up Claude Code requires access to Anthropic models. For teams, you can s
 
 * [Claude for Teams or Enterprise](/en/setup#for-teams-and-organizations) (recommended)
 * [Claude Console with team billing](/en/setup#for-teams-and-organizations)
-* [Amazon Bedrock](/en/amazon-bedrock)
-* [Google Vertex AI](/en/google-vertex-ai)
-* [Microsoft Foundry](/en/microsoft-foundry)
+* [Amazon Bedrock](../02-Claude-Code-CLI/claude-code-on-amazon-bedrock-claude-code-docs.md)
+* [Google Vertex AI](../02-Claude-Code-CLI/claude-code-on-google-vertex-ai-claude-code-docs.md)
+* [Microsoft Foundry](../02-Claude-Code-CLI/claude-code-on-microsoft-foundry-claude-code-docs.md)
 
 ### Claude for Teams or Enterprise (recommended)
 
@@ -37,7 +43,7 @@ For organizations that prefer API-based billing, you can set up access through t
 1. Use your existing Claude Console account or create a new Claude Console account
 2. You can add users through either method below:
    * Bulk invite users from within the Console (Console -> Settings -> Members -> Invite)
-   * [Set up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
+   * [Set up SSO](../21-Account-Support/setting-up-single-sign-on-sso.md)
 3. When inviting users, they need one of the following roles:
    * "Claude Code" role means users can only create Claude Code API keys
    * "Developer" role means users can create any kind of API key
@@ -51,7 +57,7 @@ For organizations that prefer API-based billing, you can set up access through t
 
 **To set up Claude Code access for your team via Bedrock, Vertex, or Azure:**
 
-1. Follow the [Bedrock docs](/en/amazon-bedrock), [Vertex docs](/en/google-vertex-ai), or [Microsoft Foundry docs](/en/microsoft-foundry)
+1. Follow the [Bedrock docs](../02-Claude-Code-CLI/claude-code-on-amazon-bedrock-claude-code-docs.md), [Vertex docs](../02-Claude-Code-CLI/claude-code-on-google-vertex-ai-claude-code-docs.md), or [Microsoft Foundry docs](../02-Claude-Code-CLI/claude-code-on-microsoft-foundry-claude-code-docs.md)
 2. Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](/en/settings).
 3. Users can [install Claude Code](/en/setup#installation)
 

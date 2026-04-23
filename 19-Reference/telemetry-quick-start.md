@@ -1,3 +1,9 @@
+---
+title: "Claude Code Telemetry — Quick Start Guide"
+category: "19-Reference"
+tags: ["claude-code", "search"]
+---
+
 # Claude Code Telemetry — Quick Start Guide
 
 ## TL;DR

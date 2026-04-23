@@ -1,3 +1,9 @@
+---
+title: "RAG Pipeline with LlamaIndex"
+category: "11-RAG-Search"
+tags: ["rag", "search"]
+---
+
 # RAG Pipeline with LlamaIndex
 
 In this notebook we will look into building Basic RAG Pipeline with

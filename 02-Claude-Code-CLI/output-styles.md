@@ -1,3 +1,9 @@
+---
+title: "Output styles"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -106,6 +112,6 @@ prompt. Agents are invoked to handle specific tasks and can include additional
 settings like the model to use, the tools they have available, and some context
 about when to use the agent.
 
-### Output Styles vs. [Skills](/en/skills)
+### Output Styles vs. [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)
 
 Output styles modify how Claude responds (formatting, tone, structure) and are always active once selected. Skills are task-specific prompts that you invoke with `/skill-name` or that Claude loads automatically when relevant. Use output styles for consistent formatting preferences; use skills for reusable workflows and tasks.

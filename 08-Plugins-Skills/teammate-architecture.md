@@ -1,3 +1,9 @@
+---
+title: "Claude Code Teammate/Team System Architecture"
+category: "08-Plugins-Skills"
+tags: ["agents", "claude-code", "cli", "hooks", "plugins", "prompting"]
+---
+
 # Claude Code Teammate/Team System Architecture
 
 **Version**: 2.1.76

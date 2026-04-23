@@ -1,3 +1,9 @@
+---
+title: "Programatic Tool Calling (PTC) with the Claude API"
+category: "04-API-Reference/Other"
+tags: ["api"]
+---
+
 # Programatic Tool Calling (PTC) with the Claude API
 
 Programmatic Tool Calling (PTC) allows Claude to write code that calls

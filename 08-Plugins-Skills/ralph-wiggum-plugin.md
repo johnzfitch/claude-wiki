@@ -1,3 +1,9 @@
+---
+title: "Ralph Wiggum Plugin"
+category: "08-Plugins-Skills"
+tags: ["plugins", "prompting"]
+---
+
 # Ralph Wiggum Plugin
 
 Implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.

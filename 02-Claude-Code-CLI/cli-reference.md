@@ -1,3 +1,9 @@
+---
+title: "CLI reference"
+category: "02-Claude-Code-CLI"
+tags: ["claude-code", "cli"]
+---
+
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
@@ -17,7 +23,7 @@
 | `claude -c -p "query"`          | Continue via SDK                                       | `claude -c -p "Check for type errors"`            |
 | `claude -r "<session>" "query"` | Resume session by ID or name                           | `claude -r "auth-refactor" "Finish this PR"`      |
 | `claude update`                 | Update to latest version                               | `claude update`                                   |
-| `claude mcp`                    | Configure Model Context Protocol (MCP) servers         | See the [Claude Code MCP documentation](/en/mcp). |
+| `claude mcp`                    | Configure Model Context Protocol (MCP) servers         | See the [Claude Code MCP documentation](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md). |
 
 ## CLI flags
 
@@ -33,7 +39,7 @@ Customize Claude Code's behavior with these command-line flags:
 | `--append-system-prompt`               | Append custom text to the end of the default system prompt (works in both interactive and print modes)                                                                                                    | `claude --append-system-prompt "Always use TypeScript"`                                            |
 | `--append-system-prompt-file`          | Load additional system prompt text from a file and append to the default prompt (print mode only)                                                                                                         | `claude -p --append-system-prompt-file ./extra-rules.txt "query"`                                  |
 | `--betas`                              | Beta headers to include in API requests (API key users only)                                                                                                                                              | `claude --betas interleaved-thinking`                                                              |
-| `--chrome`                             | Enable [Chrome browser integration](/en/chrome) for web automation and testing                                                                                                                            | `claude --chrome`                                                                                  |
+| `--chrome`                             | Enable [Chrome browser integration](chrome.md) for web automation and testing                                                                                                                            | `claude --chrome`                                                                                  |
 | `--continue`, `-c`                     | Load the most recent conversation in the current directory                                                                                                                                                | `claude --continue`                                                                                |
 | `--dangerously-skip-permissions`       | Skip all permission prompts (use with caution)                                                                                                                                                            | `claude --dangerously-skip-permissions`                                                            |
 | `--debug`                              | Enable debug mode with optional category filtering (for example, `"api,hooks"` or `"!statsig,!file"`)                                                                                                     | `claude --debug "api,mcp"`                                                                         |
@@ -53,7 +59,7 @@ Customize Claude Code's behavior with these command-line flags:
 | `--max-turns`                          | Limit the number of agentic turns (print mode only). Exits with an error when the limit is reached. No limit by default                                                                                   | `claude -p --max-turns 3 "query"`                                                                  |
 | `--mcp-config`                         | Load MCP servers from JSON files or strings (space-separated)                                                                                                                                             | `claude --mcp-config ./mcp.json`                                                                   |
 | `--model`                              | Sets the model for the current session with an alias for the latest model (`sonnet` or `opus`) or a model's full name                                                                                     | `claude --model claude-sonnet-4-5-20250929`                                                        |
-| `--no-chrome`                          | Disable [Chrome browser integration](/en/chrome) for this session                                                                                                                                         | `claude --no-chrome`                                                                               |
+| `--no-chrome`                          | Disable [Chrome browser integration](chrome.md) for this session                                                                                                                                         | `claude --no-chrome`                                                                               |
 | `--no-session-persistence`             | Disable session persistence so sessions are not saved to disk and cannot be resumed (print mode only)                                                                                                     | `claude -p --no-session-persistence "query"`                                                       |
 | `--output-format`                      | Specify output format for print mode (options: `text`, `json`, `stream-json`)                                                                                                                             | `claude -p "query" --output-format json`                                                           |
 | `--permission-mode`                    | Begin in a specified [permission mode](/en/iam#permission-modes)                                                                                                                                          | `claude --permission-mode plan`                                                                    |
@@ -147,8 +153,8 @@ For most use cases, `--append-system-prompt` or `--append-system-prompt-file` is
 
 ## See also
 
-* [Chrome extension](/en/chrome) - Browser automation and web testing
-* [Interactive mode](/en/interactive-mode) - Shortcuts, input modes, and interactive features
+* [Chrome extension](chrome.md) - Browser automation and web testing
+* [Interactive mode](interactive-mode-claude-code-docs.md) - Shortcuts, input modes, and interactive features
 * [Quickstart guide](/en/quickstart) - Getting started with Claude Code
 * [Common workflows](/en/common-workflows) - Advanced workflows and patterns
 * [Settings](/en/settings) - Configuration options

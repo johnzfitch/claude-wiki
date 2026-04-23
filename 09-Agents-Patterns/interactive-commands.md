@@ -1,3 +1,9 @@
+---
+title: "Interactive Command Patterns"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Interactive Command Patterns
 
 Comprehensive guide to creating commands that gather user feedback and make decisions through the AskUserQuestion tool.

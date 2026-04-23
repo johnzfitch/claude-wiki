@@ -1,10 +1,16 @@
+---
+title: "MCP Technical Reference"
+category: "19-Reference"
+tags: ["mcp"]
+---
+
 # MCP Technical Reference
 
 Technical details for MCP server implementation and integration.
 
 ## Protocol Compliance
 
-Complies with [MCP Specification 2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25).
+Complies with [MCP Specification 2025-11-25](../06-MCP-Tools/Spec/spec-2025-11-25-specification-model-context-protocol.md).
 
 | Feature | Status |
 |---------|--------|

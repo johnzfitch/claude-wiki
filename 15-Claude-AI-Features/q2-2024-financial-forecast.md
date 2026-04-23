@@ -1,3 +1,8 @@
+---
+title: "Q2 2024 Financial Forecast Report"
+category: "15-Claude-AI-Features"
+---
+
 # Q2 2024 Financial Forecast Report
 **TechStart Inc - Chief of Staff Analysis**
 *Report Date: September 12, 2025*

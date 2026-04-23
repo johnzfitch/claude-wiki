@@ -1,3 +1,9 @@
+---
+title: "Orchestrator-Workers Workflow"
+category: "09-Agents-Patterns"
+tags: ["agents"]
+---
+
 # Orchestrator-Workers Workflow
 
 ## Introduction

@@ -1,3 +1,9 @@
+---
+title: "System Prompt Design Patterns"
+category: "09-Agents-Patterns"
+tags: ["agents", "prompting", "testing"]
+---
+
 # System Prompt Design Patterns
 
 Complete guide to writing effective agent system prompts that enable autonomous, high-quality operation.
