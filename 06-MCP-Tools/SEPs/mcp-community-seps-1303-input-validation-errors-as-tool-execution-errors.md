@@ -1,6 +1,8 @@
 ---
 title: "SEP-1303: Input Validation Errors as Tool Execution Errors"
+source_url: "https://modelcontextprotocol.io/community/seps/1303-input-validation-errors-as-tool-execution-errors.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-seps"]
 ---
 

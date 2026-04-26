@@ -1,6 +1,8 @@
 ---
 title: "SEP-1302: Formalize Working Groups and Interest Groups in MCP Governance"
+source_url: "https://modelcontextprotocol.io/community/seps/1302-formalize-working-groups-and-interest-groups-in-mc.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp"]
 ---
 

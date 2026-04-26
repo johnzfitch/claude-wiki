@@ -1,6 +1,8 @@
 ---
 title: "Example Clients"
+source_url: "https://modelcontextprotocol.io/clients.md"
 category: "02-Claude-Code-CLI"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["claude-code", "cli"]
 ---
 

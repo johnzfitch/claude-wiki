@@ -1,6 +1,8 @@
 ---
 title: "SEP-1330: Elicitation Enum Schema Improvements and Standards Compliance"
+source_url: "https://modelcontextprotocol.io/community/seps/1330-elicitation-enum-schema-improvements-and-standards.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-seps", "security"]
 ---
 

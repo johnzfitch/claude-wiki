@@ -1,6 +1,8 @@
 ---
 title: "SEP-2085: Governance Succession and Amendment Procedures"
+source_url: "https://modelcontextprotocol.io/community/seps/2085-governance-succession-and-amendment.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["security"]
 ---
 

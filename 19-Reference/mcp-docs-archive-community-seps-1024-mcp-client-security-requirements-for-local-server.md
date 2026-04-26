@@ -1,6 +1,8 @@
 ---
 title: "SEP-1024: MCP Client Security Requirements for Local Server Installation"
+source_url: "https://modelcontextprotocol.io/community/seps/1024-mcp-client-security-requirements-for-local-server-.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["cli", "mcp", "security"]
 ---
 

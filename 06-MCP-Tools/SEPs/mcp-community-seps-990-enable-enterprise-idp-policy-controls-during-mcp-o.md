@@ -1,6 +1,8 @@
 ---
 title: "SEP-990: Enable enterprise IdP policy controls during MCP OAuth flows"
+source_url: "https://modelcontextprotocol.io/community/seps/990-enable-enterprise-idp-policy-controls-during-mcp-o.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["enterprise", "mcp", "mcp-seps", "oauth"]
 ---
 

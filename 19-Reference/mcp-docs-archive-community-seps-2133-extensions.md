@@ -1,6 +1,8 @@
 ---
 title: "SEP-2133: Extensions"
+source_url: "https://modelcontextprotocol.io/community/seps/2133-extensions.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["security"]
 ---
 

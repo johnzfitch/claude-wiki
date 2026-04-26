@@ -1,6 +1,8 @@
 ---
 title: "SEP-1319: Decouple Request Payload from RPC Methods Definition"
+source_url: "https://modelcontextprotocol.io/community/seps/1319-decouple-request-payload-from-rpc-methods-definiti.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-seps"]
 ---
 

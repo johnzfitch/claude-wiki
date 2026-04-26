@@ -1,6 +1,8 @@
 ---
 title: "SEP-994: Shared Communication Practices/Guidelines"
+source_url: "https://modelcontextprotocol.io/community/seps/994-shared-communication-practicesguidelines.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-seps"]
 ---
 

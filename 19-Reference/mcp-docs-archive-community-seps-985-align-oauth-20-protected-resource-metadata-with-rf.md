@@ -1,6 +1,8 @@
 ---
 title: "SEP-985: Align OAuth 2.0 Protected Resource Metadata with RFC 9728"
+source_url: "https://modelcontextprotocol.io/community/seps/985-align-oauth-20-protected-resource-metadata-with-rf.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["oauth"]
 ---
 

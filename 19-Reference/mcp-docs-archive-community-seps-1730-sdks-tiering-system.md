@@ -1,6 +1,8 @@
 ---
 title: "SEP-1730: SDKs Tiering System"
+source_url: "https://modelcontextprotocol.io/community/seps/1730-sdks-tiering-system.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["sdk", "security"]
 ---
 

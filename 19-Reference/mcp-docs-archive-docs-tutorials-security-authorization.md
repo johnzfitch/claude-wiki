@@ -1,6 +1,8 @@
 ---
 title: "Understanding Authorization in MCP"
+source_url: "https://modelcontextprotocol.io/docs/tutorials/security/authorization.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["authorization", "mcp", "testing"]
 ---
 

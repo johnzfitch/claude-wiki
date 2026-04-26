@@ -1,6 +1,8 @@
 ---
 title: "Example Servers"
+source_url: "https://modelcontextprotocol.io/examples.md"
 category: "08-Plugins-Skills"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["plugins"]
 ---
 
