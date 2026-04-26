@@ -1,6 +1,8 @@
 ---
 title: "MCP Registry Aggregators"
+source_url: "https://modelcontextprotocol.io/registry/registry-aggregators.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["api", "mcp", "mcp-registry"]
 ---
 

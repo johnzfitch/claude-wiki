@@ -1,6 +1,8 @@
 ---
 title: "SEP-1046: Support OAuth client credentials flow in authorization"
+source_url: "https://modelcontextprotocol.io/community/seps/1046-support-oauth-client-credentials-flow-in-authoriza.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["authorization", "cli", "oauth"]
 ---
 

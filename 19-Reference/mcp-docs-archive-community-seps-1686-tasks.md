@@ -1,6 +1,8 @@
 ---
 title: "SEP-1686: Tasks"
+source_url: "https://modelcontextprotocol.io/community/seps/1686-tasks.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 ---
 
 > Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt

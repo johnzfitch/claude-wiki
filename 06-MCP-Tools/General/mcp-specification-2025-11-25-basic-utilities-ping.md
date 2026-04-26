@@ -1,6 +1,8 @@
 ---
 title: "Ping"
+source_url: "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/ping.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp"]
 ---
 

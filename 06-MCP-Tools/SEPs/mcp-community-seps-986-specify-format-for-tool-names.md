@@ -1,6 +1,8 @@
 ---
 title: "SEP-986: Specify Format for Tool Names"
+source_url: "https://modelcontextprotocol.io/community/seps/986-specify-format-for-tool-names.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-seps", "security"]
 ---
 

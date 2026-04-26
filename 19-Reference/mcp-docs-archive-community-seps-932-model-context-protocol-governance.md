@@ -1,6 +1,8 @@
 ---
 title: "SEP-932: Model Context Protocol Governance"
+source_url: "https://modelcontextprotocol.io/community/seps/932-model-context-protocol-governance.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "security"]
 ---
 

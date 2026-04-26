@@ -1,6 +1,8 @@
 ---
 title: "SEP-991: Enable URL-based Client Registration using OAuth Client ID Metadata Documents"
+source_url: "https://modelcontextprotocol.io/community/seps/991-enable-url-based-client-registration-using-oauth-c.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["cli", "oauth", "security"]
 ---
 

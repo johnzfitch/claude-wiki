@@ -1,0 +1,47 @@
+---
+category: "Admin"
+fetched_at: "2026-04-26T00:00:00Z"
+source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/delete.md"
+---
+## Delete
+
+**delete** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
+
+Delete Workspace Member
+
+### Path Parameters
+
+- `workspace_id: string`
+
+  ID of the Workspace.
+
+- `user_id: string`
+
+  ID of the User.
+
+### Returns
+
+- `type: "workspace_member_deleted"`
+
+  Deleted object type.
+
+  For Workspace Members, this is always `"workspace_member_deleted"`.
+
+  - `"workspace_member_deleted"`
+
+- `user_id: string`
+
+  ID of the User.
+
+- `workspace_id: string`
+
+  ID of the Workspace.
+
+### Example
+
+```http
+curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/members/$USER_ID \
+    -X DELETE \
+    -H 'anthropic-version: 2023-06-01' \
+    -H "X-Api-Key: $ANTHROPIC_ADMIN_API_KEY"
+```

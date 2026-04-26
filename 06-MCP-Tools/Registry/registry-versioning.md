@@ -1,6 +1,8 @@
 ---
 title: "Versioning Published MCP Servers"
-category: "06-MCP-Tools/Registry"
+source_url: "https://modelcontextprotocol.io/registry/versioning.md"
+category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-registry"]
 ---
 

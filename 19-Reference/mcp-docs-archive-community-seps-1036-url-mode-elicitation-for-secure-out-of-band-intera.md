@@ -1,6 +1,8 @@
 ---
 title: "SEP-1036: URL Mode Elicitation for secure out-of-band interactions"
+source_url: "https://modelcontextprotocol.io/community/seps/1036-url-mode-elicitation-for-secure-out-of-band-intera.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["security"]
 ---
 

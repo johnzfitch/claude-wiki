@@ -1,6 +1,8 @@
 ---
 title: "SEP-1577: Sampling With Tools"
+source_url: "https://modelcontextprotocol.io/community/seps/1577--sampling-with-tools.md"
 category: "19-Reference"
+fetched_at: "2026-04-26T00:00:00Z"
 ---
 
 > Fetch the complete documentation index at: https://modelcontextprotocol.io/llms.txt

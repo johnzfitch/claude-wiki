@@ -1,6 +1,8 @@
 ---
 title: "SEP-1577: Sampling With Tools"
+source_url: "https://modelcontextprotocol.io/community/seps/1577--sampling-with-tools.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-seps"]
 ---
 

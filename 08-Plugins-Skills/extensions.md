@@ -1,6 +1,8 @@
 ---
 title: "Extensions"
+source_url: "https://modelcontextprotocol.io/extensions.md"
 category: "08-Plugins-Skills"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["plugins"]
 ---
 

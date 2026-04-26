@@ -1,6 +1,8 @@
 ---
 title: "SEP-1613: Establish JSON Schema 2020-12 as Default Dialect for MCP"
+source_url: "https://modelcontextprotocol.io/community/seps/1613-establish-json-schema-2020-12-as-default-dialect-f.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-seps", "security"]
 ---
 

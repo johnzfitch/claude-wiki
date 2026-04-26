@@ -1,0 +1,36358 @@
+---
+category: "Other"
+fetched_at: "2026-04-26T00:00:00Z"
+source_url: "https://platform.claude.com/docs/en/api/python/messages.md"
+title: "Messages"
+---
+# Messages
+
+## Create
+
+`messages.create(MessageCreateParams**kwargs)  -> Message`
+
+**post** `/v1/messages`
+
+Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.
+
+The Messages API can be used for either single queries or stateless multi-turn conversations.
+
+Learn more about the Messages API in our [user guide](https://docs.claude.com/en/docs/initial-setup)
+
+### Parameters
+
+- `max_tokens: int`
+
+  The maximum number of tokens to generate before stopping.
+
+  Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.
+
+  Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
+
+- `messages: Iterable[MessageParam]`
+
+  Input messages.
+
+  Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.
+
+  Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.
+
+  If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.
+
+  Example with a single `user` message:
+
+  ```json
+  [{"role": "user", "content": "Hello, Claude"}]
+  ```
+
+  Example with multiple conversational turns:
+
+  ```json
+  [
+    {"role": "user", "content": "Hello there."},
+    {"role": "assistant", "content": "Hi, I'm Claude. How can I help you?"},
+    {"role": "user", "content": "Can you explain LLMs in plain English?"},
+  ]
+  ```
+
+  Example with a partially-filled response from Claude:
+
+  ```json
+  [
+    {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+    {"role": "assistant", "content": "The best answer is ("},
+  ]
+  ```
+
+  Each input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `"text"`. The following input messages are equivalent:
+
+  ```json
+  {"role": "user", "content": "Hello, Claude"}
+  ```
+
+  ```json
+  {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}
+  ```
+
+  See [input examples](https://docs.claude.com/en/api/messages-examples).
+
+  Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+
+  There is a limit of 100,000 messages in a single request.
+
+  - `content: Union[str, List[Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 14 more]]]`
+
+    - `str`
+
+    - `List[Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 14 more]]`
+
+      - `class TextBlockParam: …`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[List[TextCitationParam]]`
+
+          - `class CitationCharLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationWebSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+      - `class ImageBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64ImageSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+              - `"image/jpeg"`
+
+              - `"image/png"`
+
+              - `"image/gif"`
+
+              - `"image/webp"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class URLImageSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["image"]`
+
+          - `"image"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class DocumentBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64PDFSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["application/pdf"]`
+
+              - `"application/pdf"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class PlainTextSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["text/plain"]`
+
+              - `"text/plain"`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+          - `class ContentBlockSource: …`
+
+            - `content: Union[str, List[ContentBlockSourceContent]]`
+
+              - `str`
+
+              - `List[ContentBlockSourceContent]`
+
+                - `class TextBlockParam: …`
+
+                  - `text: str`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[List[TextCitationParam]]`
+
+                    - `class CitationCharLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_char_index: int`
+
+                      - `start_char_index: int`
+
+                      - `type: Literal["char_location"]`
+
+                        - `"char_location"`
+
+                    - `class CitationPageLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_page_number: int`
+
+                      - `start_page_number: int`
+
+                      - `type: Literal["page_location"]`
+
+                        - `"page_location"`
+
+                    - `class CitationContentBlockLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_block_index: int`
+
+                      - `start_block_index: int`
+
+                      - `type: Literal["content_block_location"]`
+
+                        - `"content_block_location"`
+
+                    - `class CitationWebSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `encrypted_index: str`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["web_search_result_location"]`
+
+                        - `"web_search_result_location"`
+
+                      - `url: str`
+
+                    - `class CitationSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `end_block_index: int`
+
+                      - `search_result_index: int`
+
+                      - `source: str`
+
+                      - `start_block_index: int`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["search_result_location"]`
+
+                        - `"search_result_location"`
+
+                - `class ImageBlockParam: …`
+
+                  - `source: Source`
+
+                    - `class Base64ImageSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                        - `"image/jpeg"`
+
+                        - `"image/png"`
+
+                        - `"image/gif"`
+
+                        - `"image/webp"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class URLImageSource: …`
+
+                      - `type: Literal["url"]`
+
+                        - `"url"`
+
+                      - `url: str`
+
+                  - `type: Literal["image"]`
+
+                    - `"image"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+            - `type: Literal["content"]`
+
+              - `"content"`
+
+          - `class URLPDFSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["document"]`
+
+          - `"document"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+        - `context: Optional[str]`
+
+        - `title: Optional[str]`
+
+      - `class SearchResultBlockParam: …`
+
+        - `content: List[TextBlockParam]`
+
+          - `text: str`
+
+          - `type: Literal["text"]`
+
+            - `"text"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+          - `citations: Optional[List[TextCitationParam]]`
+
+            - `class CitationCharLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_char_index: int`
+
+              - `start_char_index: int`
+
+              - `type: Literal["char_location"]`
+
+                - `"char_location"`
+
+            - `class CitationPageLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_page_number: int`
+
+              - `start_page_number: int`
+
+              - `type: Literal["page_location"]`
+
+                - `"page_location"`
+
+            - `class CitationContentBlockLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_block_index: int`
+
+              - `start_block_index: int`
+
+              - `type: Literal["content_block_location"]`
+
+                - `"content_block_location"`
+
+            - `class CitationWebSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `encrypted_index: str`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["web_search_result_location"]`
+
+                - `"web_search_result_location"`
+
+              - `url: str`
+
+            - `class CitationSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `end_block_index: int`
+
+              - `search_result_index: int`
+
+              - `source: str`
+
+              - `start_block_index: int`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["search_result_location"]`
+
+                - `"search_result_location"`
+
+        - `source: str`
+
+        - `title: str`
+
+        - `type: Literal["search_result"]`
+
+          - `"search_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+      - `class ThinkingBlockParam: …`
+
+        - `signature: str`
+
+        - `thinking: str`
+
+        - `type: Literal["thinking"]`
+
+          - `"thinking"`
+
+      - `class RedactedThinkingBlockParam: …`
+
+        - `data: str`
+
+        - `type: Literal["redacted_thinking"]`
+
+          - `"redacted_thinking"`
+
+      - `class ToolUseBlockParam: …`
+
+        - `id: str`
+
+        - `input: Dict[str, object]`
+
+        - `name: str`
+
+        - `type: Literal["tool_use"]`
+
+          - `"tool_use"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class ToolResultBlockParam: …`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_result"]`
+
+          - `"tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `content: Optional[Union[str, List[Content], null]]`
+
+          - `str`
+
+          - `List[Content]`
+
+            - `class TextBlockParam: …`
+
+              - `text: str`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[List[TextCitationParam]]`
+
+                - `class CitationCharLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_char_index: int`
+
+                  - `start_char_index: int`
+
+                  - `type: Literal["char_location"]`
+
+                    - `"char_location"`
+
+                - `class CitationPageLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_page_number: int`
+
+                  - `start_page_number: int`
+
+                  - `type: Literal["page_location"]`
+
+                    - `"page_location"`
+
+                - `class CitationContentBlockLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_block_index: int`
+
+                  - `start_block_index: int`
+
+                  - `type: Literal["content_block_location"]`
+
+                    - `"content_block_location"`
+
+                - `class CitationWebSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `encrypted_index: str`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["web_search_result_location"]`
+
+                    - `"web_search_result_location"`
+
+                  - `url: str`
+
+                - `class CitationSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `end_block_index: int`
+
+                  - `search_result_index: int`
+
+                  - `source: str`
+
+                  - `start_block_index: int`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["search_result_location"]`
+
+                    - `"search_result_location"`
+
+            - `class ImageBlockParam: …`
+
+              - `source: Source`
+
+                - `class Base64ImageSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                    - `"image/jpeg"`
+
+                    - `"image/png"`
+
+                    - `"image/gif"`
+
+                    - `"image/webp"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class URLImageSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["image"]`
+
+                - `"image"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+            - `class SearchResultBlockParam: …`
+
+              - `content: List[TextBlockParam]`
+
+                - `text: str`
+
+                - `type: Literal["text"]`
+
+                  - `"text"`
+
+                - `cache_control: Optional[CacheControlEphemeral]`
+
+                  Create a cache control breakpoint at this content block.
+
+                  - `type: Literal["ephemeral"]`
+
+                    - `"ephemeral"`
+
+                  - `ttl: Optional[Literal["5m", "1h"]]`
+
+                    The time-to-live for the cache control breakpoint.
+
+                    This may be one the following values:
+
+                    - `5m`: 5 minutes
+                    - `1h`: 1 hour
+
+                    Defaults to `5m`.
+
+                    - `"5m"`
+
+                    - `"1h"`
+
+                - `citations: Optional[List[TextCitationParam]]`
+
+                  - `class CitationCharLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_char_index: int`
+
+                    - `start_char_index: int`
+
+                    - `type: Literal["char_location"]`
+
+                      - `"char_location"`
+
+                  - `class CitationPageLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_page_number: int`
+
+                    - `start_page_number: int`
+
+                    - `type: Literal["page_location"]`
+
+                      - `"page_location"`
+
+                  - `class CitationContentBlockLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_block_index: int`
+
+                    - `start_block_index: int`
+
+                    - `type: Literal["content_block_location"]`
+
+                      - `"content_block_location"`
+
+                  - `class CitationWebSearchResultLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `encrypted_index: str`
+
+                    - `title: Optional[str]`
+
+                    - `type: Literal["web_search_result_location"]`
+
+                      - `"web_search_result_location"`
+
+                    - `url: str`
+
+                  - `class CitationSearchResultLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `end_block_index: int`
+
+                    - `search_result_index: int`
+
+                    - `source: str`
+
+                    - `start_block_index: int`
+
+                    - `title: Optional[str]`
+
+                    - `type: Literal["search_result_location"]`
+
+                      - `"search_result_location"`
+
+              - `source: str`
+
+              - `title: str`
+
+              - `type: Literal["search_result"]`
+
+                - `"search_result"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+            - `class DocumentBlockParam: …`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                - `class ContentBlockSource: …`
+
+                  - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                    - `str`
+
+                    - `List[ContentBlockSourceContent]`
+
+                      - `class TextBlockParam: …`
+
+                        - `text: str`
+
+                        - `type: Literal["text"]`
+
+                          - `"text"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                        - `citations: Optional[List[TextCitationParam]]`
+
+                          - `class CitationCharLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_char_index: int`
+
+                            - `start_char_index: int`
+
+                            - `type: Literal["char_location"]`
+
+                              - `"char_location"`
+
+                          - `class CitationPageLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_page_number: int`
+
+                            - `start_page_number: int`
+
+                            - `type: Literal["page_location"]`
+
+                              - `"page_location"`
+
+                          - `class CitationContentBlockLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_block_index: int`
+
+                            - `start_block_index: int`
+
+                            - `type: Literal["content_block_location"]`
+
+                              - `"content_block_location"`
+
+                          - `class CitationWebSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `encrypted_index: str`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["web_search_result_location"]`
+
+                              - `"web_search_result_location"`
+
+                            - `url: str`
+
+                          - `class CitationSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `end_block_index: int`
+
+                            - `search_result_index: int`
+
+                            - `source: str`
+
+                            - `start_block_index: int`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["search_result_location"]`
+
+                              - `"search_result_location"`
+
+                      - `class ImageBlockParam: …`
+
+                        - `source: Source`
+
+                          - `class Base64ImageSource: …`
+
+                            - `data: str`
+
+                            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                              - `"image/jpeg"`
+
+                              - `"image/png"`
+
+                              - `"image/gif"`
+
+                              - `"image/webp"`
+
+                            - `type: Literal["base64"]`
+
+                              - `"base64"`
+
+                          - `class URLImageSource: …`
+
+                            - `type: Literal["url"]`
+
+                              - `"url"`
+
+                            - `url: str`
+
+                        - `type: Literal["image"]`
+
+                          - `"image"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                  - `type: Literal["content"]`
+
+                    - `"content"`
+
+                - `class URLPDFSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+              - `context: Optional[str]`
+
+              - `title: Optional[str]`
+
+            - `class ToolReferenceBlockParam: …`
+
+              Tool reference block that can be included in tool_result content.
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+        - `is_error: Optional[bool]`
+
+      - `class ServerToolUseBlockParam: …`
+
+        - `id: str`
+
+        - `input: Dict[str, object]`
+
+        - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+          - `"web_search"`
+
+          - `"web_fetch"`
+
+          - `"code_execution"`
+
+          - `"bash_code_execution"`
+
+          - `"text_editor_code_execution"`
+
+          - `"tool_search_tool_regex"`
+
+          - `"tool_search_tool_bm25"`
+
+        - `type: Literal["server_tool_use"]`
+
+          - `"server_tool_use"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class WebSearchToolResultBlockParam: …`
+
+        - `content: WebSearchToolResultBlockParamContent`
+
+          - `List[WebSearchResultBlockParam]`
+
+            - `encrypted_content: str`
+
+            - `title: str`
+
+            - `type: Literal["web_search_result"]`
+
+              - `"web_search_result"`
+
+            - `url: str`
+
+            - `page_age: Optional[str]`
+
+          - `class WebSearchToolRequestError: …`
+
+            - `error_code: WebSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"max_uses_exceeded"`
+
+              - `"too_many_requests"`
+
+              - `"query_too_long"`
+
+              - `"request_too_large"`
+
+            - `type: Literal["web_search_tool_result_error"]`
+
+              - `"web_search_tool_result_error"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_search_tool_result"]`
+
+          - `"web_search_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class WebFetchToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class WebFetchToolResultErrorBlockParam: …`
+
+            - `error_code: WebFetchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"url_too_long"`
+
+              - `"url_not_allowed"`
+
+              - `"url_not_accessible"`
+
+              - `"unsupported_content_type"`
+
+              - `"too_many_requests"`
+
+              - `"max_uses_exceeded"`
+
+              - `"unavailable"`
+
+            - `type: Literal["web_fetch_tool_result_error"]`
+
+              - `"web_fetch_tool_result_error"`
+
+          - `class WebFetchBlockParam: …`
+
+            - `content: DocumentBlockParam`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                - `class ContentBlockSource: …`
+
+                  - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                    - `str`
+
+                    - `List[ContentBlockSourceContent]`
+
+                      - `class TextBlockParam: …`
+
+                        - `text: str`
+
+                        - `type: Literal["text"]`
+
+                          - `"text"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                        - `citations: Optional[List[TextCitationParam]]`
+
+                          - `class CitationCharLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_char_index: int`
+
+                            - `start_char_index: int`
+
+                            - `type: Literal["char_location"]`
+
+                              - `"char_location"`
+
+                          - `class CitationPageLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_page_number: int`
+
+                            - `start_page_number: int`
+
+                            - `type: Literal["page_location"]`
+
+                              - `"page_location"`
+
+                          - `class CitationContentBlockLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_block_index: int`
+
+                            - `start_block_index: int`
+
+                            - `type: Literal["content_block_location"]`
+
+                              - `"content_block_location"`
+
+                          - `class CitationWebSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `encrypted_index: str`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["web_search_result_location"]`
+
+                              - `"web_search_result_location"`
+
+                            - `url: str`
+
+                          - `class CitationSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `end_block_index: int`
+
+                            - `search_result_index: int`
+
+                            - `source: str`
+
+                            - `start_block_index: int`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["search_result_location"]`
+
+                              - `"search_result_location"`
+
+                      - `class ImageBlockParam: …`
+
+                        - `source: Source`
+
+                          - `class Base64ImageSource: …`
+
+                            - `data: str`
+
+                            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                              - `"image/jpeg"`
+
+                              - `"image/png"`
+
+                              - `"image/gif"`
+
+                              - `"image/webp"`
+
+                            - `type: Literal["base64"]`
+
+                              - `"base64"`
+
+                          - `class URLImageSource: …`
+
+                            - `type: Literal["url"]`
+
+                              - `"url"`
+
+                            - `url: str`
+
+                        - `type: Literal["image"]`
+
+                          - `"image"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                  - `type: Literal["content"]`
+
+                    - `"content"`
+
+                - `class URLPDFSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+              - `context: Optional[str]`
+
+              - `title: Optional[str]`
+
+            - `type: Literal["web_fetch_result"]`
+
+              - `"web_fetch_result"`
+
+            - `url: str`
+
+              Fetched content URL
+
+            - `retrieved_at: Optional[str]`
+
+              ISO 8601 timestamp when the content was retrieved
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_fetch_tool_result"]`
+
+          - `"web_fetch_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class CodeExecutionToolResultBlockParam: …`
+
+        - `content: CodeExecutionToolResultBlockParamContent`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `class CodeExecutionToolResultErrorParam: …`
+
+            - `error_code: CodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["code_execution_tool_result_error"]`
+
+              - `"code_execution_tool_result_error"`
+
+          - `class CodeExecutionResultBlockParam: …`
+
+            - `content: List[CodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["code_execution_result"]`
+
+              - `"code_execution_result"`
+
+          - `class EncryptedCodeExecutionResultBlockParam: …`
+
+            Code execution result with encrypted stdout for PFC + web_search results.
+
+            - `content: List[CodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `encrypted_stdout: str`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `type: Literal["encrypted_code_execution_result"]`
+
+              - `"encrypted_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["code_execution_tool_result"]`
+
+          - `"code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class BashCodeExecutionToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class BashCodeExecutionToolResultErrorParam: …`
+
+            - `error_code: BashCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"output_file_too_large"`
+
+            - `type: Literal["bash_code_execution_tool_result_error"]`
+
+              - `"bash_code_execution_tool_result_error"`
+
+          - `class BashCodeExecutionResultBlockParam: …`
+
+            - `content: List[BashCodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["bash_code_execution_output"]`
+
+                - `"bash_code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["bash_code_execution_result"]`
+
+              - `"bash_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["bash_code_execution_tool_result"]`
+
+          - `"bash_code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class TextEditorCodeExecutionToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class TextEditorCodeExecutionToolResultErrorParam: …`
+
+            - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"file_not_found"`
+
+            - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+              - `"text_editor_code_execution_tool_result_error"`
+
+            - `error_message: Optional[str]`
+
+          - `class TextEditorCodeExecutionViewResultBlockParam: …`
+
+            - `content: str`
+
+            - `file_type: Literal["text", "image", "pdf"]`
+
+              - `"text"`
+
+              - `"image"`
+
+              - `"pdf"`
+
+            - `type: Literal["text_editor_code_execution_view_result"]`
+
+              - `"text_editor_code_execution_view_result"`
+
+            - `num_lines: Optional[int]`
+
+            - `start_line: Optional[int]`
+
+            - `total_lines: Optional[int]`
+
+          - `class TextEditorCodeExecutionCreateResultBlockParam: …`
+
+            - `is_file_update: bool`
+
+            - `type: Literal["text_editor_code_execution_create_result"]`
+
+              - `"text_editor_code_execution_create_result"`
+
+          - `class TextEditorCodeExecutionStrReplaceResultBlockParam: …`
+
+            - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+              - `"text_editor_code_execution_str_replace_result"`
+
+            - `lines: Optional[List[str]]`
+
+            - `new_lines: Optional[int]`
+
+            - `new_start: Optional[int]`
+
+            - `old_lines: Optional[int]`
+
+            - `old_start: Optional[int]`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["text_editor_code_execution_tool_result"]`
+
+          - `"text_editor_code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class ToolSearchToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class ToolSearchToolResultErrorParam: …`
+
+            - `error_code: ToolSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["tool_search_tool_result_error"]`
+
+              - `"tool_search_tool_result_error"`
+
+          - `class ToolSearchToolSearchResultBlockParam: …`
+
+            - `tool_references: List[ToolReferenceBlockParam]`
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+            - `type: Literal["tool_search_tool_search_result"]`
+
+              - `"tool_search_tool_search_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_search_tool_result"]`
+
+          - `"tool_search_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class ContainerUploadBlockParam: …`
+
+        A content block that represents a file to be uploaded to the container
+        Files uploaded via this block will be available in the container's input directory.
+
+        - `file_id: str`
+
+        - `type: Literal["container_upload"]`
+
+          - `"container_upload"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+  - `role: Literal["user", "assistant"]`
+
+    - `"user"`
+
+    - `"assistant"`
+
+- `model: ModelParam`
+
+  The model that will complete your prompt.
+
+  See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+  - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+    The model that will complete your prompt.
+
+    See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+    - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+    - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+    - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+    - `claude-sonnet-4-6` - Best combination of speed and intelligence
+    - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+    - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+    - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+    - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+    - `claude-sonnet-4-5` - High-performance model for agents and coding
+    - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+    - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+    - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+    - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+    - `"claude-opus-4-7"`
+
+      Frontier intelligence for long-running agents and coding
+
+    - `"claude-mythos-preview"`
+
+      New class of intelligence, strongest in coding and cybersecurity
+
+    - `"claude-opus-4-6"`
+
+      Frontier intelligence for long-running agents and coding
+
+    - `"claude-sonnet-4-6"`
+
+      Best combination of speed and intelligence
+
+    - `"claude-haiku-4-5"`
+
+      Fastest model with near-frontier intelligence
+
+    - `"claude-haiku-4-5-20251001"`
+
+      Fastest model with near-frontier intelligence
+
+    - `"claude-opus-4-5"`
+
+      Premium model combining maximum intelligence with practical performance
+
+    - `"claude-opus-4-5-20251101"`
+
+      Premium model combining maximum intelligence with practical performance
+
+    - `"claude-sonnet-4-5"`
+
+      High-performance model for agents and coding
+
+    - `"claude-sonnet-4-5-20250929"`
+
+      High-performance model for agents and coding
+
+    - `"claude-opus-4-1"`
+
+      Exceptional model for specialized complex tasks
+
+    - `"claude-opus-4-1-20250805"`
+
+      Exceptional model for specialized complex tasks
+
+    - `"claude-opus-4-0"`
+
+      Powerful model for complex tasks
+
+    - `"claude-opus-4-20250514"`
+
+      Powerful model for complex tasks
+
+    - `"claude-sonnet-4-0"`
+
+      High-performance model with extended thinking
+
+    - `"claude-sonnet-4-20250514"`
+
+      High-performance model with extended thinking
+
+    - `"claude-3-haiku-20240307"`
+
+      Fast and cost-effective model
+
+  - `str`
+
+- `cache_control: Optional[CacheControlEphemeralParam]`
+
+  Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+
+  - `type: Literal["ephemeral"]`
+
+    - `"ephemeral"`
+
+  - `ttl: Optional[Literal["5m", "1h"]]`
+
+    The time-to-live for the cache control breakpoint.
+
+    This may be one the following values:
+
+    - `5m`: 5 minutes
+    - `1h`: 1 hour
+
+    Defaults to `5m`.
+
+    - `"5m"`
+
+    - `"1h"`
+
+- `container: Optional[str]`
+
+  Container identifier for reuse across requests.
+
+- `inference_geo: Optional[str]`
+
+  Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
+
+- `metadata: Optional[MetadataParam]`
+
+  An object describing metadata about the request.
+
+  - `user_id: Optional[str]`
+
+    An external identifier for the user who is associated with the request.
+
+    This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.
+
+- `output_config: Optional[OutputConfigParam]`
+
+  Configuration options for the model's output, such as the output format.
+
+  - `effort: Optional[Literal["low", "medium", "high", "max"]]`
+
+    All possible effort levels.
+
+    - `"low"`
+
+    - `"medium"`
+
+    - `"high"`
+
+    - `"max"`
+
+  - `format: Optional[JSONOutputFormat]`
+
+    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+
+    - `schema: Dict[str, object]`
+
+      The JSON schema of the format
+
+    - `type: Literal["json_schema"]`
+
+      - `"json_schema"`
+
+- `service_tier: Optional[Literal["auto", "standard_only"]]`
+
+  Determines whether to use priority capacity (if available) or standard capacity for this request.
+
+  Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
+
+  - `"auto"`
+
+  - `"standard_only"`
+
+- `stop_sequences: Optional[Sequence[str]]`
+
+  Custom text sequences that will cause the model to stop generating.
+
+  Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.
+
+  If you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `"stop_sequence"` and the response `stop_sequence` value will contain the matched stop sequence.
+
+- `stream: Optional[Literal[false]]`
+
+  Whether to incrementally stream the response using server-sent events.
+
+  See [streaming](https://docs.claude.com/en/api/messages-streaming) for details.
+
+  - `false`
+
+- `system: Optional[Union[str, Iterable[TextBlockParam]]]`
+
+  System prompt.
+
+  A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
+
+  - `str`
+
+  - `Iterable[TextBlockParam]`
+
+    - `text: str`
+
+    - `type: Literal["text"]`
+
+      - `"text"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[List[TextCitationParam]]`
+
+      - `class CitationCharLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_char_index: int`
+
+        - `start_char_index: int`
+
+        - `type: Literal["char_location"]`
+
+          - `"char_location"`
+
+      - `class CitationPageLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_page_number: int`
+
+        - `start_page_number: int`
+
+        - `type: Literal["page_location"]`
+
+          - `"page_location"`
+
+      - `class CitationContentBlockLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_block_index: int`
+
+        - `start_block_index: int`
+
+        - `type: Literal["content_block_location"]`
+
+          - `"content_block_location"`
+
+      - `class CitationWebSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `encrypted_index: str`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["web_search_result_location"]`
+
+          - `"web_search_result_location"`
+
+        - `url: str`
+
+      - `class CitationSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `end_block_index: int`
+
+        - `search_result_index: int`
+
+        - `source: str`
+
+        - `start_block_index: int`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["search_result_location"]`
+
+          - `"search_result_location"`
+
+- `temperature: Optional[float]`
+
+  Amount of randomness injected into the response.
+
+  Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.
+
+  Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
+
+- `thinking: Optional[ThinkingConfigParam]`
+
+  Configuration for enabling Claude's extended thinking.
+
+  When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.
+
+  See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+  - `class ThinkingConfigEnabled: …`
+
+    - `budget_tokens: int`
+
+      Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.
+
+      Must be ≥1024 and less than `max_tokens`.
+
+      See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+    - `type: Literal["enabled"]`
+
+      - `"enabled"`
+
+    - `display: Optional[Literal["summarized", "omitted"]]`
+
+      Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+      - `"summarized"`
+
+      - `"omitted"`
+
+  - `class ThinkingConfigDisabled: …`
+
+    - `type: Literal["disabled"]`
+
+      - `"disabled"`
+
+  - `class ThinkingConfigAdaptive: …`
+
+    - `type: Literal["adaptive"]`
+
+      - `"adaptive"`
+
+    - `display: Optional[Literal["summarized", "omitted"]]`
+
+      Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+      - `"summarized"`
+
+      - `"omitted"`
+
+- `tool_choice: Optional[ToolChoiceParam]`
+
+  How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
+
+  - `class ToolChoiceAuto: …`
+
+    The model will automatically decide whether to use tools.
+
+    - `type: Literal["auto"]`
+
+      - `"auto"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output at most one tool use.
+
+  - `class ToolChoiceAny: …`
+
+    The model will use any available tools.
+
+    - `type: Literal["any"]`
+
+      - `"any"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+  - `class ToolChoiceTool: …`
+
+    The model will use the specified tool with `tool_choice.name`.
+
+    - `name: str`
+
+      The name of the tool to use.
+
+    - `type: Literal["tool"]`
+
+      - `"tool"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+  - `class ToolChoiceNone: …`
+
+    The model will not be allowed to use tools.
+
+    - `type: Literal["none"]`
+
+      - `"none"`
+
+- `tools: Optional[Iterable[ToolUnionParam]]`
+
+  Definitions of tools that the model may use.
+
+  If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
+
+  There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.claude.com/en/docs/agents-and-tools/tool-use/web-search-tool)).
+
+  Each tool definition includes:
+
+  * `name`: Name of the tool.
+  * `description`: Optional, but strongly-recommended description of the tool.
+  * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.
+
+  For example, if you defined `tools` as:
+
+  ```json
+  [
+    {
+      "name": "get_stock_price",
+      "description": "Get the current stock price for a given ticker symbol.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "description": "The stock ticker symbol, e.g. AAPL for Apple Inc."
+          }
+        },
+        "required": ["ticker"]
+      }
+    }
+  ]
+  ```
+
+  And then asked the model "What's the S&P 500 at today?", the model might produce `tool_use` content blocks in the response like this:
+
+  ```json
+  [
+    {
+      "type": "tool_use",
+      "id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",
+      "name": "get_stock_price",
+      "input": { "ticker": "^GSPC" }
+    }
+  ]
+  ```
+
+  You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an input, and return the following back to the model in a subsequent `user` message:
+
+  ```json
+  [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",
+      "content": "259.75 USD"
+    }
+  ]
+  ```
+
+  Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
+
+  See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
+
+  - `class Tool: …`
+
+    - `input_schema: InputSchema`
+
+      [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.
+
+      This defines the shape of the `input` that your tool accepts and that the model will produce.
+
+      - `type: Literal["object"]`
+
+        - `"object"`
+
+      - `properties: Optional[Dict[str, object]]`
+
+      - `required: Optional[List[str]]`
+
+    - `name: str`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `description: Optional[str]`
+
+      Description of what this tool does.
+
+      Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
+
+    - `eager_input_streaming: Optional[bool]`
+
+      Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `type: Optional[Literal["custom"]]`
+
+      - `"custom"`
+
+  - `class ToolBash20250124: …`
+
+    - `name: Literal["bash"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"bash"`
+
+    - `type: Literal["bash_20250124"]`
+
+      - `"bash_20250124"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20250522: …`
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20250522"]`
+
+      - `"code_execution_20250522"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20250825: …`
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20250825"]`
+
+      - `"code_execution_20250825"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20260120: …`
+
+    Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20260120"]`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class MemoryTool20250818: …`
+
+    - `name: Literal["memory"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"memory"`
+
+    - `type: Literal["memory_20250818"]`
+
+      - `"memory_20250818"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250124: …`
+
+    - `name: Literal["str_replace_editor"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_editor"`
+
+    - `type: Literal["text_editor_20250124"]`
+
+      - `"text_editor_20250124"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250429: …`
+
+    - `name: Literal["str_replace_based_edit_tool"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_based_edit_tool"`
+
+    - `type: Literal["text_editor_20250429"]`
+
+      - `"text_editor_20250429"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250728: …`
+
+    - `name: Literal["str_replace_based_edit_tool"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_based_edit_tool"`
+
+    - `type: Literal["text_editor_20250728"]`
+
+      - `"text_editor_20250728"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `max_characters: Optional[int]`
+
+      Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebSearchTool20250305: …`
+
+    - `name: Literal["web_search"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_search"`
+
+    - `type: Literal["web_search_20250305"]`
+
+      - `"web_search_20250305"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+    - `blocked_domains: Optional[List[str]]`
+
+      If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `user_location: Optional[UserLocation]`
+
+      Parameters for the user's location. Used to provide more relevant search results.
+
+      - `type: Literal["approximate"]`
+
+        - `"approximate"`
+
+      - `city: Optional[str]`
+
+        The city of the user.
+
+      - `country: Optional[str]`
+
+        The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+      - `region: Optional[str]`
+
+        The region of the user.
+
+      - `timezone: Optional[str]`
+
+        The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+  - `class WebFetchTool20250910: …`
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20250910"]`
+
+      - `"web_fetch_20250910"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebSearchTool20260209: …`
+
+    - `name: Literal["web_search"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_search"`
+
+    - `type: Literal["web_search_20260209"]`
+
+      - `"web_search_20260209"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+    - `blocked_domains: Optional[List[str]]`
+
+      If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `user_location: Optional[UserLocation]`
+
+      Parameters for the user's location. Used to provide more relevant search results.
+
+      - `type: Literal["approximate"]`
+
+        - `"approximate"`
+
+      - `city: Optional[str]`
+
+        The city of the user.
+
+      - `country: Optional[str]`
+
+        The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+      - `region: Optional[str]`
+
+        The region of the user.
+
+      - `timezone: Optional[str]`
+
+        The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+  - `class WebFetchTool20260209: …`
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20260209"]`
+
+      - `"web_fetch_20260209"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebFetchTool20260309: …`
+
+    Web fetch tool with use_cache parameter for bypassing cached content.
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20260309"]`
+
+      - `"web_fetch_20260309"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `use_cache: Optional[bool]`
+
+      Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
+
+  - `class ToolSearchToolBm25_20251119: …`
+
+    - `name: Literal["tool_search_tool_bm25"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"tool_search_tool_bm25"`
+
+    - `type: Literal["tool_search_tool_bm25_20251119", "tool_search_tool_bm25"]`
+
+      - `"tool_search_tool_bm25_20251119"`
+
+      - `"tool_search_tool_bm25"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolSearchToolRegex20251119: …`
+
+    - `name: Literal["tool_search_tool_regex"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"tool_search_tool_regex"`
+
+    - `type: Literal["tool_search_tool_regex_20251119", "tool_search_tool_regex"]`
+
+      - `"tool_search_tool_regex_20251119"`
+
+      - `"tool_search_tool_regex"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+- `top_k: Optional[int]`
+
+  Only sample from the top K options for each subsequent token.
+
+  Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).
+
+  Recommended for advanced use cases only.
+
+- `top_p: Optional[float]`
+
+  Use nucleus sampling.
+
+  In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`.
+
+  Recommended for advanced use cases only.
+
+### Returns
+
+- `class Message: …`
+
+  - `id: str`
+
+    Unique object identifier.
+
+    The format and length of IDs may change over time.
+
+  - `container: Optional[Container]`
+
+    Information about the container used in the request (for the code execution tool)
+
+    - `id: str`
+
+      Identifier for the container used in this request
+
+    - `expires_at: datetime`
+
+      The time at which the container will expire.
+
+  - `content: List[ContentBlock]`
+
+    Content generated by the model.
+
+    This is an array of content blocks, each of which has a `type` that determines its shape.
+
+    Example:
+
+    ```json
+    [{"type": "text", "text": "Hi, I'm Claude."}]
+    ```
+
+    If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+    For example, if the input `messages` were:
+
+    ```json
+    [
+      {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+      {"role": "assistant", "content": "The best answer is ("}
+    ]
+    ```
+
+    Then the response `content` might be:
+
+    ```json
+    [{"type": "text", "text": "B)"}]
+    ```
+
+    - `class TextBlock: …`
+
+      - `citations: Optional[List[TextCitation]]`
+
+        Citations supporting the text block.
+
+        The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+        - `class CitationCharLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_char_index: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_char_index: int`
+
+          - `type: Literal["char_location"]`
+
+            - `"char_location"`
+
+        - `class CitationPageLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_page_number: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_page_number: int`
+
+          - `type: Literal["page_location"]`
+
+            - `"page_location"`
+
+        - `class CitationContentBlockLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_block_index: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_block_index: int`
+
+          - `type: Literal["content_block_location"]`
+
+            - `"content_block_location"`
+
+        - `class CitationsWebSearchResultLocation: …`
+
+          - `cited_text: str`
+
+          - `encrypted_index: str`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["web_search_result_location"]`
+
+            - `"web_search_result_location"`
+
+          - `url: str`
+
+        - `class CitationsSearchResultLocation: …`
+
+          - `cited_text: str`
+
+          - `end_block_index: int`
+
+          - `search_result_index: int`
+
+          - `source: str`
+
+          - `start_block_index: int`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["search_result_location"]`
+
+            - `"search_result_location"`
+
+      - `text: str`
+
+      - `type: Literal["text"]`
+
+        - `"text"`
+
+    - `class ThinkingBlock: …`
+
+      - `signature: str`
+
+      - `thinking: str`
+
+      - `type: Literal["thinking"]`
+
+        - `"thinking"`
+
+    - `class RedactedThinkingBlock: …`
+
+      - `data: str`
+
+      - `type: Literal["redacted_thinking"]`
+
+        - `"redacted_thinking"`
+
+    - `class ToolUseBlock: …`
+
+      - `id: str`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `input: Dict[str, object]`
+
+      - `name: str`
+
+      - `type: Literal["tool_use"]`
+
+        - `"tool_use"`
+
+    - `class ServerToolUseBlock: …`
+
+      - `id: str`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `input: Dict[str, object]`
+
+      - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+        - `"web_search"`
+
+        - `"web_fetch"`
+
+        - `"code_execution"`
+
+        - `"bash_code_execution"`
+
+        - `"text_editor_code_execution"`
+
+        - `"tool_search_tool_regex"`
+
+        - `"tool_search_tool_bm25"`
+
+      - `type: Literal["server_tool_use"]`
+
+        - `"server_tool_use"`
+
+    - `class WebSearchToolResultBlock: …`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `content: WebSearchToolResultBlockContent`
+
+        - `class WebSearchToolResultError: …`
+
+          - `error_code: WebSearchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"max_uses_exceeded"`
+
+            - `"too_many_requests"`
+
+            - `"query_too_long"`
+
+            - `"request_too_large"`
+
+          - `type: Literal["web_search_tool_result_error"]`
+
+            - `"web_search_tool_result_error"`
+
+        - `List[WebSearchResultBlock]`
+
+          - `encrypted_content: str`
+
+          - `page_age: Optional[str]`
+
+          - `title: str`
+
+          - `type: Literal["web_search_result"]`
+
+            - `"web_search_result"`
+
+          - `url: str`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["web_search_tool_result"]`
+
+        - `"web_search_tool_result"`
+
+    - `class WebFetchToolResultBlock: …`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `content: Content`
+
+        - `class WebFetchToolResultErrorBlock: …`
+
+          - `error_code: WebFetchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"url_too_long"`
+
+            - `"url_not_allowed"`
+
+            - `"url_not_accessible"`
+
+            - `"unsupported_content_type"`
+
+            - `"too_many_requests"`
+
+            - `"max_uses_exceeded"`
+
+            - `"unavailable"`
+
+          - `type: Literal["web_fetch_tool_result_error"]`
+
+            - `"web_fetch_tool_result_error"`
+
+        - `class WebFetchBlock: …`
+
+          - `content: DocumentBlock`
+
+            - `citations: Optional[CitationsConfig]`
+
+              Citation configuration for the document
+
+              - `enabled: bool`
+
+            - `source: Source`
+
+              - `class Base64PDFSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["application/pdf"]`
+
+                  - `"application/pdf"`
+
+                - `type: Literal["base64"]`
+
+                  - `"base64"`
+
+              - `class PlainTextSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["text/plain"]`
+
+                  - `"text/plain"`
+
+                - `type: Literal["text"]`
+
+                  - `"text"`
+
+            - `title: Optional[str]`
+
+              The title of the document
+
+            - `type: Literal["document"]`
+
+              - `"document"`
+
+          - `retrieved_at: Optional[str]`
+
+            ISO 8601 timestamp when the content was retrieved
+
+          - `type: Literal["web_fetch_result"]`
+
+            - `"web_fetch_result"`
+
+          - `url: str`
+
+            Fetched content URL
+
+      - `tool_use_id: str`
+
+      - `type: Literal["web_fetch_tool_result"]`
+
+        - `"web_fetch_tool_result"`
+
+    - `class CodeExecutionToolResultBlock: …`
+
+      - `content: CodeExecutionToolResultBlockContent`
+
+        Code execution result with encrypted stdout for PFC + web_search results.
+
+        - `class CodeExecutionToolResultError: …`
+
+          - `error_code: CodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+          - `type: Literal["code_execution_tool_result_error"]`
+
+            - `"code_execution_tool_result_error"`
+
+        - `class CodeExecutionResultBlock: …`
+
+          - `content: List[CodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["code_execution_output"]`
+
+              - `"code_execution_output"`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `stdout: str`
+
+          - `type: Literal["code_execution_result"]`
+
+            - `"code_execution_result"`
+
+        - `class EncryptedCodeExecutionResultBlock: …`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `content: List[CodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["code_execution_output"]`
+
+              - `"code_execution_output"`
+
+          - `encrypted_stdout: str`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `type: Literal["encrypted_code_execution_result"]`
+
+            - `"encrypted_code_execution_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["code_execution_tool_result"]`
+
+        - `"code_execution_tool_result"`
+
+    - `class BashCodeExecutionToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class BashCodeExecutionToolResultError: …`
+
+          - `error_code: BashCodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+            - `"output_file_too_large"`
+
+          - `type: Literal["bash_code_execution_tool_result_error"]`
+
+            - `"bash_code_execution_tool_result_error"`
+
+        - `class BashCodeExecutionResultBlock: …`
+
+          - `content: List[BashCodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["bash_code_execution_output"]`
+
+              - `"bash_code_execution_output"`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `stdout: str`
+
+          - `type: Literal["bash_code_execution_result"]`
+
+            - `"bash_code_execution_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["bash_code_execution_tool_result"]`
+
+        - `"bash_code_execution_tool_result"`
+
+    - `class TextEditorCodeExecutionToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class TextEditorCodeExecutionToolResultError: …`
+
+          - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+            - `"file_not_found"`
+
+          - `error_message: Optional[str]`
+
+          - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+            - `"text_editor_code_execution_tool_result_error"`
+
+        - `class TextEditorCodeExecutionViewResultBlock: …`
+
+          - `content: str`
+
+          - `file_type: Literal["text", "image", "pdf"]`
+
+            - `"text"`
+
+            - `"image"`
+
+            - `"pdf"`
+
+          - `num_lines: Optional[int]`
+
+          - `start_line: Optional[int]`
+
+          - `total_lines: Optional[int]`
+
+          - `type: Literal["text_editor_code_execution_view_result"]`
+
+            - `"text_editor_code_execution_view_result"`
+
+        - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+          - `is_file_update: bool`
+
+          - `type: Literal["text_editor_code_execution_create_result"]`
+
+            - `"text_editor_code_execution_create_result"`
+
+        - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+          - `lines: Optional[List[str]]`
+
+          - `new_lines: Optional[int]`
+
+          - `new_start: Optional[int]`
+
+          - `old_lines: Optional[int]`
+
+          - `old_start: Optional[int]`
+
+          - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+            - `"text_editor_code_execution_str_replace_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["text_editor_code_execution_tool_result"]`
+
+        - `"text_editor_code_execution_tool_result"`
+
+    - `class ToolSearchToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class ToolSearchToolResultError: …`
+
+          - `error_code: ToolSearchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+          - `error_message: Optional[str]`
+
+          - `type: Literal["tool_search_tool_result_error"]`
+
+            - `"tool_search_tool_result_error"`
+
+        - `class ToolSearchToolSearchResultBlock: …`
+
+          - `tool_references: List[ToolReferenceBlock]`
+
+            - `tool_name: str`
+
+            - `type: Literal["tool_reference"]`
+
+              - `"tool_reference"`
+
+          - `type: Literal["tool_search_tool_search_result"]`
+
+            - `"tool_search_tool_search_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["tool_search_tool_result"]`
+
+        - `"tool_search_tool_result"`
+
+    - `class ContainerUploadBlock: …`
+
+      Response model for a file uploaded to the container.
+
+      - `file_id: str`
+
+      - `type: Literal["container_upload"]`
+
+        - `"container_upload"`
+
+  - `model: Model`
+
+    The model that will complete your prompt.
+
+    See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+    - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+      The model that will complete your prompt.
+
+      See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+      - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+      - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+      - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+      - `claude-sonnet-4-6` - Best combination of speed and intelligence
+      - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+      - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+      - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+      - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+      - `claude-sonnet-4-5` - High-performance model for agents and coding
+      - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+      - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+      - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+      - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+      - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+      - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+      - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+      - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+      - `"claude-opus-4-7"`
+
+        Frontier intelligence for long-running agents and coding
+
+      - `"claude-mythos-preview"`
+
+        New class of intelligence, strongest in coding and cybersecurity
+
+      - `"claude-opus-4-6"`
+
+        Frontier intelligence for long-running agents and coding
+
+      - `"claude-sonnet-4-6"`
+
+        Best combination of speed and intelligence
+
+      - `"claude-haiku-4-5"`
+
+        Fastest model with near-frontier intelligence
+
+      - `"claude-haiku-4-5-20251001"`
+
+        Fastest model with near-frontier intelligence
+
+      - `"claude-opus-4-5"`
+
+        Premium model combining maximum intelligence with practical performance
+
+      - `"claude-opus-4-5-20251101"`
+
+        Premium model combining maximum intelligence with practical performance
+
+      - `"claude-sonnet-4-5"`
+
+        High-performance model for agents and coding
+
+      - `"claude-sonnet-4-5-20250929"`
+
+        High-performance model for agents and coding
+
+      - `"claude-opus-4-1"`
+
+        Exceptional model for specialized complex tasks
+
+      - `"claude-opus-4-1-20250805"`
+
+        Exceptional model for specialized complex tasks
+
+      - `"claude-opus-4-0"`
+
+        Powerful model for complex tasks
+
+      - `"claude-opus-4-20250514"`
+
+        Powerful model for complex tasks
+
+      - `"claude-sonnet-4-0"`
+
+        High-performance model with extended thinking
+
+      - `"claude-sonnet-4-20250514"`
+
+        High-performance model with extended thinking
+
+      - `"claude-3-haiku-20240307"`
+
+        Fast and cost-effective model
+
+    - `str`
+
+  - `role: Literal["assistant"]`
+
+    Conversational role of the generated message.
+
+    This will always be `"assistant"`.
+
+    - `"assistant"`
+
+  - `stop_details: Optional[RefusalStopDetails]`
+
+    Structured information about a refusal.
+
+    - `category: Optional[Literal["cyber", "bio"]]`
+
+      The policy category that triggered the refusal.
+
+      `null` when the refusal doesn't map to a named category.
+
+      - `"cyber"`
+
+      - `"bio"`
+
+    - `explanation: Optional[str]`
+
+      Human-readable explanation of the refusal.
+
+      This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+    - `type: Literal["refusal"]`
+
+      - `"refusal"`
+
+  - `stop_reason: Optional[StopReason]`
+
+    The reason that we stopped.
+
+    This may be one the following values:
+
+    * `"end_turn"`: the model reached a natural stopping point
+    * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+    * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+    * `"tool_use"`: the model invoked one or more tools
+    * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+    * `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+
+    In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+    - `"end_turn"`
+
+    - `"max_tokens"`
+
+    - `"stop_sequence"`
+
+    - `"tool_use"`
+
+    - `"pause_turn"`
+
+    - `"refusal"`
+
+  - `stop_sequence: Optional[str]`
+
+    Which custom stop sequence was generated, if any.
+
+    This value will be a non-null string if one of your custom stop sequences was generated.
+
+  - `type: Literal["message"]`
+
+    Object type.
+
+    For Messages, this is always `"message"`.
+
+    - `"message"`
+
+  - `usage: Usage`
+
+    Billing and rate-limit usage.
+
+    Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+    Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+    For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+    Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+    - `cache_creation: Optional[CacheCreation]`
+
+      Breakdown of cached tokens by TTL
+
+      - `ephemeral_1h_input_tokens: int`
+
+        The number of input tokens used to create the 1 hour cache entry.
+
+      - `ephemeral_5m_input_tokens: int`
+
+        The number of input tokens used to create the 5 minute cache entry.
+
+    - `cache_creation_input_tokens: Optional[int]`
+
+      The number of input tokens used to create the cache entry.
+
+    - `cache_read_input_tokens: Optional[int]`
+
+      The number of input tokens read from the cache.
+
+    - `inference_geo: Optional[str]`
+
+      The geographic region where inference was performed for this request.
+
+    - `input_tokens: int`
+
+      The number of input tokens which were used.
+
+    - `output_tokens: int`
+
+      The number of output tokens which were used.
+
+    - `server_tool_use: Optional[ServerToolUsage]`
+
+      The number of server tool requests.
+
+      - `web_fetch_requests: int`
+
+        The number of web fetch tool requests.
+
+      - `web_search_requests: int`
+
+        The number of web search tool requests.
+
+    - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+      If the request used the priority, standard, or batch tier.
+
+      - `"standard"`
+
+      - `"priority"`
+
+      - `"batch"`
+
+### Example
+
+```python
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY"),  # This is the default and can be omitted
+)
+for message in client.messages.create(
+    max_tokens=1024,
+    messages=[{
+        "content": "Hello, world",
+        "role": "user",
+    }],
+    model="claude-opus-4-6",
+):
+  print(message)
+```
+
+## Count Tokens
+
+`messages.count_tokens(MessageCountTokensParams**kwargs)  -> MessageTokensCount`
+
+**post** `/v1/messages/count_tokens`
+
+Count the number of tokens in a Message.
+
+The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.
+
+Learn more about token counting in our [user guide](https://docs.claude.com/en/docs/build-with-claude/token-counting)
+
+### Parameters
+
+- `messages: Iterable[MessageParam]`
+
+  Input messages.
+
+  Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.
+
+  Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.
+
+  If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.
+
+  Example with a single `user` message:
+
+  ```json
+  [{"role": "user", "content": "Hello, Claude"}]
+  ```
+
+  Example with multiple conversational turns:
+
+  ```json
+  [
+    {"role": "user", "content": "Hello there."},
+    {"role": "assistant", "content": "Hi, I'm Claude. How can I help you?"},
+    {"role": "user", "content": "Can you explain LLMs in plain English?"},
+  ]
+  ```
+
+  Example with a partially-filled response from Claude:
+
+  ```json
+  [
+    {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+    {"role": "assistant", "content": "The best answer is ("},
+  ]
+  ```
+
+  Each input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `"text"`. The following input messages are equivalent:
+
+  ```json
+  {"role": "user", "content": "Hello, Claude"}
+  ```
+
+  ```json
+  {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}
+  ```
+
+  See [input examples](https://docs.claude.com/en/api/messages-examples).
+
+  Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+
+  There is a limit of 100,000 messages in a single request.
+
+  - `content: Union[str, List[Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 14 more]]]`
+
+    - `str`
+
+    - `List[Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 14 more]]`
+
+      - `class TextBlockParam: …`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[List[TextCitationParam]]`
+
+          - `class CitationCharLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationWebSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+      - `class ImageBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64ImageSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+              - `"image/jpeg"`
+
+              - `"image/png"`
+
+              - `"image/gif"`
+
+              - `"image/webp"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class URLImageSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["image"]`
+
+          - `"image"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class DocumentBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64PDFSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["application/pdf"]`
+
+              - `"application/pdf"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class PlainTextSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["text/plain"]`
+
+              - `"text/plain"`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+          - `class ContentBlockSource: …`
+
+            - `content: Union[str, List[ContentBlockSourceContent]]`
+
+              - `str`
+
+              - `List[ContentBlockSourceContent]`
+
+                - `class TextBlockParam: …`
+
+                  - `text: str`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[List[TextCitationParam]]`
+
+                    - `class CitationCharLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_char_index: int`
+
+                      - `start_char_index: int`
+
+                      - `type: Literal["char_location"]`
+
+                        - `"char_location"`
+
+                    - `class CitationPageLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_page_number: int`
+
+                      - `start_page_number: int`
+
+                      - `type: Literal["page_location"]`
+
+                        - `"page_location"`
+
+                    - `class CitationContentBlockLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_block_index: int`
+
+                      - `start_block_index: int`
+
+                      - `type: Literal["content_block_location"]`
+
+                        - `"content_block_location"`
+
+                    - `class CitationWebSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `encrypted_index: str`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["web_search_result_location"]`
+
+                        - `"web_search_result_location"`
+
+                      - `url: str`
+
+                    - `class CitationSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `end_block_index: int`
+
+                      - `search_result_index: int`
+
+                      - `source: str`
+
+                      - `start_block_index: int`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["search_result_location"]`
+
+                        - `"search_result_location"`
+
+                - `class ImageBlockParam: …`
+
+                  - `source: Source`
+
+                    - `class Base64ImageSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                        - `"image/jpeg"`
+
+                        - `"image/png"`
+
+                        - `"image/gif"`
+
+                        - `"image/webp"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class URLImageSource: …`
+
+                      - `type: Literal["url"]`
+
+                        - `"url"`
+
+                      - `url: str`
+
+                  - `type: Literal["image"]`
+
+                    - `"image"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+            - `type: Literal["content"]`
+
+              - `"content"`
+
+          - `class URLPDFSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["document"]`
+
+          - `"document"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+        - `context: Optional[str]`
+
+        - `title: Optional[str]`
+
+      - `class SearchResultBlockParam: …`
+
+        - `content: List[TextBlockParam]`
+
+          - `text: str`
+
+          - `type: Literal["text"]`
+
+            - `"text"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+          - `citations: Optional[List[TextCitationParam]]`
+
+            - `class CitationCharLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_char_index: int`
+
+              - `start_char_index: int`
+
+              - `type: Literal["char_location"]`
+
+                - `"char_location"`
+
+            - `class CitationPageLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_page_number: int`
+
+              - `start_page_number: int`
+
+              - `type: Literal["page_location"]`
+
+                - `"page_location"`
+
+            - `class CitationContentBlockLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_block_index: int`
+
+              - `start_block_index: int`
+
+              - `type: Literal["content_block_location"]`
+
+                - `"content_block_location"`
+
+            - `class CitationWebSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `encrypted_index: str`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["web_search_result_location"]`
+
+                - `"web_search_result_location"`
+
+              - `url: str`
+
+            - `class CitationSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `end_block_index: int`
+
+              - `search_result_index: int`
+
+              - `source: str`
+
+              - `start_block_index: int`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["search_result_location"]`
+
+                - `"search_result_location"`
+
+        - `source: str`
+
+        - `title: str`
+
+        - `type: Literal["search_result"]`
+
+          - `"search_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+      - `class ThinkingBlockParam: …`
+
+        - `signature: str`
+
+        - `thinking: str`
+
+        - `type: Literal["thinking"]`
+
+          - `"thinking"`
+
+      - `class RedactedThinkingBlockParam: …`
+
+        - `data: str`
+
+        - `type: Literal["redacted_thinking"]`
+
+          - `"redacted_thinking"`
+
+      - `class ToolUseBlockParam: …`
+
+        - `id: str`
+
+        - `input: Dict[str, object]`
+
+        - `name: str`
+
+        - `type: Literal["tool_use"]`
+
+          - `"tool_use"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class ToolResultBlockParam: …`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_result"]`
+
+          - `"tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `content: Optional[Union[str, List[Content], null]]`
+
+          - `str`
+
+          - `List[Content]`
+
+            - `class TextBlockParam: …`
+
+              - `text: str`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[List[TextCitationParam]]`
+
+                - `class CitationCharLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_char_index: int`
+
+                  - `start_char_index: int`
+
+                  - `type: Literal["char_location"]`
+
+                    - `"char_location"`
+
+                - `class CitationPageLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_page_number: int`
+
+                  - `start_page_number: int`
+
+                  - `type: Literal["page_location"]`
+
+                    - `"page_location"`
+
+                - `class CitationContentBlockLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_block_index: int`
+
+                  - `start_block_index: int`
+
+                  - `type: Literal["content_block_location"]`
+
+                    - `"content_block_location"`
+
+                - `class CitationWebSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `encrypted_index: str`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["web_search_result_location"]`
+
+                    - `"web_search_result_location"`
+
+                  - `url: str`
+
+                - `class CitationSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `end_block_index: int`
+
+                  - `search_result_index: int`
+
+                  - `source: str`
+
+                  - `start_block_index: int`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["search_result_location"]`
+
+                    - `"search_result_location"`
+
+            - `class ImageBlockParam: …`
+
+              - `source: Source`
+
+                - `class Base64ImageSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                    - `"image/jpeg"`
+
+                    - `"image/png"`
+
+                    - `"image/gif"`
+
+                    - `"image/webp"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class URLImageSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["image"]`
+
+                - `"image"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+            - `class SearchResultBlockParam: …`
+
+              - `content: List[TextBlockParam]`
+
+                - `text: str`
+
+                - `type: Literal["text"]`
+
+                  - `"text"`
+
+                - `cache_control: Optional[CacheControlEphemeral]`
+
+                  Create a cache control breakpoint at this content block.
+
+                  - `type: Literal["ephemeral"]`
+
+                    - `"ephemeral"`
+
+                  - `ttl: Optional[Literal["5m", "1h"]]`
+
+                    The time-to-live for the cache control breakpoint.
+
+                    This may be one the following values:
+
+                    - `5m`: 5 minutes
+                    - `1h`: 1 hour
+
+                    Defaults to `5m`.
+
+                    - `"5m"`
+
+                    - `"1h"`
+
+                - `citations: Optional[List[TextCitationParam]]`
+
+                  - `class CitationCharLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_char_index: int`
+
+                    - `start_char_index: int`
+
+                    - `type: Literal["char_location"]`
+
+                      - `"char_location"`
+
+                  - `class CitationPageLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_page_number: int`
+
+                    - `start_page_number: int`
+
+                    - `type: Literal["page_location"]`
+
+                      - `"page_location"`
+
+                  - `class CitationContentBlockLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_block_index: int`
+
+                    - `start_block_index: int`
+
+                    - `type: Literal["content_block_location"]`
+
+                      - `"content_block_location"`
+
+                  - `class CitationWebSearchResultLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `encrypted_index: str`
+
+                    - `title: Optional[str]`
+
+                    - `type: Literal["web_search_result_location"]`
+
+                      - `"web_search_result_location"`
+
+                    - `url: str`
+
+                  - `class CitationSearchResultLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `end_block_index: int`
+
+                    - `search_result_index: int`
+
+                    - `source: str`
+
+                    - `start_block_index: int`
+
+                    - `title: Optional[str]`
+
+                    - `type: Literal["search_result_location"]`
+
+                      - `"search_result_location"`
+
+              - `source: str`
+
+              - `title: str`
+
+              - `type: Literal["search_result"]`
+
+                - `"search_result"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+            - `class DocumentBlockParam: …`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                - `class ContentBlockSource: …`
+
+                  - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                    - `str`
+
+                    - `List[ContentBlockSourceContent]`
+
+                      - `class TextBlockParam: …`
+
+                        - `text: str`
+
+                        - `type: Literal["text"]`
+
+                          - `"text"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                        - `citations: Optional[List[TextCitationParam]]`
+
+                          - `class CitationCharLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_char_index: int`
+
+                            - `start_char_index: int`
+
+                            - `type: Literal["char_location"]`
+
+                              - `"char_location"`
+
+                          - `class CitationPageLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_page_number: int`
+
+                            - `start_page_number: int`
+
+                            - `type: Literal["page_location"]`
+
+                              - `"page_location"`
+
+                          - `class CitationContentBlockLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_block_index: int`
+
+                            - `start_block_index: int`
+
+                            - `type: Literal["content_block_location"]`
+
+                              - `"content_block_location"`
+
+                          - `class CitationWebSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `encrypted_index: str`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["web_search_result_location"]`
+
+                              - `"web_search_result_location"`
+
+                            - `url: str`
+
+                          - `class CitationSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `end_block_index: int`
+
+                            - `search_result_index: int`
+
+                            - `source: str`
+
+                            - `start_block_index: int`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["search_result_location"]`
+
+                              - `"search_result_location"`
+
+                      - `class ImageBlockParam: …`
+
+                        - `source: Source`
+
+                          - `class Base64ImageSource: …`
+
+                            - `data: str`
+
+                            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                              - `"image/jpeg"`
+
+                              - `"image/png"`
+
+                              - `"image/gif"`
+
+                              - `"image/webp"`
+
+                            - `type: Literal["base64"]`
+
+                              - `"base64"`
+
+                          - `class URLImageSource: …`
+
+                            - `type: Literal["url"]`
+
+                              - `"url"`
+
+                            - `url: str`
+
+                        - `type: Literal["image"]`
+
+                          - `"image"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                  - `type: Literal["content"]`
+
+                    - `"content"`
+
+                - `class URLPDFSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+              - `context: Optional[str]`
+
+              - `title: Optional[str]`
+
+            - `class ToolReferenceBlockParam: …`
+
+              Tool reference block that can be included in tool_result content.
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+        - `is_error: Optional[bool]`
+
+      - `class ServerToolUseBlockParam: …`
+
+        - `id: str`
+
+        - `input: Dict[str, object]`
+
+        - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+          - `"web_search"`
+
+          - `"web_fetch"`
+
+          - `"code_execution"`
+
+          - `"bash_code_execution"`
+
+          - `"text_editor_code_execution"`
+
+          - `"tool_search_tool_regex"`
+
+          - `"tool_search_tool_bm25"`
+
+        - `type: Literal["server_tool_use"]`
+
+          - `"server_tool_use"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class WebSearchToolResultBlockParam: …`
+
+        - `content: WebSearchToolResultBlockParamContent`
+
+          - `List[WebSearchResultBlockParam]`
+
+            - `encrypted_content: str`
+
+            - `title: str`
+
+            - `type: Literal["web_search_result"]`
+
+              - `"web_search_result"`
+
+            - `url: str`
+
+            - `page_age: Optional[str]`
+
+          - `class WebSearchToolRequestError: …`
+
+            - `error_code: WebSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"max_uses_exceeded"`
+
+              - `"too_many_requests"`
+
+              - `"query_too_long"`
+
+              - `"request_too_large"`
+
+            - `type: Literal["web_search_tool_result_error"]`
+
+              - `"web_search_tool_result_error"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_search_tool_result"]`
+
+          - `"web_search_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class WebFetchToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class WebFetchToolResultErrorBlockParam: …`
+
+            - `error_code: WebFetchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"url_too_long"`
+
+              - `"url_not_allowed"`
+
+              - `"url_not_accessible"`
+
+              - `"unsupported_content_type"`
+
+              - `"too_many_requests"`
+
+              - `"max_uses_exceeded"`
+
+              - `"unavailable"`
+
+            - `type: Literal["web_fetch_tool_result_error"]`
+
+              - `"web_fetch_tool_result_error"`
+
+          - `class WebFetchBlockParam: …`
+
+            - `content: DocumentBlockParam`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                - `class ContentBlockSource: …`
+
+                  - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                    - `str`
+
+                    - `List[ContentBlockSourceContent]`
+
+                      - `class TextBlockParam: …`
+
+                        - `text: str`
+
+                        - `type: Literal["text"]`
+
+                          - `"text"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                        - `citations: Optional[List[TextCitationParam]]`
+
+                          - `class CitationCharLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_char_index: int`
+
+                            - `start_char_index: int`
+
+                            - `type: Literal["char_location"]`
+
+                              - `"char_location"`
+
+                          - `class CitationPageLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_page_number: int`
+
+                            - `start_page_number: int`
+
+                            - `type: Literal["page_location"]`
+
+                              - `"page_location"`
+
+                          - `class CitationContentBlockLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_block_index: int`
+
+                            - `start_block_index: int`
+
+                            - `type: Literal["content_block_location"]`
+
+                              - `"content_block_location"`
+
+                          - `class CitationWebSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `encrypted_index: str`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["web_search_result_location"]`
+
+                              - `"web_search_result_location"`
+
+                            - `url: str`
+
+                          - `class CitationSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `end_block_index: int`
+
+                            - `search_result_index: int`
+
+                            - `source: str`
+
+                            - `start_block_index: int`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["search_result_location"]`
+
+                              - `"search_result_location"`
+
+                      - `class ImageBlockParam: …`
+
+                        - `source: Source`
+
+                          - `class Base64ImageSource: …`
+
+                            - `data: str`
+
+                            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                              - `"image/jpeg"`
+
+                              - `"image/png"`
+
+                              - `"image/gif"`
+
+                              - `"image/webp"`
+
+                            - `type: Literal["base64"]`
+
+                              - `"base64"`
+
+                          - `class URLImageSource: …`
+
+                            - `type: Literal["url"]`
+
+                              - `"url"`
+
+                            - `url: str`
+
+                        - `type: Literal["image"]`
+
+                          - `"image"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                  - `type: Literal["content"]`
+
+                    - `"content"`
+
+                - `class URLPDFSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+              - `context: Optional[str]`
+
+              - `title: Optional[str]`
+
+            - `type: Literal["web_fetch_result"]`
+
+              - `"web_fetch_result"`
+
+            - `url: str`
+
+              Fetched content URL
+
+            - `retrieved_at: Optional[str]`
+
+              ISO 8601 timestamp when the content was retrieved
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_fetch_tool_result"]`
+
+          - `"web_fetch_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class CodeExecutionToolResultBlockParam: …`
+
+        - `content: CodeExecutionToolResultBlockParamContent`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `class CodeExecutionToolResultErrorParam: …`
+
+            - `error_code: CodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["code_execution_tool_result_error"]`
+
+              - `"code_execution_tool_result_error"`
+
+          - `class CodeExecutionResultBlockParam: …`
+
+            - `content: List[CodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["code_execution_result"]`
+
+              - `"code_execution_result"`
+
+          - `class EncryptedCodeExecutionResultBlockParam: …`
+
+            Code execution result with encrypted stdout for PFC + web_search results.
+
+            - `content: List[CodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `encrypted_stdout: str`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `type: Literal["encrypted_code_execution_result"]`
+
+              - `"encrypted_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["code_execution_tool_result"]`
+
+          - `"code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class BashCodeExecutionToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class BashCodeExecutionToolResultErrorParam: …`
+
+            - `error_code: BashCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"output_file_too_large"`
+
+            - `type: Literal["bash_code_execution_tool_result_error"]`
+
+              - `"bash_code_execution_tool_result_error"`
+
+          - `class BashCodeExecutionResultBlockParam: …`
+
+            - `content: List[BashCodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["bash_code_execution_output"]`
+
+                - `"bash_code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["bash_code_execution_result"]`
+
+              - `"bash_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["bash_code_execution_tool_result"]`
+
+          - `"bash_code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class TextEditorCodeExecutionToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class TextEditorCodeExecutionToolResultErrorParam: …`
+
+            - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"file_not_found"`
+
+            - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+              - `"text_editor_code_execution_tool_result_error"`
+
+            - `error_message: Optional[str]`
+
+          - `class TextEditorCodeExecutionViewResultBlockParam: …`
+
+            - `content: str`
+
+            - `file_type: Literal["text", "image", "pdf"]`
+
+              - `"text"`
+
+              - `"image"`
+
+              - `"pdf"`
+
+            - `type: Literal["text_editor_code_execution_view_result"]`
+
+              - `"text_editor_code_execution_view_result"`
+
+            - `num_lines: Optional[int]`
+
+            - `start_line: Optional[int]`
+
+            - `total_lines: Optional[int]`
+
+          - `class TextEditorCodeExecutionCreateResultBlockParam: …`
+
+            - `is_file_update: bool`
+
+            - `type: Literal["text_editor_code_execution_create_result"]`
+
+              - `"text_editor_code_execution_create_result"`
+
+          - `class TextEditorCodeExecutionStrReplaceResultBlockParam: …`
+
+            - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+              - `"text_editor_code_execution_str_replace_result"`
+
+            - `lines: Optional[List[str]]`
+
+            - `new_lines: Optional[int]`
+
+            - `new_start: Optional[int]`
+
+            - `old_lines: Optional[int]`
+
+            - `old_start: Optional[int]`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["text_editor_code_execution_tool_result"]`
+
+          - `"text_editor_code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class ToolSearchToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class ToolSearchToolResultErrorParam: …`
+
+            - `error_code: ToolSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["tool_search_tool_result_error"]`
+
+              - `"tool_search_tool_result_error"`
+
+          - `class ToolSearchToolSearchResultBlockParam: …`
+
+            - `tool_references: List[ToolReferenceBlockParam]`
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+            - `type: Literal["tool_search_tool_search_result"]`
+
+              - `"tool_search_tool_search_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_search_tool_result"]`
+
+          - `"tool_search_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class ContainerUploadBlockParam: …`
+
+        A content block that represents a file to be uploaded to the container
+        Files uploaded via this block will be available in the container's input directory.
+
+        - `file_id: str`
+
+        - `type: Literal["container_upload"]`
+
+          - `"container_upload"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+  - `role: Literal["user", "assistant"]`
+
+    - `"user"`
+
+    - `"assistant"`
+
+- `model: ModelParam`
+
+  The model that will complete your prompt.
+
+  See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+  - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+    The model that will complete your prompt.
+
+    See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+    - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+    - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+    - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+    - `claude-sonnet-4-6` - Best combination of speed and intelligence
+    - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+    - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+    - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+    - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+    - `claude-sonnet-4-5` - High-performance model for agents and coding
+    - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+    - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+    - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+    - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+    - `"claude-opus-4-7"`
+
+      Frontier intelligence for long-running agents and coding
+
+    - `"claude-mythos-preview"`
+
+      New class of intelligence, strongest in coding and cybersecurity
+
+    - `"claude-opus-4-6"`
+
+      Frontier intelligence for long-running agents and coding
+
+    - `"claude-sonnet-4-6"`
+
+      Best combination of speed and intelligence
+
+    - `"claude-haiku-4-5"`
+
+      Fastest model with near-frontier intelligence
+
+    - `"claude-haiku-4-5-20251001"`
+
+      Fastest model with near-frontier intelligence
+
+    - `"claude-opus-4-5"`
+
+      Premium model combining maximum intelligence with practical performance
+
+    - `"claude-opus-4-5-20251101"`
+
+      Premium model combining maximum intelligence with practical performance
+
+    - `"claude-sonnet-4-5"`
+
+      High-performance model for agents and coding
+
+    - `"claude-sonnet-4-5-20250929"`
+
+      High-performance model for agents and coding
+
+    - `"claude-opus-4-1"`
+
+      Exceptional model for specialized complex tasks
+
+    - `"claude-opus-4-1-20250805"`
+
+      Exceptional model for specialized complex tasks
+
+    - `"claude-opus-4-0"`
+
+      Powerful model for complex tasks
+
+    - `"claude-opus-4-20250514"`
+
+      Powerful model for complex tasks
+
+    - `"claude-sonnet-4-0"`
+
+      High-performance model with extended thinking
+
+    - `"claude-sonnet-4-20250514"`
+
+      High-performance model with extended thinking
+
+    - `"claude-3-haiku-20240307"`
+
+      Fast and cost-effective model
+
+  - `str`
+
+- `cache_control: Optional[CacheControlEphemeralParam]`
+
+  Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+
+  - `type: Literal["ephemeral"]`
+
+    - `"ephemeral"`
+
+  - `ttl: Optional[Literal["5m", "1h"]]`
+
+    The time-to-live for the cache control breakpoint.
+
+    This may be one the following values:
+
+    - `5m`: 5 minutes
+    - `1h`: 1 hour
+
+    Defaults to `5m`.
+
+    - `"5m"`
+
+    - `"1h"`
+
+- `output_config: Optional[OutputConfigParam]`
+
+  Configuration options for the model's output, such as the output format.
+
+  - `effort: Optional[Literal["low", "medium", "high", "max"]]`
+
+    All possible effort levels.
+
+    - `"low"`
+
+    - `"medium"`
+
+    - `"high"`
+
+    - `"max"`
+
+  - `format: Optional[JSONOutputFormat]`
+
+    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+
+    - `schema: Dict[str, object]`
+
+      The JSON schema of the format
+
+    - `type: Literal["json_schema"]`
+
+      - `"json_schema"`
+
+- `system: Optional[Union[str, Iterable[TextBlockParam]]]`
+
+  System prompt.
+
+  A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
+
+  - `str`
+
+  - `Iterable[TextBlockParam]`
+
+    - `text: str`
+
+    - `type: Literal["text"]`
+
+      - `"text"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[List[TextCitationParam]]`
+
+      - `class CitationCharLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_char_index: int`
+
+        - `start_char_index: int`
+
+        - `type: Literal["char_location"]`
+
+          - `"char_location"`
+
+      - `class CitationPageLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_page_number: int`
+
+        - `start_page_number: int`
+
+        - `type: Literal["page_location"]`
+
+          - `"page_location"`
+
+      - `class CitationContentBlockLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_block_index: int`
+
+        - `start_block_index: int`
+
+        - `type: Literal["content_block_location"]`
+
+          - `"content_block_location"`
+
+      - `class CitationWebSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `encrypted_index: str`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["web_search_result_location"]`
+
+          - `"web_search_result_location"`
+
+        - `url: str`
+
+      - `class CitationSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `end_block_index: int`
+
+        - `search_result_index: int`
+
+        - `source: str`
+
+        - `start_block_index: int`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["search_result_location"]`
+
+          - `"search_result_location"`
+
+- `thinking: Optional[ThinkingConfigParam]`
+
+  Configuration for enabling Claude's extended thinking.
+
+  When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.
+
+  See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+  - `class ThinkingConfigEnabled: …`
+
+    - `budget_tokens: int`
+
+      Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.
+
+      Must be ≥1024 and less than `max_tokens`.
+
+      See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+    - `type: Literal["enabled"]`
+
+      - `"enabled"`
+
+    - `display: Optional[Literal["summarized", "omitted"]]`
+
+      Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+      - `"summarized"`
+
+      - `"omitted"`
+
+  - `class ThinkingConfigDisabled: …`
+
+    - `type: Literal["disabled"]`
+
+      - `"disabled"`
+
+  - `class ThinkingConfigAdaptive: …`
+
+    - `type: Literal["adaptive"]`
+
+      - `"adaptive"`
+
+    - `display: Optional[Literal["summarized", "omitted"]]`
+
+      Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+      - `"summarized"`
+
+      - `"omitted"`
+
+- `tool_choice: Optional[ToolChoiceParam]`
+
+  How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
+
+  - `class ToolChoiceAuto: …`
+
+    The model will automatically decide whether to use tools.
+
+    - `type: Literal["auto"]`
+
+      - `"auto"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output at most one tool use.
+
+  - `class ToolChoiceAny: …`
+
+    The model will use any available tools.
+
+    - `type: Literal["any"]`
+
+      - `"any"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+  - `class ToolChoiceTool: …`
+
+    The model will use the specified tool with `tool_choice.name`.
+
+    - `name: str`
+
+      The name of the tool to use.
+
+    - `type: Literal["tool"]`
+
+      - `"tool"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+  - `class ToolChoiceNone: …`
+
+    The model will not be allowed to use tools.
+
+    - `type: Literal["none"]`
+
+      - `"none"`
+
+- `tools: Optional[Iterable[MessageCountTokensToolParam]]`
+
+  Definitions of tools that the model may use.
+
+  If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
+
+  There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.claude.com/en/docs/agents-and-tools/tool-use/web-search-tool)).
+
+  Each tool definition includes:
+
+  * `name`: Name of the tool.
+  * `description`: Optional, but strongly-recommended description of the tool.
+  * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.
+
+  For example, if you defined `tools` as:
+
+  ```json
+  [
+    {
+      "name": "get_stock_price",
+      "description": "Get the current stock price for a given ticker symbol.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "description": "The stock ticker symbol, e.g. AAPL for Apple Inc."
+          }
+        },
+        "required": ["ticker"]
+      }
+    }
+  ]
+  ```
+
+  And then asked the model "What's the S&P 500 at today?", the model might produce `tool_use` content blocks in the response like this:
+
+  ```json
+  [
+    {
+      "type": "tool_use",
+      "id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",
+      "name": "get_stock_price",
+      "input": { "ticker": "^GSPC" }
+    }
+  ]
+  ```
+
+  You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an input, and return the following back to the model in a subsequent `user` message:
+
+  ```json
+  [
+    {
+      "type": "tool_result",
+      "tool_use_id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",
+      "content": "259.75 USD"
+    }
+  ]
+  ```
+
+  Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
+
+  See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
+
+  - `class Tool: …`
+
+    - `input_schema: InputSchema`
+
+      [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.
+
+      This defines the shape of the `input` that your tool accepts and that the model will produce.
+
+      - `type: Literal["object"]`
+
+        - `"object"`
+
+      - `properties: Optional[Dict[str, object]]`
+
+      - `required: Optional[List[str]]`
+
+    - `name: str`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `description: Optional[str]`
+
+      Description of what this tool does.
+
+      Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
+
+    - `eager_input_streaming: Optional[bool]`
+
+      Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `type: Optional[Literal["custom"]]`
+
+      - `"custom"`
+
+  - `class ToolBash20250124: …`
+
+    - `name: Literal["bash"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"bash"`
+
+    - `type: Literal["bash_20250124"]`
+
+      - `"bash_20250124"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20250522: …`
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20250522"]`
+
+      - `"code_execution_20250522"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20250825: …`
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20250825"]`
+
+      - `"code_execution_20250825"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20260120: …`
+
+    Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20260120"]`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class MemoryTool20250818: …`
+
+    - `name: Literal["memory"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"memory"`
+
+    - `type: Literal["memory_20250818"]`
+
+      - `"memory_20250818"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250124: …`
+
+    - `name: Literal["str_replace_editor"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_editor"`
+
+    - `type: Literal["text_editor_20250124"]`
+
+      - `"text_editor_20250124"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250429: …`
+
+    - `name: Literal["str_replace_based_edit_tool"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_based_edit_tool"`
+
+    - `type: Literal["text_editor_20250429"]`
+
+      - `"text_editor_20250429"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250728: …`
+
+    - `name: Literal["str_replace_based_edit_tool"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_based_edit_tool"`
+
+    - `type: Literal["text_editor_20250728"]`
+
+      - `"text_editor_20250728"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `max_characters: Optional[int]`
+
+      Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebSearchTool20250305: …`
+
+    - `name: Literal["web_search"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_search"`
+
+    - `type: Literal["web_search_20250305"]`
+
+      - `"web_search_20250305"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+    - `blocked_domains: Optional[List[str]]`
+
+      If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `user_location: Optional[UserLocation]`
+
+      Parameters for the user's location. Used to provide more relevant search results.
+
+      - `type: Literal["approximate"]`
+
+        - `"approximate"`
+
+      - `city: Optional[str]`
+
+        The city of the user.
+
+      - `country: Optional[str]`
+
+        The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+      - `region: Optional[str]`
+
+        The region of the user.
+
+      - `timezone: Optional[str]`
+
+        The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+  - `class WebFetchTool20250910: …`
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20250910"]`
+
+      - `"web_fetch_20250910"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebSearchTool20260209: …`
+
+    - `name: Literal["web_search"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_search"`
+
+    - `type: Literal["web_search_20260209"]`
+
+      - `"web_search_20260209"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+    - `blocked_domains: Optional[List[str]]`
+
+      If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `user_location: Optional[UserLocation]`
+
+      Parameters for the user's location. Used to provide more relevant search results.
+
+      - `type: Literal["approximate"]`
+
+        - `"approximate"`
+
+      - `city: Optional[str]`
+
+        The city of the user.
+
+      - `country: Optional[str]`
+
+        The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+      - `region: Optional[str]`
+
+        The region of the user.
+
+      - `timezone: Optional[str]`
+
+        The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+  - `class WebFetchTool20260209: …`
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20260209"]`
+
+      - `"web_fetch_20260209"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebFetchTool20260309: …`
+
+    Web fetch tool with use_cache parameter for bypassing cached content.
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20260309"]`
+
+      - `"web_fetch_20260309"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `use_cache: Optional[bool]`
+
+      Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
+
+  - `class ToolSearchToolBm25_20251119: …`
+
+    - `name: Literal["tool_search_tool_bm25"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"tool_search_tool_bm25"`
+
+    - `type: Literal["tool_search_tool_bm25_20251119", "tool_search_tool_bm25"]`
+
+      - `"tool_search_tool_bm25_20251119"`
+
+      - `"tool_search_tool_bm25"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolSearchToolRegex20251119: …`
+
+    - `name: Literal["tool_search_tool_regex"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"tool_search_tool_regex"`
+
+    - `type: Literal["tool_search_tool_regex_20251119", "tool_search_tool_regex"]`
+
+      - `"tool_search_tool_regex_20251119"`
+
+      - `"tool_search_tool_regex"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+### Returns
+
+- `class MessageTokensCount: …`
+
+  - `input_tokens: int`
+
+    The total number of tokens across the provided list of messages, system prompt, and tools.
+
+### Example
+
+```python
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY"),  # This is the default and can be omitted
+)
+message_tokens_count = client.messages.count_tokens(
+    messages=[{
+        "content": "Hello, world",
+        "role": "user",
+    }],
+    model="claude-opus-4-6",
+)
+print(message_tokens_count.input_tokens)
+```
+
+## Domain Types
+
+### Base64 Image Source
+
+- `class Base64ImageSource: …`
+
+  - `data: str`
+
+  - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+    - `"image/jpeg"`
+
+    - `"image/png"`
+
+    - `"image/gif"`
+
+    - `"image/webp"`
+
+  - `type: Literal["base64"]`
+
+    - `"base64"`
+
+### Base64 PDF Source
+
+- `class Base64PDFSource: …`
+
+  - `data: str`
+
+  - `media_type: Literal["application/pdf"]`
+
+    - `"application/pdf"`
+
+  - `type: Literal["base64"]`
+
+    - `"base64"`
+
+### Bash Code Execution Output Block
+
+- `class BashCodeExecutionOutputBlock: …`
+
+  - `file_id: str`
+
+  - `type: Literal["bash_code_execution_output"]`
+
+    - `"bash_code_execution_output"`
+
+### Bash Code Execution Output Block Param
+
+- `class BashCodeExecutionOutputBlockParam: …`
+
+  - `file_id: str`
+
+  - `type: Literal["bash_code_execution_output"]`
+
+    - `"bash_code_execution_output"`
+
+### Bash Code Execution Result Block
+
+- `class BashCodeExecutionResultBlock: …`
+
+  - `content: List[BashCodeExecutionOutputBlock]`
+
+    - `file_id: str`
+
+    - `type: Literal["bash_code_execution_output"]`
+
+      - `"bash_code_execution_output"`
+
+  - `return_code: int`
+
+  - `stderr: str`
+
+  - `stdout: str`
+
+  - `type: Literal["bash_code_execution_result"]`
+
+    - `"bash_code_execution_result"`
+
+### Bash Code Execution Result Block Param
+
+- `class BashCodeExecutionResultBlockParam: …`
+
+  - `content: List[BashCodeExecutionOutputBlockParam]`
+
+    - `file_id: str`
+
+    - `type: Literal["bash_code_execution_output"]`
+
+      - `"bash_code_execution_output"`
+
+  - `return_code: int`
+
+  - `stderr: str`
+
+  - `stdout: str`
+
+  - `type: Literal["bash_code_execution_result"]`
+
+    - `"bash_code_execution_result"`
+
+### Bash Code Execution Tool Result Block
+
+- `class BashCodeExecutionToolResultBlock: …`
+
+  - `content: Content`
+
+    - `class BashCodeExecutionToolResultError: …`
+
+      - `error_code: BashCodeExecutionToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"too_many_requests"`
+
+        - `"execution_time_exceeded"`
+
+        - `"output_file_too_large"`
+
+      - `type: Literal["bash_code_execution_tool_result_error"]`
+
+        - `"bash_code_execution_tool_result_error"`
+
+    - `class BashCodeExecutionResultBlock: …`
+
+      - `content: List[BashCodeExecutionOutputBlock]`
+
+        - `file_id: str`
+
+        - `type: Literal["bash_code_execution_output"]`
+
+          - `"bash_code_execution_output"`
+
+      - `return_code: int`
+
+      - `stderr: str`
+
+      - `stdout: str`
+
+      - `type: Literal["bash_code_execution_result"]`
+
+        - `"bash_code_execution_result"`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["bash_code_execution_tool_result"]`
+
+    - `"bash_code_execution_tool_result"`
+
+### Bash Code Execution Tool Result Block Param
+
+- `class BashCodeExecutionToolResultBlockParam: …`
+
+  - `content: Content`
+
+    - `class BashCodeExecutionToolResultErrorParam: …`
+
+      - `error_code: BashCodeExecutionToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"too_many_requests"`
+
+        - `"execution_time_exceeded"`
+
+        - `"output_file_too_large"`
+
+      - `type: Literal["bash_code_execution_tool_result_error"]`
+
+        - `"bash_code_execution_tool_result_error"`
+
+    - `class BashCodeExecutionResultBlockParam: …`
+
+      - `content: List[BashCodeExecutionOutputBlockParam]`
+
+        - `file_id: str`
+
+        - `type: Literal["bash_code_execution_output"]`
+
+          - `"bash_code_execution_output"`
+
+      - `return_code: int`
+
+      - `stderr: str`
+
+      - `stdout: str`
+
+      - `type: Literal["bash_code_execution_result"]`
+
+        - `"bash_code_execution_result"`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["bash_code_execution_tool_result"]`
+
+    - `"bash_code_execution_tool_result"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+### Bash Code Execution Tool Result Error
+
+- `class BashCodeExecutionToolResultError: …`
+
+  - `error_code: BashCodeExecutionToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"too_many_requests"`
+
+    - `"execution_time_exceeded"`
+
+    - `"output_file_too_large"`
+
+  - `type: Literal["bash_code_execution_tool_result_error"]`
+
+    - `"bash_code_execution_tool_result_error"`
+
+### Bash Code Execution Tool Result Error Code
+
+- `Literal["invalid_tool_input", "unavailable", "too_many_requests", 2 more]`
+
+  - `"invalid_tool_input"`
+
+  - `"unavailable"`
+
+  - `"too_many_requests"`
+
+  - `"execution_time_exceeded"`
+
+  - `"output_file_too_large"`
+
+### Bash Code Execution Tool Result Error Param
+
+- `class BashCodeExecutionToolResultErrorParam: …`
+
+  - `error_code: BashCodeExecutionToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"too_many_requests"`
+
+    - `"execution_time_exceeded"`
+
+    - `"output_file_too_large"`
+
+  - `type: Literal["bash_code_execution_tool_result_error"]`
+
+    - `"bash_code_execution_tool_result_error"`
+
+### Cache Control Ephemeral
+
+- `class CacheControlEphemeral: …`
+
+  - `type: Literal["ephemeral"]`
+
+    - `"ephemeral"`
+
+  - `ttl: Optional[Literal["5m", "1h"]]`
+
+    The time-to-live for the cache control breakpoint.
+
+    This may be one the following values:
+
+    - `5m`: 5 minutes
+    - `1h`: 1 hour
+
+    Defaults to `5m`.
+
+    - `"5m"`
+
+    - `"1h"`
+
+### Cache Creation
+
+- `class CacheCreation: …`
+
+  - `ephemeral_1h_input_tokens: int`
+
+    The number of input tokens used to create the 1 hour cache entry.
+
+  - `ephemeral_5m_input_tokens: int`
+
+    The number of input tokens used to create the 5 minute cache entry.
+
+### Citation Char Location
+
+- `class CitationCharLocation: …`
+
+  - `cited_text: str`
+
+  - `document_index: int`
+
+  - `document_title: Optional[str]`
+
+  - `end_char_index: int`
+
+  - `file_id: Optional[str]`
+
+  - `start_char_index: int`
+
+  - `type: Literal["char_location"]`
+
+    - `"char_location"`
+
+### Citation Char Location Param
+
+- `class CitationCharLocationParam: …`
+
+  - `cited_text: str`
+
+  - `document_index: int`
+
+  - `document_title: Optional[str]`
+
+  - `end_char_index: int`
+
+  - `start_char_index: int`
+
+  - `type: Literal["char_location"]`
+
+    - `"char_location"`
+
+### Citation Content Block Location
+
+- `class CitationContentBlockLocation: …`
+
+  - `cited_text: str`
+
+  - `document_index: int`
+
+  - `document_title: Optional[str]`
+
+  - `end_block_index: int`
+
+  - `file_id: Optional[str]`
+
+  - `start_block_index: int`
+
+  - `type: Literal["content_block_location"]`
+
+    - `"content_block_location"`
+
+### Citation Content Block Location Param
+
+- `class CitationContentBlockLocationParam: …`
+
+  - `cited_text: str`
+
+  - `document_index: int`
+
+  - `document_title: Optional[str]`
+
+  - `end_block_index: int`
+
+  - `start_block_index: int`
+
+  - `type: Literal["content_block_location"]`
+
+    - `"content_block_location"`
+
+### Citation Page Location
+
+- `class CitationPageLocation: …`
+
+  - `cited_text: str`
+
+  - `document_index: int`
+
+  - `document_title: Optional[str]`
+
+  - `end_page_number: int`
+
+  - `file_id: Optional[str]`
+
+  - `start_page_number: int`
+
+  - `type: Literal["page_location"]`
+
+    - `"page_location"`
+
+### Citation Page Location Param
+
+- `class CitationPageLocationParam: …`
+
+  - `cited_text: str`
+
+  - `document_index: int`
+
+  - `document_title: Optional[str]`
+
+  - `end_page_number: int`
+
+  - `start_page_number: int`
+
+  - `type: Literal["page_location"]`
+
+    - `"page_location"`
+
+### Citation Search Result Location Param
+
+- `class CitationSearchResultLocationParam: …`
+
+  - `cited_text: str`
+
+  - `end_block_index: int`
+
+  - `search_result_index: int`
+
+  - `source: str`
+
+  - `start_block_index: int`
+
+  - `title: Optional[str]`
+
+  - `type: Literal["search_result_location"]`
+
+    - `"search_result_location"`
+
+### Citation Web Search Result Location Param
+
+- `class CitationWebSearchResultLocationParam: …`
+
+  - `cited_text: str`
+
+  - `encrypted_index: str`
+
+  - `title: Optional[str]`
+
+  - `type: Literal["web_search_result_location"]`
+
+    - `"web_search_result_location"`
+
+  - `url: str`
+
+### Citations Config
+
+- `class CitationsConfig: …`
+
+  - `enabled: bool`
+
+### Citations Config Param
+
+- `class CitationsConfigParam: …`
+
+  - `enabled: Optional[bool]`
+
+### Citations Delta
+
+- `class CitationsDelta: …`
+
+  - `citation: Citation`
+
+    - `class CitationCharLocation: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_char_index: int`
+
+      - `file_id: Optional[str]`
+
+      - `start_char_index: int`
+
+      - `type: Literal["char_location"]`
+
+        - `"char_location"`
+
+    - `class CitationPageLocation: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_page_number: int`
+
+      - `file_id: Optional[str]`
+
+      - `start_page_number: int`
+
+      - `type: Literal["page_location"]`
+
+        - `"page_location"`
+
+    - `class CitationContentBlockLocation: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_block_index: int`
+
+      - `file_id: Optional[str]`
+
+      - `start_block_index: int`
+
+      - `type: Literal["content_block_location"]`
+
+        - `"content_block_location"`
+
+    - `class CitationsWebSearchResultLocation: …`
+
+      - `cited_text: str`
+
+      - `encrypted_index: str`
+
+      - `title: Optional[str]`
+
+      - `type: Literal["web_search_result_location"]`
+
+        - `"web_search_result_location"`
+
+      - `url: str`
+
+    - `class CitationsSearchResultLocation: …`
+
+      - `cited_text: str`
+
+      - `end_block_index: int`
+
+      - `search_result_index: int`
+
+      - `source: str`
+
+      - `start_block_index: int`
+
+      - `title: Optional[str]`
+
+      - `type: Literal["search_result_location"]`
+
+        - `"search_result_location"`
+
+  - `type: Literal["citations_delta"]`
+
+    - `"citations_delta"`
+
+### Citations Search Result Location
+
+- `class CitationsSearchResultLocation: …`
+
+  - `cited_text: str`
+
+  - `end_block_index: int`
+
+  - `search_result_index: int`
+
+  - `source: str`
+
+  - `start_block_index: int`
+
+  - `title: Optional[str]`
+
+  - `type: Literal["search_result_location"]`
+
+    - `"search_result_location"`
+
+### Citations Web Search Result Location
+
+- `class CitationsWebSearchResultLocation: …`
+
+  - `cited_text: str`
+
+  - `encrypted_index: str`
+
+  - `title: Optional[str]`
+
+  - `type: Literal["web_search_result_location"]`
+
+    - `"web_search_result_location"`
+
+  - `url: str`
+
+### Code Execution Output Block
+
+- `class CodeExecutionOutputBlock: …`
+
+  - `file_id: str`
+
+  - `type: Literal["code_execution_output"]`
+
+    - `"code_execution_output"`
+
+### Code Execution Output Block Param
+
+- `class CodeExecutionOutputBlockParam: …`
+
+  - `file_id: str`
+
+  - `type: Literal["code_execution_output"]`
+
+    - `"code_execution_output"`
+
+### Code Execution Result Block
+
+- `class CodeExecutionResultBlock: …`
+
+  - `content: List[CodeExecutionOutputBlock]`
+
+    - `file_id: str`
+
+    - `type: Literal["code_execution_output"]`
+
+      - `"code_execution_output"`
+
+  - `return_code: int`
+
+  - `stderr: str`
+
+  - `stdout: str`
+
+  - `type: Literal["code_execution_result"]`
+
+    - `"code_execution_result"`
+
+### Code Execution Result Block Param
+
+- `class CodeExecutionResultBlockParam: …`
+
+  - `content: List[CodeExecutionOutputBlockParam]`
+
+    - `file_id: str`
+
+    - `type: Literal["code_execution_output"]`
+
+      - `"code_execution_output"`
+
+  - `return_code: int`
+
+  - `stderr: str`
+
+  - `stdout: str`
+
+  - `type: Literal["code_execution_result"]`
+
+    - `"code_execution_result"`
+
+### Code Execution Tool 20250522
+
+- `class CodeExecutionTool20250522: …`
+
+  - `name: Literal["code_execution"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"code_execution"`
+
+  - `type: Literal["code_execution_20250522"]`
+
+    - `"code_execution_20250522"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Code Execution Tool 20250825
+
+- `class CodeExecutionTool20250825: …`
+
+  - `name: Literal["code_execution"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"code_execution"`
+
+  - `type: Literal["code_execution_20250825"]`
+
+    - `"code_execution_20250825"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Code Execution Tool 20260120
+
+- `class CodeExecutionTool20260120: …`
+
+  Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+  - `name: Literal["code_execution"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"code_execution"`
+
+  - `type: Literal["code_execution_20260120"]`
+
+    - `"code_execution_20260120"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Code Execution Tool Result Block
+
+- `class CodeExecutionToolResultBlock: …`
+
+  - `content: CodeExecutionToolResultBlockContent`
+
+    Code execution result with encrypted stdout for PFC + web_search results.
+
+    - `class CodeExecutionToolResultError: …`
+
+      - `error_code: CodeExecutionToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"too_many_requests"`
+
+        - `"execution_time_exceeded"`
+
+      - `type: Literal["code_execution_tool_result_error"]`
+
+        - `"code_execution_tool_result_error"`
+
+    - `class CodeExecutionResultBlock: …`
+
+      - `content: List[CodeExecutionOutputBlock]`
+
+        - `file_id: str`
+
+        - `type: Literal["code_execution_output"]`
+
+          - `"code_execution_output"`
+
+      - `return_code: int`
+
+      - `stderr: str`
+
+      - `stdout: str`
+
+      - `type: Literal["code_execution_result"]`
+
+        - `"code_execution_result"`
+
+    - `class EncryptedCodeExecutionResultBlock: …`
+
+      Code execution result with encrypted stdout for PFC + web_search results.
+
+      - `content: List[CodeExecutionOutputBlock]`
+
+        - `file_id: str`
+
+        - `type: Literal["code_execution_output"]`
+
+          - `"code_execution_output"`
+
+      - `encrypted_stdout: str`
+
+      - `return_code: int`
+
+      - `stderr: str`
+
+      - `type: Literal["encrypted_code_execution_result"]`
+
+        - `"encrypted_code_execution_result"`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["code_execution_tool_result"]`
+
+    - `"code_execution_tool_result"`
+
+### Code Execution Tool Result Block Content
+
+- `CodeExecutionToolResultBlockContent`
+
+  Code execution result with encrypted stdout for PFC + web_search results.
+
+  - `class CodeExecutionToolResultError: …`
+
+    - `error_code: CodeExecutionToolResultErrorCode`
+
+      - `"invalid_tool_input"`
+
+      - `"unavailable"`
+
+      - `"too_many_requests"`
+
+      - `"execution_time_exceeded"`
+
+    - `type: Literal["code_execution_tool_result_error"]`
+
+      - `"code_execution_tool_result_error"`
+
+  - `class CodeExecutionResultBlock: …`
+
+    - `content: List[CodeExecutionOutputBlock]`
+
+      - `file_id: str`
+
+      - `type: Literal["code_execution_output"]`
+
+        - `"code_execution_output"`
+
+    - `return_code: int`
+
+    - `stderr: str`
+
+    - `stdout: str`
+
+    - `type: Literal["code_execution_result"]`
+
+      - `"code_execution_result"`
+
+  - `class EncryptedCodeExecutionResultBlock: …`
+
+    Code execution result with encrypted stdout for PFC + web_search results.
+
+    - `content: List[CodeExecutionOutputBlock]`
+
+      - `file_id: str`
+
+      - `type: Literal["code_execution_output"]`
+
+        - `"code_execution_output"`
+
+    - `encrypted_stdout: str`
+
+    - `return_code: int`
+
+    - `stderr: str`
+
+    - `type: Literal["encrypted_code_execution_result"]`
+
+      - `"encrypted_code_execution_result"`
+
+### Code Execution Tool Result Block Param
+
+- `class CodeExecutionToolResultBlockParam: …`
+
+  - `content: CodeExecutionToolResultBlockParamContent`
+
+    Code execution result with encrypted stdout for PFC + web_search results.
+
+    - `class CodeExecutionToolResultErrorParam: …`
+
+      - `error_code: CodeExecutionToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"too_many_requests"`
+
+        - `"execution_time_exceeded"`
+
+      - `type: Literal["code_execution_tool_result_error"]`
+
+        - `"code_execution_tool_result_error"`
+
+    - `class CodeExecutionResultBlockParam: …`
+
+      - `content: List[CodeExecutionOutputBlockParam]`
+
+        - `file_id: str`
+
+        - `type: Literal["code_execution_output"]`
+
+          - `"code_execution_output"`
+
+      - `return_code: int`
+
+      - `stderr: str`
+
+      - `stdout: str`
+
+      - `type: Literal["code_execution_result"]`
+
+        - `"code_execution_result"`
+
+    - `class EncryptedCodeExecutionResultBlockParam: …`
+
+      Code execution result with encrypted stdout for PFC + web_search results.
+
+      - `content: List[CodeExecutionOutputBlockParam]`
+
+        - `file_id: str`
+
+        - `type: Literal["code_execution_output"]`
+
+          - `"code_execution_output"`
+
+      - `encrypted_stdout: str`
+
+      - `return_code: int`
+
+      - `stderr: str`
+
+      - `type: Literal["encrypted_code_execution_result"]`
+
+        - `"encrypted_code_execution_result"`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["code_execution_tool_result"]`
+
+    - `"code_execution_tool_result"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+### Code Execution Tool Result Block Param Content
+
+- `CodeExecutionToolResultBlockParamContent`
+
+  Code execution result with encrypted stdout for PFC + web_search results.
+
+  - `class CodeExecutionToolResultErrorParam: …`
+
+    - `error_code: CodeExecutionToolResultErrorCode`
+
+      - `"invalid_tool_input"`
+
+      - `"unavailable"`
+
+      - `"too_many_requests"`
+
+      - `"execution_time_exceeded"`
+
+    - `type: Literal["code_execution_tool_result_error"]`
+
+      - `"code_execution_tool_result_error"`
+
+  - `class CodeExecutionResultBlockParam: …`
+
+    - `content: List[CodeExecutionOutputBlockParam]`
+
+      - `file_id: str`
+
+      - `type: Literal["code_execution_output"]`
+
+        - `"code_execution_output"`
+
+    - `return_code: int`
+
+    - `stderr: str`
+
+    - `stdout: str`
+
+    - `type: Literal["code_execution_result"]`
+
+      - `"code_execution_result"`
+
+  - `class EncryptedCodeExecutionResultBlockParam: …`
+
+    Code execution result with encrypted stdout for PFC + web_search results.
+
+    - `content: List[CodeExecutionOutputBlockParam]`
+
+      - `file_id: str`
+
+      - `type: Literal["code_execution_output"]`
+
+        - `"code_execution_output"`
+
+    - `encrypted_stdout: str`
+
+    - `return_code: int`
+
+    - `stderr: str`
+
+    - `type: Literal["encrypted_code_execution_result"]`
+
+      - `"encrypted_code_execution_result"`
+
+### Code Execution Tool Result Error
+
+- `class CodeExecutionToolResultError: …`
+
+  - `error_code: CodeExecutionToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"too_many_requests"`
+
+    - `"execution_time_exceeded"`
+
+  - `type: Literal["code_execution_tool_result_error"]`
+
+    - `"code_execution_tool_result_error"`
+
+### Code Execution Tool Result Error Code
+
+- `Literal["invalid_tool_input", "unavailable", "too_many_requests", "execution_time_exceeded"]`
+
+  - `"invalid_tool_input"`
+
+  - `"unavailable"`
+
+  - `"too_many_requests"`
+
+  - `"execution_time_exceeded"`
+
+### Code Execution Tool Result Error Param
+
+- `class CodeExecutionToolResultErrorParam: …`
+
+  - `error_code: CodeExecutionToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"too_many_requests"`
+
+    - `"execution_time_exceeded"`
+
+  - `type: Literal["code_execution_tool_result_error"]`
+
+    - `"code_execution_tool_result_error"`
+
+### Container
+
+- `class Container: …`
+
+  Information about the container used in the request (for the code execution tool)
+
+  - `id: str`
+
+    Identifier for the container used in this request
+
+  - `expires_at: datetime`
+
+    The time at which the container will expire.
+
+### Container Upload Block
+
+- `class ContainerUploadBlock: …`
+
+  Response model for a file uploaded to the container.
+
+  - `file_id: str`
+
+  - `type: Literal["container_upload"]`
+
+    - `"container_upload"`
+
+### Container Upload Block Param
+
+- `class ContainerUploadBlockParam: …`
+
+  A content block that represents a file to be uploaded to the container
+  Files uploaded via this block will be available in the container's input directory.
+
+  - `file_id: str`
+
+  - `type: Literal["container_upload"]`
+
+    - `"container_upload"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+### Content Block
+
+- `ContentBlock`
+
+  Response model for a file uploaded to the container.
+
+  - `class TextBlock: …`
+
+    - `citations: Optional[List[TextCitation]]`
+
+      Citations supporting the text block.
+
+      The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+      - `class CitationCharLocation: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_char_index: int`
+
+        - `file_id: Optional[str]`
+
+        - `start_char_index: int`
+
+        - `type: Literal["char_location"]`
+
+          - `"char_location"`
+
+      - `class CitationPageLocation: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_page_number: int`
+
+        - `file_id: Optional[str]`
+
+        - `start_page_number: int`
+
+        - `type: Literal["page_location"]`
+
+          - `"page_location"`
+
+      - `class CitationContentBlockLocation: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_block_index: int`
+
+        - `file_id: Optional[str]`
+
+        - `start_block_index: int`
+
+        - `type: Literal["content_block_location"]`
+
+          - `"content_block_location"`
+
+      - `class CitationsWebSearchResultLocation: …`
+
+        - `cited_text: str`
+
+        - `encrypted_index: str`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["web_search_result_location"]`
+
+          - `"web_search_result_location"`
+
+        - `url: str`
+
+      - `class CitationsSearchResultLocation: …`
+
+        - `cited_text: str`
+
+        - `end_block_index: int`
+
+        - `search_result_index: int`
+
+        - `source: str`
+
+        - `start_block_index: int`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["search_result_location"]`
+
+          - `"search_result_location"`
+
+    - `text: str`
+
+    - `type: Literal["text"]`
+
+      - `"text"`
+
+  - `class ThinkingBlock: …`
+
+    - `signature: str`
+
+    - `thinking: str`
+
+    - `type: Literal["thinking"]`
+
+      - `"thinking"`
+
+  - `class RedactedThinkingBlock: …`
+
+    - `data: str`
+
+    - `type: Literal["redacted_thinking"]`
+
+      - `"redacted_thinking"`
+
+  - `class ToolUseBlock: …`
+
+    - `id: str`
+
+    - `caller: Caller`
+
+      Tool invocation directly from the model.
+
+      - `class DirectCaller: …`
+
+        Tool invocation directly from the model.
+
+        - `type: Literal["direct"]`
+
+          - `"direct"`
+
+      - `class ServerToolCaller: …`
+
+        Tool invocation generated by a server-side tool.
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+      - `class ServerToolCaller20260120: …`
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+    - `input: Dict[str, object]`
+
+    - `name: str`
+
+    - `type: Literal["tool_use"]`
+
+      - `"tool_use"`
+
+  - `class ServerToolUseBlock: …`
+
+    - `id: str`
+
+    - `caller: Caller`
+
+      Tool invocation directly from the model.
+
+      - `class DirectCaller: …`
+
+        Tool invocation directly from the model.
+
+        - `type: Literal["direct"]`
+
+          - `"direct"`
+
+      - `class ServerToolCaller: …`
+
+        Tool invocation generated by a server-side tool.
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+      - `class ServerToolCaller20260120: …`
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+    - `input: Dict[str, object]`
+
+    - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+      - `"web_search"`
+
+      - `"web_fetch"`
+
+      - `"code_execution"`
+
+      - `"bash_code_execution"`
+
+      - `"text_editor_code_execution"`
+
+      - `"tool_search_tool_regex"`
+
+      - `"tool_search_tool_bm25"`
+
+    - `type: Literal["server_tool_use"]`
+
+      - `"server_tool_use"`
+
+  - `class WebSearchToolResultBlock: …`
+
+    - `caller: Caller`
+
+      Tool invocation directly from the model.
+
+      - `class DirectCaller: …`
+
+        Tool invocation directly from the model.
+
+        - `type: Literal["direct"]`
+
+          - `"direct"`
+
+      - `class ServerToolCaller: …`
+
+        Tool invocation generated by a server-side tool.
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+      - `class ServerToolCaller20260120: …`
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+    - `content: WebSearchToolResultBlockContent`
+
+      - `class WebSearchToolResultError: …`
+
+        - `error_code: WebSearchToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"max_uses_exceeded"`
+
+          - `"too_many_requests"`
+
+          - `"query_too_long"`
+
+          - `"request_too_large"`
+
+        - `type: Literal["web_search_tool_result_error"]`
+
+          - `"web_search_tool_result_error"`
+
+      - `List[WebSearchResultBlock]`
+
+        - `encrypted_content: str`
+
+        - `page_age: Optional[str]`
+
+        - `title: str`
+
+        - `type: Literal["web_search_result"]`
+
+          - `"web_search_result"`
+
+        - `url: str`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["web_search_tool_result"]`
+
+      - `"web_search_tool_result"`
+
+  - `class WebFetchToolResultBlock: …`
+
+    - `caller: Caller`
+
+      Tool invocation directly from the model.
+
+      - `class DirectCaller: …`
+
+        Tool invocation directly from the model.
+
+        - `type: Literal["direct"]`
+
+          - `"direct"`
+
+      - `class ServerToolCaller: …`
+
+        Tool invocation generated by a server-side tool.
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+      - `class ServerToolCaller20260120: …`
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+    - `content: Content`
+
+      - `class WebFetchToolResultErrorBlock: …`
+
+        - `error_code: WebFetchToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"url_too_long"`
+
+          - `"url_not_allowed"`
+
+          - `"url_not_accessible"`
+
+          - `"unsupported_content_type"`
+
+          - `"too_many_requests"`
+
+          - `"max_uses_exceeded"`
+
+          - `"unavailable"`
+
+        - `type: Literal["web_fetch_tool_result_error"]`
+
+          - `"web_fetch_tool_result_error"`
+
+      - `class WebFetchBlock: …`
+
+        - `content: DocumentBlock`
+
+          - `citations: Optional[CitationsConfig]`
+
+            Citation configuration for the document
+
+            - `enabled: bool`
+
+          - `source: Source`
+
+            - `class Base64PDFSource: …`
+
+              - `data: str`
+
+              - `media_type: Literal["application/pdf"]`
+
+                - `"application/pdf"`
+
+              - `type: Literal["base64"]`
+
+                - `"base64"`
+
+            - `class PlainTextSource: …`
+
+              - `data: str`
+
+              - `media_type: Literal["text/plain"]`
+
+                - `"text/plain"`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+          - `title: Optional[str]`
+
+            The title of the document
+
+          - `type: Literal["document"]`
+
+            - `"document"`
+
+        - `retrieved_at: Optional[str]`
+
+          ISO 8601 timestamp when the content was retrieved
+
+        - `type: Literal["web_fetch_result"]`
+
+          - `"web_fetch_result"`
+
+        - `url: str`
+
+          Fetched content URL
+
+    - `tool_use_id: str`
+
+    - `type: Literal["web_fetch_tool_result"]`
+
+      - `"web_fetch_tool_result"`
+
+  - `class CodeExecutionToolResultBlock: …`
+
+    - `content: CodeExecutionToolResultBlockContent`
+
+      Code execution result with encrypted stdout for PFC + web_search results.
+
+      - `class CodeExecutionToolResultError: …`
+
+        - `error_code: CodeExecutionToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"too_many_requests"`
+
+          - `"execution_time_exceeded"`
+
+        - `type: Literal["code_execution_tool_result_error"]`
+
+          - `"code_execution_tool_result_error"`
+
+      - `class CodeExecutionResultBlock: …`
+
+        - `content: List[CodeExecutionOutputBlock]`
+
+          - `file_id: str`
+
+          - `type: Literal["code_execution_output"]`
+
+            - `"code_execution_output"`
+
+        - `return_code: int`
+
+        - `stderr: str`
+
+        - `stdout: str`
+
+        - `type: Literal["code_execution_result"]`
+
+          - `"code_execution_result"`
+
+      - `class EncryptedCodeExecutionResultBlock: …`
+
+        Code execution result with encrypted stdout for PFC + web_search results.
+
+        - `content: List[CodeExecutionOutputBlock]`
+
+          - `file_id: str`
+
+          - `type: Literal["code_execution_output"]`
+
+            - `"code_execution_output"`
+
+        - `encrypted_stdout: str`
+
+        - `return_code: int`
+
+        - `stderr: str`
+
+        - `type: Literal["encrypted_code_execution_result"]`
+
+          - `"encrypted_code_execution_result"`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["code_execution_tool_result"]`
+
+      - `"code_execution_tool_result"`
+
+  - `class BashCodeExecutionToolResultBlock: …`
+
+    - `content: Content`
+
+      - `class BashCodeExecutionToolResultError: …`
+
+        - `error_code: BashCodeExecutionToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"too_many_requests"`
+
+          - `"execution_time_exceeded"`
+
+          - `"output_file_too_large"`
+
+        - `type: Literal["bash_code_execution_tool_result_error"]`
+
+          - `"bash_code_execution_tool_result_error"`
+
+      - `class BashCodeExecutionResultBlock: …`
+
+        - `content: List[BashCodeExecutionOutputBlock]`
+
+          - `file_id: str`
+
+          - `type: Literal["bash_code_execution_output"]`
+
+            - `"bash_code_execution_output"`
+
+        - `return_code: int`
+
+        - `stderr: str`
+
+        - `stdout: str`
+
+        - `type: Literal["bash_code_execution_result"]`
+
+          - `"bash_code_execution_result"`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["bash_code_execution_tool_result"]`
+
+      - `"bash_code_execution_tool_result"`
+
+  - `class TextEditorCodeExecutionToolResultBlock: …`
+
+    - `content: Content`
+
+      - `class TextEditorCodeExecutionToolResultError: …`
+
+        - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"too_many_requests"`
+
+          - `"execution_time_exceeded"`
+
+          - `"file_not_found"`
+
+        - `error_message: Optional[str]`
+
+        - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+          - `"text_editor_code_execution_tool_result_error"`
+
+      - `class TextEditorCodeExecutionViewResultBlock: …`
+
+        - `content: str`
+
+        - `file_type: Literal["text", "image", "pdf"]`
+
+          - `"text"`
+
+          - `"image"`
+
+          - `"pdf"`
+
+        - `num_lines: Optional[int]`
+
+        - `start_line: Optional[int]`
+
+        - `total_lines: Optional[int]`
+
+        - `type: Literal["text_editor_code_execution_view_result"]`
+
+          - `"text_editor_code_execution_view_result"`
+
+      - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+        - `is_file_update: bool`
+
+        - `type: Literal["text_editor_code_execution_create_result"]`
+
+          - `"text_editor_code_execution_create_result"`
+
+      - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+        - `lines: Optional[List[str]]`
+
+        - `new_lines: Optional[int]`
+
+        - `new_start: Optional[int]`
+
+        - `old_lines: Optional[int]`
+
+        - `old_start: Optional[int]`
+
+        - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+          - `"text_editor_code_execution_str_replace_result"`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["text_editor_code_execution_tool_result"]`
+
+      - `"text_editor_code_execution_tool_result"`
+
+  - `class ToolSearchToolResultBlock: …`
+
+    - `content: Content`
+
+      - `class ToolSearchToolResultError: …`
+
+        - `error_code: ToolSearchToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"too_many_requests"`
+
+          - `"execution_time_exceeded"`
+
+        - `error_message: Optional[str]`
+
+        - `type: Literal["tool_search_tool_result_error"]`
+
+          - `"tool_search_tool_result_error"`
+
+      - `class ToolSearchToolSearchResultBlock: …`
+
+        - `tool_references: List[ToolReferenceBlock]`
+
+          - `tool_name: str`
+
+          - `type: Literal["tool_reference"]`
+
+            - `"tool_reference"`
+
+        - `type: Literal["tool_search_tool_search_result"]`
+
+          - `"tool_search_tool_search_result"`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["tool_search_tool_result"]`
+
+      - `"tool_search_tool_result"`
+
+  - `class ContainerUploadBlock: …`
+
+    Response model for a file uploaded to the container.
+
+    - `file_id: str`
+
+    - `type: Literal["container_upload"]`
+
+      - `"container_upload"`
+
+### Content Block Param
+
+- `Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 13 more]`
+
+  Regular text content.
+
+  - `class TextBlockParam: …`
+
+    - `text: str`
+
+    - `type: Literal["text"]`
+
+      - `"text"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[List[TextCitationParam]]`
+
+      - `class CitationCharLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_char_index: int`
+
+        - `start_char_index: int`
+
+        - `type: Literal["char_location"]`
+
+          - `"char_location"`
+
+      - `class CitationPageLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_page_number: int`
+
+        - `start_page_number: int`
+
+        - `type: Literal["page_location"]`
+
+          - `"page_location"`
+
+      - `class CitationContentBlockLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_block_index: int`
+
+        - `start_block_index: int`
+
+        - `type: Literal["content_block_location"]`
+
+          - `"content_block_location"`
+
+      - `class CitationWebSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `encrypted_index: str`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["web_search_result_location"]`
+
+          - `"web_search_result_location"`
+
+        - `url: str`
+
+      - `class CitationSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `end_block_index: int`
+
+        - `search_result_index: int`
+
+        - `source: str`
+
+        - `start_block_index: int`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["search_result_location"]`
+
+          - `"search_result_location"`
+
+  - `class ImageBlockParam: …`
+
+    - `source: Source`
+
+      - `class Base64ImageSource: …`
+
+        - `data: str`
+
+        - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+          - `"image/jpeg"`
+
+          - `"image/png"`
+
+          - `"image/gif"`
+
+          - `"image/webp"`
+
+        - `type: Literal["base64"]`
+
+          - `"base64"`
+
+      - `class URLImageSource: …`
+
+        - `type: Literal["url"]`
+
+          - `"url"`
+
+        - `url: str`
+
+    - `type: Literal["image"]`
+
+      - `"image"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+  - `class DocumentBlockParam: …`
+
+    - `source: Source`
+
+      - `class Base64PDFSource: …`
+
+        - `data: str`
+
+        - `media_type: Literal["application/pdf"]`
+
+          - `"application/pdf"`
+
+        - `type: Literal["base64"]`
+
+          - `"base64"`
+
+      - `class PlainTextSource: …`
+
+        - `data: str`
+
+        - `media_type: Literal["text/plain"]`
+
+          - `"text/plain"`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+      - `class ContentBlockSource: …`
+
+        - `content: Union[str, List[ContentBlockSourceContent]]`
+
+          - `str`
+
+          - `List[ContentBlockSourceContent]`
+
+            - `class TextBlockParam: …`
+
+              - `text: str`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[List[TextCitationParam]]`
+
+                - `class CitationCharLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_char_index: int`
+
+                  - `start_char_index: int`
+
+                  - `type: Literal["char_location"]`
+
+                    - `"char_location"`
+
+                - `class CitationPageLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_page_number: int`
+
+                  - `start_page_number: int`
+
+                  - `type: Literal["page_location"]`
+
+                    - `"page_location"`
+
+                - `class CitationContentBlockLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_block_index: int`
+
+                  - `start_block_index: int`
+
+                  - `type: Literal["content_block_location"]`
+
+                    - `"content_block_location"`
+
+                - `class CitationWebSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `encrypted_index: str`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["web_search_result_location"]`
+
+                    - `"web_search_result_location"`
+
+                  - `url: str`
+
+                - `class CitationSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `end_block_index: int`
+
+                  - `search_result_index: int`
+
+                  - `source: str`
+
+                  - `start_block_index: int`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["search_result_location"]`
+
+                    - `"search_result_location"`
+
+            - `class ImageBlockParam: …`
+
+              - `source: Source`
+
+                - `class Base64ImageSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                    - `"image/jpeg"`
+
+                    - `"image/png"`
+
+                    - `"image/gif"`
+
+                    - `"image/webp"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class URLImageSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["image"]`
+
+                - `"image"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+        - `type: Literal["content"]`
+
+          - `"content"`
+
+      - `class URLPDFSource: …`
+
+        - `type: Literal["url"]`
+
+          - `"url"`
+
+        - `url: str`
+
+    - `type: Literal["document"]`
+
+      - `"document"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      - `enabled: Optional[bool]`
+
+    - `context: Optional[str]`
+
+    - `title: Optional[str]`
+
+  - `class SearchResultBlockParam: …`
+
+    - `content: List[TextBlockParam]`
+
+      - `text: str`
+
+      - `type: Literal["text"]`
+
+        - `"text"`
+
+      - `cache_control: Optional[CacheControlEphemeral]`
+
+        Create a cache control breakpoint at this content block.
+
+        - `type: Literal["ephemeral"]`
+
+          - `"ephemeral"`
+
+        - `ttl: Optional[Literal["5m", "1h"]]`
+
+          The time-to-live for the cache control breakpoint.
+
+          This may be one the following values:
+
+          - `5m`: 5 minutes
+          - `1h`: 1 hour
+
+          Defaults to `5m`.
+
+          - `"5m"`
+
+          - `"1h"`
+
+      - `citations: Optional[List[TextCitationParam]]`
+
+        - `class CitationCharLocationParam: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_char_index: int`
+
+          - `start_char_index: int`
+
+          - `type: Literal["char_location"]`
+
+            - `"char_location"`
+
+        - `class CitationPageLocationParam: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_page_number: int`
+
+          - `start_page_number: int`
+
+          - `type: Literal["page_location"]`
+
+            - `"page_location"`
+
+        - `class CitationContentBlockLocationParam: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_block_index: int`
+
+          - `start_block_index: int`
+
+          - `type: Literal["content_block_location"]`
+
+            - `"content_block_location"`
+
+        - `class CitationWebSearchResultLocationParam: …`
+
+          - `cited_text: str`
+
+          - `encrypted_index: str`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["web_search_result_location"]`
+
+            - `"web_search_result_location"`
+
+          - `url: str`
+
+        - `class CitationSearchResultLocationParam: …`
+
+          - `cited_text: str`
+
+          - `end_block_index: int`
+
+          - `search_result_index: int`
+
+          - `source: str`
+
+          - `start_block_index: int`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["search_result_location"]`
+
+            - `"search_result_location"`
+
+    - `source: str`
+
+    - `title: str`
+
+    - `type: Literal["search_result"]`
+
+      - `"search_result"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      - `enabled: Optional[bool]`
+
+  - `class ThinkingBlockParam: …`
+
+    - `signature: str`
+
+    - `thinking: str`
+
+    - `type: Literal["thinking"]`
+
+      - `"thinking"`
+
+  - `class RedactedThinkingBlockParam: …`
+
+    - `data: str`
+
+    - `type: Literal["redacted_thinking"]`
+
+      - `"redacted_thinking"`
+
+  - `class ToolUseBlockParam: …`
+
+    - `id: str`
+
+    - `input: Dict[str, object]`
+
+    - `name: str`
+
+    - `type: Literal["tool_use"]`
+
+      - `"tool_use"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `caller: Optional[Caller]`
+
+      Tool invocation directly from the model.
+
+      - `class DirectCaller: …`
+
+        Tool invocation directly from the model.
+
+        - `type: Literal["direct"]`
+
+          - `"direct"`
+
+      - `class ServerToolCaller: …`
+
+        Tool invocation generated by a server-side tool.
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+      - `class ServerToolCaller20260120: …`
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+  - `class ToolResultBlockParam: …`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["tool_result"]`
+
+      - `"tool_result"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `content: Optional[Union[str, List[Content], null]]`
+
+      - `str`
+
+      - `List[Content]`
+
+        - `class TextBlockParam: …`
+
+          - `text: str`
+
+          - `type: Literal["text"]`
+
+            - `"text"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+          - `citations: Optional[List[TextCitationParam]]`
+
+            - `class CitationCharLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_char_index: int`
+
+              - `start_char_index: int`
+
+              - `type: Literal["char_location"]`
+
+                - `"char_location"`
+
+            - `class CitationPageLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_page_number: int`
+
+              - `start_page_number: int`
+
+              - `type: Literal["page_location"]`
+
+                - `"page_location"`
+
+            - `class CitationContentBlockLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_block_index: int`
+
+              - `start_block_index: int`
+
+              - `type: Literal["content_block_location"]`
+
+                - `"content_block_location"`
+
+            - `class CitationWebSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `encrypted_index: str`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["web_search_result_location"]`
+
+                - `"web_search_result_location"`
+
+              - `url: str`
+
+            - `class CitationSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `end_block_index: int`
+
+              - `search_result_index: int`
+
+              - `source: str`
+
+              - `start_block_index: int`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["search_result_location"]`
+
+                - `"search_result_location"`
+
+        - `class ImageBlockParam: …`
+
+          - `source: Source`
+
+            - `class Base64ImageSource: …`
+
+              - `data: str`
+
+              - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                - `"image/jpeg"`
+
+                - `"image/png"`
+
+                - `"image/gif"`
+
+                - `"image/webp"`
+
+              - `type: Literal["base64"]`
+
+                - `"base64"`
+
+            - `class URLImageSource: …`
+
+              - `type: Literal["url"]`
+
+                - `"url"`
+
+              - `url: str`
+
+          - `type: Literal["image"]`
+
+            - `"image"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+        - `class SearchResultBlockParam: …`
+
+          - `content: List[TextBlockParam]`
+
+            - `text: str`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `citations: Optional[List[TextCitationParam]]`
+
+              - `class CitationCharLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_char_index: int`
+
+                - `start_char_index: int`
+
+                - `type: Literal["char_location"]`
+
+                  - `"char_location"`
+
+              - `class CitationPageLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_page_number: int`
+
+                - `start_page_number: int`
+
+                - `type: Literal["page_location"]`
+
+                  - `"page_location"`
+
+              - `class CitationContentBlockLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_block_index: int`
+
+                - `start_block_index: int`
+
+                - `type: Literal["content_block_location"]`
+
+                  - `"content_block_location"`
+
+              - `class CitationWebSearchResultLocationParam: …`
+
+                - `cited_text: str`
+
+                - `encrypted_index: str`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["web_search_result_location"]`
+
+                  - `"web_search_result_location"`
+
+                - `url: str`
+
+              - `class CitationSearchResultLocationParam: …`
+
+                - `cited_text: str`
+
+                - `end_block_index: int`
+
+                - `search_result_index: int`
+
+                - `source: str`
+
+                - `start_block_index: int`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["search_result_location"]`
+
+                  - `"search_result_location"`
+
+          - `source: str`
+
+          - `title: str`
+
+          - `type: Literal["search_result"]`
+
+            - `"search_result"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+          - `citations: Optional[CitationsConfigParam]`
+
+            - `enabled: Optional[bool]`
+
+        - `class DocumentBlockParam: …`
+
+          - `source: Source`
+
+            - `class Base64PDFSource: …`
+
+              - `data: str`
+
+              - `media_type: Literal["application/pdf"]`
+
+                - `"application/pdf"`
+
+              - `type: Literal["base64"]`
+
+                - `"base64"`
+
+            - `class PlainTextSource: …`
+
+              - `data: str`
+
+              - `media_type: Literal["text/plain"]`
+
+                - `"text/plain"`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+            - `class ContentBlockSource: …`
+
+              - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                - `str`
+
+                - `List[ContentBlockSourceContent]`
+
+                  - `class TextBlockParam: …`
+
+                    - `text: str`
+
+                    - `type: Literal["text"]`
+
+                      - `"text"`
+
+                    - `cache_control: Optional[CacheControlEphemeral]`
+
+                      Create a cache control breakpoint at this content block.
+
+                      - `type: Literal["ephemeral"]`
+
+                        - `"ephemeral"`
+
+                      - `ttl: Optional[Literal["5m", "1h"]]`
+
+                        The time-to-live for the cache control breakpoint.
+
+                        This may be one the following values:
+
+                        - `5m`: 5 minutes
+                        - `1h`: 1 hour
+
+                        Defaults to `5m`.
+
+                        - `"5m"`
+
+                        - `"1h"`
+
+                    - `citations: Optional[List[TextCitationParam]]`
+
+                      - `class CitationCharLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_char_index: int`
+
+                        - `start_char_index: int`
+
+                        - `type: Literal["char_location"]`
+
+                          - `"char_location"`
+
+                      - `class CitationPageLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_page_number: int`
+
+                        - `start_page_number: int`
+
+                        - `type: Literal["page_location"]`
+
+                          - `"page_location"`
+
+                      - `class CitationContentBlockLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_block_index: int`
+
+                        - `start_block_index: int`
+
+                        - `type: Literal["content_block_location"]`
+
+                          - `"content_block_location"`
+
+                      - `class CitationWebSearchResultLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `encrypted_index: str`
+
+                        - `title: Optional[str]`
+
+                        - `type: Literal["web_search_result_location"]`
+
+                          - `"web_search_result_location"`
+
+                        - `url: str`
+
+                      - `class CitationSearchResultLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `end_block_index: int`
+
+                        - `search_result_index: int`
+
+                        - `source: str`
+
+                        - `start_block_index: int`
+
+                        - `title: Optional[str]`
+
+                        - `type: Literal["search_result_location"]`
+
+                          - `"search_result_location"`
+
+                  - `class ImageBlockParam: …`
+
+                    - `source: Source`
+
+                      - `class Base64ImageSource: …`
+
+                        - `data: str`
+
+                        - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                          - `"image/jpeg"`
+
+                          - `"image/png"`
+
+                          - `"image/gif"`
+
+                          - `"image/webp"`
+
+                        - `type: Literal["base64"]`
+
+                          - `"base64"`
+
+                      - `class URLImageSource: …`
+
+                        - `type: Literal["url"]`
+
+                          - `"url"`
+
+                        - `url: str`
+
+                    - `type: Literal["image"]`
+
+                      - `"image"`
+
+                    - `cache_control: Optional[CacheControlEphemeral]`
+
+                      Create a cache control breakpoint at this content block.
+
+                      - `type: Literal["ephemeral"]`
+
+                        - `"ephemeral"`
+
+                      - `ttl: Optional[Literal["5m", "1h"]]`
+
+                        The time-to-live for the cache control breakpoint.
+
+                        This may be one the following values:
+
+                        - `5m`: 5 minutes
+                        - `1h`: 1 hour
+
+                        Defaults to `5m`.
+
+                        - `"5m"`
+
+                        - `"1h"`
+
+              - `type: Literal["content"]`
+
+                - `"content"`
+
+            - `class URLPDFSource: …`
+
+              - `type: Literal["url"]`
+
+                - `"url"`
+
+              - `url: str`
+
+          - `type: Literal["document"]`
+
+            - `"document"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+          - `citations: Optional[CitationsConfigParam]`
+
+            - `enabled: Optional[bool]`
+
+          - `context: Optional[str]`
+
+          - `title: Optional[str]`
+
+        - `class ToolReferenceBlockParam: …`
+
+          Tool reference block that can be included in tool_result content.
+
+          - `tool_name: str`
+
+          - `type: Literal["tool_reference"]`
+
+            - `"tool_reference"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+    - `is_error: Optional[bool]`
+
+  - `class ServerToolUseBlockParam: …`
+
+    - `id: str`
+
+    - `input: Dict[str, object]`
+
+    - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+      - `"web_search"`
+
+      - `"web_fetch"`
+
+      - `"code_execution"`
+
+      - `"bash_code_execution"`
+
+      - `"text_editor_code_execution"`
+
+      - `"tool_search_tool_regex"`
+
+      - `"tool_search_tool_bm25"`
+
+    - `type: Literal["server_tool_use"]`
+
+      - `"server_tool_use"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `caller: Optional[Caller]`
+
+      Tool invocation directly from the model.
+
+      - `class DirectCaller: …`
+
+        Tool invocation directly from the model.
+
+        - `type: Literal["direct"]`
+
+          - `"direct"`
+
+      - `class ServerToolCaller: …`
+
+        Tool invocation generated by a server-side tool.
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+      - `class ServerToolCaller20260120: …`
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+  - `class WebSearchToolResultBlockParam: …`
+
+    - `content: WebSearchToolResultBlockParamContent`
+
+      - `List[WebSearchResultBlockParam]`
+
+        - `encrypted_content: str`
+
+        - `title: str`
+
+        - `type: Literal["web_search_result"]`
+
+          - `"web_search_result"`
+
+        - `url: str`
+
+        - `page_age: Optional[str]`
+
+      - `class WebSearchToolRequestError: …`
+
+        - `error_code: WebSearchToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"max_uses_exceeded"`
+
+          - `"too_many_requests"`
+
+          - `"query_too_long"`
+
+          - `"request_too_large"`
+
+        - `type: Literal["web_search_tool_result_error"]`
+
+          - `"web_search_tool_result_error"`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["web_search_tool_result"]`
+
+      - `"web_search_tool_result"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `caller: Optional[Caller]`
+
+      Tool invocation directly from the model.
+
+      - `class DirectCaller: …`
+
+        Tool invocation directly from the model.
+
+        - `type: Literal["direct"]`
+
+          - `"direct"`
+
+      - `class ServerToolCaller: …`
+
+        Tool invocation generated by a server-side tool.
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+      - `class ServerToolCaller20260120: …`
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+  - `class WebFetchToolResultBlockParam: …`
+
+    - `content: Content`
+
+      - `class WebFetchToolResultErrorBlockParam: …`
+
+        - `error_code: WebFetchToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"url_too_long"`
+
+          - `"url_not_allowed"`
+
+          - `"url_not_accessible"`
+
+          - `"unsupported_content_type"`
+
+          - `"too_many_requests"`
+
+          - `"max_uses_exceeded"`
+
+          - `"unavailable"`
+
+        - `type: Literal["web_fetch_tool_result_error"]`
+
+          - `"web_fetch_tool_result_error"`
+
+      - `class WebFetchBlockParam: …`
+
+        - `content: DocumentBlockParam`
+
+          - `source: Source`
+
+            - `class Base64PDFSource: …`
+
+              - `data: str`
+
+              - `media_type: Literal["application/pdf"]`
+
+                - `"application/pdf"`
+
+              - `type: Literal["base64"]`
+
+                - `"base64"`
+
+            - `class PlainTextSource: …`
+
+              - `data: str`
+
+              - `media_type: Literal["text/plain"]`
+
+                - `"text/plain"`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+            - `class ContentBlockSource: …`
+
+              - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                - `str`
+
+                - `List[ContentBlockSourceContent]`
+
+                  - `class TextBlockParam: …`
+
+                    - `text: str`
+
+                    - `type: Literal["text"]`
+
+                      - `"text"`
+
+                    - `cache_control: Optional[CacheControlEphemeral]`
+
+                      Create a cache control breakpoint at this content block.
+
+                      - `type: Literal["ephemeral"]`
+
+                        - `"ephemeral"`
+
+                      - `ttl: Optional[Literal["5m", "1h"]]`
+
+                        The time-to-live for the cache control breakpoint.
+
+                        This may be one the following values:
+
+                        - `5m`: 5 minutes
+                        - `1h`: 1 hour
+
+                        Defaults to `5m`.
+
+                        - `"5m"`
+
+                        - `"1h"`
+
+                    - `citations: Optional[List[TextCitationParam]]`
+
+                      - `class CitationCharLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_char_index: int`
+
+                        - `start_char_index: int`
+
+                        - `type: Literal["char_location"]`
+
+                          - `"char_location"`
+
+                      - `class CitationPageLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_page_number: int`
+
+                        - `start_page_number: int`
+
+                        - `type: Literal["page_location"]`
+
+                          - `"page_location"`
+
+                      - `class CitationContentBlockLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_block_index: int`
+
+                        - `start_block_index: int`
+
+                        - `type: Literal["content_block_location"]`
+
+                          - `"content_block_location"`
+
+                      - `class CitationWebSearchResultLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `encrypted_index: str`
+
+                        - `title: Optional[str]`
+
+                        - `type: Literal["web_search_result_location"]`
+
+                          - `"web_search_result_location"`
+
+                        - `url: str`
+
+                      - `class CitationSearchResultLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `end_block_index: int`
+
+                        - `search_result_index: int`
+
+                        - `source: str`
+
+                        - `start_block_index: int`
+
+                        - `title: Optional[str]`
+
+                        - `type: Literal["search_result_location"]`
+
+                          - `"search_result_location"`
+
+                  - `class ImageBlockParam: …`
+
+                    - `source: Source`
+
+                      - `class Base64ImageSource: …`
+
+                        - `data: str`
+
+                        - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                          - `"image/jpeg"`
+
+                          - `"image/png"`
+
+                          - `"image/gif"`
+
+                          - `"image/webp"`
+
+                        - `type: Literal["base64"]`
+
+                          - `"base64"`
+
+                      - `class URLImageSource: …`
+
+                        - `type: Literal["url"]`
+
+                          - `"url"`
+
+                        - `url: str`
+
+                    - `type: Literal["image"]`
+
+                      - `"image"`
+
+                    - `cache_control: Optional[CacheControlEphemeral]`
+
+                      Create a cache control breakpoint at this content block.
+
+                      - `type: Literal["ephemeral"]`
+
+                        - `"ephemeral"`
+
+                      - `ttl: Optional[Literal["5m", "1h"]]`
+
+                        The time-to-live for the cache control breakpoint.
+
+                        This may be one the following values:
+
+                        - `5m`: 5 minutes
+                        - `1h`: 1 hour
+
+                        Defaults to `5m`.
+
+                        - `"5m"`
+
+                        - `"1h"`
+
+              - `type: Literal["content"]`
+
+                - `"content"`
+
+            - `class URLPDFSource: …`
+
+              - `type: Literal["url"]`
+
+                - `"url"`
+
+              - `url: str`
+
+          - `type: Literal["document"]`
+
+            - `"document"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+          - `citations: Optional[CitationsConfigParam]`
+
+            - `enabled: Optional[bool]`
+
+          - `context: Optional[str]`
+
+          - `title: Optional[str]`
+
+        - `type: Literal["web_fetch_result"]`
+
+          - `"web_fetch_result"`
+
+        - `url: str`
+
+          Fetched content URL
+
+        - `retrieved_at: Optional[str]`
+
+          ISO 8601 timestamp when the content was retrieved
+
+    - `tool_use_id: str`
+
+    - `type: Literal["web_fetch_tool_result"]`
+
+      - `"web_fetch_tool_result"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `caller: Optional[Caller]`
+
+      Tool invocation directly from the model.
+
+      - `class DirectCaller: …`
+
+        Tool invocation directly from the model.
+
+        - `type: Literal["direct"]`
+
+          - `"direct"`
+
+      - `class ServerToolCaller: …`
+
+        Tool invocation generated by a server-side tool.
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+      - `class ServerToolCaller20260120: …`
+
+        - `tool_id: str`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+  - `class CodeExecutionToolResultBlockParam: …`
+
+    - `content: CodeExecutionToolResultBlockParamContent`
+
+      Code execution result with encrypted stdout for PFC + web_search results.
+
+      - `class CodeExecutionToolResultErrorParam: …`
+
+        - `error_code: CodeExecutionToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"too_many_requests"`
+
+          - `"execution_time_exceeded"`
+
+        - `type: Literal["code_execution_tool_result_error"]`
+
+          - `"code_execution_tool_result_error"`
+
+      - `class CodeExecutionResultBlockParam: …`
+
+        - `content: List[CodeExecutionOutputBlockParam]`
+
+          - `file_id: str`
+
+          - `type: Literal["code_execution_output"]`
+
+            - `"code_execution_output"`
+
+        - `return_code: int`
+
+        - `stderr: str`
+
+        - `stdout: str`
+
+        - `type: Literal["code_execution_result"]`
+
+          - `"code_execution_result"`
+
+      - `class EncryptedCodeExecutionResultBlockParam: …`
+
+        Code execution result with encrypted stdout for PFC + web_search results.
+
+        - `content: List[CodeExecutionOutputBlockParam]`
+
+          - `file_id: str`
+
+          - `type: Literal["code_execution_output"]`
+
+            - `"code_execution_output"`
+
+        - `encrypted_stdout: str`
+
+        - `return_code: int`
+
+        - `stderr: str`
+
+        - `type: Literal["encrypted_code_execution_result"]`
+
+          - `"encrypted_code_execution_result"`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["code_execution_tool_result"]`
+
+      - `"code_execution_tool_result"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+  - `class BashCodeExecutionToolResultBlockParam: …`
+
+    - `content: Content`
+
+      - `class BashCodeExecutionToolResultErrorParam: …`
+
+        - `error_code: BashCodeExecutionToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"too_many_requests"`
+
+          - `"execution_time_exceeded"`
+
+          - `"output_file_too_large"`
+
+        - `type: Literal["bash_code_execution_tool_result_error"]`
+
+          - `"bash_code_execution_tool_result_error"`
+
+      - `class BashCodeExecutionResultBlockParam: …`
+
+        - `content: List[BashCodeExecutionOutputBlockParam]`
+
+          - `file_id: str`
+
+          - `type: Literal["bash_code_execution_output"]`
+
+            - `"bash_code_execution_output"`
+
+        - `return_code: int`
+
+        - `stderr: str`
+
+        - `stdout: str`
+
+        - `type: Literal["bash_code_execution_result"]`
+
+          - `"bash_code_execution_result"`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["bash_code_execution_tool_result"]`
+
+      - `"bash_code_execution_tool_result"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+  - `class TextEditorCodeExecutionToolResultBlockParam: …`
+
+    - `content: Content`
+
+      - `class TextEditorCodeExecutionToolResultErrorParam: …`
+
+        - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"too_many_requests"`
+
+          - `"execution_time_exceeded"`
+
+          - `"file_not_found"`
+
+        - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+          - `"text_editor_code_execution_tool_result_error"`
+
+        - `error_message: Optional[str]`
+
+      - `class TextEditorCodeExecutionViewResultBlockParam: …`
+
+        - `content: str`
+
+        - `file_type: Literal["text", "image", "pdf"]`
+
+          - `"text"`
+
+          - `"image"`
+
+          - `"pdf"`
+
+        - `type: Literal["text_editor_code_execution_view_result"]`
+
+          - `"text_editor_code_execution_view_result"`
+
+        - `num_lines: Optional[int]`
+
+        - `start_line: Optional[int]`
+
+        - `total_lines: Optional[int]`
+
+      - `class TextEditorCodeExecutionCreateResultBlockParam: …`
+
+        - `is_file_update: bool`
+
+        - `type: Literal["text_editor_code_execution_create_result"]`
+
+          - `"text_editor_code_execution_create_result"`
+
+      - `class TextEditorCodeExecutionStrReplaceResultBlockParam: …`
+
+        - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+          - `"text_editor_code_execution_str_replace_result"`
+
+        - `lines: Optional[List[str]]`
+
+        - `new_lines: Optional[int]`
+
+        - `new_start: Optional[int]`
+
+        - `old_lines: Optional[int]`
+
+        - `old_start: Optional[int]`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["text_editor_code_execution_tool_result"]`
+
+      - `"text_editor_code_execution_tool_result"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+  - `class ToolSearchToolResultBlockParam: …`
+
+    - `content: Content`
+
+      - `class ToolSearchToolResultErrorParam: …`
+
+        - `error_code: ToolSearchToolResultErrorCode`
+
+          - `"invalid_tool_input"`
+
+          - `"unavailable"`
+
+          - `"too_many_requests"`
+
+          - `"execution_time_exceeded"`
+
+        - `type: Literal["tool_search_tool_result_error"]`
+
+          - `"tool_search_tool_result_error"`
+
+      - `class ToolSearchToolSearchResultBlockParam: …`
+
+        - `tool_references: List[ToolReferenceBlockParam]`
+
+          - `tool_name: str`
+
+          - `type: Literal["tool_reference"]`
+
+            - `"tool_reference"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+        - `type: Literal["tool_search_tool_search_result"]`
+
+          - `"tool_search_tool_search_result"`
+
+    - `tool_use_id: str`
+
+    - `type: Literal["tool_search_tool_result"]`
+
+      - `"tool_search_tool_result"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+  - `class ContainerUploadBlockParam: …`
+
+    A content block that represents a file to be uploaded to the container
+    Files uploaded via this block will be available in the container's input directory.
+
+    - `file_id: str`
+
+    - `type: Literal["container_upload"]`
+
+      - `"container_upload"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+### Content Block Source
+
+- `class ContentBlockSource: …`
+
+  - `content: Union[str, List[ContentBlockSourceContent]]`
+
+    - `str`
+
+    - `List[ContentBlockSourceContent]`
+
+      - `class TextBlockParam: …`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[List[TextCitationParam]]`
+
+          - `class CitationCharLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationWebSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+      - `class ImageBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64ImageSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+              - `"image/jpeg"`
+
+              - `"image/png"`
+
+              - `"image/gif"`
+
+              - `"image/webp"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class URLImageSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["image"]`
+
+          - `"image"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+  - `type: Literal["content"]`
+
+    - `"content"`
+
+### Content Block Source Content
+
+- `ContentBlockSourceContent`
+
+  - `class TextBlockParam: …`
+
+    - `text: str`
+
+    - `type: Literal["text"]`
+
+      - `"text"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[List[TextCitationParam]]`
+
+      - `class CitationCharLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_char_index: int`
+
+        - `start_char_index: int`
+
+        - `type: Literal["char_location"]`
+
+          - `"char_location"`
+
+      - `class CitationPageLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_page_number: int`
+
+        - `start_page_number: int`
+
+        - `type: Literal["page_location"]`
+
+          - `"page_location"`
+
+      - `class CitationContentBlockLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_block_index: int`
+
+        - `start_block_index: int`
+
+        - `type: Literal["content_block_location"]`
+
+          - `"content_block_location"`
+
+      - `class CitationWebSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `encrypted_index: str`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["web_search_result_location"]`
+
+          - `"web_search_result_location"`
+
+        - `url: str`
+
+      - `class CitationSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `end_block_index: int`
+
+        - `search_result_index: int`
+
+        - `source: str`
+
+        - `start_block_index: int`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["search_result_location"]`
+
+          - `"search_result_location"`
+
+  - `class ImageBlockParam: …`
+
+    - `source: Source`
+
+      - `class Base64ImageSource: …`
+
+        - `data: str`
+
+        - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+          - `"image/jpeg"`
+
+          - `"image/png"`
+
+          - `"image/gif"`
+
+          - `"image/webp"`
+
+        - `type: Literal["base64"]`
+
+          - `"base64"`
+
+      - `class URLImageSource: …`
+
+        - `type: Literal["url"]`
+
+          - `"url"`
+
+        - `url: str`
+
+    - `type: Literal["image"]`
+
+      - `"image"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+### Direct Caller
+
+- `class DirectCaller: …`
+
+  Tool invocation directly from the model.
+
+  - `type: Literal["direct"]`
+
+    - `"direct"`
+
+### Document Block
+
+- `class DocumentBlock: …`
+
+  - `citations: Optional[CitationsConfig]`
+
+    Citation configuration for the document
+
+    - `enabled: bool`
+
+  - `source: Source`
+
+    - `class Base64PDFSource: …`
+
+      - `data: str`
+
+      - `media_type: Literal["application/pdf"]`
+
+        - `"application/pdf"`
+
+      - `type: Literal["base64"]`
+
+        - `"base64"`
+
+    - `class PlainTextSource: …`
+
+      - `data: str`
+
+      - `media_type: Literal["text/plain"]`
+
+        - `"text/plain"`
+
+      - `type: Literal["text"]`
+
+        - `"text"`
+
+  - `title: Optional[str]`
+
+    The title of the document
+
+  - `type: Literal["document"]`
+
+    - `"document"`
+
+### Document Block Param
+
+- `class DocumentBlockParam: …`
+
+  - `source: Source`
+
+    - `class Base64PDFSource: …`
+
+      - `data: str`
+
+      - `media_type: Literal["application/pdf"]`
+
+        - `"application/pdf"`
+
+      - `type: Literal["base64"]`
+
+        - `"base64"`
+
+    - `class PlainTextSource: …`
+
+      - `data: str`
+
+      - `media_type: Literal["text/plain"]`
+
+        - `"text/plain"`
+
+      - `type: Literal["text"]`
+
+        - `"text"`
+
+    - `class ContentBlockSource: …`
+
+      - `content: Union[str, List[ContentBlockSourceContent]]`
+
+        - `str`
+
+        - `List[ContentBlockSourceContent]`
+
+          - `class TextBlockParam: …`
+
+            - `text: str`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `citations: Optional[List[TextCitationParam]]`
+
+              - `class CitationCharLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_char_index: int`
+
+                - `start_char_index: int`
+
+                - `type: Literal["char_location"]`
+
+                  - `"char_location"`
+
+              - `class CitationPageLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_page_number: int`
+
+                - `start_page_number: int`
+
+                - `type: Literal["page_location"]`
+
+                  - `"page_location"`
+
+              - `class CitationContentBlockLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_block_index: int`
+
+                - `start_block_index: int`
+
+                - `type: Literal["content_block_location"]`
+
+                  - `"content_block_location"`
+
+              - `class CitationWebSearchResultLocationParam: …`
+
+                - `cited_text: str`
+
+                - `encrypted_index: str`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["web_search_result_location"]`
+
+                  - `"web_search_result_location"`
+
+                - `url: str`
+
+              - `class CitationSearchResultLocationParam: …`
+
+                - `cited_text: str`
+
+                - `end_block_index: int`
+
+                - `search_result_index: int`
+
+                - `source: str`
+
+                - `start_block_index: int`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["search_result_location"]`
+
+                  - `"search_result_location"`
+
+          - `class ImageBlockParam: …`
+
+            - `source: Source`
+
+              - `class Base64ImageSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                  - `"image/jpeg"`
+
+                  - `"image/png"`
+
+                  - `"image/gif"`
+
+                  - `"image/webp"`
+
+                - `type: Literal["base64"]`
+
+                  - `"base64"`
+
+              - `class URLImageSource: …`
+
+                - `type: Literal["url"]`
+
+                  - `"url"`
+
+                - `url: str`
+
+            - `type: Literal["image"]`
+
+              - `"image"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+      - `type: Literal["content"]`
+
+        - `"content"`
+
+    - `class URLPDFSource: …`
+
+      - `type: Literal["url"]`
+
+        - `"url"`
+
+      - `url: str`
+
+  - `type: Literal["document"]`
+
+    - `"document"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `citations: Optional[CitationsConfigParam]`
+
+    - `enabled: Optional[bool]`
+
+  - `context: Optional[str]`
+
+  - `title: Optional[str]`
+
+### Encrypted Code Execution Result Block
+
+- `class EncryptedCodeExecutionResultBlock: …`
+
+  Code execution result with encrypted stdout for PFC + web_search results.
+
+  - `content: List[CodeExecutionOutputBlock]`
+
+    - `file_id: str`
+
+    - `type: Literal["code_execution_output"]`
+
+      - `"code_execution_output"`
+
+  - `encrypted_stdout: str`
+
+  - `return_code: int`
+
+  - `stderr: str`
+
+  - `type: Literal["encrypted_code_execution_result"]`
+
+    - `"encrypted_code_execution_result"`
+
+### Encrypted Code Execution Result Block Param
+
+- `class EncryptedCodeExecutionResultBlockParam: …`
+
+  Code execution result with encrypted stdout for PFC + web_search results.
+
+  - `content: List[CodeExecutionOutputBlockParam]`
+
+    - `file_id: str`
+
+    - `type: Literal["code_execution_output"]`
+
+      - `"code_execution_output"`
+
+  - `encrypted_stdout: str`
+
+  - `return_code: int`
+
+  - `stderr: str`
+
+  - `type: Literal["encrypted_code_execution_result"]`
+
+    - `"encrypted_code_execution_result"`
+
+### Image Block Param
+
+- `class ImageBlockParam: …`
+
+  - `source: Source`
+
+    - `class Base64ImageSource: …`
+
+      - `data: str`
+
+      - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+        - `"image/jpeg"`
+
+        - `"image/png"`
+
+        - `"image/gif"`
+
+        - `"image/webp"`
+
+      - `type: Literal["base64"]`
+
+        - `"base64"`
+
+    - `class URLImageSource: …`
+
+      - `type: Literal["url"]`
+
+        - `"url"`
+
+      - `url: str`
+
+  - `type: Literal["image"]`
+
+    - `"image"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+### Input JSON Delta
+
+- `class InputJSONDelta: …`
+
+  - `partial_json: str`
+
+  - `type: Literal["input_json_delta"]`
+
+    - `"input_json_delta"`
+
+### JSON Output Format
+
+- `class JSONOutputFormat: …`
+
+  - `schema: Dict[str, object]`
+
+    The JSON schema of the format
+
+  - `type: Literal["json_schema"]`
+
+    - `"json_schema"`
+
+### Memory Tool 20250818
+
+- `class MemoryTool20250818: …`
+
+  - `name: Literal["memory"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"memory"`
+
+  - `type: Literal["memory_20250818"]`
+
+    - `"memory_20250818"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `input_examples: Optional[List[Dict[str, object]]]`
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Message
+
+- `class Message: …`
+
+  - `id: str`
+
+    Unique object identifier.
+
+    The format and length of IDs may change over time.
+
+  - `container: Optional[Container]`
+
+    Information about the container used in the request (for the code execution tool)
+
+    - `id: str`
+
+      Identifier for the container used in this request
+
+    - `expires_at: datetime`
+
+      The time at which the container will expire.
+
+  - `content: List[ContentBlock]`
+
+    Content generated by the model.
+
+    This is an array of content blocks, each of which has a `type` that determines its shape.
+
+    Example:
+
+    ```json
+    [{"type": "text", "text": "Hi, I'm Claude."}]
+    ```
+
+    If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+    For example, if the input `messages` were:
+
+    ```json
+    [
+      {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+      {"role": "assistant", "content": "The best answer is ("}
+    ]
+    ```
+
+    Then the response `content` might be:
+
+    ```json
+    [{"type": "text", "text": "B)"}]
+    ```
+
+    - `class TextBlock: …`
+
+      - `citations: Optional[List[TextCitation]]`
+
+        Citations supporting the text block.
+
+        The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+        - `class CitationCharLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_char_index: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_char_index: int`
+
+          - `type: Literal["char_location"]`
+
+            - `"char_location"`
+
+        - `class CitationPageLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_page_number: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_page_number: int`
+
+          - `type: Literal["page_location"]`
+
+            - `"page_location"`
+
+        - `class CitationContentBlockLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_block_index: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_block_index: int`
+
+          - `type: Literal["content_block_location"]`
+
+            - `"content_block_location"`
+
+        - `class CitationsWebSearchResultLocation: …`
+
+          - `cited_text: str`
+
+          - `encrypted_index: str`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["web_search_result_location"]`
+
+            - `"web_search_result_location"`
+
+          - `url: str`
+
+        - `class CitationsSearchResultLocation: …`
+
+          - `cited_text: str`
+
+          - `end_block_index: int`
+
+          - `search_result_index: int`
+
+          - `source: str`
+
+          - `start_block_index: int`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["search_result_location"]`
+
+            - `"search_result_location"`
+
+      - `text: str`
+
+      - `type: Literal["text"]`
+
+        - `"text"`
+
+    - `class ThinkingBlock: …`
+
+      - `signature: str`
+
+      - `thinking: str`
+
+      - `type: Literal["thinking"]`
+
+        - `"thinking"`
+
+    - `class RedactedThinkingBlock: …`
+
+      - `data: str`
+
+      - `type: Literal["redacted_thinking"]`
+
+        - `"redacted_thinking"`
+
+    - `class ToolUseBlock: …`
+
+      - `id: str`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `input: Dict[str, object]`
+
+      - `name: str`
+
+      - `type: Literal["tool_use"]`
+
+        - `"tool_use"`
+
+    - `class ServerToolUseBlock: …`
+
+      - `id: str`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `input: Dict[str, object]`
+
+      - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+        - `"web_search"`
+
+        - `"web_fetch"`
+
+        - `"code_execution"`
+
+        - `"bash_code_execution"`
+
+        - `"text_editor_code_execution"`
+
+        - `"tool_search_tool_regex"`
+
+        - `"tool_search_tool_bm25"`
+
+      - `type: Literal["server_tool_use"]`
+
+        - `"server_tool_use"`
+
+    - `class WebSearchToolResultBlock: …`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `content: WebSearchToolResultBlockContent`
+
+        - `class WebSearchToolResultError: …`
+
+          - `error_code: WebSearchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"max_uses_exceeded"`
+
+            - `"too_many_requests"`
+
+            - `"query_too_long"`
+
+            - `"request_too_large"`
+
+          - `type: Literal["web_search_tool_result_error"]`
+
+            - `"web_search_tool_result_error"`
+
+        - `List[WebSearchResultBlock]`
+
+          - `encrypted_content: str`
+
+          - `page_age: Optional[str]`
+
+          - `title: str`
+
+          - `type: Literal["web_search_result"]`
+
+            - `"web_search_result"`
+
+          - `url: str`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["web_search_tool_result"]`
+
+        - `"web_search_tool_result"`
+
+    - `class WebFetchToolResultBlock: …`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `content: Content`
+
+        - `class WebFetchToolResultErrorBlock: …`
+
+          - `error_code: WebFetchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"url_too_long"`
+
+            - `"url_not_allowed"`
+
+            - `"url_not_accessible"`
+
+            - `"unsupported_content_type"`
+
+            - `"too_many_requests"`
+
+            - `"max_uses_exceeded"`
+
+            - `"unavailable"`
+
+          - `type: Literal["web_fetch_tool_result_error"]`
+
+            - `"web_fetch_tool_result_error"`
+
+        - `class WebFetchBlock: …`
+
+          - `content: DocumentBlock`
+
+            - `citations: Optional[CitationsConfig]`
+
+              Citation configuration for the document
+
+              - `enabled: bool`
+
+            - `source: Source`
+
+              - `class Base64PDFSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["application/pdf"]`
+
+                  - `"application/pdf"`
+
+                - `type: Literal["base64"]`
+
+                  - `"base64"`
+
+              - `class PlainTextSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["text/plain"]`
+
+                  - `"text/plain"`
+
+                - `type: Literal["text"]`
+
+                  - `"text"`
+
+            - `title: Optional[str]`
+
+              The title of the document
+
+            - `type: Literal["document"]`
+
+              - `"document"`
+
+          - `retrieved_at: Optional[str]`
+
+            ISO 8601 timestamp when the content was retrieved
+
+          - `type: Literal["web_fetch_result"]`
+
+            - `"web_fetch_result"`
+
+          - `url: str`
+
+            Fetched content URL
+
+      - `tool_use_id: str`
+
+      - `type: Literal["web_fetch_tool_result"]`
+
+        - `"web_fetch_tool_result"`
+
+    - `class CodeExecutionToolResultBlock: …`
+
+      - `content: CodeExecutionToolResultBlockContent`
+
+        Code execution result with encrypted stdout for PFC + web_search results.
+
+        - `class CodeExecutionToolResultError: …`
+
+          - `error_code: CodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+          - `type: Literal["code_execution_tool_result_error"]`
+
+            - `"code_execution_tool_result_error"`
+
+        - `class CodeExecutionResultBlock: …`
+
+          - `content: List[CodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["code_execution_output"]`
+
+              - `"code_execution_output"`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `stdout: str`
+
+          - `type: Literal["code_execution_result"]`
+
+            - `"code_execution_result"`
+
+        - `class EncryptedCodeExecutionResultBlock: …`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `content: List[CodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["code_execution_output"]`
+
+              - `"code_execution_output"`
+
+          - `encrypted_stdout: str`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `type: Literal["encrypted_code_execution_result"]`
+
+            - `"encrypted_code_execution_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["code_execution_tool_result"]`
+
+        - `"code_execution_tool_result"`
+
+    - `class BashCodeExecutionToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class BashCodeExecutionToolResultError: …`
+
+          - `error_code: BashCodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+            - `"output_file_too_large"`
+
+          - `type: Literal["bash_code_execution_tool_result_error"]`
+
+            - `"bash_code_execution_tool_result_error"`
+
+        - `class BashCodeExecutionResultBlock: …`
+
+          - `content: List[BashCodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["bash_code_execution_output"]`
+
+              - `"bash_code_execution_output"`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `stdout: str`
+
+          - `type: Literal["bash_code_execution_result"]`
+
+            - `"bash_code_execution_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["bash_code_execution_tool_result"]`
+
+        - `"bash_code_execution_tool_result"`
+
+    - `class TextEditorCodeExecutionToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class TextEditorCodeExecutionToolResultError: …`
+
+          - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+            - `"file_not_found"`
+
+          - `error_message: Optional[str]`
+
+          - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+            - `"text_editor_code_execution_tool_result_error"`
+
+        - `class TextEditorCodeExecutionViewResultBlock: …`
+
+          - `content: str`
+
+          - `file_type: Literal["text", "image", "pdf"]`
+
+            - `"text"`
+
+            - `"image"`
+
+            - `"pdf"`
+
+          - `num_lines: Optional[int]`
+
+          - `start_line: Optional[int]`
+
+          - `total_lines: Optional[int]`
+
+          - `type: Literal["text_editor_code_execution_view_result"]`
+
+            - `"text_editor_code_execution_view_result"`
+
+        - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+          - `is_file_update: bool`
+
+          - `type: Literal["text_editor_code_execution_create_result"]`
+
+            - `"text_editor_code_execution_create_result"`
+
+        - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+          - `lines: Optional[List[str]]`
+
+          - `new_lines: Optional[int]`
+
+          - `new_start: Optional[int]`
+
+          - `old_lines: Optional[int]`
+
+          - `old_start: Optional[int]`
+
+          - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+            - `"text_editor_code_execution_str_replace_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["text_editor_code_execution_tool_result"]`
+
+        - `"text_editor_code_execution_tool_result"`
+
+    - `class ToolSearchToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class ToolSearchToolResultError: …`
+
+          - `error_code: ToolSearchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+          - `error_message: Optional[str]`
+
+          - `type: Literal["tool_search_tool_result_error"]`
+
+            - `"tool_search_tool_result_error"`
+
+        - `class ToolSearchToolSearchResultBlock: …`
+
+          - `tool_references: List[ToolReferenceBlock]`
+
+            - `tool_name: str`
+
+            - `type: Literal["tool_reference"]`
+
+              - `"tool_reference"`
+
+          - `type: Literal["tool_search_tool_search_result"]`
+
+            - `"tool_search_tool_search_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["tool_search_tool_result"]`
+
+        - `"tool_search_tool_result"`
+
+    - `class ContainerUploadBlock: …`
+
+      Response model for a file uploaded to the container.
+
+      - `file_id: str`
+
+      - `type: Literal["container_upload"]`
+
+        - `"container_upload"`
+
+  - `model: Model`
+
+    The model that will complete your prompt.
+
+    See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+    - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+      The model that will complete your prompt.
+
+      See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+      - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+      - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+      - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+      - `claude-sonnet-4-6` - Best combination of speed and intelligence
+      - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+      - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+      - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+      - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+      - `claude-sonnet-4-5` - High-performance model for agents and coding
+      - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+      - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+      - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+      - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+      - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+      - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+      - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+      - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+      - `"claude-opus-4-7"`
+
+        Frontier intelligence for long-running agents and coding
+
+      - `"claude-mythos-preview"`
+
+        New class of intelligence, strongest in coding and cybersecurity
+
+      - `"claude-opus-4-6"`
+
+        Frontier intelligence for long-running agents and coding
+
+      - `"claude-sonnet-4-6"`
+
+        Best combination of speed and intelligence
+
+      - `"claude-haiku-4-5"`
+
+        Fastest model with near-frontier intelligence
+
+      - `"claude-haiku-4-5-20251001"`
+
+        Fastest model with near-frontier intelligence
+
+      - `"claude-opus-4-5"`
+
+        Premium model combining maximum intelligence with practical performance
+
+      - `"claude-opus-4-5-20251101"`
+
+        Premium model combining maximum intelligence with practical performance
+
+      - `"claude-sonnet-4-5"`
+
+        High-performance model for agents and coding
+
+      - `"claude-sonnet-4-5-20250929"`
+
+        High-performance model for agents and coding
+
+      - `"claude-opus-4-1"`
+
+        Exceptional model for specialized complex tasks
+
+      - `"claude-opus-4-1-20250805"`
+
+        Exceptional model for specialized complex tasks
+
+      - `"claude-opus-4-0"`
+
+        Powerful model for complex tasks
+
+      - `"claude-opus-4-20250514"`
+
+        Powerful model for complex tasks
+
+      - `"claude-sonnet-4-0"`
+
+        High-performance model with extended thinking
+
+      - `"claude-sonnet-4-20250514"`
+
+        High-performance model with extended thinking
+
+      - `"claude-3-haiku-20240307"`
+
+        Fast and cost-effective model
+
+    - `str`
+
+  - `role: Literal["assistant"]`
+
+    Conversational role of the generated message.
+
+    This will always be `"assistant"`.
+
+    - `"assistant"`
+
+  - `stop_details: Optional[RefusalStopDetails]`
+
+    Structured information about a refusal.
+
+    - `category: Optional[Literal["cyber", "bio"]]`
+
+      The policy category that triggered the refusal.
+
+      `null` when the refusal doesn't map to a named category.
+
+      - `"cyber"`
+
+      - `"bio"`
+
+    - `explanation: Optional[str]`
+
+      Human-readable explanation of the refusal.
+
+      This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+    - `type: Literal["refusal"]`
+
+      - `"refusal"`
+
+  - `stop_reason: Optional[StopReason]`
+
+    The reason that we stopped.
+
+    This may be one the following values:
+
+    * `"end_turn"`: the model reached a natural stopping point
+    * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+    * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+    * `"tool_use"`: the model invoked one or more tools
+    * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+    * `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+
+    In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+    - `"end_turn"`
+
+    - `"max_tokens"`
+
+    - `"stop_sequence"`
+
+    - `"tool_use"`
+
+    - `"pause_turn"`
+
+    - `"refusal"`
+
+  - `stop_sequence: Optional[str]`
+
+    Which custom stop sequence was generated, if any.
+
+    This value will be a non-null string if one of your custom stop sequences was generated.
+
+  - `type: Literal["message"]`
+
+    Object type.
+
+    For Messages, this is always `"message"`.
+
+    - `"message"`
+
+  - `usage: Usage`
+
+    Billing and rate-limit usage.
+
+    Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+    Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+    For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+    Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+    - `cache_creation: Optional[CacheCreation]`
+
+      Breakdown of cached tokens by TTL
+
+      - `ephemeral_1h_input_tokens: int`
+
+        The number of input tokens used to create the 1 hour cache entry.
+
+      - `ephemeral_5m_input_tokens: int`
+
+        The number of input tokens used to create the 5 minute cache entry.
+
+    - `cache_creation_input_tokens: Optional[int]`
+
+      The number of input tokens used to create the cache entry.
+
+    - `cache_read_input_tokens: Optional[int]`
+
+      The number of input tokens read from the cache.
+
+    - `inference_geo: Optional[str]`
+
+      The geographic region where inference was performed for this request.
+
+    - `input_tokens: int`
+
+      The number of input tokens which were used.
+
+    - `output_tokens: int`
+
+      The number of output tokens which were used.
+
+    - `server_tool_use: Optional[ServerToolUsage]`
+
+      The number of server tool requests.
+
+      - `web_fetch_requests: int`
+
+        The number of web fetch tool requests.
+
+      - `web_search_requests: int`
+
+        The number of web search tool requests.
+
+    - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+      If the request used the priority, standard, or batch tier.
+
+      - `"standard"`
+
+      - `"priority"`
+
+      - `"batch"`
+
+### Message Count Tokens Tool
+
+- `MessageCountTokensTool`
+
+  Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+  - `class Tool: …`
+
+    - `input_schema: InputSchema`
+
+      [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.
+
+      This defines the shape of the `input` that your tool accepts and that the model will produce.
+
+      - `type: Literal["object"]`
+
+        - `"object"`
+
+      - `properties: Optional[Dict[str, object]]`
+
+      - `required: Optional[List[str]]`
+
+    - `name: str`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `description: Optional[str]`
+
+      Description of what this tool does.
+
+      Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
+
+    - `eager_input_streaming: Optional[bool]`
+
+      Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `type: Optional[Literal["custom"]]`
+
+      - `"custom"`
+
+  - `class ToolBash20250124: …`
+
+    - `name: Literal["bash"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"bash"`
+
+    - `type: Literal["bash_20250124"]`
+
+      - `"bash_20250124"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20250522: …`
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20250522"]`
+
+      - `"code_execution_20250522"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20250825: …`
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20250825"]`
+
+      - `"code_execution_20250825"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20260120: …`
+
+    Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20260120"]`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class MemoryTool20250818: …`
+
+    - `name: Literal["memory"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"memory"`
+
+    - `type: Literal["memory_20250818"]`
+
+      - `"memory_20250818"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250124: …`
+
+    - `name: Literal["str_replace_editor"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_editor"`
+
+    - `type: Literal["text_editor_20250124"]`
+
+      - `"text_editor_20250124"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250429: …`
+
+    - `name: Literal["str_replace_based_edit_tool"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_based_edit_tool"`
+
+    - `type: Literal["text_editor_20250429"]`
+
+      - `"text_editor_20250429"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250728: …`
+
+    - `name: Literal["str_replace_based_edit_tool"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_based_edit_tool"`
+
+    - `type: Literal["text_editor_20250728"]`
+
+      - `"text_editor_20250728"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `max_characters: Optional[int]`
+
+      Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebSearchTool20250305: …`
+
+    - `name: Literal["web_search"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_search"`
+
+    - `type: Literal["web_search_20250305"]`
+
+      - `"web_search_20250305"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+    - `blocked_domains: Optional[List[str]]`
+
+      If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `user_location: Optional[UserLocation]`
+
+      Parameters for the user's location. Used to provide more relevant search results.
+
+      - `type: Literal["approximate"]`
+
+        - `"approximate"`
+
+      - `city: Optional[str]`
+
+        The city of the user.
+
+      - `country: Optional[str]`
+
+        The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+      - `region: Optional[str]`
+
+        The region of the user.
+
+      - `timezone: Optional[str]`
+
+        The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+  - `class WebFetchTool20250910: …`
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20250910"]`
+
+      - `"web_fetch_20250910"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebSearchTool20260209: …`
+
+    - `name: Literal["web_search"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_search"`
+
+    - `type: Literal["web_search_20260209"]`
+
+      - `"web_search_20260209"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+    - `blocked_domains: Optional[List[str]]`
+
+      If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `user_location: Optional[UserLocation]`
+
+      Parameters for the user's location. Used to provide more relevant search results.
+
+      - `type: Literal["approximate"]`
+
+        - `"approximate"`
+
+      - `city: Optional[str]`
+
+        The city of the user.
+
+      - `country: Optional[str]`
+
+        The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+      - `region: Optional[str]`
+
+        The region of the user.
+
+      - `timezone: Optional[str]`
+
+        The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+  - `class WebFetchTool20260209: …`
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20260209"]`
+
+      - `"web_fetch_20260209"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebFetchTool20260309: …`
+
+    Web fetch tool with use_cache parameter for bypassing cached content.
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20260309"]`
+
+      - `"web_fetch_20260309"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `use_cache: Optional[bool]`
+
+      Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
+
+  - `class ToolSearchToolBm25_20251119: …`
+
+    - `name: Literal["tool_search_tool_bm25"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"tool_search_tool_bm25"`
+
+    - `type: Literal["tool_search_tool_bm25_20251119", "tool_search_tool_bm25"]`
+
+      - `"tool_search_tool_bm25_20251119"`
+
+      - `"tool_search_tool_bm25"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolSearchToolRegex20251119: …`
+
+    - `name: Literal["tool_search_tool_regex"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"tool_search_tool_regex"`
+
+    - `type: Literal["tool_search_tool_regex_20251119", "tool_search_tool_regex"]`
+
+      - `"tool_search_tool_regex_20251119"`
+
+      - `"tool_search_tool_regex"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+### Message Delta Usage
+
+- `class MessageDeltaUsage: …`
+
+  - `cache_creation_input_tokens: Optional[int]`
+
+    The cumulative number of input tokens used to create the cache entry.
+
+  - `cache_read_input_tokens: Optional[int]`
+
+    The cumulative number of input tokens read from the cache.
+
+  - `input_tokens: Optional[int]`
+
+    The cumulative number of input tokens which were used.
+
+  - `output_tokens: int`
+
+    The cumulative number of output tokens which were used.
+
+  - `server_tool_use: Optional[ServerToolUsage]`
+
+    The number of server tool requests.
+
+    - `web_fetch_requests: int`
+
+      The number of web fetch tool requests.
+
+    - `web_search_requests: int`
+
+      The number of web search tool requests.
+
+### Message Param
+
+- `class MessageParam: …`
+
+  - `content: Union[str, List[Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 14 more]]]`
+
+    - `str`
+
+    - `List[Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 14 more]]`
+
+      - `class TextBlockParam: …`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[List[TextCitationParam]]`
+
+          - `class CitationCharLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationWebSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+      - `class ImageBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64ImageSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+              - `"image/jpeg"`
+
+              - `"image/png"`
+
+              - `"image/gif"`
+
+              - `"image/webp"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class URLImageSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["image"]`
+
+          - `"image"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class DocumentBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64PDFSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["application/pdf"]`
+
+              - `"application/pdf"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class PlainTextSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["text/plain"]`
+
+              - `"text/plain"`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+          - `class ContentBlockSource: …`
+
+            - `content: Union[str, List[ContentBlockSourceContent]]`
+
+              - `str`
+
+              - `List[ContentBlockSourceContent]`
+
+                - `class TextBlockParam: …`
+
+                  - `text: str`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[List[TextCitationParam]]`
+
+                    - `class CitationCharLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_char_index: int`
+
+                      - `start_char_index: int`
+
+                      - `type: Literal["char_location"]`
+
+                        - `"char_location"`
+
+                    - `class CitationPageLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_page_number: int`
+
+                      - `start_page_number: int`
+
+                      - `type: Literal["page_location"]`
+
+                        - `"page_location"`
+
+                    - `class CitationContentBlockLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_block_index: int`
+
+                      - `start_block_index: int`
+
+                      - `type: Literal["content_block_location"]`
+
+                        - `"content_block_location"`
+
+                    - `class CitationWebSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `encrypted_index: str`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["web_search_result_location"]`
+
+                        - `"web_search_result_location"`
+
+                      - `url: str`
+
+                    - `class CitationSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `end_block_index: int`
+
+                      - `search_result_index: int`
+
+                      - `source: str`
+
+                      - `start_block_index: int`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["search_result_location"]`
+
+                        - `"search_result_location"`
+
+                - `class ImageBlockParam: …`
+
+                  - `source: Source`
+
+                    - `class Base64ImageSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                        - `"image/jpeg"`
+
+                        - `"image/png"`
+
+                        - `"image/gif"`
+
+                        - `"image/webp"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class URLImageSource: …`
+
+                      - `type: Literal["url"]`
+
+                        - `"url"`
+
+                      - `url: str`
+
+                  - `type: Literal["image"]`
+
+                    - `"image"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+            - `type: Literal["content"]`
+
+              - `"content"`
+
+          - `class URLPDFSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["document"]`
+
+          - `"document"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+        - `context: Optional[str]`
+
+        - `title: Optional[str]`
+
+      - `class SearchResultBlockParam: …`
+
+        - `content: List[TextBlockParam]`
+
+          - `text: str`
+
+          - `type: Literal["text"]`
+
+            - `"text"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+          - `citations: Optional[List[TextCitationParam]]`
+
+            - `class CitationCharLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_char_index: int`
+
+              - `start_char_index: int`
+
+              - `type: Literal["char_location"]`
+
+                - `"char_location"`
+
+            - `class CitationPageLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_page_number: int`
+
+              - `start_page_number: int`
+
+              - `type: Literal["page_location"]`
+
+                - `"page_location"`
+
+            - `class CitationContentBlockLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_block_index: int`
+
+              - `start_block_index: int`
+
+              - `type: Literal["content_block_location"]`
+
+                - `"content_block_location"`
+
+            - `class CitationWebSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `encrypted_index: str`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["web_search_result_location"]`
+
+                - `"web_search_result_location"`
+
+              - `url: str`
+
+            - `class CitationSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `end_block_index: int`
+
+              - `search_result_index: int`
+
+              - `source: str`
+
+              - `start_block_index: int`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["search_result_location"]`
+
+                - `"search_result_location"`
+
+        - `source: str`
+
+        - `title: str`
+
+        - `type: Literal["search_result"]`
+
+          - `"search_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+      - `class ThinkingBlockParam: …`
+
+        - `signature: str`
+
+        - `thinking: str`
+
+        - `type: Literal["thinking"]`
+
+          - `"thinking"`
+
+      - `class RedactedThinkingBlockParam: …`
+
+        - `data: str`
+
+        - `type: Literal["redacted_thinking"]`
+
+          - `"redacted_thinking"`
+
+      - `class ToolUseBlockParam: …`
+
+        - `id: str`
+
+        - `input: Dict[str, object]`
+
+        - `name: str`
+
+        - `type: Literal["tool_use"]`
+
+          - `"tool_use"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class ToolResultBlockParam: …`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_result"]`
+
+          - `"tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `content: Optional[Union[str, List[Content], null]]`
+
+          - `str`
+
+          - `List[Content]`
+
+            - `class TextBlockParam: …`
+
+              - `text: str`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[List[TextCitationParam]]`
+
+                - `class CitationCharLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_char_index: int`
+
+                  - `start_char_index: int`
+
+                  - `type: Literal["char_location"]`
+
+                    - `"char_location"`
+
+                - `class CitationPageLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_page_number: int`
+
+                  - `start_page_number: int`
+
+                  - `type: Literal["page_location"]`
+
+                    - `"page_location"`
+
+                - `class CitationContentBlockLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_block_index: int`
+
+                  - `start_block_index: int`
+
+                  - `type: Literal["content_block_location"]`
+
+                    - `"content_block_location"`
+
+                - `class CitationWebSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `encrypted_index: str`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["web_search_result_location"]`
+
+                    - `"web_search_result_location"`
+
+                  - `url: str`
+
+                - `class CitationSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `end_block_index: int`
+
+                  - `search_result_index: int`
+
+                  - `source: str`
+
+                  - `start_block_index: int`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["search_result_location"]`
+
+                    - `"search_result_location"`
+
+            - `class ImageBlockParam: …`
+
+              - `source: Source`
+
+                - `class Base64ImageSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                    - `"image/jpeg"`
+
+                    - `"image/png"`
+
+                    - `"image/gif"`
+
+                    - `"image/webp"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class URLImageSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["image"]`
+
+                - `"image"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+            - `class SearchResultBlockParam: …`
+
+              - `content: List[TextBlockParam]`
+
+                - `text: str`
+
+                - `type: Literal["text"]`
+
+                  - `"text"`
+
+                - `cache_control: Optional[CacheControlEphemeral]`
+
+                  Create a cache control breakpoint at this content block.
+
+                  - `type: Literal["ephemeral"]`
+
+                    - `"ephemeral"`
+
+                  - `ttl: Optional[Literal["5m", "1h"]]`
+
+                    The time-to-live for the cache control breakpoint.
+
+                    This may be one the following values:
+
+                    - `5m`: 5 minutes
+                    - `1h`: 1 hour
+
+                    Defaults to `5m`.
+
+                    - `"5m"`
+
+                    - `"1h"`
+
+                - `citations: Optional[List[TextCitationParam]]`
+
+                  - `class CitationCharLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_char_index: int`
+
+                    - `start_char_index: int`
+
+                    - `type: Literal["char_location"]`
+
+                      - `"char_location"`
+
+                  - `class CitationPageLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_page_number: int`
+
+                    - `start_page_number: int`
+
+                    - `type: Literal["page_location"]`
+
+                      - `"page_location"`
+
+                  - `class CitationContentBlockLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `document_index: int`
+
+                    - `document_title: Optional[str]`
+
+                    - `end_block_index: int`
+
+                    - `start_block_index: int`
+
+                    - `type: Literal["content_block_location"]`
+
+                      - `"content_block_location"`
+
+                  - `class CitationWebSearchResultLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `encrypted_index: str`
+
+                    - `title: Optional[str]`
+
+                    - `type: Literal["web_search_result_location"]`
+
+                      - `"web_search_result_location"`
+
+                    - `url: str`
+
+                  - `class CitationSearchResultLocationParam: …`
+
+                    - `cited_text: str`
+
+                    - `end_block_index: int`
+
+                    - `search_result_index: int`
+
+                    - `source: str`
+
+                    - `start_block_index: int`
+
+                    - `title: Optional[str]`
+
+                    - `type: Literal["search_result_location"]`
+
+                      - `"search_result_location"`
+
+              - `source: str`
+
+              - `title: str`
+
+              - `type: Literal["search_result"]`
+
+                - `"search_result"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+            - `class DocumentBlockParam: …`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                - `class ContentBlockSource: …`
+
+                  - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                    - `str`
+
+                    - `List[ContentBlockSourceContent]`
+
+                      - `class TextBlockParam: …`
+
+                        - `text: str`
+
+                        - `type: Literal["text"]`
+
+                          - `"text"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                        - `citations: Optional[List[TextCitationParam]]`
+
+                          - `class CitationCharLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_char_index: int`
+
+                            - `start_char_index: int`
+
+                            - `type: Literal["char_location"]`
+
+                              - `"char_location"`
+
+                          - `class CitationPageLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_page_number: int`
+
+                            - `start_page_number: int`
+
+                            - `type: Literal["page_location"]`
+
+                              - `"page_location"`
+
+                          - `class CitationContentBlockLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_block_index: int`
+
+                            - `start_block_index: int`
+
+                            - `type: Literal["content_block_location"]`
+
+                              - `"content_block_location"`
+
+                          - `class CitationWebSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `encrypted_index: str`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["web_search_result_location"]`
+
+                              - `"web_search_result_location"`
+
+                            - `url: str`
+
+                          - `class CitationSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `end_block_index: int`
+
+                            - `search_result_index: int`
+
+                            - `source: str`
+
+                            - `start_block_index: int`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["search_result_location"]`
+
+                              - `"search_result_location"`
+
+                      - `class ImageBlockParam: …`
+
+                        - `source: Source`
+
+                          - `class Base64ImageSource: …`
+
+                            - `data: str`
+
+                            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                              - `"image/jpeg"`
+
+                              - `"image/png"`
+
+                              - `"image/gif"`
+
+                              - `"image/webp"`
+
+                            - `type: Literal["base64"]`
+
+                              - `"base64"`
+
+                          - `class URLImageSource: …`
+
+                            - `type: Literal["url"]`
+
+                              - `"url"`
+
+                            - `url: str`
+
+                        - `type: Literal["image"]`
+
+                          - `"image"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                  - `type: Literal["content"]`
+
+                    - `"content"`
+
+                - `class URLPDFSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+              - `context: Optional[str]`
+
+              - `title: Optional[str]`
+
+            - `class ToolReferenceBlockParam: …`
+
+              Tool reference block that can be included in tool_result content.
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+        - `is_error: Optional[bool]`
+
+      - `class ServerToolUseBlockParam: …`
+
+        - `id: str`
+
+        - `input: Dict[str, object]`
+
+        - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+          - `"web_search"`
+
+          - `"web_fetch"`
+
+          - `"code_execution"`
+
+          - `"bash_code_execution"`
+
+          - `"text_editor_code_execution"`
+
+          - `"tool_search_tool_regex"`
+
+          - `"tool_search_tool_bm25"`
+
+        - `type: Literal["server_tool_use"]`
+
+          - `"server_tool_use"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class WebSearchToolResultBlockParam: …`
+
+        - `content: WebSearchToolResultBlockParamContent`
+
+          - `List[WebSearchResultBlockParam]`
+
+            - `encrypted_content: str`
+
+            - `title: str`
+
+            - `type: Literal["web_search_result"]`
+
+              - `"web_search_result"`
+
+            - `url: str`
+
+            - `page_age: Optional[str]`
+
+          - `class WebSearchToolRequestError: …`
+
+            - `error_code: WebSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"max_uses_exceeded"`
+
+              - `"too_many_requests"`
+
+              - `"query_too_long"`
+
+              - `"request_too_large"`
+
+            - `type: Literal["web_search_tool_result_error"]`
+
+              - `"web_search_tool_result_error"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_search_tool_result"]`
+
+          - `"web_search_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class WebFetchToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class WebFetchToolResultErrorBlockParam: …`
+
+            - `error_code: WebFetchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"url_too_long"`
+
+              - `"url_not_allowed"`
+
+              - `"url_not_accessible"`
+
+              - `"unsupported_content_type"`
+
+              - `"too_many_requests"`
+
+              - `"max_uses_exceeded"`
+
+              - `"unavailable"`
+
+            - `type: Literal["web_fetch_tool_result_error"]`
+
+              - `"web_fetch_tool_result_error"`
+
+          - `class WebFetchBlockParam: …`
+
+            - `content: DocumentBlockParam`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                - `class ContentBlockSource: …`
+
+                  - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                    - `str`
+
+                    - `List[ContentBlockSourceContent]`
+
+                      - `class TextBlockParam: …`
+
+                        - `text: str`
+
+                        - `type: Literal["text"]`
+
+                          - `"text"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                        - `citations: Optional[List[TextCitationParam]]`
+
+                          - `class CitationCharLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_char_index: int`
+
+                            - `start_char_index: int`
+
+                            - `type: Literal["char_location"]`
+
+                              - `"char_location"`
+
+                          - `class CitationPageLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_page_number: int`
+
+                            - `start_page_number: int`
+
+                            - `type: Literal["page_location"]`
+
+                              - `"page_location"`
+
+                          - `class CitationContentBlockLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `document_index: int`
+
+                            - `document_title: Optional[str]`
+
+                            - `end_block_index: int`
+
+                            - `start_block_index: int`
+
+                            - `type: Literal["content_block_location"]`
+
+                              - `"content_block_location"`
+
+                          - `class CitationWebSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `encrypted_index: str`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["web_search_result_location"]`
+
+                              - `"web_search_result_location"`
+
+                            - `url: str`
+
+                          - `class CitationSearchResultLocationParam: …`
+
+                            - `cited_text: str`
+
+                            - `end_block_index: int`
+
+                            - `search_result_index: int`
+
+                            - `source: str`
+
+                            - `start_block_index: int`
+
+                            - `title: Optional[str]`
+
+                            - `type: Literal["search_result_location"]`
+
+                              - `"search_result_location"`
+
+                      - `class ImageBlockParam: …`
+
+                        - `source: Source`
+
+                          - `class Base64ImageSource: …`
+
+                            - `data: str`
+
+                            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                              - `"image/jpeg"`
+
+                              - `"image/png"`
+
+                              - `"image/gif"`
+
+                              - `"image/webp"`
+
+                            - `type: Literal["base64"]`
+
+                              - `"base64"`
+
+                          - `class URLImageSource: …`
+
+                            - `type: Literal["url"]`
+
+                              - `"url"`
+
+                            - `url: str`
+
+                        - `type: Literal["image"]`
+
+                          - `"image"`
+
+                        - `cache_control: Optional[CacheControlEphemeral]`
+
+                          Create a cache control breakpoint at this content block.
+
+                          - `type: Literal["ephemeral"]`
+
+                            - `"ephemeral"`
+
+                          - `ttl: Optional[Literal["5m", "1h"]]`
+
+                            The time-to-live for the cache control breakpoint.
+
+                            This may be one the following values:
+
+                            - `5m`: 5 minutes
+                            - `1h`: 1 hour
+
+                            Defaults to `5m`.
+
+                            - `"5m"`
+
+                            - `"1h"`
+
+                  - `type: Literal["content"]`
+
+                    - `"content"`
+
+                - `class URLPDFSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[CitationsConfigParam]`
+
+                - `enabled: Optional[bool]`
+
+              - `context: Optional[str]`
+
+              - `title: Optional[str]`
+
+            - `type: Literal["web_fetch_result"]`
+
+              - `"web_fetch_result"`
+
+            - `url: str`
+
+              Fetched content URL
+
+            - `retrieved_at: Optional[str]`
+
+              ISO 8601 timestamp when the content was retrieved
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_fetch_tool_result"]`
+
+          - `"web_fetch_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `caller: Optional[Caller]`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+      - `class CodeExecutionToolResultBlockParam: …`
+
+        - `content: CodeExecutionToolResultBlockParamContent`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `class CodeExecutionToolResultErrorParam: …`
+
+            - `error_code: CodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["code_execution_tool_result_error"]`
+
+              - `"code_execution_tool_result_error"`
+
+          - `class CodeExecutionResultBlockParam: …`
+
+            - `content: List[CodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["code_execution_result"]`
+
+              - `"code_execution_result"`
+
+          - `class EncryptedCodeExecutionResultBlockParam: …`
+
+            Code execution result with encrypted stdout for PFC + web_search results.
+
+            - `content: List[CodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `encrypted_stdout: str`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `type: Literal["encrypted_code_execution_result"]`
+
+              - `"encrypted_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["code_execution_tool_result"]`
+
+          - `"code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class BashCodeExecutionToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class BashCodeExecutionToolResultErrorParam: …`
+
+            - `error_code: BashCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"output_file_too_large"`
+
+            - `type: Literal["bash_code_execution_tool_result_error"]`
+
+              - `"bash_code_execution_tool_result_error"`
+
+          - `class BashCodeExecutionResultBlockParam: …`
+
+            - `content: List[BashCodeExecutionOutputBlockParam]`
+
+              - `file_id: str`
+
+              - `type: Literal["bash_code_execution_output"]`
+
+                - `"bash_code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["bash_code_execution_result"]`
+
+              - `"bash_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["bash_code_execution_tool_result"]`
+
+          - `"bash_code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class TextEditorCodeExecutionToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class TextEditorCodeExecutionToolResultErrorParam: …`
+
+            - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"file_not_found"`
+
+            - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+              - `"text_editor_code_execution_tool_result_error"`
+
+            - `error_message: Optional[str]`
+
+          - `class TextEditorCodeExecutionViewResultBlockParam: …`
+
+            - `content: str`
+
+            - `file_type: Literal["text", "image", "pdf"]`
+
+              - `"text"`
+
+              - `"image"`
+
+              - `"pdf"`
+
+            - `type: Literal["text_editor_code_execution_view_result"]`
+
+              - `"text_editor_code_execution_view_result"`
+
+            - `num_lines: Optional[int]`
+
+            - `start_line: Optional[int]`
+
+            - `total_lines: Optional[int]`
+
+          - `class TextEditorCodeExecutionCreateResultBlockParam: …`
+
+            - `is_file_update: bool`
+
+            - `type: Literal["text_editor_code_execution_create_result"]`
+
+              - `"text_editor_code_execution_create_result"`
+
+          - `class TextEditorCodeExecutionStrReplaceResultBlockParam: …`
+
+            - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+              - `"text_editor_code_execution_str_replace_result"`
+
+            - `lines: Optional[List[str]]`
+
+            - `new_lines: Optional[int]`
+
+            - `new_start: Optional[int]`
+
+            - `old_lines: Optional[int]`
+
+            - `old_start: Optional[int]`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["text_editor_code_execution_tool_result"]`
+
+          - `"text_editor_code_execution_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class ToolSearchToolResultBlockParam: …`
+
+        - `content: Content`
+
+          - `class ToolSearchToolResultErrorParam: …`
+
+            - `error_code: ToolSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["tool_search_tool_result_error"]`
+
+              - `"tool_search_tool_result_error"`
+
+          - `class ToolSearchToolSearchResultBlockParam: …`
+
+            - `tool_references: List[ToolReferenceBlockParam]`
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+            - `type: Literal["tool_search_tool_search_result"]`
+
+              - `"tool_search_tool_search_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_search_tool_result"]`
+
+          - `"tool_search_tool_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class ContainerUploadBlockParam: …`
+
+        A content block that represents a file to be uploaded to the container
+        Files uploaded via this block will be available in the container's input directory.
+
+        - `file_id: str`
+
+        - `type: Literal["container_upload"]`
+
+          - `"container_upload"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+  - `role: Literal["user", "assistant"]`
+
+    - `"user"`
+
+    - `"assistant"`
+
+### Message Tokens Count
+
+- `class MessageTokensCount: …`
+
+  - `input_tokens: int`
+
+    The total number of tokens across the provided list of messages, system prompt, and tools.
+
+### Metadata
+
+- `class Metadata: …`
+
+  - `user_id: Optional[str]`
+
+    An external identifier for the user who is associated with the request.
+
+    This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.
+
+### Model
+
+- `Union[Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more], str]`
+
+  The model that will complete your prompt.
+
+  See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+  - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+    The model that will complete your prompt.
+
+    See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+    - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+    - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+    - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+    - `claude-sonnet-4-6` - Best combination of speed and intelligence
+    - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+    - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+    - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+    - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+    - `claude-sonnet-4-5` - High-performance model for agents and coding
+    - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+    - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+    - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+    - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+    - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+    - `"claude-opus-4-7"`
+
+      Frontier intelligence for long-running agents and coding
+
+    - `"claude-mythos-preview"`
+
+      New class of intelligence, strongest in coding and cybersecurity
+
+    - `"claude-opus-4-6"`
+
+      Frontier intelligence for long-running agents and coding
+
+    - `"claude-sonnet-4-6"`
+
+      Best combination of speed and intelligence
+
+    - `"claude-haiku-4-5"`
+
+      Fastest model with near-frontier intelligence
+
+    - `"claude-haiku-4-5-20251001"`
+
+      Fastest model with near-frontier intelligence
+
+    - `"claude-opus-4-5"`
+
+      Premium model combining maximum intelligence with practical performance
+
+    - `"claude-opus-4-5-20251101"`
+
+      Premium model combining maximum intelligence with practical performance
+
+    - `"claude-sonnet-4-5"`
+
+      High-performance model for agents and coding
+
+    - `"claude-sonnet-4-5-20250929"`
+
+      High-performance model for agents and coding
+
+    - `"claude-opus-4-1"`
+
+      Exceptional model for specialized complex tasks
+
+    - `"claude-opus-4-1-20250805"`
+
+      Exceptional model for specialized complex tasks
+
+    - `"claude-opus-4-0"`
+
+      Powerful model for complex tasks
+
+    - `"claude-opus-4-20250514"`
+
+      Powerful model for complex tasks
+
+    - `"claude-sonnet-4-0"`
+
+      High-performance model with extended thinking
+
+    - `"claude-sonnet-4-20250514"`
+
+      High-performance model with extended thinking
+
+    - `"claude-3-haiku-20240307"`
+
+      Fast and cost-effective model
+
+  - `str`
+
+### Output Config
+
+- `class OutputConfig: …`
+
+  - `effort: Optional[Literal["low", "medium", "high", "max"]]`
+
+    All possible effort levels.
+
+    - `"low"`
+
+    - `"medium"`
+
+    - `"high"`
+
+    - `"max"`
+
+  - `format: Optional[JSONOutputFormat]`
+
+    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+
+    - `schema: Dict[str, object]`
+
+      The JSON schema of the format
+
+    - `type: Literal["json_schema"]`
+
+      - `"json_schema"`
+
+### Plain Text Source
+
+- `class PlainTextSource: …`
+
+  - `data: str`
+
+  - `media_type: Literal["text/plain"]`
+
+    - `"text/plain"`
+
+  - `type: Literal["text"]`
+
+    - `"text"`
+
+### Raw Content Block Delta
+
+- `RawContentBlockDelta`
+
+  - `class TextDelta: …`
+
+    - `text: str`
+
+    - `type: Literal["text_delta"]`
+
+      - `"text_delta"`
+
+  - `class InputJSONDelta: …`
+
+    - `partial_json: str`
+
+    - `type: Literal["input_json_delta"]`
+
+      - `"input_json_delta"`
+
+  - `class CitationsDelta: …`
+
+    - `citation: Citation`
+
+      - `class CitationCharLocation: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_char_index: int`
+
+        - `file_id: Optional[str]`
+
+        - `start_char_index: int`
+
+        - `type: Literal["char_location"]`
+
+          - `"char_location"`
+
+      - `class CitationPageLocation: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_page_number: int`
+
+        - `file_id: Optional[str]`
+
+        - `start_page_number: int`
+
+        - `type: Literal["page_location"]`
+
+          - `"page_location"`
+
+      - `class CitationContentBlockLocation: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_block_index: int`
+
+        - `file_id: Optional[str]`
+
+        - `start_block_index: int`
+
+        - `type: Literal["content_block_location"]`
+
+          - `"content_block_location"`
+
+      - `class CitationsWebSearchResultLocation: …`
+
+        - `cited_text: str`
+
+        - `encrypted_index: str`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["web_search_result_location"]`
+
+          - `"web_search_result_location"`
+
+        - `url: str`
+
+      - `class CitationsSearchResultLocation: …`
+
+        - `cited_text: str`
+
+        - `end_block_index: int`
+
+        - `search_result_index: int`
+
+        - `source: str`
+
+        - `start_block_index: int`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["search_result_location"]`
+
+          - `"search_result_location"`
+
+    - `type: Literal["citations_delta"]`
+
+      - `"citations_delta"`
+
+  - `class ThinkingDelta: …`
+
+    - `thinking: str`
+
+    - `type: Literal["thinking_delta"]`
+
+      - `"thinking_delta"`
+
+  - `class SignatureDelta: …`
+
+    - `signature: str`
+
+    - `type: Literal["signature_delta"]`
+
+      - `"signature_delta"`
+
+### Raw Content Block Delta Event
+
+- `class RawContentBlockDeltaEvent: …`
+
+  - `delta: RawContentBlockDelta`
+
+    - `class TextDelta: …`
+
+      - `text: str`
+
+      - `type: Literal["text_delta"]`
+
+        - `"text_delta"`
+
+    - `class InputJSONDelta: …`
+
+      - `partial_json: str`
+
+      - `type: Literal["input_json_delta"]`
+
+        - `"input_json_delta"`
+
+    - `class CitationsDelta: …`
+
+      - `citation: Citation`
+
+        - `class CitationCharLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_char_index: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_char_index: int`
+
+          - `type: Literal["char_location"]`
+
+            - `"char_location"`
+
+        - `class CitationPageLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_page_number: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_page_number: int`
+
+          - `type: Literal["page_location"]`
+
+            - `"page_location"`
+
+        - `class CitationContentBlockLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_block_index: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_block_index: int`
+
+          - `type: Literal["content_block_location"]`
+
+            - `"content_block_location"`
+
+        - `class CitationsWebSearchResultLocation: …`
+
+          - `cited_text: str`
+
+          - `encrypted_index: str`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["web_search_result_location"]`
+
+            - `"web_search_result_location"`
+
+          - `url: str`
+
+        - `class CitationsSearchResultLocation: …`
+
+          - `cited_text: str`
+
+          - `end_block_index: int`
+
+          - `search_result_index: int`
+
+          - `source: str`
+
+          - `start_block_index: int`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["search_result_location"]`
+
+            - `"search_result_location"`
+
+      - `type: Literal["citations_delta"]`
+
+        - `"citations_delta"`
+
+    - `class ThinkingDelta: …`
+
+      - `thinking: str`
+
+      - `type: Literal["thinking_delta"]`
+
+        - `"thinking_delta"`
+
+    - `class SignatureDelta: …`
+
+      - `signature: str`
+
+      - `type: Literal["signature_delta"]`
+
+        - `"signature_delta"`
+
+  - `index: int`
+
+  - `type: Literal["content_block_delta"]`
+
+    - `"content_block_delta"`
+
+### Raw Content Block Start Event
+
+- `class RawContentBlockStartEvent: …`
+
+  - `content_block: ContentBlock`
+
+    Response model for a file uploaded to the container.
+
+    - `class TextBlock: …`
+
+      - `citations: Optional[List[TextCitation]]`
+
+        Citations supporting the text block.
+
+        The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+        - `class CitationCharLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_char_index: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_char_index: int`
+
+          - `type: Literal["char_location"]`
+
+            - `"char_location"`
+
+        - `class CitationPageLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_page_number: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_page_number: int`
+
+          - `type: Literal["page_location"]`
+
+            - `"page_location"`
+
+        - `class CitationContentBlockLocation: …`
+
+          - `cited_text: str`
+
+          - `document_index: int`
+
+          - `document_title: Optional[str]`
+
+          - `end_block_index: int`
+
+          - `file_id: Optional[str]`
+
+          - `start_block_index: int`
+
+          - `type: Literal["content_block_location"]`
+
+            - `"content_block_location"`
+
+        - `class CitationsWebSearchResultLocation: …`
+
+          - `cited_text: str`
+
+          - `encrypted_index: str`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["web_search_result_location"]`
+
+            - `"web_search_result_location"`
+
+          - `url: str`
+
+        - `class CitationsSearchResultLocation: …`
+
+          - `cited_text: str`
+
+          - `end_block_index: int`
+
+          - `search_result_index: int`
+
+          - `source: str`
+
+          - `start_block_index: int`
+
+          - `title: Optional[str]`
+
+          - `type: Literal["search_result_location"]`
+
+            - `"search_result_location"`
+
+      - `text: str`
+
+      - `type: Literal["text"]`
+
+        - `"text"`
+
+    - `class ThinkingBlock: …`
+
+      - `signature: str`
+
+      - `thinking: str`
+
+      - `type: Literal["thinking"]`
+
+        - `"thinking"`
+
+    - `class RedactedThinkingBlock: …`
+
+      - `data: str`
+
+      - `type: Literal["redacted_thinking"]`
+
+        - `"redacted_thinking"`
+
+    - `class ToolUseBlock: …`
+
+      - `id: str`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `input: Dict[str, object]`
+
+      - `name: str`
+
+      - `type: Literal["tool_use"]`
+
+        - `"tool_use"`
+
+    - `class ServerToolUseBlock: …`
+
+      - `id: str`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `input: Dict[str, object]`
+
+      - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+        - `"web_search"`
+
+        - `"web_fetch"`
+
+        - `"code_execution"`
+
+        - `"bash_code_execution"`
+
+        - `"text_editor_code_execution"`
+
+        - `"tool_search_tool_regex"`
+
+        - `"tool_search_tool_bm25"`
+
+      - `type: Literal["server_tool_use"]`
+
+        - `"server_tool_use"`
+
+    - `class WebSearchToolResultBlock: …`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `content: WebSearchToolResultBlockContent`
+
+        - `class WebSearchToolResultError: …`
+
+          - `error_code: WebSearchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"max_uses_exceeded"`
+
+            - `"too_many_requests"`
+
+            - `"query_too_long"`
+
+            - `"request_too_large"`
+
+          - `type: Literal["web_search_tool_result_error"]`
+
+            - `"web_search_tool_result_error"`
+
+        - `List[WebSearchResultBlock]`
+
+          - `encrypted_content: str`
+
+          - `page_age: Optional[str]`
+
+          - `title: str`
+
+          - `type: Literal["web_search_result"]`
+
+            - `"web_search_result"`
+
+          - `url: str`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["web_search_tool_result"]`
+
+        - `"web_search_tool_result"`
+
+    - `class WebFetchToolResultBlock: …`
+
+      - `caller: Caller`
+
+        Tool invocation directly from the model.
+
+        - `class DirectCaller: …`
+
+          Tool invocation directly from the model.
+
+          - `type: Literal["direct"]`
+
+            - `"direct"`
+
+        - `class ServerToolCaller: …`
+
+          Tool invocation generated by a server-side tool.
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20250825"]`
+
+            - `"code_execution_20250825"`
+
+        - `class ServerToolCaller20260120: …`
+
+          - `tool_id: str`
+
+          - `type: Literal["code_execution_20260120"]`
+
+            - `"code_execution_20260120"`
+
+      - `content: Content`
+
+        - `class WebFetchToolResultErrorBlock: …`
+
+          - `error_code: WebFetchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"url_too_long"`
+
+            - `"url_not_allowed"`
+
+            - `"url_not_accessible"`
+
+            - `"unsupported_content_type"`
+
+            - `"too_many_requests"`
+
+            - `"max_uses_exceeded"`
+
+            - `"unavailable"`
+
+          - `type: Literal["web_fetch_tool_result_error"]`
+
+            - `"web_fetch_tool_result_error"`
+
+        - `class WebFetchBlock: …`
+
+          - `content: DocumentBlock`
+
+            - `citations: Optional[CitationsConfig]`
+
+              Citation configuration for the document
+
+              - `enabled: bool`
+
+            - `source: Source`
+
+              - `class Base64PDFSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["application/pdf"]`
+
+                  - `"application/pdf"`
+
+                - `type: Literal["base64"]`
+
+                  - `"base64"`
+
+              - `class PlainTextSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["text/plain"]`
+
+                  - `"text/plain"`
+
+                - `type: Literal["text"]`
+
+                  - `"text"`
+
+            - `title: Optional[str]`
+
+              The title of the document
+
+            - `type: Literal["document"]`
+
+              - `"document"`
+
+          - `retrieved_at: Optional[str]`
+
+            ISO 8601 timestamp when the content was retrieved
+
+          - `type: Literal["web_fetch_result"]`
+
+            - `"web_fetch_result"`
+
+          - `url: str`
+
+            Fetched content URL
+
+      - `tool_use_id: str`
+
+      - `type: Literal["web_fetch_tool_result"]`
+
+        - `"web_fetch_tool_result"`
+
+    - `class CodeExecutionToolResultBlock: …`
+
+      - `content: CodeExecutionToolResultBlockContent`
+
+        Code execution result with encrypted stdout for PFC + web_search results.
+
+        - `class CodeExecutionToolResultError: …`
+
+          - `error_code: CodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+          - `type: Literal["code_execution_tool_result_error"]`
+
+            - `"code_execution_tool_result_error"`
+
+        - `class CodeExecutionResultBlock: …`
+
+          - `content: List[CodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["code_execution_output"]`
+
+              - `"code_execution_output"`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `stdout: str`
+
+          - `type: Literal["code_execution_result"]`
+
+            - `"code_execution_result"`
+
+        - `class EncryptedCodeExecutionResultBlock: …`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `content: List[CodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["code_execution_output"]`
+
+              - `"code_execution_output"`
+
+          - `encrypted_stdout: str`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `type: Literal["encrypted_code_execution_result"]`
+
+            - `"encrypted_code_execution_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["code_execution_tool_result"]`
+
+        - `"code_execution_tool_result"`
+
+    - `class BashCodeExecutionToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class BashCodeExecutionToolResultError: …`
+
+          - `error_code: BashCodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+            - `"output_file_too_large"`
+
+          - `type: Literal["bash_code_execution_tool_result_error"]`
+
+            - `"bash_code_execution_tool_result_error"`
+
+        - `class BashCodeExecutionResultBlock: …`
+
+          - `content: List[BashCodeExecutionOutputBlock]`
+
+            - `file_id: str`
+
+            - `type: Literal["bash_code_execution_output"]`
+
+              - `"bash_code_execution_output"`
+
+          - `return_code: int`
+
+          - `stderr: str`
+
+          - `stdout: str`
+
+          - `type: Literal["bash_code_execution_result"]`
+
+            - `"bash_code_execution_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["bash_code_execution_tool_result"]`
+
+        - `"bash_code_execution_tool_result"`
+
+    - `class TextEditorCodeExecutionToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class TextEditorCodeExecutionToolResultError: …`
+
+          - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+            - `"file_not_found"`
+
+          - `error_message: Optional[str]`
+
+          - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+            - `"text_editor_code_execution_tool_result_error"`
+
+        - `class TextEditorCodeExecutionViewResultBlock: …`
+
+          - `content: str`
+
+          - `file_type: Literal["text", "image", "pdf"]`
+
+            - `"text"`
+
+            - `"image"`
+
+            - `"pdf"`
+
+          - `num_lines: Optional[int]`
+
+          - `start_line: Optional[int]`
+
+          - `total_lines: Optional[int]`
+
+          - `type: Literal["text_editor_code_execution_view_result"]`
+
+            - `"text_editor_code_execution_view_result"`
+
+        - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+          - `is_file_update: bool`
+
+          - `type: Literal["text_editor_code_execution_create_result"]`
+
+            - `"text_editor_code_execution_create_result"`
+
+        - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+          - `lines: Optional[List[str]]`
+
+          - `new_lines: Optional[int]`
+
+          - `new_start: Optional[int]`
+
+          - `old_lines: Optional[int]`
+
+          - `old_start: Optional[int]`
+
+          - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+            - `"text_editor_code_execution_str_replace_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["text_editor_code_execution_tool_result"]`
+
+        - `"text_editor_code_execution_tool_result"`
+
+    - `class ToolSearchToolResultBlock: …`
+
+      - `content: Content`
+
+        - `class ToolSearchToolResultError: …`
+
+          - `error_code: ToolSearchToolResultErrorCode`
+
+            - `"invalid_tool_input"`
+
+            - `"unavailable"`
+
+            - `"too_many_requests"`
+
+            - `"execution_time_exceeded"`
+
+          - `error_message: Optional[str]`
+
+          - `type: Literal["tool_search_tool_result_error"]`
+
+            - `"tool_search_tool_result_error"`
+
+        - `class ToolSearchToolSearchResultBlock: …`
+
+          - `tool_references: List[ToolReferenceBlock]`
+
+            - `tool_name: str`
+
+            - `type: Literal["tool_reference"]`
+
+              - `"tool_reference"`
+
+          - `type: Literal["tool_search_tool_search_result"]`
+
+            - `"tool_search_tool_search_result"`
+
+      - `tool_use_id: str`
+
+      - `type: Literal["tool_search_tool_result"]`
+
+        - `"tool_search_tool_result"`
+
+    - `class ContainerUploadBlock: …`
+
+      Response model for a file uploaded to the container.
+
+      - `file_id: str`
+
+      - `type: Literal["container_upload"]`
+
+        - `"container_upload"`
+
+  - `index: int`
+
+  - `type: Literal["content_block_start"]`
+
+    - `"content_block_start"`
+
+### Raw Content Block Stop Event
+
+- `class RawContentBlockStopEvent: …`
+
+  - `index: int`
+
+  - `type: Literal["content_block_stop"]`
+
+    - `"content_block_stop"`
+
+### Raw Message Delta Event
+
+- `class RawMessageDeltaEvent: …`
+
+  - `delta: Delta`
+
+    - `container: Optional[Container]`
+
+      Information about the container used in the request (for the code execution tool)
+
+      - `id: str`
+
+        Identifier for the container used in this request
+
+      - `expires_at: datetime`
+
+        The time at which the container will expire.
+
+    - `stop_details: Optional[RefusalStopDetails]`
+
+      Structured information about a refusal.
+
+      - `category: Optional[Literal["cyber", "bio"]]`
+
+        The policy category that triggered the refusal.
+
+        `null` when the refusal doesn't map to a named category.
+
+        - `"cyber"`
+
+        - `"bio"`
+
+      - `explanation: Optional[str]`
+
+        Human-readable explanation of the refusal.
+
+        This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+      - `type: Literal["refusal"]`
+
+        - `"refusal"`
+
+    - `stop_reason: Optional[StopReason]`
+
+      - `"end_turn"`
+
+      - `"max_tokens"`
+
+      - `"stop_sequence"`
+
+      - `"tool_use"`
+
+      - `"pause_turn"`
+
+      - `"refusal"`
+
+    - `stop_sequence: Optional[str]`
+
+  - `type: Literal["message_delta"]`
+
+    - `"message_delta"`
+
+  - `usage: MessageDeltaUsage`
+
+    Billing and rate-limit usage.
+
+    Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+    Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+    For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+    Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+    - `cache_creation_input_tokens: Optional[int]`
+
+      The cumulative number of input tokens used to create the cache entry.
+
+    - `cache_read_input_tokens: Optional[int]`
+
+      The cumulative number of input tokens read from the cache.
+
+    - `input_tokens: Optional[int]`
+
+      The cumulative number of input tokens which were used.
+
+    - `output_tokens: int`
+
+      The cumulative number of output tokens which were used.
+
+    - `server_tool_use: Optional[ServerToolUsage]`
+
+      The number of server tool requests.
+
+      - `web_fetch_requests: int`
+
+        The number of web fetch tool requests.
+
+      - `web_search_requests: int`
+
+        The number of web search tool requests.
+
+### Raw Message Start Event
+
+- `class RawMessageStartEvent: …`
+
+  - `message: Message`
+
+    - `id: str`
+
+      Unique object identifier.
+
+      The format and length of IDs may change over time.
+
+    - `container: Optional[Container]`
+
+      Information about the container used in the request (for the code execution tool)
+
+      - `id: str`
+
+        Identifier for the container used in this request
+
+      - `expires_at: datetime`
+
+        The time at which the container will expire.
+
+    - `content: List[ContentBlock]`
+
+      Content generated by the model.
+
+      This is an array of content blocks, each of which has a `type` that determines its shape.
+
+      Example:
+
+      ```json
+      [{"type": "text", "text": "Hi, I'm Claude."}]
+      ```
+
+      If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+      For example, if the input `messages` were:
+
+      ```json
+      [
+        {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+        {"role": "assistant", "content": "The best answer is ("}
+      ]
+      ```
+
+      Then the response `content` might be:
+
+      ```json
+      [{"type": "text", "text": "B)"}]
+      ```
+
+      - `class TextBlock: …`
+
+        - `citations: Optional[List[TextCitation]]`
+
+          Citations supporting the text block.
+
+          The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+          - `class CitationCharLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationsWebSearchResultLocation: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationsSearchResultLocation: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+      - `class ThinkingBlock: …`
+
+        - `signature: str`
+
+        - `thinking: str`
+
+        - `type: Literal["thinking"]`
+
+          - `"thinking"`
+
+      - `class RedactedThinkingBlock: …`
+
+        - `data: str`
+
+        - `type: Literal["redacted_thinking"]`
+
+          - `"redacted_thinking"`
+
+      - `class ToolUseBlock: …`
+
+        - `id: str`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `input: Dict[str, object]`
+
+        - `name: str`
+
+        - `type: Literal["tool_use"]`
+
+          - `"tool_use"`
+
+      - `class ServerToolUseBlock: …`
+
+        - `id: str`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `input: Dict[str, object]`
+
+        - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+          - `"web_search"`
+
+          - `"web_fetch"`
+
+          - `"code_execution"`
+
+          - `"bash_code_execution"`
+
+          - `"text_editor_code_execution"`
+
+          - `"tool_search_tool_regex"`
+
+          - `"tool_search_tool_bm25"`
+
+        - `type: Literal["server_tool_use"]`
+
+          - `"server_tool_use"`
+
+      - `class WebSearchToolResultBlock: …`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `content: WebSearchToolResultBlockContent`
+
+          - `class WebSearchToolResultError: …`
+
+            - `error_code: WebSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"max_uses_exceeded"`
+
+              - `"too_many_requests"`
+
+              - `"query_too_long"`
+
+              - `"request_too_large"`
+
+            - `type: Literal["web_search_tool_result_error"]`
+
+              - `"web_search_tool_result_error"`
+
+          - `List[WebSearchResultBlock]`
+
+            - `encrypted_content: str`
+
+            - `page_age: Optional[str]`
+
+            - `title: str`
+
+            - `type: Literal["web_search_result"]`
+
+              - `"web_search_result"`
+
+            - `url: str`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_search_tool_result"]`
+
+          - `"web_search_tool_result"`
+
+      - `class WebFetchToolResultBlock: …`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `content: Content`
+
+          - `class WebFetchToolResultErrorBlock: …`
+
+            - `error_code: WebFetchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"url_too_long"`
+
+              - `"url_not_allowed"`
+
+              - `"url_not_accessible"`
+
+              - `"unsupported_content_type"`
+
+              - `"too_many_requests"`
+
+              - `"max_uses_exceeded"`
+
+              - `"unavailable"`
+
+            - `type: Literal["web_fetch_tool_result_error"]`
+
+              - `"web_fetch_tool_result_error"`
+
+          - `class WebFetchBlock: …`
+
+            - `content: DocumentBlock`
+
+              - `citations: Optional[CitationsConfig]`
+
+                Citation configuration for the document
+
+                - `enabled: bool`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+              - `title: Optional[str]`
+
+                The title of the document
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+            - `retrieved_at: Optional[str]`
+
+              ISO 8601 timestamp when the content was retrieved
+
+            - `type: Literal["web_fetch_result"]`
+
+              - `"web_fetch_result"`
+
+            - `url: str`
+
+              Fetched content URL
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_fetch_tool_result"]`
+
+          - `"web_fetch_tool_result"`
+
+      - `class CodeExecutionToolResultBlock: …`
+
+        - `content: CodeExecutionToolResultBlockContent`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `class CodeExecutionToolResultError: …`
+
+            - `error_code: CodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["code_execution_tool_result_error"]`
+
+              - `"code_execution_tool_result_error"`
+
+          - `class CodeExecutionResultBlock: …`
+
+            - `content: List[CodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["code_execution_result"]`
+
+              - `"code_execution_result"`
+
+          - `class EncryptedCodeExecutionResultBlock: …`
+
+            Code execution result with encrypted stdout for PFC + web_search results.
+
+            - `content: List[CodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `encrypted_stdout: str`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `type: Literal["encrypted_code_execution_result"]`
+
+              - `"encrypted_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["code_execution_tool_result"]`
+
+          - `"code_execution_tool_result"`
+
+      - `class BashCodeExecutionToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class BashCodeExecutionToolResultError: …`
+
+            - `error_code: BashCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"output_file_too_large"`
+
+            - `type: Literal["bash_code_execution_tool_result_error"]`
+
+              - `"bash_code_execution_tool_result_error"`
+
+          - `class BashCodeExecutionResultBlock: …`
+
+            - `content: List[BashCodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["bash_code_execution_output"]`
+
+                - `"bash_code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["bash_code_execution_result"]`
+
+              - `"bash_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["bash_code_execution_tool_result"]`
+
+          - `"bash_code_execution_tool_result"`
+
+      - `class TextEditorCodeExecutionToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class TextEditorCodeExecutionToolResultError: …`
+
+            - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"file_not_found"`
+
+            - `error_message: Optional[str]`
+
+            - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+              - `"text_editor_code_execution_tool_result_error"`
+
+          - `class TextEditorCodeExecutionViewResultBlock: …`
+
+            - `content: str`
+
+            - `file_type: Literal["text", "image", "pdf"]`
+
+              - `"text"`
+
+              - `"image"`
+
+              - `"pdf"`
+
+            - `num_lines: Optional[int]`
+
+            - `start_line: Optional[int]`
+
+            - `total_lines: Optional[int]`
+
+            - `type: Literal["text_editor_code_execution_view_result"]`
+
+              - `"text_editor_code_execution_view_result"`
+
+          - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+            - `is_file_update: bool`
+
+            - `type: Literal["text_editor_code_execution_create_result"]`
+
+              - `"text_editor_code_execution_create_result"`
+
+          - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+            - `lines: Optional[List[str]]`
+
+            - `new_lines: Optional[int]`
+
+            - `new_start: Optional[int]`
+
+            - `old_lines: Optional[int]`
+
+            - `old_start: Optional[int]`
+
+            - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+              - `"text_editor_code_execution_str_replace_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["text_editor_code_execution_tool_result"]`
+
+          - `"text_editor_code_execution_tool_result"`
+
+      - `class ToolSearchToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class ToolSearchToolResultError: …`
+
+            - `error_code: ToolSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `error_message: Optional[str]`
+
+            - `type: Literal["tool_search_tool_result_error"]`
+
+              - `"tool_search_tool_result_error"`
+
+          - `class ToolSearchToolSearchResultBlock: …`
+
+            - `tool_references: List[ToolReferenceBlock]`
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+            - `type: Literal["tool_search_tool_search_result"]`
+
+              - `"tool_search_tool_search_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_search_tool_result"]`
+
+          - `"tool_search_tool_result"`
+
+      - `class ContainerUploadBlock: …`
+
+        Response model for a file uploaded to the container.
+
+        - `file_id: str`
+
+        - `type: Literal["container_upload"]`
+
+          - `"container_upload"`
+
+    - `model: Model`
+
+      The model that will complete your prompt.
+
+      See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+      - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+        The model that will complete your prompt.
+
+        See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+        - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+        - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+        - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+        - `claude-sonnet-4-6` - Best combination of speed and intelligence
+        - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+        - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+        - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+        - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+        - `claude-sonnet-4-5` - High-performance model for agents and coding
+        - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+        - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+        - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+        - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+        - `"claude-opus-4-7"`
+
+          Frontier intelligence for long-running agents and coding
+
+        - `"claude-mythos-preview"`
+
+          New class of intelligence, strongest in coding and cybersecurity
+
+        - `"claude-opus-4-6"`
+
+          Frontier intelligence for long-running agents and coding
+
+        - `"claude-sonnet-4-6"`
+
+          Best combination of speed and intelligence
+
+        - `"claude-haiku-4-5"`
+
+          Fastest model with near-frontier intelligence
+
+        - `"claude-haiku-4-5-20251001"`
+
+          Fastest model with near-frontier intelligence
+
+        - `"claude-opus-4-5"`
+
+          Premium model combining maximum intelligence with practical performance
+
+        - `"claude-opus-4-5-20251101"`
+
+          Premium model combining maximum intelligence with practical performance
+
+        - `"claude-sonnet-4-5"`
+
+          High-performance model for agents and coding
+
+        - `"claude-sonnet-4-5-20250929"`
+
+          High-performance model for agents and coding
+
+        - `"claude-opus-4-1"`
+
+          Exceptional model for specialized complex tasks
+
+        - `"claude-opus-4-1-20250805"`
+
+          Exceptional model for specialized complex tasks
+
+        - `"claude-opus-4-0"`
+
+          Powerful model for complex tasks
+
+        - `"claude-opus-4-20250514"`
+
+          Powerful model for complex tasks
+
+        - `"claude-sonnet-4-0"`
+
+          High-performance model with extended thinking
+
+        - `"claude-sonnet-4-20250514"`
+
+          High-performance model with extended thinking
+
+        - `"claude-3-haiku-20240307"`
+
+          Fast and cost-effective model
+
+      - `str`
+
+    - `role: Literal["assistant"]`
+
+      Conversational role of the generated message.
+
+      This will always be `"assistant"`.
+
+      - `"assistant"`
+
+    - `stop_details: Optional[RefusalStopDetails]`
+
+      Structured information about a refusal.
+
+      - `category: Optional[Literal["cyber", "bio"]]`
+
+        The policy category that triggered the refusal.
+
+        `null` when the refusal doesn't map to a named category.
+
+        - `"cyber"`
+
+        - `"bio"`
+
+      - `explanation: Optional[str]`
+
+        Human-readable explanation of the refusal.
+
+        This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+      - `type: Literal["refusal"]`
+
+        - `"refusal"`
+
+    - `stop_reason: Optional[StopReason]`
+
+      The reason that we stopped.
+
+      This may be one the following values:
+
+      * `"end_turn"`: the model reached a natural stopping point
+      * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+      * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+      * `"tool_use"`: the model invoked one or more tools
+      * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+      * `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+
+      In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+      - `"end_turn"`
+
+      - `"max_tokens"`
+
+      - `"stop_sequence"`
+
+      - `"tool_use"`
+
+      - `"pause_turn"`
+
+      - `"refusal"`
+
+    - `stop_sequence: Optional[str]`
+
+      Which custom stop sequence was generated, if any.
+
+      This value will be a non-null string if one of your custom stop sequences was generated.
+
+    - `type: Literal["message"]`
+
+      Object type.
+
+      For Messages, this is always `"message"`.
+
+      - `"message"`
+
+    - `usage: Usage`
+
+      Billing and rate-limit usage.
+
+      Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+      Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+      For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+      Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+      - `cache_creation: Optional[CacheCreation]`
+
+        Breakdown of cached tokens by TTL
+
+        - `ephemeral_1h_input_tokens: int`
+
+          The number of input tokens used to create the 1 hour cache entry.
+
+        - `ephemeral_5m_input_tokens: int`
+
+          The number of input tokens used to create the 5 minute cache entry.
+
+      - `cache_creation_input_tokens: Optional[int]`
+
+        The number of input tokens used to create the cache entry.
+
+      - `cache_read_input_tokens: Optional[int]`
+
+        The number of input tokens read from the cache.
+
+      - `inference_geo: Optional[str]`
+
+        The geographic region where inference was performed for this request.
+
+      - `input_tokens: int`
+
+        The number of input tokens which were used.
+
+      - `output_tokens: int`
+
+        The number of output tokens which were used.
+
+      - `server_tool_use: Optional[ServerToolUsage]`
+
+        The number of server tool requests.
+
+        - `web_fetch_requests: int`
+
+          The number of web fetch tool requests.
+
+        - `web_search_requests: int`
+
+          The number of web search tool requests.
+
+      - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+        If the request used the priority, standard, or batch tier.
+
+        - `"standard"`
+
+        - `"priority"`
+
+        - `"batch"`
+
+  - `type: Literal["message_start"]`
+
+    - `"message_start"`
+
+### Raw Message Stop Event
+
+- `class RawMessageStopEvent: …`
+
+  - `type: Literal["message_stop"]`
+
+    - `"message_stop"`
+
+### Raw Message Stream Event
+
+- `RawMessageStreamEvent`
+
+  - `class RawMessageStartEvent: …`
+
+    - `message: Message`
+
+      - `id: str`
+
+        Unique object identifier.
+
+        The format and length of IDs may change over time.
+
+      - `container: Optional[Container]`
+
+        Information about the container used in the request (for the code execution tool)
+
+        - `id: str`
+
+          Identifier for the container used in this request
+
+        - `expires_at: datetime`
+
+          The time at which the container will expire.
+
+      - `content: List[ContentBlock]`
+
+        Content generated by the model.
+
+        This is an array of content blocks, each of which has a `type` that determines its shape.
+
+        Example:
+
+        ```json
+        [{"type": "text", "text": "Hi, I'm Claude."}]
+        ```
+
+        If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+        For example, if the input `messages` were:
+
+        ```json
+        [
+          {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+          {"role": "assistant", "content": "The best answer is ("}
+        ]
+        ```
+
+        Then the response `content` might be:
+
+        ```json
+        [{"type": "text", "text": "B)"}]
+        ```
+
+        - `class TextBlock: …`
+
+          - `citations: Optional[List[TextCitation]]`
+
+            Citations supporting the text block.
+
+            The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+            - `class CitationCharLocation: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_char_index: int`
+
+              - `file_id: Optional[str]`
+
+              - `start_char_index: int`
+
+              - `type: Literal["char_location"]`
+
+                - `"char_location"`
+
+            - `class CitationPageLocation: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_page_number: int`
+
+              - `file_id: Optional[str]`
+
+              - `start_page_number: int`
+
+              - `type: Literal["page_location"]`
+
+                - `"page_location"`
+
+            - `class CitationContentBlockLocation: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_block_index: int`
+
+              - `file_id: Optional[str]`
+
+              - `start_block_index: int`
+
+              - `type: Literal["content_block_location"]`
+
+                - `"content_block_location"`
+
+            - `class CitationsWebSearchResultLocation: …`
+
+              - `cited_text: str`
+
+              - `encrypted_index: str`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["web_search_result_location"]`
+
+                - `"web_search_result_location"`
+
+              - `url: str`
+
+            - `class CitationsSearchResultLocation: …`
+
+              - `cited_text: str`
+
+              - `end_block_index: int`
+
+              - `search_result_index: int`
+
+              - `source: str`
+
+              - `start_block_index: int`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["search_result_location"]`
+
+                - `"search_result_location"`
+
+          - `text: str`
+
+          - `type: Literal["text"]`
+
+            - `"text"`
+
+        - `class ThinkingBlock: …`
+
+          - `signature: str`
+
+          - `thinking: str`
+
+          - `type: Literal["thinking"]`
+
+            - `"thinking"`
+
+        - `class RedactedThinkingBlock: …`
+
+          - `data: str`
+
+          - `type: Literal["redacted_thinking"]`
+
+            - `"redacted_thinking"`
+
+        - `class ToolUseBlock: …`
+
+          - `id: str`
+
+          - `caller: Caller`
+
+            Tool invocation directly from the model.
+
+            - `class DirectCaller: …`
+
+              Tool invocation directly from the model.
+
+              - `type: Literal["direct"]`
+
+                - `"direct"`
+
+            - `class ServerToolCaller: …`
+
+              Tool invocation generated by a server-side tool.
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20250825"]`
+
+                - `"code_execution_20250825"`
+
+            - `class ServerToolCaller20260120: …`
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20260120"]`
+
+                - `"code_execution_20260120"`
+
+          - `input: Dict[str, object]`
+
+          - `name: str`
+
+          - `type: Literal["tool_use"]`
+
+            - `"tool_use"`
+
+        - `class ServerToolUseBlock: …`
+
+          - `id: str`
+
+          - `caller: Caller`
+
+            Tool invocation directly from the model.
+
+            - `class DirectCaller: …`
+
+              Tool invocation directly from the model.
+
+              - `type: Literal["direct"]`
+
+                - `"direct"`
+
+            - `class ServerToolCaller: …`
+
+              Tool invocation generated by a server-side tool.
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20250825"]`
+
+                - `"code_execution_20250825"`
+
+            - `class ServerToolCaller20260120: …`
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20260120"]`
+
+                - `"code_execution_20260120"`
+
+          - `input: Dict[str, object]`
+
+          - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+            - `"web_search"`
+
+            - `"web_fetch"`
+
+            - `"code_execution"`
+
+            - `"bash_code_execution"`
+
+            - `"text_editor_code_execution"`
+
+            - `"tool_search_tool_regex"`
+
+            - `"tool_search_tool_bm25"`
+
+          - `type: Literal["server_tool_use"]`
+
+            - `"server_tool_use"`
+
+        - `class WebSearchToolResultBlock: …`
+
+          - `caller: Caller`
+
+            Tool invocation directly from the model.
+
+            - `class DirectCaller: …`
+
+              Tool invocation directly from the model.
+
+              - `type: Literal["direct"]`
+
+                - `"direct"`
+
+            - `class ServerToolCaller: …`
+
+              Tool invocation generated by a server-side tool.
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20250825"]`
+
+                - `"code_execution_20250825"`
+
+            - `class ServerToolCaller20260120: …`
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20260120"]`
+
+                - `"code_execution_20260120"`
+
+          - `content: WebSearchToolResultBlockContent`
+
+            - `class WebSearchToolResultError: …`
+
+              - `error_code: WebSearchToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"max_uses_exceeded"`
+
+                - `"too_many_requests"`
+
+                - `"query_too_long"`
+
+                - `"request_too_large"`
+
+              - `type: Literal["web_search_tool_result_error"]`
+
+                - `"web_search_tool_result_error"`
+
+            - `List[WebSearchResultBlock]`
+
+              - `encrypted_content: str`
+
+              - `page_age: Optional[str]`
+
+              - `title: str`
+
+              - `type: Literal["web_search_result"]`
+
+                - `"web_search_result"`
+
+              - `url: str`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["web_search_tool_result"]`
+
+            - `"web_search_tool_result"`
+
+        - `class WebFetchToolResultBlock: …`
+
+          - `caller: Caller`
+
+            Tool invocation directly from the model.
+
+            - `class DirectCaller: …`
+
+              Tool invocation directly from the model.
+
+              - `type: Literal["direct"]`
+
+                - `"direct"`
+
+            - `class ServerToolCaller: …`
+
+              Tool invocation generated by a server-side tool.
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20250825"]`
+
+                - `"code_execution_20250825"`
+
+            - `class ServerToolCaller20260120: …`
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20260120"]`
+
+                - `"code_execution_20260120"`
+
+          - `content: Content`
+
+            - `class WebFetchToolResultErrorBlock: …`
+
+              - `error_code: WebFetchToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"url_too_long"`
+
+                - `"url_not_allowed"`
+
+                - `"url_not_accessible"`
+
+                - `"unsupported_content_type"`
+
+                - `"too_many_requests"`
+
+                - `"max_uses_exceeded"`
+
+                - `"unavailable"`
+
+              - `type: Literal["web_fetch_tool_result_error"]`
+
+                - `"web_fetch_tool_result_error"`
+
+            - `class WebFetchBlock: …`
+
+              - `content: DocumentBlock`
+
+                - `citations: Optional[CitationsConfig]`
+
+                  Citation configuration for the document
+
+                  - `enabled: bool`
+
+                - `source: Source`
+
+                  - `class Base64PDFSource: …`
+
+                    - `data: str`
+
+                    - `media_type: Literal["application/pdf"]`
+
+                      - `"application/pdf"`
+
+                    - `type: Literal["base64"]`
+
+                      - `"base64"`
+
+                  - `class PlainTextSource: …`
+
+                    - `data: str`
+
+                    - `media_type: Literal["text/plain"]`
+
+                      - `"text/plain"`
+
+                    - `type: Literal["text"]`
+
+                      - `"text"`
+
+                - `title: Optional[str]`
+
+                  The title of the document
+
+                - `type: Literal["document"]`
+
+                  - `"document"`
+
+              - `retrieved_at: Optional[str]`
+
+                ISO 8601 timestamp when the content was retrieved
+
+              - `type: Literal["web_fetch_result"]`
+
+                - `"web_fetch_result"`
+
+              - `url: str`
+
+                Fetched content URL
+
+          - `tool_use_id: str`
+
+          - `type: Literal["web_fetch_tool_result"]`
+
+            - `"web_fetch_tool_result"`
+
+        - `class CodeExecutionToolResultBlock: …`
+
+          - `content: CodeExecutionToolResultBlockContent`
+
+            Code execution result with encrypted stdout for PFC + web_search results.
+
+            - `class CodeExecutionToolResultError: …`
+
+              - `error_code: CodeExecutionToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"too_many_requests"`
+
+                - `"execution_time_exceeded"`
+
+              - `type: Literal["code_execution_tool_result_error"]`
+
+                - `"code_execution_tool_result_error"`
+
+            - `class CodeExecutionResultBlock: …`
+
+              - `content: List[CodeExecutionOutputBlock]`
+
+                - `file_id: str`
+
+                - `type: Literal["code_execution_output"]`
+
+                  - `"code_execution_output"`
+
+              - `return_code: int`
+
+              - `stderr: str`
+
+              - `stdout: str`
+
+              - `type: Literal["code_execution_result"]`
+
+                - `"code_execution_result"`
+
+            - `class EncryptedCodeExecutionResultBlock: …`
+
+              Code execution result with encrypted stdout for PFC + web_search results.
+
+              - `content: List[CodeExecutionOutputBlock]`
+
+                - `file_id: str`
+
+                - `type: Literal["code_execution_output"]`
+
+                  - `"code_execution_output"`
+
+              - `encrypted_stdout: str`
+
+              - `return_code: int`
+
+              - `stderr: str`
+
+              - `type: Literal["encrypted_code_execution_result"]`
+
+                - `"encrypted_code_execution_result"`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["code_execution_tool_result"]`
+
+            - `"code_execution_tool_result"`
+
+        - `class BashCodeExecutionToolResultBlock: …`
+
+          - `content: Content`
+
+            - `class BashCodeExecutionToolResultError: …`
+
+              - `error_code: BashCodeExecutionToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"too_many_requests"`
+
+                - `"execution_time_exceeded"`
+
+                - `"output_file_too_large"`
+
+              - `type: Literal["bash_code_execution_tool_result_error"]`
+
+                - `"bash_code_execution_tool_result_error"`
+
+            - `class BashCodeExecutionResultBlock: …`
+
+              - `content: List[BashCodeExecutionOutputBlock]`
+
+                - `file_id: str`
+
+                - `type: Literal["bash_code_execution_output"]`
+
+                  - `"bash_code_execution_output"`
+
+              - `return_code: int`
+
+              - `stderr: str`
+
+              - `stdout: str`
+
+              - `type: Literal["bash_code_execution_result"]`
+
+                - `"bash_code_execution_result"`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["bash_code_execution_tool_result"]`
+
+            - `"bash_code_execution_tool_result"`
+
+        - `class TextEditorCodeExecutionToolResultBlock: …`
+
+          - `content: Content`
+
+            - `class TextEditorCodeExecutionToolResultError: …`
+
+              - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"too_many_requests"`
+
+                - `"execution_time_exceeded"`
+
+                - `"file_not_found"`
+
+              - `error_message: Optional[str]`
+
+              - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+                - `"text_editor_code_execution_tool_result_error"`
+
+            - `class TextEditorCodeExecutionViewResultBlock: …`
+
+              - `content: str`
+
+              - `file_type: Literal["text", "image", "pdf"]`
+
+                - `"text"`
+
+                - `"image"`
+
+                - `"pdf"`
+
+              - `num_lines: Optional[int]`
+
+              - `start_line: Optional[int]`
+
+              - `total_lines: Optional[int]`
+
+              - `type: Literal["text_editor_code_execution_view_result"]`
+
+                - `"text_editor_code_execution_view_result"`
+
+            - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+              - `is_file_update: bool`
+
+              - `type: Literal["text_editor_code_execution_create_result"]`
+
+                - `"text_editor_code_execution_create_result"`
+
+            - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+              - `lines: Optional[List[str]]`
+
+              - `new_lines: Optional[int]`
+
+              - `new_start: Optional[int]`
+
+              - `old_lines: Optional[int]`
+
+              - `old_start: Optional[int]`
+
+              - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+                - `"text_editor_code_execution_str_replace_result"`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["text_editor_code_execution_tool_result"]`
+
+            - `"text_editor_code_execution_tool_result"`
+
+        - `class ToolSearchToolResultBlock: …`
+
+          - `content: Content`
+
+            - `class ToolSearchToolResultError: …`
+
+              - `error_code: ToolSearchToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"too_many_requests"`
+
+                - `"execution_time_exceeded"`
+
+              - `error_message: Optional[str]`
+
+              - `type: Literal["tool_search_tool_result_error"]`
+
+                - `"tool_search_tool_result_error"`
+
+            - `class ToolSearchToolSearchResultBlock: …`
+
+              - `tool_references: List[ToolReferenceBlock]`
+
+                - `tool_name: str`
+
+                - `type: Literal["tool_reference"]`
+
+                  - `"tool_reference"`
+
+              - `type: Literal["tool_search_tool_search_result"]`
+
+                - `"tool_search_tool_search_result"`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["tool_search_tool_result"]`
+
+            - `"tool_search_tool_result"`
+
+        - `class ContainerUploadBlock: …`
+
+          Response model for a file uploaded to the container.
+
+          - `file_id: str`
+
+          - `type: Literal["container_upload"]`
+
+            - `"container_upload"`
+
+      - `model: Model`
+
+        The model that will complete your prompt.
+
+        See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+        - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+          The model that will complete your prompt.
+
+          See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+          - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+          - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+          - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+          - `claude-sonnet-4-6` - Best combination of speed and intelligence
+          - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+          - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+          - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+          - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+          - `claude-sonnet-4-5` - High-performance model for agents and coding
+          - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+          - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+          - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+          - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+          - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+          - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+          - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+          - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+          - `"claude-opus-4-7"`
+
+            Frontier intelligence for long-running agents and coding
+
+          - `"claude-mythos-preview"`
+
+            New class of intelligence, strongest in coding and cybersecurity
+
+          - `"claude-opus-4-6"`
+
+            Frontier intelligence for long-running agents and coding
+
+          - `"claude-sonnet-4-6"`
+
+            Best combination of speed and intelligence
+
+          - `"claude-haiku-4-5"`
+
+            Fastest model with near-frontier intelligence
+
+          - `"claude-haiku-4-5-20251001"`
+
+            Fastest model with near-frontier intelligence
+
+          - `"claude-opus-4-5"`
+
+            Premium model combining maximum intelligence with practical performance
+
+          - `"claude-opus-4-5-20251101"`
+
+            Premium model combining maximum intelligence with practical performance
+
+          - `"claude-sonnet-4-5"`
+
+            High-performance model for agents and coding
+
+          - `"claude-sonnet-4-5-20250929"`
+
+            High-performance model for agents and coding
+
+          - `"claude-opus-4-1"`
+
+            Exceptional model for specialized complex tasks
+
+          - `"claude-opus-4-1-20250805"`
+
+            Exceptional model for specialized complex tasks
+
+          - `"claude-opus-4-0"`
+
+            Powerful model for complex tasks
+
+          - `"claude-opus-4-20250514"`
+
+            Powerful model for complex tasks
+
+          - `"claude-sonnet-4-0"`
+
+            High-performance model with extended thinking
+
+          - `"claude-sonnet-4-20250514"`
+
+            High-performance model with extended thinking
+
+          - `"claude-3-haiku-20240307"`
+
+            Fast and cost-effective model
+
+        - `str`
+
+      - `role: Literal["assistant"]`
+
+        Conversational role of the generated message.
+
+        This will always be `"assistant"`.
+
+        - `"assistant"`
+
+      - `stop_details: Optional[RefusalStopDetails]`
+
+        Structured information about a refusal.
+
+        - `category: Optional[Literal["cyber", "bio"]]`
+
+          The policy category that triggered the refusal.
+
+          `null` when the refusal doesn't map to a named category.
+
+          - `"cyber"`
+
+          - `"bio"`
+
+        - `explanation: Optional[str]`
+
+          Human-readable explanation of the refusal.
+
+          This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+        - `type: Literal["refusal"]`
+
+          - `"refusal"`
+
+      - `stop_reason: Optional[StopReason]`
+
+        The reason that we stopped.
+
+        This may be one the following values:
+
+        * `"end_turn"`: the model reached a natural stopping point
+        * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+        * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+        * `"tool_use"`: the model invoked one or more tools
+        * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+        * `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+
+        In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+        - `"end_turn"`
+
+        - `"max_tokens"`
+
+        - `"stop_sequence"`
+
+        - `"tool_use"`
+
+        - `"pause_turn"`
+
+        - `"refusal"`
+
+      - `stop_sequence: Optional[str]`
+
+        Which custom stop sequence was generated, if any.
+
+        This value will be a non-null string if one of your custom stop sequences was generated.
+
+      - `type: Literal["message"]`
+
+        Object type.
+
+        For Messages, this is always `"message"`.
+
+        - `"message"`
+
+      - `usage: Usage`
+
+        Billing and rate-limit usage.
+
+        Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+        Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+        For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+        Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+        - `cache_creation: Optional[CacheCreation]`
+
+          Breakdown of cached tokens by TTL
+
+          - `ephemeral_1h_input_tokens: int`
+
+            The number of input tokens used to create the 1 hour cache entry.
+
+          - `ephemeral_5m_input_tokens: int`
+
+            The number of input tokens used to create the 5 minute cache entry.
+
+        - `cache_creation_input_tokens: Optional[int]`
+
+          The number of input tokens used to create the cache entry.
+
+        - `cache_read_input_tokens: Optional[int]`
+
+          The number of input tokens read from the cache.
+
+        - `inference_geo: Optional[str]`
+
+          The geographic region where inference was performed for this request.
+
+        - `input_tokens: int`
+
+          The number of input tokens which were used.
+
+        - `output_tokens: int`
+
+          The number of output tokens which were used.
+
+        - `server_tool_use: Optional[ServerToolUsage]`
+
+          The number of server tool requests.
+
+          - `web_fetch_requests: int`
+
+            The number of web fetch tool requests.
+
+          - `web_search_requests: int`
+
+            The number of web search tool requests.
+
+        - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+          If the request used the priority, standard, or batch tier.
+
+          - `"standard"`
+
+          - `"priority"`
+
+          - `"batch"`
+
+    - `type: Literal["message_start"]`
+
+      - `"message_start"`
+
+  - `class RawMessageDeltaEvent: …`
+
+    - `delta: Delta`
+
+      - `container: Optional[Container]`
+
+        Information about the container used in the request (for the code execution tool)
+
+        - `id: str`
+
+          Identifier for the container used in this request
+
+        - `expires_at: datetime`
+
+          The time at which the container will expire.
+
+      - `stop_details: Optional[RefusalStopDetails]`
+
+        Structured information about a refusal.
+
+        - `category: Optional[Literal["cyber", "bio"]]`
+
+          The policy category that triggered the refusal.
+
+          `null` when the refusal doesn't map to a named category.
+
+          - `"cyber"`
+
+          - `"bio"`
+
+        - `explanation: Optional[str]`
+
+          Human-readable explanation of the refusal.
+
+          This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+        - `type: Literal["refusal"]`
+
+          - `"refusal"`
+
+      - `stop_reason: Optional[StopReason]`
+
+        - `"end_turn"`
+
+        - `"max_tokens"`
+
+        - `"stop_sequence"`
+
+        - `"tool_use"`
+
+        - `"pause_turn"`
+
+        - `"refusal"`
+
+      - `stop_sequence: Optional[str]`
+
+    - `type: Literal["message_delta"]`
+
+      - `"message_delta"`
+
+    - `usage: MessageDeltaUsage`
+
+      Billing and rate-limit usage.
+
+      Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+      Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+      For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+      Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+      - `cache_creation_input_tokens: Optional[int]`
+
+        The cumulative number of input tokens used to create the cache entry.
+
+      - `cache_read_input_tokens: Optional[int]`
+
+        The cumulative number of input tokens read from the cache.
+
+      - `input_tokens: Optional[int]`
+
+        The cumulative number of input tokens which were used.
+
+      - `output_tokens: int`
+
+        The cumulative number of output tokens which were used.
+
+      - `server_tool_use: Optional[ServerToolUsage]`
+
+        The number of server tool requests.
+
+        - `web_fetch_requests: int`
+
+          The number of web fetch tool requests.
+
+        - `web_search_requests: int`
+
+          The number of web search tool requests.
+
+  - `class RawMessageStopEvent: …`
+
+    - `type: Literal["message_stop"]`
+
+      - `"message_stop"`
+
+  - `class RawContentBlockStartEvent: …`
+
+    - `content_block: ContentBlock`
+
+      Response model for a file uploaded to the container.
+
+      - `class TextBlock: …`
+
+        - `citations: Optional[List[TextCitation]]`
+
+          Citations supporting the text block.
+
+          The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+          - `class CitationCharLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationsWebSearchResultLocation: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationsSearchResultLocation: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+      - `class ThinkingBlock: …`
+
+        - `signature: str`
+
+        - `thinking: str`
+
+        - `type: Literal["thinking"]`
+
+          - `"thinking"`
+
+      - `class RedactedThinkingBlock: …`
+
+        - `data: str`
+
+        - `type: Literal["redacted_thinking"]`
+
+          - `"redacted_thinking"`
+
+      - `class ToolUseBlock: …`
+
+        - `id: str`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `input: Dict[str, object]`
+
+        - `name: str`
+
+        - `type: Literal["tool_use"]`
+
+          - `"tool_use"`
+
+      - `class ServerToolUseBlock: …`
+
+        - `id: str`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `input: Dict[str, object]`
+
+        - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+          - `"web_search"`
+
+          - `"web_fetch"`
+
+          - `"code_execution"`
+
+          - `"bash_code_execution"`
+
+          - `"text_editor_code_execution"`
+
+          - `"tool_search_tool_regex"`
+
+          - `"tool_search_tool_bm25"`
+
+        - `type: Literal["server_tool_use"]`
+
+          - `"server_tool_use"`
+
+      - `class WebSearchToolResultBlock: …`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `content: WebSearchToolResultBlockContent`
+
+          - `class WebSearchToolResultError: …`
+
+            - `error_code: WebSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"max_uses_exceeded"`
+
+              - `"too_many_requests"`
+
+              - `"query_too_long"`
+
+              - `"request_too_large"`
+
+            - `type: Literal["web_search_tool_result_error"]`
+
+              - `"web_search_tool_result_error"`
+
+          - `List[WebSearchResultBlock]`
+
+            - `encrypted_content: str`
+
+            - `page_age: Optional[str]`
+
+            - `title: str`
+
+            - `type: Literal["web_search_result"]`
+
+              - `"web_search_result"`
+
+            - `url: str`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_search_tool_result"]`
+
+          - `"web_search_tool_result"`
+
+      - `class WebFetchToolResultBlock: …`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `content: Content`
+
+          - `class WebFetchToolResultErrorBlock: …`
+
+            - `error_code: WebFetchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"url_too_long"`
+
+              - `"url_not_allowed"`
+
+              - `"url_not_accessible"`
+
+              - `"unsupported_content_type"`
+
+              - `"too_many_requests"`
+
+              - `"max_uses_exceeded"`
+
+              - `"unavailable"`
+
+            - `type: Literal["web_fetch_tool_result_error"]`
+
+              - `"web_fetch_tool_result_error"`
+
+          - `class WebFetchBlock: …`
+
+            - `content: DocumentBlock`
+
+              - `citations: Optional[CitationsConfig]`
+
+                Citation configuration for the document
+
+                - `enabled: bool`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+              - `title: Optional[str]`
+
+                The title of the document
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+            - `retrieved_at: Optional[str]`
+
+              ISO 8601 timestamp when the content was retrieved
+
+            - `type: Literal["web_fetch_result"]`
+
+              - `"web_fetch_result"`
+
+            - `url: str`
+
+              Fetched content URL
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_fetch_tool_result"]`
+
+          - `"web_fetch_tool_result"`
+
+      - `class CodeExecutionToolResultBlock: …`
+
+        - `content: CodeExecutionToolResultBlockContent`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `class CodeExecutionToolResultError: …`
+
+            - `error_code: CodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["code_execution_tool_result_error"]`
+
+              - `"code_execution_tool_result_error"`
+
+          - `class CodeExecutionResultBlock: …`
+
+            - `content: List[CodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["code_execution_result"]`
+
+              - `"code_execution_result"`
+
+          - `class EncryptedCodeExecutionResultBlock: …`
+
+            Code execution result with encrypted stdout for PFC + web_search results.
+
+            - `content: List[CodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `encrypted_stdout: str`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `type: Literal["encrypted_code_execution_result"]`
+
+              - `"encrypted_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["code_execution_tool_result"]`
+
+          - `"code_execution_tool_result"`
+
+      - `class BashCodeExecutionToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class BashCodeExecutionToolResultError: …`
+
+            - `error_code: BashCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"output_file_too_large"`
+
+            - `type: Literal["bash_code_execution_tool_result_error"]`
+
+              - `"bash_code_execution_tool_result_error"`
+
+          - `class BashCodeExecutionResultBlock: …`
+
+            - `content: List[BashCodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["bash_code_execution_output"]`
+
+                - `"bash_code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["bash_code_execution_result"]`
+
+              - `"bash_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["bash_code_execution_tool_result"]`
+
+          - `"bash_code_execution_tool_result"`
+
+      - `class TextEditorCodeExecutionToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class TextEditorCodeExecutionToolResultError: …`
+
+            - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"file_not_found"`
+
+            - `error_message: Optional[str]`
+
+            - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+              - `"text_editor_code_execution_tool_result_error"`
+
+          - `class TextEditorCodeExecutionViewResultBlock: …`
+
+            - `content: str`
+
+            - `file_type: Literal["text", "image", "pdf"]`
+
+              - `"text"`
+
+              - `"image"`
+
+              - `"pdf"`
+
+            - `num_lines: Optional[int]`
+
+            - `start_line: Optional[int]`
+
+            - `total_lines: Optional[int]`
+
+            - `type: Literal["text_editor_code_execution_view_result"]`
+
+              - `"text_editor_code_execution_view_result"`
+
+          - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+            - `is_file_update: bool`
+
+            - `type: Literal["text_editor_code_execution_create_result"]`
+
+              - `"text_editor_code_execution_create_result"`
+
+          - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+            - `lines: Optional[List[str]]`
+
+            - `new_lines: Optional[int]`
+
+            - `new_start: Optional[int]`
+
+            - `old_lines: Optional[int]`
+
+            - `old_start: Optional[int]`
+
+            - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+              - `"text_editor_code_execution_str_replace_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["text_editor_code_execution_tool_result"]`
+
+          - `"text_editor_code_execution_tool_result"`
+
+      - `class ToolSearchToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class ToolSearchToolResultError: …`
+
+            - `error_code: ToolSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `error_message: Optional[str]`
+
+            - `type: Literal["tool_search_tool_result_error"]`
+
+              - `"tool_search_tool_result_error"`
+
+          - `class ToolSearchToolSearchResultBlock: …`
+
+            - `tool_references: List[ToolReferenceBlock]`
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+            - `type: Literal["tool_search_tool_search_result"]`
+
+              - `"tool_search_tool_search_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_search_tool_result"]`
+
+          - `"tool_search_tool_result"`
+
+      - `class ContainerUploadBlock: …`
+
+        Response model for a file uploaded to the container.
+
+        - `file_id: str`
+
+        - `type: Literal["container_upload"]`
+
+          - `"container_upload"`
+
+    - `index: int`
+
+    - `type: Literal["content_block_start"]`
+
+      - `"content_block_start"`
+
+  - `class RawContentBlockDeltaEvent: …`
+
+    - `delta: RawContentBlockDelta`
+
+      - `class TextDelta: …`
+
+        - `text: str`
+
+        - `type: Literal["text_delta"]`
+
+          - `"text_delta"`
+
+      - `class InputJSONDelta: …`
+
+        - `partial_json: str`
+
+        - `type: Literal["input_json_delta"]`
+
+          - `"input_json_delta"`
+
+      - `class CitationsDelta: …`
+
+        - `citation: Citation`
+
+          - `class CitationCharLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationsWebSearchResultLocation: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationsSearchResultLocation: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+        - `type: Literal["citations_delta"]`
+
+          - `"citations_delta"`
+
+      - `class ThinkingDelta: …`
+
+        - `thinking: str`
+
+        - `type: Literal["thinking_delta"]`
+
+          - `"thinking_delta"`
+
+      - `class SignatureDelta: …`
+
+        - `signature: str`
+
+        - `type: Literal["signature_delta"]`
+
+          - `"signature_delta"`
+
+    - `index: int`
+
+    - `type: Literal["content_block_delta"]`
+
+      - `"content_block_delta"`
+
+  - `class RawContentBlockStopEvent: …`
+
+    - `index: int`
+
+    - `type: Literal["content_block_stop"]`
+
+      - `"content_block_stop"`
+
+### Redacted Thinking Block
+
+- `class RedactedThinkingBlock: …`
+
+  - `data: str`
+
+  - `type: Literal["redacted_thinking"]`
+
+    - `"redacted_thinking"`
+
+### Redacted Thinking Block Param
+
+- `class RedactedThinkingBlockParam: …`
+
+  - `data: str`
+
+  - `type: Literal["redacted_thinking"]`
+
+    - `"redacted_thinking"`
+
+### Refusal Stop Details
+
+- `class RefusalStopDetails: …`
+
+  Structured information about a refusal.
+
+  - `category: Optional[Literal["cyber", "bio"]]`
+
+    The policy category that triggered the refusal.
+
+    `null` when the refusal doesn't map to a named category.
+
+    - `"cyber"`
+
+    - `"bio"`
+
+  - `explanation: Optional[str]`
+
+    Human-readable explanation of the refusal.
+
+    This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+  - `type: Literal["refusal"]`
+
+    - `"refusal"`
+
+### Search Result Block Param
+
+- `class SearchResultBlockParam: …`
+
+  - `content: List[TextBlockParam]`
+
+    - `text: str`
+
+    - `type: Literal["text"]`
+
+      - `"text"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[List[TextCitationParam]]`
+
+      - `class CitationCharLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_char_index: int`
+
+        - `start_char_index: int`
+
+        - `type: Literal["char_location"]`
+
+          - `"char_location"`
+
+      - `class CitationPageLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_page_number: int`
+
+        - `start_page_number: int`
+
+        - `type: Literal["page_location"]`
+
+          - `"page_location"`
+
+      - `class CitationContentBlockLocationParam: …`
+
+        - `cited_text: str`
+
+        - `document_index: int`
+
+        - `document_title: Optional[str]`
+
+        - `end_block_index: int`
+
+        - `start_block_index: int`
+
+        - `type: Literal["content_block_location"]`
+
+          - `"content_block_location"`
+
+      - `class CitationWebSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `encrypted_index: str`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["web_search_result_location"]`
+
+          - `"web_search_result_location"`
+
+        - `url: str`
+
+      - `class CitationSearchResultLocationParam: …`
+
+        - `cited_text: str`
+
+        - `end_block_index: int`
+
+        - `search_result_index: int`
+
+        - `source: str`
+
+        - `start_block_index: int`
+
+        - `title: Optional[str]`
+
+        - `type: Literal["search_result_location"]`
+
+          - `"search_result_location"`
+
+  - `source: str`
+
+  - `title: str`
+
+  - `type: Literal["search_result"]`
+
+    - `"search_result"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `citations: Optional[CitationsConfigParam]`
+
+    - `enabled: Optional[bool]`
+
+### Server Tool Caller
+
+- `class ServerToolCaller: …`
+
+  Tool invocation generated by a server-side tool.
+
+  - `tool_id: str`
+
+  - `type: Literal["code_execution_20250825"]`
+
+    - `"code_execution_20250825"`
+
+### Server Tool Caller 20260120
+
+- `class ServerToolCaller20260120: …`
+
+  - `tool_id: str`
+
+  - `type: Literal["code_execution_20260120"]`
+
+    - `"code_execution_20260120"`
+
+### Server Tool Usage
+
+- `class ServerToolUsage: …`
+
+  - `web_fetch_requests: int`
+
+    The number of web fetch tool requests.
+
+  - `web_search_requests: int`
+
+    The number of web search tool requests.
+
+### Server Tool Use Block
+
+- `class ServerToolUseBlock: …`
+
+  - `id: str`
+
+  - `caller: Caller`
+
+    Tool invocation directly from the model.
+
+    - `class DirectCaller: …`
+
+      Tool invocation directly from the model.
+
+      - `type: Literal["direct"]`
+
+        - `"direct"`
+
+    - `class ServerToolCaller: …`
+
+      Tool invocation generated by a server-side tool.
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20250825"]`
+
+        - `"code_execution_20250825"`
+
+    - `class ServerToolCaller20260120: …`
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20260120"]`
+
+        - `"code_execution_20260120"`
+
+  - `input: Dict[str, object]`
+
+  - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+    - `"web_search"`
+
+    - `"web_fetch"`
+
+    - `"code_execution"`
+
+    - `"bash_code_execution"`
+
+    - `"text_editor_code_execution"`
+
+    - `"tool_search_tool_regex"`
+
+    - `"tool_search_tool_bm25"`
+
+  - `type: Literal["server_tool_use"]`
+
+    - `"server_tool_use"`
+
+### Server Tool Use Block Param
+
+- `class ServerToolUseBlockParam: …`
+
+  - `id: str`
+
+  - `input: Dict[str, object]`
+
+  - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+    - `"web_search"`
+
+    - `"web_fetch"`
+
+    - `"code_execution"`
+
+    - `"bash_code_execution"`
+
+    - `"text_editor_code_execution"`
+
+    - `"tool_search_tool_regex"`
+
+    - `"tool_search_tool_bm25"`
+
+  - `type: Literal["server_tool_use"]`
+
+    - `"server_tool_use"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `caller: Optional[Caller]`
+
+    Tool invocation directly from the model.
+
+    - `class DirectCaller: …`
+
+      Tool invocation directly from the model.
+
+      - `type: Literal["direct"]`
+
+        - `"direct"`
+
+    - `class ServerToolCaller: …`
+
+      Tool invocation generated by a server-side tool.
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20250825"]`
+
+        - `"code_execution_20250825"`
+
+    - `class ServerToolCaller20260120: …`
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20260120"]`
+
+        - `"code_execution_20260120"`
+
+### Signature Delta
+
+- `class SignatureDelta: …`
+
+  - `signature: str`
+
+  - `type: Literal["signature_delta"]`
+
+    - `"signature_delta"`
+
+### Stop Reason
+
+- `Literal["end_turn", "max_tokens", "stop_sequence", 3 more]`
+
+  - `"end_turn"`
+
+  - `"max_tokens"`
+
+  - `"stop_sequence"`
+
+  - `"tool_use"`
+
+  - `"pause_turn"`
+
+  - `"refusal"`
+
+### Text Block
+
+- `class TextBlock: …`
+
+  - `citations: Optional[List[TextCitation]]`
+
+    Citations supporting the text block.
+
+    The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+    - `class CitationCharLocation: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_char_index: int`
+
+      - `file_id: Optional[str]`
+
+      - `start_char_index: int`
+
+      - `type: Literal["char_location"]`
+
+        - `"char_location"`
+
+    - `class CitationPageLocation: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_page_number: int`
+
+      - `file_id: Optional[str]`
+
+      - `start_page_number: int`
+
+      - `type: Literal["page_location"]`
+
+        - `"page_location"`
+
+    - `class CitationContentBlockLocation: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_block_index: int`
+
+      - `file_id: Optional[str]`
+
+      - `start_block_index: int`
+
+      - `type: Literal["content_block_location"]`
+
+        - `"content_block_location"`
+
+    - `class CitationsWebSearchResultLocation: …`
+
+      - `cited_text: str`
+
+      - `encrypted_index: str`
+
+      - `title: Optional[str]`
+
+      - `type: Literal["web_search_result_location"]`
+
+        - `"web_search_result_location"`
+
+      - `url: str`
+
+    - `class CitationsSearchResultLocation: …`
+
+      - `cited_text: str`
+
+      - `end_block_index: int`
+
+      - `search_result_index: int`
+
+      - `source: str`
+
+      - `start_block_index: int`
+
+      - `title: Optional[str]`
+
+      - `type: Literal["search_result_location"]`
+
+        - `"search_result_location"`
+
+  - `text: str`
+
+  - `type: Literal["text"]`
+
+    - `"text"`
+
+### Text Block Param
+
+- `class TextBlockParam: …`
+
+  - `text: str`
+
+  - `type: Literal["text"]`
+
+    - `"text"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `citations: Optional[List[TextCitationParam]]`
+
+    - `class CitationCharLocationParam: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_char_index: int`
+
+      - `start_char_index: int`
+
+      - `type: Literal["char_location"]`
+
+        - `"char_location"`
+
+    - `class CitationPageLocationParam: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_page_number: int`
+
+      - `start_page_number: int`
+
+      - `type: Literal["page_location"]`
+
+        - `"page_location"`
+
+    - `class CitationContentBlockLocationParam: …`
+
+      - `cited_text: str`
+
+      - `document_index: int`
+
+      - `document_title: Optional[str]`
+
+      - `end_block_index: int`
+
+      - `start_block_index: int`
+
+      - `type: Literal["content_block_location"]`
+
+        - `"content_block_location"`
+
+    - `class CitationWebSearchResultLocationParam: …`
+
+      - `cited_text: str`
+
+      - `encrypted_index: str`
+
+      - `title: Optional[str]`
+
+      - `type: Literal["web_search_result_location"]`
+
+        - `"web_search_result_location"`
+
+      - `url: str`
+
+    - `class CitationSearchResultLocationParam: …`
+
+      - `cited_text: str`
+
+      - `end_block_index: int`
+
+      - `search_result_index: int`
+
+      - `source: str`
+
+      - `start_block_index: int`
+
+      - `title: Optional[str]`
+
+      - `type: Literal["search_result_location"]`
+
+        - `"search_result_location"`
+
+### Text Citation
+
+- `TextCitation`
+
+  - `class CitationCharLocation: …`
+
+    - `cited_text: str`
+
+    - `document_index: int`
+
+    - `document_title: Optional[str]`
+
+    - `end_char_index: int`
+
+    - `file_id: Optional[str]`
+
+    - `start_char_index: int`
+
+    - `type: Literal["char_location"]`
+
+      - `"char_location"`
+
+  - `class CitationPageLocation: …`
+
+    - `cited_text: str`
+
+    - `document_index: int`
+
+    - `document_title: Optional[str]`
+
+    - `end_page_number: int`
+
+    - `file_id: Optional[str]`
+
+    - `start_page_number: int`
+
+    - `type: Literal["page_location"]`
+
+      - `"page_location"`
+
+  - `class CitationContentBlockLocation: …`
+
+    - `cited_text: str`
+
+    - `document_index: int`
+
+    - `document_title: Optional[str]`
+
+    - `end_block_index: int`
+
+    - `file_id: Optional[str]`
+
+    - `start_block_index: int`
+
+    - `type: Literal["content_block_location"]`
+
+      - `"content_block_location"`
+
+  - `class CitationsWebSearchResultLocation: …`
+
+    - `cited_text: str`
+
+    - `encrypted_index: str`
+
+    - `title: Optional[str]`
+
+    - `type: Literal["web_search_result_location"]`
+
+      - `"web_search_result_location"`
+
+    - `url: str`
+
+  - `class CitationsSearchResultLocation: …`
+
+    - `cited_text: str`
+
+    - `end_block_index: int`
+
+    - `search_result_index: int`
+
+    - `source: str`
+
+    - `start_block_index: int`
+
+    - `title: Optional[str]`
+
+    - `type: Literal["search_result_location"]`
+
+      - `"search_result_location"`
+
+### Text Citation Param
+
+- `TextCitationParam`
+
+  - `class CitationCharLocationParam: …`
+
+    - `cited_text: str`
+
+    - `document_index: int`
+
+    - `document_title: Optional[str]`
+
+    - `end_char_index: int`
+
+    - `start_char_index: int`
+
+    - `type: Literal["char_location"]`
+
+      - `"char_location"`
+
+  - `class CitationPageLocationParam: …`
+
+    - `cited_text: str`
+
+    - `document_index: int`
+
+    - `document_title: Optional[str]`
+
+    - `end_page_number: int`
+
+    - `start_page_number: int`
+
+    - `type: Literal["page_location"]`
+
+      - `"page_location"`
+
+  - `class CitationContentBlockLocationParam: …`
+
+    - `cited_text: str`
+
+    - `document_index: int`
+
+    - `document_title: Optional[str]`
+
+    - `end_block_index: int`
+
+    - `start_block_index: int`
+
+    - `type: Literal["content_block_location"]`
+
+      - `"content_block_location"`
+
+  - `class CitationWebSearchResultLocationParam: …`
+
+    - `cited_text: str`
+
+    - `encrypted_index: str`
+
+    - `title: Optional[str]`
+
+    - `type: Literal["web_search_result_location"]`
+
+      - `"web_search_result_location"`
+
+    - `url: str`
+
+  - `class CitationSearchResultLocationParam: …`
+
+    - `cited_text: str`
+
+    - `end_block_index: int`
+
+    - `search_result_index: int`
+
+    - `source: str`
+
+    - `start_block_index: int`
+
+    - `title: Optional[str]`
+
+    - `type: Literal["search_result_location"]`
+
+      - `"search_result_location"`
+
+### Text Delta
+
+- `class TextDelta: …`
+
+  - `text: str`
+
+  - `type: Literal["text_delta"]`
+
+    - `"text_delta"`
+
+### Text Editor Code Execution Create Result Block
+
+- `class TextEditorCodeExecutionCreateResultBlock: …`
+
+  - `is_file_update: bool`
+
+  - `type: Literal["text_editor_code_execution_create_result"]`
+
+    - `"text_editor_code_execution_create_result"`
+
+### Text Editor Code Execution Create Result Block Param
+
+- `class TextEditorCodeExecutionCreateResultBlockParam: …`
+
+  - `is_file_update: bool`
+
+  - `type: Literal["text_editor_code_execution_create_result"]`
+
+    - `"text_editor_code_execution_create_result"`
+
+### Text Editor Code Execution Str Replace Result Block
+
+- `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+  - `lines: Optional[List[str]]`
+
+  - `new_lines: Optional[int]`
+
+  - `new_start: Optional[int]`
+
+  - `old_lines: Optional[int]`
+
+  - `old_start: Optional[int]`
+
+  - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+    - `"text_editor_code_execution_str_replace_result"`
+
+### Text Editor Code Execution Str Replace Result Block Param
+
+- `class TextEditorCodeExecutionStrReplaceResultBlockParam: …`
+
+  - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+    - `"text_editor_code_execution_str_replace_result"`
+
+  - `lines: Optional[List[str]]`
+
+  - `new_lines: Optional[int]`
+
+  - `new_start: Optional[int]`
+
+  - `old_lines: Optional[int]`
+
+  - `old_start: Optional[int]`
+
+### Text Editor Code Execution Tool Result Block
+
+- `class TextEditorCodeExecutionToolResultBlock: …`
+
+  - `content: Content`
+
+    - `class TextEditorCodeExecutionToolResultError: …`
+
+      - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"too_many_requests"`
+
+        - `"execution_time_exceeded"`
+
+        - `"file_not_found"`
+
+      - `error_message: Optional[str]`
+
+      - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+        - `"text_editor_code_execution_tool_result_error"`
+
+    - `class TextEditorCodeExecutionViewResultBlock: …`
+
+      - `content: str`
+
+      - `file_type: Literal["text", "image", "pdf"]`
+
+        - `"text"`
+
+        - `"image"`
+
+        - `"pdf"`
+
+      - `num_lines: Optional[int]`
+
+      - `start_line: Optional[int]`
+
+      - `total_lines: Optional[int]`
+
+      - `type: Literal["text_editor_code_execution_view_result"]`
+
+        - `"text_editor_code_execution_view_result"`
+
+    - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+      - `is_file_update: bool`
+
+      - `type: Literal["text_editor_code_execution_create_result"]`
+
+        - `"text_editor_code_execution_create_result"`
+
+    - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+      - `lines: Optional[List[str]]`
+
+      - `new_lines: Optional[int]`
+
+      - `new_start: Optional[int]`
+
+      - `old_lines: Optional[int]`
+
+      - `old_start: Optional[int]`
+
+      - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+        - `"text_editor_code_execution_str_replace_result"`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["text_editor_code_execution_tool_result"]`
+
+    - `"text_editor_code_execution_tool_result"`
+
+### Text Editor Code Execution Tool Result Block Param
+
+- `class TextEditorCodeExecutionToolResultBlockParam: …`
+
+  - `content: Content`
+
+    - `class TextEditorCodeExecutionToolResultErrorParam: …`
+
+      - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"too_many_requests"`
+
+        - `"execution_time_exceeded"`
+
+        - `"file_not_found"`
+
+      - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+        - `"text_editor_code_execution_tool_result_error"`
+
+      - `error_message: Optional[str]`
+
+    - `class TextEditorCodeExecutionViewResultBlockParam: …`
+
+      - `content: str`
+
+      - `file_type: Literal["text", "image", "pdf"]`
+
+        - `"text"`
+
+        - `"image"`
+
+        - `"pdf"`
+
+      - `type: Literal["text_editor_code_execution_view_result"]`
+
+        - `"text_editor_code_execution_view_result"`
+
+      - `num_lines: Optional[int]`
+
+      - `start_line: Optional[int]`
+
+      - `total_lines: Optional[int]`
+
+    - `class TextEditorCodeExecutionCreateResultBlockParam: …`
+
+      - `is_file_update: bool`
+
+      - `type: Literal["text_editor_code_execution_create_result"]`
+
+        - `"text_editor_code_execution_create_result"`
+
+    - `class TextEditorCodeExecutionStrReplaceResultBlockParam: …`
+
+      - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+        - `"text_editor_code_execution_str_replace_result"`
+
+      - `lines: Optional[List[str]]`
+
+      - `new_lines: Optional[int]`
+
+      - `new_start: Optional[int]`
+
+      - `old_lines: Optional[int]`
+
+      - `old_start: Optional[int]`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["text_editor_code_execution_tool_result"]`
+
+    - `"text_editor_code_execution_tool_result"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+### Text Editor Code Execution Tool Result Error
+
+- `class TextEditorCodeExecutionToolResultError: …`
+
+  - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"too_many_requests"`
+
+    - `"execution_time_exceeded"`
+
+    - `"file_not_found"`
+
+  - `error_message: Optional[str]`
+
+  - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+    - `"text_editor_code_execution_tool_result_error"`
+
+### Text Editor Code Execution Tool Result Error Code
+
+- `Literal["invalid_tool_input", "unavailable", "too_many_requests", 2 more]`
+
+  - `"invalid_tool_input"`
+
+  - `"unavailable"`
+
+  - `"too_many_requests"`
+
+  - `"execution_time_exceeded"`
+
+  - `"file_not_found"`
+
+### Text Editor Code Execution Tool Result Error Param
+
+- `class TextEditorCodeExecutionToolResultErrorParam: …`
+
+  - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"too_many_requests"`
+
+    - `"execution_time_exceeded"`
+
+    - `"file_not_found"`
+
+  - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+    - `"text_editor_code_execution_tool_result_error"`
+
+  - `error_message: Optional[str]`
+
+### Text Editor Code Execution View Result Block
+
+- `class TextEditorCodeExecutionViewResultBlock: …`
+
+  - `content: str`
+
+  - `file_type: Literal["text", "image", "pdf"]`
+
+    - `"text"`
+
+    - `"image"`
+
+    - `"pdf"`
+
+  - `num_lines: Optional[int]`
+
+  - `start_line: Optional[int]`
+
+  - `total_lines: Optional[int]`
+
+  - `type: Literal["text_editor_code_execution_view_result"]`
+
+    - `"text_editor_code_execution_view_result"`
+
+### Text Editor Code Execution View Result Block Param
+
+- `class TextEditorCodeExecutionViewResultBlockParam: …`
+
+  - `content: str`
+
+  - `file_type: Literal["text", "image", "pdf"]`
+
+    - `"text"`
+
+    - `"image"`
+
+    - `"pdf"`
+
+  - `type: Literal["text_editor_code_execution_view_result"]`
+
+    - `"text_editor_code_execution_view_result"`
+
+  - `num_lines: Optional[int]`
+
+  - `start_line: Optional[int]`
+
+  - `total_lines: Optional[int]`
+
+### Thinking Block
+
+- `class ThinkingBlock: …`
+
+  - `signature: str`
+
+  - `thinking: str`
+
+  - `type: Literal["thinking"]`
+
+    - `"thinking"`
+
+### Thinking Block Param
+
+- `class ThinkingBlockParam: …`
+
+  - `signature: str`
+
+  - `thinking: str`
+
+  - `type: Literal["thinking"]`
+
+    - `"thinking"`
+
+### Thinking Config Adaptive
+
+- `class ThinkingConfigAdaptive: …`
+
+  - `type: Literal["adaptive"]`
+
+    - `"adaptive"`
+
+  - `display: Optional[Literal["summarized", "omitted"]]`
+
+    Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+    - `"summarized"`
+
+    - `"omitted"`
+
+### Thinking Config Disabled
+
+- `class ThinkingConfigDisabled: …`
+
+  - `type: Literal["disabled"]`
+
+    - `"disabled"`
+
+### Thinking Config Enabled
+
+- `class ThinkingConfigEnabled: …`
+
+  - `budget_tokens: int`
+
+    Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.
+
+    Must be ≥1024 and less than `max_tokens`.
+
+    See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+  - `type: Literal["enabled"]`
+
+    - `"enabled"`
+
+  - `display: Optional[Literal["summarized", "omitted"]]`
+
+    Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+    - `"summarized"`
+
+    - `"omitted"`
+
+### Thinking Config Param
+
+- `ThinkingConfigParam`
+
+  Configuration for enabling Claude's extended thinking.
+
+  When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.
+
+  See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+  - `class ThinkingConfigEnabled: …`
+
+    - `budget_tokens: int`
+
+      Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.
+
+      Must be ≥1024 and less than `max_tokens`.
+
+      See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+    - `type: Literal["enabled"]`
+
+      - `"enabled"`
+
+    - `display: Optional[Literal["summarized", "omitted"]]`
+
+      Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+      - `"summarized"`
+
+      - `"omitted"`
+
+  - `class ThinkingConfigDisabled: …`
+
+    - `type: Literal["disabled"]`
+
+      - `"disabled"`
+
+  - `class ThinkingConfigAdaptive: …`
+
+    - `type: Literal["adaptive"]`
+
+      - `"adaptive"`
+
+    - `display: Optional[Literal["summarized", "omitted"]]`
+
+      Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+      - `"summarized"`
+
+      - `"omitted"`
+
+### Thinking Delta
+
+- `class ThinkingDelta: …`
+
+  - `thinking: str`
+
+  - `type: Literal["thinking_delta"]`
+
+    - `"thinking_delta"`
+
+### Tool
+
+- `class Tool: …`
+
+  - `input_schema: InputSchema`
+
+    [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.
+
+    This defines the shape of the `input` that your tool accepts and that the model will produce.
+
+    - `type: Literal["object"]`
+
+      - `"object"`
+
+    - `properties: Optional[Dict[str, object]]`
+
+    - `required: Optional[List[str]]`
+
+  - `name: str`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `description: Optional[str]`
+
+    Description of what this tool does.
+
+    Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
+
+  - `eager_input_streaming: Optional[bool]`
+
+    Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
+
+  - `input_examples: Optional[List[Dict[str, object]]]`
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+  - `type: Optional[Literal["custom"]]`
+
+    - `"custom"`
+
+### Tool Bash 20250124
+
+- `class ToolBash20250124: …`
+
+  - `name: Literal["bash"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"bash"`
+
+  - `type: Literal["bash_20250124"]`
+
+    - `"bash_20250124"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `input_examples: Optional[List[Dict[str, object]]]`
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Tool Choice
+
+- `ToolChoice`
+
+  How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
+
+  - `class ToolChoiceAuto: …`
+
+    The model will automatically decide whether to use tools.
+
+    - `type: Literal["auto"]`
+
+      - `"auto"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output at most one tool use.
+
+  - `class ToolChoiceAny: …`
+
+    The model will use any available tools.
+
+    - `type: Literal["any"]`
+
+      - `"any"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+  - `class ToolChoiceTool: …`
+
+    The model will use the specified tool with `tool_choice.name`.
+
+    - `name: str`
+
+      The name of the tool to use.
+
+    - `type: Literal["tool"]`
+
+      - `"tool"`
+
+    - `disable_parallel_tool_use: Optional[bool]`
+
+      Whether to disable parallel tool use.
+
+      Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+  - `class ToolChoiceNone: …`
+
+    The model will not be allowed to use tools.
+
+    - `type: Literal["none"]`
+
+      - `"none"`
+
+### Tool Choice Any
+
+- `class ToolChoiceAny: …`
+
+  The model will use any available tools.
+
+  - `type: Literal["any"]`
+
+    - `"any"`
+
+  - `disable_parallel_tool_use: Optional[bool]`
+
+    Whether to disable parallel tool use.
+
+    Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+### Tool Choice Auto
+
+- `class ToolChoiceAuto: …`
+
+  The model will automatically decide whether to use tools.
+
+  - `type: Literal["auto"]`
+
+    - `"auto"`
+
+  - `disable_parallel_tool_use: Optional[bool]`
+
+    Whether to disable parallel tool use.
+
+    Defaults to `false`. If set to `true`, the model will output at most one tool use.
+
+### Tool Choice None
+
+- `class ToolChoiceNone: …`
+
+  The model will not be allowed to use tools.
+
+  - `type: Literal["none"]`
+
+    - `"none"`
+
+### Tool Choice Tool
+
+- `class ToolChoiceTool: …`
+
+  The model will use the specified tool with `tool_choice.name`.
+
+  - `name: str`
+
+    The name of the tool to use.
+
+  - `type: Literal["tool"]`
+
+    - `"tool"`
+
+  - `disable_parallel_tool_use: Optional[bool]`
+
+    Whether to disable parallel tool use.
+
+    Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+### Tool Reference Block
+
+- `class ToolReferenceBlock: …`
+
+  - `tool_name: str`
+
+  - `type: Literal["tool_reference"]`
+
+    - `"tool_reference"`
+
+### Tool Reference Block Param
+
+- `class ToolReferenceBlockParam: …`
+
+  Tool reference block that can be included in tool_result content.
+
+  - `tool_name: str`
+
+  - `type: Literal["tool_reference"]`
+
+    - `"tool_reference"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+### Tool Result Block Param
+
+- `class ToolResultBlockParam: …`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["tool_result"]`
+
+    - `"tool_result"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `content: Optional[Union[str, List[Content], null]]`
+
+    - `str`
+
+    - `List[Content]`
+
+      - `class TextBlockParam: …`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[List[TextCitationParam]]`
+
+          - `class CitationCharLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationWebSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+      - `class ImageBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64ImageSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+              - `"image/jpeg"`
+
+              - `"image/png"`
+
+              - `"image/gif"`
+
+              - `"image/webp"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class URLImageSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["image"]`
+
+          - `"image"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `class SearchResultBlockParam: …`
+
+        - `content: List[TextBlockParam]`
+
+          - `text: str`
+
+          - `type: Literal["text"]`
+
+            - `"text"`
+
+          - `cache_control: Optional[CacheControlEphemeral]`
+
+            Create a cache control breakpoint at this content block.
+
+            - `type: Literal["ephemeral"]`
+
+              - `"ephemeral"`
+
+            - `ttl: Optional[Literal["5m", "1h"]]`
+
+              The time-to-live for the cache control breakpoint.
+
+              This may be one the following values:
+
+              - `5m`: 5 minutes
+              - `1h`: 1 hour
+
+              Defaults to `5m`.
+
+              - `"5m"`
+
+              - `"1h"`
+
+          - `citations: Optional[List[TextCitationParam]]`
+
+            - `class CitationCharLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_char_index: int`
+
+              - `start_char_index: int`
+
+              - `type: Literal["char_location"]`
+
+                - `"char_location"`
+
+            - `class CitationPageLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_page_number: int`
+
+              - `start_page_number: int`
+
+              - `type: Literal["page_location"]`
+
+                - `"page_location"`
+
+            - `class CitationContentBlockLocationParam: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_block_index: int`
+
+              - `start_block_index: int`
+
+              - `type: Literal["content_block_location"]`
+
+                - `"content_block_location"`
+
+            - `class CitationWebSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `encrypted_index: str`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["web_search_result_location"]`
+
+                - `"web_search_result_location"`
+
+              - `url: str`
+
+            - `class CitationSearchResultLocationParam: …`
+
+              - `cited_text: str`
+
+              - `end_block_index: int`
+
+              - `search_result_index: int`
+
+              - `source: str`
+
+              - `start_block_index: int`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["search_result_location"]`
+
+                - `"search_result_location"`
+
+        - `source: str`
+
+        - `title: str`
+
+        - `type: Literal["search_result"]`
+
+          - `"search_result"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+      - `class DocumentBlockParam: …`
+
+        - `source: Source`
+
+          - `class Base64PDFSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["application/pdf"]`
+
+              - `"application/pdf"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class PlainTextSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["text/plain"]`
+
+              - `"text/plain"`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+          - `class ContentBlockSource: …`
+
+            - `content: Union[str, List[ContentBlockSourceContent]]`
+
+              - `str`
+
+              - `List[ContentBlockSourceContent]`
+
+                - `class TextBlockParam: …`
+
+                  - `text: str`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[List[TextCitationParam]]`
+
+                    - `class CitationCharLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_char_index: int`
+
+                      - `start_char_index: int`
+
+                      - `type: Literal["char_location"]`
+
+                        - `"char_location"`
+
+                    - `class CitationPageLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_page_number: int`
+
+                      - `start_page_number: int`
+
+                      - `type: Literal["page_location"]`
+
+                        - `"page_location"`
+
+                    - `class CitationContentBlockLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_block_index: int`
+
+                      - `start_block_index: int`
+
+                      - `type: Literal["content_block_location"]`
+
+                        - `"content_block_location"`
+
+                    - `class CitationWebSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `encrypted_index: str`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["web_search_result_location"]`
+
+                        - `"web_search_result_location"`
+
+                      - `url: str`
+
+                    - `class CitationSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `end_block_index: int`
+
+                      - `search_result_index: int`
+
+                      - `source: str`
+
+                      - `start_block_index: int`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["search_result_location"]`
+
+                        - `"search_result_location"`
+
+                - `class ImageBlockParam: …`
+
+                  - `source: Source`
+
+                    - `class Base64ImageSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                        - `"image/jpeg"`
+
+                        - `"image/png"`
+
+                        - `"image/gif"`
+
+                        - `"image/webp"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class URLImageSource: …`
+
+                      - `type: Literal["url"]`
+
+                        - `"url"`
+
+                      - `url: str`
+
+                  - `type: Literal["image"]`
+
+                    - `"image"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+            - `type: Literal["content"]`
+
+              - `"content"`
+
+          - `class URLPDFSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["document"]`
+
+          - `"document"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+        - `context: Optional[str]`
+
+        - `title: Optional[str]`
+
+      - `class ToolReferenceBlockParam: …`
+
+        Tool reference block that can be included in tool_result content.
+
+        - `tool_name: str`
+
+        - `type: Literal["tool_reference"]`
+
+          - `"tool_reference"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+  - `is_error: Optional[bool]`
+
+### Tool Search Tool Bm25 20251119
+
+- `class ToolSearchToolBm25_20251119: …`
+
+  - `name: Literal["tool_search_tool_bm25"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"tool_search_tool_bm25"`
+
+  - `type: Literal["tool_search_tool_bm25_20251119", "tool_search_tool_bm25"]`
+
+    - `"tool_search_tool_bm25_20251119"`
+
+    - `"tool_search_tool_bm25"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Tool Search Tool Regex 20251119
+
+- `class ToolSearchToolRegex20251119: …`
+
+  - `name: Literal["tool_search_tool_regex"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"tool_search_tool_regex"`
+
+  - `type: Literal["tool_search_tool_regex_20251119", "tool_search_tool_regex"]`
+
+    - `"tool_search_tool_regex_20251119"`
+
+    - `"tool_search_tool_regex"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Tool Search Tool Result Block
+
+- `class ToolSearchToolResultBlock: …`
+
+  - `content: Content`
+
+    - `class ToolSearchToolResultError: …`
+
+      - `error_code: ToolSearchToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"too_many_requests"`
+
+        - `"execution_time_exceeded"`
+
+      - `error_message: Optional[str]`
+
+      - `type: Literal["tool_search_tool_result_error"]`
+
+        - `"tool_search_tool_result_error"`
+
+    - `class ToolSearchToolSearchResultBlock: …`
+
+      - `tool_references: List[ToolReferenceBlock]`
+
+        - `tool_name: str`
+
+        - `type: Literal["tool_reference"]`
+
+          - `"tool_reference"`
+
+      - `type: Literal["tool_search_tool_search_result"]`
+
+        - `"tool_search_tool_search_result"`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["tool_search_tool_result"]`
+
+    - `"tool_search_tool_result"`
+
+### Tool Search Tool Result Block Param
+
+- `class ToolSearchToolResultBlockParam: …`
+
+  - `content: Content`
+
+    - `class ToolSearchToolResultErrorParam: …`
+
+      - `error_code: ToolSearchToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"too_many_requests"`
+
+        - `"execution_time_exceeded"`
+
+      - `type: Literal["tool_search_tool_result_error"]`
+
+        - `"tool_search_tool_result_error"`
+
+    - `class ToolSearchToolSearchResultBlockParam: …`
+
+      - `tool_references: List[ToolReferenceBlockParam]`
+
+        - `tool_name: str`
+
+        - `type: Literal["tool_reference"]`
+
+          - `"tool_reference"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+      - `type: Literal["tool_search_tool_search_result"]`
+
+        - `"tool_search_tool_search_result"`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["tool_search_tool_result"]`
+
+    - `"tool_search_tool_result"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+### Tool Search Tool Result Error
+
+- `class ToolSearchToolResultError: …`
+
+  - `error_code: ToolSearchToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"too_many_requests"`
+
+    - `"execution_time_exceeded"`
+
+  - `error_message: Optional[str]`
+
+  - `type: Literal["tool_search_tool_result_error"]`
+
+    - `"tool_search_tool_result_error"`
+
+### Tool Search Tool Result Error Code
+
+- `Literal["invalid_tool_input", "unavailable", "too_many_requests", "execution_time_exceeded"]`
+
+  - `"invalid_tool_input"`
+
+  - `"unavailable"`
+
+  - `"too_many_requests"`
+
+  - `"execution_time_exceeded"`
+
+### Tool Search Tool Result Error Param
+
+- `class ToolSearchToolResultErrorParam: …`
+
+  - `error_code: ToolSearchToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"too_many_requests"`
+
+    - `"execution_time_exceeded"`
+
+  - `type: Literal["tool_search_tool_result_error"]`
+
+    - `"tool_search_tool_result_error"`
+
+### Tool Search Tool Search Result Block
+
+- `class ToolSearchToolSearchResultBlock: …`
+
+  - `tool_references: List[ToolReferenceBlock]`
+
+    - `tool_name: str`
+
+    - `type: Literal["tool_reference"]`
+
+      - `"tool_reference"`
+
+  - `type: Literal["tool_search_tool_search_result"]`
+
+    - `"tool_search_tool_search_result"`
+
+### Tool Search Tool Search Result Block Param
+
+- `class ToolSearchToolSearchResultBlockParam: …`
+
+  - `tool_references: List[ToolReferenceBlockParam]`
+
+    - `tool_name: str`
+
+    - `type: Literal["tool_reference"]`
+
+      - `"tool_reference"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+  - `type: Literal["tool_search_tool_search_result"]`
+
+    - `"tool_search_tool_search_result"`
+
+### Tool Text Editor 20250124
+
+- `class ToolTextEditor20250124: …`
+
+  - `name: Literal["str_replace_editor"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"str_replace_editor"`
+
+  - `type: Literal["text_editor_20250124"]`
+
+    - `"text_editor_20250124"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `input_examples: Optional[List[Dict[str, object]]]`
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Tool Text Editor 20250429
+
+- `class ToolTextEditor20250429: …`
+
+  - `name: Literal["str_replace_based_edit_tool"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"str_replace_based_edit_tool"`
+
+  - `type: Literal["text_editor_20250429"]`
+
+    - `"text_editor_20250429"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `input_examples: Optional[List[Dict[str, object]]]`
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Tool Text Editor 20250728
+
+- `class ToolTextEditor20250728: …`
+
+  - `name: Literal["str_replace_based_edit_tool"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"str_replace_based_edit_tool"`
+
+  - `type: Literal["text_editor_20250728"]`
+
+    - `"text_editor_20250728"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `input_examples: Optional[List[Dict[str, object]]]`
+
+  - `max_characters: Optional[int]`
+
+    Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Tool Union
+
+- `ToolUnion`
+
+  Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+  - `class Tool: …`
+
+    - `input_schema: InputSchema`
+
+      [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.
+
+      This defines the shape of the `input` that your tool accepts and that the model will produce.
+
+      - `type: Literal["object"]`
+
+        - `"object"`
+
+      - `properties: Optional[Dict[str, object]]`
+
+      - `required: Optional[List[str]]`
+
+    - `name: str`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `description: Optional[str]`
+
+      Description of what this tool does.
+
+      Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
+
+    - `eager_input_streaming: Optional[bool]`
+
+      Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `type: Optional[Literal["custom"]]`
+
+      - `"custom"`
+
+  - `class ToolBash20250124: …`
+
+    - `name: Literal["bash"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"bash"`
+
+    - `type: Literal["bash_20250124"]`
+
+      - `"bash_20250124"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20250522: …`
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20250522"]`
+
+      - `"code_execution_20250522"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20250825: …`
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20250825"]`
+
+      - `"code_execution_20250825"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class CodeExecutionTool20260120: …`
+
+    Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+    - `name: Literal["code_execution"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"code_execution"`
+
+    - `type: Literal["code_execution_20260120"]`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class MemoryTool20250818: …`
+
+    - `name: Literal["memory"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"memory"`
+
+    - `type: Literal["memory_20250818"]`
+
+      - `"memory_20250818"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250124: …`
+
+    - `name: Literal["str_replace_editor"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_editor"`
+
+    - `type: Literal["text_editor_20250124"]`
+
+      - `"text_editor_20250124"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250429: …`
+
+    - `name: Literal["str_replace_based_edit_tool"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_based_edit_tool"`
+
+    - `type: Literal["text_editor_20250429"]`
+
+      - `"text_editor_20250429"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolTextEditor20250728: …`
+
+    - `name: Literal["str_replace_based_edit_tool"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"str_replace_based_edit_tool"`
+
+    - `type: Literal["text_editor_20250728"]`
+
+      - `"text_editor_20250728"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `input_examples: Optional[List[Dict[str, object]]]`
+
+    - `max_characters: Optional[int]`
+
+      Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebSearchTool20250305: …`
+
+    - `name: Literal["web_search"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_search"`
+
+    - `type: Literal["web_search_20250305"]`
+
+      - `"web_search_20250305"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+    - `blocked_domains: Optional[List[str]]`
+
+      If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `user_location: Optional[UserLocation]`
+
+      Parameters for the user's location. Used to provide more relevant search results.
+
+      - `type: Literal["approximate"]`
+
+        - `"approximate"`
+
+      - `city: Optional[str]`
+
+        The city of the user.
+
+      - `country: Optional[str]`
+
+        The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+      - `region: Optional[str]`
+
+        The region of the user.
+
+      - `timezone: Optional[str]`
+
+        The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+  - `class WebFetchTool20250910: …`
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20250910"]`
+
+      - `"web_fetch_20250910"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebSearchTool20260209: …`
+
+    - `name: Literal["web_search"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_search"`
+
+    - `type: Literal["web_search_20260209"]`
+
+      - `"web_search_20260209"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+    - `blocked_domains: Optional[List[str]]`
+
+      If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `user_location: Optional[UserLocation]`
+
+      Parameters for the user's location. Used to provide more relevant search results.
+
+      - `type: Literal["approximate"]`
+
+        - `"approximate"`
+
+      - `city: Optional[str]`
+
+        The city of the user.
+
+      - `country: Optional[str]`
+
+        The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+      - `region: Optional[str]`
+
+        The region of the user.
+
+      - `timezone: Optional[str]`
+
+        The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+  - `class WebFetchTool20260209: …`
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20260209"]`
+
+      - `"web_fetch_20260209"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class WebFetchTool20260309: …`
+
+    Web fetch tool with use_cache parameter for bypassing cached content.
+
+    - `name: Literal["web_fetch"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"web_fetch"`
+
+    - `type: Literal["web_fetch_20260309"]`
+
+      - `"web_fetch_20260309"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `allowed_domains: Optional[List[str]]`
+
+      List of domains to allow fetching from
+
+    - `blocked_domains: Optional[List[str]]`
+
+      List of domains to block fetching from
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      Citations configuration for fetched documents. Citations are disabled by default.
+
+      - `enabled: Optional[bool]`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `max_content_tokens: Optional[int]`
+
+      Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+    - `max_uses: Optional[int]`
+
+      Maximum number of times the tool can be used in the API request.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+    - `use_cache: Optional[bool]`
+
+      Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
+
+  - `class ToolSearchToolBm25_20251119: …`
+
+    - `name: Literal["tool_search_tool_bm25"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"tool_search_tool_bm25"`
+
+    - `type: Literal["tool_search_tool_bm25_20251119", "tool_search_tool_bm25"]`
+
+      - `"tool_search_tool_bm25_20251119"`
+
+      - `"tool_search_tool_bm25"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+  - `class ToolSearchToolRegex20251119: …`
+
+    - `name: Literal["tool_search_tool_regex"]`
+
+      Name of the tool.
+
+      This is how the tool will be called by the model and in `tool_use` blocks.
+
+      - `"tool_search_tool_regex"`
+
+    - `type: Literal["tool_search_tool_regex_20251119", "tool_search_tool_regex"]`
+
+      - `"tool_search_tool_regex_20251119"`
+
+      - `"tool_search_tool_regex"`
+
+    - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+      - `"direct"`
+
+      - `"code_execution_20250825"`
+
+      - `"code_execution_20260120"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `defer_loading: Optional[bool]`
+
+      If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+    - `strict: Optional[bool]`
+
+      When true, guarantees schema validation on tool names and inputs
+
+### Tool Use Block
+
+- `class ToolUseBlock: …`
+
+  - `id: str`
+
+  - `caller: Caller`
+
+    Tool invocation directly from the model.
+
+    - `class DirectCaller: …`
+
+      Tool invocation directly from the model.
+
+      - `type: Literal["direct"]`
+
+        - `"direct"`
+
+    - `class ServerToolCaller: …`
+
+      Tool invocation generated by a server-side tool.
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20250825"]`
+
+        - `"code_execution_20250825"`
+
+    - `class ServerToolCaller20260120: …`
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20260120"]`
+
+        - `"code_execution_20260120"`
+
+  - `input: Dict[str, object]`
+
+  - `name: str`
+
+  - `type: Literal["tool_use"]`
+
+    - `"tool_use"`
+
+### Tool Use Block Param
+
+- `class ToolUseBlockParam: …`
+
+  - `id: str`
+
+  - `input: Dict[str, object]`
+
+  - `name: str`
+
+  - `type: Literal["tool_use"]`
+
+    - `"tool_use"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `caller: Optional[Caller]`
+
+    Tool invocation directly from the model.
+
+    - `class DirectCaller: …`
+
+      Tool invocation directly from the model.
+
+      - `type: Literal["direct"]`
+
+        - `"direct"`
+
+    - `class ServerToolCaller: …`
+
+      Tool invocation generated by a server-side tool.
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20250825"]`
+
+        - `"code_execution_20250825"`
+
+    - `class ServerToolCaller20260120: …`
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20260120"]`
+
+        - `"code_execution_20260120"`
+
+### URL Image Source
+
+- `class URLImageSource: …`
+
+  - `type: Literal["url"]`
+
+    - `"url"`
+
+  - `url: str`
+
+### URL PDF Source
+
+- `class URLPDFSource: …`
+
+  - `type: Literal["url"]`
+
+    - `"url"`
+
+  - `url: str`
+
+### Usage
+
+- `class Usage: …`
+
+  - `cache_creation: Optional[CacheCreation]`
+
+    Breakdown of cached tokens by TTL
+
+    - `ephemeral_1h_input_tokens: int`
+
+      The number of input tokens used to create the 1 hour cache entry.
+
+    - `ephemeral_5m_input_tokens: int`
+
+      The number of input tokens used to create the 5 minute cache entry.
+
+  - `cache_creation_input_tokens: Optional[int]`
+
+    The number of input tokens used to create the cache entry.
+
+  - `cache_read_input_tokens: Optional[int]`
+
+    The number of input tokens read from the cache.
+
+  - `inference_geo: Optional[str]`
+
+    The geographic region where inference was performed for this request.
+
+  - `input_tokens: int`
+
+    The number of input tokens which were used.
+
+  - `output_tokens: int`
+
+    The number of output tokens which were used.
+
+  - `server_tool_use: Optional[ServerToolUsage]`
+
+    The number of server tool requests.
+
+    - `web_fetch_requests: int`
+
+      The number of web fetch tool requests.
+
+    - `web_search_requests: int`
+
+      The number of web search tool requests.
+
+  - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+    If the request used the priority, standard, or batch tier.
+
+    - `"standard"`
+
+    - `"priority"`
+
+    - `"batch"`
+
+### User Location
+
+- `class UserLocation: …`
+
+  - `type: Literal["approximate"]`
+
+    - `"approximate"`
+
+  - `city: Optional[str]`
+
+    The city of the user.
+
+  - `country: Optional[str]`
+
+    The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+  - `region: Optional[str]`
+
+    The region of the user.
+
+  - `timezone: Optional[str]`
+
+    The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+### Web Fetch Block
+
+- `class WebFetchBlock: …`
+
+  - `content: DocumentBlock`
+
+    - `citations: Optional[CitationsConfig]`
+
+      Citation configuration for the document
+
+      - `enabled: bool`
+
+    - `source: Source`
+
+      - `class Base64PDFSource: …`
+
+        - `data: str`
+
+        - `media_type: Literal["application/pdf"]`
+
+          - `"application/pdf"`
+
+        - `type: Literal["base64"]`
+
+          - `"base64"`
+
+      - `class PlainTextSource: …`
+
+        - `data: str`
+
+        - `media_type: Literal["text/plain"]`
+
+          - `"text/plain"`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+    - `title: Optional[str]`
+
+      The title of the document
+
+    - `type: Literal["document"]`
+
+      - `"document"`
+
+  - `retrieved_at: Optional[str]`
+
+    ISO 8601 timestamp when the content was retrieved
+
+  - `type: Literal["web_fetch_result"]`
+
+    - `"web_fetch_result"`
+
+  - `url: str`
+
+    Fetched content URL
+
+### Web Fetch Block Param
+
+- `class WebFetchBlockParam: …`
+
+  - `content: DocumentBlockParam`
+
+    - `source: Source`
+
+      - `class Base64PDFSource: …`
+
+        - `data: str`
+
+        - `media_type: Literal["application/pdf"]`
+
+          - `"application/pdf"`
+
+        - `type: Literal["base64"]`
+
+          - `"base64"`
+
+      - `class PlainTextSource: …`
+
+        - `data: str`
+
+        - `media_type: Literal["text/plain"]`
+
+          - `"text/plain"`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+      - `class ContentBlockSource: …`
+
+        - `content: Union[str, List[ContentBlockSourceContent]]`
+
+          - `str`
+
+          - `List[ContentBlockSourceContent]`
+
+            - `class TextBlockParam: …`
+
+              - `text: str`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[List[TextCitationParam]]`
+
+                - `class CitationCharLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_char_index: int`
+
+                  - `start_char_index: int`
+
+                  - `type: Literal["char_location"]`
+
+                    - `"char_location"`
+
+                - `class CitationPageLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_page_number: int`
+
+                  - `start_page_number: int`
+
+                  - `type: Literal["page_location"]`
+
+                    - `"page_location"`
+
+                - `class CitationContentBlockLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_block_index: int`
+
+                  - `start_block_index: int`
+
+                  - `type: Literal["content_block_location"]`
+
+                    - `"content_block_location"`
+
+                - `class CitationWebSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `encrypted_index: str`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["web_search_result_location"]`
+
+                    - `"web_search_result_location"`
+
+                  - `url: str`
+
+                - `class CitationSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `end_block_index: int`
+
+                  - `search_result_index: int`
+
+                  - `source: str`
+
+                  - `start_block_index: int`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["search_result_location"]`
+
+                    - `"search_result_location"`
+
+            - `class ImageBlockParam: …`
+
+              - `source: Source`
+
+                - `class Base64ImageSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                    - `"image/jpeg"`
+
+                    - `"image/png"`
+
+                    - `"image/gif"`
+
+                    - `"image/webp"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class URLImageSource: …`
+
+                  - `type: Literal["url"]`
+
+                    - `"url"`
+
+                  - `url: str`
+
+              - `type: Literal["image"]`
+
+                - `"image"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+        - `type: Literal["content"]`
+
+          - `"content"`
+
+      - `class URLPDFSource: …`
+
+        - `type: Literal["url"]`
+
+          - `"url"`
+
+        - `url: str`
+
+    - `type: Literal["document"]`
+
+      - `"document"`
+
+    - `cache_control: Optional[CacheControlEphemeral]`
+
+      Create a cache control breakpoint at this content block.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `citations: Optional[CitationsConfigParam]`
+
+      - `enabled: Optional[bool]`
+
+    - `context: Optional[str]`
+
+    - `title: Optional[str]`
+
+  - `type: Literal["web_fetch_result"]`
+
+    - `"web_fetch_result"`
+
+  - `url: str`
+
+    Fetched content URL
+
+  - `retrieved_at: Optional[str]`
+
+    ISO 8601 timestamp when the content was retrieved
+
+### Web Fetch Tool 20250910
+
+- `class WebFetchTool20250910: …`
+
+  - `name: Literal["web_fetch"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"web_fetch"`
+
+  - `type: Literal["web_fetch_20250910"]`
+
+    - `"web_fetch_20250910"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `allowed_domains: Optional[List[str]]`
+
+    List of domains to allow fetching from
+
+  - `blocked_domains: Optional[List[str]]`
+
+    List of domains to block fetching from
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `citations: Optional[CitationsConfigParam]`
+
+    Citations configuration for fetched documents. Citations are disabled by default.
+
+    - `enabled: Optional[bool]`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `max_content_tokens: Optional[int]`
+
+    Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+  - `max_uses: Optional[int]`
+
+    Maximum number of times the tool can be used in the API request.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Web Fetch Tool 20260209
+
+- `class WebFetchTool20260209: …`
+
+  - `name: Literal["web_fetch"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"web_fetch"`
+
+  - `type: Literal["web_fetch_20260209"]`
+
+    - `"web_fetch_20260209"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `allowed_domains: Optional[List[str]]`
+
+    List of domains to allow fetching from
+
+  - `blocked_domains: Optional[List[str]]`
+
+    List of domains to block fetching from
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `citations: Optional[CitationsConfigParam]`
+
+    Citations configuration for fetched documents. Citations are disabled by default.
+
+    - `enabled: Optional[bool]`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `max_content_tokens: Optional[int]`
+
+    Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+  - `max_uses: Optional[int]`
+
+    Maximum number of times the tool can be used in the API request.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+### Web Fetch Tool 20260309
+
+- `class WebFetchTool20260309: …`
+
+  Web fetch tool with use_cache parameter for bypassing cached content.
+
+  - `name: Literal["web_fetch"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"web_fetch"`
+
+  - `type: Literal["web_fetch_20260309"]`
+
+    - `"web_fetch_20260309"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `allowed_domains: Optional[List[str]]`
+
+    List of domains to allow fetching from
+
+  - `blocked_domains: Optional[List[str]]`
+
+    List of domains to block fetching from
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `citations: Optional[CitationsConfigParam]`
+
+    Citations configuration for fetched documents. Citations are disabled by default.
+
+    - `enabled: Optional[bool]`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `max_content_tokens: Optional[int]`
+
+    Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+  - `max_uses: Optional[int]`
+
+    Maximum number of times the tool can be used in the API request.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+  - `use_cache: Optional[bool]`
+
+    Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
+
+### Web Fetch Tool Result Block
+
+- `class WebFetchToolResultBlock: …`
+
+  - `caller: Caller`
+
+    Tool invocation directly from the model.
+
+    - `class DirectCaller: …`
+
+      Tool invocation directly from the model.
+
+      - `type: Literal["direct"]`
+
+        - `"direct"`
+
+    - `class ServerToolCaller: …`
+
+      Tool invocation generated by a server-side tool.
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20250825"]`
+
+        - `"code_execution_20250825"`
+
+    - `class ServerToolCaller20260120: …`
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20260120"]`
+
+        - `"code_execution_20260120"`
+
+  - `content: Content`
+
+    - `class WebFetchToolResultErrorBlock: …`
+
+      - `error_code: WebFetchToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"url_too_long"`
+
+        - `"url_not_allowed"`
+
+        - `"url_not_accessible"`
+
+        - `"unsupported_content_type"`
+
+        - `"too_many_requests"`
+
+        - `"max_uses_exceeded"`
+
+        - `"unavailable"`
+
+      - `type: Literal["web_fetch_tool_result_error"]`
+
+        - `"web_fetch_tool_result_error"`
+
+    - `class WebFetchBlock: …`
+
+      - `content: DocumentBlock`
+
+        - `citations: Optional[CitationsConfig]`
+
+          Citation configuration for the document
+
+          - `enabled: bool`
+
+        - `source: Source`
+
+          - `class Base64PDFSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["application/pdf"]`
+
+              - `"application/pdf"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class PlainTextSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["text/plain"]`
+
+              - `"text/plain"`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+        - `title: Optional[str]`
+
+          The title of the document
+
+        - `type: Literal["document"]`
+
+          - `"document"`
+
+      - `retrieved_at: Optional[str]`
+
+        ISO 8601 timestamp when the content was retrieved
+
+      - `type: Literal["web_fetch_result"]`
+
+        - `"web_fetch_result"`
+
+      - `url: str`
+
+        Fetched content URL
+
+  - `tool_use_id: str`
+
+  - `type: Literal["web_fetch_tool_result"]`
+
+    - `"web_fetch_tool_result"`
+
+### Web Fetch Tool Result Block Param
+
+- `class WebFetchToolResultBlockParam: …`
+
+  - `content: Content`
+
+    - `class WebFetchToolResultErrorBlockParam: …`
+
+      - `error_code: WebFetchToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"url_too_long"`
+
+        - `"url_not_allowed"`
+
+        - `"url_not_accessible"`
+
+        - `"unsupported_content_type"`
+
+        - `"too_many_requests"`
+
+        - `"max_uses_exceeded"`
+
+        - `"unavailable"`
+
+      - `type: Literal["web_fetch_tool_result_error"]`
+
+        - `"web_fetch_tool_result_error"`
+
+    - `class WebFetchBlockParam: …`
+
+      - `content: DocumentBlockParam`
+
+        - `source: Source`
+
+          - `class Base64PDFSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["application/pdf"]`
+
+              - `"application/pdf"`
+
+            - `type: Literal["base64"]`
+
+              - `"base64"`
+
+          - `class PlainTextSource: …`
+
+            - `data: str`
+
+            - `media_type: Literal["text/plain"]`
+
+              - `"text/plain"`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+          - `class ContentBlockSource: …`
+
+            - `content: Union[str, List[ContentBlockSourceContent]]`
+
+              - `str`
+
+              - `List[ContentBlockSourceContent]`
+
+                - `class TextBlockParam: …`
+
+                  - `text: str`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[List[TextCitationParam]]`
+
+                    - `class CitationCharLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_char_index: int`
+
+                      - `start_char_index: int`
+
+                      - `type: Literal["char_location"]`
+
+                        - `"char_location"`
+
+                    - `class CitationPageLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_page_number: int`
+
+                      - `start_page_number: int`
+
+                      - `type: Literal["page_location"]`
+
+                        - `"page_location"`
+
+                    - `class CitationContentBlockLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_block_index: int`
+
+                      - `start_block_index: int`
+
+                      - `type: Literal["content_block_location"]`
+
+                        - `"content_block_location"`
+
+                    - `class CitationWebSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `encrypted_index: str`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["web_search_result_location"]`
+
+                        - `"web_search_result_location"`
+
+                      - `url: str`
+
+                    - `class CitationSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `end_block_index: int`
+
+                      - `search_result_index: int`
+
+                      - `source: str`
+
+                      - `start_block_index: int`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["search_result_location"]`
+
+                        - `"search_result_location"`
+
+                - `class ImageBlockParam: …`
+
+                  - `source: Source`
+
+                    - `class Base64ImageSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                        - `"image/jpeg"`
+
+                        - `"image/png"`
+
+                        - `"image/gif"`
+
+                        - `"image/webp"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class URLImageSource: …`
+
+                      - `type: Literal["url"]`
+
+                        - `"url"`
+
+                      - `url: str`
+
+                  - `type: Literal["image"]`
+
+                    - `"image"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+            - `type: Literal["content"]`
+
+              - `"content"`
+
+          - `class URLPDFSource: …`
+
+            - `type: Literal["url"]`
+
+              - `"url"`
+
+            - `url: str`
+
+        - `type: Literal["document"]`
+
+          - `"document"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          - `enabled: Optional[bool]`
+
+        - `context: Optional[str]`
+
+        - `title: Optional[str]`
+
+      - `type: Literal["web_fetch_result"]`
+
+        - `"web_fetch_result"`
+
+      - `url: str`
+
+        Fetched content URL
+
+      - `retrieved_at: Optional[str]`
+
+        ISO 8601 timestamp when the content was retrieved
+
+  - `tool_use_id: str`
+
+  - `type: Literal["web_fetch_tool_result"]`
+
+    - `"web_fetch_tool_result"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `caller: Optional[Caller]`
+
+    Tool invocation directly from the model.
+
+    - `class DirectCaller: …`
+
+      Tool invocation directly from the model.
+
+      - `type: Literal["direct"]`
+
+        - `"direct"`
+
+    - `class ServerToolCaller: …`
+
+      Tool invocation generated by a server-side tool.
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20250825"]`
+
+        - `"code_execution_20250825"`
+
+    - `class ServerToolCaller20260120: …`
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20260120"]`
+
+        - `"code_execution_20260120"`
+
+### Web Fetch Tool Result Error Block
+
+- `class WebFetchToolResultErrorBlock: …`
+
+  - `error_code: WebFetchToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"url_too_long"`
+
+    - `"url_not_allowed"`
+
+    - `"url_not_accessible"`
+
+    - `"unsupported_content_type"`
+
+    - `"too_many_requests"`
+
+    - `"max_uses_exceeded"`
+
+    - `"unavailable"`
+
+  - `type: Literal["web_fetch_tool_result_error"]`
+
+    - `"web_fetch_tool_result_error"`
+
+### Web Fetch Tool Result Error Block Param
+
+- `class WebFetchToolResultErrorBlockParam: …`
+
+  - `error_code: WebFetchToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"url_too_long"`
+
+    - `"url_not_allowed"`
+
+    - `"url_not_accessible"`
+
+    - `"unsupported_content_type"`
+
+    - `"too_many_requests"`
+
+    - `"max_uses_exceeded"`
+
+    - `"unavailable"`
+
+  - `type: Literal["web_fetch_tool_result_error"]`
+
+    - `"web_fetch_tool_result_error"`
+
+### Web Fetch Tool Result Error Code
+
+- `Literal["invalid_tool_input", "url_too_long", "url_not_allowed", 5 more]`
+
+  - `"invalid_tool_input"`
+
+  - `"url_too_long"`
+
+  - `"url_not_allowed"`
+
+  - `"url_not_accessible"`
+
+  - `"unsupported_content_type"`
+
+  - `"too_many_requests"`
+
+  - `"max_uses_exceeded"`
+
+  - `"unavailable"`
+
+### Web Search Result Block
+
+- `class WebSearchResultBlock: …`
+
+  - `encrypted_content: str`
+
+  - `page_age: Optional[str]`
+
+  - `title: str`
+
+  - `type: Literal["web_search_result"]`
+
+    - `"web_search_result"`
+
+  - `url: str`
+
+### Web Search Result Block Param
+
+- `class WebSearchResultBlockParam: …`
+
+  - `encrypted_content: str`
+
+  - `title: str`
+
+  - `type: Literal["web_search_result"]`
+
+    - `"web_search_result"`
+
+  - `url: str`
+
+  - `page_age: Optional[str]`
+
+### Web Search Tool 20250305
+
+- `class WebSearchTool20250305: …`
+
+  - `name: Literal["web_search"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"web_search"`
+
+  - `type: Literal["web_search_20250305"]`
+
+    - `"web_search_20250305"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `allowed_domains: Optional[List[str]]`
+
+    If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+  - `blocked_domains: Optional[List[str]]`
+
+    If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `max_uses: Optional[int]`
+
+    Maximum number of times the tool can be used in the API request.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+  - `user_location: Optional[UserLocation]`
+
+    Parameters for the user's location. Used to provide more relevant search results.
+
+    - `type: Literal["approximate"]`
+
+      - `"approximate"`
+
+    - `city: Optional[str]`
+
+      The city of the user.
+
+    - `country: Optional[str]`
+
+      The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+    - `region: Optional[str]`
+
+      The region of the user.
+
+    - `timezone: Optional[str]`
+
+      The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+### Web Search Tool 20260209
+
+- `class WebSearchTool20260209: …`
+
+  - `name: Literal["web_search"]`
+
+    Name of the tool.
+
+    This is how the tool will be called by the model and in `tool_use` blocks.
+
+    - `"web_search"`
+
+  - `type: Literal["web_search_20260209"]`
+
+    - `"web_search_20260209"`
+
+  - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+    - `"direct"`
+
+    - `"code_execution_20250825"`
+
+    - `"code_execution_20260120"`
+
+  - `allowed_domains: Optional[List[str]]`
+
+    If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+  - `blocked_domains: Optional[List[str]]`
+
+    If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `defer_loading: Optional[bool]`
+
+    If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+  - `max_uses: Optional[int]`
+
+    Maximum number of times the tool can be used in the API request.
+
+  - `strict: Optional[bool]`
+
+    When true, guarantees schema validation on tool names and inputs
+
+  - `user_location: Optional[UserLocation]`
+
+    Parameters for the user's location. Used to provide more relevant search results.
+
+    - `type: Literal["approximate"]`
+
+      - `"approximate"`
+
+    - `city: Optional[str]`
+
+      The city of the user.
+
+    - `country: Optional[str]`
+
+      The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+    - `region: Optional[str]`
+
+      The region of the user.
+
+    - `timezone: Optional[str]`
+
+      The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+### Web Search Tool Request Error
+
+- `class WebSearchToolRequestError: …`
+
+  - `error_code: WebSearchToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"max_uses_exceeded"`
+
+    - `"too_many_requests"`
+
+    - `"query_too_long"`
+
+    - `"request_too_large"`
+
+  - `type: Literal["web_search_tool_result_error"]`
+
+    - `"web_search_tool_result_error"`
+
+### Web Search Tool Result Block
+
+- `class WebSearchToolResultBlock: …`
+
+  - `caller: Caller`
+
+    Tool invocation directly from the model.
+
+    - `class DirectCaller: …`
+
+      Tool invocation directly from the model.
+
+      - `type: Literal["direct"]`
+
+        - `"direct"`
+
+    - `class ServerToolCaller: …`
+
+      Tool invocation generated by a server-side tool.
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20250825"]`
+
+        - `"code_execution_20250825"`
+
+    - `class ServerToolCaller20260120: …`
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20260120"]`
+
+        - `"code_execution_20260120"`
+
+  - `content: WebSearchToolResultBlockContent`
+
+    - `class WebSearchToolResultError: …`
+
+      - `error_code: WebSearchToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"max_uses_exceeded"`
+
+        - `"too_many_requests"`
+
+        - `"query_too_long"`
+
+        - `"request_too_large"`
+
+      - `type: Literal["web_search_tool_result_error"]`
+
+        - `"web_search_tool_result_error"`
+
+    - `List[WebSearchResultBlock]`
+
+      - `encrypted_content: str`
+
+      - `page_age: Optional[str]`
+
+      - `title: str`
+
+      - `type: Literal["web_search_result"]`
+
+        - `"web_search_result"`
+
+      - `url: str`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["web_search_tool_result"]`
+
+    - `"web_search_tool_result"`
+
+### Web Search Tool Result Block Content
+
+- `WebSearchToolResultBlockContent`
+
+  - `class WebSearchToolResultError: …`
+
+    - `error_code: WebSearchToolResultErrorCode`
+
+      - `"invalid_tool_input"`
+
+      - `"unavailable"`
+
+      - `"max_uses_exceeded"`
+
+      - `"too_many_requests"`
+
+      - `"query_too_long"`
+
+      - `"request_too_large"`
+
+    - `type: Literal["web_search_tool_result_error"]`
+
+      - `"web_search_tool_result_error"`
+
+  - `List[WebSearchResultBlock]`
+
+    - `encrypted_content: str`
+
+    - `page_age: Optional[str]`
+
+    - `title: str`
+
+    - `type: Literal["web_search_result"]`
+
+      - `"web_search_result"`
+
+    - `url: str`
+
+### Web Search Tool Result Block Param
+
+- `class WebSearchToolResultBlockParam: …`
+
+  - `content: WebSearchToolResultBlockParamContent`
+
+    - `List[WebSearchResultBlockParam]`
+
+      - `encrypted_content: str`
+
+      - `title: str`
+
+      - `type: Literal["web_search_result"]`
+
+        - `"web_search_result"`
+
+      - `url: str`
+
+      - `page_age: Optional[str]`
+
+    - `class WebSearchToolRequestError: …`
+
+      - `error_code: WebSearchToolResultErrorCode`
+
+        - `"invalid_tool_input"`
+
+        - `"unavailable"`
+
+        - `"max_uses_exceeded"`
+
+        - `"too_many_requests"`
+
+        - `"query_too_long"`
+
+        - `"request_too_large"`
+
+      - `type: Literal["web_search_tool_result_error"]`
+
+        - `"web_search_tool_result_error"`
+
+  - `tool_use_id: str`
+
+  - `type: Literal["web_search_tool_result"]`
+
+    - `"web_search_tool_result"`
+
+  - `cache_control: Optional[CacheControlEphemeral]`
+
+    Create a cache control breakpoint at this content block.
+
+    - `type: Literal["ephemeral"]`
+
+      - `"ephemeral"`
+
+    - `ttl: Optional[Literal["5m", "1h"]]`
+
+      The time-to-live for the cache control breakpoint.
+
+      This may be one the following values:
+
+      - `5m`: 5 minutes
+      - `1h`: 1 hour
+
+      Defaults to `5m`.
+
+      - `"5m"`
+
+      - `"1h"`
+
+  - `caller: Optional[Caller]`
+
+    Tool invocation directly from the model.
+
+    - `class DirectCaller: …`
+
+      Tool invocation directly from the model.
+
+      - `type: Literal["direct"]`
+
+        - `"direct"`
+
+    - `class ServerToolCaller: …`
+
+      Tool invocation generated by a server-side tool.
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20250825"]`
+
+        - `"code_execution_20250825"`
+
+    - `class ServerToolCaller20260120: …`
+
+      - `tool_id: str`
+
+      - `type: Literal["code_execution_20260120"]`
+
+        - `"code_execution_20260120"`
+
+### Web Search Tool Result Block Param Content
+
+- `WebSearchToolResultBlockParamContent`
+
+  - `List[WebSearchResultBlockParam]`
+
+    - `encrypted_content: str`
+
+    - `title: str`
+
+    - `type: Literal["web_search_result"]`
+
+      - `"web_search_result"`
+
+    - `url: str`
+
+    - `page_age: Optional[str]`
+
+  - `class WebSearchToolRequestError: …`
+
+    - `error_code: WebSearchToolResultErrorCode`
+
+      - `"invalid_tool_input"`
+
+      - `"unavailable"`
+
+      - `"max_uses_exceeded"`
+
+      - `"too_many_requests"`
+
+      - `"query_too_long"`
+
+      - `"request_too_large"`
+
+    - `type: Literal["web_search_tool_result_error"]`
+
+      - `"web_search_tool_result_error"`
+
+### Web Search Tool Result Error
+
+- `class WebSearchToolResultError: …`
+
+  - `error_code: WebSearchToolResultErrorCode`
+
+    - `"invalid_tool_input"`
+
+    - `"unavailable"`
+
+    - `"max_uses_exceeded"`
+
+    - `"too_many_requests"`
+
+    - `"query_too_long"`
+
+    - `"request_too_large"`
+
+  - `type: Literal["web_search_tool_result_error"]`
+
+    - `"web_search_tool_result_error"`
+
+### Web Search Tool Result Error Code
+
+- `Literal["invalid_tool_input", "unavailable", "max_uses_exceeded", 3 more]`
+
+  - `"invalid_tool_input"`
+
+  - `"unavailable"`
+
+  - `"max_uses_exceeded"`
+
+  - `"too_many_requests"`
+
+  - `"query_too_long"`
+
+  - `"request_too_large"`
+
+# Batches
+
+## Create
+
+`messages.batches.create(BatchCreateParams**kwargs)  -> MessageBatch`
+
+**post** `/v1/messages/batches`
+
+Send a batch of Message creation requests.
+
+The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.
+
+Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+
+### Parameters
+
+- `requests: Iterable[Request]`
+
+  List of requests for prompt completion. Each is an individual request to create a Message.
+
+  - `custom_id: str`
+
+    Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.
+
+    Must be unique for each request within the Message Batch.
+
+  - `params: RequestParams`
+
+    Messages API creation parameters for the individual request.
+
+    See the [Messages API reference](https://docs.claude.com/en/api/messages) for full documentation on available parameters.
+
+    - `max_tokens: int`
+
+      The maximum number of tokens to generate before stopping.
+
+      Note that our models may stop _before_ reaching this maximum. This parameter only specifies the absolute maximum number of tokens to generate.
+
+      Different models have different maximum values for this parameter.  See [models](https://docs.claude.com/en/docs/models-overview) for details.
+
+    - `messages: Iterable[MessageParam]`
+
+      Input messages.
+
+      Our models are trained to operate on alternating `user` and `assistant` conversational turns. When creating a new `Message`, you specify the prior conversational turns with the `messages` parameter, and the model then generates the next `Message` in the conversation. Consecutive `user` or `assistant` turns in your request will be combined into a single turn.
+
+      Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.
+
+      If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.
+
+      Example with a single `user` message:
+
+      ```json
+      [{"role": "user", "content": "Hello, Claude"}]
+      ```
+
+      Example with multiple conversational turns:
+
+      ```json
+      [
+        {"role": "user", "content": "Hello there."},
+        {"role": "assistant", "content": "Hi, I'm Claude. How can I help you?"},
+        {"role": "user", "content": "Can you explain LLMs in plain English?"},
+      ]
+      ```
+
+      Example with a partially-filled response from Claude:
+
+      ```json
+      [
+        {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+        {"role": "assistant", "content": "The best answer is ("},
+      ]
+      ```
+
+      Each input message `content` may be either a single `string` or an array of content blocks, where each block has a specific `type`. Using a `string` for `content` is shorthand for an array of one content block of type `"text"`. The following input messages are equivalent:
+
+      ```json
+      {"role": "user", "content": "Hello, Claude"}
+      ```
+
+      ```json
+      {"role": "user", "content": [{"type": "text", "text": "Hello, Claude"}]}
+      ```
+
+      See [input examples](https://docs.claude.com/en/api/messages-examples).
+
+      Note that if you want to include a [system prompt](https://docs.claude.com/en/docs/system-prompts), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+
+      There is a limit of 100,000 messages in a single request.
+
+      - `content: Union[str, List[Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 14 more]]]`
+
+        - `str`
+
+        - `List[Union[TextBlockParam, ImageBlockParam, DocumentBlockParam, 14 more]]`
+
+          - `class TextBlockParam: …`
+
+            - `text: str`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `citations: Optional[List[TextCitationParam]]`
+
+              - `class CitationCharLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_char_index: int`
+
+                - `start_char_index: int`
+
+                - `type: Literal["char_location"]`
+
+                  - `"char_location"`
+
+              - `class CitationPageLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_page_number: int`
+
+                - `start_page_number: int`
+
+                - `type: Literal["page_location"]`
+
+                  - `"page_location"`
+
+              - `class CitationContentBlockLocationParam: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_block_index: int`
+
+                - `start_block_index: int`
+
+                - `type: Literal["content_block_location"]`
+
+                  - `"content_block_location"`
+
+              - `class CitationWebSearchResultLocationParam: …`
+
+                - `cited_text: str`
+
+                - `encrypted_index: str`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["web_search_result_location"]`
+
+                  - `"web_search_result_location"`
+
+                - `url: str`
+
+              - `class CitationSearchResultLocationParam: …`
+
+                - `cited_text: str`
+
+                - `end_block_index: int`
+
+                - `search_result_index: int`
+
+                - `source: str`
+
+                - `start_block_index: int`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["search_result_location"]`
+
+                  - `"search_result_location"`
+
+          - `class ImageBlockParam: …`
+
+            - `source: Source`
+
+              - `class Base64ImageSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                  - `"image/jpeg"`
+
+                  - `"image/png"`
+
+                  - `"image/gif"`
+
+                  - `"image/webp"`
+
+                - `type: Literal["base64"]`
+
+                  - `"base64"`
+
+              - `class URLImageSource: …`
+
+                - `type: Literal["url"]`
+
+                  - `"url"`
+
+                - `url: str`
+
+            - `type: Literal["image"]`
+
+              - `"image"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+          - `class DocumentBlockParam: …`
+
+            - `source: Source`
+
+              - `class Base64PDFSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["application/pdf"]`
+
+                  - `"application/pdf"`
+
+                - `type: Literal["base64"]`
+
+                  - `"base64"`
+
+              - `class PlainTextSource: …`
+
+                - `data: str`
+
+                - `media_type: Literal["text/plain"]`
+
+                  - `"text/plain"`
+
+                - `type: Literal["text"]`
+
+                  - `"text"`
+
+              - `class ContentBlockSource: …`
+
+                - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                  - `str`
+
+                  - `List[ContentBlockSourceContent]`
+
+                    - `class TextBlockParam: …`
+
+                      - `text: str`
+
+                      - `type: Literal["text"]`
+
+                        - `"text"`
+
+                      - `cache_control: Optional[CacheControlEphemeral]`
+
+                        Create a cache control breakpoint at this content block.
+
+                        - `type: Literal["ephemeral"]`
+
+                          - `"ephemeral"`
+
+                        - `ttl: Optional[Literal["5m", "1h"]]`
+
+                          The time-to-live for the cache control breakpoint.
+
+                          This may be one the following values:
+
+                          - `5m`: 5 minutes
+                          - `1h`: 1 hour
+
+                          Defaults to `5m`.
+
+                          - `"5m"`
+
+                          - `"1h"`
+
+                      - `citations: Optional[List[TextCitationParam]]`
+
+                        - `class CitationCharLocationParam: …`
+
+                          - `cited_text: str`
+
+                          - `document_index: int`
+
+                          - `document_title: Optional[str]`
+
+                          - `end_char_index: int`
+
+                          - `start_char_index: int`
+
+                          - `type: Literal["char_location"]`
+
+                            - `"char_location"`
+
+                        - `class CitationPageLocationParam: …`
+
+                          - `cited_text: str`
+
+                          - `document_index: int`
+
+                          - `document_title: Optional[str]`
+
+                          - `end_page_number: int`
+
+                          - `start_page_number: int`
+
+                          - `type: Literal["page_location"]`
+
+                            - `"page_location"`
+
+                        - `class CitationContentBlockLocationParam: …`
+
+                          - `cited_text: str`
+
+                          - `document_index: int`
+
+                          - `document_title: Optional[str]`
+
+                          - `end_block_index: int`
+
+                          - `start_block_index: int`
+
+                          - `type: Literal["content_block_location"]`
+
+                            - `"content_block_location"`
+
+                        - `class CitationWebSearchResultLocationParam: …`
+
+                          - `cited_text: str`
+
+                          - `encrypted_index: str`
+
+                          - `title: Optional[str]`
+
+                          - `type: Literal["web_search_result_location"]`
+
+                            - `"web_search_result_location"`
+
+                          - `url: str`
+
+                        - `class CitationSearchResultLocationParam: …`
+
+                          - `cited_text: str`
+
+                          - `end_block_index: int`
+
+                          - `search_result_index: int`
+
+                          - `source: str`
+
+                          - `start_block_index: int`
+
+                          - `title: Optional[str]`
+
+                          - `type: Literal["search_result_location"]`
+
+                            - `"search_result_location"`
+
+                    - `class ImageBlockParam: …`
+
+                      - `source: Source`
+
+                        - `class Base64ImageSource: …`
+
+                          - `data: str`
+
+                          - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                            - `"image/jpeg"`
+
+                            - `"image/png"`
+
+                            - `"image/gif"`
+
+                            - `"image/webp"`
+
+                          - `type: Literal["base64"]`
+
+                            - `"base64"`
+
+                        - `class URLImageSource: …`
+
+                          - `type: Literal["url"]`
+
+                            - `"url"`
+
+                          - `url: str`
+
+                      - `type: Literal["image"]`
+
+                        - `"image"`
+
+                      - `cache_control: Optional[CacheControlEphemeral]`
+
+                        Create a cache control breakpoint at this content block.
+
+                        - `type: Literal["ephemeral"]`
+
+                          - `"ephemeral"`
+
+                        - `ttl: Optional[Literal["5m", "1h"]]`
+
+                          The time-to-live for the cache control breakpoint.
+
+                          This may be one the following values:
+
+                          - `5m`: 5 minutes
+                          - `1h`: 1 hour
+
+                          Defaults to `5m`.
+
+                          - `"5m"`
+
+                          - `"1h"`
+
+                - `type: Literal["content"]`
+
+                  - `"content"`
+
+              - `class URLPDFSource: …`
+
+                - `type: Literal["url"]`
+
+                  - `"url"`
+
+                - `url: str`
+
+            - `type: Literal["document"]`
+
+              - `"document"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `citations: Optional[CitationsConfigParam]`
+
+              - `enabled: Optional[bool]`
+
+            - `context: Optional[str]`
+
+            - `title: Optional[str]`
+
+          - `class SearchResultBlockParam: …`
+
+            - `content: List[TextBlockParam]`
+
+              - `text: str`
+
+              - `type: Literal["text"]`
+
+                - `"text"`
+
+              - `cache_control: Optional[CacheControlEphemeral]`
+
+                Create a cache control breakpoint at this content block.
+
+                - `type: Literal["ephemeral"]`
+
+                  - `"ephemeral"`
+
+                - `ttl: Optional[Literal["5m", "1h"]]`
+
+                  The time-to-live for the cache control breakpoint.
+
+                  This may be one the following values:
+
+                  - `5m`: 5 minutes
+                  - `1h`: 1 hour
+
+                  Defaults to `5m`.
+
+                  - `"5m"`
+
+                  - `"1h"`
+
+              - `citations: Optional[List[TextCitationParam]]`
+
+                - `class CitationCharLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_char_index: int`
+
+                  - `start_char_index: int`
+
+                  - `type: Literal["char_location"]`
+
+                    - `"char_location"`
+
+                - `class CitationPageLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_page_number: int`
+
+                  - `start_page_number: int`
+
+                  - `type: Literal["page_location"]`
+
+                    - `"page_location"`
+
+                - `class CitationContentBlockLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `document_index: int`
+
+                  - `document_title: Optional[str]`
+
+                  - `end_block_index: int`
+
+                  - `start_block_index: int`
+
+                  - `type: Literal["content_block_location"]`
+
+                    - `"content_block_location"`
+
+                - `class CitationWebSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `encrypted_index: str`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["web_search_result_location"]`
+
+                    - `"web_search_result_location"`
+
+                  - `url: str`
+
+                - `class CitationSearchResultLocationParam: …`
+
+                  - `cited_text: str`
+
+                  - `end_block_index: int`
+
+                  - `search_result_index: int`
+
+                  - `source: str`
+
+                  - `start_block_index: int`
+
+                  - `title: Optional[str]`
+
+                  - `type: Literal["search_result_location"]`
+
+                    - `"search_result_location"`
+
+            - `source: str`
+
+            - `title: str`
+
+            - `type: Literal["search_result"]`
+
+              - `"search_result"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `citations: Optional[CitationsConfigParam]`
+
+              - `enabled: Optional[bool]`
+
+          - `class ThinkingBlockParam: …`
+
+            - `signature: str`
+
+            - `thinking: str`
+
+            - `type: Literal["thinking"]`
+
+              - `"thinking"`
+
+          - `class RedactedThinkingBlockParam: …`
+
+            - `data: str`
+
+            - `type: Literal["redacted_thinking"]`
+
+              - `"redacted_thinking"`
+
+          - `class ToolUseBlockParam: …`
+
+            - `id: str`
+
+            - `input: Dict[str, object]`
+
+            - `name: str`
+
+            - `type: Literal["tool_use"]`
+
+              - `"tool_use"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `caller: Optional[Caller]`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+          - `class ToolResultBlockParam: …`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["tool_result"]`
+
+              - `"tool_result"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `content: Optional[Union[str, List[Content], null]]`
+
+              - `str`
+
+              - `List[Content]`
+
+                - `class TextBlockParam: …`
+
+                  - `text: str`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[List[TextCitationParam]]`
+
+                    - `class CitationCharLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_char_index: int`
+
+                      - `start_char_index: int`
+
+                      - `type: Literal["char_location"]`
+
+                        - `"char_location"`
+
+                    - `class CitationPageLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_page_number: int`
+
+                      - `start_page_number: int`
+
+                      - `type: Literal["page_location"]`
+
+                        - `"page_location"`
+
+                    - `class CitationContentBlockLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `document_index: int`
+
+                      - `document_title: Optional[str]`
+
+                      - `end_block_index: int`
+
+                      - `start_block_index: int`
+
+                      - `type: Literal["content_block_location"]`
+
+                        - `"content_block_location"`
+
+                    - `class CitationWebSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `encrypted_index: str`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["web_search_result_location"]`
+
+                        - `"web_search_result_location"`
+
+                      - `url: str`
+
+                    - `class CitationSearchResultLocationParam: …`
+
+                      - `cited_text: str`
+
+                      - `end_block_index: int`
+
+                      - `search_result_index: int`
+
+                      - `source: str`
+
+                      - `start_block_index: int`
+
+                      - `title: Optional[str]`
+
+                      - `type: Literal["search_result_location"]`
+
+                        - `"search_result_location"`
+
+                - `class ImageBlockParam: …`
+
+                  - `source: Source`
+
+                    - `class Base64ImageSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                        - `"image/jpeg"`
+
+                        - `"image/png"`
+
+                        - `"image/gif"`
+
+                        - `"image/webp"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class URLImageSource: …`
+
+                      - `type: Literal["url"]`
+
+                        - `"url"`
+
+                      - `url: str`
+
+                  - `type: Literal["image"]`
+
+                    - `"image"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                - `class SearchResultBlockParam: …`
+
+                  - `content: List[TextBlockParam]`
+
+                    - `text: str`
+
+                    - `type: Literal["text"]`
+
+                      - `"text"`
+
+                    - `cache_control: Optional[CacheControlEphemeral]`
+
+                      Create a cache control breakpoint at this content block.
+
+                      - `type: Literal["ephemeral"]`
+
+                        - `"ephemeral"`
+
+                      - `ttl: Optional[Literal["5m", "1h"]]`
+
+                        The time-to-live for the cache control breakpoint.
+
+                        This may be one the following values:
+
+                        - `5m`: 5 minutes
+                        - `1h`: 1 hour
+
+                        Defaults to `5m`.
+
+                        - `"5m"`
+
+                        - `"1h"`
+
+                    - `citations: Optional[List[TextCitationParam]]`
+
+                      - `class CitationCharLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_char_index: int`
+
+                        - `start_char_index: int`
+
+                        - `type: Literal["char_location"]`
+
+                          - `"char_location"`
+
+                      - `class CitationPageLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_page_number: int`
+
+                        - `start_page_number: int`
+
+                        - `type: Literal["page_location"]`
+
+                          - `"page_location"`
+
+                      - `class CitationContentBlockLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `document_index: int`
+
+                        - `document_title: Optional[str]`
+
+                        - `end_block_index: int`
+
+                        - `start_block_index: int`
+
+                        - `type: Literal["content_block_location"]`
+
+                          - `"content_block_location"`
+
+                      - `class CitationWebSearchResultLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `encrypted_index: str`
+
+                        - `title: Optional[str]`
+
+                        - `type: Literal["web_search_result_location"]`
+
+                          - `"web_search_result_location"`
+
+                        - `url: str`
+
+                      - `class CitationSearchResultLocationParam: …`
+
+                        - `cited_text: str`
+
+                        - `end_block_index: int`
+
+                        - `search_result_index: int`
+
+                        - `source: str`
+
+                        - `start_block_index: int`
+
+                        - `title: Optional[str]`
+
+                        - `type: Literal["search_result_location"]`
+
+                          - `"search_result_location"`
+
+                  - `source: str`
+
+                  - `title: str`
+
+                  - `type: Literal["search_result"]`
+
+                    - `"search_result"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[CitationsConfigParam]`
+
+                    - `enabled: Optional[bool]`
+
+                - `class DocumentBlockParam: …`
+
+                  - `source: Source`
+
+                    - `class Base64PDFSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["application/pdf"]`
+
+                        - `"application/pdf"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class PlainTextSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["text/plain"]`
+
+                        - `"text/plain"`
+
+                      - `type: Literal["text"]`
+
+                        - `"text"`
+
+                    - `class ContentBlockSource: …`
+
+                      - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                        - `str`
+
+                        - `List[ContentBlockSourceContent]`
+
+                          - `class TextBlockParam: …`
+
+                            - `text: str`
+
+                            - `type: Literal["text"]`
+
+                              - `"text"`
+
+                            - `cache_control: Optional[CacheControlEphemeral]`
+
+                              Create a cache control breakpoint at this content block.
+
+                              - `type: Literal["ephemeral"]`
+
+                                - `"ephemeral"`
+
+                              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                                The time-to-live for the cache control breakpoint.
+
+                                This may be one the following values:
+
+                                - `5m`: 5 minutes
+                                - `1h`: 1 hour
+
+                                Defaults to `5m`.
+
+                                - `"5m"`
+
+                                - `"1h"`
+
+                            - `citations: Optional[List[TextCitationParam]]`
+
+                              - `class CitationCharLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `document_index: int`
+
+                                - `document_title: Optional[str]`
+
+                                - `end_char_index: int`
+
+                                - `start_char_index: int`
+
+                                - `type: Literal["char_location"]`
+
+                                  - `"char_location"`
+
+                              - `class CitationPageLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `document_index: int`
+
+                                - `document_title: Optional[str]`
+
+                                - `end_page_number: int`
+
+                                - `start_page_number: int`
+
+                                - `type: Literal["page_location"]`
+
+                                  - `"page_location"`
+
+                              - `class CitationContentBlockLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `document_index: int`
+
+                                - `document_title: Optional[str]`
+
+                                - `end_block_index: int`
+
+                                - `start_block_index: int`
+
+                                - `type: Literal["content_block_location"]`
+
+                                  - `"content_block_location"`
+
+                              - `class CitationWebSearchResultLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `encrypted_index: str`
+
+                                - `title: Optional[str]`
+
+                                - `type: Literal["web_search_result_location"]`
+
+                                  - `"web_search_result_location"`
+
+                                - `url: str`
+
+                              - `class CitationSearchResultLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `end_block_index: int`
+
+                                - `search_result_index: int`
+
+                                - `source: str`
+
+                                - `start_block_index: int`
+
+                                - `title: Optional[str]`
+
+                                - `type: Literal["search_result_location"]`
+
+                                  - `"search_result_location"`
+
+                          - `class ImageBlockParam: …`
+
+                            - `source: Source`
+
+                              - `class Base64ImageSource: …`
+
+                                - `data: str`
+
+                                - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                                  - `"image/jpeg"`
+
+                                  - `"image/png"`
+
+                                  - `"image/gif"`
+
+                                  - `"image/webp"`
+
+                                - `type: Literal["base64"]`
+
+                                  - `"base64"`
+
+                              - `class URLImageSource: …`
+
+                                - `type: Literal["url"]`
+
+                                  - `"url"`
+
+                                - `url: str`
+
+                            - `type: Literal["image"]`
+
+                              - `"image"`
+
+                            - `cache_control: Optional[CacheControlEphemeral]`
+
+                              Create a cache control breakpoint at this content block.
+
+                              - `type: Literal["ephemeral"]`
+
+                                - `"ephemeral"`
+
+                              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                                The time-to-live for the cache control breakpoint.
+
+                                This may be one the following values:
+
+                                - `5m`: 5 minutes
+                                - `1h`: 1 hour
+
+                                Defaults to `5m`.
+
+                                - `"5m"`
+
+                                - `"1h"`
+
+                      - `type: Literal["content"]`
+
+                        - `"content"`
+
+                    - `class URLPDFSource: …`
+
+                      - `type: Literal["url"]`
+
+                        - `"url"`
+
+                      - `url: str`
+
+                  - `type: Literal["document"]`
+
+                    - `"document"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[CitationsConfigParam]`
+
+                    - `enabled: Optional[bool]`
+
+                  - `context: Optional[str]`
+
+                  - `title: Optional[str]`
+
+                - `class ToolReferenceBlockParam: …`
+
+                  Tool reference block that can be included in tool_result content.
+
+                  - `tool_name: str`
+
+                  - `type: Literal["tool_reference"]`
+
+                    - `"tool_reference"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+            - `is_error: Optional[bool]`
+
+          - `class ServerToolUseBlockParam: …`
+
+            - `id: str`
+
+            - `input: Dict[str, object]`
+
+            - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+              - `"web_search"`
+
+              - `"web_fetch"`
+
+              - `"code_execution"`
+
+              - `"bash_code_execution"`
+
+              - `"text_editor_code_execution"`
+
+              - `"tool_search_tool_regex"`
+
+              - `"tool_search_tool_bm25"`
+
+            - `type: Literal["server_tool_use"]`
+
+              - `"server_tool_use"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `caller: Optional[Caller]`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+          - `class WebSearchToolResultBlockParam: …`
+
+            - `content: WebSearchToolResultBlockParamContent`
+
+              - `List[WebSearchResultBlockParam]`
+
+                - `encrypted_content: str`
+
+                - `title: str`
+
+                - `type: Literal["web_search_result"]`
+
+                  - `"web_search_result"`
+
+                - `url: str`
+
+                - `page_age: Optional[str]`
+
+              - `class WebSearchToolRequestError: …`
+
+                - `error_code: WebSearchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"max_uses_exceeded"`
+
+                  - `"too_many_requests"`
+
+                  - `"query_too_long"`
+
+                  - `"request_too_large"`
+
+                - `type: Literal["web_search_tool_result_error"]`
+
+                  - `"web_search_tool_result_error"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["web_search_tool_result"]`
+
+              - `"web_search_tool_result"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `caller: Optional[Caller]`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+          - `class WebFetchToolResultBlockParam: …`
+
+            - `content: Content`
+
+              - `class WebFetchToolResultErrorBlockParam: …`
+
+                - `error_code: WebFetchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"url_too_long"`
+
+                  - `"url_not_allowed"`
+
+                  - `"url_not_accessible"`
+
+                  - `"unsupported_content_type"`
+
+                  - `"too_many_requests"`
+
+                  - `"max_uses_exceeded"`
+
+                  - `"unavailable"`
+
+                - `type: Literal["web_fetch_tool_result_error"]`
+
+                  - `"web_fetch_tool_result_error"`
+
+              - `class WebFetchBlockParam: …`
+
+                - `content: DocumentBlockParam`
+
+                  - `source: Source`
+
+                    - `class Base64PDFSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["application/pdf"]`
+
+                        - `"application/pdf"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class PlainTextSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["text/plain"]`
+
+                        - `"text/plain"`
+
+                      - `type: Literal["text"]`
+
+                        - `"text"`
+
+                    - `class ContentBlockSource: …`
+
+                      - `content: Union[str, List[ContentBlockSourceContent]]`
+
+                        - `str`
+
+                        - `List[ContentBlockSourceContent]`
+
+                          - `class TextBlockParam: …`
+
+                            - `text: str`
+
+                            - `type: Literal["text"]`
+
+                              - `"text"`
+
+                            - `cache_control: Optional[CacheControlEphemeral]`
+
+                              Create a cache control breakpoint at this content block.
+
+                              - `type: Literal["ephemeral"]`
+
+                                - `"ephemeral"`
+
+                              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                                The time-to-live for the cache control breakpoint.
+
+                                This may be one the following values:
+
+                                - `5m`: 5 minutes
+                                - `1h`: 1 hour
+
+                                Defaults to `5m`.
+
+                                - `"5m"`
+
+                                - `"1h"`
+
+                            - `citations: Optional[List[TextCitationParam]]`
+
+                              - `class CitationCharLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `document_index: int`
+
+                                - `document_title: Optional[str]`
+
+                                - `end_char_index: int`
+
+                                - `start_char_index: int`
+
+                                - `type: Literal["char_location"]`
+
+                                  - `"char_location"`
+
+                              - `class CitationPageLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `document_index: int`
+
+                                - `document_title: Optional[str]`
+
+                                - `end_page_number: int`
+
+                                - `start_page_number: int`
+
+                                - `type: Literal["page_location"]`
+
+                                  - `"page_location"`
+
+                              - `class CitationContentBlockLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `document_index: int`
+
+                                - `document_title: Optional[str]`
+
+                                - `end_block_index: int`
+
+                                - `start_block_index: int`
+
+                                - `type: Literal["content_block_location"]`
+
+                                  - `"content_block_location"`
+
+                              - `class CitationWebSearchResultLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `encrypted_index: str`
+
+                                - `title: Optional[str]`
+
+                                - `type: Literal["web_search_result_location"]`
+
+                                  - `"web_search_result_location"`
+
+                                - `url: str`
+
+                              - `class CitationSearchResultLocationParam: …`
+
+                                - `cited_text: str`
+
+                                - `end_block_index: int`
+
+                                - `search_result_index: int`
+
+                                - `source: str`
+
+                                - `start_block_index: int`
+
+                                - `title: Optional[str]`
+
+                                - `type: Literal["search_result_location"]`
+
+                                  - `"search_result_location"`
+
+                          - `class ImageBlockParam: …`
+
+                            - `source: Source`
+
+                              - `class Base64ImageSource: …`
+
+                                - `data: str`
+
+                                - `media_type: Literal["image/jpeg", "image/png", "image/gif", "image/webp"]`
+
+                                  - `"image/jpeg"`
+
+                                  - `"image/png"`
+
+                                  - `"image/gif"`
+
+                                  - `"image/webp"`
+
+                                - `type: Literal["base64"]`
+
+                                  - `"base64"`
+
+                              - `class URLImageSource: …`
+
+                                - `type: Literal["url"]`
+
+                                  - `"url"`
+
+                                - `url: str`
+
+                            - `type: Literal["image"]`
+
+                              - `"image"`
+
+                            - `cache_control: Optional[CacheControlEphemeral]`
+
+                              Create a cache control breakpoint at this content block.
+
+                              - `type: Literal["ephemeral"]`
+
+                                - `"ephemeral"`
+
+                              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                                The time-to-live for the cache control breakpoint.
+
+                                This may be one the following values:
+
+                                - `5m`: 5 minutes
+                                - `1h`: 1 hour
+
+                                Defaults to `5m`.
+
+                                - `"5m"`
+
+                                - `"1h"`
+
+                      - `type: Literal["content"]`
+
+                        - `"content"`
+
+                    - `class URLPDFSource: …`
+
+                      - `type: Literal["url"]`
+
+                        - `"url"`
+
+                      - `url: str`
+
+                  - `type: Literal["document"]`
+
+                    - `"document"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                  - `citations: Optional[CitationsConfigParam]`
+
+                    - `enabled: Optional[bool]`
+
+                  - `context: Optional[str]`
+
+                  - `title: Optional[str]`
+
+                - `type: Literal["web_fetch_result"]`
+
+                  - `"web_fetch_result"`
+
+                - `url: str`
+
+                  Fetched content URL
+
+                - `retrieved_at: Optional[str]`
+
+                  ISO 8601 timestamp when the content was retrieved
+
+            - `tool_use_id: str`
+
+            - `type: Literal["web_fetch_tool_result"]`
+
+              - `"web_fetch_tool_result"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+            - `caller: Optional[Caller]`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+          - `class CodeExecutionToolResultBlockParam: …`
+
+            - `content: CodeExecutionToolResultBlockParamContent`
+
+              Code execution result with encrypted stdout for PFC + web_search results.
+
+              - `class CodeExecutionToolResultErrorParam: …`
+
+                - `error_code: CodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                - `type: Literal["code_execution_tool_result_error"]`
+
+                  - `"code_execution_tool_result_error"`
+
+              - `class CodeExecutionResultBlockParam: …`
+
+                - `content: List[CodeExecutionOutputBlockParam]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["code_execution_output"]`
+
+                    - `"code_execution_output"`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `stdout: str`
+
+                - `type: Literal["code_execution_result"]`
+
+                  - `"code_execution_result"`
+
+              - `class EncryptedCodeExecutionResultBlockParam: …`
+
+                Code execution result with encrypted stdout for PFC + web_search results.
+
+                - `content: List[CodeExecutionOutputBlockParam]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["code_execution_output"]`
+
+                    - `"code_execution_output"`
+
+                - `encrypted_stdout: str`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `type: Literal["encrypted_code_execution_result"]`
+
+                  - `"encrypted_code_execution_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["code_execution_tool_result"]`
+
+              - `"code_execution_tool_result"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+          - `class BashCodeExecutionToolResultBlockParam: …`
+
+            - `content: Content`
+
+              - `class BashCodeExecutionToolResultErrorParam: …`
+
+                - `error_code: BashCodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                  - `"output_file_too_large"`
+
+                - `type: Literal["bash_code_execution_tool_result_error"]`
+
+                  - `"bash_code_execution_tool_result_error"`
+
+              - `class BashCodeExecutionResultBlockParam: …`
+
+                - `content: List[BashCodeExecutionOutputBlockParam]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["bash_code_execution_output"]`
+
+                    - `"bash_code_execution_output"`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `stdout: str`
+
+                - `type: Literal["bash_code_execution_result"]`
+
+                  - `"bash_code_execution_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["bash_code_execution_tool_result"]`
+
+              - `"bash_code_execution_tool_result"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+          - `class TextEditorCodeExecutionToolResultBlockParam: …`
+
+            - `content: Content`
+
+              - `class TextEditorCodeExecutionToolResultErrorParam: …`
+
+                - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                  - `"file_not_found"`
+
+                - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+                  - `"text_editor_code_execution_tool_result_error"`
+
+                - `error_message: Optional[str]`
+
+              - `class TextEditorCodeExecutionViewResultBlockParam: …`
+
+                - `content: str`
+
+                - `file_type: Literal["text", "image", "pdf"]`
+
+                  - `"text"`
+
+                  - `"image"`
+
+                  - `"pdf"`
+
+                - `type: Literal["text_editor_code_execution_view_result"]`
+
+                  - `"text_editor_code_execution_view_result"`
+
+                - `num_lines: Optional[int]`
+
+                - `start_line: Optional[int]`
+
+                - `total_lines: Optional[int]`
+
+              - `class TextEditorCodeExecutionCreateResultBlockParam: …`
+
+                - `is_file_update: bool`
+
+                - `type: Literal["text_editor_code_execution_create_result"]`
+
+                  - `"text_editor_code_execution_create_result"`
+
+              - `class TextEditorCodeExecutionStrReplaceResultBlockParam: …`
+
+                - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+                  - `"text_editor_code_execution_str_replace_result"`
+
+                - `lines: Optional[List[str]]`
+
+                - `new_lines: Optional[int]`
+
+                - `new_start: Optional[int]`
+
+                - `old_lines: Optional[int]`
+
+                - `old_start: Optional[int]`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["text_editor_code_execution_tool_result"]`
+
+              - `"text_editor_code_execution_tool_result"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+          - `class ToolSearchToolResultBlockParam: …`
+
+            - `content: Content`
+
+              - `class ToolSearchToolResultErrorParam: …`
+
+                - `error_code: ToolSearchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                - `type: Literal["tool_search_tool_result_error"]`
+
+                  - `"tool_search_tool_result_error"`
+
+              - `class ToolSearchToolSearchResultBlockParam: …`
+
+                - `tool_references: List[ToolReferenceBlockParam]`
+
+                  - `tool_name: str`
+
+                  - `type: Literal["tool_reference"]`
+
+                    - `"tool_reference"`
+
+                  - `cache_control: Optional[CacheControlEphemeral]`
+
+                    Create a cache control breakpoint at this content block.
+
+                    - `type: Literal["ephemeral"]`
+
+                      - `"ephemeral"`
+
+                    - `ttl: Optional[Literal["5m", "1h"]]`
+
+                      The time-to-live for the cache control breakpoint.
+
+                      This may be one the following values:
+
+                      - `5m`: 5 minutes
+                      - `1h`: 1 hour
+
+                      Defaults to `5m`.
+
+                      - `"5m"`
+
+                      - `"1h"`
+
+                - `type: Literal["tool_search_tool_search_result"]`
+
+                  - `"tool_search_tool_search_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["tool_search_tool_result"]`
+
+              - `"tool_search_tool_result"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+          - `class ContainerUploadBlockParam: …`
+
+            A content block that represents a file to be uploaded to the container
+            Files uploaded via this block will be available in the container's input directory.
+
+            - `file_id: str`
+
+            - `type: Literal["container_upload"]`
+
+              - `"container_upload"`
+
+            - `cache_control: Optional[CacheControlEphemeral]`
+
+              Create a cache control breakpoint at this content block.
+
+              - `type: Literal["ephemeral"]`
+
+                - `"ephemeral"`
+
+              - `ttl: Optional[Literal["5m", "1h"]]`
+
+                The time-to-live for the cache control breakpoint.
+
+                This may be one the following values:
+
+                - `5m`: 5 minutes
+                - `1h`: 1 hour
+
+                Defaults to `5m`.
+
+                - `"5m"`
+
+                - `"1h"`
+
+      - `role: Literal["user", "assistant"]`
+
+        - `"user"`
+
+        - `"assistant"`
+
+    - `model: ModelParam`
+
+      The model that will complete your prompt.
+
+      See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+      - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+        The model that will complete your prompt.
+
+        See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+        - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+        - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+        - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+        - `claude-sonnet-4-6` - Best combination of speed and intelligence
+        - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+        - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+        - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+        - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+        - `claude-sonnet-4-5` - High-performance model for agents and coding
+        - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+        - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+        - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+        - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+        - `"claude-opus-4-7"`
+
+          Frontier intelligence for long-running agents and coding
+
+        - `"claude-mythos-preview"`
+
+          New class of intelligence, strongest in coding and cybersecurity
+
+        - `"claude-opus-4-6"`
+
+          Frontier intelligence for long-running agents and coding
+
+        - `"claude-sonnet-4-6"`
+
+          Best combination of speed and intelligence
+
+        - `"claude-haiku-4-5"`
+
+          Fastest model with near-frontier intelligence
+
+        - `"claude-haiku-4-5-20251001"`
+
+          Fastest model with near-frontier intelligence
+
+        - `"claude-opus-4-5"`
+
+          Premium model combining maximum intelligence with practical performance
+
+        - `"claude-opus-4-5-20251101"`
+
+          Premium model combining maximum intelligence with practical performance
+
+        - `"claude-sonnet-4-5"`
+
+          High-performance model for agents and coding
+
+        - `"claude-sonnet-4-5-20250929"`
+
+          High-performance model for agents and coding
+
+        - `"claude-opus-4-1"`
+
+          Exceptional model for specialized complex tasks
+
+        - `"claude-opus-4-1-20250805"`
+
+          Exceptional model for specialized complex tasks
+
+        - `"claude-opus-4-0"`
+
+          Powerful model for complex tasks
+
+        - `"claude-opus-4-20250514"`
+
+          Powerful model for complex tasks
+
+        - `"claude-sonnet-4-0"`
+
+          High-performance model with extended thinking
+
+        - `"claude-sonnet-4-20250514"`
+
+          High-performance model with extended thinking
+
+        - `"claude-3-haiku-20240307"`
+
+          Fast and cost-effective model
+
+      - `str`
+
+    - `cache_control: Optional[CacheControlEphemeralParam]`
+
+      Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
+
+      - `type: Literal["ephemeral"]`
+
+        - `"ephemeral"`
+
+      - `ttl: Optional[Literal["5m", "1h"]]`
+
+        The time-to-live for the cache control breakpoint.
+
+        This may be one the following values:
+
+        - `5m`: 5 minutes
+        - `1h`: 1 hour
+
+        Defaults to `5m`.
+
+        - `"5m"`
+
+        - `"1h"`
+
+    - `container: Optional[str]`
+
+      Container identifier for reuse across requests.
+
+    - `inference_geo: Optional[str]`
+
+      Specifies the geographic region for inference processing. If not specified, the workspace's `default_inference_geo` is used.
+
+    - `metadata: Optional[MetadataParam]`
+
+      An object describing metadata about the request.
+
+      - `user_id: Optional[str]`
+
+        An external identifier for the user who is associated with the request.
+
+        This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.
+
+    - `output_config: Optional[OutputConfigParam]`
+
+      Configuration options for the model's output, such as the output format.
+
+      - `effort: Optional[Literal["low", "medium", "high", "max"]]`
+
+        All possible effort levels.
+
+        - `"low"`
+
+        - `"medium"`
+
+        - `"high"`
+
+        - `"max"`
+
+      - `format: Optional[JSONOutputFormat]`
+
+        A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+
+        - `schema: Dict[str, object]`
+
+          The JSON schema of the format
+
+        - `type: Literal["json_schema"]`
+
+          - `"json_schema"`
+
+    - `service_tier: Optional[Literal["auto", "standard_only"]]`
+
+      Determines whether to use priority capacity (if available) or standard capacity for this request.
+
+      Anthropic offers different levels of service for your API requests. See [service-tiers](https://docs.claude.com/en/api/service-tiers) for details.
+
+      - `"auto"`
+
+      - `"standard_only"`
+
+    - `stop_sequences: Optional[Sequence[str]]`
+
+      Custom text sequences that will cause the model to stop generating.
+
+      Our models will normally stop when they have naturally completed their turn, which will result in a response `stop_reason` of `"end_turn"`.
+
+      If you want the model to stop generating when it encounters custom strings of text, you can use the `stop_sequences` parameter. If the model encounters one of the custom sequences, the response `stop_reason` value will be `"stop_sequence"` and the response `stop_sequence` value will contain the matched stop sequence.
+
+    - `stream: Optional[bool]`
+
+      Whether to incrementally stream the response using server-sent events.
+
+      See [streaming](https://docs.claude.com/en/api/messages-streaming) for details.
+
+    - `system: Optional[Union[str, Iterable[TextBlockParam]]]`
+
+      System prompt.
+
+      A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.claude.com/en/docs/system-prompts).
+
+      - `str`
+
+      - `Iterable[TextBlockParam]`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[List[TextCitationParam]]`
+
+          - `class CitationCharLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocationParam: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationWebSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationSearchResultLocationParam: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+    - `temperature: Optional[float]`
+
+      Amount of randomness injected into the response.
+
+      Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.
+
+      Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
+
+    - `thinking: Optional[ThinkingConfigParam]`
+
+      Configuration for enabling Claude's extended thinking.
+
+      When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.
+
+      See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+      - `class ThinkingConfigEnabled: …`
+
+        - `budget_tokens: int`
+
+          Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality.
+
+          Must be ≥1024 and less than `max_tokens`.
+
+          See [extended thinking](https://docs.claude.com/en/docs/build-with-claude/extended-thinking) for details.
+
+        - `type: Literal["enabled"]`
+
+          - `"enabled"`
+
+        - `display: Optional[Literal["summarized", "omitted"]]`
+
+          Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+          - `"summarized"`
+
+          - `"omitted"`
+
+      - `class ThinkingConfigDisabled: …`
+
+        - `type: Literal["disabled"]`
+
+          - `"disabled"`
+
+      - `class ThinkingConfigAdaptive: …`
+
+        - `type: Literal["adaptive"]`
+
+          - `"adaptive"`
+
+        - `display: Optional[Literal["summarized", "omitted"]]`
+
+          Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+
+          - `"summarized"`
+
+          - `"omitted"`
+
+    - `tool_choice: Optional[ToolChoiceParam]`
+
+      How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
+
+      - `class ToolChoiceAuto: …`
+
+        The model will automatically decide whether to use tools.
+
+        - `type: Literal["auto"]`
+
+          - `"auto"`
+
+        - `disable_parallel_tool_use: Optional[bool]`
+
+          Whether to disable parallel tool use.
+
+          Defaults to `false`. If set to `true`, the model will output at most one tool use.
+
+      - `class ToolChoiceAny: …`
+
+        The model will use any available tools.
+
+        - `type: Literal["any"]`
+
+          - `"any"`
+
+        - `disable_parallel_tool_use: Optional[bool]`
+
+          Whether to disable parallel tool use.
+
+          Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+      - `class ToolChoiceTool: …`
+
+        The model will use the specified tool with `tool_choice.name`.
+
+        - `name: str`
+
+          The name of the tool to use.
+
+        - `type: Literal["tool"]`
+
+          - `"tool"`
+
+        - `disable_parallel_tool_use: Optional[bool]`
+
+          Whether to disable parallel tool use.
+
+          Defaults to `false`. If set to `true`, the model will output exactly one tool use.
+
+      - `class ToolChoiceNone: …`
+
+        The model will not be allowed to use tools.
+
+        - `type: Literal["none"]`
+
+          - `"none"`
+
+    - `tools: Optional[Iterable[ToolUnionParam]]`
+
+      Definitions of tools that the model may use.
+
+      If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
+
+      There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview#server-tools), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://docs.claude.com/en/docs/agents-and-tools/tool-use/web-search-tool)).
+
+      Each tool definition includes:
+
+      * `name`: Name of the tool.
+      * `description`: Optional, but strongly-recommended description of the tool.
+      * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.
+
+      For example, if you defined `tools` as:
+
+      ```json
+      [
+        {
+          "name": "get_stock_price",
+          "description": "Get the current stock price for a given ticker symbol.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "ticker": {
+                "type": "string",
+                "description": "The stock ticker symbol, e.g. AAPL for Apple Inc."
+              }
+            },
+            "required": ["ticker"]
+          }
+        }
+      ]
+      ```
+
+      And then asked the model "What's the S&P 500 at today?", the model might produce `tool_use` content blocks in the response like this:
+
+      ```json
+      [
+        {
+          "type": "tool_use",
+          "id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",
+          "name": "get_stock_price",
+          "input": { "ticker": "^GSPC" }
+        }
+      ]
+      ```
+
+      You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an input, and return the following back to the model in a subsequent `user` message:
+
+      ```json
+      [
+        {
+          "type": "tool_result",
+          "tool_use_id": "toolu_01D7FLrfh4GYq7yT1ULFeyMV",
+          "content": "259.75 USD"
+        }
+      ]
+      ```
+
+      Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
+
+      See our [guide](https://docs.claude.com/en/docs/tool-use) for more details.
+
+      - `class Tool: …`
+
+        - `input_schema: InputSchema`
+
+          [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.
+
+          This defines the shape of the `input` that your tool accepts and that the model will produce.
+
+          - `type: Literal["object"]`
+
+            - `"object"`
+
+          - `properties: Optional[Dict[str, object]]`
+
+          - `required: Optional[List[str]]`
+
+        - `name: str`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `description: Optional[str]`
+
+          Description of what this tool does.
+
+          Tool descriptions should be as detailed as possible. The more information that the model has about what the tool is and how to use it, the better it will perform. You can use natural language descriptions to reinforce important aspects of the tool input JSON schema.
+
+        - `eager_input_streaming: Optional[bool]`
+
+          Enable eager input streaming for this tool. When true, tool input parameters will be streamed incrementally as they are generated, and types will be inferred on-the-fly rather than buffering the full JSON output. When false, streaming is disabled for this tool even if the fine-grained-tool-streaming beta is active. When null (default), uses the default behavior based on beta headers.
+
+        - `input_examples: Optional[List[Dict[str, object]]]`
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+        - `type: Optional[Literal["custom"]]`
+
+          - `"custom"`
+
+      - `class ToolBash20250124: …`
+
+        - `name: Literal["bash"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"bash"`
+
+        - `type: Literal["bash_20250124"]`
+
+          - `"bash_20250124"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `input_examples: Optional[List[Dict[str, object]]]`
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class CodeExecutionTool20250522: …`
+
+        - `name: Literal["code_execution"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"code_execution"`
+
+        - `type: Literal["code_execution_20250522"]`
+
+          - `"code_execution_20250522"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class CodeExecutionTool20250825: …`
+
+        - `name: Literal["code_execution"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"code_execution"`
+
+        - `type: Literal["code_execution_20250825"]`
+
+          - `"code_execution_20250825"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class CodeExecutionTool20260120: …`
+
+        Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+
+        - `name: Literal["code_execution"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"code_execution"`
+
+        - `type: Literal["code_execution_20260120"]`
+
+          - `"code_execution_20260120"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class MemoryTool20250818: …`
+
+        - `name: Literal["memory"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"memory"`
+
+        - `type: Literal["memory_20250818"]`
+
+          - `"memory_20250818"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `input_examples: Optional[List[Dict[str, object]]]`
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class ToolTextEditor20250124: …`
+
+        - `name: Literal["str_replace_editor"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"str_replace_editor"`
+
+        - `type: Literal["text_editor_20250124"]`
+
+          - `"text_editor_20250124"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `input_examples: Optional[List[Dict[str, object]]]`
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class ToolTextEditor20250429: …`
+
+        - `name: Literal["str_replace_based_edit_tool"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"str_replace_based_edit_tool"`
+
+        - `type: Literal["text_editor_20250429"]`
+
+          - `"text_editor_20250429"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `input_examples: Optional[List[Dict[str, object]]]`
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class ToolTextEditor20250728: …`
+
+        - `name: Literal["str_replace_based_edit_tool"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"str_replace_based_edit_tool"`
+
+        - `type: Literal["text_editor_20250728"]`
+
+          - `"text_editor_20250728"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `input_examples: Optional[List[Dict[str, object]]]`
+
+        - `max_characters: Optional[int]`
+
+          Maximum number of characters to display when viewing a file. If not specified, defaults to displaying the full file.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class WebSearchTool20250305: …`
+
+        - `name: Literal["web_search"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"web_search"`
+
+        - `type: Literal["web_search_20250305"]`
+
+          - `"web_search_20250305"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `allowed_domains: Optional[List[str]]`
+
+          If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+        - `blocked_domains: Optional[List[str]]`
+
+          If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `max_uses: Optional[int]`
+
+          Maximum number of times the tool can be used in the API request.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+        - `user_location: Optional[UserLocation]`
+
+          Parameters for the user's location. Used to provide more relevant search results.
+
+          - `type: Literal["approximate"]`
+
+            - `"approximate"`
+
+          - `city: Optional[str]`
+
+            The city of the user.
+
+          - `country: Optional[str]`
+
+            The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+          - `region: Optional[str]`
+
+            The region of the user.
+
+          - `timezone: Optional[str]`
+
+            The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+      - `class WebFetchTool20250910: …`
+
+        - `name: Literal["web_fetch"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"web_fetch"`
+
+        - `type: Literal["web_fetch_20250910"]`
+
+          - `"web_fetch_20250910"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `allowed_domains: Optional[List[str]]`
+
+          List of domains to allow fetching from
+
+        - `blocked_domains: Optional[List[str]]`
+
+          List of domains to block fetching from
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          Citations configuration for fetched documents. Citations are disabled by default.
+
+          - `enabled: Optional[bool]`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `max_content_tokens: Optional[int]`
+
+          Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+        - `max_uses: Optional[int]`
+
+          Maximum number of times the tool can be used in the API request.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class WebSearchTool20260209: …`
+
+        - `name: Literal["web_search"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"web_search"`
+
+        - `type: Literal["web_search_20260209"]`
+
+          - `"web_search_20260209"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `allowed_domains: Optional[List[str]]`
+
+          If provided, only these domains will be included in results. Cannot be used alongside `blocked_domains`.
+
+        - `blocked_domains: Optional[List[str]]`
+
+          If provided, these domains will never appear in results. Cannot be used alongside `allowed_domains`.
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `max_uses: Optional[int]`
+
+          Maximum number of times the tool can be used in the API request.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+        - `user_location: Optional[UserLocation]`
+
+          Parameters for the user's location. Used to provide more relevant search results.
+
+          - `type: Literal["approximate"]`
+
+            - `"approximate"`
+
+          - `city: Optional[str]`
+
+            The city of the user.
+
+          - `country: Optional[str]`
+
+            The two letter [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the user.
+
+          - `region: Optional[str]`
+
+            The region of the user.
+
+          - `timezone: Optional[str]`
+
+            The [IANA timezone](https://nodatime.org/TimeZones) of the user.
+
+      - `class WebFetchTool20260209: …`
+
+        - `name: Literal["web_fetch"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"web_fetch"`
+
+        - `type: Literal["web_fetch_20260209"]`
+
+          - `"web_fetch_20260209"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `allowed_domains: Optional[List[str]]`
+
+          List of domains to allow fetching from
+
+        - `blocked_domains: Optional[List[str]]`
+
+          List of domains to block fetching from
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          Citations configuration for fetched documents. Citations are disabled by default.
+
+          - `enabled: Optional[bool]`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `max_content_tokens: Optional[int]`
+
+          Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+        - `max_uses: Optional[int]`
+
+          Maximum number of times the tool can be used in the API request.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class WebFetchTool20260309: …`
+
+        Web fetch tool with use_cache parameter for bypassing cached content.
+
+        - `name: Literal["web_fetch"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"web_fetch"`
+
+        - `type: Literal["web_fetch_20260309"]`
+
+          - `"web_fetch_20260309"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `allowed_domains: Optional[List[str]]`
+
+          List of domains to allow fetching from
+
+        - `blocked_domains: Optional[List[str]]`
+
+          List of domains to block fetching from
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `citations: Optional[CitationsConfigParam]`
+
+          Citations configuration for fetched documents. Citations are disabled by default.
+
+          - `enabled: Optional[bool]`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `max_content_tokens: Optional[int]`
+
+          Maximum number of tokens used by including web page text content in the context. The limit is approximate and does not apply to binary content such as PDFs.
+
+        - `max_uses: Optional[int]`
+
+          Maximum number of times the tool can be used in the API request.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+        - `use_cache: Optional[bool]`
+
+          Whether to use cached content. Set to false to bypass the cache and fetch fresh content. Only set to false when the user explicitly requests fresh content or when fetching rapidly-changing sources.
+
+      - `class ToolSearchToolBm25_20251119: …`
+
+        - `name: Literal["tool_search_tool_bm25"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"tool_search_tool_bm25"`
+
+        - `type: Literal["tool_search_tool_bm25_20251119", "tool_search_tool_bm25"]`
+
+          - `"tool_search_tool_bm25_20251119"`
+
+          - `"tool_search_tool_bm25"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+      - `class ToolSearchToolRegex20251119: …`
+
+        - `name: Literal["tool_search_tool_regex"]`
+
+          Name of the tool.
+
+          This is how the tool will be called by the model and in `tool_use` blocks.
+
+          - `"tool_search_tool_regex"`
+
+        - `type: Literal["tool_search_tool_regex_20251119", "tool_search_tool_regex"]`
+
+          - `"tool_search_tool_regex_20251119"`
+
+          - `"tool_search_tool_regex"`
+
+        - `allowed_callers: Optional[List[Literal["direct", "code_execution_20250825", "code_execution_20260120"]]]`
+
+          - `"direct"`
+
+          - `"code_execution_20250825"`
+
+          - `"code_execution_20260120"`
+
+        - `cache_control: Optional[CacheControlEphemeral]`
+
+          Create a cache control breakpoint at this content block.
+
+          - `type: Literal["ephemeral"]`
+
+            - `"ephemeral"`
+
+          - `ttl: Optional[Literal["5m", "1h"]]`
+
+            The time-to-live for the cache control breakpoint.
+
+            This may be one the following values:
+
+            - `5m`: 5 minutes
+            - `1h`: 1 hour
+
+            Defaults to `5m`.
+
+            - `"5m"`
+
+            - `"1h"`
+
+        - `defer_loading: Optional[bool]`
+
+          If true, tool will not be included in initial system prompt. Only loaded when returned via tool_reference from tool search.
+
+        - `strict: Optional[bool]`
+
+          When true, guarantees schema validation on tool names and inputs
+
+    - `top_k: Optional[int]`
+
+      Only sample from the top K options for each subsequent token.
+
+      Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).
+
+      Recommended for advanced use cases only.
+
+    - `top_p: Optional[float]`
+
+      Use nucleus sampling.
+
+      In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`.
+
+      Recommended for advanced use cases only.
+
+### Returns
+
+- `class MessageBatch: …`
+
+  - `id: str`
+
+    Unique object identifier.
+
+    The format and length of IDs may change over time.
+
+  - `archived_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
+
+  - `cancel_initiated_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
+
+  - `created_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was created.
+
+  - `ended_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.
+
+    Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
+
+  - `expires_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
+
+  - `processing_status: Literal["in_progress", "canceling", "ended"]`
+
+    Processing status of the Message Batch.
+
+    - `"in_progress"`
+
+    - `"canceling"`
+
+    - `"ended"`
+
+  - `request_counts: MessageBatchRequestCounts`
+
+    Tallies requests within the Message Batch, categorized by their status.
+
+    Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+
+    - `canceled: int`
+
+      Number of requests in the Message Batch that have been canceled.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `errored: int`
+
+      Number of requests in the Message Batch that encountered an error.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `expired: int`
+
+      Number of requests in the Message Batch that have expired.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `processing: int`
+
+      Number of requests in the Message Batch that are processing.
+
+    - `succeeded: int`
+
+      Number of requests in the Message Batch that have completed successfully.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+  - `results_url: Optional[str]`
+
+    URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
+
+    Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+
+  - `type: Literal["message_batch"]`
+
+    Object type.
+
+    For Message Batches, this is always `"message_batch"`.
+
+    - `"message_batch"`
+
+### Example
+
+```python
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY"),  # This is the default and can be omitted
+)
+message_batch = client.messages.batches.create(
+    requests=[{
+        "custom_id": "my-custom-id-1",
+        "params": {
+            "max_tokens": 1024,
+            "messages": [{
+                "content": "Hello, world",
+                "role": "user",
+            }],
+            "model": "claude-opus-4-6",
+        },
+    }],
+)
+print(message_batch.id)
+```
+
+## Retrieve
+
+`messages.batches.retrieve(strmessage_batch_id)  -> MessageBatch`
+
+**get** `/v1/messages/batches/{message_batch_id}`
+
+This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
+
+Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+
+### Parameters
+
+- `message_batch_id: str`
+
+  ID of the Message Batch.
+
+### Returns
+
+- `class MessageBatch: …`
+
+  - `id: str`
+
+    Unique object identifier.
+
+    The format and length of IDs may change over time.
+
+  - `archived_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
+
+  - `cancel_initiated_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
+
+  - `created_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was created.
+
+  - `ended_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.
+
+    Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
+
+  - `expires_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
+
+  - `processing_status: Literal["in_progress", "canceling", "ended"]`
+
+    Processing status of the Message Batch.
+
+    - `"in_progress"`
+
+    - `"canceling"`
+
+    - `"ended"`
+
+  - `request_counts: MessageBatchRequestCounts`
+
+    Tallies requests within the Message Batch, categorized by their status.
+
+    Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+
+    - `canceled: int`
+
+      Number of requests in the Message Batch that have been canceled.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `errored: int`
+
+      Number of requests in the Message Batch that encountered an error.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `expired: int`
+
+      Number of requests in the Message Batch that have expired.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `processing: int`
+
+      Number of requests in the Message Batch that are processing.
+
+    - `succeeded: int`
+
+      Number of requests in the Message Batch that have completed successfully.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+  - `results_url: Optional[str]`
+
+    URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
+
+    Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+
+  - `type: Literal["message_batch"]`
+
+    Object type.
+
+    For Message Batches, this is always `"message_batch"`.
+
+    - `"message_batch"`
+
+### Example
+
+```python
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY"),  # This is the default and can be omitted
+)
+message_batch = client.messages.batches.retrieve(
+    "message_batch_id",
+)
+print(message_batch.id)
+```
+
+## List
+
+`messages.batches.list(BatchListParams**kwargs)  -> SyncPage[MessageBatch]`
+
+**get** `/v1/messages/batches`
+
+List all Message Batches within a Workspace. Most recently created batches are returned first.
+
+Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+
+### Parameters
+
+- `after_id: Optional[str]`
+
+  ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
+
+- `before_id: Optional[str]`
+
+  ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
+
+- `limit: Optional[int]`
+
+  Number of items to return per page.
+
+  Defaults to `20`. Ranges from `1` to `1000`.
+
+### Returns
+
+- `class MessageBatch: …`
+
+  - `id: str`
+
+    Unique object identifier.
+
+    The format and length of IDs may change over time.
+
+  - `archived_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
+
+  - `cancel_initiated_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
+
+  - `created_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was created.
+
+  - `ended_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.
+
+    Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
+
+  - `expires_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
+
+  - `processing_status: Literal["in_progress", "canceling", "ended"]`
+
+    Processing status of the Message Batch.
+
+    - `"in_progress"`
+
+    - `"canceling"`
+
+    - `"ended"`
+
+  - `request_counts: MessageBatchRequestCounts`
+
+    Tallies requests within the Message Batch, categorized by their status.
+
+    Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+
+    - `canceled: int`
+
+      Number of requests in the Message Batch that have been canceled.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `errored: int`
+
+      Number of requests in the Message Batch that encountered an error.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `expired: int`
+
+      Number of requests in the Message Batch that have expired.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `processing: int`
+
+      Number of requests in the Message Batch that are processing.
+
+    - `succeeded: int`
+
+      Number of requests in the Message Batch that have completed successfully.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+  - `results_url: Optional[str]`
+
+    URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
+
+    Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+
+  - `type: Literal["message_batch"]`
+
+    Object type.
+
+    For Message Batches, this is always `"message_batch"`.
+
+    - `"message_batch"`
+
+### Example
+
+```python
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY"),  # This is the default and can be omitted
+)
+page = client.messages.batches.list()
+page = page.data[0]
+print(page.id)
+```
+
+## Cancel
+
+`messages.batches.cancel(strmessage_batch_id)  -> MessageBatch`
+
+**post** `/v1/messages/batches/{message_batch_id}/cancel`
+
+Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a `canceling` state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.
+
+The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.
+
+Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+
+### Parameters
+
+- `message_batch_id: str`
+
+  ID of the Message Batch.
+
+### Returns
+
+- `class MessageBatch: …`
+
+  - `id: str`
+
+    Unique object identifier.
+
+    The format and length of IDs may change over time.
+
+  - `archived_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
+
+  - `cancel_initiated_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
+
+  - `created_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was created.
+
+  - `ended_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.
+
+    Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
+
+  - `expires_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
+
+  - `processing_status: Literal["in_progress", "canceling", "ended"]`
+
+    Processing status of the Message Batch.
+
+    - `"in_progress"`
+
+    - `"canceling"`
+
+    - `"ended"`
+
+  - `request_counts: MessageBatchRequestCounts`
+
+    Tallies requests within the Message Batch, categorized by their status.
+
+    Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+
+    - `canceled: int`
+
+      Number of requests in the Message Batch that have been canceled.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `errored: int`
+
+      Number of requests in the Message Batch that encountered an error.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `expired: int`
+
+      Number of requests in the Message Batch that have expired.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `processing: int`
+
+      Number of requests in the Message Batch that are processing.
+
+    - `succeeded: int`
+
+      Number of requests in the Message Batch that have completed successfully.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+  - `results_url: Optional[str]`
+
+    URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
+
+    Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+
+  - `type: Literal["message_batch"]`
+
+    Object type.
+
+    For Message Batches, this is always `"message_batch"`.
+
+    - `"message_batch"`
+
+### Example
+
+```python
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY"),  # This is the default and can be omitted
+)
+message_batch = client.messages.batches.cancel(
+    "message_batch_id",
+)
+print(message_batch.id)
+```
+
+## Delete
+
+`messages.batches.delete(strmessage_batch_id)  -> DeletedMessageBatch`
+
+**delete** `/v1/messages/batches/{message_batch_id}`
+
+Delete a Message Batch.
+
+Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.
+
+Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+
+### Parameters
+
+- `message_batch_id: str`
+
+  ID of the Message Batch.
+
+### Returns
+
+- `class DeletedMessageBatch: …`
+
+  - `id: str`
+
+    ID of the Message Batch.
+
+  - `type: Literal["message_batch_deleted"]`
+
+    Deleted object type.
+
+    For Message Batches, this is always `"message_batch_deleted"`.
+
+    - `"message_batch_deleted"`
+
+### Example
+
+```python
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY"),  # This is the default and can be omitted
+)
+deleted_message_batch = client.messages.batches.delete(
+    "message_batch_id",
+)
+print(deleted_message_batch.id)
+```
+
+## Results
+
+`messages.batches.results(strmessage_batch_id)  -> MessageBatchIndividualResponse`
+
+**get** `/v1/messages/batches/{message_batch_id}/results`
+
+Streams the results of a Message Batch as a `.jsonl` file.
+
+Each line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+
+Learn more about the Message Batches API in our [user guide](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+
+### Parameters
+
+- `message_batch_id: str`
+
+  ID of the Message Batch.
+
+### Returns
+
+- `class MessageBatchIndividualResponse: …`
+
+  This is a single line in the response `.jsonl` file and does not represent the response as a whole.
+
+  - `custom_id: str`
+
+    Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.
+
+    Must be unique for each request within the Message Batch.
+
+  - `result: MessageBatchResult`
+
+    Processing result for this request.
+
+    Contains a Message output if processing was successful, an error response if processing failed, or the reason why processing was not attempted, such as cancellation or expiration.
+
+    - `class MessageBatchSucceededResult: …`
+
+      - `message: Message`
+
+        - `id: str`
+
+          Unique object identifier.
+
+          The format and length of IDs may change over time.
+
+        - `container: Optional[Container]`
+
+          Information about the container used in the request (for the code execution tool)
+
+          - `id: str`
+
+            Identifier for the container used in this request
+
+          - `expires_at: datetime`
+
+            The time at which the container will expire.
+
+        - `content: List[ContentBlock]`
+
+          Content generated by the model.
+
+          This is an array of content blocks, each of which has a `type` that determines its shape.
+
+          Example:
+
+          ```json
+          [{"type": "text", "text": "Hi, I'm Claude."}]
+          ```
+
+          If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+          For example, if the input `messages` were:
+
+          ```json
+          [
+            {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+            {"role": "assistant", "content": "The best answer is ("}
+          ]
+          ```
+
+          Then the response `content` might be:
+
+          ```json
+          [{"type": "text", "text": "B)"}]
+          ```
+
+          - `class TextBlock: …`
+
+            - `citations: Optional[List[TextCitation]]`
+
+              Citations supporting the text block.
+
+              The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+              - `class CitationCharLocation: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_char_index: int`
+
+                - `file_id: Optional[str]`
+
+                - `start_char_index: int`
+
+                - `type: Literal["char_location"]`
+
+                  - `"char_location"`
+
+              - `class CitationPageLocation: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_page_number: int`
+
+                - `file_id: Optional[str]`
+
+                - `start_page_number: int`
+
+                - `type: Literal["page_location"]`
+
+                  - `"page_location"`
+
+              - `class CitationContentBlockLocation: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_block_index: int`
+
+                - `file_id: Optional[str]`
+
+                - `start_block_index: int`
+
+                - `type: Literal["content_block_location"]`
+
+                  - `"content_block_location"`
+
+              - `class CitationsWebSearchResultLocation: …`
+
+                - `cited_text: str`
+
+                - `encrypted_index: str`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["web_search_result_location"]`
+
+                  - `"web_search_result_location"`
+
+                - `url: str`
+
+              - `class CitationsSearchResultLocation: …`
+
+                - `cited_text: str`
+
+                - `end_block_index: int`
+
+                - `search_result_index: int`
+
+                - `source: str`
+
+                - `start_block_index: int`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["search_result_location"]`
+
+                  - `"search_result_location"`
+
+            - `text: str`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+          - `class ThinkingBlock: …`
+
+            - `signature: str`
+
+            - `thinking: str`
+
+            - `type: Literal["thinking"]`
+
+              - `"thinking"`
+
+          - `class RedactedThinkingBlock: …`
+
+            - `data: str`
+
+            - `type: Literal["redacted_thinking"]`
+
+              - `"redacted_thinking"`
+
+          - `class ToolUseBlock: …`
+
+            - `id: str`
+
+            - `caller: Caller`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+            - `input: Dict[str, object]`
+
+            - `name: str`
+
+            - `type: Literal["tool_use"]`
+
+              - `"tool_use"`
+
+          - `class ServerToolUseBlock: …`
+
+            - `id: str`
+
+            - `caller: Caller`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+            - `input: Dict[str, object]`
+
+            - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+              - `"web_search"`
+
+              - `"web_fetch"`
+
+              - `"code_execution"`
+
+              - `"bash_code_execution"`
+
+              - `"text_editor_code_execution"`
+
+              - `"tool_search_tool_regex"`
+
+              - `"tool_search_tool_bm25"`
+
+            - `type: Literal["server_tool_use"]`
+
+              - `"server_tool_use"`
+
+          - `class WebSearchToolResultBlock: …`
+
+            - `caller: Caller`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+            - `content: WebSearchToolResultBlockContent`
+
+              - `class WebSearchToolResultError: …`
+
+                - `error_code: WebSearchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"max_uses_exceeded"`
+
+                  - `"too_many_requests"`
+
+                  - `"query_too_long"`
+
+                  - `"request_too_large"`
+
+                - `type: Literal["web_search_tool_result_error"]`
+
+                  - `"web_search_tool_result_error"`
+
+              - `List[WebSearchResultBlock]`
+
+                - `encrypted_content: str`
+
+                - `page_age: Optional[str]`
+
+                - `title: str`
+
+                - `type: Literal["web_search_result"]`
+
+                  - `"web_search_result"`
+
+                - `url: str`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["web_search_tool_result"]`
+
+              - `"web_search_tool_result"`
+
+          - `class WebFetchToolResultBlock: …`
+
+            - `caller: Caller`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+            - `content: Content`
+
+              - `class WebFetchToolResultErrorBlock: …`
+
+                - `error_code: WebFetchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"url_too_long"`
+
+                  - `"url_not_allowed"`
+
+                  - `"url_not_accessible"`
+
+                  - `"unsupported_content_type"`
+
+                  - `"too_many_requests"`
+
+                  - `"max_uses_exceeded"`
+
+                  - `"unavailable"`
+
+                - `type: Literal["web_fetch_tool_result_error"]`
+
+                  - `"web_fetch_tool_result_error"`
+
+              - `class WebFetchBlock: …`
+
+                - `content: DocumentBlock`
+
+                  - `citations: Optional[CitationsConfig]`
+
+                    Citation configuration for the document
+
+                    - `enabled: bool`
+
+                  - `source: Source`
+
+                    - `class Base64PDFSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["application/pdf"]`
+
+                        - `"application/pdf"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class PlainTextSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["text/plain"]`
+
+                        - `"text/plain"`
+
+                      - `type: Literal["text"]`
+
+                        - `"text"`
+
+                  - `title: Optional[str]`
+
+                    The title of the document
+
+                  - `type: Literal["document"]`
+
+                    - `"document"`
+
+                - `retrieved_at: Optional[str]`
+
+                  ISO 8601 timestamp when the content was retrieved
+
+                - `type: Literal["web_fetch_result"]`
+
+                  - `"web_fetch_result"`
+
+                - `url: str`
+
+                  Fetched content URL
+
+            - `tool_use_id: str`
+
+            - `type: Literal["web_fetch_tool_result"]`
+
+              - `"web_fetch_tool_result"`
+
+          - `class CodeExecutionToolResultBlock: …`
+
+            - `content: CodeExecutionToolResultBlockContent`
+
+              Code execution result with encrypted stdout for PFC + web_search results.
+
+              - `class CodeExecutionToolResultError: …`
+
+                - `error_code: CodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                - `type: Literal["code_execution_tool_result_error"]`
+
+                  - `"code_execution_tool_result_error"`
+
+              - `class CodeExecutionResultBlock: …`
+
+                - `content: List[CodeExecutionOutputBlock]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["code_execution_output"]`
+
+                    - `"code_execution_output"`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `stdout: str`
+
+                - `type: Literal["code_execution_result"]`
+
+                  - `"code_execution_result"`
+
+              - `class EncryptedCodeExecutionResultBlock: …`
+
+                Code execution result with encrypted stdout for PFC + web_search results.
+
+                - `content: List[CodeExecutionOutputBlock]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["code_execution_output"]`
+
+                    - `"code_execution_output"`
+
+                - `encrypted_stdout: str`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `type: Literal["encrypted_code_execution_result"]`
+
+                  - `"encrypted_code_execution_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["code_execution_tool_result"]`
+
+              - `"code_execution_tool_result"`
+
+          - `class BashCodeExecutionToolResultBlock: …`
+
+            - `content: Content`
+
+              - `class BashCodeExecutionToolResultError: …`
+
+                - `error_code: BashCodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                  - `"output_file_too_large"`
+
+                - `type: Literal["bash_code_execution_tool_result_error"]`
+
+                  - `"bash_code_execution_tool_result_error"`
+
+              - `class BashCodeExecutionResultBlock: …`
+
+                - `content: List[BashCodeExecutionOutputBlock]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["bash_code_execution_output"]`
+
+                    - `"bash_code_execution_output"`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `stdout: str`
+
+                - `type: Literal["bash_code_execution_result"]`
+
+                  - `"bash_code_execution_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["bash_code_execution_tool_result"]`
+
+              - `"bash_code_execution_tool_result"`
+
+          - `class TextEditorCodeExecutionToolResultBlock: …`
+
+            - `content: Content`
+
+              - `class TextEditorCodeExecutionToolResultError: …`
+
+                - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                  - `"file_not_found"`
+
+                - `error_message: Optional[str]`
+
+                - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+                  - `"text_editor_code_execution_tool_result_error"`
+
+              - `class TextEditorCodeExecutionViewResultBlock: …`
+
+                - `content: str`
+
+                - `file_type: Literal["text", "image", "pdf"]`
+
+                  - `"text"`
+
+                  - `"image"`
+
+                  - `"pdf"`
+
+                - `num_lines: Optional[int]`
+
+                - `start_line: Optional[int]`
+
+                - `total_lines: Optional[int]`
+
+                - `type: Literal["text_editor_code_execution_view_result"]`
+
+                  - `"text_editor_code_execution_view_result"`
+
+              - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+                - `is_file_update: bool`
+
+                - `type: Literal["text_editor_code_execution_create_result"]`
+
+                  - `"text_editor_code_execution_create_result"`
+
+              - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+                - `lines: Optional[List[str]]`
+
+                - `new_lines: Optional[int]`
+
+                - `new_start: Optional[int]`
+
+                - `old_lines: Optional[int]`
+
+                - `old_start: Optional[int]`
+
+                - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+                  - `"text_editor_code_execution_str_replace_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["text_editor_code_execution_tool_result"]`
+
+              - `"text_editor_code_execution_tool_result"`
+
+          - `class ToolSearchToolResultBlock: …`
+
+            - `content: Content`
+
+              - `class ToolSearchToolResultError: …`
+
+                - `error_code: ToolSearchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                - `error_message: Optional[str]`
+
+                - `type: Literal["tool_search_tool_result_error"]`
+
+                  - `"tool_search_tool_result_error"`
+
+              - `class ToolSearchToolSearchResultBlock: …`
+
+                - `tool_references: List[ToolReferenceBlock]`
+
+                  - `tool_name: str`
+
+                  - `type: Literal["tool_reference"]`
+
+                    - `"tool_reference"`
+
+                - `type: Literal["tool_search_tool_search_result"]`
+
+                  - `"tool_search_tool_search_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["tool_search_tool_result"]`
+
+              - `"tool_search_tool_result"`
+
+          - `class ContainerUploadBlock: …`
+
+            Response model for a file uploaded to the container.
+
+            - `file_id: str`
+
+            - `type: Literal["container_upload"]`
+
+              - `"container_upload"`
+
+        - `model: Model`
+
+          The model that will complete your prompt.
+
+          See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+          - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+            The model that will complete your prompt.
+
+            See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+            - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+            - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+            - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+            - `claude-sonnet-4-6` - Best combination of speed and intelligence
+            - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+            - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+            - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+            - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+            - `claude-sonnet-4-5` - High-performance model for agents and coding
+            - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+            - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+            - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+            - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+            - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+            - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+            - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+            - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+            - `"claude-opus-4-7"`
+
+              Frontier intelligence for long-running agents and coding
+
+            - `"claude-mythos-preview"`
+
+              New class of intelligence, strongest in coding and cybersecurity
+
+            - `"claude-opus-4-6"`
+
+              Frontier intelligence for long-running agents and coding
+
+            - `"claude-sonnet-4-6"`
+
+              Best combination of speed and intelligence
+
+            - `"claude-haiku-4-5"`
+
+              Fastest model with near-frontier intelligence
+
+            - `"claude-haiku-4-5-20251001"`
+
+              Fastest model with near-frontier intelligence
+
+            - `"claude-opus-4-5"`
+
+              Premium model combining maximum intelligence with practical performance
+
+            - `"claude-opus-4-5-20251101"`
+
+              Premium model combining maximum intelligence with practical performance
+
+            - `"claude-sonnet-4-5"`
+
+              High-performance model for agents and coding
+
+            - `"claude-sonnet-4-5-20250929"`
+
+              High-performance model for agents and coding
+
+            - `"claude-opus-4-1"`
+
+              Exceptional model for specialized complex tasks
+
+            - `"claude-opus-4-1-20250805"`
+
+              Exceptional model for specialized complex tasks
+
+            - `"claude-opus-4-0"`
+
+              Powerful model for complex tasks
+
+            - `"claude-opus-4-20250514"`
+
+              Powerful model for complex tasks
+
+            - `"claude-sonnet-4-0"`
+
+              High-performance model with extended thinking
+
+            - `"claude-sonnet-4-20250514"`
+
+              High-performance model with extended thinking
+
+            - `"claude-3-haiku-20240307"`
+
+              Fast and cost-effective model
+
+          - `str`
+
+        - `role: Literal["assistant"]`
+
+          Conversational role of the generated message.
+
+          This will always be `"assistant"`.
+
+          - `"assistant"`
+
+        - `stop_details: Optional[RefusalStopDetails]`
+
+          Structured information about a refusal.
+
+          - `category: Optional[Literal["cyber", "bio"]]`
+
+            The policy category that triggered the refusal.
+
+            `null` when the refusal doesn't map to a named category.
+
+            - `"cyber"`
+
+            - `"bio"`
+
+          - `explanation: Optional[str]`
+
+            Human-readable explanation of the refusal.
+
+            This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+          - `type: Literal["refusal"]`
+
+            - `"refusal"`
+
+        - `stop_reason: Optional[StopReason]`
+
+          The reason that we stopped.
+
+          This may be one the following values:
+
+          * `"end_turn"`: the model reached a natural stopping point
+          * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+          * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+          * `"tool_use"`: the model invoked one or more tools
+          * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+          * `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+
+          In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+          - `"end_turn"`
+
+          - `"max_tokens"`
+
+          - `"stop_sequence"`
+
+          - `"tool_use"`
+
+          - `"pause_turn"`
+
+          - `"refusal"`
+
+        - `stop_sequence: Optional[str]`
+
+          Which custom stop sequence was generated, if any.
+
+          This value will be a non-null string if one of your custom stop sequences was generated.
+
+        - `type: Literal["message"]`
+
+          Object type.
+
+          For Messages, this is always `"message"`.
+
+          - `"message"`
+
+        - `usage: Usage`
+
+          Billing and rate-limit usage.
+
+          Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+          Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+          For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+          Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+          - `cache_creation: Optional[CacheCreation]`
+
+            Breakdown of cached tokens by TTL
+
+            - `ephemeral_1h_input_tokens: int`
+
+              The number of input tokens used to create the 1 hour cache entry.
+
+            - `ephemeral_5m_input_tokens: int`
+
+              The number of input tokens used to create the 5 minute cache entry.
+
+          - `cache_creation_input_tokens: Optional[int]`
+
+            The number of input tokens used to create the cache entry.
+
+          - `cache_read_input_tokens: Optional[int]`
+
+            The number of input tokens read from the cache.
+
+          - `inference_geo: Optional[str]`
+
+            The geographic region where inference was performed for this request.
+
+          - `input_tokens: int`
+
+            The number of input tokens which were used.
+
+          - `output_tokens: int`
+
+            The number of output tokens which were used.
+
+          - `server_tool_use: Optional[ServerToolUsage]`
+
+            The number of server tool requests.
+
+            - `web_fetch_requests: int`
+
+              The number of web fetch tool requests.
+
+            - `web_search_requests: int`
+
+              The number of web search tool requests.
+
+          - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+            If the request used the priority, standard, or batch tier.
+
+            - `"standard"`
+
+            - `"priority"`
+
+            - `"batch"`
+
+      - `type: Literal["succeeded"]`
+
+        - `"succeeded"`
+
+    - `class MessageBatchErroredResult: …`
+
+      - `error: ErrorResponse`
+
+        - `error: ErrorObject`
+
+          - `class InvalidRequestError: …`
+
+            - `message: str`
+
+            - `type: Literal["invalid_request_error"]`
+
+              - `"invalid_request_error"`
+
+          - `class AuthenticationError: …`
+
+            - `message: str`
+
+            - `type: Literal["authentication_error"]`
+
+              - `"authentication_error"`
+
+          - `class BillingError: …`
+
+            - `message: str`
+
+            - `type: Literal["billing_error"]`
+
+              - `"billing_error"`
+
+          - `class PermissionError: …`
+
+            - `message: str`
+
+            - `type: Literal["permission_error"]`
+
+              - `"permission_error"`
+
+          - `class NotFoundError: …`
+
+            - `message: str`
+
+            - `type: Literal["not_found_error"]`
+
+              - `"not_found_error"`
+
+          - `class RateLimitError: …`
+
+            - `message: str`
+
+            - `type: Literal["rate_limit_error"]`
+
+              - `"rate_limit_error"`
+
+          - `class GatewayTimeoutError: …`
+
+            - `message: str`
+
+            - `type: Literal["timeout_error"]`
+
+              - `"timeout_error"`
+
+          - `class APIErrorObject: …`
+
+            - `message: str`
+
+            - `type: Literal["api_error"]`
+
+              - `"api_error"`
+
+          - `class OverloadedError: …`
+
+            - `message: str`
+
+            - `type: Literal["overloaded_error"]`
+
+              - `"overloaded_error"`
+
+        - `request_id: Optional[str]`
+
+        - `type: Literal["error"]`
+
+          - `"error"`
+
+      - `type: Literal["errored"]`
+
+        - `"errored"`
+
+    - `class MessageBatchCanceledResult: …`
+
+      - `type: Literal["canceled"]`
+
+        - `"canceled"`
+
+    - `class MessageBatchExpiredResult: …`
+
+      - `type: Literal["expired"]`
+
+        - `"expired"`
+
+### Example
+
+```python
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ.get("ANTHROPIC_API_KEY"),  # This is the default and can be omitted
+)
+for batch in client.messages.batches.results(
+    "message_batch_id",
+):
+  print(batch)
+```
+
+## Domain Types
+
+### Deleted Message Batch
+
+- `class DeletedMessageBatch: …`
+
+  - `id: str`
+
+    ID of the Message Batch.
+
+  - `type: Literal["message_batch_deleted"]`
+
+    Deleted object type.
+
+    For Message Batches, this is always `"message_batch_deleted"`.
+
+    - `"message_batch_deleted"`
+
+### Message Batch
+
+- `class MessageBatch: …`
+
+  - `id: str`
+
+    Unique object identifier.
+
+    The format and length of IDs may change over time.
+
+  - `archived_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was archived and its results became unavailable.
+
+  - `cancel_initiated_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which cancellation was initiated for the Message Batch. Specified only if cancellation was initiated.
+
+  - `created_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch was created.
+
+  - `ended_at: Optional[datetime]`
+
+    RFC 3339 datetime string representing the time at which processing for the Message Batch ended. Specified only once processing ends.
+
+    Processing ends when every request in a Message Batch has either succeeded, errored, canceled, or expired.
+
+  - `expires_at: datetime`
+
+    RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
+
+  - `processing_status: Literal["in_progress", "canceling", "ended"]`
+
+    Processing status of the Message Batch.
+
+    - `"in_progress"`
+
+    - `"canceling"`
+
+    - `"ended"`
+
+  - `request_counts: MessageBatchRequestCounts`
+
+    Tallies requests within the Message Batch, categorized by their status.
+
+    Requests start as `processing` and move to one of the other statuses only once processing of the entire batch ends. The sum of all values always matches the total number of requests in the batch.
+
+    - `canceled: int`
+
+      Number of requests in the Message Batch that have been canceled.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `errored: int`
+
+      Number of requests in the Message Batch that encountered an error.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `expired: int`
+
+      Number of requests in the Message Batch that have expired.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+    - `processing: int`
+
+      Number of requests in the Message Batch that are processing.
+
+    - `succeeded: int`
+
+      Number of requests in the Message Batch that have completed successfully.
+
+      This is zero until processing of the entire Message Batch has ended.
+
+  - `results_url: Optional[str]`
+
+    URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
+
+    Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
+
+  - `type: Literal["message_batch"]`
+
+    Object type.
+
+    For Message Batches, this is always `"message_batch"`.
+
+    - `"message_batch"`
+
+### Message Batch Canceled Result
+
+- `class MessageBatchCanceledResult: …`
+
+  - `type: Literal["canceled"]`
+
+    - `"canceled"`
+
+### Message Batch Errored Result
+
+- `class MessageBatchErroredResult: …`
+
+  - `error: ErrorResponse`
+
+    - `error: ErrorObject`
+
+      - `class InvalidRequestError: …`
+
+        - `message: str`
+
+        - `type: Literal["invalid_request_error"]`
+
+          - `"invalid_request_error"`
+
+      - `class AuthenticationError: …`
+
+        - `message: str`
+
+        - `type: Literal["authentication_error"]`
+
+          - `"authentication_error"`
+
+      - `class BillingError: …`
+
+        - `message: str`
+
+        - `type: Literal["billing_error"]`
+
+          - `"billing_error"`
+
+      - `class PermissionError: …`
+
+        - `message: str`
+
+        - `type: Literal["permission_error"]`
+
+          - `"permission_error"`
+
+      - `class NotFoundError: …`
+
+        - `message: str`
+
+        - `type: Literal["not_found_error"]`
+
+          - `"not_found_error"`
+
+      - `class RateLimitError: …`
+
+        - `message: str`
+
+        - `type: Literal["rate_limit_error"]`
+
+          - `"rate_limit_error"`
+
+      - `class GatewayTimeoutError: …`
+
+        - `message: str`
+
+        - `type: Literal["timeout_error"]`
+
+          - `"timeout_error"`
+
+      - `class APIErrorObject: …`
+
+        - `message: str`
+
+        - `type: Literal["api_error"]`
+
+          - `"api_error"`
+
+      - `class OverloadedError: …`
+
+        - `message: str`
+
+        - `type: Literal["overloaded_error"]`
+
+          - `"overloaded_error"`
+
+    - `request_id: Optional[str]`
+
+    - `type: Literal["error"]`
+
+      - `"error"`
+
+  - `type: Literal["errored"]`
+
+    - `"errored"`
+
+### Message Batch Expired Result
+
+- `class MessageBatchExpiredResult: …`
+
+  - `type: Literal["expired"]`
+
+    - `"expired"`
+
+### Message Batch Individual Response
+
+- `class MessageBatchIndividualResponse: …`
+
+  This is a single line in the response `.jsonl` file and does not represent the response as a whole.
+
+  - `custom_id: str`
+
+    Developer-provided ID created for each request in a Message Batch. Useful for matching results to requests, as results may be given out of request order.
+
+    Must be unique for each request within the Message Batch.
+
+  - `result: MessageBatchResult`
+
+    Processing result for this request.
+
+    Contains a Message output if processing was successful, an error response if processing failed, or the reason why processing was not attempted, such as cancellation or expiration.
+
+    - `class MessageBatchSucceededResult: …`
+
+      - `message: Message`
+
+        - `id: str`
+
+          Unique object identifier.
+
+          The format and length of IDs may change over time.
+
+        - `container: Optional[Container]`
+
+          Information about the container used in the request (for the code execution tool)
+
+          - `id: str`
+
+            Identifier for the container used in this request
+
+          - `expires_at: datetime`
+
+            The time at which the container will expire.
+
+        - `content: List[ContentBlock]`
+
+          Content generated by the model.
+
+          This is an array of content blocks, each of which has a `type` that determines its shape.
+
+          Example:
+
+          ```json
+          [{"type": "text", "text": "Hi, I'm Claude."}]
+          ```
+
+          If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+          For example, if the input `messages` were:
+
+          ```json
+          [
+            {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+            {"role": "assistant", "content": "The best answer is ("}
+          ]
+          ```
+
+          Then the response `content` might be:
+
+          ```json
+          [{"type": "text", "text": "B)"}]
+          ```
+
+          - `class TextBlock: …`
+
+            - `citations: Optional[List[TextCitation]]`
+
+              Citations supporting the text block.
+
+              The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+              - `class CitationCharLocation: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_char_index: int`
+
+                - `file_id: Optional[str]`
+
+                - `start_char_index: int`
+
+                - `type: Literal["char_location"]`
+
+                  - `"char_location"`
+
+              - `class CitationPageLocation: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_page_number: int`
+
+                - `file_id: Optional[str]`
+
+                - `start_page_number: int`
+
+                - `type: Literal["page_location"]`
+
+                  - `"page_location"`
+
+              - `class CitationContentBlockLocation: …`
+
+                - `cited_text: str`
+
+                - `document_index: int`
+
+                - `document_title: Optional[str]`
+
+                - `end_block_index: int`
+
+                - `file_id: Optional[str]`
+
+                - `start_block_index: int`
+
+                - `type: Literal["content_block_location"]`
+
+                  - `"content_block_location"`
+
+              - `class CitationsWebSearchResultLocation: …`
+
+                - `cited_text: str`
+
+                - `encrypted_index: str`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["web_search_result_location"]`
+
+                  - `"web_search_result_location"`
+
+                - `url: str`
+
+              - `class CitationsSearchResultLocation: …`
+
+                - `cited_text: str`
+
+                - `end_block_index: int`
+
+                - `search_result_index: int`
+
+                - `source: str`
+
+                - `start_block_index: int`
+
+                - `title: Optional[str]`
+
+                - `type: Literal["search_result_location"]`
+
+                  - `"search_result_location"`
+
+            - `text: str`
+
+            - `type: Literal["text"]`
+
+              - `"text"`
+
+          - `class ThinkingBlock: …`
+
+            - `signature: str`
+
+            - `thinking: str`
+
+            - `type: Literal["thinking"]`
+
+              - `"thinking"`
+
+          - `class RedactedThinkingBlock: …`
+
+            - `data: str`
+
+            - `type: Literal["redacted_thinking"]`
+
+              - `"redacted_thinking"`
+
+          - `class ToolUseBlock: …`
+
+            - `id: str`
+
+            - `caller: Caller`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+            - `input: Dict[str, object]`
+
+            - `name: str`
+
+            - `type: Literal["tool_use"]`
+
+              - `"tool_use"`
+
+          - `class ServerToolUseBlock: …`
+
+            - `id: str`
+
+            - `caller: Caller`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+            - `input: Dict[str, object]`
+
+            - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+              - `"web_search"`
+
+              - `"web_fetch"`
+
+              - `"code_execution"`
+
+              - `"bash_code_execution"`
+
+              - `"text_editor_code_execution"`
+
+              - `"tool_search_tool_regex"`
+
+              - `"tool_search_tool_bm25"`
+
+            - `type: Literal["server_tool_use"]`
+
+              - `"server_tool_use"`
+
+          - `class WebSearchToolResultBlock: …`
+
+            - `caller: Caller`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+            - `content: WebSearchToolResultBlockContent`
+
+              - `class WebSearchToolResultError: …`
+
+                - `error_code: WebSearchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"max_uses_exceeded"`
+
+                  - `"too_many_requests"`
+
+                  - `"query_too_long"`
+
+                  - `"request_too_large"`
+
+                - `type: Literal["web_search_tool_result_error"]`
+
+                  - `"web_search_tool_result_error"`
+
+              - `List[WebSearchResultBlock]`
+
+                - `encrypted_content: str`
+
+                - `page_age: Optional[str]`
+
+                - `title: str`
+
+                - `type: Literal["web_search_result"]`
+
+                  - `"web_search_result"`
+
+                - `url: str`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["web_search_tool_result"]`
+
+              - `"web_search_tool_result"`
+
+          - `class WebFetchToolResultBlock: …`
+
+            - `caller: Caller`
+
+              Tool invocation directly from the model.
+
+              - `class DirectCaller: …`
+
+                Tool invocation directly from the model.
+
+                - `type: Literal["direct"]`
+
+                  - `"direct"`
+
+              - `class ServerToolCaller: …`
+
+                Tool invocation generated by a server-side tool.
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20250825"]`
+
+                  - `"code_execution_20250825"`
+
+              - `class ServerToolCaller20260120: …`
+
+                - `tool_id: str`
+
+                - `type: Literal["code_execution_20260120"]`
+
+                  - `"code_execution_20260120"`
+
+            - `content: Content`
+
+              - `class WebFetchToolResultErrorBlock: …`
+
+                - `error_code: WebFetchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"url_too_long"`
+
+                  - `"url_not_allowed"`
+
+                  - `"url_not_accessible"`
+
+                  - `"unsupported_content_type"`
+
+                  - `"too_many_requests"`
+
+                  - `"max_uses_exceeded"`
+
+                  - `"unavailable"`
+
+                - `type: Literal["web_fetch_tool_result_error"]`
+
+                  - `"web_fetch_tool_result_error"`
+
+              - `class WebFetchBlock: …`
+
+                - `content: DocumentBlock`
+
+                  - `citations: Optional[CitationsConfig]`
+
+                    Citation configuration for the document
+
+                    - `enabled: bool`
+
+                  - `source: Source`
+
+                    - `class Base64PDFSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["application/pdf"]`
+
+                        - `"application/pdf"`
+
+                      - `type: Literal["base64"]`
+
+                        - `"base64"`
+
+                    - `class PlainTextSource: …`
+
+                      - `data: str`
+
+                      - `media_type: Literal["text/plain"]`
+
+                        - `"text/plain"`
+
+                      - `type: Literal["text"]`
+
+                        - `"text"`
+
+                  - `title: Optional[str]`
+
+                    The title of the document
+
+                  - `type: Literal["document"]`
+
+                    - `"document"`
+
+                - `retrieved_at: Optional[str]`
+
+                  ISO 8601 timestamp when the content was retrieved
+
+                - `type: Literal["web_fetch_result"]`
+
+                  - `"web_fetch_result"`
+
+                - `url: str`
+
+                  Fetched content URL
+
+            - `tool_use_id: str`
+
+            - `type: Literal["web_fetch_tool_result"]`
+
+              - `"web_fetch_tool_result"`
+
+          - `class CodeExecutionToolResultBlock: …`
+
+            - `content: CodeExecutionToolResultBlockContent`
+
+              Code execution result with encrypted stdout for PFC + web_search results.
+
+              - `class CodeExecutionToolResultError: …`
+
+                - `error_code: CodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                - `type: Literal["code_execution_tool_result_error"]`
+
+                  - `"code_execution_tool_result_error"`
+
+              - `class CodeExecutionResultBlock: …`
+
+                - `content: List[CodeExecutionOutputBlock]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["code_execution_output"]`
+
+                    - `"code_execution_output"`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `stdout: str`
+
+                - `type: Literal["code_execution_result"]`
+
+                  - `"code_execution_result"`
+
+              - `class EncryptedCodeExecutionResultBlock: …`
+
+                Code execution result with encrypted stdout for PFC + web_search results.
+
+                - `content: List[CodeExecutionOutputBlock]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["code_execution_output"]`
+
+                    - `"code_execution_output"`
+
+                - `encrypted_stdout: str`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `type: Literal["encrypted_code_execution_result"]`
+
+                  - `"encrypted_code_execution_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["code_execution_tool_result"]`
+
+              - `"code_execution_tool_result"`
+
+          - `class BashCodeExecutionToolResultBlock: …`
+
+            - `content: Content`
+
+              - `class BashCodeExecutionToolResultError: …`
+
+                - `error_code: BashCodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                  - `"output_file_too_large"`
+
+                - `type: Literal["bash_code_execution_tool_result_error"]`
+
+                  - `"bash_code_execution_tool_result_error"`
+
+              - `class BashCodeExecutionResultBlock: …`
+
+                - `content: List[BashCodeExecutionOutputBlock]`
+
+                  - `file_id: str`
+
+                  - `type: Literal["bash_code_execution_output"]`
+
+                    - `"bash_code_execution_output"`
+
+                - `return_code: int`
+
+                - `stderr: str`
+
+                - `stdout: str`
+
+                - `type: Literal["bash_code_execution_result"]`
+
+                  - `"bash_code_execution_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["bash_code_execution_tool_result"]`
+
+              - `"bash_code_execution_tool_result"`
+
+          - `class TextEditorCodeExecutionToolResultBlock: …`
+
+            - `content: Content`
+
+              - `class TextEditorCodeExecutionToolResultError: …`
+
+                - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                  - `"file_not_found"`
+
+                - `error_message: Optional[str]`
+
+                - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+                  - `"text_editor_code_execution_tool_result_error"`
+
+              - `class TextEditorCodeExecutionViewResultBlock: …`
+
+                - `content: str`
+
+                - `file_type: Literal["text", "image", "pdf"]`
+
+                  - `"text"`
+
+                  - `"image"`
+
+                  - `"pdf"`
+
+                - `num_lines: Optional[int]`
+
+                - `start_line: Optional[int]`
+
+                - `total_lines: Optional[int]`
+
+                - `type: Literal["text_editor_code_execution_view_result"]`
+
+                  - `"text_editor_code_execution_view_result"`
+
+              - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+                - `is_file_update: bool`
+
+                - `type: Literal["text_editor_code_execution_create_result"]`
+
+                  - `"text_editor_code_execution_create_result"`
+
+              - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+                - `lines: Optional[List[str]]`
+
+                - `new_lines: Optional[int]`
+
+                - `new_start: Optional[int]`
+
+                - `old_lines: Optional[int]`
+
+                - `old_start: Optional[int]`
+
+                - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+                  - `"text_editor_code_execution_str_replace_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["text_editor_code_execution_tool_result"]`
+
+              - `"text_editor_code_execution_tool_result"`
+
+          - `class ToolSearchToolResultBlock: …`
+
+            - `content: Content`
+
+              - `class ToolSearchToolResultError: …`
+
+                - `error_code: ToolSearchToolResultErrorCode`
+
+                  - `"invalid_tool_input"`
+
+                  - `"unavailable"`
+
+                  - `"too_many_requests"`
+
+                  - `"execution_time_exceeded"`
+
+                - `error_message: Optional[str]`
+
+                - `type: Literal["tool_search_tool_result_error"]`
+
+                  - `"tool_search_tool_result_error"`
+
+              - `class ToolSearchToolSearchResultBlock: …`
+
+                - `tool_references: List[ToolReferenceBlock]`
+
+                  - `tool_name: str`
+
+                  - `type: Literal["tool_reference"]`
+
+                    - `"tool_reference"`
+
+                - `type: Literal["tool_search_tool_search_result"]`
+
+                  - `"tool_search_tool_search_result"`
+
+            - `tool_use_id: str`
+
+            - `type: Literal["tool_search_tool_result"]`
+
+              - `"tool_search_tool_result"`
+
+          - `class ContainerUploadBlock: …`
+
+            Response model for a file uploaded to the container.
+
+            - `file_id: str`
+
+            - `type: Literal["container_upload"]`
+
+              - `"container_upload"`
+
+        - `model: Model`
+
+          The model that will complete your prompt.
+
+          See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+          - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+            The model that will complete your prompt.
+
+            See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+            - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+            - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+            - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+            - `claude-sonnet-4-6` - Best combination of speed and intelligence
+            - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+            - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+            - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+            - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+            - `claude-sonnet-4-5` - High-performance model for agents and coding
+            - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+            - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+            - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+            - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+            - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+            - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+            - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+            - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+            - `"claude-opus-4-7"`
+
+              Frontier intelligence for long-running agents and coding
+
+            - `"claude-mythos-preview"`
+
+              New class of intelligence, strongest in coding and cybersecurity
+
+            - `"claude-opus-4-6"`
+
+              Frontier intelligence for long-running agents and coding
+
+            - `"claude-sonnet-4-6"`
+
+              Best combination of speed and intelligence
+
+            - `"claude-haiku-4-5"`
+
+              Fastest model with near-frontier intelligence
+
+            - `"claude-haiku-4-5-20251001"`
+
+              Fastest model with near-frontier intelligence
+
+            - `"claude-opus-4-5"`
+
+              Premium model combining maximum intelligence with practical performance
+
+            - `"claude-opus-4-5-20251101"`
+
+              Premium model combining maximum intelligence with practical performance
+
+            - `"claude-sonnet-4-5"`
+
+              High-performance model for agents and coding
+
+            - `"claude-sonnet-4-5-20250929"`
+
+              High-performance model for agents and coding
+
+            - `"claude-opus-4-1"`
+
+              Exceptional model for specialized complex tasks
+
+            - `"claude-opus-4-1-20250805"`
+
+              Exceptional model for specialized complex tasks
+
+            - `"claude-opus-4-0"`
+
+              Powerful model for complex tasks
+
+            - `"claude-opus-4-20250514"`
+
+              Powerful model for complex tasks
+
+            - `"claude-sonnet-4-0"`
+
+              High-performance model with extended thinking
+
+            - `"claude-sonnet-4-20250514"`
+
+              High-performance model with extended thinking
+
+            - `"claude-3-haiku-20240307"`
+
+              Fast and cost-effective model
+
+          - `str`
+
+        - `role: Literal["assistant"]`
+
+          Conversational role of the generated message.
+
+          This will always be `"assistant"`.
+
+          - `"assistant"`
+
+        - `stop_details: Optional[RefusalStopDetails]`
+
+          Structured information about a refusal.
+
+          - `category: Optional[Literal["cyber", "bio"]]`
+
+            The policy category that triggered the refusal.
+
+            `null` when the refusal doesn't map to a named category.
+
+            - `"cyber"`
+
+            - `"bio"`
+
+          - `explanation: Optional[str]`
+
+            Human-readable explanation of the refusal.
+
+            This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+          - `type: Literal["refusal"]`
+
+            - `"refusal"`
+
+        - `stop_reason: Optional[StopReason]`
+
+          The reason that we stopped.
+
+          This may be one the following values:
+
+          * `"end_turn"`: the model reached a natural stopping point
+          * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+          * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+          * `"tool_use"`: the model invoked one or more tools
+          * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+          * `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+
+          In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+          - `"end_turn"`
+
+          - `"max_tokens"`
+
+          - `"stop_sequence"`
+
+          - `"tool_use"`
+
+          - `"pause_turn"`
+
+          - `"refusal"`
+
+        - `stop_sequence: Optional[str]`
+
+          Which custom stop sequence was generated, if any.
+
+          This value will be a non-null string if one of your custom stop sequences was generated.
+
+        - `type: Literal["message"]`
+
+          Object type.
+
+          For Messages, this is always `"message"`.
+
+          - `"message"`
+
+        - `usage: Usage`
+
+          Billing and rate-limit usage.
+
+          Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+          Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+          For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+          Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+          - `cache_creation: Optional[CacheCreation]`
+
+            Breakdown of cached tokens by TTL
+
+            - `ephemeral_1h_input_tokens: int`
+
+              The number of input tokens used to create the 1 hour cache entry.
+
+            - `ephemeral_5m_input_tokens: int`
+
+              The number of input tokens used to create the 5 minute cache entry.
+
+          - `cache_creation_input_tokens: Optional[int]`
+
+            The number of input tokens used to create the cache entry.
+
+          - `cache_read_input_tokens: Optional[int]`
+
+            The number of input tokens read from the cache.
+
+          - `inference_geo: Optional[str]`
+
+            The geographic region where inference was performed for this request.
+
+          - `input_tokens: int`
+
+            The number of input tokens which were used.
+
+          - `output_tokens: int`
+
+            The number of output tokens which were used.
+
+          - `server_tool_use: Optional[ServerToolUsage]`
+
+            The number of server tool requests.
+
+            - `web_fetch_requests: int`
+
+              The number of web fetch tool requests.
+
+            - `web_search_requests: int`
+
+              The number of web search tool requests.
+
+          - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+            If the request used the priority, standard, or batch tier.
+
+            - `"standard"`
+
+            - `"priority"`
+
+            - `"batch"`
+
+      - `type: Literal["succeeded"]`
+
+        - `"succeeded"`
+
+    - `class MessageBatchErroredResult: …`
+
+      - `error: ErrorResponse`
+
+        - `error: ErrorObject`
+
+          - `class InvalidRequestError: …`
+
+            - `message: str`
+
+            - `type: Literal["invalid_request_error"]`
+
+              - `"invalid_request_error"`
+
+          - `class AuthenticationError: …`
+
+            - `message: str`
+
+            - `type: Literal["authentication_error"]`
+
+              - `"authentication_error"`
+
+          - `class BillingError: …`
+
+            - `message: str`
+
+            - `type: Literal["billing_error"]`
+
+              - `"billing_error"`
+
+          - `class PermissionError: …`
+
+            - `message: str`
+
+            - `type: Literal["permission_error"]`
+
+              - `"permission_error"`
+
+          - `class NotFoundError: …`
+
+            - `message: str`
+
+            - `type: Literal["not_found_error"]`
+
+              - `"not_found_error"`
+
+          - `class RateLimitError: …`
+
+            - `message: str`
+
+            - `type: Literal["rate_limit_error"]`
+
+              - `"rate_limit_error"`
+
+          - `class GatewayTimeoutError: …`
+
+            - `message: str`
+
+            - `type: Literal["timeout_error"]`
+
+              - `"timeout_error"`
+
+          - `class APIErrorObject: …`
+
+            - `message: str`
+
+            - `type: Literal["api_error"]`
+
+              - `"api_error"`
+
+          - `class OverloadedError: …`
+
+            - `message: str`
+
+            - `type: Literal["overloaded_error"]`
+
+              - `"overloaded_error"`
+
+        - `request_id: Optional[str]`
+
+        - `type: Literal["error"]`
+
+          - `"error"`
+
+      - `type: Literal["errored"]`
+
+        - `"errored"`
+
+    - `class MessageBatchCanceledResult: …`
+
+      - `type: Literal["canceled"]`
+
+        - `"canceled"`
+
+    - `class MessageBatchExpiredResult: …`
+
+      - `type: Literal["expired"]`
+
+        - `"expired"`
+
+### Message Batch Request Counts
+
+- `class MessageBatchRequestCounts: …`
+
+  - `canceled: int`
+
+    Number of requests in the Message Batch that have been canceled.
+
+    This is zero until processing of the entire Message Batch has ended.
+
+  - `errored: int`
+
+    Number of requests in the Message Batch that encountered an error.
+
+    This is zero until processing of the entire Message Batch has ended.
+
+  - `expired: int`
+
+    Number of requests in the Message Batch that have expired.
+
+    This is zero until processing of the entire Message Batch has ended.
+
+  - `processing: int`
+
+    Number of requests in the Message Batch that are processing.
+
+  - `succeeded: int`
+
+    Number of requests in the Message Batch that have completed successfully.
+
+    This is zero until processing of the entire Message Batch has ended.
+
+### Message Batch Result
+
+- `MessageBatchResult`
+
+  Processing result for this request.
+
+  Contains a Message output if processing was successful, an error response if processing failed, or the reason why processing was not attempted, such as cancellation or expiration.
+
+  - `class MessageBatchSucceededResult: …`
+
+    - `message: Message`
+
+      - `id: str`
+
+        Unique object identifier.
+
+        The format and length of IDs may change over time.
+
+      - `container: Optional[Container]`
+
+        Information about the container used in the request (for the code execution tool)
+
+        - `id: str`
+
+          Identifier for the container used in this request
+
+        - `expires_at: datetime`
+
+          The time at which the container will expire.
+
+      - `content: List[ContentBlock]`
+
+        Content generated by the model.
+
+        This is an array of content blocks, each of which has a `type` that determines its shape.
+
+        Example:
+
+        ```json
+        [{"type": "text", "text": "Hi, I'm Claude."}]
+        ```
+
+        If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+        For example, if the input `messages` were:
+
+        ```json
+        [
+          {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+          {"role": "assistant", "content": "The best answer is ("}
+        ]
+        ```
+
+        Then the response `content` might be:
+
+        ```json
+        [{"type": "text", "text": "B)"}]
+        ```
+
+        - `class TextBlock: …`
+
+          - `citations: Optional[List[TextCitation]]`
+
+            Citations supporting the text block.
+
+            The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+            - `class CitationCharLocation: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_char_index: int`
+
+              - `file_id: Optional[str]`
+
+              - `start_char_index: int`
+
+              - `type: Literal["char_location"]`
+
+                - `"char_location"`
+
+            - `class CitationPageLocation: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_page_number: int`
+
+              - `file_id: Optional[str]`
+
+              - `start_page_number: int`
+
+              - `type: Literal["page_location"]`
+
+                - `"page_location"`
+
+            - `class CitationContentBlockLocation: …`
+
+              - `cited_text: str`
+
+              - `document_index: int`
+
+              - `document_title: Optional[str]`
+
+              - `end_block_index: int`
+
+              - `file_id: Optional[str]`
+
+              - `start_block_index: int`
+
+              - `type: Literal["content_block_location"]`
+
+                - `"content_block_location"`
+
+            - `class CitationsWebSearchResultLocation: …`
+
+              - `cited_text: str`
+
+              - `encrypted_index: str`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["web_search_result_location"]`
+
+                - `"web_search_result_location"`
+
+              - `url: str`
+
+            - `class CitationsSearchResultLocation: …`
+
+              - `cited_text: str`
+
+              - `end_block_index: int`
+
+              - `search_result_index: int`
+
+              - `source: str`
+
+              - `start_block_index: int`
+
+              - `title: Optional[str]`
+
+              - `type: Literal["search_result_location"]`
+
+                - `"search_result_location"`
+
+          - `text: str`
+
+          - `type: Literal["text"]`
+
+            - `"text"`
+
+        - `class ThinkingBlock: …`
+
+          - `signature: str`
+
+          - `thinking: str`
+
+          - `type: Literal["thinking"]`
+
+            - `"thinking"`
+
+        - `class RedactedThinkingBlock: …`
+
+          - `data: str`
+
+          - `type: Literal["redacted_thinking"]`
+
+            - `"redacted_thinking"`
+
+        - `class ToolUseBlock: …`
+
+          - `id: str`
+
+          - `caller: Caller`
+
+            Tool invocation directly from the model.
+
+            - `class DirectCaller: …`
+
+              Tool invocation directly from the model.
+
+              - `type: Literal["direct"]`
+
+                - `"direct"`
+
+            - `class ServerToolCaller: …`
+
+              Tool invocation generated by a server-side tool.
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20250825"]`
+
+                - `"code_execution_20250825"`
+
+            - `class ServerToolCaller20260120: …`
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20260120"]`
+
+                - `"code_execution_20260120"`
+
+          - `input: Dict[str, object]`
+
+          - `name: str`
+
+          - `type: Literal["tool_use"]`
+
+            - `"tool_use"`
+
+        - `class ServerToolUseBlock: …`
+
+          - `id: str`
+
+          - `caller: Caller`
+
+            Tool invocation directly from the model.
+
+            - `class DirectCaller: …`
+
+              Tool invocation directly from the model.
+
+              - `type: Literal["direct"]`
+
+                - `"direct"`
+
+            - `class ServerToolCaller: …`
+
+              Tool invocation generated by a server-side tool.
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20250825"]`
+
+                - `"code_execution_20250825"`
+
+            - `class ServerToolCaller20260120: …`
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20260120"]`
+
+                - `"code_execution_20260120"`
+
+          - `input: Dict[str, object]`
+
+          - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+            - `"web_search"`
+
+            - `"web_fetch"`
+
+            - `"code_execution"`
+
+            - `"bash_code_execution"`
+
+            - `"text_editor_code_execution"`
+
+            - `"tool_search_tool_regex"`
+
+            - `"tool_search_tool_bm25"`
+
+          - `type: Literal["server_tool_use"]`
+
+            - `"server_tool_use"`
+
+        - `class WebSearchToolResultBlock: …`
+
+          - `caller: Caller`
+
+            Tool invocation directly from the model.
+
+            - `class DirectCaller: …`
+
+              Tool invocation directly from the model.
+
+              - `type: Literal["direct"]`
+
+                - `"direct"`
+
+            - `class ServerToolCaller: …`
+
+              Tool invocation generated by a server-side tool.
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20250825"]`
+
+                - `"code_execution_20250825"`
+
+            - `class ServerToolCaller20260120: …`
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20260120"]`
+
+                - `"code_execution_20260120"`
+
+          - `content: WebSearchToolResultBlockContent`
+
+            - `class WebSearchToolResultError: …`
+
+              - `error_code: WebSearchToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"max_uses_exceeded"`
+
+                - `"too_many_requests"`
+
+                - `"query_too_long"`
+
+                - `"request_too_large"`
+
+              - `type: Literal["web_search_tool_result_error"]`
+
+                - `"web_search_tool_result_error"`
+
+            - `List[WebSearchResultBlock]`
+
+              - `encrypted_content: str`
+
+              - `page_age: Optional[str]`
+
+              - `title: str`
+
+              - `type: Literal["web_search_result"]`
+
+                - `"web_search_result"`
+
+              - `url: str`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["web_search_tool_result"]`
+
+            - `"web_search_tool_result"`
+
+        - `class WebFetchToolResultBlock: …`
+
+          - `caller: Caller`
+
+            Tool invocation directly from the model.
+
+            - `class DirectCaller: …`
+
+              Tool invocation directly from the model.
+
+              - `type: Literal["direct"]`
+
+                - `"direct"`
+
+            - `class ServerToolCaller: …`
+
+              Tool invocation generated by a server-side tool.
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20250825"]`
+
+                - `"code_execution_20250825"`
+
+            - `class ServerToolCaller20260120: …`
+
+              - `tool_id: str`
+
+              - `type: Literal["code_execution_20260120"]`
+
+                - `"code_execution_20260120"`
+
+          - `content: Content`
+
+            - `class WebFetchToolResultErrorBlock: …`
+
+              - `error_code: WebFetchToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"url_too_long"`
+
+                - `"url_not_allowed"`
+
+                - `"url_not_accessible"`
+
+                - `"unsupported_content_type"`
+
+                - `"too_many_requests"`
+
+                - `"max_uses_exceeded"`
+
+                - `"unavailable"`
+
+              - `type: Literal["web_fetch_tool_result_error"]`
+
+                - `"web_fetch_tool_result_error"`
+
+            - `class WebFetchBlock: …`
+
+              - `content: DocumentBlock`
+
+                - `citations: Optional[CitationsConfig]`
+
+                  Citation configuration for the document
+
+                  - `enabled: bool`
+
+                - `source: Source`
+
+                  - `class Base64PDFSource: …`
+
+                    - `data: str`
+
+                    - `media_type: Literal["application/pdf"]`
+
+                      - `"application/pdf"`
+
+                    - `type: Literal["base64"]`
+
+                      - `"base64"`
+
+                  - `class PlainTextSource: …`
+
+                    - `data: str`
+
+                    - `media_type: Literal["text/plain"]`
+
+                      - `"text/plain"`
+
+                    - `type: Literal["text"]`
+
+                      - `"text"`
+
+                - `title: Optional[str]`
+
+                  The title of the document
+
+                - `type: Literal["document"]`
+
+                  - `"document"`
+
+              - `retrieved_at: Optional[str]`
+
+                ISO 8601 timestamp when the content was retrieved
+
+              - `type: Literal["web_fetch_result"]`
+
+                - `"web_fetch_result"`
+
+              - `url: str`
+
+                Fetched content URL
+
+          - `tool_use_id: str`
+
+          - `type: Literal["web_fetch_tool_result"]`
+
+            - `"web_fetch_tool_result"`
+
+        - `class CodeExecutionToolResultBlock: …`
+
+          - `content: CodeExecutionToolResultBlockContent`
+
+            Code execution result with encrypted stdout for PFC + web_search results.
+
+            - `class CodeExecutionToolResultError: …`
+
+              - `error_code: CodeExecutionToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"too_many_requests"`
+
+                - `"execution_time_exceeded"`
+
+              - `type: Literal["code_execution_tool_result_error"]`
+
+                - `"code_execution_tool_result_error"`
+
+            - `class CodeExecutionResultBlock: …`
+
+              - `content: List[CodeExecutionOutputBlock]`
+
+                - `file_id: str`
+
+                - `type: Literal["code_execution_output"]`
+
+                  - `"code_execution_output"`
+
+              - `return_code: int`
+
+              - `stderr: str`
+
+              - `stdout: str`
+
+              - `type: Literal["code_execution_result"]`
+
+                - `"code_execution_result"`
+
+            - `class EncryptedCodeExecutionResultBlock: …`
+
+              Code execution result with encrypted stdout for PFC + web_search results.
+
+              - `content: List[CodeExecutionOutputBlock]`
+
+                - `file_id: str`
+
+                - `type: Literal["code_execution_output"]`
+
+                  - `"code_execution_output"`
+
+              - `encrypted_stdout: str`
+
+              - `return_code: int`
+
+              - `stderr: str`
+
+              - `type: Literal["encrypted_code_execution_result"]`
+
+                - `"encrypted_code_execution_result"`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["code_execution_tool_result"]`
+
+            - `"code_execution_tool_result"`
+
+        - `class BashCodeExecutionToolResultBlock: …`
+
+          - `content: Content`
+
+            - `class BashCodeExecutionToolResultError: …`
+
+              - `error_code: BashCodeExecutionToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"too_many_requests"`
+
+                - `"execution_time_exceeded"`
+
+                - `"output_file_too_large"`
+
+              - `type: Literal["bash_code_execution_tool_result_error"]`
+
+                - `"bash_code_execution_tool_result_error"`
+
+            - `class BashCodeExecutionResultBlock: …`
+
+              - `content: List[BashCodeExecutionOutputBlock]`
+
+                - `file_id: str`
+
+                - `type: Literal["bash_code_execution_output"]`
+
+                  - `"bash_code_execution_output"`
+
+              - `return_code: int`
+
+              - `stderr: str`
+
+              - `stdout: str`
+
+              - `type: Literal["bash_code_execution_result"]`
+
+                - `"bash_code_execution_result"`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["bash_code_execution_tool_result"]`
+
+            - `"bash_code_execution_tool_result"`
+
+        - `class TextEditorCodeExecutionToolResultBlock: …`
+
+          - `content: Content`
+
+            - `class TextEditorCodeExecutionToolResultError: …`
+
+              - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"too_many_requests"`
+
+                - `"execution_time_exceeded"`
+
+                - `"file_not_found"`
+
+              - `error_message: Optional[str]`
+
+              - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+                - `"text_editor_code_execution_tool_result_error"`
+
+            - `class TextEditorCodeExecutionViewResultBlock: …`
+
+              - `content: str`
+
+              - `file_type: Literal["text", "image", "pdf"]`
+
+                - `"text"`
+
+                - `"image"`
+
+                - `"pdf"`
+
+              - `num_lines: Optional[int]`
+
+              - `start_line: Optional[int]`
+
+              - `total_lines: Optional[int]`
+
+              - `type: Literal["text_editor_code_execution_view_result"]`
+
+                - `"text_editor_code_execution_view_result"`
+
+            - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+              - `is_file_update: bool`
+
+              - `type: Literal["text_editor_code_execution_create_result"]`
+
+                - `"text_editor_code_execution_create_result"`
+
+            - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+              - `lines: Optional[List[str]]`
+
+              - `new_lines: Optional[int]`
+
+              - `new_start: Optional[int]`
+
+              - `old_lines: Optional[int]`
+
+              - `old_start: Optional[int]`
+
+              - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+                - `"text_editor_code_execution_str_replace_result"`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["text_editor_code_execution_tool_result"]`
+
+            - `"text_editor_code_execution_tool_result"`
+
+        - `class ToolSearchToolResultBlock: …`
+
+          - `content: Content`
+
+            - `class ToolSearchToolResultError: …`
+
+              - `error_code: ToolSearchToolResultErrorCode`
+
+                - `"invalid_tool_input"`
+
+                - `"unavailable"`
+
+                - `"too_many_requests"`
+
+                - `"execution_time_exceeded"`
+
+              - `error_message: Optional[str]`
+
+              - `type: Literal["tool_search_tool_result_error"]`
+
+                - `"tool_search_tool_result_error"`
+
+            - `class ToolSearchToolSearchResultBlock: …`
+
+              - `tool_references: List[ToolReferenceBlock]`
+
+                - `tool_name: str`
+
+                - `type: Literal["tool_reference"]`
+
+                  - `"tool_reference"`
+
+              - `type: Literal["tool_search_tool_search_result"]`
+
+                - `"tool_search_tool_search_result"`
+
+          - `tool_use_id: str`
+
+          - `type: Literal["tool_search_tool_result"]`
+
+            - `"tool_search_tool_result"`
+
+        - `class ContainerUploadBlock: …`
+
+          Response model for a file uploaded to the container.
+
+          - `file_id: str`
+
+          - `type: Literal["container_upload"]`
+
+            - `"container_upload"`
+
+      - `model: Model`
+
+        The model that will complete your prompt.
+
+        See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+        - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+          The model that will complete your prompt.
+
+          See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+          - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+          - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+          - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+          - `claude-sonnet-4-6` - Best combination of speed and intelligence
+          - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+          - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+          - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+          - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+          - `claude-sonnet-4-5` - High-performance model for agents and coding
+          - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+          - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+          - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+          - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+          - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+          - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+          - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+          - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+          - `"claude-opus-4-7"`
+
+            Frontier intelligence for long-running agents and coding
+
+          - `"claude-mythos-preview"`
+
+            New class of intelligence, strongest in coding and cybersecurity
+
+          - `"claude-opus-4-6"`
+
+            Frontier intelligence for long-running agents and coding
+
+          - `"claude-sonnet-4-6"`
+
+            Best combination of speed and intelligence
+
+          - `"claude-haiku-4-5"`
+
+            Fastest model with near-frontier intelligence
+
+          - `"claude-haiku-4-5-20251001"`
+
+            Fastest model with near-frontier intelligence
+
+          - `"claude-opus-4-5"`
+
+            Premium model combining maximum intelligence with practical performance
+
+          - `"claude-opus-4-5-20251101"`
+
+            Premium model combining maximum intelligence with practical performance
+
+          - `"claude-sonnet-4-5"`
+
+            High-performance model for agents and coding
+
+          - `"claude-sonnet-4-5-20250929"`
+
+            High-performance model for agents and coding
+
+          - `"claude-opus-4-1"`
+
+            Exceptional model for specialized complex tasks
+
+          - `"claude-opus-4-1-20250805"`
+
+            Exceptional model for specialized complex tasks
+
+          - `"claude-opus-4-0"`
+
+            Powerful model for complex tasks
+
+          - `"claude-opus-4-20250514"`
+
+            Powerful model for complex tasks
+
+          - `"claude-sonnet-4-0"`
+
+            High-performance model with extended thinking
+
+          - `"claude-sonnet-4-20250514"`
+
+            High-performance model with extended thinking
+
+          - `"claude-3-haiku-20240307"`
+
+            Fast and cost-effective model
+
+        - `str`
+
+      - `role: Literal["assistant"]`
+
+        Conversational role of the generated message.
+
+        This will always be `"assistant"`.
+
+        - `"assistant"`
+
+      - `stop_details: Optional[RefusalStopDetails]`
+
+        Structured information about a refusal.
+
+        - `category: Optional[Literal["cyber", "bio"]]`
+
+          The policy category that triggered the refusal.
+
+          `null` when the refusal doesn't map to a named category.
+
+          - `"cyber"`
+
+          - `"bio"`
+
+        - `explanation: Optional[str]`
+
+          Human-readable explanation of the refusal.
+
+          This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+        - `type: Literal["refusal"]`
+
+          - `"refusal"`
+
+      - `stop_reason: Optional[StopReason]`
+
+        The reason that we stopped.
+
+        This may be one the following values:
+
+        * `"end_turn"`: the model reached a natural stopping point
+        * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+        * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+        * `"tool_use"`: the model invoked one or more tools
+        * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+        * `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+
+        In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+        - `"end_turn"`
+
+        - `"max_tokens"`
+
+        - `"stop_sequence"`
+
+        - `"tool_use"`
+
+        - `"pause_turn"`
+
+        - `"refusal"`
+
+      - `stop_sequence: Optional[str]`
+
+        Which custom stop sequence was generated, if any.
+
+        This value will be a non-null string if one of your custom stop sequences was generated.
+
+      - `type: Literal["message"]`
+
+        Object type.
+
+        For Messages, this is always `"message"`.
+
+        - `"message"`
+
+      - `usage: Usage`
+
+        Billing and rate-limit usage.
+
+        Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+        Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+        For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+        Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+        - `cache_creation: Optional[CacheCreation]`
+
+          Breakdown of cached tokens by TTL
+
+          - `ephemeral_1h_input_tokens: int`
+
+            The number of input tokens used to create the 1 hour cache entry.
+
+          - `ephemeral_5m_input_tokens: int`
+
+            The number of input tokens used to create the 5 minute cache entry.
+
+        - `cache_creation_input_tokens: Optional[int]`
+
+          The number of input tokens used to create the cache entry.
+
+        - `cache_read_input_tokens: Optional[int]`
+
+          The number of input tokens read from the cache.
+
+        - `inference_geo: Optional[str]`
+
+          The geographic region where inference was performed for this request.
+
+        - `input_tokens: int`
+
+          The number of input tokens which were used.
+
+        - `output_tokens: int`
+
+          The number of output tokens which were used.
+
+        - `server_tool_use: Optional[ServerToolUsage]`
+
+          The number of server tool requests.
+
+          - `web_fetch_requests: int`
+
+            The number of web fetch tool requests.
+
+          - `web_search_requests: int`
+
+            The number of web search tool requests.
+
+        - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+          If the request used the priority, standard, or batch tier.
+
+          - `"standard"`
+
+          - `"priority"`
+
+          - `"batch"`
+
+    - `type: Literal["succeeded"]`
+
+      - `"succeeded"`
+
+  - `class MessageBatchErroredResult: …`
+
+    - `error: ErrorResponse`
+
+      - `error: ErrorObject`
+
+        - `class InvalidRequestError: …`
+
+          - `message: str`
+
+          - `type: Literal["invalid_request_error"]`
+
+            - `"invalid_request_error"`
+
+        - `class AuthenticationError: …`
+
+          - `message: str`
+
+          - `type: Literal["authentication_error"]`
+
+            - `"authentication_error"`
+
+        - `class BillingError: …`
+
+          - `message: str`
+
+          - `type: Literal["billing_error"]`
+
+            - `"billing_error"`
+
+        - `class PermissionError: …`
+
+          - `message: str`
+
+          - `type: Literal["permission_error"]`
+
+            - `"permission_error"`
+
+        - `class NotFoundError: …`
+
+          - `message: str`
+
+          - `type: Literal["not_found_error"]`
+
+            - `"not_found_error"`
+
+        - `class RateLimitError: …`
+
+          - `message: str`
+
+          - `type: Literal["rate_limit_error"]`
+
+            - `"rate_limit_error"`
+
+        - `class GatewayTimeoutError: …`
+
+          - `message: str`
+
+          - `type: Literal["timeout_error"]`
+
+            - `"timeout_error"`
+
+        - `class APIErrorObject: …`
+
+          - `message: str`
+
+          - `type: Literal["api_error"]`
+
+            - `"api_error"`
+
+        - `class OverloadedError: …`
+
+          - `message: str`
+
+          - `type: Literal["overloaded_error"]`
+
+            - `"overloaded_error"`
+
+      - `request_id: Optional[str]`
+
+      - `type: Literal["error"]`
+
+        - `"error"`
+
+    - `type: Literal["errored"]`
+
+      - `"errored"`
+
+  - `class MessageBatchCanceledResult: …`
+
+    - `type: Literal["canceled"]`
+
+      - `"canceled"`
+
+  - `class MessageBatchExpiredResult: …`
+
+    - `type: Literal["expired"]`
+
+      - `"expired"`
+
+### Message Batch Succeeded Result
+
+- `class MessageBatchSucceededResult: …`
+
+  - `message: Message`
+
+    - `id: str`
+
+      Unique object identifier.
+
+      The format and length of IDs may change over time.
+
+    - `container: Optional[Container]`
+
+      Information about the container used in the request (for the code execution tool)
+
+      - `id: str`
+
+        Identifier for the container used in this request
+
+      - `expires_at: datetime`
+
+        The time at which the container will expire.
+
+    - `content: List[ContentBlock]`
+
+      Content generated by the model.
+
+      This is an array of content blocks, each of which has a `type` that determines its shape.
+
+      Example:
+
+      ```json
+      [{"type": "text", "text": "Hi, I'm Claude."}]
+      ```
+
+      If the request input `messages` ended with an `assistant` turn, then the response `content` will continue directly from that last turn. You can use this to constrain the model's output.
+
+      For example, if the input `messages` were:
+
+      ```json
+      [
+        {"role": "user", "content": "What's the Greek name for Sun? (A) Sol (B) Helios (C) Sun"},
+        {"role": "assistant", "content": "The best answer is ("}
+      ]
+      ```
+
+      Then the response `content` might be:
+
+      ```json
+      [{"type": "text", "text": "B)"}]
+      ```
+
+      - `class TextBlock: …`
+
+        - `citations: Optional[List[TextCitation]]`
+
+          Citations supporting the text block.
+
+          The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+
+          - `class CitationCharLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_char_index: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_char_index: int`
+
+            - `type: Literal["char_location"]`
+
+              - `"char_location"`
+
+          - `class CitationPageLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_page_number: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_page_number: int`
+
+            - `type: Literal["page_location"]`
+
+              - `"page_location"`
+
+          - `class CitationContentBlockLocation: …`
+
+            - `cited_text: str`
+
+            - `document_index: int`
+
+            - `document_title: Optional[str]`
+
+            - `end_block_index: int`
+
+            - `file_id: Optional[str]`
+
+            - `start_block_index: int`
+
+            - `type: Literal["content_block_location"]`
+
+              - `"content_block_location"`
+
+          - `class CitationsWebSearchResultLocation: …`
+
+            - `cited_text: str`
+
+            - `encrypted_index: str`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["web_search_result_location"]`
+
+              - `"web_search_result_location"`
+
+            - `url: str`
+
+          - `class CitationsSearchResultLocation: …`
+
+            - `cited_text: str`
+
+            - `end_block_index: int`
+
+            - `search_result_index: int`
+
+            - `source: str`
+
+            - `start_block_index: int`
+
+            - `title: Optional[str]`
+
+            - `type: Literal["search_result_location"]`
+
+              - `"search_result_location"`
+
+        - `text: str`
+
+        - `type: Literal["text"]`
+
+          - `"text"`
+
+      - `class ThinkingBlock: …`
+
+        - `signature: str`
+
+        - `thinking: str`
+
+        - `type: Literal["thinking"]`
+
+          - `"thinking"`
+
+      - `class RedactedThinkingBlock: …`
+
+        - `data: str`
+
+        - `type: Literal["redacted_thinking"]`
+
+          - `"redacted_thinking"`
+
+      - `class ToolUseBlock: …`
+
+        - `id: str`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `input: Dict[str, object]`
+
+        - `name: str`
+
+        - `type: Literal["tool_use"]`
+
+          - `"tool_use"`
+
+      - `class ServerToolUseBlock: …`
+
+        - `id: str`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `input: Dict[str, object]`
+
+        - `name: Literal["web_search", "web_fetch", "code_execution", 4 more]`
+
+          - `"web_search"`
+
+          - `"web_fetch"`
+
+          - `"code_execution"`
+
+          - `"bash_code_execution"`
+
+          - `"text_editor_code_execution"`
+
+          - `"tool_search_tool_regex"`
+
+          - `"tool_search_tool_bm25"`
+
+        - `type: Literal["server_tool_use"]`
+
+          - `"server_tool_use"`
+
+      - `class WebSearchToolResultBlock: …`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `content: WebSearchToolResultBlockContent`
+
+          - `class WebSearchToolResultError: …`
+
+            - `error_code: WebSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"max_uses_exceeded"`
+
+              - `"too_many_requests"`
+
+              - `"query_too_long"`
+
+              - `"request_too_large"`
+
+            - `type: Literal["web_search_tool_result_error"]`
+
+              - `"web_search_tool_result_error"`
+
+          - `List[WebSearchResultBlock]`
+
+            - `encrypted_content: str`
+
+            - `page_age: Optional[str]`
+
+            - `title: str`
+
+            - `type: Literal["web_search_result"]`
+
+              - `"web_search_result"`
+
+            - `url: str`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_search_tool_result"]`
+
+          - `"web_search_tool_result"`
+
+      - `class WebFetchToolResultBlock: …`
+
+        - `caller: Caller`
+
+          Tool invocation directly from the model.
+
+          - `class DirectCaller: …`
+
+            Tool invocation directly from the model.
+
+            - `type: Literal["direct"]`
+
+              - `"direct"`
+
+          - `class ServerToolCaller: …`
+
+            Tool invocation generated by a server-side tool.
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20250825"]`
+
+              - `"code_execution_20250825"`
+
+          - `class ServerToolCaller20260120: …`
+
+            - `tool_id: str`
+
+            - `type: Literal["code_execution_20260120"]`
+
+              - `"code_execution_20260120"`
+
+        - `content: Content`
+
+          - `class WebFetchToolResultErrorBlock: …`
+
+            - `error_code: WebFetchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"url_too_long"`
+
+              - `"url_not_allowed"`
+
+              - `"url_not_accessible"`
+
+              - `"unsupported_content_type"`
+
+              - `"too_many_requests"`
+
+              - `"max_uses_exceeded"`
+
+              - `"unavailable"`
+
+            - `type: Literal["web_fetch_tool_result_error"]`
+
+              - `"web_fetch_tool_result_error"`
+
+          - `class WebFetchBlock: …`
+
+            - `content: DocumentBlock`
+
+              - `citations: Optional[CitationsConfig]`
+
+                Citation configuration for the document
+
+                - `enabled: bool`
+
+              - `source: Source`
+
+                - `class Base64PDFSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["application/pdf"]`
+
+                    - `"application/pdf"`
+
+                  - `type: Literal["base64"]`
+
+                    - `"base64"`
+
+                - `class PlainTextSource: …`
+
+                  - `data: str`
+
+                  - `media_type: Literal["text/plain"]`
+
+                    - `"text/plain"`
+
+                  - `type: Literal["text"]`
+
+                    - `"text"`
+
+              - `title: Optional[str]`
+
+                The title of the document
+
+              - `type: Literal["document"]`
+
+                - `"document"`
+
+            - `retrieved_at: Optional[str]`
+
+              ISO 8601 timestamp when the content was retrieved
+
+            - `type: Literal["web_fetch_result"]`
+
+              - `"web_fetch_result"`
+
+            - `url: str`
+
+              Fetched content URL
+
+        - `tool_use_id: str`
+
+        - `type: Literal["web_fetch_tool_result"]`
+
+          - `"web_fetch_tool_result"`
+
+      - `class CodeExecutionToolResultBlock: …`
+
+        - `content: CodeExecutionToolResultBlockContent`
+
+          Code execution result with encrypted stdout for PFC + web_search results.
+
+          - `class CodeExecutionToolResultError: …`
+
+            - `error_code: CodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `type: Literal["code_execution_tool_result_error"]`
+
+              - `"code_execution_tool_result_error"`
+
+          - `class CodeExecutionResultBlock: …`
+
+            - `content: List[CodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["code_execution_result"]`
+
+              - `"code_execution_result"`
+
+          - `class EncryptedCodeExecutionResultBlock: …`
+
+            Code execution result with encrypted stdout for PFC + web_search results.
+
+            - `content: List[CodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["code_execution_output"]`
+
+                - `"code_execution_output"`
+
+            - `encrypted_stdout: str`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `type: Literal["encrypted_code_execution_result"]`
+
+              - `"encrypted_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["code_execution_tool_result"]`
+
+          - `"code_execution_tool_result"`
+
+      - `class BashCodeExecutionToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class BashCodeExecutionToolResultError: …`
+
+            - `error_code: BashCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"output_file_too_large"`
+
+            - `type: Literal["bash_code_execution_tool_result_error"]`
+
+              - `"bash_code_execution_tool_result_error"`
+
+          - `class BashCodeExecutionResultBlock: …`
+
+            - `content: List[BashCodeExecutionOutputBlock]`
+
+              - `file_id: str`
+
+              - `type: Literal["bash_code_execution_output"]`
+
+                - `"bash_code_execution_output"`
+
+            - `return_code: int`
+
+            - `stderr: str`
+
+            - `stdout: str`
+
+            - `type: Literal["bash_code_execution_result"]`
+
+              - `"bash_code_execution_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["bash_code_execution_tool_result"]`
+
+          - `"bash_code_execution_tool_result"`
+
+      - `class TextEditorCodeExecutionToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class TextEditorCodeExecutionToolResultError: …`
+
+            - `error_code: TextEditorCodeExecutionToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+              - `"file_not_found"`
+
+            - `error_message: Optional[str]`
+
+            - `type: Literal["text_editor_code_execution_tool_result_error"]`
+
+              - `"text_editor_code_execution_tool_result_error"`
+
+          - `class TextEditorCodeExecutionViewResultBlock: …`
+
+            - `content: str`
+
+            - `file_type: Literal["text", "image", "pdf"]`
+
+              - `"text"`
+
+              - `"image"`
+
+              - `"pdf"`
+
+            - `num_lines: Optional[int]`
+
+            - `start_line: Optional[int]`
+
+            - `total_lines: Optional[int]`
+
+            - `type: Literal["text_editor_code_execution_view_result"]`
+
+              - `"text_editor_code_execution_view_result"`
+
+          - `class TextEditorCodeExecutionCreateResultBlock: …`
+
+            - `is_file_update: bool`
+
+            - `type: Literal["text_editor_code_execution_create_result"]`
+
+              - `"text_editor_code_execution_create_result"`
+
+          - `class TextEditorCodeExecutionStrReplaceResultBlock: …`
+
+            - `lines: Optional[List[str]]`
+
+            - `new_lines: Optional[int]`
+
+            - `new_start: Optional[int]`
+
+            - `old_lines: Optional[int]`
+
+            - `old_start: Optional[int]`
+
+            - `type: Literal["text_editor_code_execution_str_replace_result"]`
+
+              - `"text_editor_code_execution_str_replace_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["text_editor_code_execution_tool_result"]`
+
+          - `"text_editor_code_execution_tool_result"`
+
+      - `class ToolSearchToolResultBlock: …`
+
+        - `content: Content`
+
+          - `class ToolSearchToolResultError: …`
+
+            - `error_code: ToolSearchToolResultErrorCode`
+
+              - `"invalid_tool_input"`
+
+              - `"unavailable"`
+
+              - `"too_many_requests"`
+
+              - `"execution_time_exceeded"`
+
+            - `error_message: Optional[str]`
+
+            - `type: Literal["tool_search_tool_result_error"]`
+
+              - `"tool_search_tool_result_error"`
+
+          - `class ToolSearchToolSearchResultBlock: …`
+
+            - `tool_references: List[ToolReferenceBlock]`
+
+              - `tool_name: str`
+
+              - `type: Literal["tool_reference"]`
+
+                - `"tool_reference"`
+
+            - `type: Literal["tool_search_tool_search_result"]`
+
+              - `"tool_search_tool_search_result"`
+
+        - `tool_use_id: str`
+
+        - `type: Literal["tool_search_tool_result"]`
+
+          - `"tool_search_tool_result"`
+
+      - `class ContainerUploadBlock: …`
+
+        Response model for a file uploaded to the container.
+
+        - `file_id: str`
+
+        - `type: Literal["container_upload"]`
+
+          - `"container_upload"`
+
+    - `model: Model`
+
+      The model that will complete your prompt.
+
+      See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+      - `Literal["claude-opus-4-7", "claude-mythos-preview", "claude-opus-4-6", 14 more]`
+
+        The model that will complete your prompt.
+
+        See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+        - `claude-opus-4-7` - Frontier intelligence for long-running agents and coding
+        - `claude-mythos-preview` - New class of intelligence, strongest in coding and cybersecurity
+        - `claude-opus-4-6` - Frontier intelligence for long-running agents and coding
+        - `claude-sonnet-4-6` - Best combination of speed and intelligence
+        - `claude-haiku-4-5` - Fastest model with near-frontier intelligence
+        - `claude-haiku-4-5-20251001` - Fastest model with near-frontier intelligence
+        - `claude-opus-4-5` - Premium model combining maximum intelligence with practical performance
+        - `claude-opus-4-5-20251101` - Premium model combining maximum intelligence with practical performance
+        - `claude-sonnet-4-5` - High-performance model for agents and coding
+        - `claude-sonnet-4-5-20250929` - High-performance model for agents and coding
+        - `claude-opus-4-1` - Exceptional model for specialized complex tasks
+        - `claude-opus-4-1-20250805` - Exceptional model for specialized complex tasks
+        - `claude-opus-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-opus-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-sonnet-4-0` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-sonnet-4-20250514` - Deprecated: Will reach end-of-life on June 15th, 2026. Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+        - `claude-3-haiku-20240307` - Deprecated: Will reach end-of-life on April 20th, 2026. Please migrate to claude-haiku-4-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+        - `"claude-opus-4-7"`
+
+          Frontier intelligence for long-running agents and coding
+
+        - `"claude-mythos-preview"`
+
+          New class of intelligence, strongest in coding and cybersecurity
+
+        - `"claude-opus-4-6"`
+
+          Frontier intelligence for long-running agents and coding
+
+        - `"claude-sonnet-4-6"`
+
+          Best combination of speed and intelligence
+
+        - `"claude-haiku-4-5"`
+
+          Fastest model with near-frontier intelligence
+
+        - `"claude-haiku-4-5-20251001"`
+
+          Fastest model with near-frontier intelligence
+
+        - `"claude-opus-4-5"`
+
+          Premium model combining maximum intelligence with practical performance
+
+        - `"claude-opus-4-5-20251101"`
+
+          Premium model combining maximum intelligence with practical performance
+
+        - `"claude-sonnet-4-5"`
+
+          High-performance model for agents and coding
+
+        - `"claude-sonnet-4-5-20250929"`
+
+          High-performance model for agents and coding
+
+        - `"claude-opus-4-1"`
+
+          Exceptional model for specialized complex tasks
+
+        - `"claude-opus-4-1-20250805"`
+
+          Exceptional model for specialized complex tasks
+
+        - `"claude-opus-4-0"`
+
+          Powerful model for complex tasks
+
+        - `"claude-opus-4-20250514"`
+
+          Powerful model for complex tasks
+
+        - `"claude-sonnet-4-0"`
+
+          High-performance model with extended thinking
+
+        - `"claude-sonnet-4-20250514"`
+
+          High-performance model with extended thinking
+
+        - `"claude-3-haiku-20240307"`
+
+          Fast and cost-effective model
+
+      - `str`
+
+    - `role: Literal["assistant"]`
+
+      Conversational role of the generated message.
+
+      This will always be `"assistant"`.
+
+      - `"assistant"`
+
+    - `stop_details: Optional[RefusalStopDetails]`
+
+      Structured information about a refusal.
+
+      - `category: Optional[Literal["cyber", "bio"]]`
+
+        The policy category that triggered the refusal.
+
+        `null` when the refusal doesn't map to a named category.
+
+        - `"cyber"`
+
+        - `"bio"`
+
+      - `explanation: Optional[str]`
+
+        Human-readable explanation of the refusal.
+
+        This text is not guaranteed to be stable. `null` when no explanation is available for the category.
+
+      - `type: Literal["refusal"]`
+
+        - `"refusal"`
+
+    - `stop_reason: Optional[StopReason]`
+
+      The reason that we stopped.
+
+      This may be one the following values:
+
+      * `"end_turn"`: the model reached a natural stopping point
+      * `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum
+      * `"stop_sequence"`: one of your provided custom `stop_sequences` was generated
+      * `"tool_use"`: the model invoked one or more tools
+      * `"pause_turn"`: we paused a long-running turn. You may provide the response back as-is in a subsequent request to let the model continue.
+      * `"refusal"`: when streaming classifiers intervene to handle potential policy violations
+
+      In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
+
+      - `"end_turn"`
+
+      - `"max_tokens"`
+
+      - `"stop_sequence"`
+
+      - `"tool_use"`
+
+      - `"pause_turn"`
+
+      - `"refusal"`
+
+    - `stop_sequence: Optional[str]`
+
+      Which custom stop sequence was generated, if any.
+
+      This value will be a non-null string if one of your custom stop sequences was generated.
+
+    - `type: Literal["message"]`
+
+      Object type.
+
+      For Messages, this is always `"message"`.
+
+      - `"message"`
+
+    - `usage: Usage`
+
+      Billing and rate-limit usage.
+
+      Anthropic's API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.
+
+      Under the hood, the API transforms requests into a format suitable for the model. The model's output then goes through a parsing stage before becoming an API response. As a result, the token counts in `usage` will not match one-to-one with the exact visible content of an API request or response.
+
+      For example, `output_tokens` will be non-zero, even for an empty string response from Claude.
+
+      Total input tokens in a request is the summation of `input_tokens`, `cache_creation_input_tokens`, and `cache_read_input_tokens`.
+
+      - `cache_creation: Optional[CacheCreation]`
+
+        Breakdown of cached tokens by TTL
+
+        - `ephemeral_1h_input_tokens: int`
+
+          The number of input tokens used to create the 1 hour cache entry.
+
+        - `ephemeral_5m_input_tokens: int`
+
+          The number of input tokens used to create the 5 minute cache entry.
+
+      - `cache_creation_input_tokens: Optional[int]`
+
+        The number of input tokens used to create the cache entry.
+
+      - `cache_read_input_tokens: Optional[int]`
+
+        The number of input tokens read from the cache.
+
+      - `inference_geo: Optional[str]`
+
+        The geographic region where inference was performed for this request.
+
+      - `input_tokens: int`
+
+        The number of input tokens which were used.
+
+      - `output_tokens: int`
+
+        The number of output tokens which were used.
+
+      - `server_tool_use: Optional[ServerToolUsage]`
+
+        The number of server tool requests.
+
+        - `web_fetch_requests: int`
+
+          The number of web fetch tool requests.
+
+        - `web_search_requests: int`
+
+          The number of web search tool requests.
+
+      - `service_tier: Optional[Literal["standard", "priority", "batch"]]`
+
+        If the request used the priority, standard, or batch tier.
+
+        - `"standard"`
+
+        - `"priority"`
+
+        - `"batch"`
+
+  - `type: Literal["succeeded"]`
+
+    - `"succeeded"`

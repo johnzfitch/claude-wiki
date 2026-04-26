@@ -1,6 +1,8 @@
 ---
 title: "SEP-973: Expose additional metadata for Implementations, Resources, Tools and Prompts"
+source_url: "https://modelcontextprotocol.io/community/seps/973-expose-additional-metadata-for-implementations-res.md"
 category: "06-MCP-Tools"
+fetched_at: "2026-04-26T00:00:00Z"
 tags: ["mcp", "mcp-seps", "prompting", "security"]
 ---
 
