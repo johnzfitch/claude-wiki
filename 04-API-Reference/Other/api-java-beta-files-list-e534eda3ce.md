@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Files List E534Eda3Ce"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/files/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/files/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `FileListPage beta().files().list(FileListParamsparams = FileListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Skills Create 6Ee8B16A2C"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/create.md"
+tags: ["api", "skills", "typescript"]
 ---
+
 ## Create
 
 `client.beta.skills.create(SkillCreateParamsparams?, RequestOptionsoptions?): SkillCreateResponse`

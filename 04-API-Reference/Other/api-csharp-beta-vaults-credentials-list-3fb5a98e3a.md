@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Vaults Credentials List 3Fb5A98E3A"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/credentials/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/credentials/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `CredentialListPageResponse Beta.Vaults.Credentials.List(CredentialListParamsparameters, CancellationTokencancellationToken = default)`

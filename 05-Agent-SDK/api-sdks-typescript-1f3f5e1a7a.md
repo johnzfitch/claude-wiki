@@ -1,9 +1,11 @@
 ---
+title: "TypeScript SDK"
+source_url: "https://platform.claude.com/docs/en/api/sdks/typescript.md"
 category: "05-Agent-SDK"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/sdks/typescript.md"
-title: "TypeScript SDK"
+tags: ["agents", "mcp", "sdk", "typescript"]
 ---
+
 # TypeScript SDK
 
 Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments

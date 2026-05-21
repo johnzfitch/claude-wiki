@@ -1,9 +1,11 @@
 ---
+title: "Manage tool context"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/manage-tool-context.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/manage-tool-context.md"
-title: "Manage tool context"
+tags: ["api"]
 ---
+
 # Manage tool context
 
 Choose between tool search, programmatic tool calling, prompt caching, and context editing to manage context bloat.

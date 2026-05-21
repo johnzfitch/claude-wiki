@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Models List 814D420B34"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/models/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

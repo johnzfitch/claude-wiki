@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Memory Stores Create E283E33F45"
+source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 **post** `/v1/memory_stores`

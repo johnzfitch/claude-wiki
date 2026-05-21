@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Memory Stores Create 6Ff3B35C96"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/create.md"
+tags: ["api", "cli"]
 ---
+
 ## Create
 
 `$ ant beta:memory-stores create`

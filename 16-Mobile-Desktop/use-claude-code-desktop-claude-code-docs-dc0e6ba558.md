@@ -1,8 +1,9 @@
 ---
+title: "Use Claude Code Desktop - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/desktop"
 category: "16-Mobile-Desktop"
 fetched_at: "2026-04-26T03:19:57Z"
-source_url: "https://code.claude.com/docs/en/desktop"
-title: "Use Claude Code Desktop - Claude Code Docs"
+tags: ["claude-code", "desktop"]
 ---
 
 # Use Claude Code Desktop
@@ -372,7 +373,7 @@ Connect external services, add reusable workflows, customize Claude’s behavior
 
 Connect external tools
 
-For local and [SSH](#ssh-sessions) sessions, click the **+** button next to the prompt box and select **Connectors** to add integrations like Google Calendar, Slack, GitHub, Linear, Notion, and more. You can add connectors before or during a session. The **+** button is not available in remote sessions, but [routines](/docs/en/routines) configure connectors at routine creation time. To manage or disconnect connectors, go to Settings → Connectors in the desktop app, or select **Manage connectors** from the Connectors menu in the prompt box. Once connected, Claude can read your calendar, send messages, create issues, and interact with your tools directly. You can ask Claude what connectors are configured in your session. Connectors are [MCP servers](/docs/en/mcp) with a graphical setup flow. Use them for quick integration with supported services. For integrations not listed in Connectors, add MCP servers manually via [settings files](/docs/en/mcp#installing-mcp-servers). You can also [create custom connectors](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp).
+For local and [SSH](#ssh-sessions) sessions, click the **+** button next to the prompt box and select **Connectors** to add integrations like Google Calendar, Slack, GitHub, Linear, Notion, and more. You can add connectors before or during a session. The **+** button is not available in remote sessions, but [routines](/docs/en/routines) configure connectors at routine creation time. To manage or disconnect connectors, go to Settings → Connectors in the desktop app, or select **Manage connectors** from the Connectors menu in the prompt box. Once connected, Claude can read your calendar, send messages, create issues, and interact with your tools directly. You can ask Claude what connectors are configured in your session. Connectors are [MCP servers](/docs/en/mcp) with a graphical setup flow. Use them for quick integration with supported services. For integrations not listed in Connectors, add MCP servers manually via [settings files](/docs/en/mcp#installing-mcp-servers). You can also [create custom connectors](../14-Connectors/getting-started-with-custom-connectors-using-remote-mcp.md).
 
 
 [​](#use-skills)
@@ -649,7 +650,7 @@ IT teams can manage the desktop app through MDM on macOS or group policy on Wind
 
 Authentication and SSO
 
-Enterprise organizations can require SSO for all users. See [authentication](/docs/en/authentication) for plan-level details and [Setting up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso) for SAML and OIDC configuration.
+Enterprise organizations can require SSO for all users. See [authentication](/docs/en/authentication) for plan-level details and [Setting up SSO](../21-Account-Support/setting-up-single-sign-on-sso.md) for SAML and OIDC configuration.
 
 
 [​](#data-handling)
@@ -668,7 +669,7 @@ Desktop can be distributed through enterprise deployment tools:
 - **macOS**: distribute via MDM such as Jamf or Kandji using the `.dmg` installer
 - **Windows**: deploy via MSIX package or `.exe` installer. See [Deploy Claude Desktop for Windows](https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows) for enterprise deployment options including silent installation
 
-For network configuration such as proxy settings, firewall allowlisting, and LLM gateways, see [network configuration](/docs/en/network-config). For the full enterprise configuration reference, see the [enterprise configuration guide](https://support.claude.com/en/articles/12622667-enterprise-configuration).
+For network configuration such as proxy settings, firewall allowlisting, and LLM gateways, see [network configuration](/docs/en/network-config). For the full enterprise configuration reference, see the [enterprise configuration guide](../13-Enterprise-Admin/enterprise-configuration.md).
 
 
 [​](#coming-from-the-cli)
@@ -725,7 +726,7 @@ This table compares core capabilities between the CLI and Desktop. For a full li
 |----|----|----|
 | Permission modes | All modes including `dontAsk` | Ask permissions, Auto accept edits, Plan mode, Auto, and Bypass permissions via Settings |
 | `--dangerously-skip-permissions` | CLI flag | Bypass permissions mode. Enable in Settings → Claude Code → “Allow bypass permissions mode” |
-| [Third-party providers](/docs/en/third-party-integrations) | Bedrock, Vertex, Foundry | Anthropic’s API by default. Enterprise deployments can configure Vertex AI and gateway providers. See the [enterprise configuration guide](https://support.claude.com/en/articles/12622667-enterprise-configuration). |
+| [Third-party providers](/docs/en/third-party-integrations) | Bedrock, Vertex, Foundry | Anthropic’s API by default. Enterprise deployments can configure Vertex AI and gateway providers. See the [enterprise configuration guide](../13-Enterprise-Admin/enterprise-configuration.md). |
 | [MCP servers](/docs/en/mcp) | Configure in settings files | Connectors UI for local and SSH sessions, or settings files |
 | [Plugins](/docs/en/plugins) | `/plugin` command | Plugin manager UI |
 | @mention files | Text-based | With autocomplete; local and SSH sessions only |
@@ -744,7 +745,7 @@ What’s not available in Desktop
 
 The following features are only available in the CLI or VS Code extension:
 
-- **Third-party providers**: Desktop connects to Anthropic’s API by default. Enterprise deployments can configure Vertex AI and gateway providers via [managed settings](https://support.claude.com/en/articles/12622667-enterprise-configuration). For Bedrock or Foundry, use the [CLI](/docs/en/quickstart).
+- **Third-party providers**: Desktop connects to Anthropic’s API by default. Enterprise deployments can configure Vertex AI and gateway providers via [managed settings](../13-Enterprise-Admin/enterprise-configuration.md). For Bedrock or Foundry, use the [CLI](/docs/en/quickstart).
 - **Linux**: the desktop app is available on macOS and Windows only.
 - **Inline code suggestions**: Desktop does not provide autocomplete-style suggestions. It works through conversational prompts and explicit code changes.
 - **Agent teams**: multi-agent orchestration is available via the [CLI](/docs/en/agent-teams) and [Agent SDK](/docs/en/headless), not in Desktop.

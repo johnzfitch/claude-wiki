@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Files Retrieve Metadata 100E5A88Fb"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/files/retrieve_metadata.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/files/retrieve_metadata.md"
+tags: ["api", "python"]
 ---
+
 ## Retrieve Metadata
 
 `beta.files.retrieve_metadata(strfile_id, FileRetrieveMetadataParams**kwargs)  -> FileMetadata`

@@ -12,10 +12,10 @@ tags: ["agents", "hooks", "prompting", "security"]
 > Reference for Claude Code hook events, configuration schema, JSON input/output formats, exit codes, async hooks, prompt hooks, and MCP tool hooks.
 
 <Tip>
-  For a quickstart guide with examples, see [Automate workflows with hooks](/en/hooks-guide).
+  For a quickstart guide with examples, see [Automate workflows with hooks](automate-workflows-with-hooks-claude-code-docs-e843f93261.md).
 </Tip>
 
-Hooks are user-defined shell commands or LLM prompts that execute automatically at specific points in Claude Code's lifecycle. Use this reference to look up event schemas, configuration options, JSON input/output formats, and advanced features like async hooks and MCP tool hooks. If you're setting up hooks for the first time, start with the [guide](/en/hooks-guide) instead.
+Hooks are user-defined shell commands or LLM prompts that execute automatically at specific points in Claude Code's lifecycle. Use this reference to look up event schemas, configuration options, JSON input/output formats, and advanced features like async hooks and MCP tool hooks. If you're setting up hooks for the first time, start with the [guide](automate-workflows-with-hooks-claude-code-docs-e843f93261.md) instead.
 
 ## Hook lifecycle
 
@@ -141,9 +141,9 @@ Where you define a hook determines its scope:
 | `.claude/settings.local.json`                              | Single project                | No, gitignored                     |
 | Managed policy settings                                    | Organization-wide             | Yes, admin-controlled              |
 | [Plugin](../08-Plugins-Skills/create-plugins-claude-code-docs.md) `hooks/hooks.json`                   | When plugin is enabled        | Yes, bundled with the plugin       |
-| [Skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) or [agent](/en/sub-agents) frontmatter | While the component is active | Yes, defined in the component file |
+| [Skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) or [agent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) frontmatter | While the component is active | Yes, defined in the component file |
 
-For details on settings file resolution, see [settings](/en/settings). Enterprise administrators can use `allowManagedHooksOnly` to block user, project, and plugin hooks. See [Hook configuration](/en/settings#hook-configuration).
+For details on settings file resolution, see [settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md). Enterprise administrators can use `allowManagedHooksOnly` to block user, project, and plugin hooks. See [Hook configuration](/en/settings#hook-configuration).
 
 ### Matcher patterns
 
@@ -328,7 +328,7 @@ Use environment variables to reference hook scripts relative to the project or p
 
 ### Hooks in skills and agents
 
-In addition to settings files and plugins, hooks can be defined directly in [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) and [subagents](/en/sub-agents) using frontmatter. These hooks are scoped to the component's lifecycle and only run when that component is active.
+In addition to settings files and plugins, hooks can be defined directly in [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) and [subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) using frontmatter. These hooks are scoped to the component's lifecycle and only run when that component is active.
 
 All hook events are supported. For subagents, `Stop` hooks are automatically converted to `SubagentStop` since that is the event that fires when a subagent completes.
 
@@ -494,7 +494,7 @@ Each event corresponds to a point in Claude Code's lifecycle where hooks can run
 
 ### SessionStart
 
-Runs when Claude Code starts a new session or resumes an existing session. Useful for loading development context like existing issues or recent changes to your codebase, or setting up environment variables. For static context that does not require a script, use [CLAUDE.md](/en/memory) instead.
+Runs when Claude Code starts a new session or resumes an existing session. Useful for loading development context like existing issues or recent changes to your codebase, or setting up environment variables. For static context that does not require a script, use [CLAUDE.md](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) instead.
 
 SessionStart runs on every session, so keep these hooks fast.
 
@@ -733,7 +733,7 @@ Searches the web.
 
 ##### Task
 
-Spawns a [subagent](/en/sub-agents).
+Spawns a [subagent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md).
 
 | Field           | Type   | Example                    | Description                                  |
 | :-------------- | :----- | :------------------------- | :------------------------------------------- |
@@ -1201,7 +1201,7 @@ The LLM must respond with JSON containing:
 
 ### Example: Multi-criteria Stop hook
 
-This `Stop` hook uses a detailed prompt to check three conditions before allowing Claude to stop. If `"ok"` is `false`, Claude continues working with the provided reason as its next instruction. `SubagentStop` hooks use the same format to evaluate whether a [subagent](/en/sub-agents) should stop:
+This `Stop` hook uses a detailed prompt to check three conditions before allowing Claude to stop. If `"ok"` is `false`, Claude continues working with the provided reason as its next instruction. `SubagentStop` hooks use the same format to evaluate whether a [subagent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) should stop:
 
 ```json  theme={null}
 {

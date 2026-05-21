@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Memory Stores Memory Versions Redact 77E154C5Fb"
+source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions/redact.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions/redact.md"
+tags: ["api"]
 ---
+
 ## Redact
 
 **post** `/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact`

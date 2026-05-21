@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Messages Batches Results Ab2D7Af530"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/batches/results.md"
+tags: ["api"]
 ---
+
 ## Results
 
 `BetaMessageBatchIndividualResponse beta().messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

@@ -1,9 +1,11 @@
 ---
+title: "Modifying system prompts"
+source_url: "https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts.md"
-title: "Modifying system prompts"
+tags: ["agents", "prompting", "testing"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -331,7 +333,7 @@ The following example pairs a shared `append` block with `excludeDynamicSections
 
 **Tradeoffs:** the working directory, git status, and memory location still reach Claude, but as part of the first user message rather than the system prompt. Instructions in the user message carry marginally less weight than the same text in the system prompt, so Claude may rely on them less strongly when reasoning about the current directory or auto-memory paths. Enable this option when cross-session cache reuse matters more than maximally authoritative environment context.
 
-For the equivalent flag in non-interactive CLI mode, see [`--exclude-dynamic-system-prompt-sections`](/en/cli-reference).
+For the equivalent flag in non-interactive CLI mode, see [`--exclude-dynamic-system-prompt-sections`](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md).
 
 ### Method 4: Custom system prompts
 
@@ -519,6 +521,6 @@ You can combine these methods for maximum flexibility:
 
 ## See also
 
-* [Output styles](/en/output-styles) - Complete output styles documentation
+* [Output styles](../02-Claude-Code-CLI/output-styles-claude-code-docs-c315eeed32.md) - Complete output styles documentation
 * [TypeScript SDK guide](/en/agent-sdk/typescript) - Complete SDK usage guide
-* [Configuration guide](/en/settings) - General configuration options
+* [Configuration guide](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) - General configuration options

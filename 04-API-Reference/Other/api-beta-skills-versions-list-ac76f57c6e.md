@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Skills Versions List Ac76F57C6E"
+source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions/list.md"
+tags: ["api", "skills"]
 ---
+
 ## List
 
 **get** `/v1/skills/{skill_id}/versions`

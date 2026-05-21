@@ -1,9 +1,11 @@
 ---
+title: "Remote MCP servers"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/remote-mcp-servers.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/remote-mcp-servers.md"
-title: "Remote MCP servers"
+tags: ["api", "mcp"]
 ---
+
 # Remote MCP servers
 
 ---

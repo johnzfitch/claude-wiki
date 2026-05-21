@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Vaults Delete A051C48F38"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/delete.md"
+tags: ["api", "python"]
 ---
+
 ## Delete
 
 `beta.vaults.delete(strvault_id, VaultDeleteParams**kwargs)  -> BetaManagedAgentsDeletedVault`

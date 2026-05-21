@@ -1,9 +1,11 @@
 ---
+title: "Changelog"
+source_url: "https://code.claude.com/docs/en/changelog.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/changelog.md"
-title: "Changelog"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -738,7 +740,7 @@ Run `claude --version` to check your installed version.
 </Update>
 
 <Update label="2.1.84" description="March 26, 2026">
-  * Added PowerShell tool for Windows as an opt-in preview. Learn more at [https://code.claude.com/docs/en/tools-reference#powershell-tool](https://code.claude.com/docs/en/tools-reference#powershell-tool)
+  * Added PowerShell tool for Windows as an opt-in preview. Learn more at [https://code.claude.com/docs/en/tools-reference#powershell-tool](../04-API-Reference/tools-reference-claude-code-docs-d21fdcb4c5.md#powershell-tool)
   * Added `ANTHROPIC_DEFAULT_{OPUS,SONNET,HAIKU}_MODEL_SUPPORTS` env vars to override effort/thinking capability detection for pinned default models for 3p (Bedrock, Vertex, Foundry), and `_MODEL_NAME`/`_DESCRIPTION` to customize the `/model` picker label
   * Added `CLAUDE_STREAM_IDLE_TIMEOUT_MS` env var to configure the streaming idle watchdog threshold (default 90s)
   * Added `TaskCreated` hook that fires when a task is created via `TaskCreate`
@@ -1434,7 +1436,7 @@ Run `claude --version` to check your installed version.
   * Added `CLAUDE_CODE_ACCOUNT_UUID`, `CLAUDE_CODE_USER_EMAIL`, and `CLAUDE_CODE_ORGANIZATION_UUID` environment variables for SDK callers to provide account info synchronously, eliminating a race condition where early telemetry events lacked account metadata.
   * Fixed slash command autocomplete crashing when a plugin's SKILL.md description is a YAML array or other non-string type
   * The `/model` picker now shows human-readable labels (e.g., "Sonnet 4.5") instead of raw model IDs for pinned model versions, with an upgrade hint when a newer version is available.
-  * Managed settings can now be set via macOS plist or Windows Registry. Learn more at [https://code.claude.com/docs/en/settings#settings-files](https://code.claude.com/docs/en/settings#settings-files)
+  * Managed settings can now be set via macOS plist or Windows Registry. Learn more at [https://code.claude.com/docs/en/settings#settings-files](claude-code-settings-claude-code-docs-d4420b4b52.md#settings-files)
 </Update>
 
 <Update label="2.1.50" description="February 20, 2026">
@@ -1656,7 +1658,7 @@ Run `claude --version` to check your installed version.
 </Update>
 
 <Update label="2.1.36" description="February 7, 2026">
-  * Fast mode is now available for Opus 4.6. Learn more at [https://code.claude.com/docs/en/fast-mode](https://code.claude.com/docs/en/fast-mode)
+  * Fast mode is now available for Opus 4.6. Learn more at [https://code.claude.com/docs/en/fast-mode](fast-mode-847ef2d690.md)
 </Update>
 
 <Update label="2.1.34" description="February 6, 2026">
@@ -1834,7 +1836,7 @@ Run `claude --version` to check your installed version.
 </Update>
 
 <Update label="2.1.18" description="January 23, 2026">
-  * Added customizable keyboard shortcuts. Configure keybindings per context, create chord sequences, and personalize your workflow. Run `/keybindings` to get started. Learn more at [https://code.claude.com/docs/en/keybindings](https://code.claude.com/docs/en/keybindings)
+  * Added customizable keyboard shortcuts. Configure keybindings per context, create chord sequences, and personalize your workflow. Run `/keybindings` to get started. Learn more at [https://code.claude.com/docs/en/keybindings](customize-keyboard-shortcuts-claude-code-docs-f23eb8cfd3.md)
 </Update>
 
 <Update label="2.1.17" description="January 22, 2026">
@@ -2230,7 +2232,7 @@ Run `claude --version` to check your installed version.
   * Agents and bash commands can run asynchronously and send messages to wake up the main agent
   * /stats now provides users with interesting CC stats, such as favorite model, usage graph, usage streak
   * Added named session support: use `/rename` to name sessions, `/resume <name>` in REPL or `claude --resume <name>` from the terminal to resume them
-  * Added support for .claude/rules/\`.  See [https://code.claude.com/docs/en/memory](https://code.claude.com/docs/en/memory) for details.
+  * Added support for .claude/rules/\`.  See [https://code.claude.com/docs/en/memory](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) for details.
   * Added image dimension metadata when images are resized, enabling accurate coordinate mappings for large images
   * Fixed auto-loading .env when using native installer
   * Fixed `--system-prompt` being ignored when using `--continue` or `--resume` flags
@@ -2466,7 +2468,7 @@ Run `claude --version` to check your installed version.
 </Update>
 
 <Update label="2.0.25" description="October 21, 2025">
-  * Removed legacy SDK entrypoint. Please migrate to @anthropic-ai/claude-agent-sdk for future SDK updates: [https://platform.claude.com/docs/en/agent-sdk/migration-guide](https://platform.claude.com/docs/en/agent-sdk/migration-guide)
+  * Removed legacy SDK entrypoint. Please migrate to @anthropic-ai/claude-agent-sdk for future SDK updates: [https://platform.claude.com/docs/en/agent-sdk/migration-guide](../05-Agent-SDK/agent-sdk-migration-guide.md)
 </Update>
 
 <Update label="2.0.24" description="October 20, 2025">
@@ -2534,7 +2536,7 @@ Run `claude --version` to check your installed version.
   * Repository-level plugin configuration via `extraKnownMarketplaces` for team collaboration
   * `/plugin validate` command for validating plugin structure and configuration
   * Plugin announcement blog post at [https://www.anthropic.com/news/claude-code-plugins](https://www.anthropic.com/news/claude-code-plugins)
-  * Plugin documentation available at [https://code.claude.com/docs/en/plugins](https://code.claude.com/docs/en/plugins)
+  * Plugin documentation available at [https://code.claude.com/docs/en/plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)
   * Comprehensive error messages and diagnostics via `/doctor` command
   * Avoid flickering in `/model` selector
   * Improvements to `/help`
@@ -2742,7 +2744,7 @@ Run `claude --version` to check your installed version.
 </Update>
 
 <Update label="1.0.81" description="August 14, 2025">
-  * Released output styles, including new built-in educational output styles "Explanatory" and "Learning". Docs: [https://code.claude.com/docs/en/output-styles](https://code.claude.com/docs/en/output-styles)
+  * Released output styles, including new built-in educational output styles "Explanatory" and "Learning". Docs: [https://code.claude.com/docs/en/output-styles](output-styles-claude-code-docs-c315eeed32.md)
   * Agents: Fix custom agent loading when agent files are unparsable
 </Update>
 
@@ -2947,7 +2949,7 @@ Run `claude --version` to check your installed version.
 </Update>
 
 <Update label="1.0.38" description="June 30, 2025">
-  * Released hooks. Special thanks to community input in [https://github.com/anthropics/claude-code/issues/712](https://github.com/anthropics/claude-code/issues/712). Docs: [https://code.claude.com/docs/en/hooks](https://code.claude.com/docs/en/hooks)
+  * Released hooks. Special thanks to community input in [https://github.com/anthropics/claude-code/issues/712](https://github.com/anthropics/claude-code/issues/712). Docs: [https://code.claude.com/docs/en/hooks](../07-Hooks/hooks-9168ed62a4.md)
 </Update>
 
 <Update label="1.0.37" description="June 30, 2025">

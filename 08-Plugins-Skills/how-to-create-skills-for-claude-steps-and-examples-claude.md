@@ -530,5 +530,5 @@ API developers:
 
 Claude Code users:
 
--   Install Skills via [plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces)
+-   Install Skills via [plugin marketplaces](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md)
 -   Check out our [skills cookbook](https://platform.claude.com/cookbook/skills-notebooks-01-skills-introduction)

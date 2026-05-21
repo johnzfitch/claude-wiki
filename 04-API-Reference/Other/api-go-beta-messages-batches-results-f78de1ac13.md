@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Messages Batches Results F78De1Ac13"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/batches/results.md"
+tags: ["api"]
 ---
+
 ## Results
 
 `client.Beta.Messages.Batches.Results(ctx, messageBatchID, query) (*BetaMessageBatchIndividualResponse, error)`

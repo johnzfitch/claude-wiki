@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Sessions Resources Retrieve 9C215Be9E9"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/resources/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/resources/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `client.Beta.Sessions.Resources.Get(ctx, resourceID, params) (*BetaSessionResourceGetResponseUnion, error)`

@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Completions Create D57F3F7Be6"
+source_url: "https://platform.claude.com/docs/en/api/cli/completions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/completions/create.md"
+tags: ["api", "cli"]
 ---
+
 ## Create
 
 `$ ant completions create`

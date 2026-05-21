@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Sessions Resources Retrieve 74318Ee3Fe"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/sessions/resources/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/sessions/resources/retrieve.md"
+tags: ["api", "cli"]
 ---
+
 ## Retrieve
 
 `$ ant beta:sessions:resources retrieve`

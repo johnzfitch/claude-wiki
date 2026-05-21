@@ -71,4 +71,4 @@ Checkpoints are designed for quick, session-level recovery. For permanent versio
 
 * [Interactive mode](interactive-mode-claude-code-docs.md) - Keyboard shortcuts and session controls
 * [Built-in commands](/en/interactive-mode#built-in-commands) - Accessing checkpoints using `/rewind`
-* [CLI reference](/en/cli-reference) - Command-line options
+* [CLI reference](cli-reference-7bb98e3312.md) - Command-line options

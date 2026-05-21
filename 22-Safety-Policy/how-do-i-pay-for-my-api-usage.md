@@ -23,7 +23,7 @@ To adjust your auto-reload options, click on “Edit” in the auto-reload secti
 
 Please note that purchased credits are subject to our **[Credit Terms](https://www.anthropic.com/legal/credit-terms)**. Credits expire one year from the purchase date, and this expiration date cannot be extended. Expired credits will appear in your **[Console billing settings](https://platform.claude.com/settings/billing)** under **Invoice history**. All credit purchases are non-refundable.
 
-Learn more about credit usage and how it relates to usage limits in our **[Claude API docs](https://platform.claude.com/docs/en/api/rate-limits)**.
+Learn more about credit usage and how it relates to usage limits in our **[Claude API docs](../04-API-Reference/Other/api-rate-limits-28d3302987.md)**.
 
 ## How to update your Console payment method
 

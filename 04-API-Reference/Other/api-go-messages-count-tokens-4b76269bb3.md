@@ -1,8 +1,11 @@
 ---
+title: "Api Go Messages Count Tokens 4B76269Bb3"
+source_url: "https://platform.claude.com/docs/en/api/go/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/messages/count_tokens.md"
+tags: ["api"]
 ---
+
 ## Count Tokens
 
 `client.Messages.CountTokens(ctx, body) (*MessageTokensCount, error)`

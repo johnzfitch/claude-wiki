@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Models Retrieve 2C08672762"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/models/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `client.Beta.Models.Get(ctx, modelID, query) (*BetaModelInfo, error)`

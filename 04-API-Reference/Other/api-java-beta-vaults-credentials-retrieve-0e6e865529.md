@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Vaults Credentials Retrieve 0E6E865529"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/vaults/credentials/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/vaults/credentials/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `BetaManagedAgentsCredential beta().vaults().credentials().retrieve(CredentialRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

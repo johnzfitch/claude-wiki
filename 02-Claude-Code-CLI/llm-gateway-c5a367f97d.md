@@ -1,9 +1,11 @@
 ---
+title: "LLM gateway configuration"
+source_url: "https://code.claude.com/docs/en/llm-gateway.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/llm-gateway.md"
-title: "LLM gateway configuration"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -57,7 +59,7 @@ Claude Code includes the following headers on every API request:
 
 By default, Claude Code will use standard model names for the selected API format.
 
-If you have configured custom model names in your gateway, use the environment variables documented in [Model configuration](/en/model-config) to match your custom names.
+If you have configured custom model names in your gateway, use the environment variables documented in [Model configuration](model-config-ca429e15da.md) to match your custom names.
 
 ## LiteLLM configuration
 
@@ -189,6 +191,6 @@ For more detailed information, refer to the [LiteLLM documentation](https://docs
 ## Additional resources
 
 * [LiteLLM documentation](https://docs.litellm.ai/)
-* [Claude Code settings](/en/settings)
-* [Enterprise network configuration](/en/network-config)
-* [Third-party integrations overview](/en/third-party-integrations)
+* [Claude Code settings](claude-code-settings-claude-code-docs-d4420b4b52.md)
+* [Enterprise network configuration](enterprise-network-configuration-claude-code-docs.md)
+* [Third-party integrations overview](enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md)

@@ -1,9 +1,11 @@
 ---
+title: "Strict tool use"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use.md"
-title: "Strict tool use"
+tags: ["agents", "api"]
 ---
+
 # Strict tool use
 
 Enforce JSON Schema compliance on Claude's tool inputs with grammar-constrained sampling.

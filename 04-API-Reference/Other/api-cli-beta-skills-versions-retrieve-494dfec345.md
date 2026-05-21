@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Skills Versions Retrieve 494Dfec345"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/versions/retrieve.md"
+tags: ["api", "cli", "skills"]
 ---
+
 ## Retrieve
 
 `$ ant beta:skills:versions retrieve`

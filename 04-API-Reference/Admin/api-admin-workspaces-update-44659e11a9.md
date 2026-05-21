@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Workspaces Update 44659E11A9"
+source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/update.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 **post** `/v1/organizations/workspaces/{workspace_id}`

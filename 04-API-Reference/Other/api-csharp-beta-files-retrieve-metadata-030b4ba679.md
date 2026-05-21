@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Files Retrieve Metadata 030B4Ba679"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/retrieve_metadata.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/retrieve_metadata.md"
+tags: ["api"]
 ---
+
 ## Retrieve Metadata
 
 `FileMetadata Beta.Files.RetrieveMetadata(FileRetrieveMetadataParamsparameters, CancellationTokencancellationToken = default)`

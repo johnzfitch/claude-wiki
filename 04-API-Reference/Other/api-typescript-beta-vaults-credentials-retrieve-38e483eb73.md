@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Vaults Credentials Retrieve 38E483Eb73"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/credentials/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/credentials/retrieve.md"
+tags: ["api", "typescript"]
 ---
+
 ## Retrieve
 
 `client.beta.vaults.credentials.retrieve(stringcredentialID, CredentialRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`

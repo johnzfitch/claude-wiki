@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Environments Create 8Feeed987A"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/environments/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/environments/create.md"
+tags: ["api", "typescript"]
 ---
+
 ## Create
 
 `client.beta.environments.create(EnvironmentCreateParamsparams, RequestOptionsoptions?): BetaEnvironment`

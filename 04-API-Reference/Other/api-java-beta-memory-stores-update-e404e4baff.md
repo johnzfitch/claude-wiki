@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Memory Stores Update E404E4Baff"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `BetaManagedAgentsMemoryStore beta().memoryStores().update(MemoryStoreUpdateParamsparams = MemoryStoreUpdateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

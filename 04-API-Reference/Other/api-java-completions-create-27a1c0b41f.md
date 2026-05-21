@@ -1,8 +1,11 @@
 ---
+title: "Api Java Completions Create 27A1C0B41F"
+source_url: "https://platform.claude.com/docs/en/api/java/completions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/completions/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `Completion completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

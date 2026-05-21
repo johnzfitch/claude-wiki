@@ -1,9 +1,11 @@
 ---
+title: "Mitigate jailbreaks and prompt injections"
+source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks.md"
 category: "Test-Evaluate"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks.md"
-title: "Mitigate jailbreaks and prompt injections"
+tags: ["api", "prompting"]
 ---
+
 # Mitigate jailbreaks and prompt injections
 
 ---

@@ -1,6 +1,6 @@
 ---
 category: "01-Getting-Started"
-fetched_at: "2026-04-26T03:20:22Z"
+fetched_at: "2026-05-19T21:23:03Z"
 source_url: "https://code.claude.com/docs/en/quickstart"
 title: "Quickstart - Claude Code Docs"
 ---
@@ -10,6 +10,12 @@ title: "Quickstart - Claude Code Docs"
 
 Welcome to Claude Code!
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 This quickstart guide will have you using AI-powered coding assistance in a few minutes. By the end, you’ll understand how to use Claude Code for common development tasks.
 
@@ -58,7 +64,7 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.**Native Windows setups require [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don’t have it. WSL setups do not need it.
+If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 
 Native installations automatically update in the background to keep you on the latest version.
 
@@ -271,16 +277,16 @@ Essential commands
 
 Here are the most important commands for daily use:
 
-| Command | What it does | Example |
-|----|----|----|
-| `claude` | Start interactive mode | `claude` |
-| `claude "task"` | Run a one-time task | `claude "fix the build error"` |
-| `claude -p "query"` | Run one-off query, then exit | `claude -p "explain this function"` |
-| `claude -c` | Continue most recent conversation in current directory | `claude -c` |
-| `claude -r` | Resume a previous conversation | `claude -r` |
-| `/clear` | Clear conversation history | `/clear` |
-| `/help` | Show available commands | `/help` |
-| `exit` or Ctrl+D | Exit Claude Code | `exit` |
+| Command             | What it does                                           | Example                             |
+|---------------------|--------------------------------------------------------|-------------------------------------|
+| `claude`            | Start interactive mode                                 | `claude`                            |
+| `claude "task"`     | Run a one-time task                                    | `claude "fix the build error"`      |
+| `claude -p "query"` | Run one-off query, then exit                           | `claude -p "explain this function"` |
+| `claude -c`         | Continue most recent conversation in current directory | `claude -c`                         |
+| `claude -r`         | Resume a previous conversation                         | `claude -r`                         |
+| `/clear`            | Clear conversation history                             | `/clear`                            |
+| `/help`             | Show available commands                                | `/help`                             |
+| `exit` or Ctrl+D    | Exit Claude Code                                       | `exit`                              |
 
 See the [CLI reference](/docs/en/cli-reference) for a complete list of commands.
 
@@ -319,10 +325,10 @@ build a dashboard showing products that are most frequently returned by our UK c
 
 Save time with shortcuts
 
-- Press `?` to see all available keyboard shortcuts
+- Type `/` to see all commands and skills
 - Use Tab for command completion
 - Press ↑ for command history
-- Type `/` to see all commands and skills
+- Press `Shift+Tab` to cycle permission modes
 
 
 [​](#what’s-next)

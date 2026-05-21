@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Messages Batches Cancel 5A196D3339"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/cancel.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/cancel.md"
+tags: ["api"]
 ---
+
 ## Cancel
 
 `BetaMessageBatch Beta.Messages.Batches.Cancel(BatchCancelParamsparameters, CancellationTokencancellationToken = default)`

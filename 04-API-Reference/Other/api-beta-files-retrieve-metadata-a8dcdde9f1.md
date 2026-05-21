@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Files Retrieve Metadata A8Dcdde9F1"
+source_url: "https://platform.claude.com/docs/en/api/beta/files/retrieve_metadata.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/files/retrieve_metadata.md"
+tags: ["api"]
 ---
+
 ## Retrieve Metadata
 
 **get** `/v1/files/{file_id}`

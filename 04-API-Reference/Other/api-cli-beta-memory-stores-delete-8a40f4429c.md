@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Memory Stores Delete 8A40F4429C"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/delete.md"
+tags: ["api", "cli"]
 ---
+
 ## Delete
 
 `$ ant beta:memory-stores delete`

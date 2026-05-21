@@ -1,9 +1,11 @@
 ---
+title: "Messages"
+source_url: "https://platform.claude.com/docs/en/api/typescript/messages.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/messages.md"
-title: "Messages"
+tags: ["api"]
 ---
+
 # Messages
 
 ## Create
@@ -2446,7 +2448,7 @@ Learn more about the Messages API in our [user guide](https://docs.claude.com/en
 
       - `format?: JSONOutputFormat | null`
 
-        A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+        A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         - `schema: Record<string, unknown>`
 
@@ -7209,7 +7211,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
     - `format?: JSONOutputFormat | null`
 
-      A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+      A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
       - `schema: Record<string, unknown>`
 
@@ -17894,7 +17896,7 @@ console.log(messageTokensCount.input_tokens);
 
   - `format?: JSONOutputFormat | null`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `schema: Record<string, unknown>`
 
@@ -29855,7 +29857,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
         - `format?: JSONOutputFormat | null`
 
-          A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+          A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
           - `schema: Record<string, unknown>`
 

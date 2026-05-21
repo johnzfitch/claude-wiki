@@ -1,9 +1,11 @@
 ---
+title: "Plugins in the SDK"
+source_url: "https://code.claude.com/docs/en/agent-sdk/plugins.md"
 category: "08-Plugins-Skills"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/plugins.md"
-title: "Plugins in the SDK"
+tags: ["plugins", "sdk", "skills"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -27,7 +29,7 @@ Plugins are packages of Claude Code extensions that can include:
   The `commands/` directory is a legacy format. Use `skills/` for new plugins. Claude Code continues to support both formats for backward compatibility.
 </Note>
 
-For complete information on plugin structure and how to create plugins, see [Plugins](/en/plugins).
+For complete information on plugin structure and how to create plugins, see [Plugins](create-plugins-claude-code-docs.md).
 
 ## Loading plugins
 
@@ -281,8 +283,8 @@ my-plugin/
 
 For detailed information on creating plugins, see:
 
-* [Plugins](/en/plugins) - Complete plugin development guide
-* [Plugins reference](/en/plugins-reference) - Technical specifications and schemas
+* [Plugins](create-plugins-claude-code-docs.md) - Complete plugin development guide
+* [Plugins reference](plugins-reference-44aeea7968.md) - Technical specifications and schemas
 
 ## Common use cases
 
@@ -341,8 +343,8 @@ If relative paths don't work:
 
 ## See also
 
-* [Plugins](/en/plugins) - Complete plugin development guide
-* [Plugins reference](/en/plugins-reference) - Technical specifications
+* [Plugins](create-plugins-claude-code-docs.md) - Complete plugin development guide
+* [Plugins reference](plugins-reference-44aeea7968.md) - Technical specifications
 * [Slash Commands](/en/agent-sdk/slash-commands) - Using slash commands in the SDK
 * [Subagents](/en/agent-sdk/subagents) - Working with specialized agents
 * [Skills](/en/agent-sdk/skills) - Using Agent Skills

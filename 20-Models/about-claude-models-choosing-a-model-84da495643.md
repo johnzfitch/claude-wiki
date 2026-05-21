@@ -1,9 +1,10 @@
 ---
+title: "Choosing the right model"
+source_url: "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model.md"
-title: "Choosing the right model"
 ---
+
 # Choosing the right model
 
 Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps you make an informed decision based on your specific requirements.

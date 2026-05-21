@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Sessions Update Ab371947B6"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/update.md"
+tags: ["api", "python"]
 ---
+
 ## Update
 
 `beta.sessions.update(strsession_id, SessionUpdateParams**kwargs)  -> BetaManagedAgentsSession`

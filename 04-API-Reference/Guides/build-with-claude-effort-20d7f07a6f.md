@@ -1,9 +1,11 @@
 ---
+title: "Effort"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/effort.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/effort.md"
-title: "Effort"
+tags: ["api"]
 ---
+
 # Effort
 
 Control how many tokens Claude uses when responding with the effort parameter, trading off between response thoroughness and token efficiency.

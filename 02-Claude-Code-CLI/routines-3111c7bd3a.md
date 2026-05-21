@@ -1,9 +1,11 @@
 ---
+title: "Automate work with routines"
+source_url: "https://code.claude.com/docs/en/routines.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/routines.md"
-title: "Automate work with routines"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -16,7 +18,7 @@ title: "Automate work with routines"
   Routines are in research preview. Behavior, limits, and the API surface may change.
 </Note>
 
-A routine is a saved Claude Code configuration: a prompt, one or more repositories, and a set of [connectors](/en/mcp), packaged once and run automatically. Routines execute on Anthropic-managed cloud infrastructure, so they keep working when your laptop is closed.
+A routine is a saved Claude Code configuration: a prompt, one or more repositories, and a set of [connectors](../06-MCP-Tools/mcp-208e742686.md), packaged once and run automatically. Routines execute on Anthropic-managed cloud infrastructure, so they keep working when your laptop is closed.
 
 Each routine can have one or more triggers attached to it:
 
@@ -26,7 +28,7 @@ Each routine can have one or more triggers attached to it:
 
 A single routine can combine triggers. For example, a PR review routine can run nightly, trigger from a deploy script, and also react to every new PR.
 
-Routines are available on Pro, Max, Team, and Enterprise plans with [Claude Code on the web](/en/claude-code-on-the-web) enabled. Create and manage them at [claude.ai/code/routines](https://claude.ai/code/routines), or from the CLI with `/schedule`.
+Routines are available on Pro, Max, Team, and Enterprise plans with [Claude Code on the web](claude-code-on-the-web-69d53821d4.md) enabled. Create and manage them at [claude.ai/code/routines](https://claude.ai/code/routines), or from the CLI with `/schedule`.
 
 This page covers creating a routine, configuring each trigger type, managing runs, and how usage limits apply.
 
@@ -50,11 +52,11 @@ The sections below walk through creating a routine and configuring each of these
 
 ## Create a routine
 
-Create a routine from the web at [claude.ai/code/routines](https://claude.ai/code/routines), from the Desktop app, or from the CLI. All three surfaces write to the same cloud account, so a routine you create in one shows up in the others immediately. In the Desktop app, click **Routines** in the sidebar, then **New routine**, and choose **Remote**; choosing **Local** instead creates a [Desktop scheduled task](/en/desktop-scheduled-tasks), which runs on your machine rather than in the cloud.
+Create a routine from the web at [claude.ai/code/routines](https://claude.ai/code/routines), from the Desktop app, or from the CLI. All three surfaces write to the same cloud account, so a routine you create in one shows up in the others immediately. In the Desktop app, click **Routines** in the sidebar, then **New routine**, and choose **Remote**; choosing **Local** instead creates a [Desktop scheduled task](../16-Mobile-Desktop/desktop-scheduled-tasks.md), which runs on your machine rather than in the cloud.
 
 The creation form sets up the routine's prompt, repositories, environment, connectors, and triggers.
 
-Routines run autonomously as full Claude Code cloud sessions: there is no permission-mode picker and no approval prompts during a run. The session can run shell commands, use [skills](/en/skills) committed to the cloned repository, and call any connectors you include. What a routine can reach is determined by the repositories you select and their branch-push setting, the [environment's](/en/claude-code-on-the-web#the-cloud-environment) network access and variables, and the connectors you include. Scope each of those to what the routine actually needs.
+Routines run autonomously as full Claude Code cloud sessions: there is no permission-mode picker and no approval prompts during a run. The session can run shell commands, use [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) committed to the cloned repository, and call any connectors you include. What a routine can reach is determined by the repositories you select and their branch-push setting, the [environment's](/en/claude-code-on-the-web#the-cloud-environment) network access and variables, and the connectors you include. Scope each of those to what the routine actually needs.
 
 Routines belong to your individual claude.ai account. They are not shared with teammates, and they count against your account's daily run allowance. Anything a routine does through your connected GitHub identity or connectors appears as you: commits and pull requests carry your GitHub user, and Slack messages, Linear tickets, or other connector actions use your linked accounts for those services.
 
@@ -106,7 +108,7 @@ Routines belong to your individual claude.ai account. They are not shared with t
   <Step title="Review connectors and permissions">
     The **Connectors** and **Permissions** tabs at the bottom of the form control what the routine can reach.
 
-    Under Connectors, all of your connected [MCP connectors](/en/mcp) are included by default. Remove any the routine doesn't need. Claude can use every tool from an included connector, including writes, without asking for permission during a run.
+    Under Connectors, all of your connected [MCP connectors](../06-MCP-Tools/mcp-208e742686.md) are included by default. Remove any the routine doesn't need. Claude can use every tool from an included connector, including writes, without asking for permission during a run.
 
     Under Permissions, enable **Allow unrestricted branch pushes** for any repository where Claude should be able to push to existing branches instead of only `claude/`-prefixed ones.
   </Step>
@@ -215,7 +217,7 @@ Open the session URL in a browser to watch the run in real time, review changes,
 
 #### API reference
 
-For the full API reference, including all error responses, validation rules, and field limits, see [Trigger a routine via API](https://platform.claude.com/docs/en/api/claude-code/routines-fire) in the Claude Platform documentation.
+For the full API reference, including all error responses, validation rules, and field limits, see [Trigger a routine via API](../20-Models/api-claude-code-routines-fire-df6c51ff06.md) in the Claude Platform documentation.
 
 The `/fire` endpoint is available to claude.ai users only and is not part of the Claude Platform API surface.
 
@@ -336,8 +338,8 @@ One-off runs do not count against the daily routine cap. They draw down your reg
 
 ## Related resources
 
-* [`/loop` and in-session scheduling](/en/scheduled-tasks): schedule local tasks within an open CLI session
-* [Desktop scheduled tasks](/en/desktop-scheduled-tasks): local scheduled tasks that run on your machine with access to local files
+* [`/loop` and in-session scheduling](run-prompts-on-a-schedule-claude-code-docs.md): schedule local tasks within an open CLI session
+* [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md): local scheduled tasks that run on your machine with access to local files
 * [Cloud environment](/en/claude-code-on-the-web#the-cloud-environment): configure the runtime environment for cloud sessions
-* [MCP connectors](/en/mcp): connect external services like Slack, Linear, and Google Drive
-* [GitHub Actions](/en/github-actions): run Claude in your CI pipeline on repository events
+* [MCP connectors](../06-MCP-Tools/mcp-208e742686.md): connect external services like Slack, Linear, and Google Drive
+* [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md): run Claude in your CI pipeline on repository events

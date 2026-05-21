@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Messages Batches Cancel C95B6E6Aab"
+source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/cancel.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/cancel.md"
+tags: ["api"]
 ---
+
 ## Cancel
 
 `messages.batches.cancel(message_batch_id) -> MessageBatch`

@@ -16,7 +16,7 @@ The Agent SDK is built on the same foundation as Claude Code, which means your S
 
 By default, the SDK loads no filesystem settings. Your agent runs in isolation mode with only what you pass programmatically. To load CLAUDE.md, skills, or filesystem hooks, set `settingSources` to tell the SDK where to look.
 
-For a conceptual overview of what each feature does and when to use it, see [Extend Claude Code](https://code.claude.com/docs/en/features-overview).
+For a conceptual overview of what each feature does and when to use it, see [Extend Claude Code](../02-Claude-Code-CLI/extend-claude-code-claude-code-docs-3b35aaf641.md).
 
 
 Enable Claude Code features with settingSources
@@ -82,7 +82,7 @@ All levels are additive: if both project and user CLAUDE.md files exist, the age
 
 You can also inject context directly via `systemPrompt` without using CLAUDE.md files. See [Modify system prompts](/docs/en/agent-sdk/modifying-system-prompts). Use CLAUDE.md when you want the same context shared between interactive Claude Code sessions and your SDK agents.
 
-For how to structure and organize CLAUDE.md content, see [Manage Claude's memory](https://code.claude.com/docs/en/memory).
+For how to structure and organize CLAUDE.md content, see [Manage Claude's memory](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md).
 
 
 Skills
@@ -118,7 +118,7 @@ Hooks
 
 The SDK supports two ways to define hooks, and they run side by side:
 
-- **Filesystem hooks:** shell commands defined in `settings.json`, loaded when `settingSources` includes the relevant source. These are the same hooks you'd configure for [interactive Claude Code sessions](https://code.claude.com/docs/en/hooks-guide).
+- **Filesystem hooks:** shell commands defined in `settings.json`, loaded when `settingSources` includes the relevant source. These are the same hooks you'd configure for [interactive Claude Code sessions](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md).
 - **Programmatic hooks:** callback functions passed directly to `query()`. These run in your application process and can return structured decisions. See [Control execution with hooks](/docs/en/agent-sdk/hooks).
 
 Both types execute during the same hook lifecycle. If you already have hooks in your project's `.claude/settings.json` and you set `settingSources: ["project"]`, those hooks run automatically in the SDK with no extra configuration.
@@ -178,7 +178,7 @@ The Agent SDK gives you access to several ways to extend your agent's behavior. 
 
 | You want to... | Use | SDK surface |
 |----|----|----|
-| Set project conventions your agent always follows | [CLAUDE.md](https://code.claude.com/docs/en/memory) | `settingSources: ["project"]` loads it automatically |
+| Set project conventions your agent always follows | [CLAUDE.md](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) | `settingSources: ["project"]` loads it automatically |
 | Give the agent reference material it loads when relevant | [Skills](/docs/en/agent-sdk/skills) | `settingSources` + `allowedTools: ["Skill"]` |
 | Run a reusable workflow (deploy, review, release) | [User-invocable skills](/docs/en/agent-sdk/skills) | `settingSources` + `allowedTools: ["Skill"]` |
 | Delegate an isolated subtask to a fresh context (research, review) | [Subagents](/docs/en/agent-sdk/subagents) | `agents` parameter + `allowedTools: ["Agent"]` |
@@ -188,12 +188,12 @@ The Agent SDK gives you access to several ways to extend your agent's behavior. 
 
 **Subagents versus agent teams:** Subagents are ephemeral and isolated: fresh conversation, one task, summary returned to parent. Agent teams coordinate multiple independent Claude Code instances that share a task list and message each other directly. Agent teams are a CLI feature. See [What subagents inherit](/docs/en/agent-sdk/subagents#what-subagents-inherit) and the [agent teams comparison](../09-Agents-Patterns/agent-teams.md#compare-with-subagents) for details.
 
-Every feature you enable adds to your agent's context window. For per-feature costs and how these features layer together, see [Extend Claude Code](https://code.claude.com/docs/en/features-overview#understand-context-costs).
+Every feature you enable adds to your agent's context window. For per-feature costs and how these features layer together, see [Extend Claude Code](../02-Claude-Code-CLI/extend-claude-code-claude-code-docs-3b35aaf641.md#understand-context-costs).
 
 
 Related resources
 
-- [Extend Claude Code](https://code.claude.com/docs/en/features-overview): Conceptual overview of all extension features, with comparison tables and context cost analysis
+- [Extend Claude Code](../02-Claude-Code-CLI/extend-claude-code-claude-code-docs-3b35aaf641.md): Conceptual overview of all extension features, with comparison tables and context cost analysis
 - [Skills in the SDK](/docs/en/agent-sdk/skills): Full guide to using skills programmatically
 - [Subagents](/docs/en/agent-sdk/subagents): Define and invoke subagents for isolated subtasks
 - [Hooks](/docs/en/agent-sdk/hooks): Intercept and control agent behavior at key execution points

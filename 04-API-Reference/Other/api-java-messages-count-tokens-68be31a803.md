@@ -1,8 +1,11 @@
 ---
+title: "Api Java Messages Count Tokens 68Be31A803"
+source_url: "https://platform.claude.com/docs/en/api/java/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/messages/count_tokens.md"
+tags: ["api"]
 ---
+
 ## Count Tokens
 
 `MessageTokensCount messages().countTokens(MessageCountTokensParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

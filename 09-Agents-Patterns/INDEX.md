@@ -1,6 +1,6 @@
 # Agents Patterns
 
-*41 documents*
+*69 documents*
 
 
 - [Building a One-Liner Research Agent](00-the-one-liner-research-agent.md) - Research tasks consume hours of expert time: market analysts manually
@@ -10,6 +10,31 @@
 - [AI-Assisted Agent Generation Template](agent-creation-prompt.md) - Use this template to generate agents using Claude with the agent creation system prompt.
 - [Agent Creation System Prompt](agent-creation-system-prompt.md) - This is the exact system prompt used by Claude Code's agent generation feature, refined through extensive production use.
 - [Agent Creator](agent-creator.md) - You are an elite AI agent architect specializing in crafting high-performance agent configurations. Your expertise lies in translating user requiremen
+- [How the agent loop works](agent-sdk-agent-loop-707ba48bc1.md) - ## Documentation Index
+- [Use Claude Code features in the SDK](agent-sdk-claude-code-features-6797746e4b.md) - ## Documentation Index
+- [Track cost and usage](agent-sdk-cost-tracking-aec9879f38.md) - ## Documentation Index
+- [Give Claude custom tools](agent-sdk-custom-tools-4c4270e2ca.md) - ## Documentation Index
+- [Rewind file changes with checkpointing](agent-sdk-file-checkpointing-1f8256a7ac.md) - ## Documentation Index
+- [Hosting the Agent SDK](agent-sdk-hosting-44896d9df4.md) - ## Documentation Index
+- [Migrate to Claude Agent SDK](agent-sdk-migration-guide-383fc97c1d.md) - ## Documentation Index
+- [Modifying system prompts](agent-sdk-modifying-system-prompts-47fd7ffb8f.md) - ## Documentation Index
+- [Observability with OpenTelemetry](agent-sdk-observability-f4c4535fce.md) - ## Documentation Index
+- [Agent SDK overview](agent-sdk-overview-b27888bae2.md) - ## Documentation Index
+- [Configure permissions](agent-sdk-permissions-de374ea8f6.md) - ## Documentation Index
+- [Agent SDK reference - Python](agent-sdk-python-768e7c9a23.md) - ## Documentation Index
+- [Quickstart](agent-sdk-quickstart-2bc81ce92a.md) - ## Documentation Index
+- [Securely deploying AI agents](agent-sdk-secure-deployment-0345127a86.md) - ## Documentation Index
+- [Work with sessions](agent-sdk-sessions-6a9bcc2562.md) - ## Documentation Index
+- [Slash Commands in the SDK](agent-sdk-slash-commands-eb3bd10cac.md) - ## Documentation Index
+- [Stream responses in real-time](agent-sdk-streaming-output-64829275d0.md) - ## Documentation Index
+- [Streaming Input](agent-sdk-streaming-vs-single-mode-4ab9989824.md) - ## Documentation Index
+- [Get structured output from agents](agent-sdk-structured-outputs-ecdbc89e8c.md) - ## Documentation Index
+- [Subagents in the SDK](agent-sdk-subagents-1d8ec0569d.md) - ## Documentation Index
+- [Todo Lists](agent-sdk-todo-tracking-042ff23363.md) - ## Documentation Index
+- [Scale to many tools with tool search](agent-sdk-tool-search-4f082773c0.md) - ## Documentation Index
+- [Agent SDK reference - TypeScript](agent-sdk-typescript-571c12ba22.md) - ## Documentation Index
+- [Handle approvals and user input](agent-sdk-user-input-4d57dfc0b8.md) - ## Documentation Index
+- [Orchestrate teams of Claude Code sessions](agent-teams-e29da6ed1b.md) - ## Documentation Index
 - [Orchestrate teams of Claude Code sessions](agent-teams.md) - Coordinate multiple Claude Code instances working together as a team, with shared tasks, inter-agent messaging, and centralized management.
 - [Observability Agent Architecture](architecture-diagram.md) - graph TD
 - [Example 1: Chain workflow for structured data extraction and formatting](basic-workflows.md) - This notebook demonstrates three simple multi-LLM workflows. They trade
@@ -20,6 +45,7 @@
 - [Common workflows](common-workflows.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Complete Agent Examples](complete-agent-examples.md) - Full, production-ready agent examples for common use cases. Use these as templates for your own agents.
 - [Component Organization Patterns](component-patterns.md) - Advanced patterns for organizing plugin components effectively.
+- [Create custom subagents - Claude Code Docs](create-custom-subagents-claude-code-docs-7dc93e85c0.md) - Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
 - [Creating a Customer Service Agent with Client-Side Tools](customer-service-agent.md) - In this recipe, we\'ll demonstrate how to create a customer service
 - [Command Documentation Patterns](documentation-patterns.md) - Strategies for creating self-documenting, maintainable commands with excellent user experience.
 - [Building Effective Agents](engineering-building-effective-agents.md) - <!-- Source: https://www.anthropic.com/engineering/building-effective-agents -->
@@ -34,11 +60,13 @@
 - [MCP connector](mcp-connector.md) - Claude's Model Context Protocol (MCP) connector feature enables you to connect to remote MCP servers directly from the Messages API without a separate
 - [Context Editing & Memory for Long-Running Agents {#context-editing--memory-for-long-running-agents}](memory-cookbook.md) - AI agents that run across multiple sessions or handle long-running tasks
 - [Multi-Document Agents](multi-document-agents.md) - In this notebook we will look into Building RAG when you have a large
+- [Orchestrate teams of Claude Code sessions - Claude Code Docs](orchestrate-teams-of-claude-code-sessions-claude-code-docs-80ee58656d.md) - Coordinate multiple Claude Code instances working together as a team, with shared tasks, inter-agent messaging, and centralized management.
 - [Orchestrator-Workers Workflow](orchestrator-workers.md) - Have you ever needed multiple perspectives on the same task, but
 - [ReAct Agent](react-agent.md) - In this notebook we will look into creating ReAct Agent over tools.
 - [Remote MCP servers](remote-mcp-servers.md) - Several companies have deployed remote MCP servers that developers can connect to via the Anthropic MCP connector API. These servers expand the capabi
 - [Research Lead Agent](research-lead-agent.md) - You are an expert research lead, focused on high-level research strategy, planning, efficient delegation to subagents, and final report writing. Your 
 - [Research Subagent](research-subagent.md) - You are a research subagent working as part of a team. The current date is {{.CurrentDate}}. You have been given a clear <task> provided by a lead age
+- [Create custom subagents](sub-agents-5e7dec99af.md) - ## Documentation Index
 - [Create custom subagents](sub-agents.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Subagents in the SDK](subagents.md) - Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.
 - [System Prompt Design Patterns](system-prompt-design.md) - Complete guide to writing effective agent system prompts that enable autonomous, high-quality operation.

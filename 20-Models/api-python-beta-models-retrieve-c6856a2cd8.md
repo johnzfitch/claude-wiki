@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Models Retrieve C6856A2Cd8"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/models/retrieve.md"
+tags: ["api", "python"]
 ---
+
 ## Retrieve
 
 `beta.models.retrieve(strmodel_id, ModelRetrieveParams**kwargs)  -> BetaModelInfo`

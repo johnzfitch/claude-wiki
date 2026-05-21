@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Messages Batches Results C1399Fc8E1"
+source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/results.md"
+tags: ["api"]
 ---
+
 ## Results
 
 `messages.batches.results(message_batch_id) -> MessageBatchIndividualResponse`

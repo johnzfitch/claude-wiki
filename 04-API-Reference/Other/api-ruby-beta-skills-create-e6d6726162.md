@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Skills Create E6D6726162"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/create.md"
+tags: ["api", "skills"]
 ---
+
 ## Create
 
 `beta.skills.create(**kwargs) -> SkillCreateResponse`

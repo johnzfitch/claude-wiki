@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Sessions Delete 2C9180Cdf6"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `client.Beta.Sessions.Delete(ctx, sessionID, body) (*BetaManagedAgentsDeletedSession, error)`

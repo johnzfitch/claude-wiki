@@ -244,7 +244,7 @@ Only tool-level descriptions are currently supported. No server-level descriptio
 
 ### How do we make local MCP servers (.mcpb) available in Claude Code?
 
-Use the [plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces). Node.js is recommended over Python or other languages for local MCPs due to better compatibility with Claude Desktop's built-in runtime.
+Use the [plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md). Node.js is recommended over Python or other languages for local MCPs due to better compatibility with Claude Desktop's built-in runtime.
 
 ### What are the observability best practices for local MCPs in Claude Desktop?
 

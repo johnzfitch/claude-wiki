@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Memory Stores List 57Fce0Ed1A"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/list.md"
+tags: ["api", "cli"]
 ---
+
 ## List
 
 `$ ant beta:memory-stores list`

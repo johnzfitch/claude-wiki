@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Environments Archive 1Ed0Ca3308"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 `client.Beta.Environments.Archive(ctx, environmentID, body) (*BetaEnvironment, error)`

@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Skills Versions Retrieve C1F3Be777A"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/versions/retrieve.md"
+tags: ["api", "skills"]
 ---
+
 ## Retrieve
 
 `VersionRetrieveResponse Beta.Skills.Versions.Retrieve(VersionRetrieveParamsparameters, CancellationTokencancellationToken = default)`

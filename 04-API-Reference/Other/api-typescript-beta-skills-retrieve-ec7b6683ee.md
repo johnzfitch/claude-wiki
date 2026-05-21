@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Skills Retrieve Ec7B6683Ee"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/retrieve.md"
+tags: ["api", "skills", "typescript"]
 ---
+
 ## Retrieve
 
 `client.beta.skills.retrieve(stringskillID, SkillRetrieveParamsparams?, RequestOptionsoptions?): SkillRetrieveResponse`

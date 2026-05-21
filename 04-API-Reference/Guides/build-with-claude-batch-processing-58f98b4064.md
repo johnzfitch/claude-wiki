@@ -1,9 +1,11 @@
 ---
+title: "Batch processing"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/batch-processing.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/batch-processing.md"
-title: "Batch processing"
+tags: ["api", "rag"]
 ---
+
 # Batch processing
 
 ---
@@ -2251,7 +2253,7 @@ For ZDR eligibility across all features, see [API and data retention](/docs/en/b
 
     1. Batches and their results are isolated within the Workspace in which they were created. This means they can only be accessed by API keys from that same Workspace.
     2. Each request within a batch is processed independently, with no data leakage between requests.
-    3. Results are only available for a limited time (29 days), and follow Anthropic's [data retention policy](https://support.claude.com/en/articles/7996866-how-long-do-you-store-personal-data).
+    3. Results are only available for a limited time (29 days), and follow Anthropic's [data retention policy](../../17-Billing-Plans/how-long-do-you-store-personal-data.md).
     4. Downloading batch results in the Console can be disabled on the organization-level or on a per-workspace basis.
   
 </section>

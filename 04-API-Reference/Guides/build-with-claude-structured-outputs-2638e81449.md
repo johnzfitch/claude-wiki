@@ -1,9 +1,11 @@
 ---
+title: "Structured outputs"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/structured-outputs.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/structured-outputs.md"
-title: "Structured outputs"
+tags: ["api"]
 ---
+
 # Structured outputs
 
 Get validated JSON results from agent workflows

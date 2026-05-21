@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Memory Stores Update 61F1D5C22A"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `beta.memory_stores.update(memory_store_id, **kwargs) -> BetaManagedAgentsMemoryStore`

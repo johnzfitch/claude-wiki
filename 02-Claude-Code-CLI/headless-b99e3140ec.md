@@ -1,9 +1,11 @@
 ---
+title: "Run Claude Code programmatically"
+source_url: "https://code.claude.com/docs/en/headless.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/headless.md"
-title: "Run Claude Code programmatically"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -18,7 +20,7 @@ The [Agent SDK](/en/agent-sdk/overview) gives you the same tools, agent loop, an
   The CLI was previously called "headless mode." The `-p` flag and all CLI options work the same way.
 </Note>
 
-To run Claude Code programmatically from the CLI, pass `-p` with your prompt and any [CLI options](/en/cli-reference):
+To run Claude Code programmatically from the CLI, pass `-p` with your prompt and any [CLI options](cli-reference-7bb98e3312.md):
 
 ```bash theme={null}
 claude -p "Find and fix the bug in auth.py" --allowedTools "Read,Edit,Bash"
@@ -28,7 +30,7 @@ This page covers using the Agent SDK via the CLI (`claude -p`). For the Python a
 
 ## Basic usage
 
-Add the `-p` (or `--print`) flag to any `claude` command to run it non-interactively. All [CLI options](/en/cli-reference) work with `-p`, including:
+Add the `-p` (or `--print`) flag to any `claude` command to run it non-interactively. All [CLI options](cli-reference-7bb98e3312.md) work with `-p`, including:
 
 * `--continue` for [continuing conversations](#continue-conversations)
 * `--allowedTools` for [auto-approving tools](#auto-approve-tools)
@@ -140,14 +142,14 @@ When an API request fails with a retryable error, Claude Code emits a `system/ap
 | `uuid`           | string          | unique event identifier                                                                                                                      |
 | `session_id`     | string          | session the event belongs to                                                                                                                 |
 
-The `system/init` event reports session metadata including the model, tools, MCP servers, and loaded plugins. It is the first event in the stream unless [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](/en/env-vars) is set, in which case `plugin_install` events precede it. Use the plugin fields to fail CI when a plugin did not load:
+The `system/init` event reports session metadata including the model, tools, MCP servers, and loaded plugins. It is the first event in the stream unless [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](env-vars-5c624d392b.md) is set, in which case `plugin_install` events precede it. Use the plugin fields to fail CI when a plugin did not load:
 
 | Field           | Type  | Description                                                                                                                                                                                                       |
 | --------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `plugins`       | array | plugins that loaded successfully, each with `name` and `path`                                                                                                                                                     |
 | `plugin_errors` | array | plugin load-time errors such as an unsatisfied dependency version, each with `plugin`, `type`, and `message`. Affected plugins are demoted and absent from `plugins`. The key is omitted when there are no errors |
 
-When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](/en/env-vars) is set, Claude Code emits `system/plugin_install` events while marketplace plugins install before the first turn. Use these to surface install progress in your own UI.
+When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](env-vars-5c624d392b.md) is set, Claude Code emits `system/plugin_install` events while marketplace plugins install before the first turn. Use these to surface install progress in your own UI.
 
 | Field        | Type                                                     | Description                                                                                                    |
 | ------------ | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -170,7 +172,7 @@ claude -p "Run the test suite and fix any failures" \
   --allowedTools "Bash,Read,Edit"
 ```
 
-To set a baseline for the whole session instead of listing individual tools, pass a [permission mode](/en/permission-modes). `dontAsk` denies anything not in your `permissions.allow` rules or the [read-only command set](/en/permissions#read-only-commands), which is useful for locked-down CI runs. `acceptEdits` lets Claude write files without prompting and also auto-approves common filesystem commands such as `mkdir`, `touch`, `mv`, and `cp`. Other shell commands and network requests still need an `--allowedTools` entry or a `permissions.allow` rule, otherwise the run aborts when one is attempted:
+To set a baseline for the whole session instead of listing individual tools, pass a [permission mode](permission-modes-c83d6eff7e.md). `dontAsk` denies anything not in your `permissions.allow` rules or the [read-only command set](/en/permissions#read-only-commands), which is useful for locked-down CI runs. `acceptEdits` lets Claude write files without prompting and also auto-approves common filesystem commands such as `mkdir`, `touch`, `mv`, and `cp`. Other shell commands and network requests still need an `--allowedTools` entry or a `permissions.allow` rule, otherwise the run aborts when one is attempted:
 
 ```bash theme={null}
 claude -p "Apply the lint fixes" --permission-mode acceptEdits
@@ -188,7 +190,7 @@ claude -p "Look at my staged changes and create an appropriate commit" \
 The `--allowedTools` flag uses [permission rule syntax](/en/settings#permission-rule-syntax). The trailing ` *` enables prefix matching, so `Bash(git diff *)` allows any command starting with `git diff`. The space before `*` is important: without it, `Bash(git diff*)` would also match `git diff-index`.
 
 <Note>
-  User-invoked [skills](/en/skills) like `/commit` and [built-in commands](/en/commands) are only available in interactive mode. In `-p` mode, describe the task you want to accomplish instead.
+  User-invoked [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) like `/commit` and [built-in commands](built-in-commands-claude-code-docs.md) are only available in interactive mode. In `-p` mode, describe the task you want to accomplish instead.
 </Note>
 
 ### Customize the system prompt
@@ -226,6 +228,6 @@ claude -p "Continue that review" --resume "$session_id"
 ## Next steps
 
 * [Agent SDK quickstart](/en/agent-sdk/quickstart): build your first agent with Python or TypeScript
-* [CLI reference](/en/cli-reference): all CLI flags and options
-* [GitHub Actions](/en/github-actions): use the Agent SDK in GitHub workflows
-* [GitLab CI/CD](/en/gitlab-ci-cd): use the Agent SDK in GitLab pipelines
+* [CLI reference](cli-reference-7bb98e3312.md): all CLI flags and options
+* [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md): use the Agent SDK in GitHub workflows
+* [GitLab CI/CD](claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md): use the Agent SDK in GitLab pipelines

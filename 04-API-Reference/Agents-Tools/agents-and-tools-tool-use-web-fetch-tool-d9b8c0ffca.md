@@ -1,9 +1,11 @@
 ---
+title: "Web fetch tool"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool.md"
-title: "Web fetch tool"
+tags: ["api", "prompting", "search"]
 ---
+
 # Web fetch tool
 
 Fetch and read content from specific URLs to augment Claude's context with live web content.

@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Skills Retrieve Ed2Cb031E1"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/retrieve.md"
+tags: ["api", "skills"]
 ---
+
 ## Retrieve
 
 `SkillRetrieveResponse Beta.Skills.Retrieve(SkillRetrieveParamsparameters, CancellationTokencancellationToken = default)`

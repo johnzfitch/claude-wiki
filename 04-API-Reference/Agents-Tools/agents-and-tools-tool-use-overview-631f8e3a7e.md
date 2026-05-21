@@ -1,9 +1,11 @@
 ---
+title: "Tool use with Claude"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md"
-title: "Tool use with Claude"
+tags: ["api"]
 ---
+
 # Tool use with Claude
 
 Connect Claude to external tools and APIs. Learn where tools execute and how the agentic loop works.
@@ -71,7 +73,7 @@ Tools differ primarily by where the code executes. **Client tools** (including u
 
 For the full conceptual model including the agentic loop and when to choose each approach, see [How tool use works](/docs/en/agents-and-tools/tool-use/how-tool-use-works).
 
-For connecting to MCP servers, see the [MCP connector](/docs/en/agents-and-tools/mcp-connector). For building your own MCP client, see [modelcontextprotocol.io](https://modelcontextprotocol.io/docs/develop/build-client).
+For connecting to MCP servers, see the [MCP connector](/docs/en/agents-and-tools/mcp-connector). For building your own MCP client, see [modelcontextprotocol.io](../../06-MCP-Tools/Tutorials/build-an-mcp-client-model-context-protocol.md).
 
 <Tip>
 **Guarantee schema conformance with strict tool use**

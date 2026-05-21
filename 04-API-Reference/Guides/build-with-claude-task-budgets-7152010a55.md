@@ -1,9 +1,11 @@
 ---
+title: "Task budgets"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/task-budgets.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/task-budgets.md"
-title: "Task budgets"
+tags: ["api"]
 ---
+
 # Task budgets
 
 Give Claude an advisory token budget for the full agentic loop to help the model self-regulate on long agentic tasks with task budgets.

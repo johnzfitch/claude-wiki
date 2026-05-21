@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-04-26T03:20:00Z"
+fetched_at: "2026-05-19T21:22:38Z"
 source_url: "https://code.claude.com/docs/en/fast-mode"
 title: "Speed up responses with fast mode - Claude Code Docs"
 ---
@@ -8,21 +8,27 @@ title: "Speed up responses with fast mode - Claude Code Docs"
 # Speed up responses with fast mode
 
 
-Get faster Opus 4.6 responses in Claude Code by toggling fast mode.
+Get faster Opus responses in Claude Code by toggling fast mode.
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 Fast mode is in [research preview](#research-preview). The feature, pricing, and availability may change based on feedback.
 
-Fast mode is a high-speed configuration for Claude Opus 4.6, making the model 2.5x faster at a higher cost per token. Toggle it on with `/fast` when you need speed for interactive work like rapid iteration or live debugging, and toggle it off when cost matters more than latency. Fast mode is not a different model. It uses the same Opus 4.6 with a different API configuration that prioritizes speed over cost efficiency. You get identical quality and capabilities, just faster responses. Fast mode is not available on Opus 4.7 or other models.
+Fast mode is a high-speed configuration for Claude Opus, making the model 2.5x faster at a higher cost per token. Toggle it on with `/fast` when you need speed for interactive work like rapid iteration or live debugging, and toggle it off when cost matters more than latency. Fast mode is not a different model. It uses Claude Opus with a different API configuration that prioritizes speed over cost efficiency. You get identical quality and capabilities with faster responses. Fast mode is supported on Opus 4.7 and Opus 4.6. It is not available on Sonnet, Haiku, or other models.
 
 Fast mode requires Claude Code v2.1.36 or later. Check your version with `claude --version`.
 
 What to know:
 
 - Use `/fast` to toggle on fast mode in Claude Code CLI. Also available via `/fast` in Claude Code VS Code Extension.
-- Fast mode for Opus 4.6 pricing is \$30/150 MTok.
+- Fast mode pricing is $30/$30/150 MTok on both Opus 4.7 and Opus 4.6.
 - Available to all Claude Code users on subscription plans (Pro/Max/Team/Enterprise) and Claude Console.
-- For Claude Code users on subscription plans (Pro/Max/Team/Enterprise), fast mode is available via extra usage only and not included in the subscription rate limits.
+- For Claude Code users on subscription plans (Pro/Max/Team/Enterprise), fast mode is available via usage credits only and not included in the subscription rate limits.
 
 This page covers how to [toggle fast mode](#toggle-fast-mode), its [cost tradeoff](#understand-the-cost-tradeoff), [when to use it](#decide-when-to-use-fast-mode), [requirements](#requirements), [per-session opt-in](#require-per-session-opt-in), and [rate limit behavior](#handle-rate-limits).
 
@@ -38,23 +44,23 @@ Toggle fast mode in either of these ways:
 
 By default, fast mode persists across sessions. Administrators can configure fast mode to reset each session. See [require per-session opt-in](#require-per-session-opt-in) for details. For the best cost efficiency, enable fast mode at the start of a session rather than switching mid-conversation. See [understand the cost tradeoff](#understand-the-cost-tradeoff) for details. When you enable fast mode:
 
-- If you’re on a different model, Claude Code automatically switches to Opus 4.6
+- If you’re on a different model, Claude Code automatically switches to Opus
 - You’ll see a confirmation message: “Fast mode ON”
 - A small `↯` icon appears next to the prompt while fast mode is active
 - Run `/fast` again at any time to check whether fast mode is on or off
 
-When you disable fast mode with `/fast` again, you remain on Opus 4.6. The model does not revert to your previous model. To switch to a different model, use `/model`.
+When you disable fast mode with `/fast` again, you remain on Opus. The model does not revert to your previous model. To switch to a different model, use `/model`. Opus 4.7 is the fast mode default in Claude Code v2.1.142 and later. To pin fast mode to Opus 4.6 instead, set `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1`.
 
 
 [​](#understand-the-cost-tradeoff)
 
 Understand the cost tradeoff
 
-Fast mode has higher per-token pricing than standard Opus 4.6:
+Fast mode has higher per-token pricing than standard Opus:
 
-| Mode                  | Input (MTok) | Output (MTok) |
-|-----------------------|--------------|---------------|
-| Fast mode on Opus 4.6 | \$30         | \$150         |
+| Mode      | Input (MTok) | Output (MTok) |
+|-----------|--------------|---------------|
+| Fast mode | \$30         | \$150         |
 
 Fast mode pricing is flat across the full 1M token context window. When you switch into fast mode mid-conversation, you pay the full fast mode uncached input token price for the entire conversation context. This costs more than if you had enabled fast mode from the start.
 
@@ -82,9 +88,9 @@ Fast mode vs effort level
 
 Fast mode and effort level both affect response speed, but differently:
 
-| Setting | Effect |
-|----|----|
-| **Fast mode** | Same model quality, lower latency, higher cost |
+| Setting                | Effect                                                                           |
+|------------------------|----------------------------------------------------------------------------------|
+| **Fast mode**          | Same model quality, lower latency, higher cost                                   |
 | **Lower effort level** | Less thinking time, faster responses, potentially lower quality on complex tasks |
 
 You can combine both: use fast mode with a lower [effort level](/docs/en/model-config#adjust-effort-level) for maximum speed on straightforward tasks.
@@ -96,10 +102,10 @@ Requirements
 
 Fast mode requires all of the following:
 
-- **Not available on third-party cloud providers**: fast mode is not available on Amazon Bedrock, Google Vertex AI, or Microsoft Azure Foundry. Fast mode is available through the Anthropic Console API and for Claude subscription plans using extra usage.
-- **Extra usage enabled**: your account must have extra usage enabled, which allows billing beyond your plan’s included usage. For individual accounts, enable this in your [Console billing settings](https://platform.claude.com/settings/organization/billing). For Team and Enterprise, an admin must enable extra usage for the organization.
+- **Not available on third-party cloud providers**: fast mode is not available on Amazon Bedrock, Google Vertex AI, or Microsoft Azure Foundry. Fast mode is available through the Anthropic Console API and for Claude subscription plans using usage credits.
+- **Usage credits turned on**: your account must have usage credits turned on, which allows billing beyond your plan’s included usage. For individual accounts, turn this on in your [Console billing settings](https://platform.claude.com/settings/organization/billing). For Team and Enterprise, an admin must turn on usage credits for the organization.
 
-Fast mode usage is billed directly to extra usage, even if you have remaining usage on your plan. This means fast mode tokens do not count against your plan’s included usage and are charged at the fast mode rate from the first token.
+Fast mode usage draws directly from usage credits, even if you have remaining usage on your plan. This means fast mode tokens do not count against your plan’s included usage and are charged at the fast mode rate from the first token.
 
 - **Admin enablement for Team and Enterprise**: fast mode is disabled by default for Team and Enterprise organizations. An admin must explicitly [enable fast mode](#enable-fast-mode-for-your-organization) before users can access it.
 
@@ -137,9 +143,9 @@ This is useful for controlling costs in organizations where users run multiple c
 
 Handle rate limits
 
-Fast mode has separate rate limits from standard Opus 4.6. When you hit the fast mode rate limit or run out of extra usage:
+Fast mode has separate rate limits from standard Opus. Fast mode for Opus 4.7 and Opus 4.6 share the same rate limit pool: usage on either model draws from the same limits. When you hit the fast mode rate limit or run out of usage credits:
 
-1.  Fast mode automatically falls back to standard Opus 4.6
+1.  Fast mode automatically falls back to standard speed
 2.  The `↯` icon turns gray to indicate cooldown
 3.  You continue working at standard speed and pricing
 4.  When the cooldown expires, fast mode automatically re-enables

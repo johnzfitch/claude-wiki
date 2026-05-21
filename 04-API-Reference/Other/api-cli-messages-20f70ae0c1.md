@@ -1,9 +1,11 @@
 ---
+title: "Messages"
+source_url: "https://platform.claude.com/docs/en/api/cli/messages.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/messages.md"
-title: "Messages"
+tags: ["api"]
 ---
+
 # Messages
 
 ## Create
@@ -9240,7 +9242,7 @@ ant messages count-tokens \
 
   - `format: optional object { schema, type }`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `schema: map[unknown]`
 

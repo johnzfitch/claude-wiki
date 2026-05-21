@@ -1,9 +1,11 @@
 ---
+title: "Let Claude use your computer from the CLI"
+source_url: "https://code.claude.com/docs/en/computer-use.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/computer-use.md"
-title: "Let Claude use your computer from the CLI"
+tags: ["claude-code", "cli", "desktop"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -35,9 +37,9 @@ Computer use handles tasks that require a GUI: anything you'd normally have to l
 
 Claude has several ways to interact with an app or service. Computer use is the broadest and slowest, so Claude tries the most precise tool first:
 
-* If you have an [MCP server](/en/mcp) for the service, Claude uses that.
+* If you have an [MCP server](../06-MCP-Tools/mcp-208e742686.md) for the service, Claude uses that.
 * If the task is a shell command, Claude uses Bash.
-* If the task is browser work and you have [Claude in Chrome](/en/chrome) set up, Claude uses that.
+* If the task is browser work and you have [Claude in Chrome](../03-IDE-Integrations/use-claude-code-with-chrome-beta-claude-code-docs-4f2f5a5a96.md) set up, Claude uses that.
 * If none of those apply, Claude uses computer use.
 
 Screen control is reserved for things nothing else can reach: native apps, simulators, and tools without an API.
@@ -129,7 +131,7 @@ A second notification appears when Claude is done.
 ## Safety and the trust boundary
 
 <Warning>
-  Unlike the [sandboxed Bash tool](/en/sandboxing), computer use runs on your actual desktop with access to the apps you approve. Claude checks each action and flags potential prompt injection from on-screen content, but the trust boundary is different. See the [computer use safety guide](https://support.claude.com/en/articles/14128542) for best practices.
+  Unlike the [sandboxed Bash tool](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md), computer use runs on your actual desktop with access to the apps you approve. Claude checks each action and flags potential prompt injection from on-screen content, but the trust boundary is different. See the [computer use safety guide](https://support.claude.com/en/articles/14128542) for best practices.
 </Warning>
 
 The built-in guardrails reduce risk without requiring configuration:
@@ -214,7 +216,7 @@ The server only appears on eligible setups. Check that:
 ## See also
 
 * [Computer use in Desktop](/en/desktop#let-claude-use-your-computer): the same capability with a graphical settings page
-* [Claude in Chrome](/en/chrome): browser automation for web-based tasks
-* [MCP](/en/mcp): connect Claude to structured tools and APIs
-* [Sandboxing](/en/sandboxing): how Claude's Bash tool isolates filesystem and network access
+* [Claude in Chrome](../03-IDE-Integrations/use-claude-code-with-chrome-beta-claude-code-docs-4f2f5a5a96.md): browser automation for web-based tasks
+* [MCP](../06-MCP-Tools/mcp-208e742686.md): connect Claude to structured tools and APIs
+* [Sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md): how Claude's Bash tool isolates filesystem and network access
 * [Computer use safety guide](https://support.claude.com/en/articles/14128542): best practices for safe computer use

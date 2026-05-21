@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Vaults Credentials Update 0B296A685D"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/credentials/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/credentials/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `BetaManagedAgentsCredential Beta.Vaults.Credentials.Update(CredentialUpdateParamsparameters, CancellationTokencancellationToken = default)`

@@ -1,9 +1,11 @@
 ---
+title: "Streaming refusals"
+source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals.md"
 category: "Test-Evaluate"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals.md"
-title: "Streaming refusals"
+tags: ["api"]
 ---
+
 # Streaming refusals
 
 ---

@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Memory Stores Memory Versions Redact 443A66A652"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/memory_versions/redact.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/memory_versions/redact.md"
+tags: ["api", "python"]
 ---
+
 ## Redact
 
 `beta.memory_stores.memory_versions.redact(strmemory_version_id, MemoryVersionRedactParams**kwargs)  -> BetaManagedAgentsMemoryVersion`

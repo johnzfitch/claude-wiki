@@ -1,9 +1,11 @@
 ---
+title: "Tools reference"
+source_url: "https://code.claude.com/docs/en/tools-reference.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/tools-reference.md"
-title: "Tools reference"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -12,16 +14,16 @@ title: "Tools reference"
 
 > Complete reference for the tools Claude Code can use, including permission requirements.
 
-Claude Code has access to a set of built-in tools that help it understand and modify your codebase. The tool names are the exact strings you use in [permission rules](/en/permissions#tool-specific-permission-rules), [subagent tool lists](/en/sub-agents), and [hook matchers](/en/hooks). To disable a tool entirely, add its name to the `deny` array in your [permission settings](/en/permissions#tool-specific-permission-rules).
+Claude Code has access to a set of built-in tools that help it understand and modify your codebase. The tool names are the exact strings you use in [permission rules](/en/permissions#tool-specific-permission-rules), [subagent tool lists](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md), and [hook matchers](../07-Hooks/hooks-9168ed62a4.md). To disable a tool entirely, add its name to the `deny` array in your [permission settings](/en/permissions#tool-specific-permission-rules).
 
-To add custom tools, connect an [MCP server](/en/mcp). To extend Claude with reusable prompt-based workflows, write a [skill](/en/skills), which runs through the existing `Skill` tool rather than adding a new tool entry.
+To add custom tools, connect an [MCP server](../06-MCP-Tools/mcp-208e742686.md). To extend Claude with reusable prompt-based workflows, write a [skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md), which runs through the existing `Skill` tool rather than adding a new tool entry.
 
 | Tool                   | Description                                                                                                                                                                                                                                                               | Permission Required |
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------ |
-| `Agent`                | Spawns a [subagent](/en/sub-agents) with its own context window to handle a task                                                                                                                                                                                          | No                  |
+| `Agent`                | Spawns a [subagent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) with its own context window to handle a task                                                                                                                                                                                          | No                  |
 | `AskUserQuestion`      | Asks multiple-choice questions to gather requirements or clarify ambiguity                                                                                                                                                                                                | No                  |
 | `Bash`                 | Executes shell commands in your environment. See [Bash tool behavior](#bash-tool-behavior)                                                                                                                                                                                | Yes                 |
-| `CronCreate`           | Schedules a recurring or one-shot prompt within the current session. Tasks are session-scoped and restored on `--resume` or `--continue` if unexpired. See [scheduled tasks](/en/scheduled-tasks)                                                                         | No                  |
+| `CronCreate`           | Schedules a recurring or one-shot prompt within the current session. Tasks are session-scoped and restored on `--resume` or `--continue` if unexpired. See [scheduled tasks](run-prompts-on-a-schedule-claude-code-docs.md)                                                                         | No                  |
 | `CronDelete`           | Cancels a scheduled task by ID                                                                                                                                                                                                                                            | No                  |
 | `CronList`             | Lists all scheduled tasks in the session                                                                                                                                                                                                                                  | No                  |
 | `Edit`                 | Makes targeted edits to specific files                                                                                                                                                                                                                                    | Yes                 |
@@ -31,14 +33,14 @@ To add custom tools, connect an [MCP server](/en/mcp). To extend Claude with reu
 | `ExitWorktree`         | Exits a worktree session and returns to the original directory. Not available to subagents                                                                                                                                                                                | No                  |
 | `Glob`                 | Finds files based on pattern matching                                                                                                                                                                                                                                     | No                  |
 | `Grep`                 | Searches for patterns in file contents                                                                                                                                                                                                                                    | No                  |
-| `ListMcpResourcesTool` | Lists resources exposed by connected [MCP servers](/en/mcp)                                                                                                                                                                                                               | No                  |
+| `ListMcpResourcesTool` | Lists resources exposed by connected [MCP servers](../06-MCP-Tools/mcp-208e742686.md)                                                                                                                                                                                                               | No                  |
 | `LSP`                  | Code intelligence via language servers: jump to definitions, find references, report type errors and warnings. See [LSP tool behavior](#lsp-tool-behavior)                                                                                                                | No                  |
 | `Monitor`              | Runs a command in the background and feeds each output line back to Claude, so it can react to log entries, file changes, or polled status mid-conversation. See [Monitor tool](#monitor-tool)                                                                            | Yes                 |
 | `NotebookEdit`         | Modifies Jupyter notebook cells                                                                                                                                                                                                                                           | Yes                 |
 | `PowerShell`           | Executes PowerShell commands natively. See [PowerShell tool](#powershell-tool) for availability                                                                                                                                                                           | Yes                 |
 | `Read`                 | Reads the contents of files                                                                                                                                                                                                                                               | No                  |
 | `ReadMcpResourceTool`  | Reads a specific MCP resource by URI                                                                                                                                                                                                                                      | No                  |
-| `SendMessage`          | Sends a message to an [agent team](/en/agent-teams) teammate, or [resumes a subagent](/en/sub-agents#resume-subagents) by its agent ID. Stopped subagents auto-resume in the background. Only available when `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` is set              | No                  |
+| `SendMessage`          | Sends a message to an [agent team](../09-Agents-Patterns/agent-teams-e29da6ed1b.md) teammate, or [resumes a subagent](/en/sub-agents#resume-subagents) by its agent ID. Stopped subagents auto-resume in the background. Only available when `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` is set              | No                  |
 | `Skill`                | Executes a [skill](/en/skills#control-who-invokes-a-skill) within the main conversation                                                                                                                                                                                   | Yes                 |
 | `TaskCreate`           | Creates a new task in the task list                                                                                                                                                                                                                                       | No                  |
 | `TaskGet`              | Retrieves full details for a specific task                                                                                                                                                                                                                                | No                  |
@@ -46,9 +48,9 @@ To add custom tools, connect an [MCP server](/en/mcp). To extend Claude with reu
 | `TaskOutput`           | (Deprecated) Retrieves output from a background task. Prefer `Read` on the task's output file path                                                                                                                                                                        | No                  |
 | `TaskStop`             | Kills a running background task by ID                                                                                                                                                                                                                                     | No                  |
 | `TaskUpdate`           | Updates task status, dependencies, details, or deletes tasks                                                                                                                                                                                                              | No                  |
-| `TeamCreate`           | Creates an [agent team](/en/agent-teams) with multiple teammates. Only available when `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` is set                                                                                                                                     | No                  |
+| `TeamCreate`           | Creates an [agent team](../09-Agents-Patterns/agent-teams-e29da6ed1b.md) with multiple teammates. Only available when `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` is set                                                                                                                                     | No                  |
 | `TeamDelete`           | Disbands an agent team and cleans up teammate processes. Only available when `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` is set                                                                                                                                              | No                  |
-| `TodoWrite`            | Manages the session task checklist. Available in non-interactive mode and the [Agent SDK](/en/headless); interactive sessions use TaskCreate, TaskGet, TaskList, and TaskUpdate instead                                                                                   | No                  |
+| `TodoWrite`            | Manages the session task checklist. Available in non-interactive mode and the [Agent SDK](headless-b99e3140ec.md); interactive sessions use TaskCreate, TaskGet, TaskList, and TaskUpdate instead                                                                                   | No                  |
 | `ToolSearch`           | Searches for and loads deferred tools when [tool search](/en/mcp#scale-with-mcp-tool-search) is enabled                                                                                                                                                                   | No                  |
 | `WebFetch`             | Fetches content from a specified URL                                                                                                                                                                                                                                      | Yes                 |
 | `WebSearch`            | Performs web searches                                                                                                                                                                                                                                                     | Yes                 |
@@ -65,7 +67,7 @@ The Bash tool runs each command in a separate process with the following persist
   * To disable this carry-over so every Bash command starts in the project directory, set `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=1`.
 * Environment variables do not persist. An `export` in one command will not be available in the next.
 
-Activate your virtualenv or conda environment before launching Claude Code. To make environment variables persist across Bash commands, set [`CLAUDE_ENV_FILE`](/en/env-vars) to a shell script before launching Claude Code, or use a [SessionStart hook](/en/hooks#persist-environment-variables) to populate it dynamically.
+Activate your virtualenv or conda environment before launching Claude Code. To make environment variables persist across Bash commands, set [`CLAUDE_ENV_FILE`](env-vars-5c624d392b.md) to a shell script before launching Claude Code, or use a [SessionStart hook](/en/hooks#persist-environment-variables) to populate it dynamically.
 
 ## LSP tool behavior
 
@@ -149,7 +151,7 @@ Claude gives a conversational summary. For exact MCP tool names, run `/mcp`.
 
 ## See also
 
-* [MCP servers](/en/mcp): add custom tools by connecting external servers
-* [Permissions](/en/permissions): permission system, rule syntax, and tool-specific patterns
-* [Subagents](/en/sub-agents): configure tool access for subagents
-* [Hooks](/en/hooks-guide): run custom commands before or after tool execution
+* [MCP servers](../06-MCP-Tools/mcp-208e742686.md): add custom tools by connecting external servers
+* [Permissions](configure-permissions-claude-code-docs-7b0e64d485.md): permission system, rule syntax, and tool-specific patterns
+* [Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md): configure tool access for subagents
+* [Hooks](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md): run custom commands before or after tool execution

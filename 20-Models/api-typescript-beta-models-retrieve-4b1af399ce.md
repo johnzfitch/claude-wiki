@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Models Retrieve 4B1Af399Ce"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/models/retrieve.md"
+tags: ["api", "typescript"]
 ---
+
 ## Retrieve
 
 `client.beta.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): BetaModelInfo`

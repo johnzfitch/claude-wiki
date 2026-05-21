@@ -29,7 +29,7 @@ For detailed permission configuration, see [Identity and Access Management](/en/
 
 To mitigate risks in agentic systems:
 
-* **Sandboxed bash tool**: [Sandbox](/en/sandboxing) bash commands with filesystem and network isolation, reducing permission prompts while maintaining security. Enable with `/sandbox` to define boundaries where Claude Code can work autonomously
+* **Sandboxed bash tool**: [Sandbox](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) bash commands with filesystem and network isolation, reducing permission prompts while maintaining security. Enable with `/sandbox` to define boundaries where Claude Code can work autonomously
 * **Write access restriction**: Claude Code can only write to the folder where it was started and its subfolders—it cannot modify files in parent directories without explicit permission. While Claude Code can read files outside the working directory (useful for accessing system libraries and dependencies), write operations are strictly confined to the project scope, creating a clear security boundary
 * **Prompt fatigue mitigation**: Support for allowlisting frequently used safe commands per-user, per-codebase, or per-organization
 * **Accept Edits mode**: Batch accept multiple edits while maintaining permission prompts for commands with side effects
@@ -100,7 +100,7 @@ See [VS Code security and privacy](/en/vs-code#security-and-privacy) for more in
 
 ## Cloud execution security
 
-When using [Claude Code on the web](/en/claude-code-on-the-web), additional security controls are in place:
+When using [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md), additional security controls are in place:
 
 * **Isolated virtual machines**: Each cloud session runs in an isolated, Anthropic-managed VM
 * **Network access controls**: Network access is limited by default and can be configured to be disabled or allow only specific domains
@@ -109,7 +109,7 @@ When using [Claude Code on the web](/en/claude-code-on-the-web), additional secu
 * **Audit logging**: All operations in cloud environments are logged for compliance and audit purposes
 * **Automatic cleanup**: Cloud environments are automatically terminated after session completion
 
-For more details on cloud execution, see [Claude Code on the web](/en/claude-code-on-the-web).
+For more details on cloud execution, see [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md).
 
 ## Security best practices
 
@@ -125,7 +125,7 @@ For more details on cloud execution, see [Claude Code on the web](/en/claude-cod
 * Use [managed settings](/en/iam#managed-settings) to enforce organizational standards
 * Share approved permission configurations through version control
 * Train team members on security best practices
-* Monitor Claude Code usage through [OpenTelemetry metrics](/en/monitoring-usage)
+* Monitor Claude Code usage through [OpenTelemetry metrics](monitoring-claude-code-docs-72c46f3dc8.md)
 
 ### Reporting security issues
 
@@ -138,8 +138,8 @@ If you discover a security vulnerability in Claude Code:
 
 ## Related resources
 
-* [Sandboxing](/en/sandboxing) - Filesystem and network isolation for bash commands
+* [Sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) - Filesystem and network isolation for bash commands
 * [Identity and Access Management](/en/iam) - Configure permissions and access controls
-* [Monitoring usage](/en/monitoring-usage) - Track and audit Claude Code activity
+* [Monitoring usage](monitoring-claude-code-docs-72c46f3dc8.md) - Track and audit Claude Code activity
 * [Development containers](../02-Claude-Code-CLI/development-containers-claude-code-docs.md) - Secure, isolated environments
 * [Anthropic Trust Center](https://trust.anthropic.com) - Security certifications and compliance

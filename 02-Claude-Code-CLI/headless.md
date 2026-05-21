@@ -17,7 +17,7 @@ The [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) gives you the same tools,
   The CLI was previously called "headless mode." The `-p` flag and all CLI options work the same way.
 </Note>
 
-To run Claude Code programmatically from the CLI, pass `-p` with your prompt and any [CLI options](/en/cli-reference):
+To run Claude Code programmatically from the CLI, pass `-p` with your prompt and any [CLI options](cli-reference-7bb98e3312.md):
 
 ```bash  theme={null}
 claude -p "Find and fix the bug in auth.py" --allowedTools "Read,Edit,Bash"
@@ -27,7 +27,7 @@ This page covers using the Agent SDK via the CLI (`claude -p`). For the Python a
 
 ## Basic usage
 
-Add the `-p` (or `--print`) flag to any `claude` command to run it non-interactively. All [CLI options](/en/cli-reference) work with `-p`, including:
+Add the `-p` (or `--print`) flag to any `claude` command to run it non-interactively. All [CLI options](cli-reference-7bb98e3312.md) work with `-p`, including:
 
 * `--continue` for [continuing conversations](#continue-conversations)
 * `--allowedTools` for [auto-approving tools](#auto-approve-tools)

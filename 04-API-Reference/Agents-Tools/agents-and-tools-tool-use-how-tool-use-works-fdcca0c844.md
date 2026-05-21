@@ -1,9 +1,11 @@
 ---
+title: "How tool use works"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works.md"
-title: "How tool use works"
+tags: ["agents", "api", "cli"]
 ---
+
 # How tool use works
 
 Understand the tool use loop, where tools execute, and when to use tools instead of prose.

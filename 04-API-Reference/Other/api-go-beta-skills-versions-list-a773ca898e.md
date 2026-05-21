@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Skills Versions List A773Ca898E"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/list.md"
+tags: ["api", "skills"]
 ---
+
 ## List
 
 `client.Beta.Skills.Versions.List(ctx, skillID, params) (*PageCursor[BetaSkillVersionListResponse], error)`

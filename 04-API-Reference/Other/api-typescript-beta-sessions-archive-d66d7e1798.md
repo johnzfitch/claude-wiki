@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Sessions Archive D66D7E1798"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/archive.md"
+tags: ["api", "typescript"]
 ---
+
 ## Archive
 
 `client.beta.sessions.archive(stringsessionID, SessionArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsSession`

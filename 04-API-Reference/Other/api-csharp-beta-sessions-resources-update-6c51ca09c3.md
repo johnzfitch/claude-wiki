@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Sessions Resources Update 6C51Ca09C3"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/sessions/resources/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/sessions/resources/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `ResourceUpdateResponse Beta.Sessions.Resources.Update(ResourceUpdateParamsparameters, CancellationTokencancellationToken = default)`

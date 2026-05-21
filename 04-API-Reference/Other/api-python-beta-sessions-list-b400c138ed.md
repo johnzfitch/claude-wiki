@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Sessions List B400C138Ed"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/list.md"
+tags: ["api", "python"]
 ---
+
 ## List
 
 `beta.sessions.list(SessionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSession]`

@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Vaults Credentials Create A6Cde5F6F9"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/vaults/credentials/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/vaults/credentials/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (*BetaManagedAgentsCredential, error)`

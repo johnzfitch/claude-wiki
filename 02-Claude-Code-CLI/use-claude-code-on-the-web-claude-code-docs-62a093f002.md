@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-04-26T03:19:52Z"
+fetched_at: "2026-05-19T21:22:27Z"
 source_url: "https://code.claude.com/docs/en/claude-code-on-the-web"
 title: "Use Claude Code on the web - Claude Code Docs"
 ---
@@ -10,6 +10,12 @@ title: "Use Claude Code on the web - Claude Code Docs"
 
 Configure cloud environments, setup scripts, network access, and Docker in Anthropic’s sandbox. Move sessions between web and terminal with `--remote` and `--teleport`.
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 Claude Code on the web is in research preview for Pro, Max, and Team users, and for Enterprise users with premium seats or Chat + Claude Code seats.
 
@@ -35,10 +41,12 @@ This page covers:
 
 Cloud sessions need access to your GitHub repositories to clone code and push branches. You can grant access in two ways:
 
-| Method | How it works | Best for |
-|:---|:---|:---|
-| **GitHub App** | Install the Claude GitHub App on specific repositories during [web onboarding](/docs/en/web-quickstart). Access is scoped per repository. | Teams that want explicit per-repo authorization |
-| **`/web-setup`** | Run `/web-setup` in your terminal to sync your local `gh` CLI token to your Claude account. Access matches whatever your `gh` token can see. | Individual developers who already use `gh` |
+| Method           | How it works                                                                                | Best for                                                                |
+|:-----------------|:--------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
+| **GitHub App**   | Authorize the Claude GitHub App during [web onboarding](/docs/en/web-quickstart).           | Browser onboarding; teams that want [Auto-fix](#auto-fix-pull-requests) |
+| **`/web-setup`** | Run `/web-setup` in your terminal to sync your local `gh` CLI token to your Claude account. | Individual developers who already use `gh`                              |
+
+With either method, a cloud session can access any repository the connecting GitHub account can see, not just the repositories the Claude GitHub App is installed on. App installation enables PR webhooks for [Auto-fix](#auto-fix-pull-requests); it is not a session-level access control. To restrict which repositories your team can reach from cloud sessions, restrict access on GitHub itself, for example by limiting team or repository membership for the connected GitHub accounts.
 
 Either method works. [`/schedule`](/docs/en/routines) checks for either form of access and prompts you to run `/web-setup` if neither is configured. See [Connect from your terminal](/docs/en/web-quickstart#connect-from-your-terminal) for the `/web-setup` walkthrough. The GitHub App is required for [Auto-fix](#auto-fix-pull-requests), which uses the App to receive PR webhooks. If you connect with `/web-setup` and later want Auto-fix, install the App on those repositories. Team and Enterprise admins can disable `/web-setup` with the Quick web setup toggle at [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code).
 
@@ -58,19 +66,19 @@ What’s available in cloud sessions
 
 Cloud sessions start from a fresh clone of your repository. Anything committed to the repo is available. Anything you’ve installed or configured only on your own machine is not.
 
-|  | Available in cloud sessions | Why |
-|:---|:---|:---|
-| Your repo’s `CLAUDE.md` | Yes | Part of the clone |
-| Your repo’s `.claude/settings.json` hooks | Yes | Part of the clone |
-| Your repo’s `.mcp.json` MCP servers | Yes | Part of the clone |
-| Your repo’s `.claude/rules/` | Yes | Part of the clone |
-| Your repo’s `.claude/skills/`, `.claude/agents/`, `.claude/commands/` | Yes | Part of the clone |
-| Plugins declared in `.claude/settings.json` | Yes | Installed at session start from the [marketplace](/docs/en/plugin-marketplaces) you declared. Requires network access to reach the marketplace source |
-| Your user `~/.claude/CLAUDE.md` | No | Lives on your machine, not in the repo |
-| Plugins enabled only in your user settings | No | User-scoped `enabledPlugins` lives in `~/.claude/settings.json`. Declare them in the repo’s `.claude/settings.json` instead |
-| MCP servers you added with `claude mcp add` | No | Those write to your local user config, not the repo. Declare the server in [`.mcp.json`](/docs/en/mcp#project-scope) instead |
-| Static API tokens and credentials | No | No dedicated secrets store exists yet. See below |
-| Interactive auth like AWS SSO | No | Not supported. SSO requires browser-based login that can’t run in a cloud session |
+|                                                                       | Available in cloud sessions | Why                                                                                                                                                   |
+|:----------------------------------------------------------------------|:----------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Your repo’s `CLAUDE.md`                                               | Yes                         | Part of the clone                                                                                                                                     |
+| Your repo’s `.claude/settings.json` hooks                             | Yes                         | Part of the clone                                                                                                                                     |
+| Your repo’s `.mcp.json` MCP servers                                   | Yes                         | Part of the clone                                                                                                                                     |
+| Your repo’s `.claude/rules/`                                          | Yes                         | Part of the clone                                                                                                                                     |
+| Your repo’s `.claude/skills/`, `.claude/agents/`, `.claude/commands/` | Yes                         | Part of the clone                                                                                                                                     |
+| Plugins declared in `.claude/settings.json`                           | Yes                         | Installed at session start from the [marketplace](/docs/en/plugin-marketplaces) you declared. Requires network access to reach the marketplace source |
+| Your user `~/.claude/CLAUDE.md`                                       | No                          | Lives on your machine, not in the repo                                                                                                                |
+| Plugins enabled only in your user settings                            | No                          | User-scoped `enabledPlugins` lives in `~/.claude/settings.json`. Declare them in the repo’s `.claude/settings.json` instead                           |
+| MCP servers you added with `claude mcp add`                           | No                          | Those write to your local user config, not the repo. Declare the server in [`.mcp.json`](/docs/en/mcp#project-scope) instead                          |
+| Static API tokens and credentials                                     | No                          | No dedicated secrets store exists yet. See below                                                                                                      |
+| Interactive auth like AWS SSO                                         | No                          | Not supported. SSO requires browser-based login that can’t run in a cloud session                                                                     |
 
 To make configuration available in cloud sessions, commit it to the repo. A dedicated secrets store is not yet available. Both environment variables and setup scripts are stored in the environment configuration, visible to anyone who can edit that environment. If you need secrets in a cloud session, add them as environment variables with that visibility in mind.
 
@@ -81,19 +89,19 @@ Installed tools
 
 Cloud sessions come with common language runtimes, build tools, and databases pre-installed. The table below summarizes what’s included by category.
 
-| Category | Included |
-|:---|:---|
-| **Python** | Python 3.x with pip, poetry, uv, black, mypy, pytest, ruff |
-| **Node.js** | 20, 21, and 22 via nvm, with npm, yarn, pnpm, bun¹, eslint, prettier, chromedriver |
-| **Ruby** | 3.1, 3.2, 3.3 with gem, bundler, rbenv |
-| **PHP** | 8.4 with Composer |
-| **Java** | OpenJDK 21 with Maven and Gradle |
-| **Go** | latest stable with module support |
-| **Rust** | rustc and cargo |
-| **C/C++** | GCC, Clang, cmake, ninja, conan |
-| **Docker** | docker, dockerd, docker compose |
-| **Databases** | PostgreSQL 16, Redis 7.0 |
-| **Utilities** | git, jq, yq, ripgrep, tmux, vim, nano |
+| Category      | Included                                                                           |
+|:--------------|:-----------------------------------------------------------------------------------|
+| **Python**    | Python 3.x with pip, poetry, uv, black, mypy, pytest, ruff                         |
+| **Node.js**   | 20, 21, and 22 via nvm, with npm, yarn, pnpm, bun¹, eslint, prettier, chromedriver |
+| **Ruby**      | 3.1, 3.2, 3.3 with gem, bundler, rbenv                                             |
+| **PHP**       | 8.4 with Composer                                                                  |
+| **Java**      | OpenJDK 21 with Maven and Gradle                                                   |
+| **Go**        | latest stable with module support                                                  |
+| **Rust**      | rustc and cargo                                                                    |
+| **C/C++**     | GCC, Clang, cmake, ninja, conan                                                    |
+| **Docker**    | docker, dockerd, docker compose                                                    |
+| **Databases** | PostgreSQL 16, Redis 7.0                                                           |
+| **Utilities** | git, jq, yq, ripgrep, tmux, vim, nano                                              |
 
 ¹ Bun is installed but has known [proxy compatibility issues](#install-dependencies-with-a-sessionstart-hook) for package fetching. For exact versions, ask Claude to run `check-tools` in a cloud session. This command only exists in cloud sessions.
 
@@ -123,10 +131,10 @@ Add a `GH_TOKEN` environment variable to your [environment settings](#configure-
 
 Link artifacts back to the session
 
-Each cloud session has a transcript URL on claude.ai, and the session can read its own ID from the `CLAUDE_CODE_REMOTE_SESSION_ID` environment variable. Use this to put a traceable link in PR bodies, commit messages, Slack posts, or generated reports so a reviewer can open the run that produced them. Ask Claude to construct the link from the environment variable. The following command prints the URL:
+Each cloud session has a transcript URL on claude.ai, and the session can read its own ID from the `CLAUDE_CODE_REMOTE_SESSION_ID` environment variable. Use this to put a traceable link in PR bodies, commit messages, Slack posts, or generated reports so a reviewer can open the run that produced them. The variable’s value uses a `cse_` prefix, while the transcript URL path takes the same ID with a `session_` prefix. Substitute the prefix when building the link. The following command prints the URL:
 
 ```python
-echo "https://claude.ai/code/${CLAUDE_CODE_REMOTE_SESSION_ID}"
+echo "https://claude.ai/code/${CLAUDE_CODE_REMOTE_SESSION_ID/#cse_/session_}"
 ```
 
 
@@ -166,11 +174,11 @@ Configure your environment
 
 Environments control [network access](#network-access), environment variables, and the [setup script](#setup-scripts) that runs before a session starts. See [Installed tools](#installed-tools) for what’s available without any configuration. You can manage environments from the web interface or the terminal:
 
-| Action | How |
-|:---|:---|
-| Add an environment | Select the current environment to open the selector, then select **Add environment**. The dialog includes name, network access level, environment variables, and setup script. |
-| Edit an environment | Select the settings icon to the right of the environment name. |
-| Archive an environment | Open the environment for editing and select **Archive**. Archived environments are hidden from the selector but existing sessions keep running. |
+| Action                         | How                                                                                                                                                                                                                      |
+|:-------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Add an environment             | Select the current environment to open the selector, then select **Add environment**. The dialog includes name, network access level, environment variables, and setup script.                                           |
+| Edit an environment            | Select the cloud icon showing the current environment’s name to open the selector, hover over an environment, and click the settings icon that appears on the right.                                                     |
+| Archive an environment         | Open the environment for editing and select **Archive**. Archived environments are hidden from the selector but existing sessions keep running.                                                                          |
 | Set the default for `--remote` | Run `/remote-env` in your terminal. If you have a single environment, this command shows your current configuration. `/remote-env` only selects the default; add, edit, and archive environments from the web interface. |
 
 Environment variables use `.env` format with one `KEY=value` pair per line. Don’t wrap values in quotes, since quotes are stored as part of the value.
@@ -193,7 +201,7 @@ A setup script is a Bash script that runs when a new cloud session starts, befor
 apt update && apt install -y gh
 ```
 
-If the script exits non-zero, the session fails to start. Append `|| true` to non-critical commands to avoid blocking the session on an intermittent install failure.
+If the script exits non-zero, the session fails to start. Append `|| true` to non-critical commands to avoid blocking the session on an intermittent install failure. Keep the script’s total runtime under roughly five minutes so the [environment cache](#environment-caching) can build. Run independent installs in parallel with `&` and `wait`. If a single download won’t fit in the five-minute limit, move it to a [SessionStart hook](#setup-scripts-vs-sessionstart-hooks) that launches it in the background.
 
 Setup scripts that install packages need network access to reach registries. The default **Trusted** network access allows connections to [common package registries](#default-allowed-domains) including npm, PyPI, RubyGems, and crates.io. Scripts will fail to install packages if your environment uses **None** network access.
 
@@ -211,12 +219,12 @@ Setup scripts vs. SessionStart hooks
 
 Use a setup script to install things the cloud needs but your laptop already has, like a language runtime or CLI tool. Use a [SessionStart hook](/docs/en/hooks#sessionstart) for project setup that should run everywhere, cloud and local, like `npm install`. Both run at the start of a session, but they belong to different places:
 
-|  | Setup scripts | SessionStart hooks |
-|----|----|----|
-| Attached to | The cloud environment | Your repository |
-| Configured in | Cloud environment UI | `.claude/settings.json` in your repo |
-| Runs | Before Claude Code launches, when no [cached environment](#environment-caching) is available | After Claude Code launches, on every session including resumed |
-| Scope | Cloud environments only | Both local and cloud |
+|               | Setup scripts                                                                                | SessionStart hooks                                             |
+|---------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| Attached to   | The cloud environment                                                                        | Your repository                                                |
+| Configured in | Cloud environment UI                                                                         | `.claude/settings.json` in your repo                           |
+| Runs          | Before Claude Code launches, when no [cached environment](#environment-caching) is available | After Claude Code launches, on every session including resumed |
+| Scope         | Cloud environments only                                                                      | Both local and cloud                                           |
 
 SessionStart hooks can also be defined in your user-level `~/.claude/settings.json` locally, but user-level settings don’t carry over to cloud sessions. In the cloud, only hooks committed to the repo run.
 
@@ -273,7 +281,9 @@ To persist environment variables for subsequent Bash commands, write to the file
 
 Network access
 
-Network access controls outbound connections from the cloud environment. Each environment specifies one access level, and you can extend it with custom allowed domains. The default is **Trusted**, which allows package registries and other [allowlisted domains](#default-allowed-domains).
+Network access controls outbound connections from the cloud environment. Each environment specifies one access level, and you can extend it with custom allowed domains. The default is **Trusted**, which allows package registries and other [allowlisted domains](#default-allowed-domains). To change an environment’s network access, [open it for editing](#configure-your-environment) and use the **Network access** selector in the dialog. There is no separate Environments page. The cloud icon appears wherever you start a cloud session or configure a [routine](/docs/en/routines#environments-and-network-access).
+
+MCP connector traffic is routed through Anthropic’s servers, so the connectors you enable on a session or routine work without adding their hosts to **Allowed domains**. Connectors are configured per session or per routine; remove any you don’t need to limit which tools Claude can reach. This relies on the same Anthropic-bound channel noted under [Security and isolation](#security-and-isolation).
 
 
 [​](#access-levels)
@@ -282,12 +292,12 @@ Access levels
 
 Choose an access level when you create or edit an environment:
 
-| Level | Outbound connections |
-|:---|:---|
-| **None** | No outbound network access |
+| Level       | Outbound connections                                                                         |
+|:------------|:---------------------------------------------------------------------------------------------|
+| **None**    | No outbound network access                                                                   |
 | **Trusted** | [Allowlisted domains](#default-allowed-domains) only: package registries, GitHub, cloud SDKs |
-| **Full** | Any domain |
-| **Custom** | Your own allowlist, optionally including the defaults |
+| **Full**    | Any domain                                                                                   |
+| **Custom**  | Your own allowlist, optionally including the defaults                                        |
 
 
 [​](#allow-specific-domains)
@@ -676,12 +686,12 @@ Teleport requirements
 
 Teleport checks these requirements before resuming a session. If any requirement isn’t met, you’ll see an error or be prompted to resolve the issue.
 
-| Requirement | Details |
-|----|----|
-| Clean git state | Your working directory must have no uncommitted changes. Teleport prompts you to stash changes if needed. |
-| Correct repository | You must run `--teleport` from a checkout of the same repository, not a fork. |
-| Branch available | The branch from the cloud session must have been pushed to the remote. Teleport automatically fetches and checks it out. |
-| Same account | You must be authenticated to the same claude.ai account used in the cloud session. |
+| Requirement        | Details                                                                                                                  |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------|
+| Clean git state    | Your working directory must have no uncommitted changes. Teleport prompts you to stash changes if needed.                |
+| Correct repository | You must run `--teleport` from a checkout of the same repository, not a fork.                                            |
+| Branch available   | The branch from the cloud session must have been pushed to the remote. Teleport automatically fetches and checks it out. |
+| Same account       | You must be authenticated to the same claude.ai account used in the cloud session.                                       |
 
 
 [​](#teleport-is-unavailable)
@@ -704,11 +714,11 @@ Manage context
 
 Cloud sessions support [built-in commands](/docs/en/commands) that produce text output. Commands that open an interactive terminal picker, like `/model` or `/config`, are not available. For context management specifically:
 
-| Command | Works in cloud sessions | Notes |
-|:---|:---|:---|
-| `/compact` | Yes | Summarizes the conversation to free up context. Accepts optional focus instructions like `/compact keep the test output` |
-| `/context` | Yes | Shows what’s currently in the context window |
-| `/clear` | No | Start a new session from the sidebar instead |
+| Command    | Works in cloud sessions | Notes                                                                                                                    |
+|:-----------|:------------------------|:-------------------------------------------------------------------------------------------------------------------------|
+| `/compact` | Yes                     | Summarizes the conversation to free up context. Accepts optional focus instructions like `/compact keep the test output` |
+| `/context` | Yes                     | Shows what’s currently in the context window                                                                             |
+| `/clear`   | No                      | Start a new session from the sidebar instead                                                                             |
 
 Auto-compaction runs automatically when the context window approaches capacity, the same as in the CLI. To trigger it earlier, set [`CLAUDE_AUTOCOMPACT_PCT_OVERRIDE`](/docs/en/env-vars) in your [environment variables](#configure-your-environment). For example, `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=70` compacts at 70% capacity instead of the default ~95%. To change the effective window size for compaction calculations, use [`CLAUDE_CODE_AUTO_COMPACT_WINDOW`](/docs/en/env-vars). [Subagents](/docs/en/sub-agents) work the same way they do locally. Claude can spawn them with the Task tool to offload research or parallel work into a separate context window, keeping the main conversation lighter. Subagents defined in your repo’s `.claude/agents/` are picked up automatically. [Agent teams](/docs/en/agent-teams) are off by default but can be enabled by adding `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` to your [environment variables](#configure-your-environment).
 
@@ -775,6 +785,8 @@ There are a few ways to turn on auto-fix depending on where the PR came from and
 - **From the mobile app**: tell Claude to auto-fix the PR, for example “watch this PR and fix any CI failures or review comments”
 - **Any existing PR**: paste the PR URL into a session and tell Claude to auto-fix it
 
+Auto-fix is a per-PR toggle. To stop monitoring, open the CI status bar in the web session and clear the **Auto-fix** toggle, or tell Claude to stop watching the PR.
+
 
 [​](#how-claude-responds-to-pr-activity)
 
@@ -818,14 +830,14 @@ If a new session fails to start with `Session creation failed` or stalls at prov
 
 - Check [status.claude.com](https://status.claude.com) for cloud session incidents
 - Retry after a minute, as capacity is provisioned on demand
-- Confirm your repository is reachable. Private repositories require either the GitHub App installed with access to that repository, or a `gh` token synced via `/web-setup`. See [GitHub authentication options](#github-authentication-options).
+- Confirm your repository is reachable. The connecting GitHub account must have access to the repository on GitHub, either through the Claude GitHub App authorization or a `gh` token synced via `/web-setup` — installing the App on the repository is not required. See [GitHub authentication options](#github-authentication-options).
 
 
 [​](#remote-control-session-expired-or-access-denied)
 
 Remote Control session expired or access denied
 
-`--teleport` connects through the same Remote Control session infrastructure that cloud sessions use, so authentication and session-expiry errors surface with Remote Control wording. You may see `Remote Control session has expired` or `Access denied`. The connection token is short-lived and scoped to your account.
+`--teleport` connects through the same Remote Control session infrastructure that cloud sessions use, so authentication and session-expiry errors surface with Remote Control wording. You may see `Remote Control session expired` or `Access denied`. The connection token is short-lived and scoped to your account.
 
 - Run `/login` locally to refresh your credentials, then reconnect
 - Confirm you are signed in to the same account that owns the session
@@ -848,6 +860,7 @@ Before relying on cloud sessions for a workflow, account for these constraints:
 - **Rate limits**: Claude Code on the web shares rate limits with all other Claude and Claude Code usage within your account. Running multiple tasks in parallel consumes more rate limits proportionately. There is no separate compute charge for the cloud VM.
 - **Repository authentication**: you can only move sessions from web to local when you are authenticated to the same account
 - **Platform restrictions**: repository cloning and pull request creation require GitHub. Self-hosted [GitHub Enterprise Server](/docs/en/github-enterprise-server) instances are supported for Team and Enterprise plans. GitLab, Bitbucket, and other non-GitHub repositories can be sent to cloud sessions as a [local bundle](#send-local-repositories-without-github), but the session can’t push results back to the remote
+- **Organization IP allowlist**: cloud sessions call the Anthropic API from Anthropic-managed infrastructure, not your network. If your organization has [IP allowlisting](https://support.claude.com/en/articles/13200993-restrict-access-to-claude-with-ip-allowlisting) enabled, every cloud session fails with an authentication error. The same applies to [Code Review](/docs/en/code-review) and [Routines](/docs/en/routines). Contact [Anthropic support](https://support.claude.com/) to exempt Anthropic-hosted services from your organization’s IP allowlist.
 
 
 [​](#related-resources)

@@ -1,9 +1,11 @@
 ---
+title: "Client SDKs"
+source_url: "https://platform.claude.com/docs/en/api/client-sdks.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/client-sdks.md"
-title: "Client SDKs"
+tags: ["api", "cli", "git", "github", "sdk"]
 ---
+
 # Client SDKs
 
 Official SDKs for building with the Claude API in Python, TypeScript, Java, Go, Ruby, C#, PHP, and the command line.

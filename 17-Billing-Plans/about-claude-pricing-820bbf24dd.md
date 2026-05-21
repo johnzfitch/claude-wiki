@@ -1,9 +1,11 @@
 ---
+title: "Pricing"
+source_url: "https://platform.claude.com/docs/en/about-claude/pricing.md"
 category: "17-Billing-Plans"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/pricing.md"
-title: "Pricing"
+tags: ["agents", "billing"]
 ---
+
 # Pricing
 
 Learn about Anthropic's pricing structure for models and features

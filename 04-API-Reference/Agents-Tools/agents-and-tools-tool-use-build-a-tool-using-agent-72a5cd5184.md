@@ -1,9 +1,11 @@
 ---
+title: "Tutorial: Build a tool-using agent"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent.md"
-title: "Tutorial: Build a tool-using agent"
+tags: ["agents", "api", "sdk"]
 ---
+
 # Tutorial: Build a tool-using agent
 
 A guided walkthrough from a single tool call to a production-ready agentic loop.

@@ -22,7 +22,7 @@ tags: ["claude-code"]
   * **Terminal.app**: Settings → Profiles → Keyboard → Check "Use Option as Meta Key"
   * **VS Code**: Settings → Profiles → Keys → Set Left/Right Option key to "Esc+"
 
-  See [Terminal configuration](/en/terminal-config) for details.
+  See [Terminal configuration](configure-your-terminal-for-claude-code-claude-code-docs-6f181483c1.md) for details.
 </Note>
 
 ### General controls

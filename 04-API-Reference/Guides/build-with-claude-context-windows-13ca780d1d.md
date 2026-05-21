@@ -1,9 +1,11 @@
 ---
+title: "Context windows"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/context-windows.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/context-windows.md"
-title: "Context windows"
+tags: ["api"]
 ---
+
 # Context windows
 
 ---

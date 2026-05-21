@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Vaults Credentials Archive 4114C64B30"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/credentials/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/credentials/archive.md"
+tags: ["api", "typescript"]
 ---
+
 ## Archive
 
 `client.beta.vaults.credentials.archive(stringcredentialID, CredentialArchiveParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`

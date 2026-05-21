@@ -11,7 +11,7 @@ tags: ["agents", "claude-code", "git", "subagents"]
 
 > Step-by-step guides for exploring codebases, fixing bugs, refactoring, testing, and other everyday tasks with Claude Code.
 
-This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions. Each section includes example prompts you can adapt to your own projects. For higher-level patterns and tips, see [Best practices](/en/best-practices).
+This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions. Each section includes example prompts you can adapt to your own projects. For higher-level patterns and tips, see [Best practices](../10-Prompting-Guides/best-practices-for-claude-code-claude-code-docs-9686dc1633.md).
 
 ## Understand new codebases
 
@@ -224,7 +224,7 @@ Suppose you want to use specialized AI subagents to handle specific tasks more e
   * Create project-specific subagents in `.claude/agents/` for team sharing
   * Use descriptive `description` fields to enable automatic delegation
   * Limit tool access to what each subagent actually needs
-  * Check the [subagents documentation](/en/sub-agents) for detailed examples
+  * Check the [subagents documentation](create-custom-subagents-claude-code-docs-7dc93e85c0.md) for detailed examples
 </Tip>
 
 ***
@@ -257,7 +257,7 @@ claude --permission-mode plan
 
 **Run "headless" queries in Plan Mode**
 
-You can also run a query in Plan Mode directly with `-p` (that is, in ["headless mode"](/en/headless)):
+You can also run a query in Plan Mode directly with `-p` (that is, in ["headless mode"](../02-Claude-Code-CLI/headless-b99e3140ec.md)):
 
 ```bash  theme={null}
 claude --permission-mode plan -p "Analyze the authentication system and suggest improvements"
@@ -528,7 +528,7 @@ Thinking is enabled by default, but you can adjust or disable it.
 
 | Scope                  | How to configure                                                                     | Details                                                                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Toggle shortcut**    | Press `Option+T` (macOS) or `Alt+T` (Windows/Linux)                                  | Toggle thinking on/off for the current session. May require [terminal configuration](/en/terminal-config) to enable Option key shortcuts |
+| **Toggle shortcut**    | Press `Option+T` (macOS) or `Alt+T` (Windows/Linux)                                  | Toggle thinking on/off for the current session. May require [terminal configuration](../02-Claude-Code-CLI/configure-your-terminal-for-claude-code-claude-code-docs-6f181483c1.md) to enable Option key shortcuts |
 | **Global default**     | Use `/config` to toggle thinking mode                                                | Sets your default across all projects.<br />Saved as `alwaysThinkingEnabled` in `~/.claude/settings.json`                                |
 | **Limit token budget** | Set [`MAX_THINKING_TOKENS`](/en/settings#environment-variables) environment variable | Limit the thinking budget to a specific number of tokens. Example: `export MAX_THINKING_TOKENS=10000`                                    |
 

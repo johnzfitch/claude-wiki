@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Files Delete Afce14644F"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `DeletedFile Beta.Files.Delete(FileDeleteParamsparameters, CancellationTokencancellationToken = default)`

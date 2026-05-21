@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Messages Batches Results 187Ada7Ebd"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/results.md"
+tags: ["api"]
 ---
+
 ## Results
 
 `beta.messages.batches.results(message_batch_id, **kwargs) -> BetaMessageBatchIndividualResponse`

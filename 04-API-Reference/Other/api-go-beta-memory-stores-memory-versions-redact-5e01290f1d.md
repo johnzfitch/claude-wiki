@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Memory Stores Memory Versions Redact 5E01290F1D"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/memory_stores/memory_versions/redact.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/memory_stores/memory_versions/redact.md"
+tags: ["api"]
 ---
+
 ## Redact
 
 `client.Beta.MemoryStores.MemoryVersions.Redact(ctx, memoryVersionID, params) (*BetaManagedAgentsMemoryVersion, error)`

@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Memory Stores Memories Create Fa4A280287"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/memories/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/memories/create.md"
+tags: ["api", "python"]
 ---
+
 ## Create
 
 `beta.memory_stores.memories.create(strmemory_store_id, MemoryCreateParams**kwargs)  -> BetaManagedAgentsMemory`

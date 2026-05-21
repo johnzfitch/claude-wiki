@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Messages Batches Retrieve 0387D8Aae2"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/messages/batches/retrieve.md"
+tags: ["api", "python"]
 ---
+
 ## Retrieve
 
 `beta.messages.batches.retrieve(strmessage_batch_id, BatchRetrieveParams**kwargs)  -> BetaMessageBatch`

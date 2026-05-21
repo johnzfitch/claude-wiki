@@ -1078,9 +1078,9 @@ If you're building your first skill, start with the Best Practices Guide, then r
 
 # Anthropic Resources:
 
-- [Best Practices Guide](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
-- [Skills Documentation](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
-- [API Reference](https://platform.claude.com/docs/en/api/overview)
+- [Best Practices Guide](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices-d1da876439.md)
+- [Skills Documentation](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview-a6ba167cbe.md)
+- [API Reference](../04-API-Reference/Other/api-overview-606ecbff81.md)
 - [MCP Documentation](https://modelcontextprotocol.io)
 
 # Blog Posts:

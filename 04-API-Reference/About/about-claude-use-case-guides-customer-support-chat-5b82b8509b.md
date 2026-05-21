@@ -1,9 +1,11 @@
 ---
+title: "Customer support agent"
+source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat.md"
 category: "About"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat.md"
-title: "Customer support agent"
+tags: ["agents", "api"]
 ---
+
 # Customer support agent
 
 This guide walks through how to leverage Claude's advanced conversational capabilities to handle customer inquiries in real time, providing 24/7 support, reducing wait times, and managing high support volumes with accurate responses and positive interactions.

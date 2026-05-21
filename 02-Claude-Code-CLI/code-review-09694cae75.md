@@ -1,9 +1,11 @@
 ---
+title: "Code Review"
+source_url: "https://code.claude.com/docs/en/code-review.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/code-review.md"
-title: "Code Review"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -13,14 +15,14 @@ title: "Code Review"
 > Set up automated PR reviews that catch logic errors, security vulnerabilities, and regressions using multi-agent analysis of your full codebase
 
 <Note>
-  Code Review is in research preview, available for [Team and Enterprise](https://claude.ai/admin-settings/claude-code) subscriptions. It is not available for organizations with [Zero Data Retention](/en/zero-data-retention) enabled.
+  Code Review is in research preview, available for [Team and Enterprise](https://claude.ai/admin-settings/claude-code) subscriptions. It is not available for organizations with [Zero Data Retention](../22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) enabled.
 </Note>
 
 Code Review analyzes your GitHub pull requests and posts findings as inline comments on the lines of code where it found issues. A fleet of specialized agents examine the code changes in the context of your full codebase, looking for logic errors, security vulnerabilities, broken edge cases, and subtle regressions.
 
 Findings are tagged by severity and don't approve or block your PR, so existing review workflows stay intact. You can tune what Claude flags by adding a `CLAUDE.md` or `REVIEW.md` file to your repository.
 
-To run Claude in your own CI infrastructure instead of this managed service, see [GitHub Actions](/en/github-actions) or [GitLab CI/CD](/en/gitlab-ci-cd). For repositories on a self-hosted GitHub instance, see [GitHub Enterprise Server](/en/github-enterprise-server).
+To run Claude in your own CI infrastructure instead of this managed service, see [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md) or [GitLab CI/CD](claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md). For repositories on a self-hosted GitHub instance, see [GitHub Enterprise Server](../03-IDE-Integrations/github-enterprise-server.md).
 
 This page covers:
 
@@ -101,7 +103,7 @@ An admin enables Code Review once for the organization and selects which reposit
     * **Issues**: read and write
     * **Pull requests**: read and write
 
-    Code Review uses read access to contents and write access to pull requests. The broader permission set also supports [GitHub Actions](/en/github-actions) if you enable that later.
+    Code Review uses read access to contents and write access to pull requests. The broader permission set also supports [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md) if you enable that later.
   </Step>
 
   <Step title="Select repositories">
@@ -156,7 +158,7 @@ Code Review reads two files from your repository to guide what it flags. They di
 
 Code Review reads your repository's `CLAUDE.md` files and treats newly introduced violations as [nit-level](#severity-levels) findings. This works bidirectionally: if your PR changes code in a way that makes a `CLAUDE.md` statement outdated, Claude flags that the docs need updating too.
 
-Claude reads `CLAUDE.md` files at every level of your directory hierarchy, so rules in a subdirectory's `CLAUDE.md` apply only to files under that path. See the [memory documentation](/en/memory) for more on how `CLAUDE.md` works.
+Claude reads `CLAUDE.md` files at every level of your directory hierarchy, so rules in a subdirectory's `CLAUDE.md` apply only to files under that path. See the [memory documentation](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) for more on how `CLAUDE.md` works.
 
 For review-specific guidance that you don't want applied to general Claude Code sessions, use [`REVIEW.md`](#review-md) instead.
 
@@ -238,7 +240,7 @@ The repositories table in admin settings also shows average cost per review for 
 
 ## Pricing
 
-Code Review is billed based on token usage. Each review averages \$15-25 in cost, scaling with PR size, codebase complexity, and how many issues require verification. Code Review usage is billed separately through [extra usage](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) and does not count against your plan's included usage.
+Code Review is billed based on token usage. Each review averages \$15-25 in cost, scaling with PR size, codebase complexity, and how many issues require verification. Code Review usage is billed separately through [extra usage](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) and does not count against your plan's included usage.
 
 The review trigger you choose affects total cost:
 
@@ -280,8 +282,8 @@ If the check run title says issues were found but you don't see inline review co
 
 Code Review is designed to work alongside the rest of Claude Code. If you want to run reviews locally before opening a PR, need a self-hosted setup, or want to go deeper on how `CLAUDE.md` shapes Claude's behavior across tools, these pages are good next stops:
 
-* [Plugins](/en/discover-plugins): browse the plugin marketplace, including a `code-review` plugin for running on-demand reviews locally before pushing
-* [GitHub Actions](/en/github-actions): run Claude in your own GitHub Actions workflows for custom automation beyond code review
-* [GitLab CI/CD](/en/gitlab-ci-cd): self-hosted Claude integration for GitLab pipelines
-* [Memory](/en/memory): how `CLAUDE.md` files work across Claude Code
-* [Analytics](/en/analytics): track Claude Code usage beyond code review
+* [Plugins](../08-Plugins-Skills/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md): browse the plugin marketplace, including a `code-review` plugin for running on-demand reviews locally before pushing
+* [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md): run Claude in your own GitHub Actions workflows for custom automation beyond code review
+* [GitLab CI/CD](claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md): self-hosted Claude integration for GitLab pipelines
+* [Memory](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md): how `CLAUDE.md` files work across Claude Code
+* [Analytics](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md): track Claude Code usage beyond code review

@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Completions Create Bd7183Fbf2"
+source_url: "https://platform.claude.com/docs/en/api/ruby/completions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/completions/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `completions.create(**kwargs) -> Completion`

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Memory Stores Memory Versions Redact F2E7Ec64B1"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/memory_stores/memory_versions/redact.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/memory_stores/memory_versions/redact.md"
+tags: ["api", "typescript"]
 ---
+
 ## Redact
 
 `client.beta.memoryStores.memoryVersions.redact(stringmemoryVersionID, MemoryVersionRedactParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryVersion`

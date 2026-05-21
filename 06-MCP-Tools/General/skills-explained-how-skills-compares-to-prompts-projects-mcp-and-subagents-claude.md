@@ -124,7 +124,7 @@ Create a code-reviewer subagent with access to Read, Grep, and Glob tools but no
 
 **When to use a Skill instead:** If multiple agents or conversations need the same expertise—like security review procedures or data analysis methods—create a Skill rather than building that knowledge into individual subagents. Skills are portable and reusable, while subagents are purpose-built for specific workflows. Use Skills to teach expertise that any agent can apply; use subagents when you need independent task execution with specific tool permissions and context isolation.
 
-[Learn more](https://code.claude.com/docs/en/sub-agents) about subagents.
+[Learn more](../../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) about subagents.
 
 ### **What is MCP?**
 
@@ -341,5 +341,5 @@ Ready to build with Skills? Here's how to start:
 
 **Claude Code users:**
 
--   Install Skills via [plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces)
+-   Install Skills via [plugin marketplaces](../../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md)
 -   Check out our [skills cookbook](https://platform.claude.com/cookbook/skills-notebooks-01-skills-introduction)

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Environments Update 50B3F85212"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/environments/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/environments/update.md"
+tags: ["api", "typescript"]
 ---
+
 ## Update
 
 `client.beta.environments.update(stringenvironmentID, EnvironmentUpdateParamsparams, RequestOptionsoptions?): BetaEnvironment`

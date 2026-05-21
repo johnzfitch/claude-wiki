@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Messages Count Tokens 3E8D6E7E80"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/count_tokens.md"
+tags: ["api"]
 ---
+
 ## Count Tokens
 
 `BetaMessageTokensCount beta().messages().countTokens(MessageCountTokensParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
@@ -2753,7 +2756,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `Optional<BetaJsonOutputFormat> outputFormat`
 
-    Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+    Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

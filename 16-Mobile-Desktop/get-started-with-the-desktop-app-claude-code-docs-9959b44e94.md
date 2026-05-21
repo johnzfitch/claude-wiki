@@ -1,6 +1,6 @@
 ---
 category: "16-Mobile-Desktop"
-fetched_at: "2026-04-26T03:19:58Z"
+fetched_at: "2026-05-19T21:22:34Z"
 source_url: "https://code.claude.com/docs/en/desktop-quickstart"
 title: "Get started with the desktop app - Claude Code Docs"
 ---
@@ -10,6 +10,12 @@ title: "Get started with the desktop app - Claude Code Docs"
 
 Install Claude Code on desktop and start your first coding session
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 The desktop app gives you Claude Code with a graphical interface built for running multiple sessions side by side: a sidebar for managing parallel work, a drag-and-drop layout with an integrated terminal and file editor, visual diff review, live app preview, GitHub PR monitoring with auto-merge, and scheduled tasks. No terminal required.
 
@@ -21,7 +27,7 @@ Universal build for Intel and Apple Silicon
 
 For x64 processors
 
-For Windows ARM64, download the [ARM64 installer](https://claude.ai/api/desktop/win32/arm64/setup/latest/redirect?utm_source=claude_code&utm_medium=docs). Linux is not supported.
+For Windows ARM64, download the [ARM64 installer](https://claude.ai/api/desktop/win32/arm64/setup/latest/redirect?utm_source=claude_code&utm_medium=docs). The desktop app is not available on Linux; use the [CLI](/docs/en/quickstart) instead.
 
 Claude Code requires a [Pro, Max, Team, or Enterprise subscription](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=desktop_quickstart_pricing).
 

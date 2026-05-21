@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Messages Batches Create 8944E8B544"
+source_url: "https://platform.claude.com/docs/en/api/cli/messages/batches/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/messages/batches/create.md"
+tags: ["api", "cli"]
 ---
+
 ## Create
 
 `$ ant messages:batches create`

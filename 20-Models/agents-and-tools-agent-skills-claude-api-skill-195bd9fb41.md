@@ -1,9 +1,11 @@
 ---
+title: "Claude API skill"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill.md"
-title: "Claude API skill"
+tags: ["agents", "api"]
 ---
+
 # Claude API skill
 
 An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building applications with the Claude API and Claude Managed Agents.
@@ -17,7 +19,7 @@ The `claude-api` skill is an open-source [Agent Skill](/docs/en/agents-and-tools
 
 It covers 8 programming languages for the Messages API (Python, TypeScript, Java, Go, Ruby, C#, PHP, and cURL) and 7 languages for Managed Agents (Python, TypeScript, Java, Go, Ruby, PHP, and cURL — C# is not currently supported).
 
-The skill comes bundled with [Claude Code](https://code.claude.com/docs/en/overview) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills/tree/main/skills/claude-api), where you can install it in any environment that supports Agent Skills.
+The skill comes bundled with [Claude Code](../02-Claude-Code-CLI/claude-code-overview-claude-code-docs-c23f3e7cbb.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills/tree/main/skills/claude-api), where you can install it in any environment that supports Agent Skills.
 
 The skill uses [progressive disclosure](/docs/en/agents-and-tools/agent-skills/overview#three-types-of-skill-content-three-levels-of-loading) to keep context efficient: Claude loads only the documentation relevant to your project's language, surface (Messages API or Managed Agents), and the specific task at hand (tool use, streaming, batches, and so on), rather than loading everything at once.
 
@@ -78,7 +80,7 @@ If your project uses multiple languages, Claude asks which one applies. For unsu
 
 ### In Claude Code (bundled)
 
-The skill ships with [Claude Code](https://code.claude.com/docs/en/overview) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
+The skill ships with [Claude Code](../02-Claude-Code-CLI/claude-code-overview-claude-code-docs-c23f3e7cbb.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
 
 You can also invoke it directly:
 
@@ -86,7 +88,7 @@ You can also invoke it directly:
 /claude-api
 ```
 
-For more about how bundled skills work in Claude Code, see the [Claude Code skills documentation](https://code.claude.com/docs/en/skills#bundled-skills).
+For more about how bundled skills work in Claude Code, see the [Claude Code skills documentation](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md#bundled-skills).
 
 ### From the skills repository
 
@@ -96,7 +98,7 @@ The skill source is available in the [Anthropic skills repository](https://githu
 npx skills add https://github.com/anthropics/skills --skill claude-api
 ```
 
-Or install it as a Claude Code [plugin](https://code.claude.com/docs/en/plugins):
+Or install it as a Claude Code [plugin](../08-Plugins-Skills/create-plugins-claude-code-docs.md):
 
 ```bash
 /plugin marketplace add anthropics/skills

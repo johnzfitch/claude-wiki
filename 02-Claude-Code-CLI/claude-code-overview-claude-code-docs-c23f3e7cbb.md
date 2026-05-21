@@ -1,8 +1,9 @@
 ---
+title: "Claude Code overview - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/overview"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T03:20:18Z"
-source_url: "https://code.claude.com/docs/en/overview"
-title: "Claude Code overview - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Claude Code overview

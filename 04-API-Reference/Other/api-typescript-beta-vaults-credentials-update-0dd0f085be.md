@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Vaults Credentials Update 0Dd0F085Be"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/credentials/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/credentials/update.md"
+tags: ["api", "typescript"]
 ---
+
 ## Update
 
 `client.beta.vaults.credentials.update(stringcredentialID, CredentialUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`

@@ -2,10 +2,8 @@
 title: "Connect Claude Code to tools via MCP - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/mcp"
 category: "06-MCP-Tools"
-title: "Connect Claude Code to tools via MCP - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/mcp"
 fetched_at: "2026-04-26T03:20:13Z"
-tags: ["claude-code", "desktop", "mcp", "prompting", "search"]
+tags: ["claude-code", "mcp"]
 ---
 
 # Connect Claude Code to tools via MCP

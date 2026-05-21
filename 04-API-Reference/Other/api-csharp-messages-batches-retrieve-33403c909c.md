@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Messages Batches Retrieve 33403C909C"
+source_url: "https://platform.claude.com/docs/en/api/csharp/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/messages/batches/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `MessageBatch Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)`

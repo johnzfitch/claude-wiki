@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Messages Batches Delete 7668B24B94"
+source_url: "https://platform.claude.com/docs/en/api/cli/messages/batches/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/messages/batches/delete.md"
+tags: ["api", "cli"]
 ---
+
 ## Delete
 
 `$ ant messages:batches delete`

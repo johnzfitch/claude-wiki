@@ -1,9 +1,11 @@
 ---
+title: "Define outcomes"
+source_url: "https://platform.claude.com/docs/en/managed-agents/define-outcomes.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/define-outcomes.md"
-title: "Define outcomes"
+tags: ["api"]
 ---
+
 # Define outcomes
 
 Tell the agent what 'done' looks like, and let it iterate until it gets there.

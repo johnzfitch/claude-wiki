@@ -1,9 +1,11 @@
 ---
+title: "Configure server-managed settings"
+source_url: "https://code.claude.com/docs/en/server-managed-settings.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/server-managed-settings.md"
-title: "Configure server-managed settings"
+tags: ["claude-code", "security"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -47,7 +49,7 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
   </Step>
 
   <Step title="Define your settings">
-    Add your configuration as JSON. All [settings available in `settings.json`](/en/settings#available-settings) are supported, including [hooks](/en/hooks), [environment variables](/en/env-vars), and [managed-only settings](/en/permissions#managed-only-settings) like `allowManagedPermissionRulesOnly`.
+    Add your configuration as JSON. All [settings available in `settings.json`](/en/settings#available-settings) are supported, including [hooks](../07-Hooks/hooks-9168ed62a4.md), [environment variables](env-vars-5c624d392b.md), and [managed-only settings](/en/permissions#managed-only-settings) like `allowManagedPermissionRulesOnly`.
 
     This example enforces a permission deny list, prevents users from bypassing permissions, and restricts permission rules to those defined in managed settings:
 
@@ -99,7 +101,7 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
     }
     ```
 
-    Because hooks execute shell commands, users see a [security approval dialog](#security-approval-dialogs) before they're applied. See [Configure auto mode](/en/auto-mode-config) for how the `autoMode` entries affect what the classifier blocks and important warnings about the `allow` and `soft_deny` fields.
+    Because hooks execute shell commands, users see a [security approval dialog](#security-approval-dialogs) before they're applied. See [Configure auto mode](auto-mode-config-f0dacf5866.md) for how the `autoMode` entries affect what the classifier blocks and important warnings about the `allow` and `soft_deny` fields.
   </Step>
 
   <Step title="Save and deploy">
@@ -196,7 +198,7 @@ Server-managed settings require a direct connection to `api.anthropic.com` and a
 * Amazon Bedrock
 * Google Vertex AI
 * Microsoft Foundry
-* Custom API endpoints via `ANTHROPIC_BASE_URL` or [LLM gateways](/en/llm-gateway)
+* Custom API endpoints via `ANTHROPIC_BASE_URL` or [LLM gateways](../13-Enterprise-Admin/llm-gateway-configuration-claude-code-docs-7a1628ac88.md)
 
 ## Audit logging
 
@@ -224,7 +226,7 @@ For stronger enforcement guarantees, use [endpoint-managed settings](/en/setting
 
 Related pages for managing Claude Code configuration:
 
-* [Settings](/en/settings): complete configuration reference including all available settings
+* [Settings](claude-code-settings-claude-code-docs-d4420b4b52.md): complete configuration reference including all available settings
 * [Endpoint-managed settings](/en/settings#settings-files): managed settings deployed to devices by IT
-* [Authentication](/en/authentication): set up user access to Claude Code
-* [Security](/en/security): security safeguards and best practices
+* [Authentication](../13-Enterprise-Admin/authentication-claude-code-docs-2c6ada8385.md): set up user access to Claude Code
+* [Security](../22-Safety-Policy/security-claude-code-docs-7538e94c51.md): security safeguards and best practices

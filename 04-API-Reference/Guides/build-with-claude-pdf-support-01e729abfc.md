@@ -1,9 +1,11 @@
 ---
+title: "PDF support"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/pdf-support.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/pdf-support.md"
-title: "PDF support"
+tags: ["api"]
 ---
+
 # PDF support
 
 Process PDFs with Claude. Extract text, analyze charts, and understand visual content from your documents.

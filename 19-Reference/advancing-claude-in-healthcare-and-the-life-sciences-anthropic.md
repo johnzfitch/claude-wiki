@@ -41,7 +41,7 @@ Claude can now connect to:
 
 Since HIPAA-compliant organizations can now use Claude for Enterprise, they can also access existing healthcare-related connectors, including **PubMed**, which provides access to more than 35 million pieces of biomedical literature and allows Claude to quickly surface the latest research, and produce up-to-date literature reviews.
 
-Finally, we’ve added two new [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview): **FHIR development** and a sample **prior authorization review** skill. FHIR is the modern standard for exchanging data between healthcare systems, and this skill helps to improve interoperability by enabling developers to connect them faster and with fewer errors.
+Finally, we’ve added two new [Agent Skills](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview-a6ba167cbe.md): **FHIR development** and a sample **prior authorization review** skill. FHIR is the modern standard for exchanging data between healthcare systems, and this skill helps to improve interoperability by enabling developers to connect them faster and with fewer errors.
 
 The prior authorization skill provides a template that can be customized to organizations’ policies and work patterns, helping with cross-referencing between coverage requirements, clinical guidelines, patient records, and appeal documents.
 

@@ -1,9 +1,11 @@
 ---
+title: "Ticket routing"
+source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing.md"
 category: "About"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing.md"
-title: "Ticket routing"
+tags: ["api", "prompting"]
 ---
+
 # Ticket routing
 
 This guide walks through how to harness Claude's advanced natural language understanding capabilities to classify customer support tickets at scale based on customer intent, urgency, prioritization, customer profile, and more.

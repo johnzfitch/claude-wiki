@@ -1,9 +1,11 @@
 ---
+title: "C# SDK"
+source_url: "https://platform.claude.com/docs/en/api/sdks/csharp.md"
 category: "05-Agent-SDK"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/sdks/csharp.md"
-title: "C# SDK"
+tags: ["agents", "cli", "sdk"]
 ---
+
 # C# SDK
 
 Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration

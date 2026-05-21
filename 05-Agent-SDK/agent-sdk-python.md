@@ -2913,7 +2913,7 @@ class SandboxSettings(TypedDict, total=False):
 | `ignoreViolations` | [`SandboxIgnoreViolations`](#sandbox-ignore-violations) | `None` | Configure which sandbox violations to ignore |
 | `enableWeakerNestedSandbox` | `bool` | `False` | Enable a weaker nested sandbox for compatibility |
 
-**Filesystem and network access restrictions** are NOT configured via sandbox settings. Instead, they are derived from [permission rules](https://code.claude.com/docs/en/settings#permission-settings):
+**Filesystem and network access restrictions** are NOT configured via sandbox settings. Instead, they are derived from [permission rules](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md#permission-settings):
 
 - **Filesystem read restrictions**: Read deny rules
 - **Filesystem write restrictions**: Edit allow/deny rules
@@ -3060,5 +3060,5 @@ See also
 
 - [SDK overview](/docs/en/agent-sdk/overview) - General SDK concepts
 - [TypeScript SDK reference](/docs/en/agent-sdk/typescript) - TypeScript SDK documentation
-- [CLI reference](https://code.claude.com/docs/en/cli-reference) - Command-line interface
-- [Common workflows](https://code.claude.com/docs/en/common-workflows) - Step-by-step guides
+- [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) - Command-line interface
+- [Common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md) - Step-by-step guides

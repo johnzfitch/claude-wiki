@@ -1,9 +1,11 @@
 ---
+title: "Prompting best practices"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices.md"
 category: "10-Prompting-Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices.md"
-title: "Prompting best practices"
+tags: ["agents", "prompting"]
 ---
+
 # Prompting best practices
 
 Comprehensive guide to prompt engineering techniques for Claude's latest models, covering clarity, examples, XML structuring, thinking, and agentic systems.

@@ -1,9 +1,11 @@
 ---
+title: "Define success criteria and build evaluations"
+source_url: "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests.md"
 category: "Test-Evaluate"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests.md"
-title: "Define success criteria and build evaluations"
+tags: ["api", "evaluation"]
 ---
+
 # Define success criteria and build evaluations
 
 ---

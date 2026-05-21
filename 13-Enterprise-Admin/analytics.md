@@ -220,6 +220,6 @@ The team insights table shows per-user metrics:
 
 ## Related resources
 
-* [Monitoring with OpenTelemetry](/en/monitoring-usage): export real-time metrics and events to your observability stack
+* [Monitoring with OpenTelemetry](monitoring-claude-code-docs-72c46f3dc8.md): export real-time metrics and events to your observability stack
 * [Manage costs effectively](../02-Claude-Code-CLI/costs.md): set spend limits and optimize token usage
 * [Identity and access management](/en/iam): configure roles and permissions

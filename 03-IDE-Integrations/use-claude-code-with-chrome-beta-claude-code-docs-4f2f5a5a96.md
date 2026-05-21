@@ -1,6 +1,6 @@
 ---
 category: "03-IDE-Integrations"
-fetched_at: "2026-04-26T03:19:51Z"
+fetched_at: "2026-05-19T21:22:26Z"
 source_url: "https://code.claude.com/docs/en/chrome"
 title: "Use Claude Code with Chrome (beta) - Claude Code Docs"
 ---
@@ -10,6 +10,12 @@ title: "Use Claude Code with Chrome (beta) - Claude Code Docs"
 
 Connect Claude Code to your Chrome browser to test web apps, debug with console logs, automate form filling, and extract data from web pages.
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 Claude Code integrates with the [Claude in Chrome browser extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) to give you browser automation capabilities from the CLI or the [VS Code extension](/docs/en/vs-code#automate-browser-tasks-with-chrome). Build your code, then test and debug in the browser without switching contexts. Claude opens new tabs for browser tasks and shares your browser’s login state, so it can access any site you’re already signed into. Browser actions run in a visible Chrome window in real time. When Claude encounters a login page or CAPTCHA, it pauses and asks you to handle it manually.
 
@@ -265,12 +271,12 @@ Common error messages
 
 These are the most frequently encountered errors and how to resolve them:
 
-| Error | Cause | Fix |
-|----|----|----|
+| Error                                | Cause                                            | Fix                                                             |
+|--------------------------------------|--------------------------------------------------|-----------------------------------------------------------------|
 | ”Browser extension is not connected” | Native messaging host cannot reach the extension | Restart Chrome and Claude Code, then run `/chrome` to reconnect |
-| ”Extension not detected” | Chrome extension is not installed or is disabled | Install or enable the extension in `chrome://extensions` |
-| ”No tab available” | Claude tried to act before a tab was ready | Ask Claude to create a new tab and retry |
-| ”Receiving end does not exist” | Extension service worker went idle | Run `/chrome` and select “Reconnect extension” |
+| ”Extension not detected”             | Chrome extension is not installed or is disabled | Install or enable the extension in `chrome://extensions`        |
+| ”No tab available”                   | Claude tried to act before a tab was ready       | Ask Claude to create a new tab and retry                        |
+| ”Receiving end does not exist”       | Extension service worker went idle               | Run `/chrome` and select “Reconnect extension”                  |
 
 
 [​](#see-also)

@@ -1,9 +1,11 @@
 ---
+title: "Development containers"
+source_url: "https://code.claude.com/docs/en/devcontainer.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/devcontainer.md"
-title: "Development containers"
+tags: ["claude-code", "containers", "security"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -85,5 +87,5 @@ Mirror your devcontainer configuration in CI/CD pipelines to ensure development 
 ## Related resources
 
 * [VS Code devcontainers documentation](https://code.visualstudio.com/docs/devcontainers/containers)
-* [Claude Code security best practices](/en/security)
-* [Enterprise network configuration](/en/network-config)
+* [Claude Code security best practices](../22-Safety-Policy/security-claude-code-docs-7538e94c51.md)
+* [Enterprise network configuration](enterprise-network-configuration-claude-code-docs.md)

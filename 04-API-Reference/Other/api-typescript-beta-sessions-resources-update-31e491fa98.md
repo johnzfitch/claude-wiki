@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Sessions Resources Update 31E491Fa98"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/resources/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/resources/update.md"
+tags: ["api", "typescript"]
 ---
+
 ## Update
 
 `client.beta.sessions.resources.update(stringresourceID, ResourceUpdateParamsparams, RequestOptionsoptions?): ResourceUpdateResponse`

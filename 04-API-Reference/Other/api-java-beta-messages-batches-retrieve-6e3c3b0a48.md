@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Messages Batches Retrieve 6E3C3B0A48"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/messages/batches/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `BetaMessageBatch beta().messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

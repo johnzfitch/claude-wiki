@@ -155,4 +155,4 @@ You can also manage tasks from the CLI with `/schedule`. Run `/schedule list` to
 * [`/loop` and CLI scheduled tasks](run-prompts-on-a-schedule-claude-code-docs.md): lightweight scheduling within a CLI session
 * [Cloud environment](/en/claude-code-on-the-web#the-cloud-environment): configure the runtime environment for cloud tasks
 * [MCP connectors](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md): connect external services like Slack, Linear, and Google Drive
-* [GitHub Actions](/en/github-actions): run Claude in your CI pipeline on repo events
+* [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md): run Claude in your CI pipeline on repo events

@@ -1,9 +1,11 @@
 ---
+title: "Get started with Claude Managed Agents"
+source_url: "https://platform.claude.com/docs/en/managed-agents/quickstart.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/quickstart.md"
-title: "Get started with Claude Managed Agents"
+tags: ["agents", "api", "cli", "sdk"]
 ---
+
 # Get started with Claude Managed Agents
 
 Create your first autonomous agent.

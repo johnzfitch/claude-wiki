@@ -1,8 +1,11 @@
 ---
+title: "Api Python Messages Batches Create 363Ca1Bd8B"
+source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/create.md"
+tags: ["api", "python"]
 ---
+
 ## Create
 
 `messages.batches.create(BatchCreateParams**kwargs)  -> MessageBatch`
@@ -2477,7 +2480,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `format: Optional[JSONOutputFormat]`
 
-        A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+        A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         - `schema: Dict[str, object]`
 

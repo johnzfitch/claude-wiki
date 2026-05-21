@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Memory Stores Update D2430F3729"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/update.md"
+tags: ["api", "python"]
 ---
+
 ## Update
 
 `beta.memory_stores.update(strmemory_store_id, MemoryStoreUpdateParams**kwargs)  -> BetaManagedAgentsMemoryStore`

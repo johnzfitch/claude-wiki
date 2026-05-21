@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Sessions Resources List A598Ee08B6"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/resources/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/resources/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `ResourceListPage beta().sessions().resources().list(ResourceListParamsparams = ResourceListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

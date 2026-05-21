@@ -97,7 +97,7 @@ Use Remote Control for continuing local work from another device. Use Claude Cod
 
 ## See Also
 
-- [Claude Code on the web](/en/claude-code-on-the-web)
+- [Claude Code on the web](claude-code-on-the-web-69d53821d4.md)
 - [Ultraplan](ultraplan.md)
 - [Channels](channels.md)
 - [Dispatch](/en/desktop#sessions-from-dispatch)

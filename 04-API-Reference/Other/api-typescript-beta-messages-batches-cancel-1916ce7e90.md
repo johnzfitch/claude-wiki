@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Messages Batches Cancel 1916Ce7E90"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/cancel.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/cancel.md"
+tags: ["api", "typescript"]
 ---
+
 ## Cancel
 
 `client.beta.messages.batches.cancel(stringmessageBatchID, BatchCancelParamsparams?, RequestOptionsoptions?): BetaMessageBatch`

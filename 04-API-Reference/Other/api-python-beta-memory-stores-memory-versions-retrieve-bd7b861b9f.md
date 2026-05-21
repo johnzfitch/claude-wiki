@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Memory Stores Memory Versions Retrieve Bd7B861B9F"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/memory_versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/memory_versions/retrieve.md"
+tags: ["api", "python"]
 ---
+
 ## Retrieve
 
 `beta.memory_stores.memory_versions.retrieve(strmemory_version_id, MemoryVersionRetrieveParams**kwargs)  -> BetaManagedAgentsMemoryVersion`

@@ -1,9 +1,11 @@
 ---
+title: "MCP connector"
+source_url: "https://platform.claude.com/docs/en/managed-agents/mcp-connector.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/mcp-connector.md"
-title: "MCP connector"
+tags: ["agents", "api", "mcp"]
 ---
+
 # MCP connector
 
 Connect MCP servers to your agents for access to external tools and data sources.

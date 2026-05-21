@@ -74,7 +74,7 @@ Once installed, you can start using Claude Code through the VS Code interface:
   </Step>
 </Steps>
 
-For more ideas on what you can do with Claude Code, see [Common workflows](/en/common-workflows).
+For more ideas on what you can do with Claude Code, see [Common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md).
 
 <Tip>
   The extension includes two built-in tutorials:
@@ -112,7 +112,7 @@ Click the dropdown at the top of the Claude Code panel to access your conversati
 
 ### Resume remote sessions from Claude.ai
 
-If you use [Claude Code on the web](/en/claude-code-on-the-web), you can resume those remote sessions directly in VS Code. This requires signing in with **Claude.ai Subscription**, not Anthropic Console.
+If you use [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md), you can resume those remote sessions directly in VS Code. This requires signing in with **Claude.ai Subscription**, not Anthropic Console.
 
 <Steps>
   <Step title="Open Past Conversations">
@@ -195,7 +195,7 @@ After making changes, a banner prompts you to restart Claude Code to apply the u
   Plugin management in VS Code uses the same CLI commands under the hood. Plugins and marketplaces you configure in the extension are also available in the CLI, and vice versa.
 </Note>
 
-For more about the plugin system, see [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) and [Plugin marketplaces](/en/plugin-marketplaces).
+For more about the plugin system, see [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) and [Plugin marketplaces](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md).
 
 ## VS Code commands and shortcuts
 
@@ -224,7 +224,7 @@ Some shortcuts depend on which panel is "focused" (receiving keyboard input). Wh
 The extension has two types of settings:
 
 * **Extension settings** in VS Code: Control the extension's behavior within VS Code. Open with `Cmd+,` (Mac) or `Ctrl+,` (Windows/Linux), then go to Extensions → Claude Code. You can also type `/` and select **General Config** to open settings.
-* **Claude Code settings** in `~/.claude/settings.json`: Shared between the extension and CLI. Use for allowed commands, environment variables, hooks, and MCP servers. See [Settings](/en/settings) for details.
+* **Claude Code settings** in `~/.claude/settings.json`: Shared between the extension and CLI. Use for allowed commands, environment variables, hooks, and MCP servers. See [Settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) for details.
 
 ### Extension settings
 
@@ -352,7 +352,7 @@ By default, Claude Code connects directly to Anthropic's API. If your organizati
 
 ## Security and privacy
 
-Your code stays private. Claude Code processes your code to provide assistance but does not use it to train models. For details on data handling and how to opt out of logging, see [Data and privacy](/en/data-usage).
+Your code stays private. Claude Code processes your code to provide assistance but does not use it to train models. For details on data handling and how to opt out of logging, see [Data and privacy](../22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md).
 
 With auto-edit permissions enabled, Claude Code can modify VS Code configuration files (like `settings.json` or `tasks.json`) that VS Code may execute automatically. To reduce risk when working with untrusted code:
 
@@ -404,12 +404,12 @@ To also remove extension data and reset all settings:
 rm -rf ~/.vscode/globalStorage/anthropic.claude-code
 ```
 
-For additional help, see the [troubleshooting guide](/en/troubleshooting).
+For additional help, see the [troubleshooting guide](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md).
 
 ## Next steps
 
 Now that you have Claude Code set up in VS Code:
 
-* [Explore common workflows](/en/common-workflows) to get the most out of Claude Code
+* [Explore common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md) to get the most out of Claude Code
 * [Set up MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) to extend Claude's capabilities with external tools. Configure servers using the CLI, then use them in the extension.
-* [Configure Claude Code settings](/en/settings) to customize allowed commands, hooks, and more. These settings are shared between the extension and CLI.
+* [Configure Claude Code settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) to customize allowed commands, hooks, and more. These settings are shared between the extension and CLI.

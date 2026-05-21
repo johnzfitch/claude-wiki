@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Models Retrieve B6B56B8585"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/models/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `BetaModelInfo beta().models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

@@ -3,7 +3,7 @@ title: "How to add skills support to your agent - Agent Skills"
 source_url: "https://agentskills.io/client-implementation/adding-skills-support"
 category: "08-Plugins-Skills"
 fetched_at: "2026-03-20T10:34:08Z"
-tags: ["agents", "skills"]
+tags: ["agents", "plugins", "skills"]
 ---
 
 # How to add skills support to your agent

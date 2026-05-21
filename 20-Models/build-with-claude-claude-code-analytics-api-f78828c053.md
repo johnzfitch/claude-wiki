@@ -1,9 +1,11 @@
 ---
+title: "Claude Code Analytics API"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-code-analytics-api.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-code-analytics-api.md"
-title: "Claude Code Analytics API"
+tags: ["api", "claude-code"]
 ---
+
 # Claude Code Analytics API
 
 Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
@@ -225,7 +227,7 @@ The cursor encodes the position of the last record and ensures stable pagination
 Claude Code analytics data typically appears within 1 hour of user activity completion. To ensure consistent pagination results, only data older than 1 hour is included in responses.
 
 ### Can I get real-time metrics?
-No, this API provides daily aggregated metrics only. For real-time monitoring, consider using the [OpenTelemetry integration](https://code.claude.com/docs/en/monitoring-usage).
+No, this API provides daily aggregated metrics only. For real-time monitoring, consider using the [OpenTelemetry integration](../13-Enterprise-Admin/monitoring-claude-code-docs-72c46f3dc8.md).
 
 ### How are users identified in the data?
 Users are identified through the `actor` field in two ways:
@@ -258,4 +260,4 @@ The Claude Code Analytics API helps you understand and optimize your team's deve
 - [Claude Code Analytics dashboard](/claude-code)
 - [Usage and Cost API](/docs/en/build-with-claude/usage-cost-api) - Track API usage across all Anthropic services
 - [Identity and access management](https://code.claude.com/docs/en/iam)
-- [Monitoring usage with OpenTelemetry](https://code.claude.com/docs/en/monitoring-usage) for custom metrics and alerting
+- [Monitoring usage with OpenTelemetry](../13-Enterprise-Admin/monitoring-claude-code-docs-72c46f3dc8.md) for custom metrics and alerting

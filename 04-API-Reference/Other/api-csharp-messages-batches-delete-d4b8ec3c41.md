@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Messages Batches Delete D4B8Ec3C41"
+source_url: "https://platform.claude.com/docs/en/api/csharp/messages/batches/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/messages/batches/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `DeletedMessageBatch Messages.Batches.Delete(BatchDeleteParamsparameters, CancellationTokencancellationToken = default)`

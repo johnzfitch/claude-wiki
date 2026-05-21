@@ -1,9 +1,11 @@
 ---
+title: "Scale to many tools with tool search"
+source_url: "https://code.claude.com/docs/en/agent-sdk/tool-search.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/tool-search.md"
-title: "Scale to many tools with tool search"
+tags: ["agents", "search"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -27,7 +29,7 @@ When tool search is active, tool definitions are withheld from the context windo
 
 Tool search adds one extra round-trip the first time Claude discovers a tool (the search step), but for large tool sets this is offset by smaller context on every turn. With fewer than \~10 tools, loading everything upfront is typically faster.
 
-For details on the underlying API mechanism, see [Tool search in the API](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool).
+For details on the underlying API mechanism, see [Tool search in the API](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool-5499cf85ce.md).
 
 <Note>
   Tool search requires Claude Sonnet 4 or later, or Claude Opus 4 or later. Haiku models do not support tool search.
@@ -128,7 +130,7 @@ You can search for tools to interact with Slack, GitHub, and Jira.
 
 ## Related documentation
 
-* [Tool search in the API](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool): Full API documentation for tool search, including custom implementations
+* [Tool search in the API](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool-5499cf85ce.md): Full API documentation for tool search, including custom implementations
 * [Connect MCP servers](/en/agent-sdk/mcp): Connect to external tools via MCP servers
 * [Custom tools](/en/agent-sdk/custom-tools): Build your own tools with SDK MCP servers
 * [TypeScript SDK reference](/en/agent-sdk/typescript): Full API reference

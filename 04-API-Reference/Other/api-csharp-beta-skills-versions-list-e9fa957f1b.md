@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Skills Versions List E9Fa957F1B"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/versions/list.md"
+tags: ["api", "skills"]
 ---
+
 ## List
 
 `VersionListPageResponse Beta.Skills.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)`

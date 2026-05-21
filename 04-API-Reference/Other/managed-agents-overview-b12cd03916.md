@@ -1,9 +1,11 @@
 ---
+title: "Claude Managed Agents overview"
+source_url: "https://platform.claude.com/docs/en/managed-agents/overview.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/overview.md"
-title: "Claude Managed Agents overview"
+tags: ["agents", "api"]
 ---
+
 # Claude Managed Agents overview
 
 Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.

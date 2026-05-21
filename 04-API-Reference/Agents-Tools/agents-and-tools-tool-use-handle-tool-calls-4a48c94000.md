@@ -1,9 +1,11 @@
 ---
+title: "Handle tool calls"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls.md"
-title: "Handle tool calls"
+tags: ["api", "cli"]
 ---
+
 # Handle tool calls
 
 Parse tool_use blocks, format tool_result responses, and handle errors with is_error.

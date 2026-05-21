@@ -1,9 +1,11 @@
 ---
+title: "Agent SDK overview"
+source_url: "https://code.claude.com/docs/en/agent-sdk/overview.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/overview.md"
-title: "Agent SDK overview"
+tags: ["agents", "sdk"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -87,7 +89,7 @@ The Agent SDK includes built-in tools for reading files, running commands, and e
   </Step>
 
   <Step title="Set your API key">
-    Get an API key from the [Console](https://platform.claude.com/), then set it as an environment variable:
+    Get an API key from the [Console](../04-API-Reference/Other/platform-claude-com.md), then set it as an environment variable:
 
     ```bash theme={null}
     export ANTHROPIC_API_KEY=your-api-key
@@ -99,7 +101,7 @@ The Agent SDK includes built-in tools for reading files, running commands, and e
     * **Google Vertex AI**: set `CLAUDE_CODE_USE_VERTEX=1` environment variable and configure Google Cloud credentials
     * **Microsoft Azure**: set `CLAUDE_CODE_USE_FOUNDRY=1` environment variable and configure Azure credentials
 
-    See the setup guides for [Bedrock](/en/amazon-bedrock), [Vertex AI](/en/google-vertex-ai), or [Azure AI Foundry](/en/microsoft-foundry) for details.
+    See the setup guides for [Bedrock](../20-Models/claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md), [Vertex AI](../20-Models/claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md), or [Azure AI Foundry](../20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md) for details.
 
     <Note>
       Unless previously approved, Anthropic does not allow third party developers to offer claude.ai login or rate limits for their products, including agents built on the Claude Agent SDK. Please use the API key authentication methods described in this document instead.
@@ -494,7 +496,7 @@ The Claude Platform offers multiple ways to build with Claude. Here's how the Ag
 
 <Tabs>
   <Tab title="Agent SDK vs Client SDK">
-    The [Anthropic Client SDK](https://platform.claude.com/docs/en/api/client-sdks) gives you direct API access: you send prompts and implement tool execution yourself. The **Agent SDK** gives you Claude with built-in tool execution.
+    The [Anthropic Client SDK](../04-API-Reference/Other/api-client-sdks-ab34496e4f.md) gives you direct API access: you send prompts and implement tool execution yourself. The **Agent SDK** gives you Claude with built-in tool execution.
 
     With the Client SDK, you implement a tool loop. With the Agent SDK, Claude handles it:
 

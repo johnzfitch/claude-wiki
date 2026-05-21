@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Skills Versions Delete Be409658De"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/versions/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/versions/delete.md"
+tags: ["api", "skills"]
 ---
+
 ## Delete
 
 `VersionDeleteResponse Beta.Skills.Versions.Delete(VersionDeleteParamsparameters, CancellationTokencancellationToken = default)`

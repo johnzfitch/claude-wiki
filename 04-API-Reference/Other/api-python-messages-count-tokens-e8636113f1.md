@@ -1,8 +1,11 @@
 ---
+title: "Api Python Messages Count Tokens E8636113F1"
+source_url: "https://platform.claude.com/docs/en/api/python/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/messages/count_tokens.md"
+tags: ["api", "python"]
 ---
+
 ## Count Tokens
 
 `messages.count_tokens(MessageCountTokensParams**kwargs)  -> MessageTokensCount`
@@ -2435,7 +2438,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `format: Optional[JSONOutputFormat]`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `schema: Dict[str, object]`
 

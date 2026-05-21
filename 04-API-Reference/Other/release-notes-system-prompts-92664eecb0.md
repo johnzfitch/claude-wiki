@@ -1,9 +1,11 @@
 ---
+title: "System Prompts"
+source_url: "https://platform.claude.com/docs/en/release-notes/system-prompts.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/release-notes/system-prompts.md"
-title: "System Prompts"
+tags: ["api", "prompting"]
 ---
+
 # System Prompts
 
 See updates to the core system prompts on [claude.ai](https://www.claude.ai) and the Claude [iOS](http://anthropic.com/ios) and [Android](http://anthropic.com/android) apps.

@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Vaults Retrieve Acaf159F14"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `BetaManagedAgentsVault Beta.Vaults.Retrieve(VaultRetrieveParamsparameters, CancellationTokencancellationToken = default)`

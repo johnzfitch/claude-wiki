@@ -571,7 +571,7 @@ The `systemMessage` field adds context to the conversation that the model sees, 
 Related resources
 
 - [Claude Code hooks reference](../07-Hooks/hooks-reference-claude-code-docs.md): full JSON input/output schemas, event documentation, and matcher patterns
-- [Claude Code hooks guide](https://code.claude.com/docs/en/hooks-guide): shell command hook examples and walkthroughs
+- [Claude Code hooks guide](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md): shell command hook examples and walkthroughs
 - [TypeScript SDK reference](/docs/en/agent-sdk/typescript): hook types, input/output definitions, and configuration options
 - [Python SDK reference](/docs/en/agent-sdk/python): hook types, input/output definitions, and configuration options
 - [Permissions](/docs/en/agent-sdk/permissions): control what your agent can do

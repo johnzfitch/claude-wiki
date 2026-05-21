@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Sessions Archive 8770425919"
+source_url: "https://platform.claude.com/docs/en/api/beta/sessions/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/sessions/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 **post** `/v1/sessions/{session_id}/archive`

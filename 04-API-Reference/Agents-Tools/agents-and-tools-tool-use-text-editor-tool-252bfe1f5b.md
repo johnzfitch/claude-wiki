@@ -1,9 +1,11 @@
 ---
+title: "Text editor tool"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool.md"
-title: "Text editor tool"
+tags: ["api"]
 ---
+
 # Text editor tool
 
 ---

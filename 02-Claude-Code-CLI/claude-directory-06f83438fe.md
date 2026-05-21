@@ -1,9 +1,11 @@
 ---
+title: "Explore the .claude directory"
+source_url: "https://code.claude.com/docs/en/claude-directory.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/claude-directory.md"
-title: "Explore the .claude directory"
+tags: ["authentication", "claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -1416,7 +1418,7 @@ themselves by leaving a TODO(human) marker instead of writing it.`
 
 Claude Code reads instructions, settings, skills, subagents, and memory from your project directory and from `~/.claude` in your home directory. Commit project files to git to share them with your team; files in `~/.claude` are personal configuration that applies across all your projects.
 
-On Windows, `~/.claude` resolves to `%USERPROFILE%\.claude`. If you set [`CLAUDE_CONFIG_DIR`](/en/env-vars), every `~/.claude` path on this page lives under that directory instead.
+On Windows, `~/.claude` resolves to `%USERPROFILE%\.claude`. If you set [`CLAUDE_CONFIG_DIR`](env-vars-5c624d392b.md), every `~/.claude` path on this page lives under that directory instead.
 
 Most users only edit `CLAUDE.md` and `settings.json`. The rest of the directory is optional: add skills, rules, or subagents as you need them.
 
@@ -1432,7 +1434,7 @@ The explorer covers files you author and edit. A few related files live elsewher
 
 | File                    | Location                   | Purpose                                                                                                                                                                                                                                                            |
 | ----------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `managed-settings.json` | System-level, varies by OS | Enterprise-enforced settings that you can't override. See [server-managed settings](/en/server-managed-settings).                                                                                                                                                  |
+| `managed-settings.json` | System-level, varies by OS | Enterprise-enforced settings that you can't override. See [server-managed settings](../13-Enterprise-Admin/configure-server-managed-settings-claude-code-docs-d6a169b0bf.md).                                                                                                                                                  |
 | `CLAUDE.local.md`       | Project root               | Your private preferences for this project, loaded alongside CLAUDE.md. Create it manually and add it to `.gitignore`.                                                                                                                                              |
 | Installed plugins       | `~/.claude/plugins`        | Cloned marketplaces, installed plugin versions, and per-plugin data, managed by `claude plugin` commands. Orphaned versions are deleted 7 days after a plugin update or uninstall. See [plugin caching](/en/plugins-reference#plugin-caching-and-file-resolution). |
 
@@ -1444,15 +1446,15 @@ Different kinds of customization live in different files. Use this table to find
 
 | You want to                                        | Edit                                     | Scope             | Reference                                          |
 | :------------------------------------------------- | :--------------------------------------- | :---------------- | :------------------------------------------------- |
-| Give Claude project context and conventions        | `CLAUDE.md`                              | project or global | [Memory](/en/memory)                               |
-| Allow or block specific tool calls                 | `settings.json` `permissions` or `hooks` | project or global | [Permissions](/en/permissions), [Hooks](/en/hooks) |
-| Run a script before or after tool calls            | `settings.json` `hooks`                  | project or global | [Hooks](/en/hooks)                                 |
+| Give Claude project context and conventions        | `CLAUDE.md`                              | project or global | [Memory](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md)                               |
+| Allow or block specific tool calls                 | `settings.json` `permissions` or `hooks` | project or global | [Permissions](configure-permissions-claude-code-docs-7b0e64d485.md), [Hooks](../07-Hooks/hooks-9168ed62a4.md) |
+| Run a script before or after tool calls            | `settings.json` `hooks`                  | project or global | [Hooks](../07-Hooks/hooks-9168ed62a4.md)                                 |
 | Set environment variables for the session          | `settings.json` `env`                    | project or global | [Settings](/en/settings#available-settings)        |
 | Keep personal overrides out of git                 | `settings.local.json`                    | project only      | [Settings scopes](/en/settings#settings-files)     |
-| Add a prompt or capability you invoke with `/name` | `skills/<name>/SKILL.md`                 | project or global | [Skills](/en/skills)                               |
-| Define a specialized subagent with its own tools   | `agents/*.md`                            | project or global | [Subagents](/en/sub-agents)                        |
-| Connect external tools over MCP                    | `.mcp.json`                              | project only      | [MCP](/en/mcp)                                     |
-| Change how Claude formats responses                | `output-styles/*.md`                     | project or global | [Output styles](/en/output-styles)                 |
+| Add a prompt or capability you invoke with `/name` | `skills/<name>/SKILL.md`                 | project or global | [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)                               |
+| Define a specialized subagent with its own tools   | `agents/*.md`                            | project or global | [Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md)                        |
+| Connect external tools over MCP                    | `.mcp.json`                              | project only      | [MCP](../06-MCP-Tools/mcp-208e742686.md)                                     |
+| Change how Claude formats responses                | `output-styles/*.md`                     | project or global | [Output styles](output-styles-claude-code-docs-c315eeed32.md)                 |
 
 ## File reference
 
@@ -1461,9 +1463,9 @@ This table lists every file the explorer covers. Project-scope files live in you
 <Note>
   Several things can override what you put in these files:
 
-  * [Managed settings](/en/server-managed-settings) deployed by your organization take precedence over everything
+  * [Managed settings](../13-Enterprise-Admin/configure-server-managed-settings-claude-code-docs-d6a169b0bf.md) deployed by your organization take precedence over everything
   * CLI flags like `--permission-mode` or `--settings` override `settings.json` for that session
-  * Some environment variables take precedence over their equivalent setting, but this varies: check the [environment variables reference](/en/env-vars) for each one
+  * Some environment variables take precedence over their equivalent setting, but this varies: check the [environment variables reference](env-vars-5c624d392b.md) for each one
 
   See [settings precedence](/en/settings#settings-precedence) for the full order.
 </Note>
@@ -1472,25 +1474,25 @@ Click a filename to open that node in the explorer above.
 
 | File                                                | Scope              | Commit | What it does                                          | Reference                                                            |
 | --------------------------------------------------- | ------------------ | ------ | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| [`CLAUDE.md`](#ce-claude-md)                        | Project and global | ✓      | Instructions loaded every session                     | [Memory](/en/memory)                                                 |
+| [`CLAUDE.md`](#ce-claude-md)                        | Project and global | ✓      | Instructions loaded every session                     | [Memory](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md)                                                 |
 | [`rules/*.md`](#ce-rules)                           | Project and global | ✓      | Topic-scoped instructions, optionally path-gated      | [Rules](/en/memory#organize-rules-with-claude/rules/)                |
-| [`settings.json`](#ce-settings-json)                | Project and global | ✓      | Permissions, hooks, env vars, model defaults          | [Settings](/en/settings)                                             |
+| [`settings.json`](#ce-settings-json)                | Project and global | ✓      | Permissions, hooks, env vars, model defaults          | [Settings](claude-code-settings-claude-code-docs-d4420b4b52.md)                                             |
 | [`settings.local.json`](#ce-settings-local-json)    | Project only       |        | Your personal overrides, auto-gitignored              | [Settings scopes](/en/settings#settings-files)                       |
 | [`.mcp.json`](#ce-mcp-json)                         | Project only       | ✓      | Team-shared MCP servers                               | [MCP scopes](/en/mcp#mcp-installation-scopes)                        |
 | [`.worktreeinclude`](#ce-worktreeinclude)           | Project only       | ✓      | Gitignored files to copy into new worktrees           | [Worktrees](/en/common-workflows#copy-gitignored-files-to-worktrees) |
-| [`skills/<name>/SKILL.md`](#ce-skills)              | Project and global | ✓      | Reusable prompts invoked with `/name` or auto-invoked | [Skills](/en/skills)                                                 |
-| [`commands/*.md`](#ce-commands)                     | Project and global | ✓      | Single-file prompts; same mechanism as skills         | [Skills](/en/skills)                                                 |
-| [`output-styles/*.md`](#ce-output-styles)           | Project and global | ✓      | Custom system-prompt sections                         | [Output styles](/en/output-styles)                                   |
-| [`agents/*.md`](#ce-agents)                         | Project and global | ✓      | Subagent definitions with their own prompt and tools  | [Subagents](/en/sub-agents)                                          |
+| [`skills/<name>/SKILL.md`](#ce-skills)              | Project and global | ✓      | Reusable prompts invoked with `/name` or auto-invoked | [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)                                                 |
+| [`commands/*.md`](#ce-commands)                     | Project and global | ✓      | Single-file prompts; same mechanism as skills         | [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)                                                 |
+| [`output-styles/*.md`](#ce-output-styles)           | Project and global | ✓      | Custom system-prompt sections                         | [Output styles](output-styles-claude-code-docs-c315eeed32.md)                                   |
+| [`agents/*.md`](#ce-agents)                         | Project and global | ✓      | Subagent definitions with their own prompt and tools  | [Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md)                                          |
 | [`agent-memory/<name>/`](#ce-agent-memory)          | Project and global | ✓      | Persistent memory for subagents                       | [Persistent memory](/en/sub-agents#enable-persistent-memory)         |
 | [`~/.claude.json`](#ce-claude-json)                 | Global only        |        | App state, OAuth, UI toggles, personal MCP servers    | [Global config](/en/settings#global-config-settings)                 |
 | [`projects/<project>/memory/`](#ce-global-projects) | Global only        |        | Auto memory: Claude's notes to itself across sessions | [Auto memory](/en/memory#auto-memory)                                |
-| [`keybindings.json`](#ce-keybindings)               | Global only        |        | Custom keyboard shortcuts                             | [Keybindings](/en/keybindings)                                       |
+| [`keybindings.json`](#ce-keybindings)               | Global only        |        | Custom keyboard shortcuts                             | [Keybindings](customize-keyboard-shortcuts-claude-code-docs-f23eb8cfd3.md)                                       |
 | [`themes/*.json`](#ce-themes)                       | Global only        |        | Custom color themes                                   | [Custom themes](/en/terminal-config#create-a-custom-theme)           |
 
 ## Troubleshoot configuration
 
-If a setting, hook, or file isn't taking effect, see [Debug your configuration](/en/debug-your-config) for the inspection commands and a symptom-first lookup table.
+If a setting, hook, or file isn't taking effect, see [Debug your configuration](debug-your-config-615fc7cc73.md) for the inspection commands and a symptom-first lookup table.
 
 ## Application data
 
@@ -1504,7 +1506,7 @@ Files in the paths below are deleted on startup once they're older than [`cleanu
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `projects/<project>/<session>.jsonl`         | Full conversation transcript: every message, tool call, and tool result                                           |
 | `projects/<project>/<session>/tool-results/` | Large tool outputs spilled to separate files                                                                      |
-| `file-history/<session>/`                    | Pre-edit snapshots of files Claude changed, used for [checkpoint restore](/en/checkpointing)                      |
+| `file-history/<session>/`                    | Pre-edit snapshots of files Claude changed, used for [checkpoint restore](checkpointing-94f7cd24eb.md)                      |
 | `plans/`                                     | Plan files written during [plan mode](/en/permission-modes#analyze-before-you-edit-with-plan-mode)                |
 | `debug/`                                     | Per-session debug logs, written only when you start with `--debug` or run `/debug`                                |
 | `paste-cache/`, `image-cache/`               | Contents of large pastes and attached images                                                                      |
@@ -1530,8 +1532,8 @@ Other small cache and lock files appear depending on which features you use and 
 Transcripts and history are not encrypted at rest. OS file permissions are the only protection. If a tool reads a `.env` file or a command prints a credential, that value is written to `projects/<project>/<session>.jsonl`. To reduce exposure:
 
 * Lower `cleanupPeriodDays` to shorten how long transcripts are kept
-* Set the [`CLAUDE_CODE_SKIP_PROMPT_HISTORY`](/en/env-vars) environment variable to skip writing transcripts and prompt history in any mode. In non-interactive mode, you can instead pass `--no-session-persistence` alongside `-p`, or set `persistSession: false` in the Agent SDK.
-* Use [permission rules](/en/permissions) to deny reads of credential files
+* Set the [`CLAUDE_CODE_SKIP_PROMPT_HISTORY`](env-vars-5c624d392b.md) environment variable to skip writing transcripts and prompt history in any mode. In non-interactive mode, you can instead pass `--no-session-persistence` alongside `-p`, or set `persistSession: false` in the Agent SDK.
+* Use [permission rules](configure-permissions-claude-code-docs-7b0e64d485.md) to deny reads of credential files
 
 ### Clear local data
 
@@ -1550,7 +1552,7 @@ Don't delete `~/.claude.json`, `~/.claude/settings.json`, or `~/.claude/plugins/
 
 ## Related resources
 
-* [Manage Claude's memory](/en/memory): write and organize CLAUDE.md, rules, and auto memory
-* [Configure settings](/en/settings): set permissions, hooks, environment variables, and model defaults
-* [Create skills](/en/skills): build reusable prompts and workflows
-* [Configure subagents](/en/sub-agents): define specialized agents with their own context
+* [Manage Claude's memory](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md): write and organize CLAUDE.md, rules, and auto memory
+* [Configure settings](claude-code-settings-claude-code-docs-d4420b4b52.md): set permissions, hooks, environment variables, and model defaults
+* [Create skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md): build reusable prompts and workflows
+* [Configure subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md): define specialized agents with their own context

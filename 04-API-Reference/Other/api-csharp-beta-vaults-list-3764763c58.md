@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Vaults List 3764763C58"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `VaultListPageResponse Beta.Vaults.List(VaultListParams?parameters, CancellationTokencancellationToken = default)`

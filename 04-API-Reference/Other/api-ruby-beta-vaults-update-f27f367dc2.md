@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Vaults Update F27F367Dc2"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `beta.vaults.update(vault_id, **kwargs) -> BetaManagedAgentsVault`

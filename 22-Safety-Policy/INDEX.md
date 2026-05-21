@@ -1,6 +1,6 @@
 # Safety Policy
 
-*48 documents*
+*53 documents*
 
 
 - [Claude Help Center](about-claude-pro-usage.md) - Search for articles...
@@ -16,6 +16,7 @@
 - [Configuring session security settings | Claude Help Center](configuring-session-security-settings.md) - 4.  Configuring session security settings
 - [Consumer Terms of Service Updates | Claude Help Center](consumer-terms-of-service-updates.md) - This support article covers the changes to our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) that take effect **May 1, 2
 - [Crisis Helpline Support in Claude | Claude Help Center](crisis-helpline-support-in-claude.md) - *For medical emergencies, active injuries, or situations where you're in immediate physical danger, please contact emergency services (such as 911 in 
+- [Data usage - Claude Code Docs](data-usage-claude-code-docs-06b2864aaa.md) - Learn about Anthropic’s data usage policies for Claude
 - [Exceptions to our Usage Policy | Claude Help Center](exceptions-to-our-usage-policy.md) - Anthropic maintains a comprehensive Usage Policy to ensure the responsible deployment of our AI systems. Anthropic may enter into contracts with gover
 - [Get started with Cowork | Claude Help Center](getting-started-with-local-agent-mode.md) - This article explains how to use **[Cowork](https://claude.com/product/cowork)**, a research preview that brings Claude Code's agentic capabilities to
 - [HackerOne VDP Report: SSRF via domain_info API Allows Claude Code to Fetch Cloud Metadata Endpoints](hackerone-report-1-ssrf-domain-info-revised.md) - **Program**: Anthropic (VDP)
@@ -27,6 +28,7 @@
 - [How to use Claude in your preferred language | Claude Help Center](how-to-use-claude-in-your-preferred-language.md) - 4.  How to use Claude in your preferred language
 - [I’ve been using other large language models (LLMs) to power my product. How should I alter my prompts when switching to Claude? | Claude Help Center](i-ve-been-using-other-large-language-models-llms-to-power-my-product-how-should.md) - 4.  I’ve been using other large language models (LLMs) to power my product. How should I alter my prompts when switching to Claude?
 - [Law Enforcement Requests | Claude Help Center](law-enforcement-requests.md) - Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s poli
+- [Legal and compliance - Claude Code Docs](legal-and-compliance-claude-code-docs-2d64f2bee3.md) - Legal agreements, compliance certifications, and security information for Claude Code.
 - [Manage Claude’s tool access | Claude Help Center](manage-claude-s-tool-access.md) - When you connect many services to Claude, you can control how those connectors are loaded into your conversations. This helps Claude work more accurat
 - [Manage Cowork plugins for your organization | Claude Help Center](manage-cowork-plugins-for-your-organization.md) - 4.  Manage Cowork plugins for your organization
 - [Manage project visibility and sharing | Claude Help Center](manage-project-visibility-and-sharing.md) - 4.  Manage project visibility and sharing
@@ -44,6 +46,8 @@
 - [Partnering with Mozilla to Improve Firefox's Security](red-firefox-vulnerabilities.md) - In a collaboration with researchers at Mozilla, Claude Opus 4.6 discovered 22 vulnerabilities in Firefox over the course of two weeks.
 - [Redteam Drill Report](redteam-drill-report.md) - - Run ID: `20260301T101853Z`
 - [Safeguards Warnings and Appeals | Claude Help Center](safeguards-warnings-and-appeals.md) - Updated yesterday
+- [Sandboxing - Claude Code Docs](sandboxing-claude-code-docs-5f97cd27c4.md) - Learn how Claude Code’s sandboxed bash tool provides filesystem and network isolation for safer, more autonomous agent execution.
+- [Security - Claude Code Docs](security-claude-code-docs-7538e94c51.md) - Learn about Claude Code’s security safeguards and best practices for safe usage.
 - [Terms of Service Updates | Claude Help Center](terms-of-service-updates.md) - At Anthropic, we review our policies and terms to ensure we’re providing the highest level of protection and clarity for our users. This support artic
 - [Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy | Claude Help Center](updates-to-our-acceptable-use-policy-now-usage-policy-consumer-terms-of-service.md) - 3.  Updates to our Acceptable Use Policy (now “Usage Policy”), Consumer Terms of Service, and Privacy Policy
 - [Using Agents According to Our Usage Policy | Claude Help Center](using-agents-according-to-our-usage-policy.md) - 3.  Using Agents According to Our Usage Policy
@@ -51,3 +55,4 @@
 - [Using Egnyte for data room management with Claude | Claude](using-egnyte-for-data-room-management-with-claude.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
 - [Where can I learn more about Anthropic&#x27;s Privacy practices? | Claude Help Center](where-can-i-learn-more-about-anthropic-s-privacy-practices.md) - 3.  Where can I learn more about Anthropic's Privacy practices?
 - [Why am I receiving an &#x27;Output blocked by content filtering policy&#x27; error? | Claude Help Center](why-am-i-receiving-an-output-blocked-by-content-filtering-policy-error.md) - 3.  Why am I receiving an 'Output blocked by content filtering policy' error?
+- [Zero data retention - Claude Code Docs](zero-data-retention-claude-code-docs-6ec9ee63f1.md) - Learn about Zero Data Retention (ZDR) for Claude Code on Claude for Enterprise, including scope, disabled features, and how to request enablement.

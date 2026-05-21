@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Sessions List E29471E981"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/sessions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/sessions/list.md"
+tags: ["api", "cli"]
 ---
+
 ## List
 
 `$ ant beta:sessions list`

@@ -1,9 +1,11 @@
 ---
+title: "Plugins reference"
+source_url: "https://code.claude.com/docs/en/plugins-reference.md"
 category: "08-Plugins-Skills"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/plugins-reference.md"
-title: "Plugins reference"
+tags: ["cli", "plugins"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -13,7 +15,7 @@ title: "Plugins reference"
 > Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
 
 <Tip>
-  Looking to install plugins? See [Discover and install plugins](/en/discover-plugins). For creating plugins, see [Plugins](/en/plugins). For distributing plugins, see [Plugin marketplaces](/en/plugin-marketplaces).
+  Looking to install plugins? See [Discover and install plugins](discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md). For creating plugins, see [Plugins](create-plugins-claude-code-docs.md). For distributing plugins, see [Plugin marketplaces](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md).
 </Tip>
 
 This reference provides complete technical specifications for the Claude Code plugin system, including component schemas, CLI commands, and development tools.
@@ -48,7 +50,7 @@ skills/
 * Claude can invoke them automatically based on task context
 * Skills can include supporting files alongside SKILL.md
 
-For complete details, see [Skills](/en/skills).
+For complete details, see [Skills](extend-claude-with-skills-claude-code-docs.md).
 
 ### Agents
 
@@ -82,7 +84,7 @@ Plugin agents support `name`, `description`, `model`, `effort`, `maxTurns`, `too
 * Agents can be invoked manually by users
 * Plugin agents work alongside built-in Claude agents
 
-For complete details, see [Subagents](/en/sub-agents).
+For complete details, see [Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md).
 
 ### Hooks
 
@@ -112,7 +114,7 @@ Plugins can provide event handlers that respond to Claude Code events automatica
 }
 ```
 
-Plugin hooks respond to the same lifecycle events as [user-defined hooks](/en/hooks):
+Plugin hooks respond to the same lifecycle events as [user-defined hooks](../07-Hooks/hooks-9168ed62a4.md):
 
 | Event                 | When it fires                                                                                                                                          |
 | :-------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -132,7 +134,7 @@ Plugin hooks respond to the same lifecycle events as [user-defined hooks](/en/ho
 | `TaskCompleted`       | When a task is being marked as completed                                                                                                               |
 | `Stop`                | When Claude finishes responding                                                                                                                        |
 | `StopFailure`         | When the turn ends due to an API error. Output and exit code are ignored                                                                               |
-| `TeammateIdle`        | When an [agent team](/en/agent-teams) teammate is about to go idle                                                                                     |
+| `TeammateIdle`        | When an [agent team](../09-Agents-Patterns/agent-teams-e29da6ed1b.md) teammate is about to go idle                                                                                     |
 | `InstructionsLoaded`  | When a CLAUDE.md or `.claude/rules/*.md` file is loaded into context. Fires at session start and when files are lazily loaded during a session         |
 | `ConfigChange`        | When a configuration file changes during a session                                                                                                     |
 | `CwdChanged`          | When the working directory changes, for example when Claude executes a `cd` command. Useful for reactive environment management with tools like direnv |
@@ -149,7 +151,7 @@ Plugin hooks respond to the same lifecycle events as [user-defined hooks](/en/ho
 
 * `command`: execute shell commands or scripts
 * `http`: send the event JSON as a POST request to a URL
-* `mcp_tool`: call a tool on a configured [MCP server](/en/mcp)
+* `mcp_tool`: call a tool on a configured [MCP server](../06-MCP-Tools/mcp-208e742686.md)
 * `prompt`: evaluate a prompt with an LLM (uses `$ARGUMENTS` placeholder for context)
 * `agent`: run an agentic verifier with tools for complex verification tasks
 
@@ -438,7 +440,7 @@ agent `agent-creator` for the plugin with name `plugin-dev` will appear as
 | `monitors`     | string\|array         | Background [Monitor](/en/tools-reference#monitor-tool) configurations that start automatically when the plugin is active. See [Monitors](#monitors)       | `"./monitors.json"`                                  |
 | `userConfig`   | object                | User-configurable values prompted at enable time. See [User configuration](#user-configuration)                                                           | See below                                            |
 | `channels`     | array                 | Channel declarations for message injection (Telegram, Slack, Discord style). See [Channels](#channels)                                                    | See below                                            |
-| `dependencies` | array                 | Other plugins this plugin requires, optionally with semver version constraints. See [Constrain plugin dependency versions](/en/plugin-dependencies)       | `[{ "name": "secrets-vault", "version": "~2.1.0" }]` |
+| `dependencies` | array                 | Other plugins this plugin requires, optionally with semver version constraints. See [Constrain plugin dependency versions](../02-Claude-Code-CLI/plugin-dependencies-6fe908ccfc.md)       | `[{ "name": "secrets-vault", "version": "~2.1.0" }]` |
 
 ### User configuration
 
@@ -698,7 +700,7 @@ enterprise-plugin/
 | **LSP servers**   | `.lsp.json`                  | Language server configurations                                                                                                                                                             |
 | **Monitors**      | `monitors/monitors.json`     | Background monitor configurations                                                                                                                                                          |
 | **Executables**   | `bin/`                       | Executables added to the Bash tool's `PATH`. Files here are invokable as bare commands in any Bash tool call while the plugin is enabled                                                   |
-| **Settings**      | `settings.json`              | Default configuration applied when the plugin is enabled. Only the [`agent`](/en/sub-agents) and [`subagentStatusLine`](/en/statusline#subagent-status-lines) keys are currently supported |
+| **Settings**      | `settings.json`              | Default configuration applied when the plugin is enabled. Only the [`agent`](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) and [`subagentStatusLine`](/en/statusline#subagent-status-lines) keys are currently supported |
 
 ***
 
@@ -981,10 +983,10 @@ If you use explicit versions, follow [semantic versioning](https://semver.org) (
 
 ## See also
 
-* [Plugins](/en/plugins) - Tutorials and practical usage
-* [Plugin marketplaces](/en/plugin-marketplaces) - Creating and managing marketplaces
-* [Skills](/en/skills) - Skill development details
-* [Subagents](/en/sub-agents) - Agent configuration and capabilities
-* [Hooks](/en/hooks) - Event handling and automation
-* [MCP](/en/mcp) - External tool integration
-* [Settings](/en/settings) - Configuration options for plugins
+* [Plugins](create-plugins-claude-code-docs.md) - Tutorials and practical usage
+* [Plugin marketplaces](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) - Creating and managing marketplaces
+* [Skills](extend-claude-with-skills-claude-code-docs.md) - Skill development details
+* [Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) - Agent configuration and capabilities
+* [Hooks](../07-Hooks/hooks-9168ed62a4.md) - Event handling and automation
+* [MCP](../06-MCP-Tools/mcp-208e742686.md) - External tool integration
+* [Settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) - Configuration options for plugins

@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Sessions Resources Retrieve A38A6Df205"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/resources/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/resources/retrieve.md"
+tags: ["api", "python"]
 ---
+
 ## Retrieve
 
 `beta.sessions.resources.retrieve(strresource_id, ResourceRetrieveParams**kwargs)  -> ResourceRetrieveResponse`

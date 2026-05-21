@@ -1,9 +1,11 @@
 ---
+title: "Constrain plugin dependency versions"
+source_url: "https://code.claude.com/docs/en/plugin-dependencies.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/plugin-dependencies.md"
-title: "Constrain plugin dependency versions"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -16,7 +18,7 @@ A plugin can depend on other plugins by listing them in `plugin.json` or in its 
 
 When you install a plugin that declares dependencies, Claude Code resolves and installs them automatically and lists which dependencies were added at the end of the install output. If a dependency later goes missing, `/reload-plugins` and the background plugin auto-update reinstall it, provided its marketplace is already in your configured marketplaces. Re-running `claude plugin install` on the dependent plugin, or adding a marketplace with `claude plugin marketplace add`, also resolves any outstanding missing dependencies. Dependencies from a marketplace you have not added are left unresolved.
 
-This guide is for plugin authors who declare dependencies in `plugin.json` and for marketplace maintainers who tag releases. To install plugins that have dependencies, see [Discover and install plugins](/en/discover-plugins). For the full manifest schema, see the [Plugins reference](/en/plugins-reference).
+This guide is for plugin authors who declare dependencies in `plugin.json` and for marketplace maintainers who tag releases. To install plugins that have dependencies, see [Discover and install plugins](../08-Plugins-Skills/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md). For the full manifest schema, see the [Plugins reference](../08-Plugins-Skills/plugins-reference-44aeea7968.md).
 
 <Note>
   Dependency version constraints require Claude Code v2.1.110 or later.
@@ -135,7 +137,7 @@ To check for these errors programmatically, run `claude plugin list --json` and 
 
 ## See also
 
-* [Create plugins](/en/plugins): build plugins with skills, agents, and hooks
-* [Create and distribute a plugin marketplace](/en/plugin-marketplaces): host plugins for your team
+* [Create plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md): build plugins with skills, agents, and hooks
+* [Create and distribute a plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md): host plugins for your team
 * [Plugins reference](/en/plugins-reference#plugin-manifest-schema): the full `plugin.json` schema
 * [Version management](/en/plugins-reference#version-management): how a plugin's own version is resolved and used as the cache key

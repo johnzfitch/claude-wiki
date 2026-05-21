@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Messages Batches Create C199B3A9B4"
+source_url: "https://platform.claude.com/docs/en/api/beta/messages/batches/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/messages/batches/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 **post** `/v1/messages/batches`
@@ -3050,7 +3053,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `format: optional BetaJSONOutputFormat`
 
-        A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+        A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         - `schema: map[unknown]`
 
@@ -3062,7 +3065,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
     - `output_format: optional BetaJSONOutputFormat`
 
-      Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+      Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
       A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Environments Archive Cb74Dcd96F"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/environments/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/environments/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 `beta.environments.archive(environment_id, **kwargs) -> BetaEnvironment`

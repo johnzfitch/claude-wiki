@@ -1,9 +1,11 @@
 ---
+title: "Define your agent"
+source_url: "https://platform.claude.com/docs/en/managed-agents/agent-setup.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/agent-setup.md"
-title: "Define your agent"
+tags: ["agents", "api"]
 ---
+
 # Define your agent
 
 Create a reusable, versioned agent configuration.

@@ -1,9 +1,11 @@
 ---
+title: "Slash Commands in the SDK"
+source_url: "https://code.claude.com/docs/en/agent-sdk/slash-commands.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/slash-commands.md"
-title: "Slash Commands in the SDK"
+tags: ["agents", "sdk"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -443,8 +445,8 @@ Use these commands through the SDK:
 
 ## See Also
 
-* [Slash Commands](/en/skills) - Complete slash command documentation
+* [Slash Commands](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) - Complete slash command documentation
 * [Subagents in the SDK](/en/agent-sdk/subagents) - Similar filesystem-based configuration for subagents
 * [TypeScript SDK reference](/en/agent-sdk/typescript) - Complete API documentation
 * [SDK overview](/en/agent-sdk/overview) - General SDK concepts
-* [CLI reference](/en/cli-reference) - Command-line interface
+* [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) - Command-line interface

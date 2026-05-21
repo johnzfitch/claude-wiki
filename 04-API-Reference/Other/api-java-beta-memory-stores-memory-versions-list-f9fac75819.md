@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Memory Stores Memory Versions List F9Fac75819"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/memory_versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/memory_versions/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `MemoryVersionListPage beta().memoryStores().memoryVersions().list(MemoryVersionListParamsparams = MemoryVersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

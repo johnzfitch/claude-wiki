@@ -1,9 +1,11 @@
 ---
+title: "Using agent memory"
+source_url: "https://platform.claude.com/docs/en/managed-agents/memory.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/memory.md"
-title: "Using agent memory"
+tags: ["agents", "api"]
 ---
+
 # Using agent memory
 
 Give your agents persistent memory that survives across sessions using memory stores.

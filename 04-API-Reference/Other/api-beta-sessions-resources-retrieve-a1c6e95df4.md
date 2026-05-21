@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Sessions Resources Retrieve A1C6E95Df4"
+source_url: "https://platform.claude.com/docs/en/api/beta/sessions/resources/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/sessions/resources/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 **get** `/v1/sessions/{session_id}/resources/{resource_id}`

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Files Upload 7168F683Ce"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/upload.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/upload.md"
+tags: ["api", "typescript"]
 ---
+
 ## Upload
 
 `client.beta.files.upload(FileUploadParamsparams, RequestOptionsoptions?): FileMetadata`

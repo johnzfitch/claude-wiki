@@ -1,8 +1,11 @@
 ---
+title: "Api Go Models List B97B073D73"
+source_url: "https://platform.claude.com/docs/en/api/go/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/models/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `client.Models.List(ctx, params) (*Page[ModelInfo], error)`

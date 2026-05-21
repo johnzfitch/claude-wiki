@@ -76,7 +76,7 @@ Contribution metrics are a new feature in public beta that helps Team and Enterp
 
 Contribution metrics require GitHub Cloud and are not available to Console users at this time.
 
-For a more in-depth look at contribution metrics, see **[our Claude Code docs](https://code.claude.com/docs/en/analytics#enable-contribution-metrics)**.
+For a more in-depth look at contribution metrics, see **[our Claude Code docs](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md#enable-contribution-metrics)**.
 
 ### Setting up contribution metrics
 
@@ -138,4 +138,4 @@ If you notice that a specific user isn't showing up in your analytics, you shoul
 
 ### Where can I find more information?
 
-See **[Analytics](https://code.claude.com/docs/en/analytics)** in our Claude Code docs for more information.
+See **[Analytics](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md)** in our Claude Code docs for more information.

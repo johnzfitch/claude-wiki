@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Environments List 488B2Aed5D"
+source_url: "https://platform.claude.com/docs/en/api/beta/environments/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/environments/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 **get** `/v1/environments`

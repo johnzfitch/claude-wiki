@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Skills Retrieve 693E2F5Cbb"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/retrieve.md"
+tags: ["api", "skills"]
 ---
+
 ## Retrieve
 
 `beta.skills.retrieve(skill_id, **kwargs) -> SkillRetrieveResponse`

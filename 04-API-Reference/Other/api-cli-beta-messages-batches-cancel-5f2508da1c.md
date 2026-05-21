@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Messages Batches Cancel 5F2508Da1C"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/messages/batches/cancel.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/messages/batches/cancel.md"
+tags: ["api", "cli"]
 ---
+
 ## Cancel
 
 `$ ant beta:messages:batches cancel`

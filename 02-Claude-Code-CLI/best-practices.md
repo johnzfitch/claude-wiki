@@ -17,7 +17,7 @@ This changes how you work. Instead of writing code yourself and asking Claude to
 
 But this autonomy still comes with a learning curve. Claude works within certain constraints you need to understand.
 
-This guide covers patterns that have proven effective across Anthropic's internal teams and for engineers using Claude Code across various codebases, languages, and environments. For how the agentic loop works under the hood, see [How Claude Code works](/en/how-claude-code-works).
+This guide covers patterns that have proven effective across Anthropic's internal teams and for engineers using Claude Code across various codebases, languages, and environments. For how the agentic loop works under the hood, see [How Claude Code works](how-claude-code-works-0871be411d.md).
 
 ***
 
@@ -145,7 +145,7 @@ You can provide rich data to Claude in several ways:
 
 ## Configure your environment
 
-A few setup steps make Claude Code significantly more effective across all your sessions. For a full overview of extension features and when to use each one, see [Extend Claude Code](/en/features-overview).
+A few setup steps make Claude Code significantly more effective across all your sessions. For a full overview of extension features and when to use each one, see [Extend Claude Code](extend-claude-code-claude-code-docs-3b35aaf641.md).
 
 ### Write an effective CLAUDE.md
 
@@ -221,7 +221,7 @@ Alternatively, use `--dangerously-skip-permissions` to bypass all permission che
   Letting Claude run arbitrary commands can result in data loss, system corruption, or data exfiltration via prompt injection. Only use `--dangerously-skip-permissions` in a sandbox without internet access.
 </Warning>
 
-Read more about [configuring permissions](/en/settings) and [enabling sandboxing](/en/sandboxing#sandboxing).
+Read more about [configuring permissions](claude-code-settings-claude-code-docs-d4420b4b52.md) and [enabling sandboxing](/en/sandboxing#sandboxing).
 
 ### Use CLI tools
 
@@ -247,7 +247,7 @@ With [MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-
   Use hooks for actions that must happen every time with zero exceptions.
 </Tip>
 
-[Hooks](/en/hooks-guide) run scripts automatically at specific points in Claude's workflow. Unlike CLAUDE.md instructions which are advisory, hooks are deterministic and guarantee the action happens.
+[Hooks](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md) run scripts automatically at specific points in Claude's workflow. Unlike CLAUDE.md instructions which are advisory, hooks are deterministic and guarantee the action happens.
 
 Claude can write hooks for you. Try prompts like *"Write a hook that runs eslint after every file edit"* or *"Write a hook that blocks writes to the migrations folder."* Run `/hooks` for interactive configuration, or edit `.claude/settings.json` directly.
 
@@ -301,7 +301,7 @@ Run `/fix-issue 1234` to invoke it. Use `disable-model-invocation: true` for wor
   Define specialized assistants in `.claude/agents/` that Claude can delegate to for isolated tasks.
 </Tip>
 
-[Subagents](/en/sub-agents) run in their own context with their own set of allowed tools. They're useful for tasks that read many files or need specialized focus without cluttering your main conversation.
+[Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) run in their own context with their own set of allowed tools. They're useful for tasks that read many files or need specialized focus without cluttering your main conversation.
 
 ```markdown .claude/agents/security-reviewer.md theme={null}
 ---
@@ -493,7 +493,7 @@ claude -p "Analyze this log file" --output-format stream-json
 There are two main ways to run parallel sessions:
 
 * [Claude Desktop](../16-Mobile-Desktop/desktop.md): Manage multiple local sessions visually. Each session gets its own isolated worktree.
-* [Claude Code on the web](/en/claude-code-on-the-web): Run on Anthropic's secure cloud infrastructure in isolated VMs.
+* [Claude Code on the web](claude-code-on-the-web-69d53821d4.md): Run on Anthropic's secure cloud infrastructure in isolated VMs.
 
 Beyond parallelizing work, multiple sessions enable quality-focused workflows. A fresh context improves code review since Claude won't be biased toward code it just wrote.
 

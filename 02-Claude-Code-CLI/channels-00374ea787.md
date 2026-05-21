@@ -1,9 +1,11 @@
 ---
+title: "Push events into a running session with channels"
+source_url: "https://code.claude.com/docs/en/channels.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/channels.md"
-title: "Push events into a running session with channels"
+tags: ["claude-code", "enterprise", "search", "security"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -32,7 +34,7 @@ This page covers:
 * [Enable channels for your organization](#enterprise-controls) on Team and Enterprise
 * [How channels compare](#how-channels-compare) to web sessions, Slack, MCP, and Remote Control
 
-To build your own channel, see the [Channels reference](/en/channels-reference).
+To build your own channel, see the [Channels reference](channels-reference-claude-code-docs-67a0bbe41f.md).
 
 ## Supported channels
 
@@ -221,7 +223,7 @@ Each supported channel is a plugin that requires [Bun](https://bun.sh). For a ha
   </Tab>
 </Tabs>
 
-You can also [build your own channel](/en/channels-reference) for systems that don't have a plugin yet.
+You can also [build your own channel](channels-reference-claude-code-docs-67a0bbe41f.md) for systems that don't have a plugin yet.
 
 ## Quickstart
 
@@ -294,7 +296,7 @@ The allowlist also gates [permission relay](/en/channels-reference#relay-permiss
 
 ## Enterprise controls
 
-On Team and Enterprise plans, channels are off by default. Admins control availability through two [managed settings](/en/settings) that users cannot override:
+On Team and Enterprise plans, channels are off by default. Admins control availability through two [managed settings](claude-code-settings-claude-code-docs-d4420b4b52.md) that users cannot override:
 
 | Setting                 | Purpose                                                                                                                                                                                                                                                     | When not configured            |
 | :---------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------- |
@@ -344,10 +346,10 @@ Several Claude Code features connect to systems outside the terminal, each suite
 
 | Feature                                              | What it does                                                          | Good for                                                  |
 | ---------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------- |
-| [Claude Code on the web](/en/claude-code-on-the-web) | Runs tasks in a fresh cloud sandbox, cloned from GitHub               | Delegating self-contained async work you check on later   |
-| [Claude in Slack](/en/slack)                         | Spawns a web session from an `@Claude` mention in a channel or thread | Starting tasks directly from team conversation context    |
-| Standard [MCP server](/en/mcp)                       | Claude queries it during a task; nothing is pushed to the session     | Giving Claude on-demand access to read or query a system  |
-| [Remote Control](/en/remote-control)                 | You drive your local session from claude.ai or the Claude mobile app  | Steering an in-progress session while away from your desk |
+| [Claude Code on the web](claude-code-on-the-web-69d53821d4.md) | Runs tasks in a fresh cloud sandbox, cloned from GitHub               | Delegating self-contained async work you check on later   |
+| [Claude in Slack](../14-Connectors/claude-code-in-slack-claude-code-docs-c62a093e92.md)                         | Spawns a web session from an `@Claude` mention in a channel or thread | Starting tasks directly from team conversation context    |
+| Standard [MCP server](../06-MCP-Tools/mcp-208e742686.md)                       | Claude queries it during a task; nothing is pushed to the session     | Giving Claude on-demand access to read or query a system  |
+| [Remote Control](continue-local-sessions-from-any-device-with-remote-control-claude-code-docs-c1c03fd914.md)                 | You drive your local session from claude.ai or the Claude mobile app  | Steering an in-progress session while away from your desk |
 
 Channels fill the gap in that list by pushing events from non-Claude sources into your already-running local session.
 
@@ -358,6 +360,6 @@ Channels fill the gap in that list by pushing events from non-Claude sources int
 
 Once you have a channel running, explore these related features:
 
-* [Build your own channel](/en/channels-reference) for systems that don't have plugins yet
-* [Remote Control](/en/remote-control) to drive a local session from your phone instead of forwarding events into it
-* [Scheduled tasks](/en/scheduled-tasks) to poll on a timer instead of reacting to pushed events
+* [Build your own channel](channels-reference-claude-code-docs-67a0bbe41f.md) for systems that don't have plugins yet
+* [Remote Control](continue-local-sessions-from-any-device-with-remote-control-claude-code-docs-c1c03fd914.md) to drive a local session from your phone instead of forwarding events into it
+* [Scheduled tasks](run-prompts-on-a-schedule-claude-code-docs.md) to poll on a timer instead of reacting to pushed events

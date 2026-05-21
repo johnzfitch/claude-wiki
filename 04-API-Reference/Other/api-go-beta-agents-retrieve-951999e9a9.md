@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Agents Retrieve 951999E9A9"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/retrieve.md"
+tags: ["agents", "api"]
 ---
+
 ## Retrieve
 
 `client.Beta.Agents.Get(ctx, agentID, params) (*BetaManagedAgentsAgent, error)`

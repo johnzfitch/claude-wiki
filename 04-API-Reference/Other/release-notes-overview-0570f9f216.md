@@ -1,9 +1,11 @@
 ---
+title: "Claude Platform"
+source_url: "https://platform.claude.com/docs/en/release-notes/overview.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/release-notes/overview.md"
-title: "Claude Platform"
+tags: ["api"]
 ---
+
 # Claude Platform
 
 Updates to the Claude Platform, including the Claude API, client SDKs, and the Claude Console.
@@ -11,7 +13,7 @@ Updates to the Claude Platform, including the Claude API, client SDKs, and the C
 ---
 
 <Tip>
-For release notes on Claude Apps, see the [Release notes for Claude Apps in the Claude Help Center](https://support.claude.com/en/articles/12138966-release-notes).
+For release notes on Claude Apps, see the [Release notes for Claude Apps in the Claude Help Center](../../19-Reference/release-notes.md).
 
 For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) in the `claude-code` repository.
 </Tip>
@@ -60,11 +62,11 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### February 19, 2026
 - We've launched **automatic caching** for the Messages API. Add a single `cache_control` field to your request body and the system automatically caches the last cacheable block, moving the cache point forward as conversations grow. No manual breakpoint management required. Works alongside existing block-level cache control for fine-grained optimization. Available on the Claude API and Azure AI Foundry (preview). Learn more in [Prompt caching](/docs/en/build-with-claude/prompt-caching#automatic-caching).
-- We've retired the Claude Sonnet 3.7 model (`claude-3-7-sonnet-20250219`) and the Claude Haiku 3.5 model (`claude-3-5-haiku-20241022`). All requests to these models will now return an error. We recommend upgrading to [Claude Sonnet 4.6](/docs/en/about-claude/models/overview#latest-models-comparison) and [Claude Haiku 4.5](/docs/en/about-claude/models/overview#latest-models-comparison) respectively. Researchers can request ongoing access through the [External Researcher Access Program](https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program).
+- We've retired the Claude Sonnet 3.7 model (`claude-3-7-sonnet-20250219`) and the Claude Haiku 3.5 model (`claude-3-5-haiku-20241022`). All requests to these models will now return an error. We recommend upgrading to [Claude Sonnet 4.6](/docs/en/about-claude/models/overview#latest-models-comparison) and [Claude Haiku 4.5](/docs/en/about-claude/models/overview#latest-models-comparison) respectively. Researchers can request ongoing access through the [External Researcher Access Program](../../15-Claude-AI-Features/what-is-the-external-researcher-access-program.md).
 - We announced the deprecation of the Claude Haiku 3 model (`claude-3-haiku-20240307`), with retirement scheduled for April 19, 2026. We recommend migrating to [Claude Haiku 4.5](/docs/en/about-claude/models/overview#latest-models-comparison). Read more in [model deprecations](/docs/en/about-claude/model-deprecations).
 
 ### February 17, 2026
-- We've launched [Claude Sonnet 4.6](https://www.anthropic.com/news/claude-sonnet-4-6), our latest balanced model combining speed and intelligence for everyday tasks. Sonnet 4.6 delivers improved agentic search performance while consuming fewer tokens. Sonnet 4.6 supports [extended thinking](/docs/en/build-with-claude/extended-thinking) and a [1M token context window](/docs/en/build-with-claude/context-windows) (beta). See [Models & Pricing](/docs/en/about-claude/models) for details.
+- We've launched [Claude Sonnet 4.6](../../19-Reference/introducing-sonnet-4-6-anthropic.md), our latest balanced model combining speed and intelligence for everyday tasks. Sonnet 4.6 delivers improved agentic search performance while consuming fewer tokens. Sonnet 4.6 supports [extended thinking](/docs/en/build-with-claude/extended-thinking) and a [1M token context window](/docs/en/build-with-claude/context-windows) (beta). See [Models & Pricing](/docs/en/about-claude/models) for details.
 - API [code execution](/docs/en/agents-and-tools/tool-use/code-execution-tool) is now **free when used with web search or web fetch**. Sandboxed code execution improves model capability and token efficiency. See the [pricing details](/docs/en/agents-and-tools/tool-use/code-execution-tool#usage-and-pricing) for standalone usage.
 - The [web search tool](/docs/en/agents-and-tools/tool-use/web-search-tool) and [programmatic tool calling](/docs/en/agents-and-tools/tool-use/programmatic-tool-calling) are now generally available (no beta header required). Web search and web fetch now support [dynamic filtering](/docs/en/agents-and-tools/tool-use/web-search-tool#dynamic-filtering), which uses code execution to filter results before they reach the context window for better performance and reduced token cost.
 - The [code execution tool](/docs/en/agents-and-tools/tool-use/code-execution-tool), [web fetch tool](/docs/en/agents-and-tools/tool-use/web-fetch-tool), [tool search tool](/docs/en/agents-and-tools/tool-use/tool-search-tool), [tool use examples](/docs/en/agents-and-tools/tool-use/define-tools#providing-tool-use-examples), and [memory tool](/docs/en/agents-and-tools/tool-use/memory-tool) are now generally available (no beta header required).
@@ -87,7 +89,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 - `console.anthropic.com` now redirects to `platform.claude.com`. The Claude Console has moved to its new home as part of our Claude brand consolidation. Existing bookmarks and links will continue working via automatic redirect. For more details, see the [September 16, 2025 announcement](#september-16-2025).
 
 ### January 5, 2026
-- We've retired the Claude Opus 3 model (`claude-3-opus-20240229`). All requests to this model will now return an error. We recommend upgrading to [Claude Opus 4.5](/docs/en/about-claude/models/overview#latest-models-comparison), which offers significantly improved intelligence at a third of the cost. Researchers can request ongoing access to Claude Opus 3 on the API through the [External Researcher Access Program](https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program).
+- We've retired the Claude Opus 3 model (`claude-3-opus-20240229`). All requests to this model will now return an error. We recommend upgrading to [Claude Opus 4.5](/docs/en/about-claude/models/overview#latest-models-comparison), which offers significantly improved intelligence at a third of the cost. Researchers can request ongoing access to Claude Opus 3 on the API through the [External Researcher Access Program](../../15-Claude-AI-Features/what-is-the-external-researcher-access-program.md).
 
 ### December 19, 2025
 - We announced the deprecation of the Claude Haiku 3.5 model. Read more in [Model deprecations](/docs/en/about-claude/model-deprecations).
@@ -127,10 +129,10 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
   - Learn more in [Agent Skills](/docs/en/agents-and-tools/agent-skills/overview) and [API reference](/docs/en/api/skills/create-skill)
 
 ### October 15, 2025
-- We've launched [Claude Haiku 4.5](https://www.anthropic.com/news/claude-haiku-4-5), our fastest and most intelligent Haiku model with near-frontier performance. Ideal for real-time applications, high-volume processing, and cost-sensitive deployments requiring strong reasoning. Learn more in [Models overview](/docs/en/about-claude/models).
+- We've launched [Claude Haiku 4.5](../../19-Reference/introducing-claude-haiku-4-5-anthropic.md), our fastest and most intelligent Haiku model with near-frontier performance. Ideal for real-time applications, high-volume processing, and cost-sensitive deployments requiring strong reasoning. Learn more in [Models overview](/docs/en/about-claude/models).
 
 ### September 29, 2025
-- We've launched [Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5), our best model for complex agents and coding, with the highest intelligence across most tasks. Learn more in the [models overview](/docs/en/about-claude/models/overview).
+- We've launched [Claude Sonnet 4.5](../../19-Reference/introducing-claude-sonnet-4-5-anthropic.md), our best model for complex agents and coding, with the highest intelligence across most tasks. Learn more in the [models overview](/docs/en/about-claude/models/overview).
 - We've introduced [global endpoint pricing](/docs/en/about-claude/pricing#third-party-platform-pricing) for AWS Bedrock and Google Vertex AI. The Claude API (1P) pricing is unaffected.
 - We've introduced a new stop reason `model_context_window_exceeded` that allows you to request the maximum possible tokens without calculating input size. Learn more in [Handling stop reasons](/docs/en/build-with-claude/handling-stop-reasons).
 - We've launched the memory tool in beta, enabling Claude to store and consult information across conversations. Learn more in [Memory tool](/docs/en/agents-and-tools/tool-use/memory-tool).
@@ -141,7 +143,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### September 16, 2025
 - We've unified our developer offerings under the Claude brand. You should see updated naming and URLs across our platform and documentation, but **our developer interfaces will remain the same**. Here are some notable changes:
-  - Claude Console ([console.anthropic.com](https://console.anthropic.com)) → Claude Console ([platform.claude.com](https://platform.claude.com)). The console will be available at both URLs until January 12, 2026. After that date, [console.anthropic.com](https://console.anthropic.com) will automatically redirect to [platform.claude.com](https://platform.claude.com).
+  - Claude Console ([console.anthropic.com](https://console.anthropic.com)) → Claude Console ([platform.claude.com](platform-claude-com.md)). The console will be available at both URLs until January 12, 2026. After that date, [console.anthropic.com](https://console.anthropic.com) will automatically redirect to [platform.claude.com](platform-claude-com.md).
   - Anthropic Docs ([docs.claude.com](https://docs.claude.com)) → Claude Docs ([docs.claude.com](https://docs.claude.com))
   - Anthropic Help Center ([support.claude.com](https://support.claude.com)) → Claude Help Center ([support.claude.com](https://support.claude.com))
   - API endpoints, headers, environment variables, and SDKs remain the same. Your existing integrations will continue working without any changes.
@@ -190,7 +192,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 - Search result content blocks are now generally available on the Claude API and Google Cloud's Vertex AI. This feature enables natural citations for RAG applications with proper source attribution. The beta header `search-results-2025-06-09` is no longer required. Learn more in [Search results](/docs/en/build-with-claude/search-results).
 
 ### August 5, 2025
-- We've launched [Claude Opus 4.1](https://www.anthropic.com/news/claude-opus-4-1), an incremental update to Claude Opus 4 with enhanced capabilities and performance improvements.<sup>*</sup> Learn more in [Models overview](/docs/en/about-claude/models).
+- We've launched [Claude Opus 4.1](../../19-Reference/claude-opus-4-1-anthropic.md), an incremental update to Claude Opus 4 with enhanced capabilities and performance improvements.<sup>*</sup> Learn more in [Models overview](/docs/en/about-claude/models).
 
 _<sup>* - Opus 4.1 does not allow both `temperature` and `top_p` parameters to be specified. Please use only one. </sup>_
 
@@ -328,7 +330,7 @@ We also released new official SDKs:
 
 ### November 4th, 2024
 
-- [Claude Haiku 3.5](https://www.anthropic.com/claude/haiku) is now available on the Claude API as a text-only model.
+- [Claude Haiku 3.5](../../15-Claude-AI-Features/claude-haiku-4-5-anthropic.md) is now available on the Claude API as a text-only model.
 
 ### November 1st, 2024
 
@@ -338,7 +340,7 @@ We also released new official SDKs:
 ### October 22nd, 2024
 
 - We've added Anthropic-defined computer use tools to our API for use with the new Claude Sonnet 3.5. Read more in [Computer use tool](/docs/en/agents-and-tools/tool-use/computer-use-tool).
-- Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](https://www.anthropic.com/claude/sonnet).
+- Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](../../15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md).
 
 ### October 8th, 2024
 

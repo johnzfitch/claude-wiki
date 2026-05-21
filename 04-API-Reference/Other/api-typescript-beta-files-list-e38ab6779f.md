@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Files List E38Ab6779F"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/list.md"
+tags: ["api", "typescript"]
 ---
+
 ## List
 
 `client.beta.files.list(FileListParamsparams?, RequestOptionsoptions?): Page<FileMetadata>`

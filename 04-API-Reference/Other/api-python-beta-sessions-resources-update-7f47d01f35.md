@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Sessions Resources Update 7F47D01F35"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/resources/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/resources/update.md"
+tags: ["api", "python"]
 ---
+
 ## Update
 
 `beta.sessions.resources.update(strresource_id, ResourceUpdateParams**kwargs)  -> ResourceUpdateResponse`

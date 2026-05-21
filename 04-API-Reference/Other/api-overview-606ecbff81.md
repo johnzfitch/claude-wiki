@@ -1,9 +1,11 @@
 ---
+title: "API Overview"
+source_url: "https://platform.claude.com/docs/en/api/overview.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/overview.md"
-title: "API Overview"
+tags: ["api", "authentication", "cli", "sdk"]
 ---
+
 # API Overview
 
 ---
@@ -18,7 +20,7 @@ The Claude API is a RESTful API at `https://api.anthropic.com` that provides pro
 
 To use the Claude API, you'll need:
 
-- A [Claude Console account](https://platform.claude.com)
+- A [Claude Console account](platform-claude-com.md)
 - An [API key](/settings/keys)
 
 For step-by-step setup instructions, see [Get started](/docs/en/get-started).
@@ -56,7 +58,7 @@ If you are using the [Client SDKs](#client-sdks), the SDK will send these header
 
 ### Getting API Keys
 
-The API is made available via the web [Console](https://platform.claude.com/). You can use the [Workbench](https://platform.claude.com/workbench) to try out the API in the browser and then generate API keys in [Account Settings](https://platform.claude.com/settings/keys). Use [workspaces](https://platform.claude.com/settings/workspaces) to segment your API keys and [control spend](/docs/en/api/rate-limits) by use case.
+The API is made available via the web [Console](platform-claude-com.md). You can use the [Workbench](https://platform.claude.com/workbench) to try out the API in the browser and then generate API keys in [Account Settings](https://platform.claude.com/settings/keys). Use [workspaces](https://platform.claude.com/settings/workspaces) to segment your API keys and [control spend](/docs/en/api/rate-limits) by use case.
 
 ## Client SDKs
 

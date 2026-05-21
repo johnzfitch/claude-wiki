@@ -445,7 +445,7 @@ Contribution metrics are a new feature in public beta that helps Team and Enterp
 
 Contribution metrics require GitHub Cloud and are not available to Console users at this time.
 
-For a more in-depth look at contribution metrics, see **[our Claude Code docs](https://code.claude.com/docs/en/analytics#enable-contribution-metrics)**.
+For a more in-depth look at contribution metrics, see **[our Claude Code docs](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md#enable-contribution-metrics)**.
 
 ### Setting up contribution metrics
 
@@ -507,7 +507,7 @@ If you notice that a specific user isn't showing up in your analytics, you shoul
 
 ### Where can I find more information?
 
-See **[Analytics](https://code.claude.com/docs/en/analytics)** in our Claude Code docs for more information.
+See **[Analytics](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md)** in our Claude Code docs for more information.
 
 
 ---
@@ -769,6 +769,129 @@ That's a common feeling. Helplines understand this and won't push you to share m
 ### How are the crisis resources in Claude selected?
 
 We work with ThroughLine, an organization that curates and maintains a global directory of verified crisis helplines. The resources shown are selected based on your location to provide relevant, local support options.
+
+
+---
+## data-usage-claude-code-docs-06b2864aaa.md
+
+# Data usage
+
+
+Learn about Anthropic’s data usage policies for Claude
+
+
+[​](#data-policies)
+
+Data policies
+
+
+[​](#data-training-policy)
+
+Data training policy
+
+**Consumer users (Free, Pro, and Max plans)**: We give you the choice to allow your data to be used to improve future Claude models. We will train new models using data from Free, Pro, and Max accounts when this setting is on (including when you use Claude Code from these accounts). **Commercial users**: (Team and Enterprise plans, API, 3rd-party platforms, and Claude Gov) maintain existing policies: Anthropic does not train generative models using code or prompts sent to Claude Code under commercial terms, unless the customer has chosen to provide their data to us for model improvement (for example, the [Developer Partner Program](https://support.claude.com/en/articles/11174108-about-the-development-partner-program)).
+
+
+[​](#development-partner-program)
+
+Development Partner Program
+
+If you explicitly opt in to methods to provide us with materials to train on, such as via the [Development Partner Program](https://support.claude.com/en/articles/11174108-about-the-development-partner-program), we may use those materials provided to train our models. An organization admin can expressly opt-in to the Development Partner Program for their organization. Note that this program is available only for Anthropic first-party API, and not for Bedrock or Vertex users.
+
+
+[​](#feedback-using-the-/feedback-command)
+
+Feedback using the `/feedback` command
+
+If you choose to send us feedback about Claude Code using the `/feedback` command, we may use your feedback to improve our products and services. Transcripts shared via `/feedback` are retained for 5 years.
+
+
+[​](#session-quality-surveys)
+
+Session quality surveys
+
+When you see the “How is Claude doing this session?” prompt in Claude Code, responding to this survey (including selecting “Dismiss”), only your numeric rating (1, 2, 3, or dismiss) is recorded. We do not collect or store any conversation transcripts, inputs, outputs, or other session data as part of this survey. Unlike thumbs up/down feedback or `/feedback` reports, this session quality survey is a simple product satisfaction metric. Your responses to this survey do not impact your data training preferences and cannot be used to train our AI models. To disable these surveys, set `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1`. The survey is also disabled when `DISABLE_TELEMETRY` or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` is set. To control frequency instead of disabling, set [`feedbackSurveyRate`](/docs/en/settings#available-settings) in your settings file to a probability between `0` and `1`.
+
+
+[​](#data-retention)
+
+Data retention
+
+Anthropic retains Claude Code data based on your account type and preferences. **Consumer users (Free, Pro, and Max plans)**:
+
+- Users who allow data use for model improvement: 5-year retention period to support model development and safety improvements
+- Users who don’t allow data use for model improvement: 30-day retention period
+- Privacy settings can be changed at any time at [claude.ai/settings/data-privacy-controls](https://claude.ai/settings/data-privacy-controls).
+
+**Commercial users (Team, Enterprise, and API)**:
+
+- Standard: 30-day retention period
+- [Zero data retention](/docs/en/zero-data-retention): available for Claude Code on Claude for Enterprise. ZDR is enabled on a per-organization basis; each new organization must have ZDR enabled separately by your account team
+- Local caching: Claude Code clients store session transcripts locally in plaintext under `~/.claude/projects/` for 30 days by default to enable session resumption. Adjust the period with `cleanupPeriodDays`. See [application data](/docs/en/claude-directory#application-data) for what’s stored and how to clear it.
+
+You can delete individual Claude Code on the web sessions at any time. Deleting a session permanently removes the session’s event data. For instructions on how to delete sessions, see [Delete sessions](/docs/en/claude-code-on-the-web#delete-sessions). Learn more about data retention practices in our [Privacy Center](https://privacy.anthropic.com/). For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, and Max users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
+
+
+[​](#data-access)
+
+Data access
+
+For all first party users, you can learn more about what data is logged for [local Claude Code](#local-claude-code-data-flow-and-dependencies) and [remote Claude Code](#cloud-execution-data-flow-and-dependencies). [Remote Control](/docs/en/remote-control) sessions follow the local data flow since all execution happens on your machine. Note for remote Claude Code, Claude accesses the repository where you initiate your Claude Code session. Claude does not access repositories that you have connected but have not started a session in.
+
+
+[​](#local-claude-code-data-flow-and-dependencies)
+
+Local Claude Code: Data flow and dependencies
+
+The diagram below shows how Claude Code connects to external services during installation and normal operation. Solid lines indicate required connections, while dashed lines represent optional or user-initiated data flows. Claude Code runs locally. To interact with the LLM, Claude Code sends data over the network. This data includes all user prompts and model outputs, encrypted in transit via TLS 1.2+. Claude Code is compatible with most popular VPNs and LLM proxies. Encryption at rest depends on your model provider:
+
+| Provider | Encryption at rest |
+|----|----|
+| Anthropic API | Infrastructure-level disk encryption (AES-256). Enable [Zero Data Retention](/docs/en/zero-data-retention) for no server-side persistence. |
+| Amazon Bedrock | AES-256 with AWS-managed keys. Customer-managed keys available via AWS KMS. |
+| Google Cloud Vertex AI | Google-managed encryption keys. CMEK available. |
+| Microsoft Foundry | Requests route to Anthropic infrastructure with AES-256 disk encryption. |
+
+Claude Code is built on Anthropic’s APIs. For details on API security controls, including API logging procedures, see the compliance artifacts in the [Anthropic Trust Center](https://trust.anthropic.com).
+
+
+[​](#cloud-execution-data-flow-and-dependencies)
+
+Cloud execution: Data flow and dependencies
+
+When using [Claude Code on the web](/docs/en/claude-code-on-the-web), sessions run in Anthropic-managed virtual machines instead of locally. In cloud environments:
+
+- **Code and data storage:** Your repository is cloned to an isolated VM. Code and session data are subject to the retention and usage policies for your account type (see Data retention section above)
+- **Credentials:** GitHub authentication is handled through a secure proxy; your GitHub credentials never enter the sandbox
+- **Network traffic:** All outbound traffic goes through a security proxy for audit logging and abuse prevention
+- **Session data:** Prompts, code changes, and outputs follow the same data policies as local Claude Code usage
+
+For security details about cloud execution, see [Security](/docs/en/security#cloud-execution-security).
+
+
+[​](#telemetry-services)
+
+Telemetry services
+
+Claude Code connects from users’ machines to the Statsig service to log operational metrics such as latency, reliability, and usage patterns. This logging does not include any code or file paths. Data is encrypted in transit using TLS and at rest using 256-bit AES encryption. Read more in the [Statsig security documentation](https://www.statsig.com/trust/security). To opt out of Statsig telemetry, set the `DISABLE_TELEMETRY` environment variable. Claude Code connects from users’ machines to Sentry for operational error logging. The data is encrypted in transit using TLS and at rest using 256-bit AES encryption. Read more in the [Sentry security documentation](https://sentry.io/security/). To opt out of error logging, set the `DISABLE_ERROR_REPORTING` environment variable. When users run the `/feedback` command, a copy of their full conversation history including code is sent to Anthropic. The data is encrypted in transit via TLS. Optionally, a GitHub issue is created in the public repository. To opt out, set the `DISABLE_FEEDBACK_COMMAND` environment variable to `1`.
+
+
+[​](#default-behaviors-by-api-provider)
+
+Default behaviors by API provider
+
+By default, error reporting, telemetry, and bug reporting are disabled when using Bedrock, Vertex, or Foundry. Session quality surveys and the WebFetch domain safety check are exceptions and run regardless of provider. You can opt out of all non-essential traffic, including surveys, at once by setting `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`. This variable does not affect the WebFetch check, which has its own opt-out. Here are the full default behaviors:
+
+[TABLE]
+
+All environment variables can be checked into `settings.json` (see [settings reference](/docs/en/settings)).
+
+
+[​](#webfetch-domain-safety-check)
+
+WebFetch domain safety check
+
+Before fetching a URL, the WebFetch tool sends the requested hostname to `api.anthropic.com` to check it against a safety blocklist maintained by Anthropic. Only the hostname is sent, not the full URL, path, or page contents. Results are cached per hostname for five minutes. This check runs regardless of which model provider you use and is not affected by `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`. If your network blocks `api.anthropic.com`, WebFetch requests fail until you either allowlist the domain or set `skipWebFetchPreflight: true` in [settings](/docs/en/settings). Disabling the check means WebFetch attempts to retrieve any URL without consulting the blocklist, so combine it with [`WebFetch` permission rules](/docs/en/permissions#webfetch) if you need to restrict which domains Claude can reach.
 
 
 ---
@@ -2393,7 +2516,7 @@ To adjust your auto-reload options, click on “Edit” in the auto-reload secti
 
 Please note that purchased credits are subject to our **[Credit Terms](https://www.anthropic.com/legal/credit-terms)**. Credits expire one year from the purchase date, and this expiration date cannot be extended. Expired credits will appear in your **[Console billing settings](https://platform.claude.com/settings/billing)** under **Invoice history**. All credit purchases are non-refundable.
 
-Learn more about credit usage and how it relates to usage limits in our **[Claude API docs](https://platform.claude.com/docs/en/api/rate-limits)**.
+Learn more about credit usage and how it relates to usage limits in our **[Claude API docs](../04-API-Reference/Other/api-rate-limits-28d3302987.md)**.
 
 ## How to update your Console payment method
 
@@ -2571,6 +2694,96 @@ Please include the following information with your request:
 
 
 ---
+## legal-and-compliance-claude-code-docs-2d64f2bee3.md
+
+# Legal and compliance
+
+
+Legal agreements, compliance certifications, and security information for Claude Code.
+
+
+[​](#legal-agreements)
+
+Legal agreements
+
+
+[​](#license)
+
+License
+
+Your use of Claude Code is subject to:
+
+- [Commercial Terms](https://www.anthropic.com/legal/commercial-terms) - for Team, Enterprise, and Claude API users
+- [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) - for Free, Pro, and Max users
+
+
+[​](#commercial-agreements)
+
+Commercial agreements
+
+Whether you’re using the Claude API directly (1P) or accessing it through AWS Bedrock or Google Vertex (3P), your existing commercial agreement will apply to Claude Code usage, unless we’ve mutually agreed otherwise.
+
+
+[​](#compliance)
+
+Compliance
+
+
+[​](#healthcare-compliance-baa)
+
+Healthcare compliance (BAA)
+
+If a customer has a Business Associate Agreement (BAA) with us, and wants to use Claude Code, the BAA will automatically extend to cover Claude Code if the customer has executed a BAA and has [Zero Data Retention (ZDR)](/docs/en/zero-data-retention) activated. The BAA will be applicable to that customer’s API traffic flowing through Claude Code. ZDR is enabled on a per-organization basis, so each organization must have ZDR enabled separately to be covered under the BAA.
+
+
+[​](#usage-policy)
+
+Usage policy
+
+
+[​](#acceptable-use)
+
+Acceptable use
+
+Claude Code usage is subject to the [Anthropic Usage Policy](https://www.anthropic.com/legal/aup). Advertised usage limits for Pro and Max plans assume ordinary, individual usage of Claude Code and the Agent SDK.
+
+
+[​](#authentication-and-credential-use)
+
+Authentication and credential use
+
+Claude Code authenticates with Anthropic’s servers using OAuth tokens or API keys. These authentication methods serve different purposes:
+
+- **OAuth authentication** is intended exclusively for purchasers of Claude Free, Pro, Max, Team, and Enterprise subscription plans and is designed to support ordinary use of Claude Code and other native Anthropic applications. More information about how users can authenticate with OAuth tokens can be found in [Logging in to your Claude account](../21-Account-Support/logging-in-to-your-claude-account.md).
+- **Developers** building products or services that interact with Claude’s capabilities, including those using the [Agent SDK](/docs/en/agent-sdk/overview), should use API key authentication through [Claude Console](../04-API-Reference/Other/platform-claude-com.md) or a supported cloud provider. Anthropic does not permit third-party developers to offer Claude.ai login or to route requests through Free, Pro, or Max plan credentials on behalf of their users.
+
+Anthropic reserves the right to take measures to enforce these restrictions and may do so without prior notice. For questions about permitted authentication methods for your use case, please [contact sales](https://www.anthropic.com/contact-sales?utm_source=claude_code&utm_medium=docs&utm_content=legal_compliance_contact_sales).
+
+
+[​](#security-and-trust)
+
+Security and trust
+
+
+[​](#trust-and-safety)
+
+Trust and safety
+
+You can find more information in the [Anthropic Trust Center](https://trust.anthropic.com) and [Transparency Hub](https://www.anthropic.com/transparency).
+
+
+[​](#security-vulnerability-reporting)
+
+Security vulnerability reporting
+
+Anthropic manages our security program through HackerOne. [Use this form to report vulnerabilities](https://hackerone.com/anthropic-vdp/reports/new?type=team&report_type=vulnerability).
+
+------------------------------------------------------------------------
+
+© Anthropic PBC. All rights reserved. Use is subject to applicable Anthropic Terms of Service.
+
+
+---
 ## manage-claude-s-tool-access.md
 
 # Manage Claude’s tool access
@@ -2702,7 +2915,7 @@ For details on plugin structure and formatting, see the **[plugin reference docu
 
 Additional resources:
 
-- **[Create and distribute a plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces)**
+- **[Create and distribute a plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md)**
 
 - **[Create plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)**
 
@@ -7340,6 +7553,553 @@ Reporting, Blocking, and Removing Content from Claude
 
 
 ---
+## sandboxing-claude-code-docs-5f97cd27c4.md
+
+# Sandboxing
+
+
+Learn how Claude Code’s sandboxed bash tool provides filesystem and network isolation for safer, more autonomous agent execution.
+
+
+[​](#overview)
+
+Overview
+
+Claude Code features native sandboxing to provide a more secure environment for agent execution while reducing the need for constant permission prompts. Instead of asking permission for each bash command, sandboxing creates defined boundaries upfront where Claude Code can work more freely with reduced risk. The sandboxed bash tool uses OS-level primitives to enforce both filesystem and network isolation.
+
+
+[​](#why-sandboxing-matters)
+
+Why sandboxing matters
+
+Traditional permission-based security requires constant user approval for bash commands. While this provides control, it can lead to:
+
+- **Approval fatigue**: Repeatedly clicking “approve” can cause users to pay less attention to what they’re approving
+- **Reduced productivity**: Constant interruptions slow down development workflows
+- **Limited autonomy**: Claude Code cannot work as efficiently when waiting for approvals
+
+Sandboxing addresses these challenges by:
+
+1.  **Defining clear boundaries**: Specify exactly which directories and network hosts Claude Code can access
+2.  **Reducing permission prompts**: Safe commands within the sandbox don’t require approval
+3.  **Maintaining security**: Attempts to access resources outside the sandbox trigger immediate notifications
+4.  **Enabling autonomy**: Claude Code can run more independently within defined limits
+
+Effective sandboxing requires **both** filesystem and network isolation. Without network isolation, a compromised agent could exfiltrate sensitive files like SSH keys. Without filesystem isolation, a compromised agent could backdoor system resources to gain network access. When configuring sandboxing it is important to ensure that your configured settings do not create bypasses in these systems.
+
+
+[​](#how-it-works)
+
+How it works
+
+
+[​](#filesystem-isolation)
+
+Filesystem isolation
+
+The sandboxed bash tool restricts file system access to specific directories:
+
+- **Default writes behavior**: Read and write access to the current working directory and its subdirectories
+- **Default read behavior**: Read access to the entire computer, except certain denied directories
+- **Blocked access**: Cannot modify files outside the current working directory without explicit permission
+- **Configurable**: Define custom allowed and denied paths through settings
+
+You can grant write access to additional paths using `sandbox.filesystem.allowWrite` in your settings. These restrictions are enforced at the OS level (Seatbelt on macOS, bubblewrap on Linux), so they apply to all subprocess commands, including tools like `kubectl`, `terraform`, and `npm`, not just Claude’s file tools.
+
+
+[​](#network-isolation)
+
+Network isolation
+
+Network access is controlled through a proxy server running outside the sandbox:
+
+- **Domain restrictions**: Only approved domains can be accessed
+- **User confirmation**: New domain requests trigger permission prompts (unless [`allowManagedDomainsOnly`](/docs/en/settings#sandbox-settings) is enabled, which blocks non-allowed domains automatically)
+- **Custom proxy support**: Advanced users can implement custom rules on outgoing traffic
+- **Comprehensive coverage**: Restrictions apply to all scripts, programs, and subprocesses spawned by commands
+
+
+[​](#os-level-enforcement)
+
+OS-level enforcement
+
+The sandboxed bash tool leverages operating system security primitives:
+
+- **macOS**: Uses Seatbelt for sandbox enforcement
+- **Linux**: Uses [bubblewrap](https://github.com/containers/bubblewrap) for isolation
+- **WSL2**: Uses bubblewrap, same as Linux
+
+WSL1 is not supported because bubblewrap requires kernel features only available in WSL2. These OS-level restrictions ensure that all child processes spawned by Claude Code’s commands inherit the same security boundaries.
+
+
+[​](#getting-started)
+
+Getting started
+
+
+[​](#prerequisites)
+
+Prerequisites
+
+On **macOS**, sandboxing works out of the box using the built-in Seatbelt framework. On **Linux and WSL2**, install the required packages first:
+
+- Ubuntu/Debian
+
+- Fedora
+
+```python
+sudo apt-get install bubblewrap socat
+```
+
+```python
+sudo dnf install bubblewrap socat
+```
+
+
+[​](#enable-sandboxing)
+
+Enable sandboxing
+
+You can enable sandboxing by running the `/sandbox` command:
+
+```python
+/sandbox
+```
+
+This opens a menu where you can choose between sandbox modes. If required dependencies are missing (such as `bubblewrap` or `socat` on Linux), the menu displays installation instructions for your platform. By default, if the sandbox cannot start (missing dependencies or unsupported platform), Claude Code shows a warning and runs commands without sandboxing. To make this a hard failure instead, set [`sandbox.failIfUnavailable`](/docs/en/settings#sandbox-settings) to `true`. This is intended for managed deployments that require sandboxing as a security gate.
+
+
+[​](#sandbox-modes)
+
+Sandbox modes
+
+Claude Code offers two sandbox modes: **Auto-allow mode**: Bash commands will attempt to run inside the sandbox and are automatically allowed without requiring permission. Commands that cannot be sandboxed (such as those needing network access to non-allowed hosts) fall back to the regular permission flow. Explicit deny rules are always respected, and `rm` or `rmdir` commands that target `/`, your home directory, or other critical system paths still trigger a permission prompt. Ask rules apply only to commands that fall back to the regular permission flow. **Regular permissions mode**: All bash commands go through the standard permission flow, even when sandboxed. This provides more control but requires more approvals. In both modes, the sandbox enforces the same filesystem and network restrictions. The difference is only in whether sandboxed commands are auto-approved or require explicit permission.
+
+Auto-allow mode works independently of your permission mode setting. Even if you’re not in “accept edits” mode, sandboxed bash commands will run automatically when auto-allow is enabled. This means bash commands that modify files within the sandbox boundaries will execute without prompting, even when file edit tools would normally require approval.
+
+
+[​](#configure-sandboxing)
+
+Configure sandboxing
+
+Customize sandbox behavior through your `settings.json` file. See [Settings](/docs/en/settings#sandbox-settings) for complete configuration reference.
+
+
+[​](#granting-subprocess-write-access-to-specific-paths)
+
+Granting subprocess write access to specific paths
+
+By default, sandboxed commands can only write to the current working directory. If subprocess commands like `kubectl`, `terraform`, or `npm` need to write outside the project directory, use `sandbox.filesystem.allowWrite` to grant access to specific paths:
+
+```python
+{
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "allowWrite": ["~/.kube", "/tmp/build"]
+    }
+  }
+}
+```
+
+These paths are enforced at the OS level, so all commands running inside the sandbox, including their child processes, respect them. This is the recommended approach when a tool needs write access to a specific location, rather than excluding the tool from the sandbox entirely with `excludedCommands`. When `allowWrite` (or `denyWrite`/`denyRead`/`allowRead`) is defined in multiple [settings scopes](/docs/en/settings#settings-precedence), the arrays are **merged**, meaning paths from every scope are combined, not replaced. For example, if managed settings allow writes to `/opt/company-tools` and a user adds `~/.kube` in their personal settings, both paths are included in the final sandbox configuration. This means users and projects can extend the list without duplicating or overriding paths set by higher-priority scopes. Path prefixes control how paths are resolved:
+
+| Prefix | Meaning | Example |
+|:---|:---|:---|
+| `/` | Absolute path from filesystem root | `/tmp/build` stays `/tmp/build` |
+| `~/` | Relative to home directory | `~/.kube` becomes `$HOME/.kube` |
+| `./` or no prefix | Relative to the project root for project settings, or to `~/.claude` for user settings | `./output` in `.claude/settings.json` resolves to `<project-root>/output` |
+
+The older `//path` prefix for absolute paths still works. If you previously used single-slash `/path` expecting project-relative resolution, switch to `./path`. This syntax differs from [Read and Edit permission rules](/docs/en/permissions#read-and-edit), which use `//path` for absolute and `/path` for project-relative. Sandbox filesystem paths use standard conventions: `/tmp/build` is an absolute path. You can also deny write or read access using `sandbox.filesystem.denyWrite` and `sandbox.filesystem.denyRead`. These are merged with any paths from `Edit(...)` and `Read(...)` permission rules. To re-allow reading specific paths within a denied region, use `sandbox.filesystem.allowRead`, which takes precedence over `denyRead`. When `allowManagedReadPathsOnly` is enabled in managed settings, only managed `allowRead` entries are respected; user, project, and local `allowRead` entries are ignored. `denyRead` still merges from all sources. For example, to block reading from the entire home directory while still allowing reads from the current project, add this to your project’s `.claude/settings.json`:
+
+```python
+{
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "denyRead": ["~/"],
+      "allowRead": ["."]
+    }
+  }
+}
+```
+
+The `.` in `allowRead` resolves to the project root because this configuration lives in project settings. If you placed the same configuration in `~/.claude/settings.json`, `.` would resolve to `~/.claude` instead, and project files would remain blocked by the `denyRead` rule.
+
+Not all commands are compatible with sandboxing out of the box. Some notes that may help you make the most out of the sandbox:
+
+- Many CLI tools require accessing certain hosts. As you use these tools, they will request permission to access certain hosts. Granting permission will allow them to access these hosts now and in the future, enabling them to safely execute inside the sandbox.
+- `watchman` is incompatible with running in the sandbox. If you’re running `jest`, consider using `jest --no-watchman`
+- `docker` is incompatible with running in the sandbox. Consider specifying `docker *` in `excludedCommands` to force it to run outside of the sandbox.
+
+Claude Code includes an intentional escape hatch mechanism that allows commands to run outside the sandbox when necessary. When a command fails due to sandbox restrictions (such as network connectivity issues or incompatible tools), Claude is prompted to analyze the failure and may retry the command with the `dangerouslyDisableSandbox` parameter. Commands that use this parameter go through the normal Claude Code permissions flow requiring user permission to execute. This allows Claude Code to handle edge cases where certain tools or network operations cannot function within sandbox constraints.You can disable this escape hatch by setting `"allowUnsandboxedCommands": false` in your [sandbox settings](/docs/en/settings#sandbox-settings). When disabled, the `dangerouslyDisableSandbox` parameter is completely ignored and all commands must run sandboxed or be explicitly listed in `excludedCommands`.
+
+
+[​](#security-benefits)
+
+Security benefits
+
+
+[​](#protection-against-prompt-injection)
+
+Protection against prompt injection
+
+Even if an attacker successfully manipulates Claude Code’s behavior through prompt injection, the sandbox ensures your system remains secure: **Filesystem protection:**
+
+- Cannot modify critical config files such as `~/.bashrc`
+- Cannot modify system-level files in `/bin/`
+- Cannot read files that are denied in your [Claude permission settings](/docs/en/permissions#manage-permissions)
+
+**Network protection:**
+
+- Cannot exfiltrate data to attacker-controlled servers
+- Cannot download malicious scripts from unauthorized domains
+- Cannot make unexpected API calls to unapproved services
+- Cannot contact any domains not explicitly allowed
+
+**Monitoring and control:**
+
+- All access attempts outside the sandbox are blocked at the OS level
+- You receive immediate notifications when boundaries are tested
+- You can choose to deny, allow once, or permanently update your configuration
+
+
+[​](#reduced-attack-surface)
+
+Reduced attack surface
+
+Sandboxing limits the potential damage from:
+
+- **Malicious dependencies**: NPM packages or other dependencies with harmful code
+- **Compromised scripts**: Build scripts or tools with security vulnerabilities
+- **Social engineering**: Attacks that trick users into running dangerous commands
+- **Prompt injection**: Attacks that trick Claude into running dangerous commands
+
+
+[​](#transparent-operation)
+
+Transparent operation
+
+When Claude Code attempts to access network resources outside the sandbox:
+
+1.  The operation is blocked at the OS level
+2.  You receive an immediate notification
+3.  You can choose to:
+    - Deny the request
+    - Allow it once
+    - Update your sandbox configuration to permanently allow it
+
+
+[​](#security-limitations)
+
+Security Limitations
+
+- Network Sandboxing Limitations: The network filtering system operates by restricting the domains that processes are allowed to connect to. It does not otherwise inspect the traffic passing through the proxy and users are responsible for ensuring they only allow trusted domains in their policy.
+
+Users should be aware of potential risks that come from allowing broad domains like `github.com` that may allow for data exfiltration. Also, in some cases it may be possible to bypass the network filtering through [domain fronting](https://en.wikipedia.org/wiki/Domain_fronting).
+
+- Privilege Escalation via Unix Sockets: The `allowUnixSockets` configuration can inadvertently grant access to powerful system services that could lead to sandbox bypasses. For example, if it is used to allow access to `/var/run/docker.sock` this would effectively grant access to the host system through exploiting the docker socket. Users are encouraged to carefully consider any unix sockets that they allow through the sandbox.
+- Filesystem Permission Escalation: Overly broad filesystem write permissions can enable privilege escalation attacks. Allowing writes to directories containing executables in `$PATH`, system configuration directories, or user shell configuration files (`.bashrc`, `.zshrc`) can lead to code execution in different security contexts when other users or system processes access these files.
+- Linux Sandbox Strength: The Linux implementation provides strong filesystem and network isolation but includes an `enableWeakerNestedSandbox` mode that enables it to work inside of Docker environments without privileged namespaces. This option considerably weakens security and should only be used in cases where additional isolation is otherwise enforced.
+
+
+[​](#how-sandboxing-relates-to-permissions)
+
+How sandboxing relates to permissions
+
+Sandboxing and [permissions](/docs/en/permissions) are complementary security layers that work together:
+
+- **Permissions** control which tools Claude Code can use and are evaluated before any tool runs. They apply to all tools: Bash, Read, Edit, WebFetch, MCP, and others.
+- **Sandboxing** provides OS-level enforcement that restricts what Bash commands can access at the filesystem and network level. It applies only to Bash commands and their child processes.
+
+Filesystem and network restrictions are configured through both sandbox settings and permission rules:
+
+- Use `sandbox.filesystem.allowWrite` to grant subprocess write access to paths outside the working directory
+- Use `sandbox.filesystem.denyWrite` and `sandbox.filesystem.denyRead` to block subprocess access to specific paths
+- Use `sandbox.filesystem.allowRead` to re-allow reading specific paths within a `denyRead` region
+- Use `Read` and `Edit` deny rules to block access to specific files or directories
+- Use `WebFetch` allow/deny rules to control domain access
+- Use sandbox `allowedDomains` to control which domains Bash commands can reach
+- Use sandbox `deniedDomains` to block specific domains even when a broader `allowedDomains` wildcard would otherwise permit them
+
+Paths from both `sandbox.filesystem` settings and permission rules are merged together into the final sandbox configuration. This [repository](https://github.com/anthropics/claude-code/tree/main/examples/settings) includes starter settings configurations for common deployment scenarios, including sandbox-specific examples. Use these as starting points and adjust them to fit your needs.
+
+
+[​](#advanced-usage)
+
+Advanced usage
+
+
+[​](#custom-proxy-configuration)
+
+Custom proxy configuration
+
+For organizations requiring advanced network security, you can implement a custom proxy to:
+
+- Decrypt and inspect HTTPS traffic
+- Apply custom filtering rules
+- Log all network requests
+- Integrate with existing security infrastructure
+
+```python
+{
+  "sandbox": {
+    "network": {
+      "httpProxyPort": 8080,
+      "socksProxyPort": 8081
+    }
+  }
+}
+```
+
+
+[​](#integration-with-existing-security-tools)
+
+Integration with existing security tools
+
+The sandboxed bash tool works alongside:
+
+- **Permission rules**: Combine with [permission settings](/docs/en/permissions) for defense-in-depth
+- **Development containers**: Use with [devcontainers](/docs/en/devcontainer) for additional isolation
+- **Enterprise policies**: Enforce sandbox configurations through [managed settings](/docs/en/settings#settings-precedence)
+
+
+[​](#best-practices)
+
+Best practices
+
+1.  **Start restrictive**: Begin with minimal permissions and expand as needed
+2.  **Monitor logs**: Review sandbox violation attempts to understand Claude Code’s needs
+3.  **Use environment-specific configs**: Different sandbox rules for development vs. production contexts
+4.  **Combine with permissions**: Use sandboxing alongside IAM policies for comprehensive security
+5.  **Test configurations**: Verify your sandbox settings don’t block legitimate workflows
+
+
+[​](#open-source)
+
+Open source
+
+The sandbox runtime is available as an open source npm package for use in your own agent projects. This enables the broader AI agent community to build safer, more secure autonomous systems. This can also be used to sandbox other programs you may wish to run. For example, to sandbox an MCP server you could run:
+
+```python
+npx @anthropic-ai/sandbox-runtime <command-to-sandbox>
+```
+
+For implementation details and source code, visit the [GitHub repository](https://github.com/anthropic-experimental/sandbox-runtime).
+
+
+[​](#limitations)
+
+Limitations
+
+- **Performance overhead**: Minimal, but some filesystem operations may be slightly slower
+- **Compatibility**: Some tools that require specific system access patterns may need configuration adjustments, or may even need to be run outside of the sandbox
+- **Platform support**: Supports macOS, Linux, and WSL2. WSL1 is not supported. Native Windows support is planned.
+
+
+[​](#what-sandboxing-does-not-cover)
+
+What sandboxing does not cover
+
+The sandbox isolates Bash subprocesses. Other tools operate under different boundaries:
+
+- **Built-in file tools**: Read, Edit, and Write use the permission system directly rather than running through the sandbox. See [permissions](/docs/en/permissions).
+- **Computer use**: when Claude opens apps and controls your screen, it runs on your actual desktop rather than in an isolated environment. Per-app permission prompts gate each application. See [computer use in the CLI](/docs/en/computer-use) or [computer use in Desktop](/docs/en/desktop#let-claude-use-your-computer).
+
+
+[​](#see-also)
+
+See also
+
+- [Security](/docs/en/security) - Comprehensive security features and best practices
+- [Permissions](/docs/en/permissions) - Permission configuration and access control
+- [Settings](/docs/en/settings) - Complete configuration reference
+- [CLI reference](/docs/en/cli-reference) - Command-line options
+
+
+---
+## security-claude-code-docs-7538e94c51.md
+
+# Security
+
+
+Learn about Claude Code’s security safeguards and best practices for safe usage.
+
+
+[​](#how-we-approach-security)
+
+How we approach security
+
+
+[​](#security-foundation)
+
+Security foundation
+
+Your code’s security is paramount. Claude Code is built with security at its core, developed according to Anthropic’s comprehensive security program. Learn more and access resources (SOC 2 Type 2 report, ISO 27001 certificate, etc.) at [Anthropic Trust Center](https://trust.anthropic.com).
+
+
+[​](#permission-based-architecture)
+
+Permission-based architecture
+
+Claude Code uses strict read-only permissions by default. When additional actions are needed (editing files, running tests, executing commands), Claude Code requests explicit permission. Users control whether to approve actions once or allow them automatically. We designed Claude Code to be transparent and secure. For example, we require approval for bash commands before executing them, giving you direct control. This approach enables users and organizations to configure permissions directly. For detailed permission configuration, see [Permissions](/docs/en/permissions).
+
+
+[​](#built-in-protections)
+
+Built-in protections
+
+To mitigate risks in agentic systems:
+
+- **Sandboxed bash tool**: [Sandbox](/docs/en/sandboxing) bash commands with filesystem and network isolation, reducing permission prompts while maintaining security. Enable with `/sandbox` to define boundaries where Claude Code can work autonomously
+- **Write access restriction**: Claude Code can only write to the folder where it was started and its subfolders—it cannot modify files in parent directories without explicit permission. While Claude Code can read files outside the working directory (useful for accessing system libraries and dependencies), write operations are strictly confined to the project scope, creating a clear security boundary
+- **Prompt fatigue mitigation**: Support for allowlisting frequently used safe commands per-user, per-codebase, or per-organization
+- **Accept Edits mode**: Batch accept multiple edits while maintaining permission prompts for commands with side effects
+
+
+[​](#user-responsibility)
+
+User responsibility
+
+Claude Code only has the permissions you grant it. You’re responsible for reviewing proposed code and commands for safety before approval.
+
+
+[​](#protect-against-prompt-injection)
+
+Protect against prompt injection
+
+Prompt injection is a technique where an attacker attempts to override or manipulate an AI assistant’s instructions by inserting malicious text. Claude Code includes several safeguards against these attacks:
+
+
+[​](#core-protections)
+
+Core protections
+
+- **Permission system**: Sensitive operations require explicit approval
+- **Context-aware analysis**: Detects potentially harmful instructions by analyzing the full request
+- **Input sanitization**: Prevents command injection by processing user inputs
+- **Command blocklist**: Blocks risky commands that fetch arbitrary content from the web like `curl` and `wget` by default. When explicitly allowed, be aware of [permission pattern limitations](/docs/en/permissions#tool-specific-permission-rules)
+
+
+[​](#privacy-safeguards)
+
+Privacy safeguards
+
+We have implemented several safeguards to protect your data, including:
+
+- Limited retention periods for sensitive information (see the [Privacy Center](https://privacy.anthropic.com/en/articles/10023548-how-long-do-you-store-my-data) to learn more)
+- Restricted access to user session data
+- User control over data training preferences. Consumer users can change their [privacy settings](https://claude.ai/settings/privacy) at any time.
+
+For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, and Max users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
+
+
+[​](#additional-safeguards)
+
+Additional safeguards
+
+- **Network request approval**: Tools that make network requests require user approval by default
+- **Isolated context windows**: Web fetch uses a separate context window to avoid injecting potentially malicious prompts
+- **Trust verification**: First-time codebase runs and new MCP servers require trust verification
+  - Note: Trust verification is disabled when running non-interactively with the `-p` flag
+- **Command injection detection**: Suspicious bash commands require manual approval even if previously allowlisted
+- **Fail-closed matching**: Unmatched commands default to requiring manual approval
+- **Natural language descriptions**: Complex bash commands include explanations for user understanding
+- **Secure credential storage**: API keys and tokens are encrypted. See [Credential Management](/docs/en/authentication#credential-management)
+
+**Windows WebDAV security risk**: When running Claude Code on Windows, we recommend against enabling WebDAV or allowing Claude Code to access paths such as `\\*` that may contain WebDAV subdirectories. [WebDAV has been deprecated by Microsoft](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features#:~:text=The%20Webclient%20(WebDAV)%20service%20is%20deprecated) due to security risks. Enabling WebDAV may allow Claude Code to trigger network requests to remote hosts, bypassing the permission system.
+
+**Best practices for working with untrusted content**:
+
+1.  Review suggested commands before approval
+2.  Avoid piping untrusted content directly to Claude
+3.  Verify proposed changes to critical files
+4.  Use virtual machines (VMs) to run scripts and make tool calls, especially when interacting with external web services
+5.  Report suspicious behavior with `/feedback`
+
+While these protections significantly reduce risk, no system is completely immune to all attacks. Always maintain good security practices when working with any AI tool.
+
+
+[​](#mcp-security)
+
+MCP security
+
+Claude Code allows users to configure Model Context Protocol (MCP) servers. The list of allowed MCP servers is configured in your source code, as part of Claude Code settings engineers check into source control. We encourage either writing your own MCP servers or using MCP servers from providers that you trust. You are able to configure Claude Code permissions for MCP servers. Anthropic does not manage or audit any MCP servers.
+
+
+[​](#ide-security)
+
+IDE security
+
+See [VS Code security and privacy](/docs/en/vs-code#security-and-privacy) for more information on running Claude Code in an IDE.
+
+
+[​](#cloud-execution-security)
+
+Cloud execution security
+
+When using [Claude Code on the web](/docs/en/claude-code-on-the-web), additional security controls are in place:
+
+- **Isolated virtual machines**: Each cloud session runs in an isolated, Anthropic-managed VM
+- **Network access controls**: Network access is limited by default and can be configured to be disabled or allow only specific domains
+- **Credential protection**: Authentication is handled through a secure proxy that uses a scoped credential inside the sandbox, which is then translated to your actual GitHub authentication token
+- **Branch restrictions**: Git push operations are restricted to the current working branch
+- **Audit logging**: All operations in cloud environments are logged for compliance and audit purposes
+- **Automatic cleanup**: Cloud environments are automatically terminated after session completion
+
+For more details on cloud execution, see [Claude Code on the web](/docs/en/claude-code-on-the-web). [Remote Control](/docs/en/remote-control) sessions work differently: the web interface connects to a Claude Code process running on your local machine. All code execution and file access stays local, and the same data that flows during any local Claude Code session travels through the Anthropic API over TLS. No cloud VMs or sandboxing are involved. The connection uses multiple short-lived, narrowly scoped credentials, each limited to a specific purpose and expiring independently, to limit the blast radius of any single compromised credential.
+
+
+[​](#security-best-practices)
+
+Security best practices
+
+
+[​](#working-with-sensitive-code)
+
+Working with sensitive code
+
+- Review all suggested changes before approval
+- Use project-specific permission settings for sensitive repositories
+- Consider using [devcontainers](/docs/en/devcontainer) for additional isolation
+- Regularly audit your permission settings with `/permissions`
+
+
+[​](#team-security)
+
+Team security
+
+- Use [managed settings](/docs/en/settings#settings-files) to enforce organizational standards
+- Share approved permission configurations through version control
+- Train team members on security best practices
+- Monitor Claude Code usage through [OpenTelemetry metrics](/docs/en/monitoring-usage)
+- Audit or block settings changes during sessions with [`ConfigChange` hooks](/docs/en/hooks#configchange)
+
+
+[​](#reporting-security-issues)
+
+Reporting security issues
+
+If you discover a security vulnerability in Claude Code:
+
+1.  Do not disclose it publicly
+2.  Report it through our [HackerOne program](https://hackerone.com/anthropic-vdp/reports/new?type=team&report_type=vulnerability)
+3.  Include detailed reproduction steps
+4.  Allow time for us to address the issue before public disclosure
+
+
+[​](#related-resources)
+
+Related resources
+
+- [Sandboxing](/docs/en/sandboxing) - Filesystem and network isolation for bash commands
+- [Permissions](/docs/en/permissions) - Configure permissions and access controls
+- [Monitoring usage](/docs/en/monitoring-usage) - Track and audit Claude Code activity
+- [Development containers](/docs/en/devcontainer) - Secure, isolated environments
+- [Anthropic Trust Center](https://trust.anthropic.com) - Security certifications and compliance
+
+
+---
 ## terms-of-service-updates.md
 
 # Terms of Service Updates
@@ -8661,3 +9421,82 @@ Some Claude users may encounter refusals or errors with the message ‘Output bl
 We’re mindful that some users may encounter these refusals or errors when they aren’t intending for Claude to replicate or regurgitate anything. We know this can be frustrating, and welcome your feedback and insights as we iterate on our tooling to improve our users’ experiences with our services.
 
 Conversely, if you are receiving these messages because you *are* trying to elicit copyrighted content, we may warn you or, in cases of repeat violations, suspend or terminate your account.
+
+
+---
+## zero-data-retention-claude-code-docs-6ec9ee63f1.md
+
+# Zero data retention
+
+
+Learn about Zero Data Retention (ZDR) for Claude Code on Claude for Enterprise, including scope, disabled features, and how to request enablement.
+
+
+Zero Data Retention (ZDR) is available for Claude Code when used through Claude for Enterprise. When ZDR is enabled, prompts and model responses generated during Claude Code sessions are processed in real time and not stored by Anthropic after the response is returned, except where needed to comply with law or combat misuse. ZDR on Claude for Enterprise gives enterprise customers the ability to use Claude Code with zero data retention and access administrative capabilities:
+
+- Cost controls per user
+- [Analytics](/docs/en/analytics) dashboard
+- [Server-managed settings](/docs/en/server-managed-settings)
+- Audit logs
+
+ZDR for Claude Code on Claude for Enterprise applies only to Anthropic’s direct platform. For Claude deployments on AWS Bedrock, Google Vertex AI, or Microsoft Foundry, refer to those platforms’ data retention policies.
+
+
+[​](#zdr-scope)
+
+ZDR scope
+
+ZDR covers Claude Code inference on Claude for Enterprise.
+
+ZDR is enabled on a per-organization basis. Each new organization requires ZDR to be enabled separately by your Anthropic account team. ZDR does not automatically apply to new organizations created under the same account. Contact your account team to enable ZDR for any new organizations.
+
+
+[​](#what-zdr-covers)
+
+What ZDR covers
+
+ZDR covers model inference calls made through Claude Code on Claude for Enterprise. When you use Claude Code in your terminal, the prompts you send and the responses Claude generates are not retained by Anthropic. This applies regardless of which Claude model is used.
+
+
+[​](#what-zdr-does-not-cover)
+
+What ZDR does not cover
+
+ZDR does not extend to the following, even for organizations with ZDR enabled. These features follow [standard data retention policies](/docs/en/data-usage#data-retention):
+
+| Feature | Details |
+|----|----|
+| Chat on claude.ai | Chat conversations through the Claude for Enterprise web interface are not covered by ZDR. |
+| Cowork | Cowork sessions are not covered by ZDR. |
+| Claude Code Analytics | Does not store prompts or model responses, but collects productivity metadata such as account emails and usage statistics. Contribution metrics are not available for ZDR organizations; the [analytics dashboard](/docs/en/analytics) shows usage metrics only. |
+| User and seat management | Administrative data such as account emails and seat assignments is retained under standard policies. |
+| Third-party integrations | Data processed by third-party tools, MCP servers, or other external integrations is not covered by ZDR. Review those services’ data handling practices independently. |
+
+
+[​](#features-disabled-under-zdr)
+
+Features disabled under ZDR
+
+When ZDR is enabled for a Claude Code organization on Claude for Enterprise, certain features that require storing prompts or completions are automatically disabled at the backend level:
+
+| Feature | Reason |
+|----|----|
+| [Claude Code on the Web](/docs/en/claude-code-on-the-web) | Requires server-side storage of conversation history. |
+| [Remote sessions](/docs/en/desktop#remote-sessions) from the Desktop app | Requires persistent session data that includes prompts and completions. |
+| Feedback submission (`/feedback`) | Submitting feedback sends conversation data to Anthropic. |
+
+These features are blocked in the backend regardless of client-side display. If you see a disabled feature in the Claude Code terminal during startup, attempting to use it returns an error indicating the organization’s policies do not allow that action. Future features may also be disabled if they require storing prompts or completions.
+
+
+[​](#data-retention-for-policy-violations)
+
+Data retention for policy violations
+
+Even with ZDR enabled, Anthropic may retain data where required by law or to address Usage Policy violations. If a session is flagged for a policy violation, Anthropic may retain the associated inputs and outputs for up to 2 years, consistent with Anthropic’s standard ZDR policy.
+
+
+[​](#request-zdr)
+
+Request ZDR
+
+To request ZDR for Claude Code on Claude for Enterprise, [contact sales](https://www.anthropic.com/contact-sales?utm_source=claude_code&utm_medium=docs&utm_content=zero_data_retention_request) or your Anthropic account team. Your account team will submit the request internally, and Anthropic will review and enable ZDR on your organization after confirming eligibility. All enablement actions are audit-logged. If you are currently using ZDR for Claude Code via pay-as-you-go API keys, you can transition to Claude for Enterprise to gain access to administrative features while maintaining ZDR for Claude Code. Contact your account team to coordinate the migration.

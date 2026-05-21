@@ -64,7 +64,7 @@ export PATH="$HOME/.nvm/versions/node/$(node -v)/bin:$PATH"
 
 ### WSL2 sandbox setup
 
-[Sandboxing](/en/sandboxing) is supported on WSL2 but requires installing additional packages. If you see an error like "Sandbox requires socat and bubblewrap" when running `/sandbox`, install the dependencies:
+[Sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) is supported on WSL2 but requires installing additional packages. If you see an error like "Sandbox requires socat and bubblewrap" when running `/sandbox`, install the dependencies:
 
 <Tabs>
   <Tab title="Ubuntu/Debian">
@@ -215,7 +215,7 @@ On Windows, `~` refers to your user home directory, such as `C:\Users\YourName`.
 * Linux/WSL: `/etc/claude-code/`
 * Windows: `C:\Program Files\ClaudeCode\`
 
-For details on configuring these files, see [Settings](/en/settings) and [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md).
+For details on configuring these files, see [Settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) and [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md).
 
 ### Resetting configuration
 
@@ -402,14 +402,14 @@ If generated markdown has excessive blank lines or inconsistent spacing:
 
 2. **Use formatting tools**: Set up hooks to run markdown formatters like `prettier` or custom formatting scripts on generated markdown files.
 
-3. **Specify formatting preferences**: Include formatting requirements in your prompts or project [memory](/en/memory) files.
+3. **Specify formatting preferences**: Include formatting requirements in your prompts or project [memory](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) files.
 
 ### Best practices for markdown generation
 
 To minimize formatting issues:
 
 * **Be explicit in requests**: Ask for "properly formatted markdown with language-tagged code blocks"
-* **Use project conventions**: Document your preferred markdown style in [`CLAUDE.md`](/en/memory)
+* **Use project conventions**: Document your preferred markdown style in [`CLAUDE.md`](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md)
 * **Set up validation hooks**: Use post-processing hooks to automatically verify and fix common formatting issues
 
 ## Getting more help

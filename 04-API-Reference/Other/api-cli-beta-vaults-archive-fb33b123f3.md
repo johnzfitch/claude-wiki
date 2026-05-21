@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Vaults Archive Fb33B123F3"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/vaults/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/vaults/archive.md"
+tags: ["api", "cli"]
 ---
+
 ## Archive
 
 `$ ant beta:vaults archive`

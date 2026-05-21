@@ -1,9 +1,11 @@
 ---
+title: "Increase output consistency"
+source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency.md"
 category: "Test-Evaluate"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency.md"
-title: "Increase output consistency"
+tags: ["api", "prompting"]
 ---
+
 # Increase output consistency
 
 ---

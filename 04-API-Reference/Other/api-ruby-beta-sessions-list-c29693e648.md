@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Sessions List C29693E648"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `beta.sessions.list(**kwargs) -> PageCursor<BetaManagedAgentsSession>`

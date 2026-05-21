@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Vaults Credentials Delete C3Cfcc1A34"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/credentials/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/credentials/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `BetaManagedAgentsDeletedCredential Beta.Vaults.Credentials.Delete(CredentialDeleteParamsparameters, CancellationTokencancellationToken = default)`

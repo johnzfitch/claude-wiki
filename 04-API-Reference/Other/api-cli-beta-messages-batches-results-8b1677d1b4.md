@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Messages Batches Results 8B1677D1B4"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/messages/batches/results.md"
+tags: ["api", "cli"]
 ---
+
 ## Results
 
 `$ ant beta:messages:batches results`

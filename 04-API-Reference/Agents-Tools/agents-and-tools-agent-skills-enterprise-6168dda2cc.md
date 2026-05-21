@@ -1,9 +1,11 @@
 ---
+title: "Skills for enterprise"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise.md"
-title: "Skills for enterprise"
+tags: ["api", "enterprise", "security", "skills"]
 ---
+
 # Skills for enterprise
 
 Governance, security review, evaluation, and organizational guidance for deploying Agent Skills at enterprise scale.

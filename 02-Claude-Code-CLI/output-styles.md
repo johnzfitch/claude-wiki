@@ -55,7 +55,7 @@ You can either:
 * Run `/output-style [style]`, such as `/output-style explanatory`, to directly
   switch to a style
 
-These changes apply to the [local project level](/en/settings) and are saved in
+These changes apply to the [local project level](claude-code-settings-claude-code-docs-d4420b4b52.md) and are saved in
 `.claude/settings.local.json`. You can also directly edit the `outputStyle`
 field in a settings file at a different level.
 
@@ -105,7 +105,7 @@ prompt specific to software engineering. Neither CLAUDE.md nor
 adds the contents as a user message *following* Claude Code's default system
 prompt. `--append-system-prompt` appends the content to the system prompt.
 
-### Output Styles vs. [Agents](/en/sub-agents)
+### Output Styles vs. [Agents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md)
 
 Output styles directly affect the main agent loop and only affect the system
 prompt. Agents are invoked to handle specific tasks and can include additional

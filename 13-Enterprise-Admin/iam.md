@@ -58,7 +58,7 @@ For organizations that prefer API-based billing, you can set up access through t
 **To set up Claude Code access for your team via Bedrock, Vertex, or Azure:**
 
 1. Follow the [Bedrock docs](../02-Claude-Code-CLI/claude-code-on-amazon-bedrock-claude-code-docs.md), [Vertex docs](../02-Claude-Code-CLI/claude-code-on-google-vertex-ai-claude-code-docs.md), or [Microsoft Foundry docs](../02-Claude-Code-CLI/claude-code-on-microsoft-foundry-claude-code-docs.md)
-2. Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](/en/settings).
+2. Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md).
 3. Users can [install Claude Code](/en/setup#installation)
 
 ## Access control and permissions
@@ -198,7 +198,7 @@ Read & Edit rules both follow the [gitignore](https://git-scm.com/docs/gitignore
 
 **Task (Subagents)**
 
-Use `Task(AgentName)` rules to control which [subagents](/en/sub-agents) Claude can use:
+Use `Task(AgentName)` rules to control which [subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) Claude can use:
 
 * `Task(Explore)` Matches the Explore subagent
 * `Task(Plan)` Matches the Plan subagent
@@ -216,7 +216,7 @@ Add these rules to the `deny` array in your [settings](/en/settings#permission-s
 
 ### Additional permission control with hooks
 
-[Claude Code hooks](/en/hooks-guide) provide a way to register custom shell commands to perform permission evaluation at runtime. When Claude Code makes a tool call, PreToolUse hooks run before the permission system runs, and the hook output can determine whether to approve or deny the tool call in place of the permission system.
+[Claude Code hooks](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md) provide a way to register custom shell commands to perform permission evaluation at runtime. When Claude Code makes a tool call, PreToolUse hooks run before the permission system runs, and the hook output can determine whether to approve or deny the tool call in place of the permission system.
 
 ### Managed settings
 

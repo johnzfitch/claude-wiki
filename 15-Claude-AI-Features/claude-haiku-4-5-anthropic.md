@@ -40,7 +40,7 @@ For developers, Haiku 4.5 is available on the Claude Platform natively, and in A
 
 Claude Haiku 4.5 is also available in Claude Code.
 
-Pricing for Haiku 4.5 on the Claude Platform starts at \$1 per million input tokens and \$5 per million output tokens, with up to 90% cost savings with [prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md) and 50% cost savings with [batch processing](https://platform.claude.com/docs/en/build-with-claude/batch-processing#pricing). To get started, simply use claude-haiku-4-5 via the [Claude API](../20-Models/about-claude-models-overview.md).
+Pricing for Haiku 4.5 on the Claude Platform starts at \$1 per million input tokens and \$5 per million output tokens, with up to 90% cost savings with [prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md) and 50% cost savings with [batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing-58f98b4064.md#pricing). To get started, simply use claude-haiku-4-5 via the [Claude API](../20-Models/about-claude-models-overview.md).
 
 ## Use cases
 

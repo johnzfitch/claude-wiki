@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Environments Archive 8D54Be3849"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/environments/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/environments/archive.md"
+tags: ["api", "python"]
 ---
+
 ## Archive
 
 `beta.environments.archive(strenvironment_id, EnvironmentArchiveParams**kwargs)  -> BetaEnvironment`

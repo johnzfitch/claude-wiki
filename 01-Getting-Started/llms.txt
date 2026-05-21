@@ -4,6 +4,624 @@ All documentation for Getting Started.
 
 
 ---
+## advanced-setup-claude-code-docs-0526bc1300.md
+
+# Advanced setup
+
+
+System requirements, platform-specific installation, version management, and uninstallation for Claude Code.
+
+
+This page covers system requirements, platform-specific installation details, updates, and uninstallation. For a guided walkthrough of your first session, see the [quickstart](/docs/en/quickstart). If you’ve never used a terminal before, see the [terminal guide](/docs/en/terminal-guide).
+
+
+[​](#system-requirements)
+
+System requirements
+
+Claude Code runs on the following platforms and configurations:
+
+- **Operating system**:
+  - macOS 13.0+
+  - Windows 10 1809+ or Windows Server 2019+
+  - Ubuntu 20.04+
+  - Debian 10+
+  - Alpine Linux 3.19+
+- **Hardware**: 4 GB+ RAM, x64 or ARM64 processor
+- **Network**: internet connection required. See [network configuration](/docs/en/network-config#network-access-requirements).
+- **Shell**: Bash, Zsh, PowerShell, or CMD. Native Windows setups require [Git for Windows](https://git-scm.com/downloads/win). WSL setups do not.
+- **Location**: [Anthropic supported countries](https://www.anthropic.com/supported-countries)
+
+
+[​](#additional-dependencies)
+
+Additional dependencies
+
+- **ripgrep**: usually included with Claude Code. If search fails, see [search troubleshooting](/docs/en/troubleshooting#search-and-discovery-issues).
+
+
+[​](#install-claude-code)
+
+Install Claude Code
+
+Prefer a graphical interface? The [Desktop app](/docs/en/desktop-quickstart) lets you use Claude Code without the terminal. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code&utm_medium=docs) or [Windows](https://claude.com/download?utm_source=claude_code&utm_medium=docs).New to the terminal? See the [terminal guide](/docs/en/terminal-guide) for step-by-step instructions.
+
+To install Claude Code, use one of the following methods:
+
+- Native Install (Recommended)
+
+- Homebrew
+
+- WinGet
+
+**macOS, Linux, WSL:**
+
+```python
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows PowerShell:**
+
+```python
+irm https://claude.ai/install.ps1 | iex
+```
+
+**Windows CMD:**
+
+```python
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.**Native Windows setups require [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don’t have it. WSL setups do not need it.
+
+Native installations automatically update in the background to keep you on the latest version.
+
+```python
+brew install --cask claude-code
+```
+
+Homebrew offers two casks. `claude-code` tracks the stable release channel, which is typically about a week behind and skips releases with major regressions. `claude-code@latest` tracks the latest channel and receives new versions as soon as they ship.
+
+Homebrew installations do not auto-update. Run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed, to get the latest features and security fixes.
+
+```python
+winget install Anthropic.ClaudeCode
+```
+
+WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
+
+You can also install with [apt, dnf, or apk](/docs/en/setup#install-with-linux-package-managers) on Debian, Fedora, RHEL, and Alpine. After installation completes, open a terminal in the project you want to work in and start Claude Code:
+
+```python
+claude
+```
+
+If you encounter any issues during installation, see the [troubleshooting guide](/docs/en/troubleshooting).
+
+
+[​](#set-up-on-windows)
+
+Set up on Windows
+
+You can run Claude Code natively on Windows or inside WSL. Pick based on where your projects are located and which features you need:
+
+| Option | Requires | [Sandboxing](/docs/en/sandboxing) | When to use |
+|----|----|----|----|
+| Native Windows | [Git for Windows](https://git-scm.com/downloads/win) | Not supported | Windows-native projects and tools |
+| WSL 2 | WSL 2 enabled | Supported | Linux toolchains or sandboxed command execution |
+| WSL 1 | WSL 1 enabled | Not supported | If WSL 2 is unavailable |
+
+**Option 1: Native Windows with Git Bash** Install [Git for Windows](https://git-scm.com/downloads/win), then run the install command from PowerShell or CMD. You do not need to run as Administrator. Whether you install from PowerShell or CMD only affects which install command you run. Your prompt shows `PS C:\Users\YourName>` in PowerShell and `C:\Users\YourName>` without the `PS` in CMD. If you’re new to the terminal, the [terminal guide](/docs/en/terminal-guide#windows) walks through each step. After installation, launch `claude` from PowerShell, CMD, or Git Bash. Claude Code uses Git Bash internally to execute commands regardless of where you launched it. If Claude Code can’t find your Git Bash installation, set the path in your [settings.json file](/docs/en/settings):
+
+```python
+{
+  "env": {
+    "CLAUDE_CODE_GIT_BASH_PATH": "C:\\Program Files\\Git\\bin\\bash.exe"
+  }
+}
+```
+
+Claude Code can also run PowerShell natively on Windows. The PowerShell tool is rolling out progressively; set `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` to opt in or `0` to opt out. See [PowerShell tool](/docs/en/tools-reference#powershell-tool) for setup and limitations. **Option 2: WSL** Open your WSL distribution and run the Linux installer from the [install instructions](#install-claude-code) above. You install and launch `claude` inside the WSL terminal, not from PowerShell or CMD.
+
+
+[​](#alpine-linux-and-musl-based-distributions)
+
+Alpine Linux and musl-based distributions
+
+The native installer on Alpine and other musl/uClibc-based distributions requires `libgcc`, `libstdc++`, and `ripgrep`. Install these using your distribution’s package manager, then set `USE_BUILTIN_RIPGREP=0`. This example installs the required packages on Alpine:
+
+```python
+apk add libgcc libstdc++ ripgrep
+```
+
+Then set `USE_BUILTIN_RIPGREP` to `0` in your [`settings.json`](/docs/en/settings#available-settings) file:
+
+```python
+{
+  "env": {
+    "USE_BUILTIN_RIPGREP": "0"
+  }
+}
+```
+
+
+[​](#verify-your-installation)
+
+Verify your installation
+
+After installing, confirm Claude Code is working:
+
+```python
+claude --version
+```
+
+For a more detailed check of your installation and configuration, run [`claude doctor`](/docs/en/troubleshooting#get-more-help):
+
+```python
+claude doctor
+```
+
+
+[​](#authenticate)
+
+Authenticate
+
+Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free Claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](/docs/en/amazon-bedrock), [Google Vertex AI](/docs/en/google-vertex-ai), or [Microsoft Foundry](/docs/en/microsoft-foundry). After installing, log in by running `claude` and following the browser prompts. See [Authentication](/docs/en/authentication) for all account types and team setup options.
+
+
+[​](#update-claude-code)
+
+Update Claude Code
+
+Native installations automatically update in the background. You can [configure the release channel](#configure-release-channel) to control whether you receive updates immediately or on a delayed stable schedule, or [disable auto-updates](#disable-auto-updates) entirely. Homebrew, WinGet, and [Linux package manager](#install-with-linux-package-managers) installations require manual updates.
+
+
+[​](#auto-updates)
+
+Auto-updates
+
+Claude Code checks for updates on startup and periodically while running. Updates download and install in the background, then take effect the next time you start Claude Code.
+
+Homebrew, WinGet, apt, dnf, and apk installations do not auto-update. For Homebrew, run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed. For WinGet, run `winget upgrade Anthropic.ClaudeCode`. For Linux package managers, see the upgrade commands in [Install with Linux package managers](#install-with-linux-package-managers).**Known issue:** Claude Code may notify you of updates before the new version is available in these package managers. If an upgrade fails, wait and try again later.Homebrew keeps old versions on disk after upgrades. Run `brew cleanup` periodically to reclaim disk space.
+
+
+[​](#configure-release-channel)
+
+Configure release channel
+
+Control which release channel Claude Code follows for auto-updates and `claude update` with the `autoUpdatesChannel` setting:
+
+- `"latest"`, the default: receive new features as soon as they’re released
+- `"stable"`: use a version that is typically about one week old, skipping releases with major regressions
+
+Configure this via `/config` → **Auto-update channel**, or add it to your [settings.json file](/docs/en/settings):
+
+```python
+{
+  "autoUpdatesChannel": "stable"
+}
+```
+
+For enterprise deployments, you can enforce a consistent release channel across your organization using [managed settings](/docs/en/permissions#managed-settings). Homebrew installations choose a channel by cask name instead of this setting: `claude-code` tracks stable and `claude-code@latest` tracks latest.
+
+
+[​](#pin-a-minimum-version)
+
+Pin a minimum version
+
+The `minimumVersion` setting establishes a floor. Background auto-updates and `claude update` refuse to install any version below this value, so moving to the `"stable"` channel does not downgrade you if you are already on a newer `"latest"` build. Switching from `"latest"` to `"stable"` via `/config` prompts you to either stay on the current version or allow the downgrade. Choosing to stay sets `minimumVersion` to that version. Switching back to `"latest"` clears it. Add it to your [settings.json file](/docs/en/settings) to pin a floor explicitly:
+
+```python
+{
+  "autoUpdatesChannel": "stable",
+  "minimumVersion": "2.1.100"
+}
+```
+
+In [managed settings](/docs/en/permissions#managed-settings), this enforces an organization-wide minimum that user and project settings cannot override.
+
+
+[​](#disable-auto-updates)
+
+Disable auto-updates
+
+Set `DISABLE_AUTOUPDATER` to `"1"` in the `env` key of your [`settings.json`](/docs/en/settings#available-settings) file:
+
+```python
+{
+  "env": {
+    "DISABLE_AUTOUPDATER": "1"
+  }
+}
+```
+
+`DISABLE_AUTOUPDATER` only stops the background check; `claude update` and `claude install` still work. To block all update paths, including manual updates, set [`DISABLE_UPDATES`](/docs/en/env-vars) instead. Use this when you distribute Claude Code through your own channels and need users to stay on the version you provide.
+
+
+[​](#update-manually)
+
+Update manually
+
+To apply an update immediately without waiting for the next background check, run:
+
+```python
+claude update
+```
+
+
+[​](#advanced-installation-options)
+
+Advanced installation options
+
+These options are for version pinning, Linux package managers, npm, and verifying binary integrity.
+
+
+[​](#install-a-specific-version)
+
+Install a specific version
+
+The native installer accepts either a specific version number or a release channel (`latest` or `stable`). The channel you choose at install time becomes your default for auto-updates. See [configure release channel](#configure-release-channel) for more information. To install the latest version (default):
+
+- macOS, Linux, WSL
+
+- Windows PowerShell
+
+- Windows CMD
+
+```python
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+```python
+irm https://claude.ai/install.ps1 | iex
+```
+
+```python
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+To install the stable version:
+
+- macOS, Linux, WSL
+
+- Windows PowerShell
+
+- Windows CMD
+
+```python
+curl -fsSL https://claude.ai/install.sh | bash -s stable
+```
+
+```python
+& ([scriptblock]::Create((irm https://claude.ai/install.ps1))) stable
+```
+
+```python
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd stable && del install.cmd
+```
+
+To install a specific version number:
+
+- macOS, Linux, WSL
+
+- Windows PowerShell
+
+- Windows CMD
+
+```python
+curl -fsSL https://claude.ai/install.sh | bash -s 2.1.89
+```
+
+```python
+& ([scriptblock]::Create((irm https://claude.ai/install.ps1))) 2.1.89
+```
+
+```python
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd 2.1.89 && del install.cmd
+```
+
+
+[​](#install-with-linux-package-managers)
+
+Install with Linux package managers
+
+Claude Code publishes signed apt, dnf, and apk repositories. Replace `stable` with `latest` for the rolling channel. Package manager installations do not auto-update through Claude Code; updates arrive through your normal system upgrade workflow. All repositories are signed with the [Claude Code release signing key](#binary-integrity-and-code-signing). Before trusting the key, verify it as described in each tab.
+
+- apt
+
+- dnf
+
+- apk
+
+For Debian and Ubuntu. To use the rolling channel, change both `stable` occurrences in the `deb` line: the URL path and the suite name.
+
+```python
+sudo install -d -m 0755 /etc/apt/keyrings
+sudo curl -fsSL https://downloads.claude.ai/keys/claude-code.asc \
+  -o /etc/apt/keyrings/claude-code.asc
+echo "deb [signed-by=/etc/apt/keyrings/claude-code.asc] https://downloads.claude.ai/claude-code/apt/stable stable main" \
+  | sudo tee /etc/apt/sources.list.d/claude-code.list
+sudo apt update
+sudo apt install claude-code
+```
+
+Verify the GPG key fingerprint before trusting it: `gpg --show-keys /etc/apt/keyrings/claude-code.asc` should report `31DD DE24 DDFA B679 F42D 7BD2 BAA9 29FF 1A7E CACE`.To upgrade later, run `sudo apt update && sudo apt upgrade claude-code`.
+
+For Fedora and RHEL:
+
+```python
+sudo tee /etc/yum.repos.d/claude-code.repo <<'EOF'
+[claude-code]
+name=Claude Code
+baseurl=https://downloads.claude.ai/claude-code/rpm/stable
+enabled=1
+gpgcheck=1
+gpgkey=https://downloads.claude.ai/keys/claude-code.asc
+EOF
+sudo dnf install claude-code
+```
+
+dnf downloads the key on first install and prompts you to confirm the fingerprint. Verify it matches `31DD DE24 DDFA B679 F42D 7BD2 BAA9 29FF 1A7E CACE` before accepting.To upgrade later, run `sudo dnf upgrade claude-code`.
+
+For Alpine Linux:
+
+```python
+wget -O /etc/apk/keys/claude-code.rsa.pub \
+  https://downloads.claude.ai/keys/claude-code.rsa.pub
+echo "https://downloads.claude.ai/claude-code/apk/stable" >> /etc/apk/repositories
+apk add claude-code
+```
+
+Verify the downloaded key with `sha256sum /etc/apk/keys/claude-code.rsa.pub`, which should report `395759c1f7449ef4cdef305a42e820f3c766d6090d142634ebdb049f113168b6`.To upgrade later, run `apk update && apk upgrade claude-code`.
+
+
+[​](#install-with-npm)
+
+Install with npm
+
+You can also install Claude Code as a global npm package. The package requires [Node.js 18 or later](https://nodejs.org/en/download).
+
+```python
+npm install -g @anthropic-ai/claude-code
+```
+
+The npm package installs the same native binary as the standalone installer. npm pulls the binary in through a per-platform optional dependency such as `@anthropic-ai/claude-code-darwin-arm64`, and a postinstall step links it into place. The installed `claude` binary does not itself invoke Node. Supported npm install platforms are `darwin-arm64`, `darwin-x64`, `linux-x64`, `linux-arm64`, `linux-x64-musl`, `linux-arm64-musl`, `win32-x64`, and `win32-arm64`. Your package manager must allow optional dependencies. See [troubleshooting](/docs/en/troubleshooting#native-binary-not-found-after-npm-install) if the binary is missing after install.
+
+Do NOT use `sudo npm install -g` as this can lead to permission issues and security risks. If you encounter permission errors, see [troubleshooting permission errors](/docs/en/troubleshooting#permission-errors-during-installation).
+
+
+[​](#binary-integrity-and-code-signing)
+
+Binary integrity and code signing
+
+Each release publishes a `manifest.json` containing SHA256 checksums for every platform binary. The manifest is signed with an Anthropic GPG key, so verifying the signature on the manifest transitively verifies every binary it lists.
+
+
+[​](#verify-the-manifest-signature)
+
+Verify the manifest signature
+
+Steps 1-3 require a POSIX shell with `gpg` and `curl`. On Windows, run them in Git Bash or WSL. Step 4 includes a PowerShell option.
+
+1
+
+
+Download and import the public key
+
+The release signing key is published at a fixed URL.
+
+```python
+curl -fsSL https://downloads.claude.ai/keys/claude-code.asc | gpg --import
+```
+
+Display the fingerprint of the imported key.
+
+```python
+gpg --fingerprint security@anthropic.com
+```
+
+Confirm the output includes this fingerprint:
+
+```python
+31DD DE24 DDFA B679 F42D  7BD2 BAA9 29FF 1A7E CACE
+```
+
+2
+
+
+Download the manifest and signature
+
+Set `VERSION` to the release you want to verify.
+
+```python
+REPO=https://downloads.claude.ai/claude-code-releases
+VERSION=2.1.89
+curl -fsSLO "$REPO/$VERSION/manifest.json"
+curl -fsSLO "$REPO/$VERSION/manifest.json.sig"
+```
+
+3
+
+
+Verify the signature
+
+Verify the detached signature against the manifest.
+
+```python
+gpg --verify manifest.json.sig manifest.json
+```
+
+A valid result reports `Good signature from "Anthropic Claude Code Release Signing <security@anthropic.com>"`.`gpg` also prints `WARNING: This key is not certified with a trusted signature!` for any freshly imported key. This is expected. The `Good signature` line confirms the cryptographic check passed. The fingerprint comparison in Step 1 confirms the key itself is authentic.
+
+4
+
+
+Check the binary against the manifest
+
+Compare the SHA256 checksum of your downloaded binary with the value listed under `platforms.<platform>.checksum` in `manifest.json`.
+
+- Linux
+
+- macOS
+
+- Windows PowerShell
+
+```python
+sha256sum claude
+```
+
+```python
+shasum -a 256 claude
+```
+
+```python
+(Get-FileHash claude.exe -Algorithm SHA256).Hash.ToLower()
+```
+
+Manifest signatures are available for releases from `2.1.89` onward. Earlier releases publish checksums in `manifest.json` without a detached signature.
+
+
+[​](#platform-code-signatures)
+
+Platform code signatures
+
+In addition to the signed manifest, individual binaries carry platform-native code signatures where supported.
+
+- **macOS**: signed by “Anthropic PBC” and notarized by Apple. Verify with `codesign --verify --verbose ./claude`.
+- **Windows**: signed by “Anthropic, PBC”. Verify with `Get-AuthenticodeSignature .\claude.exe`.
+- **Linux**: binaries are not individually code-signed. If you download directly from the `claude-code-releases` bucket or use the native installer, verify integrity with the manifest signature above. If you install with [apt, dnf, or apk](#install-with-linux-package-managers), your package manager verifies signatures automatically using the repository signing key.
+
+
+[​](#uninstall-claude-code)
+
+Uninstall Claude Code
+
+To remove Claude Code, follow the instructions for your installation method.
+
+
+[​](#native-installation)
+
+Native installation
+
+Remove the Claude Code binary and version files:
+
+- macOS, Linux, WSL
+
+- Windows PowerShell
+
+```python
+rm -f ~/.local/bin/claude
+rm -rf ~/.local/share/claude
+```
+
+```python
+Remove-Item -Path "$env:USERPROFILE\.local\bin\claude.exe" -Force
+Remove-Item -Path "$env:USERPROFILE\.local\share\claude" -Recurse -Force
+```
+
+
+[​](#homebrew-installation)
+
+Homebrew installation
+
+Remove the Homebrew cask you installed. If you installed the stable cask:
+
+```python
+brew uninstall --cask claude-code
+```
+
+If you installed the latest cask:
+
+```python
+brew uninstall --cask claude-code@latest
+```
+
+
+[​](#winget-installation)
+
+WinGet installation
+
+Remove the WinGet package:
+
+```python
+winget uninstall Anthropic.ClaudeCode
+```
+
+
+[​](#apt-/-dnf-/-apk)
+
+apt / dnf / apk
+
+Remove the package and the repository configuration:
+
+- apt
+
+- dnf
+
+- apk
+
+```python
+sudo apt remove claude-code
+sudo rm /etc/apt/sources.list.d/claude-code.list /etc/apt/keyrings/claude-code.asc
+```
+
+```python
+sudo dnf remove claude-code
+sudo rm /etc/yum.repos.d/claude-code.repo
+```
+
+```python
+apk del claude-code
+sed -i '\|downloads.claude.ai/claude-code/apk|d' /etc/apk/repositories
+rm /etc/apk/keys/claude-code.rsa.pub
+```
+
+
+[​](#npm)
+
+npm
+
+Remove the global npm package:
+
+```python
+npm uninstall -g @anthropic-ai/claude-code
+```
+
+
+[​](#remove-configuration-files)
+
+Remove configuration files
+
+Removing configuration files will delete all your settings, allowed tools, MCP server configurations, and session history.
+
+The VS Code extension, the JetBrains plugin, and the Desktop app also write to `~/.claude/`. If any of them is still installed, the directory is recreated the next time it runs. To remove Claude Code completely, uninstall the [VS Code extension](/docs/en/vs-code#uninstall-the-extension), the JetBrains plugin, and the Desktop app before deleting these files. To remove Claude Code settings and cached data:
+
+- macOS, Linux, WSL
+
+- Windows PowerShell
+
+```python
+# Remove user settings and state
+rm -rf ~/.claude
+rm ~/.claude.json
+
+# Remove project-specific settings (run from your project directory)
+rm -rf .claude
+rm -f .mcp.json
+```
+
+```python
+# Remove user settings and state
+Remove-Item -Path "$env:USERPROFILE\.claude" -Recurse -Force
+Remove-Item -Path "$env:USERPROFILE\.claude.json" -Force
+
+# Remove project-specific settings (run from your project directory)
+Remove-Item -Path ".claude" -Recurse -Force
+Remove-Item -Path ".mcp.json" -Force
+```
+
+
+---
 ## claude-api-monitoring-quickstart.md
 
 # Claude API Monitoring - Quick Start
@@ -474,7 +1092,7 @@ The setup is completely transparent - Claude Code works normally while you get f
 
 Plugins extend Claude Code with skills, agents, hooks, and MCP servers. Plugin marketplaces are catalogs that help you discover and install these extensions without building them yourself.
 
-Looking to create and distribute your own marketplace? See [Create and distribute a plugin marketplace](/en/plugin-marketplaces).
+Looking to create and distribute your own marketplace? See [Create and distribute a plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md).
 
 ## How marketplaces work
 
@@ -503,7 +1121,7 @@ To install a plugin from the official marketplace:
 ```
 
 <Note>
-  The official marketplace is maintained by Anthropic. To distribute your own plugins, [create your own marketplace](/en/plugin-marketplaces) and share it with users.
+  The official marketplace is maintained by Anthropic. To distribute your own plugins, [create your own marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) and share it with users.
 </Note>
 
 The official marketplace includes several categories of plugins:
@@ -834,7 +1452,7 @@ If you see "unknown command" or the `/plugin` command doesn't appear:
 2. **Update Claude Code**:
    * **Homebrew**: `brew upgrade claude-code`
    * **npm**: `npm update -g @anthropic-ai/claude-code`
-   * **Native installer**: Re-run the install command from [Setup](/en/setup)
+   * **Native installer**: Re-run the install command from [Setup](advanced-setup-claude-code-docs-0526bc1300.md)
 3. **Restart Claude Code**: After updating, restart your terminal and run `claude` again.
 
 ### Common issues
@@ -855,7 +1473,7 @@ For detailed troubleshooting with solutions, see [Troubleshooting](/en/plugin-ma
 ## Next steps
 
 * **Build your own plugins**: See [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) to create skills, agents, and hooks
-* **Create a marketplace**: See [Create a plugin marketplace](/en/plugin-marketplaces) to distribute plugins to your team or community
+* **Create a marketplace**: See [Create a plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) to distribute plugins to your team or community
 * **Technical reference**: See [Plugins reference](../08-Plugins-Skills/plugins-reference-claude-code-docs.md) for complete specifications
 
 
@@ -2137,6 +2755,408 @@ English (US)
 
 
 ---
+## get-started-8965568146.md
+
+# Get started with Claude
+
+Make your first API call to Claude and build a simple web search assistant.
+
+---
+
+## Prerequisites
+
+- An Anthropic [Console account](/)
+- An [API key](/settings/keys)
+
+## Call the API
+
+<Tabs>
+  <Tab title="cURL">
+    <Steps>
+      <Step title="Set your API key">
+        Get your API key from the [Claude Console](/settings/keys) and set it as an environment variable:
+
+        ```bash
+        export ANTHROPIC_API_KEY='your-api-key-here'
+        ```
+
+        To persist the key across shell sessions, add the line to your shell profile (such as `~/.zshrc` or `~/.bashrc`).
+      </Step>
+
+      <Step title="Make your first API call">
+        Run this command to create a simple web search assistant:
+
+        ```bash cURL
+        curl https://api.anthropic.com/v1/messages \
+          -H "Content-Type: application/json" \
+          -H "x-api-key: $ANTHROPIC_API_KEY" \
+          -H "anthropic-version: 2023-06-01" \
+          -d '{
+            "model": "claude-opus-4-7",
+            "max_tokens": 1000,
+            "messages": [
+              {
+                "role": "user",
+                "content": "What should I search for to find the latest developments in renewable energy?"
+              }
+            ]
+          }'
+        ```
+
+        **Example output:**
+        ```json Output
+        {
+          "id": "msg_01HCDu5LRGeP2o7s2xGmxyx8",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Here are some effective search strategies to find the latest renewable energy developments:\n\n## Search Terms to Use:\n- \"renewable energy news 2024\"\n- \"clean energy breakthrough\"\n- \"solar/wind/battery technology advances\"\n- \"green energy innovations\"\n- \"climate tech developments\"\n- \"energy storage solutions\"\n\n## Best Sources to Check:\n\n**News & Industry Sites:**\n- Renewable Energy World\n- GreenTech Media (now Wood Mackenzie)\n- Energy Storage News\n- CleanTechnica\n- PV Magazine (for solar)\n- WindPower Engineering & Development..."
+            }
+          ],
+          "model": "claude-opus-4-7",
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 21,
+            "output_tokens": 305
+          }
+        }
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="CLI">
+    <Steps>
+      <Step title="Set your API key">
+        Get your API key from the [Claude Console](/settings/keys) and set it as an environment variable:
+
+        ```bash
+        export ANTHROPIC_API_KEY='your-api-key-here'
+        ```
+
+        To persist the key across shell sessions, add the line to your shell profile (such as `~/.zshrc` or `~/.bashrc`).
+      </Step>
+
+      <Step title="Install the CLI">
+        Install the Anthropic CLI with Homebrew:
+
+        ```bash
+        brew install anthropics/tap/ant
+        ```
+
+        For other installation methods, see [Installation](/docs/en/api/sdks/cli#installation) in the CLI reference.
+      </Step>
+
+      <Step title="Make your first API call">
+        Run this command to create a simple web search assistant:
+
+        ```bash
+        ant messages create \
+          --model claude-opus-4-7 \
+          --max-tokens 1000 \
+          --message '{
+            role: user,
+            content: "What should I search for to find the latest developments in renewable energy?"
+          }'
+        ```
+
+        **Example output:**
+        ```json Output
+        {
+          "id": "msg_01HCDu5LRGeP2o7s2xGmxyx8",
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "Here are some effective search strategies to find the latest renewable energy developments:\n\n## Search Terms to Use:\n- \"renewable energy news 2024\"\n- \"clean energy breakthrough\"\n- \"solar/wind/battery technology advances\"\n- \"green energy innovations\"\n- \"climate tech developments\"\n- \"energy storage solutions\"\n\n## Best Sources to Check:\n\n**News & Industry Sites:**\n- Renewable Energy World\n- GreenTech Media (now Wood Mackenzie)\n- Energy Storage News\n- CleanTechnica\n- PV Magazine (for solar)\n- WindPower Engineering & Development..."
+            }
+          ],
+          "model": "claude-opus-4-7",
+          "stop_reason": "end_turn",
+          "usage": {
+            "input_tokens": 21,
+            "output_tokens": 305
+          }
+        }
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Python">
+    <Steps>
+      <Step title="Set your API key">
+        Get your API key from the [Claude Console](/settings/keys) and set it as an environment variable:
+
+        ```bash
+        export ANTHROPIC_API_KEY='your-api-key-here'
+        ```
+
+        To persist the key across shell sessions, add the line to your shell profile (such as `~/.zshrc` or `~/.bashrc`).
+      </Step>
+
+      <Step title="Install the SDK">
+        Install the Anthropic Python SDK:
+
+        ```bash
+        pip install anthropic
+        ```
+      </Step>
+
+      <Step title="Create your code">
+        Save this as `quickstart.py`:
+
+        ```python
+        import anthropic
+
+        client = anthropic.Anthropic()
+
+        message = client.messages.create(
+            model="claude-opus-4-7",
+            max_tokens=1000,
+            messages=[
+                {
+                    "role": "user",
+                    "content": "What should I search for to find the latest developments in renewable energy?",
+                }
+            ],
+        )
+        print(message.content)
+        ```
+      </Step>
+
+      <Step title="Run your code">
+        ```bash
+        python quickstart.py
+        ```
+
+        **Example output:**
+        ```text Output
+        [
+            TextBlock(
+                text='Here are some effective search strategies for finding the latest renewable energy developments:\n\n**Search Terms to Use:**\n- "renewable energy news 2024"\n- "clean energy breakthroughs"\n- "solar/wind/battery technology advances"\n- "energy storage innovations"\n- "green hydrogen developments"\n- "renewable energy policy updates"\n\n**Reliable Sources to Check:**\n- **News & Analysis:** Reuters Energy, Bloomberg New Energy Finance, Greentech Media, Energy Storage News\n- **Industry Publications:** Renewable Energy World, PV Magazine, Wind Power Engineering\n- **Research Organizations:** International Energy Agency (IEA), National Renewable Energy Laboratory (NREL)\n- **Government Sources:** Department of Energy websites, EPA clean energy updates\n\n**Specific Topics to Explore:**\n- Perovskite and next-gen solar cells\n- Offshore wind expansion\n- Grid-scale battery storage\n- Green hydrogen production\n- Carbon capture technologies\n- Smart grid innovations\n- Energy policy changes and incentives...',
+                type="text",
+            )
+        ]
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="TypeScript">
+    <Steps>
+      <Step title="Set your API key">
+        Get your API key from the [Claude Console](/settings/keys) and set it as an environment variable:
+
+        ```bash
+        export ANTHROPIC_API_KEY='your-api-key-here'
+        ```
+
+        To persist the key across shell sessions, add the line to your shell profile (such as `~/.zshrc` or `~/.bashrc`).
+      </Step>
+
+      <Step title="Install the SDK">
+        Install the Anthropic TypeScript SDK:
+
+        ```bash
+        npm install @anthropic-ai/sdk
+        ```
+      </Step>
+
+      <Step title="Create your code">
+        Save this as `quickstart.ts`:
+
+```typescript
+import Anthropic from "@anthropic-ai/sdk";
+
+async function main() {
+  const anthropic = new Anthropic();
+
+  const msg = await anthropic.messages.create({
+    model: "claude-opus-4-7",
+    max_tokens: 1000,
+    messages: [
+      {
+        role: "user",
+        content:
+          "What should I search for to find the latest developments in renewable energy?"
+      }
+    ]
+  });
+  console.log(msg);
+}
+
+main().catch(console.error);
+        ```
+      </Step>
+
+      <Step title="Run your code">
+        ```bash
+        npx tsx quickstart.ts
+        ```
+
+        **Example output:**
+        ```javascript Output hidelines={1..2}
+        const _ =
+          // output
+          {
+            id: "msg_01ThFHzad6Bh4TpQ6cHux9t8",
+            type: "message",
+            role: "assistant",
+            model: "claude-opus-4-7",
+            content: [
+              {
+                type: "text",
+                text:
+                  "Here are some effective search strategies to find the latest renewable energy developments:\n\n" +
+                  "## Search Terms to Use:\n" +
+                  '- "renewable energy news 2024"\n' +
+                  '- "clean energy breakthroughs"\n' +
+                  '- "solar wind technology advances"\n' +
+                  '- "energy storage innovations"\n' +
+                  '- "green hydrogen developments"\n' +
+                  '- "offshore wind projects"\n' +
+                  '- "battery technology renewable"\n\n' +
+                  "## Best Sources to Check:\n\n" +
+                  "**News & Industry Sites:**\n" +
+                  "- Renewable Energy World\n" +
+                  "- CleanTechnica\n" +
+                  "- GreenTech Media (now Wood Mackenzie)\n" +
+                  "- Energy Storage News\n" +
+                  "- PV Magazine (for solar)..."
+              }
+            ],
+            stop_reason: "end_turn",
+            usage: {
+              input_tokens: 21,
+              output_tokens: 302
+            }
+          }
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Java">
+    <Steps>
+      <Step title="Set your API key">
+        Get your API key from the [Claude Console](/settings/keys) and set it as an environment variable:
+
+        ```bash
+        export ANTHROPIC_API_KEY='your-api-key-here'
+        ```
+
+        To persist the key across shell sessions, add the line to your shell profile (such as `~/.zshrc` or `~/.bashrc`).
+      </Step>
+
+      <Step title="Install the SDK">
+        Add the Anthropic Java SDK to your project. First find the current version on [Maven Central](https://central.sonatype.com/artifact/com.anthropic/anthropic-java).
+
+        **Gradle:**
+        ```groovy
+        implementation("com.anthropic:anthropic-java:2.27.0")
+        ```
+
+        **Maven:**
+        ```xml
+        <dependency>
+          <groupId>com.anthropic</groupId>
+          <artifactId>anthropic-java</artifactId>
+          <version>2.27.0</version>
+        </dependency>
+        ```
+      </Step>
+
+      <Step title="Create your code">
+        Save this as `QuickStart.java`:
+
+        ```java
+        import com.anthropic.client.AnthropicClient;
+        import com.anthropic.client.okhttp.AnthropicOkHttpClient;
+        import com.anthropic.models.messages.Message;
+        import com.anthropic.models.messages.MessageCreateParams;
+
+        public class QuickStart {
+
+          public static void main(String[] args) {
+            AnthropicClient client = AnthropicOkHttpClient.fromEnv();
+
+            MessageCreateParams params = MessageCreateParams.builder()
+              .model("claude-opus-4-7")
+              .maxTokens(1000)
+              .addUserMessage(
+                "What should I search for to find the latest developments in renewable energy?"
+              )
+              .build();
+
+            Message message = client.messages().create(params);
+            System.out.println(message.content());
+          }
+        }
+        ```
+      </Step>
+
+      <Step title="Run your code">
+        ```bash
+        javac QuickStart.java
+        java QuickStart
+        ```
+
+        **Example output:**
+        ```text Output
+        [ContentBlock{text=TextBlock{text=Here are some effective search strategies to find the latest renewable energy developments:
+
+        ## Search Terms to Use:
+        - "renewable energy news 2024"
+        - "clean energy breakthroughs"
+        - "solar/wind/battery technology advances"
+        - "energy storage innovations"
+        - "green hydrogen developments"
+        - "renewable energy policy updates"
+
+        ## Best Sources to Check:
+        - **News & Analysis:** Reuters Energy, Bloomberg New Energy Finance, Greentech Media
+        - **Industry Publications:** Renewable Energy World, PV Magazine, Wind Power Engineering
+        - **Research Organizations:** International Energy Agency (IEA), National Renewable Energy Laboratory (NREL)
+        - **Government Sources:** Department of Energy websites, EPA clean energy updates
+
+        ## Specific Topics to Explore:
+        - Perovskite and next-gen solar cells
+        - Offshore wind expansion
+        - Grid-scale battery storage
+        - Green hydrogen production..., type=text}}]
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Next steps
+
+You made your first API call. Next, learn the Messages API patterns you'll use in every Claude integration.
+
+<Card title="Working with the Messages API" icon="messages" href="/docs/en/build-with-claude/working-with-messages">
+  Learn multi-turn conversations, system prompts, stop reasons, and other core patterns.
+</Card>
+
+Once you're comfortable with the basics, explore further:
+
+<CardGroup cols={3}>
+  <Card title="Models overview" icon="brain" href="/docs/en/about-claude/models/overview">
+    Compare Claude models by capability and cost.
+  </Card>
+  <Card title="Features overview" icon="list" href="/docs/en/build-with-claude/overview">
+    Browse all Claude capabilities: tools, context management, structured outputs, and more.
+  </Card>
+  <Card title="Client SDKs" icon="code-brackets" href="/docs/en/api/client-sdks">
+    Reference documentation for Python, TypeScript, Java, and other client libraries.
+  </Card>
+</CardGroup>
+
+---
 ## get-started.md
 
 # Get started with Claude
@@ -3376,6 +4396,113 @@ Once you've started using Claude, you can:
 
 
 ---
+## intro-09000d9804.md
+
+# Intro to Claude
+
+Claude is a highly performant, trustworthy, and intelligent AI platform built by Anthropic. Claude excels at tasks involving language, reasoning, analysis, coding, and more.
+
+---
+
+<Tip>
+
+The latest generation of Claude models:
+
+**Claude Opus 4.7** - Our most capable model for complex reasoning and agentic coding, with a step-change jump over Claude Opus 4.6. [Learn more](https://www.anthropic.com/news/claude-opus-4-7).
+
+**Claude Sonnet 4.6** - Frontier intelligence at scale—built for coding, agents, and enterprise workflows. [Learn more](../19-Reference/introducing-sonnet-4-6-anthropic.md).
+
+**Claude Haiku 4.5** - Fastest model with near-frontier intelligence. [Learn more](../19-Reference/introducing-claude-haiku-4-5-anthropic.md).
+
+</Tip>
+
+<Note>
+Looking to chat with Claude? Visit [claude.ai](https://www.claude.ai).
+</Note>
+
+Anthropic offers two ways to build with Claude, each suited to different use cases:
+
+| | Messages API | Claude Managed Agents |
+|---|---|---|
+| **What it is** | Direct model prompting access | Pre-built, configurable agent harness that runs in managed infrastructure |
+| **Best for** | Custom agent loops and fine-grained control | Long-running tasks and asynchronous work |
+| **Learn more** | [Messages API docs](/docs/en/build-with-claude/working-with-messages) | [Claude Managed Agents docs](/docs/en/managed-agents/overview) |
+
+## Recommended path for new developers
+
+Follow these steps to go from zero to a working Claude integration.
+
+<Steps>
+  <Step title="Make your first API call">
+    Set up your environment, install an SDK, and send your first message to Claude.
+
+    [Go to the quickstart](/docs/en/get-started)
+  </Step>
+  <Step title="Understand the Messages API">
+    Learn the core request and response structure, including multi-turn conversations, system prompts, and stop reasons.
+
+    [Read the Messages API guide](/docs/en/build-with-claude/working-with-messages)
+  </Step>
+  <Step title="Choose the right model">
+    Compare Claude models by capability and cost to pick the best fit for your use case.
+
+    [See the models overview](/docs/en/about-claude/models/overview)
+  </Step>
+  <Step title="Explore features and tools">
+    Discover what Claude can do: extended thinking, web search, file handling, structured outputs, and more.
+
+    [Browse the features overview](/docs/en/build-with-claude/overview)
+  </Step>
+</Steps>
+
+---
+
+## Develop with Claude
+
+Anthropic provides developer tools to help you build and scale applications with Claude.
+
+<CardGroup cols={3}>
+  <Card title="Developer Console" icon="computer" href="/">
+    Prototype and test prompts in your browser with the Workbench and prompt generator.
+  </Card>
+  <Card title="API Reference" icon="code" href="/docs/en/api/overview">
+    Explore the full Claude API and client SDK documentation.
+  </Card>
+  <Card title="Claude Cookbook" icon="chef-hat" href="https://platform.claude.com/cookbooks">
+    Learn with interactive Jupyter notebooks covering PDFs, embeddings, and more.
+  </Card>
+</CardGroup>
+
+---
+
+## Key capabilities
+
+Claude can assist with many tasks that involve text, code, and images.
+
+<CardGroup cols={2}>
+  <Card title="Text and code generation" icon="text-aa" href="/docs/en/build-with-claude/overview">
+    Summarize text, answer questions, extract data, translate text, and explain and generate code.
+  </Card>
+  <Card title="Vision" icon="image" href="/docs/en/build-with-claude/vision">
+    Process and analyze visual input and generate text and code from images.
+  </Card>
+</CardGroup>
+
+---
+
+## Support
+
+<CardGroup cols={2}>
+  <Card title="Help Center" icon="help" href="https://support.claude.com/en/">
+    Find answers to frequently asked account and billing questions.
+  </Card>
+
+  <Card title="Service Status" icon="chart" href="https://status.claude.com">
+    Check the status of Anthropic services.
+  </Card>
+</CardGroup>
+
+---
 ## intro.md
 
 # Intro to Claude
@@ -4295,10 +5422,10 @@ cd your-project
 claude
 ```
 
-You'll be prompted to log in on first use. That's it! [Continue with Quickstart (5 minutes) →](/en/quickstart)
+You'll be prompted to log in on first use. That's it! [Continue with Quickstart (5 minutes) →](quickstart-claude-code-docs-a21b84bdea.md)
 
 <Tip>
-  See [advanced setup](/en/setup) for installation options, manual updates, or uninstallation instructions. Visit [troubleshooting](/en/troubleshooting) if you hit issues.
+  See [advanced setup](advanced-setup-claude-code-docs-0526bc1300.md) for installation options, manual updates, or uninstallation instructions. Visit [troubleshooting](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md) if you hit issues.
 </Tip>
 
 ## What Claude Code does for you
@@ -4313,19 +5440,19 @@ You'll be prompted to log in on first use. That's it! [Continue with Quickstart 
 * **Works in your terminal**: Not another chat window. Not another IDE. Claude Code meets you where you already work, with the tools you already love.
 * **Takes action**: Claude Code can directly edit files, run commands, and create commits. Need more? [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) lets Claude read your design docs in Google Drive, update your tickets in Jira, or use *your* custom developer tooling.
 * **Unix philosophy**: Claude Code is composable and scriptable. `tail -f app.log | claude -p "Slack me if you see any anomalies appear in this log stream"` *works*. Your CI can run `claude -p "If there are new text strings, translate them into French and raise a PR for @lang-fr-team to review"`.
-* **Enterprise-ready**: Use the Claude API, or host on AWS or GCP. Enterprise-grade [security](../02-Claude-Code-CLI/security-claude-code-docs.md), [privacy](/en/data-usage), and [compliance](https://trust.anthropic.com/) is built-in.
+* **Enterprise-ready**: Use the Claude API, or host on AWS or GCP. Enterprise-grade [security](../02-Claude-Code-CLI/security-claude-code-docs.md), [privacy](../22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md), and [compliance](https://trust.anthropic.com/) is built-in.
 
 ## Use Claude Code everywhere
 
 Claude Code works across your development environment: in your terminal, in your IDE, in the cloud, and in Slack.
 
-* **[Terminal (CLI)](/en/quickstart)**: the core Claude Code experience. Run `claude` in any terminal to start coding.
-* **[Claude Code on the web](/en/claude-code-on-the-web)**: use Claude Code from your browser at [claude.ai/code](https://claude.ai/code) or the Claude iOS app, with no local setup required. Run tasks in parallel, work on repos you don't have locally, and review changes in a built-in diff view.
+* **[Terminal (CLI)](quickstart-claude-code-docs-a21b84bdea.md)**: the core Claude Code experience. Run `claude` in any terminal to start coding.
+* **[Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md)**: use Claude Code from your browser at [claude.ai/code](https://claude.ai/code) or the Claude iOS app, with no local setup required. Run tasks in parallel, work on repos you don't have locally, and review changes in a built-in diff view.
 * **[Desktop app](../16-Mobile-Desktop/desktop.md)**: a standalone application with diff review, parallel sessions via git worktrees, and the ability to launch cloud sessions.
-* **[VS Code](/en/vs-code)**: a native extension with inline diffs, @-mentions, and plan review.
-* **[JetBrains IDEs](/en/jetbrains)**: a plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with IDE diff viewing and context sharing.
-* **[GitHub Actions](/en/github-actions)**: automate code review, issue triage, and other workflows in CI/CD with `@claude` mentions.
-* **[GitLab CI/CD](/en/gitlab-ci-cd)**: event-driven automation for GitLab merge requests and issues.
+* **[VS Code](../03-IDE-Integrations/use-claude-code-in-vs-code-claude-code-docs-29143b6fee.md)**: a native extension with inline diffs, @-mentions, and plan review.
+* **[JetBrains IDEs](../03-IDE-Integrations/jetbrains-4cf6bd8c22.md)**: a plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with IDE diff viewing and context sharing.
+* **[GitHub Actions](../02-Claude-Code-CLI/claude-code-github-actions-claude-code-docs-0d633fbd8a.md)**: automate code review, issue triage, and other workflows in CI/CD with `@claude` mentions.
+* **[GitLab CI/CD](../02-Claude-Code-CLI/claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md)**: event-driven automation for GitLab merge requests and issues.
 * **[Slack](../02-Claude-Code-CLI/slack.md)**: mention Claude in Slack to route coding tasks to Claude Code on the web and get PRs back.
 * **[Chrome](../02-Claude-Code-CLI/chrome.md)**: connect Claude Code to your browser for live debugging, design verification, and web app testing.
 
@@ -4387,6 +5514,1233 @@ Claude Code works across your development environment: in your terminal, in your
 
 
 ---
+## quickstart-claude-code-docs-a21b84bdea.md
+
+# Quickstart
+
+
+Welcome to Claude Code!
+
+
+This quickstart guide will have you using AI-powered coding assistance in a few minutes. By the end, you’ll understand how to use Claude Code for common development tasks.
+
+
+[​](#before-you-begin)
+
+Before you begin
+
+Make sure you have:
+
+- A terminal or command prompt open
+  - If you’ve never used the terminal before, check out the [terminal guide](/docs/en/terminal-guide)
+- A code project to work with
+- A [Claude subscription](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=quickstart_prereq) (Pro, Max, Team, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](/docs/en/third-party-integrations)
+
+This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/docs/en/desktop), in [VS Code](/docs/en/vs-code) and [JetBrains IDEs](/docs/en/jetbrains), in [Slack](/docs/en/slack), and in CI/CD with [GitHub Actions](/docs/en/github-actions) and [GitLab](/docs/en/gitlab-ci-cd). See [all interfaces](/docs/en/overview#use-claude-code-everywhere).
+
+
+[​](#step-1-install-claude-code)
+
+Step 1: Install Claude Code
+
+To install Claude Code, use one of the following methods:
+
+- Native Install (Recommended)
+
+- Homebrew
+
+- WinGet
+
+**macOS, Linux, WSL:**
+
+```python
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**Windows PowerShell:**
+
+```python
+irm https://claude.ai/install.ps1 | iex
+```
+
+**Windows CMD:**
+
+```python
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.**Native Windows setups require [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don’t have it. WSL setups do not need it.
+
+Native installations automatically update in the background to keep you on the latest version.
+
+```python
+brew install --cask claude-code
+```
+
+Homebrew offers two casks. `claude-code` tracks the stable release channel, which is typically about a week behind and skips releases with major regressions. `claude-code@latest` tracks the latest channel and receives new versions as soon as they ship.
+
+Homebrew installations do not auto-update. Run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed, to get the latest features and security fixes.
+
+```python
+winget install Anthropic.ClaudeCode
+```
+
+WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
+
+You can also install with [apt, dnf, or apk](/docs/en/setup#install-with-linux-package-managers) on Debian, Fedora, RHEL, and Alpine.
+
+
+[​](#step-2-log-in-to-your-account)
+
+Step 2: Log in to your account
+
+Claude Code requires an account to use. When you start an interactive session with the `claude` command, you’ll need to log in:
+
+```python
+claude
+# You'll be prompted to log in on first use
+```
+
+```python
+/login
+# Follow the prompts to log in with your account
+```
+
+You can log in using any of these account types:
+
+- [Claude Pro, Max, Team, or Enterprise](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=quickstart_login) (recommended)
+- [Claude Console](https://console.anthropic.com/) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
+- [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](/docs/en/third-party-integrations) (enterprise cloud providers)
+
+Once logged in, your credentials are stored and you won’t need to log in again. To switch accounts later, use the `/login` command.
+
+
+[​](#step-3-start-your-first-session)
+
+Step 3: Start your first session
+
+Open your terminal in any project directory and start Claude Code:
+
+```python
+cd /path/to/your/project
+claude
+```
+
+You’ll see the Claude Code welcome screen with your session information, recent conversations, and latest updates. Type `/help` for available commands or `/resume` to continue a previous conversation.
+
+After logging in (Step 2), your credentials are stored on your system. Learn more in [Credential Management](/docs/en/authentication#credential-management).
+
+
+[​](#step-4-ask-your-first-question)
+
+Step 4: Ask your first question
+
+Let’s start with understanding your codebase. Try one of these commands:
+
+```python
+what does this project do?
+```
+
+Claude will analyze your files and provide a summary. You can also ask more specific questions:
+
+```python
+what technologies does this project use?
+```
+
+```python
+where is the main entry point?
+```
+
+```python
+explain the folder structure
+```
+
+You can also ask Claude about its own capabilities:
+
+```python
+what can Claude Code do?
+```
+
+```python
+how do I create custom skills in Claude Code?
+```
+
+```python
+can Claude Code work with Docker?
+```
+
+Claude Code reads your project files as needed. You don’t have to manually add context.
+
+
+[​](#step-5-make-your-first-code-change)
+
+Step 5: Make your first code change
+
+Now let’s make Claude Code do some actual coding. Try a simple task:
+
+```python
+add a hello world function to the main file
+```
+
+Claude Code will:
+
+1.  Find the appropriate file
+2.  Show you the proposed changes
+3.  Ask for your approval
+4.  Make the edit
+
+Claude Code always asks for permission before modifying files. You can approve individual changes or enable “Accept all” mode for a session.
+
+
+[​](#step-6-use-git-with-claude-code)
+
+Step 6: Use Git with Claude Code
+
+Claude Code makes Git operations conversational:
+
+```python
+what files have I changed?
+```
+
+```python
+commit my changes with a descriptive message
+```
+
+You can also prompt for more complex Git operations:
+
+```python
+create a new branch called feature/quickstart
+```
+
+```python
+show me the last 5 commits
+```
+
+```python
+help me resolve merge conflicts
+```
+
+
+[​](#step-7-fix-a-bug-or-add-a-feature)
+
+Step 7: Fix a bug or add a feature
+
+Claude is proficient at debugging and feature implementation. Describe what you want in natural language:
+
+```python
+add input validation to the user registration form
+```
+
+Or fix existing issues:
+
+```python
+there's a bug where users can submit empty forms - fix it
+```
+
+Claude Code will:
+
+- Locate the relevant code
+- Understand the context
+- Implement a solution
+- Run tests if available
+
+
+[​](#step-8-test-out-other-common-workflows)
+
+Step 8: Test out other common workflows
+
+There are a number of ways to work with Claude: **Refactor code**
+
+```python
+refactor the authentication module to use async/await instead of callbacks
+```
+
+**Write tests**
+
+```python
+write unit tests for the calculator functions
+```
+
+**Update documentation**
+
+```python
+update the README with installation instructions
+```
+
+**Code review**
+
+```python
+review my changes and suggest improvements
+```
+
+Talk to Claude like you would a helpful colleague. Describe what you want to achieve, and it will help you get there.
+
+
+[​](#essential-commands)
+
+Essential commands
+
+Here are the most important commands for daily use:
+
+| Command | What it does | Example |
+|----|----|----|
+| `claude` | Start interactive mode | `claude` |
+| `claude "task"` | Run a one-time task | `claude "fix the build error"` |
+| `claude -p "query"` | Run one-off query, then exit | `claude -p "explain this function"` |
+| `claude -c` | Continue most recent conversation in current directory | `claude -c` |
+| `claude -r` | Resume a previous conversation | `claude -r` |
+| `/clear` | Clear conversation history | `/clear` |
+| `/help` | Show available commands | `/help` |
+| `exit` or Ctrl+D | Exit Claude Code | `exit` |
+
+See the [CLI reference](/docs/en/cli-reference) for a complete list of commands.
+
+
+[​](#pro-tips-for-beginners)
+
+Pro tips for beginners
+
+For more, see [best practices](/docs/en/best-practices) and [common workflows](/docs/en/common-workflows).
+
+Be specific with your requests
+
+Instead of: “fix the bug”Try: “fix the login bug where users see a blank screen after entering wrong credentials”
+
+Use step-by-step instructions
+
+Break complex tasks into steps:
+
+```python
+1. create a new database table for user profiles
+2. create an API endpoint to get and update user profiles
+3. build a webpage that allows users to see and edit their information
+```
+
+Let Claude explore first
+
+Before making changes, let Claude understand your code:
+
+```python
+analyze the database schema
+```
+
+```python
+build a dashboard showing products that are most frequently returned by our UK customers
+```
+
+Save time with shortcuts
+
+- Press `?` to see all available keyboard shortcuts
+- Use Tab for command completion
+- Press ↑ for command history
+- Type `/` to see all commands and skills
+
+
+[​](#what’s-next)
+
+What’s next?
+
+Now that you’ve learned the basics, explore more advanced features:
+
+## How Claude Code works
+
+Understand the agentic loop, built-in tools, and how Claude Code interacts with your project
+
+## Best practices
+
+Get better results with effective prompting and project setup
+
+## Common workflows
+
+Step-by-step guides for common tasks
+
+## Extend Claude Code
+
+Customize with CLAUDE.md, skills, hooks, MCP, and more
+
+
+[​](#getting-help)
+
+Getting help
+
+- **In Claude Code**: Type `/help` or ask “how do I…”
+- **Documentation**: You’re here! Browse other guides
+- **Community**: Join our [Discord](https://www.anthropic.com/discord) for tips and support
+
+
+---
+## quickstart-fc751d9be1.md
+
+> ## Documentation Index
+> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Quickstart
+
+> Welcome to Claude Code!
+
+export const InstallConfigurator = ({defaultSurface = 'terminal'}) => {
+  const TERM = {
+    mac: {
+      label: 'macOS / Linux',
+      cmd: 'curl -fsSL https://claude.ai/install.sh | bash'
+    },
+    win: {
+      label: 'Windows'
+    },
+    brew: {
+      label: 'Homebrew',
+      cmd: 'brew install --cask claude-code'
+    },
+    winget: {
+      label: 'WinGet',
+      cmd: 'winget install Anthropic.ClaudeCode'
+    }
+  };
+  const WIN_VARIANTS = {
+    ps: 'irm https://claude.ai/install.ps1 | iex',
+    cmd: 'curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd'
+  };
+  const TABS = [{
+    key: 'terminal',
+    label: 'Terminal'
+  }, {
+    key: 'desktop',
+    label: 'Desktop'
+  }, {
+    key: 'vscode',
+    label: 'VS Code'
+  }, {
+    key: 'jetbrains',
+    label: 'JetBrains'
+  }];
+  const ALT_TARGETS = {
+    desktop: {
+      name: 'Desktop',
+      tagline: 'The full agent in a native app for macOS and Windows.',
+      installLabel: 'Download the app',
+      installHref: 'https://claude.com/download?utm_source=claude_code&utm_medium=docs&utm_content=configurator_desktop_download',
+      guideHref: '/en/desktop-quickstart'
+    },
+    vscode: {
+      name: 'VS Code',
+      tagline: 'Review diffs, manage context, and chat without leaving your editor.',
+      installLabel: 'Install from Marketplace',
+      installHref: 'https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code',
+      altCmd: 'code --install-extension anthropic.claude-code',
+      guideHref: '/en/vs-code'
+    },
+    jetbrains: {
+      name: 'JetBrains',
+      tagline: 'Native plugin for IntelliJ, PyCharm, WebStorm, and other JetBrains IDEs.',
+      installLabel: 'Install from Marketplace',
+      installHref: 'https://plugins.jetbrains.com/plugin/27310-claude-code-beta-',
+      guideHref: '/en/jetbrains'
+    }
+  };
+  const PROVIDERS = [{
+    key: 'anthropic',
+    label: 'Anthropic'
+  }, {
+    key: 'bedrock',
+    label: 'Amazon Bedrock'
+  }, {
+    key: 'foundry',
+    label: 'Microsoft Foundry'
+  }, {
+    key: 'vertex',
+    label: 'Google Vertex AI'
+  }];
+  const PROVIDER_NOTICE = {
+    bedrock: <>
+        <strong>Configure your AWS account first.</strong> Running on Bedrock
+        requires model access enabled in the AWS console and IAM credentials.{' '}
+        <a href="/en/amazon-bedrock">Bedrock setup guide →</a>
+      </>,
+    vertex: <>
+        <strong>Configure your GCP project first.</strong> Running on Vertex AI
+        requires the Vertex API enabled and a service account with the right
+        permissions.{' '}
+        <a href="/en/google-vertex-ai">Vertex setup guide →</a>
+      </>,
+    foundry: <>
+        <strong>Configure your Azure resources first.</strong> Running on
+        Microsoft Foundry requires an Azure subscription with a Foundry resource
+        and model deployments provisioned.{' '}
+        <a href="/en/microsoft-foundry">Foundry setup guide →</a>
+      </>
+  };
+  const iconCheck = (size = 14) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polyline points="20 6 9 17 4 12" />
+    </svg>;
+  const iconCopy = (size = 14) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="9" y="9" width="13" height="13" rx="2" />
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+    </svg>;
+  const iconArrowRight = (size = 13) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12 5 19 12 12 19" />
+    </svg>;
+  const iconArrowUpRight = (size = 14) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="7" y1="17" x2="17" y2="7" />
+      <polyline points="7 7 17 7 17 17" />
+    </svg>;
+  const iconInfo = (size = 16) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="16" x2="12" y2="12" />
+      <line x1="12" y1="8" x2="12.01" y2="8" />
+    </svg>;
+  const [target, setTarget] = useState(defaultSurface);
+  const [team, setTeam] = useState(false);
+  const [provider, setProvider] = useState('anthropic');
+  const [pkg, setPkg] = useState(() => (/Win/).test(navigator.userAgent) ? 'win' : 'mac');
+  const [winCmd, setWinCmd] = useState(false);
+  const [copied, setCopied] = useState(null);
+  const copyTimer = useRef(null);
+  const handleCopy = async (text, key) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    clearTimeout(copyTimer.current);
+    setCopied(key);
+    copyTimer.current = setTimeout(() => setCopied(null), 1800);
+  };
+  const cardBodyCmd = (cmd, prompt) => {
+    const on = copied === 'term';
+    return <div className="cc-ic-card-body">
+        <span className="cc-ic-prompt">{prompt || '$'}</span>
+        <div className="cc-ic-cmd">{cmd}</div>
+        <button type="button" className={'cc-ic-copy' + (on ? ' cc-ic-copied' : '')} onClick={() => handleCopy(cmd, 'term')}>
+          {on ? iconCheck(13) : iconCopy(13)}
+          <span>{on ? 'Copied' : 'Copy'}</span>
+        </button>
+      </div>;
+  };
+  const isWinInstaller = pkg === 'win';
+  const isWinPrompt = pkg === 'win' || pkg === 'winget';
+  const terminalCmd = isWinInstaller ? WIN_VARIANTS[winCmd ? 'cmd' : 'ps'] : TERM[pkg].cmd;
+  const alt = ALT_TARGETS[target];
+  const showNotice = team && provider !== 'anthropic';
+  const STYLES = `
+.cc-ic {
+  --ic-slate: #141413;
+  --ic-clay: #d97757;
+  --ic-clay-deep: #c6613f;
+  --ic-gray-000: #ffffff;
+  --ic-gray-150: #f0eee6;
+  --ic-gray-550: #73726c;
+  --ic-gray-700: #3d3d3a;
+  --ic-border-subtle: rgba(31, 30, 29, 0.08);
+  --ic-border-default: rgba(31, 30, 29, 0.15);
+  --ic-border-strong: rgba(31, 30, 29, 0.3);
+  --ic-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Courier New', monospace;
+  font-family: 'Anthropic Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px; line-height: 1.5; color: var(--ic-slate);
+  margin: 8px 0 32px;
+}
+.dark .cc-ic {
+  --ic-slate: #f0eee6;
+  --ic-gray-000: #262624;
+  --ic-gray-150: #1f1e1d;
+  --ic-gray-550: #91908a;
+  --ic-gray-700: #bfbdb4;
+  --ic-border-subtle: rgba(240, 238, 230, 0.08);
+  --ic-border-default: rgba(240, 238, 230, 0.14);
+  --ic-border-strong: rgba(240, 238, 230, 0.28);
+}
+.dark .cc-ic-check { background: transparent; }
+.dark .cc-ic-card { border: 0.5px solid var(--ic-border-subtle); }
+.dark .cc-ic-p-pill.cc-ic-active { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+.cc-ic *, .cc-ic *::before, .cc-ic *::after { box-sizing: border-box; }
+.cc-ic a { text-decoration: none; }
+.cc-ic a:not([class]) { color: inherit; }
+.cc-ic button { font-family: inherit; cursor: pointer; }
+
+.cc-ic-tab-strip {
+  display: inline-flex; gap: 2px;
+  padding: 4px; background: var(--ic-gray-150);
+  border-radius: 10px; overflow-x: auto;
+  max-width: 100%;
+}
+.cc-ic-tab {
+  appearance: none; background: none; border: none;
+  padding: 10px 18px; font-size: 15px; font-weight: 430;
+  color: var(--ic-gray-550); border-radius: 7px;
+  white-space: nowrap;
+  transition: color 0.12s, background-color 0.12s;
+}
+.cc-ic-tab:hover { color: var(--ic-gray-700); }
+.cc-ic-tab.cc-ic-active {
+  color: var(--ic-slate); font-weight: 500;
+  background: var(--ic-gray-000);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.dark .cc-ic-tab.cc-ic-active { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+
+.cc-ic-team-wrap { padding: 16px 0 20px; }
+.cc-ic-team-toggle {
+  display: flex; align-items: center; gap: 12px; font-family: inherit;
+  padding: 12px 16px; font-size: 14px; font-weight: 430;
+  color: var(--ic-gray-700); cursor: pointer; user-select: none;
+  width: fit-content; background: var(--ic-gray-150);
+  border: 0.5px solid var(--ic-border-subtle); border-radius: 8px;
+  transition: border-color 0.15s;
+}
+.cc-ic-team-toggle:hover { border-color: var(--ic-border-default); }
+.cc-ic-team-toggle.cc-ic-checked {
+  background: rgba(217, 119, 87, 0.08);
+  border-color: rgba(217, 119, 87, 0.25);
+}
+.cc-ic-check {
+  width: 16px; height: 16px;
+  border: 1px solid var(--ic-border-strong); border-radius: 4px;
+  background: var(--ic-gray-000);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cc-ic-check svg { color: #fff; display: none; }
+.cc-ic-team-toggle.cc-ic-checked .cc-ic-check { background: var(--ic-clay-deep); border-color: var(--ic-clay-deep); }
+.cc-ic-team-toggle.cc-ic-checked .cc-ic-check svg { display: block; }
+
+.cc-ic-team-reveal { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.cc-ic-sales {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 16px;
+  background: var(--ic-gray-000); border: 0.5px solid var(--ic-border-default);
+  border-radius: 8px; flex-wrap: wrap;
+}
+.cc-ic-sales-text { font-size: 13px; color: var(--ic-gray-700); line-height: 1.5; flex: 1; min-width: 200px; }
+.cc-ic-sales-text strong { font-weight: 550; color: var(--ic-slate); }
+.cc-ic-sales-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.cc-ic-btn-clay {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--ic-clay-deep); color: #fff; border: none;
+  border-radius: 8px; padding: 8px 14px;
+  font-size: 13px; font-weight: 500;
+  transition: background-color 0.15s; white-space: nowrap;
+}
+.cc-ic-btn-clay:hover { background: var(--ic-clay); }
+.cc-ic-btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--ic-gray-700);
+  border: 0.5px solid var(--ic-border-default);
+  border-radius: 8px; padding: 8px 14px;
+  font-size: 13px; font-weight: 500;
+}
+.cc-ic-btn-ghost:hover { background: rgba(0, 0, 0, 0.04); }
+
+.cc-ic-provider-bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; background: var(--ic-gray-150);
+  border-radius: 8px; font-size: 13px; flex-wrap: wrap;
+}
+.cc-ic-provider-bar .cc-ic-label { color: var(--ic-gray-550); flex-shrink: 0; }
+.cc-ic-provider-pills { display: flex; gap: 4px; flex-wrap: wrap; }
+.cc-ic-p-pill {
+  appearance: none; border: none; background: transparent;
+  padding: 6px 12px; border-radius: 6px;
+  font-size: 13px; font-weight: 430; color: var(--ic-gray-700);
+  white-space: nowrap;
+}
+.cc-ic-p-pill:hover { background: rgba(0, 0, 0, 0.04); }
+.cc-ic-p-pill.cc-ic-active {
+  background: var(--ic-gray-000); color: var(--ic-slate);
+  font-weight: 500; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.cc-ic-provider-notice {
+  display: flex; padding: 16px 18px;
+  background: var(--ic-gray-000); border: 0.5px solid var(--ic-border-default);
+  border-radius: 8px; gap: 14px; align-items: flex-start;
+}
+.cc-ic-provider-notice > svg { color: var(--ic-gray-550); margin-top: 2px; flex-shrink: 0; }
+.cc-ic-provider-notice-body { font-size: 14px; line-height: 1.55; color: var(--ic-gray-700); }
+.cc-ic-provider-notice-body strong { font-weight: 550; color: var(--ic-slate); }
+.cc-ic-provider-notice-body a { color: var(--ic-clay-deep); font-weight: 500; }
+.cc-ic-provider-notice-body a:hover { text-decoration: underline; }
+
+.cc-ic-card { background: #141413; border-radius: 12px; overflow: hidden; }
+.cc-ic-subtabs {
+  display: flex; align-items: center;
+  background: #1a1918;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+  padding: 0 8px; overflow-x: auto;
+}
+.cc-ic-subtab {
+  appearance: none; background: none; border: none;
+  padding: 12px 16px; font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative; white-space: nowrap;
+}
+.cc-ic-subtab:hover { color: rgba(255, 255, 255, 0.75); }
+.cc-ic-subtab.cc-ic-active { color: #fff; }
+.cc-ic-subtab.cc-ic-active::after {
+  content: ''; position: absolute;
+  left: 12px; right: 12px; bottom: -0.5px;
+  height: 2px; background: var(--ic-clay);
+}
+.cc-ic-shell-switch {
+  display: inline-flex; gap: 2px;
+  margin: 14px 26px 0; padding: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-family: inherit;
+}
+.cc-ic-shell-option {
+  font: inherit; font-size: 12px; font-weight: 500;
+  padding: 5px 12px; border-radius: 6px;
+  background: transparent; border: none;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer; user-select: none; white-space: nowrap;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+.cc-ic-shell-option:hover { color: rgba(255, 255, 255, 0.85); }
+.cc-ic-shell-option.cc-ic-active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.cc-ic-card-body { padding: 24px 26px; display: flex; align-items: flex-start; gap: 14px; }
+.cc-ic-prompt {
+  color: var(--ic-clay); font-family: var(--ic-font-mono);
+  font-size: 17px; user-select: none; padding-top: 2px;
+}
+.cc-ic-cmd {
+  flex: 1; font-family: var(--ic-font-mono);
+  font-size: 17px; color: #f0eee6;
+  line-height: 1.55; white-space: pre-wrap; word-break: break-word;
+}
+.cc-ic-copy {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 7px 13px; border-radius: 8px;
+  font-size: 13px; font-weight: 500; flex-shrink: 0;
+}
+.cc-ic-copy:hover { background: rgba(255, 255, 255, 0.14); }
+.cc-ic-copy.cc-ic-copied { background: var(--ic-clay-deep); border-color: var(--ic-clay-deep); color: #fff; }
+
+.cc-ic-below {
+  margin-top: 12px; font-size: 13px; color: var(--ic-gray-550);
+  display: flex; gap: 16px; flex-wrap: wrap; align-items: baseline;
+}
+.cc-ic-below a { color: var(--ic-gray-700); border-bottom: 0.5px solid var(--ic-border-default); }
+.cc-ic-below a:hover { color: var(--ic-clay-deep); border-bottom-color: var(--ic-clay-deep); }
+.cc-ic-handoff {
+  padding: 22px 24px;
+  background: linear-gradient(180deg, #faf9f4 0%, #f3f1e9 100%);
+  border: 0.5px solid var(--ic-border-default);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(31, 30, 29, 0.04), 0 6px 16px -4px rgba(31, 30, 29, 0.06);
+}
+.dark .cc-ic-handoff {
+  background: linear-gradient(180deg, #262624 0%, #1f1e1d 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 16px -4px rgba(0, 0, 0, 0.4);
+}
+.cc-ic-handoff-title {
+  font-size: 16px; font-weight: 550; color: var(--ic-slate);
+  letter-spacing: -0.01em; margin-bottom: 4px;
+}
+.cc-ic-handoff-sub {
+  font-size: 14px; line-height: 1.5; color: var(--ic-gray-700);
+  margin-bottom: 18px;
+}
+.cc-ic-handoff-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.cc-ic-handoff-alt {
+  margin-top: 12px; font-size: 12px; color: var(--ic-gray-550);
+}
+.cc-ic-handoff-alt code {
+  font-family: var(--ic-font-mono); font-size: 11px;
+  background: var(--ic-gray-150); padding: 2px 6px;
+  border-radius: 4px; color: var(--ic-gray-700);
+}
+.cc-ic-copy-sm {
+  appearance: none; border: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  margin-left: 4px; vertical-align: middle;
+  background: var(--ic-gray-150); color: var(--ic-gray-550);
+  border-radius: 4px;
+  transition: color 0.1s, background-color 0.1s;
+}
+.cc-ic-copy-sm:hover { color: var(--ic-gray-700); background: var(--ic-border-default); }
+.cc-ic-copy-sm.cc-ic-copied { background: var(--ic-clay-deep); color: #fff; }
+
+@media (max-width: 720px) {
+  .cc-ic-tab { padding: 12px 14px; font-size: 14px; }
+  .cc-ic-sales-actions { width: 100%; }
+  .cc-ic-card-body { padding: 20px; }
+  .cc-ic-cmd { font-size: 15px; }
+}
+`;
+  return <div className="cc-ic not-prose">
+      <style>{STYLES}</style>
+
+      {}
+      <div className="cc-ic-tab-strip" role="tablist">
+        {TABS.map(t => <button key={t.key} type="button" role="tab" aria-selected={target === t.key} className={'cc-ic-tab' + (target === t.key ? ' cc-ic-active' : '')} onClick={() => setTarget(t.key)}>
+            {t.label}
+          </button>)}
+      </div>
+
+      {}
+      <div className="cc-ic-team-wrap">
+        <button type="button" role="switch" aria-checked={team} className={'cc-ic-team-toggle' + (team ? ' cc-ic-checked' : '')} onClick={() => setTeam(!team)}>
+          <span className="cc-ic-check">{iconCheck(11)}</span>
+          <span>
+            I’m buying for a team or company (SSO, AWS/Azure/GCP, central billing)
+          </span>
+        </button>
+      </div>
+
+      {}
+      {team && <div className="cc-ic-team-reveal">
+          <div className="cc-ic-sales">
+            <div className="cc-ic-sales-text">
+              <strong>Set up your team:</strong> self-serve or talk to sales.
+            </div>
+            <div className="cc-ic-sales-actions">
+              <a href="https://claude.ai/upgrade?initialPlanType=team&amp;utm_source=claude_code&amp;utm_medium=docs&amp;utm_content=configurator_team_get_started" className="cc-ic-btn-ghost">
+                Get started
+              </a>
+              <a href="https://www.anthropic.com/contact-sales?utm_source=claude_code&amp;utm_medium=docs&amp;utm_content=configurator_team_contact_sales" className="cc-ic-btn-clay">
+                Contact sales {iconArrowRight()}
+              </a>
+            </div>
+          </div>
+
+          <div className="cc-ic-provider-bar">
+            <span className="cc-ic-label">Run on</span>
+            <div className="cc-ic-provider-pills" role="radiogroup" aria-label="Provider">
+              {PROVIDERS.map(p => <button key={p.key} type="button" role="radio" aria-checked={provider === p.key} className={'cc-ic-p-pill' + (provider === p.key ? ' cc-ic-active' : '')} onClick={() => setProvider(p.key)}>
+                  {p.label}
+                </button>)}
+            </div>
+          </div>
+
+          {showNotice && <div className="cc-ic-provider-notice">
+              {iconInfo()}
+              <div className="cc-ic-provider-notice-body">
+                {PROVIDER_NOTICE[provider]}
+              </div>
+            </div>}
+        </div>}
+
+      {}
+      {target === 'terminal' && <div className="cc-ic-card">
+          <div className="cc-ic-subtabs" role="tablist" aria-label="Install method">
+            {Object.keys(TERM).map(k => <button key={k} type="button" role="tab" aria-selected={pkg === k} className={'cc-ic-subtab' + (pkg === k ? ' cc-ic-active' : '')} onClick={() => setPkg(k)}>
+                {TERM[k].label}
+              </button>)}
+          </div>
+          {isWinInstaller && <div className="cc-ic-shell-switch" role="tablist" aria-label="Shell">
+              {[{
+    k: 'ps',
+    label: 'PowerShell'
+  }, {
+    k: 'cmd',
+    label: 'CMD'
+  }].map(({k, label}) => {
+    const active = k === 'cmd' === winCmd;
+    return <button key={k} type="button" role="tab" aria-selected={active} className={'cc-ic-shell-option' + (active ? ' cc-ic-active' : '')} onClick={() => setWinCmd(k === 'cmd')}>
+                    {label}
+                  </button>;
+  })}
+            </div>}
+          {cardBodyCmd(terminalCmd, isWinPrompt ? '>' : '$')}
+        </div>}
+
+      {}
+      {target === 'terminal' && <div className="cc-ic-below">
+          {isWinInstaller && <span>
+              Requires{' '}
+              <a href="https://git-scm.com/downloads/win" target="_blank" rel="noopener">
+                Git for Windows
+              </a>.
+            </span>}
+          {(pkg === 'brew' || pkg === 'winget') && <span>
+              Does not auto-update. Run{' '}
+              <code>{pkg === 'brew' ? 'brew upgrade claude-code' : 'winget upgrade Anthropic.ClaudeCode'}</code>{' '}
+              periodically.
+            </span>}
+          <a href="/en/troubleshooting">Troubleshooting</a>
+        </div>}
+
+      {alt && <div className="cc-ic-handoff">
+          <div className="cc-ic-handoff-title">Claude Code for {alt.name}</div>
+          <div className="cc-ic-handoff-sub">{alt.tagline}</div>
+          <div className="cc-ic-handoff-actions">
+            <a href={alt.installHref} className="cc-ic-btn-clay" {...alt.installHref.startsWith('http') ? {
+    target: '_blank',
+    rel: 'noopener'
+  } : {}}>
+              {alt.installLabel} {iconArrowUpRight(13)}
+            </a>
+            <a href={alt.guideHref} className="cc-ic-btn-ghost">
+              {alt.name} guide {iconArrowRight(12)}
+            </a>
+          </div>
+          {alt.altCmd && <div className="cc-ic-handoff-alt">
+              or run <code>{alt.altCmd}</code>
+              <button type="button" className={'cc-ic-copy-sm' + (copied === 'alt' ? ' cc-ic-copied' : '')} onClick={() => handleCopy(alt.altCmd, 'alt')} aria-label="Copy command">
+                {copied === 'alt' ? iconCheck(11) : iconCopy(11)}
+              </button>
+            </div>}
+        </div>}
+    </div>;
+};
+
+This quickstart guide will have you using AI-powered coding assistance in a few minutes. By the end, you'll understand how to use Claude Code for common development tasks.
+
+<div className="install-configurator-slot">
+  <InstallConfigurator />
+</div>
+
+## Before you begin
+
+Make sure you have:
+
+* A terminal or command prompt open
+  * If you've never used the terminal before, check out the [terminal guide](/en/terminal-guide)
+* A code project to work with
+* A [Claude subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=quickstart_prereq) (Pro, Max, Team, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md)
+
+<Note>
+  This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/use-claude-code-in-vs-code-claude-code-docs-29143b6fee.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains-4cf6bd8c22.md), in [Slack](../14-Connectors/claude-code-in-slack-claude-code-docs-c62a093e92.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/claude-code-github-actions-claude-code-docs-0d633fbd8a.md) and [GitLab](../02-Claude-Code-CLI/claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md). See [all interfaces](/en/overview#use-claude-code-everywhere).
+</Note>
+
+## Step 1: Install Claude Code
+
+To install Claude Code, use one of the following methods:
+
+<Tabs>
+  <Tab title="Native Install (Recommended)">
+    **macOS, Linux, WSL:**
+
+    ```bash theme={null}
+    curl -fsSL https://claude.ai/install.sh | bash
+    ```
+
+    **Windows PowerShell:**
+
+    ```powershell theme={null}
+    irm https://claude.ai/install.ps1 | iex
+    ```
+
+    **Windows CMD:**
+
+    ```batch theme={null}
+    curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+    ```
+
+    If you see `The token '&&' is not a valid statement separator`, you're in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you're in CMD, not PowerShell. Your prompt shows `PS C:\` when you're in PowerShell and `C:\` without the `PS` when you're in CMD.
+
+    **Native Windows setups require [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don't have it. WSL setups do not need it.
+
+    <Info>
+      Native installations automatically update in the background to keep you on the latest version.
+    </Info>
+  </Tab>
+
+  <Tab title="Homebrew">
+    ```bash theme={null}
+    brew install --cask claude-code
+    ```
+
+    Homebrew offers two casks. `claude-code` tracks the stable release channel, which is typically about a week behind and skips releases with major regressions. `claude-code@latest` tracks the latest channel and receives new versions as soon as they ship.
+
+    <Info>
+      Homebrew installations do not auto-update. Run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed, to get the latest features and security fixes.
+    </Info>
+  </Tab>
+
+  <Tab title="WinGet">
+    ```powershell theme={null}
+    winget install Anthropic.ClaudeCode
+    ```
+
+    <Info>
+      WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
+    </Info>
+  </Tab>
+</Tabs>
+
+You can also install with [apt, dnf, or apk](/en/setup#install-with-linux-package-managers) on Debian, Fedora, RHEL, and Alpine.
+
+## Step 2: Log in to your account
+
+Claude Code requires an account to use. When you start an interactive session with the `claude` command, you'll need to log in:
+
+```bash theme={null}
+claude
+# You'll be prompted to log in on first use
+```
+
+```bash theme={null}
+/login
+# Follow the prompts to log in with your account
+```
+
+You can log in using any of these account types:
+
+* [Claude Pro, Max, Team, or Enterprise](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=quickstart_login) (recommended)
+* [Claude Console](https://console.anthropic.com/) (API access with pre-paid credits). On first login, a "Claude Code" workspace is automatically created in the Console for centralized cost tracking.
+* [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md) (enterprise cloud providers)
+
+Once logged in, your credentials are stored and you won't need to log in again. To switch accounts later, use the `/login` command.
+
+## Step 3: Start your first session
+
+Open your terminal in any project directory and start Claude Code:
+
+```bash theme={null}
+cd /path/to/your/project
+claude
+```
+
+You'll see the Claude Code welcome screen with your session information, recent conversations, and latest updates. Type `/help` for available commands or `/resume` to continue a previous conversation.
+
+<Tip>
+  After logging in (Step 2), your credentials are stored on your system. Learn more in [Credential Management](/en/authentication#credential-management).
+</Tip>
+
+## Step 4: Ask your first question
+
+Let's start with understanding your codebase. Try one of these commands:
+
+```text theme={null}
+what does this project do?
+```
+
+Claude will analyze your files and provide a summary. You can also ask more specific questions:
+
+```text theme={null}
+what technologies does this project use?
+```
+
+```text theme={null}
+where is the main entry point?
+```
+
+```text theme={null}
+explain the folder structure
+```
+
+You can also ask Claude about its own capabilities:
+
+```text theme={null}
+what can Claude Code do?
+```
+
+```text theme={null}
+how do I create custom skills in Claude Code?
+```
+
+```text theme={null}
+can Claude Code work with Docker?
+```
+
+<Note>
+  Claude Code reads your project files as needed. You don't have to manually add context.
+</Note>
+
+## Step 5: Make your first code change
+
+Now let's make Claude Code do some actual coding. Try a simple task:
+
+```text theme={null}
+add a hello world function to the main file
+```
+
+Claude Code will:
+
+1. Find the appropriate file
+2. Show you the proposed changes
+3. Ask for your approval
+4. Make the edit
+
+<Note>
+  Claude Code always asks for permission before modifying files. You can approve individual changes or enable "Accept all" mode for a session.
+</Note>
+
+## Step 6: Use Git with Claude Code
+
+Claude Code makes Git operations conversational:
+
+```text theme={null}
+what files have I changed?
+```
+
+```text theme={null}
+commit my changes with a descriptive message
+```
+
+You can also prompt for more complex Git operations:
+
+```text theme={null}
+create a new branch called feature/quickstart
+```
+
+```text theme={null}
+show me the last 5 commits
+```
+
+```text theme={null}
+help me resolve merge conflicts
+```
+
+## Step 7: Fix a bug or add a feature
+
+Claude is proficient at debugging and feature implementation.
+
+Describe what you want in natural language:
+
+```text theme={null}
+add input validation to the user registration form
+```
+
+Or fix existing issues:
+
+```text theme={null}
+there's a bug where users can submit empty forms - fix it
+```
+
+Claude Code will:
+
+* Locate the relevant code
+* Understand the context
+* Implement a solution
+* Run tests if available
+
+## Step 8: Test out other common workflows
+
+There are a number of ways to work with Claude:
+
+**Refactor code**
+
+```text theme={null}
+refactor the authentication module to use async/await instead of callbacks
+```
+
+**Write tests**
+
+```text theme={null}
+write unit tests for the calculator functions
+```
+
+**Update documentation**
+
+```text theme={null}
+update the README with installation instructions
+```
+
+**Code review**
+
+```text theme={null}
+review my changes and suggest improvements
+```
+
+<Tip>
+  Talk to Claude like you would a helpful colleague. Describe what you want to achieve, and it will help you get there.
+</Tip>
+
+## Essential commands
+
+Here are the most important commands for daily use:
+
+| Command             | What it does                                           | Example                             |
+| ------------------- | ------------------------------------------------------ | ----------------------------------- |
+| `claude`            | Start interactive mode                                 | `claude`                            |
+| `claude "task"`     | Run a one-time task                                    | `claude "fix the build error"`      |
+| `claude -p "query"` | Run one-off query, then exit                           | `claude -p "explain this function"` |
+| `claude -c`         | Continue most recent conversation in current directory | `claude -c`                         |
+| `claude -r`         | Resume a previous conversation                         | `claude -r`                         |
+| `/clear`            | Clear conversation history                             | `/clear`                            |
+| `/help`             | Show available commands                                | `/help`                             |
+| `exit` or Ctrl+D    | Exit Claude Code                                       | `exit`                              |
+
+See the [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) for a complete list of commands.
+
+## Pro tips for beginners
+
+For more, see [best practices](../10-Prompting-Guides/best-practices-for-claude-code-claude-code-docs-9686dc1633.md) and [common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md).
+
+<AccordionGroup>
+  <Accordion title="Be specific with your requests">
+    Instead of: "fix the bug"
+
+    Try: "fix the login bug where users see a blank screen after entering wrong credentials"
+  </Accordion>
+
+  <Accordion title="Use step-by-step instructions">
+    Break complex tasks into steps:
+
+    ```text theme={null}
+    1. create a new database table for user profiles
+    2. create an API endpoint to get and update user profiles
+    3. build a webpage that allows users to see and edit their information
+    ```
+  </Accordion>
+
+  <Accordion title="Let Claude explore first">
+    Before making changes, let Claude understand your code:
+
+    ```text theme={null}
+    analyze the database schema
+    ```
+
+    ```text theme={null}
+    build a dashboard showing products that are most frequently returned by our UK customers
+    ```
+  </Accordion>
+
+  <Accordion title="Save time with shortcuts">
+    * Press `?` to see all available keyboard shortcuts
+    * Use Tab for command completion
+    * Press ↑ for command history
+    * Type `/` to see all commands and skills
+  </Accordion>
+</AccordionGroup>
+
+## What's next?
+
+Now that you've learned the basics, explore more advanced features:
+
+<CardGroup cols={2}>
+  <Card title="How Claude Code works" icon="microchip" href="/en/how-claude-code-works">
+    Understand the agentic loop, built-in tools, and how Claude Code interacts with your project
+  </Card>
+
+  <Card title="Best practices" icon="star" href="/en/best-practices">
+    Get better results with effective prompting and project setup
+  </Card>
+
+  <Card title="Common workflows" icon="graduation-cap" href="/en/common-workflows">
+    Step-by-step guides for common tasks
+  </Card>
+
+  <Card title="Extend Claude Code" icon="puzzle-piece" href="/en/features-overview">
+    Customize with CLAUDE.md, skills, hooks, MCP, and more
+  </Card>
+</CardGroup>
+
+## Getting help
+
+* **In Claude Code**: Type `/help` or ask "how do I..."
+* **Documentation**: You're here! Browse other guides
+* **Community**: Join our [Discord](https://www.anthropic.com/discord) for tips and support
+
+
+---
 ## quickstart.md
 
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
@@ -4404,10 +6758,10 @@ Make sure you have:
 
 * A terminal or command prompt open
 * A code project to work with
-* A [Claude subscription](https://claude.com/pricing) (Pro, Max, Teams, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](/en/third-party-integrations)
+* A [Claude subscription](https://claude.com/pricing) (Pro, Max, Teams, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md)
 
 <Note>
-  This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](/en/vs-code) and [JetBrains IDEs](/en/jetbrains), in [Slack](../02-Claude-Code-CLI/slack.md), and in CI/CD with [GitHub Actions](/en/github-actions) and [GitLab](/en/gitlab-ci-cd). See [all interfaces](/en/overview#use-claude-code-everywhere).
+  This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/use-claude-code-in-vs-code-claude-code-docs-29143b6fee.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains-4cf6bd8c22.md), in [Slack](../02-Claude-Code-CLI/slack.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/claude-code-github-actions-claude-code-docs-0d633fbd8a.md) and [GitLab](../02-Claude-Code-CLI/claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md). See [all interfaces](/en/overview#use-claude-code-everywhere).
 </Note>
 
 ## Step 1: Install Claude Code
@@ -4478,7 +6832,7 @@ You can log in using any of these account types:
 
 * [Claude Pro, Max, Teams, or Enterprise](https://claude.com/pricing) (recommended)
 * [Claude Console](https://console.anthropic.com/) (API access with pre-paid credits). On first login, a "Claude Code" workspace is automatically created in the Console for centralized cost tracking.
-* [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](/en/third-party-integrations) (enterprise cloud providers)
+* [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md) (enterprise cloud providers)
 
 Once logged in, your credentials are stored and you won't need to log in again. To switch accounts later, use the `/login` command.
 
@@ -4653,11 +7007,11 @@ Here are the most important commands for daily use:
 | `/help`             | Show available commands                                | `/help`                             |
 | `exit` or Ctrl+C    | Exit Claude Code                                       | `exit`                              |
 
-See the [CLI reference](/en/cli-reference) for a complete list of commands.
+See the [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) for a complete list of commands.
 
 ## Pro tips for beginners
 
-For more, see [best practices](/en/best-practices) and [common workflows](/en/common-workflows).
+For more, see [best practices](../10-Prompting-Guides/best-practices-for-claude-code-claude-code-docs-9686dc1633.md) and [common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md).
 
 <AccordionGroup>
   <Accordion title="Be specific with your requests">
@@ -10105,7 +12459,7 @@ cd your-awesome-project
 claude
 ```
 
-If you encounter any issues during installation, consult the [troubleshooting guide](/en/troubleshooting).
+If you encounter any issues during installation, consult the [troubleshooting guide](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md).
 
 <Tip>
   Run `claude doctor` after installation to check your installation type and version.
@@ -10126,7 +12480,7 @@ If you encounter any issues during installation, consult the [troubleshooting gu
 
 1. **Claude for Teams or Enterprise** (recommended): Subscribe to [Claude for Teams](https://claude.com/pricing#team-&-enterprise) or [Claude for Enterprise](https://anthropic.com/contact-sales) for centralized billing, team management, and access to both Claude Code and Claude on the web. Team members log in with their Claude.ai accounts.
 2. **Claude Console with team billing**: Set up a shared [Claude Console](https://console.anthropic.com) organization with team billing. Invite team members and assign roles for usage tracking.
-3. **Cloud providers**: Configure Claude Code to use [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](/en/third-party-integrations) for deployments with your existing cloud infrastructure.
+3. **Cloud providers**: Configure Claude Code to use [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md) for deployments with your existing cloud infrastructure.
 
 ### Install a specific version
 
@@ -10225,7 +12579,7 @@ npm install -g @anthropic-ai/claude-code
 **Option 1: Claude Code within WSL**
 
 * Both WSL 1 and WSL 2 are supported
-* WSL 2 supports [sandboxing](/en/sandboxing) for enhanced security. WSL 1 does not support sandboxing.
+* WSL 2 supports [sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) for enhanced security. WSL 1 does not support sandboxing.
 
 **Option 2: Claude Code on native Windows with Git Bash**
 
@@ -10259,7 +12613,7 @@ Configure which release channel Claude Code follows for both auto-updates and `c
 * `"latest"` (default): Receive new features as soon as they're released
 * `"stable"`: Use a version that is typically about one week old, skipping releases with major regressions
 
-Configure this via `/config` → **Auto-update channel**, or add it to your [settings.json file](/en/settings):
+Configure this via `/config` → **Auto-update channel**, or add it to your [settings.json file](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md):
 
 ```json  theme={null}
 {
@@ -10271,7 +12625,7 @@ For enterprise deployments, you can enforce a consistent release channel across 
 
 ### Disable auto-updates
 
-Set the `DISABLE_AUTOUPDATER` environment variable in your shell or [settings.json file](/en/settings):
+Set the `DISABLE_AUTOUPDATER` environment variable in your shell or [settings.json file](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md):
 
 ```bash  theme={null}
 export DISABLE_AUTOUPDATER=1
@@ -10501,7 +12855,7 @@ Most organizations can use a cloud provider directly without additional configur
 * **Corporate proxy**: Routes traffic through an HTTP/HTTPS proxy. Use this if your organization requires all outbound traffic to pass through a proxy server for security monitoring, compliance, or network policy enforcement. Configure with the `HTTPS_PROXY` or `HTTP_PROXY` environment variables. Learn more in [Enterprise network configuration](../02-Claude-Code-CLI/enterprise-network-configuration-claude-code-docs.md).
 * **LLM Gateway**: A service that sits between Claude Code and the cloud provider to handle authentication and routing. Use this if you need centralized usage tracking across teams, custom rate limiting or budgets, or centralized authentication management. Configure with the `ANTHROPIC_BASE_URL`, `ANTHROPIC_BEDROCK_BASE_URL`, or `ANTHROPIC_VERTEX_BASE_URL` environment variables. Learn more in [LLM gateway configuration](../02-Claude-Code-CLI/llm-gateway-configuration-claude-code-docs.md).
 
-The following examples show the environment variables to set in your shell or shell profile (`.bashrc`, `.zshrc`). See [Settings](/en/settings) for other configuration methods.
+The following examples show the environment variables to set in your shell or shell profile (`.bashrc`, `.zshrc`). See [Settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) for other configuration methods.
 
 ### Amazon Bedrock
 
@@ -10608,7 +12962,7 @@ We strongly recommend investing in documentation so that Claude Code understands
 * **Organization-wide**: Deploy to system directories like `/Library/Application Support/ClaudeCode/CLAUDE.md` (macOS) for company-wide standards
 * **Repository-level**: Create `CLAUDE.md` files in repository roots containing project architecture, build commands, and contribution guidelines. Check these into source control so all users benefit
 
-Learn more in [Memory and CLAUDE.md files](/en/memory).
+Learn more in [Memory and CLAUDE.md files](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md).
 
 ### Simplify deployment
 
@@ -10632,6 +12986,6 @@ At Anthropic, we trust Claude Code to power development across every Anthropic c
 
 Once you've chosen a deployment option and configured access for your team:
 
-1. **Roll out to your team**: Share installation instructions and have team members [install Claude Code](/en/setup) and authenticate with their credentials.
-2. **Set up shared configuration**: Create a [CLAUDE.md file](/en/memory) in your repositories to help Claude Code understand your codebase and coding standards.
+1. **Roll out to your team**: Share installation instructions and have team members [install Claude Code](advanced-setup-claude-code-docs-0526bc1300.md) and authenticate with their credentials.
+2. **Set up shared configuration**: Create a [CLAUDE.md file](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) in your repositories to help Claude Code understand your codebase and coding standards.
 3. **Configure permissions**: Review [security settings](../02-Claude-Code-CLI/security-claude-code-docs.md) to define what Claude Code can and cannot do in your environment.

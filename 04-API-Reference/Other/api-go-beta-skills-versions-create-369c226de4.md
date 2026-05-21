@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Skills Versions Create 369C226De4"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/create.md"
+tags: ["api", "skills"]
 ---
+
 ## Create
 
 `client.Beta.Skills.Versions.New(ctx, skillID, params) (*BetaSkillVersionNewResponse, error)`

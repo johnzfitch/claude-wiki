@@ -62,7 +62,7 @@ For details on plugin structure and formatting, see the **[plugin reference docu
 
 Additional resources:
 
-- **[Create and distribute a plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces)**
+- **[Create and distribute a plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md)**
 
 - **[Create plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)**
 

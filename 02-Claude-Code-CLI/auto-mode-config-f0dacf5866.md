@@ -1,9 +1,11 @@
 ---
+title: "Configure auto mode"
+source_url: "https://code.claude.com/docs/en/auto-mode-config.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/auto-mode-config.md"
-title: "Configure auto mode"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -28,7 +30,7 @@ This page covers how to:
 
 ## Where the classifier reads configuration
 
-The classifier reads the same [CLAUDE.md](/en/memory) content Claude itself loads, so an instruction like "never force push" in your project's CLAUDE.md steers both Claude and the classifier at the same time. Start there for project conventions and behavioral rules.
+The classifier reads the same [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) content Claude itself loads, so an instruction like "never force push" in your project's CLAUDE.md steers both Claude and the classifier at the same time. Start there for project conventions and behavioral rules.
 
 For rules that apply across projects, such as trusted infrastructure or organization-wide deny rules, use the `autoMode` settings block. The classifier reads `autoMode` from the following scopes:
 
@@ -36,7 +38,7 @@ For rules that apply across projects, such as trusted infrastructure or organiza
 | :----------------------------- | :---------------------------------------------- | :--------------------------------------------------- |
 | One developer                  | `~/.claude/settings.json`                       | Personal trusted infrastructure                      |
 | One project, one developer     | `.claude/settings.local.json`                   | Per-project trusted buckets or services, gitignored  |
-| Organization-wide              | [Managed settings](/en/server-managed-settings) | Trusted infrastructure distributed to all developers |
+| Organization-wide              | [Managed settings](../13-Enterprise-Admin/configure-server-managed-settings-claude-code-docs-d6a169b0bf.md) | Trusted infrastructure distributed to all developers |
 | `--settings` flag or Agent SDK | Inline JSON                                     | Per-invocation overrides for automation              |
 
 The classifier does not read `autoMode` from shared project settings in `.claude/settings.json`, so a checked-in repo cannot inject its own allow rules.
@@ -44,7 +46,7 @@ The classifier does not read `autoMode` from shared project settings in `.claude
 Entries from each scope are combined. A developer can extend `environment`, `allow`, and `soft_deny` with personal entries but cannot remove entries that managed settings provide. Because allow rules act as exceptions to block rules inside the classifier, a developer-added `allow` entry can override an organization `soft_deny` entry: the combination is additive, not a hard policy boundary.
 
 <Note>
-  The classifier is a second gate that runs after the [permissions system](/en/permissions). For actions that must never run regardless of user intent or classifier configuration, use `permissions.deny` in managed settings, which blocks the action before the classifier is consulted and cannot be overridden.
+  The classifier is a second gate that runs after the [permissions system](configure-permissions-claude-code-docs-7b0e64d485.md). For actions that must never run regardless of user intent or classifier configuration, use `permissions.deny` in managed settings, which blocks the action before the classifier is consulted and cannot be overridden.
 </Note>
 
 ## Define trusted infrastructure
@@ -101,7 +103,7 @@ You don't need to fill everything in at once. A reasonable rollout: start with t
 
 ## Override the block and allow rules
 
-Two additional fields let you replace the classifier's built-in rule lists: `autoMode.soft_deny` controls what gets blocked, and `autoMode.allow` controls which exceptions apply. Each is an array of prose descriptions, read as natural-language rules. There is no `autoMode.deny` field; to hard-block an action regardless of intent, use [`permissions.deny`](/en/permissions), which runs before the classifier.
+Two additional fields let you replace the classifier's built-in rule lists: `autoMode.soft_deny` controls what gets blocked, and `autoMode.allow` controls which exceptions apply. Each is an array of prose descriptions, read as natural-language rules. There is no `autoMode.deny` field; to hard-block an action regardless of intent, use [`permissions.deny`](configure-permissions-claude-code-docs-7b0e64d485.md), which runs before the classifier.
 
 Inside the classifier, precedence works in three tiers:
 
@@ -175,6 +177,6 @@ To react to denials programmatically, use the [`PermissionDenied` hook](/en/hook
 ## See also
 
 * [Permission modes](/en/permission-modes#eliminate-prompts-with-auto-mode): what auto mode is, what it blocks by default, and how to enable it
-* [Managed settings](/en/server-managed-settings): deploy `autoMode` configuration across your organization
-* [Permissions](/en/permissions): allow, ask, and deny rules that apply before the classifier runs
-* [Settings](/en/settings): the full settings reference, including the `autoMode` key
+* [Managed settings](../13-Enterprise-Admin/configure-server-managed-settings-claude-code-docs-d6a169b0bf.md): deploy `autoMode` configuration across your organization
+* [Permissions](configure-permissions-claude-code-docs-7b0e64d485.md): allow, ask, and deny rules that apply before the classifier runs
+* [Settings](claude-code-settings-claude-code-docs-d4420b4b52.md): the full settings reference, including the `autoMode` key

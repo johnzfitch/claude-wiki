@@ -24,6 +24,6 @@ For more information about using remote MCP servers with the Claude API, see the
 
 ## Remote MCP server examples
 
-*(See the [MCP connector documentation page](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector) for the current list of available remote MCP servers.)*
+*(See the [MCP connector documentation page](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-connector-2b3ff19436.md) for the current list of available remote MCP servers.)*
 
 > **Note:** **Looking for more?** [Find hundreds more MCP servers on GitHub](https://github.com/modelcontextprotocol/servers).

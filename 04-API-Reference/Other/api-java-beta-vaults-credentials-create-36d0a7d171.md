@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Vaults Credentials Create 36D0A7D171"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/vaults/credentials/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/vaults/credentials/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `BetaManagedAgentsCredential beta().vaults().credentials().create(CredentialCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

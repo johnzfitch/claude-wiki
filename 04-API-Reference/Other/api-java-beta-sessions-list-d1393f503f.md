@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Sessions List D1393F503F"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `SessionListPage beta().sessions().list(SessionListParamsparams = SessionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

@@ -1,5 +1,5 @@
 ---
-title: "\\\\\"Uploading\\\\\" PDFs to Claude Via the API"
+title: "\\\\\\"Uploading\\\\\\" PDFs to Claude Via the API"
 category: "04-API-Reference/Other"
 tags: ["api"]
 ---

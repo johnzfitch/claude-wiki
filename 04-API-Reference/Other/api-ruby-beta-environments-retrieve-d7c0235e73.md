@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Environments Retrieve D7C0235E73"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/environments/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/environments/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `beta.environments.retrieve(environment_id, **kwargs) -> BetaEnvironment`

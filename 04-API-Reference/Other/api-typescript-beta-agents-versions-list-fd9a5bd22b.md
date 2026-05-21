@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Agents Versions List Fd9A5Bd22B"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/agents/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/agents/versions/list.md"
+tags: ["agents", "api", "typescript"]
 ---
+
 ## List
 
 `client.beta.agents.versions.list(stringagentID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>`

@@ -1,9 +1,11 @@
 ---
+title: "What's new"
+source_url: "https://code.claude.com/docs/en/whats-new/index.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/whats-new/index.md"
-title: "What's new"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -12,7 +14,7 @@ title: "What's new"
 
 > A weekly digest of notable Claude Code features, with code snippets, demos, and context on why they matter.
 
-The weekly dev digest highlights the features most likely to change how you work. Each entry includes runnable code, a short demo, and a link to the full docs. For every bug fix and minor improvement, see the [changelog](/en/changelog).
+The weekly dev digest highlights the features most likely to change how you work. Each entry includes runnable code, a short demo, and a link to the full docs. For every bug fix and minor improvement, see the [changelog](../19-Reference/changelog-claude-code-docs-3d68ad8e13.md).
 
 <Update label="Week 15" description="April 6–10, 2026" tags={["v2.1.92–v2.1.101"]}>
   **Ultraplan** enters early preview: draft a plan in the cloud from your CLI, review and comment on it in a web editor, then run it remotely or pull it back local. The first run now auto-creates a cloud environment for you.

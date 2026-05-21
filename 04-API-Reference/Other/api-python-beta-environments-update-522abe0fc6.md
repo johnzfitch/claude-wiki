@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Environments Update 522Abe0Fc6"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/environments/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/environments/update.md"
+tags: ["api", "python"]
 ---
+
 ## Update
 
 `beta.environments.update(strenvironment_id, EnvironmentUpdateParams**kwargs)  -> BetaEnvironment`

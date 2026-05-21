@@ -67,5 +67,5 @@ Desktop runs the same engine as the CLI with a graphical interface. You can run 
 
 - [Use Claude Code Desktop](desktop.md)
 - [Troubleshooting](/en/desktop#troubleshooting)
-- [Best practices](/en/best-practices)
-- [Common workflows](/en/common-workflows)
+- [Best practices](../10-Prompting-Guides/best-practices-for-claude-code-claude-code-docs-9686dc1633.md)
+- [Common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md)

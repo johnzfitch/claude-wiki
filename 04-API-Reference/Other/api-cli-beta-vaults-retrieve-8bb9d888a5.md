@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Vaults Retrieve 8Bb9D888A5"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/vaults/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/vaults/retrieve.md"
+tags: ["api", "cli"]
 ---
+
 ## Retrieve
 
 `$ ant beta:vaults retrieve`

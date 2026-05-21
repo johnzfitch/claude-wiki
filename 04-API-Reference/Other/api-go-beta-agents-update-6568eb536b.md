@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Agents Update 6568Eb536B"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/update.md"
+tags: ["agents", "api"]
 ---
+
 ## Update
 
 `client.Beta.Agents.Update(ctx, agentID, params) (*BetaManagedAgentsAgent, error)`
@@ -47,7 +50,7 @@ Update Agent
 
   - `Model param.Field[BetaManagedAgentsModelConfigParamsResp]`
 
-    Body param: Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+    Body param: Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
 
     - `type BetaManagedAgentsModelConfigParamsResp struct{…}`
 

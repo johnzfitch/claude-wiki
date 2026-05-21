@@ -1,6 +1,6 @@
 ---
 category: "08-Plugins-Skills"
-fetched_at: "2026-04-26T03:19:59Z"
+fetched_at: "2026-05-19T21:22:36Z"
 source_url: "https://code.claude.com/docs/en/discover-plugins"
 title: "Discover and install prebuilt plugins through marketplaces - Claude Code Docs"
 ---
@@ -10,6 +10,12 @@ title: "Discover and install prebuilt plugins through marketplaces - Claude Code
 
 Find and install plugins from marketplaces to extend Claude Code with new skills, agents, and capabilities.
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 Plugins extend Claude Code with skills, agents, hooks, and MCP servers. Plugin marketplaces are catalogs that help you discover and install these extensions without building them yourself. Looking to create and distribute your own marketplace? See [Create and distribute a plugin marketplace](/docs/en/plugin-marketplaces).
 
@@ -49,12 +55,7 @@ The official Anthropic marketplace (`claude-plugins-official`) is automatically 
 
 If Claude Code reports that the plugin is not found in any marketplace, your marketplace is either missing or outdated. Run `/plugin marketplace update claude-plugins-official` to refresh it, or `/plugin marketplace add anthropics/claude-plugins-official` if you haven’t added it before. Then retry the install.
 
-The official marketplace is maintained by Anthropic. To submit a plugin to the official marketplace, use one of the in-app submission forms:
-
-- **Claude.ai**: [claude.ai/settings/plugins/submit](https://claude.ai/settings/plugins/submit)
-- **Console**: [platform.claude.com/plugins/submit](https://platform.claude.com/plugins/submit)
-
-To distribute plugins independently, [create your own marketplace](/docs/en/plugin-marketplaces) and share it with users.
+The official marketplace is curated by Anthropic, and inclusion is at Anthropic’s discretion. The in-app submission forms add plugins to the [community marketplace](#community-marketplace), not the official one. To distribute plugins independently, [create your own marketplace](/docs/en/plugin-marketplaces) and share it with users.
 
 The official marketplace includes several categories of plugins:
 
@@ -132,6 +133,25 @@ Customize how Claude responds:
 - **learning-output-style**: Interactive learning mode for skill building
 
 
+[​](#community-marketplace)
+
+Community marketplace
+
+The community marketplace at [`anthropics/claude-plugins-community`](https://github.com/anthropics/claude-plugins-community) hosts third-party plugins that have passed Anthropic’s automated validation and safety screening. Each plugin is pinned to a specific commit SHA in the catalog. Unlike the official marketplace, you add it manually:
+
+```python
+/plugin marketplace add anthropics/claude-plugins-community
+```
+
+Then install plugins from it using the `claude-community` marketplace name:
+
+```python
+/plugin install <plugin-name>@claude-community
+```
+
+To submit your own plugin to the community marketplace, see [Submit your plugin to the community marketplace](/docs/en/plugins#submit-your-plugin-to-the-community-marketplace) in the create-plugins guide.
+
+
 [​](#try-it-add-the-demo-marketplace)
 
 Try it: add the demo marketplace
@@ -170,7 +190,7 @@ Go to the **Discover** tab to see plugins from the marketplace you just added.
 
 Install a plugin
 
-Select a plugin to view its details, then choose an installation scope:
+Select a plugin to view its details. On Claude Code v2.1.143 and later, the details pane includes a **Context cost** estimate so you can see how many tokens the plugin will add to your [context window](/docs/en/features-overview#understand-context-costs) every turn before you install it. On v2.1.144 and later, the pane also shows the plugin’s **Last updated** date.Choose an installation scope:
 
 - **User scope**: install for yourself across all projects
 - **Project scope**: install for all collaborators on this repository
@@ -229,7 +249,7 @@ Add a GitHub repository that contains a `.claude-plugin/marketplace.json` file u
 
 Add from other Git hosts
 
-Add any git repository by providing the full URL. This works with any Git host, including GitLab, Bitbucket, and self-hosted servers: Using HTTPS:
+Add any git repository by providing the full URL. This works with any Git host, including GitLab, Bitbucket, and self-hosted servers. Include the `.git` suffix so Claude Code clones the repository rather than treating the URL as a direct link to a hosted `marketplace.json` file. Using HTTPS:
 
 ```python
 /plugin marketplace add https://gitlab.com/company/plugins.git
@@ -403,7 +423,7 @@ Claude Code can automatically update marketplaces and their installed plugins at
 3.  Choose a marketplace from the list
 4.  Select **Enable auto-update** or **Disable auto-update**
 
-Official Anthropic marketplaces have auto-update enabled by default. Third-party and local development marketplaces have auto-update disabled by default. To disable all automatic updates entirely for both Claude Code and all plugins, set the `DISABLE_AUTOUPDATER` environment variable. See [Auto updates](/docs/en/setup#auto-updates) for details. To keep plugin auto-updates enabled while disabling Claude Code auto-updates, set `FORCE_AUTOUPDATE_PLUGINS=1` along with `DISABLE_AUTOUPDATER`:
+Official Anthropic marketplaces have auto-update enabled by default. Third-party and local development marketplaces have auto-update disabled by default. Administrators can also set `"autoUpdate": true` on each [`extraKnownMarketplaces`](/docs/en/settings#extraknownmarketplaces) entry in managed settings to enable auto-update for an organization marketplace without requiring each user to toggle it. To disable all automatic updates entirely for both Claude Code and all plugins, set the `DISABLE_AUTOUPDATER` environment variable. See [Auto updates](/docs/en/setup#auto-updates) for details. To keep plugin auto-updates enabled while disabling Claude Code auto-updates, set `FORCE_AUTOUPDATE_PLUGINS=1` along with `DISABLE_AUTOUPDATER`:
 
 ```python
 export DISABLE_AUTOUPDATER=1
@@ -456,7 +476,7 @@ If you see “unknown command” or the `/plugin` command doesn’t appear:
 1.  **Check your version**: Run `claude --version` to see what’s installed.
 2.  **Update Claude Code**:
     - **Homebrew**: `brew upgrade claude-code` (or `brew upgrade claude-code@latest` if you installed that cask)
-    - **npm**: `npm update -g @anthropic-ai/claude-code`
+    - **npm**: `npm install -g @anthropic-ai/claude-code@latest`
     - **Native installer**: Re-run the install command from [Setup](/docs/en/setup)
 3.  **Restart Claude Code**: After updating, restart your terminal and run `claude` again.
 

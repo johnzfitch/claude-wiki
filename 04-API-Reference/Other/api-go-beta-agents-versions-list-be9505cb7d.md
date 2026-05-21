@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Agents Versions List Be9505Cb7D"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/versions/list.md"
+tags: ["agents", "api"]
 ---
+
 ## List
 
 `client.Beta.Agents.Versions.List(ctx, agentID, params) (*PageCursor[BetaManagedAgentsAgent], error)`

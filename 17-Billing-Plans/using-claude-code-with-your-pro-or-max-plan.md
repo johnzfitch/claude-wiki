@@ -35,7 +35,7 @@ Use two powerful AI products in one simple subscription.
 
 2.  **Install Claude Code**
 
-    - Visit the **[Claude Code page in our Claude Docs](https://code.claude.com/docs/en/quickstart#step-1-install-claude-code)** to download and install Claude Code.
+    - Visit the **[Claude Code page in our Claude Docs](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md#step-1-install-claude-code)** to download and install Claude Code.
 
     - Follow the installation instructions for your operating system.
 

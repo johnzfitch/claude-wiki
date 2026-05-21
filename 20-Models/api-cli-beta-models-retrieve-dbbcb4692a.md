@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Models Retrieve Dbbcb4692A"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/models/retrieve.md"
+tags: ["api", "cli"]
 ---
+
 ## Retrieve
 
 `$ ant beta:models retrieve`

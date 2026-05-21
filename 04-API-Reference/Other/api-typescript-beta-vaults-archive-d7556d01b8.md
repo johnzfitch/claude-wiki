@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Vaults Archive D7556D01B8"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/archive.md"
+tags: ["api", "typescript"]
 ---
+
 ## Archive
 
 `client.beta.vaults.archive(stringvaultID, VaultArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsVault`

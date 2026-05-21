@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Memory Stores Retrieve A04F1036C2"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `beta.memory_stores.retrieve(memory_store_id, **kwargs) -> BetaManagedAgentsMemoryStore`

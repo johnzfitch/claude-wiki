@@ -36,7 +36,7 @@ This page covers how to [toggle fast mode](#toggle-fast-mode), its [cost tradeof
 Toggle fast mode in either of these ways:
 
 * Type `/fast` and press Tab to toggle on or off
-* Set `"fastMode": true` in your [user settings file](/en/settings)
+* Set `"fastMode": true` in your [user settings file](claude-code-settings-claude-code-docs-d4420b4b52.md)
 
 By default, fast mode persists across sessions. Administrators can configure fast mode to reset each session. See [require per-session opt-in](#require-per-session-opt-in) for details.
 
@@ -149,6 +149,6 @@ Report issues or feedback through your usual Anthropic support channels.
 
 ## See also
 
-* [Model configuration](/en/model-config): switch models and adjust effort levels
+* [Model configuration](model-config-ca429e15da.md): switch models and adjust effort levels
 * [Manage costs effectively](costs.md): track token usage and reduce costs
-* [Status line configuration](/en/statusline): display model and context information
+* [Status line configuration](customize-your-status-line-claude-code-docs-8a9fc80be1.md): display model and context information

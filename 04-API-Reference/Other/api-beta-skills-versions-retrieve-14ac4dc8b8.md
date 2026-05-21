@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Skills Versions Retrieve 14Ac4Dc8B8"
+source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions/retrieve.md"
+tags: ["api", "skills"]
 ---
+
 ## Retrieve
 
 **get** `/v1/skills/{skill_id}/versions/{version}`

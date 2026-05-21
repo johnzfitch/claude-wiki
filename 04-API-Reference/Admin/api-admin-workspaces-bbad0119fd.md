@@ -1,9 +1,11 @@
 ---
+title: "Workspaces"
+source_url: "https://platform.claude.com/docs/en/api/admin/workspaces.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/workspaces.md"
-title: "Workspaces"
+tags: ["api"]
 ---
+
 # Workspaces
 
 ## Create

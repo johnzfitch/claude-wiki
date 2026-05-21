@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Memory Stores Memory Versions Redact Ad5A102530"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/memory_versions/redact.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/memory_versions/redact.md"
+tags: ["api"]
 ---
+
 ## Redact
 
 `beta.memory_stores.memory_versions.redact(memory_version_id, **kwargs) -> BetaManagedAgentsMemoryVersion`

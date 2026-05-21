@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Sessions Create 19B33Fd2C9"
+source_url: "https://platform.claude.com/docs/en/api/beta/sessions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/sessions/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 **post** `/v1/sessions`

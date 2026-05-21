@@ -544,7 +544,7 @@ Read
 
 Country
 
-**For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens.** [**Learn more**](https://platform.claude.com/docs/en/build-with-claude/data-residency)**.**
+**For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens.** [**Learn more**](../04-API-Reference/Guides/build-with-claude-data-residency-6c8e324ea6.md)**.**
 
 Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md#1-hour-cache-duration).
 
@@ -586,7 +586,7 @@ Balance availability, performance, and predictable costs based on your needs.
 
 Learn more
 
-[Learn more](https://platform.claude.com/docs/en/api/service-tiers)
+[Learn more](../04-API-Reference/Other/api-service-tiers-165fc24251.md)
 
 Learn more
 

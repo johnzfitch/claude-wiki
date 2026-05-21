@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Skills List 8F25A728C0"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/list.md"
+tags: ["api", "cli", "skills"]
 ---
+
 ## List
 
 `$ ant beta:skills list`

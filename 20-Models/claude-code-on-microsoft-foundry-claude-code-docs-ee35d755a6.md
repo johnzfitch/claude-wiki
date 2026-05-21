@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-04-26T03:20:15Z"
+fetched_at: "2026-05-19T21:22:54Z"
 source_url: "https://code.claude.com/docs/en/microsoft-foundry"
 title: "Claude Code on Microsoft Foundry - Claude Code Docs"
 ---
@@ -9,6 +9,13 @@ title: "Claude Code on Microsoft Foundry - Claude Code Docs"
 
 
 Learn about configuring Claude Code through Microsoft Foundry, including setup, configuration, and troubleshooting.
+
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 
 [​](#prerequisites)
@@ -98,11 +105,24 @@ export ANTHROPIC_DEFAULT_SONNET_MODEL='claude-sonnet-4-6'
 export ANTHROPIC_DEFAULT_HAIKU_MODEL='claude-haiku-4-5'
 ```
 
-For current and legacy model IDs, see [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview). See [Model configuration](/docs/en/model-config#pin-models-for-third-party-deployments) for the full list of environment variables. [Prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) is enabled automatically. To request a 1-hour cache TTL instead of the 5-minute default, set the following variable; cache writes with a 1-hour TTL are billed at a higher rate:
+Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Foundry, Claude Code defaults this to the primary model because not every account has a Haiku deployment. To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a Haiku deployment that is available in your account, as shown above. For current and legacy model IDs, see [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview). See [Model configuration](/docs/en/model-config#pin-models-for-third-party-deployments) for the full list of environment variables. [Prompt caching](/docs/en/prompt-caching) is enabled automatically. To request a 1-hour cache TTL instead of the 5-minute default, set the following variable; cache writes with a 1-hour TTL are billed at a higher rate:
 
 ```python
 export ENABLE_PROMPT_CACHING_1H=1
 ```
+
+
+[​](#5-run-claude-code)
+
+5. Run Claude Code
+
+With the environment variables set, start Claude Code from your project directory:
+
+```python
+claude
+```
+
+Claude Code reads `CLAUDE_CODE_USE_FOUNDRY` and the other Foundry variables from the environment and connects to your Azure resource on the first prompt. Unlike Bedrock and Vertex AI, Foundry has no interactive setup wizard, so the environment variables in steps 3 and 4 are the only configuration path.
 
 
 [​](#azure-rbac-configuration)

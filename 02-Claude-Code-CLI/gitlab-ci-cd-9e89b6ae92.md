@@ -1,9 +1,11 @@
 ---
+title: "Claude Code GitLab CI/CD"
+source_url: "https://code.claude.com/docs/en/gitlab-ci-cd.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/gitlab-ci-cd.md"
-title: "Claude Code GitLab CI/CD"
+tags: ["bedrock", "claude-code", "git", "security", "vertex"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -414,7 +416,7 @@ When using Claude Code with GitLab CI/CD, be aware of associated costs:
 * **API costs**:
   * Each Claude interaction consumes tokens based on prompt and response size
   * Token usage varies by task complexity and codebase size
-  * See [Anthropic pricing](https://platform.claude.com/docs/en/about-claude/pricing) for details
+  * See [Anthropic pricing](../17-Billing-Plans/about-claude-pricing-820bbf24dd.md) for details
 
 * **Cost optimization tips**:
   * Use specific `@claude` commands to reduce unnecessary turns

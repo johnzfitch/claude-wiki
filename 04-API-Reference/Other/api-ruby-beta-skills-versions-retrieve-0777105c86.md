@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Skills Versions Retrieve 0777105C86"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/versions/retrieve.md"
+tags: ["api", "skills"]
 ---
+
 ## Retrieve
 
 `beta.skills.versions.retrieve(version, **kwargs) -> VersionRetrieveResponse`

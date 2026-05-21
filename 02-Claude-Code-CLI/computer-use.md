@@ -83,4 +83,4 @@ Apps with broad reach show extra warnings:
 - [Computer use in Desktop](/en/desktop#let-claude-use-your-computer)
 - [Claude in Chrome](chrome.md)
 - [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md)
-- [Sandboxing](/en/sandboxing)
+- [Sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md)

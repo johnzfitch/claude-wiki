@@ -1,9 +1,11 @@
 ---
+title: "Troubleshooting"
+source_url: "https://code.claude.com/docs/en/troubleshooting.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/troubleshooting.md"
-title: "Troubleshooting"
+tags: ["authentication", "claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -15,7 +17,7 @@ title: "Troubleshooting"
 ## Troubleshoot installation issues
 
 <Tip>
-  If you'd rather skip the terminal entirely, the [Claude Code Desktop app](/en/desktop-quickstart) lets you install and use Claude Code through a graphical interface. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code\&utm_medium=docs) or [Windows](https://claude.com/download?utm_source=claude_code\&utm_medium=docs) and start coding without any command-line setup.
+  If you'd rather skip the terminal entirely, the [Claude Code Desktop app](../16-Mobile-Desktop/desktop-quickstart.md) lets you install and use Claude Code through a graphical interface. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code\&utm_medium=docs) or [Windows](https://claude.com/download?utm_source=claude_code\&utm_medium=docs) and start coding without any command-line setup.
 </Tip>
 
 Find the error message or symptom you're seeing:
@@ -39,7 +41,7 @@ Find the error message or symptom you're seeing:
 | `App unavailable in region`                                                             | Claude Code is not available in your country. See [supported countries](https://www.anthropic.com/supported-countries). |
 | `unable to get local issuer certificate`                                                | [Configure corporate CA certificates](#tls-or-ssl-connection-errors)                                                    |
 | `OAuth error` or `403 Forbidden`                                                        | [Fix authentication](#authentication-issues)                                                                            |
-| `API Error: 500`, `529 Overloaded`, `429`, or other 4xx and 5xx errors not listed above | See the [Error reference](/en/errors)                                                                                   |
+| `API Error: 500`, `529 Overloaded`, `429`, or other 4xx and 5xx errors not listed above | See the [Error reference](errors-8648349cb4.md)                                                                                   |
 
 If your issue isn't listed, work through these diagnostic steps.
 
@@ -466,7 +468,7 @@ Claude Code on native Windows needs [Git for Windows](https://git-scm.com/downlo
 
 **If Git is not installed**, download and install it from [git-scm.com/downloads/win](https://git-scm.com/downloads/win). During setup, select "Add to PATH." Restart your terminal after installing.
 
-**If Git is already installed** but Claude Code still can't find it, set the path in your [settings.json file](/en/settings):
+**If Git is already installed** but Claude Code still can't find it, set the path in your [settings.json file](claude-code-settings-claude-code-docs-d4420b4b52.md):
 
 ```json theme={null}
 {
@@ -615,7 +617,7 @@ export PATH="$HOME/.nvm/versions/node/$(node -v)/bin:$PATH"
 
 ### WSL2 sandbox setup
 
-[Sandboxing](/en/sandboxing) is supported on WSL2 but requires installing additional packages. If you see an error about missing `bubblewrap` or `socat` when running `/sandbox`, install the dependencies:
+[Sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) is supported on WSL2 but requires installing additional packages. If you see an error about missing `bubblewrap` or `socat` when running `/sandbox`, install the dependencies:
 
 <Tabs>
   <Tab title="Ubuntu/Debian">
@@ -690,7 +692,7 @@ If you see `API Error: 403 {"error":{"type":"forbidden","message":"Request not a
 
 * **Claude Pro/Max users**: verify your subscription is active at [claude.ai/settings](https://claude.ai/settings)
 * **Console users**: confirm your account has the "Claude Code" or "Developer" role assigned by your admin
-* **Behind a proxy**: corporate proxies can interfere with API requests. See [network configuration](/en/network-config) for proxy setup.
+* **Behind a proxy**: corporate proxies can interfere with API requests. See [network configuration](enterprise-network-configuration-claude-code-docs.md) for proxy setup.
 
 ### Model not found or not accessible
 
@@ -764,7 +766,7 @@ Claude Code stores configuration in several locations:
 
 On Windows, `~` refers to your user home directory, such as `C:\Users\YourName`.
 
-For details on configuring these files, see [Settings](/en/settings) and [MCP](/en/mcp).
+For details on configuring these files, see [Settings](claude-code-settings-claude-code-docs-d4420b4b52.md) and [MCP](../06-MCP-Tools/mcp-208e742686.md).
 
 ### Resetting configuration
 
@@ -806,7 +808,7 @@ To recover:
 
 1. Ask Claude to read the oversized file in smaller chunks, such as a specific line range or function, instead of the whole file
 2. Run `/compact` with a focus that drops the large output, for example `/compact keep only the plan and the diff`
-3. Move the large-file work to a [subagent](/en/sub-agents) so it runs in a separate context window
+3. Move the large-file work to a [subagent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) so it runs in a separate context window
 4. Run `/clear` if the earlier conversation is no longer needed
 
 ### Command hangs or freezes
@@ -837,7 +839,7 @@ apk add ripgrep
 pacman -S ripgrep
 ```
 
-Then set `USE_BUILTIN_RIPGREP=0` in your [environment](/en/env-vars).
+Then set `USE_BUILTIN_RIPGREP=0` in your [environment](env-vars-5c624d392b.md).
 
 ### Slow or incomplete search results on WSL
 
@@ -968,21 +970,21 @@ If generated markdown has excessive blank lines or inconsistent spacing:
 
 2. **Use formatting tools**: set up hooks to run markdown formatters like `prettier` or custom formatting scripts on generated markdown files.
 
-3. **Specify formatting preferences**: include formatting requirements in your prompts or project [memory](/en/memory) files.
+3. **Specify formatting preferences**: include formatting requirements in your prompts or project [memory](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) files.
 
 ### Reduce markdown formatting issues
 
 To minimize formatting issues:
 
 * **Be explicit in requests**: ask for "properly formatted markdown with language-tagged code blocks"
-* **Use project conventions**: document your preferred markdown style in [`CLAUDE.md`](/en/memory)
+* **Use project conventions**: document your preferred markdown style in [`CLAUDE.md`](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md)
 * **Set up validation hooks**: use post-processing hooks to automatically verify and fix common formatting issues
 
 ## Get more help
 
 If you're experiencing issues not covered here:
 
-1. See the [Error reference](/en/errors) for `API Error: 5xx`, `529 Overloaded`, `429`, and request validation errors that appear during a session
+1. See the [Error reference](errors-8648349cb4.md) for `API Error: 5xx`, `529 Overloaded`, `429`, and request validation errors that appear during a session
 2. Use the `/feedback` command within Claude Code to report problems directly to Anthropic
 3. Check the [GitHub repository](https://github.com/anthropics/claude-code) for known issues
 4. Run `/doctor` to diagnose issues. It checks:

@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Skills Versions List Cfc842Bc47"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/versions/list.md"
+tags: ["api", "python", "skills"]
 ---
+
 ## List
 
 `beta.skills.versions.list(strskill_id, VersionListParams**kwargs)  -> SyncPageCursor[VersionListResponse]`

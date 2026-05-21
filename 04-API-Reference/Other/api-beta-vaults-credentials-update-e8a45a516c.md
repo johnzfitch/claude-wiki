@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Vaults Credentials Update E8A45A516C"
+source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 **post** `/v1/vaults/{vault_id}/credentials/{credential_id}`

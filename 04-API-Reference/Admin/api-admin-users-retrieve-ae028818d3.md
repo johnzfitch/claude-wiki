@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Users Retrieve Ae028818D3"
+source_url: "https://platform.claude.com/docs/en/api/admin/users/retrieve.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/users/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 **get** `/v1/organizations/users/{user_id}`

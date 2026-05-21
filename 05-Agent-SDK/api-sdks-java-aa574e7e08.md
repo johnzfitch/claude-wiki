@@ -1,9 +1,11 @@
 ---
+title: "Java SDK"
+source_url: "https://platform.claude.com/docs/en/api/sdks/java.md"
 category: "05-Agent-SDK"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/sdks/java.md"
-title: "Java SDK"
+tags: ["agents", "cli", "sdk"]
 ---
+
 # Java SDK
 
 Install and configure the Anthropic Java SDK with builder patterns and async support

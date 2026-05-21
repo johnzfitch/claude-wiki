@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Vaults Credentials Delete 44F1Add60E"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/credentials/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/credentials/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `beta.vaults.credentials.delete(credential_id, **kwargs) -> BetaManagedAgentsDeletedCredential`

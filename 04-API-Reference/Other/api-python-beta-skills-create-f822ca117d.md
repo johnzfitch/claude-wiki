@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Skills Create F822Ca117D"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/create.md"
+tags: ["api", "python", "skills"]
 ---
+
 ## Create
 
 `beta.skills.create(SkillCreateParams**kwargs)  -> SkillCreateResponse`

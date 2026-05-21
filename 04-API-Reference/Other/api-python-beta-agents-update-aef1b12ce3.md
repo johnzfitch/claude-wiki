@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Agents Update Aef1B12Ce3"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/agents/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/agents/update.md"
+tags: ["agents", "api", "python"]
 ---
+
 ## Update
 
 `beta.agents.update(stragent_id, AgentUpdateParams**kwargs)  -> BetaManagedAgentsAgent`
@@ -45,7 +48,7 @@ Update Agent
 
 - `model: Optional[Model]`
 
-  Model identifier. Accepts the [model string](https://platform.claude.com/docs/en/about-claude/models/overview#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
+  Model identifier. Accepts the [model string](../../20-Models/about-claude-models-overview-2bbf09ff82.md#latest-models-comparison), e.g. `claude-opus-4-6`, or a `model_config` object for additional configuration control. Omit to preserve. Cannot be cleared.
 
   - `Union[Literal["claude-opus-4-7", "claude-opus-4-6", "claude-sonnet-4-6", 6 more], str]`
 

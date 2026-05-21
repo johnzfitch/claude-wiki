@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Messages Batches Results C0B2Ceacf3"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/results.md"
+tags: ["api", "typescript"]
 ---
+
 ## Results
 
 `client.beta.messages.batches.results(stringmessageBatchID, BatchResultsParamsparams?, RequestOptionsoptions?): BetaMessageBatchIndividualResponse | Stream<BetaMessageBatchIndividualResponse>`

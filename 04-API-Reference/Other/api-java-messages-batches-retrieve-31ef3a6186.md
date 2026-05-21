@@ -1,8 +1,11 @@
 ---
+title: "Api Java Messages Batches Retrieve 31Ef3A6186"
+source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `MessageBatch messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

@@ -1,20 +1,1170 @@
 # API Reference
 
-*23 documents*
+*1198 documents*
 
 
-## Agents-Tools (1)
+## About (7)
 
+- [Glossary](About/about-claude-glossary-1405208f57.md) - These concepts are not unique to Anthropic’s language models, but we present a brief summary of key terms below.
+- [Model deprecations](About/about-claude-model-deprecations-51979b6538.md)
+- [Content moderation](About/about-claude-use-case-guides-content-moderation-9aa9674309.md) - Content moderation is a critical aspect of maintaining a safe, respectful, and productive environment in digital applications. This guide discusses ho
+- [Customer support agent](About/about-claude-use-case-guides-customer-support-chat-5b82b8509b.md) - This guide walks through how to leverage Claude's advanced conversational capabilities to handle customer inquiries in real time, providing 24/7 suppo
+- [Legal summarization](About/about-claude-use-case-guides-legal-summarization-0b045c60ad.md) - This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracti
+- [Guides to common use cases](About/about-claude-use-case-guides-overview-43239e353a.md)
+- [Ticket routing](About/about-claude-use-case-guides-ticket-routing-95526bdf0d.md) - This guide walks through how to harness Claude's advanced natural language understanding capabilities to classify customer support tickets at scale ba
+
+## Admin (37)
+
+- [API Keys](Admin/api-admin-api-keys-5e6e893cb4.md) - **get** `/v1/organizations/api_keys/{api_key_id}`
+- [Api Admin Api Keys List 46C6242Fe5](Admin/api-admin-api-keys-list-46c6242fe5.md) - **get** `/v1/organizations/api_keys`
+- [Api Admin Api Keys Retrieve 1Be8681752](Admin/api-admin-api-keys-retrieve-1be8681752.md) - **get** `/v1/organizations/api_keys/{api_key_id}`
+- [Api Admin Api Keys Update F2523628A4](Admin/api-admin-api-keys-update-f2523628a4.md) - **post** `/v1/organizations/api_keys/{api_key_id}`
+- [Cost Report](Admin/api-admin-cost-report-ec1d585117.md) - **get** `/v1/organizations/cost_report`
+- [Api Admin Cost Report Retrieve 86A0323049](Admin/api-admin-cost-report-retrieve-86a0323049.md) - **get** `/v1/organizations/cost_report`
+- [Invites](Admin/api-admin-invites-c6a7bd3b33.md) - **post** `/v1/organizations/invites`
+- [Api Admin Invites Create 4E7F9221Ab](Admin/api-admin-invites-create-4e7f9221ab.md) - **post** `/v1/organizations/invites`
+- [Api Admin Invites Delete 4D77B687Fd](Admin/api-admin-invites-delete-4d77b687fd.md) - **delete** `/v1/organizations/invites/{invite_id}`
+- [Api Admin Invites List D4F19C73C1](Admin/api-admin-invites-list-d4f19c73c1.md) - **get** `/v1/organizations/invites`
+- [Api Admin Invites Retrieve 07968Dba44](Admin/api-admin-invites-retrieve-07968dba44.md) - **get** `/v1/organizations/invites/{invite_id}`
+- [Organizations](Admin/api-admin-organizations-2429119ffe.md) - **get** `/v1/organizations/me`
+- [Api Admin Organizations Me 85Ca0A0Bba](Admin/api-admin-organizations-me-85ca0a0bba.md) - **get** `/v1/organizations/me`
+- [Rate Limits](Admin/api-admin-rate-limits-1ff96f3780.md) - **get** `/v1/organizations/rate_limits`
+- [Api Admin Rate Limits List 83D9E8Ee16](Admin/api-admin-rate-limits-list-83d9e8ee16.md) - **get** `/v1/organizations/rate_limits`
+- [Usage Report](Admin/api-admin-usage-report-b05de342cf.md) - **get** `/v1/organizations/usage_report/messages`
+- [Api Admin Usage Report Retrieve Claude Code 610A5Cf4A0](Admin/api-admin-usage-report-retrieve-claude-code-610a5cf4a0.md) - **get** `/v1/organizations/usage_report/claude_code`
+- [Api Admin Usage Report Retrieve Messages A10B0B7A1A](Admin/api-admin-usage-report-retrieve-messages-a10b0b7a1a.md) - **get** `/v1/organizations/usage_report/messages`
+- [Users](Admin/api-admin-users-3705274a52.md) - **get** `/v1/organizations/users/{user_id}`
+- [Api Admin Users Delete Fbc1A9C080](Admin/api-admin-users-delete-fbc1a9c080.md) - **delete** `/v1/organizations/users/{user_id}`
+- [Api Admin Users List 2E0E8109F3](Admin/api-admin-users-list-2e0e8109f3.md) - **get** `/v1/organizations/users`
+- [Api Admin Users Retrieve Ae028818D3](Admin/api-admin-users-retrieve-ae028818d3.md) - **get** `/v1/organizations/users/{user_id}`
+- [Api Admin Users Update 56Bd0224C1](Admin/api-admin-users-update-56bd0224c1.md) - **post** `/v1/organizations/users/{user_id}`
+- [Api Admin Workspaces Archive 08Df2Be86D](Admin/api-admin-workspaces-archive-08df2be86d.md) - **post** `/v1/organizations/workspaces/{workspace_id}/archive`
+- [Workspaces](Admin/api-admin-workspaces-bbad0119fd.md) - **post** `/v1/organizations/workspaces`
+- [Api Admin Workspaces Create 6061341E22](Admin/api-admin-workspaces-create-6061341e22.md) - **post** `/v1/organizations/workspaces`
+- [Api Admin Workspaces List Db96Be5B4C](Admin/api-admin-workspaces-list-db96be5b4c.md) - **get** `/v1/organizations/workspaces`
+- [Members](Admin/api-admin-workspaces-members-baf3d594cd.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members`
+- [Api Admin Workspaces Members Create F4Ff1D3A79](Admin/api-admin-workspaces-members-create-f4ff1d3a79.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members`
+- [Api Admin Workspaces Members Delete D0Ab41C43A](Admin/api-admin-workspaces-members-delete-d0ab41c43a.md) - **delete** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
+- [Api Admin Workspaces Members List 725De557D8](Admin/api-admin-workspaces-members-list-725de557d8.md) - **get** `/v1/organizations/workspaces/{workspace_id}/members`
+- [Api Admin Workspaces Members Retrieve A68B4Bcb12](Admin/api-admin-workspaces-members-retrieve-a68b4bcb12.md) - **get** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
+- [Api Admin Workspaces Members Update A03E7Cf161](Admin/api-admin-workspaces-members-update-a03e7cf161.md) - **post** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`
+- [Rate Limits](Admin/api-admin-workspaces-rate-limits-7fd15c7aae.md) - **get** `/v1/organizations/workspaces/{workspace_id}/rate_limits`
+- [Api Admin Workspaces Rate Limits List 89661B6Ee2](Admin/api-admin-workspaces-rate-limits-list-89661b6ee2.md) - **get** `/v1/organizations/workspaces/{workspace_id}/rate_limits`
+- [Api Admin Workspaces Retrieve E4E9C89D38](Admin/api-admin-workspaces-retrieve-e4e9c89d38.md) - **get** `/v1/organizations/workspaces/{workspace_id}`
+- [Api Admin Workspaces Update 44659E11A9](Admin/api-admin-workspaces-update-44659e11a9.md) - **post** `/v1/organizations/workspaces/{workspace_id}`
+
+## Agents-Tools (32)
+
+- [Skill authoring best practices](Agents-Tools/agents-and-tools-agent-skills-best-practices-d1da876439.md) - Learn how to write effective Skills that Claude can discover and use successfully.
+- [Skills for enterprise](Agents-Tools/agents-and-tools-agent-skills-enterprise-6168dda2cc.md) - Governance, security review, evaluation, and organizational guidance for deploying Agent Skills at enterprise scale.
+- [Agent Skills](Agents-Tools/agents-and-tools-agent-skills-overview-a6ba167cbe.md) - Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts,
+- [Get started with Agent Skills in the API](Agents-Tools/agents-and-tools-agent-skills-quickstart-4b66ca78ee.md) - Learn how to use Agent Skills to create documents with the Claude API in under 10 minutes.
+- [MCP connector](Agents-Tools/agents-and-tools-mcp-connector-2b3ff19436.md)
+- [Remote MCP servers](Agents-Tools/agents-and-tools-remote-mcp-servers-42aeab377e.md)
+- [Advisor tool](Agents-Tools/agents-and-tools-tool-use-advisor-tool-0a75684a7b.md) - Pair a faster executor model with a higher-intelligence advisor model that provides strategic guidance mid-generation.
+- [Bash tool](Agents-Tools/agents-and-tools-tool-use-bash-tool-17760ed12d.md)
+- [Tutorial: Build a tool-using agent](Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent-72a5cd5184.md) - A guided walkthrough from a single tool call to a production-ready agentic loop.
+- [Code execution tool](Agents-Tools/agents-and-tools-tool-use-code-execution-tool-4d0dc9adf8.md) - Run Python and bash code in a sandboxed container to analyze data, generate files, and iterate on solutions.
 - [Code execution tool - Claude API Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) - Claude can analyze data, create visualizations, perform complex calculations, run system commands, create and edit files, and process uploaded files d
+- [Computer use tool](Agents-Tools/agents-and-tools-tool-use-computer-use-tool-92d412df82.md) - <Steps>
+- [Define tools](Agents-Tools/agents-and-tools-tool-use-define-tools-79983959fd.md) - Specify tool schemas, write effective descriptions, and control when Claude calls your tools.
+- [Fine-grained tool streaming](Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming-3f41c8f967.md) - Stream tool inputs character-by-character for latency-sensitive applications.
+- [Handle tool calls](Agents-Tools/agents-and-tools-tool-use-handle-tool-calls-4a48c94000.md) - Parse tool_use blocks, format tool_result responses, and handle errors with is_error.
+- [How tool use works](Agents-Tools/agents-and-tools-tool-use-how-tool-use-works-fdcca0c844.md) - Understand the tool use loop, where tools execute, and when to use tools instead of prose.
+- [Manage tool context](Agents-Tools/agents-and-tools-tool-use-manage-tool-context-ffb2d4526a.md) - Choose between tool search, programmatic tool calling, prompt caching, and context editing to manage context bloat.
+- [Memory tool](Agents-Tools/agents-and-tools-tool-use-memory-tool-6d9391f81f.md)
+- [Tool use with Claude](Agents-Tools/agents-and-tools-tool-use-overview-631f8e3a7e.md) - Connect Claude to external tools and APIs. Learn where tools execute and how the agentic loop works.
+- [Parallel tool use](Agents-Tools/agents-and-tools-tool-use-parallel-tool-use-93edcb192b.md) - Enable and format parallel tool calls, with message-history guidance and troubleshooting.
+- [Programmatic tool calling](Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling-95ea7cf823.md)
+- [Server tools](Agents-Tools/agents-and-tools-tool-use-server-tools-c13eb821bf.md) - Work with Anthropic-executed tools: server_tool_use blocks, pause_turn continuation, and domain filtering.
+- [Strict tool use](Agents-Tools/agents-and-tools-tool-use-strict-tool-use-6896c973b6.md) - Enforce JSON Schema compliance on Claude's tool inputs with grammar-constrained sampling.
+- [Text editor tool](Agents-Tools/agents-and-tools-tool-use-text-editor-tool-252bfe1f5b.md) - The text editor tool uses the same pricing structure as other tools used with Claude. It follows the standard input and output token pricing based on 
+- [Tool combinations](Agents-Tools/agents-and-tools-tool-use-tool-combinations-9ef3cff9d6.md) - Common Anthropic tool pairings for research agents, coding agents, and long-running agents.
+- [Tool reference](Agents-Tools/agents-and-tools-tool-use-tool-reference-73b4586472.md) - Directory of Anthropic-provided tools and reference for optional tool definition properties.
+- [Tool Runner (SDK)](Agents-Tools/agents-and-tools-tool-use-tool-runner-8ab76faf78.md) - Use the SDK's Tool Runner abstraction to handle the agentic loop, error wrapping, and type safety automatically.
+- [Tool search tool](Agents-Tools/agents-and-tools-tool-use-tool-search-tool-5499cf85ce.md)
+- [Tool use with prompt caching](Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching-a19f41d804.md) - Cache tool definitions across turns and understand what invalidates your cache.
+- [Troubleshooting tool use](Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use-e25c7591a5.md) - Fix the most common tool-use errors with symptom-to-fix diagnostic tables.
+- [Web fetch tool](Agents-Tools/agents-and-tools-tool-use-web-fetch-tool-d9b8c0ffca.md) - Fetch and read content from specific URLs to augment Claude's context with live web content.
+- [Web search tool](Agents-Tools/agents-and-tools-tool-use-web-search-tool-874fc28332.md)
 
-## Guides (1)
+## Guides (30)
 
+- [Adaptive thinking](Guides/build-with-claude-adaptive-thinking-2b96627d8d.md) - Let Claude dynamically determine when and how much to use extended thinking with adaptive thinking mode.
+- [Admin API overview](Guides/build-with-claude-administration-api-eb3a280106.md)
+- [API and data retention](Guides/build-with-claude-api-and-data-retention-11a5180442.md) - Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access
+- [Batch processing](Guides/build-with-claude-batch-processing-58f98b4064.md) - The Message Batches API is a powerful, cost-effective way to asynchronously process large volumes of [Messages](/docs/en/api/messages/create) requests
+- [Citations](Guides/build-with-claude-citations-a7ca911a58.md) - Integrate citations with Claude in these steps:
+- [Compaction](Guides/build-with-claude-compaction-47672e5bbf.md) - Server-side context compaction for managing long conversations that approach context window limits.
+- [Context editing](Guides/build-with-claude-context-editing-16aa20ebd8.md) - Automatically manage conversation context as it grows with context editing.
+- [Context windows](Guides/build-with-claude-context-windows-13ca780d1d.md)
 - [Context windows - Claude API Docs](Guides/build-with-claude-context-windows.md) - As conversations grow, you'll eventually approach context window limits. This guide explains how context windows work and introduces strategies for ma
+- [Data residency](Guides/build-with-claude-data-residency-6c8e324ea6.md) - Manage where model inference runs and where data is stored with geographic controls.
+- [Effort](Guides/build-with-claude-effort-20d7f07a6f.md) - Control how many tokens Claude uses when responding with the effort parameter, trading off between response thoroughness and token efficiency.
+- [Embeddings](Guides/build-with-claude-embeddings-bf8288b900.md) - Text embeddings are numerical representations of text that enable measuring semantic similarity. This guide introduces embeddings, their applications,
+- [Building with extended thinking](Guides/build-with-claude-extended-thinking-dd12780e6a.md)
+- [Fast mode (beta: research preview)](Guides/build-with-claude-fast-mode-7af2fa7ffd.md) - Higher output speed for Claude Opus 4.6, delivering significantly faster token generation for latency-sensitive and agentic workflows.
+- [Files API](Guides/build-with-claude-files-dacd285bb2.md) - - **Maximum file size:** 500 MB per file
+- [Handling stop reasons](Guides/build-with-claude-handling-stop-reasons-767bec5b32.md)
+- [Multilingual support](Guides/build-with-claude-multilingual-support-2d75e26f84.md) - Claude excels at tasks across multiple languages, maintaining strong cross-lingual performance relative to English.
+- [Features overview](Guides/build-with-claude-overview-236d3362b2.md) - Explore Claude's advanced features and capabilities.
+- [PDF support](Guides/build-with-claude-pdf-support-01e729abfc.md) - Process PDFs with Claude. Extract text, analyze charts, and understand visual content from your documents.
+- [Rate Limits API](Guides/build-with-claude-rate-limits-api-f95b04961e.md) - Programmatically query your organization's API rate limits with the Rate Limits API.
+- [Search results](Guides/build-with-claude-search-results-e16f90758e.md) - Enable natural citations for RAG applications by providing search results with source attribution
+- [Using Agent Skills with the API](Guides/build-with-claude-skills-guide-8feadbbf7d.md) - Learn how to use Agent Skills to extend Claude's capabilities through the API.
+- [Streaming Messages](Guides/build-with-claude-streaming-74f4dddaf7.md)
+- [Structured outputs](Guides/build-with-claude-structured-outputs-2638e81449.md) - Get validated JSON results from agent workflows
+- [Task budgets](Guides/build-with-claude-task-budgets-7152010a55.md) - Give Claude an advisory token budget for the full agentic loop to help the model self-regulate on long agentic tasks with task budgets.
+- [Token counting](Guides/build-with-claude-token-counting-acaef15da2.md) - The [token counting](/docs/en/api/messages-count-tokens) endpoint accepts the same structured list of inputs for creating a message, including support
+- [Usage and Cost API](Guides/build-with-claude-usage-cost-api-ea9ab3260c.md) - Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.
+- [Vision](Guides/build-with-claude-vision-789a5b8cc6.md) - Claude's vision capabilities allow it to understand and analyze images, opening up exciting possibilities for multimodal interaction.
+- [Using the Messages API](Guides/build-with-claude-working-with-messages-c26ad950fc.md) - Practical patterns and examples for using the Messages API effectively
+- [Workspaces](Guides/build-with-claude-workspaces-12135e8f23.md) - Organize API keys, manage team access, and control costs with workspaces.
 
-## Other (20)
+## Other (1083)
 
 - [Agent Skills](Other/agent-skills.md) - Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts,
 - [Amazon Bedrock | Claude](Other/amazon-bedrock-claude.md) - Build innovative AI applications with safer systems from Anthropic, supported by secure infrastructure from AWS.
+- [Admin](Other/api-admin-8fbba842b3.md) - **get** `/v1/organizations/me`
+- [Beta](Other/api-beta-1abaedf17c.md) - - `AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 19 more`
+- [Agents](Other/api-beta-agents-054f11e5a5.md) - **post** `/v1/agents`
+- [Api Beta Agents Archive Bb89Ea4C30](Other/api-beta-agents-archive-bb89ea4c30.md) - **post** `/v1/agents/{agent_id}/archive`
+- [Api Beta Agents Create 840B7Ddb29](Other/api-beta-agents-create-840b7ddb29.md) - **post** `/v1/agents`
+- [Api Beta Agents Delete B1F73666B6](Other/api-beta-agents-delete-b1f73666b6.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Beta Agents List 02C6A68585](Other/api-beta-agents-list-02c6a68585.md) - **get** `/v1/agents`
+- [Api Beta Agents Retrieve 303D032960](Other/api-beta-agents-retrieve-303d032960.md) - **get** `/v1/agents/{agent_id}`
+- [Api Beta Agents Update Afff94C113](Other/api-beta-agents-update-afff94c113.md) - **post** `/v1/agents/{agent_id}`
+- [Versions](Other/api-beta-agents-versions-24ed271fc9.md) - **get** `/v1/agents/{agent_id}/versions`
+- [Api Beta Agents Versions List Be98A6737B](Other/api-beta-agents-versions-list-be98a6737b.md) - **get** `/v1/agents/{agent_id}/versions`
+- [Environments](Other/api-beta-environments-9586b7a5ec.md) - **post** `/v1/environments`
+- [Api Beta Environments Archive 521F24Dc36](Other/api-beta-environments-archive-521f24dc36.md) - **post** `/v1/environments/{environment_id}/archive`
+- [Api Beta Environments Create 3801Bc5B1E](Other/api-beta-environments-create-3801bc5b1e.md) - **post** `/v1/environments`
+- [Api Beta Environments Delete E2059Cced9](Other/api-beta-environments-delete-e2059cced9.md) - **delete** `/v1/environments/{environment_id}`
+- [Api Beta Environments List 488B2Aed5D](Other/api-beta-environments-list-488b2aed5d.md) - **get** `/v1/environments`
+- [Api Beta Environments Retrieve 7C7F000Ede](Other/api-beta-environments-retrieve-7c7f000ede.md) - **get** `/v1/environments/{environment_id}`
+- [Api Beta Environments Update 1Ce25Fe54E](Other/api-beta-environments-update-1ce25fe54e.md) - **post** `/v1/environments/{environment_id}`
+- [Files](Other/api-beta-files-4ca47bac33.md) - **post** `/v1/files`
+- [Api Beta Files Delete 9Dc5Be1D20](Other/api-beta-files-delete-9dc5be1d20.md) - **delete** `/v1/files/{file_id}`
+- [Api Beta Files Download Eb9C73B460](Other/api-beta-files-download-eb9c73b460.md) - **get** `/v1/files/{file_id}/content`
+- [Api Beta Files List 1Cfa0Ac955](Other/api-beta-files-list-1cfa0ac955.md) - **get** `/v1/files`
+- [Api Beta Files Retrieve Metadata A8Dcdde9F1](Other/api-beta-files-retrieve-metadata-a8dcdde9f1.md) - **get** `/v1/files/{file_id}`
+- [Api Beta Files Upload 33844460F0](Other/api-beta-files-upload-33844460f0.md) - **post** `/v1/files`
+- [Memory Stores](Other/api-beta-memory-stores-22b2aa2db9.md) - **post** `/v1/memory_stores`
+- [Api Beta Memory Stores Archive 3E02Cd1Bde](Other/api-beta-memory-stores-archive-3e02cd1bde.md) - **post** `/v1/memory_stores/{memory_store_id}/archive`
+- [Api Beta Memory Stores Create E283E33F45](Other/api-beta-memory-stores-create-e283e33f45.md) - **post** `/v1/memory_stores`
+- [Api Beta Memory Stores Delete A1Eb77Bf61](Other/api-beta-memory-stores-delete-a1eb77bf61.md) - **delete** `/v1/memory_stores/{memory_store_id}`
+- [Api Beta Memory Stores List 1Af788E2B4](Other/api-beta-memory-stores-list-1af788e2b4.md) - **get** `/v1/memory_stores`
+- [Memories](Other/api-beta-memory-stores-memories-2c0cff2ab9.md) - **post** `/v1/memory_stores/{memory_store_id}/memories`
+- [Api Beta Memory Stores Memories Create E5261290F2](Other/api-beta-memory-stores-memories-create-e5261290f2.md) - **post** `/v1/memory_stores/{memory_store_id}/memories`
+- [Api Beta Memory Stores Memories Delete 305D3A3E23](Other/api-beta-memory-stores-memories-delete-305d3a3e23.md) - **delete** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
+- [Api Beta Memory Stores Memories List C9548E5C6B](Other/api-beta-memory-stores-memories-list-c9548e5c6b.md) - **get** `/v1/memory_stores/{memory_store_id}/memories`
+- [Api Beta Memory Stores Memories Retrieve B54A279Eee](Other/api-beta-memory-stores-memories-retrieve-b54a279eee.md) - **get** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
+- [Api Beta Memory Stores Memories Update 07Aaa4Fcfb](Other/api-beta-memory-stores-memories-update-07aaa4fcfb.md) - **post** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`
+- [Memory Versions](Other/api-beta-memory-stores-memory-versions-d3c59bdd52.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions`
+- [Api Beta Memory Stores Memory Versions List 5E4A76B6A7](Other/api-beta-memory-stores-memory-versions-list-5e4a76b6a7.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions`
+- [Api Beta Memory Stores Memory Versions Redact 77E154C5Fb](Other/api-beta-memory-stores-memory-versions-redact-77e154c5fb.md) - **post** `/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact`
+- [Api Beta Memory Stores Memory Versions Retrieve Bcfcda7Ef8](Other/api-beta-memory-stores-memory-versions-retrieve-bcfcda7ef8.md) - **get** `/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}`
+- [Api Beta Memory Stores Retrieve E1B6C4B9A9](Other/api-beta-memory-stores-retrieve-e1b6c4b9a9.md) - **get** `/v1/memory_stores/{memory_store_id}`
+- [Api Beta Memory Stores Update 61A62D903E](Other/api-beta-memory-stores-update-61a62d903e.md) - **post** `/v1/memory_stores/{memory_store_id}`
+- [Messages](Other/api-beta-messages-629bde7c38.md) - **post** `/v1/messages`
+- [Batches](Other/api-beta-messages-batches-9362c4622e.md) - **post** `/v1/messages/batches`
+- [Api Beta Messages Batches Cancel Bf8A823D0D](Other/api-beta-messages-batches-cancel-bf8a823d0d.md) - **post** `/v1/messages/batches/{message_batch_id}/cancel`
+- [Api Beta Messages Batches Create C199B3A9B4](Other/api-beta-messages-batches-create-c199b3a9b4.md) - **post** `/v1/messages/batches`
+- [Api Beta Messages Batches Delete C4202372A5](Other/api-beta-messages-batches-delete-c4202372a5.md) - **delete** `/v1/messages/batches/{message_batch_id}`
+- [Api Beta Messages Batches List E0Df3Efce5](Other/api-beta-messages-batches-list-e0df3efce5.md) - **get** `/v1/messages/batches`
+- [Api Beta Messages Batches Results 539Ec9C8Eb](Other/api-beta-messages-batches-results-539ec9c8eb.md) - **get** `/v1/messages/batches/{message_batch_id}/results`
+- [Api Beta Messages Batches Retrieve 605552B630](Other/api-beta-messages-batches-retrieve-605552b630.md) - **get** `/v1/messages/batches/{message_batch_id}`
+- [Api Beta Messages Count Tokens Da904Efd4D](Other/api-beta-messages-count-tokens-da904efd4d.md) - **post** `/v1/messages/count_tokens`
+- [Api Beta Messages Create F6Cca594F3](Other/api-beta-messages-create-f6cca594f3.md) - **post** `/v1/messages`
+- [Sessions](Other/api-beta-sessions-8b0f41e303.md) - **post** `/v1/sessions`
+- [Api Beta Sessions Archive 8770425919](Other/api-beta-sessions-archive-8770425919.md) - **post** `/v1/sessions/{session_id}/archive`
+- [Api Beta Sessions Create 19B33Fd2C9](Other/api-beta-sessions-create-19b33fd2c9.md) - **post** `/v1/sessions`
+- [Api Beta Sessions Delete 37B4690E54](Other/api-beta-sessions-delete-37b4690e54.md) - **delete** `/v1/sessions/{session_id}`
+- [Events](Other/api-beta-sessions-events-b91e946879.md) - **get** `/v1/sessions/{session_id}/events`
+- [Api Beta Sessions Events List 90A51551Ca](Other/api-beta-sessions-events-list-90a51551ca.md) - **get** `/v1/sessions/{session_id}/events`
+- [Api Beta Sessions Events Send 0Bc6B19D12](Other/api-beta-sessions-events-send-0bc6b19d12.md) - **post** `/v1/sessions/{session_id}/events`
+- [Api Beta Sessions Events Stream F42870Faea](Other/api-beta-sessions-events-stream-f42870faea.md) - **get** `/v1/sessions/{session_id}/events/stream`
+- [Api Beta Sessions List C0B76985D3](Other/api-beta-sessions-list-c0b76985d3.md) - **get** `/v1/sessions`
+- [Api Beta Sessions Resources Add E906Aec3Ad](Other/api-beta-sessions-resources-add-e906aec3ad.md) - **post** `/v1/sessions/{session_id}/resources`
+- [Resources](Other/api-beta-sessions-resources-cdaf231a72.md) - **post** `/v1/sessions/{session_id}/resources`
+- [Api Beta Sessions Resources Delete 2F08F335Fb](Other/api-beta-sessions-resources-delete-2f08f335fb.md) - **delete** `/v1/sessions/{session_id}/resources/{resource_id}`
+- [Api Beta Sessions Resources List 9Baa97431B](Other/api-beta-sessions-resources-list-9baa97431b.md) - **get** `/v1/sessions/{session_id}/resources`
+- [Api Beta Sessions Resources Retrieve A1C6E95Df4](Other/api-beta-sessions-resources-retrieve-a1c6e95df4.md) - **get** `/v1/sessions/{session_id}/resources/{resource_id}`
+- [Api Beta Sessions Resources Update 88C5296A05](Other/api-beta-sessions-resources-update-88c5296a05.md) - **post** `/v1/sessions/{session_id}/resources/{resource_id}`
+- [Api Beta Sessions Retrieve F096D967B7](Other/api-beta-sessions-retrieve-f096d967b7.md) - **get** `/v1/sessions/{session_id}`
+- [Api Beta Sessions Update F228A44Faa](Other/api-beta-sessions-update-f228a44faa.md) - **post** `/v1/sessions/{session_id}`
+- [Api Beta Skills Create 06386Aa4D7](Other/api-beta-skills-create-06386aa4d7.md) - **post** `/v1/skills`
+- [Api Beta Skills Delete 749A6Dfadb](Other/api-beta-skills-delete-749a6dfadb.md) - **delete** `/v1/skills/{skill_id}`
+- [Skills](Other/api-beta-skills-f30b69c01d.md) - **post** `/v1/skills`
+- [Api Beta Skills List 134402061E](Other/api-beta-skills-list-134402061e.md) - **get** `/v1/skills`
+- [Api Beta Skills Retrieve C64858A4Ce](Other/api-beta-skills-retrieve-c64858a4ce.md) - **get** `/v1/skills/{skill_id}`
+- [Versions](Other/api-beta-skills-versions-9a050a7643.md) - **post** `/v1/skills/{skill_id}/versions`
+- [Api Beta Skills Versions Create F9B5120935](Other/api-beta-skills-versions-create-f9b5120935.md) - **post** `/v1/skills/{skill_id}/versions`
+- [Api Beta Skills Versions Delete 004A3E88C8](Other/api-beta-skills-versions-delete-004a3e88c8.md) - **delete** `/v1/skills/{skill_id}/versions/{version}`
+- [Api Beta Skills Versions List Ac76F57C6E](Other/api-beta-skills-versions-list-ac76f57c6e.md) - **get** `/v1/skills/{skill_id}/versions`
+- [Api Beta Skills Versions Retrieve 14Ac4Dc8B8](Other/api-beta-skills-versions-retrieve-14ac4dc8b8.md) - **get** `/v1/skills/{skill_id}/versions/{version}`
+- [Api Beta Vaults Archive 7Bdb8253Dd](Other/api-beta-vaults-archive-7bdb8253dd.md) - **post** `/v1/vaults/{vault_id}/archive`
+- [Api Beta Vaults Create Cb92A8A125](Other/api-beta-vaults-create-cb92a8a125.md) - **post** `/v1/vaults`
+- [Credentials](Other/api-beta-vaults-credentials-19c32c92b0.md) - **post** `/v1/vaults/{vault_id}/credentials`
+- [Api Beta Vaults Credentials Archive 11Cdff89B1](Other/api-beta-vaults-credentials-archive-11cdff89b1.md) - **post** `/v1/vaults/{vault_id}/credentials/{credential_id}/archive`
+- [Api Beta Vaults Credentials Create 84910084D0](Other/api-beta-vaults-credentials-create-84910084d0.md) - **post** `/v1/vaults/{vault_id}/credentials`
+- [Api Beta Vaults Credentials Delete 8C397B2175](Other/api-beta-vaults-credentials-delete-8c397b2175.md) - **delete** `/v1/vaults/{vault_id}/credentials/{credential_id}`
+- [Api Beta Vaults Credentials List 1E5669Ce2C](Other/api-beta-vaults-credentials-list-1e5669ce2c.md) - **get** `/v1/vaults/{vault_id}/credentials`
+- [Api Beta Vaults Credentials Retrieve 869A32A2D0](Other/api-beta-vaults-credentials-retrieve-869a32a2d0.md) - **get** `/v1/vaults/{vault_id}/credentials/{credential_id}`
+- [Api Beta Vaults Credentials Update E8A45A516C](Other/api-beta-vaults-credentials-update-e8a45a516c.md) - **post** `/v1/vaults/{vault_id}/credentials/{credential_id}`
+- [Vaults](Other/api-beta-vaults-d9adf85bef.md) - **post** `/v1/vaults`
+- [Api Beta Vaults Delete F9Bd99C708](Other/api-beta-vaults-delete-f9bd99c708.md) - **delete** `/v1/vaults/{vault_id}`
+- [Api Beta Vaults List 4C1D43D233](Other/api-beta-vaults-list-4c1d43d233.md) - **get** `/v1/vaults`
+- [Api Beta Vaults Retrieve C9731Ac28F](Other/api-beta-vaults-retrieve-c9731ac28f.md) - **get** `/v1/vaults/{vault_id}`
+- [Api Beta Vaults Update 91688B1A4F](Other/api-beta-vaults-update-91688b1a4f.md) - **post** `/v1/vaults/{vault_id}`
+- [Api Cli Beta Agents Archive F66Ba0A22F](Other/api-cli-beta-agents-archive-f66ba0a22f.md) - `$ ant beta:agents archive`
+- [Api Cli Beta Agents Create Cca558Fd89](Other/api-cli-beta-agents-create-cca558fd89.md) - `$ ant beta:agents create`
+- [Api Cli Beta Agents Delete 5Bfe9116Cb](Other/api-cli-beta-agents-delete-5bfe9116cb.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Agents](Other/api-cli-beta-agents-f6a28f933c.md) - `$ ant beta:agents create`
+- [Api Cli Beta Agents List 3Cd6600718](Other/api-cli-beta-agents-list-3cd6600718.md) - `$ ant beta:agents list`
+- [Api Cli Beta Agents Retrieve Fa8D49D1D7](Other/api-cli-beta-agents-retrieve-fa8d49d1d7.md) - `$ ant beta:agents retrieve`
+- [Api Cli Beta Agents Update 871C6C74C3](Other/api-cli-beta-agents-update-871c6c74c3.md) - `$ ant beta:agents update`
+- [Versions](Other/api-cli-beta-agents-versions-ce71a10e71.md) - `$ ant beta:agents:versions list`
+- [Api Cli Beta Agents Versions List 73D2A4Ef9E](Other/api-cli-beta-agents-versions-list-73d2a4ef9e.md) - `$ ant beta:agents:versions list`
+- [Beta](Other/api-cli-beta-cd6f1a45bd.md) - - `beta_api_error: object { message, type }`
+- [Environments](Other/api-cli-beta-environments-0bb5efafae.md) - `$ ant beta:environments create`
+- [Api Cli Beta Environments Archive 671D7C4962](Other/api-cli-beta-environments-archive-671d7c4962.md) - `$ ant beta:environments archive`
+- [Api Cli Beta Environments Create 95C9050Cef](Other/api-cli-beta-environments-create-95c9050cef.md) - `$ ant beta:environments create`
+- [Api Cli Beta Environments Delete C517E564E3](Other/api-cli-beta-environments-delete-c517e564e3.md) - `$ ant beta:environments delete`
+- [Api Cli Beta Environments List 6731B616A5](Other/api-cli-beta-environments-list-6731b616a5.md) - `$ ant beta:environments list`
+- [Api Cli Beta Environments Retrieve B1Cea8A77D](Other/api-cli-beta-environments-retrieve-b1cea8a77d.md) - `$ ant beta:environments retrieve`
+- [Api Cli Beta Environments Update D78C270B79](Other/api-cli-beta-environments-update-d78c270b79.md) - `$ ant beta:environments update`
+- [Files](Other/api-cli-beta-files-7d1f431d0f.md) - `$ ant beta:files upload`
+- [Api Cli Beta Files Delete C02F26C521](Other/api-cli-beta-files-delete-c02f26c521.md) - `$ ant beta:files delete`
+- [Api Cli Beta Files Download C3F94484Cd](Other/api-cli-beta-files-download-c3f94484cd.md) - `$ ant beta:files download`
+- [Api Cli Beta Files List Be1465Bc8A](Other/api-cli-beta-files-list-be1465bc8a.md) - `$ ant beta:files list`
+- [Api Cli Beta Files Retrieve Metadata 9Eddf25374](Other/api-cli-beta-files-retrieve-metadata-9eddf25374.md) - `$ ant beta:files retrieve-metadata`
+- [Api Cli Beta Files Upload Dbe80D4A4C](Other/api-cli-beta-files-upload-dbe80d4a4c.md) - `$ ant beta:files upload`
+- [Api Cli Beta Memory Stores Archive Ffcfb80Af3](Other/api-cli-beta-memory-stores-archive-ffcfb80af3.md) - `$ ant beta:memory-stores archive`
+- [Memory Stores](Other/api-cli-beta-memory-stores-cbe907822d.md) - `$ ant beta:memory-stores create`
+- [Api Cli Beta Memory Stores Create 6Ff3B35C96](Other/api-cli-beta-memory-stores-create-6ff3b35c96.md) - `$ ant beta:memory-stores create`
+- [Api Cli Beta Memory Stores Delete 8A40F4429C](Other/api-cli-beta-memory-stores-delete-8a40f4429c.md) - `$ ant beta:memory-stores delete`
+- [Api Cli Beta Memory Stores List 57Fce0Ed1A](Other/api-cli-beta-memory-stores-list-57fce0ed1a.md) - `$ ant beta:memory-stores list`
+- [Memories](Other/api-cli-beta-memory-stores-memories-49492a5220.md) - `$ ant beta:memory-stores:memories create`
+- [Api Cli Beta Memory Stores Memories Create 9210A992Aa](Other/api-cli-beta-memory-stores-memories-create-9210a992aa.md) - `$ ant beta:memory-stores:memories create`
+- [Api Cli Beta Memory Stores Memories Delete 4F34C8D23B](Other/api-cli-beta-memory-stores-memories-delete-4f34c8d23b.md) - `$ ant beta:memory-stores:memories delete`
+- [Api Cli Beta Memory Stores Memories List 24278795A4](Other/api-cli-beta-memory-stores-memories-list-24278795a4.md) - `$ ant beta:memory-stores:memories list`
+- [Api Cli Beta Memory Stores Memories Retrieve 2A76Fb9623](Other/api-cli-beta-memory-stores-memories-retrieve-2a76fb9623.md) - `$ ant beta:memory-stores:memories retrieve`
+- [Api Cli Beta Memory Stores Memories Update 4505Cdd54C](Other/api-cli-beta-memory-stores-memories-update-4505cdd54c.md) - `$ ant beta:memory-stores:memories update`
+- [Memory Versions](Other/api-cli-beta-memory-stores-memory-versions-f6d546e3dd.md) - `$ ant beta:memory-stores:memory-versions list`
+- [Api Cli Beta Memory Stores Memory Versions List 4710C65154](Other/api-cli-beta-memory-stores-memory-versions-list-4710c65154.md) - `$ ant beta:memory-stores:memory-versions list`
+- [Api Cli Beta Memory Stores Memory Versions Redact D82D078B57](Other/api-cli-beta-memory-stores-memory-versions-redact-d82d078b57.md) - `$ ant beta:memory-stores:memory-versions redact`
+- [Api Cli Beta Memory Stores Memory Versions Retrieve 7114A49036](Other/api-cli-beta-memory-stores-memory-versions-retrieve-7114a49036.md) - `$ ant beta:memory-stores:memory-versions retrieve`
+- [Api Cli Beta Memory Stores Retrieve Fc649E8608](Other/api-cli-beta-memory-stores-retrieve-fc649e8608.md) - `$ ant beta:memory-stores retrieve`
+- [Api Cli Beta Memory Stores Update Ccd110F5A1](Other/api-cli-beta-memory-stores-update-ccd110f5a1.md) - `$ ant beta:memory-stores update`
+- [Batches](Other/api-cli-beta-messages-batches-910c01ab74.md) - `$ ant beta:messages:batches create`
+- [Api Cli Beta Messages Batches Cancel 5F2508Da1C](Other/api-cli-beta-messages-batches-cancel-5f2508da1c.md) - `$ ant beta:messages:batches cancel`
+- [Api Cli Beta Messages Batches Create 334C15F2B7](Other/api-cli-beta-messages-batches-create-334c15f2b7.md) - `$ ant beta:messages:batches create`
+- [Api Cli Beta Messages Batches Delete 00D17C475D](Other/api-cli-beta-messages-batches-delete-00d17c475d.md) - `$ ant beta:messages:batches delete`
+- [Api Cli Beta Messages Batches List C6Ef13Fa77](Other/api-cli-beta-messages-batches-list-c6ef13fa77.md) - `$ ant beta:messages:batches list`
+- [Api Cli Beta Messages Batches Results 8B1677D1B4](Other/api-cli-beta-messages-batches-results-8b1677d1b4.md) - `$ ant beta:messages:batches results`
+- [Api Cli Beta Messages Batches Retrieve 08Ecbfd6Af](Other/api-cli-beta-messages-batches-retrieve-08ecbfd6af.md) - `$ ant beta:messages:batches retrieve`
+- [Api Cli Beta Messages Count Tokens 3087666Ddd](Other/api-cli-beta-messages-count-tokens-3087666ddd.md) - `$ ant beta:messages count-tokens`
+- [Api Cli Beta Messages Create 875F28C998](Other/api-cli-beta-messages-create-875f28c998.md) - `$ ant beta:messages create`
+- [Messages](Other/api-cli-beta-messages-e57b2cef82.md) - `$ ant beta:messages create`
+- [Sessions](Other/api-cli-beta-sessions-6f69d7e449.md) - `$ ant beta:sessions create`
+- [Api Cli Beta Sessions Archive 63006Cd882](Other/api-cli-beta-sessions-archive-63006cd882.md) - `$ ant beta:sessions archive`
+- [Api Cli Beta Sessions Create 165E95Ea7B](Other/api-cli-beta-sessions-create-165e95ea7b.md) - `$ ant beta:sessions create`
+- [Api Cli Beta Sessions Delete 8E627406A1](Other/api-cli-beta-sessions-delete-8e627406a1.md) - `$ ant beta:sessions delete`
+- [Events](Other/api-cli-beta-sessions-events-522fe555e1.md) - `$ ant beta:sessions:events list`
+- [Api Cli Beta Sessions Events List A9343F872E](Other/api-cli-beta-sessions-events-list-a9343f872e.md) - `$ ant beta:sessions:events list`
+- [Api Cli Beta Sessions Events Send 1855105335](Other/api-cli-beta-sessions-events-send-1855105335.md) - `$ ant beta:sessions:events send`
+- [Api Cli Beta Sessions Events Stream E9Bb0A4160](Other/api-cli-beta-sessions-events-stream-e9bb0a4160.md) - `$ ant beta:sessions:events stream`
+- [Api Cli Beta Sessions List E29471E981](Other/api-cli-beta-sessions-list-e29471e981.md) - `$ ant beta:sessions list`
+- [Resources](Other/api-cli-beta-sessions-resources-0ad72f63cc.md) - `$ ant beta:sessions:resources add`
+- [Api Cli Beta Sessions Resources Add 1A6A99445E](Other/api-cli-beta-sessions-resources-add-1a6a99445e.md) - `$ ant beta:sessions:resources add`
+- [Api Cli Beta Sessions Resources Delete 3B1C71Ebc9](Other/api-cli-beta-sessions-resources-delete-3b1c71ebc9.md) - `$ ant beta:sessions:resources delete`
+- [Api Cli Beta Sessions Resources List 8C8A74B5Ba](Other/api-cli-beta-sessions-resources-list-8c8a74b5ba.md) - `$ ant beta:sessions:resources list`
+- [Api Cli Beta Sessions Resources Retrieve 74318Ee3Fe](Other/api-cli-beta-sessions-resources-retrieve-74318ee3fe.md) - `$ ant beta:sessions:resources retrieve`
+- [Api Cli Beta Sessions Resources Update A532E65D2D](Other/api-cli-beta-sessions-resources-update-a532e65d2d.md) - `$ ant beta:sessions:resources update`
+- [Api Cli Beta Sessions Retrieve Ad471Ee9Af](Other/api-cli-beta-sessions-retrieve-ad471ee9af.md) - `$ ant beta:sessions retrieve`
+- [Api Cli Beta Sessions Update 729Cfb594F](Other/api-cli-beta-sessions-update-729cfb594f.md) - `$ ant beta:sessions update`
+- [Skills](Other/api-cli-beta-skills-6f5dd1254e.md) - `$ ant beta:skills create`
+- [Api Cli Beta Skills Create Cca94E3Dae](Other/api-cli-beta-skills-create-cca94e3dae.md) - `$ ant beta:skills create`
+- [Api Cli Beta Skills Delete 504871Ca40](Other/api-cli-beta-skills-delete-504871ca40.md) - `$ ant beta:skills delete`
+- [Api Cli Beta Skills List 8F25A728C0](Other/api-cli-beta-skills-list-8f25a728c0.md) - `$ ant beta:skills list`
+- [Api Cli Beta Skills Retrieve F0D1D64D56](Other/api-cli-beta-skills-retrieve-f0d1d64d56.md) - `$ ant beta:skills retrieve`
+- [Versions](Other/api-cli-beta-skills-versions-9f0e17a5ba.md) - `$ ant beta:skills:versions create`
+- [Api Cli Beta Skills Versions Create 3E91A54C1F](Other/api-cli-beta-skills-versions-create-3e91a54c1f.md) - `$ ant beta:skills:versions create`
+- [Api Cli Beta Skills Versions Delete 75496Fd34D](Other/api-cli-beta-skills-versions-delete-75496fd34d.md) - `$ ant beta:skills:versions delete`
+- [Api Cli Beta Skills Versions List Ed1A396D96](Other/api-cli-beta-skills-versions-list-ed1a396d96.md) - `$ ant beta:skills:versions list`
+- [Api Cli Beta Skills Versions Retrieve 494Dfec345](Other/api-cli-beta-skills-versions-retrieve-494dfec345.md) - `$ ant beta:skills:versions retrieve`
+- [Vaults](Other/api-cli-beta-vaults-7a5a41367b.md) - `$ ant beta:vaults create`
+- [Api Cli Beta Vaults Archive Fb33B123F3](Other/api-cli-beta-vaults-archive-fb33b123f3.md) - `$ ant beta:vaults archive`
+- [Api Cli Beta Vaults Create 1E8D3Ee392](Other/api-cli-beta-vaults-create-1e8d3ee392.md) - `$ ant beta:vaults create`
+- [Api Cli Beta Vaults Credentials Archive F0Deab75D3](Other/api-cli-beta-vaults-credentials-archive-f0deab75d3.md) - `$ ant beta:vaults:credentials archive`
+- [Api Cli Beta Vaults Credentials Create 2279663D5A](Other/api-cli-beta-vaults-credentials-create-2279663d5a.md) - `$ ant beta:vaults:credentials create`
+- [Api Cli Beta Vaults Credentials Delete 9B8D5C30F3](Other/api-cli-beta-vaults-credentials-delete-9b8d5c30f3.md) - `$ ant beta:vaults:credentials delete`
+- [Credentials](Other/api-cli-beta-vaults-credentials-f49e2b3e4e.md) - `$ ant beta:vaults:credentials create`
+- [Api Cli Beta Vaults Credentials List Fac330D176](Other/api-cli-beta-vaults-credentials-list-fac330d176.md) - `$ ant beta:vaults:credentials list`
+- [Api Cli Beta Vaults Credentials Retrieve 199B5E8B19](Other/api-cli-beta-vaults-credentials-retrieve-199b5e8b19.md) - `$ ant beta:vaults:credentials retrieve`
+- [Api Cli Beta Vaults Credentials Update 5A003A3913](Other/api-cli-beta-vaults-credentials-update-5a003a3913.md) - `$ ant beta:vaults:credentials update`
+- [Api Cli Beta Vaults Delete Fc20C485B6](Other/api-cli-beta-vaults-delete-fc20c485b6.md) - `$ ant beta:vaults delete`
+- [Api Cli Beta Vaults List 13D2Dea190](Other/api-cli-beta-vaults-list-13d2dea190.md) - `$ ant beta:vaults list`
+- [Api Cli Beta Vaults Retrieve 8Bb9D888A5](Other/api-cli-beta-vaults-retrieve-8bb9d888a5.md) - `$ ant beta:vaults retrieve`
+- [Api Cli Beta Vaults Update 146F123E81](Other/api-cli-beta-vaults-update-146f123e81.md) - `$ ant beta:vaults update`
+- [Completions](Other/api-cli-completions-002a1f33fa.md) - `$ ant completions create`
+- [Api Cli Completions Create D57F3F7Be6](Other/api-cli-completions-create-d57f3f7be6.md) - `$ ant completions create`
+- [Messages](Other/api-cli-messages-20f70ae0c1.md) - `$ ant messages create`
+- [Api Cli Messages Batches Cancel 55B7749055](Other/api-cli-messages-batches-cancel-55b7749055.md) - `$ ant messages:batches cancel`
+- [Api Cli Messages Batches Create 8944E8B544](Other/api-cli-messages-batches-create-8944e8b544.md) - `$ ant messages:batches create`
+- [Api Cli Messages Batches Delete 7668B24B94](Other/api-cli-messages-batches-delete-7668b24b94.md) - `$ ant messages:batches delete`
+- [Batches](Other/api-cli-messages-batches-f633ea8244.md) - `$ ant messages:batches create`
+- [Api Cli Messages Batches List F900790450](Other/api-cli-messages-batches-list-f900790450.md) - `$ ant messages:batches list`
+- [Api Cli Messages Batches Results 3A91A8964E](Other/api-cli-messages-batches-results-3a91a8964e.md) - `$ ant messages:batches results`
+- [Api Cli Messages Batches Retrieve 0Cba952F88](Other/api-cli-messages-batches-retrieve-0cba952f88.md) - `$ ant messages:batches retrieve`
+- [Api Cli Messages Count Tokens 417Eec1417](Other/api-cli-messages-count-tokens-417eec1417.md) - `$ ant messages count-tokens`
+- [Api Cli Messages Create 0A922Ab2C1](Other/api-cli-messages-create-0a922ab2c1.md) - `$ ant messages create`
+- [Client SDKs](Other/api-client-sdks-ab34496e4f.md) - Official SDKs for building with the Claude API in Python, TypeScript, Java, Go, Ruby, C#, PHP, and the command line.
+- [Api Completions Create 2Fba139F24](Other/api-completions-create-2fba139f24.md) - **post** `/v1/complete`
+- [Completions](Other/api-completions-e6fced0efa.md) - **post** `/v1/complete`
+- [Beta](Other/api-csharp-beta-65d62c7c4f.md) - - `class BetaApiError:`
+- [Agents](Other/api-csharp-beta-agents-0b1932777f.md) - `BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Agents Archive 381F76D3Eb](Other/api-csharp-beta-agents-archive-381f76d3eb.md) - `BetaManagedAgentsAgent Beta.Agents.Archive(AgentArchiveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Agents Create 01C1A87Fb7](Other/api-csharp-beta-agents-create-01c1a87fb7.md) - `BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Agents Delete 4103306683](Other/api-csharp-beta-agents-delete-4103306683.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Csharp Beta Agents List Def82571Ee](Other/api-csharp-beta-agents-list-def82571ee.md) - `AgentListPageResponse Beta.Agents.List(AgentListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Agents Retrieve C0D2Ce1Ffa](Other/api-csharp-beta-agents-retrieve-c0d2ce1ffa.md) - `BetaManagedAgentsAgent Beta.Agents.Retrieve(AgentRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Agents Update 5F4F9A510D](Other/api-csharp-beta-agents-update-5f4f9a510d.md) - `BetaManagedAgentsAgent Beta.Agents.Update(AgentUpdateParamsparameters, CancellationTokencancellationToken = default)`
+- [Versions](Other/api-csharp-beta-agents-versions-61dbc3c519.md) - `VersionListPageResponse Beta.Agents.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Agents Versions List B268578C89](Other/api-csharp-beta-agents-versions-list-b268578c89.md) - `VersionListPageResponse Beta.Agents.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)`
+- [Environments](Other/api-csharp-beta-environments-4c97e311fa.md) - `BetaEnvironment Beta.Environments.Create(EnvironmentCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Environments Archive 514760Ec61](Other/api-csharp-beta-environments-archive-514760ec61.md) - `BetaEnvironment Beta.Environments.Archive(EnvironmentArchiveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Environments Create 002C4450D0](Other/api-csharp-beta-environments-create-002c4450d0.md) - `BetaEnvironment Beta.Environments.Create(EnvironmentCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Environments Delete 865Ed1Ba63](Other/api-csharp-beta-environments-delete-865ed1ba63.md) - `BetaEnvironmentDeleteResponse Beta.Environments.Delete(EnvironmentDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Environments List A6F94Be48C](Other/api-csharp-beta-environments-list-a6f94be48c.md) - `EnvironmentListPageResponse Beta.Environments.List(EnvironmentListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Environments Retrieve 233Ce78E16](Other/api-csharp-beta-environments-retrieve-233ce78e16.md) - `BetaEnvironment Beta.Environments.Retrieve(EnvironmentRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Environments Update 54F047Fda8](Other/api-csharp-beta-environments-update-54f047fda8.md) - `BetaEnvironment Beta.Environments.Update(EnvironmentUpdateParamsparameters, CancellationTokencancellationToken = default)`
+- [Files](Other/api-csharp-beta-files-554f57a16f.md) - `FileMetadata Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Files Delete Afce14644F](Other/api-csharp-beta-files-delete-afce14644f.md) - `DeletedFile Beta.Files.Delete(FileDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Files Download 29Cf3E5Cbb](Other/api-csharp-beta-files-download-29cf3e5cbb.md) - `HttpResponse Beta.Files.Download(FileDownloadParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Files List 624A3B1F5E](Other/api-csharp-beta-files-list-624a3b1f5e.md) - `FileListPageResponse Beta.Files.List(FileListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Files Retrieve Metadata 030B4Ba679](Other/api-csharp-beta-files-retrieve-metadata-030b4ba679.md) - `FileMetadata Beta.Files.RetrieveMetadata(FileRetrieveMetadataParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Files Upload 78185274B4](Other/api-csharp-beta-files-upload-78185274b4.md) - `FileMetadata Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Archive 1743C0Ce8B](Other/api-csharp-beta-memory-stores-archive-1743c0ce8b.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Archive(MemoryStoreArchiveParamsparameters, CancellationTokencancellationToken = default)`
+- [Memory Stores](Other/api-csharp-beta-memory-stores-ccc3cc3b7c.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Create(MemoryStoreCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Create 8D6Ae06090](Other/api-csharp-beta-memory-stores-create-8d6ae06090.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Create(MemoryStoreCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Delete 1B99F1826A](Other/api-csharp-beta-memory-stores-delete-1b99f1826a.md) - `BetaManagedAgentsDeletedMemoryStore Beta.MemoryStores.Delete(MemoryStoreDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores List Dbfc0Ef5E5](Other/api-csharp-beta-memory-stores-list-dbfc0ef5e5.md) - `MemoryStoreListPageResponse Beta.MemoryStores.List(MemoryStoreListParams?parameters, CancellationTokencancellationToken = default)`
+- [Memories](Other/api-csharp-beta-memory-stores-memories-764aeb951b.md) - `BetaManagedAgentsMemory Beta.MemoryStores.Memories.Create(MemoryCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Memories Create 2D5B31Becb](Other/api-csharp-beta-memory-stores-memories-create-2d5b31becb.md) - `BetaManagedAgentsMemory Beta.MemoryStores.Memories.Create(MemoryCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Memories Delete F016333318](Other/api-csharp-beta-memory-stores-memories-delete-f016333318.md) - `BetaManagedAgentsDeletedMemory Beta.MemoryStores.Memories.Delete(MemoryDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Memories List 78E885A97A](Other/api-csharp-beta-memory-stores-memories-list-78e885a97a.md) - `MemoryListPageResponse Beta.MemoryStores.Memories.List(MemoryListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Memories Retrieve 176Fc3000D](Other/api-csharp-beta-memory-stores-memories-retrieve-176fc3000d.md) - `BetaManagedAgentsMemory Beta.MemoryStores.Memories.Retrieve(MemoryRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Memories Update Dc61C150B8](Other/api-csharp-beta-memory-stores-memories-update-dc61c150b8.md) - `BetaManagedAgentsMemory Beta.MemoryStores.Memories.Update(MemoryUpdateParamsparameters, CancellationTokencancellationToken = default)`
+- [Memory Versions](Other/api-csharp-beta-memory-stores-memory-versions-44d855c929.md) - `MemoryVersionListPageResponse Beta.MemoryStores.MemoryVersions.List(MemoryVersionListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Memory Versions List 7360D4F114](Other/api-csharp-beta-memory-stores-memory-versions-list-7360d4f114.md) - `MemoryVersionListPageResponse Beta.MemoryStores.MemoryVersions.List(MemoryVersionListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Memory Versions Redact 72E8C8D171](Other/api-csharp-beta-memory-stores-memory-versions-redact-72e8c8d171.md) - `BetaManagedAgentsMemoryVersion Beta.MemoryStores.MemoryVersions.Redact(MemoryVersionRedactParamsparameters, CancellationTokencancellationToken = defa
+- [Api Csharp Beta Memory Stores Memory Versions Retrieve 99397E186A](Other/api-csharp-beta-memory-stores-memory-versions-retrieve-99397e186a.md) - `BetaManagedAgentsMemoryVersion Beta.MemoryStores.MemoryVersions.Retrieve(MemoryVersionRetrieveParamsparameters, CancellationTokencancellationToken = 
+- [Api Csharp Beta Memory Stores Retrieve 3Bd4D5776C](Other/api-csharp-beta-memory-stores-retrieve-3bd4d5776c.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Retrieve(MemoryStoreRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Memory Stores Update E3C6Bea620](Other/api-csharp-beta-memory-stores-update-e3c6bea620.md) - `BetaManagedAgentsMemoryStore Beta.MemoryStores.Update(MemoryStoreUpdateParamsparameters, CancellationTokencancellationToken = default)`
+- [Messages](Other/api-csharp-beta-messages-8c1207ba82.md) - `BetaMessage Beta.Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Batches](Other/api-csharp-beta-messages-batches-66e2675131.md) - `BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Messages Batches Cancel 5A196D3339](Other/api-csharp-beta-messages-batches-cancel-5a196d3339.md) - `BetaMessageBatch Beta.Messages.Batches.Cancel(BatchCancelParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Messages Batches Create 143C1Be65B](Other/api-csharp-beta-messages-batches-create-143c1be65b.md) - `BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Messages Batches Delete B2A113B2Cd](Other/api-csharp-beta-messages-batches-delete-b2a113b2cd.md) - `BetaDeletedMessageBatch Beta.Messages.Batches.Delete(BatchDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Messages Batches List Ec9259Dae9](Other/api-csharp-beta-messages-batches-list-ec9259dae9.md) - `BatchListPageResponse Beta.Messages.Batches.List(BatchListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Messages Batches Results 24Fd381E2A](Other/api-csharp-beta-messages-batches-results-24fd381e2a.md) - `BetaMessageBatchIndividualResponse Beta.Messages.Batches.ResultsStreaming(BatchResultsParamsparameters, CancellationTokencancellationToken = default)
+- [Api Csharp Beta Messages Batches Retrieve 2F9Fe9066D](Other/api-csharp-beta-messages-batches-retrieve-2f9fe9066d.md) - `BetaMessageBatch Beta.Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Messages Count Tokens 9E3B2F1A28](Other/api-csharp-beta-messages-count-tokens-9e3b2f1a28.md) - `BetaMessageTokensCount Beta.Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Messages Create 359E2A44D1](Other/api-csharp-beta-messages-create-359e2a44d1.md) - `BetaMessage Beta.Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Sessions](Other/api-csharp-beta-sessions-20b7be78ba.md) - `BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Archive 41A2Ee3346](Other/api-csharp-beta-sessions-archive-41a2ee3346.md) - `BetaManagedAgentsSession Beta.Sessions.Archive(SessionArchiveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Create 4Edc1911Ea](Other/api-csharp-beta-sessions-create-4edc1911ea.md) - `BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Delete C9Cb18525D](Other/api-csharp-beta-sessions-delete-c9cb18525d.md) - `BetaManagedAgentsDeletedSession Beta.Sessions.Delete(SessionDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Events](Other/api-csharp-beta-sessions-events-dce4347bbd.md) - `EventListPageResponse Beta.Sessions.Events.List(EventListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Events List 8C391Ec71C](Other/api-csharp-beta-sessions-events-list-8c391ec71c.md) - `EventListPageResponse Beta.Sessions.Events.List(EventListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Events Send C804493Fce](Other/api-csharp-beta-sessions-events-send-c804493fce.md) - `BetaManagedAgentsSendSessionEvents Beta.Sessions.Events.Send(EventSendParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Events Stream 4E457E0810](Other/api-csharp-beta-sessions-events-stream-4e457e0810.md) - `BetaManagedAgentsStreamSessionEvents Beta.Sessions.Events.StreamStreaming(EventStreamParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions List 9Eadfdbd0A](Other/api-csharp-beta-sessions-list-9eadfdbd0a.md) - `SessionListPageResponse Beta.Sessions.List(SessionListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Resources Add Cd133F8C06](Other/api-csharp-beta-sessions-resources-add-cd133f8c06.md) - `BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Resources Delete 1B83A320B8](Other/api-csharp-beta-sessions-resources-delete-1b83a320b8.md) - `BetaManagedAgentsDeleteSessionResource Beta.Sessions.Resources.Delete(ResourceDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Resources](Other/api-csharp-beta-sessions-resources-e3bbdfdd3d.md) - `BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Resources List 3267218A00](Other/api-csharp-beta-sessions-resources-list-3267218a00.md) - `ResourceListPageResponse Beta.Sessions.Resources.List(ResourceListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Resources Retrieve 571E3Bf798](Other/api-csharp-beta-sessions-resources-retrieve-571e3bf798.md) - `ResourceRetrieveResponse Beta.Sessions.Resources.Retrieve(ResourceRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Resources Update 6C51Ca09C3](Other/api-csharp-beta-sessions-resources-update-6c51ca09c3.md) - `ResourceUpdateResponse Beta.Sessions.Resources.Update(ResourceUpdateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Retrieve Ef5Ca01706](Other/api-csharp-beta-sessions-retrieve-ef5ca01706.md) - `BetaManagedAgentsSession Beta.Sessions.Retrieve(SessionRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Sessions Update Fbb654A179](Other/api-csharp-beta-sessions-update-fbb654a179.md) - `BetaManagedAgentsSession Beta.Sessions.Update(SessionUpdateParamsparameters, CancellationTokencancellationToken = default)`
+- [Skills](Other/api-csharp-beta-skills-63d55f1e2b.md) - `SkillCreateResponse Beta.Skills.Create(SkillCreateParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Skills Create A142405305](Other/api-csharp-beta-skills-create-a142405305.md) - `SkillCreateResponse Beta.Skills.Create(SkillCreateParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Skills Delete 6A4D2910D7](Other/api-csharp-beta-skills-delete-6a4d2910d7.md) - `SkillDeleteResponse Beta.Skills.Delete(SkillDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Skills List 03Ab0Ff502](Other/api-csharp-beta-skills-list-03ab0ff502.md) - `SkillListPageResponse Beta.Skills.List(SkillListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Skills Retrieve Ed2Cb031E1](Other/api-csharp-beta-skills-retrieve-ed2cb031e1.md) - `SkillRetrieveResponse Beta.Skills.Retrieve(SkillRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Versions](Other/api-csharp-beta-skills-versions-759348427a.md) - `VersionCreateResponse Beta.Skills.Versions.Create(VersionCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Skills Versions Create 226A964440](Other/api-csharp-beta-skills-versions-create-226a964440.md) - `VersionCreateResponse Beta.Skills.Versions.Create(VersionCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Skills Versions Delete Be409658De](Other/api-csharp-beta-skills-versions-delete-be409658de.md) - `VersionDeleteResponse Beta.Skills.Versions.Delete(VersionDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Skills Versions List E9Fa957F1B](Other/api-csharp-beta-skills-versions-list-e9fa957f1b.md) - `VersionListPageResponse Beta.Skills.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Skills Versions Retrieve C1F3Be777A](Other/api-csharp-beta-skills-versions-retrieve-c1f3be777a.md) - `VersionRetrieveResponse Beta.Skills.Versions.Retrieve(VersionRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Archive E4E3E5C79D](Other/api-csharp-beta-vaults-archive-e4e3e5c79d.md) - `BetaManagedAgentsVault Beta.Vaults.Archive(VaultArchiveParamsparameters, CancellationTokencancellationToken = default)`
+- [Vaults](Other/api-csharp-beta-vaults-b790b9d98d.md) - `BetaManagedAgentsVault Beta.Vaults.Create(VaultCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Create 808Baa7268](Other/api-csharp-beta-vaults-create-808baa7268.md) - `BetaManagedAgentsVault Beta.Vaults.Create(VaultCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Credentials](Other/api-csharp-beta-vaults-credentials-207278a17a.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Create(CredentialCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Credentials Archive C4Ddcdfde0](Other/api-csharp-beta-vaults-credentials-archive-c4ddcdfde0.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Archive(CredentialArchiveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Credentials Create 73D1F807E5](Other/api-csharp-beta-vaults-credentials-create-73d1f807e5.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Create(CredentialCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Credentials Delete C3Cfcc1A34](Other/api-csharp-beta-vaults-credentials-delete-c3cfcc1a34.md) - `BetaManagedAgentsDeletedCredential Beta.Vaults.Credentials.Delete(CredentialDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Credentials List 3Fb5A98E3A](Other/api-csharp-beta-vaults-credentials-list-3fb5a98e3a.md) - `CredentialListPageResponse Beta.Vaults.Credentials.List(CredentialListParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Credentials Retrieve 67Ba746Eb0](Other/api-csharp-beta-vaults-credentials-retrieve-67ba746eb0.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Retrieve(CredentialRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Credentials Update 0B296A685D](Other/api-csharp-beta-vaults-credentials-update-0b296a685d.md) - `BetaManagedAgentsCredential Beta.Vaults.Credentials.Update(CredentialUpdateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Delete 1E29335De0](Other/api-csharp-beta-vaults-delete-1e29335de0.md) - `BetaManagedAgentsDeletedVault Beta.Vaults.Delete(VaultDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults List 3764763C58](Other/api-csharp-beta-vaults-list-3764763c58.md) - `VaultListPageResponse Beta.Vaults.List(VaultListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Retrieve Acaf159F14](Other/api-csharp-beta-vaults-retrieve-acaf159f14.md) - `BetaManagedAgentsVault Beta.Vaults.Retrieve(VaultRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Vaults Update E1A4F735Ea](Other/api-csharp-beta-vaults-update-e1a4f735ea.md) - `BetaManagedAgentsVault Beta.Vaults.Update(VaultUpdateParamsparameters, CancellationTokencancellationToken = default)`
+- [Completions](Other/api-csharp-completions-1755d2314a.md)
+- [Api Csharp Completions Create 8F22Aefc25](Other/api-csharp-completions-create-8f22aefc25.md) - The method `create` is not available in this language.
+- [Batches](Other/api-csharp-messages-batches-8821554a6b.md) - `MessageBatch Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Messages Batches Cancel De247760E6](Other/api-csharp-messages-batches-cancel-de247760e6.md) - `MessageBatch Messages.Batches.Cancel(BatchCancelParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Messages Batches Create 33Cc6413A7](Other/api-csharp-messages-batches-create-33cc6413a7.md) - `MessageBatch Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Messages Batches Delete D4B8Ec3C41](Other/api-csharp-messages-batches-delete-d4b8ec3c41.md) - `DeletedMessageBatch Messages.Batches.Delete(BatchDeleteParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Messages Batches List Bfba1Ed1A3](Other/api-csharp-messages-batches-list-bfba1ed1a3.md) - `BatchListPageResponse Messages.Batches.List(BatchListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Messages Batches Results 7A022B465D](Other/api-csharp-messages-batches-results-7a022b465d.md) - `MessageBatchIndividualResponse Messages.Batches.ResultsStreaming(BatchResultsParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Messages Batches Retrieve 33403C909C](Other/api-csharp-messages-batches-retrieve-33403c909c.md) - `MessageBatch Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Messages Count Tokens A7596F297A](Other/api-csharp-messages-count-tokens-a7596f297a.md) - `MessageTokensCount Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Messages Create Eaf90Cec85](Other/api-csharp-messages-create-eaf90cec85.md) - `Message Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Messages](Other/api-csharp-messages-decc83c8c4.md) - `Message Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
+- [Errors](Other/api-errors-90b9605eae.md)
+- [Beta](Other/api-go-beta-471060c5d8.md) - - `type AnthropicBeta interface{…}`
+- [Api Go Beta Agents Archive 02E29E82A4](Other/api-go-beta-agents-archive-02e29e82a4.md) - `client.Beta.Agents.Archive(ctx, agentID, body) (*BetaManagedAgentsAgent, error)`
+- [Api Go Beta Agents Create 176F1A0D3A](Other/api-go-beta-agents-create-176f1a0d3a.md) - `client.Beta.Agents.New(ctx, params) (*BetaManagedAgentsAgent, error)`
+- [Agents](Other/api-go-beta-agents-dcc4a1e953.md) - `client.Beta.Agents.New(ctx, params) (*BetaManagedAgentsAgent, error)`
+- [Api Go Beta Agents Delete B728Fbc13A](Other/api-go-beta-agents-delete-b728fbc13a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Go Beta Agents List F1F01F2316](Other/api-go-beta-agents-list-f1f01f2316.md) - `client.Beta.Agents.List(ctx, params) (*PageCursor[BetaManagedAgentsAgent], error)`
+- [Api Go Beta Agents Retrieve 951999E9A9](Other/api-go-beta-agents-retrieve-951999e9a9.md) - `client.Beta.Agents.Get(ctx, agentID, params) (*BetaManagedAgentsAgent, error)`
+- [Api Go Beta Agents Update 6568Eb536B](Other/api-go-beta-agents-update-6568eb536b.md) - `client.Beta.Agents.Update(ctx, agentID, params) (*BetaManagedAgentsAgent, error)`
+- [Versions](Other/api-go-beta-agents-versions-c32f32de14.md) - `client.Beta.Agents.Versions.List(ctx, agentID, params) (*PageCursor[BetaManagedAgentsAgent], error)`
+- [Api Go Beta Agents Versions List Be9505Cb7D](Other/api-go-beta-agents-versions-list-be9505cb7d.md) - `client.Beta.Agents.Versions.List(ctx, agentID, params) (*PageCursor[BetaManagedAgentsAgent], error)`
+- [Api Go Beta Environments Archive 1Ed0Ca3308](Other/api-go-beta-environments-archive-1ed0ca3308.md) - `client.Beta.Environments.Archive(ctx, environmentID, body) (*BetaEnvironment, error)`
+- [Api Go Beta Environments Create 216Ef91726](Other/api-go-beta-environments-create-216ef91726.md) - `client.Beta.Environments.New(ctx, params) (*BetaEnvironment, error)`
+- [Api Go Beta Environments Delete D582C9610C](Other/api-go-beta-environments-delete-d582c9610c.md) - `client.Beta.Environments.Delete(ctx, environmentID, body) (*BetaEnvironmentDeleteResponse, error)`
+- [Environments](Other/api-go-beta-environments-e5226192f7.md) - `client.Beta.Environments.New(ctx, params) (*BetaEnvironment, error)`
+- [Api Go Beta Environments List 68B407142F](Other/api-go-beta-environments-list-68b407142f.md) - `client.Beta.Environments.List(ctx, params) (*PageCursor[BetaEnvironment], error)`
+- [Api Go Beta Environments Retrieve A752Ca3B02](Other/api-go-beta-environments-retrieve-a752ca3b02.md) - `client.Beta.Environments.Get(ctx, environmentID, query) (*BetaEnvironment, error)`
+- [Api Go Beta Environments Update 74Aa27Ef26](Other/api-go-beta-environments-update-74aa27ef26.md) - `client.Beta.Environments.Update(ctx, environmentID, params) (*BetaEnvironment, error)`
+- [Api Go Beta Files Delete 0A7B2732B7](Other/api-go-beta-files-delete-0a7b2732b7.md) - `client.Beta.Files.Delete(ctx, fileID, body) (*DeletedFile, error)`
+- [Api Go Beta Files Download B668832E53](Other/api-go-beta-files-download-b668832e53.md) - `client.Beta.Files.Download(ctx, fileID, query) (*Response, error)`
+- [Files](Other/api-go-beta-files-fe55c30f54.md) - `client.Beta.Files.Upload(ctx, params) (*FileMetadata, error)`
+- [Api Go Beta Files List Ee0Cc52C73](Other/api-go-beta-files-list-ee0cc52c73.md) - `client.Beta.Files.List(ctx, params) (*Page[FileMetadata], error)`
+- [Api Go Beta Files Retrieve Metadata 70Ba27Ce87](Other/api-go-beta-files-retrieve-metadata-70ba27ce87.md) - `client.Beta.Files.GetMetadata(ctx, fileID, query) (*FileMetadata, error)`
+- [Api Go Beta Files Upload A9Db62137C](Other/api-go-beta-files-upload-a9db62137c.md) - `client.Beta.Files.Upload(ctx, params) (*FileMetadata, error)`
+- [Memory Stores](Other/api-go-beta-memory-stores-288020e563.md) - `client.Beta.MemoryStores.New(ctx, params) (*BetaManagedAgentsMemoryStore, error)`
+- [Api Go Beta Memory Stores Archive 31B974D8Ba](Other/api-go-beta-memory-stores-archive-31b974d8ba.md) - `client.Beta.MemoryStores.Archive(ctx, memoryStoreID, body) (*BetaManagedAgentsMemoryStore, error)`
+- [Api Go Beta Memory Stores Create F9E5125148](Other/api-go-beta-memory-stores-create-f9e5125148.md) - `client.Beta.MemoryStores.New(ctx, params) (*BetaManagedAgentsMemoryStore, error)`
+- [Api Go Beta Memory Stores Delete 6076C7C179](Other/api-go-beta-memory-stores-delete-6076c7c179.md) - `client.Beta.MemoryStores.Delete(ctx, memoryStoreID, body) (*BetaManagedAgentsDeletedMemoryStore, error)`
+- [Api Go Beta Memory Stores List 8D9Eda4E59](Other/api-go-beta-memory-stores-list-8d9eda4e59.md) - `client.Beta.MemoryStores.List(ctx, params) (*PageCursor[BetaManagedAgentsMemoryStore], error)`
+- [Api Go Beta Memory Stores Memories Create C0178D24A0](Other/api-go-beta-memory-stores-memories-create-c0178d24a0.md) - `client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (*BetaManagedAgentsMemory, error)`
+- [Memories](Other/api-go-beta-memory-stores-memories-dd6c58a54f.md) - `client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (*BetaManagedAgentsMemory, error)`
+- [Api Go Beta Memory Stores Memories Delete B2D7D5Abce](Other/api-go-beta-memory-stores-memories-delete-b2d7d5abce.md) - `client.Beta.MemoryStores.Memories.Delete(ctx, memoryID, params) (*BetaManagedAgentsDeletedMemory, error)`
+- [Api Go Beta Memory Stores Memories List F15F5E4Ceb](Other/api-go-beta-memory-stores-memories-list-f15f5e4ceb.md) - `client.Beta.MemoryStores.Memories.List(ctx, memoryStoreID, params) (*PageCursor[BetaManagedAgentsMemoryListItemUnion], error)`
+- [Api Go Beta Memory Stores Memories Retrieve D40A5A8095](Other/api-go-beta-memory-stores-memories-retrieve-d40a5a8095.md) - `client.Beta.MemoryStores.Memories.Get(ctx, memoryID, params) (*BetaManagedAgentsMemory, error)`
+- [Api Go Beta Memory Stores Memories Update 5Cdc1841C8](Other/api-go-beta-memory-stores-memories-update-5cdc1841c8.md) - `client.Beta.MemoryStores.Memories.Update(ctx, memoryID, params) (*BetaManagedAgentsMemory, error)`
+- [Memory Versions](Other/api-go-beta-memory-stores-memory-versions-181a455477.md) - `client.Beta.MemoryStores.MemoryVersions.List(ctx, memoryStoreID, params) (*PageCursor[BetaManagedAgentsMemoryVersion], error)`
+- [Api Go Beta Memory Stores Memory Versions List C736D00Ed4](Other/api-go-beta-memory-stores-memory-versions-list-c736d00ed4.md) - `client.Beta.MemoryStores.MemoryVersions.List(ctx, memoryStoreID, params) (*PageCursor[BetaManagedAgentsMemoryVersion], error)`
+- [Api Go Beta Memory Stores Memory Versions Redact 5E01290F1D](Other/api-go-beta-memory-stores-memory-versions-redact-5e01290f1d.md) - `client.Beta.MemoryStores.MemoryVersions.Redact(ctx, memoryVersionID, params) (*BetaManagedAgentsMemoryVersion, error)`
+- [Api Go Beta Memory Stores Memory Versions Retrieve 344844E937](Other/api-go-beta-memory-stores-memory-versions-retrieve-344844e937.md) - `client.Beta.MemoryStores.MemoryVersions.Get(ctx, memoryVersionID, params) (*BetaManagedAgentsMemoryVersion, error)`
+- [Api Go Beta Memory Stores Retrieve D21B18E652](Other/api-go-beta-memory-stores-retrieve-d21b18e652.md) - `client.Beta.MemoryStores.Get(ctx, memoryStoreID, query) (*BetaManagedAgentsMemoryStore, error)`
+- [Api Go Beta Memory Stores Update 6Fae5C3B80](Other/api-go-beta-memory-stores-update-6fae5c3b80.md) - `client.Beta.MemoryStores.Update(ctx, memoryStoreID, params) (*BetaManagedAgentsMemoryStore, error)`
+- [Messages](Other/api-go-beta-messages-9dbbc9d704.md) - `client.Beta.Messages.New(ctx, params) (*BetaMessage, error)`
+- [Batches](Other/api-go-beta-messages-batches-01a6a53957.md) - `client.Beta.Messages.Batches.New(ctx, params) (*BetaMessageBatch, error)`
+- [Api Go Beta Messages Batches Cancel Be548716Bf](Other/api-go-beta-messages-batches-cancel-be548716bf.md) - `client.Beta.Messages.Batches.Cancel(ctx, messageBatchID, body) (*BetaMessageBatch, error)`
+- [Api Go Beta Messages Batches Create 22Ab4C9E9F](Other/api-go-beta-messages-batches-create-22ab4c9e9f.md) - `client.Beta.Messages.Batches.New(ctx, params) (*BetaMessageBatch, error)`
+- [Api Go Beta Messages Batches Delete C522D24740](Other/api-go-beta-messages-batches-delete-c522d24740.md) - `client.Beta.Messages.Batches.Delete(ctx, messageBatchID, body) (*BetaDeletedMessageBatch, error)`
+- [Api Go Beta Messages Batches List 8C96966647](Other/api-go-beta-messages-batches-list-8c96966647.md) - `client.Beta.Messages.Batches.List(ctx, params) (*Page[BetaMessageBatch], error)`
+- [Api Go Beta Messages Batches Results F78De1Ac13](Other/api-go-beta-messages-batches-results-f78de1ac13.md) - `client.Beta.Messages.Batches.Results(ctx, messageBatchID, query) (*BetaMessageBatchIndividualResponse, error)`
+- [Api Go Beta Messages Batches Retrieve 0C050De13A](Other/api-go-beta-messages-batches-retrieve-0c050de13a.md) - `client.Beta.Messages.Batches.Get(ctx, messageBatchID, query) (*BetaMessageBatch, error)`
+- [Api Go Beta Messages Count Tokens Ef4Ef2095B](Other/api-go-beta-messages-count-tokens-ef4ef2095b.md) - `client.Beta.Messages.CountTokens(ctx, params) (*BetaMessageTokensCount, error)`
+- [Api Go Beta Messages Create 6F03424D72](Other/api-go-beta-messages-create-6f03424d72.md) - `client.Beta.Messages.New(ctx, params) (*BetaMessage, error)`
+- [Api Go Beta Sessions Archive 9Abf2808C4](Other/api-go-beta-sessions-archive-9abf2808c4.md) - `client.Beta.Sessions.Archive(ctx, sessionID, body) (*BetaManagedAgentsSession, error)`
+- [Sessions](Other/api-go-beta-sessions-bbdce5bb0b.md) - `client.Beta.Sessions.New(ctx, params) (*BetaManagedAgentsSession, error)`
+- [Api Go Beta Sessions Create 5501E2375B](Other/api-go-beta-sessions-create-5501e2375b.md) - `client.Beta.Sessions.New(ctx, params) (*BetaManagedAgentsSession, error)`
+- [Api Go Beta Sessions Delete 2C9180Cdf6](Other/api-go-beta-sessions-delete-2c9180cdf6.md) - `client.Beta.Sessions.Delete(ctx, sessionID, body) (*BetaManagedAgentsDeletedSession, error)`
+- [Events](Other/api-go-beta-sessions-events-594b3481fc.md) - `client.Beta.Sessions.Events.List(ctx, sessionID, params) (*PageCursor[BetaManagedAgentsSessionEventUnion], error)`
+- [Api Go Beta Sessions Events List Ab57B29196](Other/api-go-beta-sessions-events-list-ab57b29196.md) - `client.Beta.Sessions.Events.List(ctx, sessionID, params) (*PageCursor[BetaManagedAgentsSessionEventUnion], error)`
+- [Api Go Beta Sessions Events Send 529C2A9D42](Other/api-go-beta-sessions-events-send-529c2a9d42.md) - `client.Beta.Sessions.Events.Send(ctx, sessionID, params) (*BetaManagedAgentsSendSessionEvents, error)`
+- [Api Go Beta Sessions Events Stream Ed88Fb8037](Other/api-go-beta-sessions-events-stream-ed88fb8037.md) - `client.Beta.Sessions.Events.Stream(ctx, sessionID, query) (*BetaManagedAgentsStreamSessionEventsUnion, error)`
+- [Api Go Beta Sessions List E62Ddb3292](Other/api-go-beta-sessions-list-e62ddb3292.md) - `client.Beta.Sessions.List(ctx, params) (*PageCursor[BetaManagedAgentsSession], error)`
+- [Resources](Other/api-go-beta-sessions-resources-27b3c6fee1.md) - `client.Beta.Sessions.Resources.Add(ctx, sessionID, params) (*BetaManagedAgentsFileResource, error)`
+- [Api Go Beta Sessions Resources Add 7B3B48007B](Other/api-go-beta-sessions-resources-add-7b3b48007b.md) - `client.Beta.Sessions.Resources.Add(ctx, sessionID, params) (*BetaManagedAgentsFileResource, error)`
+- [Api Go Beta Sessions Resources Delete E7Aa6591F0](Other/api-go-beta-sessions-resources-delete-e7aa6591f0.md) - `client.Beta.Sessions.Resources.Delete(ctx, resourceID, params) (*BetaManagedAgentsDeleteSessionResource, error)`
+- [Api Go Beta Sessions Resources List Ca62Ee8880](Other/api-go-beta-sessions-resources-list-ca62ee8880.md) - `client.Beta.Sessions.Resources.List(ctx, sessionID, params) (*PageCursor[BetaManagedAgentsSessionResourceUnion], error)`
+- [Api Go Beta Sessions Resources Retrieve 9C215Be9E9](Other/api-go-beta-sessions-resources-retrieve-9c215be9e9.md) - `client.Beta.Sessions.Resources.Get(ctx, resourceID, params) (*BetaSessionResourceGetResponseUnion, error)`
+- [Api Go Beta Sessions Resources Update 14Ecb75C89](Other/api-go-beta-sessions-resources-update-14ecb75c89.md) - `client.Beta.Sessions.Resources.Update(ctx, resourceID, params) (*BetaSessionResourceUpdateResponseUnion, error)`
+- [Api Go Beta Sessions Retrieve 1D297Cfb32](Other/api-go-beta-sessions-retrieve-1d297cfb32.md) - `client.Beta.Sessions.Get(ctx, sessionID, query) (*BetaManagedAgentsSession, error)`
+- [Api Go Beta Sessions Update 5A5713E51A](Other/api-go-beta-sessions-update-5a5713e51a.md) - `client.Beta.Sessions.Update(ctx, sessionID, params) (*BetaManagedAgentsSession, error)`
+- [Skills](Other/api-go-beta-skills-40037cbfea.md) - `client.Beta.Skills.New(ctx, params) (*BetaSkillNewResponse, error)`
+- [Api Go Beta Skills Create 5E2A6B9502](Other/api-go-beta-skills-create-5e2a6b9502.md) - `client.Beta.Skills.New(ctx, params) (*BetaSkillNewResponse, error)`
+- [Api Go Beta Skills Delete Bd1C663D2B](Other/api-go-beta-skills-delete-bd1c663d2b.md) - `client.Beta.Skills.Delete(ctx, skillID, body) (*BetaSkillDeleteResponse, error)`
+- [Api Go Beta Skills List 85E4205Cb7](Other/api-go-beta-skills-list-85e4205cb7.md) - `client.Beta.Skills.List(ctx, params) (*PageCursor[BetaSkillListResponse], error)`
+- [Api Go Beta Skills Retrieve D4B0126139](Other/api-go-beta-skills-retrieve-d4b0126139.md) - `client.Beta.Skills.Get(ctx, skillID, query) (*BetaSkillGetResponse, error)`
+- [Versions](Other/api-go-beta-skills-versions-793af75e69.md) - `client.Beta.Skills.Versions.New(ctx, skillID, params) (*BetaSkillVersionNewResponse, error)`
+- [Api Go Beta Skills Versions Create 369C226De4](Other/api-go-beta-skills-versions-create-369c226de4.md) - `client.Beta.Skills.Versions.New(ctx, skillID, params) (*BetaSkillVersionNewResponse, error)`
+- [Api Go Beta Skills Versions Delete 3E652B2971](Other/api-go-beta-skills-versions-delete-3e652b2971.md) - `client.Beta.Skills.Versions.Delete(ctx, version, params) (*BetaSkillVersionDeleteResponse, error)`
+- [Api Go Beta Skills Versions List A773Ca898E](Other/api-go-beta-skills-versions-list-a773ca898e.md) - `client.Beta.Skills.Versions.List(ctx, skillID, params) (*PageCursor[BetaSkillVersionListResponse], error)`
+- [Api Go Beta Skills Versions Retrieve 45A85980Fd](Other/api-go-beta-skills-versions-retrieve-45a85980fd.md) - `client.Beta.Skills.Versions.Get(ctx, version, params) (*BetaSkillVersionGetResponse, error)`
+- [Vaults](Other/api-go-beta-vaults-0588f773c5.md) - `client.Beta.Vaults.New(ctx, params) (*BetaManagedAgentsVault, error)`
+- [Api Go Beta Vaults Archive 6A019Cf5A3](Other/api-go-beta-vaults-archive-6a019cf5a3.md) - `client.Beta.Vaults.Archive(ctx, vaultID, body) (*BetaManagedAgentsVault, error)`
+- [Api Go Beta Vaults Create 5B083F721C](Other/api-go-beta-vaults-create-5b083f721c.md) - `client.Beta.Vaults.New(ctx, params) (*BetaManagedAgentsVault, error)`
+- [Api Go Beta Vaults Credentials Archive 963A4Cb43D](Other/api-go-beta-vaults-credentials-archive-963a4cb43d.md) - `client.Beta.Vaults.Credentials.Archive(ctx, credentialID, params) (*BetaManagedAgentsCredential, error)`
+- [Api Go Beta Vaults Credentials Create A6Cde5F6F9](Other/api-go-beta-vaults-credentials-create-a6cde5f6f9.md) - `client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (*BetaManagedAgentsCredential, error)`
+- [Credentials](Other/api-go-beta-vaults-credentials-d704fa168a.md) - `client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (*BetaManagedAgentsCredential, error)`
+- [Api Go Beta Vaults Credentials Delete 0Ef8Fb22C0](Other/api-go-beta-vaults-credentials-delete-0ef8fb22c0.md) - `client.Beta.Vaults.Credentials.Delete(ctx, credentialID, params) (*BetaManagedAgentsDeletedCredential, error)`
+- [Api Go Beta Vaults Credentials List 71A51785A2](Other/api-go-beta-vaults-credentials-list-71a51785a2.md) - `client.Beta.Vaults.Credentials.List(ctx, vaultID, params) (*PageCursor[BetaManagedAgentsCredential], error)`
+- [Api Go Beta Vaults Credentials Retrieve C4Ad2Bed33](Other/api-go-beta-vaults-credentials-retrieve-c4ad2bed33.md) - `client.Beta.Vaults.Credentials.Get(ctx, credentialID, params) (*BetaManagedAgentsCredential, error)`
+- [Api Go Beta Vaults Credentials Update 0891534180](Other/api-go-beta-vaults-credentials-update-0891534180.md) - `client.Beta.Vaults.Credentials.Update(ctx, credentialID, params) (*BetaManagedAgentsCredential, error)`
+- [Api Go Beta Vaults Delete 6B82B23251](Other/api-go-beta-vaults-delete-6b82b23251.md) - `client.Beta.Vaults.Delete(ctx, vaultID, body) (*BetaManagedAgentsDeletedVault, error)`
+- [Api Go Beta Vaults List 86Aeb6462C](Other/api-go-beta-vaults-list-86aeb6462c.md) - `client.Beta.Vaults.List(ctx, params) (*PageCursor[BetaManagedAgentsVault], error)`
+- [Api Go Beta Vaults Retrieve A46A416E33](Other/api-go-beta-vaults-retrieve-a46a416e33.md) - `client.Beta.Vaults.Get(ctx, vaultID, query) (*BetaManagedAgentsVault, error)`
+- [Api Go Beta Vaults Update 3532197114](Other/api-go-beta-vaults-update-3532197114.md) - `client.Beta.Vaults.Update(ctx, vaultID, params) (*BetaManagedAgentsVault, error)`
+- [Completions](Other/api-go-completions-760ed40fb1.md) - `client.Completions.New(ctx, params) (*Completion, error)`
+- [Api Go Completions Create Bf064B0E72](Other/api-go-completions-create-bf064b0e72.md) - `client.Completions.New(ctx, params) (*Completion, error)`
+- [Api Go Messages Batches Cancel 6A096B0Fc9](Other/api-go-messages-batches-cancel-6a096b0fc9.md) - `client.Messages.Batches.Cancel(ctx, messageBatchID) (*MessageBatch, error)`
+- [Api Go Messages Batches Create 9Cdc81B5F3](Other/api-go-messages-batches-create-9cdc81b5f3.md) - `client.Messages.Batches.New(ctx, body) (*MessageBatch, error)`
+- [Batches](Other/api-go-messages-batches-dc84748643.md) - `client.Messages.Batches.New(ctx, body) (*MessageBatch, error)`
+- [Api Go Messages Batches Delete 646F74B479](Other/api-go-messages-batches-delete-646f74b479.md) - `client.Messages.Batches.Delete(ctx, messageBatchID) (*DeletedMessageBatch, error)`
+- [Api Go Messages Batches List 13803B8476](Other/api-go-messages-batches-list-13803b8476.md) - `client.Messages.Batches.List(ctx, query) (*Page[MessageBatch], error)`
+- [Api Go Messages Batches Results 6B3F47Ec42](Other/api-go-messages-batches-results-6b3f47ec42.md) - `client.Messages.Batches.Results(ctx, messageBatchID) (*MessageBatchIndividualResponse, error)`
+- [Api Go Messages Batches Retrieve Bdc366Efbc](Other/api-go-messages-batches-retrieve-bdc366efbc.md) - `client.Messages.Batches.Get(ctx, messageBatchID) (*MessageBatch, error)`
+- [Api Go Messages Count Tokens 4B76269Bb3](Other/api-go-messages-count-tokens-4b76269bb3.md) - `client.Messages.CountTokens(ctx, body) (*MessageTokensCount, error)`
+- [Api Go Messages Create 1Cafdbce61](Other/api-go-messages-create-1cafdbce61.md) - `client.Messages.New(ctx, body) (*Message, error)`
+- [Messages](Other/api-go-messages-e9487bb0eb.md) - `client.Messages.New(ctx, body) (*Message, error)`
+- [IP addresses](Other/api-ip-addresses-cc3c763ed7.md) - Anthropic services use fixed IP addresses for both inbound and outbound connections. You can use these addresses to configure your firewall rules for 
+- [Beta](Other/api-java-beta-7db3559367.md) - - `enum AnthropicBeta:`
+- [Agents](Other/api-java-beta-agents-8ed4c2e1a3.md) - `BetaManagedAgentsAgent beta().agents().create(AgentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Agents Archive B74B36A8E0](Other/api-java-beta-agents-archive-b74b36a8e0.md) - `BetaManagedAgentsAgent beta().agents().archive(AgentArchiveParamsparams = AgentArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.no
+- [Api Java Beta Agents Create 540B932E88](Other/api-java-beta-agents-create-540b932e88.md) - `BetaManagedAgentsAgent beta().agents().create(AgentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Agents Delete 35C98E63C4](Other/api-java-beta-agents-delete-35c98e63c4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Java Beta Agents List 467F17Ff1E](Other/api-java-beta-agents-list-467f17ff1e.md) - `AgentListPage beta().agents().list(AgentListParamsparams = AgentListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Agents Retrieve Cd53B686Ed](Other/api-java-beta-agents-retrieve-cd53b686ed.md) - `BetaManagedAgentsAgent beta().agents().retrieve(AgentRetrieveParamsparams = AgentRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions
+- [Api Java Beta Agents Update 5Dec949470](Other/api-java-beta-agents-update-5dec949470.md) - `BetaManagedAgentsAgent beta().agents().update(AgentUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Versions](Other/api-java-beta-agents-versions-1033627838.md) - `VersionListPage beta().agents().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.non
+- [Api Java Beta Agents Versions List D8Afa99391](Other/api-java-beta-agents-versions-list-d8afa99391.md) - `VersionListPage beta().agents().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.non
+- [Environments](Other/api-java-beta-environments-4affe14c5f.md) - `BetaEnvironment beta().environments().create(EnvironmentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Environments Archive 6C5Acc4Dbd](Other/api-java-beta-environments-archive-6c5acc4dbd.md) - `BetaEnvironment beta().environments().archive(EnvironmentArchiveParamsparams = EnvironmentArchiveParams.none(), RequestOptionsrequestOptions = Reques
+- [Api Java Beta Environments Create 0B602B5D14](Other/api-java-beta-environments-create-0b602b5d14.md) - `BetaEnvironment beta().environments().create(EnvironmentCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Environments Delete E4333Bcee5](Other/api-java-beta-environments-delete-e4333bcee5.md) - `BetaEnvironmentDeleteResponse beta().environments().delete(EnvironmentDeleteParamsparams = EnvironmentDeleteParams.none(), RequestOptionsrequestOptio
+- [Api Java Beta Environments List 3Af7D49A50](Other/api-java-beta-environments-list-3af7d49a50.md) - `EnvironmentListPage beta().environments().list(EnvironmentListParamsparams = EnvironmentListParams.none(), RequestOptionsrequestOptions = RequestOpti
+- [Api Java Beta Environments Retrieve Faeea37Fc3](Other/api-java-beta-environments-retrieve-faeea37fc3.md) - `BetaEnvironment beta().environments().retrieve(EnvironmentRetrieveParamsparams = EnvironmentRetrieveParams.none(), RequestOptionsrequestOptions = Req
+- [Api Java Beta Environments Update 954B483024](Other/api-java-beta-environments-update-954b483024.md) - `BetaEnvironment beta().environments().update(EnvironmentUpdateParamsparams = EnvironmentUpdateParams.none(), RequestOptionsrequestOptions = RequestOp
+- [Files](Other/api-java-beta-files-a9df87f743.md) - `FileMetadata beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Files Delete F6Ea26690A](Other/api-java-beta-files-delete-f6ea26690a.md) - `DeletedFile beta().files().delete(FileDeleteParamsparams = FileDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Files Download 87Ecba48A5](Other/api-java-beta-files-download-87ecba48a5.md) - `HttpResponse beta().files().download(FileDownloadParamsparams = FileDownloadParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Files List E534Eda3Ce](Other/api-java-beta-files-list-e534eda3ce.md) - `FileListPage beta().files().list(FileListParamsparams = FileListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Files Retrieve Metadata Aeaea2Dc31](Other/api-java-beta-files-retrieve-metadata-aeaea2dc31.md) - `FileMetadata beta().files().retrieveMetadata(FileRetrieveMetadataParamsparams = FileRetrieveMetadataParams.none(), RequestOptionsrequestOptions = Req
+- [Api Java Beta Files Upload 8F01F1838C](Other/api-java-beta-files-upload-8f01f1838c.md) - `FileMetadata beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Memory Stores](Other/api-java-beta-memory-stores-af726c996d.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().create(MemoryStoreCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Memory Stores Archive Fe456Dcc71](Other/api-java-beta-memory-stores-archive-fe456dcc71.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().archive(MemoryStoreArchiveParamsparams = MemoryStoreArchiveParams.none(), RequestOptionsrequestOpt
+- [Api Java Beta Memory Stores Create 493E225376](Other/api-java-beta-memory-stores-create-493e225376.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().create(MemoryStoreCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Memory Stores Delete 80A6Bbfb41](Other/api-java-beta-memory-stores-delete-80a6bbfb41.md) - `BetaManagedAgentsDeletedMemoryStore beta().memoryStores().delete(MemoryStoreDeleteParamsparams = MemoryStoreDeleteParams.none(), RequestOptionsreques
+- [Api Java Beta Memory Stores List 54725Ff281](Other/api-java-beta-memory-stores-list-54725ff281.md) - `MemoryStoreListPage beta().memoryStores().list(MemoryStoreListParamsparams = MemoryStoreListParams.none(), RequestOptionsrequestOptions = RequestOpti
+- [Api Java Beta Memory Stores Memories Create 226941A7D8](Other/api-java-beta-memory-stores-memories-create-226941a7d8.md) - `BetaManagedAgentsMemory beta().memoryStores().memories().create(MemoryCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Memory Stores Memories Delete 908415E78E](Other/api-java-beta-memory-stores-memories-delete-908415e78e.md) - `BetaManagedAgentsDeletedMemory beta().memoryStores().memories().delete(MemoryDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none()
+- [Memories](Other/api-java-beta-memory-stores-memories-f81c491a2e.md) - `BetaManagedAgentsMemory beta().memoryStores().memories().create(MemoryCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Memory Stores Memories List 0Fd464C316](Other/api-java-beta-memory-stores-memories-list-0fd464c316.md) - `MemoryListPage beta().memoryStores().memories().list(MemoryListParamsparams = MemoryListParams.none(), RequestOptionsrequestOptions = RequestOptions.
+- [Api Java Beta Memory Stores Memories Retrieve E909Bed744](Other/api-java-beta-memory-stores-memories-retrieve-e909bed744.md) - `BetaManagedAgentsMemory beta().memoryStores().memories().retrieve(MemoryRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Memory Stores Memories Update 5C42558A35](Other/api-java-beta-memory-stores-memories-update-5c42558a35.md) - `BetaManagedAgentsMemory beta().memoryStores().memories().update(MemoryUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Memory Versions](Other/api-java-beta-memory-stores-memory-versions-2a15632d49.md) - `MemoryVersionListPage beta().memoryStores().memoryVersions().list(MemoryVersionListParamsparams = MemoryVersionListParams.none(), RequestOptionsreque
+- [Api Java Beta Memory Stores Memory Versions List F9Fac75819](Other/api-java-beta-memory-stores-memory-versions-list-f9fac75819.md) - `MemoryVersionListPage beta().memoryStores().memoryVersions().list(MemoryVersionListParamsparams = MemoryVersionListParams.none(), RequestOptionsreque
+- [Api Java Beta Memory Stores Memory Versions Redact A3Ae2C405C](Other/api-java-beta-memory-stores-memory-versions-redact-a3ae2c405c.md) - `BetaManagedAgentsMemoryVersion beta().memoryStores().memoryVersions().redact(MemoryVersionRedactParamsparams, RequestOptionsrequestOptions = RequestO
+- [Api Java Beta Memory Stores Memory Versions Retrieve E6C40E7Cfc](Other/api-java-beta-memory-stores-memory-versions-retrieve-e6c40e7cfc.md) - `BetaManagedAgentsMemoryVersion beta().memoryStores().memoryVersions().retrieve(MemoryVersionRetrieveParamsparams, RequestOptionsrequestOptions = Requ
+- [Api Java Beta Memory Stores Retrieve F406C8A9Ac](Other/api-java-beta-memory-stores-retrieve-f406c8a9ac.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().retrieve(MemoryStoreRetrieveParamsparams = MemoryStoreRetrieveParams.none(), RequestOptionsrequest
+- [Api Java Beta Memory Stores Update E404E4Baff](Other/api-java-beta-memory-stores-update-e404e4baff.md) - `BetaManagedAgentsMemoryStore beta().memoryStores().update(MemoryStoreUpdateParamsparams = MemoryStoreUpdateParams.none(), RequestOptionsrequestOption
+- [Messages](Other/api-java-beta-messages-273bd923ac.md) - `BetaMessage beta().messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Batches](Other/api-java-beta-messages-batches-c8d9682bb6.md) - `BetaMessageBatch beta().messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Messages Batches Cancel Bbbc6E0F9C](Other/api-java-beta-messages-batches-cancel-bbbc6e0f9c.md) - `BetaMessageBatch beta().messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions
+- [Api Java Beta Messages Batches Create 83039A259F](Other/api-java-beta-messages-batches-create-83039a259f.md) - `BetaMessageBatch beta().messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Messages Batches Delete F0D4E8A095](Other/api-java-beta-messages-batches-delete-f0d4e8a095.md) - `BetaDeletedMessageBatch beta().messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = Request
+- [Api Java Beta Messages Batches List 11801F2F5F](Other/api-java-beta-messages-batches-list-11801f2f5f.md) - `BatchListPage beta().messages().batches().list(BatchListParamsparams = BatchListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Messages Batches Results Ab2D7Af530](Other/api-java-beta-messages-batches-results-ab2d7af530.md) - `BetaMessageBatchIndividualResponse beta().messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsr
+- [Api Java Beta Messages Batches Retrieve 6E3C3B0A48](Other/api-java-beta-messages-batches-retrieve-6e3c3b0a48.md) - `BetaMessageBatch beta().messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestO
+- [Api Java Beta Messages Count Tokens 3E8D6E7E80](Other/api-java-beta-messages-count-tokens-3e8d6e7e80.md) - `BetaMessageTokensCount beta().messages().countTokens(MessageCountTokensParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Messages Create 759C6Db29D](Other/api-java-beta-messages-create-759c6db29d.md) - `BetaMessage beta().messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Sessions](Other/api-java-beta-sessions-6323a8582e.md) - `BetaManagedAgentsSession beta().sessions().create(SessionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Archive C133Cd7B6D](Other/api-java-beta-sessions-archive-c133cd7b6d.md) - `BetaManagedAgentsSession beta().sessions().archive(SessionArchiveParamsparams = SessionArchiveParams.none(), RequestOptionsrequestOptions = RequestOp
+- [Api Java Beta Sessions Create Ad3716F48D](Other/api-java-beta-sessions-create-ad3716f48d.md) - `BetaManagedAgentsSession beta().sessions().create(SessionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Delete 4F9E09E7Eb](Other/api-java-beta-sessions-delete-4f9e09e7eb.md) - `BetaManagedAgentsDeletedSession beta().sessions().delete(SessionDeleteParamsparams = SessionDeleteParams.none(), RequestOptionsrequestOptions = Reque
+- [Events](Other/api-java-beta-sessions-events-8033a96b32.md) - `EventListPage beta().sessions().events().list(EventListParamsparams = EventListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Events List 39Eb4C5888](Other/api-java-beta-sessions-events-list-39eb4c5888.md) - `EventListPage beta().sessions().events().list(EventListParamsparams = EventListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Events Send F7D87C9179](Other/api-java-beta-sessions-events-send-f7d87c9179.md) - `BetaManagedAgentsSendSessionEvents beta().sessions().events().send(EventSendParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Events Stream Ce7F09F97C](Other/api-java-beta-sessions-events-stream-ce7f09f97c.md) - `BetaManagedAgentsStreamSessionEvents beta().sessions().events().streamStreaming(EventStreamParamsparams = EventStreamParams.none(), RequestOptionsreq
+- [Api Java Beta Sessions List D1393F503F](Other/api-java-beta-sessions-list-d1393f503f.md) - `SessionListPage beta().sessions().list(SessionListParamsparams = SessionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Resources](Other/api-java-beta-sessions-resources-23e1df2ed7.md) - `BetaManagedAgentsFileResource beta().sessions().resources().add(ResourceAddParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Resources Add 7A50F15E42](Other/api-java-beta-sessions-resources-add-7a50f15e42.md) - `BetaManagedAgentsFileResource beta().sessions().resources().add(ResourceAddParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Resources Delete 38B282Ee84](Other/api-java-beta-sessions-resources-delete-38b282ee84.md) - `BetaManagedAgentsDeleteSessionResource beta().sessions().resources().delete(ResourceDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions
+- [Api Java Beta Sessions Resources List A598Ee08B6](Other/api-java-beta-sessions-resources-list-a598ee08b6.md) - `ResourceListPage beta().sessions().resources().list(ResourceListParamsparams = ResourceListParams.none(), RequestOptionsrequestOptions = RequestOptio
+- [Api Java Beta Sessions Resources Retrieve 71Bedc677C](Other/api-java-beta-sessions-resources-retrieve-71bedc677c.md) - `ResourceRetrieveResponse beta().sessions().resources().retrieve(ResourceRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Resources Update 41Ae02Ba4E](Other/api-java-beta-sessions-resources-update-41ae02ba4e.md) - `ResourceUpdateResponse beta().sessions().resources().update(ResourceUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Sessions Retrieve E63D7975E2](Other/api-java-beta-sessions-retrieve-e63d7975e2.md) - `BetaManagedAgentsSession beta().sessions().retrieve(SessionRetrieveParamsparams = SessionRetrieveParams.none(), RequestOptionsrequestOptions = Reques
+- [Api Java Beta Sessions Update 903C3Cf88C](Other/api-java-beta-sessions-update-903c3cf88c.md) - `BetaManagedAgentsSession beta().sessions().update(SessionUpdateParamsparams = SessionUpdateParams.none(), RequestOptionsrequestOptions = RequestOptio
+- [Skills](Other/api-java-beta-skills-4cabcc6f07.md) - `SkillCreateResponse beta().skills().create(SkillCreateParamsparams = SkillCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Skills Create 02303A28Fb](Other/api-java-beta-skills-create-02303a28fb.md) - `SkillCreateResponse beta().skills().create(SkillCreateParamsparams = SkillCreateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Skills Delete 3E6A9F8126](Other/api-java-beta-skills-delete-3e6a9f8126.md) - `SkillDeleteResponse beta().skills().delete(SkillDeleteParamsparams = SkillDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Skills List 95A3708Cf4](Other/api-java-beta-skills-list-95a3708cf4.md) - `SkillListPage beta().skills().list(SkillListParamsparams = SkillListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Skills Retrieve 0222092Cda](Other/api-java-beta-skills-retrieve-0222092cda.md) - `SkillRetrieveResponse beta().skills().retrieve(SkillRetrieveParamsparams = SkillRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.
+- [Versions](Other/api-java-beta-skills-versions-48a753bfbf.md) - `VersionCreateResponse beta().skills().versions().create(VersionCreateParamsparams = VersionCreateParams.none(), RequestOptionsrequestOptions = Reques
+- [Api Java Beta Skills Versions Create 732561Dea0](Other/api-java-beta-skills-versions-create-732561dea0.md) - `VersionCreateResponse beta().skills().versions().create(VersionCreateParamsparams = VersionCreateParams.none(), RequestOptionsrequestOptions = Reques
+- [Api Java Beta Skills Versions Delete 7359C00B49](Other/api-java-beta-skills-versions-delete-7359c00b49.md) - `VersionDeleteResponse beta().skills().versions().delete(VersionDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Skills Versions List Fdb9Fb1938](Other/api-java-beta-skills-versions-list-fdb9fb1938.md) - `VersionListPage beta().skills().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.non
+- [Api Java Beta Skills Versions Retrieve Faf5Fa16A3](Other/api-java-beta-skills-versions-retrieve-faf5fa16a3.md) - `VersionRetrieveResponse beta().skills().versions().retrieve(VersionRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Vaults](Other/api-java-beta-vaults-a873cc1c7f.md) - `BetaManagedAgentsVault beta().vaults().create(VaultCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Vaults Archive 0A0Ce63Cd0](Other/api-java-beta-vaults-archive-0a0ce63cd0.md) - `BetaManagedAgentsVault beta().vaults().archive(VaultArchiveParamsparams = VaultArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.no
+- [Api Java Beta Vaults Create Ba909A0A5B](Other/api-java-beta-vaults-create-ba909a0a5b.md) - `BetaManagedAgentsVault beta().vaults().create(VaultCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Credentials](Other/api-java-beta-vaults-credentials-0a05f15a23.md) - `BetaManagedAgentsCredential beta().vaults().credentials().create(CredentialCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Vaults Credentials Archive 99Da34B9B0](Other/api-java-beta-vaults-credentials-archive-99da34b9b0.md) - `BetaManagedAgentsCredential beta().vaults().credentials().archive(CredentialArchiveParamsparams, RequestOptionsrequestOptions = RequestOptions.none()
+- [Api Java Beta Vaults Credentials Create 36D0A7D171](Other/api-java-beta-vaults-credentials-create-36d0a7d171.md) - `BetaManagedAgentsCredential beta().vaults().credentials().create(CredentialCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Vaults Credentials Delete 1911971D3E](Other/api-java-beta-vaults-credentials-delete-1911971d3e.md) - `BetaManagedAgentsDeletedCredential beta().vaults().credentials().delete(CredentialDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.n
+- [Api Java Beta Vaults Credentials List 628B82A75F](Other/api-java-beta-vaults-credentials-list-628b82a75f.md) - `CredentialListPage beta().vaults().credentials().list(CredentialListParamsparams = CredentialListParams.none(), RequestOptionsrequestOptions = Reques
+- [Api Java Beta Vaults Credentials Retrieve 0E6E865529](Other/api-java-beta-vaults-credentials-retrieve-0e6e865529.md) - `BetaManagedAgentsCredential beta().vaults().credentials().retrieve(CredentialRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none
+- [Api Java Beta Vaults Credentials Update C91F734073](Other/api-java-beta-vaults-credentials-update-c91f734073.md) - `BetaManagedAgentsCredential beta().vaults().credentials().update(CredentialUpdateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Vaults Delete 1C13E68A61](Other/api-java-beta-vaults-delete-1c13e68a61.md) - `BetaManagedAgentsDeletedVault beta().vaults().delete(VaultDeleteParamsparams = VaultDeleteParams.none(), RequestOptionsrequestOptions = RequestOption
+- [Api Java Beta Vaults List 3250Cd77B1](Other/api-java-beta-vaults-list-3250cd77b1.md) - `VaultListPage beta().vaults().list(VaultListParamsparams = VaultListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Vaults Retrieve 870Ec1F462](Other/api-java-beta-vaults-retrieve-870ec1f462.md) - `BetaManagedAgentsVault beta().vaults().retrieve(VaultRetrieveParamsparams = VaultRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions
+- [Api Java Beta Vaults Update E8F05A68Fc](Other/api-java-beta-vaults-update-e8f05a68fc.md) - `BetaManagedAgentsVault beta().vaults().update(VaultUpdateParamsparams = VaultUpdateParams.none(), RequestOptionsrequestOptions = RequestOptions.none(
+- [Api Java Completions Create 27A1C0B41F](Other/api-java-completions-create-27a1c0b41f.md) - `Completion completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Completions](Other/api-java-completions-e302645afc.md) - `Completion completions().create(CompletionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Batches](Other/api-java-messages-batches-8e273642d1.md) - `MessageBatch messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Messages Batches Cancel 1839E1Ce51](Other/api-java-messages-batches-cancel-1839e1ce51.md) - `MessageBatch messages().batches().cancel(BatchCancelParamsparams = BatchCancelParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Messages Batches Create 30052453C3](Other/api-java-messages-batches-create-30052453c3.md) - `MessageBatch messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Messages Batches Delete E0B8F507D7](Other/api-java-messages-batches-delete-e0b8f507d7.md) - `DeletedMessageBatch messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.non
+- [Api Java Messages Batches List 4C72371Fbb](Other/api-java-messages-batches-list-4c72371fbb.md) - `BatchListPage messages().batches().list(BatchListParamsparams = BatchListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Messages Batches Results 20B1A6505E](Other/api-java-messages-batches-results-20b1a6505e.md) - `MessageBatchIndividualResponse messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsrequestOptio
+- [Api Java Messages Batches Retrieve 31Ef3A6186](Other/api-java-messages-batches-retrieve-31ef3a6186.md) - `MessageBatch messages().batches().retrieve(BatchRetrieveParamsparams = BatchRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none
+- [Api Java Messages Count Tokens 68Be31A803](Other/api-java-messages-count-tokens-68be31a803.md) - `MessageTokensCount messages().countTokens(MessageCountTokensParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Messages Create 08A0E124Cd](Other/api-java-messages-create-08a0e124cd.md) - `Message messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Messages](Other/api-java-messages-e181f638a6.md) - `Message messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
+- [Messages](Other/api-messages-2dd213ca95.md) - **post** `/v1/messages`
+- [Batches](Other/api-messages-batches-bd6675d656.md) - **post** `/v1/messages/batches`
+- [Api Messages Batches Cancel 2140B04Da1](Other/api-messages-batches-cancel-2140b04da1.md) - **post** `/v1/messages/batches/{message_batch_id}/cancel`
+- [Api Messages Batches Create Cf002296B8](Other/api-messages-batches-create-cf002296b8.md) - **post** `/v1/messages/batches`
+- [Api Messages Batches Delete Fe9C8A3D0B](Other/api-messages-batches-delete-fe9c8a3d0b.md) - **delete** `/v1/messages/batches/{message_batch_id}`
+- [Api Messages Batches List F5De1Aac62](Other/api-messages-batches-list-f5de1aac62.md) - **get** `/v1/messages/batches`
+- [Api Messages Batches Results A94Edbe8F8](Other/api-messages-batches-results-a94edbe8f8.md) - **get** `/v1/messages/batches/{message_batch_id}/results`
+- [Api Messages Batches Retrieve 8B77133253](Other/api-messages-batches-retrieve-8b77133253.md) - **get** `/v1/messages/batches/{message_batch_id}`
+- [Api Messages Count Tokens 7849A1414A](Other/api-messages-count-tokens-7849a1414a.md) - **post** `/v1/messages/count_tokens`
+- [Api Messages Create 07971E1Cdf](Other/api-messages-create-07971e1cdf.md) - **post** `/v1/messages`
+- [OpenAI SDK compatibility](Other/api-openai-sdk-9632fe784c.md) - Anthropic provides a compatibility layer that enables you to use the OpenAI SDK to test the Claude API. With a few code changes, you can quickly evalu
+- [API Overview](Other/api-overview-606ecbff81.md)
+- [Api Php Beta Agents Archive C8F4Ff6Fe2](Other/api-php-beta-agents-archive-c8f4ff6fe2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Agents C52F409D40](Other/api-php-beta-agents-c52f409d40.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Agents Create 73D8765D97](Other/api-php-beta-agents-create-73d8765d97.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Agents Delete 18408D7220](Other/api-php-beta-agents-delete-18408d7220.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Agents List Fc44958D39](Other/api-php-beta-agents-list-fc44958d39.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Agents Retrieve E65B5542Ed](Other/api-php-beta-agents-retrieve-e65b5542ed.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Agents Update 71D8Bf5A15](Other/api-php-beta-agents-update-71d8bf5a15.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Agents Versions Cbbc1E476C](Other/api-php-beta-agents-versions-cbbc1e476c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Agents Versions List 1Be69A4F24](Other/api-php-beta-agents-versions-list-1be69a4f24.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Environments 9817Ab0B8F](Other/api-php-beta-environments-9817ab0b8f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Environments Archive B92141Aab2](Other/api-php-beta-environments-archive-b92141aab2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Environments Create 5Eebfbb47F](Other/api-php-beta-environments-create-5eebfbb47f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Environments Delete D1019Dcb03](Other/api-php-beta-environments-delete-d1019dcb03.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Environments List B3514C69C1](Other/api-php-beta-environments-list-b3514c69c1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Environments Retrieve F9E6792532](Other/api-php-beta-environments-retrieve-f9e6792532.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Environments Update 1Ac985D6F7](Other/api-php-beta-environments-update-1ac985d6f7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta F9Bbf7C89F](Other/api-php-beta-f9bbf7c89f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Files 3B09F3B626](Other/api-php-beta-files-3b09f3b626.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Files Delete 293F37C6Be](Other/api-php-beta-files-delete-293f37c6be.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Files Download 85Bf6Cab20](Other/api-php-beta-files-download-85bf6cab20.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Files List 2Fc43Aed29](Other/api-php-beta-files-list-2fc43aed29.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Files Retrieve Metadata 403Fd92C01](Other/api-php-beta-files-retrieve-metadata-403fd92c01.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Files Upload D87Be0Bec3](Other/api-php-beta-files-upload-d87be0bec3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores 1B5B7E868E](Other/api-php-beta-memory-stores-1b5b7e868e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Archive 42B8A57883](Other/api-php-beta-memory-stores-archive-42b8a57883.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Create 95A862A05D](Other/api-php-beta-memory-stores-create-95a862a05d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Delete Fb089Df245](Other/api-php-beta-memory-stores-delete-fb089df245.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores List Eba7B287De](Other/api-php-beta-memory-stores-list-eba7b287de.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memories Create 53D2B993Bc](Other/api-php-beta-memory-stores-memories-create-53d2b993bc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memories Delete 734F3A1F4A](Other/api-php-beta-memory-stores-memories-delete-734f3a1f4a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memories Ffb8549429](Other/api-php-beta-memory-stores-memories-ffb8549429.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memories List 256E07F4Da](Other/api-php-beta-memory-stores-memories-list-256e07f4da.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memories Retrieve 2629Ff0B44](Other/api-php-beta-memory-stores-memories-retrieve-2629ff0b44.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memories Update 46D6F068Dd](Other/api-php-beta-memory-stores-memories-update-46d6f068dd.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memory Versions 6D2Be3B699](Other/api-php-beta-memory-stores-memory-versions-6d2be3b699.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memory Versions List 8D66930Fa9](Other/api-php-beta-memory-stores-memory-versions-list-8d66930fa9.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memory Versions Redact Dd6F3E035A](Other/api-php-beta-memory-stores-memory-versions-redact-dd6f3e035a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Memory Versions Retrieve B9A105Cd2B](Other/api-php-beta-memory-stores-memory-versions-retrieve-b9a105cd2b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Retrieve Fd41Ff2E1D](Other/api-php-beta-memory-stores-retrieve-fd41ff2e1d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Memory Stores Update 35Ae3A7A64](Other/api-php-beta-memory-stores-update-35ae3a7a64.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages 9271Fd59E4](Other/api-php-beta-messages-9271fd59e4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Batches C8Cdf95E70](Other/api-php-beta-messages-batches-c8cdf95e70.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Batches Cancel Aae45170Ad](Other/api-php-beta-messages-batches-cancel-aae45170ad.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Batches Create 46Ef25B739](Other/api-php-beta-messages-batches-create-46ef25b739.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Batches Delete 00C8A4C708](Other/api-php-beta-messages-batches-delete-00c8a4c708.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Batches List 8A1Eecc887](Other/api-php-beta-messages-batches-list-8a1eecc887.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Batches Results 6B1Cdeab97](Other/api-php-beta-messages-batches-results-6b1cdeab97.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Batches Retrieve 3815D1B653](Other/api-php-beta-messages-batches-retrieve-3815d1b653.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Count Tokens 0999417258](Other/api-php-beta-messages-count-tokens-0999417258.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Messages Create Bff87C23F5](Other/api-php-beta-messages-create-bff87c23f5.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions 02Ecc86416](Other/api-php-beta-sessions-02ecc86416.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Archive 5474083944](Other/api-php-beta-sessions-archive-5474083944.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Create 0Da21F041C](Other/api-php-beta-sessions-create-0da21f041c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Delete Fca61174F8](Other/api-php-beta-sessions-delete-fca61174f8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Events 9F7B26D42F](Other/api-php-beta-sessions-events-9f7b26d42f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Events List 08F3Adc2Eb](Other/api-php-beta-sessions-events-list-08f3adc2eb.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Events Send Fa25Fcc296](Other/api-php-beta-sessions-events-send-fa25fcc296.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Events Stream D1890B2963](Other/api-php-beta-sessions-events-stream-d1890b2963.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions List 7Ec18011Ac](Other/api-php-beta-sessions-list-7ec18011ac.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Resources 8831285299](Other/api-php-beta-sessions-resources-8831285299.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Resources Add 3210222Bc1](Other/api-php-beta-sessions-resources-add-3210222bc1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Resources Delete 4587Cb4Afd](Other/api-php-beta-sessions-resources-delete-4587cb4afd.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Resources List 720480D951](Other/api-php-beta-sessions-resources-list-720480d951.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Resources Retrieve E8F7E639F3](Other/api-php-beta-sessions-resources-retrieve-e8f7e639f3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Resources Update 7Af0B12A9D](Other/api-php-beta-sessions-resources-update-7af0b12a9d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Retrieve F53F0F1340](Other/api-php-beta-sessions-retrieve-f53f0f1340.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Sessions Update 2064D54D2D](Other/api-php-beta-sessions-update-2064d54d2d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills 649Db734F4](Other/api-php-beta-skills-649db734f4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills Create A374F88Fd9](Other/api-php-beta-skills-create-a374f88fd9.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills Delete C4Fc8841B1](Other/api-php-beta-skills-delete-c4fc8841b1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills List 5Ae76Ca621](Other/api-php-beta-skills-list-5ae76ca621.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills Retrieve 2C8E472Dbf](Other/api-php-beta-skills-retrieve-2c8e472dbf.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills Versions Create 825417629D](Other/api-php-beta-skills-versions-create-825417629d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills Versions Delete 9772Ba8544](Other/api-php-beta-skills-versions-delete-9772ba8544.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills Versions Eb01B9B050](Other/api-php-beta-skills-versions-eb01b9b050.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills Versions List F2E412284B](Other/api-php-beta-skills-versions-list-f2e412284b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Skills Versions Retrieve 0Fd448B1A0](Other/api-php-beta-skills-versions-retrieve-0fd448b1a0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults 31E8Fcd1A0](Other/api-php-beta-vaults-31e8fcd1a0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Archive 65C367B35A](Other/api-php-beta-vaults-archive-65c367b35a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Create 0643572F8E](Other/api-php-beta-vaults-create-0643572f8e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Credentials 5A377Fbd9B](Other/api-php-beta-vaults-credentials-5a377fbd9b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Credentials Archive Ecf6Eea40A](Other/api-php-beta-vaults-credentials-archive-ecf6eea40a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Credentials Create 0821F8523E](Other/api-php-beta-vaults-credentials-create-0821f8523e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Credentials Delete C515A2Ab86](Other/api-php-beta-vaults-credentials-delete-c515a2ab86.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Credentials List 3Bda8D9Ce1](Other/api-php-beta-vaults-credentials-list-3bda8d9ce1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Credentials Retrieve B795Afca14](Other/api-php-beta-vaults-credentials-retrieve-b795afca14.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Credentials Update Dc5Aace998](Other/api-php-beta-vaults-credentials-update-dc5aace998.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Delete A431Cfb749](Other/api-php-beta-vaults-delete-a431cfb749.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults List 4A35Fb0B5B](Other/api-php-beta-vaults-list-4a35fb0b5b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Retrieve 1C7Ad40D45](Other/api-php-beta-vaults-retrieve-1c7ad40d45.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Vaults Update 159E298242](Other/api-php-beta-vaults-update-159e298242.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Completions 649F44E319](Other/api-php-completions-649f44e319.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Completions Create 43C61662Fa](Other/api-php-completions-create-43c61662fa.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages 7D8Bbbcf56](Other/api-php-messages-7d8bbbcf56.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Batches 0F504E4Fd3](Other/api-php-messages-batches-0f504e4fd3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Batches Cancel 03Ad705101](Other/api-php-messages-batches-cancel-03ad705101.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Batches Create Ba810F77Ac](Other/api-php-messages-batches-create-ba810f77ac.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Batches Delete 5Cb11B8143](Other/api-php-messages-batches-delete-5cb11b8143.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Batches List F762F2185B](Other/api-php-messages-batches-list-f762f2185b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Batches Results C4799D3E40](Other/api-php-messages-batches-results-c4799d3e40.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Batches Retrieve 3E84B9Ba59](Other/api-php-messages-batches-retrieve-3e84b9ba59.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Count Tokens D44B53Dc5F](Other/api-php-messages-count-tokens-d44b53dc5f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Messages Create A0441378B3](Other/api-php-messages-create-a0441378b3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Agents](Other/api-python-beta-agents-7b5675f634.md) - `beta.agents.create(AgentCreateParams**kwargs)  -> BetaManagedAgentsAgent`
+- [Api Python Beta Agents Archive 3F4A840943](Other/api-python-beta-agents-archive-3f4a840943.md) - `beta.agents.archive(stragent_id, AgentArchiveParams**kwargs)  -> BetaManagedAgentsAgent`
+- [Api Python Beta Agents Create A92Af9F245](Other/api-python-beta-agents-create-a92af9f245.md) - `beta.agents.create(AgentCreateParams**kwargs)  -> BetaManagedAgentsAgent`
+- [Api Python Beta Agents Delete Addb470127](Other/api-python-beta-agents-delete-addb470127.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Python Beta Agents List Ac22A354C1](Other/api-python-beta-agents-list-ac22a354c1.md) - `beta.agents.list(AgentListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]`
+- [Api Python Beta Agents Retrieve 2683Af7Ad5](Other/api-python-beta-agents-retrieve-2683af7ad5.md) - `beta.agents.retrieve(stragent_id, AgentRetrieveParams**kwargs)  -> BetaManagedAgentsAgent`
+- [Api Python Beta Agents Update Aef1B12Ce3](Other/api-python-beta-agents-update-aef1b12ce3.md) - `beta.agents.update(stragent_id, AgentUpdateParams**kwargs)  -> BetaManagedAgentsAgent`
+- [Versions](Other/api-python-beta-agents-versions-663ca8c5bb.md) - `beta.agents.versions.list(stragent_id, VersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]`
+- [Api Python Beta Agents Versions List D3F12B51A3](Other/api-python-beta-agents-versions-list-d3f12b51a3.md) - `beta.agents.versions.list(stragent_id, VersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]`
+- [Api Python Beta Environments Archive 8D54Be3849](Other/api-python-beta-environments-archive-8d54be3849.md) - `beta.environments.archive(strenvironment_id, EnvironmentArchiveParams**kwargs)  -> BetaEnvironment`
+- [Api Python Beta Environments Create 83F02B93Ae](Other/api-python-beta-environments-create-83f02b93ae.md) - `beta.environments.create(EnvironmentCreateParams**kwargs)  -> BetaEnvironment`
+- [Environments](Other/api-python-beta-environments-d62fe1ba95.md) - `beta.environments.create(EnvironmentCreateParams**kwargs)  -> BetaEnvironment`
+- [Api Python Beta Environments Delete 634A3A78B9](Other/api-python-beta-environments-delete-634a3a78b9.md) - `beta.environments.delete(strenvironment_id, EnvironmentDeleteParams**kwargs)  -> BetaEnvironmentDeleteResponse`
+- [Api Python Beta Environments List 10002E122F](Other/api-python-beta-environments-list-10002e122f.md) - `beta.environments.list(EnvironmentListParams**kwargs)  -> SyncPageCursor[BetaEnvironment]`
+- [Api Python Beta Environments Retrieve 260A873E08](Other/api-python-beta-environments-retrieve-260a873e08.md) - `beta.environments.retrieve(strenvironment_id, EnvironmentRetrieveParams**kwargs)  -> BetaEnvironment`
+- [Api Python Beta Environments Update 522Abe0Fc6](Other/api-python-beta-environments-update-522abe0fc6.md) - `beta.environments.update(strenvironment_id, EnvironmentUpdateParams**kwargs)  -> BetaEnvironment`
+- [Beta](Other/api-python-beta-fe747b8b97.md) - - `Union[str, Literal["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 19 more]]`
+- [Api Python Beta Files Delete 631D2Aff33](Other/api-python-beta-files-delete-631d2aff33.md) - `beta.files.delete(strfile_id, FileDeleteParams**kwargs)  -> DeletedFile`
+- [Api Python Beta Files Download A4A6Abc76B](Other/api-python-beta-files-download-a4a6abc76b.md) - `beta.files.download(strfile_id, FileDownloadParams**kwargs)  -> BinaryResponseContent`
+- [Files](Other/api-python-beta-files-fceda54f11.md) - `beta.files.upload(FileUploadParams**kwargs)  -> FileMetadata`
+- [Api Python Beta Files List 3Fc3C03112](Other/api-python-beta-files-list-3fc3c03112.md) - `beta.files.list(FileListParams**kwargs)  -> SyncPage[FileMetadata]`
+- [Api Python Beta Files Retrieve Metadata 100E5A88Fb](Other/api-python-beta-files-retrieve-metadata-100e5a88fb.md) - `beta.files.retrieve_metadata(strfile_id, FileRetrieveMetadataParams**kwargs)  -> FileMetadata`
+- [Api Python Beta Files Upload F09574Ba0C](Other/api-python-beta-files-upload-f09574ba0c.md) - `beta.files.upload(FileUploadParams**kwargs)  -> FileMetadata`
+- [Memory Stores](Other/api-python-beta-memory-stores-a983851e0b.md) - `beta.memory_stores.create(MemoryStoreCreateParams**kwargs)  -> BetaManagedAgentsMemoryStore`
+- [Api Python Beta Memory Stores Archive B0Fa60C65B](Other/api-python-beta-memory-stores-archive-b0fa60c65b.md) - `beta.memory_stores.archive(strmemory_store_id, MemoryStoreArchiveParams**kwargs)  -> BetaManagedAgentsMemoryStore`
+- [Api Python Beta Memory Stores Create 3Bb660C04B](Other/api-python-beta-memory-stores-create-3bb660c04b.md) - `beta.memory_stores.create(MemoryStoreCreateParams**kwargs)  -> BetaManagedAgentsMemoryStore`
+- [Api Python Beta Memory Stores Delete 2Fada4039C](Other/api-python-beta-memory-stores-delete-2fada4039c.md) - `beta.memory_stores.delete(strmemory_store_id, MemoryStoreDeleteParams**kwargs)  -> BetaManagedAgentsDeletedMemoryStore`
+- [Api Python Beta Memory Stores List 1D603F2207](Other/api-python-beta-memory-stores-list-1d603f2207.md) - `beta.memory_stores.list(MemoryStoreListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryStore]`
+- [Memories](Other/api-python-beta-memory-stores-memories-2bbcba76a7.md) - `beta.memory_stores.memories.create(strmemory_store_id, MemoryCreateParams**kwargs)  -> BetaManagedAgentsMemory`
+- [Api Python Beta Memory Stores Memories Create Fa4A280287](Other/api-python-beta-memory-stores-memories-create-fa4a280287.md) - `beta.memory_stores.memories.create(strmemory_store_id, MemoryCreateParams**kwargs)  -> BetaManagedAgentsMemory`
+- [Api Python Beta Memory Stores Memories Delete 14E76B42C7](Other/api-python-beta-memory-stores-memories-delete-14e76b42c7.md) - `beta.memory_stores.memories.delete(strmemory_id, MemoryDeleteParams**kwargs)  -> BetaManagedAgentsDeletedMemory`
+- [Api Python Beta Memory Stores Memories List 88B317Cefa](Other/api-python-beta-memory-stores-memories-list-88b317cefa.md) - `beta.memory_stores.memories.list(strmemory_store_id, MemoryListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryListItem]`
+- [Api Python Beta Memory Stores Memories Retrieve 40F291Fbb5](Other/api-python-beta-memory-stores-memories-retrieve-40f291fbb5.md) - `beta.memory_stores.memories.retrieve(strmemory_id, MemoryRetrieveParams**kwargs)  -> BetaManagedAgentsMemory`
+- [Api Python Beta Memory Stores Memories Update Cd622C9334](Other/api-python-beta-memory-stores-memories-update-cd622c9334.md) - `beta.memory_stores.memories.update(strmemory_id, MemoryUpdateParams**kwargs)  -> BetaManagedAgentsMemory`
+- [Memory Versions](Other/api-python-beta-memory-stores-memory-versions-5a25fc22f1.md) - `beta.memory_stores.memory_versions.list(strmemory_store_id, MemoryVersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryVersion]`
+- [Api Python Beta Memory Stores Memory Versions List Cda9D3Dc9C](Other/api-python-beta-memory-stores-memory-versions-list-cda9d3dc9c.md) - `beta.memory_stores.memory_versions.list(strmemory_store_id, MemoryVersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryVersion]`
+- [Api Python Beta Memory Stores Memory Versions Redact 443A66A652](Other/api-python-beta-memory-stores-memory-versions-redact-443a66a652.md) - `beta.memory_stores.memory_versions.redact(strmemory_version_id, MemoryVersionRedactParams**kwargs)  -> BetaManagedAgentsMemoryVersion`
+- [Api Python Beta Memory Stores Memory Versions Retrieve Bd7B861B9F](Other/api-python-beta-memory-stores-memory-versions-retrieve-bd7b861b9f.md) - `beta.memory_stores.memory_versions.retrieve(strmemory_version_id, MemoryVersionRetrieveParams**kwargs)  -> BetaManagedAgentsMemoryVersion`
+- [Api Python Beta Memory Stores Retrieve 5295270Ff4](Other/api-python-beta-memory-stores-retrieve-5295270ff4.md) - `beta.memory_stores.retrieve(strmemory_store_id, MemoryStoreRetrieveParams**kwargs)  -> BetaManagedAgentsMemoryStore`
+- [Api Python Beta Memory Stores Update D2430F3729](Other/api-python-beta-memory-stores-update-d2430f3729.md) - `beta.memory_stores.update(strmemory_store_id, MemoryStoreUpdateParams**kwargs)  -> BetaManagedAgentsMemoryStore`
+- [Messages](Other/api-python-beta-messages-7a8b7acd68.md) - `beta.messages.create(MessageCreateParams**kwargs)  -> BetaMessage`
+- [Batches](Other/api-python-beta-messages-batches-1096256e16.md) - `beta.messages.batches.create(BatchCreateParams**kwargs)  -> BetaMessageBatch`
+- [Api Python Beta Messages Batches Cancel 8Ff1C2B0Da](Other/api-python-beta-messages-batches-cancel-8ff1c2b0da.md) - `beta.messages.batches.cancel(strmessage_batch_id, BatchCancelParams**kwargs)  -> BetaMessageBatch`
+- [Api Python Beta Messages Batches Create 39D6396Be9](Other/api-python-beta-messages-batches-create-39d6396be9.md) - `beta.messages.batches.create(BatchCreateParams**kwargs)  -> BetaMessageBatch`
+- [Api Python Beta Messages Batches Delete 07A0Cc4C3B](Other/api-python-beta-messages-batches-delete-07a0cc4c3b.md) - `beta.messages.batches.delete(strmessage_batch_id, BatchDeleteParams**kwargs)  -> BetaDeletedMessageBatch`
+- [Api Python Beta Messages Batches List 2Eba71B2Ba](Other/api-python-beta-messages-batches-list-2eba71b2ba.md) - `beta.messages.batches.list(BatchListParams**kwargs)  -> SyncPage[BetaMessageBatch]`
+- [Api Python Beta Messages Batches Results Dc532Ae216](Other/api-python-beta-messages-batches-results-dc532ae216.md) - `beta.messages.batches.results(strmessage_batch_id, BatchResultsParams**kwargs)  -> BetaMessageBatchIndividualResponse`
+- [Api Python Beta Messages Batches Retrieve 0387D8Aae2](Other/api-python-beta-messages-batches-retrieve-0387d8aae2.md) - `beta.messages.batches.retrieve(strmessage_batch_id, BatchRetrieveParams**kwargs)  -> BetaMessageBatch`
+- [Api Python Beta Messages Count Tokens 6409Ac3E87](Other/api-python-beta-messages-count-tokens-6409ac3e87.md) - `beta.messages.count_tokens(MessageCountTokensParams**kwargs)  -> BetaMessageTokensCount`
+- [Api Python Beta Messages Create 6588660858](Other/api-python-beta-messages-create-6588660858.md) - `beta.messages.create(MessageCreateParams**kwargs)  -> BetaMessage`
+- [Api Python Beta Sessions Archive 3A513Cb123](Other/api-python-beta-sessions-archive-3a513cb123.md) - `beta.sessions.archive(strsession_id, SessionArchiveParams**kwargs)  -> BetaManagedAgentsSession`
+- [Sessions](Other/api-python-beta-sessions-b1e2d20ba9.md) - `beta.sessions.create(SessionCreateParams**kwargs)  -> BetaManagedAgentsSession`
+- [Api Python Beta Sessions Create 1E37091D15](Other/api-python-beta-sessions-create-1e37091d15.md) - `beta.sessions.create(SessionCreateParams**kwargs)  -> BetaManagedAgentsSession`
+- [Api Python Beta Sessions Delete 137178619F](Other/api-python-beta-sessions-delete-137178619f.md) - `beta.sessions.delete(strsession_id, SessionDeleteParams**kwargs)  -> BetaManagedAgentsDeletedSession`
+- [Events](Other/api-python-beta-sessions-events-5f1c4c4d73.md) - `beta.sessions.events.list(strsession_id, EventListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSessionEvent]`
+- [Api Python Beta Sessions Events List 1Bda75Cfcf](Other/api-python-beta-sessions-events-list-1bda75cfcf.md) - `beta.sessions.events.list(strsession_id, EventListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSessionEvent]`
+- [Api Python Beta Sessions Events Send 02583B87B4](Other/api-python-beta-sessions-events-send-02583b87b4.md) - `beta.sessions.events.send(strsession_id, EventSendParams**kwargs)  -> BetaManagedAgentsSendSessionEvents`
+- [Api Python Beta Sessions Events Stream B24Be06Ebe](Other/api-python-beta-sessions-events-stream-b24be06ebe.md) - `beta.sessions.events.stream(strsession_id, EventStreamParams**kwargs)  -> BetaManagedAgentsStreamSessionEvents`
+- [Api Python Beta Sessions List B400C138Ed](Other/api-python-beta-sessions-list-b400c138ed.md) - `beta.sessions.list(SessionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSession]`
+- [Api Python Beta Sessions Resources Add 0486F536A1](Other/api-python-beta-sessions-resources-add-0486f536a1.md) - `beta.sessions.resources.add(strsession_id, ResourceAddParams**kwargs)  -> BetaManagedAgentsFileResource`
+- [Resources](Other/api-python-beta-sessions-resources-c7d49d7788.md) - `beta.sessions.resources.add(strsession_id, ResourceAddParams**kwargs)  -> BetaManagedAgentsFileResource`
+- [Api Python Beta Sessions Resources Delete 117Ebf995A](Other/api-python-beta-sessions-resources-delete-117ebf995a.md) - `beta.sessions.resources.delete(strresource_id, ResourceDeleteParams**kwargs)  -> BetaManagedAgentsDeleteSessionResource`
+- [Api Python Beta Sessions Resources List 69Bae30De3](Other/api-python-beta-sessions-resources-list-69bae30de3.md) - `beta.sessions.resources.list(strsession_id, ResourceListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsSessionResource]`
+- [Api Python Beta Sessions Resources Retrieve A38A6Df205](Other/api-python-beta-sessions-resources-retrieve-a38a6df205.md) - `beta.sessions.resources.retrieve(strresource_id, ResourceRetrieveParams**kwargs)  -> ResourceRetrieveResponse`
+- [Api Python Beta Sessions Resources Update 7F47D01F35](Other/api-python-beta-sessions-resources-update-7f47d01f35.md) - `beta.sessions.resources.update(strresource_id, ResourceUpdateParams**kwargs)  -> ResourceUpdateResponse`
+- [Api Python Beta Sessions Retrieve C6E7F48Ac5](Other/api-python-beta-sessions-retrieve-c6e7f48ac5.md) - `beta.sessions.retrieve(strsession_id, SessionRetrieveParams**kwargs)  -> BetaManagedAgentsSession`
+- [Api Python Beta Sessions Update Ab371947B6](Other/api-python-beta-sessions-update-ab371947b6.md) - `beta.sessions.update(strsession_id, SessionUpdateParams**kwargs)  -> BetaManagedAgentsSession`
+- [Skills](Other/api-python-beta-skills-8350aa4305.md) - `beta.skills.create(SkillCreateParams**kwargs)  -> SkillCreateResponse`
+- [Api Python Beta Skills Create F822Ca117D](Other/api-python-beta-skills-create-f822ca117d.md) - `beta.skills.create(SkillCreateParams**kwargs)  -> SkillCreateResponse`
+- [Api Python Beta Skills Delete 45C3501E0A](Other/api-python-beta-skills-delete-45c3501e0a.md) - `beta.skills.delete(strskill_id, SkillDeleteParams**kwargs)  -> SkillDeleteResponse`
+- [Api Python Beta Skills List F8Ac4D01E7](Other/api-python-beta-skills-list-f8ac4d01e7.md) - `beta.skills.list(SkillListParams**kwargs)  -> SyncPageCursor[SkillListResponse]`
+- [Api Python Beta Skills Retrieve 5493Ff3Ed1](Other/api-python-beta-skills-retrieve-5493ff3ed1.md) - `beta.skills.retrieve(strskill_id, SkillRetrieveParams**kwargs)  -> SkillRetrieveResponse`
+- [Api Python Beta Skills Versions Create 584B853Fa2](Other/api-python-beta-skills-versions-create-584b853fa2.md) - `beta.skills.versions.create(strskill_id, VersionCreateParams**kwargs)  -> VersionCreateResponse`
+- [Api Python Beta Skills Versions Delete Bcebb8Fc3D](Other/api-python-beta-skills-versions-delete-bcebb8fc3d.md) - `beta.skills.versions.delete(strversion, VersionDeleteParams**kwargs)  -> VersionDeleteResponse`
+- [Versions](Other/api-python-beta-skills-versions-feee2f388e.md) - `beta.skills.versions.create(strskill_id, VersionCreateParams**kwargs)  -> VersionCreateResponse`
+- [Api Python Beta Skills Versions List Cfc842Bc47](Other/api-python-beta-skills-versions-list-cfc842bc47.md) - `beta.skills.versions.list(strskill_id, VersionListParams**kwargs)  -> SyncPageCursor[VersionListResponse]`
+- [Api Python Beta Skills Versions Retrieve C81F46F194](Other/api-python-beta-skills-versions-retrieve-c81f46f194.md) - `beta.skills.versions.retrieve(strversion, VersionRetrieveParams**kwargs)  -> VersionRetrieveResponse`
+- [Vaults](Other/api-python-beta-vaults-019a584675.md) - `beta.vaults.create(VaultCreateParams**kwargs)  -> BetaManagedAgentsVault`
+- [Api Python Beta Vaults Archive 92F9A01D85](Other/api-python-beta-vaults-archive-92f9a01d85.md) - `beta.vaults.archive(strvault_id, VaultArchiveParams**kwargs)  -> BetaManagedAgentsVault`
+- [Api Python Beta Vaults Create Cf458D3127](Other/api-python-beta-vaults-create-cf458d3127.md) - `beta.vaults.create(VaultCreateParams**kwargs)  -> BetaManagedAgentsVault`
+- [Api Python Beta Vaults Credentials Archive Ac5B3882C3](Other/api-python-beta-vaults-credentials-archive-ac5b3882c3.md) - `beta.vaults.credentials.archive(strcredential_id, CredentialArchiveParams**kwargs)  -> BetaManagedAgentsCredential`
+- [Credentials](Other/api-python-beta-vaults-credentials-b95f70ef40.md) - `beta.vaults.credentials.create(strvault_id, CredentialCreateParams**kwargs)  -> BetaManagedAgentsCredential`
+- [Api Python Beta Vaults Credentials Create 71Ab102Eeb](Other/api-python-beta-vaults-credentials-create-71ab102eeb.md) - `beta.vaults.credentials.create(strvault_id, CredentialCreateParams**kwargs)  -> BetaManagedAgentsCredential`
+- [Api Python Beta Vaults Credentials Delete 68605Fc046](Other/api-python-beta-vaults-credentials-delete-68605fc046.md) - `beta.vaults.credentials.delete(strcredential_id, CredentialDeleteParams**kwargs)  -> BetaManagedAgentsDeletedCredential`
+- [Api Python Beta Vaults Credentials List 8455721D8A](Other/api-python-beta-vaults-credentials-list-8455721d8a.md) - `beta.vaults.credentials.list(strvault_id, CredentialListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsCredential]`
+- [Api Python Beta Vaults Credentials Retrieve 5348Da7D4B](Other/api-python-beta-vaults-credentials-retrieve-5348da7d4b.md) - `beta.vaults.credentials.retrieve(strcredential_id, CredentialRetrieveParams**kwargs)  -> BetaManagedAgentsCredential`
+- [Api Python Beta Vaults Credentials Update Eda34C6975](Other/api-python-beta-vaults-credentials-update-eda34c6975.md) - `beta.vaults.credentials.update(strcredential_id, CredentialUpdateParams**kwargs)  -> BetaManagedAgentsCredential`
+- [Api Python Beta Vaults Delete A051C48F38](Other/api-python-beta-vaults-delete-a051c48f38.md) - `beta.vaults.delete(strvault_id, VaultDeleteParams**kwargs)  -> BetaManagedAgentsDeletedVault`
+- [Api Python Beta Vaults List E27Eaa9097](Other/api-python-beta-vaults-list-e27eaa9097.md) - `beta.vaults.list(VaultListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsVault]`
+- [Api Python Beta Vaults Retrieve 0A7065335E](Other/api-python-beta-vaults-retrieve-0a7065335e.md) - `beta.vaults.retrieve(strvault_id, VaultRetrieveParams**kwargs)  -> BetaManagedAgentsVault`
+- [Api Python Beta Vaults Update 1F59818Cf4](Other/api-python-beta-vaults-update-1f59818cf4.md) - `beta.vaults.update(strvault_id, VaultUpdateParams**kwargs)  -> BetaManagedAgentsVault`
+- [Completions](Other/api-python-completions-ce913cd326.md) - `completions.create(CompletionCreateParams**kwargs)  -> Completion`
+- [Api Python Completions Create 7C288Eef0A](Other/api-python-completions-create-7c288eef0a.md) - `completions.create(CompletionCreateParams**kwargs)  -> Completion`
+- [Batches](Other/api-python-messages-batches-8b8b2fa927.md) - `messages.batches.create(BatchCreateParams**kwargs)  -> MessageBatch`
+- [Api Python Messages Batches Cancel 17492C9094](Other/api-python-messages-batches-cancel-17492c9094.md) - `messages.batches.cancel(strmessage_batch_id)  -> MessageBatch`
+- [Api Python Messages Batches Create 363Ca1Bd8B](Other/api-python-messages-batches-create-363ca1bd8b.md) - `messages.batches.create(BatchCreateParams**kwargs)  -> MessageBatch`
+- [Api Python Messages Batches Delete 74Cd4Bbe00](Other/api-python-messages-batches-delete-74cd4bbe00.md) - `messages.batches.delete(strmessage_batch_id)  -> DeletedMessageBatch`
+- [Api Python Messages Batches List 6De85Ce7F5](Other/api-python-messages-batches-list-6de85ce7f5.md) - `messages.batches.list(BatchListParams**kwargs)  -> SyncPage[MessageBatch]`
+- [Api Python Messages Batches Results A00Ddd1A31](Other/api-python-messages-batches-results-a00ddd1a31.md) - `messages.batches.results(strmessage_batch_id)  -> MessageBatchIndividualResponse`
+- [Api Python Messages Batches Retrieve 0D277D4807](Other/api-python-messages-batches-retrieve-0d277d4807.md) - `messages.batches.retrieve(strmessage_batch_id)  -> MessageBatch`
+- [Api Python Messages Count Tokens E8636113F1](Other/api-python-messages-count-tokens-e8636113f1.md) - `messages.count_tokens(MessageCountTokensParams**kwargs)  -> MessageTokensCount`
+- [Api Python Messages Create 235F2C8804](Other/api-python-messages-create-235f2c8804.md) - `messages.create(MessageCreateParams**kwargs)  -> Message`
+- [Messages](Other/api-python-messages-fd35ed7675.md) - `messages.create(MessageCreateParams**kwargs)  -> Message`
+- [Rate limits](Other/api-rate-limits-28d3302987.md) - To mitigate misuse and manage capacity on the API, limits are in place on how much an organization can use the Claude API.
+- [Beta](Other/api-ruby-beta-2b0c869591.md) - - `AnthropicBeta = String | :"message-batches-2024-09-24" | :"prompt-caching-2024-07-31" | :"computer-use-2024-10-22" | 19 more`
+- [Api Ruby Beta Agents Archive C8Be28333D](Other/api-ruby-beta-agents-archive-c8be28333d.md) - `beta.agents.archive(agent_id, **kwargs) -> BetaManagedAgentsAgent`
+- [Api Ruby Beta Agents Create 7783Bd2477](Other/api-ruby-beta-agents-create-7783bd2477.md) - `beta.agents.create(**kwargs) -> BetaManagedAgentsAgent`
+- [Agents](Other/api-ruby-beta-agents-d24d50cd53.md) - `beta.agents.create(**kwargs) -> BetaManagedAgentsAgent`
+- [Api Ruby Beta Agents Delete Bd193B6842](Other/api-ruby-beta-agents-delete-bd193b6842.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Ruby Beta Agents List 61718A40F8](Other/api-ruby-beta-agents-list-61718a40f8.md) - `beta.agents.list(**kwargs) -> PageCursor<BetaManagedAgentsAgent>`
+- [Api Ruby Beta Agents Retrieve 11D576A2F0](Other/api-ruby-beta-agents-retrieve-11d576a2f0.md) - `beta.agents.retrieve(agent_id, **kwargs) -> BetaManagedAgentsAgent`
+- [Api Ruby Beta Agents Update A9Cda5936F](Other/api-ruby-beta-agents-update-a9cda5936f.md) - `beta.agents.update(agent_id, **kwargs) -> BetaManagedAgentsAgent`
+- [Versions](Other/api-ruby-beta-agents-versions-e13ffdc0d6.md) - `beta.agents.versions.list(agent_id, **kwargs) -> PageCursor<BetaManagedAgentsAgent>`
+- [Api Ruby Beta Agents Versions List 65Ba6934Ad](Other/api-ruby-beta-agents-versions-list-65ba6934ad.md) - `beta.agents.versions.list(agent_id, **kwargs) -> PageCursor<BetaManagedAgentsAgent>`
+- [Environments](Other/api-ruby-beta-environments-9094393654.md) - `beta.environments.create(**kwargs) -> BetaEnvironment`
+- [Api Ruby Beta Environments Archive Cb74Dcd96F](Other/api-ruby-beta-environments-archive-cb74dcd96f.md) - `beta.environments.archive(environment_id, **kwargs) -> BetaEnvironment`
+- [Api Ruby Beta Environments Create Fbccac24Cc](Other/api-ruby-beta-environments-create-fbccac24cc.md) - `beta.environments.create(**kwargs) -> BetaEnvironment`
+- [Api Ruby Beta Environments Delete E2995D436B](Other/api-ruby-beta-environments-delete-e2995d436b.md) - `beta.environments.delete(environment_id, **kwargs) -> BetaEnvironmentDeleteResponse`
+- [Api Ruby Beta Environments List A0Af46F461](Other/api-ruby-beta-environments-list-a0af46f461.md) - `beta.environments.list(**kwargs) -> PageCursor<BetaEnvironment>`
+- [Api Ruby Beta Environments Retrieve D7C0235E73](Other/api-ruby-beta-environments-retrieve-d7c0235e73.md) - `beta.environments.retrieve(environment_id, **kwargs) -> BetaEnvironment`
+- [Api Ruby Beta Environments Update 50269Ce894](Other/api-ruby-beta-environments-update-50269ce894.md) - `beta.environments.update(environment_id, **kwargs) -> BetaEnvironment`
+- [Files](Other/api-ruby-beta-files-d58b783d5b.md) - `beta.files.upload(**kwargs) -> FileMetadata`
+- [Api Ruby Beta Files Delete F27E89Abc3](Other/api-ruby-beta-files-delete-f27e89abc3.md) - `beta.files.delete(file_id, **kwargs) -> DeletedFile`
+- [Api Ruby Beta Files Download Fa9828C234](Other/api-ruby-beta-files-download-fa9828c234.md) - `beta.files.download(file_id, **kwargs) -> StringIO`
+- [Api Ruby Beta Files List 5B55A3A3Fc](Other/api-ruby-beta-files-list-5b55a3a3fc.md) - `beta.files.list(**kwargs) -> Page<FileMetadata>`
+- [Api Ruby Beta Files Retrieve Metadata F4763A29C9](Other/api-ruby-beta-files-retrieve-metadata-f4763a29c9.md) - `beta.files.retrieve_metadata(file_id, **kwargs) -> FileMetadata`
+- [Api Ruby Beta Files Upload Fb5414B563](Other/api-ruby-beta-files-upload-fb5414b563.md) - `beta.files.upload(**kwargs) -> FileMetadata`
+- [Memory Stores](Other/api-ruby-beta-memory-stores-3693d8973c.md) - `beta.memory_stores.create(**kwargs) -> BetaManagedAgentsMemoryStore`
+- [Api Ruby Beta Memory Stores Archive 7C047Ae111](Other/api-ruby-beta-memory-stores-archive-7c047ae111.md) - `beta.memory_stores.archive(memory_store_id, **kwargs) -> BetaManagedAgentsMemoryStore`
+- [Api Ruby Beta Memory Stores Create 201568Ba67](Other/api-ruby-beta-memory-stores-create-201568ba67.md) - `beta.memory_stores.create(**kwargs) -> BetaManagedAgentsMemoryStore`
+- [Api Ruby Beta Memory Stores Delete 7Fab031F27](Other/api-ruby-beta-memory-stores-delete-7fab031f27.md) - `beta.memory_stores.delete(memory_store_id, **kwargs) -> BetaManagedAgentsDeletedMemoryStore`
+- [Api Ruby Beta Memory Stores List 7F3A438351](Other/api-ruby-beta-memory-stores-list-7f3a438351.md) - `beta.memory_stores.list(**kwargs) -> PageCursor<BetaManagedAgentsMemoryStore>`
+- [Memories](Other/api-ruby-beta-memory-stores-memories-54d3cac5e1.md) - `beta.memory_stores.memories.create(memory_store_id, **kwargs) -> BetaManagedAgentsMemory`
+- [Api Ruby Beta Memory Stores Memories Create 57472D3286](Other/api-ruby-beta-memory-stores-memories-create-57472d3286.md) - `beta.memory_stores.memories.create(memory_store_id, **kwargs) -> BetaManagedAgentsMemory`
+- [Api Ruby Beta Memory Stores Memories Delete Eff328F033](Other/api-ruby-beta-memory-stores-memories-delete-eff328f033.md) - `beta.memory_stores.memories.delete(memory_id, **kwargs) -> BetaManagedAgentsDeletedMemory`
+- [Api Ruby Beta Memory Stores Memories List C16Ea1427B](Other/api-ruby-beta-memory-stores-memories-list-c16ea1427b.md) - `beta.memory_stores.memories.list(memory_store_id, **kwargs) -> PageCursor<BetaManagedAgentsMemoryListItem>`
+- [Api Ruby Beta Memory Stores Memories Retrieve B1Dde65C41](Other/api-ruby-beta-memory-stores-memories-retrieve-b1dde65c41.md) - `beta.memory_stores.memories.retrieve(memory_id, **kwargs) -> BetaManagedAgentsMemory`
+- [Api Ruby Beta Memory Stores Memories Update E0F9Bc62Ae](Other/api-ruby-beta-memory-stores-memories-update-e0f9bc62ae.md) - `beta.memory_stores.memories.update(memory_id, **kwargs) -> BetaManagedAgentsMemory`
+- [Memory Versions](Other/api-ruby-beta-memory-stores-memory-versions-946bc51246.md) - `beta.memory_stores.memory_versions.list(memory_store_id, **kwargs) -> PageCursor<BetaManagedAgentsMemoryVersion>`
+- [Api Ruby Beta Memory Stores Memory Versions List 1648E59780](Other/api-ruby-beta-memory-stores-memory-versions-list-1648e59780.md) - `beta.memory_stores.memory_versions.list(memory_store_id, **kwargs) -> PageCursor<BetaManagedAgentsMemoryVersion>`
+- [Api Ruby Beta Memory Stores Memory Versions Redact Ad5A102530](Other/api-ruby-beta-memory-stores-memory-versions-redact-ad5a102530.md) - `beta.memory_stores.memory_versions.redact(memory_version_id, **kwargs) -> BetaManagedAgentsMemoryVersion`
+- [Api Ruby Beta Memory Stores Memory Versions Retrieve Ee84Cccd82](Other/api-ruby-beta-memory-stores-memory-versions-retrieve-ee84cccd82.md) - `beta.memory_stores.memory_versions.retrieve(memory_version_id, **kwargs) -> BetaManagedAgentsMemoryVersion`
+- [Api Ruby Beta Memory Stores Retrieve A04F1036C2](Other/api-ruby-beta-memory-stores-retrieve-a04f1036c2.md) - `beta.memory_stores.retrieve(memory_store_id, **kwargs) -> BetaManagedAgentsMemoryStore`
+- [Api Ruby Beta Memory Stores Update 61F1D5C22A](Other/api-ruby-beta-memory-stores-update-61f1d5c22a.md) - `beta.memory_stores.update(memory_store_id, **kwargs) -> BetaManagedAgentsMemoryStore`
+- [Messages](Other/api-ruby-beta-messages-3c3c72e30d.md) - `beta.messages.create(**kwargs) -> BetaMessage`
+- [Api Ruby Beta Messages Batches Cancel 126C1D6665](Other/api-ruby-beta-messages-batches-cancel-126c1d6665.md) - `beta.messages.batches.cancel(message_batch_id, **kwargs) -> BetaMessageBatch`
+- [Api Ruby Beta Messages Batches Create D45D51E8Ca](Other/api-ruby-beta-messages-batches-create-d45d51e8ca.md) - `beta.messages.batches.create(**kwargs) -> BetaMessageBatch`
+- [Api Ruby Beta Messages Batches Delete 627D133246](Other/api-ruby-beta-messages-batches-delete-627d133246.md) - `beta.messages.batches.delete(message_batch_id, **kwargs) -> BetaDeletedMessageBatch`
+- [Batches](Other/api-ruby-beta-messages-batches-ed90201ba7.md) - `beta.messages.batches.create(**kwargs) -> BetaMessageBatch`
+- [Api Ruby Beta Messages Batches List E7E46E4D66](Other/api-ruby-beta-messages-batches-list-e7e46e4d66.md) - `beta.messages.batches.list(**kwargs) -> Page<BetaMessageBatch>`
+- [Api Ruby Beta Messages Batches Results 187Ada7Ebd](Other/api-ruby-beta-messages-batches-results-187ada7ebd.md) - `beta.messages.batches.results(message_batch_id, **kwargs) -> BetaMessageBatchIndividualResponse`
+- [Api Ruby Beta Messages Batches Retrieve B05140Bd22](Other/api-ruby-beta-messages-batches-retrieve-b05140bd22.md) - `beta.messages.batches.retrieve(message_batch_id, **kwargs) -> BetaMessageBatch`
+- [Api Ruby Beta Messages Count Tokens Fce7B2275A](Other/api-ruby-beta-messages-count-tokens-fce7b2275a.md) - `beta.messages.count_tokens(**kwargs) -> BetaMessageTokensCount`
+- [Api Ruby Beta Messages Create F5911F2F49](Other/api-ruby-beta-messages-create-f5911f2f49.md) - `beta.messages.create(**kwargs) -> BetaMessage`
+- [Sessions](Other/api-ruby-beta-sessions-a517d980af.md) - `beta.sessions.create(**kwargs) -> BetaManagedAgentsSession`
+- [Api Ruby Beta Sessions Archive B5A3Fb4C0E](Other/api-ruby-beta-sessions-archive-b5a3fb4c0e.md) - `beta.sessions.archive(session_id, **kwargs) -> BetaManagedAgentsSession`
+- [Api Ruby Beta Sessions Create 38856Bed39](Other/api-ruby-beta-sessions-create-38856bed39.md) - `beta.sessions.create(**kwargs) -> BetaManagedAgentsSession`
+- [Api Ruby Beta Sessions Delete 272Be64C17](Other/api-ruby-beta-sessions-delete-272be64c17.md) - `beta.sessions.delete(session_id, **kwargs) -> BetaManagedAgentsDeletedSession`
+- [Events](Other/api-ruby-beta-sessions-events-7cc5d50142.md) - `beta.sessions.events.list(session_id, **kwargs) -> PageCursor<BetaManagedAgentsSessionEvent>`
+- [Api Ruby Beta Sessions Events List 439Eb8Fb9E](Other/api-ruby-beta-sessions-events-list-439eb8fb9e.md) - `beta.sessions.events.list(session_id, **kwargs) -> PageCursor<BetaManagedAgentsSessionEvent>`
+- [Api Ruby Beta Sessions Events Send 238Ecd8290](Other/api-ruby-beta-sessions-events-send-238ecd8290.md) - `beta.sessions.events.send_(session_id, **kwargs) -> BetaManagedAgentsSendSessionEvents`
+- [Api Ruby Beta Sessions Events Stream A1B898E289](Other/api-ruby-beta-sessions-events-stream-a1b898e289.md) - `beta.sessions.events.stream(session_id, **kwargs) -> BetaManagedAgentsStreamSessionEvents`
+- [Api Ruby Beta Sessions List C29693E648](Other/api-ruby-beta-sessions-list-c29693e648.md) - `beta.sessions.list(**kwargs) -> PageCursor<BetaManagedAgentsSession>`
+- [Resources](Other/api-ruby-beta-sessions-resources-7e9cbc9352.md) - `beta.sessions.resources.add(session_id, **kwargs) -> BetaManagedAgentsFileResource`
+- [Api Ruby Beta Sessions Resources Add 54Ce83424E](Other/api-ruby-beta-sessions-resources-add-54ce83424e.md) - `beta.sessions.resources.add(session_id, **kwargs) -> BetaManagedAgentsFileResource`
+- [Api Ruby Beta Sessions Resources Delete 5E3Be4C0Cb](Other/api-ruby-beta-sessions-resources-delete-5e3be4c0cb.md) - `beta.sessions.resources.delete(resource_id, **kwargs) -> BetaManagedAgentsDeleteSessionResource`
+- [Api Ruby Beta Sessions Resources List 5D35B7Ba7B](Other/api-ruby-beta-sessions-resources-list-5d35b7ba7b.md) - `beta.sessions.resources.list(session_id, **kwargs) -> PageCursor<BetaManagedAgentsSessionResource>`
+- [Api Ruby Beta Sessions Resources Retrieve 0Baf029E6E](Other/api-ruby-beta-sessions-resources-retrieve-0baf029e6e.md) - `beta.sessions.resources.retrieve(resource_id, **kwargs) -> ResourceRetrieveResponse`
+- [Api Ruby Beta Sessions Resources Update E9Ba5E3B5B](Other/api-ruby-beta-sessions-resources-update-e9ba5e3b5b.md) - `beta.sessions.resources.update(resource_id, **kwargs) -> ResourceUpdateResponse`
+- [Api Ruby Beta Sessions Retrieve 578822B310](Other/api-ruby-beta-sessions-retrieve-578822b310.md) - `beta.sessions.retrieve(session_id, **kwargs) -> BetaManagedAgentsSession`
+- [Api Ruby Beta Sessions Update B2Fc6D295F](Other/api-ruby-beta-sessions-update-b2fc6d295f.md) - `beta.sessions.update(session_id, **kwargs) -> BetaManagedAgentsSession`
+- [Skills](Other/api-ruby-beta-skills-2f698cae97.md) - `beta.skills.create(**kwargs) -> SkillCreateResponse`
+- [Api Ruby Beta Skills Create E6D6726162](Other/api-ruby-beta-skills-create-e6d6726162.md) - `beta.skills.create(**kwargs) -> SkillCreateResponse`
+- [Api Ruby Beta Skills Delete Dafc2D2C18](Other/api-ruby-beta-skills-delete-dafc2d2c18.md) - `beta.skills.delete(skill_id, **kwargs) -> SkillDeleteResponse`
+- [Api Ruby Beta Skills List 3D44Bc469C](Other/api-ruby-beta-skills-list-3d44bc469c.md) - `beta.skills.list(**kwargs) -> PageCursor<SkillListResponse>`
+- [Api Ruby Beta Skills Retrieve 693E2F5Cbb](Other/api-ruby-beta-skills-retrieve-693e2f5cbb.md) - `beta.skills.retrieve(skill_id, **kwargs) -> SkillRetrieveResponse`
+- [Versions](Other/api-ruby-beta-skills-versions-b2ac07dba5.md) - `beta.skills.versions.create(skill_id, **kwargs) -> VersionCreateResponse`
+- [Api Ruby Beta Skills Versions Create D41413D530](Other/api-ruby-beta-skills-versions-create-d41413d530.md) - `beta.skills.versions.create(skill_id, **kwargs) -> VersionCreateResponse`
+- [Api Ruby Beta Skills Versions Delete C7D572D84F](Other/api-ruby-beta-skills-versions-delete-c7d572d84f.md) - `beta.skills.versions.delete(version, **kwargs) -> VersionDeleteResponse`
+- [Api Ruby Beta Skills Versions List 0F78755Be3](Other/api-ruby-beta-skills-versions-list-0f78755be3.md) - `beta.skills.versions.list(skill_id, **kwargs) -> PageCursor<VersionListResponse>`
+- [Api Ruby Beta Skills Versions Retrieve 0777105C86](Other/api-ruby-beta-skills-versions-retrieve-0777105c86.md) - `beta.skills.versions.retrieve(version, **kwargs) -> VersionRetrieveResponse`
+- [Api Ruby Beta Vaults Archive 14649D25D7](Other/api-ruby-beta-vaults-archive-14649d25d7.md) - `beta.vaults.archive(vault_id, **kwargs) -> BetaManagedAgentsVault`
+- [Vaults](Other/api-ruby-beta-vaults-bfb73f47d7.md) - `beta.vaults.create(**kwargs) -> BetaManagedAgentsVault`
+- [Api Ruby Beta Vaults Create 65B1D8De37](Other/api-ruby-beta-vaults-create-65b1d8de37.md) - `beta.vaults.create(**kwargs) -> BetaManagedAgentsVault`
+- [Api Ruby Beta Vaults Credentials Archive Dcf1D7Cd87](Other/api-ruby-beta-vaults-credentials-archive-dcf1d7cd87.md) - `beta.vaults.credentials.archive(credential_id, **kwargs) -> BetaManagedAgentsCredential`
+- [Credentials](Other/api-ruby-beta-vaults-credentials-ba7f35ec19.md) - `beta.vaults.credentials.create(vault_id, **kwargs) -> BetaManagedAgentsCredential`
+- [Api Ruby Beta Vaults Credentials Create 0586D6Ea1E](Other/api-ruby-beta-vaults-credentials-create-0586d6ea1e.md) - `beta.vaults.credentials.create(vault_id, **kwargs) -> BetaManagedAgentsCredential`
+- [Api Ruby Beta Vaults Credentials Delete 44F1Add60E](Other/api-ruby-beta-vaults-credentials-delete-44f1add60e.md) - `beta.vaults.credentials.delete(credential_id, **kwargs) -> BetaManagedAgentsDeletedCredential`
+- [Api Ruby Beta Vaults Credentials List A8997E6C8B](Other/api-ruby-beta-vaults-credentials-list-a8997e6c8b.md) - `beta.vaults.credentials.list(vault_id, **kwargs) -> PageCursor<BetaManagedAgentsCredential>`
+- [Api Ruby Beta Vaults Credentials Retrieve 0Ba20D6793](Other/api-ruby-beta-vaults-credentials-retrieve-0ba20d6793.md) - `beta.vaults.credentials.retrieve(credential_id, **kwargs) -> BetaManagedAgentsCredential`
+- [Api Ruby Beta Vaults Credentials Update Ed14D6C261](Other/api-ruby-beta-vaults-credentials-update-ed14d6c261.md) - `beta.vaults.credentials.update(credential_id, **kwargs) -> BetaManagedAgentsCredential`
+- [Api Ruby Beta Vaults Delete 1B74A379D8](Other/api-ruby-beta-vaults-delete-1b74a379d8.md) - `beta.vaults.delete(vault_id, **kwargs) -> BetaManagedAgentsDeletedVault`
+- [Api Ruby Beta Vaults List 30D07376E7](Other/api-ruby-beta-vaults-list-30d07376e7.md) - `beta.vaults.list(**kwargs) -> PageCursor<BetaManagedAgentsVault>`
+- [Api Ruby Beta Vaults Retrieve 28D6919Ce8](Other/api-ruby-beta-vaults-retrieve-28d6919ce8.md) - `beta.vaults.retrieve(vault_id, **kwargs) -> BetaManagedAgentsVault`
+- [Api Ruby Beta Vaults Update F27F367Dc2](Other/api-ruby-beta-vaults-update-f27f367dc2.md) - `beta.vaults.update(vault_id, **kwargs) -> BetaManagedAgentsVault`
+- [Completions](Other/api-ruby-completions-a05392297c.md) - `completions.create(**kwargs) -> Completion`
+- [Api Ruby Completions Create Bd7183Fbf2](Other/api-ruby-completions-create-bd7183fbf2.md) - `completions.create(**kwargs) -> Completion`
+- [Batches](Other/api-ruby-messages-batches-63b94248d7.md) - `messages.batches.create(**kwargs) -> MessageBatch`
+- [Api Ruby Messages Batches Cancel C95B6E6Aab](Other/api-ruby-messages-batches-cancel-c95b6e6aab.md) - `messages.batches.cancel(message_batch_id) -> MessageBatch`
+- [Api Ruby Messages Batches Create 49D5D59724](Other/api-ruby-messages-batches-create-49d5d59724.md) - `messages.batches.create(**kwargs) -> MessageBatch`
+- [Api Ruby Messages Batches Delete 58810Ae269](Other/api-ruby-messages-batches-delete-58810ae269.md) - `messages.batches.delete(message_batch_id) -> DeletedMessageBatch`
+- [Api Ruby Messages Batches List A51Fbb8269](Other/api-ruby-messages-batches-list-a51fbb8269.md) - `messages.batches.list(**kwargs) -> Page<MessageBatch>`
+- [Api Ruby Messages Batches Results C1399Fc8E1](Other/api-ruby-messages-batches-results-c1399fc8e1.md) - `messages.batches.results(message_batch_id) -> MessageBatchIndividualResponse`
+- [Api Ruby Messages Batches Retrieve 2792A2109A](Other/api-ruby-messages-batches-retrieve-2792a2109a.md) - `messages.batches.retrieve(message_batch_id) -> MessageBatch`
+- [Messages](Other/api-ruby-messages-c8e554c2c6.md) - `messages.create(**kwargs) -> Message`
+- [Api Ruby Messages Count Tokens 75D73E5448](Other/api-ruby-messages-count-tokens-75d73e5448.md) - `messages.count_tokens(**kwargs) -> MessageTokensCount`
+- [Api Ruby Messages Create 2754917F1D](Other/api-ruby-messages-create-2754917f1d.md) - `messages.create(**kwargs) -> Message`
+- [Service tiers](Other/api-service-tiers-165fc24251.md) - Different tiers of service allow you to balance availability, performance, and predictable costs based on your application's needs.
+- [Supported regions](Other/api-supported-regions-efff04f8b8.md) - Here are the countries, regions, and territories we can currently support access from:
+- [Api Terraform Beta 41E833C2F7](Other/api-terraform-beta-41e833c2f7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents 742E6327Aa](Other/api-terraform-beta-agents-742e6327aa.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents Archive 47045A574D](Other/api-terraform-beta-agents-archive-47045a574d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents Create E57034899A](Other/api-terraform-beta-agents-create-e57034899a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents Delete D349B06672](Other/api-terraform-beta-agents-delete-d349b06672.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents List 87A7A74Fc1](Other/api-terraform-beta-agents-list-87a7a74fc1.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents Retrieve D892E88F88](Other/api-terraform-beta-agents-retrieve-d892e88f88.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents Update 93B00Eabe0](Other/api-terraform-beta-agents-update-93b00eabe0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents Versions 80D58Dc101](Other/api-terraform-beta-agents-versions-80d58dc101.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Agents Versions List 4B5Bb525Ee](Other/api-terraform-beta-agents-versions-list-4b5bb525ee.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Environments Archive 407147B340](Other/api-terraform-beta-environments-archive-407147b340.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Environments Ba6E49A5B8](Other/api-terraform-beta-environments-ba6e49a5b8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Environments Create Ac37C5E468](Other/api-terraform-beta-environments-create-ac37c5e468.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Environments Delete 91Ff92E39D](Other/api-terraform-beta-environments-delete-91ff92e39d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Environments List B9Fc4701Bc](Other/api-terraform-beta-environments-list-b9fc4701bc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Environments Retrieve 5916Da0B56](Other/api-terraform-beta-environments-retrieve-5916da0b56.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Environments Update 56B4D72509](Other/api-terraform-beta-environments-update-56b4d72509.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Files 0D61A913Cf](Other/api-terraform-beta-files-0d61a913cf.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Files Delete 5660C77B9B](Other/api-terraform-beta-files-delete-5660c77b9b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Files Download 262960Ef41](Other/api-terraform-beta-files-download-262960ef41.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Files List 3A27Ecae36](Other/api-terraform-beta-files-list-3a27ecae36.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Files Retrieve Metadata 020229B4A3](Other/api-terraform-beta-files-retrieve-metadata-020229b4a3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Files Upload 5389Bf2036](Other/api-terraform-beta-files-upload-5389bf2036.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Archive Ade354D76B](Other/api-terraform-beta-memory-stores-archive-ade354d76b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores C650Db3B1D](Other/api-terraform-beta-memory-stores-c650db3b1d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Create 078Aaae1Dc](Other/api-terraform-beta-memory-stores-create-078aaae1dc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Delete 839D753Fda](Other/api-terraform-beta-memory-stores-delete-839d753fda.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores List 2Ad73Bccd5](Other/api-terraform-beta-memory-stores-list-2ad73bccd5.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memories A1F5Ef107C](Other/api-terraform-beta-memory-stores-memories-a1f5ef107c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memories Create Bb7C520E64](Other/api-terraform-beta-memory-stores-memories-create-bb7c520e64.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memories Delete 46A4D1Dd91](Other/api-terraform-beta-memory-stores-memories-delete-46a4d1dd91.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memories List 6A5D31E45C](Other/api-terraform-beta-memory-stores-memories-list-6a5d31e45c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memories Retrieve 46Aea2Dd88](Other/api-terraform-beta-memory-stores-memories-retrieve-46aea2dd88.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memories Update F9A13475F7](Other/api-terraform-beta-memory-stores-memories-update-f9a13475f7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memory Versions C82374Df42](Other/api-terraform-beta-memory-stores-memory-versions-c82374df42.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memory Versions List 842B18E495](Other/api-terraform-beta-memory-stores-memory-versions-list-842b18e495.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memory Versions Redact D8Ab79Cd75](Other/api-terraform-beta-memory-stores-memory-versions-redact-d8ab79cd75.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Memory Versions Retrieve 04Ea5Fe8Ad](Other/api-terraform-beta-memory-stores-memory-versions-retrieve-04ea5fe8ad.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Retrieve 7504C6B746](Other/api-terraform-beta-memory-stores-retrieve-7504c6b746.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Memory Stores Update C8849F2024](Other/api-terraform-beta-memory-stores-update-c8849f2024.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Batches 42049C9F83](Other/api-terraform-beta-messages-batches-42049c9f83.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Batches Cancel Bbf2B84B7B](Other/api-terraform-beta-messages-batches-cancel-bbf2b84b7b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Batches Create B86498Bebc](Other/api-terraform-beta-messages-batches-create-b86498bebc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Batches Delete B35Cd52C85](Other/api-terraform-beta-messages-batches-delete-b35cd52c85.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Batches List 8469467D76](Other/api-terraform-beta-messages-batches-list-8469467d76.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Batches Results 27F17E26C4](Other/api-terraform-beta-messages-batches-results-27f17e26c4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Batches Retrieve 275B8978Fa](Other/api-terraform-beta-messages-batches-retrieve-275b8978fa.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages C750Ea0838](Other/api-terraform-beta-messages-c750ea0838.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Count Tokens 3F1Ea6Fa43](Other/api-terraform-beta-messages-count-tokens-3f1ea6fa43.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Messages Create C06333C8Fd](Other/api-terraform-beta-messages-create-c06333c8fd.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions 6760523Ebe](Other/api-terraform-beta-sessions-6760523ebe.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Archive D7174107A8](Other/api-terraform-beta-sessions-archive-d7174107a8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Create E10313306D](Other/api-terraform-beta-sessions-create-e10313306d.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Delete D0Cb62055B](Other/api-terraform-beta-sessions-delete-d0cb62055b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Events 6B2Fd23B78](Other/api-terraform-beta-sessions-events-6b2fd23b78.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Events List C58A3A2A75](Other/api-terraform-beta-sessions-events-list-c58a3a2a75.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Events Send D938C93E36](Other/api-terraform-beta-sessions-events-send-d938c93e36.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Events Stream 9684291Fde](Other/api-terraform-beta-sessions-events-stream-9684291fde.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions List 899E6Ae70E](Other/api-terraform-beta-sessions-list-899e6ae70e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Resources Add D9Ffee5705](Other/api-terraform-beta-sessions-resources-add-d9ffee5705.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Resources Ba15D579A8](Other/api-terraform-beta-sessions-resources-ba15d579a8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Resources Delete 8442D9E1A8](Other/api-terraform-beta-sessions-resources-delete-8442d9e1a8.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Resources List 8786B31865](Other/api-terraform-beta-sessions-resources-list-8786b31865.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Resources Retrieve E8561433Ca](Other/api-terraform-beta-sessions-resources-retrieve-e8561433ca.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Resources Update D1Bb31C09A](Other/api-terraform-beta-sessions-resources-update-d1bb31c09a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Retrieve 67E160Beb0](Other/api-terraform-beta-sessions-retrieve-67e160beb0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Sessions Update A28D4A18E2](Other/api-terraform-beta-sessions-update-a28d4a18e2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills 1A6E51Eda6](Other/api-terraform-beta-skills-1a6e51eda6.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills Create D1477557Cc](Other/api-terraform-beta-skills-create-d1477557cc.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills Delete 1B0E44B2E7](Other/api-terraform-beta-skills-delete-1b0e44b2e7.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills List 002Ee816E3](Other/api-terraform-beta-skills-list-002ee816e3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills Retrieve 9580B0962E](Other/api-terraform-beta-skills-retrieve-9580b0962e.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills Versions Bbfdfaeaae](Other/api-terraform-beta-skills-versions-bbfdfaeaae.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills Versions Create Fbf5277914](Other/api-terraform-beta-skills-versions-create-fbf5277914.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills Versions Delete 89F81Ea7B0](Other/api-terraform-beta-skills-versions-delete-89f81ea7b0.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills Versions List 47Cfa14C08](Other/api-terraform-beta-skills-versions-list-47cfa14c08.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Skills Versions Retrieve Cc2A1Ac2Ea](Other/api-terraform-beta-skills-versions-retrieve-cc2a1ac2ea.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults 65C6E13B09](Other/api-terraform-beta-vaults-65c6e13b09.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Archive 8Bbfad9Fed](Other/api-terraform-beta-vaults-archive-8bbfad9fed.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Create 5704Acfc51](Other/api-terraform-beta-vaults-create-5704acfc51.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Credentials Archive Fc47D99817](Other/api-terraform-beta-vaults-credentials-archive-fc47d99817.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Credentials B91058F083](Other/api-terraform-beta-vaults-credentials-b91058f083.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Credentials Create Ea4163Eea5](Other/api-terraform-beta-vaults-credentials-create-ea4163eea5.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Credentials Delete Ee4F55D81C](Other/api-terraform-beta-vaults-credentials-delete-ee4f55d81c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Credentials List 8938A8Cb00](Other/api-terraform-beta-vaults-credentials-list-8938a8cb00.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Credentials Retrieve Dc1B41Ca7B](Other/api-terraform-beta-vaults-credentials-retrieve-dc1b41ca7b.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Credentials Update 29Fc9134E4](Other/api-terraform-beta-vaults-credentials-update-29fc9134e4.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Delete 84Ad946B07](Other/api-terraform-beta-vaults-delete-84ad946b07.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults List A05E1Fa8Ee](Other/api-terraform-beta-vaults-list-a05e1fa8ee.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Retrieve 9C22F030B3](Other/api-terraform-beta-vaults-retrieve-9c22f030b3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Vaults Update 82E06161A5](Other/api-terraform-beta-vaults-update-82e06161a5.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Completions 257A3E8523](Other/api-terraform-completions-257a3e8523.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Completions Create 48182Fcf40](Other/api-terraform-completions-create-48182fcf40.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages 46996C1153](Other/api-terraform-messages-46996c1153.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Batches Cancel 8Ee2F3010A](Other/api-terraform-messages-batches-cancel-8ee2f3010a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Batches Create 8Fb79B9D3A](Other/api-terraform-messages-batches-create-8fb79b9d3a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Batches Delete 2C8Adb7Ac9](Other/api-terraform-messages-batches-delete-2c8adb7ac9.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Batches F0Df137D47](Other/api-terraform-messages-batches-f0df137d47.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Batches List 7C63A51Ffd](Other/api-terraform-messages-batches-list-7c63a51ffd.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Batches Results Ed9B1Eaa31](Other/api-terraform-messages-batches-results-ed9b1eaa31.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Batches Retrieve 4A7F1C25B3](Other/api-terraform-messages-batches-retrieve-4a7f1c25b3.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Count Tokens C841Bad880](Other/api-terraform-messages-count-tokens-c841bad880.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Messages Create 3Db93Bbeb9](Other/api-terraform-messages-create-3db93bbeb9.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Beta](Other/api-typescript-beta-81405a90dc.md) - - `AnthropicBeta = (string & {}) | "message-batches-2024-09-24" | "prompt-caching-2024-07-31" | "computer-use-2024-10-22" | 19 more`
+- [Agents](Other/api-typescript-beta-agents-1a8275d6e8.md) - `client.beta.agents.create(AgentCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent`
+- [Api Typescript Beta Agents Archive 1Df950B6B3](Other/api-typescript-beta-agents-archive-1df950b6b3.md) - `client.beta.agents.archive(stringagentID, AgentArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsAgent`
+- [Api Typescript Beta Agents Create Dee9F146Df](Other/api-typescript-beta-agents-create-dee9f146df.md) - `client.beta.agents.create(AgentCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent`
+- [Api Typescript Beta Agents Delete 61A524F493](Other/api-typescript-beta-agents-delete-61a524f493.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Typescript Beta Agents List D182731674](Other/api-typescript-beta-agents-list-d182731674.md) - `client.beta.agents.list(AgentListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>`
+- [Api Typescript Beta Agents Retrieve 4B66B2Abc4](Other/api-typescript-beta-agents-retrieve-4b66b2abc4.md) - `client.beta.agents.retrieve(stringagentID, AgentRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsAgent`
+- [Api Typescript Beta Agents Update 9E89Bbe678](Other/api-typescript-beta-agents-update-9e89bbe678.md) - `client.beta.agents.update(stringagentID, AgentUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent`
+- [Versions](Other/api-typescript-beta-agents-versions-9e995749dd.md) - `client.beta.agents.versions.list(stringagentID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>`
+- [Api Typescript Beta Agents Versions List Fd9A5Bd22B](Other/api-typescript-beta-agents-versions-list-fd9a5bd22b.md) - `client.beta.agents.versions.list(stringagentID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>`
+- [Environments](Other/api-typescript-beta-environments-32b9a77dc7.md) - `client.beta.environments.create(EnvironmentCreateParamsparams, RequestOptionsoptions?): BetaEnvironment`
+- [Api Typescript Beta Environments Archive F7Ef990C79](Other/api-typescript-beta-environments-archive-f7ef990c79.md) - `client.beta.environments.archive(stringenvironmentID, EnvironmentArchiveParamsparams?, RequestOptionsoptions?): BetaEnvironment`
+- [Api Typescript Beta Environments Create 8Feeed987A](Other/api-typescript-beta-environments-create-8feeed987a.md) - `client.beta.environments.create(EnvironmentCreateParamsparams, RequestOptionsoptions?): BetaEnvironment`
+- [Api Typescript Beta Environments Delete 4Da114F720](Other/api-typescript-beta-environments-delete-4da114f720.md) - `client.beta.environments.delete(stringenvironmentID, EnvironmentDeleteParamsparams?, RequestOptionsoptions?): BetaEnvironmentDeleteResponse`
+- [Api Typescript Beta Environments List E419B7A025](Other/api-typescript-beta-environments-list-e419b7a025.md) - `client.beta.environments.list(EnvironmentListParamsparams?, RequestOptionsoptions?): PageCursor<BetaEnvironment>`
+- [Api Typescript Beta Environments Retrieve Ed45F784C9](Other/api-typescript-beta-environments-retrieve-ed45f784c9.md) - `client.beta.environments.retrieve(stringenvironmentID, EnvironmentRetrieveParamsparams?, RequestOptionsoptions?): BetaEnvironment`
+- [Api Typescript Beta Environments Update 50B3F85212](Other/api-typescript-beta-environments-update-50b3f85212.md) - `client.beta.environments.update(stringenvironmentID, EnvironmentUpdateParamsparams, RequestOptionsoptions?): BetaEnvironment`
+- [Files](Other/api-typescript-beta-files-1e8ff0bb0a.md) - `client.beta.files.upload(FileUploadParamsparams, RequestOptionsoptions?): FileMetadata`
+- [Api Typescript Beta Files Delete 8A56C90D11](Other/api-typescript-beta-files-delete-8a56c90d11.md) - `client.beta.files.delete(stringfileID, FileDeleteParamsparams?, RequestOptionsoptions?): DeletedFile`
+- [Api Typescript Beta Files Download 483630B216](Other/api-typescript-beta-files-download-483630b216.md) - `client.beta.files.download(stringfileID, FileDownloadParamsparams?, RequestOptionsoptions?): Response`
+- [Api Typescript Beta Files List E38Ab6779F](Other/api-typescript-beta-files-list-e38ab6779f.md) - `client.beta.files.list(FileListParamsparams?, RequestOptionsoptions?): Page<FileMetadata>`
+- [Api Typescript Beta Files Retrieve Metadata Fd5590Ade5](Other/api-typescript-beta-files-retrieve-metadata-fd5590ade5.md) - `client.beta.files.retrieveMetadata(stringfileID, FileRetrieveMetadataParamsparams?, RequestOptionsoptions?): FileMetadata`
+- [Api Typescript Beta Files Upload 7168F683Ce](Other/api-typescript-beta-files-upload-7168f683ce.md) - `client.beta.files.upload(FileUploadParamsparams, RequestOptionsoptions?): FileMetadata`
+- [Memory Stores](Other/api-typescript-beta-memory-stores-ad5b8c963a.md) - `client.beta.memoryStores.create(MemoryStoreCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
+- [Api Typescript Beta Memory Stores Archive 8D24D6204E](Other/api-typescript-beta-memory-stores-archive-8d24d6204e.md) - `client.beta.memoryStores.archive(stringmemoryStoreID, MemoryStoreArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
+- [Api Typescript Beta Memory Stores Create 62A4Ceff0B](Other/api-typescript-beta-memory-stores-create-62a4ceff0b.md) - `client.beta.memoryStores.create(MemoryStoreCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
+- [Api Typescript Beta Memory Stores Delete F2039E0096](Other/api-typescript-beta-memory-stores-delete-f2039e0096.md) - `client.beta.memoryStores.delete(stringmemoryStoreID, MemoryStoreDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedMemoryStore`
+- [Api Typescript Beta Memory Stores List 6497D5B8C4](Other/api-typescript-beta-memory-stores-list-6497d5b8c4.md) - `client.beta.memoryStores.list(MemoryStoreListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsMemoryStore>`
+- [Memories](Other/api-typescript-beta-memory-stores-memories-9bf2036f03.md) - `client.beta.memoryStores.memories.create(stringmemoryStoreID, MemoryCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`
+- [Api Typescript Beta Memory Stores Memories Create 6578972Df7](Other/api-typescript-beta-memory-stores-memories-create-6578972df7.md) - `client.beta.memoryStores.memories.create(stringmemoryStoreID, MemoryCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`
+- [Api Typescript Beta Memory Stores Memories Delete 041909980E](Other/api-typescript-beta-memory-stores-memories-delete-041909980e.md) - `client.beta.memoryStores.memories.delete(stringmemoryID, MemoryDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeletedMemory`
+- [Api Typescript Beta Memory Stores Memories List C229Ee913B](Other/api-typescript-beta-memory-stores-memories-list-c229ee913b.md) - `client.beta.memoryStores.memories.list(stringmemoryStoreID, MemoryListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsMemoryListI
+- [Api Typescript Beta Memory Stores Memories Retrieve 11D594C648](Other/api-typescript-beta-memory-stores-memories-retrieve-11d594c648.md) - `client.beta.memoryStores.memories.retrieve(stringmemoryID, MemoryRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`
+- [Api Typescript Beta Memory Stores Memories Update 9Cf435B6F0](Other/api-typescript-beta-memory-stores-memories-update-9cf435b6f0.md) - `client.beta.memoryStores.memories.update(stringmemoryID, MemoryUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`
+- [Memory Versions](Other/api-typescript-beta-memory-stores-memory-versions-a354907633.md) - `client.beta.memoryStores.memoryVersions.list(stringmemoryStoreID, MemoryVersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgen
+- [Api Typescript Beta Memory Stores Memory Versions List F7Daa94279](Other/api-typescript-beta-memory-stores-memory-versions-list-f7daa94279.md) - `client.beta.memoryStores.memoryVersions.list(stringmemoryStoreID, MemoryVersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgen
+- [Api Typescript Beta Memory Stores Memory Versions Redact F2E7Ec64B1](Other/api-typescript-beta-memory-stores-memory-versions-redact-f2e7ec64b1.md) - `client.beta.memoryStores.memoryVersions.redact(stringmemoryVersionID, MemoryVersionRedactParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemo
+- [Api Typescript Beta Memory Stores Memory Versions Retrieve 13De79Ede7](Other/api-typescript-beta-memory-stores-memory-versions-retrieve-13de79ede7.md) - `client.beta.memoryStores.memoryVersions.retrieve(stringmemoryVersionID, MemoryVersionRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgents
+- [Api Typescript Beta Memory Stores Retrieve 3Fb85D85B2](Other/api-typescript-beta-memory-stores-retrieve-3fb85d85b2.md) - `client.beta.memoryStores.retrieve(stringmemoryStoreID, MemoryStoreRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
+- [Api Typescript Beta Memory Stores Update C461Ea6F03](Other/api-typescript-beta-memory-stores-update-c461ea6f03.md) - `client.beta.memoryStores.update(stringmemoryStoreID, MemoryStoreUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore`
+- [Messages](Other/api-typescript-beta-messages-90db5b8c59.md) - `client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): BetaMessage | Stream<BetaRawMessageStreamEvent>`
+- [Batches](Other/api-typescript-beta-messages-batches-3bac1a1406.md) - `client.beta.messages.batches.create(BatchCreateParamsparams, RequestOptionsoptions?): BetaMessageBatch`
+- [Api Typescript Beta Messages Batches Cancel 1916Ce7E90](Other/api-typescript-beta-messages-batches-cancel-1916ce7e90.md) - `client.beta.messages.batches.cancel(stringmessageBatchID, BatchCancelParamsparams?, RequestOptionsoptions?): BetaMessageBatch`
+- [Api Typescript Beta Messages Batches Create D99F19Dd8D](Other/api-typescript-beta-messages-batches-create-d99f19dd8d.md) - `client.beta.messages.batches.create(BatchCreateParamsparams, RequestOptionsoptions?): BetaMessageBatch`
+- [Api Typescript Beta Messages Batches Delete 3Dd175B594](Other/api-typescript-beta-messages-batches-delete-3dd175b594.md) - `client.beta.messages.batches.delete(stringmessageBatchID, BatchDeleteParamsparams?, RequestOptionsoptions?): BetaDeletedMessageBatch`
+- [Api Typescript Beta Messages Batches List 58D100B77D](Other/api-typescript-beta-messages-batches-list-58d100b77d.md) - `client.beta.messages.batches.list(BatchListParamsparams?, RequestOptionsoptions?): Page<BetaMessageBatch>`
+- [Api Typescript Beta Messages Batches Results C0B2Ceacf3](Other/api-typescript-beta-messages-batches-results-c0b2ceacf3.md) - `client.beta.messages.batches.results(stringmessageBatchID, BatchResultsParamsparams?, RequestOptionsoptions?): BetaMessageBatchIndividualResponse | S
+- [Api Typescript Beta Messages Batches Retrieve 54Fcbd11Cd](Other/api-typescript-beta-messages-batches-retrieve-54fcbd11cd.md) - `client.beta.messages.batches.retrieve(stringmessageBatchID, BatchRetrieveParamsparams?, RequestOptionsoptions?): BetaMessageBatch`
+- [Api Typescript Beta Messages Count Tokens A8443595B0](Other/api-typescript-beta-messages-count-tokens-a8443595b0.md) - `client.beta.messages.countTokens(MessageCountTokensParamsparams, RequestOptionsoptions?): BetaMessageTokensCount`
+- [Api Typescript Beta Messages Create F2Fd3D94E6](Other/api-typescript-beta-messages-create-f2fd3d94e6.md) - `client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): BetaMessage | Stream<BetaRawMessageStreamEvent>`
+- [Sessions](Other/api-typescript-beta-sessions-5a1087c705.md) - `client.beta.sessions.create(SessionCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession`
+- [Api Typescript Beta Sessions Archive D66D7E1798](Other/api-typescript-beta-sessions-archive-d66d7e1798.md) - `client.beta.sessions.archive(stringsessionID, SessionArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsSession`
+- [Api Typescript Beta Sessions Create 0Bb99Ed0Ef](Other/api-typescript-beta-sessions-create-0bb99ed0ef.md) - `client.beta.sessions.create(SessionCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession`
+- [Api Typescript Beta Sessions Delete De491Eb1Ee](Other/api-typescript-beta-sessions-delete-de491eb1ee.md) - `client.beta.sessions.delete(stringsessionID, SessionDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedSession`
+- [Events](Other/api-typescript-beta-sessions-events-3306ba8ca3.md) - `client.beta.sessions.events.list(stringsessionID, EventListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionEvent>`
+- [Api Typescript Beta Sessions Events List Cb5B872E44](Other/api-typescript-beta-sessions-events-list-cb5b872e44.md) - `client.beta.sessions.events.list(stringsessionID, EventListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionEvent>`
+- [Api Typescript Beta Sessions Events Send 1Fac917C66](Other/api-typescript-beta-sessions-events-send-1fac917c66.md) - `client.beta.sessions.events.send(stringsessionID, EventSendParamsparams, RequestOptionsoptions?): BetaManagedAgentsSendSessionEvents`
+- [Api Typescript Beta Sessions Events Stream C7Abfe3147](Other/api-typescript-beta-sessions-events-stream-c7abfe3147.md) - `client.beta.sessions.events.stream(stringsessionID, EventStreamParamsparams?, RequestOptionsoptions?): BetaManagedAgentsStreamSessionEvents | Stream<
+- [Api Typescript Beta Sessions List 7Dcc171392](Other/api-typescript-beta-sessions-list-7dcc171392.md) - `client.beta.sessions.list(SessionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSession>`
+- [Resources](Other/api-typescript-beta-sessions-resources-a2b0db3bbd.md) - `client.beta.sessions.resources.add(stringsessionID, ResourceAddParamsparams, RequestOptionsoptions?): BetaManagedAgentsFileResource`
+- [Api Typescript Beta Sessions Resources Add 1B0A88Adac](Other/api-typescript-beta-sessions-resources-add-1b0a88adac.md) - `client.beta.sessions.resources.add(stringsessionID, ResourceAddParamsparams, RequestOptionsoptions?): BetaManagedAgentsFileResource`
+- [Api Typescript Beta Sessions Resources Delete 265Deb2Eba](Other/api-typescript-beta-sessions-resources-delete-265deb2eba.md) - `client.beta.sessions.resources.delete(stringresourceID, ResourceDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeleteSessionResource`
+- [Api Typescript Beta Sessions Resources List 7D2Fc80A5A](Other/api-typescript-beta-sessions-resources-list-7d2fc80a5a.md) - `client.beta.sessions.resources.list(stringsessionID, ResourceListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionResource>
+- [Api Typescript Beta Sessions Resources Retrieve 0625D0Fefa](Other/api-typescript-beta-sessions-resources-retrieve-0625d0fefa.md) - `client.beta.sessions.resources.retrieve(stringresourceID, ResourceRetrieveParamsparams, RequestOptionsoptions?): ResourceRetrieveResponse`
+- [Api Typescript Beta Sessions Resources Update 31E491Fa98](Other/api-typescript-beta-sessions-resources-update-31e491fa98.md) - `client.beta.sessions.resources.update(stringresourceID, ResourceUpdateParamsparams, RequestOptionsoptions?): ResourceUpdateResponse`
+- [Api Typescript Beta Sessions Retrieve 67F1002E03](Other/api-typescript-beta-sessions-retrieve-67f1002e03.md) - `client.beta.sessions.retrieve(stringsessionID, SessionRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsSession`
+- [Api Typescript Beta Sessions Update 429A82Aef2](Other/api-typescript-beta-sessions-update-429a82aef2.md) - `client.beta.sessions.update(stringsessionID, SessionUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession`
+- [Skills](Other/api-typescript-beta-skills-b0004cbaad.md) - `client.beta.skills.create(SkillCreateParamsparams?, RequestOptionsoptions?): SkillCreateResponse`
+- [Api Typescript Beta Skills Create 6Ee8B16A2C](Other/api-typescript-beta-skills-create-6ee8b16a2c.md) - `client.beta.skills.create(SkillCreateParamsparams?, RequestOptionsoptions?): SkillCreateResponse`
+- [Api Typescript Beta Skills Delete 705A8F5C21](Other/api-typescript-beta-skills-delete-705a8f5c21.md) - `client.beta.skills.delete(stringskillID, SkillDeleteParamsparams?, RequestOptionsoptions?): SkillDeleteResponse`
+- [Api Typescript Beta Skills List A095Bc2Add](Other/api-typescript-beta-skills-list-a095bc2add.md) - `client.beta.skills.list(SkillListParamsparams?, RequestOptionsoptions?): PageCursor<SkillListResponse>`
+- [Api Typescript Beta Skills Retrieve Ec7B6683Ee](Other/api-typescript-beta-skills-retrieve-ec7b6683ee.md) - `client.beta.skills.retrieve(stringskillID, SkillRetrieveParamsparams?, RequestOptionsoptions?): SkillRetrieveResponse`
+- [Api Typescript Beta Skills Versions Create 5C84475818](Other/api-typescript-beta-skills-versions-create-5c84475818.md) - `client.beta.skills.versions.create(stringskillID, VersionCreateParamsparams?, RequestOptionsoptions?): VersionCreateResponse`
+- [Api Typescript Beta Skills Versions Delete E6277765A9](Other/api-typescript-beta-skills-versions-delete-e6277765a9.md) - `client.beta.skills.versions.delete(stringversion, VersionDeleteParamsparams, RequestOptionsoptions?): VersionDeleteResponse`
+- [Versions](Other/api-typescript-beta-skills-versions-ed1f5704a5.md) - `client.beta.skills.versions.create(stringskillID, VersionCreateParamsparams?, RequestOptionsoptions?): VersionCreateResponse`
+- [Api Typescript Beta Skills Versions List E9C0071F2E](Other/api-typescript-beta-skills-versions-list-e9c0071f2e.md) - `client.beta.skills.versions.list(stringskillID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<VersionListResponse>`
+- [Api Typescript Beta Skills Versions Retrieve 7279Caeba1](Other/api-typescript-beta-skills-versions-retrieve-7279caeba1.md) - `client.beta.skills.versions.retrieve(stringversion, VersionRetrieveParamsparams, RequestOptionsoptions?): VersionRetrieveResponse`
+- [Vaults](Other/api-typescript-beta-vaults-4fa88061d2.md) - `client.beta.vaults.create(VaultCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault`
+- [Api Typescript Beta Vaults Archive D7556D01B8](Other/api-typescript-beta-vaults-archive-d7556d01b8.md) - `client.beta.vaults.archive(stringvaultID, VaultArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsVault`
+- [Api Typescript Beta Vaults Create B42E01D8Eb](Other/api-typescript-beta-vaults-create-b42e01d8eb.md) - `client.beta.vaults.create(VaultCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault`
+- [Credentials](Other/api-typescript-beta-vaults-credentials-7b9f0deb49.md) - `client.beta.vaults.credentials.create(stringvaultID, CredentialCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
+- [Api Typescript Beta Vaults Credentials Archive 4114C64B30](Other/api-typescript-beta-vaults-credentials-archive-4114c64b30.md) - `client.beta.vaults.credentials.archive(stringcredentialID, CredentialArchiveParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
+- [Api Typescript Beta Vaults Credentials Create 4Afd741D84](Other/api-typescript-beta-vaults-credentials-create-4afd741d84.md) - `client.beta.vaults.credentials.create(stringvaultID, CredentialCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
+- [Api Typescript Beta Vaults Credentials Delete D8C182D6C3](Other/api-typescript-beta-vaults-credentials-delete-d8c182d6c3.md) - `client.beta.vaults.credentials.delete(stringcredentialID, CredentialDeleteParamsparams, RequestOptionsoptions?): BetaManagedAgentsDeletedCredential`
+- [Api Typescript Beta Vaults Credentials List 70Dcbd98C6](Other/api-typescript-beta-vaults-credentials-list-70dcbd98c6.md) - `client.beta.vaults.credentials.list(stringvaultID, CredentialListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsCredential>`
+- [Api Typescript Beta Vaults Credentials Retrieve 38E483Eb73](Other/api-typescript-beta-vaults-credentials-retrieve-38e483eb73.md) - `client.beta.vaults.credentials.retrieve(stringcredentialID, CredentialRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
+- [Api Typescript Beta Vaults Credentials Update 0Dd0F085Be](Other/api-typescript-beta-vaults-credentials-update-0dd0f085be.md) - `client.beta.vaults.credentials.update(stringcredentialID, CredentialUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential`
+- [Api Typescript Beta Vaults Delete E183B93286](Other/api-typescript-beta-vaults-delete-e183b93286.md) - `client.beta.vaults.delete(stringvaultID, VaultDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedVault`
+- [Api Typescript Beta Vaults List 0501Bb42E3](Other/api-typescript-beta-vaults-list-0501bb42e3.md) - `client.beta.vaults.list(VaultListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsVault>`
+- [Api Typescript Beta Vaults Retrieve B75C03B1Eb](Other/api-typescript-beta-vaults-retrieve-b75c03b1eb.md) - `client.beta.vaults.retrieve(stringvaultID, VaultRetrieveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsVault`
+- [Api Typescript Beta Vaults Update Bb26Ea95C8](Other/api-typescript-beta-vaults-update-bb26ea95c8.md) - `client.beta.vaults.update(stringvaultID, VaultUpdateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault`
+- [Completions](Other/api-typescript-completions-0052628b8a.md) - `client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>`
+- [Api Typescript Completions Create 1A4F2687B1](Other/api-typescript-completions-create-1a4f2687b1.md) - `client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>`
+- [Messages](Other/api-typescript-messages-2ee0725222.md) - `client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>`
+- [Batches](Other/api-typescript-messages-batches-98ce88e31a.md) - `client.messages.batches.create(BatchCreateParamsbody, RequestOptionsoptions?): MessageBatch`
+- [Api Typescript Messages Batches Cancel A9B39Fec23](Other/api-typescript-messages-batches-cancel-a9b39fec23.md) - `client.messages.batches.cancel(stringmessageBatchID, RequestOptionsoptions?): MessageBatch`
+- [Api Typescript Messages Batches Create 54D7Cab36A](Other/api-typescript-messages-batches-create-54d7cab36a.md) - `client.messages.batches.create(BatchCreateParamsbody, RequestOptionsoptions?): MessageBatch`
+- [Api Typescript Messages Batches Delete 119Dfb75F4](Other/api-typescript-messages-batches-delete-119dfb75f4.md) - `client.messages.batches.delete(stringmessageBatchID, RequestOptionsoptions?): DeletedMessageBatch`
+- [Api Typescript Messages Batches List F08B6A4Ebd](Other/api-typescript-messages-batches-list-f08b6a4ebd.md) - `client.messages.batches.list(BatchListParamsquery?, RequestOptionsoptions?): Page<MessageBatch>`
+- [Api Typescript Messages Batches Results 3D319B03D1](Other/api-typescript-messages-batches-results-3d319b03d1.md) - `client.messages.batches.results(stringmessageBatchID, RequestOptionsoptions?): MessageBatchIndividualResponse | Stream<MessageBatchIndividualResponse
+- [Api Typescript Messages Batches Retrieve A46E305636](Other/api-typescript-messages-batches-retrieve-a46e305636.md) - `client.messages.batches.retrieve(stringmessageBatchID, RequestOptionsoptions?): MessageBatch`
+- [Api Typescript Messages Count Tokens Cbf98247De](Other/api-typescript-messages-count-tokens-cbf98247de.md) - `client.messages.countTokens(MessageCountTokensParamsbody, RequestOptionsoptions?): MessageTokensCount`
+- [Api Typescript Messages Create D3193B53Fa](Other/api-typescript-messages-create-d3193b53fa.md) - `client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>`
+- [Versions](Other/api-versioning-f7848bbf23.md) - When making API requests, you must send an `anthropic-version` request header. For example, `anthropic-version: 2023-06-01`. If you are using our [cli
 - [Api](Other/api.md) - Updates to the Claude Developer Platform, including the Claude API, client SDKs, and the Claude Console.
 - [Batch Processing with Message Batches API](Other/batch-processing.md) - Message Batches allow you to process large volumes of Messages requests
 - [Claude API Monitoring Setup Guide](Other/claude-api-monitoring-setup.md) - This guide will help you set up monitoring for Claude Opus API calls using MITMproxy and view them in your terminal viewer at localhost:3001.
@@ -23,17 +1173,48 @@
 - [Google Cloud Vertex AI | Claude](Other/google-cloud-vertex-ai-claude.md) - Get access to advanced AI and agent-building capabilities with built-in safeguards and efficient scaling.
 - [Documentation - Claude API Docs](Other/home.md) - Everything you need to integrate Claude into your applications. From first API call to production.
 - [How can I access the Claude API? | Claude Help Center](Other/how-can-i-access-the-anthropic-api.md) - Organizations interested in building with the Claude API can create a [Claude Console account](platform-claude-com.md). The Claude Console is where yo
+- [Define your agent](Other/managed-agents-agent-setup-82ca4932fa.md) - Create a reusable, versioned agent configuration.
+- [Container reference](Other/managed-agents-cloud-containers-18695a12bf.md) - Pre-installed packages, databases, and utilities available in cloud containers.
+- [Define outcomes](Other/managed-agents-define-outcomes-03fe519bce.md) - Tell the agent what 'done' looks like, and let it iterate until it gets there.
+- [Cloud environment setup](Other/managed-agents-environments-8a675d3732.md) - Customize cloud containers for your sessions.
+- [Session event stream](Other/managed-agents-events-and-streaming-8c00282409.md) - Send events, stream responses, and interrupt or redirect your session mid-execution.
+- [Adding files](Other/managed-agents-files-5f1ffdd866.md) - Upload files and mount them in your container for reading and processing.
+- [Accessing GitHub](Other/managed-agents-github-c3d0fb911e.md) - Connect your agent to GitHub repositories for cloning, reading, and creating pull requests.
+- [MCP connector](Other/managed-agents-mcp-connector-212f0c2926.md) - Connect MCP servers to your agents for access to external tools and data sources.
+- [Using agent memory](Other/managed-agents-memory-e08b227fea.md) - Give your agents persistent memory that survives across sessions using memory stores.
+- [Migration](Other/managed-agents-migration-07487dca6e.md) - Move an existing agent built on the Messages API or the Claude Agent SDK to Claude Managed Agents.
+- [Multiagent sessions](Other/managed-agents-multi-agent-c4b5f85b6c.md) - Coordinate multiple agents within a single session.
+- [Session tracing](Other/managed-agents-observability-ba24eca2e9.md) - Monitor and debug your sessions using the Console timeline and raw event views.
+- [Prototype in Console](Other/managed-agents-onboarding-f5f453a1ca.md) - Create and test agents visually in Console without writing API calls.
+- [Claude Managed Agents overview](Other/managed-agents-overview-b12cd03916.md) - Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.
+- [Permission policies](Other/managed-agents-permission-policies-778df12305.md) - Control when agent and MCP tools execute.
+- [Get started with Claude Managed Agents](Other/managed-agents-quickstart-841ac0c596.md) - Create your first autonomous agent.
+- [Start a session](Other/managed-agents-sessions-ae84d9adc1.md) - Create a session to run your agent and begin executing tasks.
+- [Skills](Other/managed-agents-skills-63d5f0ec63.md) - Attach reusable, filesystem-based expertise to your agent for domain-specific workflows.
+- [Tools](Other/managed-agents-tools-ed0f3609b3.md) - Configure tools available to your agent.
+- [Authenticate with vaults](Other/managed-agents-vaults-47da9057c3.md) - Register per-user credentials when creating sessions.
 - [Partners | Claude by Anthropic](Other/partners-claude-by-anthropic.md) - Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
-- [\\\\\](Other/pdf-upload-summarization.md) - :::
+- [\\\\\\](Other/pdf-upload-summarization.md) - :::
 - [Sign In | Claude Platform](Other/platform-claude-com.md) - Continue with Google
 - [Powered by Claude | Claude](Other/powered-by-claude-claude.md) - A curated list of businesses that use Claude to build better, faster, and safer.
 - [Programatic Tool Calling (PTC) with the Claude API](Other/programmatic-tool-calling-ptc.md) - Programmatic Tool Calling (PTC) allows Claude to write code that calls
 - [Prompt caching through the Claude API](Other/prompt-caching.md) - Prompt caching allows you to store and reuse context within your prompt.
+- [Claude Platform](Other/release-notes-overview-0570f9f216.md) - Updates to the Claude Platform, including the Claude API, client SDKs, and the Claude Console.
+- [System Prompts](Other/release-notes-system-prompts-92664eecb0.md) - See updates to the core system prompts on [claude.ai](https://www.claude.ai) and the Claude [iOS](http://anthropic.com/ios) and [Android](http://anthr
+- [Resources Overview 965F97A2Ea](Other/resources-overview-965f97a2ea.md) - <h2}>
 - [Service partners | Claude](Other/service-partners-claude.md) - Find a consulting partner or system integrator to help you build your AI strategy and successfully implement Claude.
 - [Skill Authoring Best Practices](Other/skill-authoring-best-practices.md) - Learn how to write effective Skills that Claude can discover and use successfully.
 - [Usage & Cost Admin API Cookbook {#usage--cost-admin-api-cookbook}](Other/usage-cost-api.md) - ::: {#9610be80 .cell .markdown id="9610be80"}
 - [Using the Wolfram Alpha LLM API as a Tool with Claude](Other/using-llm-api.md) - In this recipe, we\'ll show you how to integrate the Wolfram Alpha LLM
 
-## Test-Evaluate (1)
+## Test-Evaluate (9)
 
 - [Define your success criteria - Claude API Docs](Test-Evaluate/test-and-evaluate-define-success.md) - Building a successful LLM-based application starts with clearly defining your success criteria. How will you know when your application is good enough
+- [Define success criteria and build evaluations](Test-Evaluate/test-and-evaluate-develop-tests-c4d321a9da.md)
+- [Using the Evaluation Tool](Test-Evaluate/test-and-evaluate-eval-tool-c4e35d37b9.md) - The [Claude Console](/dashboard) features an **Evaluation tool** that allows you to test your prompts under various scenarios.
+- [Streaming refusals](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals-4bf5b1e3e7.md)
+- [Increase output consistency](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency-8ccae35b1c.md)
+- [Mitigate jailbreaks and prompt injections](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks-19976860e0.md)
+- [Reduce hallucinations](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations-32760d4211.md)
+- [Reducing latency](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency-322e8242bc.md) - When discussing latency, you may come across several terms and measurements:
+- [Reduce prompt leak](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak-3eb5ab36bc.md)

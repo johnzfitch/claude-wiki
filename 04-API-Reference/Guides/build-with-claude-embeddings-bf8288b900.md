@@ -1,9 +1,11 @@
 ---
+title: "Embeddings"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/embeddings.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/embeddings.md"
-title: "Embeddings"
+tags: ["api"]
 ---
+
 # Embeddings
 
 Text embeddings are numerical representations of text that enable measuring semantic similarity. This guide introduces embeddings, their applications, and how to use embedding models for tasks like search, recommendations, and anomaly detection.

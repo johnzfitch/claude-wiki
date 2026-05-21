@@ -1,9 +1,11 @@
 ---
+title: "Citations"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/citations.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/citations.md"
-title: "Citations"
+tags: ["api"]
 ---
+
 # Citations
 
 ---

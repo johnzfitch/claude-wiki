@@ -1,9 +1,11 @@
 ---
+title: "Discover and install prebuilt plugins through marketplaces"
+source_url: "https://code.claude.com/docs/en/discover-plugins.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/discover-plugins.md"
-title: "Discover and install prebuilt plugins through marketplaces"
+tags: ["claude-code", "plugins", "security"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -14,7 +16,7 @@ title: "Discover and install prebuilt plugins through marketplaces"
 
 Plugins extend Claude Code with skills, agents, hooks, and MCP servers. Plugin marketplaces are catalogs that help you discover and install these extensions without building them yourself.
 
-Looking to create and distribute your own marketplace? See [Create and distribute a plugin marketplace](/en/plugin-marketplaces).
+Looking to create and distribute your own marketplace? See [Create and distribute a plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md).
 
 ## How marketplaces work
 
@@ -50,7 +52,7 @@ If Claude Code reports that the plugin is not found in any marketplace, your mar
   * **Claude.ai**: [claude.ai/settings/plugins/submit](https://claude.ai/settings/plugins/submit)
   * **Console**: [platform.claude.com/plugins/submit](https://platform.claude.com/plugins/submit)
 
-  To distribute plugins independently, [create your own marketplace](/en/plugin-marketplaces) and share it with users.
+  To distribute plugins independently, [create your own marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) and share it with users.
 </Note>
 
 The official marketplace includes several categories of plugins:
@@ -92,7 +94,7 @@ If you run into issues, see [Code intelligence troubleshooting](#code-intelligen
 
 ### External integrations
 
-These plugins bundle pre-configured [MCP servers](/en/mcp) so you can connect Claude to external services without manual setup:
+These plugins bundle pre-configured [MCP servers](../06-MCP-Tools/mcp-208e742686.md) so you can connect Claude to external services without manual setup:
 
 * **Source control**: `github`, `gitlab`
 * **Project management**: `atlassian` (Jira/Confluence), `asana`, `linear`, `notion`
@@ -416,7 +418,7 @@ If you see "unknown command" or the `/plugin` command doesn't appear:
 2. **Update Claude Code**:
    * **Homebrew**: `brew upgrade claude-code` (or `brew upgrade claude-code@latest` if you installed that cask)
    * **npm**: `npm update -g @anthropic-ai/claude-code`
-   * **Native installer**: Re-run the install command from [Setup](/en/setup)
+   * **Native installer**: Re-run the install command from [Setup](../01-Getting-Started/advanced-setup-claude-code-docs-0526bc1300.md)
 3. **Restart Claude Code**: After updating, restart your terminal and run `claude` again.
 
 ### Common issues
@@ -436,6 +438,6 @@ For detailed troubleshooting with solutions, see [Troubleshooting](/en/plugin-ma
 
 ## Next steps
 
-* **Build your own plugins**: See [Plugins](/en/plugins) to create skills, agents, and hooks
-* **Create a marketplace**: See [Create a plugin marketplace](/en/plugin-marketplaces) to distribute plugins to your team or community
-* **Technical reference**: See [Plugins reference](/en/plugins-reference) for complete specifications
+* **Build your own plugins**: See [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) to create skills, agents, and hooks
+* **Create a marketplace**: See [Create a plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) to distribute plugins to your team or community
+* **Technical reference**: See [Plugins reference](../08-Plugins-Skills/plugins-reference-44aeea7968.md) for complete specifications

@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Vaults Update 91688B1A4F"
+source_url: "https://platform.claude.com/docs/en/api/beta/vaults/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/vaults/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 **post** `/v1/vaults/{vault_id}`

@@ -1,9 +1,11 @@
 ---
+title: "Claude on Amazon Bedrock (legacy)"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy.md"
-title: "Claude on Amazon Bedrock (legacy)"
+tags: ["bedrock", "cli", "sdk"]
 ---
+
 # Claude on Amazon Bedrock (legacy)
 
 The legacy Amazon Bedrock integration for Claude models, using InvokeModel and Converse APIs with ARN-versioned model identifiers.

@@ -1,9 +1,11 @@
 ---
+title: "Get structured output from agents"
+source_url: "https://code.claude.com/docs/en/agent-sdk/structured-outputs.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/structured-outputs.md"
-title: "Get structured output from agents"
+tags: ["agents"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -243,7 +245,7 @@ The `outputFormat` (TypeScript) or `output_format` (Python) option accepts an ob
 * `type`: Set to `"json_schema"` for structured outputs
 * `schema`: A [JSON Schema](https://json-schema.org/understanding-json-schema/about) object defining your output structure. You can generate this from a Zod schema with `z.toJSONSchema()` or a Pydantic model with `.model_json_schema()`
 
-The SDK supports standard JSON Schema features including all basic types (object, array, string, number, boolean, null), `enum`, `const`, `required`, nested objects, and `$ref` definitions. For the full list of supported features and limitations, see [JSON Schema limitations](https://platform.claude.com/docs/en/build-with-claude/structured-outputs#json-schema-limitations).
+The SDK supports standard JSON Schema features including all basic types (object, array, string, number, boolean, null), `enum`, `const`, `required`, nested objects, and `$ref` definitions. For the full list of supported features and limitations, see [JSON Schema limitations](../04-API-Reference/Guides/build-with-claude-structured-outputs-2638e81449.md#json-schema-limitations).
 
 ## Example: TODO tracking agent
 
@@ -412,5 +414,5 @@ The example below checks the `subtype` field to determine whether the output was
 ## Related resources
 
 * [JSON Schema documentation](https://json-schema.org/): learn JSON Schema syntax for defining complex schemas with nested objects, arrays, enums, and validation constraints
-* [API Structured Outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs): use structured outputs with the Claude API directly for single-turn requests without tool use
+* [API Structured Outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs-2638e81449.md): use structured outputs with the Claude API directly for single-turn requests without tool use
 * [Custom tools](/en/agent-sdk/custom-tools): give your agent custom tools to call during execution before returning structured output

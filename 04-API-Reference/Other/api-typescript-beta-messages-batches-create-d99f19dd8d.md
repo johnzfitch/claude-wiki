@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Messages Batches Create D99F19Dd8D"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/create.md"
+tags: ["api", "typescript"]
 ---
+
 ## Create
 
 `client.beta.messages.batches.create(BatchCreateParamsparams, RequestOptionsoptions?): BetaMessageBatch`
@@ -2996,7 +2999,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
         - `format?: BetaJSONOutputFormat | null`
 
-          A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+          A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
           - `schema: Record<string, unknown>`
 
@@ -3008,7 +3011,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `output_format?: BetaJSONOutputFormat | null`
 
-        Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+        Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

@@ -1,9 +1,11 @@
 ---
+title: "Usage Report"
+source_url: "https://platform.claude.com/docs/en/api/admin/usage_report.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/usage_report.md"
-title: "Usage Report"
+tags: ["api", "claude-code"]
 ---
+
 # Usage Report
 
 ## Retrieve Messages

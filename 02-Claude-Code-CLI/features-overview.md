@@ -14,21 +14,21 @@ tags: ["claude-code"]
 Claude Code combines a model that reasons about your code with [built-in tools](/en/how-claude-code-works#tools) for file operations, search, execution, and web access. The built-in tools cover most coding tasks. This guide covers the extension layer: features you add to customize what Claude knows, connect it to external services, and automate workflows.
 
 <Note>
-  For how the core agentic loop works, see [How Claude Code works](/en/how-claude-code-works).
+  For how the core agentic loop works, see [How Claude Code works](how-claude-code-works-0871be411d.md).
 </Note>
 
-**New to Claude Code?** Start with [CLAUDE.md](/en/memory) for project conventions. Add other extensions as you need them.
+**New to Claude Code?** Start with [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) for project conventions. Add other extensions as you need them.
 
 ## Overview
 
 Extensions plug into different parts of the agentic loop:
 
-* **[CLAUDE.md](/en/memory)** adds persistent context Claude sees every session
+* **[CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md)** adds persistent context Claude sees every session
 * **[Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)** add reusable knowledge and invocable workflows
 * **[MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md)** connects Claude to external services and tools
-* **[Subagents](/en/sub-agents)** run their own loops in isolated context, returning summaries
+* **[Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md)** run their own loops in isolated context, returning summaries
 * **[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md)** run outside the loop entirely as deterministic scripts
-* **[Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)** and **[marketplaces](/en/plugin-marketplaces)** package and distribute these features
+* **[Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)** and **[marketplaces](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md)** package and distribute these features
 
 [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) are the most flexible extension. A skill is a markdown file containing knowledge, workflows, or instructions. You can invoke skills with a slash command like `/deploy`, or Claude can load them automatically when relevant. Skills can run in your current conversation or in an isolated context via subagents.
 
@@ -44,7 +44,7 @@ Features range from always-on context that Claude sees every session, to on-dema
 | **MCP**       | Connect to external services                               | External data or actions                               | Query your database, post to Slack, control a browser                            |
 | **Hook**      | Deterministic script that runs on events                   | Predictable automation, no LLM involved                | Run ESLint after every file edit                                                 |
 
-**[Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)** are the packaging layer. A plugin bundles skills, hooks, subagents, and MCP servers into a single installable unit. Plugin skills are namespaced (like `/my-plugin:review`) so multiple plugins can coexist. Use plugins when you want to reuse the same setup across multiple repositories or distribute to others via a **[marketplace](/en/plugin-marketplaces)**.
+**[Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md)** are the packaging layer. A plugin bundles skills, hooks, subagents, and MCP servers into a single installable unit. Plugin skills are namespaced (like `/my-plugin:review`) so multiple plugins can coexist. Use plugins when you want to reuse the same setup across multiple repositories or distribute to others via a **[marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md)**.
 
 ### Compare similar features
 

@@ -2,10 +2,8 @@
 title: "Hooks reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/hooks"
 category: "07-Hooks"
-title: "Hooks reference - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/hooks"
 fetched_at: "2026-04-26T03:20:07Z"
-tags: ["agents", "claude-code", "hooks", "prompting", "security"]
+tags: ["claude-code", "hooks"]
 ---
 
 # Hooks reference

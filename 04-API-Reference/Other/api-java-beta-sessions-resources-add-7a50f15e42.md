@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Sessions Resources Add 7A50F15E42"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/resources/add.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/resources/add.md"
+tags: ["api"]
 ---
+
 ## Add
 
 `BetaManagedAgentsFileResource beta().sessions().resources().add(ResourceAddParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

@@ -1,9 +1,11 @@
 ---
+title: "JetBrains IDEs"
+source_url: "https://code.claude.com/docs/en/jetbrains.md"
 category: "03-IDE-Integrations"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/jetbrains.md"
-title: "JetBrains IDEs"
+tags: ["security"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -39,7 +41,7 @@ The Claude Code plugin works with most JetBrains IDEs, including:
 
 Find and install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains marketplace and restart your IDE.
 
-If you haven't installed Claude Code yet, see [our quickstart guide](/en/quickstart) for installation instructions.
+If you haven't installed Claude Code yet, see [our quickstart guide](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md) for installation instructions.
 
 <Note>
   After installing the plugin, you may need to restart your IDE completely for it to take effect.
@@ -158,4 +160,4 @@ When running in JetBrains IDEs, consider:
 * Taking extra care to ensure Claude is only used with trusted prompts
 * Being aware of which files Claude Code has access to modify
 
-For additional help, see our [troubleshooting guide](/en/troubleshooting).
+For additional help, see our [troubleshooting guide](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md).

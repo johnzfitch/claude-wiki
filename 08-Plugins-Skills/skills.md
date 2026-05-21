@@ -375,7 +375,7 @@ Add `context: fork` to your frontmatter when you want a skill to run in isolatio
   `context: fork` only makes sense for skills with explicit instructions. If your skill contains guidelines like "use these API conventions" without a task, the subagent receives the guidelines but no actionable prompt, and returns without meaningful output.
 </Warning>
 
-Skills and [subagents](/en/sub-agents) work together in two directions:
+Skills and [subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) work together in two directions:
 
 | Approach                     | System prompt                             | Task                        | Also loads                   |
 | :--------------------------- | :---------------------------------------- | :-------------------------- | :--------------------------- |
@@ -667,9 +667,9 @@ To increase the limit, set the `SLASH_COMMAND_TOOL_CHAR_BUDGET` environment vari
 
 ## Related resources
 
-* **[Subagents](/en/sub-agents)**: delegate tasks to specialized agents
+* **[Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md)**: delegate tasks to specialized agents
 * **[Plugins](create-plugins-claude-code-docs.md)**: package and distribute skills with other extensions
 * **[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md)**: automate workflows around tool events
-* **[Memory](/en/memory)**: manage CLAUDE.md files for persistent context
+* **[Memory](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md)**: manage CLAUDE.md files for persistent context
 * **[Interactive mode](/en/interactive-mode#built-in-commands)**: built-in commands and shortcuts
 * **[Permissions](/en/iam)**: control tool and skill access

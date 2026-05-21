@@ -1,8 +1,11 @@
 ---
+title: "Api Messages Batches Cancel 2140B04Da1"
+source_url: "https://platform.claude.com/docs/en/api/messages/batches/cancel.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/messages/batches/cancel.md"
+tags: ["api"]
 ---
+
 ## Cancel
 
 **post** `/v1/messages/batches/{message_batch_id}/cancel`

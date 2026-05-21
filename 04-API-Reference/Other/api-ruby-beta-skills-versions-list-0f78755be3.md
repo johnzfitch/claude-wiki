@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Skills Versions List 0F78755Be3"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/skills/versions/list.md"
+tags: ["api", "skills"]
 ---
+
 ## List
 
 `beta.skills.versions.list(skill_id, **kwargs) -> PageCursor<VersionListResponse>`

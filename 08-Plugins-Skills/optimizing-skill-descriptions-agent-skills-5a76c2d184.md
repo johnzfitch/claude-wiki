@@ -3,7 +3,7 @@ title: "Optimizing skill descriptions - Agent Skills"
 source_url: "https://agentskills.io/skill-creation/optimizing-descriptions"
 category: "08-Plugins-Skills"
 fetched_at: "2026-03-20T10:34:08Z"
-tags: ["agents", "skills"]
+tags: ["agents", "plugins", "skills"]
 ---
 
 # Optimizing skill descriptions

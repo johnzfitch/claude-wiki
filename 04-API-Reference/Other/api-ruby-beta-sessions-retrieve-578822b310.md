@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Sessions Retrieve 578822B310"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `beta.sessions.retrieve(session_id, **kwargs) -> BetaManagedAgentsSession`

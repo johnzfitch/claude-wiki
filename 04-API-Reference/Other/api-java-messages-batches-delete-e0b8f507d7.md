@@ -1,8 +1,11 @@
 ---
+title: "Api Java Messages Batches Delete E0B8F507D7"
+source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `DeletedMessageBatch messages().batches().delete(BatchDeleteParamsparams = BatchDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

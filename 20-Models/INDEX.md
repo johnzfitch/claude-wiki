@@ -1,42 +1,75 @@
 # Models
 
-*102 documents*
+*176 documents*
 
 
+- [Choosing the right model](about-claude-models-choosing-a-model-84da495643.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
 - [Choosing the right model - Claude API Docs](about-claude-models-choosing-a-model.md) - Selecting the optimal Claude model for your application involves balancing three key considerations: capabilities, speed, and cost. This guide helps y
 - [Before (Claude Sonnet 3.7)](about-claude-models-migrating-to-claude-4.md) - This guide covers two key migration paths to Claude 4.5 models:
+- [Migration guide](about-claude-models-migration-guide-6c790f7501.md) - Guide for migrating to Claude Opus 4.7 and Claude 4.6 models from previous Claude versions
 - [Migration guide - Claude API Docs](about-claude-models-migration-guide.md) - Guide for migrating to Claude 4.6 models from previous Claude versions
+- [Models overview](about-claude-models-overview-2bbf09ff82.md) - Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their per
 - [Models overview - Claude API Docs](about-claude-models-overview.md) - Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their per
 - [Claude Sonnet 3.7](about-claude-models-whats-new-claude-4-5.md) - Claude 4.5 introduces three models designed for different use cases:
 - [What's new in Claude 4.6 - Claude API Docs](about-claude-models-whats-new-claude-4-6.md) - Overview of new features and capabilities in Claude Opus 4.6 and Sonnet 4.6.
+- [What's new in Claude Opus 4.7](about-claude-models-whats-new-claude-4-7-3e4989177d.md) - Overview of new features, breaking changes, and behavior changes in Claude Opus 4.7.
 - [Adapting to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations.md) - 4.  Adapting to new model personas after deprecations
+- [Claude API skill](agents-and-tools-agent-skills-claude-api-skill-195bd9fb41.md) - An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building application
 - [Claude Code on Amazon Bedrock](amazon-bedrock.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+- [Models](api-beta-models-a2ec582f9d.md) - **get** `/v1/models`
+- [Api Beta Models List Ae1Bbbc10A](api-beta-models-list-ae1bbbc10a.md) - **get** `/v1/models`
 - [List Models - Claude API Reference](api-beta-models-list.md) - GET/v1/models
+- [Api Beta Models Retrieve 14Ec84A11D](api-beta-models-retrieve-14ec84a11d.md) - **get** `/v1/models/{model_id}`
 - [Get a Model - Claude API Reference](api-beta-models-retrieve.md) - GET/v1/models/{model_id}
 - [Models - Claude API Reference](api-beta-models.md) - GET/v1/models
+- [Trigger a routine via API](api-claude-code-routines-fire-df6c51ff06.md) - Start a Claude Code routine session on demand by sending an authenticated POST request.
 - [Claude on Amazon Bedrock - Claude API Docs](api-claude-on-amazon-bedrock.md) - Anthropic's Claude models are now generally available through Amazon Bedrock.
 - [Claude on Vertex AI - Claude API Docs](api-claude-on-vertex-ai.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
+- [Models](api-cli-beta-models-385ff34a98.md) - `$ ant beta:models list`
+- [Api Cli Beta Models List 5Ec77A878A](api-cli-beta-models-list-5ec77a878a.md) - `$ ant beta:models list`
 - [API Reference - Claude API Docs](api-cli-beta-models-list.md)
+- [Api Cli Beta Models Retrieve Dbbcb4692A](api-cli-beta-models-retrieve-dbbcb4692a.md) - `$ ant beta:models retrieve`
 - [API Reference - Claude API Docs](api-cli-beta-models-retrieve.md)
+- [Models](api-cli-models-3936ae0c6e.md) - `$ ant models list`
+- [Api Cli Models List E974Eb8808](api-cli-models-list-e974eb8808.md) - `$ ant models list`
 - [API Reference - Claude API Docs](api-cli-models-list.md)
+- [Api Cli Models Retrieve 88D62A2309](api-cli-models-retrieve-88d62a2309.md) - `$ ant models retrieve`
 - [API Reference - Claude API Docs](api-cli-models-retrieve.md)
 - [API Reference - Claude API Docs](api-cli-models.md)
+- [Models](api-csharp-beta-models-bebc8508a9.md) - `ModelListPageResponse Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Beta Models List B1924F15F6](api-csharp-beta-models-list-b1924f15f6.md) - `ModelListPageResponse Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`
 - [List Models - Claude API Reference](api-csharp-beta-models-list.md) - [ModelListPageResponse](/docs/en/api/beta#ModelListPageResponse) Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = def
+- [Api Csharp Beta Models Retrieve Cee06C3353](api-csharp-beta-models-retrieve-cee06c3353.md) - `BetaModelInfo Beta.Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)`
 - [Get a Model - Claude API Reference](api-csharp-beta-models-retrieve.md) - [BetaModelInfo](/docs/en/api/beta#beta_model_info) Beta.Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)
 - [Models - Claude API Reference](api-csharp-beta-models.md) - [ModelListPageResponse](/docs/en/api/beta#ModelListPageResponse) Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = def
+- [Models](api-csharp-models-b1bf3133da.md) - `ModelListPageResponse Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`
+- [Api Csharp Models List B002A3B259](api-csharp-models-list-b002a3b259.md) - `ModelListPageResponse Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`
 - [List Models - Claude API Reference](api-csharp-models-list.md) - [ModelListPageResponse](/docs/en/api/models#ModelListPageResponse) Models.List(ModelListParams?parameters, CancellationTokencancellationToken = defaul
+- [Api Csharp Models Retrieve 18Bdbda1Bf](api-csharp-models-retrieve-18bdbda1bf.md) - `ModelInfo Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)`
 - [Get a Model - Claude API Reference](api-csharp-models-retrieve.md) - [ModelInfo](/docs/en/api/models#model_info) Models.Retrieve(ModelRetrieveParamsparameters, CancellationTokencancellationToken = default)
 - [Models - Claude API Reference](api-csharp-models.md) - [ModelListPageResponse](/docs/en/api/models#ModelListPageResponse) Models.List(ModelListParams?parameters, CancellationTokencancellationToken = defaul
+- [Models](api-go-beta-models-dc67d6d98f.md) - `client.Beta.Models.List(ctx, params) (*Page[BetaModelInfo], error)`
+- [Api Go Beta Models List 8508160C0C](api-go-beta-models-list-8508160c0c.md) - `client.Beta.Models.List(ctx, params) (*Page[BetaModelInfo], error)`
 - [List Models - Claude API Reference](api-go-beta-models-list.md) - client.Beta.Models.List(ctx, params) (\*Page\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\], error)
+- [Api Go Beta Models Retrieve 2C08672762](api-go-beta-models-retrieve-2c08672762.md) - `client.Beta.Models.Get(ctx, modelID, query) (*BetaModelInfo, error)`
 - [Get a Model - Claude API Reference](api-go-beta-models-retrieve.md) - client.Beta.Models.Get(ctx, modelID, query) (\*[BetaModelInfo](/docs/en/api/beta#beta_model_info), error)
 - [Models - Claude API Reference](api-go-beta-models.md) - client.Beta.Models.List(ctx, params) (\*Page\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\], error)
+- [Models](api-go-models-25db9e22b0.md) - `client.Models.List(ctx, params) (*Page[ModelInfo], error)`
+- [Api Go Models List B97B073D73](api-go-models-list-b97b073d73.md) - `client.Models.List(ctx, params) (*Page[ModelInfo], error)`
 - [List Models - Claude API Reference](api-go-models-list.md) - client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)
+- [Api Go Models Retrieve 313338Efb3](api-go-models-retrieve-313338efb3.md) - `client.Models.Get(ctx, modelID, query) (*ModelInfo, error)`
 - [Get a Model - Claude API Reference](api-go-models-retrieve.md) - client.Models.Get(ctx, modelID, query) (\*[ModelInfo](/docs/en/api/models#model_info), error)
 - [Models - Claude API Reference](api-go-models.md) - client.Models.List(ctx, params) (\*Page\[[ModelInfo](/docs/en/api/models#model_info)\], error)
+- [Models](api-java-beta-models-64a1025640.md) - `ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Beta Models List 814D420B34](api-java-beta-models-list-814d420b34.md) - `ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
 - [List Models - Claude API Reference](api-java-beta-models-list.md) - ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Beta Models Retrieve B6B56B8585](api-java-beta-models-retrieve-b6b56b8585.md) - `BetaModelInfo beta().models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
 - [Get a Model - Claude API Reference](api-java-beta-models-retrieve.md) - [BetaModelInfo](/docs/en/api/beta#beta_model_info) beta().models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequ
 - [Models - Claude API Reference](api-java-beta-models.md) - ModelListPage beta().models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Models](api-java-models-fd4e62202c.md) - `ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
+- [Api Java Models List 25D15Be48F](api-java-models-list-25d15be48f.md) - `ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
 - [List Models - Claude API Reference](api-java-models-list.md) - ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [Api Java Models Retrieve 57894Cb23E](api-java-models-retrieve-57894cb23e.md) - `ModelInfo models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`
 - [Get a Model - Claude API Reference](api-java-models-retrieve.md) - [ModelInfo](/docs/en/api/models#model_info) models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = R
 - [Models - Claude API Reference](api-java-models.md) - ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 - [API Reference - Claude API Docs](api-kotlin-beta-models-list.md)
@@ -45,47 +78,88 @@
 - [API Reference - Claude API Docs](api-kotlin-models-list.md)
 - [API Reference - Claude API Docs](api-kotlin-models-retrieve.md)
 - [API Reference - Claude API Docs](api-kotlin-models.md)
+- [Models](api-models-4198291c1d.md) - **get** `/v1/models`
+- [Api Models List B413Cb243D](api-models-list-b413cb243d.md) - **get** `/v1/models`
 - [List Models - Claude API Reference](api-models-list.md) - GET/v1/models
+- [Api Models Retrieve 3Fb773E9F6](api-models-retrieve-3fb773e9f6.md) - **get** `/v1/models/{model_id}`
 - [Get a Model - Claude API Reference](api-models-retrieve.md) - GET/v1/models/{model_id}
 - [Models - Claude API Reference](api-models.md) - GET/v1/models
+- [Api Php Beta Models Bc11Debf5F](api-php-beta-models-bc11debf5f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Beta Models List A1Aa4Ff86A](api-php-beta-models-list-a1aa4ff86a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [API Reference - Claude API Docs](api-php-beta-models-list.md)
+- [Api Php Beta Models Retrieve Bd62E9752A](api-php-beta-models-retrieve-bd62e9752a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [API Reference - Claude API Docs](api-php-beta-models-retrieve.md)
 - [API Reference - Claude API Docs](api-php-beta-models.md)
+- [Api Php Models Be72888A0C](api-php-models-be72888a0c.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Php Models List Eab1F9E8C2](api-php-models-list-eab1f9e8c2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [API Reference - Claude API Docs](api-php-models-list.md)
+- [Api Php Models Retrieve 0B864180Ca](api-php-models-retrieve-0b864180ca.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [API Reference - Claude API Docs](api-php-models-retrieve.md)
 - [API Reference - Claude API Docs](api-php-models.md)
+- [Models](api-python-beta-models-eec7c66fe8.md) - `beta.models.list(ModelListParams**kwargs)  -> SyncPage[BetaModelInfo]`
+- [Api Python Beta Models List 87C31713E6](api-python-beta-models-list-87c31713e6.md) - `beta.models.list(ModelListParams**kwargs)  -> SyncPage[BetaModelInfo]`
 - [List Models - Claude API Reference](api-python-beta-models-list.md) - beta.models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\]
+- [Api Python Beta Models Retrieve C6856A2Cd8](api-python-beta-models-retrieve-c6856a2cd8.md) - `beta.models.retrieve(strmodel_id, ModelRetrieveParams**kwargs)  -> BetaModelInfo`
 - [Get a Model - Claude API Reference](api-python-beta-models-retrieve.md) - beta.models.retrieve(strmodel_id, ModelRetrieveParams\*\*kwargs) -\> [BetaModelInfo](/docs/en/api/beta#beta_model_info)
 - [Models - Claude API Reference](api-python-beta-models.md) - beta.models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[BetaModelInfo](/docs/en/api/beta#beta_model_info)\]
+- [Models](api-python-models-a341fb37d1.md) - `models.list(ModelListParams**kwargs)  -> SyncPage[ModelInfo]`
+- [Api Python Models List 2A1Dd5Faa9](api-python-models-list-2a1dd5faa9.md) - `models.list(ModelListParams**kwargs)  -> SyncPage[ModelInfo]`
 - [List Models - Claude API Reference](api-python-models-list.md) - models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[ModelInfo](/docs/en/api/models#model_info)\]
+- [Api Python Models Retrieve C35Ec69E3E](api-python-models-retrieve-c35ec69e3e.md) - `models.retrieve(strmodel_id, ModelRetrieveParams**kwargs)  -> ModelInfo`
 - [Get a Model - Claude API Reference](api-python-models-retrieve.md) - models.retrieve(strmodel_id, ModelRetrieveParams\*\*kwargs) -\> [ModelInfo](/docs/en/api/models#model_info)
 - [Models - Claude API Reference](api-python-models.md) - models.list(ModelListParams\*\*kwargs) -\> SyncPage\[[ModelInfo](/docs/en/api/models#model_info)\]
+- [Models](api-ruby-beta-models-7b883a56af.md) - `beta.models.list(**kwargs) -> Page<BetaModelInfo>`
+- [Api Ruby Beta Models List 7217473A41](api-ruby-beta-models-list-7217473a41.md) - `beta.models.list(**kwargs) -> Page<BetaModelInfo>`
 - [List Models - Claude API Reference](api-ruby-beta-models-list.md) - beta.models.list(\*\*kwargs) -\> Page\<[BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more } \>
+- [Api Ruby Beta Models Retrieve E10Ee4385E](api-ruby-beta-models-retrieve-e10ee4385e.md) - `beta.models.retrieve(model_id, **kwargs) -> BetaModelInfo`
 - [Get a Model - Claude API Reference](api-ruby-beta-models-retrieve.md) - beta.models.retrieve(model_id, \*\*kwargs) -\> [BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more }
 - [Models - Claude API Reference](api-ruby-beta-models.md) - beta.models.list(\*\*kwargs) -\> Page\<[BetaModelInfo](/docs/en/api/beta#beta_model_info) { id, capabilities, created_at, 4 more } \>
+- [Models](api-ruby-models-2213575730.md) - `models.list(**kwargs) -> Page<ModelInfo>`
+- [Api Ruby Models List 72E050C024](api-ruby-models-list-72e050c024.md) - `models.list(**kwargs) -> Page<ModelInfo>`
 - [List Models - Claude API Reference](api-ruby-models-list.md) - models.list(\*\*kwargs) -\> Page\<[ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more } \>
+- [Api Ruby Models Retrieve 295Cc71355](api-ruby-models-retrieve-295cc71355.md) - `models.retrieve(model_id, **kwargs) -> ModelInfo`
 - [Get a Model - Claude API Reference](api-ruby-models-retrieve.md) - models.retrieve(model_id, \*\*kwargs) -\> [ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more }
 - [Models - Claude API Reference](api-ruby-models.md) - models.list(\*\*kwargs) -\> Page\<[ModelInfo](/docs/en/api/models#model_info) { id, capabilities, created_at, 4 more } \>
+- [Api Terraform Beta Models 16Da610869](api-terraform-beta-models-16da610869.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Beta Models List A7A45D16A6](api-terraform-beta-models-list-a7a45d16a6.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [API Reference - Claude API Docs](api-terraform-beta-models-list.md)
+- [Api Terraform Beta Models Retrieve 1E79A77F5A](api-terraform-beta-models-retrieve-1e79a77f5a.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [API Reference - Claude API Docs](api-terraform-beta-models-retrieve.md)
 - [API Reference - Claude API Docs](api-terraform-beta-models.md)
+- [Api Terraform Models 92Ed38423F](api-terraform-models-92ed38423f.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
+- [Api Terraform Models List 9B559223F2](api-terraform-models-list-9b559223f2.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [API Reference - Claude API Docs](api-terraform-models-list.md)
+- [Api Terraform Models Retrieve C62Ab07A53](api-terraform-models-retrieve-c62ab07a53.md) - <!DOCTYPE html><html class="h-screen antialiased bg-bg-100 __variable_8d1da5 __variable_2d8cf6 __variable_5581e8" lang="en-US" data-theme="claude" dat
 - [API Reference - Claude API Docs](api-terraform-models-retrieve.md)
 - [API Reference - Claude API Docs](api-terraform-models.md)
+- [Models](api-typescript-beta-models-cad3407342.md) - `client.beta.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<BetaModelInfo>`
+- [Api Typescript Beta Models List Ea157F6718](api-typescript-beta-models-list-ea157f6718.md) - `client.beta.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<BetaModelInfo>`
 - [List Models - Claude API Reference](api-typescript-beta-models-list.md) - client.beta.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaModelInfo](/docs/en/api/bet
+- [Api Typescript Beta Models Retrieve 4B1Af399Ce](api-typescript-beta-models-retrieve-4b1af399ce.md) - `client.beta.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): BetaModelInfo`
 - [Get a Model - Claude API Reference](api-typescript-beta-models-retrieve.md) - client.beta.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [BetaModelInfo](/docs/en/api/beta#beta_mode
 - [Models - Claude API Reference](api-typescript-beta-models.md) - client.beta.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[BetaModelInfo](/docs/en/api/bet
+- [Models](api-typescript-models-87c153d4e2.md) - `client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>`
+- [Api Typescript Models List E65Ad3192F](api-typescript-models-list-e65ad3192f.md) - `client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>`
 - [List Models - Claude API Reference](api-typescript-models-list.md) - client.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[ModelInfo](/docs/en/api/models#model
+- [Api Typescript Models Retrieve A0206D3Dca](api-typescript-models-retrieve-a0206d3dca.md) - `client.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): ModelInfo`
 - [Get a Model - Claude API Reference](api-typescript-models-retrieve.md) - client.models.retrieve(stringmodelID, ModelRetrieveParams { betas } params?, RequestOptionsoptions?): [ModelInfo](/docs/en/api/models#model_info) { id
 - [Models - Claude API Reference](api-typescript-models.md) - client.models.list(ModelListParams { after_id, before_id, limit, betas } params?, RequestOptionsoptions?): Page\<[ModelInfo](/docs/en/api/models#model
 - [Applying Claude Opus 4.5&#x27;s strengths to your everyday work | Claude](applying-claude-opus-4-5-s-strengths-to-your-everyday-work.md) - - [](../15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
+- [Claude Code Analytics API](build-with-claude-claude-code-analytics-api-f78828c053.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 - [Claude Code Analytics API - Claude API Docs](build-with-claude-claude-code-analytics-api.md) - Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
+- [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock-fe322d327e.md) - Access Claude models through Amazon Bedrock with AWS-native authentication, billing, and security boundaries.
+- [Claude in Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry-cac680095c.md) - Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
 - [Claude in Microsoft Foundry - Claude API Docs](build-with-claude-claude-in-microsoft-foundry.md) - Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
+- [Claude on Amazon Bedrock (legacy)](build-with-claude-claude-on-amazon-bedrock-legacy-d59184ae62.md) - The legacy Amazon Bedrock integration for Claude models, using InvokeModel and Converse APIs with ARN-versioned model identifiers.
 - [Claude on Amazon Bedrock - Claude API Docs](build-with-claude-claude-on-amazon-bedrock.md) - Anthropic's Claude models are now generally available through Amazon Bedrock.
+- [Claude on Vertex AI](build-with-claude-claude-on-vertex-ai-8049f13ebc.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
 - [Claude on Vertex AI - Claude API Docs](build-with-claude-claude-on-vertex-ai.md) - Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).
 - [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model.md) - 3.  Can I use my Outputs to train an AI model?
 - [Change Breakdown: 2.1.42 vs 2.1.41](change-breakdown-2.1.42-vs-2.1.41.md) - - Most differences are minifier/symbol churn.
 - [Claude Code model configuration | Claude Help Center](claude-code-model-configuration.md) - This guide shows you three ways to change which Claude model you're using with Claude Code: the quick `/model` command for instant changes, the `--mod
+- [Claude Code on Amazon Bedrock - Claude Code Docs](claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md) - Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting.
+- [Claude Code on Google Vertex AI - Claude Code Docs](claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md) - Learn about configuring Claude Code through Google Vertex AI, including setup, IAM configuration, and troubleshooting.
+- [Claude Code on Microsoft Foundry - Claude Code Docs](claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md) - Learn about configuring Claude Code through Microsoft Foundry, including setup, configuration, and troubleshooting.
 - [Claude Code Binary Diff: 2.1.42 → 2.1.50](claude-diff-2142-vs-2150.md) - **Method:** ELF section analysis + Bun SFE bundle string extraction
 - [Claude Mythos Preview](claude-mythos-preview.md) - Claude Mythos Preview is a new general-purpose language model announced April 7, 2026, that is strikingly capable at computer security tasks. It is no
 - [Claude Binary Reverse Engineering Diff Report](claude-pyghidra-diff-2.1.50-2.1.55-2.1.59.md) - Scope: `/home/zack/.local/share/claude/versions/2.1.50` -> `/home/zack/.local/share/claude/versions/2.1.55` -> `/home/zack/.local/share/claude/version

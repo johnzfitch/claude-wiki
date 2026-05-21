@@ -1,8 +1,11 @@
 ---
+title: "Api Python Messages Batches Results A00Ddd1A31"
+source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/results.md"
+tags: ["api", "python"]
 ---
+
 ## Results
 
 `messages.batches.results(strmessage_batch_id)  -> MessageBatchIndividualResponse`

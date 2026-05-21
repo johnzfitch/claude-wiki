@@ -1,9 +1,11 @@
 ---
+title: "Fine-grained tool streaming"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming.md"
-title: "Fine-grained tool streaming"
+tags: ["api"]
 ---
+
 # Fine-grained tool streaming
 
 Stream tool inputs character-by-character for latency-sensitive applications.

@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Usage Report Retrieve Messages A10B0B7A1A"
+source_url: "https://platform.claude.com/docs/en/api/admin/usage_report/retrieve_messages.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/usage_report/retrieve_messages.md"
+tags: ["api"]
 ---
+
 ## Retrieve Messages
 
 **get** `/v1/organizations/usage_report/messages`

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Sessions Resources Add 1B0A88Adac"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/resources/add.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/resources/add.md"
+tags: ["api", "typescript"]
 ---
+
 ## Add
 
 `client.beta.sessions.resources.add(stringsessionID, ResourceAddParamsparams, RequestOptionsoptions?): BetaManagedAgentsFileResource`

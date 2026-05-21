@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Memory Stores Delete 7Fab031F27"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `beta.memory_stores.delete(memory_store_id, **kwargs) -> BetaManagedAgentsDeletedMemoryStore`

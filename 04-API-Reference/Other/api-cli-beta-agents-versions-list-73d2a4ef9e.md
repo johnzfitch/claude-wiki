@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Agents Versions List 73D2A4Ef9E"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/agents/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/agents/versions/list.md"
+tags: ["agents", "api", "cli"]
 ---
+
 ## List
 
 `$ ant beta:agents:versions list`

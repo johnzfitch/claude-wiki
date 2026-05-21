@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-04-26T03:19:43Z"
+fetched_at: "2026-05-19T21:22:16Z"
 source_url: "https://code.claude.com/docs/en/authentication"
 title: "Authentication - Claude Code Docs"
 ---
@@ -11,6 +11,12 @@ title: "Authentication - Claude Code Docs"
 Log in to Claude Code and configure authentication for individuals, teams, and organizations.
 
 
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
+
 Claude Code supports multiple authentication methods depending on your setup. Individual users can log in with a Claude.ai account, while teams can use Claude for Teams or Enterprise, the Claude Console, or a cloud provider like Amazon Bedrock, Google Vertex AI, or Microsoft Foundry.
 
 
@@ -18,14 +24,14 @@ Claude Code supports multiple authentication methods depending on your setup. In
 
 Log in to Claude Code
 
-After [installing Claude Code](/docs/en/setup#install-claude-code), run `claude` in your terminal. On first launch, Claude Code opens a browser window for you to log in. If the browser doesn’t open automatically, press `c` to copy the login URL to your clipboard, then paste it into your browser. If your browser shows a login code instead of redirecting back after you sign in, paste it into the terminal at the `Paste code here if prompted` prompt. You can authenticate with any of these account types:
+After [installing Claude Code](/docs/en/setup#install-claude-code), run `claude` in your terminal. On first launch, Claude Code opens a browser window for you to log in. If the browser doesn’t open automatically, press `c` to copy the login URL to your clipboard, then paste it into your browser. If your browser shows a login code instead of redirecting back after you sign in, paste it into the terminal at the `Paste code here if prompted` prompt. This happens when the browser can’t reach Claude Code’s local callback server, which is common in WSL2, SSH sessions, and containers. You can authenticate with any of these account types:
 
 - **Claude Pro or Max subscription**: log in with your Claude.ai account. Subscribe at [claude.com/pricing](https://claude.com/pricing?utm_source=claude_code&utm_medium=docs&utm_content=authentication_pro_max).
 - **Claude for Teams or Enterprise**: log in with the Claude.ai account your team admin invited you to.
 - **Claude Console**: log in with your Console credentials. Your admin must have [invited you](#claude-console-authentication) first.
 - **Cloud providers**: if your organization uses [Amazon Bedrock](/docs/en/amazon-bedrock), [Google Vertex AI](/docs/en/google-vertex-ai), or [Microsoft Foundry](/docs/en/microsoft-foundry), set the required environment variables before running `claude`. No browser login is needed.
 
-To log out and re-authenticate, type `/logout` at the Claude Code prompt. If you’re having trouble logging in, see [authentication troubleshooting](/docs/en/troubleshooting#authentication-issues).
+To log out and re-authenticate, type `/logout` at the Claude Code prompt. If you’re having trouble logging in, see [authentication troubleshooting](/docs/en/troubleshoot-install#login-and-authentication).
 
 
 [​](#set-up-team-authentication)
@@ -152,7 +158,12 @@ Credential management
 
 Claude Code securely manages your authentication credentials:
 
-- **Storage location**: on macOS, credentials are stored in the encrypted macOS Keychain. On Linux and Windows, credentials are stored in `~/.claude/.credentials.json`, or under `$CLAUDE_CONFIG_DIR` if that variable is set. On Linux, the file is written with mode `0600`; on Windows, it inherits the access controls of your user profile directory.
+- **Storage location**:
+  - On macOS, credentials are stored in the encrypted macOS Keychain.
+  - On Linux, credentials are stored in `~/.claude/.credentials.json` with file mode `0600`.
+  - On Windows, credentials are stored in `%USERPROFILE%\.claude\.credentials.json` and inherit the access controls of your user profile directory, which restricts the file to your user account by default.
+  - If you’ve set the `CLAUDE_CONFIG_DIR` environment variable on Linux or Windows, the `.credentials.json` file lives under that directory instead.
+  - Claude Code manages `.credentials.json` through `/login` and `/logout`. To route requests through a custom API endpoint, set the [`ANTHROPIC_BASE_URL`](/docs/en/env-vars) environment variable instead.
 - **Supported authentication types**: Claude.ai credentials, Claude API credentials, Azure Auth, Bedrock Auth, and Vertex Auth.
 - **Custom credential scripts**: the [`apiKeyHelper`](/docs/en/settings#available-settings) setting can be configured to run a shell script that returns an API key.
 - **Refresh intervals**: by default, `apiKeyHelper` is called after 5 minutes or on HTTP 401 response. Set `CLAUDE_CODE_API_KEY_HELPER_TTL_MS` environment variable for custom refresh intervals.
@@ -180,6 +191,8 @@ If you have an active Claude subscription but also have `ANTHROPIC_API_KEY` set 
 [​](#generate-a-long-lived-token)
 
 Generate a long-lived token
+
+Starting June 15, 2026, Agent SDK and `claude -p` usage on subscription plans will draw from a new monthly Agent SDK credit, separate from your interactive usage limits. See [Use the Claude Agent SDK with your Claude plan](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan) for details.
 
 For CI pipelines, scripts, or other environments where interactive browser login isn’t available, generate a one-year OAuth token with `claude setup-token`:
 

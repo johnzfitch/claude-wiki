@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Vaults Retrieve 28D6919Ce8"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `beta.vaults.retrieve(vault_id, **kwargs) -> BetaManagedAgentsVault`

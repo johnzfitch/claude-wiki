@@ -1,9 +1,11 @@
 ---
+title: "Authenticate with vaults"
+source_url: "https://platform.claude.com/docs/en/managed-agents/vaults.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/vaults.md"
-title: "Authenticate with vaults"
+tags: ["api"]
 ---
+
 # Authenticate with vaults
 
 Register per-user credentials when creating sessions.

@@ -1,8 +1,11 @@
 ---
+title: "Api Models Retrieve 3Fb773E9F6"
+source_url: "https://platform.claude.com/docs/en/api/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/models/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 **get** `/v1/models/{model_id}`

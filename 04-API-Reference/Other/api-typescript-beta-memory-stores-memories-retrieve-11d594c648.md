@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Memory Stores Memories Retrieve 11D594C648"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/memory_stores/memories/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/memory_stores/memories/retrieve.md"
+tags: ["api", "typescript"]
 ---
+
 ## Retrieve
 
 `client.beta.memoryStores.memories.retrieve(stringmemoryID, MemoryRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`

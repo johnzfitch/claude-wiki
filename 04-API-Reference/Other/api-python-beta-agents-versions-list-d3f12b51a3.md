@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Agents Versions List D3F12B51A3"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/agents/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/agents/versions/list.md"
+tags: ["agents", "api", "python"]
 ---
+
 ## List
 
 `beta.agents.versions.list(stragent_id, VersionListParams**kwargs)  -> SyncPageCursor[BetaManagedAgentsAgent]`

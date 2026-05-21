@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Completions Create 1A4F2687B1"
+source_url: "https://platform.claude.com/docs/en/api/typescript/completions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/completions/create.md"
+tags: ["api", "typescript"]
 ---
+
 ## Create
 
 `client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>`

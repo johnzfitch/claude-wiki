@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Vaults List 3250Cd77B1"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/vaults/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/vaults/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `VaultListPage beta().vaults().list(VaultListParamsparams = VaultListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

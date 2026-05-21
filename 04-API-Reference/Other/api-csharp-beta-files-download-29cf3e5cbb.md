@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Files Download 29Cf3E5Cbb"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/download.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/download.md"
+tags: ["api"]
 ---
+
 ## Download
 
 `HttpResponse Beta.Files.Download(FileDownloadParamsparameters, CancellationTokencancellationToken = default)`

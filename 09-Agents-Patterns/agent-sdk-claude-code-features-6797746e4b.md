@@ -1,9 +1,11 @@
 ---
+title: "Use Claude Code features in the SDK"
+source_url: "https://code.claude.com/docs/en/agent-sdk/claude-code-features.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/claude-code-features.md"
-title: "Use Claude Code features in the SDK"
+tags: ["agents", "claude-code", "hooks", "sdk", "skills"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -16,7 +18,7 @@ The Agent SDK is built on the same foundation as Claude Code, which means your S
 
 When you omit `settingSources`, `query()` reads the same filesystem settings as the Claude Code CLI: user, project, and local settings, CLAUDE.md files, and `.claude/` skills, agents, and commands. To run without these, pass `settingSources: []`, which limits the agent to what you configure programmatically. Managed policy settings and the global `~/.claude.json` config are read regardless of this option. See [What settingSources does not control](#what-settingsources-does-not-control).
 
-For a conceptual overview of what each feature does and when to use it, see [Extend Claude Code](/en/features-overview).
+For a conceptual overview of what each feature does and when to use it, see [Extend Claude Code](../02-Claude-Code-CLI/extend-claude-code-claude-code-docs-3b35aaf641.md).
 
 ## Control filesystem settings with settingSources
 
@@ -119,7 +121,7 @@ All levels are additive: if both project and user CLAUDE.md files exist, the age
   You can also inject context directly via `systemPrompt` without using CLAUDE.md files. See [Modify system prompts](/en/agent-sdk/modifying-system-prompts). Use CLAUDE.md when you want the same context shared between interactive Claude Code sessions and your SDK agents.
 </Tip>
 
-For how to structure and organize CLAUDE.md content, see [Manage Claude's memory](/en/memory).
+For how to structure and organize CLAUDE.md content, see [Manage Claude's memory](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md).
 
 ## Skills
 
@@ -173,7 +175,7 @@ For more on creating and using skills, see [Agent Skills in the SDK](/en/agent-s
 
 The SDK supports two ways to define hooks, and they run side by side:
 
-* **Filesystem hooks:** shell commands defined in `settings.json`, loaded when `settingSources` includes the relevant source. These are the same hooks you'd configure for [interactive Claude Code sessions](/en/hooks-guide).
+* **Filesystem hooks:** shell commands defined in `settings.json`, loaded when `settingSources` includes the relevant source. These are the same hooks you'd configure for [interactive Claude Code sessions](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md).
 * **Programmatic hooks:** callback functions passed directly to `query()`. These run in your application process and can return structured decisions. See [Control execution with hooks](/en/agent-sdk/hooks).
 
 Both types execute during the same hook lifecycle. If you already have hooks in your project's `.claude/settings.json` and you set `settingSources: ["project"]`, those hooks run automatically in the SDK with no extra configuration.
@@ -257,7 +259,7 @@ Hook callbacks receive the tool input and return a decision dict. Returning `{}`
   The TypeScript SDK supports additional hook events beyond Python, including `SessionStart`, `SessionEnd`, `TeammateIdle`, and `TaskCompleted`. See the [hooks guide](/en/agent-sdk/hooks) for the full event compatibility table.
 </Note>
 
-For full details on programmatic hooks, see [Control execution with hooks](/en/agent-sdk/hooks). For filesystem hook syntax, see [Hooks](/en/hooks).
+For full details on programmatic hooks, see [Control execution with hooks](/en/agent-sdk/hooks). For filesystem hook syntax, see [Hooks](../07-Hooks/hooks-9168ed62a4.md).
 
 ## Choose the right feature
 
@@ -265,11 +267,11 @@ The Agent SDK gives you access to several ways to extend your agent's behavior. 
 
 | You want to...                                                                                    | Use                                           | SDK surface                                                                                                                                                    |
 | :------------------------------------------------------------------------------------------------ | :-------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Set project conventions your agent always follows                                                 | [CLAUDE.md](/en/memory)                       | `settingSources: ["project"]` loads it automatically                                                                                                           |
+| Set project conventions your agent always follows                                                 | [CLAUDE.md](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md)                       | `settingSources: ["project"]` loads it automatically                                                                                                           |
 | Give the agent reference material it loads when relevant                                          | [Skills](/en/agent-sdk/skills)                | `settingSources` + `allowedTools: ["Skill"]`                                                                                                                   |
 | Run a reusable workflow (deploy, review, release)                                                 | [User-invocable skills](/en/agent-sdk/skills) | `settingSources` + `allowedTools: ["Skill"]`                                                                                                                   |
 | Delegate an isolated subtask to a fresh context (research, review)                                | [Subagents](/en/agent-sdk/subagents)          | `agents` parameter + `allowedTools: ["Agent"]`                                                                                                                 |
-| Coordinate multiple Claude Code instances with shared task lists and direct inter-agent messaging | [Agent teams](/en/agent-teams)                | Not directly configured via SDK options. Agent teams are a CLI feature where one session acts as the team lead, coordinating work across independent teammates |
+| Coordinate multiple Claude Code instances with shared task lists and direct inter-agent messaging | [Agent teams](agent-teams-e29da6ed1b.md)                | Not directly configured via SDK options. Agent teams are a CLI feature where one session acts as the team lead, coordinating work across independent teammates |
 | Run deterministic logic on tool calls (audit, block, transform)                                   | [Hooks](/en/agent-sdk/hooks)                  | `hooks` parameter with callbacks, or shell scripts loaded via `settingSources`                                                                                 |
 | Give Claude structured tool access to an external service                                         | [MCP](/en/agent-sdk/mcp)                      | `mcpServers` parameter                                                                                                                                         |
 
@@ -281,7 +283,7 @@ Every feature you enable adds to your agent's context window. For per-feature co
 
 ## Related resources
 
-* [Extend Claude Code](/en/features-overview): Conceptual overview of all extension features, with comparison tables and context cost analysis
+* [Extend Claude Code](../02-Claude-Code-CLI/extend-claude-code-claude-code-docs-3b35aaf641.md): Conceptual overview of all extension features, with comparison tables and context cost analysis
 * [Skills in the SDK](/en/agent-sdk/skills): Full guide to using skills programmatically
 * [Subagents](/en/agent-sdk/subagents): Define and invoke subagents for isolated subtasks
 * [Hooks](/en/agent-sdk/hooks): Intercept and control agent behavior at key execution points

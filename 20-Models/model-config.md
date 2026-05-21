@@ -105,7 +105,7 @@ Note: Extended context models have
 
 You can see which model you're currently using in several ways:
 
-1. In [status line](/en/statusline) (if configured)
+1. In [status line](../02-Claude-Code-CLI/customize-your-status-line-claude-code-docs-8a9fc80be1.md) (if configured)
 2. In `/status`, which also displays your account information.
 
 ## Environment variables
@@ -118,7 +118,7 @@ names** (or equivalent for your API provider), to control the model names that t
 | `ANTHROPIC_DEFAULT_OPUS_MODEL`   | The model to use for `opus`, or for `opusplan` when Plan Mode is active.                      |
 | `ANTHROPIC_DEFAULT_SONNET_MODEL` | The model to use for `sonnet`, or for `opusplan` when Plan Mode is not active.                |
 | `ANTHROPIC_DEFAULT_HAIKU_MODEL`  | The model to use for `haiku`, or [background functionality](/en/costs#background-token-usage) |
-| `CLAUDE_CODE_SUBAGENT_MODEL`     | The model to use for [subagents](/en/sub-agents)                                              |
+| `CLAUDE_CODE_SUBAGENT_MODEL`     | The model to use for [subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md)                                              |
 
 Note: `ANTHROPIC_SMALL_FAST_MODEL` is deprecated in favor of
 `ANTHROPIC_DEFAULT_HAIKU_MODEL`.

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Models List Ea157F6718"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/models/list.md"
+tags: ["api", "typescript"]
 ---
+
 ## List
 
 `client.beta.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<BetaModelInfo>`

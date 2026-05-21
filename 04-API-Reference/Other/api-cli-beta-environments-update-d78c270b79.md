@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Environments Update D78C270B79"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/environments/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/environments/update.md"
+tags: ["api", "cli"]
 ---
+
 ## Update
 
 `$ ant beta:environments update`

@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Messages Batches List Ec9259Dae9"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `BatchListPageResponse Beta.Messages.Batches.List(BatchListParams?parameters, CancellationTokencancellationToken = default)`

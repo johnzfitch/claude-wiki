@@ -1,9 +1,11 @@
 ---
+title: "Agent Skills in the SDK"
+source_url: "https://code.claude.com/docs/en/agent-sdk/skills.md"
 category: "08-Plugins-Skills"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/skills.md"
-title: "Agent Skills in the SDK"
+tags: ["agents", "plugins", "sdk", "skills", "testing"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -16,7 +18,7 @@ title: "Agent Skills in the SDK"
 
 Agent Skills extend Claude with specialized capabilities that Claude autonomously invokes when relevant. Skills are packaged as `SKILL.md` files containing instructions, descriptions, and optional supporting resources.
 
-For comprehensive information about Skills, including benefits, architecture, and authoring guidelines, see the [Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview).
+For comprehensive information about Skills, including benefits, architecture, and authoring guidelines, see the [Agent Skills overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview-a6ba167cbe.md).
 
 ## How Skills Work with the SDK
 
@@ -102,8 +104,8 @@ Skills are defined as directories containing a `SKILL.md` file with YAML frontma
 
 For complete guidance on creating Skills, including SKILL.md structure, multi-file Skills, and examples, see:
 
-* [Agent Skills in Claude Code](/en/skills): Complete guide with examples
-* [Agent Skills Best Practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices): Authoring guidelines and naming conventions
+* [Agent Skills in Claude Code](extend-claude-with-skills-claude-code-docs.md): Complete guide with examples
+* [Agent Skills Best Practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices-d1da876439.md): Authoring guidelines and naming conventions
 
 ## Tool Restrictions
 
@@ -279,7 +281,7 @@ ls ~/.claude/skills/*/SKILL.md
 
 **Check the Skill tool is enabled**: Confirm `"Skill"` is in your `allowedTools`.
 
-**Check the description**: Ensure it's specific and includes relevant keywords. See [Agent Skills Best Practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices#writing-effective-descriptions) for guidance on writing effective descriptions.
+**Check the description**: Ensure it's specific and includes relevant keywords. See [Agent Skills Best Practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices-d1da876439.md#writing-effective-descriptions) for guidance on writing effective descriptions.
 
 ### Additional Troubleshooting
 
@@ -289,9 +291,9 @@ For general Skills troubleshooting (YAML syntax, debugging, etc.), see the [Clau
 
 ### Skills Guides
 
-* [Agent Skills in Claude Code](/en/skills): Complete Skills guide with creation, examples, and troubleshooting
-* [Agent Skills Overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview): Conceptual overview, benefits, and architecture
-* [Agent Skills Best Practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices): Authoring guidelines for effective Skills
+* [Agent Skills in Claude Code](extend-claude-with-skills-claude-code-docs.md): Complete Skills guide with creation, examples, and troubleshooting
+* [Agent Skills Overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview-a6ba167cbe.md): Conceptual overview, benefits, and architecture
+* [Agent Skills Best Practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices-d1da876439.md): Authoring guidelines for effective Skills
 * [Agent Skills Cookbook](https://platform.claude.com/cookbook/skills-notebooks-01-skills-introduction): Example Skills and templates
 
 ### SDK Resources

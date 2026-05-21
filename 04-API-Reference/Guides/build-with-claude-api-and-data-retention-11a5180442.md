@@ -1,9 +1,11 @@
 ---
+title: "API and data retention"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/api-and-data-retention.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/api-and-data-retention.md"
-title: "API and data retention"
+tags: ["api"]
 ---
+
 # API and data retention
 
 Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
@@ -33,7 +35,7 @@ In the [feature eligibility table](#feature-eligibility), some features are mark
 **What ZDR covers**
 
 - **Certain Claude APIs:** ZDR applies to the Claude Messages and Token Counting APIs
-- **Claude Code:** ZDR applies when used with Commercial organization API keys or through Claude Enterprise (see [Claude Code ZDR docs](https://code.claude.com/docs/en/zero-data-retention))
+- **Claude Code:** ZDR applies when used with Commercial organization API keys or through Claude Enterprise (see [Claude Code ZDR docs](../../22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md))
 
 **What ZDR does NOT cover**
 
@@ -258,7 +260,7 @@ ZDR is enabled on a per-organization basis. Each new organization requires ZDR t
 
 Additionally, if you have metrics logging enabled in Claude Code, productivity data (such as usage statistics) is exempted from ZDR and may be retained.
 
-For full details on ZDR for Claude Code on Claude Enterprise, including disabled features and how to request enablement, see the [Claude Code ZDR documentation](https://code.claude.com/docs/en/zero-data-retention).
+For full details on ZDR for Claude Code on Claude Enterprise, including disabled features and how to request enablement, see the [Claude Code ZDR documentation](../../22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md).
 
 </section>
 

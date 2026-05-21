@@ -1,9 +1,11 @@
 ---
+title: "Quickstart"
+source_url: "https://code.claude.com/docs/en/agent-sdk/quickstart.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/quickstart.md"
-title: "Quickstart"
+tags: ["agents"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -23,7 +25,7 @@ Use the Agent SDK to build an AI agent that reads your code, finds bugs, and fix
 ## Prerequisites
 
 * **Node.js 18+** or **Python 3.10+**
-* An **Anthropic account** ([sign up here](https://platform.claude.com/))
+* An **Anthropic account** ([sign up here](../04-API-Reference/Other/platform-claude-com.md))
 
 ## Setup
 
@@ -72,7 +74,7 @@ Use the Agent SDK to build an AI agent that reads your code, finds bugs, and fix
   </Step>
 
   <Step title="Set your API key">
-    Get an API key from the [Claude Console](https://platform.claude.com/), then create a `.env` file in your project directory:
+    Get an API key from the [Claude Console](../04-API-Reference/Other/platform-claude-com.md), then create a `.env` file in your project directory:
 
     ```bash theme={null}
     ANTHROPIC_API_KEY=your-api-key
@@ -84,7 +86,7 @@ Use the Agent SDK to build an AI agent that reads your code, finds bugs, and fix
     * **Google Vertex AI**: set `CLAUDE_CODE_USE_VERTEX=1` environment variable and configure Google Cloud credentials
     * **Microsoft Azure**: set `CLAUDE_CODE_USE_FOUNDRY=1` environment variable and configure Azure credentials
 
-    See the setup guides for [Bedrock](/en/amazon-bedrock), [Vertex AI](/en/google-vertex-ai), or [Azure AI Foundry](/en/microsoft-foundry) for details.
+    See the setup guides for [Bedrock](../20-Models/claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md), [Vertex AI](../20-Models/claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md), or [Azure AI Foundry](../20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md) for details.
 
     <Note>
       Unless previously approved, Anthropic does not allow third party developers to offer claude.ai login or rate limits for their products, including agents built on the Claude Agent SDK. Please use the API key authentication methods described in this document instead.
@@ -216,7 +218,7 @@ After running, check `utils.py`. You'll see defensive code handling empty lists 
 This is what makes the Agent SDK different: Claude executes tools directly instead of asking you to implement them.
 
 <Note>
-  If you see "API key not found", make sure you've set the `ANTHROPIC_API_KEY` environment variable in your `.env` file or shell environment. See the [full troubleshooting guide](/en/troubleshooting) for more help.
+  If you see "API key not found", make sure you've set the `ANTHROPIC_API_KEY` environment variable in your `.env` file or shell environment. See the [full troubleshooting guide](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md) for more help.
 </Note>
 
 ### Try other prompts

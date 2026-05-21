@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Models List 87C31713E6"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/models/list.md"
+tags: ["api", "python"]
 ---
+
 ## List
 
 `beta.models.list(ModelListParams**kwargs)  -> SyncPage[BetaModelInfo]`

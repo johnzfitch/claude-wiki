@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-04-26T03:19:42Z"
+fetched_at: "2026-05-19T21:22:15Z"
 source_url: "https://code.claude.com/docs/en/analytics"
 title: "Track team usage with analytics - Claude Code Docs"
 ---
@@ -11,12 +11,18 @@ title: "Track team usage with analytics - Claude Code Docs"
 View Claude Code usage metrics, track adoption, and measure engineering velocity in the analytics dashboard.
 
 
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
+
 Claude Code provides analytics dashboards to help organizations understand developer usage patterns, track contribution metrics, and measure how Claude Code impacts engineering velocity. Access the dashboard for your plan:
 
-| Plan | Dashboard URL | Includes | Read more |
-|----|----|----|----|
+| Plan                          | Dashboard URL                                                              | Includes                                                                              | Read more                                            |
+|-------------------------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------|
 | Claude for Teams / Enterprise | [claude.ai/analytics/claude-code](https://claude.ai/analytics/claude-code) | Usage metrics, contribution metrics with GitHub integration, leaderboard, data export | [Details](#access-analytics-for-team-and-enterprise) |
-| API (Claude Console) | [platform.claude.com/claude-code](https://platform.claude.com/claude-code) | Usage metrics, spend tracking, team insights | [Details](#access-analytics-for-api-customers) |
+| API (Claude Console)          | [platform.claude.com/claude-code](https://platform.claude.com/claude-code) | Usage metrics, spend tracking, team insights                                          | [Details](#access-analytics-for-api-customers)       |
 
 
 [​](#access-analytics-for-team-and-enterprise)
@@ -29,6 +35,8 @@ Navigate to [claude.ai/analytics/claude-code](https://claude.ai/analytics/claude
 - **Contribution metrics**: PRs and lines of code shipped with Claude Code assistance, with [GitHub integration](#enable-contribution-metrics)
 - **Leaderboard**: top contributors ranked by Claude Code usage
 - **Data export**: download contribution data as CSV for custom reporting
+
+For per-user token counts and cost estimates, configure [OpenTelemetry export](/docs/en/monitoring-usage).
 
 
 [​](#enable-contribution-metrics)

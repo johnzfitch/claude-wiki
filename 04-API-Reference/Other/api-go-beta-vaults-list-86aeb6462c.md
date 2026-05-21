@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Vaults List 86Aeb6462C"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/vaults/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/vaults/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `client.Beta.Vaults.List(ctx, params) (*PageCursor[BetaManagedAgentsVault], error)`

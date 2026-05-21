@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Memory Stores Memories Delete 908415E78E"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/memories/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/memories/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `BetaManagedAgentsDeletedMemory beta().memoryStores().memories().delete(MemoryDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

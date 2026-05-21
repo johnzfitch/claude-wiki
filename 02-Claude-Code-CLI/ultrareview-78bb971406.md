@@ -1,9 +1,11 @@
 ---
+title: "Find bugs with ultrareview"
+source_url: "https://code.claude.com/docs/en/ultrareview.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/ultrareview.md"
-title: "Find bugs with ultrareview"
+tags: ["claude-code", "cli"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -56,9 +58,9 @@ Ultrareview is a premium feature that bills against extra usage rather than your
 
 | Plan                | Included free runs              | After free runs                                                                                            |
 | ------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Pro                 | 3 free runs through May 5, 2026 | billed as [extra usage](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) |
-| Max                 | 3 free runs through May 5, 2026 | billed as [extra usage](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) |
-| Team and Enterprise | none                            | billed as [extra usage](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) |
+| Pro                 | 3 free runs through May 5, 2026 | billed as [extra usage](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) |
+| Max                 | 3 free runs through May 5, 2026 | billed as [extra usage](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) |
+| Team and Enterprise | none                            | billed as [extra usage](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) |
 
 Pro and Max subscribers receive three free ultrareview runs to try the feature. These three runs are a one-time allotment per account, do not refresh, and expire on May 5, 2026. After you use all three, or after the free run period ends, each review is billed to extra usage and typically costs \$5 to \$20 depending on the size of the change.
 
@@ -86,6 +88,6 @@ Use `/review` for fast feedback as you work. Use `/ultrareview` before merging a
 
 ## Related resources
 
-* [Claude Code on the web](/en/claude-code-on-the-web): learn how remote sessions and cloud sandboxes work
-* [Plan complex changes with ultraplan](/en/ultraplan): the planning counterpart to ultrareview for upfront design work
-* [Manage costs effectively](/en/costs): track usage and set spending limits
+* [Claude Code on the web](claude-code-on-the-web-69d53821d4.md): learn how remote sessions and cloud sandboxes work
+* [Plan complex changes with ultraplan](ultraplan-14dfb476fe.md): the planning counterpart to ultrareview for upfront design work
+* [Manage costs effectively](../17-Billing-Plans/manage-costs-effectively-claude-code-docs-7c26178a4f.md): track usage and set spending limits

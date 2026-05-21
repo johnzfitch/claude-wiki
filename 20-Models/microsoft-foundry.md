@@ -81,7 +81,7 @@ export ANTHROPIC_DEFAULT_HAIKU_MODEL='claude-haiku-4-5'
 export ANTHROPIC_DEFAULT_OPUS_MODEL='claude-opus-4-1'
 ```
 
-For more details on model configuration options, see [Model configuration](/en/model-config).
+For more details on model configuration options, see [Model configuration](../02-Claude-Code-CLI/model-config-ca429e15da.md).
 
 ## Azure RBAC configuration
 

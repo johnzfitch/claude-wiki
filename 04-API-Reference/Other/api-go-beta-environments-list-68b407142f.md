@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Environments List 68B407142F"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `client.Beta.Environments.List(ctx, params) (*PageCursor[BetaEnvironment], error)`

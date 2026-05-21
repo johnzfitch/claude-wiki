@@ -271,5 +271,5 @@ Two teammates editing the same file leads to overwrites. Break the work so each 
 
 ## See Also
 
-- [Subagents](/en/sub-agents)
+- [Subagents](create-custom-subagents-claude-code-docs-7dc93e85c0.md)
 - [Git worktrees](/en/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees)

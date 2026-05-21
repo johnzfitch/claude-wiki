@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Sessions Resources Retrieve 71Bedc677C"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/resources/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/resources/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `ResourceRetrieveResponse beta().sessions().resources().retrieve(ResourceRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

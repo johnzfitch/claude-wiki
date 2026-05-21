@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Files Upload 33844460F0"
+source_url: "https://platform.claude.com/docs/en/api/beta/files/upload.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/files/upload.md"
+tags: ["api"]
 ---
+
 ## Upload
 
 **post** `/v1/files`

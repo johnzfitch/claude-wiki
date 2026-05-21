@@ -112,4 +112,4 @@ Set `CLAUDE_CODE_DISABLE_CRON=1` in your environment to disable the scheduler en
 
 - [Cloud scheduled tasks](web-scheduled-tasks.md)
 - [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md)
-- [GitHub Actions](/en/github-actions)
+- [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md)

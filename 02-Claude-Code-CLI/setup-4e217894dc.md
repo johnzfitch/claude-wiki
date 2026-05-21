@@ -1,9 +1,11 @@
 ---
+title: "Advanced setup"
+source_url: "https://code.claude.com/docs/en/setup.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/setup.md"
-title: "Advanced setup"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -12,7 +14,7 @@ title: "Advanced setup"
 
 > System requirements, platform-specific installation, version management, and uninstallation for Claude Code.
 
-This page covers system requirements, platform-specific installation details, updates, and uninstallation. For a guided walkthrough of your first session, see the [quickstart](/en/quickstart). If you've never used a terminal before, see the [terminal guide](/en/terminal-guide).
+This page covers system requirements, platform-specific installation details, updates, and uninstallation. For a guided walkthrough of your first session, see the [quickstart](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md). If you've never used a terminal before, see the [terminal guide](/en/terminal-guide).
 
 ## System requirements
 
@@ -36,7 +38,7 @@ Claude Code runs on the following platforms and configurations:
 ## Install Claude Code
 
 <Tip>
-  Prefer a graphical interface? The [Desktop app](/en/desktop-quickstart) lets you use Claude Code without the terminal. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code\&utm_medium=docs) or [Windows](https://claude.com/download?utm_source=claude_code\&utm_medium=docs).
+  Prefer a graphical interface? The [Desktop app](../16-Mobile-Desktop/desktop-quickstart.md) lets you use Claude Code without the terminal. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code\&utm_medium=docs) or [Windows](https://claude.com/download?utm_source=claude_code\&utm_medium=docs).
 
   New to the terminal? See the [terminal guide](/en/terminal-guide) for step-by-step instructions.
 </Tip>
@@ -103,13 +105,13 @@ After installation completes, open a terminal in the project you want to work in
 claude
 ```
 
-If you encounter any issues during installation, see the [troubleshooting guide](/en/troubleshooting).
+If you encounter any issues during installation, see the [troubleshooting guide](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md).
 
 ### Set up on Windows
 
 You can run Claude Code natively on Windows or inside WSL. Pick based on where your projects are located and which features you need:
 
-| Option         | Requires                                             | [Sandboxing](/en/sandboxing) | When to use                                     |
+| Option         | Requires                                             | [Sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) | When to use                                     |
 | -------------- | ---------------------------------------------------- | ---------------------------- | ----------------------------------------------- |
 | Native Windows | [Git for Windows](https://git-scm.com/downloads/win) | Not supported                | Windows-native projects and tools               |
 | WSL 2          | WSL 2 enabled                                        | Supported                    | Linux toolchains or sandboxed command execution |
@@ -121,7 +123,7 @@ Install [Git for Windows](https://git-scm.com/downloads/win), then run the insta
 
 Whether you install from PowerShell or CMD only affects which install command you run. Your prompt shows `PS C:\Users\YourName>` in PowerShell and `C:\Users\YourName>` without the `PS` in CMD. If you're new to the terminal, the [terminal guide](/en/terminal-guide#windows) walks through each step.
 
-After installation, launch `claude` from PowerShell, CMD, or Git Bash. Claude Code uses Git Bash internally to execute commands regardless of where you launched it. If Claude Code can't find your Git Bash installation, set the path in your [settings.json file](/en/settings):
+After installation, launch `claude` from PowerShell, CMD, or Git Bash. Claude Code uses Git Bash internally to execute commands regardless of where you launched it. If Claude Code can't find your Git Bash installation, set the path in your [settings.json file](claude-code-settings-claude-code-docs-d4420b4b52.md):
 
 ```json theme={null}
 {
@@ -173,9 +175,9 @@ claude doctor
 
 ## Authenticate
 
-Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free Claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](/en/amazon-bedrock), [Google Vertex AI](/en/google-vertex-ai), or [Microsoft Foundry](/en/microsoft-foundry).
+Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free Claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](../20-Models/claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md), [Google Vertex AI](../20-Models/claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md), or [Microsoft Foundry](../20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md).
 
-After installing, log in by running `claude` and following the browser prompts. See [Authentication](/en/authentication) for all account types and team setup options.
+After installing, log in by running `claude` and following the browser prompts. See [Authentication](../13-Enterprise-Admin/authentication-claude-code-docs-2c6ada8385.md) for all account types and team setup options.
 
 ## Update Claude Code
 
@@ -200,7 +202,7 @@ Control which release channel Claude Code follows for auto-updates and `claude u
 * `"latest"`, the default: receive new features as soon as they're released
 * `"stable"`: use a version that is typically about one week old, skipping releases with major regressions
 
-Configure this via `/config` → **Auto-update channel**, or add it to your [settings.json file](/en/settings):
+Configure this via `/config` → **Auto-update channel**, or add it to your [settings.json file](claude-code-settings-claude-code-docs-d4420b4b52.md):
 
 ```json theme={null}
 {
@@ -218,7 +220,7 @@ The `minimumVersion` setting establishes a floor. Background auto-updates and `c
 
 Switching from `"latest"` to `"stable"` via `/config` prompts you to either stay on the current version or allow the downgrade. Choosing to stay sets `minimumVersion` to that version. Switching back to `"latest"` clears it.
 
-Add it to your [settings.json file](/en/settings) to pin a floor explicitly:
+Add it to your [settings.json file](claude-code-settings-claude-code-docs-d4420b4b52.md) to pin a floor explicitly:
 
 ```json theme={null}
 {
@@ -241,7 +243,7 @@ Set `DISABLE_AUTOUPDATER` to `"1"` in the `env` key of your [`settings.json`](/e
 }
 ```
 
-`DISABLE_AUTOUPDATER` only stops the background check; `claude update` and `claude install` still work. To block all update paths, including manual updates, set [`DISABLE_UPDATES`](/en/env-vars) instead. Use this when you distribute Claude Code through your own channels and need users to stay on the version you provide.
+`DISABLE_AUTOUPDATER` only stops the background check; `claude update` and `claude install` still work. To block all update paths, including manual updates, set [`DISABLE_UPDATES`](env-vars-5c624d392b.md) instead. Use this when you distribute Claude Code through your own channels and need users to stay on the version you provide.
 
 ### Update manually
 

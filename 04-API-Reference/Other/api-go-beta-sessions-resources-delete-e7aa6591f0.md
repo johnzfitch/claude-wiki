@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Sessions Resources Delete E7Aa6591F0"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/resources/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/resources/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `client.Beta.Sessions.Resources.Delete(ctx, resourceID, params) (*BetaManagedAgentsDeleteSessionResource, error)`

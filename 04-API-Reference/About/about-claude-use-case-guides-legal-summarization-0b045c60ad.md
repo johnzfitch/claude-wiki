@@ -1,9 +1,11 @@
 ---
+title: "Legal summarization"
+source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization.md"
 category: "About"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization.md"
-title: "Legal summarization"
+tags: ["api"]
 ---
+
 # Legal summarization
 
 This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key information and expediting legal research. With Claude, you can streamline the review of contracts, litigation prep, and regulatory work, saving time and ensuring accuracy in your legal processes.

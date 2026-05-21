@@ -1,9 +1,11 @@
 ---
+title: "Configure your terminal for Claude Code"
+source_url: "https://code.claude.com/docs/en/terminal-config.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/terminal-config.md"
-title: "Configure your terminal for Claude Code"
+tags: ["claude-code", "prompting"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -21,7 +23,7 @@ Claude Code works in any terminal without configuration. This page is for when s
 * [Display flickers or scrollback jumps](#switch-to-fullscreen-rendering)
 * [You want Vim keys in the prompt](#edit-prompts-with-vim-keybindings)
 
-This page is about getting your terminal to send the right signals to Claude Code. To change which keys Claude Code itself responds to, see [keybindings](/en/keybindings) instead.
+This page is about getting your terminal to send the right signals to Claude Code. To change which keys Claude Code itself responds to, see [keybindings](customize-keyboard-shortcuts-claude-code-docs-f23eb8cfd3.md) instead.
 
 ## Enter multiline prompts
 
@@ -35,11 +37,11 @@ In most terminals you can also press Shift+Enter, but support varies by terminal
 | VS Code, Cursor, Windsurf, Alacritty, Zed                                           | Run `/terminal-setup` once                  |
 | Windows Terminal, gnome-terminal, JetBrains IDEs such as PyCharm and Android Studio | Not available; use Ctrl+J or `\` then Enter |
 
-For VS Code, Cursor, Windsurf, Alacritty, and Zed, `/terminal-setup` writes Shift+Enter and other keybindings into the terminal's configuration file. In VS Code, Cursor, and Windsurf it also sets `terminal.integrated.mouseWheelScrollSensitivity` in the editor settings for smoother scrolling in [fullscreen mode](/en/fullscreen). Existing bindings and settings are left in place; if you see a message such as `VSCode terminal Shift+Enter key binding already configured`, no change was made. Run `/terminal-setup` directly in the host terminal rather than inside tmux or screen, since it needs to write to the host terminal's configuration.
+For VS Code, Cursor, Windsurf, Alacritty, and Zed, `/terminal-setup` writes Shift+Enter and other keybindings into the terminal's configuration file. In VS Code, Cursor, and Windsurf it also sets `terminal.integrated.mouseWheelScrollSensitivity` in the editor settings for smoother scrolling in [fullscreen mode](fullscreen-34ba4558ad.md). Existing bindings and settings are left in place; if you see a message such as `VSCode terminal Shift+Enter key binding already configured`, no change was made. Run `/terminal-setup` directly in the host terminal rather than inside tmux or screen, since it needs to write to the host terminal's configuration.
 
 If you are running inside tmux, Shift+Enter also requires the [tmux configuration below](#configure-tmux) even when the outer terminal supports it.
 
-To bind newline to a different key, or to swap behavior so Enter inserts a newline and Shift+Enter submits, map the `chat:newline` and `chat:submit` actions in your [keybindings file](/en/keybindings).
+To bind newline to a different key, or to swap behavior so Enter inserts a newline and Shift+Enter submits, map the `chat:newline` and `chat:submit` actions in your [keybindings file](customize-keyboard-shortcuts-claude-code-docs-f23eb8cfd3.md).
 
 ## Enable Option key shortcuts on macOS
 
@@ -115,7 +117,7 @@ The `allow-passthrough` line lets notifications and progress updates reach iTerm
 
 Use the `/theme` command, or the theme picker in `/config`, to choose a Claude Code theme that matches your terminal. Selecting the auto option detects your terminal's light or dark background, so the theme follows OS appearance changes whenever your terminal does. Claude Code does not control the terminal's own color scheme, which is set by the terminal application.
 
-To customize what appears at the bottom of the interface, configure a [custom status line](/en/statusline) that shows the current model, working directory, git branch, or other context.
+To customize what appears at the bottom of the interface, configure a [custom status line](customize-your-status-line-claude-code-docs-8a9fc80be1.md) that shows the current model, working directory, git branch, or other context.
 
 ### Create a custom theme
 
@@ -223,7 +225,7 @@ Below is the full list of customizations you can set in `overrides`. The interac
 
   #### Fullscreen mode
 
-  Apply only in [fullscreen rendering mode](/en/fullscreen), where messages have a background fill.
+  Apply only in [fullscreen rendering mode](fullscreen-34ba4558ad.md), where messages have a background fill.
 
   | Token                   | Controls                                          |
   | :---------------------- | :------------------------------------------------ |
@@ -234,12 +236,12 @@ Below is the full list of customizations you can set in `overrides`. The interac
 
   Several tokens have a paired `Shimmer` variant, such as `claudeShimmer` and `warningShimmer`, that supplies the lighter color used in the spinner's animated gradient. Override the shimmer alongside its base token if the animation looks mismatched.
 
-  Each [subagent](/en/sub-agents) and parallel task is shown in one of eight named colors so you can tell them apart in the transcript. The token names follow the pattern `<color>_FOR_SUBAGENTS_ONLY`, where `<color>` is `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, or `cyan`. Override these to change what each named color looks like. For example, a subagent with `color: blue` in its definition is drawn using the `blue_FOR_SUBAGENTS_ONLY` value.
+  Each [subagent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) and parallel task is shown in one of eight named colors so you can tell them apart in the transcript. The token names follow the pattern `<color>_FOR_SUBAGENTS_ONLY`, where `<color>` is `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, or `cyan`. Override these to change what each named color looks like. For example, a subagent with `color: blue` in its definition is drawn using the `blue_FOR_SUBAGENTS_ONLY` value.
 </Accordion>
 
 ## Switch to fullscreen rendering
 
-If the display flickers or the scroll position jumps while Claude is working, switch to [fullscreen rendering mode](/en/fullscreen). It draws to a separate screen the terminal reserves for full-screen apps instead of appending to your normal scrollback, which keeps memory usage flat and adds mouse support for scrolling and selection. In this mode you scroll with the mouse or PageUp inside Claude Code rather than with your terminal's native scrollback; see the [fullscreen page](/en/fullscreen#search-and-review-the-conversation) for how to search and copy.
+If the display flickers or the scroll position jumps while Claude is working, switch to [fullscreen rendering mode](fullscreen-34ba4558ad.md). It draws to a separate screen the terminal reserves for full-screen apps instead of appending to your normal scrollback, which keeps memory usage flat and adds mouse support for scrolling and selection. In this mode you scroll with the mouse or PageUp inside Claude Code rather than with your terminal's native scrollback; see the [fullscreen page](/en/fullscreen#search-and-review-the-conversation) for how to search and copy.
 
 Run `/tui fullscreen` to switch in the current session with your conversation intact. To make it the default, set the `CLAUDE_CODE_NO_FLICKER` environment variable before starting Claude Code:
 
@@ -277,8 +279,8 @@ Pressing Enter still submits your prompt in INSERT mode, unlike standard Vim. Us
 
 ## Related resources
 
-* [Interactive mode](/en/interactive-mode): full keyboard shortcut reference and the Vim key table
-* [Keybindings](/en/keybindings): remap any Claude Code shortcut, including Enter and Shift+Enter
-* [Fullscreen rendering](/en/fullscreen): details on scrolling, search, and copy in fullscreen mode
-* [Hooks guide](/en/hooks-guide): more Notification hook examples for Linux and Windows
-* [Troubleshooting](/en/troubleshooting): fixes for issues outside terminal configuration
+* [Interactive mode](interactive-mode-c5c4efb32c.md): full keyboard shortcut reference and the Vim key table
+* [Keybindings](customize-keyboard-shortcuts-claude-code-docs-f23eb8cfd3.md): remap any Claude Code shortcut, including Enter and Shift+Enter
+* [Fullscreen rendering](fullscreen-34ba4558ad.md): details on scrolling, search, and copy in fullscreen mode
+* [Hooks guide](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md): more Notification hook examples for Linux and Windows
+* [Troubleshooting](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md): fixes for issues outside terminal configuration

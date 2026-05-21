@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Sessions Resources Retrieve 0Baf029E6E"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/resources/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/resources/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `beta.sessions.resources.retrieve(resource_id, **kwargs) -> ResourceRetrieveResponse`

@@ -16,7 +16,7 @@ tags: ["claude-code", "enterprise", "git", "github"]
 
 GitHub Enterprise Server (GHES) support lets your organization use Claude Code with repositories hosted on your self-managed GitHub instance instead of github.com. Once an admin connects your GHES instance, developers can run web sessions, get automated code reviews, and install plugins from internal marketplaces without any per-repository configuration.
 
-For repositories on github.com, see [Claude Code on the web](/en/claude-code-on-the-web) and [Code Review](../02-Claude-Code-CLI/code-review.md). To run Claude in your own CI infrastructure, see [GitHub Actions](/en/github-actions).
+For repositories on github.com, see [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) and [Code Review](../02-Claude-Code-CLI/code-review.md). To run Claude in your own CI infrastructure, see [GitHub Actions](../02-Claude-Code-CLI/claude-code-github-actions-claude-code-docs-0d633fbd8a.md).
 
 ## What works with GitHub Enterprise Server
 
@@ -28,7 +28,7 @@ The table below shows which Claude Code features support GHES and any difference
 | Code Review            | Supported     | Same automated PR reviews as github.com                                                                                      |
 | Teleport sessions      | Supported     | Move sessions between web and terminal with `--teleport`                                                                     |
 | Plugin marketplaces    | Supported     | Use full git URLs instead of `owner/repo` shorthand                                                                          |
-| Contribution metrics   | Supported     | Delivered via webhooks to the [analytics dashboard](/en/analytics)                                                           |
+| Contribution metrics   | Supported     | Delivered via webhooks to the [analytics dashboard](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md)                                                           |
 | GitHub Actions         | Supported     | Requires manual workflow setup; `/install-github-app` is github.com only                                                     |
 | GitHub MCP server      | Not supported | The GitHub MCP server does not work with GHES instances                                                                      |
 
@@ -80,7 +80,7 @@ If the guided redirect flow is blocked by your network configuration, click **Ad
 
 ### Network requirements
 
-Your GHES instance must be reachable from Anthropic infrastructure so Claude can clone repositories and post review comments. If your GHES instance is behind a firewall, allowlist the [Anthropic API IP addresses](https://platform.claude.com/docs/en/api/ip-addresses).
+Your GHES instance must be reachable from Anthropic infrastructure so Claude can clone repositories and post review comments. If your GHES instance is behind a firewall, allowlist the [Anthropic API IP addresses](../04-API-Reference/Other/api-ip-addresses-cc3c763ed7.md).
 
 ## Developer workflow
 
@@ -99,7 +99,7 @@ Then start a web session. Claude detects the GHES host from your git remote and 
 claude --remote "Add retry logic to the payment webhook handler"
 ```
 
-The session runs on Anthropic infrastructure, clones your repository from GHES, and pushes changes back to a branch. Monitor progress with `/tasks` or at [claude.ai/code](https://claude.ai/code). See [Claude Code on the web](/en/claude-code-on-the-web) for the full remote session workflow including diff review, auto-fix, and scheduled tasks.
+The session runs on Anthropic infrastructure, clones your repository from GHES, and pushes changes back to a branch. Monitor progress with `/tasks` or at [claude.ai/code](https://claude.ai/code). See [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) for the full remote session workflow including diff review, auto-fix, and scheduled tasks.
 
 ### Teleport sessions to your terminal
 
@@ -123,11 +123,11 @@ HTTPS URLs work as well:
 /plugin marketplace add https://github.example.com/platform/claude-plugins.git
 ```
 
-See [Create and distribute a plugin marketplace](/en/plugin-marketplaces) for the full guide to building marketplaces.
+See [Create and distribute a plugin marketplace](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) for the full guide to building marketplaces.
 
 ### Allowlist GHES marketplaces in managed settings
 
-If your organization uses [managed settings](/en/settings) to restrict which marketplaces developers can add, use the `hostPattern` source type to allow all marketplaces from your GHES instance without enumerating each repository:
+If your organization uses [managed settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) to restrict which marketplaces developers can add, use the `hostPattern` source type to allow all marketplaces from your GHES instance without enumerating each repository:
 
 ```json
 {
@@ -176,15 +176,15 @@ If `/plugin marketplace add` is blocked for your GHES URL, your organization has
 
 ### GHES instance not reachable
 
-If reviews or web sessions time out, your GHES instance may not be reachable from Anthropic infrastructure. Confirm your firewall allows inbound connections from the [Anthropic API IP addresses](https://platform.claude.com/docs/en/api/ip-addresses).
+If reviews or web sessions time out, your GHES instance may not be reachable from Anthropic infrastructure. Confirm your firewall allows inbound connections from the [Anthropic API IP addresses](../04-API-Reference/Other/api-ip-addresses-cc3c763ed7.md).
 
 ## Related resources
 
 These pages cover the features referenced throughout this guide in more depth:
 
-* [Claude Code on the web](/en/claude-code-on-the-web): run Claude Code sessions on cloud infrastructure
+* [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md): run Claude Code sessions on cloud infrastructure
 * [Code Review](../02-Claude-Code-CLI/code-review.md): automated PR reviews
-* [Plugin marketplaces](/en/plugin-marketplaces): build and distribute plugin catalogs
-* [Analytics](/en/analytics): track usage and contribution metrics
-* [Managed settings](/en/settings): organization-wide policy configuration
+* [Plugin marketplaces](../08-Plugins-Skills/create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md): build and distribute plugin catalogs
+* [Analytics](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md): track usage and contribution metrics
+* [Managed settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md): organization-wide policy configuration
 * [Network configuration](../02-Claude-Code-CLI/enterprise-network-configuration-claude-code-docs.md): firewall and IP allowlist requirements

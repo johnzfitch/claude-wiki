@@ -1,9 +1,11 @@
 ---
+title: "Guides to common use cases"
+source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/overview.md"
 category: "About"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/overview.md"
-title: "Guides to common use cases"
+tags: ["api"]
 ---
+
 # Guides to common use cases
 
 ---

@@ -1,9 +1,11 @@
 ---
+title: "Data residency"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/data-residency.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/data-residency.md"
-title: "Data residency"
+tags: ["api"]
 ---
+
 # Data residency
 
 Manage where model inference runs and where data is stored with geographic controls.
@@ -17,7 +19,7 @@ This feature is eligible for [Zero Data Retention (ZDR)](/docs/en/build-with-cla
 Data residency controls let you manage where your data is processed and stored. Two independent settings govern this:
 
 - **Inference geo:** Controls where model inference runs, on a per-request basis. Set via the `inference_geo` API parameter or as a workspace default.
-- **Workspace geo:** Controls where data is stored at rest and where endpoint processing (image transcoding, code execution, etc.) happens. Configured at the workspace level in the [Console](https://platform.claude.com).
+- **Workspace geo:** Controls where data is stored at rest and where endpoint processing (image transcoding, code execution, etc.) happens. Configured at the workspace level in the [Console](../Other/platform-claude-com.md).
 
 ## Inference geo
 
@@ -136,7 +138,7 @@ These settings can be configured through the Console or the [Admin API](/docs/en
 
 Workspace geo is set when you create a workspace and can't be changed afterwards. Currently, `"us"` is the only available workspace geo.
 
-To set workspace geo, create a new workspace in the [Console](https://platform.claude.com):
+To set workspace geo, create a new workspace in the [Console](../Other/platform-claude-com.md):
 
 1. Go to **Settings** > **Workspaces**.
 2. Create a new workspace.

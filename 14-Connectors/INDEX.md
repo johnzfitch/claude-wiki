@@ -1,11 +1,12 @@
 # Connectors
 
-*29 documents*
+*30 documents*
 
 
 - [Get started with custom connectors using remote MCP | Claude Help Center](about-integrations-using-remote-mcp.md) - Custom connectors using remote MCP are available on Claude and Claude Desktop for users on free, Pro, Max, Team, and Enterprise plans. Free users are 
 - [Anthropic Connectors Directory FAQ | Claude Help Center](anthropic-connectors-directory-faq.md) - MCP stands for Model Context Protocol, an open standard created by Anthropic that allows AI applications to connect to tools and data sources. For com
 - [Building custom connectors via remote MCP servers | Claude Help Center](building-custom-connectors-via-remote-mcp-servers.md) - 3.  Building custom connectors via remote MCP servers
+- [Claude Code in Slack - Claude Code Docs](claude-code-in-slack-claude-code-docs-c62a093e92.md) - Delegate coding tasks directly from your Slack workspace
 - [Enabling and using the Microsoft 365 connector | Claude Help Center](enabling-and-using-the-microsoft-365-connector.md) - 4.  Enabling and using the Microsoft 365 connector
 - [Get started with custom connectors using remote MCP | Claude Help Center](get-started-with-custom-connectors-using-remote-mcp.md) - Updated today
 - [Getting started with Claude in Slack | Claude Help Center](getting-started-with-claude-in-slack.md) - You can now integrate Claude and Slack, giving you two ways to use them together: add Claude directly to your Slack workspace, or enable the Slack con

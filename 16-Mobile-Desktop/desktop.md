@@ -144,4 +144,4 @@ Try creating a new session. If persistent, restart the desktop app.
 - [Get started with Desktop](desktop-quickstart.md)
 - [Desktop scheduled tasks](desktop-scheduled-tasks.md)
 - [Permission modes](../02-Claude-Code-CLI/permission-modes.md)
-- [Best practices](/en/best-practices)
+- [Best practices](../10-Prompting-Guides/best-practices-for-claude-code-claude-code-docs-9686dc1633.md)

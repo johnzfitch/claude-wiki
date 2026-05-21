@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Skills Delete 45C3501E0A"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/delete.md"
+tags: ["api", "python", "skills"]
 ---
+
 ## Delete
 
 `beta.skills.delete(strskill_id, SkillDeleteParams**kwargs)  -> SkillDeleteResponse`

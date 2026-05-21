@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Sessions Delete C9Cb18525D"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/sessions/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/sessions/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `BetaManagedAgentsDeletedSession Beta.Sessions.Delete(SessionDeleteParamsparameters, CancellationTokencancellationToken = default)`

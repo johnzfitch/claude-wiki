@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Sessions Resources Delete 2F08F335Fb"
+source_url: "https://platform.claude.com/docs/en/api/beta/sessions/resources/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/sessions/resources/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 **delete** `/v1/sessions/{session_id}/resources/{resource_id}`

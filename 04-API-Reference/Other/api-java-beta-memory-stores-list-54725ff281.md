@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Memory Stores List 54725Ff281"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `MemoryStoreListPage beta().memoryStores().list(MemoryStoreListParamsparams = MemoryStoreListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

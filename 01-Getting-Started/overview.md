@@ -74,10 +74,10 @@ cd your-project
 claude
 ```
 
-You'll be prompted to log in on first use. That's it! [Continue with Quickstart (5 minutes) →](/en/quickstart)
+You'll be prompted to log in on first use. That's it! [Continue with Quickstart (5 minutes) →](quickstart-claude-code-docs-a21b84bdea.md)
 
 <Tip>
-  See [advanced setup](/en/setup) for installation options, manual updates, or uninstallation instructions. Visit [troubleshooting](/en/troubleshooting) if you hit issues.
+  See [advanced setup](advanced-setup-claude-code-docs-0526bc1300.md) for installation options, manual updates, or uninstallation instructions. Visit [troubleshooting](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md) if you hit issues.
 </Tip>
 
 ## What Claude Code does for you
@@ -92,19 +92,19 @@ You'll be prompted to log in on first use. That's it! [Continue with Quickstart 
 * **Works in your terminal**: Not another chat window. Not another IDE. Claude Code meets you where you already work, with the tools you already love.
 * **Takes action**: Claude Code can directly edit files, run commands, and create commits. Need more? [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) lets Claude read your design docs in Google Drive, update your tickets in Jira, or use *your* custom developer tooling.
 * **Unix philosophy**: Claude Code is composable and scriptable. `tail -f app.log | claude -p "Slack me if you see any anomalies appear in this log stream"` *works*. Your CI can run `claude -p "If there are new text strings, translate them into French and raise a PR for @lang-fr-team to review"`.
-* **Enterprise-ready**: Use the Claude API, or host on AWS or GCP. Enterprise-grade [security](../02-Claude-Code-CLI/security-claude-code-docs.md), [privacy](/en/data-usage), and [compliance](https://trust.anthropic.com/) is built-in.
+* **Enterprise-ready**: Use the Claude API, or host on AWS or GCP. Enterprise-grade [security](../02-Claude-Code-CLI/security-claude-code-docs.md), [privacy](../22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md), and [compliance](https://trust.anthropic.com/) is built-in.
 
 ## Use Claude Code everywhere
 
 Claude Code works across your development environment: in your terminal, in your IDE, in the cloud, and in Slack.
 
-* **[Terminal (CLI)](/en/quickstart)**: the core Claude Code experience. Run `claude` in any terminal to start coding.
-* **[Claude Code on the web](/en/claude-code-on-the-web)**: use Claude Code from your browser at [claude.ai/code](https://claude.ai/code) or the Claude iOS app, with no local setup required. Run tasks in parallel, work on repos you don't have locally, and review changes in a built-in diff view.
+* **[Terminal (CLI)](quickstart-claude-code-docs-a21b84bdea.md)**: the core Claude Code experience. Run `claude` in any terminal to start coding.
+* **[Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md)**: use Claude Code from your browser at [claude.ai/code](https://claude.ai/code) or the Claude iOS app, with no local setup required. Run tasks in parallel, work on repos you don't have locally, and review changes in a built-in diff view.
 * **[Desktop app](../16-Mobile-Desktop/desktop.md)**: a standalone application with diff review, parallel sessions via git worktrees, and the ability to launch cloud sessions.
-* **[VS Code](/en/vs-code)**: a native extension with inline diffs, @-mentions, and plan review.
-* **[JetBrains IDEs](/en/jetbrains)**: a plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with IDE diff viewing and context sharing.
-* **[GitHub Actions](/en/github-actions)**: automate code review, issue triage, and other workflows in CI/CD with `@claude` mentions.
-* **[GitLab CI/CD](/en/gitlab-ci-cd)**: event-driven automation for GitLab merge requests and issues.
+* **[VS Code](../03-IDE-Integrations/use-claude-code-in-vs-code-claude-code-docs-29143b6fee.md)**: a native extension with inline diffs, @-mentions, and plan review.
+* **[JetBrains IDEs](../03-IDE-Integrations/jetbrains-4cf6bd8c22.md)**: a plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with IDE diff viewing and context sharing.
+* **[GitHub Actions](../02-Claude-Code-CLI/claude-code-github-actions-claude-code-docs-0d633fbd8a.md)**: automate code review, issue triage, and other workflows in CI/CD with `@claude` mentions.
+* **[GitLab CI/CD](../02-Claude-Code-CLI/claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md)**: event-driven automation for GitLab merge requests and issues.
 * **[Slack](../02-Claude-Code-CLI/slack.md)**: mention Claude in Slack to route coding tasks to Claude Code on the web and get PRs back.
 * **[Chrome](../02-Claude-Code-CLI/chrome.md)**: connect Claude Code to your browser for live debugging, design verification, and web app testing.
 

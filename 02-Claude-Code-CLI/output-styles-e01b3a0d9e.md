@@ -1,9 +1,11 @@
 ---
+title: "Output styles"
+source_url: "https://code.claude.com/docs/en/output-styles.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/output-styles.md"
-title: "Output styles"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -14,7 +16,7 @@ title: "Output styles"
 
 Output styles change how Claude responds, not what Claude knows. They modify the system prompt to set role, tone, and output format while keeping core capabilities like running scripts, reading and writing files, and tracking TODOs. Use one when you keep re-prompting for the same voice or format every turn, or when you want Claude to act as something other than a software engineer.
 
-For instructions about your project, conventions, or codebase, use [CLAUDE.md](/en/memory) instead.
+For instructions about your project, conventions, or codebase, use [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) instead.
 
 ## Built-in output styles
 
@@ -55,7 +57,7 @@ to produce.
 
 Run `/config` and select **Output style** to pick a style from a menu. Your
 selection is saved to `.claude/settings.local.json` at the
-[local project level](/en/settings).
+[local project level](claude-code-settings-claude-code-docs-d4420b4b52.md).
 
 To set a style without the menu, edit the `outputStyle` field directly in a
 settings file:
@@ -94,7 +96,7 @@ tasks. [Your custom instructions here...]
 ```
 
 You can save these files at the user level (`~/.claude/output-styles`) or
-project level (`.claude/output-styles`). [Plugins](/en/plugins-reference) can
+project level (`.claude/output-styles`). [Plugins](../08-Plugins-Skills/plugins-reference-44aeea7968.md) can
 also ship output styles in an `output-styles/` directory.
 
 ### Frontmatter
@@ -117,13 +119,13 @@ prompt specific to software engineering. Neither CLAUDE.md nor
 adds the contents as a user message *following* Claude Code's default system
 prompt. `--append-system-prompt` appends the content to the system prompt.
 
-### Output Styles vs. [Agents](/en/sub-agents)
+### Output Styles vs. [Agents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md)
 
 Output styles directly affect the main agent loop and only affect the system
 prompt. Agents are invoked to handle specific tasks and can include additional
 settings like the model to use, the tools they have available, and some context
 about when to use the agent.
 
-### Output Styles vs. [Skills](/en/skills)
+### Output Styles vs. [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)
 
 Output styles modify how Claude responds (formatting, tone, structure) and are always active once selected. Skills are task-specific prompts that you invoke with `/skill-name` or that Claude loads automatically when relevant. Use output styles for consistent formatting preferences; use skills for reusable workflows and tasks.

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Agents Archive 1Df950B6B3"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/agents/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/agents/archive.md"
+tags: ["agents", "api", "typescript"]
 ---
+
 ## Archive
 
 `client.beta.agents.archive(stringagentID, AgentArchiveParamsparams?, RequestOptionsoptions?): BetaManagedAgentsAgent`

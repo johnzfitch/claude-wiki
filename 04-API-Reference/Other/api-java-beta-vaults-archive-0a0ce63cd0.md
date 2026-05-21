@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Vaults Archive 0A0Ce63Cd0"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/vaults/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/vaults/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 `BetaManagedAgentsVault beta().vaults().archive(VaultArchiveParamsparams = VaultArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

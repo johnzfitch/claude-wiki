@@ -53,7 +53,7 @@ This quickstart walks you through creating a plugin with a custom skill. You'll 
 * Claude Code version 1.0.33 or later (run `claude --version` to check)
 
 <Note>
-  If you don't see the `/plugin` command, update Claude Code to the latest version. See [Troubleshooting](/en/troubleshooting) for upgrade instructions.
+  If you don't see the `/plugin` command, update Claude Code to the latest version. See [Troubleshooting](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md) for upgrade instructions.
 </Note>
 
 ### Create your first plugin
@@ -174,7 +174,7 @@ You've successfully created and tested a plugin with these key components:
 * **Skill arguments** (`$ARGUMENTS`): captures user input for dynamic behavior
 
 <Tip>
-  The `--plugin-dir` flag is useful for development and testing. When you're ready to share your plugin with others, see [Create and distribute a plugin marketplace](/en/plugin-marketplaces).
+  The `--plugin-dir` flag is useful for development and testing. When you're ready to share your plugin with others, see [Create and distribute a plugin marketplace](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md).
 </Tip>
 
 ## Plugin structure overview
@@ -299,7 +299,7 @@ When your plugin is ready to share:
 
 1. **Add documentation**: Include a `README.md` with installation and usage instructions
 2. **Version your plugin**: Use [semantic versioning](/en/plugins-reference#version-management) in your `plugin.json`
-3. **Create or use a marketplace**: Distribute through [plugin marketplaces](/en/plugin-marketplaces) for installation
+3. **Create or use a marketplace**: Distribute through [plugin marketplaces](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) for installation
 4. **Test with others**: Have team members test the plugin before wider distribution
 
 Once your plugin is in a marketplace, others can install it using the instructions in [Discover and install plugins](../02-Claude-Code-CLI/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs.md).
@@ -406,10 +406,10 @@ Now that you understand Claude Code's plugin system, here are suggested paths fo
 
 ### For plugin developers
 
-* [Create and distribute a marketplace](/en/plugin-marketplaces): package and share your plugins
+* [Create and distribute a marketplace](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md): package and share your plugins
 * [Plugins reference](plugins-reference-claude-code-docs.md): complete technical specifications
 * Dive deeper into specific plugin components:
   * [Skills](extend-claude-with-skills-claude-code-docs.md): skill development details
-  * [Subagents](/en/sub-agents): agent configuration and capabilities
+  * [Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md): agent configuration and capabilities
   * [Hooks](../07-Hooks/hooks-reference-claude-code-docs.md): event handling and automation
   * [MCP](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md): external tool integration

@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Memory Stores Memory Versions Retrieve 7114A49036"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/memory_versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/memory_versions/retrieve.md"
+tags: ["api", "cli"]
 ---
+
 ## Retrieve
 
 `$ ant beta:memory-stores:memory-versions retrieve`

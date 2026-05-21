@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Environments Create 95C9050Cef"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/environments/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/environments/create.md"
+tags: ["api", "cli"]
 ---
+
 ## Create
 
 `$ ant beta:environments create`

@@ -1,9 +1,11 @@
 ---
+title: "Give Claude custom tools"
+source_url: "https://code.claude.com/docs/en/agent-sdk/custom-tools.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/custom-tools.md"
-title: "Give Claude custom tools"
+tags: ["agents"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -554,7 +556,7 @@ This example shows a resource block returned from inside a tool handler. The URI
   ```
 </CodeGroup>
 
-These block shapes come from the MCP `CallToolResult` type. See the [MCP specification](https://modelcontextprotocol.io/specification/2025-06-18/server/tools#tool-result) for the full definition.
+These block shapes come from the MCP `CallToolResult` type. See the [MCP specification](../06-MCP-Tools/Spec-Archive/spec-2025-06-18-tools-model-context-protocol.md#tool-result) for the full definition.
 
 ## Example: unit converter
 

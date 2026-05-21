@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Environments Retrieve 233Ce78E16"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/environments/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/environments/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `BetaEnvironment Beta.Environments.Retrieve(EnvironmentRetrieveParamsparameters, CancellationTokencancellationToken = default)`

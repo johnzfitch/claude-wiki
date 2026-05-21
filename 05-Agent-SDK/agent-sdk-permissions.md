@@ -31,7 +31,7 @@ When Claude requests a tool, the SDK checks permissions in this order:
 
     Deny rules
 
-    Check `deny` rules (from `disallowed_tools` and [settings.json](https://code.claude.com/docs/en/settings#permission-settings)). If a deny rule matches, the tool is blocked, even in `bypassPermissions` mode.
+    Check `deny` rules (from `disallowed_tools` and [settings.json](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md#permission-settings)). If a deny rule matches, the tool is blocked, even in `bypassPermissions` mode.
 
 3.  3
 
@@ -79,7 +79,7 @@ In Python, `dontAsk` is not yet available as a permission mode. Without it, Clau
 
 **`allowed_tools` does not constrain `bypassPermissions`.** `allowed_tools` only pre-approves the tools you list. Unlisted tools are not matched by any allow rule and fall through to the permission mode, where `bypassPermissions` approves them. Setting `allowed_tools=["Read"]` alongside `permission_mode="bypassPermissions"` still approves every tool, including `Bash`, `Write`, and `Edit`. If you need `bypassPermissions` but want specific tools blocked, use `disallowed_tools`.
 
-You can also configure allow, deny, and ask rules declaratively in `.claude/settings.json`. The SDK does not load filesystem settings by default, so you must set `setting_sources=["project"]` (TypeScript: `settingSources: ["project"]`) in your options for these rules to apply. See [Permission settings](https://code.claude.com/docs/en/settings#permission-settings) for the rule syntax.
+You can also configure allow, deny, and ask rules declaratively in `.claude/settings.json`. The SDK does not load filesystem settings by default, so you must set `setting_sources=["project"]` (TypeScript: `settingSources: ["project"]`) in your options for these rules to apply. See [Permission settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md#permission-settings) for the rule syntax.
 
 
 Permission modes
@@ -184,4 +184,4 @@ For the other steps in the permission evaluation flow:
 
 - [Handle approvals and user input](/docs/en/agent-sdk/user-input): interactive approval prompts and clarifying questions
 - [Hooks guide](/docs/en/agent-sdk/hooks): run custom code at key points in the agent lifecycle
-- [Permission rules](https://code.claude.com/docs/en/settings#permission-settings): declarative allow/deny rules in `settings.json`
+- [Permission rules](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md#permission-settings): declarative allow/deny rules in `settings.json`

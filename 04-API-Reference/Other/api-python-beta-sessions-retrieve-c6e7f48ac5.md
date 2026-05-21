@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Sessions Retrieve C6E7F48Ac5"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/retrieve.md"
+tags: ["api", "python"]
 ---
+
 ## Retrieve
 
 `beta.sessions.retrieve(strsession_id, SessionRetrieveParams**kwargs)  -> BetaManagedAgentsSession`
