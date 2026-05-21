@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Skills Versions Retrieve C81F46F194"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/versions/retrieve.md"
+tags: ["api", "python", "skills"]
 ---
+
 ## Retrieve
 
 `beta.skills.versions.retrieve(strversion, VersionRetrieveParams**kwargs)  -> VersionRetrieveResponse`

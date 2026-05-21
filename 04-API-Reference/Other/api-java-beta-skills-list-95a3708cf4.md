@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Skills List 95A3708Cf4"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/list.md"
+tags: ["api", "skills"]
 ---
+
 ## List
 
 `SkillListPage beta().skills().list(SkillListParamsparams = SkillListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

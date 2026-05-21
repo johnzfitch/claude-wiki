@@ -1,9 +1,11 @@
 ---
+title: "Token counting"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/token-counting.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/token-counting.md"
-title: "Token counting"
+tags: ["api"]
 ---
+
 # Token counting
 
 ---

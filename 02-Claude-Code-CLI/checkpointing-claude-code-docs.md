@@ -2,8 +2,6 @@
 title: "Checkpointing - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/checkpointing"
 category: "02-Claude-Code-CLI"
-title: "Checkpointing - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/checkpointing"
 fetched_at: "2026-04-26T03:19:50Z"
 tags: ["claude-code"]
 ---

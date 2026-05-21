@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Sessions Resources Add 0486F536A1"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/resources/add.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/resources/add.md"
+tags: ["api", "python"]
 ---
+
 ## Add
 
 `beta.sessions.resources.add(strsession_id, ResourceAddParams**kwargs)  -> BetaManagedAgentsFileResource`

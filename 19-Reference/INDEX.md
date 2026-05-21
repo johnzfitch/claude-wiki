@@ -1,6 +1,6 @@
 # Reference
 
-*364 documents*
+*365 documents*
 
 
 - [A framework for AI development transparency \\ Anthropic](a-framework-for-ai-development-transparency-anthropic.md) - Jul 7, 2025
@@ -86,6 +86,7 @@
 - [Building safeguards for Claude \\ Anthropic](building-safeguards-for-claude-anthropic.md) - Aug 12, 2025
 - [Challenges in evaluating AI systems \\ Anthropic](challenges-in-evaluating-ai-systems-anthropic.md) - Oct 4, 2023
 - [Challenges in Red Teaming AI Systems \\ Anthropic](challenges-in-red-teaming-ai-systems-anthropic.md) - Jun 12, 2024
+- [Changelog - Claude Code Docs](changelog-claude-code-docs-3d68ad8e13.md) - Release notes for Claude Code, including new features, improvements, and bug fixes by version.
 - [Changelog](changelog.md) - data-color-mode="auto" data-light-theme="light" data-dark-theme="dark"
 - [Charting a Path to AI Accountability \\ Anthropic](charting-a-path-to-ai-accountability-anthropic.md) - Jun 13, 2023
 - [Chris Liddell appointed to Anthropic’s board of directors \\ Anthropic](chris-liddell-appointed-to-anthropic-s-board-of-directors-anthropic.md) - Feb 13, 2026

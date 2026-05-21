@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Sessions Update 5A5713E51A"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `client.Beta.Sessions.Update(ctx, sessionID, params) (*BetaManagedAgentsSession, error)`

@@ -101,6 +101,6 @@ Check: Details in the check run, Files changed annotations, or Review body under
 
 ## See Also
 
-- [GitHub Actions](/en/github-actions)
-- [GitLab CI/CD](/en/gitlab-ci-cd)
-- [Memory](/en/memory) — How `CLAUDE.md` files work
+- [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md)
+- [GitLab CI/CD](claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md)
+- [Memory](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) — How `CLAUDE.md` files work

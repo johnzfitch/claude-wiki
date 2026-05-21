@@ -1,6 +1,6 @@
 # Agent SDK
 
-*36 documents*
+*44 documents*
 
 
 - [How the agent loop works - Claude API Docs](agent-sdk-agent-loop.md) - Understand the message lifecycle, tool execution, context window, and architecture that power your SDK agents.
@@ -31,11 +31,19 @@
 - [Handle approvals and user input - Claude API Docs](agent-sdk-user-input.md) - Surface Claude's approval requests and clarifying questions to users, then return their decisions to the SDK.
 - [Agent Sdk Verifier Py](agent-sdk-verifier-py.md) - You are a Python Agent SDK application verifier. Your role is to thoroughly inspect Python Agent SDK applications for correct SDK usage, adherence to 
 - [Agent Sdk Verifier Ts](agent-sdk-verifier-ts.md) - You are a TypeScript Agent SDK application verifier. Your role is to thoroughly inspect TypeScript Agent SDK applications for correct SDK usage, adher
+- [CLI](api-sdks-cli-a2ae8fcd63.md) - Interact with the Claude API directly from your terminal with the ant command-line tool
+- [C# SDK](api-sdks-csharp-c3ec9926bf.md) - Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
 - [C# SDK - Claude API Docs](api-sdks-csharp.md) - Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
+- [Go SDK](api-sdks-go-da9ab007b4.md) - Install and configure the Anthropic Go SDK with context-based cancellation and functional options
 - [Go SDK - Claude API Docs](api-sdks-go.md) - Install and configure the Anthropic Go SDK with context-based cancellation and functional options
+- [Java SDK](api-sdks-java-aa574e7e08.md) - Install and configure the Anthropic Java SDK with builder patterns and async support
 - [Java SDK - Claude API Docs](api-sdks-java.md) - Install and configure the Anthropic Java SDK with builder patterns and async support
+- [PHP SDK](api-sdks-php-aa7fe03fbe.md) - Install and configure the Anthropic PHP SDK with value objects and builder patterns
 - [PHP SDK - Claude API Docs](api-sdks-php.md) - Install and configure the Anthropic PHP SDK with value objects and builder patterns
+- [Python SDK](api-sdks-python-c2f25dfe4b.md) - Install and configure the Anthropic Python SDK with sync and async client support
 - [Python SDK - Claude API Docs](api-sdks-python.md) - Install and configure the Anthropic Python SDK with sync and async client support
+- [Ruby SDK](api-sdks-ruby-87651d02f9.md) - Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
 - [Ruby SDK - Claude API Docs](api-sdks-ruby.md) - Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
+- [TypeScript SDK](api-sdks-typescript-1f3f5e1a7a.md) - Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
 - [TypeScript SDK - Claude API Docs](api-sdks-typescript.md) - Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
 - [Track cost and usage](cost-tracking.md) - Learn how to track token usage, deduplicate parallel tool calls, and calculate costs with the Claude Agent SDK.

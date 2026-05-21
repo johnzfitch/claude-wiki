@@ -1,9 +1,11 @@
 ---
+title: "Search results"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/search-results.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/search-results.md"
-title: "Search results"
+tags: ["api", "search"]
 ---
+
 # Search results
 
 Enable natural citations for RAG applications by providing search results with source attribution

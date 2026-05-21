@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Memory Stores Delete 2Fada4039C"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/delete.md"
+tags: ["api", "python"]
 ---
+
 ## Delete
 
 `beta.memory_stores.delete(strmemory_store_id, MemoryStoreDeleteParams**kwargs)  -> BetaManagedAgentsDeletedMemoryStore`

@@ -15,7 +15,7 @@ Hooks are user-defined shell commands that execute at specific points in Claude 
 
 For decisions that require judgment rather than deterministic rules, you can also use [prompt-based hooks](#prompt-based-hooks) or [agent-based hooks](#agent-based-hooks) that use a Claude model to evaluate conditions.
 
-For other ways to extend Claude Code, see [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) for giving Claude additional instructions and executable commands, [subagents](/en/sub-agents) for running tasks in isolated contexts, and [plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) for packaging extensions to share across projects.
+For other ways to extend Claude Code, see [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) for giving Claude additional instructions and executable commands, [subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) for running tasks in isolated contexts, and [plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) for packaging extensions to share across projects.
 
 <Tip>
   This guide covers common use cases and how to get started. For full event schemas, JSON input/output formats, and advanced features like async hooks and MCP tool hooks, see the [Hooks reference](hooks-reference-claude-code-docs.md).
@@ -265,7 +265,7 @@ Any text your command writes to stdout is added to Claude's context. This exampl
 }
 ```
 
-You can replace the `echo` with any command that produces dynamic output, like `git log --oneline -5` to show recent commits. For injecting context on every session start, consider using [CLAUDE.md](/en/memory) instead. For environment variables, see [`CLAUDE_ENV_FILE`](/en/hooks#persist-environment-variables) in the reference.
+You can replace the `echo` with any command that produces dynamic output, like `git log --oneline -5` to show recent commits. For injecting context on every session start, consider using [CLAUDE.md](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) instead. For environment variables, see [`CLAUDE_ENV_FILE`](/en/hooks#persist-environment-variables) in the reference.
 
 ## How hooks work
 
@@ -480,7 +480,7 @@ Where you add a hook determines its scope:
 | `.claude/settings.local.json`                              | Single project                     | No, gitignored                     |
 | Managed policy settings                                    | Organization-wide                  | Yes, admin-controlled              |
 | [Plugin](../08-Plugins-Skills/create-plugins-claude-code-docs.md) `hooks/hooks.json`                   | When plugin is enabled             | Yes, bundled with the plugin       |
-| [Skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) or [agent](/en/sub-agents) frontmatter | While the skill or agent is active | Yes, defined in the component file |
+| [Skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) or [agent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) frontmatter | While the skill or agent is active | Yes, defined in the component file |
 
 You can also use the [`/hooks` menu](/en/hooks#the-hooks-menu) in Claude Code to add, delete, and view hooks interactively. To disable all hooks at once, use the toggle at the bottom of the `/hooks` menu or set `"disableAllHooks": true` in your settings file.
 
@@ -553,7 +553,7 @@ For full configuration options, see [Agent-based hooks](/en/hooks#agent-based-ho
 * Hooks communicate through stdout, stderr, and exit codes only. They cannot trigger slash commands or tool calls directly.
 * Hook timeout is 10 minutes by default, configurable per hook with the `timeout` field (in seconds).
 * `PostToolUse` hooks cannot undo actions since the tool has already executed.
-* `PermissionRequest` hooks do not fire in [non-interactive mode](/en/headless) (`-p`). Use `PreToolUse` hooks for automated permission decisions.
+* `PermissionRequest` hooks do not fire in [non-interactive mode](../02-Claude-Code-CLI/headless-b99e3140ec.md) (`-p`). Use `PreToolUse` hooks for automated permission decisions.
 * `Stop` hooks fire whenever Claude finishes responding, not only at task completion. They do not fire on user interrupts.
 
 ### Hook not firing

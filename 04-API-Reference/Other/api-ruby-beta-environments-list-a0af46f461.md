@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Environments List A0Af46F461"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/environments/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/environments/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `beta.environments.list(**kwargs) -> PageCursor<BetaEnvironment>`

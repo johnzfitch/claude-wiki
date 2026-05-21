@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Skills Versions Delete 75496Fd34D"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/versions/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/versions/delete.md"
+tags: ["api", "cli", "skills"]
 ---
+
 ## Delete
 
 `$ ant beta:skills:versions delete`

@@ -1,9 +1,11 @@
 ---
+title: "Fast mode (beta: research preview)"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/fast-mode.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/fast-mode.md"
-title: "Fast mode (beta: research preview)"
+tags: ["api", "search"]
 ---
+
 # Fast mode (beta: research preview)
 
 Higher output speed for Claude Opus 4.6, delivering significantly faster token generation for latency-sensitive and agentic workflows.

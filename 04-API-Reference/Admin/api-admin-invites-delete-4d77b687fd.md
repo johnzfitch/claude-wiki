@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Invites Delete 4D77B687Fd"
+source_url: "https://platform.claude.com/docs/en/api/admin/invites/delete.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/invites/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 **delete** `/v1/organizations/invites/{invite_id}`

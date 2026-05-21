@@ -1,9 +1,11 @@
 ---
+title: "Python SDK"
+source_url: "https://platform.claude.com/docs/en/api/sdks/python.md"
 category: "05-Agent-SDK"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/sdks/python.md"
-title: "Python SDK"
+tags: ["agents", "python", "sdk"]
 ---
+
 # Python SDK
 
 Install and configure the Anthropic Python SDK with sync and async client support

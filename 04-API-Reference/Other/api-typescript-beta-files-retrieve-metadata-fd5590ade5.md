@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Files Retrieve Metadata Fd5590Ade5"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/retrieve_metadata.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/files/retrieve_metadata.md"
+tags: ["api", "typescript"]
 ---
+
 ## Retrieve Metadata
 
 `client.beta.files.retrieveMetadata(stringfileID, FileRetrieveMetadataParamsparams?, RequestOptionsoptions?): FileMetadata`

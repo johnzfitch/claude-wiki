@@ -1,9 +1,11 @@
 ---
+title: "Define tools"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools.md"
-title: "Define tools"
+tags: ["api", "cli"]
 ---
+
 # Define tools
 
 Specify tool schemas, write effective descriptions, and control when Claude calls your tools.

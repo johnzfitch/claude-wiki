@@ -1,9 +1,11 @@
 ---
+title: "Fullscreen rendering"
+source_url: "https://code.claude.com/docs/en/fullscreen.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/fullscreen.md"
-title: "Fullscreen rendering"
+tags: ["claude-code", "search"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

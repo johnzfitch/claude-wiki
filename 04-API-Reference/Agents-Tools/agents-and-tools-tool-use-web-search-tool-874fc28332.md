@@ -1,9 +1,11 @@
 ---
+title: "Web search tool"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool.md"
-title: "Web search tool"
+tags: ["api", "prompting", "search"]
 ---
+
 # Web search tool
 
 ---

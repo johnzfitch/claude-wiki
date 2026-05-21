@@ -1,9 +1,11 @@
 ---
+title: "Reducing latency"
+source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency.md"
 category: "Test-Evaluate"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency.md"
-title: "Reducing latency"
+tags: ["api"]
 ---
+
 # Reducing latency
 
 ---

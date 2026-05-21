@@ -99,4 +99,4 @@ MCP connects Claude to external services and data sources. Skills provide proced
 
 ## Learn more about Skills
 
-For more detailed information about how Skills work, see **[Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** in our Claude Docs.
+For more detailed information about how Skills work, see **[Agent Skills](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview-a6ba167cbe.md)** in our Claude Docs.

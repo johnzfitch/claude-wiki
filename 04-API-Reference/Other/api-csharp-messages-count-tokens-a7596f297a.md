@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Messages Count Tokens A7596F297A"
+source_url: "https://platform.claude.com/docs/en/api/csharp/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/messages/count_tokens.md"
+tags: ["api"]
 ---
+
 ## Count Tokens
 
 `MessageTokensCount Messages.CountTokens(MessageCountTokensParamsparameters, CancellationTokencancellationToken = default)`

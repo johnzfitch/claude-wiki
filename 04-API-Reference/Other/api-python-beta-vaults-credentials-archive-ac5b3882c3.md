@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Vaults Credentials Archive Ac5B3882C3"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/credentials/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/credentials/archive.md"
+tags: ["api", "python"]
 ---
+
 ## Archive
 
 `beta.vaults.credentials.archive(strcredential_id, CredentialArchiveParams**kwargs)  -> BetaManagedAgentsCredential`

@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Agents Versions List B268578C89"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/agents/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/agents/versions/list.md"
+tags: ["agents", "api"]
 ---
+
 ## List
 
 `VersionListPageResponse Beta.Agents.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)`

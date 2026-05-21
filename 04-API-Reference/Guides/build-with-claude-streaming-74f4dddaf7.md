@@ -1,9 +1,11 @@
 ---
+title: "Streaming Messages"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/streaming.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/streaming.md"
-title: "Streaming Messages"
+tags: ["api", "sdk"]
 ---
+
 # Streaming Messages
 
 ---

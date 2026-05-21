@@ -1,9 +1,11 @@
 ---
+title: "Claude in Amazon Bedrock"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock.md"
-title: "Claude in Amazon Bedrock"
+tags: ["authentication", "bedrock", "sdk"]
 ---
+
 # Claude in Amazon Bedrock
 
 Access Claude models through Amazon Bedrock with AWS-native authentication, billing, and security boundaries.

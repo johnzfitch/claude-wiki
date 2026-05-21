@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Sessions Delete 137178619F"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/delete.md"
+tags: ["api", "python"]
 ---
+
 ## Delete
 
 `beta.sessions.delete(strsession_id, SessionDeleteParams**kwargs)  -> BetaManagedAgentsDeletedSession`

@@ -1,8 +1,11 @@
 ---
+title: "Api Go Messages Batches Cancel 6A096B0Fc9"
+source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/cancel.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/cancel.md"
+tags: ["api"]
 ---
+
 ## Cancel
 
 `client.Messages.Batches.Cancel(ctx, messageBatchID) (*MessageBatch, error)`

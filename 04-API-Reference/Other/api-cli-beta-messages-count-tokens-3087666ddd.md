@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Messages Count Tokens 3087666Ddd"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/messages/count_tokens.md"
+tags: ["api", "cli"]
 ---
+
 ## Count Tokens
 
 `$ ant beta:messages count-tokens`
@@ -94,7 +97,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
 - `--output-format: optional object { schema, type }`
 
-  Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+  Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
   A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

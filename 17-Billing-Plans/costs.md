@@ -36,7 +36,7 @@ Total code changes:    0 lines added, 0 lines removed
 
 ## Managing costs for teams
 
-When using Claude API, you can [set workspace spend limits](https://platform.claude.com/docs/en/build-with-claude/workspaces#workspace-limits) on the total Claude Code workspace spend. Admins can [view cost and usage reporting](https://platform.claude.com/docs/en/build-with-claude/workspaces#usage-and-cost-tracking) in the Console.
+When using Claude API, you can [set workspace spend limits](../04-API-Reference/Guides/build-with-claude-workspaces-12135e8f23.md#workspace-limits) on the total Claude Code workspace spend. Admins can [view cost and usage reporting](../04-API-Reference/Guides/build-with-claude-workspaces-12135e8f23.md#usage-and-cost-tracking) in the Console.
 
 <Note>
   When you first authenticate Claude Code with your Claude Console account, a workspace called "Claude Code" is automatically created for you. This workspace provides centralized cost tracking and management for all Claude Code usage in your organization. You cannot create API keys for this workspace; it is exclusively for Claude Code authentication and usage.
@@ -154,7 +154,7 @@ For example, this PreToolUse hook filters test output to show only failures:
 
 ### Move instructions from CLAUDE.md to skills
 
-Your [CLAUDE.md](/en/memory) file is loaded into context at session start. If it contains detailed instructions for specific workflows (like PR reviews or database migrations), those tokens are present even when you're doing unrelated work. [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) load on-demand only when invoked, so moving specialized instructions into skills keeps your base context smaller. Aim to keep CLAUDE.md under \~500 lines by including only essentials.
+Your [CLAUDE.md](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) file is loaded into context at session start. If it contains detailed instructions for specific workflows (like PR reviews or database migrations), those tokens are present even when you're doing unrelated work. [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) load on-demand only when invoked, so moving specialized instructions into skills keeps your base context smaller. Aim to keep CLAUDE.md under \~500 lines by including only essentials.
 
 ### Adjust extended thinking
 

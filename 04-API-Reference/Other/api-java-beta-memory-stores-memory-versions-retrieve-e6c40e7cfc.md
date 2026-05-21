@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Memory Stores Memory Versions Retrieve E6C40E7Cfc"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/memory_versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/memory_versions/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `BetaManagedAgentsMemoryVersion beta().memoryStores().memoryVersions().retrieve(MemoryVersionRetrieveParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

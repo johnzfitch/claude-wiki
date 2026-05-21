@@ -1,9 +1,11 @@
 ---
+title: "Stream responses in real-time"
+source_url: "https://code.claude.com/docs/en/agent-sdk/streaming-output.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/streaming-output.md"
-title: "Stream responses in real-time"
+tags: ["agents"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -15,7 +17,7 @@ title: "Stream responses in real-time"
 By default, the Agent SDK yields complete `AssistantMessage` objects after Claude finishes generating each response. To receive incremental updates as text and tool calls are generated, enable partial message streaming by setting `include_partial_messages` (Python) or `includePartialMessages` (TypeScript) to `true` in your options.
 
 <Tip>
-  This page covers output streaming (receiving tokens in real-time). For input modes (how you send messages), see [Send messages to agents](/en/agent-sdk/streaming-vs-single-mode). You can also [stream responses using the Agent SDK via the CLI](/en/headless).
+  This page covers output streaming (receiving tokens in real-time). For input modes (how you send messages), see [Send messages to agents](/en/agent-sdk/streaming-vs-single-mode). You can also [stream responses using the Agent SDK via the CLI](../02-Claude-Code-CLI/headless-b99e3140ec.md).
 </Tip>
 
 ## Enable streaming output
@@ -107,7 +109,7 @@ Both contain raw Claude API events, not accumulated text. You need to extract an
   ```
 </CodeGroup>
 
-The `event` field contains the raw streaming event from the [Claude API](https://platform.claude.com/docs/en/build-with-claude/streaming#event-types). Common event types include:
+The `event` field contains the raw streaming event from the [Claude API](../04-API-Reference/Guides/build-with-claude-streaming-74f4dddaf7.md#event-types). Common event types include:
 
 | Event Type            | Description                                     |
 | :-------------------- | :---------------------------------------------- |

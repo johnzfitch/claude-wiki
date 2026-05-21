@@ -1,9 +1,11 @@
 ---
+title: "Tool use with prompt caching"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching.md"
-title: "Tool use with prompt caching"
+tags: ["api", "prompting"]
 ---
+
 # Tool use with prompt caching
 
 Cache tool definitions across turns and understand what invalidates your cache.

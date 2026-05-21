@@ -2,10 +2,8 @@
 title: "Interactive mode - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/interactive-mode"
 category: "02-Claude-Code-CLI"
-title: "Interactive mode - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/interactive-mode"
 fetched_at: "2026-04-26T03:20:10Z"
-tags: ["claude-code", "prompting"]
+tags: ["claude-code"]
 ---
 
 # Interactive mode

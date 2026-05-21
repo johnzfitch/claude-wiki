@@ -1,9 +1,11 @@
 ---
+title: "Choose a permission mode"
+source_url: "https://code.claude.com/docs/en/permission-modes.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/permission-modes.md"
-title: "Choose a permission mode"
+tags: ["claude-code", "prompting"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -61,7 +63,7 @@ You can switch modes mid-session, at startup, or as a persistent default. The mo
     }
     ```
 
-    The same `--permission-mode` flag works with `-p` for [non-interactive runs](/en/headless).
+    The same `--permission-mode` flag works with `-p` for [non-interactive runs](headless-b99e3140ec.md).
   </Tab>
 
   <Tab title="VS Code">
@@ -83,7 +85,7 @@ You can switch modes mid-session, at startup, or as a persistent default. The mo
 
     Bypass permissions also requires the **Allow dangerously skip permissions** toggle before it appears in the mode indicator.
 
-    See the [VS Code guide](/en/vs-code) for extension-specific details.
+    See the [VS Code guide](../03-IDE-Integrations/use-claude-code-in-vs-code-claude-code-docs-29143b6fee.md) for extension-specific details.
   </Tab>
 
   <Tab title="JetBrains">
@@ -97,8 +99,8 @@ You can switch modes mid-session, at startup, or as a persistent default. The mo
   <Tab title="Web and mobile">
     Use the mode dropdown next to the prompt box on [claude.ai/code](https://claude.ai/code) or in the mobile app. Permission prompts appear in claude.ai for approval. Which modes appear depends on where the session runs:
 
-    * **Cloud sessions** on [Claude Code on the web](/en/claude-code-on-the-web): Auto accept edits and Plan mode. Ask permissions, Auto, and Bypass permissions are not available.
-    * **[Remote Control](/en/remote-control) sessions** on your local machine: Ask permissions, Auto accept edits, and Plan mode. Auto and Bypass permissions are not available.
+    * **Cloud sessions** on [Claude Code on the web](claude-code-on-the-web-69d53821d4.md): Auto accept edits and Plan mode. Ask permissions, Auto, and Bypass permissions are not available.
+    * **[Remote Control](continue-local-sessions-from-any-device-with-remote-control-claude-code-docs-c1c03fd914.md) sessions** on your local machine: Ask permissions, Auto accept edits, and Plan mode. Auto and Bypass permissions are not available.
 
     For Remote Control, you can also set the starting mode when launching the host:
 
@@ -138,7 +140,7 @@ When the plan is ready, Claude presents it and asks how to proceed. From that pr
 * Approve and accept edits
 * Approve and review each edit manually
 * Keep planning with feedback
-* Refine with [Ultraplan](/en/ultraplan) for browser-based review
+* Refine with [Ultraplan](ultraplan-14dfb476fe.md) for browser-based review
 
 Each approve option also offers to clear the planning context first.
 
@@ -165,7 +167,7 @@ If Claude Code reports auto mode as unavailable, one of these requirements is un
 
 ### What the classifier blocks by default
 
-The classifier trusts your working directory and your repo's configured remotes. Everything else is treated as external until you [configure trusted infrastructure](/en/auto-mode-config).
+The classifier trusts your working directory and your repo's configured remotes. Everything else is treated as external until you [configure trusted infrastructure](auto-mode-config-f0dacf5866.md).
 
 **Blocked by default**:
 
@@ -186,7 +188,7 @@ The classifier trusts your working directory and your repo's configured remotes.
 * Read-only HTTP requests
 * Pushing to the branch you started on or one Claude created
 
-Sandbox network access requests are routed through the classifier rather than allowed by default. Run `claude auto-mode defaults` to see the full rule lists. If routine actions get blocked, an administrator can add trusted repos, buckets, and services via the `autoMode.environment` setting: see [Configure auto mode](/en/auto-mode-config).
+Sandbox network access requests are routed through the classifier rather than allowed by default. Run `claude auto-mode defaults` to see the full rule lists. If routine actions get blocked, an administrator can add trusted repos, buckets, and services via the `autoMode.environment` setting: see [Configure auto mode](auto-mode-config-f0dacf5866.md).
 
 ### Boundaries you state in conversation
 
@@ -200,9 +202,9 @@ Each denied action shows a notification and appears in `/permissions` under the 
 
 If the classifier blocks an action 3 times in a row or 20 times total, auto mode pauses and Claude Code resumes prompting. Approving the prompted action resumes auto mode. These thresholds are not configurable. Any allowed action resets the consecutive counter, while the total counter persists for the session and resets only when its own limit triggers a fallback.
 
-In [non-interactive mode](/en/headless) with the `-p` flag, repeated blocks abort the session since there is no user to prompt.
+In [non-interactive mode](headless-b99e3140ec.md) with the `-p` flag, repeated blocks abort the session since there is no user to prompt.
 
-Repeated blocks usually mean the classifier is missing context about your infrastructure. Use `/feedback` to report false positives, or have an administrator [configure trusted infrastructure](/en/auto-mode-config).
+Repeated blocks usually mean the classifier is missing context about your infrastructure. Use `/feedback` to report false positives, or have an administrator [configure trusted infrastructure](auto-mode-config-f0dacf5866.md).
 
 <AccordionGroup>
   <Accordion title="How the classifier evaluates actions">
@@ -226,7 +228,7 @@ Repeated blocks usually mean the classifier is missing context about your infras
   </Accordion>
 
   <Accordion title="How auto mode handles subagents">
-    The classifier checks [subagent](/en/sub-agents) work at three points:
+    The classifier checks [subagent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) work at three points:
 
     1. Before a subagent starts, the delegated task description is evaluated, so a dangerous-looking task is blocked at spawn time.
     2. While the subagent runs, each of its actions goes through the classifier with the same rules as the parent session, and any `permissionMode` in the subagent's frontmatter is ignored.
@@ -285,10 +287,10 @@ Protected files:
 
 ## See also
 
-* [Permissions](/en/permissions): allow, ask, and deny rules; managed policies
-* [Configure auto mode](/en/auto-mode-config): tell the classifier which infrastructure your organization trusts
-* [Hooks](/en/hooks): custom permission logic via `PreToolUse` and `PermissionRequest` hooks
-* [Ultraplan](/en/ultraplan): run plan mode in a Claude Code on the web session with browser-based review
-* [Security](/en/security): safeguards and best practices
-* [Sandboxing](/en/sandboxing): filesystem and network isolation for Bash commands
-* [Non-interactive mode](/en/headless): run Claude Code with the `-p` flag
+* [Permissions](configure-permissions-claude-code-docs-7b0e64d485.md): allow, ask, and deny rules; managed policies
+* [Configure auto mode](auto-mode-config-f0dacf5866.md): tell the classifier which infrastructure your organization trusts
+* [Hooks](../07-Hooks/hooks-9168ed62a4.md): custom permission logic via `PreToolUse` and `PermissionRequest` hooks
+* [Ultraplan](ultraplan-14dfb476fe.md): run plan mode in a Claude Code on the web session with browser-based review
+* [Security](../22-Safety-Policy/security-claude-code-docs-7538e94c51.md): safeguards and best practices
+* [Sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md): filesystem and network isolation for Bash commands
+* [Non-interactive mode](headless-b99e3140ec.md): run Claude Code with the `-p` flag

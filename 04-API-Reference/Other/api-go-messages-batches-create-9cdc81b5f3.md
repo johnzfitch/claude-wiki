@@ -1,8 +1,11 @@
 ---
+title: "Api Go Messages Batches Create 9Cdc81B5F3"
+source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `client.Messages.Batches.New(ctx, body) (*MessageBatch, error)`
@@ -2457,7 +2460,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
         - `Format JSONOutputFormat`
 
-          A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+          A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
           - `Schema map[string, any]`
 

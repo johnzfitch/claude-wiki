@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Models Retrieve 295Cc71355"
+source_url: "https://platform.claude.com/docs/en/api/ruby/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/models/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `models.retrieve(model_id, **kwargs) -> ModelInfo`

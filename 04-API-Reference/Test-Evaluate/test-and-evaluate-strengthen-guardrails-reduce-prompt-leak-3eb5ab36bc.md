@@ -1,9 +1,11 @@
 ---
+title: "Reduce prompt leak"
+source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak.md"
 category: "Test-Evaluate"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak.md"
-title: "Reduce prompt leak"
+tags: ["api", "prompting"]
 ---
+
 # Reduce prompt leak
 
 ---

@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Skills Delete 749A6Dfadb"
+source_url: "https://platform.claude.com/docs/en/api/beta/skills/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/skills/delete.md"
+tags: ["api", "skills"]
 ---
+
 ## Delete
 
 **delete** `/v1/skills/{skill_id}`

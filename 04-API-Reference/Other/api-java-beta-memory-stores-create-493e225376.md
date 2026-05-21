@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Memory Stores Create 493E225376"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `BetaManagedAgentsMemoryStore beta().memoryStores().create(MemoryStoreCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Skills Versions Retrieve 45A85980Fd"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/versions/retrieve.md"
+tags: ["api", "skills"]
 ---
+
 ## Retrieve
 
 `client.Beta.Skills.Versions.Get(ctx, version, params) (*BetaSkillVersionGetResponse, error)`

@@ -1,9 +1,11 @@
 ---
+title: "Zero data retention"
+source_url: "https://code.claude.com/docs/en/zero-data-retention.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/zero-data-retention.md"
-title: "Zero data retention"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -17,8 +19,8 @@ Zero Data Retention (ZDR) is available for Claude Code when used through Claude 
 ZDR on Claude for Enterprise gives enterprise customers the ability to use Claude Code with zero data retention and access administrative capabilities:
 
 * Cost controls per user
-* [Analytics](/en/analytics) dashboard
-* [Server-managed settings](/en/server-managed-settings)
+* [Analytics](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md) dashboard
+* [Server-managed settings](../13-Enterprise-Admin/configure-server-managed-settings-claude-code-docs-d6a169b0bf.md)
 * Audit logs
 
 ZDR for Claude Code on Claude for Enterprise applies only to Anthropic's direct platform. For Claude deployments on AWS Bedrock, Google Vertex AI, or Microsoft Foundry, refer to those platforms' data retention policies.
@@ -43,7 +45,7 @@ ZDR does not extend to the following, even for organizations with ZDR enabled. T
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Chat on claude.ai        | Chat conversations through the Claude for Enterprise web interface are not covered by ZDR.                                                                                                                                                                  |
 | Cowork                   | Cowork sessions are not covered by ZDR.                                                                                                                                                                                                                     |
-| Claude Code Analytics    | Does not store prompts or model responses, but collects productivity metadata such as account emails and usage statistics. Contribution metrics are not available for ZDR organizations; the [analytics dashboard](/en/analytics) shows usage metrics only. |
+| Claude Code Analytics    | Does not store prompts or model responses, but collects productivity metadata such as account emails and usage statistics. Contribution metrics are not available for ZDR organizations; the [analytics dashboard](../13-Enterprise-Admin/track-team-usage-with-analytics-claude-code-docs-35e754aabf.md) shows usage metrics only. |
 | User and seat management | Administrative data such as account emails and seat assignments is retained under standard policies.                                                                                                                                                        |
 | Third-party integrations | Data processed by third-party tools, MCP servers, or other external integrations is not covered by ZDR. Review those services' data handling practices independently.                                                                                       |
 
@@ -53,7 +55,7 @@ When ZDR is enabled for a Claude Code organization on Claude for Enterprise, cer
 
 | Feature                                                             | Reason                                                                  |
 | ------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [Claude Code on the Web](/en/claude-code-on-the-web)                | Requires server-side storage of conversation history.                   |
+| [Claude Code on the Web](claude-code-on-the-web-69d53821d4.md)                | Requires server-side storage of conversation history.                   |
 | [Remote sessions](/en/desktop#remote-sessions) from the Desktop app | Requires persistent session data that includes prompts and completions. |
 | Feedback submission (`/feedback`)                                   | Submitting feedback sends conversation data to Anthropic.               |
 

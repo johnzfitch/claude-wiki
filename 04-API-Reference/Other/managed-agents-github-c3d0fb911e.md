@@ -1,9 +1,11 @@
 ---
+title: "Accessing GitHub"
+source_url: "https://platform.claude.com/docs/en/managed-agents/github.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/github.md"
-title: "Accessing GitHub"
+tags: ["api", "git", "github", "mcp"]
 ---
+
 # Accessing GitHub
 
 Connect your agent to GitHub repositories for cloning, reading, and creating pull requests.

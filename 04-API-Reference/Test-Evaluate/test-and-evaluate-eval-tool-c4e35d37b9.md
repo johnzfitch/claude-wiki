@@ -1,9 +1,11 @@
 ---
+title: "Using the Evaluation Tool"
+source_url: "https://platform.claude.com/docs/en/test-and-evaluate/eval-tool.md"
 category: "Test-Evaluate"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/test-and-evaluate/eval-tool.md"
-title: "Using the Evaluation Tool"
+tags: ["api", "evaluation", "prompting"]
 ---
+
 # Using the Evaluation Tool
 
 The [Claude Console](/dashboard) features an **Evaluation tool** that allows you to test your prompts under various scenarios.

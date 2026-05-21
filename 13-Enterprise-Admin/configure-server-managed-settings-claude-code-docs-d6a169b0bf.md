@@ -1,6 +1,6 @@
 ---
 category: "13-Enterprise-Admin"
-fetched_at: "2026-04-26T03:20:25Z"
+fetched_at: "2026-05-19T21:23:06Z"
 source_url: "https://code.claude.com/docs/en/server-managed-settings"
 title: "Configure server-managed settings - Claude Code Docs"
 ---
@@ -10,6 +10,12 @@ title: "Configure server-managed settings - Claude Code Docs"
 
 Centrally configure Claude Code for your organization through server-delivered settings, without requiring device management infrastructure.
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 Server-managed settings allow administrators to centrally configure Claude Code through a web-based interface on Claude.ai. Claude Code clients automatically receive these settings when users authenticate with their organization credentials. This approach is designed for organizations that do not have device management infrastructure in place, or need to manage settings for users on unmanaged devices.
 
@@ -33,10 +39,10 @@ Choose between server-managed and endpoint-managed settings
 
 Claude Code supports two approaches for centralized configuration. Server-managed settings deliver configuration from Anthropic’s servers. [Endpoint-managed settings](/docs/en/settings#settings-files) are deployed directly to devices through native OS policies (macOS managed preferences, Windows registry) or managed settings files.
 
-| Approach | Best for | Security model |
-|:---|:---|:---|
-| **Server-managed settings** | Organizations without MDM, or users on unmanaged devices | Settings delivered from Anthropic’s servers at authentication time |
-| **[Endpoint-managed settings](/docs/en/settings#settings-files)** | Organizations with MDM or endpoint management | Settings deployed to devices via MDM configuration profiles, registry policies, or managed settings files |
+| Approach                                                          | Best for                                                 | Security model                                                                                            |
+|:------------------------------------------------------------------|:---------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
+| **Server-managed settings**                                       | Organizations without MDM, or users on unmanaged devices | Settings delivered from Anthropic’s servers at authentication time                                        |
+| **[Endpoint-managed settings](/docs/en/settings#settings-files)** | Organizations with MDM or endpoint management            | Settings deployed to devices via MDM configuration profiles, registry policies, or managed settings files |
 
 If your devices are enrolled in an MDM or endpoint management solution, endpoint-managed settings provide stronger security guarantees because the settings file can be protected from user modification at the OS level.
 
@@ -57,7 +63,7 @@ In [Claude.ai](https://claude.ai), navigate to **Admin Settings \> Claude Code \
 
 Define your settings
 
-Add your configuration as JSON. All [settings available in `settings.json`](/docs/en/settings#available-settings) are supported, including [hooks](/docs/en/hooks), [environment variables](/docs/en/env-vars), and [managed-only settings](/docs/en/permissions#managed-only-settings) like `allowManagedPermissionRulesOnly`.This example enforces a permission deny list, prevents users from bypassing permissions, and restricts permission rules to those defined in managed settings:
+Add your configuration as JSON. All [settings available in `settings.json`](/docs/en/settings#available-settings) are supported except those restricted to OS-level policy delivery; see [Current limitations](#current-limitations) for that short list. This includes [hooks](/docs/en/hooks), [environment variables](/docs/en/env-vars), and [managed-only settings](/docs/en/permissions#managed-only-settings) like `allowManagedPermissionRulesOnly`.This example enforces a permission deny list, prevents users from bypassing permissions, and restricts permission rules to those defined in managed settings:
 
 ```python
 {
@@ -105,7 +111,7 @@ To configure the [auto mode](/docs/en/permission-modes#eliminate-prompts-with-au
 }
 ```
 
-Because hooks execute shell commands, users see a [security approval dialog](#security-approval-dialogs) before they’re applied. See [Configure auto mode](/docs/en/auto-mode-config) for how the `autoMode` entries affect what the classifier blocks and important warnings about the `allow` and `soft_deny` fields.
+Because hooks execute shell commands, users see a [security approval dialog](#security-approval-dialogs) before they’re applied. See [Configure auto mode](/docs/en/auto-mode-config) for how the `autoMode` entries affect what the classifier blocks and important warnings about the `environment`, `allow`, `soft_deny`, and `hard_deny` fields.
 
 3
 
@@ -149,6 +155,7 @@ Server-managed settings have the following limitations:
 
 - Settings apply uniformly to all users in the organization. Per-group configurations are not yet supported.
 - [MCP server configurations](/docs/en/mcp#managed-mcp-configuration) cannot be distributed through server-managed settings.
+- Settings restricted to OS-level policy sources, such as `policyHelper` and `wslInheritsWindowsSettings`, are not honored. Deploy them through MDM or a system `managed-settings.json` file instead.
 
 
 [​](#settings-delivery)
@@ -194,7 +201,7 @@ By default, if the remote settings fetch fails at startup, the CLI continues wit
 }
 ```
 
-Before enabling this setting, ensure your network policies allow connectivity to `api.anthropic.com`. If that endpoint is unreachable, the CLI exits at startup and users cannot start Claude Code.
+Before enabling this setting, ensure your network policies allow connectivity to `api.anthropic.com`. If that endpoint is unreachable, the CLI exits at startup and users cannot start Claude Code. As of v2.1.139, the `claude auth` subcommands such as `claude auth login` are exempt from this check, so users can re-authenticate when expired credentials are the reason the settings fetch fails.
 
 
 [​](#security-approval-dialogs)
@@ -237,13 +244,13 @@ Security considerations
 
 Server-managed settings provide centralized policy enforcement, but they operate as a client-side control. On unmanaged devices, users with admin or sudo access can modify the Claude Code binary, filesystem, or network configuration.
 
-| Scenario | Behavior |
-|:---|:---|
-| User edits the cached settings file | Tampered file applies at startup, but correct settings restore on the next server fetch |
-| User deletes the cached settings file | First-launch behavior occurs: settings fetch asynchronously with a brief unenforced window |
-| API is unavailable | Cached settings apply if available, otherwise managed settings are not enforced until the next successful fetch. With `forceRemoteSettingsRefresh: true`, the CLI exits instead of continuing |
-| User authenticates with a different organization | Settings are not delivered for accounts outside the managed organization |
-| User sets a non-default `ANTHROPIC_BASE_URL` | Server-managed settings are bypassed when using third-party API providers |
+| Scenario                                                               | Behavior                                                                                                                                                                                                                                                            |
+|:-----------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| User edits the cached settings file                                    | Tampered file applies at startup, but correct settings restore on the next server fetch                                                                                                                                                                             |
+| User deletes the cached settings file                                  | First-launch behavior occurs: settings fetch asynchronously with a brief unenforced window                                                                                                                                                                          |
+| API is unavailable                                                     | Cached settings apply if available, otherwise managed settings are not enforced until the next successful fetch. With `forceRemoteSettingsRefresh: true`, the CLI exits instead of continuing, except for [`claude auth` subcommands](#enforce-fail-closed-startup) |
+| User authenticates with a different organization                       | Settings are not delivered for accounts outside the managed organization                                                                                                                                                                                            |
+| User configures a [third-party model provider](#platform-availability) | Server-managed settings are bypassed. This includes setting `CLAUDE_CODE_USE_BEDROCK`, `CLAUDE_CODE_USE_MANTLE`, `CLAUDE_CODE_USE_VERTEX`, `CLAUDE_CODE_USE_FOUNDRY`, or a non-default `ANTHROPIC_BASE_URL`                                                         |
 
 To detect runtime configuration changes, use [`ConfigChange` hooks](/docs/en/hooks#configchange) to log modifications or block unauthorized changes before they take effect. For stronger enforcement guarantees, use [endpoint-managed settings](/docs/en/settings#settings-files) on devices enrolled in an MDM solution.
 

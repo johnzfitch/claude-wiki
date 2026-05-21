@@ -1,9 +1,11 @@
 ---
+title: "Run prompts on a schedule"
+source_url: "https://code.claude.com/docs/en/scheduled-tasks.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/scheduled-tasks.md"
-title: "Run prompts on a schedule"
+tags: ["claude-code", "prompting"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -16,22 +18,22 @@ title: "Run prompts on a schedule"
   Scheduled tasks require Claude Code v2.1.72 or later. Check your version with `claude --version`.
 </Note>
 
-Scheduled tasks let Claude re-run a prompt automatically on an interval. Use them to poll a deployment, babysit a PR, check back on a long-running build, or remind yourself to do something later in the session. To react to events as they happen instead of polling, see [Channels](/en/channels): your CI can push the failure into the session directly.
+Scheduled tasks let Claude re-run a prompt automatically on an interval. Use them to poll a deployment, babysit a PR, check back on a long-running build, or remind yourself to do something later in the session. To react to events as they happen instead of polling, see [Channels](channels-00374ea787.md): your CI can push the failure into the session directly.
 
-Tasks are session-scoped: they live in the current conversation and stop when you start a new one. Resuming with `--resume` or `--continue` brings back any task that hasn't [expired](#seven-day-expiry): a recurring task created within the last 7 days, or a one-shot whose scheduled time hasn't passed yet. For scheduling that survives independently of any session, use [Routines](/en/routines), [Desktop scheduled tasks](/en/desktop-scheduled-tasks), or [GitHub Actions](/en/github-actions).
+Tasks are session-scoped: they live in the current conversation and stop when you start a new one. Resuming with `--resume` or `--continue` brings back any task that hasn't [expired](#seven-day-expiry): a recurring task created within the last 7 days, or a one-shot whose scheduled time hasn't passed yet. For scheduling that survives independently of any session, use [Routines](routines-3111c7bd3a.md), [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md), or [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md).
 
 ## Compare scheduling options
 
 Claude Code offers three ways to schedule recurring or one-off work:
 
-|                            | [Cloud](/en/routines)          | [Desktop](/en/desktop-scheduled-tasks) | [`/loop`](/en/scheduled-tasks)      |
+|                            | [Cloud](routines-3111c7bd3a.md)          | [Desktop](../16-Mobile-Desktop/desktop-scheduled-tasks.md) | [`/loop`](run-prompts-on-a-schedule-claude-code-docs.md)      |
 | :------------------------- | :----------------------------- | :------------------------------------- | :---------------------------------- |
 | Runs on                    | Anthropic cloud                | Your machine                           | Your machine                        |
 | Requires machine on        | No                             | Yes                                    | Yes                                 |
 | Requires open session      | No                             | No                                     | Yes                                 |
 | Persistent across restarts | Yes                            | Yes                                    | Restored on `--resume` if unexpired |
 | Access to local files      | No (fresh clone)               | Yes                                    | Yes                                 |
-| MCP servers                | Connectors configured per task | [Config files](/en/mcp) and connectors | Inherits from session               |
+| MCP servers                | Connectors configured per task | [Config files](../06-MCP-Tools/mcp-208e742686.md) and connectors | Inherits from session               |
 | Permission prompts         | No (runs autonomously)         | Configurable per task                  | Inherits from session               |
 | Customizable schedule      | Via `/schedule` in the CLI     | Yes                                    | Yes                                 |
 | Minimum interval           | 1 hour                         | 1 minute                               | 1 minute                            |
@@ -42,7 +44,7 @@ Claude Code offers three ways to schedule recurring or one-off work:
 
 ## Run a prompt repeatedly with /loop
 
-The `/loop` [bundled skill](/en/commands) is the quickest way to run a prompt on repeat while the session stays open. Both the interval and the prompt are optional, and what you provide determines how the loop behaves.
+The `/loop` [bundled skill](built-in-commands-claude-code-docs.md) is the quickest way to run a prompt on repeat while the session stays open. Both the interval and the prompt are optional, and what you provide determines how the loop behaves.
 
 | What you provide          | Example                     | What happens                                                                                                  |
 | :------------------------ | :-------------------------- | :------------------------------------------------------------------------------------------------------------ |
@@ -181,7 +183,7 @@ The offset is derived from the task ID, so the same task always gets the same of
 
 ### Seven-day expiry
 
-Recurring tasks automatically expire 7 days after creation. The task fires one final time, then deletes itself. This bounds how long a forgotten loop can run. If you need a recurring task to last longer, cancel and recreate it before it expires, or use [Routines](/en/routines) or [Desktop scheduled tasks](/en/desktop-scheduled-tasks) for durable scheduling.
+Recurring tasks automatically expire 7 days after creation. The task fires one final time, then deletes itself. This bounds how long a forgotten loop can run. If you need a recurring task to last longer, cancel and recreate it before it expires, or use [Routines](routines-3111c7bd3a.md) or [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md) for durable scheduling.
 
 ## Cron expression reference
 
@@ -202,7 +204,7 @@ When both day-of-month and day-of-week are constrained, a date matches if either
 
 ## Disable scheduled tasks
 
-Set `CLAUDE_CODE_DISABLE_CRON=1` in your environment to disable the scheduler entirely. The cron tools and `/loop` become unavailable, and any already-scheduled tasks stop firing. See [Environment variables](/en/env-vars) for the full list of disable flags.
+Set `CLAUDE_CODE_DISABLE_CRON=1` in your environment to disable the scheduler entirely. The cron tools and `/loop` become unavailable, and any already-scheduled tasks stop firing. See [Environment variables](env-vars-5c624d392b.md) for the full list of disable flags.
 
 ## Limitations
 
@@ -214,6 +216,6 @@ Session-scoped scheduling has inherent constraints:
 
 For cron-driven automation that needs to run unattended:
 
-* [Routines](/en/routines): run on Anthropic-managed infrastructure on a schedule, via API call, or on GitHub events
-* [GitHub Actions](/en/github-actions): use a `schedule` trigger in CI
-* [Desktop scheduled tasks](/en/desktop-scheduled-tasks): run locally on your machine
+* [Routines](routines-3111c7bd3a.md): run on Anthropic-managed infrastructure on a schedule, via API call, or on GitHub events
+* [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md): use a `schedule` trigger in CI
+* [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md): run locally on your machine

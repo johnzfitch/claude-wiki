@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Sessions Resources List Ca62Ee8880"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/resources/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/sessions/resources/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `client.Beta.Sessions.Resources.List(ctx, sessionID, params) (*PageCursor[BetaManagedAgentsSessionResourceUnion], error)`

@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Vaults List 30D07376E7"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `beta.vaults.list(**kwargs) -> PageCursor<BetaManagedAgentsVault>`

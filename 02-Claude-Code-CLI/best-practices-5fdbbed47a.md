@@ -1,9 +1,11 @@
 ---
+title: "Best Practices for Claude Code"
+source_url: "https://code.claude.com/docs/en/best-practices.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/best-practices.md"
-title: "Best Practices for Claude Code"
+tags: ["claude-code", "prompting"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -18,7 +20,7 @@ This changes how you work. Instead of writing code yourself and asking Claude to
 
 But this autonomy still comes with a learning curve. Claude works within certain constraints you need to understand.
 
-This guide covers patterns that have proven effective across Anthropic's internal teams and for engineers using Claude Code across various codebases, languages, and environments. For how the agentic loop works under the hood, see [How Claude Code works](/en/how-claude-code-works).
+This guide covers patterns that have proven effective across Anthropic's internal teams and for engineers using Claude Code across various codebases, languages, and environments. For how the agentic loop works under the hood, see [How Claude Code works](how-claude-code-works-0871be411d.md).
 
 ***
 
@@ -26,7 +28,7 @@ Most best practices are based on one constraint: Claude's context window fills u
 
 Claude's context window holds your entire conversation, including every message, every file Claude reads, and every command output. However, this can fill up fast. A single debugging session or codebase exploration might generate and consume tens of thousands of tokens.
 
-This matters since LLM performance degrades as context fills. When the context window is getting full, Claude may start "forgetting" earlier instructions or making more mistakes. The context window is the most important resource to manage. To see how a session fills up in practice, [watch an interactive walkthrough](/en/context-window) of what loads at startup and what each file read costs. Track context usage continuously with a [custom status line](/en/statusline), and see [Reduce token usage](/en/costs#reduce-token-usage) for strategies on reducing token usage.
+This matters since LLM performance degrades as context fills. When the context window is getting full, Claude may start "forgetting" earlier instructions or making more mistakes. The context window is the most important resource to manage. To see how a session fills up in practice, [watch an interactive walkthrough](context-window-d266068204.md) of what loads at startup and what each file read costs. Track context usage continuously with a [custom status line](customize-your-status-line-claude-code-docs-8a9fc80be1.md), and see [Reduce token usage](/en/costs#reduce-token-usage) for strategies on reducing token usage.
 
 ***
 
@@ -46,7 +48,7 @@ Without clear success criteria, it might produce something that looks right but 
 | **Verify UI changes visually**        | *"make the dashboard look better"*                      | *"\[paste screenshot] implement this design. take a screenshot of the result and compare it to the original. list differences and fix them"*                                                            |
 | **Address root causes, not symptoms** | *"the build is failing"*                                | *"the build fails with this error: \[paste error]. fix it and verify the build succeeds. address the root cause, don't suppress the error"*                                                             |
 
-UI changes can be verified using the [Claude in Chrome extension](/en/chrome). It opens new tabs in your browser, tests the UI, and iterates until the code works.
+UI changes can be verified using the [Claude in Chrome extension](../03-IDE-Integrations/use-claude-code-with-chrome-beta-claude-code-docs-4f2f5a5a96.md). It opens new tabs in your browser, tests the UI, and iterates until the code works.
 
 Your verification can also be a test suite, a linter, or a Bash command that checks output. Invest in making your verification rock-solid.
 
@@ -146,7 +148,7 @@ You can provide rich data to Claude in several ways:
 
 ## Configure your environment
 
-A few setup steps make Claude Code significantly more effective across all your sessions. For a full overview of extension features and when to use each one, see [Extend Claude Code](/en/features-overview).
+A few setup steps make Claude Code significantly more effective across all your sessions. For a full overview of extension features and when to use each one, see [Extend Claude Code](extend-claude-code-claude-code-docs-3b35aaf641.md).
 
 ### Write an effective CLAUDE.md
 
@@ -170,7 +172,7 @@ There's no required format for CLAUDE.md files, but keep it short and human-read
 - Prefer running single tests, and not the whole test suite, for performance
 ```
 
-CLAUDE.md is loaded every session, so only include things that apply broadly. For domain knowledge or workflows that are only relevant sometimes, use [skills](/en/skills) instead. Claude loads them on demand without bloating every conversation.
+CLAUDE.md is loaded every session, so only include things that apply broadly. For domain knowledge or workflows that are only relevant sometimes, use [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) instead. Claude loads them on demand without bloating every conversation.
 
 Keep it concise. For each line, ask: *"Would removing this cause Claude to make mistakes?"* If not, cut it. Bloated CLAUDE.md files cause Claude to ignore your actual instructions!
 
@@ -218,7 +220,7 @@ By default, Claude Code requests permission for actions that might modify your s
 * **Permission allowlists**: permit specific tools you know are safe, like `npm run lint` or `git commit`
 * **Sandboxing**: enable OS-level isolation that restricts filesystem and network access, allowing Claude to work more freely within defined boundaries
 
-Read more about [permission modes](/en/permission-modes), [permission rules](/en/permissions), and [sandboxing](/en/sandboxing).
+Read more about [permission modes](permission-modes-c83d6eff7e.md), [permission rules](configure-permissions-claude-code-docs-7b0e64d485.md), and [sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md).
 
 ### Use CLI tools
 
@@ -236,7 +238,7 @@ Claude is also effective at learning CLI tools it doesn't already know. Try prom
   Run `claude mcp add` to connect external tools like Notion, Figma, or your database.
 </Tip>
 
-With [MCP servers](/en/mcp), you can ask Claude to implement features from issue trackers, query databases, analyze monitoring data, integrate designs from Figma, and automate workflows.
+With [MCP servers](../06-MCP-Tools/mcp-208e742686.md), you can ask Claude to implement features from issue trackers, query databases, analyze monitoring data, integrate designs from Figma, and automate workflows.
 
 ### Set up hooks
 
@@ -244,7 +246,7 @@ With [MCP servers](/en/mcp), you can ask Claude to implement features from issue
   Use hooks for actions that must happen every time with zero exceptions.
 </Tip>
 
-[Hooks](/en/hooks-guide) run scripts automatically at specific points in Claude's workflow. Unlike CLAUDE.md instructions which are advisory, hooks are deterministic and guarantee the action happens.
+[Hooks](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md) run scripts automatically at specific points in Claude's workflow. Unlike CLAUDE.md instructions which are advisory, hooks are deterministic and guarantee the action happens.
 
 Claude can write hooks for you. Try prompts like *"Write a hook that runs eslint after every file edit"* or *"Write a hook that blocks writes to the migrations folder."* Edit `.claude/settings.json` directly to configure hooks by hand, and run `/hooks` to browse what's configured.
 
@@ -254,7 +256,7 @@ Claude can write hooks for you. Try prompts like *"Write a hook that runs eslint
   Create `SKILL.md` files in `.claude/skills/` to give Claude domain knowledge and reusable workflows.
 </Tip>
 
-[Skills](/en/skills) extend Claude's knowledge with information specific to your project, team, or domain. Claude applies them automatically when relevant, or you can invoke them directly with `/skill-name`.
+[Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) extend Claude's knowledge with information specific to your project, team, or domain. Claude applies them automatically when relevant, or you can invoke them directly with `/skill-name`.
 
 Create a skill by adding a directory with a `SKILL.md` to `.claude/skills/`:
 
@@ -298,7 +300,7 @@ Run `/fix-issue 1234` to invoke it. Use `disable-model-invocation: true` for wor
   Define specialized assistants in `.claude/agents/` that Claude can delegate to for isolated tasks.
 </Tip>
 
-[Subagents](/en/sub-agents) run in their own context with their own set of allowed tools. They're useful for tasks that read many files or need specialized focus without cluttering your main conversation.
+[Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) run in their own context with their own set of allowed tools. They're useful for tasks that read many files or need specialized focus without cluttering your main conversation.
 
 ```markdown .claude/agents/security-reviewer.md theme={null}
 ---
@@ -324,7 +326,7 @@ Tell Claude to use subagents explicitly: *"Use a subagent to review this code fo
   Run `/plugin` to browse the marketplace. Plugins add skills, tools, and integrations without configuration.
 </Tip>
 
-[Plugins](/en/plugins) bundle skills, hooks, subagents, and MCP servers into a single installable unit from the community and Anthropic. If you work with a typed language, install a [code intelligence plugin](/en/discover-plugins#code-intelligence) to give Claude precise symbol navigation and automatic error detection after edits.
+[Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) bundle skills, hooks, subagents, and MCP servers into a single installable unit from the community and Anthropic. If you work with a typed language, install a [code intelligence plugin](/en/discover-plugins#code-intelligence) to give Claude precise symbol navigation and automatic error detection after edits.
 
 For guidance on choosing between skills, subagents, hooks, and MCP, see [Extend Claude Code](/en/features-overview#match-features-to-your-goal).
 
@@ -433,7 +435,7 @@ use a subagent to review this code for edge cases
   Every action Claude makes creates a checkpoint. You can restore conversation, code, or both to any previous checkpoint.
 </Tip>
 
-Claude automatically checkpoints before changes. Double-tap `Escape` or run `/rewind` to open the rewind menu. You can restore conversation only, restore code only, restore both, or summarize from a selected message. See [Checkpointing](/en/checkpointing) for details.
+Claude automatically checkpoints before changes. Double-tap `Escape` or run `/rewind` to open the rewind menu. You can restore conversation only, restore code only, restore both, or summarize from a selected message. See [Checkpointing](checkpointing-94f7cd24eb.md) for details.
 
 Instead of carefully planning every move, you can tell Claude to try something risky. If it doesn't work, rewind and try a different approach. Checkpoints persist across sessions, so you can close your terminal and still rewind later.
 
@@ -492,8 +494,8 @@ claude -p "Analyze this log file" --output-format stream-json
 There are three main ways to run parallel sessions:
 
 * [Claude Code desktop app](/en/desktop#work-in-parallel-with-sessions): Manage multiple local sessions visually. Each session gets its own isolated worktree.
-* [Claude Code on the web](/en/claude-code-on-the-web): Run on Anthropic's secure cloud infrastructure in isolated VMs.
-* [Agent teams](/en/agent-teams): Automated coordination of multiple sessions with shared tasks, messaging, and a team lead.
+* [Claude Code on the web](claude-code-on-the-web-69d53821d4.md): Run on Anthropic's secure cloud infrastructure in isolated VMs.
+* [Agent teams](../09-Agents-Patterns/agent-teams-e29da6ed1b.md): Automated coordination of multiple sessions with shared tasks, messaging, and a team lead.
 
 Beyond parallelizing work, multiple sessions enable quality-focused workflows. A fresh context improves code review since Claude won't be biased toward code it just wrote.
 
@@ -583,7 +585,7 @@ Over time, you'll develop intuition that no guide can capture. You'll know when 
 
 ## Related resources
 
-* [How Claude Code works](/en/how-claude-code-works): the agentic loop, tools, and context management
-* [Extend Claude Code](/en/features-overview): skills, hooks, MCP, subagents, and plugins
-* [Common workflows](/en/common-workflows): step-by-step recipes for debugging, testing, PRs, and more
-* [CLAUDE.md](/en/memory): store project conventions and persistent context
+* [How Claude Code works](how-claude-code-works-0871be411d.md): the agentic loop, tools, and context management
+* [Extend Claude Code](extend-claude-code-claude-code-docs-3b35aaf641.md): skills, hooks, MCP, subagents, and plugins
+* [Common workflows](common-workflows-c909406123.md): step-by-step recipes for debugging, testing, PRs, and more
+* [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md): store project conventions and persistent context

@@ -3,7 +3,7 @@ title: "Best practices for skill creators - Agent Skills"
 source_url: "https://agentskills.io/skill-creation/best-practices"
 category: "08-Plugins-Skills"
 fetched_at: "2026-03-20T10:34:08Z"
-tags: ["agents", "skills"]
+tags: ["agents", "plugins", "skills"]
 ---
 
 # Best practices for skill creators

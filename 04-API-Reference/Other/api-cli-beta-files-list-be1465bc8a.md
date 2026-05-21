@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Files List Be1465Bc8A"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/files/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/files/list.md"
+tags: ["api", "cli"]
 ---
+
 ## List
 
 `$ ant beta:files list`

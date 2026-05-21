@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Memory Stores Memories Create 6578972Df7"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/memory_stores/memories/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/memory_stores/memories/create.md"
+tags: ["api", "typescript"]
 ---
+
 ## Create
 
 `client.beta.memoryStores.memories.create(stringmemoryStoreID, MemoryCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory`

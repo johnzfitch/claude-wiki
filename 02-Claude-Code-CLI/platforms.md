@@ -49,14 +49,14 @@ For integrations not listed here, MCP servers and connectors let you connect alm
 
 ## See Also
 
-- [CLI quickstart](/en/quickstart)
+- [CLI quickstart](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md)
 - [Desktop](../16-Mobile-Desktop/desktop.md)
-- [VS Code](/en/vs-code)
-- [JetBrains](/en/jetbrains)
-- [Claude Code on the web](/en/claude-code-on-the-web)
+- [VS Code](../03-IDE-Integrations/use-claude-code-in-vs-code-claude-code-docs-29143b6fee.md)
+- [JetBrains](../03-IDE-Integrations/jetbrains-4cf6bd8c22.md)
+- [Claude Code on the web](claude-code-on-the-web-69d53821d4.md)
 - [Chrome](chrome.md)
-- [GitHub Actions](/en/github-actions)
-- [GitLab CI/CD](/en/gitlab-ci-cd)
+- [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md)
+- [GitLab CI/CD](claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md)
 - [Slack](slack.md)
 - [Remote Control](remote-control.md)
 - [Channels](channels.md)

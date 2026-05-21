@@ -1,9 +1,11 @@
 ---
+title: "Troubleshooting tool use"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use.md"
-title: "Troubleshooting tool use"
+tags: ["api"]
 ---
+
 # Troubleshooting tool use
 
 Fix the most common tool-use errors with symptom-to-fix diagnostic tables.

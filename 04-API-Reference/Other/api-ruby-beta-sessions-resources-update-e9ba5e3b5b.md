@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Sessions Resources Update E9Ba5E3B5B"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/resources/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/resources/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `beta.sessions.resources.update(resource_id, **kwargs) -> ResourceUpdateResponse`

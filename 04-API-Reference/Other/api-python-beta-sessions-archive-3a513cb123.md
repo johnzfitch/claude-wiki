@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Sessions Archive 3A513Cb123"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/sessions/archive.md"
+tags: ["api", "python"]
 ---
+
 ## Archive
 
 `beta.sessions.archive(strsession_id, SessionArchiveParams**kwargs)  -> BetaManagedAgentsSession`

@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Vaults Create Cf458D3127"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/create.md"
+tags: ["api", "python"]
 ---
+
 ## Create
 
 `beta.vaults.create(VaultCreateParams**kwargs)  -> BetaManagedAgentsVault`

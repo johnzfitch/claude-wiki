@@ -1,9 +1,11 @@
 ---
+title: "Customize keyboard shortcuts"
+source_url: "https://code.claude.com/docs/en/keybindings.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/keybindings.md"
-title: "Customize keyboard shortcuts"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -311,7 +313,7 @@ Actions available in the `Doctor` context:
 
 ### Voice actions
 
-Actions available in the `Chat` context when [voice dictation](/en/voice-dictation) is enabled:
+Actions available in the `Chat` context when [voice dictation](voice-dictation-0555c38d5c.md) is enabled:
 
 | Action             | Default | Description                                              |
 | :----------------- | :------ | :------------------------------------------------------- |
@@ -319,7 +321,7 @@ Actions available in the `Chat` context when [voice dictation](/en/voice-dictati
 
 ### Scroll actions
 
-Actions available in the `Scroll` context when [fullscreen rendering](/en/fullscreen) is enabled:
+Actions available in the `Scroll` context when [fullscreen rendering](fullscreen-34ba4558ad.md) is enabled:
 
 | Action                      | Default              | Description                                                                                               |
 | :-------------------------- | :------------------- | :-------------------------------------------------------------------------------------------------------- |

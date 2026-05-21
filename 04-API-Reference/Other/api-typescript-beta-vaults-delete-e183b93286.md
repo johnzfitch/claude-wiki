@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Vaults Delete E183B93286"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/vaults/delete.md"
+tags: ["api", "typescript"]
 ---
+
 ## Delete
 
 `client.beta.vaults.delete(stringvaultID, VaultDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedVault`

@@ -1,9 +1,11 @@
 ---
+title: "Use Claude Code with Chrome (beta)"
+source_url: "https://code.claude.com/docs/en/chrome.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/chrome.md"
-title: "Use Claude Code with Chrome (beta)"
+tags: ["claude-code", "cli"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -230,9 +232,9 @@ These are the most frequently encountered errors and how to resolve them:
 
 ## See also
 
-* [Computer use](/en/computer-use): control native macOS apps when a task can't be done in a browser
+* [Computer use](computer-use-427032da98.md): control native macOS apps when a task can't be done in a browser
 * [Use Claude Code in VS Code](/en/vs-code#automate-browser-tasks-with-chrome): browser automation in the VS Code extension
-* [CLI reference](/en/cli-reference): command-line flags including `--chrome`
-* [Common workflows](/en/common-workflows): more ways to use Claude Code
-* [Data and privacy](/en/data-usage): how Claude Code handles your data
-* [Getting started with Claude in Chrome](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome): full documentation for the Chrome extension, including shortcuts, scheduling, and permissions
+* [CLI reference](cli-reference-7bb98e3312.md): command-line flags including `--chrome`
+* [Common workflows](common-workflows-c909406123.md): more ways to use Claude Code
+* [Data and privacy](../22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md): how Claude Code handles your data
+* [Getting started with Claude in Chrome](../15-Claude-AI-Features/getting-started-with-claude-in-chrome.md): full documentation for the Chrome extension, including shortcuts, scheduling, and permissions

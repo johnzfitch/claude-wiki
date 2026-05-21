@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Models List B002A3B259"
+source_url: "https://platform.claude.com/docs/en/api/csharp/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/models/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `ModelListPageResponse Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)`

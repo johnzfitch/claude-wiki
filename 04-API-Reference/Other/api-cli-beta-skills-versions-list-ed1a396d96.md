@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Skills Versions List Ed1A396D96"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/versions/list.md"
+tags: ["api", "cli", "skills"]
 ---
+
 ## List
 
 `$ ant beta:skills:versions list`

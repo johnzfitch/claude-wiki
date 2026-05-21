@@ -14,7 +14,7 @@ Understand the message lifecycle, tool execution, context window, and architectu
 
 The Agent SDK lets you embed Claude Code's autonomous agent loop in your own applications. The SDK is a standalone package that gives you programmatic control over tools, permissions, cost limits, and output. You don't need the Claude Code CLI installed to use it.
 
-When you start an agent, the SDK runs the same [execution loop that powers Claude Code](https://code.claude.com/docs/en/how-claude-code-works#the-agentic-loop): Claude evaluates your prompt, calls tools to take action, receives the results, and repeats until the task is complete. This page explains what happens inside that loop so you can build, debug, and optimize your agents effectively.
+When you start an agent, the SDK runs the same [execution loop that powers Claude Code](../02-Claude-Code-CLI/how-claude-code-works-0871be411d.md#the-agentic-loop): Claude evaluates your prompt, calls tools to take action, receives the results, and repeats until the task is complete. This page explains what happens inside that loop so you can build, debug, and optimize your agents effectively.
 
 
 The loop at a glance
@@ -166,7 +166,7 @@ The permission mode option (`permission_mode` in Python, `permissionMode` in Typ
 | `"default"` | Tools not covered by allow rules trigger your approval callback; no callback means deny |
 | `"acceptEdits"` | Auto-approves file edits, other tools follow default rules |
 | `"plan"` | No tool execution; Claude produces a plan for review |
-| `"dontAsk"` (TypeScript only) | Never prompts. Tools pre-approved by [permission rules](https://code.claude.com/docs/en/settings#permission-settings) run, everything else is denied |
+| `"dontAsk"` (TypeScript only) | Never prompts. Tools pre-approved by [permission rules](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md#permission-settings) run, everything else is denied |
 | `"bypassPermissions"` | Runs all allowed tools without asking. Cannot be used when running as root on Unix. Use only in isolated environments where the agent's actions cannot affect systems you care about |
 
 For interactive applications, use `"default"` with a tool approval callback to surface approval prompts. For autonomous agents on a dev machine, `"acceptEdits"` auto-approves file edits while still gating `Bash` behind allow rules. Reserve `"bypassPermissions"` for CI, containers, or other isolated environments. See [Permissions](/docs/en/agent-sdk/permissions) for full details.
@@ -221,7 +221,7 @@ A few strategies for long-running agents:
 - **Watch MCP server costs.** Each MCP server adds all its tool schemas to every request. A few servers with many tools can consume significant context before the agent does any work. The `ToolSearch` tool can help by loading tools on-demand instead of preloading all of them. See [MCP tool search](/docs/en/agent-sdk/mcp#mcp-tool-search) for configuration.
 - **Use lower effort for routine tasks.** Set [effort](#effort-level) to `"low"` for agents that only need to read files or list directories. This reduces token usage and cost.
 
-For a detailed breakdown of per-feature context costs, see [Understand context costs](https://code.claude.com/docs/en/features-overview#understand-context-costs).
+For a detailed breakdown of per-feature context costs, see [Understand context costs](../02-Claude-Code-CLI/extend-claude-code-claude-code-docs-3b35aaf641.md#understand-context-costs).
 
 
 Sessions and continuity
@@ -332,4 +332,4 @@ Now that you understand the loop, here's where to go depending on what you're bu
 - **Need tighter control over what the agent can do?** Lock down tool access with [permissions](/docs/en/agent-sdk/permissions), and use [hooks](/docs/en/agent-sdk/hooks) to audit, block, or transform tool calls before they execute.
 - **Running long or expensive tasks?** Offload isolated work to [subagents](/docs/en/agent-sdk/subagents) to keep your main context lean.
 
-For the broader conceptual picture of the agentic loop (not SDK-specific), see [How Claude Code works](https://code.claude.com/docs/en/how-claude-code-works).
+For the broader conceptual picture of the agentic loop (not SDK-specific), see [How Claude Code works](../02-Claude-Code-CLI/how-claude-code-works-0871be411d.md).

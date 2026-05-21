@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Models List 7217473A41"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/models/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `beta.models.list(**kwargs) -> Page<BetaModelInfo>`

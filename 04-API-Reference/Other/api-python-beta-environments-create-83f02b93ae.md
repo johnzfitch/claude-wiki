@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Environments Create 83F02B93Ae"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/environments/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/environments/create.md"
+tags: ["api", "python"]
 ---
+
 ## Create
 
 `beta.environments.create(EnvironmentCreateParams**kwargs)  -> BetaEnvironment`

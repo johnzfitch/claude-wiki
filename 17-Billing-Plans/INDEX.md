@@ -1,8 +1,9 @@
 # Billing Plans
 
-*63 documents*
+*65 documents*
 
 
+- [Pricing](about-claude-pricing-820bbf24dd.md) - Learn about Anthropic's pricing structure for models and features
 - [Pricing - Claude API Docs](about-claude-pricing.md) - Learn about Anthropic's pricing structure for models and features
 - [Claude Help Center](about-claude-s-max-plan-usage.md) - Search for articles...
 - [Add or update your Team plan&#x27;s tax or VAT ID | Claude Help Center](add-or-update-your-team-plan-s-tax-or-vat-id.md) - 4.  Add or update your Team plan's tax or VAT ID
@@ -37,6 +38,7 @@
 - [I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do I have to pay separately to use the Claude API and Console? | Claude Help Center](i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-do-i-have.md) - 4.  I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why do I have to pay separately to use the Claude API and Console?
 - [I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy? | Claude Help Center](i-m-planning-to-launch-a-product-using-the-claude-api-what-steps-should-i-take-t.md) - 4.  I’m planning to launch a product using the Claude API. What steps should I take to ensure I’m not violating Anthropic’s Usage Policy?
 - [Add or update your Team plan&#x27;s tax or VAT ID | Claude Help Center](i-need-to-add-or-update-my-team-plan-s-tax-or-vat-id.md) - 4.  Add or update your Team plan's tax or VAT ID
+- [Manage costs effectively - Claude Code Docs](manage-costs-effectively-claude-code-docs-7c26178a4f.md) - Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and prepr
 - [Manage extra usage for Team and seat-based Enterprise plans | Claude Help Center](manage-extra-usage-for-team-and-seat-based-enterprise-plans.md) - 4.  Manage extra usage for Team and seat-based Enterprise plans
 - [Manage members on Team and Enterprise plans | Claude Help Center](manage-members-on-team-and-enterprise-plans.md) - 4.  Manage members on Team and Enterprise plans
 - [Manage user feedback settings on Team and Enterprise plans | Claude Help Center](manage-user-feedback-settings-on-team-and-enterprise-plans.md) - 4.  Manage user feedback settings on Team and Enterprise plans

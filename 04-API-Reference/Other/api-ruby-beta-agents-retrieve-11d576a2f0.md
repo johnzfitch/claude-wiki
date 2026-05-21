@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Agents Retrieve 11D576A2F0"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/agents/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/agents/retrieve.md"
+tags: ["agents", "api"]
 ---
+
 ## Retrieve
 
 `beta.agents.retrieve(agent_id, **kwargs) -> BetaManagedAgentsAgent`

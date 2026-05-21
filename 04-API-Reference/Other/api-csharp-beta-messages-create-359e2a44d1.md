@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Messages Create 359E2A44D1"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `BetaMessage Beta.Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)`
@@ -2395,7 +2398,7 @@ Learn more about the Messages API in our [user guide](https://docs.claude.com/en
 
   - `BetaJsonOutputFormat? outputFormat`
 
-    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

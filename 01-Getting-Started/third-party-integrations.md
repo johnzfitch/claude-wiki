@@ -127,7 +127,7 @@ Most organizations can use a cloud provider directly without additional configur
 * **Corporate proxy**: Routes traffic through an HTTP/HTTPS proxy. Use this if your organization requires all outbound traffic to pass through a proxy server for security monitoring, compliance, or network policy enforcement. Configure with the `HTTPS_PROXY` or `HTTP_PROXY` environment variables. Learn more in [Enterprise network configuration](../02-Claude-Code-CLI/enterprise-network-configuration-claude-code-docs.md).
 * **LLM Gateway**: A service that sits between Claude Code and the cloud provider to handle authentication and routing. Use this if you need centralized usage tracking across teams, custom rate limiting or budgets, or centralized authentication management. Configure with the `ANTHROPIC_BASE_URL`, `ANTHROPIC_BEDROCK_BASE_URL`, or `ANTHROPIC_VERTEX_BASE_URL` environment variables. Learn more in [LLM gateway configuration](../02-Claude-Code-CLI/llm-gateway-configuration-claude-code-docs.md).
 
-The following examples show the environment variables to set in your shell or shell profile (`.bashrc`, `.zshrc`). See [Settings](/en/settings) for other configuration methods.
+The following examples show the environment variables to set in your shell or shell profile (`.bashrc`, `.zshrc`). See [Settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) for other configuration methods.
 
 ### Amazon Bedrock
 
@@ -234,7 +234,7 @@ We strongly recommend investing in documentation so that Claude Code understands
 * **Organization-wide**: Deploy to system directories like `/Library/Application Support/ClaudeCode/CLAUDE.md` (macOS) for company-wide standards
 * **Repository-level**: Create `CLAUDE.md` files in repository roots containing project architecture, build commands, and contribution guidelines. Check these into source control so all users benefit
 
-Learn more in [Memory and CLAUDE.md files](/en/memory).
+Learn more in [Memory and CLAUDE.md files](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md).
 
 ### Simplify deployment
 
@@ -258,6 +258,6 @@ At Anthropic, we trust Claude Code to power development across every Anthropic c
 
 Once you've chosen a deployment option and configured access for your team:
 
-1. **Roll out to your team**: Share installation instructions and have team members [install Claude Code](/en/setup) and authenticate with their credentials.
-2. **Set up shared configuration**: Create a [CLAUDE.md file](/en/memory) in your repositories to help Claude Code understand your codebase and coding standards.
+1. **Roll out to your team**: Share installation instructions and have team members [install Claude Code](advanced-setup-claude-code-docs-0526bc1300.md) and authenticate with their credentials.
+2. **Set up shared configuration**: Create a [CLAUDE.md file](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) in your repositories to help Claude Code understand your codebase and coding standards.
 3. **Configure permissions**: Review [security settings](../02-Claude-Code-CLI/security-claude-code-docs.md) to define what Claude Code can and cannot do in your environment.

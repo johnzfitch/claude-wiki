@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Models List 8508160C0C"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/models/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `client.Beta.Models.List(ctx, params) (*Page[BetaModelInfo], error)`

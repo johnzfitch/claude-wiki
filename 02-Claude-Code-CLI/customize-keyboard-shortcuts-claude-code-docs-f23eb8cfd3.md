@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-04-26T03:20:11Z"
+fetched_at: "2026-05-19T21:22:50Z"
 source_url: "https://code.claude.com/docs/en/keybindings"
 title: "Customize keyboard shortcuts - Claude Code Docs"
 ---
@@ -10,6 +10,12 @@ title: "Customize keyboard shortcuts - Claude Code Docs"
 
 Customize keyboard shortcuts in Claude Code with a keybindings configuration file.
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 Customizable keyboard shortcuts require Claude Code v2.1.18 or later. Check your version with `claude --version`.
 
@@ -55,28 +61,28 @@ Contexts
 
 Each binding block specifies a **context** where the bindings apply:
 
-| Context | Description |
-|:---|:---|
-| `Global` | Applies everywhere in the app |
-| `Chat` | Main chat input area |
-| `Autocomplete` | Autocomplete menu is open |
-| `Settings` | Settings menu |
-| `Confirmation` | Permission and confirmation dialogs |
-| `Tabs` | Tab navigation components |
-| `Help` | Help menu is visible |
-| `Transcript` | Transcript viewer |
-| `HistorySearch` | History search mode (Ctrl+R) |
-| `Task` | Background task is running |
-| `ThemePicker` | Theme picker dialog |
-| `Attachments` | Image attachment navigation in select dialogs |
-| `Footer` | Footer indicator navigation (tasks, teams, diff) |
-| `MessageSelector` | Rewind and summarize dialog message selection |
-| `DiffDialog` | Diff viewer navigation |
-| `ModelPicker` | Model picker effort level |
-| `Select` | Generic select/list components |
-| `Plugin` | Plugin dialog (browse, discover, manage) |
-| `Scroll` | Conversation scrolling and text selection in fullscreen mode |
-| `Doctor` | `/doctor` diagnostics screen |
+| Context           | Description                                                  |
+|:------------------|:-------------------------------------------------------------|
+| `Global`          | Applies everywhere in the app                                |
+| `Chat`            | Main chat input area                                         |
+| `Autocomplete`    | Autocomplete menu is open                                    |
+| `Settings`        | Settings menu                                                |
+| `Confirmation`    | Permission and confirmation dialogs                          |
+| `Tabs`            | Tab navigation components                                    |
+| `Help`            | Help menu is visible                                         |
+| `Transcript`      | Transcript viewer                                            |
+| `HistorySearch`   | History search mode (Ctrl+R)                                 |
+| `Task`            | Background task is running                                   |
+| `ThemePicker`     | Theme picker dialog                                          |
+| `Attachments`     | Image attachment navigation in select dialogs                |
+| `Footer`          | Footer indicator navigation (tasks, teams, diff)             |
+| `MessageSelector` | Rewind and summarize dialog message selection                |
+| `DiffDialog`      | Diff viewer navigation                                       |
+| `ModelPicker`     | Model picker effort level                                    |
+| `Select`          | Generic select/list components                               |
+| `Plugin`          | Plugin dialog (browse, discover, manage)                     |
+| `Scroll`          | Conversation scrolling and text selection in fullscreen mode |
+| `Doctor`          | `/doctor` diagnostics screen                                 |
 
 
 [​](#available-actions)
@@ -120,21 +126,22 @@ Chat actions
 
 Actions available in the `Chat` context:
 
-| Action | Default | Description |
-|:---|:---|:---|
-| `chat:cancel` | Escape | Cancel current input |
-| `chat:clearInput` | Ctrl+L | Clear prompt input and force a full screen redraw |
-| `chat:killAgents` | Ctrl+X Ctrl+K | Kill all background agents |
-| `chat:cycleMode` | Shift+Tab\* | Cycle permission modes |
-| `chat:modelPicker` | Meta+P | Open model picker |
-| `chat:fastMode` | Meta+O | Toggle fast mode |
-| `chat:thinkingToggle` | Meta+T | Toggle extended thinking |
-| `chat:submit` | Enter | Submit message |
-| `chat:newline` | Ctrl+J | Insert a newline without submitting |
-| `chat:undo` | Ctrl+\_, Ctrl+Shift+- | Undo last action |
-| `chat:externalEditor` | Ctrl+G, Ctrl+X Ctrl+E | Open in external editor |
-| `chat:stash` | Ctrl+S | Stash current prompt |
-| `chat:imagePaste` | Ctrl+V (Alt+V on Windows) | Paste image |
+| Action                | Default                   | Description                                                                                                                                                         |
+|:----------------------|:--------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `chat:cancel`         | Escape                    | Cancel current input                                                                                                                                                |
+| `chat:clearInput`     | Ctrl+L                    | Force a full screen redraw, preserving input. In [fullscreen rendering](/docs/en/fullscreen#clear-the-conversation), press twice within two seconds to run `/clear` |
+| `chat:clearScreen`    | Cmd+K                     | In [fullscreen rendering](/docs/en/fullscreen#clear-the-conversation), press twice within two seconds to run `/clear`                                               |
+| `chat:killAgents`     | Ctrl+X Ctrl+K             | Kill all running [background subagents](/docs/en/sub-agents#run-subagents-in-foreground-or-background) in this session                                              |
+| `chat:cycleMode`      | Shift+Tab\*               | Cycle permission modes                                                                                                                                              |
+| `chat:modelPicker`    | Meta+P                    | Open model picker                                                                                                                                                   |
+| `chat:fastMode`       | Meta+O                    | Toggle fast mode                                                                                                                                                    |
+| `chat:thinkingToggle` | Meta+T                    | Toggle extended thinking                                                                                                                                            |
+| `chat:submit`         | Enter                     | Submit message                                                                                                                                                      |
+| `chat:newline`        | Ctrl+J                    | Insert a newline without submitting                                                                                                                                 |
+| `chat:undo`           | Ctrl+\_, Ctrl+Shift+-     | Undo last action                                                                                                                                                    |
+| `chat:externalEditor` | Ctrl+G, Ctrl+X Ctrl+E     | Open in external editor                                                                                                                                             |
+| `chat:stash`          | Ctrl+S                    | Stash current prompt                                                                                                                                                |
+| `chat:imagePaste`     | Ctrl+V (Alt+V on Windows) | Paste image                                                                                                                                                         |
 
 \*On Windows without VT mode (Node \<24.2.0/\<22.17.0, Bun \<1.2.23), defaults to Meta+M.
 
@@ -201,12 +208,13 @@ History search actions
 
 Actions available in the `HistorySearch` context:
 
-| Action                  | Default     | Description              |
-|:------------------------|:------------|:-------------------------|
-| `historySearch:next`    | Ctrl+R      | Next match               |
-| `historySearch:accept`  | Escape, Tab | Accept selection         |
-| `historySearch:cancel`  | Ctrl+C      | Cancel search            |
-| `historySearch:execute` | Enter       | Execute selected command |
+| Action                     | Default     | Description                               |
+|:---------------------------|:------------|:------------------------------------------|
+| `historySearch:next`       | Ctrl+R      | Next match                                |
+| `historySearch:accept`     | Escape, Tab | Accept selection                          |
+| `historySearch:cancel`     | Ctrl+C      | Cancel search                             |
+| `historySearch:execute`    | Enter       | Execute selected command                  |
+| `historySearch:cycleScope` | Ctrl+S      | Cycle scope: session, project, everywhere |
 
 
 [​](#task-actions)
@@ -290,13 +298,13 @@ Message selector actions
 
 Actions available in the `MessageSelector` context:
 
-| Action | Default | Description |
-|:---|:---|:---|
-| `messageSelector:up` | Up, K, Ctrl+P | Move up in list |
-| `messageSelector:down` | Down, J, Ctrl+N | Move down in list |
-| `messageSelector:top` | Ctrl+Up, Shift+Up, Meta+Up, Shift+K | Jump to top |
-| `messageSelector:bottom` | Ctrl+Down, Shift+Down, Meta+Down, Shift+J | Jump to bottom |
-| `messageSelector:select` | Enter | Select message |
+| Action                   | Default                                   | Description       |
+|:-------------------------|:------------------------------------------|:------------------|
+| `messageSelector:up`     | Up, K, Ctrl+P                             | Move up in list   |
+| `messageSelector:down`   | Down, J, Ctrl+N                           | Move down in list |
+| `messageSelector:top`    | Ctrl+Up, Shift+Up, Meta+Up, Shift+K       | Jump to top       |
+| `messageSelector:bottom` | Ctrl+Down, Shift+Down, Meta+Down, Shift+J | Jump to bottom    |
+| `messageSelector:select` | Enter                                     | Select message    |
 
 
 [​](#diff-actions)
@@ -322,10 +330,11 @@ Model picker actions
 
 Actions available in the `ModelPicker` context:
 
-| Action                       | Default | Description           |
-|:-----------------------------|:--------|:----------------------|
-| `modelPicker:decreaseEffort` | Left    | Decrease effort level |
-| `modelPicker:increaseEffort` | Right   | Increase effort level |
+| Action                       | Default | Description                                       |
+|:-----------------------------|:--------|:--------------------------------------------------|
+| `modelPicker:decreaseEffort` | Left    | Decrease effort level                             |
+| `modelPicker:increaseEffort` | Right   | Increase effort level                             |
+| `modelPicker:setAsDefault`   | d       | Set highlighted model as default for new sessions |
 
 
 [​](#select-actions)
@@ -348,11 +357,11 @@ Plugin actions
 
 Actions available in the `Plugin` context:
 
-| Action | Default | Description |
-|:---|:---|:---|
-| `plugin:toggle` | Space | Toggle plugin selection |
-| `plugin:install` | I | Install selected plugins |
-| `plugin:favorite` | F | Favorite the selected plugin so it sorts near the top of the Installed tab |
+| Action            | Default | Description                                                                |
+|:------------------|:--------|:---------------------------------------------------------------------------|
+| `plugin:toggle`   | Space   | Toggle plugin selection                                                    |
+| `plugin:install`  | I       | Install selected plugins                                                   |
+| `plugin:favorite` | F       | Favorite the selected plugin so it sorts near the top of the Installed tab |
 
 
 [​](#settings-actions)
@@ -361,11 +370,11 @@ Settings actions
 
 Actions available in the `Settings` context:
 
-| Action | Default | Description |
-|:---|:---|:---|
-| `settings:search` | / | Enter search mode |
-| `settings:retry` | R | Retry loading usage data (on error) |
-| `settings:close` | Enter | Save changes and close the config panel. Escape discards changes and closes |
+| Action            | Default | Description                                                                 |
+|:------------------|:--------|:----------------------------------------------------------------------------|
+| `settings:search` | /       | Enter search mode                                                           |
+| `settings:retry`  | R       | Retry loading usage data (on error)                                         |
+| `settings:close`  | Enter   | Save changes and close the config panel. Escape discards changes and closes |
 
 
 [​](#doctor-actions)
@@ -374,9 +383,9 @@ Doctor actions
 
 Actions available in the `Doctor` context:
 
-| Action | Default | Description |
-|:---|:---|:---|
-| `doctor:fix` | F | Send the diagnostics report to Claude to fix the reported issues. Only active when issues are found |
+| Action       | Default | Description                                                                                         |
+|:-------------|:--------|:----------------------------------------------------------------------------------------------------|
+| `doctor:fix` | F       | Send the diagnostics report to Claude to fix the reported issues. Only active when issues are found |
 
 
 [​](#voice-actions)
@@ -385,9 +394,9 @@ Voice actions
 
 Actions available in the `Chat` context when [voice dictation](/docs/en/voice-dictation) is enabled:
 
-| Action | Default | Description |
-|:---|:---|:---|
-| `voice:pushToTalk` | Space | Dictate a prompt. Hold or tap depending on `/voice` mode |
+| Action             | Default | Description                                              |
+|:-------------------|:--------|:---------------------------------------------------------|
+| `voice:pushToTalk` | Space   | Dictate a prompt. Hold or tap depending on `/voice` mode |
 
 
 [​](#scroll-actions)
@@ -396,26 +405,26 @@ Scroll actions
 
 Actions available in the `Scroll` context when [fullscreen rendering](/docs/en/fullscreen) is enabled:
 
-| Action | Default | Description |
-|:---|:---|:---|
-| `scroll:lineUp` | (unbound) | Scroll up one line. Mouse wheel scrolling triggers this action |
-| `scroll:lineDown` | (unbound) | Scroll down one line. Mouse wheel scrolling triggers this action |
-| `scroll:pageUp` | PageUp | Scroll up half the viewport height |
-| `scroll:pageDown` | PageDown | Scroll down half the viewport height |
-| `scroll:top` | Ctrl+Home | Jump to the start of the conversation |
-| `scroll:bottom` | Ctrl+End | Jump to the latest message and re-enable auto-follow |
-| `scroll:halfPageUp` | (unbound) | Scroll up half the viewport height. Same behavior as `scroll:pageUp`, provided for vi-style rebinds |
-| `scroll:halfPageDown` | (unbound) | Scroll down half the viewport height. Same behavior as `scroll:pageDown`, provided for vi-style rebinds |
-| `scroll:fullPageUp` | (unbound) | Scroll up the full viewport height |
-| `scroll:fullPageDown` | (unbound) | Scroll down the full viewport height |
-| `selection:copy` | Ctrl+Shift+C / Cmd+C | Copy the selected text to the clipboard |
-| `selection:clear` | (unbound) | Clear the active text selection |
-| `selection:extendLeft` | Shift+Left | Extend the active selection one column left |
-| `selection:extendRight` | Shift+Right | Extend the active selection one column right |
-| `selection:extendUp` | Shift+Up | Extend the active selection one row up. Scrolls the viewport when the selection reaches the top edge |
-| `selection:extendDown` | Shift+Down | Extend the active selection one row down. Scrolls the viewport when the selection reaches the bottom edge |
-| `selection:extendLineStart` | Shift+Home | Extend the active selection to the start of the line |
-| `selection:extendLineEnd` | Shift+End | Extend the active selection to the end of the line |
+| Action                      | Default              | Description                                                                                               |
+|:----------------------------|:---------------------|:----------------------------------------------------------------------------------------------------------|
+| `scroll:lineUp`             | (unbound)            | Scroll up one line. Mouse wheel scrolling triggers this action                                            |
+| `scroll:lineDown`           | (unbound)            | Scroll down one line. Mouse wheel scrolling triggers this action                                          |
+| `scroll:pageUp`             | PageUp               | Scroll up half the viewport height                                                                        |
+| `scroll:pageDown`           | PageDown             | Scroll down half the viewport height                                                                      |
+| `scroll:top`                | Ctrl+Home            | Jump to the start of the conversation                                                                     |
+| `scroll:bottom`             | Ctrl+End             | Jump to the latest message and re-enable auto-follow                                                      |
+| `scroll:halfPageUp`         | (unbound)            | Scroll up half the viewport height. Same behavior as `scroll:pageUp`, provided for vi-style rebinds       |
+| `scroll:halfPageDown`       | (unbound)            | Scroll down half the viewport height. Same behavior as `scroll:pageDown`, provided for vi-style rebinds   |
+| `scroll:fullPageUp`         | (unbound)            | Scroll up the full viewport height                                                                        |
+| `scroll:fullPageDown`       | (unbound)            | Scroll down the full viewport height                                                                      |
+| `selection:copy`            | Ctrl+Shift+C / Cmd+C | Copy the selected text to the clipboard                                                                   |
+| `selection:clear`           | (unbound)            | Clear the active text selection                                                                           |
+| `selection:extendLeft`      | Shift+Left           | Extend the active selection one column left                                                               |
+| `selection:extendRight`     | Shift+Right          | Extend the active selection one column right                                                              |
+| `selection:extendUp`        | Shift+Up             | Extend the active selection one row up. Scrolls the viewport when the selection reaches the top edge      |
+| `selection:extendDown`      | Shift+Down           | Extend the active selection one row down. Scrolls the viewport when the selection reaches the bottom edge |
+| `selection:extendLineStart` | Shift+Home           | Extend the active selection to the start of the line                                                      |
+| `selection:extendLineEnd`   | Shift+End            | Extend the active selection to the end of the line                                                        |
 
 
 [​](#keystroke-syntax)
@@ -519,11 +528,12 @@ Reserved shortcuts
 
 These shortcuts cannot be rebound:
 
-| Shortcut | Reason                                         |
-|:---------|:-----------------------------------------------|
-| Ctrl+C   | Hardcoded interrupt/cancel                     |
-| Ctrl+D   | Hardcoded exit                                 |
-| Ctrl+M   | Identical to Enter in terminals (both send CR) |
+| Shortcut  | Reason                                         |
+|:----------|:-----------------------------------------------|
+| Ctrl+C    | Hardcoded interrupt/cancel                     |
+| Ctrl+D    | Hardcoded exit                                 |
+| Ctrl+M    | Identical to Enter in terminals (both send CR) |
+| Caps Lock | Not delivered to terminal applications         |
 
 
 [​](#terminal-conflicts)

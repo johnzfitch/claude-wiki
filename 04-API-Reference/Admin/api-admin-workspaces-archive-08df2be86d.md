@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Workspaces Archive 08Df2Be86D"
+source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/archive.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 **post** `/v1/organizations/workspaces/{workspace_id}/archive`

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Sessions Create 0Bb99Ed0Ef"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/create.md"
+tags: ["api", "typescript"]
 ---
+
 ## Create
 
 `client.beta.sessions.create(SessionCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession`

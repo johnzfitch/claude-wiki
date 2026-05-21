@@ -1,9 +1,11 @@
 ---
+title: "Connect to external tools with MCP"
+source_url: "https://code.claude.com/docs/en/agent-sdk/mcp.md"
 category: "06-MCP-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/mcp.md"
-title: "Connect to external tools with MCP"
+tags: ["authentication", "mcp", "search"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -12,13 +14,13 @@ title: "Connect to external tools with MCP"
 
 > Configure MCP servers to extend your agent with external tools. Covers transport types, tool search for large tool sets, authentication, and error handling.
 
-The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/getting-started/intro) is an open standard for connecting AI agents to external tools and data sources. With MCP, your agent can query databases, integrate with APIs like Slack and GitHub, and connect to other services without writing custom tool implementations.
+The [Model Context Protocol (MCP)](Tutorials/what-is-the-model-context-protocol-mcp-model-context-protocol.md) is an open standard for connecting AI agents to external tools and data sources. With MCP, your agent can query databases, integrate with APIs like Slack and GitHub, and connect to other services without writing custom tool implementations.
 
 MCP servers can run as local processes, connect over HTTP, or execute directly within your SDK application.
 
 ## Quickstart
 
-This example connects to the [Claude Code documentation](https://code.claude.com/docs) MCP server using [HTTP transport](#httpsse-servers) and uses [`allowedTools`](#allow-mcp-tools) with a wildcard to permit all tools from the server.
+This example connects to the [Claude Code documentation](../02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md) MCP server using [HTTP transport](#httpsse-servers) and uses [`allowedTools`](#allow-mcp-tools) with a wildcard to permit all tools from the server.
 
 <CodeGroup>
   ```typescript TypeScript theme={null}
@@ -449,7 +451,7 @@ For HTTP and SSE servers, pass authentication headers directly in the server con
 
 ### OAuth2 authentication
 
-The [MCP specification supports OAuth 2.1](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization) for authorization. The SDK doesn't handle OAuth flows automatically, but you can pass access tokens via headers after completing the OAuth flow in your application:
+The [MCP specification supports OAuth 2.1](Spec-Archive/spec-2025-03-26-authorization-model-context-protocol.md) for authorization. The SDK doesn't handle OAuth flows automatically, but you can pass access tokens via headers after completing the OAuth flow in your application:
 
 <CodeGroup>
   ```typescript TypeScript theme={null}

@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Models Retrieve 88D62A2309"
+source_url: "https://platform.claude.com/docs/en/api/cli/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/models/retrieve.md"
+tags: ["api", "cli"]
 ---
+
 ## Retrieve
 
 `$ ant models retrieve`

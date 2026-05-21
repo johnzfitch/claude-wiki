@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Environments Delete 4Da114F720"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/environments/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/environments/delete.md"
+tags: ["api", "typescript"]
 ---
+
 ## Delete
 
 `client.beta.environments.delete(stringenvironmentID, EnvironmentDeleteParamsparams?, RequestOptionsoptions?): BetaEnvironmentDeleteResponse`

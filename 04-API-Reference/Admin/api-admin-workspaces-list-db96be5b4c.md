@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Workspaces List Db96Be5B4C"
+source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/list.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 **get** `/v1/organizations/workspaces`

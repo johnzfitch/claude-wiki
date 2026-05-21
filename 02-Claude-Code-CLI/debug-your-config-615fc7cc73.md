@@ -1,9 +1,11 @@
 ---
+title: "Debug your configuration"
+source_url: "https://code.claude.com/docs/en/debug-your-config.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/debug-your-config.md"
-title: "Debug your configuration"
+tags: ["claude-code", "hooks", "mcp"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -14,7 +16,7 @@ title: "Debug your configuration"
 
 When Claude ignores an instruction or a feature you configured doesn't appear, the cause is usually that the file didn't load, it loaded from a different location than you expected, or another file overrode it. This guide shows how to inspect what Claude Code actually loaded so you can narrow down which applies.
 
-For installation, authentication, and connectivity problems, see [Troubleshooting](/en/troubleshooting) instead.
+For installation, authentication, and connectivity problems, see [Troubleshooting](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md) instead.
 
 ## See what loaded into context
 
@@ -40,12 +42,12 @@ If `/memory` confirms the file loaded but Claude still isn't following a particu
 Adherence drops when an instruction is vague enough to interpret multiple ways, when two files give conflicting direction, or when the file has grown long enough that individual rules get less attention. [Write effective instructions](/en/memory#write-effective-instructions) covers the specificity, size, and structure patterns that keep adherence high.
 
 <Note>
-  CLAUDE.md and permissions solve different problems. CLAUDE.md tells Claude how your project works so it makes good decisions. [Permissions](/en/permissions) and [hooks](/en/hooks) enforce limits regardless of what Claude decides. Use CLAUDE.md for "we do it this way here." Use permissions or hooks for security boundaries and anything that must never happen, where you need a guarantee instead of guidance.
+  CLAUDE.md and permissions solve different problems. CLAUDE.md tells Claude how your project works so it makes good decisions. [Permissions](configure-permissions-claude-code-docs-7b0e64d485.md) and [hooks](../07-Hooks/hooks-9168ed62a4.md) enforce limits regardless of what Claude decides. Use CLAUDE.md for "we do it this way here." Use permissions or hooks for security boundaries and anything that must never happen, where you need a guarantee instead of guidance.
 </Note>
 
 ## Check resolved settings
 
-Settings merge across managed, user, project, and local scopes. Managed settings always win when present. Among the rest, the closer scope overrides the broader one in the order local, then project, then user. Some settings can also be set by command-line flags or [environment variables](/en/env-vars), which act as another override layer. When a setting doesn't seem to apply, the value you set is usually being overridden by another scope or an environment variable.
+Settings merge across managed, user, project, and local scopes. Managed settings always win when present. Among the rest, the closer scope overrides the broader one in the order local, then project, then user. Some settings can also be set by command-line flags or [environment variables](env-vars-5c624d392b.md), which act as another override layer. When a setting doesn't seem to apply, the value you set is usually being overridden by another scope or an environment variable.
 
 Run `/doctor` to validate your configuration files and surface invalid keys or schema errors. Run `/status` to see which settings sources are active, including whether managed settings are in effect. To understand which scope wins for a given key, see [How scopes interact](/en/settings#how-scopes-interact).
 
@@ -57,7 +59,7 @@ Run `/mcp` to see every configured server, its connection status, and whether yo
 * A server that fails to start shows as failed in `/mcp`. Relative file paths in `command` or `args` are a frequent cause, since they resolve against the directory you launched Claude Code from rather than the location of `.mcp.json`.
 * A server that shows as connected but lists zero tools has started successfully but isn't returning a tool list. Select **Reconnect** from `/mcp`. If the count stays at zero, run `claude --debug mcp` to see the server's stderr output.
 
-For configuration locations and scope rules, see [MCP](/en/mcp).
+For configuration locations and scope rules, see [MCP](../06-MCP-Tools/mcp-208e742686.md).
 
 ## Check hooks
 
@@ -77,26 +79,26 @@ Most configuration surprises trace back to a small set of location and syntax ru
 | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hook never fires                                                 | `matcher` is a JSON array instead of a string                                                                              | Use a single string with `\|` to match multiple tools, for example `"Edit\|Write"`. See [matcher patterns](/en/hooks#matcher-patterns).                                                                   |
 | Hook never fires                                                 | `matcher` value is lowercase, for example `"bash"`                                                                         | Matching is case-sensitive. Tool names are capitalized: `Bash`, `Edit`, `Write`, `Read`.                                                                                                                  |
-| Hook never fires                                                 | Hooks are in a standalone `.claude/hooks.json` file                                                                        | There is no standalone hooks file. Define hooks under the `"hooks"` key in `settings.json`. See [hook configuration](/en/hooks).                                                                          |
+| Hook never fires                                                 | Hooks are in a standalone `.claude/hooks.json` file                                                                        | There is no standalone hooks file. Define hooks under the `"hooks"` key in `settings.json`. See [hook configuration](../07-Hooks/hooks-9168ed62a4.md).                                                                          |
 | Permissions, hooks, or env set globally are ignored              | Configuration was added to `~/.claude.json`                                                                                | `~/.claude.json` holds app state and UI toggles. `permissions`, `hooks`, and `env` belong in `~/.claude/settings.json`. These are two different files.                                                    |
 | A `settings.json` value seems ignored                            | The same key is set in `settings.local.json`                                                                               | `settings.local.json` overrides `settings.json`, and both override `~/.claude/settings.json`. See [settings precedence](/en/settings#how-scopes-interact).                                                |
 | Skill doesn't appear in `/skills`                                | Skill file is at `.claude/skills/name.md` instead of in a folder                                                           | Use a folder with `SKILL.md` inside: `.claude/skills/name/SKILL.md`.                                                                                                                                      |
-| Skill appears in `/skills` but Claude never invokes it           | Skill has `disable-model-invocation: true` in its frontmatter, or its description doesn't match how you phrase the request | Check the badge in `/skills`: a "user-only" label means Claude won't trigger it on its own. See [skill invocation](/en/skills).                                                                           |
+| Skill appears in `/skills` but Claude never invokes it           | Skill has `disable-model-invocation: true` in its frontmatter, or its description doesn't match how you phrase the request | Check the badge in `/skills`: a "user-only" label means Claude won't trigger it on its own. See [skill invocation](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md).                                                                           |
 | Subdirectory `CLAUDE.md` instructions seem ignored               | Subdirectory files load on demand, not at session start                                                                    | They load when Claude reads a file in that directory with the Read tool, not at launch and not when writing or creating files there. See [how CLAUDE.md files load](/en/memory#how-claude-md-files-load). |
-| Subagent ignores `CLAUDE.md` instructions                        | Subagents don't always inherit project memory                                                                              | Put critical rules in the agent file body, which becomes the subagent's system prompt. See [subagent configuration](/en/sub-agents).                                                                      |
+| Subagent ignores `CLAUDE.md` instructions                        | Subagents don't always inherit project memory                                                                              | Put critical rules in the agent file body, which becomes the subagent's system prompt. See [subagent configuration](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md).                                                                      |
 | Cleanup logic never runs at session end                          | No `SessionEnd` hook configured                                                                                            | `SessionStart` and `SessionEnd` both exist. See the [hook events list](/en/hooks#hook-events).                                                                                                            |
-| MCP servers in `.mcp.json` never load                            | File is under `.claude/` or uses Claude Desktop's config format                                                            | Project MCP config goes at the repository root as `.mcp.json`, not inside `.claude/`. See [MCP configuration](/en/mcp).                                                                                   |
+| MCP servers in `.mcp.json` never load                            | File is under `.claude/` or uses Claude Desktop's config format                                                            | Project MCP config goes at the repository root as `.mcp.json`, not inside `.claude/`. See [MCP configuration](../06-MCP-Tools/mcp-208e742686.md).                                                                                   |
 | Project MCP server added but doesn't appear                      | The one-time approval prompt was dismissed                                                                                 | Project-scoped servers require approval. Run `/mcp` to see status and approve.                                                                                                                            |
 | MCP server fails to start from some directories                  | `command` or `args` uses a relative file path                                                                              | Use absolute paths for local scripts. Executables on your `PATH` like `npx` or `uvx` work as-is.                                                                                                          |
 | MCP server starts without expected environment variables         | Variables are in `settings.json` `env`, which doesn't propagate to MCP child processes                                     | Set per-server `env` inside `.mcp.json` instead.                                                                                                                                                          |
-| `Bash(rm *)` deny rule doesn't block `/bin/rm` or `find -delete` | Prefix rules match the literal command string, not the underlying executable                                               | Add explicit patterns for each variant, or use a [PreToolUse hook](/en/hooks-guide) or the [sandbox](/en/sandboxing) for a hard guarantee.                                                                |
+| `Bash(rm *)` deny rule doesn't block `/bin/rm` or `find -delete` | Prefix rules match the literal command string, not the underlying executable                                               | Add explicit patterns for each variant, or use a [PreToolUse hook](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md) or the [sandbox](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) for a hard guarantee.                                                                |
 
 ## Related resources
 
 For full reference on each configuration surface, see the dedicated page:
 
-* **[`.claude` directory reference](/en/claude-directory)**: every config file location and what reads it
-* **[Settings](/en/settings)**: precedence order and the full key list
-* **[Hooks reference](/en/hooks)**: event names, payloads, and `--debug hooks` output format
-* **[MCP](/en/mcp)**: server configuration, approval, and `/mcp` output
-* **[Troubleshooting](/en/troubleshooting)**: `claude doctor`, platform issues, and installation problems
+* **[`.claude` directory reference](claude-directory-06f83438fe.md)**: every config file location and what reads it
+* **[Settings](claude-code-settings-claude-code-docs-d4420b4b52.md)**: precedence order and the full key list
+* **[Hooks reference](../07-Hooks/hooks-9168ed62a4.md)**: event names, payloads, and `--debug hooks` output format
+* **[MCP](../06-MCP-Tools/mcp-208e742686.md)**: server configuration, approval, and `/mcp` output
+* **[Troubleshooting](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md)**: `claude doctor`, platform issues, and installation problems

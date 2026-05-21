@@ -1,9 +1,11 @@
 ---
+title: "Supported regions"
+source_url: "https://platform.claude.com/docs/en/api/supported-regions.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/supported-regions.md"
-title: "Supported regions"
+tags: ["api"]
 ---
+
 # Supported regions
 
 Here are the countries, regions, and territories we can currently support access from:

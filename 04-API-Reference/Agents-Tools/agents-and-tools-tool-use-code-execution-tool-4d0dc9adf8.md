@@ -1,9 +1,11 @@
 ---
+title: "Code execution tool"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool.md"
-title: "Code execution tool"
+tags: ["agents", "api", "containers", "skills"]
 ---
+
 # Code execution tool
 
 Run Python and bash code in a sandboxed container to analyze data, generate files, and iterate on solutions.

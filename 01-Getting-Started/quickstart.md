@@ -19,10 +19,10 @@ Make sure you have:
 
 * A terminal or command prompt open
 * A code project to work with
-* A [Claude subscription](https://claude.com/pricing) (Pro, Max, Teams, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](/en/third-party-integrations)
+* A [Claude subscription](https://claude.com/pricing) (Pro, Max, Teams, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md)
 
 <Note>
-  This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](/en/vs-code) and [JetBrains IDEs](/en/jetbrains), in [Slack](../02-Claude-Code-CLI/slack.md), and in CI/CD with [GitHub Actions](/en/github-actions) and [GitLab](/en/gitlab-ci-cd). See [all interfaces](/en/overview#use-claude-code-everywhere).
+  This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/use-claude-code-in-vs-code-claude-code-docs-29143b6fee.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains-4cf6bd8c22.md), in [Slack](../02-Claude-Code-CLI/slack.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/claude-code-github-actions-claude-code-docs-0d633fbd8a.md) and [GitLab](../02-Claude-Code-CLI/claude-code-gitlab-ci-cd-claude-code-docs-fbcd915fee.md). See [all interfaces](/en/overview#use-claude-code-everywhere).
 </Note>
 
 ## Step 1: Install Claude Code
@@ -93,7 +93,7 @@ You can log in using any of these account types:
 
 * [Claude Pro, Max, Teams, or Enterprise](https://claude.com/pricing) (recommended)
 * [Claude Console](https://console.anthropic.com/) (API access with pre-paid credits). On first login, a "Claude Code" workspace is automatically created in the Console for centralized cost tracking.
-* [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](/en/third-party-integrations) (enterprise cloud providers)
+* [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md) (enterprise cloud providers)
 
 Once logged in, your credentials are stored and you won't need to log in again. To switch accounts later, use the `/login` command.
 
@@ -268,11 +268,11 @@ Here are the most important commands for daily use:
 | `/help`             | Show available commands                                | `/help`                             |
 | `exit` or Ctrl+C    | Exit Claude Code                                       | `exit`                              |
 
-See the [CLI reference](/en/cli-reference) for a complete list of commands.
+See the [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) for a complete list of commands.
 
 ## Pro tips for beginners
 
-For more, see [best practices](/en/best-practices) and [common workflows](/en/common-workflows).
+For more, see [best practices](../10-Prompting-Guides/best-practices-for-claude-code-claude-code-docs-9686dc1633.md) and [common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md).
 
 <AccordionGroup>
   <Accordion title="Be specific with your requests">

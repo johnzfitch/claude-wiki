@@ -1,9 +1,11 @@
 ---
+title: "Start a session"
+source_url: "https://platform.claude.com/docs/en/managed-agents/sessions.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/sessions.md"
-title: "Start a session"
+tags: ["api", "authentication", "mcp"]
 ---
+
 # Start a session
 
 Create a session to run your agent and begin executing tasks.

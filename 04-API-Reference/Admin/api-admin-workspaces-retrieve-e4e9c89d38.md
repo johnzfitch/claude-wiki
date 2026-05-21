@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Workspaces Retrieve E4E9C89D38"
+source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/retrieve.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 **get** `/v1/organizations/workspaces/{workspace_id}`

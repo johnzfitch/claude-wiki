@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Skills Versions Create 3E91A54C1F"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/versions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/versions/create.md"
+tags: ["api", "cli", "skills"]
 ---
+
 ## Create
 
 `$ ant beta:skills:versions create`

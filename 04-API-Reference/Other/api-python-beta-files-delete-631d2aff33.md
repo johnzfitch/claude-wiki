@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Files Delete 631D2Aff33"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/files/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/files/delete.md"
+tags: ["api", "python"]
 ---
+
 ## Delete
 
 `beta.files.delete(strfile_id, FileDeleteParams**kwargs)  -> DeletedFile`

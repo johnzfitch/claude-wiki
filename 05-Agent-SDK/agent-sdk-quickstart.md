@@ -179,7 +179,7 @@ After running, check `utils.py`. You'll see defensive code handling empty lists 
 
 This is what makes the Agent SDK different: Claude executes tools directly instead of asking you to implement them.
 
-If you see "API key not found", make sure you've set the `ANTHROPIC_API_KEY` environment variable in your `.env` file or shell environment. See the [full troubleshooting guide](https://code.claude.com/docs/en/troubleshooting) for more help.
+If you see "API key not found", make sure you've set the `ANTHROPIC_API_KEY` environment variable in your `.env` file or shell environment. See the [full troubleshooting guide](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md) for more help.
 
 
 Try other prompts

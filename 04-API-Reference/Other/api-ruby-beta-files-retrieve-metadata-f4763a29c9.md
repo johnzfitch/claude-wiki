@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Files Retrieve Metadata F4763A29C9"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/files/retrieve_metadata.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/files/retrieve_metadata.md"
+tags: ["api"]
 ---
+
 ## Retrieve Metadata
 
 `beta.files.retrieve_metadata(file_id, **kwargs) -> FileMetadata`

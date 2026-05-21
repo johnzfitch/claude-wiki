@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Vaults Credentials List A8997E6C8B"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/credentials/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/credentials/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `beta.vaults.credentials.list(vault_id, **kwargs) -> PageCursor<BetaManagedAgentsCredential>`

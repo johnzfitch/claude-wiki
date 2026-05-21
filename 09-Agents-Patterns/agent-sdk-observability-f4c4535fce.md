@@ -1,9 +1,11 @@
 ---
+title: "Observability with OpenTelemetry"
+source_url: "https://code.claude.com/docs/en/agent-sdk/observability.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/observability.md"
-title: "Observability with OpenTelemetry"
+tags: ["agents", "sdk"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -40,7 +42,7 @@ The CLI exports three independent OpenTelemetry signals. Each has its own enable
 | Log events | Structured records for each prompt, API request, API error, and tool result | `OTEL_LOGS_EXPORTER`                                                |
 | Traces     | Spans for each interaction, model request, tool call, and hook (beta)       | `OTEL_TRACES_EXPORTER` plus `CLAUDE_CODE_ENHANCED_TELEMETRY_BETA=1` |
 
-For the complete list of metric names, event names, and attributes, see the Claude Code [Monitoring](/en/monitoring-usage) reference. The Agent SDK emits the same data because it runs the same CLI. Span names are listed in [Read agent traces](#read-agent-traces) below.
+For the complete list of metric names, event names, and attributes, see the Claude Code [Monitoring](../13-Enterprise-Admin/monitoring-claude-code-docs-72c46f3dc8.md) reference. The Agent SDK emits the same data because it runs the same CLI. Span names are listed in [Read agent traces](#read-agent-traces) below.
 
 ## Enable telemetry export
 
@@ -219,4 +221,4 @@ These guides cover adjacent topics for monitoring and deploying agents:
 
 * [Track cost and usage](/en/agent-sdk/cost-tracking): read token and cost data from the message stream without an external backend.
 * [Hosting the Agent SDK](/en/agent-sdk/hosting): deploy agents in containers where you can set OpenTelemetry variables at the environment level.
-* [Monitoring](/en/monitoring-usage): the complete reference for every environment variable, metric, and event the CLI emits.
+* [Monitoring](../13-Enterprise-Admin/monitoring-claude-code-docs-72c46f3dc8.md): the complete reference for every environment variable, metric, and event the CLI emits.

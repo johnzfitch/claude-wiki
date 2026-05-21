@@ -90,5 +90,5 @@ Delegate coding tasks directly from your Slack workspace. When you mention `@Cla
 
 ## See Also
 
-- [Claude Code on the web](/en/claude-code-on-the-web)
+- [Claude Code on the web](claude-code-on-the-web-69d53821d4.md)
 - [Claude for Slack](https://claude.com/claude-and-slack)

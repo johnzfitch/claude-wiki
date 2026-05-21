@@ -1,9 +1,11 @@
 ---
+title: "OpenAI SDK compatibility"
+source_url: "https://platform.claude.com/docs/en/api/openai-sdk.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/openai-sdk.md"
-title: "OpenAI SDK compatibility"
+tags: ["api", "sdk"]
 ---
+
 # OpenAI SDK compatibility
 
 Anthropic provides a compatibility layer that enables you to use the OpenAI SDK to test the Claude API. With a few code changes, you can quickly evaluate Anthropic model capabilities.

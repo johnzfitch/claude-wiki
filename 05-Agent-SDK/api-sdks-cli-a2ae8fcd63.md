@@ -1,9 +1,11 @@
 ---
+title: "CLI"
+source_url: "https://platform.claude.com/docs/en/api/sdks/cli.md"
 category: "05-Agent-SDK"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/sdks/cli.md"
-title: "CLI"
+tags: ["agents", "api", "authentication", "claude-code", "cli", "sdk"]
 ---
+
 # CLI
 
 Interact with the Claude API directly from your terminal with the ant command-line tool

@@ -1,9 +1,11 @@
 ---
+title: "Go SDK"
+source_url: "https://platform.claude.com/docs/en/api/sdks/go.md"
 category: "05-Agent-SDK"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/sdks/go.md"
-title: "Go SDK"
+tags: ["agents", "cli", "sdk"]
 ---
+
 # Go SDK
 
 Install and configure the Anthropic Go SDK with context-based cancellation and functional options

@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Messages Batches Create 143C1Be65B"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)`
@@ -2608,7 +2611,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
         - `BetaJsonOutputFormat? Format`
 
-          A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+          A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
           - `required IReadOnlyDictionary<string, JsonElement> Schema`
 
@@ -2618,7 +2621,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
       - `BetaJsonOutputFormat? OutputFormat`
 
-        Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+        Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
         A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

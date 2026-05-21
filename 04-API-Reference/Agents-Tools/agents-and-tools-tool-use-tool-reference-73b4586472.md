@@ -1,9 +1,11 @@
 ---
+title: "Tool reference"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference.md"
-title: "Tool reference"
+tags: ["api"]
 ---
+
 # Tool reference
 
 Directory of Anthropic-provided tools and reference for optional tool definition properties.

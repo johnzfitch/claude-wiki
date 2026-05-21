@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Memory Stores Archive B0Fa60C65B"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/memory_stores/archive.md"
+tags: ["api", "python"]
 ---
+
 ## Archive
 
 `beta.memory_stores.archive(strmemory_store_id, MemoryStoreArchiveParams**kwargs)  -> BetaManagedAgentsMemoryStore`

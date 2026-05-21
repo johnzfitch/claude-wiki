@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Memory Stores Delete 1B99F1826A"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/memory_stores/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/memory_stores/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `BetaManagedAgentsDeletedMemoryStore Beta.MemoryStores.Delete(MemoryStoreDeleteParamsparameters, CancellationTokencancellationToken = default)`

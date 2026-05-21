@@ -1,9 +1,11 @@
 ---
+title: "How the agent loop works"
+source_url: "https://code.claude.com/docs/en/agent-sdk/agent-loop.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/agent-loop.md"
-title: "How the agent loop works"
+tags: ["agents", "hooks"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -164,7 +166,7 @@ When either limit is hit, the SDK returns a `ResultMessage` with a corresponding
 
 ### Effort level
 
-The `effort` option controls how much reasoning Claude applies. Lower effort levels use fewer tokens per turn and reduce cost. Not all models support the effort parameter. See [Effort](https://platform.claude.com/docs/en/build-with-claude/effort) for which models support it.
+The `effort` option controls how much reasoning Claude applies. Lower effort levels use fewer tokens per turn and reduce cost. Not all models support the effort parameter. See [Effort](../04-API-Reference/effort.md) for which models support it.
 
 | Level      | Behavior                          | Good for                                          |
 | :--------- | :-------------------------------- | :------------------------------------------------ |
@@ -177,7 +179,7 @@ The `effort` option controls how much reasoning Claude applies. Lower effort lev
 If you don't set `effort`, the Python SDK leaves the parameter unset and defers to the model's default behavior. The TypeScript SDK defaults to `"high"`.
 
 <Note>
-  `effort` trades latency and token cost for reasoning depth within each response. [Extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) is a separate feature that produces visible chain-of-thought blocks in the output. They are independent: you can set `effort: "low"` with extended thinking enabled, or `effort: "max"` without it.
+  `effort` trades latency and token cost for reasoning depth within each response. [Extended thinking](../04-API-Reference/Guides/build-with-claude-extended-thinking-dd12780e6a.md) is a separate feature that produces visible chain-of-thought blocks in the output. They are independent: you can set `effort: "low"` with extended thinking enabled, or `effort: "max"` without it.
 </Note>
 
 Use lower effort for agents doing simple, well-scoped tasks (like listing files or running a single grep) to reduce cost and latency. `effort` is set at the top-level `query()` options, not per-subagent.
@@ -203,7 +205,7 @@ If you don't set `model`, the SDK uses Claude Code's default, which depends on y
 
 ## The context window
 
-The context window is the total amount of information available to Claude during a session. It does not reset between turns within a session. Everything accumulates: the system prompt, tool definitions, conversation history, tool inputs, and tool outputs. Content that stays the same across turns (system prompt, tool definitions, CLAUDE.md) is automatically [prompt cached](https://platform.claude.com/docs/en/build-with-claude/prompt-caching), which reduces cost and latency for repeated prefixes.
+The context window is the total amount of information available to Claude during a session. It does not reset between turns within a session. Everything accumulates: the system prompt, tool definitions, conversation history, tool inputs, and tool outputs. Content that stays the same across turns (system prompt, tool definitions, CLAUDE.md) is automatically [prompt cached](../10-Prompting-Guides/build-with-claude-prompt-caching-bf7c54aa4c.md), which reduces cost and latency for repeated prefixes.
 
 ### What consumes context
 
@@ -398,4 +400,4 @@ Now that you understand the loop, here's where to go depending on what you're bu
 * **Need tighter control over what the agent can do?** Lock down tool access with [permissions](/en/agent-sdk/permissions), and use [hooks](/en/agent-sdk/hooks) to audit, block, or transform tool calls before they execute.
 * **Running long or expensive tasks?** Offload isolated work to [subagents](/en/agent-sdk/subagents) to keep your main context lean.
 
-For the broader conceptual picture of the agentic loop (not SDK-specific), see [How Claude Code works](/en/how-claude-code-works).
+For the broader conceptual picture of the agentic loop (not SDK-specific), see [How Claude Code works](../02-Claude-Code-CLI/how-claude-code-works-0871be411d.md).

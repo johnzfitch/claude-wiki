@@ -1,9 +1,11 @@
 ---
+title: "Admin API overview"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/administration-api.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/administration-api.md"
-title: "Admin API overview"
+tags: ["api", "claude-code"]
 ---
+
 # Admin API overview
 
 ---
@@ -43,7 +45,7 @@ There are five organization-level roles. See more details in the [API Console ro
 | Role | Permissions |
 |------|-------------|
 | user | Can use Workbench |
-| claude_code_user | Can use Workbench and [Claude Code](https://code.claude.com/docs/en/overview) |
+| claude_code_user | Can use Workbench and [Claude Code](../../02-Claude-Code-CLI/claude-code-overview-claude-code-docs-c23f3e7cbb.md) |
 | developer | Can use Workbench and manage API keys |
 | billing | Can use Workbench and manage billing details |
 | admin | Can do all of the above, plus manage users |

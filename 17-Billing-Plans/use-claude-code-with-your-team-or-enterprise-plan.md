@@ -43,7 +43,7 @@ If your organization is on an older Enterprise plan with Chat and Chat + Claude 
 
 **Note:** If you already have Claude Code installed on your computer, proceed to Step 3.
 
-Once you confirm you have access, follow the installation instructions in our **[Claude Code Docs](https://code.claude.com/docs/en/quickstart#step-1-install-claude-code)** for the environment you're using.
+Once you confirm you have access, follow the installation instructions in our **[Claude Code Docs](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md#step-1-install-claude-code)** for the environment you're using.
 
 ### Step 3: Authenticate with the Team or Enterprise account
 

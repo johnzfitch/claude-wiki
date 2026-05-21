@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Vaults Credentials Update Eda34C6975"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/credentials/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/credentials/update.md"
+tags: ["api", "python"]
 ---
+
 ## Update
 
 `beta.vaults.credentials.update(strcredential_id, CredentialUpdateParams**kwargs)  -> BetaManagedAgentsCredential`

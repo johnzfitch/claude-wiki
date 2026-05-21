@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Environments Create 216Ef91726"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `client.Beta.Environments.New(ctx, params) (*BetaEnvironment, error)`

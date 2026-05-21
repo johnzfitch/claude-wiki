@@ -1,6 +1,6 @@
 # Account Support
 
-*35 documents*
+*36 documents*
 
 
 - [Account management FAQs | Claude Help Center](account-management-faqs.md) - Owners can update the team name on their plan by navigating to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization
@@ -35,6 +35,7 @@
 - [Claude Help Center](setting-up-single-sign-on-on-the-claude-console.md) - Search for articles...
 - [Set up single sign-on (SSO) | Claude Help Center](setting-up-single-sign-on-sso-for-claude-and-claude-console.md) - Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
 - [Set up single sign-on (SSO) | Claude Help Center](setting-up-single-sign-on-sso.md) - Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
+- [Troubleshooting - Claude Code Docs](troubleshooting-claude-code-docs-3f3657ed0f.md) - Discover solutions to common issues with Claude Code installation and usage.
 - [Where can I access Claude? | Claude Help Center](where-can-i-access-claude-ai.md) - You can access Claude in the following locations:
 - [Who owns and manages the data of my Claude for Education account? | Claude Help Center](who-owns-and-manages-the-data-of-my-claude-for-education-account.md) - 3.  Who owns and manages the data of my Claude for Education account?
 - [Why is a coupon or promotion not available for my account? | Claude Help Center](why-is-a-coupon-or-promotion-not-available-for-my-account.md) - 4.  Why is a coupon or promotion not available for my account?

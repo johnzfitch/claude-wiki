@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Files Upload A9Db62137C"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/files/upload.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/files/upload.md"
+tags: ["api"]
 ---
+
 ## Upload
 
 `client.Beta.Files.Upload(ctx, params) (*FileMetadata, error)`

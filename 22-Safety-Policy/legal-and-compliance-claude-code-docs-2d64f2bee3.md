@@ -1,6 +1,6 @@
 ---
 category: "22-Safety-Policy"
-fetched_at: "2026-04-26T03:20:11Z"
+fetched_at: "2026-05-19T21:22:50Z"
 source_url: "https://code.claude.com/docs/en/legal-and-compliance"
 title: "Legal and compliance - Claude Code Docs"
 ---
@@ -9,6 +9,15 @@ title: "Legal and compliance - Claude Code Docs"
 
 
 Legal agreements, compliance certifications, and security information for Claude Code.
+
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
+
+Starting June 15, 2026, Agent SDK and `claude -p` usage on subscription plans will draw from a new monthly Agent SDK credit, separate from your interactive usage limits. See [Use the Claude Agent SDK with your Claude plan](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan) for details.
 
 
 [​](#legal-agreements)
@@ -30,7 +39,7 @@ Your use of Claude Code is subject to:
 
 Commercial agreements
 
-Whether you’re using the Claude API directly (1P) or accessing it through AWS Bedrock or Google Vertex (3P), your existing commercial agreement will apply to Claude Code usage, unless we’ve mutually agreed otherwise.
+Whether you’re using the Claude API directly (1P) or accessing it through Amazon Bedrock or Google Vertex (3P), your existing commercial agreement will apply to Claude Code usage, unless we’ve mutually agreed otherwise.
 
 
 [​](#compliance)
@@ -85,7 +94,7 @@ You can find more information in the [Anthropic Trust Center](https://trust.anth
 
 Security vulnerability reporting
 
-Anthropic manages our security program through HackerOne. [Use this form to report vulnerabilities](https://hackerone.com/anthropic-vdp/reports/new?type=team&report_type=vulnerability).
+Anthropic manages our security program through HackerOne. [Use this form to report vulnerabilities](https://hackerone.com/4f1f16ba-10d3-4d09-9ecc-c721aad90f24/embedded_submissions/new).
 
 ------------------------------------------------------------------------
 

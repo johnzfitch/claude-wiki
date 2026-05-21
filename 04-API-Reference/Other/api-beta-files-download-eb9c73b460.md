@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Files Download Eb9C73B460"
+source_url: "https://platform.claude.com/docs/en/api/beta/files/download.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/files/download.md"
+tags: ["api"]
 ---
+
 ## Download
 
 **get** `/v1/files/{file_id}/content`

@@ -22,7 +22,7 @@ Overview
 You can create subagents in three ways:
 
 - **Programmatically**: use the `agents` parameter in your `query()` options ([TypeScript](/docs/en/agent-sdk/typescript#agent-definition), [Python](/docs/en/agent-sdk/python#agent-definition))
-- **Filesystem-based**: define agents as markdown files in `.claude/agents/` directories (see [defining subagents as files](https://code.claude.com/docs/en/sub-agents))
+- **Filesystem-based**: define agents as markdown files in `.claude/agents/` directories (see [defining subagents as files](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md))
 - **Built-in general-purpose**: Claude can invoke the built-in `general-purpose` subagent at any time via the Agent tool without you defining anything
 
 This guide focuses on the programmatic approach, which is recommended for SDK applications.
@@ -137,7 +137,7 @@ Subagents cannot spawn their own subagents. Don't include `Agent` in a subagent'
 
 Filesystem-based definition (alternative)
 
-You can also define subagents as markdown files in `.claude/agents/` directories. See the [Claude Code subagents documentation](https://code.claude.com/docs/en/sub-agents) for details on this approach. Programmatically defined agents take precedence over filesystem-based agents with the same name.
+You can also define subagents as markdown files in `.claude/agents/` directories. See the [Claude Code subagents documentation](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) for details on this approach. Programmatically defined agents take precedence over filesystem-based agents with the same name.
 
 Even without defining custom subagents, Claude can spawn the built-in `general-purpose` subagent when `Agent` is in your `allowedTools`. This is useful for delegating research or exploration tasks without creating specialized agents.
 
@@ -414,5 +414,5 @@ On Windows, subagents with very long prompts may fail due to command line length
 
 Related documentation
 
-- [Claude Code subagents](https://code.claude.com/docs/en/sub-agents): comprehensive subagent documentation including filesystem-based definitions
+- [Claude Code subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md): comprehensive subagent documentation including filesystem-based definitions
 - [SDK overview](/docs/en/agent-sdk/overview): getting started with the Claude Agent SDK

@@ -1,9 +1,11 @@
 ---
+title: "Cloud environment setup"
+source_url: "https://platform.claude.com/docs/en/managed-agents/environments.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/environments.md"
-title: "Cloud environment setup"
+tags: ["api"]
 ---
+
 # Cloud environment setup
 
 Customize cloud containers for your sessions.

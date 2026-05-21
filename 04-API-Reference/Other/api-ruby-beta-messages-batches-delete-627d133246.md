@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Messages Batches Delete 627D133246"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `beta.messages.batches.delete(message_batch_id, **kwargs) -> BetaDeletedMessageBatch`

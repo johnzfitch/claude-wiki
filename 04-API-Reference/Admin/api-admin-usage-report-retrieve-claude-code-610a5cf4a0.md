@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Usage Report Retrieve Claude Code 610A5Cf4A0"
+source_url: "https://platform.claude.com/docs/en/api/admin/usage_report/retrieve_claude_code.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/usage_report/retrieve_claude_code.md"
+tags: ["api", "claude-code"]
 ---
+
 ## Retrieve Claude Code
 
 **get** `/v1/organizations/usage_report/claude_code`

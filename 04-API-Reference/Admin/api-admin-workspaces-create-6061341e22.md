@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Workspaces Create 6061341E22"
+source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/create.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 **post** `/v1/organizations/workspaces`

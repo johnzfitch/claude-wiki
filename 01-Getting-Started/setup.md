@@ -81,7 +81,7 @@ cd your-awesome-project
 claude
 ```
 
-If you encounter any issues during installation, consult the [troubleshooting guide](/en/troubleshooting).
+If you encounter any issues during installation, consult the [troubleshooting guide](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md).
 
 <Tip>
   Run `claude doctor` after installation to check your installation type and version.
@@ -102,7 +102,7 @@ If you encounter any issues during installation, consult the [troubleshooting gu
 
 1. **Claude for Teams or Enterprise** (recommended): Subscribe to [Claude for Teams](https://claude.com/pricing#team-&-enterprise) or [Claude for Enterprise](https://anthropic.com/contact-sales) for centralized billing, team management, and access to both Claude Code and Claude on the web. Team members log in with their Claude.ai accounts.
 2. **Claude Console with team billing**: Set up a shared [Claude Console](https://console.anthropic.com) organization with team billing. Invite team members and assign roles for usage tracking.
-3. **Cloud providers**: Configure Claude Code to use [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](/en/third-party-integrations) for deployments with your existing cloud infrastructure.
+3. **Cloud providers**: Configure Claude Code to use [Amazon Bedrock, Google Vertex AI, or Microsoft Foundry](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md) for deployments with your existing cloud infrastructure.
 
 ### Install a specific version
 
@@ -201,7 +201,7 @@ npm install -g @anthropic-ai/claude-code
 **Option 1: Claude Code within WSL**
 
 * Both WSL 1 and WSL 2 are supported
-* WSL 2 supports [sandboxing](/en/sandboxing) for enhanced security. WSL 1 does not support sandboxing.
+* WSL 2 supports [sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) for enhanced security. WSL 1 does not support sandboxing.
 
 **Option 2: Claude Code on native Windows with Git Bash**
 
@@ -235,7 +235,7 @@ Configure which release channel Claude Code follows for both auto-updates and `c
 * `"latest"` (default): Receive new features as soon as they're released
 * `"stable"`: Use a version that is typically about one week old, skipping releases with major regressions
 
-Configure this via `/config` → **Auto-update channel**, or add it to your [settings.json file](/en/settings):
+Configure this via `/config` → **Auto-update channel**, or add it to your [settings.json file](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md):
 
 ```json  theme={null}
 {
@@ -247,7 +247,7 @@ For enterprise deployments, you can enforce a consistent release channel across 
 
 ### Disable auto-updates
 
-Set the `DISABLE_AUTOUPDATER` environment variable in your shell or [settings.json file](/en/settings):
+Set the `DISABLE_AUTOUPDATER` environment variable in your shell or [settings.json file](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md):
 
 ```bash  theme={null}
 export DISABLE_AUTOUPDATER=1

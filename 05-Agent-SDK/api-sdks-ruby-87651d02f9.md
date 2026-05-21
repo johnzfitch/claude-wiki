@@ -1,9 +1,11 @@
 ---
+title: "Ruby SDK"
+source_url: "https://platform.claude.com/docs/en/api/sdks/ruby.md"
 category: "05-Agent-SDK"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/sdks/ruby.md"
-title: "Ruby SDK"
+tags: ["agents", "sdk"]
 ---
+
 # Ruby SDK
 
 Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling

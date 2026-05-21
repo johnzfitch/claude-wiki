@@ -374,4 +374,4 @@ See Also
 - [Subagents in the SDK](/docs/en/agent-sdk/subagents) - Similar filesystem-based configuration for subagents
 - [TypeScript SDK reference](/docs/en/agent-sdk/typescript) - Complete API documentation
 - [SDK overview](/docs/en/agent-sdk/overview) - General SDK concepts
-- [CLI reference](https://code.claude.com/docs/en/cli-reference) - Command-line interface
+- [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) - Command-line interface

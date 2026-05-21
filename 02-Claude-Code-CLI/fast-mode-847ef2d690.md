@@ -1,9 +1,11 @@
 ---
+title: "Speed up responses with fast mode"
+source_url: "https://code.claude.com/docs/en/fast-mode.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/fast-mode.md"
-title: "Speed up responses with fast mode"
+tags: ["claude-code", "search"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -38,7 +40,7 @@ This page covers how to [toggle fast mode](#toggle-fast-mode), its [cost tradeof
 Toggle fast mode in either of these ways:
 
 * Type `/fast` and press Tab to toggle on or off
-* Set `"fastMode": true` in your [user settings file](/en/settings)
+* Set `"fastMode": true` in your [user settings file](claude-code-settings-claude-code-docs-d4420b4b52.md)
 
 By default, fast mode persists across sessions. Administrators can configure fast mode to reset each session. See [require per-session opt-in](#require-per-session-opt-in) for details.
 
@@ -114,11 +116,11 @@ Admins can enable fast mode in:
 * **Console** (API customers): [Claude Code preferences](https://platform.claude.com/claude-code/preferences)
 * **Claude AI** (Team and Enterprise): [Admin Settings > Claude Code](https://claude.ai/admin-settings/claude-code)
 
-Another option to disable fast mode entirely is to set `CLAUDE_CODE_DISABLE_FAST_MODE=1`. See [Environment variables](/en/env-vars).
+Another option to disable fast mode entirely is to set `CLAUDE_CODE_DISABLE_FAST_MODE=1`. See [Environment variables](env-vars-5c624d392b.md).
 
 ### Require per-session opt-in
 
-By default, fast mode persists across sessions: if a user enables fast mode, it stays on in future sessions. Administrators on [Team](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=fast_mode_teams#team-&-enterprise) or [Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code\&utm_medium=docs\&utm_content=fast_mode_enterprise) plans can prevent this by setting `fastModePerSessionOptIn` to `true` in [managed settings](/en/settings#settings-files) or [server-managed settings](/en/server-managed-settings). This causes each session to start with fast mode off, requiring users to explicitly enable it with `/fast`.
+By default, fast mode persists across sessions: if a user enables fast mode, it stays on in future sessions. Administrators on [Team](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=fast_mode_teams#team-&-enterprise) or [Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code\&utm_medium=docs\&utm_content=fast_mode_enterprise) plans can prevent this by setting `fastModePerSessionOptIn` to `true` in [managed settings](/en/settings#settings-files) or [server-managed settings](../13-Enterprise-Admin/configure-server-managed-settings-claude-code-docs-d6a169b0bf.md). This causes each session to start with fast mode off, requiring users to explicitly enable it with `/fast`.
 
 ```json theme={null}
 {
@@ -151,6 +153,6 @@ Report issues or feedback through your usual Anthropic support channels.
 
 ## See also
 
-* [Model configuration](/en/model-config): switch models and adjust effort levels
-* [Manage costs effectively](/en/costs): track token usage and reduce costs
-* [Status line configuration](/en/statusline): display model and context information
+* [Model configuration](model-config-ca429e15da.md): switch models and adjust effort levels
+* [Manage costs effectively](../17-Billing-Plans/manage-costs-effectively-claude-code-docs-7c26178a4f.md): track token usage and reduce costs
+* [Status line configuration](customize-your-status-line-claude-code-docs-8a9fc80be1.md): display model and context information

@@ -1,9 +1,11 @@
 ---
+title: "Handle approvals and user input"
+source_url: "https://code.claude.com/docs/en/agent-sdk/user-input.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/user-input.md"
-title: "Handle approvals and user input"
+tags: ["agents"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

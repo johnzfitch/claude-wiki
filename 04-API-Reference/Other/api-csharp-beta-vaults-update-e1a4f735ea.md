@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Vaults Update E1A4F735Ea"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `BetaManagedAgentsVault Beta.Vaults.Update(VaultUpdateParamsparameters, CancellationTokencancellationToken = default)`

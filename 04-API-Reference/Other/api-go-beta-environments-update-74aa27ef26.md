@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Environments Update 74Aa27Ef26"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `client.Beta.Environments.Update(ctx, environmentID, params) (*BetaEnvironment, error)`

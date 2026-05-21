@@ -17,7 +17,7 @@ Web connectors are available for all users on Claude, Cowork, Claude Desktop, an
 
 ## What are connectors?
 
-Connectors let Claude access your apps and services, retrieve your data, and take actions within connected services. For example, you can connect Claude to Linear to create issues, to Slack to send messages, or to Google Drive to search your files. Connectors work across Claude, Claude Desktop, Claude Code, and the API (via the **[MCP Connector](https://platform.claude.com/docs/en/agents-and-tools/mcp-connector)**).
+Connectors let Claude access your apps and services, retrieve your data, and take actions within connected services. For example, you can connect Claude to Linear to create issues, to Slack to send messages, or to Google Drive to search your files. Connectors work across Claude, Claude Desktop, Claude Code, and the API (via the **[MCP Connector](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-connector-2b3ff19436.md)**).
 
 You can find available connectors in the **[Connectors Directory](https://claude.ai/connectors)**, where each connector has a page detailing its use cases, read/write capabilities, and availability. You can also add custom connectors or connect to any service that supports MCP.
 

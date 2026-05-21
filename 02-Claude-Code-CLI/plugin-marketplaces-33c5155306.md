@@ -1,9 +1,11 @@
 ---
+title: "Create and distribute a plugin marketplace"
+source_url: "https://code.claude.com/docs/en/plugin-marketplaces.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/plugin-marketplaces.md"
-title: "Create and distribute a plugin marketplace"
+tags: ["claude-code", "cli", "testing"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -14,16 +16,16 @@ title: "Create and distribute a plugin marketplace"
 
 A **plugin marketplace** is a catalog that lets you distribute plugins to others. Marketplaces provide centralized discovery, version tracking, automatic updates, and support for multiple source types (git repositories, local paths, and more). This guide shows you how to create your own marketplace to share plugins with your team or community.
 
-Looking to install plugins from an existing marketplace? See [Discover and install prebuilt plugins](/en/discover-plugins).
+Looking to install plugins from an existing marketplace? See [Discover and install prebuilt plugins](../08-Plugins-Skills/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md).
 
 ## Overview
 
 Creating and distributing a marketplace involves:
 
-1. **Creating plugins**: build one or more plugins with skills, agents, hooks, MCP servers, or LSP servers. This guide assumes you already have plugins to distribute; see [Create plugins](/en/plugins) for details on how to create them.
+1. **Creating plugins**: build one or more plugins with skills, agents, hooks, MCP servers, or LSP servers. This guide assumes you already have plugins to distribute; see [Create plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) for details on how to create them.
 2. **Creating a marketplace file**: define a `marketplace.json` that lists your plugins and where to find them (see [Create the marketplace file](#create-the-marketplace-file)).
 3. **Host the marketplace**: push to GitHub, GitLab, or another git host (see [Host and distribute marketplaces](#host-and-distribute-marketplaces)).
-4. **Share with users**: users add your marketplace with `/plugin marketplace add` and install individual plugins (see [Discover and install plugins](/en/discover-plugins)).
+4. **Share with users**: users add your marketplace with `/plugin marketplace add` and install individual plugins (see [Discover and install plugins](../08-Plugins-Skills/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md)).
 
 Once your marketplace is live, you can update it by pushing changes to your repository. Users refresh their local copy with `/plugin marketplace update`.
 
@@ -113,7 +115,7 @@ This example creates a marketplace with one plugin: a `/quality-review` skill fo
   </Step>
 </Steps>
 
-To learn more about what plugins can do, including hooks, agents, MCP servers, and LSP servers, see [Plugins](/en/plugins).
+To learn more about what plugins can do, including hooks, agents, MCP servers, and LSP servers, see [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md).
 
 <Note>
   **How plugins are installed**: When users install a plugin, Claude Code copies the plugin directory to a cache location. This means plugins can't reference files outside their directory using paths like `../shared-utils`, because those files won't be copied.
@@ -794,7 +796,7 @@ The early-access group receives `latest-tools` instead:
 
 #### Pin dependency versions
 
-A plugin can constrain its dependencies to a semver range so that updates to a dependency do not break the dependent plugin. See [Constrain plugin dependency versions](/en/plugin-dependencies) for the `{plugin-name}--v{version}` git-tag convention, range syntax, and how multiple constraints on the same dependency are combined.
+A plugin can constrain its dependencies to a semver range so that updates to a dependency do not break the dependent plugin. See [Constrain plugin dependency versions](plugin-dependencies-6fe908ccfc.md) for the `{plugin-name}--v{version}` git-tag convention, range syntax, and how multiple constraints on the same dependency are combined.
 
 ## Validation and testing
 
@@ -824,7 +826,7 @@ Install a test plugin to verify everything works:
 /plugin install test-plugin@marketplace-name
 ```
 
-For complete plugin testing workflows, see [Test your plugins locally](/en/plugins#test-your-plugins-locally). For technical troubleshooting, see [Plugins reference](/en/plugins-reference).
+For complete plugin testing workflows, see [Test your plugins locally](/en/plugins#test-your-plugins-locally). For technical troubleshooting, see [Plugins reference](../08-Plugins-Skills/plugins-reference-44aeea7968.md).
 
 ## Manage marketplaces from the CLI
 
@@ -1050,8 +1052,8 @@ For additional debugging tools and common issues, see [Debugging and development
 
 ## See also
 
-* [Discover and install prebuilt plugins](/en/discover-plugins) - Installing plugins from existing marketplaces
-* [Plugins](/en/plugins) - Creating your own plugins
-* [Plugins reference](/en/plugins-reference) - Complete technical specifications and schemas
+* [Discover and install prebuilt plugins](../08-Plugins-Skills/discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md) - Installing plugins from existing marketplaces
+* [Plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) - Creating your own plugins
+* [Plugins reference](../08-Plugins-Skills/plugins-reference-44aeea7968.md) - Complete technical specifications and schemas
 * [Plugin settings](/en/settings#plugin-settings) - Plugin configuration options
 * [strictKnownMarketplaces reference](/en/settings#strictknownmarketplaces) - Managed marketplace restrictions

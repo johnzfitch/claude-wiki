@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Api Keys Retrieve 1Be8681752"
+source_url: "https://platform.claude.com/docs/en/api/admin/api_keys/retrieve.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/api_keys/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 **get** `/v1/organizations/api_keys/{api_key_id}`

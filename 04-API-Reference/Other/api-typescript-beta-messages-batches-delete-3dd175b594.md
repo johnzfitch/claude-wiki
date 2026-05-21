@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Messages Batches Delete 3Dd175B594"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/delete.md"
+tags: ["api", "typescript"]
 ---
+
 ## Delete
 
 `client.beta.messages.batches.delete(stringmessageBatchID, BatchDeleteParamsparams?, RequestOptionsoptions?): BetaDeletedMessageBatch`

@@ -1,8 +1,11 @@
 ---
+title: "Api Java Messages Batches List 4C72371Fbb"
+source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `BatchListPage messages().batches().list(BatchListParamsparams = BatchListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

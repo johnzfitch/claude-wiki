@@ -101,7 +101,7 @@ Skills over MCP could enable:
 
 ## Relationship to Official MCP
 
-This is an **experimental extension** under the governance model defined in [SEP-2133 (Extensions)](https://modelcontextprotocol.io/community/seps/2133-extensions.md).
+This is an **experimental extension** under the governance model defined in [SEP-2133 (Extensions)](mcp-ext-2133-extensions.md).
 
 Experimental extensions:
 - Provide incubation pathway for new ideas

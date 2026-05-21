@@ -87,5 +87,5 @@ Task prompts on disk: `~/.claude/scheduled-tasks/<task-name>/SKILL.md`
 
 - [Cloud scheduled tasks](../02-Claude-Code-CLI/web-scheduled-tasks.md)
 - [Run prompts on a schedule](../02-Claude-Code-CLI/run-prompts-on-a-schedule-claude-code-docs.md) — session-scoped `/loop`
-- [Claude Code GitHub Actions](/en/github-actions)
+- [Claude Code GitHub Actions](../02-Claude-Code-CLI/claude-code-github-actions-claude-code-docs-0d633fbd8a.md)
 - [Use Claude Code Desktop](desktop.md)

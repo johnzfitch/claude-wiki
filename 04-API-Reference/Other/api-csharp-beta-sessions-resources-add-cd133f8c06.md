@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Sessions Resources Add Cd133F8C06"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/sessions/resources/add.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/sessions/resources/add.md"
+tags: ["api"]
 ---
+
 ## Add
 
 `BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)`

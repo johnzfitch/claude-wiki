@@ -3,7 +3,7 @@ title: "Quickstart - Agent Skills"
 source_url: "https://agentskills.io/skill-creation/quickstart"
 category: "08-Plugins-Skills"
 fetched_at: "2026-03-20T10:34:08Z"
-tags: ["agents", "skills"]
+tags: ["agents", "plugins", "skills"]
 ---
 
 # Quickstart

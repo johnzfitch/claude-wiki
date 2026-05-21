@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Sessions Update 729Cfb594F"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/sessions/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/sessions/update.md"
+tags: ["api", "cli"]
 ---
+
 ## Update
 
 `$ ant beta:sessions update`

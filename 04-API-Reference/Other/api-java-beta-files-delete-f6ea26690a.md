@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Files Delete F6Ea26690A"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/files/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/files/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `DeletedFile beta().files().delete(FileDeleteParamsparams = FileDeleteParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

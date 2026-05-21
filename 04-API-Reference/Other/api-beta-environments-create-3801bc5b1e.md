@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Environments Create 3801Bc5B1E"
+source_url: "https://platform.claude.com/docs/en/api/beta/environments/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/environments/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 **post** `/v1/environments`

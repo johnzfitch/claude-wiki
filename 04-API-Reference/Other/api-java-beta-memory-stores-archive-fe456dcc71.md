@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Memory Stores Archive Fe456Dcc71"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 `BetaManagedAgentsMemoryStore beta().memoryStores().archive(MemoryStoreArchiveParamsparams = MemoryStoreArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

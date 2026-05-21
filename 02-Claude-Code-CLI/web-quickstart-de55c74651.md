@@ -1,9 +1,11 @@
 ---
+title: "Get started with Claude Code on the web"
+source_url: "https://code.claude.com/docs/en/web-quickstart.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/web-quickstart.md"
-title: "Get started with Claude Code on the web"
+tags: ["claude-code", "git", "github"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -27,7 +29,7 @@ Claude Code on the web works well for:
 * **Tasks that don't need frequent steering**: submit a well-defined task, do something else, and review the result when Claude is done
 * **Code questions and exploration**: understand a codebase or trace how a feature is implemented without a local checkout
 
-For work that needs your local config, tools, or environment, running Claude Code locally or using [Remote Control](/en/remote-control) is a better fit.
+For work that needs your local config, tools, or environment, running Claude Code locally or using [Remote Control](continue-local-sessions-from-any-device-with-remote-control-claude-code-docs-c1c03fd914.md) is a better fit.
 
 ## How sessions run
 
@@ -51,10 +53,10 @@ Claude Code behaves the same everywhere. What changes is where code executes and
 | **Uses your local config**                   | No, repo only                                                                                                   | Yes                          | Yes                    | Yes for local, no for cloud |
 | **Requires GitHub**                          | Yes, or [bundle a local repo](/en/claude-code-on-the-web#send-local-repositories-without-github) via `--remote` | No                           | No                     | Only for cloud sessions     |
 | **Keeps running if you disconnect**          | Yes                                                                                                             | While terminal stays open    | No                     | Depends on session type     |
-| **[Permission modes](/en/permission-modes)** | Auto accept edits, Plan                                                                                         | Ask, Auto accept edits, Plan | All modes              | Depends on session type     |
+| **[Permission modes](permission-modes-c83d6eff7e.md)** | Auto accept edits, Plan                                                                                         | Ask, Auto accept edits, Plan | All modes              | Depends on session type     |
 | **Network access**                           | Configurable per environment                                                                                    | Your machine's network       | Your machine's network | Depends on session type     |
 
-See the [terminal quickstart](/en/quickstart), [Desktop app](/en/desktop), or [Remote Control](/en/remote-control) docs to set those up.
+See the [terminal quickstart](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md), [Desktop app](../16-Mobile-Desktop/desktop.md), or [Remote Control](continue-local-sessions-from-any-device-with-remote-control-claude-code-docs-c1c03fd914.md) docs to set those up.
 
 ## Connect GitHub and create an environment
 
@@ -85,10 +87,10 @@ Setup is a one-time process. If you already use the GitHub CLI, you can [do this
 
 ### Connect from your terminal
 
-If you already use the GitHub CLI (`gh`), you can set up Claude Code on the web without opening a browser. This requires the [Claude Code CLI](/en/quickstart). `/web-setup` reads your local `gh` token, links it to your Claude account, and creates a default cloud environment if you don't have one.
+If you already use the GitHub CLI (`gh`), you can set up Claude Code on the web without opening a browser. This requires the [Claude Code CLI](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md). `/web-setup` reads your local `gh` token, links it to your Claude account, and creates a default cloud environment if you don't have one.
 
 <Note>
-  Organizations with [Zero Data Retention](/en/zero-data-retention) enabled cannot use `/web-setup` or other cloud session features. If the GitHub CLI isn't installed or authenticated, `/web-setup` opens the browser onboarding flow instead.
+  Organizations with [Zero Data Retention](../22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) enabled cannot use `/web-setup` or other cloud session features. If the GitHub CLI isn't installed or authenticated, `/web-setup` opens the browser onboarding flow instead.
 </Note>
 
 <Steps>
@@ -111,7 +113,7 @@ If you already use the GitHub CLI (`gh`), you can set up Claude Code on the web 
     /web-setup
     ```
 
-    This syncs your `gh` token to your Claude account. If you don't have a cloud environment yet, `/web-setup` creates one with Trusted network access and no setup script. You can [edit the environment or add variables](/en/claude-code-on-the-web#configure-your-environment) afterward. Once `/web-setup` completes, you can start cloud sessions from your terminal with [`--remote`](/en/claude-code-on-the-web#from-terminal-to-web) or set up recurring tasks with [`/schedule`](/en/routines).
+    This syncs your `gh` token to your Claude account. If you don't have a cloud environment yet, `/web-setup` creates one with Trusted network access and no setup script. You can [edit the environment or add variables](/en/claude-code-on-the-web#configure-your-environment) afterward. Once `/web-setup` completes, you can start cloud sessions from your terminal with [`--remote`](/en/claude-code-on-the-web#from-terminal-to-web) or set up recurring tasks with [`/schedule`](routines-3111c7bd3a.md).
   </Step>
 </Steps>
 
@@ -125,7 +127,7 @@ With GitHub connected and an environment created, you're ready to submit tasks.
   </Step>
 
   <Step title="Choose a permission mode">
-    The mode dropdown next to the input defaults to **Auto accept edits**, where Claude makes changes and pushes a branch without stopping for approval. Switch to **Plan mode** if you want Claude to propose an approach and wait for your go-ahead before editing files. Cloud sessions don't offer Ask permissions, Auto mode, or Bypass permissions. See [Permission modes](/en/permission-modes) for the full list.
+    The mode dropdown next to the input defaults to **Auto accept edits**, where Claude makes changes and pushes a branch without stopping for approval. Switch to **Plan mode** if you want Claude to propose an approach and wait for your go-ahead before editing files. Cloud sessions don't offer Ask permissions, Auto mode, or Bypass permissions. See [Permission modes](permission-modes-c83d6eff7e.md) for the full list.
   </Step>
 
   <Step title="Describe the task and submit">
@@ -186,7 +188,7 @@ The Claude GitHub App needs explicit access to each repository you want to use. 
 
 ### The page only shows a GitHub login button
 
-Cloud sessions require a connected GitHub account. Connect via the browser flow above, or run `/web-setup` from your terminal if you use the GitHub CLI. If you'd rather not connect GitHub at all, see [Remote Control](/en/remote-control) to run Claude Code on your own machine and monitor it from the web.
+Cloud sessions require a connected GitHub account. Connect via the browser flow above, or run `/web-setup` from your terminal if you use the GitHub CLI. If you'd rather not connect GitHub at all, see [Remote Control](continue-local-sessions-from-any-device-with-remote-control-claude-code-docs-c1c03fd914.md) to run Claude Code on your own machine and monitor it from the web.
 
 ### "Not available for the selected organization"
 
@@ -220,7 +222,7 @@ This is by design. Closing the tab or navigating away doesn't stop the session. 
 
 Now that you can submit and review tasks, these pages cover what comes next: starting cloud sessions from your terminal, scheduling recurring work, and giving Claude standing instructions.
 
-* [Use Claude Code on the web](/en/claude-code-on-the-web): the full reference, including teleporting sessions to your terminal, setup scripts, environment variables, and network config
-* [Routines](/en/routines): automate work on a schedule, via API call, or in response to GitHub events
-* [CLAUDE.md](/en/memory): give Claude persistent instructions and context that load at the start of every session
+* [Use Claude Code on the web](claude-code-on-the-web-69d53821d4.md): the full reference, including teleporting sessions to your terminal, setup scripts, environment variables, and network config
+* [Routines](routines-3111c7bd3a.md): automate work on a schedule, via API call, or in response to GitHub events
+* [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md): give Claude persistent instructions and context that load at the start of every session
 * Install the Claude mobile app for [iOS](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684) or [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude) to monitor sessions from your phone. From the Claude Code CLI, `/mobile` shows a QR code.

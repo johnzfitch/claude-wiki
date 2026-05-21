@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Files Delete 0A7B2732B7"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/files/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/files/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `client.Beta.Files.Delete(ctx, fileID, body) (*DeletedFile, error)`

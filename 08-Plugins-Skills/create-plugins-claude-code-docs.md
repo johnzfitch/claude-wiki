@@ -2,8 +2,6 @@
 title: "Create plugins - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins"
 category: "08-Plugins-Skills"
-title: "Create plugins - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/plugins"
 fetched_at: "2026-04-26T03:20:21Z"
 tags: ["claude-code", "plugins"]
 ---

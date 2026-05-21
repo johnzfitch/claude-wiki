@@ -1,9 +1,11 @@
 ---
+title: "Session tracing"
+source_url: "https://platform.claude.com/docs/en/managed-agents/observability.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/observability.md"
-title: "Session tracing"
+tags: ["api"]
 ---
+
 # Session tracing
 
 Monitor and debug your sessions using the Console timeline and raw event views.

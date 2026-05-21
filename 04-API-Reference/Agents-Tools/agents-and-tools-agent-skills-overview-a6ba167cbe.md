@@ -1,9 +1,11 @@
 ---
+title: "Agent Skills"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview.md"
-title: "Agent Skills"
+tags: ["agents", "api", "security", "skills"]
 ---
+
 # Agent Skills
 
 Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts, templates) that Claude uses automatically when relevant.
@@ -175,13 +177,13 @@ To learn more, see [Use Skills with the Claude API](/docs/en/build-with-claude/s
 
 ### Claude Code
 
-[Claude Code](https://code.claude.com/docs/en/overview) supports only Custom Skills.
+[Claude Code](../../02-Claude-Code-CLI/claude-code-overview-claude-code-docs-c23f3e7cbb.md) supports only Custom Skills.
 
 **Custom Skills**: Create Skills as directories with SKILL.md files. Claude discovers and uses them automatically.
 
 Custom Skills in Claude Code are filesystem-based and don't require API uploads.
 
-To learn more, see [Use Skills in Claude Code](https://code.claude.com/docs/en/skills).
+To learn more, see [Use Skills in Claude Code](../../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md).
 
 ### Claude.ai
 
@@ -192,9 +194,9 @@ To learn more, see [Use Skills in Claude Code](https://code.claude.com/docs/en/s
 **Custom Skills**: Upload your own Skills as zip files through Settings > Features. Available on Pro, Max, Team, and Enterprise plans with code execution enabled. Custom Skills are individual to each user; they are not shared organization-wide and cannot be centrally managed by admins.
 
 To learn more about using Skills in Claude.ai, see the following resources in the Claude Help Center:
-- [What are Skills?](https://support.claude.com/en/articles/12512176-what-are-skills)
+- [What are Skills?](../../02-Claude-Code-CLI/what-are-skills.md)
 - [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
-- [How to create custom Skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)
+- [How to create custom Skills](../../02-Claude-Code-CLI/creating-custom-skills.md)
 - [Teach Claude your way of working using Skills](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills)
 
 ## Skill structure

@@ -13,7 +13,7 @@ tags: ["agents", "claude-code"]
 
 Claude Code is an agentic assistant that runs in your terminal. While it excels at coding, it can help with anything you can do from the command line: writing docs, running builds, searching files, researching topics, and more.
 
-This guide covers the core architecture, built-in capabilities, and [tips for working effectively](#work-effectively-with-claude-code). For step-by-step walkthroughs, see [Common workflows](/en/common-workflows). For extensibility features like skills, MCP, and hooks, see [Extend Claude Code](/en/features-overview).
+This guide covers the core architecture, built-in capabilities, and [tips for working effectively](#work-effectively-with-claude-code). For step-by-step walkthroughs, see [Common workflows](common-workflows-c909406123.md). For extensibility features like skills, MCP, and hooks, see [Extend Claude Code](extend-claude-code-claude-code-docs-3b35aaf641.md).
 
 ## The agentic loop
 
@@ -31,7 +31,7 @@ The agentic loop is powered by two components: [models](#models) that reason and
 
 Claude Code uses Claude models to understand your code and reason about tasks. Claude can read code in any language, understand how components connect, and figure out what needs to change to accomplish your goal. For complex tasks, it breaks work into steps, executes them, and adjusts based on what it learns.
 
-[Multiple models](/en/model-config) are available with different tradeoffs. Sonnet handles most coding tasks well. Opus provides stronger reasoning for complex architectural decisions. Switch with `/model` during a session or start with `claude --model <name>`.
+[Multiple models](model-config-ca429e15da.md) are available with different tradeoffs. Sonnet handles most coding tasks well. Opus provides stronger reasoning for complex architectural decisions. Switch with `/model` during a session or start with `claude --model <name>`.
 
 When this guide says "Claude chooses" or "Claude decides," it's the model doing the reasoning.
 
@@ -73,8 +73,8 @@ When you run `claude` in a directory, Claude Code gains access to:
 * **Your project.** Files in your directory and subdirectories, plus files elsewhere with your permission.
 * **Your terminal.** Any command you could run: build tools, git, package managers, system utilities, scripts. If you can do it from the command line, Claude can too.
 * **Your git state.** Current branch, uncommitted changes, and recent commit history.
-* **Your [CLAUDE.md](/en/memory).** A markdown file where you store project-specific instructions, conventions, and context that Claude should know every session.
-* **Extensions you configure.** [MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) for external services, [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) for workflows, [subagents](/en/sub-agents) for delegated work, and [Claude in Chrome](chrome.md) for browser interaction.
+* **Your [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md).** A markdown file where you store project-specific instructions, conventions, and context that Claude should know every session.
+* **Extensions you configure.** [MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) for external services, [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) for workflows, [subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) for delegated work, and [Claude in Chrome](chrome.md) for browser interaction.
 
 Because Claude sees your whole project, it can work across it. When you ask Claude to "fix the authentication bug," it searches for relevant files, reads multiple files to understand context, makes coordinated edits across them, runs tests to verify the fix, and commits the changes if you ask. This is different from inline code assistants that only see the current file.
 
@@ -82,7 +82,7 @@ Because Claude sees your whole project, it can work across it. When you ask Clau
 
 Claude Code saves your conversation locally as you work. Each message, tool use, and result is stored, which enables [rewinding](#undo-changes-with-checkpoints), [resuming, and forking](#resume-or-fork-sessions) sessions. Before Claude makes code changes, it also snapshots the affected files so you can revert if needed.
 
-**Sessions are ephemeral.** Unlike claude.ai, Claude Code has no persistent memory between sessions. Each new session starts fresh. Claude doesn't "learn" your preferences over time or remember what you worked on last week. If you want Claude to know something across sessions, put it in your [CLAUDE.md](/en/memory).
+**Sessions are ephemeral.** Unlike claude.ai, Claude Code has no persistent memory between sessions. Each new session starts fresh. Claude doesn't "learn" your preferences over time or remember what you worked on last week. If you want Claude to know something across sessions, put it in your [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md).
 
 ### Work across branches
 
@@ -110,7 +110,7 @@ This creates a new session ID while preserving the conversation history up to th
 
 ### The context window
 
-Claude's context window holds your conversation history, file contents, command outputs, [CLAUDE.md](/en/memory), loaded skills, and system instructions. As you work, context fills up. Claude compacts automatically, but instructions from early in the conversation can get lost. Put persistent rules in CLAUDE.md, and run `/context` to see what's using space.
+Claude's context window holds your conversation history, file contents, command outputs, [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md), loaded skills, and system instructions. As you work, context fills up. Claude compacts automatically, but instructions from early in the conversation can get lost. Put persistent rules in CLAUDE.md, and run `/context` to see what's using space.
 
 #### When context fills up
 
@@ -126,7 +126,7 @@ Beyond compaction, you can use other features to control what loads into context
 
 [Skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) load on demand. Claude sees skill descriptions at session start, but the full content only loads when a skill is used. For skills you invoke manually, set `disable-model-invocation: true` to keep descriptions out of context until you need them.
 
-[Subagents](/en/sub-agents) get their own fresh context, completely separate from your main conversation. Their work doesn't bloat your context. When done, they return a summary. This isolation is why subagents help with long sessions.
+[Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) get their own fresh context, completely separate from your main conversation. Their work doesn't bloat your context. When done, they return a summary. This isolation is why subagents help with long sessions.
 
 See [context costs](/en/features-overview#understand-context-costs) for what each feature costs, and [reduce token usage](/en/costs#reduce-token-usage) for tips on managing context.
 

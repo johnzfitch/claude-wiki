@@ -103,4 +103,4 @@ an item to the cart through to the confirmation page.
 
 - [Computer use](computer-use.md)
 - [VS Code browser automation](/en/vs-code#automate-browser-tasks-with-chrome)
-- [CLI reference](/en/cli-reference)
+- [CLI reference](cli-reference-7bb98e3312.md)

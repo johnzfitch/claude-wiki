@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Environments Archive 6C5Acc4Dbd"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/environments/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/environments/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 `BetaEnvironment beta().environments().archive(EnvironmentArchiveParamsparams = EnvironmentArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

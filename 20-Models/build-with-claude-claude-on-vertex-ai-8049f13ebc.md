@@ -1,9 +1,11 @@
 ---
+title: "Claude on Vertex AI"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai.md"
-title: "Claude on Vertex AI"
+tags: ["sdk", "vertex"]
 ---
+
 # Claude on Vertex AI
 
 Anthropic's Claude models are now generally available through [Vertex AI](https://cloud.google.com/vertex-ai).

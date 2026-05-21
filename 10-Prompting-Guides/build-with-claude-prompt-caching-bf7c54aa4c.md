@@ -1,9 +1,11 @@
 ---
+title: "Prompt caching"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching.md"
 category: "10-Prompting-Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching.md"
-title: "Prompt caching"
+tags: ["prompting"]
 ---
+
 # Prompt caching
 
 ---

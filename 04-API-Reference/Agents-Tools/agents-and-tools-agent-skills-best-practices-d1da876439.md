@@ -1,9 +1,11 @@
 ---
+title: "Skill authoring best practices"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices.md"
-title: "Skill authoring best practices"
+tags: ["api", "authentication", "evaluation", "search", "skills"]
 ---
+
 # Skill authoring best practices
 
 Learn how to write effective Skills that Claude can discover and use successfully.

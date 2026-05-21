@@ -1,9 +1,11 @@
 ---
+title: "Get started with Agent Skills in the API"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart.md"
-title: "Get started with Agent Skills in the API"
+tags: ["agents", "api", "skills"]
 ---
+
 # Get started with Agent Skills in the API
 
 Learn how to use Agent Skills to create documents with the Claude API in under 10 minutes.

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Messages Count Tokens Cbf98247De"
+source_url: "https://platform.claude.com/docs/en/api/typescript/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/messages/count_tokens.md"
+tags: ["api", "typescript"]
 ---
+
 ## Count Tokens
 
 `client.messages.countTokens(MessageCountTokensParamsbody, RequestOptionsoptions?): MessageTokensCount`
@@ -2415,7 +2418,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
     - `format?: JSONOutputFormat | null`
 
-      A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+      A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
       - `schema: Record<string, unknown>`
 

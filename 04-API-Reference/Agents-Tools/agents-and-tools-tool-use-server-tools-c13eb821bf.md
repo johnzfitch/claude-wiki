@@ -1,9 +1,11 @@
 ---
+title: "Server tools"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools.md"
-title: "Server tools"
+tags: ["api"]
 ---
+
 # Server tools
 
 Work with Anthropic-executed tools: server_tool_use blocks, pause_turn continuation, and domain filtering.

@@ -215,7 +215,7 @@ The following fields can be used in the YAML frontmatter. Only `name` and `descr
 
 ### Choose a model
 
-The `model` field controls which [AI model](/en/model-config) the subagent uses:
+The `model` field controls which [AI model](../02-Claude-Code-CLI/model-config-ca429e15da.md) the subagent uses:
 
 * **Model alias**: Use one of the available aliases: `sonnet`, `opus`, or `haiku`
 * **inherit**: Use the same model as the main conversation (useful for consistency)
@@ -713,7 +713,7 @@ The hook receives JSON via stdin with the Bash command in `tool_input.command`. 
 Now that you understand subagents, explore these related features:
 
 * [Distribute subagents with plugins](../08-Plugins-Skills/create-plugins-claude-code-docs.md) to share subagents across teams or projects
-* [Run Claude Code programmatically](/en/headless) with the Agent SDK for CI/CD and automation
+* [Run Claude Code programmatically](../02-Claude-Code-CLI/headless-b99e3140ec.md) with the Agent SDK for CI/CD and automation
 * [Use MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md) to give subagents access to external tools and data
 
 

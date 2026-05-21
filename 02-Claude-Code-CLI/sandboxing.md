@@ -247,5 +247,5 @@ For implementation details and source code, visit the [GitHub repository](https:
 
 * [Security](security-claude-code-docs.md) - Comprehensive security features and best practices
 * [IAM](/en/iam) - Permission configuration and access control
-* [Settings](/en/settings) - Complete configuration reference
-* [CLI reference](/en/cli-reference) - Command-line options
+* [Settings](claude-code-settings-claude-code-docs-d4420b4b52.md) - Complete configuration reference
+* [CLI reference](cli-reference-7bb98e3312.md) - Command-line options

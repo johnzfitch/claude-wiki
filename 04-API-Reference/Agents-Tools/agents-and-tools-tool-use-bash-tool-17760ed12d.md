@@ -1,9 +1,11 @@
 ---
+title: "Bash tool"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool.md"
-title: "Bash tool"
+tags: ["api", "security"]
 ---
+
 # Bash tool
 
 ---

@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Messages Batches Retrieve 2F9Fe9066D"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/messages/batches/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `BetaMessageBatch Beta.Messages.Batches.Retrieve(BatchRetrieveParamsparameters, CancellationTokencancellationToken = default)`

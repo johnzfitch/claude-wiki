@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Skills Create A142405305"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/skills/create.md"
+tags: ["api", "skills"]
 ---
+
 ## Create
 
 `SkillCreateResponse Beta.Skills.Create(SkillCreateParams?parameters, CancellationTokencancellationToken = default)`

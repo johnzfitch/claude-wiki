@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Skills Create Cca94E3Dae"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/create.md"
+tags: ["api", "cli", "skills"]
 ---
+
 ## Create
 
 `$ ant beta:skills create`

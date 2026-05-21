@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Messages Count Tokens A8443595B0"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/count_tokens.md"
+tags: ["api", "typescript"]
 ---
+
 ## Count Tokens
 
 `client.beta.messages.countTokens(MessageCountTokensParamsparams, RequestOptionsoptions?): BetaMessageTokensCount`
@@ -2924,7 +2927,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
     - `format?: BetaJSONOutputFormat | null`
 
-      A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+      A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
       - `schema: Record<string, unknown>`
 
@@ -2936,7 +2939,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `output_format?: BetaJSONOutputFormat | null`
 
-    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

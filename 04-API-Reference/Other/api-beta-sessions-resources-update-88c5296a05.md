@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Sessions Resources Update 88C5296A05"
+source_url: "https://platform.claude.com/docs/en/api/beta/sessions/resources/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/sessions/resources/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 **post** `/v1/sessions/{session_id}/resources/{resource_id}`

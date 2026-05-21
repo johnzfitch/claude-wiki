@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Memory Stores Memories Update 5Cdc1841C8"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/memory_stores/memories/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/memory_stores/memories/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `client.Beta.MemoryStores.Memories.Update(ctx, memoryID, params) (*BetaManagedAgentsMemory, error)`

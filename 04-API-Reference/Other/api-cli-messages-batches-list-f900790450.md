@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Messages Batches List F900790450"
+source_url: "https://platform.claude.com/docs/en/api/cli/messages/batches/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/messages/batches/list.md"
+tags: ["api", "cli"]
 ---
+
 ## List
 
 `$ ant messages:batches list`

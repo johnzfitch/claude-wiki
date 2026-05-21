@@ -1,9 +1,11 @@
 ---
+title: "Orchestrate teams of Claude Code sessions"
+source_url: "https://code.claude.com/docs/en/agent-teams.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-teams.md"
-title: "Orchestrate teams of Claude Code sessions"
+tags: ["agents", "claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -13,12 +15,12 @@ title: "Orchestrate teams of Claude Code sessions"
 > Coordinate multiple Claude Code instances working together as a team, with shared tasks, inter-agent messaging, and centralized management.
 
 <Warning>
-  Agent teams are experimental and disabled by default. Enable them by adding `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` to your [settings.json](/en/settings) or environment. Agent teams have [known limitations](#limitations) around session resumption, task coordination, and shutdown behavior.
+  Agent teams are experimental and disabled by default. Enable them by adding `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` to your [settings.json](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) or environment. Agent teams have [known limitations](#limitations) around session resumption, task coordination, and shutdown behavior.
 </Warning>
 
 Agent teams let you coordinate multiple Claude Code instances working together. One session acts as the team lead, coordinating work, assigning tasks, and synthesizing results. Teammates work independently, each in its own context window, and communicate directly with each other.
 
-Unlike [subagents](/en/sub-agents), which run within a single session and can only report back to the main agent, you can also interact with individual teammates directly without going through the lead.
+Unlike [subagents](create-custom-subagents-claude-code-docs-7dc93e85c0.md), which run within a single session and can only report back to the main agent, you can also interact with individual teammates directly without going through the lead.
 
 <Note>
   Agent teams require Claude Code v2.1.32 or later. Check your version with `claude --version`.
@@ -40,11 +42,11 @@ Agent teams are most effective for tasks where parallel exploration adds real va
 * **Debugging with competing hypotheses**: teammates test different theories in parallel and converge on the answer faster
 * **Cross-layer coordination**: changes that span frontend, backend, and tests, each owned by a different teammate
 
-Agent teams add coordination overhead and use significantly more tokens than a single session. They work best when teammates can operate independently. For sequential tasks, same-file edits, or work with many dependencies, a single session or [subagents](/en/sub-agents) are more effective.
+Agent teams add coordination overhead and use significantly more tokens than a single session. They work best when teammates can operate independently. For sequential tasks, same-file edits, or work with many dependencies, a single session or [subagents](create-custom-subagents-claude-code-docs-7dc93e85c0.md) are more effective.
 
 ### Compare with subagents
 
-Both agent teams and [subagents](/en/sub-agents) let you parallelize work, but they operate differently. Choose based on whether your workers need to communicate with each other:
+Both agent teams and [subagents](create-custom-subagents-claude-code-docs-7dc93e85c0.md) let you parallelize work, but they operate differently. Choose based on whether your workers need to communicate with each other:
 
 <Frame caption="Subagents only report results back to the main agent and never talk to each other. In agent teams, teammates share a task list, claim work, and communicate directly with each other.">
   <img src="https://mintcdn.com/claude-code/nsvRFSDNfpSU5nT7/images/subagents-vs-agent-teams-light.png?fit=max&auto=format&n=nsvRFSDNfpSU5nT7&q=85&s=2f8db9b4f3705dd3ab931fbe2d96e42a" className="dark:hidden" alt="Diagram comparing subagent and agent team architectures. Subagents are spawned by the main agent, do work, and report results back. Agent teams coordinate through a shared task list, with teammates communicating directly with each other." width="4245" height="1615" data-path="images/subagents-vs-agent-teams-light.png" />
@@ -64,7 +66,7 @@ Use subagents when you need quick, focused workers that report back. Use agent t
 
 ## Enable agent teams
 
-Agent teams are disabled by default. Enable them by setting the `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` environment variable to `1`, either in your shell environment or through [settings.json](/en/settings):
+Agent teams are disabled by default. Enable them by setting the `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` environment variable to `1`, either in your shell environment or through [settings.json](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md):
 
 ```json settings.json theme={null}
 {
@@ -192,7 +194,7 @@ This removes the shared team resources. When the lead runs cleanup, it checks fo
 
 ### Enforce quality gates with hooks
 
-Use [hooks](/en/hooks) to enforce rules when teammates finish work or tasks are created or completed:
+Use [hooks](../07-Hooks/hooks-9168ed62a4.md) to enforce rules when teammates finish work or tasks are created or completed:
 
 * [`TeammateIdle`](/en/hooks#teammateidle): runs when a teammate is about to go idle. Exit with code 2 to send feedback and keep the teammate working.
 * [`TaskCreated`](/en/hooks#taskcreated): runs when a task is being created. Exit with code 2 to prevent creation and send feedback.
@@ -241,7 +243,7 @@ There is no project-level equivalent of the team config. A file like `.claude/te
 
 ### Use subagent definitions for teammates
 
-When spawning a teammate, you can reference a [subagent](/en/sub-agents) type from any [subagent scope](/en/sub-agents#choose-the-subagent-scope): project, user, plugin, or CLI-defined. This lets you define a role once, such as a security-reviewer or test-runner, and reuse it both as a delegated subagent and as an agent team teammate.
+When spawning a teammate, you can reference a [subagent](create-custom-subagents-claude-code-docs-7dc93e85c0.md) type from any [subagent scope](/en/sub-agents#choose-the-subagent-scope): project, user, plugin, or CLI-defined. This lets you define a role once, such as a security-reviewer or test-runner, and reuse it both as a delegated subagent and as an agent team teammate.
 
 To use a subagent definition, mention it by name when asking Claude to spawn the teammate:
 
@@ -382,7 +384,7 @@ If teammates aren't appearing after you ask Claude to create a team:
 
 ### Too many permission prompts
 
-Teammate permission requests bubble up to the lead, which can create friction. Pre-approve common operations in your [permission settings](/en/permissions) before spawning teammates to reduce interruptions.
+Teammate permission requests bubble up to the lead, which can create friction. Pre-approve common operations in your [permission settings](../02-Claude-Code-CLI/configure-permissions-claude-code-docs-7b0e64d485.md) before spawning teammates to reduce interruptions.
 
 ### Teammates stopping on errors
 
@@ -425,6 +427,6 @@ Agent teams are experimental. Current limitations to be aware of:
 
 Explore related approaches for parallel work and delegation:
 
-* **Lightweight delegation**: [subagents](/en/sub-agents) spawn helper agents for research or verification within your session, better for tasks that don't need inter-agent coordination
+* **Lightweight delegation**: [subagents](create-custom-subagents-claude-code-docs-7dc93e85c0.md) spawn helper agents for research or verification within your session, better for tasks that don't need inter-agent coordination
 * **Manual parallel sessions**: [Git worktrees](/en/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees) let you run multiple Claude Code sessions yourself without automated team coordination
 * **Compare approaches**: see the [subagent vs agent team](/en/features-overview#compare-similar-features) comparison for a side-by-side breakdown

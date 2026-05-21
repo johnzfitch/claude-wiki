@@ -2,8 +2,6 @@
 title: "Extend Claude with skills - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/skills"
 category: "08-Plugins-Skills"
-title: "Extend Claude with skills - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/skills"
 fetched_at: "2026-04-26T03:20:29Z"
 tags: ["claude-code", "plugins", "skills"]
 ---

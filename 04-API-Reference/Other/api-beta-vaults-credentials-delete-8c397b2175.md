@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Vaults Credentials Delete 8C397B2175"
+source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 **delete** `/v1/vaults/{vault_id}/credentials/{credential_id}`

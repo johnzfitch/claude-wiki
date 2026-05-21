@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Agents List F1F01F2316"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/list.md"
+tags: ["agents", "api"]
 ---
+
 ## List
 
 `client.Beta.Agents.List(ctx, params) (*PageCursor[BetaManagedAgentsAgent], error)`

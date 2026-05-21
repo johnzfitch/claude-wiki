@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Vaults Credentials Retrieve 67Ba746Eb0"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/credentials/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/vaults/credentials/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `BetaManagedAgentsCredential Beta.Vaults.Credentials.Retrieve(CredentialRetrieveParamsparameters, CancellationTokencancellationToken = default)`

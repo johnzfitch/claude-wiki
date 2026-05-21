@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Environments Delete C517E564E3"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/environments/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/environments/delete.md"
+tags: ["api", "cli"]
 ---
+
 ## Delete
 
 `$ ant beta:environments delete`

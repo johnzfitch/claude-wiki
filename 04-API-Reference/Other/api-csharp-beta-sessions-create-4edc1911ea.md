@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Sessions Create 4Edc1911Ea"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/sessions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/sessions/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)`

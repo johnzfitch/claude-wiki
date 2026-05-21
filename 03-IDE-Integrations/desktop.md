@@ -17,7 +17,7 @@ tags: ["claude-code", "cli", "desktop", "enterprise"]
 
 Claude Code is an AI coding assistant that works directly with your codebase. Unlike Claude.ai chat, it can read your project files, edit code, run terminal commands, and understand how different parts of your code connect. You watch changes happen in real time.
 
-You can use Claude Code through the terminal ([CLI](/en/quickstart)) or through the desktop app described here. Both provide the same core capabilities. The desktop app adds a graphical interface and visual session management.
+You can use Claude Code through the terminal ([CLI](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md)) or through the desktop app described here. Both provide the same core capabilities. The desktop app adds a graphical interface and visual session management.
 
 <CardGroup cols={2}>
   <Card title="New to Claude Code?" icon="rocket" href="#installation-and-setup">
@@ -75,7 +75,7 @@ If you already use the CLI, you can skip to [How Desktop relates to CLI](#how-de
   <Step title="Choose a folder and environment">
     Select **Local** to run Claude on your machine using your files directly. This is the best choice for getting started. Click **Select folder** and choose your project directory.
 
-    You can also run [remote sessions](/en/claude-code-on-the-web) that continue in the cloud even if you close the app.
+    You can also run [remote sessions](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) that continue in the cloud even if you close the app.
   </Step>
 
   <Step title="Start a session">
@@ -139,7 +139,7 @@ To manage a session, click its dropdown in the sidebar to rename it, archive it,
 
 For large refactors, test suites, migrations, or other long-running tasks, select **Remote** instead of **Local** when starting a session. Remote sessions run on Anthropic's cloud infrastructure and continue even if you close the app or shut down your computer. Check back anytime to see progress or steer Claude in a different direction.
 
-Remote sessions support **Code** and **Plan** modes. See [Claude Code on the web](/en/claude-code-on-the-web) for details on configuring remote environments.
+Remote sessions support **Code** and **Plan** modes. See [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) for details on configuring remote environments.
 
 ### Review changes with diff view
 
@@ -165,7 +165,7 @@ Connectors are [MCP (Model Context Protocol) servers](../06-MCP-Tools/General/co
 
 ### Automate workflows with hooks
 
-[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md) run shell commands automatically in response to Claude Code events. For example, you could run a linter after every file edit, auto-format code, or send notifications when tasks complete. Hooks are configured in your [settings files](/en/settings). See [hooks](../07-Hooks/hooks-reference-claude-code-docs.md) for available events and configuration examples.
+[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md) run shell commands automatically in response to Claude Code events. For example, you could run a linter after every file edit, auto-format code, or send notifications when tasks complete. Hooks are configured in your [settings files](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md). See [hooks](../07-Hooks/hooks-reference-claude-code-docs.md) for available events and configuration examples.
 
 ## Environment configuration
 
@@ -175,7 +175,7 @@ When starting a session, you choose between **Local** (runs on your machine) or 
 
 [Extended thinking](/en/common-workflows#use-extended-thinking-thinking-mode) is enabled by default, which improves performance on complex reasoning tasks but uses additional tokens. The thinking process runs in the background but isn't displayed in the Desktop interface. To disable it or adjust the budget, set `MAX_THINKING_TOKENS` in your shell profile (use `0` to disable).
 
-**Remote sessions** run on Anthropic's cloud infrastructure and continue even if you close the app. Usage counts toward your subscription plan limits with no separate compute charges. See [Claude Code on the web](/en/claude-code-on-the-web) for details on configuring remote environments.
+**Remote sessions** run on Anthropic's cloud infrastructure and continue even if you close the app. Usage counts toward your subscription plan limits with no separate compute charges. See [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) for details on configuring remote environments.
 
 ## How Desktop relates to CLI
 
@@ -197,10 +197,10 @@ If you're used to CLI flags, the table below shows the Desktop equivalent for ea
 
 Desktop and CLI read the same configuration files, so your setup carries over:
 
-* **[CLAUDE.md](/en/memory)** and **CLAUDE.local.md** files in your project are used by both
+* **[CLAUDE.md](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md)** and **CLAUDE.local.md** files in your project are used by both
 * **[MCP servers](../06-MCP-Tools/General/connect-claude-code-to-tools-via-mcp-claude-code-docs.md)** configured in `~/.claude.json` or `.mcp.json` work in both
 * **[Hooks](../07-Hooks/hooks-reference-claude-code-docs.md)** and **[skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md)** defined in settings apply to both
-* **[Settings](/en/settings)** in `~/.claude.json` and `~/.claude/settings.json` are shared
+* **[Settings](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md)** in `~/.claude.json` and `~/.claude/settings.json` are shared
 * **Models** (Sonnet, Opus, Haiku) are available in both (Desktop requires selecting before starting a session)
 
 <Note>
@@ -217,13 +217,13 @@ Desktop and CLI read the same configuration files, so your setup carries over:
 
 **CLI adds:**
 
-* [Third-party API providers](/en/third-party-integrations) (Bedrock, Vertex, Foundry). If you use these, continue using CLI for those projects.
-* [CLI flags](/en/cli-reference) for scripting (`--print`, `--resume`, `--continue`)
-* [Programmatic usage](/en/headless) via the Agent SDK
+* [Third-party API providers](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md) (Bedrock, Vertex, Foundry). If you use these, continue using CLI for those projects.
+* [CLI flags](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) for scripting (`--print`, `--resume`, `--continue`)
+* [Programmatic usage](../02-Claude-Code-CLI/headless-b99e3140ec.md) via the Agent SDK
 
 ## Troubleshooting
 
-Solutions to common issues with the Claude desktop app. For CLI issues, see [CLI troubleshooting](/en/troubleshooting).
+Solutions to common issues with the Claude desktop app. For CLI issues, see [CLI troubleshooting](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md).
 
 ### Check your version
 
@@ -298,9 +298,9 @@ Organizations can disable local Claude Code use in the desktop application with 
 
 ## Related resources
 
-* [Claude Code on the web](/en/claude-code-on-the-web): Run remote sessions that continue in the cloud
-* [CLI reference](/en/cli-reference): Use Claude Code in your terminal with flags and scripting
-* [Common workflows](/en/common-workflows): Tutorials for debugging, refactoring, testing, and more
-* [Settings reference](/en/settings): Configure Claude Code behavior with settings files
+* [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md): Run remote sessions that continue in the cloud
+* [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md): Use Claude Code in your terminal with flags and scripting
+* [Common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md): Tutorials for debugging, refactoring, testing, and more
+* [Settings reference](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md): Configure Claude Code behavior with settings files
 * [Claude Desktop support](https://support.claude.com/en/collections/16163169-claude-desktop): Help articles for the Chat tab and general desktop app usage
 * [Enterprise configuration](../13-Enterprise-Admin/enterprise-configuration.md): Admin policies for organizational deployments

@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Memory Stores Delete A1Eb77Bf61"
+source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 **delete** `/v1/memory_stores/{memory_store_id}`

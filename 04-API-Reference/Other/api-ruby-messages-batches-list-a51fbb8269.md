@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Messages Batches List A51Fbb8269"
+source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/messages/batches/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `messages.batches.list(**kwargs) -> Page<MessageBatch>`

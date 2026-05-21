@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Sessions Resources Delete 38B282Ee84"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/resources/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/resources/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `BetaManagedAgentsDeleteSessionResource beta().sessions().resources().delete(ResourceDeleteParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

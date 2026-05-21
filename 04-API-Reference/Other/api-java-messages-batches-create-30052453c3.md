@@ -1,8 +1,11 @@
 ---
+title: "Api Java Messages Batches Create 30052453C3"
+source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `MessageBatch messages().batches().create(BatchCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`
@@ -2453,7 +2456,7 @@ Learn more about the Message Batches API in our [user guide](https://docs.claude
 
         - `Optional<JsonOutputFormat> format`
 
-          A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+          A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
           - `Schema schema`
 

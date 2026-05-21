@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Skills Delete Bd1C663D2B"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/skills/delete.md"
+tags: ["api", "skills"]
 ---
+
 ## Delete
 
 `client.Beta.Skills.Delete(ctx, skillID, body) (*BetaSkillDeleteResponse, error)`

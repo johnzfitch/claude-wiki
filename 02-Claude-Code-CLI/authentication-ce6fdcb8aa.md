@@ -1,9 +1,11 @@
 ---
+title: "Authentication"
+source_url: "https://code.claude.com/docs/en/authentication.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/authentication.md"
-title: "Authentication"
+tags: ["authentication", "claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -27,7 +29,7 @@ You can authenticate with any of these account types:
 * **Claude Pro or Max subscription**: log in with your Claude.ai account. Subscribe at [claude.com/pricing](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=authentication_pro_max).
 * **Claude for Teams or Enterprise**: log in with the Claude.ai account your team admin invited you to.
 * **Claude Console**: log in with your Console credentials. Your admin must have [invited you](#claude-console-authentication) first.
-* **Cloud providers**: if your organization uses [Amazon Bedrock](/en/amazon-bedrock), [Google Vertex AI](/en/google-vertex-ai), or [Microsoft Foundry](/en/microsoft-foundry), set the required environment variables before running `claude`. No browser login is needed.
+* **Cloud providers**: if your organization uses [Amazon Bedrock](../20-Models/claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md), [Google Vertex AI](../20-Models/claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md), or [Microsoft Foundry](../20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md), set the required environment variables before running `claude`. No browser login is needed.
 
 To log out and re-authenticate, type `/logout` at the Claude Code prompt.
 
@@ -39,9 +41,9 @@ For teams and organizations, you can configure Claude Code access in one of thes
 
 * [Claude for Teams or Enterprise](#claude-for-teams-or-enterprise), recommended for most teams
 * [Claude Console](#claude-console-authentication)
-* [Amazon Bedrock](/en/amazon-bedrock)
-* [Google Vertex AI](/en/google-vertex-ai)
-* [Microsoft Foundry](/en/microsoft-foundry)
+* [Amazon Bedrock](../20-Models/claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md)
+* [Google Vertex AI](../20-Models/claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md)
+* [Microsoft Foundry](../20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md)
 
 ### Claude for Teams or Enterprise
 
@@ -77,7 +79,7 @@ For organizations that prefer API-based billing, you can set up access through t
     You can add users through either method:
 
     * Bulk invite users from within the Console: Settings -> Members -> Invite
-    * [Set up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
+    * [Set up SSO](../21-Account-Support/setting-up-single-sign-on-sso.md)
   </Step>
 
   <Step title="Assign roles">
@@ -103,11 +105,11 @@ For teams using Amazon Bedrock, Google Vertex AI, or Microsoft Foundry:
 
 <Steps>
   <Step title="Follow provider setup">
-    Follow the [Bedrock docs](/en/amazon-bedrock), [Vertex docs](/en/google-vertex-ai), or [Microsoft Foundry docs](/en/microsoft-foundry).
+    Follow the [Bedrock docs](../20-Models/claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md), [Vertex docs](../20-Models/claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md), or [Microsoft Foundry docs](../20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md).
   </Step>
 
   <Step title="Distribute configuration">
-    Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](/en/settings).
+    Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](claude-code-settings-claude-code-docs-d4420b4b52.md).
   </Step>
 
   <Step title="Install Claude Code">
@@ -131,16 +133,16 @@ Claude Code securely manages your authentication credentials:
 
 When multiple credentials are present, Claude Code chooses one in this order:
 
-1. Cloud provider credentials, when `CLAUDE_CODE_USE_BEDROCK`, `CLAUDE_CODE_USE_VERTEX`, or `CLAUDE_CODE_USE_FOUNDRY` is set. See [third-party integrations](/en/third-party-integrations) for setup.
-2. `ANTHROPIC_AUTH_TOKEN` environment variable. Sent as the `Authorization: Bearer` header. Use this when routing through an [LLM gateway or proxy](/en/llm-gateway) that authenticates with bearer tokens rather than Anthropic API keys.
-3. `ANTHROPIC_API_KEY` environment variable. Sent as the `X-Api-Key` header. Use this for direct Anthropic API access with a key from the [Claude Console](https://platform.claude.com). In interactive mode, you are prompted once to approve or decline the key, and your choice is remembered. To change it later, use the "Use custom API key" toggle in `/config`. In non-interactive mode (`-p`), the key is always used when present.
+1. Cloud provider credentials, when `CLAUDE_CODE_USE_BEDROCK`, `CLAUDE_CODE_USE_VERTEX`, or `CLAUDE_CODE_USE_FOUNDRY` is set. See [third-party integrations](enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md) for setup.
+2. `ANTHROPIC_AUTH_TOKEN` environment variable. Sent as the `Authorization: Bearer` header. Use this when routing through an [LLM gateway or proxy](../13-Enterprise-Admin/llm-gateway-configuration-claude-code-docs-7a1628ac88.md) that authenticates with bearer tokens rather than Anthropic API keys.
+3. `ANTHROPIC_API_KEY` environment variable. Sent as the `X-Api-Key` header. Use this for direct Anthropic API access with a key from the [Claude Console](../04-API-Reference/Other/platform-claude-com.md). In interactive mode, you are prompted once to approve or decline the key, and your choice is remembered. To change it later, use the "Use custom API key" toggle in `/config`. In non-interactive mode (`-p`), the key is always used when present.
 4. [`apiKeyHelper`](/en/settings#available-settings) script output. Use this for dynamic or rotating credentials, such as short-lived tokens fetched from a vault.
 5. `CLAUDE_CODE_OAUTH_TOKEN` environment variable. A long-lived OAuth token generated by [`claude setup-token`](#generate-a-long-lived-token). Use this for CI pipelines and scripts where browser login isn't available.
 6. Subscription OAuth credentials from `/login`. This is the default for Claude Pro, Max, Team, and Enterprise users.
 
 If you have an active Claude subscription but also have `ANTHROPIC_API_KEY` set in your environment, the API key takes precedence once approved. This can cause authentication failures if the key belongs to a disabled or expired organization. Run `unset ANTHROPIC_API_KEY` to fall back to your subscription, and check `/status` to confirm which method is active.
 
-[Claude Code on the Web](/en/claude-code-on-the-web) always uses your subscription credentials. `ANTHROPIC_API_KEY` and `ANTHROPIC_AUTH_TOKEN` in the sandbox environment do not override them.
+[Claude Code on the Web](claude-code-on-the-web-69d53821d4.md) always uses your subscription credentials. `ANTHROPIC_API_KEY` and `ANTHROPIC_AUTH_TOKEN` in the sandbox environment do not override them.
 
 ### Generate a long-lived token
 
@@ -156,6 +158,6 @@ The command walks you through OAuth authorization and prints a token to the term
 export CLAUDE_CODE_OAUTH_TOKEN=your-token
 ```
 
-This token authenticates with your Claude subscription and requires a Pro, Max, Team, or Enterprise plan. It is scoped to inference only and cannot establish [Remote Control](/en/remote-control) sessions.
+This token authenticates with your Claude subscription and requires a Pro, Max, Team, or Enterprise plan. It is scoped to inference only and cannot establish [Remote Control](continue-local-sessions-from-any-device-with-remote-control-claude-code-docs-c1c03fd914.md) sessions.
 
 [Bare mode](/en/headless#start-faster-with-bare-mode) does not read `CLAUDE_CODE_OAUTH_TOKEN`. If your script passes `--bare`, authenticate with `ANTHROPIC_API_KEY` or an `apiKeyHelper` instead.

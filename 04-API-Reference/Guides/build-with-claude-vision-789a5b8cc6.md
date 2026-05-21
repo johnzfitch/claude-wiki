@@ -1,9 +1,11 @@
 ---
+title: "Vision"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/vision.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/vision.md"
-title: "Vision"
+tags: ["api", "prompting"]
 ---
+
 # Vision
 
 Claude's vision capabilities allow it to understand and analyze images, opening up exciting possibilities for multimodal interaction.

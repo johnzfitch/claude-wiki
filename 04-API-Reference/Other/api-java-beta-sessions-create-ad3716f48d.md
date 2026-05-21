@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Sessions Create Ad3716F48D"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `BetaManagedAgentsSession beta().sessions().create(SessionCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

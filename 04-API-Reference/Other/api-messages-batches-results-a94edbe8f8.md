@@ -1,8 +1,11 @@
 ---
+title: "Api Messages Batches Results A94Edbe8F8"
+source_url: "https://platform.claude.com/docs/en/api/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/messages/batches/results.md"
+tags: ["api"]
 ---
+
 ## Results
 
 **get** `/v1/messages/batches/{message_batch_id}/results`

@@ -1,9 +1,11 @@
 ---
+title: "Customize your status line"
+source_url: "https://code.claude.com/docs/en/statusline.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/statusline.md"
-title: "Customize your status line"
+tags: ["agents", "claude-code", "subagents"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -971,7 +973,7 @@ Or run a Bash script directly:
 
 ## Subagent status lines
 
-The `subagentStatusLine` setting renders a custom row body for each [subagent](/en/sub-agents) shown in the agent panel below the prompt. Use it to replace the default `name · description · token count` row with your own formatting.
+The `subagentStatusLine` setting renders a custom row body for each [subagent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) shown in the agent panel below the prompt. Use it to replace the default `name · description · token count` row with your own formatting.
 
 ```json theme={null}
 {

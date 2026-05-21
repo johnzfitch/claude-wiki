@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-04-26T03:19:49Z"
+fetched_at: "2026-05-19T21:22:22Z"
 source_url: "https://code.claude.com/docs/en/channels"
 title: "Push events into a running session with channels - Claude Code Docs"
 ---
@@ -11,14 +11,20 @@ title: "Push events into a running session with channels - Claude Code Docs"
 Use channels to push messages, alerts, and webhooks into your Claude Code session from an MCP server. Forward CI results, chat messages, and monitoring events so Claude can react while you’re away.
 
 
-Channels are in [research preview](#research-preview) and require Claude Code v2.1.80 or later. They require claude.ai login. Console and API key authentication is not supported. Team and Enterprise organizations must [explicitly enable them](#enterprise-controls).
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
+
+Channels are in [research preview](#research-preview) and require Claude Code v2.1.80 or later. They require Anthropic authentication through claude.ai or a Console API key, and are not available on Amazon Bedrock, Google Vertex AI, or Microsoft Foundry. Team and Enterprise organizations must [explicitly enable them](#enterprise-controls).
 
 A channel is an MCP server that pushes events into your running Claude Code session, so Claude can react to things that happen while you’re not at the terminal. Channels can be two-way: Claude reads the event and replies back through the same channel, like a chat bridge. Events only arrive while the session is open, so for an always-on setup you run Claude in a background process or persistent terminal. Unlike integrations that spawn a fresh cloud session or wait to be polled, the event arrives in the session you already have open: see [how channels compare](#how-channels-compare). You install a channel as a plugin and configure it with your own credentials. Telegram, Discord, and iMessage are included in the research preview. When Claude replies through a channel, you see the inbound message in your terminal but not the reply text. The terminal shows the tool call and a confirmation (like “sent”), and the actual reply appears on the other platform. This page covers:
 
 - [Supported channels](#supported-channels): Telegram, Discord, and iMessage setup
 - [Install and run a channel](#quickstart) with fakechat, a localhost demo
 - [Who can push messages](#security): sender allowlists and how you pair
-- [Enable channels for your organization](#enterprise-controls) on Team and Enterprise
+- [Enable channels for your organization](#enterprise-controls) if you manage a Team, Enterprise, or Console org
 - [How channels compare](#how-channels-compare) to web sessions, Slack, MCP, and Remote Control
 
 To build your own channel, see the [Channels reference](/docs/en/channels-reference).
@@ -257,9 +263,9 @@ Quickstart
 
 Fakechat is an officially supported demo channel that runs a chat UI on localhost, with nothing to authenticate and no external service to configure. Once you install and enable fakechat, you can type in the browser and the message arrives in your Claude Code session. Claude replies, and the reply shows up back in the browser. After you’ve tested the fakechat interface, try out [Telegram](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/telegram), [Discord](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/discord), or [iMessage](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/imessage). To try the fakechat demo, you’ll need:
 
-- Claude Code [installed and authenticated](/docs/en/quickstart#step-1-install-claude-code) with a claude.ai account
+- Claude Code [installed and authenticated](/docs/en/quickstart#step-1-install-claude-code) with a claude.ai account or a Claude Console API key
 - [Bun](https://bun.sh) installed. The pre-built channel plugins are Bun scripts. Check with `bun --version`; if that fails, [install Bun](https://bun.sh/docs/installation).
-- **Team/Enterprise users**: your organization admin must [enable channels](#enterprise-controls) in managed settings
+- **Team, Enterprise, or managed Console org**: your admin must [enable channels](#enterprise-controls) in managed settings
 
 1
 
@@ -302,7 +308,7 @@ hey, what's in my working directory?
 
 The message arrives in your Claude Code session as a `<channel source="fakechat">` event. Claude reads it, does the work, and calls fakechat’s `reply` tool. The answer shows up in the chat UI.
 
-If Claude hits a permission prompt while you’re away from the terminal, the session pauses until you respond. Channel servers that declare the [permission relay capability](/docs/en/channels-reference#relay-permission-prompts) can forward these prompts to you so you can approve or deny remotely. For unattended use, [`--dangerously-skip-permissions`](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode) bypasses prompts entirely, but only use it in environments you trust.
+If Claude hits a permission prompt while you’re away from the terminal, the session pauses until you respond. Channel servers that declare the [permission relay capability](/docs/en/channels-reference#relay-permission-prompts) can forward these prompts to you so you can approve or deny remotely. For unattended use, [`--dangerously-skip-permissions`](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode) bypasses prompts entirely, but only use it in environments you trust. When you run channels in non-interactive mode with `-p`, tools that need terminal input, such as multiple-choice questions and plan mode approval, are disabled so the session never stalls waiting for input.
 
 
 [​](#security)
@@ -316,19 +322,24 @@ Every approved channel plugin maintains a sender allowlist: only IDs you’ve ad
 3.  In your Claude Code session, approve the code when prompted
 4.  Your sender ID is added to the allowlist
 
-iMessage works differently: texting yourself bypasses the gate automatically, and you add other contacts by handle with `/imessage:access allow`. On top of that, you control which servers are enabled each session with `--channels`, and on Team and Enterprise plans your organization controls availability with [`channelsEnabled`](#enterprise-controls). Being in `.mcp.json` isn’t enough to push messages: a server also has to be named in `--channels`. The allowlist also gates [permission relay](/docs/en/channels-reference#relay-permission-prompts) if the channel declares it. Anyone who can reply through the channel can approve or deny tool use in your session, so only allowlist senders you trust with that authority.
+iMessage works differently: texting yourself bypasses the gate automatically, and you add other contacts by handle with `/imessage:access allow`. On top of that, you control which servers are enabled each session with `--channels`, and your organization controls availability with [`channelsEnabled`](#enterprise-controls) on claude.ai Team and Enterprise plans and on Console organizations that deploy managed settings. Being in `.mcp.json` isn’t enough to push messages: a server also has to be named in `--channels`. The allowlist also gates [permission relay](/docs/en/channels-reference#relay-permission-prompts) if the channel declares it. Anyone who can reply through the channel can approve or deny tool use in your session, so only allowlist senders you trust with that authority.
 
 
 [​](#enterprise-controls)
 
 Enterprise controls
 
-On Team and Enterprise plans, channels are off by default. Admins control availability through two [managed settings](/docs/en/settings) that users cannot override:
+Admins control availability through two [managed settings](/docs/en/settings) that users cannot override. The default depends on how you authenticate:
 
-| Setting | Purpose | When not configured |
-|:---|:---|:---|
-| `channelsEnabled` | Master switch. Must be `true` for any channel to deliver messages. Set via the [claude.ai Admin console](https://claude.ai/admin-settings/claude-code) toggle or directly in managed settings. Blocks all channels including the development flag when off. | Channels blocked |
-| `allowedChannelPlugins` | Which plugins can register once channels are enabled. Replaces the Anthropic-maintained list when set. Only applies when `channelsEnabled` is `true`. | Anthropic default list applies |
+- **claude.ai Team and Enterprise**: channels are blocked until an admin enables them.
+- **Anthropic Console with API key authentication**: channels are permitted by default. You only need this setting if your organization deploys managed settings.
+
+In all cases, no channel runs until a user opts it in for the session with `--channels`.
+
+| Setting                 | Purpose                                                                                                                                                                                                                                                     | When not configured                                                                                                                                                                    |
+|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `channelsEnabled`       | Master switch. Must be `true` for any channel to deliver messages. Set via the [claude.ai Admin console](https://claude.ai/admin-settings/claude-code) toggle or directly in managed settings. Blocks all channels including the development flag when off. | claude.ai Team and Enterprise: channels blocked. Console: channels allowed unless your organization deploys managed settings, in which case channels are blocked until this key is set |
+| `allowedChannelPlugins` | Which plugins can register once channels are enabled. Replaces the Anthropic-maintained list when set. Only applies when `channelsEnabled` is `true`.                                                                                                       | Anthropic default list applies                                                                                                                                                         |
 
 Pro and Max users without an organization skip these checks entirely: channels are available and users opt in per session with `--channels`.
 
@@ -373,12 +384,12 @@ How channels compare
 
 Several Claude Code features connect to systems outside the terminal, each suited to a different kind of work:
 
-| Feature | What it does | Good for |
-|----|----|----|
-| [Claude Code on the web](/docs/en/claude-code-on-the-web) | Runs tasks in a fresh cloud sandbox, cloned from GitHub | Delegating self-contained async work you check on later |
-| [Claude in Slack](/docs/en/slack) | Spawns a web session from an `@Claude` mention in a channel or thread | Starting tasks directly from team conversation context |
-| Standard [MCP server](/docs/en/mcp) | Claude queries it during a task; nothing is pushed to the session | Giving Claude on-demand access to read or query a system |
-| [Remote Control](/docs/en/remote-control) | You drive your local session from claude.ai or the Claude mobile app | Steering an in-progress session while away from your desk |
+| Feature                                                   | What it does                                                          | Good for                                                  |
+|-----------------------------------------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------|
+| [Claude Code on the web](/docs/en/claude-code-on-the-web) | Runs tasks in a fresh cloud sandbox, cloned from GitHub               | Delegating self-contained async work you check on later   |
+| [Claude in Slack](/docs/en/slack)                         | Spawns a web session from an `@Claude` mention in a channel or thread | Starting tasks directly from team conversation context    |
+| Standard [MCP server](/docs/en/mcp)                       | Claude queries it during a task; nothing is pushed to the session     | Giving Claude on-demand access to read or query a system  |
+| [Remote Control](/docs/en/remote-control)                 | You drive your local session from claude.ai or the Claude mobile app  | Steering an in-progress session while away from your desk |
 
 Channels fill the gap in that list by pushing events from non-Claude sources into your already-running local session.
 

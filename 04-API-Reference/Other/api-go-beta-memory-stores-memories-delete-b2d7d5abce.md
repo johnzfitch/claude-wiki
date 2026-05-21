@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Memory Stores Memories Delete B2D7D5Abce"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/memory_stores/memories/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/memory_stores/memories/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `client.Beta.MemoryStores.Memories.Delete(ctx, memoryID, params) (*BetaManagedAgentsDeletedMemory, error)`

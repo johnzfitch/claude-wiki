@@ -57,9 +57,9 @@ For business users and consumers who want to collaborate with our most powerful 
 
 For developers interested in building AI solutions that demand frontier intelligence, Opus 4.6 is available on the Claude Platform natively, and in Amazon Bedrock, Google Cloud’s Vertex AI, and Microsoft Foundry. *The 1M token context window is currently available in beta on the Claude Platform only.*
 
-Pricing for Opus 4.6 starts at \$5 per million input tokens and \$25 per million output tokens, with up to 90% cost savings with [prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md) and 50% savings with [batch processing](https://platform.claude.com/docs/en/build-with-claude/batch-processing#pricing). To learn more, check out our [pricing page](https://claude.com/pricing#api). To get started, use `claude-opus-4-6` via the [Claude API](../20-Models/about-claude-models-overview.md).
+Pricing for Opus 4.6 starts at \$5 per million input tokens and \$25 per million output tokens, with up to 90% cost savings with [prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md) and 50% savings with [batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing-58f98b4064.md#pricing). To learn more, check out our [pricing page](https://claude.com/pricing#api). To get started, use `claude-opus-4-6` via the [Claude API](../20-Models/about-claude-models-overview.md).
 
-For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](https://platform.claude.com/docs/en/build-with-claude/data-residency).
+For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](../04-API-Reference/Guides/build-with-claude-data-residency-6c8e324ea6.md).
 
 ## Use cases
 

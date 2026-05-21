@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Agents Archive 02E29E82A4"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/agents/archive.md"
+tags: ["agents", "api"]
 ---
+
 ## Archive
 
 `client.Beta.Agents.Archive(ctx, agentID, body) (*BetaManagedAgentsAgent, error)`

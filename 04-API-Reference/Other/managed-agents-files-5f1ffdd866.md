@@ -1,9 +1,11 @@
 ---
+title: "Adding files"
+source_url: "https://platform.claude.com/docs/en/managed-agents/files.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/files.md"
-title: "Adding files"
+tags: ["api"]
 ---
+
 # Adding files
 
 Upload files and mount them in your container for reading and processing.

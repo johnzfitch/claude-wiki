@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Memory Stores Memory Versions Retrieve Ee84Cccd82"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/memory_versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/memory_stores/memory_versions/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `beta.memory_stores.memory_versions.retrieve(memory_version_id, **kwargs) -> BetaManagedAgentsMemoryVersion`

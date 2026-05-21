@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Messages Batches Retrieve 0Cba952F88"
+source_url: "https://platform.claude.com/docs/en/api/cli/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/messages/batches/retrieve.md"
+tags: ["api", "cli"]
 ---
+
 ## Retrieve
 
 `$ ant messages:batches retrieve`

@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Messages Count Tokens 6409Ac3E87"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/messages/count_tokens.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/messages/count_tokens.md"
+tags: ["api", "python"]
 ---
+
 ## Count Tokens
 
 `beta.messages.count_tokens(MessageCountTokensParams**kwargs)  -> BetaMessageTokensCount`
@@ -2944,7 +2947,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
   - `format: Optional[BetaJSONOutputFormat]`
 
-    A schema to specify Claude's output format in responses. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+    A schema to specify Claude's output format in responses. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     - `schema: Dict[str, object]`
 
@@ -2956,7 +2959,7 @@ Learn more about token counting in our [user guide](https://docs.claude.com/en/d
 
 - `output_format: Optional[BetaJSONOutputFormatParam]`
 
-  Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+  Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
   A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

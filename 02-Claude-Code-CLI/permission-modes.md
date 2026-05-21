@@ -136,8 +136,8 @@ Writes to these paths are never auto-approved:
 
 ## See Also
 
-- [Permissions](/en/permissions) — allow, ask, deny rules
+- [Permissions](configure-permissions-claude-code-docs-7b0e64d485.md) — allow, ask, deny rules
 - [Hooks](../07-Hooks/hooks-reference-claude-code-docs.md) — custom permission logic
 - [Ultraplan](ultraplan.md) — plan mode with browser-based review
 - [Security](security-claude-code-docs.md)
-- [Sandboxing](/en/sandboxing)
+- [Sandboxing](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md)

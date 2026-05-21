@@ -1,9 +1,11 @@
 ---
+title: "Adaptive thinking"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking.md"
-title: "Adaptive thinking"
+tags: ["api"]
 ---
+
 # Adaptive thinking
 
 Let Claude dynamically determine when and how much to use extended thinking with adaptive thinking mode.

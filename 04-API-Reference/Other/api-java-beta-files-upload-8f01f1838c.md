@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Files Upload 8F01F1838C"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/files/upload.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/files/upload.md"
+tags: ["api"]
 ---
+
 ## Upload
 
 `FileMetadata beta().files().upload(FileUploadParamsparams, RequestOptionsrequestOptions = RequestOptions.none())`

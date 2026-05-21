@@ -1,9 +1,11 @@
 ---
+title: "Advisor tool"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool.md"
 category: "Agents-Tools"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool.md"
-title: "Advisor tool"
+tags: ["api", "billing", "prompting"]
 ---
+
 # Advisor tool
 
 Pair a faster executor model with a higher-intelligence advisor model that provides strategic guidance mid-generation.

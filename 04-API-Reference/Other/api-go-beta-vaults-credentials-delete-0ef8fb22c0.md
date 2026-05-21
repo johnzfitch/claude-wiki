@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Vaults Credentials Delete 0Ef8Fb22C0"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/vaults/credentials/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/vaults/credentials/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 `client.Beta.Vaults.Credentials.Delete(ctx, credentialID, params) (*BetaManagedAgentsDeletedCredential, error)`

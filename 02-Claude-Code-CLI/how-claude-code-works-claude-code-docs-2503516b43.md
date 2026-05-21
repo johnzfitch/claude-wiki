@@ -1,6 +1,6 @@
 ---
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-04-26T03:20:09Z"
+fetched_at: "2026-05-19T21:22:47Z"
 source_url: "https://code.claude.com/docs/en/how-claude-code-works"
 title: "How Claude Code works - Claude Code Docs"
 ---
@@ -10,6 +10,12 @@ title: "How Claude Code works - Claude Code Docs"
 
 Understand the agentic loop, built-in tools, and how Claude Code interacts with your project.
 
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 Claude Code is an agentic assistant that runs in your terminal. While it excels at coding, it can help with anything you can do from the command line: writing docs, running builds, searching files, researching topics, and more. This guide covers the core architecture, built-in capabilities, and [tips for working effectively](#work-effectively-with-claude-code). For step-by-step walkthroughs, see [Common workflows](/docs/en/common-workflows). For extensibility features like skills, MCP, and hooks, see [Extend Claude Code](/docs/en/features-overview).
 
@@ -34,12 +40,12 @@ Tools
 
 Tools are what make Claude Code agentic. Without tools, Claude can only respond with text. With tools, Claude can act: read your code, edit files, run commands, search the web, and interact with external services. Each tool use returns information that feeds back into the loop, informing Claude’s next decision. The built-in tools generally fall into five categories, each representing a different kind of agency.
 
-| Category | What Claude can do |
-|----|----|
-| **File operations** | Read files, edit code, create new files, rename and reorganize |
-| **Search** | Find files by pattern, search content with regex, explore codebases |
-| **Execution** | Run shell commands, start servers, run tests, use git |
-| **Web** | Search the web, fetch documentation, look up error messages |
+| Category              | What Claude can do                                                                                                                                                 |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **File operations**   | Read files, edit code, create new files, rename and reorganize                                                                                                     |
+| **Search**            | Find files by pattern, search content with regex, explore codebases                                                                                                |
+| **Execution**         | Run shell commands, start servers, run tests, use git                                                                                                              |
+| **Web**               | Search the web, fetch documentation, look up error messages                                                                                                        |
 | **Code intelligence** | See type errors and warnings after edits, jump to definitions, find references (requires [code intelligence plugins](/docs/en/discover-plugins#code-intelligence)) |
 
 These are the primary capabilities. Claude also has tools for spawning subagents, asking you questions, and other orchestration tasks. See [Tools available to Claude](/docs/en/tools-reference) for the complete list. Claude chooses which tools to use based on your prompt and what it learns along the way. When you say “fix the failing tests,” Claude might:
@@ -83,11 +89,11 @@ Execution environments
 
 Claude Code runs in three environments, each with different tradeoffs for where your code executes.
 
-| Environment | Where code runs | Use case |
-|----|----|----|
-| **Local** | Your machine | Default. Full access to your files, tools, and environment |
-| **Cloud** | Anthropic-managed VMs | Offload tasks, work on repos you don’t have locally |
-| **Remote Control** | Your machine, controlled from a browser | Use the web UI while keeping everything local |
+| Environment        | Where code runs                         | Use case                                                   |
+|--------------------|-----------------------------------------|------------------------------------------------------------|
+| **Local**          | Your machine                            | Default. Full access to your files, tools, and environment |
+| **Cloud**          | Anthropic-managed VMs                   | Offload tasks, work on repos you don’t have locally        |
+| **Remote Control** | Your machine, controlled from a browser | Use the web UI while keeping everything local              |
 
 
 [​](#interfaces)
@@ -108,20 +114,14 @@ Claude Code saves your conversation locally as you work. Each message, tool use,
 
 Work across branches
 
-Each Claude Code conversation is a session tied to your current directory. The `/resume` picker shows sessions from the current worktree by default, with keyboard shortcuts to widen the list to other worktrees or projects. See [Resume previous conversations](/docs/en/common-workflows#resume-previous-conversations) for the full list of picker shortcuts and how name resolution works. Claude sees your current branch’s files. When you switch branches, Claude sees the new branch’s files, but your conversation history stays the same. Claude remembers what you discussed even after switching. Since sessions are tied to directories, you can run parallel Claude sessions by using [git worktrees](/docs/en/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees), which create separate directories for individual branches.
+Each Claude Code conversation is a session tied to your current directory. The `/resume` picker shows sessions from the current worktree by default, with keyboard shortcuts to widen the list to other worktrees or projects. See [Manage sessions](/docs/en/sessions#use-the-session-picker) for the full list of picker shortcuts and how name resolution works. Claude sees your current branch’s files. When you switch branches, Claude sees the new branch’s files, but your conversation history stays the same. Claude remembers what you discussed even after switching. Since sessions are tied to directories, you can run parallel Claude sessions by using [git worktrees](/docs/en/worktrees), which create separate directories for individual branches.
 
 
 [​](#resume-or-fork-sessions)
 
 Resume or fork sessions
 
-When you resume a session with `claude --continue` or `claude --resume`, you pick up where you left off using the same session ID. New messages append to the existing conversation. Your full conversation history is restored, but session-scoped permissions are not. You’ll need to re-approve those. To branch off and try a different approach without affecting the original session, use the `--fork-session` flag:
-
-```python
-claude --continue --fork-session
-```
-
-This creates a new session ID while preserving the conversation history up to that point. The original session remains unchanged. Like resume, forked sessions don’t inherit session-scoped permissions. **Same session in multiple terminals**: If you resume the same session in multiple terminals, both terminals write to the same session file. Messages from both get interleaved, like two people writing in the same notebook. Nothing corrupts, but the conversation becomes jumbled. Each terminal only sees its own messages during the session, but if you resume that session later, you’ll see everything interleaved. For parallel work from the same starting point, use `--fork-session` to give each terminal its own clean session.
+Resuming a session with `claude --continue` or `claude --resume` reopens it under the same session ID and appends new messages to the existing conversation. Forking with `--fork-session` or `/branch` copies the history into a new session ID, leaving the original unchanged. For the resume flags, the `/resume` picker, naming, and what happens when the same session is open in two terminals, see [Manage sessions](/docs/en/sessions).
 
 
 [​](#the-context-window)
@@ -142,7 +142,7 @@ Claude Code manages context automatically as you approach the limit. It clears o
 
 Manage context with skills and subagents
 
-Beyond compaction, you can use other features to control what loads into context. [Skills](/docs/en/skills) load on demand. Claude sees skill descriptions at session start, but the full content only loads when a skill is used. For skills you invoke manually, set `disable-model-invocation: true` to keep descriptions out of context until you need them. [Subagents](/docs/en/sub-agents) get their own fresh context, completely separate from your main conversation. Their work doesn’t bloat your context. When done, they return a summary. This isolation is why subagents help with long sessions. See [context costs](/docs/en/features-overview#understand-context-costs) for what each feature costs, and [reduce token usage](/docs/en/costs#reduce-token-usage) for tips on managing context.
+Beyond compaction, you can use other features to control what loads into context. [Skills](/docs/en/skills) load on demand. Claude sees skill descriptions at session start, but the full content only loads when a skill is used. For skills you invoke manually, set `disable-model-invocation: true` to keep descriptions out of context until you need them. For skills you didn’t write, use [`skillOverrides`](/docs/en/skills#override-skill-visibility-from-settings) to do the same from settings. [Subagents](/docs/en/sub-agents) get their own fresh context, completely separate from your main conversation. Their work doesn’t bloat your context. When done, they return a summary. This isolation is why subagents help with long sessions. See [context costs](/docs/en/features-overview#understand-context-costs) for what each feature costs, and [reduce token usage](/docs/en/costs#reduce-token-usage) for tips on managing context.
 
 
 [​](#stay-safe-with-checkpoints-and-permissions)

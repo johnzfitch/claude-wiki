@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Files Delete 9Dc5Be1D20"
+source_url: "https://platform.claude.com/docs/en/api/beta/files/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/files/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 **delete** `/v1/files/{file_id}`

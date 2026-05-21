@@ -2,10 +2,8 @@
 title: "Plugins reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins-reference"
 category: "08-Plugins-Skills"
-title: "Plugins reference - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/plugins-reference"
 fetched_at: "2026-04-26T03:20:22Z"
-tags: ["claude-code", "cli", "plugins"]
+tags: ["claude-code", "plugins"]
 ---
 
 # Plugins reference

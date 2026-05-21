@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Environments Retrieve A752Ca3B02"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/environments/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `client.Beta.Environments.Get(ctx, environmentID, query) (*BetaEnvironment, error)`

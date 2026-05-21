@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Agents List 467F17Ff1E"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/agents/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/agents/list.md"
+tags: ["agents", "api"]
 ---
+
 ## List
 
 `AgentListPage beta().agents().list(AgentListParamsparams = AgentListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

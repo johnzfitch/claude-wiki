@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Vaults Update 146F123E81"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/vaults/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/vaults/update.md"
+tags: ["api", "cli"]
 ---
+
 ## Update
 
 `$ ant beta:vaults update`

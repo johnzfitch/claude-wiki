@@ -2,10 +2,8 @@
 title: "Development containers - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/devcontainer"
 category: "02-Claude-Code-CLI"
-title: "Development containers - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/devcontainer"
 fetched_at: "2026-04-26T03:19:58Z"
-tags: ["claude-code", "containers", "security"]
+tags: ["claude-code", "containers"]
 ---
 
 # Development containers

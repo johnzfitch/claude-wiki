@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Vaults Credentials Update Ed14D6C261"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/credentials/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/vaults/credentials/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `beta.vaults.credentials.update(credential_id, **kwargs) -> BetaManagedAgentsCredential`

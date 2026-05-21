@@ -1,9 +1,11 @@
 ---
+title: "Usage and Cost API"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/usage-cost-api.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/usage-cost-api.md"
-title: "Usage and Cost API"
+tags: ["api"]
 ---
+
 # Usage and Cost API
 
 Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.

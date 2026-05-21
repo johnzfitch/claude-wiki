@@ -1,9 +1,11 @@
 ---
+title: "Console prompting tools"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-tools.md"
 category: "10-Prompting-Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-tools.md"
-title: "Console prompting tools"
+tags: ["prompting"]
 ---
+
 # Console prompting tools
 
 ---

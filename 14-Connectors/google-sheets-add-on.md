@@ -66,7 +66,7 @@ Any API parameter can be set this way. You can even pass in an API key to be use
 
 ## Advanced use
 
-`CLAUDEMESSAGES` is a function that allows you to specifically use the [Messages API](https://platform.claude.com/docs/en/api/messages). This enables you to send a series of `User:` and `Assistant:` messages to Claude.
+`CLAUDEMESSAGES` is a function that allows you to specifically use the [Messages API](../04-API-Reference/Other/api-messages-2dd213ca95.md). This enables you to send a series of `User:` and `Assistant:` messages to Claude.
 
 This is particularly useful if you want to simulate a conversation or [prefill Claude's response](../10-Prompting-Guides/build-with-claude-prompt-engineering-prefill-claudes-response.md).
 

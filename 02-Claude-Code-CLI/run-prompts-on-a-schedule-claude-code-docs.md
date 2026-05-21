@@ -2,8 +2,6 @@
 title: "Run prompts on a schedule - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/scheduled-tasks"
 category: "02-Claude-Code-CLI"
-title: "Run prompts on a schedule - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/scheduled-tasks"
 fetched_at: "2026-04-26T03:20:24Z"
 tags: ["claude-code", "prompting"]
 ---

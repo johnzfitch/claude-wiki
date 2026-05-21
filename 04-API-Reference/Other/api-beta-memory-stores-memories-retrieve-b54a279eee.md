@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Memory Stores Memories Retrieve B54A279Eee"
+source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memories/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memories/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 **get** `/v1/memory_stores/{memory_store_id}/memories/{memory_id}`

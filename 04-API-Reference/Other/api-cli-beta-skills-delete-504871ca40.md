@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Skills Delete 504871Ca40"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/skills/delete.md"
+tags: ["api", "cli", "skills"]
 ---
+
 ## Delete
 
 `$ ant beta:skills delete`

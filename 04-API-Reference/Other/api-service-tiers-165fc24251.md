@@ -1,9 +1,11 @@
 ---
+title: "Service tiers"
+source_url: "https://platform.claude.com/docs/en/api/service-tiers.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/service-tiers.md"
-title: "Service tiers"
+tags: ["api"]
 ---
+
 # Service tiers
 
 Different tiers of service allow you to balance availability, performance, and predictable costs based on your application's needs.

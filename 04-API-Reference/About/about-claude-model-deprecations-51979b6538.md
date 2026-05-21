@@ -1,9 +1,11 @@
 ---
+title: "Model deprecations"
+source_url: "https://platform.claude.com/docs/en/about-claude/model-deprecations.md"
 category: "About"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/model-deprecations.md"
-title: "Model deprecations"
+tags: ["api"]
 ---
+
 # Model deprecations
 
 ---
@@ -60,7 +62,7 @@ Anthropic currently deprecates and retires models to ensure capacity for new mod
 - Researchers lose access to models for ongoing and comparative studies
 - Model retirement introduces safety- and model welfare-related risks
 
-At some point, Anthropic hopes to make past models publicly available again. In the meantime, Anthropic has committed to long-term preservation of model weights and other measures to help mitigate these impacts. For more details, see [Commitments on Model Deprecation and Preservation](https://www.anthropic.com/research/deprecation-commitments).
+At some point, Anthropic hopes to make past models publicly available again. In the meantime, Anthropic has committed to long-term preservation of model weights and other measures to help mitigate these impacts. For more details, see [Commitments on Model Deprecation and Preservation](../../19-Reference/commitments-on-model-deprecation-and-preservation-anthropic.md).
 
 ## Model status
 

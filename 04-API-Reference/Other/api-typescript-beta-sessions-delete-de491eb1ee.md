@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Sessions Delete De491Eb1Ee"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/delete.md"
+tags: ["api", "typescript"]
 ---
+
 ## Delete
 
 `client.beta.sessions.delete(stringsessionID, SessionDeleteParamsparams?, RequestOptionsoptions?): BetaManagedAgentsDeletedSession`

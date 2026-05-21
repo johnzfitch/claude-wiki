@@ -1,8 +1,11 @@
 ---
+title: "Api Python Models Retrieve C35Ec69E3E"
+source_url: "https://platform.claude.com/docs/en/api/python/models/retrieve.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/models/retrieve.md"
+tags: ["api", "python"]
 ---
+
 ## Retrieve
 
 `models.retrieve(strmodel_id, ModelRetrieveParams**kwargs)  -> ModelInfo`

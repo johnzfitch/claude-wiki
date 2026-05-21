@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Messages Batches Retrieve B05140Bd22"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/messages/batches/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `beta.messages.batches.retrieve(message_batch_id, **kwargs) -> BetaMessageBatch`

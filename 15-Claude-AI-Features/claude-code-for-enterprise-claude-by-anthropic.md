@@ -315,7 +315,7 @@ You can configure Claude Code to work with third party API keys. 
 
 Read API docs
 
-[Read API docs](https://code.claude.com/docs/en/third-party-integrations)
+[Read API docs](../02-Claude-Code-CLI/enterprise-deployment-overview-claude-code-docs-6eae0ecba2.md)
 
 Read API docs
 
@@ -367,7 +367,7 @@ Prev
 
 ## Get the technical  rundown
 
-[Claude Code documentation](https://code.claude.com/docs/en/overview)
+[Claude Code documentation](../02-Claude-Code-CLI/claude-code-overview-claude-code-docs-c23f3e7cbb.md)
 
 Claude Code documentation
 
@@ -375,11 +375,11 @@ Claude Code documentation
 
 Developer docs
 
-[Developer docs](https://code.claude.com/docs/en/overview)
+[Developer docs](../02-Claude-Code-CLI/claude-code-overview-claude-code-docs-c23f3e7cbb.md)
 
 Developer docs
 
-[Common workflows](https://code.claude.com/docs/en/common-workflows)
+[Common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md)
 
 Common workflows
 
@@ -387,7 +387,7 @@ Common workflows
 
 Developer docs
 
-[Developer docs](https://code.claude.com/docs/en/common-workflows)
+[Developer docs](../02-Claude-Code-CLI/common-workflows-c909406123.md)
 
 Developer docs
 

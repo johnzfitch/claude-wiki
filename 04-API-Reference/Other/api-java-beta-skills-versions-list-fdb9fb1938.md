@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Skills Versions List Fdb9Fb1938"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/skills/versions/list.md"
+tags: ["api", "skills"]
 ---
+
 ## List
 
 `VersionListPage beta().skills().versions().list(VersionListParamsparams = VersionListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

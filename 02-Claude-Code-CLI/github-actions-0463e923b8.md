@@ -1,9 +1,11 @@
 ---
+title: "Claude Code GitHub Actions"
+source_url: "https://code.claude.com/docs/en/github-actions.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/github-actions.md"
-title: "Claude Code GitHub Actions"
+tags: ["bedrock", "claude-code", "git", "github", "vertex"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -12,7 +14,7 @@ title: "Claude Code GitHub Actions"
 
 > Learn about integrating Claude Code into your development workflow with Claude Code GitHub Actions
 
-Claude Code GitHub Actions brings AI-powered automation to your GitHub workflow. With a simple `@claude` mention in any PR or issue, Claude can analyze your code, create pull requests, implement features, and fix bugs - all while following your project's standards. For automatic reviews posted on every PR without a trigger, see [GitHub Code Review](/en/code-review).
+Claude Code GitHub Actions brings AI-powered automation to your GitHub workflow. With a simple `@claude` mention in any PR or issue, Claude can analyze your code, create pull requests, implement features, and fix bugs - all while following your project's standards. For automatic reviews posted on every PR without a trigger, see [GitHub Code Review](code-review-09694cae75.md).
 
 <Note>
   Claude Code GitHub Actions is built on top of the [Claude Agent SDK](/en/agent-sdk/overview), which enables programmatic integration of Claude Code into your applications. You can use the SDK to build custom automation workflows beyond GitHub Actions.
@@ -273,7 +275,7 @@ The Claude Code Action v1 simplifies configuration with unified parameters:
 Key features:
 
 * **Unified prompt interface** - Use `prompt` for all instructions
-* **Skills** - Invoke installed [skills](/en/skills) directly from the prompt
+* **Skills** - Invoke installed [skills](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) directly from the prompt
 * **CLI passthrough** - Any Claude Code CLI argument via `claude_args`
 * **Flexible triggers** - Works with any GitHub event
 
@@ -632,7 +634,7 @@ The Claude Code Action v1 uses a simplified configuration:
 
 | Parameter           | Description                                                        | Required |
 | ------------------- | ------------------------------------------------------------------ | -------- |
-| `prompt`            | Instructions for Claude (plain text or a [skill](/en/skills) name) | No\*     |
+| `prompt`            | Instructions for Claude (plain text or a [skill](../08-Plugins-Skills/extend-claude-with-skills-claude-code-docs.md) name) | No\*     |
 | `claude_args`       | CLI arguments passed to Claude Code                                | No       |
 | `anthropic_api_key` | Claude API key                                                     | Yes\*\*  |
 | `github_token`      | GitHub token for API access                                        | No       |
@@ -673,7 +675,7 @@ See the [Claude Code Action documentation](https://github.com/anthropics/claude-
 
 You can configure Claude's behavior in two ways:
 
-1. **CLAUDE.md**: Define coding standards, review criteria, and project-specific rules in a `CLAUDE.md` file at the root of your repository. Claude will follow these guidelines when creating PRs and responding to requests. Check out our [Memory documentation](/en/memory) for more details.
+1. **CLAUDE.md**: Define coding standards, review criteria, and project-specific rules in a `CLAUDE.md` file at the root of your repository. Claude will follow these guidelines when creating PRs and responding to requests. Check out our [Memory documentation](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) for more details.
 2. **Custom prompts**: Use the `prompt` parameter in the workflow file to provide workflow-specific instructions. This allows you to customize Claude's behavior for different workflows or tasks.
 
 Claude will follow these guidelines when creating PRs and responding to requests.

@@ -1,9 +1,11 @@
 ---
+title: "Content moderation"
+source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation.md"
 category: "About"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation.md"
-title: "Content moderation"
+tags: ["api"]
 ---
+
 # Content moderation
 
 Content moderation is a critical aspect of maintaining a safe, respectful, and productive environment in digital applications. This guide discusses how Claude can be used to moderate content within your digital application.

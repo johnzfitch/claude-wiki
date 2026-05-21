@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Skills Delete 705A8F5C21"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/skills/delete.md"
+tags: ["api", "skills", "typescript"]
 ---
+
 ## Delete
 
 `client.beta.skills.delete(stringskillID, SkillDeleteParamsparams?, RequestOptionsoptions?): SkillDeleteResponse`

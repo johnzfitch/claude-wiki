@@ -1,9 +1,11 @@
 ---
+title: "Using Agent Skills with the API"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/skills-guide.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/skills-guide.md"
-title: "Using Agent Skills with the API"
+tags: ["agents", "api", "skills"]
 ---
+
 # Using Agent Skills with the API
 
 Learn how to use Agent Skills to extend Claude's capabilities through the API.

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Environments Retrieve Ed45F784C9"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/environments/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/environments/retrieve.md"
+tags: ["api", "typescript"]
 ---
+
 ## Retrieve
 
 `client.beta.environments.retrieve(stringenvironmentID, EnvironmentRetrieveParamsparams?, RequestOptionsoptions?): BetaEnvironment`

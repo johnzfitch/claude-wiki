@@ -1,9 +1,11 @@
 ---
+title: "Securely deploying AI agents"
+source_url: "https://code.claude.com/docs/en/agent-sdk/secure-deployment.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/secure-deployment.md"
-title: "Securely deploying AI agents"
+tags: ["agents", "security"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -22,18 +24,18 @@ Not every deployment needs maximum security. A developer running Claude Code on 
 
 ## Threat model
 
-Agents can take unintended actions due to prompt injection (instructions embedded in content they process) or model error. Claude models are designed to resist this; see the [model overview](https://platform.claude.com/docs/en/about-claude/models/overview) and the system card for the model you deploy for evaluation details.
+Agents can take unintended actions due to prompt injection (instructions embedded in content they process) or model error. Claude models are designed to resist this; see the [model overview](../20-Models/about-claude-models-overview-2bbf09ff82.md) and the system card for the model you deploy for evaluation details.
 
 Defense in depth is still good practice though. For example, if an agent processes a malicious file that instructs it to send customer data to an external server, network controls can block that request entirely.
 
 ## Built-in security features
 
-Claude Code includes several security features that address common concerns. See the [security documentation](/en/security) for full details.
+Claude Code includes several security features that address common concerns. See the [security documentation](../22-Safety-Policy/security-claude-code-docs-7538e94c51.md) for full details.
 
-* **Permissions system**: Every tool and bash command can be configured to allow, block, or prompt the user for approval. Use glob patterns to create rules like "allow all npm commands" or "block any command with sudo". Organizations can set policies that apply across all users. See [permissions](/en/permissions).
+* **Permissions system**: Every tool and bash command can be configured to allow, block, or prompt the user for approval. Use glob patterns to create rules like "allow all npm commands" or "block any command with sudo". Organizations can set policies that apply across all users. See [permissions](../02-Claude-Code-CLI/configure-permissions-claude-code-docs-7b0e64d485.md).
 * **Command parsing for permissions**: Before executing bash commands, Claude Code parses them into an AST and matches the result against your permission rules. Commands that cannot be parsed cleanly, or that do not match an allow rule, require explicit approval. A small set of constructs such as `eval` always require approval regardless of allow rules. This is a permission gate, not a sandbox; it does not infer whether a command is dangerous from its target path or effects.
 * **Web search summarization**: Search results are summarized rather than passing raw content directly into the context, reducing the risk of prompt injection from malicious web content.
-* **Sandbox mode**: Bash commands can run in a sandboxed environment that restricts filesystem and network access. See the [sandboxing documentation](/en/sandboxing) for details.
+* **Sandbox mode**: Bash commands can run in a sandboxed environment that restricts filesystem and network access. See the [sandboxing documentation](../22-Safety-Policy/sandboxing-claude-code-docs-5f97cd27c4.md) for details.
 
 ## Security principles
 
@@ -345,7 +347,7 @@ If you want to review changes before persisting them, an overlay filesystem lets
 
 ## Further reading
 
-* [Claude Code security documentation](/en/security)
+* [Claude Code security documentation](../22-Safety-Policy/security-claude-code-docs-7538e94c51.md)
 * [Hosting the Agent SDK](/en/agent-sdk/hosting)
 * [Handling permissions](/en/agent-sdk/permissions)
 * [Sandbox runtime](https://github.com/anthropic-experimental/sandbox-runtime)

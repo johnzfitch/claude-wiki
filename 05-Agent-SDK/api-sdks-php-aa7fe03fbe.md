@@ -1,9 +1,11 @@
 ---
+title: "PHP SDK"
+source_url: "https://platform.claude.com/docs/en/api/sdks/php.md"
 category: "05-Agent-SDK"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/sdks/php.md"
-title: "PHP SDK"
+tags: ["agents", "sdk"]
 ---
+
 # PHP SDK
 
 Install and configure the Anthropic PHP SDK with value objects and builder patterns

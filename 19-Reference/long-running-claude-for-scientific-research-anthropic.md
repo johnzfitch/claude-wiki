@@ -24,7 +24,7 @@ In this new way of working, you should spend most of your time crafting the proj
 
 A good project prompt should also have an orientation protocol, which tells the agent what to do first at the start of a new session before it writes any code, e.g. “Read CHANGELOG.md—especially ‘Current status’ and ‘Next steps’. Pick the highest-impact task from the priority list.” This prevents the failure mode of the agent diving into code without understanding what’s already been done or re-attempting approaches that already failed.
 
-The initial parts of the project could also be done on [Claude Code on the web](https://code.claude.com/docs/en/claude-code-on-the-web), and then the `/teleport` command can be used to transfer the conversation and its context to a local terminal or compute cluster when needed.
+The initial parts of the project could also be done on [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md), and then the `/teleport` command can be used to transfer the conversation and its context to a local terminal or compute cluster when needed.
 
 ## Memory Across Sessions
 
@@ -40,7 +40,7 @@ Git and GitHub are good ways to monitor and coordinate the agent’s progress in
 
 Practically, this could be a set of instructions in `CLAUDE.md`, e.g. “Commit and push after every meaningful unit of work. Run `pytest tests/ -x -q` before every commit. Never commit code that breaks existing passing tests.”
 
-For steering the agent, you can always SSH into the cluster and manually reprompt and/or update its instructions. You can also use Claude Code hooks to enable collaborative steering without attaching to the session directly. For example, a `PostToolUse` hook can periodically pull from the remote repository and check a designated file (like `STEERING.md`) for new instructions from collaborators. When new instructions appear, the hook injects them into Claude’s context, letting you or collaborators redirect the agent mid-task. This lets multiple people coordinate a run by simply pushing a file to the repo. See the [hooks guide](https://code.claude.com/docs/en/hooks-guide) for setup details.
+For steering the agent, you can always SSH into the cluster and manually reprompt and/or update its instructions. You can also use Claude Code hooks to enable collaborative steering without attaching to the session directly. For example, a `PostToolUse` hook can periodically pull from the remote repository and check a designated file (like `STEERING.md`) for new instructions from collaborators. When new instructions appear, the hook injects them into Claude’s context, letting you or collaborators redirect the agent mid-task. This lets multiple people coordinate a run by simply pushing a file to the repo. See the [hooks guide](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md) for setup details.
 
 ## The Execution Loop
 

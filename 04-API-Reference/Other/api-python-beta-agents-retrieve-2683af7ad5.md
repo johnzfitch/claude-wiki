@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Agents Retrieve 2683Af7Ad5"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/agents/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/agents/retrieve.md"
+tags: ["agents", "api", "python"]
 ---
+
 ## Retrieve
 
 `beta.agents.retrieve(stragent_id, AgentRetrieveParams**kwargs)  -> BetaManagedAgentsAgent`

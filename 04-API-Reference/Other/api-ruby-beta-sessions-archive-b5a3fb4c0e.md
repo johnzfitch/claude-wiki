@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Sessions Archive B5A3Fb4C0E"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 `beta.sessions.archive(session_id, **kwargs) -> BetaManagedAgentsSession`

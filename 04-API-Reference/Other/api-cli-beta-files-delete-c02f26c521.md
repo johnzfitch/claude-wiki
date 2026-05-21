@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Files Delete C02F26C521"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/files/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/files/delete.md"
+tags: ["api", "cli"]
 ---
+
 ## Delete
 
 `$ ant beta:files delete`

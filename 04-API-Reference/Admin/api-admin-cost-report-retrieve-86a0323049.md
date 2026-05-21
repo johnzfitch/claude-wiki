@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Cost Report Retrieve 86A0323049"
+source_url: "https://platform.claude.com/docs/en/api/admin/cost_report/retrieve.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/cost_report/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 **get** `/v1/organizations/cost_report`

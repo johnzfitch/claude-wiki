@@ -1,9 +1,11 @@
 ---
+title: "Week 15 · April 6–10, 2026"
+source_url: "https://code.claude.com/docs/en/whats-new/2026-w15.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/whats-new/2026-w15.md"
-title: "Week 15 · April 6–10, 2026"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.

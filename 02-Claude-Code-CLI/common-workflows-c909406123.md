@@ -1,9 +1,11 @@
 ---
+title: "Common workflows"
+source_url: "https://code.claude.com/docs/en/common-workflows.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/common-workflows.md"
-title: "Common workflows"
+tags: ["agents", "claude-code", "git", "subagents"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -12,7 +14,7 @@ title: "Common workflows"
 
 > Step-by-step guides for exploring codebases, fixing bugs, refactoring, testing, and other everyday tasks with Claude Code.
 
-This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions. Each section includes example prompts you can adapt to your own projects. For higher-level patterns and tips, see [Best practices](/en/best-practices).
+This page covers practical workflows for everyday development: exploring unfamiliar code, debugging, refactoring, writing tests, creating PRs, and managing sessions. Each section includes example prompts you can adapt to your own projects. For higher-level patterns and tips, see [Best practices](../10-Prompting-Guides/best-practices-for-claude-code-claude-code-docs-9686dc1633.md).
 
 ## Understand new codebases
 
@@ -225,14 +227,14 @@ Suppose you want to use specialized AI subagents to handle specific tasks more e
   * Create project-specific subagents in `.claude/agents/` for team sharing
   * Use descriptive `description` fields to enable automatic delegation
   * Limit tool access to what each subagent actually needs
-  * Check the [subagents documentation](/en/sub-agents) for detailed examples
+  * Check the [subagents documentation](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) for detailed examples
 </Tip>
 
 ***
 
 ## Use Plan Mode for safe code analysis
 
-Plan Mode instructs Claude to create a plan by analyzing the codebase with read-only operations, perfect for exploring codebases, planning complex changes, or reviewing code safely. In Plan Mode, Claude uses [`AskUserQuestion`](/en/tools-reference) to gather requirements and clarify your goals before proposing a plan.
+Plan Mode instructs Claude to create a plan by analyzing the codebase with read-only operations, perfect for exploring codebases, planning complex changes, or reviewing code safely. In Plan Mode, Claude uses [`AskUserQuestion`](../04-API-Reference/tools-reference-claude-code-docs-d21fdcb4c5.md) to gather requirements and clarify your goals before proposing a plan.
 
 ### When to use Plan Mode
 
@@ -258,7 +260,7 @@ claude --permission-mode plan
 
 **Run "headless" queries in Plan Mode**
 
-You can also run a query in Plan Mode directly with `-p` (that is, in ["headless mode"](/en/headless)):
+You can also run a query in Plan Mode directly with `-p` (that is, in ["headless mode"](headless-b99e3140ec.md)):
 
 ```bash theme={null}
 claude --permission-mode plan -p "Analyze the authentication system and suggest improvements"
@@ -520,7 +522,7 @@ Use @ to quickly include files or directories without waiting for Claude to read
 
 ## Use extended thinking (thinking mode)
 
-[Extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) is enabled by default, giving Claude space to reason through complex problems step-by-step before responding. This reasoning is visible in verbose mode, which you can toggle on with `Ctrl+O`. During extended thinking, the spinner shows inline progress hints such as "still thinking" and "almost done thinking" to indicate Claude is actively working.
+[Extended thinking](../04-API-Reference/Guides/build-with-claude-extended-thinking-dd12780e6a.md) is enabled by default, giving Claude space to reason through complex problems step-by-step before responding. This reasoning is visible in verbose mode, which you can toggle on with `Ctrl+O`. During extended thinking, the spinner shows inline progress hints such as "still thinking" and "almost done thinking" to indicate Claude is actively working.
 
 Additionally, [models that support effort](/en/model-config#adjust-effort-level) use adaptive reasoning: instead of a fixed thinking token budget, the model dynamically decides whether and how much to think based on your effort level setting and the task at hand. Adaptive reasoning lets Claude respond faster to routine prompts and reserve deeper thinking for steps that benefit from it.
 
@@ -536,11 +538,11 @@ Thinking is enabled by default, but you can adjust or disable it.
 
 | Scope                    | How to configure                                                                     | Details                                                                                                                                                                                          |
 | ------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Effort level**         | Run `/effort`, adjust in `/model`, or set [`CLAUDE_CODE_EFFORT_LEVEL`](/en/env-vars) | Control thinking depth on [supported models](/en/model-config#adjust-effort-level)                                                                                                               |
+| **Effort level**         | Run `/effort`, adjust in `/model`, or set [`CLAUDE_CODE_EFFORT_LEVEL`](env-vars-5c624d392b.md) | Control thinking depth on [supported models](/en/model-config#adjust-effort-level)                                                                                                               |
 | **`ultrathink` keyword** | Include "ultrathink" anywhere in your prompt                                         | Adds an in-context instruction telling the model to reason more on that turn. Does not change the effort level itself; see [Adjust effort level](/en/model-config#adjust-effort-level) for that  |
-| **Toggle shortcut**      | Press `Option+T` (macOS) or `Alt+T` (Windows/Linux)                                  | Toggle thinking on/off for the current session (all models). May require [terminal configuration](/en/terminal-config) to enable Option key shortcuts                                            |
+| **Toggle shortcut**      | Press `Option+T` (macOS) or `Alt+T` (Windows/Linux)                                  | Toggle thinking on/off for the current session (all models). May require [terminal configuration](configure-your-terminal-for-claude-code-claude-code-docs-6f181483c1.md) to enable Option key shortcuts                                            |
 | **Global default**       | Use `/config` to toggle thinking mode                                                | Sets your default across all projects (all models).<br />Saved as `alwaysThinkingEnabled` in `~/.claude/settings.json`                                                                           |
-| **Limit token budget**   | Set [`MAX_THINKING_TOKENS`](/en/env-vars) environment variable                       | Limit the thinking budget to a specific number of tokens. On models with adaptive reasoning, only `0` applies unless adaptive reasoning is disabled. Example: `export MAX_THINKING_TOKENS=10000` |
+| **Limit token budget**   | Set [`MAX_THINKING_TOKENS`](env-vars-5c624d392b.md) environment variable                       | Limit the thinking budget to a specific number of tokens. On models with adaptive reasoning, only `0` applies unless adaptive reasoning is disabled. Example: `export MAX_THINKING_TOKENS=10000` |
 
 To view Claude's thinking process, press `Ctrl+O` to toggle verbose mode and see the internal reasoning displayed as gray italic text.
 
@@ -550,9 +552,9 @@ Extended thinking controls how much internal reasoning Claude performs before re
 
 On [models that support effort](/en/model-config#adjust-effort-level), thinking uses adaptive reasoning: the model dynamically allocates thinking tokens based on the effort level you select. This is the recommended way to tune the tradeoff between speed and reasoning depth. If you want Claude to think more or less often than your effort level would otherwise produce, you can also say so directly in your prompt or in `CLAUDE.md`.
 
-With older models, thinking uses a fixed token budget drawn from your output allocation. The budget varies by model; see [`MAX_THINKING_TOKENS`](/en/env-vars) for per-model ceilings. You can limit the budget with that environment variable, or disable thinking entirely via `/config` or the `Option+T`/`Alt+T` toggle.
+With older models, thinking uses a fixed token budget drawn from your output allocation. The budget varies by model; see [`MAX_THINKING_TOKENS`](env-vars-5c624d392b.md) for per-model ceilings. You can limit the budget with that environment variable, or disable thinking entirely via `/config` or the `Option+T`/`Alt+T` toggle.
 
-On models with adaptive reasoning, `MAX_THINKING_TOKENS` only applies when set to `0` to disable thinking, or when `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=1` reverts the model to the fixed budget. `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` applies to Opus 4.6 and Sonnet 4.6 only. Opus 4.7 always uses adaptive reasoning and does not support a fixed thinking budget. See [environment variables](/en/env-vars).
+On models with adaptive reasoning, `MAX_THINKING_TOKENS` only applies when set to `0` to disable thinking, or when `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=1` reverts the model to the fixed budget. `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` applies to Opus 4.6 and Sonnet 4.6 only. Opus 4.7 always uses adaptive reasoning and does not support a fixed thinking budget. See [environment variables](env-vars-5c624d392b.md).
 
 <Warning>
   You're charged for all thinking tokens used even when thinking summaries are redacted. In interactive mode, thinking appears as a collapsed stub by default. Set `showThinkingSummaries: true` in `settings.json` to show full summaries.
@@ -768,7 +770,7 @@ Learn more in the [official Git worktree documentation](https://git-scm.com/docs
 
 Worktree isolation works with git by default. For other version control systems like SVN, Perforce, or Mercurial, configure [WorktreeCreate and WorktreeRemove hooks](/en/hooks#worktreecreate) to provide custom worktree creation and cleanup logic. When configured, these hooks replace the default git behavior when you use `--worktree`, so [`.worktreeinclude`](#copy-gitignored-files-to-worktrees) is not processed. Copy any local configuration files inside your hook script instead.
 
-For automated coordination of parallel sessions with shared tasks and messaging, see [agent teams](/en/agent-teams).
+For automated coordination of parallel sessions with shared tasks and messaging, see [agent teams](../09-Agents-Patterns/agent-teams-e29da6ed1b.md).
 
 ***
 
@@ -958,10 +960,10 @@ Pick a scheduling option based on where you want the task to run:
 
 | Option                                                 | Where it runs                     | Best for                                                                                                                                                                                                 |
 | :----------------------------------------------------- | :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Routines](/en/routines)                               | Anthropic-managed infrastructure  | Tasks that should run even when your computer is off. Can also trigger on API calls or GitHub events in addition to a schedule. Configure at [claude.ai/code/routines](https://claude.ai/code/routines). |
-| [Desktop scheduled tasks](/en/desktop-scheduled-tasks) | Your machine, via the desktop app | Tasks that need direct access to local files, tools, or uncommitted changes.                                                                                                                             |
-| [GitHub Actions](/en/github-actions)                   | Your CI pipeline                  | Tasks tied to repo events like opened PRs, or cron schedules that should live alongside your workflow config.                                                                                            |
-| [`/loop`](/en/scheduled-tasks)                         | The current CLI session           | Quick polling while a session is open. Tasks stop when you start a new conversation; `--resume` and `--continue` restore unexpired ones.                                                                 |
+| [Routines](routines-3111c7bd3a.md)                               | Anthropic-managed infrastructure  | Tasks that should run even when your computer is off. Can also trigger on API calls or GitHub events in addition to a schedule. Configure at [claude.ai/code/routines](https://claude.ai/code/routines). |
+| [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md) | Your machine, via the desktop app | Tasks that need direct access to local files, tools, or uncommitted changes.                                                                                                                             |
+| [GitHub Actions](claude-code-github-actions-claude-code-docs-0d633fbd8a.md)                   | Your CI pipeline                  | Tasks tied to repo events like opened PRs, or cron schedules that should live alongside your workflow config.                                                                                            |
+| [`/loop`](run-prompts-on-a-schedule-claude-code-docs.md)                         | The current CLI session           | Quick polling while a session is open. Tasks stop when you start a new conversation; `--resume` and `--continue` restore unexpired ones.                                                                 |
 
 <Tip>
   When writing prompts for scheduled tasks, be explicit about what success looks like and what to do with results. The task runs autonomously, so it can't ask clarifying questions. For example: "Review open PRs labeled `needs-review`, leave inline comments on any issues, and post a summary in the `#eng-reviews` Slack channel."

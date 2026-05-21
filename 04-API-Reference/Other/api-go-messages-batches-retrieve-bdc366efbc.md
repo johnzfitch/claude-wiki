@@ -1,8 +1,11 @@
 ---
+title: "Api Go Messages Batches Retrieve Bdc366Efbc"
+source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/messages/batches/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 `client.Messages.Batches.Get(ctx, messageBatchID) (*MessageBatch, error)`

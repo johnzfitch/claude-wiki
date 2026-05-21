@@ -1,8 +1,11 @@
 ---
+title: "Api Java Messages Batches Results 20B1A6505E"
+source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/results.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/messages/batches/results.md"
+tags: ["api"]
 ---
+
 ## Results
 
 `MessageBatchIndividualResponse messages().batches().resultsStreaming(BatchResultsParamsparams = BatchResultsParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

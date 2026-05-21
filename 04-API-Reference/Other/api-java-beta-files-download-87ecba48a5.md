@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Files Download 87Ecba48A5"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/files/download.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/files/download.md"
+tags: ["api"]
 ---
+
 ## Download
 
 `HttpResponse beta().files().download(FileDownloadParamsparams = FileDownloadParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

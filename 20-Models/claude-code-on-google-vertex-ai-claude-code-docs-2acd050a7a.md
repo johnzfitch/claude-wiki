@@ -1,6 +1,6 @@
 ---
 category: "20-Models"
-fetched_at: "2026-04-26T03:20:03Z"
+fetched_at: "2026-05-19T21:22:41Z"
 source_url: "https://code.claude.com/docs/en/google-vertex-ai"
 title: "Claude Code on Google Vertex AI - Claude Code Docs"
 ---
@@ -9,6 +9,13 @@ title: "Claude Code on Google Vertex AI - Claude Code Docs"
 
 
 Learn about configuring Claude Code through Google Vertex AI, including setup, IAM configuration, and troubleshooting.
+
+
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
 
 
 [​](#prerequisites)
@@ -105,9 +112,27 @@ Request access to Claude models in Vertex AI:
 
 3. Configure GCP credentials
 
-Claude Code uses standard Google Cloud authentication. For more information, see [Google Cloud authentication documentation](https://cloud.google.com/docs/authentication).
+Claude Code uses standard Google Cloud authentication. For more information, see [Google Cloud authentication documentation](https://cloud.google.com/docs/authentication). Claude Code v2.1.121 or later supports [X.509 certificate-based Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation-with-x509-certificates) through the same Application Default Credentials chain. Set `GOOGLE_APPLICATION_CREDENTIALS` to the path of your credential configuration file.
 
-When authenticating, Claude Code will automatically use the project ID from the `ANTHROPIC_VERTEX_PROJECT_ID` environment variable. To override this, set one of these environment variables: `GCLOUD_PROJECT`, `GOOGLE_CLOUD_PROJECT`, or `GOOGLE_APPLICATION_CREDENTIALS`.
+Claude Code uses `ANTHROPIC_VERTEX_PROJECT_ID` as the project ID for Vertex AI requests. The `GCLOUD_PROJECT` and `GOOGLE_CLOUD_PROJECT` environment variables and the credential file referenced by `GOOGLE_APPLICATION_CREDENTIALS` take precedence over it. If none of these are set, the project ID is resolved from your `gcloud` configuration or the attached service account.
+
+
+[​](#advanced-credential-configuration)
+
+Advanced credential configuration
+
+Claude Code supports automatic credential refresh for GCP through the `gcpAuthRefresh` setting. When Claude Code detects that your GCP credentials are expired or cannot be loaded, it runs the configured command to obtain new credentials before retrying the request.
+
+```python
+{
+  "gcpAuthRefresh": "gcloud auth application-default login",
+  "env": {
+    "ANTHROPIC_VERTEX_PROJECT_ID": "your-project-id"
+  }
+}
+```
+
+The command’s output is displayed to the user, but interactive input isn’t supported. This works well for browser-based authentication flows where the CLI shows a URL and you complete authentication in the browser. The refresh command times out after three minutes if authentication does not complete. If you set `gcpAuthRefresh` in project settings such as `.claude/settings.json`, the command runs only after you accept the workspace trust prompt.
 
 
 [​](#4-configure-claude-code)
@@ -136,7 +161,7 @@ export VERTEX_REGION_CLAUDE_HAIKU_4_5=us-east5
 export VERTEX_REGION_CLAUDE_4_6_SONNET=europe-west1
 ```
 
-Most model versions have a corresponding `VERTEX_REGION_CLAUDE_*` variable. See the [Environment variables reference](/docs/en/env-vars) for the full list. Check [Vertex Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) to determine which models support global endpoints versus regional only. [Prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) is enabled automatically. To disable it, set `DISABLE_PROMPT_CACHING=1`. To request a 1-hour cache TTL instead of the 5-minute default, set `ENABLE_PROMPT_CACHING_1H=1`; cache writes with a 1-hour TTL are billed at a higher rate. For heightened rate limits, contact Google Cloud support. When using Vertex AI, the `/login` and `/logout` commands are disabled since authentication is handled through Google Cloud credentials. [MCP tool search](/docs/en/mcp#scale-with-mcp-tool-search) is disabled by default on Vertex AI because the endpoint does not accept the required beta header. All MCP tool definitions load upfront instead. To opt in, set `ENABLE_TOOL_SEARCH=true`.
+Most model versions have a corresponding `VERTEX_REGION_CLAUDE_*` variable. See the [Environment variables reference](/docs/en/env-vars) for the full list. Check [Vertex Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) to determine which models support global endpoints versus regional only. [Prompt caching](/docs/en/prompt-caching) is enabled automatically. To disable it, set `DISABLE_PROMPT_CACHING=1`. To request a 1-hour cache TTL instead of the 5-minute default, set `ENABLE_PROMPT_CACHING_1H=1`; cache writes with a 1-hour TTL are billed at a higher rate. For heightened rate limits, contact Google Cloud support. When using Vertex AI, the `/login` and `/logout` commands are disabled since authentication is handled through Google Cloud credentials. Claude Code disables [MCP tool search](/docs/en/mcp#scale-with-mcp-tool-search) by default on Vertex AI, so MCP tool definitions load upfront. Vertex AI supports tool search for Claude Sonnet 4.5 and later and Claude Opus 4.5 and later. Set `ENABLE_TOOL_SEARCH=true` to enable it on those models. Earlier models on Vertex AI do not accept the required beta header, and requests fail if you enable tool search with them.
 
 
 [​](#5-pin-model-versions)
@@ -158,9 +183,9 @@ For current and legacy model IDs, see [Models overview](https://platform.claude.
 | Model type       | Default value                |
 |:-----------------|:-----------------------------|
 | Primary model    | `claude-sonnet-4-5@20250929` |
-| Small/fast model | `claude-haiku-4-5@20251001`  |
+| Small/fast model | Same as primary model        |
 
-To customize models further:
+Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Vertex AI, Claude Code defaults this to the primary model because Haiku may not be enabled in every project or region. To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a model ID that is available in your project. To customize models further:
 
 ```python
 export ANTHROPIC_MODEL='claude-opus-4-7'
@@ -198,6 +223,12 @@ Claude Opus 4.7, Opus 4.6, and Sonnet 4.6 support the [1M token context window](
 [​](#troubleshooting)
 
 Troubleshooting
+
+If you encounter “Could not load the default credentials” errors:
+
+- Run `gcloud auth application-default login` to set up Application Default Credentials
+- Set `GOOGLE_APPLICATION_CREDENTIALS` to a service account key file path
+- See [Configure GCP credentials](#3-configure-gcp-credentials) for all options
 
 If you encounter quota issues:
 

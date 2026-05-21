@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Sessions List 7Dcc171392"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/sessions/list.md"
+tags: ["api", "typescript"]
 ---
+
 ## List
 
 `client.beta.sessions.list(SessionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSession>`

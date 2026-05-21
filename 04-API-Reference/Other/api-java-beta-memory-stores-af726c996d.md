@@ -1,9 +1,11 @@
 ---
+title: "Memory Stores"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/memory_stores.md"
-title: "Memory Stores"
+tags: ["api"]
 ---
+
 # Memory Stores
 
 ## Create

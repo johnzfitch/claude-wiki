@@ -1,9 +1,11 @@
 ---
+title: "Models overview"
+source_url: "https://platform.claude.com/docs/en/about-claude/models/overview.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/models/overview.md"
-title: "Models overview"
+tags: ["prompting"]
 ---
+
 # Models overview
 
 Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their performance.

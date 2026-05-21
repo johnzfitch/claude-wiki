@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Memory Stores Memory Versions List 4710C65154"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/memory_versions/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/memory_stores/memory_versions/list.md"
+tags: ["api", "cli"]
 ---
+
 ## List
 
 `$ ant beta:memory-stores:memory-versions list`

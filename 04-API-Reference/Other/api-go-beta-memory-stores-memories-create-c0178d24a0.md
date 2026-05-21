@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Memory Stores Memories Create C0178D24A0"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/memory_stores/memories/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/memory_stores/memories/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (*BetaManagedAgentsMemory, error)`

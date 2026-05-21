@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Vaults Update 1F59818Cf4"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/update.md"
+tags: ["api", "python"]
 ---
+
 ## Update
 
 `beta.vaults.update(strvault_id, VaultUpdateParams**kwargs)  -> BetaManagedAgentsVault`

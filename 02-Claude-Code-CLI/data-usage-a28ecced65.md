@@ -1,9 +1,11 @@
 ---
+title: "Data usage"
+source_url: "https://code.claude.com/docs/en/data-usage.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/data-usage.md"
-title: "Data usage"
+tags: ["api", "claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -48,7 +50,7 @@ Anthropic retains Claude Code data based on your account type and preferences.
 **Commercial users (Team, Enterprise, and API)**:
 
 * Standard: 30-day retention period
-* [Zero data retention](/en/zero-data-retention): available for Claude Code on Claude for Enterprise. ZDR is enabled on a per-organization basis; each new organization must have ZDR enabled separately by your account team
+* [Zero data retention](../22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md): available for Claude Code on Claude for Enterprise. ZDR is enabled on a per-organization basis; each new organization must have ZDR enabled separately by your account team
 * Local caching: Claude Code clients store session transcripts locally in plaintext under `~/.claude/projects/` for 30 days by default to enable session resumption. Adjust the period with `cleanupPeriodDays`. See [application data](/en/claude-directory#application-data) for what's stored and how to clear it.
 
 You can delete individual Claude Code on the web sessions at any time. Deleting a session permanently removes the session's event data. For instructions on how to delete sessions, see [Delete sessions](/en/claude-code-on-the-web#delete-sessions).
@@ -59,7 +61,7 @@ For full details, please review our [Commercial Terms of Service](https://www.an
 
 ## Data access
 
-For all first party users, you can learn more about what data is logged for [local Claude Code](#local-claude-code-data-flow-and-dependencies) and [remote Claude Code](#cloud-execution-data-flow-and-dependencies). [Remote Control](/en/remote-control) sessions follow the local data flow since all execution happens on your machine. Note for remote Claude Code, Claude accesses the repository where you initiate your Claude Code session. Claude does not access repositories that you have connected but have not started a session in.
+For all first party users, you can learn more about what data is logged for [local Claude Code](#local-claude-code-data-flow-and-dependencies) and [remote Claude Code](#cloud-execution-data-flow-and-dependencies). [Remote Control](continue-local-sessions-from-any-device-with-remote-control-claude-code-docs-c1c03fd914.md) sessions follow the local data flow since all execution happens on your machine. Note for remote Claude Code, Claude accesses the repository where you initiate your Claude Code session. Claude does not access repositories that you have connected but have not started a session in.
 
 ## Local Claude Code: Data flow and dependencies
 
@@ -73,7 +75,7 @@ Encryption at rest depends on your model provider:
 
 | Provider               | Encryption at rest                                                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Anthropic API          | Infrastructure-level disk encryption (AES-256). Enable [Zero Data Retention](/en/zero-data-retention) for no server-side persistence. |
+| Anthropic API          | Infrastructure-level disk encryption (AES-256). Enable [Zero Data Retention](../22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) for no server-side persistence. |
 | Amazon Bedrock         | AES-256 with AWS-managed keys. Customer-managed keys available via AWS KMS.                                                           |
 | Google Cloud Vertex AI | Google-managed encryption keys. CMEK available.                                                                                       |
 | Microsoft Foundry      | Requests route to Anthropic infrastructure with AES-256 disk encryption.                                                              |
@@ -82,7 +84,7 @@ Claude Code is built on Anthropic's APIs. For details on API security controls, 
 
 ### Cloud execution: Data flow and dependencies
 
-When using [Claude Code on the web](/en/claude-code-on-the-web), sessions run in Anthropic-managed virtual machines instead of locally. In cloud environments:
+When using [Claude Code on the web](claude-code-on-the-web-69d53821d4.md), sessions run in Anthropic-managed virtual machines instead of locally. In cloud environments:
 
 * **Code and data storage:** Your repository is cloned to an isolated VM. Code and session data are subject to the retention and usage policies for your account type (see Data retention section above)
 * **Credentials:** GitHub authentication is handled through a secure proxy; your GitHub credentials never enter the sandbox
@@ -109,12 +111,12 @@ By default, error reporting, telemetry, and bug reporting are disabled when usin
 | **Sentry (Errors)**                  | Default on.<br />`DISABLE_ERROR_REPORTING=1` to disable.                               | Default off.<br />`CLAUDE_CODE_USE_VERTEX` must be 1.                                  | Default off.<br />`CLAUDE_CODE_USE_BEDROCK` must be 1.                                 | Default off.<br />`CLAUDE_CODE_USE_FOUNDRY` must be 1.                                 |
 | **Claude API (`/feedback` reports)** | Default on.<br />`DISABLE_FEEDBACK_COMMAND=1` to disable.                              | Default off.<br />`CLAUDE_CODE_USE_VERTEX` must be 1.                                  | Default off.<br />`CLAUDE_CODE_USE_BEDROCK` must be 1.                                 | Default off.<br />`CLAUDE_CODE_USE_FOUNDRY` must be 1.                                 |
 | **Session quality surveys**          | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                   | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                   | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                   | Default on.<br />`CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1` to disable.                   |
-| **WebFetch domain safety check**     | Default on.<br />`skipWebFetchPreflight: true` in [settings](/en/settings) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](/en/settings) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](/en/settings) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](/en/settings) to disable. |
+| **WebFetch domain safety check**     | Default on.<br />`skipWebFetchPreflight: true` in [settings](claude-code-settings-claude-code-docs-d4420b4b52.md) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](claude-code-settings-claude-code-docs-d4420b4b52.md) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](claude-code-settings-claude-code-docs-d4420b4b52.md) to disable. | Default on.<br />`skipWebFetchPreflight: true` in [settings](claude-code-settings-claude-code-docs-d4420b4b52.md) to disable. |
 
-All environment variables can be checked into `settings.json` (see [settings reference](/en/settings)).
+All environment variables can be checked into `settings.json` (see [settings reference](claude-code-settings-claude-code-docs-d4420b4b52.md)).
 
 ### WebFetch domain safety check
 
 Before fetching a URL, the WebFetch tool sends the requested hostname to `api.anthropic.com` to check it against a safety blocklist maintained by Anthropic. Only the hostname is sent, not the full URL, path, or page contents. Results are cached per hostname for five minutes.
 
-This check runs regardless of which model provider you use and is not affected by `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`. If your network blocks `api.anthropic.com`, WebFetch requests fail until you either allowlist the domain or set `skipWebFetchPreflight: true` in [settings](/en/settings). Disabling the check means WebFetch attempts to retrieve any URL without consulting the blocklist, so combine it with [`WebFetch` permission rules](/en/permissions#webfetch) if you need to restrict which domains Claude can reach.
+This check runs regardless of which model provider you use and is not affected by `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`. If your network blocks `api.anthropic.com`, WebFetch requests fail until you either allowlist the domain or set `skipWebFetchPreflight: true` in [settings](claude-code-settings-claude-code-docs-d4420b4b52.md). Disabling the check means WebFetch attempts to retrieve any URL without consulting the blocklist, so combine it with [`WebFetch` permission rules](/en/permissions#webfetch) if you need to restrict which domains Claude can reach.

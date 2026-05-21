@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Skills Versions Create 584B853Fa2"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/versions/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/versions/create.md"
+tags: ["api", "python", "skills"]
 ---
+
 ## Create
 
 `beta.skills.versions.create(strskill_id, VersionCreateParams**kwargs)  -> VersionCreateResponse`

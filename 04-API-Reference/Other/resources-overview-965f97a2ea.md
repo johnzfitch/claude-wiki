@@ -1,8 +1,11 @@
 ---
+title: "Resources Overview 965F97A2Ea"
+source_url: "https://platform.claude.com/docs/en/resources/overview.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/resources/overview.md"
+tags: ["api"]
 ---
+
 <h2}>
     Model cards
   </h2>

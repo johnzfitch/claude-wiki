@@ -1,9 +1,11 @@
 ---
+title: "Explore the context window"
+source_url: "https://code.claude.com/docs/en/context-window.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/context-window.md"
-title: "Explore the context window"
+tags: ["claude-code"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -1582,9 +1584,9 @@ Claude Code's context window holds everything Claude knows about your session: y
 
 The session walks through a realistic flow with representative token counts:
 
-* **Before you type anything**: CLAUDE.md, auto memory, MCP tool names, and skill descriptions all load into context. Your own setup may add more here, like an [output style](/en/output-styles) or text from [`--append-system-prompt`](/en/cli-reference), which both go into the system prompt the same way.
-* **As Claude works**: each file read adds to context, [path-scoped rules](/en/memory#path-specific-rules) load automatically alongside matching files, and a [PostToolUse hook](/en/hooks-guide) fires after each edit.
-* **The follow-up prompt**: a [subagent](/en/sub-agents) handles the research in its own separate context window, so the large file reads stay out of yours. Only the summary and a small metadata trailer come back.
+* **Before you type anything**: CLAUDE.md, auto memory, MCP tool names, and skill descriptions all load into context. Your own setup may add more here, like an [output style](output-styles-claude-code-docs-c315eeed32.md) or text from [`--append-system-prompt`](cli-reference-7bb98e3312.md), which both go into the system prompt the same way.
+* **As Claude works**: each file read adds to context, [path-scoped rules](/en/memory#path-specific-rules) load automatically alongside matching files, and a [PostToolUse hook](../07-Hooks/automate-workflows-with-hooks-claude-code-docs-e843f93261.md) fires after each edit.
+* **The follow-up prompt**: a [subagent](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md) handles the research in its own separate context window, so the large file reads stay out of yours. Only the summary and a small metadata trailer come back.
 * **At the end**: `/compact` replaces the conversation with a structured summary. Most startup content reloads automatically; the table below shows what happens to each mechanism.
 
 ## What survives compaction
@@ -1613,8 +1615,8 @@ The visualization uses representative numbers. To see your actual context usage 
 
 For deeper coverage of the features shown in the timeline, see these pages:
 
-* [Extend Claude Code](/en/features-overview): when to use CLAUDE.md vs skills vs rules vs hooks vs MCP
-* [Store instructions and memories](/en/memory): CLAUDE.md hierarchy and auto memory
-* [Subagents](/en/sub-agents): delegate research to a separate context window
-* [Best practices](/en/best-practices): managing context as your primary constraint
+* [Extend Claude Code](extend-claude-code-claude-code-docs-3b35aaf641.md): when to use CLAUDE.md vs skills vs rules vs hooks vs MCP
+* [Store instructions and memories](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md): CLAUDE.md hierarchy and auto memory
+* [Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md): delegate research to a separate context window
+* [Best practices](../10-Prompting-Guides/best-practices-for-claude-code-claude-code-docs-9686dc1633.md): managing context as your primary constraint
 * [Reduce token usage](/en/costs#reduce-token-usage): strategies for keeping context usage low

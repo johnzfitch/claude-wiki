@@ -1,9 +1,11 @@
 ---
+title: "Workspaces"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/workspaces.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/workspaces.md"
-title: "Workspaces"
+tags: ["api"]
 ---
+
 # Workspaces
 
 Organize API keys, manage team access, and control costs with workspaces.

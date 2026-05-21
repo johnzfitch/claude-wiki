@@ -1,8 +1,11 @@
 ---
+title: "Api Beta Vaults Credentials Retrieve 869A32A2D0"
+source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials/retrieve.md"
+tags: ["api"]
 ---
+
 ## Retrieve
 
 **get** `/v1/vaults/{vault_id}/credentials/{credential_id}`

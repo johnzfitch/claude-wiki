@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Messages Batches Delete 00D17C475D"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/messages/batches/delete.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/messages/batches/delete.md"
+tags: ["api", "cli"]
 ---
+
 ## Delete
 
 `$ ant beta:messages:batches delete`

@@ -52,7 +52,7 @@ Claude Code behaves the same everywhere. What changes is where code executes and
 | **[Permission modes](permission-modes.md)** | Auto accept edits, Plan                                                                                         | Ask, Auto accept edits, Plan | All modes              | Depends on session type     |
 | **Network access**                           | Configurable per environment                                                                                    | Your machine's network       | Your machine's network | Depends on session type     |
 
-See the [terminal quickstart](/en/quickstart), [Desktop app](../16-Mobile-Desktop/desktop.md), or [Remote Control](remote-control.md) docs to set those up.
+See the [terminal quickstart](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md), [Desktop app](../16-Mobile-Desktop/desktop.md), or [Remote Control](remote-control.md) docs to set those up.
 
 ## Connect GitHub and create an environment
 
@@ -81,7 +81,7 @@ For a first project, leave the defaults and click **Create environment**. You ca
 
 ### Connect from your terminal
 
-If you already use the GitHub CLI (`gh`), you can set up Claude Code on the web without opening a browser. This requires the [Claude Code CLI](/en/quickstart). `/web-setup` reads your local `gh` token, links it to your Claude account, and creates a default cloud environment if you don't have one.
+If you already use the GitHub CLI (`gh`), you can set up Claude Code on the web without opening a browser. This requires the [Claude Code CLI](../01-Getting-Started/quickstart-claude-code-docs-a21b84bdea.md). `/web-setup` reads your local `gh` token, links it to your Claude account, and creates a default cloud environment if you don't have one.
 
 <Note>
   Organizations with [Zero Data Retention](zero-data-retention-claude-code-docs.md) enabled cannot use `/web-setup` or other cloud session features. If the GitHub CLI isn't installed or authenticated, `/web-setup` opens the browser onboarding flow instead.
@@ -193,7 +193,7 @@ This is by design. Closing the tab or navigating away doesn't stop the session. 
 
 Now that you can submit and review tasks, these pages cover what comes next: starting cloud sessions from your terminal, scheduling recurring work, and giving Claude standing instructions.
 
-* [Use Claude Code on the web](/en/claude-code-on-the-web): the full reference, including teleporting sessions to your terminal, setup scripts, environment variables, and network config
+* [Use Claude Code on the web](claude-code-on-the-web-69d53821d4.md): the full reference, including teleporting sessions to your terminal, setup scripts, environment variables, and network config
 * [Schedule tasks on the web](web-scheduled-tasks.md): automate recurring work like daily PR reviews and dependency audits
-* [CLAUDE.md](/en/memory): give Claude persistent instructions and context that load at the start of every session
+* [CLAUDE.md](how-claude-remembers-your-project-claude-code-docs-f1c064262d.md): give Claude persistent instructions and context that load at the start of every session
 * Install the Claude mobile app for [iOS](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684) or [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude) to monitor sessions from your phone. From the Claude Code CLI, `/mobile` shows a QR code.

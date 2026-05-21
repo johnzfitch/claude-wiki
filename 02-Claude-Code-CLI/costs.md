@@ -104,5 +104,5 @@ Typically under $0.04 per session.
 ## See Also
 
 - [Agent teams](../09-Agents-Patterns/agent-teams.md)
-- [Subagents](/en/sub-agents)
-- [Model configuration](/en/model-config)
+- [Subagents](../09-Agents-Patterns/create-custom-subagents-claude-code-docs-7dc93e85c0.md)
+- [Model configuration](model-config-ca429e15da.md)

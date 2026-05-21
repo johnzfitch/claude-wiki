@@ -1,9 +1,11 @@
 ---
+title: "Prototype in Console"
+source_url: "https://platform.claude.com/docs/en/managed-agents/onboarding.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/onboarding.md"
-title: "Prototype in Console"
+tags: ["agents", "api", "testing"]
 ---
+
 # Prototype in Console
 
 Create and test agents visually in Console without writing API calls.

@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Messages Batches Retrieve 54Fcbd11Cd"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/messages/batches/retrieve.md"
+tags: ["api", "typescript"]
 ---
+
 ## Retrieve
 
 `client.beta.messages.batches.retrieve(stringmessageBatchID, BatchRetrieveParamsparams?, RequestOptionsoptions?): BetaMessageBatch`

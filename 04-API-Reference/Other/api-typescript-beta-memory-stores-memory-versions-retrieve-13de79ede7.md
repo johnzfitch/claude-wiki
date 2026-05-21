@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Beta Memory Stores Memory Versions Retrieve 13De79Ede7"
+source_url: "https://platform.claude.com/docs/en/api/typescript/beta/memory_stores/memory_versions/retrieve.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/beta/memory_stores/memory_versions/retrieve.md"
+tags: ["api", "typescript"]
 ---
+
 ## Retrieve
 
 `client.beta.memoryStores.memoryVersions.retrieve(stringmemoryVersionID, MemoryVersionRetrieveParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryVersion`

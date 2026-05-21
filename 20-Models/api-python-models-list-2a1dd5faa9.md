@@ -1,8 +1,11 @@
 ---
+title: "Api Python Models List 2A1Dd5Faa9"
+source_url: "https://platform.claude.com/docs/en/api/python/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/models/list.md"
+tags: ["api", "python"]
 ---
+
 ## List
 
 `models.list(ModelListParams**kwargs)  -> SyncPage[ModelInfo]`

@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Files Retrieve Metadata Aeaea2Dc31"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/files/retrieve_metadata.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/files/retrieve_metadata.md"
+tags: ["api"]
 ---
+
 ## Retrieve Metadata
 
 `FileMetadata beta().files().retrieveMetadata(FileRetrieveMetadataParamsparams = FileRetrieveMetadataParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

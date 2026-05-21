@@ -1,9 +1,11 @@
 ---
+title: "Intercept and control agent behavior with hooks"
+source_url: "https://code.claude.com/docs/en/agent-sdk/hooks.md"
 category: "07-Hooks"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/hooks.md"
-title: "Intercept and control agent behavior with hooks"
+tags: ["agents", "hooks"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -817,8 +819,8 @@ The `systemMessage` field adds context to the conversation that the model sees, 
 
 ## Related resources
 
-* [Claude Code hooks reference](/en/hooks): full JSON input/output schemas, event documentation, and matcher patterns
-* [Claude Code hooks guide](/en/hooks-guide): shell command hook examples and walkthroughs
+* [Claude Code hooks reference](hooks-9168ed62a4.md): full JSON input/output schemas, event documentation, and matcher patterns
+* [Claude Code hooks guide](automate-workflows-with-hooks-claude-code-docs-e843f93261.md): shell command hook examples and walkthroughs
 * [TypeScript SDK reference](/en/agent-sdk/typescript): hook types, input/output definitions, and configuration options
 * [Python SDK reference](/en/agent-sdk/python): hook types, input/output definitions, and configuration options
 * [Permissions](/en/agent-sdk/permissions): control what your agent can do

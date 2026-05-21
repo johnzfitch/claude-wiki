@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Environments Archive 514760Ec61"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/environments/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/environments/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 `BetaEnvironment Beta.Environments.Archive(EnvironmentArchiveParamsparameters, CancellationTokencancellationToken = default)`

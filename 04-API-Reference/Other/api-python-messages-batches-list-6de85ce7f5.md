@@ -1,8 +1,11 @@
 ---
+title: "Api Python Messages Batches List 6De85Ce7F5"
+source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/messages/batches/list.md"
+tags: ["api", "python"]
 ---
+
 ## List
 
 `messages.batches.list(BatchListParams**kwargs)  -> SyncPage[MessageBatch]`

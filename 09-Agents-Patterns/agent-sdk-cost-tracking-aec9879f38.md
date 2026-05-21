@@ -1,9 +1,11 @@
 ---
+title: "Track cost and usage"
+source_url: "https://code.claude.com/docs/en/agent-sdk/cost-tracking.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/cost-tracking.md"
-title: "Track cost and usage"
+tags: ["agents"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -23,7 +25,7 @@ For complete API documentation, see the [TypeScript SDK reference](/en/agent-sdk
   * the installed SDK version does not recognize a model
   * billing rules apply that the client cannot model
 
-  Use these fields for development insight and approximate budgeting. For authoritative billing, use the [Usage and Cost API](https://platform.claude.com/docs/en/build-with-claude/usage-cost-api) or the Usage page in the [Claude Console](https://platform.claude.com/usage). Do not bill end users or trigger financial decisions from these fields.
+  Use these fields for development insight and approximate budgeting. For authoritative billing, use the [Usage and Cost API](../04-API-Reference/Guides/build-with-claude-usage-cost-api-ea9ab3260c.md) or the Usage page in the [Claude Console](https://platform.claude.com/usage). Do not bill end users or trigger financial decisions from these fields.
 </Warning>
 
 ## Understand token usage
@@ -47,7 +49,7 @@ The following diagram shows the message stream from a single `query()` call, wit
 
 <Steps>
   <Step title="Each step produces assistant messages">
-    When Claude responds, it sends one or more assistant messages. In TypeScript, each assistant message contains a nested `BetaMessage` (accessed via `message.message`) with an `id` and a [`usage`](https://platform.claude.com/docs/en/api/messages) object with token counts (`input_tokens`, `output_tokens`). In Python, the `AssistantMessage` dataclass exposes the same data directly via `message.usage` and `message.message_id`. When Claude uses multiple tools in one turn, all messages in that turn share the same ID, so deduplicate by ID to avoid double-counting.
+    When Claude responds, it sends one or more assistant messages. In TypeScript, each assistant message contains a nested `BetaMessage` (accessed via `message.message`) with an `id` and a [`usage`](../04-API-Reference/Other/api-messages-2dd213ca95.md) object with token counts (`input_tokens`, `output_tokens`). In Python, the `AssistantMessage` dataclass exposes the same data directly via `message.usage` and `message.message_id`. When Claude uses multiple tools in one turn, all messages in that turn share the same ID, so deduplicate by ID to avoid double-counting.
   </Step>
 
   <Step title="The result message provides the cumulative estimate">
@@ -224,7 +226,7 @@ Both success and error result messages include `usage` and `total_cost_usd`. If 
 
 ### Track cache tokens
 
-The Agent SDK automatically uses [prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) to reduce costs on repeated content. You do not need to configure caching yourself. The usage object includes two additional fields for cache tracking:
+The Agent SDK automatically uses [prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching-bf7c54aa4c.md) to reduce costs on repeated content. You do not need to configure caching yourself. The usage object includes two additional fields for cache tracking:
 
 * `cache_creation_input_tokens`: tokens used to create new cache entries (charged at a higher rate than standard input tokens).
 * `cache_read_input_tokens`: tokens read from existing cache entries (charged at a reduced rate).
@@ -235,7 +237,7 @@ Track these separately from `input_tokens` to understand caching savings. In Typ
 
 Cache entries written by the SDK use a 5-minute TTL by default when you authenticate with an API key or run on Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry. If your workload runs many short sessions against the same system prompt and context with gaps longer than 5 minutes between them, the cache expires between sessions and each new session pays full input price.
 
-To request a 1-hour TTL on cache writes, set the [`ENABLE_PROMPT_CACHING_1H`](/en/env-vars) environment variable. You can export it in your shell or container environment, or pass it through `options.env`.
+To request a 1-hour TTL on cache writes, set the [`ENABLE_PROMPT_CACHING_1H`](../02-Claude-Code-CLI/env-vars-5c624d392b.md) environment variable. You can export it in your shell or container environment, or pass it through `options.env`.
 
 The following example enables 1-hour TTL for an agent running on Bedrock:
 
@@ -260,7 +262,7 @@ The following example enables 1-hour TTL for an agent running on Bedrock:
   ```
 </CodeGroup>
 
-Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) for details. Claude subscription users already receive 1-hour TTL automatically and do not need to set this variable.
+Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../10-Prompting-Guides/build-with-claude-prompt-caching-bf7c54aa4c.md) for details. Claude subscription users already receive 1-hour TTL automatically and do not need to set this variable.
 
 ## Related documentation
 

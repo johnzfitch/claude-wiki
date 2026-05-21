@@ -1,9 +1,10 @@
 ---
+title: "What's new in Claude Opus 4.7"
+source_url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7.md"
-title: "What's new in Claude Opus 4.7"
 ---
+
 # What's new in Claude Opus 4.7
 
 Overview of new features, breaking changes, and behavior changes in Claude Opus 4.7.

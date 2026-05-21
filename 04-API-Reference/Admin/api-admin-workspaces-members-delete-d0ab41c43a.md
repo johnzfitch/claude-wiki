@@ -1,8 +1,11 @@
 ---
+title: "Api Admin Workspaces Members Delete D0Ab41C43A"
+source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/delete.md"
 category: "Admin"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/admin/workspaces/members/delete.md"
+tags: ["api"]
 ---
+
 ## Delete
 
 **delete** `/v1/organizations/workspaces/{workspace_id}/members/{user_id}`

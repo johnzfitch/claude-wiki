@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Agents Archive B74B36A8E0"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/agents/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/agents/archive.md"
+tags: ["agents", "api"]
 ---
+
 ## Archive
 
 `BetaManagedAgentsAgent beta().agents().archive(AgentArchiveParamsparams = AgentArchiveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

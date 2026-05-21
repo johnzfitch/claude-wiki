@@ -1,9 +1,11 @@
 ---
+title: "Agent SDK reference - Python"
+source_url: "https://code.claude.com/docs/en/agent-sdk/python.md"
 category: "09-Agents-Patterns"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/agent-sdk/python.md"
-title: "Agent SDK reference - Python"
+tags: ["agents", "cli", "python", "sdk"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -821,7 +823,7 @@ class ClaudeAgentOptions:
 | `cli_path`                    | `str \| Path \| None`                                                                  | `None`                             | Custom path to the Claude Code CLI executable                                                                                                                                                                                                                             |
 | `settings`                    | `str \| None`                                                                          | `None`                             | Path to settings file                                                                                                                                                                                                                                                     |
 | `add_dirs`                    | `list[str \| Path]`                                                                    | `[]`                               | Additional directories Claude can access                                                                                                                                                                                                                                  |
-| `env`                         | `dict[str, str]`                                                                       | `{}`                               | Environment variables merged on top of the inherited process environment. See [Environment variables](/en/env-vars) for variables the underlying CLI reads                                                                                                                |
+| `env`                         | `dict[str, str]`                                                                       | `{}`                               | Environment variables merged on top of the inherited process environment. See [Environment variables](../02-Claude-Code-CLI/env-vars-5c624d392b.md) for variables the underlying CLI reads                                                                                                                |
 | `extra_args`                  | `dict[str, str \| None]`                                                               | `{}`                               | Additional CLI arguments to pass directly to the CLI                                                                                                                                                                                                                      |
 | `max_buffer_size`             | `int \| None`                                                                          | `None`                             | Maximum bytes when buffering CLI stdout                                                                                                                                                                                                                                   |
 | `debug_stderr`                | `Any`                                                                                  | `sys.stderr`                       | *Deprecated* - File-like object for debug output. Use `stderr` callback instead                                                                                                                                                                                           |
@@ -1241,7 +1243,7 @@ SdkBeta = Literal["context-1m-2025-08-07"]
 Use with the `betas` field in `ClaudeAgentOptions` to enable beta features.
 
 <Warning>
-  The `context-1m-2025-08-07` beta is retired as of April 30, 2026. Passing this header with Claude Sonnet 4.5 or Sonnet 4 has no effect, and requests that exceed the standard 200k-token context window return an error. To use a 1M-token context window, migrate to [Claude Sonnet 4.6, Claude Opus 4.6, or Claude Opus 4.7](https://platform.claude.com/docs/en/about-claude/models/overview), which include 1M context at standard pricing with no beta header required.
+  The `context-1m-2025-08-07` beta is retired as of April 30, 2026. Passing this header with Claude Sonnet 4.5 or Sonnet 4 has no effect, and requests that exceed the standard 200k-token context window return an error. To use a 1M-token context window, migrate to [Claude Sonnet 4.6, Claude Opus 4.6, or Claude Opus 4.7](../20-Models/about-claude-models-overview-2bbf09ff82.md), which include 1M context at standard pricing with no beta header required.
 </Warning>
 
 ### `McpSdkServerConfig`
@@ -3274,5 +3276,5 @@ This pattern enables you to:
 
 * [SDK overview](/en/agent-sdk/overview) - General SDK concepts
 * [TypeScript SDK reference](/en/agent-sdk/typescript) - TypeScript SDK documentation
-* [CLI reference](/en/cli-reference) - Command-line interface
-* [Common workflows](/en/common-workflows) - Step-by-step guides
+* [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) - Command-line interface
+* [Common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md) - Step-by-step guides

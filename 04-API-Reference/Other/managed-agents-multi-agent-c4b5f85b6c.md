@@ -1,9 +1,11 @@
 ---
+title: "Multiagent sessions"
+source_url: "https://platform.claude.com/docs/en/managed-agents/multi-agent.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/managed-agents/multi-agent.md"
-title: "Multiagent sessions"
+tags: ["agents", "api"]
 ---
+
 # Multiagent sessions
 
 Coordinate multiple agents within a single session.

@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Files List 3Fc3C03112"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/files/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/files/list.md"
+tags: ["api", "python"]
 ---
+
 ## List
 
 `beta.files.list(FileListParams**kwargs)  -> SyncPage[FileMetadata]`

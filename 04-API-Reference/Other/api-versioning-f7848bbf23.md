@@ -1,9 +1,11 @@
 ---
+title: "Versions"
+source_url: "https://platform.claude.com/docs/en/api/versioning.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/versioning.md"
-title: "Versions"
+tags: ["api"]
 ---
+
 # Versions
 
 When making API requests, you must send an `anthropic-version` request header. For example, `anthropic-version: 2023-06-01`. If you are using our [client SDKs](/docs/en/api/client-sdks), this is handled for you automatically.

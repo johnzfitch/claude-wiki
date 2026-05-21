@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Messages Batches Cancel 8Ff1C2B0Da"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/messages/batches/cancel.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/messages/batches/cancel.md"
+tags: ["api", "python"]
 ---
+
 ## Cancel
 
 `beta.messages.batches.cancel(strmessage_batch_id, BatchCancelParams**kwargs)  -> BetaMessageBatch`

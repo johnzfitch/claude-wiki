@@ -1,9 +1,11 @@
 ---
+title: "Handling stop reasons"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons.md"
-title: "Handling stop reasons"
+tags: ["api"]
 ---
+
 # Handling stop reasons
 
 ---

@@ -1,9 +1,11 @@
 ---
+title: "Enterprise network configuration"
+source_url: "https://code.claude.com/docs/en/network-config.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/network-config.md"
-title: "Enterprise network configuration"
+tags: ["authentication", "claude-code", "enterprise"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -15,7 +17,7 @@ title: "Enterprise network configuration"
 Claude Code supports various enterprise network and security configurations through environment variables. This includes routing traffic through corporate proxy servers, trusting custom Certificate Authorities (CA), and authenticating with mutual Transport Layer Security (mTLS) certificates for enhanced security.
 
 <Note>
-  All environment variables shown on this page can also be configured in [`settings.json`](/en/settings).
+  All environment variables shown on this page can also be configured in [`settings.json`](claude-code-settings-claude-code-docs-d4420b4b52.md).
 </Note>
 
 ## Proxy configuration
@@ -119,18 +121,18 @@ Claude Code requires access to the following URLs. Allowlist these in your proxy
 | `platform.claude.com`          | Anthropic Console account authentication                                                          |
 | `downloads.claude.ai`          | Plugin executable downloads; native installer and native auto-updater                             |
 | `storage.googleapis.com`       | {/* max-version: 2.1.115 */}Native installer and native auto-updater on versions prior to 2.1.116 |
-| `bridge.claudeusercontent.com` | [Claude in Chrome](/en/chrome) extension WebSocket bridge                                         |
+| `bridge.claudeusercontent.com` | [Claude in Chrome](../03-IDE-Integrations/use-claude-code-with-chrome-beta-claude-code-docs-4f2f5a5a96.md) extension WebSocket bridge                                         |
 
 If you install Claude Code through npm or manage your own binary distribution, end users may not need access to `downloads.claude.ai` or `storage.googleapis.com`.
 
-When using [Amazon Bedrock](/en/amazon-bedrock), [Google Vertex AI](/en/google-vertex-ai), or [Microsoft Foundry](/en/microsoft-foundry), model traffic and authentication go to your provider instead of `api.anthropic.com`, `claude.ai`, or `platform.claude.com`. The WebFetch tool still calls `api.anthropic.com` for its [domain safety check](/en/data-usage#webfetch-domain-safety-check) unless you set `skipWebFetchPreflight: true` in [settings](/en/settings).
+When using [Amazon Bedrock](../20-Models/claude-code-on-amazon-bedrock-claude-code-docs-435e92efd0.md), [Google Vertex AI](../20-Models/claude-code-on-google-vertex-ai-claude-code-docs-2acd050a7a.md), or [Microsoft Foundry](../20-Models/claude-code-on-microsoft-foundry-claude-code-docs-ee35d755a6.md), model traffic and authentication go to your provider instead of `api.anthropic.com`, `claude.ai`, or `platform.claude.com`. The WebFetch tool still calls `api.anthropic.com` for its [domain safety check](/en/data-usage#webfetch-domain-safety-check) unless you set `skipWebFetchPreflight: true` in [settings](claude-code-settings-claude-code-docs-d4420b4b52.md).
 
-[Claude Code on the web](/en/claude-code-on-the-web) and [Code Review](/en/code-review) connect to your repositories from Anthropic-managed infrastructure. If your GitHub Enterprise Cloud organization restricts access by IP address, enable [IP allow list inheritance for installed GitHub Apps](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization#allowing-access-by-github-apps). The Claude GitHub App registers its IP ranges, so enabling this setting allows access without manual configuration. To [add the ranges to your allow list manually](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization#adding-an-allowed-ip-address) instead, or to configure other firewalls, see the [Anthropic API IP addresses](https://platform.claude.com/docs/en/api/ip-addresses).
+[Claude Code on the web](claude-code-on-the-web-69d53821d4.md) and [Code Review](code-review-09694cae75.md) connect to your repositories from Anthropic-managed infrastructure. If your GitHub Enterprise Cloud organization restricts access by IP address, enable [IP allow list inheritance for installed GitHub Apps](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization#allowing-access-by-github-apps). The Claude GitHub App registers its IP ranges, so enabling this setting allows access without manual configuration. To [add the ranges to your allow list manually](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization#adding-an-allowed-ip-address) instead, or to configure other firewalls, see the [Anthropic API IP addresses](../04-API-Reference/Other/api-ip-addresses-cc3c763ed7.md).
 
-For self-hosted [GitHub Enterprise Server](/en/github-enterprise-server) instances behind a firewall, allowlist the same [Anthropic API IP addresses](https://platform.claude.com/docs/en/api/ip-addresses) so Anthropic infrastructure can reach your GHES host to clone repositories and post review comments.
+For self-hosted [GitHub Enterprise Server](../03-IDE-Integrations/github-enterprise-server.md) instances behind a firewall, allowlist the same [Anthropic API IP addresses](../04-API-Reference/Other/api-ip-addresses-cc3c763ed7.md) so Anthropic infrastructure can reach your GHES host to clone repositories and post review comments.
 
 ## Additional resources
 
-* [Claude Code settings](/en/settings)
-* [Environment variables reference](/en/env-vars)
-* [Troubleshooting guide](/en/troubleshooting)
+* [Claude Code settings](claude-code-settings-claude-code-docs-d4420b4b52.md)
+* [Environment variables reference](env-vars-5c624d392b.md)
+* [Troubleshooting guide](../21-Account-Support/troubleshooting-claude-code-docs-3f3657ed0f.md)

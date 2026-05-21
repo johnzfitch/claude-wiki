@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Files Upload Fb5414B563"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/files/upload.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/files/upload.md"
+tags: ["api"]
 ---
+
 ## Upload
 
 `beta.files.upload(**kwargs) -> FileMetadata`

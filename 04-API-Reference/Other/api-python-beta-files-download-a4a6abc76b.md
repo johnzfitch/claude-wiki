@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Files Download A4A6Abc76B"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/files/download.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/files/download.md"
+tags: ["api", "python"]
 ---
+
 ## Download
 
 `beta.files.download(strfile_id, FileDownloadParams**kwargs)  -> BinaryResponseContent`

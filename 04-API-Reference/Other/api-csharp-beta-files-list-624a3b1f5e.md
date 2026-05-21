@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Files List 624A3B1F5E"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/files/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `FileListPageResponse Beta.Files.List(FileListParams?parameters, CancellationTokencancellationToken = default)`

@@ -1,9 +1,11 @@
 ---
+title: "Building with extended thinking"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/extended-thinking.md"
 category: "Guides"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/extended-thinking.md"
-title: "Building with extended thinking"
+tags: ["api", "prompting"]
 ---
+
 # Building with extended thinking
 
 ---

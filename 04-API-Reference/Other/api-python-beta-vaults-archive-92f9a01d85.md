@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Vaults Archive 92F9A01D85"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/vaults/archive.md"
+tags: ["api", "python"]
 ---
+
 ## Archive
 
 `beta.vaults.archive(strvault_id, VaultArchiveParams**kwargs)  -> BetaManagedAgentsVault`

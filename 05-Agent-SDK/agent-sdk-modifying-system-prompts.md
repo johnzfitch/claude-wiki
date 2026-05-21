@@ -367,6 +367,6 @@ for await (const message of query({
 
 See also
 
-- [Output styles](https://code.claude.com/docs/en/output-styles) - Complete output styles documentation
+- [Output styles](../02-Claude-Code-CLI/output-styles-claude-code-docs-c315eeed32.md) - Complete output styles documentation
 - [TypeScript SDK guide](/docs/en/agent-sdk/typescript) - Complete SDK usage guide
-- [Configuration guide](https://code.claude.com/docs/en/settings) - General configuration options
+- [Configuration guide](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md) - General configuration options

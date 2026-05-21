@@ -1,8 +1,11 @@
 ---
+title: "Api Java Beta Sessions Update 903C3Cf88C"
+source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/update.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/java/beta/sessions/update.md"
+tags: ["api"]
 ---
+
 ## Update
 
 `BetaManagedAgentsSession beta().sessions().update(SessionUpdateParamsparams = SessionUpdateParams.none(), RequestOptionsrequestOptions = RequestOptions.none())`

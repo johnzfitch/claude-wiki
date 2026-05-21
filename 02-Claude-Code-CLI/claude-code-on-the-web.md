@@ -583,6 +583,6 @@ Claude Code on the web shares rate limits with all other Claude and Claude Code 
 ## Related resources
 
 * [Hooks configuration](../07-Hooks/hooks-reference-claude-code-docs.md)
-* [Settings reference](/en/settings)
+* [Settings reference](claude-code-settings-claude-code-docs-d4420b4b52.md)
 * [Security](security-claude-code-docs.md)
-* [Data usage](/en/data-usage)
+* [Data usage](../22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md)

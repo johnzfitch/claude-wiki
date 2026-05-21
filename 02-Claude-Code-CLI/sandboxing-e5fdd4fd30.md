@@ -1,9 +1,11 @@
 ---
+title: "Sandboxing"
+source_url: "https://code.claude.com/docs/en/sandboxing.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/sandboxing.md"
-title: "Sandboxing"
+tags: ["claude-code", "security"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -243,7 +245,7 @@ When Claude Code attempts to access network resources outside the sandbox:
 
 ## How sandboxing relates to permissions
 
-Sandboxing and [permissions](/en/permissions) are complementary security layers that work together:
+Sandboxing and [permissions](configure-permissions-claude-code-docs-7b0e64d485.md) are complementary security layers that work together:
 
 * **Permissions** control which tools Claude Code can use and are evaluated before any tool runs. They apply to all tools: Bash, Read, Edit, WebFetch, MCP, and others.
 * **Sandboxing** provides OS-level enforcement that restricts what Bash commands can access at the filesystem and network level. It applies only to Bash commands and their child processes.
@@ -288,8 +290,8 @@ For organizations requiring advanced network security, you can implement a custo
 
 The sandboxed bash tool works alongside:
 
-* **Permission rules**: Combine with [permission settings](/en/permissions) for defense-in-depth
-* **Development containers**: Use with [devcontainers](/en/devcontainer) for additional isolation
+* **Permission rules**: Combine with [permission settings](configure-permissions-claude-code-docs-7b0e64d485.md) for defense-in-depth
+* **Development containers**: Use with [devcontainers](devcontainer-38ed6ca20d.md) for additional isolation
 * **Enterprise policies**: Enforce sandbox configurations through [managed settings](/en/settings#settings-precedence)
 
 ## Best practices
@@ -320,12 +322,12 @@ For implementation details and source code, visit the [GitHub repository](https:
 
 The sandbox isolates Bash subprocesses. Other tools operate under different boundaries:
 
-* **Built-in file tools**: Read, Edit, and Write use the permission system directly rather than running through the sandbox. See [permissions](/en/permissions).
-* **Computer use**: when Claude opens apps and controls your screen, it runs on your actual desktop rather than in an isolated environment. Per-app permission prompts gate each application. See [computer use in the CLI](/en/computer-use) or [computer use in Desktop](/en/desktop#let-claude-use-your-computer).
+* **Built-in file tools**: Read, Edit, and Write use the permission system directly rather than running through the sandbox. See [permissions](configure-permissions-claude-code-docs-7b0e64d485.md).
+* **Computer use**: when Claude opens apps and controls your screen, it runs on your actual desktop rather than in an isolated environment. Per-app permission prompts gate each application. See [computer use in the CLI](computer-use-427032da98.md) or [computer use in Desktop](/en/desktop#let-claude-use-your-computer).
 
 ## See also
 
-* [Security](/en/security) - Comprehensive security features and best practices
-* [Permissions](/en/permissions) - Permission configuration and access control
-* [Settings](/en/settings) - Complete configuration reference
-* [CLI reference](/en/cli-reference) - Command-line options
+* [Security](../22-Safety-Policy/security-claude-code-docs-7538e94c51.md) - Comprehensive security features and best practices
+* [Permissions](configure-permissions-claude-code-docs-7b0e64d485.md) - Permission configuration and access control
+* [Settings](claude-code-settings-claude-code-docs-d4420b4b52.md) - Complete configuration reference
+* [CLI reference](cli-reference-7bb98e3312.md) - Command-line options

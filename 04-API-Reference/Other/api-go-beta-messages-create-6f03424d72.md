@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Messages Create 6F03424D72"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/create.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/messages/create.md"
+tags: ["api"]
 ---
+
 ## Create
 
 `client.Beta.Messages.New(ctx, params) (*BetaMessage, error)`
@@ -2751,7 +2754,7 @@ Learn more about the Messages API in our [user guide](https://docs.claude.com/en
 
   - `OutputFormat param.Field[BetaJSONOutputFormat]`
 
-    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+    Body param: Deprecated: Use `output_config.format` instead. See [structured outputs](../Guides/build-with-claude-structured-outputs-2638e81449.md)
 
     A schema to specify Claude's output format in responses. This parameter will be removed in a future release.
 

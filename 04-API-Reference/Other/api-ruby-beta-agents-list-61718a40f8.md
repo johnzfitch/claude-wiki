@@ -1,8 +1,11 @@
 ---
+title: "Api Ruby Beta Agents List 61718A40F8"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/agents/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/agents/list.md"
+tags: ["agents", "api"]
 ---
+
 ## List
 
 `beta.agents.list(**kwargs) -> PageCursor<BetaManagedAgentsAgent>`

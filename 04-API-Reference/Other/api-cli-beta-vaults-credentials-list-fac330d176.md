@@ -1,8 +1,11 @@
 ---
+title: "Api Cli Beta Vaults Credentials List Fac330D176"
+source_url: "https://platform.claude.com/docs/en/api/cli/beta/vaults/credentials/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/cli/beta/vaults/credentials/list.md"
+tags: ["api", "cli"]
 ---
+
 ## List
 
 `$ ant beta:vaults:credentials list`

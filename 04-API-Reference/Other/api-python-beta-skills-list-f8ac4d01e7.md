@@ -1,8 +1,11 @@
 ---
+title: "Api Python Beta Skills List F8Ac4D01E7"
+source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/python/beta/skills/list.md"
+tags: ["api", "python", "skills"]
 ---
+
 ## List
 
 `beta.skills.list(SkillListParams**kwargs)  -> SyncPageCursor[SkillListResponse]`

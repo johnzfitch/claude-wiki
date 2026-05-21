@@ -1,8 +1,11 @@
 ---
+title: "Api Typescript Models List E65Ad3192F"
+source_url: "https://platform.claude.com/docs/en/api/typescript/models/list.md"
 category: "20-Models"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/typescript/models/list.md"
+tags: ["api", "typescript"]
 ---
+
 ## List
 
 `client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>`

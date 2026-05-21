@@ -68,7 +68,7 @@ Claude Code is built on Anthropic's APIs. For details regarding our API's securi
 
 ### Cloud execution: Data flow and dependencies
 
-When using [Claude Code on the web](/en/claude-code-on-the-web), sessions run in Anthropic-managed virtual machines instead of locally. In cloud environments:
+When using [Claude Code on the web](../02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md), sessions run in Anthropic-managed virtual machines instead of locally. In cloud environments:
 
 * **Code and data storage:** Your repository is cloned to an isolated VM. Code and session data are subject to the retention and usage policies for your account type (see Data retention section above)
 * **Credentials:** GitHub authentication is handled through a secure proxy; your GitHub credentials never enter the sandbox
@@ -95,4 +95,4 @@ By default, we disable all non-essential traffic (including error reporting, tel
 | **Sentry (Errors)**             | Default on.<br />`DISABLE_ERROR_REPORTING=1` to disable. | Default off.<br />`CLAUDE_CODE_USE_VERTEX` must be 1. | Default off.<br />`CLAUDE_CODE_USE_BEDROCK` must be 1. |
 | **Claude API (`/bug` reports)** | Default on.<br />`DISABLE_BUG_COMMAND=1` to disable.     | Default off.<br />`CLAUDE_CODE_USE_VERTEX` must be 1. | Default off.<br />`CLAUDE_CODE_USE_BEDROCK` must be 1. |
 
-All environment variables can be checked into `settings.json` ([read more](/en/settings)).
+All environment variables can be checked into `settings.json` ([read more](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md)).

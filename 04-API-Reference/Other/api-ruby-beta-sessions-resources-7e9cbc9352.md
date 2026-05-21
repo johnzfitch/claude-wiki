@@ -1,9 +1,11 @@
 ---
+title: "Resources"
+source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/resources.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/ruby/beta/sessions/resources.md"
-title: "Resources"
+tags: ["api"]
 ---
+
 # Resources
 
 ## Add

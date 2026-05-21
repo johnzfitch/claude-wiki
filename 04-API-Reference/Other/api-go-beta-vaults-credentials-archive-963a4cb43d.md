@@ -1,8 +1,11 @@
 ---
+title: "Api Go Beta Vaults Credentials Archive 963A4Cb43D"
+source_url: "https://platform.claude.com/docs/en/api/go/beta/vaults/credentials/archive.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/go/beta/vaults/credentials/archive.md"
+tags: ["api"]
 ---
+
 ## Archive
 
 `client.Beta.Vaults.Credentials.Archive(ctx, credentialID, params) (*BetaManagedAgentsCredential, error)`

@@ -1,9 +1,11 @@
 ---
+title: "Track team usage with analytics"
+source_url: "https://code.claude.com/docs/en/analytics.md"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://code.claude.com/docs/en/analytics.md"
-title: "Track team usage with analytics"
+tags: ["api", "claude-code", "enterprise"]
 ---
+
 > ## Documentation Index
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
@@ -41,7 +43,7 @@ Usage and adoption data is available for all Claude for Teams and Claude for Ent
 You need the Owner role to configure analytics settings. A GitHub admin must install the GitHub app.
 
 <Warning>
-  Contribution metrics are not available for organizations with [Zero Data Retention](/en/zero-data-retention) enabled. The analytics dashboard will show usage metrics only.
+  Contribution metrics are not available for organizations with [Zero Data Retention](../22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) enabled. The analytics dashboard will show usage metrics only.
 </Warning>
 
 <Steps>
@@ -225,6 +227,6 @@ The team insights table shows per-user metrics:
 
 ## Related resources
 
-* [Monitoring with OpenTelemetry](/en/monitoring-usage): export real-time metrics and events to your observability stack
-* [Manage costs effectively](/en/costs): set spend limits and optimize token usage
-* [Permissions](/en/permissions): configure roles and permissions
+* [Monitoring with OpenTelemetry](../13-Enterprise-Admin/monitoring-claude-code-docs-72c46f3dc8.md): export real-time metrics and events to your observability stack
+* [Manage costs effectively](../17-Billing-Plans/manage-costs-effectively-claude-code-docs-7c26178a4f.md): set spend limits and optimize token usage
+* [Permissions](configure-permissions-claude-code-docs-7b0e64d485.md): configure roles and permissions

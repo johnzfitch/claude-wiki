@@ -1,8 +1,11 @@
 ---
+title: "Api Csharp Beta Environments List A6F94Be48C"
+source_url: "https://platform.claude.com/docs/en/api/csharp/beta/environments/list.md"
 category: "Other"
 fetched_at: "2026-04-26T00:00:00Z"
-source_url: "https://platform.claude.com/docs/en/api/csharp/beta/environments/list.md"
+tags: ["api"]
 ---
+
 ## List
 
 `EnvironmentListPageResponse Beta.Environments.List(EnvironmentListParams?parameters, CancellationTokencancellationToken = default)`

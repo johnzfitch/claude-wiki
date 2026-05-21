@@ -2836,5 +2836,5 @@ See also
 
 - [SDK overview](/docs/en/agent-sdk/overview) - General SDK concepts
 - [Python SDK reference](/docs/en/agent-sdk/python) - Python SDK documentation
-- [CLI reference](https://code.claude.com/docs/en/cli-reference) - Command-line interface
-- [Common workflows](https://code.claude.com/docs/en/common-workflows) - Step-by-step guides
+- [CLI reference](../02-Claude-Code-CLI/cli-reference-7bb98e3312.md) - Command-line interface
+- [Common workflows](../02-Claude-Code-CLI/common-workflows-c909406123.md) - Step-by-step guides
