@@ -120,7 +120,7 @@ Organizations ended up with vast amounts of unstructured clinical notes, imaging
 
 Qualified Health built an AI platform with Claude Sonnet 4.5 to help health systems identify patients who qualify for proven, evidence-based interventions at population scale. Claude was selected following a structured evaluation of multiple models, based on its performance in accurately extracting clinical information, minimizing hallucinations, and producing outputs that are fully traceable to source data, capabilities required for safe use in clinical settings.
 
-The platform integrates fragmented clinical data, such as notes, laboratory results, imaging, and procedural records, and applies precise, guideline-based clinical criteria to determine patient eligibility across a broad set of cardiology practices. 
+The platform integrates fragmented clinical data, such as notes, laboratory results, imaging, and procedural records, and applies precise, guideline-based clinical criteria to determine patient eligibility across a broad set of cardiology practices. 
 
 Patients who meet those criteria are surfaced directly into clinicians’ existing workflows for review, with supporting documentation generated to trace each finding back to source data. This approach shortens the path from identification to treatment while preserving clinician oversight, enabling health systems to deliver evidence-based care more consistently and at a scale that was previously infeasible.
 
@@ -158,7 +158,7 @@ Cardiology was a deliberate starting point as a specialty with well-established 
 
 Building on UTMB's success, the initiative is now expanding system-wide. By the end of 2026, new deployments will help health systems across Texas identify patients eligible for evidence-based treatments in primary care, vascular, gastrointestinal, rheumatology, and neurology specialties. Dr. McCaffrey chairs AI work across all UT System health institutions, and the system views itself as responsible for all Texans across its exceptional geographic, medical, and socioeconomic diversity.
 
-Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reasoning, to everyone, everywhere is a really inherent social good.” 
+Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reasoning, to everyone, everywhere is a really inherent social good.” 
 
 
 “Safety is non-negotiable in healthcare. Anthropic has been a clear leader in building models with strong safety foundations."

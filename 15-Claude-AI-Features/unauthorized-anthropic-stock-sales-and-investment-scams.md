@@ -46,7 +46,7 @@ Scammers regularly attempt to carry out fraudulent investment schemes falsely cl
 
 Before investing in any opportunity claiming to offer Anthropic stock, we strongly encourage individuals to verify the legitimacy of the offering through official regulatory databases and to seek independent legal and financial advice.
 
-If you have concerns about someone claiming to sell Anthropic stock or marketing access to Anthropic equity, please email **[\[email protected\]](/cdn-cgi/l/email-protection#c5e3a9b1fea9a0a2a4a9e8a6aab7b5aab7a4b1a085a4abb1adb7aab5aca6eba6aaa8e3a2b1fe)**.
+If you have concerns about someone claiming to sell Anthropic stock or marketing access to Anthropic equity, please email **[\[email protected\]](/cdn-cgi/l/email-protection#c5e3a9b1fea9a0a2a4a9e8a6aab7b5aab7a4b1a085a4abb1adb7aab5aca6eba6aaa8e3a2b1fe)**.
 
 If you believe you have been targeted by a stock scam:
 

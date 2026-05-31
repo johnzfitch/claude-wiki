@@ -40,7 +40,7 @@ We're piloting Claude in Chrome to test browser-based AI capabilities while addr
 
 ***Update: Now available to Pro, Team, and Enterprise plans*** *(Dec 18, 2025)*
 
-After months of real-world testing, we're ready to expand to all paid plans. We've also shipped our most requested feature: an integration for **Claude Code**. Build in your terminal, verify in your browser, and debug with Claude reading console errors and DOM state directly. 
+After months of real-world testing, we're ready to expand to all paid plans. We've also shipped our most requested feature: an integration for **Claude Code**. Build in your terminal, verify in your browser, and debug with Claude reading console errors and DOM state directly. 
 
 **For Teams and Enterprise:** Admins can enable or disable the extension org-wide and configure site allowlists and blocklists.
 

@@ -1,8 +1,9 @@
 ---
+title: "Development containers - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/devcontainer"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:36Z"
-source_url: "https://code.claude.com/docs/en/devcontainer"
-title: "Development containers - Claude Code Docs"
+tags: ["claude-code", "containers"]
 ---
 
 # Development containers
@@ -30,8 +31,6 @@ How dev containers work with your editor
 
 A dev container runs as a Docker container, either on your machine or on a cloud host such as GitHub Codespaces. An editor that supports the Dev Containers spec, such as VS Code, GitHub Codespaces, a JetBrains IDE, or Cursor, connects to that container: you browse and edit files in the editor as usual, but the integrated terminal, language servers, and build tools all run inside the container rather than on your host. Editors without dev container support, such as plain Vim, are not part of this workflow.Claude Code runs inside the container, so it sees the same files, dependencies, and tools as the rest of your project’s toolchain. In VS Code you can use either the [Claude Code extension panel](/docs/en/vs-code) or run `claude` in the integrated terminal; both run inside the container and share the same `~/.claude` configuration.
 
-
-[​](#add-claude-code-to-your-dev-container)
 
 Add Claude Code to your dev container
 
@@ -83,8 +82,6 @@ For cloud providers, pass credentials into the container as environment variable
 If the browser sign-in completes but the callback never reaches the container, copy the code shown in the browser and paste it at the `Paste code here if prompted` prompt in the terminal. This can happen when the editor’s port forwarding doesn’t route the localhost callback.
 
 
-[​](#persist-authentication-and-settings-across-rebuilds)
-
 Persist authentication and settings across rebuilds
 
 By default, the container’s home directory is discarded on rebuild, so engineers must sign in again each time. Claude Code stores its authentication token, user settings, and session history under [`~/.claude`](/docs/en/claude-directory). Mount a named volume at that path to keep this state across rebuilds. The following example mounts a volume at the home directory of the `node` user:
@@ -99,8 +96,6 @@ devcontainer.json
 
 Replace `/home/node` with the home directory of your container’s `remoteUser`. If you mount the volume somewhere other than `~/.claude`, set [`CLAUDE_CONFIG_DIR`](/docs/en/env-vars) to the mount path so Claude Code reads and writes there. To isolate state per project rather than sharing one volume across all repositories, include the `${devcontainerId}` variable in the source name. The [reference configuration](https://github.com/anthropics/claude-code/blob/main/.devcontainer/devcontainer.json) uses `source=claude-code-config-${devcontainerId}` for this purpose. In GitHub Codespaces, `~/.claude` persists across stopping and starting a codespace, but is still cleared when you rebuild the container, so the volume mount above applies there too. To carry authentication across codespaces, store `ANTHROPIC_API_KEY` or a `CLAUDE_CODE_OAUTH_TOKEN` from [`claude setup-token`](/docs/en/authentication#generate-a-long-lived-token) as a [Codespaces secret](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces); Codespaces makes secrets available as environment variables inside the container automatically.
 
-
-[​](#enforce-organization-policy)
 
 Enforce organization policy
 
@@ -127,21 +122,15 @@ devcontainer.json
 The Dev Container Feature always installs the latest Claude Code release. To pin a specific Claude Code version for reproducible builds, install it from your Dockerfile with `npm install -g @anthropic-ai/claude-code@X.Y.Z` instead of using the feature, and set `DISABLE_AUTOUPDATER` as shown above. For the full list of policy controls including permission rules, tool restrictions, and MCP server allowlists, see [Set up Claude Code for your organization](/docs/en/admin-setup). To make [MCP servers](/docs/en/mcp) available inside the container, define them at [project scope](/docs/en/mcp#mcp-installation-scopes) in a `.mcp.json` file at the repository root so they are checked in alongside your dev container configuration. Install any binaries that local stdio servers depend on in your Dockerfile, and add remote server domains to your network allowlist.
 
 
-[​](#restrict-network-egress)
-
 Restrict network egress
 
 You can limit the container’s outbound traffic to only the domains Claude Code needs. See [Network access requirements](/docs/en/network-config#network-access-requirements) for the inference and authentication domains, and [Telemetry services](/docs/en/data-usage#telemetry-services) for the optional telemetry and error reporting connections and how to disable them. The reference container includes an [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh) script that blocks all outbound traffic except the domains Claude Code and your development tools need. Running a firewall inside a container requires extra permissions, so the reference adds the `NET_ADMIN` and `NET_RAW` capabilities through `runArgs`. The firewall script and these capabilities are not required for Claude Code itself: you can leave them out and rely on your own network controls instead.
 
 
-[​](#run-without-permission-prompts)
-
 Run without permission prompts
 
 Because the container runs Claude Code as a non-root user and confines command execution to the container, you can pass `--dangerously-skip-permissions` for unattended operation. The CLI rejects this flag when launched as root, so confirm `remoteUser` is set to a non-root account. Skipping permission prompts removes your opportunity to review tool calls before they run. Claude can still modify any file in the bind-mounted workspace, which appears directly on your host, and reach anything the container’s network policy allows. Pair this flag with the [network egress restrictions](#restrict-network-egress) above to limit what a bypassed session can reach. If you want fewer prompts without disabling safety checks, consider [auto mode](/docs/en/permission-modes#eliminate-prompts-with-auto-mode) instead, which has a classifier review actions before they run. To prevent engineers from using `--dangerously-skip-permissions` at all, set `permissions.disableBypassPermissionsMode` to `"disable"` in [managed settings](/docs/en/settings#permission-settings).
 
-
-[​](#try-the-reference-container)
 
 Try the reference container
 
@@ -183,8 +172,6 @@ To use this configuration with your own project, copy the `.devcontainer/` direc
 | [`Dockerfile`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/Dockerfile)               | Base image, development tools, and the Claude Code install                    |
 | [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh)   | Blocks all outbound network traffic except the allowed domains                |
 
-
-[​](#next-steps)
 
 Next steps
 

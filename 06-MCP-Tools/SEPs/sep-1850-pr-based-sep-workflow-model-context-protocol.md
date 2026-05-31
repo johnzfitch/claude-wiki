@@ -29,14 +29,10 @@ FinalProcess
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP formalizes the pull request-based SEP workflow that stores proposals as markdown files in the `seps/` directory of the Model Context Protocol specification repository. The workflow assigns SEP numbers from pull request numbers, maintains version history in Git, and replaces the previous GitHub Issues-based process. This establishes a file-based approach as the canonical way to author, review, and accept SEPs.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -56,12 +52,8 @@ A file-based workflow addresses these issues by:
 - Using PR labels in conjunction with file status for better discoverability
 
 
-[​](#specification)
-
 Specification
 
-
-[​](#1-canonical-location)
 
 1. Canonical Location
 
@@ -69,8 +61,6 @@ Specification
 - The SEP number is always the pull request number that introduces the SEP file
 - The `seps/` directory serves as the single source of truth for all SEPs
 
-
-[​](#2-author-workflow)
 
 2. Author Workflow
 
@@ -80,8 +70,6 @@ Specification
 4.  **After the PR number is known**, amend the commit to rename the file to `{PR-number}-{slug}.md` and update the header (`SEP-{PR-number}` and `PR: #{PR-number}`)
 5.  **Wait for sponsor assignment**: Once a sponsor agrees, they will assign themselves and update the status to `Draft`
 
-
-[​](#3-sponsor-responsibilities)
 
 3. Sponsor Responsibilities
 
@@ -99,14 +87,10 @@ A Sponsor is a Core Maintainer or Maintainer who champions the SEP through the r
 - **Tracking implementation** progress and ensuring reference implementations are complete before `Final` status
 
 
-[​](#4-review-flow)
-
 4. Review Flow
 
 Status progression follows: `Draft → In-Review → Accepted → Final` Additional terminal states: `Rejected`, `Withdrawn`, `Superseded`, `Dormant` **Dormant status**: If a SEP does not find a sponsor within six months, Core Maintainers may close the PR and mark the SEP as `dormant`. Reference implementations must be tracked via linked pull requests or issues and must be complete before marking a SEP as `Final`.
 
-
-[​](#5-documentation)
 
 5. Documentation
 
@@ -114,8 +98,6 @@ Status progression follows: `Draft → In-Review → Accepted → Final` Additio
 - `seps/README.md` provides the concise reference for formatting, naming, sponsor responsibilities, and acceptance criteria
 - Both documents must reflect this workflow and be kept in sync
 
-
-[​](#6-sep-file-structure)
 
 6. SEP File Structure
 
@@ -149,8 +131,6 @@ Copy
 ```
 
 
-[​](#7-status-management-via-pr-labels)
-
 7. Status Management via PR Labels
 
 To improve discoverability and filtering:
@@ -162,8 +142,6 @@ To improve discoverability and filtering:
 - Only sponsors should modify status fields and labels; authors should request changes through their sponsor
 
 
-[​](#8-legacy-considerations)
-
 8. Legacy Considerations
 
 - Contributors may optionally open a GitHub Issue for early discussion, but the authoritative SEP text lives in `seps/`
@@ -171,12 +149,8 @@ To improve discoverability and filtering:
 - SEP numbers are derived from PR numbers, not issue numbers
 
 
-[​](#rationale)
-
 Rationale
 
-
-[​](#why-file-based)
 
 Why File-Based?
 
@@ -189,8 +163,6 @@ Storing SEPs as files keeps authoritative specs versioned with the code, mirrori
 - Integrates naturally with the specification repository
 
 
-[​](#why-pr-numbers)
-
 Why PR Numbers?
 
 Using pull request numbers:
@@ -201,8 +173,6 @@ Using pull request numbers:
 - Simplifies the contribution process
 - Maintains a single discussion thread for review
 
-
-[​](#why-pr-labels)
 
 Why PR Labels?
 
@@ -215,8 +185,6 @@ Adding PR labels alongside the file status:
 - Reduces friction for maintainers managing multiple SEPs
 
 
-[​](#making-this-the-primary-process)
-
 Making This the Primary Process
 
 Maintaining two overlapping canonical processes risked divergence and created confusion for contributors. Establishing the file-based approach as the primary method:
@@ -227,8 +195,6 @@ Maintaining two overlapping canonical processes risked divergence and created co
 - Aligns with industry best practices
 
 
-[​](#backward-compatibility)
-
 Backward Compatibility
 
 - Existing issue-based SEPs remain valid and require no migration
@@ -237,14 +203,10 @@ Backward Compatibility
 - Maintainers may optionally backfill historical SEPs into `seps/` for archival purposes
 
 
-[​](#security-implications)
-
 Security Implications
 
 No new security considerations beyond the standard code review process for pull requests.
 
-
-[​](#reference-implementation)
 
 Reference Implementation
 
@@ -252,8 +214,6 @@ Reference Implementation
 - The process has been updated to reflect the PR-based workflow with status management via labels
 - This SEP document itself serves as an example of the new format
 
-
-[​](#vote)
 
 Vote
 

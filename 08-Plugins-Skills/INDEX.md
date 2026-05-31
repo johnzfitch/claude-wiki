@@ -1,6 +1,6 @@
 # Plugins Skills
 
-*95 documents*
+*98 documents*
 
 
 - [Claude Skills for Financial Applications](02-skills-financial-applications.md) - Build real-world financial dashboards, portfolio analytics, and
@@ -35,6 +35,7 @@
 - [Conversation Analyzer](conversation-analyzer.md) - You are a conversation analysis specialist that identifies problematic behaviors in Claude Code sessions that could be prevented with hooks.
 - [Create and distribute a plugin marketplace - Claude Code Docs](create-and-distribute-a-plugin-marketplace-claude-code-docs-34a8f3c5e8.md) - Build and host plugin marketplaces to distribute Claude Code extensions across teams and communities.
 - [Plugin Creation Workflow](create-plugin.md) - Guide the user through creating a complete, high-quality Claude Code plugin from initial concept to tested implementation. Follow a systematic approac
+- [Create plugins - Claude Code Docs](create-plugins-claude-code-docs-fc9dd52a14.md) - Create custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers.
 - [Create plugins - Claude Code Docs](create-plugins-claude-code-docs.md) - Create custom plugins to extend Claude Code with skills, agents, hooks, and MCP servers.
 - [Create Plugin Settings](create-settings-command.md) - This command helps users create a `.claude/my-plugin.local.md` settings file.
 - [Discover and install prebuilt plugins through marketplaces - Claude Code Docs](discover-and-install-prebuilt-plugins-through-marketplaces-claude-code-docs-fe3568ee5c.md) - Find and install plugins from marketplaces to extend Claude Code with new skills, agents, and capabilities.
@@ -42,6 +43,7 @@
 - [Evaluating skill output quality - Agent Skills](evaluating-skill-output-quality-agent-skills-4f9e42d107.md) - How to test whether your skill produces good outputs using eval-driven iteration.
 - [Example Servers](examples.md) - A list of example servers and implementations
 - [Explanatory Output Style Plugin](explanatory-output-style-plugin.md) - This plugin recreates the deprecated Explanatory output style as a SessionStart
+- [Extend Claude with skills - Claude Code Docs](extend-claude-with-skills-claude-code-docs-542f21c108.md) - Create, manage, and share skills to extend Claude’s capabilities in Claude Code. Includes custom commands and bundled skills.
 - [Extend Claude with skills - Claude Code Docs](extend-claude-with-skills-claude-code-docs.md) - Create, manage, and share skills to extend Claude’s capabilities in Claude Code. Includes custom commands and bundled skills.
 - [Extensions](extensions.md) - Optional extensions to the Model Context Protocol
 - [Feature Development](feature-dev.md) - You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspe
@@ -73,6 +75,7 @@
 - [Plugin Validator](plugin-validator.md) - You are an expert plugin validator specializing in comprehensive validation of Claude Code plugin structure, configuration, and components.
 - [Create plugins](plugins-47f40108cc.md) - ## Documentation Index
 - [Plugins reference](plugins-reference-44aeea7968.md) - ## Documentation Index
+- [Plugins reference - Claude Code Docs](plugins-reference-claude-code-docs-e80a6d455d.md) - Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
 - [Plugins reference - Claude Code Docs](plugins-reference-claude-code-docs.md) - Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
 - [Plugins reference](plugins-reference.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Create plugins](plugins.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt

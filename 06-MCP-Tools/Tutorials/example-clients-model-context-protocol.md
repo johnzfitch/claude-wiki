@@ -32,12 +32,8 @@ This page showcases applications that support the Model Context Protocol (MCP). 
 This list is maintained by the community. If you notice any inaccuracies or would like to add or update information about MCP support in your application, please [submit a pull request](https://github.com/modelcontextprotocol/modelcontextprotocol/pulls).
 
 
-[​](#client-details)
-
 Client details
 
-
-[​](#adding-mcp-support-to-your-application)
 
 Adding MCP support to your application
 

@@ -97,13 +97,13 @@ Seth sat down with Jonathan Dahlberg, head of Anthropic’s applied AI team, to 
 
 **Seth Hain, Epic:** It was a very natural progression, because we gave everyone at Epic the ability to explore AI. Pockets of learning would develop. It would often start with an individual, and then their teammates and neighbors. We're famously an in-person company, and a key part of that is the natural interactions in the break room or hallway—quick ideas traded back and forth. The excitement of something you build over the weekend and show to a colleague generates momentum. We ended up creating internal tools to help people see who was using AI and what they were doing with it, so others could adopt it quickly and try more.
 
-And the pace kept picking up. When you're using AI personally, you end up having moments of surprise—when you realize what the AI is now capable of. Over the last five or six years, those moments started coming faster and faster, building on each other. Both the core models and the agentic tooling—the layer above the models—are improving. Because we gave everyone the ability to explore AI, everyone saw this happen. 
+And the pace kept picking up. When you're using AI personally, you end up having moments of surprise—when you realize what the AI is now capable of. Over the last five or six years, those moments started coming faster and faster, building on each other. Both the core models and the agentic tooling—the layer above the models—are improving. Because we gave everyone the ability to explore AI, everyone saw this happen. 
 
 **Dahlberg: Over half of your Claude Code usage is from non-developers. What surprised you about that?**
 
 **Hain:** The folks on the ground have the best ideas, so it’s really important for them to have the opportunity to openly explore how AI works. Some of the most exciting things I’ve seen are non-developers taking tools like Claude Code and applying it to their own workflows.
 
-Here’s a great example. One of my friends is a pharmacist at Epic, and he came back with a full prototype of some new pieces of functionality he wanted in MyChart. With AI, he was able to show everyone what he wanted in a whole new, interactive way—going beyond slides or written documentation. And now it’s a quick link that folks are exploring and then iterating on together. 
+Here’s a great example. One of my friends is a pharmacist at Epic, and he came back with a full prototype of some new pieces of functionality he wanted in MyChart. With AI, he was able to show everyone what he wanted in a whole new, interactive way—going beyond slides or written documentation. And now it’s a quick link that folks are exploring and then iterating on together. 
 
 **Dahlberg: How do you get people across the company to find the time for exploration?**
 
@@ -111,9 +111,9 @@ Here’s a great example. One of my friends is a pharmacist at Epic, and he came
 
 **Dahlberg: How do you build trust in AI in a clinical setting?**
 
-**Hain:** There are multiple layers here. First, clinicians and health systems need to trust that you truly understand their needs. We’ve long required our developers to do immersion—they get on-site, in person. They spend time at the elbow with clinicians and staff to develop an understanding of workflows step by step, where the software fits, where human interactions take place. 
+**Hain:** There are multiple layers here. First, clinicians and health systems need to trust that you truly understand their needs. We’ve long required our developers to do immersion—they get on-site, in person. They spend time at the elbow with clinicians and staff to develop an understanding of workflows step by step, where the software fits, where human interactions take place. 
 
-And because we work in healthcare, we take “do no harm” seriously. That starts with our own development pipelines. Understanding how we can improve the level of quality of the code as it goes out the door, and how to use new capabilities—like skills and MCP servers—to carry out additional checks we could not do before. 
+And because we work in healthcare, we take “do no harm” seriously. That starts with our own development pipelines. Understanding how we can improve the level of quality of the code as it goes out the door, and how to use new capabilities—like skills and MCP servers—to carry out additional checks we could not do before. 
 
 Next, organizations need to be able to evaluate AI before taking it into production, and they need to be able to monitor it on an ongoing basis. Some examples:
 
@@ -128,7 +128,7 @@ And the user experience needs to continue to adapt. The AI we use today needs to
 
 **Dahlberg: Something feels like it’s shifted recently. What’s changed?**
 
-**Hain:** One of the things I’ve noticed both internally as well as with health systems, if you go back 12, 24 months, was that AI was productively helping in segments of a person’s day or segments of a person’s workflow. It would save them time—for example, it would save a physician time in regards to completing their notes based on the conversation in the exam room. Or it would save time for folks at Epic in regards to finding information from some knowledge base. But it was narrow. The result of that was that folks still sort of spent the same total amount of time. They couldn’t insert truly new work into that day. 
+**Hain:** One of the things I’ve noticed both internally as well as with health systems, if you go back 12, 24 months, was that AI was productively helping in segments of a person’s day or segments of a person’s workflow. It would save them time—for example, it would save a physician time in regards to completing their notes based on the conversation in the exam room. Or it would save time for folks at Epic in regards to finding information from some knowledge base. But it was narrow. The result of that was that folks still sort of spent the same total amount of time. They couldn’t insert truly new work into that day. 
 
 I think in the last eight to 12 weeks, that has started to shift. Those moments where the human had to jump into the middle have become fewer and fewer. And so now you have this contiguous block where the agents are able to do work and produce a result that somebody can engage with and spend time on. And so I think that’s why it feels qualitatively different now.
 
@@ -136,9 +136,9 @@ One example: we have a team working with customers on operationalizing access to
 
 **Dahlberg: What advice would you give enterprise leaders who are just getting started?**
 
-**Hain:** Leaders need to be spending time in it. If they’re not, that needs to change right now, and not just at work but also personally. The second thing is to really look at your governance processes and make sure you don’t have unnecessary roadblocks. 
+**Hain:** Leaders need to be spending time in it. If they’re not, that needs to change right now, and not just at work but also personally. The second thing is to really look at your governance processes and make sure you don’t have unnecessary roadblocks. 
 
-Imagine an organization saying, “We don’t really give Excel out to our employees—we don’t trust that they have enough understanding of math and stats to be able to use it to analyze data, so we don’t provide it to them.” I think everybody would agree that that’s not going to be a recipe for success long-term. The same goes for AI. Start with leadership, and open the door to exploration. 
+Imagine an organization saying, “We don’t really give Excel out to our employees—we don’t trust that they have enough understanding of math and stats to be able to use it to analyze data, so we don’t provide it to them.” I think everybody would agree that that’s not going to be a recipe for success long-term. The same goes for AI. Start with leadership, and open the door to exploration. 
 
 **Dahlberg: What’s ahead for healthcare and AI?**
 

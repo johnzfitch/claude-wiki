@@ -12,21 +12,15 @@ tags: ["api", "git", "github", "mcp", "mcp-extensions"]
 Getting started guide for building interactive UI applications with MCP Apps
 
 
-[​](#prerequisites)
-
 Prerequisites
 
 You’ll need [Node.js](https://nodejs.org/en/download) 18 or higher. Familiarity with [MCP tools](/specification/latest/server/tools) and [resources](/specification/latest/server/resources) is recommended since MCP Apps combine both primitives. Experience with the [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) will help you better understand the server-side patterns.
 
 
-[​](#getting-started)
-
 Getting started
 
 The fastest way to create an MCP App is using an AI coding agent with the MCP Apps skill. If you prefer to set up a project manually, skip to [Manual setup](#manual-setup).
 
-
-[​](#using-an-ai-coding-agent)
 
 Using an AI coding agent
 
@@ -142,8 +136,6 @@ Test your app
 Follow the instructions in [Testing your app](#testing-your-app) below. For the color picker example, start a new chat and ask Claude to provide you a color picker.
 
 
-[​](#manual-setup)
-
 Manual setup
 
 If you’re not using an AI coding agent, or prefer to understand the setup process, follow these steps.
@@ -256,14 +248,10 @@ Build the project
 With the project structure and configuration in place, continue to [Building an MCP App](#building-an-mcp-app) below to implement the server and UI.
 
 
-[​](#building-an-mcp-app)
-
 Building an MCP App
 
 Let’s build a simple app that displays the current server time. This example demonstrates the full pattern: registering a tool with UI metadata, serving the bundled HTML as a resource, and building a UI that communicates with the server.
 
-
-[​](#server-implementation)
 
 Server implementation
 
@@ -365,8 +353,6 @@ Let’s break down the key parts:
 - **Express server**: Exposes the MCP server over HTTP on port 3001.
 
 
-[​](#ui-implementation)
-
 UI implementation
 
 The UI consists of an HTML page and a TypeScript module that uses the `App` class to communicate with the host. Here’s the HTML:
@@ -434,8 +420,6 @@ The key parts:
 The `App` class provides additional methods for logging, opening URLs, and updating the model’s context with structured data from your app. See the full [API documentation](https://apps.extensions.modelcontextprotocol.io/api/).
 
 
-[​](#testing-your-app)
-
 Testing your app
 
 To test your MCP App, build the UI and start your local server:
@@ -453,8 +437,6 @@ npm run build && npm run serve
 In the default configuration, your server will be available at `http://localhost:3001/mcp`. However, to see your app render, you need an MCP host that supports MCP Apps. You have several options.
 
 
-[​](#testing-with-claude)
-
 Testing with Claude
 
 [Claude](https://claude.ai) (web) and [Claude Desktop](https://claude.ai/download) support MCP Apps. For local development, you’ll need to expose your server to the internet. You can run an MCP server locally and use tools like `cloudflared` to tunnel traffic through. In a separate terminal, run:
@@ -469,8 +451,6 @@ Copy the generated URL (e.g., `https://random-name.trycloudflare.com`) and add i
 
 Custom connectors are available on paid Claude plans (Pro, Max, or Team).
 
-
-[​](#testing-with-the-basic-host)
 
 Testing with the basic-host
 
@@ -503,8 +483,6 @@ SERVERS='["http://localhost:3001/mcp"]' npm start
 Navigate to `http://localhost:8080`. You’ll see a simple interface where you can select a tool and call it. When you call your tool, the host fetches the UI resource and renders it in a sandboxed iframe. You can then interact with your app and verify that tool calls work correctly.
 
 
-[​](#learn-more)
-
 Learn more
 
 
@@ -522,8 +500,6 @@ Source code, examples, and issue tracker
 
 Technical specification for implementers
 
-
-[​](#feedback)
 
 Feedback
 

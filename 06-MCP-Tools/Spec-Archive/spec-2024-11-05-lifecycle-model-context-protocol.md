@@ -16,12 +16,8 @@ The Model Context Protocol (MCP) defines a rigorous lifecycle for client-server 
 3.  **Shutdown**: Graceful termination of the connection
 
 
-[​](#lifecycle-phases)
-
 Lifecycle Phases
 
-
-[​](#initialization)
 
 Initialization
 
@@ -106,14 +102,10 @@ Copy
 - The server **SHOULD NOT** send requests other than [pings](/specification/2024-11-05/basic/utilities/ping) and [logging](/specification/2024-11-05/server/utilities/logging) before receiving the `initialized` notification.
 
 
-[​](#version-negotiation)
-
 Version Negotiation
 
 In the `initialize` request, the client **MUST** send a protocol version it supports. This **SHOULD** be the *latest* version supported by the client. If the server supports the requested protocol version, it **MUST** respond with the same version. Otherwise, the server **MUST** respond with another protocol version it supports. This **SHOULD** be the *latest* version supported by the server. If the client does not support the version in the server’s response, it **SHOULD** disconnect.
 
-
-[​](#capability-negotiation)
 
 Capability Negotiation
 
@@ -136,8 +128,6 @@ Capability objects can describe sub-capabilities like:
 - `subscribe`: Support for subscribing to individual items’ changes (resources only)
 
 
-[​](#operation)
-
 Operation
 
 During the operation phase, the client and server exchange messages according to the negotiated capabilities. Both parties **SHOULD**:
@@ -146,14 +136,10 @@ During the operation phase, the client and server exchange messages according to
 - Only use capabilities that were successfully negotiated
 
 
-[​](#shutdown)
-
 Shutdown
 
 During the shutdown phase, one side (usually the client) cleanly terminates the protocol connection. No specific shutdown messages are defined—instead, the underlying transport mechanism should be used to signal connection termination:
 
-
-[​](#stdio)
 
 stdio
 
@@ -166,14 +152,10 @@ For the stdio [transport](/specification/2024-11-05/basic/transports), the clien
 The server **MAY** initiate shutdown by closing its output stream to the client and exiting.
 
 
-[​](#http)
-
 HTTP
 
 For HTTP [transports](/specification/2024-11-05/basic/transports), shutdown is indicated by closing the associated HTTP connection(s).
 
-
-[​](#error-handling)
 
 Error Handling
 

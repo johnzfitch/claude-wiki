@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-extensions"]
 Optional extensions to the Model Context Protocol
 
 
-[​](#mcp-extensions)
-
 MCP Extensions
 
 MCP extensions are optional additions to the specification that define capabilities beyond the core protocol. Extensions enable functionality that may be modular (e.g., distinct features like authentication), specialized (e.g., industry-specific logic), or experimental (e.g., features being incubated for potential core inclusion). Extensions are identified using a unique *extension identifier* with the format: `{vendor-prefix}/{extension-name}`, e.g. `io.modelcontextprotocol/oauth-client-credentials`. Official extensions use the `io.modelcontextprotocol` vendor prefix.
@@ -21,14 +19,10 @@ MCP extensions are optional additions to the specification that define capabilit
 If you’re building a third-party extension, use a reversed domain name you own as the vendor prefix to avoid collisions (similar to Java package naming). For example, a company owning `example.com` would use `com.example/` as their prefix (e.g., `com.example/my-extension`).
 
 
-[​](#official-extension-repositories)
-
 Official Extension Repositories
 
 Official extensions live inside the [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol/) in repositories with the `ext-` prefix.
 
-
-[​](#mcp-authorization-extensions)
 
 MCP Authorization Extensions
 
@@ -42,8 +36,6 @@ Extensions for supplementary authorization mechanisms beyond the core specificat
 | [OAuth Client Credentials](/extensions/auth/oauth-client-credentials) | OAuth 2.0 client credentials flow for machine-to-machine authentication. |
 | [Enterprise-Managed Authorization](/extensions/auth/enterprise-managed-authorization) | Framework for enterprise environments requiring centralized access control. |
 
-
-[​](#mcp-apps)
 
 MCP Apps
 
@@ -59,14 +51,10 @@ Extensions for interactive UI elements in conversational MCP clients.
 To get started building MCP Apps, see the [quickstart guide](/extensions/apps/build#getting-started) or read the full [MCP Apps documentation](https://apps.extensions.modelcontextprotocol.io/api/documents/Quickstart.html).
 
 
-[​](#experimental-extensions)
-
 Experimental Extensions
 
 Experimental extensions provide an incubation pathway for [Working Groups and Interest Groups](/community/working-interest-groups) to prototype ideas and collaborate on extension concepts before formal SEP submission. Experimental extension repositories live within the MCP GitHub organization with the `experimental-ext-` prefix (e.g., `experimental-ext-interceptors`).
 
-
-[​](#ground-rules)
 
 Ground Rules
 
@@ -75,14 +63,10 @@ Ground Rules
 - [Core Maintainers](/community/governance#core-maintainers) retain oversight of experimental extension repositories, including the ability to archive or remove them
 
 
-[​](#graduation-to-official-status)
-
 Graduation to Official Status
 
 To promote an experimental extension to official status, it goes through the standard SEP process (Extensions Track). Feel free to reference the experimental repository and any reference implementations you built during incubation to demonstrate the extension’s practicality.
 
-
-[​](#creating-extensions)
 
 Creating Extensions
 
@@ -95,15 +79,11 @@ The lifecycle for official extensions follows a SEP-based process. For full deta
 5.  **Adopt**: After that, other clients, servers, and SDKs can implement the extension too.
 
 
-[​](#requirements)
-
 Requirements
 
 - Extension specifications need to use RFC 2119 language (MUST, SHOULD, MAY)
 - Extensions must have an associated working group or interest group
 
-
-[​](#sdk-implementation)
 
 SDK Implementation
 
@@ -111,8 +91,6 @@ SDKs can choose to implement extensions, but it’s not required for protocol co
 
 Extensions are always disabled by default and require explicit opt-in from the developer.
 
-
-[​](#evolution)
 
 Evolution
 
@@ -124,14 +102,10 @@ Extensions evolve independently of the core protocol. Updates are managed by the
 - Adding new required fields
 
 
-[​](#negotiation)
-
 Negotiation
 
 Clients and servers advertise their support for extensions in the `extensions` field within their respective capabilities during the [initialization handshake](/specification/latest/basic/lifecycle).
 
-
-[​](#client-capabilities)
 
 Client Capabilities
 
@@ -165,8 +139,6 @@ Copy
 ```
 
 
-[​](#server-capabilities)
-
 Server Capabilities
 
 Servers advertise extension support in the `initialize` response:
@@ -195,8 +167,6 @@ Copy
 
 Each extension specifies the schema of its settings object; an empty object indicates no settings.
 
-
-[​](#graceful-degradation)
 
 Graceful Degradation
 

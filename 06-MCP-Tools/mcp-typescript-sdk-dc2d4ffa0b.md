@@ -1,8 +1,9 @@
 ---
+title: "MCP TypeScript SDK"
+source_url: "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md"
 category: "06-MCP-Tools"
 fetched_at: "2026-05-19T21:39:56Z"
-source_url: "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md"
-title: "MCP TypeScript SDK"
+tags: ["mcp", "sdk", "typescript"]
 ---
 
 # MCP TypeScript SDK

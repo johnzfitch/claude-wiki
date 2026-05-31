@@ -6,7 +6,7 @@
 - [20% time savings with Claude AI | NBIM | Claude](20-time-savings-with-claude-ai-nbim-claude.md) - [Try Claude](https://claude.ai)
 - [AI agents | Claude](ai-agents-claude.md) - With Claude, you can build AI agents that plan, act, and collaborate more effectively.
 - [Claude Help Center](browsing-and-connecting-to-tools-from-the-directory.md) - Search for articles...
-- [Claude 4 System Card](claude-4-system-card.md) - ●​ Fixed some minor formatting errors, e.g. changed a semicolon to a comma
+- [Claude 4 System Card](claude-4-system-card.md) - ● Fixed some minor formatting errors, e.g. changed a semicolon to a comma
 - [Claude Campus Program | Claude by Anthropic](claude-campus-program-claude-by-anthropic.md) - Lead student-driven AI initiatives with support from Anthropic.
 - [Claude Code for Enterprise | Claude by Anthropic](claude-code-for-enterprise-claude-by-anthropic.md) - Claude Code for enterprise autonomously writes, debugs, and refactors code with support for terminal and any IDE to help teams ship faster.
 - [Claude Code Security | Anthropic by Claude](claude-code-security-anthropic-by-claude.md) - Claude scans your entire codebase for vulnerabilities, validates each finding to minimize false positives, and suggests patches you can review and app
@@ -19,10 +19,10 @@
 - [Claude Help Center](claude-help-center.md) - Search for articles...
 - [Claude in Chrome Permissions Guide | Claude Help Center](claude-in-chrome-permissions-guide.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
 - [Claude in Chrome Troubleshooting | Claude Help Center](claude-in-chrome-troubleshooting.md) - Claude in Chrome is available in beta for all paid plans (Pro, Max, Team, and Enterprise) on the Chrome web browser.
-- [Claude Opus 4 1 System Card](claude-opus-4-1-system-card.md) - ●​ Updated Section 6.3 to acknowledge partners that we worked with to develop our
-- [Claude Opus 4 5 System Card](claude-opus-4-5-system-card.md) - ●​ Replaced Figure 2.10.A (ARC-AGI-1 performance) which previously showed public
+- [Claude Opus 4 1 System Card](claude-opus-4-1-system-card.md) - ● Updated Section 6.3 to acknowledge partners that we worked with to develop our
+- [Claude Opus 4 5 System Card](claude-opus-4-5-system-card.md) - ● Replaced Figure 2.10.A (ARC-AGI-1 performance) which previously showed public
 - [Claude Opus 4.6 \\ Anthropic](claude-opus-4-6-anthropic.md) - Hybrid reasoning model that pushes the frontier for coding and AI agents, featuring a 1M context window
-- [Claude Sonnet 4 5 System Card](claude-sonnet-4-5-system-card.md) - ●​ Updated footnote 24 (“Stress testing deliberative alignment…”) to correct the first
+- [Claude Sonnet 4 5 System Card](claude-sonnet-4-5-system-card.md) - ● Updated footnote 24 (“Stress testing deliberative alignment…”) to correct the first
 - [Claude Sonnet 4.6 \\ Anthropic](claude-sonnet-4-6-anthropic.md) - Hybrid reasoning model with superior intelligence for agents, featuring a 1M context window
 - [Code modernization | Claude](code-modernization-claude.md) - Claude Code helps leading enterprises modernize legacy codebases, assisting with scalable migration while maintaining business logic integrity.[\
 - [Coding | Claude](coding-claude.md) - Claude is the not-so-secret advantage for world class engineering teams and software companies.

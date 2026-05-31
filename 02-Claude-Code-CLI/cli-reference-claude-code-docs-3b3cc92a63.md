@@ -1,8 +1,9 @@
 ---
+title: "CLI reference - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/cli-reference"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:28Z"
-source_url: "https://code.claude.com/docs/en/cli-reference"
-title: "CLI reference - Claude Code Docs"
+tags: ["claude-code", "cli"]
 ---
 
 # CLI reference
@@ -17,8 +18,6 @@ Complete reference for Claude Code command-line interface, including commands an
 >
 > Use this file to discover all available pages before exploring further.
 
-
-[​](#cli-commands)
 
 CLI commands
 
@@ -56,16 +55,12 @@ You can start sessions, pipe content, resume conversations, and manage updates w
 If you mistype a subcommand, Claude Code suggests the closest match and exits without starting a session. For example, `claude udpate` prints `Did you mean claude update?`.
 
 
-[​](#cli-flags)
-
 CLI flags
 
 Customize Claude Code’s behavior with these command-line flags. `claude --help` does not list every flag, so a flag’s absence from `--help` does not mean it is unavailable.
 
 [TABLE]
 
-
-[​](#system-prompt-flags)
 
 System prompt flags
 
@@ -80,8 +75,6 @@ Claude Code provides four flags for customizing the system prompt. All four work
 
 `--system-prompt` and `--system-prompt-file` are mutually exclusive. The append flags can be combined with either replacement flag. Choose based on whether Claude Code’s default identity still fits your task. Use an append flag when Claude should remain a coding assistant that also follows your extra rules: per-invocation instructions, output formatting, or domain context for a `-p` script. Appending preserves the default tool guidance, safety instructions, and coding conventions, so you only supply what differs. Use a replacement flag when the surface, identity, or permission model differs from Claude Code’s, like a non-coding agent in a pipeline that no human watches. Replacing drops all of the default prompt, including tool guidance and safety instructions, so you take responsibility for whatever your task still needs. These flags apply only to the current invocation. For persistent personas you can switch between and share across a project, use [output styles](/docs/en/output-styles). For project conventions Claude should always follow, use [CLAUDE.md](/docs/en/memory). The [Agent SDK guide on system prompts](/docs/en/agent-sdk/modifying-system-prompts#decide-on-a-starting-point) covers the same decision in more depth.
 
-
-[​](#see-also)
 
 See also
 

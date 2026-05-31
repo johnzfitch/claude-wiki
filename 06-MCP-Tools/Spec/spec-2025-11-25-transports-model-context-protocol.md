@@ -17,8 +17,6 @@ MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encode
 Clients **SHOULD** support stdio whenever possible. It is also possible for clients and servers to implement [custom transports](#custom-transports) in a pluggable fashion.
 
 
-[​](#stdio)
-
 stdio
 
 In the **stdio** transport:
@@ -33,16 +31,12 @@ In the **stdio** transport:
 - The client **MUST NOT** write anything to the server’s `stdin` that is not a valid MCP message.
 
 
-[​](#streamable-http)
-
 Streamable HTTP
 
 This replaces the [HTTP+SSE transport](/specification/2024-11-05/basic/transports#http-with-sse) from protocol version 2024-11-05. See the [backwards compatibility](#backwards-compatibility) guide below.
 
 In the **Streamable HTTP** transport, the server operates as an independent process that can handle multiple client connections. This transport uses HTTP POST and GET requests. Server can optionally make use of [Server-Sent Events](https://en.wikipedia.org/wiki/Server-sent_events) (SSE) to stream multiple server messages. This permits basic MCP servers, as well as more feature-rich servers supporting streaming and server-to-client notifications and requests. The server **MUST** provide a single HTTP endpoint path (hereafter referred to as the **MCP endpoint**) that supports both POST and GET methods. For example, this could be a URL like `https://example.com/mcp`.
 
-
-[​](#security-warning)
 
 Security Warning
 
@@ -55,8 +49,6 @@ When implementing Streamable HTTP transport:
 
 Without these protections, attackers could use DNS rebinding to interact with local MCP servers from remote websites.
 
-
-[​](#sending-messages-to-the-server)
 
 Sending Messages to the Server
 
@@ -83,8 +75,6 @@ Every JSON-RPC message sent from the client **MUST** be a new HTTP POST request 
       - To avoid message loss due to disconnection, the server **MAY** make the stream [resumable](#resumability-and-redelivery).
 
 
-[​](#listening-for-messages-from-the-server)
-
 Listening for Messages from the Server
 
 1.  The client **MAY** issue an HTTP GET to the MCP endpoint. This can be used to open an SSE stream, allowing the server to communicate to the client, without the client first sending data via HTTP POST.
@@ -99,16 +89,12 @@ Listening for Messages from the Server
     - The client **MAY** close the SSE stream at any time.
 
 
-[​](#multiple-connections)
-
 Multiple Connections
 
 1.  The client **MAY** remain connected to multiple SSE streams simultaneously.
 2.  The server **MUST** send each of its JSON-RPC messages on only one of the connected streams; that is, it **MUST NOT** broadcast the same message across multiple streams.
     - The risk of message loss **MAY** be mitigated by making the stream [resumable](#resumability-and-redelivery).
 
-
-[​](#resumability-and-redelivery)
 
 Resumability and Redelivery
 
@@ -124,8 +110,6 @@ To support resuming broken connections, and redelivering messages that might oth
 
 In other words, these event IDs should be assigned by servers on a *per-stream* basis, to act as a cursor within that particular stream.
 
-
-[​](#session-management)
 
 Session Management
 
@@ -143,19 +127,13 @@ An MCP “session” consists of logically related interactions between a client
     - The server **MAY** respond to this request with HTTP 405 Method Not Allowed, indicating that the server does not allow clients to terminate sessions.
 
 
-[​](#sequence-diagram)
-
 Sequence Diagram
 
-
-[​](#protocol-version-header)
 
 Protocol Version Header
 
 If using HTTP, the client **MUST** include the `MCP-Protocol-Version: <protocol-version>` HTTP header on all subsequent requests to the MCP server, allowing the MCP server to respond based on the MCP protocol version. For example: `MCP-Protocol-Version: 2025-11-25` The protocol version sent by the client **SHOULD** be the one [negotiated during initialization](/specification/2025-11-25/basic/lifecycle#version-negotiation). For backwards compatibility, if the server does *not* receive an `MCP-Protocol-Version` header, and has no other way to identify the version - for example, by relying on the protocol version negotiated during initialization - the server **SHOULD** assume protocol version `2025-03-26`. If the server receives a request with an invalid or unsupported `MCP-Protocol-Version`, it **MUST** respond with `400 Bad Request`.
 
-
-[​](#backwards-compatibility)
 
 Backwards Compatibility
 
@@ -173,8 +151,6 @@ Clients and servers can maintain backwards compatibility with the deprecated [HT
       - Issue a GET request to the server URL, expecting that this will open an SSE stream and return an `endpoint` event as the first event.
       - When the `endpoint` event arrives, the client can assume this is a server running the old HTTP+SSE transport, and should use that transport for all subsequent communication.
 
-
-[​](#custom-transports)
 
 Custom Transports
 

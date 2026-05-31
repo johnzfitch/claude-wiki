@@ -1,8 +1,9 @@
 ---
+title: "Use Claude Code with Chrome (beta) - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/chrome"
 category: "03-IDE-Integrations"
 fetched_at: "2026-05-19T21:22:26Z"
-source_url: "https://code.claude.com/docs/en/chrome"
-title: "Use Claude Code with Chrome (beta) - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Use Claude Code with Chrome (beta)
@@ -22,8 +23,6 @@ Claude Code integrates with the [Claude in Chrome browser extension](https://chr
 Chrome integration is in beta and currently works with Google Chrome and Microsoft Edge. It is not yet supported on Brave, Arc, or other Chromium-based browsers. WSL (Windows Subsystem for Linux) is also not supported.
 
 
-[​](#capabilities)
-
 Capabilities
 
 With Chrome connected, you can chain browser actions with coding tasks in a single workflow:
@@ -37,8 +36,6 @@ With Chrome connected, you can chain browser actions with coding tasks in a sing
 - **Session recording**: record browser interactions as GIFs to document or share what happened
 
 
-[​](#prerequisites)
-
 Prerequisites
 
 Before using Claude Code with Chrome, you need:
@@ -50,8 +47,6 @@ Before using Claude Code with Chrome, you need:
 
 Chrome integration is not available through third-party providers like Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry. If you access Claude exclusively through a third-party provider, you need a separate claude.ai account to use this feature.
 
-
-[​](#get-started-in-the-cli)
 
 Get started in the CLI
 
@@ -83,8 +78,6 @@ type "hooks", and tell me what results appear
 Run `/chrome` at any time to check the connection status, manage permissions, or reconnect the extension. For VS Code, see [browser automation in VS Code](/docs/en/vs-code#automate-browser-tasks-with-chrome).
 
 
-[​](#enable-chrome-by-default)
-
 Enable Chrome by default
 
 To avoid passing `--chrome` each session, run `/chrome` and select “Enabled by default”. In the [VS Code extension](/docs/en/vs-code#automate-browser-tasks-with-chrome), Chrome is available whenever the Chrome extension is installed. No additional flag is needed.
@@ -92,21 +85,15 @@ To avoid passing `--chrome` each session, run `/chrome` and select “Enabled by
 Enabling Chrome by default in the CLI increases context usage since browser tools are always loaded. If you notice increased context consumption, disable this setting and use `--chrome` only when needed.
 
 
-[​](#manage-site-permissions)
-
 Manage site permissions
 
 Site-level permissions are inherited from the Chrome extension. Manage permissions in the Chrome extension settings to control which sites Claude can browse, click, and type on.
 
 
-[​](#example-workflows)
-
 Example workflows
 
 These examples show common ways to combine browser actions with coding tasks. Run `/mcp` and select `claude-in-chrome` to see the full list of available browser tools.
 
-
-[​](#test-a-local-web-application)
 
 Test a local web application
 
@@ -121,8 +108,6 @@ messages appear correctly?
 Claude navigates to your local server, interacts with the form, and reports what it observes.
 
 
-[​](#debug-with-console-logs)
-
 Debug with console logs
 
 Claude can read console output to help diagnose problems. Tell Claude what patterns to look for rather than asking for all console output, since logs can be verbose:
@@ -134,8 +119,6 @@ the page loads.
 
 Claude reads the console messages and can filter for specific patterns or error types.
 
-
-[​](#automate-form-filling)
 
 Automate form filling
 
@@ -150,8 +133,6 @@ name, email, and phone fields.
 Claude reads your local file, navigates the web interface, and enters the data for each record.
 
 
-[​](#draft-content-in-google-docs)
-
 Draft content in Google Docs
 
 Use Claude to write directly in your documents without API setup:
@@ -164,8 +145,6 @@ Google Doc at docs.google.com/document/d/abc123
 Claude opens the document, clicks into the editor, and types the content. This works with any web app you’re logged into: Gmail, Notion, Sheets, and more.
 
 
-[​](#extract-data-from-web-pages)
-
 Extract data from web pages
 
 Pull structured information from websites:
@@ -177,8 +156,6 @@ availability for each item. Save the results as a CSV file.
 
 Claude navigates to the page, reads the content, and compiles the data into a structured format.
 
-
-[​](#run-multi-site-workflows)
 
 Run multi-site workflows
 
@@ -193,8 +170,6 @@ about what they do.
 Claude works across tabs to gather information and complete the workflow.
 
 
-[​](#record-a-demo-gif)
-
 Record a demo GIF
 
 Create shareable recordings of browser interactions:
@@ -207,12 +182,8 @@ an item to the cart through to the confirmation page.
 Claude records the interaction sequence and saves it as a GIF file.
 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
-
-[​](#extension-not-detected)
 
 Extension not detected
 
@@ -237,8 +208,6 @@ For Edge:
 - **Windows**: check `HKCU\Software\Microsoft\Edge\NativeMessagingHosts\` in the Windows Registry
 
 
-[​](#browser-not-responding)
-
 Browser not responding
 
 If Claude’s browser commands stop working:
@@ -248,14 +217,10 @@ If Claude’s browser commands stop working:
 3.  Restart the Chrome extension by disabling and re-enabling it in `chrome://extensions`
 
 
-[​](#connection-drops-during-long-sessions)
-
 Connection drops during long sessions
 
 The Chrome extension’s service worker can go idle during extended sessions, which breaks the connection. If browser tools stop working after a period of inactivity, run `/chrome` and select “Reconnect extension”.
 
-
-[​](#windows-specific-issues)
 
 Windows-specific issues
 
@@ -264,8 +229,6 @@ On Windows, you may encounter:
 - **Named pipe conflicts (EADDRINUSE)**: if another process is using the same named pipe, restart Claude Code. Close any other Claude Code sessions that might be using Chrome.
 - **Native messaging host errors**: if the native messaging host crashes on startup, try reinstalling Claude Code to regenerate the host configuration.
 
-
-[​](#common-error-messages)
 
 Common error messages
 
@@ -279,8 +242,6 @@ These are the most frequently encountered errors and how to resolve them:
 | ”Receiving end does not exist”       | Extension service worker went idle               | Run `/chrome` and select “Reconnect extension”                  |
 
 
-[​](#see-also)
-
 See also
 
 - [Computer use](/docs/en/computer-use): control native macOS apps when a task can’t be done in a browser
@@ -288,4 +249,4 @@ See also
 - [CLI reference](/docs/en/cli-reference): command-line flags including `--chrome`
 - [Common workflows](/docs/en/common-workflows): more ways to use Claude Code
 - [Data and privacy](/docs/en/data-usage): how Claude Code handles your data
-- [Getting started with Claude in Chrome](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome): full documentation for the Chrome extension, including shortcuts, scheduling, and permissions
+- [Getting started with Claude in Chrome](../15-Claude-AI-Features/getting-started-with-claude-in-chrome.md): full documentation for the Chrome extension, including shortcuts, scheduling, and permissions

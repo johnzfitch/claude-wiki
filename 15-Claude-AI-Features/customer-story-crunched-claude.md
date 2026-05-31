@@ -65,7 +65,7 @@ Video caption
 Prev
 
 
-[Crunched](https://www.usecrunched.com/) is an AI Excel analyst built for Excel power users, serving management consulting, investment banking, private equity, and investment firms. 
+[Crunched](https://www.usecrunched.com/) is an AI Excel analyst built for Excel power users, serving management consulting, investment banking, private equity, and investment firms. 
 
 ## With Claude, Crunched:
 
@@ -116,7 +116,7 @@ Transactions happen under tight deadlines with finite resources. Senior dealmake
 
 With Claude Opus 4.5, Crunched enables this economically useful work that was previously cost-prohibitive. The pattern extends across project and deal types. Private equity teams bring full analytical rigor to early-stage deals that previously only received deep analysis at later stages. Investment bankers run additional scenarios that strengthen client recommendations. The ability to economically pursue inherently valuable analyses earlier and more comprehensively resonates with senior dealmakers across finance and consulting.
 
-“We're fundamentally changing how power users work in Excel,"  Borge said, "Automating all  grunt work, one pain point at a time, tailoring Crunched to each firms' specific needs."
+“We're fundamentally changing how power users work in Excel,"  Borge said, "Automating all  grunt work, one pain point at a time, tailoring Crunched to each firms' specific needs."
 
 "Anthropic allowed us to be more specific in the workflows we tailor to, delivering higher time savings."
 

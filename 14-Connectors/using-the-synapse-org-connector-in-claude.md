@@ -412,8 +412,8 @@ Learn about [finding and connecting tools](../15-Claude-AI-Features/browsing-and
 
 **For Claude Code Users**
 
-1.  Command: `/plugin marketplace add anthropics/life-sciences`‍
-2.  Command: `/plugin install synapse@life-sciences`‍
+1.  Command: `/plugin marketplace add anthropics/life-sciences`
+2.  Command: `/plugin install synapse@life-sciences`
 3.  Restart Claude Code
 4.  Verify that the server is connected with `/mcp`
 
@@ -435,7 +435,7 @@ Technical details of the Synapse.org integration can be found in [Synapse’s MC
   - *“What's the processing history for file syn51543273?”*
   - *“Show me the data lineage and upstream dependencies for the dataset syn68719289”*
 
-‍
+
 
 ## Related tutorials
 

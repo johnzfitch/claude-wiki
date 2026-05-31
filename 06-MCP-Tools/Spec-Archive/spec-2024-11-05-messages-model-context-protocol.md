@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 All messages in MCP **MUST** follow the [JSON-RPC 2.0](https://www.jsonrpc.org/specification) specification. The protocol defines three types of messages:
 
 
-[​](#requests)
-
 Requests
 
 Requests are sent from the client to the server or vice versa.
@@ -35,8 +33,6 @@ Copy
 - Unlike base JSON-RPC, the ID **MUST NOT** be `null`.
 - The request ID **MUST NOT** have been previously used by the requestor within the same session.
 
-
-[​](#responses)
 
 Responses
 
@@ -63,8 +59,6 @@ Copy
 - Either a `result` or an `error` **MUST** be set. A response **MUST NOT** set both.
 - Error codes **MUST** be integers.
 
-
-[​](#notifications)
 
 Notifications
 

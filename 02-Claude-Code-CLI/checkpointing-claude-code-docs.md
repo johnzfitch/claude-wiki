@@ -15,14 +15,10 @@ Track, rewind, and summarize Claude’s edits and conversation to manage session
 Claude Code automatically tracks Claude’s file edits as you work, allowing you to quickly undo changes and rewind to previous states if anything gets off track.
 
 
-[​](#how-checkpoints-work)
-
 How checkpoints work
 
 As you work with Claude, checkpointing automatically captures the state of your code before each edit. This safety net lets you pursue ambitious, wide-scale tasks knowing you can always return to a prior code state.
 
-
-[​](#automatic-tracking)
 
 Automatic tracking
 
@@ -32,8 +28,6 @@ Claude Code tracks all changes made by its file editing tools:
 - Checkpoints persist across sessions, so you can access them in resumed conversations
 - Automatically cleaned up along with sessions after 30 days (configurable)
 
-
-[​](#rewind-and-summarize)
 
 Rewind and summarize
 
@@ -47,8 +41,6 @@ Press `Esc` twice (`Esc` + `Esc`) or use the `/rewind` command to open the rewin
 
 After restoring the conversation or summarizing, the original prompt from the selected message is restored into the input field so you can re-send or edit it.
 
-
-[​](#restore-vs-summarize)
 
 Restore vs. summarize
 
@@ -64,8 +56,6 @@ This is similar to `/compact`, but targeted: instead of summarizing the entire c
 Summarize keeps you in the same session and compresses context. If you want to branch off and try a different approach while preserving the original session intact, use [fork](/docs/en/how-claude-code-works#resume-or-fork-sessions) instead (`claude --continue --fork-session`).
 
 
-[​](#common-use-cases)
-
 Common use cases
 
 Checkpoints are particularly useful when:
@@ -76,12 +66,8 @@ Checkpoints are particularly useful when:
 - **Freeing context space**: summarize a verbose debugging session from the midpoint forward, keeping your initial instructions intact
 
 
-[​](#limitations)
-
 Limitations
 
-
-[​](#bash-command-changes-not-tracked)
 
 Bash command changes not tracked
 
@@ -96,14 +82,10 @@ cp source.txt dest.txt
 These file modifications cannot be undone through rewind. Only direct file edits made through Claude’s file editing tools are tracked.
 
 
-[​](#external-changes-not-tracked)
-
 External changes not tracked
 
 Checkpointing only tracks files that have been edited within the current session. Manual changes you make to files outside of Claude Code and edits from other concurrent sessions are normally not captured, unless they happen to modify the same files as the current session.
 
-
-[​](#not-a-replacement-for-version-control)
 
 Not a replacement for version control
 
@@ -113,8 +95,6 @@ Checkpoints are designed for quick, session-level recovery. For permanent versio
 - Checkpoints complement but don’t replace proper version control
 - Think of checkpoints as “local undo” and Git as “permanent history”
 
-
-[​](#see-also)
 
 See also
 

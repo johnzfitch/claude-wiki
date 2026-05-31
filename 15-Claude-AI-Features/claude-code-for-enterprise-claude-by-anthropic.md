@@ -72,7 +72,7 @@ Read story
 
 89%
 
-employee adoption, 800+ AI agents deployed, 10x app usage growth 
+employee adoption, 800+ AI agents deployed, 10x app usage growth 
 
 Read story
 
@@ -171,7 +171,7 @@ Terminal, desktop, any IDE, Slack, or web. Claude Code fits into your team's exi
 
 Claude searches your whole codebase, not just the open file. That full context is what enables [legacy codebase migration](https://claude.com/solutions/code-modernization), debugging across files, and meaningful code reviews.
 
-### Built on the best models 
+### Built on the best models 
 
 Claude consistently leads coding benchmarks. As our models improve, your team gets the benefit automatically with no workflow changes, no migrations, and no retraining.
 
@@ -311,7 +311,7 @@ Trusted by engineering teams at leading global organizations
 
 Already using Amazon Bedrock, Google Vertex AI, or Microsoft Foundry?
 
-You can configure Claude Code to work with third party API keys. 
+You can configure Claude Code to work with third party API keys. 
 
 Read API docs
 

@@ -37,7 +37,7 @@ Your organization determines which Claude services and features you can access i
 The use of your Claude for Education plan account is governed by the agreement between Anthropic and your university. Please contact your Claude for Education administrator for details of this agreement.
 
 While Anthropic’s [Privacy Policy](https://www.anthropic.com/legal/privacy) describes how we collect, use and share personal information when acting as a data controller in providing the Claude services to your university, please note that the Anthropic [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) and [Privacy Policy](https://www.anthropic.com/legal/privacy) do not apply to the use of the Claude for Education plan where Anthropic acts as the data processor.\
-​
+
 
 ## Organizational Policies
 

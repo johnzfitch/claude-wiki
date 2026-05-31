@@ -28,14 +28,10 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 *A short (~200 word) description of the technical issue being addressed.* In [SEP-994](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1002), we introduced a notion of “Working Groups” and “Interest Groups” that facilitate MCP sub-communities for discussion and collaboration. This SEP aims to formally define those two terms: what they are meant to achieve, how groups can be created, how they are governed, and how they can be retired. Interest Groups work to define *problems* that MCP should solve by facilitating *discussions*, while Working Groups push forward specific *solutions* by collaboratively producing *deliverables* (in the form of SEPs or community-owned implementations of the specification). Interest Group input is a welcome (but not required) justification for creation of a Working Group. Interest Group or Working Group input is collectively a welcome (but not required) input into a SEP.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -58,14 +54,10 @@ These groups exist to:
 It will also form the foundation for cross-group initiatives, such as maintaining a calendar of live meetings.
 
 
-[​](#specification)
-
 Specification
 
 *The technical specification should describe the syntax and semantics of any new protocol feature. The specification should be detailed enough to allow competing, interoperable implementations. A PR with the changes to the specification should be provided.*
 
-
-[​](#interest-groups-ig-problems)
 
 Interest Groups (IG) \[Problems\]
 
@@ -103,8 +95,6 @@ Interest Groups (IG) \[Problems\]
 There is no requirement to be part of an IG to start a WG, or even to start a SEP. However, forming consensus in IG’s to support justifying the creation of a WG is often a good idea. Similarly, citing IG or WG support of a SEP helps the SEP as well.
 
 
-[​](#working-groups-wg-solutions)
-
 Working Groups (WG) \[Solutions\]
 
 **Goal**: facilitate MCP community collaboration on a specific SEP, themed series of SEPs, or officially endorsed Project. **Expectations**:
@@ -138,28 +128,20 @@ Working Groups (WG) \[Solutions\]
 - First Issue/PR/SEP you intend to procure
 
 
-[​](#wg/ig-facilitators)
-
 WG/IG Facilitators
 
 A “Facilitator” role in a WG or IG does *not* result in a [maintainership role](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md) across the MCP organization. It is an informal role into which anyone can self-nominate, responsible for helping shepherd discussions and collaboration within the group. Core Maintainers reserve the right to modify the list of Facilitators and Maintainers for any WG/IG at any time. PR for the changes to our documentation we’d want to enact this SEP: [https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1350](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1350)
 
-
-[​](#rationale)
 
 Rationale
 
 *The rationale explains why particular design decisions were made. It should describe alternate designs that were considered and related work. The rationale should provide evidence of consensus within the community and discuss important objections or concerns raised during discussion.* The design above comes from experience in facilitating the creation of + observing the behavior of informal “Community Working Groups” in the CWG Discord, and leading one of / participating in / observing the “Steering Committee Working Groups”. While the Steering WG’s were usually informally created by Lead Maintainers, the CWG Discord had a lightweight WG-creation process that involved similar steps to the proposal above (community members would propose WG’s in \#working-group-ideation, and moderators would create channels from that collaboration). As precedent, the WG and IG concepts here are similar to W3C’s notion of [Working Groups](https://www.w3.org/groups/wg/) and [Interest Groups](https://www.w3.org/groups/ig/).
 
 
-[​](#considerations)
-
 Considerations
 
 In proposing the WG/IG design, we took the following into consideration:
 
-
-[​](#clear-on-ramp-for-community-involvement)
 
 Clear on-ramp for community involvement
 
@@ -171,82 +153,58 @@ A very common question for folks looking to invest in the MCP ecosystem is, “h
 4.  Do this for a period of time, get noticed by WG maintainers to get nominated as a new maintainer.
 
 
-[​](#minimal-changes-to-existing-governance-structure)
-
 Minimal changes to existing governance structure
 
 We did not want this change to introduce new elections, appointments, or other notions of leadership. We leverage community moderators to thumbs-up creation of new groups, allow core maintainers to veto, maintainership status stays unchanged, and the notion of “facilitator” is new but self-nominated, so does not introduce any new governance processes.
 
-
-[​](#alignment-with-current-status-quo)
 
 Alignment with current status quo
 
 There is a clear “migration” path for the existing “CWG” working groups and Steering working groups - just a matter of sorting out what is “working” vs. “interest”, but functionally this proposal stays out of the way of changing anything that has been working within each group’s existing structure.
 
 
-[​](#nature-of-requests-for-gathering-spaces)
-
 Nature of requests for gathering spaces
 
 It has been clear from the requests to CWG that some groups form with a motivation to collaborate on some deliverable (e.g. `search-tools`), and others form due to common interests and a want for sub-community but not yet specific deliverables (e.g. `enterprise`). Hence, we separate the motivations into Working Groups vs. Interest Groups.
 
-
-[​](#potential-for-overlap-in-scope)
 
 Potential for overlap in scope
 
 In the requests for new group spaces, it is sometimes non-obvious why a new one needs to exist. For example, the stated motivation for `enterprise` at times sounded like it may just be another flavor of `hosting`. We ultimately settled on a distinction that made it clear one was not a direct subset of the other, but the concern of making clear boundaries between groups (and letting community moderators / maintainers centralize the decision-making around “what are the right layers of abstraction”) is what led to the questions in the creation templates around e.g. “flag potential overlap with other IG’s”.
 
 
-[​](#path-to-retiring-stale-groups)
-
 Path to retiring stale groups
 
 Many working groups in the old CWG and Steering models have gone stale since creation. They serve no real purpose and should be retired. For this, we introduce the formal concept of facilitators and optional maintainers in groups; and the community moderator right to retire them. By having at least informal leadership in place per group, a moderator can easily make the decision to retire a group if everyone is in agreement to proceed.
 
 
-[​](#alternatives-considered)
-
 Alternatives Considered
 
-
-[​](#hierarchy-between-igs-and-wgs)
 
 Hierarchy between IGs and WGs
 
 We considered *requiring* that WGs be owned or spawned by a “sponsor” IG, for the purpose of more clearly exhibiting a progression of ideas to the community; but decided against this requiring to avoid adding a new layer of governance and alignment with how the less formal groups works today.
 
 
-[​](#a-single-wg-concept-instead-of-both-wg-and-ig)
-
 A single WG concept (instead of both WG and IG)
 
 There has been regular tension in both CWG and the Steering group around the question of “is XYZ really a working group? how will maintainership work?” By making IG’s explicitly discussion-oriented and maintainership involvement optional, we create a space to drive those discussions without requiring some formal expectation of deliverables like we might in a well-defined WG.
 
-
-[​](#free-for-all-wg/ig-creation-process)
 
 Free-for-all WG/IG creation process
 
 While very community-driven, the concern of group overlap would quickly fragment the conversations and collaboration to an untenable level; we need a centralized point of discernment here.
 
 
-[​](#backward-compatibility)
-
 Backward Compatibility
 
 *All SEPs that introduce backward incompatibilities must include a section describing these incompatibilities and their severity. The SEP must explain how the author proposes to deal with these incompatibilities.* There is no major change suggested in the day to day of existing groups - the expectations laid out of IGs and WGs are easily met by existing active groups as long as they keep doing as they are doing. A migration path for all groups is laid out below.
 
 
-[​](#reference-implementation)
-
 Reference Implementation
 
 *The reference implementation must be completed before any SEP is given status “Final”, but it need not be completed before the SEP is accepted. While there is merit to the approach of reaching consensus on the specification and rationale before writing code, the principle of “rough consensus and running code” is still useful when it comes to resolving many discussions of protocol details.* The below is the suggested migration path for each group. “Migration” just involves acknowledgement of this SEP and the expectations of each group, plus methodology for possible eventual retirement (or immediate retirement, in some cases). After this SEP is approved, we can ping each of the groups to confirm they are on board with the migration plan.
 
-
-[​](#steering-working-groups)
 
 Steering Working Groups
 
@@ -264,8 +222,6 @@ Steering Working Groups
 - Server Identity —\> Working Group
 - Governance —\> Working Group (or Retire if no more work here?)
 
-
-[​](#community-working-groups)
 
 Community Working Groups
 

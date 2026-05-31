@@ -19,8 +19,6 @@ The [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth) cont
 Source code, specifications, and reference implementations for MCP authorization extensions.
 
 
-[​](#why-authorization-extensions)
-
 Why authorization extensions?
 
 The core MCP specification includes a robust [authorization framework](/specification/latest/basic/authorization) built on OAuth 2.0. That framework handles the common case well: a user interactively grants an MCP client permission to access a server on their behalf. But not every MCP deployment fits this pattern:
@@ -30,8 +28,6 @@ The core MCP specification includes a robust [authorization framework](/specific
 
 The ext-auth extensions address these gaps.
 
-
-[​](#available-extensions)
 
 Available extensions
 
@@ -46,8 +42,6 @@ Machine-to-machine authentication using the OAuth 2.0 client credentials flow. N
 Centralized access control via enterprise identity providers. Employees access MCP servers through their organization’s IdP.
 
 
-[​](#choosing-the-right-extension)
-
 Choosing the right extension
 
 | Scenario | Recommended extension |
@@ -60,14 +54,10 @@ Choosing the right extension
 | Standard interactive user authorization | Core MCP spec (no extension needed) |
 
 
-[​](#client-support)
-
 Client support
 
 Authorization extension support varies by client. See the [client matrix](/extensions/client-matrix) for a full breakdown. Both extensions require explicit support from the MCP client — they are never active by default.
 
-
-[​](#specification)
 
 Specification
 

@@ -268,7 +268,7 @@ Economic and institutional context—such as how education levels vary within a 
 
 ### How humans prompt is how Claude responds
 
-We find a very high correlation between human and AI education, i.e. the number of years of education required to understand a human prompt or the AI’s response (countries: *r* = 0.925, *p* \< 0.001, *N* = 117; US states: *r* = 0.928, *p* \< 0.001, *N* = 50). This highlights the importance of skills and suggests that how humans prompt the AI determines how effective it can be. This also highlights the importance of model design and training. While Claude is able to respond in a highly sophisticated manner, it tends to do so only when users input sophisticated prompts.
+We find a very high correlation between human and AI education, i.e. the number of years of education required to understand a human prompt or the AI’s response (countries: *r* = 0.925, *p* \< 0.001, *N* = 117; US states: *r* = 0.928, *p* \< 0.001, *N* = 50). This highlights the importance of skills and suggests that how humans prompt the AI determines how effective it can be. This also highlights the importance of model design and training. While Claude is able to respond in a highly sophisticated manner, it tends to do so only when users input sophisticated prompts.
 
 How models are trained, fine-tuned and instructed affects how they respond to users. For example, one AI model could have a system prompt that instructs it to always use simple language that a middle school student could understand, whereas another AI model may only respond in complex language that would require a PhD education to understand. For Claude, we observe a more dynamic pattern where how the user prompts Claude relates to how Claude responds.
 

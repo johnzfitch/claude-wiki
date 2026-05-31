@@ -1,8 +1,9 @@
 ---
+title: "LLM gateway configuration - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/llm-gateway"
 category: "13-Enterprise-Admin"
 fetched_at: "2026-05-19T21:22:51Z"
-source_url: "https://code.claude.com/docs/en/llm-gateway"
-title: "LLM gateway configuration - Claude Code Docs"
+tags: ["claude-code", "enterprise"]
 ---
 
 # LLM gateway configuration
@@ -25,8 +26,6 @@ LLM gateways provide a centralized proxy layer between Claude Code and model pro
 - **Audit logging** - Track all model interactions for compliance
 - **Model routing** - Switch between providers without code changes
 
-
-[​](#gateway-requirements)
 
 Gateway requirements
 
@@ -54,19 +53,13 @@ Claude Code determines which features to enable based on the API format. When us
 Both agent ID headers are ephemeral per-spawn identifiers, not persistent user or device IDs. Claude Code also prepends a short attribution block to the system prompt containing the client version and a fingerprint derived from the conversation. The Anthropic API strips this block before processing, so it does not affect first-party prompt caching. If your gateway implements its own prompt cache keyed on the full request body, set [`CLAUDE_CODE_ATTRIBUTION_HEADER=0`](/docs/en/env-vars) to omit it.
 
 
-[​](#configuration)
-
 Configuration
 
-
-[​](#model-selection)
 
 Model selection
 
 By default, Claude Code uses standard model names for the selected API format. When `ANTHROPIC_BASE_URL` points at a gateway that exposes the Anthropic Messages format, Claude Code can query the gateway’s `/v1/models` endpoint at startup and add the returned models to the `/model` picker. Set `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` to enable this. Discovery is off by default so that gateways backed by a shared API key do not surface every model the key can access to every user. Each discovered entry is labeled “From gateway” and uses the `display_name` field from the response when one is provided. This requires Claude Code v2.1.129 or later. Discovery applies only to the Anthropic Messages format. It does not run for Bedrock or Vertex pass-through endpoints, and it does not run when `ANTHROPIC_BASE_URL` is unset or points at `api.anthropic.com`. The discovery request authenticates the same way as inference requests: it sends `ANTHROPIC_AUTH_TOKEN` as a bearer token, or `ANTHROPIC_API_KEY` as the `x-api-key` header when no auth token is set, along with any headers from `ANTHROPIC_CUSTOM_HEADERS`. Only models whose ID begins with `claude` or `anthropic` are added to the picker. Results are cached to `~/.claude/cache/gateway-models.json` and refreshed on each startup. If the request fails or the gateway does not implement `/v1/models`, the picker falls back to the cached list from the previous startup or to the built-in model list. If your gateway uses model names that do not match the discovery filter, use the environment variables documented in [Model configuration](/docs/en/model-config) to add them manually.
 
-
-[​](#litellm-configuration)
 
 LiteLLM configuration
 
@@ -79,8 +72,6 @@ LiteLLM PyPI versions 1.82.7 and 1.82.8 were compromised with credential-stealin
 LiteLLM is a third-party proxy service. Anthropic doesn’t endorse, maintain, or audit LiteLLM’s security or functionality. This guide is provided for informational purposes and may become outdated. Use at your own discretion.
 
 
-[​](#prerequisites)
-
 Prerequisites
 
 - Claude Code updated to the latest version
@@ -88,14 +79,10 @@ Prerequisites
 - Access to Claude models through your chosen provider
 
 
-[​](#basic-litellm-setup)
-
 Basic LiteLLM setup
 
 **Configure Claude Code**:
 
-
-[​](#authentication-methods)
 
 Authentication methods
 
@@ -155,8 +142,6 @@ export CLAUDE_CODE_API_KEY_HELPER_TTL_MS=3600000
 This value will be sent as `Authorization` and `X-Api-Key` headers. The `apiKeyHelper` has lower precedence than `ANTHROPIC_AUTH_TOKEN` or `ANTHROPIC_API_KEY`.
 
 
-[​](#unified-endpoint-recommended)
-
 Unified endpoint (recommended)
 
 Using LiteLLM’s [Anthropic format endpoint](https://docs.litellm.ai/docs/anthropic_unified):
@@ -171,8 +156,6 @@ export ANTHROPIC_BASE_URL=https://litellm-server:4000
 - Fallbacks
 - Consistent support for cost tracking and end-user tracking
 
-
-[​](#provider-specific-pass-through-endpoints-alternative)
 
 Provider-specific pass-through endpoints (alternative)
 
@@ -219,8 +202,6 @@ export CLAUDE_CODE_USE_ANTHROPIC_AWS=1
 
 For more detailed information, refer to the [LiteLLM documentation](https://docs.litellm.ai/).
 
-
-[​](#additional-resources)
 
 Additional resources
 

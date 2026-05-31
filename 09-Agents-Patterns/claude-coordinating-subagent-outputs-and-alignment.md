@@ -88,7 +88,7 @@ Synthesize subagent outputs. Surface divergence (reasoning + locations). If devi
 
 ## User
 
-Okay interesting but not quite what we're after.  Say it a simple way, subagents are not long for the world they get spawned into.
+Okay interesting but not quite what we're after.  Say it a simple way, subagents are not long for the world they get spawned into.
 
 ## Assistant
 

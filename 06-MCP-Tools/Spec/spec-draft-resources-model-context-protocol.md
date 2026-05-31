@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that provides context to language models, such as files, database schemas, or application-specific information. Each resource is uniquely identified by a [URI](https://datatracker.ietf.org/doc/html/rfc3986).
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Resources in MCP are designed to be **application-driven**, with host applications determining how to incorporate context based on their needs. For example, applications could:
@@ -24,8 +22,6 @@ Resources in MCP are designed to be **application-driven**, with host applicatio
 
 However, implementations are free to expose resources through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -86,12 +82,8 @@ Copy
 ```
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#listing-resources)
 
 Listing Resources
 
@@ -141,8 +133,6 @@ Copy
 ```
 
 
-[​](#reading-resources)
-
 Reading Resources
 
 To retrieve resource contents, clients send a `resources/read` request: **Request:**
@@ -182,8 +172,6 @@ Copy
 
 Alternatively, if the scheme of `uri` is `https://`, clients may fetch the resource directly from the web. See the [Common URI Schemes section](#https%3A%2F%2F) for more information.
 
-
-[​](#resource-templates)
 
 Resource Templates
 
@@ -233,8 +221,6 @@ Copy
 ```
 
 
-[​](#list-changed-notification)
-
 List Changed Notification
 
 When the list of available resources changes, servers that declared the `listChanged` capability **SHOULD** send a notification:
@@ -248,8 +234,6 @@ Copy
 }
 ```
 
-
-[​](#subscriptions)
 
 Subscriptions
 
@@ -283,17 +267,11 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
 
-[​](#data-types)
-
 Data Types
 
-
-[​](#resource)
 
 Resource
 
@@ -308,14 +286,10 @@ A resource definition includes:
 - `size`: Optional size in bytes
 
 
-[​](#resource-contents)
-
 Resource Contents
 
 Resources can contain either text or binary data:
 
-
-[​](#text-content)
 
 Text Content
 
@@ -330,8 +304,6 @@ Copy
 ```
 
 
-[​](#binary-content)
-
 Binary Content
 
 Copy
@@ -344,8 +316,6 @@ Copy
 }
 ```
 
-
-[​](#annotations)
 
 Annotations
 
@@ -380,42 +350,30 @@ Clients can use these annotations to:
 - Display modification times or sort by recency
 
 
-[​](#common-uri-schemes)
-
 Common URI Schemes
 
 The protocol defines several standard URI schemes. This list is not exhaustive—implementations are always free to use additional, custom URI schemes.
 
-
-[​](#https//)
 
 https://
 
 Used to represent a resource available on the web. Servers **SHOULD** use this scheme only when the client is able to fetch and load the resource directly from the web on its own—that is, it doesn’t need to read the resource via the MCP server. For other use cases, servers **SHOULD** prefer to use another URI scheme, or define a custom one, even if the server will itself be downloading resource contents over the internet.
 
 
-[​](#file//)
-
 file://
 
 Used to identify resources that behave like a filesystem. However, the resources do not need to map to an actual physical filesystem. MCP servers **MAY** identify file:// resources with an [XDG MIME type](https://specifications.freedesktop.org/shared-mime-info-spec/0.14/ar01s02.html#id-1.3.14), like `inode/directory`, to represent non-regular files (such as directories) that don’t otherwise have a standard MIME type.
 
-
-[​](#git//)
 
 git://
 
 Git version control integration.
 
 
-[​](#custom-uri-schemes)
-
 Custom URI Schemes
 
 Custom URI schemes **MUST** be in accordance with [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986), taking the above guidance in to account.
 
-
-[​](#error-handling)
 
 Error Handling
 
@@ -442,8 +400,6 @@ Copy
 }
 ```
 
-
-[​](#security-considerations)
 
 Security Considerations
 

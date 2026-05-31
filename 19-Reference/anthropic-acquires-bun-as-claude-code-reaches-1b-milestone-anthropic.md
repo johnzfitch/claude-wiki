@@ -22,7 +22,7 @@ Since becoming generally available in May 2025, Claude Code has grown from its o
 
 As developers increasingly build with AI, the underlying infrastructure matters more than ever—and Bun has emerged as an essential tool. Bun gets more than 7 million monthly downloads, has earned over 82,000 stars on GitHub, and has been adopted by companies like Midjourney and Lovable to increase speed and productivity.
 
-The decision to acquire Bun is in line with our strategic, disciplined approach to acquisitions: we will continue to pursue opportunities that bolster our technical excellence, reinforce our strength as the leader in enterprise AI, and most importantly, align with our principles and mission. 
+The decision to acquire Bun is in line with our strategic, disciplined approach to acquisitions: we will continue to pursue opportunities that bolster our technical excellence, reinforce our strength as the leader in enterprise AI, and most importantly, align with our principles and mission. 
 
 Bun will be instrumental in helping us build the infrastructure for the next generation of software. Together, we will continue to make Claude the platform of choice for coders and anyone who relies on AI for important work. Bun will remain open source and MIT-licensed, and we will continue to invest in making it the runtime, bundler, package manager, and test runner of choice for JavaScript and TypeScript developers.
 

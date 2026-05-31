@@ -68,7 +68,7 @@ Prev
 
 Binti is a technology company helping child welfare agencies modernize how they support children and families—so that every child can have a family. The company supports over 550 agencies across 36 states, serving 47% of children in care. Binti partners with state, county, and private child welfare agencies to streamline complex child welfare processes. By integrating Claude into their platform, Binti helps social workers make more informed decisions and spend less time on administrative work, so they can focus on connecting with families and driving better outcomes for children.
 
-Anthropic’s work with Binti is an important partnership in social services as part of the broader “AI for Good” initiative. 
+Anthropic’s work with Binti is an important partnership in social services as part of the broader “AI for Good” initiative. 
 
 ## Measurable impact for child welfare agencies
 
@@ -85,7 +85,7 @@ Now, with Claude, Binti is able to drive even greater impact for agencies. Socia
 
 Child welfare represents some of society's most important work—ensuring children have safe, permanent homes. Yet the systems designed to help these children often lead to social workers spending half or more of their time on administrative tasks instead of directly with children and families. There is a nationwide shortage of social workers. Social worker turnover is exacerbated by staff frustration with outdated tools such as 70-column Excel spreadsheets, paper forms, sticky notes, and 20 year old legacy government systems—leading to vital information slipping through the cracks, social workers getting burnt out, and suboptimal outcomes for children.
 
-This administrative burden created real challenges. Felicia Curcuru, co-founder and CEO of Binti, said, "Social workers spend hours interviewing a family in person. Then they have to go back to the office and spend 6-8 hours writing their notes and assessment of the interview. Social workers got into this work to work with children and families, but they spend 50% or more of their time doing administrative work.” 
+This administrative burden created real challenges. Felicia Curcuru, co-founder and CEO of Binti, said, "Social workers spend hours interviewing a family in person. Then they have to go back to the office and spend 6-8 hours writing their notes and assessment of the interview. Social workers got into this work to work with children and families, but they spend 50% or more of their time doing administrative work.” 
 
 ## AI-powered features that transform daily workflows
 
@@ -117,7 +117,7 @@ Families benefit from more engaged, present social workers. Curcuru explained, "
 
 Binti plans to expand Claude's role across the entire child welfare continuum while maintaining their commitment to human-led AI. "The positive response from social workers motivates us to develop more AI features that save time and reduce administrative work," said Curcuru. Future applications from identifying kin who can support a child to helping families access critical resources and more—always with human judgment at the center.
 
-Working with Anthropic, Binti proves that the most powerful AI applications don't replicate human judgment—but clear away administrative obstacles so humans can focus on what matters most. Every child deserves a loving family, and by giving social workers the tools to spend their time where it counts, Binti is helping social workers around the country focus on social work, instead of paperwork, to help more children have loving families. 
+Working with Anthropic, Binti proves that the most powerful AI applications don't replicate human judgment—but clear away administrative obstacles so humans can focus on what matters most. Every child deserves a loving family, and by giving social workers the tools to spend their time where it counts, Binti is helping social workers around the country focus on social work, instead of paperwork, to help more children have loving families. 
 
 
 "Anthropic prioritizes security and trust above everything else. They don't train on our data and made HIPAA compliance straightforward."

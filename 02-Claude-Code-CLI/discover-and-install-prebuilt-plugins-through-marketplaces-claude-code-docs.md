@@ -16,8 +16,6 @@ Plugins extend Claude Code with skills, agents, hooks, and MCP servers. Plugin m
 
 ## 
 
-[​](#how-marketplaces-work)
-
 How marketplaces work
 
 A marketplace is a catalog of plugins that someone else has created and shared. Using a marketplace is a two-step process:
@@ -41,8 +39,6 @@ Browse the catalog and install the plugins you want.
 Think of it like adding an app store: adding the store gives you access to browse its collection, but you still choose which apps to download individually.
 
 ## 
-
-[​](#official-anthropic-marketplace)
 
 Official Anthropic marketplace
 
@@ -68,8 +64,6 @@ The official marketplace includes several categories of plugins:
 
 ### 
 
-[​](#code-intelligence)
-
 Code intelligence
 
 Code intelligence plugins enable Claude Code’s built-in LSP tool, giving Claude the ability to jump to definitions, find references, and see type errors immediately after edits. These plugins configure [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) connections, the same technology that powers VS Code’s code intelligence. These plugins require the language server binary to be installed on your system. If you already have a language server installed, Claude may prompt you to install the corresponding plugin when you open a project.
@@ -94,8 +88,6 @@ If you see `Executable not found in $PATH` in the `/plugin` Errors tab after ins
 
 #### 
 
-[​](#what-claude-gains-from-code-intelligence-plugins)
-
 What Claude gains from code intelligence plugins
 
 Once a code intelligence plugin is installed and its language server binary is available, Claude gains two capabilities:
@@ -106,8 +98,6 @@ Once a code intelligence plugin is installed and its language server binary is a
 If you run into issues, see [Code intelligence troubleshooting](#code-intelligence-issues).
 
 ### 
-
-[​](#external-integrations)
 
 External integrations
 
@@ -122,8 +112,6 @@ These plugins bundle pre-configured [MCP servers](/docs/en/mcp) so you can conne
 
 ### 
 
-[​](#development-workflows)
-
 Development workflows
 
 Plugins that add commands and agents for common development tasks:
@@ -135,8 +123,6 @@ Plugins that add commands and agents for common development tasks:
 
 ### 
 
-[​](#output-styles)
-
 Output styles
 
 Customize how Claude responds:
@@ -145,8 +131,6 @@ Customize how Claude responds:
 - **learning-output-style**: Interactive learning mode for skill building
 
 ## 
-
-[​](#try-it-add-the-demo-marketplace)
 
 Try it: add the demo marketplace
 
@@ -234,8 +218,6 @@ The rest of this guide covers all the ways you can add marketplaces, install plu
 
 ## 
 
-[​](#add-marketplaces)
-
 Add marketplaces
 
 Use the `/plugin marketplace add` command to add marketplaces from different sources.
@@ -248,8 +230,6 @@ Use the `/plugin marketplace add` command to add marketplaces from different sou
 - **Remote URLs**: direct URLs to hosted `marketplace.json` files
 
 ### 
-
-[​](#add-from-github)
 
 Add from GitHub
 
@@ -265,8 +245,6 @@ Copy
 ```
 
 ### 
-
-[​](#add-from-other-git-hosts)
 
 Add from other Git hosts
 
@@ -289,7 +267,7 @@ Copy
 
 
 ``` shiki
-/plugin marketplace add [email protected]:company/plugins.git
+/plugin marketplace add [email protected]:company/plugins.git
 ```
 
 To add a specific branch or tag, append `#` followed by the ref:
@@ -304,8 +282,6 @@ Copy
 ```
 
 ### 
-
-[​](#add-from-local-paths)
 
 Add from local paths
 
@@ -333,8 +309,6 @@ Copy
 
 ### 
 
-[​](#add-from-remote-urls)
-
 Add from remote URLs
 
 Add a remote `marketplace.json` file via URL:
@@ -351,8 +325,6 @@ Copy
 URL-based marketplaces have some limitations compared to Git-based marketplaces. If you encounter “path not found” errors when installing plugins, see [Troubleshooting](/docs/en/plugin-marketplaces#plugins-with-relative-paths-fail-in-url-based-marketplaces).
 
 ## 
-
-[​](#install-plugins)
 
 Install plugins
 
@@ -378,8 +350,6 @@ You may also see plugins with **managed** scope—these are installed by adminis
 Make sure you trust a plugin before installing it. Anthropic does not control what MCP servers, files, or other software are included in plugins and cannot verify that they work as intended. Check each plugin’s homepage for more information.
 
 ## 
-
-[​](#manage-installed-plugins)
 
 Manage installed plugins
 
@@ -430,8 +400,6 @@ claude plugin uninstall formatter@your-org --scope project
 
 ### 
 
-[​](#apply-plugin-changes-without-restarting)
-
 Apply plugin changes without restarting
 
 When you install, enable, or disable plugins during a session, some changes (like new commands and hooks) take effect immediately. Others, including LSP server updates, require a restart. To activate all pending plugin changes without restarting, run:
@@ -449,15 +417,11 @@ Claude Code reloads all active plugins and reports what was loaded. If any LSP s
 
 ## 
 
-[​](#manage-marketplaces)
-
 Manage marketplaces
 
 You can manage marketplaces through the interactive `/plugin` interface or with CLI commands.
 
 ### 
-
-[​](#use-the-interactive-interface)
 
 Use the interactive interface
 
@@ -469,8 +433,6 @@ Run `/plugin` and go to the **Marketplaces** tab to:
 - Remove marketplaces you no longer need
 
 ### 
-
-[​](#use-cli-commands)
 
 Use CLI commands
 
@@ -511,8 +473,6 @@ Removing a marketplace will uninstall any plugins you installed from it.
 
 ### 
 
-[​](#configure-auto-updates)
-
 Configure auto-updates
 
 Claude Code can automatically update marketplaces and their installed plugins at startup. When auto-update is enabled for a marketplace, Claude Code refreshes the marketplace data and updates installed plugins to their latest versions. If any plugins were updated, you’ll see a notification prompting you to run `/reload-plugins`. Toggle auto-update for individual marketplaces through the UI:
@@ -537,8 +497,6 @@ export FORCE_AUTOUPDATE_PLUGINS=true
 This is useful when you want to manage Claude Code updates manually but still receive automatic plugin updates.
 
 ## 
-
-[​](#configure-team-marketplaces)
 
 Configure team marketplaces
 
@@ -566,21 +524,15 @@ For full configuration options including `extraKnownMarketplaces` and `enabledPl
 
 ## 
 
-[​](#security)
-
 Security
 
 Plugins and marketplaces are highly trusted components that can execute arbitrary code on your machine with your user privileges. Only install plugins and add marketplaces from sources you trust. Organizations can restrict which marketplaces users are allowed to add using [managed marketplace restrictions](/docs/en/plugin-marketplaces#managed-marketplace-restrictions).
 
 ## 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
 ### 
-
-[​](#/plugin-command-not-recognized)
 
 /plugin command not recognized
 
@@ -595,8 +547,6 @@ If you see “unknown command” or the `/plugin` command doesn’t appear:
 
 ### 
 
-[​](#common-issues)
-
 Common issues
 
 - **Marketplace not loading**: Verify the URL is accessible and that `.claude-plugin/marketplace.json` exists at the path
@@ -608,8 +558,6 @@ For detailed troubleshooting with solutions, see [Troubleshooting](/docs/en/plug
 
 ### 
 
-[​](#code-intelligence-issues)
-
 Code intelligence issues
 
 - **Language server not starting**: verify the binary is installed and available in your `$PATH`. Check the `/plugin` Errors tab for details.
@@ -617,8 +565,6 @@ Code intelligence issues
 - **False positive diagnostics in monorepos**: language servers may report unresolved import errors for internal packages if the workspace isn’t configured correctly. These don’t affect Claude’s ability to edit code.
 
 ## 
-
-[​](#next-steps)
 
 Next steps
 

@@ -78,7 +78,7 @@ With Claude, Chronograph:
 
 ## The problem
 
-Like many growing SaaS companies, Chronograph faced resource constraints: limited engineering capacity, competing product priorities, and critical business knowledge scattered across systems.  The company accumulated valuable business data across systems like HubSpot, Notion, Linear, and internal databases, but teams couldn't efficiently access insights across these silos.
+Like many growing SaaS companies, Chronograph faced resource constraints: limited engineering capacity, competing product priorities, and critical business knowledge scattered across systems.  The company accumulated valuable business data across systems like HubSpot, Notion, Linear, and internal databases, but teams couldn't efficiently access insights across these silos.
 
 The 150-person team spent significant time on repetitive tasks—client research, document analysis, meeting preparation—that prevented focus on high-value strategic work. Customer success teams manually searched multiple systems before client calls. Sales representatives spent dozens of hours weekly on lead generation. Product and engineering teams relied on lengthy specification documents that slowed development cycles.
 

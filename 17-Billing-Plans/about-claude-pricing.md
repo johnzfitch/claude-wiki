@@ -305,9 +305,9 @@ To protect against inadvertently fetching large content that would consume exces
 
 Example token usage for typical content:
 
-- Average web page (10 kB): ~2,500 tokens
-- Large documentation page (100 kB): ~25,000 tokens
-- Research paper PDF (500 kB): ~125,000 tokens
+- Average web page (10 kB): ~2,500 tokens
+- Large documentation page (100 kB): ~25,000 tokens
+- Research paper PDF (500 kB): ~125,000 tokens
 
 
 Computer use tool

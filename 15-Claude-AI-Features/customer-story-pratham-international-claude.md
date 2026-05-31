@@ -115,15 +115,15 @@ Pratham chose Claude after running evaluations across multiple models. "Claude d
 
 The collaboration was hands-on. Anthropic and Pratham teams met one to two times per week over several months, not just to integrate the model but to calibrate every stage of the pipeline. Grading accuracy started at around 30% when measured against expert-reviewed benchmarks. Through iterative prompt refinement and evaluation design, the teams brought that number to roughly 80%. “We implemented an LLM-as-a-judge framework, benchmarking model evaluations against internally developed golden datasets that were manually validated by subject matter experts,” Chandra explained.
 
-On the feedback generation side, Claude's multilingual fluency was a key advantage. “Given Claude’s linguistic capabilities, it was readily able to handle feedback generation in a mix of Hindi and English, using English terms where relevant (such as for scientific terms) while keeping most of the text in Hindi,” Chandra said. 
+On the feedback generation side, Claude's multilingual fluency was a key advantage. “Given Claude’s linguistic capabilities, it was readily able to handle feedback generation in a mix of Hindi and English, using English terms where relevant (such as for scientific terms) while keeping most of the text in Hindi,” Chandra said. 
 
-## The approach: Keeping teachers at the center 
+## The approach: Keeping teachers at the center 
 
 A core design principle throughout: teachers review and can refine AI-generated feedback before it reaches students. It reflects Pratham's belief that the teacher's role becomes more important, not less, when AI enters the classroom.
 
 The response from educators has borne that out. Teachers report that automating the grading frees them to focus on targeted instruction rather than administrative work. "Teachers feel empowered because they remain the final evaluators who validate AI feedback before it reaches the student," Chandra noted. The system acts as a capacity multiplier: instead of replacing judgment, it gives teachers better information to exercise it.
 
-For students, the shift is about dignity as much as scores. In these settings, receiving a grade without explanation can be discouraging. Claude's feedback gives learners something specific to work with. Rather than seeing a wrong answer with no context, a student receives a concrete explanation of the concept they missed, with a clear direction for what to study next. 
+For students, the shift is about dignity as much as scores. In these settings, receiving a grade without explanation can be discouraging. Claude's feedback gives learners something specific to work with. Rather than seeing a wrong answer with no context, a student receives a concrete explanation of the concept they missed, with a clear direction for what to study next. 
 
 "Human agency is something we focus on,” Baghel says. “Instead of asking what AI can do without teachers, we ask: how can AI help our teachers and students exactly where they're stuck?”
 
@@ -131,7 +131,7 @@ For students, the shift is about dignity as much as scores. In these settings, r
 
 With Claude, the ATM now delivers 90% accuracy in generating questions aligned to Bloom's Taxonomy, the global educational framework. On the grading front, accuracy is roughly 80% aligned with content experts on rubric-based scoring. The Claude-powered system has completed more than 1,500 student assessments across 20 schools, with plans to expand to hundreds of thousands of students across India. Separately, the Second Chance program, which currently serves 15,000 women preparing for the grade 10 exam, plans to migrate fully to the Claude-powered pipeline by the end of 2026.
 
-"AI tools like Claude give us a way to reimagine learning for students who do not have access to advanced educational resources," said Madhav Chavan, Pratham's co-founder. "In addition to providing personalized support to understand the textbook, the ATM innovation will help children verify and authenticate their knowledge beyond the textbooks." 
+"AI tools like Claude give us a way to reimagine learning for students who do not have access to advanced educational resources," said Madhav Chavan, Pratham's co-founder. "In addition to providing personalized support to understand the textbook, the ATM innovation will help children verify and authenticate their knowledge beyond the textbooks." 
 
 ## What’s next: Flipping the education system
 
@@ -139,7 +139,7 @@ Chavan sees assessment as just the starting point for something larger: a system
 
 "Instead of asking children questions about the curriculum, ask them what they know," Chavan said. "If we flip that, we can flip the education system from being a filtration mechanism to one that offers differentiated pathways based on a child's interests and background knowledge. Before AI, this was not possible."
 
-The partnership is already expanding. Anthropic will support Pratham's Tech in TaRL (Teaching at the Right Level) initiative, an AI-powered teacher support system with a randomized controlled trial planned for several thousand students.  The two organizations are also exploring educational digital public infrastructure (including knowledge graphs), as well as geographic expansion to Kenya, Rwanda, and communities across the Global South. Pratham's three-year goal is to evolve the ATM into a learning and credentialing engine that recognizes competencies gained through non-linear pathways, available to learners worldwide.
+The partnership is already expanding. Anthropic will support Pratham's Tech in TaRL (Teaching at the Right Level) initiative, an AI-powered teacher support system with a randomized controlled trial planned for several thousand students.  The two organizations are also exploring educational digital public infrastructure (including knowledge graphs), as well as geographic expansion to Kenya, Rwanda, and communities across the Global South. Pratham's three-year goal is to evolve the ATM into a learning and credentialing engine that recognizes competencies gained through non-linear pathways, available to learners worldwide.
 
 "AI tools like Claude give us a way to reimagine learning for students who do not have access to advanced educational resources."
 

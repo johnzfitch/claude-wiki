@@ -388,19 +388,19 @@ The Morningstar integration relies upon Claude's ability to use [remote connecto
 
 The Morningstar integration enables Claude to access investment data and research:
 
-- **Individual Security Metrics:** Retrieve specific data points for individual securities including fair value estimates, economic moat ratings, star ratings, market cap, EPS, and NAV. Data is accessed one security at a time for each stock, fund, or bond.**‍**
-- **Analyst Research on Specific Securities:** Access Morningstar analyst opinions on stocks, ETFs, bonds, and mutual funds. Focus on specific aspects like risk factors, performance drivers, or competitive positioning based on fundamental analysis.**‍**
-- **Thematic Investment Research:** Explore editorial content on broader investment themes including investment strategies, sustainable investing, retirement planning, and market trends for top-down approaches and asset allocation.**‍**
+- **Individual Security Metrics:** Retrieve specific data points for individual securities including fair value estimates, economic moat ratings, star ratings, market cap, EPS, and NAV. Data is accessed one security at a time for each stock, fund, or bond.****
+- **Analyst Research on Specific Securities:** Access Morningstar analyst opinions on stocks, ETFs, bonds, and mutual funds. Focus on specific aspects like risk factors, performance drivers, or competitive positioning based on fundamental analysis.****
+- **Thematic Investment Research:** Explore editorial content on broader investment themes including investment strategies, sustainable investing, retirement planning, and market trends for top-down approaches and asset allocation.****
 - **Multi-Asset Class Coverage:** Analyze equities, mutual funds, ETFs, and bonds through a unified interface with consistent metrics and research approaches across all asset types.
 
 ### How Claude Uses Morningstar Data
 
 Claude applies Morningstar data to support your analysis:
 
-- **Comparative Analysis:** Gathers data across multiple securities (one at a time) to build comparison tables and identify relative value, such as ranking portfolio holdings by discount to fair value.**‍**
-- **Contextual Interpretation:** Combines quantitative metrics with qualitative research to explain both what ratings mean and why, like detailing the competitive advantages behind a "wide moat" rating.**‍**
-- **Risk-Reward Assessment:** Evaluates whether returns justify risks by comparing uncertainty ratings and return data across securities.**‍**
-- **Narrative Synthesis:** Merges data points with analyst commentary to create comprehensive security overviews that tell the complete investment story.**‍**
+- **Comparative Analysis:** Gathers data across multiple securities (one at a time) to build comparison tables and identify relative value, such as ranking portfolio holdings by discount to fair value.****
+- **Contextual Interpretation:** Combines quantitative metrics with qualitative research to explain both what ratings mean and why, like detailing the competitive advantages behind a "wide moat" rating.****
+- **Risk-Reward Assessment:** Evaluates whether returns justify risks by comparing uncertainty ratings and return data across securities.****
+- **Narrative Synthesis:** Merges data points with analyst commentary to create comprehensive security overviews that tell the complete investment story.****
 - **Screening and Filtering:** Systematically checks multiple securities against your criteria, such as finding wide-moat healthcare companies trading below fair value.
 
 ## Setting Up Morningstar Integration

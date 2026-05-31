@@ -1,8 +1,9 @@
 ---
+title: "Authentication - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/authentication"
 category: "13-Enterprise-Admin"
 fetched_at: "2026-05-19T21:22:16Z"
-source_url: "https://code.claude.com/docs/en/authentication"
-title: "Authentication - Claude Code Docs"
+tags: ["authentication", "claude-code", "enterprise"]
 ---
 
 # Authentication
@@ -20,8 +21,6 @@ Log in to Claude Code and configure authentication for individuals, teams, and o
 Claude Code supports multiple authentication methods depending on your setup. Individual users can log in with a Claude.ai account, while teams can use Claude for Teams or Enterprise, the Claude Console, or a cloud provider like Amazon Bedrock, Google Vertex AI, or Microsoft Foundry.
 
 
-[​](#log-in-to-claude-code)
-
 Log in to Claude Code
 
 After [installing Claude Code](/docs/en/setup#install-claude-code), run `claude` in your terminal. On first launch, Claude Code opens a browser window for you to log in. If the browser doesn’t open automatically, press `c` to copy the login URL to your clipboard, then paste it into your browser. If your browser shows a login code instead of redirecting back after you sign in, paste it into the terminal at the `Paste code here if prompted` prompt. This happens when the browser can’t reach Claude Code’s local callback server, which is common in WSL2, SSH sessions, and containers. You can authenticate with any of these account types:
@@ -34,8 +33,6 @@ After [installing Claude Code](/docs/en/setup#install-claude-code), run `claude`
 To log out and re-authenticate, type `/logout` at the Claude Code prompt. If you’re having trouble logging in, see [authentication troubleshooting](/docs/en/troubleshoot-install#login-and-authentication).
 
 
-[​](#set-up-team-authentication)
-
 Set up team authentication
 
 For teams and organizations, you can configure Claude Code access in one of these ways:
@@ -46,8 +43,6 @@ For teams and organizations, you can configure Claude Code access in one of thes
 - [Google Vertex AI](/docs/en/google-vertex-ai)
 - [Microsoft Foundry](/docs/en/microsoft-foundry)
 
-
-[​](#claude-for-teams-or-enterprise)
 
 Claude for Teams or Enterprise
 
@@ -78,8 +73,6 @@ Install and log in
 Team members install Claude Code and log in with their Claude.ai accounts.
 
 
-[​](#claude-console-authentication)
-
 Claude Console authentication
 
 For organizations that prefer API-based billing, you can set up access through the Claude Console.
@@ -99,7 +92,7 @@ Add users
 You can add users through either method:
 
 - Bulk invite users from within the Console: Settings -\> Members -\> Invite
-- [Set up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
+- [Set up SSO](../21-Account-Support/setting-up-single-sign-on-sso.md)
 
 3
 
@@ -123,8 +116,6 @@ Each invited user needs to:
 - [Install Claude Code](/docs/en/setup#install-claude-code)
 - Log in with Console account credentials
 
-
-[​](#cloud-provider-authentication)
 
 Cloud provider authentication
 
@@ -152,8 +143,6 @@ Install Claude Code
 Users can [install Claude Code](/docs/en/setup#install-claude-code).
 
 
-[​](#credential-management)
-
 Credential management
 
 Claude Code securely manages your authentication credentials:
@@ -172,23 +161,19 @@ Claude Code securely manages your authentication credentials:
 `apiKeyHelper`, `ANTHROPIC_API_KEY`, and `ANTHROPIC_AUTH_TOKEN` apply to terminal CLI sessions only. Claude Desktop and remote sessions use OAuth exclusively and do not call `apiKeyHelper` or read API key environment variables.
 
 
-[​](#authentication-precedence)
-
 Authentication precedence
 
 When multiple credentials are present, Claude Code chooses one in this order:
 
 1.  Cloud provider credentials, when `CLAUDE_CODE_USE_BEDROCK`, `CLAUDE_CODE_USE_VERTEX`, or `CLAUDE_CODE_USE_FOUNDRY` is set. See [third-party integrations](/docs/en/third-party-integrations) for setup.
 2.  `ANTHROPIC_AUTH_TOKEN` environment variable. Sent as the `Authorization: Bearer` header. Use this when routing through an [LLM gateway or proxy](/docs/en/llm-gateway) that authenticates with bearer tokens rather than Anthropic API keys.
-3.  `ANTHROPIC_API_KEY` environment variable. Sent as the `X-Api-Key` header. Use this for direct Anthropic API access with a key from the [Claude Console](https://platform.claude.com). In interactive mode, you are prompted once to approve or decline the key, and your choice is remembered. To change it later, use the “Use custom API key” toggle in `/config`. In non-interactive mode (`-p`), the key is always used when present.
+3.  `ANTHROPIC_API_KEY` environment variable. Sent as the `X-Api-Key` header. Use this for direct Anthropic API access with a key from the [Claude Console](../04-API-Reference/Other/platform-claude-com.md). In interactive mode, you are prompted once to approve or decline the key, and your choice is remembered. To change it later, use the “Use custom API key” toggle in `/config`. In non-interactive mode (`-p`), the key is always used when present.
 4.  [`apiKeyHelper`](/docs/en/settings#available-settings) script output. Use this for dynamic or rotating credentials, such as short-lived tokens fetched from a vault.
 5.  `CLAUDE_CODE_OAUTH_TOKEN` environment variable. A long-lived OAuth token generated by [`claude setup-token`](#generate-a-long-lived-token). Use this for CI pipelines and scripts where browser login isn’t available.
 6.  Subscription OAuth credentials from `/login`. This is the default for Claude Pro, Max, Team, and Enterprise users.
 
 If you have an active Claude subscription but also have `ANTHROPIC_API_KEY` set in your environment, the API key takes precedence once approved. This can cause authentication failures if the key belongs to a disabled or expired organization. Run `unset ANTHROPIC_API_KEY` to fall back to your subscription, and check `/status` to confirm which method is active. [Claude Code on the Web](/docs/en/claude-code-on-the-web) always uses your subscription credentials. `ANTHROPIC_API_KEY` and `ANTHROPIC_AUTH_TOKEN` in the sandbox environment do not override them.
 
-
-[​](#generate-a-long-lived-token)
 
 Generate a long-lived token
 

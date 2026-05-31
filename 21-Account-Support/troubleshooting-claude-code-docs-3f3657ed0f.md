@@ -1,8 +1,9 @@
 ---
+title: "Troubleshooting - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/troubleshooting"
 category: "21-Account-Support"
 fetched_at: "2026-05-19T21:23:16Z"
-source_url: "https://code.claude.com/docs/en/troubleshooting"
-title: "Troubleshooting - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Troubleshooting
@@ -33,14 +34,10 @@ This page covers performance, stability, and search problems once Claude Code is
 If you’re not sure which applies, run `/doctor` inside Claude Code for an automated check of your installation, settings, MCP servers, and context usage. If `claude` won’t start at all, run `claude doctor` from your shell instead.
 
 
-[​](#performance-and-stability)
-
 Performance and stability
 
 These sections cover issues related to resource usage, responsiveness, and search behavior.
 
-
-[​](#high-cpu-or-memory-usage)
 
 High CPU or memory usage
 
@@ -53,8 +50,6 @@ Claude Code is designed to work with most development environments, but may cons
 If memory usage stays high after these steps, run `/heapdump` to write a JavaScript heap snapshot and a memory breakdown to `~/Desktop`. On Linux without a Desktop folder, the files are written to your home directory. The breakdown shows resident set size, JS heap, array buffers, and unaccounted native memory, which helps identify whether the growth is in JavaScript objects or in native code. To inspect retainers, open the `.heapsnapshot` file in Chrome DevTools under Memory → Load. Attach both files when reporting a memory issue on [GitHub](https://github.com/anthropics/claude-code/issues).
 
 
-[​](#auto-compaction-stops-with-a-thrashing-error)
-
 Auto-compaction stops with a thrashing error
 
 If you see `Autocompact is thrashing: the context refilled to the limit...`, automatic compaction succeeded but a file or tool output immediately refilled the context window several times in a row. Claude Code stops retrying to avoid wasting API calls on a loop that isn’t making progress. To recover:
@@ -65,8 +60,6 @@ If you see `Autocompact is thrashing: the context refilled to the limit...`, aut
 4.  Run `/clear` if the earlier conversation is no longer needed
 
 
-[​](#command-hangs-or-freezes)
-
 Command hangs or freezes
 
 If Claude Code seems unresponsive:
@@ -76,8 +69,6 @@ If Claude Code seems unresponsive:
 
 Restarting doesn’t lose your conversation. Run `claude --resume` in the same directory to pick the session back up.
 
-
-[​](#search-and-discovery-issues)
 
 Search and discovery issues
 
@@ -116,8 +107,6 @@ winget install BurntSushi.ripgrep.MSVC
 Then set `USE_BUILTIN_RIPGREP=0` in your [environment](/docs/en/env-vars).
 
 
-[​](#slow-or-incomplete-search-results-on-wsl)
-
 Slow or incomplete search results on WSL
 
 Disk read performance penalties when [working across file systems on WSL](https://learn.microsoft.com/en-us/windows/wsl/filesystems) may result in fewer-than-expected matches when using Claude Code on WSL. Search still functions, but returns fewer results than on a native filesystem.
@@ -130,8 +119,6 @@ Disk read performance penalties when [working across file systems on WSL](https:
 2.  **Move project to Linux filesystem**: if possible, ensure your project is located on the Linux filesystem (`/home/`) rather than the Windows filesystem (`/mnt/c/`).
 3.  **Use native Windows instead**: consider running Claude Code natively on Windows instead of through WSL, for better file system performance.
 
-
-[​](#get-more-help)
 
 Get more help
 

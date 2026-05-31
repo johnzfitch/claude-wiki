@@ -39,7 +39,7 @@ Our submission also highlights the risks of further delaying implementation. Chi
 
 The strategic window for strengthening American export controls is now. By strengthening the Diffusion Framework, America can ensure transformative AI technologies are developed domestically, in alignment with American values and interests. Our continued leadership in AI depends on maintaining our compute advantage through decisive action today.
 
-Anthropic’s leaders have previously outlined our position on competition with China and export controls in the following pieces.  
+Anthropic’s leaders have previously outlined our position on competition with China and export controls in the following pieces.  
 
 - “[Trump Can Keep America’s AI Advantage,](https://www.wsj.com/opinion/trump-can-keep-americas-ai-advantage-china-chips-data-eccdce91)” Dario Amodei & Matthew Pottinger, Wall Street Journal, January 6, 2025.
 - “[On DeepSeek and Export Controls](https://www.darioamodei.com/post/on-deepseek-and-export-controls),” Dario Amodei, darioamodei.com, January 2025“[Anthropic's Dario Amodei on AI Competition](https://www.chinatalk.media/p/anthropics-dario-amodei-on-ai-competition),” China Talk Podcast, February 5, 2025

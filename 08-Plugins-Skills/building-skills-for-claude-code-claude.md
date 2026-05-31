@@ -73,7 +73,7 @@ For detailed table schemas and query patterns, see:
 - **Customer Success** → `references/customers.md`
 ```
 
-Notice how the SKILL.md provides high-level workflow guidance and critical business logic, while pointing to reference files for detailed documentation. 
+Notice how the SKILL.md provides high-level workflow guidance and critical business logic, while pointing to reference files for detailed documentation. 
 
 **References: On-demand documentation**
 
@@ -91,7 +91,7 @@ A key principle to remember: information should live in either SKILL.md or refer
 
 **Skills vs CLAUDE.md**
 
-Skills and CLAUDE.md files both give Claude context, but serve different purposes. CLAUDE.md is always loaded into Claude’s context. It’s for project-specific guidance (coding conventions, local workflows, common commands) that lives in your repo as a single markdown file, and works only in Claude Code. 
+Skills and CLAUDE.md files both give Claude context, but serve different purposes. CLAUDE.md is always loaded into Claude’s context. It’s for project-specific guidance (coding conventions, local workflows, common commands) that lives in your repo as a single markdown file, and works only in Claude Code. 
 
 Skills use progressive disclosure, loading only when relevant, and work across all Claude platforms (claude.ai, Claude Code, and Claude API). Beyond the context management advantages, Skills can include executable code and reference files—not just markdown. This makes them ideal for substantial, reusable knowledge that spans projects, such as data warehouse schemas, company design standards, or domain expertise.
 

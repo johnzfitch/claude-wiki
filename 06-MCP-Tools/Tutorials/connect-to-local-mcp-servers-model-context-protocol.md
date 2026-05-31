@@ -15,21 +15,15 @@ Learn how to extend Claude Desktop with local MCP servers to enable file system 
 Model Context Protocol (MCP) servers extend AI applications’ capabilities by providing secure, controlled access to local resources and tools. Many clients support MCP, enabling diverse integration possibilities across different platforms and applications. This guide demonstrates how to connect to local MCP servers using Claude Desktop as an example, one of the [many clients that support MCP](/clients). While we focus on Claude Desktop’s implementation, the concepts apply broadly to other MCP-compatible clients. By the end of this tutorial, Claude will be able to interact with files on your computer, create new documents, organize folders, and search through your file system—all with your explicit permission for each action.
 
 
-[​](#prerequisites)
-
 Prerequisites
 
 Before starting this tutorial, ensure you have the following installed on your system:
 
 
-[​](#claude-desktop)
-
 Claude Desktop
 
 Download and install [Claude Desktop](https://claude.ai/download) for your operating system. Claude Desktop is available for macOS and Windows. If you already have Claude Desktop installed, verify you’re running the latest version by clicking the Claude menu and selecting “Check for Updates…”
 
-
-[​](#node-js)
 
 Node.js
 
@@ -44,8 +38,6 @@ node --version
 If Node.js is not installed, download it from [nodejs.org](https://nodejs.org/). We recommend the LTS (Long Term Support) version for stability.
 
 
-[​](#understanding-mcp-servers)
-
 Understanding MCP Servers
 
 MCP servers are programs that run on your computer and provide specific capabilities to Claude Desktop through a standardized protocol. Each server exposes tools that Claude can use to perform actions, with your approval. The Filesystem Server we’ll install provides tools for:
@@ -57,8 +49,6 @@ MCP servers are programs that run on your computer and provide specific capabili
 
 All actions require your explicit approval before execution, ensuring you maintain full control over what Claude can access and modify.
 
-
-[​](#installing-the-filesystem-server)
 
 Installing the Filesystem Server
 
@@ -138,14 +128,10 @@ Click on this indicator to view the available tools provided by the Filesystem S
 If the server indicator doesn’t appear, refer to the [Troubleshooting](#troubleshooting) section for debugging steps.
 
 
-[​](#using-the-filesystem-server)
-
 Using the Filesystem Server
 
 With the Filesystem Server connected, Claude can now interact with your file system. Try these example requests to explore the capabilities:
 
-
-[​](#file-management-examples)
 
 File Management Examples
 
@@ -154,16 +140,12 @@ File Management Examples
 - **“Please organize all images on my desktop into a new folder called ‘Images’”** - Claude will create a folder and move image files into it
 
 
-[​](#how-approval-works)
-
 How Approval Works
 
 Before executing any file system operation, Claude will request your approval. This ensures you maintain control over all actions:
 
 Review each request carefully before approving. You can always deny a request if you’re not comfortable with the proposed action.
 
-
-[​](#troubleshooting)
 
 Troubleshooting
 
@@ -249,8 +231,6 @@ Copy
 npm install -g npm
 ```
 
-
-[​](#next-steps)
 
 Next Steps
 

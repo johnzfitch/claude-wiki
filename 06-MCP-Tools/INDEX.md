@@ -210,7 +210,7 @@
 ## Spec (43)
 
 - [Architecture - Model Context Protocol](Spec/spec-2025-11-25-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Authorization - Model Context Protocol](Spec/spec-2025-11-25-authorization-model-context-protocol.md) - [​](#introduction)
+- [Authorization - Model Context Protocol](Spec/spec-2025-11-25-authorization-model-context-protocol.md) - Introduction
 - [Cancellation - Model Context Protocol](Spec/spec-2025-11-25-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
 - [Completion - Model Context Protocol](Spec/spec-2025-11-25-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer autocompletion suggestions for the arguments of prompts and resource
 - [Elicitation - Model Context Protocol](Spec/spec-2025-11-25-elicitation-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request additional information from users through the client during intera
@@ -225,13 +225,13 @@
 - [Resources - Model Context Protocol](Spec/spec-2025-11-25-resources-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that pr
 - [Roots - Model Context Protocol](Spec/spec-2025-11-25-roots-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where
 - [Sampling - Model Context Protocol](Spec/spec-2025-11-25-sampling-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models
-- [Schema Reference - Model Context Protocol](Spec/spec-2025-11-25-schema-reference-model-context-protocol.md) - [​](#json-rpc)
+- [Schema Reference - Model Context Protocol](Spec/spec-2025-11-25-schema-reference-model-context-protocol.md) - JSON-RPC
 - [Specification - Model Context Protocol](Spec/spec-2025-11-25-specification-model-context-protocol.md) - [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and ext
 - [Tasks - Model Context Protocol](Spec/spec-2025-11-25-tasks-model-context-protocol.md) - Tasks were introduced in version 2025-11-25 of the MCP specification and are currently considered **experimental**. The design and behavior of tasks m
 - [Tools - Model Context Protocol](Spec/spec-2025-11-25-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
 - [Transports - Model Context Protocol](Spec/spec-2025-11-25-transports-model-context-protocol.md) - MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encoded. The protocol currently defines two standard transport mechanisms fo
 - [Architecture - Model Context Protocol](Spec/spec-draft-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Authorization - Model Context Protocol](Spec/spec-draft-authorization-model-context-protocol.md) - [​](#introduction)
+- [Authorization - Model Context Protocol](Spec/spec-draft-authorization-model-context-protocol.md) - Introduction
 - [Cancellation - Model Context Protocol](Spec/spec-draft-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
 - [Completion - Model Context Protocol](Spec/spec-draft-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer autocompletion suggestions for the arguments of prompts and resource
 - [Elicitation - Model Context Protocol](Spec/spec-draft-elicitation-model-context-protocol.md) - Elicitation is newly introduced in this version of the MCP specification and its design may evolve in future protocol versions.
@@ -246,7 +246,7 @@
 - [Resources - Model Context Protocol](Spec/spec-draft-resources-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that pr
 - [Roots - Model Context Protocol](Spec/spec-draft-roots-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where
 - [Sampling - Model Context Protocol](Spec/spec-draft-sampling-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models
-- [Schema Reference - Model Context Protocol](Spec/spec-draft-schema-reference-model-context-protocol.md) - [​](#json-rpc)
+- [Schema Reference - Model Context Protocol](Spec/spec-draft-schema-reference-model-context-protocol.md) - JSON-RPC
 - [Specification - Model Context Protocol](Spec/spec-draft-specification-model-context-protocol.md) - [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and ext
 - [Tasks - Model Context Protocol](Spec/spec-draft-tasks-model-context-protocol.md) - Tasks were introduced in version 2025-11-25 of the MCP specification and are currently considered **experimental**. The design and behavior of tasks m
 - [Tools - Model Context Protocol](Spec/spec-draft-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
@@ -273,7 +273,7 @@
 - [Tools - Model Context Protocol](Spec-Archive/spec-2024-11-05-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
 - [Transports - Model Context Protocol](Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md) - MCP currently defines two standard transport mechanisms for client-server communication:
 - [Architecture - Model Context Protocol](Spec-Archive/spec-2025-03-26-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Authorization - Model Context Protocol](Spec-Archive/spec-2025-03-26-authorization-model-context-protocol.md) - [​](#introduction)
+- [Authorization - Model Context Protocol](Spec-Archive/spec-2025-03-26-authorization-model-context-protocol.md) - Introduction
 - [Cancellation - Model Context Protocol](Spec-Archive/spec-2025-03-26-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
 - [Completion - Model Context Protocol](Spec-Archive/spec-2025-03-26-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. T
 - [Key Changes - Model Context Protocol](Spec-Archive/spec-2025-03-26-key-changes-model-context-protocol.md) - This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2024-11-05](/specification/2024-11-05
@@ -291,7 +291,7 @@
 - [Tools - Model Context Protocol](Spec-Archive/spec-2025-03-26-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
 - [Transports - Model Context Protocol](Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md) - MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encoded. The protocol currently defines two standard transport mechanisms fo
 - [Architecture - Model Context Protocol](Spec-Archive/spec-2025-06-18-architecture-model-context-protocol.md) - The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. This architecture enable
-- [Authorization - Model Context Protocol](Spec-Archive/spec-2025-06-18-authorization-model-context-protocol.md) - [​](#introduction)
+- [Authorization - Model Context Protocol](Spec-Archive/spec-2025-06-18-authorization-model-context-protocol.md) - Introduction
 - [Cancellation - Model Context Protocol](Spec-Archive/spec-2025-06-18-cancellation-model-context-protocol.md) - The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancella
 - [Completion - Model Context Protocol](Spec-Archive/spec-2025-06-18-completion-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. T
 - [Elicitation - Model Context Protocol](Spec-Archive/spec-2025-06-18-elicitation-model-context-protocol.md) - Elicitation is newly introduced in this version of the MCP specification and its design may evolve in future protocol versions.
@@ -306,7 +306,7 @@
 - [Resources - Model Context Protocol](Spec-Archive/spec-2025-06-18-resources-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that pr
 - [Roots - Model Context Protocol](Spec-Archive/spec-2025-06-18-roots-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where
 - [Sampling - Model Context Protocol](Spec-Archive/spec-2025-06-18-sampling-model-context-protocol.md) - The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models
-- [Schema Reference - Model Context Protocol](Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md) - [​](#json-rpc)
+- [Schema Reference - Model Context Protocol](Spec-Archive/spec-2025-06-18-schema-reference-model-context-protocol.md) - JSON-RPC
 - [Specification - Model Context Protocol](Spec-Archive/spec-2025-06-18-specification-model-context-protocol.md) - [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and ext
 - [Tools - Model Context Protocol](Spec-Archive/spec-2025-06-18-tools-model-context-protocol.md) - The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external 
 - [Transports - Model Context Protocol](Spec-Archive/spec-2025-06-18-transports-model-context-protocol.md) - MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encoded. The protocol currently defines two standard transport mechanisms fo

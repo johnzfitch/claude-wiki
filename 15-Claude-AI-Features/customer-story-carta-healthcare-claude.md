@@ -98,7 +98,7 @@ Claude helps healthcare organizations move faster without sacrificing accuracy, 
 Prev
 
 
-[Carta Healthcare](https://www.carta.healthcare/) began with a simple frustration at Stanford Children’s Hospital: slow, manual data collection was holding back meaningful progress. That challenge sparked a new idea to pair AI with clinical expertise, to make clinical data abstraction faster, higher quality and lower cost, what Carta refers to as “hybrid intelligence.” 
+[Carta Healthcare](https://www.carta.healthcare/) began with a simple frustration at Stanford Children’s Hospital: slow, manual data collection was holding back meaningful progress. That challenge sparked a new idea to pair AI with clinical expertise, to make clinical data abstraction faster, higher quality and lower cost, what Carta refers to as “hybrid intelligence.” 
 
 ## With Claude, Carta Healthcare:
 
@@ -151,7 +151,7 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 
 Andrew Crowder
 
-VP of Engineering, Carta Healthcare 
+VP of Engineering, Carta Healthcare 
 
 Livestream
 

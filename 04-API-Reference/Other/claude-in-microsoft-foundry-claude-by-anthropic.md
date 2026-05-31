@@ -71,7 +71,7 @@ Claude can extract relevant information from business emails and documents, cate
 
 ### Financial analysis
 
-Claude can handle everything from entry-level financial analysis to advanced predictive modeling, connecting insights across regulatory filings, market reports, and internal data. 
+Claude can handle everything from entry-level financial analysis to advanced predictive modeling, connecting insights across regulatory filings, market reports, and internal data. 
 
 Learn more
 

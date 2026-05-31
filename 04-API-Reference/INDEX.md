@@ -1194,7 +1194,7 @@
 - [Tools](Other/managed-agents-tools-ed0f3609b3.md) - Configure tools available to your agent.
 - [Authenticate with vaults](Other/managed-agents-vaults-47da9057c3.md) - Register per-user credentials when creating sessions.
 - [Partners | Claude by Anthropic](Other/partners-claude-by-anthropic.md) - Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
-- [\\\\\\](Other/pdf-upload-summarization.md) - :::
+- [\\\\\\\](Other/pdf-upload-summarization.md) - :::
 - [Sign In | Claude Platform](Other/platform-claude-com.md) - Continue with Google
 - [Powered by Claude | Claude](Other/powered-by-claude-claude.md) - A curated list of businesses that use Claude to build better, faster, and safer.
 - [Programatic Tool Calling (PTC) with the Claude API](Other/programmatic-tool-calling-ptc.md) - Programmatic Tool Calling (PTC) allows Claude to write code that calls

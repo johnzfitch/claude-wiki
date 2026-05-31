@@ -409,12 +409,12 @@ Command
 
 **For Individual Claude Users**
 
-1.  Download the ZIP file for the single-cell-rna-qc skill [here](https://github.com/anthropics/life-sciences/releases/download/v1.0.0/single-cell-rna-qc-v1.0.0.zip)‍
+1.  Download the ZIP file for the single-cell-rna-qc skill [here](https://github.com/anthropics/life-sciences/releases/download/v1.0.0/single-cell-rna-qc-v1.0.0.zip)
 2.  From [Claude.ai](http://claude.ai), navigate to Settings \> Capabilities \> Skills (if Skills is not available, contact your team admin)
 3.  Click “Upload skill”
 4.  Upload the skill zip file
 
-‍
+
 
 ## Related tutorials
 

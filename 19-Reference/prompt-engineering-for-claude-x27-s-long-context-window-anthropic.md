@@ -22,13 +22,13 @@ Let’s get into the details.\
 
 Our goal with this experiment is to evaluate techniques to maximize Claude’s chance of correctly recalling a specific piece of information from a long document.\
 
-As the underlying data source for our testing, we used a daily-issue, publicly available [government document](https://www.govinfo.gov/content/pkg/FR-2023-07-13/xml/FR-2023-07-13.xml) that contains the meeting transcripts and activities of many different departments. We chose a document from July 13, which is after Claude’s training data cutoff. This minimizes the chance that Claude already knows the information in the document.\
+As the underlying data source for our testing, we used a daily-issue, publicly available [government document](https://www.govinfo.gov/content/pkg/FR-2023-07-13/xml/FR-2023-07-13.xml) that contains the meeting transcripts and activities of many different departments. We chose a document from July 13, which is after Claude’s training data cutoff. This minimizes the chance that Claude already knows the information in the document.\
 \
-In order to generate a dataset of question and answer (Q&A) pairs, we used an approach we call “randomized collage”. We split the document into sections and used Claude to generate five multiple choice questions for each section, each with three wrong answers and one right answer. We then reassembled randomized sets of these sections into long documents so that we could pass them to Claude and test its recall of their contents.
+In order to generate a dataset of question and answer (Q&A) pairs, we used an approach we call “randomized collage”. We split the document into sections and used Claude to generate five multiple choice questions for each section, each with three wrong answers and one right answer. We then reassembled randomized sets of these sections into long documents so that we could pass them to Claude and test its recall of their contents.
 
 ## Prompting Claude to generate multiple choice questions
 
-Getting Claude to write your evaluations (evals) for you is a powerful tool and one that we as a prompt engineering team use often. However, it takes careful prompting to get Claude to write questions in the sweet spot of difficulty. Here are some challenges we worked through along the way to designing an effective test suite:
+Getting Claude to write your evaluations (evals) for you is a powerful tool and one that we as a prompt engineering team use often. However, it takes careful prompting to get Claude to write questions in the sweet spot of difficulty. Here are some challenges we worked through along the way to designing an effective test suite:
 
 - Claude may propose questions that it can answer off the top of its head without reference to any document, like “What does the Department of Transportation do?”
 - Claude may include questions that it struggles to answer correctly, even in short context situations. For example, because Claude sees the world in terms of tokens, not words, a question like “How many words are in the passage?” tends to give Claude trouble.
@@ -59,7 +59,7 @@ After generating the long documents (collages), we tested Claude’s recall usin
 
 For each of the four strategies above, we also tested them with and without the use of a \<scratchpad\>, in which we instruct Claude to pull relevant quotes. Furthermore, we tested each of these strategies with the passage containing the answer positioned either at the beginning, the end, or in the middle of the input. Finally, to get a sense of the effect of context length on the results, we tested with both 70K and 95K token documents.\
 \
-We used Claude Instant 1.2 for the above test. We also show results for Claude 2 on the baseline strategy and the strategy that performed best for Claude Instant 1.2.
+We used Claude Instant 1.2 for the above test. We also show results for Claude 2 on the baseline strategy and the strategy that performed best for Claude Instant 1.2.
 
 ## Results
 
@@ -85,7 +85,7 @@ Fully reproducible code for this experiment is live in the new [Anthropic Cookbo
 - A [Search and Retrieval demo](https://platform.claude.com/cookbook/third-party-wikipedia-wikipedia-search-cookbook) showcasing a tool use flow for searching Wikipedia.
 - Guidance on implementing [mock-PDF uploading functionality](https://platform.claude.com/cookbook/misc-pdf-upload-summarization) via the Anthropic API.
 
-We’re looking forward to expanding the Anthropic Cookbook and our other prompt engineering resources in the future, and we hope they inspire you to dream big about what you can build with Claude. If you haven’t received access to the Claude API yet, please [register your interest](/api).
+We’re looking forward to expanding the Anthropic Cookbook and our other prompt engineering resources in the future, and we hope they inspire you to dream big about what you can build with Claude. If you haven’t received access to the Claude API yet, please [register your interest](/api).
 
 ## Footnotes
 

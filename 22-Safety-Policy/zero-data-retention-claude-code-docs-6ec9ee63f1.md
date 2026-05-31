@@ -1,8 +1,9 @@
 ---
+title: "Zero data retention - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/zero-data-retention"
 category: "22-Safety-Policy"
 fetched_at: "2026-05-19T21:23:18Z"
-source_url: "https://code.claude.com/docs/en/zero-data-retention"
-title: "Zero data retention - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Zero data retention
@@ -27,8 +28,6 @@ Zero Data Retention (ZDR) is available for Claude Code when used through Claude 
 ZDR for Claude Code on Claude for Enterprise applies only to Anthropic’s direct platform. For Claude deployments on Amazon Bedrock, Google Vertex AI, or Microsoft Foundry, refer to those platforms’ data retention policies.
 
 
-[​](#zdr-scope)
-
 ZDR scope
 
 ZDR covers Claude Code inference on Claude for Enterprise.
@@ -36,14 +35,10 @@ ZDR covers Claude Code inference on Claude for Enterprise.
 ZDR is enabled on a per-organization basis. Each new organization requires ZDR to be enabled separately by your Anthropic account team. ZDR does not automatically apply to new organizations created under the same account. Contact your account team to enable ZDR for any new organizations.
 
 
-[​](#what-zdr-covers)
-
 What ZDR covers
 
 ZDR covers model inference calls made through Claude Code on Claude for Enterprise. When you use Claude Code in your terminal, the prompts you send and the responses Claude generates are not retained by Anthropic. This applies regardless of which Claude model is used.
 
-
-[​](#what-zdr-does-not-cover)
 
 What ZDR does not cover
 
@@ -58,8 +53,6 @@ ZDR does not extend to the following, even for organizations with ZDR enabled. T
 | Third-party integrations | Data processed by third-party tools, MCP servers, or other external integrations is not covered by ZDR. Review those services’ data handling practices independently.                                                                                            |
 
 
-[​](#features-disabled-under-zdr)
-
 Features disabled under ZDR
 
 When ZDR is enabled for a Claude Code organization on Claude for Enterprise, certain features that require storing prompts or completions are automatically disabled at the backend level:
@@ -73,14 +66,10 @@ When ZDR is enabled for a Claude Code organization on Claude for Enterprise, cer
 These features are blocked in the backend regardless of client-side display. If you see a disabled feature in the Claude Code terminal during startup, attempting to use it returns an error indicating the organization’s policies do not allow that action. Future features may also be disabled if they require storing prompts or completions.
 
 
-[​](#data-retention-for-policy-violations)
-
 Data retention for policy violations
 
 Even with ZDR enabled, Anthropic may retain data where required by law or to address Usage Policy violations. If a session is flagged for a policy violation, Anthropic may retain the associated inputs and outputs for up to 2 years, consistent with Anthropic’s standard ZDR policy.
 
-
-[​](#request-zdr)
 
 Request ZDR
 

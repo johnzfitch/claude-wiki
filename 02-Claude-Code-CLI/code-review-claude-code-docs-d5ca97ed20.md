@@ -1,8 +1,9 @@
 ---
+title: "Code Review - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/code-review"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:29Z"
-source_url: "https://code.claude.com/docs/en/code-review"
-title: "Code Review - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Code Review
@@ -29,14 +30,10 @@ Code Review analyzes your GitHub pull requests and posts findings as inline comm
 - [Troubleshooting](#troubleshooting) failed runs and missing comments
 
 
-[​](#how-reviews-work)
-
 How reviews work
 
 Once an admin [enables Code Review](#set-up-code-review) for your organization, reviews trigger when a PR opens, on every push, or when manually requested, depending on the repository’s configured behavior. Commenting `@claude review` [starts reviews on a PR](#manually-trigger-reviews) in any mode. When a review runs, multiple agents analyze the diff and surrounding code in parallel on Anthropic infrastructure. Each agent looks for a different class of issue, then a verification step checks candidates against actual code behavior to filter out false positives. The results are deduplicated, ranked by severity, and posted as inline comments on the specific lines where issues were found, with a summary in the review body. If no issues are found, Code Review updates the GitHub check run to show that no issues were detected. Claude may also post a short confirmation comment on the PR. Reviews scale in cost with PR size and complexity, completing in 20 minutes on average. Admins can monitor review activity and spend via the [analytics dashboard](#view-usage).
 
-
-[​](#severity-levels)
 
 Severity levels
 
@@ -51,14 +48,10 @@ Each finding is tagged with a severity level:
 Findings include a collapsible extended reasoning section you can expand to understand why Claude flagged the issue and how it verified the problem.
 
 
-[​](#rate-and-reply-to-findings)
-
 Rate and reply to findings
 
 Each review comment from Claude arrives with 👍 and 👎 already attached so both buttons appear in the GitHub UI for one-click rating. Click 👍 if the finding was useful or 👎 if it was wrong or noisy. Anthropic collects reaction counts after the PR merges and uses them to tune the reviewer. Reactions do not trigger a re-review or change anything on the PR. Replying to an inline comment does not prompt Claude to respond or update the PR. To act on a finding, fix the code and push. If the PR is subscribed to push-triggered reviews, the next run resolves the thread when the issue is fixed. To request a fresh review without pushing, comment `@claude review once` as a [top-level PR comment](#manually-trigger-reviews).
 
-
-[​](#check-run-output)
 
 Check run output
 
@@ -79,14 +72,10 @@ gh api repos/OWNER/REPO/check-runs/CHECK_RUN_ID \
 This returns a JSON object with counts per severity, for example `{"normal": 2, "nit": 1, "pre_existing": 0}`. The `normal` key holds the count of Important findings; a non-zero value means Claude found at least one bug worth fixing before merge.
 
 
-[​](#what-code-review-checks)
-
 What Code Review checks
 
 By default, Code Review focuses on correctness: bugs that would break production, not formatting preferences or missing test coverage. You can expand what it checks by [adding guidance files](#customize-reviews) to your repository.
 
-
-[​](#set-up-code-review)
 
 Set up Code Review
 
@@ -142,8 +131,6 @@ Reviewing on every push runs the most reviews and costs the most. Manual mode is
 The repositories table also shows the average cost per review for each repo based on recent activity. Use the row actions menu to turn Code Review on or off per repository, or to remove a repository entirely. To verify setup, open a test PR. If you chose an automatic trigger, a check run named **Claude Code Review** appears within a few minutes. If you chose Manual, comment `@claude review` on the PR to start the first review. If no check run appears, confirm the repository is listed in your admin settings and the Claude GitHub App has access to it.
 
 
-[​](#manually-trigger-reviews)
-
 Manually trigger reviews
 
 Two comment commands start a review on demand. Both work regardless of the repository’s configured trigger, so you can use them to opt specific PRs into review in Manual mode or to get an immediate re-review in other modes.
@@ -163,8 +150,6 @@ Use `@claude review once` when you want feedback on the current state of a PR bu
 Unlike automatic triggers, manual triggers run on draft PRs, since an explicit request signals you want the review now regardless of draft status. If a review is already running on that PR, the request is queued until the in-progress review completes. You can monitor progress via the check run on the PR.
 
 
-[​](#customize-reviews)
-
 Customize reviews
 
 Code Review reads two files from your repository to guide what it flags. They differ in how strongly they influence the review:
@@ -173,28 +158,20 @@ Code Review reads two files from your repository to guide what it flags. They di
 - **`REVIEW.md`**: review-only instructions, injected directly into every agent in the review pipeline as highest priority. Use it to change what gets flagged, at what severity, and how findings are reported.
 
 
-[​](#claude-md)
-
 CLAUDE.md
 
 Code Review reads your repository’s `CLAUDE.md` files and treats newly introduced violations as [nit-level](#severity-levels) findings. This works bidirectionally: if your PR changes code in a way that makes a `CLAUDE.md` statement outdated, Claude flags that the docs need updating too. Claude reads `CLAUDE.md` files at every level of your directory hierarchy, so rules in a subdirectory’s `CLAUDE.md` apply only to files under that path. See the [memory documentation](/docs/en/memory) for more on how `CLAUDE.md` works. For review-specific guidance that you don’t want applied to general Claude Code sessions, use [`REVIEW.md`](#review-md) instead.
 
-
-[​](#review-md)
 
 REVIEW.md
 
 `REVIEW.md` is a file at your repository root that overrides how Code Review behaves on your repo. Its contents are injected into the system prompt of every agent in the review pipeline as the highest-priority instruction block, taking precedence over the default review guidance. Because it’s pasted verbatim, `REVIEW.md` is plain instructions: [`@` import syntax](/docs/en/memory#import-additional-files) is not expanded, and referenced files are not read into the prompt. Put the rules you want enforced directly in the file.
 
 
-[​](#what-you-can-tune)
-
 What you can tune
 
 `REVIEW.md` is freeform markdown, so anything you can express as a review instruction is in scope. The patterns below have the most impact in practice. **Severity**: redefine what 🔴 Important means for your repo. The default calibration targets production code; a docs repo, a config repo, or a prototype might want a much narrower definition. State explicitly which classes of finding are Important and which are Nit at most. You can also escalate in the other direction, for example treating any `CLAUDE.md` violation as Important rather than the default nit. **Nit volume**: cap how many 🟡 Nit comments a single review posts. Prose and config files can be polished forever. A cap like “report at most five nits, mention the rest as a count in the summary” keeps reviews actionable. **Skip rules**: list paths, branch patterns, and finding categories where Claude should post no findings. Common candidates are generated code, lockfiles, vendored dependencies, and machine-authored branches, along with anything your CI already enforces like linting or spellcheck. For paths that warrant some review but not full scrutiny, set a higher bar instead of skipping entirely: “in `scripts/`, only report if near-certain and severe.” **Repo-specific checks**: add rules you want flagged on every PR, like “new API routes must have an integration test.” Because `REVIEW.md` is injected as highest priority, these land more reliably than the same rules in a long `CLAUDE.md`. **Verification bar**: require evidence before a class of finding is posted. For example, “behavior claims need a `file:line` citation in the source, not an inference from naming” cuts false positives that would otherwise cost the author a round trip. **Re-review convergence**: tell Claude how to behave when a PR has already been reviewed. A rule like “after the first review, suppress new nits and post Important findings only” stops a one-line fix from reaching round seven on style alone. **Summary shape**: ask for the review body to open with a one-line tally such as `2 factual, 4 style`, and to lead with “no factual issues” when that’s the case. The author wants to know the shape of the work before the details.
 
-
-[​](#example)
 
 Example
 
@@ -232,14 +209,10 @@ issues."
 ```
 
 
-[​](#keep-it-focused)
-
 Keep it focused
 
 Length has a cost: a long `REVIEW.md` dilutes the rules that matter most. Keep it to instructions that change review behavior, and leave general project context in `CLAUDE.md`.
 
-
-[​](#view-usage)
 
 View usage
 
@@ -255,11 +228,9 @@ Go to [claude.ai/analytics/code-review](https://claude.ai/analytics/code-review)
 The repositories table in admin settings also shows average cost per review for each repo. Dashboard cost figures are estimates for monitoring activity; for invoice-accurate spend, refer to your Anthropic bill.
 
 
-[​](#pricing)
-
 Pricing
 
-Code Review is billed based on token usage. Each review averages \$15-25 in cost, scaling with PR size, codebase complexity, and how many issues require verification. Code Review usage is billed separately through [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) and does not count against your plan’s included usage. The review trigger you choose affects total cost:
+Code Review is billed based on token usage. Each review averages \$15-25 in cost, scaling with PR size, codebase complexity, and how many issues require verification. Code Review usage is billed separately through [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) and does not count against your plan’s included usage. The review trigger you choose affects total cost:
 
 - **Once after PR creation**: runs once per PR
 - **After every push**: runs on each push, multiplying cost by the number of pushes
@@ -268,28 +239,20 @@ Code Review is billed based on token usage. Each review averages \$15-25 in cost
 In any mode, commenting `@claude review` [opts the PR into push-triggered reviews](#manually-trigger-reviews), so additional cost accrues per push after that comment. To run a single review without subscribing to future pushes, comment `@claude review once` instead. Costs appear on your Anthropic bill regardless of whether your organization uses Amazon Bedrock or Google Vertex AI for other Claude Code features. To set a monthly spend cap for Code Review, go to [claude.ai/admin-settings/usage](https://claude.ai/admin-settings/usage) and configure the limit for the Claude Code Review service. Monitor spend via the weekly cost chart in [analytics](#view-usage) or the per-repo average cost column in admin settings.
 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
 Review runs are best-effort. A failed run never blocks your PR, but it also doesn’t retry on its own. This section covers how to recover from a failed run and where to look when the check run reports issues you can’t find.
 
-
-[​](#retrigger-a-failed-or-timed-out-review)
 
 Retrigger a failed or timed-out review
 
 When the review infrastructure hits an internal error or exceeds its time limit, the check run completes with a title of **Code review encountered an error** or **Code review timed out**. The conclusion is still neutral, so nothing blocks your merge, but no findings are posted. To run the review again, comment `@claude review once` on the PR. This starts a fresh review without subscribing the PR to future pushes. If the PR is already subscribed to push-triggered reviews, pushing a new commit also starts a new review. The **Re-run** button in GitHub’s Checks tab does not retrigger Code Review. Use the comment command or a new push instead.
 
 
-[​](#review-didn’t-run-and-the-pr-shows-a-spend-cap-message)
-
 Review didn’t run and the PR shows a spend-cap message
 
 When your organization’s monthly spend cap is reached, Code Review posts a single comment on the PR explaining that the review was skipped. Reviews resume automatically at the start of the next billing period, or immediately when an admin raises the cap at [claude.ai/admin-settings/usage](https://claude.ai/admin-settings/usage).
 
-
-[​](#find-issues-that-aren’t-showing-as-inline-comments)
 
 Find issues that aren’t showing as inline comments
 
@@ -299,8 +262,6 @@ If the check run title says issues were found but you don’t see inline review 
 - **Files changed annotations**: open the **Files changed** tab on the PR. Findings render as annotations attached directly to the diff lines, separate from review comments.
 - **Review body**: if you pushed to the PR while a review was running, some findings may reference lines that no longer exist in the current diff. Those appear under an **Additional findings** heading in the review body text rather than as inline comments.
 
-
-[​](#related-resources)
 
 Related resources
 

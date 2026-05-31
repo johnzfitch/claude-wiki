@@ -15,16 +15,12 @@ Get started building your own server to use in Claude for Desktop and other clie
 In this tutorial, we’ll build a simple MCP weather server and connect it to a host, Claude for Desktop.
 
 
-[​](#what-we’ll-be-building)
-
 What we’ll be building
 
 We’ll build a server that exposes two tools: `get_alerts` and `get_forecast`. Then we’ll connect the server to an MCP host (in this case, Claude for Desktop):
 
 Servers can connect to any client. We’ve chosen Claude for Desktop here for simplicity, but we also have guides on [building your own client](/docs/develop/build-client) as well as a [list of other clients here](/clients).
 
-
-[​](#core-mcp-concepts)
 
 Core MCP Concepts
 
@@ -55,8 +51,6 @@ This tutorial will primarily focus on tools.
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-python)
 
 
-[​](#prerequisite-knowledge)
-
 Prerequisite knowledge
 
 This quickstart assumes you have familiarity with:
@@ -65,21 +59,15 @@ This quickstart assumes you have familiarity with:
 - LLMs like Claude
 
 
-[​](#logging-in-mcp-servers)
-
 Logging in MCP Servers
 
 When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never write to stdout. Writing to stdout will corrupt the JSON-RPC messages and break your server. The `print()` function writes to stdout by default, but can be used safely with `file=sys.stderr`.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
 
 
-[​](#best-practices)
-
 Best Practices
 
 - Use a logging library that writes to stderr or files.
 
-
-[​](#quick-examples)
 
 Quick Examples
 
@@ -100,15 +88,11 @@ logging.info("Processing request")
 ```
 
 
-[​](#system-requirements)
-
 System requirements
 
 - Python 3.10 or higher installed.
 - You must use the Python MCP SDK 1.2.0 or higher.
 
-
-[​](#set-up-your-environment)
 
 Set up your environment
 
@@ -151,12 +135,8 @@ touch weather.py
 Now let’s dive into building your server.
 
 
-[​](#building-your-server)
-
 Building your server
 
-
-[​](#importing-packages-and-setting-up-the-instance)
 
 Importing packages and setting up the instance
 
@@ -180,8 +160,6 @@ USER_AGENT = "weather-app/1.0"
 
 The FastMCP class uses Python type hints and docstrings to automatically generate tool definitions, making it easy to create and maintain MCP tools.
 
-
-[​](#helper-functions)
 
 Helper functions
 
@@ -214,8 +192,6 @@ Instructions: {props.get("instruction", "No specific instructions provided")}
 """
 ```
 
-
-[​](#implementing-tool-execution)
 
 Implementing tool execution
 
@@ -282,8 +258,6 @@ Forecast: {period["detailedForecast"]}
 ```
 
 
-[​](#running-the-server)
-
 Running the server
 
 Finally, let’s initialize and run the server:
@@ -302,8 +276,6 @@ if __name__ == "__main__":
 
 Your server is complete! Run `uv run weather.py` to start the MCP server, which will listen for messages from MCP hosts.Let’s now test your server from an existing MCP host, Claude for Desktop.
 
-
-[​](#testing-your-server-with-claude-for-desktop)
 
 Testing your server with Claude for Desktop
 
@@ -359,8 +331,6 @@ Save the file, and restart **Claude for Desktop**.
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-typescript)
 
 
-[​](#prerequisite-knowledge-2)
-
 Prerequisite knowledge
 
 This quickstart assumes you have familiarity with:
@@ -369,21 +339,15 @@ This quickstart assumes you have familiarity with:
 - LLMs like Claude
 
 
-[​](#logging-in-mcp-servers-2)
-
 Logging in MCP Servers
 
 When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `console.log()`, as it writes to standard output (stdout) by default. Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
 
 
-[​](#best-practices-2)
-
 Best Practices
 
 - Use `console.error()` which writes to stderr, or use a logging library that writes to stderr or files.
 
-
-[​](#quick-examples-2)
 
 Quick Examples
 
@@ -398,14 +362,10 @@ console.error("Server started"); // stderr is safe
 ```
 
 
-[​](#system-requirements-2)
-
 System requirements
 
 For TypeScript, make sure you have the latest version of Node installed.
 
-
-[​](#set-up-your-environment-2)
 
 Set up your environment
 
@@ -489,12 +449,8 @@ Copy
 Now let’s dive into building your server.
 
 
-[​](#building-your-server-2)
-
 Building your server
 
-
-[​](#importing-packages-and-setting-up-the-instance-2)
 
 Importing packages and setting up the instance
 
@@ -517,8 +473,6 @@ const server = new McpServer({
 });
 ```
 
-
-[​](#helper-functions-2)
 
 Helper functions
 
@@ -595,8 +549,6 @@ interface ForecastResponse {
 }
 ```
 
-
-[​](#implementing-tool-execution-2)
 
 Implementing tool execution
 
@@ -756,8 +708,6 @@ server.registerTool(
 ```
 
 
-[​](#running-the-server-2)
-
 Running the server
 
 Finally, implement the main function to run the server:
@@ -779,8 +729,6 @@ main().catch((error) => {
 
 Make sure to run `npm run build` to build your server! This is a very important step in getting your server to connect.Let’s now test your server from an existing MCP host, Claude for Desktop.
 
-
-[​](#testing-your-server-with-claude-for-desktop-2)
 
 Testing your server with Claude for Desktop
 
@@ -829,14 +777,10 @@ This is a quickstart demo based on Spring AI MCP auto-configuration and boot sta
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/weather/starter-stdio-server)For more information, see the [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) reference documentation. For manual MCP Server implementation, refer to the [MCP Server Java SDK documentation](/sdk/java/mcp-server).
 
 
-[​](#logging-in-mcp-servers-3)
-
 Logging in MCP Servers
 
 When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `System.out.println()` or `System.out.print()`, as they write to standard output (stdout). Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
 
-
-[​](#best-practices-3)
 
 Best Practices
 
@@ -844,15 +788,11 @@ Best Practices
 - Ensure any configured logging library will not write to stdout.
 
 
-[​](#system-requirements-3)
-
 System requirements
 
 - Java 17 or higher installed.
 - [Spring Boot 3.3.x](https://docs.spring.io/spring-boot/installing.html) or higher
 
-
-[​](#set-up-your-environment-3)
 
 Set up your environment
 
@@ -894,12 +834,8 @@ logging.pattern.console=
 The [Server Configuration Properties](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html#_configuration_properties) documents all available properties.Now let’s dive into building your server.
 
 
-[​](#building-your-server-3)
-
 Building your server
 
-
-[​](#weather-service)
 
 Weather Service
 
@@ -951,8 +887,6 @@ public class WeatherService {
 The `@Service` annotation will auto-register the service in your application context. The Spring AI `@Tool` annotation makes it easy to create and maintain MCP tools.The auto-configuration will automatically register these tools with the MCP server.
 
 
-[​](#create-your-boot-application)
-
 Create your Boot Application
 
 Copy
@@ -975,8 +909,6 @@ public class McpServerApplication {
 Uses the `MethodToolCallbackProvider` utils to convert the `@Tools` into actionable callbacks used by the MCP server.
 
 
-[​](#running-the-server-3)
-
 Running the server
 
 Finally, let’s build the server:
@@ -989,8 +921,6 @@ Copy
 
 This will generate an `mcp-weather-stdio-server-0.0.1-SNAPSHOT.jar` file within the `target` folder.Let’s now test your server from an existing MCP host, Claude for Desktop.
 
-
-[​](#testing-your-server-with-claude-for-desktop-3)
 
 Testing your server with Claude for Desktop
 
@@ -1041,12 +971,8 @@ This tells Claude for Desktop:
 Save the file, and restart **Claude for Desktop**.
 
 
-[​](#testing-your-server-with-java-client)
-
 Testing your server with Java client
 
-
-[​](#create-an-mcp-client-manually)
 
 Create an MCP Client manually
 
@@ -1078,8 +1004,6 @@ mcpClient.closeGracefully();
 ```
 
 
-[​](#use-mcp-client-boot-starter)
-
 Use MCP Client Boot Starter
 
 Create a new boot starter application using the `spring-ai-starter-mcp-client` dependency:
@@ -1104,16 +1028,12 @@ spring.ai.mcp.client.stdio.servers-configuration=file:PATH/TO/claude_desktop_con
 When you start your client application, the auto-configuration will automatically create MCP clients from the claude_desktop_config.json.For more information, see the [MCP Client Boot Starters](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-client-docs.html) reference documentation.
 
 
-[​](#more-java-mcp-server-examples)
-
 More Java MCP Server examples
 
 The [starter-webflux-server](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/weather/starter-webflux-server) demonstrates how to create an MCP server using SSE transport. It showcases how to define and register MCP Tools, Resources, and Prompts, using the Spring Boot’s auto-configuration capabilities.
 
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/kotlin-sdk/tree/main/samples/weather-stdio-server)
 
-
-[​](#prerequisite-knowledge-3)
 
 Prerequisite knowledge
 
@@ -1123,28 +1043,20 @@ This quickstart assumes you have familiarity with:
 - LLMs like Claude
 
 
-[​](#logging-in-mcp-servers-4)
-
 Logging in MCP Servers
 
 When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `println()`, as it writes to standard output (stdout) by default. Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
 
-
-[​](#best-practices-4)
 
 Best Practices
 
 - Use a logging library that writes to stderr or files.
 
 
-[​](#system-requirements-4)
-
 System requirements
 
 - Java 17 or higher installed.
 
-
-[​](#set-up-your-environment-4)
 
 Set up your environment
 
@@ -1212,12 +1124,8 @@ plugins {
 Now let’s dive into building your server.
 
 
-[​](#building-your-server-4)
-
 Building your server
 
-
-[​](#setting-up-the-instance)
 
 Setting up the instance
 
@@ -1256,8 +1164,6 @@ fun `run mcp server`() {
 }
 ```
 
-
-[​](#weather-api-helper-functions)
 
 Weather API helper functions
 
@@ -1337,8 +1243,6 @@ data class Alert(
 ```
 
 
-[​](#implementing-tool-execution-3)
-
 Implementing tool execution
 
 The tool execution handler is responsible for actually executing the logic of each tool. Let’s add it:
@@ -1417,8 +1321,6 @@ server.addTool(
 ```
 
 
-[​](#running-the-server-4)
-
 Running the server
 
 Finally, implement the main function to run the server:
@@ -1431,8 +1333,6 @@ fun main() = `run mcp server`()
 
 Make sure to run `./gradlew build` to build your server. This is a very important step in getting your server to connect.Let’s now test your server from an existing MCP host, Claude for Desktop.
 
-
-[​](#testing-your-server-with-claude-for-desktop-4)
 
 Testing your server with Claude for Desktop
 
@@ -1482,8 +1382,6 @@ Save the file, and restart **Claude for Desktop**.
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/csharp-sdk/tree/main/samples/QuickstartWeatherServer)
 
 
-[​](#prerequisite-knowledge-4)
-
 Prerequisite knowledge
 
 This quickstart assumes you have familiarity with:
@@ -1493,28 +1391,20 @@ This quickstart assumes you have familiarity with:
 - .NET 8 or higher
 
 
-[​](#logging-in-mcp-servers-5)
-
 Logging in MCP Servers
 
 When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `Console.WriteLine()` or `Console.Write()`, as they write to standard output (stdout). Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
 
-
-[​](#best-practices-5)
 
 Best Practices
 
 - Use a logging library that writes to stderr or files.
 
 
-[​](#system-requirements-5)
-
 System requirements
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or higher installed.
 
-
-[​](#set-up-your-environment-5)
 
 Set up your environment
 
@@ -1556,8 +1446,6 @@ dotnet add package Microsoft.Extensions.Hosting
 Now let’s dive into building your server.
 
 
-[​](#building-your-server-5)
-
 Building your server
 
 Open the `Program.cs` file in your project and replace its contents with the following code:
@@ -1592,8 +1480,6 @@ When creating the `ApplicationHostBuilder`, ensure you use `CreateEmptyApplicati
 
 This code sets up a basic console application that uses the Model Context Protocol SDK to create an MCP server with standard I/O transport.
 
-
-[​](#weather-api-helper-functions-2)
 
 Weather API helper functions
 
@@ -1682,8 +1568,6 @@ public static class WeatherTools
 ```
 
 
-[​](#running-the-server-5)
-
 Running the server
 
 Finally, run the server using the following command:
@@ -1696,8 +1580,6 @@ dotnet run
 
 This will start the server and listen for incoming requests on standard input/output.
 
-
-[​](#testing-your-server-with-claude-for-desktop-5)
 
 Testing your server with Claude for Desktop
 
@@ -1742,8 +1624,6 @@ This tells Claude for Desktop:
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-ruby)
 
 
-[​](#prerequisite-knowledge-5)
-
 Prerequisite knowledge
 
 This quickstart assumes you have familiarity with:
@@ -1752,21 +1632,15 @@ This quickstart assumes you have familiarity with:
 - LLMs like Claude
 
 
-[​](#logging-in-mcp-servers-6)
-
 Logging in MCP Servers
 
 When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `puts` or `print`, as they write to standard output (stdout) by default. Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
 
 
-[​](#best-practices-6)
-
 Best Practices
 
 - Use a logging library that writes to stderr or files.
 
-
-[​](#quick-examples-3)
 
 Quick Examples
 
@@ -1783,14 +1657,10 @@ logger.info("Processing request")
 ```
 
 
-[​](#system-requirements-6)
-
 System requirements
 
 - Ruby 2.7 or higher installed.
 
-
-[​](#set-up-your-environment-6)
 
 Set up your environment
 
@@ -1831,12 +1701,8 @@ touch weather.rb
 Now let’s dive into building your server.
 
 
-[​](#building-your-server-6)
-
 Building your server
 
-
-[​](#importing-packages-and-setting-up-constants)
 
 Importing packages and setting up constants
 
@@ -1856,8 +1722,6 @@ USER_AGENT = "weather-app/1.0"
 
 The `mcp` gem provides the Model Context Protocol SDK for Ruby, with classes for server implementation and stdio transport.
 
-
-[​](#helper-methods)
 
 Helper methods
 
@@ -1896,8 +1760,6 @@ module HelperMethods
 end
 ```
 
-
-[​](#implementing-tool-execution-4)
 
 Implementing tool execution
 
@@ -1988,8 +1850,6 @@ end
 ```
 
 
-[​](#running-the-server-6)
-
 Running the server
 
 Finally, initialize and run the server:
@@ -2009,8 +1869,6 @@ transport.open
 
 Your server is complete! Run `bundle exec ruby weather.rb` to start the MCP server, which will listen for messages from MCP hosts.Let’s now test your server from an existing MCP host, Claude for Desktop.
 
-
-[​](#testing-your-server-with-claude-for-desktop-6)
 
 Testing your server with Claude for Desktop
 
@@ -2060,8 +1918,6 @@ Save the file, and restart **Claude for Desktop**.
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-rust)
 
 
-[​](#prerequisite-knowledge-6)
-
 Prerequisite knowledge
 
 This quickstart assumes you have familiarity with:
@@ -2071,22 +1927,16 @@ This quickstart assumes you have familiarity with:
 - LLMs like Claude
 
 
-[​](#logging-in-mcp-servers-7)
-
 Logging in MCP Servers
 
 When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `println!()` or `print!()`, as they write to standard output (stdout). Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
 
-
-[​](#best-practices-7)
 
 Best Practices
 
 - Use a logging library that writes to stderr or files, such as `tracing` or `log` in Rust.
 - Configure your logging framework to avoid stdout output.
 
-
-[​](#quick-examples-4)
 
 Quick Examples
 
@@ -2101,15 +1951,11 @@ eprintln!("Processing request"); // writes to stderr
 ```
 
 
-[​](#system-requirements-7)
-
 System requirements
 
 - Rust 1.70 or higher installed.
 - Cargo (comes with Rust installation).
 
-
-[​](#set-up-your-environment-7)
 
 Set up your environment
 
@@ -2174,12 +2020,8 @@ tracing-subscriber = { version = "0.3", features = ["env-filter", "std", "fmt"] 
 Now let’s dive into building your server.
 
 
-[​](#building-your-server-7)
-
 Building your server
 
-
-[​](#importing-packages-and-constants)
 
 Importing packages and constants
 
@@ -2204,8 +2046,6 @@ const USER_AGENT: &str = "weather-app/1.0";
 
 The `rmcp` crate provides the Model Context Protocol SDK for Rust, with features for server implementation, procedural macros, and stdio transport.
 
-
-[​](#data-structures)
 
 Data structures
 
@@ -2287,8 +2127,6 @@ pub struct MCPAlertRequest {
 ```
 
 
-[​](#helper-functions-3)
-
 Helper functions
 
 Add helper functions for making API requests and formatting responses:
@@ -2339,8 +2177,6 @@ fn format_period(period: &ForecastPeriod) -> String {
 }
 ```
 
-
-[​](#implementing-the-weather-server-and-tools)
 
 Implementing the Weather server and tools
 
@@ -2422,8 +2258,6 @@ impl Weather {
 The `#[tool_router]` macro automatically generates the routing logic, and the `#[tool]` attribute marks methods as MCP tools.
 
 
-[​](#implementing-the-serverhandler)
-
 Implementing the ServerHandler
 
 Implement the `ServerHandler` trait to define server capabilities:
@@ -2442,8 +2276,6 @@ impl ServerHandler for Weather {
 }
 ```
 
-
-[​](#running-the-server-7)
 
 Running the server
 
@@ -2471,8 +2303,6 @@ cargo build --release
 
 The compiled binary will be in `target/release/weather`.Let’s now test your server from an existing MCP host, Claude for Desktop.
 
-
-[​](#testing-your-server-with-claude-for-desktop-7)
 
 Testing your server with Claude for Desktop
 
@@ -2520,8 +2350,6 @@ Save the file, and restart **Claude for Desktop**.
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-go)
 
 
-[​](#prerequisite-knowledge-7)
-
 Prerequisite knowledge
 
 This quickstart assumes you have familiarity with:
@@ -2530,22 +2358,16 @@ This quickstart assumes you have familiarity with:
 - LLMs like Claude
 
 
-[​](#logging-in-mcp-servers-8)
-
 Logging in MCP Servers
 
 When implementing MCP servers, be careful about how you handle logging:**For STDIO-based servers:** Never use `fmt.Println()` or `fmt.Printf()`, as they write to standard output (stdout). Writing to stdout will corrupt the JSON-RPC messages and break your server.**For HTTP-based servers:** Standard output logging is fine since it doesn’t interfere with HTTP responses.
 
-
-[​](#best-practices-8)
 
 Best Practices
 
 - Use `log.Println()` (which defaults to stderr) or a logging library that writes to stderr or files.
 - Use `fmt.Fprintf(os.Stderr, ...)` to write to stderr explicitly.
 
-
-[​](#quick-examples-5)
 
 Quick Examples
 
@@ -2563,14 +2385,10 @@ fmt.Fprintln(os.Stderr, "Processing request")
 ```
 
 
-[​](#system-requirements-8)
-
 System requirements
 
 - Go 1.24 or higher installed.
 
-
-[​](#set-up-your-environment-8)
 
 Set up your environment
 
@@ -2608,12 +2426,8 @@ touch main.go
 Now let’s dive into building your server.
 
 
-[​](#building-your-server-8)
-
 Building your server
 
-
-[​](#importing-packages-and-constants-2)
 
 Importing packages and constants
 
@@ -2643,8 +2457,6 @@ const (
 )
 ```
 
-
-[​](#data-structures-2)
 
 Data structures
 
@@ -2700,8 +2512,6 @@ type AlertsInput struct {
 }
 ```
 
-
-[​](#helper-functions-4)
 
 Helper functions
 
@@ -2767,8 +2577,6 @@ Forecast: %s
 }
 ```
 
-
-[​](#implementing-tool-execution-5)
 
 Implementing tool execution
 
@@ -2877,8 +2685,6 @@ func getAlerts(ctx context.Context, req *mcp.CallToolRequest, input AlertsInput)
 ```
 
 
-[​](#running-the-server-8)
-
 Running the server
 
 Finally, implement the main function to run the server:
@@ -2922,8 +2728,6 @@ go build -o weather .
 
 The compiled binary will be in `./weather`.Let’s now test your server from an existing MCP host, Claude for Desktop.
 
-
-[​](#testing-your-server-with-claude-for-desktop-8)
 
 Testing your server with Claude for Desktop
 
@@ -2969,8 +2773,6 @@ This tells Claude for Desktop:
 Save the file, and restart **Claude for Desktop**.
 
 
-[​](#test-with-commands)
-
 Test with commands
 
 Let’s make sure Claude for Desktop is picking up the two tools we’ve exposed in our `weather` server. You can do this by looking for the “Add files, connectors, and more /” icon:
@@ -2985,8 +2787,6 @@ If your server isn’t being picked up by Claude for Desktop, proceed to the [Tr
 Since this is the US National Weather service, the queries will only work for US locations.
 
 
-[​](#what’s-happening-under-the-hood)
-
 What’s happening under the hood
 
 When you ask a question:
@@ -2998,8 +2798,6 @@ When you ask a question:
 5.  Claude formulates a natural language response
 6.  The response is displayed to you!
 
-
-[​](#troubleshooting)
 
 Troubleshooting
 
@@ -3058,8 +2856,6 @@ Fix:
 
 For more advanced troubleshooting, check out our guide on [Debugging MCP](/legacy/tools/debugging)
 
-
-[​](#next-steps)
 
 Next steps
 

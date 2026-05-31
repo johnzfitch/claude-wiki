@@ -28,21 +28,15 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP proposes changes to the Streamable HTTP transport in order to mitigate issues regarding long-running connections and resumability.
 
 
-[​](#motivation)
-
 Motivation
 
 The Streamable HTTP transport spec [does not allow](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/04c6e1f0ea6544c7df307fb2d7c637efe34f58d3/docs/specification/draft/basic/transports.mdx?plain=1#L109-L111) servers to close a connection while computing a result. In other words, barring client-side disconnection, servers must maintain potentially long-running connections.
 
-
-[​](#specification)
 
 Specification
 
@@ -57,22 +51,16 @@ To:
 If a server disconnects, the client will interpret the disconnection the same as a network failure, and will attempt to reconnect. In order to prevent clients from reconnecting / polling excessively, the server SHOULD send an SSE event with a [`retry`](https://html.spec.whatwg.org/multipage/server-sent-events.html#:~:text=field%20name%20is%20%22retry%22) field indicating how long the client should wait before reconnecting. Clients MUST respect the `retry` field.
 
 
-[​](#rationale)
-
 Rationale
 
 Servers may disconnect at will, avoiding long-running connections. Sending a `retry` field will prevent the client from hammering the server with inappropriate reconnection attempts.
 
-
-[​](#backward-compatibility)
 
 Backward Compatibility
 
 - **New Client + Old Server**: No changes. No backward incompatibility.
 - **Old Client + New Server**: Client should interpret an at-will disconnect the same as a network failure. `retry` field is part of the SSE standard. No backward incompatibility if client already implements proper SSE resuming logic.
 
-
-[​](#additional-information)
 
 Additional Information
 

@@ -14,8 +14,6 @@ Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM
 
 ## 
 
-[​](#prerequisites)
-
 Prerequisites
 
 Before configuring Claude Code with Bedrock, ensure you have:
@@ -29,13 +27,9 @@ If you are deploying Claude Code to multiple users, [pin your model versions](#4
 
 ## 
 
-[​](#setup)
-
 Setup
 
 ### 
-
-[​](#1-submit-use-case-details)
 
 1. Submit use case details
 
@@ -47,8 +41,6 @@ First-time users of Anthropic models are required to submit use case details bef
 4.  Choose any Anthropic model and you will be prompted to fill out the use case form
 
 ### 
-
-[​](#2-configure-aws-credentials)
 
 2. Configure AWS credentials
 
@@ -115,8 +107,6 @@ Bedrock API keys provide a simpler authentication method without needing full AW
 
 #### 
 
-[​](#advanced-credential-configuration)
-
 Advanced credential configuration
 
 Claude Code supports automatic credential refresh for AWS SSO and corporate identity providers. Add these settings to your Claude Code settings file (see [Settings](/docs/en/settings) for file locations). When Claude Code detects that your AWS credentials are expired (either locally based on their timestamp or when Bedrock returns a credential error), it will automatically run your configured `awsAuthRefresh` and/or `awsCredentialExport` commands to obtain new credentials before retrying the request.
@@ -158,8 +148,6 @@ Copy
 
 ### 
 
-[​](#3-configure-claude-code)
-
 3. Configure Claude Code
 
 Set the following environment variables to enable Bedrock:
@@ -185,8 +173,6 @@ When enabling Bedrock for Claude Code, keep the following in mind:
 - You can use settings files for environment variables like `AWS_PROFILE` that you don’t want to leak to other processes. See [Settings](/docs/en/settings) for more information.
 
 ### 
-
-[​](#4-pin-model-versions)
 
 4. Pin model versions
 
@@ -235,8 +221,6 @@ export DISABLE_PROMPT_CACHING=1
 
 #### 
 
-[​](#map-each-model-version-to-an-inference-profile)
-
 Map each model version to an inference profile
 
 The `ANTHROPIC_DEFAULT_*_MODEL` environment variables configure one inference profile per model family. If your organization needs to expose several versions of the same family in the `/model` picker, each routed to its own application inference profile ARN, use the `modelOverrides` setting in your [settings file](/docs/en/settings#settings-files) instead. This example maps three Opus versions to distinct ARNs so users can switch between them without bypassing your organization’s inference profiles:
@@ -259,8 +243,6 @@ Copy
 When a user selects one of these versions in `/model`, Claude Code calls Bedrock with the mapped ARN. Versions without an override fall back to the built-in Bedrock model ID or any matching inference profile discovered at startup. See [Override model IDs per version](/docs/en/model-config#override-model-ids-per-version) for details on how overrides interact with `availableModels` and other model settings.
 
 ## 
-
-[​](#iam-configuration)
 
 IAM configuration
 
@@ -313,8 +295,6 @@ Create a dedicated AWS account for Claude Code to simplify cost tracking and acc
 
 ## 
 
-[​](#aws-guardrails)
-
 AWS Guardrails
 
 [Amazon Bedrock Guardrails](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html) let you implement content filtering for Claude Code. Create a Guardrail in the [Amazon Bedrock console](https://console.aws.amazon.com/bedrock/), publish a version, then add the Guardrail headers to your [settings file](/docs/en/settings). Enable Cross-Region inference on your Guardrail if you’re using cross-region inference profiles. Example configuration:
@@ -334,8 +314,6 @@ Copy
 
 ## 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
 If you encounter region issues:
@@ -351,8 +329,6 @@ If you receive an error “on-demand throughput isn’t supported”:
 Claude Code uses the Bedrock [Invoke API](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html) and does not support the Converse API.
 
 ## 
-
-[​](#additional-resources)
 
 Additional resources
 

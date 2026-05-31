@@ -28,14 +28,10 @@ FinalProcess
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP establishes formal procedures for Lead Maintainer succession and governance amendment within the Model Context Protocol project. It defines clear processes for leadership transitions when a Lead Maintainer leaves their role and establishes requirements for proposing and approving changes to the governance structure itself.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -47,21 +43,15 @@ The current MCP governance structure defines roles and responsibilities but lack
 Establishing these procedures now, while the project leadership is stable, ensures continuity and provides clear guidance for future scenarios.
 
 
-[​](#specification)
-
 Specification
 
 The following sections shall be added to the MCP Governance document.
 
 
-[​](#succession)
-
 Succession
 
 If a Lead Maintainer leaves their role for any reason, the succession process begins upon their written notice or, if unable to provide notice, upon a determination by the remaining Lead Maintainer(s) or Core Maintainers that the Lead Maintainer is unable to continue serving. If one or more Lead Maintainer(s) remain, they shall appoint a successor (by majority vote if multiple), and the remaining Lead Maintainer(s) will continue to govern until a successor is appointed. If no Lead Maintainers remain, the Core Maintainers shall appoint a successor by majority vote within 30 days, and the project operates by two-thirds vote of Core Maintainers until a new Lead Maintainer is appointed.
 
-
-[​](#amendment)
 
 Amendment
 
@@ -73,12 +63,8 @@ Amendments to this governance structure may only be proposed by Lead Maintainers
 4.  Be decided by recorded vote of Core Maintainers
 
 
-[​](#rationale)
-
 Rationale
 
-
-[​](#succession-process-design)
 
 Succession Process Design
 
@@ -90,8 +76,6 @@ The succession process is designed with several principles in mind:
 - **Supermajority Interim Governance**: Two-thirds voting during interregnum periods ensures major decisions have broad support during transitional periods.
 
 
-[​](#amendment-process-design)
-
 Amendment Process Design
 
 The amendment process balances stability with adaptability:
@@ -102,28 +86,20 @@ The amendment process balances stability with adaptability:
 - **Recorded Votes**: Transparency in voting ensures accountability and provides a historical record of governance decisions.
 
 
-[​](#alternatives-considered)
-
 Alternatives Considered
 
 **Succession by Election**: An open election process was considered but rejected as potentially disruptive and slow during critical transition periods. The current proposal allows for quick succession while maintaining checks through the existing maintainer structure. **Amendment by Any Maintainer**: Allowing any maintainer to propose amendments was considered but could lead to governance instability. The current approach balances stability with the ability to evolve. **Longer Comment Periods**: Longer comment periods (e.g., 30 days) were considered but deemed excessive for a project that already has regular bi-weekly Core Maintainer meetings. Five days allows for at least one meeting cycle while enabling timely decisions.
 
-
-[​](#backward-compatibility)
 
 Backward Compatibility
 
 This SEP adds new procedures without modifying existing governance structures. No backward compatibility concerns exist.
 
 
-[​](#security-implications)
-
 Security Implications
 
 This SEP has no direct security implications. However, clear succession procedures indirectly support security by ensuring continuous responsible stewardship of the project, including security-related decisions.
 
-
-[​](#reference-implementation)
 
 Reference Implementation
 

@@ -28,14 +28,10 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP documents conventions for OpenTelemetry (OTel) trace context propagation in MCP. [OTel semantic conventions for MCP](https://github.com/open-telemetry/semantic-conventions/blob/e126ea9105b15912ccd80deab98929025189b696/docs/gen-ai/mcp.md#context-propagation) specify using `_meta` as the carrier for W3C Trace Context keys. This is already in practice in the C# SDK and other implementations. This specification documents an exception to the DNS prefixing convention for keys in `_meta`. This enables interoperability across existing and new implementations and serves as a foundation for related SEPs (such as [SEP-2028](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2028)).
 
-
-[​](#specification)
 
 Specification
 
@@ -47,8 +43,6 @@ This SEP adds documentation to the MCP specification, noting:
 
 See [agentclientprotocol/agent-client-protocol#297](https://github.com/agentclientprotocol/agent-client-protocol/pull/297) for equivalent documentation changes in ACP.
 
-
-[​](#non-normative-example)
 
 Non-normative example
 
@@ -72,19 +66,13 @@ Copy
 ```
 
 
-[​](#rationale)
-
 Rationale
 
-
-[​](#why-document-this)
 
 Why document this?
 
 This is currently documented elsewhere, but not as an MCP specification. Doing so ensures that SEPs depending on this pattern can complete, as well as other SDKs in and outside the MCP org can as well, such as [Logfire](https://github.com/pydantic/logfire/blob/09232402fd7e268c667db59d1e9f890ed30f7850/logfire/_internal/integrations/mcp.py#L149-L162) and [ToolHive](https://github.com/stacklok/toolhive/issues/3399). If we don’t document this shared concern, differing interpretations could materialize, such as namespacing traceparent like `io.modelcontextprotocol.traceparent`, which will break traces and log correlation.
 
-
-[​](#related-seps)
 
 Related SEPs
 
@@ -92,21 +80,15 @@ Related SEPs
 - [SEP-2028](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2028) - builds on this SEP for forwarding `_meta` values to HTTP headers
 
 
-[​](#backward-compatibility)
-
 Backward Compatibility
 
 This SEP documents existing conventions and is backward compatible.
 
 
-[​](#security-implications)
-
 Security Implications
 
 Trace context in `_meta` may include correlation IDs. Implementations should follow existing data-handling guidance appropriate to their environment.
 
-
-[​](#reference-implementation)
 
 Reference Implementation
 

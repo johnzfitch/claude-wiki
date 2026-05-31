@@ -110,7 +110,7 @@ Primary care physicians face an administrative burden that cuts into patient tim
 
 Elation's Clinical Insights feature first launched in September 2025with another model provider, and already helped clinicians search and summarize chart data, but three challenges limited its effectiveness. Speed was the first barrier: the median time to first results was 26 seconds, too slow for tightly scheduled primary care visits. Trust was the second concern—clinicians needed summaries with clear citations back to source chart data so they could verify every statement at a glance. And the third requirement was fit for regulated healthcare workflows, where models must operate within HIPAA-compliant environments and strict governance frameworks.
 
-“Clinical Insights was built to tackle the hardest part of chart review in primary care, pre-visit prep and in-visit review, when clinicians need instant clarity on what’s changed and why it matters,” said Kyna Fong CEO & Co-Founder of Elation Health. 
+“Clinical Insights was built to tackle the hardest part of chart review in primary care, pre-visit prep and in-visit review, when clinicians need instant clarity on what’s changed and why it matters,” said Kyna Fong CEO & Co-Founder of Elation Health. 
 
 ## Choosing Claude through rigorous evaluation
 
@@ -120,7 +120,7 @@ Elation selected Claude after evaluating it against real primary care workflows 
 
 Claude also performed well at following complex instructions, essential for supporting physician decision-making while analyzing large amounts of clinical data..
 
-“Claude delivers higher accuracy on chart-based evaluation tasks while operating at a fraction of the latency,” Fong shared. “Claude’s long‑context and instruction‑following performance was strong enough that we didn’t need to re‑engineer our pipeline or extensively rewrite prompts.” 
+“Claude delivers higher accuracy on chart-based evaluation tasks while operating at a fraction of the latency,” Fong shared. “Claude’s long‑context and instruction‑following performance was strong enough that we didn’t need to re‑engineer our pipeline or extensively rewrite prompts.” 
 
 Implementation moved quickly. A small engineering group had Claude wired into internal builds in three days, using existing chart-search and Clinical Insights infrastructure. In several places, Claude's performance actually let the team simplify prompts and remove workaround logic they'd introduced for other model providers. Elation then rolled the Claude-backed version out to 100% of users over roughly two weeks without disrupting clinician workflows.
 
@@ -130,7 +130,7 @@ Implementation moved quickly. A small engineering group had Claude wired into in
 
 Claude Haiku 4.5 now exclusively powers Clinical Insights, delivering cited, clinician-controlled summaries of a patient's health story directly within Elation's EHR. Before a visit, clinicians can click customizable buttons like "Summarize last three visits" or “search for a condition.” Claude synthesizes the most relevant information—recent assessments, treatment changes, lab trends, vitals, and follow-ups—into a concise summary with citations back to the underlying notes, labs, and problem list entries.
 
-When Elation migrated Clinical Insights to Claude, the median time to start seeing insights dropped by 61%. Combined with streaming responses in the UI, clinicians can now begin reading answers as they generate, connecting the workflow more naturally to a live visit. 
+When Elation migrated Clinical Insights to Claude, the median time to start seeing insights dropped by 61%. Combined with streaming responses in the UI, clinicians can now begin reading answers as they generate, connecting the workflow more naturally to a live visit. 
 
 The results show up in adoption and clinical workflow. Since Elation launched its clinical AI platform in August 2025, overall adoption of AI tools across the platform has more than tripled among active clinicians. Within that portfolio, Claude-powered Clinical Insights has emerged as the fastest-adopted AI feature, with usage doubling since the Claude migration and weekly prescriber usage steadily trending upwards.
 

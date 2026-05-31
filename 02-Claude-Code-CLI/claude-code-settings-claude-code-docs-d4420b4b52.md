@@ -1,8 +1,9 @@
 ---
+title: "Claude Code settings - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/settings"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:23:08Z"
-source_url: "https://code.claude.com/docs/en/settings"
-title: "Claude Code settings - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Claude Code settings
@@ -20,14 +21,10 @@ Configure Claude Code with global and project-level settings, and environment va
 Claude Code offers a variety of settings to configure its behavior to meet your needs. You can configure Claude Code by running the `/config` command when using the interactive REPL, which opens a tabbed Settings interface where you can view status information and modify configuration options.
 
 
-[​](#configuration-scopes)
-
 Configuration scopes
 
 Claude Code uses a **scope system** to determine where configurations apply and who they’re shared with. Understanding scopes helps you decide how to configure Claude Code for personal use, team collaboration, or enterprise deployment.
 
-
-[​](#available-scopes)
 
 Available scopes
 
@@ -38,8 +35,6 @@ Available scopes
 | **Project** | `.claude/` in repository                                                           | All collaborators on this repository | Yes (committed to git) |
 | **Local**   | `.claude/settings.local.json`                                                      | You, in this repository only         | No (gitignored)        |
 
-
-[​](#when-to-use-each-scope)
 
 When to use each scope
 
@@ -68,8 +63,6 @@ When to use each scope
 - Machine-specific settings that won’t work for others
 
 
-[​](#how-scopes-interact)
-
 How scopes interact
 
 When the same setting appears in multiple scopes, Claude Code applies them in priority order:
@@ -82,8 +75,6 @@ When the same setting appears in multiple scopes, Claude Code applies them in pr
 
 For example, if your user settings set `spinnerTipsEnabled` to `true` and project settings set it to `false`, the project value applies. Permission rules behave differently because they merge across scopes rather than override. See [Settings precedence](#settings-precedence).
 
-
-[​](#what-uses-scopes)
 
 What uses scopes
 
@@ -101,8 +92,6 @@ On Windows, paths shown as `~/.claude` resolve to `%USERPROFILE%\.claude`.
 
 ------------------------------------------------------------------------
 
-
-[​](#settings-files)
 
 Settings files
 
@@ -167,8 +156,6 @@ Example settings.json
 The `$schema` line in the example above points to the [official JSON schema](https://json.schemastore.org/claude-code-settings.json) for Claude Code settings. Adding it to your `settings.json` enables autocomplete and inline validation in VS Code, Cursor, and any other editor that supports JSON schema validation. The published schema is updated periodically and may not include settings added in the most recent CLI releases, so a validation warning on a recently documented field does not necessarily mean your configuration is invalid.
 
 
-[​](#when-edits-take-effect)
-
 When edits take effect
 
 Claude Code watches your settings files and reloads them when they change, so edits to most keys apply to the running session without a restart. This includes `permissions`, `hooks`, and credential helpers like `apiKeyHelper`. The reload covers user, project, local, and managed settings, and the [`ConfigChange` hook](/docs/en/hooks#configchange) fires for each detected change. A few keys are read once at session start and apply on the next restart instead:
@@ -176,8 +163,6 @@ Claude Code watches your settings files and reloads them when they change, so ed
 - `model`: use [`/model`](/docs/en/model-config#setting-your-model) to switch mid-session
 - [`outputStyle`](/docs/en/output-styles): part of the system prompt, which is rebuilt on `/clear` or restart
 
-
-[​](#available-settings)
 
 Available settings
 
@@ -274,8 +259,6 @@ Available settings
 | `wslInheritsWindowsSettings`      | (Windows managed settings only) When `true`, Claude Code on WSL reads managed settings from the Windows policy chain in addition to `/etc/claude-code`, with Windows sources taking priority. Only honored when set in the HKLM registry key or `C:\Program Files\ClaudeCode\managed-settings.json`, both of which require Windows admin to write. For HKCU policy to also apply on WSL, the flag must additionally be set in HKCU itself. Has no effect on native Windows                                                                                 | `true`                                                                                                                         |
 
 
-[​](#global-config-settings)
-
 Global config settings
 
 These settings are stored in `~/.claude.json` rather than `settings.json`. Adding them to `settings.json` will trigger a schema validation error.
@@ -289,8 +272,6 @@ Versions before v2.1.119 also store `autoScrollEnabled`, `editorMode`, `showTurn
 | `externalEditorContext`   | Prepend Claude’s previous response as `#`-commented context when you open the external editor with `Ctrl+G`. Default: `false`. Appears in `/config` as **Show last response in external editor**                                                                                                                                           | `true`     |
 | `teammateDefaultModel`    | Default model for [agent team](/docs/en/agent-teams) teammates when the spawn prompt doesn’t specify one. Set to a model alias such as `"sonnet"`, or `null` to inherit the lead’s current `/model` selection. Appears in `/config` as **Default teammate model**                                                                          | `"sonnet"` |
 
-
-[​](#worktree-settings)
 
 Worktree settings
 
@@ -306,8 +287,6 @@ Configure how `--worktree` creates and manages git worktrees.
 To copy gitignored files like `.env` into new worktrees, use a [`.worktreeinclude` file](/docs/en/worktrees#copy-gitignored-files-into-worktrees) in your project root instead of a setting.
 
 
-[​](#permission-settings)
-
 Permission settings
 
 | Keys                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Example                                                                |
@@ -320,8 +299,6 @@ Permission settings
 | `disableBypassPermissionsMode`      | Set to `"disable"` to prevent `bypassPermissions` mode from being activated. This disables the `--dangerously-skip-permissions` command-line flag. Typically placed in [managed settings](/docs/en/permissions#managed-settings) to enforce organizational policy, but works from any scope                                                                                                                                                                                                  | `"disable"`                                                            |
 | `skipDangerousModePermissionPrompt` | Skip the confirmation prompt shown before entering bypass permissions mode via `--dangerously-skip-permissions` or `defaultMode: "bypassPermissions"`. Ignored when set in project settings (`.claude/settings.json`) to prevent untrusted repositories from auto-bypassing the prompt                                                                                                                                                                                                       | `true`                                                                 |
 
-
-[​](#permission-rule-syntax)
 
 Permission rule syntax
 
@@ -336,8 +313,6 @@ Permission rules follow the format `Tool` or `Tool(specifier)`. Rules are evalua
 
 For the complete rule syntax reference, including wildcard behavior, tool-specific patterns for Read, Edit, WebFetch, MCP, and Agent rules, and security limitations of Bash patterns, see [Permission rule syntax](/docs/en/permissions#permission-rule-syntax).
 
-
-[​](#sandbox-settings)
 
 Sandbox settings
 
@@ -369,8 +344,6 @@ Configure advanced sandboxing behavior. Sandboxing isolates bash commands from y
 | `bwrapPath`                            | (Managed settings only, Linux/WSL2) Absolute path to the bubblewrap (`bwrap`) binary. Overrides automatic detection via `PATH`. Only honored from [managed settings](/docs/en/settings#settings-precedence), not from user or project settings. Useful when `bwrap` is installed at a non-standard location in managed environments.            | `/opt/admin/bwrap`                |
 | `socatPath`                            | (Managed settings only, Linux/WSL2) Absolute path to the `socat` binary used for the sandbox network proxy. Overrides automatic detection via `PATH`. Only honored from managed settings.                                                                                                                                                       | `/opt/admin/socat`                |
 
-
-[​](#sandbox-path-prefixes)
 
 Sandbox path prefixes
 
@@ -412,8 +385,6 @@ The older `//path` prefix for absolute paths still works. If you previously used
 - **Permission rules**: Use `Edit` allow/deny rules to control Claude’s file tool access, `Read` deny rules to block reads, and `WebFetch` allow/deny rules to control network domains. Paths from these rules are also merged into the sandbox configuration.
 
 
-[​](#attribution-settings)
-
 Attribution settings
 
 Claude Code adds attribution to git commits and pull requests. These are configured separately:
@@ -454,8 +425,6 @@ Claude Code adds attribution to git commits and pull requests. These are configu
 The `attribution` setting takes precedence over the deprecated `includeCoAuthoredBy` setting. To hide all attribution, set `commit` and `pr` to empty strings.
 
 
-[​](#file-suggestion-settings)
-
 File suggestion settings
 
 Configure a custom command for `@` file path autocomplete. The built-in file suggestion uses fast filesystem traversal, but large monorepos may benefit from project-specific indexing such as a pre-built file index or custom tooling.
@@ -492,8 +461,6 @@ your-repo-file-index --query "$query" | head -20
 ```
 
 
-[​](#hook-configuration)
-
 Hook configuration
 
 These settings control which hooks are allowed to run and what HTTP hooks can access. The `allowManagedHooksOnly` setting can only be configured in [managed settings](#settings-files). The URL and env var allowlists can be set at any settings level and merge across sources. **Behavior when `allowManagedHooksOnly` is `true`:**
@@ -518,8 +485,6 @@ These settings control which hooks are allowed to run and what HTTP hooks can ac
 }
 ```
 
-
-[​](#compute-managed-settings-with-a-policy-helper)
 
 Compute managed settings with a policy helper
 
@@ -546,8 +511,6 @@ The helper writes a JSON envelope to stdout. Put the settings under a `managedSe
 When the helper emits `managedSettings`, that object replaces the file-based managed settings for the run. When the helper exits non-zero at startup, Claude Code prints the error and refuses to start, so a helper that needs outage resilience should serve from its own cache and exit `0`.
 
 
-[​](#settings-precedence)
-
 Settings precedence
 
 Settings apply in order of precedence. From highest to lowest:
@@ -571,14 +534,10 @@ This hierarchy ensures that organizational policies are always enforced while st
 **Array settings merge across scopes.** When the same array-valued setting (such as `sandbox.filesystem.allowWrite` or `permissions.allow`) appears in multiple scopes, the arrays are **concatenated and deduplicated**, not replaced. This means lower-priority scopes can add entries without overriding those set by higher-priority scopes, and vice versa. For example, if managed settings set `allowWrite` to `["/opt/company-tools"]` and a user adds `["~/.kube"]`, both paths are included in the final configuration.
 
 
-[​](#verify-active-settings)
-
 Verify active settings
 
 Run `/status` inside Claude Code to see which settings sources are active. The Status tab includes a `Setting sources` line that lists each layer Claude Code loaded for the current session, such as `User settings` or `Project local settings`. When [managed settings](/docs/en/managed-settings) are in effect, the entry shows the delivery channel in parentheses, for example `Enterprise managed settings (remote)`, `(plist)`, `(HKLM)`, `(HKCU)`, or `(file)`. A layer appears in the list only when that source is loaded with at least one key, so an empty list means no settings sources were found. The `Setting sources` line confirms which sources are being read. It does not show which layer supplied each individual key. The Config tab in the same dialog is an editor for a fixed set of toggles such as theme and verbose output, not a view of your `settings.json` contents. If a settings file contains errors, such as invalid JSON or a value that fails validation, `/status` reports the issue so you can fix it.
 
-
-[​](#key-points-about-the-configuration-system)
 
 Key points about the configuration system
 
@@ -590,14 +549,10 @@ Key points about the configuration system
 - **Inheritance**: Settings merge across scopes; scalar values from higher-priority scopes override, and arrays concatenate
 
 
-[​](#system-prompt)
-
 System prompt
 
 Claude Code’s internal system prompt is not published. To add custom instructions, use `CLAUDE.md` files or the `--append-system-prompt` flag.
 
-
-[​](#excluding-sensitive-files)
 
 Excluding sensitive files
 
@@ -620,8 +575,6 @@ To prevent Claude Code from accessing files containing sensitive information lik
 This replaces the deprecated `ignorePatterns` configuration. Files matching these patterns are excluded from file discovery and search results, and read operations on these files are denied.
 
 
-[​](#subagent-configuration)
-
 Subagent configuration
 
 Claude Code supports custom AI subagents that can be configured at both user and project levels. These subagents are stored as Markdown files with YAML frontmatter:
@@ -632,14 +585,10 @@ Claude Code supports custom AI subagents that can be configured at both user and
 Subagent files define specialized AI assistants with custom prompts and tool permissions. Learn more about creating and using subagents in the [subagents documentation](/docs/en/sub-agents).
 
 
-[​](#plugin-configuration)
-
 Plugin configuration
 
 Claude Code supports a plugin system that lets you extend functionality with skills, agents, hooks, and MCP servers. Plugins are distributed through marketplaces and can be configured at both user and repository levels.
 
-
-[​](#plugin-settings)
 
 Plugin settings
 
@@ -664,8 +613,6 @@ Plugin-related settings in `settings.json`:
 ```
 
 
-[​](#enabledplugins)
-
 `enabledPlugins`
 
 Controls which plugins are enabled. Format: `"plugin-name@marketplace-name": true/false` **Scopes**:
@@ -689,8 +636,6 @@ Project settings take precedence over user settings, so setting a plugin to `fal
 }
 ```
 
-
-[​](#extraknownmarketplaces)
 
 `extraKnownMarketplaces`
 
@@ -754,8 +699,6 @@ Each marketplace entry also accepts an optional `autoUpdate` Boolean. Set `"auto
 }
 ```
 
-
-[​](#strictknownmarketplaces)
 
 `strictKnownMarketplaces`
 
@@ -983,8 +926,6 @@ With only `strictKnownMarketplaces` set, users can still add the allowed marketp
 See [Managed marketplace restrictions](/docs/en/plugin-marketplaces#managed-marketplace-restrictions) for user-facing documentation.
 
 
-[​](#managing-plugins)
-
 Managing plugins
 
 Use the `/plugin` command to manage plugins interactively:
@@ -998,21 +939,15 @@ Use the `/plugin` command to manage plugins interactively:
 Learn more about the plugin system in the [plugins documentation](/docs/en/plugins).
 
 
-[​](#environment-variables)
-
 Environment variables
 
 Environment variables let you control Claude Code behavior without editing settings files. Any variable can also be configured in [`settings.json`](#available-settings) under the `env` key to apply it to every session or roll it out to your team. See the [environment variables reference](/docs/en/env-vars) for the full list.
 
 
-[​](#tools-available-to-claude)
-
 Tools available to Claude
 
 Claude Code has access to a set of tools for reading, editing, searching, running commands, and orchestrating subagents. Tool names are the exact strings you use in permission rules and hook matchers. See the [tools reference](/docs/en/tools-reference) for the full list and Bash tool behavior details.
 
-
-[​](#see-also)
 
 See also
 

@@ -1,8 +1,9 @@
 ---
+title: "MCP Fetch Server"
+source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/fetch/README.md"
 category: "06-MCP-Tools"
 fetched_at: "2026-05-19T21:39:56Z"
-source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/fetch/README.md"
-title: "MCP Fetch Server"
+tags: ["mcp"]
 ---
 
 # Fetch MCP Server

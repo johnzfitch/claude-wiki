@@ -18,7 +18,7 @@ Based on significant AWS customer demand for Claude, we’re also expanding our 
 \
 Amazon developers and engineers will be able to build on top of our state-of-the-art models via Amazon Bedrock. This will enable them to incorporate generative AI capabilities into their work, enhance existing applications, and create net-new customer experiences across Amazon’s businesses.\
 \
-Organizations will be able to use [Claude 2](/news/claude-2) for a wide range of tasks, from sophisticated dialogue and creative content generation to complex reasoning and detailed instruction. Our industry-leading 100,000 token context window will help them securely process extensive amounts of information—including technical, domain-specific documents for use cases across finance, legal, coding, and more.\
+Organizations will be able to use [Claude 2](/news/claude-2) for a wide range of tasks, from sophisticated dialogue and creative content generation to complex reasoning and detailed instruction. Our industry-leading 100,000 token context window will help them securely process extensive amounts of information—including technical, domain-specific documents for use cases across finance, legal, coding, and more.\
 \
 Enterprises across many industries are already building with Anthropic models on Amazon Bedrock. **LexisNexis Legal & Professional**, a leading global provider of information and analytics, is using a custom, fine-tuned Claude 2 model to deliver conversational search, insightful summarization, and intelligent legal drafting capabilities via the company’s new Lexis+ AI solution. Premier asset management firm **Bridgewater Associates** is developing an investment analyst assistant powered by Claude 2 to generate elaborate charts, compute financial indicators, and create summaries of the results. **Lonely Planet**, a renowned travel publisher, reduced its itinerary generation costs by almost 80 percent after deploying Claude 2; synthesizing its decades of travel content to deliver cohesive, highly accurate travel recommendations.\
 \
@@ -26,7 +26,7 @@ Anthropic and Amazon are both committed to the safe training and deployment of a
 \
 As part of the investment, Amazon will take a minority stake in Anthropic. Our corporate governance structure remains unchanged, with the [Long Term Benefit Trust](/news/the-long-term-benefit-trust) continuing to guide Anthropic in accordance with our [Responsible Scaling Policy](/news/anthropics-responsible-scaling-policy). As outlined in this policy, we will conduct pre-deployment tests of new models to help us manage the risks of increasingly capable AI systems.\
 \
-Training state-of-the-art models requires extensive resources including compute power and research programs. Amazon’s investment and supply of AWS Trainium and Inferentia technology will ensure we’re equipped to continue advancing the frontier of AI safety and research. We look forward to working closely with Amazon to responsibly scale adoption of Claude and deliver safe AI cloud technologies to organizations around the world.
+Training state-of-the-art models requires extensive resources including compute power and research programs. Amazon’s investment and supply of AWS Trainium and Inferentia technology will ensure we’re equipped to continue advancing the frontier of AI safety and research. We look forward to working closely with Amazon to responsibly scale adoption of Claude and deliver safe AI cloud technologies to organizations around the world.
 
 
 ## Related content

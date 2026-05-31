@@ -158,7 +158,7 @@ Active
 
 Prompt
 
-I need to draft a Phase 2 clinical protocol for our Parkinson's drug. Attached is a summary of the biologic including molecular targets, mechanism of action, and preclinical data from our Phase 1 trial. Let’s use the clinical protocol skill.
+I need to draft a Phase 2 clinical protocol for our Parkinson's drug. Attached is a summary of the biologic including molecular targets, mechanism of action, and preclinical data from our Phase 1 trial. Let’s use the clinical protocol skill.
 
 Attachments
 
@@ -236,7 +236,7 @@ Sources: ClinicalTrials.gov (12 comparable studies), FDA guidance documents
 
 Ready for review with biostatisticians and regulatory affairs
 
-### ‍
+### 
 
 ### Protocol generation
 
@@ -375,7 +375,7 @@ Generated from uploaded AE reports and lab data
 
 All source documents linked for audit trail
 
-### ‍
+### 
 
 ### Clinical and regulatory strategy and compliance
 

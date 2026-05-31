@@ -1,8 +1,9 @@
 ---
+title: "Manage costs effectively - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/costs"
 category: "17-Billing-Plans"
 fetched_at: "2026-05-19T21:22:32Z"
-source_url: "https://code.claude.com/docs/en/costs"
-title: "Manage costs effectively - Claude Code Docs"
+tags: ["billing", "claude-code"]
 ---
 
 # Manage costs effectively
@@ -20,12 +21,8 @@ Track token usage, set team spend limits, and reduce Claude Code costs with cont
 Claude Code charges by API token consumption. For subscription plan pricing (Pro, Max, Team, Enterprise), see [claude.com/pricing](https://claude.com/pricing). Per-developer costs vary widely based on model selection, codebase size, and usage patterns such as running multiple instances or automation. Across enterprise deployments, the average cost is around \$13 per developer per active day and \$150-250 per developer per month, with costs remaining below \$30 per active day for 90% of users. To estimate spend for your own team, start with a small pilot group and use the tracking tools below to establish a baseline before wider rollout. This page covers how to [track your costs](#track-your-costs), [manage costs for teams](#managing-costs-for-teams), and [reduce token usage](#reduce-token-usage).
 
 
-[​](#track-your-costs)
-
 Track your costs
 
-
-[​](#using-the-/usage-command)
 
 Using the `/usage` command
 
@@ -41,18 +38,14 @@ Total code changes:    0 lines added, 0 lines removed
 ```
 
 
-[​](#managing-costs-for-teams)
-
 Managing costs for teams
 
-When using Claude API, you can [set workspace spend limits](https://platform.claude.com/docs/en/build-with-claude/workspaces#workspace-limits) on the total Claude Code workspace spend. Admins can [view cost and usage reporting](https://platform.claude.com/docs/en/build-with-claude/workspaces#usage-and-cost-tracking) in the Console.
+When using Claude API, you can [set workspace spend limits](../04-API-Reference/Guides/build-with-claude-workspaces-12135e8f23.md#workspace-limits) on the total Claude Code workspace spend. Admins can [view cost and usage reporting](../04-API-Reference/Guides/build-with-claude-workspaces-12135e8f23.md#usage-and-cost-tracking) in the Console.
 
-When you first authenticate Claude Code with your Claude Console account, a workspace called “Claude Code” is automatically created for you. This workspace provides centralized cost tracking and management for all Claude Code usage in your organization. You cannot create API keys for this workspace; it is exclusively for Claude Code authentication and usage.For organizations with custom rate limits, Claude Code traffic in this workspace counts toward your organization’s overall API rate limits. You can set a [workspace rate limit](https://platform.claude.com/docs/en/api/rate-limits#setting-lower-limits-for-workspaces) on this workspace’s Limits page in the Claude Console to cap Claude Code’s share and protect other production workloads.
+When you first authenticate Claude Code with your Claude Console account, a workspace called “Claude Code” is automatically created for you. This workspace provides centralized cost tracking and management for all Claude Code usage in your organization. You cannot create API keys for this workspace; it is exclusively for Claude Code authentication and usage.For organizations with custom rate limits, Claude Code traffic in this workspace counts toward your organization’s overall API rate limits. You can set a [workspace rate limit](../04-API-Reference/Other/api-rate-limits-28d3302987.md#setting-lower-limits-for-workspaces) on this workspace’s Limits page in the Claude Console to cap Claude Code’s share and protect other production workloads.
 
 On Bedrock, Vertex, and Foundry, Claude Code does not send metrics from your cloud. To get cost metrics, several large enterprises reported using [LiteLLM](/docs/en/llm-gateway#litellm-configuration), which is an open-source tool that helps companies [track spend by key](https://docs.litellm.ai/docs/proxy/virtual_keys#tracking-spend). This project is unaffiliated with Anthropic and has not been audited for security.
 
-
-[​](#rate-limit-recommendations)
 
 Rate limit recommendations
 
@@ -72,8 +65,6 @@ For example, if you have 200 users, you might request 20k TPM for each user, or 
 If you anticipate scenarios with unusually high concurrent usage (such as live training sessions with large groups), you may need higher TPM allocations per user.
 
 
-[​](#agent-team-token-costs)
-
 Agent team token costs
 
 [Agent teams](/docs/en/agent-teams) spawn multiple Claude Code instances, each with its own context window. Token usage scales with the number of active teammates and how long each one runs. To keep agent team costs manageable:
@@ -85,14 +76,10 @@ Agent team token costs
 - Agent teams are disabled by default. Set `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in your [settings.json](/docs/en/settings) or environment to enable them. See [enable agent teams](/docs/en/agent-teams#enable-agent-teams).
 
 
-[​](#reduce-token-usage)
-
 Reduce token usage
 
 Token costs scale with context size: the more context Claude processes, the more tokens you use. Claude Code automatically optimizes costs through [prompt caching](/docs/en/prompt-caching), which reduces costs for repeated content like system prompts, and auto-compaction, which summarizes conversation history when approaching context limits. The following strategies help you keep context small and reduce per-message costs.
 
-
-[​](#manage-context-proactively)
 
 Manage context proactively
 
@@ -110,14 +97,10 @@ When you are using compact, please focus on test output and code changes
 ```
 
 
-[​](#choose-the-right-model)
-
 Choose the right model
 
 Sonnet handles most coding tasks well and costs less than Opus. Reserve Opus for complex architectural decisions or multi-step reasoning. Use `/model` to switch models mid-session, or set a default in `/config`. For simple subagent tasks, specify `model: haiku` in your [subagent configuration](/docs/en/sub-agents#choose-a-model).
 
-
-[​](#reduce-mcp-server-overhead)
 
 Reduce MCP server overhead
 
@@ -127,14 +110,10 @@ MCP tool definitions are [deferred by default](/docs/en/mcp#scale-with-mcp-tool-
 - **Disable unused servers**: Run `/mcp` to see configured servers and disable any you’re not actively using.
 
 
-[​](#install-code-intelligence-plugins-for-typed-languages)
-
 Install code intelligence plugins for typed languages
 
 [Code intelligence plugins](/docs/en/discover-plugins#code-intelligence) give Claude precise symbol navigation instead of text-based search, reducing unnecessary file reads when exploring unfamiliar code. A single “go to definition” call replaces what might otherwise be a grep followed by reading multiple candidate files. Installed language servers also report type errors automatically after edits, so Claude catches mistakes without running a compiler.
 
-
-[​](#offload-processing-to-hooks-and-skills)
 
 Offload processing to hooks and skills
 
@@ -181,42 +160,30 @@ fi
 ```
 
 
-[​](#move-instructions-from-claude-md-to-skills)
-
 Move instructions from CLAUDE.md to skills
 
 Your [CLAUDE.md](/docs/en/memory) file is loaded into context at session start. If it contains detailed instructions for specific workflows (like PR reviews or database migrations), those tokens are present even when you’re doing unrelated work. [Skills](/docs/en/skills) load on-demand only when invoked, so moving specialized instructions into skills keeps your base context smaller. Aim to keep CLAUDE.md under 200 lines by including only essentials.
 
-
-[​](#adjust-extended-thinking)
 
 Adjust extended thinking
 
 Extended thinking is enabled by default because it significantly improves performance on complex planning and reasoning tasks. Thinking tokens are billed as output tokens, and the default budget can be tens of thousands of tokens per request depending on the model. For simpler tasks where deep reasoning isn’t needed, you can reduce costs by lowering the [effort level](/docs/en/model-config#adjust-effort-level) with `/effort` or in `/model`, disabling thinking in `/config`, or lowering the budget with `MAX_THINKING_TOKENS=8000`.
 
 
-[​](#delegate-verbose-operations-to-subagents)
-
 Delegate verbose operations to subagents
 
 Running tests, fetching documentation, or processing log files can consume significant context. Delegate these to [subagents](/docs/en/sub-agents#isolate-high-volume-operations) so the verbose output stays in the subagent’s context while only a summary returns to your main conversation.
 
-
-[​](#manage-agent-team-costs)
 
 Manage agent team costs
 
 Agent teams use approximately 7x more tokens than standard sessions when teammates run in plan mode, because each teammate maintains its own context window and runs as a separate Claude instance. Keep team tasks small and self-contained to limit per-teammate token usage. See [agent teams](/docs/en/agent-teams) for details.
 
 
-[​](#write-specific-prompts)
-
 Write specific prompts
 
 Vague requests like “improve this codebase” trigger broad scanning. Specific requests like “add input validation to the login function in auth.ts” let Claude work efficiently with minimal file reads.
 
-
-[​](#work-efficiently-on-complex-tasks)
 
 Work efficiently on complex tasks
 
@@ -228,8 +195,6 @@ For longer or more complex work, these habits help avoid wasted tokens from goin
 - **Test incrementally**: Write one file, test it, then continue. This catches issues early when they’re cheap to fix.
 
 
-[​](#background-token-usage)
-
 Background token usage
 
 Claude Code uses tokens for some background functionality even when idle:
@@ -239,8 +204,6 @@ Claude Code uses tokens for some background functionality even when idle:
 
 These background processes consume a small amount of tokens (typically under \$0.04 per session) even without active interaction.
 
-
-[​](#understanding-changes-in-claude-code-behavior)
 
 Understanding changes in Claude Code behavior
 

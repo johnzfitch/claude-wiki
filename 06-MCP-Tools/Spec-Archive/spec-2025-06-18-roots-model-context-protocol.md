@@ -12,14 +12,10 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots define the boundaries of where servers can operate within the filesystem, allowing them to understand which directories and files they have access to. Servers can request the list of roots from supporting clients and receive notifications when that list changes.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Roots in MCP are typically exposed through workspace or project configuration interfaces. For example, implementations could offer a workspace/project picker that allows users to select directories and files the server should have access to. This can be combined with automatic workspace detection from version control systems or project files. However, implementations are free to expose roots through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -40,12 +36,8 @@ Copy
 `listChanged` indicates whether the client will emit notifications when the list of roots changes.
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#listing-roots)
 
 Listing Roots
 
@@ -81,8 +73,6 @@ Copy
 ```
 
 
-[​](#root-list-changes)
-
 Root List Changes
 
 When roots change, clients that support `listChanged` **MUST** send a notification:
@@ -97,17 +87,11 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
 
-[​](#data-types)
-
 Data Types
 
-
-[​](#root)
 
 Root
 
@@ -118,8 +102,6 @@ A root definition includes:
 
 Example roots for different use cases:
 
-
-[​](#project-directory)
 
 Project Directory
 
@@ -132,8 +114,6 @@ Copy
 }
 ```
 
-
-[​](#multiple-repositories)
 
 Multiple Repositories
 
@@ -152,8 +132,6 @@ Copy
 ]
 ```
 
-
-[​](#error-handling)
 
 Error Handling
 
@@ -181,8 +159,6 @@ Copy
 ```
 
 
-[​](#security-considerations)
-
 Security Considerations
 
 1.  Clients **MUST**:
@@ -195,8 +171,6 @@ Security Considerations
     - Respect root boundaries during operations
     - Validate all paths against provided roots
 
-
-[​](#implementation-guidelines)
 
 Implementation Guidelines
 

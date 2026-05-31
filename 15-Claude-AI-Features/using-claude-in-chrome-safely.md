@@ -85,7 +85,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 - Known pirated content sites
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#3b4e485e49485a5d5e4f427b5a554f5349544b525815585456).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](/cdn-cgi/l/email-protection#3b4e485e49485a5d5e4f427b5a554f5349544b525815585456).
 
 ------------------------------------------------------------------------
 

@@ -4,15 +4,15 @@ category: "08-Plugins-Skills"
 tags: ["plugins", "prompting", "skills"]
 ---
 
-You might notice that when you ask an LLM to build a landing page without guidance, it will almost always conform to Inter fonts, purple gradients on white backgrounds, and minimal animations. 
+You might notice that when you ask an LLM to build a landing page without guidance, it will almost always conform to Inter fonts, purple gradients on white backgrounds, and minimal animations. 
 
-The issue?  [Distributional convergence.](https://en.wikipedia.org/wiki/Convergence_of_random_variables) During sampling, models predict tokens based on statistical patterns in training data. Safe design choices–those that work universally and offend no one–dominate web training data. Without direction, Claude samples from this high-probability center.
+The issue?  [Distributional convergence.](https://en.wikipedia.org/wiki/Convergence_of_random_variables) During sampling, models predict tokens based on statistical patterns in training data. Safe design choices–those that work universally and offend no one–dominate web training data. Without direction, Claude samples from this high-probability center.
 
 For developers building customer-facing products, this generic aesthetic undermines brand identity and makes AI-generated interfaces immediately recognizable—and dismissible.
 
 ### The steerability challenge
 
-The good news is that Claude is highly steerable with the right prompting. Tell Claude to "avoid Inter and Roboto" or "use atmospheric backgrounds instead of solid colors," and results improve immediately. This sensitivity to guidance is a feature; it means Claude can adapt to different design contexts, constraints, and aesthetic preferences. 
+The good news is that Claude is highly steerable with the right prompting. Tell Claude to "avoid Inter and Roboto" or "use atmospheric backgrounds instead of solid colors," and results improve immediately. This sensitivity to guidance is a feature; it means Claude can adapt to different design contexts, constraints, and aesthetic preferences. 
 
 But this creates a practical challenge: the more specialized the task, the more context you need to provide. For frontend design, effective guidance spans typography principles, color theory, animation patterns, and background treatment. You need to specify which defaults to avoid and which alternatives to prefer across multiple dimensions.
 
@@ -20,7 +20,7 @@ You could pack all this into a system prompt, but then every request–debugging
 
 ## **Skills: dynamic context loading**
 
-This is precisely what [Skills](https://www.anthropic.com/news/skills) were designed for: delivering specialized context on demand without permanent overhead. A skill is a document (often markdown) containing instructions, constraints, and domain knowledge, stored in a designated directory that Claude can access through simple file-reading tools. Claude can leverage these skills to dynamically load in information it needs at runtime, progressively enhancing its context instead of loading everything upfront. 
+This is precisely what [Skills](https://www.anthropic.com/news/skills) were designed for: delivering specialized context on demand without permanent overhead. A skill is a document (often markdown) containing instructions, constraints, and domain knowledge, stored in a designated directory that Claude can access through simple file-reading tools. Claude can leverage these skills to dynamically load in information it needs at runtime, progressively enhancing its context instead of loading everything upfront. 
 
 When equipped with these skills and the necessary tools to read them, Claude can autonomously identify and load relevant skills based on the task at hand. For instance, when asked to build a landing page or create a React component, Claude can load a frontend design skill and apply its instructions just-in-time. This is the essential mental model: skills are prompts and contextual resources that activate on demand, providing specialized guidance for specific task types without incurring permanent context overhead.
 
@@ -28,7 +28,7 @@ This allows developers to reap the benefits of Claude’s steerability without o
 
 ## **Prompting for better frontend output**
 
-We can unlock significantly better UI generations from Claude, without permanent context overhead, by creating a frontend design skill.  The core insight is to think about frontend design the way a frontend engineer would. The more you can map aesthetic improvements to implementable frontend code, the better Claude can execute.
+We can unlock significantly better UI generations from Claude, without permanent context overhead, by creating a frontend design skill.  The core insight is to think about frontend design the way a frontend engineer would. The more you can map aesthetic improvements to implementable frontend code, the better Claude can execute.
 
 Leveraging this insight, we identified several areas where targeted prompting works well: typography, animations, background effects, and themes. These all translate cleanly to code that Claude can write. Implementing this in your prompts does not require detailed technical instructions, just using targeted language that engages the model to think more critically about these design axes is enough to elicit stronger outputs. This maps closely with the guidance we provided in our [context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) blog article, about prompting the model at the right altitude, avoiding the two extremes of low-altitude hardcoded logic like specifying exact hex codes and vague high-altitude guidance that assumes shared context.
 
@@ -65,9 +65,9 @@ Pick one distinctive font, use it decisively. Load from Google Fonts.
 ![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6913679c9a202c88b680873b_image13.png)
 
 
-Interestingly, the mandate to use more interesting fonts seems to encourage the model to improve other aspects of the design as well. 
+Interestingly, the mandate to use more interesting fonts seems to encourage the model to improve other aspects of the design as well. 
 
-Typography alone leads to significant improvement, but fonts are just one dimension. What about cohesive aesthetics across the entire interface? 
+Typography alone leads to significant improvement, but fonts are just one dimension. What about cohesive aesthetics across the entire interface? 
 
 ### **Themes**
 
@@ -122,7 +122,7 @@ We also include additional guidance at the end to prevent Claude from converging
 
 ### **Impact on frontend design**
 
-With this skill active, Claude's output improves across several types of frontend designs, including: 
+With this skill active, Claude's output improves across several types of frontend designs, including: 
 
 **Example 1: SaaS landing page**
 
@@ -195,7 +195,7 @@ To try out this new skill in [Claude.ai](http://claude.ai/), simply enable the s
 
 ## **Optimizing Claude’s frontend design capabilities with Skills**
 
-This frontend design skill demonstrates a broader principle about language model capabilities: models often have the ability to do more than they express by default. Claude has strong design understanding, but distributional convergence obscures it without guidance. While you could add these instructions to your system prompt, this entails that every request carries frontend design context, even when this knowledge isn’t relevant to the task at hand. Instead, using Skills transforms Claude from a tool that needs constant guidance into one that brings domain expertise to every task. 
+This frontend design skill demonstrates a broader principle about language model capabilities: models often have the ability to do more than they express by default. Claude has strong design understanding, but distributional convergence obscures it without guidance. While you could add these instructions to your system prompt, this entails that every request carries frontend design context, even when this knowledge isn’t relevant to the task at hand. Instead, using Skills transforms Claude from a tool that needs constant guidance into one that brings domain expertise to every task. 
 
 Skills are also highly customizable – you can create your own tailored to your specific needs. This allows you to define the exact primitives you want to bake into the skill, whether that's your company's design system, specific component patterns, or industry-specific UI conventions. By encoding these decisions into a Skill, you transform component parts of an agent’s thinking into a reusable asset that your entire development team can leverage. The skill becomes organizational knowledge that persists and scales, ensuring consistent quality across projects.
 

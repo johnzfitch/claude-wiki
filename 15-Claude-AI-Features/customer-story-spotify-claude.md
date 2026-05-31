@@ -123,13 +123,13 @@ The shift from AST manipulation to natural language instructions changed what's 
 
 Throughout the process, Spotify’s engineering team collaborated with Anthropic’s Applied AI team to ensure best practices. The architecture was a great fit due to Spotify's focus being automated background coding over interactive development, eliminating the need for custom user interfaces. Plus, Claude Code's flexible hooks system allowed extensive customization, enabling deterministic pre- and post-agent actions that seamlessly integrated with Spotify’s existing workflows.
 
-“Claude has consistently delivered the strongest performance for large-scale code transformation work, which is why it has become our model of choice over the past six months,” said Niklas Gustavsson, Chief Architect and VP of Engineering at Spotify. “As we raise the bar again, we’ve adopted Sonnet 4.5 as our new default, because it currently leads on the metrics that matter for fleet-wide engineering at scale.”  
+“Claude has consistently delivered the strongest performance for large-scale code transformation work, which is why it has become our model of choice over the past six months,” said Niklas Gustavsson, Chief Architect and VP of Engineering at Spotify. “As we raise the bar again, we’ve adopted Sonnet 4.5 as our new default, because it currently leads on the metrics that matter for fleet-wide engineering at scale.”  
 
 The team selected Claude Code specifically because it proved easy to prompt, effective at navigating codebases, and straightforward to integrate with existing infrastructure.
 
 ## The outcome
 
-Hundreds of engineers now interact with the background coding agent at Spotify. The agent is already generating more than 650 monthly pull requests merged into production, saving engineers up to 90% of the time they'd spend writing migrations manually. 
+Hundreds of engineers now interact with the background coding agent at Spotify. The agent is already generating more than 650 monthly pull requests merged into production, saving engineers up to 90% of the time they'd spend writing migrations manually. 
 
 Platform teams are now starting to take on projects that previously were too costly and complex to undertake. One example includes a tech standardization effort enforcing explicit [context](https://grpc.github.io/grpc-java/javadoc/io/grpc/Context.html) propagation for all Java gRPC services throughout the company. This is a complex and breaking change that in many cases would take several hours and deep gRPC knowledge to implement per service. Now Claude has automated a majority of the implementation and engineers only have to review. The opportunity ahead, the team notes, is less about raw tooling and more about capability building — helping engineers learn to craft prompts that make AI a force multiplier in their workflow.
 

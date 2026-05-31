@@ -87,11 +87,11 @@ Prev
 
 [**Thomson Reuters**](https://claude.com/customers/thomson-reuters) builds the software and research tools that legal, tax, accounting, and compliance professionals rely on. The company’s AI-powered platform, CoCounsel, recently crossed one million users, making it one of the most widely adopted AI tools in professional services.
 
-Internally, Thomson Reuters has added Claude Enterprise as a core AI capability for its teams. More recently, the company began piloting Cowork to explore how agentic AI can support everyday enterprise workflows across documents, spreadsheets, and internal processes.
+Internally, Thomson Reuters has added Claude Enterprise as a core AI capability for its teams. More recently, the company began piloting Cowork to explore how agentic AI can support everyday enterprise workflows across documents, spreadsheets, and internal processes.
 
 Joel Hron, CTO of Thomson Reuters, sat down with Anthropic to discuss how the company is approaching Claude Enterprise, what they are learning from piloting Cowork, and how large enterprises can roll out these systems responsibly. The following conversation has been edited for length and clarity.
 
-**Anthropic: How did Thomson Reuters first start using Cowork? Was it adopted top-down or did individuals start experimenting on their own? **
+**Anthropic: How did Thomson Reuters first start using Cowork? Was it adopted top-down or did individuals start experimenting on their own? **
 
 **Joel Hron:** We’ve been strong believers in Claude Enterprise. It gives us the security posture, administrative controls, and reliability you need in a global enterprise environment.
 
@@ -137,13 +137,13 @@ We reinforce least-privilege access through approved connectors, strong data han
 
 Governance is not an afterthought. It is part of adoption.
 
-**Anthropic: What's surprised you most about how people at Thomson Reuters have used Cowork? **
+**Anthropic: What's surprised you most about how people at Thomson Reuters have used Cowork? **
 
 **Joel Hron:** One surprise has been how strong Cowork is with everyday enterprise files, especially spreadsheets and presentations. What we have seen is that Cowork's ability to analyze, transform, and generate outputs in those formats is extremely impressive, even early on.
 
 We have had people who were skeptical at first. Then a couple hours later they come back and say, "I'm converted." In an enterprise environment, that kind of credibility is earned through real workflows, not demos.
 
-**Anthropic: Where do you see the most untapped potential for Cowork at Thomson Reuters? **
+**Anthropic: Where do you see the most untapped potential for Cowork at Thomson Reuters? **
 
 **Joel Hron:** The biggest untapped potential is moving from person-by-person learning to reusable internal capabilities. So far, we have let individuals and teams build skills organically, prove value, and share within their groups. The next step is to systematize it: shared plugins, standard workflows for common tasks, and a way to distribute "how we work" patterns across the enterprise.
 

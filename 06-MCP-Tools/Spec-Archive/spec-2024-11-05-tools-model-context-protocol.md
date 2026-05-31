@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems, such as querying databases, calling APIs, or performing computations. Each tool is uniquely identified by a name and includes metadata describing its schema.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Tools in MCP are designed to be **model-controlled**, meaning that the language model can discover and invoke tools automatically based on its contextual understanding and the user’s prompts. However, implementations are free to expose tools through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
@@ -24,8 +22,6 @@ For trust & safety and security, there **SHOULD** always be a human in the loop 
 - Insert clear visual indicators when tools are invoked
 - Present confirmation prompts to the user for operations, to ensure a human is in the loop
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -46,12 +42,8 @@ Copy
 `listChanged` indicates whether the server will emit notifications when the list of available tools changes.
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#listing-tools)
 
 Listing Tools
 
@@ -101,8 +93,6 @@ Copy
 ```
 
 
-[​](#calling-tools)
-
 Calling Tools
 
 To invoke a tool, clients send a `tools/call` request: **Request:**
@@ -144,8 +134,6 @@ Copy
 ```
 
 
-[​](#list-changed-notification)
-
 List Changed Notification
 
 When the list of available tools changes, servers that declared the `listChanged` capability **SHOULD** send a notification:
@@ -160,17 +148,11 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
 
-[​](#data-types)
-
 Data Types
 
-
-[​](#tool)
 
 Tool
 
@@ -181,14 +163,10 @@ A tool definition includes:
 - `inputSchema`: JSON Schema defining expected parameters
 
 
-[​](#tool-result)
-
 Tool Result
 
 Tool results can contain multiple content items of different types:
 
-
-[​](#text-content)
 
 Text Content
 
@@ -202,8 +180,6 @@ Copy
 ```
 
 
-[​](#image-content)
-
 Image Content
 
 Copy
@@ -216,8 +192,6 @@ Copy
 }
 ```
 
-
-[​](#embedded-resources)
 
 Embedded Resources
 
@@ -236,8 +210,6 @@ Copy
 }
 ```
 
-
-[​](#error-handling)
 
 Error Handling
 
@@ -287,8 +259,6 @@ Copy
 }
 ```
 
-
-[​](#security-considerations)
 
 Security Considerations
 

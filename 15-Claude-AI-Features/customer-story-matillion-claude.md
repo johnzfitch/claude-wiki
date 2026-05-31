@@ -92,7 +92,7 @@ With Claude, Matillion:
 Matillion chose Claude after 18 months of testing across multiple model providers. Their evaluation framework measured three critical capabilities: understanding proprietary domain-specific languages, multi-step reasoning for complex data operations, and reliable tool-calling decisions.Claude consistently outperformed other models across all metrics. Specifically:\
 \
 **• Strong reasoning and tool-calling:** Claude demonstrated sophisticated ability to select the right tools and sequence complex operations—critical for autonomous data pipeline management\
-**• Reliability:** Stable performance across model versions meant Matillion could upgrade to newer Claude releases without re-engineering their entire prompt architecture \
+**• Reliability:** Stable performance across model versions meant Matillion could upgrade to newer Claude releases without re-engineering their entire prompt architecture \
 **• No training required:** Claude understood Matillion's proprietary YAML-based Data Pipeline Language (DPL) immediately, despite having no public training data\
 **• Consistent behavior:** The team found they never had to "fight" the model to achieve desired outcomes\
 \

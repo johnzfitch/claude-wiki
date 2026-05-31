@@ -21,4 +21,4 @@ But we believe safety is a shared responsibility. Our features are not failsafe,
 
 - For sensitive information and decision making, have a qualified professional review content prior to dissemination to consumers.
 
-We encourage you to send us feedback or specific proposals to [\[email protected\]](/cdn-cgi/l/email-protection#176264726564767172636e577679637f6578677e743974787a). For existing commercial partners, we’d recommend [joining our Discord server](https://discord.com/invite/6PPFFzqPDZ) and exchanging ideas with fellow developers as well.
+We encourage you to send us feedback or specific proposals to [\[email protected\]](/cdn-cgi/l/email-protection#176264726564767172636e577679637f6578677e743974787a). For existing commercial partners, we’d recommend [joining our Discord server](https://discord.com/invite/6PPFFzqPDZ) and exchanging ideas with fellow developers as well.

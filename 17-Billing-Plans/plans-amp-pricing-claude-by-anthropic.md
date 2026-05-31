@@ -482,21 +482,21 @@ Most intelligent model for agents and coding
 
 Input
 
-\$5 / MTok
+\$5 / MTok
 
 Output
 
-\$25 / MTok
+\$25 / MTok
 
 Prompt caching
 
 Write
 
-\$6.25 / MTok
+\$6.25 / MTok
 
 Read
 
-\$0.50 / MTok
+\$0.50 / MTok
 
 ### Sonnet 4.6
 
@@ -504,21 +504,21 @@ Optimal balance of intelligence, cost, and speed
 
 Input
 
-\$3 / MTok
+\$3 / MTok
 
 Output
 
-\$15 / MTok
+\$15 / MTok
 
 Prompt caching
 
 Write
 
-\$3.75 / MTok
+\$3.75 / MTok
 
 Read
 
-\$0.30 / MTok
+\$0.30 / MTok
 
 ### Haiku 4.5
 
@@ -526,27 +526,27 @@ Fastest, most cost-efficient model
 
 Input
 
-\$1 / MTok
+\$1 / MTok
 
 Output
 
-\$5 / MTok
+\$5 / MTok
 
 Prompt caching
 
 Write
 
-\$1.25 / MTok
+\$1.25 / MTok
 
 Read
 
-\$0.10 / MTok
+\$0.10 / MTok
 
 Country
 
 **For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens.** [**Learn more**](../04-API-Reference/Guides/build-with-claude-data-residency-6c8e324ea6.md)**.**
 
-Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md#1-hour-cache-duration).
+Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md#1-hour-cache-duration).
 
 Explore detailed pricing
 
@@ -630,120 +630,120 @@ Batch processing
 
 Input
 
-\$3 / MTok
+\$3 / MTok
 
 Output
 
-\$15 / MTok
+\$15 / MTok
 
 Prompt caching
 
 Write
 
-\$3.75 / MTok
+\$3.75 / MTok
 
 Read
 
-\$0.30 / MTok
+\$0.30 / MTok
 
 ### Opus 4.5
 
 Input
 
-\$5 / MTok
+\$5 / MTok
 
 Output
 
-\$25 / MTok
+\$25 / MTok
 
 Prompt caching
 
 Write
 
-\$6.25 / MTok
+\$6.25 / MTok
 
 Read
 
-\$0.50 / MTok
+\$0.50 / MTok
 
 ### Opus 4.1
 
 Input
 
-\$15 / MTok
+\$15 / MTok
 
 Output
 
-\$75 / MTok
+\$75 / MTok
 
 Prompt caching
 
 Write
 
-\$18.75 / MTok
+\$18.75 / MTok
 
 Read
 
-\$1.50 / MTok
+\$1.50 / MTok
 
 ### Sonnet 4
 
 Input
 
-\$3 / MTok
+\$3 / MTok
 
 Output
 
-\$15 / MTok
+\$15 / MTok
 
 Prompt caching
 
 Write
 
-\$3.75 / MTok
+\$3.75 / MTok
 
 Read
 
-\$0.30 / MTok
+\$0.30 / MTok
 
 ### Opus 4
 
 Input
 
-\$15 / MTok
+\$15 / MTok
 
 Output
 
-\$75 / MTok
+\$75 / MTok
 
 Prompt caching
 
 Write
 
-\$18.75 / MTok
+\$18.75 / MTok
 
 Read
 
-\$1.50 / MTok
+\$1.50 / MTok
 
 ### Haiku 3
 
 Input
 
-\$0.25 / MTok
+\$0.25 / MTok
 
 Output
 
-\$1.25 / MTok
+\$1.25 / MTok
 
 Prompt caching
 
 Write
 
-\$0.30 / MTok
+\$0.30 / MTok
 
 Read
 
-\$0.03 / MTok
+\$0.03 / MTok
 
-Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching#pricing).
+Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching#pricing).

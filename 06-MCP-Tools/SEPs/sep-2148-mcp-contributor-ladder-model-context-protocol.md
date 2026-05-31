@@ -28,14 +28,10 @@ FinalProcess
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP establishes a formal contributor ladder for the Model Context Protocol project, defining clear roles, responsibilities, and advancement criteria from first-time contributor through Core Maintainer. The ladder provides transparent pathways for community members to understand how they can grow their involvement and influence within the project. This SEP is a companion to [SEP-2149: MCP Group Governance and Charter Template](./2149-working-group-charter-template.md), which defines how Working Groups and Interest Groups operate. The two SEPs intersect: WG/IG leadership requires Member status on this ladder, and group participation is a recognized pathway to ladder advancement.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -50,12 +46,8 @@ As MCP adoption grows, the project needs a clear framework for:
 Without a contributor ladder, advancement decisions become ad-hoc, potentially inconsistent, and opaque to the community.
 
 
-[​](#specification)
-
 Specification
 
-
-[​](#guiding-principles)
 
 Guiding Principles
 
@@ -66,8 +58,6 @@ The contributor ladder operates under these principles:
 - **Transparency**: Criteria for advancement are explicit and consistently applied
 - **Alignment With MCP Goals**: Individual contributors must demonstrate commitment to advance and evolve MCP project components beyond one’s employer’s interests
 
-
-[​](#role-definitions)
 
 Role Definitions
 
@@ -82,8 +72,6 @@ Role Definitions
 
 *Timelines listed are minimum contribution periods, not guarantees of advancement. They exist to protect the project from rapid privilege escalation and to ensure a high bar of demonstrated commitment. Actual advancement is discretionary and may take longer in practice; the only guarantee is that advancement will not happen on a shorter timescale than documented. Exceptions require explicit Core Maintainer approval with documented rationale.*
 
-
-[​](#contributor)
 
 Contributor
 
@@ -102,8 +90,6 @@ Anyone who has contributed to MCP in any form is a contributor. This includes:
 - Look for issues tagged `good-first-issue` or `help-wanted`
 - Attend working group meetings
 
-
-[​](#member)
 
 Member
 
@@ -138,8 +124,6 @@ Members are established contributors who have demonstrated ongoing commitment to
 
 **Inactivity:** Members with no contributions for 3 months may be moved to emeritus status. Re-engagement follows a simplified re-familiarization process.
 
-
-[​](#maintainer)
 
 Maintainer
 
@@ -180,8 +164,6 @@ Maintainers are trusted stewards who take operational responsibility for specifi
 All pathways can lead to Maintainer, though the specific scope will align with the contribution type. **Inactivity:** Maintainers with no contributions for 6 months may be moved to emeritus status following review by Core Maintainers. Merge rights are revoked upon emeritus transition. Re-engagement requires re-completing security and governance onboarding.
 
 
-[​](#core-maintainer)
-
 Core Maintainer
 
 Core Maintainers hold final decision-making authority for the MCP technical direction. This is the highest level of trust in the community. *Note: The Core Maintainer role is intentionally limited to ensure coherent technical vision while the project scales. Core Maintainer bandwidth concerns are addressed through clearer delegation to Maintainers, Working Group Leads, and Interest Group Facilitators, not expansion of Core Maintainer numbers.* **Requirements:**
@@ -218,8 +200,6 @@ When evaluating candidates, Core Maintainers should consider whether the current
 **Inactivity:** Core Maintainers with no participation in governance or technical decisions for 6 months may be moved to emeritus status following review by Lead Maintainers. Given the trust and visibility of this role, Core Maintainers are expected to proactively communicate reduced availability.
 
 
-[​](#lead-maintainer)
-
 Lead Maintainer
 
 Lead Maintainers hold ultimate authority over MCP’s direction and governance. This is a lifetime appointment reserved for project founders. There is no defined advancement path to this role; it is only assumed through succession when necessary (see [Succession](#succession)). **Responsibilities:**
@@ -236,19 +216,13 @@ Lead Maintainers hold ultimate authority over MCP’s direction and governance. 
 - Appointment of successor
 
 
-[​](#succession)
-
 Succession
 
 If a Lead Maintainer leaves their role for any reason, the succession process begins upon their written notice or, if unable to provide notice, upon a determination by the remaining Lead Maintainer(s) or Core Maintainers that the Lead Maintainer is unable to continue serving. If one or more Lead Maintainer(s) remain, they shall appoint a successor (by majority vote if multiple), and the remaining Lead Maintainer(s) will continue to govern until a successor is appointed. If no Lead Maintainers remain, the Core Maintainers shall appoint a successor by majority vote within 30 days, and the project operates by two-thirds vote of Core Maintainers until a new Lead Maintainer is appointed.
 
 
-[​](#advancement-process)
-
 Advancement Process
 
-
-[​](#self-nomination-vs-recognition)
 
 Self-Nomination vs. Recognition
 
@@ -259,8 +233,6 @@ Contributors may either:
 
 Both paths are equally valid. Self-nomination is encouraged and preferred, as it demonstrates initiative and self-awareness of the contribution scope.
 
-
-[​](#process-steps)
 
 Process Steps
 
@@ -279,12 +251,8 @@ Process Steps
 Self-nomination is encouraged, but nominees must still secure the required sponsorship. Sponsors confirm support in the nomination issue.
 
 
-[​](#decision-making-&-escalation)
-
 Decision-Making & Escalation
 
-
-[​](#delegation-as-default)
 
 Delegation as Default
 
@@ -296,8 +264,6 @@ MCP operates on a principle of delegation: decisions should be made at the lowes
 
 When in doubt, make the decision at your level and document it. Escalate only when blocked, when the decision has project-wide implications, or when explicitly required by process. The detailed escalation procedure for Working Group and Interest Group disputes — including the designation of a Core Maintainer without shared organizational affiliation to resolve the issue — is defined in [SEP-2149 §1.5](./2149-working-group-charter-template.md).
 
-
-[​](#escalation-matrix)
 
 Escalation Matrix
 
@@ -319,14 +285,10 @@ Escalation Matrix
 3.  Escalation authority either: (a) provides binding guidance, (b) requests more information, or (c) escalates further if needed
 
 
-[​](#contribution-pathways)
-
 Contribution Pathways
 
 MCP values diverse contributions. Here are recognized pathways to advancement:
 
-
-[​](#code-contributions)
 
 Code Contributions
 
@@ -334,8 +296,6 @@ Code Contributions
 - Testing infrastructure
 - Tooling and developer experience
 
-
-[​](#specification-work)
 
 Specification Work
 
@@ -345,8 +305,6 @@ Specification Work
 - Compatibility analysis
 
 
-[​](#documentation)
-
 Documentation
 
 - User guides and tutorials
@@ -354,8 +312,6 @@ Documentation
 - Architecture documentation
 - Maintaining content currency
 
-
-[​](#community-building)
 
 Community Building
 
@@ -365,8 +321,6 @@ Community Building
 - Event organization or representation
 
 
-[​](#quality-&-security)
-
 Quality & Security
 
 - Bug triage and reproduction
@@ -374,8 +328,6 @@ Quality & Security
 - Test coverage improvement
 - Release validation
 
-
-[​](#working-group-and-interest-group-leadership)
 
 Working Group and Interest Group Leadership
 
@@ -395,8 +347,6 @@ Working Group (WG) Leads and Interest Group (IG) Facilitators are a special form
 - WG Leads and Maintainers may sponsor SEPs
 - WG Leads may triage SEPs in their scope area, including closing SEPs that do not fit the WG’s roadmap (with documented rationale; authors may appeal to Core Maintainers)
 
-
-[​](#community-moderators)
 
 Community Moderators
 
@@ -437,8 +387,6 @@ Community Moderators are trusted individuals who help keep the MCP community hea
 **Removal:** Community Moderators may be removed by Core Maintainers for failure to uphold moderation standards or Code of Conduct violations. Moderators may step down voluntarily at any time.
 
 
-[​](#recognition-and-visibility)
-
 Recognition and Visibility
 
 The community recognizes contributors through:
@@ -449,8 +397,6 @@ The community recognizes contributors through:
 - **Speaking opportunities** at community events
 - **Badges** (if implemented) on community platforms
 
-
-[​](#stepping-down-and-emeritus-status)
 
 Stepping Down and Emeritus Status
 
@@ -469,12 +415,8 @@ Contributors may step down from roles for any reason. This is normal and healthy
 **Involuntary Removal:** In cases of code of conduct violations or sustained non-participation, roles may be revoked following appropriate review processes.
 
 
-[​](#rationale)
-
 Rationale
 
-
-[​](#why-a-formal-ladder)
 
 Why a Formal Ladder?
 
@@ -485,8 +427,6 @@ Informal advancement creates inconsistency and opacity. A formal ladder:
 - Creates accountability in advancement decisions
 - Enables self-nomination, reducing gatekeeping
 
-
-[​](#why-minimum-timelines)
 
 Why Minimum Timelines?
 
@@ -500,8 +440,6 @@ Timelines are floors, not targets. They exist for security and trust-building:
 Meeting a minimum timeline does not create an entitlement to advancement; it establishes eligibility for consideration. Exceptions to minimums require explicit Core Maintainer approval with documented rationale.
 
 
-[​](#why-two-organization-sponsorship)
-
 Why Two-Organization Sponsorship?
 
 Requiring sponsors from different organizations:
@@ -511,21 +449,15 @@ Requiring sponsors from different organizations:
 - Maintains diverse perspectives in advancement decisions
 
 
-[​](#model-inspiration)
-
 Model Inspiration
 
 This ladder is modeled on Kubernetes community membership structures and adapted for MCP’s needs and stage of development.
 
 
-[​](#backward-compatibility)
-
 Backward Compatibility
 
 This SEP establishes new processes without modifying existing structures. Current contributors retain their existing access and standing.
 
-
-[​](#security-implications)
 
 Security Implications
 
@@ -537,8 +469,6 @@ This SEP directly addresses security through:
 - Security onboarding requirement for Maintainers
 
 
-[​](#reference-implementation)
-
 Reference Implementation
 
 Upon acceptance, this SEP will be implemented by:
@@ -548,12 +478,8 @@ Upon acceptance, this SEP will be implemented by:
 3.  Updating `MAINTAINERS.md` format to reflect role distinctions
 
 
-[​](#appendix-checklist-templates)
-
 Appendix: Checklist Templates
 
-
-[​](#member-nomination-checklist)
 
 Member Nomination Checklist
 
@@ -577,8 +503,6 @@ Sponsors confirm
 ```
 
 
-[​](#maintainer-nomination-checklist)
-
 Maintainer Nomination Checklist
 
 Copy
@@ -599,8 +523,6 @@ Copy
 - [ ] Approved by Core Maintainers
 ```
 
-
-[​](#community-moderator-nomination-checklist)
 
 Community Moderator Nomination Checklist
 

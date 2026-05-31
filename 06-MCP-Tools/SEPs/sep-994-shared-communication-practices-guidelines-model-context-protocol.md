@@ -28,14 +28,10 @@ FinalProcess
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP establishes the communication strategy and framework for the Model Context Protocol community. It defines the official channels for contributor communication, guidelines for their use, and processes for decision documentation.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -47,12 +43,8 @@ As the MCP community grows, clear communication guidelines are essential for:
 - **Security**: Establishing proper processes for handling sensitive issues
 
 
-[​](#specification)
-
 Specification
 
-
-[​](#communication-channels)
 
 Communication Channels
 
@@ -65,14 +57,10 @@ The MCP project uses three primary communication channels:
 Security-sensitive issues follow a separate process defined in SECURITY.md.
 
 
-[​](#discord-guidelines)
-
 Discord Guidelines
 
 The Discord server is designed for **MCP contributors** and is not intended for general MCP support.
 
-
-[​](#public-channels-default)
 
 Public Channels (Default)
 
@@ -82,8 +70,6 @@ Public Channels (Default)
 - Community onboarding and contribution guidance
 - Office hours and maintainer availability
 
-
-[​](#private-channels-exceptions)
 
 Private Channels (Exceptions)
 
@@ -96,8 +82,6 @@ Private channels are reserved for:
 All technical and governance decisions must be documented publicly in GitHub.
 
 
-[​](#github-discussions)
-
 
 Used for structured, long-form discussion:
 
@@ -107,8 +91,6 @@ Used for structured, long-form discussion:
 - Feature requests with context and rationale
 
 
-[​](#github-issues)
-
 
 Used for actionable items:
 
@@ -117,8 +99,6 @@ Used for actionable items:
 - CI/CD and infrastructure issues
 - Release tasks and milestone tracking
 
-
-[​](#decision-records)
 
 Decision Records
 
@@ -138,8 +118,6 @@ Decision documentation includes:
 - Implementation steps
 
 
-[​](#rationale)
-
 Rationale
 
 This framework balances openness with practicality:
@@ -150,14 +128,10 @@ This framework balances openness with practicality:
 - **Documentation requirements**: Ensures decisions are preserved and discoverable
 
 
-[​](#backward-compatibility)
-
 Backward Compatibility
 
 This SEP establishes new processes and does not affect existing protocol functionality.
 
-
-[​](#reference-implementation)
 
 Reference Implementation
 

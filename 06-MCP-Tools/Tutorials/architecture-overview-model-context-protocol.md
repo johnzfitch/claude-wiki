@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-tutorials"]
 This overview of the Model Context Protocol (MCP) discusses its [scope](#scope) and [core concepts](#concepts-of-mcp), and provides an [example](#example) demonstrating each core concept. Because MCP SDKs abstract away many concerns, most developers will likely find the [data layer protocol](#data-layer-protocol) section to be the most useful. It discusses how MCP servers can provide context to an AI application. For specific implementation details, please refer to the documentation for your [language-specific SDK](/docs/sdk).
 
 
-[​](#scope)
-
 Scope
 
 The Model Context Protocol includes the following projects:
@@ -26,12 +24,8 @@ The Model Context Protocol includes the following projects:
 MCP focuses solely on the protocol for context exchange—it does not dictate how AI applications use LLMs or manage the provided context.
 
 
-[​](#concepts-of-mcp)
-
 Concepts of MCP
 
-
-[​](#participants)
 
 Participants
 
@@ -44,8 +38,6 @@ MCP follows a client-server architecture where an MCP host — an AI application
 **For example**: Visual Studio Code acts as an MCP host. When Visual Studio Code establishes a connection to an MCP server, such as the [Sentry MCP server](https://docs.sentry.io/product/sentry-mcp/), the Visual Studio Code runtime instantiates an MCP client object that maintains the connection to the Sentry MCP server. When Visual Studio Code subsequently connects to another MCP server, such as the [local filesystem server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem), the Visual Studio Code runtime instantiates an additional MCP client object to maintain this connection. Note that **MCP server** refers to the program that serves context data, regardless of where it runs. MCP servers can execute locally or remotely. For example, when Claude Desktop launches the [filesystem server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem), the server runs locally on the same machine because it uses the STDIO transport. This is commonly referred to as a “local” MCP server. The official [Sentry MCP server](https://docs.sentry.io/product/sentry-mcp/) runs on the Sentry platform, and uses the Streamable HTTP transport. This is commonly referred to as a “remote” MCP server.
 
 
-[​](#layers)
-
 Layers
 
 MCP consists of two layers:
@@ -55,8 +47,6 @@ MCP consists of two layers:
 
 Conceptually the data layer is the inner layer, while the transport layer is the outer layer.
 
-
-[​](#data-layer)
 
 Data layer
 
@@ -68,8 +58,6 @@ The data layer implements a [JSON-RPC 2.0](https://www.jsonrpc.org/) based excha
 - **Utility features**: Supports additional capabilities like notifications for real-time updates and progress tracking for long-running operations
 
 
-[​](#transport-layer)
-
 Transport layer
 
 The transport layer manages communication channels and authentication between clients and servers. It handles connection establishment, message framing, and secure communication between MCP participants. MCP supports two transport mechanisms:
@@ -80,14 +68,10 @@ The transport layer manages communication channels and authentication between cl
 The transport layer abstracts communication details from the protocol layer, enabling the same JSON-RPC 2.0 message format across all transport mechanisms.
 
 
-[​](#data-layer-protocol)
-
 Data Layer Protocol
 
 A core part of MCP is defining the schema and semantics between MCP clients and MCP servers. Developers will likely find the data layer — in particular, the set of [primitives](#primitives) — to be the most interesting part of MCP. It is the part of MCP that defines the ways developers can share context from MCP servers to MCP clients. MCP uses [JSON-RPC 2.0](https://www.jsonrpc.org/) as its underlying RPC protocol. Client and servers send requests to each other and respond accordingly. Notifications can be used when no response is required.
 
-
-[​](#lifecycle-management)
 
 Lifecycle management
 
@@ -101,8 +85,6 @@ capabilities
 
 that both client and server support. Detailed information can be found in the [specification](/specification/latest/basic/lifecycle), and the [example](#example) showcases the initialization sequence.
 
-
-[​](#primitives)
 
 Primitives
 
@@ -123,19 +105,13 @@ For more details about client primitives see [client concepts](./client-concepts
 - **Tasks (Experimental)**: Durable execution wrappers that enable deferred result retrieval and status tracking for MCP requests (e.g., expensive computations, workflow automation, batch processing, multi-step operations)
 
 
-[​](#notifications)
-
 Notifications
 
 The protocol supports real-time notifications to enable dynamic updates between servers and clients. For example, when a server’s available tools change—such as when new functionality becomes available or existing tools are modified—the server can send tool update notifications to inform connected clients about these changes. Notifications are sent as JSON-RPC 2.0 notification messages (without expecting a response) and enable MCP servers to provide real-time updates to connected clients.
 
 
-[​](#example)
-
 Example
 
-
-[​](#data-layer-2)
 
 Data Layer
 
@@ -173,8 +149,6 @@ Copy
 ```
 
 
-[​](#understanding-the-initialization-exchange)
-
 Understanding the Initialization Exchange
 
 The initialization process is a key part of MCP’s lifecycle management and serves several critical purposes:
@@ -205,8 +179,6 @@ Copy
 }
 ```
 
-
-[​](#how-this-works-in-ai-applications)
 
 How This Works in AI Applications
 
@@ -248,14 +220,10 @@ Copy
 ```
 
 
-[​](#understanding-the-tool-discovery-request)
-
 Understanding the Tool Discovery Request
 
 The `tools/list` request is simple, containing no parameters.
 
-
-[​](#understanding-the-tool-discovery-response)
 
 Understanding the Tool Discovery Response
 
@@ -266,8 +234,6 @@ The response contains a `tools` array that provides comprehensive metadata about
 - **`description`**: Detailed explanation of what the tool does and when to use it
 - **`inputSchema`**: A JSON Schema that defines the expected input parameters, enabling type validation and providing clear documentation about required and optional parameters
 
-
-[​](#how-this-works-in-ai-applications-2)
 
 How This Works in AI Applications
 
@@ -293,8 +259,6 @@ Tool Execution (Primitives)
 
 The client can now execute a tool using the `tools/call` method. This demonstrates how MCP primitives are used in practice: after discovering available tools, the client can invoke them with appropriate arguments.
 
-
-[​](#understanding-the-tool-execution-request)
 
 Understanding the Tool Execution Request
 
@@ -322,8 +286,6 @@ Copy
 ```
 
 
-[​](#key-elements-of-tool-execution)
-
 Key Elements of Tool Execution
 
 The request structure includes several important components:
@@ -335,8 +297,6 @@ The request structure includes several important components:
 3.  **JSON-RPC Structure**: Uses standard JSON-RPC 2.0 format with unique `id` for request-response correlation.
 
 
-[​](#understanding-the-tool-execution-response)
-
 Understanding the Tool Execution Response
 
 The response demonstrates MCP’s flexible content system:
@@ -347,8 +307,6 @@ The response demonstrates MCP’s flexible content system:
 
 This execution pattern allows AI applications to dynamically invoke server functionality and receive structured responses that can be integrated into conversations with language models.
 
-
-[​](#how-this-works-in-ai-applications-3)
 
 How This Works in AI Applications
 
@@ -372,8 +330,6 @@ Real-time Updates (Notifications)
 MCP supports real-time notifications that enable servers to inform clients about changes without being explicitly requested. This demonstrates the notification system, a key feature that keeps MCP connections synchronized and responsive.
 
 
-[​](#understanding-tool-list-change-notifications)
-
 Understanding Tool List Change Notifications
 
 When the server’s available tools change—such as when new functionality becomes available, existing tools are modified, or tools become temporarily unavailable—the server can proactively notify connected clients:
@@ -390,16 +346,12 @@ Copy
 ```
 
 
-[​](#key-features-of-mcp-notifications)
-
 Key Features of MCP Notifications
 
 1.  **No Response Required**: Notice there’s no `id` field in the notification. This follows JSON-RPC 2.0 notification semantics where no response is expected or sent.
 2.  **Capability-Based**: This notification is only sent by servers that declared `"listChanged": true` in their tools capability during initialization (as shown in Step 1).
 3.  **Event-Driven**: The server decides when to send notifications based on internal state changes, making MCP connections dynamic and responsive.
 
-
-[​](#client-response-to-notifications)
 
 Client Response to Notifications
 
@@ -418,8 +370,6 @@ Copy
 ```
 
 
-[​](#why-notifications-matter)
-
 Why Notifications Matter
 
 This notification system is crucial for several reasons:
@@ -431,8 +381,6 @@ This notification system is crucial for several reasons:
 
 This notification pattern extends beyond tools to other MCP primitives, enabling comprehensive real-time synchronization between clients and servers.
 
-
-[​](#how-this-works-in-ai-applications-4)
 
 How This Works in AI Applications
 

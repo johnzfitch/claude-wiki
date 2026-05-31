@@ -15,8 +15,6 @@ How to run commands and bundle executable scripts in your skills.
 Skills can instruct agents to run shell commands and bundle reusable scripts in a `scripts/` directory. This guide covers one-off commands, self-contained scripts with their own dependencies, and how to design script interfaces for agentic use.
 
 
-[​](#one-off-commands)
-
 One-off commands
 
 When an existing package already does what you need, you can reference it directly in your `SKILL.md` instructions without a `scripts/` directory. Many ecosystems provide tools that auto-resolve dependencies at runtime.
@@ -131,8 +129,6 @@ go run github.com/golangci/golangci-lint/cmd/golangci-lint@v1.62.0 run
 - **Move complex commands into scripts.** A one-off command works well when you’re invoking a tool with a few flags. When a command grows complex enough that it’s hard to get right on the first try, a tested script in `scripts/` is more reliable.
 
 
-[​](#referencing-scripts-from-skill-md)
-
 Referencing scripts from `SKILL.md`
 
 Use **relative paths from the skill directory root** to reference bundled files. The agent resolves these paths automatically — no absolute paths needed. List available scripts in your `SKILL.md` so the agent knows they exist:
@@ -176,8 +172,6 @@ Copy
 
 The same relative-path convention works in support files like `references/*.md` — script execution paths (in code blocks) are relative to the **skill directory root**, because the agent runs commands from there.
 
-
-[​](#self-contained-scripts)
 
 Self-contained scripts
 
@@ -330,14 +324,10 @@ ruby scripts/extract.rb
 - An existing `Gemfile` or `BUNDLE_GEMFILE` env var in the working directory can interfere.
 
 
-[​](#designing-scripts-for-agentic-use)
-
 Designing scripts for agentic use
 
 When an agent runs your script, it reads stdout and stderr to decide what to do next. A few design choices make scripts dramatically easier for agents to use.
 
-
-[​](#avoid-interactive-prompts)
 
 Avoid interactive prompts
 
@@ -359,8 +349,6 @@ Error: --env is required. Options: development, staging, production.
 Usage: python scripts/deploy.py --env staging --tag v1.2.3
 ```
 
-
-[​](#document-usage-with-help)
 
 Document usage with `--help`
 
@@ -389,8 +377,6 @@ Examples:
 Keep it concise — the output enters the agent’s context window alongside everything else it’s working with.
 
 
-[​](#write-helpful-error-messages)
-
 Write helpful error messages
 
 When an agent gets an error, the message directly shapes its next attempt. An opaque “Error: invalid input” wastes a turn. Instead, say what went wrong, what was expected, and what to try:
@@ -405,8 +391,6 @@ Error: --format must be one of: json, csv, table.
        Received: "xml"
 ```
 
-
-[​](#use-structured-output)
 
 Use structured output
 
@@ -428,8 +412,6 @@ my-service    running   2025-01-15
 
 **Separate data from diagnostics:** send structured data to stdout and progress messages, warnings, and other diagnostics to stderr. This lets the agent capture clean, parseable output while still having access to diagnostic information when needed.
 
-
-[​](#further-considerations)
 
 Further considerations
 

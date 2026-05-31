@@ -9,19 +9,15 @@ tags: ["mcp", "mcp-spec"]
 # Schema Reference
 
 
-[​](#json-rpc)
-
 JSON-RPC
 
-
-[​](#jsonrpcerrorresponse)
 
 `JSONRPCErrorResponse`
 
 interface JSONRPCErrorResponse {\
-  [jsonrpc](#jsonrpcerrorresponse-jsonrpc): “2.0”;\
-  [id](#jsonrpcerrorresponse-id)?: [RequestId](#requestid);\
-  [error](#jsonrpcerrorresponse-error): [Error](#error);\
+  [jsonrpc](#jsonrpcerrorresponse-jsonrpc): “2.0”;\
+  [id](#jsonrpcerrorresponse-id)?: [RequestId](#requestid);\
+  [error](#jsonrpcerrorresponse-error): [Error](#error);\
 }
 
 A response to a request that indicates an error occurred.
@@ -33,8 +29,6 @@ id?: RequestId[](#jsonrpcerrorresponse-id)
 error: Error[](#jsonrpcerrorresponse-error)
 
 
-[​](#jsonrpcmessage)
-
 `JSONRPCMessage`
 
 JSONRPCMessage: [JSONRPCRequest](#jsonrpcrequest) \| [JSONRPCNotification](#jsonrpcnotification) \| [JSONRPCResponse](#jsonrpcresponse)
@@ -42,14 +36,12 @@ JSONRPCMessage: [JSONRPCRequest](#jsonrpcrequest) \| [JSONRPCNotification](#json
 Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
 
 
-[​](#jsonrpcnotification)
-
 `JSONRPCNotification`
 
 interface JSONRPCNotification {\
-  [method](#jsonrpcnotification-method): string;\
-  [params](#jsonrpcnotification-params)?: { \[key: string\]: any };\
-  [jsonrpc](#jsonrpcnotification-jsonrpc): “2.0”;\
+  [method](#jsonrpcnotification-method): string;\
+  [params](#jsonrpcnotification-params)?: { \[key: string\]: any };\
+  [jsonrpc](#jsonrpcnotification-jsonrpc): “2.0”;\
 }
 
 A notification which does not expect a response.
@@ -65,15 +57,13 @@ Inherited from Notification.params
 jsonrpc: “2.0”[](#jsonrpcnotification-jsonrpc)
 
 
-[​](#jsonrpcrequest)
-
 `JSONRPCRequest`
 
 interface JSONRPCRequest {\
-  [method](#jsonrpcrequest-method): string;\
-  [params](#jsonrpcrequest-params)?: { \[key: string\]: any };\
-  [jsonrpc](#jsonrpcrequest-jsonrpc): “2.0”;\
-  [id](#jsonrpcrequest-id): [RequestId](#requestid);\
+  [method](#jsonrpcrequest-method): string;\
+  [params](#jsonrpcrequest-params)?: { \[key: string\]: any };\
+  [jsonrpc](#jsonrpcrequest-jsonrpc): “2.0”;\
+  [id](#jsonrpcrequest-id): [RequestId](#requestid);\
 }
 
 A request that expects a response.
@@ -91,8 +81,6 @@ jsonrpc: “2.0”[](#jsonrpcrequest-jsonrpc)
 id: RequestId[](#jsonrpcrequest-id)
 
 
-[​](#jsonrpcresponse)
-
 `JSONRPCResponse`
 
 JSONRPCResponse: [JSONRPCResultResponse](#jsonrpcresultresponse) \| [JSONRPCErrorResponse](#jsonrpcerrorresponse)
@@ -100,14 +88,12 @@ JSONRPCResponse: [JSONRPCResultResponse](#jsonrpcresultresponse) \| [JSONRPCErro
 A response to a request, containing either the result or error.
 
 
-[​](#jsonrpcresultresponse)
-
 `JSONRPCResultResponse`
 
 interface JSONRPCResultResponse {\
-  [jsonrpc](#jsonrpcresultresponse-jsonrpc): “2.0”;\
-  [id](#jsonrpcresultresponse-id): [RequestId](#requestid);\
-  [result](#jsonrpcresultresponse-result): [Result](#result);\
+  [jsonrpc](#jsonrpcresultresponse-jsonrpc): “2.0”;\
+  [id](#jsonrpcresultresponse-id): [RequestId](#requestid);\
+  [result](#jsonrpcresultresponse-result): [Result](#result);\
 }
 
 A successful (non-error) response to a request.
@@ -119,19 +105,15 @@ id: RequestId[](#jsonrpcresultresponse-id)
 result: Result[](#jsonrpcresultresponse-result)
 
 
-[​](#common-types)
-
 Common Types
 
-
-[​](#annotations)
 
 `Annotations`
 
 interface Annotations {\
-  [audience](#annotations-audience)?: [Role](#role)\[\];\
-  [priority](#annotations-priority)?: number;\
-  [lastModified](#annotations-lastmodified)?: string;\
+  [audience](#annotations-audience)?: [Role](#role)\[\];\
+  [priority](#annotations-priority)?: number;\
+  [lastModified](#annotations-lastmodified)?: string;\
 }
 
 Optional annotations for the client. The client can use annotations to inform how objects are used or displayed
@@ -157,16 +139,12 @@ Should be an ISO 8601 formatted string (e.g., “2025-01-12T15:00:58Z”).
 Examples: last activity timestamp in an open file, timestamp when the resource was attached, etc.
 
 
-[​](#cursor)
-
 `Cursor`
 
 Cursor: string
 
 An opaque token used to represent a cursor for pagination.
 
-
-[​](#emptyresult)
 
 `EmptyResult`
 
@@ -175,15 +153,13 @@ EmptyResult: [Result](#result)
 A result that indicates success but carries no data.
 
 
-[​](#icon)
-
 `Icon`
 
 interface Icon {\
-  [src](#icon-src): string;\
-  [mimeType](#icon-mimetype)?: string;\
-  [sizes](#icon-sizes)?: string\[\];\
-  [theme](#icon-theme)?: “light” \| “dark”;\
+  [src](#icon-src): string;\
+  [mimeType](#icon-mimetype)?: string;\
+  [sizes](#icon-sizes)?: string\[\];\
+  [theme](#icon-theme)?: “light” \| “dark”;\
 }
 
 An optionally-sized icon that can be displayed in a user interface.
@@ -213,14 +189,10 @@ Optional specifier for the theme this icon is designed for. `“light”` indica
 If not provided, the client should assume the icon can be used with any theme.
 
 
-[​](#jsonarray)
-
 `JSONArray`
 
 JSONArray: [JSONValue](#jsonvalue)\[\]
 
-
-[​](#jsonobject)
 
 `JSONObject`
 
@@ -231,33 +203,27 @@ Type Declaration
 - \[key: string\]: [JSONValue](#jsonvalue)
 
 
-[​](#jsonvalue)
-
 `JSONValue`
 
 JSONValue: string \| number \| boolean \| null \| [JSONObject](#jsonobject) \| [JSONArray](#jsonarray)
 
 
-[​](#logginglevel)
-
 `LoggingLevel`
 
 LoggingLevel:\
-  \| “debug”\
-  \| “info”\
-  \| “notice”\
-  \| “warning”\
-  \| “error”\
-  \| “critical”\
-  \| “alert”\
-  \| “emergency”
+  \| “debug”\
+  \| “info”\
+  \| “notice”\
+  \| “warning”\
+  \| “error”\
+  \| “critical”\
+  \| “alert”\
+  \| “emergency”
 
 The severity of a log message.
 
 These map to syslog message severities, as specified in RFC-5424: [](https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1)[https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1](https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1)
 
-
-[​](#metaobject)
 
 `MetaObject`
 
@@ -285,12 +251,10 @@ See[](#see)
 [General fields: `_meta`](/specification/draft/basic/index#meta) for more details.
 
 
-[​](#notificationparams)
-
 `NotificationParams`
 
 interface NotificationParams {\
-  [\_meta](#notificationparams-_meta)?: [MetaObject](#metaobject);\
+  [\_meta](#notificationparams-_meta)?: [MetaObject](#metaobject);\
 }
 
 Common params for any notification.
@@ -298,13 +262,11 @@ Common params for any notification.
 \_meta?: MetaObject[](#notificationparams-_meta)
 
 
-[​](#paginatedrequestparams)
-
 `PaginatedRequestParams`
 
 interface PaginatedRequestParams {\
-  [\_meta](#paginatedrequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [cursor](#paginatedrequestparams-cursor)?: string;\
+  [\_meta](#paginatedrequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [cursor](#paginatedrequestparams-cursor)?: string;\
 }
 
 Common params for paginated requests.
@@ -326,16 +288,12 @@ cursor?: string[](#paginatedrequestparams-cursor)
 An opaque token representing the current pagination position. If provided, the server should return results starting after this cursor.
 
 
-[​](#progresstoken)
-
 `ProgressToken`
 
 ProgressToken: string \| number
 
 A progress token, used to associate progress notifications with the original request.
 
-
-[​](#requestid)
 
 `RequestId`
 
@@ -344,13 +302,11 @@ RequestId: string \| number
 A uniquely identifying ID for a request in JSON-RPC.
 
 
-[​](#requestmetaobject)
-
 `RequestMetaObject`
 
 interface RequestMetaObject {\
-  [progressToken](#requestmetaobject-progresstoken)?: [ProgressToken](#progresstoken);\
-  \[key: string\]: unknown;\
+  [progressToken](#requestmetaobject-progresstoken)?: [ProgressToken](#progresstoken);\
+  \[key: string\]: unknown;\
 }
 
 Extends [MetaObject](#metaobject) with additional request-specific fields. All key naming rules from `MetaObject` apply.
@@ -365,12 +321,10 @@ progressToken?: ProgressToken[](#requestmetaobject-progresstoken)
 If specified, the caller is requesting out-of-band progress notifications for this request (as represented by [notifications/progress](#progressnotification)). The value of this parameter is an opaque token that will be attached to any subsequent notifications. The receiver is not obligated to provide these notifications.
 
 
-[​](#requestparams)
-
 `RequestParams`
 
 interface RequestParams {\
-  [\_meta](#requestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [\_meta](#requestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
 }
 
 Common params for any request.
@@ -378,21 +332,17 @@ Common params for any request.
 \_meta?: RequestMetaObject[](#requestparams-_meta)
 
 
-[​](#result)
-
 `Result`
 
 interface Result {\
-  [\_meta](#result-_meta)?: [MetaObject](#metaobject);\
-  \[key: string\]: unknown;\
+  [\_meta](#result-_meta)?: [MetaObject](#metaobject);\
+  \[key: string\]: unknown;\
 }
 
 Common result fields.
 
 \_meta?: MetaObject[](#result-_meta)
 
-
-[​](#role)
 
 `Role`
 
@@ -401,19 +351,15 @@ Role: “user” \| “assistant”
 The sender or recipient of messages and data in a conversation.
 
 
-[​](#errors)
-
 Errors
 
-
-[​](#error)
 
 `Error`
 
 interface Error {\
-  [code](#error-code): number;\
-  [message](#error-message): string;\
-  [data](#error-data)?: unknown;\
+  [code](#error-code): number;\
+  [message](#error-message): string;\
+  [data](#error-data)?: unknown;\
 }
 
 code: number[](#error-code)
@@ -429,14 +375,12 @@ data?: unknown[](#error-data)
 Additional information about the error. The value of this member is defined by the sender (e.g. detailed error information, nested errors etc.).
 
 
-[​](#internalerror)
-
 `InternalError`
 
 interface InternalError {\
-  [message](#internalerror-message): string;\
-  [data](#internalerror-data)?: unknown;\
-  [code](#internalerror-code): -32603;\
+  [message](#internalerror-message): string;\
+  [data](#internalerror-data)?: unknown;\
+  [code](#internalerror-code): -32603;\
 }
 
 A JSON-RPC error indicating that an internal error occurred on the receiver. This error is returned when the receiver encounters an unexpected condition that prevents it from fulfilling the request.
@@ -473,14 +417,12 @@ The error type that occurred.
 Overrides [Error](#error).[code](#error-code)
 
 
-[​](#invalidparamserror)
-
 `InvalidParamsError`
 
 interface InvalidParamsError {\
-  [message](#invalidparamserror-message): string;\
-  [data](#invalidparamserror-data)?: unknown;\
-  [code](#invalidparamserror-code): -32602;\
+  [message](#invalidparamserror-message): string;\
+  [data](#invalidparamserror-data)?: unknown;\
+  [code](#invalidparamserror-code): -32602;\
 }
 
 A JSON-RPC error indicating that the method parameters are invalid or malformed.
@@ -554,14 +496,12 @@ The error type that occurred.
 Overrides [Error](#error).[code](#error-code)
 
 
-[​](#invalidrequesterror)
-
 `InvalidRequestError`
 
 interface InvalidRequestError {\
-  [message](#invalidrequesterror-message): string;\
-  [data](#invalidrequesterror-data)?: unknown;\
-  [code](#invalidrequesterror-code): -32600;\
+  [message](#invalidrequesterror-message): string;\
+  [data](#invalidrequesterror-data)?: unknown;\
+  [code](#invalidrequesterror-code): -32600;\
 }
 
 A JSON-RPC error indicating that the request is not a valid request object. This error is returned when the message structure does not conform to the JSON-RPC 2.0 specification requirements for a request (e.g., missing required fields like `jsonrpc` or `method`, or using invalid types for these fields).
@@ -589,14 +529,12 @@ The error type that occurred.
 Overrides [Error](#error).[code](#error-code)
 
 
-[​](#methodnotfounderror)
-
 `MethodNotFoundError`
 
 interface MethodNotFoundError {\
-  [message](#methodnotfounderror-message): string;\
-  [data](#methodnotfounderror-data)?: unknown;\
-  [code](#methodnotfounderror-code): -32601;\
+  [message](#methodnotfounderror-message): string;\
+  [data](#methodnotfounderror-data)?: unknown;\
+  [code](#methodnotfounderror-code): -32601;\
 }
 
 A JSON-RPC error indicating that the requested method does not exist or is not available.
@@ -641,14 +579,12 @@ The error type that occurred.
 Overrides [Error](#error).[code](#error-code)
 
 
-[​](#parseerror)
-
 `ParseError`
 
 interface ParseError {\
-  [message](#parseerror-message): string;\
-  [data](#parseerror-data)?: unknown;\
-  [code](#parseerror-code): -32700;\
+  [message](#parseerror-message): string;\
+  [data](#parseerror-data)?: unknown;\
+  [code](#parseerror-code): -32700;\
 }
 
 A JSON-RPC error indicating that invalid JSON was received by the server. This error is returned when the server cannot parse the JSON text of a message.
@@ -685,21 +621,17 @@ The error type that occurred.
 Overrides [Error](#error).[code](#error-code)
 
 
-[​](#content)
-
 Content
 
-
-[​](#audiocontent)
 
 `AudioContent`
 
 interface AudioContent {\
-  [type](#audiocontent-type): “audio”;\
-  [data](#audiocontent-data): string;\
-  [mimeType](#audiocontent-mimetype): string;\
-  [annotations](#audiocontent-annotations)?: [Annotations](#annotations);\
-  [\_meta](#audiocontent-_meta)?: [MetaObject](#metaobject);\
+  [type](#audiocontent-type): “audio”;\
+  [data](#audiocontent-data): string;\
+  [mimeType](#audiocontent-mimetype): string;\
+  [annotations](#audiocontent-annotations)?: [Annotations](#annotations);\
+  [\_meta](#audiocontent-_meta)?: [MetaObject](#metaobject);\
 }
 
 Audio provided to or from an LLM.
@@ -731,15 +663,13 @@ Optional annotations for the client.
 \_meta?: MetaObject[](#audiocontent-_meta)
 
 
-[​](#blobresourcecontents)
-
 `BlobResourceContents`
 
 interface BlobResourceContents {\
-  [uri](#blobresourcecontents-uri): string;\
-  [mimeType](#blobresourcecontents-mimetype)?: string;\
-  [\_meta](#blobresourcecontents-_meta)?: [MetaObject](#metaobject);\
-  [blob](#blobresourcecontents-blob): string;\
+  [uri](#blobresourcecontents-uri): string;\
+  [mimeType](#blobresourcecontents-mimetype)?: string;\
+  [\_meta](#blobresourcecontents-_meta)?: [MetaObject](#metaobject);\
+  [blob](#blobresourcecontents-blob): string;\
 }
 
 Example: Image file contents[](#blobresourcecontents-example-image-file-contents)
@@ -773,27 +703,23 @@ blob: string[](#blobresourcecontents-blob)
 A base64-encoded string representing the binary data of the item.
 
 
-[​](#contentblock)
-
 `ContentBlock`
 
 ContentBlock:\
-  \| [TextContent](#textcontent)\
-  \| [ImageContent](#imagecontent)\
-  \| [AudioContent](#audiocontent)\
-  \| [ResourceLink](#resourcelink)\
-  \| [EmbeddedResource](#embeddedresource)
+  \| [TextContent](#textcontent)\
+  \| [ImageContent](#imagecontent)\
+  \| [AudioContent](#audiocontent)\
+  \| [ResourceLink](#resourcelink)\
+  \| [EmbeddedResource](#embeddedresource)
 
-
-[​](#embeddedresource)
 
 `EmbeddedResource`
 
 interface EmbeddedResource {\
-  [type](#embeddedresource-type): “resource”;\
-  [resource](#embeddedresource-resource): [TextResourceContents](#textresourcecontents) \| [BlobResourceContents](#blobresourcecontents);\
-  [annotations](#embeddedresource-annotations)?: [Annotations](#annotations);\
-  [\_meta](#embeddedresource-_meta)?: [MetaObject](#metaobject);\
+  [type](#embeddedresource-type): “resource”;\
+  [resource](#embeddedresource-resource): [TextResourceContents](#textresourcecontents) \| [BlobResourceContents](#blobresourcecontents);\
+  [annotations](#embeddedresource-annotations)?: [Annotations](#annotations);\
+  [\_meta](#embeddedresource-_meta)?: [MetaObject](#metaobject);\
 }
 
 The contents of a resource, embedded into a prompt or tool call result.
@@ -829,16 +755,14 @@ Optional annotations for the client.
 \_meta?: MetaObject[](#embeddedresource-_meta)
 
 
-[​](#imagecontent)
-
 `ImageContent`
 
 interface ImageContent {\
-  [type](#imagecontent-type): “image”;\
-  [data](#imagecontent-data): string;\
-  [mimeType](#imagecontent-mimetype): string;\
-  [annotations](#imagecontent-annotations)?: [Annotations](#annotations);\
-  [\_meta](#imagecontent-_meta)?: [MetaObject](#metaobject);\
+  [type](#imagecontent-type): “image”;\
+  [data](#imagecontent-data): string;\
+  [mimeType](#imagecontent-mimetype): string;\
+  [annotations](#imagecontent-annotations)?: [Annotations](#annotations);\
+  [\_meta](#imagecontent-_meta)?: [MetaObject](#metaobject);\
 }
 
 An image provided to or from an LLM.
@@ -874,21 +798,19 @@ Optional annotations for the client.
 \_meta?: MetaObject[](#imagecontent-_meta)
 
 
-[​](#resourcelink)
-
 `ResourceLink`
 
 interface ResourceLink {\
-  [icons](#resourcelink-icons)?: [Icon](#icon)\[\];\
-  [name](#resourcelink-name): string;\
-  [title](#resourcelink-title)?: string;\
-  [uri](#resourcelink-uri): string;\
-  [description](#resourcelink-description)?: string;\
-  [mimeType](#resourcelink-mimetype)?: string;\
-  [annotations](#resourcelink-annotations)?: [Annotations](#annotations);\
-  [size](#resourcelink-size)?: number;\
-  [\_meta](#resourcelink-_meta)?: [MetaObject](#metaobject);\
-  [type](#resourcelink-type): “resource_link”;\
+  [icons](#resourcelink-icons)?: [Icon](#icon)\[\];\
+  [name](#resourcelink-name): string;\
+  [title](#resourcelink-title)?: string;\
+  [uri](#resourcelink-uri): string;\
+  [description](#resourcelink-description)?: string;\
+  [mimeType](#resourcelink-mimetype)?: string;\
+  [annotations](#resourcelink-annotations)?: [Annotations](#annotations);\
+  [size](#resourcelink-size)?: number;\
+  [\_meta](#resourcelink-_meta)?: [MetaObject](#metaobject);\
+  [type](#resourcelink-type): “resource_link”;\
 }
 
 A resource that the server is capable of reading, included in a prompt or tool call result.
@@ -978,15 +900,13 @@ Inherited from [Resource](#resource).[\_meta](#resource-_meta)
 type: “resource_link”[](#resourcelink-type)
 
 
-[​](#textcontent)
-
 `TextContent`
 
 interface TextContent {\
-  [type](#textcontent-type): “text”;\
-  [text](#textcontent-text): string;\
-  [annotations](#textcontent-annotations)?: [Annotations](#annotations);\
-  [\_meta](#textcontent-_meta)?: [MetaObject](#metaobject);\
+  [type](#textcontent-type): “text”;\
+  [text](#textcontent-text): string;\
+  [annotations](#textcontent-annotations)?: [Annotations](#annotations);\
+  [\_meta](#textcontent-_meta)?: [MetaObject](#metaobject);\
 }
 
 Text provided to or from an LLM.
@@ -1013,15 +933,13 @@ Optional annotations for the client.
 \_meta?: MetaObject[](#textcontent-_meta)
 
 
-[​](#textresourcecontents)
-
 `TextResourceContents`
 
 interface TextResourceContents {\
-  [uri](#textresourcecontents-uri): string;\
-  [mimeType](#textresourcecontents-mimetype)?: string;\
-  [\_meta](#textresourcecontents-_meta)?: [MetaObject](#metaobject);\
-  [text](#textresourcecontents-text): string;\
+  [uri](#textresourcecontents-uri): string;\
+  [mimeType](#textresourcecontents-mimetype)?: string;\
+  [\_meta](#textresourcecontents-_meta)?: [MetaObject](#metaobject);\
+  [text](#textresourcecontents-text): string;\
 }
 
 Example: Text file contents[](#textresourcecontents-example-text-file-contents)
@@ -1055,20 +973,16 @@ text: string[](#textresourcecontents-text)
 The text of the item. This must only be set if the item can actually be represented as text (not binary data).
 
 
-[​](#completion/complete)
-
 `completion/complete`
 
-
-[​](#completerequest)
 
 `CompleteRequest`
 
 interface CompleteRequest {\
-  [jsonrpc](#completerequest-jsonrpc): “2.0”;\
-  [id](#completerequest-id): [RequestId](#requestid);\
-  [method](#completerequest-method): “completion/complete”;\
-  [params](#completerequest-params): [CompleteRequestParams](#completerequestparams);\
+  [jsonrpc](#completerequest-jsonrpc): “2.0”;\
+  [id](#completerequest-id): [RequestId](#requestid);\
+  [method](#completerequest-method): “completion/complete”;\
+  [params](#completerequest-params): [CompleteRequestParams](#completerequestparams);\
 }
 
 A request from the client to the server, to ask for completion options.
@@ -1110,15 +1024,13 @@ params: CompleteRequestParams[](#completerequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#completerequestparams)
-
 `CompleteRequestParams`
 
 interface CompleteRequestParams {\
-  [\_meta](#completerequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [ref](#completerequestparams-ref): [PromptReference](#promptreference) \| [ResourceTemplateReference](#resourcetemplatereference);\
-  [argument](#completerequestparams-argument): { name: string; value: string };\
-  [context](#completerequestparams-context)?: { arguments?: { \[key: string\]: string } };\
+  [\_meta](#completerequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [ref](#completerequestparams-ref): [PromptReference](#promptreference) \| [ResourceTemplateReference](#resourcetemplatereference);\
+  [argument](#completerequestparams-argument): { name: string; value: string };\
+  [context](#completerequestparams-context)?: { arguments?: { \[key: string\]: string } };\
 }
 
 Parameters for a `completion/complete` request.
@@ -1189,14 +1101,12 @@ Type Declaration
   Previously-resolved variables in a URI template or prompt.
 
 
-[​](#completeresultresponse)
-
 `CompleteResultResponse`
 
 interface CompleteResultResponse {\
-  [jsonrpc](#completeresultresponse-jsonrpc): “2.0”;\
-  [id](#completeresultresponse-id): [RequestId](#requestid);\
-  [result](#completeresultresponse-result): [CompleteResult](#completeresult);\
+  [jsonrpc](#completeresultresponse-jsonrpc): “2.0”;\
+  [id](#completeresultresponse-id): [RequestId](#requestid);\
+  [result](#completeresultresponse-result): [CompleteResult](#completeresult);\
 }
 
 A successful response from the server for a [completion/complete](#completerequest) request.
@@ -1230,14 +1140,12 @@ result: CompleteResult[](#completeresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#completeresult)
-
 `CompleteResult`
 
 interface CompleteResult {\
-  [\_meta](#completeresult-_meta)?: [MetaObject](#metaobject);\
-  [completion](#completeresult-completion): { values: string\[\]; total?: number; hasMore?: boolean };\
-  \[key: string\]: unknown;\
+  [\_meta](#completeresult-_meta)?: [MetaObject](#metaobject);\
+  [completion](#completeresult-completion): { values: string\[\]; total?: number; hasMore?: boolean };\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for a [completion/complete](#completerequest) request.
@@ -1287,14 +1195,12 @@ Type Declaration
   Indicates whether there are additional completion options beyond those provided in the current response, even if the exact total is unknown.
 
 
-[​](#promptreference)
-
 `PromptReference`
 
 interface PromptReference {\
-  [name](#promptreference-name): string;\
-  [title](#promptreference-title)?: string;\
-  [type](#promptreference-type): “ref/prompt”;\
+  [name](#promptreference-name): string;\
+  [title](#promptreference-title)?: string;\
+  [type](#promptreference-type): “ref/prompt”;\
 }
 
 Identifies a prompt.
@@ -1316,13 +1222,11 @@ Inherited from BaseMetadata.title
 type: “ref/prompt”[](#promptreference-type)
 
 
-[​](#resourcetemplatereference)
-
 `ResourceTemplateReference`
 
 interface ResourceTemplateReference {\
-  [type](#resourcetemplatereference-type): “ref/resource”;\
-  [uri](#resourcetemplatereference-uri): string;\
+  [type](#resourcetemplatereference-type): “ref/resource”;\
+  [uri](#resourcetemplatereference-uri): string;\
 }
 
 A reference to a resource or resource template definition.
@@ -1334,20 +1238,16 @@ uri: string[](#resourcetemplatereference-uri)
 The URI or URI template of the resource.
 
 
-[​](#elicitation/create)
-
 `elicitation/create`
 
-
-[​](#elicitrequest)
 
 `ElicitRequest`
 
 interface ElicitRequest {\
-  [jsonrpc](#elicitrequest-jsonrpc): “2.0”;\
-  [id](#elicitrequest-id): [RequestId](#requestid);\
-  [method](#elicitrequest-method): “elicitation/create”;\
-  [params](#elicitrequest-params): [ElicitRequestParams](#elicitrequestparams);\
+  [jsonrpc](#elicitrequest-jsonrpc): “2.0”;\
+  [id](#elicitrequest-id): [RequestId](#requestid);\
+  [method](#elicitrequest-method): “elicitation/create”;\
+  [params](#elicitrequest-params): [ElicitRequestParams](#elicitrequestparams);\
 }
 
 A request from the server to elicit additional information from the user via the client.
@@ -1392,8 +1292,6 @@ params: ElicitRequestParams[](#elicitrequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#elicitrequestparams)
-
 `ElicitRequestParams`
 
 ElicitRequestParams: [ElicitRequestFormParams](#elicitrequestformparams) \| [ElicitRequestURLParams](#elicitrequesturlparams)
@@ -1401,14 +1299,12 @@ ElicitRequestParams: [ElicitRequestFormParams](#elicitrequestformparams) \| [Eli
 The parameters for a request to elicit additional information from the user via the client.
 
 
-[​](#elicitresultresponse)
-
 `ElicitResultResponse`
 
 interface ElicitResultResponse {\
-  [jsonrpc](#elicitresultresponse-jsonrpc): “2.0”;\
-  [id](#elicitresultresponse-id): [RequestId](#requestid);\
-  [result](#elicitresultresponse-result): [ElicitResult](#elicitresult);\
+  [jsonrpc](#elicitresultresponse-jsonrpc): “2.0”;\
+  [id](#elicitresultresponse-id): [RequestId](#requestid);\
+  [result](#elicitresultresponse-result): [ElicitResult](#elicitresult);\
 }
 
 A successful response from the client for a [elicitation/create](#elicitrequest) request.
@@ -1441,15 +1337,13 @@ result: ElicitResult[](#elicitresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#elicitresult)
-
 `ElicitResult`
 
 interface ElicitResult {\
-  [\_meta](#elicitresult-_meta)?: [MetaObject](#metaobject);\
-  [action](#elicitresult-action): “accept” \| “decline” \| “cancel”;\
-  [content](#elicitresult-content)?: { \[key: string\]: string \| number \| boolean \| string\[\] };\
-  \[key: string\]: unknown;\
+  [\_meta](#elicitresult-_meta)?: [MetaObject](#metaobject);\
+  [action](#elicitresult-action): “accept” \| “decline” \| “cancel”;\
+  [content](#elicitresult-content)?: { \[key: string\]: string \| number \| boolean \| string\[\] };\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the client for an [elicitation/create](#elicitrequest) request.
@@ -1503,15 +1397,13 @@ content?: { \[key: string\]: string \| number \| boolean \| string\[\] }[](#elic
 The submitted form data, only present when action is `“accept”` and mode was `“form”`. Contains values matching the requested schema. Omitted for out-of-band mode responses.
 
 
-[​](#booleanschema)
-
 `BooleanSchema`
 
 interface BooleanSchema {\
-  [type](#booleanschema-type): “boolean”;\
-  [title](#booleanschema-title)?: string;\
-  [description](#booleanschema-description)?: string;\
-  [default](#booleanschema-default)?: boolean;\
+  [type](#booleanschema-type): “boolean”;\
+  [title](#booleanschema-title)?: string;\
+  [description](#booleanschema-description)?: string;\
+  [default](#booleanschema-default)?: boolean;\
 }
 
 Example: Boolean input schema[](#booleanschema-example-boolean-input-schema)
@@ -1534,21 +1426,19 @@ description?: string[](#booleanschema-description)
 default?: boolean[](#booleanschema-default)
 
 
-[​](#elicitrequestformparams)
-
 `ElicitRequestFormParams`
 
 interface ElicitRequestFormParams {\
-  [task](#elicitrequestformparams-task)?: [TaskMetadata](#taskmetadata);\
-  [\_meta](#elicitrequestformparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [mode](#elicitrequestformparams-mode)?: “form”;\
-  [message](#elicitrequestformparams-message): string;\
-  [requestedSchema](#elicitrequestformparams-requestedschema): {\
-    \$schema?: string;\
-    type: “object”;\
-    properties: { \[key: string\]: [PrimitiveSchemaDefinition](#primitiveschemadefinition) };\
-    required?: string\[\];\
-  };\
+  [task](#elicitrequestformparams-task)?: [TaskMetadata](#taskmetadata);\
+  [\_meta](#elicitrequestformparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [mode](#elicitrequestformparams-mode)?: “form”;\
+  [message](#elicitrequestformparams-message): string;\
+  [requestedSchema](#elicitrequestformparams-requestedschema): {\
+    \$schema?: string;\
+    type: “object”;\
+    properties: { \[key: string\]: [PrimitiveSchemaDefinition](#primitiveschemadefinition) };\
+    required?: string\[\];\
+  };\
 }
 
 The parameters for a request to elicit non-sensitive information from the user via a form in the client.
@@ -1625,17 +1515,15 @@ requestedSchema: { \$schema?: string; type: “object”; properties: { \[key: s
 A restricted subset of JSON Schema. Only top-level properties are allowed, without nesting.
 
 
-[​](#elicitrequesturlparams)
-
 `ElicitRequestURLParams`
 
 interface ElicitRequestURLParams {\
-  [task](#elicitrequesturlparams-task)?: [TaskMetadata](#taskmetadata);\
-  [\_meta](#elicitrequesturlparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [mode](#elicitrequesturlparams-mode): “url”;\
-  [message](#elicitrequesturlparams-message): string;\
-  [elicitationId](#elicitrequesturlparams-elicitationid): string;\
-  [url](#elicitrequesturlparams-url): string;\
+  [task](#elicitrequesturlparams-task)?: [TaskMetadata](#taskmetadata);\
+  [\_meta](#elicitrequesturlparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [mode](#elicitrequesturlparams-mode): “url”;\
+  [message](#elicitrequesturlparams-message): string;\
+  [elicitationId](#elicitrequesturlparams-elicitationid): string;\
+  [url](#elicitrequesturlparams-url): string;\
 }
 
 The parameters for a request to elicit information from the user via a URL in the client.
@@ -1680,27 +1568,23 @@ url: string[](#elicitrequesturlparams-url)
 The URL that the user should navigate to.
 
 
-[​](#enumschema)
-
 `EnumSchema`
 
 EnumSchema:\
-  \| [SingleSelectEnumSchema](#singleselectenumschema)\
-  \| [MultiSelectEnumSchema](#multiselectenumschema)\
-  \| [LegacyTitledEnumSchema](#legacytitledenumschema)
+  \| [SingleSelectEnumSchema](#singleselectenumschema)\
+  \| [MultiSelectEnumSchema](#multiselectenumschema)\
+  \| [LegacyTitledEnumSchema](#legacytitledenumschema)
 
-
-[​](#legacytitledenumschema)
 
 `LegacyTitledEnumSchema`
 
 interface LegacyTitledEnumSchema {\
-  [type](#legacytitledenumschema-type): “string”;\
-  [title](#legacytitledenumschema-title)?: string;\
-  [description](#legacytitledenumschema-description)?: string;\
-  [enum](#legacytitledenumschema-enum): string\[\];\
-  [enumNames](#legacytitledenumschema-enumnames)?: string\[\];\
-  [default](#legacytitledenumschema-default)?: string;\
+  [type](#legacytitledenumschema-type): “string”;\
+  [title](#legacytitledenumschema-title)?: string;\
+  [description](#legacytitledenumschema-description)?: string;\
+  [enum](#legacytitledenumschema-enum): string\[\];\
+  [enumNames](#legacytitledenumschema-enumnames)?: string\[\];\
+  [default](#legacytitledenumschema-default)?: string;\
 }
 
 Use [TitledSingleSelectEnumSchema](#titledsingleselectenumschema) instead. This interface will be removed in a future version.
@@ -1720,26 +1604,22 @@ enumNames?: string\[\][](#legacytitledenumschema-enumnames)
 default?: string[](#legacytitledenumschema-default)
 
 
-[​](#multiselectenumschema)
-
 `MultiSelectEnumSchema`
 
 MultiSelectEnumSchema:\
-  \| [UntitledMultiSelectEnumSchema](#untitledmultiselectenumschema)\
-  \| [TitledMultiSelectEnumSchema](#titledmultiselectenumschema)
+  \| [UntitledMultiSelectEnumSchema](#untitledmultiselectenumschema)\
+  \| [TitledMultiSelectEnumSchema](#titledmultiselectenumschema)
 
-
-[​](#numberschema)
 
 `NumberSchema`
 
 interface NumberSchema {\
-  [type](#numberschema-type): “number” \| “integer”;\
-  [title](#numberschema-title)?: string;\
-  [description](#numberschema-description)?: string;\
-  [minimum](#numberschema-minimum)?: number;\
-  [maximum](#numberschema-maximum)?: number;\
-  [default](#numberschema-default)?: number;\
+  [type](#numberschema-type): “number” \| “integer”;\
+  [title](#numberschema-title)?: string;\
+  [description](#numberschema-description)?: string;\
+  [minimum](#numberschema-minimum)?: number;\
+  [maximum](#numberschema-maximum)?: number;\
+  [default](#numberschema-default)?: number;\
 }
 
 Example: Number input schema[](#numberschema-example-number-input-schema)
@@ -1768,40 +1648,34 @@ maximum?: number[](#numberschema-maximum)
 default?: number[](#numberschema-default)
 
 
-[​](#primitiveschemadefinition)
-
 `PrimitiveSchemaDefinition`
 
 PrimitiveSchemaDefinition:\
-  \| [StringSchema](#stringschema)\
-  \| [NumberSchema](#numberschema)\
-  \| [BooleanSchema](#booleanschema)\
-  \| [EnumSchema](#enumschema)
+  \| [StringSchema](#stringschema)\
+  \| [NumberSchema](#numberschema)\
+  \| [BooleanSchema](#booleanschema)\
+  \| [EnumSchema](#enumschema)
 
 Restricted schema definitions that only allow primitive types without nested objects or arrays.
 
 
-[​](#singleselectenumschema)
-
 `SingleSelectEnumSchema`
 
 SingleSelectEnumSchema:\
-  \| [UntitledSingleSelectEnumSchema](#untitledsingleselectenumschema)\
-  \| [TitledSingleSelectEnumSchema](#titledsingleselectenumschema)
+  \| [UntitledSingleSelectEnumSchema](#untitledsingleselectenumschema)\
+  \| [TitledSingleSelectEnumSchema](#titledsingleselectenumschema)
 
-
-[​](#stringschema)
 
 `StringSchema`
 
 interface StringSchema {\
-  [type](#stringschema-type): “string”;\
-  [title](#stringschema-title)?: string;\
-  [description](#stringschema-description)?: string;\
-  [minLength](#stringschema-minlength)?: number;\
-  [maxLength](#stringschema-maxlength)?: number;\
-  [format](#stringschema-format)?: “uri” \| “email” \| “date” \| “date-time”;\
-  [default](#stringschema-default)?: string;\
+  [type](#stringschema-type): “string”;\
+  [title](#stringschema-title)?: string;\
+  [description](#stringschema-description)?: string;\
+  [minLength](#stringschema-minlength)?: number;\
+  [maxLength](#stringschema-maxlength)?: number;\
+  [format](#stringschema-format)?: “uri” \| “email” \| “date” \| “date-time”;\
+  [default](#stringschema-default)?: string;\
 }
 
 Example: Email input schema[](#stringschema-example-email-input-schema)
@@ -1833,18 +1707,16 @@ format?: “uri” \| “email” \| “date” \| “date-time”[](#stringsche
 default?: string[](#stringschema-default)
 
 
-[​](#titledmultiselectenumschema)
-
 `TitledMultiSelectEnumSchema`
 
 interface TitledMultiSelectEnumSchema {\
-  [type](#titledmultiselectenumschema-type): “array”;\
-  [title](#titledmultiselectenumschema-title)?: string;\
-  [description](#titledmultiselectenumschema-description)?: string;\
-  [minItems](#titledmultiselectenumschema-minitems)?: number;\
-  [maxItems](#titledmultiselectenumschema-maxitems)?: number;\
-  [items](#titledmultiselectenumschema-items): { anyOf: { const: string; title: string }\[\] };\
-  [default](#titledmultiselectenumschema-default)?: string\[\];\
+  [type](#titledmultiselectenumschema-type): “array”;\
+  [title](#titledmultiselectenumschema-title)?: string;\
+  [description](#titledmultiselectenumschema-description)?: string;\
+  [minItems](#titledmultiselectenumschema-minitems)?: number;\
+  [maxItems](#titledmultiselectenumschema-maxitems)?: number;\
+  [items](#titledmultiselectenumschema-items): { anyOf: { const: string; title: string }\[\] };\
+  [default](#titledmultiselectenumschema-default)?: string\[\];\
 }
 
 Schema for multiple-selection enumeration with display titles for each option.
@@ -1902,16 +1774,14 @@ default?: string\[\][](#titledmultiselectenumschema-default)
 Optional default value.
 
 
-[​](#titledsingleselectenumschema)
-
 `TitledSingleSelectEnumSchema`
 
 interface TitledSingleSelectEnumSchema {\
-  [type](#titledsingleselectenumschema-type): “string”;\
-  [title](#titledsingleselectenumschema-title)?: string;\
-  [description](#titledsingleselectenumschema-description)?: string;\
-  [oneOf](#titledsingleselectenumschema-oneof): { const: string; title: string }\[\];\
-  [default](#titledsingleselectenumschema-default)?: string;\
+  [type](#titledsingleselectenumschema-type): “string”;\
+  [title](#titledsingleselectenumschema-title)?: string;\
+  [description](#titledsingleselectenumschema-description)?: string;\
+  [oneOf](#titledsingleselectenumschema-oneof): { const: string; title: string }\[\];\
+  [default](#titledsingleselectenumschema-default)?: string;\
 }
 
 Schema for single-selection enumeration with display titles for each option.
@@ -1961,18 +1831,16 @@ default?: string[](#titledsingleselectenumschema-default)
 Optional default value.
 
 
-[​](#untitledmultiselectenumschema)
-
 `UntitledMultiSelectEnumSchema`
 
 interface UntitledMultiSelectEnumSchema {\
-  [type](#untitledmultiselectenumschema-type): “array”;\
-  [title](#untitledmultiselectenumschema-title)?: string;\
-  [description](#untitledmultiselectenumschema-description)?: string;\
-  [minItems](#untitledmultiselectenumschema-minitems)?: number;\
-  [maxItems](#untitledmultiselectenumschema-maxitems)?: number;\
-  [items](#untitledmultiselectenumschema-items): { type: “string”; enum: string\[\] };\
-  [default](#untitledmultiselectenumschema-default)?: string\[\];\
+  [type](#untitledmultiselectenumschema-type): “array”;\
+  [title](#untitledmultiselectenumschema-title)?: string;\
+  [description](#untitledmultiselectenumschema-description)?: string;\
+  [minItems](#untitledmultiselectenumschema-minitems)?: number;\
+  [maxItems](#untitledmultiselectenumschema-maxitems)?: number;\
+  [items](#untitledmultiselectenumschema-items): { type: “string”; enum: string\[\] };\
+  [default](#untitledmultiselectenumschema-default)?: string\[\];\
 }
 
 Schema for multiple-selection enumeration without display titles for options.
@@ -2029,16 +1897,14 @@ default?: string\[\][](#untitledmultiselectenumschema-default)
 Optional default value.
 
 
-[​](#untitledsingleselectenumschema)
-
 `UntitledSingleSelectEnumSchema`
 
 interface UntitledSingleSelectEnumSchema {\
-  [type](#untitledsingleselectenumschema-type): “string”;\
-  [title](#untitledsingleselectenumschema-title)?: string;\
-  [description](#untitledsingleselectenumschema-description)?: string;\
-  [enum](#untitledsingleselectenumschema-enum): string\[\];\
-  [default](#untitledsingleselectenumschema-default)?: string;\
+  [type](#untitledsingleselectenumschema-type): “string”;\
+  [title](#untitledsingleselectenumschema-title)?: string;\
+  [description](#untitledsingleselectenumschema-description)?: string;\
+  [enum](#untitledsingleselectenumschema-enum): string\[\];\
+  [default](#untitledsingleselectenumschema-default)?: string;\
 }
 
 Schema for single-selection enumeration without display titles for options.
@@ -2074,20 +1940,16 @@ default?: string[](#untitledsingleselectenumschema-default)
 Optional default value.
 
 
-[​](#initialize)
-
 `initialize`
 
-
-[​](#initializerequest)
 
 `InitializeRequest`
 
 interface InitializeRequest {\
-  [jsonrpc](#initializerequest-jsonrpc): “2.0”;\
-  [id](#initializerequest-id): [RequestId](#requestid);\
-  [method](#initializerequest-method): “initialize”;\
-  [params](#initializerequest-params): [InitializeRequestParams](#initializerequestparams);\
+  [jsonrpc](#initializerequest-jsonrpc): “2.0”;\
+  [id](#initializerequest-id): [RequestId](#requestid);\
+  [method](#initializerequest-method): “initialize”;\
+  [params](#initializerequest-params): [InitializeRequestParams](#initializerequestparams);\
 }
 
 This request is sent from the client to the server when it first connects, asking it to begin initialization.
@@ -2156,15 +2018,13 @@ params: InitializeRequestParams[](#initializerequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#initializerequestparams)
-
 `InitializeRequestParams`
 
 interface InitializeRequestParams {\
-  [\_meta](#initializerequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [protocolVersion](#initializerequestparams-protocolversion): string;\
-  [capabilities](#initializerequestparams-capabilities): [ClientCapabilities](#clientcapabilities);\
-  [clientInfo](#initializerequestparams-clientinfo): [Implementation](#implementation);\
+  [\_meta](#initializerequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [protocolVersion](#initializerequestparams-protocolversion): string;\
+  [capabilities](#initializerequestparams-capabilities): [ClientCapabilities](#clientcapabilities);\
+  [clientInfo](#initializerequestparams-clientinfo): [Implementation](#implementation);\
 }
 
 Parameters for an `initialize` request.
@@ -2224,14 +2084,12 @@ capabilities: ClientCapabilities[](#initializerequestparams-capabilities)
 clientInfo: Implementation[](#initializerequestparams-clientinfo)
 
 
-[​](#initializeresultresponse)
-
 `InitializeResultResponse`
 
 interface InitializeResultResponse {\
-  [jsonrpc](#initializeresultresponse-jsonrpc): “2.0”;\
-  [id](#initializeresultresponse-id): [RequestId](#requestid);\
-  [result](#initializeresultresponse-result): [InitializeResult](#initializeresult);\
+  [jsonrpc](#initializeresultresponse-jsonrpc): “2.0”;\
+  [id](#initializeresultresponse-id): [RequestId](#requestid);\
+  [result](#initializeresultresponse-result): [InitializeResult](#initializeresult);\
 }
 
 A successful response from the server for a [initialize](#initializerequest) request.
@@ -2298,17 +2156,15 @@ result: InitializeResult[](#initializeresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#initializeresult)
-
 `InitializeResult`
 
 interface InitializeResult {\
-  [\_meta](#initializeresult-_meta)?: [MetaObject](#metaobject);\
-  [protocolVersion](#initializeresult-protocolversion): string;\
-  [capabilities](#initializeresult-capabilities): [ServerCapabilities](#servercapabilities);\
-  [serverInfo](#initializeresult-serverinfo): [Implementation](#implementation);\
-  [instructions](#initializeresult-instructions)?: string;\
-  \[key: string\]: unknown;\
+  [\_meta](#initializeresult-_meta)?: [MetaObject](#metaobject);\
+  [protocolVersion](#initializeresult-protocolversion): string;\
+  [capabilities](#initializeresult-capabilities): [ServerCapabilities](#servercapabilities);\
+  [serverInfo](#initializeresult-serverinfo): [Implementation](#implementation);\
+  [instructions](#initializeresult-instructions)?: string;\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for an [initialize](#initializerequest) request.
@@ -2396,24 +2252,22 @@ Example: Server with workflow instructions[](#initializeresult-example-server-wi
 ```
 
 
-[​](#clientcapabilities)
-
 `ClientCapabilities`
 
 interface ClientCapabilities {\
-  [experimental](#clientcapabilities-experimental)?: { \[key: string\]: [JSONObject](#jsonobject) };\
-  [roots](#clientcapabilities-roots)?: { listChanged?: boolean };\
-  [sampling](#clientcapabilities-sampling)?: { context?: [JSONObject](#jsonobject); tools?: [JSONObject](#jsonobject) };\
-  [elicitation](#clientcapabilities-elicitation)?: { form?: [JSONObject](#jsonobject); url?: [JSONObject](#jsonobject) };\
-  [tasks](#clientcapabilities-tasks)?: {\
-    list?: [JSONObject](#jsonobject);\
-    cancel?: [JSONObject](#jsonobject);\
-    requests?: {\
-      sampling?: { createMessage?: [JSONObject](#jsonobject) };\
-      elicitation?: { create?: [JSONObject](#jsonobject) };\
-    };\
-  };\
-  [extensions](#clientcapabilities-extensions)?: { \[key: string\]: object };\
+  [experimental](#clientcapabilities-experimental)?: { \[key: string\]: [JSONObject](#jsonobject) };\
+  [roots](#clientcapabilities-roots)?: { listChanged?: boolean };\
+  [sampling](#clientcapabilities-sampling)?: { context?: [JSONObject](#jsonobject); tools?: [JSONObject](#jsonobject) };\
+  [elicitation](#clientcapabilities-elicitation)?: { form?: [JSONObject](#jsonobject); url?: [JSONObject](#jsonobject) };\
+  [tasks](#clientcapabilities-tasks)?: {\
+    list?: [JSONObject](#jsonobject);\
+    cancel?: [JSONObject](#jsonobject);\
+    requests?: {\
+      sampling?: { createMessage?: [JSONObject](#jsonobject) };\
+      elicitation?: { create?: [JSONObject](#jsonobject) };\
+    };\
+  };\
+  [extensions](#clientcapabilities-extensions)?: { \[key: string\]: object };\
 }
 
 Capabilities a client may support. Known capabilities are defined here, in this schema, but this is not a closed set: any client can define its own, additional capabilities.
@@ -2530,8 +2384,8 @@ Type Declaration
   Whether this client supports [tasks/cancel](#canceltaskrequest).
 
 - `Optional`requests?: {\
-    sampling?: { createMessage?: [JSONObject](#jsonobject) };\
-    elicitation?: { create?: [JSONObject](#jsonobject) };\
+    sampling?: { createMessage?: [JSONObject](#jsonobject) };\
+    elicitation?: { create?: [JSONObject](#jsonobject) };\
   }
 
   Specifies which request types can be augmented with tasks.
@@ -2569,17 +2423,15 @@ Example: Extensions — UI extension with MIME type support[](#clientcapabilitie
 ```
 
 
-[​](#implementation)
-
 `Implementation`
 
 interface Implementation {\
-  [icons](#implementation-icons)?: [Icon](#icon)\[\];\
-  [name](#implementation-name): string;\
-  [title](#implementation-title)?: string;\
-  [version](#implementation-version): string;\
-  [description](#implementation-description)?: string;\
-  [websiteUrl](#implementation-websiteurl)?: string;\
+  [icons](#implementation-icons)?: [Icon](#icon)\[\];\
+  [name](#implementation-name): string;\
+  [title](#implementation-title)?: string;\
+  [version](#implementation-version): string;\
+  [description](#implementation-description)?: string;\
+  [websiteUrl](#implementation-websiteurl)?: string;\
 }
 
 Describes the MCP implementation.
@@ -2629,23 +2481,21 @@ websiteUrl?: string[](#implementation-websiteurl)
 An optional URL of the website for this implementation.
 
 
-[​](#servercapabilities)
-
 `ServerCapabilities`
 
 interface ServerCapabilities {\
-  [experimental](#servercapabilities-experimental)?: { \[key: string\]: [JSONObject](#jsonobject) };\
-  [logging](#servercapabilities-logging)?: [JSONObject](#jsonobject);\
-  [completions](#servercapabilities-completions)?: [JSONObject](#jsonobject);\
-  [prompts](#servercapabilities-prompts)?: { listChanged?: boolean };\
-  [resources](#servercapabilities-resources)?: { subscribe?: boolean; listChanged?: boolean };\
-  [tools](#servercapabilities-tools)?: { listChanged?: boolean };\
-  [tasks](#servercapabilities-tasks)?: {\
-    list?: [JSONObject](#jsonobject);\
-    cancel?: [JSONObject](#jsonobject);\
-    requests?: { tools?: { call?: [JSONObject](#jsonobject) } };\
-  };\
-  [extensions](#servercapabilities-extensions)?: { \[key: string\]: object };\
+  [experimental](#servercapabilities-experimental)?: { \[key: string\]: [JSONObject](#jsonobject) };\
+  [logging](#servercapabilities-logging)?: [JSONObject](#jsonobject);\
+  [completions](#servercapabilities-completions)?: [JSONObject](#jsonobject);\
+  [prompts](#servercapabilities-prompts)?: { listChanged?: boolean };\
+  [resources](#servercapabilities-resources)?: { subscribe?: boolean; listChanged?: boolean };\
+  [tools](#servercapabilities-tools)?: { listChanged?: boolean };\
+  [tasks](#servercapabilities-tasks)?: {\
+    list?: [JSONObject](#jsonobject);\
+    cancel?: [JSONObject](#jsonobject);\
+    requests?: { tools?: { call?: [JSONObject](#jsonobject) } };\
+  };\
+  [extensions](#servercapabilities-extensions)?: { \[key: string\]: object };\
 }
 
 Capabilities that a server may support. Known capabilities are defined here, in this schema, but this is not a closed set: any server can define its own, additional capabilities.
@@ -2828,20 +2678,16 @@ Example: Extensions — UI extension support[](#servercapabilities-example-exten
 ```
 
 
-[​](#logging/setlevel)
-
 `logging/setLevel`
 
-
-[​](#setlevelrequest)
 
 `SetLevelRequest`
 
 interface SetLevelRequest {\
-  [jsonrpc](#setlevelrequest-jsonrpc): “2.0”;\
-  [id](#setlevelrequest-id): [RequestId](#requestid);\
-  [method](#setlevelrequest-method): “logging/setLevel”;\
-  [params](#setlevelrequest-params): [SetLevelRequestParams](#setlevelrequestparams);\
+  [jsonrpc](#setlevelrequest-jsonrpc): “2.0”;\
+  [id](#setlevelrequest-id): [RequestId](#requestid);\
+  [method](#setlevelrequest-method): “logging/setLevel”;\
+  [params](#setlevelrequest-params): [SetLevelRequestParams](#setlevelrequestparams);\
 }
 
 A request from the client to the server, to enable or adjust logging.
@@ -2876,13 +2722,11 @@ params: SetLevelRequestParams[](#setlevelrequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#setlevelrequestparams)
-
 `SetLevelRequestParams`
 
 interface SetLevelRequestParams {\
-  [\_meta](#setlevelrequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [level](#setlevelrequestparams-level): [LoggingLevel](#logginglevel);\
+  [\_meta](#setlevelrequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [level](#setlevelrequestparams-level): [LoggingLevel](#logginglevel);\
 }
 
 Parameters for a `logging/setLevel` request.
@@ -2904,14 +2748,12 @@ level: LoggingLevel[](#setlevelrequestparams-level)
 The level of logging that the client wants to receive from the server. The server should send all logs at this level and higher (i.e., more severe) to the client as [notifications/message](#loggingmessagenotification).
 
 
-[​](#setlevelresultresponse)
-
 `SetLevelResultResponse`
 
 interface SetLevelResultResponse {\
-  [jsonrpc](#setlevelresultresponse-jsonrpc): “2.0”;\
-  [id](#setlevelresultresponse-id): [RequestId](#requestid);\
-  [result](#setlevelresultresponse-result): [Result](#result);\
+  [jsonrpc](#setlevelresultresponse-jsonrpc): “2.0”;\
+  [id](#setlevelresultresponse-id): [RequestId](#requestid);\
+  [result](#setlevelresultresponse-result): [Result](#result);\
 }
 
 A successful response from the server for a [logging/setLevel](#setlevelrequest) request.
@@ -2939,19 +2781,15 @@ result: Result[](#setlevelresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#notifications/cancelled)
-
 `notifications/cancelled`
 
-
-[​](#cancellednotification)
 
 `CancelledNotification`
 
 interface CancelledNotification {\
-  [jsonrpc](#cancellednotification-jsonrpc): “2.0”;\
-  [method](#cancellednotification-method): “notifications/cancelled”;\
-  [params](#cancellednotification-params): [CancelledNotificationParams](#cancellednotificationparams);\
+  [jsonrpc](#cancellednotification-jsonrpc): “2.0”;\
+  [method](#cancellednotification-method): “notifications/cancelled”;\
+  [params](#cancellednotification-params): [CancelledNotificationParams](#cancellednotificationparams);\
 }
 
 This notification can be sent by either side to indicate that it is cancelling a previously-issued request.
@@ -2990,14 +2828,12 @@ params: CancelledNotificationParams[](#cancellednotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#cancellednotificationparams)
-
 `CancelledNotificationParams`
 
 interface CancelledNotificationParams {\
-  [\_meta](#cancellednotificationparams-_meta)?: [MetaObject](#metaobject);\
-  [requestId](#cancellednotificationparams-requestid)?: [RequestId](#requestid);\
-  [reason](#cancellednotificationparams-reason)?: string;\
+  [\_meta](#cancellednotificationparams-_meta)?: [MetaObject](#metaobject);\
+  [requestId](#cancellednotificationparams-requestid)?: [RequestId](#requestid);\
+  [reason](#cancellednotificationparams-reason)?: string;\
 }
 
 Parameters for a `notifications/cancelled` notification.
@@ -3026,19 +2862,15 @@ reason?: string[](#cancellednotificationparams-reason)
 An optional string describing the reason for the cancellation. This MAY be logged or presented to the user.
 
 
-[​](#notifications/initialized)
-
 `notifications/initialized`
 
-
-[​](#initializednotification)
 
 `InitializedNotification`
 
 interface InitializedNotification {\
-  [jsonrpc](#initializednotification-jsonrpc): “2.0”;\
-  [method](#initializednotification-method): “notifications/initialized”;\
-  [params](#initializednotification-params)?: [NotificationParams](#notificationparams);\
+  [jsonrpc](#initializednotification-jsonrpc): “2.0”;\
+  [method](#initializednotification-method): “notifications/initialized”;\
+  [params](#initializednotification-params)?: [NotificationParams](#notificationparams);\
 }
 
 This notification is sent from the client to the server after initialization has finished.
@@ -3065,19 +2897,15 @@ params?: NotificationParams[](#initializednotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#notifications/tasks/status)
-
 `notifications/tasks/status`
 
-
-[​](#taskstatusnotification)
 
 `TaskStatusNotification`
 
 interface TaskStatusNotification {\
-  [jsonrpc](#taskstatusnotification-jsonrpc): “2.0”;\
-  [method](#taskstatusnotification-method): “notifications/tasks/status”;\
-  [params](#taskstatusnotification-params): [TaskStatusNotificationParams](#taskstatusnotificationparams);\
+  [jsonrpc](#taskstatusnotification-jsonrpc): “2.0”;\
+  [method](#taskstatusnotification-method): “notifications/tasks/status”;\
+  [params](#taskstatusnotification-params): [TaskStatusNotificationParams](#taskstatusnotificationparams);\
 }
 
 An optional notification from the receiver to the requestor, informing them that a task’s status has changed. Receivers are not required to send these notifications.
@@ -3095,8 +2923,6 @@ params: TaskStatusNotificationParams[](#taskstatusnotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#taskstatusnotificationparams)
-
 `TaskStatusNotificationParams`
 
 TaskStatusNotificationParams: [NotificationParams](#notificationparams) & [Task](#task)
@@ -3104,19 +2930,15 @@ TaskStatusNotificationParams: [NotificationParams](#notificationparams) & [Task]
 Parameters for a `notifications/tasks/status` notification.
 
 
-[​](#notifications/message)
-
 `notifications/message`
 
-
-[​](#loggingmessagenotification)
 
 `LoggingMessageNotification`
 
 interface LoggingMessageNotification {\
-  [jsonrpc](#loggingmessagenotification-jsonrpc): “2.0”;\
-  [method](#loggingmessagenotification-method): “notifications/message”;\
-  [params](#loggingmessagenotification-params): [LoggingMessageNotificationParams](#loggingmessagenotificationparams);\
+  [jsonrpc](#loggingmessagenotification-jsonrpc): “2.0”;\
+  [method](#loggingmessagenotification-method): “notifications/message”;\
+  [params](#loggingmessagenotification-params): [LoggingMessageNotificationParams](#loggingmessagenotificationparams);\
 }
 
 JSONRPCNotification of a log message passed from server to client. If no `logging/setLevel` request has been sent from the client, the server MAY decide which messages to send automatically.
@@ -3154,15 +2976,13 @@ params: LoggingMessageNotificationParams[](#loggingmessagenotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#loggingmessagenotificationparams)
-
 `LoggingMessageNotificationParams`
 
 interface LoggingMessageNotificationParams {\
-  [\_meta](#loggingmessagenotificationparams-_meta)?: [MetaObject](#metaobject);\
-  [level](#loggingmessagenotificationparams-level): [LoggingLevel](#logginglevel);\
-  [logger](#loggingmessagenotificationparams-logger)?: string;\
-  [data](#loggingmessagenotificationparams-data): unknown;\
+  [\_meta](#loggingmessagenotificationparams-_meta)?: [MetaObject](#metaobject);\
+  [level](#loggingmessagenotificationparams-level): [LoggingLevel](#logginglevel);\
+  [logger](#loggingmessagenotificationparams-logger)?: string;\
+  [data](#loggingmessagenotificationparams-data): unknown;\
 }
 
 Parameters for a `notifications/message` notification.
@@ -3200,19 +3020,15 @@ data: unknown[](#loggingmessagenotificationparams-data)
 The data to be logged, such as a string message or an object. Any JSON serializable type is allowed here.
 
 
-[​](#notifications/progress)
-
 `notifications/progress`
 
-
-[​](#progressnotification)
 
 `ProgressNotification`
 
 interface ProgressNotification {\
-  [jsonrpc](#progressnotification-jsonrpc): “2.0”;\
-  [method](#progressnotification-method): “notifications/progress”;\
-  [params](#progressnotification-params): [ProgressNotificationParams](#progressnotificationparams);\
+  [jsonrpc](#progressnotification-jsonrpc): “2.0”;\
+  [method](#progressnotification-method): “notifications/progress”;\
+  [params](#progressnotification-params): [ProgressNotificationParams](#progressnotificationparams);\
 }
 
 An out-of-band notification used to inform the receiver of a progress update for a long-running request.
@@ -3245,16 +3061,14 @@ params: ProgressNotificationParams[](#progressnotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#progressnotificationparams)
-
 `ProgressNotificationParams`
 
 interface ProgressNotificationParams {\
-  [\_meta](#progressnotificationparams-_meta)?: [MetaObject](#metaobject);\
-  [progressToken](#progressnotificationparams-progresstoken): [ProgressToken](#progresstoken);\
-  [progress](#progressnotificationparams-progress): number;\
-  [total](#progressnotificationparams-total)?: number;\
-  [message](#progressnotificationparams-message)?: string;\
+  [\_meta](#progressnotificationparams-_meta)?: [MetaObject](#metaobject);\
+  [progressToken](#progressnotificationparams-progresstoken): [ProgressToken](#progresstoken);\
+  [progress](#progressnotificationparams-progress): number;\
+  [total](#progressnotificationparams-total)?: number;\
+  [message](#progressnotificationparams-message)?: string;\
 }
 
 Parameters for a [notifications/progress](#progressnotification) notification.
@@ -3291,19 +3105,15 @@ message?: string[](#progressnotificationparams-message)
 An optional message describing the current progress.
 
 
-[​](#notifications/prompts/list_changed)
-
 `notifications/prompts/list_changed`
 
-
-[​](#promptlistchangednotification)
 
 `PromptListChangedNotification`
 
 interface PromptListChangedNotification {\
-  [jsonrpc](#promptlistchangednotification-jsonrpc): “2.0”;\
-  [method](#promptlistchangednotification-method): “notifications/prompts/list_changed”;\
-  [params](#promptlistchangednotification-params)?: [NotificationParams](#notificationparams);\
+  [jsonrpc](#promptlistchangednotification-jsonrpc): “2.0”;\
+  [method](#promptlistchangednotification-method): “notifications/prompts/list_changed”;\
+  [params](#promptlistchangednotification-params)?: [NotificationParams](#notificationparams);\
 }
 
 An optional notification from the server to the client, informing it that the list of prompts it offers has changed. This may be issued by servers without any previous subscription from the client.
@@ -3330,19 +3140,15 @@ params?: NotificationParams[](#promptlistchangednotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#notifications/resources/list_changed)
-
 `notifications/resources/list_changed`
 
-
-[​](#resourcelistchangednotification)
 
 `ResourceListChangedNotification`
 
 interface ResourceListChangedNotification {\
-  [jsonrpc](#resourcelistchangednotification-jsonrpc): “2.0”;\
-  [method](#resourcelistchangednotification-method): “notifications/resources/list_changed”;\
-  [params](#resourcelistchangednotification-params)?: [NotificationParams](#notificationparams);\
+  [jsonrpc](#resourcelistchangednotification-jsonrpc): “2.0”;\
+  [method](#resourcelistchangednotification-method): “notifications/resources/list_changed”;\
+  [params](#resourcelistchangednotification-params)?: [NotificationParams](#notificationparams);\
 }
 
 An optional notification from the server to the client, informing it that the list of resources it can read from has changed. This may be issued by servers without any previous subscription from the client.
@@ -3369,19 +3175,15 @@ params?: NotificationParams[](#resourcelistchangednotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#notifications/resources/updated)
-
 `notifications/resources/updated`
 
-
-[​](#resourceupdatednotification)
 
 `ResourceUpdatedNotification`
 
 interface ResourceUpdatedNotification {\
-  [jsonrpc](#resourceupdatednotification-jsonrpc): “2.0”;\
-  [method](#resourceupdatednotification-method): “notifications/resources/updated”;\
-  [params](#resourceupdatednotification-params): [ResourceUpdatedNotificationParams](#resourceupdatednotificationparams);\
+  [jsonrpc](#resourceupdatednotification-jsonrpc): “2.0”;\
+  [method](#resourceupdatednotification-method): “notifications/resources/updated”;\
+  [params](#resourceupdatednotification-params): [ResourceUpdatedNotificationParams](#resourceupdatednotificationparams);\
 }
 
 A notification from the server to the client, informing it that a resource has changed and may need to be read again. This should only be sent if the client previously sent a [resources/subscribe](#subscriberequest) request.
@@ -3411,13 +3213,11 @@ params: ResourceUpdatedNotificationParams[](#resourceupdatednotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#resourceupdatednotificationparams)
-
 `ResourceUpdatedNotificationParams`
 
 interface ResourceUpdatedNotificationParams {\
-  [\_meta](#resourceupdatednotificationparams-_meta)?: [MetaObject](#metaobject);\
-  [uri](#resourceupdatednotificationparams-uri): string;\
+  [\_meta](#resourceupdatednotificationparams-_meta)?: [MetaObject](#metaobject);\
+  [uri](#resourceupdatednotificationparams-uri): string;\
 }
 
 Parameters for a `notifications/resources/updated` notification.
@@ -3439,19 +3239,15 @@ uri: string[](#resourceupdatednotificationparams-uri)
 The URI of the resource that has been updated. This might be a sub-resource of the one that the client actually subscribed to.
 
 
-[​](#notifications/roots/list_changed)
-
 `notifications/roots/list_changed`
 
-
-[​](#rootslistchangednotification)
 
 `RootsListChangedNotification`
 
 interface RootsListChangedNotification {\
-  [jsonrpc](#rootslistchangednotification-jsonrpc): “2.0”;\
-  [method](#rootslistchangednotification-method): “notifications/roots/list_changed”;\
-  [params](#rootslistchangednotification-params)?: [NotificationParams](#notificationparams);\
+  [jsonrpc](#rootslistchangednotification-jsonrpc): “2.0”;\
+  [method](#rootslistchangednotification-method): “notifications/roots/list_changed”;\
+  [params](#rootslistchangednotification-params)?: [NotificationParams](#notificationparams);\
 }
 
 A notification from the client to the server, informing it that the list of roots has changed. This notification should be sent whenever the client adds, removes, or modifies any root. The server should then request an updated list of roots using the [ListRootsRequest](#listrootsrequest).
@@ -3478,19 +3274,15 @@ params?: NotificationParams[](#rootslistchangednotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#notifications/tools/list_changed)
-
 `notifications/tools/list_changed`
 
-
-[​](#toollistchangednotification)
 
 `ToolListChangedNotification`
 
 interface ToolListChangedNotification {\
-  [jsonrpc](#toollistchangednotification-jsonrpc): “2.0”;\
-  [method](#toollistchangednotification-method): “notifications/tools/list_changed”;\
-  [params](#toollistchangednotification-params)?: [NotificationParams](#notificationparams);\
+  [jsonrpc](#toollistchangednotification-jsonrpc): “2.0”;\
+  [method](#toollistchangednotification-method): “notifications/tools/list_changed”;\
+  [params](#toollistchangednotification-params)?: [NotificationParams](#notificationparams);\
 }
 
 An optional notification from the server to the client, informing it that the list of tools it offers has changed. This may be issued by servers without any previous subscription from the client.
@@ -3517,19 +3309,15 @@ params?: NotificationParams[](#toollistchangednotification-params)
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#notifications/elicitation/complete)
-
 `notifications/elicitation/complete`
 
-
-[​](#elicitationcompletenotification)
 
 `ElicitationCompleteNotification`
 
 interface ElicitationCompleteNotification {\
-  [jsonrpc](#elicitationcompletenotification-jsonrpc): “2.0”;\
-  [method](#elicitationcompletenotification-method): “notifications/elicitation/complete”;\
-  [params](#elicitationcompletenotification-params): { elicitationId: string };\
+  [jsonrpc](#elicitationcompletenotification-jsonrpc): “2.0”;\
+  [method](#elicitationcompletenotification-method): “notifications/elicitation/complete”;\
+  [params](#elicitationcompletenotification-params): { elicitationId: string };\
 }
 
 An optional notification from the server to the client, informing it of a completion of a out-of-band elicitation request.
@@ -3565,20 +3353,16 @@ Type Declaration
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
 
-[​](#ping)
-
 `ping`
 
-
-[​](#pingrequest)
 
 `PingRequest`
 
 interface PingRequest {\
-  [jsonrpc](#pingrequest-jsonrpc): “2.0”;\
-  [id](#pingrequest-id): [RequestId](#requestid);\
-  [method](#pingrequest-method): “ping”;\
-  [params](#pingrequest-params)?: [RequestParams](#requestparams);\
+  [jsonrpc](#pingrequest-jsonrpc): “2.0”;\
+  [id](#pingrequest-id): [RequestId](#requestid);\
+  [method](#pingrequest-method): “ping”;\
+  [params](#pingrequest-params)?: [RequestParams](#requestparams);\
 }
 
 A ping, issued by either the server or the client, to check that the other party is still alive. The receiver must promptly respond, or else may be disconnected.
@@ -3610,14 +3394,12 @@ params?: RequestParams[](#pingrequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#pingresultresponse)
-
 `PingResultResponse`
 
 interface PingResultResponse {\
-  [jsonrpc](#pingresultresponse-jsonrpc): “2.0”;\
-  [id](#pingresultresponse-id): [RequestId](#requestid);\
-  [result](#pingresultresponse-result): [Result](#result);\
+  [jsonrpc](#pingresultresponse-jsonrpc): “2.0”;\
+  [id](#pingresultresponse-id): [RequestId](#requestid);\
+  [result](#pingresultresponse-result): [Result](#result);\
 }
 
 A successful response for a [ping](#pingrequest) request.
@@ -3645,19 +3427,15 @@ result: Result[](#pingresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#tasks)
-
 `tasks`
 
-
-[​](#createtaskresultresponse)
 
 `CreateTaskResultResponse`
 
 interface CreateTaskResultResponse {\
-  [jsonrpc](#createtaskresultresponse-jsonrpc): “2.0”;\
-  [id](#createtaskresultresponse-id): [RequestId](#requestid);\
-  [result](#createtaskresultresponse-result): [CreateTaskResult](#createtaskresult);\
+  [jsonrpc](#createtaskresultresponse-jsonrpc): “2.0”;\
+  [id](#createtaskresultresponse-id): [RequestId](#requestid);\
+  [result](#createtaskresultresponse-result): [CreateTaskResult](#createtaskresult);\
 }
 
 A successful response for a task-augmented request.
@@ -3675,14 +3453,12 @@ result: CreateTaskResult[](#createtaskresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#createtaskresult)
-
 `CreateTaskResult`
 
 interface CreateTaskResult {\
-  [\_meta](#createtaskresult-_meta)?: [MetaObject](#metaobject);\
-  [task](#createtaskresult-task): [Task](#task);\
-  \[key: string\]: unknown;\
+  [\_meta](#createtaskresult-_meta)?: [MetaObject](#metaobject);\
+  [task](#createtaskresult-task): [Task](#task);\
+  \[key: string\]: unknown;\
 }
 
 The result returned for a task-augmented request.
@@ -3694,12 +3470,10 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 task: Task[](#createtaskresult-task)
 
 
-[​](#relatedtaskmetadata)
-
 `RelatedTaskMetadata`
 
 interface RelatedTaskMetadata {\
-  [taskId](#relatedtaskmetadata-taskid): string;\
+  [taskId](#relatedtaskmetadata-taskid): string;\
 }
 
 Metadata for associating messages with a task. Include this in the `_meta` field under the key `io.modelcontextprotocol/related-task`.
@@ -3709,18 +3483,16 @@ taskId: string[](#relatedtaskmetadata-taskid)
 The task identifier this message is associated with.
 
 
-[​](#task)
-
 `Task`
 
 interface Task {\
-  [taskId](#task-taskid): string;\
-  [status](#task-status): [TaskStatus](#taskstatus);\
-  [statusMessage](#task-statusmessage)?: string;\
-  [createdAt](#task-createdat): string;\
-  [lastUpdatedAt](#task-lastupdatedat): string;\
-  [ttl](#task-ttl): number \| null;\
-  [pollInterval](#task-pollinterval)?: number;\
+  [taskId](#task-taskid): string;\
+  [status](#task-status): [TaskStatus](#taskstatus);\
+  [statusMessage](#task-statusmessage)?: string;\
+  [createdAt](#task-createdat): string;\
+  [lastUpdatedAt](#task-lastupdatedat): string;\
+  [ttl](#task-ttl): number \| null;\
+  [pollInterval](#task-pollinterval)?: number;\
 }
 
 Data associated with a task.
@@ -3758,12 +3530,10 @@ pollInterval?: number[](#task-pollinterval)
 Suggested polling interval in milliseconds.
 
 
-[​](#taskmetadata)
-
 `TaskMetadata`
 
 interface TaskMetadata {\
-  [ttl](#taskmetadata-ttl)?: number;\
+  [ttl](#taskmetadata-ttl)?: number;\
 }
 
 Metadata for augmenting a request with task execution. Include this in the `task` field of the request parameters.
@@ -3773,8 +3543,6 @@ ttl?: number[](#taskmetadata-ttl)
 Requested duration in milliseconds to retain task from creation.
 
 
-[​](#taskstatus)
-
 `TaskStatus`
 
 TaskStatus: “working” \| “input_required” \| “completed” \| “failed” \| “cancelled”
@@ -3782,20 +3550,16 @@ TaskStatus: “working” \| “input_required” \| “completed” \| “faile
 The status of a task.
 
 
-[​](#tasks/get)
-
 `tasks/get`
 
-
-[​](#gettaskrequest)
 
 `GetTaskRequest`
 
 interface GetTaskRequest {\
-  [jsonrpc](#gettaskrequest-jsonrpc): “2.0”;\
-  [id](#gettaskrequest-id): [RequestId](#requestid);\
-  [method](#gettaskrequest-method): “tasks/get”;\
-  [params](#gettaskrequest-params): { taskId: string };\
+  [jsonrpc](#gettaskrequest-jsonrpc): “2.0”;\
+  [id](#gettaskrequest-id): [RequestId](#requestid);\
+  [method](#gettaskrequest-method): “tasks/get”;\
+  [params](#gettaskrequest-params): { taskId: string };\
 }
 
 A request to retrieve the state of a task.
@@ -3823,14 +3587,12 @@ Type Declaration
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#gettaskresultresponse)
-
 `GetTaskResultResponse`
 
 interface GetTaskResultResponse {\
-  [jsonrpc](#gettaskresultresponse-jsonrpc): “2.0”;\
-  [id](#gettaskresultresponse-id): [RequestId](#requestid);\
-  [result](#gettaskresultresponse-result): [GetTaskResult](#gettaskresult);\
+  [jsonrpc](#gettaskresultresponse-jsonrpc): “2.0”;\
+  [id](#gettaskresultresponse-id): [RequestId](#requestid);\
+  [result](#gettaskresultresponse-result): [GetTaskResult](#gettaskresult);\
 }
 
 A successful response for a [tasks/get](#gettaskrequest) request.
@@ -3848,8 +3610,6 @@ result: GetTaskResult[](#gettaskresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#gettaskresult)
-
 `GetTaskResult`
 
 GetTaskResult: [Result](#result) & [Task](#task)
@@ -3857,20 +3617,16 @@ GetTaskResult: [Result](#result) & [Task](#task)
 The result returned for a [tasks/get](#gettaskrequest) request.
 
 
-[​](#tasks/result)
-
 `tasks/result`
 
-
-[​](#gettaskpayloadrequest)
 
 `GetTaskPayloadRequest`
 
 interface GetTaskPayloadRequest {\
-  [jsonrpc](#gettaskpayloadrequest-jsonrpc): “2.0”;\
-  [id](#gettaskpayloadrequest-id): [RequestId](#requestid);\
-  [method](#gettaskpayloadrequest-method): “tasks/result”;\
-  [params](#gettaskpayloadrequest-params): { taskId: string };\
+  [jsonrpc](#gettaskpayloadrequest-jsonrpc): “2.0”;\
+  [id](#gettaskpayloadrequest-id): [RequestId](#requestid);\
+  [method](#gettaskpayloadrequest-method): “tasks/result”;\
+  [params](#gettaskpayloadrequest-params): { taskId: string };\
 }
 
 A request to retrieve the result of a completed task.
@@ -3898,14 +3654,12 @@ Type Declaration
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#gettaskpayloadresultresponse)
-
 `GetTaskPayloadResultResponse`
 
 interface GetTaskPayloadResultResponse {\
-  [jsonrpc](#gettaskpayloadresultresponse-jsonrpc): “2.0”;\
-  [id](#gettaskpayloadresultresponse-id): [RequestId](#requestid);\
-  [result](#gettaskpayloadresultresponse-result): [GetTaskPayloadResult](#gettaskpayloadresult);\
+  [jsonrpc](#gettaskpayloadresultresponse-jsonrpc): “2.0”;\
+  [id](#gettaskpayloadresultresponse-id): [RequestId](#requestid);\
+  [result](#gettaskpayloadresultresponse-result): [GetTaskPayloadResult](#gettaskpayloadresult);\
 }
 
 A successful response for a [tasks/result](#gettaskpayloadrequest) request.
@@ -3923,13 +3677,11 @@ result: GetTaskPayloadResult[](#gettaskpayloadresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#gettaskpayloadresult)
-
 `GetTaskPayloadResult`
 
 interface GetTaskPayloadResult {\
-  [\_meta](#gettaskpayloadresult-_meta)?: [MetaObject](#metaobject);\
-  \[key: string\]: unknown;\
+  [\_meta](#gettaskpayloadresult-_meta)?: [MetaObject](#metaobject);\
+  \[key: string\]: unknown;\
 }
 
 The result returned for a [tasks/result](#gettaskpayloadrequest) request. The structure matches the result type of the original request. For example, a [tools/call](#calltoolrequest) task would return the [CallToolResult](#calltoolresult) structure.
@@ -3939,20 +3691,16 @@ The result returned for a [tasks/result](#gettaskpayloadrequest) request. The st
 Inherited from [Result](#result).[\_meta](#result-_meta)
 
 
-[​](#tasks/list)
-
 `tasks/list`
 
-
-[​](#listtasksrequest)
 
 `ListTasksRequest`
 
 interface ListTasksRequest {\
-  [jsonrpc](#listtasksrequest-jsonrpc): “2.0”;\
-  [id](#listtasksrequest-id): [RequestId](#requestid);\
-  [params](#listtasksrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
-  [method](#listtasksrequest-method): “tasks/list”;\
+  [jsonrpc](#listtasksrequest-jsonrpc): “2.0”;\
+  [id](#listtasksrequest-id): [RequestId](#requestid);\
+  [params](#listtasksrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
+  [method](#listtasksrequest-method): “tasks/list”;\
 }
 
 A request to retrieve a list of tasks.
@@ -3974,14 +3722,12 @@ method: “tasks/list”[](#listtasksrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listtasksresultresponse)
-
 `ListTasksResultResponse`
 
 interface ListTasksResultResponse {\
-  [jsonrpc](#listtasksresultresponse-jsonrpc): “2.0”;\
-  [id](#listtasksresultresponse-id): [RequestId](#requestid);\
-  [result](#listtasksresultresponse-result): [ListTasksResult](#listtasksresult);\
+  [jsonrpc](#listtasksresultresponse-jsonrpc): “2.0”;\
+  [id](#listtasksresultresponse-id): [RequestId](#requestid);\
+  [result](#listtasksresultresponse-result): [ListTasksResult](#listtasksresult);\
 }
 
 A successful response for a [tasks/list](#listtasksrequest) request.
@@ -3999,15 +3745,13 @@ result: ListTasksResult[](#listtasksresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#listtasksresult)
-
 `ListTasksResult`
 
 interface ListTasksResult {\
-  [\_meta](#listtasksresult-_meta)?: [MetaObject](#metaobject);\
-  [nextCursor](#listtasksresult-nextcursor)?: string;\
-  [tasks](#listtasksresult-tasks): [Task](#task)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listtasksresult-_meta)?: [MetaObject](#metaobject);\
+  [nextCursor](#listtasksresult-nextcursor)?: string;\
+  [tasks](#listtasksresult-tasks): [Task](#task)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned for a [tasks/list](#listtasksrequest) request.
@@ -4025,20 +3769,16 @@ Inherited from PaginatedResult.nextCursor
 tasks: Task\[\][](#listtasksresult-tasks)
 
 
-[​](#tasks/cancel)
-
 `tasks/cancel`
 
-
-[​](#canceltaskrequest)
 
 `CancelTaskRequest`
 
 interface CancelTaskRequest {\
-  [jsonrpc](#canceltaskrequest-jsonrpc): “2.0”;\
-  [id](#canceltaskrequest-id): [RequestId](#requestid);\
-  [method](#canceltaskrequest-method): “tasks/cancel”;\
-  [params](#canceltaskrequest-params): { taskId: string };\
+  [jsonrpc](#canceltaskrequest-jsonrpc): “2.0”;\
+  [id](#canceltaskrequest-id): [RequestId](#requestid);\
+  [method](#canceltaskrequest-method): “tasks/cancel”;\
+  [params](#canceltaskrequest-params): { taskId: string };\
 }
 
 A request to cancel a task.
@@ -4066,14 +3806,12 @@ Type Declaration
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#canceltaskresultresponse)
-
 `CancelTaskResultResponse`
 
 interface CancelTaskResultResponse {\
-  [jsonrpc](#canceltaskresultresponse-jsonrpc): “2.0”;\
-  [id](#canceltaskresultresponse-id): [RequestId](#requestid);\
-  [result](#canceltaskresultresponse-result): [CancelTaskResult](#canceltaskresult);\
+  [jsonrpc](#canceltaskresultresponse-jsonrpc): “2.0”;\
+  [id](#canceltaskresultresponse-id): [RequestId](#requestid);\
+  [result](#canceltaskresultresponse-result): [CancelTaskResult](#canceltaskresult);\
 }
 
 A successful response for a [tasks/cancel](#canceltaskrequest) request.
@@ -4091,8 +3829,6 @@ result: CancelTaskResult[](#canceltaskresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#canceltaskresult)
-
 `CancelTaskResult`
 
 CancelTaskResult: [Result](#result) & [Task](#task)
@@ -4100,20 +3836,16 @@ CancelTaskResult: [Result](#result) & [Task](#task)
 The result returned for a [tasks/cancel](#canceltaskrequest) request.
 
 
-[​](#prompts/get)
-
 `prompts/get`
 
-
-[​](#getpromptrequest)
 
 `GetPromptRequest`
 
 interface GetPromptRequest {\
-  [jsonrpc](#getpromptrequest-jsonrpc): “2.0”;\
-  [id](#getpromptrequest-id): [RequestId](#requestid);\
-  [method](#getpromptrequest-method): “prompts/get”;\
-  [params](#getpromptrequest-params): [GetPromptRequestParams](#getpromptrequestparams);\
+  [jsonrpc](#getpromptrequest-jsonrpc): “2.0”;\
+  [id](#getpromptrequest-id): [RequestId](#requestid);\
+  [method](#getpromptrequest-method): “prompts/get”;\
+  [params](#getpromptrequest-params): [GetPromptRequestParams](#getpromptrequestparams);\
 }
 
 Used by the client to get a prompt provided by the server.
@@ -4151,14 +3883,12 @@ params: GetPromptRequestParams[](#getpromptrequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#getpromptrequestparams)
-
 `GetPromptRequestParams`
 
 interface GetPromptRequestParams {\
-  [\_meta](#getpromptrequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [name](#getpromptrequestparams-name): string;\
-  [arguments](#getpromptrequestparams-arguments)?: { \[key: string\]: string };\
+  [\_meta](#getpromptrequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [name](#getpromptrequestparams-name): string;\
+  [arguments](#getpromptrequestparams-arguments)?: { \[key: string\]: string };\
 }
 
 Parameters for a `prompts/get` request.
@@ -4187,14 +3917,12 @@ arguments?: { \[key: string\]: string }[](#getpromptrequestparams-arguments)
 Arguments to use for templating the prompt.
 
 
-[​](#getpromptresultresponse)
-
 `GetPromptResultResponse`
 
 interface GetPromptResultResponse {\
-  [jsonrpc](#getpromptresultresponse-jsonrpc): “2.0”;\
-  [id](#getpromptresultresponse-id): [RequestId](#requestid);\
-  [result](#getpromptresultresponse-result): [GetPromptResult](#getpromptresult);\
+  [jsonrpc](#getpromptresultresponse-jsonrpc): “2.0”;\
+  [id](#getpromptresultresponse-id): [RequestId](#requestid);\
+  [result](#getpromptresultresponse-result): [GetPromptResult](#getpromptresult);\
 }
 
 A successful response from the server for a [prompts/get](#getpromptrequest) request.
@@ -4233,15 +3961,13 @@ result: GetPromptResult[](#getpromptresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#getpromptresult)
-
 `GetPromptResult`
 
 interface GetPromptResult {\
-  [\_meta](#getpromptresult-_meta)?: [MetaObject](#metaobject);\
-  [description](#getpromptresult-description)?: string;\
-  [messages](#getpromptresult-messages): [PromptMessage](#promptmessage)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#getpromptresult-_meta)?: [MetaObject](#metaobject);\
+  [description](#getpromptresult-description)?: string;\
+  [messages](#getpromptresult-messages): [PromptMessage](#promptmessage)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for a [prompts/get](#getpromptrequest) request.
@@ -4274,13 +4000,11 @@ An optional description for the prompt.
 messages: PromptMessage\[\][](#getpromptresult-messages)
 
 
-[​](#promptmessage)
-
 `PromptMessage`
 
 interface PromptMessage {\
-  [role](#promptmessage-role): [Role](#role);\
-  [content](#promptmessage-content): [ContentBlock](#contentblock);\
+  [role](#promptmessage-role): [Role](#role);\
+  [content](#promptmessage-content): [ContentBlock](#contentblock);\
 }
 
 Describes a message returned as part of a prompt.
@@ -4292,20 +4016,16 @@ role: Role[](#promptmessage-role)
 content: ContentBlock[](#promptmessage-content)
 
 
-[​](#prompts/list)
-
 `prompts/list`
 
-
-[​](#listpromptsrequest)
 
 `ListPromptsRequest`
 
 interface ListPromptsRequest {\
-  [jsonrpc](#listpromptsrequest-jsonrpc): “2.0”;\
-  [id](#listpromptsrequest-id): [RequestId](#requestid);\
-  [params](#listpromptsrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
-  [method](#listpromptsrequest-method): “prompts/list”;\
+  [jsonrpc](#listpromptsrequest-jsonrpc): “2.0”;\
+  [id](#listpromptsrequest-id): [RequestId](#requestid);\
+  [params](#listpromptsrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
+  [method](#listpromptsrequest-method): “prompts/list”;\
 }
 
 Sent from the client to request a list of prompts and prompt templates the server has.
@@ -4337,14 +4057,12 @@ method: “prompts/list”[](#listpromptsrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listpromptsresultresponse)
-
 `ListPromptsResultResponse`
 
 interface ListPromptsResultResponse {\
-  [jsonrpc](#listpromptsresultresponse-jsonrpc): “2.0”;\
-  [id](#listpromptsresultresponse-id): [RequestId](#requestid);\
-  [result](#listpromptsresultresponse-result): [ListPromptsResult](#listpromptsresult);\
+  [jsonrpc](#listpromptsresultresponse-jsonrpc): “2.0”;\
+  [id](#listpromptsresultresponse-id): [RequestId](#requestid);\
+  [result](#listpromptsresultresponse-result): [ListPromptsResult](#listpromptsresult);\
 }
 
 A successful response from the server for a [prompts/list](#listpromptsrequest) request.
@@ -4395,15 +4113,13 @@ result: ListPromptsResult[](#listpromptsresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#listpromptsresult)
-
 `ListPromptsResult`
 
 interface ListPromptsResult {\
-  [\_meta](#listpromptsresult-_meta)?: [MetaObject](#metaobject);\
-  [nextCursor](#listpromptsresult-nextcursor)?: string;\
-  [prompts](#listpromptsresult-prompts): [Prompt](#prompt)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listpromptsresult-_meta)?: [MetaObject](#metaobject);\
+  [nextCursor](#listpromptsresult-nextcursor)?: string;\
+  [prompts](#listpromptsresult-prompts): [Prompt](#prompt)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for a [prompts/list](#listpromptsrequest) request.
@@ -4450,17 +4166,15 @@ Inherited from PaginatedResult.nextCursor
 prompts: Prompt\[\][](#listpromptsresult-prompts)
 
 
-[​](#prompt)
-
 `Prompt`
 
 interface Prompt {\
-  [icons](#prompt-icons)?: [Icon](#icon)\[\];\
-  [name](#prompt-name): string;\
-  [title](#prompt-title)?: string;\
-  [description](#prompt-description)?: string;\
-  [arguments](#prompt-arguments)?: [PromptArgument](#promptargument)\[\];\
-  [\_meta](#prompt-_meta)?: [MetaObject](#metaobject);\
+  [icons](#prompt-icons)?: [Icon](#icon)\[\];\
+  [name](#prompt-name): string;\
+  [title](#prompt-title)?: string;\
+  [description](#prompt-description)?: string;\
+  [arguments](#prompt-arguments)?: [PromptArgument](#promptargument)\[\];\
+  [\_meta](#prompt-_meta)?: [MetaObject](#metaobject);\
 }
 
 A prompt or prompt template that the server offers.
@@ -4506,15 +4220,13 @@ A list of arguments to use for templating the prompt.
 \_meta?: MetaObject[](#prompt-_meta)
 
 
-[​](#promptargument)
-
 `PromptArgument`
 
 interface PromptArgument {\
-  [name](#promptargument-name): string;\
-  [title](#promptargument-title)?: string;\
-  [description](#promptargument-description)?: string;\
-  [required](#promptargument-required)?: boolean;\
+  [name](#promptargument-name): string;\
+  [title](#promptargument-title)?: string;\
+  [description](#promptargument-description)?: string;\
+  [required](#promptargument-required)?: boolean;\
 }
 
 Describes an argument that a prompt can accept.
@@ -4542,20 +4254,16 @@ required?: boolean[](#promptargument-required)
 Whether this argument must be provided.
 
 
-[​](#resources/list)
-
 `resources/list`
 
-
-[​](#listresourcesrequest)
 
 `ListResourcesRequest`
 
 interface ListResourcesRequest {\
-  [jsonrpc](#listresourcesrequest-jsonrpc): “2.0”;\
-  [id](#listresourcesrequest-id): [RequestId](#requestid);\
-  [params](#listresourcesrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
-  [method](#listresourcesrequest-method): “resources/list”;\
+  [jsonrpc](#listresourcesrequest-jsonrpc): “2.0”;\
+  [id](#listresourcesrequest-id): [RequestId](#requestid);\
+  [params](#listresourcesrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
+  [method](#listresourcesrequest-method): “resources/list”;\
 }
 
 Sent from the client to request a list of resources the server has.
@@ -4587,14 +4295,12 @@ method: “resources/list”[](#listresourcesrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listresourcesresultresponse)
-
 `ListResourcesResultResponse`
 
 interface ListResourcesResultResponse {\
-  [jsonrpc](#listresourcesresultresponse-jsonrpc): “2.0”;\
-  [id](#listresourcesresultresponse-id): [RequestId](#requestid);\
-  [result](#listresourcesresultresponse-result): [ListResourcesResult](#listresourcesresult);\
+  [jsonrpc](#listresourcesresultresponse-jsonrpc): “2.0”;\
+  [id](#listresourcesresultresponse-id): [RequestId](#requestid);\
+  [result](#listresourcesresultresponse-result): [ListResourcesResult](#listresourcesresult);\
 }
 
 A successful response from the server for a [resources/list](#listresourcesrequest) request.
@@ -4640,15 +4346,13 @@ result: ListResourcesResult[](#listresourcesresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#listresourcesresult)
-
 `ListResourcesResult`
 
 interface ListResourcesResult {\
-  [\_meta](#listresourcesresult-_meta)?: [MetaObject](#metaobject);\
-  [nextCursor](#listresourcesresult-nextcursor)?: string;\
-  [resources](#listresourcesresult-resources): [Resource](#resource)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listresourcesresult-_meta)?: [MetaObject](#metaobject);\
+  [nextCursor](#listresourcesresult-nextcursor)?: string;\
+  [resources](#listresourcesresult-resources): [Resource](#resource)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for a [resources/list](#listresourcesrequest) request.
@@ -4690,20 +4394,18 @@ Inherited from PaginatedResult.nextCursor
 resources: Resource\[\][](#listresourcesresult-resources)
 
 
-[​](#resource)
-
 `Resource`
 
 interface Resource {\
-  [icons](#resource-icons)?: [Icon](#icon)\[\];\
-  [name](#resource-name): string;\
-  [title](#resource-title)?: string;\
-  [uri](#resource-uri): string;\
-  [description](#resource-description)?: string;\
-  [mimeType](#resource-mimetype)?: string;\
-  [annotations](#resource-annotations)?: [Annotations](#annotations);\
-  [size](#resource-size)?: number;\
-  [\_meta](#resource-_meta)?: [MetaObject](#metaobject);\
+  [icons](#resource-icons)?: [Icon](#icon)\[\];\
+  [name](#resource-name): string;\
+  [title](#resource-title)?: string;\
+  [uri](#resource-uri): string;\
+  [description](#resource-description)?: string;\
+  [mimeType](#resource-mimetype)?: string;\
+  [annotations](#resource-annotations)?: [Annotations](#annotations);\
+  [size](#resource-size)?: number;\
+  [\_meta](#resource-_meta)?: [MetaObject](#metaobject);\
 }
 
 A known resource that the server is capable of reading.
@@ -4781,20 +4483,16 @@ This can be used by Hosts to display file sizes and estimate context window usag
 \_meta?: MetaObject[](#resource-_meta)
 
 
-[​](#resources/read)
-
 `resources/read`
 
-
-[​](#readresourcerequest)
 
 `ReadResourceRequest`
 
 interface ReadResourceRequest {\
-  [jsonrpc](#readresourcerequest-jsonrpc): “2.0”;\
-  [id](#readresourcerequest-id): [RequestId](#requestid);\
-  [method](#readresourcerequest-method): “resources/read”;\
-  [params](#readresourcerequest-params): [ReadResourceRequestParams](#readresourcerequestparams);\
+  [jsonrpc](#readresourcerequest-jsonrpc): “2.0”;\
+  [id](#readresourcerequest-id): [RequestId](#requestid);\
+  [method](#readresourcerequest-method): “resources/read”;\
+  [params](#readresourcerequest-params): [ReadResourceRequestParams](#readresourcerequestparams);\
 }
 
 Sent from the client to the server, to read a specific resource URI.
@@ -4829,13 +4527,11 @@ params: ReadResourceRequestParams[](#readresourcerequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#readresourcerequestparams)
-
 `ReadResourceRequestParams`
 
 interface ReadResourceRequestParams {\
-  [\_meta](#readresourcerequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [uri](#readresourcerequestparams-uri): string;\
+  [\_meta](#readresourcerequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [uri](#readresourcerequestparams-uri): string;\
 }
 
 Parameters for a `resources/read` request.
@@ -4851,14 +4547,12 @@ The URI of the resource. The URI can use any protocol; it is up to the server ho
 Inherited from ResourceRequestParams.uri
 
 
-[​](#readresourceresultresponse)
-
 `ReadResourceResultResponse`
 
 interface ReadResourceResultResponse {\
-  [jsonrpc](#readresourceresultresponse-jsonrpc): “2.0”;\
-  [id](#readresourceresultresponse-id): [RequestId](#requestid);\
-  [result](#readresourceresultresponse-result): [ReadResourceResult](#readresourceresult);\
+  [jsonrpc](#readresourceresultresponse-jsonrpc): “2.0”;\
+  [id](#readresourceresultresponse-id): [RequestId](#requestid);\
+  [result](#readresourceresultresponse-result): [ReadResourceResult](#readresourceresult);\
 }
 
 A successful response from the server for a [resources/read](#readresourcerequest) request.
@@ -4894,14 +4588,12 @@ result: ReadResourceResult[](#readresourceresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#readresourceresult)
-
 `ReadResourceResult`
 
 interface ReadResourceResult {\
-  [\_meta](#readresourceresult-_meta)?: [MetaObject](#metaobject);\
-  [contents](#readresourceresult-contents): ([TextResourceContents](#textresourcecontents) \| [BlobResourceContents](#blobresourcecontents))\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#readresourceresult-_meta)?: [MetaObject](#metaobject);\
+  [contents](#readresourceresult-contents): ([TextResourceContents](#textresourcecontents) \| [BlobResourceContents](#blobresourcecontents))\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for a [resources/read](#readresourcerequest) request.
@@ -4927,20 +4619,16 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 contents: (TextResourceContents \| BlobResourceContents)\[\][](#readresourceresult-contents)
 
 
-[​](#resources/subscribe)
-
 `resources/subscribe`
 
-
-[​](#subscriberequest)
 
 `SubscribeRequest`
 
 interface SubscribeRequest {\
-  [jsonrpc](#subscriberequest-jsonrpc): “2.0”;\
-  [id](#subscriberequest-id): [RequestId](#requestid);\
-  [method](#subscriberequest-method): “resources/subscribe”;\
-  [params](#subscriberequest-params): [SubscribeRequestParams](#subscriberequestparams);\
+  [jsonrpc](#subscriberequest-jsonrpc): “2.0”;\
+  [id](#subscriberequest-id): [RequestId](#requestid);\
+  [method](#subscriberequest-method): “resources/subscribe”;\
+  [params](#subscriberequest-params): [SubscribeRequestParams](#subscriberequestparams);\
 }
 
 Sent from the client to request [resources/updated](#resourceupdatednotification) notifications from the server whenever a particular resource changes.
@@ -4975,13 +4663,11 @@ params: SubscribeRequestParams[](#subscriberequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#subscriberequestparams)
-
 `SubscribeRequestParams`
 
 interface SubscribeRequestParams {\
-  [\_meta](#subscriberequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [uri](#subscriberequestparams-uri): string;\
+  [\_meta](#subscriberequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [uri](#subscriberequestparams-uri): string;\
 }
 
 Parameters for a `resources/subscribe` request.
@@ -5005,14 +4691,12 @@ The URI of the resource. The URI can use any protocol; it is up to the server ho
 Inherited from ResourceRequestParams.uri
 
 
-[​](#subscriberesultresponse)
-
 `SubscribeResultResponse`
 
 interface SubscribeResultResponse {\
-  [jsonrpc](#subscriberesultresponse-jsonrpc): “2.0”;\
-  [id](#subscriberesultresponse-id): [RequestId](#requestid);\
-  [result](#subscriberesultresponse-result): [Result](#result);\
+  [jsonrpc](#subscriberesultresponse-jsonrpc): “2.0”;\
+  [id](#subscriberesultresponse-id): [RequestId](#requestid);\
+  [result](#subscriberesultresponse-result): [Result](#result);\
 }
 
 A successful response from the server for a [resources/subscribe](#subscriberequest) request.
@@ -5040,20 +4724,16 @@ result: Result[](#subscriberesultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#resources/templates/list)
-
 `resources/templates/list`
 
-
-[​](#listresourcetemplatesrequest)
 
 `ListResourceTemplatesRequest`
 
 interface ListResourceTemplatesRequest {\
-  [jsonrpc](#listresourcetemplatesrequest-jsonrpc): “2.0”;\
-  [id](#listresourcetemplatesrequest-id): [RequestId](#requestid);\
-  [params](#listresourcetemplatesrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
-  [method](#listresourcetemplatesrequest-method): “resources/templates/list”;\
+  [jsonrpc](#listresourcetemplatesrequest-jsonrpc): “2.0”;\
+  [id](#listresourcetemplatesrequest-id): [RequestId](#requestid);\
+  [params](#listresourcetemplatesrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
+  [method](#listresourcetemplatesrequest-method): “resources/templates/list”;\
 }
 
 Sent from the client to request a list of resource templates the server has.
@@ -5085,14 +4765,12 @@ method: “resources/templates/list”[](#listresourcetemplatesrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listresourcetemplatesresultresponse)
-
 `ListResourceTemplatesResultResponse`
 
 interface ListResourceTemplatesResultResponse {\
-  [jsonrpc](#listresourcetemplatesresultresponse-jsonrpc): “2.0”;\
-  [id](#listresourcetemplatesresultresponse-id): [RequestId](#requestid);\
-  [result](#listresourcetemplatesresultresponse-result): [ListResourceTemplatesResult](#listresourcetemplatesresult);\
+  [jsonrpc](#listresourcetemplatesresultresponse-jsonrpc): “2.0”;\
+  [id](#listresourcetemplatesresultresponse-id): [RequestId](#requestid);\
+  [result](#listresourcetemplatesresultresponse-result): [ListResourceTemplatesResult](#listresourcetemplatesresult);\
 }
 
 A successful response from the server for a [resources/templates/list](#listresourcetemplatesrequest) request.
@@ -5137,15 +4815,13 @@ result: ListResourceTemplatesResult[](#listresourcetemplatesresultresponse-resul
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#listresourcetemplatesresult)
-
 `ListResourceTemplatesResult`
 
 interface ListResourceTemplatesResult {\
-  [\_meta](#listresourcetemplatesresult-_meta)?: [MetaObject](#metaobject);\
-  [nextCursor](#listresourcetemplatesresult-nextcursor)?: string;\
-  [resourceTemplates](#listresourcetemplatesresult-resourcetemplates): [ResourceTemplate](#resourcetemplate)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listresourcetemplatesresult-_meta)?: [MetaObject](#metaobject);\
+  [nextCursor](#listresourcetemplatesresult-nextcursor)?: string;\
+  [resourceTemplates](#listresourcetemplatesresult-resourcetemplates): [ResourceTemplate](#resourcetemplate)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for a [resources/templates/list](#listresourcetemplatesrequest) request.
@@ -5186,19 +4862,17 @@ Inherited from PaginatedResult.nextCursor
 resourceTemplates: ResourceTemplate\[\][](#listresourcetemplatesresult-resourcetemplates)
 
 
-[​](#resourcetemplate)
-
 `ResourceTemplate`
 
 interface ResourceTemplate {\
-  [icons](#resourcetemplate-icons)?: [Icon](#icon)\[\];\
-  [name](#resourcetemplate-name): string;\
-  [title](#resourcetemplate-title)?: string;\
-  [uriTemplate](#resourcetemplate-uritemplate): string;\
-  [description](#resourcetemplate-description)?: string;\
-  [mimeType](#resourcetemplate-mimetype)?: string;\
-  [annotations](#resourcetemplate-annotations)?: [Annotations](#annotations);\
-  [\_meta](#resourcetemplate-_meta)?: [MetaObject](#metaobject);\
+  [icons](#resourcetemplate-icons)?: [Icon](#icon)\[\];\
+  [name](#resourcetemplate-name): string;\
+  [title](#resourcetemplate-title)?: string;\
+  [uriTemplate](#resourcetemplate-uritemplate): string;\
+  [description](#resourcetemplate-description)?: string;\
+  [mimeType](#resourcetemplate-mimetype)?: string;\
+  [annotations](#resourcetemplate-annotations)?: [Annotations](#annotations);\
+  [\_meta](#resourcetemplate-_meta)?: [MetaObject](#metaobject);\
 }
 
 A template description for resources available on the server.
@@ -5254,20 +4928,16 @@ Optional annotations for the client.
 \_meta?: MetaObject[](#resourcetemplate-_meta)
 
 
-[​](#resources/unsubscribe)
-
 `resources/unsubscribe`
 
-
-[​](#unsubscriberequest)
 
 `UnsubscribeRequest`
 
 interface UnsubscribeRequest {\
-  [jsonrpc](#unsubscriberequest-jsonrpc): “2.0”;\
-  [id](#unsubscriberequest-id): [RequestId](#requestid);\
-  [method](#unsubscriberequest-method): “resources/unsubscribe”;\
-  [params](#unsubscriberequest-params): [UnsubscribeRequestParams](#unsubscriberequestparams);\
+  [jsonrpc](#unsubscriberequest-jsonrpc): “2.0”;\
+  [id](#unsubscriberequest-id): [RequestId](#requestid);\
+  [method](#unsubscriberequest-method): “resources/unsubscribe”;\
+  [params](#unsubscriberequest-params): [UnsubscribeRequestParams](#unsubscriberequestparams);\
 }
 
 Sent from the client to request cancellation of [resources/updated](#resourceupdatednotification) notifications from the server. This should follow a previous [resources/subscribe](#subscriberequest) request.
@@ -5302,13 +4972,11 @@ params: UnsubscribeRequestParams[](#unsubscriberequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#unsubscriberequestparams)
-
 `UnsubscribeRequestParams`
 
 interface UnsubscribeRequestParams {\
-  [\_meta](#unsubscriberequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [uri](#unsubscriberequestparams-uri): string;\
+  [\_meta](#unsubscriberequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [uri](#unsubscriberequestparams-uri): string;\
 }
 
 Parameters for a `resources/unsubscribe` request.
@@ -5324,14 +4992,12 @@ The URI of the resource. The URI can use any protocol; it is up to the server ho
 Inherited from ResourceRequestParams.uri
 
 
-[​](#unsubscriberesultresponse)
-
 `UnsubscribeResultResponse`
 
 interface UnsubscribeResultResponse {\
-  [jsonrpc](#unsubscriberesultresponse-jsonrpc): “2.0”;\
-  [id](#unsubscriberesultresponse-id): [RequestId](#requestid);\
-  [result](#unsubscriberesultresponse-result): [Result](#result);\
+  [jsonrpc](#unsubscriberesultresponse-jsonrpc): “2.0”;\
+  [id](#unsubscriberesultresponse-id): [RequestId](#requestid);\
+  [result](#unsubscriberesultresponse-result): [Result](#result);\
 }
 
 A successful response from the server for a [resources/unsubscribe](#unsubscriberequest) request.
@@ -5359,20 +5025,16 @@ result: Result[](#unsubscriberesultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#roots/list)
-
 `roots/list`
 
-
-[​](#listrootsrequest)
 
 `ListRootsRequest`
 
 interface ListRootsRequest {\
-  [jsonrpc](#listrootsrequest-jsonrpc): “2.0”;\
-  [id](#listrootsrequest-id): [RequestId](#requestid);\
-  [method](#listrootsrequest-method): “roots/list”;\
-  [params](#listrootsrequest-params)?: [RequestParams](#requestparams);\
+  [jsonrpc](#listrootsrequest-jsonrpc): “2.0”;\
+  [id](#listrootsrequest-id): [RequestId](#requestid);\
+  [method](#listrootsrequest-method): “roots/list”;\
+  [params](#listrootsrequest-params)?: [RequestParams](#requestparams);\
 }
 
 Sent from the server to request a list of root URIs from the client. Roots allow servers to ask for specific directories or files to operate on. A common example for roots is providing a set of repositories or directories a server should operate on.
@@ -5406,14 +5068,12 @@ params?: RequestParams[](#listrootsrequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#listrootsresultresponse)
-
 `ListRootsResultResponse`
 
 interface ListRootsResultResponse {\
-  [jsonrpc](#listrootsresultresponse-jsonrpc): “2.0”;\
-  [id](#listrootsresultresponse-id): [RequestId](#requestid);\
-  [result](#listrootsresultresponse-result): [ListRootsResult](#listrootsresult);\
+  [jsonrpc](#listrootsresultresponse-jsonrpc): “2.0”;\
+  [id](#listrootsresultresponse-id): [RequestId](#requestid);\
+  [result](#listrootsresultresponse-result): [ListRootsResult](#listrootsresult);\
 }
 
 A successful response from the client for a [roots/list](#listrootsrequest) request.
@@ -5448,14 +5108,12 @@ result: ListRootsResult[](#listrootsresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#listrootsresult)
-
 `ListRootsResult`
 
 interface ListRootsResult {\
-  [\_meta](#listrootsresult-_meta)?: [MetaObject](#metaobject);\
-  [roots](#listrootsresult-roots): [Root](#root)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listrootsresult-_meta)?: [MetaObject](#metaobject);\
+  [roots](#listrootsresult-roots): [Root](#root)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the client for a [roots/list](#listrootsrequest) request. This result contains an array of [Root](#root) objects, each representing a root directory or file that the server can operate on.
@@ -5497,14 +5155,12 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 roots: Root\[\][](#listrootsresult-roots)
 
 
-[​](#root)
-
 `Root`
 
 interface Root {\
-  [uri](#root-uri): string;\
-  [name](#root-name)?: string;\
-  [\_meta](#root-_meta)?: [MetaObject](#metaobject);\
+  [uri](#root-uri): string;\
+  [name](#root-name)?: string;\
+  [\_meta](#root-_meta)?: [MetaObject](#metaobject);\
 }
 
 Represents a root directory or file that the server can operate on.
@@ -5529,20 +5185,16 @@ An optional name for the root. This can be used to provide a human-readable iden
 \_meta?: MetaObject[](#root-_meta)
 
 
-[​](#sampling/createmessage)
-
 `sampling/createMessage`
 
-
-[​](#createmessagerequest)
 
 `CreateMessageRequest`
 
 interface CreateMessageRequest {\
-  [jsonrpc](#createmessagerequest-jsonrpc): “2.0”;\
-  [id](#createmessagerequest-id): [RequestId](#requestid);\
-  [method](#createmessagerequest-method): “sampling/createMessage”;\
-  [params](#createmessagerequest-params): [CreateMessageRequestParams](#createmessagerequestparams);\
+  [jsonrpc](#createmessagerequest-jsonrpc): “2.0”;\
+  [id](#createmessagerequest-id): [RequestId](#requestid);\
+  [method](#createmessagerequest-method): “sampling/createMessage”;\
+  [params](#createmessagerequest-params): [CreateMessageRequestParams](#createmessagerequestparams);\
 }
 
 A request from the server to sample an LLM via the client. The client has full discretion over which model to select. The client should also inform the user before beginning sampling, to allow them to inspect the request (human in the loop) and decide whether to approve it.
@@ -5596,23 +5248,21 @@ params: CreateMessageRequestParams[](#createmessagerequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#createmessagerequestparams)
-
 `CreateMessageRequestParams`
 
 interface CreateMessageRequestParams {\
-  [task](#createmessagerequestparams-task)?: [TaskMetadata](#taskmetadata);\
-  [\_meta](#createmessagerequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [messages](#createmessagerequestparams-messages): [SamplingMessage](#samplingmessage)\[\];\
-  [modelPreferences](#createmessagerequestparams-modelpreferences)?: [ModelPreferences](#modelpreferences);\
-  [systemPrompt](#createmessagerequestparams-systemprompt)?: string;\
-  [includeContext](#createmessagerequestparams-includecontext)?: “none” \| “thisServer” \| “allServers”;\
-  [temperature](#createmessagerequestparams-temperature)?: number;\
-  [maxTokens](#createmessagerequestparams-maxtokens): number;\
-  [stopSequences](#createmessagerequestparams-stopsequences)?: string\[\];\
-  [metadata](#createmessagerequestparams-metadata)?: [JSONObject](#jsonobject);\
-  [tools](#createmessagerequestparams-tools)?: [Tool](#tool)\[\];\
-  [toolChoice](#createmessagerequestparams-toolchoice)?: [ToolChoice](#toolchoice);\
+  [task](#createmessagerequestparams-task)?: [TaskMetadata](#taskmetadata);\
+  [\_meta](#createmessagerequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [messages](#createmessagerequestparams-messages): [SamplingMessage](#samplingmessage)\[\];\
+  [modelPreferences](#createmessagerequestparams-modelpreferences)?: [ModelPreferences](#modelpreferences);\
+  [systemPrompt](#createmessagerequestparams-systemprompt)?: string;\
+  [includeContext](#createmessagerequestparams-includecontext)?: “none” \| “thisServer” \| “allServers”;\
+  [temperature](#createmessagerequestparams-temperature)?: number;\
+  [maxTokens](#createmessagerequestparams-maxtokens): number;\
+  [stopSequences](#createmessagerequestparams-stopsequences)?: string\[\];\
+  [metadata](#createmessagerequestparams-metadata)?: [JSONObject](#jsonobject);\
+  [tools](#createmessagerequestparams-tools)?: [Tool](#tool)\[\];\
+  [toolChoice](#createmessagerequestparams-toolchoice)?: [ToolChoice](#toolchoice);\
 }
 
 Parameters for a `sampling/createMessage` request.
@@ -5803,14 +5453,12 @@ toolChoice?: ToolChoice[](#createmessagerequestparams-toolchoice)
 Controls how the model uses tools. The client MUST return an error if this field is provided but [ClientCapabilities.sampling.tools](#clientcapabilities-sampling) is not declared. Default is `{ mode: “auto” }`.
 
 
-[​](#createmessageresultresponse)
-
 `CreateMessageResultResponse`
 
 interface CreateMessageResultResponse {\
-  [jsonrpc](#createmessageresultresponse-jsonrpc): “2.0”;\
-  [id](#createmessageresultresponse-id): [RequestId](#requestid);\
-  [result](#createmessageresultresponse-result): [CreateMessageResult](#createmessageresult);\
+  [jsonrpc](#createmessageresultresponse-jsonrpc): “2.0”;\
+  [id](#createmessageresultresponse-id): [RequestId](#requestid);\
+  [result](#createmessageresultresponse-result): [CreateMessageResult](#createmessageresult);\
 }
 
 A successful response from the client for a [sampling/createMessage](#createmessagerequest) request.
@@ -5846,17 +5494,15 @@ result: CreateMessageResult[](#createmessageresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#createmessageresult)
-
 `CreateMessageResult`
 
 interface CreateMessageResult {\
-  [\_meta](#createmessageresult-_meta)?: [MetaObject](#metaobject);\
-  [model](#createmessageresult-model): string;\
-  [stopReason](#createmessageresult-stopreason)?: string;\
-  [role](#createmessageresult-role): [Role](#role);\
-  [content](#createmessageresult-content): [SamplingMessageContentBlock](#samplingmessagecontentblock) \| [SamplingMessageContentBlock](#samplingmessagecontentblock)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#createmessageresult-_meta)?: [MetaObject](#metaobject);\
+  [model](#createmessageresult-model): string;\
+  [stopReason](#createmessageresult-stopreason)?: string;\
+  [role](#createmessageresult-role): [Role](#role);\
+  [content](#createmessageresult-content): [SamplingMessageContentBlock](#samplingmessagecontentblock) \| [SamplingMessageContentBlock](#samplingmessagecontentblock)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the client for a [sampling/createMessage](#createmessagerequest) request. The client should inform the user before returning the sampled message, to allow them to inspect the response (human in the loop) and decide whether to allow the server to see it.
@@ -5947,12 +5593,10 @@ content: SamplingMessageContentBlock \| SamplingMessageContentBlock\[\][](#creat
 Inherited from [SamplingMessage](#samplingmessage).[content](#samplingmessage-content)
 
 
-[​](#modelhint)
-
 `ModelHint`
 
 interface ModelHint {\
-  [name](#modelhint-name)?: string;\
+  [name](#modelhint-name)?: string;\
 }
 
 Hints to use for model selection.
@@ -5974,15 +5618,13 @@ The client MAY also map the string to a different provider’s model name or a d
 - `gemini-1.5-flash` could match `claude-3-haiku-20240307`
 
 
-[​](#modelpreferences)
-
 `ModelPreferences`
 
 interface ModelPreferences {\
-  [hints](#modelpreferences-hints)?: [ModelHint](#modelhint)\[\];\
-  [costPriority](#modelpreferences-costpriority)?: number;\
-  [speedPriority](#modelpreferences-speedpriority)?: number;\
-  [intelligencePriority](#modelpreferences-intelligencepriority)?: number;\
+  [hints](#modelpreferences-hints)?: [ModelHint](#modelhint)\[\];\
+  [costPriority](#modelpreferences-costpriority)?: number;\
+  [speedPriority](#modelpreferences-speedpriority)?: number;\
+  [intelligencePriority](#modelpreferences-intelligencepriority)?: number;\
 }
 
 The server’s preferences for model selection, requested of the client during sampling.
@@ -6026,14 +5668,12 @@ intelligencePriority?: number[](#modelpreferences-intelligencepriority)
 How much to prioritize intelligence and capabilities when selecting a model. A value of 0 means intelligence is not important, while a value of 1 means intelligence is the most important factor.
 
 
-[​](#samplingmessage)
-
 `SamplingMessage`
 
 interface SamplingMessage {\
-  [role](#samplingmessage-role): [Role](#role);\
-  [content](#samplingmessage-content): [SamplingMessageContentBlock](#samplingmessagecontentblock) \| [SamplingMessageContentBlock](#samplingmessagecontentblock)\[\];\
-  [\_meta](#samplingmessage-_meta)?: [MetaObject](#metaobject);\
+  [role](#samplingmessage-role): [Role](#role);\
+  [content](#samplingmessage-content): [SamplingMessageContentBlock](#samplingmessagecontentblock) \| [SamplingMessageContentBlock](#samplingmessagecontentblock)\[\];\
+  [\_meta](#samplingmessage-_meta)?: [MetaObject](#metaobject);\
 }
 
 Describes a message issued to or received from an LLM API.
@@ -6077,24 +5717,20 @@ content: SamplingMessageContentBlock \| SamplingMessageContentBlock\[\][](#sampl
 \_meta?: MetaObject[](#samplingmessage-_meta)
 
 
-[​](#samplingmessagecontentblock)
-
 `SamplingMessageContentBlock`
 
 SamplingMessageContentBlock:\
-  \| [TextContent](#textcontent)\
-  \| [ImageContent](#imagecontent)\
-  \| [AudioContent](#audiocontent)\
-  \| [ToolUseContent](#toolusecontent)\
-  \| [ToolResultContent](#toolresultcontent)
+  \| [TextContent](#textcontent)\
+  \| [ImageContent](#imagecontent)\
+  \| [AudioContent](#audiocontent)\
+  \| [ToolUseContent](#toolusecontent)\
+  \| [ToolResultContent](#toolresultcontent)
 
-
-[​](#toolchoice)
 
 `ToolChoice`
 
 interface ToolChoice {\
-  [mode](#toolchoice-mode)?: “none” \| “required” \| “auto”;\
+  [mode](#toolchoice-mode)?: “none” \| “required” \| “auto”;\
 }
 
 Controls tool selection behavior for sampling requests.
@@ -6108,17 +5744,15 @@ Controls the tool use ability of the model:
 - `“none”`: Model MUST NOT use any tools
 
 
-[​](#toolresultcontent)
-
 `ToolResultContent`
 
 interface ToolResultContent {\
-  [type](#toolresultcontent-type): “tool_result”;\
-  [toolUseId](#toolresultcontent-tooluseid): string;\
-  [content](#toolresultcontent-content): [ContentBlock](#contentblock)\[\];\
-  [structuredContent](#toolresultcontent-structuredcontent)?: { \[key: string\]: unknown };\
-  [isError](#toolresultcontent-iserror)?: boolean;\
-  [\_meta](#toolresultcontent-_meta)?: [MetaObject](#metaobject);\
+  [type](#toolresultcontent-type): “tool_result”;\
+  [toolUseId](#toolresultcontent-tooluseid): string;\
+  [content](#toolresultcontent-content): [ContentBlock](#contentblock)\[\];\
+  [structuredContent](#toolresultcontent-structuredcontent)?: { \[key: string\]: unknown };\
+  [isError](#toolresultcontent-iserror)?: boolean;\
+  [\_meta](#toolresultcontent-_meta)?: [MetaObject](#metaobject);\
 }
 
 The result of a tool use, provided by the user back to the assistant.
@@ -6169,16 +5803,14 @@ If true, the content typically describes the error that occurred. Default: false
 Optional metadata about the tool result. Clients SHOULD preserve this field when including tool results in subsequent sampling requests to enable caching optimizations.
 
 
-[​](#toolusecontent)
-
 `ToolUseContent`
 
 interface ToolUseContent {\
-  [type](#toolusecontent-type): “tool_use”;\
-  [id](#toolusecontent-id): string;\
-  [name](#toolusecontent-name): string;\
-  [input](#toolusecontent-input): { \[key: string\]: unknown };\
-  [\_meta](#toolusecontent-_meta)?: [MetaObject](#metaobject);\
+  [type](#toolusecontent-type): “tool_use”;\
+  [id](#toolusecontent-id): string;\
+  [name](#toolusecontent-name): string;\
+  [input](#toolusecontent-input): { \[key: string\]: unknown };\
+  [\_meta](#toolusecontent-_meta)?: [MetaObject](#metaobject);\
 }
 
 A request from the assistant to call a tool.
@@ -6217,20 +5849,16 @@ The arguments to pass to the tool, conforming to the tool’s input schema.
 Optional metadata about the tool use. Clients SHOULD preserve this field when including tool uses in subsequent sampling requests to enable caching optimizations.
 
 
-[​](#tools/call)
-
 `tools/call`
 
-
-[​](#calltoolrequest)
 
 `CallToolRequest`
 
 interface CallToolRequest {\
-  [jsonrpc](#calltoolrequest-jsonrpc): “2.0”;\
-  [id](#calltoolrequest-id): [RequestId](#requestid);\
-  [method](#calltoolrequest-method): “tools/call”;\
-  [params](#calltoolrequest-params): [CallToolRequestParams](#calltoolrequestparams);\
+  [jsonrpc](#calltoolrequest-jsonrpc): “2.0”;\
+  [id](#calltoolrequest-id): [RequestId](#requestid);\
+  [method](#calltoolrequest-method): “tools/call”;\
+  [params](#calltoolrequest-params): [CallToolRequestParams](#calltoolrequestparams);\
 }
 
 Used by the client to invoke a tool provided by the server.
@@ -6268,15 +5896,13 @@ params: CallToolRequestParams[](#calltoolrequest-params)
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
 
-[​](#calltoolrequestparams)
-
 `CallToolRequestParams`
 
 interface CallToolRequestParams {\
-  [task](#calltoolrequestparams-task)?: [TaskMetadata](#taskmetadata);\
-  [\_meta](#calltoolrequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
-  [name](#calltoolrequestparams-name): string;\
-  [arguments](#calltoolrequestparams-arguments)?: { \[key: string\]: unknown };\
+  [task](#calltoolrequestparams-task)?: [TaskMetadata](#taskmetadata);\
+  [\_meta](#calltoolrequestparams-_meta)?: [RequestMetaObject](#requestmetaobject);\
+  [name](#calltoolrequestparams-name): string;\
+  [arguments](#calltoolrequestparams-arguments)?: { \[key: string\]: unknown };\
 }
 
 Parameters for a `tools/call` request.
@@ -6327,14 +5953,12 @@ arguments?: { \[key: string\]: unknown }[](#calltoolrequestparams-arguments)
 Arguments to use for the tool call.
 
 
-[​](#calltoolresultresponse)
-
 `CallToolResultResponse`
 
 interface CallToolResultResponse {\
-  [jsonrpc](#calltoolresultresponse-jsonrpc): “2.0”;\
-  [id](#calltoolresultresponse-id): [RequestId](#requestid);\
-  [result](#calltoolresultresponse-result): [CallToolResult](#calltoolresult);\
+  [jsonrpc](#calltoolresultresponse-jsonrpc): “2.0”;\
+  [id](#calltoolresultresponse-id): [RequestId](#requestid);\
+  [result](#calltoolresultresponse-result): [CallToolResult](#calltoolresult);\
 }
 
 A successful response from the server for a [tools/call](#calltoolrequest) request.
@@ -6370,16 +5994,14 @@ result: CallToolResult[](#calltoolresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#calltoolresult)
-
 `CallToolResult`
 
 interface CallToolResult {\
-  [\_meta](#calltoolresult-_meta)?: [MetaObject](#metaobject);\
-  [content](#calltoolresult-content): [ContentBlock](#contentblock)\[\];\
-  [structuredContent](#calltoolresult-structuredcontent)?: { \[key: string\]: unknown };\
-  [isError](#calltoolresult-iserror)?: boolean;\
-  \[key: string\]: unknown;\
+  [\_meta](#calltoolresult-_meta)?: [MetaObject](#metaobject);\
+  [content](#calltoolresult-content): [ContentBlock](#contentblock)\[\];\
+  [structuredContent](#calltoolresult-structuredcontent)?: { \[key: string\]: unknown };\
+  [isError](#calltoolresult-iserror)?: boolean;\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for a [tools/call](#calltoolrequest) request.
@@ -6453,20 +6075,16 @@ Any errors that originate from the tool SHOULD be reported inside the result obj
 However, any errors in *finding* the tool, an error indicating that the server does not support tool calls, or any other exceptional conditions, should be reported as an MCP error response.
 
 
-[​](#tools/list)
-
 `tools/list`
 
-
-[​](#listtoolsrequest)
 
 `ListToolsRequest`
 
 interface ListToolsRequest {\
-  [jsonrpc](#listtoolsrequest-jsonrpc): “2.0”;\
-  [id](#listtoolsrequest-id): [RequestId](#requestid);\
-  [params](#listtoolsrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
-  [method](#listtoolsrequest-method): “tools/list”;\
+  [jsonrpc](#listtoolsrequest-jsonrpc): “2.0”;\
+  [id](#listtoolsrequest-id): [RequestId](#requestid);\
+  [params](#listtoolsrequest-params)?: [PaginatedRequestParams](#paginatedrequestparams);\
+  [method](#listtoolsrequest-method): “tools/list”;\
 }
 
 Sent from the client to request a list of tools the server has.
@@ -6498,14 +6116,12 @@ method: “tools/list”[](#listtoolsrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listtoolsresultresponse)
-
 `ListToolsResultResponse`
 
 interface ListToolsResultResponse {\
-  [jsonrpc](#listtoolsresultresponse-jsonrpc): “2.0”;\
-  [id](#listtoolsresultresponse-id): [RequestId](#requestid);\
-  [result](#listtoolsresultresponse-result): [ListToolsResult](#listtoolsresult);\
+  [jsonrpc](#listtoolsresultresponse-jsonrpc): “2.0”;\
+  [id](#listtoolsresultresponse-id): [RequestId](#requestid);\
+  [result](#listtoolsresultresponse-result): [ListToolsResult](#listtoolsresult);\
 }
 
 A successful response from the server for a [tools/list](#listtoolsrequest) request.
@@ -6559,15 +6175,13 @@ result: ListToolsResult[](#listtoolsresultresponse-result)
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
 
-[​](#listtoolsresult)
-
 `ListToolsResult`
 
 interface ListToolsResult {\
-  [\_meta](#listtoolsresult-_meta)?: [MetaObject](#metaobject);\
-  [nextCursor](#listtoolsresult-nextcursor)?: string;\
-  [tools](#listtoolsresult-tools): [Tool](#tool)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listtoolsresult-_meta)?: [MetaObject](#metaobject);\
+  [nextCursor](#listtoolsresult-nextcursor)?: string;\
+  [tools](#listtoolsresult-tools): [Tool](#tool)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The result returned by the server for a [tools/list](#listtoolsrequest) request.
@@ -6617,30 +6231,28 @@ Inherited from PaginatedResult.nextCursor
 tools: Tool\[\][](#listtoolsresult-tools)
 
 
-[​](#tool)
-
 `Tool`
 
 interface Tool {\
-  [icons](#tool-icons)?: [Icon](#icon)\[\];\
-  [name](#tool-name): string;\
-  [title](#tool-title)?: string;\
-  [description](#tool-description)?: string;\
-  [inputSchema](#tool-inputschema): {\
-    \$schema?: string;\
-    type: “object”;\
-    properties?: { \[key: string\]: [JSONValue](#jsonvalue) };\
-    required?: string\[\];\
-  };\
-  [execution](#tool-execution)?: [ToolExecution](#toolexecution);\
-  [outputSchema](#tool-outputschema)?: {\
-    \$schema?: string;\
-    type: “object”;\
-    properties?: { \[key: string\]: [JSONValue](#jsonvalue) };\
-    required?: string\[\];\
-  };\
-  [annotations](#tool-annotations)?: [ToolAnnotations](#toolannotations);\
-  [\_meta](#tool-_meta)?: [MetaObject](#metaobject);\
+  [icons](#tool-icons)?: [Icon](#icon)\[\];\
+  [name](#tool-name): string;\
+  [title](#tool-title)?: string;\
+  [description](#tool-description)?: string;\
+  [inputSchema](#tool-inputschema): {\
+    \$schema?: string;\
+    type: “object”;\
+    properties?: { \[key: string\]: [JSONValue](#jsonvalue) };\
+    required?: string\[\];\
+  };\
+  [execution](#tool-execution)?: [ToolExecution](#toolexecution);\
+  [outputSchema](#tool-outputschema)?: {\
+    \$schema?: string;\
+    type: “object”;\
+    properties?: { \[key: string\]: [JSONValue](#jsonvalue) };\
+    required?: string\[\];\
+  };\
+  [annotations](#tool-annotations)?: [ToolAnnotations](#toolannotations);\
+  [\_meta](#tool-_meta)?: [MetaObject](#metaobject);\
 }
 
 Definition for a tool the client can call.
@@ -6790,16 +6402,14 @@ Display name precedence order is: `title`, `annotations.title`, then `name`.
 \_meta?: MetaObject[](#tool-_meta)
 
 
-[​](#toolannotations)
-
 `ToolAnnotations`
 
 interface ToolAnnotations {\
-  [title](#toolannotations-title)?: string;\
-  [readOnlyHint](#toolannotations-readonlyhint)?: boolean;\
-  [destructiveHint](#toolannotations-destructivehint)?: boolean;\
-  [idempotentHint](#toolannotations-idempotenthint)?: boolean;\
-  [openWorldHint](#toolannotations-openworldhint)?: boolean;\
+  [title](#toolannotations-title)?: string;\
+  [readOnlyHint](#toolannotations-readonlyhint)?: boolean;\
+  [destructiveHint](#toolannotations-destructivehint)?: boolean;\
+  [idempotentHint](#toolannotations-idempotenthint)?: boolean;\
+  [openWorldHint](#toolannotations-openworldhint)?: boolean;\
 }
 
 Additional properties describing a [Tool](#tool) to clients.
@@ -6841,12 +6451,10 @@ If true, this tool may interact with an “open world” of external entities. I
 Default: true
 
 
-[​](#toolexecution)
-
 `ToolExecution`
 
 interface ToolExecution {\
-  [taskSupport](#toolexecution-tasksupport)?: “forbidden” \| “optional” \| “required”;\
+  [taskSupport](#toolexecution-tasksupport)?: “forbidden” \| “optional” \| “required”;\
 }
 
 Execution-related properties for a tool.

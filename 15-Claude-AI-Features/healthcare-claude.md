@@ -49,7 +49,7 @@ Patient history physical
 
 5kb
 
-‍DOC
+DOC
 
 ### Prior Authorization Review
 
@@ -137,7 +137,7 @@ Prior authorization reviews take hours of cross-referencing while patients wait.
 
 Prompt
 
-Analyze this insurance claim appeal and help me understand why the claim was originally rejected.  Cross-reference the patient's medical records and coverage policy to identify whether any supporting justification has been provided. Draft a comprehensive review summary that addresses each denial reason with specific clinical evidence, cites relevant medical necessity criteria, and references any additional applicable information.
+Analyze this insurance claim appeal and help me understand why the claim was originally rejected.  Cross-reference the patient's medical records and coverage policy to identify whether any supporting justification has been provided. Draft a comprehensive review summary that addresses each denial reason with specific clinical evidence, cites relevant medical necessity criteria, and references any additional applicable information.
 
 Attachments
 
@@ -261,7 +261,7 @@ Denied claims cost time and money for everyone. Claude helps providers build str
 
 Prompt
 
-Here are today's patient portal messages. Review each one and flag any urgent issues that need immediate clinical attention. For routine questions, draft a response I can review and send. Route other messages to the appropriate department (billing, referrals, scheduling) for support. Summarize what I should review in order of priority. 
+Here are today's patient portal messages. Review each one and flag any urgent issues that need immediate clinical attention. For routine questions, draft a response I can review and send. Route other messages to the appropriate department (billing, referrals, scheduling) for support. Summarize what I should review in order of priority. 
 
 Attachments
 
@@ -365,7 +365,7 @@ Connectors used: ICD-10 \| NPI Registry
 
 Generated in 47 seconds from 12-minute recording
 
-Ambient scribing for clinical documentation 
+Ambient scribing for clinical documentation 
 
 With Claude's Developer Platform, health startups can build breakthrough products for medical scribing, chart reviews, and clinical decision support. Less time documenting, more time with patients.
 
@@ -540,7 +540,7 @@ Prev
 
 ## Get started with Claude
 
-Healthcare customers can access Claude via Claude for Enterprise and the Claude Platform. 
+Healthcare customers can access Claude via Claude for Enterprise and the Claude Platform. 
 
 See pricing
 

@@ -12,14 +12,10 @@ tags: ["mcp", "mcp-spec"]
 This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2025-11-25](/specification/2025-11-25).
 
 
-[​](#major-changes)
-
 Major changes
 
 N/A
 
-
-[​](#minor-changes)
 
 Minor changes
 
@@ -27,28 +23,20 @@ Minor changes
 2.  Document OpenTelemetry trace context propagation conventions for `_meta` keys (`traceparent`, `tracestate`, `baggage`) ([SEP-414](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/414)).
 
 
-[​](#other-schema-changes)
-
 Other schema changes
 
 N/A
 
-
-[​](#governance-and-process-updates)
 
 Governance and process updates
 
 N/A
 
 
-[​](#process-changes)
-
 Process changes
 
 1.  Formalize PR-based SEP workflow with markdown files in `seps/` directory, PR-derived numbering, sponsor responsibilities, and status management via PR labels ([SEP-1850](https://github.com/modelcontextprotocol/specification/pull/1850)).
 
-
-[​](#full-changelog)
 
 Full changelog
 

@@ -28,14 +28,10 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP establishes JSON Schema 2020-12 as the default dialect for embedded schemas within MCP messages (tool `inputSchema`/`outputSchema` and elicitation `requestedSchema` fields). Schemas may explicitly declare alternative dialects via the `$schema` field. This resolves ambiguity that has caused compatibility issues between implementations.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -48,19 +44,13 @@ The MCP specification does not explicitly state which JSON Schema version to use
 Community discussion (GitHub Discussion \#366, PR \#655) revealed that implementations were split between draft-07 and 2020-12, with multiple maintainers and community members expressing strong preference for 2020-12 as the default.
 
 
-[​](#specification)
-
 Specification
 
-
-[​](#1-default-dialect)
 
 1. Default Dialect
 
 Embedded JSON schemas within MCP messages **MUST** conform to [JSON Schema 2020-12](https://json-schema.org/draft/2020-12/schema) when no `$schema` field is present.
 
-
-[​](#2-explicit-dialect-declaration)
 
 2. Explicit Dialect Declaration
 
@@ -78,8 +68,6 @@ Copy
 }
 ```
 
-
-[​](#3-schema-validation-requirements)
 
 3. Schema Validation Requirements
 
@@ -109,8 +97,6 @@ Copy
 ```
 
 
-[​](#4-scope-of-application)
-
 4. Scope of Application
 
 This specification applies to:
@@ -119,8 +105,6 @@ This specification applies to:
 - `prompts/elicit` request: `requestedSchema`
 - Future MCP features embedding JSON Schema definitions
 
-
-[​](#5-implementation-requirements)
 
 5. Implementation Requirements
 
@@ -135,12 +119,8 @@ This specification applies to:
 - Support at least JSON Schema 2020-12
 
 
-[​](#rationale)
-
 Rationale
 
-
-[​](#why-2020-12)
 
 Why 2020-12?
 
@@ -150,8 +130,6 @@ Why 2020-12?
 4.  **Current standard**: 2020-12 is the stable version as of 2025
 
 
-[​](#why-allow-explicit-declaration)
-
 Why allow explicit declaration?
 
 - Supports migration paths for existing schemas
@@ -159,16 +137,12 @@ Why allow explicit declaration?
 - Follows JSON Schema best practices
 
 
-[​](#alternatives-considered)
-
 Alternatives considered
 
 - **Draft-07 as default**: Rejected after community feedback; older version with less capability
 - **No default**: Rejected as unnecessarily verbose; adds boilerplate
 - **Multiple equal versions**: Rejected; creates unpredictability and fragmentation
 
-
-[​](#backward-compatibility)
 
 Backward Compatibility
 
@@ -186,12 +160,8 @@ This is technically a **clarification**, and not a breaking change:
 **Migration strategy:** Add explicit `$schema: "http://json-schema.org/draft-07/schema#"` during transition, then update to 2020-12 features.
 
 
-[​](#reference-implementation)
-
 Reference Implementation
 
-
-[​](#sdk-implementations)
 
 SDK Implementations
 
@@ -210,19 +180,13 @@ SDK Implementations
 - May require updates but based on other examples, there should be straightforward or out-of-the-box options to support this. I can add more examples here or we can create issues to follow up on these after acceptance.
 
 
-[​](#security-implications)
-
 Security Implications
 
 No specific security implications have been identified from establishing 2020-12 as the default dialect. The clarification reduces ambiguity that could lead to validation mismatches between implementations, which is a minor security improvement through increased predictability. Implementations should use well-maintained JSON Schema validator libraries and keep them updated, as with any dependency.
 
 
-[​](#related-work)
-
 Related Work
 
-
-[​](#sep-1330-elicitation-enum-schema-improvements)
 
 [SEP-1330: Elicitation Enum Schema Improvements](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1330)
 
@@ -230,14 +194,10 @@ Related Work
 As noted in SEP-1330 discussion, there is some concern about parsing complexity with advanced JSON Schema features like `oneOf` and `anyOf`. However, these features are part of the JSON Schema standard and well-supported by mature validator libraries. Implementations can balance standards compliance with their parsing needs by using well-tested JSON Schema validation libraries.
 
 
-[​](#sep-834-full-json-schema-2020-12-support)
-
 [SEP-834: Full JSON Schema 2020-12 Support](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/834)
 
 This SEP establishes the foundation (default dialect) while SEP-834 addresses comprehensive support for 2020-12 features.
 
-
-[​](#open-questions)
 
 Open Questions
 

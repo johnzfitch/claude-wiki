@@ -99,7 +99,7 @@ Prev
 - Created an education program that reframed AI assistants as capable new engineers who need context, not replacements who work autonomously
 - Built a foundation for AI-powered agents focused on maintaining Stripe's 5.5 nines of reliability
 
-# The challenge 
+# The challenge 
 
 Stripe needed a CLI-native coding assistant that met enterprise security requirements. For Stripe's developer infrastructure team, led by Scott MacVicar, the challenge wasn't choosing a single winner; it was enabling engineers to find the tools that fit their individual workflows while maintaining enterprise-grade security.
 
@@ -111,7 +111,7 @@ But breadth created its own problems. Enterprise security requirements meant Str
 
 The path to deployment required collaboration. MacVicar worked directly with Anthropic to produce an enterprise binary version of Claude Code, a process that took two to three months of testing and iteration. The result was a signed binary that could be deployed safely across the organization, bypassing the npm dependency chain that had posed security concerns.
 
-# Treating AI assistants like capable new engineers 
+# Treating AI assistants like capable new engineers 
 
 "We came up with our internal distribution mechanism," MacVicar explained. "It's pre-installed on everyone's laptop. It's pre-installed on everyone's development box. It's pre-configured with the rules, the tokens, the authentication. It just works out of the box so no one has to go make an account or read all the configurations."
 
@@ -123,7 +123,7 @@ The biggest challenge hasn't been technical—it's been educational. Engineers i
 
 This framing changed how engineers prompted their AI assistants. Instead of expecting magic, they learned to provide context: point to documentation, show example code, explain architectural patterns. The team reinforced this through engineering all-hands presentations, dedicated training sessions, and strategically placed "hint buttons" throughout internal tools. Local examples proved more effective than centralized training. Teams that discovered effective prompts for their specific codebases shared those patterns within their groups, creating organic knowledge transfer. For MacVicar's team, this education work is as important as the tooling itself. This approach to onboarding, treating AI as a collaborator that needs context rather than a replacement, reflects how Stripe and Anthropic see the future of AI-assisted development.
 
-# The results: Building towards AI agents for reliability 
+# The results: Building towards AI agents for reliability 
 
 Engineers report higher satisfaction with their tooling. While the team hasn't isolated metrics attributable to any single AI assistant, the signals are positive across the board. One concrete example: a team used Claude models to migrate 10,000 lines of Scala to Java in four days, a project estimated at ten engineering weeks by hand. The migration enabled a newer version of the JDK, enabling performance improvements that had been stuck behind the manual effort required. "Sentiment's up,” MacVicar said. "People like it. The vibes are good."
 

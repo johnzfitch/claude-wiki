@@ -84,7 +84,7 @@ The governance challenge is particularly acute for enterprises. Organizations ne
 
 SaaS platforms face parallel challenges. Building agent connectivity infrastructure diverts engineering resources from core product work, while supporting multiple AI providers requires constant adaptation. The result: projects with real business value getting stuck in pilots, unable to move into production.
 
-## Choosing Claude 
+## Choosing Claude 
 
 The selection of Claude as the foundation for these workflows was driven by performance and trust. "We've found Claude to be exceptional at maintaining context across complex workflows," said Adam Seligman, Workato's Chief Technology Officer. "It's one of the few models we trust to handle sensitive, enterprise-grade actions safely—especially with financial approval and working with our Workato Enterprise MCP servers."
 

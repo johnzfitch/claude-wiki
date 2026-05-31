@@ -506,15 +506,15 @@ To guarantee Claude uses the skill, you are also welcome to explicitly instruct 
 
 ## Best Practices
 
-- **Be specific about your requirements:** Clearly state the company name, analysis type, and any specific parameters you need.**‍**
-- **Provide context:** Share relevant details like industry, time period, or specific metrics you want to focus on.**‍**
-- **Review and refine:** After Claude generates output using a Skill, you can ask for adjustments or additional analysis.**‍**
+- **Be specific about your requirements:** Clearly state the company name, analysis type, and any specific parameters you need.****
+- **Provide context:** Share relevant details like industry, time period, or specific metrics you want to focus on.****
+- **Review and refine:** After Claude generates output using a Skill, you can ask for adjustments or additional analysis.****
 - **Leverage multiple Skills:** Many workflows benefit from using several Skills together—for example, using the research Skill to initiate coverage, then the DCF Skill for valuation.
 
 ## Learn more about Skills
 
-- [What are Skills?](what-are-skills.md)[‍](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
-- [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)[‍](how-to-create-custom-skills.md)
+- [What are Skills?](what-are-skills.md)[](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
+- [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)[](how-to-create-custom-skills.md)
 - [How to create custom Skills](how-to-create-custom-skills.md)
 
 ## Related tutorials

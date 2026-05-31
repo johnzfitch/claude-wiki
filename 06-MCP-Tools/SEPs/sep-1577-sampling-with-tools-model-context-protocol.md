@@ -28,14 +28,10 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP introduces `tools` & `toolChoice` params to `sampling/createMessage` and soft-deprecates `includeContext` (fences `thisServer` & `allServers` under a capability). This allows MCP servers to run their own agentic loops using the client’s tokens (still under the user supervision), and reduces the complexity of client implementations (context support becoming explicitly optional).
 
-
-[​](#motivation)
 
 Motivation
 
@@ -54,12 +50,8 @@ Please note some related work:
 In the “Possible Follow ups” Section below, we give examples of features that were kept out of scope from this SEP but which we took care to make this SEP reasonably compatible with.
 
 
-[​](#specification)
-
 Specification
 
-
-[​](#overview)
 
 Overview
 
@@ -76,8 +68,6 @@ Overview
   - Incentivize context-free sampling implementation
 
 
-[​](#protocol-changes)
-
 Protocol changes
 
 - `sampling/createMessage`
@@ -88,8 +78,6 @@ Protocol changes
     - Note: this is a requirement for Claude API implementation (parallel tool call must all be responded to in one go)
   - SamplingMessage with tool result content blocks MUST NOT contain other content types.
 
-
-[​](#schema-changes)
 
 Schema changes
 
@@ -110,15 +98,15 @@ Schema changes
 
   ``` shiki
   interface CreateMessageRequest {
-    method: “sampling/createMessage”;
-    params: {
-      ...
-      messages: SamplingMessage[]; // Note: type updated, see below
-      
+    method: “sampling/createMessage”;
+    params: {
+      ...
+      messages: SamplingMessage[]; // Note: type updated, see below
+      
       tools?: Tool[] // NEW (existing type)
 
       toolChoice?: ToolChoice // NEW
-    };
+    };
   }
 
   interface ToolChoice { // NEW
@@ -309,21 +297,15 @@ Schema changes
         - [Anthropic](https://docs.claude.com/en/api/handling-stop-reasons): `stop_reason: “end_turn” | “max_tokens” | “stop_sequence” | “tool_use” | “pause_turn” | “refusal”`
 
 
-[​](#possible-follow-ups)
-
 Possible Follow ups
 
 Theses are out of scope for this SEP, but care was taken not to preclude them, so where appropriate we give examples of how they could be implemented on top of / after this SEP.
 
 
-[​](#streaming-support)
-
 Streaming support
 
 See: [Streaming tool use results \#117](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/117) This could be important for some longer-running use cases or when latency is important, but would play better w/ streaming support in MCP tools. A possible way to implement this would be to use notifications w/ payload, and possibly create a new method `sampling/createMessageStreamed`. Both should be orthogonal w/ this SEP (but we’d need to create delta types for results, similar to streaming APIs in inference API such as Claude API and OpenAI API).
 
-
-[​](#cache-friendliness-updates)
 
 Cache friendliness updates
 
@@ -351,8 +333,6 @@ Two bits needed here:
     ```
 
 
-[​](#allow-client-to-call-the-server’s-tools-by-itself-in-an-agentic-loop)
-
 Allow client to call the server’s tools by itself in an agentic loop
 
 From the server’s perspective, that would remove the need to call tools by itself / inject tool results in follow up sampling calls. The MCP server would just allowlist its own tools in the sampling request, w/t a dedicated tool definition such as:
@@ -372,8 +352,6 @@ Pros:
 - If we propagate the mcp-session-id, can leverage keep any server-side session context / caching
 
 
-[​](#allow-client-to-call-any-other-mcp-servers’-tools-by-itself-in-an-agentic-loop)
-
 Allow client to call any other MCP servers’ tools by itself in an agentic loop
 
 Although this sounds similar to the previous one (allow only same server’s tools), this option wouldn’t need a protocol change / could be entirely done by the client as an implementation detail of their sampling support. The end user would allowlist tools from any other MCP server for use in a sampling request, without the server having to ask for anything. The client UI would e.g. display a tool selection UI as part of the sampling approval flow, auto enabling tools from same server by default. Pros:
@@ -388,8 +366,6 @@ Cons:
   - If user approves Gmail MCP tool usage / delegation by mistake, server gets access to their private emails through sampling
 
 
-[​](#allow-server-to-list-&-call-clients’-tools-client/server-→-p2p)
-
 Allow server to list & call clients’ tools (client/server → p2p)
 
 If we say the client can now expose tools that the server can call, it opens a set of possibilities:
@@ -401,8 +377,6 @@ If we say the client can now expose tools that the server can call, it opens a s
   - Symmetry at the protocol layer, but still directionality at the transport layer (e.g. for HTTP transport, direction of POST requests still matters)
 
 
-[​](#simplify-structured-outputs-use-case)
-
 Simplify structured outputs use case
 
 A major use case of sampling is to get outputs that conform to a given schema. This is possible in [OpenAI’s API](https://platform.openai.com/docs/guides/structured-outputs) for instance. The most common workaround is to give a single tool and set `tool_choice: "required"`, which guarantees the output is a ToolCall containing inputs that conform to the tool’s input schema. While this SEP proposes we enable this `"required"`-based workaround, as a follow up it would be great to provide more explicit / simpler JSON schema support, which would also allow schema types not allowed in tool inputs (which require an object w/ properties, so one has to pick at least a name for their outputs, which requires thinking / interplay w/ the prompting strategy):
@@ -411,9 +385,9 @@ Copy
 
 ```python
 interface CreateMessageRequest {
-  method: “sampling/createMessage”;
-  params: {
-    messages: SamplingMessage[];
+  method: “sampling/createMessage”;
+  params: {
+    messages: SamplingMessage[];
     ...
     format: {
       type: "json_schema",

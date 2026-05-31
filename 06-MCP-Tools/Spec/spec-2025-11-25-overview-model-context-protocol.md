@@ -21,14 +21,10 @@ The Model Context Protocol consists of several key components that work together
 All implementations **MUST** support the base protocol and lifecycle management components. Other components **MAY** be implemented based on the specific needs of the application. These protocol layers establish clear separation of concerns while enabling rich interactions between clients and servers. The modular design allows implementations to support exactly the features they need.
 
 
-[​](#messages)
-
 Messages
 
 All messages between MCP clients and servers **MUST** follow the [JSON-RPC 2.0](https://www.jsonrpc.org/specification) specification. The protocol defines these types of messages:
 
-
-[​](#requests)
 
 Requests
 
@@ -52,14 +48,10 @@ Copy
 - The request ID **MUST NOT** have been previously used by the requestor within the same session.
 
 
-[​](#responses)
-
 Responses
 
 Responses are sent in reply to requests, containing either the result or error of the operation.
 
-
-[​](#result-responses)
 
 Result Responses
 
@@ -81,8 +73,6 @@ Copy
 - Result responses **MUST** include a `result` field.
 - The `result` **MAY** follow any JSON object structure.
 
-
-[​](#error-responses)
 
 Error Responses
 
@@ -107,8 +97,6 @@ Copy
 - Error codes **MUST** be integers.
 
 
-[​](#notifications)
-
 Notifications
 
 [Notifications](/specification/2025-11-25/schema#jsonrpcnotification) are sent from the client to the server or vice versa, as a one-way message. The receiver **MUST NOT** send a response.
@@ -128,28 +116,20 @@ Copy
 - Notifications **MUST NOT** include an ID.
 
 
-[​](#auth)
-
 Auth
 
 MCP provides an [Authorization](/specification/2025-11-25/basic/authorization) framework for use with HTTP. Implementations using an HTTP-based transport **SHOULD** conform to this specification, whereas implementations using STDIO transport **SHOULD NOT** follow this specification, and instead retrieve credentials from the environment. Additionally, clients and servers **MAY** negotiate their own custom authentication and authorization strategies. For further discussions and contributions to the evolution of MCP’s auth mechanisms, join us in [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) to help shape the future of the protocol!
 
-
-[​](#schema)
 
 Schema
 
 The full specification of the protocol is defined as a [TypeScript schema](https://github.com/modelcontextprotocol/specification/blob/main/schema/2025-11-25/schema.ts). This is the source of truth for all protocol messages and structures. There is also a [JSON Schema](https://github.com/modelcontextprotocol/specification/blob/main/schema/2025-11-25/schema.json), which is automatically generated from the TypeScript source of truth, for use with various automated tooling.
 
 
-[​](#json-schema-usage)
-
 JSON Schema Usage
 
 The Model Context Protocol uses JSON Schema for validation throughout the protocol. This section clarifies how JSON Schema should be used within MCP messages.
 
-
-[​](#schema-dialect)
 
 Schema Dialect
 
@@ -161,12 +141,8 @@ MCP supports JSON Schema with the following rules:
 4.  **Recommendation**: Implementors are RECOMMENDED to use JSON Schema 2020-12.
 
 
-[​](#example-usage)
-
 Example Usage
 
-
-[​](#default-dialect-2020-12-)
 
 Default dialect (2020-12):
 
@@ -183,8 +159,6 @@ Copy
 }
 ```
 
-
-[​](#explicit-dialect-draft-07-)
 
 Explicit dialect (draft-07):
 
@@ -203,8 +177,6 @@ Copy
 ```
 
 
-[​](#implementation-requirements)
-
 Implementation Requirements
 
 - Clients and servers **MUST** support JSON Schema 2020-12 for schemas without an explicit `$schema` field
@@ -212,19 +184,13 @@ Implementation Requirements
 - Clients and servers **SHOULD** document which schema dialects they support
 
 
-[​](#schema-validation)
-
 Schema Validation
 
 - Schemas **MUST** be valid according to their declared or default dialect
 
 
-[​](#general-fields)
-
 General fields
 
-
-[​](#_meta)
 
 `_meta`
 
@@ -242,8 +208,6 @@ The `_meta` property/parameter is reserved by MCP to allow clients and servers t
 - Unless empty, MUST begin and end with an alphanumeric character (`[a-z0-9A-Z]`).
 - MAY contain hyphens (`-`), underscores (`_`), dots (`.`), and alphanumerics in between.
 
-
-[​](#icons)
 
 `icons`
 

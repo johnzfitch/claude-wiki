@@ -15,14 +15,10 @@ How to improve your skill’s description so it triggers reliably on relevant pr
 A skill only helps if it gets activated. The `description` field in your `SKILL.md` frontmatter is the primary mechanism agents use to decide whether to load a skill for a given task. An under-specified description means the skill won’t trigger when it should; an over-broad description means it triggers when it shouldn’t. This guide covers how to systematically test and improve your skill’s description for triggering accuracy.
 
 
-[​](#how-skill-triggering-works)
-
 How skill triggering works
 
 Agents use [progressive disclosure](/what-are-skills#how-skills-work) to manage context. At startup, they load only the `name` and `description` of each available skill — just enough to decide when a skill might be relevant. When a user’s task matches a description, the agent reads the full `SKILL.md` into context and follows its instructions. This means the description carries the entire burden of triggering. If the description doesn’t convey when the skill is useful, the agent won’t know to reach for it. One important nuance: agents typically only consult skills for tasks that require knowledge or capabilities beyond what they can handle alone. A simple, one-step request like “read this PDF” may not trigger a PDF skill even if the description matches perfectly, because the agent can handle it with basic tools. Tasks that involve specialized knowledge — an unfamiliar API, a domain-specific workflow, or an uncommon format — are where a well-written description can make the difference.
 
-
-[​](#writing-effective-descriptions)
 
 Writing effective descriptions
 
@@ -33,8 +29,6 @@ Before testing, it helps to know what a good description looks like. A few princ
 - **Err on the side of being pushy.** Explicitly list contexts where the skill applies, including cases where the user doesn’t name the domain directly: “even if they don’t explicitly mention ‘CSV’ or ‘analysis.’”
 - **Keep it concise.** A few sentences to a short paragraph is usually right — long enough to cover the skill’s scope, short enough that it doesn’t bloat the agent’s context across many skills. The [specification](/specification#description-field) enforces a hard limit of 1024 characters.
 
-
-[​](#designing-trigger-eval-queries)
 
 Designing trigger eval queries
 
@@ -57,8 +51,6 @@ Copy
 Aim for about 20 queries: 8-10 that should trigger and 8-10 that shouldn’t.
 
 
-[​](#should-trigger-queries)
-
 Should-trigger queries
 
 These test whether the description captures the skill’s scope. Vary them along several axes:
@@ -70,8 +62,6 @@ These test whether the description captures the skill’s scope. Vary them along
 
 The most useful should-trigger queries are ones where the skill would help but the connection isn’t obvious from the query alone. These are the cases where description wording makes the difference — if the query already asks for exactly what the skill does, any reasonable description would trigger.
 
-
-[​](#should-not-trigger-queries)
 
 Should-not-trigger queries
 
@@ -86,8 +76,6 @@ Strong negative examples:
 - `"can you write a python script that reads a csv and uploads each row to our postgres database"` — involves CSV, but the task is database ETL, not analysis.
 
 
-[​](#tips-for-realism)
-
 Tips for realism
 
 Real user prompts contain context that generic test queries lack. Include:
@@ -98,8 +86,6 @@ Real user prompts contain context that generic test queries lack. Include:
 - Casual language, abbreviations, and occasional typos
 
 
-[​](#testing-whether-a-description-triggers)
-
 Testing whether a description triggers
 
 The basic approach: run each query through your agent with the skill installed and observe whether the agent invokes it. Make sure the skill is registered and discoverable by your agent — how this works varies by client (e.g., a skills directory, a configuration file, or a CLI flag). Most agent clients provide some form of observability — execution logs, tool call histories, or verbose output — that lets you see which skills were consulted during a run. Check your client’s documentation for details. The skill triggered if the agent loaded your skill’s `SKILL.md`; it didn’t trigger if the agent proceeded without consulting it. A query “passes” if:
@@ -107,8 +93,6 @@ The basic approach: run each query through your agent with the skill installed a
 - `should_trigger` is `true` and the skill was invoked, or
 - `should_trigger` is `false` and the skill was not invoked.
 
-
-[​](#running-multiple-times)
 
 Running multiple times
 
@@ -158,8 +142,6 @@ done | jq -s '.'
 If your agent client supports it, you can stop a run early once the outcome is clear — the agent either consulted the skill or started working without it. This can significantly reduce the time and cost of running the full eval set.
 
 
-[​](#avoiding-overfitting-with-train/validation-splits)
-
 Avoiding overfitting with train/validation splits
 
 If you optimize the description against all your queries, you risk overfitting — crafting a description that works for these specific phrasings but fails on new ones. The solution is to split your query set:
@@ -169,8 +151,6 @@ If you optimize the description against all your queries, you risk overfitting �
 
 Make sure both sets contain a proportional mix of should-trigger and should-not-trigger queries — don’t accidentally put all the positives in one set. Shuffle randomly and keep the split fixed across iterations so you’re comparing apples to apples. If you’re using a script like the one [above](#running-multiple-times), you can split your queries into two files — `train_queries.json` and `validation_queries.json` — and run the script against each one separately.
 
-
-[​](#the-optimization-loop)
 
 The optimization loop
 
@@ -190,8 +170,6 @@ Five iterations is usually enough. If performance isn’t improving, the issue m
 
 The [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) Skill automates this loop end-to-end: it splits the eval set, evaluates trigger rates in parallel, proposes description improvements using Claude, and generates a live HTML report you can watch as it runs.
 
-
-[​](#applying-the-result)
 
 Applying the result
 
@@ -223,8 +201,6 @@ description: >
 
 The improved description is more specific about what the skill does (summary stats, derived columns, charts, cleaning) and broader about when it applies (CSV, TSV, Excel; even without explicit keywords).
 
-
-[​](#next-steps)
 
 Next steps
 

@@ -87,7 +87,7 @@ Prev
 
 Money Forward's engineering team had experience with AI coding tools, but encountered limitations. The challenge went deeper than IDE compatibility. When the team needed to migrate code, existing tools hit a wall because they only understood single projects within one IDE. Claude Code, by contrast, understood and navigated the full context across languages and repositories.
 
-Money Forward launched MEPAR—Money Forward Engineering Productivity AI Research—with a clear mission: ensure every engineer gets a productivity boost. 
+Money Forward launched MEPAR—Money Forward Engineering Productivity AI Research—with a clear mission: ensure every engineer gets a productivity boost. 
 
 ## Choosing Claude through rigorous evaluation
 
@@ -97,7 +97,7 @@ The team built an internal template to integrate [Claude Code](https://claude.co
 
 The trial's visibility across the company meant any employee could follow along. When trial members shared their results, more than 200 engineers from teams outside the trial requested access. The adoption became bottom-up instead of top-down—engineers pulled Claude Code into their workflows because they saw their peers getting real productivity gains.
 
-After rolling out organization-wide in July and hosting a training workshop with Anthropic in August, Claude Code became essential infrastructure. The original trial channel became the official Claude Code channel and the most active AI-related channel in the company. 
+After rolling out organization-wide in July and hosting a training workshop with Anthropic in August, Claude Code became essential infrastructure. The original trial channel became the official Claude Code channel and the most active AI-related channel in the company. 
 
 ## The outcome: Money Forward uses Claude Code for development and automation
 

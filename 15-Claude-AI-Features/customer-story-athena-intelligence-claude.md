@@ -96,7 +96,7 @@ Prev
 
 - Deploys production enterprise workflows in 4–8 weeks, compared to the 6–12 month industry standard
 - Runs 10,000+ autonomous workflows weekly across its customer base
-- Over 100k assets (email, pptx, xlsx, docx, etc.) created or edited every month across customers 
+- Over 100k assets (email, pptx, xlsx, docx, etc.) created or edited every month across customers 
 - Compresses multi-step analyst workflows from days to hours
 - Fully automated 400 monthly legal memos at a top-tier law firm, reducing 2–3 days of manual work to an overnight process
 - Onboards new departments in hours after initial deployment, using natural language configuration instead of custom model training
@@ -113,7 +113,7 @@ Athena selected Claude for its core intelligence layer based on capabilities tha
 
 "Claude reliably executes complex, detailed, multi-page instructions where other models drift or generate false information," said Geils. "This is the difference between an AI that demos well and one that operates in production." The Athena team said Claude also maintained consistent quality across workflows with dozens of decision points and hundreds of pages of context, while competitors degraded as complexity increased.
 
-For enterprise environments where data is never perfect, Claude's judgment proved equally important. Geils noted that Claude makes professional-grade decisions about conflicting data sources, incomplete information, and when to ask for clarification, and that it explains its reasoning at every step, which is critical for audit, compliance, and legal work. "Anthropic's commitment to responsible AI aligns with our regulated customers' requirements and builds confidence among compliance teams," Geils said. 
+For enterprise environments where data is never perfect, Claude's judgment proved equally important. Geils noted that Claude makes professional-grade decisions about conflicting data sources, incomplete information, and when to ask for clarification, and that it explains its reasoning at every step, which is critical for audit, compliance, and legal work. "Anthropic's commitment to responsible AI aligns with our regulated customers' requirements and builds confidence among compliance teams," Geils said. 
 
 ## The solution: From copilot to autonomous agent
 
@@ -125,13 +125,13 @@ Athena built on Claude's API without any model-specific integration code. A new 
 
 For Athena's customers, work that previously took days now takes hours. Workflows are configured using natural language system prompts, so business users can set up and adjust them without developers. At a Fortune 500 company, legal, HR, and finance teams had invested millions in competing platforms that couldn't deliver insights from fragmented legacy systems. Athena deployed a custom workflow solution, multi-department KPI dashboards, and a CEO productivity agent in four weeks, replacing a competing platform that had required 12+ months of implementation. The agent pulls from email, calendar, CRM, and financial reporting systems simultaneously to produce a daily executive briefing, all configured through natural language prompts rather than custom code.
 
-At an AmLaw 100 law firm, Claude now generates and distributes all 400 monthly compensation memos end-to-end. The previous process, which involved Excel macros, individual PDFs, and manual drops into secure SharePoint folders with a two-person verification check, took 2–3 days every month. It now runs overnight with zero manual intervention. 
+At an AmLaw 100 law firm, Claude now generates and distributes all 400 monthly compensation memos end-to-end. The previous process, which involved Excel macros, individual PDFs, and manual drops into secure SharePoint folders with a two-person verification check, took 2–3 days every month. It now runs overnight with zero manual intervention. 
 
 A global food and beverage company came to Athena, with business units being renamed, databases being merged, and legacy systems full of conflicting records. A prior AI platform had failed on the same environment because it needed clean, consistent data to function. "Last year, we would say 'you need to clean your data first,'" said Geils. "Now, the agents are better than humans at handling messy data."
 
 A leading global professional services firm went to production across multiple practice areas in eight weeks. "Athena's not a tool anymore,” said a technology lead at the firm. Across the platform, Athena's customers are now collectively running over 10,000 autonomous workflows every week.
 
-Athena’s goal is proving AI can be “powerful, trustworthy, and genuinely useful at the world's most complex organizations,” Geils said. “Every improvement in Claude directly accelerates our product roadmap and improves customer outcomes.” 
+Athena’s goal is proving AI can be “powerful, trustworthy, and genuinely useful at the world's most complex organizations,” Geils said. “Every improvement in Claude directly accelerates our product roadmap and improves customer outcomes.” 
 
 
 "We needed a model that could reason through ambiguity, follow complex instructions, and explain its reasoning within strict compliance frameworks. Claude was the best fit."

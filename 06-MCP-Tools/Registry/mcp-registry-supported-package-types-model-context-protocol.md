@@ -12,14 +12,10 @@ tags: ["mcp", "mcp-registry"]
 The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
 
-[​](#package-types)
-
 Package Types
 
 The MCP Registry supports several different package types, and each package type has its own verification method.
 
-
-[​](#npm-packages)
 
 npm Packages
 
@@ -50,8 +46,6 @@ Copy
 ```
 
 
-[​](#ownership-verification)
-
 Ownership Verification
 
 The MCP Registry verifies ownership of npm packages by checking `mcpName` in `package.json`. The `mcpName` property **MUST** match the server name from `server.json`. For example:
@@ -68,8 +62,6 @@ Copy
 }
 ```
 
-
-[​](#pypi-packages)
 
 PyPI Packages
 
@@ -100,8 +92,6 @@ Copy
 ```
 
 
-[​](#ownership-verification-2)
-
 Ownership Verification
 
 The MCP Registry verifies ownership of PyPI packages by checking for the existence of an `mcp-name: $SERVER_NAME` string in the package README (which becomes the package description on PyPI). The string may be hidden in a comment, but the `$SERVER_NAME` portion **MUST** match the server name from `server.json`. For example:
@@ -118,8 +108,6 @@ This MCP server executes SQL queries and manages database connections.
 <!-- mcp-name: io.github.username/database-query-mcp -->
 ```
 
-
-[​](#nuget-packages)
 
 NuGet Packages
 
@@ -150,8 +138,6 @@ Copy
 ```
 
 
-[​](#ownership-verification-3)
-
 Ownership Verification
 
 The MCP Registry verifies ownership of NuGet packages by checking for the existence of an `mcp-name: $SERVER_NAME` string in the package README. The string may be hidden in a comment, but the `$SERVER_NAME` portion **MUST** match the server name from `server.json`. For example:
@@ -168,8 +154,6 @@ This MCP server manages Azure DevOps work items and pipelines.
 <!-- mcp-name: io.github.username/azure-devops-mcp -->
 ```
 
-
-[​](#docker/oci-images)
 
 Docker/OCI Images
 
@@ -209,8 +193,6 @@ Copy
 The format of `identifier` is `registry/namespace/repository:tag`. For example, `docker.io/user/app:1.0.0` or `ghcr.io/user/app:1.0.0`. The tag can also be specified as a digest.
 
 
-[​](#ownership-verification-4)
-
 Ownership Verification
 
 The MCP Registry verifies ownership of Docker/OCI images by checking for an `io.modelcontextprotocol.server.name` annotation. The value of the `io.modelcontextprotocol.server.name` annotation **MUST** match the server name from `server.json`. For example:
@@ -223,8 +205,6 @@ Copy
 LABEL io.modelcontextprotocol.server.name="io.github.username/kubernetes-manager-mcp"
 ```
 
-
-[​](#mcpb-packages)
 
 MCPB Packages
 
@@ -254,8 +234,6 @@ Copy
 }
 ```
 
-
-[​](#verification)
 
 Verification
 

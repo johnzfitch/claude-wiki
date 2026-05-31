@@ -151,4 +151,4 @@ Yes, extra usage applies to Claude, Cowork, and Claude Code.
 ### Can extra usage be disabled completely?
 
 Yes, Owners and Primary Owners can choose to disable extra usage entirely, which means that members of the organization will be unable to continue working once they reach their usage limits and will need to wait for them to reset.\
-​
+

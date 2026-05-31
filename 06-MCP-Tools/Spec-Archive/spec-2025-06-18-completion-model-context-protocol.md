@@ -12,14 +12,10 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) provides a standardized way for servers to offer argument autocompletion suggestions for prompts and resource URIs. This enables rich, IDE-like experiences where users receive contextual suggestions while entering argument values.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Completion in MCP is designed to support interactive user experiences similar to IDE code completion. For example, applications may show completion suggestions in a dropdown or popup menu as users type, with the ability to filter and select from available options. However, implementations are free to expose completion through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -36,12 +32,8 @@ Copy
 ```
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#requesting-completions)
 
 Requesting Completions
 
@@ -131,8 +123,6 @@ Copy
 ```
 
 
-[​](#reference-types)
-
 Reference Types
 
 The protocol supports two types of completion references:
@@ -143,8 +133,6 @@ The protocol supports two types of completion references:
 | `ref/resource` | References a resource URI | `{"type": "ref/resource", "uri": "file:///{path}"}` |
 
 
-[​](#completion-results)
-
 Completion Results
 
 Servers return an array of completion values ranked by relevance, with:
@@ -154,17 +142,11 @@ Servers return an array of completion values ranked by relevance, with:
 - Boolean indicating if additional results exist
 
 
-[​](#message-flow)
-
 Message Flow
 
 
-[​](#data-types)
-
 Data Types
 
-
-[​](#completerequest)
 
 CompleteRequest
 
@@ -176,8 +158,6 @@ CompleteRequest
   - `arguments`: A mapping of already-resolved argument names to their values.
 
 
-[​](#completeresult)
-
 CompleteResult
 
 - `completion`: Object containing:
@@ -185,8 +165,6 @@ CompleteResult
   - `total`: Optional total matches
   - `hasMore`: Additional results flag
 
-
-[​](#error-handling)
 
 Error Handling
 
@@ -197,8 +175,6 @@ Servers **SHOULD** return standard JSON-RPC errors for common failure cases:
 - Missing required arguments: `-32602` (Invalid params)
 - Internal errors: `-32603` (Internal error)
 
-
-[​](#implementation-considerations)
 
 Implementation Considerations
 
@@ -212,8 +188,6 @@ Implementation Considerations
     - Cache completion results where appropriate
     - Handle missing or partial results gracefully
 
-
-[​](#security)
 
 Security
 

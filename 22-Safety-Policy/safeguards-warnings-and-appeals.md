@@ -37,7 +37,7 @@ If you work in cybersecurity and believe your account has been incorrectly restr
 
 As part of our safety process, we warn users if we believe their prompts are violating our [Usage Policy](https://www.anthropic.com/legal/aup). For API customers, these warnings are linked to ongoing thresholds of violative behavior across their entire API account.
 
-If you believe we’ve made a mistake in issuing you a warning, please email [\[email protected\]](/cdn-cgi/l/email-protection#7e0b0d1b0c0d1f181b0a073e1f100a160c110e171d501d1113) with the details of your situation and your account information.
+If you believe we’ve made a mistake in issuing you a warning, please email [\[email protected\]](/cdn-cgi/l/email-protection#7e0b0d1b0c0d1f181b0a073e1f100a160c110e171d501d1113) with the details of your situation and your account information.
 
 ------------------------------------------------------------------------
 

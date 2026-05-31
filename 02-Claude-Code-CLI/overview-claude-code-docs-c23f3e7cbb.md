@@ -1,8 +1,9 @@
 ---
+title: "Overview - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/overview"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:57Z"
-source_url: "https://code.claude.com/docs/en/overview"
-title: "Overview - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Overview
@@ -19,8 +20,6 @@ Claude Code is an agentic coding tool that reads your codebase, edits files, run
 
 Claude Code is an AI-powered coding assistant that helps you build features, fix bugs, and automate development tasks. It understands your entire codebase and can work across multiple files and tools to get things done.
 
-
-[​](#get-started)
 
 Get started
 
@@ -111,8 +110,6 @@ Run Claude Code in your browser with no local setup. Kick off long-running tasks
 A plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with interactive diff viewing and selection context sharing.Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains Marketplace and restart your IDE.[Get started with JetBrains →](/docs/en/jetbrains)
 
 
-[​](#what-you-can-do)
-
 What you can do
 
 Here are some of the ways you can use Claude Code:
@@ -187,8 +184,6 @@ Sessions aren’t tied to a single surface. Move work between environments as yo
 - Route tasks from team chat: mention `@Claude` in [Slack](/docs/en/slack) with a bug report and get a pull request back
 
 
-[​](#use-claude-code-everywhere)
-
 Use Claude Code everywhere
 
 Each surface connects to the same underlying Claude Code engine, so your CLAUDE.md files, settings, and MCP servers work across all of them. Beyond the [Terminal](/docs/en/quickstart), [VS Code](/docs/en/vs-code), [JetBrains](/docs/en/jetbrains), [Desktop](/docs/en/desktop), and [Web](/docs/en/claude-code-on-the-web) environments above, Claude Code integrates with CI/CD, chat, and browser workflows:
@@ -205,8 +200,6 @@ Each surface connects to the same underlying Claude Code engine, so your CLAUDE.
 | Debug live web applications                                                     | [Chrome](/docs/en/chrome)                                                                                               |
 | Build custom agents for your own workflows                                      | [Agent SDK](/docs/en/agent-sdk/overview)                                                                                |
 
-
-[​](#next-steps)
 
 Next steps
 

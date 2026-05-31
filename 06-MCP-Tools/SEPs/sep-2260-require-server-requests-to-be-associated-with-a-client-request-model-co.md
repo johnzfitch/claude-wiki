@@ -28,19 +28,13 @@ AcceptedStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP clarifies that `roots/list`, `sampling/createMessage`, and `elicitation/create` requests **MUST** be associated with an originating client-to-server request (e.g., during `tools/call`, `resources/read`, or `prompts/get` processing). Standalone server-initiated requests of these types outside notifications **MUST NOT** be implemented. Although not enforced in the current MCP Data Layer, logically these requests **MUST** be associated with a valid client-to-server JSON-RPC Request Id. The operational server-to-client **Ping** is excepted from this restriction.
 
 
-[​](#motivation)
-
 Motivation
 
-
-[​](#current-specification)
 
 Current Specification
 
@@ -55,8 +49,6 @@ For the optional GET SSE Stream [(2025-11-25/basic/transports.mdx:146-L148)](htt
 
 Although the GET stream allows “unsolicited” requests, its use is entirely optional and cannot be relied upon by MCP Server authors.
 
-
-[​](#design-intent)
 
 Design Intent
 
@@ -73,8 +65,6 @@ The design intent of MCP Server Requests is to operate reactively **nested withi
 However, the normative requirements don’t enforce this constraint.
 
 
-[​](#simplification-benefits)
-
 Simplification Benefits
 
 Making this constraint explicit:
@@ -85,12 +75,8 @@ Making this constraint explicit:
 4.  **Aligns with practice** - Based on a scan of GitHub all existing implementations already follow this pattern, except one repo owned by the SEP author with a contrived scenario.
 
 
-[​](#specification-changes)
-
 Specification Changes
 
-
-[​](#1-add-warning-blocks-to-feature-documentation)
 
 1. Add Warning Blocks to Feature Documentation
 
@@ -173,8 +159,6 @@ and `elicitation/create` do not apply to `ping`.
 ```
 
 
-[​](#2-clarify-transport-layer-constraints)
-
 2. Clarify Transport Layer Constraints
 
 **In `basic/transports.mdx`, POST-initiated SSE streams (line ~121):**
@@ -206,12 +190,8 @@ Copy
 ```
 
 
-[​](#backward-compatibility)
-
 Backward Compatibility
 
-
-[​](#impact-assessment)
 
 Impact Assessment
 
@@ -220,8 +200,6 @@ This change is expected to have **minimal to no impact** on existing implementat
 1.  **Common usage patterns are preserved** - Sampling/elicitation within tool execution, resource reading, and prompt handling remain fully supported
 2.  **No known implementations affected** - Research conducted on GitHub has shown only one implementation of this pattern. This singular implementation is owned by the SEP author.
 
-
-[​](#what’s-disallowed)
 
 What’s Disallowed
 
@@ -238,8 +216,6 @@ async def background_task():
         await session.create_message(...)  # NOT ALLOWED
 ```
 
-
-[​](#what-remains-supported)
 
 What Remains Supported
 
@@ -259,12 +235,8 @@ async def analyze_data(data: str, ctx: Context) -> str:
 ```
 
 
-[​](#implementation-guidance)
-
 Implementation Guidance
 
-
-[​](#for-server-implementers)
 
 For Server Implementers
 
@@ -283,8 +255,6 @@ For Server Implementers
 Alternative designs will need to be implemented for the “Changes Required” case. Implementors performing unsolicited server-to-client requests (typically URL Elicitation) immediately following initialization are encouraged to lazily perform these requests within the scope of a client-to-server request that requires that information from the client.
 
 
-[​](#timeout-considerations)
-
 Timeout Considerations
 
 When an MCP Server initiates a “nested” request inside a client request, the duration of the parent request extends to include the user’s response time. Implementers **MUST** ensure that:
@@ -293,14 +263,10 @@ When an MCP Server initiates a “nested” request inside a client request, the
 2.  Short timeouts enforced by infrastructure (e.g. Load Balancers) may result in connection termination before the user responds. For Streamable HTTP, transport-level SSE keepalive mechanisms **SHOULD** be used to keep connections alive and reset timers; `ping` requests **MAY** additionally be used for protocol-level responsiveness checks.
 
 
-[​](#for-client-implementers)
-
 For Client Implementers
 
 **No changes required** - Clients should already handle sampling/elicitation requests in the context of their own outbound requests. Potential to simplify implementations if out-of-band is currently supported. Clients recieving server-to-client requests with no associated outbound request **SHOULD** respond with a `-32602` (Invalid Params) error.
 
-
-[​](#for-transport-implementers)
 
 For Transport Implementers
 
@@ -311,40 +277,28 @@ Future transport implementations can rely on the guarantee that:
 - Request correlation and lifecycle management is simplified
 
 
-[​](#timeline)
-
 Timeline
 
 (This SEP intends to serve as a public notice of the change prior to future protocol versions that will not be compatible with this usage)
 
 
-[​](#alternatives-considered)
-
 Alternatives Considered
 
-
-[​](#1-soft-deprecation)
 
 1. Soft Deprecation
 
 Use **SHOULD NOT** language to discourage but not prohibit the pattern. **Rejected because:** The behavior was never intentionally supported, and leaving it ambiguous prevents transport simplification.
 
 
-[​](#2-keep-current-ambiguity)
-
 2. Keep Current Ambiguity
 
 Leave the existing **SHOULD** language unchanged. **Rejected because:** This blocks future transport implementations and leaves implementers uncertain about whether the pattern is supported.
 
 
-[​](#3-create-a-capability-flag)
-
 3. Create a Capability Flag
 
 Add a `sampling.standalone` or similar capability for servers that want this behavior. **Rejected because:** This adds complexity for a use case with no known demand, and contradicts the “nested” design principle.
 
-
-[​](#references)
 
 References
 

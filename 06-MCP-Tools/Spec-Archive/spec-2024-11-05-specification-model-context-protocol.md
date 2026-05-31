@@ -12,8 +12,6 @@ tags: ["cli", "mcp", "mcp-spec"]
 [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. Whether you’re building an AI-powered IDE, enhancing a chat interface, or creating custom AI workflows, MCP provides a standardized way to connect LLMs with the context they need. This specification defines the authoritative protocol requirements, based on the TypeScript schema in [schema.ts](https://github.com/modelcontextprotocol/specification/blob/main/schema/2024-11-05/schema.ts). For implementation guides and examples, visit [modelcontextprotocol.io](https://modelcontextprotocol.io). The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [BCP 14](https://datatracker.ietf.org/doc/html/bcp14) \[[RFC2119](https://datatracker.ietf.org/doc/html/rfc2119)\] \[[RFC8174](https://datatracker.ietf.org/doc/html/rfc8174)\] when, and only when, they appear in all capitals, as shown here.
 
 
-[​](#overview)
-
 Overview
 
 MCP provides a standardized way for applications to:
@@ -31,12 +29,8 @@ The protocol uses [JSON-RPC](https://www.jsonrpc.org/) 2.0 messages to establish
 MCP takes some inspiration from the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/), which standardizes how to add support for programming languages across a whole ecosystem of development tools. In a similar way, MCP standardizes how to integrate additional context and tools into the ecosystem of AI applications.
 
 
-[​](#key-details)
-
 Key Details
 
-
-[​](#base-protocol)
 
 Base Protocol
 
@@ -44,8 +38,6 @@ Base Protocol
 - Stateful connections
 - Server and client capability negotiation
 
-
-[​](#features)
 
 Features
 
@@ -60,8 +52,6 @@ Clients may offer the following feature to servers:
 - **Sampling**: Server-initiated agentic behaviors and recursive LLM interactions
 
 
-[​](#additional-utilities)
-
 Additional Utilities
 
 - Configuration
@@ -71,14 +61,10 @@ Additional Utilities
 - Logging
 
 
-[​](#security-and-trust-&-safety)
-
 Security and Trust & Safety
 
 The Model Context Protocol enables powerful capabilities through arbitrary data access and code execution paths. With this power comes important security and trust considerations that all implementors must carefully address.
 
-
-[​](#key-principles)
 
 Key Principles
 
@@ -103,8 +89,6 @@ Key Principles
     - The protocol intentionally limits server visibility into prompts
 
 
-[​](#implementation-guidelines)
-
 Implementation Guidelines
 
 While MCP itself cannot enforce these security principles at the protocol level, implementors **SHOULD**:
@@ -115,8 +99,6 @@ While MCP itself cannot enforce these security principles at the protocol level,
 4.  Follow security best practices in their integrations
 5.  Consider privacy implications in their feature designs
 
-
-[​](#learn-more)
 
 Learn More
 

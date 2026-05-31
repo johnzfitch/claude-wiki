@@ -15,8 +15,6 @@ Learn how to implement secure authorization for MCP servers using OAuth 2.1 to p
 Authorization in the Model Context Protocol (MCP) secures access to sensitive resources and operations exposed by MCP servers. If your MCP server handles user data or administrative actions, authorization ensures only permitted users can access its endpoints. MCP uses standardized authorization flows to build trust between MCP clients and MCP servers. Its design doesn’t focus on one specific authorization or identity system, but rather follows the conventions outlined for [OAuth 2.1](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-1-13). For detailed information, see the [Authorization specification](/specification/latest/basic/authorization).
 
 
-[​](#when-should-you-use-authorization)
-
 When Should You Use Authorization?
 
 While authorization for MCP servers is **optional**, it is strongly recommended when:
@@ -29,8 +27,6 @@ While authorization for MCP servers is **optional**, it is strongly recommended 
 
 **Authorization for Local MCP Servers**For MCP servers using the [STDIO transport](/specification/latest/basic/transports#stdio), you can use environment-based credentials or credentials provided by third-party libraries embedded directly in the MCP server instead. Because a STDIO-built MCP server runs locally, it has access to a range of flexible options when it comes to acquiring user credentials that may or may not rely on in-browser authentication and authorization flows.OAuth flows, in turn, are designed for HTTP-based transports where the MCP server is remotely-hosted and the client uses OAuth to establish that a user is authorized to access said remote server.
 
-
-[​](#the-authorization-flow-step-by-step)
 
 The Authorization Flow: Step by Step
 
@@ -150,14 +146,10 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIs...
 The MCP server will need to validate the token and process the request if the token is valid and has the required permissions.
 
 
-[​](#implementation-example)
-
 Implementation Example
 
 To get started with a practical implementation, we will use a [Keycloak](https://www.keycloak.org/) authorization server hosted in a Docker container. Keycloak is an open-source authorization server that can be easily deployed locally for testing and experimentation. Make sure that you download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/). We will need it to deploy Keycloak on our development machine.
 
-
-[​](#keycloak-setup)
 
 Keycloak Setup
 
@@ -241,8 +233,6 @@ Copy
 
 **Embedded Audience**Notice the `aud` claim embedded in the token - it’s currently set to be the URI of the test MCP server and it’s inferred from the scope that we’ve previously configured. This will be important in our implementation to validate.
 
-
-[​](#mcp-server-setup)
 
 MCP Server Setup
 
@@ -976,8 +966,6 @@ app.Run(serverUrl);
 For more details, see the [C# SDK documentation](https://github.com/modelcontextprotocol/csharp-sdk).
 
 
-[​](#testing-the-mcp-server)
-
 Testing the MCP Server
 
 For testing purposes, we will be using [Visual Studio Code](https://code.visualstudio.com), but any client that supports MCP and the new authorization specification will fit. Press Cmd + Shift + P and select **MCP: Add server…**. Select **HTTP** and enter `http://localhost:3000`. Give the server a unique name to be used inside Visual Studio Code. In `mcp.json` you should now see an entry like this:
@@ -998,8 +986,6 @@ After consenting, you will see the tools listed right above the server entry in 
 You will be able to invoke individual tools with the help of the `#` sign in the chat view.
 
 
-[​](#common-pitfalls-and-how-to-avoid-them)
-
 Common Pitfalls and How to Avoid Them
 
 For comprehensive security guidance, including attack vectors, mitigation strategies, and implementation best practices, make sure to read through [Security Best Practices](/specification/draft/basic/security_best_practices). A few key issues are called out below.
@@ -1019,8 +1005,6 @@ For comprehensive security guidance, including attack vectors, mitigation strate
 - **Error detail leakage**. Return generic messages to clients, but log detailed reasons with correlation IDs internally to aid troubleshooting without exposing internals.
 - **Session identifier hardening**. Treat `Mcp-Session-Id` as untrusted input; never tie authorization to it. Regenerate on auth changes and validate lifecycle server‑side.
 
-
-[​](#related-standards-and-documentation)
 
 Related Standards and Documentation
 

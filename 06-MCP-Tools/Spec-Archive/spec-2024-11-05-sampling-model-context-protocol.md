@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models via clients. This flow allows clients to maintain control over model access, selection, and permissions while enabling servers to leverage AI capabilities—with no server API keys necessary. Servers can request text or image-based interactions and optionally include context from MCP servers in their prompts.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Sampling in MCP allows servers to implement agentic behaviors, by enabling LLM calls to occur *nested* inside other MCP server features. Implementations are free to expose sampling through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
@@ -24,8 +22,6 @@ For trust & safety and security, there **SHOULD** always be a human in the loop 
 - Allow users to view and edit prompts before sending
 - Present generated responses for review before delivery
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -42,12 +38,8 @@ Copy
 ```
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#creating-messages)
 
 Creating Messages
 
@@ -106,24 +98,16 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
 
-[​](#data-types)
-
 Data Types
 
-
-[​](#messages)
 
 Messages
 
 Sampling messages can contain:
 
-
-[​](#text-content)
 
 Text Content
 
@@ -136,8 +120,6 @@ Copy
 }
 ```
 
-
-[​](#image-content)
 
 Image Content
 
@@ -152,14 +134,10 @@ Copy
 ```
 
 
-[​](#model-preferences)
-
 Model Preferences
 
 Model selection in MCP requires careful abstraction since servers and clients may use different AI providers with distinct model offerings. A server cannot simply request a specific model by name since the client may not have access to that exact model or may prefer to use a different provider’s equivalent model. To solve this, MCP implements a preference system that combines abstract capability priorities with optional model hints:
 
-
-[​](#capability-priorities)
 
 Capability Priorities
 
@@ -169,8 +147,6 @@ Servers express their needs through three normalized priority values (0-1):
 - `speedPriority`: How important is low latency? Higher values prefer faster models.
 - `intelligencePriority`: How important are advanced capabilities? Higher values prefer more capable models.
 
-
-[​](#model-hints)
 
 Model Hints
 
@@ -200,8 +176,6 @@ Copy
 The client processes these preferences to select an appropriate model from its available options. For instance, if the client doesn’t have access to Claude models but has Gemini, it might map the sonnet hint to `gemini-1.5-pro` based on similar capabilities.
 
 
-[​](#error-handling)
-
 Error Handling
 
 Clients **SHOULD** return errors for common failure cases: Example error:
@@ -219,8 +193,6 @@ Copy
 }
 ```
 
-
-[​](#security-considerations)
 
 Security Considerations
 

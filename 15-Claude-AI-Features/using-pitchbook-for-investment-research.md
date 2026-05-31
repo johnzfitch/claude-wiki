@@ -508,9 +508,9 @@ Discover unexpected connections between companies, investors, and professionals 
 
 ## Contact
 
-If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#91e2e4e1e1fee3e5d1e1f8e5f2f9f3fefefabff2fefc) for help.
+If you are having trouble completing the PitchBook Premium integration, you can contact [\[email protected\]](/cdn-cgi/l/email-protection#91e2e4e1e1fee3e5d1e1f8e5f2f9f3fefefabff2fefc) for help.
 
-‍
+
 
 ## Related tutorials
 

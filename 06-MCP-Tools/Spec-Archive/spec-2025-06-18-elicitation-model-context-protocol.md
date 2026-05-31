@@ -14,8 +14,6 @@ Elicitation is newly introduced in this version of the MCP specification and its
 The Model Context Protocol (MCP) provides a standardized way for servers to request additional information from users through the client during interactions. This flow allows clients to maintain control over user interactions and data sharing while enabling servers to gather necessary information dynamically. Servers request structured data from users with JSON schemas to validate responses.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Elicitation in MCP allows servers to implement interactive workflows by enabling user input requests to occur *nested* inside other MCP server features. Implementations are free to expose elicitation through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
@@ -30,8 +28,6 @@ Applications **SHOULD**:
 - Allow users to review and modify their responses before sending
 - Respect user privacy and provide clear decline and cancel options
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -48,19 +44,13 @@ Copy
 ```
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#creating-elicitation-requests)
 
 Creating Elicitation Requests
 
 To request information from a user, servers send an `elicitation/create` request:
 
-
-[​](#simple-text-request)
 
 Simple Text Request
 
@@ -105,8 +95,6 @@ Copy
 }
 ```
 
-
-[​](#structured-data-request)
 
 Structured Data Request
 
@@ -193,12 +181,8 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
-
-[​](#request-schema)
 
 Request Schema
 
@@ -225,8 +209,6 @@ Copy
 }
 ```
 
-
-[​](#supported-schema-types)
 
 Supported Schema Types
 
@@ -292,8 +274,6 @@ Clients can use this schema to:
 Note that complex nested structures, arrays of objects, and other advanced JSON Schema features are intentionally not supported to simplify client implementation.
 
 
-[​](#response-actions)
-
 Response Actions
 
 Elicitation responses use a three-action model to clearly distinguish between different user actions:
@@ -332,8 +312,6 @@ Servers should handle each state appropriately:
 - **Decline**: Handle explicit decline (e.g., offer alternatives)
 - **Cancel**: Handle dismissal (e.g., prompt again later)
 
-
-[​](#security-considerations)
 
 Security Considerations
 

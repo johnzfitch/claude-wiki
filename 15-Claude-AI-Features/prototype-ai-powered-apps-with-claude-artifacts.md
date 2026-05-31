@@ -384,7 +384,7 @@ In this guide, you’ll learn how to rapidly build, test, and share AI-powered a
 
 ## Configuring a Claude API inside Claude artifacts
 
-Using a limited text-based completion inside [Claude.ai](http://claude.ai/) artifacts is quite simple.  
+Using a limited text-based completion inside [Claude.ai](http://claude.ai/) artifacts is quite simple.  
 
 1.  You can add AI capabilities to your artifact by simply **asking** Claude to use Claude, with additional instructions as needed.
 2.  Optionally, test that it’s working as expected with the sample prompt below.

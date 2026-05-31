@@ -563,7 +563,7 @@ Business relationship mapping through Kensho provides insights into operational 
 
 - Remember that business relationship data comes from disclosed sources and may not capture all partnerships
 
-‍
+
 
 ## Related tutorials
 

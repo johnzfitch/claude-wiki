@@ -27,7 +27,7 @@ Claude listens carefully, follows instructions precisely,  and thinks through 
 
 ### Deliver personalized  responses in any language, across any channel
 
-### Cut resolution times and support costs while increasing customer satisfaction‍
+### Cut resolution times and support costs while increasing customer satisfaction
 
 ## Get to production faster with  the Claude Developer Platform
 

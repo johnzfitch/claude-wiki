@@ -89,7 +89,7 @@ bunq needed more than a chatbot. They needed an intelligent system that could re
 
 The transformation began with Finn's launch in 2023 as a conversational assistant to help users search their finances and navigate the app. But bunq's vision went far beyond basic assistance. They built a multi-agent system that could securely act on behalf of users if they asked it to —investigating issues, processing documents, and executing complex banking operations.
 
-In 2024, bunq became the first bank to launch real-time speech-to-speech AI translation, a breakthrough that exemplified their approach to making banking accessible. Users could now speak to support agents in their native language, with Finn translating in real-time. Combined with app translation into 38  languages, this broke down barriers that had long excluded millions from modern banking services.
+In 2024, bunq became the first bank to launch real-time speech-to-speech AI translation, a breakthrough that exemplified their approach to making banking accessible. Users could now speak to support agents in their native language, with Finn translating in real-time. Combined with app translation into 38  languages, this broke down barriers that had long excluded millions from modern banking services.
 
 The implementation was remarkably swift. Thanks to bunq's in-house LLM router—which manages different models, providers, and configurations—adding Claude took just days. "Our internal benchmarks and LLM router made it easy to test and integrate quickly," the team notes. "The Anthropic team was always on hand to support us, from optimizing prompts to scaling up capacity."
 
@@ -101,7 +101,7 @@ The impact extends beyond user support. Engineering productivity improved instan
 
 Most importantly, bunq has redefined what banking can be. Account opening that once took days with paperwork and branch visits now takes 5 minutes. "We hear from new users all the time that they're amazed at how quick and seamless the experience is," says the ML Engineering Lead. "For them, it's not just about speed, it's about freedom. Instead of waiting days or visiting a branch, they're up and running in minutes."
 
-Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The team envisions users simply asking Finn to "set aside 20% of my income for taxes" or "move €50 from my main account to my vacation savings" and having it done instantly. 
+Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The team envisions users simply asking Finn to "set aside 20% of my income for taxes" or "move €50 from my main account to my vacation savings" and having it done instantly. 
 
 "We're just scratching the surface of what AI can do for banking," the team explains. "Anthropic's focus on trust, safety, and reasoning aligns perfectly with bunq's mission to make life easy without ever compromising security."
 

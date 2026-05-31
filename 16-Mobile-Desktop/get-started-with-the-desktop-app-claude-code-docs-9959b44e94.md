@@ -1,8 +1,9 @@
 ---
+title: "Get started with the desktop app - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/desktop-quickstart"
 category: "16-Mobile-Desktop"
 fetched_at: "2026-05-19T21:22:34Z"
-source_url: "https://code.claude.com/docs/en/desktop-quickstart"
-title: "Get started with the desktop app - Claude Code Docs"
+tags: ["claude-code", "desktop"]
 ---
 
 # Get started with the desktop app
@@ -40,8 +41,6 @@ This page walks through installing the app and starting your first session. If y
 Chat and Cowork are covered in the [Claude Desktop support articles](https://support.claude.com/en/collections/16163169-claude-desktop). This page focuses on the **Code** tab.
 
 
-[​](#install)
-
 Install
 
 1
@@ -60,8 +59,6 @@ Click the **Code** tab at the top center. If clicking Code prompts you to upgrad
 
 The desktop app includes Claude Code. You don’t need to install Node.js or the CLI separately. To use `claude` from the terminal, install the CLI separately. See [Get started with the CLI](/docs/en/quickstart).
 
-
-[​](#start-your-first-session)
 
 Start your first session
 
@@ -115,21 +112,15 @@ By default, the Code tab starts in [Ask permissions mode](/docs/en/desktop#choos
 If you reject a change, Claude will ask how you’d like to proceed differently. Your files aren’t modified until you accept.
 
 
-[​](#now-what)
-
 Now what?
 
 You’ve made your first edit. For the full reference on everything Desktop can do, see [Use Claude Code Desktop](/docs/en/desktop). Here are some things to try next. **Interrupt and steer.** You can interrupt Claude at any point. If it’s going down the wrong path, click the stop button or type your correction and press **Enter**. Claude stops what it’s doing and adjusts based on your input. You don’t have to wait for it to finish or start over. **Give Claude more context.** Type `@filename` in the prompt box to pull a specific file into the conversation, attach images and PDFs using the attachment button, or drag and drop files directly into the prompt. The more context Claude has, the better the results. See [Add files and context](/docs/en/desktop#add-files-and-context-to-prompts). **Use skills for repeatable tasks.** Type `/` or click **+** → **Slash commands** to browse [built-in commands](/docs/en/commands), [custom skills](/docs/en/skills), and plugin skills. Skills are reusable prompts you can invoke whenever you need them, like code review checklists or deployment steps. **Review changes before committing.** After Claude edits files, a `+12 -1` indicator appears. Click it to open the [diff view](/docs/en/desktop#review-changes-with-diff-view), review modifications file by file, and comment on specific lines. Claude reads your comments and revises. Click **Review code** to have Claude evaluate the diffs itself and leave inline suggestions. **Adjust how much control you have.** Your [permission mode](/docs/en/desktop#choose-a-permission-mode) controls the balance. Ask permissions (default) requires approval before every edit. Auto accept edits auto-accepts file edits for faster iteration. Plan mode lets Claude map out an approach without touching any files, which is useful before a large refactor. **Add plugins for more capabilities.** Click the **+** button next to the prompt box and select **Plugins** to browse and install [plugins](/docs/en/desktop#install-plugins) that add skills, agents, MCP servers, and more. **Arrange your workspace.** Drag the chat, diff, terminal, file, and preview panes into whatever layout you want. Open the terminal with **Ctrl+\`** to run commands alongside your session, or click a file path to open it in the file pane. See [Arrange your workspace](/docs/en/desktop#arrange-your-workspace). **Preview your app.** Click the **Preview** dropdown to run your dev server directly in the desktop. Claude can view the running app, test endpoints, inspect logs, and iterate on what it sees. See [Preview your app](/docs/en/desktop#preview-your-app). **Track your pull request.** After opening a PR, Claude Code monitors CI check results and can automatically fix failures or merge the PR once all checks pass. See [Monitor pull request status](/docs/en/desktop#monitor-pull-request-status). **Put Claude on a schedule.** Set up [scheduled tasks](/docs/en/desktop-scheduled-tasks) to run Claude automatically on a recurring basis: a daily code review every morning, a weekly dependency audit, or a briefing that pulls from your connected tools. **Scale up when you’re ready.** Open [parallel sessions](/docs/en/desktop#work-in-parallel-with-sessions) from the sidebar to work on multiple tasks at once, each in its own Git worktree, and open the [tasks pane](/docs/en/desktop#watch-background-tasks) to watch the subagents and background commands a session has running. Open a [side chat](/docs/en/desktop#ask-a-side-question-without-derailing-the-session) to ask a question without derailing the main thread. Send [long-running work to the cloud](/docs/en/desktop#run-long-running-tasks-remotely) so it continues even if you close the app, or [continue a session on the web or in your IDE](/docs/en/desktop#continue-in-another-surface) if a task takes longer than expected. [Connect external tools](/docs/en/desktop#extend-claude-code) like GitHub, Slack, and Linear to bring your workflow together.
 
 
-[​](#coming-from-the-cli)
-
 Coming from the CLI?
 
 Desktop runs the same engine as the CLI with a graphical interface. You can run both simultaneously on the same project, and they share configuration (CLAUDE.md files, MCP servers, hooks, skills, and settings). For a full comparison of features, flag equivalents, and what’s not available in Desktop, see [CLI comparison](/docs/en/desktop#coming-from-the-cli).
 
-
-[​](#what’s-next)
 
 What’s next
 

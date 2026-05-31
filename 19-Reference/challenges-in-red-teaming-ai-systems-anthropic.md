@@ -89,7 +89,7 @@ Having explored these diverse red teaming methods, each with their own strengths
 
 ## How do we go from qualitative red teaming to quantitative evaluations?
 
-In addition to illuminating potential risks, the red teaming practices above can serve as a precursor to building automated, quantitative evaluation methods. This is a meta-challenge for the red teaming field: how do you turn the results of red teaming into something which can create compounding value for the organization whose systems are being red teamed? Ideally, red teaming is part of an iterative loop that includes assessing an AI model (both manually and using automated techniques) for various risks, implementing corresponding mitigations, and testing the efficacy of those guardrails. 
+In addition to illuminating potential risks, the red teaming practices above can serve as a precursor to building automated, quantitative evaluation methods. This is a meta-challenge for the red teaming field: how do you turn the results of red teaming into something which can create compounding value for the organization whose systems are being red teamed? Ideally, red teaming is part of an iterative loop that includes assessing an AI model (both manually and using automated techniques) for various risks, implementing corresponding mitigations, and testing the efficacy of those guardrails. 
 
 At the beginning of the process, subject matter experts develop a well-articulated description of a potential threat model and then probe an AI model in an attempt to elicit said threats in an ad hoc way. As red teamers develop a deeper sense of the problem space, they begin to standardize their red teaming practices, modifying inputs to elicit harmful behavior more effectively.
 

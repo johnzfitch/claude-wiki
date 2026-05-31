@@ -16,8 +16,6 @@ Claude Code supports multiple authentication methods depending on your setup. In
 
 ## 
 
-[​](#log-in-to-claude-code)
-
 Log in to Claude Code
 
 After [installing Claude Code](/docs/en/setup#install-claude-code), run `claude` in your terminal. On first launch, Claude Code opens a browser window for you to log in. If the browser doesn’t open automatically, press `c` to copy the login URL to your clipboard, then paste it into your browser. You can authenticate with any of these account types:
@@ -31,8 +29,6 @@ To log out and re-authenticate, type `/logout` at the Claude Code prompt. If you
 
 ## 
 
-[​](#set-up-team-authentication)
-
 Set up team authentication
 
 For teams and organizations, you can configure Claude Code access in one of these ways:
@@ -44,8 +40,6 @@ For teams and organizations, you can configure Claude Code access in one of thes
 - [Microsoft Foundry](/docs/en/microsoft-foundry)
 
 ### 
-
-[​](#claude-for-teams-or-enterprise)
 
 Claude for Teams or Enterprise
 
@@ -79,8 +73,6 @@ Install and log in
 Team members install Claude Code and log in with their Claude.ai accounts.
 
 ### 
-
-[​](#claude-console-authentication)
 
 Claude Console authentication
 
@@ -131,8 +123,6 @@ Each invited user needs to:
 
 ### 
 
-[​](#cloud-provider-authentication)
-
 Cloud provider authentication
 
 For teams using Amazon Bedrock, Google Vertex AI, or Microsoft Foundry:
@@ -162,8 +152,6 @@ Install Claude Code
 Users can [install Claude Code](/docs/en/setup#install-claude-code).
 
 ## 
-
-[​](#credential-management)
 
 Credential management
 

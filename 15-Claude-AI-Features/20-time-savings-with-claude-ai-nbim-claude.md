@@ -86,7 +86,7 @@ NBIM's challenge was compounded by the complex environmental, social, and govern
 
 ## Choosing Claude for investment operations
 
-NBIM's goal was to create an environment where any user could prototype and deploy AI solutions without IT bottlenecks. In search of the right balance, NBIM evaluated multiple LLMs. “Claude consistently performed best on analysis and reasoning tasks, and in maintaining context over long analytical sessions involving multiple documents,” says Stian Kirkeberg, NBIM’s Head of ML and AI. 
+NBIM's goal was to create an environment where any user could prototype and deploy AI solutions without IT bottlenecks. In search of the right balance, NBIM evaluated multiple LLMs. “Claude consistently performed best on analysis and reasoning tasks, and in maintaining context over long analytical sessions involving multiple documents,” says Stian Kirkeberg, NBIM’s Head of ML and AI. 
 
 NBIM built human-in-the-loop evaluations to test model capabilities in finance-specific domains. Claude Sonnet 4.5 with extended thinking scored highest. It excelled in complex instruments requiring deep analysis, had superior risk assessment, and provided strategic recommendations with investment-grade documentation quality. Claude showed particular strength in risk analysis and commodities arbitrage—the nuanced financial decisionmaking that NBIM's portfolio managers handle daily.
 
@@ -96,7 +96,7 @@ Anthropic's focus on responsible AI development matched NBIM's values and transp
 
 ## Establishing AI literacy across the organization
 
-NBIM aimed to establish AI literacy across the entire organization, from basic competency for all staff to advanced capabilities for technical teams. CEO Nicolai Tangen set the tone with a clear message around AI adoption: employees must "get on the train or be left at the station." 
+NBIM aimed to establish AI literacy across the entire organization, from basic competency for all staff to advanced capabilities for technical teams. CEO Nicolai Tangen set the tone with a clear message around AI adoption: employees must "get on the train or be left at the station." 
 
 The deployment moved quickly from a two-week pilot that expanded to 600+ active users within two months. NBIM developed training paths for different roles and launched an AI Ambassador Network, where 50 employees received specialized training and met regularly to share use cases and best practices. Initial skepticism around AI quickly faded as employees gained prompting skills and saw results across departments.
 

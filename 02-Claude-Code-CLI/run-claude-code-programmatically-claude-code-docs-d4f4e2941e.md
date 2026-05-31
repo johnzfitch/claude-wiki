@@ -1,8 +1,9 @@
 ---
+title: "Run Claude Code programmatically - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/headless"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:41Z"
-source_url: "https://code.claude.com/docs/en/headless"
-title: "Run Claude Code programmatically - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Run Claude Code programmatically
@@ -28,8 +29,6 @@ claude -p "Find and fix the bug in auth.py" --allowedTools "Read,Edit,Bash"
 This page covers using the Agent SDK via the CLI (`claude -p`). For the Python and TypeScript SDK packages with structured outputs, tool approval callbacks, and native message objects, see the [full Agent SDK documentation](/docs/en/agent-sdk/overview).
 
 
-[​](#basic-usage)
-
 Basic usage
 
 Add the `-p` (or `--print`) flag to any `claude` command to run it non-interactively. All [CLI options](/docs/en/cli-reference) work with `-p`, including:
@@ -44,8 +43,6 @@ This example asks Claude a question about your codebase and prints the response:
 claude -p "What does the auth module do?"
 ```
 
-
-[​](#start-faster-with-bare-mode)
 
 Start faster with bare mode
 
@@ -70,14 +67,10 @@ Bare mode skips OAuth and keychain reads. Anthropic authentication must come fro
 `--bare` is the recommended mode for scripted and SDK calls, and will become the default for `-p` in a future release.
 
 
-[​](#examples)
-
 Examples
 
 These examples highlight common CLI patterns. For CI and other scripted calls, add [`--bare`](#start-faster-with-bare-mode) so they don’t pick up whatever happens to be configured locally.
 
-
-[​](#pipe-data-through-claude)
 
 Pipe data through Claude
 
@@ -92,8 +85,6 @@ With `--output-format json`, the response payload includes `total_cost_usd` and 
 As of Claude Code v2.1.128, piped stdin is capped at 10MB. If you exceed the cap, Claude Code exits with a clear error and a non-zero status. To work with larger inputs, write the content to a file and reference the file path in your prompt instead of piping it.
 
 
-[​](#add-claude-to-a-build-script)
-
 Add Claude to a build script
 
 You can wrap a non-interactive call in a script to use Claude as a project-specific linter or reviewer. This `package.json` script pipes the diff against `main` into Claude and asks it to report typos. Piping the diff means Claude doesn’t need Bash permission to read it, and the escaped double quotes keep the script portable to Windows:
@@ -106,8 +97,6 @@ You can wrap a non-interactive call in a script to use Claude as a project-speci
 }
 ```
 
-
-[​](#get-structured-output)
 
 Get structured output
 
@@ -144,8 +133,6 @@ claude -p "Extract function names from auth.py" \
   | jq '.structured_output'
 ```
 
-
-[​](#stream-responses)
 
 Stream responses
 
@@ -198,8 +185,6 @@ When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](/docs/en/env-vars) is set, Claude Code 
 For programmatic streaming with callbacks and message objects, see [Stream responses in real-time](/docs/en/agent-sdk/streaming-output) in the Agent SDK documentation.
 
 
-[​](#auto-approve-tools)
-
 Auto-approve tools
 
 Use `--allowedTools` to let Claude use certain tools without prompting. This example runs a test suite and fixes failures, allowing Claude to execute Bash commands and read/edit files without asking for permission:
@@ -216,8 +201,6 @@ claude -p "Apply the lint fixes" --permission-mode acceptEdits
 ```
 
 
-[​](#create-a-commit)
-
 Create a commit
 
 This example reviews staged changes and creates a commit with an appropriate message:
@@ -232,8 +215,6 @@ The `--allowedTools` flag uses [permission rule syntax](/docs/en/settings#permis
 User-invoked [skills](/docs/en/skills) like `/commit` and [built-in commands](/docs/en/commands) are only available in interactive mode. In `-p` mode, describe the task you want to accomplish instead.
 
 
-[​](#customize-the-system-prompt)
-
 Customize the system prompt
 
 Use `--append-system-prompt` to add instructions while keeping Claude Code’s default behavior. This example pipes a PR diff to Claude and instructs it to review for security vulnerabilities:
@@ -246,8 +227,6 @@ gh pr diff "$1" | claude -p \
 
 See [system prompt flags](/docs/en/cli-reference#system-prompt-flags) for more options including `--system-prompt` to fully replace the default prompt.
 
-
-[​](#continue-conversations)
 
 Continue conversations
 
@@ -269,8 +248,6 @@ session_id=$(claude -p "Start a review" --output-format json | jq -r '.session_i
 claude -p "Continue that review" --resume "$session_id"
 ```
 
-
-[​](#next-steps)
 
 Next steps
 

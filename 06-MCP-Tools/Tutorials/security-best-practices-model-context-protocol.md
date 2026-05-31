@@ -12,40 +12,28 @@ tags: ["mcp", "mcp-tutorials", "security"]
 Security considerations, attack vectors, and best practices for MCP implementations
 
 
-[​](#introduction)
-
 Introduction
 
-
-[​](#purpose-and-scope)
 
 Purpose and Scope
 
 This document provides security considerations for the Model Context Protocol (MCP), complementing the [MCP Authorization](/specification/latest/basic/authorization) specification. This document identifies security risks, attack vectors, and best practices specific to MCP implementations. The primary audience for this document includes developers implementing MCP authorization flows, MCP server operators, and security professionals evaluating MCP-based systems. This document should be read alongside the MCP Authorization specification and [OAuth 2.0 security best practices](https://datatracker.ietf.org/doc/html/rfc9700).
 
 
-[​](#attacks-and-mitigations)
-
 Attacks and Mitigations
 
 This section gives a detailed description of attacks on MCP implementations, along with potential countermeasures.
 
-
-[​](#confused-deputy-problem)
 
 Confused Deputy Problem
 
 Attackers can exploit MCP proxy servers that connect to third-party APIs, creating “[confused deputy](https://en.wikipedia.org/wiki/Confused_deputy_problem)” vulnerabilities. This attack allows malicious clients to obtain authorization codes without proper user consent by exploiting the combination of static client IDs, dynamic client registration, and consent cookies.
 
 
-[​](#terminology)
-
 Terminology
 
 **MCP Proxy Server** : An MCP server that connects MCP clients to third-party APIs, offering MCP features while delegating operations and acting as a single OAuth client to the third-party API server. **Third-Party Authorization Server** : Authorization server that protects the third-party API. It may lack dynamic client registration support, requiring the MCP proxy to use a static client ID for all requests. **Third-Party API** : The protected resource server that provides the actual API functionality. Access to this API requires tokens issued by the third-party authorization server. **Static Client ID** : A fixed OAuth 2.0 client identifier used by the MCP proxy server when communicating with the third-party authorization server. This Client ID refers to the MCP server acting as a client to the Third-Party API. It is the same value for all MCP server to Third-Party API interactions regardless of which MCP client initiated the request.
 
-
-[​](#vulnerable-conditions)
 
 Vulnerable Conditions
 
@@ -57,16 +45,12 @@ This attack becomes possible when all of the following conditions are present:
 - MCP proxy server does not implement proper per-client consent before forwarding to third-party authorization
 
 
-[​](#architecture-and-attack-flows)
-
 Architecture and Attack Flows
 
 ##### Normal OAuth proxy usage (preserves user consent)
 
 ##### Malicious OAuth proxy usage (skips user consent)
 
-
-[​](#attack-description)
 
 Attack Description
 
@@ -81,8 +65,6 @@ When an MCP proxy server uses a static client ID to authenticate with a third-pa
 7.  The attacker exchanges the stolen authorization code for access tokens for the MCP server without the user’s explicit approval
 8.  The attacker now has access to the third-party API as the compromised user
 
-
-[​](#mitigation)
 
 Mitigation
 
@@ -133,14 +115,10 @@ The following diagram shows how to properly implement per-client consent that ru
 The consent cookie or session containing the `state` value **MUST NOT** be set until **after** the user has approved the consent screen at the MCP server’s authorization endpoint. Setting this cookie before consent approval renders the consent screen ineffective, as an attacker could bypass it by crafting a malicious authorization request.
 
 
-[​](#token-passthrough)
-
 Token Passthrough
 
 “Token passthrough” is an anti-pattern where an MCP server accepts tokens from an MCP client without validating that the tokens were properly issued *to the MCP server* and passes them through to the downstream API.
 
-
-[​](#risks)
 
 Risks
 
@@ -160,21 +138,15 @@ Token passthrough is explicitly forbidden in the [authorization specification](/
   - Even if an MCP Server starts as a “pure proxy” today, it might need to add security controls later. Starting with proper token audience separation makes it easier to evolve the security model.
 
 
-[​](#mitigation-2)
-
 Mitigation
 
 MCP servers **MUST NOT** accept any tokens that were not explicitly issued for the MCP server.
 
 
-[​](#server-side-request-forgery-ssrf)
-
 Server-Side Request Forgery (SSRF)
 
 Server-Side Request Forgery (SSRF) is an attack where an attacker can induce an MCP client to make HTTP requests to unintended destinations, potentially accessing internal network resources, cloud metadata endpoints, or other protected services.
 
-
-[​](#attack-description-2)
 
 Attack Description
 
@@ -193,8 +165,6 @@ A malicious MCP server can populate these fields with URLs pointing to internal 
 - **Redirect chains**: Normal-looking URLs that redirect to internal resources
 
 
-[​](#risks-2)
-
 Risks
 
 - **Credential exfiltration**: Cloud metadata endpoints often expose IAM credentials, API keys, and other secrets
@@ -203,8 +173,6 @@ Risks
 - **Firewall bypass**: The MCP client acts as a proxy, bypassing network perimeter controls
 - **Data exfiltration**: Internal service responses may be reflected back to attackers through error messages or OAuth flows
 
-
-[​](#mitigation-3)
 
 Mitigation
 
@@ -242,8 +210,6 @@ Avoid implementing IP validation manually. Attackers exploit encoding tricks (oc
 - Defense in depth: combine DNS checks with other mitigations
 
 
-[​](#resources-and-tools)
-
 Resources and Tools
 
 The following resources can help developers implement SSRF protections in MCP clients. **Reference Documentation**
@@ -252,24 +218,16 @@ The following resources can help developers implement SSRF protections in MCP cl
 - [OWASP Top 10 A10:2021 - SSRF](https://owasp.org/Top10/2021/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/): SSRF in the context of the most critical web application security risks
 
 
-[​](#session-hijacking)
-
 Session Hijacking
 
 Session hijacking is an attack vector where a client is provided a session ID by the server, and an unauthorized party is able to obtain and use that same session ID to impersonate the original client and perform unauthorized actions on their behalf.
 
 
-[​](#session-hijack-prompt-injection)
-
 Session Hijack Prompt Injection
 
 
-[​](#session-hijack-impersonation)
-
 Session Hijack Impersonation
 
-
-[​](#attack-description-3)
 
 Attack Description
 
@@ -292,21 +250,15 @@ When you have multiple stateful HTTP servers that handle MCP requests, the follo
 4.  MCP server does not check for additional authorization and treats the attacker as a legitimate user, allowing unauthorized access or actions.
 
 
-[​](#mitigation-4)
-
 Mitigation
 
 To prevent session hijacking and event injection attacks, the following mitigations should be implemented: MCP servers that implement authorization **MUST** verify all inbound requests. MCP Servers **MUST NOT** use sessions for authentication. MCP servers **MUST** use secure, non-deterministic session IDs. Generated session IDs (e.g., UUIDs) **SHOULD** use secure random number generators. Avoid predictable or sequential session identifiers that could be guessed by an attacker. Rotating or expiring session IDs can also reduce the risk. MCP servers **SHOULD** bind session IDs to user-specific information. When storing or transmitting session-related data (e.g., in a queue), combine the session ID with information unique to the authorized user, such as their internal user ID. Use a key format like `<user_id>:<session_id>`. This ensures that even if an attacker guesses a session ID, they cannot impersonate another user as the user ID is derived from the user token and not provided by the client. MCP servers can optionally leverage additional unique identifiers.
 
 
-[​](#local-mcp-server-compromise)
-
 Local MCP Server Compromise
 
 Local MCP servers are MCP Servers running on a user’s local machine, either by the user downloading and executing a server, authoring a server themselves, or installing through a client’s configuration flows. These servers may have direct access to the user’s system and may be accessible to other processes running on the user’s machine, making them attractive targets for attacks.
 
-
-[​](#attack-description-4)
 
 Attack Description
 
@@ -329,8 +281,6 @@ sudo rm -rf /important/system/files && echo "MCP server installed!"
 ```
 
 
-[​](#risks-3)
-
 Risks
 
 Local MCP servers with inadequate restrictions or from untrusted sources introduce several critical security risks:
@@ -341,8 +291,6 @@ Local MCP servers with inadequate restrictions or from untrusted sources introdu
 - **Data exfiltration**. Attackers can access legitimate local MCP servers via compromised JavaScript.
 - **Data loss**. Attackers or bugs in legitimate servers could lead to irrecoverable data loss on the host machine.
 
-
-[​](#mitigation-5)
 
 Mitigation
 
@@ -372,21 +320,15 @@ MCP servers intending for their servers to be run locally **SHOULD** implement m
   - Use unix domain sockets or other Interprocess Communication (IPC) mechanisms with restricted access
 
 
-[​](#scope-minimization)
-
 Scope Minimization
 
 Poor scope design increases token compromise impact, elevates user friction, and obscures audit trails.
 
 
-[​](#attack-description-5)
-
 Attack Description
 
 An attacker obtains (via log leakage, memory scraping, or local interception) an access token carrying broad scopes (`files:*`, `db:*`, `admin:*`) that were granted up front because the MCP server exposed every scope in `scopes_supported` and the client requested them all. The token enables lateral data access, privilege chaining, and difficult revocation without re-consenting the entire surface.
 
-
-[​](#risks-4)
 
 Risks
 
@@ -397,8 +339,6 @@ Risks
 - Consent abandonment: users decline dialogs listing excessive scopes
 - Scope inflation blindness: lack of metrics makes over-broad requests normalised
 
-
-[​](#mitigation-6)
 
 Mitigation
 
@@ -418,8 +358,6 @@ Client guidance:
 - Begin with only baseline scopes (or those specified by initial `WWW-Authenticate`)
 - Cache recent failures to avoid repeated elevation loops for denied scopes
 
-
-[​](#common-mistakes)
 
 Common Mistakes
 

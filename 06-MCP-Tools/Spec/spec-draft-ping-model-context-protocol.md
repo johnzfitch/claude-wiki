@@ -12,16 +12,12 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the connection is alive.
 
 
-[​](#overview)
-
 Overview
 
 The ping functionality is implemented through a simple request/response pattern. Either the client or server can initiate a ping by sending a `ping` request.
 
 `ping` is an MCP-level liveness check and **MAY** be sent by either party at any time on an established session/connection.In Streamable HTTP, implementations **SHOULD** prefer transport-level SSE keepalive mechanisms for idle-connection maintenance; `ping` remains available for protocol-level responsiveness checks.Request-association requirements for `roots/list`, `sampling/createMessage`, and `elicitation/create` do not apply to `ping`.
 
-
-[​](#message-format)
 
 Message Format
 
@@ -37,8 +33,6 @@ Copy
 }
 ```
 
-
-[​](#behavior-requirements)
 
 Behavior Requirements
 
@@ -60,12 +54,8 @@ Copy
     - Attempt reconnection procedures
 
 
-[​](#usage-patterns)
-
 Usage Patterns
 
-
-[​](#implementation-considerations)
 
 Implementation Considerations
 
@@ -74,8 +64,6 @@ Implementation Considerations
 - Timeouts **SHOULD** be appropriate for the network environment
 - Excessive pinging **SHOULD** be avoided to reduce network overhead
 
-
-[​](#error-handling)
 
 Error Handling
 

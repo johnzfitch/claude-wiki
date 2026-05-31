@@ -88,11 +88,11 @@ Prev
 
 ## Better food. Less time. Less stress.
 
-**‍**Cooking is one of those daily tasks that's easy to underestimate. Recipes are hard to follow with busy hands, timing multiple dishes takes real coordination, and the consequences of getting distracted range from a burned dinner to a safety hazard like leaving a burner on.
+****Cooking is one of those daily tasks that's easy to underestimate. Recipes are hard to follow with busy hands, timing multiple dishes takes real coordination, and the consequences of getting distracted range from a burned dinner to a safety hazard like leaving a burner on.
 
 Nicole Maffeo and Eliot Horowitz founded Gambit Robotics in January of 2025 to tackle exactly this. Maffeo's background spans finance, computer vision, and ML infrastructure at Google AI research, and Horowitz is the founder and former CTO of MongoDB (\$MDB) and the CEO of Viam. The co-founders picked the kitchen because it cuts across demographics, cultures, and income levels — making it both a good environment to train models and a problem worth solving for nearly everyone.
 
-Long term, they believe the future of the home is specialized, distributed robotics—including robotic arms capable of end-to-end cooking. But while full [automation is the long-term vision](https://www.kickstarter.com/projects/gambitcooking/gambit-robotics-never-burn-dinner-again), they believe there is massive near-term opportunity in augmentation and assistance. "People primarily want assistance to make cooking easier, quicker, and to get better results, not end-to-end automation," said  Maffeo, Co-founder of Gambit Robotics. For Gambit, success means better food in less time.
+Long term, they believe the future of the home is specialized, distributed robotics—including robotic arms capable of end-to-end cooking. But while full [automation is the long-term vision](https://www.kickstarter.com/projects/gambitcooking/gambit-robotics-never-burn-dinner-again), they believe there is massive near-term opportunity in augmentation and assistance. "People primarily want assistance to make cooking easier, quicker, and to get better results, not end-to-end automation," said  Maffeo, Co-founder of Gambit Robotics. For Gambit, success means better food in less time.
 
 ## Why Gambit chose Claude
 

@@ -12,12 +12,8 @@ tags: ["mcp", "mcp-registry"]
 The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
 
-[​](#general)
-
 General
 
-
-[​](#what-is-the-difference-between-“official-mcp-registry”-“mcp-registry”-“mcp-registry”-“mcp-registry-api”-etc)
 
 What is the difference between “Official MCP Registry”, “MCP Registry”, “MCP registry”, “MCP Registry API”, etc?
 
@@ -27,21 +23,15 @@ What is the difference between “Official MCP Registry”, “MCP Registry”, 
 - “Official MCP Registry” (or “The MCP Registry”) — The service that lives at `https://registry.modelcontextprotocol.io`.
 
 
-[​](#can-i-delete/unpublish-my-server)
-
 Can I delete/unpublish my server?
 
 Currently, no. At the time of writing, there is [open discussion](https://github.com/modelcontextprotocol/registry/issues/104).
 
 
-[​](#how-do-i-update-my-server-metadata)
-
 How do I update my server metadata?
 
 Submit a new `server.json` with a unique version string. Once published, version metadata is immutable (similar to npm).
 
-
-[​](#can-i-add-custom-metadata-when-publishing)
 
 Can I add custom metadata when publishing?
 
@@ -50,20 +40,14 @@ Yes, custom metadata under `_meta.io.modelcontextprotocol.registry/publisher-pro
 There is a 4KB size limit (4096 bytes of JSON). Publishing will fail if this limit is exceeded.
 
 
-[​](#reporting-issues)
-
 Reporting Issues
 
-
-[​](#what-if-i-need-to-report-a-spam-or-malicious-server)
 
 What if I need to report a spam or malicious server?
 
 1.  Report it as abuse to the underlying package registry (e.g. NPM, PyPi, DockerHub, etc.); and
 2.  Raise a GitHub issue on the registry repo with a title beginning `Abuse report: `
 
-
-[​](#what-if-i-need-to-report-a-security-vulnerability-in-the-registry-itself)
 
 What if I need to report a security vulnerability in the registry itself?
 

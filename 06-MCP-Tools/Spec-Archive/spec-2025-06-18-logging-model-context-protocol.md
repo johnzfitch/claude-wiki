@@ -12,14 +12,10 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients can control logging verbosity by setting minimum log levels, with servers sending notifications containing severity levels, optional logger names, and arbitrary JSON-serializable data.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Implementations are free to expose logging through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -35,8 +31,6 @@ Copy
 }
 ```
 
-
-[​](#log-levels)
 
 Log Levels
 
@@ -54,12 +48,8 @@ The protocol follows the standard syslog severity levels specified in [RFC 5424]
 | emergency | System is unusable               | Complete system failure    |
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#setting-log-level)
 
 Setting Log Level
 
@@ -78,8 +68,6 @@ Copy
 }
 ```
 
-
-[​](#log-message-notifications)
 
 Log Message Notifications
 
@@ -106,12 +94,8 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
-
-[​](#error-handling)
 
 Error Handling
 
@@ -120,8 +104,6 @@ Servers **SHOULD** return standard JSON-RPC errors for common failure cases:
 - Invalid log level: `-32602` (Invalid params)
 - Configuration errors: `-32603` (Internal error)
 
-
-[​](#implementation-considerations)
 
 Implementation Considerations
 
@@ -136,8 +118,6 @@ Implementation Considerations
     - Display severity visually
     - Persist log messages
 
-
-[​](#security)
 
 Security
 

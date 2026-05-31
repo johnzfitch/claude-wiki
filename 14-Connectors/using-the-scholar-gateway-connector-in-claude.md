@@ -422,8 +422,8 @@ Learn about [finding and connecting tools](../15-Claude-AI-Features/browsing-and
 
 **For Claude Code Users**
 
-1.  Command: `/plugin marketplace add anthropics/life-sciences`‍
-2.  Command: `/plugin install wiley-scholar-gateway@life-sciences`‍
+1.  Command: `/plugin marketplace add anthropics/life-sciences`
+2.  Command: `/plugin install wiley-scholar-gateway@life-sciences`
 3.  Restart Claude Code
 4.  Verify that the server is connected with `/mcp`
 
@@ -431,7 +431,7 @@ Technical details of the Scholar Gateway integration can be found in [Wiley’s 
 
 ## Common use cases
 
-- Enhanced literature review when planning experiments and research plans, to efficiently identify, summarize, and evaluate relevant literature as individual articles or in aggregation, enabling new ways of doing research and delivering reliable and cited insights in seconds.​
+- Enhanced literature review when planning experiments and research plans, to efficiently identify, summarize, and evaluate relevant literature as individual articles or in aggregation, enabling new ways of doing research and delivering reliable and cited insights in seconds.
 - Information on latest research in a certain field of medicine or pharmaceuticals.
 
 ## Related tutorials

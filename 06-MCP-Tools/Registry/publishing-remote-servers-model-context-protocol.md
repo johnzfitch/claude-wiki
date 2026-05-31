@@ -36,8 +36,6 @@ Copy
 A remote server **MUST** be publicly accessible at its specified URL.
 
 
-[​](#transport-type)
-
 Transport Type
 
 Remote servers can use the Streamable HTTP transport (recommended) or the SSE transport. Remote servers can also support both transports simultaneously at different URLs. Specify the transport by setting the `type` property of the `remotes` entry to either `"streamable-http"` or `"sse"`:
@@ -66,8 +64,6 @@ Copy
 }
 ```
 
-
-[​](#url-template-variables)
 
 URL Template Variables
 
@@ -134,8 +130,6 @@ Copy
 ```
 
 
-[​](#http-headers)
-
 HTTP Headers
 
 MCP clients can be instructed to send specific HTTP headers by adding the `headers` property to the `remotes` entry:
@@ -168,8 +162,6 @@ Copy
 }
 ```
 
-
-[​](#supporting-remote-and-non-remote-installation)
 
 Supporting Remote and Non-remote Installation
 

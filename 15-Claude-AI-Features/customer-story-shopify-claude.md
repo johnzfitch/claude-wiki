@@ -86,7 +86,7 @@ They built Sidekick, an AI-enabled commerce assistant, to make it easier for mer
 
 ## A look at Claude on Vertex AI for conversational commerce
 
-Claude's advanced reasoning capabilities paired with Google Cloud's infrastructure helps ensure that merchants have access to expert-level guidance around the clock. Vertex AI, part of Google Cloud, hosts multiple Anthropic models, which helps ensure Sidekick remains available 24/7. The combination delivers sophisticated multi-step analysis while maintaining the sub-second response times essential for natural conversation. "The reasoning capabilities are great and the trade-off between latency and quality is the perfect sweet spot for us," said Andrew McNamara, Director of Applied AI at Shopify. 
+Claude's advanced reasoning capabilities paired with Google Cloud's infrastructure helps ensure that merchants have access to expert-level guidance around the clock. Vertex AI, part of Google Cloud, hosts multiple Anthropic models, which helps ensure Sidekick remains available 24/7. The combination delivers sophisticated multi-step analysis while maintaining the sub-second response times essential for natural conversation. "The reasoning capabilities are great and the trade-off between latency and quality is the perfect sweet spot for us," said Andrew McNamara, Director of Applied AI at Shopify. 
 
 ## The merchant support challenge
 
@@ -116,19 +116,19 @@ When a merchant asks a question requiring multiple pieces of information, Sideki
 
 ## The outcome
 
-Sidekick has fundamentally changed how merchants run and scale their businesses. Complex data analysis that once required technical training now happens through natural conversation. New entrepreneurs can achieve their first sales in days rather than weeks.
+Sidekick has fundamentally changed how merchants run and scale their businesses. Complex data analysis that once required technical training now happens through natural conversation. New entrepreneurs can achieve their first sales in days rather than weeks.
 
 "Resiliency and uptime are so critical," McNamara emphasized. "If we're delaying a merchant's first sale because Sidekick isn't there for them, we take that very seriously." The strong combination of Claude's capabilities and Vertex AI's infrastructure is critical toward ensuring Sidekick maintains the availability merchants depend on while continuously improving through rapid model updates.
 
 For millions of merchants worldwide, Sidekick represents more than technological progress—it's the trusted partner they never had, available any time to help them build their business.
 
-## How Shopify uses Claude Code reflexively 
+## How Shopify uses Claude Code reflexively 
 
-While Sidekick transforms the merchant experience, Claude Code is a key driver shaping  how Shopify employees build and deploy internal tools. The entire organization has [embraced reflexive AI usage](https://x.com/tobi/status/1909251946235437514?lang=en), with engineers and non-engineers alike creating sophisticated applications in minutes rather than days.
+While Sidekick transforms the merchant experience, Claude Code is a key driver shaping  how Shopify employees build and deploy internal tools. The entire organization has [embraced reflexive AI usage](https://x.com/tobi/status/1909251946235437514?lang=en), with engineers and non-engineers alike creating sophisticated applications in minutes rather than days.
 
 "Claude Code has transformed how we build internal tools at Shopify," McNamara explained. "It's pretty heavily used across the company because it integrates directly with our platform for standing up tools. The speed is just crazy—I can build things so much faster now." This integration has helped democratize tool creation across the company—employees who aren't front-end developers can now build professional interfaces and workflows that previously required specialized expertise.
 
-As McNamara adds, observed, "Everyone is way more efficient just from using these models—not just in terms of coding but also content creation, email writing, and countless other use cases." 
+As McNamara adds, observed, "Everyone is way more efficient just from using these models—not just in terms of coding but also content creation, email writing, and countless other use cases." 
 
 "Claude Code has transformed how we build internal tools at Shopify."
 

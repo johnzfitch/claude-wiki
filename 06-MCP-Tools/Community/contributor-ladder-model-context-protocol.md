@@ -15,8 +15,6 @@ Roles, responsibilities, and advancement criteria for MCP contributors, from fir
 The Model Context Protocol contributor ladder defines roles, responsibilities, and advancement criteria for the project. It shows community members how to grow their involvement from a first contribution to project leadership. This document implements [SEP-2148](/community/seps/2148-contributor-ladder). For Working Group and Interest Group governance, see [SEP-2149](/community/seps/2149-working-group-charter-template).
 
 
-[​](#guiding-principles)
-
 Guiding Principles
 
 - **Earned Trust.** Advancement follows from demonstrated contributions, good judgment, and sustained engagement. Tenure alone is not enough.
@@ -24,8 +22,6 @@ Guiding Principles
 - **Transparency.** Criteria for advancement are explicit and applied consistently.
 - **Alignment With MCP Goals.** Contributors must show commitment to MCP beyond any single employer’s interests.
 
-
-[​](#roles-at-a-glance)
 
 Roles at a Glance
 
@@ -43,8 +39,6 @@ Timelines are minimums, not guarantees. They protect the project from rapid priv
 ------------------------------------------------------------------------
 
 
-[​](#contributor)
-
 Contributor
 
 Anyone who has contributed to MCP in any form is a Contributor. This includes opening issues, submitting pull requests, participating in working group discussions, improving documentation, or helping other community members. **There are no formal requirements.** We welcome all contributions that follow our contributing guidelines. **Getting started:**
@@ -56,8 +50,6 @@ Anyone who has contributed to MCP in any form is a Contributor. This includes op
 
 ------------------------------------------------------------------------
 
-
-[​](#member)
 
 Member
 
@@ -94,8 +86,6 @@ Members are established contributors with a record of ongoing commitment to MCP.
 
 ------------------------------------------------------------------------
 
-
-[​](#maintainer)
 
 Maintainer
 
@@ -136,8 +126,6 @@ Maintainers are trusted stewards who take operational responsibility for specifi
 
 ------------------------------------------------------------------------
 
-
-[​](#core-maintainer)
 
 Core Maintainer
 
@@ -181,8 +169,6 @@ When evaluating candidates, Core Maintainers should consider whether the current
 ------------------------------------------------------------------------
 
 
-[​](#lead-maintainer)
-
 Lead Maintainer
 
 Lead Maintainers hold ultimate authority over MCP’s direction and governance. This is a lifetime appointment reserved for project founders. There is no advancement path to this role. It is only assumed through succession (see [Succession](#succession)). **Responsibilities:**
@@ -199,16 +185,12 @@ Lead Maintainers hold ultimate authority over MCP’s direction and governance. 
 - Appoints successor
 
 
-[​](#succession)
-
 Succession
 
 If a Lead Maintainer leaves the role for any reason, succession begins upon their written notice. If they cannot give notice, the remaining Lead Maintainers or Core Maintainers may determine that the Lead Maintainer is unable to continue serving. If one or more Lead Maintainers remain, they appoint a successor. If more than one remains, they decide by majority vote. The remaining Lead Maintainers continue to govern until a successor is appointed. If no Lead Maintainers remain, the Core Maintainers appoint a successor by majority vote within 30 days. Until a new Lead Maintainer is appointed, the project operates by two-thirds vote of Core Maintainers.
 
 ------------------------------------------------------------------------
 
-
-[​](#community-moderator)
 
 Community Moderator
 
@@ -245,8 +227,6 @@ Community Moderators help keep the MCP community healthy, safe, and welcoming. T
 ------------------------------------------------------------------------
 
 
-[​](#working-group-and-interest-group-leadership)
-
 Working Group and Interest Group Leadership
 
 Working Group (WG) Leads and Interest Group (IG) Facilitators are a form of community leadership that does not require Maintainer status. WG and IG leadership centers on facilitation and coordination rather than merge authority. The full governance rules for WGs and IGs are defined in [SEP-2149: MCP Group Governance and Charter Template](/community/seps/2149-working-group-charter-template). These include participation tiers, decision-making process, meeting requirements, and lifecycle. **Requirements:**
@@ -268,12 +248,8 @@ Working Group (WG) Leads and Interest Group (IG) Facilitators are a form of comm
 ------------------------------------------------------------------------
 
 
-[​](#advancement-process)
-
 Advancement Process
 
-
-[​](#self-nomination-vs-recognition)
 
 Self-Nomination vs. Recognition
 
@@ -284,8 +260,6 @@ Contributors may either:
 
 Both paths are equally valid. Self-nomination is encouraged. It shows initiative and self-awareness of one’s contribution scope.
 
-
-[​](#process-steps)
 
 Process Steps
 
@@ -306,12 +280,8 @@ Nominees who self-nominate must still secure the required sponsorship. Sponsors 
 ------------------------------------------------------------------------
 
 
-[​](#decision-making-and-escalation)
-
 Decision-Making and Escalation
 
-
-[​](#delegation-as-default)
 
 Delegation as Default
 
@@ -323,8 +293,6 @@ MCP operates on a principle of delegation. Decisions should be made at the lowes
 
 When in doubt, make the decision at your level and document it. Escalate only when blocked, when the decision has project-wide implications, or when process explicitly requires it. The detailed escalation procedure for Working Group and Interest Group disputes is defined in [SEP-2149 §1.5](/community/seps/2149-working-group-charter-template). It includes the designation of a Core Maintainer without shared organizational affiliation to resolve the issue.
 
-
-[​](#escalation-matrix)
 
 Escalation Matrix
 
@@ -348,16 +316,12 @@ Escalation Matrix
 ------------------------------------------------------------------------
 
 
-[​](#contribution-pathways)
-
 Contribution Pathways
 
 MCP values diverse contributions. All of these pathways can lead to advancement. **Code Contributions.** SDK development (TypeScript, Python, etc.), testing infrastructure, tooling and developer experience. **Specification Work.** Drafting or refining spec text, [SEP](/community/sep-guidelines) authorship or co-authorship, protocol design participation, compatibility analysis. **Documentation.** User guides and tutorials, API documentation, architecture documentation, keeping content current. **Community Building.** Onboarding new contributors, working group facilitation, community support (Discord, GitHub discussions), event organization or representation. **Quality and Security.** Bug triage and reproduction, security review and analysis, test coverage improvement, release validation.
 
 ------------------------------------------------------------------------
 
-
-[​](#stepping-down-and-emeritus-status)
 
 Stepping Down and Emeritus Status
 
@@ -377,8 +341,6 @@ Contributors may step down from roles for any reason. This is normal and healthy
 
 ------------------------------------------------------------------------
 
-
-[​](#recognition-and-visibility)
 
 Recognition and Visibility
 

@@ -112,11 +112,11 @@ Mintlify evaluated multiple AI providers, measuring resolution rate for their AI
 
 "Everyone on our team is writing far more code using Claude than they are manually," explains Nick Khami, an engineering manager at Mintlify. "Our engineers find Claude the best for programming—everyone prefers it relative to all other models we have tried."
 
-## Implementing Claude 
+## Implementing Claude 
 
 The AI assistant went from prototype to production in two weeks. Most of that time was spent on prompt engineering and designing the context pipeline—the Claude API integration itself was straightforward. Building the documentation maintenance agent took 3-4 weeks, instead of the typical 7-8 weeks, reflecting the complexity of analyzing codebases and handling git operations rather than any friction with Claude. Claude Code required no implementation—engineers installed it and started using it the same day, with minimal learning curve since it integrates directly into existing development workflows.
 
-## Mintlify deploys Claude from customer docs to internal dev 
+## Mintlify deploys Claude from customer docs to internal dev 
 
 **AI-powered documentation assistant:** Every Mintlify documentation site now includes an assistant built on Opus 4.5 that answers natural language questions using documentation, code examples, and live API schemas. It handles complex, multi-step queries—breaking down compound questions like "How do I set up authentication with SSO and then customize the user profile page?", pulling from multiple documentation sections, and delivering coherent step-by-step answers. The assistant uses tool use to fetch live API schemas, ensuring responses reflect the current state of each customer's product.
 
@@ -124,7 +124,7 @@ The AI assistant went from prototype to production in two weeks. Most of that ti
 
 **Internal engineering with Claude Code:** The team uses Claude Code for daily development—implementing features, refactoring legacy code, debugging complex issues, and writing tests. The tool has proven particularly valuable for framework migrations and helping engineers understand unfamiliar parts of the codebase. A recent authentication system refactor, estimated at 3-4 days of work, was completed in 6 hours.
 
-## The outcome 
+## The outcome 
 
 Developer satisfaction scores at one enterprise customer increased from 3.8 to 4.6 out of 5 after implementing the assistant—developers particularly appreciated getting instant answers during off-hours. For customers with thousands of API developers, the AI assistant translates to hundreds of support hours saved monthly.
 

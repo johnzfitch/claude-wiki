@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems, such as querying databases, calling APIs, or performing computations. Each tool is uniquely identified by a name and includes metadata describing its schema.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Tools in MCP are designed to be **model-controlled**, meaning that the language model can discover and invoke tools automatically based on its contextual understanding and the user’s prompts. However, implementations are free to expose tools through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
@@ -24,8 +22,6 @@ For trust & safety and security, there **SHOULD** always be a human in the loop 
 - Insert clear visual indicators when tools are invoked
 - Present confirmation prompts to the user for operations, to ensure a human is in the loop
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -46,12 +42,8 @@ Copy
 `listChanged` indicates whether the server will emit notifications when the list of available tools changes.
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#listing-tools)
 
 Listing Tools
 
@@ -112,8 +104,6 @@ Copy
 ```
 
 
-[​](#calling-tools)
-
 Calling Tools
 
 To invoke a tool, clients send a `tools/call` request: **Request:**
@@ -155,8 +145,6 @@ Copy
 ```
 
 
-[​](#list-changed-notification)
-
 List Changed Notification
 
 When the list of available tools changes, servers that declared the `listChanged` capability **SHOULD** send a notification:
@@ -171,17 +159,11 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
 
-[​](#data-types)
-
 Data Types
 
-
-[​](#tool)
 
 Tool
 
@@ -208,8 +190,6 @@ A tool definition includes:
 For trust & safety and security, clients **MUST** consider tool annotations to be untrusted unless they come from trusted servers.
 
 
-[​](#tool-names)
-
 Tool Names
 
 - Tool names **SHOULD** be between 1 and 128 characters in length (inclusive).
@@ -223,16 +203,12 @@ Tool Names
   - admin.tools.list
 
 
-[​](#tool-result)
-
 Tool Result
 
 Tool results may contain [**structured**](#structured-content) or **unstructured** content. **Unstructured** content is returned in the `content` field of a result, and can contain multiple content items of different types:
 
 All content types (text, image, audio, resource links, and embedded resources) support optional [annotations](/specification/2025-11-25/server/resources#annotations) that provide metadata about audience, priority, and modification times. This is the same annotation format used by resources and prompts.
 
-
-[​](#text-content)
 
 Text Content
 
@@ -245,8 +221,6 @@ Copy
 }
 ```
 
-
-[​](#image-content)
 
 Image Content
 
@@ -265,8 +239,6 @@ Copy
 ```
 
 
-[​](#audio-content)
-
 Audio Content
 
 Copy
@@ -279,8 +251,6 @@ Copy
 }
 ```
 
-
-[​](#resource-links)
 
 Resource Links
 
@@ -302,8 +272,6 @@ Resource links support the same [Resource annotations](/specification/2025-11-25
 
 Resource links returned by tools are not guaranteed to appear in the results of a `resources/list` request.
 
-
-[​](#embedded-resources)
 
 Embedded Resources
 
@@ -330,14 +298,10 @@ Copy
 Embedded resources support the same [Resource annotations](/specification/2025-11-25/server/resources#annotations) as regular resources to help clients understand how to use them.
 
 
-[​](#structured-content)
-
 Structured Content
 
 **Structured** content is returned as a JSON object in the `structuredContent` field of a result. For backwards compatibility, a tool that returns structured content SHOULD also return the serialized JSON in a TextContent block.
 
-
-[​](#output-schema)
 
 Output Schema
 
@@ -418,12 +382,8 @@ Providing an output schema helps clients and LLMs understand and properly handle
 - Supporting better documentation and developer experience
 
 
-[​](#schema-examples)
-
 Schema Examples
 
-
-[​](#tool-with-default-2020-12-schema)
 
 Tool with default 2020-12 schema:
 
@@ -444,8 +404,6 @@ Copy
 }
 ```
 
-
-[​](#tool-with-explicit-draft-07-schema)
 
 Tool with explicit draft-07 schema:
 
@@ -468,8 +426,6 @@ Copy
 ```
 
 
-[​](#tool-with-no-parameters)
-
 Tool with no parameters:
 
 Copy
@@ -485,8 +441,6 @@ Copy
 }
 ```
 
-
-[​](#error-handling)
 
 Error Handling
 
@@ -536,8 +490,6 @@ Copy
 }
 ```
 
-
-[​](#security-considerations)
 
 Security Considerations
 

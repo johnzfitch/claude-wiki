@@ -21,13 +21,13 @@ Claude can help with use cases including summarization, search, creative and col
 
 \
 
-We’re offering [two versions of Claude](https://www-cdn.anthropic.com/b0d46f8c8e2f4cca2833c17cb68435035c0bb5a9/apr-pricing-tokens_2023-05-10-213025_tnty.pdf) today: Claude and Claude Instant. Claude is a state-of-the-art high-performance model, while Claude Instant is a lighter, less expensive, and much faster option. We plan to introduce even more updates in the coming weeks. As we develop these systems, we'll continually work to make them more helpful, honest, and harmless as we learn more from our [safety research](/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist) and our deployments.
+We’re offering [two versions of Claude](https://www-cdn.anthropic.com/b0d46f8c8e2f4cca2833c17cb68435035c0bb5a9/apr-pricing-tokens_2023-05-10-213025_tnty.pdf) today: Claude and Claude Instant. Claude is a state-of-the-art high-performance model, while Claude Instant is a lighter, less expensive, and much faster option. We plan to introduce even more updates in the coming weeks. As we develop these systems, we'll continually work to make them more helpful, honest, and harmless as we learn more from our [safety research](/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist) and our deployments.
 
 ## Partner Testimonials
 
 We are excited to showcase how our partners are using Claude today. We chose these companies and products with care. We’re excited to support businesses and nonprofits that are empowering people with information and making them more productive in their professional and personal lives.
 
-One of our key partners, [Quora](https://www.quora.com/), has offered Claude to users through [Poe](http://www.poe.com), their AI Chat app. “Users describe Claude’s answers as detailed and easily understood, and they like that exchanges feel like natural conversation,” says Autumn Besselman, Head of People and Comms from Quora.
+One of our key partners, [Quora](https://www.quora.com/), has offered Claude to users through [Poe](http://www.poe.com), their AI Chat app. “Users describe Claude’s answers as detailed and easily understood, and they like that exchanges feel like natural conversation,” says Autumn Besselman, Head of People and Comms from Quora.
 
 “Claude feels more conversational than ChatGPT,” says a happy Poe user, while another says, “I find Claude to be more interactive and creative in its storytelling.”
 

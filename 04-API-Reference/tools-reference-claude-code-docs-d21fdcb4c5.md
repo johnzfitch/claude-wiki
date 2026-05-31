@@ -1,8 +1,9 @@
 ---
+title: "Tools reference - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/tools-reference"
 category: "04-API-Reference"
 fetched_at: "2026-05-19T21:23:15Z"
-source_url: "https://code.claude.com/docs/en/tools-reference"
-title: "Tools reference - Claude Code Docs"
+tags: ["api", "claude-code"]
 ---
 
 # Tools reference
@@ -62,8 +63,6 @@ Claude Code has access to a set of built-in tools that help it understand and mo
 | `Write`                | Creates or overwrites files. See [Write tool behavior](#write-tool-behavior)                                                                                                                                                                                                                                                                                           | Yes                 |
 
 
-[​](#configure-tools-with-permission-rules-and-hooks)
-
 Configure tools with permission rules and hooks
 
 For the most part, Claude decides when to use these tools and you do not need to name them yourself when interacting with Claude. You reference tool names directly when defining permissions and other configuration:
@@ -91,8 +90,6 @@ All of these accept the same rule format, `ToolName(specifier)`. The specifier d
 Tools not listed here, such as `ExitPlanMode` or `ShareOnboardingGuide`, accept only the bare tool name with no specifier. An `Edit(...)` allow rule also grants read access to the same path, so you do not need a matching `Read(...)` rule. Hook `matcher` fields use bare tool names, not the parenthesized rule format. See [matcher patterns](/docs/en/hooks#matcher-patterns) for the matching rules. For the field names each tool passes to `tool_input` in hooks, see the [PreToolUse input reference](/docs/en/hooks#pretooluse-input).
 
 
-[​](#agent-tool-behavior)
-
 Agent tool behavior
 
 The Agent tool spawns a subagent in a separate context window. The subagent works through its task autonomously, then returns a single text result to the parent conversation. The parent does not see the subagent’s intermediate tool calls or outputs, only that final result. To cap how many turns a subagent runs, set `maxTurns` in the [subagent definition](/docs/en/sub-agents#supported-frontmatter-fields). The same Agent tool also launches [forked subagents](/docs/en/sub-agents#fork-the-current-conversation) when fork mode is enabled. A fork inherits the full parent conversation instead of starting fresh, always runs in the background, and still surfaces permission prompts in your terminal. The rest of this section describes named subagents. Which tools a named subagent can use depends on the `tools` and `disallowedTools` fields in the [subagent definition](/docs/en/sub-agents):
@@ -109,8 +106,6 @@ Launching the subagent does not itself prompt for permission. The subagent’s o
 
 To limit what a subagent can reach in the first place, narrow its `tools` field, leave Bash off the list, or set deny rules in your settings, as described in [Control subagent capabilities](/docs/en/sub-agents#control-subagent-capabilities). For more on choosing between foreground and background, see [Run subagents in foreground or background](/docs/en/sub-agents#run-subagents-in-foreground-or-background).
 
-
-[​](#bash-tool-behavior)
 
 Bash tool behavior
 
@@ -129,8 +124,6 @@ Activate your virtualenv or conda environment before launching Claude Code. To m
 For long-running processes such as dev servers or watch builds, Claude can set `run_in_background: true` to start the command as a background task and continue working while it runs. List and stop background tasks with `/tasks`.
 
 
-[​](#edit-tool-behavior)
-
 Edit tool behavior
 
 The Edit tool performs exact string replacement. It takes an `old_string` and a `new_string` and replaces the first with the second. It does not use regex or fuzzy matching. Three checks must pass for an edit to apply:
@@ -141,8 +134,6 @@ The Edit tool performs exact string replacement. It takes an `old_string` and a 
 
 Viewing a file with Bash also satisfies the read-before-edit requirement when the command is `cat`, `head`, `tail`, or `sed -n 'X,Yp'` on a single file with no pipes, redirects, or other flags. Piped output and other Bash commands do not count, and Claude must use Read before editing in those cases. This affects edit eligibility only, not permissions. [Read and Edit deny rules](/docs/en/permissions#tool-specific-permission-rules) also apply to file commands Claude Code recognizes in Bash, such as `cat`, `head`, `tail`, and `sed`, but not to arbitrary subprocesses that read or write files indirectly, like a Python or Node script that opens files itself. For OS-level enforcement that covers every process, [enable the sandbox](/docs/en/sandboxing).
 
-
-[​](#glob-tool-behavior)
 
 Glob tool behavior
 
@@ -155,8 +146,6 @@ The Glob tool finds files by name pattern. It supports standard glob syntax incl
 Results are sorted by modification time and capped at 100 files. If the cap is hit, Claude sees a truncation flag in the result and can narrow the pattern. Glob does not respect `.gitignore` by default, so it finds gitignored files alongside tracked ones. This differs from [Grep](#grep-tool-behavior), which skips gitignored files. To make Glob respect `.gitignore`, set `CLAUDE_CODE_GLOB_NO_IGNORE=false` before launching Claude Code.
 
 
-[​](#grep-tool-behavior)
-
 Grep tool behavior
 
 The Grep tool searches file contents for patterns. Where [Glob](#glob-tool-behavior) finds files by name, Grep finds lines inside them. Grep is built on [ripgrep](https://github.com/BurntSushi/ripgrep) and uses ripgrep’s regex syntax, not POSIX grep. Patterns that include regex metacharacters need escaping. For example, finding `interface{}` in Go code takes the pattern `interface\{\}`. Three output modes control what comes back:
@@ -167,8 +156,6 @@ The Grep tool searches file contents for patterns. Where [Glob](#glob-tool-behav
 
 Claude can scope results by file with the `glob` parameter, such as `**/*.tsx`, or by language with the `type` parameter, such as `py` or `rust`. By default, patterns match within a single line. Claude can set `multiline: true` to match across line boundaries. Grep respects `.gitignore`, so gitignored files are skipped. To search a gitignored file, Claude passes its path directly.
 
-
-[​](#lsp-tool-behavior)
 
 LSP tool behavior
 
@@ -184,8 +171,6 @@ The LSP tool gives Claude code intelligence from a running language server. Afte
 The tool is inactive until you install a [code intelligence plugin](/docs/en/discover-plugins#code-intelligence) for your language. The plugin bundles the language server configuration, and you install the server binary separately.
 
 
-[​](#monitor-tool)
-
 Monitor tool
 
 The Monitor tool requires Claude Code v2.1.98 or later.
@@ -200,8 +185,6 @@ The Monitor tool lets Claude watch something in the background and react when it
 Claude writes a small script for the watch, runs it in the background, and receives each output line as it arrives. You keep working in the same session and Claude interjects when an event lands. Stop a monitor by asking Claude to cancel it or by ending the session. Monitor uses the same [permission rules as Bash](/docs/en/permissions#tool-specific-permission-rules), so `allow` and `deny` patterns you have set for Bash apply here too. It is not available on Amazon Bedrock, Google Vertex AI, or Microsoft Foundry. It is also not available when `DISABLE_TELEMETRY` or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` is set. Plugins can declare monitors that start automatically when the plugin is active, instead of asking Claude to start them. See [plugin monitors](/docs/en/plugins-reference#monitors).
 
 
-[​](#notebookedit-tool-behavior)
-
 NotebookEdit tool behavior
 
 NotebookEdit modifies a Jupyter notebook one cell at a time, targeting cells by their `cell_id`. It does not perform string replacement across the notebook the way [Edit](#edit-tool-behavior) does on plain files. Three edit modes control what happens to the target cell:
@@ -213,14 +196,10 @@ NotebookEdit modifies a Jupyter notebook one cell at a time, targeting cells by 
 Permission rules use the `Edit(...)` path format. A rule like `Edit(notebooks/**)` covers NotebookEdit calls on files in that directory.
 
 
-[​](#powershell-tool)
-
 PowerShell tool
 
 The PowerShell tool lets Claude run PowerShell commands natively. On Windows, this means commands run in PowerShell instead of routing through Git Bash. On Windows without Git Bash, the tool is enabled automatically. On Windows with Git Bash installed, the tool is rolling out progressively. On Linux, macOS, and WSL, the tool is opt-in.
 
-
-[​](#enable-the-powershell-tool)
 
 Enable the PowerShell tool
 
@@ -237,8 +216,6 @@ Set `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` in your environment or in `settings.json
 On Windows, set the variable to `0` to opt out of the rollout. On Linux, macOS, and WSL, the tool requires PowerShell 7 or later: install `pwsh` and ensure it is on your `PATH`. On Windows, Claude Code auto-detects `pwsh.exe` for PowerShell 7+ with a fallback to `powershell.exe` for PowerShell 5.1. When the tool is enabled, Claude treats PowerShell as the primary shell. The Bash tool remains available for POSIX scripts when Git Bash is installed.
 
 
-[​](#shell-selection-in-settings-hooks-and-skills)
-
 Shell selection in settings, hooks, and skills
 
 Three additional settings control where PowerShell is used:
@@ -250,8 +227,6 @@ Three additional settings control where PowerShell is used:
 The same main-session working-directory reset behavior described under the Bash tool section applies to PowerShell commands, including the `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR` environment variable.
 
 
-[​](#preview-limitations)
-
 Preview limitations
 
 The PowerShell tool has the following known limitations during the preview:
@@ -259,8 +234,6 @@ The PowerShell tool has the following known limitations during the preview:
 - PowerShell profiles are not loaded
 - On Windows, sandboxing is not supported
 
-
-[​](#read-tool-behavior)
 
 Read tool behavior
 
@@ -272,8 +245,6 @@ The Read tool takes a file path and returns the contents with line numbers. Clau
 
 Read only reads files, not directories. Claude uses `ls` via the Bash tool to list directory contents.
 
-
-[​](#webfetch-tool-behavior)
 
 WebFetch tool behavior
 
@@ -287,23 +258,17 @@ WebFetch takes a URL and a prompt describing what to extract. It fetches the pag
 In the default and `acceptEdits` permission modes, WebFetch prompts the first time it reaches a new domain. To allow a domain in advance without a prompt, add a permission rule like `WebFetch(domain:example.com)`. The `auto` and `bypassPermissions` [permission modes](/docs/en/permissions#permission-modes) skip the prompt entirely. WebFetch sets a `User-Agent` header beginning with `Claude-User`, and an `Accept` header that prefers Markdown over HTML so servers that support content negotiation can return Markdown directly. [Sandbox](/docs/en/sandboxing) network rules are configured separately, so a domain you want a sandboxed process to reach still needs an explicit sandbox permission rule.
 
 
-[​](#websearch-tool-behavior)
-
 WebSearch tool behavior
 
-WebSearch runs a query against Anthropic’s [web search](https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool) backend and returns result titles and URLs. It does not fetch the result pages. To read a page Claude finds in search results, it follows up with [WebFetch](#webfetch-tool-behavior). The tool may issue up to eight backend searches per call, refining the search internally before returning results. Claude can scope results with `allowed_domains` to include only certain hosts, or `blocked_domains` to exclude them. The two lists cannot be combined in a single call. The search backend is not configurable. To search with a different provider, add an [MCP server](/docs/en/mcp) that exposes a search tool. WebSearch permission rules take no specifier. A bare `WebSearch` entry in `allow` or `deny` is the only form.
+WebSearch runs a query against Anthropic’s [web search](api-web-search.md) backend and returns result titles and URLs. It does not fetch the result pages. To read a page Claude finds in search results, it follows up with [WebFetch](#webfetch-tool-behavior). The tool may issue up to eight backend searches per call, refining the search internally before returning results. Claude can scope results with `allowed_domains` to include only certain hosts, or `blocked_domains` to exclude them. The two lists cannot be combined in a single call. The search backend is not configurable. To search with a different provider, add an [MCP server](/docs/en/mcp) that exposes a search tool. WebSearch permission rules take no specifier. A bare `WebSearch` entry in `allow` or `deny` is the only form.
 
 WebSearch is available on the Claude API and Microsoft Foundry. On Google Cloud Vertex AI it works with Claude 4 models, including Opus, Sonnet, and Haiku. Amazon Bedrock does not expose the server-side web search tool.
 
-
-[​](#write-tool-behavior)
 
 Write tool behavior
 
 The Write tool creates a new file or overwrites an existing one with the full content provided. It does not append or merge. If the target path already exists, Claude must have read that file at least once in the current conversation before overwriting it. A Write to an unread existing file fails with an error. This constraint does not apply to new files. Viewing the file with Bash also satisfies this requirement under the same rules described in [Edit tool behavior](#edit-tool-behavior). For partial changes to an existing file, Claude uses Edit instead of Write.
 
-
-[​](#check-which-tools-are-available)
 
 Check which tools are available
 
@@ -315,8 +280,6 @@ What tools do you have access to?
 
 Claude gives a conversational summary. For exact MCP tool names, run `/mcp`.
 
-
-[​](#see-also)
 
 See also
 

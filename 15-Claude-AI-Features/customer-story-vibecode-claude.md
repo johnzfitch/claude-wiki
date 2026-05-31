@@ -98,7 +98,7 @@ Vibecode's mission is to change that and democratize mobile app development by m
 
 Vibecode's journey with Anthropic began when the founding team observed early Claude models (Sonnet 3.5 through 3.7) generating high-quality web applications. If Claude could build for the web, they reasoned, it should be able to build for mobile too.
 
-The team needed a model that could reliably produce clean React Native code, handle complex backend systems, and orchestrate multi-file projects—all while maintaining consistency on mobile devices. Claude's capabilities in code generation, multi-file reasoning, tool use, and agentic workflows made it the choice for production-quality mobile app development. \
+The team needed a model that could reliably produce clean React Native code, handle complex backend systems, and orchestrate multi-file projects—all while maintaining consistency on mobile devices. Claude's capabilities in code generation, multi-file reasoning, tool use, and agentic workflows made it the choice for production-quality mobile app development. \
 \
 After evaluating other leading AI models, the choice was clear. "Claude has consistently been the best AI model that we've used,” Brown said. “It's not really close. Claude has always been the best for us, and we use it as the default model within the Vibecode app. Without it, people wouldn't be able to build apps directly on their phone."
 
@@ -110,7 +110,7 @@ Implementation moved quickly. Claude's reliable code generation meant Vibecode d
 
 ## The outcome
 
-Since adopting Opus 4.5 as the default model, Vibecode grew its business 3x to 10M in annualized revenue. Users who would never have considered building software are now creating production-ready mobile apps. One user built a marketplace app for land sales in Australia with property listings and full transaction capabilities. Another created a virtual sensory board designed for children with autism or sensory processing needs, turning their phone into an accessible therapeutic tool. 
+Since adopting Opus 4.5 as the default model, Vibecode grew its business 3x to 10M in annualized revenue. Users who would never have considered building software are now creating production-ready mobile apps. One user built a marketplace app for land sales in Australia with property listings and full transaction capabilities. Another created a virtual sensory board designed for children with autism or sensory processing needs, turning their phone into an accessible therapeutic tool. 
 
 Users have built wellness apps, internal business tools, AI-powered applications, health and fitness trackers, and retail platforms. Each represents a category that previously required professional development teams. "Business owners are building apps that directly support and grow their businesses," Brown said. "Multiple users highlight how Vibecode and Claude let them build apps they never thought they could create."
 
@@ -118,7 +118,7 @@ The platform has also cultivated a community where users share their creations, 
 
 Looking ahead, Vibecode's vision extends beyond building apps with AI to enabling users to create agentic apps with Claude Agent SDK—applications with AI capabilities built directly into them. "We don't want people to just be able to build apps with AI," Nanda said. "We want people to push the edges of possibility and actually create agentic apps. We believe vibe coders will be pushing the boundary with what is possible, not just creating simple applications."
 
-As Anthropic releases new models, Vibecode plans to integrate them immediately. The company expects Claude to remain at the core of its product, using it to create customized subagents and skills and proving that the future of software development is fundamentally more accessible. 
+As Anthropic releases new models, Vibecode plans to integrate them immediately. The company expects Claude to remain at the core of its product, using it to create customized subagents and skills and proving that the future of software development is fundamentally more accessible. 
 
 
 "Claude has consistently been the best AI model that we've used. It's not really close."

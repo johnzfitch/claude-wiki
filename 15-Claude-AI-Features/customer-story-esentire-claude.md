@@ -109,7 +109,7 @@ Claude transformed both eSentire's operational capabilities and business model. 
 
 This transformation enabled a new business model through platform licensing. By embedding Claude's autonomous investigation capabilities into Atlas Platform, they created a system sophisticated enough for third-party security service providers to license for their own MDR services. This approach generated over \$1 million in new bookings, extending eSentire's reach while monetizing their investigative intelligence.
 
-"The quality and depth of Atlas's AI investigation is unprecedented,” said [Sivaram Gutta](https://www.linkedin.com/in/sivaramgutta/overlay/about-this-profile/), Founder and Managing Director of Qylis, eSentire’s first platform partner.  “It enabled us to bring full high-quality MDR service to organizations in India speed and differentiation.”
+"The quality and depth of Atlas's AI investigation is unprecedented,” said [Sivaram Gutta](https://www.linkedin.com/in/sivaramgutta/overlay/about-this-profile/), Founder and Managing Director of Qylis, eSentire’s first platform partner.  “It enabled us to bring full high-quality MDR service to organizations in India speed and differentiation.”
 
 For direct customers, Claude enhanced both depth and transparency of security analysis. Every customer receives comprehensive, evidence-based investigations with clear explanations of security decisions. This transparency strengthened customer trust and enabled faster response times. The autonomous system handles routine investigative tasks, allowing human experts to focus on strategic threat hunting and complex scenarios.
 

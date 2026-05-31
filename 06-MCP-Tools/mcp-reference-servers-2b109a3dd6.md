@@ -1,8 +1,9 @@
 ---
+title: "MCP Reference Servers"
+source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/README.md"
 category: "06-MCP-Tools"
 fetched_at: "2026-05-19T21:39:56Z"
-source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/README.md"
-title: "MCP Reference Servers"
+tags: ["mcp", "security"]
 ---
 
 # Model Context Protocol servers

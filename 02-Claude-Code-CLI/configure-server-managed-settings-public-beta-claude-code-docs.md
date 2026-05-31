@@ -18,8 +18,6 @@ Server-managed settings are in public beta and available for [Claude for Teams](
 
 ## 
 
-[​](#requirements)
-
 Requirements
 
 To use server-managed settings, you need:
@@ -29,8 +27,6 @@ To use server-managed settings, you need:
 - Network access to `api.anthropic.com`
 
 ## 
-
-[​](#choose-between-server-managed-and-endpoint-managed-settings)
 
 Choose between server-managed and endpoint-managed settings
 
@@ -44,8 +40,6 @@ Claude Code supports two approaches for centralized configuration. Server-manage
 If your devices are enrolled in an MDM or endpoint management solution, endpoint-managed settings provide stronger security guarantees because the settings file can be protected from user modification at the OS level.
 
 ## 
-
-[​](#configure-server-managed-settings)
 
 Configure server-managed settings
 
@@ -94,15 +88,11 @@ Save your changes. Claude Code clients receive the updated settings on their nex
 
 ### 
 
-[​](#verify-settings-delivery)
-
 Verify settings delivery
 
 To confirm that settings are being applied, ask a user to restart Claude Code. If the configuration includes settings that trigger the [security approval dialog](#security-approval-dialogs), the user sees a prompt describing the managed settings on startup. You can also verify that managed permission rules are active by having a user run `/permissions` to view their effective permission rules.
 
 ### 
-
-[​](#access-control)
 
 Access control
 
@@ -115,8 +105,6 @@ Restrict access to trusted personnel, as settings changes apply to all users in 
 
 ### 
 
-[​](#current-limitations)
-
 Current limitations
 
 Server-managed settings have the following limitations during the beta period:
@@ -126,21 +114,15 @@ Server-managed settings have the following limitations during the beta period:
 
 ## 
 
-[​](#settings-delivery)
-
 Settings delivery
 
 ### 
-
-[​](#settings-precedence)
 
 Settings precedence
 
 Server-managed settings and [endpoint-managed settings](/docs/en/settings#settings-files) both occupy the highest tier in the Claude Code [settings hierarchy](/docs/en/settings#settings-precedence). No other settings level can override them, including command line arguments. When both are present, server-managed settings take precedence and endpoint-managed settings are not used.
 
 ### 
-
-[​](#fetch-and-caching-behavior)
 
 Fetch and caching behavior
 
@@ -160,8 +142,6 @@ Claude Code applies settings updates automatically without a restart, except for
 
 ### 
 
-[​](#security-approval-dialogs)
-
 Security approval dialogs
 
 Certain settings that could pose security risks require explicit user approval before being applied:
@@ -176,8 +156,6 @@ In non-interactive mode with the `-p` flag, Claude Code skips security dialogs a
 
 ## 
 
-[​](#platform-availability)
-
 Platform availability
 
 Server-managed settings require a direct connection to `api.anthropic.com` and are not available when using third-party model providers:
@@ -189,15 +167,11 @@ Server-managed settings require a direct connection to `api.anthropic.com` and a
 
 ## 
 
-[​](#audit-logging)
-
 Audit logging
 
 Audit log events for settings changes are available through the compliance API or audit log export. Contact your Anthropic account team for access. Audit events include the type of action performed, the account and device that performed the action, and references to the previous and new values.
 
 ## 
-
-[​](#security-considerations)
 
 Security considerations
 
@@ -214,8 +188,6 @@ Server-managed settings provide centralized policy enforcement, but they operate
 To detect runtime configuration changes, use [`ConfigChange` hooks](/docs/en/hooks#configchange) to log modifications or block unauthorized changes before they take effect. For stronger enforcement guarantees, use [endpoint-managed settings](/docs/en/settings#settings-files) on devices enrolled in an MDM solution.
 
 ## 
-
-[​](#see-also)
 
 See also
 

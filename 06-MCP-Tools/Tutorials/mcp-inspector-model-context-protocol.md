@@ -15,12 +15,8 @@ In-depth guide to using the MCP Inspector for testing and debugging Model Contex
 The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is an interactive developer tool for testing and debugging MCP servers. While the [Debugging Guide](/legacy/tools/debugging) covers the Inspector as part of the overall debugging toolkit, this document provides a detailed exploration of the Inspector’s features and capabilities.
 
 
-[​](#getting-started)
-
 Getting started
 
-
-[​](#installation-and-basic-usage)
 
 Installation and basic usage
 
@@ -38,8 +34,6 @@ Copy
 npx @modelcontextprotocol/inspector <command> <arg1> <arg2>
 ```
 
-
-[​](#inspecting-servers-from-npm-or-pypi)
 
 Inspecting servers from npm or PyPI
 
@@ -65,8 +59,6 @@ npx @modelcontextprotocol/inspector uvx <package-name> <args>
 npx @modelcontextprotocol/inspector uvx mcp-server-git --repository ~/code/mcp/servers.git
 ```
 
-
-[​](#inspecting-locally-developed-servers)
 
 Inspecting locally developed servers
 
@@ -96,22 +88,16 @@ npx @modelcontextprotocol/inspector \
 Please carefully read any attached README for the most accurate instructions.
 
 
-[​](#feature-overview)
-
 Feature overview
 
 The Inspector provides several features for interacting with your MCP server:
 
-
-[​](#server-connection-pane)
 
 Server connection pane
 
 - Allows selecting the [transport](/legacy/concepts/transports) for connecting to the server
 - For local servers, supports customizing the command-line arguments and environment
 
-
-[​](#resources-tab)
 
 Resources tab
 
@@ -121,8 +107,6 @@ Resources tab
 - Supports subscription testing
 
 
-[​](#prompts-tab)
-
 Prompts tab
 
 - Displays available prompt templates
@@ -130,8 +114,6 @@ Prompts tab
 - Enables prompt testing with custom arguments
 - Previews generated messages
 
-
-[​](#tools-tab)
 
 Tools tab
 
@@ -141,20 +123,14 @@ Tools tab
 - Displays tool execution results
 
 
-[​](#notifications-pane)
-
 Notifications pane
 
 - Presents all logs recorded from the server
 - Shows notifications received from the server
 
 
-[​](#best-practices)
-
 Best practices
 
-
-[​](#development-workflow)
 
 Development workflow
 
@@ -174,8 +150,6 @@ Development workflow
     - Concurrent operations
     - Verify error handling and error responses
 
-
-[​](#next-steps)
 
 Next steps
 

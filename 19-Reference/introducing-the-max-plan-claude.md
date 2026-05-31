@@ -38,7 +38,7 @@ Claude's new Max plan offers up to 20x higher usage limits and priority access t
   [Copy link](#)
   https://claude.com/blog/max-plan
 
-***Update: ****Four major upgrades to the max plan. (May 1, 2025)*
+***Update: ****Four major upgrades to the max plan. (May 1, 2025)*
 
 \
 Today we're introducing the Max plan—designed for those who collaborate with Claude extensively and need expanded access for their most important work.

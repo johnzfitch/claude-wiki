@@ -14,13 +14,9 @@ Legal agreements, compliance certifications, and security information for Claude
 
 ## 
 
-[​](#legal-agreements)
-
 Legal agreements
 
 ### 
-
-[​](#license)
 
 License
 
@@ -31,21 +27,15 @@ Your use of Claude Code is subject to:
 
 ### 
 
-[​](#commercial-agreements)
-
 Commercial agreements
 
 Whether you’re using the Claude API directly (1P) or accessing it through AWS Bedrock or Google Vertex (3P), your existing commercial agreement will apply to Claude Code usage, unless we’ve mutually agreed otherwise.
 
 ## 
 
-[​](#compliance)
-
 Compliance
 
 ### 
-
-[​](#healthcare-compliance-baa)
 
 Healthcare compliance (BAA)
 
@@ -53,21 +43,15 @@ If a customer has a Business Associate Agreement (BAA) with us, and wants to use
 
 ## 
 
-[​](#usage-policy)
-
 Usage policy
 
 ### 
-
-[​](#acceptable-use)
 
 Acceptable use
 
 Claude Code usage is subject to the [Anthropic Usage Policy](https://www.anthropic.com/legal/aup). Advertised usage limits for Pro and Max plans assume ordinary, individual usage of Claude Code and the Agent SDK.
 
 ### 
-
-[​](#authentication-and-credential-use)
 
 Authentication and credential use
 
@@ -80,21 +64,15 @@ Anthropic reserves the right to take measures to enforce these restrictions and 
 
 ## 
 
-[​](#security-and-trust)
-
 Security and trust
 
 ### 
-
-[​](#trust-and-safety)
 
 Trust and safety
 
 You can find more information in the [Anthropic Trust Center](https://trust.anthropic.com) and [Transparency Hub](https://www.anthropic.com/transparency).
 
 ### 
-
-[​](#security-vulnerability-reporting)
 
 Security vulnerability reporting
 

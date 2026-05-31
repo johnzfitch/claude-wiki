@@ -94,7 +94,7 @@ Prev
 
 ## The challenge: Delivering beautiful designs without sacrificing depth
 
-From the start, Rocket's team of 35 engineers focused on depth: generating complete, multi-page website experiences from a single prompt rather than requiring users to refine their way to a finished product. 
+From the start, Rocket's team of 35 engineers focused on depth: generating complete, multi-page website experiences from a single prompt rather than requiring users to refine their way to a finished product. 
 
 Early user feedback validated that approach, but pointed to a gap. "The constant feedback was that our solutioning is good, but the designs look outdated," said Vishal Virani, CEO and co-founder of Rocket. Users wanted both: the comprehensive output Rocket was known for, and a design quality that felt current and intuitive.
 
@@ -124,13 +124,13 @@ This hybrid approach lets Rocket optimize for both quality and cost. “Instead 
 
 The engineering investment paid off in concrete terms. A comparable website project that might cost around \$20,000 through a traditional agency and take a month to deliver can be generated on Rocket in roughly 15 minutes for about \$200. Users who had spent 10 or more hours iterating with other AI tools to get a passable result found they could get there in a single prompt. More than a million users have now built on the platform.
 
-The shift in design quality is visible in what the system produces. A single-sentence prompt requesting a landing page for an indie electronic artist returns a complete site with animations, embedded audio tracks, and a visual language that matches the genre, requiring very few follow-up prompts. For more complex requests, the platform generates multi-page websites with booking flows, forms, and navigation, making design decisions about fonts, color schemes, and layout based on the context it infers from the prompt.  “Even if a user puts in a one-liner, we’re able to generate an intuitive result,” Virani said. 
+The shift in design quality is visible in what the system produces. A single-sentence prompt requesting a landing page for an indie electronic artist returns a complete site with animations, embedded audio tracks, and a visual language that matches the genre, requiring very few follow-up prompts. For more complex requests, the platform generates multi-page websites with booking flows, forms, and navigation, making design decisions about fonts, color schemes, and layout based on the context it infers from the prompt.  “Even if a user puts in a one-liner, we’re able to generate an intuitive result,” Virani said. 
 
 The response to the design improvements has shaped Rocket’s roadmap. Users who saw what the system could create from scratch started asking whether it could also revamp their existing websites. The team is now building a feature where users input a URL and specify constraints—like keeping the SEO intact but redesigning the visuals, or preserving the copy but updating the layout—and the system rebuilds the site accordingly.
 
 Virani’s team is also experimenting with Anthropic’s Agent SDK for future capabilities, though those plans are still in early stages.
 
-"We are using almost everything in the Anthropic system,” Virani said. "We don't want our users to have the cognitive load of putting more and more prompts to get the result. We want them to feel the magic.” 
+"We are using almost everything in the Anthropic system,” Virani said. "We don't want our users to have the cognitive load of putting more and more prompts to get the result. We want them to feel the magic.” 
 
 
 "We are using almost everything in the Anthropic system."

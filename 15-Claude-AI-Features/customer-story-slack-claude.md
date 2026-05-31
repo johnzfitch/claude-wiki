@@ -119,14 +119,14 @@ Technical advantages that power this transformation include:
 - **Extensive Context Window:** Claude excels at processing lengthy discussions and providing personalized tone and format for user interactions due to its industry-leading, extensive context window capabilities.
 - **Safety and Compliance:** Anthropic’s commitment to safety and compliance solidified the partnership, ensuring that Slack’s AI solution meets the paramount security and data protection needs of all customers, especially large enterprises.
 
-"Anthropic has been instrumental as we’ve built our AI solution” said Ananya Helmich, VP of Software Engineering at Slack. “The exceptional quality and high performance of Claude models empower us to build AI-driven solutions that truly make a difference for our customers.” 
+"Anthropic has been instrumental as we’ve built our AI solution” said Ananya Helmich, VP of Software Engineering at Slack. “The exceptional quality and high performance of Claude models empower us to build AI-driven solutions that truly make a difference for our customers.” 
 
 ### Transforming how teams work with Slack’s AI features and Claude
 
 Claude models enhance a range of Slack’s AI features, provide intelligent assistance across everyday tasks, and make organizational knowledge readily accessible and actionable. Here's how:
 
-- **AI-Powered Search:** Slack users ask questions in natural language to search for relevant information across all content - conversations, threads, and files. Search results locate relevant content and deliver clear, rapid results. 
-- **Instant Summaries:** Slack’s AI delivers prompt conversation summaries of channels and threads, highlighting key decisions and action items, tailored to the user. 
+- **AI-Powered Search:** Slack users ask questions in natural language to search for relevant information across all content - conversations, threads, and files. Search results locate relevant content and deliver clear, rapid results. 
+- **Instant Summaries:** Slack’s AI delivers prompt conversation summaries of channels and threads, highlighting key decisions and action items, tailored to the user. 
 - **AI-Generated Recaps:** This capability streamlines work by prioritizing important messages and unread mentions, providing a concise overview of priority discussions across channels.
 - **Productivity-Boosting Tools:** Slack’s AI acts as an intelligent assistant, helping users build workflows and create detailed meeting notes from huddles, providing real-time advantages within the platform.
 

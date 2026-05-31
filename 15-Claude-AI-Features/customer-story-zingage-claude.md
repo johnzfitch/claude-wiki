@@ -100,9 +100,9 @@ Read more
 
 Healthcare raised the bar for what Zingage needed from its underlying model. The platform handles protected health information, operates under HIPAA requirements, and takes irreversible actions in production systems: updating medical records, committing caregivers to shifts, and flagging potential abuse incidents.
 
-“We’re not integrating a chatbot,” Hunt explained. “We’re deploying agents that take consequential action in production systems.” 
+“We’re not integrating a chatbot,” Hunt explained. “We’re deploying agents that take consequential action in production systems.” 
 
-Zingage evaluated both Sonnet 4.5 and Opus 4.5, and found Sonnet offered the best balance of cost, quality, and latency for the majority of its workflows. Claude stood out for its structured tool calling, which gave Zingage the precision to orchestrate across an EMR, a phone system, and multiple communication channels while keeping PHI properly contained. 
+Zingage evaluated both Sonnet 4.5 and Opus 4.5, and found Sonnet offered the best balance of cost, quality, and latency for the majority of its workflows. Claude stood out for its structured tool calling, which gave Zingage the precision to orchestrate across an EMR, a phone system, and multiple communication channels while keeping PHI properly contained. 
 
 Claude’s contextual reasoning also enabled Zingage to build agents that weigh genuine tradeoffs—like whether to contact a dementia patient’s family versus silently restaffing—rather than pattern-matching to the most common response. “Building on Claude was a different experience than working with other models,” Hunt said. “The reasoning capability meant we could give our agents genuinely complex, ambiguous situations and trust that they would navigate them sensibly.”
 

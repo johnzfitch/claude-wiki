@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. Either side can send progress notifications to provide updates about operation status.
 
 
-[​](#progress-flow)
-
 Progress Flow
 
 When a party wants to *receive* progress updates for a request, it includes a `progressToken` in the request metadata.
@@ -63,8 +61,6 @@ Copy
 - The `message` field **SHOULD** provide relevant human readable progress information.
 
 
-[​](#behavior-requirements)
-
 Behavior Requirements
 
 1.  Progress notifications **MUST** only reference tokens that:
@@ -75,8 +71,6 @@ Behavior Requirements
     - Send notifications at whatever frequency they deem appropriate
     - Omit the total value if unknown
 
-
-[​](#implementation-notes)
 
 Implementation Notes
 

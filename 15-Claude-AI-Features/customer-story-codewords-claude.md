@@ -65,7 +65,7 @@ Video caption
 Prev
 
 
-CodeWords is an AI  workflow automation platform, built by Agemo, that enables non-technical users to create automations through conversational AI chat. The company serves non-technical professionals in operations, marketing, and administrative roles at startups and small businesses, as well as solopreneurs and freelancers who need powerful automation tools.
+CodeWords is an AI  workflow automation platform, built by Agemo, that enables non-technical users to create automations through conversational AI chat. The company serves non-technical professionals in operations, marketing, and administrative roles at startups and small businesses, as well as solopreneurs and freelancers who need powerful automation tools.
 
 With Claude, CodeWords:
 
@@ -105,7 +105,7 @@ Agemo uses CodeWords internally to build automations for their own product, oper
 
 CodeWords’ traction demonstrates the power of combining conversational AI with production-ready code generation. Success rates for non-technical users building workflows in a single session jumped from 43% during open beta to 92%, driven by Claude's intelligence and CodeWords’ surrounding context systems.
 
-Build times dropped dramatically. Simple automations that took 11 minutes now complete in 115 seconds. Complex automations decreased from 25 minutes to 6 minutes, largely because fewer iterations are needed to fix issues. 
+Build times dropped dramatically. Simple automations that took 11 minutes now complete in 115 seconds. Complex automations decreased from 25 minutes to 6 minutes, largely because fewer iterations are needed to fix issues. 
 
 Customer feedback highlights an unexpected benefit: emotional connection. "Claude Sonnet 4.5 has the best emotional maturity compared to other models," Ramadan explained. "It knows how to empathize with the user, and that created stickiness for us." Anecdotally, Zhuo reported users saying that "CodeWords knows me" and describing conversations as being like talking to "a workflow therapist" or someone "with so much wisdom and experience."
 

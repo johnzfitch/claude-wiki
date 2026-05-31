@@ -184,15 +184,15 @@ In the "Possible Follow ups" Section below, we give examples of features that we
 
   ```typescript  theme={null}
   interface CreateMessageRequest {
-    method: “sampling/createMessage”;
-    params: {
-      ...
-      messages: SamplingMessage[]; // Note: type updated, see below
-      
+    method: “sampling/createMessage”;
+    params: {
+      ...
+      messages: SamplingMessage[]; // Note: type updated, see below
+      
       tools?: Tool[] // NEW (existing type)
 
       toolChoice?: ToolChoice // NEW
-    };
+    };
   }
 
   interface ToolChoice { // NEW
@@ -471,9 +471,9 @@ While this SEP proposes we enable this `"required"`-based workaround, as a follo
 
 ```typescript  theme={null}
 interface CreateMessageRequest {
-  method: “sampling/createMessage”;
-  params: {
-    messages: SamplingMessage[];
+  method: “sampling/createMessage”;
+  params: {
+    messages: SamplingMessage[];
     ...
     format: {
       type: "json_schema",
