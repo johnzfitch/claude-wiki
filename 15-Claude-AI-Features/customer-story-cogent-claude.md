@@ -46,7 +46,7 @@ Cogent is an applied AI lab building agents to automate critical security tasks 
 - 97% reduction in time that critical vulnerabilities remain open, compressing remediation cycles from days or weeks to minutes
 - Response time to zero-day vulnerabilities reduced to 30 minutes, down from days of manual investigation and coordination
 - 90% reduction in vulnerability noise requiring human review
-- Reduced average investigation time from days to minutes 
+- Reduced average investigation time from days to minutes 
 - 40+ hours per month reclaimed from manual reporting per enterprise customer
 
 ## The challenge
@@ -97,7 +97,7 @@ Cogent evaluated multiple model providers using internal security-focused benchm
 
 In vulnerability investigation, an agent needs to follow a chain of evidence across disparate systems without losing the thread: a vulnerability surfaces in a scanner, which points to a specific software version, which maps to a set of assets, which have varying levels of exposure depending on compensating controls. In workflows involving 10-15 sequential tool calls, Claude maintained coherence and instruction-following where alternatives lost context.
 
-That reliability made Claude Opus and Haiku models the clear choice for production deployment in enterprise security environments, where incomplete reasoning has real consequences. 
+That reliability made Claude Opus and Haiku models the clear choice for production deployment in enterprise security environments, where incomplete reasoning has real consequences. 
 
 "Claude consistently performed best on complex, agentic workflows, especially multi-step investigations requiring policy adherence and sustained reasoning across multiple tools," said Anirudh Ravula, Cogent's Head of AI.
 
@@ -112,7 +112,7 @@ Read more
 
 ## How Cogent uses Claude across the vulnerability lifecycle
 
-Fixing a vulnerability requires three things to go right in sequence: understanding what’s actually exploitable, deciding which issues deserve immediate attention, and actually resolving them. Most security teams do all three manually. Cogent automates the full chain by building the end-to-end remediation stack then embedding  Claude as the reasoning layer at each step.
+Fixing a vulnerability requires three things to go right in sequence: understanding what’s actually exploitable, deciding which issues deserve immediate attention, and actually resolving them. Most security teams do all three manually. Cogent automates the full chain by building the end-to-end remediation stack then embedding  Claude as the reasoning layer at each step.
 
 **Investigation:** Cogent's platform continuously pulls from scanners, logs, asset inventories, and threat feeds, building the environmental context that doesn't exist anywhere in a customer's environment ready-made. From there, Cogent's investigative agent works autonomously: tracing asset ownership across systems, synthesizing threat intelligence and business context into a risk score, and mapping the remediation processes that apply to each asset. For issues that warrant deeper analysis, security teams can ask questions in plain language and get back clear, explainable findings. Investigations that once took days now happen in minutes.
 
@@ -124,7 +124,7 @@ The results are measurable. Customers have reduced the time critical vulnerabili
 
 One enterprise customer at a large hospitality brand put it simply: "In meetings, I used to say 'I'll get back to you on that' and spend hours in BI tools and Excel. Now I ask Cogent in plain language and generate charts in seconds. Executive questions get answered in real time, not days later."
 
-Claude is also embedded in how Cogent builds its own product. The team developed an AI-driven software development lifecycle, integrating Claude into engineering workflows from specification through implementation and review. Smaller teams can now move faster and maintain the high security standards their enterprise customers require. 
+Claude is also embedded in how Cogent builds its own product. The team developed an AI-driven software development lifecycle, integrating Claude into engineering workflows from specification through implementation and review. Smaller teams can now move faster and maintain the high security standards their enterprise customers require. 
 
 ## Looking ahead: Fully autonomous systems
 

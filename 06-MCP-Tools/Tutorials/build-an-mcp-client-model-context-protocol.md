@@ -27,8 +27,6 @@ In this tutorial, you’ll learn how to build an LLM-powered chatbot client that
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/mcp-client-python)
 
 
-[​](#system-requirements)
-
 System Requirements
 
 Before starting, ensure your system meets these requirements:
@@ -37,8 +35,6 @@ Before starting, ensure your system meets these requirements:
 - Latest Python version installed
 - Latest version of `uv` installed
 
-
-[​](#setting-up-your-environment)
 
 Setting Up Your Environment
 
@@ -72,8 +68,6 @@ touch client.py
 ```
 
 
-[​](#setting-up-your-api-key)
-
 Setting Up Your API Key
 
 You’ll need an Anthropic API key from the [Anthropic Console](https://console.anthropic.com/settings/keys).Create a `.env` file to store it:
@@ -95,12 +89,8 @@ echo ".env" >> .gitignore
 Make sure you keep your `ANTHROPIC_API_KEY` secure!
 
 
-[​](#creating-the-client)
-
 Creating the Client
 
-
-[​](#basic-client-structure)
 
 Basic Client Structure
 
@@ -130,8 +120,6 @@ class MCPClient:
     # methods will go here
 ```
 
-
-[​](#server-connection-management)
 
 Server Connection Management
 
@@ -170,8 +158,6 @@ async def connect_to_server(self, server_script_path: str):
     print("\nConnected to server with tools:", [tool.name for tool in tools])
 ```
 
-
-[​](#query-processing-logic)
 
 Query Processing Logic
 
@@ -250,8 +236,6 @@ async def process_query(self, query: str) -> str:
 ```
 
 
-[​](#interactive-chat-interface)
-
 Interactive Chat Interface
 
 Now we’ll add the chat loop and cleanup functionality:
@@ -283,8 +267,6 @@ async def cleanup(self):
 ```
 
 
-[​](#main-entry-point)
-
 Main Entry Point
 
 Finally, we’ll add the main execution logic:
@@ -312,12 +294,8 @@ if __name__ == "__main__":
 You can find the complete `client.py` file [here](https://github.com/modelcontextprotocol/quickstart-resources/blob/main/mcp-client-python/client.py).
 
 
-[​](#key-components-explained)
-
 Key Components Explained
 
-
-[​](#1-client-initialization)
 
 1. Client Initialization
 
@@ -325,8 +303,6 @@ Key Components Explained
 - Uses `AsyncExitStack` for proper resource management
 - Configures the Anthropic client for Claude interactions
 
-
-[​](#2-server-connection)
 
 2. Server Connection
 
@@ -336,8 +312,6 @@ Key Components Explained
 - Initializes the session and lists available tools
 
 
-[​](#3-query-processing)
-
 3. Query Processing
 
 - Maintains conversation context
@@ -345,8 +319,6 @@ Key Components Explained
 - Manages the message flow between Claude and tools
 - Combines results into a coherent response
 
-
-[​](#4-interactive-interface)
 
 4. Interactive Interface
 
@@ -356,16 +328,12 @@ Key Components Explained
 - Allows graceful exit
 
 
-[​](#5-resource-management)
-
 5. Resource Management
 
 - Proper cleanup of resources
 - Error handling for connection issues
 - Graceful shutdown procedures
 
-
-[​](#common-customization-points)
 
 Common Customization Points
 
@@ -382,8 +350,6 @@ Common Customization Points
     - Implement rich console output
     - Add command history or auto-completion
 
-
-[​](#running-the-client)
 
 Running the Client
 
@@ -410,8 +376,6 @@ The client will:
 Here’s an example of what it should look like if connected to the weather server from the server quickstart:
 
 
-[​](#how-it-works)
-
 How It Works
 
 When you submit a query:
@@ -424,8 +388,6 @@ When you submit a query:
 6.  Claude provides a natural language response
 7.  The response is displayed to you
 
-
-[​](#best-practices)
 
 Best practices
 
@@ -446,12 +408,8 @@ Best practices
     - If a tool name conforms to the specified format, it should not fail validation by an MCP client
 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
-
-[​](#server-path-issues)
 
 Server Path Issues
 
@@ -477,8 +435,6 @@ uv run client.py C:\\projects\\mcp-server\\weather.py
 ```
 
 
-[​](#response-timing)
-
 Response Timing
 
 - The first response might take up to 30 seconds to return
@@ -489,8 +445,6 @@ Response Timing
 - Subsequent responses are typically faster
 - Don’t interrupt the process during this initial waiting period
 
-
-[​](#common-error-messages)
 
 Common Error Messages
 
@@ -504,8 +458,6 @@ If you see:
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/mcp-client-typescript)
 
 
-[​](#system-requirements-2)
-
 System Requirements
 
 Before starting, ensure your system meets these requirements:
@@ -515,8 +467,6 @@ Before starting, ensure your system meets these requirements:
 - Latest version of `npm` installed
 - Anthropic API key (Claude)
 
-
-[​](#setting-up-your-environment-2)
 
 Setting Up Your Environment
 
@@ -586,8 +536,6 @@ Copy
 ```
 
 
-[​](#setting-up-your-api-key-2)
-
 Setting Up Your API Key
 
 You’ll need an Anthropic API key from the [Anthropic Console](https://console.anthropic.com/settings/keys).Create a `.env` file to store it:
@@ -609,12 +557,8 @@ echo ".env" >> .gitignore
 Make sure you keep your `ANTHROPIC_API_KEY` secure!
 
 
-[​](#creating-the-client-2)
-
 Creating the Client
 
-
-[​](#basic-client-structure-2)
 
 Basic Client Structure
 
@@ -656,8 +600,6 @@ class MCPClient {
 }
 ```
 
-
-[​](#server-connection-management-2)
 
 Server Connection Management
 
@@ -704,8 +646,6 @@ async connectToServer(serverScriptPath: string) {
 }
 ```
 
-
-[​](#query-processing-logic-2)
 
 Query Processing Logic
 
@@ -768,8 +708,6 @@ async processQuery(query: string) {
 ```
 
 
-[​](#interactive-chat-interface-2)
-
 Interactive Chat Interface
 
 Now we’ll add the chat loop and cleanup functionality:
@@ -806,8 +744,6 @@ async cleanup() {
 ```
 
 
-[​](#main-entry-point-2)
-
 Main Entry Point
 
 Finally, we’ll add the main execution logic:
@@ -838,8 +774,6 @@ main();
 ```
 
 
-[​](#running-the-client-2)
-
 Running the Client
 
 To run your client with any MCP server:
@@ -867,8 +801,6 @@ If you’re continuing [the weather tutorial from the server quickstart](https:/
     - Get responses from Claude
 
 
-[​](#how-it-works-2)
-
 How It Works
 
 When you submit a query:
@@ -881,8 +813,6 @@ When you submit a query:
 6.  Claude provides a natural language response
 7.  The response is displayed to you
 
-
-[​](#best-practices-2)
 
 Best practices
 
@@ -897,12 +827,8 @@ Best practices
     - Be cautious with tool permissions
 
 
-[​](#troubleshooting-2)
-
 Troubleshooting
 
-
-[​](#server-path-issues-2)
 
 Server Path Issues
 
@@ -928,8 +854,6 @@ node build/index.js C:\\projects\\mcp-server\\build\\index.js
 ```
 
 
-[​](#response-timing-2)
-
 Response Timing
 
 - The first response might take up to 30 seconds to return
@@ -940,8 +864,6 @@ Response Timing
 - Subsequent responses are typically faster
 - Don’t interrupt the process during this initial waiting period
 
-
-[​](#common-error-messages-2)
 
 Common Error Messages
 
@@ -959,8 +881,6 @@ This is a quickstart demo based on Spring AI MCP auto-configuration and boot sta
 This example demonstrates how to build an interactive chatbot that combines Spring AI’s Model Context Protocol (MCP) with the [Brave Search MCP Server](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/brave-search). The application creates a conversational interface powered by Anthropic’s Claude AI model that can perform internet searches through Brave Search, enabling natural language interactions with real-time web data. [You can find the complete code for this tutorial here.](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/web-search/brave-chatbot)
 
 
-[​](#system-requirements-3)
-
 System Requirements
 
 Before starting, ensure your system meets these requirements:
@@ -971,8 +891,6 @@ Before starting, ensure your system meets these requirements:
 - Anthropic API key (Claude)
 - Brave Search API key
 
-
-[​](#setting-up-your-environment-3)
 
 Setting Up Your Environment
 
@@ -1012,14 +930,10 @@ Setting Up Your Environment
 Make sure you keep your `ANTHROPIC_API_KEY` and `BRAVE_API_KEY` keys secure!
 
 
-[​](#how-it-works-3)
-
 How it Works
 
 The application integrates Spring AI with the Brave Search MCP server through several components:
 
-
-[​](#mcp-client-configuration)
 
 MCP Client Configuration
 
@@ -1082,8 +996,6 @@ Copy
 ```
 
 
-[​](#chat-implementation)
-
 Chat Implementation
 
 The chatbot is implemented using Spring AI’s ChatClient with MCP tool integration:
@@ -1105,8 +1017,6 @@ Key features:
 - Maintains conversation memory using InMemoryChatMemory
 - Runs as an interactive command-line application
 
-
-[​](#build-and-run)
 
 Build and run
 
@@ -1133,8 +1043,6 @@ The application will start an interactive chat session where you can ask questio
 - Combine information from multiple sources to provide comprehensive answers
 
 
-[​](#advanced-configuration)
-
 Advanced Configuration
 
 The MCP client supports additional configuration options:
@@ -1160,8 +1068,6 @@ This provides similar functionality but uses a WebFlux-based SSE transport imple
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/kotlin-sdk/tree/main/samples/kotlin-mcp-client)
 
 
-[​](#system-requirements-4)
-
 System Requirements
 
 Before starting, ensure your system meets these requirements:
@@ -1169,8 +1075,6 @@ Before starting, ensure your system meets these requirements:
 - Java 17 or higher
 - Anthropic API key (Claude)
 
-
-[​](#setting-up-your-environment-4)
 
 Setting up your environment
 
@@ -1234,8 +1138,6 @@ plugins {
 ```
 
 
-[​](#setting-up-your-api-key-3)
-
 Setting up your API key
 
 You’ll need an Anthropic API key from the [Anthropic Console](https://console.anthropic.com/settings/keys).Set up your API key:
@@ -1249,12 +1151,8 @@ export ANTHROPIC_API_KEY='your-anthropic-api-key-here'
 Make sure you keep your `ANTHROPIC_API_KEY` secure!
 
 
-[​](#creating-the-client-3)
-
 Creating the Client
 
-
-[​](#basic-client-structure-3)
 
 Basic Client Structure
 
@@ -1278,8 +1176,6 @@ class MCPClient : AutoCloseable {
     }
 ```
 
-
-[​](#server-connection-management-3)
 
 Server connection management
 
@@ -1344,8 +1240,6 @@ private fun JsonObject.toJsonValue(): JsonValue {
 }
 ```
 
-
-[​](#query-processing-logic-3)
 
 Query processing logic
 
@@ -1418,8 +1312,6 @@ suspend fun processQuery(query: String): String {
 ```
 
 
-[​](#interactive-chat)
-
 Interactive chat
 
 We’ll add the chat loop:
@@ -1442,8 +1334,6 @@ suspend fun chatLoop() {
 ```
 
 
-[​](#main-entry-point-3)
-
 Main entry point
 
 Finally, we’ll add the main execution function:
@@ -1462,8 +1352,6 @@ fun main(args: Array<String>) = runBlocking {
 }
 ```
 
-
-[​](#running-the-client-3)
 
 Running the client
 
@@ -1492,8 +1380,6 @@ If you’re continuing the weather tutorial from the server quickstart, your com
     - Get responses from Claude
 
 
-[​](#how-it-works-4)
-
 How it works
 
 Here’s a high-level workflow schema:When you submit a query:
@@ -1506,8 +1392,6 @@ Here’s a high-level workflow schema:When you submit a query:
 6.  Claude provides a natural language response
 7.  The response is displayed to you
 
-
-[​](#best-practices-3)
 
 Best practices
 
@@ -1522,12 +1406,8 @@ Best practices
     - Be cautious with permissions and trust boundaries when using tools
 
 
-[​](#troubleshooting-3)
-
 Troubleshooting
 
-
-[​](#server-path-issues-3)
 
 Server Path Issues
 
@@ -1554,8 +1434,6 @@ java -jar build/libs/client.jar C:\\projects\\mcp-server\\build\\libs\\server.ja
 ```
 
 
-[​](#response-timing-3)
-
 Response Timing
 
 - The first response might take up to 30 seconds to return
@@ -1566,8 +1444,6 @@ Response Timing
 - Subsequent responses are typically faster
 - Don’t interrupt the process during this initial waiting period
 
-
-[​](#common-error-messages-3)
 
 Common Error Messages
 
@@ -1580,8 +1456,6 @@ If you see:
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/csharp-sdk/tree/main/samples/QuickstartClient)
 
 
-[​](#system-requirements-5)
-
 System Requirements
 
 Before starting, ensure your system meets these requirements:
@@ -1590,8 +1464,6 @@ Before starting, ensure your system meets these requirements:
 - Anthropic API key (Claude)
 - Windows, Linux, or macOS
 
-
-[​](#setting-up-your-environment-5)
 
 Setting up your environment
 
@@ -1616,8 +1488,6 @@ dotnet add package Microsoft.Extensions.AI
 ```
 
 
-[​](#setting-up-your-api-key-4)
-
 Setting up your API key
 
 You’ll need an Anthropic API key from the [Anthropic Console](https://console.anthropic.com/settings/keys).
@@ -1630,12 +1500,8 @@ dotnet user-secrets set "ANTHROPIC_API_KEY" "<your key here>"
 ```
 
 
-[​](#creating-the-client-4)
-
 Creating the Client
 
-
-[​](#basic-client-structure-4)
 
 Basic Client Structure
 
@@ -1701,8 +1567,6 @@ static (string command, string[] arguments) GetCommandAndArguments(string[] args
 This creates an MCP client that will connect to a server that is provided as a command line argument. It then lists the available tools from the connected server.
 
 
-[​](#query-processing-logic-4)
-
 Query processing logic
 
 Now let’s add the core functionality for processing queries and handling tool calls:
@@ -1755,19 +1619,13 @@ static void PromptForInput()
 ```
 
 
-[​](#key-components-explained-2)
-
 Key Components Explained
 
-
-[​](#1-client-initialization-2)
 
 1. Client Initialization
 
 - The client is initialized using `McpClient.CreateAsync()`, which sets up the transport type and command to run the server.
 
-
-[​](#2-server-connection-2)
 
 2. Server Connection
 
@@ -1777,8 +1635,6 @@ Key Components Explained
 - Initializes the session and available tools.
 
 
-[​](#3-query-processing-2)
-
 3. Query Processing
 
 - Leverages [Microsoft.Extensions.AI](https://learn.microsoft.com/dotnet/ai/ai-extensions) for the chat client.
@@ -1787,8 +1643,6 @@ Key Components Explained
 - The server processes the query and returns a response.
 - The response is displayed to the user.
 
-
-[​](#running-the-client-4)
 
 Running the Client
 
@@ -1816,8 +1670,6 @@ The client will:
 
 Here’s an example of what it should look like if connected to the weather server quickstart:
 
-
-[​](#next-steps)
 
 Next steps
 

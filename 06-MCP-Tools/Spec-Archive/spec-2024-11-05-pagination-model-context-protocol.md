@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller chunks rather than all at once. Pagination is especially important when connecting to external services over the internet, but also useful for local integrations to avoid performance issues with large data sets.
 
 
-[​](#pagination-model)
-
 Pagination Model
 
 Pagination in MCP uses an opaque cursor-based approach, instead of numbered pages.
@@ -21,8 +19,6 @@ Pagination in MCP uses an opaque cursor-based approach, instead of numbered page
 - The **cursor** is an opaque string token, representing a position in the result set
 - **Page size** is determined by the server, and clients **MUST NOT** assume a fixed page size
 
-
-[​](#response-format)
 
 Response Format
 
@@ -45,8 +41,6 @@ Copy
 ```
 
 
-[​](#request-format)
-
 Request Format
 
 After receiving a cursor, the client can *continue* paginating by issuing a request including that cursor:
@@ -64,12 +58,8 @@ Copy
 ```
 
 
-[​](#pagination-flow)
-
 Pagination Flow
 
-
-[​](#operations-supporting-pagination)
 
 Operations Supporting Pagination
 
@@ -80,8 +70,6 @@ The following MCP operations support pagination:
 - `prompts/list` - List available prompts
 - `tools/list` - List available tools
 
-
-[​](#implementation-guidelines)
 
 Implementation Guidelines
 
@@ -96,8 +84,6 @@ Implementation Guidelines
     - Don’t attempt to parse or modify cursors
     - Don’t persist cursors across sessions
 
-
-[​](#error-handling)
 
 Error Handling
 

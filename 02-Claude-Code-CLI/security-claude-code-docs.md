@@ -14,13 +14,9 @@ Learn about Claude Code’s security safeguards and best practices for safe usag
 
 ## 
 
-[​](#how-we-approach-security)
-
 How we approach security
 
 ### 
-
-[​](#security-foundation)
 
 Security foundation
 
@@ -28,15 +24,11 @@ Your code’s security is paramount. Claude Code is built with security at its c
 
 ### 
 
-[​](#permission-based-architecture)
-
 Permission-based architecture
 
 Claude Code uses strict read-only permissions by default. When additional actions are needed (editing files, running tests, executing commands), Claude Code requests explicit permission. Users control whether to approve actions once or allow them automatically. We designed Claude Code to be transparent and secure. For example, we require approval for bash commands before executing them, giving you direct control. This approach enables users and organizations to configure permissions directly. For detailed permission configuration, see [Permissions](/docs/en/permissions).
 
 ### 
-
-[​](#built-in-protections)
 
 Built-in protections
 
@@ -49,23 +41,17 @@ To mitigate risks in agentic systems:
 
 ### 
 
-[​](#user-responsibility)
-
 User responsibility
 
 Claude Code only has the permissions you grant it. You’re responsible for reviewing proposed code and commands for safety before approval.
 
 ## 
 
-[​](#protect-against-prompt-injection)
-
 Protect against prompt injection
 
 Prompt injection is a technique where an attacker attempts to override or manipulate an AI assistant’s instructions by inserting malicious text. Claude Code includes several safeguards against these attacks:
 
 ### 
-
-[​](#core-protections)
 
 Core protections
 
@@ -75,8 +61,6 @@ Core protections
 - **Command blocklist**: Blocks risky commands that fetch arbitrary content from the web like `curl` and `wget` by default. When explicitly allowed, be aware of [permission pattern limitations](/docs/en/permissions#tool-specific-permission-rules)
 
 ### 
-
-[​](#privacy-safeguards)
 
 Privacy safeguards
 
@@ -89,8 +73,6 @@ We have implemented several safeguards to protect your data, including:
 For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, and Max users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
 
 ### 
-
-[​](#additional-safeguards)
 
 Additional safeguards
 
@@ -117,23 +99,17 @@ While these protections significantly reduce risk, no system is completely immun
 
 ## 
 
-[​](#mcp-security)
-
 MCP security
 
 Claude Code allows users to configure Model Context Protocol (MCP) servers. The list of allowed MCP servers is configured in your source code, as part of Claude Code settings engineers check into source control. We encourage either writing your own MCP servers or using MCP servers from providers that you trust. You are able to configure Claude Code permissions for MCP servers. Anthropic does not manage or audit any MCP servers.
 
 ## 
 
-[​](#ide-security)
-
 IDE security
 
 See [VS Code security and privacy](/docs/en/vs-code#security-and-privacy) for more information on running Claude Code in an IDE.
 
 ## 
-
-[​](#cloud-execution-security)
 
 Cloud execution security
 
@@ -150,13 +126,9 @@ For more details on cloud execution, see [Claude Code on the web](/docs/en/claud
 
 ## 
 
-[​](#security-best-practices)
-
 Security best practices
 
 ### 
-
-[​](#working-with-sensitive-code)
 
 Working with sensitive code
 
@@ -166,8 +138,6 @@ Working with sensitive code
 - Regularly audit your permission settings with `/permissions`
 
 ### 
-
-[​](#team-security)
 
 Team security
 
@@ -179,8 +149,6 @@ Team security
 
 ### 
 
-[​](#reporting-security-issues)
-
 Reporting security issues
 
 If you discover a security vulnerability in Claude Code:
@@ -191,8 +159,6 @@ If you discover a security vulnerability in Claude Code:
 4.  Allow time for us to address the issue before public disclosure
 
 ## 
-
-[​](#related-resources)
 
 Related resources
 

@@ -24,7 +24,7 @@ Learn more here: **[Offering expanded Claude access across all three branches of
 
 ### How do I access Claude for Government?
 
-Contact **[\[email protected\]](/cdn-cgi/l/email-protection#b5c5c0d7c6d0d6f5d4dbc1ddc7dac5dcd69bd6dad8)** or purchase through **[Carahsoft](https://carahsoft.com/anthropic/solutions)**.
+Contact **[\[email protected\]](/cdn-cgi/l/email-protection#b5c5c0d7c6d0d6f5d4dbc1ddc7dac5dcd69bd6dad8)** or purchase through **[Carahsoft](https://carahsoft.com/anthropic/solutions)**.
 
 ### What is the difference between Claude Enterprise and Claude for Government?
 

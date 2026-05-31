@@ -1,8 +1,9 @@
 ---
+title: "Output styles - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/output-styles"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:57Z"
-source_url: "https://code.claude.com/docs/en/output-styles"
-title: "Output styles - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Output styles
@@ -20,8 +21,6 @@ Adapt Claude Code for uses beyond software engineering
 Output styles change how Claude responds, not what Claude knows. They modify the system prompt to set role, tone, and output format. Use one when you keep re-prompting for the same voice or format every turn, or when you want Claude to act as something other than a software engineer. A custom output style adds your instructions to the system prompt and lets you choose whether to keep Claude Code’s built-in software engineering instructions. Keep them when you’re changing how Claude communicates but still coding, like always answering with a diagram. Leave them out when Claude isn’t doing software engineering at all, like a writing assistant or data analyst. For instructions about your project, conventions, or codebase, use [CLAUDE.md](/docs/en/memory) instead.
 
 
-[​](#built-in-output-styles)
-
 Built-in output styles
 
 Claude Code’s **Default** output style is the existing system prompt, designed to help you complete software engineering tasks efficiently. There are three additional built-in output styles:
@@ -30,8 +29,6 @@ Claude Code’s **Default** output style is the existing system prompt, designed
 - **Explanatory**: Provides educational “Insights” in between helping you complete software engineering tasks. Helps you understand implementation choices and codebase patterns.
 - **Learning**: Collaborative, learn-by-doing mode where Claude will not only share “Insights” while coding, but also ask you to contribute small, strategic pieces of code yourself. Claude Code will add `TODO(human)` markers in your code for you to implement.
 
-
-[​](#change-your-output-style)
 
 Change your output style
 
@@ -45,8 +42,6 @@ Run `/config` and select **Output style** to pick a style from a menu. Your sele
 
 Output style is part of the system prompt, which Claude Code reads once at session start. Changes take effect after `/clear` or a new session. See [How Claude Code uses prompt caching](/docs/en/prompt-caching#changing-output-style) for what an output style change does to the cache.
 
-
-[​](#create-a-custom-output-style)
 
 Create a custom output style
 
@@ -94,8 +89,6 @@ Run `/config` and select your style under **Output style**. It takes effect afte
 [Plugins](/docs/en/plugins-reference) can also ship output styles in an `output-styles/` directory.
 
 
-[​](#frontmatter)
-
 Frontmatter
 
 Output style files support these frontmatter fields:
@@ -108,8 +101,6 @@ Output style files support these frontmatter fields:
 | `force-for-plugin`         | Plugin output styles only: apply this style automatically whenever the plugin is enabled, without requiring users to select it. Overrides the user’s `outputStyle` setting. If multiple enabled plugins set this, Claude Code uses the first one loaded. | `false`                 |
 
 
-[​](#how-output-styles-work)
-
 How output styles work
 
 Output styles directly modify Claude Code’s system prompt.
@@ -120,8 +111,6 @@ Output styles directly modify Claude Code’s system prompt.
 
 Token usage depends on the style. Adding instructions to the system prompt increases input tokens, though prompt caching reduces this cost after the first request in a session. The built-in Explanatory and Learning styles produce longer responses than Default by design, which increases output tokens. For custom styles, output token usage depends on what your instructions tell Claude to produce.
 
-
-[​](#comparisons-to-related-features)
 
 Comparisons to related features
 
@@ -135,8 +124,6 @@ Several features customize how Claude Code behaves. Output styles modify the sys
 | [Agents](/docs/en/sub-agents) | Runs a subagent with its own system prompt, model, and tools | You want a separately scoped helper for a focused task                  |
 | [Skills](/docs/en/skills)     | Loads task-specific instructions when invoked or relevant    | You have a reusable workflow                                            |
 
-
-[​](#related-resources)
 
 Related resources
 

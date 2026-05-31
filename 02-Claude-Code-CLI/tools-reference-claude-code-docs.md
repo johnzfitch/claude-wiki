@@ -51,8 +51,6 @@ Permission rules can be configured using `/permissions` or in [permission settin
 
 ## 
 
-[​](#bash-tool-behavior)
-
 Bash tool behavior
 
 The Bash tool runs each command in a separate process with the following persistence behavior:
@@ -63,8 +61,6 @@ The Bash tool runs each command in a separate process with the following persist
 Activate your virtualenv or conda environment before launching Claude Code. To make environment variables persist across Bash commands, set [`CLAUDE_ENV_FILE`](/docs/en/env-vars) to a shell script before launching Claude Code, or use a [SessionStart hook](/docs/en/hooks#persist-environment-variables) to populate it dynamically.
 
 ## 
-
-[​](#see-also)
 
 See also
 

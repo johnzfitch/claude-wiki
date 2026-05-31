@@ -66,7 +66,7 @@ When Claude incorporates information from sources, it provides clear citations t
 
 ### Getting started
 
-Integrations and advanced Research are now available in beta on the Max, Team, and Enterprise plans, and will soon be available on Pro. Web search is now globally available to all [Claude.ai](http://claude.ai) paid plans. For more information on getting started with Integrations, MCP servers, and security and privacy practices when connecting data sources to Claude, visit our [Help Center](../14-Connectors/about-integrations-using-remote-mcp.md).  ***‍***
+Integrations and advanced Research are now available in beta on the Max, Team, and Enterprise plans, and will soon be available on Pro. Web search is now globally available to all [Claude.ai](http://claude.ai) paid plans. For more information on getting started with Integrations, MCP servers, and security and privacy practices when connecting data sources to Claude, visit our [Help Center](../14-Connectors/about-integrations-using-remote-mcp.md).  ******
 
 ***Update:*** *Expanded availability. (June 3, 2025)*
 

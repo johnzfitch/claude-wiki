@@ -76,7 +76,7 @@ If you would like to contribute to AI risk management at Anthropic, [we are hiri
 
 #### Footnotes
 
-¹ *We have also shared our assessment methodology with both AI Safety Institutes, as well as a selection of independent experts and organizations, for feedback. This does not represent an endorsement from either AI Safety Institute or the independent experts and organizations. *
+¹ *We have also shared our assessment methodology with both AI Safety Institutes, as well as a selection of independent experts and organizations, for feedback. This does not represent an endorsement from either AI Safety Institute or the independent experts and organizations. *
 
 \
 

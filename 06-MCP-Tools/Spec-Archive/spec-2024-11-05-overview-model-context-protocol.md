@@ -20,8 +20,6 @@ All messages between MCP clients and servers **MUST** follow the [JSON-RPC 2.0](
 **Responses** are further sub-categorized as either **successful results** or **errors**. Results can follow any JSON object structure, while errors must include an error code and message at minimum.
 
 
-[​](#protocol-layers)
-
 Protocol Layers
 
 The Model Context Protocol consists of several key components that work together:
@@ -53,14 +51,10 @@ All implementations **MUST** support the base protocol and lifecycle management 
 ## Sampling
 
 
-[​](#auth)
-
 Auth
 
 Authentication and authorization are not currently part of the core MCP specification, but we are considering ways to introduce them in future. Join us in [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) to help shape the future of the protocol! Clients and servers **MAY** negotiate their own custom authentication and authorization strategies.
 
-
-[​](#schema)
 
 Schema
 

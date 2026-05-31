@@ -12,14 +12,10 @@ tags: ["mcp", "mcp-spec", "prompting"]
 The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured messages and instructions for interacting with language models. Clients can discover available prompts, retrieve their contents, and provide arguments to customize them.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Prompts are designed to be **user-controlled**, meaning they are exposed from servers to clients with the intention of the user being able to explicitly select them for use. Typically, prompts would be triggered through user-initiated commands in the user interface, which allows users to naturally discover and invoke available prompts. For example, as slash commands: However, implementors are free to expose prompts through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -40,12 +36,8 @@ Copy
 `listChanged` indicates whether the server will emit notifications when the list of available prompts changes.
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#listing-prompts)
 
 Listing Prompts
 
@@ -100,8 +92,6 @@ Copy
 ```
 
 
-[​](#getting-a-prompt)
-
 Getting a Prompt
 
 To retrieve a specific prompt, clients send a `prompts/get` request. Arguments may be auto-completed through [the completion API](/specification/draft/server/utilities/completion). **Request:**
@@ -146,8 +136,6 @@ Copy
 ```
 
 
-[​](#list-changed-notification)
-
 List Changed Notification
 
 When the list of available prompts changes, servers that declared the `listChanged` capability **SHOULD** send a notification:
@@ -162,17 +150,11 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
 
-[​](#data-types)
-
 Data Types
 
-
-[​](#prompt)
 
 Prompt
 
@@ -185,8 +167,6 @@ A prompt definition includes:
 - `arguments`: Optional list of arguments for customization
 
 
-[​](#promptmessage)
-
 PromptMessage
 
 Messages in a prompt can contain:
@@ -196,8 +176,6 @@ Messages in a prompt can contain:
 
 All content types in prompt messages support optional [annotations](/specification/2025-06-18/server/resources#annotations) for metadata about audience, priority, and modification times.
 
-
-[​](#text-content)
 
 Text Content
 
@@ -214,8 +192,6 @@ Copy
 
 This is the most common content type used for natural language interactions.
 
-
-[​](#image-content)
 
 Image Content
 
@@ -234,8 +210,6 @@ Copy
 The image data **MUST** be base64-encoded and include a valid MIME type. This enables multi-modal interactions where visual context is important.
 
 
-[​](#audio-content)
-
 Audio Content
 
 Audio content allows including audio information in messages:
@@ -252,8 +226,6 @@ Copy
 
 The audio data MUST be base64-encoded and include a valid MIME type. This enables multi-modal interactions where audio context is important.
 
-
-[​](#embedded-resources)
 
 Embedded Resources
 
@@ -281,8 +253,6 @@ Resources can contain either text or binary (blob) data and **MUST** include:
 Embedded resources enable prompts to seamlessly incorporate server-managed content like documentation, code samples, or other reference materials directly into the conversation flow.
 
 
-[​](#error-handling)
-
 Error Handling
 
 Servers **SHOULD** return standard JSON-RPC errors for common failure cases:
@@ -292,16 +262,12 @@ Servers **SHOULD** return standard JSON-RPC errors for common failure cases:
 - Internal errors: `-32603` (Internal error)
 
 
-[​](#implementation-considerations)
-
 Implementation Considerations
 
 1.  Servers **SHOULD** validate prompt arguments before processing
 2.  Clients **SHOULD** handle pagination for large prompt lists
 3.  Both parties **SHOULD** respect capability negotiation
 
-
-[​](#security)
 
 Security
 

@@ -121,7 +121,7 @@ Nevis's implementation demonstrates that AI can address wealth management's fund
 
 Looking ahead, Nevis plans to bring AI closer to their end clients. The company started with back-office applications and has moved to the middle-office, where advisors and relationship managers interact with AI-powered tools for internal purposes. As they continue this journey, Nevis may soon expose end consumers to AI-powered experiences directly.
 
-"As we scale, we expect Claude to power an increasing share of our platform, from meeting intelligence to agentic processes," says Swan. "We see Claude powering some of our most advanced AI agents, enabling fully autonomous operational pipelines that support thousands of financial advisors across the US."
+"As we scale, we expect Claude to power an increasing share of our platform, from meeting intelligence to agentic processes," says Swan. "We see Claude powering some of our most advanced AI agents, enabling fully autonomous operational pipelines that support thousands of financial advisors across the US."
 
 "We see Claude powering some of our most advanced AI agents, enabling fully autonomous operational pipelines that support thousands of financial advisors across the US."
 

@@ -28,21 +28,15 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP proposes treating tools input validation errors as Tool Execution Errors rather than Protocol Errors. This change would enable language models to receive validation error feedback in their context window, allowing them to self-correct and successfully complete tasks without human intervention, significantly improving task completion rate.
 
 
-[​](#motivation)
-
 Motivation
 
 Language models can learn from tool input validation error messages and retry a tools/call with corrected parameters accordingly, but only if they receive the error feedback in their context window. Protocol Errors are catch at the application level by the MCP Client. Only Tool Execution Errors are forwarded back to the model as JSON-RPC responses. With the current specifications, models cannot see these error messages and thus cannot self-correct, leading to repeated failures and poor user experiences.
 
-
-[​](#problem-statement)
 
 Problem Statement
 
@@ -76,8 +70,6 @@ Tool expected input JSON schema can only describe the regex statement. The actua
 4.  Users experience frustration and must manually intervene
 
 
-[​](#benefits-of-this-proposal)
-
 Benefits of This Proposal
 
 1.  **Higher Task Completion Rates**: Models can self-correct validation errors without human intervention
@@ -86,12 +78,8 @@ Benefits of This Proposal
 4.  **Reduced API Calls**: Fewer retry attempts as models correct themselves on the first error
 
 
-[​](#specification)
-
 Specification
 
-
-[​](#current-behavior)
 
 Current Behavior
 
@@ -103,8 +91,6 @@ The [tool errors specification](../Spec-Archive/spec-2025-06-18-tools-model-cont
 This ambiguity leads to inconsistent implementations where valuable error feedback is lost.
 
 
-[​](#proposed-change)
-
 Proposed Change
 
 Clarify the specification with the following changes:
@@ -112,8 +98,6 @@ Clarify the specification with the following changes:
 1.  Removes the “invalid argument” category from **Protocol Errors**.
 2.  **Tool Execution Errors** should be used for all tool argument validation failures (merging `invalid argument` and `invalid input data` under a new `input validation errors` category)
 
-
-[​](#specification-text-changes)
 
 Specification Text Changes
 
@@ -138,12 +122,8 @@ Tools use two error reporting mechanisms:
 ```
 
 
-[​](#implementation)
-
 Implementation
 
-
-[​](#before-protocol-error)
 
 Before (Protocol Error)
 
@@ -175,8 +155,6 @@ response: {
 // This cycle repeats until failure
 ```
 
-
-[​](#after-tool-execution-error)
 
 After (Tool Execution Error)
 
@@ -222,8 +200,6 @@ request: {
 ```
 
 
-[​](#backwards-compatibility)
-
 Backwards Compatibility
 
 This change is backwards compatible as it:
@@ -235,8 +211,6 @@ This change is backwards compatible as it:
 
 Servers implementing the clarified behavior will provide better model self-recovery while continuing to work with all existing clients.
 
-
-[​](#references)
 
 References
 

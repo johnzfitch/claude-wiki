@@ -143,7 +143,7 @@ Submitted by:
 
 123 Community Drive, Metro City, ST 12345\
 Contact: Maria Rodriguez, Executive Director\
-[\[email protected\]](/cdn-cgi/l/email-protection) \| (555) 234-5678*\
+[\[email protected\]](/cdn-cgi/l/email-protection) \| (555) 234-5678*\
 March 15, 2025*
 
 
@@ -203,7 +203,7 @@ Central to our approach is the Youth Advisory Committee, where participants hold
 The requested \$75,000 represents a strategic investment in youth capacity-building, with 78% of funds supporting direct program delivery.
 
 - Personnel: \$32,500 (43% of total)
-- Fringe benefits: \$8,125 (11% of total) 
+- Fringe benefits: \$8,125 (11% of total) 
 - Technology & supplies: \$11,500 (\$15 of total)
 - Participant stipends: \$13,500 (18% of total)
 - Indirect costs: \$9,375 (13% of total)
@@ -460,7 +460,7 @@ Learn more
 
 Prompt
 
-Create a Word document with volunteer role descriptions for a literacy nonprofit. Include 4 roles: Reading tutors (one-on-one weekly sessions), reading buddies (small group reading circles), event coordinators (book fairs and literacy events), and administrative volunteers (data entry, scheduling, communications). For each role, include purpose, key responsibilities, time commitment, location, training requirements, and ideal qualifications. 
+Create a Word document with volunteer role descriptions for a literacy nonprofit. Include 4 roles: Reading tutors (one-on-one weekly sessions), reading buddies (small group reading circles), event coordinators (book fairs and literacy events), and administrative volunteers (data entry, scheduling, communications). For each role, include purpose, key responsibilities, time commitment, location, training requirements, and ideal qualifications. 
 
 Attachments
 

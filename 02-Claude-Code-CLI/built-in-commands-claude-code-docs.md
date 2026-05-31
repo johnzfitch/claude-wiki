@@ -81,15 +81,11 @@ Type `/` in Claude Code to see all available commands, or type `/` followed by a
 
 ## 
 
-[​](#mcp-prompts)
-
 MCP prompts
 
 MCP servers can expose prompts that appear as commands. These use the format `/mcp__<server>__<prompt>` and are dynamically discovered from connected servers. See [MCP prompts](/docs/en/mcp#use-mcp-prompts-as-commands) for details.
 
 ## 
-
-[​](#see-also)
 
 See also
 

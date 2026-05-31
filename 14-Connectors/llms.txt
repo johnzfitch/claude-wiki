@@ -591,10 +591,14 @@ In addition, other solutions like [Cloudflare’s AI Playground](https://playgro
 Delegate coding tasks directly from your Slack workspace
 
 
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
+
 Claude Code in Slack brings the power of Claude Code directly into your Slack workspace. When you mention `@Claude` with a coding task, Claude automatically detects the intent and creates a Claude Code session on the web, allowing you to delegate development work without leaving your team conversations. This integration is built on the existing Claude for Slack app but adds intelligent routing to Claude Code on the web for coding-related requests.
 
-
-[​](#use-cases)
 
 Use cases
 
@@ -604,21 +608,17 @@ Use cases
 - **Parallel task execution**: Kick off coding tasks in Slack while you continue other work, receiving notifications when complete.
 
 
-[​](#prerequisites)
-
 Prerequisites
 
 Before using Claude Code in Slack, ensure you have the following:
 
-| Requirement | Details |
-|:---|:---|
-| Claude Plan | Pro, Max, Team, or Enterprise with Claude Code access (premium seats or Chat + Claude Code seats) |
-| Claude Code on the web | Access to [Claude Code on the web](/docs/en/claude-code-on-the-web) must be enabled |
-| GitHub Account | Connected to Claude Code on the web with at least one repository authenticated |
-| Slack Authentication | Your Slack account linked to your Claude account via the Claude app |
+| Requirement            | Details                                                                                           |
+|:-----------------------|:--------------------------------------------------------------------------------------------------|
+| Claude Plan            | Pro, Max, Team, or Enterprise with Claude Code access (premium seats or Chat + Claude Code seats) |
+| Claude Code on the web | Access to [Claude Code on the web](/docs/en/claude-code-on-the-web) must be enabled               |
+| GitHub Account         | Connected to Claude Code on the web with at least one repository authenticated                    |
+| Slack Authentication   | Your Slack account linked to your Claude account via the Claude app                               |
 
-
-[​](#setting-up-claude-code-in-slack)
 
 Setting up Claude Code in Slack
 
@@ -659,9 +659,9 @@ Choose your routing mode
 
 After connecting your accounts, configure how Claude handles your messages in Slack. Navigate to the Claude App Home in Slack to find the **Routing Mode** setting.
 
-| Mode | Behavior |
-|:---|:---|
-| **Code only** | Claude routes all @mentions to Claude Code sessions. Best for teams using Claude in Slack exclusively for development tasks. |
+| Mode            | Behavior                                                                                                                                                                                                                                 |
+|:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Code only**   | Claude routes all @mentions to Claude Code sessions. Best for teams using Claude in Slack exclusively for development tasks.                                                                                                             |
 | **Code + Chat** | Claude analyzes each message and intelligently routes between Claude Code (for coding tasks) and Claude Chat (for writing, analysis, and general questions). Best for teams who want a single @Claude entry point for all types of work. |
 
 In Code + Chat mode, if Claude routes a message to Chat but you wanted a coding session, you can click “Retry as Code” to create a Claude Code session instead. Similarly, if it’s routed to Code but you wanted a Chat session, you can choose that option in that thread.
@@ -674,12 +674,8 @@ Add Claude to channels
 Claude is not automatically added to any channels after installation. To use Claude in a channel, invite it by typing `/invite @Claude` in that channel. Claude can only respond to @mentions in channels where it has been added.
 
 
-[​](#how-it-works)
-
 How it works
 
-
-[​](#automatic-detection)
 
 Automatic detection
 
@@ -688,16 +684,12 @@ When you mention @Claude in a Slack channel or thread, Claude automatically anal
 Claude Code in Slack only works in channels (public or private). It does not work in direct messages (DMs).
 
 
-[​](#context-gathering)
-
 Context gathering
 
 **From threads**: When you @mention Claude in a thread, it gathers context from all messages in that thread to understand the full conversation. **From channels**: When mentioned directly in a channel, Claude looks at recent channel messages for relevant context. This context helps Claude understand the problem, select the appropriate repository, and inform its approach to the task.
 
 When @Claude is invoked in Slack, Claude is given access to the conversation context to better understand your request. Claude may follow directions from other messages in the context, so users should make sure to only use Claude in trusted Slack conversations.
 
-
-[​](#session-flow)
 
 Session flow
 
@@ -709,19 +701,13 @@ Session flow
 6.  **Review**: Click “View Session” to see the full transcript, or “Create PR” to open a pull request
 
 
-[​](#user-interface-elements)
-
 User interface elements
 
-
-[​](#app-home)
 
 App Home
 
 The App Home tab shows your connection status and allows you to connect or disconnect your Claude account from Slack.
 
-
-[​](#message-actions)
 
 Message actions
 
@@ -731,44 +717,34 @@ Message actions
 - **Change Repo**: Allows you to select a different repository if Claude chose incorrectly.
 
 
-[​](#repository-selection)
-
 Repository selection
 
 Claude automatically selects a repository based on context from your Slack conversation. If multiple repositories could apply, Claude may display a dropdown allowing you to choose the correct one.
 
 
-[​](#access-and-permissions)
-
 Access and permissions
 
 
-[​](#user-level-access)
-
 User-level access
 
-| Access Type | Requirement |
-|:---|:---|
-| Claude Code Sessions | Each user runs sessions under their own Claude account |
-| Usage & Rate Limits | Sessions count against the individual user’s plan limits |
-| Repository Access | Users can only access repositories they’ve personally connected |
-| Session History | Sessions appear in your Claude Code history on claude.ai/code |
+| Access Type          | Requirement                                                     |
+|:---------------------|:----------------------------------------------------------------|
+| Claude Code Sessions | Each user runs sessions under their own Claude account          |
+| Usage & Rate Limits  | Sessions count against the individual user’s plan limits        |
+| Repository Access    | Users can only access repositories they’ve personally connected |
+| Session History      | Sessions appear in your Claude Code history on claude.ai/code   |
 
-
-[​](#workspace-level-access)
 
 Workspace-level access
 
 Slack workspace administrators control whether the Claude app is available in their workspace:
 
-| Control | Description |
-|:---|:---|
-| App installation | Workspace admins decide whether to install the Claude app from the Slack App Marketplace |
+| Control                      | Description                                                                                                       |
+|:-----------------------------|:------------------------------------------------------------------------------------------------------------------|
+| App installation             | Workspace admins decide whether to install the Claude app from the Slack App Marketplace                          |
 | Enterprise Grid distribution | For Enterprise Grid organizations, organization admins can control which workspaces have access to the Claude app |
-| App removal | Removing the app from a workspace immediately revokes access for all users in that workspace |
+| App removal                  | Removing the app from a workspace immediately revokes access for all users in that workspace                      |
 
-
-[​](#channel-based-access-control)
 
 Channel-based access control
 
@@ -782,19 +758,13 @@ Claude is not automatically added to any channels after installation. Users must
 This channel-based model allows teams to restrict Claude Code usage to specific channels, providing an additional layer of access control beyond workspace-level permissions.
 
 
-[​](#what’s-accessible-where)
-
 What’s accessible where
 
 **In Slack**: You’ll see status updates, completion summaries, and action buttons. The full transcript is preserved and always accessible. **On the web**: The complete Claude Code session with full conversation history, all code changes, file operations, and the ability to continue the session or create pull requests. For Enterprise and Team accounts, sessions created from Claude in Slack are automatically visible to the organization. See [Claude Code on the Web sharing](/docs/en/claude-code-on-the-web#share-sessions) for more details.
 
 
-[​](#best-practices)
-
 Best practices
 
-
-[​](#writing-effective-requests)
 
 Writing effective requests
 
@@ -804,19 +774,13 @@ Writing effective requests
 - **Use threads**: Reply in threads when discussing bugs or features so Claude can gather the full context.
 
 
-[​](#when-to-use-slack-vs-web)
-
 When to use Slack vs. web
 
 **Use Slack when**: Context already exists in a Slack discussion, you want to kick off a task asynchronously, or you’re collaborating with teammates who need visibility. **Use the web directly when**: You need to upload files, want real-time interaction during development, or are working on longer, more complex tasks.
 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
-
-[​](#sessions-not-starting)
 
 Sessions not starting
 
@@ -825,8 +789,6 @@ Sessions not starting
 3.  Ensure you have at least one GitHub repository connected to Claude Code
 
 
-[​](#repository-not-showing)
-
 Repository not showing
 
 1.  Connect the repository in Claude Code on the web at [claude.ai/code](https://claude.ai/code)
@@ -834,15 +796,11 @@ Repository not showing
 3.  Try disconnecting and reconnecting your GitHub account
 
 
-[​](#wrong-repository-selected)
-
 Wrong repository selected
 
 1.  Click the “Change Repo” button to select a different repository
 2.  Include the repository name in your request for more accurate selection
 
-
-[​](#authentication-errors)
 
 Authentication errors
 
@@ -851,15 +809,11 @@ Authentication errors
 3.  Check that your Claude plan includes Claude Code access
 
 
-[​](#session-expiration)
-
 Session expiration
 
 1.  Sessions remain accessible in your Claude Code history on the web
 2.  You can continue or reference past sessions from [claude.ai/code](https://claude.ai/code)
 
-
-[​](#current-limitations)
 
 Current limitations
 
@@ -868,8 +822,6 @@ Current limitations
 - **Rate limits apply**: Sessions use your individual Claude plan’s rate limits.
 - **Web access required**: Users must have Claude Code on the web access; those without it will only get standard Claude chat responses.
 
-
-[​](#related-resources)
 
 Related resources
 
@@ -962,7 +914,7 @@ After completing the previous step on behalf of the Claude organization, the Mic
 
     - You must complete this step before any team members can connect to Microsoft 365 individually.
 
-5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.​​​​​​​​​​​​​​​​
+5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.
 
 6.  (Optional) **To selectively restrict which permissions scopes users in your tenant can use** see the below “Permission categories” and “Selectively revoking permissions” sections.
 
@@ -1032,7 +984,7 @@ After completing the previous step on behalf of the organization, the Microsoft 
 
     - You must complete this step before any team members can connect to Microsoft 365 individually.
 
-5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.​​​​​​​​​​​​​​​​
+5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.
 
 6.  (Optional) **To selectively restrict which permissions scopes users in your tenant can use** see the below “Permission categories” and “Selectively revoking permissions” sections.
 
@@ -1099,7 +1051,7 @@ Claude will provide a response based on information retrieved from your Microsof
 - Access Teams chat messages and channel discussions where you're a participant.
 
 - Review team collaboration patterns and find decisions made across conversations.\
-  ​
+  
 
 ------------------------------------------------------------------------
 
@@ -1240,7 +1192,7 @@ To restore a revoked permission, follow the steps to grant admin pre-consent des
 - **Revocable access:** You can disconnect the integration at any time through **[Settings \> Connectors](https://claude.ai/settings/integrations)**.
 
 Read more here: **[Microsoft 365 Connector: Security Guide](microsoft-365-connector-security-guide.md)**.\
-​
+
 
 ------------------------------------------------------------------------
 
@@ -1287,7 +1239,7 @@ Tips to improve your search queries:
 - Try breaking up complex queries into simpler, more focused questions.
 
 - Verify spelling of names, projects, or terms.\
-  ​
+  
 
 ------------------------------------------------------------------------
 
@@ -5434,7 +5386,7 @@ document.addEventListener('DOMContentLoaded', function() {
  document.fonts.ready.then(handleResize);
  }
 });
-How to use Claude in Excel for accounting: Revenue model validationUse Claude to validate ASC 606 revenue models, surface reconciliation issues, and build financial visualizationsCategoryFinanceProductClaude.aiReading timeWatch time3min8minShareCopy linkhttps://claude.com/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validationClaude in Excel works directly inside your spreadsheet through a sidebar, reading your data and making changes through conversation. In this tutorial, you'll see how an accountant uses Claude to validate an ASC 606 revenue recognition model—the kind of multi-tab workbook you might inherit during an audit or acquire in a transaction.What you'll learnUnderstand workbooks you didn't build — Ask Claude to explain how tabs connect. It reads every sheet first, then maps the structure—how schedules tie together, where data flows, what feeds into what.Surface errors and inconsistencies — Claude catches reconciliation gaps, duplicate entries, and missing data across multiple sheets. Instead of clicking through tabs yourself, you see everything it found upfront—and choose what to tackle first.Fix issues with confirmation — When Claude finds a problem, it shows you what's wrong, explains the recommended fix, and waits for your go-ahead. You stay in control of what changes.Add columns and formatting through conversation  — Describe what you need—status indicators, legends, new calculations—and Claude builds it. It learns patterns from your existing data and applies them consistently.Create charts by describing them — Tell Claude what visualization you need. It creates helper tables when necessary, builds the chart, and will rebuild if the first version isn't right.In this videoFollow along with the video, or copy these prompts to try in your own workbook.0:00 — Get oriented in an unfamiliar modelAsk Claude to explain a workbook you've inherited or need to audit. Claude reads every tab before responding, giving it full context for follow-up questions."Walk me through this model. What's on each tab and how does everything tie together?"1:13 — Let Claude surface issues for youAfter reading the workbook, Claude proactively identifies problems: reconciliation gaps, duplicate entries, missing data. You choose which to tackle first."Yes, please look at the reconciliation issue first."2:17 — Fix data with confirmationClaude shows you what it found and what it recommends. It won't make changes until you say so."Yes, go ahead."3:09 — Add columns through conversationDescribe what you want—status indicators, legends, new calculations—and Claude adds them."Add a check mark column showing testing status for each contract. Use ✓ for tested, IP for in progress, and NP for not yet started. Add a legend at the bottom."4:24 — Create charts by describing themTell Claude what visualization you need. It creates helper tables when necessary and will rebuild if the first version isn't right."Create a waterfall chart showing the Q3 deferred revenue rollforward—beginning balance, bookings, revenue recognized, adjustments, and ending balance."6:11 — Return to earlier issuesClaude remembers everything from your conversation. Circle back to issues it flagged earlier without re-explaining."Let's go back to the issues you identified—a missing journal entry and one other I think?"What to noticeClaude reads before it answers. When you ask about the model, Claude doesn't guess—it reads all six sheets first, then explains how they connect. This prevents errors from incomplete context and gives Claude the baseline it needs for follow-up questions.Issues surface together. Instead of discovering problems one at a time as you click through tabs, Claude presents everything it found upfront: the reconciliation gap, the duplicate, the missing entry, the flagged items. You decide what to tackle first.Changes require confirmation. Claude shows the math, explains what will change, and waits for your "yes, go ahead" before modifying anything. You see exactly what's happening and can verify the logic.Context carries through the conversation. When you say "let's go back to the issues you identified," Claude remembers what it flagged earlier. You don't need to re-explain or re-read the model.Claude learns patterns from your data. When adding September journal entries, Claude analyzed the existing July and August entries, identified that revenue splits 80% Platform / 12% Support / 8% Services, and applied that same logic. The new entries follow your established pattern.Next stepsThis tutorial shows one use case: validating an ASC 606 revenue model with reconciliation issues and missing entries. The same approach works for any multi-sheet model where you need to understand the structure, catch problems, or extend what's already built—budgets, forecasts, audit workpapers.Get started:Install Claude in Excel from Microsoft AppSourceOpen it with Ctrl+Option+C (Mac) or Ctrl+Alt+C (Windows)Start with "Walk me through this model" on any spreadsheet you've inheritedLearn more:Claude in Excel help articleWhat is the Max plan?What you'll learnIn this videoWhat to noticeNext stepsRelated tutorialsGetting started with Claude in ExcelGetting started with Claude in ExcelGetting started with Claude in ExcelTutorialTutorialTutorialHow to use Claude in Excel for HR: Headcount planningHow to use Claude in Excel for HR: Headcount planningHow to use Claude in Excel for HR: Headcount planningTutorialTutorialTutorialPrompting strategies for financial analysisPrompting strategies for financial analysisPrompting strategies for financial analysisTutorialTutorialTutorialClaude for financial services overviewClaude for financial services overviewClaude for financial services overviewTutorialTutorialTutorial
+How to use Claude in Excel for accounting: Revenue model validationUse Claude to validate ASC 606 revenue models, surface reconciliation issues, and build financial visualizationsCategoryFinanceProductClaude.aiReading timeWatch time3min8minShareCopy linkhttps://claude.com/resources/tutorials/how-to-use-claude-in-excel-for-accounting-revenue-model-validationClaude in Excel works directly inside your spreadsheet through a sidebar, reading your data and making changes through conversation. In this tutorial, you'll see how an accountant uses Claude to validate an ASC 606 revenue recognition model—the kind of multi-tab workbook you might inherit during an audit or acquire in a transaction.What you'll learnUnderstand workbooks you didn't build — Ask Claude to explain how tabs connect. It reads every sheet first, then maps the structure—how schedules tie together, where data flows, what feeds into what.Surface errors and inconsistencies — Claude catches reconciliation gaps, duplicate entries, and missing data across multiple sheets. Instead of clicking through tabs yourself, you see everything it found upfront—and choose what to tackle first.Fix issues with confirmation — When Claude finds a problem, it shows you what's wrong, explains the recommended fix, and waits for your go-ahead. You stay in control of what changes.Add columns and formatting through conversation  — Describe what you need—status indicators, legends, new calculations—and Claude builds it. It learns patterns from your existing data and applies them consistently.Create charts by describing them — Tell Claude what visualization you need. It creates helper tables when necessary, builds the chart, and will rebuild if the first version isn't right.In this videoFollow along with the video, or copy these prompts to try in your own workbook.0:00 — Get oriented in an unfamiliar modelAsk Claude to explain a workbook you've inherited or need to audit. Claude reads every tab before responding, giving it full context for follow-up questions."Walk me through this model. What's on each tab and how does everything tie together?"1:13 — Let Claude surface issues for youAfter reading the workbook, Claude proactively identifies problems: reconciliation gaps, duplicate entries, missing data. You choose which to tackle first."Yes, please look at the reconciliation issue first."2:17 — Fix data with confirmationClaude shows you what it found and what it recommends. It won't make changes until you say so."Yes, go ahead."3:09 — Add columns through conversationDescribe what you want—status indicators, legends, new calculations—and Claude adds them."Add a check mark column showing testing status for each contract. Use ✓ for tested, IP for in progress, and NP for not yet started. Add a legend at the bottom."4:24 — Create charts by describing themTell Claude what visualization you need. It creates helper tables when necessary and will rebuild if the first version isn't right."Create a waterfall chart showing the Q3 deferred revenue rollforward—beginning balance, bookings, revenue recognized, adjustments, and ending balance."6:11 — Return to earlier issuesClaude remembers everything from your conversation. Circle back to issues it flagged earlier without re-explaining."Let's go back to the issues you identified—a missing journal entry and one other I think?"What to noticeClaude reads before it answers. When you ask about the model, Claude doesn't guess—it reads all six sheets first, then explains how they connect. This prevents errors from incomplete context and gives Claude the baseline it needs for follow-up questions.Issues surface together. Instead of discovering problems one at a time as you click through tabs, Claude presents everything it found upfront: the reconciliation gap, the duplicate, the missing entry, the flagged items. You decide what to tackle first.Changes require confirmation. Claude shows the math, explains what will change, and waits for your "yes, go ahead" before modifying anything. You see exactly what's happening and can verify the logic.Context carries through the conversation. When you say "let's go back to the issues you identified," Claude remembers what it flagged earlier. You don't need to re-explain or re-read the model.Claude learns patterns from your data. When adding September journal entries, Claude analyzed the existing July and August entries, identified that revenue splits 80% Platform / 12% Support / 8% Services, and applied that same logic. The new entries follow your established pattern.Next stepsThis tutorial shows one use case: validating an ASC 606 revenue model with reconciliation issues and missing entries. The same approach works for any multi-sheet model where you need to understand the structure, catch problems, or extend what's already built—budgets, forecasts, audit workpapers.Get started:Install Claude in Excel from Microsoft AppSourceOpen it with Ctrl+Option+C (Mac) or Ctrl+Alt+C (Windows)Start with "Walk me through this model" on any spreadsheet you've inheritedLearn more:Claude in Excel help articleWhat is the Max plan?What you'll learnIn this videoWhat to noticeNext stepsRelated tutorialsGetting started with Claude in ExcelGetting started with Claude in ExcelGetting started with Claude in ExcelTutorialTutorialTutorialHow to use Claude in Excel for HR: Headcount planningHow to use Claude in Excel for HR: Headcount planningHow to use Claude in Excel for HR: Headcount planningTutorialTutorialTutorialPrompting strategies for financial analysisPrompting strategies for financial analysisPrompting strategies for financial analysisTutorialTutorialTutorialClaude for financial services overviewClaude for financial services overviewClaude for financial services overviewTutorialTutorialTutorial
  @container (width < 52em) {
  .footer_layout {
  display: flex;
@@ -9553,8 +9505,8 @@ The following features are not available when using Claude in Slack:
 ## Using integrations across multiple Slack workspaces
 
 If you use Claude across more than one Slack workspace, it's important to understand that your integrations (like the Slack connector) are tied to your **Claude account**, not to a specific Slack workspace.\
-​\
-​**To avoid unexpected results:**
+\
+**To avoid unexpected results:**
 
 - Disconnect the Slack connector from your Claude account before using Claude in a different workspace (**Settings \> Connectors \> Slack \> Disconnect**), then reconnect it when needed.
 
@@ -11212,7 +11164,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#abc4c5c7c2c5cec7c2c9d9cad9c2cac5ebc8cac5cfc2cf85c4d9cc).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#abc4c5c7c2c5cec7c2c9d9cad9c2cac5ebc8cac5cfc2cf85c4d9cc).
 
 ## Setting up the Candid integration
 
@@ -11619,7 +11571,7 @@ Candid Seals of Transparency indicate how much information an organization has s
 
 ## Need more help?
 
-If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#224d4c4e4b4c474e4b405043504b434c6241434c464b460c4d5045).
+If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#224d4c4e4b4c474e4b405043504b434c6241434c464b460c4d5045).
 
 
 ---
@@ -14265,8 +14217,8 @@ Learn about [finding and connecting tools](../15-Claude-AI-Features/browsing-and
 
 **For Claude Code Users**
 
-1.  Command: `/plugin marketplace add anthropics/life-sciences`‍
-2.  Command: `/plugin install wiley-scholar-gateway@life-sciences`‍
+1.  Command: `/plugin marketplace add anthropics/life-sciences`
+2.  Command: `/plugin install wiley-scholar-gateway@life-sciences`
 3.  Restart Claude Code
 4.  Verify that the server is connected with `/mcp`
 
@@ -14274,7 +14226,7 @@ Technical details of the Scholar Gateway integration can be found in [Wiley’s 
 
 ## Common use cases
 
-- Enhanced literature review when planning experiments and research plans, to efficiently identify, summarize, and evaluate relevant literature as individual articles or in aggregation, enabling new ways of doing research and delivering reliable and cited insights in seconds.​
+- Enhanced literature review when planning experiments and research plans, to efficiently identify, summarize, and evaluate relevant literature as individual articles or in aggregation, enabling new ways of doing research and delivering reliable and cited insights in seconds.
 - Information on latest research in a certain field of medicine or pharmaceuticals.
 
 ## Related tutorials
@@ -15296,8 +15248,8 @@ Learn about [finding and connecting tools](../15-Claude-AI-Features/browsing-and
 
 **For Claude Code Users**
 
-1.  Command: `/plugin marketplace add anthropics/life-sciences`‍
-2.  Command: `/plugin install synapse@life-sciences`‍
+1.  Command: `/plugin marketplace add anthropics/life-sciences`
+2.  Command: `/plugin install synapse@life-sciences`
 3.  Restart Claude Code
 4.  Verify that the server is connected with `/mcp`
 
@@ -15319,7 +15271,7 @@ Technical details of the Synapse.org integration can be found in [Synapse’s MC
   - *“What's the processing history for file syn51543273?”*
   - *“Show me the data lineage and upstream dependencies for the dataset syn68719289”*
 
-‍
+
 
 ## Related tutorials
 

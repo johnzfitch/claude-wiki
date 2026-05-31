@@ -17,8 +17,6 @@ MCP currently defines two standard transport mechanisms for client-server commun
 Clients **SHOULD** support stdio whenever possible. It is also possible for clients and servers to implement [custom transports](#custom-transports) in a pluggable fashion.
 
 
-[​](#stdio)
-
 stdio
 
 In the **stdio** transport:
@@ -31,14 +29,10 @@ In the **stdio** transport:
 - The client **MUST NOT** write anything to the server’s `stdin` that is not a valid MCP message.
 
 
-[​](#http-with-sse)
-
 HTTP with SSE
 
 In the **SSE** transport, the server operates as an independent process that can handle multiple client connections.
 
-
-[​](#security-warning)
 
 Security Warning
 
@@ -55,8 +49,6 @@ Without these protections, attackers could use DNS rebinding to interact with lo
 
 When a client connects, the server **MUST** send an `endpoint` event containing a URI for the client to use for sending messages. All subsequent client messages **MUST** be sent as HTTP POST requests to this endpoint. Server messages are sent as SSE `message` events, with the message content encoded as JSON in the event data.
 
-
-[​](#custom-transports)
 
 Custom Transports
 

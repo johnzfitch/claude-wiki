@@ -108,7 +108,7 @@ If your organization manages your computer, be aware that this extends access to
 
 **8. Report suspicious behavior immediately**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#8cf9ffe9feffedeae9f8f5ccede2f8e4fee3fce5efa2efe3e1) or use the in-app feedback button. Your reports help us improve our defenses.
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](/cdn-cgi/l/email-protection#8cf9ffe9feffedeae9f8f5ccede2f8e4fee3fce5efa2efe3e1) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 

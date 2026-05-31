@@ -104,7 +104,7 @@ The team had explored alternatives, including building applications using other 
 
 ## Building the permit automation system
 
-Claude Agent SDK now serves as Freedom Forever's primary agent framework for production workflows. The system handles permit submissions on third-party utility and municipality websites, processes incoming permit emails in real time, and connects to their custom CRM for scheduling, task completion, file analysis, and human handoffs. A single, unified framework powers automation across the business. 
+Claude Agent SDK now serves as Freedom Forever's primary agent framework for production workflows. The system handles permit submissions on third-party utility and municipality websites, processes incoming permit emails in real time, and connects to their custom CRM for scheduling, task completion, file analysis, and human handoffs. A single, unified framework powers automation across the business. 
 
 The SDK was straightforward to build on—the core agent loop required little custom work, and it handled most underlying complexity out of the box. Freedom Forever built an internal "agent console" on top of it to manage workflows, but the foundation came together quickly. And as the SDK improves, they benefit automatically. "When structured outputs rolled out, we stripped out our custom workarounds and just turned it on," said Richardson. "That kind of speed matters." In addition, much of the internal tooling, benchmarks, and reporting infrastructure was itself built using Claude Code, Anthropic's command-line tool for agentic coding.
 

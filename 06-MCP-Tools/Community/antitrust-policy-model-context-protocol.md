@@ -17,21 +17,15 @@ MCP Project Antitrust Policy for participants and contributors
 This policy applies when participating in MCP meetings, Working Groups, Interest Groups, and other collaborative forums where competitors may be present. Most individual contributors working on code or documentation don’t need to worry about this in day-to-day work - it’s primarily relevant for group discussions about standards and specifications.
 
 
-[​](#introduction)
-
 Introduction
 
 The goal of the Model Context Protocol open source project (the “Project”) is to develop a universal standard for model-to-world interactions, including enabling LLMs and agents to seamlessly connect with and utilize external data sources and tools. The purpose of this Antitrust Policy (the “Policy”) is to avoid antitrust risks in carrying out this pro-competitive mission. Participants in and contributors to the Project (collectively, “participants”) will use their best reasonable efforts to comply in all respects with all applicable state and federal antitrust and trade regulation laws, and applicable antitrust/competition laws of other countries (collectively, the “Antitrust Laws”). The goal of Antitrust Laws is to encourage vigorous competition. Nothing in this Policy prohibits or limits the ability of participants to make, sell or use any product, or otherwise to compete in the marketplace. This Policy provides general guidance on compliance with Antitrust Law. Participants should contact their respective legal counsel to address specific questions. This Policy is conservative and is intended to promote compliance with the Antitrust Laws, not to create duties or obligations beyond what the Antitrust Laws actually require. In the event of any inconsistency between this Policy and the Antitrust Laws, the Antitrust Laws preempt and control.
 
 
-[​](#participation)
-
 Participation
 
 Technical participation in the Project shall be open to all, subject only to compliance with the provisions of the Project’s charter and other governance documents.
 
-
-[​](#conduct-of-meetings)
 
 Conduct of Meetings
 
@@ -56,14 +50,10 @@ In connection with all Project Meetings, participants must do the following:
 - Protest against any discussions that appear to violate these policies or the Antitrust Laws, leave any meeting in which such discussions continue, and either insist that such protest be noted in the minutes.
 
 
-[​](#requirements/standard-setting)
-
 Requirements/Standard Setting
 
 The Project may establish standards, technical requirements and/or specifications for use (collectively, “requirements”). Participants shall not enter into agreements that prohibit or restrict any participant from establishing or adopting any other requirements. Participants shall not undertake any efforts, directly or indirectly, to prevent any firm from manufacturing, selling, or supplying any product not conforming to a requirement. The Project shall not promote standardization of commercial terms, such as terms for license and sale.
 
-
-[​](#contact-information)
 
 Contact Information
 

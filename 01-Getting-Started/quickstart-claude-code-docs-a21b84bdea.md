@@ -1,8 +1,9 @@
 ---
+title: "Quickstart - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/quickstart"
 category: "01-Getting-Started"
 fetched_at: "2026-05-19T21:23:03Z"
-source_url: "https://code.claude.com/docs/en/quickstart"
-title: "Quickstart - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Quickstart
@@ -20,8 +21,6 @@ Welcome to Claude Code!
 This quickstart guide will have you using AI-powered coding assistance in a few minutes. By the end, you’ll understand how to use Claude Code for common development tasks.
 
 
-[​](#before-you-begin)
-
 Before you begin
 
 Make sure you have:
@@ -33,8 +32,6 @@ Make sure you have:
 
 This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/docs/en/desktop), in [VS Code](/docs/en/vs-code) and [JetBrains IDEs](/docs/en/jetbrains), in [Slack](/docs/en/slack), and in CI/CD with [GitHub Actions](/docs/en/github-actions) and [GitLab](/docs/en/gitlab-ci-cd). See [all interfaces](/docs/en/overview#use-claude-code-everywhere).
 
-
-[​](#step-1-install-claude-code)
 
 Step 1: Install Claude Code
 
@@ -85,8 +82,6 @@ WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCod
 You can also install with [apt, dnf, or apk](/docs/en/setup#install-with-linux-package-managers) on Debian, Fedora, RHEL, and Alpine.
 
 
-[​](#step-2-log-in-to-your-account)
-
 Step 2: Log in to your account
 
 Claude Code requires an account to use. When you start an interactive session with the `claude` command, you’ll need to log in:
@@ -110,8 +105,6 @@ You can log in using any of these account types:
 Once logged in, your credentials are stored and you won’t need to log in again. To switch accounts later, use the `/login` command.
 
 
-[​](#step-3-start-your-first-session)
-
 Step 3: Start your first session
 
 Open your terminal in any project directory and start Claude Code:
@@ -125,8 +118,6 @@ You’ll see the Claude Code welcome screen with your session information, recen
 
 After logging in (Step 2), your credentials are stored on your system. Learn more in [Credential Management](/docs/en/authentication#credential-management).
 
-
-[​](#step-4-ask-your-first-question)
 
 Step 4: Ask your first question
 
@@ -167,8 +158,6 @@ can Claude Code work with Docker?
 Claude Code reads your project files as needed. You don’t have to manually add context.
 
 
-[​](#step-5-make-your-first-code-change)
-
 Step 5: Make your first code change
 
 Now let’s make Claude Code do some actual coding. Try a simple task:
@@ -186,8 +175,6 @@ Claude Code will:
 
 Claude Code always asks for permission before modifying files. You can approve individual changes or enable “Accept all” mode for a session.
 
-
-[​](#step-6-use-git-with-claude-code)
 
 Step 6: Use Git with Claude Code
 
@@ -216,8 +203,6 @@ help me resolve merge conflicts
 ```
 
 
-[​](#step-7-fix-a-bug-or-add-a-feature)
-
 Step 7: Fix a bug or add a feature
 
 Claude is proficient at debugging and feature implementation. Describe what you want in natural language:
@@ -239,8 +224,6 @@ Claude Code will:
 - Implement a solution
 - Run tests if available
 
-
-[​](#step-8-test-out-other-common-workflows)
 
 Step 8: Test out other common workflows
 
@@ -271,8 +254,6 @@ review my changes and suggest improvements
 Talk to Claude like you would a helpful colleague. Describe what you want to achieve, and it will help you get there.
 
 
-[​](#essential-commands)
-
 Essential commands
 
 Here are the most important commands for daily use:
@@ -290,8 +271,6 @@ Here are the most important commands for daily use:
 
 See the [CLI reference](/docs/en/cli-reference) for a complete list of commands.
 
-
-[​](#pro-tips-for-beginners)
 
 Pro tips for beginners
 
@@ -331,8 +310,6 @@ Save time with shortcuts
 - Press `Shift+Tab` to cycle permission modes
 
 
-[​](#what’s-next)
-
 What’s next?
 
 Now that you’ve learned the basics, explore more advanced features:
@@ -353,8 +330,6 @@ Step-by-step guides for common tasks
 
 Customize with CLAUDE.md, skills, hooks, MCP, and more
 
-
-[​](#getting-help)
 
 Getting help
 

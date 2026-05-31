@@ -141,8 +141,8 @@ The following features are not available when using Claude in Slack:
 ## Using integrations across multiple Slack workspaces
 
 If you use Claude across more than one Slack workspace, it's important to understand that your integrations (like the Slack connector) are tied to your **Claude account**, not to a specific Slack workspace.\
-​\
-​**To avoid unexpected results:**
+\
+**To avoid unexpected results:**
 
 - Disconnect the Slack connector from your Claude account before using Claude in a different workspace (**Settings \> Connectors \> Slack \> Disconnect**), then reconnect it when needed.
 

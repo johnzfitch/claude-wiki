@@ -1,8 +1,9 @@
 ---
+title: "Advanced setup - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/setup"
 category: "01-Getting-Started"
 fetched_at: "2026-05-19T21:23:09Z"
-source_url: "https://code.claude.com/docs/en/setup"
-title: "Advanced setup - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Advanced setup
@@ -20,8 +21,6 @@ System requirements, platform-specific installation, version management, and uni
 This page covers system requirements, platform-specific installation details, updates, and uninstallation. For a guided walkthrough of your first session, see the [quickstart](/docs/en/quickstart). If you’ve never used a terminal before, see the [terminal guide](/docs/en/terminal-guide).
 
 
-[​](#system-requirements)
-
 System requirements
 
 Claude Code runs on the following platforms and configurations:
@@ -38,14 +37,10 @@ Claude Code runs on the following platforms and configurations:
 - **Location**: [Anthropic supported countries](https://www.anthropic.com/supported-countries)
 
 
-[​](#additional-dependencies)
-
 Additional dependencies
 
 - **ripgrep**: usually included with Claude Code. If search fails, see [search troubleshooting](/docs/en/troubleshooting#search-and-discovery-issues).
 
-
-[​](#install-claude-code)
 
 Install Claude Code
 
@@ -104,8 +99,6 @@ claude
 If you encounter any issues during installation, see [Troubleshoot installation and login](/docs/en/troubleshoot-install).
 
 
-[​](#set-up-on-windows)
-
 Set up on Windows
 
 You can run Claude Code natively on Windows or inside WSL. Pick based on where your projects are located and which features you need:
@@ -129,8 +122,6 @@ You can run Claude Code natively on Windows or inside WSL. Pick based on where y
 Claude Code can also run PowerShell natively on Windows. When Git Bash is installed, the PowerShell tool is rolling out progressively as an additional option: set `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` to opt in or `0` to opt out. See [PowerShell tool](/docs/en/tools-reference#powershell-tool) for setup and limitations. **Option 2: WSL** Open your WSL distribution and run the Linux installer from the [install instructions](#install-claude-code) above. You install and launch `claude` inside the WSL terminal, not from PowerShell or CMD.
 
 
-[​](#alpine-linux-and-musl-based-distributions)
-
 Alpine Linux and musl-based distributions
 
 The native installer on Alpine and other musl/uClibc-based distributions requires `libgcc`, `libstdc++`, and `ripgrep`. Install these using your distribution’s package manager, then set `USE_BUILTIN_RIPGREP=0`. This example installs the required packages on Alpine:
@@ -150,8 +141,6 @@ Then set `USE_BUILTIN_RIPGREP` to `0` in your [`settings.json`](/docs/en/setting
 ```
 
 
-[​](#verify-your-installation)
-
 Verify your installation
 
 After installing, confirm Claude Code is working:
@@ -167,21 +156,15 @@ claude doctor
 ```
 
 
-[​](#authenticate)
-
 Authenticate
 
 Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free Claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](/docs/en/amazon-bedrock), [Google Vertex AI](/docs/en/google-vertex-ai), or [Microsoft Foundry](/docs/en/microsoft-foundry). After installing, log in by running `claude` and following the browser prompts. See [Authentication](/docs/en/authentication) for all account types and team setup options.
 
 
-[​](#update-claude-code)
-
 Update Claude Code
 
 Native installations automatically update in the background. You can [configure the release channel](#configure-release-channel) to control whether you receive updates immediately or on a delayed stable schedule, or [disable auto-updates](#disable-auto-updates) entirely. Homebrew, WinGet, and [Linux package manager](#install-with-linux-package-managers) installations require manual updates by default.
 
-
-[​](#auto-updates)
 
 Auto-updates
 
@@ -189,8 +172,6 @@ Claude Code checks for updates on startup and periodically while running. Update
 
 Homebrew, WinGet, apt, dnf, and apk installations do not auto-update by default; see below to opt in for Homebrew and WinGet. To upgrade Homebrew manually, run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed. For WinGet, run `winget upgrade Anthropic.ClaudeCode`. For Linux package managers, see the upgrade commands in [Install with Linux package managers](#install-with-linux-package-managers).To have Claude Code run the upgrade command for you on Homebrew or WinGet, set [`CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE`](/docs/en/env-vars) to `1`. Claude Code then runs the upgrade in the background when a new version is available and shows a restart prompt on success. The upgrade targets only the Claude Code package and does not affect other software you have installed.On WinGet the upgrade may fail while Claude Code is running because Windows locks the executable. In that case Claude Code shows the manual command instead. apt, dnf, and apk continue to require a manual upgrade because those commands need elevated privileges.**Known issue:** Claude Code may notify you of updates before the new version is available in these package managers. If an upgrade fails, wait and try again later.Homebrew keeps old versions on disk after upgrades. Run `brew cleanup` periodically to reclaim disk space.
 
-
-[​](#configure-release-channel)
 
 Configure release channel
 
@@ -210,8 +191,6 @@ Configure this via `/config` → **Auto-update channel**, or add it to your [set
 For enterprise deployments, you can enforce a consistent release channel across your organization using [managed settings](/docs/en/permissions#managed-settings). Homebrew installations choose a channel by cask name instead of this setting: `claude-code` tracks stable and `claude-code@latest` tracks latest.
 
 
-[​](#pin-a-minimum-version)
-
 Pin a minimum version
 
 The `minimumVersion` setting establishes a floor. Background auto-updates and `claude update` refuse to install any version below this value, so moving to the `"stable"` channel does not downgrade you if you are already on a newer `"latest"` build. Switching from `"latest"` to `"stable"` via `/config` prompts you to either stay on the current version or allow the downgrade. Choosing to stay sets `minimumVersion` to that version. Switching back to `"latest"` clears it. Add it to your [settings.json file](/docs/en/settings) to pin a floor explicitly:
@@ -225,8 +204,6 @@ The `minimumVersion` setting establishes a floor. Background auto-updates and `c
 
 In [managed settings](/docs/en/permissions#managed-settings), this enforces an organization-wide minimum that user and project settings cannot override.
 
-
-[​](#disable-auto-updates)
 
 Disable auto-updates
 
@@ -243,8 +220,6 @@ Set `DISABLE_AUTOUPDATER` to `"1"` in the `env` key of your [`settings.json`](/d
 `DISABLE_AUTOUPDATER` only stops the background check; `claude update` and `claude install` still work. To block all update paths, including manual updates, set [`DISABLE_UPDATES`](/docs/en/env-vars) instead. Use this when you distribute Claude Code through your own channels and need users to stay on the version you provide.
 
 
-[​](#update-manually)
-
 Update manually
 
 To apply an update immediately without waiting for the next background check, run:
@@ -254,14 +229,10 @@ claude update
 ```
 
 
-[​](#advanced-installation-options)
-
 Advanced installation options
 
 These options are for version pinning, Linux package managers, npm, and verifying binary integrity.
 
-
-[​](#install-a-specific-version)
 
 Install a specific version
 
@@ -326,8 +297,6 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd 2.1.89 &&
 ```
 
 
-[​](#install-with-linux-package-managers)
-
 Install with Linux package managers
 
 Claude Code publishes signed apt, dnf, and apk repositories. Replace `stable` with `latest` for the rolling channel. Package manager installations do not auto-update through Claude Code; updates arrive through your normal system upgrade workflow. All repositories are signed with the [Claude Code release signing key](#binary-integrity-and-code-signing). Before trusting the key, verify it as described in each tab.
@@ -380,8 +349,6 @@ apk add claude-code
 Verify the downloaded key with `sha256sum /etc/apk/keys/claude-code.rsa.pub`, which should report `395759c1f7449ef4cdef305a42e820f3c766d6090d142634ebdb049f113168b6`.To upgrade later, run `apk update && apk upgrade claude-code`.
 
 
-[​](#install-with-npm)
-
 Install with npm
 
 You can also install Claude Code as a global npm package. The package requires [Node.js 18 or later](https://nodejs.org/en/download).
@@ -395,14 +362,10 @@ The npm package installs the same native binary as the standalone installer. npm
 Do NOT use `sudo npm install -g` as this can lead to permission issues and security risks. If you encounter permission errors, see [troubleshooting permission errors](/docs/en/troubleshoot-install#permission-errors-during-installation).
 
 
-[​](#binary-integrity-and-code-signing)
-
 Binary integrity and code signing
 
 Each release publishes a `manifest.json` containing SHA256 checksums for every platform binary. The manifest is signed with an Anthropic GPG key, so verifying the signature on the manifest transitively verifies every binary it lists.
 
-
-[​](#verify-the-manifest-signature)
 
 Verify the manifest signature
 
@@ -486,8 +449,6 @@ shasum -a 256 claude
 Manifest signatures are available for releases from `2.1.89` onward. Earlier releases publish checksums in `manifest.json` without a detached signature.
 
 
-[​](#platform-code-signatures)
-
 Platform code signatures
 
 In addition to the signed manifest, individual binaries carry platform-native code signatures where supported.
@@ -497,14 +458,10 @@ In addition to the signed manifest, individual binaries carry platform-native co
 - **Linux**: binaries are not individually code-signed. If you download directly from the `claude-code-releases` bucket or use the native installer, verify integrity with the manifest signature above. If you install with [apt, dnf, or apk](#install-with-linux-package-managers), your package manager verifies signatures automatically using the repository signing key.
 
 
-[​](#uninstall-claude-code)
-
 Uninstall Claude Code
 
 To remove Claude Code, follow the instructions for your installation method. If `claude` still runs afterward, you likely have a second installation or a leftover shell alias from an older installer. See [Check for conflicting installations](/docs/en/troubleshoot-install#check-for-conflicting-installations) to find and remove it.
 
-
-[​](#native-installation)
 
 Native installation
 
@@ -525,8 +482,6 @@ Remove-Item -Path "$env:USERPROFILE\.local\share\claude" -Recurse -Force
 ```
 
 
-[​](#homebrew-installation)
-
 Homebrew installation
 
 Remove the Homebrew cask you installed. If you installed the stable cask:
@@ -542,8 +497,6 @@ brew uninstall --cask claude-code@latest
 ```
 
 
-[​](#winget-installation)
-
 WinGet installation
 
 Remove the WinGet package:
@@ -552,8 +505,6 @@ Remove the WinGet package:
 winget uninstall Anthropic.ClaudeCode
 ```
 
-
-[​](#apt-/-dnf-/-apk)
 
 apt / dnf / apk
 
@@ -582,8 +533,6 @@ rm /etc/apk/keys/claude-code.rsa.pub
 ```
 
 
-[​](#npm)
-
 npm
 
 Remove the global npm package:
@@ -592,8 +541,6 @@ Remove the global npm package:
 npm uninstall -g @anthropic-ai/claude-code
 ```
 
-
-[​](#remove-configuration-files)
 
 Remove configuration files
 

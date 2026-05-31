@@ -69,9 +69,9 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 Prev
 
 
-[Wiz](https://www.wiz.io/) is a cloud security platform with over 2,000 employees that helps security teams gain visibility into their cloud environments, manage security posture, and take remediation steps across the full development lifecycle. Wiz’s Data Security Posture Management (DSPM) team is responsible for scanning customer files across every environment and reading their contents to identify security issues like exposed credentials or sensitive data. 
+[Wiz](https://www.wiz.io/) is a cloud security platform with over 2,000 employees that helps security teams gain visibility into their cloud environments, manage security posture, and take remediation steps across the full development lifecycle. Wiz’s Data Security Posture Management (DSPM) team is responsible for scanning customer files across every environment and reading their contents to identify security issues like exposed credentials or sensitive data. 
 
-## With Claude, Wiz achieved: 
+## With Claude, Wiz achieved: 
 
 - **~1 day of active development** to migrate a 50,000-line Python library to Go — a project estimated at 2-3 human months manually
 - **2x+ faster PDF processing in production**, with the new Go library fully replacing the sandboxed Python solution
@@ -103,7 +103,7 @@ Through five to ten iterations per file, Claude could identify and fix bugs with
 
 ## The results: Impact across the engineering organization
 
-The new library was deployed to production within days and now processes PDFs at least 2x faster than the original Python implementation, while eliminating the resource-intensive sandboxing that had constrained the team. The partnership with Anthropic runs across several layers — the team uses Claude Code for engineering work, and Wiz’s broader AI platform (including its ASKI agentic platform and Mikaii assistant) is built on Claude models via Amazon Bedrock. 
+The new library was deployed to production within days and now processes PDFs at least 2x faster than the original Python implementation, while eliminating the resource-intensive sandboxing that had constrained the team. The partnership with Anthropic runs across several layers — the team uses Claude Code for engineering work, and Wiz’s broader AI platform (including its ASKI agentic platform and Mikaii assistant) is built on Claude models via Amazon Bedrock. 
 
 The migration gave the team full ownership of their PDF parsing for the first time. They consolidated fragmented implementations into a single codebase that runs consistently across all environments—CLI tools, cloud buckets, and virtual machines. For customers, this means consistent, faster scanning results regardless of where their files live, which is core to the DSPM promise. Issues that were previously unfixable in the open-source library, like inadequate Hebrew language support, could now be patched directly.
 
@@ -113,7 +113,7 @@ Levin then completed a second migration: converting fastText, a 20,000-line C++ 
 
 Wiz’s engineers now consult Claude Code before reaching out to colleagues, use it to plan and execute new features, and review code with it as a standard part of their workflow. Some developers have moved away from traditional IDEs entirely, working primarily through Claude Code. The team has also built custom MCP connectors for their monitoring systems, enabling Claude Code to help detect and debug issues in production and test environments.
 
-Benodis sees the current mission as embedding Claude Code into every part of the development process. The team is also building an agent powered by Claude that monitors code in production, detects bugs and anomalies, and surfaces issues before they escalate. Individual developers now run multiple Claude Code instances simultaneously, each working on separate features in parallel. “It can't get any better than this,” said Levin. “It makes things that were impossible, possible.” 
+Benodis sees the current mission as embedding Claude Code into every part of the development process. The team is also building an agent powered by Claude that monitors code in production, detects bugs and anomalies, and surfaces issues before they escalate. Individual developers now run multiple Claude Code instances simultaneously, each working on separate features in parallel. “It can't get any better than this,” said Levin. “It makes things that were impossible, possible.” 
 
 
 Claude Code on the web

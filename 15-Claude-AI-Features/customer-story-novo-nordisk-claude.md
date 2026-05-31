@@ -66,13 +66,13 @@ Video caption
 Prev
 
 
-[Novo Nordisk](https://www.novonordisk.com), a global pharmaceutical company and maker of Ozempic, develops innovative medicines for chronic diseases including diabetes and obesity. The company serves millions of patients worldwide with life-changing treatments that require extensive regulatory documentation before they can reach patients. 
+[Novo Nordisk](https://www.novonordisk.com), a global pharmaceutical company and maker of Ozempic, develops innovative medicines for chronic diseases including diabetes and obesity. The company serves millions of patients worldwide with life-changing treatments that require extensive regulatory documentation before they can reach patients. 
 
 **With Claude, Novo Nordisk:**
 
 - Automates clinical study report generation across the organization
 - Slashed patient documentation creation from months to minutes
-- Enabled even non-technical team members to prototype features 
+- Enabled even non-technical team members to prototype features 
 - Expanded AI-powered documentation beyond clinical trials to device testing and patient materials
 
 ## The problem
@@ -95,7 +95,7 @@ The time saved by NovoScribe was immediate and substantial. “Claude has helped
 
 Review-to-approval cycles for these automated CSRs have also decreased significantly as reviewers became increasingly satisfied with clinical interpretation and overall output quality. For new trials, the team can now produce a complete study booklet and patient guide in under a minute — materials that previously required months of back-and-forth work with external agencies.\
 \
-Technical setup for these use cases varied. Adapting the RAG configuration for patient booklets took minimal time, while integrating legacy systems for device protocols required several months of development to ingest unstructured data. "In a highly regulated industry, we can't just throw our data and information into a large language model and hope for the best," Jowiya said. “Our conversations with Anthropic really guided in the ways we can securely use Claude for planning, for strategic tasks, for code generation.” In fact, he adds, Claude has already solved one of his team’s biggest headaches: extracting data from historical research documents.
+Technical setup for these use cases varied. Adapting the RAG configuration for patient booklets took minimal time, while integrating legacy systems for device protocols required several months of development to ingest unstructured data. "In a highly regulated industry, we can't just throw our data and information into a large language model and hope for the best," Jowiya said. “Our conversations with Anthropic really guided in the ways we can securely use Claude for planning, for strategic tasks, for code generation.” In fact, he adds, Claude has already solved one of his team’s biggest headaches: extracting data from historical research documents.
 
 ## Using Claude Code to accelerate development and empower non-technical teams
 

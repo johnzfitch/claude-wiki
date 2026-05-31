@@ -11,9 +11,9 @@ Sep 7, 2023
 
 [Subscribe today](https://claude.ai/settings/billing?action=subscribe)
 
-Today, we’re introducing a paid plan for our [Claude.ai](https://claude.ai/redirect/website.v1.1cbad88e-9feb-4178-be07-03500953c115) chat experience, currently available in the US and UK.\
+Today, we’re introducing a paid plan for our [Claude.ai](https://claude.ai/redirect/website.v1.1cbad88e-9feb-4178-be07-03500953c115) chat experience, currently available in the US and UK.\
 \
-Since launching in July, users tell us they’ve chosen Claude.ai as their day-to-day AI assistant for its longer context windows, faster outputs, complex reasoning capabilities, and more. Many also shared that they would value more file uploads and conversations over longer periods.\
+Since launching in July, users tell us they’ve chosen Claude.ai as their day-to-day AI assistant for its longer context windows, faster outputs, complex reasoning capabilities, and more. Many also shared that they would value more file uploads and conversations over longer periods.\
 \
 With [Claude Pro](https://claude.ai/redirect/website.v1.1cbad88e-9feb-4178-be07-03500953c115/settings/billing?action=subscribe), subscribers can now gain **5x more usage** of our latest model, Claude 2, for a monthly price of \$20 (US) or £18 (UK).\
 \

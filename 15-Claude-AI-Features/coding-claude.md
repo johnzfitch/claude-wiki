@@ -48,11 +48,11 @@ I'll investigate the auth error. Let me look at the relevant files.
 
 Examining auth-related files...
 
-\* src/services/authService.js
+\* src/services/authService.js
 
-\* src/components/Login.jsx
+\* src/components/Login.jsx
 
-\* src/store/authSlice.js
+\* src/store/authSlice.js
 
 
 Running the login flow...

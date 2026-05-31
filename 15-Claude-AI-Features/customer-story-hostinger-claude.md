@@ -81,7 +81,7 @@ The company needed an AI solution that could serve as a true creative partner, n
 - Transformed web creation from a days-long technical challenge into a conversational process that takes just minutes
 - Enabled less-technical users to build custom applications and online stores through natural language prompts
 - Expanded their addressable market to include ambitious creators who previously couldn't navigate traditional website builders
-- Banished the steep learning curve, delivered immediate results, and shrank early-stage user churn 
+- Banished the steep learning curve, delivered immediate results, and shrank early-stage user churn 
 
 ## From concept to launch in a single conversation
 

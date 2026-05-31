@@ -14,8 +14,6 @@ The MCP Registry is currently in preview. Breaking changes or data resets may oc
 This tutorial will show you how to publish an MCP server written in TypeScript to the MCP Registry using the official `mcp-publisher` CLI tool.
 
 
-[​](#prerequisites)
-
 Prerequisites
 
 - **Node.js** — This tutorial assumes the MCP server is written in TypeScript.
@@ -64,8 +62,6 @@ Copy
 ```
 
 
-[​](#step-1-add-verification-information-to-the-package)
-
 Step 1: Add verification information to the package
 
 The MCP Registry verifies that a server’s underlying package matches its metadata. For npm packages, this requires adding an `mcpName` property to `package.json`:
@@ -84,8 +80,6 @@ Copy
 
 The value of `mcpName` will be your server’s name in the MCP Registry. Because we will be using GitHub-based authentication, `mcpName` **must** start with `io.github.my-username/`.
 
-
-[​](#step-2-publish-the-package)
 
 Step 2: Publish the package
 
@@ -118,8 +112,6 @@ npm publish --access public
 
 You can verify your package is published by visiting its npm URL, such as [https://www.npmjs.com/package/@my-username/mcp-weather-server](https://www.npmjs.com/package/@my-username/mcp-weather-server).
 
-
-[​](#step-3-install-mcp-publisher)
 
 Step 3: Install `mcp-publisher`
 
@@ -162,8 +154,6 @@ Commands:
   publish       Publish server.json to the registry
 ```
 
-
-[​](#step-4-create-server-json)
 
 Step 4: Create `server.json`
 
@@ -257,8 +247,6 @@ Copy
 The `name` property in `server.json` **must** match the `mcpName` property in `package.json`.
 
 
-[​](#step-5-authenticate-with-the-mcp-registry)
-
 Step 5: Authenticate with the MCP Registry
 
 For this tutorial, we will authenticate with the MCP Registry using GitHub-based authentication. Run the `mcp-publisher login` command to initiate authentication:
@@ -296,8 +284,6 @@ Successfully authenticated!
 ✓ Successfully logged in
 ```
 
-
-[​](#step-6-publish-to-the-mcp-registry)
 
 Step 6: Publish to the MCP Registry
 
@@ -340,8 +326,6 @@ Copy
 ```
 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
 | Error Message | Action |
@@ -350,8 +334,6 @@ Troubleshooting
 | ”Invalid or expired Registry JWT token” | Re-authenticate by running `mcp-publisher login github`. |
 | ”You do not have permission to publish this server” | Your authentication method doesn’t match your server’s namespace format. With GitHub auth, your server name must start with `io.github.your-username/`. |
 
-
-[​](#next-steps)
 
 Next Steps
 

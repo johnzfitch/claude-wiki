@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) supports optional cancellation of in-progress requests through notification messages. Either side can send a cancellation notification to indicate that a previously-issued request should be terminated.
 
 
-[​](#cancellation-flow)
-
 Cancellation Flow
 
 When a party wants to cancel an in-progress request, it sends a `notifications/cancelled` notification containing:
@@ -35,8 +33,6 @@ Copy
 ```
 
 
-[​](#behavior-requirements)
-
 Behavior Requirements
 
 1.  Cancellation notifications **MUST** only reference requests that:
@@ -55,22 +51,16 @@ Behavior Requirements
 6.  The sender of the cancellation notification **SHOULD** ignore any response to the request that arrives afterward
 
 
-[​](#timing-considerations)
-
 Timing Considerations
 
 Due to network latency, cancellation notifications may arrive after request processing has completed, and potentially after a response has already been sent. Both parties **MUST** handle these race conditions gracefully:
 
-
-[​](#implementation-notes)
 
 Implementation Notes
 
 - Both parties **SHOULD** log cancellation reasons for debugging
 - Application UIs **SHOULD** indicate when cancellation is requested
 
-
-[​](#error-handling)
 
 Error Handling
 

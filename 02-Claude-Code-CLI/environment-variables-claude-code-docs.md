@@ -229,8 +229,6 @@ Claude Code supports the following environment variables to control its behavior
 Standard OpenTelemetry exporter variables (`OTEL_METRICS_EXPORTER`, `OTEL_LOGS_EXPORTER`, `OTEL_EXPORTER_OTLP_ENDPOINT`, `OTEL_EXPORTER_OTLP_PROTOCOL`, `OTEL_EXPORTER_OTLP_HEADERS`, `OTEL_METRIC_EXPORT_INTERVAL`, `OTEL_RESOURCE_ATTRIBUTES`, and signal-specific variants) are also supported. See [Monitoring](/docs/en/monitoring-usage) for configuration details.
 
 
-[​](#see-also)
-
 See also
 
 - [Settings](/docs/en/settings): configure environment variables in `settings.json` so they apply to every session

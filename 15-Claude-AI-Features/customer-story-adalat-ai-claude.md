@@ -90,7 +90,7 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 Prev
 
 
-[**Adalat AI**](https://www.adalat.ai/) is a legal-tech nonprofit building justice technology for courts across India and the Global South, supporting judges and court staff with real-time multilingual speech-to-text and  AI-powered translation with Adalat’s models. With Claude, Adalat AI accelerated its engineering capacity and launched India’s first AI-powered national case information helpline on WhatsApp—giving ordinary families the ability to understand their own court cases, in their own language, for the first time.
+[**Adalat AI**](https://www.adalat.ai/) is a legal-tech nonprofit building justice technology for courts across India and the Global South, supporting judges and court staff with real-time multilingual speech-to-text and  AI-powered translation with Adalat’s models. With Claude, Adalat AI accelerated its engineering capacity and launched India’s first AI-powered national case information helpline on WhatsApp—giving ordinary families the ability to understand their own court cases, in their own language, for the first time.
 
 ## With Claude, Adalat AI accomplished:
 
@@ -110,9 +110,9 @@ The consequences are personal: people awaiting trial spending years in jail with
 
 Beyond the courtrooms, litigants face a deep information access crisis. Most court portals have non-intuitive navigation, multiple CAPTCHAs, and content overwhelmingly in English—effectively unusable for low-income or non-English-speaking communities. Families often have no idea what is happening in their own cases.
 
-## Choosing Claude for privacy standards 
+## Choosing Claude for privacy standards 
 
-Adalat AI evaluated multiple models before selecting Claude Sonnet 4.5 and Haiku 4.5. “Claude consistently produced summaries that were both faithful to the source and genuinely readable for non-lawyers,” said Arghya Bhattacharya, Co-founder and CTO. “Other models either oversimplified, losing critical nuance, or reproduced the complexity without making it accessible.” Claude’s disciplined reasoning—staying within the document without speculating or providing legal advice—was noticeably stronger than alternatives. 
+Adalat AI evaluated multiple models before selecting Claude Sonnet 4.5 and Haiku 4.5. “Claude consistently produced summaries that were both faithful to the source and genuinely readable for non-lawyers,” said Arghya Bhattacharya, Co-founder and CTO. “Other models either oversimplified, losing critical nuance, or reproduced the complexity without making it accessible.” Claude’s disciplined reasoning—staying within the document without speculating or providing legal advice—was noticeably stronger than alternatives. 
 
 “In our world, institutional trust compounds slowly and collapses quickly,” Bhattacharya said. “We chose Claude in part because Anthropic’s approach to data handling and privacy aligned with the trust standards we need to maintain with our government and judicial partners.”
 
@@ -126,13 +126,13 @@ Claude’s critical role is summarization and translation. Court orders are ofte
 
 “When you take a 15-page court order written in English legal jargon, and Claude summarizes it into three clear paragraphs in Kannada or Hindi explaining what was decided, what the litigant needs to do, and when their next hearing is, you’re transforming court records from inaccessible legal artifacts into actionable information,” Saxena said. “For the first time, a litigant can understand their own case without depending entirely on their lawyer or a paid intermediary.”
 
-**Accelerating engineering with Claude Code.** The core engineering team uses Claude Code for architecture validation, feature development, rapid bug resolution, and an additional layer of code review. Adalat’s Zero-to-One Initiatives team—a rapid prototyping arm—staffs each initiative with a single engineer, with Claude Code as their force multiplier. The team runs 3 to 4 parallel initiatives simultaneously, each delivering fully functional products within 30 days. 
+**Accelerating engineering with Claude Code.** The core engineering team uses Claude Code for architecture validation, feature development, rapid bug resolution, and an additional layer of code review. Adalat’s Zero-to-One Initiatives team—a rapid prototyping arm—staffs each initiative with a single engineer, with Claude Code as their force multiplier. The team runs 3 to 4 parallel initiatives simultaneously, each delivering fully functional products within 30 days. 
 
 “Not mockups or wireframes, actual working products that we put in front of court users to get real feedback,” Bhattacharya said. “This means we skip the intermediate step of showing designs. Our users can play around with a living product and give us concrete, grounded feedback.”
 
 ## The results: Faster engineering, accessible justice at national scale
 
-With Claude Code, Adalat AI's engineering teams are seeing between 50 and 200% productivity gains. "For a philanthropy-funded nonprofit, that's an extraordinary multiplier on donor dollars,” Bhattacharya said. 
+With Claude Code, Adalat AI's engineering teams are seeing between 50 and 200% productivity gains. "For a philanthropy-funded nonprofit, that's an extraordinary multiplier on donor dollars,” Bhattacharya said. 
 
 The rapid prototyping team, which is shipping multiple new product lines simultaneously, is seeing gains of up to 200%, moving at the pace of a team three times its size. The core platform and engineering teams, which maintain and actively develop the product running in 20% of all courts in India every day, are seeing around 50% gains, consistently delivering output equivalent to a team 50% larger.
 

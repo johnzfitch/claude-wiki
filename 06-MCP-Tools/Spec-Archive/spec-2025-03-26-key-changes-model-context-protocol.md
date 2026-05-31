@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 This document lists changes made to the Model Context Protocol (MCP) specification since the previous revision, [2024-11-05](/specification/2024-11-05).
 
 
-[​](#major-changes)
-
 Major changes
 
 1.  Added a comprehensive **[authorization framework](/specification/2025-03-26/basic/authorization)** based on OAuth 2.1 (PR [\#133](https://github.com/modelcontextprotocol/specification/pull/133))
@@ -21,8 +19,6 @@ Major changes
 3.  Added support for JSON-RPC **[batching](https://www.jsonrpc.org/specification#batch)** (PR [\#228](https://github.com/modelcontextprotocol/specification/pull/228))
 4.  Added comprehensive **tool annotations** for better describing tool behavior, like whether it is read-only or destructive (PR [\#185](https://github.com/modelcontextprotocol/specification/pull/185))
 
-
-[​](#other-schema-changes)
 
 Other schema changes
 
@@ -32,8 +28,6 @@ Other schema changes
 
 See [the updated schema](http://github.com/modelcontextprotocol/specification/tree/main/schema/2025-03-26/schema.ts) for more details.
 
-
-[​](#full-changelog)
 
 Full changelog
 

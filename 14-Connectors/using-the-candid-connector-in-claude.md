@@ -34,7 +34,7 @@ This integration provides access to:
 
 The Candid integration is available to Claude Pro users. A Candid account is not required to use basic search functionality. Some advanced features may require additional authentication.
 
-**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#abc4c5c7c2c5cec7c2c9d9cad9c2cac5ebc8cac5cfc2cf85c4d9cc).
+**Note:** This tool is currently in beta. Core functionality is available, but some advanced features are still under development. Please reach out with feedback to [\[email protected\]](/cdn-cgi/l/email-protection#abc4c5c7c2c5cec7c2c9d9cad9c2cac5ebc8cac5cfc2cf85c4d9cc).
 
 ## Setting up the Candid integration
 
@@ -441,4 +441,4 @@ Candid Seals of Transparency indicate how much information an organization has s
 
 ## Need more help?
 
-If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#224d4c4e4b4c474e4b405043504b434c6241434c464b460c4d5045).
+If you’re experiencing issues with the Candid integration or have questions not covered here, please contact Claude support or visit our help center for additional troubleshooting guides. For Candid-specific questions, you can reach out to [\[email protected\]](/cdn-cgi/l/email-protection#224d4c4e4b4c474e4b405043504b434c6241434c464b460c4d5045).

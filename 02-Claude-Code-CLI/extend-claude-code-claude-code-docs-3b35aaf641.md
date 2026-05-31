@@ -1,8 +1,9 @@
 ---
+title: "Extend Claude Code - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/features-overview"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:39Z"
-source_url: "https://code.claude.com/docs/en/features-overview"
-title: "Extend Claude Code - Claude Code Docs"
+tags: ["agents", "claude-code", "hooks", "mcp", "plugins", "skills", "subagents"]
 ---
 
 # Extend Claude Code
@@ -24,8 +25,6 @@ For how the core agentic loop works, see [How Claude Code works](/docs/en/how-cl
 **New to Claude Code?** Start with [CLAUDE.md](/docs/en/memory) for project conventions, then add other extensions [as specific triggers come up](#build-your-setup-over-time).
 
 
-[​](#overview)
-
 Overview
 
 Extensions plug into different parts of the agentic loop:
@@ -41,8 +40,6 @@ Extensions plug into different parts of the agentic loop:
 
 [Skills](/docs/en/skills) are the most flexible extension. A skill is a markdown file containing knowledge, workflows, or instructions. You can invoke skills with a command like `/deploy`, or Claude can load them automatically when relevant. Skills can run in your current conversation or in an isolated context via subagents.
 
-
-[​](#match-features-to-your-goal)
 
 Match features to your goal
 
@@ -61,8 +58,6 @@ Features range from always-on context that Claude sees every session, to on-dema
 **[Plugins](/docs/en/plugins)** are the packaging layer. A plugin bundles skills, hooks, subagents, and MCP servers into a single installable unit. Plugin skills are namespaced (like `/my-plugin:review`) so multiple plugins can coexist. Use plugins when you want to reuse the same setup across multiple repositories or distribute to others via a **[marketplace](/docs/en/plugin-marketplaces)**.
 
 
-[​](#build-your-setup-over-time)
-
 Build your setup over time
 
 You don’t need to configure everything up front. Each feature has a recognizable trigger, and most teams add them in roughly this order:
@@ -80,8 +75,6 @@ You don’t need to configure everything up front. Each feature has a recognizab
 
 The same triggers tell you when to update what you already have. A repeated mistake or a recurring review comment is a CLAUDE.md edit, not a one-off correction in chat. A workflow you keep tweaking by hand is a skill that needs another revision.
 
-
-[​](#compare-similar-features)
 
 Compare similar features
 
@@ -174,8 +167,6 @@ A hook fires on a lifecycle event; a skill is loaded into context for Claude to 
 **Use a hook** when the action must happen the same way every time and doesn’t need Claude to think. For example: format on save, reject `rm -rf /`, post a Slack message when a session ends.**Use a skill** when Claude should decide how to apply the steps, or when the content is knowledge rather than a script. For example: a `/release` checklist, your API style guide, a debugging playbook.**Put guardrails in hooks.** An instruction like “never edit `.env`” in CLAUDE.md or a skill is a request, not a guarantee. A `PreToolUse` hook that blocks the edit is enforcement. If a rule must hold every time, make it a hook rather than a prompt instruction.**Hook output lands in context.** A `PostToolUse` hook that runs your linter feeds results back as text Claude reads; a `/fix-lint` skill tells Claude how to resolve them.
 
 
-[​](#understand-how-features-layer)
-
 Understand how features layer
 
 Features can be defined at multiple levels: user-wide, per-project, via plugins, or through managed policies. You can also nest CLAUDE.md files in subdirectories or place skills in specific packages of a monorepo. When the same feature exists at multiple levels, here’s how they layer:
@@ -185,8 +176,6 @@ Features can be defined at multiple levels: user-wide, per-project, via plugins,
 - **MCP servers** override by name: local \> project \> user. See [MCP scope](/docs/en/mcp#scope-hierarchy-and-precedence).
 - **Hooks** merge: all registered hooks fire for their matching events regardless of source. See [hooks](/docs/en/hooks).
 
-
-[​](#combine-features)
 
 Combine features
 
@@ -200,14 +189,10 @@ Each extension solves a different problem: CLAUDE.md handles always-on context, 
 | **Hook + MCP**         | A hook triggers external actions through MCP                                     | Post-edit hook sends a Slack notification when Claude modifies critical files                     |
 
 
-[​](#understand-context-costs)
-
 Understand context costs
 
 Every feature you add consumes some of Claude’s context. Too much can fill up your context window, but it can also add noise that makes Claude less effective; skills may not trigger correctly, or Claude may lose track of your conventions. Understanding these trade-offs helps you build an effective setup. For an interactive view of how these features combine in a running session, see [Explore the context window](/docs/en/context-window).
 
-
-[​](#context-cost-by-feature)
 
 Context cost by feature
 
@@ -224,8 +209,6 @@ Each feature has a different loading strategy and context cost:
 
 \*By default, skill descriptions load at session start so Claude can decide when to use them. Set `disable-model-invocation: true` in a skill’s frontmatter to hide it from Claude entirely until you invoke it manually. This reduces context cost to zero for skills you only trigger yourself. For a skill you didn’t write, set [`skillOverrides`](/docs/en/skills#override-skill-visibility-from-settings) in settings to do the same without editing its file.
 
-
-[​](#understand-how-features-load)
 
 Understand how features load
 
@@ -274,8 +257,6 @@ Use subagents for work that doesn’t need your full conversation context. Their
 
 Hooks are ideal for side effects (linting, logging) that don’t need to affect Claude’s context.
 
-
-[​](#learn-more)
 
 Learn more
 

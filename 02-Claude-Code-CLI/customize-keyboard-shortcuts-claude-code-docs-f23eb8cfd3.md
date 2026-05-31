@@ -1,8 +1,9 @@
 ---
+title: "Customize keyboard shortcuts - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/keybindings"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:50Z"
-source_url: "https://code.claude.com/docs/en/keybindings"
-title: "Customize keyboard shortcuts - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Customize keyboard shortcuts
@@ -21,8 +22,6 @@ Customizable keyboard shortcuts require Claude Code v2.1.18 or later. Check your
 
 Claude Code supports customizable keyboard shortcuts. Run `/keybindings` to create or open your configuration file at `~/.claude/keybindings.json`.
 
-
-[​](#configuration-file)
 
 Configuration file
 
@@ -55,8 +54,6 @@ This example binds `Ctrl+E` to open an external editor in the chat context, and 
 ```
 
 
-[​](#contexts)
-
 Contexts
 
 Each binding block specifies a **context** where the bindings apply:
@@ -85,14 +82,10 @@ Each binding block specifies a **context** where the bindings apply:
 | `Doctor`          | `/doctor` diagnostics screen                                 |
 
 
-[​](#available-actions)
-
 Available actions
 
 Actions follow a `namespace:action` format, such as `chat:submit` to send a message or `app:toggleTodos` to show the task list. Each context has specific actions available.
 
-
-[​](#app-actions)
 
 App actions
 
@@ -107,8 +100,6 @@ Actions available in the `Global` context:
 | `app:toggleTranscript` | Ctrl+O    | Toggle verbose transcript   |
 
 
-[​](#history-actions)
-
 History actions
 
 Actions for navigating command history:
@@ -119,8 +110,6 @@ Actions for navigating command history:
 | `history:previous` | Up      | Previous history item |
 | `history:next`     | Down    | Next history item     |
 
-
-[​](#chat-actions)
 
 Chat actions
 
@@ -146,8 +135,6 @@ Actions available in the `Chat` context:
 \*On Windows without VT mode (Node \<24.2.0/\<22.17.0, Bun \<1.2.23), defaults to Meta+M.
 
 
-[​](#autocomplete-actions)
-
 Autocomplete actions
 
 Actions available in the `Autocomplete` context:
@@ -159,8 +146,6 @@ Actions available in the `Autocomplete` context:
 | `autocomplete:previous` | Up      | Previous suggestion |
 | `autocomplete:next`     | Down    | Next suggestion     |
 
-
-[​](#confirmation-actions)
 
 Confirmation actions
 
@@ -179,8 +164,6 @@ Actions available in the `Confirmation` context:
 | `confirm:toggleExplanation` | Ctrl+E    | Toggle permission explanation |
 
 
-[​](#permission-actions)
-
 Permission actions
 
 Actions available in the `Confirmation` context for permission dialogs:
@@ -189,8 +172,6 @@ Actions available in the `Confirmation` context for permission dialogs:
 |:-------------------------|:--------|:-----------------------------|
 | `permission:toggleDebug` | Ctrl+D  | Toggle permission debug info |
 
-
-[​](#transcript-actions)
 
 Transcript actions
 
@@ -201,8 +182,6 @@ Actions available in the `Transcript` context:
 | `transcript:toggleShowAll` | Ctrl+E            | Toggle show all content |
 | `transcript:exit`          | q, Ctrl+C, Escape | Exit transcript view    |
 
-
-[​](#history-search-actions)
 
 History search actions
 
@@ -217,8 +196,6 @@ Actions available in the `HistorySearch` context:
 | `historySearch:cycleScope` | Ctrl+S      | Cycle scope: session, project, everywhere |
 
 
-[​](#task-actions)
-
 Task actions
 
 Actions available in the `Task` context:
@@ -227,8 +204,6 @@ Actions available in the `Task` context:
 |:------------------|:--------|:------------------------|
 | `task:background` | Ctrl+B  | Background current task |
 
-
-[​](#theme-actions)
 
 Theme actions
 
@@ -239,8 +214,6 @@ Actions available in the `ThemePicker` context:
 | `theme:toggleSyntaxHighlighting` | Ctrl+T  | Toggle syntax highlighting |
 
 
-[​](#help-actions)
-
 Help actions
 
 Actions available in the `Help` context:
@@ -249,8 +222,6 @@ Actions available in the `Help` context:
 |:---------------|:--------|:----------------|
 | `help:dismiss` | Escape  | Close help menu |
 
-
-[​](#tabs-actions)
 
 Tabs actions
 
@@ -261,8 +232,6 @@ Actions available in the `Tabs` context:
 | `tabs:next`     | Tab, Right      | Next tab     |
 | `tabs:previous` | Shift+Tab, Left | Previous tab |
 
-
-[​](#attachments-actions)
 
 Attachments actions
 
@@ -275,8 +244,6 @@ Actions available in the `Attachments` context:
 | `attachments:remove`   | Backspace, Delete | Remove selected attachment |
 | `attachments:exit`     | Down, Escape      | Exit attachment navigation |
 
-
-[​](#footer-actions)
 
 Footer actions
 
@@ -292,8 +259,6 @@ Actions available in the `Footer` context:
 | `footer:clearSelection` | Escape  | Clear footer selection                   |
 
 
-[​](#message-selector-actions)
-
 Message selector actions
 
 Actions available in the `MessageSelector` context:
@@ -306,8 +271,6 @@ Actions available in the `MessageSelector` context:
 | `messageSelector:bottom` | Ctrl+Down, Shift+Down, Meta+Down, Shift+J | Jump to bottom    |
 | `messageSelector:select` | Enter                                     | Select message    |
 
-
-[​](#diff-actions)
 
 Diff actions
 
@@ -324,8 +287,6 @@ Actions available in the `DiffDialog` context:
 | `diff:back`           | (context-specific) | Go back in diff viewer |
 
 
-[​](#model-picker-actions)
-
 Model picker actions
 
 Actions available in the `ModelPicker` context:
@@ -336,8 +297,6 @@ Actions available in the `ModelPicker` context:
 | `modelPicker:increaseEffort` | Right   | Increase effort level                             |
 | `modelPicker:setAsDefault`   | d       | Set highlighted model as default for new sessions |
 
-
-[​](#select-actions)
 
 Select actions
 
@@ -351,8 +310,6 @@ Actions available in the `Select` context:
 | `select:cancel`   | Escape          | Cancel selection |
 
 
-[​](#plugin-actions)
-
 Plugin actions
 
 Actions available in the `Plugin` context:
@@ -363,8 +320,6 @@ Actions available in the `Plugin` context:
 | `plugin:install`  | I       | Install selected plugins                                                   |
 | `plugin:favorite` | F       | Favorite the selected plugin so it sorts near the top of the Installed tab |
 
-
-[​](#settings-actions)
 
 Settings actions
 
@@ -377,8 +332,6 @@ Actions available in the `Settings` context:
 | `settings:close`  | Enter   | Save changes and close the config panel. Escape discards changes and closes |
 
 
-[​](#doctor-actions)
-
 Doctor actions
 
 Actions available in the `Doctor` context:
@@ -388,8 +341,6 @@ Actions available in the `Doctor` context:
 | `doctor:fix` | F       | Send the diagnostics report to Claude to fix the reported issues. Only active when issues are found |
 
 
-[​](#voice-actions)
-
 Voice actions
 
 Actions available in the `Chat` context when [voice dictation](/docs/en/voice-dictation) is enabled:
@@ -398,8 +349,6 @@ Actions available in the `Chat` context when [voice dictation](/docs/en/voice-di
 |:-------------------|:--------|:---------------------------------------------------------|
 | `voice:pushToTalk` | Space   | Dictate a prompt. Hold or tap depending on `/voice` mode |
 
-
-[​](#scroll-actions)
 
 Scroll actions
 
@@ -427,12 +376,8 @@ Actions available in the `Scroll` context when [fullscreen rendering](/docs/en/f
 | `selection:extendLineEnd`   | Shift+End            | Extend the active selection to the end of the line                                                        |
 
 
-[​](#keystroke-syntax)
-
 Keystroke syntax
 
-
-[​](#modifiers)
 
 Modifiers
 
@@ -453,14 +398,10 @@ ctrl+shift+c    Multiple modifiers
 ```
 
 
-[​](#uppercase-letters)
-
 Uppercase letters
 
 A standalone uppercase letter implies Shift. For example, `K` is equivalent to `shift+k`. This is useful for vim-style bindings where uppercase and lowercase keys have different meanings. Uppercase letters with modifiers (e.g., `ctrl+K`) are treated as stylistic and do **not** imply Shift: `ctrl+K` is the same as `ctrl+k`.
 
-
-[​](#chords)
 
 Chords
 
@@ -471,8 +412,6 @@ ctrl+k ctrl+s   Press Ctrl+K, release, then Ctrl+S
 ```
 
 
-[​](#special-keys)
-
 Special keys
 
 - `escape` or `esc` - Escape key
@@ -482,8 +421,6 @@ Special keys
 - `up`, `down`, `left`, `right` - Arrow keys
 - `backspace`, `delete` - Delete keys
 
-
-[​](#unbind-default-shortcuts)
 
 Unbind default shortcuts
 
@@ -522,8 +459,6 @@ This also works for chord bindings. Unbinding every chord that shares a prefix f
 If you unbind some but not all chords on a prefix, pressing the prefix still enters chord-wait mode for the remaining bindings.
 
 
-[​](#reserved-shortcuts)
-
 Reserved shortcuts
 
 These shortcuts cannot be rebound:
@@ -536,8 +471,6 @@ These shortcuts cannot be rebound:
 | Caps Lock | Not delivered to terminal applications         |
 
 
-[​](#terminal-conflicts)
-
 Terminal conflicts
 
 Some shortcuts may conflict with terminal multiplexers:
@@ -549,8 +482,6 @@ Some shortcuts may conflict with terminal multiplexers:
 | Ctrl+Z   | Unix process suspend (SIGTSTP)    |
 
 
-[​](#vim-mode-interaction)
-
 Vim mode interaction
 
 When vim mode is enabled via `/config` → Editor mode, keybindings and vim mode operate independently:
@@ -561,8 +492,6 @@ When vim mode is enabled via `/config` → Editor mode, keybindings and vim mode
 - Most Ctrl+key shortcuts pass through vim mode to the keybinding system
 - In vim NORMAL mode, `?` shows the help menu (vim behavior)
 
-
-[​](#validation)
 
 Validation
 

@@ -1,8 +1,9 @@
 ---
+title: "MCP Filesystem Server"
+source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/filesystem/README.md"
 category: "06-MCP-Tools"
 fetched_at: "2026-05-19T21:39:56Z"
-source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/filesystem/README.md"
-title: "MCP Filesystem Server"
+tags: ["api", "desktop", "mcp"]
 ---
 
 # Filesystem MCP Server
@@ -16,11 +17,11 @@ Node.js server implementing Model Context Protocol (MCP) for filesystem operatio
 - Move files/directories
 - Search files
 - Get file metadata
-- Dynamic directory access control via [Roots](https://modelcontextprotocol.io/docs/learn/client-concepts#roots)
+- Dynamic directory access control via [Roots](Tutorials/understanding-mcp-clients-model-context-protocol.md#roots)
 
 ## Directory Access Control
 
-The server uses a flexible directory access control system. Directories can be specified via command-line arguments or dynamically via [Roots](https://modelcontextprotocol.io/docs/learn/client-concepts#roots).
+The server uses a flexible directory access control system. Directories can be specified via command-line arguments or dynamically via [Roots](Tutorials/understanding-mcp-clients-model-context-protocol.md#roots).
 
 ### Method 1: Command-line Arguments
 Specify Allowed directories when starting the server:
@@ -29,7 +30,7 @@ mcp-server-filesystem /path/to/dir1 /path/to/dir2
 ```
 
 ### Method 2: MCP Roots (Recommended)
-MCP clients that support [Roots](https://modelcontextprotocol.io/docs/learn/client-concepts#roots) can dynamically update the Allowed directories. 
+MCP clients that support [Roots](Tutorials/understanding-mcp-clients-model-context-protocol.md#roots) can dynamically update the Allowed directories. 
 
 Roots notified by Client to Server, completely replace any server-side Allowed directories when provided.
 
@@ -183,7 +184,7 @@ The server's directory access control follows this flow:
 
 ### Tool annotations (MCP hints)
 
-This server sets [MCP ToolAnnotations](https://modelcontextprotocol.io/specification/2025-03-26/server/tools#toolannotations)
+This server sets [MCP ToolAnnotations](Spec-Archive/spec-2025-03-26-tools-model-context-protocol.md#toolannotations)
 on each tool so clients can:
 
 - Distinguish **read‑only** tools from write‑capable tools.

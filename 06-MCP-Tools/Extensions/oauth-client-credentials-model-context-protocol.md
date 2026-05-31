@@ -19,14 +19,10 @@ The OAuth Client Credentials extension (`io.modelcontextprotocol/oauth-client-cr
 Full technical specification for the OAuth Client Credentials extension.
 
 
-[​](#what-it-is)
-
 What it is
 
 The standard MCP authorization flow requires a user to interactively approve access — a browser opens, the user logs in, and grants permission. That works well for humans, but breaks down when there’s no user present. The OAuth Client Credentials extension solves this by letting a client authenticate using application-level credentials (a client ID and secret, or a signed JWT assertion) rather than delegated user credentials. The client proves its identity directly to the authorization server, which issues an access token without requiring a browser redirect or user interaction.
 
-
-[​](#when-to-use-it)
 
 When to use it
 
@@ -40,14 +36,10 @@ Use OAuth Client Credentials when:
 If your integration has a human user who should explicitly authorize access, use the standard MCP authorization flow instead.
 
 
-[​](#how-it-works)
-
 How it works
 
 The extension supports two credential formats:
 
-
-[​](#jwt-bearer-assertions-recommended)
 
 JWT Bearer Assertions (recommended)
 
@@ -59,8 +51,6 @@ Defined in [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523), JWT Bearer
 - `exp`: Expiration time
 - `iat`: Issued-at time
 
-
-[​](#client-secrets)
 
 Client Secrets
 
@@ -74,12 +64,8 @@ Client secrets are **long-lived credentials** that grant access without user int
 - Prefer JWT assertions when possible — they are short-lived and do not require transmitting the signing key.
 
 
-[​](#implementation-guide)
-
 Implementation guide
 
-
-[​](#for-mcp-clients)
 
 For MCP clients
 
@@ -132,8 +118,6 @@ Handle token refresh
 Client credentials tokens typically have shorter lifetimes than user-delegated tokens. Implement token refresh logic to obtain a new token before expiry.
 
 
-[​](#for-mcp-servers)
-
 For MCP servers
 
 To accept client credentials tokens, your server must:
@@ -172,8 +156,6 @@ Copy
 ```
 
 
-[​](#sdk-examples)
-
 SDK examples
 
 The official MCP SDKs provide built-in support for client credentials authentication. Both handle token acquisition and refresh automatically.
@@ -206,8 +188,6 @@ Create a provider and connect
 
 Choose the credential format that matches your setup:
 
-
-[​](#using-a-client-secret)
 
 Using a client secret
 
@@ -279,8 +259,6 @@ async with streamablehttp_client(
         print("Available tools:", [t.name for t in tools.tools])
 ```
 
-
-[​](#using-a-jwt-private-key)
 
 Using a JWT private key
 
@@ -364,16 +342,12 @@ async with streamablehttp_client(
 ```
 
 
-[​](#client-support)
-
 Client support
 
 Support for this extension varies by client. Extensions are opt-in and never active by default.
 
 Check the [client matrix](/extensions/client-matrix) for current implementation status across MCP clients.
 
-
-[​](#related-resources)
 
 Related resources
 

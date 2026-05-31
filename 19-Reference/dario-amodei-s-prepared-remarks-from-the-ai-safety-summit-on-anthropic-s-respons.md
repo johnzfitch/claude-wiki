@@ -41,7 +41,7 @@ Finally, I’d like to discuss the relationship between RSPs and regulation. RSP
 \
 **Footnotes**\
 \
-1. [https://www.anthropic.com/inde...](/news/frontier-threats-red-teaming-for-ai-safety)
+1. [https://www.anthropic.com/inde...](/news/frontier-threats-red-teaming-for-ai-safety)
 
 
 ## Related content

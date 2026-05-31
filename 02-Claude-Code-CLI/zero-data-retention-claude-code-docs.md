@@ -23,8 +23,6 @@ ZDR for Claude Code on Claude for Enterprise applies only to Anthropic’s direc
 
 ## 
 
-[​](#zdr-scope)
-
 ZDR scope
 
 ZDR covers Claude Code inference on Claude for Enterprise.
@@ -33,15 +31,11 @@ ZDR is enabled on a per-organization basis. Each new organization requires ZDR t
 
 ### 
 
-[​](#what-zdr-covers)
-
 What ZDR covers
 
 ZDR covers model inference calls made through Claude Code on Claude for Enterprise. When you use Claude Code in your terminal, the prompts you send and the responses Claude generates are not retained by Anthropic. This applies regardless of which Claude model is used.
 
 ### 
-
-[​](#what-zdr-does-not-cover)
 
 What ZDR does not cover
 
@@ -57,8 +51,6 @@ ZDR does not extend to the following, even for organizations with ZDR enabled. T
 
 ## 
 
-[​](#features-disabled-under-zdr)
-
 Features disabled under ZDR
 
 When ZDR is enabled for a Claude Code organization on Claude for Enterprise, certain features that require storing prompts or completions are automatically disabled at the backend level:
@@ -73,15 +65,11 @@ These features are blocked in the backend regardless of client-side display. If 
 
 ## 
 
-[​](#data-retention-for-policy-violations)
-
 Data retention for policy violations
 
 Even with ZDR enabled, Anthropic may retain data where required by law or to address Usage Policy violations. If a session is flagged for a policy violation, Anthropic may retain the associated inputs and outputs for up to 2 years, consistent with Anthropic’s standard ZDR policy.
 
 ## 
-
-[​](#request-zdr)
 
 Request ZDR
 

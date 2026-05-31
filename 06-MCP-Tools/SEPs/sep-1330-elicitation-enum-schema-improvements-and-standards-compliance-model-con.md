@@ -28,14 +28,10 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP proposes improvements to enum schema definitions in MCP, deprecating the non-standard `enumNames` property in favor of JSON Schema-compliant patterns, and introducing additional support for multi-select enum schemas in addition to single choice schemas. The new schemas have been validated against the JSON specification. **Schema Changes:** [https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1148](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1148) Typescript SDK Changes: [https://github.com/modelcontextprotocol/typescript-sdk/pull/1077](https://github.com/modelcontextprotocol/typescript-sdk/pull/1077) Python SDK Changes: [https://github.com/modelcontextprotocol/python-sdk/pull/1246](https://github.com/modelcontextprotocol/python-sdk/pull/1246) **Client Implementation:** [https://github.com/evalstate/fast-agent/pull/324/files](https://github.com/evalstate/fast-agent/pull/324/files) **Working Demo:** [https://asciinema.org/a/anBvJdqEmTjw0JkKYOooQa5Ta](https://asciinema.org/a/anBvJdqEmTjw0JkKYOooQa5Ta)
 
-
-[​](#motivation)
 
 Motivation
 
@@ -55,12 +51,8 @@ The existing schema for enums uses a non-standard approach to adding titles to e
   - Allows multiple selection of enumerated values to be returned to the server
 
 
-[​](#specification)
-
 Specification
 
-
-[​](#1-mark-current-enumschema-with-non-standard-enumnames-property-as-“legacy”)
 
 1. Mark Current `EnumSchema` with Non-Standard `enumNames` Property as “Legacy”
 
@@ -84,8 +76,6 @@ export interface LegacyEnumSchema {
 }
 ```
 
-
-[​](#2-define-single-selection-enums-with-titled-and-untitled-varieties)
 
 2. Define Single Selection Enums (with Titled and Untitled varieties)
 
@@ -119,8 +109,6 @@ export type SingleSelectEnumSchema =
   | TitledSingleSelectEnumSchema;
 ```
 
-
-[​](#3-introduce-multiple-selection-enums-with-titled-and-untitled-varieties)
 
 3. Introduce Multiple Selection Enums (with Titled and Untitled varieties)
 
@@ -164,8 +152,6 @@ export type MultiSelectEnumSchema =
 ```
 
 
-[​](#4-combine-all-varieties-as-enumschema)
-
 4. Combine All Varieties as `EnumSchema`
 
 The final `EnumSchema` rolls up the legacy, multi-select, and single-select schemas as one, defined as:
@@ -181,8 +167,6 @@ export type EnumSchema =
 ```
 
 
-[​](#5-extend-elicitresult)
-
 5. Extend ElicitResult
 
 The current elicitation result schema only allows returning primitive types. We extend this to include string arrays for MultiSelectEnums:
@@ -197,12 +181,8 @@ export interface ElicitResult extends Result {
 ```
 
 
-[​](#instance-schema-examples)
-
 Instance Schema Examples
 
-
-[​](#single-select-without-titles-no-change)
 
 Single-Select Without Titles (No change)
 
@@ -219,8 +199,6 @@ Copy
 ```
 
 
-[​](#legacy-single-select-with-titles)
-
 Legacy Single Select With Titles
 
 Copy
@@ -236,8 +214,6 @@ Copy
 }
 ```
 
-
-[​](#single-select-with-titles)
 
 Single-Select with Titles
 
@@ -258,8 +234,6 @@ Copy
 ```
 
 
-[​](#multi-select-without-titles)
-
 Multi-Select Without Titles
 
 Copy
@@ -279,8 +253,6 @@ Copy
 }
 ```
 
-
-[​](#multi-select-with-titles)
 
 Multi-Select with Titles
 
@@ -305,8 +277,6 @@ Copy
 ```
 
 
-[​](#rationale)
-
 Rationale
 
 1.  **Standards Compliance**: Aligns with official JSON Schema specification. Standard patterns work with existing JSON Schema validators
@@ -314,33 +284,23 @@ Rationale
 3.  **Client Implementation:** shows that the additional overhead of implementing a group of checkboxes v/s a single checkbox is minimal: [https://github.com/evalstate/fast-agent/pull/324/files](https://github.com/evalstate/fast-agent/pull/324/files)
 
 
-[​](#backwards-compatibility)
-
 Backwards Compatibility
 
 The `LegacyEnumSchema` type maintains backwards compatible during the migration period. Existing implementations using `enumNames` will continue to work until a protocol-wide deprecation strategy is implemented, and this schema is removed.
 
-
-[​](#reference-implementation)
 
 Reference Implementation
 
 **Schema Changes:** [https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1148](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1148) Typescript SDK Changes: [https://github.com/modelcontextprotocol/typescript-sdk/pull/1077](https://github.com/modelcontextprotocol/typescript-sdk/pull/1077) Python SDK Changes: [https://github.com/modelcontextprotocol/python-sdk/pull/1246](https://github.com/modelcontextprotocol/python-sdk/pull/1246) **Client Implementation:** [https://github.com/evalstate/fast-agent/pull/324/files](https://github.com/evalstate/fast-agent/pull/324/files) **Working Demo:** [https://asciinema.org/a/anBvJdqEmTjw0JkKYOooQa5Ta](https://asciinema.org/a/anBvJdqEmTjw0JkKYOooQa5Ta)
 
 
-[​](#security-considerations)
-
 Security Considerations
 
 No security implications identified. This change is purely about schema structure and standards compliance.
 
 
-[​](#appendix)
-
 Appendix
 
-
-[​](#validations)
 
 Validations
 
@@ -350,16 +310,12 @@ Using stored validations in the JSON Schema Validator at [https://www.jsonschema
 - Valid and invalid values against the example instance schemas from this document.
 
 
-[​](#legacy-single-selection)
-
 Legacy Single Selection
 
 - `EnumSchema` validating a [legacy single select instance schema with titles](https://www.jsonschemavalidator.net/s/lsK7Bn0C)
 - The legacy titled single select instance schema validating [a correct single selection](https://www.jsonschemavalidator.net/s/GSk7rnRe)
 - The legacy titled single select instance schema validating [an incorrect single selection](https://www.jsonschemavalidator.net/s/3kYvxsVP)
 
-
-[​](#single-selection)
 
 Single Selection
 
@@ -371,16 +327,12 @@ Single Selection
 - The titled single select instance schema invalidating [an incorrect single selection](https://www.jsonschemavalidator.net/s/A2KlNzLH)
 
 
-[​](#multiple-selection)
-
 Multiple Selection
 
 - `EnumSchema` validating the [multi-select instance schema without titles](https://www.jsonschemavalidator.net/s/4uc3Ndsq)
 - `EnumSchema` validating the [multi-select instance schema with titles](https://www.jsonschemavalidator.net/s/TmkIqqXI)
 - The untitled multi-select instance schema validating [a correct multiple selection](https://www.jsonschemavalidator.net/s/IE8Bkvtg) The untitled multi-select instance schema validating invalidating [an incorrect multiple selection](https://www.jsonschemavalidator.net/s/8tlqjUgW) The titled multi-select instance schema validating [a correct multiple selection](https://www.jsonschemavalidator.net/s/Nb1Rw1qa) The titled multi-select instance schema validating invalidating [an incorrect multiple selection](https://www.jsonschemavalidator.net/s/MRfyqrVC)
 
-
-[​](#json-meta-schema)
 
 JSON meta-schema
 

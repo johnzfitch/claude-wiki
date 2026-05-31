@@ -22,7 +22,7 @@ Get Enterprise plan
 
 89%
 
-employee adoption, 800+ AI agents deployed, 10x app usage growth 
+employee adoption, 800+ AI agents deployed, 10x app usage growth 
 
 65%
 
@@ -115,11 +115,11 @@ Get comprehensive, cited reports from your internal data and the web. Claude con
 
 See and build upon Claude’s output in real-time using dynamic, collaborative workspaces. Create and refine reports, visualizations, prototypes, and more—with secure sharing across your organization.
 
-## ╭───────────────────────────╮ │ │ │ ✶ Welcome to Claude Code │ │ │ ╰───────────────────────────╯    ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝  ██║     ██║     ███████║██║   ██║██║  ██║█████╗    ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝    ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗   ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝   ██████╗ ██████╗ ██████╗ ███████╗  ██╔════╝██╔═══██╗██╔══██╗██╔════╝  ██║     ██║   ██║██║  ██║█████╗  ██║     ██║   ██║██║  ██║██╔══╝  ╚██████╗╚██████╔╝██████╔╝███████╗   ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝‍
+## ╭───────────────────────────╮ │ │ │ ✶ Welcome to Claude Code │ │ │ ╰───────────────────────────╯    ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝  ██║     ██║     ███████║██║   ██║██║  ██║█████╗    ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝    ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗   ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝   ██████╗ ██████╗ ██████╗ ███████╗  ██╔════╝██╔═══██╗██╔══██╗██╔════╝  ██║     ██║   ██║██║  ██║█████╗  ██║     ██║   ██║██║  ██║██╔══╝  ╚██████╗╚██████╔╝██████╔╝███████╗   ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
 
-Claude Code can now be used with your Claude subscription or billed based on API usage through your Console account.‍
+Claude Code can now be used with your Claude subscription or billed based on API usage through your Console account.
 
- 
+ 
 ``` welcome-terminal__ui-code
 
     Select login method:
@@ -229,11 +229,11 @@ I'll investigate the auth error. Let me look at the relevant files.
 
 Examining auth-related files...
 
-\* src/services/authService.js
+\* src/services/authService.js
 
-\* src/components/Login.jsx
+\* src/components/Login.jsx
 
-\* src/store/authSlice.js
+\* src/store/authSlice.js
 
 
 Running the login flow...
@@ -274,11 +274,11 @@ Authentication error fixed! The login flow now properly handles token expiration
 - Troubleshoot errors and runtime issues
 - Identify code optimizations and performance improvements
 
-Explore Claude Code for Enterprise 
+Explore Claude Code for Enterprise 
 
-[Explore Claude Code for Enterprise ](/product/claude-code/enterprise)
+[Explore Claude Code for Enterprise ](/product/claude-code/enterprise)
 
-Explore Claude Code for Enterprise 
+Explore Claude Code for Enterprise 
 
 Note
 
@@ -717,7 +717,7 @@ Send us your resume along with a brief cover letter addressing:
 - Your approach to improving trial-to-paid conversion rates
 - Why you're excited about FlowTech's growth opportunity
 
-**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#accfcddec9c9dedfeccac0c3dbd8c9cfc482cfc3c1)\
+**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#accfcddec9c9dedfeccac0c3dbd8c9cfc482cfc3c1)\
 **Subject line:** Growth Marketing Manager - \[Your Name\]
 
 —
@@ -947,7 +947,7 @@ Get started now or discuss more options. [Explore features](/pricing#team-enterp
 ### Enterprise\
 (self-serve)
 
-Get started today. Includes Enterprise security and compliance, chat, Claude Code, Cowork, connectors, SSO, SCIM, audit logs, and more. 
+Get started today. Includes Enterprise security and compliance, chat, Claude Code, Cowork, connectors, SSO, SCIM, audit logs, and more. 
 
 \$20
 
@@ -963,7 +963,7 @@ Get Enterprise plan
 ### Enterprise\
 (sales-assisted)
 
-Work with Anthropic’s sales team on your Enterprise deployment. Tailored terms, usage commitments, invoicing, product bundling, and HIPAA-ready offering available. 
+Work with Anthropic’s sales team on your Enterprise deployment. Tailored terms, usage commitments, invoicing, product bundling, and HIPAA-ready offering available. 
 
 
 [Contact sales](/contact-sales)

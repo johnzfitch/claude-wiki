@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-tutorials"]
 MCP servers are programs that expose specific capabilities to AI applications through standardized protocol interfaces. Common examples include file system servers for document access, database servers for data queries, GitHub servers for code management, Slack servers for team communication, and calendar servers for scheduling.
 
 
-[​](#core-server-features)
-
 Core Server Features
 
 Servers provide functionality through three building blocks:
@@ -23,14 +21,10 @@ Servers provide functionality through three building blocks:
 We will use a hypothetical scenario to demonstrate the role of each of these features, and show how they can work together.
 
 
-[​](#tools)
-
 Tools
 
 Tools enable AI models to perform actions. Each tool defines a specific operation with typed inputs and outputs. The model requests tool execution based on context.
 
-
-[​](#how-tools-work)
 
 How Tools Work
 
@@ -62,8 +56,6 @@ Copy
 ```
 
 
-[​](#example-travel-booking)
-
 Example: Travel Booking
 
 Tools enable AI applications to perform actions on behalf of users. In a travel planning scenario, the AI application might use several tools to help book a vacation: **Flight Search**
@@ -93,8 +85,6 @@ sendEmail(to: "team@work.com", subject: "Out of Office", body: "...")
 Sends an automated out-of-office message to colleagues.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Tools are model-controlled, meaning AI models can discover and invoke them automatically. However, MCP emphasizes human oversight through several mechanisms. For trust and safety, applications can implement user control through various mechanisms, such as:
@@ -105,14 +95,10 @@ Tools are model-controlled, meaning AI models can discover and invoke them autom
 - Activity logs that show all tool executions with their results
 
 
-[​](#resources)
-
 Resources
 
 Resources provide structured access to information that the AI application can retrieve and provide to models as context.
 
-
-[​](#how-resources-work)
 
 How Resources Work
 
@@ -132,8 +118,6 @@ Resource Templates include metadata such as title, description, and expected MIM
 | `resources/read` | Retrieve resource contents | Resource data with metadata |
 | `resources/subscribe` | Monitor resource changes | Subscription confirmation |
 
-
-[​](#example-getting-travel-planning-context)
 
 Example: Getting Travel Planning Context
 
@@ -168,8 +152,6 @@ Copy
 These templates enable flexible queries. For weather data, users can access forecasts for any city/date combination. For flights, they can search routes between any two airports. When a user has input “NYC” as the `origin` airport and begins to input “Bar” as the `destination` airport, the system can suggest “Barcelona (BCN)” or “Barbados (BGI)”.
 
 
-[​](#parameter-completion)
-
 Parameter Completion
 
 Dynamic resources support parameter completion. For example:
@@ -179,8 +161,6 @@ Dynamic resources support parameter completion. For example:
 
 The system helps discover valid values without requiring exact format knowledge.
 
-
-[​](#user-interaction-model-2)
 
 User Interaction Model
 
@@ -194,14 +174,10 @@ Resources are application-driven, giving them flexibility in how they retrieve, 
 Applications are free to implement resource discovery through any interface pattern that suits their needs. The protocol doesn’t mandate specific UI patterns, allowing for resource pickers with preview capabilities, smart suggestions based on current conversation context, bulk selection for including multiple resources, or integration with existing file browsers and data explorers.
 
 
-[​](#prompts)
-
 Prompts
 
 Prompts provide reusable templates. They allow MCP server authors to provide parameterized prompts for a domain, or showcase how to best use the MCP server.
 
-
-[​](#how-prompts-work)
 
 How Prompts Work
 
@@ -212,8 +188,6 @@ Prompts are structured templates that define expected inputs and interaction pat
 | `prompts/list` | Discover available prompts | Array of prompt descriptors |
 | `prompts/get` | Retrieve prompt details | Full prompt definition with arguments |
 
-
-[​](#example-streamlined-workflows)
 
 Example: Streamlined Workflows
 
@@ -242,8 +216,6 @@ Rather than unstructured natural language input, the prompt system enables:
 3.  Consistent workflow execution based on the template
 
 
-[​](#user-interaction-model-3)
-
 User Interaction Model
 
 Prompts are user-controlled, requiring explicit invocation. The protocol gives implementers freedom to design interfaces that feel natural within their application. Key principles include:
@@ -261,14 +233,10 @@ Applications typically expose prompts through various UI patterns such as:
 - Context menus that suggest relevant prompts
 
 
-[​](#bringing-servers-together)
-
 Bringing Servers Together
 
 The real power of MCP emerges when multiple servers work together, combining their specialized capabilities through a unified interface.
 
-
-[​](#example-multi-server-travel-planning)
 
 Example: Multi-Server Travel Planning
 
@@ -278,8 +246,6 @@ Consider a personalized AI travel planner application, with three connected serv
 - **Weather Server** - Provides climate data and forecasts
 - **Calendar/Email Server** - Manages schedules and communications
 
-
-[​](#the-complete-flow)
 
 The Complete Flow
 

@@ -107,7 +107,7 @@ The transformation extends beyond efficiency metrics. Legal teams no longer func
 
 The platform now serves organizations ranging from major UK PLCs to NASDAQ-listed companies, passing stringent security reviews including Anthropic's own legal team evaluation. The combination of technical capability and enterprise-grade security enables legal teams to deploy AI assistance across their entire workflow while maintaining compliance standards.
 
-Looking ahead, Wordsmith plans to use Claude for  precision across large bodies of data, using robust context windows without degradation for complex legal analysis. 
+Looking ahead, Wordsmith plans to use Claude for  precision across large bodies of data, using robust context windows without degradation for complex legal analysis. 
 
 "We'd love to provide them the rails to deploy that over the next couple of years," said McNairn about empowering legal teams. "To do that in a way that doesn't slow people down and actually accelerates them would make them far more effective."
 

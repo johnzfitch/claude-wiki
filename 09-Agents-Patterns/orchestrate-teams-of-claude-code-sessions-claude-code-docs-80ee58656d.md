@@ -1,8 +1,9 @@
 ---
+title: "Orchestrate teams of Claude Code sessions - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/agent-teams"
 category: "09-Agents-Patterns"
 fetched_at: "2026-05-19T21:22:13Z"
-source_url: "https://code.claude.com/docs/en/agent-teams"
-title: "Orchestrate teams of Claude Code sessions - Claude Code Docs"
+tags: ["agents", "claude-code"]
 ---
 
 # Orchestrate teams of Claude Code sessions
@@ -31,8 +32,6 @@ This page covers:
 - [Best practices for parallel work](#best-practices)
 
 
-[​](#when-to-use-agent-teams)
-
 When to use agent teams
 
 Agent teams are most effective for tasks where parallel exploration adds real value. See [use case examples](#use-case-examples) for full scenarios. The strongest use cases are:
@@ -44,8 +43,6 @@ Agent teams are most effective for tasks where parallel exploration adds real va
 
 Agent teams add coordination overhead and use significantly more tokens than a single session. They work best when teammates can operate independently. For sequential tasks, same-file edits, or work with many dependencies, a single session or [subagents](/docs/en/sub-agents) are more effective.
 
-
-[​](#compare-with-subagents)
 
 Compare with subagents
 
@@ -62,8 +59,6 @@ Both agent teams and [subagents](/docs/en/sub-agents) let you parallelize work, 
 Use subagents when you need quick, focused workers that report back. Use agent teams when teammates need to share findings, challenge each other, and coordinate on their own.
 
 
-[​](#enable-agent-teams)
-
 Enable agent teams
 
 Agent teams are disabled by default. Enable them by setting the `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` environment variable to `1`, either in your shell environment or through [settings.json](/docs/en/settings):
@@ -79,8 +74,6 @@ settings.json
 ```
 
 
-[​](#start-your-first-agent-team)
-
 Start your first agent team
 
 After enabling agent teams, tell Claude to create an agent team and describe the task and the team structure you want in natural language. Claude creates the team, spawns teammates, and coordinates work based on your prompt. This example works well because the three roles are independent and can explore the problem without waiting on each other:
@@ -94,14 +87,10 @@ teammate on UX, one on technical architecture, one playing devil's advocate.
 From there, Claude creates a team with a [shared task list](/docs/en/interactive-mode#task-list), spawns teammates for each perspective, has them explore the problem, synthesizes findings, and attempts to [clean up the team](#clean-up-the-team) when finished. The lead’s terminal lists all teammates and what they’re working on. Use Shift+Down to cycle through teammates and message them directly. After the last teammate, Shift+Down wraps back to the lead. If you want each teammate in its own split pane, see [Choose a display mode](#choose-a-display-mode).
 
 
-[​](#control-your-agent-team)
-
 Control your agent team
 
 Tell the lead what you want in natural language. It handles team coordination, task assignment, and delegation based on your instructions.
 
-
-[​](#choose-a-display-mode)
 
 Choose a display mode
 
@@ -132,8 +121,6 @@ Split-pane mode requires either [tmux](https://github.com/tmux/tmux/wiki) or iTe
 - **iTerm2**: install the [`it2` CLI](https://github.com/mkusaka/it2), then enable the Python API in **iTerm2 → Settings → General → Magic → Enable Python API**.
 
 
-[​](#specify-teammates-and-models)
-
 Specify teammates and models
 
 Claude decides the number of teammates to spawn based on your task, or you can specify exactly what you want:
@@ -145,8 +132,6 @@ Use Sonnet for each teammate.
 
 Teammates don’t inherit the lead’s `/model` selection by default. To change the model used when the prompt doesn’t specify one, set **Default teammate model** in `/config`. Pick **Default (leader’s model)** to have teammates follow the lead’s current model.
 
-
-[​](#require-plan-approval-for-teammates)
 
 Require plan approval for teammates
 
@@ -160,8 +145,6 @@ Require plan approval before they make any changes.
 When a teammate finishes planning, it sends a plan approval request to the lead. The lead reviews the plan and either approves it or rejects it with feedback. If rejected, the teammate stays in plan mode, revises based on the feedback, and resubmits. Once approved, the teammate exits plan mode and begins implementation. The lead makes approval decisions autonomously. To influence the lead’s judgment, give it criteria in your prompt, such as “only approve plans that include test coverage” or “reject plans that modify the database schema.”
 
 
-[​](#talk-to-teammates-directly)
-
 Talk to teammates directly
 
 Each teammate is a full, independent Claude Code session. You can message any teammate directly to give additional instructions, ask follow-up questions, or redirect their approach.
@@ -169,8 +152,6 @@ Each teammate is a full, independent Claude Code session. You can message any te
 - **In-process mode**: use Shift+Down to cycle through teammates, then type to send them a message. Press Enter to view a teammate’s session, then Escape to interrupt their current turn. Press Ctrl+T to toggle the task list.
 - **Split-pane mode**: click into a teammate’s pane to interact with their session directly. Each teammate has a full view of their own terminal.
 
-
-[​](#assign-and-claim-tasks)
 
 Assign and claim tasks
 
@@ -182,8 +163,6 @@ The shared task list coordinates work across the team. The lead creates tasks an
 Task claiming uses file locking to prevent race conditions when multiple teammates try to claim the same task simultaneously.
 
 
-[​](#shut-down-teammates)
-
 Shut down teammates
 
 To gracefully end a teammate’s session:
@@ -194,8 +173,6 @@ Ask the researcher teammate to shut down
 
 The lead sends a shutdown request. The teammate can approve, exiting gracefully, or reject with an explanation.
 
-
-[​](#clean-up-the-team)
 
 Clean up the team
 
@@ -210,8 +187,6 @@ This removes the shared team resources. When the lead runs cleanup, it checks fo
 Always use the lead to clean up. Teammates should not run cleanup because their team context may not resolve correctly, potentially leaving resources in an inconsistent state.
 
 
-[​](#enforce-quality-gates-with-hooks)
-
 Enforce quality gates with hooks
 
 Use [hooks](/docs/en/hooks) to enforce rules when teammates finish work or tasks are created or completed:
@@ -221,14 +196,10 @@ Use [hooks](/docs/en/hooks) to enforce rules when teammates finish work or tasks
 - [`TaskCompleted`](/docs/en/hooks#taskcompleted): runs when a task is being marked complete. Exit with code 2 to prevent completion and send feedback.
 
 
-[​](#how-agent-teams-work)
-
 How agent teams work
 
 This section covers the architecture and mechanics behind agent teams. If you want to start using them, see [Control your agent team](#control-your-agent-team) above.
 
-
-[​](#how-claude-starts-agent-teams)
 
 How Claude starts agent teams
 
@@ -239,8 +210,6 @@ There are two ways agent teams get started:
 
 In both cases, you stay in control. Claude won’t create a team without your approval.
 
-
-[​](#architecture)
 
 Architecture
 
@@ -261,8 +230,6 @@ See [Choose a display mode](#choose-a-display-mode) for display configuration op
 Claude Code generates both of these automatically when you create a team and updates them as teammates join, go idle, or leave. The team config holds runtime state such as session IDs and tmux pane IDs, so don’t edit it by hand or pre-author it: your changes are overwritten on the next state update. To define reusable teammate roles, use [subagent definitions](#use-subagent-definitions-for-teammates) instead. The team config contains a `members` array with each teammate’s name, agent ID, and agent type. Teammates can read this file to discover other team members. There is no project-level equivalent of the team config. A file like `.claude/teams/teams.json` in your project directory is not recognized as configuration; Claude treats it as an ordinary file.
 
 
-[​](#use-subagent-definitions-for-teammates)
-
 Use subagent definitions for teammates
 
 When spawning a teammate, you can reference a [subagent](/docs/en/sub-agents) type from any [subagent scope](/docs/en/sub-agents#choose-the-subagent-scope): project, user, plugin, or CLI-defined. This lets you define a role once, such as a security-reviewer or test-runner, and reuse it both as a delegated subagent and as an agent team teammate. To use a subagent definition, mention it by name when asking Claude to spawn the teammate:
@@ -276,14 +243,10 @@ The teammate honors that definition’s `tools` allowlist and `model`, and the d
 The `skills` and `mcpServers` frontmatter fields in a subagent definition are not applied when that definition runs as a teammate. Teammates load skills and MCP servers from your project and user settings, the same as a regular session.
 
 
-[​](#permissions)
-
 Permissions
 
 Teammates start with the lead’s permission settings. If the lead runs with `--dangerously-skip-permissions`, all teammates do too. After spawning, you can change individual teammate modes, but you can’t set per-teammate modes at spawn time.
 
-
-[​](#context-and-communication)
 
 Context and communication
 
@@ -297,21 +260,15 @@ Each teammate has its own context window. When spawned, a teammate loads the sam
 The lead assigns every teammate a name when it spawns them, and any teammate can message any other by that name. To get predictable names you can reference in later prompts, tell the lead what to call each teammate in your spawn instruction.
 
 
-[​](#token-usage)
-
 Token usage
 
 Agent teams use significantly more tokens than a single session. Each teammate has its own context window, and token usage scales with the number of active teammates. For research, review, and new feature work, the extra tokens are usually worthwhile. For routine tasks, a single session is more cost-effective. See [agent team token costs](/docs/en/costs#agent-team-token-costs) for usage guidance.
 
 
-[​](#use-case-examples)
-
 Use case examples
 
 These examples show how agent teams handle tasks where parallel exploration adds value.
 
-
-[​](#run-a-parallel-code-review)
 
 Run a parallel code review
 
@@ -328,8 +285,6 @@ Have them each review and report findings.
 Each reviewer works from the same PR but applies a different filter. The lead synthesizes findings across all three after they finish.
 
 
-[​](#investigate-with-competing-hypotheses)
-
 Investigate with competing hypotheses
 
 When the root cause is unclear, a single agent tends to find one plausible explanation and stop looking. The prompt fights this by making teammates explicitly adversarial: each one’s job is not only to investigate its own theory but to challenge the others’.
@@ -344,12 +299,8 @@ debate. Update the findings doc with whatever consensus emerges.
 The debate structure is the key mechanism here. Sequential investigation suffers from anchoring: once one theory is explored, subsequent investigation is biased toward it. With multiple independent investigators actively trying to disprove each other, the theory that survives is much more likely to be the actual root cause.
 
 
-[​](#best-practices)
-
 Best practices
 
-
-[​](#give-teammates-enough-context)
 
 Give teammates enough context
 
@@ -363,8 +314,6 @@ httpOnly cookies. Report any issues with severity ratings."
 ```
 
 
-[​](#choose-an-appropriate-team-size)
-
 Choose an appropriate team size
 
 There’s no hard limit on the number of teammates, but practical constraints apply:
@@ -376,8 +325,6 @@ There’s no hard limit on the number of teammates, but practical constraints ap
 Start with 3-5 teammates for most workflows. This balances parallel work with manageable coordination. The examples in this guide use 3-5 teammates because that range works well across different task types. Having 5-6 [tasks](/docs/en/agent-teams#architecture) per teammate keeps everyone productive without excessive context switching. If you have 15 independent tasks, 3 teammates is a good starting point. Scale up only when the work genuinely benefits from having teammates work simultaneously. Three focused teammates often outperform five scattered ones.
 
 
-[​](#size-tasks-appropriately)
-
 Size tasks appropriately
 
 - **Too small**: coordination overhead exceeds the benefit
@@ -386,8 +333,6 @@ Size tasks appropriately
 
 The lead breaks work into tasks and assigns them to teammates automatically. If it isn’t creating enough tasks, ask it to split the work into smaller pieces. Having 5-6 tasks per teammate keeps everyone productive and lets the lead reassign work if someone gets stuck.
 
-
-[​](#wait-for-teammates-to-finish)
 
 Wait for teammates to finish
 
@@ -398,33 +343,23 @@ Wait for your teammates to complete their tasks before proceeding
 ```
 
 
-[​](#start-with-research-and-review)
-
 Start with research and review
 
 If you’re new to agent teams, start with tasks that have clear boundaries and don’t require writing code: reviewing a PR, researching a library, or investigating a bug. These tasks show the value of parallel exploration without the coordination challenges that come with parallel implementation.
 
-
-[​](#avoid-file-conflicts)
 
 Avoid file conflicts
 
 Two teammates editing the same file leads to overwrites. Break the work so each teammate owns a different set of files.
 
 
-[​](#monitor-and-steer)
-
 Monitor and steer
 
 Check in on teammates’ progress, redirect approaches that aren’t working, and synthesize findings as they come in. Letting a team run unattended for too long increases the risk of wasted effort.
 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
-
-[​](#teammates-not-appearing)
 
 Teammates not appearing
 
@@ -440,14 +375,10 @@ If teammates aren’t appearing after you ask Claude to create a team:
 - For iTerm2, verify the `it2` CLI is installed and the Python API is enabled in iTerm2 preferences.
 
 
-[​](#too-many-permission-prompts)
-
 Too many permission prompts
 
 Teammate permission requests bubble up to the lead, which can create friction. Pre-approve common operations in your [permission settings](/docs/en/permissions) before spawning teammates to reduce interruptions.
 
-
-[​](#teammates-stopping-on-errors)
 
 Teammates stopping on errors
 
@@ -457,14 +388,10 @@ Teammates may stop after encountering errors instead of recovering. Check their 
 - Spawn a replacement teammate to continue the work
 
 
-[​](#lead-shuts-down-before-work-is-done)
-
 Lead shuts down before work is done
 
 The lead may decide the team is finished before all tasks are actually complete. If this happens, tell it to keep going. You can also tell the lead to wait for teammates to finish before proceeding if it starts doing work instead of delegating.
 
-
-[​](#orphaned-tmux-sessions)
 
 Orphaned tmux sessions
 
@@ -475,8 +402,6 @@ tmux ls
 tmux kill-session -t <session-name>
 ```
 
-
-[​](#limitations)
 
 Limitations
 
@@ -493,8 +418,6 @@ Agent teams are experimental. Current limitations to be aware of:
 
 **`CLAUDE.md` works normally**: teammates read `CLAUDE.md` files from their working directory. Use this to provide project-specific guidance to all teammates.
 
-
-[​](#next-steps)
 
 Next steps
 

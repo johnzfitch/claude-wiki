@@ -92,7 +92,7 @@ Opus 4.5 serves as the core model at the heart of Sett's architecture, handling 
 
 ## Choosing Claude through rigorous evaluation
 
-Sett's decision to build on Claude came from comparative testing against other leading models. The company developed an internal metric called the "Last Mile"—measuring how much human work remained after AI completed its portion of a task. 
+Sett's decision to build on Claude came from comparative testing against other leading models. The company developed an internal metric called the "Last Mile"—measuring how much human work remained after AI completed its portion of a task. 
 
 "In our comparative tests against other leading models, Claude demonstrated a superior ability to handle our creative coding tasks," said Blumenfeld. "Our 'Last Mile' metric confirmed that Claude's output required the least amount of refinement to reach a finished state."
 

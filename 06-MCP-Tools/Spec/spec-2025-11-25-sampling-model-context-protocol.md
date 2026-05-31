@@ -12,8 +12,6 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol (MCP) provides a standardized way for servers to request LLM sampling (“completions” or “generations”) from language models via clients. This flow allows clients to maintain control over model access, selection, and permissions while enabling servers to leverage AI capabilities—with no server API keys necessary. Servers can request text, audio, or image-based interactions and optionally include context from MCP servers in their prompts.
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Sampling in MCP allows servers to implement agentic behaviors, by enabling LLM calls to occur *nested* inside other MCP server features. Implementations are free to expose sampling through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
@@ -25,14 +23,10 @@ For trust & safety and security, there **SHOULD** always be a human in the loop 
 - Present generated responses for review before delivery
 
 
-[​](#tools-in-sampling)
-
 Tools in Sampling
 
 Servers can request that the client’s LLM use tools during sampling by providing a `tools` array and optional `toolChoice` configuration in their sampling requests. This enables servers to implement agentic behaviors where the LLM can call tools, receive results, and continue the conversation - all within a single sampling request flow. Clients **MUST** declare support for tool use via the `sampling.tools` capability to receive tool-enabled sampling requests. Servers **MUST NOT** send tool-enabled sampling requests to Clients that have not declared support for tool use via the `sampling.tools` capability.
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -79,12 +73,8 @@ Copy
 The `includeContext` parameter values `"thisServer"` and `"allServers"` are soft-deprecated. Servers **SHOULD** avoid using these values (e.g. can just omit `includeContext` since it defaults to `"none"`), and **SHOULD NOT** use them unless the client declares `sampling.context` capability. These values may be removed in future spec releases.
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#creating-messages)
 
 Creating Messages
 
@@ -142,8 +132,6 @@ Copy
 }
 ```
 
-
-[​](#sampling-with-tools)
 
 Sampling with Tools
 
@@ -224,8 +212,6 @@ Copy
 }
 ```
 
-
-[​](#multi-turn-tool-loop)
 
 Multi-turn Tool Loop
 
@@ -336,12 +322,8 @@ Copy
 ```
 
 
-[​](#message-content-constraints)
-
 Message Content Constraints
 
-
-[​](#tool-result-messages)
 
 Tool Result Messages
 
@@ -404,8 +386,6 @@ Copy
 ```
 
 
-[​](#tool-use-and-result-balance)
-
 Tool Use and Result Balance
 
 When using tool use in sampling, every assistant message containing `ToolUseContent` blocks **MUST** be followed by a user message that consists entirely of `ToolResultContent` blocks, with each tool use (e.g. with `id: $id`) matched by a corresponding tool result (with `toolUseId: $id`), before any other message. This requirement ensures:
@@ -429,21 +409,15 @@ When using tool use in sampling, every assistant message containing `ToolUseCont
 4.  Assistant message: Text response (invalid - not all tool uses were resolved)
 
 
-[​](#cross-api-compatibility)
-
 Cross-API Compatibility
 
 The sampling specification is designed to work across multiple LLM provider APIs (Claude, OpenAI, Gemini, etc.). Key design decisions for compatibility:
 
 
-[​](#message-roles)
-
 Message Roles
 
 MCP uses two roles: “user” and “assistant”. Tool use requests are sent in CreateMessageResult with the “assistant” role. Tool results are sent back in messages with the “user” role. Messages with tool results cannot contain other kinds of content.
 
-
-[​](#tool-choice-modes)
 
 Tool Choice Modes
 
@@ -453,8 +427,6 @@ Tool Choice Modes
 - `{mode: "required"}`: Model MUST use at least one tool before completing
 - `{mode: "none"}`: Model MUST NOT use any tools
 
-
-[​](#parallel-tool-use)
 
 Parallel Tool Use
 
@@ -467,24 +439,16 @@ MCP allows models to make multiple tool use requests in parallel (returning an a
 Implementations wrapping providers that support disabling parallel tool use MAY expose this as an extension, but it is not part of the core MCP specification.
 
 
-[​](#message-flow)
-
 Message Flow
 
 
-[​](#data-types)
-
 Data Types
 
-
-[​](#messages)
 
 Messages
 
 Sampling messages can contain:
 
-
-[​](#text-content)
 
 Text Content
 
@@ -497,8 +461,6 @@ Copy
 }
 ```
 
-
-[​](#image-content)
 
 Image Content
 
@@ -513,8 +475,6 @@ Copy
 ```
 
 
-[​](#audio-content)
-
 Audio Content
 
 Copy
@@ -528,14 +488,10 @@ Copy
 ```
 
 
-[​](#model-preferences)
-
 Model Preferences
 
 Model selection in MCP requires careful abstraction since servers and clients may use different AI providers with distinct model offerings. A server cannot simply request a specific model by name since the client may not have access to that exact model or may prefer to use a different provider’s equivalent model. To solve this, MCP implements a preference system that combines abstract capability priorities with optional model hints:
 
-
-[​](#capability-priorities)
 
 Capability Priorities
 
@@ -545,8 +501,6 @@ Servers express their needs through three normalized priority values (0-1):
 - `speedPriority`: How important is low latency? Higher values prefer faster models.
 - `intelligencePriority`: How important are advanced capabilities? Higher values prefer more capable models.
 
-
-[​](#model-hints)
 
 Model Hints
 
@@ -575,8 +529,6 @@ Copy
 
 The client processes these preferences to select an appropriate model from its available options. For instance, if the client doesn’t have access to Claude models but has Gemini, it might map the sonnet hint to `gemini-1.5-pro` based on similar capabilities.
 
-
-[​](#error-handling)
 
 Error Handling
 
@@ -614,8 +566,6 @@ Copy
 }
 ```
 
-
-[​](#security-considerations)
 
 Security Considerations
 

@@ -17,8 +17,6 @@ The reference [devcontainer setup](https://github.com/anthropics/claude-code/tre
 While the devcontainer provides substantial protections, no system is completely immune to all attacks. When executed with `--dangerously-skip-permissions`, devcontainers don’t prevent a malicious project from exfiltrating anything accessible in the devcontainer including Claude Code credentials. We recommend only using devcontainers when developing with trusted repositories. Always maintain good security practices and monitor Claude’s activities.
 
 
-[​](#key-features)
-
 Key features
 
 - **Production-ready Node.js**: Built on Node.js 20 with essential development dependencies
@@ -28,8 +26,6 @@ Key features
 - **Session persistence**: Preserves command history and configurations between container restarts
 - **Works everywhere**: Compatible with macOS, Windows, and Linux development environments
 
-
-[​](#getting-started-in-4-steps)
 
 Getting started in 4 steps
 
@@ -41,8 +37,6 @@ Getting started in 4 steps
 Once the container finishes building, open a terminal in VS Code with `` Ctrl+` `` and run `claude` to authenticate and start your first session. The container has Claude Code preinstalled, so you can begin working immediately. Your project files are mounted into the container, and any code Claude writes appears in your local repository.
 
 
-[​](#configuration-breakdown)
-
 Configuration breakdown
 
 The devcontainer setup consists of three primary components:
@@ -51,8 +45,6 @@ The devcontainer setup consists of three primary components:
 - [**Dockerfile**](https://github.com/anthropics/claude-code/blob/main/.devcontainer/Dockerfile): Defines the container image and installed tools
 - [**init-firewall.sh**](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh): Establishes network security rules
 
-
-[​](#security-features)
 
 Security features
 
@@ -65,8 +57,6 @@ The container implements a multi-layered security approach with its firewall con
 - **Isolation**: Creates a secure development environment separated from your main system
 
 
-[​](#customization-options)
-
 Customization options
 
 The devcontainer configuration is designed to be adaptable to your needs:
@@ -77,33 +67,23 @@ The devcontainer configuration is designed to be adaptable to your needs:
 - Customize shell configurations and developer tooling
 
 
-[​](#example-use-cases)
-
 Example use cases
 
-
-[​](#secure-client-work)
 
 Secure client work
 
 Use devcontainers to isolate different client projects, ensuring code and credentials never mix between environments.
 
 
-[​](#team-onboarding)
-
 Team onboarding
 
 New team members can get a fully configured development environment in minutes, with all necessary tools and settings pre-installed.
 
 
-[​](#consistent-ci/cd-environments)
-
 Consistent CI/CD environments
 
 Mirror your devcontainer configuration in CI/CD pipelines to ensure development and production environments match.
 
-
-[​](#related-resources)
 
 Related resources
 

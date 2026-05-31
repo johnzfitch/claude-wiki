@@ -1,6 +1,6 @@
 # Hooks
 
-*26 documents*
+*27 documents*
 
 
 - [Advanced Hook Use Cases](advanced.md) - This reference covers advanced hook patterns and techniques for sophisticated automation workflows.
@@ -22,6 +22,7 @@
 - [Automate workflows with hooks](hooks-guide.md) - Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 - [Claude Code Hooks - Configuration Reference](hooks-new-format.md) - Claude Code uses a matcher-based array format for hooks:
 - [Hooks Overview](hooks-overview.md) - Interesting! Some things I thought were new are actually already in 2.1.59:
+- [Hooks reference - Claude Code Docs](hooks-reference-claude-code-docs-20106b0f3b.md) - Reference for Claude Code hook events, configuration schema, JSON input/output formats, exit codes, async hooks, HTTP hooks, prompt hooks, and MCP too
 - [Hooks reference - Claude Code Docs](hooks-reference-claude-code-docs.md) - Reference for Claude Code hook events, configuration schema, JSON input/output formats, exit codes, async hooks, HTTP hooks, prompt hooks, and MCP too
 - [Hooks Summary for Burn Development Team Plugin](hooks-summary-for-burn-plugin.md) - **Date**: 2026-03-15
 - [Claude Code Hooks Documentation](hooks.md) - All hooks are installed in `~/.claude/hooks/` and configured in `~/.claude/settings.json`.

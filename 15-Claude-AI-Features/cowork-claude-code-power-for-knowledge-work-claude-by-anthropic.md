@@ -112,11 +112,11 @@ Downloads/
 
 └── Duplicates/ 
 
-  ├── Document(1).pdf 
+  ├── Document(1).pdf 
 
- ├── Document(2).pdf 
+ ├── Document(2).pdf 
 
-  ├── meeting-notes(1).txt 
+  ├── meeting-notes(1).txt 
 
 └── 2024_q3-budget_v2.xlsx
 
@@ -178,19 +178,13 @@ It all starts with your prompt and access to your tools and files. Open your des
 - **Connectors:** Pull in context from tools like Slack, Notion, Figma, and more
 - **Claude in Chrome:** Browse the web for research, form filling, or pulling data from sites
 
-[](#send)
-
 ### Claude figures it out and executes
 
 Claude breaks the task into steps and works through each one. You can watch progress in real time or step away. Claude loops you in before taking significant action. Update on-demand or set up a Cowork task once to execute daily, weekly, monthly.
 
-[](#threads)
-
 ### You’re in control, from approving to reviewing
 
 You choose which folders and connectors Claude can access. Before Claude acts, it shows you the plan and waits for your approval. Redirect, refine, or take a different approach at any step.
-
-[](#get-help)
 
 ## Customize Claude for your team with plugins
 
@@ -449,7 +443,7 @@ In regular chat, Claude responds to your messages but can't access your files di
 
 ### What's the difference between Cowork and Claude Code?
 
-Desktop app users can start a task in [Claude Desktop](http://claude.com/download) and let it handle work in the browser without switching windows by enabling Claude in Chrome as a connector. Claude Code is a command-line tool designed for developers. Cowork brings the same agentic architecture to the desktop app, designed for non-coding knowledge work. No terminal required.
+Desktop app users can start a task in [Claude Desktop](http://claude.com/download) and let it handle work in the browser without switching windows by enabling Claude in Chrome as a connector. Claude Code is a command-line tool designed for developers. Cowork brings the same agentic architecture to the desktop app, designed for non-coding knowledge work. No terminal required.
 
 ### What can Claude access? 
 
@@ -457,12 +451,12 @@ Only the folders and connectors you explicitly grant permission to. Cowork runs 
 
 ### What kind of files can Cowork read, create, edit, and analyze?
 
-Cowork can understand the following file types: 
+Cowork can understand the following file types: 
 
 - **Documents and text:** Word documents (.docx, .doc), PDF files (.pdf), Plain text (.txt), Markdown (.md), HTML (.html), JSON (.json), CSV (.csv), TSV (.tsv)
 - **Spreadsheets:** Excel files (.xlsx, .xls, .xlsm)
 - **Presentations:** PowerPoint files (.pptx, .ppt)
-- **Images:** Common formats like .png, .jpg, .jpeg, .gif, .svg, .webp 
+- **Images:** Common formats like .png, .jpg, .jpeg, .gif, .svg, .webp 
 - **Data and config:** YAML (.yaml, .yml), XML (.xml), TOML (.toml)
 - **Notebooks:** Jupyter notebooks (.ipynb)
 - **Code files:** Pretty much any programming language: Python (.py), JavaScript (.js), TypeScript (.ts), React (.jsx, .tsx), Java, C/C++, Go, Rust, Ruby, PHP, SQL, shell scripts, etc.

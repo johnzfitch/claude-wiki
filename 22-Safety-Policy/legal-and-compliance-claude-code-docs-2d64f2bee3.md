@@ -1,8 +1,9 @@
 ---
+title: "Legal and compliance - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/legal-and-compliance"
 category: "22-Safety-Policy"
 fetched_at: "2026-05-19T21:22:50Z"
-source_url: "https://code.claude.com/docs/en/legal-and-compliance"
-title: "Legal and compliance - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Legal and compliance
@@ -20,12 +21,8 @@ Legal agreements, compliance certifications, and security information for Claude
 Starting June 15, 2026, Agent SDK and `claude -p` usage on subscription plans will draw from a new monthly Agent SDK credit, separate from your interactive usage limits. See [Use the Claude Agent SDK with your Claude plan](https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan) for details.
 
 
-[​](#legal-agreements)
-
 Legal agreements
 
-
-[​](#license)
 
 License
 
@@ -35,62 +32,44 @@ Your use of Claude Code is subject to:
 - [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) - for Free, Pro, and Max users
 
 
-[​](#commercial-agreements)
-
 Commercial agreements
 
 Whether you’re using the Claude API directly (1P) or accessing it through Amazon Bedrock or Google Vertex (3P), your existing commercial agreement will apply to Claude Code usage, unless we’ve mutually agreed otherwise.
 
 
-[​](#compliance)
-
 Compliance
 
-
-[​](#healthcare-compliance-baa)
 
 Healthcare compliance (BAA)
 
 If a customer has a Business Associate Agreement (BAA) with us, and wants to use Claude Code, the BAA will automatically extend to cover Claude Code if the customer has executed a BAA and has [Zero Data Retention (ZDR)](/docs/en/zero-data-retention) activated. The BAA will be applicable to that customer’s API traffic flowing through Claude Code. ZDR is enabled on a per-organization basis, so each organization must have ZDR enabled separately to be covered under the BAA.
 
 
-[​](#usage-policy)
-
 Usage policy
 
-
-[​](#acceptable-use)
 
 Acceptable use
 
 Claude Code usage is subject to the [Anthropic Usage Policy](https://www.anthropic.com/legal/aup). Advertised usage limits for Pro and Max plans assume ordinary, individual usage of Claude Code and the Agent SDK.
 
 
-[​](#authentication-and-credential-use)
-
 Authentication and credential use
 
 Claude Code authenticates with Anthropic’s servers using OAuth tokens or API keys. These authentication methods serve different purposes:
 
-- **OAuth authentication** is intended exclusively for purchasers of Claude Free, Pro, Max, Team, and Enterprise subscription plans and is designed to support ordinary use of Claude Code and other native Anthropic applications. More information about how users can authenticate with OAuth tokens can be found in [Logging in to your Claude account](https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account).
-- **Developers** building products or services that interact with Claude’s capabilities, including those using the [Agent SDK](/docs/en/agent-sdk/overview), should use API key authentication through [Claude Console](https://platform.claude.com/) or a supported cloud provider. Anthropic does not permit third-party developers to offer Claude.ai login or to route requests through Free, Pro, or Max plan credentials on behalf of their users.
+- **OAuth authentication** is intended exclusively for purchasers of Claude Free, Pro, Max, Team, and Enterprise subscription plans and is designed to support ordinary use of Claude Code and other native Anthropic applications. More information about how users can authenticate with OAuth tokens can be found in [Logging in to your Claude account](../21-Account-Support/logging-in-to-your-claude-account.md).
+- **Developers** building products or services that interact with Claude’s capabilities, including those using the [Agent SDK](/docs/en/agent-sdk/overview), should use API key authentication through [Claude Console](../04-API-Reference/Other/platform-claude-com.md) or a supported cloud provider. Anthropic does not permit third-party developers to offer Claude.ai login or to route requests through Free, Pro, or Max plan credentials on behalf of their users.
 
 Anthropic reserves the right to take measures to enforce these restrictions and may do so without prior notice. For questions about permitted authentication methods for your use case, please [contact sales](https://www.anthropic.com/contact-sales?utm_source=claude_code&utm_medium=docs&utm_content=legal_compliance_contact_sales).
 
 
-[​](#security-and-trust)
-
 Security and trust
 
-
-[​](#trust-and-safety)
 
 Trust and safety
 
 You can find more information in the [Anthropic Trust Center](https://trust.anthropic.com) and [Transparency Hub](https://www.anthropic.com/transparency).
 
-
-[​](#security-vulnerability-reporting)
 
 Security vulnerability reporting
 

@@ -12,8 +12,6 @@ tags: ["git", "github", "mcp", "mcp-registry"]
 The MCP Registry is currently in preview. Breaking changes or data resets may occur before general availability. If you encounter any issues, please report them on [GitHub](https://github.com/modelcontextprotocol/registry/issues).
 
 
-[​](#step-1-create-a-workflow-file)
-
 Step 1: Create a Workflow File
 
 In your server project directory, create a `.github/workflows/publish-mcp.yml` file. Here is an example for npm-based local server, but the MCP Registry publishing steps are the same for all package types:
@@ -85,8 +83,6 @@ jobs:
 ```
 
 
-[​](#step-2-add-secrets)
-
 Step 2: Add Secrets
 
 You may need to add a secret to the repository depending on which authentication method you choose:
@@ -97,8 +93,6 @@ You may need to add a secret to the repository depending on which authentication
 
 You may also need to add secrets for your package registry. For example, the workflow above needs an `NPM_TOKEN` secret with your npm token. For information about how to add secrets to a repository, see [Using secrets in GitHub Actions](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 
-
-[​](#step-3-tag-and-release)
 
 Step 3: Tag and Release
 
@@ -113,8 +107,6 @@ git push origin v1.0.0
 
 The workflow will run tests, build the package, publish the package to npm, and publish the server to the MCP Registry.
 
-
-[​](#troubleshooting)
 
 Troubleshooting
 

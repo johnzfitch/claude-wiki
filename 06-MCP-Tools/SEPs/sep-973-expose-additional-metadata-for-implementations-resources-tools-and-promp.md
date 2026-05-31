@@ -28,26 +28,18 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP proposes adding two optional fields—`icons` and `websiteUrl`. The `icons` and `websiteUrl` would be added to the `Implementation` schema so that clients can visually identify third-party implementations and link directly to their documentation. The `icons` parameter will also be added to the `Tool`, `Resource` and `Prompt` schemas. While this can be used by both servers and clients for all implementations, we expect it to be used initially for server-provided implementations.
 
 
-[​](#motivation)
-
 Motivation
 
-
-[​](#current-state)
 
 Current State
 
 Current implementations only expose namespaced metadata, forcing clients to display generic labels with no visual cues.
 
-
-[​](#proposed-state)
 
 Proposed State
 
@@ -57,8 +49,6 @@ The proposed implementation would allow us to add visual affordances and links t
 - **Discoverability:** A link to documentation (`websiteUrl`) allows clients to direct users to more information with a single click.
 
 
-[​](#rationale)
-
 Rationale
 
 This design builds on prior work in web manifests (MDN) and consolidates community feedback:
@@ -67,8 +57,6 @@ This design builds on prior work in web manifests (MDN) and consolidates communi
 - **Flexible Icon Sizes:** Supports multiple icon sizes (e.g., `48x48`, `96x96`, or `any` for vector formats) to accommodate different client UI needs.
 - **Optional Fields:** By making both fields optional, existing implementations remain fully compatible.
 
-
-[​](#specification)
 
 Specification
 
@@ -153,14 +141,10 @@ Copy
 ```
 
 
-[​](#backwards-compatibility)
-
 Backwards Compatibility
 
 Both icons and websiteUrl are optional fields; clients that ignore them will fall back to existing behavior.
 
-
-[​](#security-implications)
 
 Security Implications
 

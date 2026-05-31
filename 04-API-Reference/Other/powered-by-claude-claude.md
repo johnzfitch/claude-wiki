@@ -258,7 +258,7 @@ Data and analytics
 
 See solution\
 
-Hostinger is a world-leading web hosting provider dedicated to helping millions succeed online. They offer services including  AI-powered Hostinger Horizons, designed to make online presence creation fast, affordable, and accessible for individuals and businesses worldwide.
+Hostinger is a world-leading web hosting provider dedicated to helping millions succeed online. They offer services including  AI-powered Hostinger Horizons, designed to make online presence creation fast, affordable, and accessible for individuals and businesses worldwide.
 
 Creative content
 

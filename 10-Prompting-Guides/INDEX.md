@@ -3,7 +3,7 @@
 *26 documents*
 
 
-- [Best Practices for Claude Code - Claude Code Docs](best-practices-for-claude-code-claude-code-docs-9686dc1633.md) - Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
+- [Best practices for Claude Code - Claude Code Docs](best-practices-for-claude-code-claude-code-docs-9686dc1633.md) - Tips and patterns for getting the most out of Claude Code, from configuring your environment to scaling across parallel sessions.
 - [Best practices for using vision with Claude](best-practices-for-vision.md) - Vision allows for a new mode of interaction with Claude. We've compiled
 - [Prompt Caching with Claude](blog-prompt-caching.md) - <!-- Source: https://claude.com/blog/prompt-caching -->
 - [Prompt caching](build-with-claude-prompt-caching-bf7c54aa4c.md) - When you send a request with prompt caching enabled:
@@ -20,7 +20,7 @@
 - [Extended Thinking](extended-thinking.md) - - [Setup](#setup)
 - [Generate Synthetic Test Data for Your Prompt Template](generate-test-cases.md) - ::: {#10a4f45b-83bc-4d30-b7d1-a2d6ec8017d3 .cell .markdown}
 - [Getting started - how to pass images into Claude](getting-started-with-vision.md) - The Claude 3 model family supports image inputs in the API. Here's how
-- [Prompting Claude for \\\\\\](how-to-enable-json-mode.md) - :::
+- [Prompting Claude for \\\\\\\](how-to-enable-json-mode.md) - :::
 - [Metaprompt](metaprompt.md) - Welcome to the Metaprompt! This is a prompt engineering tool designed to
 - [Prompt Snippets for Opus 4.5](prompt-snippets.md) - Only apply these snippets if the user explicitly requests them or reports a specific issue. By default, the migration should only update model strings
 - [Frontend Aesthetics: A Prompting Guide](prompting-for-frontend-aesthetics.md) - Claude can generate high-quality frontends, but without guidance it

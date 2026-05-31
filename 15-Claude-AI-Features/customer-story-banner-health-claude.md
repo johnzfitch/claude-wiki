@@ -100,7 +100,7 @@ Prev
 
 [Banner Health,](https://www.bannerhealth.com/) one of the largest nonprofit health systems in the United States, operates 33 acute-care hospitals, 400 clinics, and a health plan with 1.2 million members. With more than 55,000 employees, the organization serves more than 3.5 million people across Arizona, California, Colorado, Nebraska, Nevada, and Wyoming.
 
-## With Claude, Banner Health: 
+## With Claude, Banner Health: 
 
 - Built BannerWise, an enterprise AI platform now available to 55,000+ employees
 - Transformed oncology chart preparation from an after-hours labor to an efficient in-clinic process
@@ -144,7 +144,7 @@ Rather than replacing staff, the system functions as what Dr. Walker called a "w
 
 ## The outcome
 
-User surveys show  a Net Promoter Score of +64, productivity impact ratings of 8.9 out of 10, and recommendation likelihood scores of 8.7 out of 10. Eighty-five percent of respondents report significant time savings alongside improvements in work accuracy and workflow efficiency. The oncology pilot has processed over 1,400 clinical notes since June 2025.
+User surveys show  a Net Promoter Score of +64, productivity impact ratings of 8.9 out of 10, and recommendation likelihood scores of 8.7 out of 10. Eighty-five percent of respondents report significant time savings alongside improvements in work accuracy and workflow efficiency. The oncology pilot has processed over 1,400 clinical notes since June 2025.
 
 Banner is now expanding chart preparation capabilities across multiple specialties including neurology, cardiology, and infectious disease, with plans to aggressively expand to all other specialties in the coming years. The team is also developing an automation agent using Anthropic technology to streamline the workflow, which will be critical for broader adoption.
 

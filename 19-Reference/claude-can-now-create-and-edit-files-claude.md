@@ -40,7 +40,7 @@ Describe what you need and get back ready-to-use spreadsheets, documents, presen
   [Copy link](#)
   https://claude.com/blog/create-files
 
-**Update:** Now generally available for paid plans with network and egress controls (October 21, 2025).
+**Update:** Now generally available for paid plans with network and egress controls (October 21, 2025).
 
 Claude can now create and edit Excel spreadsheets, documents, PowerPoint slide decks, and PDFs directly in [Claude.ai](https://claude.ai/) and the desktop app. This transforms how you work with Claude—instead of only receiving text responses or in-app artifacts, you can describe what you need, upload relevant data, and get ready-to-use files in return.
 

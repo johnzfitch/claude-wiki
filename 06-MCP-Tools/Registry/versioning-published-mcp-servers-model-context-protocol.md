@@ -40,8 +40,6 @@ Copy
 The version string **MUST** be unique for each publication of the server. Once published, the version string (and other metadata) cannot be changed.
 
 
-[​](#version-format)
-
 Version Format
 
 The MCP Registry recommends [semantic versioning](https://semver.org/), but supports any version string format. When a server is published, the MCP Registry will attempt to parse its version as a semantic version string for sorting purposes, and will mark the version as “latest” if appropriate. If parsing fails, the version will always be marked as “latest”.
@@ -73,19 +71,13 @@ As an error prevention mechanism, the MCP Registry prohibits version strings tha
 | `1.2 || 1.3`   | version range       | Prohibited                     |
 
 
-[​](#best-practices)
-
 Best Practices
 
-
-[​](#use-semantic-versioning)
 
 Use Semantic Versioning
 
 Use [semantic versioning](https://semver.org/) for version strings.
 
-
-[​](#align-server-version-with-package-version)
 
 Align Server Version with Package Version
 
@@ -142,8 +134,6 @@ Copy
 ```
 
 
-[​](#align-server-version-with-remote-api-version)
-
 Align Server Version with Remote API Version
 
 For remote servers with an API version, the server version should align with the API version:
@@ -164,8 +154,6 @@ Copy
 }
 ```
 
-
-[​](#use-prerelease-versions-for-registry-only-updates)
 
 Use Prerelease Versions for Registry-only Updates
 
@@ -193,8 +181,6 @@ Copy
 
 According to semantic versioning, prerelease versions such as `1.2.3-1` are sorted before regular semantic versions such as `1.2.3`. Therefore, if you publish a prerelease version *after* its corresponding regular version, the prerelease version will **not** be marked as “latest”.
 
-
-[​](#aggregator-recommendations)
 
 Aggregator Recommendations
 

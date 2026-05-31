@@ -157,11 +157,11 @@ Claude Platform
 
 Integrate Claude’s AI directly into bespoke trading platforms, risk systems, KYC and underwriting applications. Deliver production-grade AI agents to transform any workflow.
 
-## ╭───────────────────────────╮ │ │ │ ✶ Welcome to Claude Code │ │ │ ╰───────────────────────────╯    ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝  ██║     ██║     ███████║██║   ██║██║  ██║█████╗    ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝    ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗   ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝   ██████╗ ██████╗ ██████╗ ███████╗  ██╔════╝██╔═══██╗██╔══██╗██╔════╝  ██║     ██║   ██║██║  ██║█████╗  ██║     ██║   ██║██║  ██║██╔══╝  ╚██████╗╚██████╔╝██████╔╝███████╗   ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝‍
+## ╭───────────────────────────╮ │ │ │ ✶ Welcome to Claude Code │ │ │ ╰───────────────────────────╯    ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝  ██║     ██║     ███████║██║   ██║██║  ██║█████╗    ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝    ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗   ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝   ██████╗ ██████╗ ██████╗ ███████╗  ██╔════╝██╔═══██╗██╔══██╗██╔════╝  ██║     ██║   ██║██║  ██║█████╗  ██║     ██║   ██║██║  ██║██╔══╝  ╚██████╗╚██████╔╝██████╔╝███████╗   ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
 
-Claude Code can now be used with your Claude subscription or billed based on API usage through your Console account.‍
+Claude Code can now be used with your Claude subscription or billed based on API usage through your Console account.
 
- 
+ 
 ``` welcome-terminal__ui-code
 
     Select login method:
@@ -190,7 +190,7 @@ Create an interactive Gantt chart showing a complex business initiative rollout 
 
 Attachments
 
-QBI Timeline
+QBI Timeline
 
 727 kb
 

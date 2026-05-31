@@ -12,14 +12,10 @@ tags: ["mcp", "mcp-community"]
 Specification Enhancement Proposal (SEP) guidelines for proposing changes to the Model Context Protocol
 
 
-[​](#what-is-a-sep)
-
 What is a SEP?
 
 SEP stands for Specification Enhancement Proposal. A SEP is a design document providing information to the MCP community, or describing a new feature for the Model Context Protocol or its processes. The SEP should provide a concise technical specification of the feature and a rationale for the feature. SEPs are the primary mechanism for proposing major new features, collecting community input on an issue, and documenting the design decisions that have gone into MCP. The SEP author is responsible for building consensus within the community and documenting dissenting opinions. When drafting a SEP, authors should review the [MCP design principles](/community/design-principles), which outline the core values and tradeoffs that guide the protocol’s evolution. SEPs are maintained as markdown files in the [`seps/` directory](https://github.com/modelcontextprotocol/modelcontextprotocol/tree/main/seps) of the specification repository. Their revision history serves as the historical record of the feature proposal.
 
-
-[​](#when-to-write-a-sep)
 
 When to Write a SEP
 
@@ -40,8 +36,6 @@ The SEP process is reserved for changes that are substantial enough to require b
 Not sure? Ask in [Discord](/community/communication#discord) before starting significant work.
 
 
-[​](#sep-types)
-
 SEP Types
 
 There are three kinds of SEP:
@@ -51,12 +45,8 @@ There are three kinds of SEP:
 3.  **Process** - Describes a process surrounding MCP or proposes a change to a process (like this document).
 
 
-[​](#sep-workflow)
-
 SEP Workflow
 
-
-[​](#step-by-step-process)
 
 Step-by-Step Process
 
@@ -80,8 +70,6 @@ To improve your chances of a SEP being accepted:
 9.  **Finalization**: Once accepted, the reference implementation must be completed. When complete and incorporated into the specification, the sponsor updates the status to `final`.
 
 
-[​](#sep-statuses)
-
 SEP Statuses
 
 | Status       | Meaning                                          |
@@ -98,70 +86,50 @@ SEP Statuses
 **Important distinction**: `dormant` is not the same as `rejected`. A dormant SEP simply didn’t find a sponsor - the idea may still be valid. If circumstances change (new community interest, new use cases), a dormant SEP can be revived by finding a sponsor and reopening the PR.
 
 
-[​](#sep-format)
-
 SEP Format
 
 Each SEP should have the following parts:
 
-
-[​](#1-preamble)
 
 1. Preamble
 
 A short descriptive title, author names/contact info, current status, SEP type, and PR number.
 
 
-[​](#2-abstract)
-
 2. Abstract
 
 A short (~200 word) description of the technical issue being addressed.
 
-
-[​](#3-motivation)
 
 3. Motivation
 
 Why the existing protocol specification is inadequate. This is critical - SEPs without sufficient motivation may be rejected outright.
 
 
-[​](#4-specification)
-
 4. Specification
 
 The technical specification describing syntax and semantics of the new feature. Must be detailed enough for competing, interoperable implementations.
 
-
-[​](#5-rationale)
 
 5. Rationale
 
 Why particular design decisions were made, alternate designs considered, and related work. Should provide evidence of community consensus and address objections raised during discussion.
 
 
-[​](#6-backward-compatibility)
-
 6. Backward Compatibility
 
 All SEPs introducing backward incompatibilities must describe these incompatibilities, their severity, and how to deal with them.
 
-
-[​](#7-reference-implementation)
 
 7. Reference Implementation
 
 Must be completed before the SEP reaches “Final” status, but need not be complete before acceptance.
 
 
-[​](#8-security-implications)
-
 8. Security Implications
 
 Any security concerns related to the SEP should be explicitly documented. See the [SEP template](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/seps/README.md#sep-file-structure) for the complete file structure.
 
-
-[​](#prototype-requirements)
 
 Prototype Requirements
 
@@ -188,8 +156,6 @@ Before a SEP can be accepted, you need “a prototype implementation demonstrati
 The prototype doesn’t need to be production-ready. It exists to prove feasibility and surface issues early.
 
 
-[​](#the-sponsor-role)
-
 The Sponsor Role
 
 A Sponsor is a Core Maintainer or Maintainer who champions the SEP through the review process. The sponsor’s responsibilities include:
@@ -204,8 +170,6 @@ A Sponsor is a Core Maintainer or Maintainer who champions the SEP through the r
 Authors should request status changes through their sponsor rather than modifying the status field themselves.
 
 
-[​](#status-management)
-
 Status Management
 
 **The Sponsor is responsible for updating the SEP status.** This ensures status transitions are made by someone with the authority and context to do so appropriately. The sponsor:
@@ -215,8 +179,6 @@ Status Management
 
 Both the markdown status field and PR labels should be kept in sync. The markdown file is the canonical record (versioned with the proposal), while PR labels make it easy to filter and search.
 
-
-[​](#sep-review-&-resolution)
 
 SEP Review & Resolution
 
@@ -229,8 +191,6 @@ SEPs are reviewed by the MCP Core Maintainers team every two weeks. For a SEP to
 Once a SEP has been accepted, the reference implementation must be completed. When complete and incorporated into the main repository, the status changes to “Final”.
 
 
-[​](#after-rejection)
-
 After Rejection
 
 Rejection is not permanent. You can:
@@ -241,14 +201,10 @@ Rejection is not permanent. You can:
 4.  **Wait for the right time** - Community needs evolve; what’s rejected today may be welcomed later
 
 
-[​](#reporting-sep-bugs-or-updates)
-
 Reporting SEP Bugs or Updates
 
 For SEPs not yet reaching `final` state, comment directly on the SEP’s pull request. Once a SEP is finalized and merged, submit updates by creating a new pull request that modifies the SEP file.
 
-
-[​](#transferring-sep-ownership)
 
 Transferring SEP Ownership
 
@@ -261,8 +217,6 @@ Bad reasons:
 
 - You disagree with the direction (submit a competing SEP instead)
 
-
-[​](#copyright)
 
 Copyright
 

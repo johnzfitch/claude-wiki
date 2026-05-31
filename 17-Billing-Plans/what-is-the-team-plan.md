@@ -100,7 +100,7 @@ Yes. Usage limits differ between Standard and Premium seats.
 
 **Standard seats:** Team plan Standard seats offer 1.25x more usage per session than the Pro plan and have a weekly usage limit that applies across all models and resets seven days after your session starts.
 
-**Premium seats:** Team plan Premium seats offer 6.25x more usage per session than the Pro plan. Users assigned to these seats ​​also have two weekly usage limits: one that applies across all models and another for Sonnet models only. Both limits reset seven days after your session starts.
+**Premium seats:** Team plan Premium seats offer 6.25x more usage per session than the Pro plan. Users assigned to these seats also have two weekly usage limits: one that applies across all models and another for Sonnet models only. Both limits reset seven days after your session starts.
 
 ### Do usage limits apply across the team or to individual members?
 

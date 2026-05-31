@@ -15,16 +15,12 @@ Create your first Agent Skill and see it work in VS Code.
 In this tutorial, you’ll create a skill that gives an agent the capability to roll dice using true randomness.
 
 
-[​](#prerequisites)
-
 Prerequisites
 
 - [VS Code](https://code.visualstudio.com/) with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
 
 This tutorial uses VS Code, but Agent Skills are an open format. The same skill works in any compatible agent, including Claude Code and OpenAI Codex.
 
-
-[​](#create-the-skill)
 
 Create the skill
 
@@ -65,8 +61,6 @@ That’s it — one file, under 20 lines. Here’s what each part does:
 - **The body** — Instructions the agent follows when the skill activates. Here, the agent is instructed to generate a random number using a terminal command, substituting the number of sides from the user’s request.
 
 
-[​](#try-it-out)
-
 Try it out
 
 1.  Open your project in VS Code.
@@ -80,8 +74,6 @@ The agent should activate the `roll-dice` skill. It may ask for permission to ru
 Tool-use reliability varies across models — some follow skill instructions and run commands consistently, while others may attempt to answer on their own. If the agent responds without running a terminal command, try selecting a different model from the model dropdown.
 
 
-[​](#how-it-works)
-
 How it works
 
 Here’s what happened behind the scenes:
@@ -92,8 +84,6 @@ Here’s what happened behind the scenes:
 
 This process uses **progressive disclosure** to let the agent access many skills without loading all their instructions up front. For more detail, see [How skills work](/what-are-skills#how-skills-work).
 
-
-[​](#next-steps)
 
 Next steps
 

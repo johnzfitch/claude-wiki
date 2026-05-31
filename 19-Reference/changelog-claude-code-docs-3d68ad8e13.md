@@ -1,8 +1,9 @@
 ---
+title: "Changelog - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/changelog"
 category: "19-Reference"
 fetched_at: "2026-05-19T21:22:22Z"
-source_url: "https://code.claude.com/docs/en/changelog"
-title: "Changelog - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Changelog
@@ -18,8 +19,6 @@ Release notes for Claude Code, including new features, improvements, and bug fix
 > Use this file to discover all available pages before exploring further.
 
 This page is generated from the [CHANGELOG.md on GitHub](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md). Run `claude --version` to check your installed version.
-
-[​](#2-1-144)
 
 2.1.144
 
@@ -76,8 +75,6 @@ May 19, 2026
 - Improved SDK/headless MCP startup: pre-wait now overlaps startup instead of blocking before the first turn (up to 2s faster with slow MCP servers)
 - The post-survey follow-up hint now appears after every non-dismiss survey response with context-aware copy, making it easier to share more detail via /feedback.
 
-[​](#2-1-143)
-
 2.1.143
 
 May 15, 2026
@@ -116,8 +113,6 @@ May 15, 2026
 - Fixed: background daemon spawn now falls back to the running binary when the `~/.local/bin/claude` launcher is missing or non-executable
 - Fixed `claude agents --allow-dangerously-skip-permissions` defaulting dispatched sessions to bypass mode instead of making it available in the permission cycle
 
-[​](#2-1-142)
-
 2.1.142
 
 May 14, 2026
@@ -146,8 +141,6 @@ May 14, 2026
 - Improved reactive compaction: the first summarize attempt now seeds from the original request’s overflow size, avoiding a wasted near-full-context retry
 - Improved hook configuration error: configuring a prompt- or agent-type hook for `SessionStart`/`Setup`/`SubagentStart` now shows a clear “use a command-type hook instead” error
 - Removed stale `/model claude-sonnet-4-20250514` suggestion from Usage Policy refusal messages
-
-[​](#2-1-141)
 
 2.1.141
 
@@ -215,8 +208,6 @@ May 13, 2026
 - `claude agents` no longer shows empty placeholder sessions left over from backgrounding a fresh REPL, and shows onboarding text when entered via ← with no other agents
 - Empty idle background sessions left over from `←` are now automatically retired by the daemon after 5 minutes
 
-[​](#2-1-140)
-
 2.1.140
 
 May 12, 2026
@@ -234,8 +225,6 @@ May 12, 2026
 - Fixed `Read` tool calls failing validation when `offset` is passed as a whitespace-padded or `+`-prefixed string
 - Fixed native terminal cursor not staying at the input caret when the terminal loses focus
 - Plugins now warn when a default component folder (e.g. `commands/`) is silently ignored because `plugin.json` sets the matching key. Shown in `/doctor`, `claude plugin list`, and `/plugin`.
-
-[​](#2-1-139)
 
 2.1.139
 
@@ -292,23 +281,17 @@ May 11, 2026
 - Fixed `claude plugin update` not preserving cross-plugin symlinks inside a marketplace
 - \[VSCode\] Press Cmd/Ctrl+Shift+T to reopen the most recently closed session tab, configurable via `claudeCode.enableReopenClosedSessionShortcut`
 
-[​](#2-1-138)
-
 2.1.138
 
 May 9, 2026
 
 - Internal fixes
 
-[​](#2-1-137)
-
 2.1.137
 
 May 9, 2026
 
 - \[VSCode\] Fixed extension failing to activate on Windows
-
-[​](#2-1-136)
 
 2.1.136
 
@@ -367,8 +350,6 @@ May 8, 2026
 - Improved error message when `--worktree` collides with an existing or stale worktree
 - Changed plugin marketplace removal key to `d` (matching delete elsewhere) instead of `r` which collided with retry
 
-[​](#2-1-133)
-
 2.1.133
 
 May 7, 2026
@@ -390,8 +371,6 @@ May 7, 2026
 - Fixed subagents not discovering project, user, or plugin skills via the Skill tool
 - `claude --help` now lists `--remote-control` alongside `--remote-control-session-name-prefix`
 - \[VSCode\] Fixed `claudeCode.claudeProcessWrapper` failing with “Unsupported platform” when the extension build doesn’t bundle a Claude binary
-
-[​](#2-1-132)
 
 2.1.132
 
@@ -426,16 +405,12 @@ May 6, 2026
 - Updated the `/tui fullscreen` startup banner to describe additional renderer benefits (lower memory usage, mouse support, auto-copy on select)
 - Fixed Bedrock and Vertex 400 errors when `ENABLE_PROMPT_CACHING_1H` is set
 
-[​](#2-1-131)
-
 2.1.131
 
 May 6, 2026
 
 - Fixed VS Code extension failing to activate on Windows due to a hardcoded build path in the bundled SDK (`createRequire` polyfill bug)
 - Fixed Mantle endpoint authentication failing with missing `x-api-key` header
-
-[​](#2-1-129)
 
 2.1.129
 
@@ -468,8 +443,6 @@ May 6, 2026
 - Fixed `deniedMcpServers` patterns with a `*://` scheme wildcard not matching mixed-case hostnames
 - Fixed harmless WebSocket warning being logged as an error in `--debug` during voice mode
 - \[VSCode\] Fixed `/clear` not clearing the conversation context and displayed transcript
-
-[​](#2-1-128)
 
 2.1.128
 
@@ -512,8 +485,6 @@ May 4, 2026
 - Fixed `/plugin update` never detecting new versions of npm-sourced plugins
 - Fixed sub-agent summaries firing repeatedly while a sub-agent’s transcript is static, capping worst-case token cost on idle sub-agents
 - Headless `--output-format stream-json`: `init.plugin_errors` now includes `--plugin-dir` load failures in addition to dependency demotions
-
-[​](#2-1-126)
 
 2.1.126
 
@@ -583,15 +554,11 @@ May 1, 2026
 
 - Fixed Agent SDK hang when the model emits a malformed tool name in a parallel tool call batch
 
-[​](#2-1-123)
-
 2.1.123
 
 April 29, 2026
 
 - Fixed OAuth authentication failing with a 401 retry loop when `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` is set
-
-[​](#2-1-122)
 
 2.1.122
 
@@ -615,8 +582,6 @@ April 28, 2026
 - Fixed assistant messages appearing blank in some sessions due to a stale view preference
 - Fixed a malformed hooks entry in `settings.json` no longer invalidating the entire file
 - Voice mode: keybindings bound to Caps Lock now show an error since terminals don’t deliver Caps Lock as a key event
-
-[​](#2-1-121)
 
 2.1.121
 
@@ -662,8 +627,6 @@ April 28, 2026
 - Fixed embedded grep/find/rg shell wrappers failing when the running binary is deleted mid-session — now falls back to installed tools
 - Reduced peak file descriptor usage during `find` in the Bash tool on large directory trees
 
-[​](#2-1-120)
-
 2.1.120
 
 April 28, 2026
@@ -690,8 +653,6 @@ April 28, 2026
 - \[VSCode\] `/usage` now opens the native Account & Usage dialog instead of returning plain-text session cost
 - \[VSCode\] Voice dictation now respects the `language` setting in `~/.claude/settings.json`
 - Fixed `find` in the Bash tool exhausting open file descriptors on large directory trees, causing host-wide crashes (macOS/Linux native builds)
-
-[​](#2-1-119)
 
 2.1.119
 
@@ -749,8 +710,6 @@ April 23, 2026
 - Windows: removed false-positive “Windows requires ‘cmd /c’ wrapper” MCP config warning
 - \[VSCode\] Fixed voice dictation’s first recording producing nothing on macOS while the microphone permission prompt is showing
 
-[​](#2-1-118)
-
 2.1.118
 
 April 23, 2026
@@ -790,8 +749,6 @@ April 23, 2026
 - Fixed Remote Control sessions getting archived on transient CCR initialization blips during JWT refresh
 - Fixed subagents resumed via `SendMessage` not restoring the explicit `cwd` they were spawned with
 
-[​](#2-1-117)
-
 2.1.117
 
 April 22, 2026
@@ -825,8 +782,6 @@ April 22, 2026
 - \[VSCode\] Fixed “Manage Plugins” panel breaking when multiple large marketplaces are configured
 - Fixed Opus 4.7 sessions showing inflated `/context` percentages and autocompacting too early — Claude Code was computing against a 200K context window instead of Opus 4.7’s native 1M
 
-[​](#2-1-116)
-
 2.1.116
 
 April 20, 2026
@@ -857,15 +812,11 @@ April 20, 2026
 - Fixed `/plugin` Installed tab showing the same item twice when it appears under Needs attention or Favorites
 - Fixed `/update` and `/tui` not working after entering a worktree mid-session
 
-[​](#2-1-114)
-
 2.1.114
 
 April 18, 2026
 
 - Fixed a crash in the permission dialog when an agent teams teammate requested tool permission
-
-[​](#2-1-113)
 
 2.1.113
 
@@ -910,15 +861,11 @@ April 17, 2026
 - Fixed Remote Control sessions not being archived when Claude Code exits
 - Fixed `thinking.type.enabled is not supported` 400 error when using Opus 4.7 via a Bedrock Application Inference Profile ARN
 
-[​](#2-1-112)
-
 2.1.112
 
 April 16, 2026
 
 - Fixed “claude-opus-4-7 is temporarily unavailable” for auto mode
-
-[​](#2-1-111)
 
 2.1.111
 
@@ -960,8 +907,6 @@ April 16, 2026
 - Windows: `CLAUDE_ENV_FILE` and SessionStart hook environment files now apply (previously a no-op)
 - Windows: permission rules with drive-letter paths are now correctly root-anchored, and paths differing only by drive-letter case are recognized as the same path
 
-[​](#2-1-110)
-
 2.1.110
 
 April 15, 2026
@@ -1000,15 +945,11 @@ April 15, 2026
 - Fixed Remote Control sessions showing a generic error instead of prompting for re-login when the session is too old
 - Fixed Remote Control session renames from claude.ai not persisting the title to the local CLI session
 
-[​](#2-1-109)
-
 2.1.109
 
 April 15, 2026
 
 - Improved the extended-thinking indicator with a rotating progress hint
-
-[​](#2-1-108)
 
 2.1.108
 
@@ -1039,15 +980,11 @@ April 14, 2026
 - Fixed diacritical marks (accents, umlauts, cedillas) being dropped from responses when the `language` setting is configured
 - Fixed policy-managed plugins never auto-updating when running from a different project than where they were first installed
 
-[​](#2-1-107)
-
 2.1.107
 
 April 14, 2026
 
 - Show thinking hints sooner during long operations
-
-[​](#2-1-105)
 
 2.1.105
 
@@ -1090,8 +1027,6 @@ April 13, 2026
 - Fixed `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` in one project’s settings permanently disabling usage metrics for all projects on the machine
 - Fixed washed-out 16-color palette when using Ghostty, Kitty, Alacritty, WezTerm, foot, rio, or Contour over SSH/mosh
 - Fixed Bash tool suggesting `acceptEdits` permission mode when exiting plan mode would downgrade from a higher permission level
-
-[​](#2-1-101)
 
 2.1.101
 
@@ -1143,8 +1078,6 @@ April 10, 2026
 - Fixed several Remote Control issues: worktrees removed on session crash, connection failures not persisting in the transcript, spurious “Disconnected” indicator in brief mode for local sessions, and `/remote-control` failing over SSH when only `CLAUDE_CODE_ORGANIZATION_UUID` is set
 - Fixed `/insights` sometimes omitting the report file link from its response
 - \[VSCode\] Fixed the file attachment below the chat input not clearing when the last editor tab is closed
-
-[​](#2-1-98)
 
 2.1.98
 
@@ -1208,8 +1141,6 @@ April 9, 2026
 - Fixed `CLAUDE_CODE_MAX_CONTEXT_TOKENS` to honor `DISABLE_COMPACT` when it is set.
 - Dropped `/compact` hints when `DISABLE_COMPACT` is set.
 
-[​](#2-1-97)
-
 2.1.97
 
 April 8, 2026
@@ -1261,15 +1192,11 @@ April 8, 2026
 - Improved Bash tool OTEL tracing: subprocesses now inherit a W3C `TRACEPARENT` env var when tracing is enabled
 - Updated `/claude-api` skill to cover Managed Agents alongside the Claude API
 
-[​](#2-1-96)
-
 2.1.96
 
 April 8, 2026
 
 - Fixed Bedrock requests failing with `403 "Authorization header is missing"` when using `AWS_BEARER_TOKEN_BEDROCK` or `CLAUDE_CODE_SKIP_BEDROCK_AUTH` (regression in 2.1.94)
-
-[​](#2-1-94)
 
 2.1.94
 
@@ -1301,8 +1228,6 @@ April 7, 2026
 - \[VSCode\] Fixed dropdown menus selecting the wrong item when the mouse was over the list while typing or using arrow keys
 - \[VSCode\] Added a warning banner when `settings.json` files fail to parse, so users know their permission rules are not being applied
 
-[​](#2-1-92)
-
 2.1.92
 
 April 4, 2026
@@ -1329,8 +1254,6 @@ April 4, 2026
 - Removed `/vim` command (toggle vim mode via `/config` → Editor mode)
 - Linux sandbox now ships the `apply-seccomp` helper in both npm and native builds, restoring unix-socket blocking for sandboxed commands
 
-[​](#2-1-91)
-
 2.1.91
 
 April 2, 2026
@@ -1348,8 +1271,6 @@ April 2, 2026
 - Improved `/claude-api` skill guidance for agent design patterns including tool surface decisions, context management, and caching strategy
 - Improved performance: faster `stripAnsi` on Bun by routing through `Bun.stripANSI`
 - Edit tool now uses shorter `old_string` anchors, reducing output tokens
-
-[​](#2-1-90)
 
 2.1.90
 
@@ -1374,8 +1295,6 @@ April 1, 2026
 - Improved `/resume` all-projects view to load project sessions in parallel, improving load times for users with many projects
 - Changed `--resume` picker to no longer show sessions created by `claude -p` or SDK invocations
 - Removed `Get-DnsClientCache` and `ipconfig /displaydns` from auto-allow (DNS cache privacy)
-
-[​](#2-1-89)
 
 2.1.89
 
@@ -1434,15 +1353,11 @@ April 1, 2026
 - Pasting `!command` into an empty prompt now enters bash mode, matching typed `!` behavior
 - `/buddy` is here for April 1st — hatch a small creature that watches you code
 
-[​](#2-1-87)
-
 2.1.87
 
 March 29, 2026
 
 - Fixed messages in Cowork Dispatch not getting delivered
-
-[​](#2-1-86)
 
 2.1.86
 
@@ -1474,8 +1389,6 @@ March 27, 2026
 - \[VSCode\] Fixed extension incorrectly showing “Not responding” during long-running operations
 - \[VSCode\] Fixed extension defaulting Max plan users to Sonnet after the OAuth token refreshes (8 hours after login)
 - Read tool now uses compact line-number format and deduplicates unchanged re-reads, reducing token usage
-
-[​](#2-1-85)
 
 2.1.85
 
@@ -1512,13 +1425,11 @@ March 26, 2026
 - Improved scroll performance with large transcripts by replacing WASM yoga-layout with a pure TypeScript implementation
 - Reduced UI stutter when compaction triggers on large sessions
 
-[​](#2-1-84)
-
 2.1.84
 
 March 26, 2026
 
-- Added PowerShell tool for Windows as an opt-in preview. Learn more at [https://code.claude.com/docs/en/tools-reference#powershell-tool](https://code.claude.com/docs/en/tools-reference#powershell-tool)
+- Added PowerShell tool for Windows as an opt-in preview. Learn more at [https://code.claude.com/docs/en/tools-reference#powershell-tool](../04-API-Reference/tools-reference-claude-code-docs-d21fdcb4c5.md#powershell-tool)
 - Added `ANTHROPIC_DEFAULT_{OPUS,SONNET,HAIKU}_MODEL_SUPPORTS` env vars to override effort/thinking capability detection for pinned default models for 3p (Bedrock, Vertex, Foundry), and `_MODEL_NAME`/`_DESCRIPTION` to customize the `/model` picker label
 - Added `CLAUDE_STREAM_IDLE_TIMEOUT_MS` env var to configure the streaming idle watchdog threshold (default 90s)
 - Added `TaskCreated` hook that fires when a task is created via `TaskCreate`
@@ -1558,8 +1469,6 @@ March 26, 2026
 - Slash commands unavailable for the current auth setup (`/voice`, `/mobile`, `/chrome`, `/upgrade`, etc.) are now hidden instead of shown
 - \[VSCode\] Added rate limit warning banner with usage percentage and reset time
 - Stats screenshot (Ctrl+S in /stats) now works in all builds and is 16× faster
-
-[​](#2-1-83)
 
 2.1.83
 
@@ -1642,8 +1551,6 @@ March 25, 2026
 - \[VSCode\] Added Esc-twice (or `/rewind`) to open a keyboard-navigable rewind picker
 - \[VSCode\] Fixed “Fork conversation from here” and rewind actions failing silently after the session cache goes stale
 
-[​](#2-1-81)
-
 2.1.81
 
 March 20, 2026
@@ -1676,8 +1583,6 @@ March 20, 2026
 - Disabled line-by-line response streaming on Windows (including WSL in Windows Terminal) due to rendering issues
 - \[VSCode\] Fixed Windows PATH inheritance for Bash tool when using Git Bash (regression in v2.1.78)
 
-[​](#2-1-80)
-
 2.1.80
 
 March 19, 2026
@@ -1699,8 +1604,6 @@ March 19, 2026
 - Simplified plugin install tips to use a single `/plugin install` command instead of a two-step flow
 - Reduced memory usage on startup in large repositories (~80 MB saved on 250k-file repos)
 - Fixed managed settings (`enabledPlugins`, `permissions.defaultMode`, policy-set env vars) not being applied at startup when `remote-settings.json` was cached from a prior session
-
-[​](#2-1-79)
 
 2.1.79
 
@@ -1724,8 +1627,6 @@ March 18, 2026
 - \[VSCode\] Session tabs now get AI-generated titles based on your first message
 - \[VSCode\] Fixed the thinking pill showing “Thinking” instead of “Thought for Ns” after a response completes
 - \[VSCode\] Fixed missing session diff button when opening sessions from the left sidebar
-
-[​](#2-1-78)
 
 2.1.78
 
@@ -1757,8 +1658,6 @@ March 17, 2026
 - Improved memory usage and startup time when resuming large sessions
 - \[VSCode\] Fixed a brief flash of the login screen when opening the sidebar while already authenticated
 - \[VSCode\] Fixed “API Error: Rate limit reached” when selecting Opus — model dropdown no longer offers 1M context variant to subscribers whose plan tier is unknown
-
-[​](#2-1-77)
 
 2.1.77
 
@@ -1809,8 +1708,6 @@ March 17, 2026
 - \[VSCode\] Improved plan preview tab titles to use the plan’s heading instead of “Claude’s Plan”
 - \[VSCode\] When option+click doesn’t trigger native selection on macOS, the footer now points to the `macOptionClickForcesSelection` setting
 
-[​](#2-1-76)
-
 2.1.76
 
 March 14, 2026
@@ -1851,8 +1748,6 @@ March 14, 2026
 - Updated `--plugin-dir` to only accept one path to support subcommands — use repeated `--plugin-dir` for multiple directories
 - \[VSCode\] Fixed gitignore patterns containing commas silently excluding entire filetypes from the @-mention file picker
 
-[​](#2-1-75)
-
 2.1.75
 
 March 13, 2026
@@ -1877,8 +1772,6 @@ March 13, 2026
 - Suppressed async hook completion messages by default (visible with `--verbose` or transcript mode)
 - Breaking change: Removed deprecated Windows managed settings fallback at `C:\ProgramData\ClaudeCode\managed-settings.json` — use `C:\Program Files\ClaudeCode\managed-settings.json`
 
-[​](#2-1-74)
-
 2.1.74
 
 March 12, 2026
@@ -1900,8 +1793,6 @@ March 12, 2026
 - Changed `--plugin-dir` so local dev copies now override installed marketplace plugins with the same name (unless that plugin is force-enabled by managed settings)
 - \[VSCode\] Fixed delete button not working for Untitled sessions
 - \[VSCode\] Improved scroll wheel responsiveness in the integrated terminal with terminal-aware acceleration
-
-[​](#2-1-73)
 
 2.1.73
 
@@ -1933,8 +1824,6 @@ March 11, 2026
 - Changed default Opus model on Bedrock, Vertex, and Microsoft Foundry to Opus 4.6 (was Opus 4.1)
 - Deprecated `/output-style` command — use `/config` instead. Output style is now fixed at session start for better prompt caching
 - VSCode: Fixed HTTP 400 errors for users behind proxies or on Bedrock/Vertex with Claude 4.5 models
-
-[​](#2-1-72)
 
 2.1.72
 
@@ -1992,8 +1881,6 @@ March 10, 2026
 - VSCode: Added effort level indicator on the input border
 - VSCode: Added `vscode://anthropic.claude-code/open` URI handler to open a new Claude Code tab programmatically, with optional `prompt` and `session` query parameters
 
-[​](#2-1-71)
-
 2.1.71
 
 March 7, 2026
@@ -2026,8 +1913,6 @@ March 7, 2026
 - Improved plugin-provided MCP server deduplication — servers that duplicate a manually-configured server (same command/URL) are now skipped, preventing duplicate connections and tool sets. Suppressions are shown in the `/plugin` menu.
 - Updated `/debug` to toggle debug logging on mid-session, since debug logs are no longer written by default
 - Removed startup notification noise for unauthenticated org-registered claude.ai connectors
-
-[​](#2-1-70)
 
 2.1.70
 
@@ -2062,8 +1947,6 @@ March 6, 2026
 - \[VSCode\] Added spark icon in VS Code activity bar that lists all Claude Code sessions, with sessions opening as full editors
 - \[VSCode\] Added full markdown document view for plans in VS Code, with support for adding comments to provide feedback
 - \[VSCode\] Added native MCP server management dialog — use `/mcp` in the chat panel to enable/disable servers, reconnect, and manage OAuth authentication without switching to the terminal
-
-[​](#2-1-69)
 
 2.1.69
 
@@ -2173,8 +2056,6 @@ March 5, 2026
 - \[VSCode\] The permission mode picker now respects `permissions.disableBypassPermissionsMode` from your effective Claude Code settings (including managed/policy settings) — when set to `disable`, bypass permissions mode is hidden from the picker
 - \[VSCode\] Fixed RTL text (Arabic, Hebrew, Persian) rendering reversed in the chat panel (regression in v2.1.63)
 
-[​](#2-1-68)
-
 2.1.68
 
 March 4, 2026
@@ -2183,15 +2064,11 @@ March 4, 2026
 - Re-introduced the “ultrathink” keyword to enable high effort for the next turn
 - Removed Opus 4 and 4.1 from Claude Code on the first-party API — users with these models pinned are automatically moved to Opus 4.6
 
-[​](#2-1-66)
-
 2.1.66
 
 March 4, 2026
 
 - Reduced spurious error logging
-
-[​](#2-1-63)
 
 2.1.63
 
@@ -2224,23 +2101,17 @@ February 28, 2026
 - VSCode: Added session rename and remove actions to the sessions list
 - Fixed `/clear` not resetting cached skills, which could cause stale skill content to persist in the new conversation
 
-[​](#2-1-62)
-
 2.1.62
 
 February 27, 2026
 
 - Fixed prompt suggestion cache regression that reduced cache hit rates
 
-[​](#2-1-61)
-
 2.1.61
 
 February 26, 2026
 
 - Fixed concurrent writes corrupting config file on Windows
-
-[​](#2-1-59)
 
 2.1.59
 
@@ -2255,15 +2126,11 @@ February 26, 2026
 - Fixed shell commands not showing a clear error message when the working directory has been deleted
 - Fixed config file corruption that could wipe authentication when multiple Claude Code instances ran simultaneously
 
-[​](#2-1-58)
-
 2.1.58
 
 February 25, 2026
 
 - Expand Remote Control to more users
-
-[​](#2-1-56)
 
 2.1.56
 
@@ -2271,15 +2138,11 @@ February 25, 2026
 
 - VS Code: Fixed another cause of “command ‘claude-vscode.editor.openLast’ not found” crashes
 
-[​](#2-1-55)
-
 2.1.55
 
 February 25, 2026
 
 - Fixed BashTool failing on Windows with EINVAL error
-
-[​](#2-1-53)
 
 2.1.53
 
@@ -2294,15 +2157,11 @@ February 25, 2026
 - Fixed a crash in the WebAssembly interpreter on Linux x64 & Windows x64
 - Fixed a crash that sometimes occurred after 2 minutes on Windows ARM64
 
-[​](#2-1-52)
-
 2.1.52
 
 February 24, 2026
 
 - VS Code: Fixed extension crash on Windows (“command ‘claude-vscode.editor.openLast’ not found”)
-
-[​](#2-1-51)
 
 2.1.51
 
@@ -2318,9 +2177,7 @@ February 24, 2026
 - Added `CLAUDE_CODE_ACCOUNT_UUID`, `CLAUDE_CODE_USER_EMAIL`, and `CLAUDE_CODE_ORGANIZATION_UUID` environment variables for SDK callers to provide account info synchronously, eliminating a race condition where early telemetry events lacked account metadata.
 - Fixed slash command autocomplete crashing when a plugin’s SKILL.md description is a YAML array or other non-string type
 - The `/model` picker now shows human-readable labels (e.g., “Sonnet 4.5”) instead of raw model IDs for pinned model versions, with an upgrade hint when a newer version is available.
-- Managed settings can now be set via macOS plist or Windows Registry. Learn more at [https://code.claude.com/docs/en/settings#settings-files](https://code.claude.com/docs/en/settings#settings-files)
-
-[​](#2-1-50)
+- Managed settings can now be set via macOS plist or Windows Registry. Learn more at [https://code.claude.com/docs/en/settings#settings-files](../02-Claude-Code-CLI/claude-code-settings-claude-code-docs-d4420b4b52.md#settings-files)
 
 2.1.50
 
@@ -2351,8 +2208,6 @@ February 20, 2026
 - Fixed memory leak where TaskOutput retained recent lines after cleanup
 - Fixed memory leak in CircularBuffer where cleared items were retained in the backing array
 - Fixed memory leak in shell command execution where ChildProcess and AbortController references were retained after cleanup
-
-[​](#2-1-49)
 
 2.1.49
 
@@ -2385,8 +2240,6 @@ February 19, 2026
 - Fixed `disableAllHooks` setting to respect managed settings hierarchy — non-managed settings can no longer disable managed hooks set by policy (#26637)
 - Fixed `--resume` session picker showing raw XML tags for sessions that start with commands like `/clear`. Now correctly falls through to the session ID fallback.
 - Improved permission prompts for path safety and working directory blocks to show the reason for the restriction instead of a bare prompt with no context
-
-[​](#2-1-47)
 
 2.1.47
 
@@ -2461,16 +2314,12 @@ February 18, 2026
 - Fixed Edit tool silently corrupting Unicode curly quotes (\u201c\u201d \u2018\u2019) by replacing them with straight quotes when making edits (anthropics/claude-code#26141)
 - Fixed OSC 8 hyperlinks only being clickable on the first line when link text wraps across multiple terminal lines.
 
-[​](#2-1-46)
-
 2.1.46
 
 February 18, 2026
 
 - Fixed orphaned CC processes after terminal disconnect on macOS
 - Added support for using claude.ai MCP connectors in Claude Code
-
-[​](#2-1-45)
 
 2.1.45
 
@@ -2492,16 +2341,12 @@ February 17, 2026
 - Improved collapsed read/search groups to show the current file or search pattern being processed beneath the summary line while active
 - \[VSCode\] Improved permission destination choice (project/user/session) to persist across sessions
 
-[​](#2-1-44)
-
 2.1.44
 
 February 16, 2026
 
 - Fixed ENAMETOOLONG errors for deeply-nested directory paths
 - Fixed auth refresh errors
-
-[​](#2-1-43)
 
 2.1.43
 
@@ -2510,8 +2355,6 @@ February 16, 2026
 - Fixed AWS auth refresh hanging indefinitely by adding a 3-minute timeout
 - Fixed spurious warnings for non-agent markdown files in `.claude/agents/` directory
 - Fixed structured-outputs beta header being sent unconditionally on Vertex/Bedrock
-
-[​](#2-1-42)
 
 2.1.42
 
@@ -2522,8 +2365,6 @@ February 13, 2026
 - Added one-time Opus 4.6 effort callout for eligible users
 - Fixed /resume showing interrupt messages as session titles
 - Fixed image dimension limit errors to suggest /compact
-
-[​](#2-1-41)
 
 2.1.41
 
@@ -2552,8 +2393,6 @@ February 13, 2026
 - Fixed clear stale permission rules when settings change on disk
 - Fixed hook blocking errors showing stderr content in UI
 
-[​](#2-1-39)
-
 2.1.39
 
 February 10, 2026
@@ -2563,8 +2402,6 @@ February 10, 2026
 - Fixed process hanging after session close
 - Fixed character loss at terminal screen boundary
 - Fixed blank lines in verbose transcript view
-
-[​](#2-1-38)
 
 2.1.38
 
@@ -2578,23 +2415,17 @@ February 10, 2026
 - Improved heredoc delimiter parsing to prevent command smuggling
 - Blocked writes to `.claude/skills` directory in sandbox mode
 
-[​](#2-1-37)
-
 2.1.37
 
 February 7, 2026
 
 - Fixed an issue where /fast was not immediately available after enabling /extra-usage
 
-[​](#2-1-36)
-
 2.1.36
 
 February 7, 2026
 
-- Fast mode is now available for Opus 4.6. Learn more at [https://code.claude.com/docs/en/fast-mode](https://code.claude.com/docs/en/fast-mode)
-
-[​](#2-1-34)
+- Fast mode is now available for Opus 4.6. Learn more at [https://code.claude.com/docs/en/fast-mode](../02-Claude-Code-CLI/fast-mode-847ef2d690.md)
 
 2.1.34
 
@@ -2602,8 +2433,6 @@ February 6, 2026
 
 - Fixed a crash when agent teams setting changed between renders
 - Fixed a bug where commands excluded from sandboxing (via `sandbox.excludedCommands` or `dangerouslyDisableSandbox`) could bypass the Bash ask permission rule when `autoAllowBashIfSandboxed` was enabled
-
-[​](#2-1-33)
 
 2.1.33
 
@@ -2626,8 +2455,6 @@ February 6, 2026
 - VSCode: Added git branch and message count to the session picker, with support for searching by branch name
 - VSCode: Fixed scroll-to-bottom under-scrolling on initial session load and session switch
 
-[​](#2-1-32)
-
 2.1.32
 
 February 5, 2026
@@ -2645,8 +2472,6 @@ February 5, 2026
 - VSCode: Fixed slash commands incorrectly being executed when pressing Enter with preceding text in the input field
 - VSCode: Added spinner when loading past conversations list
 
-[​](#2-1-31)
-
 2.1.31
 
 February 4, 2026
@@ -2662,8 +2487,6 @@ February 4, 2026
 - Improved PDF and request size error messages to show actual limits (100 pages, 20MB)
 - Reduced layout jitter in the terminal when the spinner appears and disappears during streaming
 - Removed misleading Anthropic API pricing from model selector for third-party provider (Bedrock, Vertex, Foundry) users
-
-[​](#2-1-30)
 
 2.1.30
 
@@ -2689,15 +2512,11 @@ February 3, 2026
 - \[VSCode\] Added multiline input support to the “Other” text input in question dialogs (use Shift+Enter for new lines)
 - \[VSCode\] Fixed duplicate sessions appearing in the session list when starting a new conversation
 
-[​](#2-1-29)
-
 2.1.29
 
 January 31, 2026
 
 - Fixed startup performance issues when resuming sessions that have `saved_hook_context`
-
-[​](#2-1-27)
 
 2.1.27
 
@@ -2713,15 +2532,11 @@ January 30, 2026
 - Windows: Fixed console windows flashing when spawning child processes
 - VSCode: Fixed OAuth token expiration causing 401 errors after extended sessions
 
-[​](#2-1-25)
-
 2.1.25
 
 January 29, 2026
 
 - Fixed beta header validation error for gateway users on Bedrock and Vertex, ensuring `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` avoids the error
-
-[​](#2-1-23)
 
 2.1.23
 
@@ -2739,15 +2554,11 @@ January 29, 2026
 - Changed merged pull requests to show a purple status indicator in the prompt footer
 - \[IDE\] Fixed model options displaying incorrect region strings for Bedrock users in headless mode
 
-[​](#2-1-22)
-
 2.1.22
 
 January 28, 2026
 
 - Fixed structured outputs for non-interactive (-p) mode
-
-[​](#2-1-21)
 
 2.1.21
 
@@ -2763,8 +2574,6 @@ January 28, 2026
 - Improved Claude to prefer file operation tools (Read, Edit, Write) over bash equivalents (cat, sed, awk)
 - \[VSCode\] Added automatic Python virtual environment activation, ensuring `python` and `pip` commands use the correct interpreter (configurable via `claudeCode.usePythonEnvironment` setting)
 - \[VSCode\] Fixed message action buttons having incorrect background colors
-
-[​](#2-1-20)
 
 2.1.20
 
@@ -2799,8 +2608,6 @@ January 27, 2026
 - Changed permission rules like `Bash(*)` to be accepted and treated as equivalent to `Bash`
 - Changed config backups to be timestamped and rotated (keeping 5 most recent) to prevent data loss
 
-[​](#2-1-19)
-
 2.1.19
 
 January 23, 2026
@@ -2820,23 +2627,17 @@ January 23, 2026
 - \[SDK\] Added replay of `queued_command` attachment messages as `SDKUserMessageReplay` events when `replayUserMessages` is enabled
 - \[VSCode\] Enabled session forking and rewind functionality for all users
 
-[​](#2-1-18)
-
 2.1.18
 
 January 23, 2026
 
-- Added customizable keyboard shortcuts. Configure keybindings per context, create chord sequences, and personalize your workflow. Run `/keybindings` to get started. Learn more at [https://code.claude.com/docs/en/keybindings](https://code.claude.com/docs/en/keybindings)
-
-[​](#2-1-17)
+- Added customizable keyboard shortcuts. Configure keybindings per context, create chord sequences, and personalize your workflow. Run `/keybindings` to get started. Learn more at [https://code.claude.com/docs/en/keybindings](../02-Claude-Code-CLI/customize-keyboard-shortcuts-claude-code-docs-f23eb8cfd3.md)
 
 2.1.17
 
 January 22, 2026
 
 - Fixed crashes on processors without AVX instruction support
-
-[​](#2-1-16)
 
 2.1.16
 
@@ -2850,8 +2651,6 @@ January 22, 2026
 - Fixed session titles on the resume screen not respecting the user’s language setting
 - \[IDE\] Fixed a race condition on Windows where the Claude Code sidebar view container would not appear on start
 
-[​](#2-1-15)
-
 2.1.15
 
 January 21, 2026
@@ -2860,8 +2659,6 @@ January 21, 2026
 - Improved UI rendering performance with React Compiler
 - Fixed the “Context left until auto-compact” warning not disappearing after running `/compact`
 - Fixed MCP stdio server timeout not killing child process, which could cause UI freezes
-
-[​](#2-1-14)
 
 2.1.14
 
@@ -2884,23 +2681,17 @@ January 20, 2026
 - Improved backspace to delete pasted text as a single token instead of one character at a time
 - \[VSCode\] Added `/usage` command to display current plan usage
 
-[​](#2-1-12)
-
 2.1.12
 
 January 17, 2026
 
 - Fixed message rendering bug
 
-[​](#2-1-11)
-
 2.1.11
 
 January 17, 2026
 
 - Fixed excessive MCP connection requests for HTTP/SSE transports
-
-[​](#2-1-10)
 
 2.1.10
 
@@ -2913,8 +2704,6 @@ January 17, 2026
 - Improved file suggestions to show as removable attachments instead of inserting text when accepted
 - \[VSCode\] Added install count display to plugin listings
 - \[VSCode\] Added trust warning when installing plugins
-
-[​](#2-1-9)
 
 2.1.9
 
@@ -2929,8 +2718,6 @@ January 16, 2026
 - Fixed long sessions with parallel tool calls failing with an API error about orphan tool_result blocks
 - Fixed MCP server reconnection hanging when cached connection promise never resolves
 - Fixed Ctrl+Z suspend not working in terminals using Kitty keyboard protocol (Ghostty, iTerm2, kitty, WezTerm)
-
-[​](#2-1-7)
 
 2.1.7
 
@@ -2951,8 +2738,6 @@ January 14, 2026
 - Enabled MCP tool search auto mode by default for all users. When MCP tool descriptions exceed 10% of the context window, they are automatically deferred and discovered via the MCPSearch tool instead of being loaded upfront. This reduces context usage for users with many MCP tools configured. Users can disable this by adding `MCPSearch` to `disallowedTools` in their settings.
 - Changed OAuth and API Console URLs from console.anthropic.com to platform.claude.com
 - \[VSCode\] Fixed `claudeProcessWrapper` setting passing the wrapper path instead of the Claude binary path
-
-[​](#2-1-6)
 
 2.1.6
 
@@ -2984,15 +2769,11 @@ January 13, 2026
 - Removed ability to @-mention MCP servers to enable/disable - use `/mcp enable <name>` instead
 - \[VSCode\] Fixed usage indicator not updating after manual compact
 
-[​](#2-1-5)
-
 2.1.5
 
 January 12, 2026
 
 - Added `CLAUDE_CODE_TMPDIR` environment variable to override the temp directory used for internal temp files, useful for environments with custom temp directory requirements
-
-[​](#2-1-4)
 
 2.1.4
 
@@ -3000,8 +2781,6 @@ January 11, 2026
 
 - Added `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` environment variable to disable all background task functionality including auto-backgrounding and the Ctrl+B shortcut
 - Fixed “Help improve Claude” setting fetch to refresh OAuth and retry when it fails due to a stale OAuth token
-
-[​](#2-1-3)
 
 2.1.3
 
@@ -3020,8 +2799,6 @@ January 9, 2026
 - Improved slash command suggestion readability by truncating long descriptions to 2 lines
 - Changed tool hook execution timeout from 60 seconds to 10 minutes
 - \[VSCode\] Added clickable destination selector for permission requests, allowing you to choose where settings are saved (this project, all projects, shared with team, or session only)
-
-[​](#2-1-2)
 
 2.1.2
 
@@ -3049,8 +2826,6 @@ January 9, 2026
 - Deprecated Windows managed settings path `C:\ProgramData\ClaudeCode\managed-settings.json` - administrators should migrate to `C:\Program Files\ClaudeCode\managed-settings.json`
 - \[SDK\] Changed minimum zod peer dependency to ^4.0.0
 - \[VSCode\] Fixed usage display not updating after manual compact
-
-[​](#2-1-0)
 
 2.1.0
 
@@ -3166,23 +2941,17 @@ January 7, 2026
 - \[VSCode\] Fixed scrolling in the extension inadvertently scrolling the parent iframe
 - \[Windows\] Fixed issue with improper rendering
 
-[​](#2-0-76)
-
 2.0.76
 
 January 7, 2026
 
 - Fixed issue with macOS code-sign warning when using Claude in Chrome integration
 
-[​](#2-0-75)
-
 2.0.75
 
 January 7, 2026
 
 - Minor bugfixes
-
-[​](#2-0-74)
 
 2.0.74
 
@@ -3202,8 +2971,6 @@ December 19, 2025
 - \[Windows\] Fixed issue with improper rendering
 - \[VSCode\] Added gift tag pictogram for year-end promotion message
 
-[​](#2-0-73)
-
 2.0.73
 
 December 19, 2025
@@ -3217,8 +2984,6 @@ December 19, 2025
 - Improved theme picker UI
 - Improved search UX across resume session, permissions, and plugins screens with a unified SearchBox component
 - \[VSCode\] Added tab icon badges showing pending permissions (blue) and unread completions (orange)
-
-[​](#2-0-72)
 
 2.0.72
 
@@ -3235,8 +3000,6 @@ December 17, 2025
 - Improved settings validation errors to be more prominent
 - Changed thinking toggle from Tab to Alt+T to avoid accidental triggers
 
-[​](#2-0-71)
-
 2.0.71
 
 December 16, 2025
@@ -3248,8 +3011,6 @@ December 16, 2025
 - Fixed permission rules incorrectly rejecting valid bash commands containing shell glob patterns (e.g., `ls *.txt`, `for f in *.png`)
 - Bedrock: Environment variable `ANTHROPIC_BEDROCK_BASE_URL` is now respected for token counting and inference profile listing
 - New syntax highlighting engine for native build
-
-[​](#2-0-70)
 
 2.0.70
 
@@ -3268,15 +3029,11 @@ December 15, 2025
 - Fix thinking mode toggle in /config not persisting correctly
 - Improve UI for file creation permission dialog
 
-[​](#2-0-69)
-
 2.0.69
 
 December 13, 2025
 
 - Minor bugfixes
-
-[​](#2-0-68)
 
 2.0.68
 
@@ -3288,8 +3045,6 @@ December 12, 2025
 - Fixed Option+Arrow word navigation treating entire CJK (Chinese, Japanese, Korean) text sequences as a single word instead of navigating by word boundaries
 - Improved plan mode exit UX: show simplified yes/no dialog when exiting with empty or missing plan instead of throwing an error
 - Add support for enterprise managed settings. Contact your Anthropic account team to enable this feature.
-
-[​](#2-0-67)
 
 2.0.67
 
@@ -3307,8 +3062,6 @@ December 12, 2025
 - Fixed consecutive @~/ file references in CLAUDE.md being incorrectly parsed due to markdown strikethrough interference
 - Windows: Fixed plugin MCP servers failing due to colons in log directory paths
 
-[​](#2-0-65)
-
 2.0.65
 
 December 11, 2025
@@ -3320,8 +3073,6 @@ December 11, 2025
 - Fixed prompt not being saved to history when aborting a query with Escape
 - Fixed Read tool image handling to identify format from bytes instead of file extension
 
-[​](#2-0-64)
-
 2.0.64
 
 December 10, 2025
@@ -3330,7 +3081,7 @@ December 10, 2025
 - Agents and bash commands can run asynchronously and send messages to wake up the main agent
 - /stats now provides users with interesting CC stats, such as favorite model, usage graph, usage streak
 - Added named session support: use `/rename` to name sessions, `/resume <name>` in REPL or `claude --resume <name>` from the terminal to resume them
-- Added support for .claude/rules/\`. See [https://code.claude.com/docs/en/memory](https://code.claude.com/docs/en/memory) for details.
+- Added support for .claude/rules/\`. See [https://code.claude.com/docs/en/memory](../02-Claude-Code-CLI/how-claude-remembers-your-project-claude-code-docs-f1c064262d.md) for details.
 - Added image dimension metadata when images are resized, enabling accurate coordinate mappings for large images
 - Fixed auto-loading .env when using native installer
 - Fixed `--system-prompt` being ignored when using `--continue` or `--resume` flags
@@ -3340,8 +3091,6 @@ December 10, 2025
 - Bedrock: Improve efficiency of token counting
 - Bedrock: Add support for `aws login` AWS Management Console credentials
 - Unshipped AgentOutputTool and BashOutputTool, in favor of a new unified TaskOutputTool
-
-[​](#2-0-62)
 
 2.0.62
 
@@ -3355,15 +3104,11 @@ December 9, 2025
 - Fixed running versions getting removed because lock file incorrectly going stale
 - Fixed IDE diff tab not closing when rejecting file changes
 
-[​](#2-0-61)
-
 2.0.61
 
 December 7, 2025
 
 - Reverted VSCode support for multiple terminal clients due to responsiveness issues.
-
-[​](#2-0-60)
 
 2.0.60
 
@@ -3376,8 +3121,6 @@ December 6, 2025
 - Updated Fetch to skip summarization for pre-approved websites
 - VSCode: Added support for multiple terminal clients connecting to the IDE server simultaneously
 
-[​](#2-0-59)
-
 2.0.59
 
 December 4, 2025
@@ -3385,8 +3128,6 @@ December 4, 2025
 - Added —agent CLI flag to override the agent setting for the current session
 - Added `agent` setting to configure main thread with a specific agent’s system prompt, tool restrictions, and model
 - VS Code: Fixed .claude.json config file being read from incorrect location
-
-[​](#2-0-58)
 
 2.0.58
 
@@ -3396,8 +3137,6 @@ December 3, 2025
 - Fixed timer duration showing “11m 60s” instead of “12m 0s”
 - Windows: Managed settings now prefer `C:\Program Files\ClaudeCode` if it exists. Support for `C:\ProgramData\ClaudeCode` will be removed in a future version.
 
-[​](#2-0-57)
-
 2.0.57
 
 December 3, 2025
@@ -3405,16 +3144,12 @@ December 3, 2025
 - Added feedback input when rejecting plans, allowing users to tell Claude what to change
 - VSCode: Added streaming message support for real-time response display
 
-[​](#2-0-56)
-
 2.0.56
 
 December 2, 2025
 
 - Added setting to enable/disable terminal progress bar (OSC 9;4)
 - VSCode Extension: Added support for VS Code’s secondary sidebar (VS Code 1.97+), allowing Claude Code to be displayed in the right sidebar while keeping the file explorer on the left. Requires setting sidebar as Preferred Location in the config.
-
-[​](#2-0-55)
 
 2.0.55
 
@@ -3425,16 +3160,12 @@ November 26, 2025
 - Improved AskUserQuestion tool to auto-submit single-select questions on the last question, eliminating the extra review screen for simple question flows
 - Improved fuzzy matching for `@` file suggestions with faster, more accurate results
 
-[​](#2-0-54)
-
 2.0.54
 
 November 26, 2025
 
 - Hooks: Enable PermissionRequest hooks to process ‘always allow’ suggestions and apply permission updates
 - Fix issue with excessive iTerm notifications
-
-[​](#2-0-52)
 
 2.0.52
 
@@ -3444,8 +3175,6 @@ November 24, 2025
 - Fixed `/usage` command progress bars to fill up as usage increases (instead of showing remaining percentage)
 - Fixed image pasting not working on Linux systems running Wayland (now falls back to wl-paste when xclip is unavailable)
 - Permit some uses of `$!` in bash commands
-
-[​](#2-0-51)
 
 2.0.51
 
@@ -3461,8 +3190,6 @@ November 24, 2025
 - Fixed handling of thinking errors
 - Fixed performance regression
 
-[​](#2-0-50)
-
 2.0.50
 
 November 21, 2025
@@ -3472,8 +3199,6 @@ November 21, 2025
 - Improved ultrathink text display
 - Improved clarity of 5-hour session limit warning message
 
-[​](#2-0-49)
-
 2.0.49
 
 November 21, 2025
@@ -3481,8 +3206,6 @@ November 21, 2025
 - Added readline-style ctrl-y for pasting deleted text
 - Improved clarity of usage limit warning message
 - Fixed handling of subagent permissions
-
-[​](#2-0-47)
 
 2.0.47
 
@@ -3493,15 +3216,11 @@ November 19, 2025
 - Fixed race condition with history entry not getting logged at exit
 - Fixed Vertex AI configuration not being applied from `settings.json`
 
-[​](#2-0-46)
-
 2.0.46
 
 November 19, 2025
 
 - Fixed image files being reported with incorrect media type when format cannot be detected from metadata
-
-[​](#2-0-45)
 
 2.0.45
 
@@ -3510,8 +3229,6 @@ November 18, 2025
 - Added support for Microsoft Foundry! See [https://code.claude.com/docs/en/azure-ai-foundry](https://code.claude.com/docs/en/azure-ai-foundry)
 - Added `PermissionRequest` hook to automatically approve or deny tool permission requests with custom logic
 - Send background tasks to Claude Code on the web by starting a message with `&`
-
-[​](#2-0-43)
 
 2.0.43
 
@@ -3526,15 +3243,11 @@ November 18, 2025
 - Fixed some visual flickers
 - Fixed NotebookEdit tool inserting cells at incorrect positions when cell IDs matched the pattern `cell-N`
 
-[​](#2-0-42)
-
 2.0.42
 
 November 15, 2025
 
 - Added `agent_id` and `agent_transcript_path` fields to `SubagentStop` hooks.
-
-[​](#2-0-41)
 
 2.0.41
 
@@ -3553,8 +3266,6 @@ November 14, 2025
 - Plugins: Added support for sharing and installing output styles
 - Teleporting a session from web will automatically set the upstream branch
 
-[​](#2-0-37)
-
 2.0.37
 
 November 11, 2025
@@ -3563,8 +3274,6 @@ November 11, 2025
 - Hooks: Added matcher values for Notification hook events
 - Output Styles: Added `keep-coding-instructions` option to frontmatter
 
-[​](#2-0-36)
-
 2.0.36
 
 November 7, 2025
@@ -3572,8 +3281,6 @@ November 7, 2025
 - Fixed: DISABLE_AUTOUPDATER environment variable now properly disables package manager update notifications
 - Fixed queued messages being incorrectly executed as bash commands
 - Fixed input being lost when typing while a queued message is processed
-
-[​](#2-0-35)
 
 2.0.35
 
@@ -3585,8 +3292,6 @@ November 6, 2025
 - Migrated `ignorePatterns` from project config to deny permissions in the localSettings.
 - Fixed menu navigation getting stuck on items with empty string or other falsy values (e.g., in the `/hooks` menu)
 
-[​](#2-0-34)
-
 2.0.34
 
 November 5, 2025
@@ -3596,8 +3301,6 @@ November 5, 2025
 - Fixed infinite token refresh loop that caused MCP servers with OAuth (e.g., Slack) to hang during connection
 - Fixed memory crash when reading or writing large files (especially base64-encoded images)
 
-[​](#2-0-33)
-
 2.0.33
 
 November 4, 2025
@@ -3606,8 +3309,6 @@ November 4, 2025
 - Fixed `claude doctor` incorrectly detecting Homebrew vs npm-global installations by properly resolving symlinks
 - Fixed `claude mcp serve` exposing tools with incompatible outputSchemas
 
-[​](#2-0-32)
-
 2.0.32
 
 November 4, 2025
@@ -3615,8 +3316,6 @@ November 4, 2025
 - Un-deprecate output styles based on community feedback
 - Added `companyAnnouncements` setting for displaying announcements on startup
 - Fixed hook progress messages not updating correctly during PostToolUse hook execution
-
-[​](#2-0-31)
 
 2.0.31
 
@@ -3628,8 +3327,6 @@ October 31, 2025
 - Fixed a bug with subagents and MCP servers related to “Tool names must be unique” error
 - Fixed issue causing `/compact` to fail with `prompt_too_long` by making it respect existing compact boundaries
 - Fixed plugin uninstall not removing plugins
-
-[​](#2-0-30)
 
 2.0.30
 
@@ -3652,8 +3349,6 @@ October 30, 2025
 - Fixed delay when navigating through typeahead suggestions with arrow keys
 - VSCode: Restored selection indicator in input footer showing current file or code selection status
 
-[​](#2-0-28)
-
 2.0.28
 
 October 27, 2025
@@ -3668,8 +3363,6 @@ October 27, 2025
 - Fixed a bug where macOS permission prompts would show up upon initial launch when launching from home directory
 - Various other bug fixes
 
-[​](#2-0-27)
-
 2.0.27
 
 October 24, 2025
@@ -3680,15 +3373,11 @@ October 24, 2025
 - VSCode Extension: Add config setting to include .gitignored files in file searches
 - VSCode Extension: Bug fixes for unrelated ‘Warmup’ conversations, and configuration/settings occasionally being reset to defaults
 
-[​](#2-0-25)
-
 2.0.25
 
 October 21, 2025
 
-- Removed legacy SDK entrypoint. Please migrate to @anthropic-ai/claude-agent-sdk for future SDK updates: [https://platform.claude.com/docs/en/agent-sdk/migration-guide](https://platform.claude.com/docs/en/agent-sdk/migration-guide)
-
-[​](#2-0-24)
+- Removed legacy SDK entrypoint. Please migrate to @anthropic-ai/claude-agent-sdk for future SDK updates: [https://platform.claude.com/docs/en/agent-sdk/migration-guide](../05-Agent-SDK/agent-sdk-migration-guide.md)
 
 2.0.24
 
@@ -3699,8 +3388,6 @@ October 20, 2025
 - Sandbox: Releasing a sandbox mode for the BashTool on Linux & Mac
 - Bedrock: Display awsAuthRefresh output when auth is required
 
-[​](#2-0-22)
-
 2.0.22
 
 October 17, 2025
@@ -3709,8 +3396,6 @@ October 17, 2025
 - IDE: Add toggle to enable/disable thinking.
 - Fix bug causing duplicate permission prompts with parallel tool calls
 - Add support for enterprise managed MCP allowlist and denylist
-
-[​](#2-0-21)
 
 2.0.21
 
@@ -3722,15 +3407,11 @@ October 18, 2025
 - Added Haiku 4.5 as a model option for Pro users
 - Fixed an issue where queued commands don’t have access to previous messages’ output
 
-[​](#2-0-20)
-
 2.0.20
 
 October 16, 2025
 
 - Added support for Claude Skills
-
-[​](#2-0-19)
 
 2.0.19
 
@@ -3738,8 +3419,6 @@ October 15, 2025
 
 - Auto-background long-running bash commands instead of killing them. Customize with BASH_DEFAULT_TIMEOUT_MS
 - Fixed a bug where Haiku was unnecessarily called in print mode
-
-[​](#2-0-17)
 
 2.0.17
 
@@ -3752,16 +3431,12 @@ October 15, 2025
 - OTEL: support HTTP_PROXY and HTTPS_PROXY
 - `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` now disables release notes fetching
 
-[​](#2-0-15)
-
 2.0.15
 
 October 14, 2025
 
 - Fixed bug with resuming where previously created files needed to be read again before writing
 - Fixed bug with `-p` mode where @-mentioned files needed to be read again before writing
-
-[​](#2-0-14)
 
 2.0.14
 
@@ -3775,15 +3450,11 @@ October 10, 2025
 - Several improvements to rendering
 - Plugins UI polish
 
-[​](#2-0-13)
-
 2.0.13
 
 October 9, 2025
 
 - Fixed `/plugin` not working on native build
-
-[​](#2-0-12)
 
 2.0.12
 
@@ -3794,14 +3465,12 @@ October 9, 2025
 - Repository-level plugin configuration via `extraKnownMarketplaces` for team collaboration
 - `/plugin validate` command for validating plugin structure and configuration
 - Plugin announcement blog post at [https://www.anthropic.com/news/claude-code-plugins](https://www.anthropic.com/news/claude-code-plugins)
-- Plugin documentation available at [https://code.claude.com/docs/en/plugins](https://code.claude.com/docs/en/plugins)
+- Plugin documentation available at [https://code.claude.com/docs/en/plugins](../08-Plugins-Skills/create-plugins-claude-code-docs-fc9dd52a14.md)
 - Comprehensive error messages and diagnostics via `/doctor` command
 - Avoid flickering in `/model` selector
 - Improvements to `/help`
 - Avoid mentioning hooks in `/resume` summaries
 - Changes to the “verbose” setting in `/config` now persist across sessions
-
-[​](#2-0-11)
 
 2.0.11
 
@@ -3811,8 +3480,6 @@ October 8, 2025
 - IDE: Fixed keyboard shortcuts and focus issues for smoother interaction
 - Fixed Opus fallback rate limit errors appearing incorrectly
 - Fixed /add-dir command selecting wrong default tab
-
-[​](#2-0-10)
 
 2.0.10
 
@@ -3825,15 +3492,11 @@ October 8, 2025
 - Press Ctrl-G to edit your prompt in your system’s configured text editor
 - Fixes for bash permission checks with environment variables in the command
 
-[​](#2-0-9)
-
 2.0.9
 
 October 6, 2025
 
 - Fix regression where bash backgrounding stopped working
-
-[​](#2-0-8)
 
 2.0.8
 
@@ -3845,8 +3508,6 @@ October 4, 2025
 - Improve message rendering for users with light themes on dark terminals
 - Remove deprecated .claude.json allowedTools, ignorePatterns, env, and todoFeatureEnabled config options (instead, configure these in your settings.json)
 
-[​](#2-0-5)
-
 2.0.5
 
 October 4, 2025
@@ -3856,16 +3517,12 @@ October 4, 2025
 - Fix unhandled OAuth expiration 401 API errors
 - SDK: Added SDKUserMessageReplay.isReplay to prevent duplicate messages
 
-[​](#2-0-1)
-
 2.0.1
 
 September 30, 2025
 
 - Skip Sonnet 4.5 default model setting change for Bedrock and Vertex
 - Various bug fixes and presentation improvements
-
-[​](#2-0-0)
 
 2.0.0
 
@@ -3882,16 +3539,12 @@ September 29, 2025
 - SDK: The Claude Code SDK is now the Claude Agent SDK
 - Add subagents dynamically with `--agents` flag
 
-[​](#1-0-126)
-
 1.0.126
 
 September 26, 2025
 
 - Enable /context command for Bedrock and Vertex
 - Add mTLS support for HTTP-based OpenTelemetry exporters
-
-[​](#1-0-124)
 
 1.0.124
 
@@ -3902,8 +3555,6 @@ September 25, 2025
 - No longer inform Claude of the list of allowed tools when permission is denied
 - Fixed security vulnerability in Bash tool permission checks
 - Improved VSCode extension performance for large files
-
-[​](#1-0-123)
 
 1.0.123
 
@@ -3917,8 +3568,6 @@ September 23, 2025
 - Fixed a bug where resuming a conversation in headless mode would sometimes enable thinking unnecessarily
 - Migrated —debug logging to a file, to enable easy tailing & filtering
 
-[​](#1-0-120)
-
 1.0.120
 
 September 19, 2025
@@ -3929,8 +3578,6 @@ September 19, 2025
 - Fixed IDE compatibility issue by removing worktree support check
 - Fixed security vulnerability where Bash tool permission checks could be bypassed using prefix matching
 
-[​](#1-0-119)
-
 1.0.119
 
 September 19, 2025
@@ -3939,8 +3586,6 @@ September 19, 2025
 - Support dynamic headers for MCP servers via headersHelper configuration
 - Fix thinking mode not working in headless sessions
 - Fix slash commands now properly update allowed tools instead of replacing them
-
-[​](#1-0-117)
 
 1.0.117
 
@@ -3951,8 +3596,6 @@ September 19, 2025
 - Add sed command to auto-allowed commands in acceptEdits mode
 - Fix Windows PATH comparison to be case-insensitive for drive letters
 - Add permissions management hint to /add-dir output
-
-[​](#1-0-115)
 
 1.0.115
 
@@ -3965,16 +3608,12 @@ September 16, 2025
 - Fix visual feedback when loading state completes
 - Improve UI consistency for permission request dialogs
 
-[​](#1-0-113)
-
 1.0.113
 
 September 13, 2025
 
 - Deprecated piped input in interactive mode
 - Move Ctrl+R keybinding for toggling transcript to Ctrl+O
-
-[​](#1-0-112)
 
 1.0.112
 
@@ -3986,16 +3625,12 @@ September 12, 2025
 - Added `spinnerTipsEnabled` setting to disable spinner tips
 - IDE: Various improvements and bug fixes
 
-[​](#1-0-111)
-
 1.0.111
 
 September 10, 2025
 
 - /model now validates provided model names
 - Fixed Bash tool crashes caused by malformed shell syntax parsing
-
-[​](#1-0-110)
 
 1.0.110
 
@@ -4005,15 +3640,11 @@ September 10, 2025
 - MCP: OAuth tokens now proactively refresh before expiration
 - Fixed reliability issues with background Bash processes
 
-[​](#1-0-109)
-
 1.0.109
 
 September 9, 2025
 
 - SDK: Added partial message streaming support via `--include-partial-messages` CLI flag
-
-[​](#1-0-106)
 
 1.0.106
 
@@ -4021,15 +3652,11 @@ September 5, 2025
 
 - Windows: Fixed path permission matching to consistently use POSIX format (e.g., `Read(//c/Users/...)`)
 
-[​](#1-0-97)
-
 1.0.97
 
 August 29, 2025
 
 - Settings: /doctor now validates permission rule syntax and suggests corrections
-
-[​](#1-0-94)
 
 1.0.94
 
@@ -4040,8 +3667,6 @@ August 27, 2025
 - SDK: Add custom tools as callbacks
 - Added /todos command to list current todo items
 
-[​](#1-0-93)
-
 1.0.93
 
 August 26, 2025
@@ -4049,15 +3674,11 @@ August 26, 2025
 - Windows: Add alt + v shortcut for pasting images from clipboard
 - Support NO_PROXY environment variable to bypass proxy for specified hostnames and IPs
 
-[​](#1-0-90)
-
 1.0.90
 
 August 25, 2025
 
 - Settings file changes take effect immediately - no restart required
-
-[​](#1-0-88)
 
 1.0.88
 
@@ -4069,8 +3690,6 @@ August 22, 2025
 - Introduced `ANTHROPIC_DEFAULT_SONNET_MODEL` and `ANTHROPIC_DEFAULT_OPUS_MODEL` for controlling model aliases opusplan, opus, and sonnet.
 - Bedrock: Updated default Sonnet model to Sonnet 4
 
-[​](#1-0-86)
-
 1.0.86
 
 August 22, 2025
@@ -4079,16 +3698,12 @@ August 22, 2025
 - SDK: Added UUID support for all SDK messages
 - SDK: Added `--replay-user-messages` to replay user messages back to stdout
 
-[​](#1-0-85)
-
 1.0.85
 
 August 19, 2025
 
 - Status line input now includes session cost info
 - Hooks: Introduced SessionEnd hook
-
-[​](#1-0-84)
 
 1.0.84
 
@@ -4099,16 +3714,12 @@ August 18, 2025
 - @-mention: Add ~/.claude/\* files to suggestions for easier agent, output style, and slash command editing
 - Use built-in ripgrep by default; to opt out of this behavior, set USE_BUILTIN_RIPGREP=0
 
-[​](#1-0-83)
-
 1.0.83
 
 August 18, 2025
 
 - @-mention: Support files with spaces in path
 - New shimmering spinner
-
-[​](#1-0-82)
 
 1.0.82
 
@@ -4120,24 +3731,18 @@ August 16, 2025
 - MCP: Improve tool name consistency
 - Bash: Fix crash when Claude tries to automatically read large files
 
-[​](#1-0-81)
-
 1.0.81
 
 August 14, 2025
 
-- Released output styles, including new built-in educational output styles “Explanatory” and “Learning”. Docs: [https://code.claude.com/docs/en/output-styles](https://code.claude.com/docs/en/output-styles)
+- Released output styles, including new built-in educational output styles “Explanatory” and “Learning”. Docs: [https://code.claude.com/docs/en/output-styles](../02-Claude-Code-CLI/output-styles-claude-code-docs-c315eeed32.md)
 - Agents: Fix custom agent loading when agent files are unparsable
-
-[​](#1-0-80)
 
 1.0.80
 
 August 14, 2025
 
 - UI improvements: Fix text contrast for custom subagent colors and spinner rendering issues
-
-[​](#1-0-77)
 
 1.0.77
 
@@ -4147,8 +3752,6 @@ August 14, 2025
 - SDK: Add session support and permission denial tracking
 - Fix token limit errors in conversation summarization
 - Opus Plan Mode: New setting in `/model` to run Opus only in plan mode, Sonnet otherwise
-
-[​](#1-0-73)
 
 1.0.73
 
@@ -4160,15 +3763,11 @@ August 11, 2025
 - UI: Enhanced spinner animations and status line visual hierarchy
 - Linux: Added support for Alpine and musl-based distributions (requires separate ripgrep installation)
 
-[​](#1-0-72)
-
 1.0.72
 
 August 11, 2025
 
 - Ask permissions: have Claude Code always ask for confirmation to use specific tools with /permissions
-
-[​](#1-0-71)
 
 1.0.71
 
@@ -4176,8 +3775,6 @@ August 7, 2025
 
 - Background commands: (Ctrl-b) to run any Bash command in the background so Claude can keep working (great for dev servers, tailing logs, etc.)
 - Customizable status line: add your terminal prompt to Claude Code with /statusline
-
-[​](#1-0-70)
 
 1.0.70
 
@@ -4187,15 +3784,11 @@ August 7, 2025
 - Windows: Fixed native file search, ripgrep, and subagent functionality
 - Added support for @-mentions in slash command arguments
 
-[​](#1-0-69)
-
 1.0.69
 
 August 5, 2025
 
 - Upgraded Opus to version 4.1
-
-[​](#1-0-68)
 
 1.0.68
 
@@ -4209,16 +3802,12 @@ August 4, 2025
 - Added `disableAllHooks` setting
 - Improved file suggestions performance in large repos
 
-[​](#1-0-65)
-
 1.0.65
 
 July 31, 2025
 
 - IDE: Fixed connection stability issues and error handling for diagnostics
 - Windows: Fixed shell environment setup for users without .bashrc files
-
-[​](#1-0-64)
 
 1.0.64
 
@@ -4230,15 +3819,11 @@ July 30, 2025
 - SDK: Fixed user input tracking across multi-turn conversations
 - Added hidden files to file search and @-mention suggestions
 
-[​](#1-0-63)
-
 1.0.63
 
 July 29, 2025
 
 - Windows: Fixed file search, @agent mentions, and custom slash commands functionality
-
-[​](#1-0-62)
 
 1.0.62
 
@@ -4248,8 +3833,6 @@ July 28, 2025
 - Hooks: Added SessionStart hook for new session initialization
 - /add-dir command now supports typeahead for directory paths
 - Improved network connectivity check reliability
-
-[​](#1-0-61)
 
 1.0.61
 
@@ -4264,15 +3847,11 @@ July 25, 2025
 - IDE: Added `CLAUDE_CODE_AUTO_CONNECT_IDE=false` for disabling IDE auto-connection
 - Added `CLAUDE_CODE_SHELL_PREFIX` for wrapping Claude and user-provided shell commands run by Claude Code
 
-[​](#1-0-60)
-
 1.0.60
 
 July 24, 2025
 
 - You can now create custom subagents for specialized tasks! Run /agents to get started
-
-[​](#1-0-59)
 
 1.0.59
 
@@ -4284,8 +3863,6 @@ July 23, 2025
 - Hooks: UserPromptSubmit now supports additionalContext in advanced JSON output
 - Fixed issue where some Max users that specified Opus would still see fallback to Sonnet
 
-[​](#1-0-58)
-
 1.0.58
 
 July 23, 2025
@@ -4293,8 +3870,6 @@ July 23, 2025
 - Added support for reading PDFs
 - MCP: Improved server health status display in ‘claude mcp list’
 - Hooks: Added CLAUDE_PROJECT_DIR env var for hook commands
-
-[​](#1-0-57)
 
 1.0.57
 
@@ -4304,8 +3879,6 @@ July 23, 2025
 - Improved permission messages to help Claude understand allowed tools
 - Fix: Remove trailing newlines from bash output in terminal wrapping
 
-[​](#1-0-56)
-
 1.0.56
 
 July 23, 2025
@@ -4313,8 +3886,6 @@ July 23, 2025
 - Windows: Enabled shift+tab for mode switching on versions of Node.js that support terminal VT mode
 - Fixes for WSL IDE detection
 - Fix an issue causing awsRefreshHelper changes to .aws directory not to be picked up
-
-[​](#1-0-55)
 
 1.0.55
 
@@ -4324,8 +3895,6 @@ July 23, 2025
 - Windows: fixed Ctrl+Z crash
 - SDK: Added ability to capture error logging
 - Add —system-prompt-file option to override system prompt in print mode
-
-[​](#1-0-54)
 
 1.0.54
 
@@ -4337,8 +3906,6 @@ July 19, 2025
 - Windows: mode switching now uses alt + m, and plan mode renders properly
 - Shell: Switch to in-memory shell snapshot to fix file-related errors
 
-[​](#1-0-53)
-
 1.0.53
 
 July 18, 2025
@@ -4346,15 +3913,11 @@ July 18, 2025
 - Updated @-mention file truncation from 100 lines to 2000 lines
 - Add helper script settings for AWS token refresh: awsAuthRefresh (for foreground operations like aws sso login) and awsCredentialExport (for background operation with STS-like response).
 
-[​](#1-0-52)
-
 1.0.52
 
 July 18, 2025
 
 - Added support for MCP server instructions
-
-[​](#1-0-51)
 
 1.0.51
 
@@ -4370,8 +3933,6 @@ July 11, 2025
 - Custom slash commands: Fixed user-level commands in subdirectories
 - Plan mode: Fixed issue where rejected plan from sub-task would get discarded
 
-[​](#1-0-48)
-
 1.0.48
 
 July 10, 2025
@@ -4384,8 +3945,6 @@ July 10, 2025
 - Hooks: Added a PreCompact hook
 - Vim mode: Added c, f/F, t/T
 
-[​](#1-0-45)
-
 1.0.45
 
 July 10, 2025
@@ -4397,8 +3956,6 @@ July 10, 2025
 - Stop Hooks: Fixed transcript path after /clear and fixed triggering when loop ends with tool call
 - Custom slash commands: Restored namespacing in command names based on subdirectories. For example, .claude/commands/frontend/component.md is now /frontend:component, not /component.
 
-[​](#1-0-44)
-
 1.0.44
 
 July 7, 2025
@@ -4408,8 +3965,6 @@ July 7, 2025
 - MCP: tool annotations and tool titles now display in /mcp view
 - Changed Ctrl+Z to suspend Claude Code. Resume by running `fg`. Prompt input undo is now Ctrl+U.
 
-[​](#1-0-43)
-
 1.0.43
 
 July 3, 2025
@@ -4417,15 +3972,11 @@ July 3, 2025
 - Fixed a bug where the theme selector was saving excessively
 - Hooks: Added EPIPE system error handling
 
-[​](#1-0-42)
-
 1.0.42
 
 July 3, 2025
 
 - Added tilde (`~`) expansion support to `/add-dir` command
-
-[​](#1-0-41)
 
 1.0.41
 
@@ -4437,15 +3988,11 @@ July 3, 2025
 - Fixed a bug where MCP tools would display twice in tool list
 - New tool parameters JSON for Bash tool in `tool_decision` event
 
-[​](#1-0-40)
-
 1.0.40
 
 July 3, 2025
 
 - Fixed a bug causing API connection errors with UNABLE_TO_GET_ISSUER_CERT_LOCALLY if `NODE_EXTRA_CA_CERTS` was set
-
-[​](#1-0-39)
 
 1.0.39
 
@@ -4453,23 +4000,17 @@ July 3, 2025
 
 - New Active Time metric in OpenTelemetry logging
 
-[​](#1-0-38)
-
 1.0.38
 
 June 30, 2025
 
-- Released hooks. Special thanks to community input in [https://github.com/anthropics/claude-code/issues/712](https://github.com/anthropics/claude-code/issues/712). Docs: [https://code.claude.com/docs/en/hooks](https://code.claude.com/docs/en/hooks)
-
-[​](#1-0-37)
+- Released hooks. Special thanks to community input in [https://github.com/anthropics/claude-code/issues/712](https://github.com/anthropics/claude-code/issues/712). Docs: [https://code.claude.com/docs/en/hooks](../07-Hooks/hooks-9168ed62a4.md)
 
 1.0.37
 
 June 30, 2025
 
 - Remove ability to set `Proxy-Authorization` header via ANTHROPIC_AUTH_TOKEN or apiKeyHelper
-
-[​](#1-0-36)
 
 1.0.36
 
@@ -4478,23 +4019,17 @@ June 30, 2025
 - Web search now takes today’s date into context
 - Fixed a bug where stdio MCP servers were not terminating properly on exit
 
-[​](#1-0-35)
-
 1.0.35
 
 June 25, 2025
 
 - Added support for MCP OAuth Authorization Server discovery
 
-[​](#1-0-34)
-
 1.0.34
 
 June 24, 2025
 
 - Fixed a memory leak causing a MaxListenersExceededWarning message to appear
-
-[​](#1-0-33)
 
 1.0.33
 
@@ -4504,8 +4039,6 @@ June 24, 2025
 - Added prompt input undo functionality (Ctrl+Z and vim ‘u’ command)
 - Improvements to plan mode
 
-[​](#1-0-32)
-
 1.0.32
 
 June 24, 2025
@@ -4513,15 +4046,11 @@ June 24, 2025
 - Updated loopback config for litellm
 - Added forceLoginMethod setting to bypass login selection screen
 
-[​](#1-0-31)
-
 1.0.31
 
 June 24, 2025
 
 - Fixed a bug where ~/.claude.json would get reset when file contained invalid JSON
-
-[​](#1-0-30)
 
 1.0.30
 
@@ -4532,15 +4061,11 @@ June 24, 2025
 - Added timestamps in Ctrl-r mode and fixed Ctrl-c handling
 - Enhanced jq regex support for complex filters with pipes and select
 
-[​](#1-0-29)
-
 1.0.29
 
 June 24, 2025
 
 - Improved CJK character support in cursor navigation and rendering
-
-[​](#1-0-28)
 
 1.0.28
 
@@ -4552,8 +4077,6 @@ June 24, 2025
 - Performance optimizations for memory usage
 - New attributes (terminal.type, language) in OpenTelemetry logging
 
-[​](#1-0-27)
-
 1.0.27
 
 June 18, 2025
@@ -4562,8 +4085,6 @@ June 18, 2025
 - Remote MCP servers (SSE and HTTP) now support OAuth
 - MCP resources can now be @-mentioned
 - /resume slash command to switch conversations within Claude Code
-
-[​](#1-0-25)
 
 1.0.25
 
@@ -4574,16 +4095,12 @@ June 16, 2025
 - Improved support for Ghostty
 - Improved web search reliability
 
-[​](#1-0-24)
-
 1.0.24
 
 June 16, 2025
 
 - Improved /mcp output
 - Fixed a bug where settings arrays got overwritten instead of merged
-
-[​](#1-0-23)
 
 1.0.23
 
@@ -4592,15 +4109,11 @@ June 16, 2025
 - Released TypeScript SDK: import @anthropic-ai/claude-code to get started
 - Released Python SDK: pip install claude-code-sdk to get started
 
-[​](#1-0-22)
-
 1.0.22
 
 June 12, 2025
 
 - SDK: Renamed `total_cost` to `total_cost_usd`
-
-[​](#1-0-21)
 
 1.0.21
 
@@ -4609,8 +4122,6 @@ June 12, 2025
 - Improved editing of files with tab-based indentation
 - Fix for tool_use without matching tool_result errors
 - Fixed a bug where stdio MCP server processes would linger after quitting Claude Code
-
-[​](#1-0-18)
 
 1.0.18
 
@@ -4625,8 +4136,6 @@ June 9, 2025
 - Added auto-reconnection for MCP SSE connections on disconnect
 - Fixed issue where pasted content was lost when dialogs appeared
 
-[​](#1-0-17)
-
 1.0.17
 
 June 9, 2025
@@ -4635,8 +4144,6 @@ June 9, 2025
 - Fixed crashes when the VS Code diff tool is invoked multiple times quickly
 - MCP server list UI improvements
 - Update Claude Code process title to display “claude” instead of “node”
-
-[​](#1-0-11)
 
 1.0.11
 
@@ -4648,16 +4155,12 @@ June 4, 2025
 - Improved shell configuration error handling
 - Improved todo list handling during compaction
 
-[​](#1-0-10)
-
 1.0.10
 
 June 4, 2025
 
 - Added markdown table support
 - Improved streaming performance
-
-[​](#1-0-8)
 
 1.0.8
 
@@ -4670,8 +4173,6 @@ June 2, 2025
 - Added support for triggering thinking non-English languages
 - Improved compacting UI
 
-[​](#1-0-7)
-
 1.0.7
 
 June 2, 2025
@@ -4683,8 +4184,6 @@ June 2, 2025
 - Improved error handling for /install-github-app
 - Bugfixes, UI polish, and tool reliability improvements
 
-[​](#1-0-6)
-
 1.0.6
 
 June 2, 2025
@@ -4695,15 +4194,11 @@ June 2, 2025
 - Added support for symlinks in @file typeahead
 - Bugfixes, UI polish, and tool reliability improvements
 
-[​](#1-0-4)
-
 1.0.4
 
 May 28, 2025
 
 - Fixed a bug where MCP tool errors weren’t being parsed correctly
-
-[​](#1-0-1)
 
 1.0.1
 
@@ -4713,8 +4208,6 @@ May 22, 2025
 - Improved model references to show provider-specific names (Sonnet 3.7 for Bedrock, Sonnet 4 for Console)
 - Updated documentation links and OAuth process descriptions
 
-[​](#1-0-0)
-
 1.0.0
 
 May 22, 2025
@@ -4722,16 +4215,12 @@ May 22, 2025
 - Claude Code is now generally available
 - Introducing Sonnet 4 and Opus 4 models
 
-[​](#0-2-125)
-
 0.2.125
 
 May 21, 2025
 
 - Breaking change: Bedrock ARN passed to `ANTHROPIC_MODEL` or `ANTHROPIC_SMALL_FAST_MODEL` should no longer contain an escaped slash (specify `/` instead of `%2F`)
 - Removed `DEBUG=true` in favor of `ANTHROPIC_LOG=debug`, to log all requests
-
-[​](#0-2-117)
 
 0.2.117
 
@@ -4741,8 +4230,6 @@ May 17, 2025
 - Introduced settings.cleanupPeriodDays
 - Introduced CLAUDE_CODE_API_KEY_HELPER_TTL_MS env var
 - Introduced —debug mode
-
-[​](#0-2-108)
 
 0.2.108
 
@@ -4755,15 +4242,11 @@ May 13, 2025
 - Deprecated MCP wizard interface in favor of other MCP commands
 - Lots of other bugfixes and improvements
 
-[​](#0-2-107)
-
 0.2.107
 
 May 9, 2025
 
 - CLAUDE.md files can now import other files. Add @path/to/file.md to ./CLAUDE.md to load additional files on launch
-
-[​](#0-2-106)
 
 0.2.106
 
@@ -4771,8 +4254,6 @@ May 9, 2025
 
 - MCP SSE server configs can now specify custom headers
 - Fixed a bug where MCP permission prompt didn’t always show correctly
-
-[​](#0-2-105)
 
 0.2.105
 
@@ -4783,8 +4264,6 @@ May 8, 2025
 - Added word movement keybindings for Vim
 - Improved latency for startup, todo tool, and file edits
 
-[​](#0-2-102)
-
 0.2.102
 
 May 5, 2025
@@ -4793,8 +4272,6 @@ May 5, 2025
 - Improved @mention reliability for images and folders
 - You can now paste multiple large chunks into one prompt
 
-[​](#0-2-100)
-
 0.2.100
 
 May 2, 2025
@@ -4802,23 +4279,17 @@ May 2, 2025
 - Fixed a crash caused by a stack overflow error
 - Made db storage optional; missing db support disables —continue and —resume
 
-[​](#0-2-98)
-
 0.2.98
 
 May 1, 2025
 
 - Fixed an issue where auto-compact was running twice
 
-[​](#0-2-96)
-
 0.2.96
 
 May 1, 2025
 
 - Claude Code can now also be used with a Claude Max subscription ([https://claude.ai/upgrade](https://claude.ai/upgrade))
-
-[​](#0-2-93)
 
 0.2.93
 
@@ -4827,16 +4298,12 @@ April 30, 2025
 - Resume conversations from where you left off from with “claude —continue” and “claude —resume”
 - Claude now has access to a Todo list that helps it stay on track and be more organized
 
-[​](#0-2-82)
-
 0.2.82
 
 April 25, 2025
 
 - Added support for —disallowedTools
 - Renamed tools for consistency: LSTool -\> LS, View -\> Read, etc.
-
-[​](#0-2-75)
 
 0.2.75
 
@@ -4848,8 +4315,6 @@ April 21, 2025
 - Run one-off MCP servers with `claude --mcp-config <path-to-file>`
 - Improved performance for filename auto-complete
 
-[​](#0-2-74)
-
 0.2.74
 
 April 18, 2025
@@ -4857,15 +4322,11 @@ April 18, 2025
 - Added support for refreshing dynamically generated API keys (via apiKeyHelper), with a 5 minute TTL
 - Task tool can now perform writes and run bash commands
 
-[​](#0-2-72)
-
 0.2.72
 
 April 18, 2025
 
 - Updated spinner to indicate tokens loaded and tool usage
-
-[​](#0-2-70)
 
 0.2.70
 
@@ -4875,8 +4336,6 @@ April 17, 2025
 - Claude can now run multiple web queries in parallel
 - Pressing ESC once immediately interrupts Claude in Auto-accept mode
 
-[​](#0-2-69)
-
 0.2.69
 
 April 17, 2025
@@ -4884,15 +4343,11 @@ April 17, 2025
 - Fixed UI glitches with improved Select component behavior
 - Enhanced terminal output display with better text truncation logic
 
-[​](#0-2-67)
-
 0.2.67
 
 April 17, 2025
 
 - Shared project permission rules can be saved in .claude/settings.json
-
-[​](#0-2-66)
 
 0.2.66
 
@@ -4901,15 +4356,11 @@ April 17, 2025
 - Print mode (-p) now supports streaming output via —output-format=stream-json
 - Fixed issue where pasting could trigger memory or bash mode unexpectedly
 
-[​](#0-2-63)
-
 0.2.63
 
 April 17, 2025
 
 - Fixed an issue where MCP tools were loaded twice, which caused tool call errors
-
-[​](#0-2-61)
 
 0.2.61
 
@@ -4919,8 +4370,6 @@ April 2, 2025
 - Enhanced image detection for more reliable clipboard paste functionality
 - Fixed an issue where ESC key could crash the conversation history selector
 
-[​](#0-2-59)
-
 0.2.59
 
 April 2, 2025
@@ -4928,8 +4377,6 @@ April 2, 2025
 - Copy+paste images directly into your prompt
 - Improved progress indicators for bash and fetch tools
 - Bugfixes for non-interactive mode (-p)
-
-[​](#0-2-54)
 
 0.2.54
 
@@ -4939,8 +4386,6 @@ April 2, 2025
 - Press ctrl+r to see full output for long tool results
 - Added support for MCP SSE transport
 
-[​](#0-2-53)
-
 0.2.53
 
 April 2, 2025
@@ -4948,23 +4393,17 @@ April 2, 2025
 - New web fetch tool lets Claude view URLs that you paste in
 - Fixed a bug with JPEG detection
 
-[​](#0-2-50)
-
 0.2.50
 
 April 2, 2025
 
 - New MCP “project” scope now allows you to add MCP servers to .mcp.json files and commit them to your repository
 
-[​](#0-2-49)
-
 0.2.49
 
 April 2, 2025
 
 - Previous MCP server scopes have been renamed: previous “project” scope is now “local” and “global” scope is now “user”
-
-[​](#0-2-47)
 
 0.2.47
 
@@ -4974,15 +4413,11 @@ April 2, 2025
 - Press Shift + Tab to toggle auto-accept for file edits
 - Automatic conversation compaction for infinite conversation length (toggle with /config)
 
-[​](#0-2-44)
-
 0.2.44
 
 April 2, 2025
 
 - Ask Claude to make a plan with thinking mode: just say ‘think’ or ‘think harder’ or even ‘ultrathink’
-
-[​](#0-2-41)
 
 0.2.41
 
@@ -4991,16 +4426,12 @@ April 2, 2025
 - MCP server startup timeout can now be configured via MCP_TIMEOUT environment variable
 - MCP server startup no longer blocks the app from starting up
 
-[​](#0-2-37)
-
 0.2.37
 
 April 2, 2025
 
 - New /release-notes command lets you view release notes at any time
 - `claude config add/remove` commands now accept multiple values separated by commas or spaces
-
-[​](#0-2-36)
 
 0.2.36
 
@@ -5009,15 +4440,11 @@ April 2, 2025
 - Import MCP servers from Claude Desktop with `claude mcp add-from-claude-desktop`
 - Add MCP servers as JSON strings with `claude mcp add-json <n> <json>`
 
-[​](#0-2-34)
-
 0.2.34
 
 April 2, 2025
 
 - Vim bindings for text input - enable with /vim or /config
-
-[​](#0-2-32)
 
 0.2.32
 
@@ -5026,16 +4453,12 @@ April 2, 2025
 - Interactive MCP setup wizard: Run “claude mcp add” to add MCP servers with a step-by-step interface
 - Fix for some PersistentShell issues
 
-[​](#0-2-31)
-
 0.2.31
 
 April 2, 2025
 
 - Custom slash commands: Markdown files in .claude/commands/ directories now appear as custom slash commands to insert prompts into your conversation
 - MCP debug mode: Run with —mcp-debug flag to get more information about MCP server errors
-
-[​](#0-2-30)
 
 0.2.30
 
@@ -5045,8 +4468,6 @@ April 2, 2025
 - Fixed issue where slash command arguments weren’t being sent properly
 - (Mac-only) API keys are now stored in macOS Keychain
 
-[​](#0-2-26)
-
 0.2.26
 
 April 2, 2025
@@ -5054,8 +4475,6 @@ April 2, 2025
 - New /approved-tools command for managing tool permissions
 - Word-level diff display for improved code readability
 - Fuzzy matching for slash commands
-
-[​](#0-2-21)
 
 0.2.21
 

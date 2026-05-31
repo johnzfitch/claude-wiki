@@ -28,14 +28,10 @@ FinalExtensions Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP proposes an extension to MCP (per SEP-1724) that enables servers to deliver interactive user interfaces to hosts. MCP Apps introduces a standardized pattern for declaring UI resources via the `ui://` URI scheme, associating them with tools through metadata, and facilitating bi-directional communication between the UI and the host using MCP’s JSON-RPC base protocol. This extension addresses the growing community need for rich, interactive experiences in MCP-enabled applications, maintaining security, auditability, and alignment with MCP’s core architecture. The initial specification focuses on HTML resources (`text/html;profile=mcp-app`) with a clear path for future extensions.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -49,8 +45,6 @@ MCP lacks a standardized way for servers to deliver rich, interactive user inter
 This SEP addresses the current limitations through an optional, backwards-compatible extension that unifies the approaches pioneered by MCP-UI and the Apps SDK into a single, open standard.
 
 
-[​](#specification)
-
 Specification
 
 The full specification can be found at [modelcontextprotocol/ext-apps](https://github.com/modelcontextprotocol/ext-apps/blob/main/specification/draft/apps.mdx). At a high level, MCP Apps extends the Model Context Protocol to enable servers to deliver interactive user interfaces to hosts. This extension introduces:
@@ -63,12 +57,8 @@ The full specification can be found at [modelcontextprotocol/ext-apps](https://g
 This specification focuses on HTML content (`text/html;profile=mcp-app`) as the initial content type, with extensibility for future formats. As an extension, MCP Apps is optional and must be explicitly negotiated between clients and servers through the extension capabilities mechanism (see Capability Negotiation section in the [full specification](https://github.com/modelcontextprotocol/ext-apps/blob/main/specification/draft/apps.mdx)).
 
 
-[​](#rationale)
-
 Rationale
 
-
-[​](#predeclared-resources-vs-inline-embedding)
 
 Predeclared resources vs. inline embedding
 
@@ -84,8 +74,6 @@ UI is modeled as predeclared resources (`ui://`), referenced by tools via metada
 - **Resource links:** Predeclare the resources but return links in tool results. Deferred due to the gaps in performance optimization.
 
 
-[​](#reusing-mcp-json-rpc-instead-of-a-custom-protocol)
-
 Reusing MCP JSON-RPC instead of a custom protocol
 
 Reuses existing MCP infrastructure (type definitions, SDKs, etc.). JSON-RPC offers advanced capabilities (timeouts, errors, etc.). **Alternatives considered:**
@@ -93,8 +81,6 @@ Reuses existing MCP infrastructure (type definitions, SDKs, etc.). JSON-RPC offe
 - **Custom message protocol:** Current MCP-UI approach with message types like tool, intent, prompt, etc. These message types can be translated to a subset of the proposed JSON-RPC messages.
 - **Global API object:** Rejected because it requires host-specific injection and doesn’t work with external iframe sources. Syntactic sugar may still be added on the server/UI side.
 
-
-[​](#html-only-mvp)
 
 HTML-only MVP
 
@@ -109,14 +95,10 @@ HTML-only MVP
 - **Include external URLs in MVP:** This is one of the easiest content types for servers to adopt, as it’s possible to embed regular apps. However, it was deferred due to concerns around model visibility, inability to screenshot content, and review process. It may effectively be supported with the SEP’s new `externalIframes` capability.
 
 
-[​](#backward-compatibility)
-
 Backward Compatibility
 
 The proposal is an optional extension to the core protocol. Existing implementations continue working without changes.
 
-
-[​](#security-implications)
 
 Security Implications
 
@@ -129,8 +111,6 @@ Hosting interactive UI content from potentially untrusted MCP servers requires c
 
 A full threat model analysis and mitigations are available in the [full specification](https://github.com/modelcontextprotocol/ext-apps/blob/main/specification/draft/apps.mdx).
 
-
-[​](#reference-implementation)
 
 Reference Implementation
 

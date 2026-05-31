@@ -4,7 +4,7 @@ category: "06-MCP-Tools/General"
 tags: ["agents", "mcp", "search"]
 ---
 
-Since introducing [Skills](https://www.anthropic.com/news/skills), there's been interest in understanding how the various components of Claude's agentic ecosystem work together. 
+Since introducing [Skills](https://www.anthropic.com/news/skills), there's been interest in understanding how the various components of Claude's agentic ecosystem work together. 
 
 Whether you're building sophisticated workflows in [Claude Code](https://www.claude.com/product/claude-code), creating enterprise solutions with the API, or maximizing your productivity on [Claude.ai](http://claude.ai/), knowing which tool to reach for—and when—can transform how you work with Claude.
 
@@ -43,7 +43,7 @@ Skills are folders containing instructions, scripts, and resources that Claude d
 -   Immediate context: "Analyze this data and identify trends"
 -   Ad-hoc instructions: "Format this as a bulleted list"
 
-**Example:** 
+**Example:** 
 
 _Please conduct a comprehensive security review of this code. I'm looking for:_
 

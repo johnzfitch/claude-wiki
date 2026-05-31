@@ -1,8 +1,9 @@
 ---
+title: "Track team usage with analytics - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/analytics"
 category: "13-Enterprise-Admin"
 fetched_at: "2026-05-19T21:22:15Z"
-source_url: "https://code.claude.com/docs/en/analytics"
-title: "Track team usage with analytics - Claude Code Docs"
+tags: ["claude-code", "enterprise"]
 ---
 
 # Track team usage with analytics
@@ -25,8 +26,6 @@ Claude Code provides analytics dashboards to help organizations understand devel
 | API (Claude Console)          | [platform.claude.com/claude-code](https://platform.claude.com/claude-code) | Usage metrics, spend tracking, team insights                                          | [Details](#access-analytics-for-api-customers)       |
 
 
-[​](#access-analytics-for-team-and-enterprise)
-
 Access analytics for Team and Enterprise
 
 Navigate to [claude.ai/analytics/claude-code](https://claude.ai/analytics/claude-code). Admins and Owners can view the dashboard. The Team and Enterprise dashboard includes:
@@ -38,8 +37,6 @@ Navigate to [claude.ai/analytics/claude-code](https://claude.ai/analytics/claude
 
 For per-user token counts and cost estimates, configure [OpenTelemetry export](/docs/en/monitoring-usage).
 
-
-[​](#enable-contribution-metrics)
 
 Enable contribution metrics
 
@@ -85,8 +82,6 @@ Data typically appears within 24 hours after enabling, with daily updates. If no
 Contribution metrics support GitHub Cloud and GitHub Enterprise Server.
 
 
-[​](#review-summary-metrics)
-
 Review summary metrics
 
 These metrics are deliberately conservative and represent an underestimate of Claude Code’s actual impact. Only lines and PRs where there is high confidence in Claude Code’s involvement are counted.
@@ -100,14 +95,10 @@ The dashboard displays these summary metrics at the top:
 - **Lines of code accepted**: total lines of code written by Claude Code that users have accepted in their sessions. This excludes rejected suggestions and does not track subsequent deletions.
 
 
-[​](#explore-the-charts)
-
 Explore the charts
 
 The dashboard includes several charts to visualize trends over time.
 
-
-[​](#track-adoption)
 
 Track adoption
 
@@ -116,8 +107,6 @@ The Adoption chart shows daily usage trends:
 - **users**: daily active users
 - **sessions**: number of active Claude Code sessions per day
 
-
-[​](#measure-prs-per-user)
 
 Measure PRs per user
 
@@ -129,8 +118,6 @@ This chart displays individual developer activity over time:
 Use this to understand how individual productivity changes as Claude Code adoption increases.
 
 
-[​](#view-pull-requests-breakdown)
-
 View pull requests breakdown
 
 The Pull requests chart shows a daily breakdown of merged PRs:
@@ -140,8 +127,6 @@ The Pull requests chart shows a daily breakdown of merged PRs:
 
 Toggle to **Lines of code** view to see the same breakdown by lines of code rather than PR count.
 
-
-[​](#find-top-contributors)
 
 Find top contributors
 
@@ -153,21 +138,15 @@ The Leaderboard shows the top 10 users ranked by contribution volume. Toggle bet
 Click **Export all users** to download complete contribution data for all users as a CSV file. The export includes all users, not just the top 10 displayed.
 
 
-[​](#pr-attribution)
-
 PR attribution
 
 When contribution metrics are enabled, Claude Code analyzes merged pull requests to determine which code was written with Claude Code assistance. This is done by matching Claude Code session activity against the code in each PR.
 
 
-[​](#tagging-criteria)
-
 Tagging criteria
 
 PRs are tagged as “with Claude Code” if they contain at least one line of code written during a Claude Code session. The system uses conservative matching: only code where there is high confidence in Claude Code’s involvement is counted as assisted.
 
-
-[​](#attribution-process)
 
 Attribution process
 
@@ -181,14 +160,10 @@ When a pull request is merged:
 Before comparison, lines are normalized: whitespace is trimmed, multiple spaces are collapsed, quotes are standardized, and text is converted to lowercase. Merged pull requests containing Claude Code-assisted lines are labeled as `claude-code-assisted` in GitHub.
 
 
-[​](#time-window)
-
 Time window
 
 Sessions from 21 days before to 2 days after the PR merge date are considered for attribution matching.
 
-
-[​](#excluded-files)
 
 Excluded files
 
@@ -201,8 +176,6 @@ Certain files are automatically excluded from analysis because they are auto-gen
 - Lines over 1,000 characters, which are likely minified or generated
 
 
-[​](#attribution-notes)
-
 Attribution notes
 
 Keep these additional details in mind when interpreting attribution data:
@@ -212,14 +185,10 @@ Keep these additional details in mind when interpreting attribution data:
 - The algorithm does not consider the PR source or destination branch when performing attribution
 
 
-[​](#get-the-most-from-analytics)
-
 Get the most from analytics
 
 Use contribution metrics to demonstrate ROI, identify adoption patterns, and find team members who can help others get started.
 
-
-[​](#monitor-adoption)
 
 Monitor adoption
 
@@ -230,8 +199,6 @@ Track the Adoption chart and user counts to identify:
 - Dips in usage that may indicate friction or issues
 
 
-[​](#measure-roi)
-
 Measure ROI
 
 Contribution metrics help answer “Is this tool worth the investment?” with data from your own codebase:
@@ -240,8 +207,6 @@ Contribution metrics help answer “Is this tool worth the investment?” with d
 - Compare PRs and lines of code shipped with vs. without Claude Code
 - Use alongside [DORA metrics](https://dora.dev/), sprint velocity, or other engineering KPIs to understand changes from adopting Claude Code
 
-
-[​](#identify-power-users)
 
 Identify power users
 
@@ -252,14 +217,10 @@ The Leaderboard helps you find team members with high Claude Code adoption who c
 - Help onboard new users
 
 
-[​](#access-data-programmatically)
-
 Access data programmatically
 
 To query this data through GitHub, search for PRs labeled with `claude-code-assisted`.
 
-
-[​](#access-analytics-for-api-customers)
 
 Access analytics for API customers
 
@@ -275,8 +236,6 @@ The Console dashboard displays:
 - **Spend**: daily API costs in dollars alongside user count.
 
 
-[​](#view-team-insights)
-
 View team insights
 
 The team insights table shows per-user metrics:
@@ -287,8 +246,6 @@ The team insights table shows per-user metrics:
 
 Spend figures in the Console dashboard are estimates for analytics purposes. For actual costs, refer to your billing page.
 
-
-[​](#related-resources)
 
 Related resources
 

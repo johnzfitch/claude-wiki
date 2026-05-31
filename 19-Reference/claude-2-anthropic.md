@@ -15,7 +15,7 @@ We are pleased to announce [Claude 2](https://www-cdn.anthropic.com/bd2a28d2535b
 
 Think of Claude as a friendly, enthusiastic colleague or personal assistant who can be instructed in natural language to help you with many tasks. The Claude 2 API for businesses is being offered for the same price as Claude 1.3. Additionally, anyone in the US and UK can start using our [beta chat experience](https://claude.ai/redirect/website.v1.574b099e-4b4b-415d-b595-3405363741a0) today.
 
-As we work to improve both the performance and safety of our models, we have increased the length of Claude’s input and output. Users can input up to [100K tokens](/news/100k-context-windows) in each prompt, which means that Claude can work over hundreds of pages of technical documentation or even a book. Claude can now also write longer documents - from memos to letters to stories up to a few thousand tokens - all in one go.
+As we work to improve both the performance and safety of our models, we have increased the length of Claude’s input and output. Users can input up to [100K tokens](/news/100k-context-windows) in each prompt, which means that Claude can work over hundreds of pages of technical documentation or even a book. Claude can now also write longer documents - from memos to letters to stories up to a few thousand tokens - all in one go.
 
 \
 

@@ -31,7 +31,7 @@ In our recommendations, we focus on accountability mechanisms suitable for highl
   - Establish a confidential registry for AI developers conducting large training runs to pre-register model details with their home country’s national government (e.g., model specifications, model type, compute infrastructure, intended training completion date, and safety plans) before training commences. Aggregated registry data should be protected to the highest available standards and specifications.
 - **Empower third party auditors that are…**
   - **Technically literate** – at least some auditors will need deep machine learning experience;
-  - **Security-conscious** – well-positioned to protect valuable IP, which could pose a national security threat if stolen; and
+  - **Security-conscious** – well-positioned to protect valuable IP, which could pose a national security threat if stolen; and
   - **Flexible** – able to conduct robust but lightweight assessments that catch threats without undermining US competitiveness.
 - **Mandate external red teaming before model release**
   - Mandate external red teaming for AI systems, either through a centralized third party (e.g., NIST) or in a decentralized manner (e.g., via researcher API access) to standardize adversarial testing of AI systems. This should be a precondition for developers who are releasing advanced AI systems.

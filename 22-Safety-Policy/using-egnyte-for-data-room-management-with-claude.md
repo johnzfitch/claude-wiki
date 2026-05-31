@@ -385,21 +385,21 @@ The Egnyte connector provides Claude with secure access to your organization’s
 
 Through the Egnyte integration, Claude can access content and leverage AI capabilities in your Egnyte workspace:
 
-- **Search and Discovery:** Claude can search for documents and files using both basic and advanced search capabilities. Advanced search includes extensive filtering options such as metadata, date ranges, file types, and similarity search to help locate specific content across your organization’s file repository.**‍**
-- **Document Analysis:** Using Egnyte AI, Claude can ask questions about specific documents, generate AI-powered summaries, and extract key information from files. This allows for quick comprehension of lengthy documents without reading the entire content.**‍**
-- **Intelligent Content Access:** Claude can fetch and summarize the full content of specific documents, making it easy to work with multiple files simultaneously or extract relevant information for analysis.**‍**
-- **Copilot Integration:** Through Egnyte Copilot, Claude can ask questions with optional context from specific files or folders, enabling comprehensive analysis across related documents.**‍**
-- **Knowledge Base Queries:** Claude can query specific Knowledge Bases that your organization has created in Egnyte, providing access to curated information repositories and enabling targeted searches within specialized content collections.**‍**
+- **Search and Discovery:** Claude can search for documents and files using both basic and advanced search capabilities. Advanced search includes extensive filtering options such as metadata, date ranges, file types, and similarity search to help locate specific content across your organization’s file repository.****
+- **Document Analysis:** Using Egnyte AI, Claude can ask questions about specific documents, generate AI-powered summaries, and extract key information from files. This allows for quick comprehension of lengthy documents without reading the entire content.****
+- **Intelligent Content Access:** Claude can fetch and summarize the full content of specific documents, making it easy to work with multiple files simultaneously or extract relevant information for analysis.****
+- **Copilot Integration:** Through Egnyte Copilot, Claude can ask questions with optional context from specific files or folders, enabling comprehensive analysis across related documents.****
+- **Knowledge Base Queries:** Claude can query specific Knowledge Bases that your organization has created in Egnyte, providing access to curated information repositories and enabling targeted searches within specialized content collections.****
 - **Governed Access:** All data access through the connector respects your organization’s Egnyte permissions. Claude can only access files and folders that your user account has permission to view, ensuring data security and compliance with organizational policies.
 
 ## How Claude Uses Egnyte Content
 
 Claude applies Egnyte capabilities in several ways to support comprehensive content management and analysis:
 
-- **Multi-Document Research:** Claude combines search results, document content, and AI-powered analysis to provide comprehensive insights. For example, when researching a topic, Claude might search across multiple folders, retrieve relevant documents, and use Egnyte AI to extract key information from each file.**‍**
-- **Contextual Understanding:** By using tools like ask_document and summarize_document, Claude can understand the context and content of files before providing answers or recommendations. This ensures responses are grounded in your organization’s actual documents rather than general knowledge.**‍**
-- **Efficient Information Retrieval:** Claude uses advanced search filters to narrow down results based on metadata, date ranges, file types, and custom fields. This targeted approach helps locate specific information quickly, even in large content repositories.**‍**
-- **Cross-Document Analysis:** Claude can analyze multiple related documents by asking questions across different files, comparing information, and synthesizing insights from various sources within your Egnyte workspace.**‍**
+- **Multi-Document Research:** Claude combines search results, document content, and AI-powered analysis to provide comprehensive insights. For example, when researching a topic, Claude might search across multiple folders, retrieve relevant documents, and use Egnyte AI to extract key information from each file.****
+- **Contextual Understanding:** By using tools like ask_document and summarize_document, Claude can understand the context and content of files before providing answers or recommendations. This ensures responses are grounded in your organization’s actual documents rather than general knowledge.****
+- **Efficient Information Retrieval:** Claude uses advanced search filters to narrow down results based on metadata, date ranges, file types, and custom fields. This targeted approach helps locate specific information quickly, even in large content repositories.****
+- **Cross-Document Analysis:** Claude can analyze multiple related documents by asking questions across different files, comparing information, and synthesizing insights from various sources within your Egnyte workspace.****
 - **Knowledge Base Utilization:** When your organization has created Knowledge Bases in Egnyte, Claude can query these curated collections for specific information, making it efficient to access specialized or frequently referenced content.
 
 ## Setting up the Egnyte Connector
@@ -416,9 +416,9 @@ Before setting up the Egnyte connector, ensure you have:
 
 ### Adding the Connector as an Organization Owner
 
-1.  Navigate to [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors)‍
+1.  Navigate to [Admin settings \> Connectors](https://claude.ai/admin-settings/connectors)
 2.  Click “Add custom connector”
-3.  Enter the integration URL: [https://mcp-server.egnyte.com/mcp](https://mcp-server.egnyte.com/mcp)‍
+3.  Enter the integration URL: [https://mcp-server.egnyte.com/mcp](https://mcp-server.egnyte.com/mcp)
 4.  Name the integration (e.g., “Egnyte”)
 5.  Click “Add”
 6.  Click “Connect” and you will be redirected to the authentication page
@@ -438,9 +438,9 @@ Learn about [finding and connecting tools](../15-Claude-AI-Features/browsing-and
 
 For this analysis, Claude might use the following workflow:
 
-1.  **Advanced Search:** Use the advanced_search tool to locate all contracts in a specific folder, filtering by file type (e.g., PDF) and date range to find relevant documents.**‍**
-2.  **Document Interrogation:** Apply the ask_document tool to query specific clauses or terms within each contract, such as “What are the termination conditions?” or “What is the liability cap?”**‍**
-3.  **Content Summarization:** Generate summaries of key terms using summarize_document to create concise overviews of each contract’s main provisions.**‍**
+1.  **Advanced Search:** Use the advanced_search tool to locate all contracts in a specific folder, filtering by file type (e.g., PDF) and date range to find relevant documents.****
+2.  **Document Interrogation:** Apply the ask_document tool to query specific clauses or terms within each contract, such as “What are the termination conditions?” or “What is the liability cap?”****
+3.  **Content Summarization:** Generate summaries of key terms using summarize_document to create concise overviews of each contract’s main provisions.****
 4.  **Cross-Document Comparison:** Compare multiple contracts by asking questions across documents to identify common terms, variations in clauses, or outlier provisions.
 
 Claude would then provide a comprehensive analysis showing key findings, comparisons across contracts, and any notable clauses requiring attention.

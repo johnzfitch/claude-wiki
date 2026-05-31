@@ -1,8 +1,9 @@
 ---
+title: "Push events into a running session with channels - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/channels"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:22Z"
-source_url: "https://code.claude.com/docs/en/channels"
-title: "Push events into a running session with channels - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Push events into a running session with channels
@@ -29,8 +30,6 @@ A channel is an MCP server that pushes events into your running Claude Code sess
 
 To build your own channel, see the [Channels reference](/docs/en/channels-reference).
 
-
-[​](#supported-channels)
 
 Supported channels
 
@@ -257,8 +256,6 @@ Handles are phone numbers in `+country` format or Apple ID emails like `user@exa
 You can also [build your own channel](/docs/en/channels-reference) for systems that don’t have a plugin yet.
 
 
-[​](#quickstart)
-
 Quickstart
 
 Fakechat is an officially supported demo channel that runs a chat UI on localhost, with nothing to authenticate and no external service to configure. Once you install and enable fakechat, you can type in the browser and the message arrives in your Claude Code session. Claude replies, and the reply shows up back in the browser. After you’ve tested the fakechat interface, try out [Telegram](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/telegram), [Discord](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/discord), or [iMessage](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/imessage). To try the fakechat demo, you’ll need:
@@ -311,8 +308,6 @@ The message arrives in your Claude Code session as a `<channel source="fakechat"
 If Claude hits a permission prompt while you’re away from the terminal, the session pauses until you respond. Channel servers that declare the [permission relay capability](/docs/en/channels-reference#relay-permission-prompts) can forward these prompts to you so you can approve or deny remotely. For unattended use, [`--dangerously-skip-permissions`](/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode) bypasses prompts entirely, but only use it in environments you trust. When you run channels in non-interactive mode with `-p`, tools that need terminal input, such as multiple-choice questions and plan mode approval, are disabled so the session never stalls waiting for input.
 
 
-[​](#security)
-
 Security
 
 Every approved channel plugin maintains a sender allowlist: only IDs you’ve added can push messages, and everyone else is silently dropped. Telegram and Discord bootstrap the list by pairing:
@@ -324,8 +319,6 @@ Every approved channel plugin maintains a sender allowlist: only IDs you’ve ad
 
 iMessage works differently: texting yourself bypasses the gate automatically, and you add other contacts by handle with `/imessage:access allow`. On top of that, you control which servers are enabled each session with `--channels`, and your organization controls availability with [`channelsEnabled`](#enterprise-controls) on claude.ai Team and Enterprise plans and on Console organizations that deploy managed settings. Being in `.mcp.json` isn’t enough to push messages: a server also has to be named in `--channels`. The allowlist also gates [permission relay](/docs/en/channels-reference#relay-permission-prompts) if the channel declares it. Anyone who can reply through the channel can approve or deny tool use in your session, so only allowlist senders you trust with that authority.
 
-
-[​](#enterprise-controls)
 
 Enterprise controls
 
@@ -344,14 +337,10 @@ In all cases, no channel runs until a user opts it in for the session with `--ch
 Pro and Max users without an organization skip these checks entirely: channels are available and users opt in per session with `--channels`.
 
 
-[​](#enable-channels-for-your-organization)
-
 Enable channels for your organization
 
 Admins can enable channels from [**claude.ai → Admin settings → Claude Code → Channels**](https://claude.ai/admin-settings/claude-code), or by setting `channelsEnabled` to `true` in managed settings. Once enabled, users in your organization can use `--channels` to opt channel servers into individual sessions. If the setting is disabled or unset, the MCP server still connects and its tools work, but channel messages won’t arrive. A startup warning tells the user to have an admin enable the setting.
 
-
-[​](#restrict-which-channel-plugins-can-run)
 
 Restrict which channel plugins can run
 
@@ -371,14 +360,10 @@ By default, any plugin on the Anthropic-maintained allowlist can register as a c
 When `allowedChannelPlugins` is set, it replaces the Anthropic allowlist entirely: only the listed plugins can register. Leave it unset to fall back to the default Anthropic allowlist. An empty array blocks all channel plugins from the allowlist, but `--dangerously-load-development-channels` can still bypass it for local testing. To block channels entirely including the development flag, leave `channelsEnabled` unset instead. This setting requires `channelsEnabled: true`. If a user passes a plugin to `--channels` that isn’t on your list, Claude Code starts normally but the channel doesn’t register, and the startup notice explains that the plugin isn’t on the organization’s approved list.
 
 
-[​](#research-preview)
-
 Research preview
 
 Channels are a research preview feature. Availability is rolling out gradually, and the `--channels` flag syntax and protocol contract may change based on feedback. During the preview, `--channels` only accepts plugins from an Anthropic-maintained allowlist, or from your organization’s allowlist if an admin has set [`allowedChannelPlugins`](#restrict-which-channel-plugins-can-run). The channel plugins in [claude-plugins-official](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins) are the default approved set. If you pass something that isn’t on the effective allowlist, Claude Code starts normally but the channel doesn’t register, and the startup notice tells you why. To test a channel you’re building, use `--dangerously-load-development-channels`. See [Test during the research preview](/docs/en/channels-reference#test-during-the-research-preview) for information about testing custom channels that you build. Report issues or feedback on the [Claude Code GitHub repository](https://github.com/anthropics/claude-code/issues).
 
-
-[​](#how-channels-compare)
 
 How channels compare
 
@@ -396,8 +381,6 @@ Channels fill the gap in that list by pushing events from non-Claude sources int
 - **Chat bridge**: ask Claude something from your phone via Telegram, Discord, or iMessage, and the answer comes back in the same chat while the work runs on your machine against your real files.
 - **[Webhook receiver](/docs/en/channels-reference#example-build-a-webhook-receiver)**: a webhook from CI, your error tracker, a deploy pipeline, or other external service arrives where Claude already has your files open and remembers what you were debugging.
 
-
-[​](#next-steps)
 
 Next steps
 

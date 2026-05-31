@@ -1,8 +1,9 @@
 ---
+title: "MCP Everything Server (Test)"
+source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/README.md"
 category: "06-MCP-Tools"
 fetched_at: "2026-05-19T21:39:56Z"
-source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/README.md"
-title: "MCP Everything Server (Test)"
+tags: ["desktop", "mcp", "prompting"]
 ---
 
 # Everything MCP Server
@@ -20,7 +21,7 @@ This MCP server attempts to exercise all the features of the MCP protocol. It is
 
 A complete list of the registered MCP primitives and other protocol features demonstrated can be found in the [Server Features](docs/features.md) document.
 
-## Usage with Claude Desktop (uses [stdio Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#stdio))
+## Usage with Claude Desktop (uses [stdio Transport](Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#stdio))
 
 Add to your `claude_desktop_config.json`:
 
@@ -100,7 +101,7 @@ On Windows, use:
 }
 ```
 
-## Running from source with [HTTP+SSE Transport](https://modelcontextprotocol.io/specification/2024-11-05/basic/transports#http-with-sse) (deprecated as of [2025-03-26](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports))
+## Running from source with [HTTP+SSE Transport](Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md#http-with-sse) (deprecated as of [2025-03-26](Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md))
 
 ```shell
 cd src/everything
@@ -108,7 +109,7 @@ npm install
 npm run start:sse
 ```
 
-## Run from source with [Streamable HTTP Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
+## Run from source with [Streamable HTTP Transport](Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#streamable-http)
 
 ```shell
 cd src/everything

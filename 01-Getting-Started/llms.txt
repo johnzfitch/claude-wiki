@@ -12,10 +12,14 @@ All documentation for Getting Started.
 System requirements, platform-specific installation, version management, and uninstallation for Claude Code.
 
 
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
+
 This page covers system requirements, platform-specific installation details, updates, and uninstallation. For a guided walkthrough of your first session, see the [quickstart](/docs/en/quickstart). If you’ve never used a terminal before, see the [terminal guide](/docs/en/terminal-guide).
 
-
-[​](#system-requirements)
 
 System requirements
 
@@ -29,18 +33,14 @@ Claude Code runs on the following platforms and configurations:
   - Alpine Linux 3.19+
 - **Hardware**: 4 GB+ RAM, x64 or ARM64 processor
 - **Network**: internet connection required. See [network configuration](/docs/en/network-config#network-access-requirements).
-- **Shell**: Bash, Zsh, PowerShell, or CMD. Native Windows setups require [Git for Windows](https://git-scm.com/downloads/win). WSL setups do not.
+- **Shell**: Bash, Zsh, PowerShell, or CMD. On native Windows, [Git for Windows](https://git-scm.com/downloads/win) is recommended; Claude Code falls back to PowerShell when Git Bash is absent. WSL setups do not require Git for Windows.
 - **Location**: [Anthropic supported countries](https://www.anthropic.com/supported-countries)
 
-
-[​](#additional-dependencies)
 
 Additional dependencies
 
 - **ripgrep**: usually included with Claude Code. If search fails, see [search troubleshooting](/docs/en/troubleshooting#search-and-discovery-issues).
 
-
-[​](#install-claude-code)
 
 Install Claude Code
 
@@ -72,7 +72,7 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.**Native Windows setups require [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don’t have it. WSL setups do not need it.
+If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 
 Native installations automatically update in the background to keep you on the latest version.
 
@@ -96,22 +96,20 @@ You can also install with [apt, dnf, or apk](/docs/en/setup#install-with-linux-p
 claude
 ```
 
-If you encounter any issues during installation, see the [troubleshooting guide](/docs/en/troubleshooting).
+If you encounter any issues during installation, see [Troubleshoot installation and login](/docs/en/troubleshoot-install).
 
-
-[​](#set-up-on-windows)
 
 Set up on Windows
 
 You can run Claude Code natively on Windows or inside WSL. Pick based on where your projects are located and which features you need:
 
-| Option | Requires | [Sandboxing](/docs/en/sandboxing) | When to use |
-|----|----|----|----|
-| Native Windows | [Git for Windows](https://git-scm.com/downloads/win) | Not supported | Windows-native projects and tools |
-| WSL 2 | WSL 2 enabled | Supported | Linux toolchains or sandboxed command execution |
-| WSL 1 | WSL 1 enabled | Not supported | If WSL 2 is unavailable |
+| Option         | Requires                                                                                    | [Sandboxing](/docs/en/sandboxing) | When to use                                     |
+|----------------|---------------------------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------|
+| Native Windows | [Git for Windows](https://git-scm.com/downloads/win) recommended; PowerShell used if absent | Not supported                     | Windows-native projects and tools               |
+| WSL 2          | WSL 2 enabled                                                                               | Supported                         | Linux toolchains or sandboxed command execution |
+| WSL 1          | WSL 1 enabled                                                                               | Not supported                     | If WSL 2 is unavailable                         |
 
-**Option 1: Native Windows with Git Bash** Install [Git for Windows](https://git-scm.com/downloads/win), then run the install command from PowerShell or CMD. You do not need to run as Administrator. Whether you install from PowerShell or CMD only affects which install command you run. Your prompt shows `PS C:\Users\YourName>` in PowerShell and `C:\Users\YourName>` without the `PS` in CMD. If you’re new to the terminal, the [terminal guide](/docs/en/terminal-guide#windows) walks through each step. After installation, launch `claude` from PowerShell, CMD, or Git Bash. Claude Code uses Git Bash internally to execute commands regardless of where you launched it. If Claude Code can’t find your Git Bash installation, set the path in your [settings.json file](/docs/en/settings):
+**Option 1: Native Windows with Git Bash** Install [Git for Windows](https://git-scm.com/downloads/win), then run the install command from PowerShell or CMD. You do not need to run as Administrator. Whether you install from PowerShell or CMD only affects which install command you run. Your prompt shows `PS C:\Users\YourName>` in PowerShell and `C:\Users\YourName>` without the `PS` in CMD. If you’re new to the terminal, the [terminal guide](/docs/en/terminal-guide#windows) walks through each step. After installation, launch `claude` from PowerShell, CMD, or Git Bash. When Git Bash is installed, Claude Code uses it internally to execute commands regardless of where you launched it. If Claude Code can’t find your Git Bash installation, set the path in your [settings.json file](/docs/en/settings):
 
 ```python
 {
@@ -121,10 +119,8 @@ You can run Claude Code natively on Windows or inside WSL. Pick based on where y
 }
 ```
 
-Claude Code can also run PowerShell natively on Windows. The PowerShell tool is rolling out progressively; set `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` to opt in or `0` to opt out. See [PowerShell tool](/docs/en/tools-reference#powershell-tool) for setup and limitations. **Option 2: WSL** Open your WSL distribution and run the Linux installer from the [install instructions](#install-claude-code) above. You install and launch `claude` inside the WSL terminal, not from PowerShell or CMD.
+Claude Code can also run PowerShell natively on Windows. When Git Bash is installed, the PowerShell tool is rolling out progressively as an additional option: set `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` to opt in or `0` to opt out. See [PowerShell tool](/docs/en/tools-reference#powershell-tool) for setup and limitations. **Option 2: WSL** Open your WSL distribution and run the Linux installer from the [install instructions](#install-claude-code) above. You install and launch `claude` inside the WSL terminal, not from PowerShell or CMD.
 
-
-[​](#alpine-linux-and-musl-based-distributions)
 
 Alpine Linux and musl-based distributions
 
@@ -145,8 +141,6 @@ Then set `USE_BUILTIN_RIPGREP` to `0` in your [`settings.json`](/docs/en/setting
 ```
 
 
-[​](#verify-your-installation)
-
 Verify your installation
 
 After installing, confirm Claude Code is working:
@@ -155,37 +149,29 @@ After installing, confirm Claude Code is working:
 claude --version
 ```
 
-For a more detailed check of your installation and configuration, run [`claude doctor`](/docs/en/troubleshooting#get-more-help):
+If this fails with `command not found` or another error, see [Troubleshoot installation and login](/docs/en/troubleshoot-install). For a more detailed check of your installation and configuration, run [`claude doctor`](/docs/en/troubleshooting#get-more-help):
 
 ```python
 claude doctor
 ```
 
 
-[​](#authenticate)
-
 Authenticate
 
 Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free Claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](/docs/en/amazon-bedrock), [Google Vertex AI](/docs/en/google-vertex-ai), or [Microsoft Foundry](/docs/en/microsoft-foundry). After installing, log in by running `claude` and following the browser prompts. See [Authentication](/docs/en/authentication) for all account types and team setup options.
 
 
-[​](#update-claude-code)
-
 Update Claude Code
 
-Native installations automatically update in the background. You can [configure the release channel](#configure-release-channel) to control whether you receive updates immediately or on a delayed stable schedule, or [disable auto-updates](#disable-auto-updates) entirely. Homebrew, WinGet, and [Linux package manager](#install-with-linux-package-managers) installations require manual updates.
+Native installations automatically update in the background. You can [configure the release channel](#configure-release-channel) to control whether you receive updates immediately or on a delayed stable schedule, or [disable auto-updates](#disable-auto-updates) entirely. Homebrew, WinGet, and [Linux package manager](#install-with-linux-package-managers) installations require manual updates by default.
 
-
-[​](#auto-updates)
 
 Auto-updates
 
 Claude Code checks for updates on startup and periodically while running. Updates download and install in the background, then take effect the next time you start Claude Code.
 
-Homebrew, WinGet, apt, dnf, and apk installations do not auto-update. For Homebrew, run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed. For WinGet, run `winget upgrade Anthropic.ClaudeCode`. For Linux package managers, see the upgrade commands in [Install with Linux package managers](#install-with-linux-package-managers).**Known issue:** Claude Code may notify you of updates before the new version is available in these package managers. If an upgrade fails, wait and try again later.Homebrew keeps old versions on disk after upgrades. Run `brew cleanup` periodically to reclaim disk space.
+Homebrew, WinGet, apt, dnf, and apk installations do not auto-update by default; see below to opt in for Homebrew and WinGet. To upgrade Homebrew manually, run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed. For WinGet, run `winget upgrade Anthropic.ClaudeCode`. For Linux package managers, see the upgrade commands in [Install with Linux package managers](#install-with-linux-package-managers).To have Claude Code run the upgrade command for you on Homebrew or WinGet, set [`CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE`](/docs/en/env-vars) to `1`. Claude Code then runs the upgrade in the background when a new version is available and shows a restart prompt on success. The upgrade targets only the Claude Code package and does not affect other software you have installed.On WinGet the upgrade may fail while Claude Code is running because Windows locks the executable. In that case Claude Code shows the manual command instead. apt, dnf, and apk continue to require a manual upgrade because those commands need elevated privileges.**Known issue:** Claude Code may notify you of updates before the new version is available in these package managers. If an upgrade fails, wait and try again later.Homebrew keeps old versions on disk after upgrades. Run `brew cleanup` periodically to reclaim disk space.
 
-
-[​](#configure-release-channel)
 
 Configure release channel
 
@@ -205,8 +191,6 @@ Configure this via `/config` → **Auto-update channel**, or add it to your [set
 For enterprise deployments, you can enforce a consistent release channel across your organization using [managed settings](/docs/en/permissions#managed-settings). Homebrew installations choose a channel by cask name instead of this setting: `claude-code` tracks stable and `claude-code@latest` tracks latest.
 
 
-[​](#pin-a-minimum-version)
-
 Pin a minimum version
 
 The `minimumVersion` setting establishes a floor. Background auto-updates and `claude update` refuse to install any version below this value, so moving to the `"stable"` channel does not downgrade you if you are already on a newer `"latest"` build. Switching from `"latest"` to `"stable"` via `/config` prompts you to either stay on the current version or allow the downgrade. Choosing to stay sets `minimumVersion` to that version. Switching back to `"latest"` clears it. Add it to your [settings.json file](/docs/en/settings) to pin a floor explicitly:
@@ -220,8 +204,6 @@ The `minimumVersion` setting establishes a floor. Background auto-updates and `c
 
 In [managed settings](/docs/en/permissions#managed-settings), this enforces an organization-wide minimum that user and project settings cannot override.
 
-
-[​](#disable-auto-updates)
 
 Disable auto-updates
 
@@ -238,8 +220,6 @@ Set `DISABLE_AUTOUPDATER` to `"1"` in the `env` key of your [`settings.json`](/d
 `DISABLE_AUTOUPDATER` only stops the background check; `claude update` and `claude install` still work. To block all update paths, including manual updates, set [`DISABLE_UPDATES`](/docs/en/env-vars) instead. Use this when you distribute Claude Code through your own channels and need users to stay on the version you provide.
 
 
-[​](#update-manually)
-
 Update manually
 
 To apply an update immediately without waiting for the next background check, run:
@@ -249,14 +229,10 @@ claude update
 ```
 
 
-[​](#advanced-installation-options)
-
 Advanced installation options
 
 These options are for version pinning, Linux package managers, npm, and verifying binary integrity.
 
-
-[​](#install-a-specific-version)
 
 Install a specific version
 
@@ -321,8 +297,6 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd 2.1.89 &&
 ```
 
 
-[​](#install-with-linux-package-managers)
-
 Install with Linux package managers
 
 Claude Code publishes signed apt, dnf, and apk repositories. Replace `stable` with `latest` for the rolling channel. Package manager installations do not auto-update through Claude Code; updates arrive through your normal system upgrade workflow. All repositories are signed with the [Claude Code release signing key](#binary-integrity-and-code-signing). Before trusting the key, verify it as described in each tab.
@@ -375,8 +349,6 @@ apk add claude-code
 Verify the downloaded key with `sha256sum /etc/apk/keys/claude-code.rsa.pub`, which should report `395759c1f7449ef4cdef305a42e820f3c766d6090d142634ebdb049f113168b6`.To upgrade later, run `apk update && apk upgrade claude-code`.
 
 
-[​](#install-with-npm)
-
 Install with npm
 
 You can also install Claude Code as a global npm package. The package requires [Node.js 18 or later](https://nodejs.org/en/download).
@@ -385,19 +357,15 @@ You can also install Claude Code as a global npm package. The package requires [
 npm install -g @anthropic-ai/claude-code
 ```
 
-The npm package installs the same native binary as the standalone installer. npm pulls the binary in through a per-platform optional dependency such as `@anthropic-ai/claude-code-darwin-arm64`, and a postinstall step links it into place. The installed `claude` binary does not itself invoke Node. Supported npm install platforms are `darwin-arm64`, `darwin-x64`, `linux-x64`, `linux-arm64`, `linux-x64-musl`, `linux-arm64-musl`, `win32-x64`, and `win32-arm64`. Your package manager must allow optional dependencies. See [troubleshooting](/docs/en/troubleshooting#native-binary-not-found-after-npm-install) if the binary is missing after install.
+The npm package installs the same native binary as the standalone installer. npm pulls the binary in through a per-platform optional dependency such as `@anthropic-ai/claude-code-darwin-arm64`, and a postinstall step links it into place. The installed `claude` binary does not itself invoke Node. Supported npm install platforms are `darwin-arm64`, `darwin-x64`, `linux-x64`, `linux-arm64`, `linux-x64-musl`, `linux-arm64-musl`, `win32-x64`, and `win32-arm64`. Your package manager must allow optional dependencies. See [troubleshooting](/docs/en/troubleshoot-install#native-binary-not-found-after-npm-install) if the binary is missing after install. To upgrade an npm installation, run `npm install -g @anthropic-ai/claude-code@latest`. Avoid `npm update -g`, which respects the semver range from the original install and may not move you to the newest release.
 
-Do NOT use `sudo npm install -g` as this can lead to permission issues and security risks. If you encounter permission errors, see [troubleshooting permission errors](/docs/en/troubleshooting#permission-errors-during-installation).
+Do NOT use `sudo npm install -g` as this can lead to permission issues and security risks. If you encounter permission errors, see [troubleshooting permission errors](/docs/en/troubleshoot-install#permission-errors-during-installation).
 
-
-[​](#binary-integrity-and-code-signing)
 
 Binary integrity and code signing
 
 Each release publishes a `manifest.json` containing SHA256 checksums for every platform binary. The manifest is signed with an Anthropic GPG key, so verifying the signature on the manifest transitively verifies every binary it lists.
 
-
-[​](#verify-the-manifest-signature)
 
 Verify the manifest signature
 
@@ -481,8 +449,6 @@ shasum -a 256 claude
 Manifest signatures are available for releases from `2.1.89` onward. Earlier releases publish checksums in `manifest.json` without a detached signature.
 
 
-[​](#platform-code-signatures)
-
 Platform code signatures
 
 In addition to the signed manifest, individual binaries carry platform-native code signatures where supported.
@@ -492,14 +458,10 @@ In addition to the signed manifest, individual binaries carry platform-native co
 - **Linux**: binaries are not individually code-signed. If you download directly from the `claude-code-releases` bucket or use the native installer, verify integrity with the manifest signature above. If you install with [apt, dnf, or apk](#install-with-linux-package-managers), your package manager verifies signatures automatically using the repository signing key.
 
 
-[​](#uninstall-claude-code)
-
 Uninstall Claude Code
 
-To remove Claude Code, follow the instructions for your installation method.
+To remove Claude Code, follow the instructions for your installation method. If `claude` still runs afterward, you likely have a second installation or a leftover shell alias from an older installer. See [Check for conflicting installations](/docs/en/troubleshoot-install#check-for-conflicting-installations) to find and remove it.
 
-
-[​](#native-installation)
 
 Native installation
 
@@ -520,8 +482,6 @@ Remove-Item -Path "$env:USERPROFILE\.local\share\claude" -Recurse -Force
 ```
 
 
-[​](#homebrew-installation)
-
 Homebrew installation
 
 Remove the Homebrew cask you installed. If you installed the stable cask:
@@ -537,8 +497,6 @@ brew uninstall --cask claude-code@latest
 ```
 
 
-[​](#winget-installation)
-
 WinGet installation
 
 Remove the WinGet package:
@@ -547,8 +505,6 @@ Remove the WinGet package:
 winget uninstall Anthropic.ClaudeCode
 ```
 
-
-[​](#apt-/-dnf-/-apk)
 
 apt / dnf / apk
 
@@ -577,8 +533,6 @@ rm /etc/apk/keys/claude-code.rsa.pub
 ```
 
 
-[​](#npm)
-
 npm
 
 Remove the global npm package:
@@ -587,8 +541,6 @@ Remove the global npm package:
 npm uninstall -g @anthropic-ai/claude-code
 ```
 
-
-[​](#remove-configuration-files)
 
 Remove configuration files
 
@@ -2024,8 +1976,8 @@ This article demonstrates how to use Claude for complete financial analysis work
 
 Effective financial analysis with Claude follows a structured approach that mirrors traditional analytical workflows. The process begins with data retrieval from integrated sources, moves through systematic analysis of that data, and concludes with creation of professional deliverables. This structure ensures completeness while maintaining flexibility for different analytical objectives.
 
-1.  **Retrieve:** Pull data from integrated sources including Daloopa for SEC filings and fundamentals, and S&P Global for comprehensive market data.. The retrieval phase establishes the factual foundation for your analysis.**‍**
-2.  **Analyze:** Process and interpret the retrieved data to identify trends, calculate metrics, and generate insights. This phase transforms raw data into actionable intelligence through calculations, comparisons, and pattern recognition.**‍**
+1.  **Retrieve:** Pull data from integrated sources including Daloopa for SEC filings and fundamentals, and S&P Global for comprehensive market data.. The retrieval phase establishes the factual foundation for your analysis.****
+2.  **Analyze:** Process and interpret the retrieved data to identify trends, calculate metrics, and generate insights. This phase transforms raw data into actionable intelligence through calculations, comparisons, and pattern recognition.****
 3.  **Create:** Generate professional deliverables including investment memos, presentations, financial models, and interactive dashboards. The creation phase packages your analysis into formats suitable for decision-making and communication.
 
 ### Setting Up Your Workspace
@@ -3665,13 +3617,13 @@ Through Model Context Protocol (MCP) [connectors](../15-Claude-AI-Features/brows
 - [**Synapse.org**](https://claude.com/resources/tutorials/using-the-synapse-org-connector-in-claude) allows researchers to discover biomedical data across all of Synapse, see the structure of projects, and retrieve information on their data assets for authorized users.
 - [**BioRender**](https://claude.com/resources/tutorials/using-the-biorender-connector-in-claude) searches BioRender's extensive scientific figure template and icon collection for relevant content to create figures faster.
 - [**Scholar Gateway by Wiley**](https://claude.com/resources/tutorials/using-the-scholar-gateway-connector-in-claude) provides authenticated access to the most relevant snippets of scientific research papers to utilize within Claude.
-- [**bioRxiv / medRxiv**](https://claude.com/resources/tutorials/using-the-biorxiv-and-medrxiv-connector-in-claude) gives Claude access to bioRxiv and medRxiv preprint servers, enabling researchers to search, retrieve, and analyze non-peer-reviewed scientific manuscripts in biological and health sciences before formal journal publication.**‍**
-- [**ChEMBL**](https://claude.com/resources/tutorials/using-the-chembl-connector-in-claude) gives Claude access to a manually curated repository of bioactive molecules with drug-like properties, their biological targets, and quantitative activity measurements.**‍**
-- [**ToolUniverse**](https://claude.com/resources/tutorials/using-the-tooluniverse-extension-in-claude)**\*** gives Claude access to a library of 600+ vetted scientific tools to explore large hypothesis spaces, compare competing hypotheses, and iterate through fast-to-slow cycles of analysis.**‍**
+- [**bioRxiv / medRxiv**](https://claude.com/resources/tutorials/using-the-biorxiv-and-medrxiv-connector-in-claude) gives Claude access to bioRxiv and medRxiv preprint servers, enabling researchers to search, retrieve, and analyze non-peer-reviewed scientific manuscripts in biological and health sciences before formal journal publication.****
+- [**ChEMBL**](https://claude.com/resources/tutorials/using-the-chembl-connector-in-claude) gives Claude access to a manually curated repository of bioactive molecules with drug-like properties, their biological targets, and quantitative activity measurements.****
+- [**ToolUniverse**](https://claude.com/resources/tutorials/using-the-tooluniverse-extension-in-claude)**\*** gives Claude access to a library of 600+ vetted scientific tools to explore large hypothesis spaces, compare competing hypotheses, and iterate through fast-to-slow cycles of analysis.****
 - [**Owkin**](https://claude.com/resources/tutorials/using-the-owkin-connector-in-claude) powers Pathology Explorer, an Owkin AI agent that transforms H&E pathology slides into queryable insights for drug discovery and development and clinical research.
 - [**Open Targets**](https://claude.com/resources/tutorials/using-the-open-targets-connector-in-claude) gives Claude access to the Open Targets Platform for identifying and prioritizing therapeutic drug targets based on disease associations.
 
-***‍*Clinical operations & regulatory**
+****Clinical operations & regulatory**
 
 - [**Medidata**](https://claude.com/resources/tutorials/using-the-medidata-connector-in-claude), a leader in clinical trial solutions, provides the ability to connect Claude to their Medidata platform data
 - [**ClinicalTrials.gov**](https://claude.com/resources/tutorials/using-the-clinicaltrials-gov-connector-in-claude) gives Claude access to the NIH/NLM registry of 500,000+ clinical studies to search trials, analyze endpoints, and support research operations.
@@ -3684,11 +3636,11 @@ You can also add custom connectors to connect Claude directly to the tools and d
 
 ## Common research & discovery use cases
 
-- **Advanced data analysis and hypothesis generation:** Synthesize multi-source data to accelerate discovery cycles from weeks to hours.**‍**
-- **Literature synthesis with citations:** Access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper exploration.**‍**
-- **Protocol optimization:** Generate optimized protocols by synthesizing literature, successful existing protocols, and experimental best practices.**‍**
-- **Single-cell data processing:** Synthesize days of bioinformatics and computational analysis in minutes with automated cell population identification. Check out the [single-cell-rna-qc skill](../02-Claude-Code-CLI/how-to-use-the-single-cell-rna-qc-skill-with-claude.md) which gives Claude the ability to perform quality control on single-cell RNA-seq data using scverse best practices.**‍**
-- **Experimental design automation:** Generate literature-informed experimental designs automatically.**‍**
+- **Advanced data analysis and hypothesis generation:** Synthesize multi-source data to accelerate discovery cycles from weeks to hours.****
+- **Literature synthesis with citations:** Access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper exploration.****
+- **Protocol optimization:** Generate optimized protocols by synthesizing literature, successful existing protocols, and experimental best practices.****
+- **Single-cell data processing:** Synthesize days of bioinformatics and computational analysis in minutes with automated cell population identification. Check out the [single-cell-rna-qc skill](../02-Claude-Code-CLI/how-to-use-the-single-cell-rna-qc-skill-with-claude.md) which gives Claude the ability to perform quality control on single-cell RNA-seq data using scverse best practices.****
+- **Experimental design automation:** Generate literature-informed experimental designs automatically.****
 - **Figure interpretation and analysis:** Accelerate figure creation and analysis with automated visualization.
 
 ## Related tutorials
@@ -5522,10 +5474,14 @@ Claude Code works across your development environment: in your terminal, in your
 Welcome to Claude Code!
 
 
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
+
 This quickstart guide will have you using AI-powered coding assistance in a few minutes. By the end, you’ll understand how to use Claude Code for common development tasks.
 
-
-[​](#before-you-begin)
 
 Before you begin
 
@@ -5538,8 +5494,6 @@ Make sure you have:
 
 This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/docs/en/desktop), in [VS Code](/docs/en/vs-code) and [JetBrains IDEs](/docs/en/jetbrains), in [Slack](/docs/en/slack), and in CI/CD with [GitHub Actions](/docs/en/github-actions) and [GitLab](/docs/en/gitlab-ci-cd). See [all interfaces](/docs/en/overview#use-claude-code-everywhere).
 
-
-[​](#step-1-install-claude-code)
 
 Step 1: Install Claude Code
 
@@ -5569,7 +5523,7 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.**Native Windows setups require [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don’t have it. WSL setups do not need it.
+If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 
 Native installations automatically update in the background to keep you on the latest version.
 
@@ -5589,8 +5543,6 @@ WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCod
 
 You can also install with [apt, dnf, or apk](/docs/en/setup#install-with-linux-package-managers) on Debian, Fedora, RHEL, and Alpine.
 
-
-[​](#step-2-log-in-to-your-account)
 
 Step 2: Log in to your account
 
@@ -5615,8 +5567,6 @@ You can log in using any of these account types:
 Once logged in, your credentials are stored and you won’t need to log in again. To switch accounts later, use the `/login` command.
 
 
-[​](#step-3-start-your-first-session)
-
 Step 3: Start your first session
 
 Open your terminal in any project directory and start Claude Code:
@@ -5630,8 +5580,6 @@ You’ll see the Claude Code welcome screen with your session information, recen
 
 After logging in (Step 2), your credentials are stored on your system. Learn more in [Credential Management](/docs/en/authentication#credential-management).
 
-
-[​](#step-4-ask-your-first-question)
 
 Step 4: Ask your first question
 
@@ -5672,8 +5620,6 @@ can Claude Code work with Docker?
 Claude Code reads your project files as needed. You don’t have to manually add context.
 
 
-[​](#step-5-make-your-first-code-change)
-
 Step 5: Make your first code change
 
 Now let’s make Claude Code do some actual coding. Try a simple task:
@@ -5691,8 +5637,6 @@ Claude Code will:
 
 Claude Code always asks for permission before modifying files. You can approve individual changes or enable “Accept all” mode for a session.
 
-
-[​](#step-6-use-git-with-claude-code)
 
 Step 6: Use Git with Claude Code
 
@@ -5721,8 +5665,6 @@ help me resolve merge conflicts
 ```
 
 
-[​](#step-7-fix-a-bug-or-add-a-feature)
-
 Step 7: Fix a bug or add a feature
 
 Claude is proficient at debugging and feature implementation. Describe what you want in natural language:
@@ -5744,8 +5686,6 @@ Claude Code will:
 - Implement a solution
 - Run tests if available
 
-
-[​](#step-8-test-out-other-common-workflows)
 
 Step 8: Test out other common workflows
 
@@ -5776,27 +5716,23 @@ review my changes and suggest improvements
 Talk to Claude like you would a helpful colleague. Describe what you want to achieve, and it will help you get there.
 
 
-[​](#essential-commands)
-
 Essential commands
 
 Here are the most important commands for daily use:
 
-| Command | What it does | Example |
-|----|----|----|
-| `claude` | Start interactive mode | `claude` |
-| `claude "task"` | Run a one-time task | `claude "fix the build error"` |
-| `claude -p "query"` | Run one-off query, then exit | `claude -p "explain this function"` |
-| `claude -c` | Continue most recent conversation in current directory | `claude -c` |
-| `claude -r` | Resume a previous conversation | `claude -r` |
-| `/clear` | Clear conversation history | `/clear` |
-| `/help` | Show available commands | `/help` |
-| `exit` or Ctrl+D | Exit Claude Code | `exit` |
+| Command             | What it does                                           | Example                             |
+|---------------------|--------------------------------------------------------|-------------------------------------|
+| `claude`            | Start interactive mode                                 | `claude`                            |
+| `claude "task"`     | Run a one-time task                                    | `claude "fix the build error"`      |
+| `claude -p "query"` | Run one-off query, then exit                           | `claude -p "explain this function"` |
+| `claude -c`         | Continue most recent conversation in current directory | `claude -c`                         |
+| `claude -r`         | Resume a previous conversation                         | `claude -r`                         |
+| `/clear`            | Clear conversation history                             | `/clear`                            |
+| `/help`             | Show available commands                                | `/help`                             |
+| `exit` or Ctrl+D    | Exit Claude Code                                       | `exit`                              |
 
 See the [CLI reference](/docs/en/cli-reference) for a complete list of commands.
 
-
-[​](#pro-tips-for-beginners)
 
 Pro tips for beginners
 
@@ -5830,13 +5766,11 @@ build a dashboard showing products that are most frequently returned by our UK c
 
 Save time with shortcuts
 
-- Press `?` to see all available keyboard shortcuts
+- Type `/` to see all commands and skills
 - Use Tab for command completion
 - Press ↑ for command history
-- Type `/` to see all commands and skills
+- Press `Shift+Tab` to cycle permission modes
 
-
-[​](#what’s-next)
 
 What’s next?
 
@@ -5858,8 +5792,6 @@ Step-by-step guides for common tasks
 
 Customize with CLAUDE.md, skills, hooks, MCP, and more
 
-
-[​](#getting-help)
 
 Getting help
 
@@ -9033,7 +8965,7 @@ document.addEventListener('DOMContentLoaded', function() {
  document.fonts.ready.then(handleResize);
  }
 });
-Getting Started with Claude for Life SciencesCategoryLife SciencesProductClaude.aiReading timeWatch time3minminShareCopy linkhttps://claude.com/resources/tutorials/getting-started-with-claude-for-life-sciencesWhat is Claude for Life SciencesClaude for Life Sciences enhances Claude with specialized capabilities for life sciences researchers and organizations. It connects Claude to the data sources, tools, and systems that teams use daily across R&D, clinical operations, and regulatory affairs — eliminating the need to toggle between platforms and enabling insights that span your entire product lifecycle. The result: accelerated timelines from discovery through approval, with the rigor and traceability these workflows demand.How do I access life sciences tools and features?Individuals can access Claude for Life Sciences features and tools from a Claude Pro or Claude Max account, and teams can access through Claude for Work. For questions about Claude for Life Sciences for enterprise contact our Sales team.Connectors for the life sciences development cycleThrough Model Context Protocol (MCP) connectors and desktop extensions, Claude connects directly to leading platforms and databases, enabling you to query data using natural language and receive responses with source citations.Scientific research & discoveryBenchling connects Claude to Benchling R&D platform data, enabling scientists to ask questions and receive clear summaries with links back to source experiments, notebooks, and structured records—all while maintaining existing access permissions.10x Genomics* transforms single cell and spatial analysis into a simple, conversational workflow. Biologists can easily analyze their own sequencing data, while core labs can quickly perform batch processing.PubMed provides access to millions of biomedical research articles and clinical studies, allowing Claude to access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper explorationSynapse.org allows researchers to discover biomedical data across all of Synapse, see the structure of projects, and retrieve information on their data assets for authorized users.BioRender searches BioRender's extensive scientific figure template and icon collection for relevant content to create figures faster.Scholar Gateway by Wiley provides authenticated access to the most relevant snippets of scientific research papers to utilize within Claude. bioRxiv / medRxiv gives Claude access to bioRxiv and medRxiv preprint servers, enabling researchers to search, retrieve, and analyze non-peer-reviewed scientific manuscripts in biological and health sciences before formal journal publication.‍ChEMBL gives Claude access to a manually curated repository of bioactive molecules with drug-like properties, their biological targets, and quantitative activity measurements.‍ToolUniverse* gives Claude access to a library of 600+ vetted scientific tools to explore large hypothesis spaces, compare competing hypotheses, and iterate through fast-to-slow cycles of analysis.‍Owkin powers Pathology Explorer, an Owkin AI agent that transforms H&E pathology slides into queryable insights for drug discovery and development and clinical research.Open Targets gives Claude access to the Open Targets Platform for identifying and prioritizing therapeutic drug targets based on disease associations.‍Clinical operations & regulatoryMedidata, a leader in clinical trial solutions, provides the ability to connect Claude to their Medidata platform dataClinicalTrials.gov gives Claude access to the NIH/NLM registry of 500,000+ clinical studies to search trials, analyze endpoints, and support research operations.*Available as Desktop Extensions for access on Claude Desktop App (download here).Claude also includes Connectors to other workplace and productivity platforms like Microsoft 365, Gmail & Google Drive, Box, Databricks, Slack, and many more. Explore all available Claude Connectors here.You can also add custom connectors to connect Claude directly to the tools and data sources that matter most to your workflows. Learn more about setting up custom connectors here.Common research & discovery use casesAdvanced data analysis and hypothesis generation: Synthesize multi-source data to accelerate discovery cycles from weeks to hours.‍Literature synthesis with citations: Access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper exploration.‍Protocol optimization: Generate optimized protocols by synthesizing literature, successful existing protocols, and experimental best practices.‍Single-cell data processing: Synthesize days of bioinformatics and computational analysis in minutes with automated cell population identification. Check out the single-cell-rna-qc skill which gives Claude the ability to perform quality control on single-cell RNA-seq data using scverse best practices.‍Experimental design automation: Generate literature-informed experimental designs automatically.‍Figure interpretation and analysis: Accelerate figure creation and analysis with automated visualization.What is Claude for Life SciencesHow do I access life sciences tools and features?Connectors for the life sciences development cycleCommon research & discovery use casesRelated tutorialsHow to use the Scientific Problem Selection Skill with ClaudeHow to use the Scientific Problem Selection Skill with ClaudeHow to use the Scientific Problem Selection Skill with ClaudeTutorialTutorialTutorialHow to use the scVI-Tools bioinformatics skill bundle with ClaudeHow to use the scVI-Tools bioinformatics skill bundle with ClaudeHow to use the scVI-Tools bioinformatics skill bundle with ClaudeTutorialTutorialTutorialUsing the ClinicalTrials.gov Connector in ClaudeUsing the ClinicalTrials.gov Connector in ClaudeUsing the ClinicalTrials.gov Connector in ClaudeTutorialTutorialTutorial Using the ToolUniverse Extension in Claude Using the ToolUniverse Extension in Claude Using the ToolUniverse Extension in ClaudeTutorialTutorialTutorial
+Getting Started with Claude for Life SciencesCategoryLife SciencesProductClaude.aiReading timeWatch time3minminShareCopy linkhttps://claude.com/resources/tutorials/getting-started-with-claude-for-life-sciencesWhat is Claude for Life SciencesClaude for Life Sciences enhances Claude with specialized capabilities for life sciences researchers and organizations. It connects Claude to the data sources, tools, and systems that teams use daily across R&D, clinical operations, and regulatory affairs — eliminating the need to toggle between platforms and enabling insights that span your entire product lifecycle. The result: accelerated timelines from discovery through approval, with the rigor and traceability these workflows demand.How do I access life sciences tools and features?Individuals can access Claude for Life Sciences features and tools from a Claude Pro or Claude Max account, and teams can access through Claude for Work. For questions about Claude for Life Sciences for enterprise contact our Sales team.Connectors for the life sciences development cycleThrough Model Context Protocol (MCP) connectors and desktop extensions, Claude connects directly to leading platforms and databases, enabling you to query data using natural language and receive responses with source citations.Scientific research & discoveryBenchling connects Claude to Benchling R&D platform data, enabling scientists to ask questions and receive clear summaries with links back to source experiments, notebooks, and structured records—all while maintaining existing access permissions.10x Genomics* transforms single cell and spatial analysis into a simple, conversational workflow. Biologists can easily analyze their own sequencing data, while core labs can quickly perform batch processing.PubMed provides access to millions of biomedical research articles and clinical studies, allowing Claude to access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper explorationSynapse.org allows researchers to discover biomedical data across all of Synapse, see the structure of projects, and retrieve information on their data assets for authorized users.BioRender searches BioRender's extensive scientific figure template and icon collection for relevant content to create figures faster.Scholar Gateway by Wiley provides authenticated access to the most relevant snippets of scientific research papers to utilize within Claude. bioRxiv / medRxiv gives Claude access to bioRxiv and medRxiv preprint servers, enabling researchers to search, retrieve, and analyze non-peer-reviewed scientific manuscripts in biological and health sciences before formal journal publication.ChEMBL gives Claude access to a manually curated repository of bioactive molecules with drug-like properties, their biological targets, and quantitative activity measurements.ToolUniverse* gives Claude access to a library of 600+ vetted scientific tools to explore large hypothesis spaces, compare competing hypotheses, and iterate through fast-to-slow cycles of analysis.Owkin powers Pathology Explorer, an Owkin AI agent that transforms H&E pathology slides into queryable insights for drug discovery and development and clinical research.Open Targets gives Claude access to the Open Targets Platform for identifying and prioritizing therapeutic drug targets based on disease associations.Clinical operations & regulatoryMedidata, a leader in clinical trial solutions, provides the ability to connect Claude to their Medidata platform dataClinicalTrials.gov gives Claude access to the NIH/NLM registry of 500,000+ clinical studies to search trials, analyze endpoints, and support research operations.*Available as Desktop Extensions for access on Claude Desktop App (download here).Claude also includes Connectors to other workplace and productivity platforms like Microsoft 365, Gmail & Google Drive, Box, Databricks, Slack, and many more. Explore all available Claude Connectors here.You can also add custom connectors to connect Claude directly to the tools and data sources that matter most to your workflows. Learn more about setting up custom connectors here.Common research & discovery use casesAdvanced data analysis and hypothesis generation: Synthesize multi-source data to accelerate discovery cycles from weeks to hours.Literature synthesis with citations: Access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper exploration.Protocol optimization: Generate optimized protocols by synthesizing literature, successful existing protocols, and experimental best practices.Single-cell data processing: Synthesize days of bioinformatics and computational analysis in minutes with automated cell population identification. Check out the single-cell-rna-qc skill which gives Claude the ability to perform quality control on single-cell RNA-seq data using scverse best practices.Experimental design automation: Generate literature-informed experimental designs automatically.Figure interpretation and analysis: Accelerate figure creation and analysis with automated visualization.What is Claude for Life SciencesHow do I access life sciences tools and features?Connectors for the life sciences development cycleCommon research & discovery use casesRelated tutorialsHow to use the Scientific Problem Selection Skill with ClaudeHow to use the Scientific Problem Selection Skill with ClaudeHow to use the Scientific Problem Selection Skill with ClaudeTutorialTutorialTutorialHow to use the scVI-Tools bioinformatics skill bundle with ClaudeHow to use the scVI-Tools bioinformatics skill bundle with ClaudeHow to use the scVI-Tools bioinformatics skill bundle with ClaudeTutorialTutorialTutorialUsing the ClinicalTrials.gov Connector in ClaudeUsing the ClinicalTrials.gov Connector in ClaudeUsing the ClinicalTrials.gov Connector in ClaudeTutorialTutorialTutorial Using the ToolUniverse Extension in Claude Using the ToolUniverse Extension in Claude Using the ToolUniverse Extension in ClaudeTutorialTutorialTutorial
  @container (width < 52em) {
  .footer_layout {
  display: flex;

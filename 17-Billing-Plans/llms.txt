@@ -733,9 +733,9 @@ To protect against inadvertently fetching large content that would consume exces
 
 Example token usage for typical content:
 
-- Average web page (10 kB): ~2,500 tokens
-- Large documentation page (100 kB): ~25,000 tokens
-- Research paper PDF (500 kB): ~125,000 tokens
+- Average web page (10 kB): ~2,500 tokens
+- Large documentation page (100 kB): ~25,000 tokens
+- Research paper PDF (500 kB): ~125,000 tokens
 
 
 Computer use tool
@@ -1583,7 +1583,7 @@ Get Enterprise plan
 
 89%
 
-employee adoption, 800+ AI agents deployed, 10x app usage growth 
+employee adoption, 800+ AI agents deployed, 10x app usage growth 
 
 65%
 
@@ -1676,11 +1676,11 @@ Get comprehensive, cited reports from your internal data and the web. Claude con
 
 See and build upon Claude’s output in real-time using dynamic, collaborative workspaces. Create and refine reports, visualizations, prototypes, and more—with secure sharing across your organization.
 
-## ╭───────────────────────────╮ │ │ │ ✶ Welcome to Claude Code │ │ │ ╰───────────────────────────╯    ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝  ██║     ██║     ███████║██║   ██║██║  ██║█████╗    ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝    ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗   ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝   ██████╗ ██████╗ ██████╗ ███████╗  ██╔════╝██╔═══██╗██╔══██╗██╔════╝  ██║     ██║   ██║██║  ██║█████╗  ██║     ██║   ██║██║  ██║██╔══╝  ╚██████╗╚██████╔╝██████╔╝███████╗   ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝‍
+## ╭───────────────────────────╮ │ │ │ ✶ Welcome to Claude Code │ │ │ ╰───────────────────────────╯    ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝  ██║     ██║     ███████║██║   ██║██║  ██║█████╗    ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝    ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗   ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝   ██████╗ ██████╗ ██████╗ ███████╗  ██╔════╝██╔═══██╗██╔══██╗██╔════╝  ██║     ██║   ██║██║  ██║█████╗  ██║     ██║   ██║██║  ██║██╔══╝  ╚██████╗╚██████╔╝██████╔╝███████╗   ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
 
-Claude Code can now be used with your Claude subscription or billed based on API usage through your Console account.‍
+Claude Code can now be used with your Claude subscription or billed based on API usage through your Console account.
 
- 
+ 
 ``` welcome-terminal__ui-code
 
     Select login method:
@@ -1790,11 +1790,11 @@ I'll investigate the auth error. Let me look at the relevant files.
 
 Examining auth-related files...
 
-\* src/services/authService.js
+\* src/services/authService.js
 
-\* src/components/Login.jsx
+\* src/components/Login.jsx
 
-\* src/store/authSlice.js
+\* src/store/authSlice.js
 
 
 Running the login flow...
@@ -1835,11 +1835,11 @@ Authentication error fixed! The login flow now properly handles token expiration
 - Troubleshoot errors and runtime issues
 - Identify code optimizations and performance improvements
 
-Explore Claude Code for Enterprise 
+Explore Claude Code for Enterprise 
 
-[Explore Claude Code for Enterprise ](/product/claude-code/enterprise)
+[Explore Claude Code for Enterprise ](/product/claude-code/enterprise)
 
-Explore Claude Code for Enterprise 
+Explore Claude Code for Enterprise 
 
 Note
 
@@ -2278,7 +2278,7 @@ Send us your resume along with a brief cover letter addressing:
 - Your approach to improving trial-to-paid conversion rates
 - Why you're excited about FlowTech's growth opportunity
 
-**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#accfcddec9c9dedfeccac0c3dbd8c9cfc482cfc3c1)\
+**Apply to:** [\[email protected\]](/cdn-cgi/l/email-protection#accfcddec9c9dedfeccac0c3dbd8c9cfc482cfc3c1)\
 **Subject line:** Growth Marketing Manager - \[Your Name\]
 
 —
@@ -2508,7 +2508,7 @@ Get started now or discuss more options. [Explore features](/pricing#team-enterp
 ### Enterprise\
 (self-serve)
 
-Get started today. Includes Enterprise security and compliance, chat, Claude Code, Cowork, connectors, SSO, SCIM, audit logs, and more. 
+Get started today. Includes Enterprise security and compliance, chat, Claude Code, Cowork, connectors, SSO, SCIM, audit logs, and more. 
 
 \$20
 
@@ -2524,7 +2524,7 @@ Get Enterprise plan
 ### Enterprise\
 (sales-assisted)
 
-Work with Anthropic’s sales team on your Enterprise deployment. Tailored terms, usage commitments, invoicing, product bundling, and HIPAA-ready offering available. 
+Work with Anthropic’s sales team on your Enterprise deployment. Tailored terms, usage commitments, invoicing, product bundling, and HIPAA-ready offering available. 
 
 
 [Contact sales](/contact-sales)
@@ -3030,7 +3030,7 @@ Yes, extra usage applies to Claude, Cowork, and Claude Code.
 ### Can extra usage be disabled completely?
 
 Yes, Owners and Primary Owners can choose to disable extra usage entirely, which means that members of the organization will be unable to continue working once they reach their usage limits and will need to wait for them to reset.\
-​
+
 
 
 ---
@@ -3181,7 +3181,7 @@ Yes, extra usage applies to Claude, Cowork, and Claude Code.
 ### Can extra usage be disabled completely?
 
 Yes, Owners and Primary Owners can choose to disable extra usage entirely, which means that members of the organization will be unable to continue working once they reach their usage limits and will need to wait for them to reset.\
-​
+
 
 
 ---
@@ -3844,7 +3844,7 @@ But we believe safety is a shared responsibility. Our features are not failsafe,
 
 - For sensitive information and decision making, have a qualified professional review content prior to dissemination to consumers.
 
-We encourage you to send us feedback or specific proposals to [\[email protected\]](/cdn-cgi/l/email-protection#176264726564767172636e577679637f6578677e743974787a). For existing commercial partners, we’d recommend [joining our Discord server](https://discord.com/invite/6PPFFzqPDZ) and exchanging ideas with fellow developers as well.
+We encourage you to send us feedback or specific proposals to [\[email protected\]](/cdn-cgi/l/email-protection#176264726564767172636e577679637f6578677e743974787a). For existing commercial partners, we’d recommend [joining our Discord server](https://discord.com/invite/6PPFFzqPDZ) and exchanging ideas with fellow developers as well.
 
 
 ---
@@ -3897,15 +3897,17 @@ If you need to add or update your Tax or VAT ID after you've already signed up, 
 Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and preprocessing hooks.
 
 
+> ## Documentation Index
+>
+> Fetch the complete documentation index at: <https://code.claude.com/docs/llms.txt>
+>
+> Use this file to discover all available pages before exploring further.
+
 Claude Code charges by API token consumption. For subscription plan pricing (Pro, Max, Team, Enterprise), see [claude.com/pricing](https://claude.com/pricing). Per-developer costs vary widely based on model selection, codebase size, and usage patterns such as running multiple instances or automation. Across enterprise deployments, the average cost is around \$13 per developer per active day and \$150-250 per developer per month, with costs remaining below \$30 per active day for 90% of users. To estimate spend for your own team, start with a small pilot group and use the tracking tools below to establish a baseline before wider rollout. This page covers how to [track your costs](#track-your-costs), [manage costs for teams](#managing-costs-for-teams), and [reduce token usage](#reduce-token-usage).
 
 
-[​](#track-your-costs)
-
 Track your costs
 
-
-[​](#using-the-/usage-command)
 
 Using the `/usage` command
 
@@ -3921,8 +3923,6 @@ Total code changes:    0 lines added, 0 lines removed
 ```
 
 
-[​](#managing-costs-for-teams)
-
 Managing costs for teams
 
 When using Claude API, you can [set workspace spend limits](../04-API-Reference/Guides/build-with-claude-workspaces-12135e8f23.md#workspace-limits) on the total Claude Code workspace spend. Admins can [view cost and usage reporting](../04-API-Reference/Guides/build-with-claude-workspaces-12135e8f23.md#usage-and-cost-tracking) in the Console.
@@ -3931,8 +3931,6 @@ When you first authenticate Claude Code with your Claude Console account, a work
 
 On Bedrock, Vertex, and Foundry, Claude Code does not send metrics from your cloud. To get cost metrics, several large enterprises reported using [LiteLLM](/docs/en/llm-gateway#litellm-configuration), which is an open-source tool that helps companies [track spend by key](https://docs.litellm.ai/docs/proxy/virtual_keys#tracking-spend). This project is unaffiliated with Anthropic and has not been audited for security.
 
-
-[​](#rate-limit-recommendations)
 
 Rate limit recommendations
 
@@ -3952,8 +3950,6 @@ For example, if you have 200 users, you might request 20k TPM for each user, or 
 If you anticipate scenarios with unusually high concurrent usage (such as live training sessions with large groups), you may need higher TPM allocations per user.
 
 
-[​](#agent-team-token-costs)
-
 Agent team token costs
 
 [Agent teams](/docs/en/agent-teams) spawn multiple Claude Code instances, each with its own context window. Token usage scales with the number of active teammates and how long each one runs. To keep agent team costs manageable:
@@ -3965,14 +3961,10 @@ Agent team token costs
 - Agent teams are disabled by default. Set `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in your [settings.json](/docs/en/settings) or environment to enable them. See [enable agent teams](/docs/en/agent-teams#enable-agent-teams).
 
 
-[​](#reduce-token-usage)
-
 Reduce token usage
 
-Token costs scale with context size: the more context Claude processes, the more tokens you use. Claude Code automatically optimizes costs through prompt caching (which reduces costs for repeated content like system prompts) and auto-compaction (which summarizes conversation history when approaching context limits). The following strategies help you keep context small and reduce per-message costs.
+Token costs scale with context size: the more context Claude processes, the more tokens you use. Claude Code automatically optimizes costs through [prompt caching](/docs/en/prompt-caching), which reduces costs for repeated content like system prompts, and auto-compaction, which summarizes conversation history when approaching context limits. The following strategies help you keep context small and reduce per-message costs.
 
-
-[​](#manage-context-proactively)
 
 Manage context proactively
 
@@ -3990,14 +3982,10 @@ When you are using compact, please focus on test output and code changes
 ```
 
 
-[​](#choose-the-right-model)
-
 Choose the right model
 
 Sonnet handles most coding tasks well and costs less than Opus. Reserve Opus for complex architectural decisions or multi-step reasoning. Use `/model` to switch models mid-session, or set a default in `/config`. For simple subagent tasks, specify `model: haiku` in your [subagent configuration](/docs/en/sub-agents#choose-a-model).
 
-
-[​](#reduce-mcp-server-overhead)
 
 Reduce MCP server overhead
 
@@ -4007,14 +3995,10 @@ MCP tool definitions are [deferred by default](/docs/en/mcp#scale-with-mcp-tool-
 - **Disable unused servers**: Run `/mcp` to see configured servers and disable any you’re not actively using.
 
 
-[​](#install-code-intelligence-plugins-for-typed-languages)
-
 Install code intelligence plugins for typed languages
 
 [Code intelligence plugins](/docs/en/discover-plugins#code-intelligence) give Claude precise symbol navigation instead of text-based search, reducing unnecessary file reads when exploring unfamiliar code. A single “go to definition” call replaces what might otherwise be a grep followed by reading multiple candidate files. Installed language servers also report type errors automatically after edits, so Claude catches mistakes without running a compiler.
 
-
-[​](#offload-processing-to-hooks-and-skills)
 
 Offload processing to hooks and skills
 
@@ -4061,54 +4045,40 @@ fi
 ```
 
 
-[​](#move-instructions-from-claude-md-to-skills)
-
 Move instructions from CLAUDE.md to skills
 
 Your [CLAUDE.md](/docs/en/memory) file is loaded into context at session start. If it contains detailed instructions for specific workflows (like PR reviews or database migrations), those tokens are present even when you’re doing unrelated work. [Skills](/docs/en/skills) load on-demand only when invoked, so moving specialized instructions into skills keeps your base context smaller. Aim to keep CLAUDE.md under 200 lines by including only essentials.
 
-
-[​](#adjust-extended-thinking)
 
 Adjust extended thinking
 
 Extended thinking is enabled by default because it significantly improves performance on complex planning and reasoning tasks. Thinking tokens are billed as output tokens, and the default budget can be tens of thousands of tokens per request depending on the model. For simpler tasks where deep reasoning isn’t needed, you can reduce costs by lowering the [effort level](/docs/en/model-config#adjust-effort-level) with `/effort` or in `/model`, disabling thinking in `/config`, or lowering the budget with `MAX_THINKING_TOKENS=8000`.
 
 
-[​](#delegate-verbose-operations-to-subagents)
-
 Delegate verbose operations to subagents
 
 Running tests, fetching documentation, or processing log files can consume significant context. Delegate these to [subagents](/docs/en/sub-agents#isolate-high-volume-operations) so the verbose output stays in the subagent’s context while only a summary returns to your main conversation.
 
-
-[​](#manage-agent-team-costs)
 
 Manage agent team costs
 
 Agent teams use approximately 7x more tokens than standard sessions when teammates run in plan mode, because each teammate maintains its own context window and runs as a separate Claude instance. Keep team tasks small and self-contained to limit per-teammate token usage. See [agent teams](/docs/en/agent-teams) for details.
 
 
-[​](#write-specific-prompts)
-
 Write specific prompts
 
 Vague requests like “improve this codebase” trigger broad scanning. Specific requests like “add input validation to the login function in auth.ts” let Claude work efficiently with minimal file reads.
 
 
-[​](#work-efficiently-on-complex-tasks)
-
 Work efficiently on complex tasks
 
 For longer or more complex work, these habits help avoid wasted tokens from going down the wrong path:
 
-- **Use plan mode for complex tasks**: Press Shift+Tab to enter [plan mode](/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis) before implementation. Claude explores the codebase and proposes an approach for your approval, preventing expensive re-work when the initial direction is wrong.
+- **Use plan mode for complex tasks**: Press Shift+Tab to enter [plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode) before implementation. Claude explores the codebase and proposes an approach for your approval, preventing expensive re-work when the initial direction is wrong.
 - **Course-correct early**: If Claude starts heading the wrong direction, press Escape to stop immediately. Use `/rewind` or double-tap Escape to restore conversation and code to a previous checkpoint.
 - **Give verification targets**: Include test cases, paste screenshots, or define expected output in your prompt. When Claude can verify its own work, it catches issues before you need to request fixes.
 - **Test incrementally**: Write one file, test it, then continue. This catches issues early when they’re cheap to fix.
 
-
-[​](#background-token-usage)
 
 Background token usage
 
@@ -4119,8 +4089,6 @@ Claude Code uses tokens for some background functionality even when idle:
 
 These background processes consume a small amount of tokens (typically under \$0.04 per session) even without active interaction.
 
-
-[​](#understanding-changes-in-claude-code-behavior)
 
 Understanding changes in Claude Code behavior
 
@@ -4275,7 +4243,7 @@ Yes, extra usage applies to Claude, Cowork, and Claude Code.
 ### Can extra usage be disabled completely?
 
 Yes, Owners and Primary Owners can choose to disable extra usage entirely, which means that members of the organization will be unable to continue working once they reach their usage limits and will need to wait for them to reset.\
-​
+
 
 
 ---
@@ -4828,11 +4796,11 @@ I'll investigate the auth error. Let me look at the relevant files.
 
 Examining auth-related files...
 
-\* src/services/authService.js
+\* src/services/authService.js
 
-\* src/components/Login.jsx
+\* src/components/Login.jsx
 
-\* src/store/authSlice.js
+\* src/store/authSlice.js
 
 
 Running the login flow...
@@ -5302,7 +5270,7 @@ With up to 20x more usage per session, you can finally pursue every thread, expl
 
 ### More room for Claude’s best features
 
-Run multiple \[\[research\|Research\|Build research reports in minutes, complete with easy-to-check citations.\]\] sessions daily. Build complex \[\[artifacts\|Artifacts\|Turn ideas into shareable creations. Build tools, visualizations, and experiences by simply describing what you need.\]\] iteratively. \[\[Create files, analyze data\|Code execution and file creation\|Claude executes code to quickly analyze data and create ready-to-use documents, spreadsheets, slides, PDFs, and more.\]\] and pull context from all your integrated \[\[tools\|Tools\|Connect Claude to your favorite tools like JIRA, Zapier, and Intercom, or build your own.\]\] freely.
+Run multiple \[\[research\|Research\|Build research reports in minutes, complete with easy-to-check citations.\]\] sessions daily. Build complex \[\[artifacts\|Artifacts\|Turn ideas into shareable creations. Build tools, visualizations, and experiences by simply describing what you need.\]\] iteratively. \[\[Create files, analyze data\|Code execution and file creation\|Claude executes code to quickly analyze data and create ready-to-use documents, spreadsheets, slides, PDFs, and more.\]\] and pull context from all your integrated \[\[tools\|Tools\|Connect Claude to your favorite tools like JIRA, Zapier, and Intercom, or build your own.\]\] freely.
 
 ### Access to the latest and greatest
 
@@ -6412,21 +6380,21 @@ Most intelligent model for agents and coding
 
 Input
 
-\$5 / MTok
+\$5 / MTok
 
 Output
 
-\$25 / MTok
+\$25 / MTok
 
 Prompt caching
 
 Write
 
-\$6.25 / MTok
+\$6.25 / MTok
 
 Read
 
-\$0.50 / MTok
+\$0.50 / MTok
 
 ### Sonnet 4.6
 
@@ -6434,21 +6402,21 @@ Optimal balance of intelligence, cost, and speed
 
 Input
 
-\$3 / MTok
+\$3 / MTok
 
 Output
 
-\$15 / MTok
+\$15 / MTok
 
 Prompt caching
 
 Write
 
-\$3.75 / MTok
+\$3.75 / MTok
 
 Read
 
-\$0.30 / MTok
+\$0.30 / MTok
 
 ### Haiku 4.5
 
@@ -6456,27 +6424,27 @@ Fastest, most cost-efficient model
 
 Input
 
-\$1 / MTok
+\$1 / MTok
 
 Output
 
-\$5 / MTok
+\$5 / MTok
 
 Prompt caching
 
 Write
 
-\$1.25 / MTok
+\$1.25 / MTok
 
 Read
 
-\$0.10 / MTok
+\$0.10 / MTok
 
 Country
 
 **For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens.** [**Learn more**](../04-API-Reference/Guides/build-with-claude-data-residency-6c8e324ea6.md)**.**
 
-Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md#1-hour-cache-duration).
+Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](../10-Prompting-Guides/build-with-claude-prompt-caching.md#1-hour-cache-duration).
 
 Explore detailed pricing
 
@@ -6560,123 +6528,123 @@ Batch processing
 
 Input
 
-\$3 / MTok
+\$3 / MTok
 
 Output
 
-\$15 / MTok
+\$15 / MTok
 
 Prompt caching
 
 Write
 
-\$3.75 / MTok
+\$3.75 / MTok
 
 Read
 
-\$0.30 / MTok
+\$0.30 / MTok
 
 ### Opus 4.5
 
 Input
 
-\$5 / MTok
+\$5 / MTok
 
 Output
 
-\$25 / MTok
+\$25 / MTok
 
 Prompt caching
 
 Write
 
-\$6.25 / MTok
+\$6.25 / MTok
 
 Read
 
-\$0.50 / MTok
+\$0.50 / MTok
 
 ### Opus 4.1
 
 Input
 
-\$15 / MTok
+\$15 / MTok
 
 Output
 
-\$75 / MTok
+\$75 / MTok
 
 Prompt caching
 
 Write
 
-\$18.75 / MTok
+\$18.75 / MTok
 
 Read
 
-\$1.50 / MTok
+\$1.50 / MTok
 
 ### Sonnet 4
 
 Input
 
-\$3 / MTok
+\$3 / MTok
 
 Output
 
-\$15 / MTok
+\$15 / MTok
 
 Prompt caching
 
 Write
 
-\$3.75 / MTok
+\$3.75 / MTok
 
 Read
 
-\$0.30 / MTok
+\$0.30 / MTok
 
 ### Opus 4
 
 Input
 
-\$15 / MTok
+\$15 / MTok
 
 Output
 
-\$75 / MTok
+\$75 / MTok
 
 Prompt caching
 
 Write
 
-\$18.75 / MTok
+\$18.75 / MTok
 
 Read
 
-\$1.50 / MTok
+\$1.50 / MTok
 
 ### Haiku 3
 
 Input
 
-\$0.25 / MTok
+\$0.25 / MTok
 
 Output
 
-\$1.25 / MTok
+\$1.25 / MTok
 
 Prompt caching
 
 Write
 
-\$0.30 / MTok
+\$0.30 / MTok
 
 Read
 
-\$0.03 / MTok
+\$0.03 / MTok
 
-Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching#pricing).
+Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching#pricing).
 
 
 ---
@@ -7394,7 +7362,7 @@ To request a refund for a payment defined as refundable in our Terms of Service,
 ## What should I do if I can't access the account I'm requesting a refund for?
 
 If you're unable to log in to the account associated with your payment (for example, if you can't access the email account you used to sign up), you'll need to **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** using another email and 'cc' the email address tied to the account you can't access. Write back to cancel your paid plan and request a refund so our team can assist.\
-​﻿
+
 
 ## I paid for my plan on Claude for iOS -- what's the process for requesting a refund?
 
@@ -8855,7 +8823,7 @@ Yes. Usage limits differ between Standard and Premium seats.
 
 **Standard seats:** Team plan Standard seats offer 1.25x more usage per session than the Pro plan and have a weekly usage limit that applies across all models and resets seven days after your session starts.
 
-**Premium seats:** Team plan Premium seats offer 6.25x more usage per session than the Pro plan. Users assigned to these seats ​​also have two weekly usage limits: one that applies across all models and another for Sonnet models only. Both limits reset seven days after your session starts.
+**Premium seats:** Team plan Premium seats offer 6.25x more usage per session than the Pro plan. Users assigned to these seats also have two weekly usage limits: one that applies across all models and another for Sonnet models only. Both limits reset seven days after your session starts.
 
 ### Do usage limits apply across the team or to individual members?
 

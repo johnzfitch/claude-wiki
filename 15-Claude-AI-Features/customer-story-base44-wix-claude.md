@@ -65,14 +65,14 @@ Video caption
 Prev
 
 
-[Base44](https://base44.com) makes app creation accessible to people who don't write code. The platform transforms natural language descriptions into fully functional applications with backend, database, user logins, and analytics. Now part of Wix, Base44 has grown to more than 10% of the AI-powered app builder market within months. 
+[Base44](https://base44.com) makes app creation accessible to people who don't write code. The platform transforms natural language descriptions into fully functional applications with backend, database, user logins, and analytics. Now part of Wix, Base44 has grown to more than 10% of the AI-powered app builder market within months. 
 
-## With Claude, Base44 reached: 
+## With Claude, Base44 reached: 
 
-- **2M+ users in months:** Base44, with Claude as its creative center for planning and UI, grew to 2+ million users globally in under 6 months.**‍**
-- **7x growth in one quarter**: User base expanded sevenfold from June to September 2025 with 1000+ paying subscribers joining daily **‍**
-- **Scalability of product development:** Claude enabled a very small team to build and maintain a much broader surface area of functionality (features, fixes, and iterations) than would otherwise have been feasible at that stage.**‍**
-- **Hours instead of weeks**: Time from idea to working app reduced from multi-day development cycles to same-day deployment with Claude's "first draft" capability.**‍**
+- **2M+ users in months:** Base44, with Claude as its creative center for planning and UI, grew to 2+ million users globally in under 6 months.****
+- **7x growth in one quarter**: User base expanded sevenfold from June to September 2025 with 1000+ paying subscribers joining daily ****
+- **Scalability of product development:** Claude enabled a very small team to build and maintain a much broader surface area of functionality (features, fixes, and iterations) than would otherwise have been feasible at that stage.****
+- **Hours instead of weeks**: Time from idea to working app reduced from multi-day development cycles to same-day deployment with Claude's "first draft" capability.****
 - **Community-validated model choice**: When given the option to choose their AI model, Base44's community consistently recommends Claude—particularly for UI design and app scaffolding.
 
 ## The problem
@@ -93,7 +93,7 @@ The team selected Claude Sonnet as the default "creative center" for several tec
 
 "Users in our Discord constantly share tips with each other," the Base44 team explained. "And one pattern emerged immediately: people kept recommending Claude, especially for UX improvements and getting apps started. When you give users real choice, they vote with their builds."
 
-The team shared that Claude “performed better for our needs around design reasoning and code logic, which improved the quality and reliability of user-facing features.” Since then, Base44 has continued giving users access to Anthropic's most advanced reasoning capabilities through Opus 4.5 for even more sophisticated app creation. “Claude is central not just to how we build internally, but to the capabilities we expose directly to users,” the team shared. 
+The team shared that Claude “performed better for our needs around design reasoning and code logic, which improved the quality and reliability of user-facing features.” Since then, Base44 has continued giving users access to Anthropic's most advanced reasoning capabilities through Opus 4.5 for even more sophisticated app creation. “Claude is central not just to how we build internally, but to the capabilities we expose directly to users,” the team shared. 
 
 ## Claude powers every stage of app creation
 
@@ -103,9 +103,9 @@ Base44 integrated Claude via API in just a few hours, immediately slotting it in
 
 "Claude sets up context and providers cleanly, uses hooks properly, and writes modular, production-ready code," said one Base44 user, demonstrating Claude's code quality advantage.
 
-Claude now enables users of Base44 to: 
+Claude now enables users of Base44 to: 
 
-- **Convert descriptions into functional applications**: Prompts like "build me an inventory tracker for my bakery" become working apps with proper data models and user flows 
+- **Convert descriptions into functional applications**: Prompts like "build me an inventory tracker for my bakery" become working apps with proper data models and user flows 
 - **Produce polished, intuitive interfaces**: Creates professional designs that feel ready to use without redesign
 - **Enable rapid iteration**: Helps users refine and debug their apps through natural conversation
 - **Generate clean, modular code**: Writes production-ready code that properly uses hooks, context, and providers

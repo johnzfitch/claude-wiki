@@ -12,14 +12,10 @@ tags: ["mcp", "mcp-spec"]
 The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the connection is alive.
 
 
-[​](#overview)
-
 Overview
 
 The ping functionality is implemented through a simple request/response pattern. Either the client or server can initiate a ping by sending a `ping` request.
 
-
-[​](#message-format)
 
 Message Format
 
@@ -35,8 +31,6 @@ Copy
 }
 ```
 
-
-[​](#behavior-requirements)
 
 Behavior Requirements
 
@@ -58,12 +52,8 @@ Copy
     - Attempt reconnection procedures
 
 
-[​](#usage-patterns)
-
 Usage Patterns
 
-
-[​](#implementation-considerations)
 
 Implementation Considerations
 
@@ -72,8 +62,6 @@ Implementation Considerations
 - Timeouts **SHOULD** be appropriate for the network environment
 - Excessive pinging **SHOULD** be avoided to reduce network overhead
 
-
-[​](#error-handling)
 
 Error Handling
 

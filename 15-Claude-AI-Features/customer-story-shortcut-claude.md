@@ -83,14 +83,14 @@ Prev
 ## With Claude, Fundamental Research Labs achieved:
 
 - Benchmark accuracy from 7.29 to 8.08 out of 10 after swapping to Opus 4.6 with no prompt changes
-- Almost half a trillion tokens processed through the platform in January 2026 
+- Almost half a trillion tokens processed through the platform in January 2026 
 - 100,000+ users at 1,000+ companies, spanning consumers, ad agencies, hedge funds, and management consulting firms
 - Users report saving multiple hours per day on tasks like financial model buildouts, data extraction, and formula auditing
 - Multi-agent architecture running 10+ Claude sub-agents simultaneously to analyze complex multi-sheet workbooks
 
 ## The challenge: Making AI work for spreadsheets
 
-Spreadsheet tasks are deceptively complex for AI agents. A single financial model can contain hundreds of thousands of related cells across multiple sheets, and lacks the typical scaffolding afforded to coding agents to do the job. Nico Christie, who leads Shortcut at Fundamental Research Labs, previously worked in financial consulting where a team could spend weeks iterating on a single model before getting client sign-off. “AI is coming for spreadsheets now the same way it did for coding,” Christie said. 
+Spreadsheet tasks are deceptively complex for AI agents. A single financial model can contain hundreds of thousands of related cells across multiple sheets, and lacks the typical scaffolding afforded to coding agents to do the job. Nico Christie, who leads Shortcut at Fundamental Research Labs, previously worked in financial consulting where a team could spend weeks iterating on a single model before getting client sign-off. “AI is coming for spreadsheets now the same way it did for coding,” Christie said. 
 
 The work involves data extraction from documents, formula creation across interconnected cells, error detection, and model auditing. Tasks that involve finishing or auditing these models require both accuracy and an understanding of how sheets relate to each other.
 
@@ -98,9 +98,9 @@ Fundamental Research Labs built a benchmarking infrastructure to measure AI perf
 
 ## Selecting Claude for spreadsheet complexity
 
-After testing multiple model providers against its benchmark pipeline, Claude became the only model in production for Shortcut. 
+After testing multiple model providers against its benchmark pipeline, Claude became the only model in production for Shortcut. 
 
-A key factor in the selection was how little adaptation Claude required. Other models required rounds of prompt engineering and benchmarking to work around model-specific behavior. Swapping in Opus required none. “There's very little Claude-specific prompting we have to do," Christie said. 
+A key factor in the selection was how little adaptation Claude required. Other models required rounds of prompt engineering and benchmarking to work around model-specific behavior. Swapping in Opus required none. “There's very little Claude-specific prompting we have to do," Christie said. 
 
 Each subsequent Claude release has reinforced that decision. When Anthropic released Opus 4.6 in February, the score went from 7.29 to 8.08 out of 10.
 

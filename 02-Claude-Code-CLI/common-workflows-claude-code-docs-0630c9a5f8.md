@@ -1,8 +1,9 @@
 ---
+title: "Common workflows - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/common-workflows"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:30Z"
-source_url: "https://code.claude.com/docs/en/common-workflows"
-title: "Common workflows - Claude Code Docs"
+tags: ["claude-code", "git"]
 ---
 
 # Common workflows
@@ -27,19 +28,13 @@ This page collects short recipes for everyday development. For higher-level guid
 - [Pipe Claude into scripts](#pipe-claude-into-scripts) for CI and batch processing
 
 
-[​](#prompt-recipes)
-
 Prompt recipes
 
 These are prompt patterns for everyday tasks like exploring unfamiliar code, debugging, refactoring, writing tests, and creating PRs. Each works in any Claude Code surface; adapt the wording to your project.
 
 
-[​](#understand-new-codebases)
-
 Understand new codebases
 
-
-[​](#get-a-quick-codebase-overview)
 
 Get a quick codebase overview
 
@@ -96,8 +91,6 @@ Tips:
 - Request a glossary of project-specific terms
 
 
-[​](#find-relevant-code)
-
 Find relevant code
 
 Suppose you need to locate code related to a specific feature or functionality.
@@ -138,8 +131,6 @@ Tips:
 ------------------------------------------------------------------------
 
 
-[​](#fix-bugs-efficiently)
-
 Fix bugs efficiently
 
 Suppose you’ve encountered an error message and need to find and fix its source.
@@ -179,8 +170,6 @@ Tips:
 
 ------------------------------------------------------------------------
 
-
-[​](#refactor-code)
 
 Refactor code
 
@@ -231,8 +220,6 @@ Tips:
 ------------------------------------------------------------------------
 
 
-[​](#work-with-tests)
-
 Work with tests
 
 Suppose you need to add tests for uncovered code.
@@ -278,8 +265,6 @@ Claude can generate tests that follow your project’s existing patterns and con
 ------------------------------------------------------------------------
 
 
-[​](#create-pull-requests)
-
 Create pull requests
 
 You can create pull requests by asking Claude directly (“create a pr for my changes”), or guide Claude through it step-by-step:
@@ -315,8 +300,6 @@ When you create a PR using `gh pr create`, the session is automatically linked t
 
 Review Claude’s generated PR before submitting and ask Claude to highlight potential risks or considerations.
 
-
-[​](#handle-documentation)
 
 Handle documentation
 
@@ -367,16 +350,12 @@ Tips:
 ------------------------------------------------------------------------
 
 
-[​](#work-in-notes-and-non-code-folders)
-
 Work in notes and non-code folders
 
 Claude Code works in any directory. Run it inside a notes vault, a documentation folder, or any collection of markdown files to search, edit, and reorganize content the same way you would code. The `.claude/` directory and `CLAUDE.md` sit alongside other tools’ config directories without conflict. Claude reads files fresh on each tool call, so it sees edits you make in another application the next time it reads that file.
 
 ------------------------------------------------------------------------
 
-
-[​](#work-with-images)
 
 Work with images
 
@@ -447,8 +426,6 @@ Tips:
 ------------------------------------------------------------------------
 
 
-[​](#reference-files-and-directories)
-
 Reference files and directories
 
 Use @ to quickly include files or directories without waiting for Claude to read them.
@@ -496,8 +473,6 @@ Tips:
 ------------------------------------------------------------------------
 
 
-[​](#run-claude-on-a-schedule)
-
 Run Claude on a schedule
 
 Suppose you want Claude to handle a task automatically on a recurring basis, like reviewing open PRs every morning, auditing dependencies weekly, or checking for CI failures overnight. Pick a scheduling option based on where you want the task to run:
@@ -514,14 +489,10 @@ When writing prompts for scheduled tasks, be explicit about what success looks l
 ------------------------------------------------------------------------
 
 
-[​](#ask-claude-about-its-capabilities)
-
 Ask Claude about its capabilities
 
 Claude has built-in access to its documentation and can answer questions about its own features and limitations.
 
-
-[​](#example-questions)
 
 Example questions
 
@@ -560,8 +531,6 @@ Tips:
 ------------------------------------------------------------------------
 
 
-[​](#resume-previous-conversations)
-
 Resume previous conversations
 
 When a task spans multiple sittings, pick up where you left off instead of re-explaining context. Claude Code saves every conversation locally.
@@ -572,8 +541,6 @@ claude --continue
 
 This resumes the most recent session in the current directory; if there isn’t one yet, it prints `No conversation found to continue` and exits. Use `claude --resume` to choose from a list, or `/resume` from inside a running session. See [Manage sessions](/docs/en/sessions) for naming, branching, and the full picker reference.
 
-
-[​](#run-parallel-sessions-with-worktrees)
 
 Run parallel sessions with worktrees
 
@@ -586,8 +553,6 @@ claude --worktree feature-auth
 Run the same command with a different name in a second terminal to start an isolated parallel session. See [Worktrees](/docs/en/worktrees) for cleanup, `.worktreeinclude`, and non-git VCS support. To monitor parallel sessions from one screen instead of separate terminals, see [background agents](/docs/en/agent-view).
 
 
-[​](#plan-before-editing)
-
 Plan before editing
 
 For changes you want to review before they touch disk, switch to plan mode. Claude reads files and proposes a plan but makes no edits until you approve.
@@ -598,8 +563,6 @@ claude --permission-mode plan
 
 You can also press `Shift+Tab` mid-session to toggle into plan mode. See [Plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode) for the approval flow and editing the plan in your text editor.
 
-
-[​](#delegate-research-to-subagents)
 
 Delegate research to subagents
 
@@ -612,8 +575,6 @@ use a subagent to investigate how our auth system handles token refresh
 The subagent reads files in its own context window and reports a summary. See [Subagents](/docs/en/sub-agents) for defining custom agents with their own tools and prompts.
 
 
-[​](#pipe-claude-into-scripts)
-
 Pipe Claude into scripts
 
 Run Claude non-interactively for CI, pre-commit hooks, or batch processing. Stdin and stdout work like any Unix tool.
@@ -624,8 +585,6 @@ git log --oneline -20 | claude -p "summarize these recent commits"
 
 See [Non-interactive mode](/docs/en/headless) for output formats, permission flags, and fan-out patterns.
 
-
-[​](#next-steps)
 
 Next steps
 

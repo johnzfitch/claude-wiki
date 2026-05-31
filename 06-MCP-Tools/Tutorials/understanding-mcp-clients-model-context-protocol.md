@@ -12,8 +12,6 @@ tags: ["cli", "mcp", "mcp-tutorials"]
 MCP clients are instantiated by host applications to communicate with particular MCP servers. The host application, like Claude.ai or an IDE, manages the overall user experience and coordinates multiple clients. Each client handles one direct communication with one server. Understanding the distinction is important: the *host* is the application users interact with, while *clients* are the protocol-level components that enable server connections.
 
 
-[​](#core-client-features)
-
 Core Client Features
 
 In addition to making use of context provided by servers, clients may provide several features to servers. These client features allow server authors to build richer interactions.
@@ -25,14 +23,10 @@ In addition to making use of context provided by servers, clients may provide se
 | **Sampling** | Sampling allows servers to request LLM completions through the client, enabling an agentic workflow. This approach puts the client in complete control of user permissions and security measures. | A server for booking travel may send a list of flights to an LLM and request that the LLM pick the best flight for the user. |
 
 
-[​](#elicitation)
-
 Elicitation
 
 Elicitation enables servers to request specific information from users during interactions, creating more dynamic and responsive workflows.
 
-
-[​](#overview)
 
 Overview
 
@@ -75,28 +69,20 @@ Copy
 ```
 
 
-[​](#example-holiday-booking-approval)
-
 Example: Holiday Booking Approval
 
 A travel booking server demonstrates elicitation’s power through the final booking confirmation process. When a user has selected their ideal vacation package to Barcelona, the server needs to gather final approval and any missing details before proceeding. The server elicits booking confirmation with a structured request that includes the trip summary (Barcelona flights June 15-22, beachfront hotel, total \$3,000) and fields for any additional preferences—such as seat selection, room type, or travel insurance options. As the booking progresses, the server elicits contact information needed to complete the reservation. It might ask for traveler details for flight bookings, special requests for the hotel, or emergency contact information.
 
-
-[​](#user-interaction-model)
 
 User Interaction Model
 
 Elicitation interactions are designed to be clear, contextual, and respectful of user autonomy: **Request presentation**: Clients display elicitation requests with clear context about which server is asking, why the information is needed, and how it will be used. The request message explains the purpose while the schema provides structure and validation. **Response options**: Users can provide the requested information through appropriate UI controls (text fields, dropdowns, checkboxes), decline to provide information with optional explanation, or cancel the entire operation. Clients validate responses against the provided schema before returning them to servers. **Privacy considerations**: Elicitation never requests passwords or API keys. Clients warn about suspicious requests and let users review data before sending.
 
 
-[​](#roots)
-
 Roots
 
 Roots define filesystem boundaries for server operations, allowing clients to specify which directories servers should focus on.
 
-
-[​](#overview-2)
 
 Overview
 
@@ -114,8 +100,6 @@ Copy
 Roots are exclusively filesystem paths and always use the `file://` URI scheme. They help servers understand project boundaries, workspace organization, and accessible directories. The roots list can be updated dynamically as users work with different projects or folders, with servers receiving notifications through `roots/list_changed` when boundaries change.
 
 
-[​](#example-travel-planning-workspace)
-
 Example: Travel Planning Workspace
 
 A travel agent working with multiple client trips benefits from roots to organize filesystem access. Consider a workspace with different directories for various aspects of travel planning. The client provides filesystem roots to the travel planning server:
@@ -127,28 +111,20 @@ A travel agent working with multiple client trips benefits from roots to organiz
 When the agent creates a Barcelona itinerary, well-behaved servers respect these boundaries—accessing templates, saving the new itinerary, and referencing client documents within the specified roots. Servers typically access files within roots by using relative paths from the root directories or by utilizing file search tools that respect the root boundaries. If the agent opens an archive folder like `file:///Users/agent/archive/2023-trips`, the client updates the roots list via `roots/list_changed`. For a complete implementation of a server that respects roots, see the [filesystem server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) in the official servers repository.
 
 
-[​](#design-philosophy)
-
 Design Philosophy
 
 Roots serve as a coordination mechanism between clients and servers, not a security boundary. The specification requires that servers “SHOULD respect root boundaries,” and not that they “MUST enforce” them, because servers run code the client cannot control. Roots work best when servers are trusted or vetted, users understand their advisory nature, and the goal is preventing accidents rather than stopping malicious behavior. They excel at context scoping (telling servers where to focus), accident prevention (helping well-behaved servers stay in bounds), and workflow organization (such as managing project boundaries automatically).
 
-
-[​](#user-interaction-model-2)
 
 User Interaction Model
 
 Roots are typically managed automatically by host applications based on user actions, though some applications may expose manual root management: **Automatic root detection**: When users open folders, clients automatically expose them as roots. Opening a travel workspace allows the client to expose that directory as a root, helping servers understand which itineraries and documents are in scope for the current work. **Manual root configuration**: Advanced users can specify roots through configuration. For example, adding `/travel-templates` for reusable resources while excluding directories with financial records.
 
 
-[​](#sampling)
-
 Sampling
 
 Sampling allows servers to request language model completions through the client, enabling agentic behaviors while maintaining security and user control.
 
-
-[​](#overview-3)
 
 Overview
 
@@ -180,14 +156,10 @@ Copy
 ```
 
 
-[​](#example-flight-analysis-tool)
-
 Example: Flight Analysis Tool
 
 Consider a travel booking server with a tool called `findBestFlight` that uses sampling to analyze available flights and recommend the optimal choice. When a user asks “Book me the best flight to Barcelona next month,” the tool needs AI assistance to evaluate complex trade-offs. The tool queries airline APIs and gathers 47 flight options. It then requests AI assistance to analyze these options: “Analyze these flight options and recommend the best choice: \[47 flights with prices, times, airlines, and layovers\] User preferences: morning departure, max 1 layover.” The client initiates the sampling request, allowing the AI to evaluate trade-offs—like cheaper red-eye flights versus convenient morning departures. The tool uses this analysis to present the top three recommendations.
 
-
-[​](#user-interaction-model-3)
 
 User Interaction Model
 

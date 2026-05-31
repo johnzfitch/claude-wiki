@@ -475,7 +475,7 @@ Track news for my portfolio holdings: AAPL, MSFT, GOOGL, AMZN, and NVDA. Alert m
 
 Example input prompt:
 
-What are the major news stories affecting the semiconductor industry  today? Include companies like NVDA, AMD, INTC, and TSM.
+What are the major news stories affecting the semiconductor industry  today? Include companies like NVDA, AMD, INTC, and TSM.
 
 **When to use:** Research sector trends and identify common themes or developments affecting multiple companies within an industry.
 
@@ -485,7 +485,7 @@ What are the major news stories affecting the semiconductor industry  today? In
 
 Example input prompt:
 
-Summarize the key developments and market reaction to Apple’s earnings  announcement yesterday. What were the main highlights and how did analysts  respond?
+Summarize the key developments and market reaction to Apple’s earnings  announcement yesterday. What were the main highlights and how did analysts  respond?
 
 **When to use:** Quickly understand market reactions and key takeaways following earnings releases, product launches, or other corporate events.
 
@@ -529,7 +529,7 @@ Set up monitoring for breaking news related to Federal Reserve policy announceme
 
 - Focus on material events and filter out noise by requesting curated, relevant news only
 
-‍
+
 
 ## Related tutorials
 

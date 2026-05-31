@@ -15,14 +15,10 @@ A list of example servers and implementations
 This page showcases various Model Context Protocol (MCP) servers that demonstrate the protocol’s capabilities and versatility. These servers enable Large Language Models (LLMs) to securely access tools and data sources.
 
 
-[​](#reference-implementations)
-
 Reference implementations
 
 These official reference servers demonstrate core MCP features and SDK usage:
 
-
-[​](#current-reference-servers)
 
 Current reference servers
 
@@ -35,33 +31,23 @@ Current reference servers
 - **[Time](https://github.com/modelcontextprotocol/servers/tree/main/src/time)** - Time and timezone conversion capabilities
 
 
-[​](#additional-example-servers-archived)
-
 Additional example servers (archived)
 
 Visit the [servers-archived repository](https://github.com/modelcontextprotocol/servers-archived) to get access to archived example servers that are no longer actively maintained. They are provided for historical reference only.
 
-
-[​](#official-integrations)
 
 Official integrations
 
 Visit the [MCP Servers Repository (Official Integrations section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#%EF%B8%8F-official-integrations) for a list of MCP servers maintained by companies for their platforms.
 
 
-[​](#community-implementations)
-
 Community implementations
 
 Visit the [MCP Servers Repository (Community section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) for a list of MCP servers maintained by community members.
 
 
-[​](#getting-started)
-
 Getting started
 
-
-[​](#using-reference-servers)
 
 Using reference servers
 
@@ -86,8 +72,6 @@ pip install mcp-server-git
 python -m mcp_server_git
 ```
 
-
-[​](#configuring-with-claude)
 
 Configuring with Claude
 
@@ -121,8 +105,6 @@ Copy
 }
 ```
 
-
-[​](#additional-resources)
 
 Additional resources
 

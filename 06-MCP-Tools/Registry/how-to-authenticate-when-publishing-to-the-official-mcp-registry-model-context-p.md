@@ -19,8 +19,6 @@ You must authenticate before publishing to the official MCP Registry. The MCP Re
 | domain-based | `com.example.*/*` | `io.modelcontextprotocol/everything` |
 
 
-[​](#github-authentication)
-
 
 Copy
 
@@ -55,8 +53,6 @@ Successfully authenticated!
 ✓ Successfully logged in
 ```
 
-
-[​](#dns-authentication)
 
 DNS Authentication
 
@@ -102,8 +98,6 @@ PRIVATE_KEY="$(openssl pkey -in key.pem -noout -text | grep -A3 "priv:" | tail -
 mcp-publisher login dns --domain "${MY_DOMAIN}" --private-key "${PRIVATE_KEY}"
 ```
 
-
-[​](#http-authentication)
 
 HTTP Authentication
 

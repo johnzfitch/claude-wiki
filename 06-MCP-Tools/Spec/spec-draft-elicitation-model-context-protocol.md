@@ -17,8 +17,6 @@ The Model Context Protocol (MCP) provides a standardized way for servers to requ
 - **URL mode**: Servers can direct users to external URLs for sensitive interactions that must *not* pass through the MCP client
 
 
-[​](#user-interaction-model)
-
 User Interaction Model
 
 Elicitation in MCP allows servers to implement interactive workflows by enabling user input requests to occur *nested* inside other MCP server features. Implementations are free to expose elicitation through any interface pattern that suits their needs—the protocol itself does not mandate any specific user interaction model.
@@ -37,8 +35,6 @@ MCP clients **MUST**:
 
 **Request Association Requirement**Servers **MUST** send server-to-client requests (such as `roots/list`, `sampling/createMessage`, or `elicitation/create`) only in association with an originating client request (e.g., during `tools/call`, `resources/read`, or `prompts/get` processing).Standalone server-initiated requests of these types on independent communication streams (unrelated to any client request) are not supported and **MUST NOT** be implemented. Future transport implementations are not required to support this pattern.
 
-
-[​](#capabilities)
 
 Capabilities
 
@@ -72,12 +68,8 @@ Copy
 Clients declaring the `elicitation` capability **MUST** support at least one mode (`form` or `url`). Servers **MUST NOT** send elicitation requests with modes that are not supported by the client.
 
 
-[​](#protocol-messages)
-
 Protocol Messages
 
-
-[​](#elicitation-requests)
 
 Elicitation Requests
 
@@ -96,8 +88,6 @@ The `mode` parameter specifies the type of elicitation:
 For backwards compatibility, servers **MAY** omit the `mode` field for form mode elicitation requests. Clients **MUST** treat requests without a `mode` field as form mode.
 
 
-[​](#form-mode-elicitation-requests)
-
 Form Mode Elicitation Requests
 
 Form mode elicitation allows servers to collect structured data directly through the MCP client. Form mode elicitation requests **MUST** either specify `mode: "form"` or omit the `mode` field, and include these additional parameters:
@@ -106,8 +96,6 @@ Form mode elicitation allows servers to collect structured data directly through
 |----|----|----|
 | `requestedSchema` | object | A JSON Schema defining the structure of the expected response. |
 
-
-[​](#requested-schema)
 
 Requested Schema
 
@@ -232,8 +220,6 @@ Clients can use this schema to:
 All primitive types support optional default values to provide sensible starting points. Clients that support defaults SHOULD pre-populate form fields with these values. Note that complex nested structures, arrays of objects (beyond enums), and other advanced JSON Schema features are intentionally not supported to simplify client user experience.
 
 
-[​](#example-simple-text-request)
-
 Example: Simple Text Request
 
 **Request:**
@@ -278,8 +264,6 @@ Copy
 }
 ```
 
-
-[​](#example-structured-data-request)
 
 Example: Structured Data Request
 
@@ -339,8 +323,6 @@ Copy
 ```
 
 
-[​](#url-mode-elicitation-requests)
-
 URL Mode Elicitation Requests
 
 **New feature:** URL mode elicitation is introduced in the `2025-11-25` version of the MCP specification. Its design and implementation may change in future protocol revisions.
@@ -356,8 +338,6 @@ The `url` parameter **MUST** contain a valid URL.
 
 **Important**: URL mode elicitation is *not* for authorizing the MCP client’s access to the MCP server (that’s handled by [MCP authorization](../basic/authorization)). Instead, it’s used when the MCP server needs to obtain sensitive information or third-party authorization on behalf of the user. The MCP client’s bearer token remains unchanged. The client’s only responsibility is to provide the user with context about the elicitation URL the server wants them to open.
 
-
-[​](#example-request-sensitive-data)
 
 Example: Request Sensitive Data
 
@@ -396,8 +376,6 @@ Copy
 The response with `action: "accept"` indicates that the user has consented to the interaction. It does not mean that the interaction is complete. The interaction occurs out of band and the client is not aware of the outcome until and unless the server sends a notification indicating completion.
 
 
-[​](#completion-notifications-for-url-mode-elicitation)
-
 Completion Notifications for URL Mode Elicitation
 
 Servers **MAY** send a `notifications/elicitation/complete` notification when an out-of-band interaction started by URL mode elicitation is completed. This allows clients to react programmatically if appropriate. Servers sending notifications:
@@ -411,8 +389,6 @@ Clients:
 - **MAY** wait for this notification to automatically retry requests that received a [URLElicitationRequiredError](#error-handling), update the user interface, or otherwise continue an interaction.
 - **SHOULD** still provide manual controls that let the user retry or cancel the original request (or otherwise resume interacting with the client) if the notification never arrives.
 
-
-[​](#example)
 
 Example
 
@@ -428,8 +404,6 @@ Copy
 }
 ```
 
-
-[​](#url-elicitation-required-error)
 
 URL Elicitation Required Error
 
@@ -459,27 +433,17 @@ Copy
 ```
 
 
-[​](#message-flow)
-
 Message Flow
 
-
-[​](#form-mode-flow)
 
 Form Mode Flow
 
 
-[​](#url-mode-flow)
-
 URL Mode Flow
 
 
-[​](#url-mode-with-elicitation-required-error-flow)
-
 URL Mode With Elicitation Required Error Flow
 
-
-[​](#response-actions)
 
 Response Actions
 
@@ -521,12 +485,8 @@ Servers should handle each state appropriately:
 - **Cancel**: Handle dismissal (e.g., prompt again later)
 
 
-[​](#implementation-considerations)
-
 Implementation Considerations
 
-
-[​](#statefulness)
 
 Statefulness
 
@@ -544,8 +504,6 @@ Servers implementing elicitation **MUST** securely associate this state with ind
 The examples in this section are non-normative and illustrate potential uses of elicitation. Implementers should adapt these patterns to their specific requirements while maintaining security best practices.
 
 
-[​](#url-mode-elicitation-for-sensitive-data)
-
 URL Mode Elicitation for Sensitive Data
 
 For servers that interact with external APIs requiring sensitive information (e.g., credentials, payment information), URL mode elicitation provides a secure mechanism for users to provide this information without exposing it to the MCP client. In this pattern:
@@ -559,14 +517,10 @@ For servers that interact with external APIs requiring sensitive information (e.
 This approach ensures that sensitive credentials never pass through the LLM context, MCP client or any intermediate MCP servers, reducing the risk of exposure through client-side logging or other attack vectors.
 
 
-[​](#url-mode-elicitation-for-oauth-flows)
-
 URL Mode Elicitation for OAuth Flows
 
 URL mode elicitation enables a pattern where MCP servers act as OAuth clients to third-party resource servers. Authorization with external APIs enabled by URL mode elicitation is separate from [MCP authorization](../basic/authorization). MCP servers **MUST NOT** rely on URL mode elicitation to authorize users for themselves.
 
-
-[​](#understanding-the-distinction)
 
 Understanding the Distinction
 
@@ -596,8 +550,6 @@ Credentials obtained via URL mode elicitation are distinct from the MCP server c
 For additional background, refer to the [token passthrough section](/docs/tutorials/security/security_best_practices#token-passthrough) of the Security Best Practices document to understand why MCP servers cannot act as pass-through proxies.
 
 
-[​](#implementation-pattern)
-
 Implementation Pattern
 
 When implementing external authorization via URL mode elicitation:
@@ -613,8 +565,6 @@ When implementing external authorization via URL mode elicitation:
 The following is a non-normative example of how this pattern could be implemented: This pattern maintains clear security boundaries while enabling rich integrations with third-party services that require user authorization.
 
 
-[​](#error-handling)
-
 Error Handling
 
 Servers **MUST** return standard JSON-RPC errors for common failure cases:
@@ -627,8 +577,6 @@ Clients **MUST** return standard JSON-RPC errors for common failure cases:
 - Server sends an `elicitation/create` request with no associated client-to-server request: `-32602` (Invalid params)
 
 
-[​](#security-considerations)
-
 Security Considerations
 
 1.  Servers **MUST** bind elicitation requests to the client and user identity
@@ -638,8 +586,6 @@ Security Considerations
 5.  Clients **SHOULD** implement rate limiting
 6.  Clients **SHOULD** present elicitation requests in a way that makes it clear what information is being requested and why
 
-
-[​](#safe-url-handling)
 
 Safe URL Handling
 
@@ -661,8 +607,6 @@ These server requirements ensure that client implementations have clear rules ab
 7.  **SHOULD NOT** render URLs as clickable in any field of an elicitation request, except for the `url` field in a URL elicitation request (with the restrictions detailed above).
 
 
-[​](#identifying-the-user)
-
 Identifying the User
 
 Servers **MUST NOT** rely on client-provided user identification without server verification, as this can be forged. Instead, servers **SHOULD** follow [security best practices](/docs/tutorials/security/security_best_practices). Non-normative examples:
@@ -671,16 +615,12 @@ Servers **MUST NOT** rely on client-provided user identification without server 
 - Correct: Rely on [authorization](../basic/authorization) to identify the user
 
 
-[​](#form-mode-security)
-
 Form Mode Security
 
 1.  Servers **MUST NOT** request sensitive information (passwords, API keys, etc.) via form mode
 2.  Clients **SHOULD** validate all responses against the provided schema
 3.  Servers **SHOULD** validate received data matches the requested schema
 
-
-[​](#phishing)
 
 Phishing
 

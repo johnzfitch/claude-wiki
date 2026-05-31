@@ -1,8 +1,9 @@
 ---
+title: "Configure permissions - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/permissions"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:59Z"
-source_url: "https://code.claude.com/docs/en/permissions"
-title: "Configure permissions - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Configure permissions
@@ -20,8 +21,6 @@ Control what Claude Code can access and do with fine-grained permission rules, m
 Claude Code supports fine-grained permissions so that you can specify exactly what the agent is allowed to do and what it cannot. Permission settings can be checked into version control and distributed to all developers in your organization, as well as customized by individual developers.
 
 
-[​](#permission-system)
-
 Permission system
 
 Claude Code uses a tiered permission system to balance power and safety:
@@ -32,8 +31,6 @@ Claude Code uses a tiered permission system to balance power and safety:
 | Bash commands     | Shell execution  | Yes               | Permanently per project directory and command |
 | File modification | Edit/write files | Yes               | Until session end                             |
 
-
-[​](#manage-permissions)
 
 Manage permissions
 
@@ -47,8 +44,6 @@ Rules are evaluated in order: **deny -\> ask -\> allow**. The first matching rul
 
 Permission rules are enforced by Claude Code, not by the model. Instructions in your prompt or `CLAUDE.md` shape what Claude tries to do, but they don’t change what Claude Code allows. To grant or revoke access, use `/permissions`, the rules described here, a [permission mode](/docs/en/permission-modes), or a [PreToolUse hook](#extend-permissions-with-hooks).
 
-
-[​](#permission-modes)
 
 Permission modes
 
@@ -68,14 +63,10 @@ Claude Code supports several permission modes that control how tools are approve
 To prevent `bypassPermissions` or `auto` mode from being used, set `permissions.disableBypassPermissionsMode` or `permissions.disableAutoMode` to `"disable"` in any [settings file](/docs/en/settings#settings-files). These are most useful in [managed settings](#managed-settings) where they cannot be overridden.
 
 
-[​](#permission-rule-syntax)
-
 Permission rule syntax
 
 Permission rules follow the format `Tool` or `Tool(specifier)`.
 
-
-[​](#match-all-uses-of-a-tool)
 
 Match all uses of a tool
 
@@ -90,8 +81,6 @@ To match all uses of a tool, use just the tool name without parentheses:
 `Bash(*)` is equivalent to `Bash` and matches all Bash commands. As a deny rule, both forms remove the tool from Claude’s context.
 
 
-[​](#use-specifiers-for-fine-grained-control)
-
 Use specifiers for fine-grained control
 
 Add a specifier in parentheses to match specific tool uses:
@@ -102,8 +91,6 @@ Add a specifier in parentheses to match specific tool uses:
 | `Read(./.env)`                 | Matches reading the `.env` file in the current directory |
 | `WebFetch(domain:example.com)` | Matches fetch requests to example.com                    |
 
-
-[​](#wildcard-patterns)
 
 Wildcard patterns
 
@@ -129,12 +116,8 @@ Bash rules support glob patterns with `*`. Wildcards can appear at any position 
 The space before `*` matters: `Bash(ls *)` matches `ls -la` but not `lsof`, while `Bash(ls*)` matches both. The `:*` suffix is an equivalent way to write a trailing wildcard, so `Bash(ls:*)` matches the same commands as `Bash(ls *)`. The permission dialog writes the space-separated form when you select “Yes, don’t ask again” for a command prefix. The `:*` form is only recognized at the end of a pattern. In a pattern like `Bash(git:* push)`, the colon is treated as a literal character and won’t match git commands.
 
 
-[​](#tool-specific-permission-rules)
-
 Tool-specific permission rules
 
-
-[​](#bash)
 
 Bash
 
@@ -149,8 +132,6 @@ Bash permission rules support wildcard matching with `*`. Wildcards can appear a
 A single `*` matches any sequence of characters including spaces, so one wildcard can span multiple arguments. `Bash(git *)` matches `git log --oneline --all`, and `Bash(git * main)` matches `git push origin main` as well as `git merge main`. When `*` appears at the end with a space before it (like `Bash(ls *)`), it enforces a word boundary, requiring the prefix to be followed by a space or end-of-string. For example, `Bash(ls *)` matches `ls -la` but not `lsof`. In contrast, `Bash(ls*)` without a space matches both `ls -la` and `lsof` because there’s no word boundary constraint.
 
 
-[​](#compound-commands)
-
 Compound commands
 
 Claude Code is aware of shell operators, so a rule like `Bash(safe-cmd *)` won’t give it permission to run the command `safe-cmd && other-cmd`. The recognized command separators are `&&`, `||`, `;`, `|`, `|&`, `&`, and newlines. A rule must match each subcommand independently.
@@ -158,14 +139,10 @@ Claude Code is aware of shell operators, so a rule like `Bash(safe-cmd *)` won�
 When you approve a compound command with “Yes, don’t ask again”, Claude Code saves a separate rule for each subcommand that requires approval, rather than a single rule for the full compound string. For example, approving `git status && npm test` saves a rule for `npm test`, so future `npm test` invocations are recognized regardless of what precedes the `&&`. Subcommands like `cd` into a subdirectory generate their own Read rule for that path. Up to 5 rules may be saved for a single compound command.
 
 
-[​](#process-wrappers)
-
 Process wrappers
 
 Before matching Bash rules, Claude Code strips a fixed set of process wrappers so a rule like `Bash(npm test *)` also matches `timeout 30 npm test`. The recognized wrappers are `timeout`, `time`, `nice`, `nohup`, and `stdbuf`. Bare `xargs` is also stripped, so `Bash(grep *)` matches `xargs grep pattern`. Stripping applies only when `xargs` has no flags: an invocation like `xargs -n1 grep pattern` is matched as an `xargs` command, so rules written for the inner command do not cover it. This wrapper list is built in and is not configurable. Development environment runners such as `direnv exec`, `devbox run`, `mise exec`, `npx`, and `docker exec` are not in the list. Because these tools execute their arguments as a command, a rule like `Bash(devbox run *)` matches whatever comes after `run`, including `devbox run rm -rf .`. To approve work inside an environment runner, write a specific rule that includes both the runner and the inner command, such as `Bash(devbox run npm test)`. Add one rule per inner command you want to allow. Exec wrappers such as `watch`, `setsid`, `ionice`, and `flock` always prompt and cannot be auto-approved by a prefix rule like `Bash(watch *)`. The same applies to `find` with `-exec` or `-delete`: a `Bash(find *)` rule does not cover these forms. To approve a specific invocation, write an exact-match rule for the full command string.
 
-
-[​](#read-only-commands)
 
 Read-only commands
 
@@ -188,8 +165,6 @@ For more reliable URL filtering, consider:
 Note that using WebFetch alone does not prevent network access. If Bash is allowed, Claude can still use `curl`, `wget`, or other tools to reach any URL.
 
 
-[​](#powershell)
-
 PowerShell
 
 PowerShell permission rules use the same shape as Bash rules. Wildcards with `*` match at any position, the `:*` suffix is equivalent to a trailing ` *`, and a bare `PowerShell` or `PowerShell(*)` matches every command. This configuration allows `Get-ChildItem` and `git commit` commands while blocking `Remove-Item`:
@@ -210,8 +185,6 @@ PowerShell permission rules use the same shape as Bash rules. Wildcards with `*`
 
 Common aliases are canonicalized before matching. A rule written for the cmdlet name also matches its aliases, so `PowerShell(Get-ChildItem *)` matches `gci`, `ls`, and `dir` as well. Matching is case-insensitive. Claude Code parses the PowerShell AST and checks each command in a compound command independently. Pipeline operators `|`, statement separators `;`, and on PowerShell 7+ the chain operators `&&` and `||` split a compound command into subcommands. A rule must match every subcommand for the compound command to be allowed.
 
-
-[​](#read-and-edit)
 
 Read and Edit
 
@@ -254,14 +227,10 @@ When Claude accesses a symlink, permission rules check two paths: the symlink it
 For example, with `Read(./project/**)` allowed and `Read(~/.ssh/**)` denied, a symlink at `./project/key` pointing to `~/.ssh/id_rsa` is blocked: the target fails the allow rule and matches the deny rule.
 
 
-[​](#webfetch)
-
 WebFetch
 
 - `WebFetch(domain:example.com)` matches fetch requests to example.com
 
-
-[​](#mcp)
 
 MCP
 
@@ -269,8 +238,6 @@ MCP
 - `mcp__puppeteer__*` wildcard syntax that also matches all tools from the `puppeteer` server
 - `mcp__puppeteer__puppeteer_navigate` matches the `puppeteer_navigate` tool provided by the `puppeteer` server
 
-
-[​](#agent-subagents)
 
 Agent (subagents)
 
@@ -291,14 +258,10 @@ Add these rules to the `deny` array in your settings or use the `--disallowedToo
 ```
 
 
-[​](#extend-permissions-with-hooks)
-
 Extend permissions with hooks
 
 [Claude Code hooks](/docs/en/hooks-guide) provide a way to register custom shell commands to perform permission evaluation at runtime. When Claude Code makes a tool call, PreToolUse hooks run before the permission prompt. The hook output can deny the tool call, force a prompt, or skip the prompt to let the call proceed. Hook decisions do not bypass permission rules. Deny and ask rules are evaluated regardless of what a PreToolUse hook returns, so a matching deny rule blocks the call and a matching ask rule still prompts even when the hook returned `"allow"` or `"ask"`. This preserves the deny-first precedence described in [Manage permissions](#manage-permissions), including deny rules set in managed settings. A blocking hook also takes precedence over allow rules. A hook that exits with code 2 stops the tool call before permission rules are evaluated, so the block applies even when an allow rule would otherwise let the call proceed. To run all Bash commands without prompts except for a few you want blocked, add `"Bash"` to your allow list and register a PreToolUse hook that rejects those specific commands. See [Block edits to protected files](/docs/en/hooks-guide#block-edits-to-protected-files) for a hook script you can adapt.
 
-
-[​](#working-directories)
 
 Working directories
 
@@ -310,8 +273,6 @@ By default, Claude has access to files in the directory where it was launched. Y
 
 Files in additional directories follow the same permission rules as the original working directory: they become readable without prompts, and file editing permissions follow the current permission mode.
 
-
-[​](#additional-directories-grant-file-access-not-configuration)
 
 Additional directories grant file access, not configuration
 
@@ -330,8 +291,6 @@ Subagents, commands, and output styles are discovered from the current working d
 - **Launch from the config directory**: run Claude Code from the directory containing the `.claude/` configuration you want
 
 
-[​](#how-permissions-interact-with-sandboxing)
-
 How permissions interact with sandboxing
 
 Permissions and [sandboxing](/docs/en/sandboxing) are complementary security layers:
@@ -349,14 +308,10 @@ Use both for defense-in-depth:
 When sandboxing is enabled with `autoAllowBashIfSandboxed: true`, which is the default, sandboxed Bash commands run without prompting even if your permissions include `ask: Bash(*)`. The sandbox boundary substitutes for the per-command prompt. Explicit deny rules still apply, and `rm` or `rmdir` commands that target `/`, your home directory, or other critical system paths still trigger a prompt. See [sandbox modes](/docs/en/sandboxing#sandbox-modes) to change this behavior.
 
 
-[​](#managed-settings)
-
 Managed settings
 
 For organizations that need centralized control over Claude Code configuration, administrators can deploy managed settings that cannot be overridden by user or project settings. These policy settings follow the same format as regular settings files and can be delivered through MDM/OS-level policies, managed settings files, or [server-managed settings](/docs/en/server-managed-settings). See [settings files](/docs/en/settings#settings-files) for delivery mechanisms and file locations.
 
-
-[​](#managed-only-settings)
 
 Managed-only settings
 
@@ -382,8 +337,6 @@ The following settings are only read from managed settings. Placing them in user
 On Team and Enterprise plans, an admin enables or disables [Remote Control](/docs/en/remote-control) and [web sessions](/docs/en/claude-code-on-the-web) organization-wide in [Claude Code admin settings](https://claude.ai/admin-settings/claude-code). Remote Control can additionally be disabled per device with the [`disableRemoteControl`](/docs/en/settings#available-settings) managed setting. Web sessions have no per-device managed settings key.
 
 
-[​](#settings-precedence)
-
 Settings precedence
 
 Permission rules follow the same [settings precedence](/docs/en/settings#settings-precedence) as all other Claude Code settings:
@@ -397,14 +350,10 @@ Permission rules follow the same [settings precedence](/docs/en/settings#setting
 If a tool is denied at any level, no other level can allow it. For example, a managed settings deny cannot be overridden by `--allowedTools`, and `--disallowedTools` can add restrictions beyond what managed settings define. Embedding hosts can supply additional managed policy via the SDK `managedSettings` option when [`parentSettingsBehavior`](/docs/en/settings#settings-precedence) is set to `"merge"`; embedder values can tighten policy but not loosen it. For example, if user settings allow a permission and project settings deny it, the deny rule blocks it. The reverse is also true: a user-level deny blocks a project-level allow, because deny rules from any scope are evaluated before allow rules.
 
 
-[​](#example-configurations)
-
 Example configurations
 
 This [repository](https://github.com/anthropics/claude-code/tree/main/examples/settings) includes starter settings configurations for common deployment scenarios. Use these as starting points and adjust them to fit your needs.
 
-
-[​](#see-also)
 
 See also
 

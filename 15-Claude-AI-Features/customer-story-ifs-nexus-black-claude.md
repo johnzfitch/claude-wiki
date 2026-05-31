@@ -80,13 +80,13 @@ Industrial companies need AI that works in their actual operating environments. 
 
 In these environments, one mistake prolongs a power outage, shuts down a production line, or costs millions in wasted inventory. Results need to happen fast.
 
-IFS Nexus Black brings together AI specialists and the industrial knowledge of IFS, a global software company with four decades of experience across manufacturing, energy, utilities, telecoms, construction and engineering, aerospace and defense. 
+IFS Nexus Black brings together AI specialists and the industrial knowledge of IFS, a global software company with four decades of experience across manufacturing, energy, utilities, telecoms, construction and engineering, aerospace and defense. 
 
 ## Claude enables production-ready AI for critical industries
 
 Claude's capabilities opened up approaches that weren't possible before. Resolve uses Claude's multimodal capabilities to analyze thousands of equipment images, correlate sensor readings, and connect patterns across visual inspections and operational data to catch problems before they become failures.
 
-The Model Context Protocol (MCP), built and open-sourced by Anthropic, facilitates easier connections between systems—including legacy infrastructure that has traditionally been challenging to integrate. This enables Claude to bridge data silos that have long complicated industrial operations. And [Skills by Claude](https://www.claude.com/blog/skills) helps IFS manage the complex context that comes with decades of industrial data—ensuring engineers get relevant, accurate information without drowning in documentation. 
+The Model Context Protocol (MCP), built and open-sourced by Anthropic, facilitates easier connections between systems—including legacy infrastructure that has traditionally been challenging to integrate. This enables Claude to bridge data silos that have long complicated industrial operations. And [Skills by Claude](https://www.claude.com/blog/skills) helps IFS manage the complex context that comes with decades of industrial data—ensuring engineers get relevant, accurate information without drowning in documentation. 
 
 "We're working in environments where safety and compliance aren't optional," said Kriti Sharma, CEO of IFS Nexus Black. "If you don't build AI safety-first in our world, lives are put at risk."
 
@@ -96,13 +96,13 @@ Anthropic's commitment to safe and reliable AI aligns with the operational requi
 
 William Grant & Sons—whose iconic distilleries produce Grant's whisky and Hendrick's gin—had just completed a major expansion at their facility on Scotland's west coast. They saw an opportunity to improve efficiency in their operations.
 
-Fragmented data meant technicians had to react to problems instead of preventing them. 38% of repairs were reactive, leading to costly downtime. 
+Fragmented data meant technicians had to react to problems instead of preventing them. 38% of repairs were reactive, leading to costly downtime. 
 
 With Resolve, the distillery can now predict failures before they happen. The solution reads complex plant schematics like a trained engineer and connects to existing sensors to catch problems early. During repairs, it diagnoses faults in real time, thanks to Claude's multimodal capabilities combined with IFS's domain expertise.
 
 "IFS Nexus Black understood our industry—they weren't trying to apply something generic," said Badri Narasimhan, Chief Technology & Business Growth Officer for William Grant & Sons. "It's been innovation that's practical, fast, and connected to results, not theory."
 
-The distillery has slashed downtime and boosted output, and the team estimates that these changes will save them £8.4 million a year at this one site alone—once they are in business-as-usual mode. 
+The distillery has slashed downtime and boosted output, and the team estimates that these changes will save them £8.4 million a year at this one site alone—once they are in business-as-usual mode. 
 
 ### Moving disaster relief beyond clipboards
 

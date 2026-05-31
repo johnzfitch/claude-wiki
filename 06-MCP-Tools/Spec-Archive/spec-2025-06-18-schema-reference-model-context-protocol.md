@@ -9,19 +9,15 @@ tags: ["mcp", "mcp-spec"]
 # Schema Reference
 
 
-[​](#json-rpc)
-
 JSON-RPC
 
-
-[​](#jsonrpcerror)
 
 `JSONRPCError`
 
 interface JSONRPCError {\
-  [jsonrpc](#jsonrpcerror-jsonrpc): “2.0”;\
-  [id](#jsonrpcerror-id): [RequestId](#requestid);\
-  [error](#jsonrpcerror-error): { code: number; message: string; data?: unknown };\
+  [jsonrpc](#jsonrpcerror-jsonrpc): “2.0”;\
+  [id](#jsonrpcerror-id): [RequestId](#requestid);\
+  [error](#jsonrpcerror-error): { code: number; message: string; data?: unknown };\
 }
 
 A response to a request that indicates an error occurred.
@@ -47,27 +43,23 @@ Type Declaration
   Additional information about the error. The value of this member is defined by the sender (e.g. detailed error information, nested errors etc.).
 
 
-[​](#jsonrpcmessage)
-
 `JSONRPCMessage`
 
 JSONRPCMessage:\
-  \| [JSONRPCRequest](#jsonrpcrequest)\
-  \| [JSONRPCNotification](#jsonrpcnotification)\
-  \| [JSONRPCResponse](#jsonrpcresponse)\
-  \| [JSONRPCError](#jsonrpcerror)
+  \| [JSONRPCRequest](#jsonrpcrequest)\
+  \| [JSONRPCNotification](#jsonrpcnotification)\
+  \| [JSONRPCResponse](#jsonrpcresponse)\
+  \| [JSONRPCError](#jsonrpcerror)
 
 Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
 
 
-[​](#jsonrpcnotification)
-
 `JSONRPCNotification`
 
 interface JSONRPCNotification {\
-  [method](#jsonrpcnotification-method): string;\
-  [params](#jsonrpcnotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
-  [jsonrpc](#jsonrpcnotification-jsonrpc): “2.0”;\
+  [method](#jsonrpcnotification-method): string;\
+  [params](#jsonrpcnotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
+  [jsonrpc](#jsonrpcnotification-jsonrpc): “2.0”;\
 }
 
 A notification which does not expect a response.
@@ -91,18 +83,16 @@ Inherited from Notification.params
 jsonrpc: “2.0”[](#jsonrpcnotification-jsonrpc)
 
 
-[​](#jsonrpcrequest)
-
 `JSONRPCRequest`
 
 interface JSONRPCRequest {\
-  [method](#jsonrpcrequest-method): string;\
-  [params](#jsonrpcrequest-params)?: {\
-    \_meta?: { progressToken?: [ProgressToken](#progresstoken); \[key: string\]: unknown };\
-    \[key: string\]: unknown;\
-  };\
-  [jsonrpc](#jsonrpcrequest-jsonrpc): “2.0”;\
-  [id](#jsonrpcrequest-id): [RequestId](#requestid);\
+  [method](#jsonrpcrequest-method): string;\
+  [params](#jsonrpcrequest-params)?: {\
+    \_meta?: { progressToken?: [ProgressToken](#progresstoken); \[key: string\]: unknown };\
+    \[key: string\]: unknown;\
+  };\
+  [jsonrpc](#jsonrpcrequest-jsonrpc): “2.0”;\
+  [id](#jsonrpcrequest-id): [RequestId](#requestid);\
 }
 
 A request that expects a response.
@@ -132,14 +122,12 @@ jsonrpc: “2.0”[](#jsonrpcrequest-jsonrpc)
 id: RequestId[](#jsonrpcrequest-id)
 
 
-[​](#jsonrpcresponse)
-
 `JSONRPCResponse`
 
 interface JSONRPCResponse {\
-  [jsonrpc](#jsonrpcresponse-jsonrpc): “2.0”;\
-  [id](#jsonrpcresponse-id): [RequestId](#requestid);\
-  [result](#jsonrpcresponse-result): [Result](#result);\
+  [jsonrpc](#jsonrpcresponse-jsonrpc): “2.0”;\
+  [id](#jsonrpcresponse-id): [RequestId](#requestid);\
+  [result](#jsonrpcresponse-result): [Result](#result);\
 }
 
 A successful (non-error) response to a request.
@@ -151,19 +139,15 @@ id: RequestId[](#jsonrpcresponse-id)
 result: Result[](#jsonrpcresponse-result)
 
 
-[​](#common-types)
-
 Common Types
 
-
-[​](#annotations)
 
 `Annotations`
 
 interface Annotations {\
-  [audience](#annotations-audience)?: [Role](#role)\[\];\
-  [priority](#annotations-priority)?: number;\
-  [lastModified](#annotations-lastmodified)?: string;\
+  [audience](#annotations-audience)?: [Role](#role)\[\];\
+  [priority](#annotations-priority)?: number;\
+  [lastModified](#annotations-lastmodified)?: string;\
 }
 
 Optional annotations for the client. The client can use annotations to inform how objects are used or displayed
@@ -189,16 +173,12 @@ Should be an ISO 8601 formatted string (e.g., “2025-01-12T15:00:58Z”).
 Examples: last activity timestamp in an open file, timestamp when the resource was attached, etc.
 
 
-[​](#cursor)
-
 `Cursor`
 
 Cursor: string
 
 An opaque token used to represent a cursor for pagination.
 
-
-[​](#emptyresult)
 
 `EmptyResult`
 
@@ -207,26 +187,22 @@ EmptyResult: [Result](#result)
 A response that indicates success but carries no data.
 
 
-[​](#logginglevel)
-
 `LoggingLevel`
 
 LoggingLevel:\
-  \| “debug”\
-  \| “info”\
-  \| “notice”\
-  \| “warning”\
-  \| “error”\
-  \| “critical”\
-  \| “alert”\
-  \| “emergency”
+  \| “debug”\
+  \| “info”\
+  \| “notice”\
+  \| “warning”\
+  \| “error”\
+  \| “critical”\
+  \| “alert”\
+  \| “emergency”
 
 The severity of a log message.
 
 These map to syslog message severities, as specified in RFC-5424: [](https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1)[https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1](https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1)
 
-
-[​](#progresstoken)
 
 `ProgressToken`
 
@@ -235,8 +211,6 @@ ProgressToken: string \| number
 A progress token, used to associate progress notifications with the original request.
 
 
-[​](#requestid)
-
 `RequestId`
 
 RequestId: string \| number
@@ -244,21 +218,17 @@ RequestId: string \| number
 A uniquely identifying ID for a request in JSON-RPC.
 
 
-[​](#result)
-
 `Result`
 
 interface Result {\
-  [\_meta](#result-_meta)?: { \[key: string\]: unknown };\
-  \[key: string\]: unknown;\
+  [\_meta](#result-_meta)?: { \[key: string\]: unknown };\
+  \[key: string\]: unknown;\
 }
 
 \_meta?: { \[key: string\]: unknown }[](#result-_meta)
 
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
-
-[​](#role)
 
 `Role`
 
@@ -267,21 +237,17 @@ Role: “user” \| “assistant”
 The sender or recipient of messages and data in a conversation.
 
 
-[​](#content)
-
 Content
 
-
-[​](#audiocontent)
 
 `AudioContent`
 
 interface AudioContent {\
-  [type](#audiocontent-type): “audio”;\
-  [data](#audiocontent-data): string;\
-  [mimeType](#audiocontent-mimetype): string;\
-  [annotations](#audiocontent-annotations)?: [Annotations](#annotations);\
-  [\_meta](#audiocontent-_meta)?: { \[key: string\]: unknown };\
+  [type](#audiocontent-type): “audio”;\
+  [data](#audiocontent-data): string;\
+  [mimeType](#audiocontent-mimetype): string;\
+  [annotations](#audiocontent-annotations)?: [Annotations](#annotations);\
+  [\_meta](#audiocontent-_meta)?: { \[key: string\]: unknown };\
 }
 
 Audio provided to or from an LLM.
@@ -305,15 +271,13 @@ Optional annotations for the client.
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#blobresourcecontents)
-
 `BlobResourceContents`
 
 interface BlobResourceContents {\
-  [uri](#blobresourcecontents-uri): string;\
-  [mimeType](#blobresourcecontents-mimetype)?: string;\
-  [\_meta](#blobresourcecontents-_meta)?: { \[key: string\]: unknown };\
-  [blob](#blobresourcecontents-blob): string;\
+  [uri](#blobresourcecontents-uri): string;\
+  [mimeType](#blobresourcecontents-mimetype)?: string;\
+  [\_meta](#blobresourcecontents-_meta)?: { \[key: string\]: unknown };\
+  [blob](#blobresourcecontents-blob): string;\
 }
 
 uri: string[](#blobresourcecontents-uri)
@@ -339,27 +303,23 @@ blob: string[](#blobresourcecontents-blob)
 A base64-encoded string representing the binary data of the item.
 
 
-[​](#contentblock)
-
 `ContentBlock`
 
 ContentBlock:\
-  \| [TextContent](#textcontent)\
-  \| [ImageContent](#imagecontent)\
-  \| [AudioContent](#audiocontent)\
-  \| [ResourceLink](#resourcelink)\
-  \| [EmbeddedResource](#embeddedresource)
+  \| [TextContent](#textcontent)\
+  \| [ImageContent](#imagecontent)\
+  \| [AudioContent](#audiocontent)\
+  \| [ResourceLink](#resourcelink)\
+  \| [EmbeddedResource](#embeddedresource)
 
-
-[​](#embeddedresource)
 
 `EmbeddedResource`
 
 interface EmbeddedResource {\
-  [type](#embeddedresource-type): “resource”;\
-  [resource](#embeddedresource-resource): [TextResourceContents](#textresourcecontents) \| [BlobResourceContents](#blobresourcecontents);\
-  [annotations](#embeddedresource-annotations)?: [Annotations](#annotations);\
-  [\_meta](#embeddedresource-_meta)?: { \[key: string\]: unknown };\
+  [type](#embeddedresource-type): “resource”;\
+  [resource](#embeddedresource-resource): [TextResourceContents](#textresourcecontents) \| [BlobResourceContents](#blobresourcecontents);\
+  [annotations](#embeddedresource-annotations)?: [Annotations](#annotations);\
+  [\_meta](#embeddedresource-_meta)?: { \[key: string\]: unknown };\
 }
 
 The contents of a resource, embedded into a prompt or tool call result.
@@ -379,16 +339,14 @@ Optional annotations for the client.
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#imagecontent)
-
 `ImageContent`
 
 interface ImageContent {\
-  [type](#imagecontent-type): “image”;\
-  [data](#imagecontent-data): string;\
-  [mimeType](#imagecontent-mimetype): string;\
-  [annotations](#imagecontent-annotations)?: [Annotations](#annotations);\
-  [\_meta](#imagecontent-_meta)?: { \[key: string\]: unknown };\
+  [type](#imagecontent-type): “image”;\
+  [data](#imagecontent-data): string;\
+  [mimeType](#imagecontent-mimetype): string;\
+  [annotations](#imagecontent-annotations)?: [Annotations](#annotations);\
+  [\_meta](#imagecontent-_meta)?: { \[key: string\]: unknown };\
 }
 
 An image provided to or from an LLM.
@@ -412,20 +370,18 @@ Optional annotations for the client.
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#resourcelink)
-
 `ResourceLink`
 
 interface ResourceLink {\
-  [name](#resourcelink-name): string;\
-  [title](#resourcelink-title)?: string;\
-  [uri](#resourcelink-uri): string;\
-  [description](#resourcelink-description)?: string;\
-  [mimeType](#resourcelink-mimetype)?: string;\
-  [annotations](#resourcelink-annotations)?: [Annotations](#annotations);\
-  [size](#resourcelink-size)?: number;\
-  [\_meta](#resourcelink-_meta)?: { \[key: string\]: unknown };\
-  [type](#resourcelink-type): “resource_link”;\
+  [name](#resourcelink-name): string;\
+  [title](#resourcelink-title)?: string;\
+  [uri](#resourcelink-uri): string;\
+  [description](#resourcelink-description)?: string;\
+  [mimeType](#resourcelink-mimetype)?: string;\
+  [annotations](#resourcelink-annotations)?: [Annotations](#annotations);\
+  [size](#resourcelink-size)?: number;\
+  [\_meta](#resourcelink-_meta)?: { \[key: string\]: unknown };\
+  [type](#resourcelink-type): “resource_link”;\
 }
 
 A resource that the server is capable of reading, included in a prompt or tool call result.
@@ -489,15 +445,13 @@ Inherited from [Resource](#resource).[\_meta](#resource-_meta)
 type: “resource_link”[](#resourcelink-type)
 
 
-[​](#textcontent)
-
 `TextContent`
 
 interface TextContent {\
-  [type](#textcontent-type): “text”;\
-  [text](#textcontent-text): string;\
-  [annotations](#textcontent-annotations)?: [Annotations](#annotations);\
-  [\_meta](#textcontent-_meta)?: { \[key: string\]: unknown };\
+  [type](#textcontent-type): “text”;\
+  [text](#textcontent-text): string;\
+  [annotations](#textcontent-annotations)?: [Annotations](#annotations);\
+  [\_meta](#textcontent-_meta)?: { \[key: string\]: unknown };\
 }
 
 Text provided to or from an LLM.
@@ -517,15 +471,13 @@ Optional annotations for the client.
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#textresourcecontents)
-
 `TextResourceContents`
 
 interface TextResourceContents {\
-  [uri](#textresourcecontents-uri): string;\
-  [mimeType](#textresourcecontents-mimetype)?: string;\
-  [\_meta](#textresourcecontents-_meta)?: { \[key: string\]: unknown };\
-  [text](#textresourcecontents-text): string;\
+  [uri](#textresourcecontents-uri): string;\
+  [mimeType](#textresourcecontents-mimetype)?: string;\
+  [\_meta](#textresourcecontents-_meta)?: { \[key: string\]: unknown };\
+  [text](#textresourcecontents-text): string;\
 }
 
 uri: string[](#textresourcecontents-uri)
@@ -551,22 +503,18 @@ text: string[](#textresourcecontents-text)
 The text of the item. This must only be set if the item can actually be represented as text (not binary data).
 
 
-[​](#completion/complete)
-
 `completion/complete`
 
-
-[​](#completerequest)
 
 `CompleteRequest`
 
 interface CompleteRequest {\
-  [method](#completerequest-method): “completion/complete”;\
-  [params](#completerequest-params): {\
-    ref: [PromptReference](#promptreference) \| [ResourceTemplateReference](#resourcetemplatereference);\
-    argument: { name: string; value: string };\
-    context?: { arguments?: { \[key: string\]: string } };\
-  };\
+  [method](#completerequest-method): “completion/complete”;\
+  [params](#completerequest-params): {\
+    ref: [PromptReference](#promptreference) \| [ResourceTemplateReference](#resourcetemplatereference);\
+    argument: { name: string; value: string };\
+    context?: { arguments?: { \[key: string\]: string } };\
+  };\
 }
 
 A request from the client to the server, to ask for completion options.
@@ -604,14 +552,12 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#completeresult)
-
 `CompleteResult`
 
 interface CompleteResult {\
-  [\_meta](#completeresult-_meta)?: { \[key: string\]: unknown };\
-  [completion](#completeresult-completion): { values: string\[\]; total?: number; hasMore?: boolean };\
-  \[key: string\]: unknown;\
+  [\_meta](#completeresult-_meta)?: { \[key: string\]: unknown };\
+  [completion](#completeresult-completion): { values: string\[\]; total?: number; hasMore?: boolean };\
+  \[key: string\]: unknown;\
 }
 
 The server’s response to a completion/complete request
@@ -639,14 +585,12 @@ Type Declaration
   Indicates whether there are additional completion options beyond those provided in the current response, even if the exact total is unknown.
 
 
-[​](#promptreference)
-
 `PromptReference`
 
 interface PromptReference {\
-  [name](#promptreference-name): string;\
-  [title](#promptreference-title)?: string;\
-  [type](#promptreference-type): “ref/prompt”;\
+  [name](#promptreference-name): string;\
+  [title](#promptreference-title)?: string;\
+  [type](#promptreference-type): “ref/prompt”;\
 }
 
 Identifies a prompt.
@@ -668,13 +612,11 @@ Inherited from BaseMetadata.title
 type: “ref/prompt”[](#promptreference-type)
 
 
-[​](#resourcetemplatereference)
-
 `ResourceTemplateReference`
 
 interface ResourceTemplateReference {\
-  [type](#resourcetemplatereference-type): “ref/resource”;\
-  [uri](#resourcetemplatereference-uri): string;\
+  [type](#resourcetemplatereference-type): “ref/resource”;\
+  [uri](#resourcetemplatereference-uri): string;\
 }
 
 A reference to a resource or resource template definition.
@@ -686,25 +628,21 @@ uri: string[](#resourcetemplatereference-uri)
 The URI or URI template of the resource.
 
 
-[​](#elicitation/create)
-
 `elicitation/create`
 
-
-[​](#elicitrequest)
 
 `ElicitRequest`
 
 interface ElicitRequest {\
-  [method](#elicitrequest-method): “elicitation/create”;\
-  [params](#elicitrequest-params): {\
-    message: string;\
-    requestedSchema: {\
-      type: “object”;\
-      properties: { \[key: string\]: [PrimitiveSchemaDefinition](#primitiveschemadefinition) };\
-      required?: string\[\];\
-    };\
-  };\
+  [method](#elicitrequest-method): “elicitation/create”;\
+  [params](#elicitrequest-params): {\
+    message: string;\
+    requestedSchema: {\
+      type: “object”;\
+      properties: { \[key: string\]: [PrimitiveSchemaDefinition](#primitiveschemadefinition) };\
+      required?: string\[\];\
+    };\
+  };\
 }
 
 A request from the server to elicit additional information from the user via the client.
@@ -722,9 +660,9 @@ Type Declaration
   The message to present to the user.
 
 - requestedSchema: {\
-    type: “object”;\
-    properties: { \[key: string\]: [PrimitiveSchemaDefinition](#primitiveschemadefinition) };\
-    required?: string\[\];\
+    type: “object”;\
+    properties: { \[key: string\]: [PrimitiveSchemaDefinition](#primitiveschemadefinition) };\
+    required?: string\[\];\
   }
 
   A restricted subset of JSON Schema. Only top-level properties are allowed, without nesting.
@@ -732,15 +670,13 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#elicitresult)
-
 `ElicitResult`
 
 interface ElicitResult {\
-  [\_meta](#elicitresult-_meta)?: { \[key: string\]: unknown };\
-  [action](#elicitresult-action): “accept” \| “decline” \| “cancel”;\
-  [content](#elicitresult-content)?: { \[key: string\]: string \| number \| boolean };\
-  \[key: string\]: unknown;\
+  [\_meta](#elicitresult-_meta)?: { \[key: string\]: unknown };\
+  [action](#elicitresult-action): “accept” \| “decline” \| “cancel”;\
+  [content](#elicitresult-content)?: { \[key: string\]: string \| number \| boolean };\
+  \[key: string\]: unknown;\
 }
 
 The client’s response to an elicitation request.
@@ -764,15 +700,13 @@ content?: { \[key: string\]: string \| number \| boolean }[](#elicitresult-conte
 The submitted form data, only present when action is “accept”. Contains values matching the requested schema.
 
 
-[​](#booleanschema)
-
 `BooleanSchema`
 
 interface BooleanSchema {\
-  [type](#booleanschema-type): “boolean”;\
-  [title](#booleanschema-title)?: string;\
-  [description](#booleanschema-description)?: string;\
-  [default](#booleanschema-default)?: boolean;\
+  [type](#booleanschema-type): “boolean”;\
+  [title](#booleanschema-title)?: string;\
+  [description](#booleanschema-description)?: string;\
+  [default](#booleanschema-default)?: boolean;\
 }
 
 type: “boolean”[](#booleanschema-type)
@@ -784,16 +718,14 @@ description?: string[](#booleanschema-description)
 default?: boolean[](#booleanschema-default)
 
 
-[​](#enumschema)
-
 `EnumSchema`
 
 interface EnumSchema {\
-  [type](#enumschema-type): “string”;\
-  [title](#enumschema-title)?: string;\
-  [description](#enumschema-description)?: string;\
-  [enum](#enumschema-enum): string\[\];\
-  [enumNames](#enumschema-enumnames)?: string\[\];\
+  [type](#enumschema-type): “string”;\
+  [title](#enumschema-title)?: string;\
+  [description](#enumschema-description)?: string;\
+  [enum](#enumschema-enum): string\[\];\
+  [enumNames](#enumschema-enumnames)?: string\[\];\
 }
 
 type: “string”[](#enumschema-type)
@@ -807,16 +739,14 @@ enum: string\[\][](#enumschema-enum)
 enumNames?: string\[\][](#enumschema-enumnames)
 
 
-[​](#numberschema)
-
 `NumberSchema`
 
 interface NumberSchema {\
-  [type](#numberschema-type): “number” \| “integer”;\
-  [title](#numberschema-title)?: string;\
-  [description](#numberschema-description)?: string;\
-  [minimum](#numberschema-minimum)?: number;\
-  [maximum](#numberschema-maximum)?: number;\
+  [type](#numberschema-type): “number” \| “integer”;\
+  [title](#numberschema-title)?: string;\
+  [description](#numberschema-description)?: string;\
+  [minimum](#numberschema-minimum)?: number;\
+  [maximum](#numberschema-maximum)?: number;\
 }
 
 type: “number” \| “integer”[](#numberschema-type)
@@ -830,30 +760,26 @@ minimum?: number[](#numberschema-minimum)
 maximum?: number[](#numberschema-maximum)
 
 
-[​](#primitiveschemadefinition)
-
 `PrimitiveSchemaDefinition`
 
 PrimitiveSchemaDefinition:\
-  \| [StringSchema](#stringschema)\
-  \| [NumberSchema](#numberschema)\
-  \| [BooleanSchema](#booleanschema)\
-  \| [EnumSchema](#enumschema)
+  \| [StringSchema](#stringschema)\
+  \| [NumberSchema](#numberschema)\
+  \| [BooleanSchema](#booleanschema)\
+  \| [EnumSchema](#enumschema)
 
 Restricted schema definitions that only allow primitive types without nested objects or arrays.
 
 
-[​](#stringschema)
-
 `StringSchema`
 
 interface StringSchema {\
-  [type](#stringschema-type): “string”;\
-  [title](#stringschema-title)?: string;\
-  [description](#stringschema-description)?: string;\
-  [minLength](#stringschema-minlength)?: number;\
-  [maxLength](#stringschema-maxlength)?: number;\
-  [format](#stringschema-format)?: “uri” \| “email” \| “date” \| “date-time”;\
+  [type](#stringschema-type): “string”;\
+  [title](#stringschema-title)?: string;\
+  [description](#stringschema-description)?: string;\
+  [minLength](#stringschema-minlength)?: number;\
+  [maxLength](#stringschema-maxlength)?: number;\
+  [format](#stringschema-format)?: “uri” \| “email” \| “date” \| “date-time”;\
 }
 
 type: “string”[](#stringschema-type)
@@ -869,22 +795,18 @@ maxLength?: number[](#stringschema-maxlength)
 format?: “uri” \| “email” \| “date” \| “date-time”[](#stringschema-format)
 
 
-[​](#initialize)
-
 `initialize`
 
-
-[​](#initializerequest)
 
 `InitializeRequest`
 
 interface InitializeRequest {\
-  [method](#initializerequest-method): “initialize”;\
-  [params](#initializerequest-params): {\
-    protocolVersion: string;\
-    capabilities: [ClientCapabilities](#clientcapabilities);\
-    clientInfo: [Implementation](#implementation);\
-  };\
+  [method](#initializerequest-method): “initialize”;\
+  [params](#initializerequest-params): {\
+    protocolVersion: string;\
+    capabilities: [ClientCapabilities](#clientcapabilities);\
+    clientInfo: [Implementation](#implementation);\
+  };\
 }
 
 This request is sent from the client to the server when it first connects, asking it to begin initialization.
@@ -908,17 +830,15 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#initializeresult)
-
 `InitializeResult`
 
 interface InitializeResult {\
-  [\_meta](#initializeresult-_meta)?: { \[key: string\]: unknown };\
-  [protocolVersion](#initializeresult-protocolversion): string;\
-  [capabilities](#initializeresult-capabilities): [ServerCapabilities](#servercapabilities);\
-  [serverInfo](#initializeresult-serverinfo): [Implementation](#implementation);\
-  [instructions](#initializeresult-instructions)?: string;\
-  \[key: string\]: unknown;\
+  [\_meta](#initializeresult-_meta)?: { \[key: string\]: unknown };\
+  [protocolVersion](#initializeresult-protocolversion): string;\
+  [capabilities](#initializeresult-capabilities): [ServerCapabilities](#servercapabilities);\
+  [serverInfo](#initializeresult-serverinfo): [Implementation](#implementation);\
+  [instructions](#initializeresult-instructions)?: string;\
+  \[key: string\]: unknown;\
 }
 
 After receiving an initialize request from the client, the server sends this response.
@@ -944,15 +864,13 @@ Instructions describing how to use the server and its features.
 This can be used by clients to improve the LLM’s understanding of available tools, resources, etc. It can be thought of like a “hint” to the model. For example, this information MAY be added to the system prompt.
 
 
-[​](#clientcapabilities)
-
 `ClientCapabilities`
 
 interface ClientCapabilities {\
-  [experimental](#clientcapabilities-experimental)?: { \[key: string\]: object };\
-  [roots](#clientcapabilities-roots)?: { listChanged?: boolean };\
-  [sampling](#clientcapabilities-sampling)?: object;\
-  [elicitation](#clientcapabilities-elicitation)?: object;\
+  [experimental](#clientcapabilities-experimental)?: { \[key: string\]: object };\
+  [roots](#clientcapabilities-roots)?: { listChanged?: boolean };\
+  [sampling](#clientcapabilities-sampling)?: object;\
+  [elicitation](#clientcapabilities-elicitation)?: object;\
 }
 
 Capabilities a client may support. Known capabilities are defined here, in this schema, but this is not a closed set: any client can define its own, additional capabilities.
@@ -980,14 +898,12 @@ elicitation?: object[](#clientcapabilities-elicitation)
 Present if the client supports elicitation from the server.
 
 
-[​](#implementation)
-
 `Implementation`
 
 interface Implementation {\
-  [name](#implementation-name): string;\
-  [title](#implementation-title)?: string;\
-  [version](#implementation-version): string;\
+  [name](#implementation-name): string;\
+  [title](#implementation-title)?: string;\
+  [version](#implementation-version): string;\
 }
 
 Describes the name and version of an MCP implementation, with an optional title for UI representation.
@@ -1009,17 +925,15 @@ Inherited from BaseMetadata.title
 version: string[](#implementation-version)
 
 
-[​](#servercapabilities)
-
 `ServerCapabilities`
 
 interface ServerCapabilities {\
-  [experimental](#servercapabilities-experimental)?: { \[key: string\]: object };\
-  [logging](#servercapabilities-logging)?: object;\
-  [completions](#servercapabilities-completions)?: object;\
-  [prompts](#servercapabilities-prompts)?: { listChanged?: boolean };\
-  [resources](#servercapabilities-resources)?: { subscribe?: boolean; listChanged?: boolean };\
-  [tools](#servercapabilities-tools)?: { listChanged?: boolean };\
+  [experimental](#servercapabilities-experimental)?: { \[key: string\]: object };\
+  [logging](#servercapabilities-logging)?: object;\
+  [completions](#servercapabilities-completions)?: object;\
+  [prompts](#servercapabilities-prompts)?: { listChanged?: boolean };\
+  [resources](#servercapabilities-resources)?: { subscribe?: boolean; listChanged?: boolean };\
+  [tools](#servercapabilities-tools)?: { listChanged?: boolean };\
 }
 
 Capabilities that a server may support. Known capabilities are defined here, in this schema, but this is not a closed set: any server can define its own, additional capabilities.
@@ -1071,18 +985,14 @@ Type Declaration
   Whether this server supports notifications for changes to the tool list.
 
 
-[​](#logging/setlevel)
-
 `logging/setLevel`
 
-
-[​](#setlevelrequest)
 
 `SetLevelRequest`
 
 interface SetLevelRequest {\
-  [method](#setlevelrequest-method): “logging/setLevel”;\
-  [params](#setlevelrequest-params): { level: [LoggingLevel](#logginglevel) };\
+  [method](#setlevelrequest-method): “logging/setLevel”;\
+  [params](#setlevelrequest-params): { level: [LoggingLevel](#logginglevel) };\
 }
 
 A request from the client to the server, to enable or adjust logging.
@@ -1102,18 +1012,14 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#notifications/cancelled)
-
 `notifications/cancelled`
 
-
-[​](#cancellednotification)
 
 `CancelledNotification`
 
 interface CancelledNotification {\
-  [method](#cancellednotification-method): “notifications/cancelled”;\
-  [params](#cancellednotification-params): { requestId: [RequestId](#requestid); reason?: string };\
+  [method](#cancellednotification-method): “notifications/cancelled”;\
+  [params](#cancellednotification-params): { requestId: [RequestId](#requestid); reason?: string };\
 }
 
 This notification can be sent by either side to indicate that it is cancelling a previously-issued request.
@@ -1145,18 +1051,14 @@ Type Declaration
 Overrides Notification.params
 
 
-[​](#notifications/initialized)
-
 `notifications/initialized`
 
-
-[​](#initializednotification)
 
 `InitializedNotification`
 
 interface InitializedNotification {\
-  [params](#initializednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
-  [method](#initializednotification-method): “notifications/initialized”;\
+  [params](#initializednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
+  [method](#initializednotification-method): “notifications/initialized”;\
 }
 
 This notification is sent from the client to the server after initialization has finished.
@@ -1178,18 +1080,14 @@ method: “notifications/initialized”[](#initializednotification-method)
 Overrides Notification.method
 
 
-[​](#notifications/message)
-
 `notifications/message`
 
-
-[​](#loggingmessagenotification)
 
 `LoggingMessageNotification`
 
 interface LoggingMessageNotification {\
-  [method](#loggingmessagenotification-method): “notifications/message”;\
-  [params](#loggingmessagenotification-params): { level: [LoggingLevel](#logginglevel); logger?: string; data: unknown };\
+  [method](#loggingmessagenotification-method): “notifications/message”;\
+  [params](#loggingmessagenotification-params): { level: [LoggingLevel](#logginglevel); logger?: string; data: unknown };\
 }
 
 Notification of a log message passed from server to client. If no logging/setLevel request has been sent from the client, the server MAY decide which messages to send automatically.
@@ -1217,23 +1115,19 @@ Type Declaration
 Overrides Notification.params
 
 
-[​](#notifications/progress)
-
 `notifications/progress`
 
-
-[​](#progressnotification)
 
 `ProgressNotification`
 
 interface ProgressNotification {\
-  [method](#progressnotification-method): “notifications/progress”;\
-  [params](#progressnotification-params): {\
-    progressToken: [ProgressToken](#progresstoken);\
-    progress: number;\
-    total?: number;\
-    message?: string;\
-  };\
+  [method](#progressnotification-method): “notifications/progress”;\
+  [params](#progressnotification-params): {\
+    progressToken: [ProgressToken](#progresstoken);\
+    progress: number;\
+    total?: number;\
+    message?: string;\
+  };\
 }
 
 An out-of-band notification used to inform the receiver of a progress update for a long-running request.
@@ -1265,18 +1159,14 @@ Type Declaration
 Overrides Notification.params
 
 
-[​](#notifications/prompts/list_changed)
-
 `notifications/prompts/list_changed`
 
-
-[​](#promptlistchangednotification)
 
 `PromptListChangedNotification`
 
 interface PromptListChangedNotification {\
-  [params](#promptlistchangednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
-  [method](#promptlistchangednotification-method): “notifications/prompts/list_changed”;\
+  [params](#promptlistchangednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
+  [method](#promptlistchangednotification-method): “notifications/prompts/list_changed”;\
 }
 
 An optional notification from the server to the client, informing it that the list of prompts it offers has changed. This may be issued by servers without any previous subscription from the client.
@@ -1298,18 +1188,14 @@ method: “notifications/prompts/list_changed”[](#promptlistchangednotificatio
 Overrides Notification.method
 
 
-[​](#notifications/resources/list_changed)
-
 `notifications/resources/list_changed`
 
-
-[​](#resourcelistchangednotification)
 
 `ResourceListChangedNotification`
 
 interface ResourceListChangedNotification {\
-  [params](#resourcelistchangednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
-  [method](#resourcelistchangednotification-method): “notifications/resources/list_changed”;\
+  [params](#resourcelistchangednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
+  [method](#resourcelistchangednotification-method): “notifications/resources/list_changed”;\
 }
 
 An optional notification from the server to the client, informing it that the list of resources it can read from has changed. This may be issued by servers without any previous subscription from the client.
@@ -1331,18 +1217,14 @@ method: “notifications/resources/list_changed”[](#resourcelistchangednotific
 Overrides Notification.method
 
 
-[​](#notifications/resources/updated)
-
 `notifications/resources/updated`
 
-
-[​](#resourceupdatednotification)
 
 `ResourceUpdatedNotification`
 
 interface ResourceUpdatedNotification {\
-  [method](#resourceupdatednotification-method): “notifications/resources/updated”;\
-  [params](#resourceupdatednotification-params): { uri: string };\
+  [method](#resourceupdatednotification-method): “notifications/resources/updated”;\
+  [params](#resourceupdatednotification-params): { uri: string };\
 }
 
 A notification from the server to the client, informing it that a resource has changed and may need to be read again. This should only be sent if the client previously sent a resources/subscribe request.
@@ -1362,18 +1244,14 @@ Type Declaration
 Overrides Notification.params
 
 
-[​](#notifications/roots/list_changed)
-
 `notifications/roots/list_changed`
 
-
-[​](#rootslistchangednotification)
 
 `RootsListChangedNotification`
 
 interface RootsListChangedNotification {\
-  [params](#rootslistchangednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
-  [method](#rootslistchangednotification-method): “notifications/roots/list_changed”;\
+  [params](#rootslistchangednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
+  [method](#rootslistchangednotification-method): “notifications/roots/list_changed”;\
 }
 
 A notification from the client to the server, informing it that the list of roots has changed. This notification should be sent whenever the client adds, removes, or modifies any root. The server should then request an updated list of roots using the ListRootsRequest.
@@ -1395,18 +1273,14 @@ method: “notifications/roots/list_changed”[](#rootslistchangednotification-m
 Overrides Notification.method
 
 
-[​](#notifications/tools/list_changed)
-
 `notifications/tools/list_changed`
 
-
-[​](#toollistchangednotification)
 
 `ToolListChangedNotification`
 
 interface ToolListChangedNotification {\
-  [params](#toollistchangednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
-  [method](#toollistchangednotification-method): “notifications/tools/list_changed”;\
+  [params](#toollistchangednotification-params)?: { \_meta?: { \[key: string\]: unknown }; \[key: string\]: unknown };\
+  [method](#toollistchangednotification-method): “notifications/tools/list_changed”;\
 }
 
 An optional notification from the server to the client, informing it that the list of tools it offers has changed. This may be issued by servers without any previous subscription from the client.
@@ -1428,21 +1302,17 @@ method: “notifications/tools/list_changed”[](#toollistchangednotification-me
 Overrides Notification.method
 
 
-[​](#ping)
-
 `ping`
 
-
-[​](#pingrequest)
 
 `PingRequest`
 
 interface PingRequest {\
-  [params](#pingrequest-params)?: {\
-    \_meta?: { progressToken?: [ProgressToken](#progresstoken); \[key: string\]: unknown };\
-    \[key: string\]: unknown;\
-  };\
-  [method](#pingrequest-method): “ping”;\
+  [params](#pingrequest-params)?: {\
+    \_meta?: { progressToken?: [ProgressToken](#progresstoken); \[key: string\]: unknown };\
+    \[key: string\]: unknown;\
+  };\
+  [method](#pingrequest-method): “ping”;\
 }
 
 A ping, issued by either the server or the client, to check that the other party is still alive. The receiver must promptly respond, or else may be disconnected.
@@ -1468,18 +1338,14 @@ method: “ping”[](#pingrequest-method)
 Overrides Request.method
 
 
-[​](#prompts/get)
-
 `prompts/get`
 
-
-[​](#getpromptrequest)
 
 `GetPromptRequest`
 
 interface GetPromptRequest {\
-  [method](#getpromptrequest-method): “prompts/get”;\
-  [params](#getpromptrequest-params): { name: string; arguments?: { \[key: string\]: string } };\
+  [method](#getpromptrequest-method): “prompts/get”;\
+  [params](#getpromptrequest-params): { name: string; arguments?: { \[key: string\]: string } };\
 }
 
 Used by the client to get a prompt provided by the server.
@@ -1503,15 +1369,13 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#getpromptresult)
-
 `GetPromptResult`
 
 interface GetPromptResult {\
-  [\_meta](#getpromptresult-_meta)?: { \[key: string\]: unknown };\
-  [description](#getpromptresult-description)?: string;\
-  [messages](#getpromptresult-messages): [PromptMessage](#promptmessage)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#getpromptresult-_meta)?: { \[key: string\]: unknown };\
+  [description](#getpromptresult-description)?: string;\
+  [messages](#getpromptresult-messages): [PromptMessage](#promptmessage)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The server’s response to a prompts/get request from the client.
@@ -1529,13 +1393,11 @@ An optional description for the prompt.
 messages: PromptMessage\[\][](#getpromptresult-messages)
 
 
-[​](#promptmessage)
-
 `PromptMessage`
 
 interface PromptMessage {\
-  [role](#promptmessage-role): [Role](#role);\
-  [content](#promptmessage-content): [ContentBlock](#contentblock);\
+  [role](#promptmessage-role): [Role](#role);\
+  [content](#promptmessage-content): [ContentBlock](#contentblock);\
 }
 
 Describes a message returned as part of a prompt.
@@ -1547,18 +1409,14 @@ role: Role[](#promptmessage-role)
 content: ContentBlock[](#promptmessage-content)
 
 
-[​](#prompts/list)
-
 `prompts/list`
 
-
-[​](#listpromptsrequest)
 
 `ListPromptsRequest`
 
 interface ListPromptsRequest {\
-  [params](#listpromptsrequest-params)?: { cursor?: string };\
-  [method](#listpromptsrequest-method): “prompts/list”;\
+  [params](#listpromptsrequest-params)?: { cursor?: string };\
+  [method](#listpromptsrequest-method): “prompts/list”;\
 }
 
 Sent from the client to request a list of prompts and prompt templates the server has.
@@ -1578,15 +1436,13 @@ method: “prompts/list”[](#listpromptsrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listpromptsresult)
-
 `ListPromptsResult`
 
 interface ListPromptsResult {\
-  [\_meta](#listpromptsresult-_meta)?: { \[key: string\]: unknown };\
-  [nextCursor](#listpromptsresult-nextcursor)?: string;\
-  [prompts](#listpromptsresult-prompts): [Prompt](#prompt)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listpromptsresult-_meta)?: { \[key: string\]: unknown };\
+  [nextCursor](#listpromptsresult-nextcursor)?: string;\
+  [prompts](#listpromptsresult-prompts): [Prompt](#prompt)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The server’s response to a prompts/list request from the client.
@@ -1606,16 +1462,14 @@ Inherited from PaginatedResult.nextCursor
 prompts: Prompt\[\][](#listpromptsresult-prompts)
 
 
-[​](#prompt)
-
 `Prompt`
 
 interface Prompt {\
-  [name](#prompt-name): string;\
-  [title](#prompt-title)?: string;\
-  [description](#prompt-description)?: string;\
-  [arguments](#prompt-arguments)?: [PromptArgument](#promptargument)\[\];\
-  [\_meta](#prompt-_meta)?: { \[key: string\]: unknown };\
+  [name](#prompt-name): string;\
+  [title](#prompt-title)?: string;\
+  [description](#prompt-description)?: string;\
+  [arguments](#prompt-arguments)?: [PromptArgument](#promptargument)\[\];\
+  [\_meta](#prompt-_meta)?: { \[key: string\]: unknown };\
 }
 
 A prompt or prompt template that the server offers.
@@ -1647,15 +1501,13 @@ A list of arguments to use for templating the prompt.
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#promptargument)
-
 `PromptArgument`
 
 interface PromptArgument {\
-  [name](#promptargument-name): string;\
-  [title](#promptargument-title)?: string;\
-  [description](#promptargument-description)?: string;\
-  [required](#promptargument-required)?: boolean;\
+  [name](#promptargument-name): string;\
+  [title](#promptargument-title)?: string;\
+  [description](#promptargument-description)?: string;\
+  [required](#promptargument-required)?: boolean;\
 }
 
 Describes an argument that a prompt can accept.
@@ -1683,18 +1535,14 @@ required?: boolean[](#promptargument-required)
 Whether this argument must be provided.
 
 
-[​](#resources/list)
-
 `resources/list`
 
-
-[​](#listresourcesrequest)
 
 `ListResourcesRequest`
 
 interface ListResourcesRequest {\
-  [params](#listresourcesrequest-params)?: { cursor?: string };\
-  [method](#listresourcesrequest-method): “resources/list”;\
+  [params](#listresourcesrequest-params)?: { cursor?: string };\
+  [method](#listresourcesrequest-method): “resources/list”;\
 }
 
 Sent from the client to request a list of resources the server has.
@@ -1714,15 +1562,13 @@ method: “resources/list”[](#listresourcesrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listresourcesresult)
-
 `ListResourcesResult`
 
 interface ListResourcesResult {\
-  [\_meta](#listresourcesresult-_meta)?: { \[key: string\]: unknown };\
-  [nextCursor](#listresourcesresult-nextcursor)?: string;\
-  [resources](#listresourcesresult-resources): [Resource](#resource)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listresourcesresult-_meta)?: { \[key: string\]: unknown };\
+  [nextCursor](#listresourcesresult-nextcursor)?: string;\
+  [resources](#listresourcesresult-resources): [Resource](#resource)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The server’s response to a resources/list request from the client.
@@ -1742,19 +1588,17 @@ Inherited from PaginatedResult.nextCursor
 resources: Resource\[\][](#listresourcesresult-resources)
 
 
-[​](#resource)
-
 `Resource`
 
 interface Resource {\
-  [name](#resource-name): string;\
-  [title](#resource-title)?: string;\
-  [uri](#resource-uri): string;\
-  [description](#resource-description)?: string;\
-  [mimeType](#resource-mimetype)?: string;\
-  [annotations](#resource-annotations)?: [Annotations](#annotations);\
-  [size](#resource-size)?: number;\
-  [\_meta](#resource-_meta)?: { \[key: string\]: unknown };\
+  [name](#resource-name): string;\
+  [title](#resource-title)?: string;\
+  [uri](#resource-uri): string;\
+  [description](#resource-description)?: string;\
+  [mimeType](#resource-mimetype)?: string;\
+  [annotations](#resource-annotations)?: [Annotations](#annotations);\
+  [size](#resource-size)?: number;\
+  [\_meta](#resource-_meta)?: { \[key: string\]: unknown };\
 }
 
 A known resource that the server is capable of reading.
@@ -1802,18 +1646,14 @@ This can be used by Hosts to display file sizes and estimate context window usag
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#resources/read)
-
 `resources/read`
 
-
-[​](#readresourcerequest)
 
 `ReadResourceRequest`
 
 interface ReadResourceRequest {\
-  [method](#readresourcerequest-method): “resources/read”;\
-  [params](#readresourcerequest-params): { uri: string };\
+  [method](#readresourcerequest-method): “resources/read”;\
+  [params](#readresourcerequest-params): { uri: string };\
 }
 
 Sent from the client to the server, to read a specific resource URI.
@@ -1833,14 +1673,12 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#readresourceresult)
-
 `ReadResourceResult`
 
 interface ReadResourceResult {\
-  [\_meta](#readresourceresult-_meta)?: { \[key: string\]: unknown };\
-  [contents](#readresourceresult-contents): ([TextResourceContents](#textresourcecontents) \| [BlobResourceContents](#blobresourcecontents))\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#readresourceresult-_meta)?: { \[key: string\]: unknown };\
+  [contents](#readresourceresult-contents): ([TextResourceContents](#textresourcecontents) \| [BlobResourceContents](#blobresourcecontents))\[\];\
+  \[key: string\]: unknown;\
 }
 
 The server’s response to a resources/read request from the client.
@@ -1854,18 +1692,14 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 contents: (TextResourceContents \| BlobResourceContents)\[\][](#readresourceresult-contents)
 
 
-[​](#resources/subscribe)
-
 `resources/subscribe`
 
-
-[​](#subscriberequest)
 
 `SubscribeRequest`
 
 interface SubscribeRequest {\
-  [method](#subscriberequest-method): “resources/subscribe”;\
-  [params](#subscriberequest-params): { uri: string };\
+  [method](#subscriberequest-method): “resources/subscribe”;\
+  [params](#subscriberequest-params): { uri: string };\
 }
 
 Sent from the client to request resources/updated notifications from the server whenever a particular resource changes.
@@ -1885,18 +1719,14 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#resources/templates/list)
-
 `resources/templates/list`
 
-
-[​](#listresourcetemplatesrequest)
 
 `ListResourceTemplatesRequest`
 
 interface ListResourceTemplatesRequest {\
-  [params](#listresourcetemplatesrequest-params)?: { cursor?: string };\
-  [method](#listresourcetemplatesrequest-method): “resources/templates/list”;\
+  [params](#listresourcetemplatesrequest-params)?: { cursor?: string };\
+  [method](#listresourcetemplatesrequest-method): “resources/templates/list”;\
 }
 
 Sent from the client to request a list of resource templates the server has.
@@ -1916,15 +1746,13 @@ method: “resources/templates/list”[](#listresourcetemplatesrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listresourcetemplatesresult)
-
 `ListResourceTemplatesResult`
 
 interface ListResourceTemplatesResult {\
-  [\_meta](#listresourcetemplatesresult-_meta)?: { \[key: string\]: unknown };\
-  [nextCursor](#listresourcetemplatesresult-nextcursor)?: string;\
-  [resourceTemplates](#listresourcetemplatesresult-resourcetemplates): [ResourceTemplate](#resourcetemplate)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listresourcetemplatesresult-_meta)?: { \[key: string\]: unknown };\
+  [nextCursor](#listresourcetemplatesresult-nextcursor)?: string;\
+  [resourceTemplates](#listresourcetemplatesresult-resourcetemplates): [ResourceTemplate](#resourcetemplate)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The server’s response to a resources/templates/list request from the client.
@@ -1944,18 +1772,16 @@ Inherited from PaginatedResult.nextCursor
 resourceTemplates: ResourceTemplate\[\][](#listresourcetemplatesresult-resourcetemplates)
 
 
-[​](#resourcetemplate)
-
 `ResourceTemplate`
 
 interface ResourceTemplate {\
-  [name](#resourcetemplate-name): string;\
-  [title](#resourcetemplate-title)?: string;\
-  [uriTemplate](#resourcetemplate-uritemplate): string;\
-  [description](#resourcetemplate-description)?: string;\
-  [mimeType](#resourcetemplate-mimetype)?: string;\
-  [annotations](#resourcetemplate-annotations)?: [Annotations](#annotations);\
-  [\_meta](#resourcetemplate-_meta)?: { \[key: string\]: unknown };\
+  [name](#resourcetemplate-name): string;\
+  [title](#resourcetemplate-title)?: string;\
+  [uriTemplate](#resourcetemplate-uritemplate): string;\
+  [description](#resourcetemplate-description)?: string;\
+  [mimeType](#resourcetemplate-mimetype)?: string;\
+  [annotations](#resourcetemplate-annotations)?: [Annotations](#annotations);\
+  [\_meta](#resourcetemplate-_meta)?: { \[key: string\]: unknown };\
 }
 
 A template description for resources available on the server.
@@ -1997,18 +1823,14 @@ Optional annotations for the client.
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#resources/unsubscribe)
-
 `resources/unsubscribe`
 
-
-[​](#unsubscriberequest)
 
 `UnsubscribeRequest`
 
 interface UnsubscribeRequest {\
-  [method](#unsubscriberequest-method): “resources/unsubscribe”;\
-  [params](#unsubscriberequest-params): { uri: string };\
+  [method](#unsubscriberequest-method): “resources/unsubscribe”;\
+  [params](#unsubscriberequest-params): { uri: string };\
 }
 
 Sent from the client to request cancellation of resources/updated notifications from the server. This should follow a previous resources/subscribe request.
@@ -2028,21 +1850,17 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#roots/list)
-
 `roots/list`
 
-
-[​](#listrootsrequest)
 
 `ListRootsRequest`
 
 interface ListRootsRequest {\
-  [params](#listrootsrequest-params)?: {\
-    \_meta?: { progressToken?: [ProgressToken](#progresstoken); \[key: string\]: unknown };\
-    \[key: string\]: unknown;\
-  };\
-  [method](#listrootsrequest-method): “roots/list”;\
+  [params](#listrootsrequest-params)?: {\
+    \_meta?: { progressToken?: [ProgressToken](#progresstoken); \[key: string\]: unknown };\
+    \[key: string\]: unknown;\
+  };\
+  [method](#listrootsrequest-method): “roots/list”;\
 }
 
 Sent from the server to request a list of root URIs from the client. Roots allow servers to ask for specific directories or files to operate on. A common example for roots is providing a set of repositories or directories a server should operate on.
@@ -2070,14 +1888,12 @@ method: “roots/list”[](#listrootsrequest-method)
 Overrides Request.method
 
 
-[​](#listrootsresult)
-
 `ListRootsResult`
 
 interface ListRootsResult {\
-  [\_meta](#listrootsresult-_meta)?: { \[key: string\]: unknown };\
-  [roots](#listrootsresult-roots): [Root](#root)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listrootsresult-_meta)?: { \[key: string\]: unknown };\
+  [roots](#listrootsresult-roots): [Root](#root)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The client’s response to a roots/list request from the server. This result contains an array of Root objects, each representing a root directory or file that the server can operate on.
@@ -2091,14 +1907,12 @@ Inherited from [Result](#result).[\_meta](#result-_meta)
 roots: Root\[\][](#listrootsresult-roots)
 
 
-[​](#root)
-
 `Root`
 
 interface Root {\
-  [uri](#root-uri): string;\
-  [name](#root-name)?: string;\
-  [\_meta](#root-_meta)?: { \[key: string\]: unknown };\
+  [uri](#root-uri): string;\
+  [name](#root-name)?: string;\
+  [\_meta](#root-_meta)?: { \[key: string\]: unknown };\
 }
 
 Represents a root directory or file that the server can operate on.
@@ -2116,27 +1930,23 @@ An optional name for the root. This can be used to provide a human-readable iden
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#sampling/createmessage)
-
 `sampling/createMessage`
 
-
-[​](#createmessagerequest)
 
 `CreateMessageRequest`
 
 interface CreateMessageRequest {\
-  [method](#createmessagerequest-method): “sampling/createMessage”;\
-  [params](#createmessagerequest-params): {\
-    messages: [SamplingMessage](#samplingmessage)\[\];\
-    modelPreferences?: [ModelPreferences](#modelpreferences);\
-    systemPrompt?: string;\
-    includeContext?: “none” \| “thisServer” \| “allServers”;\
-    temperature?: number;\
-    maxTokens: number;\
-    stopSequences?: string\[\];\
-    metadata?: object;\
-  };\
+  [method](#createmessagerequest-method): “sampling/createMessage”;\
+  [params](#createmessagerequest-params): {\
+    messages: [SamplingMessage](#samplingmessage)\[\];\
+    modelPreferences?: [ModelPreferences](#modelpreferences);\
+    systemPrompt?: string;\
+    includeContext?: “none” \| “thisServer” \| “allServers”;\
+    temperature?: number;\
+    maxTokens: number;\
+    stopSequences?: string\[\];\
+    metadata?: object;\
+  };\
 }
 
 A request from the server to sample an LLM via the client. The client has full discretion over which model to select. The client should also inform the user before beginning sampling, to allow them to inspect the request (human in the loop) and decide whether to approve it.
@@ -2180,17 +1990,15 @@ Type Declaration
 Overrides Request.params
 
 
-[​](#createmessageresult)
-
 `CreateMessageResult`
 
 interface CreateMessageResult {\
-  [\_meta](#createmessageresult-_meta)?: { \[key: string\]: unknown };\
-  [model](#createmessageresult-model): string;\
-  [stopReason](#createmessageresult-stopreason)?: string;\
-  [role](#createmessageresult-role): [Role](#role);\
-  [content](#createmessageresult-content): [TextContent](#textcontent) \| [ImageContent](#imagecontent) \| [AudioContent](#audiocontent);\
-  \[key: string\]: unknown;\
+  [\_meta](#createmessageresult-_meta)?: { \[key: string\]: unknown };\
+  [model](#createmessageresult-model): string;\
+  [stopReason](#createmessageresult-stopreason)?: string;\
+  [role](#createmessageresult-role): [Role](#role);\
+  [content](#createmessageresult-content): [TextContent](#textcontent) \| [ImageContent](#imagecontent) \| [AudioContent](#audiocontent);\
+  \[key: string\]: unknown;\
 }
 
 The client’s response to a sampling/create_message request from the server. The client should inform the user before returning the sampled message, to allow them to inspect the response (human in the loop) and decide whether to allow the server to see it.
@@ -2218,12 +2026,10 @@ content: TextContent \| ImageContent \| AudioContent[](#createmessageresult-cont
 Inherited from [SamplingMessage](#samplingmessage).[content](#samplingmessage-content)
 
 
-[​](#modelhint)
-
 `ModelHint`
 
 interface ModelHint {\
-  [name](#modelhint-name)?: string;\
+  [name](#modelhint-name)?: string;\
 }
 
 Hints to use for model selection.
@@ -2245,15 +2051,13 @@ The client MAY also map the string to a different provider’s model name or a d
 - `gemini-1.5-flash` could match `claude-3-haiku-20240307`
 
 
-[​](#modelpreferences)
-
 `ModelPreferences`
 
 interface ModelPreferences {\
-  [hints](#modelpreferences-hints)?: [ModelHint](#modelhint)\[\];\
-  [costPriority](#modelpreferences-costpriority)?: number;\
-  [speedPriority](#modelpreferences-speedpriority)?: number;\
-  [intelligencePriority](#modelpreferences-intelligencepriority)?: number;\
+  [hints](#modelpreferences-hints)?: [ModelHint](#modelhint)\[\];\
+  [costPriority](#modelpreferences-costpriority)?: number;\
+  [speedPriority](#modelpreferences-speedpriority)?: number;\
+  [intelligencePriority](#modelpreferences-intelligencepriority)?: number;\
 }
 
 The server’s preferences for model selection, requested of the client during sampling.
@@ -2283,13 +2087,11 @@ intelligencePriority?: number[](#modelpreferences-intelligencepriority)
 How much to prioritize intelligence and capabilities when selecting a model. A value of 0 means intelligence is not important, while a value of 1 means intelligence is the most important factor.
 
 
-[​](#samplingmessage)
-
 `SamplingMessage`
 
 interface SamplingMessage {\
-  [role](#samplingmessage-role): [Role](#role);\
-  [content](#samplingmessage-content): [TextContent](#textcontent) \| [ImageContent](#imagecontent) \| [AudioContent](#audiocontent);\
+  [role](#samplingmessage-role): [Role](#role);\
+  [content](#samplingmessage-content): [TextContent](#textcontent) \| [ImageContent](#imagecontent) \| [AudioContent](#audiocontent);\
 }
 
 Describes a message issued to or received from an LLM API.
@@ -2299,18 +2101,14 @@ role: Role[](#samplingmessage-role)
 content: TextContent \| ImageContent \| AudioContent[](#samplingmessage-content)
 
 
-[​](#tools/call)
-
 `tools/call`
 
-
-[​](#calltoolrequest)
 
 `CallToolRequest`
 
 interface CallToolRequest {\
-  [method](#calltoolrequest-method): “tools/call”;\
-  [params](#calltoolrequest-params): { name: string; arguments?: { \[key: string\]: unknown } };\
+  [method](#calltoolrequest-method): “tools/call”;\
+  [params](#calltoolrequest-params): { name: string; arguments?: { \[key: string\]: unknown } };\
 }
 
 Used by the client to invoke a tool provided by the server.
@@ -2324,16 +2122,14 @@ params: { name: string; arguments?: { \[key: string\]: unknown } }[](#calltoolre
 Overrides Request.params
 
 
-[​](#calltoolresult)
-
 `CallToolResult`
 
 interface CallToolResult {\
-  [\_meta](#calltoolresult-_meta)?: { \[key: string\]: unknown };\
-  [content](#calltoolresult-content): [ContentBlock](#contentblock)\[\];\
-  [structuredContent](#calltoolresult-structuredcontent)?: { \[key: string\]: unknown };\
-  [isError](#calltoolresult-iserror)?: boolean;\
-  \[key: string\]: unknown;\
+  [\_meta](#calltoolresult-_meta)?: { \[key: string\]: unknown };\
+  [content](#calltoolresult-content): [ContentBlock](#contentblock)\[\];\
+  [structuredContent](#calltoolresult-structuredcontent)?: { \[key: string\]: unknown };\
+  [isError](#calltoolresult-iserror)?: boolean;\
+  \[key: string\]: unknown;\
 }
 
 The server’s response to a tool call.
@@ -2363,18 +2159,14 @@ Any errors that originate from the tool SHOULD be reported inside the result obj
 However, any errors in *finding* the tool, an error indicating that the server does not support tool calls, or any other exceptional conditions, should be reported as an MCP error response.
 
 
-[​](#tools/list)
-
 `tools/list`
 
-
-[​](#listtoolsrequest)
 
 `ListToolsRequest`
 
 interface ListToolsRequest {\
-  [params](#listtoolsrequest-params)?: { cursor?: string };\
-  [method](#listtoolsrequest-method): “tools/list”;\
+  [params](#listtoolsrequest-params)?: { cursor?: string };\
+  [method](#listtoolsrequest-method): “tools/list”;\
 }
 
 Sent from the client to request a list of tools the server has.
@@ -2394,15 +2186,13 @@ method: “tools/list”[](#listtoolsrequest-method)
 Overrides PaginatedRequest.method
 
 
-[​](#listtoolsresult)
-
 `ListToolsResult`
 
 interface ListToolsResult {\
-  [\_meta](#listtoolsresult-_meta)?: { \[key: string\]: unknown };\
-  [nextCursor](#listtoolsresult-nextcursor)?: string;\
-  [tools](#listtoolsresult-tools): [Tool](#tool)\[\];\
-  \[key: string\]: unknown;\
+  [\_meta](#listtoolsresult-_meta)?: { \[key: string\]: unknown };\
+  [nextCursor](#listtoolsresult-nextcursor)?: string;\
+  [tools](#listtoolsresult-tools): [Tool](#tool)\[\];\
+  \[key: string\]: unknown;\
 }
 
 The server’s response to a tools/list request from the client.
@@ -2422,26 +2212,24 @@ Inherited from PaginatedResult.nextCursor
 tools: Tool\[\][](#listtoolsresult-tools)
 
 
-[​](#tool)
-
 `Tool`
 
 interface Tool {\
-  [name](#tool-name): string;\
-  [title](#tool-title)?: string;\
-  [description](#tool-description)?: string;\
-  [inputSchema](#tool-inputschema): {\
-    type: “object”;\
-    properties?: { \[key: string\]: object };\
-    required?: string\[\];\
-  };\
-  [outputSchema](#tool-outputschema)?: {\
-    type: “object”;\
-    properties?: { \[key: string\]: object };\
-    required?: string\[\];\
-  };\
-  [annotations](#tool-annotations)?: [ToolAnnotations](#toolannotations);\
-  [\_meta](#tool-_meta)?: { \[key: string\]: unknown };\
+  [name](#tool-name): string;\
+  [title](#tool-title)?: string;\
+  [description](#tool-description)?: string;\
+  [inputSchema](#tool-inputschema): {\
+    type: “object”;\
+    properties?: { \[key: string\]: object };\
+    required?: string\[\];\
+  };\
+  [outputSchema](#tool-outputschema)?: {\
+    type: “object”;\
+    properties?: { \[key: string\]: object };\
+    required?: string\[\];\
+  };\
+  [annotations](#tool-annotations)?: [ToolAnnotations](#toolannotations);\
+  [\_meta](#tool-_meta)?: { \[key: string\]: unknown };\
 }
 
 Definition for a tool the client can call.
@@ -2485,16 +2273,14 @@ Display name precedence order is: title, annotations.title, then name.
 See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.
 
 
-[​](#toolannotations)
-
 `ToolAnnotations`
 
 interface ToolAnnotations {\
-  [title](#toolannotations-title)?: string;\
-  [readOnlyHint](#toolannotations-readonlyhint)?: boolean;\
-  [destructiveHint](#toolannotations-destructivehint)?: boolean;\
-  [idempotentHint](#toolannotations-idempotenthint)?: boolean;\
-  [openWorldHint](#toolannotations-openworldhint)?: boolean;\
+  [title](#toolannotations-title)?: string;\
+  [readOnlyHint](#toolannotations-readonlyhint)?: boolean;\
+  [destructiveHint](#toolannotations-destructivehint)?: boolean;\
+  [idempotentHint](#toolannotations-idempotenthint)?: boolean;\
+  [openWorldHint](#toolannotations-openworldhint)?: boolean;\
 }
 
 Additional properties describing a Tool to clients.

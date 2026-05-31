@@ -17,8 +17,6 @@ For comprehensive API documentation, advanced patterns, and the full specificati
 Text responses can only go so far. Sometimes users need to interact with data, not just read about it. MCP Apps let servers return interactive HTML interfaces (data visualizations, forms, dashboards) that render directly in the chat.
 
 
-[​](#why-not-just-build-a-web-app)
-
 Why not just build a web app?
 
 You could build a standalone web app and send users a link. However, MCP Apps offer these key advantages that a separate page can’t match:
@@ -30,8 +28,6 @@ You could build a standalone web app and send users a link. However, MCP Apps of
 
 If your use case doesn’t benefit from these properties, a regular web app might be simpler. But if you want tight integration with the LLM-based conversation, MCP Apps are a much better tool.
 
-
-[​](#how-mcp-apps-work)
 
 How MCP Apps work
 
@@ -45,28 +41,20 @@ Traditional MCP tools return text, images, resources or structured data that the
 The app stays isolated from the host but can still call MCP tools through the secure postMessage channel.
 
 
-[​](#when-to-use-mcp-apps)
-
 When to use MCP Apps
 
 MCP Apps are a good fit when your use case involves: **Exploring complex data.** A user asks “show me sales by region.” A text response might list numbers, but an MCP App can render an interactive map where users click regions to drill down, hover for details, and toggle between metrics, all without additional prompts. **Configuring with many options.** Setting up a deployment involves dozens of interdependent choices. Rather than a back-and-forth conversation (“Which region?” “What instance size?” “Enable autoscaling?”), an MCP App presents a form where users see all options at once, with validation and defaults. **Viewing rich media.** When a user asks to review a PDF, see a 3D model, or preview generated images, text descriptions fall short. An MCP App embeds the actual viewer (pan, zoom, rotate) directly in the conversation. **Real-time monitoring.** A dashboard showing live metrics, logs, or system status needs continuous updates. An MCP App maintains a persistent connection, updating the display as data changes without requiring the user to ask “what’s the status now?” **Multi-step workflows.** Approving expense reports, reviewing code changes, or triaging issues involves examining items one by one. An MCP App provides navigation controls, action buttons, and state that persists across interactions.
 
-
-[​](#security-model)
 
 Security model
 
 MCP Apps run in a sandboxed [iframe](https://developer.mozilla.org/docs/Web/HTML/Element/iframe), which provides strong isolation from the host application. The sandbox prevents your app from accessing the parent window’s [DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model), reading the host’s cookies or local storage, navigating the parent page, or executing scripts in the parent context. All communication between your app and the host goes through the [postMessage API](https://developer.mozilla.org/docs/Web/API/Window/postMessage). The host controls which capabilities your app can access. For example, a host might restrict which tools an app can call or disable the `sendOpenLink` capability. The sandbox is designed to prevent apps from escaping to access the host or user data.
 
 
-[​](#framework-support)
-
 Framework support
 
 MCP Apps use their own dialect of MCP, built on JSON-RPC like the core protocol. Some messages are shared with regular MCP (e.g., `tools/call`), while others are specific to apps (e.g., `ui/initialize`). The transport is [postMessage](https://developer.mozilla.org/docs/Web/API/Window/postMessage) instead of stdio or HTTP. Since it’s all standard web primitives, you can use any framework or none at all. The `App` class from `@modelcontextprotocol/ext-apps` is a convenience wrapper, not a requirement. You can implement the [postMessage protocol](https://github.com/modelcontextprotocol/ext-apps/blob/main/specification/2026-01-26/apps.mdx) directly if you prefer to avoid dependencies or need tighter control. The [examples directory](https://github.com/modelcontextprotocol/ext-apps/tree/main/examples) includes starter templates for React, Vue, Svelte, Preact, Solid, and vanilla JavaScript. These demonstrate recommended patterns for each framework’s system, but they’re examples rather than requirements. You can choose whatever works best for your use case.
 
-
-[​](#client-support)
 
 Client support
 
@@ -79,8 +67,6 @@ MCP Apps are currently supported by [Claude](https://claude.ai), [Claude Desktop
 
 See the [API documentation](https://apps.extensions.modelcontextprotocol.io/api/) for implementation details.
 
-
-[​](#examples)
 
 Examples
 

@@ -28,14 +28,10 @@ FinalProcess
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP establishes the formal governance model for the Model Context Protocol (MCP) project. It defines the organizational structure, decision-making processes, and contribution guidelines necessary for transparent and effective project stewardship. The proposal introduces a hierarchical governance structure with clear roles and responsibilities, along with the Specification Enhancement Proposal (SEP) process for managing protocol changes.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -54,21 +50,15 @@ Without formal governance, the project risks:
 - Inability to effectively manage contributions at scale
 
 
-[​](#rationale)
-
 Rationale
 
 The proposed governance model draws inspiration from successful open source projects like Python, PyTorch, and Rust. Key design decisions include:
 
 
-[​](#hierarchical-structure)
-
 Hierarchical Structure
 
 We chose a hierarchical model (Contributors → Maintainers → Core Maintainers → Lead Maintainers) that is effectively how the project decisions are made today. From there we will continue to evolve governance in the best interest of the project.
 
-
-[​](#individual-vs-corporate-membership)
 
 Individual vs Corporate Membership
 
@@ -78,8 +68,6 @@ Membership is explicitly tied to individuals rather than companies to:
 - Prevent capture by any single organization
 - Maintain continuity when individuals change employers
 
-
-[​](#sep-process)
 
 SEP Process
 
@@ -91,25 +79,17 @@ The Specification Enhancement Proposal process ensures:
 - Implementation precedes finalization
 
 
-[​](#specification)
-
 Specification
 
 
-[​](#governance-structure)
-
 Governance Structure
 
-
-[​](#contributors)
 
 Contributors
 
 - Any individual who files issues, submits pull requests, or participates in discussions
 - No formal membership or approval required
 
-
-[​](#maintainers)
 
 Maintainers
 
@@ -118,8 +98,6 @@ Maintainers
 - Have write/admin access to their repositories
 - May establish component-specific processes
 
-
-[​](#core-maintainers)
 
 Core Maintainers
 
@@ -130,8 +108,6 @@ Core Maintainers
 - Current members listed in governance documentation
 
 
-[​](#lead-maintainers)
-
 Lead Maintainers
 
 - Justin Spahr-Summers and David Soria Parra
@@ -140,14 +116,10 @@ Lead Maintainers
 - Admin access to all infrastructure
 
 
-[​](#backwards-compatibility)
-
 Backwards Compatibility
 
 N/A
 
-
-[​](#reference-implementation)
 
 Reference Implementation
 
@@ -157,8 +129,6 @@ See \#931
     - `/docs/community/governance.mdx` - Full governance documentation
     - `/docs/community/sep-guidelines.mdx` - SEP process guidelines
 
-
-[​](#security-implications)
 
 Security Implications
 

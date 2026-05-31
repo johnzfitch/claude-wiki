@@ -1,8 +1,9 @@
 ---
+title: "Customize your status line - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/statusline"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:23:12Z"
-source_url: "https://code.claude.com/docs/en/statusline"
-title: "Customize your status line - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Customize your status line
@@ -29,14 +30,10 @@ Here’s an example of a [multi-line status line](#display-multiple-lines) that 
 This page walks through [setting up a basic status line](#set-up-a-status-line), explains [how the data flows](#how-status-lines-work) from Claude Code to your script, lists [all the fields you can display](#available-data), and provides [ready-to-use examples](#examples) for common patterns like git status, cost tracking, and progress bars.
 
 
-[​](#set-up-a-status-line)
-
 Set up a status line
 
 Use the [`/statusline` command](#use-the-%2Fstatusline-command) to have Claude Code generate a script for you, or [manually create a script](#manually-configure-a-status-line) and add it to your settings.
 
-
-[​](#use-the-/statusline-command)
 
 Use the /statusline command
 
@@ -46,8 +43,6 @@ The `/statusline` command accepts natural language instructions describing what 
 /statusline show model name and context percentage with a progress bar
 ```
 
-
-[​](#manually-configure-a-status-line)
 
 Manually configure a status line
 
@@ -77,14 +72,10 @@ The `command` field runs in a shell, so you can also use inline commands instead
 The optional `padding` field adds extra horizontal spacing (in characters) to the status line content. Defaults to `0`. This padding is in addition to the interface’s built-in spacing, so it controls relative indentation rather than absolute distance from the terminal edge. The optional `refreshInterval` field re-runs your command every N seconds in addition to the [event-driven updates](#how-status-lines-work). The minimum is `1`. Set this when your status line shows time-based data such as a clock, or when background subagents change git state while the main session is idle. Leave it unset to run only on events. The optional `hideVimModeIndicator` field suppresses the built-in `-- INSERT --` text below the prompt. Set this to `true` when your script renders [`vim.mode`](#available-data) itself, so the mode is not shown twice.
 
 
-[​](#disable-the-status-line)
-
 Disable the status line
 
 Run `/statusline` and ask it to remove or clear your status line (e.g., `/statusline delete`, `/statusline clear`, `/statusline remove it`). You can also manually delete the `statusLine` field from your settings.json.
 
-
-[​](#build-a-status-line-step-by-step)
 
 Build a status line step by step
 
@@ -146,8 +137,6 @@ Tell Claude Code to run your script as the status line. Add this configuration t
 Your status line appears at the bottom of the interface. Settings reload automatically, but changes won’t appear until your next interaction with Claude Code.
 
 
-[​](#how-status-lines-work)
-
 How status lines work
 
 Claude Code runs your script and pipes [JSON session data](#available-data) to it via stdin. Your script reads the JSON, extracts what it needs, and prints text to stdout. Claude Code displays whatever your script prints. **When it updates** Your script runs after each new assistant message, after `/compact` finishes, when the permission mode changes, or when vim mode toggles. Updates are debounced at 300ms, meaning rapid changes batch together and your script runs once things settle. If a new update triggers while your script is still running, the in-flight execution is cancelled. If you edit your script, the changes won’t appear until your next interaction with Claude Code triggers an update. These triggers can go quiet when the main session is idle, for example while a coordinator waits on background subagents. To keep time-based or externally-sourced segments current during idle periods, set [`refreshInterval`](#manually-configure-a-status-line) to also re-run the command on a fixed timer. **What your script can output**
@@ -158,8 +147,6 @@ Claude Code runs your script and pipes [JSON session data](#available-data) to i
 
 The status line runs locally and does not consume API tokens. It temporarily hides during certain UI interactions, including autocomplete suggestions, the help menu, and permission prompts.
 
-
-[​](#available-data)
 
 Available data
 
@@ -294,8 +281,6 @@ Your status line command receives this JSON structure via stdin:
 Handle missing fields with conditional access and null values with fallback defaults in your scripts.
 
 
-[​](#context-window-fields)
-
 Context window fields
 
 The `context_window` object describes the live context window from the most recent API response. As of v2.1.132, `total_input_tokens` and `total_output_tokens` reflect current context usage, not cumulative session totals.
@@ -313,8 +298,6 @@ The `current_usage` object contains:
 For what the cache fields mean and how they’re billed, see [check cache performance](/docs/en/prompt-caching#check-cache-performance). The `used_percentage` field is calculated from input tokens only: `input_tokens + cache_creation_input_tokens + cache_read_input_tokens`. It does not include `output_tokens`. If you calculate context percentage manually from `current_usage`, use the same input-only formula to match `used_percentage`. The `current_usage` object is `null` before the first API call in a session, and again immediately after `/compact` until the next API call repopulates it.
 
 
-[​](#examples)
-
 Examples
 
 These examples show common status line patterns. To use any example:
@@ -325,8 +308,6 @@ These examples show common status line patterns. To use any example:
 
 The Bash examples use [`jq`](https://jqlang.github.io/jq/) to parse JSON. Python and Node.js have built-in JSON parsing.
 
-
-[​](#context-window-usage)
 
 Context window usage
 
@@ -359,8 +340,6 @@ BAR=""
 echo "[$MODEL] $BAR $PCT%"
 ```
 
-
-[​](#git-status-with-colors)
 
 Git status with colors
 
@@ -401,8 +380,6 @@ fi
 ```
 
 
-[​](#cost-and-duration-tracking)
-
 Cost and duration tracking
 
 Track your session’s API costs and elapsed time. The `cost.total_cost_usd` field accumulates the estimated cost of all API calls in the current session. The `cost.total_duration_ms` field measures total elapsed time since the session started, while `cost.total_api_duration_ms` tracks only the time spent waiting for API responses. Each script formats cost as currency and converts milliseconds to minutes and seconds:
@@ -429,8 +406,6 @@ SECS=$((DURATION_SEC % 60))
 echo "[$MODEL] 💰 $COST_FMT | ⏱️ ${MINS}m ${SECS}s"
 ```
 
-
-[​](#display-multiple-lines)
 
 Display multiple lines
 
@@ -476,8 +451,6 @@ echo -e "${BAR_COLOR}${BAR}${RESET} ${PCT}% | ${YELLOW}${COST_FMT}${RESET} | ⏱
 ```
 
 
-[​](#clickable-links)
-
 Clickable links
 
 This example creates a clickable link to your GitHub repository. It reads the git remote URL, converts SSH format to HTTPS with `sed`, and wraps the repo name in OSC 8 escape codes. Hold Cmd (macOS) or Ctrl (Windows/Linux) and click to open the link in your browser.
@@ -510,8 +483,6 @@ fi
 ```
 
 
-[​](#rate-limit-usage)
-
 Rate limit usage
 
 Display Claude.ai subscription rate limit usage in the status line. The `rate_limits` object contains `five_hour` (5-hour rolling window) and `seven_day` (weekly) windows. Each window provides `used_percentage` (0-100) and `resets_at` (Unix epoch seconds when the window resets). This field is only present for Claude.ai subscribers (Pro/Max) after the first API response. Each script handles the absent field gracefully:
@@ -538,8 +509,6 @@ LIMITS=""
 [ -n "$LIMITS" ] && echo "[$MODEL] | $LIMITS" || echo "[$MODEL]"
 ```
 
-
-[​](#cache-expensive-operations)
 
 Cache expensive operations
 
@@ -589,8 +558,6 @@ fi
 ```
 
 
-[​](#windows-configuration)
-
 Windows configuration
 
 On Windows, Claude Code runs status line commands through Git Bash when Git Bash is installed, or through PowerShell when Git Bash is absent. Git Bash treats unquoted backslashes as escape characters, so a Windows-style path such as `C:\Users\username\script.mjs` reaches the script runner with its separators removed and the command fails without a visible error. Write file paths in the `command` string with forward slashes, as shown in the examples below. The `~` shorthand also works and expands to your Windows home directory. To run a PowerShell script as your status line, invoke it via `powershell`. This works whether Claude Code routes the command through Git Bash or PowerShell:
@@ -624,8 +591,6 @@ statusline.sh
 ```
 
 
-[​](#subagent-status-lines)
-
 Subagent status lines
 
 The `subagentStatusLine` setting renders a custom row body for each [subagent](/docs/en/sub-agents) shown in the agent panel below the prompt. Use it to replace the default `name · description · token count` row with your own formatting.
@@ -642,8 +607,6 @@ The `subagentStatusLine` setting renders a custom row body for each [subagent](/
 The command runs once per refresh tick with all visible subagent rows passed as a single JSON object on stdin. The input includes the [base hook fields](/docs/en/hooks#common-input-fields) plus `columns` (the usable row width) and a `tasks` array, where each task has `id`, `name`, `type`, `status`, `description`, `label`, `startTime`, `tokenCount`, `tokenSamples`, and `cwd`. Write one JSON line to stdout per row you want to override, in the form `{"id": "<task id>", "content": "<row body>"}`. The `content` string is rendered as-is, including ANSI colors and OSC 8 hyperlinks. Omit a task’s `id` to keep the default rendering for that row; emit an empty `content` string to hide it. The same trust and `disableAllHooks` gates that apply to `statusLine` apply here. Plugins can ship a default `subagentStatusLine` in their [`settings.json`](/docs/en/plugins-reference#standard-plugin-layout).
 
 
-[​](#tips)
-
 Tips
 
 - **Test with mock input**: `echo '{"model":{"display_name":"Opus"},"workspace":{"current_dir":"/home/user/project"},"context_window":{"used_percentage":25},"session_id":"test-session-abc"}' | ./statusline.sh`
@@ -652,8 +615,6 @@ Tips
 
 Community projects like [ccstatusline](https://github.com/sirmalloc/ccstatusline) and [starship-claude](https://github.com/martinemde/starship-claude) provide pre-built configurations with themes and additional features.
 
-
-[​](#troubleshooting)
 
 Troubleshooting
 

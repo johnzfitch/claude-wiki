@@ -11,7 +11,7 @@ Jul 21, 2025
 
 [Report: Build AI in America](https://www-cdn.anthropic.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf)
 
-For the United States to lead the world in AI, we must make substantial investments in computing power and electricity that make it possible to build AI in America. As technology evolves, the required resources, infrastructure, and regulatory conditions need to change too. That’s why we are releasing a set of policy recommendations to support building the necessary domestic infrastructure to train the world’s most capable AI models in the U.S. and support the broad deployment of AI across sectors. 
+For the United States to lead the world in AI, we must make substantial investments in computing power and electricity that make it possible to build AI in America. As technology evolves, the required resources, infrastructure, and regulatory conditions need to change too. That’s why we are releasing a set of policy recommendations to support building the necessary domestic infrastructure to train the world’s most capable AI models in the U.S. and support the broad deployment of AI across sectors. 
 
 Advances in AI, driven by cutting-edge American companies, are reshaping our economy and society. At Anthropic, we see our AI models used every day by American [businesses](https://www.anthropic.com/customers), [scientists](introducing-anthropic-x27-s-ai-for-science-program-anthropic.md), [educators](https://www.anthropic.com/education), [governments](claude-gov-models-for-u-s-national-security-customers-anthropic.md), and others—in ways that make workers more productive, our economy more prosperous, and our nation more secure.
 

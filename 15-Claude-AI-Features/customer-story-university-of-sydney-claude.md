@@ -78,7 +78,7 @@ With Claude, the research team achieved:
 
 Marine conservation is shifting toward non-invasive monitoring methods, moving away from traditional approaches like trapping and tagging whales. This transition has led to a vast network of underwater microphones (hydrophones) deployed across coastlines. While this approach is better for the whales, it has created a new challenge: processing an overwhelming amount of acoustic data. "Traditionally, each recording is manually processed, which is time-consuming and labor-intensive, resulting in a significant portion of unused data," said Oscar Mower, researcher at the University of Sydney.
 
-The stakes are particularly high given recent developments in commercial whaling. With many countries—including Japan—investing in new whaling vessels,  the need for accurate population monitoring has never been more critical. Traditional analysis methods and basic detection tools like the band limited energy detector, with its 76.5% accuracy rate, cannot keep pace with the volume of data being collected.
+The stakes are particularly high given recent developments in commercial whaling. With many countries—including Japan—investing in new whaling vessels,  the need for accurate population monitoring has never been more critical. Traditional analysis methods and basic detection tools like the band limited energy detector, with its 76.5% accuracy rate, cannot keep pace with the volume of data being collected.
 
 ## Selecting Claude for superior accuracy and efficiency
 

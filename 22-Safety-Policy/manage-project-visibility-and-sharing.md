@@ -79,7 +79,7 @@ You can add multiple users at once by copying and pasting a list of email addres
 ### Email notifications
 
 When someone shares a project with you, you'll receive an email notification letting you know about the new shared project and your permission level.\
-​
+
 
 ### “Shared with me” tab
 

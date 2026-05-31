@@ -20,7 +20,7 @@ Start by asking yourself: What specific task does this skill accomplish? What tr
 
 ### **2\. Write the name**
 
-Your skill needs three core components: **name** (clear identifier), **description** (when to activate), and **instructions** (how to execute). In fact, the name and description are the only parts of the [SKILL.md](http://skill.md/) file that influence triggering, in other words, the ability for Claude  to call a skill for specialized knowledge or workflows. 
+Your skill needs three core components: **name** (clear identifier), **description** (when to activate), and **instructions** (how to execute). In fact, the name and description are the only parts of the [SKILL.md](http://skill.md/) file that influence triggering, in other words, the ability for Claude  to call a skill for specialized knowledge or workflows. 
 
 The name should be straightforward and descriptive. Use lowercase with hyphens (e.g., pdf-editor, brand-guidelines). Keep it short and clear.
 
@@ -50,11 +50,11 @@ Your instructions should be structured, scannable, and actionable. Use markdown 
 
 Structure with clear hierarchy: overview, prerequisites, execution steps, examples, error handling, and limitations. Break complex workflows into discrete phases with clear inputs and outputs.
 
-Include concrete examples showing correct usage. Specify what the skill cannot do to prevent misuse and manage expectations. Your [SKILL.md](http://skill.md/) file can also include additional reference files and assets to provide even more clarity and guidance around what you’re asking the agent to do when the skill is triggered. 
+Include concrete examples showing correct usage. Specify what the skill cannot do to prevent misuse and manage expectations. Your [SKILL.md](http://skill.md/) file can also include additional reference files and assets to provide even more clarity and guidance around what you’re asking the agent to do when the skill is triggered. 
 
-### **5\. Upload your skill** 
+### **5\. Upload your skill** 
 
-Depending on what Claude surface you’re building on, here’s how to upload your skill for use: 
+Depending on what Claude surface you’re building on, here’s how to upload your skill for use: 
 
 -   [Claude.ai](http://claude.ai/) (Claude apps): Go to **Settings** and add your custom skill there. Custom skills require a Pro, Max, Team, or Enterprise plan with code execution enabled. Skills uploaded here are individual to each user—they are not shared organization-wide and cannot be centrally managed by admins.
 -   [Claude Code](https://www.claude.com/product/claude-code): Create a skills/ directory in your plugin or project root and add skill folders containing SKILL.md files. Claude discovers and uses them automatically when the plugin is installed. Example structure:
@@ -90,7 +90,7 @@ Create a test matrix covering three scenarios:
 Consider implementing the following tests for even deeper validation:
 
 -   **Triggering tests:** Does the skill activate when expected? Test with both explicit requests ("use the financial datapack skill to analyze this company") and natural requests ("help me understand this company's financials"). Does it stay inactive when irrelevant? A well-scoped skill knows when not to activate. Test similar but distinct requests to verify boundaries.
--   **Functional tests:** These include output consistency (do multiple runs with similar inputs produce comparable results?), usability (can someone unfamiliar with the domain use it successfully?), and documentation accuracy (do your examples match actual behavior?). 
+-   **Functional tests:** These include output consistency (do multiple runs with similar inputs produce comparable results?), usability (can someone unfamiliar with the domain use it successfully?), and documentation accuracy (do your examples match actual behavior?). 
 
 ### **5\. Iterate based on usage**
 
@@ -483,7 +483,7 @@ Aim for single-purpose skills. "SEO optimization for blog posts" is focused enou
 
 ### **How do I share Skills across my organization?**
 
-Regardless of your team size, we suggest creating a shared document repository with skill specifications. 
+Regardless of your team size, we suggest creating a shared document repository with skill specifications. 
 
 **For smaller teams**, use a template format with name, description, instructions, and version info.
 

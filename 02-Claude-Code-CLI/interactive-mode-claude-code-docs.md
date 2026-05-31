@@ -12,8 +12,6 @@ tags: ["claude-code"]
 Complete reference for keyboard shortcuts, input modes, and interactive features in Claude Code sessions.
 
 
-[​](#keyboard-shortcuts)
-
 Keyboard shortcuts
 
 Keyboard shortcuts may vary by platform and terminal. Press `?` to see available shortcuts for your environment.**macOS users**: Option/Alt key shortcuts (`Alt+B`, `Alt+F`, `Alt+Y`, `Alt+M`, `Alt+P`, `Alt+T`) require configuring Option as Meta in your terminal:
@@ -24,8 +22,6 @@ Keyboard shortcuts may vary by platform and terminal. Press `?` to see available
 
 See [Terminal configuration](/docs/en/terminal-config) for details.
 
-
-[​](#general-controls)
 
 General controls
 
@@ -50,8 +46,6 @@ General controls
 | `Option+O` (macOS) or `Alt+O` (Windows/Linux) | Toggle fast mode | Enable or disable [fast mode](/docs/en/fast-mode) |
 
 
-[​](#text-editing)
-
 Text editing
 
 | Shortcut | Description | Context |
@@ -67,16 +61,12 @@ Text editing
 | `Alt+F` | Move cursor forward one word | Word navigation. Requires [Option as Meta](#keyboard-shortcuts) on macOS |
 
 
-[​](#theme-and-display)
-
 Theme and display
 
 | Shortcut | Description | Context |
 |:---|:---|:---|
 | `Ctrl+T` | Toggle syntax highlighting for code blocks | Only works inside the `/theme` picker menu. Controls whether code in Claude’s responses uses syntax coloring |
 
-
-[​](#multiline-input)
 
 Multiline input
 
@@ -91,8 +81,6 @@ Multiline input
 Shift+Enter works without configuration in iTerm2, WezTerm, Ghostty, Kitty, Warp, and Apple Terminal. For VS Code, Cursor, Windsurf, Alacritty, and Zed, run `/terminal-setup` to install the binding.
 
 
-[​](#quick-commands)
-
 Quick commands
 
 | Shortcut | Description | Notes |
@@ -101,8 +89,6 @@ Quick commands
 | `!` at start | Bash mode | Run commands directly and add execution output to the session |
 | `@` | File path mention | Trigger file path autocomplete |
 
-
-[​](#transcript-viewer)
 
 Transcript viewer
 
@@ -116,8 +102,6 @@ When the transcript viewer is open (toggled with `Ctrl+O`), these shortcuts are 
 | `q`, `Ctrl+C`, `Esc` | Exit transcript view. All three can be rebound via [`transcript:exit`](/docs/en/keybindings) |
 
 
-[​](#voice-input)
-
 Voice input
 
 | Shortcut | Description | Notes |
@@ -125,21 +109,15 @@ Voice input
 | Hold or tap `Space` | Voice dictation | Requires [voice dictation](/docs/en/voice-dictation) to be enabled. Hold to record, or run `/voice tap` for tap-to-toggle. [Rebindable](/docs/en/voice-dictation#rebind-the-dictation-key) |
 
 
-[​](#commands)
-
 Commands
 
 Type `/` in Claude Code to see all available commands, or type `/` followed by any letters to filter. The `/` menu shows everything you can invoke: built-in commands, bundled and user-authored [skills](/docs/en/skills), and commands contributed by [plugins](/docs/en/plugins) and [MCP servers](/docs/en/mcp#use-mcp-prompts-as-commands). Not all built-in commands are visible to every user since some depend on your platform or plan. See the [commands reference](/docs/en/commands) for the full list of commands included in Claude Code.
 
 
-[​](#vim-editor-mode)
-
 Vim editor mode
 
 Enable vim-style editing via `/config` → Editor mode.
 
-
-[​](#mode-switching)
 
 Mode switching
 
@@ -155,8 +133,6 @@ Mode switching
 | `v`     | Start character-wise visual selection | NORMAL         |
 | `V`     | Start line-wise visual selection      | NORMAL         |
 
-
-[​](#navigation-normal-mode)
 
 Navigation (NORMAL mode)
 
@@ -181,8 +157,6 @@ Navigation (NORMAL mode)
 In vim normal mode, if the cursor is at the beginning or end of input and cannot move further, `j`/`k` and the arrow keys navigate command history instead.
 
 
-[​](#editing-normal-mode)
-
 Editing (NORMAL mode)
 
 | Command        | Action                  |
@@ -205,8 +179,6 @@ Editing (NORMAL mode)
 | `.`            | Repeat last change      |
 
 
-[​](#text-objects-normal-mode)
-
 Text objects (NORMAL mode)
 
 Text objects work with operators like `d`, `c`, and `y`:
@@ -221,8 +193,6 @@ Text objects work with operators like `d`, `c`, and `y`:
 | `i[`/`a[` | Inner/around brackets                    |
 | `i{`/`a{` | Inner/around braces                      |
 
-
-[​](#visual-mode)
 
 Visual mode
 
@@ -245,8 +215,6 @@ Press `v` for character-wise selection or `V` for line-wise selection. Motions e
 Block-wise visual mode with `Ctrl+V` is not supported.
 
 
-[​](#command-history)
-
 Command history
 
 Claude Code maintains command history for the current session:
@@ -256,8 +224,6 @@ Claude Code maintains command history for the current session:
 - Use Up/Down arrows to navigate (see keyboard shortcuts above)
 - **Note**: history expansion (`!`) is disabled by default
 
-
-[​](#reverse-search-with-ctrl+r)
 
 Reverse search with Ctrl+R
 
@@ -276,14 +242,10 @@ Press `Ctrl+R` to interactively search through your command history:
 The search displays matching commands with the search term highlighted, so you can find and reuse previous inputs.
 
 
-[​](#background-bash-commands)
-
 Background bash commands
 
 Claude Code supports running bash commands in the background, allowing you to continue working while long-running processes execute.
 
-
-[​](#how-backgrounding-works)
 
 How backgrounding works
 
@@ -308,8 +270,6 @@ To disable all background task functionality, set the `CLAUDE_CODE_DISABLE_BACKG
 - Long-running processes (docker, terraform)
 
 
-[​](#bash-mode-with-prefix)
-
 Bash mode with `!` prefix
 
 Run bash commands directly without going through Claude by prefixing your input with `!`:
@@ -333,8 +293,6 @@ Bash mode:
 This is useful for quick shell operations while maintaining conversation context.
 
 
-[​](#prompt-suggestions)
-
 Prompt suggestions
 
 When you first open a session, a grayed-out example command appears in the prompt input to help you get started. Claude Code picks this from your project’s git history, so it reflects files you’ve been working on recently. After Claude responds, suggestions continue to appear based on your conversation history, such as a follow-up step from a multi-part request or a natural continuation of your workflow.
@@ -348,8 +306,6 @@ The suggestion runs as a background request that reuses the parent conversation�
 export CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=false
 ```
 
-
-[​](#side-questions-with-/btw)
 
 Side questions with /btw
 
@@ -369,8 +325,6 @@ Side questions have full visibility into the current conversation, so you can as
 Press **Space**, **Enter**, or **Escape** to dismiss the answer and return to the prompt. `/btw` is the inverse of a [subagent](/docs/en/sub-agents): it sees your full conversation but has no tools, while a subagent has full tools but starts with an empty context. Use `/btw` to ask about what Claude already knows from this session; use a subagent to go find out something new.
 
 
-[​](#task-list)
-
 Task list
 
 When working on complex, multi-step work, Claude creates a task list to track progress. Tasks appear in the status area of your terminal with indicators showing what’s pending, in progress, or complete.
@@ -381,14 +335,10 @@ When working on complex, multi-step work, Claude creates a task list to track pr
 - To share a task list across sessions, set `CLAUDE_CODE_TASK_LIST_ID` to use a named directory in `~/.claude/tasks/`: `CLAUDE_CODE_TASK_LIST_ID=my-project claude`
 
 
-[​](#session-recap)
-
 Session recap
 
 When you return to the terminal after stepping away, Claude Code shows a one-line recap of what happened in the session so far. The recap generates in the background once at least three minutes have passed since the last completed turn and the terminal is unfocused, so it’s ready when you switch back. Recaps only appear once the session has at least three turns, and never twice in a row. Run `/recap` to generate a summary on demand. To turn automatic recaps off, open `/config` and disable **Session recap**. Session recap is on by default for every plan and provider. The recap is always skipped in non-interactive mode.
 
-
-[​](#pr-review-status)
 
 PR review status
 
@@ -404,8 +354,6 @@ When working on a branch with an open pull request, Claude Code displays a click
 
 PR status requires the `gh` CLI to be installed and authenticated (`gh auth login`).
 
-
-[​](#see-also)
 
 See also
 

@@ -1,8 +1,9 @@
 ---
+title: "Choose a permission mode - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/permission-modes"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:58Z"
-source_url: "https://code.claude.com/docs/en/permission-modes"
-title: "Choose a permission mode - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Choose a permission mode
@@ -20,8 +21,6 @@ Control whether Claude asks before editing files or running commands. Cycle mode
 When Claude wants to edit a file, run a shell command, or make a network request, it pauses and asks you to approve the action. Permission modes control how often that pause happens. The mode you pick shapes the flow of a session: default mode has you review each action as it comes, while looser modes let Claude work in longer uninterrupted stretches and report back when done. Pick more oversight for sensitive work, or fewer interruptions when you trust the direction.
 
 
-[​](#available-modes)
-
 Available modes
 
 Each mode makes a different tradeoff between convenience and oversight. The table below shows what Claude can do without a permission prompt in each mode.
@@ -37,8 +36,6 @@ Each mode makes a different tradeoff between convenience and oversight. The tabl
 
 In every mode except `bypassPermissions`, writes to [protected paths](#protected-paths) are never auto-approved, guarding repository state and Claude’s own configuration against accidental corruption. Modes set the baseline. Layer [permission rules](/docs/en/permissions#manage-permissions) on top to pre-approve or block specific tools in any mode except `bypassPermissions`, which skips the permission layer entirely.
 
-
-[​](#switch-permission-modes)
 
 Switch permission modes
 
@@ -106,8 +103,6 @@ claude remote-control --permission-mode acceptEdits
 ```
 
 
-[​](#auto-approve-file-edits-with-acceptedits-mode)
-
 Auto-approve file edits with acceptEdits mode
 
 `acceptEdits` mode lets Claude create and edit files in your working directory without prompting. The status bar shows `⏵⏵ accept edits on` while this mode is active. In addition to file edits, `acceptEdits` mode auto-approves common filesystem Bash commands: `mkdir`, `touch`, `rm`, `rmdir`, `mv`, `cp`, and `sed`. These commands are also auto-approved when prefixed with safe environment variables such as `LANG=C` or `NO_COLOR=1`, or process wrappers such as `timeout`, `nice`, or `nohup`. Like file edits, auto-approval applies only to paths inside your working directory or `additionalDirectories`. Paths outside that scope, writes to [protected paths](#protected-paths), and all other Bash commands still prompt. When the [PowerShell tool](/docs/en/tools-reference#powershell-tool) is enabled, `acceptEdits` mode also auto-approves `Set-Content`, `Add-Content`, `Clear-Content`, and `Remove-Item` on in-scope paths, along with their common aliases. The same scope and protected-path rules apply. Use `acceptEdits` when you want to review changes in your editor or via `git diff` after the fact rather than approving each edit inline. Press `Shift+Tab` once from default mode to enter it, or start with it directly:
@@ -116,8 +111,6 @@ Auto-approve file edits with acceptEdits mode
 claude --permission-mode acceptEdits
 ```
 
-
-[​](#analyze-before-you-edit-with-plan-mode)
 
 Analyze before you edit with plan mode
 
@@ -129,8 +122,6 @@ claude --permission-mode plan
 
 Press `Shift+Tab` again to leave plan mode without approving a plan.
 
-
-[​](#review-and-approve-a-plan)
 
 Review and approve a plan
 
@@ -145,8 +136,6 @@ When the plan is ready, Claude presents it and asks how to proceed. From that pr
 Approving a plan exits plan mode and switches the session to the permission mode each approve option describes, so Claude starts editing. To plan again, cycle back to plan mode with `Shift+Tab`, or prefix your next prompt with `/plan`. Press `Ctrl+G` to open the proposed plan in your default text editor and edit it directly before Claude proceeds. When [`showClearContextOnPlanAccept`](/docs/en/settings#available-settings) is enabled, each approve option also offers to clear the planning context first. Accepting a plan also names the session from the plan content automatically, unless you’ve already set a name with `--name` or `/rename`.
 
 
-[​](#set-plan-mode-as-the-default)
-
 Set plan mode as the default
 
 To make plan mode the default for a project, set `defaultMode` in `.claude/settings.json`:
@@ -159,8 +148,6 @@ To make plan mode the default for a project, set `defaultMode` in `.claude/setti
 }
 ```
 
-
-[​](#eliminate-prompts-with-auto-mode)
 
 Eliminate prompts with auto mode
 
@@ -179,8 +166,6 @@ Auto mode is available only when your account meets all of these requirements:
 
 If Claude Code reports auto mode as unavailable, one of these requirements is unmet; this is not a transient outage. A separate message that names a model and says auto mode “cannot determine the safety” of an action is a transient classifier outage; see the [error reference](/docs/en/errors#auto-mode-cannot-determine-the-safety-of-an-action). If you set `defaultMode: "auto"` in [settings](/docs/en/settings#available-settings) and the session starts in `default` mode with no error, the setting is likely in `.claude/settings.json` or `.claude/settings.local.json`. Claude Code ignores `auto` from those files so a repository cannot grant itself auto mode. Move it to `~/.claude/settings.json`.
 
-
-[​](#what-the-classifier-blocks-by-default)
 
 What the classifier blocks by default
 
@@ -206,14 +191,10 @@ The classifier trusts your working directory and your repo’s configured remote
 Sandbox network access requests are routed through the classifier rather than allowed by default. Run `claude auto-mode defaults` to see the full rule lists. If routine actions get blocked, an administrator can add trusted repos, buckets, and services via the `autoMode.environment` setting: see [Configure auto mode](/docs/en/auto-mode-config).
 
 
-[​](#boundaries-you-state-in-conversation)
-
 Boundaries you state in conversation
 
 The classifier treats boundaries you state in the conversation as a block signal. If you tell Claude “don’t push” or “wait until I review before deploying”, the classifier blocks matching actions even when the default rules would allow them. A boundary stays in force until you lift it in a later message. Claude’s own judgment that a condition was met does not lift it. Boundaries are not stored as rules. The classifier re-reads them from the transcript on each check, so a boundary can be lost if [context compaction](/docs/en/costs#reduce-token-usage) removes the message that stated it. For a hard guarantee, add a [deny rule](/docs/en/permissions#permission-rule-syntax) instead.
 
-
-[​](#when-auto-mode-falls-back)
 
 When auto mode falls back
 
@@ -250,8 +231,6 @@ Cost and latency
 The classifier runs on a server-configured model that is independent of your `/model` selection, so switching models does not change classifier availability. Classifier calls count toward your token usage. Each check sends a portion of the transcript plus the pending action, adding a round-trip before execution. Reads and working-directory edits outside protected paths skip the classifier, so the overhead comes mainly from shell commands and network operations.
 
 
-[​](#allow-only-pre-approved-tools-with-dontask-mode)
-
 Allow only pre-approved tools with dontAsk mode
 
 `dontAsk` mode auto-denies every tool call that would otherwise prompt. Only actions matching your `permissions.allow` rules and [read-only Bash commands](/docs/en/permissions#read-only-commands) can execute; explicit `ask` rules are denied rather than prompting. This makes the mode fully non-interactive for CI pipelines or restricted environments where you pre-define exactly what Claude may do. Set it at startup with the flag:
@@ -260,8 +239,6 @@ Allow only pre-approved tools with dontAsk mode
 claude --permission-mode dontAsk
 ```
 
-
-[​](#skip-all-checks-with-bypasspermissions-mode)
 
 Skip all checks with bypassPermissions mode
 
@@ -282,8 +259,6 @@ The check is skipped automatically inside a recognized sandbox. To run autonomou
 `bypassPermissions` offers no protection against prompt injection or unintended actions. For background safety checks without prompts, use [auto mode](#eliminate-prompts-with-auto-mode) instead. Administrators can block this mode by setting `permissions.disableBypassPermissionsMode` to `"disable"` in [managed settings](/docs/en/permissions#managed-settings).
 
 
-[​](#protected-paths)
-
 Protected paths
 
 Writes to a small set of paths are never auto-approved, in every mode except `bypassPermissions`. This prevents accidental corruption of repository state and Claude’s own configuration. In `default`, `acceptEdits`, and `plan` these writes prompt; in `auto` they route to the classifier; in `dontAsk` they are denied; in `bypassPermissions` they are allowed. Protected directories:
@@ -301,8 +276,6 @@ Protected files:
 - `.ripgreprc`
 - `.mcp.json`, `.claude.json`
 
-
-[​](#see-also)
 
 See also
 

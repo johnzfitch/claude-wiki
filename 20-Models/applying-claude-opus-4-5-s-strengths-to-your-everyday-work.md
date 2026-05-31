@@ -381,9 +381,9 @@ Claude Opus 4.5 is the most intelligent Claude model to date. The difference sho
 
 ## Improvements you'll notice:
 
-- **Conversations that don't cut off.** Work through extended projects without hitting context limits or starting over. Your context stays intact across many messages.**‍**
-- **Outputs that are ready to use.** Create spreadsheets with working formulas, presentations with structure and visuals, and frontends with thoughtful design. Spend less time fixing file formats or refining layouts.**‍**
-- **Coding that stays on track**. Handle extended coding tasks without Claude losing context. Opus 4.5 is persistent when solving tough problems and requires less guidance to reach working results.**‍**
+- **Conversations that don't cut off.** Work through extended projects without hitting context limits or starting over. Your context stays intact across many messages.****
+- **Outputs that are ready to use.** Create spreadsheets with working formulas, presentations with structure and visuals, and frontends with thoughtful design. Spend less time fixing file formats or refining layouts.****
+- **Coding that stays on track**. Handle extended coding tasks without Claude losing context. Opus 4.5 is persistent when solving tough problems and requires less guidance to reach working results.****
 - **Sharper vision.** Process dense diagrams, images, and videos more accurately. Opus 4.5 picks up visual details that matter.
 
 ## Where Opus 4.5 excels
@@ -401,32 +401,32 @@ This means staying in the same conversation through:
 - Projects where you’re developing multiple deliverables
 - Decisions where earlier choices shape later implementation
 
-### Polished outputs you can work within 
+### Polished outputs you can work within 
 
-Claude Opus 4.5 produces files closer to finished, so you spend less time revising. It can create from scratch or take your existing material and improve it.  Telling Opus who it's for and how you'll use it helps it make better decisions about structure and detail.
+Claude Opus 4.5 produces files closer to finished, so you spend less time revising. It can create from scratch or take your existing material and improve it.  Telling Opus who it's for and how you'll use it helps it make better decisions about structure and detail.
 
 #### Spreadsheets**:**
 
-- **Request advanced features.** Opus 4.5 can build spreadsheets with pivot tables, embedded charts, sparklines, cross-tab references, and conditional formatting. Ask for what you need.**‍**
-- **Start from scratch or extend what you have.** Have Opus 4.5 conduct research and deliver findings in spreadsheet form, or add onto existing sheets while preserving your structure. Upload what you have and describe what you need added.**‍**
-- **Build models you can directly use.** Request formulas that update when inputs change, not static values. Ask for named ranges and comments so you can audit and modify the logic later.**‍**
+- **Request advanced features.** Opus 4.5 can build spreadsheets with pivot tables, embedded charts, sparklines, cross-tab references, and conditional formatting. Ask for what you need.****
+- **Start from scratch or extend what you have.** Have Opus 4.5 conduct research and deliver findings in spreadsheet form, or add onto existing sheets while preserving your structure. Upload what you have and describe what you need added.****
+- **Build models you can directly use.** Request formulas that update when inputs change, not static values. Ask for named ranges and comments so you can audit and modify the logic later.****
 - **Convert between formats.** Turn CSVs into formatted spreadsheets, extract tables from PDFs or documents, or restructure data from one layout to another.
 
 → *Learn how to build a* [*financial model*](https://website.claude.com/resources/use-cases/%20understand-and-extend-an-inherited-spreadsheet) *with working formulas and advanced spreadsheet features*
 
 #### Presentations:
 
-- **Tell a visual story*.*** Have Opus 4.5 add embedded charts, images, callout boxes, and diagrams that reinforce your narrative. Describe what each slide should accomplish in the overall arc, not just what content it should contain.**‍**
-- **Match your style.** Specify brand colors, fonts, and layout preferences upfront. Upload an existing deck and ask Opus to add slides in the same style, or share a single slide you like and have it match that throughout.**‍**
-- **Build from rough materials.** Turn meeting notes, outlines, or documents into structured presentations. Opus 4.5 can extract the key points and organize them into a narrative with supporting visuals.**‍**
+- **Tell a visual story*.*** Have Opus 4.5 add embedded charts, images, callout boxes, and diagrams that reinforce your narrative. Describe what each slide should accomplish in the overall arc, not just what content it should contain.****
+- **Match your style.** Specify brand colors, fonts, and layout preferences upfront. Upload an existing deck and ask Opus to add slides in the same style, or share a single slide you like and have it match that throughout.****
+- **Build from rough materials.** Turn meeting notes, outlines, or documents into structured presentations. Opus 4.5 can extract the key points and organize them into a narrative with supporting visuals.****
 - **Check before you export.** Ask Claude to verify nothing overlaps, text doesn't run off slides, and formatting stays consistent throughout.
 
 → *See how Opus 4.5 generates a* [*complete slide deck*](https://website.claude.com/resources/use-cases/%20create-a-sales-proposal-presentation)*, complete with metrics, data visualizations, and images to reinforce your ideas.*
 
 #### Documents
 
-- **Have Claude be your editor.** Instead of writing for you, have Opus review your draft and make suggestions directly in the document with tracked changes and annotations.**‍**
-- **Analyze before editing.** Ask Opus to read your draft as your intended audience: what would confuse them, what's missing, what might they push back on. Then have it revise to address those gaps.**‍**
+- **Have Claude be your editor.** Instead of writing for you, have Opus review your draft and make suggestions directly in the document with tracked changes and annotations.****
+- **Analyze before editing.** Ask Opus to read your draft as your intended audience: what would confuse them, what's missing, what might they push back on. Then have it revise to address those gaps.****
 - **Match tone from examples*.*** Upload a paragraph or document with the voice you want. Showing the style works better than describing it.
 
 → *See how Opus 4.5 can* [*review and redline documents*](https://website.claude.com/resources/use-cases/contract-redlining-and-negotiation)*, making tracked changes and detailed annotations directly in the file*
@@ -437,8 +437,8 @@ Opus 4.5 is the frontier model for coding. It handles longer, more complex tasks
 
 Notice the difference when Claude creates visual artifacts. Frontends and components come out with more polish and better design that need less refinement to feel finished.
 
-- **Get polished design.** Visual components feel more considered and well-crafted. Describe the aesthetic you're going for: color palette, spacing, hierarchy, overall feel.**‍**
-- **Match a reference.** Share a screenshot of something you like and ask Opus 4.5 to match it, as an easier method than describing the style you want.**‍**
+- **Get polished design.** Visual components feel more considered and well-crafted. Describe the aesthetic you're going for: color palette, spacing, hierarchy, overall feel.****
+- **Match a reference.** Share a screenshot of something you like and ask Opus 4.5 to match it, as an easier method than describing the style you want.****
 - **Iterate on specifics.** After the first implementation, refine with feedback: tighten the spacing, soften the colors, add animation when elements appear. Even from loose instructions, Opus 4.5 can figure out the intent and adjust accordingly.
 
 → Learn how to build polished artifacts that [match your goals](https://website.claude.com/resources/use-cases/build-a-custom-bucket-list-app), [adapt to any location you choose](https://website.claude.com/resources/use-cases/%20design-a-local-foraging-guide), and [make complex information feel explorable](https://website.claude.com/resources/use-cases/%20build-interactive-diagram-tools).
@@ -447,9 +447,9 @@ Notice the difference when Claude creates visual artifacts. Frontends and compon
 
 Opus 4.5 prioritizes depth and quality over speed. Individual responses take longer—but Opus is more efficient in how it reasons, getting to answers more directly. This is especially true for coding and technical work. We've adjusted limits to give you space to experience its capabilities.
 
-‍\
-​Most users switch between models based on the task. Reserve Opus for complex reasoning and work where quality matters most. Use Sonnet 4.5 for everyday conversations and routine tasks—it's fast and capable for most work. Haiku 4.5 is faster still, best for quick questions and simple tasks.\
-​You can monitor your usage at [claude.ai/settings/usage](https://claude.ai/settings/usage).
+\
+Most users switch between models based on the task. Reserve Opus for complex reasoning and work where quality matters most. Use Sonnet 4.5 for everyday conversations and routine tasks—it's fast and capable for most work. Haiku 4.5 is faster still, best for quick questions and simple tasks.\
+You can monitor your usage at [claude.ai/settings/usage](https://claude.ai/settings/usage).
 
 #### Start with Opus 4.5 when:
 
@@ -467,7 +467,7 @@ Opus 4.5 prioritizes depth and quality over speed. Individual responses take lon
 - You're having a casual conversation or brainstorming
 - The task doesn't require extended reasoning across many steps
 
-‍
+
 
 ## Related tutorials
 

@@ -29,13 +29,13 @@ Play video
 
 ### Scan your code in parallel
 
-Claude Code Security understands context, traces data flows across files, and identifies complex, multi-component vulnerability patterns that traditional scanners might not detect. 
+Claude Code Security understands context, traces data flows across files, and identifies complex, multi-component vulnerability patterns that traditional scanners might not detect. 
 
 ### Validate findings
 
 Every finding goes through an adversarial verification pass. Claude challenges its own results before surfacing them. More real issues get reported, and fewer false positives waste analyst time.
 
-### Review and patch 
+### Review and patch 
 
 Claude detects issues and proposes fixes. Every finding includes a recommended patch for teams to review and approve. Fix vulnerabilities quickly rather than adding them to a growing backlog.
 
@@ -64,7 +64,7 @@ Prev
 
 Bring Claude to your codebase
 
-Request early access to Claude Code Security. 
+Request early access to Claude Code Security. 
 
 
 Join the waitlist
@@ -117,7 +117,7 @@ Claude Code Security is available in a limited research preview for Claude Enter
 
 ### What are the security risks I should know about?
 
-Claude can make mistakes, so you should always review proposed patches before applying them, especially for critical systems. 
+Claude can make mistakes, so you should always review proposed patches before applying them, especially for critical systems. 
 
 ### What types of vulnerabilities does Claude Code Security find?
 

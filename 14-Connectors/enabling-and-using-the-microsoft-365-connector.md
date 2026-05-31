@@ -75,7 +75,7 @@ After completing the previous step on behalf of the Claude organization, the Mic
 
     - You must complete this step before any team members can connect to Microsoft 365 individually.
 
-5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.​​​​​​​​​​​​​​​​
+5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.
 
 6.  (Optional) **To selectively restrict which permissions scopes users in your tenant can use** see the below “Permission categories” and “Selectively revoking permissions” sections.
 
@@ -145,7 +145,7 @@ After completing the previous step on behalf of the organization, the Microsoft 
 
     - You must complete this step before any team members can connect to Microsoft 365 individually.
 
-5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.​​​​​​​​​​​​​​​​
+5.  (Optional) **To restrict which users in your Microsoft Entra tenant can use the connector**, navigate to the M365 MCP Server for Claude enterprise application in the Entra admin center (**[https://entra.microsoft.com](https://entra.microsoft.com)**), go to Properties and set “Assignment required?” to Yes, then add the specific users or groups under the Users and groups section—only those assigned will be able to authenticate and use the connector. Repeat this same process for the M365 MCP Client for Claude enterprise application to ensure both components are restricted to the same set of authorized users.
 
 6.  (Optional) **To selectively restrict which permissions scopes users in your tenant can use** see the below “Permission categories” and “Selectively revoking permissions” sections.
 
@@ -212,7 +212,7 @@ Claude will provide a response based on information retrieved from your Microsof
 - Access Teams chat messages and channel discussions where you're a participant.
 
 - Review team collaboration patterns and find decisions made across conversations.\
-  ​
+  
 
 ------------------------------------------------------------------------
 
@@ -353,7 +353,7 @@ To restore a revoked permission, follow the steps to grant admin pre-consent des
 - **Revocable access:** You can disconnect the integration at any time through **[Settings \> Connectors](https://claude.ai/settings/integrations)**.
 
 Read more here: **[Microsoft 365 Connector: Security Guide](microsoft-365-connector-security-guide.md)**.\
-​
+
 
 ------------------------------------------------------------------------
 
@@ -400,7 +400,7 @@ Tips to improve your search queries:
 - Try breaking up complex queries into simpler, more focused questions.
 
 - Verify spelling of names, projects, or terms.\
-  ​
+  
 
 ------------------------------------------------------------------------
 

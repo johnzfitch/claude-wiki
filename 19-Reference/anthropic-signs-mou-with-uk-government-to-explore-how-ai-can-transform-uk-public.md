@@ -15,7 +15,7 @@ Today, Anthropic [signed a Memorandum of Understanding](https://www.gov.uk/gover
 
 The collaboration will focus on the potential for Anthropic's advanced AI model, Claude, to enhance how people in the UK access and interact with government information and services online. It will also establish best practices for the responsible deployment of frontier AI capabilities in the public sector.
 
-DSIT and Anthropic plan to deepen their partnership by exploring additional opportunities across several areas of shared interest that will help support AI innovation and economic development in the UK, including: 
+DSIT and Anthropic plan to deepen their partnership by exploring additional opportunities across several areas of shared interest that will help support AI innovation and economic development in the UK, including: 
 
 - Advancing scientific progress with AI, combining Anthropic’s capabilities with existing UK strengths in R&D and data;
 - Securing the supply chain for advanced AI and the UK’s future infrastructure;

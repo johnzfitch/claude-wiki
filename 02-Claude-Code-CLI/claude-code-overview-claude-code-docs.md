@@ -16,8 +16,6 @@ Claude Code is an AI-powered coding assistant that helps you build features, fix
 
 ## 
 
-[​](#get-started)
-
 Get started
 
 Choose your environment to get started. Most surfaces require a [Claude subscription](https://claude.com/pricing) or [Anthropic Console](https://console.anthropic.com/) account. The Terminal CLI and VS Code also support [third-party providers](/docs/en/third-party-integrations).
@@ -136,8 +134,6 @@ A plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with int
 
 ## 
 
-[​](#what-you-can-do)
-
 What you can do
 
 Here are some of the ways you can use Claude Code:
@@ -219,8 +215,6 @@ Sessions aren’t tied to a single surface. Move work between environments as yo
 
 ## 
 
-[​](#use-claude-code-everywhere)
-
 Use Claude Code everywhere
 
 Each surface connects to the same underlying Claude Code engine, so your CLAUDE.md files, settings, and MCP servers work across all of them. Beyond the [Terminal](/docs/en/quickstart), [VS Code](/docs/en/vs-code), [JetBrains](/docs/en/jetbrains), [Desktop](/docs/en/desktop), and [Web](/docs/en/claude-code-on-the-web) environments above, Claude Code integrates with CI/CD, chat, and browser workflows:
@@ -235,8 +229,6 @@ Each surface connects to the same underlying Claude Code engine, so your CLAUDE.
 | Build custom agents for your own workflows | [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) |
 
 ## 
-
-[​](#next-steps)
 
 Next steps
 

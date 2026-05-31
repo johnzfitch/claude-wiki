@@ -34,7 +34,7 @@
 - [Manage project visibility and sharing | Claude Help Center](manage-project-visibility-and-sharing.md) - 4.  Manage project visibility and sharing
 - [Manage user feedback settings on Claude Console | Claude Help Center](manage-user-feedback-settings-on-claude-console.md) - 4.  Manage user feedback settings on Claude Console
 - [Model Safety Bug Bounty Program | Claude Help Center](model-safety-bug-bounty-program.md) - We believe external testing is crucial for building a safe AI ecosystem. As model capabilities advance, the consequences of jailbreaks could become in
-- [Online Safety Contacts | Claude Help Center](online-safety-contacts.md) - Government authorities can contact Anthropic directly by emailing [\[email protected\]](/cdn-cgi/l/email-protection#8dffe8eaf8e1ecf9e2ffa0e4e3fcf8e4ff
+- [Online Safety Contacts | Claude Help Center](online-safety-contacts.md) - Government authorities can contact Anthropic directly by emailing [\[email protected\]](/cdn-cgi/l/email-protection#8dffe8eaf8e1ecf9e2ffa0e4e3fcf8e4ff
 - [Our Approach to User Safety | Claude Help Center](our-approach-to-user-safety.md) - User safety is core to Anthropic’s mission of creating reliable, interpretable, and steerable AI systems. As we launch new ways for people to interact
 - [Privacy-Related Changes (Audit Index)](privacy-changes.md) - Scope: `rust-v0.105.0-alpha.1` -> `rust-v0.106.0-alpha.5` (30 transitions).
 - [Project Glasswing: Securing Critical Software for the AI Era](project-glasswing.md) - Project Glasswing is Anthropic's cross-industry initiative to secure the world's most critical software, powered by Claude Mythos Preview — Anthropic'

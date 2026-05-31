@@ -19,19 +19,13 @@ For built-in commands like `/help` and `/compact`, and bundled skills like `/deb
 Claude Code skills follow the [Agent Skills](https://agentskills.io) open standard, which works across multiple AI tools. Claude Code extends the standard with additional features like [invocation control](#control-who-invokes-a-skill), [subagent execution](#run-skills-in-a-subagent), and [dynamic context injection](#inject-dynamic-context).
 
 
-[​](#bundled-skills)
-
 Bundled skills
 
 Claude Code includes a set of bundled skills that are available in every session, including `/simplify`, `/batch`, `/debug`, `/loop`, and `/claude-api`. Unlike most built-in commands, which execute fixed logic directly, bundled skills are prompt-based: they give Claude a detailed playbook and let it orchestrate the work using its tools. You invoke them the same way as any other skill, by typing `/` followed by the skill name. Bundled skills are listed alongside built-in commands in the [commands reference](/docs/en/commands), marked **Skill** in the Purpose column.
 
 
-[​](#getting-started)
-
 Getting started
 
-
-[​](#create-your-first-skill)
 
 Create your first skill
 
@@ -91,8 +85,6 @@ How does this code work?
 Either way, Claude should include an analogy and ASCII diagram in its explanation.
 
 
-[​](#where-skills-live)
-
 Where skills live
 
 Where you store a skill determines who can use it:
@@ -107,14 +99,10 @@ Where you store a skill determines who can use it:
 When skills share the same name across levels, enterprise overrides personal, and personal overrides project. Plugin skills use a `plugin-name:skill-name` namespace, so they cannot conflict with other levels. If you have files in `.claude/commands/`, those work the same way, but if a skill and a command share the same name, the skill takes precedence.
 
 
-[​](#live-change-detection)
-
 Live change detection
 
 Claude Code watches skill directories for file changes. Adding, editing, or removing a skill under `~/.claude/skills/`, the project `.claude/skills/`, or a `.claude/skills/` inside an `--add-dir` directory takes effect within the current session without restarting. Creating a top-level skills directory that did not exist when the session started requires restarting Claude Code so the new directory can be watched.
 
-
-[​](#automatic-discovery-from-nested-directories)
 
 Automatic discovery from nested directories
 
@@ -135,8 +123,6 @@ The `SKILL.md` contains the main instructions and is required. Other files are o
 Files in `.claude/commands/` still work and support the same [frontmatter](#frontmatter-reference). Skills are recommended since they support additional features like supporting files.
 
 
-[​](#skills-from-additional-directories)
-
 Skills from additional directories
 
 The `--add-dir` flag [grants file access](/docs/en/permissions#additional-directories-grant-file-access-not-configuration) rather than configuration discovery, but skills are an exception: `.claude/skills/` within an added directory is loaded automatically. See [Live change detection](#live-change-detection) for how edits are picked up during a session. Other `.claude/` configuration such as subagents, commands, and output styles is not loaded from additional directories. See the [exceptions table](/docs/en/permissions#additional-directories-grant-file-access-not-configuration) for the complete list of what is and isn’t loaded, and the recommended ways to share configuration across projects.
@@ -144,14 +130,10 @@ The `--add-dir` flag [grants file access](/docs/en/permissions#additional-direct
 CLAUDE.md files from `--add-dir` directories are not loaded by default. To load them, set `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1`. See [Load from additional directories](/docs/en/memory#load-from-additional-directories).
 
 
-[​](#configure-skills)
-
 Configure skills
 
 Skills are configured through YAML frontmatter at the top of `SKILL.md` and the markdown content that follows.
 
-
-[​](#types-of-skill-content)
 
 Types of skill content
 
@@ -187,8 +169,6 @@ Deploy the application:
 
 Your `SKILL.md` can contain anything, but thinking through how you want the skill invoked (by you, by Claude, or both) and where you want it to run (inline or in a subagent) helps guide what to include. For complex skills, you can also [add supporting files](#add-supporting-files) to keep the main skill focused.
 
-
-[​](#frontmatter-reference)
 
 Frontmatter reference
 
@@ -226,8 +206,6 @@ All fields are optional. Only `description` is recommended so Claude knows when 
 | `shell` | No | Shell to use for `` !`command` `` and ```` ```! ```` blocks in this skill. Accepts `bash` (default) or `powershell`. Setting `powershell` runs inline shell commands via PowerShell on Windows. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1`. |
 
 
-[​](#available-string-substitutions)
-
 Available string substitutions
 
 Skills support string substitution for dynamic values in the skill content:
@@ -255,8 +233,6 @@ $ARGUMENTS
 ```
 
 
-[​](#add-supporting-files)
-
 Add supporting files
 
 Skills can include multiple files in their directory. This keeps `SKILL.md` focused on the essentials while letting Claude access detailed reference material only when needed. Large reference docs, API specifications, or example collections don’t need to load into context every time the skill runs.
@@ -281,8 +257,6 @@ Reference supporting files from `SKILL.md` so Claude knows what each file contai
 
 Keep `SKILL.md` under 500 lines. Move detailed reference material to separate files.
 
-
-[​](#control-who-invokes-a-skill)
 
 Control who invokes a skill
 
@@ -319,14 +293,10 @@ Here’s how the two fields affect invocation and context loading:
 In a regular session, skill descriptions are loaded into context so Claude knows what’s available, but full skill content only loads when invoked. [Subagents with preloaded skills](/docs/en/sub-agents#preload-skills-into-subagents) work differently: the full skill content is injected at startup.
 
 
-[​](#skill-content-lifecycle)
-
 Skill content lifecycle
 
 When you or Claude invoke a skill, the rendered `SKILL.md` content enters the conversation as a single message and stays there for the rest of the session. Claude Code does not re-read the skill file on later turns, so write guidance that should apply throughout a task as standing instructions rather than one-time steps. [Auto-compaction](/docs/en/how-claude-code-works#when-context-fills-up) carries invoked skills forward within a token budget. When the conversation is summarized to free context, Claude Code re-attaches the most recent invocation of each skill after the summary, keeping the first 5,000 tokens of each. Re-attached skills share a combined budget of 25,000 tokens. Claude Code fills this budget starting from the most recently invoked skill, so older skills can be dropped entirely after compaction if you have invoked many in one session. If a skill seems to stop influencing behavior after the first response, the content is usually still present and the model is choosing other tools or approaches. Strengthen the skill’s `description` and instructions so the model keeps preferring it, or use [hooks](/docs/en/hooks) to enforce behavior deterministically. If the skill is large or you invoked several others after it, re-invoke it after compaction to restore the full content.
 
-
-[​](#pre-approve-tools-for-a-skill)
 
 Pre-approve tools for a skill
 
@@ -343,8 +313,6 @@ allowed-tools: Bash(git add *) Bash(git commit *) Bash(git status *)
 
 To block a skill from using certain tools, add deny rules in your [permission settings](/docs/en/permissions) instead.
 
-
-[​](#pass-arguments-to-skills)
 
 Pass arguments to skills
 
@@ -391,12 +359,8 @@ Preserve all existing behavior and tests.
 ```
 
 
-[​](#advanced-patterns)
-
 Advanced patterns
 
-
-[​](#inject-dynamic-context)
 
 Inject dynamic context
 
@@ -442,8 +406,6 @@ To disable this behavior for skills and custom commands from user, project, plug
 To enable [extended thinking](/docs/en/common-workflows#use-extended-thinking-thinking-mode) in a skill, include the word “ultrathink” anywhere in your skill content.
 
 
-[​](#run-skills-in-a-subagent)
-
 Run skills in a subagent
 
 Add `context: fork` to your frontmatter when you want a skill to run in isolation. The skill content becomes the prompt that drives the subagent. It won’t have access to your conversation history.
@@ -459,8 +421,6 @@ Skills and [subagents](/docs/en/sub-agents) work together in two directions:
 
 With `context: fork`, you write the task in your skill and pick an agent type to execute it. For the inverse (defining a custom subagent that uses skills as reference material), see [Subagents](/docs/en/sub-agents#preload-skills-into-subagents).
 
-
-[​](#example-research-skill-using-explore-agent)
 
 Example: Research skill using Explore agent
 
@@ -491,8 +451,6 @@ When this skill runs:
 The `agent` field specifies which subagent configuration to use. Options include built-in agents (`Explore`, `Plan`, `general-purpose`) or any custom subagent from `.claude/agents/`. If omitted, uses `general-purpose`.
 
 
-[​](#restrict-claude’s-skill-access)
-
 Restrict Claude’s skill access
 
 By default, Claude can invoke any skill that doesn’t have `disable-model-invocation: true` set. Skills that define `allowed-tools` grant Claude access to those tools without per-use approval when the skill is active. Your [permission settings](/docs/en/permissions) still govern baseline approval behavior for all other tools. A few built-in commands are also available through the Skill tool, including `/init`, `/review`, and `/security-review`. Other built-in commands such as `/compact` are not. Three ways to control which skills Claude can invoke: **Disable all skills** by denying the Skill tool in `/permissions`:
@@ -518,8 +476,6 @@ Permission syntax: `Skill(name)` for exact match, `Skill(name *)` for prefix mat
 The `user-invocable` field only controls menu visibility, not Skill tool access. Use `disable-model-invocation: true` to block programmatic invocation.
 
 
-[​](#share-skills)
-
 Share skills
 
 Skills can be distributed at different scopes depending on your audience:
@@ -528,8 +484,6 @@ Skills can be distributed at different scopes depending on your audience:
 - **Plugins**: Create a `skills/` directory in your [plugin](/docs/en/plugins)
 - **Managed**: Deploy organization-wide through [managed settings](/docs/en/settings#settings-files)
 
-
-[​](#generate-visual-output)
 
 Generate visual output
 
@@ -717,12 +671,8 @@ See all 131 lines
 To test, open Claude Code in any project and ask “Visualize this codebase.” Claude runs the script, generates `codebase-map.html`, and opens it in your browser. This pattern works for any visual output: dependency graphs, test coverage reports, API documentation, or database schema visualizations. The bundled script does the heavy lifting while Claude handles orchestration.
 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
-
-[​](#skill-not-triggering)
 
 Skill not triggering
 
@@ -734,8 +684,6 @@ If Claude doesn’t use your skill when expected:
 4.  Invoke it directly with `/skill-name` if the skill is user-invocable
 
 
-[​](#skill-triggers-too-often)
-
 Skill triggers too often
 
 If Claude uses your skill when you don’t want it:
@@ -744,14 +692,10 @@ If Claude uses your skill when you don’t want it:
 2.  Add `disable-model-invocation: true` if you only want manual invocation
 
 
-[​](#skill-descriptions-are-cut-short)
-
 Skill descriptions are cut short
 
 Skill descriptions are loaded into context so Claude knows what’s available. All skill names are always included, but if you have many skills, descriptions are shortened to fit the character budget, which can strip the keywords Claude needs to match your request. The budget scales dynamically at 1% of the context window, with a fallback of 8,000 characters. To raise the limit, set the `SLASH_COMMAND_TOOL_CHAR_BUDGET` environment variable. Or trim the `description` and `when_to_use` text at the source: front-load the key use case, since each entry’s combined text is capped at 1,536 characters regardless of budget.
 
-
-[​](#related-resources)
 
 Related resources
 

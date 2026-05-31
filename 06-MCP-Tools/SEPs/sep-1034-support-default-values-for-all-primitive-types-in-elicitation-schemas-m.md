@@ -28,21 +28,15 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP recommends adding support for default values to all primitive types in the MCP elicitation schema (StringSchema, NumberSchema, and EnumSchema), extending the existing support that only covers BooleanSchema.
 
 
-[​](#motivation)
-
 Motivation
 
 Elicitations in MCP offer a way to mitigate complex API designs: tools can request information on-demand rather than resorting to convoluted parameter handling. The challenge however is that users must manually enter obvious information that could be pre-populated for more natural interactions. Currently, only `BooleanSchema` supports default values in elicitation requests. This limitation prevents servers from providing sensible defaults for text inputs, numbers, and enum selections leading to more user overhead.
 
-
-[​](#real-world-example)
 
 Real-World Example
 
@@ -103,8 +97,6 @@ const response = await client.request("elicitation/create", {
 ```
 
 
-[​](#implementation)
-
 Implementation
 
 A working implementation demonstrating clients require minimal changes to display defaults (~10 lines of code):
@@ -113,12 +105,8 @@ A working implementation demonstrating clients require minimal changes to displa
 - A demo with the above email reply workflow: [https://asciinema.org/a/X7aQZjT2B5jVwn9dJ9sqQVkOM](https://asciinema.org/a/X7aQZjT2B5jVwn9dJ9sqQVkOM)
 
 
-[​](#specification)
-
 Specification
 
-
-[​](#schema-changes)
 
 Schema Changes
 
@@ -159,8 +147,6 @@ export interface EnumSchema {
 ```
 
 
-[​](#behavior)
-
 Behavior
 
 1.  The `default` field is optional, maintaining full backward compatibility
@@ -169,16 +155,12 @@ Behavior
 4.  Clients that support defaults SHOULD pre-populate form fields. Clients that don’t support defaults MAY ignore the field entirely.
 
 
-[​](#rationale)
-
 Rationale
 
 1.  The high-level rationale is to follow the precedent set by BooleanSchema rather than creating new mechanisms.
 2.  Making defaults optional ensures backward compatibility.
 3.  This maintains the high-level intuition of keeping the client implementation simple.
 
-
-[​](#alternatives-considered)
 
 Alternatives Considered
 
@@ -187,14 +169,10 @@ Alternatives Considered
 3.  **Required Defaults**: Making defaults required would break existing implementations
 
 
-[​](#backwards-compatibility)
-
 Backwards Compatibility
 
 This change is fully backward compatible with no breaking changes. Clients that don’t understand defaults will ignore them, and existing elicitation requests continue to work unchanged. Clients can adopt default support at their own pace
 
-
-[​](#security-implications)
 
 Security Implications
 

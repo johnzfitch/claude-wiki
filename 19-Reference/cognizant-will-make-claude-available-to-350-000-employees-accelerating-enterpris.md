@@ -10,9 +10,9 @@ tags: ["enterprise"]
 
 Nov 4, 2025
 
-Cognizant, a ​​leading information technology consulting company, announced today that it will use Claude to help its enterprise customers and internal teams move from AI experimentation to production outcomes. Cognizant will deploy Claude to up to 350,000 employees globally, combining Claude with agentic tooling, Cognizant's engineering platforms, and industry blueprints to help deliver measurable impact at enterprise scale.
+Cognizant, a leading information technology consulting company, announced today that it will use Claude to help its enterprise customers and internal teams move from AI experimentation to production outcomes. Cognizant will deploy Claude to up to 350,000 employees globally, combining Claude with agentic tooling, Cognizant's engineering platforms, and industry blueprints to help deliver measurable impact at enterprise scale.
 
-Cognizant will provide Claude to employees across key corporate functions, engineering, and delivery teams, and use Claude Code to accelerate coding tasks, testing, documentation and DevOps workflows. 
+Cognizant will provide Claude to employees across key corporate functions, engineering, and delivery teams, and use Claude Code to accelerate coding tasks, testing, documentation and DevOps workflows. 
 
 Cognizant will also align Claude models, Claude Code, the Model Context Protocol (MCP), and the Agent SDK with its core engineering platforms, so clients can integrate AI with existing data and applications, orchestrate multi-step work with human oversight, and more effectively manage performance, risk and spend.
 

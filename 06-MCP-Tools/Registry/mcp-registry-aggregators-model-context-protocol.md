@@ -14,8 +14,6 @@ The MCP Registry is currently in preview. Breaking changes or data resets may oc
 Aggregators are downstream consumers of the MCP Registry that provide additional value. For example, a server marketplace that provides user ratings and security scanning. The MCP Registry provides an unauthenticated read-only REST API that aggregators can use to populate their data stores. Aggregators are expected to scrape data on a regular but infrequent basis (e.g., once per hour), and persist the data in their own data store. The MCP Registry **does not provide uptime or data durability guarantees**.
 
 
-[​](#consuming-the-mcp-registry-rest-api)
-
 Consuming the MCP Registry REST API
 
 The base URL for the MCP Registry REST API is `https://registry.modelcontextprotocol.io`. It supports the following endpoints:
@@ -28,8 +26,6 @@ URL path parameters such as `serverName` and `version` **must** be URL-encoded. 
 
 Aggregators will most likely scrape the `GET /v0.1/servers` endpoint.
 
-
-[​](#pagination)
 
 Pagination
 
@@ -66,8 +62,6 @@ curl "https://registry.modelcontextprotocol.io/v0.1/servers?limit=100&cursor=com
 ```
 
 
-[​](#filtering-since)
-
 Filtering Since
 
 The `GET /v0.1/servers` endpoint supports filtering servers that have been updated since a given timestamp. For example, servers that have been updated since 2025-10-23 can be fetched using an `updated_since` query parameter in [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) date-time format:
@@ -79,14 +73,10 @@ curl "https://registry.modelcontextprotocol.io/v0.1/servers?updated_since=2025-1
 ```
 
 
-[​](#server-status)
-
 Server Status
 
 Server metadata is generally immutable, except for the `status` field which may be updated to, e.g., `"deprecated"` or `"deleted"`. We recommend that aggregators keep their copy of each server’s `status` up to date. The `"deleted"` status typically indicates that a server has violated our permissive [moderation policy](./moderation-policy), suggesting the server might be spam, malware, or illegal. Aggregators may prefer to remove these servers from their index.
 
-
-[​](#acting-as-a-subregistry)
 
 Acting as a Subregistry
 

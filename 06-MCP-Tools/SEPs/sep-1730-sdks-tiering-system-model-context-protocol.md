@@ -28,14 +28,10 @@ FinalStandards Track
 ------------------------------------------------------------------------
 
 
-[​](#abstract)
-
 Abstract
 
 This SEP proposes a tiering system for Model Context Protocol (MCP) SDKs to establish clear expectations for feature support, maintenance commitments, and quality standards. The system defines three tiers of SDK support with objective, measurable criteria for classification.
 
-
-[​](#motivation)
 
 Motivation
 
@@ -46,17 +42,11 @@ The MCP ecosystem needs SDK harmonization to help users make informed decisions.
 - **Implementation Timelines**: No visibility into when SDKs will support new protocol versions and features
 
 
-[​](#specification)
-
 Specification
 
 
-[​](#tier-definitions)
-
 Tier Definitions
 
-
-[​](#tier-1-fully-supported)
 
 Tier 1: fully supported
 
@@ -73,8 +63,6 @@ SDKs in this tier provides full protocol implementation and is well supported **
   - Comprehensive documentation with examples for all features
   - Published dependency update policy
 
-
-[​](#tier-2-commitment-to-be-fully-supported)
 
 Tier 2: commitment to be fully supported
 
@@ -93,8 +81,6 @@ SDKs with established implementations actively working toward full protocol supp
   - Published roadmap showing intent to achieve Tier 1 or, if SDK will remain in Tier 2 indefinitely, a transparent roadmap about the direction of the SDK and reasons for not being feature complete
 
 
-[​](#tier-3-experimental)
-
 Tier 3: Experimental
 
 Early-stage or specialized SDKs exploring the protocol space. **Characteristics:**
@@ -105,8 +91,6 @@ Early-stage or specialized SDKs exploring the protocol space. **Characteristics:
 - No timeline commitments for updates
 - Suitable for niche implementations that may remain at this tier
 
-
-[​](#conformance-testing)
 
 Conformance Testing
 
@@ -119,8 +103,6 @@ All SDKs must undergo conformance testing using protocol trace validation: for d
 - Tier 3: No minimum requirement
 
 
-[​](#tier-advancement-process)
-
 Tier Advancement Process
 
 1.  **Self-Assessment:** Maintainers evaluate their SDK against tier criteria
@@ -130,8 +112,6 @@ Tier Advancement Process
 5.  **Decision:** Tier assignment by MCP maintainers
 
 
-[​](#tier-relegation-process)
-
 Tier Relegation Process
 
 1.  **Auto validation:**
@@ -140,8 +120,6 @@ Tier Relegation Process
 2.  Issues:
     1.  Issues are not addressed within two months
 
-
-[​](#requirements-matrix)
 
 Requirements matrix
 
@@ -153,12 +131,8 @@ Requirements matrix
 | **Tier (computed from above)**                    | Tier 2  | Tier 3   | Tier 1 |
 
 
-[​](#rationale)
-
 Rationale
 
-
-[​](#why-three-tiers)
 
 Why Three Tiers?
 
@@ -166,8 +140,6 @@ Why Three Tiers?
 - **Tier 2** provides a clear pathway for improving SDKs
 - **Tier 3** allows experimentation without creating barriers to entry
 
-
-[​](#why-time-based-commitments)
 
 Why Time-Based Commitments?
 
@@ -177,8 +149,6 @@ While the community raised concerns about rigid timelines, they provide:
 - Measurable goals for maintainers
 - Flexibility through tier progression
 
-
-[​](#why-not-just-feature-matrices)
 
 Why Not Just Feature Matrices?
 
@@ -191,33 +161,23 @@ Feature matrices alone don’t communicate:
 The tiering system combines feature support with quality guarantees.
 
 
-[​](#alternatives-considered)
-
 Alternatives Considered
 
-
-[​](#1-feature-matrix-only)
 
 1. Feature Matrix Only
 
 **Rejected because:** Doesn’t communicate maintenance commitments or quality standards
 
 
-[​](#2-percentage-based-scoring)
-
 2. Percentage-Based Scoring
 
 **Rejected because:** Too granular and doesn’t capture qualitative aspects like support
 
 
-[​](#3-properties-based-system)
-
 3. Properties-Based System
 
 **Rejected because:** Multiple overlapping properties could confuse users
 
-
-[​](#4-latest-version-listing-only)
 
 4. Latest Version Listing Only
 
@@ -230,14 +190,10 @@ Alternatives Considered
 - Version numbers alone don’t indicate production readiness
 
 
-[​](#5-no-formal-system)
-
 5. No Formal System
 
 **Rejected because:** Current ad-hoc approach creates uncertainty for users
 
-
-[​](#backward-compatibility)
 
 Backward Compatibility
 
@@ -248,16 +204,12 @@ This proposal introduces a new classification system with no breaking changes:
 - Grace period for existing SDKs to achieve tier status
 
 
-[​](#security-implications)
-
 Security Implications
 
 - Tier 1 SDKs must address security issues within 7 days
 - All tiers encouraged to follow security best practices
 - Conformance tests include security validation
 
-
-[​](#implementation-plan)
 
 Implementation Plan
 
@@ -268,12 +220,8 @@ Implementation Plan
 - [ ] Implement automatic issue tracking analysis for SDKs
 
 
-[​](#community-impact)
-
 Community Impact
 
-
-[​](#sdk-maintainers)
 
 SDK Maintainers
 
@@ -282,16 +230,12 @@ SDK Maintainers
 - Structured pathway for advancement
 
 
-[​](#sdk-users)
-
 SDK Users
 
 - Informed selection of SDKs
 - Clear expectations for support
 - Confidence in tier 1 implementations
 
-
-[​](#ecosystem)
 
 Ecosystem
 
@@ -300,8 +244,6 @@ Ecosystem
 - Healthy competition between implementations
 
 
-[​](#references)
-
 References
 
 - [SDK Maintainer Meeting Notes (#1648)](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1648)
@@ -309,12 +251,8 @@ References
 - [Conformance Testing SEP (DRAFT)](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1627)
 
 
-[​](#appendix)
-
 Appendix
 
-
-[​](#simplified-conformance-tests)
 
 Simplified conformance tests
 

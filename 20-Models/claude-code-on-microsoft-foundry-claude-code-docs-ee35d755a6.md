@@ -1,8 +1,9 @@
 ---
+title: "Claude Code on Microsoft Foundry - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/microsoft-foundry"
 category: "20-Models"
 fetched_at: "2026-05-19T21:22:54Z"
-source_url: "https://code.claude.com/docs/en/microsoft-foundry"
-title: "Claude Code on Microsoft Foundry - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Claude Code on Microsoft Foundry
@@ -18,8 +19,6 @@ Learn about configuring Claude Code through Microsoft Foundry, including setup, 
 > Use this file to discover all available pages before exploring further.
 
 
-[​](#prerequisites)
-
 Prerequisites
 
 Before configuring Claude Code with Microsoft Foundry, ensure you have:
@@ -31,12 +30,8 @@ Before configuring Claude Code with Microsoft Foundry, ensure you have:
 If you are deploying Claude Code to multiple users, [pin your model versions](#4-pin-model-versions) to prevent breakage when Anthropic releases new models.
 
 
-[​](#setup)
-
 Setup
 
-
-[​](#1-provision-microsoft-foundry-resource)
 
 1. Provision Microsoft Foundry resource
 
@@ -49,8 +44,6 @@ First, create a Claude resource in Azure:
     - Claude Sonnet
     - Claude Haiku
 
-
-[​](#2-configure-azure-credentials)
 
 2. Configure Azure credentials
 
@@ -74,8 +67,6 @@ az login
 When using Microsoft Foundry, the `/login` and `/logout` commands are disabled since authentication is handled through Azure credentials.
 
 
-[​](#3-configure-claude-code)
-
 3. Configure Claude Code
 
 Set the following environment variables to enable Microsoft Foundry:
@@ -91,8 +82,6 @@ export ANTHROPIC_FOUNDRY_RESOURCE={resource}
 ```
 
 
-[​](#4-pin-model-versions)
-
 4. Pin model versions
 
 Pin specific model versions for every deployment. If you use model aliases (`sonnet`, `opus`, `haiku`) without pinning, Claude Code may attempt to use a newer model version that isn’t available in your Foundry account, breaking existing users when Anthropic releases updates. When you create Azure deployments, select a specific model version rather than “auto-update to latest.”
@@ -105,14 +94,12 @@ export ANTHROPIC_DEFAULT_SONNET_MODEL='claude-sonnet-4-6'
 export ANTHROPIC_DEFAULT_HAIKU_MODEL='claude-haiku-4-5'
 ```
 
-Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Foundry, Claude Code defaults this to the primary model because not every account has a Haiku deployment. To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a Haiku deployment that is available in your account, as shown above. For current and legacy model IDs, see [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview). See [Model configuration](/docs/en/model-config#pin-models-for-third-party-deployments) for the full list of environment variables. [Prompt caching](/docs/en/prompt-caching) is enabled automatically. To request a 1-hour cache TTL instead of the 5-minute default, set the following variable; cache writes with a 1-hour TTL are billed at a higher rate:
+Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Foundry, Claude Code defaults this to the primary model because not every account has a Haiku deployment. To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a Haiku deployment that is available in your account, as shown above. For current and legacy model IDs, see [Models overview](about-claude-models-overview-2bbf09ff82.md). See [Model configuration](/docs/en/model-config#pin-models-for-third-party-deployments) for the full list of environment variables. [Prompt caching](/docs/en/prompt-caching) is enabled automatically. To request a 1-hour cache TTL instead of the 5-minute default, set the following variable; cache writes with a 1-hour TTL are billed at a higher rate:
 
 ```python
 export ENABLE_PROMPT_CACHING_1H=1
 ```
 
-
-[​](#5-run-claude-code)
 
 5. Run Claude Code
 
@@ -124,8 +111,6 @@ claude
 
 Claude Code reads `CLAUDE_CODE_USE_FOUNDRY` and the other Foundry variables from the environment and connects to your Azure resource on the first prompt. Unlike Bedrock and Vertex AI, Foundry has no interactive setup wizard, so the environment variables in steps 3 and 4 are the only configuration path.
 
-
-[​](#azure-rbac-configuration)
 
 Azure RBAC configuration
 
@@ -146,16 +131,12 @@ The `Azure AI User` and `Cognitive Services User` default roles include all requ
 For details, see [Microsoft Foundry RBAC documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/rbac-azure-ai-foundry).
 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
 If you receive an error “Failed to get token from azureADTokenProvider: ChainedTokenCredential authentication failed”:
 
 - Configure Entra ID on the environment, or set `ANTHROPIC_FOUNDRY_API_KEY`.
 
-
-[​](#additional-resources)
 
 Additional resources
 

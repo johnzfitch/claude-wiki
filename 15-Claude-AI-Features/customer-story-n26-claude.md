@@ -94,7 +94,7 @@ For chargeback requests, Claude handles the entire process of translating docume
 
 Claude also processes incoming physical claim letters, classifying documents and initiating appropriate actions within the relevant teams. In financial crime analysis, the AI assists analysts by synthesizing customer data, recommending actions, and auto-drafting investigation reports.
 
-Tavares added: "Deployment was rapid." For some opportunities, the team went from initial implementation to testing after only 1-2 weeks – a pace enabled by Claude's performance and straightforward integration. 
+Tavares added: "Deployment was rapid." For some opportunities, the team went from initial implementation to testing after only 1-2 weeks – a pace enabled by Claude's performance and straightforward integration. 
 
 ## The outcome
 

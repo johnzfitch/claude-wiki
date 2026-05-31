@@ -14,8 +14,6 @@ Learn about configuring Claude Code through Microsoft Foundry, including setup, 
 
 ## 
 
-[​](#prerequisites)
-
 Prerequisites
 
 Before configuring Claude Code with Microsoft Foundry, ensure you have:
@@ -28,13 +26,9 @@ If you are deploying Claude Code to multiple users, [pin your model versions](#4
 
 ## 
 
-[​](#setup)
-
 Setup
 
 ### 
-
-[​](#1-provision-microsoft-foundry-resource)
 
 1. Provision Microsoft Foundry resource
 
@@ -48,8 +42,6 @@ First, create a Claude resource in Azure:
     - Claude Haiku
 
 ### 
-
-[​](#2-configure-azure-credentials)
 
 2. Configure Azure credentials
 
@@ -84,8 +76,6 @@ When using Microsoft Foundry, the `/login` and `/logout` commands are disabled s
 
 ### 
 
-[​](#3-configure-claude-code)
-
 3. Configure Claude Code
 
 Set the following environment variables to enable Microsoft Foundry:
@@ -107,8 +97,6 @@ export ANTHROPIC_FOUNDRY_RESOURCE={resource}
 
 ### 
 
-[​](#4-pin-model-versions)
-
 4. Pin model versions
 
 Pin specific model versions for every deployment. If you use model aliases (`sonnet`, `opus`, `haiku`) without pinning, Claude Code may attempt to use a newer model version that isn’t available in your Foundry account, breaking existing users when Anthropic releases updates. When you create Azure deployments, select a specific model version rather than “auto-update to latest.”
@@ -129,8 +117,6 @@ export ANTHROPIC_DEFAULT_HAIKU_MODEL='claude-haiku-4-5'
 For current and legacy model IDs, see [Models overview](../20-Models/about-claude-models-overview.md). See [Model configuration](/docs/en/model-config#pin-models-for-third-party-deployments) for the full list of environment variables.
 
 ## 
-
-[​](#azure-rbac-configuration)
 
 Azure RBAC configuration
 
@@ -157,8 +143,6 @@ For details, see [Microsoft Foundry RBAC documentation](https://learn.microsoft.
 
 ## 
 
-[​](#troubleshooting)
-
 Troubleshooting
 
 If you receive an error “Failed to get token from azureADTokenProvider: ChainedTokenCredential authentication failed”:
@@ -166,8 +150,6 @@ If you receive an error “Failed to get token from azureADTokenProvider: Chaine
 - Configure Entra ID on the environment, or set `ANTHROPIC_FOUNDRY_API_KEY`.
 
 ## 
-
-[​](#additional-resources)
 
 Additional resources
 

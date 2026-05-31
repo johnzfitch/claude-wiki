@@ -1,5 +1,5 @@
 ---
-title: "Prompting Claude for \\\\\\"JSON Mode\\"
+title: "Prompting Claude for \\\\\\\"JSON Mode\\"
 category: "10-Prompting-Guides"
 tags: ["prompting"]
 ---

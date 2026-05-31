@@ -1,8 +1,9 @@
 ---
+title: "Configure your terminal for Claude Code - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/terminal-config"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:23:14Z"
-source_url: "https://code.claude.com/docs/en/terminal-config"
-title: "Configure your terminal for Claude Code - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Configure your terminal for Claude Code
@@ -29,8 +30,6 @@ Claude Code works in any terminal without configuration. This page is for when s
 This page is about getting your terminal to send the right signals to Claude Code. To change which keys Claude Code itself responds to, see [keybindings](/docs/en/keybindings) instead.
 
 
-[​](#enter-multiline-prompts)
-
 Enter multiline prompts
 
 Pressing Enter submits your message. To add a line break without submitting, press Ctrl+J, or type `\` and then press Enter. Both work in every terminal with no setup. In most terminals you can also press Shift+Enter, but support varies by terminal emulator:
@@ -43,8 +42,6 @@ Pressing Enter submits your message. To add a line break without submitting, pre
 
 For VS Code, Cursor, Windsurf, Alacritty, and Zed, `/terminal-setup` writes Shift+Enter and other keybindings into the terminal’s configuration file. In VS Code, Cursor, and Windsurf it also sets `terminal.integrated.mouseWheelScrollSensitivity` in the editor settings for smoother scrolling in [fullscreen mode](/docs/en/fullscreen). Existing bindings and settings are left in place; if you see a message such as `VSCode terminal Shift+Enter key binding already configured`, no change was made. Run `/terminal-setup` directly in the host terminal rather than inside tmux or screen, since it needs to write to the host terminal’s configuration. If you are running inside tmux, Shift+Enter also requires the [tmux configuration below](#configure-tmux) even when the outer terminal supports it. To bind newline to a different key, or to swap behavior so Enter inserts a newline and Shift+Enter submits, map the `chat:newline` and `chat:submit` actions in your [keybindings file](/docs/en/keybindings).
 
-
-[​](#enable-option-key-shortcuts-on-macos)
 
 Enable Option key shortcuts on macOS
 
@@ -64,8 +61,6 @@ Add `"terminal.integrated.macOptionIsMeta": true` to your VS Code settings.
 
 For Ghostty, Kitty, and other terminals, look for an Option-as-Alt or Option-as-Meta setting in the terminal’s configuration file.
 
-
-[​](#get-a-terminal-bell-or-notification)
 
 Get a terminal bell or notification
 
@@ -88,8 +83,6 @@ Check “Notification Center Alerts”, then click “Filter Alerts” and enabl
 If notifications still do not appear, confirm that your terminal application has notification permission in your OS settings, and if you are running inside tmux, [enable passthrough](#configure-tmux).
 
 
-[​](#play-a-sound-with-a-notification-hook)
-
 Play a sound with a Notification hook
 
 In any terminal you can configure a [Notification hook](/docs/en/hooks-guide#get-notified-when-claude-needs-input) to play a sound or run a custom command when Claude needs your attention. Hooks run alongside the built-in notification rather than replacing it, so terminals that do not receive a desktop notification, such as Warp or the VS Code integrated terminal, can use a hook or set `preferredNotifChannel` to `"terminal_bell"` instead. The example below plays a system sound on macOS. The linked guide has desktop notification commands for macOS, Linux, and Windows.
@@ -109,8 +102,6 @@ In any terminal you can configure a [Notification hook](/docs/en/hooks-guide#get
 ```
 
 
-[​](#configure-tmux)
-
 Configure tmux
 
 When Claude Code runs inside tmux, two things break by default: Shift+Enter submits instead of inserting a newline, and desktop notifications and the [progress bar](/docs/en/settings#available-settings) never reach the outer terminal. Add these lines to `~/.tmux.conf`, then run `tmux source-file ~/.tmux.conf` to apply them to the running server:
@@ -126,14 +117,10 @@ set -as terminal-features 'xterm*:extkeys'
 The `allow-passthrough` line lets notifications and progress updates reach the outer terminal instead of being swallowed by tmux. The `extended-keys` lines let tmux distinguish Shift+Enter from plain Enter so the newline shortcut works.
 
 
-[​](#match-the-color-theme)
-
 Match the color theme
 
 Use the `/theme` command, or the theme picker in `/config`, to choose a Claude Code theme that matches your terminal. Selecting the auto option detects your terminal’s light or dark background, so the theme follows OS appearance changes whenever your terminal does. Claude Code does not control the terminal’s own color scheme, which is set by the terminal application. To customize what appears at the bottom of the interface, configure a [custom status line](/docs/en/statusline) that shows the current model, working directory, git branch, or other context.
 
-
-[​](#create-a-custom-theme)
 
 Create a custom theme
 
@@ -186,8 +173,6 @@ The following example combines tokens from several of the groups below: the bran
 ```
 
 
-[​](#text-and-accent-colors)
-
 Text and accent colors
 
 Control the primary brand accent and the foreground text shades used throughout the interface.
@@ -204,8 +189,6 @@ Control the primary brand accent and the foreground text shades used throughout 
 | `remember`    | Memory and `CLAUDE.md` indicators                                |
 
 
-[​](#status-colors)
-
 Status colors
 
 Signal success, failure, and warning states across messages and indicators.
@@ -217,8 +200,6 @@ Signal success, failure, and warning states across messages and indicators.
 | `warning` | Warnings, caution messages, and the auto mode border |
 | `merged`  | Merged pull request status                           |
 
-
-[​](#input-box-and-mode-indicators)
 
 Input box and mode indicators
 
@@ -234,8 +215,6 @@ Set the input box border color and the accent shown while a permission mode or i
 | `fastMode`     | Fast mode indicator                                |
 
 
-[​](#diff-rendering)
-
 Diff rendering
 
 Color added and removed code in file edits and reviews.
@@ -249,8 +228,6 @@ Color added and removed code in file edits and reviews.
 | `diffAddedWord`     | Word-level highlight within an added line          |
 | `diffRemovedWord`   | Word-level highlight within a removed line         |
 
-
-[​](#fullscreen-mode)
 
 Fullscreen mode
 
@@ -266,8 +243,6 @@ Apply only in [fullscreen rendering mode](/docs/en/fullscreen), where messages h
 | `selectionBg`                | Background of text selected with the mouse                         |
 
 
-[​](#usage-meter-and-speaker-labels)
-
 Usage meter and speaker labels
 
 Adjust the bar shown in the `/usage` view and the labels that distinguish your messages from Claude’s.
@@ -279,8 +254,6 @@ Adjust the bar shown in the `/usage` view and the labels that distinguish your m
 | `briefLabelYou`    | Color of the `You` label on your messages         |
 | `briefLabelClaude` | Color of the `Claude` label on assistant messages |
 
-
-[​](#shimmer-variants-and-subagent-colors)
 
 Shimmer variants and subagent colors
 
@@ -295,8 +268,6 @@ Several tokens have a paired shimmer variant that supplies the lighter color use
 
 Each [subagent](/docs/en/sub-agents) and parallel task is shown in one of eight named colors so you can tell them apart in the transcript. The token names follow the pattern `<color>_FOR_SUBAGENTS_ONLY`, where `<color>` is `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, or `cyan`. Override these to change what each named color looks like. For example, a subagent with `color: blue` in its definition is drawn using the `blue_FOR_SUBAGENTS_ONLY` value.The [`ultrathink`](/docs/en/model-config#use-ultrathink-for-one-off-deep-reasoning) and [`ultraplan`](/docs/en/ultraplan) keywords in the prompt input are rendered with a seven-color rainbow gradient. The token names follow the pattern `rainbow_<color>` and `rainbow_<color>_shimmer`, where `<color>` is `red`, `orange`, `yellow`, `green`, `blue`, `indigo`, or `violet`.
 
-
-[​](#switch-to-fullscreen-rendering)
 
 Switch to fullscreen rendering
 
@@ -313,21 +284,15 @@ CLAUDE_CODE_NO_FLICKER=1 claude
 ```
 
 
-[​](#paste-large-content)
-
 Paste large content
 
 When you paste more than 10,000 characters into the prompt, Claude Code collapses the input to a `[Pasted text]` placeholder so the input box stays usable. The full content is still sent to Claude when you submit. The VS Code integrated terminal can drop characters from very large pastes before they reach Claude Code, so prefer file-based workflows there. For very large inputs such as entire files or long logs, write the content to a file and ask Claude to read it instead of pasting. This keeps the conversation transcript readable and lets Claude reference the file by path in later turns.
 
 
-[​](#edit-prompts-with-vim-keybindings)
-
 Edit prompts with Vim keybindings
 
 Claude Code includes a Vim-style editing mode for the prompt input. Enable it through `/config` → Editor mode, or by setting [`editorMode`](/docs/en/settings#available-settings) to `"vim"` in `~/.claude/settings.json`. Set Editor mode back to `normal` to turn it off. Vim mode supports a subset of NORMAL- and VISUAL-mode motions and operators, such as `hjkl` navigation, `v`/`V` selection, and `d`/`c`/`y` with text objects. See the [Vim editor mode reference](/docs/en/interactive-mode#vim-editor-mode) for the full key table. Vim motions are not remappable through the keybindings file. Pressing Enter still submits your prompt in INSERT mode, unlike standard Vim. Use `o` or `O` in NORMAL mode, or Ctrl+J, to insert a newline instead.
 
-
-[​](#related-resources)
 
 Related resources
 

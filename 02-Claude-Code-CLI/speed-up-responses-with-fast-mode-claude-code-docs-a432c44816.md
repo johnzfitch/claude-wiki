@@ -1,8 +1,9 @@
 ---
+title: "Speed up responses with fast mode - Claude Code Docs"
+source_url: "https://code.claude.com/docs/en/fast-mode"
 category: "02-Claude-Code-CLI"
 fetched_at: "2026-05-19T21:22:38Z"
-source_url: "https://code.claude.com/docs/en/fast-mode"
-title: "Speed up responses with fast mode - Claude Code Docs"
+tags: ["claude-code"]
 ---
 
 # Speed up responses with fast mode
@@ -33,8 +34,6 @@ What to know:
 This page covers how to [toggle fast mode](#toggle-fast-mode), its [cost tradeoff](#understand-the-cost-tradeoff), [when to use it](#decide-when-to-use-fast-mode), [requirements](#requirements), [per-session opt-in](#require-per-session-opt-in), and [rate limit behavior](#handle-rate-limits).
 
 
-[​](#toggle-fast-mode)
-
 Toggle fast mode
 
 Toggle fast mode in either of these ways:
@@ -52,8 +51,6 @@ By default, fast mode persists across sessions. Administrators can configure fas
 When you disable fast mode with `/fast` again, you remain on Opus. The model does not revert to your previous model. To switch to a different model, use `/model`. Opus 4.7 is the fast mode default in Claude Code v2.1.142 and later. To pin fast mode to Opus 4.6 instead, set `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1`.
 
 
-[​](#understand-the-cost-tradeoff)
-
 Understand the cost tradeoff
 
 Fast mode has higher per-token pricing than standard Opus:
@@ -64,8 +61,6 @@ Fast mode has higher per-token pricing than standard Opus:
 
 Fast mode pricing is flat across the full 1M token context window. When you switch into fast mode mid-conversation, you pay the full fast mode uncached input token price for the entire conversation context. This costs more than if you had enabled fast mode from the start.
 
-
-[​](#decide-when-to-use-fast-mode)
 
 Decide when to use fast mode
 
@@ -82,8 +77,6 @@ Standard mode is better for:
 - Cost-sensitive workloads
 
 
-[​](#fast-mode-vs-effort-level)
-
 Fast mode vs effort level
 
 Fast mode and effort level both affect response speed, but differently:
@@ -95,8 +88,6 @@ Fast mode and effort level both affect response speed, but differently:
 
 You can combine both: use fast mode with a lower [effort level](/docs/en/model-config#adjust-effort-level) for maximum speed on straightforward tasks.
 
-
-[​](#requirements)
 
 Requirements
 
@@ -112,8 +103,6 @@ Fast mode usage draws directly from usage credits, even if you have remaining us
 If your admin has not enabled fast mode for your organization, the `/fast` command will show “Fast mode has been disabled by your organization.”
 
 
-[​](#enable-fast-mode-for-your-organization)
-
 Enable fast mode for your organization
 
 Admins can enable fast mode in:
@@ -123,8 +112,6 @@ Admins can enable fast mode in:
 
 Another option to disable fast mode entirely is to set `CLAUDE_CODE_DISABLE_FAST_MODE=1`. See [Environment variables](/docs/en/env-vars).
 
-
-[​](#require-per-session-opt-in)
 
 Require per-session opt-in
 
@@ -139,8 +126,6 @@ By default, fast mode persists across sessions: if a user enables fast mode, it 
 This is useful for controlling costs in organizations where users run multiple concurrent sessions. Users can still enable fast mode with `/fast` when they need speed, but it resets at the start of each new session. The user’s fast mode preference is still saved, so removing this setting restores the default persistent behavior.
 
 
-[​](#handle-rate-limits)
-
 Handle rate limits
 
 Fast mode has separate rate limits from standard Opus. Fast mode for Opus 4.7 and Opus 4.6 share the same rate limit pool: usage on either model draws from the same limits. When you hit the fast mode rate limit or run out of usage credits:
@@ -153,8 +138,6 @@ Fast mode has separate rate limits from standard Opus. Fast mode for Opus 4.7 an
 To disable fast mode manually instead of waiting for cooldown, run `/fast` again.
 
 
-[​](#research-preview)
-
 Research preview
 
 Fast mode is a research preview feature. This means:
@@ -165,8 +148,6 @@ Fast mode is a research preview feature. This means:
 
 Report issues or feedback through your usual Anthropic support channels.
 
-
-[​](#see-also)
 
 See also
 

@@ -235,7 +235,7 @@ Comprehensive server documentation with specific sections.
     See our privacy policy: https://your-domain.com/privacy
 
     ## Support
-    - Email: [email protected]
+    - Email: [email protected]
     - Documentation: https://your-domain.com/mcp-docs
     - Issues: https://github.com/yourcompany/mcp-server/issues
 
@@ -312,7 +312,7 @@ Server must be in General Availability (GA) status.
 - Complete documentation and support channels
 
 **Cannot be included:** Beta versions, development servers, or limited-access services.\
-​
+
 
 ### What technical requirements must be met?
 

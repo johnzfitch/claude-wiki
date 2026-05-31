@@ -1,8 +1,9 @@
 ---
+title: "MCP Memory Server"
+source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/memory/README.md"
 category: "06-MCP-Tools"
 fetched_at: "2026-05-19T21:39:56Z"
-source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/memory/README.md"
-title: "MCP Memory Server"
+tags: ["api", "mcp"]
 ---
 
 # Knowledge Graph Memory Server
@@ -304,7 +305,7 @@ On Windows, use:
 
 The prompt for utilizing memory depends on the use case. Changing the prompt will help the model determine the frequency and types of memories created.
 
-Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](https://www.anthropic.com/news/projects). 
+Here is an example prompt for chat personalization. You could use this prompt in the "Custom Instructions" field of a [Claude.ai Project](../19-Reference/collaborate-with-claude-on-projects-anthropic.md). 
 
 ```
 Follow these steps for each interaction:
