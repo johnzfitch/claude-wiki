@@ -324,7 +324,7 @@
 ## api (1422)
 
 - [2.1.74 Deep Analysis](99-Other/analysis.md)
-- [\\\\\\\\](04-API-Reference/Other/pdf-upload-summarization.md)
+- [\\](04-API-Reference/Other/pdf-upload-summarization.md)
 - [Access engagement and adoption data with the Analytics API | Claude Help Center](22-Safety-Policy/access-engagement-and-adoption-data-with-the-analytics-api.md)
 - [Access engagement and adoption data with the Analytics API | Claude Help Center](22-Safety-Policy/access-usage-data-with-the-analytics-api.md)
 - [Accessing GitHub](04-API-Reference/Other/managed-agents-github-c3d0fb911e.md)
@@ -3630,7 +3630,7 @@
 - [Prompting best practices](10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md)
 - [Prompting best practices - Claude API Docs](10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)
 - [Prompting best practices - Claude API Docs](10-Prompting-Guides/build-with-claude-prompt-engineering.md)
-- [Prompting Claude for \\\\\\\\](10-Prompting-Guides/how-to-enable-json-mode.md)
+- [Prompting Claude for \\](10-Prompting-Guides/how-to-enable-json-mode.md)
 - [Prompting strategies for financial analysis | Claude](15-Claude-AI-Features/prompting-strategies-for-financial-analysis.md)
 - [Prompts](06-MCP-Tools/General/mcp-specification-2025-11-25-server-prompts.md)
 - [Prompts](06-MCP-Tools/General/specification-2025-11-25-server-prompts.md)
