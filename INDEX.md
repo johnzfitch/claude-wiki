@@ -2,7 +2,7 @@
 
 Complete index of all documentation.
 
-*3106 documents across 23 categories*
+*3106 documents across 22 categories*
 
 - [Getting Started](01-Getting-Started/INDEX.md) (21 docs)
 - [Claude Code CLI](02-Claude-Code-CLI/INDEX.md) (186 docs)
