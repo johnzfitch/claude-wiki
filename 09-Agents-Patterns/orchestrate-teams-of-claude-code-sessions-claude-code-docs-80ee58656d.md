@@ -245,7 +245,7 @@ The `skills` and `mcpServers` frontmatter fields in a subagent definition are no
 
 Permissions
 
-Teammates start with the lead’s permission settings. If the lead runs with `--dangerously-skip-permissions`, all teammates do too. After spawning, you can change individual teammate modes, but you can’t set per-teammate modes at spawn time.
+Teammates start with the lead’s permission settings. If the lead runs with an elevated permission mode, all teammates inherit it. After spawning, you can change individual teammate modes, but you can’t set per-teammate modes at spawn time.
 
 
 Context and communication
