@@ -190,7 +190,7 @@ Spawn a teammate using the security-reviewer agent type to audit the auth module
 
 ### Permissions
 
-Teammates start with the lead's permission settings. If the lead runs with `--dangerously-skip-permissions`, all teammates do too.
+Teammates start with the lead's permission settings. If the lead runs with an elevated permission mode, all teammates inherit it.
 
 ### Context and communication
 
