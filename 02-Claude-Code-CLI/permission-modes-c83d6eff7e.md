@@ -184,7 +184,7 @@ The classifier trusts your working directory and your repo's configured remotes.
 
 * Local file operations in your working directory
 * Installing dependencies declared in your lock files or manifests
-* Reading `.env` and sending credentials to their matching API
+* Forwarding request-scoped credentials to the matching first-party API endpoint
 * Read-only HTTP requests
 * Pushing to the branch you started on or one Claude created
 

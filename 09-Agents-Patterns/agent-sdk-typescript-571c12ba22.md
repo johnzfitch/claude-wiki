@@ -2939,7 +2939,7 @@ This pattern enables you to:
 <Warning>
   Commands running with `dangerouslyDisableSandbox: true` have full system access. Ensure your `canUseTool` handler validates these requests carefully.
 
-  If `permissionMode` is set to `bypassPermissions` and `allowUnsandboxedCommands` is enabled, the model can autonomously execute commands outside the sandbox without any approval prompts. This combination effectively allows the model to escape sandbox isolation silently.
+  If `permissionMode` is set to `bypassPermissions` and `allowUnsandboxedCommands` is enabled, commands may run with reduced sandbox isolation. Review enterprise hardening guidance before enabling this combination.
 </Warning>
 
 ## See also
